@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tse/v20201207/model/EnvAddressInfo.h>
+#include <tencentcloud/tse/v20201207/model/PolarisLimiterAddress.h>
 
 
 namespace TencentCloud
@@ -136,6 +137,20 @@ namespace TencentCloud
                      */
                     bool ConsoleInternetBandWidthHasBeenSet() const;
 
+                    /**
+                     * 获取北极星限流server节点接入IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LimiterAddressInfos 北极星限流server节点接入IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PolarisLimiterAddress> GetLimiterAddressInfos() const;
+
+                    /**
+                     * 判断参数 LimiterAddressInfos 是否已赋值
+                     * @return LimiterAddressInfos 是否已赋值
+                     */
+                    bool LimiterAddressInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +198,13 @@ namespace TencentCloud
                      */
                     int64_t m_consoleInternetBandWidth;
                     bool m_consoleInternetBandWidthHasBeenSet;
+
+                    /**
+                     * 北极星限流server节点接入IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<PolarisLimiterAddress> m_limiterAddressInfos;
+                    bool m_limiterAddressInfosHasBeenSet;
 
                 };
             }

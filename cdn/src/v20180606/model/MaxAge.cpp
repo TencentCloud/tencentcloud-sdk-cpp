@@ -22,7 +22,8 @@ using namespace std;
 
 MaxAge::MaxAge() :
     m_switchHasBeenSet(false),
-    m_maxAgeRulesHasBeenSet(false)
+    m_maxAgeRulesHasBeenSet(false),
+    m_maxAgeCodeRuleHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,23 @@ CoreInternalOutcome MaxAge::Deserialize(const rapidjson::Value &value)
         m_maxAgeRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxAgeCodeRule") && !value["MaxAgeCodeRule"].IsNull())
+    {
+        if (!value["MaxAgeCodeRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxAge.MaxAgeCodeRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_maxAgeCodeRule.Deserialize(value["MaxAgeCodeRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_maxAgeCodeRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +107,15 @@ void MaxAge::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_maxAgeCodeRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxAgeCodeRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_maxAgeCodeRule.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -124,5 +151,21 @@ void MaxAge::SetMaxAgeRules(const vector<MaxAgeRule>& _maxAgeRules)
 bool MaxAge::MaxAgeRulesHasBeenSet() const
 {
     return m_maxAgeRulesHasBeenSet;
+}
+
+MaxAgeCodeRule MaxAge::GetMaxAgeCodeRule() const
+{
+    return m_maxAgeCodeRule;
+}
+
+void MaxAge::SetMaxAgeCodeRule(const MaxAgeCodeRule& _maxAgeCodeRule)
+{
+    m_maxAgeCodeRule = _maxAgeCodeRule;
+    m_maxAgeCodeRuleHasBeenSet = true;
+}
+
+bool MaxAge::MaxAgeCodeRuleHasBeenSet() const
+{
+    return m_maxAgeCodeRuleHasBeenSet;
 }
 

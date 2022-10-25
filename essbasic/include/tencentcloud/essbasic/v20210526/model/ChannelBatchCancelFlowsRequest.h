@@ -81,6 +81,58 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
+                     * 获取撤销理由
+                     * @return CancelMessage 撤销理由
+                     */
+                    std::string GetCancelMessage() const;
+
+                    /**
+                     * 设置撤销理由
+                     * @param CancelMessage 撤销理由
+                     */
+                    void SetCancelMessage(const std::string& _cancelMessage);
+
+                    /**
+                     * 判断参数 CancelMessage 是否已赋值
+                     * @return CancelMessage 是否已赋值
+                     */
+                    bool CancelMessageHasBeenSet() const;
+
+                    /**
+                     * 获取撤销理由自定义格式；选项：
+0 默认格式
+1 只保留身份信息：展示为【发起方】
+2 保留身份信息+企业名称：展示为【发起方xxx公司】
+3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
+                     * @return CancelMessageFormat 撤销理由自定义格式；选项：
+0 默认格式
+1 只保留身份信息：展示为【发起方】
+2 保留身份信息+企业名称：展示为【发起方xxx公司】
+3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
+                     */
+                    int64_t GetCancelMessageFormat() const;
+
+                    /**
+                     * 设置撤销理由自定义格式；选项：
+0 默认格式
+1 只保留身份信息：展示为【发起方】
+2 保留身份信息+企业名称：展示为【发起方xxx公司】
+3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
+                     * @param CancelMessageFormat 撤销理由自定义格式；选项：
+0 默认格式
+1 只保留身份信息：展示为【发起方】
+2 保留身份信息+企业名称：展示为【发起方xxx公司】
+3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
+                     */
+                    void SetCancelMessageFormat(const int64_t& _cancelMessageFormat);
+
+                    /**
+                     * 判断参数 CancelMessageFormat 是否已赋值
+                     * @return CancelMessageFormat 是否已赋值
+                     */
+                    bool CancelMessageFormatHasBeenSet() const;
+
+                    /**
                      * 获取操作人信息
                      * @return Operator 操作人信息
                      */
@@ -111,6 +163,22 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;
+
+                    /**
+                     * 撤销理由
+                     */
+                    std::string m_cancelMessage;
+                    bool m_cancelMessageHasBeenSet;
+
+                    /**
+                     * 撤销理由自定义格式；选项：
+0 默认格式
+1 只保留身份信息：展示为【发起方】
+2 保留身份信息+企业名称：展示为【发起方xxx公司】
+3 保留身份信息+企业名称+经办人名称：展示为【发起方xxxx公司-经办人姓名】
+                     */
+                    int64_t m_cancelMessageFormat;
+                    bool m_cancelMessageFormatHasBeenSet;
 
                     /**
                      * 操作人信息

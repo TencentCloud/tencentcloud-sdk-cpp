@@ -42,7 +42,10 @@ QueryOrderOutOrderList::QueryOrderOutOrderList() :
     m_transactionIdHasBeenSet(false),
     m_channelOrderIdHasBeenSet(false),
     m_subOrderListHasBeenSet(false),
-    m_channelExternalOrderIdHasBeenSet(false)
+    m_channelExternalOrderIdHasBeenSet(false),
+    m_settleCheckHasBeenSet(false),
+    m_channelExternalUserInfoListHasBeenSet(false),
+    m_attachmentInfoListHasBeenSet(false)
 {
 }
 
@@ -281,6 +284,56 @@ CoreInternalOutcome QueryOrderOutOrderList::Deserialize(const rapidjson::Value &
         m_channelExternalOrderIdHasBeenSet = true;
     }
 
+    if (value.HasMember("SettleCheck") && !value["SettleCheck"].IsNull())
+    {
+        if (!value["SettleCheck"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutOrderList.SettleCheck` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_settleCheck = value["SettleCheck"].GetInt64();
+        m_settleCheckHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelExternalUserInfoList") && !value["ChannelExternalUserInfoList"].IsNull())
+    {
+        if (!value["ChannelExternalUserInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutOrderList.ChannelExternalUserInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ChannelExternalUserInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OldChannelExternalUserInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_channelExternalUserInfoList.push_back(item);
+        }
+        m_channelExternalUserInfoListHasBeenSet = true;
+    }
+
+    if (value.HasMember("AttachmentInfoList") && !value["AttachmentInfoList"].IsNull())
+    {
+        if (!value["AttachmentInfoList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `QueryOrderOutOrderList.AttachmentInfoList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AttachmentInfoList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            OldAttachmentInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_attachmentInfoList.push_back(item);
+        }
+        m_attachmentInfoListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +522,44 @@ void QueryOrderOutOrderList::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "ChannelExternalOrderId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channelExternalOrderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_settleCheckHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SettleCheck";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_settleCheck, allocator);
+    }
+
+    if (m_channelExternalUserInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelExternalUserInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_channelExternalUserInfoList.begin(); itr != m_channelExternalUserInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_attachmentInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttachmentInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_attachmentInfoList.begin(); itr != m_attachmentInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -824,5 +915,53 @@ void QueryOrderOutOrderList::SetChannelExternalOrderId(const string& _channelExt
 bool QueryOrderOutOrderList::ChannelExternalOrderIdHasBeenSet() const
 {
     return m_channelExternalOrderIdHasBeenSet;
+}
+
+int64_t QueryOrderOutOrderList::GetSettleCheck() const
+{
+    return m_settleCheck;
+}
+
+void QueryOrderOutOrderList::SetSettleCheck(const int64_t& _settleCheck)
+{
+    m_settleCheck = _settleCheck;
+    m_settleCheckHasBeenSet = true;
+}
+
+bool QueryOrderOutOrderList::SettleCheckHasBeenSet() const
+{
+    return m_settleCheckHasBeenSet;
+}
+
+vector<OldChannelExternalUserInfo> QueryOrderOutOrderList::GetChannelExternalUserInfoList() const
+{
+    return m_channelExternalUserInfoList;
+}
+
+void QueryOrderOutOrderList::SetChannelExternalUserInfoList(const vector<OldChannelExternalUserInfo>& _channelExternalUserInfoList)
+{
+    m_channelExternalUserInfoList = _channelExternalUserInfoList;
+    m_channelExternalUserInfoListHasBeenSet = true;
+}
+
+bool QueryOrderOutOrderList::ChannelExternalUserInfoListHasBeenSet() const
+{
+    return m_channelExternalUserInfoListHasBeenSet;
+}
+
+vector<OldAttachmentInfo> QueryOrderOutOrderList::GetAttachmentInfoList() const
+{
+    return m_attachmentInfoList;
+}
+
+void QueryOrderOutOrderList::SetAttachmentInfoList(const vector<OldAttachmentInfo>& _attachmentInfoList)
+{
+    m_attachmentInfoList = _attachmentInfoList;
+    m_attachmentInfoListHasBeenSet = true;
+}
+
+bool QueryOrderOutOrderList::AttachmentInfoListHasBeenSet() const
+{
+    return m_attachmentInfoListHasBeenSet;
 }
 

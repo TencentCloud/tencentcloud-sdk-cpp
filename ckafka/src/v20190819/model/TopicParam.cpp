@@ -24,7 +24,9 @@ TopicParam::TopicParam() :
     m_resourceHasBeenSet(false),
     m_offsetTypeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_topicIdHasBeenSet(false)
+    m_topicIdHasBeenSet(false),
+    m_compressionTypeHasBeenSet(false),
+    m_useAutoCreateTopicHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome TopicParam::Deserialize(const rapidjson::Value &value)
         m_topicIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CompressionType") && !value["CompressionType"].IsNull())
+    {
+        if (!value["CompressionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicParam.CompressionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compressionType = string(value["CompressionType"].GetString());
+        m_compressionTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UseAutoCreateTopic") && !value["UseAutoCreateTopic"].IsNull())
+    {
+        if (!value["UseAutoCreateTopic"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicParam.UseAutoCreateTopic` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useAutoCreateTopic = value["UseAutoCreateTopic"].GetBool();
+        m_useAutoCreateTopicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void TopicParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_compressionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompressionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compressionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useAutoCreateTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseAutoCreateTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useAutoCreateTopic, allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void TopicParam::SetTopicId(const string& _topicId)
 bool TopicParam::TopicIdHasBeenSet() const
 {
     return m_topicIdHasBeenSet;
+}
+
+string TopicParam::GetCompressionType() const
+{
+    return m_compressionType;
+}
+
+void TopicParam::SetCompressionType(const string& _compressionType)
+{
+    m_compressionType = _compressionType;
+    m_compressionTypeHasBeenSet = true;
+}
+
+bool TopicParam::CompressionTypeHasBeenSet() const
+{
+    return m_compressionTypeHasBeenSet;
+}
+
+bool TopicParam::GetUseAutoCreateTopic() const
+{
+    return m_useAutoCreateTopic;
+}
+
+void TopicParam::SetUseAutoCreateTopic(const bool& _useAutoCreateTopic)
+{
+    m_useAutoCreateTopic = _useAutoCreateTopic;
+    m_useAutoCreateTopicHasBeenSet = true;
+}
+
+bool TopicParam::UseAutoCreateTopicHasBeenSet() const
+{
+    return m_useAutoCreateTopicHasBeenSet;
 }
 

@@ -121,15 +121,13 @@ namespace TencentCloud
                     /**
                      * 获取别称域名状态，取值有：
 <li> active：已生效； </li>
-<li> pending：未生效；</li>
-<li> not_filed：未备案；</li>
+<li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
 <li> deleted：已删除。 </li>
                      * @return Status 别称域名状态，取值有：
 <li> active：已生效； </li>
-<li> pending：未生效；</li>
-<li> not_filed：未备案；</li>
+<li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
 <li> deleted：已删除。 </li>
@@ -139,15 +137,13 @@ namespace TencentCloud
                     /**
                      * 设置别称域名状态，取值有：
 <li> active：已生效； </li>
-<li> pending：未生效；</li>
-<li> not_filed：未备案；</li>
+<li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
 <li> deleted：已删除。 </li>
                      * @param Status 别称域名状态，取值有：
 <li> active：已生效； </li>
-<li> pending：未生效；</li>
-<li> not_filed：未备案；</li>
+<li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
 <li> deleted：已删除。 </li>
@@ -159,6 +155,54 @@ namespace TencentCloud
                      * @return Status 是否已赋值
                      */
                     bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取封禁模式，取值有：
+<li> 0：未封禁； </li>
+<li> 11：合规封禁；</li>
+<li> 14：未备案封禁。</li>
+                     * @return ForbidMode 封禁模式，取值有：
+<li> 0：未封禁； </li>
+<li> 11：合规封禁；</li>
+<li> 14：未备案封禁。</li>
+                     */
+                    int64_t GetForbidMode() const;
+
+                    /**
+                     * 设置封禁模式，取值有：
+<li> 0：未封禁； </li>
+<li> 11：合规封禁；</li>
+<li> 14：未备案封禁。</li>
+                     * @param ForbidMode 封禁模式，取值有：
+<li> 0：未封禁； </li>
+<li> 11：合规封禁；</li>
+<li> 14：未备案封禁。</li>
+                     */
+                    void SetForbidMode(const int64_t& _forbidMode);
+
+                    /**
+                     * 判断参数 ForbidMode 是否已赋值
+                     * @return ForbidMode 是否已赋值
+                     */
+                    bool ForbidModeHasBeenSet() const;
+
+                    /**
+                     * 获取目标域名是否被封禁。
+                     * @return TargetForbid 目标域名是否被封禁。
+                     */
+                    bool GetTargetForbid() const;
+
+                    /**
+                     * 设置目标域名是否被封禁。
+                     * @param TargetForbid 目标域名是否被封禁。
+                     */
+                    void SetTargetForbid(const bool& _targetForbid);
+
+                    /**
+                     * 判断参数 TargetForbid 是否已赋值
+                     * @return TargetForbid 是否已赋值
+                     */
+                    bool TargetForbidHasBeenSet() const;
 
                     /**
                      * 获取别称域名创建时间。
@@ -225,14 +269,28 @@ namespace TencentCloud
                     /**
                      * 别称域名状态，取值有：
 <li> active：已生效； </li>
-<li> pending：未生效；</li>
-<li> not_filed：未备案；</li>
+<li> pending：部署中；</li>
 <li> conflict：被找回。 </li>
 <li> stop：已停用；</li>
 <li> deleted：已删除。 </li>
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 封禁模式，取值有：
+<li> 0：未封禁； </li>
+<li> 11：合规封禁；</li>
+<li> 14：未备案封禁。</li>
+                     */
+                    int64_t m_forbidMode;
+                    bool m_forbidModeHasBeenSet;
+
+                    /**
+                     * 目标域名是否被封禁。
+                     */
+                    bool m_targetForbid;
+                    bool m_targetForbidHasBeenSet;
 
                     /**
                      * 别称域名创建时间。

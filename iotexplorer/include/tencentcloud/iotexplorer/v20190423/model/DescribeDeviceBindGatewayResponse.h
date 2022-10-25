@@ -85,6 +85,34 @@ namespace TencentCloud
                      */
                     bool GatewayNameHasBeenSet() const;
 
+                    /**
+                     * 获取设备对应产品所属的主账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayProductOwnerName 设备对应产品所属的主账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewayProductOwnerName() const;
+
+                    /**
+                     * 判断参数 GatewayProductOwnerName 是否已赋值
+                     * @return GatewayProductOwnerName 是否已赋值
+                     */
+                    bool GatewayProductOwnerNameHasBeenSet() const;
+
+                    /**
+                     * 获取设备对应产品所属的主账号 UIN
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayProductOwnerUin 设备对应产品所属的主账号 UIN
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewayProductOwnerUin() const;
+
+                    /**
+                     * 判断参数 GatewayProductOwnerUin 是否已赋值
+                     * @return GatewayProductOwnerUin 是否已赋值
+                     */
+                    bool GatewayProductOwnerUinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +135,20 @@ namespace TencentCloud
                      */
                     std::string m_gatewayName;
                     bool m_gatewayNameHasBeenSet;
+
+                    /**
+                     * 设备对应产品所属的主账号名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayProductOwnerName;
+                    bool m_gatewayProductOwnerNameHasBeenSet;
+
+                    /**
+                     * 设备对应产品所属的主账号 UIN
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayProductOwnerUin;
+                    bool m_gatewayProductOwnerUinHasBeenSet;
 
                 };
             }

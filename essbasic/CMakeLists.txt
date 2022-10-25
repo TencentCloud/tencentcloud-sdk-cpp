@@ -44,7 +44,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h
   include/tencentcloud/essbasic/v20210526/model/UploadFile.h
-  include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
+  include/tencentcloud/essbasic/v20210526/model/FlowFileInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h
   include/tencentcloud/essbasic/v20210526/model/SignUrlInfo.h
@@ -58,11 +58,13 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateFlowsByTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ProxyOrganizationOperator.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsResponse.h
   include/tencentcloud/essbasic/v20210526/model/CreateSealByImageResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/FlowResourceUrlInfo.h
-  include/tencentcloud/essbasic/v20210526/model/FlowFileInfo.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCancelFlowRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationOperatorsRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h
@@ -76,7 +78,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h
-  include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCancelFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsResponse.h
@@ -256,7 +258,7 @@ set(essbasic_src
   src/v20210526/model/DescribeFlowDetailInfoRequest.cpp
   src/v20210526/model/ChannelGetTaskResultApiResponse.cpp
   src/v20210526/model/UploadFile.cpp
-  src/v20210526/model/ProxyOrganizationOperator.cpp
+  src/v20210526/model/FlowFileInfo.cpp
   src/v20210526/model/ChannelGetTaskResultApiRequest.cpp
   src/v20210526/model/ChannelVerifyPdfResponse.cpp
   src/v20210526/model/SignUrlInfo.cpp
@@ -270,11 +272,13 @@ set(essbasic_src
   src/v20210526/model/CreateFlowsByTemplatesResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignReviewRequest.cpp
   src/v20210526/model/DescribeUsageResponse.cpp
+  src/v20210526/model/ProxyOrganizationOperator.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsResponse.cpp
   src/v20210526/model/CreateSealByImageResponse.cpp
   src/v20210526/model/ChannelVerifyPdfRequest.cpp
+  src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
   src/v20210526/model/FlowResourceUrlInfo.cpp
-  src/v20210526/model/FlowFileInfo.cpp
+  src/v20210526/model/ChannelCancelFlowRequest.cpp
   src/v20210526/model/DescribeTemplatesRequest.cpp
   src/v20210526/model/SyncProxyOrganizationOperatorsRequest.cpp
   src/v20210526/model/CreateConsoleLoginUrlResponse.cpp
@@ -288,7 +292,7 @@ set(essbasic_src
   src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.cpp
-  src/v20210526/model/DescribeResourceUrlsByFlowsRequest.cpp
+  src/v20210526/model/ChannelCancelFlowResponse.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeRequest.cpp
   src/v20210526/model/PrepareFlowsResponse.cpp

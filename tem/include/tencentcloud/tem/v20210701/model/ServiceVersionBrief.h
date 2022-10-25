@@ -25,6 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tem/v20210701/model/LogOutputConf.h>
+#include <tencentcloud/tem/v20210701/model/NodeInfo.h>
+#include <tencentcloud/tem/v20210701/model/DescribeRunPodPage.h>
+#include <tencentcloud/tem/v20210701/model/WorkloadInfo.h>
 
 
 namespace TencentCloud
@@ -335,6 +338,138 @@ namespace TencentCloud
                      */
                     bool UnderDeployingHasBeenSet() const;
 
+                    /**
+                     * 获取分批次部署状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BatchDeployStatus 分批次部署状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBatchDeployStatus() const;
+
+                    /**
+                     * 设置分批次部署状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BatchDeployStatus 分批次部署状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBatchDeployStatus(const std::string& _batchDeployStatus);
+
+                    /**
+                     * 判断参数 BatchDeployStatus 是否已赋值
+                     * @return BatchDeployStatus 是否已赋值
+                     */
+                    bool BatchDeployStatusHasBeenSet() const;
+
+                    /**
+                     * 获取可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zones 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zones 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     */
+                    bool ZonesHasBeenSet() const;
+
+                    /**
+                     * 获取节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeInfos 节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NodeInfo> GetNodeInfos() const;
+
+                    /**
+                     * 设置节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeInfos 节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeInfos(const std::vector<NodeInfo>& _nodeInfos);
+
+                    /**
+                     * 判断参数 NodeInfos 是否已赋值
+                     * @return NodeInfos 是否已赋值
+                     */
+                    bool NodeInfosHasBeenSet() const;
+
+                    /**
+                     * 获取实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodList 实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeRunPodPage GetPodList() const;
+
+                    /**
+                     * 设置实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PodList 实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPodList(const DescribeRunPodPage& _podList);
+
+                    /**
+                     * 判断参数 PodList 是否已赋值
+                     * @return PodList 是否已赋值
+                     */
+                    bool PodListHasBeenSet() const;
+
+                    /**
+                     * 获取工作负载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkloadInfo 工作负载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkloadInfo GetWorkloadInfo() const;
+
+                    /**
+                     * 设置工作负载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WorkloadInfo 工作负载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWorkloadInfo(const WorkloadInfo& _workloadInfo);
+
+                    /**
+                     * 判断参数 WorkloadInfo 是否已赋值
+                     * @return WorkloadInfo 是否已赋值
+                     */
+                    bool WorkloadInfoHasBeenSet() const;
+
+                    /**
+                     * 获取创建日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateDate 创建日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateDate() const;
+
+                    /**
+                     * 设置创建日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateDate 创建日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateDate(const std::string& _createDate);
+
+                    /**
+                     * 判断参数 CreateDate 是否已赋值
+                     * @return CreateDate 是否已赋值
+                     */
+                    bool CreateDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -429,6 +564,48 @@ namespace TencentCloud
                      */
                     bool m_underDeploying;
                     bool m_underDeployingHasBeenSet;
+
+                    /**
+                     * 分批次部署状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_batchDeployStatus;
+                    bool m_batchDeployStatusHasBeenSet;
+
+                    /**
+                     * 可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
+
+                    /**
+                     * 节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<NodeInfo> m_nodeInfos;
+                    bool m_nodeInfosHasBeenSet;
+
+                    /**
+                     * 实例信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeRunPodPage m_podList;
+                    bool m_podListHasBeenSet;
+
+                    /**
+                     * 工作负载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkloadInfo m_workloadInfo;
+                    bool m_workloadInfoHasBeenSet;
+
+                    /**
+                     * 创建日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createDate;
+                    bool m_createDateHasBeenSet;
 
                 };
             }

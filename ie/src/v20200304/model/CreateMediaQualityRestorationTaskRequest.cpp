@@ -26,7 +26,8 @@ CreateMediaQualityRestorationTaskRequest::CreateMediaQualityRestorationTaskReque
     m_downInfoHasBeenSet(false),
     m_transInfoHasBeenSet(false),
     m_saveInfoHasBeenSet(false),
-    m_callbackInfoHasBeenSet(false)
+    m_callbackInfoHasBeenSet(false),
+    m_topSpeedCodecChannelHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string CreateMediaQualityRestorationTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_callbackInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_topSpeedCodecChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopSpeedCodecChannel";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_topSpeedCodecChannel, allocator);
     }
 
 
@@ -149,6 +158,22 @@ void CreateMediaQualityRestorationTaskRequest::SetCallbackInfo(const CallbackInf
 bool CreateMediaQualityRestorationTaskRequest::CallbackInfoHasBeenSet() const
 {
     return m_callbackInfoHasBeenSet;
+}
+
+uint64_t CreateMediaQualityRestorationTaskRequest::GetTopSpeedCodecChannel() const
+{
+    return m_topSpeedCodecChannel;
+}
+
+void CreateMediaQualityRestorationTaskRequest::SetTopSpeedCodecChannel(const uint64_t& _topSpeedCodecChannel)
+{
+    m_topSpeedCodecChannel = _topSpeedCodecChannel;
+    m_topSpeedCodecChannelHasBeenSet = true;
+}
+
+bool CreateMediaQualityRestorationTaskRequest::TopSpeedCodecChannelHasBeenSet() const
+{
+    return m_topSpeedCodecChannelHasBeenSet;
 }
 
 

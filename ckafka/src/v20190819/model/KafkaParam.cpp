@@ -33,7 +33,9 @@ KafkaParam::KafkaParam() :
     m_enableTolerationHasBeenSet(false),
     m_qpsLimitHasBeenSet(false),
     m_tableMappingsHasBeenSet(false),
-    m_useTableMappingHasBeenSet(false)
+    m_useTableMappingHasBeenSet(false),
+    m_useAutoCreateTopicHasBeenSet(false),
+    m_compressionTypeHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,26 @@ CoreInternalOutcome KafkaParam::Deserialize(const rapidjson::Value &value)
         m_useTableMappingHasBeenSet = true;
     }
 
+    if (value.HasMember("UseAutoCreateTopic") && !value["UseAutoCreateTopic"].IsNull())
+    {
+        if (!value["UseAutoCreateTopic"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.UseAutoCreateTopic` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useAutoCreateTopic = value["UseAutoCreateTopic"].GetBool();
+        m_useAutoCreateTopicHasBeenSet = true;
+    }
+
+    if (value.HasMember("CompressionType") && !value["CompressionType"].IsNull())
+    {
+        if (!value["CompressionType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.CompressionType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_compressionType = string(value["CompressionType"].GetString());
+        m_compressionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +320,22 @@ void KafkaParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UseTableMapping";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useTableMapping, allocator);
+    }
+
+    if (m_useAutoCreateTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseAutoCreateTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useAutoCreateTopic, allocator);
+    }
+
+    if (m_compressionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompressionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_compressionType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -509,5 +547,37 @@ void KafkaParam::SetUseTableMapping(const bool& _useTableMapping)
 bool KafkaParam::UseTableMappingHasBeenSet() const
 {
     return m_useTableMappingHasBeenSet;
+}
+
+bool KafkaParam::GetUseAutoCreateTopic() const
+{
+    return m_useAutoCreateTopic;
+}
+
+void KafkaParam::SetUseAutoCreateTopic(const bool& _useAutoCreateTopic)
+{
+    m_useAutoCreateTopic = _useAutoCreateTopic;
+    m_useAutoCreateTopicHasBeenSet = true;
+}
+
+bool KafkaParam::UseAutoCreateTopicHasBeenSet() const
+{
+    return m_useAutoCreateTopicHasBeenSet;
+}
+
+string KafkaParam::GetCompressionType() const
+{
+    return m_compressionType;
+}
+
+void KafkaParam::SetCompressionType(const string& _compressionType)
+{
+    m_compressionType = _compressionType;
+    m_compressionTypeHasBeenSet = true;
+}
+
+bool KafkaParam::CompressionTypeHasBeenSet() const
+{
+    return m_compressionTypeHasBeenSet;
 }
 

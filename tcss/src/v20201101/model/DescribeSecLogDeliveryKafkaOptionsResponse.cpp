@@ -24,7 +24,8 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 DescribeSecLogDeliveryKafkaOptionsResponse::DescribeSecLogDeliveryKafkaOptionsResponse() :
-    m_instanceListHasBeenSet(false)
+    m_instanceListHasBeenSet(false),
+    m_regionListHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeSecLogDeliveryKafkaOptionsResponse::Deserialize(cons
         m_instanceListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RegionList") && !rsp["RegionList"].IsNull())
+    {
+        if (!rsp["RegionList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RegionList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RegionList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RegionInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_regionList.push_back(item);
+        }
+        m_regionListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeSecLogDeliveryKafkaOptionsResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_instanceList.begin(); itr != m_instanceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_regionListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_regionList.begin(); itr != m_regionList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<CKafkaInstanceInfo> DescribeSecLogDeliveryKafkaOptionsResponse::GetInstan
 bool DescribeSecLogDeliveryKafkaOptionsResponse::InstanceListHasBeenSet() const
 {
     return m_instanceListHasBeenSet;
+}
+
+vector<RegionInfo> DescribeSecLogDeliveryKafkaOptionsResponse::GetRegionList() const
+{
+    return m_regionList;
+}
+
+bool DescribeSecLogDeliveryKafkaOptionsResponse::RegionListHasBeenSet() const
+{
+    return m_regionListHasBeenSet;
 }
 
 

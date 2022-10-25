@@ -29,7 +29,10 @@ ApplyOpenBankSettleOrderRequest::ApplyOpenBankSettleOrderRequest() :
     m_channelNameHasBeenSet(false),
     m_channelSubMerchantIdHasBeenSet(false),
     m_settleDetailHasBeenSet(false),
-    m_notifyUrlHasBeenSet(false)
+    m_notifyUrlHasBeenSet(false),
+    m_remarkHasBeenSet(false),
+    m_externalSettleDataHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -94,6 +97,30 @@ string ApplyOpenBankSettleOrderRequest::ToJsonString() const
         string key = "NotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_remarkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Remark";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalSettleDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalSettleData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_externalSettleData.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +241,54 @@ void ApplyOpenBankSettleOrderRequest::SetNotifyUrl(const string& _notifyUrl)
 bool ApplyOpenBankSettleOrderRequest::NotifyUrlHasBeenSet() const
 {
     return m_notifyUrlHasBeenSet;
+}
+
+string ApplyOpenBankSettleOrderRequest::GetRemark() const
+{
+    return m_remark;
+}
+
+void ApplyOpenBankSettleOrderRequest::SetRemark(const string& _remark)
+{
+    m_remark = _remark;
+    m_remarkHasBeenSet = true;
+}
+
+bool ApplyOpenBankSettleOrderRequest::RemarkHasBeenSet() const
+{
+    return m_remarkHasBeenSet;
+}
+
+string ApplyOpenBankSettleOrderRequest::GetExternalSettleData() const
+{
+    return m_externalSettleData;
+}
+
+void ApplyOpenBankSettleOrderRequest::SetExternalSettleData(const string& _externalSettleData)
+{
+    m_externalSettleData = _externalSettleData;
+    m_externalSettleDataHasBeenSet = true;
+}
+
+bool ApplyOpenBankSettleOrderRequest::ExternalSettleDataHasBeenSet() const
+{
+    return m_externalSettleDataHasBeenSet;
+}
+
+string ApplyOpenBankSettleOrderRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void ApplyOpenBankSettleOrderRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool ApplyOpenBankSettleOrderRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

@@ -26,7 +26,9 @@ FileAttributeInfo::FileAttributeInfo() :
     m_fileSizeHasBeenSet(false),
     m_filePathHasBeenSet(false),
     m_fileCreateTimeHasBeenSet(false),
-    m_latestTamperedFileMTimeHasBeenSet(false)
+    m_latestTamperedFileMTimeHasBeenSet(false),
+    m_newFileHasBeenSet(false),
+    m_fileDiffHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome FileAttributeInfo::Deserialize(const rapidjson::Value &value
         m_latestTamperedFileMTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("NewFile") && !value["NewFile"].IsNull())
+    {
+        if (!value["NewFile"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileAttributeInfo.NewFile` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_newFile = string(value["NewFile"].GetString());
+        m_newFileHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileDiff") && !value["FileDiff"].IsNull())
+    {
+        if (!value["FileDiff"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileAttributeInfo.FileDiff` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileDiff = string(value["FileDiff"].GetString());
+        m_fileDiffHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void FileAttributeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "LatestTamperedFileMTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestTamperedFileMTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newFileHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewFile";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_newFile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileDiffHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileDiff";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileDiff.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void FileAttributeInfo::SetLatestTamperedFileMTime(const string& _latestTampered
 bool FileAttributeInfo::LatestTamperedFileMTimeHasBeenSet() const
 {
     return m_latestTamperedFileMTimeHasBeenSet;
+}
+
+string FileAttributeInfo::GetNewFile() const
+{
+    return m_newFile;
+}
+
+void FileAttributeInfo::SetNewFile(const string& _newFile)
+{
+    m_newFile = _newFile;
+    m_newFileHasBeenSet = true;
+}
+
+bool FileAttributeInfo::NewFileHasBeenSet() const
+{
+    return m_newFileHasBeenSet;
+}
+
+string FileAttributeInfo::GetFileDiff() const
+{
+    return m_fileDiff;
+}
+
+void FileAttributeInfo::SetFileDiff(const string& _fileDiff)
+{
+    m_fileDiff = _fileDiff;
+    m_fileDiffHasBeenSet = true;
+}
+
+bool FileAttributeInfo::FileDiffHasBeenSet() const
+{
+    return m_fileDiffHasBeenSet;
 }
 

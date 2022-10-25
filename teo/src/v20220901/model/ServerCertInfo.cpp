@@ -26,7 +26,8 @@ ServerCertInfo::ServerCertInfo() :
     m_typeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_deployTimeHasBeenSet(false),
-    m_signAlgoHasBeenSet(false)
+    m_signAlgoHasBeenSet(false),
+    m_commonNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ServerCertInfo::Deserialize(const rapidjson::Value &value)
         m_signAlgoHasBeenSet = true;
     }
 
+    if (value.HasMember("CommonName") && !value["CommonName"].IsNull())
+    {
+        if (!value["CommonName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerCertInfo.CommonName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_commonName = string(value["CommonName"].GetString());
+        m_commonNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ServerCertInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SignAlgo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signAlgo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_commonNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CommonName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_commonName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ServerCertInfo::SetSignAlgo(const string& _signAlgo)
 bool ServerCertInfo::SignAlgoHasBeenSet() const
 {
     return m_signAlgoHasBeenSet;
+}
+
+string ServerCertInfo::GetCommonName() const
+{
+    return m_commonName;
+}
+
+void ServerCertInfo::SetCommonName(const string& _commonName)
+{
+    m_commonName = _commonName;
+    m_commonNameHasBeenSet = true;
+}
+
+bool ServerCertInfo::CommonNameHasBeenSet() const
+{
+    return m_commonNameHasBeenSet;
 }
 

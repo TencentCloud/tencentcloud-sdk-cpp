@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/QueryFilter.h>
 
 
 namespace TencentCloud
@@ -150,6 +151,24 @@ namespace TencentCloud
                      */
                     bool KeywordHasBeenSet() const;
 
+                    /**
+                     * 获取查询过滤器
+                     * @return Filters 查询过滤器
+                     */
+                    std::vector<QueryFilter> GetFilters() const;
+
+                    /**
+                     * 设置查询过滤器
+                     * @param Filters 查询过滤器
+                     */
+                    void SetFilters(const std::vector<QueryFilter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +206,12 @@ namespace TencentCloud
                      */
                     std::string m_keyword;
                     bool m_keywordHasBeenSet;
+
+                    /**
+                     * 查询过滤器
+                     */
+                    std::vector<QueryFilter> m_filters;
+                    bool m_filtersHasBeenSet;
 
                 };
             }

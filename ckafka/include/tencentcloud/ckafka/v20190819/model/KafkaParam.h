@@ -321,6 +321,50 @@ namespace TencentCloud
                      */
                     bool UseTableMappingHasBeenSet() const;
 
+                    /**
+                     * 获取使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetUseAutoCreateTopic() const;
+
+                    /**
+                     * 设置使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UseAutoCreateTopic 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUseAutoCreateTopic(const bool& _useAutoCreateTopic);
+
+                    /**
+                     * 判断参数 UseAutoCreateTopic 是否已赋值
+                     * @return UseAutoCreateTopic 是否已赋值
+                     */
+                    bool UseAutoCreateTopicHasBeenSet() const;
+
+                    /**
+                     * 获取写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCompressionType() const;
+
+                    /**
+                     * 设置写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CompressionType 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCompressionType(const std::string& _compressionType);
+
+                    /**
+                     * 判断参数 CompressionType 是否已赋值
+                     * @return CompressionType 是否已赋值
+                     */
+                    bool CompressionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +454,20 @@ namespace TencentCloud
                      */
                     bool m_useTableMapping;
                     bool m_useTableMappingHasBeenSet;
+
+                    /**
+                     * 使用的Topic是否需要自动创建（目前只支持SOURCE流入任务，如果不使用分发到多个topic，需要在Topic字段填写需要自动创建的topic名）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useAutoCreateTopic;
+                    bool m_useAutoCreateTopicHasBeenSet;
+
+                    /**
+                     * 写入Topic时是否进行压缩，不开启填"none"，开启的话，可选择"gzip", "snappy", "lz4"中的一个进行填写。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_compressionType;
+                    bool m_compressionTypeHasBeenSet;
 
                 };
             }

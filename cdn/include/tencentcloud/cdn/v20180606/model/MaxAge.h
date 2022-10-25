@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdn/v20180606/model/MaxAgeRule.h>
+#include <tencentcloud/cdn/v20180606/model/MaxAgeCodeRule.h>
 
 
 namespace TencentCloud
@@ -99,6 +100,28 @@ off：关闭
                      */
                     bool MaxAgeRulesHasBeenSet() const;
 
+                    /**
+                     * 获取MaxAge 状态码相关规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxAgeCodeRule MaxAge 状态码相关规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MaxAgeCodeRule GetMaxAgeCodeRule() const;
+
+                    /**
+                     * 设置MaxAge 状态码相关规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxAgeCodeRule MaxAge 状态码相关规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxAgeCodeRule(const MaxAgeCodeRule& _maxAgeCodeRule);
+
+                    /**
+                     * 判断参数 MaxAgeCodeRule 是否已赋值
+                     * @return MaxAgeCodeRule 是否已赋值
+                     */
+                    bool MaxAgeCodeRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +139,13 @@ off：关闭
                      */
                     std::vector<MaxAgeRule> m_maxAgeRules;
                     bool m_maxAgeRulesHasBeenSet;
+
+                    /**
+                     * MaxAge 状态码相关规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MaxAgeCodeRule m_maxAgeCodeRule;
+                    bool m_maxAgeCodeRuleHasBeenSet;
 
                 };
             }

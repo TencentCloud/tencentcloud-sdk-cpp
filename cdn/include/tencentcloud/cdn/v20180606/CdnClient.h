@@ -670,7 +670,7 @@ namespace TencentCloud
                 DescribeEventLogDataOutcomeCallable DescribeEventLogDataCallable(const Model::DescribeEventLogDataRequest& request);
 
                 /**
-                 *DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG 和 Guetzli。 
+                 *DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。 
                  * @param req DescribeImageConfigRequest
                  * @return DescribeImageConfigOutcome
                  */
@@ -1153,7 +1153,7 @@ namespace TencentCloud
                 UpdateDomainConfigOutcomeCallable UpdateDomainConfigCallable(const Model::UpdateDomainConfigRequest& request);
 
                 /**
-                 *UpdateImageConfig 用于更新控制台图片优化的相关配置，支持Webp、TPG 和 Guetzli。 
+                 *UpdateImageConfig 用于更新控制台图片优化的相关配置，支持Webp、TPG、 Guetzli 和 Avif。 
                  * @param req UpdateImageConfigRequest
                  * @return UpdateImageConfigOutcome
                  */

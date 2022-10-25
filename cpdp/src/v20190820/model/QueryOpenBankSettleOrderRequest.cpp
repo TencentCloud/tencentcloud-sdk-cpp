@@ -26,7 +26,8 @@ QueryOpenBankSettleOrderRequest::QueryOpenBankSettleOrderRequest() :
     m_channelMerchantIdHasBeenSet(false),
     m_channelSubMerchantIdHasBeenSet(false),
     m_outSettleIdHasBeenSet(false),
-    m_channelSettleIdHasBeenSet(false)
+    m_channelSettleIdHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string QueryOpenBankSettleOrderRequest::ToJsonString() const
         string key = "ChannelSettleId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channelSettleId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void QueryOpenBankSettleOrderRequest::SetChannelSettleId(const string& _channelS
 bool QueryOpenBankSettleOrderRequest::ChannelSettleIdHasBeenSet() const
 {
     return m_channelSettleIdHasBeenSet;
+}
+
+string QueryOpenBankSettleOrderRequest::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void QueryOpenBankSettleOrderRequest::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool QueryOpenBankSettleOrderRequest::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 
 

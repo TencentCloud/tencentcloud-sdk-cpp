@@ -23,12 +23,12 @@ using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
 CreateImageExportJobRequest::CreateImageExportJobRequest() :
-    m_exportFieldHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_byHasBeenSet(false),
-    m_orderHasBeenSet(false)
+    m_orderHasBeenSet(false),
+    m_exportFieldHasBeenSet(false)
 {
 }
 
@@ -38,19 +38,6 @@ string CreateImageExportJobRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_exportFieldHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ExportField";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_exportField.begin(); itr != m_exportField.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
 
     if (m_filtersHasBeenSet)
     {
@@ -99,6 +86,19 @@ string CreateImageExportJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_exportFieldHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportField";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_exportField.begin(); itr != m_exportField.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -106,22 +106,6 @@ string CreateImageExportJobRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<string> CreateImageExportJobRequest::GetExportField() const
-{
-    return m_exportField;
-}
-
-void CreateImageExportJobRequest::SetExportField(const vector<string>& _exportField)
-{
-    m_exportField = _exportField;
-    m_exportFieldHasBeenSet = true;
-}
-
-bool CreateImageExportJobRequest::ExportFieldHasBeenSet() const
-{
-    return m_exportFieldHasBeenSet;
-}
 
 vector<RunTimeFilters> CreateImageExportJobRequest::GetFilters() const
 {
@@ -201,6 +185,22 @@ void CreateImageExportJobRequest::SetOrder(const string& _order)
 bool CreateImageExportJobRequest::OrderHasBeenSet() const
 {
     return m_orderHasBeenSet;
+}
+
+vector<string> CreateImageExportJobRequest::GetExportField() const
+{
+    return m_exportField;
+}
+
+void CreateImageExportJobRequest::SetExportField(const vector<string>& _exportField)
+{
+    m_exportField = _exportField;
+    m_exportFieldHasBeenSet = true;
+}
+
+bool CreateImageExportJobRequest::ExportFieldHasBeenSet() const
+{
+    return m_exportFieldHasBeenSet;
 }
 
 

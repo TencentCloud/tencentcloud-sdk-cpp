@@ -34,7 +34,13 @@ ServiceVersionBrief::ServiceVersionBrief() :
     m_environmentNameHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
-    m_underDeployingHasBeenSet(false)
+    m_underDeployingHasBeenSet(false),
+    m_batchDeployStatusHasBeenSet(false),
+    m_zonesHasBeenSet(false),
+    m_nodeInfosHasBeenSet(false),
+    m_podListHasBeenSet(false),
+    m_workloadInfoHasBeenSet(false),
+    m_createDateHasBeenSet(false)
 {
 }
 
@@ -190,6 +196,93 @@ CoreInternalOutcome ServiceVersionBrief::Deserialize(const rapidjson::Value &val
         m_underDeployingHasBeenSet = true;
     }
 
+    if (value.HasMember("BatchDeployStatus") && !value["BatchDeployStatus"].IsNull())
+    {
+        if (!value["BatchDeployStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVersionBrief.BatchDeployStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_batchDeployStatus = string(value["BatchDeployStatus"].GetString());
+        m_batchDeployStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zones") && !value["Zones"].IsNull())
+    {
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceVersionBrief.Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
+    if (value.HasMember("NodeInfos") && !value["NodeInfos"].IsNull())
+    {
+        if (!value["NodeInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceVersionBrief.NodeInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NodeInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            NodeInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nodeInfos.push_back(item);
+        }
+        m_nodeInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodList") && !value["PodList"].IsNull())
+    {
+        if (!value["PodList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVersionBrief.PodList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_podList.Deserialize(value["PodList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_podListHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkloadInfo") && !value["WorkloadInfo"].IsNull())
+    {
+        if (!value["WorkloadInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVersionBrief.WorkloadInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_workloadInfo.Deserialize(value["WorkloadInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_workloadInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateDate") && !value["CreateDate"].IsNull())
+    {
+        if (!value["CreateDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVersionBrief.CreateDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createDate = string(value["CreateDate"].GetString());
+        m_createDateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +401,68 @@ void ServiceVersionBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "UnderDeploying";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_underDeploying, allocator);
+    }
+
+    if (m_batchDeployStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchDeployStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_batchDeployStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nodeInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeInfos.begin(); itr != m_nodeInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_podListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_podList.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_workloadInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkloadInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_workloadInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createDate.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -535,5 +690,101 @@ void ServiceVersionBrief::SetUnderDeploying(const bool& _underDeploying)
 bool ServiceVersionBrief::UnderDeployingHasBeenSet() const
 {
     return m_underDeployingHasBeenSet;
+}
+
+string ServiceVersionBrief::GetBatchDeployStatus() const
+{
+    return m_batchDeployStatus;
+}
+
+void ServiceVersionBrief::SetBatchDeployStatus(const string& _batchDeployStatus)
+{
+    m_batchDeployStatus = _batchDeployStatus;
+    m_batchDeployStatusHasBeenSet = true;
+}
+
+bool ServiceVersionBrief::BatchDeployStatusHasBeenSet() const
+{
+    return m_batchDeployStatusHasBeenSet;
+}
+
+vector<string> ServiceVersionBrief::GetZones() const
+{
+    return m_zones;
+}
+
+void ServiceVersionBrief::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool ServiceVersionBrief::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
+}
+
+vector<NodeInfo> ServiceVersionBrief::GetNodeInfos() const
+{
+    return m_nodeInfos;
+}
+
+void ServiceVersionBrief::SetNodeInfos(const vector<NodeInfo>& _nodeInfos)
+{
+    m_nodeInfos = _nodeInfos;
+    m_nodeInfosHasBeenSet = true;
+}
+
+bool ServiceVersionBrief::NodeInfosHasBeenSet() const
+{
+    return m_nodeInfosHasBeenSet;
+}
+
+DescribeRunPodPage ServiceVersionBrief::GetPodList() const
+{
+    return m_podList;
+}
+
+void ServiceVersionBrief::SetPodList(const DescribeRunPodPage& _podList)
+{
+    m_podList = _podList;
+    m_podListHasBeenSet = true;
+}
+
+bool ServiceVersionBrief::PodListHasBeenSet() const
+{
+    return m_podListHasBeenSet;
+}
+
+WorkloadInfo ServiceVersionBrief::GetWorkloadInfo() const
+{
+    return m_workloadInfo;
+}
+
+void ServiceVersionBrief::SetWorkloadInfo(const WorkloadInfo& _workloadInfo)
+{
+    m_workloadInfo = _workloadInfo;
+    m_workloadInfoHasBeenSet = true;
+}
+
+bool ServiceVersionBrief::WorkloadInfoHasBeenSet() const
+{
+    return m_workloadInfoHasBeenSet;
+}
+
+string ServiceVersionBrief::GetCreateDate() const
+{
+    return m_createDate;
+}
+
+void ServiceVersionBrief::SetCreateDate(const string& _createDate)
+{
+    m_createDate = _createDate;
+    m_createDateHasBeenSet = true;
+}
+
+bool ServiceVersionBrief::CreateDateHasBeenSet() const
+{
+    return m_createDateHasBeenSet;
 }
 

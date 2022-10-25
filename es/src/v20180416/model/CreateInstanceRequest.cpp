@@ -54,7 +54,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_webNodeTypeInfoHasBeenSet(false),
     m_protocolHasBeenSet(false),
     m_operationDurationHasBeenSet(false),
-    m_enableHybridStorageHasBeenSet(false)
+    m_enableHybridStorageHasBeenSet(false),
+    m_diskEnhanceHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "EnableHybridStorage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableHybridStorage, allocator);
+    }
+
+    if (m_diskEnhanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEnhance";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_diskEnhance, allocator);
     }
 
 
@@ -867,6 +876,22 @@ void CreateInstanceRequest::SetEnableHybridStorage(const bool& _enableHybridStor
 bool CreateInstanceRequest::EnableHybridStorageHasBeenSet() const
 {
     return m_enableHybridStorageHasBeenSet;
+}
+
+uint64_t CreateInstanceRequest::GetDiskEnhance() const
+{
+    return m_diskEnhance;
+}
+
+void CreateInstanceRequest::SetDiskEnhance(const uint64_t& _diskEnhance)
+{
+    m_diskEnhance = _diskEnhance;
+    m_diskEnhanceHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::DiskEnhanceHasBeenSet() const
+{
+    return m_diskEnhanceHasBeenSet;
 }
 
 

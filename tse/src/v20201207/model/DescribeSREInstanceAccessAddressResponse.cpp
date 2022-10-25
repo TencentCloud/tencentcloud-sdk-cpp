@@ -30,7 +30,8 @@ DescribeSREInstanceAccessAddressResponse::DescribeSREInstanceAccessAddressRespon
     m_consoleInternetAddressHasBeenSet(false),
     m_consoleIntranetAddressHasBeenSet(false),
     m_internetBandWidthHasBeenSet(false),
-    m_consoleInternetBandWidthHasBeenSet(false)
+    m_consoleInternetBandWidthHasBeenSet(false),
+    m_limiterAddressInfosHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,26 @@ CoreInternalOutcome DescribeSREInstanceAccessAddressResponse::Deserialize(const 
         m_consoleInternetBandWidthHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LimiterAddressInfos") && !rsp["LimiterAddressInfos"].IsNull())
+    {
+        if (!rsp["LimiterAddressInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LimiterAddressInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["LimiterAddressInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PolarisLimiterAddress item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_limiterAddressInfos.push_back(item);
+        }
+        m_limiterAddressInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -219,6 +240,21 @@ string DescribeSREInstanceAccessAddressResponse::ToJsonString() const
         string key = "ConsoleInternetBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_consoleInternetBandWidth, allocator);
+    }
+
+    if (m_limiterAddressInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimiterAddressInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_limiterAddressInfos.begin(); itr != m_limiterAddressInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -301,6 +337,16 @@ int64_t DescribeSREInstanceAccessAddressResponse::GetConsoleInternetBandWidth() 
 bool DescribeSREInstanceAccessAddressResponse::ConsoleInternetBandWidthHasBeenSet() const
 {
     return m_consoleInternetBandWidthHasBeenSet;
+}
+
+vector<PolarisLimiterAddress> DescribeSREInstanceAccessAddressResponse::GetLimiterAddressInfos() const
+{
+    return m_limiterAddressInfos;
+}
+
+bool DescribeSREInstanceAccessAddressResponse::LimiterAddressInfosHasBeenSet() const
+{
+    return m_limiterAddressInfosHasBeenSet;
 }
 
 

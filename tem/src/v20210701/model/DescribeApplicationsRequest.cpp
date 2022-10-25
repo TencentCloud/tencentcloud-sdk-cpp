@@ -28,7 +28,8 @@ DescribeApplicationsRequest::DescribeApplicationsRequest() :
     m_offsetHasBeenSet(false),
     m_sourceChannelHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_keywordHasBeenSet(false)
+    m_keywordHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,21 @@ string DescribeApplicationsRequest::ToJsonString() const
         string key = "Keyword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -189,6 +205,22 @@ void DescribeApplicationsRequest::SetKeyword(const string& _keyword)
 bool DescribeApplicationsRequest::KeywordHasBeenSet() const
 {
     return m_keywordHasBeenSet;
+}
+
+vector<QueryFilter> DescribeApplicationsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeApplicationsRequest::SetFilters(const vector<QueryFilter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeApplicationsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

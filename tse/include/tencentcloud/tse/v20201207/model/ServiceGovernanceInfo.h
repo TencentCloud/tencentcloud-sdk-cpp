@@ -174,6 +174,24 @@ namespace TencentCloud
                      */
                     bool PgwVpcInfosHasBeenSet() const;
 
+                    /**
+                     * 获取服务治理限流server引擎绑定的网络信息
+                     * @return LimiterVpcInfos 服务治理限流server引擎绑定的网络信息
+                     */
+                    std::vector<VpcInfo> GetLimiterVpcInfos() const;
+
+                    /**
+                     * 设置服务治理限流server引擎绑定的网络信息
+                     * @param LimiterVpcInfos 服务治理限流server引擎绑定的网络信息
+                     */
+                    void SetLimiterVpcInfos(const std::vector<VpcInfo>& _limiterVpcInfos);
+
+                    /**
+                     * 判断参数 LimiterVpcInfos 是否已赋值
+                     * @return LimiterVpcInfos 是否已赋值
+                     */
+                    bool LimiterVpcInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +235,12 @@ namespace TencentCloud
                      */
                     std::vector<VpcInfo> m_pgwVpcInfos;
                     bool m_pgwVpcInfosHasBeenSet;
+
+                    /**
+                     * 服务治理限流server引擎绑定的网络信息
+                     */
+                    std::vector<VpcInfo> m_limiterVpcInfos;
+                    bool m_limiterVpcInfosHasBeenSet;
 
                 };
             }

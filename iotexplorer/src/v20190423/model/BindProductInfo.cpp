@@ -28,7 +28,8 @@ BindProductInfo::BindProductInfo() :
     m_categoryIdHasBeenSet(false),
     m_productTypeHasBeenSet(false),
     m_netTypeHasBeenSet(false),
-    m_devStatusHasBeenSet(false)
+    m_devStatusHasBeenSet(false),
+    m_productOwnerNameHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome BindProductInfo::Deserialize(const rapidjson::Value &value)
         m_devStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ProductOwnerName") && !value["ProductOwnerName"].IsNull())
+    {
+        if (!value["ProductOwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BindProductInfo.ProductOwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productOwnerName = string(value["ProductOwnerName"].GetString());
+        m_productOwnerNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void BindProductInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DevStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_devStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productOwnerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductOwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productOwnerName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void BindProductInfo::SetDevStatus(const string& _devStatus)
 bool BindProductInfo::DevStatusHasBeenSet() const
 {
     return m_devStatusHasBeenSet;
+}
+
+string BindProductInfo::GetProductOwnerName() const
+{
+    return m_productOwnerName;
+}
+
+void BindProductInfo::SetProductOwnerName(const string& _productOwnerName)
+{
+    m_productOwnerName = _productOwnerName;
+    m_productOwnerNameHasBeenSet = true;
+}
+
+bool BindProductInfo::ProductOwnerNameHasBeenSet() const
+{
+    return m_productOwnerNameHasBeenSet;
 }
 

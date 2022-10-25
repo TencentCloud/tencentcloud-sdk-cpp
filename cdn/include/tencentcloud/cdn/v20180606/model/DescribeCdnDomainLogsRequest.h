@@ -167,18 +167,18 @@ global：同时获取境内、境外加速日志包下载链接（分开打包�
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取指定下载日志的类型。
-access：获取访问日志
-                     * @return LogType 指定下载日志的类型。
-access：获取访问日志
+                     * 获取指定下载日志的类型，目前仅支持访问日志（access）。
+access：访问日志
+                     * @return LogType 指定下载日志的类型，目前仅支持访问日志（access）。
+access：访问日志
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置指定下载日志的类型。
-access：获取访问日志
-                     * @param LogType 指定下载日志的类型。
-access：获取访问日志
+                     * 设置指定下载日志的类型，目前仅支持访问日志（access）。
+access：访问日志
+                     * @param LogType 指定下载日志的类型，目前仅支持访问日志（access）。
+access：访问日志
                      */
                     void SetLogType(const std::string& _logType);
 
@@ -231,8 +231,8 @@ global：同时获取境内、境外加速日志包下载链接（分开打包�
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 指定下载日志的类型。
-access：获取访问日志
+                     * 指定下载日志的类型，目前仅支持访问日志（access）。
+access：访问日志
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

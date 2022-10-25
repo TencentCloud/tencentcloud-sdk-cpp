@@ -30,7 +30,13 @@ RunVersionPod::RunVersionPod() :
     m_deployVersionHasBeenSet(false),
     m_restartCountHasBeenSet(false),
     m_readyHasBeenSet(false),
-    m_containerStateHasBeenSet(false)
+    m_containerStateHasBeenSet(false),
+    m_nodeInfoHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_unhealthyHasBeenSet(false),
+    m_unhealthyWarningMsgHasBeenSet(false),
+    m_versionIdHasBeenSet(false),
+    m_applicationNameHasBeenSet(false)
 {
 }
 
@@ -139,6 +145,73 @@ CoreInternalOutcome RunVersionPod::Deserialize(const rapidjson::Value &value)
         m_containerStateHasBeenSet = true;
     }
 
+    if (value.HasMember("NodeInfo") && !value["NodeInfo"].IsNull())
+    {
+        if (!value["NodeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.NodeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_nodeInfo.Deserialize(value["NodeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_nodeInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartTime") && !value["StartTime"].IsNull())
+    {
+        if (!value["StartTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.StartTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startTime = string(value["StartTime"].GetString());
+        m_startTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Unhealthy") && !value["Unhealthy"].IsNull())
+    {
+        if (!value["Unhealthy"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.Unhealthy` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_unhealthy = value["Unhealthy"].GetBool();
+        m_unhealthyHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnhealthyWarningMsg") && !value["UnhealthyWarningMsg"].IsNull())
+    {
+        if (!value["UnhealthyWarningMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.UnhealthyWarningMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_unhealthyWarningMsg = string(value["UnhealthyWarningMsg"].GetString());
+        m_unhealthyWarningMsgHasBeenSet = true;
+    }
+
+    if (value.HasMember("VersionId") && !value["VersionId"].IsNull())
+    {
+        if (!value["VersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.VersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_versionId = string(value["VersionId"].GetString());
+        m_versionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApplicationName") && !value["ApplicationName"].IsNull())
+    {
+        if (!value["ApplicationName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunVersionPod.ApplicationName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicationName = string(value["ApplicationName"].GetString());
+        m_applicationNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +297,55 @@ void RunVersionPod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ContainerState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_containerState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nodeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_nodeInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_startTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_unhealthyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Unhealthy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unhealthy, allocator);
+    }
+
+    if (m_unhealthyWarningMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhealthyWarningMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_unhealthyWarningMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_versionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_versionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +509,101 @@ void RunVersionPod::SetContainerState(const string& _containerState)
 bool RunVersionPod::ContainerStateHasBeenSet() const
 {
     return m_containerStateHasBeenSet;
+}
+
+NodeInfo RunVersionPod::GetNodeInfo() const
+{
+    return m_nodeInfo;
+}
+
+void RunVersionPod::SetNodeInfo(const NodeInfo& _nodeInfo)
+{
+    m_nodeInfo = _nodeInfo;
+    m_nodeInfoHasBeenSet = true;
+}
+
+bool RunVersionPod::NodeInfoHasBeenSet() const
+{
+    return m_nodeInfoHasBeenSet;
+}
+
+string RunVersionPod::GetStartTime() const
+{
+    return m_startTime;
+}
+
+void RunVersionPod::SetStartTime(const string& _startTime)
+{
+    m_startTime = _startTime;
+    m_startTimeHasBeenSet = true;
+}
+
+bool RunVersionPod::StartTimeHasBeenSet() const
+{
+    return m_startTimeHasBeenSet;
+}
+
+bool RunVersionPod::GetUnhealthy() const
+{
+    return m_unhealthy;
+}
+
+void RunVersionPod::SetUnhealthy(const bool& _unhealthy)
+{
+    m_unhealthy = _unhealthy;
+    m_unhealthyHasBeenSet = true;
+}
+
+bool RunVersionPod::UnhealthyHasBeenSet() const
+{
+    return m_unhealthyHasBeenSet;
+}
+
+string RunVersionPod::GetUnhealthyWarningMsg() const
+{
+    return m_unhealthyWarningMsg;
+}
+
+void RunVersionPod::SetUnhealthyWarningMsg(const string& _unhealthyWarningMsg)
+{
+    m_unhealthyWarningMsg = _unhealthyWarningMsg;
+    m_unhealthyWarningMsgHasBeenSet = true;
+}
+
+bool RunVersionPod::UnhealthyWarningMsgHasBeenSet() const
+{
+    return m_unhealthyWarningMsgHasBeenSet;
+}
+
+string RunVersionPod::GetVersionId() const
+{
+    return m_versionId;
+}
+
+void RunVersionPod::SetVersionId(const string& _versionId)
+{
+    m_versionId = _versionId;
+    m_versionIdHasBeenSet = true;
+}
+
+bool RunVersionPod::VersionIdHasBeenSet() const
+{
+    return m_versionIdHasBeenSet;
+}
+
+string RunVersionPod::GetApplicationName() const
+{
+    return m_applicationName;
+}
+
+void RunVersionPod::SetApplicationName(const string& _applicationName)
+{
+    m_applicationName = _applicationName;
+    m_applicationNameHasBeenSet = true;
+}
+
+bool RunVersionPod::ApplicationNameHasBeenSet() const
+{
+    return m_applicationNameHasBeenSet;
 }
 

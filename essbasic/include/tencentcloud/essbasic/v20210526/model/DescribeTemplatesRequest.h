@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取模板唯一标识，查询单个模版时使用
-                     * @return TemplateId 模板唯一标识，查询单个模版时使用
+                     * 获取模板唯一标识，查询单个模板时使用
+                     * @return TemplateId 模板唯一标识，查询单个模板时使用
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置模板唯一标识，查询单个模版时使用
-                     * @param TemplateId 模板唯一标识，查询单个模版时使用
+                     * 设置模板唯一标识，查询单个模板时使用
+                     * @param TemplateId 模板唯一标识，查询单个模板时使用
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -197,7 +197,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 模板唯一标识，查询单个模版时使用
+                     * 模板唯一标识，查询单个模板时使用
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

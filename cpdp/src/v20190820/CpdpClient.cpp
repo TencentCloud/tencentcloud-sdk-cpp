@@ -900,6 +900,49 @@ CpdpClient::BindOpenBankExternalSubMerchantBankAccountOutcomeCallable CpdpClient
     return task->get_future();
 }
 
+CpdpClient::BindOpenBankProfitSharePayeeOutcome CpdpClient::BindOpenBankProfitSharePayee(const BindOpenBankProfitSharePayeeRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindOpenBankProfitSharePayee");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindOpenBankProfitSharePayeeResponse rsp = BindOpenBankProfitSharePayeeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindOpenBankProfitSharePayeeOutcome(rsp);
+        else
+            return BindOpenBankProfitSharePayeeOutcome(o.GetError());
+    }
+    else
+    {
+        return BindOpenBankProfitSharePayeeOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::BindOpenBankProfitSharePayeeAsync(const BindOpenBankProfitSharePayeeRequest& request, const BindOpenBankProfitSharePayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindOpenBankProfitSharePayee(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::BindOpenBankProfitSharePayeeOutcomeCallable CpdpClient::BindOpenBankProfitSharePayeeCallable(const BindOpenBankProfitSharePayeeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindOpenBankProfitSharePayeeOutcome()>>(
+        [this, request]()
+        {
+            return this->BindOpenBankProfitSharePayee(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::BindRelateAccReUnionPayOutcome CpdpClient::BindRelateAccReUnionPay(const BindRelateAccReUnionPayRequest &request)
 {
     auto outcome = MakeRequest(request, "BindRelateAccReUnionPay");
@@ -6655,6 +6698,49 @@ CpdpClient::QueryOpenBankPaymentOrderOutcomeCallable CpdpClient::QueryOpenBankPa
         [this, request]()
         {
             return this->QueryOpenBankPaymentOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CpdpClient::QueryOpenBankProfitSharePayeeOutcome CpdpClient::QueryOpenBankProfitSharePayee(const QueryOpenBankProfitSharePayeeRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryOpenBankProfitSharePayee");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryOpenBankProfitSharePayeeResponse rsp = QueryOpenBankProfitSharePayeeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryOpenBankProfitSharePayeeOutcome(rsp);
+        else
+            return QueryOpenBankProfitSharePayeeOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryOpenBankProfitSharePayeeOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryOpenBankProfitSharePayeeAsync(const QueryOpenBankProfitSharePayeeRequest& request, const QueryOpenBankProfitSharePayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryOpenBankProfitSharePayee(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryOpenBankProfitSharePayeeOutcomeCallable CpdpClient::QueryOpenBankProfitSharePayeeCallable(const QueryOpenBankProfitSharePayeeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryOpenBankProfitSharePayeeOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryOpenBankProfitSharePayee(request);
         }
     );
 

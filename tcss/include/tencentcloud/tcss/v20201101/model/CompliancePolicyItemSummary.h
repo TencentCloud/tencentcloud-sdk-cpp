@@ -376,6 +376,28 @@ RESULT_FAILED: 未通过
                      */
                     bool BenchmarkStandardIdHasBeenSet() const;
 
+                    /**
+                     * 获取检测项适用的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicableVersion 检测项适用的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicableVersion() const;
+
+                    /**
+                     * 设置检测项适用的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicableVersion 检测项适用的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicableVersion(const std::string& _applicableVersion);
+
+                    /**
+                     * 判断参数 ApplicableVersion 是否已赋值
+                     * @return ApplicableVersion 是否已赋值
+                     */
+                    bool ApplicableVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +504,13 @@ RESULT_FAILED: 未通过
                      */
                     uint64_t m_benchmarkStandardId;
                     bool m_benchmarkStandardIdHasBeenSet;
+
+                    /**
+                     * 检测项适用的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicableVersion;
+                    bool m_applicableVersionHasBeenSet;
 
                 };
             }

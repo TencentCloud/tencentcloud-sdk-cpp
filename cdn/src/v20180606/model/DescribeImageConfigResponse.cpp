@@ -26,7 +26,8 @@ using namespace std;
 DescribeImageConfigResponse::DescribeImageConfigResponse() :
     m_webpAdapterHasBeenSet(false),
     m_tpgAdapterHasBeenSet(false),
-    m_guetzliAdapterHasBeenSet(false)
+    m_guetzliAdapterHasBeenSet(false),
+    m_avifAdapterHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,23 @@ CoreInternalOutcome DescribeImageConfigResponse::Deserialize(const string &paylo
         m_guetzliAdapterHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AvifAdapter") && !rsp["AvifAdapter"].IsNull())
+    {
+        if (!rsp["AvifAdapter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AvifAdapter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_avifAdapter.Deserialize(rsp["AvifAdapter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_avifAdapterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -150,6 +168,15 @@ string DescribeImageConfigResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_guetzliAdapter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_avifAdapterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvifAdapter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_avifAdapter.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -192,6 +219,16 @@ GuetzliAdapter DescribeImageConfigResponse::GetGuetzliAdapter() const
 bool DescribeImageConfigResponse::GuetzliAdapterHasBeenSet() const
 {
     return m_guetzliAdapterHasBeenSet;
+}
+
+AvifAdapter DescribeImageConfigResponse::GetAvifAdapter() const
+{
+    return m_avifAdapter;
+}
+
+bool DescribeImageConfigResponse::AvifAdapterHasBeenSet() const
+{
+    return m_avifAdapterHasBeenSet;
 }
 
 

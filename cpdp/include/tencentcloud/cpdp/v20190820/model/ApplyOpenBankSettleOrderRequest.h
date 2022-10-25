@@ -168,6 +168,60 @@ namespace TencentCloud
                      */
                     bool NotifyUrlHasBeenSet() const;
 
+                    /**
+                     * 获取附言
+                     * @return Remark 附言
+                     */
+                    std::string GetRemark() const;
+
+                    /**
+                     * 设置附言
+                     * @param Remark 附言
+                     */
+                    void SetRemark(const std::string& _remark);
+
+                    /**
+                     * 判断参数 Remark 是否已赋值
+                     * @return Remark 是否已赋值
+                     */
+                    bool RemarkHasBeenSet() const;
+
+                    /**
+                     * 获取结算第三方渠道扩展信息。通联国际必选
+                     * @return ExternalSettleData 结算第三方渠道扩展信息。通联国际必选
+                     */
+                    std::string GetExternalSettleData() const;
+
+                    /**
+                     * 设置结算第三方渠道扩展信息。通联国际必选
+                     * @param ExternalSettleData 结算第三方渠道扩展信息。通联国际必选
+                     */
+                    void SetExternalSettleData(const std::string& _externalSettleData);
+
+                    /**
+                     * 判断参数 ExternalSettleData 是否已赋值
+                     * @return ExternalSettleData 是否已赋值
+                     */
+                    bool ExternalSettleDataHasBeenSet() const;
+
+                    /**
+                     * 获取接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     * @return Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     */
+                    std::string GetEnvironment() const;
+
+                    /**
+                     * 设置接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     * @param Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     */
+                    void SetEnvironment(const std::string& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +265,24 @@ namespace TencentCloud
                      */
                     std::string m_notifyUrl;
                     bool m_notifyUrlHasBeenSet;
+
+                    /**
+                     * 附言
+                     */
+                    std::string m_remark;
+                    bool m_remarkHasBeenSet;
+
+                    /**
+                     * 结算第三方渠道扩展信息。通联国际必选
+                     */
+                    std::string m_externalSettleData;
+                    bool m_externalSettleDataHasBeenSet;
+
+                    /**
+                     * 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     */
+                    std::string m_environment;
+                    bool m_environmentHasBeenSet;
 
                 };
             }

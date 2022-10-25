@@ -1045,17 +1045,17 @@ namespace TencentCloud
                     bool CurrentTimeHasBeenSet() const;
 
                     /**
-                     * 获取是否用于联邦
+                     * 获取是否用于联邦 ,1是，0否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IsFederation 是否用于联邦
+                     * @return IsFederation 是否用于联邦 ,1是，0否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetIsFederation() const;
 
                     /**
-                     * 设置是否用于联邦
+                     * 设置是否用于联邦 ,1是，0否
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IsFederation 是否用于联邦
+                     * @param IsFederation 是否用于联邦 ,1是，0否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsFederation(const int64_t& _isFederation);
@@ -1429,7 +1429,7 @@ namespace TencentCloud
                     bool m_currentTimeHasBeenSet;
 
                     /**
-                     * 是否用于联邦
+                     * 是否用于联邦 ,1是，0否
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_isFederation;

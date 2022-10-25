@@ -99,7 +99,9 @@ InstanceInfo::InstanceInfo() :
     m_operationDurationHasBeenSet(false),
     m_optionalWebServiceInfosHasBeenSet(false),
     m_autoIndexEnabledHasBeenSet(false),
-    m_enableHybridStorageHasBeenSet(false)
+    m_enableHybridStorageHasBeenSet(false),
+    m_processPercentHasBeenSet(false),
+    m_kibanaAlteringPublicAccessHasBeenSet(false)
 {
 }
 
@@ -1007,6 +1009,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_enableHybridStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("ProcessPercent") && !value["ProcessPercent"].IsNull())
+    {
+        if (!value["ProcessPercent"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.ProcessPercent` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_processPercent = value["ProcessPercent"].GetDouble();
+        m_processPercentHasBeenSet = true;
+    }
+
+    if (value.HasMember("KibanaAlteringPublicAccess") && !value["KibanaAlteringPublicAccess"].IsNull())
+    {
+        if (!value["KibanaAlteringPublicAccess"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.KibanaAlteringPublicAccess` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kibanaAlteringPublicAccess = string(value["KibanaAlteringPublicAccess"].GetString());
+        m_kibanaAlteringPublicAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1692,6 +1714,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EnableHybridStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableHybridStorage, allocator);
+    }
+
+    if (m_processPercentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessPercent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_processPercent, allocator);
+    }
+
+    if (m_kibanaAlteringPublicAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KibanaAlteringPublicAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kibanaAlteringPublicAccess.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2959,5 +2997,37 @@ void InstanceInfo::SetEnableHybridStorage(const bool& _enableHybridStorage)
 bool InstanceInfo::EnableHybridStorageHasBeenSet() const
 {
     return m_enableHybridStorageHasBeenSet;
+}
+
+double InstanceInfo::GetProcessPercent() const
+{
+    return m_processPercent;
+}
+
+void InstanceInfo::SetProcessPercent(const double& _processPercent)
+{
+    m_processPercent = _processPercent;
+    m_processPercentHasBeenSet = true;
+}
+
+bool InstanceInfo::ProcessPercentHasBeenSet() const
+{
+    return m_processPercentHasBeenSet;
+}
+
+string InstanceInfo::GetKibanaAlteringPublicAccess() const
+{
+    return m_kibanaAlteringPublicAccess;
+}
+
+void InstanceInfo::SetKibanaAlteringPublicAccess(const string& _kibanaAlteringPublicAccess)
+{
+    m_kibanaAlteringPublicAccess = _kibanaAlteringPublicAccess;
+    m_kibanaAlteringPublicAccessHasBeenSet = true;
+}
+
+bool InstanceInfo::KibanaAlteringPublicAccessHasBeenSet() const
+{
+    return m_kibanaAlteringPublicAccessHasBeenSet;
 }
 

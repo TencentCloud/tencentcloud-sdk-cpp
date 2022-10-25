@@ -35,7 +35,8 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_codingLanguageHasBeenSet(false),
     m_deployModeHasBeenSet(false),
     m_enableTracingHasBeenSet(false),
-    m_useDefaultImageServiceParametersHasBeenSet(false)
+    m_useDefaultImageServiceParametersHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -154,6 +155,21 @@ string CreateApplicationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_useDefaultImageServiceParameters.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -370,6 +386,22 @@ void CreateApplicationRequest::SetUseDefaultImageServiceParameters(const UseDefa
 bool CreateApplicationRequest::UseDefaultImageServiceParametersHasBeenSet() const
 {
     return m_useDefaultImageServiceParametersHasBeenSet;
+}
+
+vector<Tag> CreateApplicationRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateApplicationRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateApplicationRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

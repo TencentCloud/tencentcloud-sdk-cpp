@@ -37,6 +37,10 @@
 #include <tencentcloud/tem/v20210701/model/NodeInfo.h>
 #include <tencentcloud/tem/v20210701/model/WorkloadInfo.h>
 #include <tencentcloud/tem/v20210701/model/EnablePrometheusConf.h>
+#include <tencentcloud/tem/v20210701/model/Autoscaler.h>
+#include <tencentcloud/tem/v20210701/model/DeployStrategyConf.h>
+#include <tencentcloud/tem/v20210701/model/DescribeRunPodPage.h>
+#include <tencentcloud/tem/v20210701/model/Tag.h>
 
 
 namespace TencentCloud
@@ -1593,6 +1597,292 @@ namespace TencentCloud
                      */
                     bool EnableMetricsHasBeenSet() const;
 
+                    /**
+                     * 获取用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId 用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAppId() const;
+
+                    /**
+                     * 设置用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppId 用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppId(const std::string& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAccountUin 用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubAccountUin() const;
+
+                    /**
+                     * 设置用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubAccountUin 用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubAccountUin(const std::string& _subAccountUin);
+
+                    /**
+                     * 判断参数 SubAccountUin 是否已赋值
+                     * @return SubAccountUin 是否已赋值
+                     */
+                    bool SubAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uin 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uin 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
+                    /**
+                     * 获取地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Region 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
+                    /**
+                     * 获取应用分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 应用分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置应用分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupId 应用分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用注册中心
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableRegistry 是否启用注册中心
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEnableRegistry() const;
+
+                    /**
+                     * 设置是否启用注册中心
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableRegistry 是否启用注册中心
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableRegistry(const int64_t& _enableRegistry);
+
+                    /**
+                     * 判断参数 EnableRegistry 是否已赋值
+                     * @return EnableRegistry 是否已赋值
+                     */
+                    bool EnableRegistryHasBeenSet() const;
+
+                    /**
+                     * 获取弹性伸缩数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoscalerList 弹性伸缩数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Autoscaler> GetAutoscalerList() const;
+
+                    /**
+                     * 设置弹性伸缩数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoscalerList 弹性伸缩数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoscalerList(const std::vector<Autoscaler>& _autoscalerList);
+
+                    /**
+                     * 判断参数 AutoscalerList 是否已赋值
+                     * @return AutoscalerList 是否已赋值
+                     */
+                    bool AutoscalerListHasBeenSet() const;
+
+                    /**
+                     * 获取修改人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Modifier 修改人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetModifier() const;
+
+                    /**
+                     * 设置修改人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Modifier 修改人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModifier(const std::string& _modifier);
+
+                    /**
+                     * 判断参数 Modifier 是否已赋值
+                     * @return Modifier 是否已赋值
+                     */
+                    bool ModifierHasBeenSet() const;
+
+                    /**
+                     * 获取创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Creator 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Creator 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     */
+                    bool CreatorHasBeenSet() const;
+
+                    /**
+                     * 获取部署策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeployStrategyConf 部署策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DeployStrategyConf GetDeployStrategyConf() const;
+
+                    /**
+                     * 设置部署策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeployStrategyConf 部署策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployStrategyConf(const DeployStrategyConf& _deployStrategyConf);
+
+                    /**
+                     * 判断参数 DeployStrategyConf 是否已赋值
+                     * @return DeployStrategyConf 是否已赋值
+                     */
+                    bool DeployStrategyConfHasBeenSet() const;
+
+                    /**
+                     * 获取实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodList 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeRunPodPage GetPodList() const;
+
+                    /**
+                     * 设置实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PodList 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPodList(const DescribeRunPodPage& _podList);
+
+                    /**
+                     * 判断参数 PodList 是否已赋值
+                     * @return PodList 是否已赋值
+                     */
+                    bool PodListHasBeenSet() const;
+
+                    /**
+                     * 获取发布时配置是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfEdited 发布时配置是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetConfEdited() const;
+
+                    /**
+                     * 设置发布时配置是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfEdited 发布时配置是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfEdited(const bool& _confEdited);
+
+                    /**
+                     * 判断参数 ConfEdited 是否已赋值
+                     * @return ConfEdited 是否已赋值
+                     */
+                    bool ConfEditedHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2087,6 +2377,97 @@ namespace TencentCloud
                      */
                     int64_t m_enableMetrics;
                     bool m_enableMetricsHasBeenSet;
+
+                    /**
+                     * 用户AppId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_appId;
+                    bool m_appIdHasBeenSet;
+
+                    /**
+                     * 用户SubAccountUin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAccountUin;
+                    bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * 用户Uin
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
+
+                    /**
+                     * 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
+
+                    /**
+                     * 应用分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 是否启用注册中心
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_enableRegistry;
+                    bool m_enableRegistryHasBeenSet;
+
+                    /**
+                     * 弹性伸缩数组
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Autoscaler> m_autoscalerList;
+                    bool m_autoscalerListHasBeenSet;
+
+                    /**
+                     * 修改人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_modifier;
+                    bool m_modifierHasBeenSet;
+
+                    /**
+                     * 创建人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
+
+                    /**
+                     * 部署策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DeployStrategyConf m_deployStrategyConf;
+                    bool m_deployStrategyConfHasBeenSet;
+
+                    /**
+                     * 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeRunPodPage m_podList;
+                    bool m_podListHasBeenSet;
+
+                    /**
+                     * 发布时配置是否有修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_confEdited;
+                    bool m_confEditedHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

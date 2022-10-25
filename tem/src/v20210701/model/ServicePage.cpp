@@ -24,7 +24,8 @@ ServicePage::ServicePage() :
     m_recordsHasBeenSet(false),
     m_totalHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_pagesHasBeenSet(false)
+    m_pagesHasBeenSet(false),
+    m_currentHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome ServicePage::Deserialize(const rapidjson::Value &value)
         m_pagesHasBeenSet = true;
     }
 
+    if (value.HasMember("Current") && !value["Current"].IsNull())
+    {
+        if (!value["Current"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServicePage.Current` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_current = value["Current"].GetInt64();
+        m_currentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +138,14 @@ void ServicePage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Pages";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pages, allocator);
+    }
+
+    if (m_currentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Current";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_current, allocator);
     }
 
 }
@@ -194,5 +213,21 @@ void ServicePage::SetPages(const int64_t& _pages)
 bool ServicePage::PagesHasBeenSet() const
 {
     return m_pagesHasBeenSet;
+}
+
+int64_t ServicePage::GetCurrent() const
+{
+    return m_current;
+}
+
+void ServicePage::SetCurrent(const int64_t& _current)
+{
+    m_current = _current;
+    m_currentHasBeenSet = true;
+}
+
+bool ServicePage::CurrentHasBeenSet() const
+{
+    return m_currentHasBeenSet;
 }
 

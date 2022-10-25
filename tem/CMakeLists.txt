@@ -83,6 +83,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/DeleteApplicationServiceRequest.h
   include/tencentcloud/tem/v20210701/model/RestartApplicationPodRequest.h
   include/tencentcloud/tem/v20210701/model/DestroyLogConfigResponse.h
+  include/tencentcloud/tem/v20210701/model/QueryFilter.h
   include/tencentcloud/tem/v20210701/model/ResumeDeployApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/StorageConf.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationPodsRequest.h
@@ -290,6 +291,7 @@ set(tem_src
   src/v20210701/model/DeleteApplicationServiceRequest.cpp
   src/v20210701/model/RestartApplicationPodRequest.cpp
   src/v20210701/model/DestroyLogConfigResponse.cpp
+  src/v20210701/model/QueryFilter.cpp
   src/v20210701/model/ResumeDeployApplicationResponse.cpp
   src/v20210701/model/StorageConf.cpp
   src/v20210701/model/DescribeApplicationPodsRequest.cpp

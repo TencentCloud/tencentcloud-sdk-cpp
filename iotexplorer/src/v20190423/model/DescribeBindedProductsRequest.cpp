@@ -25,7 +25,8 @@ using namespace std;
 DescribeBindedProductsRequest::DescribeBindedProductsRequest() :
     m_gatewayProductIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_productSourceHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeBindedProductsRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_productSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_productSource, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeBindedProductsRequest::SetLimit(const int64_t& _limit)
 bool DescribeBindedProductsRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+int64_t DescribeBindedProductsRequest::GetProductSource() const
+{
+    return m_productSource;
+}
+
+void DescribeBindedProductsRequest::SetProductSource(const int64_t& _productSource)
+{
+    m_productSource = _productSource;
+    m_productSourceHasBeenSet = true;
+}
+
+bool DescribeBindedProductsRequest::ProductSourceHasBeenSet() const
+{
+    return m_productSourceHasBeenSet;
 }
 
 

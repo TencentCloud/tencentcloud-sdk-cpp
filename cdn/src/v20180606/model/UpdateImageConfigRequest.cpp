@@ -26,7 +26,8 @@ UpdateImageConfigRequest::UpdateImageConfigRequest() :
     m_domainHasBeenSet(false),
     m_webpAdapterHasBeenSet(false),
     m_tpgAdapterHasBeenSet(false),
-    m_guetzliAdapterHasBeenSet(false)
+    m_guetzliAdapterHasBeenSet(false),
+    m_avifAdapterHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,15 @@ string UpdateImageConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_guetzliAdapter.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_avifAdapterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvifAdapter";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_avifAdapter.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -142,6 +152,22 @@ void UpdateImageConfigRequest::SetGuetzliAdapter(const GuetzliAdapter& _guetzliA
 bool UpdateImageConfigRequest::GuetzliAdapterHasBeenSet() const
 {
     return m_guetzliAdapterHasBeenSet;
+}
+
+AvifAdapter UpdateImageConfigRequest::GetAvifAdapter() const
+{
+    return m_avifAdapter;
+}
+
+void UpdateImageConfigRequest::SetAvifAdapter(const AvifAdapter& _avifAdapter)
+{
+    m_avifAdapter = _avifAdapter;
+    m_avifAdapterHasBeenSet = true;
+}
+
+bool UpdateImageConfigRequest::AvifAdapterHasBeenSet() const
+{
+    return m_avifAdapterHasBeenSet;
 }
 
 

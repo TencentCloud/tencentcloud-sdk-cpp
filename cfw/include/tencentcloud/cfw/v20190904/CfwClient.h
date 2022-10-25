@@ -369,7 +369,7 @@ namespace TencentCloud
                 AddEnterpriseSecurityGroupRulesOutcomeCallable AddEnterpriseSecurityGroupRulesCallable(const Model::AddEnterpriseSecurityGroupRulesRequest& request);
 
                 /**
-                 *创建规则
+                 *创建访问控制规则
                  * @param req CreateAcRulesRequest
                  * @return CreateAcRulesOutcome
                  */

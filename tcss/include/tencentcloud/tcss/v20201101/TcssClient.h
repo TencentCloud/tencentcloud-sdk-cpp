@@ -333,6 +333,10 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeSafeStateResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeWhiteListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeEscapeWhiteListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeExportJobDownloadURLRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeExportJobDownloadURLResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeExportJobManageListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeExportJobManageListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeExportJobResultRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeExportJobResultResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeImageAuthorizedInfoRequest.h>
@@ -1122,6 +1126,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEscapeWhiteListResponse> DescribeEscapeWhiteListOutcome;
                 typedef std::future<DescribeEscapeWhiteListOutcome> DescribeEscapeWhiteListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeEscapeWhiteListRequest&, DescribeEscapeWhiteListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEscapeWhiteListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExportJobDownloadURLResponse> DescribeExportJobDownloadURLOutcome;
+                typedef std::future<DescribeExportJobDownloadURLOutcome> DescribeExportJobDownloadURLOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeExportJobDownloadURLRequest&, DescribeExportJobDownloadURLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportJobDownloadURLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExportJobManageListResponse> DescribeExportJobManageListOutcome;
+                typedef std::future<DescribeExportJobManageListOutcome> DescribeExportJobManageListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeExportJobManageListRequest&, DescribeExportJobManageListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportJobManageListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExportJobResultResponse> DescribeExportJobResultOutcome;
                 typedef std::future<DescribeExportJobResultOutcome> DescribeExportJobResultOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeExportJobResultRequest&, DescribeExportJobResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportJobResultAsyncHandler;
@@ -2987,6 +2997,24 @@ namespace TencentCloud
                 DescribeEscapeWhiteListOutcome DescribeEscapeWhiteList(const Model::DescribeEscapeWhiteListRequest &request);
                 void DescribeEscapeWhiteListAsync(const Model::DescribeEscapeWhiteListRequest& request, const DescribeEscapeWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEscapeWhiteListOutcomeCallable DescribeEscapeWhiteListCallable(const Model::DescribeEscapeWhiteListRequest& request);
+
+                /**
+                 *查询导出任务下载URL
+                 * @param req DescribeExportJobDownloadURLRequest
+                 * @return DescribeExportJobDownloadURLOutcome
+                 */
+                DescribeExportJobDownloadURLOutcome DescribeExportJobDownloadURL(const Model::DescribeExportJobDownloadURLRequest &request);
+                void DescribeExportJobDownloadURLAsync(const Model::DescribeExportJobDownloadURLRequest& request, const DescribeExportJobDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExportJobDownloadURLOutcomeCallable DescribeExportJobDownloadURLCallable(const Model::DescribeExportJobDownloadURLRequest& request);
+
+                /**
+                 *查询导出任务管理列表
+                 * @param req DescribeExportJobManageListRequest
+                 * @return DescribeExportJobManageListOutcome
+                 */
+                DescribeExportJobManageListOutcome DescribeExportJobManageList(const Model::DescribeExportJobManageListRequest &request);
+                void DescribeExportJobManageListAsync(const Model::DescribeExportJobManageListRequest& request, const DescribeExportJobManageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExportJobManageListOutcomeCallable DescribeExportJobManageListCallable(const Model::DescribeExportJobManageListRequest& request);
 
                 /**
                  *查询导出任务的结果

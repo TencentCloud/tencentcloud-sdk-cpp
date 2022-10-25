@@ -214,6 +214,28 @@ namespace TencentCloud
                      */
                     bool DevStatusHasBeenSet() const;
 
+                    /**
+                     * 获取产品拥有者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductOwnerName 产品拥有者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductOwnerName() const;
+
+                    /**
+                     * 设置产品拥有者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductOwnerName 产品拥有者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductOwnerName(const std::string& _productOwnerName);
+
+                    /**
+                     * 判断参数 ProductOwnerName 是否已赋值
+                     * @return ProductOwnerName 是否已赋值
+                     */
+                    bool ProductOwnerNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +291,13 @@ namespace TencentCloud
                      */
                     std::string m_devStatus;
                     bool m_devStatusHasBeenSet;
+
+                    /**
+                     * 产品拥有者名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productOwnerName;
+                    bool m_productOwnerNameHasBeenSet;
 
                 };
             }

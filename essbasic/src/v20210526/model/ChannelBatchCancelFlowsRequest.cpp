@@ -25,6 +25,8 @@ using namespace std;
 ChannelBatchCancelFlowsRequest::ChannelBatchCancelFlowsRequest() :
     m_agentHasBeenSet(false),
     m_flowIdsHasBeenSet(false),
+    m_cancelMessageHasBeenSet(false),
+    m_cancelMessageFormatHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -56,6 +58,22 @@ string ChannelBatchCancelFlowsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_cancelMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CancelMessage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_cancelMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cancelMessageFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CancelMessageFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cancelMessageFormat, allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -105,6 +123,38 @@ void ChannelBatchCancelFlowsRequest::SetFlowIds(const vector<string>& _flowIds)
 bool ChannelBatchCancelFlowsRequest::FlowIdsHasBeenSet() const
 {
     return m_flowIdsHasBeenSet;
+}
+
+string ChannelBatchCancelFlowsRequest::GetCancelMessage() const
+{
+    return m_cancelMessage;
+}
+
+void ChannelBatchCancelFlowsRequest::SetCancelMessage(const string& _cancelMessage)
+{
+    m_cancelMessage = _cancelMessage;
+    m_cancelMessageHasBeenSet = true;
+}
+
+bool ChannelBatchCancelFlowsRequest::CancelMessageHasBeenSet() const
+{
+    return m_cancelMessageHasBeenSet;
+}
+
+int64_t ChannelBatchCancelFlowsRequest::GetCancelMessageFormat() const
+{
+    return m_cancelMessageFormat;
+}
+
+void ChannelBatchCancelFlowsRequest::SetCancelMessageFormat(const int64_t& _cancelMessageFormat)
+{
+    m_cancelMessageFormat = _cancelMessageFormat;
+    m_cancelMessageFormatHasBeenSet = true;
+}
+
+bool ChannelBatchCancelFlowsRequest::CancelMessageFormatHasBeenSet() const
+{
+    return m_cancelMessageFormatHasBeenSet;
 }
 
 UserInfo ChannelBatchCancelFlowsRequest::GetOperator() const

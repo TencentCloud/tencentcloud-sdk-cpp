@@ -24,6 +24,7 @@
 #include <tencentcloud/cdn/v20180606/model/WebpAdapter.h>
 #include <tencentcloud/cdn/v20180606/model/TpgAdapter.h>
 #include <tencentcloud/cdn/v20180606/model/GuetzliAdapter.h>
+#include <tencentcloud/cdn/v20180606/model/AvifAdapter.h>
 
 
 namespace TencentCloud
@@ -88,6 +89,20 @@ namespace TencentCloud
                      */
                     bool GuetzliAdapterHasBeenSet() const;
 
+                    /**
+                     * 获取AvifAdapter配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AvifAdapter AvifAdapter配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AvifAdapter GetAvifAdapter() const;
+
+                    /**
+                     * 判断参数 AvifAdapter 是否已赋值
+                     * @return AvifAdapter 是否已赋值
+                     */
+                    bool AvifAdapterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -110,6 +125,13 @@ namespace TencentCloud
                      */
                     GuetzliAdapter m_guetzliAdapter;
                     bool m_guetzliAdapterHasBeenSet;
+
+                    /**
+                     * AvifAdapter配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AvifAdapter m_avifAdapter;
+                    bool m_avifAdapterHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ DescribeSecLogDeliveryKafkaSettingResponse::DescribeSecLogDeliveryKafkaSettingRe
     m_instanceNameHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_logTypeListHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_regionIDHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome DescribeSecLogDeliveryKafkaSettingResponse::Deserialize(cons
         m_userHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RegionID") && !rsp["RegionID"].IsNull())
+    {
+        if (!rsp["RegionID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RegionID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionID = string(rsp["RegionID"].GetString());
+        m_regionIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +192,14 @@ string DescribeSecLogDeliveryKafkaSettingResponse::ToJsonString() const
         string key = "User";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_user.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionID.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -243,6 +262,16 @@ string DescribeSecLogDeliveryKafkaSettingResponse::GetUser() const
 bool DescribeSecLogDeliveryKafkaSettingResponse::UserHasBeenSet() const
 {
     return m_userHasBeenSet;
+}
+
+string DescribeSecLogDeliveryKafkaSettingResponse::GetRegionID() const
+{
+    return m_regionID;
+}
+
+bool DescribeSecLogDeliveryKafkaSettingResponse::RegionIDHasBeenSet() const
+{
+    return m_regionIDHasBeenSet;
 }
 
 

@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取地域，若为空则返回所有可选地域
+                     * @return RegionID 地域，若为空则返回所有可选地域
+                     */
+                    std::string GetRegionID() const;
+
+                    /**
+                     * 设置地域，若为空则返回所有可选地域
+                     * @param RegionID 地域，若为空则返回所有可选地域
+                     */
+                    void SetRegionID(const std::string& _regionID);
+
+                    /**
+                     * 判断参数 RegionID 是否已赋值
+                     * @return RegionID 是否已赋值
+                     */
+                    bool RegionIDHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 地域，若为空则返回所有可选地域
+                     */
+                    std::string m_regionID;
+                    bool m_regionIDHasBeenSet;
 
                 };
             }

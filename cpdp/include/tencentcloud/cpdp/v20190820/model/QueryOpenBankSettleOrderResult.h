@@ -256,6 +256,28 @@ _UNKNOWN：默认未知
                      */
                     bool SettleFeeHasBeenSet() const;
 
+                    /**
+                     * 获取账户货币。参考附录“币种类型”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Currency 账户货币。参考附录“币种类型”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCurrency() const;
+
+                    /**
+                     * 设置账户货币。参考附录“币种类型”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Currency 账户货币。参考附录“币种类型”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCurrency(const std::string& _currency);
+
+                    /**
+                     * 判断参数 Currency 是否已赋值
+                     * @return Currency 是否已赋值
+                     */
+                    bool CurrencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +345,13 @@ _UNKNOWN：默认未知
                      */
                     std::string m_settleFee;
                     bool m_settleFeeHasBeenSet;
+
+                    /**
+                     * 账户货币。参考附录“币种类型”。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_currency;
+                    bool m_currencyHasBeenSet;
 
                 };
             }

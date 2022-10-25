@@ -26,7 +26,8 @@ using namespace std;
 CreateCloudSubMerchantResponse::CreateCloudSubMerchantResponse() :
     m_subAppIdHasBeenSet(false),
     m_channelSubMerchantIdHasBeenSet(false),
-    m_levelHasBeenSet(false)
+    m_levelHasBeenSet(false),
+    m_channelAppIdHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome CreateCloudSubMerchantResponse::Deserialize(const string &pa
         m_levelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ChannelAppId") && !rsp["ChannelAppId"].IsNull())
+    {
+        if (!rsp["ChannelAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ChannelAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelAppId = string(rsp["ChannelAppId"].GetString());
+        m_channelAppIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string CreateCloudSubMerchantResponse::ToJsonString() const
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_level, allocator);
+    }
+
+    if (m_channelAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelAppId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ int64_t CreateCloudSubMerchantResponse::GetLevel() const
 bool CreateCloudSubMerchantResponse::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+string CreateCloudSubMerchantResponse::GetChannelAppId() const
+{
+    return m_channelAppId;
+}
+
+bool CreateCloudSubMerchantResponse::ChannelAppIdHasBeenSet() const
+{
+    return m_channelAppIdHasBeenSet;
 }
 
 

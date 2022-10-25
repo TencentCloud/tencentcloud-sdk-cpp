@@ -30,7 +30,8 @@ ModifySecLogDeliveryKafkaSettingRequest::ModifySecLogDeliveryKafkaSettingRequest
     m_passwordHasBeenSet(false),
     m_logTypeListHasBeenSet(false),
     m_accessTypeHasBeenSet(false),
-    m_kafkaVersionHasBeenSet(false)
+    m_kafkaVersionHasBeenSet(false),
+    m_regionIDHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,14 @@ string ModifySecLogDeliveryKafkaSettingRequest::ToJsonString() const
         string key = "KafkaVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_kafkaVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionID.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -246,6 +255,22 @@ void ModifySecLogDeliveryKafkaSettingRequest::SetKafkaVersion(const string& _kaf
 bool ModifySecLogDeliveryKafkaSettingRequest::KafkaVersionHasBeenSet() const
 {
     return m_kafkaVersionHasBeenSet;
+}
+
+string ModifySecLogDeliveryKafkaSettingRequest::GetRegionID() const
+{
+    return m_regionID;
+}
+
+void ModifySecLogDeliveryKafkaSettingRequest::SetRegionID(const string& _regionID)
+{
+    m_regionID = _regionID;
+    m_regionIDHasBeenSet = true;
+}
+
+bool ModifySecLogDeliveryKafkaSettingRequest::RegionIDHasBeenSet() const
+{
+    return m_regionIDHasBeenSet;
 }
 
 

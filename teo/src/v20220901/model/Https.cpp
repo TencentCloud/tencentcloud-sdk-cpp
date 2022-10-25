@@ -25,7 +25,8 @@ Https::Https() :
     m_ocspStaplingHasBeenSet(false),
     m_tlsVersionHasBeenSet(false),
     m_hstsHasBeenSet(false),
-    m_certInfoHasBeenSet(false)
+    m_certInfoHasBeenSet(false),
+    m_applyTypeHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
         m_certInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplyType") && !value["ApplyType"].IsNull())
+    {
+        if (!value["ApplyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Https.ApplyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applyType = string(value["ApplyType"].GetString());
+        m_applyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +173,14 @@ void Https::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_applyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applyType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -245,5 +264,21 @@ void Https::SetCertInfo(const vector<ServerCertInfo>& _certInfo)
 bool Https::CertInfoHasBeenSet() const
 {
     return m_certInfoHasBeenSet;
+}
+
+string Https::GetApplyType() const
+{
+    return m_applyType;
+}
+
+void Https::SetApplyType(const string& _applyType)
+{
+    m_applyType = _applyType;
+    m_applyTypeHasBeenSet = true;
+}
+
+bool Https::ApplyTypeHasBeenSet() const
+{
+    return m_applyTypeHasBeenSet;
 }
 

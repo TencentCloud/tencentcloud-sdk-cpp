@@ -27,7 +27,8 @@ ServiceGovernanceInfo::ServiceGovernanceInfo() :
     m_authOpenHasBeenSet(false),
     m_featuresHasBeenSet(false),
     m_mainPasswordHasBeenSet(false),
-    m_pgwVpcInfosHasBeenSet(false)
+    m_pgwVpcInfosHasBeenSet(false),
+    m_limiterVpcInfosHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,26 @@ CoreInternalOutcome ServiceGovernanceInfo::Deserialize(const rapidjson::Value &v
         m_pgwVpcInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("LimiterVpcInfos") && !value["LimiterVpcInfos"].IsNull())
+    {
+        if (!value["LimiterVpcInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceGovernanceInfo.LimiterVpcInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LimiterVpcInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_limiterVpcInfos.push_back(item);
+        }
+        m_limiterVpcInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +243,21 @@ void ServiceGovernanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
 
         int i=0;
         for (auto itr = m_pgwVpcInfos.begin(); itr != m_pgwVpcInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_limiterVpcInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimiterVpcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_limiterVpcInfos.begin(); itr != m_limiterVpcInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -341,5 +377,21 @@ void ServiceGovernanceInfo::SetPgwVpcInfos(const vector<VpcInfo>& _pgwVpcInfos)
 bool ServiceGovernanceInfo::PgwVpcInfosHasBeenSet() const
 {
     return m_pgwVpcInfosHasBeenSet;
+}
+
+vector<VpcInfo> ServiceGovernanceInfo::GetLimiterVpcInfos() const
+{
+    return m_limiterVpcInfos;
+}
+
+void ServiceGovernanceInfo::SetLimiterVpcInfos(const vector<VpcInfo>& _limiterVpcInfos)
+{
+    m_limiterVpcInfos = _limiterVpcInfos;
+    m_limiterVpcInfosHasBeenSet = true;
+}
+
+bool ServiceGovernanceInfo::LimiterVpcInfosHasBeenSet() const
+{
+    return m_limiterVpcInfosHasBeenSet;
 }
 

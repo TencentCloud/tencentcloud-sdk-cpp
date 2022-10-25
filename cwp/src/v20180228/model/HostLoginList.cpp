@@ -39,7 +39,8 @@ HostLoginList::HostLoginList() :
     m_isRiskSrcIpHasBeenSet(false),
     m_riskLevelHasBeenSet(false),
     m_locationHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_quuidHasBeenSet(false),
+    m_descHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome HostLoginList::Deserialize(const rapidjson::Value &value)
         m_quuidHasBeenSet = true;
     }
 
+    if (value.HasMember("Desc") && !value["Desc"].IsNull())
+    {
+        if (!value["Desc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.Desc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_desc = string(value["Desc"].GetString());
+        m_descHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +406,14 @@ void HostLoginList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Desc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -702,5 +721,21 @@ void HostLoginList::SetQuuid(const string& _quuid)
 bool HostLoginList::QuuidHasBeenSet() const
 {
     return m_quuidHasBeenSet;
+}
+
+string HostLoginList::GetDesc() const
+{
+    return m_desc;
+}
+
+void HostLoginList::SetDesc(const string& _desc)
+{
+    m_desc = _desc;
+    m_descHasBeenSet = true;
+}
+
+bool HostLoginList::DescHasBeenSet() const
+{
+    return m_descHasBeenSet;
 }
 

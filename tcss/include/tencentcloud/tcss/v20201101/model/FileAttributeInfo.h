@@ -154,6 +154,42 @@ namespace TencentCloud
                      */
                     bool LatestTamperedFileMTimeHasBeenSet() const;
 
+                    /**
+                     * 获取新文件内容
+                     * @return NewFile 新文件内容
+                     */
+                    std::string GetNewFile() const;
+
+                    /**
+                     * 设置新文件内容
+                     * @param NewFile 新文件内容
+                     */
+                    void SetNewFile(const std::string& _newFile);
+
+                    /**
+                     * 判断参数 NewFile 是否已赋值
+                     * @return NewFile 是否已赋值
+                     */
+                    bool NewFileHasBeenSet() const;
+
+                    /**
+                     * 获取新旧文件的差异
+                     * @return FileDiff 新旧文件的差异
+                     */
+                    std::string GetFileDiff() const;
+
+                    /**
+                     * 设置新旧文件的差异
+                     * @param FileDiff 新旧文件的差异
+                     */
+                    void SetFileDiff(const std::string& _fileDiff);
+
+                    /**
+                     * 判断参数 FileDiff 是否已赋值
+                     * @return FileDiff 是否已赋值
+                     */
+                    bool FileDiffHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +227,18 @@ namespace TencentCloud
                      */
                     std::string m_latestTamperedFileMTime;
                     bool m_latestTamperedFileMTimeHasBeenSet;
+
+                    /**
+                     * 新文件内容
+                     */
+                    std::string m_newFile;
+                    bool m_newFileHasBeenSet;
+
+                    /**
+                     * 新旧文件的差异
+                     */
+                    std::string m_fileDiff;
+                    bool m_fileDiffHasBeenSet;
 
                 };
             }

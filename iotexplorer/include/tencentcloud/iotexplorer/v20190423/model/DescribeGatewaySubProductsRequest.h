@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否跨账号产品
+                     * @return ProductSource 是否跨账号产品
+                     */
+                    int64_t GetProductSource() const;
+
+                    /**
+                     * 设置是否跨账号产品
+                     * @param ProductSource 是否跨账号产品
+                     */
+                    void SetProductSource(const int64_t& _productSource);
+
+                    /**
+                     * 判断参数 ProductSource 是否已赋值
+                     * @return ProductSource 是否已赋值
+                     */
+                    bool ProductSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 是否跨账号产品
+                     */
+                    int64_t m_productSource;
+                    bool m_productSourceHasBeenSet;
 
                 };
             }

@@ -190,6 +190,36 @@ namespace TencentCloud
                      */
                     bool CertInfoHasBeenSet() const;
 
+                    /**
+                     * 获取申请类型，取值有：
+<li>apply：托管EdgeOne；</li>
+<li>none：不托管EdgeOne。</li>不填，默认取值为none。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplyType 申请类型，取值有：
+<li>apply：托管EdgeOne；</li>
+<li>none：不托管EdgeOne。</li>不填，默认取值为none。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplyType() const;
+
+                    /**
+                     * 设置申请类型，取值有：
+<li>apply：托管EdgeOne；</li>
+<li>none：不托管EdgeOne。</li>不填，默认取值为none。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplyType 申请类型，取值有：
+<li>apply：托管EdgeOne；</li>
+<li>none：不托管EdgeOne。</li>不填，默认取值为none。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplyType(const std::string& _applyType);
+
+                    /**
+                     * 判断参数 ApplyType 是否已赋值
+                     * @return ApplyType 是否已赋值
+                     */
+                    bool ApplyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -234,6 +264,15 @@ namespace TencentCloud
                      */
                     std::vector<ServerCertInfo> m_certInfo;
                     bool m_certInfoHasBeenSet;
+
+                    /**
+                     * 申请类型，取值有：
+<li>apply：托管EdgeOne；</li>
+<li>none：不托管EdgeOne。</li>不填，默认取值为none。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applyType;
+                    bool m_applyTypeHasBeenSet;
 
                 };
             }

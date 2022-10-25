@@ -557,6 +557,72 @@ wechat:微信支付
                      */
                     bool SceneInfoHasBeenSet() const;
 
+                    /**
+                     * 获取子应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAppId 子应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubAppId() const;
+
+                    /**
+                     * 设置子应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubAppId 子应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubAppId(const std::string& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取支付场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayScene 支付场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayScene() const;
+
+                    /**
+                     * 设置支付场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayScene 支付场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayScene(const std::string& _payScene);
+
+                    /**
+                     * 判断参数 PayScene 是否已赋值
+                     * @return PayScene 是否已赋值
+                     */
+                    bool PaySceneHasBeenSet() const;
+
+                    /**
+                     * 获取支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PaymentMethod 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPaymentMethod() const;
+
+                    /**
+                     * 设置支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PaymentMethod 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPaymentMethod(const std::string& _paymentMethod);
+
+                    /**
+                     * 判断参数 PaymentMethod 是否已赋值
+                     * @return PaymentMethod 是否已赋值
+                     */
+                    bool PaymentMethodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -722,6 +788,27 @@ wechat:微信支付
                      */
                     std::string m_sceneInfo;
                     bool m_sceneInfoHasBeenSet;
+
+                    /**
+                     * 子应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAppId;
+                    bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 支付场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payScene;
+                    bool m_paySceneHasBeenSet;
+
+                    /**
+                     * 支付方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_paymentMethod;
+                    bool m_paymentMethodHasBeenSet;
 
                 };
             }

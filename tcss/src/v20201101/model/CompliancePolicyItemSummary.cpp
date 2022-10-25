@@ -35,7 +35,8 @@ CompliancePolicyItemSummary::CompliancePolicyItemSummary() :
     m_failedAssetCountHasBeenSet(false),
     m_whitelistIdHasBeenSet(false),
     m_fixSuggestionHasBeenSet(false),
-    m_benchmarkStandardIdHasBeenSet(false)
+    m_benchmarkStandardIdHasBeenSet(false),
+    m_applicableVersionHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome CompliancePolicyItemSummary::Deserialize(const rapidjson::Va
         m_benchmarkStandardIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ApplicableVersion") && !value["ApplicableVersion"].IsNull())
+    {
+        if (!value["ApplicableVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompliancePolicyItemSummary.ApplicableVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_applicableVersion = string(value["ApplicableVersion"].GetString());
+        m_applicableVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void CompliancePolicyItemSummary::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "BenchmarkStandardId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_benchmarkStandardId, allocator);
+    }
+
+    if (m_applicableVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicableVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_applicableVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void CompliancePolicyItemSummary::SetBenchmarkStandardId(const uint64_t& _benchm
 bool CompliancePolicyItemSummary::BenchmarkStandardIdHasBeenSet() const
 {
     return m_benchmarkStandardIdHasBeenSet;
+}
+
+string CompliancePolicyItemSummary::GetApplicableVersion() const
+{
+    return m_applicableVersion;
+}
+
+void CompliancePolicyItemSummary::SetApplicableVersion(const string& _applicableVersion)
+{
+    m_applicableVersion = _applicableVersion;
+    m_applicableVersionHasBeenSet = true;
+}
+
+bool CompliancePolicyItemSummary::ApplicableVersionHasBeenSet() const
+{
+    return m_applicableVersionHasBeenSet;
 }
 

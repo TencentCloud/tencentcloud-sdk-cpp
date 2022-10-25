@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ChannelSettleIdHasBeenSet() const;
 
+                    /**
+                     * 获取接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     * @return Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     */
+                    std::string GetEnvironment() const;
+
+                    /**
+                     * 设置接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     * @param Environment 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     */
+                    void SetEnvironment(const std::string& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_channelSettleId;
                     bool m_channelSettleIdHasBeenSet;
+
+                    /**
+                     * 接入环境。沙箱环境填 sandbox。缺省默认调用生产环境
+                     */
+                    std::string m_environment;
+                    bool m_environmentHasBeenSet;
 
                 };
             }

@@ -45,8 +45,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取日志包下载链接
-                     * @return DomainLogs 日志包下载链接
+                     * 获取日志包下载链接。
+下载内容是gz后缀的压缩包，解压后是无扩展名的文本文件。
+                     * @return DomainLogs 日志包下载链接。
+下载内容是gz后缀的压缩包，解压后是无扩展名的文本文件。
                      */
                     std::vector<DomainLog> GetDomainLogs() const;
 
@@ -71,7 +73,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 日志包下载链接
+                     * 日志包下载链接。
+下载内容是gz后缀的压缩包，解压后是无扩展名的文本文件。
                      */
                     std::vector<DomainLog> m_domainLogs;
                     bool m_domainLogsHasBeenSet;

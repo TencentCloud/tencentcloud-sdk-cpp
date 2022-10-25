@@ -30,7 +30,8 @@ NodeInfo::NodeInfo() :
     m_diskCountHasBeenSet(false),
     m_diskEncryptHasBeenSet(false),
     m_cpuNumHasBeenSet(false),
-    m_memSizeHasBeenSet(false)
+    m_memSizeHasBeenSet(false),
+    m_diskEnhanceHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome NodeInfo::Deserialize(const rapidjson::Value &value)
         m_memSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskEnhance") && !value["DiskEnhance"].IsNull())
+    {
+        if (!value["DiskEnhance"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeInfo.DiskEnhance` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskEnhance = value["DiskEnhance"].GetInt64();
+        m_diskEnhanceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void NodeInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memSize, allocator);
+    }
+
+    if (m_diskEnhanceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskEnhance";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskEnhance, allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void NodeInfo::SetMemSize(const int64_t& _memSize)
 bool NodeInfo::MemSizeHasBeenSet() const
 {
     return m_memSizeHasBeenSet;
+}
+
+int64_t NodeInfo::GetDiskEnhance() const
+{
+    return m_diskEnhance;
+}
+
+void NodeInfo::SetDiskEnhance(const int64_t& _diskEnhance)
+{
+    m_diskEnhance = _diskEnhance;
+    m_diskEnhanceHasBeenSet = true;
+}
+
+bool NodeInfo::DiskEnhanceHasBeenSet() const
+{
+    return m_diskEnhanceHasBeenSet;
 }
 

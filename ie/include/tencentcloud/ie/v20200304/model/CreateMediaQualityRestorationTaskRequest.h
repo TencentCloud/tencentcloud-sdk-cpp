@@ -118,6 +118,24 @@ namespace TencentCloud
                      */
                     bool CallbackInfoHasBeenSet() const;
 
+                    /**
+                     * 获取极速高清体验馆渠道标志。
+                     * @return TopSpeedCodecChannel 极速高清体验馆渠道标志。
+                     */
+                    uint64_t GetTopSpeedCodecChannel() const;
+
+                    /**
+                     * 设置极速高清体验馆渠道标志。
+                     * @param TopSpeedCodecChannel 极速高清体验馆渠道标志。
+                     */
+                    void SetTopSpeedCodecChannel(const uint64_t& _topSpeedCodecChannel);
+
+                    /**
+                     * 判断参数 TopSpeedCodecChannel 是否已赋值
+                     * @return TopSpeedCodecChannel 是否已赋值
+                     */
+                    bool TopSpeedCodecChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     CallbackInfo m_callbackInfo;
                     bool m_callbackInfoHasBeenSet;
+
+                    /**
+                     * 极速高清体验馆渠道标志。
+                     */
+                    uint64_t m_topSpeedCodecChannel;
+                    bool m_topSpeedCodecChannelHasBeenSet;
 
                 };
             }

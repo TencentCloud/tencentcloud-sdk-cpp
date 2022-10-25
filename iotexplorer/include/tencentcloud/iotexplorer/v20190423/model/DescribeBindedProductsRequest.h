@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取是否跨账号绑定产品
+                     * @return ProductSource 是否跨账号绑定产品
+                     */
+                    int64_t GetProductSource() const;
+
+                    /**
+                     * 设置是否跨账号绑定产品
+                     * @param ProductSource 是否跨账号绑定产品
+                     */
+                    void SetProductSource(const int64_t& _productSource);
+
+                    /**
+                     * 判断参数 ProductSource 是否已赋值
+                     * @return ProductSource 是否已赋值
+                     */
+                    bool ProductSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 是否跨账号绑定产品
+                     */
+                    int64_t m_productSource;
+                    bool m_productSourceHasBeenSet;
 
                 };
             }

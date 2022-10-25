@@ -6705,6 +6705,92 @@ TcssClient::DescribeEscapeWhiteListOutcomeCallable TcssClient::DescribeEscapeWhi
     return task->get_future();
 }
 
+TcssClient::DescribeExportJobDownloadURLOutcome TcssClient::DescribeExportJobDownloadURL(const DescribeExportJobDownloadURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExportJobDownloadURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportJobDownloadURLResponse rsp = DescribeExportJobDownloadURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportJobDownloadURLOutcome(rsp);
+        else
+            return DescribeExportJobDownloadURLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportJobDownloadURLOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeExportJobDownloadURLAsync(const DescribeExportJobDownloadURLRequest& request, const DescribeExportJobDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExportJobDownloadURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeExportJobDownloadURLOutcomeCallable TcssClient::DescribeExportJobDownloadURLCallable(const DescribeExportJobDownloadURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExportJobDownloadURLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExportJobDownloadURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeExportJobManageListOutcome TcssClient::DescribeExportJobManageList(const DescribeExportJobManageListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExportJobManageList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExportJobManageListResponse rsp = DescribeExportJobManageListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExportJobManageListOutcome(rsp);
+        else
+            return DescribeExportJobManageListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExportJobManageListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeExportJobManageListAsync(const DescribeExportJobManageListRequest& request, const DescribeExportJobManageListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExportJobManageList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeExportJobManageListOutcomeCallable TcssClient::DescribeExportJobManageListCallable(const DescribeExportJobManageListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExportJobManageListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExportJobManageList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::DescribeExportJobResultOutcome TcssClient::DescribeExportJobResult(const DescribeExportJobResultRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExportJobResult");

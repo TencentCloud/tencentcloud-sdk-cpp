@@ -308,6 +308,50 @@ namespace TencentCloud
                      */
                     bool WxSubMchIdHasBeenSet() const;
 
+                    /**
+                     * 获取米大师侧渠道子订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelSubPayOrderId 米大师侧渠道子订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelSubPayOrderId() const;
+
+                    /**
+                     * 设置米大师侧渠道子订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChannelSubPayOrderId 米大师侧渠道子订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannelSubPayOrderId(const std::string& _channelSubPayOrderId);
+
+                    /**
+                     * 判断参数 ChannelSubPayOrderId 是否已赋值
+                     * @return ChannelSubPayOrderId 是否已赋值
+                     */
+                    bool ChannelSubPayOrderIdHasBeenSet() const;
+
+                    /**
+                     * 获取物品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProductId 物品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置物品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProductId 物品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +439,20 @@ namespace TencentCloud
                      */
                     std::string m_wxSubMchId;
                     bool m_wxSubMchIdHasBeenSet;
+
+                    /**
+                     * 米大师侧渠道子订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelSubPayOrderId;
+                    bool m_channelSubPayOrderIdHasBeenSet;
+
+                    /**
+                     * 物品ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
 
                 };
             }

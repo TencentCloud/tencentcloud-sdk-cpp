@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcss/v20201101/model/CKafkaInstanceInfo.h>
+#include <tencentcloud/tcss/v20201101/model/RegionInfo.h>
 
 
 namespace TencentCloud
@@ -56,6 +57,18 @@ namespace TencentCloud
                      */
                     bool InstanceListHasBeenSet() const;
 
+                    /**
+                     * 获取地域列表
+                     * @return RegionList 地域列表
+                     */
+                    std::vector<RegionInfo> GetRegionList() const;
+
+                    /**
+                     * 判断参数 RegionList 是否已赋值
+                     * @return RegionList 是否已赋值
+                     */
+                    bool RegionListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +76,12 @@ namespace TencentCloud
                      */
                     std::vector<CKafkaInstanceInfo> m_instanceList;
                     bool m_instanceListHasBeenSet;
+
+                    /**
+                     * 地域列表
+                     */
+                    std::vector<RegionInfo> m_regionList;
+                    bool m_regionListHasBeenSet;
 
                 };
             }

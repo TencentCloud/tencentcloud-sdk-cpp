@@ -44,24 +44,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出字段
-                     * @return ExportField 导出字段
-                     */
-                    std::vector<std::string> GetExportField() const;
-
-                    /**
-                     * 设置导出字段
-                     * @param ExportField 导出字段
-                     */
-                    void SetExportField(const std::vector<std::string>& _exportField);
-
-                    /**
-                     * 判断参数 ExportField 是否已赋值
-                     * @return ExportField 是否已赋值
-                     */
-                    bool ExportFieldHasBeenSet() const;
-
-                    /**
                      * 获取过滤条件。
 <li>ImageName- String - 是否必填：否 - 镜像名称筛选，</li>
 <li>ScanStatus - String - 是否必填：否 - 镜像扫描状态notScan，scanning，scanned，scanErr</li>
@@ -167,13 +149,25 @@ namespace TencentCloud
                      */
                     bool OrderHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取导出字段
+                     * @return ExportField 导出字段
+                     */
+                    std::vector<std::string> GetExportField() const;
 
                     /**
-                     * 导出字段
+                     * 设置导出字段
+                     * @param ExportField 导出字段
                      */
-                    std::vector<std::string> m_exportField;
-                    bool m_exportFieldHasBeenSet;
+                    void SetExportField(const std::vector<std::string>& _exportField);
+
+                    /**
+                     * 判断参数 ExportField 是否已赋值
+                     * @return ExportField 是否已赋值
+                     */
+                    bool ExportFieldHasBeenSet() const;
+
+                private:
 
                     /**
                      * 过滤条件。
@@ -208,6 +202,12 @@ namespace TencentCloud
                      */
                     std::string m_order;
                     bool m_orderHasBeenSet;
+
+                    /**
+                     * 导出字段
+                     */
+                    std::vector<std::string> m_exportField;
+                    bool m_exportFieldHasBeenSet;
 
                 };
             }

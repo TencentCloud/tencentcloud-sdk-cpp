@@ -45,7 +45,10 @@ CloudOrderReturn::CloudOrderReturn() :
     m_attachmentInfoListHasBeenSet(false),
     m_channelExternalUserInfoListHasBeenSet(false),
     m_externalReturnPromptGroupListHasBeenSet(false),
-    m_sceneInfoHasBeenSet(false)
+    m_sceneInfoHasBeenSet(false),
+    m_subAppIdHasBeenSet(false),
+    m_paySceneHasBeenSet(false),
+    m_paymentMethodHasBeenSet(false)
 {
 }
 
@@ -351,6 +354,36 @@ CoreInternalOutcome CloudOrderReturn::Deserialize(const rapidjson::Value &value)
         m_sceneInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("SubAppId") && !value["SubAppId"].IsNull())
+    {
+        if (!value["SubAppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudOrderReturn.SubAppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAppId = string(value["SubAppId"].GetString());
+        m_subAppIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("PayScene") && !value["PayScene"].IsNull())
+    {
+        if (!value["PayScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudOrderReturn.PayScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payScene = string(value["PayScene"].GetString());
+        m_paySceneHasBeenSet = true;
+    }
+
+    if (value.HasMember("PaymentMethod") && !value["PaymentMethod"].IsNull())
+    {
+        if (!value["PaymentMethod"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudOrderReturn.PaymentMethod` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_paymentMethod = string(value["PaymentMethod"].GetString());
+        m_paymentMethodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +618,30 @@ void CloudOrderReturn::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SceneInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sceneInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAppId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paySceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paymentMethodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PaymentMethod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_paymentMethod.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -988,5 +1045,53 @@ void CloudOrderReturn::SetSceneInfo(const string& _sceneInfo)
 bool CloudOrderReturn::SceneInfoHasBeenSet() const
 {
     return m_sceneInfoHasBeenSet;
+}
+
+string CloudOrderReturn::GetSubAppId() const
+{
+    return m_subAppId;
+}
+
+void CloudOrderReturn::SetSubAppId(const string& _subAppId)
+{
+    m_subAppId = _subAppId;
+    m_subAppIdHasBeenSet = true;
+}
+
+bool CloudOrderReturn::SubAppIdHasBeenSet() const
+{
+    return m_subAppIdHasBeenSet;
+}
+
+string CloudOrderReturn::GetPayScene() const
+{
+    return m_payScene;
+}
+
+void CloudOrderReturn::SetPayScene(const string& _payScene)
+{
+    m_payScene = _payScene;
+    m_paySceneHasBeenSet = true;
+}
+
+bool CloudOrderReturn::PaySceneHasBeenSet() const
+{
+    return m_paySceneHasBeenSet;
+}
+
+string CloudOrderReturn::GetPaymentMethod() const
+{
+    return m_paymentMethod;
+}
+
+void CloudOrderReturn::SetPaymentMethod(const string& _paymentMethod)
+{
+    m_paymentMethod = _paymentMethod;
+    m_paymentMethodHasBeenSet = true;
+}
+
+bool CloudOrderReturn::PaymentMethodHasBeenSet() const
+{
+    return m_paymentMethodHasBeenSet;
 }
 

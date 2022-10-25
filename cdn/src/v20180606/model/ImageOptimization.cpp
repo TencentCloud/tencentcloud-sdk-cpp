@@ -23,7 +23,8 @@ using namespace std;
 ImageOptimization::ImageOptimization() :
     m_webpAdapterHasBeenSet(false),
     m_tpgAdapterHasBeenSet(false),
-    m_guetzliAdapterHasBeenSet(false)
+    m_guetzliAdapterHasBeenSet(false),
+    m_avifAdapterHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome ImageOptimization::Deserialize(const rapidjson::Value &value
         m_guetzliAdapterHasBeenSet = true;
     }
 
+    if (value.HasMember("AvifAdapter") && !value["AvifAdapter"].IsNull())
+    {
+        if (!value["AvifAdapter"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageOptimization.AvifAdapter` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_avifAdapter.Deserialize(value["AvifAdapter"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_avifAdapterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ void ImageOptimization::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_guetzliAdapter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_avifAdapterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvifAdapter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_avifAdapter.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -166,5 +193,21 @@ void ImageOptimization::SetGuetzliAdapter(const GuetzliAdapter& _guetzliAdapter)
 bool ImageOptimization::GuetzliAdapterHasBeenSet() const
 {
     return m_guetzliAdapterHasBeenSet;
+}
+
+AvifAdapter ImageOptimization::GetAvifAdapter() const
+{
+    return m_avifAdapter;
+}
+
+void ImageOptimization::SetAvifAdapter(const AvifAdapter& _avifAdapter)
+{
+    m_avifAdapter = _avifAdapter;
+    m_avifAdapterHasBeenSet = true;
+}
+
+bool ImageOptimization::AvifAdapterHasBeenSet() const
+{
+    return m_avifAdapterHasBeenSet;
 }
 

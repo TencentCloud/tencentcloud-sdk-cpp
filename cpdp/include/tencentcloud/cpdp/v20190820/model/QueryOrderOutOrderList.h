@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOrderOutSubOrderList.h>
+#include <tencentcloud/cpdp/v20190820/model/OldChannelExternalUserInfo.h>
+#include <tencentcloud/cpdp/v20190820/model/OldAttachmentInfo.h>
 
 
 namespace TencentCloud
@@ -479,6 +481,72 @@ bank：网银
                      */
                     bool ChannelExternalOrderIdHasBeenSet() const;
 
+                    /**
+                     * 获取主单核销状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SettleCheck 主单核销状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSettleCheck() const;
+
+                    /**
+                     * 设置主单核销状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SettleCheck 主单核销状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSettleCheck(const int64_t& _settleCheck);
+
+                    /**
+                     * 判断参数 SettleCheck 是否已赋值
+                     * @return SettleCheck 是否已赋值
+                     */
+                    bool SettleCheckHasBeenSet() const;
+
+                    /**
+                     * 获取渠道方用户信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelExternalUserInfoList 渠道方用户信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OldChannelExternalUserInfo> GetChannelExternalUserInfoList() const;
+
+                    /**
+                     * 设置渠道方用户信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChannelExternalUserInfoList 渠道方用户信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannelExternalUserInfoList(const std::vector<OldChannelExternalUserInfo>& _channelExternalUserInfoList);
+
+                    /**
+                     * 判断参数 ChannelExternalUserInfoList 是否已赋值
+                     * @return ChannelExternalUserInfoList 是否已赋值
+                     */
+                    bool ChannelExternalUserInfoListHasBeenSet() const;
+
+                    /**
+                     * 获取附加项信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachmentInfoList 附加项信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OldAttachmentInfo> GetAttachmentInfoList() const;
+
+                    /**
+                     * 设置附加项信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachmentInfoList 附加项信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachmentInfoList(const std::vector<OldAttachmentInfo>& _attachmentInfoList);
+
+                    /**
+                     * 判断参数 AttachmentInfoList 是否已赋值
+                     * @return AttachmentInfoList 是否已赋值
+                     */
+                    bool AttachmentInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -621,6 +689,27 @@ bank：网银
                      */
                     std::string m_channelExternalOrderId;
                     bool m_channelExternalOrderIdHasBeenSet;
+
+                    /**
+                     * 主单核销状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_settleCheck;
+                    bool m_settleCheckHasBeenSet;
+
+                    /**
+                     * 渠道方用户信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OldChannelExternalUserInfo> m_channelExternalUserInfoList;
+                    bool m_channelExternalUserInfoListHasBeenSet;
+
+                    /**
+                     * 附加项信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OldAttachmentInfo> m_attachmentInfoList;
+                    bool m_attachmentInfoListHasBeenSet;
 
                 };
             }

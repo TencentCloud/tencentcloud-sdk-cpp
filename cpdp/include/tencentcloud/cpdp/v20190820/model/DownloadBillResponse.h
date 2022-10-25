@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool DownloadUrlHasBeenSet() const;
 
+                    /**
+                     * 获取账单类型
+TRADE，对账单
+FUND，资金账单
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StateType 账单类型
+TRADE，对账单
+FUND，资金账单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStateType() const;
+
+                    /**
+                     * 判断参数 StateType 是否已赋值
+                     * @return StateType 是否已赋值
+                     */
+                    bool StateTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +116,15 @@ namespace TencentCloud
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
+
+                    /**
+                     * 账单类型
+TRADE，对账单
+FUND，资金账单
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stateType;
+                    bool m_stateTypeHasBeenSet;
 
                 };
             }

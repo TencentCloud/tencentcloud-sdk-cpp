@@ -109,7 +109,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/ReportData.h
   include/tencentcloud/cdn/v20180606/model/AdvanceHttps.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeQuotaResponse.h
-  include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h
+  include/tencentcloud/cdn/v20180606/model/AvifAdapter.h
   include/tencentcloud/cdn/v20180606/model/RemoteAuthenticationRule.h
   include/tencentcloud/cdn/v20180606/model/PurgePathCacheResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeTopDataRequest.h
@@ -202,6 +202,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribePushQuotaResponse.h
   include/tencentcloud/cdn/v20180606/model/Authentication.h
   include/tencentcloud/cdn/v20180606/model/CreateClsLogTopicResponse.h
+  include/tencentcloud/cdn/v20180606/model/MaxAgeCodeRule.h
   include/tencentcloud/cdn/v20180606/model/ScdnAclRule.h
   include/tencentcloud/cdn/v20180606/model/DomainFilter.h
   include/tencentcloud/cdn/v20180606/model/DescribePurgeQuotaRequest.h
@@ -222,6 +223,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeReportDataResponse.h
   include/tencentcloud/cdn/v20180606/model/ListClsTopicDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/Ipv6.h
+  include/tencentcloud/cdn/v20180606/model/DescribeTrafficPackagesRequest.h
   include/tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/OverseaConfig.h
   include/tencentcloud/cdn/v20180606/model/AdvancedCache.h
@@ -456,7 +458,7 @@ set(cdn_src
   src/v20180606/model/ReportData.cpp
   src/v20180606/model/AdvanceHttps.cpp
   src/v20180606/model/DescribePurgeQuotaResponse.cpp
-  src/v20180606/model/DescribeTrafficPackagesRequest.cpp
+  src/v20180606/model/AvifAdapter.cpp
   src/v20180606/model/RemoteAuthenticationRule.cpp
   src/v20180606/model/PurgePathCacheResponse.cpp
   src/v20180606/model/DescribeTopDataRequest.cpp
@@ -549,6 +551,7 @@ set(cdn_src
   src/v20180606/model/DescribePushQuotaResponse.cpp
   src/v20180606/model/Authentication.cpp
   src/v20180606/model/CreateClsLogTopicResponse.cpp
+  src/v20180606/model/MaxAgeCodeRule.cpp
   src/v20180606/model/ScdnAclRule.cpp
   src/v20180606/model/DomainFilter.cpp
   src/v20180606/model/DescribePurgeQuotaRequest.cpp
@@ -569,6 +572,7 @@ set(cdn_src
   src/v20180606/model/DescribeReportDataResponse.cpp
   src/v20180606/model/ListClsTopicDomainsResponse.cpp
   src/v20180606/model/Ipv6.cpp
+  src/v20180606/model/DescribeTrafficPackagesRequest.cpp
   src/v20180606/model/ManageClsTopicDomainsResponse.cpp
   src/v20180606/model/OverseaConfig.cpp
   src/v20180606/model/AdvancedCache.cpp

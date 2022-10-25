@@ -44,7 +44,8 @@ MySQLParam::MySQLParam() :
     m_includeContentChangesHasBeenSet(false),
     m_includeQueryHasBeenSet(false),
     m_recordWithSchemaHasBeenSet(false),
-    m_signalDatabaseHasBeenSet(false)
+    m_signalDatabaseHasBeenSet(false),
+    m_isTableRegularHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,16 @@ CoreInternalOutcome MySQLParam::Deserialize(const rapidjson::Value &value)
         m_signalDatabaseHasBeenSet = true;
     }
 
+    if (value.HasMember("IsTableRegular") && !value["IsTableRegular"].IsNull())
+    {
+        if (!value["IsTableRegular"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `MySQLParam.IsTableRegular` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isTableRegular = value["IsTableRegular"].GetBool();
+        m_isTableRegularHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -515,6 +526,14 @@ void MySQLParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "SignalDatabase";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_signalDatabase.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isTableRegularHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsTableRegular";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isTableRegular, allocator);
     }
 
 }
@@ -902,5 +921,21 @@ void MySQLParam::SetSignalDatabase(const string& _signalDatabase)
 bool MySQLParam::SignalDatabaseHasBeenSet() const
 {
     return m_signalDatabaseHasBeenSet;
+}
+
+bool MySQLParam::GetIsTableRegular() const
+{
+    return m_isTableRegular;
+}
+
+void MySQLParam::SetIsTableRegular(const bool& _isTableRegular)
+{
+    m_isTableRegular = _isTableRegular;
+    m_isTableRegularHasBeenSet = true;
+}
+
+bool MySQLParam::IsTableRegularHasBeenSet() const
+{
+    return m_isTableRegularHasBeenSet;
 }
 

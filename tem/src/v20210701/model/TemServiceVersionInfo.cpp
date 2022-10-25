@@ -93,7 +93,20 @@ TemServiceVersionInfo::TemServiceVersionInfo() :
     m_enablePrometheusConfHasBeenSet(false),
     m_stoppedManuallyHasBeenSet(false),
     m_tcrInstanceIdHasBeenSet(false),
-    m_enableMetricsHasBeenSet(false)
+    m_enableMetricsHasBeenSet(false),
+    m_appIdHasBeenSet(false),
+    m_subAccountUinHasBeenSet(false),
+    m_uinHasBeenSet(false),
+    m_regionHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_enableRegistryHasBeenSet(false),
+    m_autoscalerListHasBeenSet(false),
+    m_modifierHasBeenSet(false),
+    m_creatorHasBeenSet(false),
+    m_deployStrategyConfHasBeenSet(false),
+    m_podListHasBeenSet(false),
+    m_confEditedHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -970,6 +983,170 @@ CoreInternalOutcome TemServiceVersionInfo::Deserialize(const rapidjson::Value &v
         m_enableMetricsHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.AppId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = string(value["AppId"].GetString());
+        m_appIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubAccountUin") && !value["SubAccountUin"].IsNull())
+    {
+        if (!value["SubAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.SubAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAccountUin = string(value["SubAccountUin"].GetString());
+        m_subAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableRegistry") && !value["EnableRegistry"].IsNull())
+    {
+        if (!value["EnableRegistry"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.EnableRegistry` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableRegistry = value["EnableRegistry"].GetInt64();
+        m_enableRegistryHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoscalerList") && !value["AutoscalerList"].IsNull())
+    {
+        if (!value["AutoscalerList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.AutoscalerList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AutoscalerList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Autoscaler item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_autoscalerList.push_back(item);
+        }
+        m_autoscalerListHasBeenSet = true;
+    }
+
+    if (value.HasMember("Modifier") && !value["Modifier"].IsNull())
+    {
+        if (!value["Modifier"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.Modifier` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifier = string(value["Modifier"].GetString());
+        m_modifierHasBeenSet = true;
+    }
+
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("DeployStrategyConf") && !value["DeployStrategyConf"].IsNull())
+    {
+        if (!value["DeployStrategyConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.DeployStrategyConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_deployStrategyConf.Deserialize(value["DeployStrategyConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_deployStrategyConfHasBeenSet = true;
+    }
+
+    if (value.HasMember("PodList") && !value["PodList"].IsNull())
+    {
+        if (!value["PodList"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.PodList` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_podList.Deserialize(value["PodList"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_podListHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfEdited") && !value["ConfEdited"].IsNull())
+    {
+        if (!value["ConfEdited"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.ConfEdited` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_confEdited = value["ConfEdited"].GetBool();
+        m_confEditedHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1636,6 +1813,126 @@ void TemServiceVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EnableMetrics";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableMetrics, allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_appId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableRegistryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableRegistry";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableRegistry, allocator);
+    }
+
+    if (m_autoscalerListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoscalerList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_autoscalerList.begin(); itr != m_autoscalerList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_modifierHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Modifier";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifier.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deployStrategyConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeployStrategyConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_deployStrategyConf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_podListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_podList.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_confEditedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfEdited";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_confEdited, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -2807,5 +3104,213 @@ void TemServiceVersionInfo::SetEnableMetrics(const int64_t& _enableMetrics)
 bool TemServiceVersionInfo::EnableMetricsHasBeenSet() const
 {
     return m_enableMetricsHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetAppId() const
+{
+    return m_appId;
+}
+
+void TemServiceVersionInfo::SetAppId(const string& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetSubAccountUin() const
+{
+    return m_subAccountUin;
+}
+
+void TemServiceVersionInfo::SetSubAccountUin(const string& _subAccountUin)
+{
+    m_subAccountUin = _subAccountUin;
+    m_subAccountUinHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::SubAccountUinHasBeenSet() const
+{
+    return m_subAccountUinHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetUin() const
+{
+    return m_uin;
+}
+
+void TemServiceVersionInfo::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetRegion() const
+{
+    return m_region;
+}
+
+void TemServiceVersionInfo::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void TemServiceVersionInfo::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+int64_t TemServiceVersionInfo::GetEnableRegistry() const
+{
+    return m_enableRegistry;
+}
+
+void TemServiceVersionInfo::SetEnableRegistry(const int64_t& _enableRegistry)
+{
+    m_enableRegistry = _enableRegistry;
+    m_enableRegistryHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::EnableRegistryHasBeenSet() const
+{
+    return m_enableRegistryHasBeenSet;
+}
+
+vector<Autoscaler> TemServiceVersionInfo::GetAutoscalerList() const
+{
+    return m_autoscalerList;
+}
+
+void TemServiceVersionInfo::SetAutoscalerList(const vector<Autoscaler>& _autoscalerList)
+{
+    m_autoscalerList = _autoscalerList;
+    m_autoscalerListHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::AutoscalerListHasBeenSet() const
+{
+    return m_autoscalerListHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetModifier() const
+{
+    return m_modifier;
+}
+
+void TemServiceVersionInfo::SetModifier(const string& _modifier)
+{
+    m_modifier = _modifier;
+    m_modifierHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::ModifierHasBeenSet() const
+{
+    return m_modifierHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetCreator() const
+{
+    return m_creator;
+}
+
+void TemServiceVersionInfo::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
+}
+
+DeployStrategyConf TemServiceVersionInfo::GetDeployStrategyConf() const
+{
+    return m_deployStrategyConf;
+}
+
+void TemServiceVersionInfo::SetDeployStrategyConf(const DeployStrategyConf& _deployStrategyConf)
+{
+    m_deployStrategyConf = _deployStrategyConf;
+    m_deployStrategyConfHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::DeployStrategyConfHasBeenSet() const
+{
+    return m_deployStrategyConfHasBeenSet;
+}
+
+DescribeRunPodPage TemServiceVersionInfo::GetPodList() const
+{
+    return m_podList;
+}
+
+void TemServiceVersionInfo::SetPodList(const DescribeRunPodPage& _podList)
+{
+    m_podList = _podList;
+    m_podListHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::PodListHasBeenSet() const
+{
+    return m_podListHasBeenSet;
+}
+
+bool TemServiceVersionInfo::GetConfEdited() const
+{
+    return m_confEdited;
+}
+
+void TemServiceVersionInfo::SetConfEdited(const bool& _confEdited)
+{
+    m_confEdited = _confEdited;
+    m_confEditedHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::ConfEditedHasBeenSet() const
+{
+    return m_confEditedHasBeenSet;
+}
+
+vector<Tag> TemServiceVersionInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void TemServiceVersionInfo::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

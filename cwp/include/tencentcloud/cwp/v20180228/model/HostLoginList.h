@@ -464,6 +464,36 @@ namespace TencentCloud
                      */
                     bool QuuidHasBeenSet() const;
 
+                    /**
+                     * 获取高危信息说明：
+ABROAD - 海外IP；
+XTI - 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Desc 高危信息说明：
+ABROAD - 海外IP；
+XTI - 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDesc() const;
+
+                    /**
+                     * 设置高危信息说明：
+ABROAD - 海外IP；
+XTI - 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Desc 高危信息说明：
+ABROAD - 海外IP；
+XTI - 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDesc(const std::string& _desc);
+
+                    /**
+                     * 判断参数 Desc 是否已赋值
+                     * @return Desc 是否已赋值
+                     */
+                    bool DescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -598,6 +628,15 @@ namespace TencentCloud
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
+
+                    /**
+                     * 高危信息说明：
+ABROAD - 海外IP；
+XTI - 威胁情报
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_desc;
+                    bool m_descHasBeenSet;
 
                 };
             }

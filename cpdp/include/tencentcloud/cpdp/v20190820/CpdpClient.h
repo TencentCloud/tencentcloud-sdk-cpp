@@ -63,6 +63,8 @@
 #include <tencentcloud/cpdp/v20190820/model/BindAcctResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindOpenBankExternalSubMerchantBankAccountRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/BindOpenBankExternalSubMerchantBankAccountResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/BindOpenBankProfitSharePayeeRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/BindOpenBankProfitSharePayeeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindRelateAccReUnionPayRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/BindRelateAccReUnionPayResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/BindRelateAcctSmallAmountRequest.h>
@@ -331,6 +333,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankOrderDetailReceiptInfoResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankPaymentOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankPaymentOrderResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankProfitSharePayeeRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryOpenBankProfitSharePayeeResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankRefundOrderRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankRefundOrderResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryOpenBankSettleOrderRequest.h>
@@ -521,6 +525,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindOpenBankExternalSubMerchantBankAccountResponse> BindOpenBankExternalSubMerchantBankAccountOutcome;
                 typedef std::future<BindOpenBankExternalSubMerchantBankAccountOutcome> BindOpenBankExternalSubMerchantBankAccountOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::BindOpenBankExternalSubMerchantBankAccountRequest&, BindOpenBankExternalSubMerchantBankAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindOpenBankExternalSubMerchantBankAccountAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindOpenBankProfitSharePayeeResponse> BindOpenBankProfitSharePayeeOutcome;
+                typedef std::future<BindOpenBankProfitSharePayeeOutcome> BindOpenBankProfitSharePayeeOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::BindOpenBankProfitSharePayeeRequest&, BindOpenBankProfitSharePayeeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindOpenBankProfitSharePayeeAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindRelateAccReUnionPayResponse> BindRelateAccReUnionPayOutcome;
                 typedef std::future<BindRelateAccReUnionPayOutcome> BindRelateAccReUnionPayOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::BindRelateAccReUnionPayRequest&, BindRelateAccReUnionPayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindRelateAccReUnionPayAsyncHandler;
@@ -923,6 +930,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryOpenBankPaymentOrderResponse> QueryOpenBankPaymentOrderOutcome;
                 typedef std::future<QueryOpenBankPaymentOrderOutcome> QueryOpenBankPaymentOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankPaymentOrderRequest&, QueryOpenBankPaymentOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankPaymentOrderAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryOpenBankProfitSharePayeeResponse> QueryOpenBankProfitSharePayeeOutcome;
+                typedef std::future<QueryOpenBankProfitSharePayeeOutcome> QueryOpenBankProfitSharePayeeOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankProfitSharePayeeRequest&, QueryOpenBankProfitSharePayeeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankProfitSharePayeeAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryOpenBankRefundOrderResponse> QueryOpenBankRefundOrderOutcome;
                 typedef std::future<QueryOpenBankRefundOrderOutcome> QueryOpenBankRefundOrderOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryOpenBankRefundOrderRequest&, QueryOpenBankRefundOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryOpenBankRefundOrderAsyncHandler;
@@ -1279,6 +1289,15 @@ namespace TencentCloud
                 BindOpenBankExternalSubMerchantBankAccountOutcome BindOpenBankExternalSubMerchantBankAccount(const Model::BindOpenBankExternalSubMerchantBankAccountRequest &request);
                 void BindOpenBankExternalSubMerchantBankAccountAsync(const Model::BindOpenBankExternalSubMerchantBankAccountRequest& request, const BindOpenBankExternalSubMerchantBankAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindOpenBankExternalSubMerchantBankAccountOutcomeCallable BindOpenBankExternalSubMerchantBankAccountCallable(const Model::BindOpenBankExternalSubMerchantBankAccountRequest& request);
+
+                /**
+                 *云企付-绑定分账收款方
+                 * @param req BindOpenBankProfitSharePayeeRequest
+                 * @return BindOpenBankProfitSharePayeeOutcome
+                 */
+                BindOpenBankProfitSharePayeeOutcome BindOpenBankProfitSharePayee(const Model::BindOpenBankProfitSharePayeeRequest &request);
+                void BindOpenBankProfitSharePayeeAsync(const Model::BindOpenBankProfitSharePayeeRequest& request, const BindOpenBankProfitSharePayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindOpenBankProfitSharePayeeOutcomeCallable BindOpenBankProfitSharePayeeCallable(const Model::BindOpenBankProfitSharePayeeRequest& request);
 
                 /**
                  *会员绑定提现账户-回填银联鉴权短信码。用于会员填写动态验证码后，发往银行进行验证，验证成功则完成绑定。
@@ -2496,6 +2515,15 @@ namespace TencentCloud
                 QueryOpenBankPaymentOrderOutcome QueryOpenBankPaymentOrder(const Model::QueryOpenBankPaymentOrderRequest &request);
                 void QueryOpenBankPaymentOrderAsync(const Model::QueryOpenBankPaymentOrderRequest& request, const QueryOpenBankPaymentOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryOpenBankPaymentOrderOutcomeCallable QueryOpenBankPaymentOrderCallable(const Model::QueryOpenBankPaymentOrderRequest& request);
+
+                /**
+                 *云企付-绑定分账收款方查询
+                 * @param req QueryOpenBankProfitSharePayeeRequest
+                 * @return QueryOpenBankProfitSharePayeeOutcome
+                 */
+                QueryOpenBankProfitSharePayeeOutcome QueryOpenBankProfitSharePayee(const Model::QueryOpenBankProfitSharePayeeRequest &request);
+                void QueryOpenBankProfitSharePayeeAsync(const Model::QueryOpenBankProfitSharePayeeRequest& request, const QueryOpenBankProfitSharePayeeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryOpenBankProfitSharePayeeOutcomeCallable QueryOpenBankProfitSharePayeeCallable(const Model::QueryOpenBankProfitSharePayeeRequest& request);
 
                 /**
                  *云企付-退款结果查询

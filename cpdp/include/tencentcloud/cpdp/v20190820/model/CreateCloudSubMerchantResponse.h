@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取子应用Id。
+                     * 获取子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubAppId 子应用Id。
+                     * @return SubAppId 子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSubAppId() const;
@@ -58,9 +58,9 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道子商户Id。
+                     * 获取渠道子商户ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelSubMerchantId 渠道子商户Id。
+                     * @return ChannelSubMerchantId 渠道子商户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetChannelSubMerchantId() const;
@@ -72,9 +72,9 @@ namespace TencentCloud
                     bool ChannelSubMerchantIdHasBeenSet() const;
 
                     /**
-                     * 获取层级，从0开始。
+                     * 获取层级，从0开始
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Level 层级，从0开始。
+                     * @return Level 层级，从0开始
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetLevel() const;
@@ -85,28 +85,49 @@ namespace TencentCloud
                      */
                     bool LevelHasBeenSet() const;
 
+                    /**
+                     * 获取渠道应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelAppId 渠道应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelAppId() const;
+
+                    /**
+                     * 判断参数 ChannelAppId 是否已赋值
+                     * @return ChannelAppId 是否已赋值
+                     */
+                    bool ChannelAppIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 子应用Id。
+                     * 子应用ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subAppId;
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 渠道子商户Id。
+                     * 渠道子商户ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelSubMerchantId;
                     bool m_channelSubMerchantIdHasBeenSet;
 
                     /**
-                     * 层级，从0开始。
+                     * 层级，从0开始
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_level;
                     bool m_levelHasBeenSet;
+
+                    /**
+                     * 渠道应用ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelAppId;
+                    bool m_channelAppIdHasBeenSet;
 
                 };
             }

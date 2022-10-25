@@ -22,7 +22,8 @@
 using namespace TencentCloud::Tcss::V20201101::Model;
 using namespace std;
 
-DescribeSecLogDeliveryKafkaOptionsRequest::DescribeSecLogDeliveryKafkaOptionsRequest()
+DescribeSecLogDeliveryKafkaOptionsRequest::DescribeSecLogDeliveryKafkaOptionsRequest() :
+    m_regionIDHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DescribeSecLogDeliveryKafkaOptionsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_regionIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionID";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionID.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DescribeSecLogDeliveryKafkaOptionsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeSecLogDeliveryKafkaOptionsRequest::GetRegionID() const
+{
+    return m_regionID;
+}
+
+void DescribeSecLogDeliveryKafkaOptionsRequest::SetRegionID(const string& _regionID)
+{
+    m_regionID = _regionID;
+    m_regionIDHasBeenSet = true;
+}
+
+bool DescribeSecLogDeliveryKafkaOptionsRequest::RegionIDHasBeenSet() const
+{
+    return m_regionIDHasBeenSet;
+}
 
 

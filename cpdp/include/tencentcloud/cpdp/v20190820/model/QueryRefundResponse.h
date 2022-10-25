@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cpdp/v20190820/model/OldSubRefund.h>
 
 
 namespace TencentCloud
@@ -55,6 +56,144 @@ namespace TencentCloud
                      */
                     bool StateHasBeenSet() const;
 
+                    /**
+                     * 获取支付机构订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelExternalOrderId 支付机构订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelExternalOrderId() const;
+
+                    /**
+                     * 判断参数 ChannelExternalOrderId 是否已赋值
+                     * @return ChannelExternalOrderId 是否已赋值
+                     */
+                    bool ChannelExternalOrderIdHasBeenSet() const;
+
+                    /**
+                     * 获取支付机构退款单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelExternalRefundId 支付机构退款单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelExternalRefundId() const;
+
+                    /**
+                     * 判断参数 ChannelExternalRefundId 是否已赋值
+                     * @return ChannelExternalRefundId 是否已赋值
+                     */
+                    bool ChannelExternalRefundIdHasBeenSet() const;
+
+                    /**
+                     * 获取渠道订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelOrderId 渠道订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelOrderId() const;
+
+                    /**
+                     * 判断参数 ChannelOrderId 是否已赋值
+                     * @return ChannelOrderId 是否已赋值
+                     */
+                    bool ChannelOrderIdHasBeenSet() const;
+
+                    /**
+                     * 获取退款总金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalRefundAmt 退款总金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalRefundAmt() const;
+
+                    /**
+                     * 判断参数 TotalRefundAmt 是否已赋值
+                     * @return TotalRefundAmt 是否已赋值
+                     */
+                    bool TotalRefundAmtHasBeenSet() const;
+
+                    /**
+                     * 获取货币类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurrencyType 货币类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCurrencyType() const;
+
+                    /**
+                     * 判断参数 CurrencyType 是否已赋值
+                     * @return CurrencyType 是否已赋值
+                     */
+                    bool CurrencyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取外部订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutTradeNo 外部订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOutTradeNo() const;
+
+                    /**
+                     * 判断参数 OutTradeNo 是否已赋值
+                     * @return OutTradeNo 是否已赋值
+                     */
+                    bool OutTradeNoHasBeenSet() const;
+
+                    /**
+                     * 获取退款订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RefundId 退款订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRefundId() const;
+
+                    /**
+                     * 判断参数 RefundId 是否已赋值
+                     * @return RefundId 是否已赋值
+                     */
+                    bool RefundIdHasBeenSet() const;
+
+                    /**
+                     * 获取聚鑫分配的支付主MidasAppId
+                     * @return MidasAppId 聚鑫分配的支付主MidasAppId
+                     */
+                    std::string GetMidasAppId() const;
+
+                    /**
+                     * 判断参数 MidasAppId 是否已赋值
+                     * @return MidasAppId 是否已赋值
+                     */
+                    bool MidasAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取指定退款订单号。与RefundId的区别是，UsedRefundId不会再做修饰，而RefundId则可能在查询退款处理时做了如添加前缀等的修饰
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UsedRefundId 指定退款订单号。与RefundId的区别是，UsedRefundId不会再做修饰，而RefundId则可能在查询退款处理时做了如添加前缀等的修饰
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUsedRefundId() const;
+
+                    /**
+                     * 判断参数 UsedRefundId 是否已赋值
+                     * @return UsedRefundId 是否已赋值
+                     */
+                    bool UsedRefundIdHasBeenSet() const;
+
+                    /**
+                     * 获取子单退款信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubRefundList 子单退款信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OldSubRefund> GetSubRefundList() const;
+
+                    /**
+                     * 判断参数 SubRefundList 是否已赋值
+                     * @return SubRefundList 是否已赋值
+                     */
+                    bool SubRefundListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +201,75 @@ namespace TencentCloud
                      */
                     std::string m_state;
                     bool m_stateHasBeenSet;
+
+                    /**
+                     * 支付机构订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelExternalOrderId;
+                    bool m_channelExternalOrderIdHasBeenSet;
+
+                    /**
+                     * 支付机构退款单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelExternalRefundId;
+                    bool m_channelExternalRefundIdHasBeenSet;
+
+                    /**
+                     * 渠道订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelOrderId;
+                    bool m_channelOrderIdHasBeenSet;
+
+                    /**
+                     * 退款总金额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalRefundAmt;
+                    bool m_totalRefundAmtHasBeenSet;
+
+                    /**
+                     * 货币类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_currencyType;
+                    bool m_currencyTypeHasBeenSet;
+
+                    /**
+                     * 外部订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_outTradeNo;
+                    bool m_outTradeNoHasBeenSet;
+
+                    /**
+                     * 退款订单号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_refundId;
+                    bool m_refundIdHasBeenSet;
+
+                    /**
+                     * 聚鑫分配的支付主MidasAppId
+                     */
+                    std::string m_midasAppId;
+                    bool m_midasAppIdHasBeenSet;
+
+                    /**
+                     * 指定退款订单号。与RefundId的区别是，UsedRefundId不会再做修饰，而RefundId则可能在查询退款处理时做了如添加前缀等的修饰
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_usedRefundId;
+                    bool m_usedRefundIdHasBeenSet;
+
+                    /**
+                     * 子单退款信息列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<OldSubRefund> m_subRefundList;
+                    bool m_subRefundListHasBeenSet;
 
                 };
             }

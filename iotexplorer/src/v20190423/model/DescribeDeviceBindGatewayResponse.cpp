@@ -26,7 +26,9 @@ using namespace std;
 DescribeDeviceBindGatewayResponse::DescribeDeviceBindGatewayResponse() :
     m_gatewayProductIdHasBeenSet(false),
     m_gatewayDeviceNameHasBeenSet(false),
-    m_gatewayNameHasBeenSet(false)
+    m_gatewayNameHasBeenSet(false),
+    m_gatewayProductOwnerNameHasBeenSet(false),
+    m_gatewayProductOwnerUinHasBeenSet(false)
 {
 }
 
@@ -94,6 +96,26 @@ CoreInternalOutcome DescribeDeviceBindGatewayResponse::Deserialize(const string 
         m_gatewayNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GatewayProductOwnerName") && !rsp["GatewayProductOwnerName"].IsNull())
+    {
+        if (!rsp["GatewayProductOwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayProductOwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayProductOwnerName = string(rsp["GatewayProductOwnerName"].GetString());
+        m_gatewayProductOwnerNameHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("GatewayProductOwnerUin") && !rsp["GatewayProductOwnerUin"].IsNull())
+    {
+        if (!rsp["GatewayProductOwnerUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GatewayProductOwnerUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewayProductOwnerUin = string(rsp["GatewayProductOwnerUin"].GetString());
+        m_gatewayProductOwnerUinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +148,22 @@ string DescribeDeviceBindGatewayResponse::ToJsonString() const
         string key = "GatewayName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_gatewayName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayProductOwnerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayProductOwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayProductOwnerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_gatewayProductOwnerUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayProductOwnerUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewayProductOwnerUin.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +206,26 @@ string DescribeDeviceBindGatewayResponse::GetGatewayName() const
 bool DescribeDeviceBindGatewayResponse::GatewayNameHasBeenSet() const
 {
     return m_gatewayNameHasBeenSet;
+}
+
+string DescribeDeviceBindGatewayResponse::GetGatewayProductOwnerName() const
+{
+    return m_gatewayProductOwnerName;
+}
+
+bool DescribeDeviceBindGatewayResponse::GatewayProductOwnerNameHasBeenSet() const
+{
+    return m_gatewayProductOwnerNameHasBeenSet;
+}
+
+string DescribeDeviceBindGatewayResponse::GetGatewayProductOwnerUin() const
+{
+    return m_gatewayProductOwnerUin;
+}
+
+bool DescribeDeviceBindGatewayResponse::GatewayProductOwnerUinHasBeenSet() const
+{
+    return m_gatewayProductOwnerUinHasBeenSet;
 }
 
 

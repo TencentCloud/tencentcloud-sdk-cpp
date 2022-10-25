@@ -655,6 +655,24 @@ namespace TencentCloud
                      */
                     bool EnableHybridStorageHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启essd 增强型云盘
+                     * @return DiskEnhance 是否开启essd 增强型云盘
+                     */
+                    uint64_t GetDiskEnhance() const;
+
+                    /**
+                     * 设置是否开启essd 增强型云盘
+                     * @param DiskEnhance 是否开启essd 增强型云盘
+                     */
+                    void SetDiskEnhance(const uint64_t& _diskEnhance);
+
+                    /**
+                     * 判断参数 DiskEnhance 是否已赋值
+                     * @return DiskEnhance 是否已赋值
+                     */
+                    bool DiskEnhanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -856,6 +874,12 @@ namespace TencentCloud
                      */
                     bool m_enableHybridStorage;
                     bool m_enableHybridStorageHasBeenSet;
+
+                    /**
+                     * 是否开启essd 增强型云盘
+                     */
+                    uint64_t m_diskEnhance;
+                    bool m_diskEnhanceHasBeenSet;
 
                 };
             }

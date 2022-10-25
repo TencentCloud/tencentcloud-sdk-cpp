@@ -90,6 +90,160 @@ namespace TencentCloud
                      */
                     bool ApplicationNameHasBeenSet() const;
 
+                    /**
+                     * 获取版本名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionName 版本名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersionName() const;
+
+                    /**
+                     * 设置版本名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VersionName 版本名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersionName(const std::string& _versionName);
+
+                    /**
+                     * 判断参数 VersionName 是否已赋值
+                     * @return VersionName 是否已赋值
+                     */
+                    bool VersionNameHasBeenSet() const;
+
+                    /**
+                     * 获取Ready实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadyReplicas Ready实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReadyReplicas() const;
+
+                    /**
+                     * 设置Ready实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReadyReplicas Ready实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReadyReplicas(const int64_t& _readyReplicas);
+
+                    /**
+                     * 判断参数 ReadyReplicas 是否已赋值
+                     * @return ReadyReplicas 是否已赋值
+                     */
+                    bool ReadyReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Replicas 实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReplicas() const;
+
+                    /**
+                     * 设置实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Replicas 实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReplicas(const int64_t& _replicas);
+
+                    /**
+                     * 判断参数 Replicas 是否已赋值
+                     * @return Replicas 是否已赋值
+                     */
+                    bool ReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取Updated实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedReplicas Updated实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUpdatedReplicas() const;
+
+                    /**
+                     * 设置Updated实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdatedReplicas Updated实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdatedReplicas(const int64_t& _updatedReplicas);
+
+                    /**
+                     * 判断参数 UpdatedReplicas 是否已赋值
+                     * @return UpdatedReplicas 是否已赋值
+                     */
+                    bool UpdatedReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取UpdatedReady实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedReadyReplicas UpdatedReady实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetUpdatedReadyReplicas() const;
+
+                    /**
+                     * 设置UpdatedReady实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdatedReadyReplicas UpdatedReady实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdatedReadyReplicas(const int64_t& _updatedReadyReplicas);
+
+                    /**
+                     * 判断参数 UpdatedReadyReplicas 是否已赋值
+                     * @return UpdatedReadyReplicas 是否已赋值
+                     */
+                    bool UpdatedReadyReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取更新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdateRevision 更新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdateRevision() const;
+
+                    /**
+                     * 设置更新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdateRevision 更新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdateRevision(const std::string& _updateRevision);
+
+                    /**
+                     * 判断参数 UpdateRevision 是否已赋值
+                     * @return UpdateRevision 是否已赋值
+                     */
+                    bool UpdateRevisionHasBeenSet() const;
+
+                    /**
+                     * 获取当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CurrentRevision 当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCurrentRevision() const;
+
+                    /**
+                     * 设置当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CurrentRevision 当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCurrentRevision(const std::string& _currentRevision);
+
+                    /**
+                     * 判断参数 CurrentRevision 是否已赋值
+                     * @return CurrentRevision 是否已赋值
+                     */
+                    bool CurrentRevisionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +259,55 @@ namespace TencentCloud
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
+
+                    /**
+                     * 版本名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_versionName;
+                    bool m_versionNameHasBeenSet;
+
+                    /**
+                     * Ready实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_readyReplicas;
+                    bool m_readyReplicasHasBeenSet;
+
+                    /**
+                     * 实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_replicas;
+                    bool m_replicasHasBeenSet;
+
+                    /**
+                     * Updated实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_updatedReplicas;
+                    bool m_updatedReplicasHasBeenSet;
+
+                    /**
+                     * UpdatedReady实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_updatedReadyReplicas;
+                    bool m_updatedReadyReplicasHasBeenSet;
+
+                    /**
+                     * 更新版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updateRevision;
+                    bool m_updateRevisionHasBeenSet;
+
+                    /**
+                     * 当前版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_currentRevision;
+                    bool m_currentRevisionHasBeenSet;
 
                 };
             }

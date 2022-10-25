@@ -26,6 +26,8 @@ AliasDomain::AliasDomain() :
     m_zoneIdHasBeenSet(false),
     m_targetNameHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_forbidModeHasBeenSet(false),
+    m_targetForbidHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_modifiedOnHasBeenSet(false)
 {
@@ -84,6 +86,26 @@ CoreInternalOutcome AliasDomain::Deserialize(const rapidjson::Value &value)
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForbidMode") && !value["ForbidMode"].IsNull())
+    {
+        if (!value["ForbidMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AliasDomain.ForbidMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_forbidMode = value["ForbidMode"].GetInt64();
+        m_forbidModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetForbid") && !value["TargetForbid"].IsNull())
+    {
+        if (!value["TargetForbid"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AliasDomain.TargetForbid` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetForbid = value["TargetForbid"].GetBool();
+        m_targetForbidHasBeenSet = true;
     }
 
     if (value.HasMember("CreatedOn") && !value["CreatedOn"].IsNull())
@@ -151,6 +173,22 @@ void AliasDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forbidModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForbidMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_forbidMode, allocator);
+    }
+
+    if (m_targetForbidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetForbid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetForbid, allocator);
     }
 
     if (m_createdOnHasBeenSet)
@@ -250,6 +288,38 @@ void AliasDomain::SetStatus(const string& _status)
 bool AliasDomain::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t AliasDomain::GetForbidMode() const
+{
+    return m_forbidMode;
+}
+
+void AliasDomain::SetForbidMode(const int64_t& _forbidMode)
+{
+    m_forbidMode = _forbidMode;
+    m_forbidModeHasBeenSet = true;
+}
+
+bool AliasDomain::ForbidModeHasBeenSet() const
+{
+    return m_forbidModeHasBeenSet;
+}
+
+bool AliasDomain::GetTargetForbid() const
+{
+    return m_targetForbid;
+}
+
+void AliasDomain::SetTargetForbid(const bool& _targetForbid)
+{
+    m_targetForbid = _targetForbid;
+    m_targetForbidHasBeenSet = true;
+}
+
+bool AliasDomain::TargetForbidHasBeenSet() const
+{
+    return m_targetForbidHasBeenSet;
 }
 
 string AliasDomain::GetCreatedOn() const

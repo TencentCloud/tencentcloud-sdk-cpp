@@ -26,7 +26,8 @@ using namespace std;
 DownloadBillResponse::DownloadBillResponse() :
     m_fileNameHasBeenSet(false),
     m_fileMD5HasBeenSet(false),
-    m_downloadUrlHasBeenSet(false)
+    m_downloadUrlHasBeenSet(false),
+    m_stateTypeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DownloadBillResponse::Deserialize(const string &payload)
         m_downloadUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StateType") && !rsp["StateType"].IsNull())
+    {
+        if (!rsp["StateType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StateType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stateType = string(rsp["StateType"].GetString());
+        m_stateTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DownloadBillResponse::ToJsonString() const
         string key = "DownloadUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_downloadUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stateType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ string DownloadBillResponse::GetDownloadUrl() const
 bool DownloadBillResponse::DownloadUrlHasBeenSet() const
 {
     return m_downloadUrlHasBeenSet;
+}
+
+string DownloadBillResponse::GetStateType() const
+{
+    return m_stateType;
+}
+
+bool DownloadBillResponse::StateTypeHasBeenSet() const
+{
+    return m_stateTypeHasBeenSet;
 }
 
 

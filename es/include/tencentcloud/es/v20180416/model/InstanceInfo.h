@@ -203,14 +203,14 @@ namespace TencentCloud
                     bool SubnetUidHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁
-                     * @return Status 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁
+                     * 获取实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
+                     * @return Status 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁
-                     * @param Status 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁
+                     * 设置实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
+                     * @param Status 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -1672,6 +1672,50 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool EnableHybridStorageHasBeenSet() const;
 
+                    /**
+                     * 获取流程进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessPercent 流程进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetProcessPercent() const;
+
+                    /**
+                     * 设置流程进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProcessPercent 流程进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProcessPercent(const double& _processPercent);
+
+                    /**
+                     * 判断参数 ProcessPercent 是否已赋值
+                     * @return ProcessPercent 是否已赋值
+                     */
+                    bool ProcessPercentHasBeenSet() const;
+
+                    /**
+                     * 获取Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KibanaAlteringPublicAccess Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKibanaAlteringPublicAccess() const;
+
+                    /**
+                     * 设置Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KibanaAlteringPublicAccess Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKibanaAlteringPublicAccess(const std::string& _kibanaAlteringPublicAccess);
+
+                    /**
+                     * 判断参数 KibanaAlteringPublicAccess 是否已赋值
+                     * @return KibanaAlteringPublicAccess 是否已赋值
+                     */
+                    bool KibanaAlteringPublicAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1723,7 +1767,7 @@ RENEW_FLAG_DEFAULT：不自动续费
                     bool m_subnetUidHasBeenSet;
 
                     /**
-                     * 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁
+                     * 实例状态，0:处理中,1:正常,-1停止,-2:销毁中,-3:已销毁, 2:创建集群时初始化中
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -2195,6 +2239,20 @@ RENEW_FLAG_DEFAULT：不自动续费
                      */
                     bool m_enableHybridStorage;
                     bool m_enableHybridStorageHasBeenSet;
+
+                    /**
+                     * 流程进度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_processPercent;
+                    bool m_processPercentHasBeenSet;
+
+                    /**
+                     * Kibana的altering外网告警策略<li>OPEN：开启</li><li>CLOSE：关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kibanaAlteringPublicAccess;
+                    bool m_kibanaAlteringPublicAccessHasBeenSet;
 
                 };
             }

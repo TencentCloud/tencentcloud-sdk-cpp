@@ -190,6 +190,28 @@ namespace TencentCloud
                      */
                     bool SignAlgoHasBeenSet() const;
 
+                    /**
+                     * 获取证书归属域名名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CommonName 证书归属域名名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCommonName() const;
+
+                    /**
+                     * 设置证书归属域名名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CommonName 证书归属域名名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCommonName(const std::string& _commonName);
+
+                    /**
+                     * 判断参数 CommonName 是否已赋值
+                     * @return CommonName 是否已赋值
+                     */
+                    bool CommonNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +258,13 @@ namespace TencentCloud
                      */
                     std::string m_signAlgo;
                     bool m_signAlgoHasBeenSet;
+
+                    /**
+                     * 证书归属域名名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_commonName;
+                    bool m_commonNameHasBeenSet;
 
                 };
             }

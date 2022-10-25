@@ -83,6 +83,49 @@ EssbasicClient::ChannelBatchCancelFlowsOutcomeCallable EssbasicClient::ChannelBa
     return task->get_future();
 }
 
+EssbasicClient::ChannelCancelFlowOutcome EssbasicClient::ChannelCancelFlow(const ChannelCancelFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCancelFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCancelFlowResponse rsp = ChannelCancelFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCancelFlowOutcome(rsp);
+        else
+            return ChannelCancelFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCancelFlowOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCancelFlowAsync(const ChannelCancelFlowRequest& request, const ChannelCancelFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCancelFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCancelFlowOutcomeCallable EssbasicClient::ChannelCancelFlowCallable(const ChannelCancelFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCancelFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCancelFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCancelMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCancelMultiFlowSignQRCode(const ChannelCancelMultiFlowSignQRCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCancelMultiFlowSignQRCode");

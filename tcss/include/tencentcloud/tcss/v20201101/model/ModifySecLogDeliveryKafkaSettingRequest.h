@@ -187,6 +187,24 @@ namespace TencentCloud
                      */
                     bool KafkaVersionHasBeenSet() const;
 
+                    /**
+                     * 获取地域ID
+                     * @return RegionID 地域ID
+                     */
+                    std::string GetRegionID() const;
+
+                    /**
+                     * 设置地域ID
+                     * @param RegionID 地域ID
+                     */
+                    void SetRegionID(const std::string& _regionID);
+
+                    /**
+                     * 判断参数 RegionID 是否已赋值
+                     * @return RegionID 是否已赋值
+                     */
+                    bool RegionIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +254,12 @@ namespace TencentCloud
                      */
                     std::string m_kafkaVersion;
                     bool m_kafkaVersionHasBeenSet;
+
+                    /**
+                     * 地域ID
+                     */
+                    std::string m_regionID;
+                    bool m_regionIDHasBeenSet;
 
                 };
             }

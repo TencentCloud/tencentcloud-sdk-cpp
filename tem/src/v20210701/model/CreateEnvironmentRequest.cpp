@@ -29,7 +29,8 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_descriptionHasBeenSet(false),
     m_k8sVersionHasBeenSet(false),
     m_sourceChannelHasBeenSet(false),
-    m_enableTswTraceServiceHasBeenSet(false)
+    m_enableTswTraceServiceHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,21 @@ string CreateEnvironmentRequest::ToJsonString() const
         string key = "EnableTswTraceService";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableTswTraceService, allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -219,6 +235,22 @@ void CreateEnvironmentRequest::SetEnableTswTraceService(const bool& _enableTswTr
 bool CreateEnvironmentRequest::EnableTswTraceServiceHasBeenSet() const
 {
     return m_enableTswTraceServiceHasBeenSet;
+}
+
+vector<Tag> CreateEnvironmentRequest::GetTags() const
+{
+    return m_tags;
+}
+
+void CreateEnvironmentRequest::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

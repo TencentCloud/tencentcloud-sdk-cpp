@@ -29,7 +29,8 @@ QueryOpenBankSettleOrderResult::QueryOpenBankSettleOrderResult() :
     m_settleTypeHasBeenSet(false),
     m_failReasonHasBeenSet(false),
     m_timeFinishHasBeenSet(false),
-    m_settleFeeHasBeenSet(false)
+    m_settleFeeHasBeenSet(false),
+    m_currencyHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome QueryOpenBankSettleOrderResult::Deserialize(const rapidjson:
         m_settleFeeHasBeenSet = true;
     }
 
+    if (value.HasMember("Currency") && !value["Currency"].IsNull())
+    {
+        if (!value["Currency"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `QueryOpenBankSettleOrderResult.Currency` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currency = string(value["Currency"].GetString());
+        m_currencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void QueryOpenBankSettleOrderResult::ToJsonObject(rapidjson::Value &value, rapid
         string key = "SettleFee";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_settleFee.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_currencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Currency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void QueryOpenBankSettleOrderResult::SetSettleFee(const string& _settleFee)
 bool QueryOpenBankSettleOrderResult::SettleFeeHasBeenSet() const
 {
     return m_settleFeeHasBeenSet;
+}
+
+string QueryOpenBankSettleOrderResult::GetCurrency() const
+{
+    return m_currency;
+}
+
+void QueryOpenBankSettleOrderResult::SetCurrency(const string& _currency)
+{
+    m_currency = _currency;
+    m_currencyHasBeenSet = true;
+}
+
+bool QueryOpenBankSettleOrderResult::CurrencyHasBeenSet() const
+{
+    return m_currencyHasBeenSet;
 }
 

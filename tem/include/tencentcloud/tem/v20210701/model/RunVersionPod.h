@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/NodeInfo.h>
 
 
 namespace TencentCloud
@@ -246,6 +247,138 @@ namespace TencentCloud
                      */
                     bool ContainerStateHasBeenSet() const;
 
+                    /**
+                     * 获取实例所在节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeInfo 实例所在节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    NodeInfo GetNodeInfo() const;
+
+                    /**
+                     * 设置实例所在节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeInfo 实例所在节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeInfo(const NodeInfo& _nodeInfo);
+
+                    /**
+                     * 判断参数 NodeInfo 是否已赋值
+                     * @return NodeInfo 是否已赋值
+                     */
+                    bool NodeInfoHasBeenSet() const;
+
+                    /**
+                     * 获取启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartTime 启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartTime() const;
+
+                    /**
+                     * 设置启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartTime 启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartTime(const std::string& _startTime);
+
+                    /**
+                     * 判断参数 StartTime 是否已赋值
+                     * @return StartTime 是否已赋值
+                     */
+                    bool StartTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否健康
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Unhealthy 是否健康
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetUnhealthy() const;
+
+                    /**
+                     * 设置是否健康
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Unhealthy 是否健康
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnhealthy(const bool& _unhealthy);
+
+                    /**
+                     * 判断参数 Unhealthy 是否已赋值
+                     * @return Unhealthy 是否已赋值
+                     */
+                    bool UnhealthyHasBeenSet() const;
+
+                    /**
+                     * 获取不健康时的提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnhealthyWarningMsg 不健康时的提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUnhealthyWarningMsg() const;
+
+                    /**
+                     * 设置不健康时的提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UnhealthyWarningMsg 不健康时的提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnhealthyWarningMsg(const std::string& _unhealthyWarningMsg);
+
+                    /**
+                     * 判断参数 UnhealthyWarningMsg 是否已赋值
+                     * @return UnhealthyWarningMsg 是否已赋值
+                     */
+                    bool UnhealthyWarningMsgHasBeenSet() const;
+
+                    /**
+                     * 获取版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionId 版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVersionId() const;
+
+                    /**
+                     * 设置版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VersionId 版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersionId(const std::string& _versionId);
+
+                    /**
+                     * 判断参数 VersionId 是否已赋值
+                     * @return VersionId 是否已赋值
+                     */
+                    bool VersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApplicationName 应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApplicationName() const;
+
+                    /**
+                     * 设置应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApplicationName 应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApplicationName(const std::string& _applicationName);
+
+                    /**
+                     * 判断参数 ApplicationName 是否已赋值
+                     * @return ApplicationName 是否已赋值
+                     */
+                    bool ApplicationNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -312,6 +445,48 @@ namespace TencentCloud
                      */
                     std::string m_containerState;
                     bool m_containerStateHasBeenSet;
+
+                    /**
+                     * 实例所在节点信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    NodeInfo m_nodeInfo;
+                    bool m_nodeInfoHasBeenSet;
+
+                    /**
+                     * 启动时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startTime;
+                    bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 是否健康
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_unhealthy;
+                    bool m_unhealthyHasBeenSet;
+
+                    /**
+                     * 不健康时的提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_unhealthyWarningMsg;
+                    bool m_unhealthyWarningMsgHasBeenSet;
+
+                    /**
+                     * 版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_versionId;
+                    bool m_versionIdHasBeenSet;
+
+                    /**
+                     * 应用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_applicationName;
+                    bool m_applicationNameHasBeenSet;
 
                 };
             }

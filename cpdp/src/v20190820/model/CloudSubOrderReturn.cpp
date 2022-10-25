@@ -34,7 +34,9 @@ CloudSubOrderReturn::CloudSubOrderReturn() :
     m_metadataHasBeenSet(false),
     m_attachmentInfoListHasBeenSet(false),
     m_channelExternalSubOrderIdHasBeenSet(false),
-    m_wxSubMchIdHasBeenSet(false)
+    m_wxSubMchIdHasBeenSet(false),
+    m_channelSubPayOrderIdHasBeenSet(false),
+    m_productIdHasBeenSet(false)
 {
 }
 
@@ -197,6 +199,26 @@ CoreInternalOutcome CloudSubOrderReturn::Deserialize(const rapidjson::Value &val
         m_wxSubMchIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelSubPayOrderId") && !value["ChannelSubPayOrderId"].IsNull())
+    {
+        if (!value["ChannelSubPayOrderId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudSubOrderReturn.ChannelSubPayOrderId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelSubPayOrderId = string(value["ChannelSubPayOrderId"].GetString());
+        m_channelSubPayOrderIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductId") && !value["ProductId"].IsNull())
+    {
+        if (!value["ProductId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudSubOrderReturn.ProductId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productId = string(value["ProductId"].GetString());
+        m_productIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -316,6 +338,22 @@ void CloudSubOrderReturn::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "WxSubMchId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_wxSubMchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelSubPayOrderIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelSubPayOrderId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelSubPayOrderId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -543,5 +581,37 @@ void CloudSubOrderReturn::SetWxSubMchId(const string& _wxSubMchId)
 bool CloudSubOrderReturn::WxSubMchIdHasBeenSet() const
 {
     return m_wxSubMchIdHasBeenSet;
+}
+
+string CloudSubOrderReturn::GetChannelSubPayOrderId() const
+{
+    return m_channelSubPayOrderId;
+}
+
+void CloudSubOrderReturn::SetChannelSubPayOrderId(const string& _channelSubPayOrderId)
+{
+    m_channelSubPayOrderId = _channelSubPayOrderId;
+    m_channelSubPayOrderIdHasBeenSet = true;
+}
+
+bool CloudSubOrderReturn::ChannelSubPayOrderIdHasBeenSet() const
+{
+    return m_channelSubPayOrderIdHasBeenSet;
+}
+
+string CloudSubOrderReturn::GetProductId() const
+{
+    return m_productId;
+}
+
+void CloudSubOrderReturn::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool CloudSubOrderReturn::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
 }
 

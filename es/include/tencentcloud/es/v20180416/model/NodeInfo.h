@@ -251,6 +251,28 @@ namespace TencentCloud
                      */
                     bool MemSizeHasBeenSet() const;
 
+                    /**
+                     * 获取/
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskEnhance /
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDiskEnhance() const;
+
+                    /**
+                     * 设置/
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskEnhance /
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskEnhance(const int64_t& _diskEnhance);
+
+                    /**
+                     * 判断参数 DiskEnhance 是否已赋值
+                     * @return DiskEnhance 是否已赋值
+                     */
+                    bool DiskEnhanceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +340,13 @@ namespace TencentCloud
                      */
                     int64_t m_memSize;
                     bool m_memSizeHasBeenSet;
+
+                    /**
+                     * /
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_diskEnhance;
+                    bool m_diskEnhanceHasBeenSet;
 
                 };
             }
