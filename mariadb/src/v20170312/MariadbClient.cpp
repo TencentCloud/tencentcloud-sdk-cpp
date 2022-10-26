@@ -2233,6 +2233,135 @@ MariadbClient::ModifyDBSyncModeOutcomeCallable MariadbClient::ModifyDBSyncModeCa
     return task->get_future();
 }
 
+MariadbClient::ModifyInstanceNetworkOutcome MariadbClient::ModifyInstanceNetwork(const ModifyInstanceNetworkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceNetwork");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceNetworkResponse rsp = ModifyInstanceNetworkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceNetworkOutcome(rsp);
+        else
+            return ModifyInstanceNetworkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceNetworkOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ModifyInstanceNetworkAsync(const ModifyInstanceNetworkRequest& request, const ModifyInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceNetwork(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ModifyInstanceNetworkOutcomeCallable MariadbClient::ModifyInstanceNetworkCallable(const ModifyInstanceNetworkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceNetworkOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceNetwork(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MariadbClient::ModifyInstanceVipOutcome MariadbClient::ModifyInstanceVip(const ModifyInstanceVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceVipResponse rsp = ModifyInstanceVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceVipOutcome(rsp);
+        else
+            return ModifyInstanceVipOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceVipOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ModifyInstanceVipAsync(const ModifyInstanceVipRequest& request, const ModifyInstanceVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ModifyInstanceVipOutcomeCallable MariadbClient::ModifyInstanceVipCallable(const ModifyInstanceVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceVipOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceVip(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MariadbClient::ModifyInstanceVportOutcome MariadbClient::ModifyInstanceVport(const ModifyInstanceVportRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceVport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceVportResponse rsp = ModifyInstanceVportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceVportOutcome(rsp);
+        else
+            return ModifyInstanceVportOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceVportOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::ModifyInstanceVportAsync(const ModifyInstanceVportRequest& request, const ModifyInstanceVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceVport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::ModifyInstanceVportOutcomeCallable MariadbClient::ModifyInstanceVportCallable(const ModifyInstanceVportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceVportOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceVport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::ModifyLogFileRetentionPeriodOutcome MariadbClient::ModifyLogFileRetentionPeriod(const ModifyLogFileRetentionPeriodRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLogFileRetentionPeriod");

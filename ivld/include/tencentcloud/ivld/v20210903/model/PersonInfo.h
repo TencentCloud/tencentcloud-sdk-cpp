@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ivld/v20210903/model/AppearInfo.h>
+#include <tencentcloud/ivld/v20210903/model/Rectf.h>
 
 
 namespace TencentCloud
@@ -119,6 +120,28 @@ namespace TencentCloud
                      */
                     bool AppearInfoHasBeenSet() const;
 
+                    /**
+                     * 获取人脸在图片中的位置，仅在图片标签任务有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppearRect 人脸在图片中的位置，仅在图片标签任务有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Rectf GetAppearRect() const;
+
+                    /**
+                     * 设置人脸在图片中的位置，仅在图片标签任务有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppearRect 人脸在图片中的位置，仅在图片标签任务有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppearRect(const Rectf& _appearRect);
+
+                    /**
+                     * 判断参数 AppearRect 是否已赋值
+                     * @return AppearRect 是否已赋值
+                     */
+                    bool AppearRectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -144,6 +167,13 @@ namespace TencentCloud
                      */
                     AppearInfo m_appearInfo;
                     bool m_appearInfoHasBeenSet;
+
+                    /**
+                     * 人脸在图片中的位置，仅在图片标签任务有效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Rectf m_appearRect;
+                    bool m_appearRectHasBeenSet;
 
                 };
             }

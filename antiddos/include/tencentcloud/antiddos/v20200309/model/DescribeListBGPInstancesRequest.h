@@ -242,6 +242,42 @@ namespace TencentCloud
                     bool FilterEnterpriseFlagHasBeenSet() const;
 
                     /**
+                     * 获取轻量版搜索
+                     * @return FilterLightFlag 轻量版搜索
+                     */
+                    uint64_t GetFilterLightFlag() const;
+
+                    /**
+                     * 设置轻量版搜索
+                     * @param FilterLightFlag 轻量版搜索
+                     */
+                    void SetFilterLightFlag(const uint64_t& _filterLightFlag);
+
+                    /**
+                     * 判断参数 FilterLightFlag 是否已赋值
+                     * @return FilterLightFlag 是否已赋值
+                     */
+                    bool FilterLightFlagHasBeenSet() const;
+
+                    /**
+                     * 获取定制版搜索
+                     * @return FilterChannelFlag 定制版搜索
+                     */
+                    uint64_t GetFilterChannelFlag() const;
+
+                    /**
+                     * 设置定制版搜索
+                     * @param FilterChannelFlag 定制版搜索
+                     */
+                    void SetFilterChannelFlag(const uint64_t& _filterChannelFlag);
+
+                    /**
+                     * 判断参数 FilterChannelFlag 是否已赋值
+                     * @return FilterChannelFlag 是否已赋值
+                     */
+                    bool FilterChannelFlagHasBeenSet() const;
+
+                    /**
                      * 获取标签搜索
                      * @return FilterTag 标签搜索
                      */
@@ -326,6 +362,18 @@ namespace TencentCloud
                      */
                     uint64_t m_filterEnterpriseFlag;
                     bool m_filterEnterpriseFlagHasBeenSet;
+
+                    /**
+                     * 轻量版搜索
+                     */
+                    uint64_t m_filterLightFlag;
+                    bool m_filterLightFlagHasBeenSet;
+
+                    /**
+                     * 定制版搜索
+                     */
+                    uint64_t m_filterChannelFlag;
+                    bool m_filterChannelFlagHasBeenSet;
 
                     /**
                      * 标签搜索

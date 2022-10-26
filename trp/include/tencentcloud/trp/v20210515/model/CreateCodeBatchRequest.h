@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool RemarkHasBeenSet() const;
 
                     /**
-                     * 获取活动ID
-                     * @return MpTpl 活动ID
+                     * 获取模版ID，或者活动ID
+                     * @return MpTpl 模版ID，或者活动ID
                      */
                     std::string GetMpTpl() const;
 
                     /**
-                     * 设置活动ID
-                     * @param MpTpl 活动ID
+                     * 设置模版ID，或者活动ID
+                     * @param MpTpl 模版ID，或者活动ID
                      */
                     void SetMpTpl(const std::string& _mpTpl);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool MpTplHasBeenSet() const;
 
                     /**
-                     * 获取克隆批次ID
-                     * @return CloneId 克隆批次ID
+                     * 获取克隆批次ID，同时会复制溯源信息
+                     * @return CloneId 克隆批次ID，同时会复制溯源信息
                      */
                     std::string GetCloneId() const;
 
                     /**
-                     * 设置克隆批次ID
-                     * @param CloneId 克隆批次ID
+                     * 设置克隆批次ID，同时会复制溯源信息
+                     * @param CloneId 克隆批次ID，同时会复制溯源信息
                      */
                     void SetCloneId(const std::string& _cloneId);
 
@@ -225,13 +225,13 @@ namespace TencentCloud
                     bool m_remarkHasBeenSet;
 
                     /**
-                     * 活动ID
+                     * 模版ID，或者活动ID
                      */
                     std::string m_mpTpl;
                     bool m_mpTplHasBeenSet;
 
                     /**
-                     * 克隆批次ID
+                     * 克隆批次ID，同时会复制溯源信息
                      */
                     std::string m_cloneId;
                     bool m_cloneIdHasBeenSet;

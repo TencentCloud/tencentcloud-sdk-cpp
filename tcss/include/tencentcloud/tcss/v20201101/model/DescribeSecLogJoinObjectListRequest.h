@@ -111,29 +111,29 @@ bash: "container_bash",
 
                     /**
                      * 获取过滤条件。
-<li>Status- String - 是否必填：否 - 主机状态 /li>
-<li>HostIP- String - 是否必填：否 - 主机内网IP /li>
-<li>PublicIP- String - 是否必填：否 - 主机外网IP /li>
-<li>HostName- String - 是否必填：否 - 主机名称 /li>
+<li>Status- String - 是否必填：否 - 主机状态 </li>
+<li>HostIP- String - 是否必填：否 - 主机内网IP </li>
+<li>PublicIP- String - 是否必填：否 - 主机外网IP </li>
+<li>HostName- String - 是否必填：否 - 主机名称 </li>
                      * @return Filters 过滤条件。
-<li>Status- String - 是否必填：否 - 主机状态 /li>
-<li>HostIP- String - 是否必填：否 - 主机内网IP /li>
-<li>PublicIP- String - 是否必填：否 - 主机外网IP /li>
-<li>HostName- String - 是否必填：否 - 主机名称 /li>
+<li>Status- String - 是否必填：否 - 主机状态 </li>
+<li>HostIP- String - 是否必填：否 - 主机内网IP </li>
+<li>PublicIP- String - 是否必填：否 - 主机外网IP </li>
+<li>HostName- String - 是否必填：否 - 主机名称 </li>
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>Status- String - 是否必填：否 - 主机状态 /li>
-<li>HostIP- String - 是否必填：否 - 主机内网IP /li>
-<li>PublicIP- String - 是否必填：否 - 主机外网IP /li>
-<li>HostName- String - 是否必填：否 - 主机名称 /li>
+<li>Status- String - 是否必填：否 - 主机状态 </li>
+<li>HostIP- String - 是否必填：否 - 主机内网IP </li>
+<li>PublicIP- String - 是否必填：否 - 主机外网IP </li>
+<li>HostName- String - 是否必填：否 - 主机名称 </li>
                      * @param Filters 过滤条件。
-<li>Status- String - 是否必填：否 - 主机状态 /li>
-<li>HostIP- String - 是否必填：否 - 主机内网IP /li>
-<li>PublicIP- String - 是否必填：否 - 主机外网IP /li>
-<li>HostName- String - 是否必填：否 - 主机名称 /li>
+<li>Status- String - 是否必填：否 - 主机状态 </li>
+<li>HostIP- String - 是否必填：否 - 主机内网IP </li>
+<li>PublicIP- String - 是否必填：否 - 主机外网IP </li>
+<li>HostName- String - 是否必填：否 - 主机名称 </li>
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
@@ -204,10 +204,10 @@ bash: "container_bash",
 
                     /**
                      * 过滤条件。
-<li>Status- String - 是否必填：否 - 主机状态 /li>
-<li>HostIP- String - 是否必填：否 - 主机内网IP /li>
-<li>PublicIP- String - 是否必填：否 - 主机外网IP /li>
-<li>HostName- String - 是否必填：否 - 主机名称 /li>
+<li>Status- String - 是否必填：否 - 主机状态 </li>
+<li>HostIP- String - 是否必填：否 - 主机内网IP </li>
+<li>PublicIP- String - 是否必填：否 - 主机外网IP </li>
+<li>HostName- String - 是否必填：否 - 主机名称 </li>
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;

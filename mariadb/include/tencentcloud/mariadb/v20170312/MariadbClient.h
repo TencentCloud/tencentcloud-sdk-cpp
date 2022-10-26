@@ -125,6 +125,12 @@
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBParametersResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyInstanceNetworkRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyInstanceNetworkResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyInstanceVipRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyInstanceVipResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyInstanceVportRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyInstanceVportResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyRequest.h>
@@ -310,6 +316,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBSyncModeResponse> ModifyDBSyncModeOutcome;
                 typedef std::future<ModifyDBSyncModeOutcome> ModifyDBSyncModeOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyDBSyncModeRequest&, ModifyDBSyncModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBSyncModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceNetworkResponse> ModifyInstanceNetworkOutcome;
+                typedef std::future<ModifyInstanceNetworkOutcome> ModifyInstanceNetworkOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyInstanceNetworkRequest&, ModifyInstanceNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNetworkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceVipResponse> ModifyInstanceVipOutcome;
+                typedef std::future<ModifyInstanceVipOutcome> ModifyInstanceVipOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyInstanceVipRequest&, ModifyInstanceVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceVipAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceVportResponse> ModifyInstanceVportOutcome;
+                typedef std::future<ModifyInstanceVportOutcome> ModifyInstanceVportOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyInstanceVportRequest&, ModifyInstanceVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceVportAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLogFileRetentionPeriodResponse> ModifyLogFileRetentionPeriodOutcome;
                 typedef std::future<ModifyLogFileRetentionPeriodOutcome> ModifyLogFileRetentionPeriodOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyLogFileRetentionPeriodRequest&, ModifyLogFileRetentionPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogFileRetentionPeriodAsyncHandler;
@@ -808,6 +823,33 @@ namespace TencentCloud
                 ModifyDBSyncModeOutcome ModifyDBSyncMode(const Model::ModifyDBSyncModeRequest &request);
                 void ModifyDBSyncModeAsync(const Model::ModifyDBSyncModeRequest& request, const ModifyDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBSyncModeOutcomeCallable ModifyDBSyncModeCallable(const Model::ModifyDBSyncModeRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceNetwork）用于修改实例所属网络
+                 * @param req ModifyInstanceNetworkRequest
+                 * @return ModifyInstanceNetworkOutcome
+                 */
+                ModifyInstanceNetworkOutcome ModifyInstanceNetwork(const Model::ModifyInstanceNetworkRequest &request);
+                void ModifyInstanceNetworkAsync(const Model::ModifyInstanceNetworkRequest& request, const ModifyInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceNetworkOutcomeCallable ModifyInstanceNetworkCallable(const Model::ModifyInstanceNetworkRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceVip）用于修改实例VIP
+                 * @param req ModifyInstanceVipRequest
+                 * @return ModifyInstanceVipOutcome
+                 */
+                ModifyInstanceVipOutcome ModifyInstanceVip(const Model::ModifyInstanceVipRequest &request);
+                void ModifyInstanceVipAsync(const Model::ModifyInstanceVipRequest& request, const ModifyInstanceVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceVipOutcomeCallable ModifyInstanceVipCallable(const Model::ModifyInstanceVipRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceVport）用于修改实例VPORT
+                 * @param req ModifyInstanceVportRequest
+                 * @return ModifyInstanceVportOutcome
+                 */
+                ModifyInstanceVportOutcome ModifyInstanceVport(const Model::ModifyInstanceVportRequest &request);
+                void ModifyInstanceVportAsync(const Model::ModifyInstanceVportRequest& request, const ModifyInstanceVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceVportOutcomeCallable ModifyInstanceVportCallable(const Model::ModifyInstanceVportRequest& request);
 
                 /**
                  *本接口(ModifyLogFileRetentionPeriod)用于修改数据库备份日志保存天数。

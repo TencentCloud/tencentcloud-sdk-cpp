@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cpdp/v20190820/model/CloudSettleInfo.h>
 #include <tencentcloud/cpdp/v20190820/model/CloudAttachmentInfo.h>
+#include <tencentcloud/cpdp/v20190820/model/CloudExternalAttachmentData.h>
 
 
 namespace TencentCloud
@@ -312,6 +313,24 @@ namespace TencentCloud
                      */
                     bool AttachmentInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取渠道透传数据列表。
+                     * @return ExternalAttachmentDataList 渠道透传数据列表。
+                     */
+                    std::vector<CloudExternalAttachmentData> GetExternalAttachmentDataList() const;
+
+                    /**
+                     * 设置渠道透传数据列表。
+                     * @param ExternalAttachmentDataList 渠道透传数据列表。
+                     */
+                    void SetExternalAttachmentDataList(const std::vector<CloudExternalAttachmentData>& _externalAttachmentDataList);
+
+                    /**
+                     * 判断参数 ExternalAttachmentDataList 是否已赋值
+                     * @return ExternalAttachmentDataList 是否已赋值
+                     */
+                    bool ExternalAttachmentDataListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -397,6 +416,12 @@ namespace TencentCloud
                      */
                     std::vector<CloudAttachmentInfo> m_attachmentInfoList;
                     bool m_attachmentInfoListHasBeenSet;
+
+                    /**
+                     * 渠道透传数据列表。
+                     */
+                    std::vector<CloudExternalAttachmentData> m_externalAttachmentDataList;
+                    bool m_externalAttachmentDataListHasBeenSet;
 
                 };
             }

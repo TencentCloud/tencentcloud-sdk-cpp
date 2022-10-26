@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
+#include <tencentcloud/essbasic/v20210526/model/ApproverOption.h>
 
 
 namespace TencentCloud
@@ -39,14 +40,14 @@ namespace TencentCloud
                 * 创建签署流程签署人入参。
 
 其中签署方FlowApproverInfo需要传递的参数
-非单C、单B、B2C合同，ApproverType、RecipientId（模版发起合同时）必传，建议都传。其他身份标识
+非单C、单B、B2C合同，ApproverType、RecipientId（模板发起合同时）必传，建议都传。其他身份标识
 1-个人：Name、Mobile必传
 2-渠道子客企业指定经办人：OpenId必传，OrgName必传、OrgOpenId必传；
 3-渠道合作企业不指定经办人：（暂不支持）
 4-非渠道合作企业：Name、Mobile必传，OrgName必传，且NotChannelOrganization=True。
 
 RecipientId参数：
-从DescribeTemplates接口中，可以得到模版下的签署方Recipient列表，根据模版自定义的Rolename在此结构体中确定其RecipientId
+从DescribeTemplates接口中，可以得到模板下的签署方Recipient列表，根据模板自定义的Rolename在此结构体中确定其RecipientId
                 */
                 class FlowApproverInfo : public AbstractModel
                 {
@@ -222,12 +223,12 @@ RecipientId参数：
 PERSON_AUTO_SIGN-个人自动签；
 ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；
                      * @return ApproverType 签署人类型，PERSON-个人；
 PERSON_AUTO_SIGN-个人自动签；
 ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；
                      */
                     std::string GetApproverType() const;
 
@@ -236,12 +237,12 @@ ENTERPRISESERVER-企业静默签;
 PERSON_AUTO_SIGN-个人自动签；
 ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；
                      * @param ApproverType 签署人类型，PERSON-个人；
 PERSON_AUTO_SIGN-个人自动签；
 ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；
                      */
                     void SetApproverType(const std::string& _approverType);
 
@@ -377,6 +378,42 @@ ENTERPRISESERVER-企业静默签;
                      */
                     bool JumpUrlHasBeenSet() const;
 
+                    /**
+                     * 获取签署人个性化能力值
+                     * @return ApproverOption 签署人个性化能力值
+                     */
+                    ApproverOption GetApproverOption() const;
+
+                    /**
+                     * 设置签署人个性化能力值
+                     * @param ApproverOption 签署人个性化能力值
+                     */
+                    void SetApproverOption(const ApproverOption& _approverOption);
+
+                    /**
+                     * 判断参数 ApproverOption 是否已赋值
+                     * @return ApproverOption 是否已赋值
+                     */
+                    bool ApproverOptionHasBeenSet() const;
+
+                    /**
+                     * 获取当前签署方进行签署操作是否需要企业内部审批，true 则为需要
+                     * @return ApproverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批，true 则为需要
+                     */
+                    bool GetApproverNeedSignReview() const;
+
+                    /**
+                     * 设置当前签署方进行签署操作是否需要企业内部审批，true 则为需要
+                     * @param ApproverNeedSignReview 当前签署方进行签署操作是否需要企业内部审批，true 则为需要
+                     */
+                    void SetApproverNeedSignReview(const bool& _approverNeedSignReview);
+
+                    /**
+                     * 判断参数 ApproverNeedSignReview 是否已赋值
+                     * @return ApproverNeedSignReview 是否已赋值
+                     */
+                    bool ApproverNeedSignReviewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,7 +473,7 @@ ENTERPRISESERVER-企业静默签;
 PERSON_AUTO_SIGN-个人自动签；
 ORGANIZATION-企业；
 ENTERPRISESERVER-企业静默签;
-注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；并且仅能指定发起方企业签署方为静默签署；
+注：ENTERPRISESERVER 类型仅用于使用文件创建签署流程（ChannelCreateFlowByFiles）接口；
                      */
                     std::string m_approverType;
                     bool m_approverTypeHasBeenSet;
@@ -482,6 +519,18 @@ ENTERPRISESERVER-企业静默签;
                      */
                     std::string m_jumpUrl;
                     bool m_jumpUrlHasBeenSet;
+
+                    /**
+                     * 签署人个性化能力值
+                     */
+                    ApproverOption m_approverOption;
+                    bool m_approverOptionHasBeenSet;
+
+                    /**
+                     * 当前签署方进行签署操作是否需要企业内部审批，true 则为需要
+                     */
+                    bool m_approverNeedSignReview;
+                    bool m_approverNeedSignReviewHasBeenSet;
 
                 };
             }

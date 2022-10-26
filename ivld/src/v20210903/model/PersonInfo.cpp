@@ -24,7 +24,8 @@ PersonInfo::PersonInfo() :
     m_nameHasBeenSet(false),
     m_jobHasBeenSet(false),
     m_firstAppearHasBeenSet(false),
-    m_appearInfoHasBeenSet(false)
+    m_appearInfoHasBeenSet(false),
+    m_appearRectHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,23 @@ CoreInternalOutcome PersonInfo::Deserialize(const rapidjson::Value &value)
         m_appearInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AppearRect") && !value["AppearRect"].IsNull())
+    {
+        if (!value["AppearRect"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PersonInfo.AppearRect` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_appearRect.Deserialize(value["AppearRect"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_appearRectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +136,15 @@ void PersonInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_appearInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_appearRectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppearRect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_appearRect.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -185,5 +212,21 @@ void PersonInfo::SetAppearInfo(const AppearInfo& _appearInfo)
 bool PersonInfo::AppearInfoHasBeenSet() const
 {
     return m_appearInfoHasBeenSet;
+}
+
+Rectf PersonInfo::GetAppearRect() const
+{
+    return m_appearRect;
+}
+
+void PersonInfo::SetAppearRect(const Rectf& _appearRect)
+{
+    m_appearRect = _appearRect;
+    m_appearRectHasBeenSet = true;
+}
+
+bool PersonInfo::AppearRectHasBeenSet() const
+{
+    return m_appearRectHasBeenSet;
 }
 

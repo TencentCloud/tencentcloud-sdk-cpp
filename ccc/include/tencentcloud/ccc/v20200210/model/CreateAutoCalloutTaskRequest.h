@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/Variable.h>
 
 
 namespace TencentCloud
@@ -204,6 +205,24 @@ namespace TencentCloud
                      */
                     bool TriesHasBeenSet() const;
 
+                    /**
+                     * 获取自定义变量（仅高级版支持）
+                     * @return Variables 自定义变量（仅高级版支持）
+                     */
+                    std::vector<Variable> GetVariables() const;
+
+                    /**
+                     * 设置自定义变量（仅高级版支持）
+                     * @param Variables 自定义变量（仅高级版支持）
+                     */
+                    void SetVariables(const std::vector<Variable>& _variables);
+
+                    /**
+                     * 判断参数 Variables 是否已赋值
+                     * @return Variables 是否已赋值
+                     */
+                    bool VariablesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +278,12 @@ namespace TencentCloud
                      */
                     uint64_t m_tries;
                     bool m_triesHasBeenSet;
+
+                    /**
+                     * 自定义变量（仅高级版支持）
+                     */
+                    std::vector<Variable> m_variables;
+                    bool m_variablesHasBeenSet;
 
                 };
             }

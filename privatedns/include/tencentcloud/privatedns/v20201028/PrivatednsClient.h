@@ -61,6 +61,8 @@
 #include <tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneRecordResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneVpcRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/ModifyPrivateZoneVpcResponse.h>
+#include <tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusRequest.h>
+#include <tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusResponse.h>
 #include <tencentcloud/privatedns/v20201028/model/SubscribePrivateZoneServiceRequest.h>
 #include <tencentcloud/privatedns/v20201028/model/SubscribePrivateZoneServiceResponse.h>
 
@@ -134,6 +136,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPrivateZoneVpcResponse> ModifyPrivateZoneVpcOutcome;
                 typedef std::future<ModifyPrivateZoneVpcOutcome> ModifyPrivateZoneVpcOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::ModifyPrivateZoneVpcRequest&, ModifyPrivateZoneVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrivateZoneVpcAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordsStatusResponse> ModifyRecordsStatusOutcome;
+                typedef std::future<ModifyRecordsStatusOutcome> ModifyRecordsStatusOutcomeCallable;
+                typedef std::function<void(const PrivatednsClient*, const Model::ModifyRecordsStatusRequest&, ModifyRecordsStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordsStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::SubscribePrivateZoneServiceResponse> SubscribePrivateZoneServiceOutcome;
                 typedef std::future<SubscribePrivateZoneServiceOutcome> SubscribePrivateZoneServiceOutcomeCallable;
                 typedef std::function<void(const PrivatednsClient*, const Model::SubscribePrivateZoneServiceRequest&, SubscribePrivateZoneServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SubscribePrivateZoneServiceAsyncHandler;
@@ -310,6 +315,15 @@ namespace TencentCloud
                 ModifyPrivateZoneVpcOutcome ModifyPrivateZoneVpc(const Model::ModifyPrivateZoneVpcRequest &request);
                 void ModifyPrivateZoneVpcAsync(const Model::ModifyPrivateZoneVpcRequest& request, const ModifyPrivateZoneVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyPrivateZoneVpcOutcomeCallable ModifyPrivateZoneVpcCallable(const Model::ModifyPrivateZoneVpcRequest& request);
+
+                /**
+                 *修改解析记录状态
+                 * @param req ModifyRecordsStatusRequest
+                 * @return ModifyRecordsStatusOutcome
+                 */
+                ModifyRecordsStatusOutcome ModifyRecordsStatus(const Model::ModifyRecordsStatusRequest &request);
+                void ModifyRecordsStatusAsync(const Model::ModifyRecordsStatusRequest& request, const ModifyRecordsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordsStatusOutcomeCallable ModifyRecordsStatusCallable(const Model::ModifyRecordsStatusRequest& request);
 
                 /**
                  *开通私有域解析

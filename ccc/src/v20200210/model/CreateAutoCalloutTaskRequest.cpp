@@ -31,7 +31,8 @@ CreateAutoCalloutTaskRequest::CreateAutoCalloutTaskRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_notAfterHasBeenSet(false),
-    m_triesHasBeenSet(false)
+    m_triesHasBeenSet(false),
+    m_variablesHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,21 @@ string CreateAutoCalloutTaskRequest::ToJsonString() const
         string key = "Tries";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_tries, allocator);
+    }
+
+    if (m_variablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Variables";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_variables.begin(); itr != m_variables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -274,6 +290,22 @@ void CreateAutoCalloutTaskRequest::SetTries(const uint64_t& _tries)
 bool CreateAutoCalloutTaskRequest::TriesHasBeenSet() const
 {
     return m_triesHasBeenSet;
+}
+
+vector<Variable> CreateAutoCalloutTaskRequest::GetVariables() const
+{
+    return m_variables;
+}
+
+void CreateAutoCalloutTaskRequest::SetVariables(const vector<Variable>& _variables)
+{
+    m_variables = _variables;
+    m_variablesHasBeenSet = true;
+}
+
+bool CreateAutoCalloutTaskRequest::VariablesHasBeenSet() const
+{
+    return m_variablesHasBeenSet;
 }
 
 

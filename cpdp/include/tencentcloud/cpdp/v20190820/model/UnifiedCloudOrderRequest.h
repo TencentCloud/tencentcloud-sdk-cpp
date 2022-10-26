@@ -29,6 +29,7 @@
 #include <tencentcloud/cpdp/v20190820/model/CloudClientInfo.h>
 #include <tencentcloud/cpdp/v20190820/model/CloudExternalPromptGroup.h>
 #include <tencentcloud/cpdp/v20190820/model/CloudExternalUserInfo.h>
+#include <tencentcloud/cpdp/v20190820/model/CloudExternalAttachmentData.h>
 
 
 namespace TencentCloud
@@ -1012,6 +1013,24 @@ ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
                      */
                     bool ExternalUserInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取渠道透传数据列表
+                     * @return ExternalAttachmentDataList 渠道透传数据列表
+                     */
+                    std::vector<CloudExternalAttachmentData> GetExternalAttachmentDataList() const;
+
+                    /**
+                     * 设置渠道透传数据列表
+                     * @param ExternalAttachmentDataList 渠道透传数据列表
+                     */
+                    void SetExternalAttachmentDataList(const std::vector<CloudExternalAttachmentData>& _externalAttachmentDataList);
+
+                    /**
+                     * 判断参数 ExternalAttachmentDataList 是否已赋值
+                     * @return ExternalAttachmentDataList 是否已赋值
+                     */
+                    bool ExternalAttachmentDataListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1312,6 +1331,12 @@ ORDER_RECEIVE_MODE_V_COMBINE - 虚拟合单支付
                      */
                     std::vector<CloudExternalUserInfo> m_externalUserInfoList;
                     bool m_externalUserInfoListHasBeenSet;
+
+                    /**
+                     * 渠道透传数据列表
+                     */
+                    std::vector<CloudExternalAttachmentData> m_externalAttachmentDataList;
+                    bool m_externalAttachmentDataListHasBeenSet;
 
                 };
             }

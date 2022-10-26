@@ -156,14 +156,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool LoadBalancerVipsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡绑定的后端服务的外网 IP。
-                     * @return BackendPublicIps 负载均衡绑定的后端服务的外网 IP。
+                     * 获取负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
+                     * @return BackendPublicIps 负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
                      */
                     std::vector<std::string> GetBackendPublicIps() const;
 
                     /**
-                     * 设置负载均衡绑定的后端服务的外网 IP。
-                     * @param BackendPublicIps 负载均衡绑定的后端服务的外网 IP。
+                     * 设置负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
+                     * @param BackendPublicIps 负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
                      */
                     void SetBackendPublicIps(const std::vector<std::string>& _backendPublicIps);
 
@@ -174,14 +174,14 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool BackendPublicIpsHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡绑定的后端服务的内网 IP。
-                     * @return BackendPrivateIps 负载均衡绑定的后端服务的内网 IP。
+                     * 获取负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
+                     * @return BackendPrivateIps 负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
                      */
                     std::vector<std::string> GetBackendPrivateIps() const;
 
                     /**
-                     * 设置负载均衡绑定的后端服务的内网 IP。
-                     * @param BackendPrivateIps 负载均衡绑定的后端服务的内网 IP。
+                     * 设置负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
+                     * @param BackendPrivateIps 负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
                      */
                     void SetBackendPrivateIps(const std::vector<std::string>& _backendPrivateIps);
 
@@ -469,13 +469,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_loadBalancerVipsHasBeenSet;
 
                     /**
-                     * 负载均衡绑定的后端服务的外网 IP。
+                     * 负载均衡绑定的后端服务的外网 IP，只支持查询云服务器的公网 IP。
                      */
                     std::vector<std::string> m_backendPublicIps;
                     bool m_backendPublicIpsHasBeenSet;
 
                     /**
-                     * 负载均衡绑定的后端服务的内网 IP。
+                     * 负载均衡绑定的后端服务的内网 IP，只支持查询云服务器的内网 IP。
                      */
                     std::vector<std::string> m_backendPrivateIps;
                     bool m_backendPrivateIpsHasBeenSet;

@@ -29,6 +29,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneListResponse.h
   include/tencentcloud/privatedns/v20201028/model/AccountVpcInfoOutput.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneRequest.h
+  include/tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusResponse.h
   include/tencentcloud/privatedns/v20201028/model/DatePoint.h
   include/tencentcloud/privatedns/v20201028/model/DescribeAccountVpcListResponse.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateZoneServiceRequest.h
@@ -63,6 +64,7 @@ set(privatedns_public_header_model
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneRecordRequest.h
   include/tencentcloud/privatedns/v20201028/model/Filter.h
   include/tencentcloud/privatedns/v20201028/model/DeletePrivateZoneResponse.h
+  include/tencentcloud/privatedns/v20201028/model/ModifyRecordsStatusRequest.h
   include/tencentcloud/privatedns/v20201028/model/CreatePrivateDNSAccountRequest.h
   include/tencentcloud/privatedns/v20201028/model/MetricData.h
   include/tencentcloud/privatedns/v20201028/model/DescribePrivateDNSAccountListRequest.h
@@ -88,6 +90,7 @@ set(privatedns_src
   src/v20201028/model/DescribePrivateZoneListResponse.cpp
   src/v20201028/model/AccountVpcInfoOutput.cpp
   src/v20201028/model/DescribePrivateZoneRequest.cpp
+  src/v20201028/model/ModifyRecordsStatusResponse.cpp
   src/v20201028/model/DatePoint.cpp
   src/v20201028/model/DescribeAccountVpcListResponse.cpp
   src/v20201028/model/DescribePrivateZoneServiceRequest.cpp
@@ -122,6 +125,7 @@ set(privatedns_src
   src/v20201028/model/DeletePrivateZoneRecordRequest.cpp
   src/v20201028/model/Filter.cpp
   src/v20201028/model/DeletePrivateZoneResponse.cpp
+  src/v20201028/model/ModifyRecordsStatusRequest.cpp
   src/v20201028/model/CreatePrivateDNSAccountRequest.cpp
   src/v20201028/model/MetricData.cpp
   src/v20201028/model/DescribePrivateDNSAccountListRequest.cpp

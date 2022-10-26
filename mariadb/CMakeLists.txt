@@ -28,8 +28,11 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBParametersRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeAccountsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyInstanceNetworkResponse.h
   include/tencentcloud/mariadb/v20170312/model/CreateDedicatedClusterDBInstanceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyInstanceVportResponse.h
   include/tencentcloud/mariadb/v20170312/model/DestroyHourDBInstanceRequest.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyInstanceVipResponse.h
   include/tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h
@@ -121,6 +124,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/Database.h
   include/tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesResponse.h
   include/tencentcloud/mariadb/v20170312/model/CancelDcnJobRequest.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyInstanceVipRequest.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessRequest.h
   include/tencentcloud/mariadb/v20170312/model/DatabasePrivilege.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.h
@@ -150,6 +154,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h
   include/tencentcloud/mariadb/v20170312/model/RegionInfo.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyInstanceNetworkRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/ConstraintRange.h
   include/tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceRequest.h
@@ -172,6 +177,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodResponse.h
   include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyInstanceVportRequest.h
   include/tencentcloud/mariadb/v20170312/model/DeleteAccountResponse.h
   )
 
@@ -186,8 +192,11 @@ set(mariadb_src
   src/v20170312/model/DescribeDBParametersRequest.cpp
   src/v20170312/model/DescribeAccountsRequest.cpp
   src/v20170312/model/DescribeRenewalPriceResponse.cpp
+  src/v20170312/model/ModifyInstanceNetworkResponse.cpp
   src/v20170312/model/CreateDedicatedClusterDBInstanceResponse.cpp
+  src/v20170312/model/ModifyInstanceVportResponse.cpp
   src/v20170312/model/DestroyHourDBInstanceRequest.cpp
+  src/v20170312/model/ModifyInstanceVipResponse.cpp
   src/v20170312/model/AssociateSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeUpgradePriceRequest.cpp
   src/v20170312/model/FlushBinlogResponse.cpp
@@ -279,6 +288,7 @@ set(mariadb_src
   src/v20170312/model/Database.cpp
   src/v20170312/model/GrantAccountPrivilegesResponse.cpp
   src/v20170312/model/CancelDcnJobRequest.cpp
+  src/v20170312/model/ModifyInstanceVipRequest.cpp
   src/v20170312/model/OpenDBExtranetAccessRequest.cpp
   src/v20170312/model/DatabasePrivilege.cpp
   src/v20170312/model/ModifyDBInstanceSecurityGroupsResponse.cpp
@@ -308,6 +318,7 @@ set(mariadb_src
   src/v20170312/model/CreateAccountResponse.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodResponse.cpp
   src/v20170312/model/RegionInfo.cpp
+  src/v20170312/model/ModifyInstanceNetworkRequest.cpp
   src/v20170312/model/DescribeDBInstancesResponse.cpp
   src/v20170312/model/ConstraintRange.cpp
   src/v20170312/model/DescribeRenewalPriceRequest.cpp
@@ -330,6 +341,7 @@ set(mariadb_src
   src/v20170312/model/DescribeInstanceNodeInfoResponse.cpp
   src/v20170312/model/ModifyLogFileRetentionPeriodResponse.cpp
   src/v20170312/model/DisassociateSecurityGroupsResponse.cpp
+  src/v20170312/model/ModifyInstanceVportRequest.cpp
   src/v20170312/model/DeleteAccountResponse.cpp
   )
 

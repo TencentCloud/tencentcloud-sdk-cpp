@@ -238,6 +238,40 @@ namespace TencentCloud
                      */
                     bool UseNewAnalysisHasBeenSet() const;
 
+                    /**
+                     * 获取执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。
+0：自动采样;
+0～1：按指定采样率采样，例如0.02;
+1：不采样，即精确分析
+默认值为1
+                     * @return SamplingRate 执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。
+0：自动采样;
+0～1：按指定采样率采样，例如0.02;
+1：不采样，即精确分析
+默认值为1
+                     */
+                    double GetSamplingRate() const;
+
+                    /**
+                     * 设置执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。
+0：自动采样;
+0～1：按指定采样率采样，例如0.02;
+1：不采样，即精确分析
+默认值为1
+                     * @param SamplingRate 执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。
+0：自动采样;
+0～1：按指定采样率采样，例如0.02;
+1：不采样，即精确分析
+默认值为1
+                     */
+                    void SetSamplingRate(const double& _samplingRate);
+
+                    /**
+                     * 判断参数 SamplingRate 是否已赋值
+                     * @return SamplingRate 是否已赋值
+                     */
+                    bool SamplingRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -300,6 +334,16 @@ namespace TencentCloud
                      */
                     bool m_useNewAnalysis;
                     bool m_useNewAnalysisHasBeenSet;
+
+                    /**
+                     * 执行统计分析（Query中包含SQL）时，是否对原始日志先进行采样，再进行统计分析。
+0：自动采样;
+0～1：按指定采样率采样，例如0.02;
+1：不采样，即精确分析
+默认值为1
+                     */
+                    double m_samplingRate;
+                    bool m_samplingRateHasBeenSet;
 
                 };
             }

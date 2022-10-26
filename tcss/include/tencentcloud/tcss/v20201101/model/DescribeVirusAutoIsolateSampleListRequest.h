@@ -81,25 +81,25 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li>MD5- String - 是否必填：否 - md5 /li>
-<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 /li>
-<li>VirusName- String - 是否必填：否 - 病毒名 /li>
+<li>MD5- String - 是否必填：否 - md5 </li>
+<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 </li>
+<li>VirusName- String - 是否必填：否 - 病毒名 </li>
                      * @return Filters 过滤条件。
-<li>MD5- String - 是否必填：否 - md5 /li>
-<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 /li>
-<li>VirusName- String - 是否必填：否 - 病毒名 /li>
+<li>MD5- String - 是否必填：否 - md5 </li>
+<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 </li>
+<li>VirusName- String - 是否必填：否 - 病毒名 </li>
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li>MD5- String - 是否必填：否 - md5 /li>
-<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 /li>
-<li>VirusName- String - 是否必填：否 - 病毒名 /li>
+<li>MD5- String - 是否必填：否 - md5 </li>
+<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 </li>
+<li>VirusName- String - 是否必填：否 - 病毒名 </li>
                      * @param Filters 过滤条件。
-<li>MD5- String - 是否必填：否 - md5 /li>
-<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 /li>
-<li>VirusName- String - 是否必填：否 - 病毒名 /li>
+<li>MD5- String - 是否必填：否 - md5 </li>
+<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 </li>
+<li>VirusName- String - 是否必填：否 - 病毒名 </li>
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
@@ -161,9 +161,9 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li>MD5- String - 是否必填：否 - md5 /li>
-<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 /li>
-<li>VirusName- String - 是否必填：否 - 病毒名 /li>
+<li>MD5- String - 是否必填：否 - md5 </li>
+<li>AutoIsolateSwitch- String - 是否必填：否 - 自动隔离开关 </li>
+<li>VirusName- String - 是否必填：否 - 病毒名 </li>
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;

@@ -857,6 +857,49 @@ PrivatednsClient::ModifyPrivateZoneVpcOutcomeCallable PrivatednsClient::ModifyPr
     return task->get_future();
 }
 
+PrivatednsClient::ModifyRecordsStatusOutcome PrivatednsClient::ModifyRecordsStatus(const ModifyRecordsStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordsStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordsStatusResponse rsp = ModifyRecordsStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordsStatusOutcome(rsp);
+        else
+            return ModifyRecordsStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordsStatusOutcome(outcome.GetError());
+    }
+}
+
+void PrivatednsClient::ModifyRecordsStatusAsync(const ModifyRecordsStatusRequest& request, const ModifyRecordsStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRecordsStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PrivatednsClient::ModifyRecordsStatusOutcomeCallable PrivatednsClient::ModifyRecordsStatusCallable(const ModifyRecordsStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRecordsStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRecordsStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PrivatednsClient::SubscribePrivateZoneServiceOutcome PrivatednsClient::SubscribePrivateZoneService(const SubscribePrivateZoneServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "SubscribePrivateZoneService");

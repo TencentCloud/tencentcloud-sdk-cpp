@@ -61,7 +61,8 @@ UnifiedCloudOrderRequest::UnifiedCloudOrderRequest() :
     m_clientInfoHasBeenSet(false),
     m_externalPromptGroupListHasBeenSet(false),
     m_orderReceiveModeHasBeenSet(false),
-    m_externalUserInfoListHasBeenSet(false)
+    m_externalUserInfoListHasBeenSet(false),
+    m_externalAttachmentDataListHasBeenSet(false)
 {
 }
 
@@ -410,6 +411,21 @@ string UnifiedCloudOrderRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_externalUserInfoList.begin(); itr != m_externalUserInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_externalAttachmentDataListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalAttachmentDataList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalAttachmentDataList.begin(); itr != m_externalAttachmentDataList.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -1046,6 +1062,22 @@ void UnifiedCloudOrderRequest::SetExternalUserInfoList(const vector<CloudExterna
 bool UnifiedCloudOrderRequest::ExternalUserInfoListHasBeenSet() const
 {
     return m_externalUserInfoListHasBeenSet;
+}
+
+vector<CloudExternalAttachmentData> UnifiedCloudOrderRequest::GetExternalAttachmentDataList() const
+{
+    return m_externalAttachmentDataList;
+}
+
+void UnifiedCloudOrderRequest::SetExternalAttachmentDataList(const vector<CloudExternalAttachmentData>& _externalAttachmentDataList)
+{
+    m_externalAttachmentDataList = _externalAttachmentDataList;
+    m_externalAttachmentDataListHasBeenSet = true;
+}
+
+bool UnifiedCloudOrderRequest::ExternalAttachmentDataListHasBeenSet() const
+{
+    return m_externalAttachmentDataListHasBeenSet;
 }
 
 

@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/RegisterInfo.h>
+#include <tencentcloud/ess/v20201111/model/ApproverOption.h>
 
 
 namespace TencentCloud
@@ -359,6 +360,24 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool RegisterInfoHasBeenSet() const;
 
+                    /**
+                     * 获取签署人个性化能力值
+                     * @return ApproverOption 签署人个性化能力值
+                     */
+                    ApproverOption GetApproverOption() const;
+
+                    /**
+                     * 设置签署人个性化能力值
+                     * @param ApproverOption 签署人个性化能力值
+                     */
+                    void SetApproverOption(const ApproverOption& _approverOption);
+
+                    /**
+                     * 判断参数 ApproverOption 是否已赋值
+                     * @return ApproverOption 是否已赋值
+                     */
+                    bool ApproverOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -462,6 +481,12 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     RegisterInfo m_registerInfo;
                     bool m_registerInfoHasBeenSet;
+
+                    /**
+                     * 签署人个性化能力值
+                     */
+                    ApproverOption m_approverOption;
+                    bool m_approverOptionHasBeenSet;
 
                 };
             }

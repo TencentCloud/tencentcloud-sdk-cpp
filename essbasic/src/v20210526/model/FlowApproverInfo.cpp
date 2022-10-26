@@ -36,7 +36,9 @@ FlowApproverInfo::FlowApproverInfo() :
     m_signComponentsHasBeenSet(false),
     m_componentLimitTypeHasBeenSet(false),
     m_preReadTimeHasBeenSet(false),
-    m_jumpUrlHasBeenSet(false)
+    m_jumpUrlHasBeenSet(false),
+    m_approverOptionHasBeenSet(false),
+    m_approverNeedSignReviewHasBeenSet(false)
 {
 }
 
@@ -218,6 +220,33 @@ CoreInternalOutcome FlowApproverInfo::Deserialize(const rapidjson::Value &value)
         m_jumpUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverOption") && !value["ApproverOption"].IsNull())
+    {
+        if (!value["ApproverOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ApproverOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_approverOption.Deserialize(value["ApproverOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_approverOptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ApproverNeedSignReview") && !value["ApproverNeedSignReview"].IsNull())
+    {
+        if (!value["ApproverNeedSignReview"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowApproverInfo.ApproverNeedSignReview` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_approverNeedSignReview = value["ApproverNeedSignReview"].GetBool();
+        m_approverNeedSignReviewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +392,23 @@ void FlowApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "JumpUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jumpUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_approverOption.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_approverNeedSignReviewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverNeedSignReview";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_approverNeedSignReview, allocator);
     }
 
 }
@@ -622,5 +668,37 @@ void FlowApproverInfo::SetJumpUrl(const string& _jumpUrl)
 bool FlowApproverInfo::JumpUrlHasBeenSet() const
 {
     return m_jumpUrlHasBeenSet;
+}
+
+ApproverOption FlowApproverInfo::GetApproverOption() const
+{
+    return m_approverOption;
+}
+
+void FlowApproverInfo::SetApproverOption(const ApproverOption& _approverOption)
+{
+    m_approverOption = _approverOption;
+    m_approverOptionHasBeenSet = true;
+}
+
+bool FlowApproverInfo::ApproverOptionHasBeenSet() const
+{
+    return m_approverOptionHasBeenSet;
+}
+
+bool FlowApproverInfo::GetApproverNeedSignReview() const
+{
+    return m_approverNeedSignReview;
+}
+
+void FlowApproverInfo::SetApproverNeedSignReview(const bool& _approverNeedSignReview)
+{
+    m_approverNeedSignReview = _approverNeedSignReview;
+    m_approverNeedSignReviewHasBeenSet = true;
+}
+
+bool FlowApproverInfo::ApproverNeedSignReviewHasBeenSet() const
+{
+    return m_approverNeedSignReviewHasBeenSet;
 }
 

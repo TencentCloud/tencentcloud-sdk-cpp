@@ -30,7 +30,8 @@ SearchLogRequest::SearchLogRequest() :
     m_limitHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_sortHasBeenSet(false),
-    m_useNewAnalysisHasBeenSet(false)
+    m_useNewAnalysisHasBeenSet(false),
+    m_samplingRateHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string SearchLogRequest::ToJsonString() const
         string key = "UseNewAnalysis";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useNewAnalysis, allocator);
+    }
+
+    if (m_samplingRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SamplingRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_samplingRate, allocator);
     }
 
 
@@ -239,6 +248,22 @@ void SearchLogRequest::SetUseNewAnalysis(const bool& _useNewAnalysis)
 bool SearchLogRequest::UseNewAnalysisHasBeenSet() const
 {
     return m_useNewAnalysisHasBeenSet;
+}
+
+double SearchLogRequest::GetSamplingRate() const
+{
+    return m_samplingRate;
+}
+
+void SearchLogRequest::SetSamplingRate(const double& _samplingRate)
+{
+    m_samplingRate = _samplingRate;
+    m_samplingRateHasBeenSet = true;
+}
+
+bool SearchLogRequest::SamplingRateHasBeenSet() const
+{
+    return m_samplingRateHasBeenSet;
 }
 
 

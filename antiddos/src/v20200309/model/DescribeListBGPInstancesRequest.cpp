@@ -34,6 +34,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterBoundStatusHasBeenSet(false),
     m_filterInstanceIdListHasBeenSet(false),
     m_filterEnterpriseFlagHasBeenSet(false),
+    m_filterLightFlagHasBeenSet(false),
+    m_filterChannelFlagHasBeenSet(false),
     m_filterTagHasBeenSet(false)
 {
 }
@@ -136,6 +138,22 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterEnterpriseFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterEnterpriseFlag, allocator);
+    }
+
+    if (m_filterLightFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterLightFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterLightFlag, allocator);
+    }
+
+    if (m_filterChannelFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterChannelFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterChannelFlag, allocator);
     }
 
     if (m_filterTagHasBeenSet)
@@ -329,6 +347,38 @@ void DescribeListBGPInstancesRequest::SetFilterEnterpriseFlag(const uint64_t& _f
 bool DescribeListBGPInstancesRequest::FilterEnterpriseFlagHasBeenSet() const
 {
     return m_filterEnterpriseFlagHasBeenSet;
+}
+
+uint64_t DescribeListBGPInstancesRequest::GetFilterLightFlag() const
+{
+    return m_filterLightFlag;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterLightFlag(const uint64_t& _filterLightFlag)
+{
+    m_filterLightFlag = _filterLightFlag;
+    m_filterLightFlagHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterLightFlagHasBeenSet() const
+{
+    return m_filterLightFlagHasBeenSet;
+}
+
+uint64_t DescribeListBGPInstancesRequest::GetFilterChannelFlag() const
+{
+    return m_filterChannelFlag;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterChannelFlag(const uint64_t& _filterChannelFlag)
+{
+    m_filterChannelFlag = _filterChannelFlag;
+    m_filterChannelFlagHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterChannelFlagHasBeenSet() const
+{
+    return m_filterChannelFlagHasBeenSet;
 }
 
 TagFilter DescribeListBGPInstancesRequest::GetFilterTag() const

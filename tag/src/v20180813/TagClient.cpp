@@ -40,6 +40,49 @@ TagClient::TagClient(const Credential &credential, const string &region, const C
 }
 
 
+TagClient::AddProjectOutcome TagClient::AddProject(const AddProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddProjectResponse rsp = AddProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddProjectOutcome(rsp);
+        else
+            return AddProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return AddProjectOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::AddProjectAsync(const AddProjectRequest& request, const AddProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::AddProjectOutcomeCallable TagClient::AddProjectCallable(const AddProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->AddProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TagClient::AddResourceTagOutcome TagClient::AddResourceTag(const AddResourceTagRequest &request)
 {
     auto outcome = MakeRequest(request, "AddResourceTag");
@@ -1237,6 +1280,49 @@ TagClient::UnTagResourcesOutcomeCallable TagClient::UnTagResourcesCallable(const
         [this, request]()
         {
             return this->UnTagResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TagClient::UpdateProjectOutcome TagClient::UpdateProject(const UpdateProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProjectResponse rsp = UpdateProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProjectOutcome(rsp);
+        else
+            return UpdateProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProjectOutcome(outcome.GetError());
+    }
+}
+
+void TagClient::UpdateProjectAsync(const UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TagClient::UpdateProjectOutcomeCallable TagClient::UpdateProjectCallable(const UpdateProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateProject(request);
         }
     );
 

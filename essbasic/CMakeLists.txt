@@ -28,11 +28,12 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/TemplateInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h
-  include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeTemplatesResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ApproverOption.h
   include/tencentcloud/essbasic/v20210526/model/Recipient.h
   include/tencentcloud/essbasic/v20210526/model/Department.h
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h
@@ -74,7 +75,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h
   include/tencentcloud/essbasic/v20210526/model/SignQrCode.h
   include/tencentcloud/essbasic/v20210526/model/SignUrl.h
-  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/UsageDetail.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.h
@@ -242,11 +243,12 @@ set(essbasic_src
   src/v20210526/model/TemplateInfo.cpp
   src/v20210526/model/ChannelDescribeEmployeesRequest.cpp
   src/v20210526/model/SyncProxyOrganizationResponse.cpp
-  src/v20210526/model/ChannelBatchCancelFlowsResponse.cpp
+  src/v20210526/model/ChannelCreateFlowGroupByFilesResponse.cpp
   src/v20210526/model/GetDownloadFlowUrlResponse.cpp
   src/v20210526/model/DescribeTemplatesResponse.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.cpp
+  src/v20210526/model/ApproverOption.cpp
   src/v20210526/model/Recipient.cpp
   src/v20210526/model/Department.cpp
   src/v20210526/model/OperateChannelTemplateResponse.cpp
@@ -288,7 +290,7 @@ set(essbasic_src
   src/v20210526/model/CreateSealByImageRequest.cpp
   src/v20210526/model/SignQrCode.cpp
   src/v20210526/model/SignUrl.cpp
-  src/v20210526/model/ChannelCreateFlowGroupByFilesResponse.cpp
+  src/v20210526/model/ChannelBatchCancelFlowsResponse.cpp
   src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/UsageDetail.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlResponse.cpp

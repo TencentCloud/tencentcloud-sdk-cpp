@@ -32,7 +32,8 @@ CloudSubOrder::CloudSubOrder() :
     m_originalAmtHasBeenSet(false),
     m_wxSubMchIdHasBeenSet(false),
     m_settleInfoHasBeenSet(false),
-    m_attachmentInfoListHasBeenSet(false)
+    m_attachmentInfoListHasBeenSet(false),
+    m_externalAttachmentDataListHasBeenSet(false)
 {
 }
 
@@ -178,6 +179,26 @@ CoreInternalOutcome CloudSubOrder::Deserialize(const rapidjson::Value &value)
         m_attachmentInfoListHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalAttachmentDataList") && !value["ExternalAttachmentDataList"].IsNull())
+    {
+        if (!value["ExternalAttachmentDataList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CloudSubOrder.ExternalAttachmentDataList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExternalAttachmentDataList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CloudExternalAttachmentData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_externalAttachmentDataList.push_back(item);
+        }
+        m_externalAttachmentDataListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -283,6 +304,21 @@ void CloudSubOrder::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
 
         int i=0;
         for (auto itr = m_attachmentInfoList.begin(); itr != m_attachmentInfoList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_externalAttachmentDataListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalAttachmentDataList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_externalAttachmentDataList.begin(); itr != m_externalAttachmentDataList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -482,5 +518,21 @@ void CloudSubOrder::SetAttachmentInfoList(const vector<CloudAttachmentInfo>& _at
 bool CloudSubOrder::AttachmentInfoListHasBeenSet() const
 {
     return m_attachmentInfoListHasBeenSet;
+}
+
+vector<CloudExternalAttachmentData> CloudSubOrder::GetExternalAttachmentDataList() const
+{
+    return m_externalAttachmentDataList;
+}
+
+void CloudSubOrder::SetExternalAttachmentDataList(const vector<CloudExternalAttachmentData>& _externalAttachmentDataList)
+{
+    m_externalAttachmentDataList = _externalAttachmentDataList;
+    m_externalAttachmentDataListHasBeenSet = true;
+}
+
+bool CloudSubOrder::ExternalAttachmentDataListHasBeenSet() const
+{
+    return m_externalAttachmentDataListHasBeenSet;
 }
 

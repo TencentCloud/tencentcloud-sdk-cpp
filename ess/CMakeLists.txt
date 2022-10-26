@@ -22,6 +22,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
@@ -29,7 +30,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CancelFlowResponse.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentRequest.h
-  include/tencentcloud/ess/v20201111/model/CreateFlowRequest.h
+  include/tencentcloud/ess/v20201111/model/ApproverOption.h
   include/tencentcloud/ess/v20201111/model/Department.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteStaffsResult.h
@@ -107,6 +108,7 @@ set(ess_src
   src/v20201111/model/PdfVerifyResult.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeRequest.cpp
   src/v20201111/model/CreateFlowEvidenceReportResponse.cpp
+  src/v20201111/model/CreateFlowRequest.cpp
   src/v20201111/model/DescribeFileUrlsResponse.cpp
   src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
@@ -114,7 +116,7 @@ set(ess_src
   src/v20201111/model/StartFlowRequest.cpp
   src/v20201111/model/CancelFlowResponse.cpp
   src/v20201111/model/CreateDocumentRequest.cpp
-  src/v20201111/model/CreateFlowRequest.cpp
+  src/v20201111/model/ApproverOption.cpp
   src/v20201111/model/Department.cpp
   src/v20201111/model/CreateSchemeUrlRequest.cpp
   src/v20201111/model/DeleteStaffsResult.cpp

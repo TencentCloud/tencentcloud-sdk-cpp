@@ -36,7 +36,8 @@ FlowCreateApprover::FlowCreateApprover() :
     m_requiredHasBeenSet(false),
     m_approverSourceHasBeenSet(false),
     m_customApproverTagHasBeenSet(false),
-    m_registerInfoHasBeenSet(false)
+    m_registerInfoHasBeenSet(false),
+    m_approverOptionHasBeenSet(false)
 {
 }
 
@@ -215,6 +216,23 @@ CoreInternalOutcome FlowCreateApprover::Deserialize(const rapidjson::Value &valu
         m_registerInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverOption") && !value["ApproverOption"].IsNull())
+    {
+        if (!value["ApproverOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowCreateApprover.ApproverOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_approverOption.Deserialize(value["ApproverOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_approverOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +372,15 @@ void FlowCreateApprover::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_registerInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_approverOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_approverOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -613,5 +640,21 @@ void FlowCreateApprover::SetRegisterInfo(const RegisterInfo& _registerInfo)
 bool FlowCreateApprover::RegisterInfoHasBeenSet() const
 {
     return m_registerInfoHasBeenSet;
+}
+
+ApproverOption FlowCreateApprover::GetApproverOption() const
+{
+    return m_approverOption;
+}
+
+void FlowCreateApprover::SetApproverOption(const ApproverOption& _approverOption)
+{
+    m_approverOption = _approverOption;
+    m_approverOptionHasBeenSet = true;
+}
+
+bool FlowCreateApprover::ApproverOptionHasBeenSet() const
+{
+    return m_approverOptionHasBeenSet;
 }
 

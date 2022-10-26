@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tag/v20180813/model/AddProjectRequest.h>
+#include <tencentcloud/tag/v20180813/model/AddProjectResponse.h>
 #include <tencentcloud/tag/v20180813/model/AddResourceTagRequest.h>
 #include <tencentcloud/tag/v20180813/model/AddResourceTagResponse.h>
 #include <tencentcloud/tag/v20180813/model/AttachResourcesTagRequest.h>
@@ -79,6 +81,8 @@
 #include <tencentcloud/tag/v20180813/model/TagResourcesResponse.h>
 #include <tencentcloud/tag/v20180813/model/UnTagResourcesRequest.h>
 #include <tencentcloud/tag/v20180813/model/UnTagResourcesResponse.h>
+#include <tencentcloud/tag/v20180813/model/UpdateProjectRequest.h>
+#include <tencentcloud/tag/v20180813/model/UpdateProjectResponse.h>
 #include <tencentcloud/tag/v20180813/model/UpdateResourceTagValueRequest.h>
 #include <tencentcloud/tag/v20180813/model/UpdateResourceTagValueResponse.h>
 
@@ -95,6 +99,9 @@ namespace TencentCloud
                 TagClient(const Credential &credential, const std::string &region);
                 TagClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AddProjectResponse> AddProjectOutcome;
+                typedef std::future<AddProjectOutcome> AddProjectOutcomeCallable;
+                typedef std::function<void(const TagClient*, const Model::AddProjectRequest&, AddProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::AddResourceTagResponse> AddResourceTagOutcome;
                 typedef std::future<AddResourceTagOutcome> AddResourceTagOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::AddResourceTagRequest&, AddResourceTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddResourceTagAsyncHandler;
@@ -179,11 +186,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UnTagResourcesResponse> UnTagResourcesOutcome;
                 typedef std::future<UnTagResourcesOutcome> UnTagResourcesOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::UnTagResourcesRequest&, UnTagResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnTagResourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProjectResponse> UpdateProjectOutcome;
+                typedef std::future<UpdateProjectOutcome> UpdateProjectOutcomeCallable;
+                typedef std::function<void(const TagClient*, const Model::UpdateProjectRequest&, UpdateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProjectAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateResourceTagValueResponse> UpdateResourceTagValueOutcome;
                 typedef std::future<UpdateResourceTagValueOutcome> UpdateResourceTagValueOutcomeCallable;
                 typedef std::function<void(const TagClient*, const Model::UpdateResourceTagValueRequest&, UpdateResourceTagValueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateResourceTagValueAsyncHandler;
 
 
+
+                /**
+                 *创建项目
+                 * @param req AddProjectRequest
+                 * @return AddProjectOutcome
+                 */
+                AddProjectOutcome AddProject(const Model::AddProjectRequest &request);
+                void AddProjectAsync(const Model::AddProjectRequest& request, const AddProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AddProjectOutcomeCallable AddProjectCallable(const Model::AddProjectRequest& request);
 
                 /**
                  *本接口用于给标签关联资源
@@ -439,6 +458,15 @@ namespace TencentCloud
                 UnTagResourcesOutcome UnTagResources(const Model::UnTagResourcesRequest &request);
                 void UnTagResourcesAsync(const Model::UnTagResourcesRequest& request, const UnTagResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnTagResourcesOutcomeCallable UnTagResourcesCallable(const Model::UnTagResourcesRequest& request);
+
+                /**
+                 *修改项目
+                 * @param req UpdateProjectRequest
+                 * @return UpdateProjectOutcome
+                 */
+                UpdateProjectOutcome UpdateProject(const Model::UpdateProjectRequest &request);
+                void UpdateProjectAsync(const Model::UpdateProjectRequest& request, const UpdateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProjectOutcomeCallable UpdateProjectCallable(const Model::UpdateProjectRequest& request);
 
                 /**
                  *本接口用于修改资源已关联的标签值（标签键不变）
