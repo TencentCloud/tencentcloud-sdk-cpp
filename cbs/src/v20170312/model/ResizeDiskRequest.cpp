@@ -23,8 +23,8 @@ using namespace TencentCloud::Cbs::V20170312::Model;
 using namespace std;
 
 ResizeDiskRequest::ResizeDiskRequest() :
-    m_diskIdHasBeenSet(false),
-    m_diskSizeHasBeenSet(false)
+    m_diskSizeHasBeenSet(false),
+    m_diskIdHasBeenSet(false)
 {
 }
 
@@ -35,20 +35,20 @@ string ResizeDiskRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_diskIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DiskId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_diskId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_diskSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DiskSize";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskSize, allocator);
+    }
+
+    if (m_diskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_diskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -58,22 +58,6 @@ string ResizeDiskRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ResizeDiskRequest::GetDiskId() const
-{
-    return m_diskId;
-}
-
-void ResizeDiskRequest::SetDiskId(const string& _diskId)
-{
-    m_diskId = _diskId;
-    m_diskIdHasBeenSet = true;
-}
-
-bool ResizeDiskRequest::DiskIdHasBeenSet() const
-{
-    return m_diskIdHasBeenSet;
-}
 
 uint64_t ResizeDiskRequest::GetDiskSize() const
 {
@@ -89,6 +73,22 @@ void ResizeDiskRequest::SetDiskSize(const uint64_t& _diskSize)
 bool ResizeDiskRequest::DiskSizeHasBeenSet() const
 {
     return m_diskSizeHasBeenSet;
+}
+
+string ResizeDiskRequest::GetDiskId() const
+{
+    return m_diskId;
+}
+
+void ResizeDiskRequest::SetDiskId(const string& _diskId)
+{
+    m_diskId = _diskId;
+    m_diskIdHasBeenSet = true;
+}
+
+bool ResizeDiskRequest::DiskIdHasBeenSet() const
+{
+    return m_diskIdHasBeenSet;
 }
 
 

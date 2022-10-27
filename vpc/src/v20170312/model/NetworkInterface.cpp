@@ -39,7 +39,8 @@ NetworkInterface::NetworkInterface() :
     m_eniTypeHasBeenSet(false),
     m_businessHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
-    m_attachTypeHasBeenSet(false)
+    m_attachTypeHasBeenSet(false),
+    m_resourceIdHasBeenSet(false)
 {
 }
 
@@ -278,6 +279,16 @@ CoreInternalOutcome NetworkInterface::Deserialize(const rapidjson::Value &value)
         m_attachTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceId") && !value["ResourceId"].IsNull())
+    {
+        if (!value["ResourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetworkInterface.ResourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceId = string(value["ResourceId"].GetString());
+        m_resourceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -462,6 +473,14 @@ void NetworkInterface::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AttachType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_attachType, allocator);
+    }
+
+    if (m_resourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -769,5 +788,21 @@ void NetworkInterface::SetAttachType(const uint64_t& _attachType)
 bool NetworkInterface::AttachTypeHasBeenSet() const
 {
     return m_attachTypeHasBeenSet;
+}
+
+string NetworkInterface::GetResourceId() const
+{
+    return m_resourceId;
+}
+
+void NetworkInterface::SetResourceId(const string& _resourceId)
+{
+    m_resourceId = _resourceId;
+    m_resourceIdHasBeenSet = true;
+}
+
+bool NetworkInterface::ResourceIdHasBeenSet() const
+{
+    return m_resourceIdHasBeenSet;
 }
 

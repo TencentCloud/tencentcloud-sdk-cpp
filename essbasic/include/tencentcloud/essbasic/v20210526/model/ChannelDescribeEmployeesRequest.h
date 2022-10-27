@@ -82,14 +82,18 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取查询过滤实名用户，key为Status，Values为["IsVerified"]
-                     * @return Filters 查询过滤实名用户，key为Status，Values为["IsVerified"]
+                     * 获取查询过滤实名用户，Key为Status，Values为["IsVerified"]
+根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为["OpenId","OpenId",...]
+                     * @return Filters 查询过滤实名用户，Key为Status，Values为["IsVerified"]
+根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为["OpenId","OpenId",...]
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询过滤实名用户，key为Status，Values为["IsVerified"]
-                     * @param Filters 查询过滤实名用户，key为Status，Values为["IsVerified"]
+                     * 设置查询过滤实名用户，Key为Status，Values为["IsVerified"]
+根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为["OpenId","OpenId",...]
+                     * @param Filters 查询过滤实名用户，Key为Status，Values为["IsVerified"]
+根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为["OpenId","OpenId",...]
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -150,7 +154,8 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 查询过滤实名用户，key为Status，Values为["IsVerified"]
+                     * 查询过滤实名用户，Key为Status，Values为["IsVerified"]
+根据第三方系统openId过滤查询员工时,Key为StaffOpenId,Values为["OpenId","OpenId",...]
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -266,6 +266,24 @@ namespace TencentCloud
                      */
                     bool LoginNodeCountHasBeenSet() const;
 
+                    /**
+                     * 获取集群所属私有网络ID。
+                     * @return VpcId 集群所属私有网络ID。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置集群所属私有网络ID。
+                     * @param VpcId 集群所属私有网络ID。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +357,12 @@ namespace TencentCloud
                      */
                     int64_t m_loginNodeCount;
                     bool m_loginNodeCountHasBeenSet;
+
+                    /**
+                     * 集群所属私有网络ID。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

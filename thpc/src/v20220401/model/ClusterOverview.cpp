@@ -32,7 +32,8 @@ ClusterOverview::ClusterOverview() :
     m_managerNodeCountHasBeenSet(false),
     m_managerNodeSetHasBeenSet(false),
     m_loginNodeSetHasBeenSet(false),
-    m_loginNodeCountHasBeenSet(false)
+    m_loginNodeCountHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -198,6 +199,16 @@ CoreInternalOutcome ClusterOverview::Deserialize(const rapidjson::Value &value)
         m_loginNodeCountHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterOverview.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -321,6 +332,14 @@ void ClusterOverview::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "LoginNodeCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loginNodeCount, allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -516,5 +535,21 @@ void ClusterOverview::SetLoginNodeCount(const int64_t& _loginNodeCount)
 bool ClusterOverview::LoginNodeCountHasBeenSet() const
 {
     return m_loginNodeCountHasBeenSet;
+}
+
+string ClusterOverview::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void ClusterOverview::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool ClusterOverview::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 

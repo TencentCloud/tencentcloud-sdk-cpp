@@ -26,7 +26,9 @@ WorkSpaceClusterItem::WorkSpaceClusterItem() :
     m_clusterNameHasBeenSet(false),
     m_workSpaceIdHasBeenSet(false),
     m_workSpaceNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_projectIdHasBeenSet(false),
+    m_projectIdStrHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome WorkSpaceClusterItem::Deserialize(const rapidjson::Value &va
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
+    {
+        if (!value["ProjectId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkSpaceClusterItem.ProjectId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectId = value["ProjectId"].GetInt64();
+        m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectIdStr") && !value["ProjectIdStr"].IsNull())
+    {
+        if (!value["ProjectIdStr"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkSpaceClusterItem.ProjectIdStr` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectIdStr = string(value["ProjectIdStr"].GetString());
+        m_projectIdStrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void WorkSpaceClusterItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_projectIdStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectIdStr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectIdStr.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void WorkSpaceClusterItem::SetStatus(const int64_t& _status)
 bool WorkSpaceClusterItem::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t WorkSpaceClusterItem::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void WorkSpaceClusterItem::SetProjectId(const int64_t& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool WorkSpaceClusterItem::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
+}
+
+string WorkSpaceClusterItem::GetProjectIdStr() const
+{
+    return m_projectIdStr;
+}
+
+void WorkSpaceClusterItem::SetProjectIdStr(const string& _projectIdStr)
+{
+    m_projectIdStr = _projectIdStr;
+    m_projectIdStrHasBeenSet = true;
+}
+
+bool WorkSpaceClusterItem::ProjectIdStrHasBeenSet() const
+{
+    return m_projectIdStrHasBeenSet;
 }
 

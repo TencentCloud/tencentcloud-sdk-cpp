@@ -601,6 +601,28 @@ namespace TencentCloud
                      */
                     bool IsMultiZoneClusterHasBeenSet() const;
 
+                    /**
+                     * 获取是否手戳集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsHandsCluster 是否手戳集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsHandsCluster() const;
+
+                    /**
+                     * 设置是否手戳集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsHandsCluster 是否手戳集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsHandsCluster(const bool& _isHandsCluster);
+
+                    /**
+                     * 判断参数 IsHandsCluster 是否已赋值
+                     * @return IsHandsCluster 是否已赋值
+                     */
+                    bool IsHandsClusterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -781,6 +803,13 @@ namespace TencentCloud
                      */
                     bool m_isMultiZoneCluster;
                     bool m_isMultiZoneClusterHasBeenSet;
+
+                    /**
+                     * 是否手戳集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isHandsCluster;
+                    bool m_isHandsClusterHasBeenSet;
 
                 };
             }

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目
-                     * @return Limit 限制数目
+                     * 获取限制数目 最大200
+                     * @return Limit 限制数目 最大200
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目
-                     * @param Limit 限制数目
+                     * 设置限制数目 最大200
+                     * @param Limit 限制数目 最大200
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取下单时间范围起始点
-                     * @return CreatTimeRangeStart 下单时间范围起始点
+                     * 获取下单时间范围起始点【请保持时间范围最大90天】
+                     * @return CreatTimeRangeStart 下单时间范围起始点【请保持时间范围最大90天】
                      */
                     std::string GetCreatTimeRangeStart() const;
 
                     /**
-                     * 设置下单时间范围起始点
-                     * @param CreatTimeRangeStart 下单时间范围起始点
+                     * 设置下单时间范围起始点【请保持时间范围最大90天】
+                     * @param CreatTimeRangeStart 下单时间范围起始点【请保持时间范围最大90天】
                      */
                     void SetCreatTimeRangeStart(const std::string& _creatTimeRangeStart);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool CreatTimeRangeStartHasBeenSet() const;
 
                     /**
-                     * 获取下单时间范围终止点
-                     * @return CreatTimeRangeEnd 下单时间范围终止点
+                     * 获取下单时间范围终止点【请保持时间范围最大90天】
+                     * @return CreatTimeRangeEnd 下单时间范围终止点【请保持时间范围最大90天】
                      */
                     std::string GetCreatTimeRangeEnd() const;
 
                     /**
-                     * 设置下单时间范围终止点
-                     * @param CreatTimeRangeEnd 下单时间范围终止点
+                     * 设置下单时间范围终止点【请保持时间范围最大90天】
+                     * @param CreatTimeRangeEnd 下单时间范围终止点【请保持时间范围最大90天】
                      */
                     void SetCreatTimeRangeEnd(const std::string& _creatTimeRangeEnd);
 
@@ -231,19 +231,19 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目
+                     * 限制数目 最大200
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 下单时间范围起始点
+                     * 下单时间范围起始点【请保持时间范围最大90天】
                      */
                     std::string m_creatTimeRangeStart;
                     bool m_creatTimeRangeStartHasBeenSet;
 
                     /**
-                     * 下单时间范围终止点
+                     * 下单时间范围终止点【请保持时间范围最大90天】
                      */
                     std::string m_creatTimeRangeEnd;
                     bool m_creatTimeRangeEndHasBeenSet;

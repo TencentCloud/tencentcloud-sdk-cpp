@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目
-                     * @return Limit 限制数目
+                     * 获取限制数目 最大100
+                     * @return Limit 限制数目 最大100
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目
-                     * @param Limit 限制数目
+                     * 设置限制数目 最大100
+                     * @param Limit 限制数目 最大100
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目
+                     * 限制数目 最大100
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -47,7 +47,8 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_startServiceAfterScaleOutHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_scaleOutServiceConfAssignHasBeenSet(false)
+    m_scaleOutServiceConfAssignHasBeenSet(false),
+    m_autoRenewHasBeenSet(false)
 {
 }
 
@@ -292,6 +293,14 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "ScaleOutServiceConfAssign";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scaleOutServiceConfAssign.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRenew, allocator);
     }
 
 
@@ -700,6 +709,22 @@ void ScaleOutInstanceRequest::SetScaleOutServiceConfAssign(const string& _scaleO
 bool ScaleOutInstanceRequest::ScaleOutServiceConfAssignHasBeenSet() const
 {
     return m_scaleOutServiceConfAssignHasBeenSet;
+}
+
+int64_t ScaleOutInstanceRequest::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void ScaleOutInstanceRequest::SetAutoRenew(const int64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
 }
 
 

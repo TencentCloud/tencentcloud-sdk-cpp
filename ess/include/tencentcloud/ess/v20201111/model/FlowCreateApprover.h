@@ -271,14 +271,14 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool PreReadTimeHasBeenSet() const;
 
                     /**
-                     * 获取签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。非企微场景不使用此字段
-                     * @return UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。非企微场景不使用此字段
+                     * 获取签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
+                     * @return UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。非企微场景不使用此字段
-                     * @param UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。非企微场景不使用此字段
+                     * 设置签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
+                     * @param UserId 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -453,7 +453,7 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                     bool m_preReadTimeHasBeenSet;
 
                     /**
-                     * 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。非企微场景不使用此字段
+                     * 签署方经办人的用户ID,和签署方经办人姓名+手机号+证件必须有一个。
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

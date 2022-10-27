@@ -540,6 +540,24 @@ namespace TencentCloud
                      */
                     bool ScaleOutServiceConfAssignHasBeenSet() const;
 
+                    /**
+                     * 获取0表示关闭自动续费，1表示开启自动续费
+                     * @return AutoRenew 0表示关闭自动续费，1表示开启自动续费
+                     */
+                    int64_t GetAutoRenew() const;
+
+                    /**
+                     * 设置0表示关闭自动续费，1表示开启自动续费
+                     * @param AutoRenew 0表示关闭自动续费，1表示开启自动续费
+                     */
+                    void SetAutoRenew(const int64_t& _autoRenew);
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -702,6 +720,12 @@ namespace TencentCloud
                      */
                     std::string m_scaleOutServiceConfAssign;
                     bool m_scaleOutServiceConfAssignHasBeenSet;
+
+                    /**
+                     * 0表示关闭自动续费，1表示开启自动续费
+                     */
+                    int64_t m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
 
                 };
             }

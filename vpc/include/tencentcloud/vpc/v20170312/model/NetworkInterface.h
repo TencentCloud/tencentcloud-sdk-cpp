@@ -428,6 +428,28 @@ namespace TencentCloud
                      */
                     bool AttachTypeHasBeenSet() const;
 
+                    /**
+                     * 获取用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceId 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceId() const;
+
+                    /**
+                     * 设置用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceId 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceId(const std::string& _resourceId);
+
+                    /**
+                     * 判断参数 ResourceId 是否已赋值
+                     * @return ResourceId 是否已赋值
+                     */
+                    bool ResourceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -552,6 +574,13 @@ namespace TencentCloud
                      */
                     uint64_t m_attachType;
                     bool m_attachTypeHasBeenSet;
+
+                    /**
+                     * 用于保留网卡主IP的资源ID用于保留网卡主IP的资源ID。用于删除网卡时作为入参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceId;
+                    bool m_resourceIdHasBeenSet;
 
                 };
             }

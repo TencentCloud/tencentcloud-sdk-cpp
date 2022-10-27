@@ -47,7 +47,8 @@ EmrListInstance::EmrListInstance() :
     m_uniqVpcIdHasBeenSet(false),
     m_uniqSubnetIdHasBeenSet(false),
     m_clusterClassHasBeenSet(false),
-    m_isMultiZoneClusterHasBeenSet(false)
+    m_isMultiZoneClusterHasBeenSet(false),
+    m_isHandsClusterHasBeenSet(false)
 {
 }
 
@@ -336,6 +337,16 @@ CoreInternalOutcome EmrListInstance::Deserialize(const rapidjson::Value &value)
         m_isMultiZoneClusterHasBeenSet = true;
     }
 
+    if (value.HasMember("IsHandsCluster") && !value["IsHandsCluster"].IsNull())
+    {
+        if (!value["IsHandsCluster"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.IsHandsCluster` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isHandsCluster = value["IsHandsCluster"].GetBool();
+        m_isHandsClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -564,6 +575,14 @@ void EmrListInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsMultiZoneCluster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isMultiZoneCluster, allocator);
+    }
+
+    if (m_isHandsClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsHandsCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isHandsCluster, allocator);
     }
 
 }
@@ -999,5 +1018,21 @@ void EmrListInstance::SetIsMultiZoneCluster(const bool& _isMultiZoneCluster)
 bool EmrListInstance::IsMultiZoneClusterHasBeenSet() const
 {
     return m_isMultiZoneClusterHasBeenSet;
+}
+
+bool EmrListInstance::GetIsHandsCluster() const
+{
+    return m_isHandsCluster;
+}
+
+void EmrListInstance::SetIsHandsCluster(const bool& _isHandsCluster)
+{
+    m_isHandsCluster = _isHandsCluster;
+    m_isHandsClusterHasBeenSet = true;
+}
+
+bool EmrListInstance::IsHandsClusterHasBeenSet() const
+{
+    return m_isHandsClusterHasBeenSet;
 }
 

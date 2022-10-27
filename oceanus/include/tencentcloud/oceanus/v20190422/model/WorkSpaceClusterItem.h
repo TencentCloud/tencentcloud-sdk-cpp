@@ -154,6 +154,46 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
+                     */
+                    int64_t GetProjectId() const;
+
+                    /**
+                     * 设置项目ID
+                     * @param ProjectId 项目ID
+                     */
+                    void SetProjectId(const int64_t& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取项目ID string类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectIdStr 项目ID string类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProjectIdStr() const;
+
+                    /**
+                     * 设置项目ID string类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectIdStr 项目ID string类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectIdStr(const std::string& _projectIdStr);
+
+                    /**
+                     * 判断参数 ProjectIdStr 是否已赋值
+                     * @return ProjectIdStr 是否已赋值
+                     */
+                    bool ProjectIdStrHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +231,19 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 项目ID
+                     */
+                    int64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 项目ID string类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectIdStr;
+                    bool m_projectIdStrHasBeenSet;
 
                 };
             }
