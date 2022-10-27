@@ -685,6 +685,49 @@ DlcClient::CreateImportTaskOutcomeCallable DlcClient::CreateImportTaskCallable(c
     return task->get_future();
 }
 
+DlcClient::CreateResultDownloadOutcome DlcClient::CreateResultDownload(const CreateResultDownloadRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateResultDownload");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateResultDownloadResponse rsp = CreateResultDownloadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateResultDownloadOutcome(rsp);
+        else
+            return CreateResultDownloadOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateResultDownloadOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateResultDownloadAsync(const CreateResultDownloadRequest& request, const CreateResultDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateResultDownload(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateResultDownloadOutcomeCallable DlcClient::CreateResultDownloadCallable(const CreateResultDownloadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateResultDownloadOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateResultDownload(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateScriptOutcome DlcClient::CreateScript(const CreateScriptRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateScript");
@@ -1538,6 +1581,49 @@ DlcClient::DescribeDatabasesOutcomeCallable DlcClient::DescribeDatabasesCallable
         [this, request]()
         {
             return this->DescribeDatabases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeResultDownloadOutcome DlcClient::DescribeResultDownload(const DescribeResultDownloadRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResultDownload");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResultDownloadResponse rsp = DescribeResultDownloadResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResultDownloadOutcome(rsp);
+        else
+            return DescribeResultDownloadOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResultDownloadOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeResultDownloadAsync(const DescribeResultDownloadRequest& request, const DescribeResultDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResultDownload(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeResultDownloadOutcomeCallable DlcClient::DescribeResultDownloadCallable(const DescribeResultDownloadRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResultDownloadOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResultDownload(request);
         }
     );
 

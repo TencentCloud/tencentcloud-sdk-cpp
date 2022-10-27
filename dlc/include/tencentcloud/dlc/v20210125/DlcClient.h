@@ -53,6 +53,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateResultDownloadRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateSparkAppRequest.h>
@@ -93,6 +95,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSTablesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h>
@@ -202,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImportTaskResponse> CreateImportTaskOutcome;
                 typedef std::future<CreateImportTaskOutcome> CreateImportTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateImportTaskRequest&, CreateImportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateResultDownloadResponse> CreateResultDownloadOutcome;
+                typedef std::future<CreateResultDownloadOutcome> CreateResultDownloadOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateResultDownloadRequest&, CreateResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResultDownloadAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateScriptResponse> CreateScriptOutcome;
                 typedef std::future<CreateScriptOutcome> CreateScriptOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateScriptRequest&, CreateScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScriptAsyncHandler;
@@ -262,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeResultDownloadResponse> DescribeResultDownloadOutcome;
+                typedef std::future<DescribeResultDownloadOutcome> DescribeResultDownloadOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeResultDownloadRequest&, DescribeResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResultDownloadAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScriptsResponse> DescribeScriptsOutcome;
                 typedef std::future<DescribeScriptsOutcome> DescribeScriptsOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeScriptsRequest&, DescribeScriptsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScriptsAsyncHandler;
@@ -476,6 +486,15 @@ namespace TencentCloud
                 CreateImportTaskOutcomeCallable CreateImportTaskCallable(const Model::CreateImportTaskRequest& request);
 
                 /**
+                 *创建查询结果下载任务
+                 * @param req CreateResultDownloadRequest
+                 * @return CreateResultDownloadOutcome
+                 */
+                CreateResultDownloadOutcome CreateResultDownload(const Model::CreateResultDownloadRequest &request);
+                void CreateResultDownloadAsync(const Model::CreateResultDownloadRequest& request, const CreateResultDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResultDownloadOutcomeCallable CreateResultDownloadCallable(const Model::CreateResultDownloadRequest& request);
+
+                /**
                  *该接口（CreateScript）用于创建sql脚本。
                  * @param req CreateScriptRequest
                  * @return CreateScriptOutcome
@@ -654,6 +673,15 @@ namespace TencentCloud
                 DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
                 void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *查询结果下载任务
+                 * @param req DescribeResultDownloadRequest
+                 * @return DescribeResultDownloadOutcome
+                 */
+                DescribeResultDownloadOutcome DescribeResultDownload(const Model::DescribeResultDownloadRequest &request);
+                void DescribeResultDownloadAsync(const Model::DescribeResultDownloadRequest& request, const DescribeResultDownloadAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeResultDownloadOutcomeCallable DescribeResultDownloadCallable(const Model::DescribeResultDownloadRequest& request);
 
                 /**
                  *该接口（DescribeScripts）用于获取所有SQL查询。

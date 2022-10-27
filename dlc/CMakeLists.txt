@@ -19,13 +19,15 @@ set(dlc_public_header
   )
 
 set(dlc_public_header_model
+  include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupMessage.h
   include/tencentcloud/dlc/v20210125/model/DeleteUserRequest.h
   include/tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h
-  include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h
+  include/tencentcloud/dlc/v20210125/model/Asset.h
+  include/tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
   include/tencentcloud/dlc/v20210125/model/ReportHeartbeatMetaDataRequest.h
@@ -57,7 +59,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/AlterDMSPartitionRequest.h
   include/tencentcloud/dlc/v20210125/model/ViewBaseInfo.h
   include/tencentcloud/dlc/v20210125/model/CheckLockMetaDataRequest.h
-  include/tencentcloud/dlc/v20210125/model/Asset.h
+  include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTasksRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateSparkAppTaskRequest.h
@@ -120,7 +122,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultRequest.h
   include/tencentcloud/dlc/v20210125/model/Filter.h
   include/tencentcloud/dlc/v20210125/model/DescribeUsersResponse.h
-  include/tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h
+  include/tencentcloud/dlc/v20210125/model/DataFormat.h
   include/tencentcloud/dlc/v20210125/model/ViewResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/CreateUserRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h
@@ -134,6 +136,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeTablesRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h
   include/tencentcloud/dlc/v20210125/model/DMSTableInfo.h
+  include/tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h
   include/tencentcloud/dlc/v20210125/model/DMSPartition.h
   include/tencentcloud/dlc/v20210125/model/DatabaseInfo.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSPartitionsResponse.h
@@ -174,25 +177,28 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/SQLTask.h
   include/tencentcloud/dlc/v20210125/model/UserMessage.h
   include/tencentcloud/dlc/v20210125/model/Property.h
-  include/tencentcloud/dlc/v20210125/model/AttachUserPolicyResponse.h
+  include/tencentcloud/dlc/v20210125/model/CreateResultDownloadRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSTableRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeViewsResponse.h
-  include/tencentcloud/dlc/v20210125/model/DataFormat.h
+  include/tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h
   include/tencentcloud/dlc/v20210125/model/DatabaseResponseInfo.h
   include/tencentcloud/dlc/v20210125/model/DMSColumn.h
+  include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h
   )
 
 set(dlc_src
   src/v20210125/DlcClient.cpp
+  src/v20210125/model/DescribeResultDownloadResponse.cpp
   src/v20210125/model/DescribeTaskResultResponse.cpp
   src/v20210125/model/AlterDMSTableResponse.cpp
   src/v20210125/model/DescribeDatabasesRequest.cpp
   src/v20210125/model/WorkGroupMessage.cpp
   src/v20210125/model/DeleteUserRequest.cpp
   src/v20210125/model/ListTaskJobLogDetailResponse.cpp
-  src/v20210125/model/DescribeSparkAppJobRequest.cpp
+  src/v20210125/model/Asset.cpp
+  src/v20210125/model/CreateResultDownloadResponse.cpp
   src/v20210125/model/CreateDMSDatabaseResponse.cpp
   src/v20210125/model/CreateStoreLocationResponse.cpp
   src/v20210125/model/ReportHeartbeatMetaDataRequest.cpp
@@ -224,7 +230,7 @@ set(dlc_src
   src/v20210125/model/AlterDMSPartitionRequest.cpp
   src/v20210125/model/ViewBaseInfo.cpp
   src/v20210125/model/CheckLockMetaDataRequest.cpp
-  src/v20210125/model/Asset.cpp
+  src/v20210125/model/DescribeSparkAppJobRequest.cpp
   src/v20210125/model/CreateDatabaseResponse.cpp
   src/v20210125/model/DescribeTasksRequest.cpp
   src/v20210125/model/CreateSparkAppTaskRequest.cpp
@@ -287,7 +293,7 @@ set(dlc_src
   src/v20210125/model/DescribeTaskResultRequest.cpp
   src/v20210125/model/Filter.cpp
   src/v20210125/model/DescribeUsersResponse.cpp
-  src/v20210125/model/DescribeScriptsResponse.cpp
+  src/v20210125/model/DataFormat.cpp
   src/v20210125/model/ViewResponseInfo.cpp
   src/v20210125/model/CreateUserRequest.cpp
   src/v20210125/model/ModifyWorkGroupRequest.cpp
@@ -301,6 +307,7 @@ set(dlc_src
   src/v20210125/model/DescribeTablesRequest.cpp
   src/v20210125/model/DescribeDatabasesResponse.cpp
   src/v20210125/model/DMSTableInfo.cpp
+  src/v20210125/model/AttachUserPolicyResponse.cpp
   src/v20210125/model/DMSPartition.cpp
   src/v20210125/model/DatabaseInfo.cpp
   src/v20210125/model/DescribeDMSPartitionsResponse.cpp
@@ -341,14 +348,15 @@ set(dlc_src
   src/v20210125/model/SQLTask.cpp
   src/v20210125/model/UserMessage.cpp
   src/v20210125/model/Property.cpp
-  src/v20210125/model/AttachUserPolicyResponse.cpp
+  src/v20210125/model/CreateResultDownloadRequest.cpp
   src/v20210125/model/CreateDMSDatabaseRequest.cpp
   src/v20210125/model/DetachWorkGroupPolicyRequest.cpp
   src/v20210125/model/DescribeDMSTableRequest.cpp
   src/v20210125/model/DescribeViewsResponse.cpp
-  src/v20210125/model/DataFormat.cpp
+  src/v20210125/model/DescribeScriptsResponse.cpp
   src/v20210125/model/DatabaseResponseInfo.cpp
   src/v20210125/model/DMSColumn.cpp
+  src/v20210125/model/DescribeResultDownloadRequest.cpp
   )
 
 set(dlc_include
