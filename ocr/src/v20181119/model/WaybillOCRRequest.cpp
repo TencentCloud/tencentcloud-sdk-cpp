@@ -25,7 +25,9 @@ using namespace std;
 WaybillOCRRequest::WaybillOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
-    m_enablePreDetectHasBeenSet(false)
+    m_enablePreDetectHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string WaybillOCRRequest::ToJsonString() const
         string key = "EnablePreDetect";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enablePreDetect, allocator);
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void WaybillOCRRequest::SetEnablePreDetect(const bool& _enablePreDetect)
 bool WaybillOCRRequest::EnablePreDetectHasBeenSet() const
 {
     return m_enablePreDetectHasBeenSet;
+}
+
+bool WaybillOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void WaybillOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool WaybillOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+int64_t WaybillOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void WaybillOCRRequest::SetPdfPageNumber(const int64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool WaybillOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

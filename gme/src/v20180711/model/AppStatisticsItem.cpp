@@ -24,7 +24,11 @@ AppStatisticsItem::AppStatisticsItem() :
     m_realtimeSpeechStatisticsItemHasBeenSet(false),
     m_voiceMessageStatisticsItemHasBeenSet(false),
     m_voiceFilterStatisticsItemHasBeenSet(false),
-    m_dateHasBeenSet(false)
+    m_dateHasBeenSet(false),
+    m_audioTextStatisticsItemHasBeenSet(false),
+    m_streamTextStatisticsItemHasBeenSet(false),
+    m_overseaTextStatisticsItemHasBeenSet(false),
+    m_realtimeTextStatisticsItemHasBeenSet(false)
 {
 }
 
@@ -94,6 +98,74 @@ CoreInternalOutcome AppStatisticsItem::Deserialize(const rapidjson::Value &value
         m_dateHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioTextStatisticsItem") && !value["AudioTextStatisticsItem"].IsNull())
+    {
+        if (!value["AudioTextStatisticsItem"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.AudioTextStatisticsItem` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_audioTextStatisticsItem.Deserialize(value["AudioTextStatisticsItem"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_audioTextStatisticsItemHasBeenSet = true;
+    }
+
+    if (value.HasMember("StreamTextStatisticsItem") && !value["StreamTextStatisticsItem"].IsNull())
+    {
+        if (!value["StreamTextStatisticsItem"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.StreamTextStatisticsItem` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_streamTextStatisticsItem.Deserialize(value["StreamTextStatisticsItem"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_streamTextStatisticsItemHasBeenSet = true;
+    }
+
+    if (value.HasMember("OverseaTextStatisticsItem") && !value["OverseaTextStatisticsItem"].IsNull())
+    {
+        if (!value["OverseaTextStatisticsItem"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.OverseaTextStatisticsItem` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_overseaTextStatisticsItem.Deserialize(value["OverseaTextStatisticsItem"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_overseaTextStatisticsItemHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealtimeTextStatisticsItem") && !value["RealtimeTextStatisticsItem"].IsNull())
+    {
+        if (!value["RealtimeTextStatisticsItem"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppStatisticsItem.RealtimeTextStatisticsItem` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_realtimeTextStatisticsItem.Deserialize(value["RealtimeTextStatisticsItem"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_realtimeTextStatisticsItemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -134,6 +206,42 @@ void AppStatisticsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Date";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_date.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioTextStatisticsItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioTextStatisticsItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_audioTextStatisticsItem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_streamTextStatisticsItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamTextStatisticsItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_streamTextStatisticsItem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_overseaTextStatisticsItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OverseaTextStatisticsItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_overseaTextStatisticsItem.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_realtimeTextStatisticsItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealtimeTextStatisticsItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_realtimeTextStatisticsItem.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -201,5 +309,69 @@ void AppStatisticsItem::SetDate(const string& _date)
 bool AppStatisticsItem::DateHasBeenSet() const
 {
     return m_dateHasBeenSet;
+}
+
+AudioTextStatisticsItem AppStatisticsItem::GetAudioTextStatisticsItem() const
+{
+    return m_audioTextStatisticsItem;
+}
+
+void AppStatisticsItem::SetAudioTextStatisticsItem(const AudioTextStatisticsItem& _audioTextStatisticsItem)
+{
+    m_audioTextStatisticsItem = _audioTextStatisticsItem;
+    m_audioTextStatisticsItemHasBeenSet = true;
+}
+
+bool AppStatisticsItem::AudioTextStatisticsItemHasBeenSet() const
+{
+    return m_audioTextStatisticsItemHasBeenSet;
+}
+
+StreamTextStatisticsItem AppStatisticsItem::GetStreamTextStatisticsItem() const
+{
+    return m_streamTextStatisticsItem;
+}
+
+void AppStatisticsItem::SetStreamTextStatisticsItem(const StreamTextStatisticsItem& _streamTextStatisticsItem)
+{
+    m_streamTextStatisticsItem = _streamTextStatisticsItem;
+    m_streamTextStatisticsItemHasBeenSet = true;
+}
+
+bool AppStatisticsItem::StreamTextStatisticsItemHasBeenSet() const
+{
+    return m_streamTextStatisticsItemHasBeenSet;
+}
+
+OverseaTextStatisticsItem AppStatisticsItem::GetOverseaTextStatisticsItem() const
+{
+    return m_overseaTextStatisticsItem;
+}
+
+void AppStatisticsItem::SetOverseaTextStatisticsItem(const OverseaTextStatisticsItem& _overseaTextStatisticsItem)
+{
+    m_overseaTextStatisticsItem = _overseaTextStatisticsItem;
+    m_overseaTextStatisticsItemHasBeenSet = true;
+}
+
+bool AppStatisticsItem::OverseaTextStatisticsItemHasBeenSet() const
+{
+    return m_overseaTextStatisticsItemHasBeenSet;
+}
+
+RealtimeTextStatisticsItem AppStatisticsItem::GetRealtimeTextStatisticsItem() const
+{
+    return m_realtimeTextStatisticsItem;
+}
+
+void AppStatisticsItem::SetRealtimeTextStatisticsItem(const RealtimeTextStatisticsItem& _realtimeTextStatisticsItem)
+{
+    m_realtimeTextStatisticsItem = _realtimeTextStatisticsItem;
+    m_realtimeTextStatisticsItemHasBeenSet = true;
+}
+
+bool AppStatisticsItem::RealtimeTextStatisticsItemHasBeenSet() const
+{
+    return m_realtimeTextStatisticsItemHasBeenSet;
 }
 

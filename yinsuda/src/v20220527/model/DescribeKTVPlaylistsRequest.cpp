@@ -25,7 +25,9 @@ using namespace std;
 DescribeKTVPlaylistsRequest::DescribeKTVPlaylistsRequest() :
     m_appNameHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_typesHasBeenSet(false)
+    m_typesHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string DescribeKTVPlaylistsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
     }
 
 
@@ -119,6 +137,38 @@ void DescribeKTVPlaylistsRequest::SetTypes(const vector<string>& _types)
 bool DescribeKTVPlaylistsRequest::TypesHasBeenSet() const
 {
     return m_typesHasBeenSet;
+}
+
+int64_t DescribeKTVPlaylistsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeKTVPlaylistsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeKTVPlaylistsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+int64_t DescribeKTVPlaylistsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeKTVPlaylistsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeKTVPlaylistsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
 }
 
 

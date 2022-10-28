@@ -124,6 +124,42 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * @return IsPdf 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     */
+                    bool GetIsPdf() const;
+
+                    /**
+                     * 设置是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     * @param IsPdf 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     */
+                    void SetIsPdf(const bool& _isPdf);
+
+                    /**
+                     * 判断参数 IsPdf 是否已赋值
+                     * @return IsPdf 是否已赋值
+                     */
+                    bool IsPdfHasBeenSet() const;
+
+                    /**
+                     * 获取需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * @return PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     */
+                    int64_t GetPdfPageNumber() const;
+
+                    /**
+                     * 设置需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     * @param PdfPageNumber 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     */
+                    void SetPdfPageNumber(const int64_t& _pdfPageNumber);
+
+                    /**
+                     * 判断参数 PdfPageNumber 是否已赋值
+                     * @return PdfPageNumber 是否已赋值
+                     */
+                    bool PdfPageNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -150,6 +186,18 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 是否开启PDF识别，默认值为true，开启后可同时支持图片和PDF的识别。
+                     */
+                    bool m_isPdf;
+                    bool m_isPdfHasBeenSet;
+
+                    /**
+                     * 需要识别的PDF页面的对应页码，仅支持PDF单页识别，当上传文件为PDF且IsPdf参数值为true时有效，默认值为1。
+                     */
+                    int64_t m_pdfPageNumber;
+                    bool m_pdfPageNumberHasBeenSet;
 
                 };
             }

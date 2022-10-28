@@ -123,6 +123,12 @@
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBParametersResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceNetworkRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceNetworkResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceVipRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceVipResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceVportRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyInstanceVportResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyRealServerAccessStrategyRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/ModifyRealServerAccessStrategyResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/OpenDBExtranetAccessRequest.h>
@@ -301,6 +307,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDBSyncModeResponse> ModifyDBSyncModeOutcome;
                 typedef std::future<ModifyDBSyncModeOutcome> ModifyDBSyncModeOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyDBSyncModeRequest&, ModifyDBSyncModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBSyncModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceNetworkResponse> ModifyInstanceNetworkOutcome;
+                typedef std::future<ModifyInstanceNetworkOutcome> ModifyInstanceNetworkOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyInstanceNetworkRequest&, ModifyInstanceNetworkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceNetworkAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceVipResponse> ModifyInstanceVipOutcome;
+                typedef std::future<ModifyInstanceVipOutcome> ModifyInstanceVipOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyInstanceVipRequest&, ModifyInstanceVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceVipAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceVportResponse> ModifyInstanceVportOutcome;
+                typedef std::future<ModifyInstanceVportOutcome> ModifyInstanceVportOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::ModifyInstanceVportRequest&, ModifyInstanceVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceVportAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRealServerAccessStrategyResponse> ModifyRealServerAccessStrategyOutcome;
                 typedef std::future<ModifyRealServerAccessStrategyOutcome> ModifyRealServerAccessStrategyOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::ModifyRealServerAccessStrategyRequest&, ModifyRealServerAccessStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRealServerAccessStrategyAsyncHandler;
@@ -779,6 +794,33 @@ namespace TencentCloud
                 ModifyDBSyncModeOutcome ModifyDBSyncMode(const Model::ModifyDBSyncModeRequest &request);
                 void ModifyDBSyncModeAsync(const Model::ModifyDBSyncModeRequest& request, const ModifyDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDBSyncModeOutcomeCallable ModifyDBSyncModeCallable(const Model::ModifyDBSyncModeRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceNetwork）用于修改实例所属网络。
+                 * @param req ModifyInstanceNetworkRequest
+                 * @return ModifyInstanceNetworkOutcome
+                 */
+                ModifyInstanceNetworkOutcome ModifyInstanceNetwork(const Model::ModifyInstanceNetworkRequest &request);
+                void ModifyInstanceNetworkAsync(const Model::ModifyInstanceNetworkRequest& request, const ModifyInstanceNetworkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceNetworkOutcomeCallable ModifyInstanceNetworkCallable(const Model::ModifyInstanceNetworkRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceVip）用于修改实例Vip
+                 * @param req ModifyInstanceVipRequest
+                 * @return ModifyInstanceVipOutcome
+                 */
+                ModifyInstanceVipOutcome ModifyInstanceVip(const Model::ModifyInstanceVipRequest &request);
+                void ModifyInstanceVipAsync(const Model::ModifyInstanceVipRequest& request, const ModifyInstanceVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceVipOutcomeCallable ModifyInstanceVipCallable(const Model::ModifyInstanceVipRequest& request);
+
+                /**
+                 *本接口（ModifyInstanceVport）用于修改实例VPORT
+                 * @param req ModifyInstanceVportRequest
+                 * @return ModifyInstanceVportOutcome
+                 */
+                ModifyInstanceVportOutcome ModifyInstanceVport(const Model::ModifyInstanceVportRequest &request);
+                void ModifyInstanceVportAsync(const Model::ModifyInstanceVportRequest& request, const ModifyInstanceVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceVportOutcomeCallable ModifyInstanceVportCallable(const Model::ModifyInstanceVportRequest& request);
 
                 /**
                  *本接口(ModifyRealServerAccessStrategy)用于修改云数据库的VPCGW到RS的访问策略。

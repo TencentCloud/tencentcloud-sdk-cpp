@@ -771,6 +771,49 @@ PartnersClient::DescribeRebateInfosOutcomeCallable PartnersClient::DescribeRebat
     return task->get_future();
 }
 
+PartnersClient::DescribeRebateInfosNewOutcome PartnersClient::DescribeRebateInfosNew(const DescribeRebateInfosNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRebateInfosNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRebateInfosNewResponse rsp = DescribeRebateInfosNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRebateInfosNewOutcome(rsp);
+        else
+            return DescribeRebateInfosNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRebateInfosNewOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::DescribeRebateInfosNewAsync(const DescribeRebateInfosNewRequest& request, const DescribeRebateInfosNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRebateInfosNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::DescribeRebateInfosNewOutcomeCallable PartnersClient::DescribeRebateInfosNewCallable(const DescribeRebateInfosNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRebateInfosNewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRebateInfosNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::DescribeSalesmansOutcome PartnersClient::DescribeSalesmans(const DescribeSalesmansRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSalesmans");

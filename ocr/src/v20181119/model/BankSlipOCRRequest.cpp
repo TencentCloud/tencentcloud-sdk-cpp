@@ -24,7 +24,9 @@ using namespace std;
 
 BankSlipOCRRequest::BankSlipOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string BankSlipOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void BankSlipOCRRequest::SetImageUrl(const string& _imageUrl)
 bool BankSlipOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool BankSlipOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void BankSlipOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool BankSlipOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+int64_t BankSlipOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void BankSlipOCRRequest::SetPdfPageNumber(const int64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool BankSlipOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

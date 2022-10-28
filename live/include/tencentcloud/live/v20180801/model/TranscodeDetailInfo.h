@@ -179,14 +179,14 @@ topspeed_H265：极速高清-H265。
                     bool BitrateHasBeenSet() const;
 
                     /**
-                     * 获取类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
-                     * @return Type 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
+                     * 获取类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark），快直播（Webrtc）。
+                     * @return Type 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark），快直播（Webrtc）。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
-                     * @param Type 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
+                     * 设置类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark），快直播（Webrtc）。
+                     * @param Type 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark），快直播（Webrtc）。
                      */
                     void SetType(const std::string& _type);
 
@@ -231,6 +231,32 @@ topspeed_H265：极速高清-H265。
                      * @return Resolution 是否已赋值
                      */
                     bool ResolutionHasBeenSet() const;
+
+                    /**
+                     * 获取地域：
+Mainland：国内。
+Overseas：海外。
+                     * @return MainlandOrOversea 地域：
+Mainland：国内。
+Overseas：海外。
+                     */
+                    std::string GetMainlandOrOversea() const;
+
+                    /**
+                     * 设置地域：
+Mainland：国内。
+Overseas：海外。
+                     * @param MainlandOrOversea 地域：
+Mainland：国内。
+Overseas：海外。
+                     */
+                    void SetMainlandOrOversea(const std::string& _mainlandOrOversea);
+
+                    /**
+                     * 判断参数 MainlandOrOversea 是否已赋值
+                     * @return MainlandOrOversea 是否已赋值
+                     */
+                    bool MainlandOrOverseaHasBeenSet() const;
 
                 private:
 
@@ -277,7 +303,7 @@ topspeed_H265：极速高清-H265。
                     bool m_bitrateHasBeenSet;
 
                     /**
-                     * 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark）。
+                     * 类型，包含：转码（Transcode），混流（MixStream），水印（WaterMark），快直播（Webrtc）。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -293,6 +319,14 @@ topspeed_H265：极速高清-H265。
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;
+
+                    /**
+                     * 地域：
+Mainland：国内。
+Overseas：海外。
+                     */
+                    std::string m_mainlandOrOversea;
+                    bool m_mainlandOrOverseaHasBeenSet;
 
                 };
             }

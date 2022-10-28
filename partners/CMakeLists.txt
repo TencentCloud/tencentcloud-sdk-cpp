@@ -23,7 +23,9 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DescribeAgentDealsCacheRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeSalesmansRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentAuditedClientsRequest.h
+  include/tencentcloud/partners/v20180321/model/DescribeRebateInfosNewRequest.h
   include/tencentcloud/partners/v20180321/model/RemovePayRelationForClientRequest.h
+  include/tencentcloud/partners/v20180321/model/DescribeRebateInfosNewResponse.h
   include/tencentcloud/partners/v20180321/model/AgentPayDealsRequest.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentClientGradeResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentDealsByCacheResponse.h
@@ -71,6 +73,7 @@ set(partners_public_header_model
   include/tencentcloud/partners/v20180321/model/DealGoodsPriceNewElem.h
   include/tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h
   include/tencentcloud/partners/v20180321/model/DescribeAgentClientGradeRequest.h
+  include/tencentcloud/partners/v20180321/model/RebateInfoElemNew.h
   include/tencentcloud/partners/v20180321/model/DescribeClientBalanceNewResponse.h
   )
 
@@ -80,7 +83,9 @@ set(partners_src
   src/v20180321/model/DescribeAgentDealsCacheRequest.cpp
   src/v20180321/model/DescribeSalesmansRequest.cpp
   src/v20180321/model/DescribeAgentAuditedClientsRequest.cpp
+  src/v20180321/model/DescribeRebateInfosNewRequest.cpp
   src/v20180321/model/RemovePayRelationForClientRequest.cpp
+  src/v20180321/model/DescribeRebateInfosNewResponse.cpp
   src/v20180321/model/AgentPayDealsRequest.cpp
   src/v20180321/model/DescribeAgentClientGradeResponse.cpp
   src/v20180321/model/DescribeAgentDealsByCacheResponse.cpp
@@ -128,6 +133,7 @@ set(partners_src
   src/v20180321/model/DealGoodsPriceNewElem.cpp
   src/v20180321/model/DescribeRebateInfosResponse.cpp
   src/v20180321/model/DescribeAgentClientGradeRequest.cpp
+  src/v20180321/model/RebateInfoElemNew.cpp
   src/v20180321/model/DescribeClientBalanceNewResponse.cpp
   )
 

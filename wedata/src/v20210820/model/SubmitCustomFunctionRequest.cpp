@@ -25,7 +25,8 @@ using namespace std;
 SubmitCustomFunctionRequest::SubmitCustomFunctionRequest() :
     m_functionIdHasBeenSet(false),
     m_clusterIdentifierHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string SubmitCustomFunctionRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void SubmitCustomFunctionRequest::SetComment(const string& _comment)
 bool SubmitCustomFunctionRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string SubmitCustomFunctionRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void SubmitCustomFunctionRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool SubmitCustomFunctionRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

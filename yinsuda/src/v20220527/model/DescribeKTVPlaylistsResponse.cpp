@@ -24,7 +24,8 @@ using namespace TencentCloud::Yinsuda::V20220527::Model;
 using namespace std;
 
 DescribeKTVPlaylistsResponse::DescribeKTVPlaylistsResponse() :
-    m_playlistBaseInfoSetHasBeenSet(false)
+    m_playlistBaseInfoSetHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeKTVPlaylistsResponse::Deserialize(const string &payl
         m_playlistBaseInfoSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeKTVPlaylistsResponse::ToJsonString() const
         }
     }
 
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<KTVPlaylistBaseInfo> DescribeKTVPlaylistsResponse::GetPlaylistBaseInfoSet
 bool DescribeKTVPlaylistsResponse::PlaylistBaseInfoSetHasBeenSet() const
 {
     return m_playlistBaseInfoSetHasBeenSet;
+}
+
+int64_t DescribeKTVPlaylistsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeKTVPlaylistsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

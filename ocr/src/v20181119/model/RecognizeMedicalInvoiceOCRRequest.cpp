@@ -26,7 +26,9 @@ RecognizeMedicalInvoiceOCRRequest::RecognizeMedicalInvoiceOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_returnVertexHasBeenSet(false),
-    m_returnCoordHasBeenSet(false)
+    m_returnCoordHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -67,6 +69,22 @@ string RecognizeMedicalInvoiceOCRRequest::ToJsonString() const
         string key = "ReturnCoord";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_returnCoord, allocator);
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -139,6 +157,38 @@ void RecognizeMedicalInvoiceOCRRequest::SetReturnCoord(const bool& _returnCoord)
 bool RecognizeMedicalInvoiceOCRRequest::ReturnCoordHasBeenSet() const
 {
     return m_returnCoordHasBeenSet;
+}
+
+bool RecognizeMedicalInvoiceOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void RecognizeMedicalInvoiceOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool RecognizeMedicalInvoiceOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+int64_t RecognizeMedicalInvoiceOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void RecognizeMedicalInvoiceOCRRequest::SetPdfPageNumber(const int64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool RecognizeMedicalInvoiceOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

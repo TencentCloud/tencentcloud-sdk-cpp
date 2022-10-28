@@ -31,7 +31,8 @@ CreateTranscodeTemplateRequest::CreateTranscodeTemplateRequest() :
     m_removeAudioHasBeenSet(false),
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
-    m_tEHDConfigHasBeenSet(false)
+    m_tEHDConfigHasBeenSet(false),
+    m_segmentTypeHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,14 @@ string CreateTranscodeTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tEHDConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_segmentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -267,6 +276,22 @@ void CreateTranscodeTemplateRequest::SetTEHDConfig(const TEHDConfig& _tEHDConfig
 bool CreateTranscodeTemplateRequest::TEHDConfigHasBeenSet() const
 {
     return m_tEHDConfigHasBeenSet;
+}
+
+string CreateTranscodeTemplateRequest::GetSegmentType() const
+{
+    return m_segmentType;
+}
+
+void CreateTranscodeTemplateRequest::SetSegmentType(const string& _segmentType)
+{
+    m_segmentType = _segmentType;
+    m_segmentTypeHasBeenSet = true;
+}
+
+bool CreateTranscodeTemplateRequest::SegmentTypeHasBeenSet() const
+{
+    return m_segmentTypeHasBeenSet;
 }
 
 

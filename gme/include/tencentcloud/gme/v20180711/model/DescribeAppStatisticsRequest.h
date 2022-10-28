@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndDateHasBeenSet() const;
 
                     /**
-                     * 获取要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter
-                     * @return Services 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter
+                     * 获取要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
+                     * @return Services 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
                      */
                     std::vector<std::string> GetServices() const;
 
                     /**
-                     * 设置要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter
-                     * @param Services 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter
+                     * 设置要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
+                     * @param Services 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
                      */
                     void SetServices(const std::vector<std::string>& _services);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_endDateHasBeenSet;
 
                     /**
-                     * 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter
+                     * 要查询的服务列表，取值：RealTimeSpeech/VoiceMessage/VoiceFilter/SpeechToText
                      */
                     std::vector<std::string> m_services;
                     bool m_servicesHasBeenSet;

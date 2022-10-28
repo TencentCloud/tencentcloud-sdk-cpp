@@ -319,6 +319,24 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取切片类型，仅当 Format 为 HLS 时有效。
+                     * @return SegmentType 切片类型，仅当 Format 为 HLS 时有效。
+                     */
+                    std::string GetSegmentType() const;
+
+                    /**
+                     * 设置切片类型，仅当 Format 为 HLS 时有效。
+                     * @param SegmentType 切片类型，仅当 Format 为 HLS 时有效。
+                     */
+                    void SetSegmentType(const std::string& _segmentType);
+
+                    /**
+                     * 判断参数 SegmentType 是否已赋值
+                     * @return SegmentType 是否已赋值
+                     */
+                    bool SegmentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,6 +424,12 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 切片类型，仅当 Format 为 HLS 时有效。
+                     */
+                    std::string m_segmentType;
+                    bool m_segmentTypeHasBeenSet;
 
                 };
             }

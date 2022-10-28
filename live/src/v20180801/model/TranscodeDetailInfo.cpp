@@ -29,7 +29,8 @@ TranscodeDetailInfo::TranscodeDetailInfo() :
     m_bitrateHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_pushDomainHasBeenSet(false),
-    m_resolutionHasBeenSet(false)
+    m_resolutionHasBeenSet(false),
+    m_mainlandOrOverseaHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome TranscodeDetailInfo::Deserialize(const rapidjson::Value &val
         m_resolutionHasBeenSet = true;
     }
 
+    if (value.HasMember("MainlandOrOversea") && !value["MainlandOrOversea"].IsNull())
+    {
+        if (!value["MainlandOrOversea"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TranscodeDetailInfo.MainlandOrOversea` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mainlandOrOversea = string(value["MainlandOrOversea"].GetString());
+        m_mainlandOrOverseaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void TranscodeDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Resolution";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_resolution.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mainlandOrOverseaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MainlandOrOversea";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mainlandOrOversea.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void TranscodeDetailInfo::SetResolution(const string& _resolution)
 bool TranscodeDetailInfo::ResolutionHasBeenSet() const
 {
     return m_resolutionHasBeenSet;
+}
+
+string TranscodeDetailInfo::GetMainlandOrOversea() const
+{
+    return m_mainlandOrOversea;
+}
+
+void TranscodeDetailInfo::SetMainlandOrOversea(const string& _mainlandOrOversea)
+{
+    m_mainlandOrOversea = _mainlandOrOversea;
+    m_mainlandOrOverseaHasBeenSet = true;
+}
+
+bool TranscodeDetailInfo::MainlandOrOverseaHasBeenSet() const
+{
+    return m_mainlandOrOverseaHasBeenSet;
 }
 

@@ -26,7 +26,9 @@ MixedInvoiceOCRRequest::MixedInvoiceOCRRequest() :
     m_imageBase64HasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_typesHasBeenSet(false),
-    m_returnOtherHasBeenSet(false)
+    m_returnOtherHasBeenSet(false),
+    m_isPdfHasBeenSet(false),
+    m_pdfPageNumberHasBeenSet(false)
 {
 }
 
@@ -72,6 +74,22 @@ string MixedInvoiceOCRRequest::ToJsonString() const
         string key = "ReturnOther";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_returnOther.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isPdfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsPdf";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isPdf, allocator);
+    }
+
+    if (m_pdfPageNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfPageNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_pdfPageNumber, allocator);
     }
 
 
@@ -144,6 +162,38 @@ void MixedInvoiceOCRRequest::SetReturnOther(const string& _returnOther)
 bool MixedInvoiceOCRRequest::ReturnOtherHasBeenSet() const
 {
     return m_returnOtherHasBeenSet;
+}
+
+bool MixedInvoiceOCRRequest::GetIsPdf() const
+{
+    return m_isPdf;
+}
+
+void MixedInvoiceOCRRequest::SetIsPdf(const bool& _isPdf)
+{
+    m_isPdf = _isPdf;
+    m_isPdfHasBeenSet = true;
+}
+
+bool MixedInvoiceOCRRequest::IsPdfHasBeenSet() const
+{
+    return m_isPdfHasBeenSet;
+}
+
+int64_t MixedInvoiceOCRRequest::GetPdfPageNumber() const
+{
+    return m_pdfPageNumber;
+}
+
+void MixedInvoiceOCRRequest::SetPdfPageNumber(const int64_t& _pdfPageNumber)
+{
+    m_pdfPageNumber = _pdfPageNumber;
+    m_pdfPageNumberHasBeenSet = true;
+}
+
+bool MixedInvoiceOCRRequest::PdfPageNumberHasBeenSet() const
+{
+    return m_pdfPageNumberHasBeenSet;
 }
 
 

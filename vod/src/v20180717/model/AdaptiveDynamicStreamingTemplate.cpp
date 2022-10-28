@@ -32,7 +32,8 @@ AdaptiveDynamicStreamingTemplate::AdaptiveDynamicStreamingTemplate() :
     m_disableHigherVideoBitrateHasBeenSet(false),
     m_disableHigherVideoResolutionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_segmentTypeHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome AdaptiveDynamicStreamingTemplate::Deserialize(const rapidjso
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("SegmentType") && !value["SegmentType"].IsNull())
+    {
+        if (!value["SegmentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingTemplate.SegmentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_segmentType = string(value["SegmentType"].GetString());
+        m_segmentTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -279,6 +290,14 @@ void AdaptiveDynamicStreamingTemplate::ToJsonObject(rapidjson::Value &value, rap
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_segmentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_segmentType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -474,5 +493,21 @@ void AdaptiveDynamicStreamingTemplate::SetUpdateTime(const string& _updateTime)
 bool AdaptiveDynamicStreamingTemplate::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string AdaptiveDynamicStreamingTemplate::GetSegmentType() const
+{
+    return m_segmentType;
+}
+
+void AdaptiveDynamicStreamingTemplate::SetSegmentType(const string& _segmentType)
+{
+    m_segmentType = _segmentType;
+    m_segmentTypeHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingTemplate::SegmentTypeHasBeenSet() const
+{
+    return m_segmentTypeHasBeenSet;
 }
 

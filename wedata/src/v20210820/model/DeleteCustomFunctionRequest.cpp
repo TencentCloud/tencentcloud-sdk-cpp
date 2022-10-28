@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteCustomFunctionRequest::DeleteCustomFunctionRequest() :
     m_clusterIdentifierHasBeenSet(false),
-    m_functionIdHasBeenSet(false)
+    m_functionIdHasBeenSet(false),
+    m_projectIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DeleteCustomFunctionRequest::ToJsonString() const
         string key = "FunctionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_functionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DeleteCustomFunctionRequest::SetFunctionId(const string& _functionId)
 bool DeleteCustomFunctionRequest::FunctionIdHasBeenSet() const
 {
     return m_functionIdHasBeenSet;
+}
+
+string DeleteCustomFunctionRequest::GetProjectId() const
+{
+    return m_projectId;
+}
+
+void DeleteCustomFunctionRequest::SetProjectId(const string& _projectId)
+{
+    m_projectId = _projectId;
+    m_projectIdHasBeenSet = true;
+}
+
+bool DeleteCustomFunctionRequest::ProjectIdHasBeenSet() const
+{
+    return m_projectIdHasBeenSet;
 }
 
 

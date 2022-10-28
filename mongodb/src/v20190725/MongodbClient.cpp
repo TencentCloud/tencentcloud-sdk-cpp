@@ -556,6 +556,49 @@ MongodbClient::DescribeDBInstanceDealOutcomeCallable MongodbClient::DescribeDBIn
     return task->get_future();
 }
 
+MongodbClient::DescribeDBInstanceNodePropertyOutcome MongodbClient::DescribeDBInstanceNodeProperty(const DescribeDBInstanceNodePropertyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceNodeProperty");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceNodePropertyResponse rsp = DescribeDBInstanceNodePropertyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceNodePropertyOutcome(rsp);
+        else
+            return DescribeDBInstanceNodePropertyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceNodePropertyOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DescribeDBInstanceNodePropertyAsync(const DescribeDBInstanceNodePropertyRequest& request, const DescribeDBInstanceNodePropertyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceNodeProperty(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DescribeDBInstanceNodePropertyOutcomeCallable MongodbClient::DescribeDBInstanceNodePropertyCallable(const DescribeDBInstanceNodePropertyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceNodePropertyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceNodeProperty(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeDBInstancesOutcome MongodbClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");

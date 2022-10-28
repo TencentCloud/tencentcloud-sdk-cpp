@@ -231,6 +231,36 @@ namespace TencentCloud
                      */
                     bool TEHDConfigHasBeenSet() const;
 
+                    /**
+                     * 获取切片类型，当 Container 为 hls 时有效，可选值：
+<li>ts：ts 切片；</li>
+<li>fmp4：fmp4 切片。</li>
+默认值：ts。
+                     * @return SegmentType 切片类型，当 Container 为 hls 时有效，可选值：
+<li>ts：ts 切片；</li>
+<li>fmp4：fmp4 切片。</li>
+默认值：ts。
+                     */
+                    std::string GetSegmentType() const;
+
+                    /**
+                     * 设置切片类型，当 Container 为 hls 时有效，可选值：
+<li>ts：ts 切片；</li>
+<li>fmp4：fmp4 切片。</li>
+默认值：ts。
+                     * @param SegmentType 切片类型，当 Container 为 hls 时有效，可选值：
+<li>ts：ts 切片；</li>
+<li>fmp4：fmp4 切片。</li>
+默认值：ts。
+                     */
+                    void SetSegmentType(const std::string& _segmentType);
+
+                    /**
+                     * 判断参数 SegmentType 是否已赋值
+                     * @return SegmentType 是否已赋值
+                     */
+                    bool SegmentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +322,15 @@ namespace TencentCloud
                      */
                     TEHDConfig m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
+
+                    /**
+                     * 切片类型，当 Container 为 hls 时有效，可选值：
+<li>ts：ts 切片；</li>
+<li>fmp4：fmp4 切片。</li>
+默认值：ts。
+                     */
+                    std::string m_segmentType;
+                    bool m_segmentTypeHasBeenSet;
 
                 };
             }

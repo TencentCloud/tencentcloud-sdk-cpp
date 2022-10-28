@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取项目ID
+                     * @return ProjectId 项目ID
+                     */
+                    std::string GetProjectId() const;
+
+                    /**
+                     * 设置项目ID
+                     * @param ProjectId 项目ID
+                     */
+                    void SetProjectId(const std::string& _projectId);
+
+                    /**
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
+                     */
+                    bool ProjectIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 项目ID
+                     */
+                    std::string m_projectId;
+                    bool m_projectIdHasBeenSet;
 
                 };
             }

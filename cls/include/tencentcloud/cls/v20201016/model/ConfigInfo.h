@@ -67,6 +67,28 @@ namespace TencentCloud
                     bool ConfigIdHasBeenSet() const;
 
                     /**
+                     * 获取采集规则配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name 采集规则配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置采集规则配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Name 采集规则配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
                      * 获取日志格式化方式
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogFormat 日志格式化方式
@@ -263,6 +285,13 @@ namespace TencentCloud
                      */
                     std::string m_configId;
                     bool m_configIdHasBeenSet;
+
+                    /**
+                     * 采集规则配置名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                     /**
                      * 日志格式化方式

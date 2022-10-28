@@ -22,6 +22,7 @@ using namespace std;
 
 ConfigInfo::ConfigInfo() :
     m_configIdHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_logFormatHasBeenSet(false),
     m_pathHasBeenSet(false),
     m_logTypeHasBeenSet(false),
@@ -47,6 +48,16 @@ CoreInternalOutcome ConfigInfo::Deserialize(const rapidjson::Value &value)
         }
         m_configId = string(value["ConfigId"].GetString());
         m_configIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConfigInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
     }
 
     if (value.HasMember("LogFormat") && !value["LogFormat"].IsNull())
@@ -171,6 +182,14 @@ void ConfigInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, rapidjson::Value(m_configId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_logFormatHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -268,6 +287,22 @@ void ConfigInfo::SetConfigId(const string& _configId)
 bool ConfigInfo::ConfigIdHasBeenSet() const
 {
     return m_configIdHasBeenSet;
+}
+
+string ConfigInfo::GetName() const
+{
+    return m_name;
+}
+
+void ConfigInfo::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool ConfigInfo::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 
 string ConfigInfo::GetLogFormat() const

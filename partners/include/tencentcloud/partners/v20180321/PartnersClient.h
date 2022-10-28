@@ -57,6 +57,8 @@
 #include <tencentcloud/partners/v20180321/model/DescribeClientBalanceNewResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeRebateInfosResponse.h>
+#include <tencentcloud/partners/v20180321/model/DescribeRebateInfosNewRequest.h>
+#include <tencentcloud/partners/v20180321/model/DescribeRebateInfosNewResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeSalesmansRequest.h>
 #include <tencentcloud/partners/v20180321/model/DescribeSalesmansResponse.h>
 #include <tencentcloud/partners/v20180321/model/DescribeUnbindClientListRequest.h>
@@ -130,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRebateInfosResponse> DescribeRebateInfosOutcome;
                 typedef std::future<DescribeRebateInfosOutcome> DescribeRebateInfosOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeRebateInfosRequest&, DescribeRebateInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRebateInfosNewResponse> DescribeRebateInfosNewOutcome;
+                typedef std::future<DescribeRebateInfosNewOutcome> DescribeRebateInfosNewOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::DescribeRebateInfosNewRequest&, DescribeRebateInfosNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRebateInfosNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSalesmansResponse> DescribeSalesmansOutcome;
                 typedef std::future<DescribeSalesmansOutcome> DescribeSalesmansOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::DescribeSalesmansRequest&, DescribeSalesmansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSalesmansAsyncHandler;
@@ -297,6 +302,15 @@ namespace TencentCloud
                 DescribeRebateInfosOutcome DescribeRebateInfos(const Model::DescribeRebateInfosRequest &request);
                 void DescribeRebateInfosAsync(const Model::DescribeRebateInfosRequest& request, const DescribeRebateInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRebateInfosOutcomeCallable DescribeRebateInfosCallable(const Model::DescribeRebateInfosRequest& request);
+
+                /**
+                 *代理商可查询自己名下全部返佣信息
+                 * @param req DescribeRebateInfosNewRequest
+                 * @return DescribeRebateInfosNewOutcome
+                 */
+                DescribeRebateInfosNewOutcome DescribeRebateInfosNew(const Model::DescribeRebateInfosNewRequest &request);
+                void DescribeRebateInfosNewAsync(const Model::DescribeRebateInfosNewRequest& request, const DescribeRebateInfosNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRebateInfosNewOutcomeCallable DescribeRebateInfosNewCallable(const Model::DescribeRebateInfosNewRequest& request);
 
                 /**
                  *代理商查询名下业务员列表信息

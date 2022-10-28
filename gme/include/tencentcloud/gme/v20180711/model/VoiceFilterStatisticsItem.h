@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取语音过滤总时长
-                     * @return Duration 语音过滤总时长
+                     * 获取语音过滤总时长，单位为min
+                     * @return Duration 语音过滤总时长，单位为min
                      */
                     uint64_t GetDuration() const;
 
                     /**
-                     * 设置语音过滤总时长
-                     * @param Duration 语音过滤总时长
+                     * 设置语音过滤总时长，单位为min
+                     * @param Duration 语音过滤总时长，单位为min
                      */
                     void SetDuration(const uint64_t& _duration);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 语音过滤总时长
+                     * 语音过滤总时长，单位为min
                      */
                     uint64_t m_duration;
                     bool m_durationHasBeenSet;
