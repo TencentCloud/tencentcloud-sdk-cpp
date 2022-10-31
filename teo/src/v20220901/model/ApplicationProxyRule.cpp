@@ -28,7 +28,8 @@ ApplicationProxyRule::ApplicationProxyRule() :
     m_ruleIdHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_forwardClientIpHasBeenSet(false),
-    m_sessionPersistHasBeenSet(false)
+    m_sessionPersistHasBeenSet(false),
+    m_originPortHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,16 @@ CoreInternalOutcome ApplicationProxyRule::Deserialize(const rapidjson::Value &va
         m_sessionPersistHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginPort") && !value["OriginPort"].IsNull())
+    {
+        if (!value["OriginPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationProxyRule.OriginPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originPort = string(value["OriginPort"].GetString());
+        m_originPortHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ void ApplicationProxyRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "SessionPersist";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_sessionPersist, allocator);
+    }
+
+    if (m_originPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originPort.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -333,5 +352,21 @@ void ApplicationProxyRule::SetSessionPersist(const bool& _sessionPersist)
 bool ApplicationProxyRule::SessionPersistHasBeenSet() const
 {
     return m_sessionPersistHasBeenSet;
+}
+
+string ApplicationProxyRule::GetOriginPort() const
+{
+    return m_originPort;
+}
+
+void ApplicationProxyRule::SetOriginPort(const string& _originPort)
+{
+    m_originPort = _originPort;
+    m_originPortHasBeenSet = true;
+}
+
+bool ApplicationProxyRule::OriginPortHasBeenSet() const
+{
+    return m_originPortHasBeenSet;
 }
 

@@ -29,7 +29,8 @@ ValueParam::ValueParam() :
     m_splitHasBeenSet(false),
     m_kVHasBeenSet(false),
     m_resultHasBeenSet(false),
-    m_jsonPathReplaceHasBeenSet(false)
+    m_jsonPathReplaceHasBeenSet(false),
+    m_urlDecodeHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,23 @@ CoreInternalOutcome ValueParam::Deserialize(const rapidjson::Value &value)
         m_jsonPathReplaceHasBeenSet = true;
     }
 
+    if (value.HasMember("UrlDecode") && !value["UrlDecode"].IsNull())
+    {
+        if (!value["UrlDecode"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueParam.UrlDecode` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_urlDecode.Deserialize(value["UrlDecode"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_urlDecodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -261,6 +279,15 @@ void ValueParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_jsonPathReplace.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_urlDecodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UrlDecode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_urlDecode.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -408,5 +435,21 @@ void ValueParam::SetJsonPathReplace(const JsonPathReplaceParam& _jsonPathReplace
 bool ValueParam::JsonPathReplaceHasBeenSet() const
 {
     return m_jsonPathReplaceHasBeenSet;
+}
+
+UrlDecodeParam ValueParam::GetUrlDecode() const
+{
+    return m_urlDecode;
+}
+
+void ValueParam::SetUrlDecode(const UrlDecodeParam& _urlDecode)
+{
+    m_urlDecode = _urlDecode;
+    m_urlDecodeHasBeenSet = true;
+}
+
+bool ValueParam::UrlDecodeHasBeenSet() const
+{
+    return m_urlDecodeHasBeenSet;
 }
 

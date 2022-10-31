@@ -74,24 +74,24 @@ namespace TencentCloud
 
                     /**
                      * 获取端口，支持格式：
-单个端口，如：80。
-端口段，如：81-82。表示81，82两个端口。
+<li>单个端口，如：80。</li>
+<li>端口段，如：81-82。表示81，82两个端口。</li>
 注意：一条规则最多可填写20个端口。
                      * @return Port 端口，支持格式：
-单个端口，如：80。
-端口段，如：81-82。表示81，82两个端口。
+<li>单个端口，如：80。</li>
+<li>端口段，如：81-82。表示81，82两个端口。</li>
 注意：一条规则最多可填写20个端口。
                      */
                     std::vector<std::string> GetPort() const;
 
                     /**
                      * 设置端口，支持格式：
-单个端口，如：80。
-端口段，如：81-82。表示81，82两个端口。
+<li>单个端口，如：80。</li>
+<li>端口段，如：81-82。表示81，82两个端口。</li>
 注意：一条规则最多可填写20个端口。
                      * @param Port 端口，支持格式：
-单个端口，如：80。
-端口段，如：81-82。表示81，82两个端口。
+<li>单个端口，如：80。</li>
+<li>端口段，如：81-82。表示81，82两个端口。</li>
 注意：一条规则最多可填写20个端口。
                      */
                     void SetPort(const std::vector<std::string>& _port);
@@ -130,33 +130,21 @@ namespace TencentCloud
 
                     /**
                      * 获取源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * @return OriginValue 源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      */
                     std::vector<std::string> GetOriginValue() const;
 
                     /**
                      * 设置源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      * @param OriginValue 源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      */
                     void SetOriginValue(const std::vector<std::string>& _originValue);
 
@@ -282,6 +270,32 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
                      */
                     bool SessionPersistHasBeenSet() const;
 
+                    /**
+                     * 获取源站端口，支持格式：
+<li>单端口，如：80。</li>
+<li>端口段：81-82，表示81，82两个端口。</li>
+                     * @return OriginPort 源站端口，支持格式：
+<li>单端口，如：80。</li>
+<li>端口段：81-82，表示81，82两个端口。</li>
+                     */
+                    std::string GetOriginPort() const;
+
+                    /**
+                     * 设置源站端口，支持格式：
+<li>单端口，如：80。</li>
+<li>端口段：81-82，表示81，82两个端口。</li>
+                     * @param OriginPort 源站端口，支持格式：
+<li>单端口，如：80。</li>
+<li>端口段：81-82，表示81，82两个端口。</li>
+                     */
+                    void SetOriginPort(const std::string& _originPort);
+
+                    /**
+                     * 判断参数 OriginPort 是否已赋值
+                     * @return OriginPort 是否已赋值
+                     */
+                    bool OriginPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -294,8 +308,8 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
 
                     /**
                      * 端口，支持格式：
-单个端口，如：80。
-端口段，如：81-82。表示81，82两个端口。
+<li>单个端口，如：80。</li>
+<li>端口段，如：81-82。表示81，82两个端口。</li>
 注意：一条规则最多可填写20个端口。
                      */
                     std::vector<std::string> m_port;
@@ -311,11 +325,8 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
 
                     /**
                      * 源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
                      */
                     std::vector<std::string> m_originValue;
                     bool m_originValueHasBeenSet;
@@ -354,6 +365,14 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
                      */
                     bool m_sessionPersist;
                     bool m_sessionPersistHasBeenSet;
+
+                    /**
+                     * 源站端口，支持格式：
+<li>单端口，如：80。</li>
+<li>端口段：81-82，表示81，82两个端口。</li>
+                     */
+                    std::string m_originPort;
+                    bool m_originPortHasBeenSet;
 
                 };
             }

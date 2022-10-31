@@ -31,6 +31,7 @@
 #include <tencentcloud/ckafka/v20190819/model/SplitParam.h>
 #include <tencentcloud/ckafka/v20190819/model/KVParam.h>
 #include <tencentcloud/ckafka/v20190819/model/JsonPathReplaceParam.h>
+#include <tencentcloud/ckafka/v20190819/model/UrlDecodeParam.h>
 
 
 namespace TencentCloud
@@ -247,6 +248,28 @@ namespace TencentCloud
                      */
                     bool JsonPathReplaceHasBeenSet() const;
 
+                    /**
+                     * 获取Url解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UrlDecode Url解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UrlDecodeParam GetUrlDecode() const;
+
+                    /**
+                     * 设置Url解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UrlDecode Url解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUrlDecode(const UrlDecodeParam& _urlDecode);
+
+                    /**
+                     * 判断参数 UrlDecode 是否已赋值
+                     * @return UrlDecode 是否已赋值
+                     */
+                    bool UrlDecodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +333,13 @@ namespace TencentCloud
                      */
                     JsonPathReplaceParam m_jsonPathReplace;
                     bool m_jsonPathReplaceHasBeenSet;
+
+                    /**
+                     * Url解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    UrlDecodeParam m_urlDecode;
+                    bool m_urlDecodeHasBeenSet;
 
                 };
             }

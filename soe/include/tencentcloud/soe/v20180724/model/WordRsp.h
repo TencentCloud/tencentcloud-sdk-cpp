@@ -191,6 +191,28 @@ namespace TencentCloud
                      */
                     bool ReferenceWordHasBeenSet() const;
 
+                    /**
+                     * 获取主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeywordTag 主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetKeywordTag() const;
+
+                    /**
+                     * 设置主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KeywordTag 主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKeywordTag(const int64_t& _keywordTag);
+
+                    /**
+                     * 判断参数 KeywordTag 是否已赋值
+                     * @return KeywordTag 是否已赋值
+                     */
+                    bool KeywordTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +262,13 @@ namespace TencentCloud
                      */
                     std::string m_referenceWord;
                     bool m_referenceWordHasBeenSet;
+
+                    /**
+                     * 主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_keywordTag;
+                    bool m_keywordTagHasBeenSet;
 
                 };
             }

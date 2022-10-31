@@ -124,21 +124,21 @@ namespace TencentCloud
 
                     /**
                      * 获取端口，支持格式：
-80：80端口
-81-90：81至90端口。不填保持原有值。
+<li>80：80端口；</li>
+<li>81-90：81至90端口。</li>
                      * @return Port 端口，支持格式：
-80：80端口
-81-90：81至90端口。不填保持原有值。
+<li>80：80端口；</li>
+<li>81-90：81至90端口。</li>
                      */
                     std::vector<std::string> GetPort() const;
 
                     /**
                      * 设置端口，支持格式：
-80：80端口
-81-90：81至90端口。不填保持原有值。
+<li>80：80端口；</li>
+<li>81-90：81至90端口。</li>
                      * @param Port 端口，支持格式：
-80：80端口
-81-90：81至90端口。不填保持原有值。
+<li>80：80端口；</li>
+<li>81-90：81至90端口。</li>
                      */
                     void SetPort(const std::vector<std::string>& _port);
 
@@ -176,36 +176,28 @@ namespace TencentCloud
 
                     /**
                      * 获取源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
+
 不填保持原有值。
                      * @return OriginValue 源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
+
 不填保持原有值。
                      */
                     std::vector<std::string> GetOriginValue() const;
 
                     /**
                      * 设置源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
+
 不填保持原有值。
                      * @param OriginValue 源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
+
 不填保持原有值。
                      */
                     void SetOriginValue(const std::vector<std::string>& _originValue);
@@ -253,20 +245,20 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
                     /**
                      * 获取是否开启会话保持，取值有：
 <li>true：开启；</li>
-<li>false：关闭。</li>不填保持原有值。
+<li>false：关闭。</li>不填为false。
                      * @return SessionPersist 是否开启会话保持，取值有：
 <li>true：开启；</li>
-<li>false：关闭。</li>不填保持原有值。
+<li>false：关闭。</li>不填为false。
                      */
                     bool GetSessionPersist() const;
 
                     /**
                      * 设置是否开启会话保持，取值有：
 <li>true：开启；</li>
-<li>false：关闭。</li>不填保持原有值。
+<li>false：关闭。</li>不填为false。
                      * @param SessionPersist 是否开启会话保持，取值有：
 <li>true：开启；</li>
-<li>false：关闭。</li>不填保持原有值。
+<li>false：关闭。</li>不填为false。
                      */
                     void SetSessionPersist(const bool& _sessionPersist);
 
@@ -275,6 +267,32 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
                      * @return SessionPersist 是否已赋值
                      */
                     bool SessionPersistHasBeenSet() const;
+
+                    /**
+                     * 获取源站端口，支持格式：
+<li>单端口：80；</li>
+<li>端口段：81-90，81至90端口。</li>
+                     * @return OriginPort 源站端口，支持格式：
+<li>单端口：80；</li>
+<li>端口段：81-90，81至90端口。</li>
+                     */
+                    std::string GetOriginPort() const;
+
+                    /**
+                     * 设置源站端口，支持格式：
+<li>单端口：80；</li>
+<li>端口段：81-90，81至90端口。</li>
+                     * @param OriginPort 源站端口，支持格式：
+<li>单端口：80；</li>
+<li>端口段：81-90，81至90端口。</li>
+                     */
+                    void SetOriginPort(const std::string& _originPort);
+
+                    /**
+                     * 判断参数 OriginPort 是否已赋值
+                     * @return OriginPort 是否已赋值
+                     */
+                    bool OriginPortHasBeenSet() const;
 
                 private:
 
@@ -306,8 +324,8 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
 
                     /**
                      * 端口，支持格式：
-80：80端口
-81-90：81至90端口。不填保持原有值。
+<li>80：80端口；</li>
+<li>81-90：81至90端口。</li>
                      */
                     std::vector<std::string> m_port;
                     bool m_portHasBeenSet;
@@ -322,11 +340,9 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
 
                     /**
                      * 源站信息：
-当OriginType=custom时，表示一个或多个源站，如：
-OriginValue=["8.8.8.8:80","9.9.9.9:80"]
-OriginValue=["test.com:80"]；
-当OriginType=origins时，要求有且仅有一个元素，表示源站组ID，如：
-OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
+<li>当 OriginType 为 custom 时，表示一个或多个源站，如`["8.8.8.8","9.9.9.9"]` 或 `OriginValue=["test.com"]`；</li>
+<li>当 OriginType 为 origins 时，要求有且仅有一个元素，表示源站组ID，如`["origin-537f5b41-162a-11ed-abaa-525400c5da15"]`。</li>
+
 不填保持原有值。
                      */
                     std::vector<std::string> m_originValue;
@@ -345,10 +361,18 @@ OriginValue=["origin-537f5b41-162a-11ed-abaa-525400c5da15"]。
                     /**
                      * 是否开启会话保持，取值有：
 <li>true：开启；</li>
-<li>false：关闭。</li>不填保持原有值。
+<li>false：关闭。</li>不填为false。
                      */
                     bool m_sessionPersist;
                     bool m_sessionPersistHasBeenSet;
+
+                    /**
+                     * 源站端口，支持格式：
+<li>单端口：80；</li>
+<li>端口段：81-90，81至90端口。</li>
+                     */
+                    std::string m_originPort;
+                    bool m_originPortHasBeenSet;
 
                 };
             }

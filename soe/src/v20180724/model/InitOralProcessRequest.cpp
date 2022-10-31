@@ -34,7 +34,8 @@ InitOralProcessRequest::InitOralProcessRequest() :
     m_sentenceInfoEnabledHasBeenSet(false),
     m_serverTypeHasBeenSet(false),
     m_isAsyncHasBeenSet(false),
-    m_textModeHasBeenSet(false)
+    m_textModeHasBeenSet(false),
+    m_keywordHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,14 @@ string InitOralProcessRequest::ToJsonString() const
         string key = "TextMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_textMode, allocator);
+    }
+
+    if (m_keywordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Keyword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_keyword.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -339,6 +348,22 @@ void InitOralProcessRequest::SetTextMode(const int64_t& _textMode)
 bool InitOralProcessRequest::TextModeHasBeenSet() const
 {
     return m_textModeHasBeenSet;
+}
+
+string InitOralProcessRequest::GetKeyword() const
+{
+    return m_keyword;
+}
+
+void InitOralProcessRequest::SetKeyword(const string& _keyword)
+{
+    m_keyword = _keyword;
+    m_keywordHasBeenSet = true;
+}
+
+bool InitOralProcessRequest::KeywordHasBeenSet() const
+{
+    return m_keywordHasBeenSet;
 }
 
 

@@ -26,7 +26,10 @@ SentenceInfo::SentenceInfo() :
     m_pronAccuracyHasBeenSet(false),
     m_pronFluencyHasBeenSet(false),
     m_pronCompletionHasBeenSet(false),
-    m_suggestedScoreHasBeenSet(false)
+    m_suggestedScoreHasBeenSet(false),
+    m_refTextIdHasBeenSet(false),
+    m_keyWordHitsHasBeenSet(false),
+    m_unKeyWordHitsHasBeenSet(false)
 {
 }
 
@@ -105,6 +108,42 @@ CoreInternalOutcome SentenceInfo::Deserialize(const rapidjson::Value &value)
         m_suggestedScoreHasBeenSet = true;
     }
 
+    if (value.HasMember("RefTextId") && !value["RefTextId"].IsNull())
+    {
+        if (!value["RefTextId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.RefTextId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_refTextId = value["RefTextId"].GetInt64();
+        m_refTextIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeyWordHits") && !value["KeyWordHits"].IsNull())
+    {
+        if (!value["KeyWordHits"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.KeyWordHits` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeyWordHits"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keyWordHits.push_back((*itr).GetDouble());
+        }
+        m_keyWordHitsHasBeenSet = true;
+    }
+
+    if (value.HasMember("UnKeyWordHits") && !value["UnKeyWordHits"].IsNull())
+    {
+        if (!value["UnKeyWordHits"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SentenceInfo.UnKeyWordHits` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["UnKeyWordHits"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_unKeyWordHits.push_back((*itr).GetDouble());
+        }
+        m_unKeyWordHitsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +204,40 @@ void SentenceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SuggestedScore";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_suggestedScore, allocator);
+    }
+
+    if (m_refTextIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RefTextId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_refTextId, allocator);
+    }
+
+    if (m_keyWordHitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyWordHits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyWordHits.begin(); itr != m_keyWordHits.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
+    }
+
+    if (m_unKeyWordHitsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnKeyWordHits";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_unKeyWordHits.begin(); itr != m_unKeyWordHits.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetDouble(*itr), allocator);
+        }
     }
 
 }
@@ -264,5 +337,53 @@ void SentenceInfo::SetSuggestedScore(const double& _suggestedScore)
 bool SentenceInfo::SuggestedScoreHasBeenSet() const
 {
     return m_suggestedScoreHasBeenSet;
+}
+
+int64_t SentenceInfo::GetRefTextId() const
+{
+    return m_refTextId;
+}
+
+void SentenceInfo::SetRefTextId(const int64_t& _refTextId)
+{
+    m_refTextId = _refTextId;
+    m_refTextIdHasBeenSet = true;
+}
+
+bool SentenceInfo::RefTextIdHasBeenSet() const
+{
+    return m_refTextIdHasBeenSet;
+}
+
+vector<double> SentenceInfo::GetKeyWordHits() const
+{
+    return m_keyWordHits;
+}
+
+void SentenceInfo::SetKeyWordHits(const vector<double>& _keyWordHits)
+{
+    m_keyWordHits = _keyWordHits;
+    m_keyWordHitsHasBeenSet = true;
+}
+
+bool SentenceInfo::KeyWordHitsHasBeenSet() const
+{
+    return m_keyWordHitsHasBeenSet;
+}
+
+vector<double> SentenceInfo::GetUnKeyWordHits() const
+{
+    return m_unKeyWordHits;
+}
+
+void SentenceInfo::SetUnKeyWordHits(const vector<double>& _unKeyWordHits)
+{
+    m_unKeyWordHits = _unKeyWordHits;
+    m_unKeyWordHitsHasBeenSet = true;
+}
+
+bool SentenceInfo::UnKeyWordHitsHasBeenSet() const
+{
+    return m_unKeyWordHitsHasBeenSet;
 }
 

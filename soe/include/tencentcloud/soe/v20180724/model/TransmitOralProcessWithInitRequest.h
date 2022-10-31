@@ -500,6 +500,24 @@ ServerType不填默认为0
                      */
                     bool TextModeHasBeenSet() const;
 
+                    /**
+                     * 获取主题词和关键词
+                     * @return Keyword 主题词和关键词
+                     */
+                    std::string GetKeyword() const;
+
+                    /**
+                     * 设置主题词和关键词
+                     * @param Keyword 主题词和关键词
+                     */
+                    void SetKeyword(const std::string& _keyword);
+
+                    /**
+                     * 判断参数 Keyword 是否已赋值
+                     * @return Keyword 是否已赋值
+                     */
+                    bool KeywordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +659,12 @@ ServerType不填默认为0
                      */
                     int64_t m_textMode;
                     bool m_textModeHasBeenSet;
+
+                    /**
+                     * 主题词和关键词
+                     */
+                    std::string m_keyword;
+                    bool m_keywordHasBeenSet;
 
                 };
             }

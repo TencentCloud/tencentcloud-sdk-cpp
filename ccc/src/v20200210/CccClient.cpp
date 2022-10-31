@@ -212,6 +212,49 @@ CccClient::CreateCallOutSessionOutcomeCallable CccClient::CreateCallOutSessionCa
     return task->get_future();
 }
 
+CccClient::CreateExtensionOutcome CccClient::CreateExtension(const CreateExtensionRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateExtension");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateExtensionResponse rsp = CreateExtensionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateExtensionOutcome(rsp);
+        else
+            return CreateExtensionOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateExtensionOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateExtensionAsync(const CreateExtensionRequest& request, const CreateExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateExtension(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateExtensionOutcomeCallable CccClient::CreateExtensionCallable(const CreateExtensionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateExtensionOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateExtension(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateSDKLoginTokenOutcome CccClient::CreateSDKLoginToken(const CreateSDKLoginTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSDKLoginToken");
@@ -334,6 +377,49 @@ CccClient::CreateUserSigOutcomeCallable CccClient::CreateUserSigCallable(const C
         [this, request]()
         {
             return this->CreateUserSig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DeleteExtensionOutcome CccClient::DeleteExtension(const DeleteExtensionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteExtension");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteExtensionResponse rsp = DeleteExtensionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteExtensionOutcome(rsp);
+        else
+            return DeleteExtensionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteExtensionOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DeleteExtensionAsync(const DeleteExtensionRequest& request, const DeleteExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteExtension(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DeleteExtensionOutcomeCallable CccClient::DeleteExtensionCallable(const DeleteExtensionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteExtensionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteExtension(request);
         }
     );
 
@@ -592,6 +678,92 @@ CccClient::DescribeChatMessagesOutcomeCallable CccClient::DescribeChatMessagesCa
         [this, request]()
         {
             return this->DescribeChatMessages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeExtensionOutcome CccClient::DescribeExtension(const DescribeExtensionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtension");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtensionResponse rsp = DescribeExtensionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtensionOutcome(rsp);
+        else
+            return DescribeExtensionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtensionOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeExtensionAsync(const DescribeExtensionRequest& request, const DescribeExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtension(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeExtensionOutcomeCallable CccClient::DescribeExtensionCallable(const DescribeExtensionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtensionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtension(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeExtensionsOutcome CccClient::DescribeExtensions(const DescribeExtensionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtensions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtensionsResponse rsp = DescribeExtensionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtensionsOutcome(rsp);
+        else
+            return DescribeExtensionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtensionsOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeExtensionsAsync(const DescribeExtensionsRequest& request, const DescribeExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtensions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeExtensionsOutcomeCallable CccClient::DescribeExtensionsCallable(const DescribeExtensionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtensionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtensions(request);
         }
     );
 
@@ -1029,6 +1201,49 @@ CccClient::DisableCCCPhoneNumberOutcomeCallable CccClient::DisableCCCPhoneNumber
     return task->get_future();
 }
 
+CccClient::ModifyExtensionOutcome CccClient::ModifyExtension(const ModifyExtensionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyExtension");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyExtensionResponse rsp = ModifyExtensionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyExtensionOutcome(rsp);
+        else
+            return ModifyExtensionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyExtensionOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ModifyExtensionAsync(const ModifyExtensionRequest& request, const ModifyExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyExtension(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ModifyExtensionOutcomeCallable CccClient::ModifyExtensionCallable(const ModifyExtensionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyExtensionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyExtension(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::ModifyStaffOutcome CccClient::ModifyStaff(const ModifyStaffRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyStaff");
@@ -1065,6 +1280,49 @@ CccClient::ModifyStaffOutcomeCallable CccClient::ModifyStaffCallable(const Modif
         [this, request]()
         {
             return this->ModifyStaff(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::ResetExtensionPasswordOutcome CccClient::ResetExtensionPassword(const ResetExtensionPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetExtensionPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetExtensionPasswordResponse rsp = ResetExtensionPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetExtensionPasswordOutcome(rsp);
+        else
+            return ResetExtensionPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetExtensionPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::ResetExtensionPasswordAsync(const ResetExtensionPasswordRequest& request, const ResetExtensionPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetExtensionPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::ResetExtensionPasswordOutcomeCallable CccClient::ResetExtensionPasswordCallable(const ResetExtensionPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetExtensionPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetExtensionPassword(request);
         }
     );
 

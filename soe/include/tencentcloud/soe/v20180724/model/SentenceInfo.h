@@ -155,6 +155,72 @@ namespace TencentCloud
                      */
                     bool SuggestedScoreHasBeenSet() const;
 
+                    /**
+                     * 获取匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RefTextId 匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRefTextId() const;
+
+                    /**
+                     * 设置匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RefTextId 匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRefTextId(const int64_t& _refTextId);
+
+                    /**
+                     * 判断参数 RefTextId 是否已赋值
+                     * @return RefTextId 是否已赋值
+                     */
+                    bool RefTextIdHasBeenSet() const;
+
+                    /**
+                     * 获取主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeyWordHits 主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> GetKeyWordHits() const;
+
+                    /**
+                     * 设置主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KeyWordHits 主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKeyWordHits(const std::vector<double>& _keyWordHits);
+
+                    /**
+                     * 判断参数 KeyWordHits 是否已赋值
+                     * @return KeyWordHits 是否已赋值
+                     */
+                    bool KeyWordHitsHasBeenSet() const;
+
+                    /**
+                     * 获取负向主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnKeyWordHits 负向主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> GetUnKeyWordHits() const;
+
+                    /**
+                     * 设置负向主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UnKeyWordHits 负向主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUnKeyWordHits(const std::vector<double>& _unKeyWordHits);
+
+                    /**
+                     * 判断参数 UnKeyWordHits 是否已赋值
+                     * @return UnKeyWordHits 是否已赋值
+                     */
+                    bool UnKeyWordHitsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +258,27 @@ namespace TencentCloud
                      */
                     double m_suggestedScore;
                     bool m_suggestedScoreHasBeenSet;
+
+                    /**
+                     * 匹配候选文本的序号，在句子多分支、情景对 话、段落模式下表示匹配到的文本序号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_refTextId;
+                    bool m_refTextIdHasBeenSet;
+
+                    /**
+                     * 主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_keyWordHits;
+                    bool m_keyWordHitsHasBeenSet;
+
+                    /**
+                     * 负向主题词命中标志，0表示没命中，1表示命中
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<double> m_unKeyWordHits;
+                    bool m_unKeyWordHitsHasBeenSet;
 
                 };
             }

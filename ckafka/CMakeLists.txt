@@ -41,6 +41,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourceResp.h
   include/tencentcloud/ckafka/v20190819/model/AuthorizeTokenResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRequest.h
+  include/tencentcloud/ckafka/v20190819/model/UrlDecodeParam.h
   include/tencentcloud/ckafka/v20190819/model/FetchLatestDatahubMessageListResponse.h
   include/tencentcloud/ckafka/v20190819/model/EsParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResource.h
@@ -310,6 +311,7 @@ set(ckafka_src
   src/v20190819/model/DescribeConnectResourceResp.cpp
   src/v20190819/model/AuthorizeTokenResponse.cpp
   src/v20190819/model/DescribeDatahubTaskRequest.cpp
+  src/v20190819/model/UrlDecodeParam.cpp
   src/v20190819/model/FetchLatestDatahubMessageListResponse.cpp
   src/v20190819/model/EsParam.cpp
   src/v20190819/model/DescribeConnectResource.cpp

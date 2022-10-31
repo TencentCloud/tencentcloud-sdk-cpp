@@ -28,7 +28,8 @@ WordRsp::WordRsp() :
     m_wordHasBeenSet(false),
     m_matchTagHasBeenSet(false),
     m_phoneInfosHasBeenSet(false),
-    m_referenceWordHasBeenSet(false)
+    m_referenceWordHasBeenSet(false),
+    m_keywordTagHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome WordRsp::Deserialize(const rapidjson::Value &value)
         m_referenceWordHasBeenSet = true;
     }
 
+    if (value.HasMember("KeywordTag") && !value["KeywordTag"].IsNull())
+    {
+        if (!value["KeywordTag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WordRsp.KeywordTag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keywordTag = value["KeywordTag"].GetInt64();
+        m_keywordTagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void WordRsp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ReferenceWord";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_referenceWord.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordTag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keywordTag, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void WordRsp::SetReferenceWord(const string& _referenceWord)
 bool WordRsp::ReferenceWordHasBeenSet() const
 {
     return m_referenceWordHasBeenSet;
+}
+
+int64_t WordRsp::GetKeywordTag() const
+{
+    return m_keywordTag;
+}
+
+void WordRsp::SetKeywordTag(const int64_t& _keywordTag)
+{
+    m_keywordTag = _keywordTag;
+    m_keywordTagHasBeenSet = true;
+}
+
+bool WordRsp::KeywordTagHasBeenSet() const
+{
+    return m_keywordTagHasBeenSet;
 }
 

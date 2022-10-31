@@ -31,12 +31,16 @@
 #include <tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCallOutSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateUserSigRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateUserSigResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DeleteExtensionRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DeleteExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskRequest.h>
@@ -49,6 +53,10 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeExtensionRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeExtensionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeExtensionsRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeExtensionsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h>
@@ -69,8 +77,12 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ModifyExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h>
+#include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h>
@@ -101,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCallOutSessionResponse> CreateCallOutSessionOutcome;
                 typedef std::future<CreateCallOutSessionOutcome> CreateCallOutSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateCallOutSessionRequest&, CreateCallOutSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCallOutSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateExtensionResponse> CreateExtensionOutcome;
+                typedef std::future<CreateExtensionOutcome> CreateExtensionOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateExtensionRequest&, CreateExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtensionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSDKLoginTokenResponse> CreateSDKLoginTokenOutcome;
                 typedef std::future<CreateSDKLoginTokenOutcome> CreateSDKLoginTokenOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateSDKLoginTokenRequest&, CreateSDKLoginTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSDKLoginTokenAsyncHandler;
@@ -110,6 +125,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserSigResponse> CreateUserSigOutcome;
                 typedef std::future<CreateUserSigOutcome> CreateUserSigOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateUserSigRequest&, CreateUserSigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteExtensionResponse> DeleteExtensionOutcome;
+                typedef std::future<DeleteExtensionOutcome> DeleteExtensionOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DeleteExtensionRequest&, DeleteExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteExtensionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
@@ -128,6 +146,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChatMessagesResponse> DescribeChatMessagesOutcome;
                 typedef std::future<DescribeChatMessagesOutcome> DescribeChatMessagesOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeChatMessagesRequest&, DescribeChatMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChatMessagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtensionResponse> DescribeExtensionOutcome;
+                typedef std::future<DescribeExtensionOutcome> DescribeExtensionOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeExtensionRequest&, DescribeExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtensionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtensionsResponse> DescribeExtensionsOutcome;
+                typedef std::future<DescribeExtensionsOutcome> DescribeExtensionsOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeExtensionsRequest&, DescribeExtensionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtensionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIMCdrsResponse> DescribeIMCdrsOutcome;
                 typedef std::future<DescribeIMCdrsOutcome> DescribeIMCdrsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeIMCdrsRequest&, DescribeIMCdrsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMCdrsAsyncHandler;
@@ -158,9 +182,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableCCCPhoneNumberResponse> DisableCCCPhoneNumberOutcome;
                 typedef std::future<DisableCCCPhoneNumberOutcome> DisableCCCPhoneNumberOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DisableCCCPhoneNumberRequest&, DisableCCCPhoneNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCCCPhoneNumberAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyExtensionResponse> ModifyExtensionOutcome;
+                typedef std::future<ModifyExtensionOutcome> ModifyExtensionOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ModifyExtensionRequest&, ModifyExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExtensionAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyStaffResponse> ModifyStaffOutcome;
                 typedef std::future<ModifyStaffOutcome> ModifyStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyStaffRequest&, ModifyStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetExtensionPasswordResponse> ResetExtensionPasswordOutcome;
+                typedef std::future<ResetExtensionPasswordOutcome> ResetExtensionPasswordOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::ResetExtensionPasswordRequest&, ResetExtensionPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetExtensionPasswordAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopAutoCalloutTaskResponse> StopAutoCalloutTaskOutcome;
                 typedef std::future<StopAutoCalloutTaskOutcome> StopAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::StopAutoCalloutTaskRequest&, StopAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoCalloutTaskAsyncHandler;
@@ -207,6 +237,15 @@ namespace TencentCloud
                 CreateCallOutSessionOutcomeCallable CreateCallOutSessionCallable(const Model::CreateCallOutSessionRequest& request);
 
                 /**
+                 *创建话机账号
+                 * @param req CreateExtensionRequest
+                 * @return CreateExtensionOutcome
+                 */
+                CreateExtensionOutcome CreateExtension(const Model::CreateExtensionRequest &request);
+                void CreateExtensionAsync(const Model::CreateExtensionRequest& request, const CreateExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateExtensionOutcomeCallable CreateExtensionCallable(const Model::CreateExtensionRequest& request);
+
+                /**
                  *创建 SDK 登录 Token。
                  * @param req CreateSDKLoginTokenRequest
                  * @return CreateSDKLoginTokenOutcome
@@ -232,6 +271,15 @@ namespace TencentCloud
                 CreateUserSigOutcome CreateUserSig(const Model::CreateUserSigRequest &request);
                 void CreateUserSigAsync(const Model::CreateUserSigRequest& request, const CreateUserSigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserSigOutcomeCallable CreateUserSigCallable(const Model::CreateUserSigRequest& request);
+
+                /**
+                 *删除话机账号
+                 * @param req DeleteExtensionRequest
+                 * @return DeleteExtensionOutcome
+                 */
+                DeleteExtensionOutcome DeleteExtension(const Model::DeleteExtensionRequest &request);
+                void DeleteExtensionAsync(const Model::DeleteExtensionRequest& request, const DeleteExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteExtensionOutcomeCallable DeleteExtensionCallable(const Model::DeleteExtensionRequest& request);
 
                 /**
                  *删除坐席信息
@@ -286,6 +334,24 @@ namespace TencentCloud
                 DescribeChatMessagesOutcome DescribeChatMessages(const Model::DescribeChatMessagesRequest &request);
                 void DescribeChatMessagesAsync(const Model::DescribeChatMessagesRequest& request, const DescribeChatMessagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeChatMessagesOutcomeCallable DescribeChatMessagesCallable(const Model::DescribeChatMessagesRequest& request);
+
+                /**
+                 *获取话机信息
+                 * @param req DescribeExtensionRequest
+                 * @return DescribeExtensionOutcome
+                 */
+                DescribeExtensionOutcome DescribeExtension(const Model::DescribeExtensionRequest &request);
+                void DescribeExtensionAsync(const Model::DescribeExtensionRequest& request, const DescribeExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtensionOutcomeCallable DescribeExtensionCallable(const Model::DescribeExtensionRequest& request);
+
+                /**
+                 *查询话机列表信息
+                 * @param req DescribeExtensionsRequest
+                 * @return DescribeExtensionsOutcome
+                 */
+                DescribeExtensionsOutcome DescribeExtensions(const Model::DescribeExtensionsRequest &request);
+                void DescribeExtensionsAsync(const Model::DescribeExtensionsRequest& request, const DescribeExtensionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtensionsOutcomeCallable DescribeExtensionsCallable(const Model::DescribeExtensionsRequest& request);
 
                 /**
                  *包括全媒体和文本两种类型
@@ -378,6 +444,15 @@ namespace TencentCloud
                 DisableCCCPhoneNumberOutcomeCallable DisableCCCPhoneNumberCallable(const Model::DisableCCCPhoneNumberRequest& request);
 
                 /**
+                 *修改话机账号(绑定技能组、绑定坐席账号)
+                 * @param req ModifyExtensionRequest
+                 * @return ModifyExtensionOutcome
+                 */
+                ModifyExtensionOutcome ModifyExtension(const Model::ModifyExtensionRequest &request);
+                void ModifyExtensionAsync(const Model::ModifyExtensionRequest& request, const ModifyExtensionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyExtensionOutcomeCallable ModifyExtensionCallable(const Model::ModifyExtensionRequest& request);
+
+                /**
                  *修改客服账号
                  * @param req ModifyStaffRequest
                  * @return ModifyStaffOutcome
@@ -385,6 +460,15 @@ namespace TencentCloud
                 ModifyStaffOutcome ModifyStaff(const Model::ModifyStaffRequest &request);
                 void ModifyStaffAsync(const Model::ModifyStaffRequest& request, const ModifyStaffAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyStaffOutcomeCallable ModifyStaffCallable(const Model::ModifyStaffRequest& request);
+
+                /**
+                 *重置话机注册密码
+                 * @param req ResetExtensionPasswordRequest
+                 * @return ResetExtensionPasswordOutcome
+                 */
+                ResetExtensionPasswordOutcome ResetExtensionPassword(const Model::ResetExtensionPasswordRequest &request);
+                void ResetExtensionPasswordAsync(const Model::ResetExtensionPasswordRequest& request, const ResetExtensionPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetExtensionPasswordOutcomeCallable ResetExtensionPasswordCallable(const Model::ResetExtensionPasswordRequest& request);
 
                 /**
                  *停止自动外呼任务

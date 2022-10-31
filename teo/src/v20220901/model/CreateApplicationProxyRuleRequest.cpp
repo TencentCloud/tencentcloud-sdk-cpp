@@ -30,7 +30,8 @@ CreateApplicationProxyRuleRequest::CreateApplicationProxyRuleRequest() :
     m_originTypeHasBeenSet(false),
     m_originValueHasBeenSet(false),
     m_forwardClientIpHasBeenSet(false),
-    m_sessionPersistHasBeenSet(false)
+    m_sessionPersistHasBeenSet(false),
+    m_originPortHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string CreateApplicationProxyRuleRequest::ToJsonString() const
         string key = "SessionPersist";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sessionPersist, allocator);
+    }
+
+    if (m_originPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_originPort.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -249,6 +258,22 @@ void CreateApplicationProxyRuleRequest::SetSessionPersist(const bool& _sessionPe
 bool CreateApplicationProxyRuleRequest::SessionPersistHasBeenSet() const
 {
     return m_sessionPersistHasBeenSet;
+}
+
+string CreateApplicationProxyRuleRequest::GetOriginPort() const
+{
+    return m_originPort;
+}
+
+void CreateApplicationProxyRuleRequest::SetOriginPort(const string& _originPort)
+{
+    m_originPort = _originPort;
+    m_originPortHasBeenSet = true;
+}
+
+bool CreateApplicationProxyRuleRequest::OriginPortHasBeenSet() const
+{
+    return m_originPortHasBeenSet;
 }
 
 
