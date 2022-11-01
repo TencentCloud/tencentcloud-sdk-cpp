@@ -2792,6 +2792,92 @@ TdmqClient::DescribePublishersOutcomeCallable TdmqClient::DescribePublishersCall
     return task->get_future();
 }
 
+TdmqClient::DescribeRabbitMQNodeListOutcome TdmqClient::DescribeRabbitMQNodeList(const DescribeRabbitMQNodeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRabbitMQNodeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRabbitMQNodeListResponse rsp = DescribeRabbitMQNodeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRabbitMQNodeListOutcome(rsp);
+        else
+            return DescribeRabbitMQNodeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRabbitMQNodeListOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRabbitMQNodeListAsync(const DescribeRabbitMQNodeListRequest& request, const DescribeRabbitMQNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRabbitMQNodeList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRabbitMQNodeListOutcomeCallable TdmqClient::DescribeRabbitMQNodeListCallable(const DescribeRabbitMQNodeListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQNodeListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRabbitMQNodeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribeRabbitMQVipInstancesOutcome TdmqClient::DescribeRabbitMQVipInstances(const DescribeRabbitMQVipInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRabbitMQVipInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRabbitMQVipInstancesResponse rsp = DescribeRabbitMQVipInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRabbitMQVipInstancesOutcome(rsp);
+        else
+            return DescribeRabbitMQVipInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRabbitMQVipInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRabbitMQVipInstancesAsync(const DescribeRabbitMQVipInstancesRequest& request, const DescribeRabbitMQVipInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRabbitMQVipInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRabbitMQVipInstancesOutcomeCallable TdmqClient::DescribeRabbitMQVipInstancesCallable(const DescribeRabbitMQVipInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRabbitMQVipInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRabbitMQVipInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQClusterOutcome TdmqClient::DescribeRocketMQCluster(const DescribeRocketMQClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQCluster");

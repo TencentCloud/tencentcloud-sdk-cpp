@@ -627,6 +627,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/CreateNetworkFirewallPublishResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeVirusScanSettingRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateClusterCheckTaskRequest.h
+  include/tencentcloud/tcss/v20201101/model/RaspInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallClusterListRequest.h
   include/tencentcloud/tcss/v20201101/model/CreateVulDefenceEventExportJobResponse.h
   include/tencentcloud/tcss/v20201101/model/AutoAuthorizedRuleHostInfo.h
@@ -1396,6 +1397,7 @@ set(tcss_src
   src/v20201101/model/CreateNetworkFirewallPublishResponse.cpp
   src/v20201101/model/DescribeVirusScanSettingRequest.cpp
   src/v20201101/model/CreateClusterCheckTaskRequest.cpp
+  src/v20201101/model/RaspInfo.cpp
   src/v20201101/model/DescribeNetworkFirewallClusterListRequest.cpp
   src/v20201101/model/CreateVulDefenceEventExportJobResponse.cpp
   src/v20201101/model/AutoAuthorizedRuleHostInfo.cpp

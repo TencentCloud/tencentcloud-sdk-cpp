@@ -24,8 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/vod/v20180717/model/ImageTransform.h>
 #include <tencentcloud/vod/v20180717/model/AudioTransform.h>
+#include <tencentcloud/vod/v20180717/model/ImageTransform.h>
 
 
 namespace TencentCloud
@@ -113,6 +113,32 @@ namespace TencentCloud
                      * @return Duration 是否已赋值
                      */
                     bool DurationHasBeenSet() const;
+
+                    /**
+                     * 获取视频片段目标时长，单位为秒。
+<li>当 TargetDuration 不填或填0时，表示目标时长和 Duration 一致；</li>
+<li>当 TargetDuration 取大于0的值时，将对视频片段做快进或慢放等处理，使得输出片段的时长等于 TargetDuration。</li>
+                     * @return TargetDuration 视频片段目标时长，单位为秒。
+<li>当 TargetDuration 不填或填0时，表示目标时长和 Duration 一致；</li>
+<li>当 TargetDuration 取大于0的值时，将对视频片段做快进或慢放等处理，使得输出片段的时长等于 TargetDuration。</li>
+                     */
+                    double GetTargetDuration() const;
+
+                    /**
+                     * 设置视频片段目标时长，单位为秒。
+<li>当 TargetDuration 不填或填0时，表示目标时长和 Duration 一致；</li>
+<li>当 TargetDuration 取大于0的值时，将对视频片段做快进或慢放等处理，使得输出片段的时长等于 TargetDuration。</li>
+                     * @param TargetDuration 视频片段目标时长，单位为秒。
+<li>当 TargetDuration 不填或填0时，表示目标时长和 Duration 一致；</li>
+<li>当 TargetDuration 取大于0的值时，将对视频片段做快进或慢放等处理，使得输出片段的时长等于 TargetDuration。</li>
+                     */
+                    void SetTargetDuration(const double& _targetDuration);
+
+                    /**
+                     * 判断参数 TargetDuration 是否已赋值
+                     * @return TargetDuration 是否已赋值
+                     */
+                    bool TargetDurationHasBeenSet() const;
 
                     /**
                      * 获取视频原点位置，取值有：
@@ -277,24 +303,6 @@ namespace TencentCloud
                     bool HeightHasBeenSet() const;
 
                     /**
-                     * 获取对图像进行的操作，如图像旋转等。
-                     * @return ImageOperations 对图像进行的操作，如图像旋转等。
-                     */
-                    std::vector<ImageTransform> GetImageOperations() const;
-
-                    /**
-                     * 设置对图像进行的操作，如图像旋转等。
-                     * @param ImageOperations 对图像进行的操作，如图像旋转等。
-                     */
-                    void SetImageOperations(const std::vector<ImageTransform>& _imageOperations);
-
-                    /**
-                     * 判断参数 ImageOperations 是否已赋值
-                     * @return ImageOperations 是否已赋值
-                     */
-                    bool ImageOperationsHasBeenSet() const;
-
-                    /**
                      * 获取对音频进行操作，如静音等。
                      * @return AudioOperations 对音频进行操作，如静音等。
                      */
@@ -311,6 +319,24 @@ namespace TencentCloud
                      * @return AudioOperations 是否已赋值
                      */
                     bool AudioOperationsHasBeenSet() const;
+
+                    /**
+                     * 获取对图像进行的操作，如图像旋转等。
+                     * @return ImageOperations 对图像进行的操作，如图像旋转等。
+                     */
+                    std::vector<ImageTransform> GetImageOperations() const;
+
+                    /**
+                     * 设置对图像进行的操作，如图像旋转等。
+                     * @param ImageOperations 对图像进行的操作，如图像旋转等。
+                     */
+                    void SetImageOperations(const std::vector<ImageTransform>& _imageOperations);
+
+                    /**
+                     * 判断参数 ImageOperations 是否已赋值
+                     * @return ImageOperations 是否已赋值
+                     */
+                    bool ImageOperationsHasBeenSet() const;
 
                 private:
 
@@ -334,6 +360,14 @@ namespace TencentCloud
                      */
                     double m_duration;
                     bool m_durationHasBeenSet;
+
+                    /**
+                     * 视频片段目标时长，单位为秒。
+<li>当 TargetDuration 不填或填0时，表示目标时长和 Duration 一致；</li>
+<li>当 TargetDuration 取大于0的值时，将对视频片段做快进或慢放等处理，使得输出片段的时长等于 TargetDuration。</li>
+                     */
+                    double m_targetDuration;
+                    bool m_targetDurationHasBeenSet;
 
                     /**
                      * 视频原点位置，取值有：
@@ -384,16 +418,16 @@ namespace TencentCloud
                     bool m_heightHasBeenSet;
 
                     /**
-                     * 对图像进行的操作，如图像旋转等。
-                     */
-                    std::vector<ImageTransform> m_imageOperations;
-                    bool m_imageOperationsHasBeenSet;
-
-                    /**
                      * 对音频进行操作，如静音等。
                      */
                     std::vector<AudioTransform> m_audioOperations;
                     bool m_audioOperationsHasBeenSet;
+
+                    /**
+                     * 对图像进行的操作，如图像旋转等。
+                     */
+                    std::vector<ImageTransform> m_imageOperations;
+                    bool m_imageOperationsHasBeenSet;
 
                 };
             }

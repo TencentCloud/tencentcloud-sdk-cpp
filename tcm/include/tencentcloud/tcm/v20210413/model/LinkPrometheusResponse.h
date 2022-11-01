@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYALIASDOMAINRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYALIASDOMAINRESPONSE_H_
+#ifndef TENCENTCLOUD_TCM_V20210413_MODEL_LINKPROMETHEUSRESPONSE_H_
+#define TENCENTCLOUD_TCM_V20210413_MODEL_LINKPROMETHEUSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Tcm
     {
-        namespace V20220901
+        namespace V20210413
         {
             namespace Model
             {
                 /**
-                * ModifyAliasDomain返回参数结构体
+                * LinkPrometheus返回参数结构体
                 */
-                class ModifyAliasDomainResponse : public AbstractModel
+                class LinkPrometheusResponse : public AbstractModel
                 {
                 public:
-                    ModifyAliasDomainResponse();
-                    ~ModifyAliasDomainResponse() = default;
+                    LinkPrometheusResponse();
+                    ~LinkPrometheusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYALIASDOMAINRESPONSE_H_
+#endif // !TENCENTCLOUD_TCM_V20210413_MODEL_LINKPROMETHEUSRESPONSE_H_

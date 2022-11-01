@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_CREATEALIASDOMAINRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_CREATEALIASDOMAINRESPONSE_H_
+#ifndef TENCENTCLOUD_TCM_V20210413_MODEL_UNLINKPROMETHEUSREQUEST_H_
+#define TENCENTCLOUD_TCM_V20210413_MODEL_UNLINKPROMETHEUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,48 @@
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Tcm
     {
-        namespace V20220901
+        namespace V20210413
         {
             namespace Model
             {
                 /**
-                * CreateAliasDomain返回参数结构体
+                * UnlinkPrometheus请求参数结构体
                 */
-                class CreateAliasDomainResponse : public AbstractModel
+                class UnlinkPrometheusRequest : public AbstractModel
                 {
                 public:
-                    CreateAliasDomainResponse();
-                    ~CreateAliasDomainResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
+                    UnlinkPrometheusRequest();
+                    ~UnlinkPrometheusRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取别称域名 ID。
-                     * @return AliasId 别称域名 ID。
+                     * 获取网格ID
+                     * @return MeshID 网格ID
                      */
-                    std::string GetAliasId() const;
+                    std::string GetMeshID() const;
 
                     /**
-                     * 判断参数 AliasId 是否已赋值
-                     * @return AliasId 是否已赋值
+                     * 设置网格ID
+                     * @param MeshID 网格ID
                      */
-                    bool AliasIdHasBeenSet() const;
+                    void SetMeshID(const std::string& _meshID);
+
+                    /**
+                     * 判断参数 MeshID 是否已赋值
+                     * @return MeshID 是否已赋值
+                     */
+                    bool MeshIDHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 别称域名 ID。
+                     * 网格ID
                      */
-                    std::string m_aliasId;
-                    bool m_aliasIdHasBeenSet;
+                    std::string m_meshID;
+                    bool m_meshIDHasBeenSet;
 
                 };
             }
@@ -69,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_CREATEALIASDOMAINRESPONSE_H_
+#endif // !TENCENTCLOUD_TCM_V20210413_MODEL_UNLINKPROMETHEUSREQUEST_H_

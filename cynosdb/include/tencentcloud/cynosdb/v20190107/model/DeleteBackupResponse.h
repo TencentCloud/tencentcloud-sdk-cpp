@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYALIASDOMAINSTATUSRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYALIASDOMAINSTATUSRESPONSE_H_
+#ifndef TENCENTCLOUD_CYNOSDB_V20190107_MODEL_DELETEBACKUPRESPONSE_H_
+#define TENCENTCLOUD_CYNOSDB_V20190107_MODEL_DELETEBACKUPRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Cynosdb
     {
-        namespace V20220901
+        namespace V20190107
         {
             namespace Model
             {
                 /**
-                * ModifyAliasDomainStatus返回参数结构体
+                * DeleteBackup返回参数结构体
                 */
-                class ModifyAliasDomainStatusResponse : public AbstractModel
+                class DeleteBackupResponse : public AbstractModel
                 {
                 public:
-                    ModifyAliasDomainStatusResponse();
-                    ~ModifyAliasDomainStatusResponse() = default;
+                    DeleteBackupResponse();
+                    ~DeleteBackupResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYALIASDOMAINSTATUSRESPONSE_H_
+#endif // !TENCENTCLOUD_CYNOSDB_V20190107_MODEL_DELETEBACKUPRESPONSE_H_

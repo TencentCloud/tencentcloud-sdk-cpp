@@ -29,7 +29,9 @@ DescribeContainerSecEventSummaryResponse::DescribeContainerSecEventSummaryRespon
     m_unhandledRiskSyscallCntHasBeenSet(false),
     m_unhandledAbnormalProcessCntHasBeenSet(false),
     m_unhandledFileCntHasBeenSet(false),
-    m_unhandledVirusEventCntHasBeenSet(false)
+    m_unhandledVirusEventCntHasBeenSet(false),
+    m_unhandledMaliciousConnectionEventCntHasBeenSet(false),
+    m_unhandledK8sApiEventCntHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeContainerSecEventSummaryResponse::Deserialize(const 
         m_unhandledVirusEventCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UnhandledMaliciousConnectionEventCnt") && !rsp["UnhandledMaliciousConnectionEventCnt"].IsNull())
+    {
+        if (!rsp["UnhandledMaliciousConnectionEventCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnhandledMaliciousConnectionEventCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unhandledMaliciousConnectionEventCnt = rsp["UnhandledMaliciousConnectionEventCnt"].GetUint64();
+        m_unhandledMaliciousConnectionEventCntHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("UnhandledK8sApiEventCnt") && !rsp["UnhandledK8sApiEventCnt"].IsNull())
+    {
+        if (!rsp["UnhandledK8sApiEventCnt"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnhandledK8sApiEventCnt` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_unhandledK8sApiEventCnt = rsp["UnhandledK8sApiEventCnt"].GetUint64();
+        m_unhandledK8sApiEventCntHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string DescribeContainerSecEventSummaryResponse::ToJsonString() const
         string key = "UnhandledVirusEventCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unhandledVirusEventCnt, allocator);
+    }
+
+    if (m_unhandledMaliciousConnectionEventCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhandledMaliciousConnectionEventCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unhandledMaliciousConnectionEventCnt, allocator);
+    }
+
+    if (m_unhandledK8sApiEventCntHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnhandledK8sApiEventCnt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_unhandledK8sApiEventCnt, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ uint64_t DescribeContainerSecEventSummaryResponse::GetUnhandledVirusEventCnt() c
 bool DescribeContainerSecEventSummaryResponse::UnhandledVirusEventCntHasBeenSet() const
 {
     return m_unhandledVirusEventCntHasBeenSet;
+}
+
+uint64_t DescribeContainerSecEventSummaryResponse::GetUnhandledMaliciousConnectionEventCnt() const
+{
+    return m_unhandledMaliciousConnectionEventCnt;
+}
+
+bool DescribeContainerSecEventSummaryResponse::UnhandledMaliciousConnectionEventCntHasBeenSet() const
+{
+    return m_unhandledMaliciousConnectionEventCntHasBeenSet;
+}
+
+uint64_t DescribeContainerSecEventSummaryResponse::GetUnhandledK8sApiEventCnt() const
+{
+    return m_unhandledK8sApiEventCnt;
+}
+
+bool DescribeContainerSecEventSummaryResponse::UnhandledK8sApiEventCntHasBeenSet() const
+{
+    return m_unhandledK8sApiEventCntHasBeenSet;
 }
 
 

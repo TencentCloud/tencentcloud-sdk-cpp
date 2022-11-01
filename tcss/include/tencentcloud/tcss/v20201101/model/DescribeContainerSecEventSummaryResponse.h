@@ -115,6 +115,32 @@ namespace TencentCloud
                      */
                     bool UnhandledVirusEventCntHasBeenSet() const;
 
+                    /**
+                     * 获取未处理恶意外连事件
+                     * @return UnhandledMaliciousConnectionEventCnt 未处理恶意外连事件
+                     */
+                    uint64_t GetUnhandledMaliciousConnectionEventCnt() const;
+
+                    /**
+                     * 判断参数 UnhandledMaliciousConnectionEventCnt 是否已赋值
+                     * @return UnhandledMaliciousConnectionEventCnt 是否已赋值
+                     */
+                    bool UnhandledMaliciousConnectionEventCntHasBeenSet() const;
+
+                    /**
+                     * 获取未处理k8sApi事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnhandledK8sApiEventCnt 未处理k8sApi事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUnhandledK8sApiEventCnt() const;
+
+                    /**
+                     * 判断参数 UnhandledK8sApiEventCnt 是否已赋值
+                     * @return UnhandledK8sApiEventCnt 是否已赋值
+                     */
+                    bool UnhandledK8sApiEventCntHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +178,19 @@ namespace TencentCloud
                      */
                     uint64_t m_unhandledVirusEventCnt;
                     bool m_unhandledVirusEventCntHasBeenSet;
+
+                    /**
+                     * 未处理恶意外连事件
+                     */
+                    uint64_t m_unhandledMaliciousConnectionEventCnt;
+                    bool m_unhandledMaliciousConnectionEventCntHasBeenSet;
+
+                    /**
+                     * 未处理k8sApi事件
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_unhandledK8sApiEventCnt;
+                    bool m_unhandledK8sApiEventCntHasBeenSet;
 
                 };
             }

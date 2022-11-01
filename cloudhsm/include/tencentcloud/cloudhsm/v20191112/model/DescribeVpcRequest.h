@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回偏移量。
-                     * @return Offset 返回偏移量。
+                     * 获取返回偏移量。Offset最小为0。
+                     * @return Offset 返回偏移量。Offset最小为0。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置返回偏移量。
-                     * @param Offset 返回偏移量。
+                     * 设置返回偏移量。Offset最小为0。
+                     * @param Offset 返回偏移量。Offset最小为0。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量。
-                     * @return Limit 返回数量。
+                     * 获取返回数量。Limit需要在[1, 100]之间。
+                     * @return Limit 返回数量。Limit需要在[1, 100]之间。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量。
-                     * @param Limit 返回数量。
+                     * 设置返回数量。Limit需要在[1, 100]之间。
+                     * @param Limit 返回数量。Limit需要在[1, 100]之间。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -99,13 +99,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回偏移量。
+                     * 返回偏移量。Offset最小为0。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量。
+                     * 返回数量。Limit需要在[1, 100]之间。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

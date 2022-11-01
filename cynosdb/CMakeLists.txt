@@ -80,6 +80,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackTable.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DeleteBackupResponse.h
   include/tencentcloud/cynosdb/v20190107/model/Tag.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeProjectSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RemoveClusterSlaveZoneResponse.h
@@ -112,6 +113,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/SecurityGroup.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupDownloadUrlRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackTimeRange.h
+  include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/NetAddr.h
   include/tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameRequest.h
@@ -165,7 +167,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterParamRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/DeleteBackupRequest.h
   include/tencentcloud/cynosdb/v20190107/model/TradePrice.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterParamsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/AuditLog.h
@@ -247,6 +249,7 @@ set(cynosdb_src
   src/v20190107/model/UpgradeInstanceRequest.cpp
   src/v20190107/model/RollbackTable.cpp
   src/v20190107/model/DescribeClusterDetailRequest.cpp
+  src/v20190107/model/DeleteBackupResponse.cpp
   src/v20190107/model/Tag.cpp
   src/v20190107/model/DescribeProjectSecurityGroupsResponse.cpp
   src/v20190107/model/RemoveClusterSlaveZoneResponse.cpp
@@ -279,6 +282,7 @@ set(cynosdb_src
   src/v20190107/model/SecurityGroup.cpp
   src/v20190107/model/DescribeBackupDownloadUrlRequest.cpp
   src/v20190107/model/RollbackTimeRange.cpp
+  src/v20190107/model/OfflineInstanceRequest.cpp
   src/v20190107/model/NetAddr.cpp
   src/v20190107/model/AssociateSecurityGroupsResponse.cpp
   src/v20190107/model/DescribeResourcesByDealNameRequest.cpp
@@ -332,7 +336,7 @@ set(cynosdb_src
   src/v20190107/model/ModifyClusterParamRequest.cpp
   src/v20190107/model/DescribeAccountsResponse.cpp
   src/v20190107/model/ModifyAccountParamsResponse.cpp
-  src/v20190107/model/OfflineInstanceRequest.cpp
+  src/v20190107/model/DeleteBackupRequest.cpp
   src/v20190107/model/TradePrice.cpp
   src/v20190107/model/DescribeClusterParamsRequest.cpp
   src/v20190107/model/AuditLog.cpp

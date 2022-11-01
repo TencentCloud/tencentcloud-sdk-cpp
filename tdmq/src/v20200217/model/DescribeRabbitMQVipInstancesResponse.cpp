@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstancesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
-DescribeAliasDomainsResponse::DescribeAliasDomainsResponse() :
+DescribeRabbitMQVipInstancesResponse::DescribeRabbitMQVipInstancesResponse() :
     m_totalCountHasBeenSet(false),
-    m_aliasDomainsHasBeenSet(false)
+    m_instancesHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAliasDomainsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeRabbitMQVipInstancesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,39 +65,39 @@ CoreInternalOutcome DescribeAliasDomainsResponse::Deserialize(const string &payl
 
     if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["TotalCount"].IsInt64())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCount = rsp["TotalCount"].GetUint64();
         m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("AliasDomains") && !rsp["AliasDomains"].IsNull())
+    if (rsp.HasMember("Instances") && !rsp["Instances"].IsNull())
     {
-        if (!rsp["AliasDomains"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `AliasDomains` is not array type"));
+        if (!rsp["Instances"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Instances` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["AliasDomains"];
+        const rapidjson::Value &tmpValue = rsp["Instances"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            AliasDomain item;
+            RabbitMQVipInstance item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_aliasDomains.push_back(item);
+            m_instances.push_back(item);
         }
-        m_aliasDomainsHasBeenSet = true;
+        m_instancesHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAliasDomainsResponse::ToJsonString() const
+string DescribeRabbitMQVipInstancesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -111,15 +111,15 @@ string DescribeAliasDomainsResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_aliasDomainsHasBeenSet)
+    if (m_instancesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AliasDomains";
+        string key = "Instances";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_aliasDomains.begin(); itr != m_aliasDomains.end(); ++itr, ++i)
+        for (auto itr = m_instances.begin(); itr != m_instances.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -138,24 +138,24 @@ string DescribeAliasDomainsResponse::ToJsonString() const
 }
 
 
-int64_t DescribeAliasDomainsResponse::GetTotalCount() const
+uint64_t DescribeRabbitMQVipInstancesResponse::GetTotalCount() const
 {
     return m_totalCount;
 }
 
-bool DescribeAliasDomainsResponse::TotalCountHasBeenSet() const
+bool DescribeRabbitMQVipInstancesResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
 }
 
-vector<AliasDomain> DescribeAliasDomainsResponse::GetAliasDomains() const
+vector<RabbitMQVipInstance> DescribeRabbitMQVipInstancesResponse::GetInstances() const
 {
-    return m_aliasDomains;
+    return m_instances;
 }
 
-bool DescribeAliasDomainsResponse::AliasDomainsHasBeenSet() const
+bool DescribeRabbitMQVipInstancesResponse::InstancesHasBeenSet() const
 {
-    return m_aliasDomainsHasBeenSet;
+    return m_instancesHasBeenSet;
 }
 
 

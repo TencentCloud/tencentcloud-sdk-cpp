@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/ModifyAliasDomainResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteBackupResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-ModifyAliasDomainResponse::ModifyAliasDomainResponse()
+DeleteBackupResponse::DeleteBackupResponse()
 {
 }
 
-CoreInternalOutcome ModifyAliasDomainResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteBackupResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome ModifyAliasDomainResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
-string ModifyAliasDomainResponse::ToJsonString() const
+string DeleteBackupResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

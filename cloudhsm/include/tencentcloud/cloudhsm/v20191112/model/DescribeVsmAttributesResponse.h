@@ -166,8 +166,8 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取资源过期时间，以时间戳形式展示。
+                     * @return ExpireTime 资源过期时间，以时间戳形式展示。
                      */
                     int64_t GetExpireTime() const;
 
@@ -408,7 +408,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 资源过期时间，以时间戳形式展示。
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

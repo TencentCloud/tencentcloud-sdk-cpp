@@ -34,7 +34,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_targetTypeHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
     m_deregisterTargetRstHasBeenSet(false),
-    m_sessionTypeHasBeenSet(false)
+    m_sessionTypeHasBeenSet(false),
+    m_multiCertInfoHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,15 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "SessionType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_multiCertInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiCertInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_multiCertInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -341,6 +351,22 @@ void ModifyListenerRequest::SetSessionType(const string& _sessionType)
 bool ModifyListenerRequest::SessionTypeHasBeenSet() const
 {
     return m_sessionTypeHasBeenSet;
+}
+
+MultiCertInfo ModifyListenerRequest::GetMultiCertInfo() const
+{
+    return m_multiCertInfo;
+}
+
+void ModifyListenerRequest::SetMultiCertInfo(const MultiCertInfo& _multiCertInfo)
+{
+    m_multiCertInfo = _multiCertInfo;
+    m_multiCertInfoHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::MultiCertInfoHasBeenSet() const
+{
+    return m_multiCertInfoHasBeenSet;
 }
 
 

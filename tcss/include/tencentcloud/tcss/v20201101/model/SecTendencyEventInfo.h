@@ -72,12 +72,16 @@ ET_REVERSE_SHELL: 反弹shell
 ET_RISK_SYSCALL:高危系统调用
 ET_ABNORMAL_PROCESS: 异常进程
 ET_ACCESS_CONTROL 文件篡改
+ET_VIRUS 木马事件
+ET_MALICIOUS_CONNECTION 恶意外连事件
                      * @return EventType 事件类型：
 ET_ESCAPE : 容器逃逸
 ET_REVERSE_SHELL: 反弹shell
 ET_RISK_SYSCALL:高危系统调用
 ET_ABNORMAL_PROCESS: 异常进程
 ET_ACCESS_CONTROL 文件篡改
+ET_VIRUS 木马事件
+ET_MALICIOUS_CONNECTION 恶意外连事件
                      */
                     std::string GetEventType() const;
 
@@ -88,12 +92,16 @@ ET_REVERSE_SHELL: 反弹shell
 ET_RISK_SYSCALL:高危系统调用
 ET_ABNORMAL_PROCESS: 异常进程
 ET_ACCESS_CONTROL 文件篡改
+ET_VIRUS 木马事件
+ET_MALICIOUS_CONNECTION 恶意外连事件
                      * @param EventType 事件类型：
 ET_ESCAPE : 容器逃逸
 ET_REVERSE_SHELL: 反弹shell
 ET_RISK_SYSCALL:高危系统调用
 ET_ABNORMAL_PROCESS: 异常进程
 ET_ACCESS_CONTROL 文件篡改
+ET_VIRUS 木马事件
+ET_MALICIOUS_CONNECTION 恶意外连事件
                      */
                     void SetEventType(const std::string& _eventType);
 
@@ -118,6 +126,8 @@ ET_REVERSE_SHELL: 反弹shell
 ET_RISK_SYSCALL:高危系统调用
 ET_ABNORMAL_PROCESS: 异常进程
 ET_ACCESS_CONTROL 文件篡改
+ET_VIRUS 木马事件
+ET_MALICIOUS_CONNECTION 恶意外连事件
                      */
                     std::string m_eventType;
                     bool m_eventTypeHasBeenSet;

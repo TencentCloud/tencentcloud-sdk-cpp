@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/CertificateInput.h>
+#include <tencentcloud/clb/v20180317/model/MultiCertInfo.h>
 
 
 namespace TencentCloud
@@ -116,14 +117,14 @@ namespace TencentCloud
                     bool NewDomainHasBeenSet() const;
 
                     /**
-                     * 获取域名相关的证书信息，注意，仅对启用SNI的监听器适用。
-                     * @return Certificate 域名相关的证书信息，注意，仅对启用SNI的监听器适用。
+                     * 获取域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
+                     * @return Certificate 域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置域名相关的证书信息，注意，仅对启用SNI的监听器适用。
-                     * @param Certificate 域名相关的证书信息，注意，仅对启用SNI的监听器适用。
+                     * 设置域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
+                     * @param Certificate 域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
                      */
                     void SetCertificate(const CertificateInput& _certificate);
 
@@ -205,6 +206,24 @@ namespace TencentCloud
                      */
                     bool NewDomainsHasBeenSet() const;
 
+                    /**
+                     * 获取域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     * @return MultiCertInfo 域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     */
+                    MultiCertInfo GetMultiCertInfo() const;
+
+                    /**
+                     * 设置域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     * @param MultiCertInfo 域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     */
+                    void SetMultiCertInfo(const MultiCertInfo& _multiCertInfo);
+
+                    /**
+                     * 判断参数 MultiCertInfo 是否已赋值
+                     * @return MultiCertInfo 是否已赋值
+                     */
+                    bool MultiCertInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -232,7 +251,7 @@ namespace TencentCloud
                     bool m_newDomainHasBeenSet;
 
                     /**
-                     * 域名相关的证书信息，注意，仅对启用SNI的监听器适用。
+                     * 域名相关的证书信息，注意，仅对启用SNI的监听器适用，不可和MultiCertInfo 同时传入。
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;
@@ -260,6 +279,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_newDomains;
                     bool m_newDomainsHasBeenSet;
+
+                    /**
+                     * 域名相关的证书信息，注意，仅对启用SNI的监听器适用；支持同时传入多本算法类型不同的服务器证书，不可和MultiCertInfo 同时传入。
+                     */
+                    MultiCertInfo m_multiCertInfo;
+                    bool m_multiCertInfoHasBeenSet;
 
                 };
             }

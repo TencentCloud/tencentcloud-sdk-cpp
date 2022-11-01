@@ -14,20 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Tdmq::V20200217::Model;
 using namespace std;
 
-ModifyAliasDomainStatusResponse::ModifyAliasDomainStatusResponse()
+DescribeRabbitMQNodeListResponse::DescribeRabbitMQNodeListResponse() :
+    m_totalCountHasBeenSet(false),
+    m_nodeListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyAliasDomainStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeRabbitMQNodeListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +63,68 @@ CoreInternalOutcome ModifyAliasDomainStatusResponse::Deserialize(const string &p
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("NodeList") && !rsp["NodeList"].IsNull())
+    {
+        if (!rsp["NodeList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `NodeList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["NodeList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RabbitMQPrivateNode item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_nodeList.push_back(item);
+        }
+        m_nodeListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyAliasDomainStatusResponse::ToJsonString() const
+string DescribeRabbitMQNodeListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_nodeListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_nodeList.begin(); itr != m_nodeList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string ModifyAliasDomainStatusResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeRabbitMQNodeListResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeRabbitMQNodeListResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<RabbitMQPrivateNode> DescribeRabbitMQNodeListResponse::GetNodeList() const
+{
+    return m_nodeList;
+}
+
+bool DescribeRabbitMQNodeListResponse::NodeListHasBeenSet() const
+{
+    return m_nodeListHasBeenSet;
+}
 
 

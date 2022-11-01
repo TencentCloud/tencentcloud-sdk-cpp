@@ -36,7 +36,8 @@ CreateListenerRequest::CreateListenerRequest() :
     m_sessionTypeHasBeenSet(false),
     m_keepaliveEnableHasBeenSet(false),
     m_endPortHasBeenSet(false),
-    m_deregisterTargetRstHasBeenSet(false)
+    m_deregisterTargetRstHasBeenSet(false),
+    m_multiCertInfoHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,15 @@ string CreateListenerRequest::ToJsonString() const
         string key = "DeregisterTargetRst";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deregisterTargetRst, allocator);
+    }
+
+    if (m_multiCertInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiCertInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_multiCertInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -401,6 +411,22 @@ void CreateListenerRequest::SetDeregisterTargetRst(const bool& _deregisterTarget
 bool CreateListenerRequest::DeregisterTargetRstHasBeenSet() const
 {
     return m_deregisterTargetRstHasBeenSet;
+}
+
+MultiCertInfo CreateListenerRequest::GetMultiCertInfo() const
+{
+    return m_multiCertInfo;
+}
+
+void CreateListenerRequest::SetMultiCertInfo(const MultiCertInfo& _multiCertInfo)
+{
+    m_multiCertInfo = _multiCertInfo;
+    m_multiCertInfoHasBeenSet = true;
+}
+
+bool CreateListenerRequest::MultiCertInfoHasBeenSet() const
+{
+    return m_multiCertInfoHasBeenSet;
 }
 
 

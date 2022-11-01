@@ -269,17 +269,17 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
+                     * 获取过期时间（Epoch Unix Timestamp）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpireTime 过期时间
+                     * @return ExpireTime 过期时间（Epoch Unix Timestamp）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
+                     * 设置过期时间（Epoch Unix Timestamp）
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpireTime 过期时间
+                     * @param ExpireTime 过期时间（Epoch Unix Timestamp）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExpireTime(const int64_t& _expireTime);
@@ -605,7 +605,7 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 过期时间（Epoch Unix Timestamp）
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expireTime;

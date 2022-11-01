@@ -14,47 +14,45 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/DeleteAliasDomainRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteBackupRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
-DeleteAliasDomainRequest::DeleteAliasDomainRequest() :
-    m_zoneIdHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+DeleteBackupRequest::DeleteBackupRequest() :
+    m_clusterIdHasBeenSet(false),
+    m_snapshotIdListHasBeenSet(false)
 {
 }
 
-string DeleteAliasDomainRequest::ToJsonString() const
+string DeleteBackupRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_zoneIdHasBeenSet)
+    if (m_clusterIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
+        string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_filtersHasBeenSet)
+    if (m_snapshotIdListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Filters";
+        string key = "SnapshotIdList";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        for (auto itr = m_snapshotIdList.begin(); itr != m_snapshotIdList.end(); ++itr)
         {
-            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -66,36 +64,36 @@ string DeleteAliasDomainRequest::ToJsonString() const
 }
 
 
-string DeleteAliasDomainRequest::GetZoneId() const
+string DeleteBackupRequest::GetClusterId() const
 {
-    return m_zoneId;
+    return m_clusterId;
 }
 
-void DeleteAliasDomainRequest::SetZoneId(const string& _zoneId)
+void DeleteBackupRequest::SetClusterId(const string& _clusterId)
 {
-    m_zoneId = _zoneId;
-    m_zoneIdHasBeenSet = true;
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
 }
 
-bool DeleteAliasDomainRequest::ZoneIdHasBeenSet() const
+bool DeleteBackupRequest::ClusterIdHasBeenSet() const
 {
-    return m_zoneIdHasBeenSet;
+    return m_clusterIdHasBeenSet;
 }
 
-vector<Filter> DeleteAliasDomainRequest::GetFilters() const
+vector<int64_t> DeleteBackupRequest::GetSnapshotIdList() const
 {
-    return m_filters;
+    return m_snapshotIdList;
 }
 
-void DeleteAliasDomainRequest::SetFilters(const vector<Filter>& _filters)
+void DeleteBackupRequest::SetSnapshotIdList(const vector<int64_t>& _snapshotIdList)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_snapshotIdList = _snapshotIdList;
+    m_snapshotIdListHasBeenSet = true;
 }
 
-bool DeleteAliasDomainRequest::FiltersHasBeenSet() const
+bool DeleteBackupRequest::SnapshotIdListHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_snapshotIdListHasBeenSet;
 }
 
 

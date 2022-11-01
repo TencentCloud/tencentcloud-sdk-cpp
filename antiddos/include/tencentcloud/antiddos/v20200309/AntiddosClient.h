@@ -173,6 +173,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewIndexRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeOverviewIndexResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribePendingRiskInfoRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribePendingRiskInfoResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DisassociateDDoSEipAddressRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DisassociateDDoSEipAddressResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/ModifyCCLevelPolicyRequest.h>
@@ -444,6 +446,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOverviewIndexResponse> DescribeOverviewIndexOutcome;
                 typedef std::future<DescribeOverviewIndexOutcome> DescribeOverviewIndexOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeOverviewIndexRequest&, DescribeOverviewIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewIndexAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePendingRiskInfoResponse> DescribePendingRiskInfoOutcome;
+                typedef std::future<DescribePendingRiskInfoOutcome> DescribePendingRiskInfoOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribePendingRiskInfoRequest&, DescribePendingRiskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePendingRiskInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisassociateDDoSEipAddressResponse> DisassociateDDoSEipAddressOutcome;
                 typedef std::future<DisassociateDDoSEipAddressOutcome> DisassociateDDoSEipAddressOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DisassociateDDoSEipAddressRequest&, DisassociateDDoSEipAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisassociateDDoSEipAddressAsyncHandler;
@@ -1171,6 +1176,15 @@ namespace TencentCloud
                 DescribeOverviewIndexOutcome DescribeOverviewIndex(const Model::DescribeOverviewIndexRequest &request);
                 void DescribeOverviewIndexAsync(const Model::DescribeOverviewIndexRequest& request, const DescribeOverviewIndexAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOverviewIndexOutcomeCallable DescribeOverviewIndexCallable(const Model::DescribeOverviewIndexRequest& request);
+
+                /**
+                 *查询账号维度待处理风险信息，包括是否为付费用户，查询攻击中、封堵中、过期资源数量等
+                 * @param req DescribePendingRiskInfoRequest
+                 * @return DescribePendingRiskInfoOutcome
+                 */
+                DescribePendingRiskInfoOutcome DescribePendingRiskInfo(const Model::DescribePendingRiskInfoRequest &request);
+                void DescribePendingRiskInfoAsync(const Model::DescribePendingRiskInfoRequest& request, const DescribePendingRiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePendingRiskInfoOutcomeCallable DescribePendingRiskInfoCallable(const Model::DescribePendingRiskInfoRequest& request);
 
                 /**
                  *本接口 (DisassociateDDoSEipAddress) 用于解绑高防弹性公网IP。

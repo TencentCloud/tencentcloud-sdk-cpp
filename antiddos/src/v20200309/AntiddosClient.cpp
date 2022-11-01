@@ -3265,6 +3265,49 @@ AntiddosClient::DescribeOverviewIndexOutcomeCallable AntiddosClient::DescribeOve
     return task->get_future();
 }
 
+AntiddosClient::DescribePendingRiskInfoOutcome AntiddosClient::DescribePendingRiskInfo(const DescribePendingRiskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePendingRiskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePendingRiskInfoResponse rsp = DescribePendingRiskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePendingRiskInfoOutcome(rsp);
+        else
+            return DescribePendingRiskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePendingRiskInfoOutcome(outcome.GetError());
+    }
+}
+
+void AntiddosClient::DescribePendingRiskInfoAsync(const DescribePendingRiskInfoRequest& request, const DescribePendingRiskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePendingRiskInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AntiddosClient::DescribePendingRiskInfoOutcomeCallable AntiddosClient::DescribePendingRiskInfoCallable(const DescribePendingRiskInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePendingRiskInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePendingRiskInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AntiddosClient::DisassociateDDoSEipAddressOutcome AntiddosClient::DisassociateDDoSEipAddress(const DisassociateDDoSEipAddressRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateDDoSEipAddress");

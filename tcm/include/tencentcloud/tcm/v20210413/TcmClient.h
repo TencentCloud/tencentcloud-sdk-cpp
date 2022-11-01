@@ -33,10 +33,14 @@
 #include <tencentcloud/tcm/v20210413/model/DescribeMeshListResponse.h>
 #include <tencentcloud/tcm/v20210413/model/LinkClusterListRequest.h>
 #include <tencentcloud/tcm/v20210413/model/LinkClusterListResponse.h>
+#include <tencentcloud/tcm/v20210413/model/LinkPrometheusRequest.h>
+#include <tencentcloud/tcm/v20210413/model/LinkPrometheusResponse.h>
 #include <tencentcloud/tcm/v20210413/model/ModifyMeshRequest.h>
 #include <tencentcloud/tcm/v20210413/model/ModifyMeshResponse.h>
 #include <tencentcloud/tcm/v20210413/model/UnlinkClusterRequest.h>
 #include <tencentcloud/tcm/v20210413/model/UnlinkClusterResponse.h>
+#include <tencentcloud/tcm/v20210413/model/UnlinkPrometheusRequest.h>
+#include <tencentcloud/tcm/v20210413/model/UnlinkPrometheusResponse.h>
 
 
 namespace TencentCloud
@@ -66,12 +70,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::LinkClusterListResponse> LinkClusterListOutcome;
                 typedef std::future<LinkClusterListOutcome> LinkClusterListOutcomeCallable;
                 typedef std::function<void(const TcmClient*, const Model::LinkClusterListRequest&, LinkClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LinkClusterListAsyncHandler;
+                typedef Outcome<Core::Error, Model::LinkPrometheusResponse> LinkPrometheusOutcome;
+                typedef std::future<LinkPrometheusOutcome> LinkPrometheusOutcomeCallable;
+                typedef std::function<void(const TcmClient*, const Model::LinkPrometheusRequest&, LinkPrometheusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LinkPrometheusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyMeshResponse> ModifyMeshOutcome;
                 typedef std::future<ModifyMeshOutcome> ModifyMeshOutcomeCallable;
                 typedef std::function<void(const TcmClient*, const Model::ModifyMeshRequest&, ModifyMeshOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMeshAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnlinkClusterResponse> UnlinkClusterOutcome;
                 typedef std::future<UnlinkClusterOutcome> UnlinkClusterOutcomeCallable;
                 typedef std::function<void(const TcmClient*, const Model::UnlinkClusterRequest&, UnlinkClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlinkClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnlinkPrometheusResponse> UnlinkPrometheusOutcome;
+                typedef std::future<UnlinkPrometheusOutcome> UnlinkPrometheusOutcomeCallable;
+                typedef std::function<void(const TcmClient*, const Model::UnlinkPrometheusRequest&, UnlinkPrometheusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlinkPrometheusAsyncHandler;
 
 
 
@@ -121,6 +131,15 @@ namespace TencentCloud
                 LinkClusterListOutcomeCallable LinkClusterListCallable(const Model::LinkClusterListRequest& request);
 
                 /**
+                 *关联Prometheus
+                 * @param req LinkPrometheusRequest
+                 * @return LinkPrometheusOutcome
+                 */
+                LinkPrometheusOutcome LinkPrometheus(const Model::LinkPrometheusRequest &request);
+                void LinkPrometheusAsync(const Model::LinkPrometheusRequest& request, const LinkPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                LinkPrometheusOutcomeCallable LinkPrometheusCallable(const Model::LinkPrometheusRequest& request);
+
+                /**
                  *修改网格
                  * @param req ModifyMeshRequest
                  * @return ModifyMeshOutcome
@@ -137,6 +156,15 @@ namespace TencentCloud
                 UnlinkClusterOutcome UnlinkCluster(const Model::UnlinkClusterRequest &request);
                 void UnlinkClusterAsync(const Model::UnlinkClusterRequest& request, const UnlinkClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UnlinkClusterOutcomeCallable UnlinkClusterCallable(const Model::UnlinkClusterRequest& request);
+
+                /**
+                 *解除关联Prometheus
+                 * @param req UnlinkPrometheusRequest
+                 * @return UnlinkPrometheusOutcome
+                 */
+                UnlinkPrometheusOutcome UnlinkPrometheus(const Model::UnlinkPrometheusRequest &request);
+                void UnlinkPrometheusAsync(const Model::UnlinkPrometheusRequest& request, const UnlinkPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnlinkPrometheusOutcomeCallable UnlinkPrometheusCallable(const Model::UnlinkPrometheusRequest& request);
 
             };
         }

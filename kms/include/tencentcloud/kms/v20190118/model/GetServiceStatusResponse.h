@@ -82,9 +82,9 @@ namespace TencentCloud
                     bool UserLevelHasBeenSet() const;
 
                     /**
-                     * 获取旗舰版到期时间
+                     * 获取旗舰版到期时间（Epoch Unix Timestamp）。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProExpireTime 旗舰版到期时间
+                     * @return ProExpireTime 旗舰版到期时间（Epoch Unix Timestamp）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetProExpireTime() const;
@@ -173,7 +173,7 @@ namespace TencentCloud
                     bool m_userLevelHasBeenSet;
 
                     /**
-                     * 旗舰版到期时间
+                     * 旗舰版到期时间（Epoch Unix Timestamp）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_proExpireTime;

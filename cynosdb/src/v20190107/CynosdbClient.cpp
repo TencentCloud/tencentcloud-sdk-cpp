@@ -427,6 +427,49 @@ CynosdbClient::DeleteAuditLogFileOutcomeCallable CynosdbClient::DeleteAuditLogFi
     return task->get_future();
 }
 
+CynosdbClient::DeleteBackupOutcome CynosdbClient::DeleteBackup(const DeleteBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBackupResponse rsp = DeleteBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBackupOutcome(rsp);
+        else
+            return DeleteBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBackupOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteBackupAsync(const DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DeleteBackupOutcomeCallable CynosdbClient::DeleteBackupCallable(const DeleteBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DescribeAccountAllGrantPrivilegesOutcome CynosdbClient::DescribeAccountAllGrantPrivileges(const DescribeAccountAllGrantPrivilegesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccountAllGrantPrivileges");

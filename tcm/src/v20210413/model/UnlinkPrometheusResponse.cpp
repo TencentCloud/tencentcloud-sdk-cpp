@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/DeleteAliasDomainResponse.h>
+#include <tencentcloud/tcm/v20210413/model/UnlinkPrometheusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Tcm::V20210413::Model;
 using namespace std;
 
-DeleteAliasDomainResponse::DeleteAliasDomainResponse()
+UnlinkPrometheusResponse::UnlinkPrometheusResponse()
 {
 }
 
-CoreInternalOutcome DeleteAliasDomainResponse::Deserialize(const string &payload)
+CoreInternalOutcome UnlinkPrometheusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome DeleteAliasDomainResponse::Deserialize(const string &payload
     return CoreInternalOutcome(true);
 }
 
-string DeleteAliasDomainResponse::ToJsonString() const
+string UnlinkPrometheusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

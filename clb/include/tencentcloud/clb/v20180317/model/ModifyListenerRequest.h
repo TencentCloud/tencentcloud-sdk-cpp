@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/HealthCheck.h>
 #include <tencentcloud/clb/v20180317/model/CertificateInput.h>
+#include <tencentcloud/clb/v20180317/model/MultiCertInfo.h>
 
 
 namespace TencentCloud
@@ -135,14 +136,14 @@ namespace TencentCloud
                     bool HealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
-                     * @return Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
+                     * 获取证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
+                     * @return Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
                      */
                     CertificateInput GetCertificate() const;
 
                     /**
-                     * 设置证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
-                     * @param Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
+                     * 设置证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
+                     * @param Certificate 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
                      */
                     void SetCertificate(const CertificateInput& _certificate);
 
@@ -264,6 +265,24 @@ namespace TencentCloud
                      */
                     bool SessionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * @return MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     */
+                    MultiCertInfo GetMultiCertInfo() const;
+
+                    /**
+                     * 设置证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     * @param MultiCertInfo 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     */
+                    void SetMultiCertInfo(const MultiCertInfo& _multiCertInfo);
+
+                    /**
+                     * 判断参数 MultiCertInfo 是否已赋值
+                     * @return MultiCertInfo 是否已赋值
+                     */
+                    bool MultiCertInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -297,7 +316,7 @@ namespace TencentCloud
                     bool m_healthCheckHasBeenSet;
 
                     /**
-                     * 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器。
+                     * 证书相关信息，此参数仅适用于HTTPS/TCP_SSL监听器；此参数和MultiCertInfo不能同时传入。
                      */
                     CertificateInput m_certificate;
                     bool m_certificateHasBeenSet;
@@ -338,6 +357,12 @@ namespace TencentCloud
                      */
                     std::string m_sessionType;
                     bool m_sessionTypeHasBeenSet;
+
+                    /**
+                     * 证书信息，支持同时传入不同算法类型的多本服务端证书；此参数仅适用于未开启SNI特性的HTTPS监听器。此参数和Certificate不能同时传入。
+                     */
+                    MultiCertInfo m_multiCertInfo;
+                    bool m_multiCertInfoHasBeenSet;
 
                 };
             }

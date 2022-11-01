@@ -102,6 +102,28 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
+                     * 获取云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssumerName 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAssumerName() const;
+
+                    /**
+                     * 设置云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssumerName 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssumerName(const std::string& _assumerName);
+
+                    /**
+                     * 判断参数 AssumerName 是否已赋值
+                     * @return AssumerName 是否已赋值
+                     */
+                    bool AssumerNameHasBeenSet() const;
+
+                    /**
                      * 获取日志集绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 日志集绑定的标签
@@ -142,14 +164,14 @@ namespace TencentCloud
                     bool TopicCountHasBeenSet() const;
 
                     /**
-                     * 获取若AssumerUin非空，则表示创建该日志集的服务方角色
-                     * @return RoleName 若AssumerUin非空，则表示创建该日志集的服务方角色
+                     * 获取若AssumerName非空，则表示创建该日志集的服务方角色
+                     * @return RoleName 若AssumerName非空，则表示创建该日志集的服务方角色
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置若AssumerUin非空，则表示创建该日志集的服务方角色
-                     * @param RoleName 若AssumerUin非空，则表示创建该日志集的服务方角色
+                     * 设置若AssumerName非空，则表示创建该日志集的服务方角色
+                     * @param RoleName 若AssumerName非空，则表示创建该日志集的服务方角色
                      */
                     void SetRoleName(const std::string& _roleName);
 
@@ -180,6 +202,13 @@ namespace TencentCloud
                     bool m_createTimeHasBeenSet;
 
                     /**
+                     * 云产品标识，日志集由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assumerName;
+                    bool m_assumerNameHasBeenSet;
+
+                    /**
                      * 日志集绑定的标签
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -193,7 +222,7 @@ namespace TencentCloud
                     bool m_topicCountHasBeenSet;
 
                     /**
-                     * 若AssumerUin非空，则表示创建该日志集的服务方角色
+                     * 若AssumerName非空，则表示创建该日志集的服务方角色
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;

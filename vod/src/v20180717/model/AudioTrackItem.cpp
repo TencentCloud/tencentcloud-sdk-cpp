@@ -24,6 +24,7 @@ AudioTrackItem::AudioTrackItem() :
     m_sourceMediaHasBeenSet(false),
     m_sourceMediaStartTimeHasBeenSet(false),
     m_durationHasBeenSet(false),
+    m_targetDurationHasBeenSet(false),
     m_audioOperationsHasBeenSet(false)
 {
 }
@@ -61,6 +62,16 @@ CoreInternalOutcome AudioTrackItem::Deserialize(const rapidjson::Value &value)
         }
         m_duration = value["Duration"].GetDouble();
         m_durationHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetDuration") && !value["TargetDuration"].IsNull())
+    {
+        if (!value["TargetDuration"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `AudioTrackItem.TargetDuration` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetDuration = value["TargetDuration"].GetDouble();
+        m_targetDurationHasBeenSet = true;
     }
 
     if (value.HasMember("AudioOperations") && !value["AudioOperations"].IsNull())
@@ -112,6 +123,14 @@ void AudioTrackItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Duration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_duration, allocator);
+    }
+
+    if (m_targetDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetDuration, allocator);
     }
 
     if (m_audioOperationsHasBeenSet)
@@ -178,6 +197,22 @@ void AudioTrackItem::SetDuration(const double& _duration)
 bool AudioTrackItem::DurationHasBeenSet() const
 {
     return m_durationHasBeenSet;
+}
+
+double AudioTrackItem::GetTargetDuration() const
+{
+    return m_targetDuration;
+}
+
+void AudioTrackItem::SetTargetDuration(const double& _targetDuration)
+{
+    m_targetDuration = _targetDuration;
+    m_targetDurationHasBeenSet = true;
+}
+
+bool AudioTrackItem::TargetDurationHasBeenSet() const
+{
+    return m_targetDurationHasBeenSet;
 }
 
 vector<AudioTransform> AudioTrackItem::GetAudioOperations() const

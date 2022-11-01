@@ -54,7 +54,8 @@ VulDefenceEventDetail::VulDefenceEventDetail() :
     m_containerNetSubStatusHasBeenSet(false),
     m_containerIsolateOperationSrcHasBeenSet(false),
     m_containerStatusHasBeenSet(false),
-    m_jNDIUrlHasBeenSet(false)
+    m_jNDIUrlHasBeenSet(false),
+    m_raspDetailHasBeenSet(false)
 {
 }
 
@@ -406,6 +407,26 @@ CoreInternalOutcome VulDefenceEventDetail::Deserialize(const rapidjson::Value &v
         m_jNDIUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("RaspDetail") && !value["RaspDetail"].IsNull())
+    {
+        if (!value["RaspDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VulDefenceEventDetail.RaspDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RaspDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RaspInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_raspDetail.push_back(item);
+        }
+        m_raspDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -688,6 +709,21 @@ void VulDefenceEventDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "JNDIUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_jNDIUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_raspDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RaspDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_raspDetail.begin(); itr != m_raspDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1235,5 +1271,21 @@ void VulDefenceEventDetail::SetJNDIUrl(const string& _jNDIUrl)
 bool VulDefenceEventDetail::JNDIUrlHasBeenSet() const
 {
     return m_jNDIUrlHasBeenSet;
+}
+
+vector<RaspInfo> VulDefenceEventDetail::GetRaspDetail() const
+{
+    return m_raspDetail;
+}
+
+void VulDefenceEventDetail::SetRaspDetail(const vector<RaspInfo>& _raspDetail)
+{
+    m_raspDetail = _raspDetail;
+    m_raspDetailHasBeenSet = true;
+}
+
+bool VulDefenceEventDetail::RaspDetailHasBeenSet() const
+{
+    return m_raspDetailHasBeenSet;
 }
 

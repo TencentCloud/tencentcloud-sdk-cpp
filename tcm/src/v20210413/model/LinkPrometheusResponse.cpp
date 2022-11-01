@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/CreateAliasDomainResponse.h>
+#include <tencentcloud/tcm/v20210413/model/LinkPrometheusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Tcm::V20210413::Model;
 using namespace std;
 
-CreateAliasDomainResponse::CreateAliasDomainResponse() :
-    m_aliasIdHasBeenSet(false)
+LinkPrometheusResponse::LinkPrometheusResponse()
 {
 }
 
-CoreInternalOutcome CreateAliasDomainResponse::Deserialize(const string &payload)
+CoreInternalOutcome LinkPrometheusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome CreateAliasDomainResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("AliasId") && !rsp["AliasId"].IsNull())
-    {
-        if (!rsp["AliasId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AliasId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_aliasId = string(rsp["AliasId"].GetString());
-        m_aliasIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateAliasDomainResponse::ToJsonString() const
+string LinkPrometheusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_aliasIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AliasId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_aliasId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string CreateAliasDomainResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateAliasDomainResponse::GetAliasId() const
-{
-    return m_aliasId;
-}
-
-bool CreateAliasDomainResponse::AliasIdHasBeenSet() const
-{
-    return m_aliasIdHasBeenSet;
-}
 
 

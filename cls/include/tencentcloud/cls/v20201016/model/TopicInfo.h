@@ -138,6 +138,28 @@ namespace TencentCloud
                     bool IndexHasBeenSet() const;
 
                     /**
+                     * 获取云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AssumerName 云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAssumerName() const;
+
+                    /**
+                     * 设置云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AssumerName 云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAssumerName(const std::string& _assumerName);
+
+                    /**
+                     * 判断参数 AssumerName 是否已赋值
+                     * @return AssumerName 是否已赋值
+                     */
+                    bool AssumerNameHasBeenSet() const;
+
+                    /**
                      * 获取创建时间
                      * @return CreateTime 创建时间
                      */
@@ -283,6 +305,50 @@ namespace TencentCloud
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubAssumerName 云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubAssumerName() const;
+
+                    /**
+                     * 设置云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubAssumerName 云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubAssumerName(const std::string& _subAssumerName);
+
+                    /**
+                     * 判断参数 SubAssumerName 是否已赋值
+                     * @return SubAssumerName 是否已赋值
+                     */
+                    bool SubAssumerNameHasBeenSet() const;
+
+                    /**
+                     * 获取日志主题描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Describes 日志主题描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDescribes() const;
+
+                    /**
+                     * 设置日志主题描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Describes 日志主题描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDescribes(const std::string& _describes);
+
+                    /**
+                     * 判断参数 Describes 是否已赋值
+                     * @return Describes 是否已赋值
+                     */
+                    bool DescribesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +380,13 @@ namespace TencentCloud
                      */
                     bool m_index;
                     bool m_indexHasBeenSet;
+
+                    /**
+                     * 云产品标识，日志主题由其它云产品创建时，该字段会显示云产品名称，例如CDN、TKE
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_assumerName;
+                    bool m_assumerNameHasBeenSet;
 
                     /**
                      * 创建时间
@@ -361,6 +434,20 @@ namespace TencentCloud
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 云产品二级标识，日志主题由其它云产品创建时，该字段会显示云产品名称及其日志类型的二级分类，例如TKE-Audit、TKE-Event。部分云产品仅有云产品标识(AssumerName)，无该字段。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subAssumerName;
+                    bool m_subAssumerNameHasBeenSet;
+
+                    /**
+                     * 日志主题描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_describes;
+                    bool m_describesHasBeenSet;
 
                 };
             }

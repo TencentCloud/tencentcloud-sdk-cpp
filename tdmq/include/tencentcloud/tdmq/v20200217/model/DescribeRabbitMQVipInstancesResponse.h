@@ -14,41 +14,41 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEALIASDOMAINSRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEALIASDOMAINSRESPONSE_H_
+#ifndef TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBERABBITMQVIPINSTANCESRESPONSE_H_
+#define TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBERABBITMQVIPINSTANCESRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/teo/v20220901/model/AliasDomain.h>
+#include <tencentcloud/tdmq/v20200217/model/RabbitMQVipInstance.h>
 
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Tdmq
     {
-        namespace V20220901
+        namespace V20200217
         {
             namespace Model
             {
                 /**
-                * DescribeAliasDomains返回参数结构体
+                * DescribeRabbitMQVipInstances返回参数结构体
                 */
-                class DescribeAliasDomainsResponse : public AbstractModel
+                class DescribeRabbitMQVipInstancesResponse : public AbstractModel
                 {
                 public:
-                    DescribeAliasDomainsResponse();
-                    ~DescribeAliasDomainsResponse() = default;
+                    DescribeRabbitMQVipInstancesResponse();
+                    ~DescribeRabbitMQVipInstancesResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取符合条件的别称域名个数。
-                     * @return TotalCount 符合条件的别称域名个数。
+                     * 获取未分页的总数目
+                     * @return TotalCount 未分页的总数目
                      */
-                    int64_t GetTotalCount() const;
+                    uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
@@ -57,30 +57,30 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取别称域名详细信息列表。
-                     * @return AliasDomains 别称域名详细信息列表。
+                     * 获取实例信息列表
+                     * @return Instances 实例信息列表
                      */
-                    std::vector<AliasDomain> GetAliasDomains() const;
+                    std::vector<RabbitMQVipInstance> GetInstances() const;
 
                     /**
-                     * 判断参数 AliasDomains 是否已赋值
-                     * @return AliasDomains 是否已赋值
+                     * 判断参数 Instances 是否已赋值
+                     * @return Instances 是否已赋值
                      */
-                    bool AliasDomainsHasBeenSet() const;
+                    bool InstancesHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 符合条件的别称域名个数。
+                     * 未分页的总数目
                      */
-                    int64_t m_totalCount;
+                    uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 别称域名详细信息列表。
+                     * 实例信息列表
                      */
-                    std::vector<AliasDomain> m_aliasDomains;
-                    bool m_aliasDomainsHasBeenSet;
+                    std::vector<RabbitMQVipInstance> m_instances;
+                    bool m_instancesHasBeenSet;
 
                 };
             }
@@ -88,4 +88,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEALIASDOMAINSRESPONSE_H_
+#endif // !TENCENTCLOUD_TDMQ_V20200217_MODEL_DESCRIBERABBITMQVIPINSTANCESRESPONSE_H_

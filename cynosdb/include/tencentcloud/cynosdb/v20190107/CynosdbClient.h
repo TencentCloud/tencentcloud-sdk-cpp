@@ -41,6 +41,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DeleteAuditLogFileResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteBackupRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DeleteBackupResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeAccountsRequest.h>
@@ -188,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAuditLogFileResponse> DeleteAuditLogFileOutcome;
                 typedef std::future<DeleteAuditLogFileOutcome> DeleteAuditLogFileOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DeleteAuditLogFileRequest&, DeleteAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditLogFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBackupResponse> DeleteBackupOutcome;
+                typedef std::future<DeleteBackupOutcome> DeleteBackupOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DeleteBackupRequest&, DeleteBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountAllGrantPrivilegesResponse> DescribeAccountAllGrantPrivilegesOutcome;
                 typedef std::future<DescribeAccountAllGrantPrivilegesOutcome> DescribeAccountAllGrantPrivilegesOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeAccountAllGrantPrivilegesRequest&, DescribeAccountAllGrantPrivilegesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountAllGrantPrivilegesAsyncHandler;
@@ -430,6 +435,15 @@ namespace TencentCloud
                 DeleteAuditLogFileOutcome DeleteAuditLogFile(const Model::DeleteAuditLogFileRequest &request);
                 void DeleteAuditLogFileAsync(const Model::DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteAuditLogFileOutcomeCallable DeleteAuditLogFileCallable(const Model::DeleteAuditLogFileRequest& request);
+
+                /**
+                 *为集群删除手动备份，无法删除自动备份
+                 * @param req DeleteBackupRequest
+                 * @return DeleteBackupOutcome
+                 */
+                DeleteBackupOutcome DeleteBackup(const Model::DeleteBackupRequest &request);
+                void DeleteBackupAsync(const Model::DeleteBackupRequest& request, const DeleteBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBackupOutcomeCallable DeleteBackupCallable(const Model::DeleteBackupRequest& request);
 
                 /**
                  *账号所有权限

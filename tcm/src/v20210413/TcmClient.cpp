@@ -255,6 +255,49 @@ TcmClient::LinkClusterListOutcomeCallable TcmClient::LinkClusterListCallable(con
     return task->get_future();
 }
 
+TcmClient::LinkPrometheusOutcome TcmClient::LinkPrometheus(const LinkPrometheusRequest &request)
+{
+    auto outcome = MakeRequest(request, "LinkPrometheus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        LinkPrometheusResponse rsp = LinkPrometheusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return LinkPrometheusOutcome(rsp);
+        else
+            return LinkPrometheusOutcome(o.GetError());
+    }
+    else
+    {
+        return LinkPrometheusOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::LinkPrometheusAsync(const LinkPrometheusRequest& request, const LinkPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->LinkPrometheus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::LinkPrometheusOutcomeCallable TcmClient::LinkPrometheusCallable(const LinkPrometheusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<LinkPrometheusOutcome()>>(
+        [this, request]()
+        {
+            return this->LinkPrometheus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcmClient::ModifyMeshOutcome TcmClient::ModifyMesh(const ModifyMeshRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMesh");
@@ -334,6 +377,49 @@ TcmClient::UnlinkClusterOutcomeCallable TcmClient::UnlinkClusterCallable(const U
         [this, request]()
         {
             return this->UnlinkCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcmClient::UnlinkPrometheusOutcome TcmClient::UnlinkPrometheus(const UnlinkPrometheusRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnlinkPrometheus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnlinkPrometheusResponse rsp = UnlinkPrometheusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnlinkPrometheusOutcome(rsp);
+        else
+            return UnlinkPrometheusOutcome(o.GetError());
+    }
+    else
+    {
+        return UnlinkPrometheusOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::UnlinkPrometheusAsync(const UnlinkPrometheusRequest& request, const UnlinkPrometheusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnlinkPrometheus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::UnlinkPrometheusOutcomeCallable TcmClient::UnlinkPrometheusCallable(const UnlinkPrometheusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnlinkPrometheusOutcome()>>(
+        [this, request]()
+        {
+            return this->UnlinkPrometheus(request);
         }
     );
 

@@ -31,7 +31,8 @@ ModifyDomainAttributesRequest::ModifyDomainAttributesRequest() :
     m_http2HasBeenSet(false),
     m_defaultServerHasBeenSet(false),
     m_newDefaultServerDomainHasBeenSet(false),
-    m_newDomainsHasBeenSet(false)
+    m_newDomainsHasBeenSet(false),
+    m_multiCertInfoHasBeenSet(false)
 {
 }
 
@@ -118,6 +119,15 @@ string ModifyDomainAttributesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_multiCertInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MultiCertInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_multiCertInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -270,6 +280,22 @@ void ModifyDomainAttributesRequest::SetNewDomains(const vector<string>& _newDoma
 bool ModifyDomainAttributesRequest::NewDomainsHasBeenSet() const
 {
     return m_newDomainsHasBeenSet;
+}
+
+MultiCertInfo ModifyDomainAttributesRequest::GetMultiCertInfo() const
+{
+    return m_multiCertInfo;
+}
+
+void ModifyDomainAttributesRequest::SetMultiCertInfo(const MultiCertInfo& _multiCertInfo)
+{
+    m_multiCertInfo = _multiCertInfo;
+    m_multiCertInfoHasBeenSet = true;
+}
+
+bool ModifyDomainAttributesRequest::MultiCertInfoHasBeenSet() const
+{
+    return m_multiCertInfoHasBeenSet;
 }
 
 

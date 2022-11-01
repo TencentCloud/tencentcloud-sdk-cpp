@@ -24,6 +24,7 @@ LogsetInfo::LogsetInfo() :
     m_logsetIdHasBeenSet(false),
     m_logsetNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
+    m_assumerNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_topicCountHasBeenSet(false),
     m_roleNameHasBeenSet(false)
@@ -63,6 +64,16 @@ CoreInternalOutcome LogsetInfo::Deserialize(const rapidjson::Value &value)
         }
         m_createTime = string(value["CreateTime"].GetString());
         m_createTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssumerName") && !value["AssumerName"].IsNull())
+    {
+        if (!value["AssumerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogsetInfo.AssumerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assumerName = string(value["AssumerName"].GetString());
+        m_assumerNameHasBeenSet = true;
     }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
@@ -134,6 +145,14 @@ void LogsetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_assumerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssumerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assumerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -216,6 +235,22 @@ void LogsetInfo::SetCreateTime(const string& _createTime)
 bool LogsetInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string LogsetInfo::GetAssumerName() const
+{
+    return m_assumerName;
+}
+
+void LogsetInfo::SetAssumerName(const string& _assumerName)
+{
+    m_assumerName = _assumerName;
+    m_assumerNameHasBeenSet = true;
+}
+
+bool LogsetInfo::AssumerNameHasBeenSet() const
+{
+    return m_assumerNameHasBeenSet;
 }
 
 vector<Tag> LogsetInfo::GetTags() const

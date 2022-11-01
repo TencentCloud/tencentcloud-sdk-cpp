@@ -23,8 +23,10 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/CustomPromConfig.h
   include/tencentcloud/tcm/v20210413/model/Service.h
   include/tencentcloud/tcm/v20210413/model/MeshConfig.h
+  include/tencentcloud/tcm/v20210413/model/UnlinkPrometheusResponse.h
   include/tencentcloud/tcm/v20210413/model/LoadBalancerStatus.h
   include/tencentcloud/tcm/v20210413/model/DescribeMeshResponse.h
+  include/tencentcloud/tcm/v20210413/model/PodsMetricSource.h
   include/tencentcloud/tcm/v20210413/model/AutoInjectionNamespaceState.h
   include/tencentcloud/tcm/v20210413/model/UnlinkClusterResponse.h
   include/tencentcloud/tcm/v20210413/model/LinkClusterListResponse.h
@@ -34,18 +36,20 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/CreateMeshResponse.h
   include/tencentcloud/tcm/v20210413/model/LinkClusterListRequest.h
   include/tencentcloud/tcm/v20210413/model/ClusterConfig.h
+  include/tencentcloud/tcm/v20210413/model/UnlinkPrometheusRequest.h
   include/tencentcloud/tcm/v20210413/model/MetricSpec.h
   include/tencentcloud/tcm/v20210413/model/WorkloadConfig.h
   include/tencentcloud/tcm/v20210413/model/EgressGateway.h
   include/tencentcloud/tcm/v20210413/model/IstioConfig.h
   include/tencentcloud/tcm/v20210413/model/Mesh.h
+  include/tencentcloud/tcm/v20210413/model/LinkPrometheusRequest.h
   include/tencentcloud/tcm/v20210413/model/GrafanaInfo.h
   include/tencentcloud/tcm/v20210413/model/DeleteMeshResponse.h
   include/tencentcloud/tcm/v20210413/model/MeshStatus.h
   include/tencentcloud/tcm/v20210413/model/IstiodConfig.h
   include/tencentcloud/tcm/v20210413/model/InjectConfig.h
   include/tencentcloud/tcm/v20210413/model/DeleteMeshRequest.h
-  include/tencentcloud/tcm/v20210413/model/PodsMetricSource.h
+  include/tencentcloud/tcm/v20210413/model/LinkPrometheusResponse.h
   include/tencentcloud/tcm/v20210413/model/Resource.h
   include/tencentcloud/tcm/v20210413/model/DeployConfig.h
   include/tencentcloud/tcm/v20210413/model/DescribeMeshRequest.h
@@ -84,8 +88,10 @@ set(tcm_src
   src/v20210413/model/CustomPromConfig.cpp
   src/v20210413/model/Service.cpp
   src/v20210413/model/MeshConfig.cpp
+  src/v20210413/model/UnlinkPrometheusResponse.cpp
   src/v20210413/model/LoadBalancerStatus.cpp
   src/v20210413/model/DescribeMeshResponse.cpp
+  src/v20210413/model/PodsMetricSource.cpp
   src/v20210413/model/AutoInjectionNamespaceState.cpp
   src/v20210413/model/UnlinkClusterResponse.cpp
   src/v20210413/model/LinkClusterListResponse.cpp
@@ -95,18 +101,20 @@ set(tcm_src
   src/v20210413/model/CreateMeshResponse.cpp
   src/v20210413/model/LinkClusterListRequest.cpp
   src/v20210413/model/ClusterConfig.cpp
+  src/v20210413/model/UnlinkPrometheusRequest.cpp
   src/v20210413/model/MetricSpec.cpp
   src/v20210413/model/WorkloadConfig.cpp
   src/v20210413/model/EgressGateway.cpp
   src/v20210413/model/IstioConfig.cpp
   src/v20210413/model/Mesh.cpp
+  src/v20210413/model/LinkPrometheusRequest.cpp
   src/v20210413/model/GrafanaInfo.cpp
   src/v20210413/model/DeleteMeshResponse.cpp
   src/v20210413/model/MeshStatus.cpp
   src/v20210413/model/IstiodConfig.cpp
   src/v20210413/model/InjectConfig.cpp
   src/v20210413/model/DeleteMeshRequest.cpp
-  src/v20210413/model/PodsMetricSource.cpp
+  src/v20210413/model/LinkPrometheusResponse.cpp
   src/v20210413/model/Resource.cpp
   src/v20210413/model/DeployConfig.cpp
   src/v20210413/model/DescribeMeshRequest.cpp

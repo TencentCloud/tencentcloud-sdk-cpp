@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/RaspInfo.h>
 
 
 namespace TencentCloud
@@ -790,6 +791,28 @@ namespace TencentCloud
                      */
                     bool JNDIUrlHasBeenSet() const;
 
+                    /**
+                     * 获取rasp detail
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RaspDetail rasp detail
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RaspInfo> GetRaspDetail() const;
+
+                    /**
+                     * 设置rasp detail
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RaspDetail rasp detail
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRaspDetail(const std::vector<RaspInfo>& _raspDetail);
+
+                    /**
+                     * 判断参数 RaspDetail 是否已赋值
+                     * @return RaspDetail 是否已赋值
+                     */
+                    bool RaspDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1028,6 +1051,13 @@ namespace TencentCloud
                      */
                     std::string m_jNDIUrl;
                     bool m_jNDIUrlHasBeenSet;
+
+                    /**
+                     * rasp detail
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RaspInfo> m_raspDetail;
+                    bool m_raspDetailHasBeenSet;
 
                 };
             }

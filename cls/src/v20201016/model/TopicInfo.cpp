@@ -26,13 +26,16 @@ TopicInfo::TopicInfo() :
     m_topicNameHasBeenSet(false),
     m_partitionCountHasBeenSet(false),
     m_indexHasBeenSet(false),
+    m_assumerNameHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_autoSplitHasBeenSet(false),
     m_maxSplitPartitionsHasBeenSet(false),
     m_storageTypeHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_subAssumerNameHasBeenSet(false),
+    m_describesHasBeenSet(false)
 {
 }
 
@@ -89,6 +92,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         }
         m_index = value["Index"].GetBool();
         m_indexHasBeenSet = true;
+    }
+
+    if (value.HasMember("AssumerName") && !value["AssumerName"].IsNull())
+    {
+        if (!value["AssumerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.AssumerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_assumerName = string(value["AssumerName"].GetString());
+        m_assumerNameHasBeenSet = true;
     }
 
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
@@ -171,6 +184,26 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_periodHasBeenSet = true;
     }
 
+    if (value.HasMember("SubAssumerName") && !value["SubAssumerName"].IsNull())
+    {
+        if (!value["SubAssumerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.SubAssumerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subAssumerName = string(value["SubAssumerName"].GetString());
+        m_subAssumerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Describes") && !value["Describes"].IsNull())
+    {
+        if (!value["Describes"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.Describes` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_describes = string(value["Describes"].GetString());
+        m_describesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -216,6 +249,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Index";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_index, allocator);
+    }
+
+    if (m_assumerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AssumerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_assumerName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -279,6 +320,22 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_subAssumerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAssumerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subAssumerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_describesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Describes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_describes.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -362,6 +419,22 @@ void TopicInfo::SetIndex(const bool& _index)
 bool TopicInfo::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+string TopicInfo::GetAssumerName() const
+{
+    return m_assumerName;
+}
+
+void TopicInfo::SetAssumerName(const string& _assumerName)
+{
+    m_assumerName = _assumerName;
+    m_assumerNameHasBeenSet = true;
+}
+
+bool TopicInfo::AssumerNameHasBeenSet() const
+{
+    return m_assumerNameHasBeenSet;
 }
 
 string TopicInfo::GetCreateTime() const
@@ -474,5 +547,37 @@ void TopicInfo::SetPeriod(const int64_t& _period)
 bool TopicInfo::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+string TopicInfo::GetSubAssumerName() const
+{
+    return m_subAssumerName;
+}
+
+void TopicInfo::SetSubAssumerName(const string& _subAssumerName)
+{
+    m_subAssumerName = _subAssumerName;
+    m_subAssumerNameHasBeenSet = true;
+}
+
+bool TopicInfo::SubAssumerNameHasBeenSet() const
+{
+    return m_subAssumerNameHasBeenSet;
+}
+
+string TopicInfo::GetDescribes() const
+{
+    return m_describes;
+}
+
+void TopicInfo::SetDescribes(const string& _describes)
+{
+    m_describes = _describes;
+    m_describesHasBeenSet = true;
+}
+
+bool TopicInfo::DescribesHasBeenSet() const
+{
+    return m_describesHasBeenSet;
 }
 
