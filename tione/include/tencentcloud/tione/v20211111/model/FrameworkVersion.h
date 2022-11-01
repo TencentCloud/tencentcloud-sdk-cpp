@@ -82,6 +82,24 @@ namespace TencentCloud
                      */
                     bool TrainingModesHasBeenSet() const;
 
+                    /**
+                     * 获取框架运行环境
+                     * @return Environment 框架运行环境
+                     */
+                    std::string GetEnvironment() const;
+
+                    /**
+                     * 设置框架运行环境
+                     * @param Environment 框架运行环境
+                     */
+                    void SetEnvironment(const std::string& _environment);
+
+                    /**
+                     * 判断参数 Environment 是否已赋值
+                     * @return Environment 是否已赋值
+                     */
+                    bool EnvironmentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +113,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_trainingModes;
                     bool m_trainingModesHasBeenSet;
+
+                    /**
+                     * 框架运行环境
+                     */
+                    std::string m_environment;
+                    bool m_environmentHasBeenSet;
 
                 };
             }

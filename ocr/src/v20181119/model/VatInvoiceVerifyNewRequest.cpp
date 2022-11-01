@@ -28,7 +28,10 @@ VatInvoiceVerifyNewRequest::VatInvoiceVerifyNewRequest() :
     m_invoiceCodeHasBeenSet(false),
     m_invoiceKindHasBeenSet(false),
     m_checkCodeHasBeenSet(false),
-    m_amountHasBeenSet(false)
+    m_amountHasBeenSet(false),
+    m_regionCodeHasBeenSet(false),
+    m_sellerTaxCodeHasBeenSet(false),
+    m_enableCommonElectronicHasBeenSet(false)
 {
 }
 
@@ -85,6 +88,30 @@ string VatInvoiceVerifyNewRequest::ToJsonString() const
         string key = "Amount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_amount.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sellerTaxCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SellerTaxCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sellerTaxCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableCommonElectronicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCommonElectronic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCommonElectronic, allocator);
     }
 
 
@@ -189,6 +216,54 @@ void VatInvoiceVerifyNewRequest::SetAmount(const string& _amount)
 bool VatInvoiceVerifyNewRequest::AmountHasBeenSet() const
 {
     return m_amountHasBeenSet;
+}
+
+string VatInvoiceVerifyNewRequest::GetRegionCode() const
+{
+    return m_regionCode;
+}
+
+void VatInvoiceVerifyNewRequest::SetRegionCode(const string& _regionCode)
+{
+    m_regionCode = _regionCode;
+    m_regionCodeHasBeenSet = true;
+}
+
+bool VatInvoiceVerifyNewRequest::RegionCodeHasBeenSet() const
+{
+    return m_regionCodeHasBeenSet;
+}
+
+string VatInvoiceVerifyNewRequest::GetSellerTaxCode() const
+{
+    return m_sellerTaxCode;
+}
+
+void VatInvoiceVerifyNewRequest::SetSellerTaxCode(const string& _sellerTaxCode)
+{
+    m_sellerTaxCode = _sellerTaxCode;
+    m_sellerTaxCodeHasBeenSet = true;
+}
+
+bool VatInvoiceVerifyNewRequest::SellerTaxCodeHasBeenSet() const
+{
+    return m_sellerTaxCodeHasBeenSet;
+}
+
+bool VatInvoiceVerifyNewRequest::GetEnableCommonElectronic() const
+{
+    return m_enableCommonElectronic;
+}
+
+void VatInvoiceVerifyNewRequest::SetEnableCommonElectronic(const bool& _enableCommonElectronic)
+{
+    m_enableCommonElectronic = _enableCommonElectronic;
+    m_enableCommonElectronicHasBeenSet = true;
+}
+
+bool VatInvoiceVerifyNewRequest::EnableCommonElectronicHasBeenSet() const
+{
+    return m_enableCommonElectronicHasBeenSet;
 }
 
 

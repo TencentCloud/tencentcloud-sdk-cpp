@@ -34,7 +34,8 @@ ApproverInfo::ApproverInfo() :
     m_preReadTimeHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_approverSourceHasBeenSet(false),
-    m_customApproverTagHasBeenSet(false)
+    m_customApproverTagHasBeenSet(false),
+    m_approverOptionHasBeenSet(false)
 {
 }
 
@@ -196,6 +197,23 @@ CoreInternalOutcome ApproverInfo::Deserialize(const rapidjson::Value &value)
         m_customApproverTagHasBeenSet = true;
     }
 
+    if (value.HasMember("ApproverOption") && !value["ApproverOption"].IsNull())
+    {
+        if (!value["ApproverOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApproverInfo.ApproverOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_approverOption.Deserialize(value["ApproverOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_approverOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -325,6 +343,15 @@ void ApproverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CustomApproverTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customApproverTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_approverOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_approverOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -552,5 +579,21 @@ void ApproverInfo::SetCustomApproverTag(const string& _customApproverTag)
 bool ApproverInfo::CustomApproverTagHasBeenSet() const
 {
     return m_customApproverTagHasBeenSet;
+}
+
+ApproverOption ApproverInfo::GetApproverOption() const
+{
+    return m_approverOption;
+}
+
+void ApproverInfo::SetApproverOption(const ApproverOption& _approverOption)
+{
+    m_approverOption = _approverOption;
+    m_approverOptionHasBeenSet = true;
+}
+
+bool ApproverInfo::ApproverOptionHasBeenSet() const
+{
+    return m_approverOptionHasBeenSet;
 }
 

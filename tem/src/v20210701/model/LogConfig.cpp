@@ -32,7 +32,8 @@ LogConfig::LogConfig() :
     m_createDateHasBeenSet(false),
     m_modifyDateHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_applicationNameHasBeenSet(false)
+    m_applicationNameHasBeenSet(false),
+    m_extractRuleHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,23 @@ CoreInternalOutcome LogConfig::Deserialize(const rapidjson::Value &value)
         m_applicationNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtractRule") && !value["ExtractRule"].IsNull())
+    {
+        if (!value["ExtractRule"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogConfig.ExtractRule` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_extractRule.Deserialize(value["ExtractRule"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_extractRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +280,15 @@ void LogConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ApplicationName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applicationName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extractRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractRule.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -457,5 +484,21 @@ void LogConfig::SetApplicationName(const string& _applicationName)
 bool LogConfig::ApplicationNameHasBeenSet() const
 {
     return m_applicationNameHasBeenSet;
+}
+
+LogConfigExtractRule LogConfig::GetExtractRule() const
+{
+    return m_extractRule;
+}
+
+void LogConfig::SetExtractRule(const LogConfigExtractRule& _extractRule)
+{
+    m_extractRule = _extractRule;
+    m_extractRuleHasBeenSet = true;
+}
+
+bool LogConfig::ExtractRuleHasBeenSet() const
+{
+    return m_extractRuleHasBeenSet;
 }
 

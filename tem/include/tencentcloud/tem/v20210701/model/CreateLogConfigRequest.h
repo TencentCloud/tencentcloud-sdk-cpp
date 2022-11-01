@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/LogConfigExtractRule.h>
 
 
 namespace TencentCloud
@@ -222,6 +223,24 @@ namespace TencentCloud
                      */
                     bool FilePatternHasBeenSet() const;
 
+                    /**
+                     * 获取导出规则
+                     * @return ExtractRule 导出规则
+                     */
+                    LogConfigExtractRule GetExtractRule() const;
+
+                    /**
+                     * 设置导出规则
+                     * @param ExtractRule 导出规则
+                     */
+                    void SetExtractRule(const LogConfigExtractRule& _extractRule);
+
+                    /**
+                     * 判断参数 ExtractRule 是否已赋值
+                     * @return ExtractRule 是否已赋值
+                     */
+                    bool ExtractRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +302,12 @@ namespace TencentCloud
                      */
                     std::string m_filePattern;
                     bool m_filePatternHasBeenSet;
+
+                    /**
+                     * 导出规则
+                     */
+                    LogConfigExtractRule m_extractRule;
+                    bool m_extractRuleHasBeenSet;
 
                 };
             }

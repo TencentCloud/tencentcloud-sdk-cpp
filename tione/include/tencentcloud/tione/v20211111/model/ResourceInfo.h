@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/GpuDetail.h>
 
 
 namespace TencentCloud
@@ -125,17 +126,17 @@ Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能�
                     bool GpuHasBeenSet() const;
 
                     /**
-                     * 获取Gpu卡型号 T4或者V100
+                     * 获取Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GpuType Gpu卡型号 T4或者V100
+                     * @return GpuType Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGpuType() const;
 
                     /**
-                     * 设置Gpu卡型号 T4或者V100
+                     * 设置Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GpuType Gpu卡型号 T4或者V100
+                     * @param GpuType Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGpuType(const std::string& _gpuType);
@@ -176,6 +177,28 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                      */
                     bool RealGpuHasBeenSet() const;
 
+                    /**
+                     * 获取创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RealGpuDetailSet 创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<GpuDetail> GetRealGpuDetailSet() const;
+
+                    /**
+                     * 设置创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RealGpuDetailSet 创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRealGpuDetailSet(const std::vector<GpuDetail>& _realGpuDetailSet);
+
+                    /**
+                     * 判断参数 RealGpuDetailSet 是否已赋值
+                     * @return RealGpuDetailSet 是否已赋值
+                     */
+                    bool RealGpuDetailSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -203,7 +226,7 @@ Gpu=100表示使用了“一张”gpu卡, 但此处的“一张”卡有可能�
                     bool m_gpuHasBeenSet;
 
                     /**
-                     * Gpu卡型号 T4或者V100
+                     * Gpu卡型号 T4或者V100。仅展示当前 GPU 卡型号，若存在多类型同时使用，则参考 RealGpuDetailSet 的值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_gpuType;
@@ -217,6 +240,13 @@ RealGpu=100表示实际使用了一张gpu卡, 对应实际的实例机型, 有�
                      */
                     uint64_t m_realGpu;
                     bool m_realGpuHasBeenSet;
+
+                    /**
+                     * 创建或更新时无需填写，仅展示需要关注。详细的GPU使用信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<GpuDetail> m_realGpuDetailSet;
+                    bool m_realGpuDetailSetHasBeenSet;
 
                 };
             }

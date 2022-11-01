@@ -25,7 +25,8 @@ ResourceInfo::ResourceInfo() :
     m_memoryHasBeenSet(false),
     m_gpuHasBeenSet(false),
     m_gpuTypeHasBeenSet(false),
-    m_realGpuHasBeenSet(false)
+    m_realGpuHasBeenSet(false),
+    m_realGpuDetailSetHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,26 @@ CoreInternalOutcome ResourceInfo::Deserialize(const rapidjson::Value &value)
         m_realGpuHasBeenSet = true;
     }
 
+    if (value.HasMember("RealGpuDetailSet") && !value["RealGpuDetailSet"].IsNull())
+    {
+        if (!value["RealGpuDetailSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceInfo.RealGpuDetailSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RealGpuDetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            GpuDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_realGpuDetailSet.push_back(item);
+        }
+        m_realGpuDetailSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +150,21 @@ void ResourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RealGpu";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realGpu, allocator);
+    }
+
+    if (m_realGpuDetailSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealGpuDetailSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_realGpuDetailSet.begin(); itr != m_realGpuDetailSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -212,5 +248,21 @@ void ResourceInfo::SetRealGpu(const uint64_t& _realGpu)
 bool ResourceInfo::RealGpuHasBeenSet() const
 {
     return m_realGpuHasBeenSet;
+}
+
+vector<GpuDetail> ResourceInfo::GetRealGpuDetailSet() const
+{
+    return m_realGpuDetailSet;
+}
+
+void ResourceInfo::SetRealGpuDetailSet(const vector<GpuDetail>& _realGpuDetailSet)
+{
+    m_realGpuDetailSet = _realGpuDetailSet;
+    m_realGpuDetailSetHasBeenSet = true;
+}
+
+bool ResourceInfo::RealGpuDetailSetHasBeenSet() const
+{
+    return m_realGpuDetailSetHasBeenSet;
 }
 

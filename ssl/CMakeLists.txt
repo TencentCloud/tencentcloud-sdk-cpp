@@ -26,6 +26,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DeleteCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsResponse.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasRequest.h
+  include/tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.h
   include/tencentcloud/ssl/v20191205/model/CommitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/DownloadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/ReplaceCertificateResponse.h
@@ -68,6 +69,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h
   include/tencentcloud/ssl/v20191205/model/DvAuthDetail.h
   include/tencentcloud/ssl/v20191205/model/ProjectInfo.h
+  include/tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeDeployedResourcesResponse.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateOperateLogsRequest.h
   include/tencentcloud/ssl/v20191205/model/CancelCertificateOrderResponse.h
@@ -103,6 +105,7 @@ set(ssl_src
   src/v20191205/model/DeleteCertificateRequest.cpp
   src/v20191205/model/DescribeCertificateOperateLogsResponse.cpp
   src/v20191205/model/ModifyCertificateAliasRequest.cpp
+  src/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.cpp
   src/v20191205/model/CommitCertificateInformationRequest.cpp
   src/v20191205/model/DownloadCertificateResponse.cpp
   src/v20191205/model/ReplaceCertificateResponse.cpp
@@ -145,6 +148,7 @@ set(ssl_src
   src/v20191205/model/DescribeManagerDetailRequest.cpp
   src/v20191205/model/DvAuthDetail.cpp
   src/v20191205/model/ProjectInfo.cpp
+  src/v20191205/model/ModifyCertificatesExpiringNotificationSwitchRequest.cpp
   src/v20191205/model/DescribeDeployedResourcesResponse.cpp
   src/v20191205/model/DescribeCertificateOperateLogsRequest.cpp
   src/v20191205/model/CancelCertificateOrderResponse.cpp

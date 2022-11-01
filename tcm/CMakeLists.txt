@@ -25,6 +25,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/MeshConfig.h
   include/tencentcloud/tcm/v20210413/model/UnlinkPrometheusResponse.h
   include/tencentcloud/tcm/v20210413/model/LoadBalancerStatus.h
+  include/tencentcloud/tcm/v20210413/model/ModifyTracingConfigResponse.h
   include/tencentcloud/tcm/v20210413/model/DescribeMeshResponse.h
   include/tencentcloud/tcm/v20210413/model/PodsMetricSource.h
   include/tencentcloud/tcm/v20210413/model/AutoInjectionNamespaceState.h
@@ -69,6 +70,7 @@ set(tcm_public_header_model
   include/tencentcloud/tcm/v20210413/model/EgressGatewayStatus.h
   include/tencentcloud/tcm/v20210413/model/ExtensiveClusters.h
   include/tencentcloud/tcm/v20210413/model/SelectedItems.h
+  include/tencentcloud/tcm/v20210413/model/ModifyTracingConfigRequest.h
   include/tencentcloud/tcm/v20210413/model/ModifyMeshRequest.h
   include/tencentcloud/tcm/v20210413/model/Cluster.h
   include/tencentcloud/tcm/v20210413/model/Tag.h
@@ -90,6 +92,7 @@ set(tcm_src
   src/v20210413/model/MeshConfig.cpp
   src/v20210413/model/UnlinkPrometheusResponse.cpp
   src/v20210413/model/LoadBalancerStatus.cpp
+  src/v20210413/model/ModifyTracingConfigResponse.cpp
   src/v20210413/model/DescribeMeshResponse.cpp
   src/v20210413/model/PodsMetricSource.cpp
   src/v20210413/model/AutoInjectionNamespaceState.cpp
@@ -134,6 +137,7 @@ set(tcm_src
   src/v20210413/model/EgressGatewayStatus.cpp
   src/v20210413/model/ExtensiveClusters.cpp
   src/v20210413/model/SelectedItems.cpp
+  src/v20210413/model/ModifyTracingConfigRequest.cpp
   src/v20210413/model/ModifyMeshRequest.cpp
   src/v20210413/model/Cluster.cpp
   src/v20210413/model/Tag.cpp

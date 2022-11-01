@@ -1148,7 +1148,7 @@ namespace TencentCloud
                 DescribeInstanceAllOutcomeCallable DescribeInstanceAllCallable(const Model::DescribeInstanceAllRequest& request);
 
                 /**
-                 *查询所有有实例命名空间列表
+                 *查询所有实例命名空间列表
                  * @param req DescribeInstanceAllNamespacesRequest
                  * @return DescribeInstanceAllNamespacesOutcome
                  */

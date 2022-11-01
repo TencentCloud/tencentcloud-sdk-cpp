@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool IdentityRoleIDHasBeenSet() const;
 
+                    /**
+                     * 获取主体关系ID
+                     * @return AuthRelationId 主体关系ID
+                     */
+                    int64_t GetAuthRelationId() const;
+
+                    /**
+                     * 设置主体关系ID
+                     * @param AuthRelationId 主体关系ID
+                     */
+                    void SetAuthRelationId(const int64_t& _authRelationId);
+
+                    /**
+                     * 判断参数 AuthRelationId 是否已赋值
+                     * @return AuthRelationId 是否已赋值
+                     */
+                    bool AuthRelationIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_identityRoleID;
                     bool m_identityRoleIDHasBeenSet;
+
+                    /**
+                     * 主体关系ID
+                     */
+                    int64_t m_authRelationId;
+                    bool m_authRelationIdHasBeenSet;
 
                 };
             }

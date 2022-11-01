@@ -126,6 +126,49 @@ TioneClient::CreateDatasetOutcomeCallable TioneClient::CreateDatasetCallable(con
     return task->get_future();
 }
 
+TioneClient::CreateModelServiceOutcome TioneClient::CreateModelService(const CreateModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateModelServiceResponse rsp = CreateModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateModelServiceOutcome(rsp);
+        else
+            return CreateModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::CreateModelServiceAsync(const CreateModelServiceRequest& request, const CreateModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateModelService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::CreateModelServiceOutcomeCallable TioneClient::CreateModelServiceCallable(const CreateModelServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateModelServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateModelService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::CreateTrainingModelOutcome TioneClient::CreateTrainingModel(const CreateTrainingModelRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateTrainingModel");
@@ -298,6 +341,92 @@ TioneClient::DeleteDatasetOutcomeCallable TioneClient::DeleteDatasetCallable(con
     return task->get_future();
 }
 
+TioneClient::DeleteModelServiceOutcome TioneClient::DeleteModelService(const DeleteModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteModelServiceResponse rsp = DeleteModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteModelServiceOutcome(rsp);
+        else
+            return DeleteModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteModelServiceAsync(const DeleteModelServiceRequest& request, const DeleteModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteModelService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DeleteModelServiceOutcomeCallable TioneClient::DeleteModelServiceCallable(const DeleteModelServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteModelServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteModelService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DeleteModelServiceGroupOutcome TioneClient::DeleteModelServiceGroup(const DeleteModelServiceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteModelServiceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteModelServiceGroupResponse rsp = DeleteModelServiceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteModelServiceGroupOutcome(rsp);
+        else
+            return DeleteModelServiceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteModelServiceGroupOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DeleteModelServiceGroupAsync(const DeleteModelServiceGroupRequest& request, const DeleteModelServiceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteModelServiceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DeleteModelServiceGroupOutcomeCallable TioneClient::DeleteModelServiceGroupCallable(const DeleteModelServiceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteModelServiceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteModelServiceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DeleteTrainingModelOutcome TioneClient::DeleteTrainingModel(const DeleteTrainingModelRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteTrainingModel");
@@ -420,6 +549,49 @@ TioneClient::DeleteTrainingTaskOutcomeCallable TioneClient::DeleteTrainingTaskCa
         [this, request]()
         {
             return this->DeleteTrainingTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeAPIConfigsOutcome TioneClient::DescribeAPIConfigs(const DescribeAPIConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAPIConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAPIConfigsResponse rsp = DescribeAPIConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAPIConfigsOutcome(rsp);
+        else
+            return DescribeAPIConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAPIConfigsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeAPIConfigsAsync(const DescribeAPIConfigsRequest& request, const DescribeAPIConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAPIConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeAPIConfigsOutcomeCallable TioneClient::DescribeAPIConfigsCallable(const DescribeAPIConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAPIConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAPIConfigs(request);
         }
     );
 
@@ -943,6 +1115,307 @@ TioneClient::DescribeLogsOutcomeCallable TioneClient::DescribeLogsCallable(const
     return task->get_future();
 }
 
+TioneClient::DescribeModelServiceOutcome TioneClient::DescribeModelService(const DescribeModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelServiceResponse rsp = DescribeModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelServiceOutcome(rsp);
+        else
+            return DescribeModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelServiceAsync(const DescribeModelServiceRequest& request, const DescribeModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelServiceOutcomeCallable TioneClient::DescribeModelServiceCallable(const DescribeModelServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeModelServiceCallInfoOutcome TioneClient::DescribeModelServiceCallInfo(const DescribeModelServiceCallInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelServiceCallInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelServiceCallInfoResponse rsp = DescribeModelServiceCallInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelServiceCallInfoOutcome(rsp);
+        else
+            return DescribeModelServiceCallInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelServiceCallInfoOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelServiceCallInfoAsync(const DescribeModelServiceCallInfoRequest& request, const DescribeModelServiceCallInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelServiceCallInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelServiceCallInfoOutcomeCallable TioneClient::DescribeModelServiceCallInfoCallable(const DescribeModelServiceCallInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelServiceCallInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelServiceCallInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeModelServiceGroupOutcome TioneClient::DescribeModelServiceGroup(const DescribeModelServiceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelServiceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelServiceGroupResponse rsp = DescribeModelServiceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelServiceGroupOutcome(rsp);
+        else
+            return DescribeModelServiceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelServiceGroupOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelServiceGroupAsync(const DescribeModelServiceGroupRequest& request, const DescribeModelServiceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelServiceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelServiceGroupOutcomeCallable TioneClient::DescribeModelServiceGroupCallable(const DescribeModelServiceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelServiceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelServiceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeModelServiceGroupsOutcome TioneClient::DescribeModelServiceGroups(const DescribeModelServiceGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelServiceGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelServiceGroupsResponse rsp = DescribeModelServiceGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelServiceGroupsOutcome(rsp);
+        else
+            return DescribeModelServiceGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelServiceGroupsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelServiceGroupsAsync(const DescribeModelServiceGroupsRequest& request, const DescribeModelServiceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelServiceGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelServiceGroupsOutcomeCallable TioneClient::DescribeModelServiceGroupsCallable(const DescribeModelServiceGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelServiceGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelServiceGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeModelServiceHistoryOutcome TioneClient::DescribeModelServiceHistory(const DescribeModelServiceHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelServiceHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelServiceHistoryResponse rsp = DescribeModelServiceHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelServiceHistoryOutcome(rsp);
+        else
+            return DescribeModelServiceHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelServiceHistoryOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelServiceHistoryAsync(const DescribeModelServiceHistoryRequest& request, const DescribeModelServiceHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelServiceHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelServiceHistoryOutcomeCallable TioneClient::DescribeModelServiceHistoryCallable(const DescribeModelServiceHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelServiceHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelServiceHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeModelServiceHotUpdatedOutcome TioneClient::DescribeModelServiceHotUpdated(const DescribeModelServiceHotUpdatedRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelServiceHotUpdated");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelServiceHotUpdatedResponse rsp = DescribeModelServiceHotUpdatedResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelServiceHotUpdatedOutcome(rsp);
+        else
+            return DescribeModelServiceHotUpdatedOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelServiceHotUpdatedOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelServiceHotUpdatedAsync(const DescribeModelServiceHotUpdatedRequest& request, const DescribeModelServiceHotUpdatedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelServiceHotUpdated(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelServiceHotUpdatedOutcomeCallable TioneClient::DescribeModelServiceHotUpdatedCallable(const DescribeModelServiceHotUpdatedRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelServiceHotUpdatedOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelServiceHotUpdated(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::DescribeModelServicesOutcome TioneClient::DescribeModelServices(const DescribeModelServicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeModelServices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeModelServicesResponse rsp = DescribeModelServicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeModelServicesOutcome(rsp);
+        else
+            return DescribeModelServicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeModelServicesOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::DescribeModelServicesAsync(const DescribeModelServicesRequest& request, const DescribeModelServicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeModelServices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::DescribeModelServicesOutcomeCallable TioneClient::DescribeModelServicesCallable(const DescribeModelServicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeModelServicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeModelServices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::DescribeTrainingFrameworksOutcome TioneClient::DescribeTrainingFrameworks(const DescribeTrainingFrameworksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrainingFrameworks");
@@ -1280,6 +1753,49 @@ TioneClient::DescribeTrainingTasksOutcomeCallable TioneClient::DescribeTrainingT
         [this, request]()
         {
             return this->DescribeTrainingTasks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TioneClient::ModifyServiceGroupWeightsOutcome TioneClient::ModifyServiceGroupWeights(const ModifyServiceGroupWeightsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyServiceGroupWeights");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyServiceGroupWeightsResponse rsp = ModifyServiceGroupWeightsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyServiceGroupWeightsOutcome(rsp);
+        else
+            return ModifyServiceGroupWeightsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyServiceGroupWeightsOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyServiceGroupWeightsAsync(const ModifyServiceGroupWeightsRequest& request, const ModifyServiceGroupWeightsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyServiceGroupWeights(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyServiceGroupWeightsOutcomeCallable TioneClient::ModifyServiceGroupWeightsCallable(const ModifyServiceGroupWeightsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyServiceGroupWeightsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyServiceGroupWeights(request);
         }
     );
 

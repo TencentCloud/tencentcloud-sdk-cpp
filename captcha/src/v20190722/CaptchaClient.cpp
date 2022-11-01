@@ -556,6 +556,49 @@ CaptchaClient::DescribeCaptchaUserAllAppIdOutcomeCallable CaptchaClient::Describ
     return task->get_future();
 }
 
+CaptchaClient::GetTicketStatisticsOutcome CaptchaClient::GetTicketStatistics(const GetTicketStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTicketStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTicketStatisticsResponse rsp = GetTicketStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTicketStatisticsOutcome(rsp);
+        else
+            return GetTicketStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTicketStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void CaptchaClient::GetTicketStatisticsAsync(const GetTicketStatisticsRequest& request, const GetTicketStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTicketStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CaptchaClient::GetTicketStatisticsOutcomeCallable CaptchaClient::GetTicketStatisticsCallable(const GetTicketStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTicketStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTicketStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CaptchaClient::GetTotalTicketStatisticsOutcome CaptchaClient::GetTotalTicketStatistics(const GetTotalTicketStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetTotalTicketStatistics");

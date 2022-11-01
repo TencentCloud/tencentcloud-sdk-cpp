@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tem/v20210701/model/LogConfigExtractRule.h>
 
 
 namespace TencentCloud
@@ -127,14 +128,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
-                     * @return LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
+                     * 获取日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；  fullregex_log 为单行正则； multiline_fullregex_log 为多行正则； json_log 为 json；
+                     * @return LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；  fullregex_log 为单行正则； multiline_fullregex_log 为多行正则； json_log 为 json；
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
-                     * @param LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
+                     * 设置日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；  fullregex_log 为单行正则； multiline_fullregex_log 为多行正则； json_log 为 json；
+                     * @param LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；  fullregex_log 为单行正则； multiline_fullregex_log 为多行正则； json_log 为 json；
                      */
                     void SetLogType(const std::string& _logType);
 
@@ -145,17 +146,17 @@ namespace TencentCloud
                     bool LogTypeHasBeenSet() const;
 
                     /**
-                     * 获取首行正则表达式，当LogType=multiline_log 时生效
+                     * 获取首行正则表达式，当 LogType 为多行全文、多行正则时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BeginningRegex 首行正则表达式，当LogType=multiline_log 时生效
+                     * @return BeginningRegex 首行正则表达式，当 LogType 为多行全文、多行正则时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBeginningRegex() const;
 
                     /**
-                     * 设置首行正则表达式，当LogType=multiline_log 时生效
+                     * 设置首行正则表达式，当 LogType 为多行全文、多行正则时生效
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BeginningRegex 首行正则表达式，当LogType=multiline_log 时生效
+                     * @param BeginningRegex 首行正则表达式，当 LogType 为多行全文、多行正则时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBeginningRegex(const std::string& _beginningRegex);
@@ -298,6 +299,28 @@ namespace TencentCloud
                      */
                     bool ApplicationNameHasBeenSet() const;
 
+                    /**
+                     * 获取导出规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtractRule 导出规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LogConfigExtractRule GetExtractRule() const;
+
+                    /**
+                     * 设置导出规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtractRule 导出规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtractRule(const LogConfigExtractRule& _extractRule);
+
+                    /**
+                     * 判断参数 ExtractRule 是否已赋值
+                     * @return ExtractRule 是否已赋值
+                     */
+                    bool ExtractRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -327,13 +350,13 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
+                     * 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；  fullregex_log 为单行正则； multiline_fullregex_log 为多行正则； json_log 为 json；
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;
 
                     /**
-                     * 首行正则表达式，当LogType=multiline_log 时生效
+                     * 首行正则表达式，当 LogType 为多行全文、多行正则时生效
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_beginningRegex;
@@ -380,6 +403,13 @@ namespace TencentCloud
                      */
                     std::string m_applicationName;
                     bool m_applicationNameHasBeenSet;
+
+                    /**
+                     * 导出规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LogConfigExtractRule m_extractRule;
+                    bool m_extractRuleHasBeenSet;
 
                 };
             }

@@ -289,28 +289,6 @@ namespace TencentCloud
                     bool StreamIdsHasBeenSet() const;
 
                     /**
-                     * 获取直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     * @return Vids 直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> GetVids() const;
-
-                    /**
-                     * 设置直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     * @param Vids 直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    void SetVids(const std::vector<std::string>& _vids);
-
-                    /**
-                     * 判断参数 Vids 是否已赋值
-                     * @return Vids 是否已赋值
-                     */
-                    bool VidsHasBeenSet() const;
-
-                    /**
                      * 获取匹配创建时间在此时间段内的文件。
 <li>包含所指定的头尾时间点。</li>
                      * @return CreateTime 匹配创建时间在此时间段内的文件。
@@ -657,28 +635,6 @@ namespace TencentCloud
                     bool StreamIdHasBeenSet() const;
 
                     /**
-                     * 获取（不推荐：应使用 Vids 替代）
-直播录制文件的唯一标识。
-                     * @return Vid （不推荐：应使用 Vids 替代）
-直播录制文件的唯一标识。
-                     */
-                    std::string GetVid() const;
-
-                    /**
-                     * 设置（不推荐：应使用 Vids 替代）
-直播录制文件的唯一标识。
-                     * @param Vid （不推荐：应使用 Vids 替代）
-直播录制文件的唯一标识。
-                     */
-                    void SetVid(const std::string& _vid);
-
-                    /**
-                     * 判断参数 Vid 是否已赋值
-                     * @return Vid 是否已赋值
-                     */
-                    bool VidHasBeenSet() const;
-
-                    /**
                      * 获取（不推荐：应使用 CreateTime 替代）
 创建时间的开始时间。
 <li>大于等于开始时间。</li>
@@ -745,6 +701,42 @@ namespace TencentCloud
                      * @return EndTime 是否已赋值
                      */
                     bool EndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取该字段已无效。
+                     * @return Vids 该字段已无效。
+                     */
+                    std::vector<std::string> GetVids() const;
+
+                    /**
+                     * 设置该字段已无效。
+                     * @param Vids 该字段已无效。
+                     */
+                    void SetVids(const std::vector<std::string>& _vids);
+
+                    /**
+                     * 判断参数 Vids 是否已赋值
+                     * @return Vids 是否已赋值
+                     */
+                    bool VidsHasBeenSet() const;
+
+                    /**
+                     * 获取该字段已无效。
+                     * @return Vid 该字段已无效。
+                     */
+                    std::string GetVid() const;
+
+                    /**
+                     * 设置该字段已无效。
+                     * @param Vid 该字段已无效。
+                     */
+                    void SetVid(const std::string& _vid);
+
+                    /**
+                     * 判断参数 Vid 是否已赋值
+                     * @return Vid 是否已赋值
+                     */
+                    bool VidHasBeenSet() const;
 
                 private:
 
@@ -823,13 +815,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_streamIds;
                     bool m_streamIdsHasBeenSet;
-
-                    /**
-                     * 直播录制文件的唯一标识。匹配集合中的任意元素。
-<li>数组长度限制：10。</li>
-                     */
-                    std::vector<std::string> m_vids;
-                    bool m_vidsHasBeenSet;
 
                     /**
                      * 匹配创建时间在此时间段内的文件。
@@ -938,13 +923,6 @@ namespace TencentCloud
                     bool m_streamIdHasBeenSet;
 
                     /**
-                     * （不推荐：应使用 Vids 替代）
-直播录制文件的唯一标识。
-                     */
-                    std::string m_vid;
-                    bool m_vidHasBeenSet;
-
-                    /**
                      * （不推荐：应使用 CreateTime 替代）
 创建时间的开始时间。
 <li>大于等于开始时间。</li>
@@ -963,6 +941,18 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 该字段已无效。
+                     */
+                    std::vector<std::string> m_vids;
+                    bool m_vidsHasBeenSet;
+
+                    /**
+                     * 该字段已无效。
+                     */
+                    std::string m_vid;
+                    bool m_vidHasBeenSet;
 
                 };
             }

@@ -42,7 +42,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取每页个数
+                     * @return Limit 每页个数
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置每页个数
+                     * @param Limit 每页个数
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取起始偏移位置
+                     * @return Offset 起始偏移位置
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置起始偏移位置
+                     * @param Offset 起始偏移位置
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 每页个数
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 起始偏移位置
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

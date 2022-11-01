@@ -83,9 +83,11 @@ namespace TencentCloud
                      * 获取企业内部审核结果
 PASS: 通过
 REJECT: 拒绝
+SIGN_REJECT:拒签(流程结束)
                      * @return ReviewType 企业内部审核结果
 PASS: 通过
 REJECT: 拒绝
+SIGN_REJECT:拒签(流程结束)
                      */
                     std::string GetReviewType() const;
 
@@ -93,9 +95,11 @@ REJECT: 拒绝
                      * 设置企业内部审核结果
 PASS: 通过
 REJECT: 拒绝
+SIGN_REJECT:拒签(流程结束)
                      * @param ReviewType 企业内部审核结果
 PASS: 通过
 REJECT: 拒绝
+SIGN_REJECT:拒签(流程结束)
                      */
                     void SetReviewType(const std::string& _reviewType);
 
@@ -145,6 +149,7 @@ REJECT: 拒绝
                      * 企业内部审核结果
 PASS: 通过
 REJECT: 拒绝
+SIGN_REJECT:拒签(流程结束)
                      */
                     std::string m_reviewType;
                     bool m_reviewTypeHasBeenSet;

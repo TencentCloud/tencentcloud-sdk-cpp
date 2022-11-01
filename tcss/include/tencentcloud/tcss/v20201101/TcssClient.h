@@ -107,6 +107,8 @@
 #include <tencentcloud/tcss/v20201101/model/CreateProcessEventsExportJobResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateRefreshTaskRequest.h>
 #include <tencentcloud/tcss/v20201101/model/CreateRefreshTaskResponse.h>
+#include <tencentcloud/tcss/v20201101/model/CreateRiskDnsEventExportJobRequest.h>
+#include <tencentcloud/tcss/v20201101/model/CreateRiskDnsEventExportJobResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateSearchTemplateRequest.h>
 #include <tencentcloud/tcss/v20201101/model/CreateSearchTemplateResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateSystemVulExportJobRequest.h>
@@ -787,6 +789,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRefreshTaskResponse> CreateRefreshTaskOutcome;
                 typedef std::future<CreateRefreshTaskOutcome> CreateRefreshTaskOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::CreateRefreshTaskRequest&, CreateRefreshTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRefreshTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRiskDnsEventExportJobResponse> CreateRiskDnsEventExportJobOutcome;
+                typedef std::future<CreateRiskDnsEventExportJobOutcome> CreateRiskDnsEventExportJobOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::CreateRiskDnsEventExportJobRequest&, CreateRiskDnsEventExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRiskDnsEventExportJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSearchTemplateResponse> CreateSearchTemplateOutcome;
                 typedef std::future<CreateSearchTemplateOutcome> CreateSearchTemplateOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::CreateSearchTemplateRequest&, CreateSearchTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSearchTemplateAsyncHandler;
@@ -1979,6 +1984,15 @@ namespace TencentCloud
                 CreateRefreshTaskOutcome CreateRefreshTask(const Model::CreateRefreshTaskRequest &request);
                 void CreateRefreshTaskAsync(const Model::CreateRefreshTaskRequest& request, const CreateRefreshTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRefreshTaskOutcomeCallable CreateRefreshTaskCallable(const Model::CreateRefreshTaskRequest& request);
+
+                /**
+                 *创建恶意请求事件导出任务
+                 * @param req CreateRiskDnsEventExportJobRequest
+                 * @return CreateRiskDnsEventExportJobOutcome
+                 */
+                CreateRiskDnsEventExportJobOutcome CreateRiskDnsEventExportJob(const Model::CreateRiskDnsEventExportJobRequest &request);
+                void CreateRiskDnsEventExportJobAsync(const Model::CreateRiskDnsEventExportJobRequest& request, const CreateRiskDnsEventExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRiskDnsEventExportJobOutcomeCallable CreateRiskDnsEventExportJobCallable(const Model::CreateRiskDnsEventExportJobRequest& request);
 
                 /**
                  *添加检索模板

@@ -37,6 +37,8 @@
 #include <tencentcloud/tcm/v20210413/model/LinkPrometheusResponse.h>
 #include <tencentcloud/tcm/v20210413/model/ModifyMeshRequest.h>
 #include <tencentcloud/tcm/v20210413/model/ModifyMeshResponse.h>
+#include <tencentcloud/tcm/v20210413/model/ModifyTracingConfigRequest.h>
+#include <tencentcloud/tcm/v20210413/model/ModifyTracingConfigResponse.h>
 #include <tencentcloud/tcm/v20210413/model/UnlinkClusterRequest.h>
 #include <tencentcloud/tcm/v20210413/model/UnlinkClusterResponse.h>
 #include <tencentcloud/tcm/v20210413/model/UnlinkPrometheusRequest.h>
@@ -76,6 +78,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMeshResponse> ModifyMeshOutcome;
                 typedef std::future<ModifyMeshOutcome> ModifyMeshOutcomeCallable;
                 typedef std::function<void(const TcmClient*, const Model::ModifyMeshRequest&, ModifyMeshOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMeshAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTracingConfigResponse> ModifyTracingConfigOutcome;
+                typedef std::future<ModifyTracingConfigOutcome> ModifyTracingConfigOutcomeCallable;
+                typedef std::function<void(const TcmClient*, const Model::ModifyTracingConfigRequest&, ModifyTracingConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTracingConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnlinkClusterResponse> UnlinkClusterOutcome;
                 typedef std::future<UnlinkClusterOutcome> UnlinkClusterOutcomeCallable;
                 typedef std::function<void(const TcmClient*, const Model::UnlinkClusterRequest&, UnlinkClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnlinkClusterAsyncHandler;
@@ -147,6 +152,15 @@ namespace TencentCloud
                 ModifyMeshOutcome ModifyMesh(const Model::ModifyMeshRequest &request);
                 void ModifyMeshAsync(const Model::ModifyMeshRequest& request, const ModifyMeshAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMeshOutcomeCallable ModifyMeshCallable(const Model::ModifyMeshRequest& request);
+
+                /**
+                 *修改 Tracing 配置
+                 * @param req ModifyTracingConfigRequest
+                 * @return ModifyTracingConfigOutcome
+                 */
+                ModifyTracingConfigOutcome ModifyTracingConfig(const Model::ModifyTracingConfigRequest &request);
+                void ModifyTracingConfigAsync(const Model::ModifyTracingConfigRequest& request, const ModifyTracingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTracingConfigOutcomeCallable ModifyTracingConfigCallable(const Model::ModifyTracingConfigRequest& request);
 
                 /**
                  *解关联集群

@@ -28,12 +28,12 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_regionHasBeenSet(false),
     m_frameworkNameHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
-    m_trainingModeHasBeenSet(false),
+    m_frameworkEnvironmentHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_resourceConfigInfosHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_imageInfoHasBeenSet(false),
+    m_trainingModeHasBeenSet(false),
     m_codePackagePathHasBeenSet(false),
     m_startCmdInfoHasBeenSet(false),
     m_dataSourceHasBeenSet(false),
@@ -44,7 +44,7 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_logConfigHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
+    m_imageInfoHasBeenSet(false),
     m_runtimeInSecondsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
@@ -57,7 +57,8 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_endTimeHasBeenSet(false),
     m_billingInfoHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -136,14 +137,14 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_frameworkVersionHasBeenSet = true;
     }
 
-    if (value.HasMember("TrainingMode") && !value["TrainingMode"].IsNull())
+    if (value.HasMember("FrameworkEnvironment") && !value["FrameworkEnvironment"].IsNull())
     {
-        if (!value["TrainingMode"].IsString())
+        if (!value["FrameworkEnvironment"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.TrainingMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.FrameworkEnvironment` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_trainingMode = string(value["TrainingMode"].GetString());
-        m_trainingModeHasBeenSet = true;
+        m_frameworkEnvironment = string(value["FrameworkEnvironment"].GetString());
+        m_frameworkEnvironmentHasBeenSet = true;
     }
 
     if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
@@ -206,21 +207,14 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_tagsHasBeenSet = true;
     }
 
-    if (value.HasMember("ImageInfo") && !value["ImageInfo"].IsNull())
+    if (value.HasMember("TrainingMode") && !value["TrainingMode"].IsNull())
     {
-        if (!value["ImageInfo"].IsObject())
+        if (!value["TrainingMode"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.ImageInfo` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.TrainingMode` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_imageInfo.Deserialize(value["ImageInfo"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_imageInfoHasBeenSet = true;
+        m_trainingMode = string(value["TrainingMode"].GetString());
+        m_trainingModeHasBeenSet = true;
     }
 
     if (value.HasMember("CodePackagePath") && !value["CodePackagePath"].IsNull())
@@ -361,14 +355,21 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_subnetIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Status") && !value["Status"].IsNull())
+    if (value.HasMember("ImageInfo") && !value["ImageInfo"].IsNull())
     {
-        if (!value["Status"].IsString())
+        if (!value["ImageInfo"].IsObject())
         {
-            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.ImageInfo` is not object type").SetRequestId(requestId));
         }
-        m_status = string(value["Status"].GetString());
-        m_statusHasBeenSet = true;
+
+        CoreInternalOutcome outcome = m_imageInfo.Deserialize(value["ImageInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageInfoHasBeenSet = true;
     }
 
     if (value.HasMember("RuntimeInSeconds") && !value["RuntimeInSeconds"].IsNull())
@@ -501,6 +502,16 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -564,12 +575,12 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_trainingModeHasBeenSet)
+    if (m_frameworkEnvironmentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TrainingMode";
+        string key = "FrameworkEnvironment";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameworkEnvironment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chargeTypeHasBeenSet)
@@ -618,13 +629,12 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         }
     }
 
-    if (m_imageInfoHasBeenSet)
+    if (m_trainingModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageInfo";
+        string key = "TrainingMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_imageInfo.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_codePackagePathHasBeenSet)
@@ -718,12 +728,13 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_statusHasBeenSet)
+    if (m_imageInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
+        string key = "ImageInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_runtimeInSecondsHasBeenSet)
@@ -828,6 +839,14 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -945,20 +964,20 @@ bool TrainingTaskDetail::FrameworkVersionHasBeenSet() const
     return m_frameworkVersionHasBeenSet;
 }
 
-string TrainingTaskDetail::GetTrainingMode() const
+string TrainingTaskDetail::GetFrameworkEnvironment() const
 {
-    return m_trainingMode;
+    return m_frameworkEnvironment;
 }
 
-void TrainingTaskDetail::SetTrainingMode(const string& _trainingMode)
+void TrainingTaskDetail::SetFrameworkEnvironment(const string& _frameworkEnvironment)
 {
-    m_trainingMode = _trainingMode;
-    m_trainingModeHasBeenSet = true;
+    m_frameworkEnvironment = _frameworkEnvironment;
+    m_frameworkEnvironmentHasBeenSet = true;
 }
 
-bool TrainingTaskDetail::TrainingModeHasBeenSet() const
+bool TrainingTaskDetail::FrameworkEnvironmentHasBeenSet() const
 {
-    return m_trainingModeHasBeenSet;
+    return m_frameworkEnvironmentHasBeenSet;
 }
 
 string TrainingTaskDetail::GetChargeType() const
@@ -1025,20 +1044,20 @@ bool TrainingTaskDetail::TagsHasBeenSet() const
     return m_tagsHasBeenSet;
 }
 
-ImageInfo TrainingTaskDetail::GetImageInfo() const
+string TrainingTaskDetail::GetTrainingMode() const
 {
-    return m_imageInfo;
+    return m_trainingMode;
 }
 
-void TrainingTaskDetail::SetImageInfo(const ImageInfo& _imageInfo)
+void TrainingTaskDetail::SetTrainingMode(const string& _trainingMode)
 {
-    m_imageInfo = _imageInfo;
-    m_imageInfoHasBeenSet = true;
+    m_trainingMode = _trainingMode;
+    m_trainingModeHasBeenSet = true;
 }
 
-bool TrainingTaskDetail::ImageInfoHasBeenSet() const
+bool TrainingTaskDetail::TrainingModeHasBeenSet() const
 {
-    return m_imageInfoHasBeenSet;
+    return m_trainingModeHasBeenSet;
 }
 
 CosPathInfo TrainingTaskDetail::GetCodePackagePath() const
@@ -1201,20 +1220,20 @@ bool TrainingTaskDetail::SubnetIdHasBeenSet() const
     return m_subnetIdHasBeenSet;
 }
 
-string TrainingTaskDetail::GetStatus() const
+ImageInfo TrainingTaskDetail::GetImageInfo() const
 {
-    return m_status;
+    return m_imageInfo;
 }
 
-void TrainingTaskDetail::SetStatus(const string& _status)
+void TrainingTaskDetail::SetImageInfo(const ImageInfo& _imageInfo)
 {
-    m_status = _status;
-    m_statusHasBeenSet = true;
+    m_imageInfo = _imageInfo;
+    m_imageInfoHasBeenSet = true;
 }
 
-bool TrainingTaskDetail::StatusHasBeenSet() const
+bool TrainingTaskDetail::ImageInfoHasBeenSet() const
 {
-    return m_statusHasBeenSet;
+    return m_imageInfoHasBeenSet;
 }
 
 uint64_t TrainingTaskDetail::GetRuntimeInSeconds() const
@@ -1423,5 +1442,21 @@ void TrainingTaskDetail::SetMessage(const string& _message)
 bool TrainingTaskDetail::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string TrainingTaskDetail::GetStatus() const
+{
+    return m_status;
+}
+
+void TrainingTaskDetail::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

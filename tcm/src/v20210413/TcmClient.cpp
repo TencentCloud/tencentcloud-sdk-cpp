@@ -341,6 +341,49 @@ TcmClient::ModifyMeshOutcomeCallable TcmClient::ModifyMeshCallable(const ModifyM
     return task->get_future();
 }
 
+TcmClient::ModifyTracingConfigOutcome TcmClient::ModifyTracingConfig(const ModifyTracingConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTracingConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTracingConfigResponse rsp = ModifyTracingConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTracingConfigOutcome(rsp);
+        else
+            return ModifyTracingConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTracingConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::ModifyTracingConfigAsync(const ModifyTracingConfigRequest& request, const ModifyTracingConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTracingConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::ModifyTracingConfigOutcomeCallable TcmClient::ModifyTracingConfigCallable(const ModifyTracingConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTracingConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTracingConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcmClient::UnlinkClusterOutcome TcmClient::UnlinkCluster(const UnlinkClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "UnlinkCluster");

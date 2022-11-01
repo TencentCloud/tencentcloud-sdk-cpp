@@ -22,7 +22,8 @@ using namespace std;
 
 FrameworkVersion::FrameworkVersion() :
     m_versionHasBeenSet(false),
-    m_trainingModesHasBeenSet(false)
+    m_trainingModesHasBeenSet(false),
+    m_environmentHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,16 @@ CoreInternalOutcome FrameworkVersion::Deserialize(const rapidjson::Value &value)
         m_trainingModesHasBeenSet = true;
     }
 
+    if (value.HasMember("Environment") && !value["Environment"].IsNull())
+    {
+        if (!value["Environment"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FrameworkVersion.Environment` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_environment = string(value["Environment"].GetString());
+        m_environmentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void FrameworkVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_environmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Environment";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void FrameworkVersion::SetTrainingModes(const vector<string>& _trainingModes)
 bool FrameworkVersion::TrainingModesHasBeenSet() const
 {
     return m_trainingModesHasBeenSet;
+}
+
+string FrameworkVersion::GetEnvironment() const
+{
+    return m_environment;
+}
+
+void FrameworkVersion::SetEnvironment(const string& _environment)
+{
+    m_environment = _environment;
+    m_environmentHasBeenSet = true;
+}
+
+bool FrameworkVersion::EnvironmentHasBeenSet() const
+{
+    return m_environmentHasBeenSet;
 }
 

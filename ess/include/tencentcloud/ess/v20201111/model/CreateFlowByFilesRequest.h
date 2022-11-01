@@ -326,6 +326,24 @@ false：有序签
                     bool NeedSignReviewHasBeenSet() const;
 
                     /**
+                     * 获取用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     * @return UserData 用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     * @param UserData 用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     */
+                    bool UserDataHasBeenSet() const;
+
+                    /**
                      * 获取应用号信息
                      * @return Agent 应用号信息
                      */
@@ -433,6 +451,12 @@ false：有序签
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;
+
+                    /**
+                     * 用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                     /**
                      * 应用号信息

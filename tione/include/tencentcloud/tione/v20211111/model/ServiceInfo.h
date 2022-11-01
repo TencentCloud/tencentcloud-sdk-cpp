@@ -1,0 +1,621 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TIONE_V20211111_MODEL_SERVICEINFO_H_
+#define TENCENTCLOUD_TIONE_V20211111_MODEL_SERVICEINFO_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tione/v20211111/model/ImageInfo.h>
+#include <tencentcloud/tione/v20211111/model/EnvVar.h>
+#include <tencentcloud/tione/v20211111/model/ResourceInfo.h>
+#include <tencentcloud/tione/v20211111/model/ModelInfo.h>
+#include <tencentcloud/tione/v20211111/model/LogConfig.h>
+#include <tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h>
+#include <tencentcloud/tione/v20211111/model/WorkloadStatus.h>
+
+
+namespace TencentCloud
+{
+    namespace Tione
+    {
+        namespace V20211111
+        {
+            namespace Model
+            {
+                /**
+                * 推理服务在集群中的信息
+                */
+                class ServiceInfo : public AbstractModel
+                {
+                public:
+                    ServiceInfo();
+                    ~ServiceInfo() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取期望运行的Pod数量，停止状态是0
+不同计费模式和调节模式下对应关系如下
+PREPAID 和 POSTPAID_BY_HOUR:
+手动调节模式下对应 实例数量
+自动调节模式下对应 基于时间的默认策略的实例数量
+HYBRID_PAID:
+后付费实例手动调节模式下对应 实例数量
+后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Replicas 期望运行的Pod数量，停止状态是0
+不同计费模式和调节模式下对应关系如下
+PREPAID 和 POSTPAID_BY_HOUR:
+手动调节模式下对应 实例数量
+自动调节模式下对应 基于时间的默认策略的实例数量
+HYBRID_PAID:
+后付费实例手动调节模式下对应 实例数量
+后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReplicas() const;
+
+                    /**
+                     * 设置期望运行的Pod数量，停止状态是0
+不同计费模式和调节模式下对应关系如下
+PREPAID 和 POSTPAID_BY_HOUR:
+手动调节模式下对应 实例数量
+自动调节模式下对应 基于时间的默认策略的实例数量
+HYBRID_PAID:
+后付费实例手动调节模式下对应 实例数量
+后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Replicas 期望运行的Pod数量，停止状态是0
+不同计费模式和调节模式下对应关系如下
+PREPAID 和 POSTPAID_BY_HOUR:
+手动调节模式下对应 实例数量
+自动调节模式下对应 基于时间的默认策略的实例数量
+HYBRID_PAID:
+后付费实例手动调节模式下对应 实例数量
+后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReplicas(const int64_t& _replicas);
+
+                    /**
+                     * 判断参数 Replicas 是否已赋值
+                     * @return Replicas 是否已赋值
+                     */
+                    bool ReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageInfo 镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageInfo GetImageInfo() const;
+
+                    /**
+                     * 设置镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageInfo 镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageInfo(const ImageInfo& _imageInfo);
+
+                    /**
+                     * 判断参数 ImageInfo 是否已赋值
+                     * @return ImageInfo 是否已赋值
+                     */
+                    bool ImageInfoHasBeenSet() const;
+
+                    /**
+                     * 获取环境变量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Env 环境变量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EnvVar> GetEnv() const;
+
+                    /**
+                     * 设置环境变量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Env 环境变量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnv(const std::vector<EnvVar>& _env);
+
+                    /**
+                     * 判断参数 Env 是否已赋值
+                     * @return Env 是否已赋值
+                     */
+                    bool EnvHasBeenSet() const;
+
+                    /**
+                     * 获取资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Resources 资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceInfo GetResources() const;
+
+                    /**
+                     * 设置资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Resources 资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResources(const ResourceInfo& _resources);
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     */
+                    bool ResourcesHasBeenSet() const;
+
+                    /**
+                     * 获取后付费实例对应的机型规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType 后付费实例对应的机型规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置后付费实例对应的机型规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceType 后付费实例对应的机型规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取模型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelInfo 模型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModelInfo GetModelInfo() const;
+
+                    /**
+                     * 设置模型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModelInfo 模型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModelInfo(const ModelInfo& _modelInfo);
+
+                    /**
+                     * 判断参数 ModelInfo 是否已赋值
+                     * @return ModelInfo 是否已赋值
+                     */
+                    bool ModelInfoHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogEnable 是否启用日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetLogEnable() const;
+
+                    /**
+                     * 设置是否启用日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogEnable 是否启用日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogEnable(const bool& _logEnable);
+
+                    /**
+                     * 判断参数 LogEnable 是否已赋值
+                     * @return LogEnable 是否已赋值
+                     */
+                    bool LogEnableHasBeenSet() const;
+
+                    /**
+                     * 获取日志配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogConfig 日志配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LogConfig GetLogConfig() const;
+
+                    /**
+                     * 设置日志配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogConfig 日志配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogConfig(const LogConfig& _logConfig);
+
+                    /**
+                     * 判断参数 LogConfig 是否已赋值
+                     * @return LogConfig 是否已赋值
+                     */
+                    bool LogConfigHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuthorizationEnable 是否开启鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAuthorizationEnable() const;
+
+                    /**
+                     * 设置是否开启鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AuthorizationEnable 是否开启鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAuthorizationEnable(const bool& _authorizationEnable);
+
+                    /**
+                     * 判断参数 AuthorizationEnable 是否已赋值
+                     * @return AuthorizationEnable 是否已赋值
+                     */
+                    bool AuthorizationEnableHasBeenSet() const;
+
+                    /**
+                     * 获取hpa配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HorizontalPodAutoscaler hpa配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HorizontalPodAutoscaler GetHorizontalPodAutoscaler() const;
+
+                    /**
+                     * 设置hpa配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HorizontalPodAutoscaler hpa配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHorizontalPodAutoscaler(const HorizontalPodAutoscaler& _horizontalPodAutoscaler);
+
+                    /**
+                     * 判断参数 HorizontalPodAutoscaler 是否已赋值
+                     * @return HorizontalPodAutoscaler 是否已赋值
+                     */
+                    bool HorizontalPodAutoscalerHasBeenSet() const;
+
+                    /**
+                     * 获取服务的状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 服务的状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkloadStatus GetStatus() const;
+
+                    /**
+                     * 设置服务的状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 服务的状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const WorkloadStatus& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Weight 权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     */
+                    bool WeightHasBeenSet() const;
+
+                    /**
+                     * 获取实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodList 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetPodList() const;
+
+                    /**
+                     * 设置实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PodList 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPodList(const std::vector<std::string>& _podList);
+
+                    /**
+                     * 判断参数 PodList 是否已赋值
+                     * @return PodList 是否已赋值
+                     */
+                    bool PodListHasBeenSet() const;
+
+                    /**
+                     * 获取资源总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceTotal 资源总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceInfo GetResourceTotal() const;
+
+                    /**
+                     * 设置资源总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceTotal 资源总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceTotal(const ResourceInfo& _resourceTotal);
+
+                    /**
+                     * 判断参数 ResourceTotal 是否已赋值
+                     * @return ResourceTotal 是否已赋值
+                     */
+                    bool ResourceTotalHasBeenSet() const;
+
+                    /**
+                     * 获取历史实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OldReplicas 历史实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetOldReplicas() const;
+
+                    /**
+                     * 设置历史实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OldReplicas 历史实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOldReplicas(const int64_t& _oldReplicas);
+
+                    /**
+                     * 判断参数 OldReplicas 是否已赋值
+                     * @return OldReplicas 是否已赋值
+                     */
+                    bool OldReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HybridBillingPrepaidReplicas 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHybridBillingPrepaidReplicas() const;
+
+                    /**
+                     * 设置计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HybridBillingPrepaidReplicas 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHybridBillingPrepaidReplicas(const int64_t& _hybridBillingPrepaidReplicas);
+
+                    /**
+                     * 判断参数 HybridBillingPrepaidReplicas 是否已赋值
+                     * @return HybridBillingPrepaidReplicas 是否已赋值
+                     */
+                    bool HybridBillingPrepaidReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取历史 HYBRID_PAID 时的实例数，用户恢复服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OldHybridBillingPrepaidReplicas 历史 HYBRID_PAID 时的实例数，用户恢复服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetOldHybridBillingPrepaidReplicas() const;
+
+                    /**
+                     * 设置历史 HYBRID_PAID 时的实例数，用户恢复服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OldHybridBillingPrepaidReplicas 历史 HYBRID_PAID 时的实例数，用户恢复服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOldHybridBillingPrepaidReplicas(const int64_t& _oldHybridBillingPrepaidReplicas);
+
+                    /**
+                     * 判断参数 OldHybridBillingPrepaidReplicas 是否已赋值
+                     * @return OldHybridBillingPrepaidReplicas 是否已赋值
+                     */
+                    bool OldHybridBillingPrepaidReplicasHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启模型的热更新。默认不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModelHotUpdateEnable 是否开启模型的热更新。默认不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetModelHotUpdateEnable() const;
+
+                    /**
+                     * 设置是否开启模型的热更新。默认不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModelHotUpdateEnable 是否开启模型的热更新。默认不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModelHotUpdateEnable(const bool& _modelHotUpdateEnable);
+
+                    /**
+                     * 判断参数 ModelHotUpdateEnable 是否已赋值
+                     * @return ModelHotUpdateEnable 是否已赋值
+                     */
+                    bool ModelHotUpdateEnableHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 期望运行的Pod数量，停止状态是0
+不同计费模式和调节模式下对应关系如下
+PREPAID 和 POSTPAID_BY_HOUR:
+手动调节模式下对应 实例数量
+自动调节模式下对应 基于时间的默认策略的实例数量
+HYBRID_PAID:
+后付费实例手动调节模式下对应 实例数量
+后付费实例自动调节模式下对应 时间策略的默认策略的实例数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_replicas;
+                    bool m_replicasHasBeenSet;
+
+                    /**
+                     * 镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageInfo m_imageInfo;
+                    bool m_imageInfoHasBeenSet;
+
+                    /**
+                     * 环境变量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EnvVar> m_env;
+                    bool m_envHasBeenSet;
+
+                    /**
+                     * 资源信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceInfo m_resources;
+                    bool m_resourcesHasBeenSet;
+
+                    /**
+                     * 后付费实例对应的机型规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 模型信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModelInfo m_modelInfo;
+                    bool m_modelInfoHasBeenSet;
+
+                    /**
+                     * 是否启用日志
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_logEnable;
+                    bool m_logEnableHasBeenSet;
+
+                    /**
+                     * 日志配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LogConfig m_logConfig;
+                    bool m_logConfigHasBeenSet;
+
+                    /**
+                     * 是否开启鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_authorizationEnable;
+                    bool m_authorizationEnableHasBeenSet;
+
+                    /**
+                     * hpa配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HorizontalPodAutoscaler m_horizontalPodAutoscaler;
+                    bool m_horizontalPodAutoscalerHasBeenSet;
+
+                    /**
+                     * 服务的状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkloadStatus m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
+
+                    /**
+                     * 实例列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_podList;
+                    bool m_podListHasBeenSet;
+
+                    /**
+                     * 资源总量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResourceInfo m_resourceTotal;
+                    bool m_resourceTotalHasBeenSet;
+
+                    /**
+                     * 历史实例数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_oldReplicas;
+                    bool m_oldReplicasHasBeenSet;
+
+                    /**
+                     * 计费模式[HYBRID_PAID]时生效, 用于标识混合计费模式下的预付费实例数, 若不填则默认为1
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_hybridBillingPrepaidReplicas;
+                    bool m_hybridBillingPrepaidReplicasHasBeenSet;
+
+                    /**
+                     * 历史 HYBRID_PAID 时的实例数，用户恢复服务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_oldHybridBillingPrepaidReplicas;
+                    bool m_oldHybridBillingPrepaidReplicasHasBeenSet;
+
+                    /**
+                     * 是否开启模型的热更新。默认不开启
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_modelHotUpdateEnable;
+                    bool m_modelHotUpdateEnableHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TIONE_V20211111_MODEL_SERVICEINFO_H_

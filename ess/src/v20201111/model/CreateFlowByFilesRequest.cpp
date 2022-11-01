@@ -36,6 +36,7 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
+    m_userDataHasBeenSet(false),
     m_agentHasBeenSet(false)
 {
 }
@@ -176,6 +177,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "NeedSignReview";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needSignReview, allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -401,6 +410,22 @@ void CreateFlowByFilesRequest::SetNeedSignReview(const bool& _needSignReview)
 bool CreateFlowByFilesRequest::NeedSignReviewHasBeenSet() const
 {
     return m_needSignReviewHasBeenSet;
+}
+
+string CreateFlowByFilesRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void CreateFlowByFilesRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 Agent CreateFlowByFilesRequest::GetAgent() const

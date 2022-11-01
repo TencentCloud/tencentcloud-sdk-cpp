@@ -26,7 +26,8 @@ IndexPolicyField::IndexPolicyField() :
     m_coldEnableHasBeenSet(false),
     m_coldMinAgeHasBeenSet(false),
     m_frozenEnableHasBeenSet(false),
-    m_frozenMinAgeHasBeenSet(false)
+    m_frozenMinAgeHasBeenSet(false),
+    m_coldActionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome IndexPolicyField::Deserialize(const rapidjson::Value &value)
         m_frozenMinAgeHasBeenSet = true;
     }
 
+    if (value.HasMember("ColdAction") && !value["ColdAction"].IsNull())
+    {
+        if (!value["ColdAction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexPolicyField.ColdAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coldAction = string(value["ColdAction"].GetString());
+        m_coldActionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void IndexPolicyField::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "FrozenMinAge";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_frozenMinAge.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coldActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ColdAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coldAction.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void IndexPolicyField::SetFrozenMinAge(const string& _frozenMinAge)
 bool IndexPolicyField::FrozenMinAgeHasBeenSet() const
 {
     return m_frozenMinAgeHasBeenSet;
+}
+
+string IndexPolicyField::GetColdAction() const
+{
+    return m_coldAction;
+}
+
+void IndexPolicyField::SetColdAction(const string& _coldAction)
+{
+    m_coldAction = _coldAction;
+    m_coldActionHasBeenSet = true;
+}
+
+bool IndexPolicyField::ColdActionHasBeenSet() const
+{
+    return m_coldActionHasBeenSet;
 }
 

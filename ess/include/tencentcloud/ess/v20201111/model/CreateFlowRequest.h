@@ -176,14 +176,14 @@ namespace TencentCloud
                     bool DeadLineHasBeenSet() const;
 
                     /**
-                     * 获取用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480
-                     * @return UserData 用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480
+                     * 获取用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     * @return UserData 用户自定义字段，回调的时候会进行透传，长度需要小于20480
                      */
                     std::string GetUserData() const;
 
                     /**
-                     * 设置用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480
-                     * @param UserData 用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480
+                     * 设置用户自定义字段，回调的时候会进行透传，长度需要小于20480
+                     * @param UserData 用户自定义字段，回调的时候会进行透传，长度需要小于20480
                      */
                     void SetUserData(const std::string& _userData);
 
@@ -371,7 +371,7 @@ false：有序签
                     bool m_deadLineHasBeenSet;
 
                     /**
-                     * 用户自定义字段(需进行base64 encode),回调的时候会进行透传, 长度需要小于20480
+                     * 用户自定义字段，回调的时候会进行透传，长度需要小于20480
                      */
                     std::string m_userData;
                     bool m_userDataHasBeenSet;

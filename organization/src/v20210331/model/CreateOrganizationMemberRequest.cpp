@@ -31,7 +31,8 @@ CreateOrganizationMemberRequest::CreateOrganizationMemberRequest() :
     m_remarkHasBeenSet(false),
     m_recordIdHasBeenSet(false),
     m_payUinHasBeenSet(false),
-    m_identityRoleIDHasBeenSet(false)
+    m_identityRoleIDHasBeenSet(false),
+    m_authRelationIdHasBeenSet(false)
 {
 }
 
@@ -122,6 +123,14 @@ string CreateOrganizationMemberRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_authRelationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthRelationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_authRelationId, allocator);
     }
 
 
@@ -274,6 +283,22 @@ void CreateOrganizationMemberRequest::SetIdentityRoleID(const vector<uint64_t>& 
 bool CreateOrganizationMemberRequest::IdentityRoleIDHasBeenSet() const
 {
     return m_identityRoleIDHasBeenSet;
+}
+
+int64_t CreateOrganizationMemberRequest::GetAuthRelationId() const
+{
+    return m_authRelationId;
+}
+
+void CreateOrganizationMemberRequest::SetAuthRelationId(const int64_t& _authRelationId)
+{
+    m_authRelationId = _authRelationId;
+    m_authRelationIdHasBeenSet = true;
+}
+
+bool CreateOrganizationMemberRequest::AuthRelationIdHasBeenSet() const
+{
+    return m_authRelationIdHasBeenSet;
 }
 
 

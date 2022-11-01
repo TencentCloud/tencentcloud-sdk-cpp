@@ -25,12 +25,12 @@ TrainingTaskSetItem::TrainingTaskSetItem() :
     m_nameHasBeenSet(false),
     m_frameworkNameHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
-    m_trainingModeHasBeenSet(false),
+    m_frameworkEnvironmentHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_chargeStatusHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_resourceConfigInfosHasBeenSet(false),
-    m_tagsHasBeenSet(false),
+    m_trainingModeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_runtimeInSecondsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -42,7 +42,8 @@ TrainingTaskSetItem::TrainingTaskSetItem() :
     m_billingInfoHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -91,14 +92,14 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_frameworkVersionHasBeenSet = true;
     }
 
-    if (value.HasMember("TrainingMode") && !value["TrainingMode"].IsNull())
+    if (value.HasMember("FrameworkEnvironment") && !value["FrameworkEnvironment"].IsNull())
     {
-        if (!value["TrainingMode"].IsString())
+        if (!value["FrameworkEnvironment"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.TrainingMode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.FrameworkEnvironment` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_trainingMode = string(value["TrainingMode"].GetString());
-        m_trainingModeHasBeenSet = true;
+        m_frameworkEnvironment = string(value["FrameworkEnvironment"].GetString());
+        m_frameworkEnvironmentHasBeenSet = true;
     }
 
     if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
@@ -151,24 +152,14 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_resourceConfigInfosHasBeenSet = true;
     }
 
-    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    if (value.HasMember("TrainingMode") && !value["TrainingMode"].IsNull())
     {
-        if (!value["Tags"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.Tags` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Tags"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!value["TrainingMode"].IsString())
         {
-            Tag item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_tags.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.TrainingMode` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_tagsHasBeenSet = true;
+        m_trainingMode = string(value["TrainingMode"].GetString());
+        m_trainingModeHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -305,6 +296,26 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -344,12 +355,12 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_trainingModeHasBeenSet)
+    if (m_frameworkEnvironmentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TrainingMode";
+        string key = "FrameworkEnvironment";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameworkEnvironment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chargeTypeHasBeenSet)
@@ -391,19 +402,12 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         }
     }
 
-    if (m_tagsHasBeenSet)
+    if (m_trainingModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Tags";
+        string key = "TrainingMode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -504,6 +508,21 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
 }
 
 
@@ -571,20 +590,20 @@ bool TrainingTaskSetItem::FrameworkVersionHasBeenSet() const
     return m_frameworkVersionHasBeenSet;
 }
 
-string TrainingTaskSetItem::GetTrainingMode() const
+string TrainingTaskSetItem::GetFrameworkEnvironment() const
 {
-    return m_trainingMode;
+    return m_frameworkEnvironment;
 }
 
-void TrainingTaskSetItem::SetTrainingMode(const string& _trainingMode)
+void TrainingTaskSetItem::SetFrameworkEnvironment(const string& _frameworkEnvironment)
 {
-    m_trainingMode = _trainingMode;
-    m_trainingModeHasBeenSet = true;
+    m_frameworkEnvironment = _frameworkEnvironment;
+    m_frameworkEnvironmentHasBeenSet = true;
 }
 
-bool TrainingTaskSetItem::TrainingModeHasBeenSet() const
+bool TrainingTaskSetItem::FrameworkEnvironmentHasBeenSet() const
 {
-    return m_trainingModeHasBeenSet;
+    return m_frameworkEnvironmentHasBeenSet;
 }
 
 string TrainingTaskSetItem::GetChargeType() const
@@ -651,20 +670,20 @@ bool TrainingTaskSetItem::ResourceConfigInfosHasBeenSet() const
     return m_resourceConfigInfosHasBeenSet;
 }
 
-vector<Tag> TrainingTaskSetItem::GetTags() const
+string TrainingTaskSetItem::GetTrainingMode() const
 {
-    return m_tags;
+    return m_trainingMode;
 }
 
-void TrainingTaskSetItem::SetTags(const vector<Tag>& _tags)
+void TrainingTaskSetItem::SetTrainingMode(const string& _trainingMode)
 {
-    m_tags = _tags;
-    m_tagsHasBeenSet = true;
+    m_trainingMode = _trainingMode;
+    m_trainingModeHasBeenSet = true;
 }
 
-bool TrainingTaskSetItem::TagsHasBeenSet() const
+bool TrainingTaskSetItem::TrainingModeHasBeenSet() const
 {
-    return m_tagsHasBeenSet;
+    return m_trainingModeHasBeenSet;
 }
 
 string TrainingTaskSetItem::GetStatus() const
@@ -857,5 +876,21 @@ void TrainingTaskSetItem::SetMessage(const string& _message)
 bool TrainingTaskSetItem::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+vector<Tag> TrainingTaskSetItem::GetTags() const
+{
+    return m_tags;
+}
+
+void TrainingTaskSetItem::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool TrainingTaskSetItem::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

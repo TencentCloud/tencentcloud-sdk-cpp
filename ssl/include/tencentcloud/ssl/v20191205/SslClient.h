@@ -63,6 +63,8 @@
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateProjectRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ModifyCertificateProjectResponse.h>
+#include <tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchRequest.h>
+#include <tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchResponse.h>
 #include <tencentcloud/ssl/v20191205/model/ReplaceCertificateRequest.h>
 #include <tencentcloud/ssl/v20191205/model/ReplaceCertificateResponse.h>
 #include <tencentcloud/ssl/v20191205/model/RevokeCertificateRequest.h>
@@ -153,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCertificateProjectResponse> ModifyCertificateProjectOutcome;
                 typedef std::future<ModifyCertificateProjectOutcome> ModifyCertificateProjectOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ModifyCertificateProjectRequest&, ModifyCertificateProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCertificateProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCertificatesExpiringNotificationSwitchResponse> ModifyCertificatesExpiringNotificationSwitchOutcome;
+                typedef std::future<ModifyCertificatesExpiringNotificationSwitchOutcome> ModifyCertificatesExpiringNotificationSwitchOutcomeCallable;
+                typedef std::function<void(const SslClient*, const Model::ModifyCertificatesExpiringNotificationSwitchRequest&, ModifyCertificatesExpiringNotificationSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCertificatesExpiringNotificationSwitchAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReplaceCertificateResponse> ReplaceCertificateOutcome;
                 typedef std::future<ReplaceCertificateOutcome> ReplaceCertificateOutcomeCallable;
                 typedef std::function<void(const SslClient*, const Model::ReplaceCertificateRequest&, ReplaceCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReplaceCertificateAsyncHandler;
@@ -359,6 +364,15 @@ namespace TencentCloud
                 ModifyCertificateProjectOutcome ModifyCertificateProject(const Model::ModifyCertificateProjectRequest &request);
                 void ModifyCertificateProjectAsync(const Model::ModifyCertificateProjectRequest& request, const ModifyCertificateProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCertificateProjectOutcomeCallable ModifyCertificateProjectCallable(const Model::ModifyCertificateProjectRequest& request);
+
+                /**
+                 *修改忽略证书到期通知。打开或关闭证书到期通知。
+                 * @param req ModifyCertificatesExpiringNotificationSwitchRequest
+                 * @return ModifyCertificatesExpiringNotificationSwitchOutcome
+                 */
+                ModifyCertificatesExpiringNotificationSwitchOutcome ModifyCertificatesExpiringNotificationSwitch(const Model::ModifyCertificatesExpiringNotificationSwitchRequest &request);
+                void ModifyCertificatesExpiringNotificationSwitchAsync(const Model::ModifyCertificatesExpiringNotificationSwitchRequest& request, const ModifyCertificatesExpiringNotificationSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCertificatesExpiringNotificationSwitchOutcomeCallable ModifyCertificatesExpiringNotificationSwitchCallable(const Model::ModifyCertificatesExpiringNotificationSwitchRequest& request);
 
                 /**
                  *本接口（ReplaceCertificate）用于重颁发证书。已申请的免费证书仅支持 RSA 算法、密钥对参数为2048的证书重颁发，并且目前仅支持1次重颁发。

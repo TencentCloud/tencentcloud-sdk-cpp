@@ -32,7 +32,8 @@ CreateLogConfigRequest::CreateLogConfigRequest() :
     m_logTypeHasBeenSet(false),
     m_beginningRegexHasBeenSet(false),
     m_logPathHasBeenSet(false),
-    m_filePatternHasBeenSet(false)
+    m_filePatternHasBeenSet(false),
+    m_extractRuleHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,15 @@ string CreateLogConfigRequest::ToJsonString() const
         string key = "FilePattern";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filePattern.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extractRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtractRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_extractRule.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -289,6 +299,22 @@ void CreateLogConfigRequest::SetFilePattern(const string& _filePattern)
 bool CreateLogConfigRequest::FilePatternHasBeenSet() const
 {
     return m_filePatternHasBeenSet;
+}
+
+LogConfigExtractRule CreateLogConfigRequest::GetExtractRule() const
+{
+    return m_extractRule;
+}
+
+void CreateLogConfigRequest::SetExtractRule(const LogConfigExtractRule& _extractRule)
+{
+    m_extractRule = _extractRule;
+    m_extractRuleHasBeenSet = true;
+}
+
+bool CreateLogConfigRequest::ExtractRuleHasBeenSet() const
+{
+    return m_extractRuleHasBeenSet;
 }
 
 

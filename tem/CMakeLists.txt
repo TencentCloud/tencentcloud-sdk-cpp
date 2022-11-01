@@ -109,6 +109,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/DescribeEnvironmentsRequest.h
   include/tencentcloud/tem/v20210701/model/LogConfigListPage.h
   include/tencentcloud/tem/v20210701/model/ServiceVersionBrief.h
+  include/tencentcloud/tem/v20210701/model/LogConfigExtractRule.h
   include/tencentcloud/tem/v20210701/model/CreateEnvironmentRequest.h
   include/tencentcloud/tem/v20210701/model/NodeInfo.h
   include/tencentcloud/tem/v20210701/model/DescribeApplicationServiceListResponse.h
@@ -317,6 +318,7 @@ set(tem_src
   src/v20210701/model/DescribeEnvironmentsRequest.cpp
   src/v20210701/model/LogConfigListPage.cpp
   src/v20210701/model/ServiceVersionBrief.cpp
+  src/v20210701/model/LogConfigExtractRule.cpp
   src/v20210701/model/CreateEnvironmentRequest.cpp
   src/v20210701/model/NodeInfo.cpp
   src/v20210701/model/DescribeApplicationServiceListResponse.cpp

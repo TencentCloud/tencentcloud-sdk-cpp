@@ -26,11 +26,11 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/ResourceConfigInfo.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
-#include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/StartCmdInfo.h>
 #include <tencentcloud/tione/v20211111/model/DataConfig.h>
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
+#include <tencentcloud/tione/v20211111/model/ImageInfo.h>
 
 
 namespace TencentCloud
@@ -188,26 +188,26 @@ namespace TencentCloud
                     bool FrameworkVersionHasBeenSet() const;
 
                     /**
-                     * 获取训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 获取框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TrainingMode 训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @return FrameworkEnvironment 框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetTrainingMode() const;
+                    std::string GetFrameworkEnvironment() const;
 
                     /**
-                     * 设置训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 设置框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingMode 训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @param FrameworkEnvironment 框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetTrainingMode(const std::string& _trainingMode);
+                    void SetFrameworkEnvironment(const std::string& _frameworkEnvironment);
 
                     /**
-                     * 判断参数 TrainingMode 是否已赋值
-                     * @return TrainingMode 是否已赋值
+                     * 判断参数 FrameworkEnvironment 是否已赋值
+                     * @return FrameworkEnvironment 是否已赋值
                      */
-                    bool TrainingModeHasBeenSet() const;
+                    bool FrameworkEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取计费模式
@@ -290,26 +290,26 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取自定义镜像信息
+                     * 获取训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImageInfo 自定义镜像信息
+                     * @return TrainingMode 训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ImageInfo GetImageInfo() const;
+                    std::string GetTrainingMode() const;
 
                     /**
-                     * 设置自定义镜像信息
+                     * 设置训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ImageInfo 自定义镜像信息
+                     * @param TrainingMode 训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetImageInfo(const ImageInfo& _imageInfo);
+                    void SetTrainingMode(const std::string& _trainingMode);
 
                     /**
-                     * 判断参数 ImageInfo 是否已赋值
-                     * @return ImageInfo 是否已赋值
+                     * 判断参数 TrainingMode 是否已赋值
+                     * @return TrainingMode 是否已赋值
                      */
-                    bool ImageInfoHasBeenSet() const;
+                    bool TrainingModeHasBeenSet() const;
 
                     /**
                      * 获取代码包
@@ -516,22 +516,26 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取自定义镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageInfo 自定义镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetStatus() const;
+                    ImageInfo GetImageInfo() const;
 
                     /**
-                     * 设置任务状态
-                     * @param Status 任务状态
+                     * 设置自定义镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageInfo 自定义镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetStatus(const std::string& _status);
+                    void SetImageInfo(const ImageInfo& _imageInfo);
 
                     /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
+                     * 判断参数 ImageInfo 是否已赋值
+                     * @return ImageInfo 是否已赋值
                      */
-                    bool StatusHasBeenSet() const;
+                    bool ImageInfoHasBeenSet() const;
 
                     /**
                      * 获取运行时长
@@ -807,6 +811,24 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态
+                     * @return Status 任务状态
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置任务状态
+                     * @param Status 任务状态
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -854,11 +876,11 @@ namespace TencentCloud
                     bool m_frameworkVersionHasBeenSet;
 
                     /**
-                     * 训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_trainingMode;
-                    bool m_trainingModeHasBeenSet;
+                    std::string m_frameworkEnvironment;
+                    bool m_frameworkEnvironmentHasBeenSet;
 
                     /**
                      * 计费模式
@@ -887,11 +909,11 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 自定义镜像信息
+                     * 训练模式，eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    ImageInfo m_imageInfo;
-                    bool m_imageInfoHasBeenSet;
+                    std::string m_trainingMode;
+                    bool m_trainingModeHasBeenSet;
 
                     /**
                      * 代码包
@@ -960,10 +982,11 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 自定义镜像信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_status;
-                    bool m_statusHasBeenSet;
+                    ImageInfo m_imageInfo;
+                    bool m_imageInfoHasBeenSet;
 
                     /**
                      * 运行时长
@@ -1052,6 +1075,12 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 任务状态
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

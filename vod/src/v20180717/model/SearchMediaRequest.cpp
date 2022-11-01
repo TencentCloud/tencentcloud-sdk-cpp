@@ -33,7 +33,6 @@ SearchMediaRequest::SearchMediaRequest() :
     m_categoriesHasBeenSet(false),
     m_sourceTypesHasBeenSet(false),
     m_streamIdsHasBeenSet(false),
-    m_vidsHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_sortHasBeenSet(false),
@@ -47,9 +46,10 @@ SearchMediaRequest::SearchMediaRequest() :
     m_textHasBeenSet(false),
     m_sourceTypeHasBeenSet(false),
     m_streamIdHasBeenSet(false),
-    m_vidHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_vidsHasBeenSet(false),
+    m_vidHasBeenSet(false)
 {
 }
 
@@ -180,19 +180,6 @@ string SearchMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_streamIds.begin(); itr != m_streamIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_vidsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Vids";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_vids.begin(); itr != m_vids.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -330,14 +317,6 @@ string SearchMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_streamId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_vidHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Vid";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_vid.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_startTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -352,6 +331,27 @@ string SearchMediaRequest::ToJsonString() const
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_vids.begin(); itr != m_vids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_vidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vid.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -520,22 +520,6 @@ void SearchMediaRequest::SetStreamIds(const vector<string>& _streamIds)
 bool SearchMediaRequest::StreamIdsHasBeenSet() const
 {
     return m_streamIdsHasBeenSet;
-}
-
-vector<string> SearchMediaRequest::GetVids() const
-{
-    return m_vids;
-}
-
-void SearchMediaRequest::SetVids(const vector<string>& _vids)
-{
-    m_vids = _vids;
-    m_vidsHasBeenSet = true;
-}
-
-bool SearchMediaRequest::VidsHasBeenSet() const
-{
-    return m_vidsHasBeenSet;
 }
 
 TimeRange SearchMediaRequest::GetCreateTime() const
@@ -746,22 +730,6 @@ bool SearchMediaRequest::StreamIdHasBeenSet() const
     return m_streamIdHasBeenSet;
 }
 
-string SearchMediaRequest::GetVid() const
-{
-    return m_vid;
-}
-
-void SearchMediaRequest::SetVid(const string& _vid)
-{
-    m_vid = _vid;
-    m_vidHasBeenSet = true;
-}
-
-bool SearchMediaRequest::VidHasBeenSet() const
-{
-    return m_vidHasBeenSet;
-}
-
 string SearchMediaRequest::GetStartTime() const
 {
     return m_startTime;
@@ -792,6 +760,38 @@ void SearchMediaRequest::SetEndTime(const string& _endTime)
 bool SearchMediaRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetVids() const
+{
+    return m_vids;
+}
+
+void SearchMediaRequest::SetVids(const vector<string>& _vids)
+{
+    m_vids = _vids;
+    m_vidsHasBeenSet = true;
+}
+
+bool SearchMediaRequest::VidsHasBeenSet() const
+{
+    return m_vidsHasBeenSet;
+}
+
+string SearchMediaRequest::GetVid() const
+{
+    return m_vid;
+}
+
+void SearchMediaRequest::SetVid(const string& _vid)
+{
+    m_vid = _vid;
+    m_vidHasBeenSet = true;
+}
+
+bool SearchMediaRequest::VidHasBeenSet() const
+{
+    return m_vidHasBeenSet;
 }
 
 

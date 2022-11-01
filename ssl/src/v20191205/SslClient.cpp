@@ -900,6 +900,49 @@ SslClient::ModifyCertificateProjectOutcomeCallable SslClient::ModifyCertificateP
     return task->get_future();
 }
 
+SslClient::ModifyCertificatesExpiringNotificationSwitchOutcome SslClient::ModifyCertificatesExpiringNotificationSwitch(const ModifyCertificatesExpiringNotificationSwitchRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCertificatesExpiringNotificationSwitch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCertificatesExpiringNotificationSwitchResponse rsp = ModifyCertificatesExpiringNotificationSwitchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCertificatesExpiringNotificationSwitchOutcome(rsp);
+        else
+            return ModifyCertificatesExpiringNotificationSwitchOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCertificatesExpiringNotificationSwitchOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::ModifyCertificatesExpiringNotificationSwitchAsync(const ModifyCertificatesExpiringNotificationSwitchRequest& request, const ModifyCertificatesExpiringNotificationSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCertificatesExpiringNotificationSwitch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::ModifyCertificatesExpiringNotificationSwitchOutcomeCallable SslClient::ModifyCertificatesExpiringNotificationSwitchCallable(const ModifyCertificatesExpiringNotificationSwitchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCertificatesExpiringNotificationSwitchOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCertificatesExpiringNotificationSwitch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::ReplaceCertificateOutcome SslClient::ReplaceCertificate(const ReplaceCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceCertificate");

@@ -1846,6 +1846,49 @@ TcssClient::CreateRefreshTaskOutcomeCallable TcssClient::CreateRefreshTaskCallab
     return task->get_future();
 }
 
+TcssClient::CreateRiskDnsEventExportJobOutcome TcssClient::CreateRiskDnsEventExportJob(const CreateRiskDnsEventExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRiskDnsEventExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRiskDnsEventExportJobResponse rsp = CreateRiskDnsEventExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRiskDnsEventExportJobOutcome(rsp);
+        else
+            return CreateRiskDnsEventExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRiskDnsEventExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateRiskDnsEventExportJobAsync(const CreateRiskDnsEventExportJobRequest& request, const CreateRiskDnsEventExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRiskDnsEventExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateRiskDnsEventExportJobOutcomeCallable TcssClient::CreateRiskDnsEventExportJobCallable(const CreateRiskDnsEventExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRiskDnsEventExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRiskDnsEventExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::CreateSearchTemplateOutcome TcssClient::CreateSearchTemplate(const CreateSearchTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSearchTemplate");

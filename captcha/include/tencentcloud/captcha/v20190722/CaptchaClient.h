@@ -47,6 +47,8 @@
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaTicketDataResponse.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdRequest.h>
 #include <tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdResponse.h>
+#include <tencentcloud/captcha/v20190722/model/GetTicketStatisticsRequest.h>
+#include <tencentcloud/captcha/v20190722/model/GetTicketStatisticsResponse.h>
 #include <tencentcloud/captcha/v20190722/model/GetTotalTicketStatisticsRequest.h>
 #include <tencentcloud/captcha/v20190722/model/GetTotalTicketStatisticsResponse.h>
 #include <tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoRequest.h>
@@ -101,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCaptchaUserAllAppIdResponse> DescribeCaptchaUserAllAppIdOutcome;
                 typedef std::future<DescribeCaptchaUserAllAppIdOutcome> DescribeCaptchaUserAllAppIdOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::DescribeCaptchaUserAllAppIdRequest&, DescribeCaptchaUserAllAppIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCaptchaUserAllAppIdAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTicketStatisticsResponse> GetTicketStatisticsOutcome;
+                typedef std::future<GetTicketStatisticsOutcome> GetTicketStatisticsOutcomeCallable;
+                typedef std::function<void(const CaptchaClient*, const Model::GetTicketStatisticsRequest&, GetTicketStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTicketStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetTotalTicketStatisticsResponse> GetTotalTicketStatisticsOutcome;
                 typedef std::future<GetTotalTicketStatisticsOutcome> GetTotalTicketStatisticsOutcomeCallable;
                 typedef std::function<void(const CaptchaClient*, const Model::GetTotalTicketStatisticsRequest&, GetTotalTicketStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTotalTicketStatisticsAsyncHandler;
@@ -217,6 +222,15 @@ namespace TencentCloud
                 DescribeCaptchaUserAllAppIdOutcome DescribeCaptchaUserAllAppId(const Model::DescribeCaptchaUserAllAppIdRequest &request);
                 void DescribeCaptchaUserAllAppIdAsync(const Model::DescribeCaptchaUserAllAppIdRequest& request, const DescribeCaptchaUserAllAppIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCaptchaUserAllAppIdOutcomeCallable DescribeCaptchaUserAllAppIdCallable(const Model::DescribeCaptchaUserAllAppIdRequest& request);
+
+                /**
+                 *查询单个验证的统计数据，包括：票据校验量、票据校验通过量、票据校验拦截量。
+                 * @param req GetTicketStatisticsRequest
+                 * @return GetTicketStatisticsOutcome
+                 */
+                GetTicketStatisticsOutcome GetTicketStatistics(const Model::GetTicketStatisticsRequest &request);
+                void GetTicketStatisticsAsync(const Model::GetTicketStatisticsRequest& request, const GetTicketStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTicketStatisticsOutcomeCallable GetTicketStatisticsCallable(const Model::GetTicketStatisticsRequest& request);
 
                 /**
                  *查询所有验证的统计数据，包括：总票据校验量、总票据校验通过量、总票据校验拦截量。

@@ -28,7 +28,8 @@ ResetInstanceRequest::ResetInstanceRequest() :
     m_systemDiskHasBeenSet(false),
     m_loginSettingsHasBeenSet(false),
     m_enhancedServiceHasBeenSet(false),
-    m_hostNameHasBeenSet(false)
+    m_hostNameHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -88,6 +89,14 @@ string ResetInstanceRequest::ToJsonString() const
         string key = "HostName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -192,6 +201,22 @@ void ResetInstanceRequest::SetHostName(const string& _hostName)
 bool ResetInstanceRequest::HostNameHasBeenSet() const
 {
     return m_hostNameHasBeenSet;
+}
+
+string ResetInstanceRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void ResetInstanceRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool ResetInstanceRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 

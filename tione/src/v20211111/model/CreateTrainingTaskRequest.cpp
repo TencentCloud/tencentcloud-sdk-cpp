@@ -24,25 +24,26 @@ using namespace std;
 
 CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_nameHasBeenSet(false),
-    m_trainingModeHasBeenSet(false),
     m_chargeTypeHasBeenSet(false),
     m_resourceConfigInfosHasBeenSet(false),
     m_codePackagePathHasBeenSet(false),
+    m_trainingModeHasBeenSet(false),
     m_outputHasBeenSet(false),
     m_logEnableHasBeenSet(false),
     m_frameworkNameHasBeenSet(false),
     m_frameworkVersionHasBeenSet(false),
+    m_frameworkEnvironmentHasBeenSet(false),
     m_resourceGroupIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
     m_startCmdInfoHasBeenSet(false),
-    m_dataSourceHasBeenSet(false),
     m_dataConfigsHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_logConfigHasBeenSet(false),
     m_tuningParametersHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_dataSourceHasBeenSet(false)
 {
 }
 
@@ -59,14 +60,6 @@ string CreateTrainingTaskRequest::ToJsonString() const
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_trainingModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TrainingMode";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_chargeTypeHasBeenSet)
@@ -101,6 +94,14 @@ string CreateTrainingTaskRequest::ToJsonString() const
         m_codePackagePath.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_trainingModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrainingMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_trainingMode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_outputHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -132,6 +133,14 @@ string CreateTrainingTaskRequest::ToJsonString() const
         string key = "FrameworkVersion";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frameworkEnvironmentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkEnvironment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_frameworkEnvironment.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resourceGroupIdHasBeenSet)
@@ -173,14 +182,6 @@ string CreateTrainingTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_startCmdInfo.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_dataSourceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DataSource";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dataSource.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dataConfigsHasBeenSet)
@@ -239,6 +240,14 @@ string CreateTrainingTaskRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dataSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dataSource.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -261,22 +270,6 @@ void CreateTrainingTaskRequest::SetName(const string& _name)
 bool CreateTrainingTaskRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
-}
-
-string CreateTrainingTaskRequest::GetTrainingMode() const
-{
-    return m_trainingMode;
-}
-
-void CreateTrainingTaskRequest::SetTrainingMode(const string& _trainingMode)
-{
-    m_trainingMode = _trainingMode;
-    m_trainingModeHasBeenSet = true;
-}
-
-bool CreateTrainingTaskRequest::TrainingModeHasBeenSet() const
-{
-    return m_trainingModeHasBeenSet;
 }
 
 string CreateTrainingTaskRequest::GetChargeType() const
@@ -325,6 +318,22 @@ void CreateTrainingTaskRequest::SetCodePackagePath(const CosPathInfo& _codePacka
 bool CreateTrainingTaskRequest::CodePackagePathHasBeenSet() const
 {
     return m_codePackagePathHasBeenSet;
+}
+
+string CreateTrainingTaskRequest::GetTrainingMode() const
+{
+    return m_trainingMode;
+}
+
+void CreateTrainingTaskRequest::SetTrainingMode(const string& _trainingMode)
+{
+    m_trainingMode = _trainingMode;
+    m_trainingModeHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::TrainingModeHasBeenSet() const
+{
+    return m_trainingModeHasBeenSet;
 }
 
 CosPathInfo CreateTrainingTaskRequest::GetOutput() const
@@ -391,6 +400,22 @@ bool CreateTrainingTaskRequest::FrameworkVersionHasBeenSet() const
     return m_frameworkVersionHasBeenSet;
 }
 
+string CreateTrainingTaskRequest::GetFrameworkEnvironment() const
+{
+    return m_frameworkEnvironment;
+}
+
+void CreateTrainingTaskRequest::SetFrameworkEnvironment(const string& _frameworkEnvironment)
+{
+    m_frameworkEnvironment = _frameworkEnvironment;
+    m_frameworkEnvironmentHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::FrameworkEnvironmentHasBeenSet() const
+{
+    return m_frameworkEnvironmentHasBeenSet;
+}
+
 string CreateTrainingTaskRequest::GetResourceGroupId() const
 {
     return m_resourceGroupId;
@@ -453,22 +478,6 @@ void CreateTrainingTaskRequest::SetStartCmdInfo(const StartCmdInfo& _startCmdInf
 bool CreateTrainingTaskRequest::StartCmdInfoHasBeenSet() const
 {
     return m_startCmdInfoHasBeenSet;
-}
-
-string CreateTrainingTaskRequest::GetDataSource() const
-{
-    return m_dataSource;
-}
-
-void CreateTrainingTaskRequest::SetDataSource(const string& _dataSource)
-{
-    m_dataSource = _dataSource;
-    m_dataSourceHasBeenSet = true;
-}
-
-bool CreateTrainingTaskRequest::DataSourceHasBeenSet() const
-{
-    return m_dataSourceHasBeenSet;
 }
 
 vector<DataConfig> CreateTrainingTaskRequest::GetDataConfigs() const
@@ -565,6 +574,22 @@ void CreateTrainingTaskRequest::SetRemark(const string& _remark)
 bool CreateTrainingTaskRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateTrainingTaskRequest::GetDataSource() const
+{
+    return m_dataSource;
+}
+
+void CreateTrainingTaskRequest::SetDataSource(const string& _dataSource)
+{
+    m_dataSource = _dataSource;
+    m_dataSourceHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::DataSourceHasBeenSet() const
+{
+    return m_dataSourceHasBeenSet;
 }
 
 

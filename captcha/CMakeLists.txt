@@ -28,6 +28,7 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoRequest.h
   include/tencentcloud/captcha/v20190722/model/OutputManageMarketingRiskValue.h
   include/tencentcloud/captcha/v20190722/model/CaptchaOperDataRes.h
+  include/tencentcloud/captcha/v20190722/model/GetTicketStatisticsRequest.h
   include/tencentcloud/captcha/v20190722/model/TicketInterceptUnit.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaUserAllAppIdRequest.h
   include/tencentcloud/captcha/v20190722/model/GetTotalTicketStatisticsResponse.h
@@ -46,6 +47,7 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaOperDataRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataSumRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniRiskResultResponse.h
+  include/tencentcloud/captcha/v20190722/model/GetTicketStatisticsResponse.h
   include/tencentcloud/captcha/v20190722/model/TicketAmountUnit.h
   include/tencentcloud/captcha/v20190722/model/CaptchaQueryData.h
   include/tencentcloud/captcha/v20190722/model/RequestTrendObj.h
@@ -76,6 +78,7 @@ set(captcha_src
   src/v20190722/model/UpdateCaptchaAppIdInfoRequest.cpp
   src/v20190722/model/OutputManageMarketingRiskValue.cpp
   src/v20190722/model/CaptchaOperDataRes.cpp
+  src/v20190722/model/GetTicketStatisticsRequest.cpp
   src/v20190722/model/TicketInterceptUnit.cpp
   src/v20190722/model/DescribeCaptchaUserAllAppIdRequest.cpp
   src/v20190722/model/GetTotalTicketStatisticsResponse.cpp
@@ -94,6 +97,7 @@ set(captcha_src
   src/v20190722/model/DescribeCaptchaOperDataRequest.cpp
   src/v20190722/model/DescribeCaptchaDataSumRequest.cpp
   src/v20190722/model/DescribeCaptchaMiniRiskResultResponse.cpp
+  src/v20190722/model/GetTicketStatisticsResponse.cpp
   src/v20190722/model/TicketAmountUnit.cpp
   src/v20190722/model/CaptchaQueryData.cpp
   src/v20190722/model/RequestTrendObj.cpp

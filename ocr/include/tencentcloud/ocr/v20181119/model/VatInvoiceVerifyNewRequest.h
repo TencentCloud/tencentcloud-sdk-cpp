@@ -154,6 +154,64 @@ namespace TencentCloud
                      */
                     bool AmountHasBeenSet() const;
 
+                    /**
+                     * 获取地区编码，通用机打电子发票时必填。
+广东:4400，浙江:3300
+                     * @return RegionCode 地区编码，通用机打电子发票时必填。
+广东:4400，浙江:3300
+                     */
+                    std::string GetRegionCode() const;
+
+                    /**
+                     * 设置地区编码，通用机打电子发票时必填。
+广东:4400，浙江:3300
+                     * @param RegionCode 地区编码，通用机打电子发票时必填。
+广东:4400，浙江:3300
+                     */
+                    void SetRegionCode(const std::string& _regionCode);
+
+                    /**
+                     * 判断参数 RegionCode 是否已赋值
+                     * @return RegionCode 是否已赋值
+                     */
+                    bool RegionCodeHasBeenSet() const;
+
+                    /**
+                     * 获取销方税号，通用机打电子发票必填
+                     * @return SellerTaxCode 销方税号，通用机打电子发票必填
+                     */
+                    std::string GetSellerTaxCode() const;
+
+                    /**
+                     * 设置销方税号，通用机打电子发票必填
+                     * @param SellerTaxCode 销方税号，通用机打电子发票必填
+                     */
+                    void SetSellerTaxCode(const std::string& _sellerTaxCode);
+
+                    /**
+                     * 判断参数 SellerTaxCode 是否已赋值
+                     * @return SellerTaxCode 是否已赋值
+                     */
+                    bool SellerTaxCodeHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启通用机打电子发票，默认为关闭。
+                     * @return EnableCommonElectronic 是否开启通用机打电子发票，默认为关闭。
+                     */
+                    bool GetEnableCommonElectronic() const;
+
+                    /**
+                     * 设置是否开启通用机打电子发票，默认为关闭。
+                     * @param EnableCommonElectronic 是否开启通用机打电子发票，默认为关闭。
+                     */
+                    void SetEnableCommonElectronic(const bool& _enableCommonElectronic);
+
+                    /**
+                     * 判断参数 EnableCommonElectronic 是否已赋值
+                     * @return EnableCommonElectronic 是否已赋值
+                     */
+                    bool EnableCommonElectronicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +250,25 @@ namespace TencentCloud
                      */
                     std::string m_amount;
                     bool m_amountHasBeenSet;
+
+                    /**
+                     * 地区编码，通用机打电子发票时必填。
+广东:4400，浙江:3300
+                     */
+                    std::string m_regionCode;
+                    bool m_regionCodeHasBeenSet;
+
+                    /**
+                     * 销方税号，通用机打电子发票必填
+                     */
+                    std::string m_sellerTaxCode;
+                    bool m_sellerTaxCodeHasBeenSet;
+
+                    /**
+                     * 是否开启通用机打电子发票，默认为关闭。
+                     */
+                    bool m_enableCommonElectronic;
+                    bool m_enableCommonElectronicHasBeenSet;
 
                 };
             }

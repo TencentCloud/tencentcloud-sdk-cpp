@@ -68,24 +68,6 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     * @return TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     */
-                    std::string GetTrainingMode() const;
-
-                    /**
-                     * 设置训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     * @param TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     */
-                    void SetTrainingMode(const std::string& _trainingMode);
-
-                    /**
-                     * 判断参数 TrainingMode 是否已赋值
-                     * @return TrainingMode 是否已赋值
-                     */
-                    bool TrainingModeHasBeenSet() const;
-
-                    /**
                      * 获取计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
                      * @return ChargeType 计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
                      */
@@ -138,6 +120,24 @@ namespace TencentCloud
                      * @return CodePackagePath 是否已赋值
                      */
                     bool CodePackagePathHasBeenSet() const;
+
+                    /**
+                     * 获取训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @return TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     */
+                    std::string GetTrainingMode() const;
+
+                    /**
+                     * 设置训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @param TrainingMode 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     */
+                    void SetTrainingMode(const std::string& _trainingMode);
+
+                    /**
+                     * 判断参数 TrainingMode 是否已赋值
+                     * @return TrainingMode 是否已赋值
+                     */
+                    bool TrainingModeHasBeenSet() const;
 
                     /**
                      * 获取COS训练输出路径
@@ -194,14 +194,14 @@ namespace TencentCloud
                     bool FrameworkNameHasBeenSet() const;
 
                     /**
-                     * 获取训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
-                     * @return FrameworkVersion 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * 获取训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
+                     * @return FrameworkVersion 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
                      */
                     std::string GetFrameworkVersion() const;
 
                     /**
-                     * 设置训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
-                     * @param FrameworkVersion 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * 设置训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
+                     * @param FrameworkVersion 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
                      */
                     void SetFrameworkVersion(const std::string& _frameworkVersion);
 
@@ -210,6 +210,24 @@ namespace TencentCloud
                      * @return FrameworkVersion 是否已赋值
                      */
                     bool FrameworkVersionHasBeenSet() const;
+
+                    /**
+                     * 获取训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * @return FrameworkEnvironment 训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     */
+                    std::string GetFrameworkEnvironment() const;
+
+                    /**
+                     * 设置训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * @param FrameworkEnvironment 训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     */
+                    void SetFrameworkEnvironment(const std::string& _frameworkEnvironment);
+
+                    /**
+                     * 判断参数 FrameworkEnvironment 是否已赋值
+                     * @return FrameworkEnvironment 是否已赋值
+                     */
+                    bool FrameworkEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询
@@ -282,24 +300,6 @@ namespace TencentCloud
                      * @return StartCmdInfo 是否已赋值
                      */
                     bool StartCmdInfoHasBeenSet() const;
-
-                    /**
-                     * 获取数据来源，eg：DATASET、COS、CFS、HDFS
-                     * @return DataSource 数据来源，eg：DATASET、COS、CFS、HDFS
-                     */
-                    std::string GetDataSource() const;
-
-                    /**
-                     * 设置数据来源，eg：DATASET、COS、CFS、HDFS
-                     * @param DataSource 数据来源，eg：DATASET、COS、CFS、HDFS
-                     */
-                    void SetDataSource(const std::string& _dataSource);
-
-                    /**
-                     * 判断参数 DataSource 是否已赋值
-                     * @return DataSource 是否已赋值
-                     */
-                    bool DataSourceHasBeenSet() const;
 
                     /**
                      * 获取数据配置
@@ -409,6 +409,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取数据来源，eg：DATASET、COS、CFS、HDFS
+                     * @return DataSource 数据来源，eg：DATASET、COS、CFS、HDFS
+                     */
+                    std::string GetDataSource() const;
+
+                    /**
+                     * 设置数据来源，eg：DATASET、COS、CFS、HDFS
+                     * @param DataSource 数据来源，eg：DATASET、COS、CFS、HDFS
+                     */
+                    void SetDataSource(const std::string& _dataSource);
+
+                    /**
+                     * 判断参数 DataSource 是否已赋值
+                     * @return DataSource 是否已赋值
+                     */
+                    bool DataSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -416,12 +434,6 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
-
-                    /**
-                     * 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
-                     */
-                    std::string m_trainingMode;
-                    bool m_trainingModeHasBeenSet;
 
                     /**
                      * 计费模式，eg：PREPAID预付费，即包年包月；POSTPAID_BY_HOUR按小时后付费
@@ -442,6 +454,12 @@ namespace TencentCloud
                     bool m_codePackagePathHasBeenSet;
 
                     /**
+                     * 训练模式，通过DescribeTrainingFrameworks接口查询，eg：PS_WORKER、DDP、MPI、HOROVOD
+                     */
+                    std::string m_trainingMode;
+                    bool m_trainingModeHasBeenSet;
+
+                    /**
                      * COS训练输出路径
                      */
                     CosPathInfo m_output;
@@ -460,10 +478,16 @@ namespace TencentCloud
                     bool m_frameworkNameHasBeenSet;
 
                     /**
-                     * 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     * 训练框架版本，通过DescribeTrainingFrameworks接口查询，eg：1.15、1.9
                      */
                     std::string m_frameworkVersion;
                     bool m_frameworkVersionHasBeenSet;
+
+                    /**
+                     * 训练框架环境，通过DescribeTrainingFrameworks接口查询，eg：tf1.15-py3.7-cpu、torch1.9-py3.8-cuda11.1-gpu
+                     */
+                    std::string m_frameworkEnvironment;
+                    bool m_frameworkEnvironmentHasBeenSet;
 
                     /**
                      * 预付费专用资源组ID，通过DescribeBillingResourceGroups接口查询
@@ -488,12 +512,6 @@ namespace TencentCloud
                      */
                     StartCmdInfo m_startCmdInfo;
                     bool m_startCmdInfoHasBeenSet;
-
-                    /**
-                     * 数据来源，eg：DATASET、COS、CFS、HDFS
-                     */
-                    std::string m_dataSource;
-                    bool m_dataSourceHasBeenSet;
 
                     /**
                      * 数据配置
@@ -530,6 +548,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 数据来源，eg：DATASET、COS、CFS、HDFS
+                     */
+                    std::string m_dataSource;
+                    bool m_dataSourceHasBeenSet;
 
                 };
             }

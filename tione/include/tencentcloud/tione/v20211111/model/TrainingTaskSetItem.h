@@ -25,9 +25,9 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/ResourceConfigInfo.h>
-#include <tencentcloud/tione/v20211111/model/Tag.h>
 #include <tencentcloud/tione/v20211111/model/CosPathInfo.h>
 #include <tencentcloud/tione/v20211111/model/ImageInfo.h>
+#include <tencentcloud/tione/v20211111/model/Tag.h>
 
 
 namespace TencentCloud
@@ -131,26 +131,26 @@ namespace TencentCloud
                     bool FrameworkVersionHasBeenSet() const;
 
                     /**
-                     * 获取训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 获取框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TrainingMode 训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @return FrameworkEnvironment 框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetTrainingMode() const;
+                    std::string GetFrameworkEnvironment() const;
 
                     /**
-                     * 设置训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 设置框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TrainingMode 训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * @param FrameworkEnvironment 框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetTrainingMode(const std::string& _trainingMode);
+                    void SetFrameworkEnvironment(const std::string& _frameworkEnvironment);
 
                     /**
-                     * 判断参数 TrainingMode 是否已赋值
-                     * @return TrainingMode 是否已赋值
+                     * 判断参数 FrameworkEnvironment 是否已赋值
+                     * @return FrameworkEnvironment 是否已赋值
                      */
-                    bool TrainingModeHasBeenSet() const;
+                    bool FrameworkEnvironmentHasBeenSet() const;
 
                     /**
                      * 获取计费模式
@@ -229,26 +229,26 @@ namespace TencentCloud
                     bool ResourceConfigInfosHasBeenSet() const;
 
                     /**
-                     * 获取标签配置
+                     * 获取训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tags 标签配置
+                     * @return TrainingMode 训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Tag> GetTags() const;
+                    std::string GetTrainingMode() const;
 
                     /**
-                     * 设置标签配置
+                     * 设置训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tags 标签配置
+                     * @param TrainingMode 训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetTags(const std::vector<Tag>& _tags);
+                    void SetTrainingMode(const std::string& _trainingMode);
 
                     /**
-                     * 判断参数 Tags 是否已赋值
-                     * @return Tags 是否已赋值
+                     * 判断参数 TrainingMode 是否已赋值
+                     * @return TrainingMode 是否已赋值
                      */
-                    bool TagsHasBeenSet() const;
+                    bool TrainingModeHasBeenSet() const;
 
                     /**
                      * 获取任务状态
@@ -490,6 +490,28 @@ namespace TencentCloud
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -519,11 +541,11 @@ namespace TencentCloud
                     bool m_frameworkVersionHasBeenSet;
 
                     /**
-                     * 训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
+                     * 框架运行环境
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_trainingMode;
-                    bool m_trainingModeHasBeenSet;
+                    std::string m_frameworkEnvironment;
+                    bool m_frameworkEnvironmentHasBeenSet;
 
                     /**
                      * 计费模式
@@ -551,11 +573,11 @@ namespace TencentCloud
                     bool m_resourceConfigInfosHasBeenSet;
 
                     /**
-                     * 标签配置
+                     * 训练模式eg：PS_WORKER、DDP、MPI、HOROVOD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<Tag> m_tags;
-                    bool m_tagsHasBeenSet;
+                    std::string m_trainingMode;
+                    bool m_trainingModeHasBeenSet;
 
                     /**
                      * 任务状态
@@ -634,6 +656,13 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 标签配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

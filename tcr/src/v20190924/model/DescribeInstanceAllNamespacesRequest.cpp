@@ -22,7 +22,9 @@
 using namespace TencentCloud::Tcr::V20190924::Model;
 using namespace std;
 
-DescribeInstanceAllNamespacesRequest::DescribeInstanceAllNamespacesRequest()
+DescribeInstanceAllNamespacesRequest::DescribeInstanceAllNamespacesRequest() :
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -33,6 +35,22 @@ string DescribeInstanceAllNamespacesRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +58,37 @@ string DescribeInstanceAllNamespacesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t DescribeInstanceAllNamespacesRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeInstanceAllNamespacesRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeInstanceAllNamespacesRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeInstanceAllNamespacesRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeInstanceAllNamespacesRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeInstanceAllNamespacesRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
 
 

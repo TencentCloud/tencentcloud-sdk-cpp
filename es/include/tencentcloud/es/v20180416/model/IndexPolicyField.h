@@ -178,6 +178,28 @@ namespace TencentCloud
                      */
                     bool FrozenMinAgeHasBeenSet() const;
 
+                    /**
+                     * 获取/
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ColdAction /
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetColdAction() const;
+
+                    /**
+                     * 设置/
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ColdAction /
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetColdAction(const std::string& _coldAction);
+
+                    /**
+                     * 判断参数 ColdAction 是否已赋值
+                     * @return ColdAction 是否已赋值
+                     */
+                    bool ColdActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +243,13 @@ namespace TencentCloud
                      */
                     std::string m_frozenMinAge;
                     bool m_frozenMinAgeHasBeenSet;
+
+                    /**
+                     * /
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_coldAction;
+                    bool m_coldActionHasBeenSet;
 
                 };
             }

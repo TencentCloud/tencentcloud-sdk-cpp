@@ -72,9 +72,9 @@ namespace TencentCloud
                     bool GoodsNumHasBeenSet() const;
 
                     /**
-                     * 获取商品的时间大小
+                     * 获取商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeSpan 商品的时间大小
+                     * @return TimeSpan 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTimeSpan() const;
@@ -86,9 +86,9 @@ namespace TencentCloud
                     bool TimeSpanHasBeenSet() const;
 
                     /**
-                     * 获取商品的时间单位
+                     * 获取商品的时间单位，m表示月，y表示年
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimeUnit 商品的时间单位
+                     * @return TimeUnit 商品的时间单位，m表示月，y表示年
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTimeUnit() const;
@@ -130,14 +130,14 @@ namespace TencentCloud
                     bool m_goodsNumHasBeenSet;
 
                     /**
-                     * 商品的时间大小
+                     * 商品的时间大小，整型参数，举例：当TimeSpan为1，TImeUnit为m时，表示询价购买时长为1个月时的价格
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeSpan;
                     bool m_timeSpanHasBeenSet;
 
                     /**
-                     * 商品的时间单位
+                     * 商品的时间单位，m表示月，y表示年
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeUnit;
