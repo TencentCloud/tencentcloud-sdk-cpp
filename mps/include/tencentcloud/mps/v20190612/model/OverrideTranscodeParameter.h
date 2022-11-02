@@ -27,6 +27,7 @@
 #include <tencentcloud/mps/v20190612/model/VideoTemplateInfoForUpdate.h>
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfoForUpdate.h>
 #include <tencentcloud/mps/v20190612/model/TEHDConfigForUpdate.h>
+#include <tencentcloud/mps/v20190612/model/SubtitleTemplate.h>
 
 
 namespace TencentCloud
@@ -173,6 +174,24 @@ namespace TencentCloud
                      */
                     bool TEHDConfigHasBeenSet() const;
 
+                    /**
+                     * 获取字幕流配置参数。
+                     * @return SubtitleTemplate 字幕流配置参数。
+                     */
+                    SubtitleTemplate GetSubtitleTemplate() const;
+
+                    /**
+                     * 设置字幕流配置参数。
+                     * @param SubtitleTemplate 字幕流配置参数。
+                     */
+                    void SetSubtitleTemplate(const SubtitleTemplate& _subtitleTemplate);
+
+                    /**
+                     * 判断参数 SubtitleTemplate 是否已赋值
+                     * @return SubtitleTemplate 是否已赋值
+                     */
+                    bool SubtitleTemplateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -214,6 +233,12 @@ namespace TencentCloud
                      */
                     TEHDConfigForUpdate m_tEHDConfig;
                     bool m_tEHDConfigHasBeenSet;
+
+                    /**
+                     * 字幕流配置参数。
+                     */
+                    SubtitleTemplate m_subtitleTemplate;
+                    bool m_subtitleTemplateHasBeenSet;
 
                 };
             }

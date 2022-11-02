@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h>
+#include <tencentcloud/trp/v20210515/model/CreateCorporationOrderResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Gme::V20180711::Model;
+using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
-ModifyRoomInfoResponse::ModifyRoomInfoResponse() :
-    m_resultHasBeenSet(false),
-    m_errMsgHasBeenSet(false)
+CreateCorporationOrderResponse::CreateCorporationOrderResponse() :
+    m_corpIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyRoomInfoResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateCorporationOrderResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,32 @@ CoreInternalOutcome ModifyRoomInfoResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    if (rsp.HasMember("CorpId") && !rsp["CorpId"].IsNull())
     {
-        if (!rsp["Result"].IsUint64())
+        if (!rsp["CorpId"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Result` IsUint64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `CorpId` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_result = rsp["Result"].GetUint64();
-        m_resultHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ErrMsg") && !rsp["ErrMsg"].IsNull())
-    {
-        if (!rsp["ErrMsg"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ErrMsg` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_errMsg = string(rsp["ErrMsg"].GetString());
-        m_errMsgHasBeenSet = true;
+        m_corpId = rsp["CorpId"].GetUint64();
+        m_corpIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyRoomInfoResponse::ToJsonString() const
+string CreateCorporationOrderResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_resultHasBeenSet)
+    if (m_corpIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Result";
+        string key = "CorpId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_result, allocator);
-    }
-
-    if (m_errMsgHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ErrMsg";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_errMsg.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_corpId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +102,14 @@ string ModifyRoomInfoResponse::ToJsonString() const
 }
 
 
-uint64_t ModifyRoomInfoResponse::GetResult() const
+uint64_t CreateCorporationOrderResponse::GetCorpId() const
 {
-    return m_result;
+    return m_corpId;
 }
 
-bool ModifyRoomInfoResponse::ResultHasBeenSet() const
+bool CreateCorporationOrderResponse::CorpIdHasBeenSet() const
 {
-    return m_resultHasBeenSet;
-}
-
-string ModifyRoomInfoResponse::GetErrMsg() const
-{
-    return m_errMsg;
-}
-
-bool ModifyRoomInfoResponse::ErrMsgHasBeenSet() const
-{
-    return m_errMsgHasBeenSet;
+    return m_corpIdHasBeenSet;
 }
 
 

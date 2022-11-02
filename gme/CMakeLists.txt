@@ -74,11 +74,9 @@ set(gme_public_header_model
   include/tencentcloud/gme/v20180711/model/UpdateScanUsersRequest.h
   include/tencentcloud/gme/v20180711/model/DeleteResult.h
   include/tencentcloud/gme/v20180711/model/AgeDetectTaskResult.h
-  include/tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h
   include/tencentcloud/gme/v20180711/model/DescribeScanResult.h
   include/tencentcloud/gme/v20180711/model/AgeDetectTask.h
   include/tencentcloud/gme/v20180711/model/ScanDetail.h
-  include/tencentcloud/gme/v20180711/model/ModifyRoomInfoRequest.h
   include/tencentcloud/gme/v20180711/model/CreateAgeDetectTaskResponse.h
   include/tencentcloud/gme/v20180711/model/CreateAppRequest.h
   include/tencentcloud/gme/v20180711/model/RealtimeSpeechConf.h
@@ -153,11 +151,9 @@ set(gme_src
   src/v20180711/model/UpdateScanUsersRequest.cpp
   src/v20180711/model/DeleteResult.cpp
   src/v20180711/model/AgeDetectTaskResult.cpp
-  src/v20180711/model/ModifyRoomInfoResponse.cpp
   src/v20180711/model/DescribeScanResult.cpp
   src/v20180711/model/AgeDetectTask.cpp
   src/v20180711/model/ScanDetail.cpp
-  src/v20180711/model/ModifyRoomInfoRequest.cpp
   src/v20180711/model/CreateAgeDetectTaskResponse.cpp
   src/v20180711/model/CreateAppRequest.cpp
   src/v20180711/model/RealtimeSpeechConf.cpp

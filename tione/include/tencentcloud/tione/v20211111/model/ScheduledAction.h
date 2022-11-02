@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ScheduleStopHasBeenSet() const;
 
                     /**
-                     * 获取要执行定时停止的时间，格式：“2022-01-26 19:46:22”
-                     * @return ScheduleStopTime 要执行定时停止的时间，格式：“2022-01-26 19:46:22”
+                     * 获取要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
+                     * @return ScheduleStopTime 要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
                      */
                     std::string GetScheduleStopTime() const;
 
                     /**
-                     * 设置要执行定时停止的时间，格式：“2022-01-26 19:46:22”
-                     * @param ScheduleStopTime 要执行定时停止的时间，格式：“2022-01-26 19:46:22”
+                     * 设置要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
+                     * @param ScheduleStopTime 要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
                      */
                     void SetScheduleStopTime(const std::string& _scheduleStopTime);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_scheduleStopHasBeenSet;
 
                     /**
-                     * 要执行定时停止的时间，格式：“2022-01-26 19:46:22”
+                     * 要执行定时停止的时间，格式：“2022-01-26T19:46:22+08:00”
                      */
                     std::string m_scheduleStopTime;
                     bool m_scheduleStopTimeHasBeenSet;

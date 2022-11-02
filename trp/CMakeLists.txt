@@ -21,6 +21,7 @@ set(trp_public_header
 set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/CodeBatch.h
   include/tencentcloud/trp/v20210515/model/DescribeProductsRequest.h
+  include/tencentcloud/trp/v20210515/model/CreateCorporationOrderResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyProductResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyProductRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyCustomRuleRequest.h
@@ -91,6 +92,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeProductByIdRequest.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodesResponse.h
+  include/tencentcloud/trp/v20210515/model/CreateCorporationOrderRequest.h
   include/tencentcloud/trp/v20210515/model/CreateTraceCodesResponse.h
   include/tencentcloud/trp/v20210515/model/DeleteTraceDataRequest.h
   include/tencentcloud/trp/v20210515/model/Merchant.h
@@ -118,6 +120,7 @@ set(trp_src
   src/v20210515/TrpClient.cpp
   src/v20210515/model/CodeBatch.cpp
   src/v20210515/model/DescribeProductsRequest.cpp
+  src/v20210515/model/CreateCorporationOrderResponse.cpp
   src/v20210515/model/ModifyProductResponse.cpp
   src/v20210515/model/ModifyProductRequest.cpp
   src/v20210515/model/ModifyCustomRuleRequest.cpp
@@ -188,6 +191,7 @@ set(trp_src
   src/v20210515/model/ModifyCodeBatchRequest.cpp
   src/v20210515/model/DescribeProductByIdRequest.cpp
   src/v20210515/model/DescribeTraceCodesResponse.cpp
+  src/v20210515/model/CreateCorporationOrderRequest.cpp
   src/v20210515/model/CreateTraceCodesResponse.cpp
   src/v20210515/model/DeleteTraceDataRequest.cpp
   src/v20210515/model/Merchant.cpp

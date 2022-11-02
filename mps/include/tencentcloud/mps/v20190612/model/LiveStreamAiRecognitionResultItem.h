@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/LiveStreamOcrWordsRecognitionResult.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamAsrFullTextRecognitionResult.h>
 #include <tencentcloud/mps/v20190612/model/LiveStreamOcrFullTextRecognitionResult.h>
+#include <tencentcloud/mps/v20190612/model/LiveStreamTransTextRecognitionResult.h>
 
 
 namespace TencentCloud
@@ -58,12 +59,14 @@ namespace TencentCloud
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      * @return Type 结果的类型，取值范围：
 <li>FaceRecognition：人脸识别，</li>
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      */
                     std::string GetType() const;
 
@@ -74,12 +77,14 @@ namespace TencentCloud
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      * @param Type 结果的类型，取值范围：
 <li>FaceRecognition：人脸识别，</li>
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -199,6 +204,24 @@ OcrFullTextRecognition 时有效。
                      */
                     bool OcrFullTextRecognitionResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取翻译结果，当Type 为 TransTextRecognition 时有效。
+                     * @return TransTextRecognitionResultSet 翻译结果，当Type 为 TransTextRecognition 时有效。
+                     */
+                    std::vector<LiveStreamTransTextRecognitionResult> GetTransTextRecognitionResultSet() const;
+
+                    /**
+                     * 设置翻译结果，当Type 为 TransTextRecognition 时有效。
+                     * @param TransTextRecognitionResultSet 翻译结果，当Type 为 TransTextRecognition 时有效。
+                     */
+                    void SetTransTextRecognitionResultSet(const std::vector<LiveStreamTransTextRecognitionResult>& _transTextRecognitionResultSet);
+
+                    /**
+                     * 判断参数 TransTextRecognitionResultSet 是否已赋值
+                     * @return TransTextRecognitionResultSet 是否已赋值
+                     */
+                    bool TransTextRecognitionResultSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +231,7 @@ OcrFullTextRecognition 时有效。
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -246,6 +270,12 @@ OcrFullTextRecognition 时有效。
                      */
                     std::vector<LiveStreamOcrFullTextRecognitionResult> m_ocrFullTextRecognitionResultSet;
                     bool m_ocrFullTextRecognitionResultSetHasBeenSet;
+
+                    /**
+                     * 翻译结果，当Type 为 TransTextRecognition 时有效。
+                     */
+                    std::vector<LiveStreamTransTextRecognitionResult> m_transTextRecognitionResultSet;
+                    bool m_transTextRecognitionResultSetHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ AiRecognitionResult::AiRecognitionResult() :
     m_asrWordsTaskHasBeenSet(false),
     m_asrFullTextTaskHasBeenSet(false),
     m_ocrWordsTaskHasBeenSet(false),
-    m_ocrFullTextTaskHasBeenSet(false)
+    m_ocrFullTextTaskHasBeenSet(false),
+    m_transTextTaskHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,23 @@ CoreInternalOutcome AiRecognitionResult::Deserialize(const rapidjson::Value &val
         m_ocrFullTextTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("TransTextTask") && !value["TransTextTask"].IsNull())
+    {
+        if (!value["TransTextTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionResult.TransTextTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_transTextTask.Deserialize(value["TransTextTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_transTextTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -188,6 +206,15 @@ void AiRecognitionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ocrFullTextTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_transTextTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransTextTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_transTextTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -287,5 +314,21 @@ void AiRecognitionResult::SetOcrFullTextTask(const AiRecognitionTaskOcrFullTextR
 bool AiRecognitionResult::OcrFullTextTaskHasBeenSet() const
 {
     return m_ocrFullTextTaskHasBeenSet;
+}
+
+AiRecognitionTaskTransTextResult AiRecognitionResult::GetTransTextTask() const
+{
+    return m_transTextTask;
+}
+
+void AiRecognitionResult::SetTransTextTask(const AiRecognitionTaskTransTextResult& _transTextTask)
+{
+    m_transTextTask = _transTextTask;
+    m_transTextTaskHasBeenSet = true;
+}
+
+bool AiRecognitionResult::TransTextTaskHasBeenSet() const
+{
+    return m_transTextTaskHasBeenSet;
 }
 

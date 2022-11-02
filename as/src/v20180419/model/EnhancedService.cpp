@@ -22,7 +22,8 @@ using namespace std;
 
 EnhancedService::EnhancedService() :
     m_securityServiceHasBeenSet(false),
-    m_monitorServiceHasBeenSet(false)
+    m_monitorServiceHasBeenSet(false),
+    m_automationServiceHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,26 @@ CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
         m_monitorServiceHasBeenSet = true;
     }
 
+    if (value.HasMember("AutomationService") && !value["AutomationService"].IsNull())
+    {
+        if (!value["AutomationService"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EnhancedService.AutomationService` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AutomationService"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RunAutomationServiceEnabled item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_automationService.push_back(item);
+        }
+        m_automationServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +109,21 @@ void EnhancedService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_monitorService.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_automationServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutomationService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_automationService.begin(); itr != m_automationService.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -123,5 +159,21 @@ void EnhancedService::SetMonitorService(const RunMonitorServiceEnabled& _monitor
 bool EnhancedService::MonitorServiceHasBeenSet() const
 {
     return m_monitorServiceHasBeenSet;
+}
+
+vector<RunAutomationServiceEnabled> EnhancedService::GetAutomationService() const
+{
+    return m_automationService;
+}
+
+void EnhancedService::SetAutomationService(const vector<RunAutomationServiceEnabled>& _automationService)
+{
+    m_automationService = _automationService;
+    m_automationServiceHasBeenSet = true;
+}
+
+bool EnhancedService::AutomationServiceHasBeenSet() const
+{
+    return m_automationServiceHasBeenSet;
 }
 

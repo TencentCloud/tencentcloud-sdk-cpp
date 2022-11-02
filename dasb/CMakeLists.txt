@@ -61,6 +61,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DescribeResourcesRequest.h
   include/tencentcloud/dasb/v20191018/model/BindDeviceResourceResponse.h
   include/tencentcloud/dasb/v20191018/model/CreateUserRequest.h
+  include/tencentcloud/dasb/v20191018/model/TagFilter.h
   include/tencentcloud/dasb/v20191018/model/DeleteUsersResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeDeviceGroupsResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeResourcesResponse.h
@@ -120,6 +121,7 @@ set(dasb_src
   src/v20191018/model/DescribeResourcesRequest.cpp
   src/v20191018/model/BindDeviceResourceResponse.cpp
   src/v20191018/model/CreateUserRequest.cpp
+  src/v20191018/model/TagFilter.cpp
   src/v20191018/model/DeleteUsersResponse.cpp
   src/v20191018/model/DescribeDeviceGroupsResponse.cpp
   src/v20191018/model/DescribeResourcesResponse.cpp

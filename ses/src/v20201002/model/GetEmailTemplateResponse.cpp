@@ -25,7 +25,8 @@ using namespace std;
 
 GetEmailTemplateResponse::GetEmailTemplateResponse() :
     m_templateContentHasBeenSet(false),
-    m_templateStatusHasBeenSet(false)
+    m_templateStatusHasBeenSet(false),
+    m_templateNameHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,16 @@ CoreInternalOutcome GetEmailTemplateResponse::Deserialize(const string &payload)
         m_templateStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TemplateName") && !rsp["TemplateName"].IsNull())
+    {
+        if (!rsp["TemplateName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateName = string(rsp["TemplateName"].GetString());
+        m_templateNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string GetEmailTemplateResponse::ToJsonString() const
         string key = "TemplateStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_templateStatus, allocator);
+    }
+
+    if (m_templateNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ uint64_t GetEmailTemplateResponse::GetTemplateStatus() const
 bool GetEmailTemplateResponse::TemplateStatusHasBeenSet() const
 {
     return m_templateStatusHasBeenSet;
+}
+
+string GetEmailTemplateResponse::GetTemplateName() const
+{
+    return m_templateName;
+}
+
+bool GetEmailTemplateResponse::TemplateNameHasBeenSet() const
+{
+    return m_templateNameHasBeenSet;
 }
 
 

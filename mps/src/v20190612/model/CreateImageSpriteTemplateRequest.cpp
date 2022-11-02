@@ -32,7 +32,8 @@ CreateImageSpriteTemplateRequest::CreateImageSpriteTemplateRequest() :
     m_heightHasBeenSet(false),
     m_resolutionAdaptiveHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Format";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -289,6 +298,22 @@ void CreateImageSpriteTemplateRequest::SetComment(const string& _comment)
 bool CreateImageSpriteTemplateRequest::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string CreateImageSpriteTemplateRequest::GetFormat() const
+{
+    return m_format;
+}
+
+void CreateImageSpriteTemplateRequest::SetFormat(const string& _format)
+{
+    m_format = _format;
+    m_formatHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::FormatHasBeenSet() const
+{
+    return m_formatHasBeenSet;
 }
 
 

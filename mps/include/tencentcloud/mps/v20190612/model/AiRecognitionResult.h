@@ -29,6 +29,7 @@
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskAsrFullTextResult.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrWordsResult.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionTaskOcrFullTextResult.h>
+#include <tencentcloud/mps/v20190612/model/AiRecognitionTaskTransTextResult.h>
 
 
 namespace TencentCloud
@@ -58,12 +59,14 @@ namespace TencentCloud
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      * @return Type 任务的类型，取值范围：
 <li>FaceRecognition：人脸识别，</li>
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      */
                     std::string GetType() const;
 
@@ -74,12 +77,14 @@ namespace TencentCloud
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      * @param Type 任务的类型，取值范围：
 <li>FaceRecognition：人脸识别，</li>
 <li>AsrWordsRecognition：语音关键词识别，</li>
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -219,6 +224,32 @@ namespace TencentCloud
                      */
                     bool OcrFullTextTaskHasBeenSet() const;
 
+                    /**
+                     * 获取翻译结果，当 Type 为
+ TransTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TransTextTask 翻译结果，当 Type 为
+ TransTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskTransTextResult GetTransTextTask() const;
+
+                    /**
+                     * 设置翻译结果，当 Type 为
+ TransTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TransTextTask 翻译结果，当 Type 为
+ TransTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTransTextTask(const AiRecognitionTaskTransTextResult& _transTextTask);
+
+                    /**
+                     * 判断参数 TransTextTask 是否已赋值
+                     * @return TransTextTask 是否已赋值
+                     */
+                    bool TransTextTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -228,6 +259,7 @@ namespace TencentCloud
 <li>OcrWordsRecognition：文本关键词识别，</li>
 <li>AsrFullTextRecognition：语音全文识别，</li>
 <li>OcrFullTextRecognition：文本全文识别。</li>
+<li>TransTextRecognition：语音翻译。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -271,6 +303,14 @@ namespace TencentCloud
                      */
                     AiRecognitionTaskOcrFullTextResult m_ocrFullTextTask;
                     bool m_ocrFullTextTaskHasBeenSet;
+
+                    /**
+                     * 翻译结果，当 Type 为
+ TransTextRecognition 时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AiRecognitionTaskTransTextResult m_transTextTask;
+                    bool m_transTextTaskHasBeenSet;
 
                 };
             }

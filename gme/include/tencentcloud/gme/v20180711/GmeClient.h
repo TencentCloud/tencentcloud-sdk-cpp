@@ -59,8 +59,6 @@
 #include <tencentcloud/gme/v20180711/model/ModifyCustomizationResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyCustomizationStateRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyCustomizationStateResponse.h>
-#include <tencentcloud/gme/v20180711/model/ModifyRoomInfoRequest.h>
-#include <tencentcloud/gme/v20180711/model/ModifyRoomInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyUserMicStatusRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyUserMicStatusResponse.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceRequest.h>
@@ -137,9 +135,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCustomizationStateResponse> ModifyCustomizationStateOutcome;
                 typedef std::future<ModifyCustomizationStateOutcome> ModifyCustomizationStateOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyCustomizationStateRequest&, ModifyCustomizationStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationStateAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyRoomInfoResponse> ModifyRoomInfoOutcome;
-                typedef std::future<ModifyRoomInfoOutcome> ModifyRoomInfoOutcomeCallable;
-                typedef std::function<void(const GmeClient*, const Model::ModifyRoomInfoRequest&, ModifyRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoomInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserMicStatusResponse> ModifyUserMicStatusOutcome;
                 typedef std::future<ModifyUserMicStatusOutcome> ModifyUserMicStatusOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyUserMicStatusRequest&, ModifyUserMicStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserMicStatusAsyncHandler;
@@ -327,15 +322,6 @@ namespace TencentCloud
                 ModifyCustomizationStateOutcome ModifyCustomizationState(const Model::ModifyCustomizationStateRequest &request);
                 void ModifyCustomizationStateAsync(const Model::ModifyCustomizationStateRequest& request, const ModifyCustomizationStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomizationStateOutcomeCallable ModifyCustomizationStateCallable(const Model::ModifyCustomizationStateRequest& request);
-
-                /**
-                 *修改房间信息
-                 * @param req ModifyRoomInfoRequest
-                 * @return ModifyRoomInfoOutcome
-                 */
-                ModifyRoomInfoOutcome ModifyRoomInfo(const Model::ModifyRoomInfoRequest &request);
-                void ModifyRoomInfoAsync(const Model::ModifyRoomInfoRequest& request, const ModifyRoomInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyRoomInfoOutcomeCallable ModifyRoomInfoCallable(const Model::ModifyRoomInfoRequest& request);
 
                 /**
                  *修改用户麦克风状态。

@@ -370,6 +370,24 @@ namespace TencentCloud
                      */
                     bool CommentHasBeenSet() const;
 
+                    /**
+                     * 获取图片格式。
+                     * @return Format 图片格式。
+                     */
+                    std::string GetFormat() const;
+
+                    /**
+                     * 设置图片格式。
+                     * @param Format 图片格式。
+                     */
+                    void SetFormat(const std::string& _format);
+
+                    /**
+                     * 判断参数 Format 是否已赋值
+                     * @return Format 是否已赋值
+                     */
+                    bool FormatHasBeenSet() const;
+
                 private:
 
                     /**
@@ -473,6 +491,12 @@ namespace TencentCloud
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;
+
+                    /**
+                     * 图片格式。
+                     */
+                    std::string m_format;
+                    bool m_formatHasBeenSet;
 
                 };
             }

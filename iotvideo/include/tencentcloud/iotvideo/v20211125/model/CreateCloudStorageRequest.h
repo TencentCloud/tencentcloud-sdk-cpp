@@ -194,6 +194,24 @@ lye1y30d：低功耗事件30天年套餐。
                      */
                     bool OverrideHasBeenSet() const;
 
+                    /**
+                     * 获取套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     * @return PackageQueue 套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     */
+                    std::string GetPackageQueue() const;
+
+                    /**
+                     * 设置套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     * @param PackageQueue 套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     */
+                    void SetPackageQueue(const std::string& _packageQueue);
+
+                    /**
+                     * 判断参数 PackageQueue 是否已赋值
+                     * @return PackageQueue 是否已赋值
+                     */
+                    bool PackageQueueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +257,12 @@ lye1y30d：低功耗事件30天年套餐。
                      */
                     uint64_t m_override;
                     bool m_overrideHasBeenSet;
+
+                    /**
+                     * 套餐列表顺序：PackageQueue=front会立即使用新购买的套餐，新购套餐结束后，列表中下一个未过期的套餐继续生效；PackageQueue=end会等设备当前所有已购买套餐过期后才会生效新购套餐。与Override参数不能同时使用。
+                     */
+                    std::string m_packageQueue;
+                    bool m_packageQueueHasBeenSet;
 
                 };
             }

@@ -237,14 +237,14 @@ namespace TencentCloud
                     bool SampleIntervalHasBeenSet() const;
 
                     /**
-                     * 获取图片格式，取值为 jpg 和 png。
-                     * @return Format 图片格式，取值为 jpg 和 png。
+                     * 获取图片格式，取值为 jpg、png、webp。
+                     * @return Format 图片格式，取值为 jpg、png、webp。
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置图片格式，取值为 jpg 和 png。
-                     * @param Format 图片格式，取值为 jpg 和 png。
+                     * 设置图片格式，取值为 jpg、png、webp。
+                     * @param Format 图片格式，取值为 jpg、png、webp。
                      */
                     void SetFormat(const std::string& _format);
 
@@ -372,7 +372,7 @@ namespace TencentCloud
                     bool m_sampleIntervalHasBeenSet;
 
                     /**
-                     * 图片格式，取值为 jpg 和 png。
+                     * 图片格式，取值为 jpg、png、webp。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

@@ -26,7 +26,8 @@ LiveStreamAiRecognitionResultItem::LiveStreamAiRecognitionResultItem() :
     m_asrWordsRecognitionResultSetHasBeenSet(false),
     m_ocrWordsRecognitionResultSetHasBeenSet(false),
     m_asrFullTextRecognitionResultSetHasBeenSet(false),
-    m_ocrFullTextRecognitionResultSetHasBeenSet(false)
+    m_ocrFullTextRecognitionResultSetHasBeenSet(false),
+    m_transTextRecognitionResultSetHasBeenSet(false)
 {
 }
 
@@ -145,6 +146,26 @@ CoreInternalOutcome LiveStreamAiRecognitionResultItem::Deserialize(const rapidjs
         m_ocrFullTextRecognitionResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("TransTextRecognitionResultSet") && !value["TransTextRecognitionResultSet"].IsNull())
+    {
+        if (!value["TransTextRecognitionResultSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LiveStreamAiRecognitionResultItem.TransTextRecognitionResultSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TransTextRecognitionResultSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            LiveStreamTransTextRecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_transTextRecognitionResultSet.push_back(item);
+        }
+        m_transTextRecognitionResultSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -229,6 +250,21 @@ void LiveStreamAiRecognitionResultItem::ToJsonObject(rapidjson::Value &value, ra
 
         int i=0;
         for (auto itr = m_ocrFullTextRecognitionResultSet.begin(); itr != m_ocrFullTextRecognitionResultSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_transTextRecognitionResultSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransTextRecognitionResultSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_transTextRecognitionResultSet.begin(); itr != m_transTextRecognitionResultSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -332,5 +368,21 @@ void LiveStreamAiRecognitionResultItem::SetOcrFullTextRecognitionResultSet(const
 bool LiveStreamAiRecognitionResultItem::OcrFullTextRecognitionResultSetHasBeenSet() const
 {
     return m_ocrFullTextRecognitionResultSetHasBeenSet;
+}
+
+vector<LiveStreamTransTextRecognitionResult> LiveStreamAiRecognitionResultItem::GetTransTextRecognitionResultSet() const
+{
+    return m_transTextRecognitionResultSet;
+}
+
+void LiveStreamAiRecognitionResultItem::SetTransTextRecognitionResultSet(const vector<LiveStreamTransTextRecognitionResult>& _transTextRecognitionResultSet)
+{
+    m_transTextRecognitionResultSet = _transTextRecognitionResultSet;
+    m_transTextRecognitionResultSetHasBeenSet = true;
+}
+
+bool LiveStreamAiRecognitionResultItem::TransTextRecognitionResultSetHasBeenSet() const
+{
+    return m_transTextRecognitionResultSetHasBeenSet;
 }
 

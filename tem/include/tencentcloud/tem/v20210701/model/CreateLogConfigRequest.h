@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool TopicIdHasBeenSet() const;
 
                     /**
-                     * 获取日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
-                     * @return LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
+                     * 获取日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；json_log 为 json格式；fullregex_log 为单行正则；multiline_fullregex_log 为多行正则
+                     * @return LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；json_log 为 json格式；fullregex_log 为单行正则；multiline_fullregex_log 为多行正则
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
-                     * @param LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
+                     * 设置日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；json_log 为 json格式；fullregex_log 为单行正则；multiline_fullregex_log 为多行正则
+                     * @param LogType 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；json_log 为 json格式；fullregex_log 为单行正则；multiline_fullregex_log 为多行正则
                      */
                     void SetLogType(const std::string& _logType);
 
@@ -280,7 +280,7 @@ namespace TencentCloud
                     bool m_topicIdHasBeenSet;
 
                     /**
-                     * 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；
+                     * 日志提取模式，minimalist_log 为单行全文；multiline_log 为多行全文；json_log 为 json格式；fullregex_log 为单行正则；multiline_fullregex_log 为多行正则
                      */
                     std::string m_logType;
                     bool m_logTypeHasBeenSet;

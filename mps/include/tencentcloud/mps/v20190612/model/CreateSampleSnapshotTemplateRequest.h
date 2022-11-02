@@ -219,14 +219,14 @@ namespace TencentCloud
                     bool ResolutionAdaptiveHasBeenSet() const;
 
                     /**
-                     * 获取图片格式，取值为 jpg 和 png。默认为 jpg。
-                     * @return Format 图片格式，取值为 jpg 和 png。默认为 jpg。
+                     * 获取图片格式，取值为 jpg、png、webp。默认为 jpg。
+                     * @return Format 图片格式，取值为 jpg、png、webp。默认为 jpg。
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置图片格式，取值为 jpg 和 png。默认为 jpg。
-                     * @param Format 图片格式，取值为 jpg 和 png。默认为 jpg。
+                     * 设置图片格式，取值为 jpg、png、webp。默认为 jpg。
+                     * @param Format 图片格式，取值为 jpg、png、webp。默认为 jpg。
                      */
                     void SetFormat(const std::string& _format);
 
@@ -348,7 +348,7 @@ namespace TencentCloud
                     bool m_resolutionAdaptiveHasBeenSet;
 
                     /**
-                     * 图片格式，取值为 jpg 和 png。默认为 jpg。
+                     * 图片格式，取值为 jpg、png、webp。默认为 jpg。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

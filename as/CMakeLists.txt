@@ -101,6 +101,7 @@ set(as_public_header_model
   include/tencentcloud/as/v20180419/model/Instance.h
   include/tencentcloud/as/v20180419/model/DescribeAutoScalingInstancesResponse.h
   include/tencentcloud/as/v20180419/model/EnhancedService.h
+  include/tencentcloud/as/v20180419/model/RunAutomationServiceEnabled.h
   include/tencentcloud/as/v20180419/model/DeleteLaunchConfigurationResponse.h
   include/tencentcloud/as/v20180419/model/DescribeScheduledActionsRequest.h
   include/tencentcloud/as/v20180419/model/RunSecurityServiceEnabled.h
@@ -244,6 +245,7 @@ set(as_src
   src/v20180419/model/Instance.cpp
   src/v20180419/model/DescribeAutoScalingInstancesResponse.cpp
   src/v20180419/model/EnhancedService.cpp
+  src/v20180419/model/RunAutomationServiceEnabled.cpp
   src/v20180419/model/DeleteLaunchConfigurationResponse.cpp
   src/v20180419/model/DescribeScheduledActionsRequest.cpp
   src/v20180419/model/RunSecurityServiceEnabled.cpp

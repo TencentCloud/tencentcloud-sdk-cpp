@@ -15,11 +15,25 @@
 #
 
 set(irp_public_header
-  include/tencentcloud/irp/v20220324/IrpClient.h
   include/tencentcloud/irp/v20220805/IrpClient.h
+  include/tencentcloud/irp/v20220324/IrpClient.h
   )
 
 set(irp_public_header_model
+  include/tencentcloud/irp/v20220805/model/ReportFeedItemResponse.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedUserRequest.h
+  include/tencentcloud/irp/v20220805/model/FeedUserInfo.h
+  include/tencentcloud/irp/v20220805/model/FeedRecommendResponse.h
+  include/tencentcloud/irp/v20220805/model/DocItem.h
+  include/tencentcloud/irp/v20220805/model/DislikeInfo.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedBehaviorResponse.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedItemRequest.h
+  include/tencentcloud/irp/v20220805/model/UserIdInfo.h
+  include/tencentcloud/irp/v20220805/model/RecItemData.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedBehaviorRequest.h
+  include/tencentcloud/irp/v20220805/model/FeedBehaviorInfo.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedUserResponse.h
+  include/tencentcloud/irp/v20220805/model/FeedRecommendRequest.h
   include/tencentcloud/irp/v20220324/model/UserIdInfo.h
   include/tencentcloud/irp/v20220324/model/ReportMaterialResponse.h
   include/tencentcloud/irp/v20220324/model/DocBehavior.h
@@ -36,25 +50,25 @@ set(irp_public_header_model
   include/tencentcloud/irp/v20220324/model/ReportMaterialRequest.h
   include/tencentcloud/irp/v20220324/model/RecommendContentResponse.h
   include/tencentcloud/irp/v20220324/model/TagInfo.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedItemResponse.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedUserRequest.h
-  include/tencentcloud/irp/v20220805/model/FeedUserInfo.h
-  include/tencentcloud/irp/v20220805/model/FeedRecommendResponse.h
-  include/tencentcloud/irp/v20220805/model/DocItem.h
-  include/tencentcloud/irp/v20220805/model/DislikeInfo.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedBehaviorResponse.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedItemRequest.h
-  include/tencentcloud/irp/v20220805/model/UserIdInfo.h
-  include/tencentcloud/irp/v20220805/model/RecItemData.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedBehaviorRequest.h
-  include/tencentcloud/irp/v20220805/model/FeedBehaviorInfo.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedUserResponse.h
-  include/tencentcloud/irp/v20220805/model/FeedRecommendRequest.h
   )
 
 set(irp_src
-  src/v20220324/IrpClient.cpp
   src/v20220805/IrpClient.cpp
+  src/v20220324/IrpClient.cpp
+  src/v20220805/model/ReportFeedItemResponse.cpp
+  src/v20220805/model/ReportFeedUserRequest.cpp
+  src/v20220805/model/FeedUserInfo.cpp
+  src/v20220805/model/FeedRecommendResponse.cpp
+  src/v20220805/model/DocItem.cpp
+  src/v20220805/model/DislikeInfo.cpp
+  src/v20220805/model/ReportFeedBehaviorResponse.cpp
+  src/v20220805/model/ReportFeedItemRequest.cpp
+  src/v20220805/model/UserIdInfo.cpp
+  src/v20220805/model/RecItemData.cpp
+  src/v20220805/model/ReportFeedBehaviorRequest.cpp
+  src/v20220805/model/FeedBehaviorInfo.cpp
+  src/v20220805/model/ReportFeedUserResponse.cpp
+  src/v20220805/model/FeedRecommendRequest.cpp
   src/v20220324/model/UserIdInfo.cpp
   src/v20220324/model/ReportMaterialResponse.cpp
   src/v20220324/model/DocBehavior.cpp
@@ -71,20 +85,6 @@ set(irp_src
   src/v20220324/model/ReportMaterialRequest.cpp
   src/v20220324/model/RecommendContentResponse.cpp
   src/v20220324/model/TagInfo.cpp
-  src/v20220805/model/ReportFeedItemResponse.cpp
-  src/v20220805/model/ReportFeedUserRequest.cpp
-  src/v20220805/model/FeedUserInfo.cpp
-  src/v20220805/model/FeedRecommendResponse.cpp
-  src/v20220805/model/DocItem.cpp
-  src/v20220805/model/DislikeInfo.cpp
-  src/v20220805/model/ReportFeedBehaviorResponse.cpp
-  src/v20220805/model/ReportFeedItemRequest.cpp
-  src/v20220805/model/UserIdInfo.cpp
-  src/v20220805/model/RecItemData.cpp
-  src/v20220805/model/ReportFeedBehaviorRequest.cpp
-  src/v20220805/model/FeedBehaviorInfo.cpp
-  src/v20220805/model/ReportFeedUserResponse.cpp
-  src/v20220805/model/FeedRecommendRequest.cpp
   )
 
 set(irp_include
@@ -113,9 +113,9 @@ target_link_libraries(irp
   core)
 
 #install(FILES ${irp_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/irp/v20220805)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/irp/v20220324)
 #install(FILES ${irp_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/irp/v20220805/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/irp/v20220324/model)
 install(DIRECTORY ${irp_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

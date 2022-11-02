@@ -33,7 +33,8 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_authorizedUserIdSetHasBeenSet(false),
     m_resourceIdSetHasBeenSet(false),
     m_kindSetHasBeenSet(false),
-    m_departmentIdHasBeenSet(false)
+    m_departmentIdHasBeenSet(false),
+    m_tagFiltersHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,21 @@ string DescribeDevicesRequest::ToJsonString() const
         string key = "DepartmentId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_departmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -339,6 +355,22 @@ void DescribeDevicesRequest::SetDepartmentId(const string& _departmentId)
 bool DescribeDevicesRequest::DepartmentIdHasBeenSet() const
 {
     return m_departmentIdHasBeenSet;
+}
+
+vector<TagFilter> DescribeDevicesRequest::GetTagFilters() const
+{
+    return m_tagFilters;
+}
+
+void DescribeDevicesRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
+{
+    m_tagFilters = _tagFilters;
+    m_tagFiltersHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::TagFiltersHasBeenSet() const
+{
+    return m_tagFiltersHasBeenSet;
 }
 
 

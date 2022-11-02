@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/as/v20180419/model/RunSecurityServiceEnabled.h>
 #include <tencentcloud/as/v20180419/model/RunMonitorServiceEnabled.h>
+#include <tencentcloud/as/v20180419/model/RunAutomationServiceEnabled.h>
 
 
 namespace TencentCloud
@@ -37,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent。
+                * 描述了实例的增强服务启用情况与其设置，如云安全，云监控，自动化助手等实例 Agent。
                 */
                 class EnhancedService : public AbstractModel
                 {
@@ -84,6 +85,24 @@ namespace TencentCloud
                      */
                     bool MonitorServiceHasBeenSet() const;
 
+                    /**
+                     * 获取开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutomationService 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RunAutomationServiceEnabled> GetAutomationService() const;
+
+                    /**
+                     * 设置开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutomationService 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutomationService(const std::vector<RunAutomationServiceEnabled>& _automationService);
+
+                    /**
+                     * 判断参数 AutomationService 是否已赋值
+                     * @return AutomationService 是否已赋值
+                     */
+                    bool AutomationServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +116,12 @@ namespace TencentCloud
                      */
                     RunMonitorServiceEnabled m_monitorService;
                     bool m_monitorServiceHasBeenSet;
+
+                    /**
+                     * 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RunAutomationServiceEnabled> m_automationService;
+                    bool m_automationServiceHasBeenSet;
 
                 };
             }

@@ -27,6 +27,8 @@
 #include <tencentcloud/trp/v20210515/model/CreateCodeBatchResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodePackRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodePackResponse.h>
+#include <tencentcloud/trp/v20210515/model/CreateCorporationOrderRequest.h>
+#include <tencentcloud/trp/v20210515/model/CreateCorporationOrderResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCustomPackRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateCustomPackResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCustomRuleRequest.h>
@@ -121,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCodePackResponse> CreateCodePackOutcome;
                 typedef std::future<CreateCodePackOutcome> CreateCodePackOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateCodePackRequest&, CreateCodePackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCodePackAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCorporationOrderResponse> CreateCorporationOrderOutcome;
+                typedef std::future<CreateCorporationOrderOutcome> CreateCorporationOrderOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::CreateCorporationOrderRequest&, CreateCorporationOrderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCorporationOrderAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomPackResponse> CreateCustomPackOutcome;
                 typedef std::future<CreateCustomPackOutcome> CreateCustomPackOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateCustomPackRequest&, CreateCustomPackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomPackAsyncHandler;
@@ -252,6 +257,15 @@ namespace TencentCloud
                 CreateCodePackOutcome CreateCodePack(const Model::CreateCodePackRequest &request);
                 void CreateCodePackAsync(const Model::CreateCodePackRequest& request, const CreateCodePackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCodePackOutcomeCallable CreateCodePackCallable(const Model::CreateCodePackRequest& request);
+
+                /**
+                 *以订单方式新建企业信息/配额信息
+                 * @param req CreateCorporationOrderRequest
+                 * @return CreateCorporationOrderOutcome
+                 */
+                CreateCorporationOrderOutcome CreateCorporationOrder(const Model::CreateCorporationOrderRequest &request);
+                void CreateCorporationOrderAsync(const Model::CreateCorporationOrderRequest& request, const CreateCorporationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCorporationOrderOutcomeCallable CreateCorporationOrderCallable(const Model::CreateCorporationOrderRequest& request);
 
                 /**
                  *生成自定义码包

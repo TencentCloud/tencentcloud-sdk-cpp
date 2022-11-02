@@ -95,8 +95,10 @@ namespace TencentCloud
                     bool PreviewUrlsHasBeenSet() const;
 
                     /**
-                     * 获取复杂文档合成任务的任务信息数组
-                     * @return TaskInfos 复杂文档合成任务的任务信息数组
+                     * 获取复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；
+如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
+                     * @return TaskInfos 复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；
+如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
                      */
                     std::vector<TaskInfo> GetTaskInfos() const;
 
@@ -134,7 +136,8 @@ namespace TencentCloud
                     bool m_previewUrlsHasBeenSet;
 
                     /**
-                     * 复杂文档合成任务的任务信息数组
+                     * 复杂文档合成任务（如，包含动态表格的预览任务）的任务信息数组；
+如果文档需要异步合成，此字段会返回该异步任务的任务信息，后续可以通过ChannelGetTaskResultApi接口查询任务详情；
                      */
                     std::vector<TaskInfo> m_taskInfos;
                     bool m_taskInfosHasBeenSet;

@@ -126,6 +126,49 @@ TrpClient::CreateCodePackOutcomeCallable TrpClient::CreateCodePackCallable(const
     return task->get_future();
 }
 
+TrpClient::CreateCorporationOrderOutcome TrpClient::CreateCorporationOrder(const CreateCorporationOrderRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCorporationOrder");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCorporationOrderResponse rsp = CreateCorporationOrderResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCorporationOrderOutcome(rsp);
+        else
+            return CreateCorporationOrderOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCorporationOrderOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::CreateCorporationOrderAsync(const CreateCorporationOrderRequest& request, const CreateCorporationOrderAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCorporationOrder(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::CreateCorporationOrderOutcomeCallable TrpClient::CreateCorporationOrderCallable(const CreateCorporationOrderRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCorporationOrderOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCorporationOrder(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::CreateCustomPackOutcome TrpClient::CreateCustomPack(const CreateCustomPackRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCustomPack");

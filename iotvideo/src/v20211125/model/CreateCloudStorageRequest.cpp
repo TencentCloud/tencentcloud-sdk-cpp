@@ -26,7 +26,8 @@ CreateCloudStorageRequest::CreateCloudStorageRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
     m_packageIdHasBeenSet(false),
-    m_overrideHasBeenSet(false)
+    m_overrideHasBeenSet(false),
+    m_packageQueueHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateCloudStorageRequest::ToJsonString() const
         string key = "Override";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_override, allocator);
+    }
+
+    if (m_packageQueueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageQueue";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_packageQueue.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateCloudStorageRequest::SetOverride(const uint64_t& _override)
 bool CreateCloudStorageRequest::OverrideHasBeenSet() const
 {
     return m_overrideHasBeenSet;
+}
+
+string CreateCloudStorageRequest::GetPackageQueue() const
+{
+    return m_packageQueue;
+}
+
+void CreateCloudStorageRequest::SetPackageQueue(const string& _packageQueue)
+{
+    m_packageQueue = _packageQueue;
+    m_packageQueueHasBeenSet = true;
+}
+
+bool CreateCloudStorageRequest::PackageQueueHasBeenSet() const
+{
+    return m_packageQueueHasBeenSet;
 }
 
 
