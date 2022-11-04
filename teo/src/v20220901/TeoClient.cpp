@@ -83,6 +83,49 @@ TeoClient::CheckCertificateOutcomeCallable TeoClient::CheckCertificateCallable(c
     return task->get_future();
 }
 
+TeoClient::CreateAliasDomainOutcome TeoClient::CreateAliasDomain(const CreateAliasDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAliasDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAliasDomainResponse rsp = CreateAliasDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAliasDomainOutcome(rsp);
+        else
+            return CreateAliasDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAliasDomainOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateAliasDomainAsync(const CreateAliasDomainRequest& request, const CreateAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAliasDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateAliasDomainOutcomeCallable TeoClient::CreateAliasDomainCallable(const CreateAliasDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAliasDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAliasDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateApplicationProxyOutcome TeoClient::CreateApplicationProxy(const CreateApplicationProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApplicationProxy");
@@ -857,6 +900,49 @@ TeoClient::CreateZoneOutcomeCallable TeoClient::CreateZoneCallable(const CreateZ
     return task->get_future();
 }
 
+TeoClient::DeleteAliasDomainOutcome TeoClient::DeleteAliasDomain(const DeleteAliasDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAliasDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAliasDomainResponse rsp = DeleteAliasDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAliasDomainOutcome(rsp);
+        else
+            return DeleteAliasDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAliasDomainOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteAliasDomainAsync(const DeleteAliasDomainRequest& request, const DeleteAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAliasDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteAliasDomainOutcomeCallable TeoClient::DeleteAliasDomainCallable(const DeleteAliasDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAliasDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAliasDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DeleteApplicationProxyOutcome TeoClient::DeleteApplicationProxy(const DeleteApplicationProxyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApplicationProxy");
@@ -1237,6 +1323,49 @@ TeoClient::DescribeAddableEntityListOutcomeCallable TeoClient::DescribeAddableEn
         [this, request]()
         {
             return this->DescribeAddableEntityList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeAliasDomainsOutcome TeoClient::DescribeAliasDomains(const DescribeAliasDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAliasDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAliasDomainsResponse rsp = DescribeAliasDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAliasDomainsOutcome(rsp);
+        else
+            return DescribeAliasDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAliasDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeAliasDomainsAsync(const DescribeAliasDomainsRequest& request, const DescribeAliasDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAliasDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeAliasDomainsOutcomeCallable TeoClient::DescribeAliasDomainsCallable(const DescribeAliasDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAliasDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAliasDomains(request);
         }
     );
 
@@ -4118,6 +4247,92 @@ TeoClient::ModifyAlarmDefaultThresholdOutcomeCallable TeoClient::ModifyAlarmDefa
         [this, request]()
         {
             return this->ModifyAlarmDefaultThreshold(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyAliasDomainOutcome TeoClient::ModifyAliasDomain(const ModifyAliasDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAliasDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAliasDomainResponse rsp = ModifyAliasDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAliasDomainOutcome(rsp);
+        else
+            return ModifyAliasDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAliasDomainOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyAliasDomainAsync(const ModifyAliasDomainRequest& request, const ModifyAliasDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAliasDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyAliasDomainOutcomeCallable TeoClient::ModifyAliasDomainCallable(const ModifyAliasDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAliasDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAliasDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyAliasDomainStatusOutcome TeoClient::ModifyAliasDomainStatus(const ModifyAliasDomainStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAliasDomainStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAliasDomainStatusResponse rsp = ModifyAliasDomainStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAliasDomainStatusOutcome(rsp);
+        else
+            return ModifyAliasDomainStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAliasDomainStatusOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyAliasDomainStatusAsync(const ModifyAliasDomainStatusRequest& request, const ModifyAliasDomainStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAliasDomainStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyAliasDomainStatusOutcomeCallable TeoClient::ModifyAliasDomainStatusCallable(const ModifyAliasDomainStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAliasDomainStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAliasDomainStatus(request);
         }
     );
 

@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取分页偏移位置
-                     * @return Offset 分页偏移位置
+                     * 获取分页偏移位置，默认值为0
+                     * @return Offset 分页偏移位置，默认值为0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置分页偏移位置
-                     * @param Offset 分页偏移位置
+                     * 设置分页偏移位置，默认值为0
+                     * @param Offset 分页偏移位置，默认值为0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -171,7 +171,7 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 分页偏移位置
+                     * 分页偏移位置，默认值为0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

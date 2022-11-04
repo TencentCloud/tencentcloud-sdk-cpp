@@ -496,6 +496,24 @@ namespace TencentCloud
                      */
                     bool IsOverseasHasBeenSet() const;
 
+                    /**
+                     * 获取ip地理位置
+                     * @return IPLoc ip地理位置
+                     */
+                    std::string GetIPLoc() const;
+
+                    /**
+                     * 设置ip地理位置
+                     * @param IPLoc ip地理位置
+                     */
+                    void SetIPLoc(const std::string& _iPLoc);
+
+                    /**
+                     * 判断参数 IPLoc 是否已赋值
+                     * @return IPLoc 是否已赋值
+                     */
+                    bool IPLocHasBeenSet() const;
+
                 private:
 
                     /**
@@ -647,6 +665,12 @@ namespace TencentCloud
                      */
                     int64_t m_isOverseas;
                     bool m_isOverseasHasBeenSet;
+
+                    /**
+                     * ip地理位置
+                     */
+                    std::string m_iPLoc;
+                    bool m_iPLocHasBeenSet;
 
                 };
             }

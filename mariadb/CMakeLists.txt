@@ -53,6 +53,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeFlowResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloneAccountResponse.h
   include/tencentcloud/mariadb/v20170312/model/ZoneChooseInfo.h
+  include/tencentcloud/mariadb/v20170312/model/IsolateDedicatedDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/ModifyAccountDescriptionResponse.h
   include/tencentcloud/mariadb/v20170312/model/ParamConstraint.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstancesProjectResponse.h
@@ -152,6 +153,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateHourDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h
+  include/tencentcloud/mariadb/v20170312/model/IsolateDedicatedDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h
   include/tencentcloud/mariadb/v20170312/model/RegionInfo.h
   include/tencentcloud/mariadb/v20170312/model/ModifyInstanceNetworkRequest.h
@@ -217,6 +219,7 @@ set(mariadb_src
   src/v20170312/model/DescribeFlowResponse.cpp
   src/v20170312/model/CloneAccountResponse.cpp
   src/v20170312/model/ZoneChooseInfo.cpp
+  src/v20170312/model/IsolateDedicatedDBInstanceRequest.cpp
   src/v20170312/model/ModifyAccountDescriptionResponse.cpp
   src/v20170312/model/ParamConstraint.cpp
   src/v20170312/model/ModifyDBInstancesProjectResponse.cpp
@@ -316,6 +319,7 @@ set(mariadb_src
   src/v20170312/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20170312/model/CreateHourDBInstanceResponse.cpp
   src/v20170312/model/CreateAccountResponse.cpp
+  src/v20170312/model/IsolateDedicatedDBInstanceResponse.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodResponse.cpp
   src/v20170312/model/RegionInfo.cpp
   src/v20170312/model/ModifyInstanceNetworkRequest.cpp

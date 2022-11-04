@@ -1,0 +1,145 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_TRTC_V20190722_MODEL_TRTCDATARESP_H_
+#define TENCENTCLOUD_TRTC_V20190722_MODEL_TRTCDATARESP_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trtc/v20190722/model/SeriesInfo.h>
+
+
+namespace TencentCloud
+{
+    namespace Trtc
+    {
+        namespace V20190722
+        {
+            namespace Model
+            {
+                /**
+                * TRTC数据大盘/实时监控 API接口数据出参
+                */
+                class TRTCDataResp : public AbstractModel
+                {
+                public:
+                    TRTCDataResp();
+                    ~TRTCDataResp() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取StatementID值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatementID StatementID值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatementID() const;
+
+                    /**
+                     * 设置StatementID值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatementID StatementID值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatementID(const int64_t& _statementID);
+
+                    /**
+                     * 判断参数 StatementID 是否已赋值
+                     * @return StatementID 是否已赋值
+                     */
+                    bool StatementIDHasBeenSet() const;
+
+                    /**
+                     * 获取Series数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Series Series数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SeriesInfo> GetSeries() const;
+
+                    /**
+                     * 设置Series数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Series Series数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSeries(const std::vector<SeriesInfo>& _series);
+
+                    /**
+                     * 判断参数 Series 是否已赋值
+                     * @return Series 是否已赋值
+                     */
+                    bool SeriesHasBeenSet() const;
+
+                    /**
+                     * 获取Total值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Total Total值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 设置Total值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Total Total值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotal(const int64_t& _total);
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * StatementID值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_statementID;
+                    bool m_statementIDHasBeenSet;
+
+                    /**
+                     * Series数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SeriesInfo> m_series;
+                    bool m_seriesHasBeenSet;
+
+                    /**
+                     * Total值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_TRTC_V20190722_MODEL_TRTCDATARESP_H_

@@ -200,6 +200,28 @@ namespace TencentCloud
                      */
                     bool LoadWeightHasBeenSet() const;
 
+                    /**
+                     * 获取文件 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileId 文件 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置文件 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileId 文件 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     */
+                    bool FileIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +272,13 @@ namespace TencentCloud
                      */
                     int64_t m_loadWeight;
                     bool m_loadWeightHasBeenSet;
+
+                    /**
+                     * 文件 ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                 };
             }

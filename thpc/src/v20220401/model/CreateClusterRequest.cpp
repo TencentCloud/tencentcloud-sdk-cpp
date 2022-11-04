@@ -40,7 +40,8 @@ CreateClusterRequest::CreateClusterRequest() :
     m_storageOptionHasBeenSet(false),
     m_loginNodeHasBeenSet(false),
     m_loginNodeCountHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autoScalingTypeHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,14 @@ string CreateClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoScalingTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScalingType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoScalingType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -508,6 +517,22 @@ void CreateClusterRequest::SetTags(const vector<Tag>& _tags)
 bool CreateClusterRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string CreateClusterRequest::GetAutoScalingType() const
+{
+    return m_autoScalingType;
+}
+
+void CreateClusterRequest::SetAutoScalingType(const string& _autoScalingType)
+{
+    m_autoScalingType = _autoScalingType;
+    m_autoScalingTypeHasBeenSet = true;
+}
+
+bool CreateClusterRequest::AutoScalingTypeHasBeenSet() const
+{
+    return m_autoScalingTypeHasBeenSet;
 }
 
 

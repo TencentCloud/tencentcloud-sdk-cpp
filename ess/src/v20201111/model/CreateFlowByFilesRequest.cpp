@@ -37,7 +37,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_approverVerifyTypeHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_approverVerifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverVerifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_approverVerifyType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -442,6 +451,22 @@ void CreateFlowByFilesRequest::SetAgent(const Agent& _agent)
 bool CreateFlowByFilesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateFlowByFilesRequest::GetApproverVerifyType() const
+{
+    return m_approverVerifyType;
+}
+
+void CreateFlowByFilesRequest::SetApproverVerifyType(const string& _approverVerifyType)
+{
+    m_approverVerifyType = _approverVerifyType;
+    m_approverVerifyTypeHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::ApproverVerifyTypeHasBeenSet() const
+{
+    return m_approverVerifyTypeHasBeenSet;
 }
 
 

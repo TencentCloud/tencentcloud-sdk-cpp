@@ -1803,6 +1803,49 @@ MariadbClient::InitDBInstancesOutcomeCallable MariadbClient::InitDBInstancesCall
     return task->get_future();
 }
 
+MariadbClient::IsolateDedicatedDBInstanceOutcome MariadbClient::IsolateDedicatedDBInstance(const IsolateDedicatedDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "IsolateDedicatedDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        IsolateDedicatedDBInstanceResponse rsp = IsolateDedicatedDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return IsolateDedicatedDBInstanceOutcome(rsp);
+        else
+            return IsolateDedicatedDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return IsolateDedicatedDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::IsolateDedicatedDBInstanceAsync(const IsolateDedicatedDBInstanceRequest& request, const IsolateDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->IsolateDedicatedDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::IsolateDedicatedDBInstanceOutcomeCallable MariadbClient::IsolateDedicatedDBInstanceCallable(const IsolateDedicatedDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<IsolateDedicatedDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->IsolateDedicatedDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::IsolateHourDBInstanceOutcome MariadbClient::IsolateHourDBInstance(const IsolateHourDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "IsolateHourDBInstance");

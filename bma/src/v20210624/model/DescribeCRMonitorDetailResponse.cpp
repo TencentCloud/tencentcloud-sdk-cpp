@@ -26,7 +26,8 @@ using namespace std;
 DescribeCRMonitorDetailResponse::DescribeCRMonitorDetailResponse() :
     m_tortsHasBeenSet(false),
     m_totalCountHasBeenSet(false),
-    m_monitorStatusHasBeenSet(false)
+    m_monitorStatusHasBeenSet(false),
+    m_exportURLHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome DescribeCRMonitorDetailResponse::Deserialize(const string &p
         m_monitorStatusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ExportURL") && !rsp["ExportURL"].IsNull())
+    {
+        if (!rsp["ExportURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExportURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exportURL = string(rsp["ExportURL"].GetString());
+        m_exportURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string DescribeCRMonitorDetailResponse::ToJsonString() const
         string key = "MonitorStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_monitorStatus, allocator);
+    }
+
+    if (m_exportURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExportURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exportURL.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ int64_t DescribeCRMonitorDetailResponse::GetMonitorStatus() const
 bool DescribeCRMonitorDetailResponse::MonitorStatusHasBeenSet() const
 {
     return m_monitorStatusHasBeenSet;
+}
+
+string DescribeCRMonitorDetailResponse::GetExportURL() const
+{
+    return m_exportURL;
+}
+
+bool DescribeCRMonitorDetailResponse::ExportURLHasBeenSet() const
+{
+    return m_exportURLHasBeenSet;
 }
 
 

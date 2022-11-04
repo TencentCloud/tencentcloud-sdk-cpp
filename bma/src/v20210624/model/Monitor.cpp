@@ -30,7 +30,11 @@ Monitor::Monitor() :
     m_monitorStatusHasBeenSet(false),
     m_workCategoryHasBeenSet(false),
     m_insertTimeHasBeenSet(false),
-    m_monitorNoteHasBeenSet(false)
+    m_monitorNoteHasBeenSet(false),
+    m_workCategoryAllHasBeenSet(false),
+    m_evidenceStatusHasBeenSet(false),
+    m_evidenceNoteHasBeenSet(false),
+    m_tortSiteNumHasBeenSet(false)
 {
 }
 
@@ -139,6 +143,46 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
         m_monitorNoteHasBeenSet = true;
     }
 
+    if (value.HasMember("WorkCategoryAll") && !value["WorkCategoryAll"].IsNull())
+    {
+        if (!value["WorkCategoryAll"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Monitor.WorkCategoryAll` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_workCategoryAll = string(value["WorkCategoryAll"].GetString());
+        m_workCategoryAllHasBeenSet = true;
+    }
+
+    if (value.HasMember("EvidenceStatus") && !value["EvidenceStatus"].IsNull())
+    {
+        if (!value["EvidenceStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Monitor.EvidenceStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_evidenceStatus = value["EvidenceStatus"].GetInt64();
+        m_evidenceStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EvidenceNote") && !value["EvidenceNote"].IsNull())
+    {
+        if (!value["EvidenceNote"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Monitor.EvidenceNote` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_evidenceNote = string(value["EvidenceNote"].GetString());
+        m_evidenceNoteHasBeenSet = true;
+    }
+
+    if (value.HasMember("TortSiteNum") && !value["TortSiteNum"].IsNull())
+    {
+        if (!value["TortSiteNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Monitor.TortSiteNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tortSiteNum = value["TortSiteNum"].GetInt64();
+        m_tortSiteNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +268,38 @@ void Monitor::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "MonitorNote";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_monitorNote.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workCategoryAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkCategoryAll";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_workCategoryAll.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_evidenceStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvidenceStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_evidenceStatus, allocator);
+    }
+
+    if (m_evidenceNoteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvidenceNote";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_evidenceNote.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tortSiteNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TortSiteNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tortSiteNum, allocator);
     }
 
 }
@@ -387,5 +463,69 @@ void Monitor::SetMonitorNote(const string& _monitorNote)
 bool Monitor::MonitorNoteHasBeenSet() const
 {
     return m_monitorNoteHasBeenSet;
+}
+
+string Monitor::GetWorkCategoryAll() const
+{
+    return m_workCategoryAll;
+}
+
+void Monitor::SetWorkCategoryAll(const string& _workCategoryAll)
+{
+    m_workCategoryAll = _workCategoryAll;
+    m_workCategoryAllHasBeenSet = true;
+}
+
+bool Monitor::WorkCategoryAllHasBeenSet() const
+{
+    return m_workCategoryAllHasBeenSet;
+}
+
+int64_t Monitor::GetEvidenceStatus() const
+{
+    return m_evidenceStatus;
+}
+
+void Monitor::SetEvidenceStatus(const int64_t& _evidenceStatus)
+{
+    m_evidenceStatus = _evidenceStatus;
+    m_evidenceStatusHasBeenSet = true;
+}
+
+bool Monitor::EvidenceStatusHasBeenSet() const
+{
+    return m_evidenceStatusHasBeenSet;
+}
+
+string Monitor::GetEvidenceNote() const
+{
+    return m_evidenceNote;
+}
+
+void Monitor::SetEvidenceNote(const string& _evidenceNote)
+{
+    m_evidenceNote = _evidenceNote;
+    m_evidenceNoteHasBeenSet = true;
+}
+
+bool Monitor::EvidenceNoteHasBeenSet() const
+{
+    return m_evidenceNoteHasBeenSet;
+}
+
+int64_t Monitor::GetTortSiteNum() const
+{
+    return m_tortSiteNum;
+}
+
+void Monitor::SetTortSiteNum(const int64_t& _tortSiteNum)
+{
+    m_tortSiteNum = _tortSiteNum;
+    m_tortSiteNumHasBeenSet = true;
+}
+
+bool Monitor::TortSiteNumHasBeenSet() const
+{
+    return m_tortSiteNumHasBeenSet;
 }
 

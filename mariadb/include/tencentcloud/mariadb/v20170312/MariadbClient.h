@@ -105,6 +105,8 @@
 #include <tencentcloud/mariadb/v20170312/model/GrantAccountPrivilegesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/InitDBInstancesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/InitDBInstancesResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/IsolateDedicatedDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/IsolateDedicatedDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/IsolateHourDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/IsolateHourDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/KillSessionRequest.h>
@@ -286,6 +288,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InitDBInstancesResponse> InitDBInstancesOutcome;
                 typedef std::future<InitDBInstancesOutcome> InitDBInstancesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::InitDBInstancesRequest&, InitDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InitDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::IsolateDedicatedDBInstanceResponse> IsolateDedicatedDBInstanceOutcome;
+                typedef std::future<IsolateDedicatedDBInstanceOutcome> IsolateDedicatedDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::IsolateDedicatedDBInstanceRequest&, IsolateDedicatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateDedicatedDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::IsolateHourDBInstanceResponse> IsolateHourDBInstanceOutcome;
                 typedef std::future<IsolateHourDBInstanceOutcome> IsolateHourDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::IsolateHourDBInstanceRequest&, IsolateHourDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> IsolateHourDBInstanceAsyncHandler;
@@ -727,6 +732,15 @@ namespace TencentCloud
                 InitDBInstancesOutcome InitDBInstances(const Model::InitDBInstancesRequest &request);
                 void InitDBInstancesAsync(const Model::InitDBInstancesRequest& request, const InitDBInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InitDBInstancesOutcomeCallable InitDBInstancesCallable(const Model::InitDBInstancesRequest& request);
+
+                /**
+                 *本接口（IsolateDedicatedDBInstance）用于隔离独享云数据库实例。
+                 * @param req IsolateDedicatedDBInstanceRequest
+                 * @return IsolateDedicatedDBInstanceOutcome
+                 */
+                IsolateDedicatedDBInstanceOutcome IsolateDedicatedDBInstance(const Model::IsolateDedicatedDBInstanceRequest &request);
+                void IsolateDedicatedDBInstanceAsync(const Model::IsolateDedicatedDBInstanceRequest& request, const IsolateDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                IsolateDedicatedDBInstanceOutcomeCallable IsolateDedicatedDBInstanceCallable(const Model::IsolateDedicatedDBInstanceRequest& request);
 
                 /**
                  *隔离后付费实例

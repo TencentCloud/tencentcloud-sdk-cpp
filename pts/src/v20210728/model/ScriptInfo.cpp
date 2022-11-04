@@ -27,7 +27,8 @@ ScriptInfo::ScriptInfo() :
     m_updatedAtHasBeenSet(false),
     m_encodedContentHasBeenSet(false),
     m_encodedHttpArchiveHasBeenSet(false),
-    m_loadWeightHasBeenSet(false)
+    m_loadWeightHasBeenSet(false),
+    m_fileIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ScriptInfo::Deserialize(const rapidjson::Value &value)
         m_loadWeightHasBeenSet = true;
     }
 
+    if (value.HasMember("FileId") && !value["FileId"].IsNull())
+    {
+        if (!value["FileId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScriptInfo.FileId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileId = string(value["FileId"].GetString());
+        m_fileIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ScriptInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "LoadWeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadWeight, allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ScriptInfo::SetLoadWeight(const int64_t& _loadWeight)
 bool ScriptInfo::LoadWeightHasBeenSet() const
 {
     return m_loadWeightHasBeenSet;
+}
+
+string ScriptInfo::GetFileId() const
+{
+    return m_fileId;
+}
+
+void ScriptInfo::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool ScriptInfo::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 

@@ -35,6 +35,8 @@
 #include <tencentcloud/cam/v20190116/model/AttachUserPolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenRequest.h>
 #include <tencentcloud/cam/v20190116/model/ConsumeCustomMFATokenResponse.h>
+#include <tencentcloud/cam/v20190116/model/CreateAccessKeyRequest.h>
+#include <tencentcloud/cam/v20190116/model/CreateAccessKeyResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateOIDCConfigRequest.h>
@@ -53,6 +55,8 @@
 #include <tencentcloud/cam/v20190116/model/CreateUserOIDCConfigResponse.h>
 #include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigRequest.h>
 #include <tencentcloud/cam/v20190116/model/CreateUserSAMLConfigResponse.h>
+#include <tencentcloud/cam/v20190116/model/DeleteAccessKeyRequest.h>
+#include <tencentcloud/cam/v20190116/model/DeleteAccessKeyResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupRequest.h>
 #include <tencentcloud/cam/v20190116/model/DeleteGroupResponse.h>
 #include <tencentcloud/cam/v20190116/model/DeleteOIDCConfigRequest.h>
@@ -169,6 +173,8 @@
 #include <tencentcloud/cam/v20190116/model/TagRoleResponse.h>
 #include <tencentcloud/cam/v20190116/model/UntagRoleRequest.h>
 #include <tencentcloud/cam/v20190116/model/UntagRoleResponse.h>
+#include <tencentcloud/cam/v20190116/model/UpdateAccessKeyRequest.h>
+#include <tencentcloud/cam/v20190116/model/UpdateAccessKeyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyRequest.h>
 #include <tencentcloud/cam/v20190116/model/UpdateAssumeRolePolicyResponse.h>
 #include <tencentcloud/cam/v20190116/model/UpdateGroupRequest.h>
@@ -221,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ConsumeCustomMFATokenResponse> ConsumeCustomMFATokenOutcome;
                 typedef std::future<ConsumeCustomMFATokenOutcome> ConsumeCustomMFATokenOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::ConsumeCustomMFATokenRequest&, ConsumeCustomMFATokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ConsumeCustomMFATokenAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAccessKeyResponse> CreateAccessKeyOutcome;
+                typedef std::future<CreateAccessKeyOutcome> CreateAccessKeyOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::CreateAccessKeyRequest&, CreateAccessKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAccessKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGroupResponse> CreateGroupOutcome;
                 typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateGroupRequest&, CreateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGroupAsyncHandler;
@@ -248,6 +257,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateUserSAMLConfigResponse> CreateUserSAMLConfigOutcome;
                 typedef std::future<CreateUserSAMLConfigOutcome> CreateUserSAMLConfigOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::CreateUserSAMLConfigRequest&, CreateUserSAMLConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateUserSAMLConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccessKeyResponse> DeleteAccessKeyOutcome;
+                typedef std::future<DeleteAccessKeyOutcome> DeleteAccessKeyOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::DeleteAccessKeyRequest&, DeleteAccessKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccessKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
@@ -422,6 +434,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UntagRoleResponse> UntagRoleOutcome;
                 typedef std::future<UntagRoleOutcome> UntagRoleOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UntagRoleRequest&, UntagRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UntagRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateAccessKeyResponse> UpdateAccessKeyOutcome;
+                typedef std::future<UpdateAccessKeyOutcome> UpdateAccessKeyOutcomeCallable;
+                typedef std::function<void(const CamClient*, const Model::UpdateAccessKeyRequest&, UpdateAccessKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAccessKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateAssumeRolePolicyResponse> UpdateAssumeRolePolicyOutcome;
                 typedef std::future<UpdateAssumeRolePolicyOutcome> UpdateAssumeRolePolicyOutcomeCallable;
                 typedef std::function<void(const CamClient*, const Model::UpdateAssumeRolePolicyRequest&, UpdateAssumeRolePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateAssumeRolePolicyAsyncHandler;
@@ -510,6 +525,15 @@ namespace TencentCloud
                 ConsumeCustomMFATokenOutcomeCallable ConsumeCustomMFATokenCallable(const Model::ConsumeCustomMFATokenRequest& request);
 
                 /**
+                 *为CAM用户创建访问密钥
+                 * @param req CreateAccessKeyRequest
+                 * @return CreateAccessKeyOutcome
+                 */
+                CreateAccessKeyOutcome CreateAccessKey(const Model::CreateAccessKeyRequest &request);
+                void CreateAccessKeyAsync(const Model::CreateAccessKeyRequest& request, const CreateAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAccessKeyOutcomeCallable CreateAccessKeyCallable(const Model::CreateAccessKeyRequest& request);
+
+                /**
                  *创建用户组
                  * @param req CreateGroupRequest
                  * @return CreateGroupOutcome
@@ -589,6 +613,16 @@ namespace TencentCloud
                 CreateUserSAMLConfigOutcome CreateUserSAMLConfig(const Model::CreateUserSAMLConfigRequest &request);
                 void CreateUserSAMLConfigAsync(const Model::CreateUserSAMLConfigRequest& request, const CreateUserSAMLConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateUserSAMLConfigOutcomeCallable CreateUserSAMLConfigCallable(const Model::CreateUserSAMLConfigRequest& request);
+
+                /**
+                 *为CAM用户删除访问密钥。
+此接口属于高风险操作，删除密钥后不可恢复，腾讯云将永久拒绝此密钥的所有请求，请谨慎使用。
+                 * @param req DeleteAccessKeyRequest
+                 * @return DeleteAccessKeyOutcome
+                 */
+                DeleteAccessKeyOutcome DeleteAccessKey(const Model::DeleteAccessKeyRequest &request);
+                void DeleteAccessKeyAsync(const Model::DeleteAccessKeyRequest& request, const DeleteAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccessKeyOutcomeCallable DeleteAccessKeyCallable(const Model::DeleteAccessKeyRequest& request);
 
                 /**
                  *删除用户组
@@ -1111,6 +1145,15 @@ namespace TencentCloud
                 UntagRoleOutcome UntagRole(const Model::UntagRoleRequest &request);
                 void UntagRoleAsync(const Model::UntagRoleRequest& request, const UntagRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UntagRoleOutcomeCallable UntagRoleCallable(const Model::UntagRoleRequest& request);
+
+                /**
+                 *为CAM用户更新访问密钥
+                 * @param req UpdateAccessKeyRequest
+                 * @return UpdateAccessKeyOutcome
+                 */
+                UpdateAccessKeyOutcome UpdateAccessKey(const Model::UpdateAccessKeyRequest &request);
+                void UpdateAccessKeyAsync(const Model::UpdateAccessKeyRequest& request, const UpdateAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateAccessKeyOutcomeCallable UpdateAccessKeyCallable(const Model::UpdateAccessKeyRequest& request);
 
                 /**
                  *本接口（UpdateAssumeRolePolicy）用于修改角色信任策略的策略文档。

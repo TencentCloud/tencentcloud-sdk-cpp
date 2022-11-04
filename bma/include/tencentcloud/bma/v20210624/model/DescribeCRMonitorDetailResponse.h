@@ -80,6 +80,18 @@ namespace TencentCloud
                      */
                     bool MonitorStatusHasBeenSet() const;
 
+                    /**
+                     * 获取导出地址
+                     * @return ExportURL 导出地址
+                     */
+                    std::string GetExportURL() const;
+
+                    /**
+                     * 判断参数 ExportURL 是否已赋值
+                     * @return ExportURL 是否已赋值
+                     */
+                    bool ExportURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -99,6 +111,12 @@ namespace TencentCloud
                      */
                     int64_t m_monitorStatus;
                     bool m_monitorStatusHasBeenSet;
+
+                    /**
+                     * 导出地址
+                     */
+                    std::string m_exportURL;
+                    bool m_exportURLHasBeenSet;
 
                 };
             }

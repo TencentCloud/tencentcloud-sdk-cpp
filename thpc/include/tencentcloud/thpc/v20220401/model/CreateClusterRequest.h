@@ -394,6 +394,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * @return AutoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     */
+                    std::string GetAutoScalingType() const;
+
+                    /**
+                     * 设置弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     * @param AutoScalingType 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     */
+                    void SetAutoScalingType(const std::string& _autoScalingType);
+
+                    /**
+                     * 判断参数 AutoScalingType 是否已赋值
+                     * @return AutoScalingType 是否已赋值
+                     */
+                    bool AutoScalingTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -508,6 +526,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 弹性伸缩类型。<br><li>AS：集群自动扩缩容由[弹性伸缩](https://cloud.tencent.com/document/product/377/3154)产品实现。<br><li>THPC_AS：集群自动扩缩容由THPC产品内部实现。
+                     */
+                    std::string m_autoScalingType;
+                    bool m_autoScalingTypeHasBeenSet;
 
                 };
             }

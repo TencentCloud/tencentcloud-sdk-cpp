@@ -223,6 +223,18 @@ namespace TencentCloud
                      */
                     bool ObtainNameHasBeenSet() const;
 
+                    /**
+                     * 获取取证公证信息
+                     * @return DepositPdfCert 取证公证信息
+                     */
+                    std::string GetDepositPdfCert() const;
+
+                    /**
+                     * 判断参数 DepositPdfCert 是否已赋值
+                     * @return DepositPdfCert 是否已赋值
+                     */
+                    bool DepositPdfCertHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +326,12 @@ namespace TencentCloud
                      */
                     std::string m_obtainName;
                     bool m_obtainNameHasBeenSet;
+
+                    /**
+                     * 取证公证信息
+                     */
+                    std::string m_depositPdfCert;
+                    bool m_depositPdfCertHasBeenSet;
 
                 };
             }

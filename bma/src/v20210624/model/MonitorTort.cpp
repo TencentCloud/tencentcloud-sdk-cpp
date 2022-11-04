@@ -45,7 +45,8 @@ MonitorTort::MonitorTort() :
     m_commStatusHasBeenSet(false),
     m_evidenceStatusHasBeenSet(false),
     m_isProducerHasBeenSet(false),
-    m_isOverseasHasBeenSet(false)
+    m_isOverseasHasBeenSet(false),
+    m_iPLocHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome MonitorTort::Deserialize(const rapidjson::Value &value)
         m_isOverseasHasBeenSet = true;
     }
 
+    if (value.HasMember("IPLoc") && !value["IPLoc"].IsNull())
+    {
+        if (!value["IPLoc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MonitorTort.IPLoc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPLoc = string(value["IPLoc"].GetString());
+        m_iPLocHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void MonitorTort::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsOverseas";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isOverseas, allocator);
+    }
+
+    if (m_iPLocHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPLoc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPLoc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void MonitorTort::SetIsOverseas(const int64_t& _isOverseas)
 bool MonitorTort::IsOverseasHasBeenSet() const
 {
     return m_isOverseasHasBeenSet;
+}
+
+string MonitorTort::GetIPLoc() const
+{
+    return m_iPLoc;
+}
+
+void MonitorTort::SetIPLoc(const string& _iPLoc)
+{
+    m_iPLoc = _iPLoc;
+    m_iPLocHasBeenSet = true;
+}
+
+bool MonitorTort::IPLocHasBeenSet() const
+{
+    return m_iPLocHasBeenSet;
 }
 

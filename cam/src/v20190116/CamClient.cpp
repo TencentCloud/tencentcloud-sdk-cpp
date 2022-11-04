@@ -298,6 +298,49 @@ CamClient::ConsumeCustomMFATokenOutcomeCallable CamClient::ConsumeCustomMFAToken
     return task->get_future();
 }
 
+CamClient::CreateAccessKeyOutcome CamClient::CreateAccessKey(const CreateAccessKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessKeyResponse rsp = CreateAccessKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessKeyOutcome(rsp);
+        else
+            return CreateAccessKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessKeyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::CreateAccessKeyAsync(const CreateAccessKeyRequest& request, const CreateAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::CreateAccessKeyOutcomeCallable CamClient::CreateAccessKeyCallable(const CreateAccessKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CamClient::CreateGroupOutcome CamClient::CreateGroup(const CreateGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateGroup");
@@ -678,6 +721,49 @@ CamClient::CreateUserSAMLConfigOutcomeCallable CamClient::CreateUserSAMLConfigCa
         [this, request]()
         {
             return this->CreateUserSAMLConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::DeleteAccessKeyOutcome CamClient::DeleteAccessKey(const DeleteAccessKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccessKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccessKeyResponse rsp = DeleteAccessKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccessKeyOutcome(rsp);
+        else
+            return DeleteAccessKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccessKeyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::DeleteAccessKeyAsync(const DeleteAccessKeyRequest& request, const DeleteAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccessKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::DeleteAccessKeyOutcomeCallable CamClient::DeleteAccessKeyCallable(const DeleteAccessKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccessKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccessKey(request);
         }
     );
 
@@ -3172,6 +3258,49 @@ CamClient::UntagRoleOutcomeCallable CamClient::UntagRoleCallable(const UntagRole
         [this, request]()
         {
             return this->UntagRole(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CamClient::UpdateAccessKeyOutcome CamClient::UpdateAccessKey(const UpdateAccessKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateAccessKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateAccessKeyResponse rsp = UpdateAccessKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateAccessKeyOutcome(rsp);
+        else
+            return UpdateAccessKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateAccessKeyOutcome(outcome.GetError());
+    }
+}
+
+void CamClient::UpdateAccessKeyAsync(const UpdateAccessKeyRequest& request, const UpdateAccessKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateAccessKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CamClient::UpdateAccessKeyOutcomeCallable CamClient::UpdateAccessKeyCallable(const UpdateAccessKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateAccessKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateAccessKey(request);
         }
     );
 

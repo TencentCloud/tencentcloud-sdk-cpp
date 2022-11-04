@@ -442,6 +442,28 @@ namespace TencentCloud
                      */
                     bool SubAccountUinHasBeenSet() const;
 
+                    /**
+                     * 获取用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AppId 用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAppId() const;
+
+                    /**
+                     * 设置用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AppId 用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAppId(const int64_t& _appId);
+
+                    /**
+                     * 判断参数 AppId 是否已赋值
+                     * @return AppId 是否已赋值
+                     */
+                    bool AppIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +592,13 @@ namespace TencentCloud
                      */
                     std::string m_subAccountUin;
                     bool m_subAccountUinHasBeenSet;
+
+                    /**
+                     * 用户账号的 App ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_appId;
+                    bool m_appIdHasBeenSet;
 
                 };
             }

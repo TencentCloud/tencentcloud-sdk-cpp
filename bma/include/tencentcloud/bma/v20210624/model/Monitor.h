@@ -226,6 +226,78 @@ namespace TencentCloud
                      */
                     bool MonitorNoteHasBeenSet() const;
 
+                    /**
+                     * 获取作品类型全部展示
+                     * @return WorkCategoryAll 作品类型全部展示
+                     */
+                    std::string GetWorkCategoryAll() const;
+
+                    /**
+                     * 设置作品类型全部展示
+                     * @param WorkCategoryAll 作品类型全部展示
+                     */
+                    void SetWorkCategoryAll(const std::string& _workCategoryAll);
+
+                    /**
+                     * 判断参数 WorkCategoryAll 是否已赋值
+                     * @return WorkCategoryAll 是否已赋值
+                     */
+                    bool WorkCategoryAllHasBeenSet() const;
+
+                    /**
+                     * 获取存证状态
+                     * @return EvidenceStatus 存证状态
+                     */
+                    int64_t GetEvidenceStatus() const;
+
+                    /**
+                     * 设置存证状态
+                     * @param EvidenceStatus 存证状态
+                     */
+                    void SetEvidenceStatus(const int64_t& _evidenceStatus);
+
+                    /**
+                     * 判断参数 EvidenceStatus 是否已赋值
+                     * @return EvidenceStatus 是否已赋值
+                     */
+                    bool EvidenceStatusHasBeenSet() const;
+
+                    /**
+                     * 获取存证状态说明
+                     * @return EvidenceNote 存证状态说明
+                     */
+                    std::string GetEvidenceNote() const;
+
+                    /**
+                     * 设置存证状态说明
+                     * @param EvidenceNote 存证状态说明
+                     */
+                    void SetEvidenceNote(const std::string& _evidenceNote);
+
+                    /**
+                     * 判断参数 EvidenceNote 是否已赋值
+                     * @return EvidenceNote 是否已赋值
+                     */
+                    bool EvidenceNoteHasBeenSet() const;
+
+                    /**
+                     * 获取侵权站点数量
+                     * @return TortSiteNum 侵权站点数量
+                     */
+                    int64_t GetTortSiteNum() const;
+
+                    /**
+                     * 设置侵权站点数量
+                     * @param TortSiteNum 侵权站点数量
+                     */
+                    void SetTortSiteNum(const int64_t& _tortSiteNum);
+
+                    /**
+                     * 判断参数 TortSiteNum 是否已赋值
+                     * @return TortSiteNum 是否已赋值
+                     */
+                    bool TortSiteNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +359,30 @@ namespace TencentCloud
                      */
                     std::string m_monitorNote;
                     bool m_monitorNoteHasBeenSet;
+
+                    /**
+                     * 作品类型全部展示
+                     */
+                    std::string m_workCategoryAll;
+                    bool m_workCategoryAllHasBeenSet;
+
+                    /**
+                     * 存证状态
+                     */
+                    int64_t m_evidenceStatus;
+                    bool m_evidenceStatusHasBeenSet;
+
+                    /**
+                     * 存证状态说明
+                     */
+                    std::string m_evidenceNote;
+                    bool m_evidenceNoteHasBeenSet;
+
+                    /**
+                     * 侵权站点数量
+                     */
+                    int64_t m_tortSiteNum;
+                    bool m_tortSiteNumHasBeenSet;
 
                 };
             }

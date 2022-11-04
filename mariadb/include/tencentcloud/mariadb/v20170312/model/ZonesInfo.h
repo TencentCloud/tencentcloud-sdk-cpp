@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool ZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否在售
+                     * @return OnSale 是否在售
+                     */
+                    bool GetOnSale() const;
+
+                    /**
+                     * 设置是否在售
+                     * @param OnSale 是否在售
+                     */
+                    void SetOnSale(const bool& _onSale);
+
+                    /**
+                     * 判断参数 OnSale 是否已赋值
+                     * @return OnSale 是否已赋值
+                     */
+                    bool OnSaleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 是否在售
+                     */
+                    bool m_onSale;
+                    bool m_onSaleHasBeenSet;
 
                 };
             }

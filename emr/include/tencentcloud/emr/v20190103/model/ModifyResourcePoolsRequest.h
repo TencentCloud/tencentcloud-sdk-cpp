@@ -61,14 +61,22 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取标识是fair还是capacity
-                     * @return Key 标识是fair还是capacity
+                     * 获取取值范围：
+<li>fair:代表公平调度标识</li>
+<li>capacity:代表容量调度标识</li>
+                     * @return Key 取值范围：
+<li>fair:代表公平调度标识</li>
+<li>capacity:代表容量调度标识</li>
                      */
                     std::string GetKey() const;
 
                     /**
-                     * 设置标识是fair还是capacity
-                     * @param Key 标识是fair还是capacity
+                     * 设置取值范围：
+<li>fair:代表公平调度标识</li>
+<li>capacity:代表容量调度标识</li>
+                     * @param Key 取值范围：
+<li>fair:代表公平调度标识</li>
+<li>capacity:代表容量调度标识</li>
                      */
                     void SetKey(const std::string& _key);
 
@@ -87,7 +95,9 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 标识是fair还是capacity
+                     * 取值范围：
+<li>fair:代表公平调度标识</li>
+<li>capacity:代表容量调度标识</li>
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;

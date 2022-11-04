@@ -39,7 +39,8 @@ File::File() :
     m_projectIdHasBeenSet(false),
     m_appIDHasBeenSet(false),
     m_uinHasBeenSet(false),
-    m_subAccountUinHasBeenSet(false)
+    m_subAccountUinHasBeenSet(false),
+    m_appIdHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,16 @@ CoreInternalOutcome File::Deserialize(const rapidjson::Value &value)
         m_subAccountUinHasBeenSet = true;
     }
 
+    if (value.HasMember("AppId") && !value["AppId"].IsNull())
+    {
+        if (!value["AppId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `File.AppId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_appId = value["AppId"].GetInt64();
+        m_appIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -453,6 +464,14 @@ void File::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "SubAccountUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_appId, allocator);
     }
 
 }
@@ -760,5 +779,21 @@ void File::SetSubAccountUin(const string& _subAccountUin)
 bool File::SubAccountUinHasBeenSet() const
 {
     return m_subAccountUinHasBeenSet;
+}
+
+int64_t File::GetAppId() const
+{
+    return m_appId;
+}
+
+void File::SetAppId(const int64_t& _appId)
+{
+    m_appId = _appId;
+    m_appIdHasBeenSet = true;
+}
+
+bool File::AppIdHasBeenSet() const
+{
+    return m_appIdHasBeenSet;
 }
 

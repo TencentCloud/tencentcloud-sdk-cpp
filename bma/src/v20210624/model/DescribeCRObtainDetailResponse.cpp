@@ -38,7 +38,8 @@ DescribeCRObtainDetailResponse::DescribeCRObtainDetailResponse() :
     m_obtainStatusHasBeenSet(false),
     m_obtainNoteHasBeenSet(false),
     m_obtainDurationHasBeenSet(false),
-    m_obtainNameHasBeenSet(false)
+    m_obtainNameHasBeenSet(false),
+    m_depositPdfCertHasBeenSet(false)
 {
 }
 
@@ -226,6 +227,16 @@ CoreInternalOutcome DescribeCRObtainDetailResponse::Deserialize(const string &pa
         m_obtainNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DepositPdfCert") && !rsp["DepositPdfCert"].IsNull())
+    {
+        if (!rsp["DepositPdfCert"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DepositPdfCert` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_depositPdfCert = string(rsp["DepositPdfCert"].GetString());
+        m_depositPdfCertHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +365,14 @@ string DescribeCRObtainDetailResponse::ToJsonString() const
         string key = "ObtainName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_obtainName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_depositPdfCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DepositPdfCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_depositPdfCert.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -516,6 +535,16 @@ string DescribeCRObtainDetailResponse::GetObtainName() const
 bool DescribeCRObtainDetailResponse::ObtainNameHasBeenSet() const
 {
     return m_obtainNameHasBeenSet;
+}
+
+string DescribeCRObtainDetailResponse::GetDepositPdfCert() const
+{
+    return m_depositPdfCert;
+}
+
+bool DescribeCRObtainDetailResponse::DepositPdfCertHasBeenSet() const
+{
+    return m_depositPdfCertHasBeenSet;
 }
 
 

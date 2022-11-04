@@ -259,7 +259,7 @@ namespace TencentCloud
                 DeleteTagOutcomeCallable DeleteTagCallable(const Model::DeleteTagRequest& request);
 
                 /**
-                 *本接口用于删除一对标签键和标签值
+                 *本接口用于批量删除标签键和标签值。
                  * @param req DeleteTagsRequest
                  * @return DeleteTagsOutcome
                  */

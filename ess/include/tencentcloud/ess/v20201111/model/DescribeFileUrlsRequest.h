@@ -45,30 +45,48 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取调用方用户信息，UserId 必填
+                     * @return Operator 调用方用户信息，UserId 必填
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置调用方用户信息，UserId 必填
+                     * @param Operator 调用方用户信息，UserId 必填
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
                      * 获取文件对应的业务类型，目前支持：
+- 流程 "FLOW"，如需下载合同文件请选择此项
 - 模板 "TEMPLATE"
 - 文档 "DOCUMENT"
 - 印章  “SEAL”
-- 流程 "FLOW"
                      * @return BusinessType 文件对应的业务类型，目前支持：
+- 流程 "FLOW"，如需下载合同文件请选择此项
 - 模板 "TEMPLATE"
 - 文档 "DOCUMENT"
 - 印章  “SEAL”
-- 流程 "FLOW"
                      */
                     std::string GetBusinessType() const;
 
                     /**
                      * 设置文件对应的业务类型，目前支持：
+- 流程 "FLOW"，如需下载合同文件请选择此项
 - 模板 "TEMPLATE"
 - 文档 "DOCUMENT"
 - 印章  “SEAL”
-- 流程 "FLOW"
                      * @param BusinessType 文件对应的业务类型，目前支持：
+- 流程 "FLOW"，如需下载合同文件请选择此项
 - 模板 "TEMPLATE"
 - 文档 "DOCUMENT"
 - 印章  “SEAL”
-- 流程 "FLOW"
                      */
                     void SetBusinessType(const std::string& _businessType);
 
@@ -79,17 +97,17 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取业务编号的数组，如模板编号、文档编号、印章编号
+                     * 获取业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
 最大支持20个资源
-                     * @return BusinessIds 业务编号的数组，如模板编号、文档编号、印章编号
+                     * @return BusinessIds 业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
 最大支持20个资源
                      */
                     std::vector<std::string> GetBusinessIds() const;
 
                     /**
-                     * 设置业务编号的数组，如模板编号、文档编号、印章编号
+                     * 设置业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
 最大支持20个资源
-                     * @param BusinessIds 业务编号的数组，如模板编号、文档编号、印章编号
+                     * @param BusinessIds 业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
 最大支持20个资源
                      */
                     void SetBusinessIds(const std::vector<std::string>& _businessIds);
@@ -101,50 +119,14 @@ namespace TencentCloud
                     bool BusinessIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作者信息
-                     * @return Operator 操作者信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者信息
-                     * @param Operator 操作者信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取下载后的文件命名，只有fileType为zip的时候生效
-                     * @return FileName 下载后的文件命名，只有fileType为zip的时候生效
+                     * 获取下载后的文件命名，只有FileType为zip的时候生效
+                     * @return FileName 下载后的文件命名，只有FileType为zip的时候生效
                      */
                     std::string GetFileName() const;
 
                     /**
-                     * 设置下载后的文件命名，只有fileType为zip的时候生效
-                     * @param FileName 下载后的文件命名，只有fileType为zip的时候生效
+                     * 设置下载后的文件命名，只有FileType为zip的时候生效
+                     * @param FileName 下载后的文件命名，只有FileType为zip的时候生效
                      */
                     void SetFileName(const std::string& _fileName);
 
@@ -228,6 +210,24 @@ namespace TencentCloud
 
                     /**
                      * 获取暂不开放
+                     * @return CcToken 暂不开放
+                     */
+                    std::string GetCcToken() const;
+
+                    /**
+                     * 设置暂不开放
+                     * @param CcToken 暂不开放
+                     */
+                    void SetCcToken(const std::string& _ccToken);
+
+                    /**
+                     * 判断参数 CcToken 是否已赋值
+                     * @return CcToken 是否已赋值
+                     */
+                    bool CcTokenHasBeenSet() const;
+
+                    /**
+                     * 获取暂不开放
                      * @return Scene 暂不开放
                      */
                     std::string GetScene() const;
@@ -245,56 +245,50 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取暂不开放
-                     * @return CcToken 暂不开放
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
                      */
-                    std::string GetCcToken() const;
+                    Agent GetAgent() const;
 
                     /**
-                     * 设置暂不开放
-                     * @param CcToken 暂不开放
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
                      */
-                    void SetCcToken(const std::string& _ccToken);
+                    void SetAgent(const Agent& _agent);
 
                     /**
-                     * 判断参数 CcToken 是否已赋值
-                     * @return CcToken 是否已赋值
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
                      */
-                    bool CcTokenHasBeenSet() const;
+                    bool AgentHasBeenSet() const;
 
                 private:
 
                     /**
+                     * 调用方用户信息，UserId 必填
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
                      * 文件对应的业务类型，目前支持：
+- 流程 "FLOW"，如需下载合同文件请选择此项
 - 模板 "TEMPLATE"
 - 文档 "DOCUMENT"
 - 印章  “SEAL”
-- 流程 "FLOW"
                      */
                     std::string m_businessType;
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 业务编号的数组，如模板编号、文档编号、印章编号
+                     * 业务编号的数组，如流程编号、模板编号、文档编号、印章编号。如需下载合同文件请传入FlowId
 最大支持20个资源
                      */
                     std::vector<std::string> m_businessIds;
                     bool m_businessIdsHasBeenSet;
 
                     /**
-                     * 操作者信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
-                     * 应用相关信息
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 下载后的文件命名，只有fileType为zip的时候生效
+                     * 下载后的文件命名，只有FileType为zip的时候生效
                      */
                     std::string m_fileName;
                     bool m_fileNameHasBeenSet;
@@ -326,14 +320,20 @@ namespace TencentCloud
                     /**
                      * 暂不开放
                      */
-                    std::string m_scene;
-                    bool m_sceneHasBeenSet;
+                    std::string m_ccToken;
+                    bool m_ccTokenHasBeenSet;
 
                     /**
                      * 暂不开放
                      */
-                    std::string m_ccToken;
-                    bool m_ccTokenHasBeenSet;
+                    std::string m_scene;
+                    bool m_sceneHasBeenSet;
+
+                    /**
+                     * 应用相关信息
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }
