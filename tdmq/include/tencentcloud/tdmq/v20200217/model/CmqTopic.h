@@ -385,6 +385,28 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取0表示pulsar，1表示rocketmq
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BrokerType 0表示pulsar，1表示rocketmq
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBrokerType() const;
+
+                    /**
+                     * 设置0表示pulsar，1表示rocketmq
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BrokerType 0表示pulsar，1表示rocketmq
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBrokerType(const int64_t& _brokerType);
+
+                    /**
+                     * 判断参数 BrokerType 是否已赋值
+                     * @return BrokerType 是否已赋值
+                     */
+                    bool BrokerTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -493,6 +515,13 @@ FilterType = 2表示用户使用 BindingKey 过滤。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 0表示pulsar，1表示rocketmq
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_brokerType;
+                    bool m_brokerTypeHasBeenSet;
 
                 };
             }

@@ -41,6 +41,10 @@
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamLinkFlowRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateStreamLinkOutputInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateWatermarkTemplateRequest.h>
@@ -67,6 +71,10 @@
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSnapshotByTimeOffsetTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamLinkFlowRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteStreamLinkOutputResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteWatermarkTemplateRequest.h>
@@ -95,6 +103,24 @@
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkActivateStateRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkActivateStateResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowLogsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowLogsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowMediaStatisticsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowMediaStatisticsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRealtimeStatusRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowRealtimeStatusResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowSRTStatisticsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowSRTStatisticsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowStatisticsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowStatisticsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkFlowsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeStreamLinkRegionsResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTaskDetailResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeTasksRequest.h>
@@ -135,6 +161,12 @@
 #include <tencentcloud/mps/v20190612/model/ModifySampleSnapshotTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifySnapshotByTimeOffsetTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkFlowRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkInputRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkInputResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyStreamLinkOutputInfoResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifyTranscodeTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyWatermarkTemplateRequest.h>
@@ -153,6 +185,10 @@
 #include <tencentcloud/mps/v20190612/model/RecognizeMediaForZhiXueResponse.h>
 #include <tencentcloud/mps/v20190612/model/ResetWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/ResetWorkflowResponse.h>
+#include <tencentcloud/mps/v20190612/model/StartStreamLinkFlowRequest.h>
+#include <tencentcloud/mps/v20190612/model/StartStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowRequest.h>
+#include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowResponse.h>
 
 
 namespace TencentCloud
@@ -194,6 +230,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSnapshotByTimeOffsetTemplateResponse> CreateSnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<CreateSnapshotByTimeOffsetTemplateOutcome> CreateSnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateSnapshotByTimeOffsetTemplateRequest&, CreateSnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotByTimeOffsetTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamLinkFlowResponse> CreateStreamLinkFlowOutcome;
+                typedef std::future<CreateStreamLinkFlowOutcome> CreateStreamLinkFlowOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamLinkFlowRequest&, CreateStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateStreamLinkOutputInfoResponse> CreateStreamLinkOutputInfoOutcome;
+                typedef std::future<CreateStreamLinkOutputInfoOutcome> CreateStreamLinkOutputInfoOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateStreamLinkOutputInfoRequest&, CreateStreamLinkOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateStreamLinkOutputInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTranscodeTemplateResponse> CreateTranscodeTemplateOutcome;
                 typedef std::future<CreateTranscodeTemplateOutcome> CreateTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateTranscodeTemplateRequest&, CreateTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTranscodeTemplateAsyncHandler;
@@ -233,6 +275,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSnapshotByTimeOffsetTemplateResponse> DeleteSnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<DeleteSnapshotByTimeOffsetTemplateOutcome> DeleteSnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteSnapshotByTimeOffsetTemplateRequest&, DeleteSnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotByTimeOffsetTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamLinkFlowResponse> DeleteStreamLinkFlowOutcome;
+                typedef std::future<DeleteStreamLinkFlowOutcome> DeleteStreamLinkFlowOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamLinkFlowRequest&, DeleteStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteStreamLinkOutputResponse> DeleteStreamLinkOutputOutcome;
+                typedef std::future<DeleteStreamLinkOutputOutcome> DeleteStreamLinkOutputOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteStreamLinkOutputRequest&, DeleteStreamLinkOutputOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStreamLinkOutputAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTranscodeTemplateResponse> DeleteTranscodeTemplateOutcome;
                 typedef std::future<DeleteTranscodeTemplateOutcome> DeleteTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteTranscodeTemplateRequest&, DeleteTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTranscodeTemplateAsyncHandler;
@@ -275,6 +323,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSnapshotByTimeOffsetTemplatesResponse> DescribeSnapshotByTimeOffsetTemplatesOutcome;
                 typedef std::future<DescribeSnapshotByTimeOffsetTemplatesOutcome> DescribeSnapshotByTimeOffsetTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSnapshotByTimeOffsetTemplatesRequest&, DescribeSnapshotByTimeOffsetTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotByTimeOffsetTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkActivateStateResponse> DescribeStreamLinkActivateStateOutcome;
+                typedef std::future<DescribeStreamLinkActivateStateOutcome> DescribeStreamLinkActivateStateOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkActivateStateRequest&, DescribeStreamLinkActivateStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkActivateStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkFlowResponse> DescribeStreamLinkFlowOutcome;
+                typedef std::future<DescribeStreamLinkFlowOutcome> DescribeStreamLinkFlowOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkFlowRequest&, DescribeStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkFlowLogsResponse> DescribeStreamLinkFlowLogsOutcome;
+                typedef std::future<DescribeStreamLinkFlowLogsOutcome> DescribeStreamLinkFlowLogsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkFlowLogsRequest&, DescribeStreamLinkFlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkFlowLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkFlowMediaStatisticsResponse> DescribeStreamLinkFlowMediaStatisticsOutcome;
+                typedef std::future<DescribeStreamLinkFlowMediaStatisticsOutcome> DescribeStreamLinkFlowMediaStatisticsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkFlowMediaStatisticsRequest&, DescribeStreamLinkFlowMediaStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkFlowMediaStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkFlowRealtimeStatusResponse> DescribeStreamLinkFlowRealtimeStatusOutcome;
+                typedef std::future<DescribeStreamLinkFlowRealtimeStatusOutcome> DescribeStreamLinkFlowRealtimeStatusOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkFlowRealtimeStatusRequest&, DescribeStreamLinkFlowRealtimeStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkFlowRealtimeStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkFlowSRTStatisticsResponse> DescribeStreamLinkFlowSRTStatisticsOutcome;
+                typedef std::future<DescribeStreamLinkFlowSRTStatisticsOutcome> DescribeStreamLinkFlowSRTStatisticsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkFlowSRTStatisticsRequest&, DescribeStreamLinkFlowSRTStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkFlowSRTStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkFlowStatisticsResponse> DescribeStreamLinkFlowStatisticsOutcome;
+                typedef std::future<DescribeStreamLinkFlowStatisticsOutcome> DescribeStreamLinkFlowStatisticsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkFlowStatisticsRequest&, DescribeStreamLinkFlowStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkFlowStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkFlowsResponse> DescribeStreamLinkFlowsOutcome;
+                typedef std::future<DescribeStreamLinkFlowsOutcome> DescribeStreamLinkFlowsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkFlowsRequest&, DescribeStreamLinkFlowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkFlowsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeStreamLinkRegionsResponse> DescribeStreamLinkRegionsOutcome;
+                typedef std::future<DescribeStreamLinkRegionsOutcome> DescribeStreamLinkRegionsOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeStreamLinkRegionsRequest&, DescribeStreamLinkRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamLinkRegionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskDetailResponse> DescribeTaskDetailOutcome;
                 typedef std::future<DescribeTaskDetailOutcome> DescribeTaskDetailOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeTaskDetailRequest&, DescribeTaskDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskDetailAsyncHandler;
@@ -335,6 +410,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySnapshotByTimeOffsetTemplateResponse> ModifySnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<ModifySnapshotByTimeOffsetTemplateOutcome> ModifySnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifySnapshotByTimeOffsetTemplateRequest&, ModifySnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotByTimeOffsetTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamLinkFlowResponse> ModifyStreamLinkFlowOutcome;
+                typedef std::future<ModifyStreamLinkFlowOutcome> ModifyStreamLinkFlowOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamLinkFlowRequest&, ModifyStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamLinkInputResponse> ModifyStreamLinkInputOutcome;
+                typedef std::future<ModifyStreamLinkInputOutcome> ModifyStreamLinkInputOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamLinkInputRequest&, ModifyStreamLinkInputOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamLinkInputAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStreamLinkOutputInfoResponse> ModifyStreamLinkOutputInfoOutcome;
+                typedef std::future<ModifyStreamLinkOutputInfoOutcome> ModifyStreamLinkOutputInfoOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyStreamLinkOutputInfoRequest&, ModifyStreamLinkOutputInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStreamLinkOutputInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTranscodeTemplateResponse> ModifyTranscodeTemplateOutcome;
                 typedef std::future<ModifyTranscodeTemplateOutcome> ModifyTranscodeTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifyTranscodeTemplateRequest&, ModifyTranscodeTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTranscodeTemplateAsyncHandler;
@@ -362,6 +446,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetWorkflowResponse> ResetWorkflowOutcome;
                 typedef std::future<ResetWorkflowOutcome> ResetWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ResetWorkflowRequest&, ResetWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetWorkflowAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartStreamLinkFlowResponse> StartStreamLinkFlowOutcome;
+                typedef std::future<StartStreamLinkFlowOutcome> StartStreamLinkFlowOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::StartStreamLinkFlowRequest&, StartStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopStreamLinkFlowResponse> StopStreamLinkFlowOutcome;
+                typedef std::future<StopStreamLinkFlowOutcome> StopStreamLinkFlowOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::StopStreamLinkFlowRequest&, StopStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamLinkFlowAsyncHandler;
 
 
 
@@ -445,6 +535,24 @@ namespace TencentCloud
                 CreateSnapshotByTimeOffsetTemplateOutcome CreateSnapshotByTimeOffsetTemplate(const Model::CreateSnapshotByTimeOffsetTemplateRequest &request);
                 void CreateSnapshotByTimeOffsetTemplateAsync(const Model::CreateSnapshotByTimeOffsetTemplateRequest& request, const CreateSnapshotByTimeOffsetTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSnapshotByTimeOffsetTemplateOutcomeCallable CreateSnapshotByTimeOffsetTemplateCallable(const Model::CreateSnapshotByTimeOffsetTemplateRequest& request);
+
+                /**
+                 *创建媒体传输的传输流配置。
+                 * @param req CreateStreamLinkFlowRequest
+                 * @return CreateStreamLinkFlowOutcome
+                 */
+                CreateStreamLinkFlowOutcome CreateStreamLinkFlow(const Model::CreateStreamLinkFlowRequest &request);
+                void CreateStreamLinkFlowAsync(const Model::CreateStreamLinkFlowRequest& request, const CreateStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamLinkFlowOutcomeCallable CreateStreamLinkFlowCallable(const Model::CreateStreamLinkFlowRequest& request);
+
+                /**
+                 *创建媒体传输流的输出信息。
+                 * @param req CreateStreamLinkOutputInfoRequest
+                 * @return CreateStreamLinkOutputInfoOutcome
+                 */
+                CreateStreamLinkOutputInfoOutcome CreateStreamLinkOutputInfo(const Model::CreateStreamLinkOutputInfoRequest &request);
+                void CreateStreamLinkOutputInfoAsync(const Model::CreateStreamLinkOutputInfoRequest& request, const CreateStreamLinkOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateStreamLinkOutputInfoOutcomeCallable CreateStreamLinkOutputInfoCallable(const Model::CreateStreamLinkOutputInfoRequest& request);
 
                 /**
                  *创建用户自定义转码模板，数量上限：1000。
@@ -577,6 +685,24 @@ namespace TencentCloud
                 DeleteSnapshotByTimeOffsetTemplateOutcomeCallable DeleteSnapshotByTimeOffsetTemplateCallable(const Model::DeleteSnapshotByTimeOffsetTemplateRequest& request);
 
                 /**
+                 *删除媒体传输的传输流配置。
+                 * @param req DeleteStreamLinkFlowRequest
+                 * @return DeleteStreamLinkFlowOutcome
+                 */
+                DeleteStreamLinkFlowOutcome DeleteStreamLinkFlow(const Model::DeleteStreamLinkFlowRequest &request);
+                void DeleteStreamLinkFlowAsync(const Model::DeleteStreamLinkFlowRequest& request, const DeleteStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamLinkFlowOutcomeCallable DeleteStreamLinkFlowCallable(const Model::DeleteStreamLinkFlowRequest& request);
+
+                /**
+                 *删除媒体传输流的输出配置。
+                 * @param req DeleteStreamLinkOutputRequest
+                 * @return DeleteStreamLinkOutputOutcome
+                 */
+                DeleteStreamLinkOutputOutcome DeleteStreamLinkOutput(const Model::DeleteStreamLinkOutputRequest &request);
+                void DeleteStreamLinkOutputAsync(const Model::DeleteStreamLinkOutputRequest& request, const DeleteStreamLinkOutputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteStreamLinkOutputOutcomeCallable DeleteStreamLinkOutputCallable(const Model::DeleteStreamLinkOutputRequest& request);
+
+                /**
                  *删除用户自定义转码模板。
                  * @param req DeleteTranscodeTemplateRequest
                  * @return DeleteTranscodeTemplateOutcome
@@ -701,6 +827,89 @@ namespace TencentCloud
                 DescribeSnapshotByTimeOffsetTemplatesOutcome DescribeSnapshotByTimeOffsetTemplates(const Model::DescribeSnapshotByTimeOffsetTemplatesRequest &request);
                 void DescribeSnapshotByTimeOffsetTemplatesAsync(const Model::DescribeSnapshotByTimeOffsetTemplatesRequest& request, const DescribeSnapshotByTimeOffsetTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSnapshotByTimeOffsetTemplatesOutcomeCallable DescribeSnapshotByTimeOffsetTemplatesCallable(const Model::DescribeSnapshotByTimeOffsetTemplatesRequest& request);
+
+                /**
+                 *查询媒体传输开通状态。
+                 * @param req DescribeStreamLinkActivateStateRequest
+                 * @return DescribeStreamLinkActivateStateOutcome
+                 */
+                DescribeStreamLinkActivateStateOutcome DescribeStreamLinkActivateState(const Model::DescribeStreamLinkActivateStateRequest &request);
+                void DescribeStreamLinkActivateStateAsync(const Model::DescribeStreamLinkActivateStateRequest& request, const DescribeStreamLinkActivateStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkActivateStateOutcomeCallable DescribeStreamLinkActivateStateCallable(const Model::DescribeStreamLinkActivateStateRequest& request);
+
+                /**
+                 *查询媒体输入流的配置信息。
+                 * @param req DescribeStreamLinkFlowRequest
+                 * @return DescribeStreamLinkFlowOutcome
+                 */
+                DescribeStreamLinkFlowOutcome DescribeStreamLinkFlow(const Model::DescribeStreamLinkFlowRequest &request);
+                void DescribeStreamLinkFlowAsync(const Model::DescribeStreamLinkFlowRequest& request, const DescribeStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkFlowOutcomeCallable DescribeStreamLinkFlowCallable(const Model::DescribeStreamLinkFlowRequest& request);
+
+                /**
+                 *查询媒体传输流的日志信息。
+                 * @param req DescribeStreamLinkFlowLogsRequest
+                 * @return DescribeStreamLinkFlowLogsOutcome
+                 */
+                DescribeStreamLinkFlowLogsOutcome DescribeStreamLinkFlowLogs(const Model::DescribeStreamLinkFlowLogsRequest &request);
+                void DescribeStreamLinkFlowLogsAsync(const Model::DescribeStreamLinkFlowLogsRequest& request, const DescribeStreamLinkFlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkFlowLogsOutcomeCallable DescribeStreamLinkFlowLogsCallable(const Model::DescribeStreamLinkFlowLogsRequest& request);
+
+                /**
+                 *查询媒体传输流的媒体质量数据。
+
+                 * @param req DescribeStreamLinkFlowMediaStatisticsRequest
+                 * @return DescribeStreamLinkFlowMediaStatisticsOutcome
+                 */
+                DescribeStreamLinkFlowMediaStatisticsOutcome DescribeStreamLinkFlowMediaStatistics(const Model::DescribeStreamLinkFlowMediaStatisticsRequest &request);
+                void DescribeStreamLinkFlowMediaStatisticsAsync(const Model::DescribeStreamLinkFlowMediaStatisticsRequest& request, const DescribeStreamLinkFlowMediaStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkFlowMediaStatisticsOutcomeCallable DescribeStreamLinkFlowMediaStatisticsCallable(const Model::DescribeStreamLinkFlowMediaStatisticsRequest& request);
+
+                /**
+                 *实时查询流的当前状态
+                 * @param req DescribeStreamLinkFlowRealtimeStatusRequest
+                 * @return DescribeStreamLinkFlowRealtimeStatusOutcome
+                 */
+                DescribeStreamLinkFlowRealtimeStatusOutcome DescribeStreamLinkFlowRealtimeStatus(const Model::DescribeStreamLinkFlowRealtimeStatusRequest &request);
+                void DescribeStreamLinkFlowRealtimeStatusAsync(const Model::DescribeStreamLinkFlowRealtimeStatusRequest& request, const DescribeStreamLinkFlowRealtimeStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkFlowRealtimeStatusOutcomeCallable DescribeStreamLinkFlowRealtimeStatusCallable(const Model::DescribeStreamLinkFlowRealtimeStatusRequest& request);
+
+                /**
+                 *查询媒体传输流的SRT质量数据。
+                 * @param req DescribeStreamLinkFlowSRTStatisticsRequest
+                 * @return DescribeStreamLinkFlowSRTStatisticsOutcome
+                 */
+                DescribeStreamLinkFlowSRTStatisticsOutcome DescribeStreamLinkFlowSRTStatistics(const Model::DescribeStreamLinkFlowSRTStatisticsRequest &request);
+                void DescribeStreamLinkFlowSRTStatisticsAsync(const Model::DescribeStreamLinkFlowSRTStatisticsRequest& request, const DescribeStreamLinkFlowSRTStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkFlowSRTStatisticsOutcomeCallable DescribeStreamLinkFlowSRTStatisticsCallable(const Model::DescribeStreamLinkFlowSRTStatisticsRequest& request);
+
+                /**
+                 *查询媒体传输流的媒体质量数据。
+
+                 * @param req DescribeStreamLinkFlowStatisticsRequest
+                 * @return DescribeStreamLinkFlowStatisticsOutcome
+                 */
+                DescribeStreamLinkFlowStatisticsOutcome DescribeStreamLinkFlowStatistics(const Model::DescribeStreamLinkFlowStatisticsRequest &request);
+                void DescribeStreamLinkFlowStatisticsAsync(const Model::DescribeStreamLinkFlowStatisticsRequest& request, const DescribeStreamLinkFlowStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkFlowStatisticsOutcomeCallable DescribeStreamLinkFlowStatisticsCallable(const Model::DescribeStreamLinkFlowStatisticsRequest& request);
+
+                /**
+                 *批量查询媒体输入流的配置信息。
+                 * @param req DescribeStreamLinkFlowsRequest
+                 * @return DescribeStreamLinkFlowsOutcome
+                 */
+                DescribeStreamLinkFlowsOutcome DescribeStreamLinkFlows(const Model::DescribeStreamLinkFlowsRequest &request);
+                void DescribeStreamLinkFlowsAsync(const Model::DescribeStreamLinkFlowsRequest& request, const DescribeStreamLinkFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkFlowsOutcomeCallable DescribeStreamLinkFlowsCallable(const Model::DescribeStreamLinkFlowsRequest& request);
+
+                /**
+                 *查询媒体传输所有地区。
+                 * @param req DescribeStreamLinkRegionsRequest
+                 * @return DescribeStreamLinkRegionsOutcome
+                 */
+                DescribeStreamLinkRegionsOutcome DescribeStreamLinkRegions(const Model::DescribeStreamLinkRegionsRequest &request);
+                void DescribeStreamLinkRegionsAsync(const Model::DescribeStreamLinkRegionsRequest& request, const DescribeStreamLinkRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeStreamLinkRegionsOutcomeCallable DescribeStreamLinkRegionsCallable(const Model::DescribeStreamLinkRegionsRequest& request);
 
                 /**
                  *通过任务 ID 查询任务的执行状态和结果的详细信息（最多可以查询3天之内提交的任务）。
@@ -891,6 +1100,33 @@ namespace TencentCloud
                 ModifySnapshotByTimeOffsetTemplateOutcomeCallable ModifySnapshotByTimeOffsetTemplateCallable(const Model::ModifySnapshotByTimeOffsetTemplateRequest& request);
 
                 /**
+                 *修改媒体传输的传输流配置信息。
+                 * @param req ModifyStreamLinkFlowRequest
+                 * @return ModifyStreamLinkFlowOutcome
+                 */
+                ModifyStreamLinkFlowOutcome ModifyStreamLinkFlow(const Model::ModifyStreamLinkFlowRequest &request);
+                void ModifyStreamLinkFlowAsync(const Model::ModifyStreamLinkFlowRequest& request, const ModifyStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamLinkFlowOutcomeCallable ModifyStreamLinkFlowCallable(const Model::ModifyStreamLinkFlowRequest& request);
+
+                /**
+                 *修改媒体传输流的输入信息。
+                 * @param req ModifyStreamLinkInputRequest
+                 * @return ModifyStreamLinkInputOutcome
+                 */
+                ModifyStreamLinkInputOutcome ModifyStreamLinkInput(const Model::ModifyStreamLinkInputRequest &request);
+                void ModifyStreamLinkInputAsync(const Model::ModifyStreamLinkInputRequest& request, const ModifyStreamLinkInputAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamLinkInputOutcomeCallable ModifyStreamLinkInputCallable(const Model::ModifyStreamLinkInputRequest& request);
+
+                /**
+                 *修改媒体传输流的输出配置。
+                 * @param req ModifyStreamLinkOutputInfoRequest
+                 * @return ModifyStreamLinkOutputInfoOutcome
+                 */
+                ModifyStreamLinkOutputInfoOutcome ModifyStreamLinkOutputInfo(const Model::ModifyStreamLinkOutputInfoRequest &request);
+                void ModifyStreamLinkOutputInfoAsync(const Model::ModifyStreamLinkOutputInfoRequest& request, const ModifyStreamLinkOutputInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStreamLinkOutputInfoOutcomeCallable ModifyStreamLinkOutputInfoCallable(const Model::ModifyStreamLinkOutputInfoRequest& request);
+
+                /**
                  *修改用户自定义转码模板信息。
                  * @param req ModifyTranscodeTemplateRequest
                  * @return ModifyTranscodeTemplateOutcome
@@ -986,6 +1222,24 @@ namespace TencentCloud
                 ResetWorkflowOutcome ResetWorkflow(const Model::ResetWorkflowRequest &request);
                 void ResetWorkflowAsync(const Model::ResetWorkflowRequest& request, const ResetWorkflowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetWorkflowOutcomeCallable ResetWorkflowCallable(const Model::ResetWorkflowRequest& request);
+
+                /**
+                 *启动媒体传输流。
+                 * @param req StartStreamLinkFlowRequest
+                 * @return StartStreamLinkFlowOutcome
+                 */
+                StartStreamLinkFlowOutcome StartStreamLinkFlow(const Model::StartStreamLinkFlowRequest &request);
+                void StartStreamLinkFlowAsync(const Model::StartStreamLinkFlowRequest& request, const StartStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartStreamLinkFlowOutcomeCallable StartStreamLinkFlowCallable(const Model::StartStreamLinkFlowRequest& request);
+
+                /**
+                 *停止媒体传输流。
+                 * @param req StopStreamLinkFlowRequest
+                 * @return StopStreamLinkFlowOutcome
+                 */
+                StopStreamLinkFlowOutcome StopStreamLinkFlow(const Model::StopStreamLinkFlowRequest &request);
+                void StopStreamLinkFlowAsync(const Model::StopStreamLinkFlowRequest& request, const StopStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopStreamLinkFlowOutcomeCallable StopStreamLinkFlowCallable(const Model::StopStreamLinkFlowRequest& request);
 
             };
         }

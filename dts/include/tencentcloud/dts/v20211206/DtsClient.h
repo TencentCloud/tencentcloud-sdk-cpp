@@ -242,7 +242,7 @@ namespace TencentCloud
                 ConfigureSyncJobOutcomeCallable ConfigureSyncJobCallable(const Model::ConfigureSyncJobRequest& request);
 
                 /**
-                 *校验同步任务，检查必要参数和周边
+                 *校验同步任务，检查必要参数和周边配置。
                  * @param req CreateCheckSyncJobRequest
                  * @return CreateCheckSyncJobOutcome
                  */
@@ -326,7 +326,7 @@ namespace TencentCloud
                 DescribeCompareTasksOutcomeCallable DescribeCompareTasksCallable(const Model::DescribeCompareTasksRequest& request);
 
                 /**
-                 *本接口用于查询支持迁移的是云数据库实例
+                 *本接口用于查询支持迁移的云数据库实例
                  * @param req DescribeMigrateDBInstancesRequest
                  * @return DescribeMigrateDBInstancesOutcome
                  */
@@ -373,7 +373,7 @@ namespace TencentCloud
                 DescribeSyncJobsOutcomeCallable DescribeSyncJobsCallable(const Model::DescribeSyncJobsRequest& request);
 
                 /**
-                 *下线删除数据迁移任务。计费任务必须先调用隔离(IsolateMigrateJob)接口，且只有是**已隔离**状态下，才能调用此接口销毁任务。对于不计费任务，调用隔离(IsolateMigrateJob)接口删除任务操作。
+                 *下线数据迁移任务。计费任务必须先调用隔离(IsolateMigrateJob)接口，且只有是**已隔离**状态下，才能调用此接口销毁任务。对于不计费任务，调用隔离(IsolateMigrateJob)接口删除任务操作。
                  * @param req DestroyMigrateJobRequest
                  * @return DestroyMigrateJobOutcome
                  */
@@ -481,7 +481,7 @@ namespace TencentCloud
                 ResizeSyncJobOutcomeCallable ResizeSyncJobCallable(const Model::ResizeSyncJobRequest& request);
 
                 /**
-                 *重试数据迁移任务，针对redis在迁移在失败情况下的重试操作，注意：此操作跳过校验阶段，直接重新发起任务，相当于从StartMigrationJob开始执行。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。
+                 *重试数据迁移任务，针对异常情况可进行重试，对于redis在失败时也可重试。注意：此操作跳过校验阶段，直接重新发起任务，相当于从StartMigrationJob开始执行。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。
                  * @param req ResumeMigrateJobRequest
                  * @return ResumeMigrateJobOutcome
                  */

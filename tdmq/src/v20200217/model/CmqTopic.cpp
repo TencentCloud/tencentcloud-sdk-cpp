@@ -35,7 +35,8 @@ CmqTopic::CmqTopic() :
     m_traceHasBeenSet(false),
     m_tenantIdHasBeenSet(false),
     m_namespaceNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_brokerTypeHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome CmqTopic::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("BrokerType") && !value["BrokerType"].IsNull())
+    {
+        if (!value["BrokerType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CmqTopic.BrokerType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_brokerType = value["BrokerType"].GetInt64();
+        m_brokerTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void CmqTopic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_brokerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BrokerType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_brokerType, allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void CmqTopic::SetStatus(const int64_t& _status)
 bool CmqTopic::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t CmqTopic::GetBrokerType() const
+{
+    return m_brokerType;
+}
+
+void CmqTopic::SetBrokerType(const int64_t& _brokerType)
+{
+    m_brokerType = _brokerType;
+    m_brokerTypeHasBeenSet = true;
+}
+
+bool CmqTopic::BrokerTypeHasBeenSet() const
+{
+    return m_brokerTypeHasBeenSet;
 }
 

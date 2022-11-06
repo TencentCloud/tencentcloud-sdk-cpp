@@ -200,6 +200,44 @@ namespace TencentCloud
                      */
                     bool DomainHasBeenSet() const;
 
+                    /**
+                     * 获取Bot标签，取值有:
+<li>evil_bot：恶意Bot；</li>
+<li>suspect_bot：疑似Bot；</li>
+<li>good_bot：正常Bot；</li>
+<li>normal：正常请求；</li>
+<li>none：未分类。</li>
+                     * @return BotLabel Bot标签，取值有:
+<li>evil_bot：恶意Bot；</li>
+<li>suspect_bot：疑似Bot；</li>
+<li>good_bot：正常Bot；</li>
+<li>normal：正常请求；</li>
+<li>none：未分类。</li>
+                     */
+                    std::string GetBotLabel() const;
+
+                    /**
+                     * 设置Bot标签，取值有:
+<li>evil_bot：恶意Bot；</li>
+<li>suspect_bot：疑似Bot；</li>
+<li>good_bot：正常Bot；</li>
+<li>normal：正常请求；</li>
+<li>none：未分类。</li>
+                     * @param BotLabel Bot标签，取值有:
+<li>evil_bot：恶意Bot；</li>
+<li>suspect_bot：疑似Bot；</li>
+<li>good_bot：正常Bot；</li>
+<li>normal：正常请求；</li>
+<li>none：未分类。</li>
+                     */
+                    void SetBotLabel(const std::string& _botLabel);
+
+                    /**
+                     * 判断参数 BotLabel 是否已赋值
+                     * @return BotLabel 是否已赋值
+                     */
+                    bool BotLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +288,17 @@ namespace TencentCloud
                      */
                     std::string m_domain;
                     bool m_domainHasBeenSet;
+
+                    /**
+                     * Bot标签，取值有:
+<li>evil_bot：恶意Bot；</li>
+<li>suspect_bot：疑似Bot；</li>
+<li>good_bot：正常Bot；</li>
+<li>normal：正常请求；</li>
+<li>none：未分类。</li>
+                     */
+                    std::string m_botLabel;
+                    bool m_botLabelHasBeenSet;
 
                 };
             }

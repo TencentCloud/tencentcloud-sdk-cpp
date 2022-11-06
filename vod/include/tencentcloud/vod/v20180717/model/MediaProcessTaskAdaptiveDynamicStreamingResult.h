@@ -121,6 +121,24 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
+                     * 获取转自适应码流任务进度，取值范围 [0-100] 。
+                     * @return Progress 转自适应码流任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t GetProgress() const;
+
+                    /**
+                     * 设置转自适应码流任务进度，取值范围 [0-100] 。
+                     * @param Progress 转自适应码流任务进度，取值范围 [0-100] 。
+                     */
+                    void SetProgress(const int64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
+                    /**
                      * 获取对视频转自适应码流任务的输入。
                      * @return Input 对视频转自适应码流任务的输入。
                      */
@@ -181,6 +199,12 @@ namespace TencentCloud
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * 转自适应码流任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t m_progress;
+                    bool m_progressHasBeenSet;
 
                     /**
                      * 对视频转自适应码流任务的输入。

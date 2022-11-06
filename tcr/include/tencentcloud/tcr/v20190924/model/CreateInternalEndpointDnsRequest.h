@@ -140,6 +140,24 @@ false: 使用vpc域名
                      */
                     bool RegionNameHasBeenSet() const;
 
+                    /**
+                     * 获取请求的地域ID，用于实例复制地域
+                     * @return RegionId 请求的地域ID，用于实例复制地域
+                     */
+                    uint64_t GetRegionId() const;
+
+                    /**
+                     * 设置请求的地域ID，用于实例复制地域
+                     * @param RegionId 请求的地域ID，用于实例复制地域
+                     */
+                    void SetRegionId(const uint64_t& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +191,12 @@ false: 使用vpc域名
                      */
                     std::string m_regionName;
                     bool m_regionNameHasBeenSet;
+
+                    /**
+                     * 请求的地域ID，用于实例复制地域
+                     */
+                    uint64_t m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

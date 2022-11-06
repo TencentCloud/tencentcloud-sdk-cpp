@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则ID列表（99999为无效id）。
-                     * @return RuleId 规则ID列表（99999为无效id）。
+                     * 获取规则ID。
+                     * @return RuleId 规则ID。
                      */
                     int64_t GetRuleId() const;
 
                     /**
-                     * 设置规则ID列表（99999为无效id）。
-                     * @param RuleId 规则ID列表（99999为无效id）。
+                     * 设置规则ID。
+                     * @param RuleId 规则ID。
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
@@ -202,10 +202,32 @@ namespace TencentCloud
                      */
                     bool RuleTypeNameHasBeenSet() const;
 
+                    /**
+                     * 获取攻击内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackContent 攻击内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAttackContent() const;
+
+                    /**
+                     * 设置攻击内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttackContent 攻击内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttackContent(const std::string& _attackContent);
+
+                    /**
+                     * 判断参数 AttackContent 是否已赋值
+                     * @return AttackContent 是否已赋值
+                     */
+                    bool AttackContentHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则ID列表（99999为无效id）。
+                     * 规则ID。
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;
@@ -251,6 +273,13 @@ namespace TencentCloud
                      */
                     std::string m_ruleTypeName;
                     bool m_ruleTypeNameHasBeenSet;
+
+                    /**
+                     * 攻击内容。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_attackContent;
+                    bool m_attackContentHasBeenSet;
 
                 };
             }

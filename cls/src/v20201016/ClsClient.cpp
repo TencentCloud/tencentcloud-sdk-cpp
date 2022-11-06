@@ -40,6 +40,49 @@ ClsClient::ClsClient(const Credential &credential, const string &region, const C
 }
 
 
+ClsClient::AddMachineGroupInfoOutcome ClsClient::AddMachineGroupInfo(const AddMachineGroupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddMachineGroupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddMachineGroupInfoResponse rsp = AddMachineGroupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddMachineGroupInfoOutcome(rsp);
+        else
+            return AddMachineGroupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return AddMachineGroupInfoOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::AddMachineGroupInfoAsync(const AddMachineGroupInfoRequest& request, const AddMachineGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddMachineGroupInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::AddMachineGroupInfoOutcomeCallable ClsClient::AddMachineGroupInfoCallable(const AddMachineGroupInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddMachineGroupInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->AddMachineGroupInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::ApplyConfigToMachineGroupOutcome ClsClient::ApplyConfigToMachineGroup(const ApplyConfigToMachineGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyConfigToMachineGroup");
@@ -1022,6 +1065,49 @@ ClsClient::DeleteMachineGroupOutcomeCallable ClsClient::DeleteMachineGroupCallab
         [this, request]()
         {
             return this->DeleteMachineGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::DeleteMachineGroupInfoOutcome ClsClient::DeleteMachineGroupInfo(const DeleteMachineGroupInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteMachineGroupInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteMachineGroupInfoResponse rsp = DeleteMachineGroupInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteMachineGroupInfoOutcome(rsp);
+        else
+            return DeleteMachineGroupInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteMachineGroupInfoOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DeleteMachineGroupInfoAsync(const DeleteMachineGroupInfoRequest& request, const DeleteMachineGroupInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteMachineGroupInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DeleteMachineGroupInfoOutcomeCallable ClsClient::DeleteMachineGroupInfoCallable(const DeleteMachineGroupInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteMachineGroupInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteMachineGroupInfo(request);
         }
     );
 

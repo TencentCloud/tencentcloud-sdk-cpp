@@ -27,7 +27,8 @@ SecHitRuleInfo::SecHitRuleInfo() :
     m_hitTimeHasBeenSet(false),
     m_requestNumHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_botLabelHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome SecHitRuleInfo::Deserialize(const rapidjson::Value &value)
         m_domainHasBeenSet = true;
     }
 
+    if (value.HasMember("BotLabel") && !value["BotLabel"].IsNull())
+    {
+        if (!value["BotLabel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecHitRuleInfo.BotLabel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_botLabel = string(value["BotLabel"].GetString());
+        m_botLabelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void SecHitRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_botLabelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BotLabel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_botLabel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void SecHitRuleInfo::SetDomain(const string& _domain)
 bool SecHitRuleInfo::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+string SecHitRuleInfo::GetBotLabel() const
+{
+    return m_botLabel;
+}
+
+void SecHitRuleInfo::SetBotLabel(const string& _botLabel)
+{
+    m_botLabel = _botLabel;
+    m_botLabelHasBeenSet = true;
+}
+
+bool SecHitRuleInfo::BotLabelHasBeenSet() const
+{
+    return m_botLabelHasBeenSet;
 }
 

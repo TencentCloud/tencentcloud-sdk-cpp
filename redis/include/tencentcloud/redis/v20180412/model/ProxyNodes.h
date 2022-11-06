@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Proxy节点信息
+                * Proxy节点信息。
                 */
                 class ProxyNodes : public AbstractModel
                 {
@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点ID
+                     * 获取节点 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return NodeId 节点ID
+                     * @return NodeId 节点 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNodeId() const;
 
                     /**
-                     * 设置节点ID
+                     * 设置节点 ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param NodeId 节点ID
+                     * @param NodeId 节点 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNodeId(const std::string& _nodeId);
@@ -68,14 +68,43 @@ namespace TencentCloud
                      */
                     bool NodeIdHasBeenSet() const;
 
+                    /**
+                     * 获取可用区 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneId 可用区 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetZoneId() const;
+
+                    /**
+                     * 设置可用区 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneId 可用区 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneId(const int64_t& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 节点ID
+                     * 节点 ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_nodeId;
                     bool m_nodeIdHasBeenSet;
+
+                    /**
+                     * 可用区 ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                 };
             }

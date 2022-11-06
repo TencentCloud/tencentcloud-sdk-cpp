@@ -25,6 +25,7 @@ MediaProcessTaskAdaptiveDynamicStreamingResult::MediaProcessTaskAdaptiveDynamicS
     m_errCodeExtHasBeenSet(false),
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
+    m_progressHasBeenSet(false),
     m_inputHasBeenSet(false),
     m_outputHasBeenSet(false)
 {
@@ -73,6 +74,16 @@ CoreInternalOutcome MediaProcessTaskAdaptiveDynamicStreamingResult::Deserialize(
         }
         m_message = string(value["Message"].GetString());
         m_messageHasBeenSet = true;
+    }
+
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaProcessTaskAdaptiveDynamicStreamingResult.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetInt64();
+        m_progressHasBeenSet = true;
     }
 
     if (value.HasMember("Input") && !value["Input"].IsNull())
@@ -146,6 +157,14 @@ void MediaProcessTaskAdaptiveDynamicStreamingResult::ToJsonObject(rapidjson::Val
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
     if (m_inputHasBeenSet)
@@ -231,6 +250,22 @@ void MediaProcessTaskAdaptiveDynamicStreamingResult::SetMessage(const string& _m
 bool MediaProcessTaskAdaptiveDynamicStreamingResult::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+int64_t MediaProcessTaskAdaptiveDynamicStreamingResult::GetProgress() const
+{
+    return m_progress;
+}
+
+void MediaProcessTaskAdaptiveDynamicStreamingResult::SetProgress(const int64_t& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool MediaProcessTaskAdaptiveDynamicStreamingResult::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 
 AdaptiveDynamicStreamingTaskInput MediaProcessTaskAdaptiveDynamicStreamingResult::GetInput() const

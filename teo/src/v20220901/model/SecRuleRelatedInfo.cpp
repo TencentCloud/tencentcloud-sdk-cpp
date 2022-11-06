@@ -26,7 +26,8 @@ SecRuleRelatedInfo::SecRuleRelatedInfo() :
     m_riskLevelHasBeenSet(false),
     m_ruleLevelHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_ruleTypeNameHasBeenSet(false)
+    m_ruleTypeNameHasBeenSet(false),
+    m_attackContentHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome SecRuleRelatedInfo::Deserialize(const rapidjson::Value &valu
         m_ruleTypeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AttackContent") && !value["AttackContent"].IsNull())
+    {
+        if (!value["AttackContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecRuleRelatedInfo.AttackContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_attackContent = string(value["AttackContent"].GetString());
+        m_attackContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void SecRuleRelatedInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RuleTypeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attackContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void SecRuleRelatedInfo::SetRuleTypeName(const string& _ruleTypeName)
 bool SecRuleRelatedInfo::RuleTypeNameHasBeenSet() const
 {
     return m_ruleTypeNameHasBeenSet;
+}
+
+string SecRuleRelatedInfo::GetAttackContent() const
+{
+    return m_attackContent;
+}
+
+void SecRuleRelatedInfo::SetAttackContent(const string& _attackContent)
+{
+    m_attackContent = _attackContent;
+    m_attackContentHasBeenSet = true;
+}
+
+bool SecRuleRelatedInfo::AttackContentHasBeenSet() const
+{
+    return m_attackContentHasBeenSet;
 }
 

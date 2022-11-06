@@ -181,20 +181,20 @@ namespace TencentCloud
                     /**
                      * 获取评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
-4.0：适用于最高年龄段用户，一般对应成人严格打分场景。
+4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
                      * @return ScoreCoeff 评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
-4.0：适用于最高年龄段用户，一般对应成人严格打分场景。
+4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
                      */
                     double GetScoreCoeff() const;
 
                     /**
                      * 设置评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
-4.0：适用于最高年龄段用户，一般对应成人严格打分场景。
+4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
                      * @param ScoreCoeff 评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
-4.0：适用于最高年龄段用户，一般对应成人严格打分场景。
+4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
                      */
                     void SetScoreCoeff(const double& _scoreCoeff);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool ScoreCoeffHasBeenSet() const;
 
                     /**
-                     * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
-                     * @return SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
+                     * 获取业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
+                     * @return SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
                      */
                     std::string GetSoeAppId() const;
 
                     /**
-                     * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
-                     * @param SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
+                     * 设置业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
+                     * @param SoeAppId 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
                      */
                     void SetSoeAppId(const std::string& _soeAppId);
 
@@ -294,25 +294,21 @@ namespace TencentCloud
 
                     /**
                      * 获取评估语言
-0：英文
+0：英文（默认）
 1：中文
-ServerType不填默认为0
                      * @return ServerType 评估语言
-0：英文
+0：英文（默认）
 1：中文
-ServerType不填默认为0
                      */
                     int64_t GetServerType() const;
 
                     /**
                      * 设置评估语言
-0：英文
+0：英文（默认）
 1：中文
-ServerType不填默认为0
                      * @param ServerType 评估语言
-0：英文
+0：英文（默认）
 1：中文
-ServerType不填默认为0
                      */
                     void SetServerType(const int64_t& _serverType);
 
@@ -356,11 +352,9 @@ ServerType不填默认为0
                      * 获取输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
-2：音素注册模式（提工单注册需要使用音素的单词）。
                      * @return TextMode 输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
-2：音素注册模式（提工单注册需要使用音素的单词）。
                      */
                     int64_t GetTextMode() const;
 
@@ -368,11 +362,9 @@ ServerType不填默认为0
                      * 设置输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
-2：音素注册模式（提工单注册需要使用音素的单词）。
                      * @param TextMode 输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
-2：音素注册模式（提工单注册需要使用音素的单词）。
                      */
                     void SetTextMode(const int64_t& _textMode);
 
@@ -445,13 +437,13 @@ ServerType不填默认为0
                     /**
                      * 评价苛刻指数。取值为[1.0 - 4.0]范围内的浮点数，用于平滑不同年龄段的分数。
 1.0：适用于最小年龄段用户，一般对应儿童应用场景；
-4.0：适用于最高年龄段用户，一般对应成人严格打分场景。
+4.0：适用于最高年龄段用户，一般对应成人严格打分场景。苛刻度影响范围参考：[苛刻度影响范围](https://cloud.tencent.com/document/product/884/78824#.E8.8B.9B.E5.88.BB.E5.BA.A6)
                      */
                     double m_scoreCoeff;
                     bool m_scoreCoeffHasBeenSet;
 
                     /**
-                     * 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。
+                     * 业务应用ID，与账号应用APPID无关，是用来方便客户管理服务的参数，新的 SoeAppId 可以在[控制台](https://console.cloud.tencent.com/soe)【应用管理】下新建。如果没有新建SoeAppId，请勿填入该参数，否则会报欠费错误。使用指南：[业务应用](https://cloud.tencent.com/document/product/884/78824#.E4.B8.9A.E5.8A.A1.E5.BA.94.E7.94.A8)
                      */
                     std::string m_soeAppId;
                     bool m_soeAppIdHasBeenSet;
@@ -480,9 +472,8 @@ ServerType不填默认为0
 
                     /**
                      * 评估语言
-0：英文
+0：英文（默认）
 1：中文
-ServerType不填默认为0
                      */
                     int64_t m_serverType;
                     bool m_serverTypeHasBeenSet;
@@ -500,7 +491,6 @@ ServerType不填默认为0
                      * 输入文本模式
 0: 普通文本
 1：[音素结构](https://cloud.tencent.com/document/product/884/33698)文本
-2：音素注册模式（提工单注册需要使用音素的单词）。
                      */
                     int64_t m_textMode;
                     bool m_textModeHasBeenSet;

@@ -27,7 +27,8 @@ CreateInternalEndpointDnsRequest::CreateInternalEndpointDnsRequest() :
     m_vpcIdHasBeenSet(false),
     m_eniLBIpHasBeenSet(false),
     m_usePublicDomainHasBeenSet(false),
-    m_regionNameHasBeenSet(false)
+    m_regionNameHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateInternalEndpointDnsRequest::ToJsonString() const
         string key = "RegionName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_regionId, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CreateInternalEndpointDnsRequest::SetRegionName(const string& _regionName)
 bool CreateInternalEndpointDnsRequest::RegionNameHasBeenSet() const
 {
     return m_regionNameHasBeenSet;
+}
+
+uint64_t CreateInternalEndpointDnsRequest::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void CreateInternalEndpointDnsRequest::SetRegionId(const uint64_t& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool CreateInternalEndpointDnsRequest::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 
 

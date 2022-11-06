@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool PronAccuracyHasBeenSet() const;
 
                     /**
-                     * 获取发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
-                     * @return PronFluency 发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 获取发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1
+                     * @return PronFluency 发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1
                      */
                     double GetPronFluency() const;
 
@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool PronFluencyHasBeenSet() const;
 
                     /**
-                     * 获取发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
-                     * @return PronCompletion 发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 获取发音完整度，取值范围[0, 1]，当为词模式或自由说模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1
+                     * @return PronCompletion 发音完整度，取值范围[0, 1]，当为词模式或自由说模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1
                      */
                     double GetPronCompletion() const;
 
@@ -106,8 +106,8 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取保存语音音频文件下载地址
-                     * @return AudioUrl 保存语音音频文件下载地址
+                     * 获取已废弃，不再保存语音音频文件下载地址
+                     * @return AudioUrl 已废弃，不再保存语音音频文件下载地址
                      */
                     std::string GetAudioUrl() const;
 
@@ -204,13 +204,13 @@ namespace TencentCloud
                     bool m_pronAccuracyHasBeenSet;
 
                     /**
-                     * 发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 发音流利度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1
                      */
                     double m_pronFluency;
                     bool m_pronFluencyHasBeenSet;
 
                     /**
-                     * 发音完整度，取值范围[0, 1]，当为词模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义
+                     * 发音完整度，取值范围[0, 1]，当为词模式或自由说模式时，取值无意义；当为流式模式且请求中IsEnd未置1时，取值无意义。取值无意义时，值为-1
                      */
                     double m_pronCompletion;
                     bool m_pronCompletionHasBeenSet;
@@ -228,7 +228,7 @@ namespace TencentCloud
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 保存语音音频文件下载地址
+                     * 已废弃，不再保存语音音频文件下载地址
                      */
                     std::string m_audioUrl;
                     bool m_audioUrlHasBeenSet;
