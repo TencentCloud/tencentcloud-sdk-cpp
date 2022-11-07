@@ -309,7 +309,7 @@ namespace TencentCloud
                 DeleteMountTargetOutcomeCallable DeleteMountTargetCallable(const Model::DeleteMountTargetRequest& request);
 
                 /**
-                 *查询文件系统快照d定期策略列表信息
+                 *查询文件系统快照定期策略列表信息
                  * @param req DescribeAutoSnapshotPoliciesRequest
                  * @return DescribeAutoSnapshotPoliciesOutcome
                  */

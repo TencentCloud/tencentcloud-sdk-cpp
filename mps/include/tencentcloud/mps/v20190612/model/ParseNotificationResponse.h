@@ -65,9 +65,9 @@ namespace TencentCloud
                     bool EventTypeHasBeenSet() const;
 
                     /**
-                     * 获取视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
+                     * 获取视频处理任务信息，仅当 EventType 为 WorkflowTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return WorkflowTaskEvent 视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
+                     * @return WorkflowTaskEvent 视频处理任务信息，仅当 EventType 为 WorkflowTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WorkflowTask GetWorkflowTaskEvent() const;
@@ -79,9 +79,9 @@ namespace TencentCloud
                     bool WorkflowTaskEventHasBeenSet() const;
 
                     /**
-                     * 获取视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+                     * 获取视频编辑任务信息，仅当 EventType 为 EditMediaTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EditMediaTaskEvent 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+                     * @return EditMediaTaskEvent 视频编辑任务信息，仅当 EventType 为 EditMediaTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EditMediaTask GetEditMediaTaskEvent() const;
@@ -117,9 +117,9 @@ namespace TencentCloud
                     bool SessionContextHasBeenSet() const;
 
                     /**
-                     * 获取编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+                     * 获取编排任务信息，仅当 EventType 为 ScheduleTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ScheduleTaskEvent 编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+                     * @return ScheduleTaskEvent 编排任务信息，仅当 EventType 为 ScheduleTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleTask GetScheduleTaskEvent() const;
@@ -142,14 +142,14 @@ namespace TencentCloud
                     bool m_eventTypeHasBeenSet;
 
                     /**
-                     * 视频处理任务信息，仅当 TaskType 为 WorkflowTask，该字段有值。
+                     * 视频处理任务信息，仅当 EventType 为 WorkflowTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WorkflowTask m_workflowTaskEvent;
                     bool m_workflowTaskEventHasBeenSet;
 
                     /**
-                     * 视频编辑任务信息，仅当 TaskType 为 EditMediaTask，该字段有值。
+                     * 视频编辑任务信息，仅当 EventType 为 EditMediaTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     EditMediaTask m_editMediaTaskEvent;
@@ -168,7 +168,7 @@ namespace TencentCloud
                     bool m_sessionContextHasBeenSet;
 
                     /**
-                     * 编排任务信息，仅当 TaskType 为 ScheduleTask，该字段有值。
+                     * 编排任务信息，仅当 EventType 为 ScheduleTask，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ScheduleTask m_scheduleTaskEvent;

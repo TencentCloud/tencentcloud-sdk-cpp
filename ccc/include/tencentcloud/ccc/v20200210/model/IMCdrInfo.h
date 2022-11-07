@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ccc/v20200210/model/IMSatisfaction.h>
 
 
 namespace TencentCloud
@@ -270,6 +271,28 @@ namespace TencentCloud
                      */
                     bool SkillGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取满意度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Satisfaction 满意度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IMSatisfaction GetSatisfaction() const;
+
+                    /**
+                     * 设置满意度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Satisfaction 满意度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSatisfaction(const IMSatisfaction& _satisfaction);
+
+                    /**
+                     * 判断参数 Satisfaction 是否已赋值
+                     * @return Satisfaction 是否已赋值
+                     */
+                    bool SatisfactionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -342,6 +365,13 @@ namespace TencentCloud
                      */
                     std::string m_skillGroupName;
                     bool m_skillGroupNameHasBeenSet;
+
+                    /**
+                     * 满意度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IMSatisfaction m_satisfaction;
+                    bool m_satisfactionHasBeenSet;
 
                 };
             }

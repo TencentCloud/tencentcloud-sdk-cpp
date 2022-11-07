@@ -2792,6 +2792,49 @@ MariadbClient::SwitchDBInstanceHAOutcomeCallable MariadbClient::SwitchDBInstance
     return task->get_future();
 }
 
+MariadbClient::TerminateDedicatedDBInstanceOutcome MariadbClient::TerminateDedicatedDBInstance(const TerminateDedicatedDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateDedicatedDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateDedicatedDBInstanceResponse rsp = TerminateDedicatedDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateDedicatedDBInstanceOutcome(rsp);
+        else
+            return TerminateDedicatedDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateDedicatedDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::TerminateDedicatedDBInstanceAsync(const TerminateDedicatedDBInstanceRequest& request, const TerminateDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateDedicatedDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::TerminateDedicatedDBInstanceOutcomeCallable MariadbClient::TerminateDedicatedDBInstanceCallable(const TerminateDedicatedDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateDedicatedDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateDedicatedDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::UpgradeDBInstanceOutcome MariadbClient::UpgradeDBInstance(const UpgradeDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeDBInstance");

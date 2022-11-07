@@ -857,6 +857,49 @@ EssClient::DescribeIntegrationEmployeesOutcomeCallable EssClient::DescribeIntegr
     return task->get_future();
 }
 
+EssClient::DescribeOrganizationSealsOutcome EssClient::DescribeOrganizationSeals(const DescribeOrganizationSealsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationSeals");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationSealsResponse rsp = DescribeOrganizationSealsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationSealsOutcome(rsp);
+        else
+            return DescribeOrganizationSealsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationSealsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeOrganizationSealsAsync(const DescribeOrganizationSealsRequest& request, const DescribeOrganizationSealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationSeals(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeOrganizationSealsOutcomeCallable EssClient::DescribeOrganizationSealsCallable(const DescribeOrganizationSealsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationSealsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationSeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DescribeThirdPartyAuthCodeOutcome EssClient::DescribeThirdPartyAuthCode(const DescribeThirdPartyAuthCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeThirdPartyAuthCode");

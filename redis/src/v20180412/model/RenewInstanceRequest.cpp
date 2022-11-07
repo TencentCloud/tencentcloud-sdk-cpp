@@ -24,7 +24,8 @@ using namespace std;
 
 RenewInstanceRequest::RenewInstanceRequest() :
     m_periodHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_modifyPayModeHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string RenewInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyPayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyPayMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modifyPayMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void RenewInstanceRequest::SetInstanceId(const string& _instanceId)
 bool RenewInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string RenewInstanceRequest::GetModifyPayMode() const
+{
+    return m_modifyPayMode;
+}
+
+void RenewInstanceRequest::SetModifyPayMode(const string& _modifyPayMode)
+{
+    m_modifyPayMode = _modifyPayMode;
+    m_modifyPayModeHasBeenSet = true;
+}
+
+bool RenewInstanceRequest::ModifyPayModeHasBeenSet() const
+{
+    return m_modifyPayModeHasBeenSet;
 }
 
 

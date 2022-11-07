@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取存储地域
-                     * @return Region 存储地域
+                     * 获取存储地域。
+                     * @return Region 存储地域。
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置存储地域
-                     * @param Region 存储地域
+                     * 设置存储地域。
+                     * @param Region 存储地域。
                      */
                     void SetRegion(const std::string& _region);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取存储地域描述信息
-                     * @return Description 存储地域描述信息
+                     * 获取存储地域描述信息。
+                     * @return Description 存储地域描述信息。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置存储地域描述信息
-                     * @param Description 存储地域描述信息
+                     * 设置存储地域描述信息。
+                     * @param Description 存储地域描述信息。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -109,14 +109,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否默认的存储地域，true：是；false：否
-                     * @return IsDefault 是否默认的存储地域，true：是；false：否
+                     * 获取是否默认的存储地域，true：是；false：否。
+                     * @return IsDefault 是否默认的存储地域，true：是；false：否。
                      */
                     bool GetIsDefault() const;
 
                     /**
-                     * 设置是否默认的存储地域，true：是；false：否
-                     * @param IsDefault 是否默认的存储地域，true：是；false：否
+                     * 设置是否默认的存储地域，true：是；false：否。
+                     * @param IsDefault 是否默认的存储地域，true：是；false：否。
                      */
                     void SetIsDefault(const bool& _isDefault);
 
@@ -126,16 +126,42 @@ namespace TencentCloud
                      */
                     bool IsDefaultHasBeenSet() const;
 
+                    /**
+                     * 获取存储区域，取值有：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
+                     * @return Area 存储区域，取值有：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置存储区域，取值有：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
+                     * @param Area 存储区域，取值有：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 存储地域
+                     * 存储地域。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 存储地域描述信息
+                     * 存储地域描述信息。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
@@ -149,10 +175,18 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否默认的存储地域，true：是；false：否
+                     * 是否默认的存储地域，true：是；false：否。
                      */
                     bool m_isDefault;
                     bool m_isDefaultHasBeenSet;
+
+                    /**
+                     * 存储区域，取值有：
+<li>Chinese Mainland：中国境内（不包含港澳台）。</li>
+<li>Outside Chinese Mainland：中国境外。</li>
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

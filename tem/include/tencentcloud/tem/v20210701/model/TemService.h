@@ -422,6 +422,28 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否有资源权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasAuthority 是否有资源权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetHasAuthority() const;
+
+                    /**
+                     * 设置是否有资源权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HasAuthority 是否有资源权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHasAuthority(const bool& _hasAuthority);
+
+                    /**
+                     * 判断参数 HasAuthority 是否已赋值
+                     * @return HasAuthority 是否已赋值
+                     */
+                    bool HasAuthorityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -542,6 +564,13 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否有资源权限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_hasAuthority;
+                    bool m_hasAuthorityHasBeenSet;
 
                 };
             }

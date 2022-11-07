@@ -1146,7 +1146,7 @@ namespace TencentCloud
                 ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
 
                 /**
-                 *续费实例
+                 *本接口（RenewInstance）可用于为实例续费。
                  * @param req RenewInstanceRequest
                  * @return RenewInstanceOutcome
                  */

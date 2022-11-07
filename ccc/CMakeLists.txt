@@ -87,6 +87,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h
+  include/tencentcloud/ccc/v20200210/model/IMSatisfaction.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h
   include/tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h
@@ -181,6 +182,7 @@ set(ccc_src
   src/v20200210/model/BindStaffSkillGroupListRequest.cpp
   src/v20200210/model/DescribePSTNActiveSessionListRequest.cpp
   src/v20200210/model/DescribeCallInMetricsResponse.cpp
+  src/v20200210/model/IMSatisfaction.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/DescribeStaffStatusMetricsRequest.cpp
   src/v20200210/model/ResetExtensionPasswordRequest.cpp

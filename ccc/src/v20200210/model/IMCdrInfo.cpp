@@ -30,7 +30,8 @@ IMCdrInfo::IMCdrInfo() :
     m_timestampHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_skillGroupIdHasBeenSet(false),
-    m_skillGroupNameHasBeenSet(false)
+    m_skillGroupNameHasBeenSet(false),
+    m_satisfactionHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,23 @@ CoreInternalOutcome IMCdrInfo::Deserialize(const rapidjson::Value &value)
         m_skillGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Satisfaction") && !value["Satisfaction"].IsNull())
+    {
+        if (!value["Satisfaction"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `IMCdrInfo.Satisfaction` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_satisfaction.Deserialize(value["Satisfaction"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_satisfactionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +242,15 @@ void IMCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SkillGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_skillGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_satisfactionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Satisfaction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_satisfaction.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -387,5 +414,21 @@ void IMCdrInfo::SetSkillGroupName(const string& _skillGroupName)
 bool IMCdrInfo::SkillGroupNameHasBeenSet() const
 {
     return m_skillGroupNameHasBeenSet;
+}
+
+IMSatisfaction IMCdrInfo::GetSatisfaction() const
+{
+    return m_satisfaction;
+}
+
+void IMCdrInfo::SetSatisfaction(const IMSatisfaction& _satisfaction)
+{
+    m_satisfaction = _satisfaction;
+    m_satisfactionHasBeenSet = true;
+}
+
+bool IMCdrInfo::SatisfactionHasBeenSet() const
+{
+    return m_satisfactionHasBeenSet;
 }
 

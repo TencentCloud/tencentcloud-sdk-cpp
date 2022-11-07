@@ -46,7 +46,8 @@ PullStreamTaskInfo::PullStreamTaskInfo() :
     m_commentHasBeenSet(false),
     m_backupSourceTypeHasBeenSet(false),
     m_backupSourceUrlHasBeenSet(false),
-    m_watermarkListHasBeenSet(false)
+    m_watermarkListHasBeenSet(false),
+    m_vodLocalModeHasBeenSet(false)
 {
 }
 
@@ -338,6 +339,16 @@ CoreInternalOutcome PullStreamTaskInfo::Deserialize(const rapidjson::Value &valu
         m_watermarkListHasBeenSet = true;
     }
 
+    if (value.HasMember("VodLocalMode") && !value["VodLocalMode"].IsNull())
+    {
+        if (!value["VodLocalMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PullStreamTaskInfo.VodLocalMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vodLocalMode = value["VodLocalMode"].GetInt64();
+        m_vodLocalModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -569,6 +580,14 @@ void PullStreamTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vodLocalModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodLocalMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vodLocalMode, allocator);
     }
 
 }
@@ -988,5 +1007,21 @@ void PullStreamTaskInfo::SetWatermarkList(const vector<PullPushWatermarkInfo>& _
 bool PullStreamTaskInfo::WatermarkListHasBeenSet() const
 {
     return m_watermarkListHasBeenSet;
+}
+
+int64_t PullStreamTaskInfo::GetVodLocalMode() const
+{
+    return m_vodLocalMode;
+}
+
+void PullStreamTaskInfo::SetVodLocalMode(const int64_t& _vodLocalMode)
+{
+    m_vodLocalMode = _vodLocalMode;
+    m_vodLocalModeHasBeenSet = true;
+}
+
+bool PullStreamTaskInfo::VodLocalModeHasBeenSet() const
+{
+    return m_vodLocalModeHasBeenSet;
 }
 

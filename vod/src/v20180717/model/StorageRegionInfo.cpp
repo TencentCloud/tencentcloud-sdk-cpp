@@ -24,7 +24,8 @@ StorageRegionInfo::StorageRegionInfo() :
     m_regionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_isDefaultHasBeenSet(false)
+    m_isDefaultHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome StorageRegionInfo::Deserialize(const rapidjson::Value &value
         m_isDefaultHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StorageRegionInfo.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void StorageRegionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsDefault";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isDefault, allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void StorageRegionInfo::SetIsDefault(const bool& _isDefault)
 bool StorageRegionInfo::IsDefaultHasBeenSet() const
 {
     return m_isDefaultHasBeenSet;
+}
+
+string StorageRegionInfo::GetArea() const
+{
+    return m_area;
+}
+
+void StorageRegionInfo::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool StorageRegionInfo::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

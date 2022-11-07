@@ -442,6 +442,28 @@ namespace TencentCloud
                      */
                     bool FluxHasBeenSet() const;
 
+                    /**
+                     * 获取推流服务端 IP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ServerIp 推流服务端 IP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetServerIp() const;
+
+                    /**
+                     * 设置推流服务端 IP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ServerIp 推流服务端 IP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetServerIp(const std::string& _serverIp);
+
+                    /**
+                     * 判断参数 ServerIp 是否已赋值
+                     * @return ServerIp 是否已赋值
+                     */
+                    bool ServerIpHasBeenSet() const;
+
                 private:
 
                     /**
@@ -575,6 +597,13 @@ namespace TencentCloud
                      */
                     double m_flux;
                     bool m_fluxHasBeenSet;
+
+                    /**
+                     * 推流服务端 IP。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_serverIp;
+                    bool m_serverIpHasBeenSet;
 
                 };
             }

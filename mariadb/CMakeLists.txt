@@ -35,6 +35,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyInstanceVipResponse.h
   include/tencentcloud/mariadb/v20170312/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeUpgradePriceRequest.h
+  include/tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/FlushBinlogResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/CancelDcnJobResponse.h
@@ -107,6 +108,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/mariadb/v20170312/model/KillSessionRequest.h
+  include/tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h
   include/tencentcloud/mariadb/v20170312/model/DeleteAccountRequest.h
@@ -203,6 +205,7 @@ set(mariadb_src
   src/v20170312/model/ModifyInstanceVipResponse.cpp
   src/v20170312/model/AssociateSecurityGroupsRequest.cpp
   src/v20170312/model/DescribeUpgradePriceRequest.cpp
+  src/v20170312/model/TerminateDedicatedDBInstanceResponse.cpp
   src/v20170312/model/FlushBinlogResponse.cpp
   src/v20170312/model/DescribeDBSecurityGroupsResponse.cpp
   src/v20170312/model/CancelDcnJobResponse.cpp
@@ -275,6 +278,7 @@ set(mariadb_src
   src/v20170312/model/DescribeDatabaseTableRequest.cpp
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/KillSessionRequest.cpp
+  src/v20170312/model/TerminateDedicatedDBInstanceRequest.cpp
   src/v20170312/model/DescribeDatabaseObjectsResponse.cpp
   src/v20170312/model/ModifyDBInstanceNameRequest.cpp
   src/v20170312/model/DeleteAccountRequest.cpp

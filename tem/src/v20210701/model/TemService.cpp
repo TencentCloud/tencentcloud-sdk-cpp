@@ -37,7 +37,8 @@ TemService::TemService() :
     m_environmentNameHasBeenSet(false),
     m_activeVersionsHasBeenSet(false),
     m_enableTracingHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_hasAuthorityHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,16 @@ CoreInternalOutcome TemService::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("HasAuthority") && !value["HasAuthority"].IsNull())
+    {
+        if (!value["HasAuthority"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemService.HasAuthority` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasAuthority = value["HasAuthority"].GetBool();
+        m_hasAuthorityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -391,6 +402,14 @@ void TemService::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_hasAuthorityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasAuthority";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hasAuthority, allocator);
     }
 
 }
@@ -666,5 +685,21 @@ void TemService::SetTags(const vector<Tag>& _tags)
 bool TemService::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+bool TemService::GetHasAuthority() const
+{
+    return m_hasAuthority;
+}
+
+void TemService::SetHasAuthority(const bool& _hasAuthority)
+{
+    m_hasAuthority = _hasAuthority;
+    m_hasAuthorityHasBeenSet = true;
+}
+
+bool TemService::HasAuthorityHasBeenSet() const
+{
+    return m_hasAuthorityHasBeenSet;
 }
 

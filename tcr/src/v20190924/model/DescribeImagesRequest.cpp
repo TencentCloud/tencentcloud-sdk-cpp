@@ -29,7 +29,8 @@ DescribeImagesRequest::DescribeImagesRequest() :
     m_imageVersionHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_digestHasBeenSet(false)
+    m_digestHasBeenSet(false),
+    m_exactMatchHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribeImagesRequest::ToJsonString() const
         string key = "Digest";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_digest.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exactMatchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExactMatch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_exactMatch, allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribeImagesRequest::SetDigest(const string& _digest)
 bool DescribeImagesRequest::DigestHasBeenSet() const
 {
     return m_digestHasBeenSet;
+}
+
+bool DescribeImagesRequest::GetExactMatch() const
+{
+    return m_exactMatch;
+}
+
+void DescribeImagesRequest::SetExactMatch(const bool& _exactMatch)
+{
+    m_exactMatch = _exactMatch;
+    m_exactMatchHasBeenSet = true;
+}
+
+bool DescribeImagesRequest::ExactMatchHasBeenSet() const
+{
+    return m_exactMatchHasBeenSet;
 }
 
 

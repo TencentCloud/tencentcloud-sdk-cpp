@@ -151,6 +151,8 @@
 #include <tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/SwitchDBInstanceHARequest.h>
 #include <tencentcloud/mariadb/v20170312/model/SwitchDBInstanceHAResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/UpgradeDBInstanceResponse.h>
 
@@ -359,6 +361,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchDBInstanceHAResponse> SwitchDBInstanceHAOutcome;
                 typedef std::future<SwitchDBInstanceHAOutcome> SwitchDBInstanceHAOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::SwitchDBInstanceHARequest&, SwitchDBInstanceHAOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDBInstanceHAAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateDedicatedDBInstanceResponse> TerminateDedicatedDBInstanceOutcome;
+                typedef std::future<TerminateDedicatedDBInstanceOutcome> TerminateDedicatedDBInstanceOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::TerminateDedicatedDBInstanceRequest&, TerminateDedicatedDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateDedicatedDBInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeDBInstanceResponse> UpgradeDBInstanceOutcome;
                 typedef std::future<UpgradeDBInstanceOutcome> UpgradeDBInstanceOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::UpgradeDBInstanceRequest&, UpgradeDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDBInstanceAsyncHandler;
@@ -956,6 +961,15 @@ namespace TencentCloud
                 SwitchDBInstanceHAOutcome SwitchDBInstanceHA(const Model::SwitchDBInstanceHARequest &request);
                 void SwitchDBInstanceHAAsync(const Model::SwitchDBInstanceHARequest& request, const SwitchDBInstanceHAAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchDBInstanceHAOutcomeCallable SwitchDBInstanceHACallable(const Model::SwitchDBInstanceHARequest& request);
+
+                /**
+                 *本接口（IsolateDedicatedDBInstance）用于销毁已隔离的独享云数据库实例。
+                 * @param req TerminateDedicatedDBInstanceRequest
+                 * @return TerminateDedicatedDBInstanceOutcome
+                 */
+                TerminateDedicatedDBInstanceOutcome TerminateDedicatedDBInstance(const Model::TerminateDedicatedDBInstanceRequest &request);
+                void TerminateDedicatedDBInstanceAsync(const Model::TerminateDedicatedDBInstanceRequest& request, const TerminateDedicatedDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateDedicatedDBInstanceOutcomeCallable TerminateDedicatedDBInstanceCallable(const Model::TerminateDedicatedDBInstanceRequest& request);
 
                 /**
                  *本接口(UpgradeDBInstance)用于扩容云数据库实例。本接口完成下单和支付两个动作，如果发生支付失败的错误，调用用户账户相关接口中的支付订单接口（PayDeals）重新支付即可。

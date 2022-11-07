@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool DigestHasBeenSet() const;
 
+                    /**
+                     * 获取指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     * @return ExactMatch 指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     */
+                    bool GetExactMatch() const;
+
+                    /**
+                     * 设置指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     * @param ExactMatch 指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     */
+                    void SetExactMatch(const bool& _exactMatch);
+
+                    /**
+                     * 判断参数 ExactMatch 是否已赋值
+                     * @return ExactMatch 是否已赋值
+                     */
+                    bool ExactMatchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_digest;
                     bool m_digestHasBeenSet;
+
+                    /**
+                     * 指定是否为精准匹配，true为精准匹配，不填为模糊匹配
+                     */
+                    bool m_exactMatch;
+                    bool m_exactMatchHasBeenSet;
 
                 };
             }

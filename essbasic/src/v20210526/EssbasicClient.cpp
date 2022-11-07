@@ -470,6 +470,49 @@ EssbasicClient::ChannelDescribeEmployeesOutcomeCallable EssbasicClient::ChannelD
     return task->get_future();
 }
 
+EssbasicClient::ChannelDescribeOrganizationSealsOutcome EssbasicClient::ChannelDescribeOrganizationSeals(const ChannelDescribeOrganizationSealsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDescribeOrganizationSeals");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDescribeOrganizationSealsResponse rsp = ChannelDescribeOrganizationSealsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDescribeOrganizationSealsOutcome(rsp);
+        else
+            return ChannelDescribeOrganizationSealsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDescribeOrganizationSealsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDescribeOrganizationSealsAsync(const ChannelDescribeOrganizationSealsRequest& request, const ChannelDescribeOrganizationSealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDescribeOrganizationSeals(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDescribeOrganizationSealsOutcomeCallable EssbasicClient::ChannelDescribeOrganizationSealsCallable(const ChannelDescribeOrganizationSealsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDescribeOrganizationSealsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDescribeOrganizationSeals(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelGetTaskResultApiOutcome EssbasicClient::ChannelGetTaskResultApi(const ChannelGetTaskResultApiRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelGetTaskResultApi");
