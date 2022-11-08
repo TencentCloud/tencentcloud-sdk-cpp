@@ -64,9 +64,9 @@ int main()
     // cvm_client.SetNetworkProxy(proxy);
 
     // set headers
-    std::map<std::string, std::string> headers;
-    headers.insert(std::make_pair("Accept-Encoding", "gzip"));
-    cvm_client.SetHeader(headers);
+    //std::map<std::string, std::string> headers;
+    //headers.insert(std::make_pair("Accept-Encoding", "gzip"));
+    //cvm_client.SetHeader(headers);
 
     auto outcome = cvm_client.DescribeInstances(req);
     if (!outcome.IsSuccess())
