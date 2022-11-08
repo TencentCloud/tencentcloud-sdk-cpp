@@ -84,6 +84,11 @@ Credential AbstractClient::GetCredential() const
     return m_credential;
 }
 
+void AbstractClient::SetHeader(const std::map<std::string, std::string> &headers)
+{
+    m_headers = headers;
+}
+
 HttpClient::HttpResponseOutcome AbstractClient::MakeRequest(const AbstractModel& request, const std::string &actionName)
 {
     const string body = request.ToJsonString();
@@ -146,6 +151,13 @@ HttpClient::HttpResponseOutcome AbstractClient::DoRequest(const std::string &act
     if (headers.size() > 0)
     {
         for(std::map<std::string, std::string>::iterator iter = headers.begin(); iter != headers.end(); iter++)
+        {
+            httpRequest.AddHeader(iter->first, iter->second);
+        }
+    }
+    if (m_headers.size() > 0)
+    {
+        for(std::map<std::string, std::string>::iterator iter = m_headers.begin(); iter != m_headers.end(); iter++)
         {
             httpRequest.AddHeader(iter->first, iter->second);
         }
