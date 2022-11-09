@@ -32,6 +32,7 @@
 #include <tencentcloud/teo/v20220901/model/IpTableConfig.h>
 #include <tencentcloud/teo/v20220901/model/ExceptConfig.h>
 #include <tencentcloud/teo/v20220901/model/DropPageConfig.h>
+#include <tencentcloud/teo/v20220901/model/TemplateConfig.h>
 
 
 namespace TencentCloud
@@ -230,6 +231,28 @@ namespace TencentCloud
                      */
                     bool DropPageConfigHasBeenSet() const;
 
+                    /**
+                     * 获取模板配置。此处仅出参数使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateConfig 模板配置。此处仅出参数使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TemplateConfig GetTemplateConfig() const;
+
+                    /**
+                     * 设置模板配置。此处仅出参数使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TemplateConfig 模板配置。此处仅出参数使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTemplateConfig(const TemplateConfig& _templateConfig);
+
+                    /**
+                     * 判断参数 TemplateConfig 是否已赋值
+                     * @return TemplateConfig 是否已赋值
+                     */
+                    bool TemplateConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +310,13 @@ namespace TencentCloud
                      */
                     DropPageConfig m_dropPageConfig;
                     bool m_dropPageConfigHasBeenSet;
+
+                    /**
+                     * 模板配置。此处仅出参数使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TemplateConfig m_templateConfig;
+                    bool m_templateConfigHasBeenSet;
 
                 };
             }

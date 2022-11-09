@@ -49,6 +49,8 @@
 #include <tencentcloud/tiia/v20190529/model/DetectLabelProResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectPetRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectPetResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductBetaRequest.h>
@@ -114,6 +116,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectMisbehaviorResponse> DetectMisbehaviorOutcome;
                 typedef std::future<DetectMisbehaviorOutcome> DetectMisbehaviorOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectMisbehaviorRequest&, DetectMisbehaviorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectMisbehaviorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectPetResponse> DetectPetOutcome;
+                typedef std::future<DetectPetOutcome> DetectPetOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectPetRequest&, DetectPetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectPetAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectProductResponse> DetectProductOutcome;
                 typedef std::future<DetectProductOutcome> DetectProductOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectProductRequest&, DetectProductOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectProductAsyncHandler;
@@ -305,6 +310,17 @@ namespace TencentCloud
                 DetectMisbehaviorOutcome DetectMisbehavior(const Model::DetectMisbehaviorRequest &request);
                 void DetectMisbehaviorAsync(const Model::DetectMisbehaviorRequest& request, const DetectMisbehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectMisbehaviorOutcomeCallable DetectMisbehaviorCallable(const Model::DetectMisbehaviorRequest& request);
+
+                /**
+                 *传入一张图片，识别出图片中是否存在宠物
+>     
+- 公共参数中的签名方式必须指定为V3版本，即配置SignatureMethod参数为TC3-HMAC-SHA256。
+                 * @param req DetectPetRequest
+                 * @return DetectPetOutcome
+                 */
+                DetectPetOutcome DetectPet(const Model::DetectPetRequest &request);
+                void DetectPetAsync(const Model::DetectPetRequest& request, const DetectPetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectPetOutcomeCallable DetectPetCallable(const Model::DetectPetRequest& request);
 
                 /**
                  *本接口支持识别图片中包含的商品，能够输出商品的品类名称、类别，还可以输出商品在图片中的位置。支持一张图片多个商品的识别。

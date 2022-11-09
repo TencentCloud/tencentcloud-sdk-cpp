@@ -47,9 +47,11 @@ namespace TencentCloud
                      * 获取拉流源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
+PullPicPushLive -图片。
                      * @return SourceType 拉流源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
+PullPicPushLive -图片。
                      */
                     std::string GetSourceType() const;
 
@@ -57,9 +59,11 @@ PullVodPushLive -点播。
                      * 设置拉流源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
+PullPicPushLive -图片。
                      * @param SourceType 拉流源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
+PullPicPushLive -图片。
                      */
                     void SetSourceType(const std::string& _sourceType);
 
@@ -645,12 +649,43 @@ PullVodPushLive -点播。
                      */
                     bool WatermarkListHasBeenSet() const;
 
+                    /**
+                     * 获取点播源是否启用本地推流模式，默认0，不启用。
+0 - 不启用。
+1 - 启用。
+注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
+                     * @return VodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
+0 - 不启用。
+1 - 启用。
+注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
+                     */
+                    int64_t GetVodLocalMode() const;
+
+                    /**
+                     * 设置点播源是否启用本地推流模式，默认0，不启用。
+0 - 不启用。
+1 - 启用。
+注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
+                     * @param VodLocalMode 点播源是否启用本地推流模式，默认0，不启用。
+0 - 不启用。
+1 - 启用。
+注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
+                     */
+                    void SetVodLocalMode(const int64_t& _vodLocalMode);
+
+                    /**
+                     * 判断参数 VodLocalMode 是否已赋值
+                     * @return VodLocalMode 是否已赋值
+                     */
+                    bool VodLocalModeHasBeenSet() const;
+
                 private:
 
                     /**
                      * 拉流源的类型：
 PullLivePushLive -直播，
 PullVodPushLive -点播。
+PullPicPushLive -图片。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
@@ -825,6 +860,15 @@ PullVodPushLive -点播。
                      */
                     std::vector<PullPushWatermarkInfo> m_watermarkList;
                     bool m_watermarkListHasBeenSet;
+
+                    /**
+                     * 点播源是否启用本地推流模式，默认0，不启用。
+0 - 不启用。
+1 - 启用。
+注意：启用本地模式后，会将源列表中的 MP4 文件进行本地下载，优先使用本地已下载文件进行推流，提高点播源推流稳定性。使用本地下载文件推流时，会产生增值费用。
+                     */
+                    int64_t m_vodLocalMode;
+                    bool m_vodLocalModeHasBeenSet;
 
                 };
             }

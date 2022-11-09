@@ -156,6 +156,36 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取规则启用状态，当返回为null时，为启用。取值有：
+<li> on：启用；</li>
+<li> off：未启用。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 规则启用状态，当返回为null时，为启用。取值有：
+<li> on：启用；</li>
+<li> off：未启用。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置规则启用状态，当返回为null时，为启用。取值有：
+<li> on：启用；</li>
+<li> off：未启用。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 规则启用状态，当返回为null时，为启用。取值有：
+<li> on：启用；</li>
+<li> off：未启用。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +222,15 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 规则启用状态，当返回为null时，为启用。取值有：
+<li> on：启用；</li>
+<li> off：未启用。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

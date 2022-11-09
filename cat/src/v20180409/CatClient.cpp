@@ -427,6 +427,49 @@ CatClient::SuspendProbeTaskOutcomeCallable CatClient::SuspendProbeTaskCallable(c
     return task->get_future();
 }
 
+CatClient::UpdateProbeTaskAttributesOutcome CatClient::UpdateProbeTaskAttributes(const UpdateProbeTaskAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateProbeTaskAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateProbeTaskAttributesResponse rsp = UpdateProbeTaskAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateProbeTaskAttributesOutcome(rsp);
+        else
+            return UpdateProbeTaskAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateProbeTaskAttributesOutcome(outcome.GetError());
+    }
+}
+
+void CatClient::UpdateProbeTaskAttributesAsync(const UpdateProbeTaskAttributesRequest& request, const UpdateProbeTaskAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateProbeTaskAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CatClient::UpdateProbeTaskAttributesOutcomeCallable CatClient::UpdateProbeTaskAttributesCallable(const UpdateProbeTaskAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateProbeTaskAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateProbeTaskAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CatClient::UpdateProbeTaskConfigurationListOutcome CatClient::UpdateProbeTaskConfigurationList(const UpdateProbeTaskConfigurationListRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateProbeTaskConfigurationList");

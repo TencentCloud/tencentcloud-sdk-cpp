@@ -30,7 +30,8 @@ ModifySecurityWafGroupPolicyRequest::ModifySecurityWafGroupPolicyRequest() :
     m_modeHasBeenSet(false),
     m_wafRulesHasBeenSet(false),
     m_aiRuleHasBeenSet(false),
-    m_wafGroupsHasBeenSet(false)
+    m_wafGroupsHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ModifySecurityWafGroupPolicyRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -248,6 +257,22 @@ void ModifySecurityWafGroupPolicyRequest::SetWafGroups(const vector<WafGroup>& _
 bool ModifySecurityWafGroupPolicyRequest::WafGroupsHasBeenSet() const
 {
     return m_wafGroupsHasBeenSet;
+}
+
+string ModifySecurityWafGroupPolicyRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void ModifySecurityWafGroupPolicyRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool ModifySecurityWafGroupPolicyRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

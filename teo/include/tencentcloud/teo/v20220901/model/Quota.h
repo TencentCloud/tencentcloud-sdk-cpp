@@ -101,30 +101,34 @@ namespace TencentCloud
                     bool DailyAvailableHasBeenSet() const;
 
                     /**
-                     * 获取配额类型，取值有：
-<li> purge_prefix：前缀；</li>
-<li> purge_url：URL；</li>
-<li> purge_host：Hostname；</li>
-<li> purge_all：全部缓存内容。</li>
-                     * @return Type 配额类型，取值有：
-<li> purge_prefix：前缀；</li>
-<li> purge_url：URL；</li>
-<li> purge_host：Hostname；</li>
-<li> purge_all：全部缓存内容。</li>
+                     * 获取刷新预热缓存类型，取值有：
+<li> purge_prefix：按前缀刷新；</li>
+<li> purge_url：按URL刷新；</li>
+<li> purge_host：按Hostname刷新；</li>
+<li> purge_all：刷新全部缓存内容；</li>
+<li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
+                     * @return Type 刷新预热缓存类型，取值有：
+<li> purge_prefix：按前缀刷新；</li>
+<li> purge_url：按URL刷新；</li>
+<li> purge_host：按Hostname刷新；</li>
+<li> purge_all：刷新全部缓存内容；</li>
+<li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置配额类型，取值有：
-<li> purge_prefix：前缀；</li>
-<li> purge_url：URL；</li>
-<li> purge_host：Hostname；</li>
-<li> purge_all：全部缓存内容。</li>
-                     * @param Type 配额类型，取值有：
-<li> purge_prefix：前缀；</li>
-<li> purge_url：URL；</li>
-<li> purge_host：Hostname；</li>
-<li> purge_all：全部缓存内容。</li>
+                     * 设置刷新预热缓存类型，取值有：
+<li> purge_prefix：按前缀刷新；</li>
+<li> purge_url：按URL刷新；</li>
+<li> purge_host：按Hostname刷新；</li>
+<li> purge_all：刷新全部缓存内容；</li>
+<li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
+                     * @param Type 刷新预热缓存类型，取值有：
+<li> purge_prefix：按前缀刷新；</li>
+<li> purge_url：按URL刷新；</li>
+<li> purge_host：按Hostname刷新；</li>
+<li> purge_all：刷新全部缓存内容；</li>
+<li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -155,11 +159,12 @@ namespace TencentCloud
                     bool m_dailyAvailableHasBeenSet;
 
                     /**
-                     * 配额类型，取值有：
-<li> purge_prefix：前缀；</li>
-<li> purge_url：URL；</li>
-<li> purge_host：Hostname；</li>
-<li> purge_all：全部缓存内容。</li>
+                     * 刷新预热缓存类型，取值有：
+<li> purge_prefix：按前缀刷新；</li>
+<li> purge_url：按URL刷新；</li>
+<li> purge_host：按Hostname刷新；</li>
+<li> purge_all：刷新全部缓存内容；</li>
+<li> purge_cache_tag：按CacheTag刷新；</li><li> prefetch_url：按URL预热。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

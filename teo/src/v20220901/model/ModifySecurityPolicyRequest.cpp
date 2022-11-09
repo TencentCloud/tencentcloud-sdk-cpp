@@ -24,8 +24,9 @@ using namespace std;
 
 ModifySecurityPolicyRequest::ModifySecurityPolicyRequest() :
     m_zoneIdHasBeenSet(false),
+    m_securityConfigHasBeenSet(false),
     m_entityHasBeenSet(false),
-    m_securityConfigHasBeenSet(false)
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -44,6 +45,15 @@ string ModifySecurityPolicyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_securityConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_securityConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_entityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -52,13 +62,12 @@ string ModifySecurityPolicyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_entity.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_securityConfigHasBeenSet)
+    if (m_templateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SecurityConfig";
+        string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_securityConfig.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -85,6 +94,22 @@ bool ModifySecurityPolicyRequest::ZoneIdHasBeenSet() const
     return m_zoneIdHasBeenSet;
 }
 
+SecurityConfig ModifySecurityPolicyRequest::GetSecurityConfig() const
+{
+    return m_securityConfig;
+}
+
+void ModifySecurityPolicyRequest::SetSecurityConfig(const SecurityConfig& _securityConfig)
+{
+    m_securityConfig = _securityConfig;
+    m_securityConfigHasBeenSet = true;
+}
+
+bool ModifySecurityPolicyRequest::SecurityConfigHasBeenSet() const
+{
+    return m_securityConfigHasBeenSet;
+}
+
 string ModifySecurityPolicyRequest::GetEntity() const
 {
     return m_entity;
@@ -101,20 +126,20 @@ bool ModifySecurityPolicyRequest::EntityHasBeenSet() const
     return m_entityHasBeenSet;
 }
 
-SecurityConfig ModifySecurityPolicyRequest::GetSecurityConfig() const
+string ModifySecurityPolicyRequest::GetTemplateId() const
 {
-    return m_securityConfig;
+    return m_templateId;
 }
 
-void ModifySecurityPolicyRequest::SetSecurityConfig(const SecurityConfig& _securityConfig)
+void ModifySecurityPolicyRequest::SetTemplateId(const string& _templateId)
 {
-    m_securityConfig = _securityConfig;
-    m_securityConfigHasBeenSet = true;
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
 }
 
-bool ModifySecurityPolicyRequest::SecurityConfigHasBeenSet() const
+bool ModifySecurityPolicyRequest::TemplateIdHasBeenSet() const
 {
-    return m_securityConfigHasBeenSet;
+    return m_templateIdHasBeenSet;
 }
 
 

@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取ddl类型，如database,table,view等
+                     * 获取ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdlObject ddl类型，如database,table,view等
+                     * @return DdlObject ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDdlObject() const;
 
                     /**
-                     * 设置ddl类型，如database,table,view等
+                     * 设置ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdlObject ddl类型，如database,table,view等
+                     * @param DdlObject ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdlObject(const std::string& _ddlObject);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool DdlObjectHasBeenSet() const;
 
                     /**
-                     * 获取ddl具体值，如Create,Drop等
+                     * 获取ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DdlValue ddl具体值，如Create,Drop等
+                     * @return DdlValue ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetDdlValue() const;
 
                     /**
-                     * 设置ddl具体值，如Create,Drop等
+                     * 设置ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DdlValue ddl具体值，如Create,Drop等
+                     * @param DdlValue ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDdlValue(const std::vector<std::string>& _ddlValue);
@@ -93,14 +93,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * ddl类型，如database,table,view等
+                     * ddl类型，如Database,Table,View,Index等
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ddlObject;
                     bool m_ddlObjectHasBeenSet;
 
                     /**
-                     * ddl具体值，如Create,Drop等
+                     * ddl具体值，对于Database可取值[Create,Drop,Alter]<br>对于Table可取值[Create,Drop,Alter,Truncate,Rename]<br/>对于View可取值[Create,Drop]<br/>对于Index可取值[Create,Drop]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_ddlValue;

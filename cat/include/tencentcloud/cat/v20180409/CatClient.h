@@ -41,6 +41,8 @@
 #include <tencentcloud/cat/v20180409/model/ResumeProbeTaskResponse.h>
 #include <tencentcloud/cat/v20180409/model/SuspendProbeTaskRequest.h>
 #include <tencentcloud/cat/v20180409/model/SuspendProbeTaskResponse.h>
+#include <tencentcloud/cat/v20180409/model/UpdateProbeTaskAttributesRequest.h>
+#include <tencentcloud/cat/v20180409/model/UpdateProbeTaskAttributesResponse.h>
 #include <tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListRequest.h>
 #include <tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListResponse.h>
 
@@ -84,6 +86,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SuspendProbeTaskResponse> SuspendProbeTaskOutcome;
                 typedef std::future<SuspendProbeTaskOutcome> SuspendProbeTaskOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::SuspendProbeTaskRequest&, SuspendProbeTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SuspendProbeTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateProbeTaskAttributesResponse> UpdateProbeTaskAttributesOutcome;
+                typedef std::future<UpdateProbeTaskAttributesOutcome> UpdateProbeTaskAttributesOutcomeCallable;
+                typedef std::function<void(const CatClient*, const Model::UpdateProbeTaskAttributesRequest&, UpdateProbeTaskAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProbeTaskAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateProbeTaskConfigurationListResponse> UpdateProbeTaskConfigurationListOutcome;
                 typedef std::future<UpdateProbeTaskConfigurationListOutcome> UpdateProbeTaskConfigurationListOutcomeCallable;
                 typedef std::function<void(const CatClient*, const Model::UpdateProbeTaskConfigurationListRequest&, UpdateProbeTaskConfigurationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateProbeTaskConfigurationListAsyncHandler;
@@ -170,6 +175,15 @@ namespace TencentCloud
                 SuspendProbeTaskOutcome SuspendProbeTask(const Model::SuspendProbeTaskRequest &request);
                 void SuspendProbeTaskAsync(const Model::SuspendProbeTaskRequest& request, const SuspendProbeTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SuspendProbeTaskOutcomeCallable SuspendProbeTaskCallable(const Model::SuspendProbeTaskRequest& request);
+
+                /**
+                 *更新探测任务属性
+                 * @param req UpdateProbeTaskAttributesRequest
+                 * @return UpdateProbeTaskAttributesOutcome
+                 */
+                UpdateProbeTaskAttributesOutcome UpdateProbeTaskAttributes(const Model::UpdateProbeTaskAttributesRequest &request);
+                void UpdateProbeTaskAttributesAsync(const Model::UpdateProbeTaskAttributesRequest& request, const UpdateProbeTaskAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateProbeTaskAttributesOutcomeCallable UpdateProbeTaskAttributesCallable(const Model::UpdateProbeTaskAttributesRequest& request);
 
                 /**
                  *批量更新拨测任务配置

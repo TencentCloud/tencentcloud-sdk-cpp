@@ -23,11 +23,12 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeBotManagedRulesRequest::DescribeBotManagedRulesRequest() :
-    m_zoneIdHasBeenSet(false),
-    m_entityHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_ruleTypeHasBeenSet(false)
+    m_zoneIdHasBeenSet(false),
+    m_entityHasBeenSet(false),
+    m_ruleTypeHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -37,22 +38,6 @@ string DescribeBotManagedRulesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_zoneIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_entityHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Entity";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_entity.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_offsetHasBeenSet)
     {
@@ -70,12 +55,36 @@ string DescribeBotManagedRulesRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_entityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Entity";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_entity.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_ruleTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "RuleType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -85,38 +94,6 @@ string DescribeBotManagedRulesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeBotManagedRulesRequest::GetZoneId() const
-{
-    return m_zoneId;
-}
-
-void DescribeBotManagedRulesRequest::SetZoneId(const string& _zoneId)
-{
-    m_zoneId = _zoneId;
-    m_zoneIdHasBeenSet = true;
-}
-
-bool DescribeBotManagedRulesRequest::ZoneIdHasBeenSet() const
-{
-    return m_zoneIdHasBeenSet;
-}
-
-string DescribeBotManagedRulesRequest::GetEntity() const
-{
-    return m_entity;
-}
-
-void DescribeBotManagedRulesRequest::SetEntity(const string& _entity)
-{
-    m_entity = _entity;
-    m_entityHasBeenSet = true;
-}
-
-bool DescribeBotManagedRulesRequest::EntityHasBeenSet() const
-{
-    return m_entityHasBeenSet;
-}
 
 int64_t DescribeBotManagedRulesRequest::GetOffset() const
 {
@@ -150,6 +127,38 @@ bool DescribeBotManagedRulesRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
+string DescribeBotManagedRulesRequest::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void DescribeBotManagedRulesRequest::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool DescribeBotManagedRulesRequest::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+string DescribeBotManagedRulesRequest::GetEntity() const
+{
+    return m_entity;
+}
+
+void DescribeBotManagedRulesRequest::SetEntity(const string& _entity)
+{
+    m_entity = _entity;
+    m_entityHasBeenSet = true;
+}
+
+bool DescribeBotManagedRulesRequest::EntityHasBeenSet() const
+{
+    return m_entityHasBeenSet;
+}
+
 string DescribeBotManagedRulesRequest::GetRuleType() const
 {
     return m_ruleType;
@@ -164,6 +173,22 @@ void DescribeBotManagedRulesRequest::SetRuleType(const string& _ruleType)
 bool DescribeBotManagedRulesRequest::RuleTypeHasBeenSet() const
 {
     return m_ruleTypeHasBeenSet;
+}
+
+string DescribeBotManagedRulesRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void DescribeBotManagedRulesRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool DescribeBotManagedRulesRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

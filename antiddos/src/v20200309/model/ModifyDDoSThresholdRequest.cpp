@@ -25,7 +25,12 @@ using namespace std;
 ModifyDDoSThresholdRequest::ModifyDDoSThresholdRequest() :
     m_thresholdHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_businessHasBeenSet(false)
+    m_businessHasBeenSet(false),
+    m_otherThresholdFlagHasBeenSet(false),
+    m_synFloodThresholdHasBeenSet(false),
+    m_synFloodPktThresholdHasBeenSet(false),
+    m_udpFloodThresholdHasBeenSet(false),
+    m_udpFloodPktThresholdHasBeenSet(false)
 {
 }
 
@@ -58,6 +63,46 @@ string ModifyDDoSThresholdRequest::ToJsonString() const
         string key = "Business";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_otherThresholdFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherThresholdFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_otherThresholdFlag, allocator);
+    }
+
+    if (m_synFloodThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SynFloodThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_synFloodThreshold, allocator);
+    }
+
+    if (m_synFloodPktThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SynFloodPktThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_synFloodPktThreshold, allocator);
+    }
+
+    if (m_udpFloodThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UdpFloodThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_udpFloodThreshold, allocator);
+    }
+
+    if (m_udpFloodPktThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UdpFloodPktThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_udpFloodPktThreshold, allocator);
     }
 
 
@@ -114,6 +159,86 @@ void ModifyDDoSThresholdRequest::SetBusiness(const string& _business)
 bool ModifyDDoSThresholdRequest::BusinessHasBeenSet() const
 {
     return m_businessHasBeenSet;
+}
+
+int64_t ModifyDDoSThresholdRequest::GetOtherThresholdFlag() const
+{
+    return m_otherThresholdFlag;
+}
+
+void ModifyDDoSThresholdRequest::SetOtherThresholdFlag(const int64_t& _otherThresholdFlag)
+{
+    m_otherThresholdFlag = _otherThresholdFlag;
+    m_otherThresholdFlagHasBeenSet = true;
+}
+
+bool ModifyDDoSThresholdRequest::OtherThresholdFlagHasBeenSet() const
+{
+    return m_otherThresholdFlagHasBeenSet;
+}
+
+uint64_t ModifyDDoSThresholdRequest::GetSynFloodThreshold() const
+{
+    return m_synFloodThreshold;
+}
+
+void ModifyDDoSThresholdRequest::SetSynFloodThreshold(const uint64_t& _synFloodThreshold)
+{
+    m_synFloodThreshold = _synFloodThreshold;
+    m_synFloodThresholdHasBeenSet = true;
+}
+
+bool ModifyDDoSThresholdRequest::SynFloodThresholdHasBeenSet() const
+{
+    return m_synFloodThresholdHasBeenSet;
+}
+
+uint64_t ModifyDDoSThresholdRequest::GetSynFloodPktThreshold() const
+{
+    return m_synFloodPktThreshold;
+}
+
+void ModifyDDoSThresholdRequest::SetSynFloodPktThreshold(const uint64_t& _synFloodPktThreshold)
+{
+    m_synFloodPktThreshold = _synFloodPktThreshold;
+    m_synFloodPktThresholdHasBeenSet = true;
+}
+
+bool ModifyDDoSThresholdRequest::SynFloodPktThresholdHasBeenSet() const
+{
+    return m_synFloodPktThresholdHasBeenSet;
+}
+
+uint64_t ModifyDDoSThresholdRequest::GetUdpFloodThreshold() const
+{
+    return m_udpFloodThreshold;
+}
+
+void ModifyDDoSThresholdRequest::SetUdpFloodThreshold(const uint64_t& _udpFloodThreshold)
+{
+    m_udpFloodThreshold = _udpFloodThreshold;
+    m_udpFloodThresholdHasBeenSet = true;
+}
+
+bool ModifyDDoSThresholdRequest::UdpFloodThresholdHasBeenSet() const
+{
+    return m_udpFloodThresholdHasBeenSet;
+}
+
+uint64_t ModifyDDoSThresholdRequest::GetUdpFloodPktThreshold() const
+{
+    return m_udpFloodPktThreshold;
+}
+
+void ModifyDDoSThresholdRequest::SetUdpFloodPktThreshold(const uint64_t& _udpFloodPktThreshold)
+{
+    m_udpFloodPktThreshold = _udpFloodPktThreshold;
+    m_udpFloodPktThresholdHasBeenSet = true;
+}
+
+bool ModifyDDoSThresholdRequest::UdpFloodPktThresholdHasBeenSet() const
+{
+    return m_udpFloodPktThresholdHasBeenSet;
 }
 
 

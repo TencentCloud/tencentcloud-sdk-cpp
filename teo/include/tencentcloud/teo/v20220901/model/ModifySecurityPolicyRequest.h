@@ -62,24 +62,6 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取子域名/应用名。
-                     * @return Entity 子域名/应用名。
-                     */
-                    std::string GetEntity() const;
-
-                    /**
-                     * 设置子域名/应用名。
-                     * @param Entity 子域名/应用名。
-                     */
-                    void SetEntity(const std::string& _entity);
-
-                    /**
-                     * 判断参数 Entity 是否已赋值
-                     * @return Entity 是否已赋值
-                     */
-                    bool EntityHasBeenSet() const;
-
-                    /**
                      * 获取安全配置。
                      * @return SecurityConfig 安全配置。
                      */
@@ -97,6 +79,42 @@ namespace TencentCloud
                      */
                     bool SecurityConfigHasBeenSet() const;
 
+                    /**
+                     * 获取子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @return Entity 子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     */
+                    std::string GetEntity() const;
+
+                    /**
+                     * 设置子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @param Entity 子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     */
+                    void SetEntity(const std::string& _entity);
+
+                    /**
+                     * 判断参数 Entity 是否已赋值
+                     * @return Entity 是否已赋值
+                     */
+                    bool EntityHasBeenSet() const;
+
+                    /**
+                     * 获取模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
+                     * @return TemplateId 模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
+                     * @param TemplateId 模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,16 +124,22 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 子域名/应用名。
+                     * 安全配置。
+                     */
+                    SecurityConfig m_securityConfig;
+                    bool m_securityConfigHasBeenSet;
+
+                    /**
+                     * 子域名/应用名。当使用Entity时可不填写TemplateId，否则必须填写TemplateId。
                      */
                     std::string m_entity;
                     bool m_entityHasBeenSet;
 
                     /**
-                     * 安全配置。
+                     * 模板策略id。当使用模板Id时可不填Entity，否则必须填写Entity。
                      */
-                    SecurityConfig m_securityConfig;
-                    bool m_securityConfigHasBeenSet;
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

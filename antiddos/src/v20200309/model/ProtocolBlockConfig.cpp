@@ -25,7 +25,9 @@ ProtocolBlockConfig::ProtocolBlockConfig() :
     m_dropUdpHasBeenSet(false),
     m_dropIcmpHasBeenSet(false),
     m_dropOtherHasBeenSet(false),
-    m_checkExceptNullConnectHasBeenSet(false)
+    m_checkExceptNullConnectHasBeenSet(false),
+    m_pingOfDeathHasBeenSet(false),
+    m_tearDropHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome ProtocolBlockConfig::Deserialize(const rapidjson::Value &val
         m_checkExceptNullConnectHasBeenSet = true;
     }
 
+    if (value.HasMember("PingOfDeath") && !value["PingOfDeath"].IsNull())
+    {
+        if (!value["PingOfDeath"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockConfig.PingOfDeath` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pingOfDeath = value["PingOfDeath"].GetInt64();
+        m_pingOfDeathHasBeenSet = true;
+    }
+
+    if (value.HasMember("TearDrop") && !value["TearDrop"].IsNull())
+    {
+        if (!value["TearDrop"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProtocolBlockConfig.TearDrop` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tearDrop = value["TearDrop"].GetInt64();
+        m_tearDropHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void ProtocolBlockConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CheckExceptNullConnect";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_checkExceptNullConnect, allocator);
+    }
+
+    if (m_pingOfDeathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PingOfDeath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pingOfDeath, allocator);
+    }
+
+    if (m_tearDropHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TearDrop";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tearDrop, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void ProtocolBlockConfig::SetCheckExceptNullConnect(const int64_t& _checkExceptN
 bool ProtocolBlockConfig::CheckExceptNullConnectHasBeenSet() const
 {
     return m_checkExceptNullConnectHasBeenSet;
+}
+
+int64_t ProtocolBlockConfig::GetPingOfDeath() const
+{
+    return m_pingOfDeath;
+}
+
+void ProtocolBlockConfig::SetPingOfDeath(const int64_t& _pingOfDeath)
+{
+    m_pingOfDeath = _pingOfDeath;
+    m_pingOfDeathHasBeenSet = true;
+}
+
+bool ProtocolBlockConfig::PingOfDeathHasBeenSet() const
+{
+    return m_pingOfDeathHasBeenSet;
+}
+
+int64_t ProtocolBlockConfig::GetTearDrop() const
+{
+    return m_tearDrop;
+}
+
+void ProtocolBlockConfig::SetTearDrop(const int64_t& _tearDrop)
+{
+    m_tearDrop = _tearDrop;
+    m_tearDropHasBeenSet = true;
+}
+
+bool ProtocolBlockConfig::TearDropHasBeenSet() const
+{
+    return m_tearDropHasBeenSet;
 }
 

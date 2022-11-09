@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ReasonHasBeenSet() const;
 
                     /**
-                     * 获取处理失败的资源列表，该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致。
-                     * @return Targets 处理失败的资源列表，该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致。
+                     * 获取处理失败的资源列表。
+                     * @return Targets 处理失败的资源列表。
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
-                     * 设置处理失败的资源列表，该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致。
-                     * @param Targets 处理失败的资源列表，该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致。
+                     * 设置处理失败的资源列表。
+                     * @param Targets 处理失败的资源列表。
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_reasonHasBeenSet;
 
                     /**
-                     * 处理失败的资源列表，该列表元素来源于输入参数中的Targets，因此格式和入参中的Targets保持一致。
+                     * 处理失败的资源列表。
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;

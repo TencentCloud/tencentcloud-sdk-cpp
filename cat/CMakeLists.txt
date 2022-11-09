@@ -29,10 +29,12 @@ set(cat_public_header_model
   include/tencentcloud/cat/v20180409/model/DescribeProbeMetricDataResponse.h
   include/tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataRequest.h
   include/tencentcloud/cat/v20180409/model/DescribeProbeTasksResponse.h
+  include/tencentcloud/cat/v20180409/model/UpdateProbeTaskAttributesResponse.h
   include/tencentcloud/cat/v20180409/model/DeleteProbeTaskRequest.h
   include/tencentcloud/cat/v20180409/model/DescribeDetailedSingleProbeDataResponse.h
   include/tencentcloud/cat/v20180409/model/SuspendProbeTaskRequest.h
   include/tencentcloud/cat/v20180409/model/DescribeProbeMetricDataRequest.h
+  include/tencentcloud/cat/v20180409/model/UpdateProbeTaskAttributesRequest.h
   include/tencentcloud/cat/v20180409/model/DescribeProbeNodesResponse.h
   include/tencentcloud/cat/v20180409/model/UpdateProbeTaskConfigurationListRequest.h
   include/tencentcloud/cat/v20180409/model/CreateProbeTasksRequest.h
@@ -63,10 +65,12 @@ set(cat_src
   src/v20180409/model/DescribeProbeMetricDataResponse.cpp
   src/v20180409/model/DescribeDetailedSingleProbeDataRequest.cpp
   src/v20180409/model/DescribeProbeTasksResponse.cpp
+  src/v20180409/model/UpdateProbeTaskAttributesResponse.cpp
   src/v20180409/model/DeleteProbeTaskRequest.cpp
   src/v20180409/model/DescribeDetailedSingleProbeDataResponse.cpp
   src/v20180409/model/SuspendProbeTaskRequest.cpp
   src/v20180409/model/DescribeProbeMetricDataRequest.cpp
+  src/v20180409/model/UpdateProbeTaskAttributesRequest.cpp
   src/v20180409/model/DescribeProbeNodesResponse.cpp
   src/v20180409/model/UpdateProbeTaskConfigurationListRequest.cpp
   src/v20180409/model/CreateProbeTasksRequest.cpp

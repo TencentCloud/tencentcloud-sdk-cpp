@@ -42,7 +42,8 @@ PacketFilterConfig::PacketFilterConfig() :
     m_depth2HasBeenSet(false),
     m_offset2HasBeenSet(false),
     m_isNot2HasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_pktLenGTHasBeenSet(false)
 {
 }
 
@@ -271,6 +272,16 @@ CoreInternalOutcome PacketFilterConfig::Deserialize(const rapidjson::Value &valu
         m_idHasBeenSet = true;
     }
 
+    if (value.HasMember("PktLenGT") && !value["PktLenGT"].IsNull())
+    {
+        if (!value["PktLenGT"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PacketFilterConfig.PktLenGT` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pktLenGT = value["PktLenGT"].GetInt64();
+        m_pktLenGTHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -452,6 +463,14 @@ void PacketFilterConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Id";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pktLenGTHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PktLenGT";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pktLenGT, allocator);
     }
 
 }
@@ -807,5 +826,21 @@ void PacketFilterConfig::SetId(const string& _id)
 bool PacketFilterConfig::IdHasBeenSet() const
 {
     return m_idHasBeenSet;
+}
+
+int64_t PacketFilterConfig::GetPktLenGT() const
+{
+    return m_pktLenGT;
+}
+
+void PacketFilterConfig::SetPktLenGT(const int64_t& _pktLenGT)
+{
+    m_pktLenGT = _pktLenGT;
+    m_pktLenGTHasBeenSet = true;
+}
+
+bool PacketFilterConfig::PktLenGTHasBeenSet() const
+{
+    return m_pktLenGTHasBeenSet;
 }
 

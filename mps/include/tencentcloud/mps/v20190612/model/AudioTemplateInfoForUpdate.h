@@ -210,6 +210,24 @@ namespace TencentCloud
                      */
                     bool AudioChannelHasBeenSet() const;
 
+                    /**
+                     * 获取指定输出要保留的音频轨道。默认是全部保留源的。
+                     * @return StreamSelects 指定输出要保留的音频轨道。默认是全部保留源的。
+                     */
+                    std::vector<int64_t> GetStreamSelects() const;
+
+                    /**
+                     * 设置指定输出要保留的音频轨道。默认是全部保留源的。
+                     * @param StreamSelects 指定输出要保留的音频轨道。默认是全部保留源的。
+                     */
+                    void SetStreamSelects(const std::vector<int64_t>& _streamSelects);
+
+                    /**
+                     * 判断参数 StreamSelects 是否已赋值
+                     * @return StreamSelects 是否已赋值
+                     */
+                    bool StreamSelectsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -258,6 +276,12 @@ namespace TencentCloud
                      */
                     int64_t m_audioChannel;
                     bool m_audioChannelHasBeenSet;
+
+                    /**
+                     * 指定输出要保留的音频轨道。默认是全部保留源的。
+                     */
+                    std::vector<int64_t> m_streamSelects;
+                    bool m_streamSelectsHasBeenSet;
 
                 };
             }

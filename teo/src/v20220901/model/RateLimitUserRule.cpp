@@ -32,7 +32,8 @@ RateLimitUserRule::RateLimitUserRule() :
     m_rulePriorityHasBeenSet(false),
     m_ruleIDHasBeenSet(false),
     m_freqFieldsHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_freqScopeHasBeenSet(false)
 {
 }
 
@@ -174,6 +175,19 @@ CoreInternalOutcome RateLimitUserRule::Deserialize(const rapidjson::Value &value
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("FreqScope") && !value["FreqScope"].IsNull())
+    {
+        if (!value["FreqScope"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RateLimitUserRule.FreqScope` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FreqScope"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_freqScope.push_back((*itr).GetString());
+        }
+        m_freqScopeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,6 +301,19 @@ void RateLimitUserRule::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_freqScopeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FreqScope";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_freqScope.begin(); itr != m_freqScope.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -482,5 +509,21 @@ void RateLimitUserRule::SetUpdateTime(const string& _updateTime)
 bool RateLimitUserRule::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+vector<string> RateLimitUserRule::GetFreqScope() const
+{
+    return m_freqScope;
+}
+
+void RateLimitUserRule::SetFreqScope(const vector<string>& _freqScope)
+{
+    m_freqScope = _freqScope;
+    m_freqScopeHasBeenSet = true;
+}
+
+bool RateLimitUserRule::FreqScopeHasBeenSet() const
+{
+    return m_freqScopeHasBeenSet;
 }
 

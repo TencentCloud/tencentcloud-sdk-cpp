@@ -182,24 +182,20 @@ namespace TencentCloud
                     /**
                      * 获取规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>
-<li>hour：小时。</li>默认on生效。
+<li>off：不生效。</li>默认on生效。
                      * @return RuleStatus 规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>
-<li>hour：小时。</li>默认on生效。
+<li>off：不生效。</li>默认on生效。
                      */
                     std::string GetRuleStatus() const;
 
                     /**
                      * 设置规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>
-<li>hour：小时。</li>默认on生效。
+<li>off：不生效。</li>默认on生效。
                      * @param RuleStatus 规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>
-<li>hour：小时。</li>默认on生效。
+<li>off：不生效。</li>默认on生效。
                      */
                     void SetRuleStatus(const std::string& _ruleStatus);
 
@@ -269,11 +265,9 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤词，取值有：
-<li>host：域名；</li>
 <li>sip：客户端ip。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return FreqFields 过滤词，取值有：
-<li>host：域名；</li>
 <li>sip：客户端ip。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -281,11 +275,9 @@ namespace TencentCloud
 
                     /**
                      * 设置过滤词，取值有：
-<li>host：域名；</li>
 <li>sip：客户端ip。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param FreqFields 过滤词，取值有：
-<li>host：域名；</li>
 <li>sip：客户端ip。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -318,6 +310,36 @@ namespace TencentCloud
                      * @return UpdateTime 是否已赋值
                      */
                     bool UpdateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取统计范围，字段为null时，代表source_to_eo。取值有：
+<li>source_to_eo：（响应）源站到EdgeOne。</li>
+<li>client_to_eo：（请求）客户端到EdgeOne；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FreqScope 统计范围，字段为null时，代表source_to_eo。取值有：
+<li>source_to_eo：（响应）源站到EdgeOne。</li>
+<li>client_to_eo：（请求）客户端到EdgeOne；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetFreqScope() const;
+
+                    /**
+                     * 设置统计范围，字段为null时，代表source_to_eo。取值有：
+<li>source_to_eo：（响应）源站到EdgeOne。</li>
+<li>client_to_eo：（请求）客户端到EdgeOne；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FreqScope 统计范围，字段为null时，代表source_to_eo。取值有：
+<li>source_to_eo：（响应）源站到EdgeOne。</li>
+<li>client_to_eo：（请求）客户端到EdgeOne；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFreqScope(const std::vector<std::string>& _freqScope);
+
+                    /**
+                     * 判断参数 FreqScope 是否已赋值
+                     * @return FreqScope 是否已赋值
+                     */
+                    bool FreqScopeHasBeenSet() const;
 
                 private:
 
@@ -366,8 +388,7 @@ namespace TencentCloud
                     /**
                      * 规则状态，取值有：
 <li>on：生效；</li>
-<li>off：不生效。</li>
-<li>hour：小时。</li>默认on生效。
+<li>off：不生效。</li>默认on生效。
                      */
                     std::string m_ruleStatus;
                     bool m_ruleStatusHasBeenSet;
@@ -393,7 +414,6 @@ namespace TencentCloud
 
                     /**
                      * 过滤词，取值有：
-<li>host：域名；</li>
 <li>sip：客户端ip。</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -406,6 +426,15 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 统计范围，字段为null时，代表source_to_eo。取值有：
+<li>source_to_eo：（响应）源站到EdgeOne。</li>
+<li>client_to_eo：（请求）客户端到EdgeOne；</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_freqScope;
+                    bool m_freqScopeHasBeenSet;
 
                 };
             }

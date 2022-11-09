@@ -26,7 +26,8 @@ DescribeSecurityGroupManagedRulesRequest::DescribeSecurityGroupManagedRulesReque
     m_zoneIdHasBeenSet(false),
     m_entityHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeSecurityGroupManagedRulesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeSecurityGroupManagedRulesRequest::SetLimit(const int64_t& _limit)
 bool DescribeSecurityGroupManagedRulesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeSecurityGroupManagedRulesRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void DescribeSecurityGroupManagedRulesRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool DescribeSecurityGroupManagedRulesRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取AutoScalingGroupPara AS组参数
-                     * @return AutoScalingGroupPara AutoScalingGroupPara AS组参数
+                     * 获取AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
+                     * @return AutoScalingGroupPara AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
                      */
                     std::string GetAutoScalingGroupPara() const;
 
                     /**
-                     * 设置AutoScalingGroupPara AS组参数
-                     * @param AutoScalingGroupPara AutoScalingGroupPara AS组参数
+                     * 设置AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
+                     * @param AutoScalingGroupPara AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
                      */
                     void SetAutoScalingGroupPara(const std::string& _autoScalingGroupPara);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AutoScalingGroupParaHasBeenSet() const;
 
                     /**
-                     * 获取LaunchConfigurePara 运行参数
-                     * @return LaunchConfigurePara LaunchConfigurePara 运行参数
+                     * 获取LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
+                     * @return LaunchConfigurePara LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
                      */
                     std::string GetLaunchConfigurePara() const;
 
                     /**
-                     * 设置LaunchConfigurePara 运行参数
-                     * @param LaunchConfigurePara LaunchConfigurePara 运行参数
+                     * 设置LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
+                     * @param LaunchConfigurePara LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
                      */
                     void SetLaunchConfigurePara(const std::string& _launchConfigurePara);
 
@@ -307,13 +307,13 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * AutoScalingGroupPara AS组参数
+                     * AutoScalingGroupPara AS组参数，参考 https://cloud.tencent.com/document/product/377/20440
                      */
                     std::string m_autoScalingGroupPara;
                     bool m_autoScalingGroupParaHasBeenSet;
 
                     /**
-                     * LaunchConfigurePara 运行参数
+                     * LaunchConfigurePara 运行参数，参考 https://cloud.tencent.com/document/product/377/20447
                      */
                     std::string m_launchConfigurePara;
                     bool m_launchConfigureParaHasBeenSet;

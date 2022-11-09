@@ -214,6 +214,94 @@ off(关闭)
                      */
                     bool ListenerCcThresholdListHasBeenSet() const;
 
+                    /**
+                     * 获取SYN FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SynFloodThreshold SYN FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSynFloodThreshold() const;
+
+                    /**
+                     * 设置SYN FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SynFloodThreshold SYN FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSynFloodThreshold(const uint64_t& _synFloodThreshold);
+
+                    /**
+                     * 判断参数 SynFloodThreshold 是否已赋值
+                     * @return SynFloodThreshold 是否已赋值
+                     */
+                    bool SynFloodThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取SYN FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SynFloodPktThreshold SYN FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSynFloodPktThreshold() const;
+
+                    /**
+                     * 设置SYN FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SynFloodPktThreshold SYN FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSynFloodPktThreshold(const uint64_t& _synFloodPktThreshold);
+
+                    /**
+                     * 判断参数 SynFloodPktThreshold 是否已赋值
+                     * @return SynFloodPktThreshold 是否已赋值
+                     */
+                    bool SynFloodPktThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取UDP FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UdpFloodThreshold UDP FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUdpFloodThreshold() const;
+
+                    /**
+                     * 设置UDP FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UdpFloodThreshold UDP FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUdpFloodThreshold(const uint64_t& _udpFloodThreshold);
+
+                    /**
+                     * 判断参数 UdpFloodThreshold 是否已赋值
+                     * @return UdpFloodThreshold 是否已赋值
+                     */
+                    bool UdpFloodThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取UDP FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UdpFloodPktThreshold UDP FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUdpFloodPktThreshold() const;
+
+                    /**
+                     * 设置UDP FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UdpFloodPktThreshold UDP FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUdpFloodPktThreshold(const uint64_t& _udpFloodPktThreshold);
+
+                    /**
+                     * 判断参数 UdpFloodPktThreshold 是否已赋值
+                     * @return UdpFloodPktThreshold 是否已赋值
+                     */
+                    bool UdpFloodPktThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,6 +355,34 @@ off(关闭)
                      */
                     std::vector<ListenerCcThreholdConfig> m_listenerCcThresholdList;
                     bool m_listenerCcThresholdListHasBeenSet;
+
+                    /**
+                     * SYN FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_synFloodThreshold;
+                    bool m_synFloodThresholdHasBeenSet;
+
+                    /**
+                     * SYN FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_synFloodPktThreshold;
+                    bool m_synFloodPktThresholdHasBeenSet;
+
+                    /**
+                     * UDP FLOOD流量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_udpFloodThreshold;
+                    bool m_udpFloodThresholdHasBeenSet;
+
+                    /**
+                     * UDP FLOOD包量阈值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_udpFloodPktThreshold;
+                    bool m_udpFloodPktThresholdHasBeenSet;
 
                 };
             }

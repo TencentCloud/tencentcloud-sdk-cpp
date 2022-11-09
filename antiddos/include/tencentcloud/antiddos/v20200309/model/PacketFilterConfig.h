@@ -586,6 +586,24 @@ pcre(正则表达式)
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取大于报文长度，取值1+
+                     * @return PktLenGT 大于报文长度，取值1+
+                     */
+                    int64_t GetPktLenGT() const;
+
+                    /**
+                     * 设置大于报文长度，取值1+
+                     * @param PktLenGT 大于报文长度，取值1+
+                     */
+                    void SetPktLenGT(const int64_t& _pktLenGT);
+
+                    /**
+                     * 判断参数 PktLenGT 是否已赋值
+                     * @return PktLenGT 是否已赋值
+                     */
+                    bool PktLenGTHasBeenSet() const;
+
                 private:
 
                     /**
@@ -755,6 +773,12 @@ pcre(正则表达式)
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 大于报文长度，取值1+
+                     */
+                    int64_t m_pktLenGT;
+                    bool m_pktLenGTHasBeenSet;
 
                 };
             }

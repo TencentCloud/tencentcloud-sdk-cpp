@@ -65,12 +65,14 @@ namespace TencentCloud
 <li>purge_url：URL；</li>
 <li>purge_prefix：前缀；</li>
 <li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存。</li>
+<li>purge_all：全部缓存；</li>
+<li>purge_cache_tag：cache-tag刷新。</li>
                      * @return Type 清除缓存类型，取值有：
 <li>purge_url：URL；</li>
 <li>purge_prefix：前缀；</li>
 <li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存。</li>
+<li>purge_all：全部缓存；</li>
+<li>purge_cache_tag：cache-tag刷新。</li>
                      */
                     std::string GetType() const;
 
@@ -79,12 +81,14 @@ namespace TencentCloud
 <li>purge_url：URL；</li>
 <li>purge_prefix：前缀；</li>
 <li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存。</li>
+<li>purge_all：全部缓存；</li>
+<li>purge_cache_tag：cache-tag刷新。</li>
                      * @param Type 清除缓存类型，取值有：
 <li>purge_url：URL；</li>
 <li>purge_prefix：前缀；</li>
 <li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存。</li>
+<li>purge_all：全部缓存；</li>
+<li>purge_cache_tag：cache-tag刷新。</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -95,7 +99,7 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取要刷新的资源列表，每个元素格式依据Type而定：
+                     * 获取要清除缓存的资源列表，每个元素格式依据Type而定：
 1) Type = purge_host 时：
 形如：www.example.com 或 foo.bar.example.com。
 2) Type = purge_prefix 时：
@@ -104,7 +108,9 @@ namespace TencentCloud
 形如：https://www.example.com/example.jpg。
 4）Type = purge_all 时：
 Targets可为空，不需要填写。
-                     * @return Targets 要刷新的资源列表，每个元素格式依据Type而定：
+5）Type = purge_cache_tag 时：
+形如：tag1。
+                     * @return Targets 要清除缓存的资源列表，每个元素格式依据Type而定：
 1) Type = purge_host 时：
 形如：www.example.com 或 foo.bar.example.com。
 2) Type = purge_prefix 时：
@@ -113,11 +119,13 @@ Targets可为空，不需要填写。
 形如：https://www.example.com/example.jpg。
 4）Type = purge_all 时：
 Targets可为空，不需要填写。
+5）Type = purge_cache_tag 时：
+形如：tag1。
                      */
                     std::vector<std::string> GetTargets() const;
 
                     /**
-                     * 设置要刷新的资源列表，每个元素格式依据Type而定：
+                     * 设置要清除缓存的资源列表，每个元素格式依据Type而定：
 1) Type = purge_host 时：
 形如：www.example.com 或 foo.bar.example.com。
 2) Type = purge_prefix 时：
@@ -126,7 +134,9 @@ Targets可为空，不需要填写。
 形如：https://www.example.com/example.jpg。
 4）Type = purge_all 时：
 Targets可为空，不需要填写。
-                     * @param Targets 要刷新的资源列表，每个元素格式依据Type而定：
+5）Type = purge_cache_tag 时：
+形如：tag1。
+                     * @param Targets 要清除缓存的资源列表，每个元素格式依据Type而定：
 1) Type = purge_host 时：
 形如：www.example.com 或 foo.bar.example.com。
 2) Type = purge_prefix 时：
@@ -135,6 +145,8 @@ Targets可为空，不需要填写。
 形如：https://www.example.com/example.jpg。
 4）Type = purge_all 时：
 Targets可为空，不需要填写。
+5）Type = purge_cache_tag 时：
+形如：tag1。
                      */
                     void SetTargets(const std::vector<std::string>& _targets);
 
@@ -179,13 +191,14 @@ Targets可为空，不需要填写。
 <li>purge_url：URL；</li>
 <li>purge_prefix：前缀；</li>
 <li>purge_host：Hostname；</li>
-<li>purge_all：全部缓存。</li>
+<li>purge_all：全部缓存；</li>
+<li>purge_cache_tag：cache-tag刷新。</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 要刷新的资源列表，每个元素格式依据Type而定：
+                     * 要清除缓存的资源列表，每个元素格式依据Type而定：
 1) Type = purge_host 时：
 形如：www.example.com 或 foo.bar.example.com。
 2) Type = purge_prefix 时：
@@ -194,6 +207,8 @@ Targets可为空，不需要填写。
 形如：https://www.example.com/example.jpg。
 4）Type = purge_all 时：
 Targets可为空，不需要填写。
+5）Type = purge_cache_tag 时：
+形如：tag1。
                      */
                     std::vector<std::string> m_targets;
                     bool m_targetsHasBeenSet;

@@ -136,6 +136,42 @@ namespace TencentCloud
                      */
                     bool CheckExceptNullConnectHasBeenSet() const;
 
+                    /**
+                     * 获取ping of death防护，取值[0(防护关)，1(防护开)]
+                     * @return PingOfDeath ping of death防护，取值[0(防护关)，1(防护开)]
+                     */
+                    int64_t GetPingOfDeath() const;
+
+                    /**
+                     * 设置ping of death防护，取值[0(防护关)，1(防护开)]
+                     * @param PingOfDeath ping of death防护，取值[0(防护关)，1(防护开)]
+                     */
+                    void SetPingOfDeath(const int64_t& _pingOfDeath);
+
+                    /**
+                     * 判断参数 PingOfDeath 是否已赋值
+                     * @return PingOfDeath 是否已赋值
+                     */
+                    bool PingOfDeathHasBeenSet() const;
+
+                    /**
+                     * 获取tear drop防护，取值[0(防护关)，1(防护开)]
+                     * @return TearDrop tear drop防护，取值[0(防护关)，1(防护开)]
+                     */
+                    int64_t GetTearDrop() const;
+
+                    /**
+                     * 设置tear drop防护，取值[0(防护关)，1(防护开)]
+                     * @param TearDrop tear drop防护，取值[0(防护关)，1(防护开)]
+                     */
+                    void SetTearDrop(const int64_t& _tearDrop);
+
+                    /**
+                     * 判断参数 TearDrop 是否已赋值
+                     * @return TearDrop 是否已赋值
+                     */
+                    bool TearDropHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +203,18 @@ namespace TencentCloud
                      */
                     int64_t m_checkExceptNullConnect;
                     bool m_checkExceptNullConnectHasBeenSet;
+
+                    /**
+                     * ping of death防护，取值[0(防护关)，1(防护开)]
+                     */
+                    int64_t m_pingOfDeath;
+                    bool m_pingOfDeathHasBeenSet;
+
+                    /**
+                     * tear drop防护，取值[0(防护关)，1(防护开)]
+                     */
+                    int64_t m_tearDrop;
+                    bool m_tearDropHasBeenSet;
 
                 };
             }

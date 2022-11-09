@@ -28,7 +28,8 @@ SecurityConfig::SecurityConfig() :
     m_switchConfigHasBeenSet(false),
     m_ipTableConfigHasBeenSet(false),
     m_exceptConfigHasBeenSet(false),
-    m_dropPageConfigHasBeenSet(false)
+    m_dropPageConfigHasBeenSet(false),
+    m_templateConfigHasBeenSet(false)
 {
 }
 
@@ -173,6 +174,23 @@ CoreInternalOutcome SecurityConfig::Deserialize(const rapidjson::Value &value)
         m_dropPageConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateConfig") && !value["TemplateConfig"].IsNull())
+    {
+        if (!value["TemplateConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityConfig.TemplateConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_templateConfig.Deserialize(value["TemplateConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_templateConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -250,6 +268,15 @@ void SecurityConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dropPageConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_templateConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_templateConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -381,5 +408,21 @@ void SecurityConfig::SetDropPageConfig(const DropPageConfig& _dropPageConfig)
 bool SecurityConfig::DropPageConfigHasBeenSet() const
 {
     return m_dropPageConfigHasBeenSet;
+}
+
+TemplateConfig SecurityConfig::GetTemplateConfig() const
+{
+    return m_templateConfig;
+}
+
+void SecurityConfig::SetTemplateConfig(const TemplateConfig& _templateConfig)
+{
+    m_templateConfig = _templateConfig;
+    m_templateConfigHasBeenSet = true;
+}
+
+bool SecurityConfig::TemplateConfigHasBeenSet() const
+{
+    return m_templateConfigHasBeenSet;
 }
 

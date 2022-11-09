@@ -569,6 +569,28 @@ namespace TencentCloud
                      */
                     bool IsAddedOnTheFifteenHasBeenSet() const;
 
+                    /**
+                     * 获取主机ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpList 主机ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIpList() const;
+
+                    /**
+                     * 设置主机ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpList 主机ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpList(const std::string& _ipList);
+
+                    /**
+                     * 判断参数 IpList 是否已赋值
+                     * @return IpList 是否已赋值
+                     */
+                    bool IpListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -739,6 +761,13 @@ namespace TencentCloud
                      */
                     uint64_t m_isAddedOnTheFifteen;
                     bool m_isAddedOnTheFifteenHasBeenSet;
+
+                    /**
+                     * 主机ip列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ipList;
+                    bool m_ipListHasBeenSet;
 
                 };
             }

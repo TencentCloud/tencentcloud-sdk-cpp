@@ -2233,6 +2233,49 @@ ApigatewayClient::DescribePluginsOutcomeCallable ApigatewayClient::DescribePlugi
     return task->get_future();
 }
 
+ApigatewayClient::DescribePluginsByApiOutcome ApigatewayClient::DescribePluginsByApi(const DescribePluginsByApiRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePluginsByApi");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePluginsByApiResponse rsp = DescribePluginsByApiResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePluginsByApiOutcome(rsp);
+        else
+            return DescribePluginsByApiOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePluginsByApiOutcome(outcome.GetError());
+    }
+}
+
+void ApigatewayClient::DescribePluginsByApiAsync(const DescribePluginsByApiRequest& request, const DescribePluginsByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePluginsByApi(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApigatewayClient::DescribePluginsByApiOutcomeCallable ApigatewayClient::DescribePluginsByApiCallable(const DescribePluginsByApiRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePluginsByApiOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePluginsByApi(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ApigatewayClient::DescribeServiceOutcome ApigatewayClient::DescribeService(const DescribeServiceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeService");

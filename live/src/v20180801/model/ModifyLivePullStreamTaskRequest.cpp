@@ -38,7 +38,8 @@ ModifyLivePullStreamTaskRequest::ModifyLivePullStreamTaskRequest() :
     m_commentHasBeenSet(false),
     m_backupSourceTypeHasBeenSet(false),
     m_backupSourceUrlHasBeenSet(false),
-    m_watermarkListHasBeenSet(false)
+    m_watermarkListHasBeenSet(false),
+    m_vodLocalModeHasBeenSet(false)
 {
 }
 
@@ -192,6 +193,14 @@ string ModifyLivePullStreamTaskRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_vodLocalModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VodLocalMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_vodLocalMode, allocator);
     }
 
 
@@ -456,6 +465,22 @@ void ModifyLivePullStreamTaskRequest::SetWatermarkList(const vector<PullPushWate
 bool ModifyLivePullStreamTaskRequest::WatermarkListHasBeenSet() const
 {
     return m_watermarkListHasBeenSet;
+}
+
+int64_t ModifyLivePullStreamTaskRequest::GetVodLocalMode() const
+{
+    return m_vodLocalMode;
+}
+
+void ModifyLivePullStreamTaskRequest::SetVodLocalMode(const int64_t& _vodLocalMode)
+{
+    m_vodLocalMode = _vodLocalMode;
+    m_vodLocalModeHasBeenSet = true;
+}
+
+bool ModifyLivePullStreamTaskRequest::VodLocalModeHasBeenSet() const
+{
+    return m_vodLocalModeHasBeenSet;
 }
 
 

@@ -1278,7 +1278,7 @@ namespace TencentCloud
                 DescribeSecurityGroupManagedRulesOutcomeCallable DescribeSecurityGroupManagedRulesCallable(const Model::DescribeSecurityGroupManagedRulesRequest& request);
 
                 /**
-                 *查询安全防护配置详情
+                 *查询安全防护配置详情。请求参数中ZoneId+Entity或TemplateId至少填一项。
                  * @param req DescribeSecurityPolicyRequest
                  * @return DescribeSecurityPolicyOutcome
                  */
@@ -1710,7 +1710,7 @@ namespace TencentCloud
                 ModifyRulePriorityOutcomeCallable ModifyRulePriorityCallable(const Model::ModifyRulePriorityRequest& request);
 
                 /**
-                 *修改Web&Bot安全配置
+                 *修改Web&Bot安全配置。
                  * @param req ModifySecurityPolicyRequest
                  * @return ModifySecurityPolicyOutcome
                  */

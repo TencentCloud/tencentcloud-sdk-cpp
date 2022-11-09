@@ -295,6 +295,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeWebProtectionAttackEventsRequest.h
   include/tencentcloud/teo/v20220901/model/Hsts.h
   include/tencentcloud/teo/v20220901/model/CreateRuleRequest.h
+  include/tencentcloud/teo/v20220901/model/TemplateConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeRateLimitIntelligenceRuleResponse.h
   include/tencentcloud/teo/v20220901/model/RateLimitTemplateDetail.h
   include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleResponse.h
@@ -1050,6 +1051,7 @@ set(teo_src
   src/v20220901/model/DescribeWebProtectionAttackEventsRequest.cpp
   src/v20220901/model/Hsts.cpp
   src/v20220901/model/CreateRuleRequest.cpp
+  src/v20220901/model/TemplateConfig.cpp
   src/v20220901/model/DescribeRateLimitIntelligenceRuleResponse.cpp
   src/v20220901/model/RateLimitTemplateDetail.cpp
   src/v20220901/model/CreateApplicationProxyRuleResponse.cpp

@@ -46,7 +46,8 @@ Machine::Machine() :
     m_kernelVersionHasBeenSet(false),
     m_protectTypeHasBeenSet(false),
     m_cloudTagsHasBeenSet(false),
-    m_isAddedOnTheFifteenHasBeenSet(false)
+    m_isAddedOnTheFifteenHasBeenSet(false),
+    m_ipListHasBeenSet(false)
 {
 }
 
@@ -342,6 +343,16 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_isAddedOnTheFifteenHasBeenSet = true;
     }
 
+    if (value.HasMember("IpList") && !value["IpList"].IsNull())
+    {
+        if (!value["IpList"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.IpList` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ipList = string(value["IpList"].GetString());
+        m_ipListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -570,6 +581,14 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IsAddedOnTheFifteen";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isAddedOnTheFifteen, allocator);
+    }
+
+    if (m_ipListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ipList.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -989,5 +1008,21 @@ void Machine::SetIsAddedOnTheFifteen(const uint64_t& _isAddedOnTheFifteen)
 bool Machine::IsAddedOnTheFifteenHasBeenSet() const
 {
     return m_isAddedOnTheFifteenHasBeenSet;
+}
+
+string Machine::GetIpList() const
+{
+    return m_ipList;
+}
+
+void Machine::SetIpList(const string& _ipList)
+{
+    m_ipList = _ipList;
+    m_ipListHasBeenSet = true;
+}
+
+bool Machine::IpListHasBeenSet() const
+{
+    return m_ipListHasBeenSet;
 }
 

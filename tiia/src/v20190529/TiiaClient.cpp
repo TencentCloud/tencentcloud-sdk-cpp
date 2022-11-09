@@ -599,6 +599,49 @@ TiiaClient::DetectMisbehaviorOutcomeCallable TiiaClient::DetectMisbehaviorCallab
     return task->get_future();
 }
 
+TiiaClient::DetectPetOutcome TiiaClient::DetectPet(const DetectPetRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectPet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectPetResponse rsp = DetectPetResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectPetOutcome(rsp);
+        else
+            return DetectPetOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectPetOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectPetAsync(const DetectPetRequest& request, const DetectPetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectPet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectPetOutcomeCallable TiiaClient::DetectPetCallable(const DetectPetRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectPetOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectPet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectProductOutcome TiiaClient::DetectProduct(const DetectProductRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectProduct");

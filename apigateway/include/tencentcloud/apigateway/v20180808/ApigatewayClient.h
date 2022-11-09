@@ -125,6 +125,8 @@
 #include <tencentcloud/apigateway/v20180808/model/DescribePluginApisResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribePluginsRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribePluginsResponse.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginsByApiRequest.h>
+#include <tencentcloud/apigateway/v20180808/model/DescribePluginsByApiResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceRequest.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceResponse.h>
 #include <tencentcloud/apigateway/v20180808/model/DescribeServiceEnvironmentListRequest.h>
@@ -382,6 +384,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribePluginsResponse> DescribePluginsOutcome;
                 typedef std::future<DescribePluginsOutcome> DescribePluginsOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribePluginsRequest&, DescribePluginsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePluginsByApiResponse> DescribePluginsByApiOutcome;
+                typedef std::future<DescribePluginsByApiOutcome> DescribePluginsByApiOutcomeCallable;
+                typedef std::function<void(const ApigatewayClient*, const Model::DescribePluginsByApiRequest&, DescribePluginsByApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePluginsByApiAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeServiceResponse> DescribeServiceOutcome;
                 typedef std::future<DescribeServiceOutcome> DescribeServiceOutcomeCallable;
                 typedef std::function<void(const ApigatewayClient*, const Model::DescribeServiceRequest&, DescribeServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceAsyncHandler;
@@ -990,6 +995,15 @@ API 网关使用的最大单元为服务，每个服务中可创建多个 API �
                 DescribePluginsOutcome DescribePlugins(const Model::DescribePluginsRequest &request);
                 void DescribePluginsAsync(const Model::DescribePluginsRequest& request, const DescribePluginsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePluginsOutcomeCallable DescribePluginsCallable(const Model::DescribePluginsRequest& request);
+
+                /**
+                 *展示API上已绑定的插件列表。
+                 * @param req DescribePluginsByApiRequest
+                 * @return DescribePluginsByApiOutcome
+                 */
+                DescribePluginsByApiOutcome DescribePluginsByApi(const Model::DescribePluginsByApiRequest &request);
+                void DescribePluginsByApiAsync(const Model::DescribePluginsByApiRequest& request, const DescribePluginsByApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePluginsByApiOutcomeCallable DescribePluginsByApiCallable(const Model::DescribePluginsByApiRequest& request);
 
                 /**
                  *本接口（DescribeService）用于查询一个服务的详细信息、包括服务的描述、域名、协议、创建时间、发布情况等信息。

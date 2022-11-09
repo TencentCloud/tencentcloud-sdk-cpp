@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeSecurityPolicyRequest::DescribeSecurityPolicyRequest() :
     m_zoneIdHasBeenSet(false),
-    m_entityHasBeenSet(false)
+    m_entityHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeSecurityPolicyRequest::ToJsonString() const
         string key = "Entity";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_entity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeSecurityPolicyRequest::SetEntity(const string& _entity)
 bool DescribeSecurityPolicyRequest::EntityHasBeenSet() const
 {
     return m_entityHasBeenSet;
+}
+
+string DescribeSecurityPolicyRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void DescribeSecurityPolicyRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool DescribeSecurityPolicyRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 
