@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool MediaNameHasBeenSet() const;
 
                     /**
-                     * 获取要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。
-                     * @return CoverUrl 要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。
+                     * 获取要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。
+                     * @return CoverUrl 要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。
                      */
                     std::string GetCoverUrl() const;
 
                     /**
-                     * 设置要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。
-                     * @param CoverUrl 要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。
+                     * 设置要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。
+                     * @param CoverUrl 要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。
                      */
                     void SetCoverUrl(const std::string& _coverUrl);
 
@@ -292,7 +292,7 @@ namespace TencentCloud
                     bool m_mediaNameHasBeenSet;
 
                     /**
-                     * 要拉取的视频封面 URL。仅支持 gif、jpeg、png 三种图片格式。
+                     * 要拉取的视频封面 URL。支持的文件格式：gif、jpeg（jpg）、png。
                      */
                     std::string m_coverUrl;
                     bool m_coverUrlHasBeenSet;

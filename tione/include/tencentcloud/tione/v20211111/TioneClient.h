@@ -23,12 +23,16 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tione/v20211111/model/CreateBatchModelAccTasksRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateBatchModelAccTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateBatchTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateBatchTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateDatasetRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateDatasetResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateModelServiceResponse.h>
+#include <tencentcloud/tione/v20211111/model/CreateOptimizedModelRequest.h>
+#include <tencentcloud/tione/v20211111/model/CreateOptimizedModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelRequest.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingModelResponse.h>
 #include <tencentcloud/tione/v20211111/model/CreateTrainingTaskRequest.h>
@@ -37,6 +41,8 @@
 #include <tencentcloud/tione/v20211111/model/DeleteBatchTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteDatasetRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteDatasetResponse.h>
+#include <tencentcloud/tione/v20211111/model/DeleteModelAccelerateTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/DeleteModelAccelerateTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/DeleteModelServiceGroupRequest.h>
@@ -73,6 +79,12 @@
 #include <tencentcloud/tione/v20211111/model/DescribeLatestTrainingMetricsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeLogsRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeLogsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccEngineVersionsRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccEngineVersionsResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTasksRequest.h>
+#include <tencentcloud/tione/v20211111/model/DescribeModelAccelerateTasksResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServiceRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeModelServiceCallInfoRequest.h>
@@ -107,10 +119,14 @@
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsResponse.h>
+#include <tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/RestartModelAccelerateTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/StartTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StartTrainingTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StopBatchTaskResponse.h>
+#include <tencentcloud/tione/v20211111/model/StopModelAccelerateTaskRequest.h>
+#include <tencentcloud/tione/v20211111/model/StopModelAccelerateTaskResponse.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskRequest.h>
 #include <tencentcloud/tione/v20211111/model/StopTrainingTaskResponse.h>
 
@@ -127,6 +143,9 @@ namespace TencentCloud
                 TioneClient(const Credential &credential, const std::string &region);
                 TioneClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CreateBatchModelAccTasksResponse> CreateBatchModelAccTasksOutcome;
+                typedef std::future<CreateBatchModelAccTasksOutcome> CreateBatchModelAccTasksOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateBatchModelAccTasksRequest&, CreateBatchModelAccTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchModelAccTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateBatchTaskResponse> CreateBatchTaskOutcome;
                 typedef std::future<CreateBatchTaskOutcome> CreateBatchTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateBatchTaskRequest&, CreateBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBatchTaskAsyncHandler;
@@ -136,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateModelServiceResponse> CreateModelServiceOutcome;
                 typedef std::future<CreateModelServiceOutcome> CreateModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateModelServiceRequest&, CreateModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateModelServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateOptimizedModelResponse> CreateOptimizedModelOutcome;
+                typedef std::future<CreateOptimizedModelOutcome> CreateOptimizedModelOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::CreateOptimizedModelRequest&, CreateOptimizedModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOptimizedModelAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTrainingModelResponse> CreateTrainingModelOutcome;
                 typedef std::future<CreateTrainingModelOutcome> CreateTrainingModelOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::CreateTrainingModelRequest&, CreateTrainingModelOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrainingModelAsyncHandler;
@@ -148,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDatasetResponse> DeleteDatasetOutcome;
                 typedef std::future<DeleteDatasetOutcome> DeleteDatasetOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteDatasetRequest&, DeleteDatasetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDatasetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteModelAccelerateTaskResponse> DeleteModelAccelerateTaskOutcome;
+                typedef std::future<DeleteModelAccelerateTaskOutcome> DeleteModelAccelerateTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DeleteModelAccelerateTaskRequest&, DeleteModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelAccelerateTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteModelServiceResponse> DeleteModelServiceOutcome;
                 typedef std::future<DeleteModelServiceOutcome> DeleteModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DeleteModelServiceRequest&, DeleteModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteModelServiceAsyncHandler;
@@ -202,6 +227,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeLogsResponse> DescribeLogsOutcome;
                 typedef std::future<DescribeLogsOutcome> DescribeLogsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeLogsRequest&, DescribeLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelAccEngineVersionsResponse> DescribeModelAccEngineVersionsOutcome;
+                typedef std::future<DescribeModelAccEngineVersionsOutcome> DescribeModelAccEngineVersionsOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeModelAccEngineVersionsRequest&, DescribeModelAccEngineVersionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelAccEngineVersionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelAccelerateTaskResponse> DescribeModelAccelerateTaskOutcome;
+                typedef std::future<DescribeModelAccelerateTaskOutcome> DescribeModelAccelerateTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeModelAccelerateTaskRequest&, DescribeModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelAccelerateTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeModelAccelerateTasksResponse> DescribeModelAccelerateTasksOutcome;
+                typedef std::future<DescribeModelAccelerateTasksOutcome> DescribeModelAccelerateTasksOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::DescribeModelAccelerateTasksRequest&, DescribeModelAccelerateTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelAccelerateTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeModelServiceResponse> DescribeModelServiceOutcome;
                 typedef std::future<DescribeModelServiceOutcome> DescribeModelServiceOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeModelServiceRequest&, DescribeModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeModelServiceAsyncHandler;
@@ -253,17 +287,32 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PushTrainingMetricsResponse> PushTrainingMetricsOutcome;
                 typedef std::future<PushTrainingMetricsOutcome> PushTrainingMetricsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::PushTrainingMetricsRequest&, PushTrainingMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushTrainingMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::RestartModelAccelerateTaskResponse> RestartModelAccelerateTaskOutcome;
+                typedef std::future<RestartModelAccelerateTaskOutcome> RestartModelAccelerateTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::RestartModelAccelerateTaskRequest&, RestartModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartModelAccelerateTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartTrainingTaskResponse> StartTrainingTaskOutcome;
                 typedef std::future<StartTrainingTaskOutcome> StartTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StartTrainingTaskRequest&, StartTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartTrainingTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopBatchTaskResponse> StopBatchTaskOutcome;
                 typedef std::future<StopBatchTaskOutcome> StopBatchTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StopBatchTaskRequest&, StopBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopBatchTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopModelAccelerateTaskResponse> StopModelAccelerateTaskOutcome;
+                typedef std::future<StopModelAccelerateTaskOutcome> StopModelAccelerateTaskOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::StopModelAccelerateTaskRequest&, StopModelAccelerateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopModelAccelerateTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::StopTrainingTaskResponse> StopTrainingTaskOutcome;
                 typedef std::future<StopTrainingTaskOutcome> StopTrainingTaskOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::StopTrainingTaskRequest&, StopTrainingTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopTrainingTaskAsyncHandler;
 
 
+
+                /**
+                 *批量创建模型加速任务
+                 * @param req CreateBatchModelAccTasksRequest
+                 * @return CreateBatchModelAccTasksOutcome
+                 */
+                CreateBatchModelAccTasksOutcome CreateBatchModelAccTasks(const Model::CreateBatchModelAccTasksRequest &request);
+                void CreateBatchModelAccTasksAsync(const Model::CreateBatchModelAccTasksRequest& request, const CreateBatchModelAccTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBatchModelAccTasksOutcomeCallable CreateBatchModelAccTasksCallable(const Model::CreateBatchModelAccTasksRequest& request);
 
                 /**
                  *创建跑批任务
@@ -291,6 +340,15 @@ namespace TencentCloud
                 CreateModelServiceOutcome CreateModelService(const Model::CreateModelServiceRequest &request);
                 void CreateModelServiceAsync(const Model::CreateModelServiceRequest& request, const CreateModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateModelServiceOutcomeCallable CreateModelServiceCallable(const Model::CreateModelServiceRequest& request);
+
+                /**
+                 *保存优化模型
+                 * @param req CreateOptimizedModelRequest
+                 * @return CreateOptimizedModelOutcome
+                 */
+                CreateOptimizedModelOutcome CreateOptimizedModel(const Model::CreateOptimizedModelRequest &request);
+                void CreateOptimizedModelAsync(const Model::CreateOptimizedModelRequest& request, const CreateOptimizedModelAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateOptimizedModelOutcomeCallable CreateOptimizedModelCallable(const Model::CreateOptimizedModelRequest& request);
 
                 /**
                  *导入模型
@@ -327,6 +385,15 @@ namespace TencentCloud
                 DeleteDatasetOutcome DeleteDataset(const Model::DeleteDatasetRequest &request);
                 void DeleteDatasetAsync(const Model::DeleteDatasetRequest& request, const DeleteDatasetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDatasetOutcomeCallable DeleteDatasetCallable(const Model::DeleteDatasetRequest& request);
+
+                /**
+                 *删除模型加速任务
+                 * @param req DeleteModelAccelerateTaskRequest
+                 * @return DeleteModelAccelerateTaskOutcome
+                 */
+                DeleteModelAccelerateTaskOutcome DeleteModelAccelerateTask(const Model::DeleteModelAccelerateTaskRequest &request);
+                void DeleteModelAccelerateTaskAsync(const Model::DeleteModelAccelerateTaskRequest& request, const DeleteModelAccelerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteModelAccelerateTaskOutcomeCallable DeleteModelAccelerateTaskCallable(const Model::DeleteModelAccelerateTaskRequest& request);
 
                 /**
                  *根据服务id删除模型服务
@@ -491,6 +558,33 @@ namespace TencentCloud
                 DescribeLogsOutcomeCallable DescribeLogsCallable(const Model::DescribeLogsRequest& request);
 
                 /**
+                 *查询模型加速引擎版本列表
+                 * @param req DescribeModelAccEngineVersionsRequest
+                 * @return DescribeModelAccEngineVersionsOutcome
+                 */
+                DescribeModelAccEngineVersionsOutcome DescribeModelAccEngineVersions(const Model::DescribeModelAccEngineVersionsRequest &request);
+                void DescribeModelAccEngineVersionsAsync(const Model::DescribeModelAccEngineVersionsRequest& request, const DescribeModelAccEngineVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelAccEngineVersionsOutcomeCallable DescribeModelAccEngineVersionsCallable(const Model::DescribeModelAccEngineVersionsRequest& request);
+
+                /**
+                 *查询模型优化任务详情
+                 * @param req DescribeModelAccelerateTaskRequest
+                 * @return DescribeModelAccelerateTaskOutcome
+                 */
+                DescribeModelAccelerateTaskOutcome DescribeModelAccelerateTask(const Model::DescribeModelAccelerateTaskRequest &request);
+                void DescribeModelAccelerateTaskAsync(const Model::DescribeModelAccelerateTaskRequest& request, const DescribeModelAccelerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelAccelerateTaskOutcomeCallable DescribeModelAccelerateTaskCallable(const Model::DescribeModelAccelerateTaskRequest& request);
+
+                /**
+                 *查询模型加速任务列表
+                 * @param req DescribeModelAccelerateTasksRequest
+                 * @return DescribeModelAccelerateTasksOutcome
+                 */
+                DescribeModelAccelerateTasksOutcome DescribeModelAccelerateTasks(const Model::DescribeModelAccelerateTasksRequest &request);
+                void DescribeModelAccelerateTasksAsync(const Model::DescribeModelAccelerateTasksRequest& request, const DescribeModelAccelerateTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeModelAccelerateTasksOutcomeCallable DescribeModelAccelerateTasksCallable(const Model::DescribeModelAccelerateTasksRequest& request);
+
+                /**
                  *查询单个服务
                  * @param req DescribeModelServiceRequest
                  * @return DescribeModelServiceOutcome
@@ -644,6 +738,15 @@ namespace TencentCloud
                 PushTrainingMetricsOutcomeCallable PushTrainingMetricsCallable(const Model::PushTrainingMetricsRequest& request);
 
                 /**
+                 *重启模型加速任务
+                 * @param req RestartModelAccelerateTaskRequest
+                 * @return RestartModelAccelerateTaskOutcome
+                 */
+                RestartModelAccelerateTaskOutcome RestartModelAccelerateTask(const Model::RestartModelAccelerateTaskRequest &request);
+                void RestartModelAccelerateTaskAsync(const Model::RestartModelAccelerateTaskRequest& request, const RestartModelAccelerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RestartModelAccelerateTaskOutcomeCallable RestartModelAccelerateTaskCallable(const Model::RestartModelAccelerateTaskRequest& request);
+
+                /**
                  *启动模型训练任务
                  * @param req StartTrainingTaskRequest
                  * @return StartTrainingTaskOutcome
@@ -660,6 +763,15 @@ namespace TencentCloud
                 StopBatchTaskOutcome StopBatchTask(const Model::StopBatchTaskRequest &request);
                 void StopBatchTaskAsync(const Model::StopBatchTaskRequest& request, const StopBatchTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopBatchTaskOutcomeCallable StopBatchTaskCallable(const Model::StopBatchTaskRequest& request);
+
+                /**
+                 *停止模型加速任务
+                 * @param req StopModelAccelerateTaskRequest
+                 * @return StopModelAccelerateTaskOutcome
+                 */
+                StopModelAccelerateTaskOutcome StopModelAccelerateTask(const Model::StopModelAccelerateTaskRequest &request);
+                void StopModelAccelerateTaskAsync(const Model::StopModelAccelerateTaskRequest& request, const StopModelAccelerateTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopModelAccelerateTaskOutcomeCallable StopModelAccelerateTaskCallable(const Model::StopModelAccelerateTaskRequest& request);
 
                 /**
                  *停止模型训练任务
