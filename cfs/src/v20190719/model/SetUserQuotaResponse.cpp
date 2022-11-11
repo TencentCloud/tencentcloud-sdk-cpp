@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/faceid/v20180301/model/ApplySdkVerificationTokenResponse.h>
+#include <tencentcloud/cfs/v20190719/model/SetUserQuotaResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Faceid::V20180301::Model;
+using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
-ApplySdkVerificationTokenResponse::ApplySdkVerificationTokenResponse() :
-    m_sdkTokenHasBeenSet(false)
+SetUserQuotaResponse::SetUserQuotaResponse()
 {
 }
 
-CoreInternalOutcome ApplySdkVerificationTokenResponse::Deserialize(const string &payload)
+CoreInternalOutcome SetUserQuotaResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome ApplySdkVerificationTokenResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("SdkToken") && !rsp["SdkToken"].IsNull())
-    {
-        if (!rsp["SdkToken"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SdkToken` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_sdkToken = string(rsp["SdkToken"].GetString());
-        m_sdkTokenHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string ApplySdkVerificationTokenResponse::ToJsonString() const
+string SetUserQuotaResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_sdkTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkToken";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sdkToken.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string ApplySdkVerificationTokenResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string ApplySdkVerificationTokenResponse::GetSdkToken() const
-{
-    return m_sdkToken;
-}
-
-bool ApplySdkVerificationTokenResponse::SdkTokenHasBeenSet() const
-{
-    return m_sdkTokenHasBeenSet;
-}
 
 

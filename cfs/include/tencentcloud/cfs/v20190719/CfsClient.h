@@ -47,6 +47,8 @@
 #include <tencentcloud/cfs/v20190719/model/DeleteCfsSnapshotResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteMountTargetRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DeleteMountTargetResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteUserQuotaRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteUserQuotaResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeAvailableZoneInfoRequest.h>
@@ -69,6 +71,10 @@
 #include <tencentcloud/cfs/v20190719/model/DescribeMountTargetsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaRequest.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaResponse.h>
+#include <tencentcloud/cfs/v20190719/model/SetUserQuotaRequest.h>
+#include <tencentcloud/cfs/v20190719/model/SetUserQuotaResponse.h>
 #include <tencentcloud/cfs/v20190719/model/SignUpCfsServiceRequest.h>
 #include <tencentcloud/cfs/v20190719/model/SignUpCfsServiceResponse.h>
 #include <tencentcloud/cfs/v20190719/model/UnbindAutoSnapshotPolicyRequest.h>
@@ -137,6 +143,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteMountTargetResponse> DeleteMountTargetOutcome;
                 typedef std::future<DeleteMountTargetOutcome> DeleteMountTargetOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DeleteMountTargetRequest&, DeleteMountTargetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMountTargetAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteUserQuotaResponse> DeleteUserQuotaOutcome;
+                typedef std::future<DeleteUserQuotaOutcome> DeleteUserQuotaOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DeleteUserQuotaRequest&, DeleteUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoSnapshotPoliciesResponse> DescribeAutoSnapshotPoliciesOutcome;
                 typedef std::future<DescribeAutoSnapshotPoliciesOutcome> DescribeAutoSnapshotPoliciesOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeAutoSnapshotPoliciesRequest&, DescribeAutoSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoSnapshotPoliciesAsyncHandler;
@@ -170,6 +179,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSnapshotOperationLogsResponse> DescribeSnapshotOperationLogsOutcome;
                 typedef std::future<DescribeSnapshotOperationLogsOutcome> DescribeSnapshotOperationLogsOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeSnapshotOperationLogsRequest&, DescribeSnapshotOperationLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotOperationLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserQuotaResponse> DescribeUserQuotaOutcome;
+                typedef std::future<DescribeUserQuotaOutcome> DescribeUserQuotaOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::DescribeUserQuotaRequest&, DescribeUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetUserQuotaResponse> SetUserQuotaOutcome;
+                typedef std::future<SetUserQuotaOutcome> SetUserQuotaOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::SetUserQuotaRequest&, SetUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetUserQuotaAsyncHandler;
                 typedef Outcome<Core::Error, Model::SignUpCfsServiceResponse> SignUpCfsServiceOutcome;
                 typedef std::future<SignUpCfsServiceOutcome> SignUpCfsServiceOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::SignUpCfsServiceRequest&, SignUpCfsServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SignUpCfsServiceAsyncHandler;
@@ -309,6 +324,15 @@ namespace TencentCloud
                 DeleteMountTargetOutcomeCallable DeleteMountTargetCallable(const Model::DeleteMountTargetRequest& request);
 
                 /**
+                 *指定条件删除文件系统配额
+                 * @param req DeleteUserQuotaRequest
+                 * @return DeleteUserQuotaOutcome
+                 */
+                DeleteUserQuotaOutcome DeleteUserQuota(const Model::DeleteUserQuotaRequest &request);
+                void DeleteUserQuotaAsync(const Model::DeleteUserQuotaRequest& request, const DeleteUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteUserQuotaOutcomeCallable DeleteUserQuotaCallable(const Model::DeleteUserQuotaRequest& request);
+
+                /**
                  *查询文件系统快照定期策略列表信息
                  * @param req DescribeAutoSnapshotPoliciesRequest
                  * @return DescribeAutoSnapshotPoliciesOutcome
@@ -406,6 +430,24 @@ namespace TencentCloud
                 DescribeSnapshotOperationLogsOutcome DescribeSnapshotOperationLogs(const Model::DescribeSnapshotOperationLogsRequest &request);
                 void DescribeSnapshotOperationLogsAsync(const Model::DescribeSnapshotOperationLogsRequest& request, const DescribeSnapshotOperationLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSnapshotOperationLogsOutcomeCallable DescribeSnapshotOperationLogsCallable(const Model::DescribeSnapshotOperationLogsRequest& request);
+
+                /**
+                 *查询文件系统配额
+                 * @param req DescribeUserQuotaRequest
+                 * @return DescribeUserQuotaOutcome
+                 */
+                DescribeUserQuotaOutcome DescribeUserQuota(const Model::DescribeUserQuotaRequest &request);
+                void DescribeUserQuotaAsync(const Model::DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserQuotaOutcomeCallable DescribeUserQuotaCallable(const Model::DescribeUserQuotaRequest& request);
+
+                /**
+                 *设置文件系统配额，提供UID/GID的配额设置的接口
+                 * @param req SetUserQuotaRequest
+                 * @return SetUserQuotaOutcome
+                 */
+                SetUserQuotaOutcome SetUserQuota(const Model::SetUserQuotaRequest &request);
+                void SetUserQuotaAsync(const Model::SetUserQuotaRequest& request, const SetUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetUserQuotaOutcomeCallable SetUserQuotaCallable(const Model::SetUserQuotaRequest& request);
 
                 /**
                  *本接口（SignUpCfsService）用于开通CFS服务。

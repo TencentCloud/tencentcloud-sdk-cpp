@@ -556,6 +556,49 @@ CfsClient::DeleteMountTargetOutcomeCallable CfsClient::DeleteMountTargetCallable
     return task->get_future();
 }
 
+CfsClient::DeleteUserQuotaOutcome CfsClient::DeleteUserQuota(const DeleteUserQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserQuotaResponse rsp = DeleteUserQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserQuotaOutcome(rsp);
+        else
+            return DeleteUserQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DeleteUserQuotaAsync(const DeleteUserQuotaRequest& request, const DeleteUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUserQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DeleteUserQuotaOutcomeCallable CfsClient::DeleteUserQuotaCallable(const DeleteUserQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUserQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUserQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::DescribeAutoSnapshotPoliciesOutcome CfsClient::DescribeAutoSnapshotPolicies(const DescribeAutoSnapshotPoliciesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoSnapshotPolicies");
@@ -1022,6 +1065,92 @@ CfsClient::DescribeSnapshotOperationLogsOutcomeCallable CfsClient::DescribeSnaps
         [this, request]()
         {
             return this->DescribeSnapshotOperationLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::DescribeUserQuotaOutcome CfsClient::DescribeUserQuota(const DescribeUserQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserQuotaResponse rsp = DescribeUserQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserQuotaOutcome(rsp);
+        else
+            return DescribeUserQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::DescribeUserQuotaAsync(const DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::DescribeUserQuotaOutcomeCallable CfsClient::DescribeUserQuotaCallable(const DescribeUserQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfsClient::SetUserQuotaOutcome CfsClient::SetUserQuota(const SetUserQuotaRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetUserQuota");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetUserQuotaResponse rsp = SetUserQuotaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetUserQuotaOutcome(rsp);
+        else
+            return SetUserQuotaOutcome(o.GetError());
+    }
+    else
+    {
+        return SetUserQuotaOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::SetUserQuotaAsync(const SetUserQuotaRequest& request, const SetUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetUserQuota(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::SetUserQuotaOutcomeCallable CfsClient::SetUserQuotaCallable(const SetUserQuotaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetUserQuotaOutcome()>>(
+        [this, request]()
+        {
+            return this->SetUserQuota(request);
         }
     );
 

@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/faceid/v20180301/model/GenerateReflectSequenceResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DeleteUserQuotaResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Faceid::V20180301::Model;
+using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
-GenerateReflectSequenceResponse::GenerateReflectSequenceResponse() :
-    m_reflectSequenceUrlHasBeenSet(false),
-    m_reflectSequenceMd5HasBeenSet(false)
+DeleteUserQuotaResponse::DeleteUserQuotaResponse()
 {
 }
 
-CoreInternalOutcome GenerateReflectSequenceResponse::Deserialize(const string &payload)
+CoreInternalOutcome DeleteUserQuotaResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,51 +61,15 @@ CoreInternalOutcome GenerateReflectSequenceResponse::Deserialize(const string &p
     }
 
 
-    if (rsp.HasMember("ReflectSequenceUrl") && !rsp["ReflectSequenceUrl"].IsNull())
-    {
-        if (!rsp["ReflectSequenceUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ReflectSequenceUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_reflectSequenceUrl = string(rsp["ReflectSequenceUrl"].GetString());
-        m_reflectSequenceUrlHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("ReflectSequenceMd5") && !rsp["ReflectSequenceMd5"].IsNull())
-    {
-        if (!rsp["ReflectSequenceMd5"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ReflectSequenceMd5` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_reflectSequenceMd5 = string(rsp["ReflectSequenceMd5"].GetString());
-        m_reflectSequenceMd5HasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string GenerateReflectSequenceResponse::ToJsonString() const
+string DeleteUserQuotaResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_reflectSequenceUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReflectSequenceUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_reflectSequenceUrl.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_reflectSequenceMd5HasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReflectSequenceMd5";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_reflectSequenceMd5.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -120,25 +82,5 @@ string GenerateReflectSequenceResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string GenerateReflectSequenceResponse::GetReflectSequenceUrl() const
-{
-    return m_reflectSequenceUrl;
-}
-
-bool GenerateReflectSequenceResponse::ReflectSequenceUrlHasBeenSet() const
-{
-    return m_reflectSequenceUrlHasBeenSet;
-}
-
-string GenerateReflectSequenceResponse::GetReflectSequenceMd5() const
-{
-    return m_reflectSequenceMd5;
-}
-
-bool GenerateReflectSequenceResponse::ReflectSequenceMd5HasBeenSet() const
-{
-    return m_reflectSequenceMd5HasBeenSet;
-}
 
 

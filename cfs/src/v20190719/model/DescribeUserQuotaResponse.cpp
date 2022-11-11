@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/faceid/v20180301/model/ApplyWebVerificationTokenResponse.h>
+#include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Faceid::V20180301::Model;
+using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
-ApplyWebVerificationTokenResponse::ApplyWebVerificationTokenResponse() :
-    m_verificationUrlHasBeenSet(false),
-    m_bizTokenHasBeenSet(false)
+DescribeUserQuotaResponse::DescribeUserQuotaResponse() :
+    m_totalCountHasBeenSet(false),
+    m_userQuotaInfoHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ApplyWebVerificationTokenResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeUserQuotaResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +63,67 @@ CoreInternalOutcome ApplyWebVerificationTokenResponse::Deserialize(const string 
     }
 
 
-    if (rsp.HasMember("VerificationUrl") && !rsp["VerificationUrl"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["VerificationUrl"].IsString())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `VerificationUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_verificationUrl = string(rsp["VerificationUrl"].GetString());
-        m_verificationUrlHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("BizToken") && !rsp["BizToken"].IsNull())
+    if (rsp.HasMember("UserQuotaInfo") && !rsp["UserQuotaInfo"].IsNull())
     {
-        if (!rsp["BizToken"].IsString())
+        if (!rsp["UserQuotaInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UserQuotaInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["UserQuotaInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `BizToken` IsString=false incorrectly").SetRequestId(requestId));
+            UserQuota item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_userQuotaInfo.push_back(item);
         }
-        m_bizToken = string(rsp["BizToken"].GetString());
-        m_bizTokenHasBeenSet = true;
+        m_userQuotaInfoHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ApplyWebVerificationTokenResponse::ToJsonString() const
+string DescribeUserQuotaResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_verificationUrlHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "VerificationUrl";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_verificationUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_bizTokenHasBeenSet)
+    if (m_userQuotaInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BizToken";
+        string key = "UserQuotaInfo";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_bizToken.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_userQuotaInfo.begin(); itr != m_userQuotaInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +138,24 @@ string ApplyWebVerificationTokenResponse::ToJsonString() const
 }
 
 
-string ApplyWebVerificationTokenResponse::GetVerificationUrl() const
+uint64_t DescribeUserQuotaResponse::GetTotalCount() const
 {
-    return m_verificationUrl;
+    return m_totalCount;
 }
 
-bool ApplyWebVerificationTokenResponse::VerificationUrlHasBeenSet() const
+bool DescribeUserQuotaResponse::TotalCountHasBeenSet() const
 {
-    return m_verificationUrlHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-string ApplyWebVerificationTokenResponse::GetBizToken() const
+vector<UserQuota> DescribeUserQuotaResponse::GetUserQuotaInfo() const
 {
-    return m_bizToken;
+    return m_userQuotaInfo;
 }
 
-bool ApplyWebVerificationTokenResponse::BizTokenHasBeenSet() const
+bool DescribeUserQuotaResponse::UserQuotaInfoHasBeenSet() const
 {
-    return m_bizTokenHasBeenSet;
+    return m_userQuotaInfoHasBeenSet;
 }
 
 
