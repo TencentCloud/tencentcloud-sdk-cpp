@@ -30,7 +30,8 @@ TemplateInfo::TemplateInfo() :
     m_templateTypeHasBeenSet(false),
     m_isPromoterHasBeenSet(false),
     m_creatorHasBeenSet(false),
-    m_createdOnHasBeenSet(false)
+    m_createdOnHasBeenSet(false),
+    m_previewUrlHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_createdOnHasBeenSet = true;
     }
 
+    if (value.HasMember("PreviewUrl") && !value["PreviewUrl"].IsNull())
+    {
+        if (!value["PreviewUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.PreviewUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_previewUrl = string(value["PreviewUrl"].GetString());
+        m_previewUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -275,6 +286,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreatedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_createdOn, allocator);
+    }
+
+    if (m_previewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void TemplateInfo::SetCreatedOn(const int64_t& _createdOn)
 bool TemplateInfo::CreatedOnHasBeenSet() const
 {
     return m_createdOnHasBeenSet;
+}
+
+string TemplateInfo::GetPreviewUrl() const
+{
+    return m_previewUrl;
+}
+
+void TemplateInfo::SetPreviewUrl(const string& _previewUrl)
+{
+    m_previewUrl = _previewUrl;
+    m_previewUrlHasBeenSet = true;
+}
+
+bool TemplateInfo::PreviewUrlHasBeenSet() const
+{
+    return m_previewUrlHasBeenSet;
 }
 

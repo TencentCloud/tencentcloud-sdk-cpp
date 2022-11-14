@@ -30,7 +30,8 @@ DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_offsetHasBeenSet(false),
     m_queryAllComponentsHasBeenSet(false),
     m_templateNameHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_withPreviewUrlHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,14 @@ string DescribeTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_withPreviewUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithPreviewUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withPreviewUrl, allocator);
     }
 
 
@@ -241,6 +250,22 @@ void DescribeTemplatesRequest::SetOperator(const UserInfo& _operator)
 bool DescribeTemplatesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+bool DescribeTemplatesRequest::GetWithPreviewUrl() const
+{
+    return m_withPreviewUrl;
+}
+
+void DescribeTemplatesRequest::SetWithPreviewUrl(const bool& _withPreviewUrl)
+{
+    m_withPreviewUrl = _withPreviewUrl;
+    m_withPreviewUrlHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::WithPreviewUrlHasBeenSet() const
+{
+    return m_withPreviewUrlHasBeenSet;
 }
 
 

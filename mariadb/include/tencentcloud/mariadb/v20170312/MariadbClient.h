@@ -963,7 +963,7 @@ namespace TencentCloud
                 SwitchDBInstanceHAOutcomeCallable SwitchDBInstanceHACallable(const Model::SwitchDBInstanceHARequest& request);
 
                 /**
-                 *本接口（IsolateDedicatedDBInstance）用于销毁已隔离的独享云数据库实例。
+                 *本接口（TerminateDedicatedDBInstance）用于销毁已隔离的独享云数据库实例。
                  * @param req TerminateDedicatedDBInstanceRequest
                  * @return TerminateDedicatedDBInstanceOutcome
                  */

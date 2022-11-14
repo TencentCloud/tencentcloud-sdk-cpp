@@ -77,11 +77,11 @@ RecipientId参数：
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取经办人身份证件类型
+                     * 获取签署人身份证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @return IdCardType 经办人身份证件类型
+                     * @return IdCardType 签署人身份证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
@@ -89,11 +89,11 @@ RecipientId参数：
                     std::string GetIdCardType() const;
 
                     /**
-                     * 设置经办人身份证件类型
+                     * 设置签署人身份证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
-                     * @param IdCardType 经办人身份证件类型
+                     * @param IdCardType 签署人身份证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
@@ -107,14 +107,14 @@ RecipientId参数：
                     bool IdCardTypeHasBeenSet() const;
 
                     /**
-                     * 获取经办人证件号
-                     * @return IdCardNumber 经办人证件号
+                     * 获取签署人证件号
+                     * @return IdCardNumber 签署人证件号
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
-                     * 设置经办人证件号
-                     * @param IdCardNumber 经办人证件号
+                     * 设置签署人证件号
+                     * @param IdCardNumber 签署人证件号
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
@@ -423,7 +423,7 @@ ENTERPRISESERVER-企业静默签;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 经办人身份证件类型
+                     * 签署人身份证件类型
 1.ID_CARD 居民身份证
 2.HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证
 3.HONGKONG_AND_MACAO 港澳居民来往内地通行证
@@ -432,7 +432,7 @@ ENTERPRISESERVER-企业静默签;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
-                     * 经办人证件号
+                     * 签署人证件号
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;

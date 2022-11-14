@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取StatementID值
+                     * 获取StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StatementID StatementID值
+                     * @return StatementID StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatementID() const;
 
                     /**
-                     * 设置StatementID值
+                     * 设置StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StatementID StatementID值
+                     * @param StatementID StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatementID(const int64_t& _statementID);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool StatementIDHasBeenSet() const;
 
                     /**
-                     * 获取Series数据
+                     * 获取查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Series Series数据
+                     * @return Series 查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SeriesInfo> GetSeries() const;
 
                     /**
-                     * 设置Series数据
+                     * 设置查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Series Series数据
+                     * @param Series 查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSeries(const std::vector<SeriesInfo>& _series);
@@ -92,17 +92,17 @@ namespace TencentCloud
                     bool SeriesHasBeenSet() const;
 
                     /**
-                     * 获取Total值
+                     * 获取Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Total Total值
+                     * @return Total Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotal() const;
 
                     /**
-                     * 设置Total值
+                     * 设置Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Total Total值
+                     * @param Total Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTotal(const int64_t& _total);
@@ -116,21 +116,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * StatementID值
+                     * StatementID值，监控仪表盘下固定为0。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_statementID;
                     bool m_statementIDHasBeenSet;
 
                     /**
-                     * Series数据
+                     * 查询结果数据，以Columns-Values形式返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<SeriesInfo> m_series;
                     bool m_seriesHasBeenSet;
 
                     /**
-                     * Total值
+                     * Total值，监控仪表盘功能下固定为1。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_total;

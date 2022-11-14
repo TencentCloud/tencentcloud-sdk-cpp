@@ -53,14 +53,24 @@
 #include <tencentcloud/wedata/v20210820/model/BatchUpdateIntegrationTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckAlarmRegularNameExistRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CheckAlarmRegularNameExistResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CheckDuplicateRuleNameRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CheckDuplicateRuleNameResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CheckDuplicateTemplateNameRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CheckDuplicateTemplateNameResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckIntegrationNodeNameExistsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CheckIntegrationNodeNameExistsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckIntegrationTaskNameExistsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CheckIntegrationTaskNameExistsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CheckTaskNameExistRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CheckTaskNameExistResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CommitExportTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CommitExportTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CommitIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CommitIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CommitRuleGroupExecResultRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CommitRuleGroupExecResultResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CommitRuleGroupTaskRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CommitRuleGroupTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateCustomFunctionResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateDataSourceRequest.h>
@@ -81,6 +91,10 @@
 #include <tencentcloud/wedata/v20210820/model/CreateOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateOrUpdateResourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateOrUpdateResourceResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateRuleRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateRuleResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateRuleTemplateRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateRuleTemplateResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateTaskAlarmRegularRequest.h>
@@ -103,6 +117,10 @@
 #include <tencentcloud/wedata/v20210820/model/DeleteOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteResourceResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRuleRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRuleResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRuleTemplateRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DeleteRuleTemplateResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteTaskAlarmRegularRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteTaskAlarmRegularResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DeleteWorkflowNewRequest.h>
@@ -113,6 +131,12 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeClusterNamespaceListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataBasesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataBasesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataCheckStatResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataObjectsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDataObjectsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDataSourceListRequest.h>
@@ -127,6 +151,10 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeDatasourceResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDependTasksNewRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeDependTasksNewResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDimensionScoreRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeDimensionScoreResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeExecStrategyRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeExecStrategyResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeFolderWorkflowListRequest.h>
@@ -153,6 +181,8 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeInstanceLogsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstancesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationNodeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsRequest.h>
@@ -175,12 +205,20 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeKafkaTopicInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeKafkaTopicInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeMonitorsByPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOfflineTaskTokenResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeOrganizationalFunctionsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProdTasksRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeProdTasksResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeProjectResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreTrendRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeQualityScoreTrendResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskInstanceNodeInfoResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskMetricOverviewRequest.h>
@@ -191,14 +229,64 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeRelatedInstancesResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleDataSourcesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleDataSourcesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleDimStatRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleDimStatResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecDetailRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecDetailResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecExportResultRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecExportResultResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecHistoryRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecHistoryResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecLogRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecLogResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecResultsByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecStatRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleExecStatResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupExecResultsByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupExecResultsByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupExecResultsByPageWithoutAuthRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupExecResultsByPageWithoutAuthResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupSubscriptionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupSubscriptionResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupTableRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupTableResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupsByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleGroupsByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleHistoryByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleHistoryByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTablesByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTablesByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTemplateRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTemplateResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRulesRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRulesResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRulesByPageRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeRulesByPageResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStandardRuleDetailInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStandardRuleDetailInfoListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeStreamTaskLogListResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableInfoListRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableInfoListResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableQualityDetailsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableSchemaInfoRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTableSchemaInfoResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableScoreTrendRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTableScoreTrendResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskAlarmRegulationsRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskAlarmRegulationsResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskDetailRequest.h>
@@ -219,6 +307,14 @@
 #include <tencentcloud/wedata/v20210820/model/DescribeTaskScriptResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTasksByPageRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DescribeTasksByPageResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTemplateDimCountResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTemplateHistoryRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTemplateHistoryResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTopTableStatRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTopTableStatResponse.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTrendStatRequest.h>
+#include <tencentcloud/wedata/v20210820/model/DescribeTrendStatResponse.h>
 #include <tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/DryRunDIOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ForceSucInstancesRequest.h>
@@ -245,12 +341,24 @@
 #include <tencentcloud/wedata/v20210820/model/MakeUpWorkflowNewResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyDataSourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyDataSourceResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyDimensionWeightRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyDimensionWeightResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyExecStrategyRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyExecStrategyResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyFolderRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyFolderResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyIntegrationNodeRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyIntegrationNodeResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyIntegrationTaskRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyIntegrationTaskResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyMonitorStatusRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyMonitorStatusResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyRuleRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyRuleResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyRuleGroupSubscriptionRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyRuleGroupSubscriptionResponse.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyRuleTemplateRequest.h>
+#include <tencentcloud/wedata/v20210820/model/ModifyRuleTemplateResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskAlarmRegularRequest.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskAlarmRegularResponse.h>
 #include <tencentcloud/wedata/v20210820/model/ModifyTaskInfoRequest.h>
@@ -362,6 +470,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckAlarmRegularNameExistResponse> CheckAlarmRegularNameExistOutcome;
                 typedef std::future<CheckAlarmRegularNameExistOutcome> CheckAlarmRegularNameExistOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CheckAlarmRegularNameExistRequest&, CheckAlarmRegularNameExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckAlarmRegularNameExistAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckDuplicateRuleNameResponse> CheckDuplicateRuleNameOutcome;
+                typedef std::future<CheckDuplicateRuleNameOutcome> CheckDuplicateRuleNameOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CheckDuplicateRuleNameRequest&, CheckDuplicateRuleNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDuplicateRuleNameAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckDuplicateTemplateNameResponse> CheckDuplicateTemplateNameOutcome;
+                typedef std::future<CheckDuplicateTemplateNameOutcome> CheckDuplicateTemplateNameOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CheckDuplicateTemplateNameRequest&, CheckDuplicateTemplateNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckDuplicateTemplateNameAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckIntegrationNodeNameExistsResponse> CheckIntegrationNodeNameExistsOutcome;
                 typedef std::future<CheckIntegrationNodeNameExistsOutcome> CheckIntegrationNodeNameExistsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CheckIntegrationNodeNameExistsRequest&, CheckIntegrationNodeNameExistsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIntegrationNodeNameExistsAsyncHandler;
@@ -371,9 +485,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckTaskNameExistResponse> CheckTaskNameExistOutcome;
                 typedef std::future<CheckTaskNameExistOutcome> CheckTaskNameExistOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CheckTaskNameExistRequest&, CheckTaskNameExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckTaskNameExistAsyncHandler;
+                typedef Outcome<Core::Error, Model::CommitExportTaskResponse> CommitExportTaskOutcome;
+                typedef std::future<CommitExportTaskOutcome> CommitExportTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CommitExportTaskRequest&, CommitExportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitExportTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CommitIntegrationTaskResponse> CommitIntegrationTaskOutcome;
                 typedef std::future<CommitIntegrationTaskOutcome> CommitIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CommitIntegrationTaskRequest&, CommitIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CommitRuleGroupExecResultResponse> CommitRuleGroupExecResultOutcome;
+                typedef std::future<CommitRuleGroupExecResultOutcome> CommitRuleGroupExecResultOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CommitRuleGroupExecResultRequest&, CommitRuleGroupExecResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitRuleGroupExecResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::CommitRuleGroupTaskResponse> CommitRuleGroupTaskOutcome;
+                typedef std::future<CommitRuleGroupTaskOutcome> CommitRuleGroupTaskOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CommitRuleGroupTaskRequest&, CommitRuleGroupTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CommitRuleGroupTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCustomFunctionResponse> CreateCustomFunctionOutcome;
                 typedef std::future<CreateCustomFunctionOutcome> CreateCustomFunctionOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateCustomFunctionRequest&, CreateCustomFunctionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCustomFunctionAsyncHandler;
@@ -404,6 +527,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrUpdateResourceResponse> CreateOrUpdateResourceOutcome;
                 typedef std::future<CreateOrUpdateResourceOutcome> CreateOrUpdateResourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateOrUpdateResourceRequest&, CreateOrUpdateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
+                typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRuleTemplateResponse> CreateRuleTemplateOutcome;
+                typedef std::future<CreateRuleTemplateOutcome> CreateRuleTemplateOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateRuleTemplateRequest&, CreateRuleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateTaskResponse> CreateTaskOutcome;
                 typedef std::future<CreateTaskOutcome> CreateTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateTaskRequest&, CreateTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTaskAsyncHandler;
@@ -437,6 +566,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteResourceResponse> DeleteResourceOutcome;
                 typedef std::future<DeleteResourceOutcome> DeleteResourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteResourceRequest&, DeleteResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRuleResponse> DeleteRuleOutcome;
+                typedef std::future<DeleteRuleOutcome> DeleteRuleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteRuleRequest&, DeleteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRuleTemplateResponse> DeleteRuleTemplateOutcome;
+                typedef std::future<DeleteRuleTemplateOutcome> DeleteRuleTemplateOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DeleteRuleTemplateRequest&, DeleteRuleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRuleTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteTaskAlarmRegularResponse> DeleteTaskAlarmRegularOutcome;
                 typedef std::future<DeleteTaskAlarmRegularOutcome> DeleteTaskAlarmRegularOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DeleteTaskAlarmRegularRequest&, DeleteTaskAlarmRegularOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTaskAlarmRegularAsyncHandler;
@@ -452,6 +587,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterNamespaceListResponse> DescribeClusterNamespaceListOutcome;
                 typedef std::future<DescribeClusterNamespaceListOutcome> DescribeClusterNamespaceListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeClusterNamespaceListRequest&, DescribeClusterNamespaceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNamespaceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataBasesResponse> DescribeDataBasesOutcome;
+                typedef std::future<DescribeDataBasesOutcome> DescribeDataBasesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataBasesRequest&, DescribeDataBasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataBasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataCheckStatResponse> DescribeDataCheckStatOutcome;
+                typedef std::future<DescribeDataCheckStatOutcome> DescribeDataCheckStatOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataCheckStatRequest&, DescribeDataCheckStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataCheckStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataObjectsResponse> DescribeDataObjectsOutcome;
+                typedef std::future<DescribeDataObjectsOutcome> DescribeDataObjectsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDataObjectsRequest&, DescribeDataObjectsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataObjectsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataSourceInfoListResponse> DescribeDataSourceInfoListOutcome;
                 typedef std::future<DescribeDataSourceInfoListOutcome> DescribeDataSourceInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDataSourceInfoListRequest&, DescribeDataSourceInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataSourceInfoListAsyncHandler;
@@ -473,6 +617,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDependTasksNewResponse> DescribeDependTasksNewOutcome;
                 typedef std::future<DescribeDependTasksNewOutcome> DescribeDependTasksNewOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeDependTasksNewRequest&, DescribeDependTasksNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDependTasksNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDimensionScoreResponse> DescribeDimensionScoreOutcome;
+                typedef std::future<DescribeDimensionScoreOutcome> DescribeDimensionScoreOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeDimensionScoreRequest&, DescribeDimensionScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDimensionScoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExecStrategyResponse> DescribeExecStrategyOutcome;
+                typedef std::future<DescribeExecStrategyOutcome> DescribeExecStrategyOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeExecStrategyRequest&, DescribeExecStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExecStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFolderListResponse> DescribeFolderListOutcome;
                 typedef std::future<DescribeFolderListOutcome> DescribeFolderListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeFolderListRequest&, DescribeFolderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFolderListAsyncHandler;
@@ -512,6 +662,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceLogsResponse> DescribeInstanceLogsOutcome;
                 typedef std::future<DescribeInstanceLogsOutcome> DescribeInstanceLogsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeInstanceLogsRequest&, DescribeInstanceLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstancesResponse> DescribeInstancesOutcome;
+                typedef std::future<DescribeInstancesOutcome> DescribeInstancesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeInstancesRequest&, DescribeInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeIntegrationNodeResponse> DescribeIntegrationNodeOutcome;
                 typedef std::future<DescribeIntegrationNodeOutcome> DescribeIntegrationNodeOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeIntegrationNodeRequest&, DescribeIntegrationNodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationNodeAsyncHandler;
@@ -545,15 +698,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKafkaTopicInfoResponse> DescribeKafkaTopicInfoOutcome;
                 typedef std::future<DescribeKafkaTopicInfoOutcome> DescribeKafkaTopicInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeKafkaTopicInfoRequest&, DescribeKafkaTopicInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKafkaTopicInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeMonitorsByPageResponse> DescribeMonitorsByPageOutcome;
+                typedef std::future<DescribeMonitorsByPageOutcome> DescribeMonitorsByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeMonitorsByPageRequest&, DescribeMonitorsByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeMonitorsByPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOfflineTaskTokenResponse> DescribeOfflineTaskTokenOutcome;
                 typedef std::future<DescribeOfflineTaskTokenOutcome> DescribeOfflineTaskTokenOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeOfflineTaskTokenRequest&, DescribeOfflineTaskTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOfflineTaskTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationalFunctionsResponse> DescribeOrganizationalFunctionsOutcome;
                 typedef std::future<DescribeOrganizationalFunctionsOutcome> DescribeOrganizationalFunctionsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeOrganizationalFunctionsRequest&, DescribeOrganizationalFunctionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationalFunctionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProdTasksResponse> DescribeProdTasksOutcome;
+                typedef std::future<DescribeProdTasksOutcome> DescribeProdTasksOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeProdTasksRequest&, DescribeProdTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProdTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProjectResponse> DescribeProjectOutcome;
                 typedef std::future<DescribeProjectOutcome> DescribeProjectOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeProjectRequest&, DescribeProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQualityScoreResponse> DescribeQualityScoreOutcome;
+                typedef std::future<DescribeQualityScoreOutcome> DescribeQualityScoreOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeQualityScoreRequest&, DescribeQualityScoreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityScoreAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQualityScoreTrendResponse> DescribeQualityScoreTrendOutcome;
+                typedef std::future<DescribeQualityScoreTrendOutcome> DescribeQualityScoreTrendOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeQualityScoreTrendRequest&, DescribeQualityScoreTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityScoreTrendAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRealTimeTaskInstanceNodeInfoResponse> DescribeRealTimeTaskInstanceNodeInfoOutcome;
                 typedef std::future<DescribeRealTimeTaskInstanceNodeInfoOutcome> DescribeRealTimeTaskInstanceNodeInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeRealTimeTaskInstanceNodeInfoRequest&, DescribeRealTimeTaskInstanceNodeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealTimeTaskInstanceNodeInfoAsyncHandler;
@@ -569,6 +734,75 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResourceManagePathTreesResponse> DescribeResourceManagePathTreesOutcome;
                 typedef std::future<DescribeResourceManagePathTreesOutcome> DescribeResourceManagePathTreesOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeResourceManagePathTreesRequest&, DescribeResourceManagePathTreesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourceManagePathTreesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleResponse> DescribeRuleOutcome;
+                typedef std::future<DescribeRuleOutcome> DescribeRuleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleRequest&, DescribeRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleDataSourcesResponse> DescribeRuleDataSourcesOutcome;
+                typedef std::future<DescribeRuleDataSourcesOutcome> DescribeRuleDataSourcesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleDataSourcesRequest&, DescribeRuleDataSourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleDataSourcesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleDimStatResponse> DescribeRuleDimStatOutcome;
+                typedef std::future<DescribeRuleDimStatOutcome> DescribeRuleDimStatOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleDimStatRequest&, DescribeRuleDimStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleDimStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleExecDetailResponse> DescribeRuleExecDetailOutcome;
+                typedef std::future<DescribeRuleExecDetailOutcome> DescribeRuleExecDetailOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleExecDetailRequest&, DescribeRuleExecDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleExecDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleExecExportResultResponse> DescribeRuleExecExportResultOutcome;
+                typedef std::future<DescribeRuleExecExportResultOutcome> DescribeRuleExecExportResultOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleExecExportResultRequest&, DescribeRuleExecExportResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleExecExportResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleExecHistoryResponse> DescribeRuleExecHistoryOutcome;
+                typedef std::future<DescribeRuleExecHistoryOutcome> DescribeRuleExecHistoryOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleExecHistoryRequest&, DescribeRuleExecHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleExecHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleExecLogResponse> DescribeRuleExecLogOutcome;
+                typedef std::future<DescribeRuleExecLogOutcome> DescribeRuleExecLogOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleExecLogRequest&, DescribeRuleExecLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleExecLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleExecResultsResponse> DescribeRuleExecResultsOutcome;
+                typedef std::future<DescribeRuleExecResultsOutcome> DescribeRuleExecResultsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleExecResultsRequest&, DescribeRuleExecResultsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleExecResultsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleExecResultsByPageResponse> DescribeRuleExecResultsByPageOutcome;
+                typedef std::future<DescribeRuleExecResultsByPageOutcome> DescribeRuleExecResultsByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleExecResultsByPageRequest&, DescribeRuleExecResultsByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleExecResultsByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleExecStatResponse> DescribeRuleExecStatOutcome;
+                typedef std::future<DescribeRuleExecStatOutcome> DescribeRuleExecStatOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleExecStatRequest&, DescribeRuleExecStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleExecStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleGroupResponse> DescribeRuleGroupOutcome;
+                typedef std::future<DescribeRuleGroupOutcome> DescribeRuleGroupOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleGroupRequest&, DescribeRuleGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleGroupExecResultsByPageResponse> DescribeRuleGroupExecResultsByPageOutcome;
+                typedef std::future<DescribeRuleGroupExecResultsByPageOutcome> DescribeRuleGroupExecResultsByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleGroupExecResultsByPageRequest&, DescribeRuleGroupExecResultsByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupExecResultsByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleGroupExecResultsByPageWithoutAuthResponse> DescribeRuleGroupExecResultsByPageWithoutAuthOutcome;
+                typedef std::future<DescribeRuleGroupExecResultsByPageWithoutAuthOutcome> DescribeRuleGroupExecResultsByPageWithoutAuthOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleGroupExecResultsByPageWithoutAuthRequest&, DescribeRuleGroupExecResultsByPageWithoutAuthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupExecResultsByPageWithoutAuthAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleGroupSubscriptionResponse> DescribeRuleGroupSubscriptionOutcome;
+                typedef std::future<DescribeRuleGroupSubscriptionOutcome> DescribeRuleGroupSubscriptionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleGroupSubscriptionRequest&, DescribeRuleGroupSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupSubscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleGroupTableResponse> DescribeRuleGroupTableOutcome;
+                typedef std::future<DescribeRuleGroupTableOutcome> DescribeRuleGroupTableOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleGroupTableRequest&, DescribeRuleGroupTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleGroupsByPageResponse> DescribeRuleGroupsByPageOutcome;
+                typedef std::future<DescribeRuleGroupsByPageOutcome> DescribeRuleGroupsByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleGroupsByPageRequest&, DescribeRuleGroupsByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleGroupsByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleHistoryByPageResponse> DescribeRuleHistoryByPageOutcome;
+                typedef std::future<DescribeRuleHistoryByPageOutcome> DescribeRuleHistoryByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleHistoryByPageRequest&, DescribeRuleHistoryByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleHistoryByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleTablesByPageResponse> DescribeRuleTablesByPageOutcome;
+                typedef std::future<DescribeRuleTablesByPageOutcome> DescribeRuleTablesByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleTablesByPageRequest&, DescribeRuleTablesByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleTablesByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleTemplateResponse> DescribeRuleTemplateOutcome;
+                typedef std::future<DescribeRuleTemplateOutcome> DescribeRuleTemplateOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleTemplateRequest&, DescribeRuleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleTemplatesResponse> DescribeRuleTemplatesOutcome;
+                typedef std::future<DescribeRuleTemplatesOutcome> DescribeRuleTemplatesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleTemplatesRequest&, DescribeRuleTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleTemplatesByPageResponse> DescribeRuleTemplatesByPageOutcome;
+                typedef std::future<DescribeRuleTemplatesByPageOutcome> DescribeRuleTemplatesByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRuleTemplatesByPageRequest&, DescribeRuleTemplatesByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleTemplatesByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRulesResponse> DescribeRulesOutcome;
+                typedef std::future<DescribeRulesOutcome> DescribeRulesOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRulesRequest&, DescribeRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRulesByPageResponse> DescribeRulesByPageOutcome;
+                typedef std::future<DescribeRulesByPageOutcome> DescribeRulesByPageOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeRulesByPageRequest&, DescribeRulesByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRulesByPageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeStandardRuleDetailInfoListResponse> DescribeStandardRuleDetailInfoListOutcome;
                 typedef std::future<DescribeStandardRuleDetailInfoListOutcome> DescribeStandardRuleDetailInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeStandardRuleDetailInfoListRequest&, DescribeStandardRuleDetailInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStandardRuleDetailInfoListAsyncHandler;
@@ -578,9 +812,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTableInfoListResponse> DescribeTableInfoListOutcome;
                 typedef std::future<DescribeTableInfoListOutcome> DescribeTableInfoListOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableInfoListRequest&, DescribeTableInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableQualityDetailsResponse> DescribeTableQualityDetailsOutcome;
+                typedef std::future<DescribeTableQualityDetailsOutcome> DescribeTableQualityDetailsOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTableQualityDetailsRequest&, DescribeTableQualityDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableQualityDetailsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTableSchemaInfoResponse> DescribeTableSchemaInfoOutcome;
                 typedef std::future<DescribeTableSchemaInfoOutcome> DescribeTableSchemaInfoOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTableSchemaInfoRequest&, DescribeTableSchemaInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableSchemaInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTableScoreTrendResponse> DescribeTableScoreTrendOutcome;
+                typedef std::future<DescribeTableScoreTrendOutcome> DescribeTableScoreTrendOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTableScoreTrendRequest&, DescribeTableScoreTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTableScoreTrendAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTaskAlarmRegulationsResponse> DescribeTaskAlarmRegulationsOutcome;
                 typedef std::future<DescribeTaskAlarmRegulationsOutcome> DescribeTaskAlarmRegulationsOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTaskAlarmRegulationsRequest&, DescribeTaskAlarmRegulationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskAlarmRegulationsAsyncHandler;
@@ -611,6 +851,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTasksByPageResponse> DescribeTasksByPageOutcome;
                 typedef std::future<DescribeTasksByPageOutcome> DescribeTasksByPageOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DescribeTasksByPageRequest&, DescribeTasksByPageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTasksByPageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTemplateDimCountResponse> DescribeTemplateDimCountOutcome;
+                typedef std::future<DescribeTemplateDimCountOutcome> DescribeTemplateDimCountOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTemplateDimCountRequest&, DescribeTemplateDimCountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateDimCountAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTemplateHistoryResponse> DescribeTemplateHistoryOutcome;
+                typedef std::future<DescribeTemplateHistoryOutcome> DescribeTemplateHistoryOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTemplateHistoryRequest&, DescribeTemplateHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTemplateHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTopTableStatResponse> DescribeTopTableStatOutcome;
+                typedef std::future<DescribeTopTableStatOutcome> DescribeTopTableStatOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTopTableStatRequest&, DescribeTopTableStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopTableStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTrendStatResponse> DescribeTrendStatOutcome;
+                typedef std::future<DescribeTrendStatOutcome> DescribeTrendStatOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::DescribeTrendStatRequest&, DescribeTrendStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrendStatAsyncHandler;
                 typedef Outcome<Core::Error, Model::DryRunDIOfflineTaskResponse> DryRunDIOfflineTaskOutcome;
                 typedef std::future<DryRunDIOfflineTaskOutcome> DryRunDIOfflineTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::DryRunDIOfflineTaskRequest&, DryRunDIOfflineTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DryRunDIOfflineTaskAsyncHandler;
@@ -650,6 +902,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDataSourceResponse> ModifyDataSourceOutcome;
                 typedef std::future<ModifyDataSourceOutcome> ModifyDataSourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyDataSourceRequest&, ModifyDataSourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDataSourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDimensionWeightResponse> ModifyDimensionWeightOutcome;
+                typedef std::future<ModifyDimensionWeightOutcome> ModifyDimensionWeightOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyDimensionWeightRequest&, ModifyDimensionWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDimensionWeightAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyExecStrategyResponse> ModifyExecStrategyOutcome;
+                typedef std::future<ModifyExecStrategyOutcome> ModifyExecStrategyOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyExecStrategyRequest&, ModifyExecStrategyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExecStrategyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyFolderResponse> ModifyFolderOutcome;
                 typedef std::future<ModifyFolderOutcome> ModifyFolderOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyFolderRequest&, ModifyFolderOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyFolderAsyncHandler;
@@ -659,6 +917,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyIntegrationTaskResponse> ModifyIntegrationTaskOutcome;
                 typedef std::future<ModifyIntegrationTaskOutcome> ModifyIntegrationTaskOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyIntegrationTaskRequest&, ModifyIntegrationTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIntegrationTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyMonitorStatusResponse> ModifyMonitorStatusOutcome;
+                typedef std::future<ModifyMonitorStatusOutcome> ModifyMonitorStatusOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyMonitorStatusRequest&, ModifyMonitorStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMonitorStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRuleResponse> ModifyRuleOutcome;
+                typedef std::future<ModifyRuleOutcome> ModifyRuleOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyRuleRequest&, ModifyRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRuleGroupSubscriptionResponse> ModifyRuleGroupSubscriptionOutcome;
+                typedef std::future<ModifyRuleGroupSubscriptionOutcome> ModifyRuleGroupSubscriptionOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyRuleGroupSubscriptionRequest&, ModifyRuleGroupSubscriptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleGroupSubscriptionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRuleTemplateResponse> ModifyRuleTemplateOutcome;
+                typedef std::future<ModifyRuleTemplateOutcome> ModifyRuleTemplateOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::ModifyRuleTemplateRequest&, ModifyRuleTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRuleTemplateAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTaskAlarmRegularResponse> ModifyTaskAlarmRegularOutcome;
                 typedef std::future<ModifyTaskAlarmRegularOutcome> ModifyTaskAlarmRegularOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::ModifyTaskAlarmRegularRequest&, ModifyTaskAlarmRegularOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTaskAlarmRegularAsyncHandler;
@@ -880,6 +1150,24 @@ namespace TencentCloud
                 CheckAlarmRegularNameExistOutcomeCallable CheckAlarmRegularNameExistCallable(const Model::CheckAlarmRegularNameExistRequest& request);
 
                 /**
+                 *检查规则名称是否重复
+                 * @param req CheckDuplicateRuleNameRequest
+                 * @return CheckDuplicateRuleNameOutcome
+                 */
+                CheckDuplicateRuleNameOutcome CheckDuplicateRuleName(const Model::CheckDuplicateRuleNameRequest &request);
+                void CheckDuplicateRuleNameAsync(const Model::CheckDuplicateRuleNameRequest& request, const CheckDuplicateRuleNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckDuplicateRuleNameOutcomeCallable CheckDuplicateRuleNameCallable(const Model::CheckDuplicateRuleNameRequest& request);
+
+                /**
+                 *检查规则模板名称是否重复
+                 * @param req CheckDuplicateTemplateNameRequest
+                 * @return CheckDuplicateTemplateNameOutcome
+                 */
+                CheckDuplicateTemplateNameOutcome CheckDuplicateTemplateName(const Model::CheckDuplicateTemplateNameRequest &request);
+                void CheckDuplicateTemplateNameAsync(const Model::CheckDuplicateTemplateNameRequest& request, const CheckDuplicateTemplateNameAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckDuplicateTemplateNameOutcomeCallable CheckDuplicateTemplateNameCallable(const Model::CheckDuplicateTemplateNameRequest& request);
+
+                /**
                  *判断集成节点名称是否存在
                  * @param req CheckIntegrationNodeNameExistsRequest
                  * @return CheckIntegrationNodeNameExistsOutcome
@@ -907,6 +1195,15 @@ namespace TencentCloud
                 CheckTaskNameExistOutcomeCallable CheckTaskNameExistCallable(const Model::CheckTaskNameExistRequest& request);
 
                 /**
+                 *提交数据导出任务
+                 * @param req CommitExportTaskRequest
+                 * @return CommitExportTaskOutcome
+                 */
+                CommitExportTaskOutcome CommitExportTask(const Model::CommitExportTaskRequest &request);
+                void CommitExportTaskAsync(const Model::CommitExportTaskRequest& request, const CommitExportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CommitExportTaskOutcomeCallable CommitExportTaskCallable(const Model::CommitExportTaskRequest& request);
+
+                /**
                  *提交集成任务
                  * @param req CommitIntegrationTaskRequest
                  * @return CommitIntegrationTaskOutcome
@@ -914,6 +1211,24 @@ namespace TencentCloud
                 CommitIntegrationTaskOutcome CommitIntegrationTask(const Model::CommitIntegrationTaskRequest &request);
                 void CommitIntegrationTaskAsync(const Model::CommitIntegrationTaskRequest& request, const CommitIntegrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CommitIntegrationTaskOutcomeCallable CommitIntegrationTaskCallable(const Model::CommitIntegrationTaskRequest& request);
+
+                /**
+                 *Runner 规则检测结果上报
+                 * @param req CommitRuleGroupExecResultRequest
+                 * @return CommitRuleGroupExecResultOutcome
+                 */
+                CommitRuleGroupExecResultOutcome CommitRuleGroupExecResult(const Model::CommitRuleGroupExecResultRequest &request);
+                void CommitRuleGroupExecResultAsync(const Model::CommitRuleGroupExecResultRequest& request, const CommitRuleGroupExecResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CommitRuleGroupExecResultOutcomeCallable CommitRuleGroupExecResultCallable(const Model::CommitRuleGroupExecResultRequest& request);
+
+                /**
+                 *提交规则组运行任务接口
+                 * @param req CommitRuleGroupTaskRequest
+                 * @return CommitRuleGroupTaskOutcome
+                 */
+                CommitRuleGroupTaskOutcome CommitRuleGroupTask(const Model::CommitRuleGroupTaskRequest &request);
+                void CommitRuleGroupTaskAsync(const Model::CommitRuleGroupTaskRequest& request, const CommitRuleGroupTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CommitRuleGroupTaskOutcomeCallable CommitRuleGroupTaskCallable(const Model::CommitRuleGroupTaskRequest& request);
 
                 /**
                  * 创建用户自定义函数
@@ -1006,6 +1321,24 @@ namespace TencentCloud
                 CreateOrUpdateResourceOutcome CreateOrUpdateResource(const Model::CreateOrUpdateResourceRequest &request);
                 void CreateOrUpdateResourceAsync(const Model::CreateOrUpdateResourceRequest& request, const CreateOrUpdateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOrUpdateResourceOutcomeCallable CreateOrUpdateResourceCallable(const Model::CreateOrUpdateResourceRequest& request);
+
+                /**
+                 *创建质量规则接口
+                 * @param req CreateRuleRequest
+                 * @return CreateRuleOutcome
+                 */
+                CreateRuleOutcome CreateRule(const Model::CreateRuleRequest &request);
+                void CreateRuleAsync(const Model::CreateRuleRequest& request, const CreateRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRuleOutcomeCallable CreateRuleCallable(const Model::CreateRuleRequest& request);
+
+                /**
+                 *创建规则模版
+                 * @param req CreateRuleTemplateRequest
+                 * @return CreateRuleTemplateOutcome
+                 */
+                CreateRuleTemplateOutcome CreateRuleTemplate(const Model::CreateRuleTemplateRequest &request);
+                void CreateRuleTemplateAsync(const Model::CreateRuleTemplateRequest& request, const CreateRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRuleTemplateOutcomeCallable CreateRuleTemplateCallable(const Model::CreateRuleTemplateRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -1111,6 +1444,24 @@ namespace TencentCloud
                 DeleteResourceOutcomeCallable DeleteResourceCallable(const Model::DeleteResourceRequest& request);
 
                 /**
+                 *删除质量规则接口
+                 * @param req DeleteRuleRequest
+                 * @return DeleteRuleOutcome
+                 */
+                DeleteRuleOutcome DeleteRule(const Model::DeleteRuleRequest &request);
+                void DeleteRuleAsync(const Model::DeleteRuleRequest& request, const DeleteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRuleOutcomeCallable DeleteRuleCallable(const Model::DeleteRuleRequest& request);
+
+                /**
+                 *删除规则模版
+                 * @param req DeleteRuleTemplateRequest
+                 * @return DeleteRuleTemplateOutcome
+                 */
+                DeleteRuleTemplateOutcome DeleteRuleTemplate(const Model::DeleteRuleTemplateRequest &request);
+                void DeleteRuleTemplateAsync(const Model::DeleteRuleTemplateRequest& request, const DeleteRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRuleTemplateOutcomeCallable DeleteRuleTemplateCallable(const Model::DeleteRuleTemplateRequest& request);
+
+                /**
                  *删除任务告警规则
                  * @param req DeleteTaskAlarmRegularRequest
                  * @return DeleteTaskAlarmRegularOutcome
@@ -1155,6 +1506,33 @@ namespace TencentCloud
                 DescribeClusterNamespaceListOutcome DescribeClusterNamespaceList(const Model::DescribeClusterNamespaceListRequest &request);
                 void DescribeClusterNamespaceListAsync(const Model::DescribeClusterNamespaceListRequest& request, const DescribeClusterNamespaceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterNamespaceListOutcomeCallable DescribeClusterNamespaceListCallable(const Model::DescribeClusterNamespaceListRequest& request);
+
+                /**
+                 *查询数据来源列表
+                 * @param req DescribeDataBasesRequest
+                 * @return DescribeDataBasesOutcome
+                 */
+                DescribeDataBasesOutcome DescribeDataBases(const Model::DescribeDataBasesRequest &request);
+                void DescribeDataBasesAsync(const Model::DescribeDataBasesRequest& request, const DescribeDataBasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataBasesOutcomeCallable DescribeDataBasesCallable(const Model::DescribeDataBasesRequest& request);
+
+                /**
+                 *数据质量的概览页面数据监测情况接口
+                 * @param req DescribeDataCheckStatRequest
+                 * @return DescribeDataCheckStatOutcome
+                 */
+                DescribeDataCheckStatOutcome DescribeDataCheckStat(const Model::DescribeDataCheckStatRequest &request);
+                void DescribeDataCheckStatAsync(const Model::DescribeDataCheckStatRequest& request, const DescribeDataCheckStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataCheckStatOutcomeCallable DescribeDataCheckStatCallable(const Model::DescribeDataCheckStatRequest& request);
+
+                /**
+                 *查询规则组数据对象列表
+                 * @param req DescribeDataObjectsRequest
+                 * @return DescribeDataObjectsOutcome
+                 */
+                DescribeDataObjectsOutcome DescribeDataObjects(const Model::DescribeDataObjectsRequest &request);
+                void DescribeDataObjectsAsync(const Model::DescribeDataObjectsRequest& request, const DescribeDataObjectsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataObjectsOutcomeCallable DescribeDataObjectsCallable(const Model::DescribeDataObjectsRequest& request);
 
                 /**
                  *获取数据源信息-数据源分页列表
@@ -1222,6 +1600,24 @@ namespace TencentCloud
                 DescribeDependTasksNewOutcome DescribeDependTasksNew(const Model::DescribeDependTasksNewRequest &request);
                 void DescribeDependTasksNewAsync(const Model::DescribeDependTasksNewRequest& request, const DescribeDependTasksNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDependTasksNewOutcomeCallable DescribeDependTasksNewCallable(const Model::DescribeDependTasksNewRequest& request);
+
+                /**
+                 *质量报告-查询质量评分
+                 * @param req DescribeDimensionScoreRequest
+                 * @return DescribeDimensionScoreOutcome
+                 */
+                DescribeDimensionScoreOutcome DescribeDimensionScore(const Model::DescribeDimensionScoreRequest &request);
+                void DescribeDimensionScoreAsync(const Model::DescribeDimensionScoreRequest& request, const DescribeDimensionScoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDimensionScoreOutcomeCallable DescribeDimensionScoreCallable(const Model::DescribeDimensionScoreRequest& request);
+
+                /**
+                 *查询规则组执行策略
+                 * @param req DescribeExecStrategyRequest
+                 * @return DescribeExecStrategyOutcome
+                 */
+                DescribeExecStrategyOutcome DescribeExecStrategy(const Model::DescribeExecStrategyRequest &request);
+                void DescribeExecStrategyAsync(const Model::DescribeExecStrategyRequest& request, const DescribeExecStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExecStrategyOutcomeCallable DescribeExecStrategyCallable(const Model::DescribeExecStrategyRequest& request);
 
                 /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
@@ -1344,6 +1740,15 @@ namespace TencentCloud
                 DescribeInstanceLogsOutcomeCallable DescribeInstanceLogsCallable(const Model::DescribeInstanceLogsRequest& request);
 
                 /**
+                 *数据质量，查询调度任务的实例列表
+                 * @param req DescribeInstancesRequest
+                 * @return DescribeInstancesOutcome
+                 */
+                DescribeInstancesOutcome DescribeInstances(const Model::DescribeInstancesRequest &request);
+                void DescribeInstancesAsync(const Model::DescribeInstancesRequest& request, const DescribeInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstancesOutcomeCallable DescribeInstancesCallable(const Model::DescribeInstancesRequest& request);
+
+                /**
                  *查询集成节点
                  * @param req DescribeIntegrationNodeRequest
                  * @return DescribeIntegrationNodeOutcome
@@ -1443,6 +1848,15 @@ namespace TencentCloud
                 DescribeKafkaTopicInfoOutcomeCallable DescribeKafkaTopicInfoCallable(const Model::DescribeKafkaTopicInfoRequest& request);
 
                 /**
+                 *分页查询质量监控组
+                 * @param req DescribeMonitorsByPageRequest
+                 * @return DescribeMonitorsByPageOutcome
+                 */
+                DescribeMonitorsByPageOutcome DescribeMonitorsByPage(const Model::DescribeMonitorsByPageRequest &request);
+                void DescribeMonitorsByPageAsync(const Model::DescribeMonitorsByPageRequest& request, const DescribeMonitorsByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeMonitorsByPageOutcomeCallable DescribeMonitorsByPageCallable(const Model::DescribeMonitorsByPageRequest& request);
+
+                /**
                  *获取离线任务长连接Token
                  * @param req DescribeOfflineTaskTokenRequest
                  * @return DescribeOfflineTaskTokenOutcome
@@ -1461,6 +1875,15 @@ namespace TencentCloud
                 DescribeOrganizationalFunctionsOutcomeCallable DescribeOrganizationalFunctionsCallable(const Model::DescribeOrganizationalFunctionsRequest& request);
 
                 /**
+                 *数据质量获取生产调度任务列表
+                 * @param req DescribeProdTasksRequest
+                 * @return DescribeProdTasksOutcome
+                 */
+                DescribeProdTasksOutcome DescribeProdTasks(const Model::DescribeProdTasksRequest &request);
+                void DescribeProdTasksAsync(const Model::DescribeProdTasksRequest& request, const DescribeProdTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProdTasksOutcomeCallable DescribeProdTasksCallable(const Model::DescribeProdTasksRequest& request);
+
+                /**
                  *获取项目信息
                  * @param req DescribeProjectRequest
                  * @return DescribeProjectOutcome
@@ -1468,6 +1891,24 @@ namespace TencentCloud
                 DescribeProjectOutcome DescribeProject(const Model::DescribeProjectRequest &request);
                 void DescribeProjectAsync(const Model::DescribeProjectRequest& request, const DescribeProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProjectOutcomeCallable DescribeProjectCallable(const Model::DescribeProjectRequest& request);
+
+                /**
+                 *质量报告-质量评分
+                 * @param req DescribeQualityScoreRequest
+                 * @return DescribeQualityScoreOutcome
+                 */
+                DescribeQualityScoreOutcome DescribeQualityScore(const Model::DescribeQualityScoreRequest &request);
+                void DescribeQualityScoreAsync(const Model::DescribeQualityScoreRequest& request, const DescribeQualityScoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQualityScoreOutcomeCallable DescribeQualityScoreCallable(const Model::DescribeQualityScoreRequest& request);
+
+                /**
+                 *质量报告-质量分周期趋势
+                 * @param req DescribeQualityScoreTrendRequest
+                 * @return DescribeQualityScoreTrendOutcome
+                 */
+                DescribeQualityScoreTrendOutcome DescribeQualityScoreTrend(const Model::DescribeQualityScoreTrendRequest &request);
+                void DescribeQualityScoreTrendAsync(const Model::DescribeQualityScoreTrendRequest& request, const DescribeQualityScoreTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQualityScoreTrendOutcomeCallable DescribeQualityScoreTrendCallable(const Model::DescribeQualityScoreTrendRequest& request);
 
                 /**
                  *查询实时任务实例节点信息
@@ -1515,6 +1956,216 @@ namespace TencentCloud
                 DescribeResourceManagePathTreesOutcomeCallable DescribeResourceManagePathTreesCallable(const Model::DescribeResourceManagePathTreesRequest& request);
 
                 /**
+                 *查询规则详情
+                 * @param req DescribeRuleRequest
+                 * @return DescribeRuleOutcome
+                 */
+                DescribeRuleOutcome DescribeRule(const Model::DescribeRuleRequest &request);
+                void DescribeRuleAsync(const Model::DescribeRuleRequest& request, const DescribeRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleOutcomeCallable DescribeRuleCallable(const Model::DescribeRuleRequest& request);
+
+                /**
+                 *查询质量规则数据源
+                 * @param req DescribeRuleDataSourcesRequest
+                 * @return DescribeRuleDataSourcesOutcome
+                 */
+                DescribeRuleDataSourcesOutcome DescribeRuleDataSources(const Model::DescribeRuleDataSourcesRequest &request);
+                void DescribeRuleDataSourcesAsync(const Model::DescribeRuleDataSourcesRequest& request, const DescribeRuleDataSourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleDataSourcesOutcomeCallable DescribeRuleDataSourcesCallable(const Model::DescribeRuleDataSourcesRequest& request);
+
+                /**
+                 *数据质量概览页面触发维度分布统计接口
+                 * @param req DescribeRuleDimStatRequest
+                 * @return DescribeRuleDimStatOutcome
+                 */
+                DescribeRuleDimStatOutcome DescribeRuleDimStat(const Model::DescribeRuleDimStatRequest &request);
+                void DescribeRuleDimStatAsync(const Model::DescribeRuleDimStatRequest& request, const DescribeRuleDimStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleDimStatOutcomeCallable DescribeRuleDimStatCallable(const Model::DescribeRuleDimStatRequest& request);
+
+                /**
+                 *查询规则执行结果详情
+                 * @param req DescribeRuleExecDetailRequest
+                 * @return DescribeRuleExecDetailOutcome
+                 */
+                DescribeRuleExecDetailOutcome DescribeRuleExecDetail(const Model::DescribeRuleExecDetailRequest &request);
+                void DescribeRuleExecDetailAsync(const Model::DescribeRuleExecDetailRequest& request, const DescribeRuleExecDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleExecDetailOutcomeCallable DescribeRuleExecDetailCallable(const Model::DescribeRuleExecDetailRequest& request);
+
+                /**
+                 *查询规则执行导出结果
+                 * @param req DescribeRuleExecExportResultRequest
+                 * @return DescribeRuleExecExportResultOutcome
+                 */
+                DescribeRuleExecExportResultOutcome DescribeRuleExecExportResult(const Model::DescribeRuleExecExportResultRequest &request);
+                void DescribeRuleExecExportResultAsync(const Model::DescribeRuleExecExportResultRequest& request, const DescribeRuleExecExportResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleExecExportResultOutcomeCallable DescribeRuleExecExportResultCallable(const Model::DescribeRuleExecExportResultRequest& request);
+
+                /**
+                 *查询规则执行历史， 最近30条
+                 * @param req DescribeRuleExecHistoryRequest
+                 * @return DescribeRuleExecHistoryOutcome
+                 */
+                DescribeRuleExecHistoryOutcome DescribeRuleExecHistory(const Model::DescribeRuleExecHistoryRequest &request);
+                void DescribeRuleExecHistoryAsync(const Model::DescribeRuleExecHistoryRequest& request, const DescribeRuleExecHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleExecHistoryOutcomeCallable DescribeRuleExecHistoryCallable(const Model::DescribeRuleExecHistoryRequest& request);
+
+                /**
+                 *规则执行日志查询
+                 * @param req DescribeRuleExecLogRequest
+                 * @return DescribeRuleExecLogOutcome
+                 */
+                DescribeRuleExecLogOutcome DescribeRuleExecLog(const Model::DescribeRuleExecLogRequest &request);
+                void DescribeRuleExecLogAsync(const Model::DescribeRuleExecLogRequest& request, const DescribeRuleExecLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleExecLogOutcomeCallable DescribeRuleExecLogCallable(const Model::DescribeRuleExecLogRequest& request);
+
+                /**
+                 *规则执行结果列表查询
+                 * @param req DescribeRuleExecResultsRequest
+                 * @return DescribeRuleExecResultsOutcome
+                 */
+                DescribeRuleExecResultsOutcome DescribeRuleExecResults(const Model::DescribeRuleExecResultsRequest &request);
+                void DescribeRuleExecResultsAsync(const Model::DescribeRuleExecResultsRequest& request, const DescribeRuleExecResultsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleExecResultsOutcomeCallable DescribeRuleExecResultsCallable(const Model::DescribeRuleExecResultsRequest& request);
+
+                /**
+                 *分页查询规则执行结果列表
+                 * @param req DescribeRuleExecResultsByPageRequest
+                 * @return DescribeRuleExecResultsByPageOutcome
+                 */
+                DescribeRuleExecResultsByPageOutcome DescribeRuleExecResultsByPage(const Model::DescribeRuleExecResultsByPageRequest &request);
+                void DescribeRuleExecResultsByPageAsync(const Model::DescribeRuleExecResultsByPageRequest& request, const DescribeRuleExecResultsByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleExecResultsByPageOutcomeCallable DescribeRuleExecResultsByPageCallable(const Model::DescribeRuleExecResultsByPageRequest& request);
+
+                /**
+                 *数据质量概览页面规则运行情况接口
+                 * @param req DescribeRuleExecStatRequest
+                 * @return DescribeRuleExecStatOutcome
+                 */
+                DescribeRuleExecStatOutcome DescribeRuleExecStat(const Model::DescribeRuleExecStatRequest &request);
+                void DescribeRuleExecStatAsync(const Model::DescribeRuleExecStatRequest& request, const DescribeRuleExecStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleExecStatOutcomeCallable DescribeRuleExecStatCallable(const Model::DescribeRuleExecStatRequest& request);
+
+                /**
+                 *查询规则组详情接口
+                 * @param req DescribeRuleGroupRequest
+                 * @return DescribeRuleGroupOutcome
+                 */
+                DescribeRuleGroupOutcome DescribeRuleGroup(const Model::DescribeRuleGroupRequest &request);
+                void DescribeRuleGroupAsync(const Model::DescribeRuleGroupRequest& request, const DescribeRuleGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleGroupOutcomeCallable DescribeRuleGroupCallable(const Model::DescribeRuleGroupRequest& request);
+
+                /**
+                 *规则组执行结果分页查询接口
+                 * @param req DescribeRuleGroupExecResultsByPageRequest
+                 * @return DescribeRuleGroupExecResultsByPageOutcome
+                 */
+                DescribeRuleGroupExecResultsByPageOutcome DescribeRuleGroupExecResultsByPage(const Model::DescribeRuleGroupExecResultsByPageRequest &request);
+                void DescribeRuleGroupExecResultsByPageAsync(const Model::DescribeRuleGroupExecResultsByPageRequest& request, const DescribeRuleGroupExecResultsByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleGroupExecResultsByPageOutcomeCallable DescribeRuleGroupExecResultsByPageCallable(const Model::DescribeRuleGroupExecResultsByPageRequest& request);
+
+                /**
+                 *规则组执行结果分页查询接口不带鉴权
+                 * @param req DescribeRuleGroupExecResultsByPageWithoutAuthRequest
+                 * @return DescribeRuleGroupExecResultsByPageWithoutAuthOutcome
+                 */
+                DescribeRuleGroupExecResultsByPageWithoutAuthOutcome DescribeRuleGroupExecResultsByPageWithoutAuth(const Model::DescribeRuleGroupExecResultsByPageWithoutAuthRequest &request);
+                void DescribeRuleGroupExecResultsByPageWithoutAuthAsync(const Model::DescribeRuleGroupExecResultsByPageWithoutAuthRequest& request, const DescribeRuleGroupExecResultsByPageWithoutAuthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleGroupExecResultsByPageWithoutAuthOutcomeCallable DescribeRuleGroupExecResultsByPageWithoutAuthCallable(const Model::DescribeRuleGroupExecResultsByPageWithoutAuthRequest& request);
+
+                /**
+                 *查询规则组订阅信息
+                 * @param req DescribeRuleGroupSubscriptionRequest
+                 * @return DescribeRuleGroupSubscriptionOutcome
+                 */
+                DescribeRuleGroupSubscriptionOutcome DescribeRuleGroupSubscription(const Model::DescribeRuleGroupSubscriptionRequest &request);
+                void DescribeRuleGroupSubscriptionAsync(const Model::DescribeRuleGroupSubscriptionRequest& request, const DescribeRuleGroupSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleGroupSubscriptionOutcomeCallable DescribeRuleGroupSubscriptionCallable(const Model::DescribeRuleGroupSubscriptionRequest& request);
+
+                /**
+                 *查询表绑定执行规则组信息
+                 * @param req DescribeRuleGroupTableRequest
+                 * @return DescribeRuleGroupTableOutcome
+                 */
+                DescribeRuleGroupTableOutcome DescribeRuleGroupTable(const Model::DescribeRuleGroupTableRequest &request);
+                void DescribeRuleGroupTableAsync(const Model::DescribeRuleGroupTableRequest& request, const DescribeRuleGroupTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleGroupTableOutcomeCallable DescribeRuleGroupTableCallable(const Model::DescribeRuleGroupTableRequest& request);
+
+                /**
+                 *【过滤条件】
+{表名称TableName,支持模糊匹配}       {表负责人TableOwnerName,支持模糊匹配}      {监控方式MonitorTypes，1.未配置 2.关联生产调度 3.离线周期检测,支持多选}  {订阅人ReceiverUin}
+【必要字段】
+{数据来源DatasourceId}
+                 * @param req DescribeRuleGroupsByPageRequest
+                 * @return DescribeRuleGroupsByPageOutcome
+                 */
+                DescribeRuleGroupsByPageOutcome DescribeRuleGroupsByPage(const Model::DescribeRuleGroupsByPageRequest &request);
+                void DescribeRuleGroupsByPageAsync(const Model::DescribeRuleGroupsByPageRequest& request, const DescribeRuleGroupsByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleGroupsByPageOutcomeCallable DescribeRuleGroupsByPageCallable(const Model::DescribeRuleGroupsByPageRequest& request);
+
+                /**
+                 *过滤条件【必要字段】{ruleId}
+                 * @param req DescribeRuleHistoryByPageRequest
+                 * @return DescribeRuleHistoryByPageOutcome
+                 */
+                DescribeRuleHistoryByPageOutcome DescribeRuleHistoryByPage(const Model::DescribeRuleHistoryByPageRequest &request);
+                void DescribeRuleHistoryByPageAsync(const Model::DescribeRuleHistoryByPageRequest& request, const DescribeRuleHistoryByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleHistoryByPageOutcomeCallable DescribeRuleHistoryByPageCallable(const Model::DescribeRuleHistoryByPageRequest& request);
+
+                /**
+                 *获取表列表
+                 * @param req DescribeRuleTablesByPageRequest
+                 * @return DescribeRuleTablesByPageOutcome
+                 */
+                DescribeRuleTablesByPageOutcome DescribeRuleTablesByPage(const Model::DescribeRuleTablesByPageRequest &request);
+                void DescribeRuleTablesByPageAsync(const Model::DescribeRuleTablesByPageRequest& request, const DescribeRuleTablesByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleTablesByPageOutcomeCallable DescribeRuleTablesByPageCallable(const Model::DescribeRuleTablesByPageRequest& request);
+
+                /**
+                 *查询模板详情
+                 * @param req DescribeRuleTemplateRequest
+                 * @return DescribeRuleTemplateOutcome
+                 */
+                DescribeRuleTemplateOutcome DescribeRuleTemplate(const Model::DescribeRuleTemplateRequest &request);
+                void DescribeRuleTemplateAsync(const Model::DescribeRuleTemplateRequest& request, const DescribeRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleTemplateOutcomeCallable DescribeRuleTemplateCallable(const Model::DescribeRuleTemplateRequest& request);
+
+                /**
+                 *查询规则模版列表
+                 * @param req DescribeRuleTemplatesRequest
+                 * @return DescribeRuleTemplatesOutcome
+                 */
+                DescribeRuleTemplatesOutcome DescribeRuleTemplates(const Model::DescribeRuleTemplatesRequest &request);
+                void DescribeRuleTemplatesAsync(const Model::DescribeRuleTemplatesRequest& request, const DescribeRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleTemplatesOutcomeCallable DescribeRuleTemplatesCallable(const Model::DescribeRuleTemplatesRequest& request);
+
+                /**
+                 *过滤条件】 {模版名称Name,支持模糊匹配} {模版类型type，1.系统模版 2.自定义模版} {质量检测维度QualityDims, 1.准确性 2.唯一性 3.完整性 4.一致性 5.及时性 6.有效性} 【排序字段】 { 引用数排序类型CitationOrderType，根据引用数量排序 ASC DESC}
+                 * @param req DescribeRuleTemplatesByPageRequest
+                 * @return DescribeRuleTemplatesByPageOutcome
+                 */
+                DescribeRuleTemplatesByPageOutcome DescribeRuleTemplatesByPage(const Model::DescribeRuleTemplatesByPageRequest &request);
+                void DescribeRuleTemplatesByPageAsync(const Model::DescribeRuleTemplatesByPageRequest& request, const DescribeRuleTemplatesByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleTemplatesByPageOutcomeCallable DescribeRuleTemplatesByPageCallable(const Model::DescribeRuleTemplatesByPageRequest& request);
+
+                /**
+                 *查询质量规则列表
+                 * @param req DescribeRulesRequest
+                 * @return DescribeRulesOutcome
+                 */
+                DescribeRulesOutcome DescribeRules(const Model::DescribeRulesRequest &request);
+                void DescribeRulesAsync(const Model::DescribeRulesRequest& request, const DescribeRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRulesOutcomeCallable DescribeRulesCallable(const Model::DescribeRulesRequest& request);
+
+                /**
+                 *分页查询质量规则
+                 * @param req DescribeRulesByPageRequest
+                 * @return DescribeRulesByPageOutcome
+                 */
+                DescribeRulesByPageOutcome DescribeRulesByPage(const Model::DescribeRulesByPageRequest &request);
+                void DescribeRulesByPageAsync(const Model::DescribeRulesByPageRequest& request, const DescribeRulesByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRulesByPageOutcomeCallable DescribeRulesByPageCallable(const Model::DescribeRulesByPageRequest& request);
+
+                /**
                  *获取数据标准规则详情
                  * @param req DescribeStandardRuleDetailInfoListRequest
                  * @return DescribeStandardRuleDetailInfoListOutcome
@@ -1542,6 +2193,15 @@ namespace TencentCloud
                 DescribeTableInfoListOutcomeCallable DescribeTableInfoListCallable(const Model::DescribeTableInfoListRequest& request);
 
                 /**
+                 *质量报告-查询表质量详情
+                 * @param req DescribeTableQualityDetailsRequest
+                 * @return DescribeTableQualityDetailsOutcome
+                 */
+                DescribeTableQualityDetailsOutcome DescribeTableQualityDetails(const Model::DescribeTableQualityDetailsRequest &request);
+                void DescribeTableQualityDetailsAsync(const Model::DescribeTableQualityDetailsRequest& request, const DescribeTableQualityDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableQualityDetailsOutcomeCallable DescribeTableQualityDetailsCallable(const Model::DescribeTableQualityDetailsRequest& request);
+
+                /**
                  *获取表schema信息
                  * @param req DescribeTableSchemaInfoRequest
                  * @return DescribeTableSchemaInfoOutcome
@@ -1549,6 +2209,15 @@ namespace TencentCloud
                 DescribeTableSchemaInfoOutcome DescribeTableSchemaInfo(const Model::DescribeTableSchemaInfoRequest &request);
                 void DescribeTableSchemaInfoAsync(const Model::DescribeTableSchemaInfoRequest& request, const DescribeTableSchemaInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTableSchemaInfoOutcomeCallable DescribeTableSchemaInfoCallable(const Model::DescribeTableSchemaInfoRequest& request);
+
+                /**
+                 *查询表得分趋势
+                 * @param req DescribeTableScoreTrendRequest
+                 * @return DescribeTableScoreTrendOutcome
+                 */
+                DescribeTableScoreTrendOutcome DescribeTableScoreTrend(const Model::DescribeTableScoreTrendRequest &request);
+                void DescribeTableScoreTrendAsync(const Model::DescribeTableScoreTrendRequest& request, const DescribeTableScoreTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTableScoreTrendOutcomeCallable DescribeTableScoreTrendCallable(const Model::DescribeTableScoreTrendRequest& request);
 
                 /**
                  *查询任务告警规则列表
@@ -1642,6 +2311,42 @@ namespace TencentCloud
                 DescribeTasksByPageOutcome DescribeTasksByPage(const Model::DescribeTasksByPageRequest &request);
                 void DescribeTasksByPageAsync(const Model::DescribeTasksByPageRequest& request, const DescribeTasksByPageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTasksByPageOutcomeCallable DescribeTasksByPageCallable(const Model::DescribeTasksByPageRequest& request);
+
+                /**
+                 *查询规则模版维度分布情况
+                 * @param req DescribeTemplateDimCountRequest
+                 * @return DescribeTemplateDimCountOutcome
+                 */
+                DescribeTemplateDimCountOutcome DescribeTemplateDimCount(const Model::DescribeTemplateDimCountRequest &request);
+                void DescribeTemplateDimCountAsync(const Model::DescribeTemplateDimCountRequest& request, const DescribeTemplateDimCountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTemplateDimCountOutcomeCallable DescribeTemplateDimCountCallable(const Model::DescribeTemplateDimCountRequest& request);
+
+                /**
+                 *查询规则模版操作记录
+                 * @param req DescribeTemplateHistoryRequest
+                 * @return DescribeTemplateHistoryOutcome
+                 */
+                DescribeTemplateHistoryOutcome DescribeTemplateHistory(const Model::DescribeTemplateHistoryRequest &request);
+                void DescribeTemplateHistoryAsync(const Model::DescribeTemplateHistoryRequest& request, const DescribeTemplateHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTemplateHistoryOutcomeCallable DescribeTemplateHistoryCallable(const Model::DescribeTemplateHistoryRequest& request);
+
+                /**
+                 *数据质量概览页面表排行接口
+                 * @param req DescribeTopTableStatRequest
+                 * @return DescribeTopTableStatOutcome
+                 */
+                DescribeTopTableStatOutcome DescribeTopTableStat(const Model::DescribeTopTableStatRequest &request);
+                void DescribeTopTableStatAsync(const Model::DescribeTopTableStatRequest& request, const DescribeTopTableStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTopTableStatOutcomeCallable DescribeTopTableStatCallable(const Model::DescribeTopTableStatRequest& request);
+
+                /**
+                 *数据质量概览页面趋势变化接口
+                 * @param req DescribeTrendStatRequest
+                 * @return DescribeTrendStatOutcome
+                 */
+                DescribeTrendStatOutcome DescribeTrendStat(const Model::DescribeTrendStatRequest &request);
+                void DescribeTrendStatAsync(const Model::DescribeTrendStatRequest& request, const DescribeTrendStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTrendStatOutcomeCallable DescribeTrendStatCallable(const Model::DescribeTrendStatRequest& request);
 
                 /**
                  *调试运行集成任务
@@ -1771,6 +2476,24 @@ namespace TencentCloud
                 ModifyDataSourceOutcomeCallable ModifyDataSourceCallable(const Model::ModifyDataSourceRequest& request);
 
                 /**
+                 *质量报告-修改维度权限
+                 * @param req ModifyDimensionWeightRequest
+                 * @return ModifyDimensionWeightOutcome
+                 */
+                ModifyDimensionWeightOutcome ModifyDimensionWeight(const Model::ModifyDimensionWeightRequest &request);
+                void ModifyDimensionWeightAsync(const Model::ModifyDimensionWeightRequest& request, const ModifyDimensionWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDimensionWeightOutcomeCallable ModifyDimensionWeightCallable(const Model::ModifyDimensionWeightRequest& request);
+
+                /**
+                 *更新规则组执行策略
+                 * @param req ModifyExecStrategyRequest
+                 * @return ModifyExecStrategyOutcome
+                 */
+                ModifyExecStrategyOutcome ModifyExecStrategy(const Model::ModifyExecStrategyRequest &request);
+                void ModifyExecStrategyAsync(const Model::ModifyExecStrategyRequest& request, const ModifyExecStrategyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyExecStrategyOutcomeCallable ModifyExecStrategyCallable(const Model::ModifyExecStrategyRequest& request);
+
+                /**
                  *<p style="color:red;">[注意：该Beta版本只满足广州区部分白名单客户使用]</p>
 文件夹更新
                  * @param req ModifyFolderRequest
@@ -1797,6 +2520,42 @@ namespace TencentCloud
                 ModifyIntegrationTaskOutcome ModifyIntegrationTask(const Model::ModifyIntegrationTaskRequest &request);
                 void ModifyIntegrationTaskAsync(const Model::ModifyIntegrationTaskRequest& request, const ModifyIntegrationTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyIntegrationTaskOutcomeCallable ModifyIntegrationTaskCallable(const Model::ModifyIntegrationTaskRequest& request);
+
+                /**
+                 *更新监控状态
+                 * @param req ModifyMonitorStatusRequest
+                 * @return ModifyMonitorStatusOutcome
+                 */
+                ModifyMonitorStatusOutcome ModifyMonitorStatus(const Model::ModifyMonitorStatusRequest &request);
+                void ModifyMonitorStatusAsync(const Model::ModifyMonitorStatusRequest& request, const ModifyMonitorStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyMonitorStatusOutcomeCallable ModifyMonitorStatusCallable(const Model::ModifyMonitorStatusRequest& request);
+
+                /**
+                 *更新质量规则接口
+                 * @param req ModifyRuleRequest
+                 * @return ModifyRuleOutcome
+                 */
+                ModifyRuleOutcome ModifyRule(const Model::ModifyRuleRequest &request);
+                void ModifyRuleAsync(const Model::ModifyRuleRequest& request, const ModifyRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRuleOutcomeCallable ModifyRuleCallable(const Model::ModifyRuleRequest& request);
+
+                /**
+                 *更新规则组订阅信息
+                 * @param req ModifyRuleGroupSubscriptionRequest
+                 * @return ModifyRuleGroupSubscriptionOutcome
+                 */
+                ModifyRuleGroupSubscriptionOutcome ModifyRuleGroupSubscription(const Model::ModifyRuleGroupSubscriptionRequest &request);
+                void ModifyRuleGroupSubscriptionAsync(const Model::ModifyRuleGroupSubscriptionRequest& request, const ModifyRuleGroupSubscriptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRuleGroupSubscriptionOutcomeCallable ModifyRuleGroupSubscriptionCallable(const Model::ModifyRuleGroupSubscriptionRequest& request);
+
+                /**
+                 *编辑规则模版
+                 * @param req ModifyRuleTemplateRequest
+                 * @return ModifyRuleTemplateOutcome
+                 */
+                ModifyRuleTemplateOutcome ModifyRuleTemplate(const Model::ModifyRuleTemplateRequest &request);
+                void ModifyRuleTemplateAsync(const Model::ModifyRuleTemplateRequest& request, const ModifyRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRuleTemplateOutcomeCallable ModifyRuleTemplateCallable(const Model::ModifyRuleTemplateRequest& request);
 
                 /**
                  *修改任务告警规则

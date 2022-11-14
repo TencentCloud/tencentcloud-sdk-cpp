@@ -37,6 +37,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/DescribeBindClustersResponse.h
   include/tencentcloud/tdmq/v20200217/model/BindCluster.h
   include/tencentcloud/tdmq/v20200217/model/ModifyClusterResponse.h
+  include/tencentcloud/tdmq/v20200217/model/VpcConfig.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQClusterRecentStats.h
   include/tencentcloud/tdmq/v20200217/model/RocketMQVipInstance.h
   include/tencentcloud/tdmq/v20200217/model/RabbitMQVipInstance.h
@@ -288,6 +289,7 @@ set(tdmq_src
   src/v20200217/model/DescribeBindClustersResponse.cpp
   src/v20200217/model/BindCluster.cpp
   src/v20200217/model/ModifyClusterResponse.cpp
+  src/v20200217/model/VpcConfig.cpp
   src/v20200217/model/RocketMQClusterRecentStats.cpp
   src/v20200217/model/RocketMQVipInstance.cpp
   src/v20200217/model/RabbitMQVipInstance.cpp

@@ -142,14 +142,14 @@ namespace TencentCloud
                     bool CallbackHasBeenSet() const;
 
                     /**
-                     * 获取语言，目前jp代表日语
-                     * @return Lang 语言，目前jp代表日语
+                     * 获取语种，不传默认中文
+                     * @return Lang 语种，不传默认中文
                      */
                     std::string GetLang() const;
 
                     /**
-                     * 设置语言，目前jp代表日语
-                     * @param Lang 语言，目前jp代表日语
+                     * 设置语种，不传默认中文
+                     * @param Lang 语种，不传默认中文
                      */
                     void SetLang(const std::string& _lang);
 
@@ -194,7 +194,7 @@ namespace TencentCloud
                     bool m_callbackHasBeenSet;
 
                     /**
-                     * 语言，目前jp代表日语
+                     * 语种，不传默认中文
                      */
                     std::string m_lang;
                     bool m_langHasBeenSet;

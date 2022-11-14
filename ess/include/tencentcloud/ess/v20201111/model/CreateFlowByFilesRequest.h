@@ -208,22 +208,22 @@ namespace TencentCloud
                     bool NeedPreviewHasBeenSet() const;
 
                     /**
-                     * 获取签署流程描述,最大长度1000个字符
-                     * @return FlowDescription 签署流程描述,最大长度1000个字符
+                     * 获取预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * @return PreviewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
                      */
-                    std::string GetFlowDescription() const;
+                    int64_t GetPreviewType() const;
 
                     /**
-                     * 设置签署流程描述,最大长度1000个字符
-                     * @param FlowDescription 签署流程描述,最大长度1000个字符
+                     * 设置预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * @param PreviewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
                      */
-                    void SetFlowDescription(const std::string& _flowDescription);
+                    void SetPreviewType(const int64_t& _previewType);
 
                     /**
-                     * 判断参数 FlowDescription 是否已赋值
-                     * @return FlowDescription 是否已赋值
+                     * 判断参数 PreviewType 是否已赋值
+                     * @return PreviewType 是否已赋值
                      */
-                    bool FlowDescriptionHasBeenSet() const;
+                    bool PreviewTypeHasBeenSet() const;
 
                     /**
                      * 获取签署流程的签署截止时间。
@@ -391,6 +391,24 @@ MobileCheck：手机号验证
                      */
                     bool ApproverVerifyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取签署流程描述,最大长度1000个字符
+                     * @return FlowDescription 签署流程描述,最大长度1000个字符
+                     */
+                    std::string GetFlowDescription() const;
+
+                    /**
+                     * 设置签署流程描述,最大长度1000个字符
+                     * @param FlowDescription 签署流程描述,最大长度1000个字符
+                     */
+                    void SetFlowDescription(const std::string& _flowDescription);
+
+                    /**
+                     * 判断参数 FlowDescription 是否已赋值
+                     * @return FlowDescription 是否已赋值
+                     */
+                    bool FlowDescriptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -446,10 +464,10 @@ MobileCheck：手机号验证
                     bool m_needPreviewHasBeenSet;
 
                     /**
-                     * 签署流程描述,最大长度1000个字符
+                     * 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
                      */
-                    std::string m_flowDescription;
-                    bool m_flowDescriptionHasBeenSet;
+                    int64_t m_previewType;
+                    bool m_previewTypeHasBeenSet;
 
                     /**
                      * 签署流程的签署截止时间。
@@ -502,6 +520,12 @@ MobileCheck：手机号验证
                      */
                     std::string m_approverVerifyType;
                     bool m_approverVerifyTypeHasBeenSet;
+
+                    /**
+                     * 签署流程描述,最大长度1000个字符
+                     */
+                    std::string m_flowDescription;
+                    bool m_flowDescriptionHasBeenSet;
 
                 };
             }

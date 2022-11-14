@@ -34,7 +34,8 @@ ImageSpriteTemplate::ImageSpriteTemplate() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_fillTypeHasBeenSet(false),
-    m_commentHasBeenSet(false)
+    m_commentHasBeenSet(false),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome ImageSpriteTemplate::Deserialize(const rapidjson::Value &val
         m_commentHasBeenSet = true;
     }
 
+    if (value.HasMember("Format") && !value["Format"].IsNull())
+    {
+        if (!value["Format"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageSpriteTemplate.Format` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_format = string(value["Format"].GetString());
+        m_formatHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void ImageSpriteTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Format";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void ImageSpriteTemplate::SetComment(const string& _comment)
 bool ImageSpriteTemplate::CommentHasBeenSet() const
 {
     return m_commentHasBeenSet;
+}
+
+string ImageSpriteTemplate::GetFormat() const
+{
+    return m_format;
+}
+
+void ImageSpriteTemplate::SetFormat(const string& _format)
+{
+    m_format = _format;
+    m_formatHasBeenSet = true;
+}
+
+bool ImageSpriteTemplate::FormatHasBeenSet() const
+{
+    return m_formatHasBeenSet;
 }
 

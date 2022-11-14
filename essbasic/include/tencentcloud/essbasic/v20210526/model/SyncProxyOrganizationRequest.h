@@ -121,6 +121,24 @@ namespace TencentCloud
                     bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
+                     * 获取渠道侧合作企业法人/负责人姓名
+                     * @return ProxyLegalName 渠道侧合作企业法人/负责人姓名
+                     */
+                    std::string GetProxyLegalName() const;
+
+                    /**
+                     * 设置渠道侧合作企业法人/负责人姓名
+                     * @param ProxyLegalName 渠道侧合作企业法人/负责人姓名
+                     */
+                    void SetProxyLegalName(const std::string& _proxyLegalName);
+
+                    /**
+                     * 判断参数 ProxyLegalName 是否已赋值
+                     * @return ProxyLegalName 是否已赋值
+                     */
+                    bool ProxyLegalNameHasBeenSet() const;
+
+                    /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
                      */
@@ -164,6 +182,12 @@ namespace TencentCloud
                      */
                     std::string m_uniformSocialCreditCode;
                     bool m_uniformSocialCreditCodeHasBeenSet;
+
+                    /**
+                     * 渠道侧合作企业法人/负责人姓名
+                     */
+                    std::string m_proxyLegalName;
+                    bool m_proxyLegalNameHasBeenSet;
 
                     /**
                      * 操作者的信息

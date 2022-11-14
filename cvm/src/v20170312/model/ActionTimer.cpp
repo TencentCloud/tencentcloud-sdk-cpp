@@ -21,9 +21,9 @@ using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
 ActionTimer::ActionTimer() :
-    m_externalsHasBeenSet(false),
     m_timerActionHasBeenSet(false),
-    m_actionTimeHasBeenSet(false)
+    m_actionTimeHasBeenSet(false),
+    m_externalsHasBeenSet(false)
 {
 }
 
@@ -31,23 +31,6 @@ CoreInternalOutcome ActionTimer::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Externals") && !value["Externals"].IsNull())
-    {
-        if (!value["Externals"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `ActionTimer.Externals` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_externals.Deserialize(value["Externals"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_externalsHasBeenSet = true;
-    }
 
     if (value.HasMember("TimerAction") && !value["TimerAction"].IsNull())
     {
@@ -69,21 +52,29 @@ CoreInternalOutcome ActionTimer::Deserialize(const rapidjson::Value &value)
         m_actionTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Externals") && !value["Externals"].IsNull())
+    {
+        if (!value["Externals"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ActionTimer.Externals` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_externals.Deserialize(value["Externals"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_externalsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void ActionTimer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_externalsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Externals";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_externals.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     if (m_timerActionHasBeenSet)
     {
@@ -101,24 +92,17 @@ void ActionTimer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_actionTime.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_externalsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Externals";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_externals.ToJsonObject(value[key.c_str()], allocator);
+    }
+
 }
 
-
-Externals ActionTimer::GetExternals() const
-{
-    return m_externals;
-}
-
-void ActionTimer::SetExternals(const Externals& _externals)
-{
-    m_externals = _externals;
-    m_externalsHasBeenSet = true;
-}
-
-bool ActionTimer::ExternalsHasBeenSet() const
-{
-    return m_externalsHasBeenSet;
-}
 
 string ActionTimer::GetTimerAction() const
 {
@@ -150,5 +134,21 @@ void ActionTimer::SetActionTime(const string& _actionTime)
 bool ActionTimer::ActionTimeHasBeenSet() const
 {
     return m_actionTimeHasBeenSet;
+}
+
+Externals ActionTimer::GetExternals() const
+{
+    return m_externals;
+}
+
+void ActionTimer::SetExternals(const Externals& _externals)
+{
+    m_externals = _externals;
+    m_externalsHasBeenSet = true;
+}
+
+bool ActionTimer::ExternalsHasBeenSet() const
+{
+    return m_externalsHasBeenSet;
 }
 

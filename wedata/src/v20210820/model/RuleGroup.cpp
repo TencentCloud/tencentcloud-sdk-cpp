@@ -1,0 +1,652 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#include <tencentcloud/wedata/v20210820/model/RuleGroup.h>
+
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Wedata::V20210820::Model;
+using namespace std;
+
+RuleGroup::RuleGroup() :
+    m_ruleGroupIdHasBeenSet(false),
+    m_datasourceIdHasBeenSet(false),
+    m_datasourceNameHasBeenSet(false),
+    m_datasourceTypeHasBeenSet(false),
+    m_monitorTypeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_tableNameHasBeenSet(false),
+    m_tableIdHasBeenSet(false),
+    m_tableOwnerNameHasBeenSet(false),
+    m_execStrategyHasBeenSet(false),
+    m_subscriptionHasBeenSet(false),
+    m_databaseIdHasBeenSet(false),
+    m_databaseNameHasBeenSet(false),
+    m_permissionHasBeenSet(false),
+    m_ruleCountHasBeenSet(false),
+    m_monitorStatusHasBeenSet(false),
+    m_tableOwnerUserIdHasBeenSet(false)
+{
+}
+
+CoreInternalOutcome RuleGroup::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+    if (value.HasMember("RuleGroupId") && !value["RuleGroupId"].IsNull())
+    {
+        if (!value["RuleGroupId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.RuleGroupId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleGroupId = value["RuleGroupId"].GetUint64();
+        m_ruleGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceId") && !value["DatasourceId"].IsNull())
+    {
+        if (!value["DatasourceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.DatasourceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceId = string(value["DatasourceId"].GetString());
+        m_datasourceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceName") && !value["DatasourceName"].IsNull())
+    {
+        if (!value["DatasourceName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.DatasourceName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceName = string(value["DatasourceName"].GetString());
+        m_datasourceNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatasourceType") && !value["DatasourceType"].IsNull())
+    {
+        if (!value["DatasourceType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.DatasourceType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datasourceType = value["DatasourceType"].GetUint64();
+        m_datasourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorType") && !value["MonitorType"].IsNull())
+    {
+        if (!value["MonitorType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.MonitorType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorType = value["MonitorType"].GetUint64();
+        m_monitorTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.UpdateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = string(value["UpdateTime"].GetString());
+        m_updateTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableName") && !value["TableName"].IsNull())
+    {
+        if (!value["TableName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.TableName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableName = string(value["TableName"].GetString());
+        m_tableNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableId") && !value["TableId"].IsNull())
+    {
+        if (!value["TableId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.TableId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableId = string(value["TableId"].GetString());
+        m_tableIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableOwnerName") && !value["TableOwnerName"].IsNull())
+    {
+        if (!value["TableOwnerName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.TableOwnerName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableOwnerName = string(value["TableOwnerName"].GetString());
+        m_tableOwnerNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecStrategy") && !value["ExecStrategy"].IsNull())
+    {
+        if (!value["ExecStrategy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.ExecStrategy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_execStrategy.Deserialize(value["ExecStrategy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_execStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Subscription") && !value["Subscription"].IsNull())
+    {
+        if (!value["Subscription"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.Subscription` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_subscription.Deserialize(value["Subscription"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_subscriptionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseId") && !value["DatabaseId"].IsNull())
+    {
+        if (!value["DatabaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.DatabaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseId = string(value["DatabaseId"].GetString());
+        m_databaseIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseName") && !value["DatabaseName"].IsNull())
+    {
+        if (!value["DatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.DatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseName = string(value["DatabaseName"].GetString());
+        m_databaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Permission") && !value["Permission"].IsNull())
+    {
+        if (!value["Permission"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.Permission` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_permission = value["Permission"].GetBool();
+        m_permissionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleCount") && !value["RuleCount"].IsNull())
+    {
+        if (!value["RuleCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.RuleCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleCount = value["RuleCount"].GetUint64();
+        m_ruleCountHasBeenSet = true;
+    }
+
+    if (value.HasMember("MonitorStatus") && !value["MonitorStatus"].IsNull())
+    {
+        if (!value["MonitorStatus"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.MonitorStatus` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorStatus = value["MonitorStatus"].GetBool();
+        m_monitorStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableOwnerUserId") && !value["TableOwnerUserId"].IsNull())
+    {
+        if (!value["TableOwnerUserId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleGroup.TableOwnerUserId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableOwnerUserId = value["TableOwnerUserId"].GetUint64();
+        m_tableOwnerUserIdHasBeenSet = true;
+    }
+
+
+    return CoreInternalOutcome(true);
+}
+
+void RuleGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+    if (m_ruleGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleGroupId, allocator);
+    }
+
+    if (m_datasourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_datasourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_datasourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatasourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datasourceType, allocator);
+    }
+
+    if (m_monitorTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorType, allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tableOwnerNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableOwnerName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableOwnerName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_execStrategy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_subscriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Subscription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_subscription.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_databaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_permissionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Permission";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_permission, allocator);
+    }
+
+    if (m_ruleCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleCount, allocator);
+    }
+
+    if (m_monitorStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_monitorStatus, allocator);
+    }
+
+    if (m_tableOwnerUserIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableOwnerUserId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tableOwnerUserId, allocator);
+    }
+
+}
+
+
+uint64_t RuleGroup::GetRuleGroupId() const
+{
+    return m_ruleGroupId;
+}
+
+void RuleGroup::SetRuleGroupId(const uint64_t& _ruleGroupId)
+{
+    m_ruleGroupId = _ruleGroupId;
+    m_ruleGroupIdHasBeenSet = true;
+}
+
+bool RuleGroup::RuleGroupIdHasBeenSet() const
+{
+    return m_ruleGroupIdHasBeenSet;
+}
+
+string RuleGroup::GetDatasourceId() const
+{
+    return m_datasourceId;
+}
+
+void RuleGroup::SetDatasourceId(const string& _datasourceId)
+{
+    m_datasourceId = _datasourceId;
+    m_datasourceIdHasBeenSet = true;
+}
+
+bool RuleGroup::DatasourceIdHasBeenSet() const
+{
+    return m_datasourceIdHasBeenSet;
+}
+
+string RuleGroup::GetDatasourceName() const
+{
+    return m_datasourceName;
+}
+
+void RuleGroup::SetDatasourceName(const string& _datasourceName)
+{
+    m_datasourceName = _datasourceName;
+    m_datasourceNameHasBeenSet = true;
+}
+
+bool RuleGroup::DatasourceNameHasBeenSet() const
+{
+    return m_datasourceNameHasBeenSet;
+}
+
+uint64_t RuleGroup::GetDatasourceType() const
+{
+    return m_datasourceType;
+}
+
+void RuleGroup::SetDatasourceType(const uint64_t& _datasourceType)
+{
+    m_datasourceType = _datasourceType;
+    m_datasourceTypeHasBeenSet = true;
+}
+
+bool RuleGroup::DatasourceTypeHasBeenSet() const
+{
+    return m_datasourceTypeHasBeenSet;
+}
+
+uint64_t RuleGroup::GetMonitorType() const
+{
+    return m_monitorType;
+}
+
+void RuleGroup::SetMonitorType(const uint64_t& _monitorType)
+{
+    m_monitorType = _monitorType;
+    m_monitorTypeHasBeenSet = true;
+}
+
+bool RuleGroup::MonitorTypeHasBeenSet() const
+{
+    return m_monitorTypeHasBeenSet;
+}
+
+string RuleGroup::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void RuleGroup::SetUpdateTime(const string& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool RuleGroup::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
+}
+
+string RuleGroup::GetTableName() const
+{
+    return m_tableName;
+}
+
+void RuleGroup::SetTableName(const string& _tableName)
+{
+    m_tableName = _tableName;
+    m_tableNameHasBeenSet = true;
+}
+
+bool RuleGroup::TableNameHasBeenSet() const
+{
+    return m_tableNameHasBeenSet;
+}
+
+string RuleGroup::GetTableId() const
+{
+    return m_tableId;
+}
+
+void RuleGroup::SetTableId(const string& _tableId)
+{
+    m_tableId = _tableId;
+    m_tableIdHasBeenSet = true;
+}
+
+bool RuleGroup::TableIdHasBeenSet() const
+{
+    return m_tableIdHasBeenSet;
+}
+
+string RuleGroup::GetTableOwnerName() const
+{
+    return m_tableOwnerName;
+}
+
+void RuleGroup::SetTableOwnerName(const string& _tableOwnerName)
+{
+    m_tableOwnerName = _tableOwnerName;
+    m_tableOwnerNameHasBeenSet = true;
+}
+
+bool RuleGroup::TableOwnerNameHasBeenSet() const
+{
+    return m_tableOwnerNameHasBeenSet;
+}
+
+RuleGroupExecStrategy RuleGroup::GetExecStrategy() const
+{
+    return m_execStrategy;
+}
+
+void RuleGroup::SetExecStrategy(const RuleGroupExecStrategy& _execStrategy)
+{
+    m_execStrategy = _execStrategy;
+    m_execStrategyHasBeenSet = true;
+}
+
+bool RuleGroup::ExecStrategyHasBeenSet() const
+{
+    return m_execStrategyHasBeenSet;
+}
+
+RuleGroupSubscribe RuleGroup::GetSubscription() const
+{
+    return m_subscription;
+}
+
+void RuleGroup::SetSubscription(const RuleGroupSubscribe& _subscription)
+{
+    m_subscription = _subscription;
+    m_subscriptionHasBeenSet = true;
+}
+
+bool RuleGroup::SubscriptionHasBeenSet() const
+{
+    return m_subscriptionHasBeenSet;
+}
+
+string RuleGroup::GetDatabaseId() const
+{
+    return m_databaseId;
+}
+
+void RuleGroup::SetDatabaseId(const string& _databaseId)
+{
+    m_databaseId = _databaseId;
+    m_databaseIdHasBeenSet = true;
+}
+
+bool RuleGroup::DatabaseIdHasBeenSet() const
+{
+    return m_databaseIdHasBeenSet;
+}
+
+string RuleGroup::GetDatabaseName() const
+{
+    return m_databaseName;
+}
+
+void RuleGroup::SetDatabaseName(const string& _databaseName)
+{
+    m_databaseName = _databaseName;
+    m_databaseNameHasBeenSet = true;
+}
+
+bool RuleGroup::DatabaseNameHasBeenSet() const
+{
+    return m_databaseNameHasBeenSet;
+}
+
+bool RuleGroup::GetPermission() const
+{
+    return m_permission;
+}
+
+void RuleGroup::SetPermission(const bool& _permission)
+{
+    m_permission = _permission;
+    m_permissionHasBeenSet = true;
+}
+
+bool RuleGroup::PermissionHasBeenSet() const
+{
+    return m_permissionHasBeenSet;
+}
+
+uint64_t RuleGroup::GetRuleCount() const
+{
+    return m_ruleCount;
+}
+
+void RuleGroup::SetRuleCount(const uint64_t& _ruleCount)
+{
+    m_ruleCount = _ruleCount;
+    m_ruleCountHasBeenSet = true;
+}
+
+bool RuleGroup::RuleCountHasBeenSet() const
+{
+    return m_ruleCountHasBeenSet;
+}
+
+bool RuleGroup::GetMonitorStatus() const
+{
+    return m_monitorStatus;
+}
+
+void RuleGroup::SetMonitorStatus(const bool& _monitorStatus)
+{
+    m_monitorStatus = _monitorStatus;
+    m_monitorStatusHasBeenSet = true;
+}
+
+bool RuleGroup::MonitorStatusHasBeenSet() const
+{
+    return m_monitorStatusHasBeenSet;
+}
+
+uint64_t RuleGroup::GetTableOwnerUserId() const
+{
+    return m_tableOwnerUserId;
+}
+
+void RuleGroup::SetTableOwnerUserId(const uint64_t& _tableOwnerUserId)
+{
+    m_tableOwnerUserId = _tableOwnerUserId;
+    m_tableOwnerUserIdHasBeenSet = true;
+}
+
+bool RuleGroup::TableOwnerUserIdHasBeenSet() const
+{
+    return m_tableOwnerUserIdHasBeenSet;
+}
+

@@ -175,6 +175,42 @@ namespace TencentCloud
                     bool MenuStatusHasBeenSet() const;
 
                     /**
+                     * 获取链接跳转类型："PC"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台
+                     * @return Endpoint 链接跳转类型："PC"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台
+                     */
+                    std::string GetEndpoint() const;
+
+                    /**
+                     * 设置链接跳转类型："PC"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台
+                     * @param Endpoint 链接跳转类型："PC"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台
+                     */
+                    void SetEndpoint(const std::string& _endpoint);
+
+                    /**
+                     * 判断参数 Endpoint 是否已赋值
+                     * @return Endpoint 是否已赋值
+                     */
+                    bool EndpointHasBeenSet() const;
+
+                    /**
+                     * 获取触发自动跳转事件，仅对App类型有效，"VERIFIED":企业认证完成/员工认证完成后跳回原App/小程序
+                     * @return AutoJumpBackEvent 触发自动跳转事件，仅对App类型有效，"VERIFIED":企业认证完成/员工认证完成后跳回原App/小程序
+                     */
+                    std::string GetAutoJumpBackEvent() const;
+
+                    /**
+                     * 设置触发自动跳转事件，仅对App类型有效，"VERIFIED":企业认证完成/员工认证完成后跳回原App/小程序
+                     * @param AutoJumpBackEvent 触发自动跳转事件，仅对App类型有效，"VERIFIED":企业认证完成/员工认证完成后跳回原App/小程序
+                     */
+                    void SetAutoJumpBackEvent(const std::string& _autoJumpBackEvent);
+
+                    /**
+                     * 判断参数 AutoJumpBackEvent 是否已赋值
+                     * @return AutoJumpBackEvent 是否已赋值
+                     */
+                    bool AutoJumpBackEventHasBeenSet() const;
+
+                    /**
                      * 获取操作者的信息
                      * @return Operator 操作者的信息
                      */
@@ -236,6 +272,18 @@ namespace TencentCloud
                      */
                     std::string m_menuStatus;
                     bool m_menuStatusHasBeenSet;
+
+                    /**
+                     * 链接跳转类型："PC"-PC控制台，“CHANNEL”-H5跳转到电子签小程序；“APP”-第三方APP或小程序跳转电子签小程序，默认为PC控制台
+                     */
+                    std::string m_endpoint;
+                    bool m_endpointHasBeenSet;
+
+                    /**
+                     * 触发自动跳转事件，仅对App类型有效，"VERIFIED":企业认证完成/员工认证完成后跳回原App/小程序
+                     */
+                    std::string m_autoJumpBackEvent;
+                    bool m_autoJumpBackEventHasBeenSet;
 
                     /**
                      * 操作者的信息

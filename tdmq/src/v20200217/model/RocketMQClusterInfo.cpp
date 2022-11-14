@@ -28,7 +28,9 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_remarkHasBeenSet(false),
     m_publicEndPointHasBeenSet(false),
     m_vpcEndPointHasBeenSet(false),
-    m_supportNamespaceEndpointHasBeenSet(false)
+    m_supportNamespaceEndpointHasBeenSet(false),
+    m_vpcsHasBeenSet(false),
+    m_isVipHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,36 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_supportNamespaceEndpointHasBeenSet = true;
     }
 
+    if (value.HasMember("Vpcs") && !value["Vpcs"].IsNull())
+    {
+        if (!value["Vpcs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.Vpcs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Vpcs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpcConfig item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpcs.push_back(item);
+        }
+        m_vpcsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsVip") && !value["IsVip"].IsNull())
+    {
+        if (!value["IsVip"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.IsVip` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isVip = value["IsVip"].GetBool();
+        m_isVipHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +218,29 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "SupportNamespaceEndpoint";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_supportNamespaceEndpoint, allocator);
+    }
+
+    if (m_vpcsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vpcs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpcs.begin(); itr != m_vpcs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_isVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isVip, allocator);
     }
 
 }
@@ -317,5 +372,37 @@ void RocketMQClusterInfo::SetSupportNamespaceEndpoint(const bool& _supportNamesp
 bool RocketMQClusterInfo::SupportNamespaceEndpointHasBeenSet() const
 {
     return m_supportNamespaceEndpointHasBeenSet;
+}
+
+vector<VpcConfig> RocketMQClusterInfo::GetVpcs() const
+{
+    return m_vpcs;
+}
+
+void RocketMQClusterInfo::SetVpcs(const vector<VpcConfig>& _vpcs)
+{
+    m_vpcs = _vpcs;
+    m_vpcsHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::VpcsHasBeenSet() const
+{
+    return m_vpcsHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetIsVip() const
+{
+    return m_isVip;
+}
+
+void RocketMQClusterInfo::SetIsVip(const bool& _isVip)
+{
+    m_isVip = _isVip;
+    m_isVipHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::IsVipHasBeenSet() const
+{
+    return m_isVipHasBeenSet;
 }
 

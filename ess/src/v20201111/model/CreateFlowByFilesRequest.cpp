@@ -31,14 +31,15 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_componentsHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
-    m_flowDescriptionHasBeenSet(false),
+    m_previewTypeHasBeenSet(false),
     m_deadlineHasBeenSet(false),
     m_unorderedHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_agentHasBeenSet(false),
-    m_approverVerifyTypeHasBeenSet(false)
+    m_approverVerifyTypeHasBeenSet(false),
+    m_flowDescriptionHasBeenSet(false)
 {
 }
 
@@ -140,12 +141,12 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, m_needPreview, allocator);
     }
 
-    if (m_flowDescriptionHasBeenSet)
+    if (m_previewTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowDescription";
+        string key = "PreviewType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_previewType, allocator);
     }
 
     if (m_deadlineHasBeenSet)
@@ -203,6 +204,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "ApproverVerifyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_approverVerifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowDescription";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -341,20 +350,20 @@ bool CreateFlowByFilesRequest::NeedPreviewHasBeenSet() const
     return m_needPreviewHasBeenSet;
 }
 
-string CreateFlowByFilesRequest::GetFlowDescription() const
+int64_t CreateFlowByFilesRequest::GetPreviewType() const
 {
-    return m_flowDescription;
+    return m_previewType;
 }
 
-void CreateFlowByFilesRequest::SetFlowDescription(const string& _flowDescription)
+void CreateFlowByFilesRequest::SetPreviewType(const int64_t& _previewType)
 {
-    m_flowDescription = _flowDescription;
-    m_flowDescriptionHasBeenSet = true;
+    m_previewType = _previewType;
+    m_previewTypeHasBeenSet = true;
 }
 
-bool CreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
+bool CreateFlowByFilesRequest::PreviewTypeHasBeenSet() const
 {
-    return m_flowDescriptionHasBeenSet;
+    return m_previewTypeHasBeenSet;
 }
 
 int64_t CreateFlowByFilesRequest::GetDeadline() const
@@ -467,6 +476,22 @@ void CreateFlowByFilesRequest::SetApproverVerifyType(const string& _approverVeri
 bool CreateFlowByFilesRequest::ApproverVerifyTypeHasBeenSet() const
 {
     return m_approverVerifyTypeHasBeenSet;
+}
+
+string CreateFlowByFilesRequest::GetFlowDescription() const
+{
+    return m_flowDescription;
+}
+
+void CreateFlowByFilesRequest::SetFlowDescription(const string& _flowDescription)
+{
+    m_flowDescription = _flowDescription;
+    m_flowDescriptionHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
+{
+    return m_flowDescriptionHasBeenSet;
 }
 
 

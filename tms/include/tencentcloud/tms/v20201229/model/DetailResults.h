@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tms/v20201229/model/Tag.h>
 
 
 namespace TencentCloud
@@ -218,6 +219,28 @@ namespace TencentCloud
                      */
                     bool SubLabelHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回当前一级标签（Label）下的关键词、子标签及分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 该字段用于返回当前一级标签（Label）下的关键词、子标签及分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置该字段用于返回当前一级标签（Label）下的关键词、子标签及分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 该字段用于返回当前一级标签（Label）下的关键词、子标签及分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,6 +297,13 @@ namespace TencentCloud
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 该字段用于返回当前一级标签（Label）下的关键词、子标签及分数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

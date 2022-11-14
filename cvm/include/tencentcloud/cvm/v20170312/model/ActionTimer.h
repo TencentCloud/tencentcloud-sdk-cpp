@@ -48,24 +48,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取扩展数据
-                     * @return Externals 扩展数据
-                     */
-                    Externals GetExternals() const;
-
-                    /**
-                     * 设置扩展数据
-                     * @param Externals 扩展数据
-                     */
-                    void SetExternals(const Externals& _externals);
-
-                    /**
-                     * 判断参数 Externals 是否已赋值
-                     * @return Externals 是否已赋值
-                     */
-                    bool ExternalsHasBeenSet() const;
-
-                    /**
                      * 获取定时器名称，目前仅支持销毁一个值：TerminateInstances。
                      * @return TimerAction 定时器名称，目前仅支持销毁一个值：TerminateInstances。
                      */
@@ -101,13 +83,25 @@ namespace TencentCloud
                      */
                     bool ActionTimeHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取扩展数据
+                     * @return Externals 扩展数据
+                     */
+                    Externals GetExternals() const;
 
                     /**
-                     * 扩展数据
+                     * 设置扩展数据
+                     * @param Externals 扩展数据
                      */
-                    Externals m_externals;
-                    bool m_externalsHasBeenSet;
+                    void SetExternals(const Externals& _externals);
+
+                    /**
+                     * 判断参数 Externals 是否已赋值
+                     * @return Externals 是否已赋值
+                     */
+                    bool ExternalsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 定时器名称，目前仅支持销毁一个值：TerminateInstances。
@@ -120,6 +114,12 @@ namespace TencentCloud
                      */
                     std::string m_actionTime;
                     bool m_actionTimeHasBeenSet;
+
+                    /**
+                     * 扩展数据
+                     */
+                    Externals m_externals;
+                    bool m_externalsHasBeenSet;
 
                 };
             }

@@ -188,6 +188,24 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取模板预览链接
+                     * @return WithPreviewUrl 是否获取模板预览链接
+                     */
+                    bool GetWithPreviewUrl() const;
+
+                    /**
+                     * 设置是否获取模板预览链接
+                     * @param WithPreviewUrl 是否获取模板预览链接
+                     */
+                    void SetWithPreviewUrl(const bool& _withPreviewUrl);
+
+                    /**
+                     * 判断参数 WithPreviewUrl 是否已赋值
+                     * @return WithPreviewUrl 是否已赋值
+                     */
+                    bool WithPreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +255,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 是否获取模板预览链接
+                     */
+                    bool m_withPreviewUrl;
+                    bool m_withPreviewUrlHasBeenSet;
 
                 };
             }

@@ -27,6 +27,7 @@ SyncProxyOrganizationRequest::SyncProxyOrganizationRequest() :
     m_proxyOrganizationNameHasBeenSet(false),
     m_businessLicenseHasBeenSet(false),
     m_uniformSocialCreditCodeHasBeenSet(false),
+    m_proxyLegalNameHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -69,6 +70,14 @@ string SyncProxyOrganizationRequest::ToJsonString() const
         string key = "UniformSocialCreditCode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_uniformSocialCreditCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyLegalNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyLegalName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyLegalName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -150,6 +159,22 @@ void SyncProxyOrganizationRequest::SetUniformSocialCreditCode(const string& _uni
 bool SyncProxyOrganizationRequest::UniformSocialCreditCodeHasBeenSet() const
 {
     return m_uniformSocialCreditCodeHasBeenSet;
+}
+
+string SyncProxyOrganizationRequest::GetProxyLegalName() const
+{
+    return m_proxyLegalName;
+}
+
+void SyncProxyOrganizationRequest::SetProxyLegalName(const string& _proxyLegalName)
+{
+    m_proxyLegalName = _proxyLegalName;
+    m_proxyLegalNameHasBeenSet = true;
+}
+
+bool SyncProxyOrganizationRequest::ProxyLegalNameHasBeenSet() const
+{
+    return m_proxyLegalNameHasBeenSet;
 }
 
 UserInfo SyncProxyOrganizationRequest::GetOperator() const

@@ -29,8 +29,9 @@ CreateDocumentRequest::CreateDocumentRequest() :
     m_fileNamesHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
-    m_clientTokenHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_previewTypeHasBeenSet(false),
+    m_agentHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -102,12 +103,12 @@ string CreateDocumentRequest::ToJsonString() const
         d.AddMember(iKey, m_needPreview, allocator);
     }
 
-    if (m_clientTokenHasBeenSet)
+    if (m_previewTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientToken";
+        string key = "PreviewType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_previewType, allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -117,6 +118,14 @@ string CreateDocumentRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -223,20 +232,20 @@ bool CreateDocumentRequest::NeedPreviewHasBeenSet() const
     return m_needPreviewHasBeenSet;
 }
 
-string CreateDocumentRequest::GetClientToken() const
+int64_t CreateDocumentRequest::GetPreviewType() const
 {
-    return m_clientToken;
+    return m_previewType;
 }
 
-void CreateDocumentRequest::SetClientToken(const string& _clientToken)
+void CreateDocumentRequest::SetPreviewType(const int64_t& _previewType)
 {
-    m_clientToken = _clientToken;
-    m_clientTokenHasBeenSet = true;
+    m_previewType = _previewType;
+    m_previewTypeHasBeenSet = true;
 }
 
-bool CreateDocumentRequest::ClientTokenHasBeenSet() const
+bool CreateDocumentRequest::PreviewTypeHasBeenSet() const
 {
-    return m_clientTokenHasBeenSet;
+    return m_previewTypeHasBeenSet;
 }
 
 Agent CreateDocumentRequest::GetAgent() const
@@ -253,6 +262,22 @@ void CreateDocumentRequest::SetAgent(const Agent& _agent)
 bool CreateDocumentRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateDocumentRequest::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+void CreateDocumentRequest::SetClientToken(const string& _clientToken)
+{
+    m_clientToken = _clientToken;
+    m_clientTokenHasBeenSet = true;
+}
+
+bool CreateDocumentRequest::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
 }
 
 

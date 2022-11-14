@@ -24,7 +24,8 @@ StructuralItem::StructuralItem() :
     m_nameHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_confidenceHasBeenSet(false),
-    m_itemCoordHasBeenSet(false)
+    m_itemCoordHasBeenSet(false),
+    m_rowHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome StructuralItem::Deserialize(const rapidjson::Value &value)
         m_itemCoordHasBeenSet = true;
     }
 
+    if (value.HasMember("Row") && !value["Row"].IsNull())
+    {
+        if (!value["Row"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StructuralItem.Row` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_row = value["Row"].GetInt64();
+        m_rowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void StructuralItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_itemCoord.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Row";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_row, allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void StructuralItem::SetItemCoord(const ItemCoord& _itemCoord)
 bool StructuralItem::ItemCoordHasBeenSet() const
 {
     return m_itemCoordHasBeenSet;
+}
+
+int64_t StructuralItem::GetRow() const
+{
+    return m_row;
+}
+
+void StructuralItem::SetRow(const int64_t& _row)
+{
+    m_row = _row;
+    m_rowHasBeenSet = true;
+}
+
+bool StructuralItem::RowHasBeenSet() const
+{
+    return m_rowHasBeenSet;
 }
 

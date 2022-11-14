@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return ServiceGroupId 无
+                     * 获取服务组ID
+                     * @return ServiceGroupId 服务组ID
                      */
                     std::string GetServiceGroupId() const;
 
                     /**
-                     * 设置无
-                     * @param ServiceGroupId 无
+                     * 设置服务组ID
+                     * @param ServiceGroupId 服务组ID
                      */
                     void SetServiceGroupId(const std::string& _serviceGroupId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * 服务组ID
                      */
                     std::string m_serviceGroupId;
                     bool m_serviceGroupIdHasBeenSet;

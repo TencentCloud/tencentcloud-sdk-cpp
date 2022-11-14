@@ -26,6 +26,7 @@ CreateFlowsByTemplatesRequest::CreateFlowsByTemplatesRequest() :
     m_agentHasBeenSet(false),
     m_flowInfosHasBeenSet(false),
     m_needPreviewHasBeenSet(false),
+    m_previewTypeHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -67,6 +68,14 @@ string CreateFlowsByTemplatesRequest::ToJsonString() const
         string key = "NeedPreview";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_needPreview, allocator);
+    }
+
+    if (m_previewTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreviewType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_previewType, allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -132,6 +141,22 @@ void CreateFlowsByTemplatesRequest::SetNeedPreview(const bool& _needPreview)
 bool CreateFlowsByTemplatesRequest::NeedPreviewHasBeenSet() const
 {
     return m_needPreviewHasBeenSet;
+}
+
+int64_t CreateFlowsByTemplatesRequest::GetPreviewType() const
+{
+    return m_previewType;
+}
+
+void CreateFlowsByTemplatesRequest::SetPreviewType(const int64_t& _previewType)
+{
+    m_previewType = _previewType;
+    m_previewTypeHasBeenSet = true;
+}
+
+bool CreateFlowsByTemplatesRequest::PreviewTypeHasBeenSet() const
+{
+    return m_previewTypeHasBeenSet;
 }
 
 UserInfo CreateFlowsByTemplatesRequest::GetOperator() const

@@ -33,7 +33,8 @@ CreateImageSpriteTemplateRequest::CreateImageSpriteTemplateRequest() :
     m_fillTypeHasBeenSet(false),
     m_widthHasBeenSet(false),
     m_heightHasBeenSet(false),
-    m_resolutionAdaptiveHasBeenSet(false)
+    m_resolutionAdaptiveHasBeenSet(false),
+    m_formatHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string CreateImageSpriteTemplateRequest::ToJsonString() const
         string key = "ResolutionAdaptive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_resolutionAdaptive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_formatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Format";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_format.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -314,6 +323,22 @@ void CreateImageSpriteTemplateRequest::SetResolutionAdaptive(const string& _reso
 bool CreateImageSpriteTemplateRequest::ResolutionAdaptiveHasBeenSet() const
 {
     return m_resolutionAdaptiveHasBeenSet;
+}
+
+string CreateImageSpriteTemplateRequest::GetFormat() const
+{
+    return m_format;
+}
+
+void CreateImageSpriteTemplateRequest::SetFormat(const string& _format)
+{
+    m_format = _format;
+    m_formatHasBeenSet = true;
+}
+
+bool CreateImageSpriteTemplateRequest::FormatHasBeenSet() const
+{
+    return m_formatHasBeenSet;
 }
 
 

@@ -23,6 +23,7 @@ set(tms_public_header_model
   include/tencentcloud/tms/v20201229/model/RiskDetails.h
   include/tencentcloud/tms/v20201229/model/TextModerationRequest.h
   include/tencentcloud/tms/v20201229/model/DetailResults.h
+  include/tencentcloud/tms/v20201229/model/Tag.h
   include/tencentcloud/tms/v20201229/model/User.h
   include/tencentcloud/tms/v20201229/model/Device.h
   include/tencentcloud/tms/v20201229/model/TextModerationResponse.h
@@ -52,6 +53,7 @@ set(tms_src
   src/v20201229/model/RiskDetails.cpp
   src/v20201229/model/TextModerationRequest.cpp
   src/v20201229/model/DetailResults.cpp
+  src/v20201229/model/Tag.cpp
   src/v20201229/model/User.cpp
   src/v20201229/model/Device.cpp
   src/v20201229/model/TextModerationResponse.cpp

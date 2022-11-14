@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取不适用，默认参数
-                     * @return InstanceId 不适用，默认参数
+                     * 获取rabbitmq集群ID
+                     * @return InstanceId rabbitmq集群ID
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置不适用，默认参数
-                     * @param InstanceId 不适用，默认参数
+                     * 设置rabbitmq集群ID
+                     * @param InstanceId rabbitmq集群ID
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 不适用，默认参数
+                     * rabbitmq集群ID
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

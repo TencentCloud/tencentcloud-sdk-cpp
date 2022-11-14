@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/VpcConfig.h>
 
 
 namespace TencentCloud
@@ -198,6 +199,50 @@ namespace TencentCloud
                      */
                     bool SupportNamespaceEndpointHasBeenSet() const;
 
+                    /**
+                     * 获取VPC信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vpcs VPC信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcConfig> GetVpcs() const;
+
+                    /**
+                     * 设置VPC信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Vpcs VPC信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcs(const std::vector<VpcConfig>& _vpcs);
+
+                    /**
+                     * 判断参数 Vpcs 是否已赋值
+                     * @return Vpcs 是否已赋值
+                     */
+                    bool VpcsHasBeenSet() const;
+
+                    /**
+                     * 获取是否为专享实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsVip 是否为专享实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsVip() const;
+
+                    /**
+                     * 设置是否为专享实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsVip 是否为专享实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsVip(const bool& _isVip);
+
+                    /**
+                     * 判断参数 IsVip 是否已赋值
+                     * @return IsVip 是否已赋值
+                     */
+                    bool IsVipHasBeenSet() const;
+
                 private:
 
                     /**
@@ -249,6 +294,20 @@ namespace TencentCloud
                      */
                     bool m_supportNamespaceEndpoint;
                     bool m_supportNamespaceEndpointHasBeenSet;
+
+                    /**
+                     * VPC信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpcConfig> m_vpcs;
+                    bool m_vpcsHasBeenSet;
+
+                    /**
+                     * 是否为专享实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isVip;
+                    bool m_isVipHasBeenSet;
 
                 };
             }

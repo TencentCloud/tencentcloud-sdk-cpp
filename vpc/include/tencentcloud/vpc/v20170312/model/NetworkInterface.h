@@ -450,6 +450,44 @@ namespace TencentCloud
                      */
                     bool ResourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取服务质量级别：
+<li>`DEFAULT`：默认</li>
+<li>`PT`：云金</li>
+<li>`AU`：云银</li>
+<li>`AG`：云铜</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QosLevel 服务质量级别：
+<li>`DEFAULT`：默认</li>
+<li>`PT`：云金</li>
+<li>`AU`：云银</li>
+<li>`AG`：云铜</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetQosLevel() const;
+
+                    /**
+                     * 设置服务质量级别：
+<li>`DEFAULT`：默认</li>
+<li>`PT`：云金</li>
+<li>`AU`：云银</li>
+<li>`AG`：云铜</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QosLevel 服务质量级别：
+<li>`DEFAULT`：默认</li>
+<li>`PT`：云金</li>
+<li>`AU`：云银</li>
+<li>`AG`：云铜</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQosLevel(const std::string& _qosLevel);
+
+                    /**
+                     * 判断参数 QosLevel 是否已赋值
+                     * @return QosLevel 是否已赋值
+                     */
+                    bool QosLevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -581,6 +619,17 @@ namespace TencentCloud
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
+
+                    /**
+                     * 服务质量级别：
+<li>`DEFAULT`：默认</li>
+<li>`PT`：云金</li>
+<li>`AU`：云银</li>
+<li>`AG`：云铜</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_qosLevel;
+                    bool m_qosLevelHasBeenSet;
 
                 };
             }

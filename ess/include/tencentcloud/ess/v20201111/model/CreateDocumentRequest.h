@@ -158,22 +158,22 @@ namespace TencentCloud
                     bool NeedPreviewHasBeenSet() const;
 
                     /**
-                     * 获取客户端Token，保持接口幂等性,最大长度64个字符
-                     * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 获取预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * @return PreviewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
                      */
-                    std::string GetClientToken() const;
+                    int64_t GetPreviewType() const;
 
                     /**
-                     * 设置客户端Token，保持接口幂等性,最大长度64个字符
-                     * @param ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 设置预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
+                     * @param PreviewType 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
                      */
-                    void SetClientToken(const std::string& _clientToken);
+                    void SetPreviewType(const int64_t& _previewType);
 
                     /**
-                     * 判断参数 ClientToken 是否已赋值
-                     * @return ClientToken 是否已赋值
+                     * 判断参数 PreviewType 是否已赋值
+                     * @return PreviewType 是否已赋值
                      */
-                    bool ClientTokenHasBeenSet() const;
+                    bool PreviewTypeHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息
@@ -192,6 +192,24 @@ namespace TencentCloud
                      * @return Agent 是否已赋值
                      */
                     bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取客户端Token，保持接口幂等性,最大长度64个字符
+                     * @return ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     */
+                    std::string GetClientToken() const;
+
+                    /**
+                     * 设置客户端Token，保持接口幂等性,最大长度64个字符
+                     * @param ClientToken 客户端Token，保持接口幂等性,最大长度64个字符
+                     */
+                    void SetClientToken(const std::string& _clientToken);
+
+                    /**
+                     * 判断参数 ClientToken 是否已赋值
+                     * @return ClientToken 是否已赋值
+                     */
+                    bool ClientTokenHasBeenSet() const;
 
                 private:
 
@@ -233,16 +251,22 @@ namespace TencentCloud
                     bool m_needPreviewHasBeenSet;
 
                     /**
-                     * 客户端Token，保持接口幂等性,最大长度64个字符
+                     * 预览链接类型 默认:0-文件流, 1- H5链接 注意:此参数在NeedPreview 为true 时有效,
                      */
-                    std::string m_clientToken;
-                    bool m_clientTokenHasBeenSet;
+                    int64_t m_previewType;
+                    bool m_previewTypeHasBeenSet;
 
                     /**
                      * 应用相关信息
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 客户端Token，保持接口幂等性,最大长度64个字符
+                     */
+                    std::string m_clientToken;
+                    bool m_clientTokenHasBeenSet;
 
                 };
             }

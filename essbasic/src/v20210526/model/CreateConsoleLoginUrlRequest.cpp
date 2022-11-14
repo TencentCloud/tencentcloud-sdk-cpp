@@ -30,6 +30,8 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_moduleIdHasBeenSet(false),
     m_uniformSocialCreditCodeHasBeenSet(false),
     m_menuStatusHasBeenSet(false),
+    m_endpointHasBeenSet(false),
+    m_autoJumpBackEventHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -96,6 +98,22 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         string key = "MenuStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_menuStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endpointHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Endpoint";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endpoint.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoJumpBackEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoJumpBackEvent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_autoJumpBackEvent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -225,6 +243,38 @@ void CreateConsoleLoginUrlRequest::SetMenuStatus(const string& _menuStatus)
 bool CreateConsoleLoginUrlRequest::MenuStatusHasBeenSet() const
 {
     return m_menuStatusHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetEndpoint() const
+{
+    return m_endpoint;
+}
+
+void CreateConsoleLoginUrlRequest::SetEndpoint(const string& _endpoint)
+{
+    m_endpoint = _endpoint;
+    m_endpointHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::EndpointHasBeenSet() const
+{
+    return m_endpointHasBeenSet;
+}
+
+string CreateConsoleLoginUrlRequest::GetAutoJumpBackEvent() const
+{
+    return m_autoJumpBackEvent;
+}
+
+void CreateConsoleLoginUrlRequest::SetAutoJumpBackEvent(const string& _autoJumpBackEvent)
+{
+    m_autoJumpBackEvent = _autoJumpBackEvent;
+    m_autoJumpBackEventHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::AutoJumpBackEventHasBeenSet() const
+{
+    return m_autoJumpBackEventHasBeenSet;
 }
 
 UserInfo CreateConsoleLoginUrlRequest::GetOperator() const
