@@ -126,3 +126,46 @@ AfcClient::QueryAntiFraudVipOutcomeCallable AfcClient::QueryAntiFraudVipCallable
     return task->get_future();
 }
 
+AfcClient::TransportGeneralInterfaceOutcome AfcClient::TransportGeneralInterface(const TransportGeneralInterfaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "TransportGeneralInterface");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TransportGeneralInterfaceResponse rsp = TransportGeneralInterfaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TransportGeneralInterfaceOutcome(rsp);
+        else
+            return TransportGeneralInterfaceOutcome(o.GetError());
+    }
+    else
+    {
+        return TransportGeneralInterfaceOutcome(outcome.GetError());
+    }
+}
+
+void AfcClient::TransportGeneralInterfaceAsync(const TransportGeneralInterfaceRequest& request, const TransportGeneralInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TransportGeneralInterface(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AfcClient::TransportGeneralInterfaceOutcomeCallable AfcClient::TransportGeneralInterfaceCallable(const TransportGeneralInterfaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TransportGeneralInterfaceOutcome()>>(
+        [this, request]()
+        {
+            return this->TransportGeneralInterface(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

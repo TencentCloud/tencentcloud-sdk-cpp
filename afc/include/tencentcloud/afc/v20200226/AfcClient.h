@@ -27,6 +27,8 @@
 #include <tencentcloud/afc/v20200226/model/GetAntiFraudVipResponse.h>
 #include <tencentcloud/afc/v20200226/model/QueryAntiFraudVipRequest.h>
 #include <tencentcloud/afc/v20200226/model/QueryAntiFraudVipResponse.h>
+#include <tencentcloud/afc/v20200226/model/TransportGeneralInterfaceRequest.h>
+#include <tencentcloud/afc/v20200226/model/TransportGeneralInterfaceResponse.h>
 
 
 namespace TencentCloud
@@ -47,6 +49,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryAntiFraudVipResponse> QueryAntiFraudVipOutcome;
                 typedef std::future<QueryAntiFraudVipOutcome> QueryAntiFraudVipOutcomeCallable;
                 typedef std::function<void(const AfcClient*, const Model::QueryAntiFraudVipRequest&, QueryAntiFraudVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryAntiFraudVipAsyncHandler;
+                typedef Outcome<Core::Error, Model::TransportGeneralInterfaceResponse> TransportGeneralInterfaceOutcome;
+                typedef std::future<TransportGeneralInterfaceOutcome> TransportGeneralInterfaceOutcomeCallable;
+                typedef std::function<void(const AfcClient*, const Model::TransportGeneralInterfaceRequest&, TransportGeneralInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TransportGeneralInterfaceAsyncHandler;
 
 
 
@@ -69,6 +74,15 @@ namespace TencentCloud
                 QueryAntiFraudVipOutcome QueryAntiFraudVip(const Model::QueryAntiFraudVipRequest &request);
                 void QueryAntiFraudVipAsync(const Model::QueryAntiFraudVipRequest& request, const QueryAntiFraudVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryAntiFraudVipOutcomeCallable QueryAntiFraudVipCallable(const Model::QueryAntiFraudVipRequest& request);
+
+                /**
+                 *天御信鸽取数平台接口
+                 * @param req TransportGeneralInterfaceRequest
+                 * @return TransportGeneralInterfaceOutcome
+                 */
+                TransportGeneralInterfaceOutcome TransportGeneralInterface(const Model::TransportGeneralInterfaceRequest &request);
+                void TransportGeneralInterfaceAsync(const Model::TransportGeneralInterfaceRequest& request, const TransportGeneralInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TransportGeneralInterfaceOutcomeCallable TransportGeneralInterfaceCallable(const Model::TransportGeneralInterfaceRequest& request);
 
             };
         }
