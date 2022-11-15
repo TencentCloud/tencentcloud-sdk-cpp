@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取策略名。
-                     * @return PolicyName 策略名。
+                     * 获取策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
+                     * @return PolicyName 策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名。
-                     * @param PolicyName 策略名。
+                     * 设置策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
+                     * @param PolicyName 策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
                      */
                     void SetPolicyName(const std::string& _policyName);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取身份ID。
-                     * @return IdentityId 身份ID。
+                     * 获取成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
+                     * @return IdentityId 成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
                      */
                     int64_t GetIdentityId() const;
 
                     /**
-                     * 设置身份ID。
-                     * @param IdentityId 身份ID。
+                     * 设置成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
+                     * @param IdentityId 成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
                      */
                     void SetIdentityId(const int64_t& _identityId);
 
@@ -123,13 +123,13 @@ namespace TencentCloud
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 策略名。
+                     * 策略名。最大长度为128个字符，支持英文字母、数字、符号+=,.@_-
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;
 
                     /**
-                     * 身份ID。
+                     * 成员访问身份ID。可以调用DescribeOrganizationMemberAuthIdentities获取
                      */
                     int64_t m_identityId;
                     bool m_identityIdHasBeenSet;

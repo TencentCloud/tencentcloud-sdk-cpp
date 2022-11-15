@@ -25,7 +25,8 @@ using namespace std;
 
 InquirePriceRenewInstancesResponse::InquirePriceRenewInstancesResponse() :
     m_priceHasBeenSet(false),
-    m_dataDiskPriceSetHasBeenSet(false)
+    m_dataDiskPriceSetHasBeenSet(false),
+    m_instancePriceDetailSetHasBeenSet(false)
 {
 }
 
@@ -100,6 +101,26 @@ CoreInternalOutcome InquirePriceRenewInstancesResponse::Deserialize(const string
         m_dataDiskPriceSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("InstancePriceDetailSet") && !rsp["InstancePriceDetailSet"].IsNull())
+    {
+        if (!rsp["InstancePriceDetailSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstancePriceDetailSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["InstancePriceDetailSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstancePriceDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instancePriceDetailSet.push_back(item);
+        }
+        m_instancePriceDetailSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -128,6 +149,21 @@ string InquirePriceRenewInstancesResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_dataDiskPriceSet.begin(); itr != m_dataDiskPriceSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instancePriceDetailSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstancePriceDetailSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instancePriceDetailSet.begin(); itr != m_instancePriceDetailSet.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -164,6 +200,16 @@ vector<DataDiskPrice> InquirePriceRenewInstancesResponse::GetDataDiskPriceSet() 
 bool InquirePriceRenewInstancesResponse::DataDiskPriceSetHasBeenSet() const
 {
     return m_dataDiskPriceSetHasBeenSet;
+}
+
+vector<InstancePriceDetail> InquirePriceRenewInstancesResponse::GetInstancePriceDetailSet() const
+{
+    return m_instancePriceDetailSet;
+}
+
+bool InquirePriceRenewInstancesResponse::InstancePriceDetailSetHasBeenSet() const
+{
+    return m_instancePriceDetailSetHasBeenSet;
 }
 
 

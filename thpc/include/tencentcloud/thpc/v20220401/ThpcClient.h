@@ -33,6 +33,8 @@
 #include <tencentcloud/thpc/v20220401/model/DeleteClusterResponse.h>
 #include <tencentcloud/thpc/v20220401/model/DeleteNodesRequest.h>
 #include <tencentcloud/thpc/v20220401/model/DeleteNodesResponse.h>
+#include <tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesRequest.h>
+#include <tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesResponse.h>
 #include <tencentcloud/thpc/v20220401/model/DescribeClustersRequest.h>
 #include <tencentcloud/thpc/v20220401/model/DescribeClustersResponse.h>
 #include <tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationRequest.h>
@@ -66,6 +68,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNodesResponse> DeleteNodesOutcome;
                 typedef std::future<DeleteNodesOutcome> DeleteNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DeleteNodesRequest&, DeleteNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterActivitiesResponse> DescribeClusterActivitiesOutcome;
+                typedef std::future<DescribeClusterActivitiesOutcome> DescribeClusterActivitiesOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeClusterActivitiesRequest&, DescribeClusterActivitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterActivitiesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClustersResponse> DescribeClustersOutcome;
                 typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeClustersRequest&, DescribeClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClustersAsyncHandler;
@@ -119,6 +124,15 @@ namespace TencentCloud
                 DeleteNodesOutcome DeleteNodes(const Model::DeleteNodesRequest &request);
                 void DeleteNodesAsync(const Model::DeleteNodesRequest& request, const DeleteNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNodesOutcomeCallable DeleteNodesCallable(const Model::DeleteNodesRequest& request);
+
+                /**
+                 *本接口（DescribeClusterActivities）用于查询集群活动历史记录列表。
+                 * @param req DescribeClusterActivitiesRequest
+                 * @return DescribeClusterActivitiesOutcome
+                 */
+                DescribeClusterActivitiesOutcome DescribeClusterActivities(const Model::DescribeClusterActivitiesRequest &request);
+                void DescribeClusterActivitiesAsync(const Model::DescribeClusterActivitiesRequest& request, const DescribeClusterActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterActivitiesOutcomeCallable DescribeClusterActivitiesCallable(const Model::DescribeClusterActivitiesRequest& request);
 
                 /**
                  *本接口（DescribeClusters）用于查询集群列表。

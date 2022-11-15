@@ -255,6 +255,49 @@ ThpcClient::DeleteNodesOutcomeCallable ThpcClient::DeleteNodesCallable(const Del
     return task->get_future();
 }
 
+ThpcClient::DescribeClusterActivitiesOutcome ThpcClient::DescribeClusterActivities(const DescribeClusterActivitiesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterActivities");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterActivitiesResponse rsp = DescribeClusterActivitiesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterActivitiesOutcome(rsp);
+        else
+            return DescribeClusterActivitiesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterActivitiesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeClusterActivitiesAsync(const DescribeClusterActivitiesRequest& request, const DescribeClusterActivitiesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterActivities(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeClusterActivitiesOutcomeCallable ThpcClient::DescribeClusterActivitiesCallable(const DescribeClusterActivitiesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterActivitiesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterActivities(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DescribeClustersOutcome ThpcClient::DescribeClusters(const DescribeClustersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusters");

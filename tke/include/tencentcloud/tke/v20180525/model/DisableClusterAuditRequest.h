@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     * @return DeleteLogSetAndTopic 取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     */
+                    bool GetDeleteLogSetAndTopic() const;
+
+                    /**
+                     * 设置取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     * @param DeleteLogSetAndTopic 取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     */
+                    void SetDeleteLogSetAndTopic(const bool& _deleteLogSetAndTopic);
+
+                    /**
+                     * 判断参数 DeleteLogSetAndTopic 是否已赋值
+                     * @return DeleteLogSetAndTopic 是否已赋值
+                     */
+                    bool DeleteLogSetAndTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 取值为true代表关闭集群审计时删除默认创建的日志集和主题，false代表不删除
+                     */
+                    bool m_deleteLogSetAndTopic;
+                    bool m_deleteLogSetAndTopicHasBeenSet;
 
                 };
             }

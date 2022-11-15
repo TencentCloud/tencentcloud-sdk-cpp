@@ -23,7 +23,8 @@ using namespace std;
 ExpandShardConfig::ExpandShardConfig() :
     m_shardInstanceIdsHasBeenSet(false),
     m_shardMemoryHasBeenSet(false),
-    m_shardStorageHasBeenSet(false)
+    m_shardStorageHasBeenSet(false),
+    m_shardNodeCountHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome ExpandShardConfig::Deserialize(const rapidjson::Value &value
         m_shardStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("ShardNodeCount") && !value["ShardNodeCount"].IsNull())
+    {
+        if (!value["ShardNodeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ExpandShardConfig.ShardNodeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_shardNodeCount = value["ShardNodeCount"].GetInt64();
+        m_shardNodeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void ExpandShardConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ShardStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_shardStorage, allocator);
+    }
+
+    if (m_shardNodeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ShardNodeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_shardNodeCount, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void ExpandShardConfig::SetShardStorage(const int64_t& _shardStorage)
 bool ExpandShardConfig::ShardStorageHasBeenSet() const
 {
     return m_shardStorageHasBeenSet;
+}
+
+int64_t ExpandShardConfig::GetShardNodeCount() const
+{
+    return m_shardNodeCount;
+}
+
+void ExpandShardConfig::SetShardNodeCount(const int64_t& _shardNodeCount)
+{
+    m_shardNodeCount = _shardNodeCount;
+    m_shardNodeCountHasBeenSet = true;
+}
+
+bool ExpandShardConfig::ShardNodeCountHasBeenSet() const
+{
+    return m_shardNodeCountHasBeenSet;
 }
 

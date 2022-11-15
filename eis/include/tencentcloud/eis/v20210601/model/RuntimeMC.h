@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/eis/v20210601/model/RuntimeExtensionMC.h>
 
 
 namespace TencentCloud
@@ -47,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取运行时id
-                     * @return RuntimeId 运行时id
+                     * 获取环境id
+                     * @return RuntimeId 环境id
                      */
                     int64_t GetRuntimeId() const;
 
                     /**
-                     * 设置运行时id
-                     * @param RuntimeId 运行时id
+                     * 设置环境id
+                     * @param RuntimeId 环境id
                      */
                     void SetRuntimeId(const int64_t& _runtimeId);
 
@@ -83,14 +84,14 @@ namespace TencentCloud
                     bool UinHasBeenSet() const;
 
                     /**
-                     * 获取运行时名称，用户输入，同一uin内唯一
-                     * @return DisplayName 运行时名称，用户输入，同一uin内唯一
+                     * 获取环境名称，用户输入，同一uin内唯一
+                     * @return DisplayName 环境名称，用户输入，同一uin内唯一
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置运行时名称，用户输入，同一uin内唯一
-                     * @param DisplayName 运行时名称，用户输入，同一uin内唯一
+                     * 设置环境名称，用户输入，同一uin内唯一
+                     * @param DisplayName 环境名称，用户输入，同一uin内唯一
                      */
                     void SetDisplayName(const std::string& _displayName);
 
@@ -101,14 +102,14 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取运行时所在地域，tianjin，beijiing，guangzhou等
-                     * @return Zone 运行时所在地域，tianjin，beijiing，guangzhou等
+                     * 获取环境所在地域，tianjin，beijiing，guangzhou等
+                     * @return Zone 环境所在地域，tianjin，beijiing，guangzhou等
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置运行时所在地域，tianjin，beijiing，guangzhou等
-                     * @param Zone 运行时所在地域，tianjin，beijiing，guangzhou等
+                     * 设置环境所在地域，tianjin，beijiing，guangzhou等
+                     * @param Zone 环境所在地域，tianjin，beijiing，guangzhou等
                      */
                     void SetZone(const std::string& _zone);
 
@@ -119,14 +120,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取运行时类型：0: sandbox, 1:shared, 2:private
-                     * @return Type 运行时类型：0: sandbox, 1:shared, 2:private
+                     * 获取环境类型：0: sandbox, 1:shared, 2:private 3: trial
+                     * @return Type 环境类型：0: sandbox, 1:shared, 2:private 3: trial
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置运行时类型：0: sandbox, 1:shared, 2:private
-                     * @param Type 运行时类型：0: sandbox, 1:shared, 2:private
+                     * 设置环境类型：0: sandbox, 1:shared, 2:private 3: trial
+                     * @param Type 环境类型：0: sandbox, 1:shared, 2:private 3: trial
                      */
                     void SetType(const int64_t& _type);
 
@@ -155,14 +156,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取运行时创建时间
-                     * @return CreatedAt 运行时创建时间
+                     * 获取环境创建时间
+                     * @return CreatedAt 环境创建时间
                      */
                     int64_t GetCreatedAt() const;
 
                     /**
-                     * 设置运行时创建时间
-                     * @param CreatedAt 运行时创建时间
+                     * 设置环境创建时间
+                     * @param CreatedAt 环境创建时间
                      */
                     void SetCreatedAt(const int64_t& _createdAt);
 
@@ -173,14 +174,14 @@ namespace TencentCloud
                     bool CreatedAtHasBeenSet() const;
 
                     /**
-                     * 获取运行时更新时间
-                     * @return UpdatedAt 运行时更新时间
+                     * 获取环境更新时间
+                     * @return UpdatedAt 环境更新时间
                      */
                     int64_t GetUpdatedAt() const;
 
                     /**
-                     * 设置运行时更新时间
-                     * @param UpdatedAt 运行时更新时间
+                     * 设置环境更新时间
+                     * @param UpdatedAt 环境更新时间
                      */
                     void SetUpdatedAt(const int64_t& _updatedAt);
 
@@ -191,14 +192,14 @@ namespace TencentCloud
                     bool UpdatedAtHasBeenSet() const;
 
                     /**
-                     * 获取运行时资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
-                     * @return WorkerSize 运行时资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
+                     * 获取环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
+                     * @return WorkerSize 环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
                      */
                     int64_t GetWorkerSize() const;
 
                     /**
-                     * 设置运行时资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
-                     * @param WorkerSize 运行时资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
+                     * 设置环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
+                     * @param WorkerSize 环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
                      */
                     void SetWorkerSize(const int64_t& _workerSize);
 
@@ -209,14 +210,14 @@ namespace TencentCloud
                     bool WorkerSizeHasBeenSet() const;
 
                     /**
-                     * 获取运行时资源配置，worker副本数
-                     * @return WorkerReplica 运行时资源配置，worker副本数
+                     * 获取环境资源配置，worker副本数
+                     * @return WorkerReplica 环境资源配置，worker副本数
                      */
                     int64_t GetWorkerReplica() const;
 
                     /**
-                     * 设置运行时资源配置，worker副本数
-                     * @param WorkerReplica 运行时资源配置，worker副本数
+                     * 设置环境资源配置，worker副本数
+                     * @param WorkerReplica 环境资源配置，worker副本数
                      */
                     void SetWorkerReplica(const int64_t& _workerReplica);
 
@@ -317,17 +318,17 @@ namespace TencentCloud
                     bool MemoryLimitHasBeenSet() const;
 
                     /**
-                     * 获取运行时过期时间
+                     * 获取环境过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ExpiredAt 运行时过期时间
+                     * @return ExpiredAt 环境过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetExpiredAt() const;
 
                     /**
-                     * 设置运行时过期时间
+                     * 设置环境过期时间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ExpiredAt 运行时过期时间
+                     * @param ExpiredAt 环境过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExpiredAt(const int64_t& _expiredAt);
@@ -339,17 +340,17 @@ namespace TencentCloud
                     bool ExpiredAtHasBeenSet() const;
 
                     /**
-                     * 获取收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+                     * 获取收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChargeType 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+                     * @return ChargeType 收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetChargeType() const;
 
                     /**
-                     * 设置收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+                     * 设置收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChargeType 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+                     * @param ChargeType 收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChargeType(const int64_t& _chargeType);
@@ -404,10 +405,120 @@ namespace TencentCloud
                      */
                     bool AutoRenewalHasBeenSet() const;
 
+                    /**
+                     * 获取扩展组件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkerExtensions 扩展组件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RuntimeExtensionMC> GetWorkerExtensions() const;
+
+                    /**
+                     * 设置扩展组件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WorkerExtensions 扩展组件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWorkerExtensions(const std::vector<RuntimeExtensionMC>& _workerExtensions);
+
+                    /**
+                     * 判断参数 WorkerExtensions 是否已赋值
+                     * @return WorkerExtensions 是否已赋值
+                     */
+                    bool WorkerExtensionsHasBeenSet() const;
+
+                    /**
+                     * 获取环境类型：0: sandbox, 1:shared, 2:private 3: trial
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuntimeType 环境类型：0: sandbox, 1:shared, 2:private 3: trial
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRuntimeType() const;
+
+                    /**
+                     * 设置环境类型：0: sandbox, 1:shared, 2:private 3: trial
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuntimeType 环境类型：0: sandbox, 1:shared, 2:private 3: trial
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuntimeType(const int64_t& _runtimeType);
+
+                    /**
+                     * 判断参数 RuntimeType 是否已赋值
+                     * @return RuntimeType 是否已赋值
+                     */
+                    bool RuntimeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取环境运行类型：0:运行时类型、1:api类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRuntimeClass() const;
+
+                    /**
+                     * 设置环境运行类型：0:运行时类型、1:api类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuntimeClass(const int64_t& _runtimeClass);
+
+                    /**
+                     * 判断参数 RuntimeClass 是否已赋值
+                     * @return RuntimeClass 是否已赋值
+                     */
+                    bool RuntimeClassHasBeenSet() const;
+
+                    /**
+                     * 获取已使用出带宽 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BandwidthOutUsed 已使用出带宽 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetBandwidthOutUsed() const;
+
+                    /**
+                     * 设置已使用出带宽 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BandwidthOutUsed 已使用出带宽 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBandwidthOutUsed(const double& _bandwidthOutUsed);
+
+                    /**
+                     * 判断参数 BandwidthOutUsed 是否已赋值
+                     * @return BandwidthOutUsed 是否已赋值
+                     */
+                    bool BandwidthOutUsedHasBeenSet() const;
+
+                    /**
+                     * 获取出带宽上限 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BandwidthOutLimit 出带宽上限 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetBandwidthOutLimit() const;
+
+                    /**
+                     * 设置出带宽上限 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BandwidthOutLimit 出带宽上限 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBandwidthOutLimit(const double& _bandwidthOutLimit);
+
+                    /**
+                     * 判断参数 BandwidthOutLimit 是否已赋值
+                     * @return BandwidthOutLimit 是否已赋值
+                     */
+                    bool BandwidthOutLimitHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 运行时id
+                     * 环境id
                      */
                     int64_t m_runtimeId;
                     bool m_runtimeIdHasBeenSet;
@@ -419,19 +530,19 @@ namespace TencentCloud
                     bool m_uinHasBeenSet;
 
                     /**
-                     * 运行时名称，用户输入，同一uin内唯一
+                     * 环境名称，用户输入，同一uin内唯一
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 运行时所在地域，tianjin，beijiing，guangzhou等
+                     * 环境所在地域，tianjin，beijiing，guangzhou等
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 运行时类型：0: sandbox, 1:shared, 2:private
+                     * 环境类型：0: sandbox, 1:shared, 2:private 3: trial
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
@@ -443,25 +554,25 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 运行时创建时间
+                     * 环境创建时间
                      */
                     int64_t m_createdAt;
                     bool m_createdAtHasBeenSet;
 
                     /**
-                     * 运行时更新时间
+                     * 环境更新时间
                      */
                     int64_t m_updatedAt;
                     bool m_updatedAtHasBeenSet;
 
                     /**
-                     * 运行时资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
+                     * 环境资源配置，worker总配额，0:0vCore0G, 1:1vCore2G, 2:2vCore4G, 4:4vCore8G, 8:8vCore16G, 12:12vCore24G, 16:16vCore32G, 100:unlimited
                      */
                     int64_t m_workerSize;
                     bool m_workerSizeHasBeenSet;
 
                     /**
-                     * 运行时资源配置，worker副本数
+                     * 环境资源配置，worker副本数
                      */
                     int64_t m_workerReplica;
                     bool m_workerReplicaHasBeenSet;
@@ -497,14 +608,14 @@ namespace TencentCloud
                     bool m_memoryLimitHasBeenSet;
 
                     /**
-                     * 运行时过期时间
+                     * 环境过期时间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_expiredAt;
                     bool m_expiredAtHasBeenSet;
 
                     /**
-                     * 收费类型：0:缺省，1:通过订单页自助下单(支持续费/升配等操作)
+                     * 收费类型：0:缺省，1:自助下单页购买(支持续费/升配等操作)，2:代销下单页购买
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_chargeType;
@@ -523,6 +634,41 @@ namespace TencentCloud
                      */
                     bool m_autoRenewal;
                     bool m_autoRenewalHasBeenSet;
+
+                    /**
+                     * 扩展组件列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RuntimeExtensionMC> m_workerExtensions;
+                    bool m_workerExtensionsHasBeenSet;
+
+                    /**
+                     * 环境类型：0: sandbox, 1:shared, 2:private 3: trial
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_runtimeType;
+                    bool m_runtimeTypeHasBeenSet;
+
+                    /**
+                     * 环境运行类型：0:运行时类型、1:api类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_runtimeClass;
+                    bool m_runtimeClassHasBeenSet;
+
+                    /**
+                     * 已使用出带宽 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_bandwidthOutUsed;
+                    bool m_bandwidthOutUsedHasBeenSet;
+
+                    /**
+                     * 出带宽上限 Mbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_bandwidthOutLimit;
+                    bool m_bandwidthOutLimitHasBeenSet;
 
                 };
             }

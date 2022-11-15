@@ -53,14 +53,16 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/DeleteNodesResponse.h
   include/tencentcloud/thpc/v20220401/model/DeleteClusterResponse.h
   include/tencentcloud/thpc/v20220401/model/ExpansionNodeConfig.h
+  include/tencentcloud/thpc/v20220401/model/NodeActivity.h
   include/tencentcloud/thpc/v20220401/model/QueueConfig.h
+  include/tencentcloud/thpc/v20220401/model/ClusterActivity.h
   include/tencentcloud/thpc/v20220401/model/LoginNodeOverview.h
   include/tencentcloud/thpc/v20220401/model/CFSOption.h
-  include/tencentcloud/thpc/v20220401/model/LoginNode.h
+  include/tencentcloud/thpc/v20220401/model/CreateClusterResponse.h
   include/tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationResponse.h
   include/tencentcloud/thpc/v20220401/model/CreateClusterRequest.h
   include/tencentcloud/thpc/v20220401/model/Tag.h
-  include/tencentcloud/thpc/v20220401/model/CreateClusterResponse.h
+  include/tencentcloud/thpc/v20220401/model/LoginNode.h
   include/tencentcloud/thpc/v20220401/model/BindAutoScalingGroupResponse.h
   include/tencentcloud/thpc/v20220401/model/ManagerNodeOverview.h
   include/tencentcloud/thpc/v20220401/model/ManagerNode.h
@@ -68,17 +70,19 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/ComputeNodeOverview.h
   include/tencentcloud/thpc/v20220401/model/SystemDisk.h
   include/tencentcloud/thpc/v20220401/model/Placement.h
-  include/tencentcloud/thpc/v20220401/model/DataDisk.h
+  include/tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesRequest.h
   include/tencentcloud/thpc/v20220401/model/AddNodesRequest.h
   include/tencentcloud/thpc/v20220401/model/BindAutoScalingGroupRequest.h
   include/tencentcloud/thpc/v20220401/model/VirtualPrivateCloud.h
+  include/tencentcloud/thpc/v20220401/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20220401/model/StorageOption.h
   include/tencentcloud/thpc/v20220401/model/InternetAccessible.h
   include/tencentcloud/thpc/v20220401/model/ComputeNode.h
   include/tencentcloud/thpc/v20220401/model/DeleteNodesRequest.h
   include/tencentcloud/thpc/v20220401/model/DescribeClustersResponse.h
   include/tencentcloud/thpc/v20220401/model/GooseFSOption.h
-  include/tencentcloud/thpc/v20220401/model/InstanceChargePrepaid.h
+  include/tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesResponse.h
+  include/tencentcloud/thpc/v20220401/model/DataDisk.h
   include/tencentcloud/thpc/v20220401/model/AddNodesResponse.h
   )
 
@@ -118,14 +122,16 @@ set(thpc_src
   src/v20220401/model/DeleteNodesResponse.cpp
   src/v20220401/model/DeleteClusterResponse.cpp
   src/v20220401/model/ExpansionNodeConfig.cpp
+  src/v20220401/model/NodeActivity.cpp
   src/v20220401/model/QueueConfig.cpp
+  src/v20220401/model/ClusterActivity.cpp
   src/v20220401/model/LoginNodeOverview.cpp
   src/v20220401/model/CFSOption.cpp
-  src/v20220401/model/LoginNode.cpp
+  src/v20220401/model/CreateClusterResponse.cpp
   src/v20220401/model/SetAutoScalingConfigurationResponse.cpp
   src/v20220401/model/CreateClusterRequest.cpp
   src/v20220401/model/Tag.cpp
-  src/v20220401/model/CreateClusterResponse.cpp
+  src/v20220401/model/LoginNode.cpp
   src/v20220401/model/BindAutoScalingGroupResponse.cpp
   src/v20220401/model/ManagerNodeOverview.cpp
   src/v20220401/model/ManagerNode.cpp
@@ -133,17 +139,19 @@ set(thpc_src
   src/v20220401/model/ComputeNodeOverview.cpp
   src/v20220401/model/SystemDisk.cpp
   src/v20220401/model/Placement.cpp
-  src/v20220401/model/DataDisk.cpp
+  src/v20220401/model/DescribeClusterActivitiesRequest.cpp
   src/v20220401/model/AddNodesRequest.cpp
   src/v20220401/model/BindAutoScalingGroupRequest.cpp
   src/v20220401/model/VirtualPrivateCloud.cpp
+  src/v20220401/model/InstanceChargePrepaid.cpp
   src/v20220401/model/StorageOption.cpp
   src/v20220401/model/InternetAccessible.cpp
   src/v20220401/model/ComputeNode.cpp
   src/v20220401/model/DeleteNodesRequest.cpp
   src/v20220401/model/DescribeClustersResponse.cpp
   src/v20220401/model/GooseFSOption.cpp
-  src/v20220401/model/InstanceChargePrepaid.cpp
+  src/v20220401/model/DescribeClusterActivitiesResponse.cpp
+  src/v20220401/model/DataDisk.cpp
   src/v20220401/model/AddNodesResponse.cpp
   )
 

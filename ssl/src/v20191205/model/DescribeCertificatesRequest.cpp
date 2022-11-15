@@ -34,7 +34,8 @@ DescribeCertificatesRequest::DescribeCertificatesRequest() :
     m_uploadHasBeenSet(false),
     m_renewHasBeenSet(false),
     m_filterSourceHasBeenSet(false),
-    m_isSMHasBeenSet(false)
+    m_isSMHasBeenSet(false),
+    m_filterExpiringHasBeenSet(false)
 {
 }
 
@@ -144,6 +145,14 @@ string DescribeCertificatesRequest::ToJsonString() const
         string key = "IsSM";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isSM, allocator);
+    }
+
+    if (m_filterExpiringHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterExpiring";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterExpiring, allocator);
     }
 
 
@@ -344,6 +353,22 @@ void DescribeCertificatesRequest::SetIsSM(const int64_t& _isSM)
 bool DescribeCertificatesRequest::IsSMHasBeenSet() const
 {
     return m_isSMHasBeenSet;
+}
+
+uint64_t DescribeCertificatesRequest::GetFilterExpiring() const
+{
+    return m_filterExpiring;
+}
+
+void DescribeCertificatesRequest::SetFilterExpiring(const uint64_t& _filterExpiring)
+{
+    m_filterExpiring = _filterExpiring;
+    m_filterExpiringHasBeenSet = true;
+}
+
+bool DescribeCertificatesRequest::FilterExpiringHasBeenSet() const
+{
+    return m_filterExpiringHasBeenSet;
 }
 
 

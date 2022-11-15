@@ -229,14 +229,14 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取备份方式，0-定时备份；1-手动临时备份
-                     * @return BackupWay 备份方式，0-定时备份；1-手动临时备份
+                     * 获取备份方式，0-定时备份；1-手动临时备份；2-定期备份
+                     * @return BackupWay 备份方式，0-定时备份；1-手动临时备份；2-定期备份
                      */
                     int64_t GetBackupWay() const;
 
                     /**
-                     * 设置备份方式，0-定时备份；1-手动临时备份
-                     * @param BackupWay 备份方式，0-定时备份；1-手动临时备份
+                     * 设置备份方式，0-定时备份；1-手动临时备份；2-定期备份
+                     * @param BackupWay 备份方式，0-定时备份；1-手动临时备份；2-定期备份
                      */
                     void SetBackupWay(const int64_t& _backupWay);
 
@@ -417,7 +417,7 @@ namespace TencentCloud
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 备份方式，0-定时备份；1-手动临时备份
+                     * 备份方式，0-定时备份；1-手动临时备份；2-定期备份
                      */
                     int64_t m_backupWay;
                     bool m_backupWayHasBeenSet;

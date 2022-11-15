@@ -42,7 +42,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取环境运行类型：0:运行时类型、1:api类型
+                     * @return RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     */
+                    int64_t GetRuntimeClass() const;
+
+                    /**
+                     * 设置环境运行类型：0:运行时类型、1:api类型
+                     * @param RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     */
+                    void SetRuntimeClass(const int64_t& _runtimeClass);
+
+                    /**
+                     * 判断参数 RuntimeClass 是否已赋值
+                     * @return RuntimeClass 是否已赋值
+                     */
+                    bool RuntimeClassHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 环境运行类型：0:运行时类型、1:api类型
+                     */
+                    int64_t m_runtimeClass;
+                    bool m_runtimeClassHasBeenSet;
 
                 };
             }

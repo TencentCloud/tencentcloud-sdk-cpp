@@ -168,6 +168,96 @@ namespace TencentCloud
                      */
                     bool BackupSaveDaysHasBeenSet() const;
 
+                    /**
+                     * 获取定期备份状态 enable-开启，disable-关闭，默认关闭
+                     * @return RegularBackupEnable 定期备份状态 enable-开启，disable-关闭，默认关闭
+                     */
+                    std::string GetRegularBackupEnable() const;
+
+                    /**
+                     * 设置定期备份状态 enable-开启，disable-关闭，默认关闭
+                     * @param RegularBackupEnable 定期备份状态 enable-开启，disable-关闭，默认关闭
+                     */
+                    void SetRegularBackupEnable(const std::string& _regularBackupEnable);
+
+                    /**
+                     * 判断参数 RegularBackupEnable 是否已赋值
+                     * @return RegularBackupEnable 是否已赋值
+                     */
+                    bool RegularBackupEnableHasBeenSet() const;
+
+                    /**
+                     * 获取定期备份保留天数 [90 - 3650]天，默认365天
+                     * @return RegularBackupSaveDays 定期备份保留天数 [90 - 3650]天，默认365天
+                     */
+                    uint64_t GetRegularBackupSaveDays() const;
+
+                    /**
+                     * 设置定期备份保留天数 [90 - 3650]天，默认365天
+                     * @param RegularBackupSaveDays 定期备份保留天数 [90 - 3650]天，默认365天
+                     */
+                    void SetRegularBackupSaveDays(const uint64_t& _regularBackupSaveDays);
+
+                    /**
+                     * 判断参数 RegularBackupSaveDays 是否已赋值
+                     * @return RegularBackupSaveDays 是否已赋值
+                     */
+                    bool RegularBackupSaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取定期备份策略 years-每年，quarters-每季度，months-每月，默认months
+                     * @return RegularBackupStrategy 定期备份策略 years-每年，quarters-每季度，months-每月，默认months
+                     */
+                    std::string GetRegularBackupStrategy() const;
+
+                    /**
+                     * 设置定期备份策略 years-每年，quarters-每季度，months-每月，默认months
+                     * @param RegularBackupStrategy 定期备份策略 years-每年，quarters-每季度，months-每月，默认months
+                     */
+                    void SetRegularBackupStrategy(const std::string& _regularBackupStrategy);
+
+                    /**
+                     * 判断参数 RegularBackupStrategy 是否已赋值
+                     * @return RegularBackupStrategy 是否已赋值
+                     */
+                    bool RegularBackupStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取定期备份保留个数，默认1个
+                     * @return RegularBackupCounts 定期备份保留个数，默认1个
+                     */
+                    uint64_t GetRegularBackupCounts() const;
+
+                    /**
+                     * 设置定期备份保留个数，默认1个
+                     * @param RegularBackupCounts 定期备份保留个数，默认1个
+                     */
+                    void SetRegularBackupCounts(const uint64_t& _regularBackupCounts);
+
+                    /**
+                     * 判断参数 RegularBackupCounts 是否已赋值
+                     * @return RegularBackupCounts 是否已赋值
+                     */
+                    bool RegularBackupCountsHasBeenSet() const;
+
+                    /**
+                     * 获取定期备份开始日期，格式-YYYY-MM-DD 默认当前日期
+                     * @return RegularBackupStartTime 定期备份开始日期，格式-YYYY-MM-DD 默认当前日期
+                     */
+                    std::string GetRegularBackupStartTime() const;
+
+                    /**
+                     * 设置定期备份开始日期，格式-YYYY-MM-DD 默认当前日期
+                     * @param RegularBackupStartTime 定期备份开始日期，格式-YYYY-MM-DD 默认当前日期
+                     */
+                    void SetRegularBackupStartTime(const std::string& _regularBackupStartTime);
+
+                    /**
+                     * 判断参数 RegularBackupStartTime 是否已赋值
+                     * @return RegularBackupStartTime 是否已赋值
+                     */
+                    bool RegularBackupStartTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +301,36 @@ namespace TencentCloud
                      */
                     uint64_t m_backupSaveDays;
                     bool m_backupSaveDaysHasBeenSet;
+
+                    /**
+                     * 定期备份状态 enable-开启，disable-关闭，默认关闭
+                     */
+                    std::string m_regularBackupEnable;
+                    bool m_regularBackupEnableHasBeenSet;
+
+                    /**
+                     * 定期备份保留天数 [90 - 3650]天，默认365天
+                     */
+                    uint64_t m_regularBackupSaveDays;
+                    bool m_regularBackupSaveDaysHasBeenSet;
+
+                    /**
+                     * 定期备份策略 years-每年，quarters-每季度，months-每月，默认months
+                     */
+                    std::string m_regularBackupStrategy;
+                    bool m_regularBackupStrategyHasBeenSet;
+
+                    /**
+                     * 定期备份保留个数，默认1个
+                     */
+                    uint64_t m_regularBackupCounts;
+                    bool m_regularBackupCountsHasBeenSet;
+
+                    /**
+                     * 定期备份开始日期，格式-YYYY-MM-DD 默认当前日期
+                     */
+                    std::string m_regularBackupStartTime;
+                    bool m_regularBackupStartTimeHasBeenSet;
 
                 };
             }

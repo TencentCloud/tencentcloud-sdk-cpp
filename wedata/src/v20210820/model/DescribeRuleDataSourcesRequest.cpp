@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeRuleDataSourcesRequest::DescribeRuleDataSourcesRequest() :
     m_projectIdHasBeenSet(false),
-    m_datasourceIdHasBeenSet(false)
+    m_datasourceIdHasBeenSet(false),
+    m_dsTypesHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,19 @@ string DescribeRuleDataSourcesRequest::ToJsonString() const
         string key = "DatasourceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_datasourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dsTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DsTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dsTypes.begin(); itr != m_dsTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -89,6 +103,22 @@ void DescribeRuleDataSourcesRequest::SetDatasourceId(const string& _datasourceId
 bool DescribeRuleDataSourcesRequest::DatasourceIdHasBeenSet() const
 {
     return m_datasourceIdHasBeenSet;
+}
+
+vector<uint64_t> DescribeRuleDataSourcesRequest::GetDsTypes() const
+{
+    return m_dsTypes;
+}
+
+void DescribeRuleDataSourcesRequest::SetDsTypes(const vector<uint64_t>& _dsTypes)
+{
+    m_dsTypes = _dsTypes;
+    m_dsTypesHasBeenSet = true;
+}
+
+bool DescribeRuleDataSourcesRequest::DsTypesHasBeenSet() const
+{
+    return m_dsTypesHasBeenSet;
 }
 
 

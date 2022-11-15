@@ -29,7 +29,8 @@ DescribePriceRequest::DescribePriceRequest() :
     m_storageHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_countHasBeenSet(false),
-    m_paymodeHasBeenSet(false)
+    m_paymodeHasBeenSet(false),
+    m_amountUnitHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string DescribePriceRequest::ToJsonString() const
         string key = "Paymode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_paymode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_amountUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void DescribePriceRequest::SetPaymode(const string& _paymode)
 bool DescribePriceRequest::PaymodeHasBeenSet() const
 {
     return m_paymodeHasBeenSet;
+}
+
+string DescribePriceRequest::GetAmountUnit() const
+{
+    return m_amountUnit;
+}
+
+void DescribePriceRequest::SetAmountUnit(const string& _amountUnit)
+{
+    m_amountUnit = _amountUnit;
+    m_amountUnitHasBeenSet = true;
+}
+
+bool DescribePriceRequest::AmountUnitHasBeenSet() const
+{
+    return m_amountUnitHasBeenSet;
 }
 
 

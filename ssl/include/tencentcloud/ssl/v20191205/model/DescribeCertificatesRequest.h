@@ -258,6 +258,24 @@ namespace TencentCloud
                      */
                     bool IsSMHasBeenSet() const;
 
+                    /**
+                     * 获取筛选证书是否即将过期，传1是筛选，0不筛选
+                     * @return FilterExpiring 筛选证书是否即将过期，传1是筛选，0不筛选
+                     */
+                    uint64_t GetFilterExpiring() const;
+
+                    /**
+                     * 设置筛选证书是否即将过期，传1是筛选，0不筛选
+                     * @param FilterExpiring 筛选证书是否即将过期，传1是筛选，0不筛选
+                     */
+                    void SetFilterExpiring(const uint64_t& _filterExpiring);
+
+                    /**
+                     * 判断参数 FilterExpiring 是否已赋值
+                     * @return FilterExpiring 是否已赋值
+                     */
+                    bool FilterExpiringHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +349,12 @@ namespace TencentCloud
                      */
                     int64_t m_isSM;
                     bool m_isSMHasBeenSet;
+
+                    /**
+                     * 筛选证书是否即将过期，传1是筛选，0不筛选
+                     */
+                    uint64_t m_filterExpiring;
+                    bool m_filterExpiringHasBeenSet;
 
                 };
             }

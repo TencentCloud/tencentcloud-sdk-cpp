@@ -44,6 +44,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/SystemDisk.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceBlueprint.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/InstancePriceDetail.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiscountDetail.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsRequest.h
@@ -232,6 +233,7 @@ set(lighthouse_src
   src/v20200324/model/SystemDisk.cpp
   src/v20200324/model/ResetInstanceBlueprint.cpp
   src/v20200324/model/DescribeBundlesResponse.cpp
+  src/v20200324/model/InstancePriceDetail.cpp
   src/v20200324/model/InquirePriceRenewInstancesRequest.cpp
   src/v20200324/model/DiscountDetail.cpp
   src/v20200324/model/DescribeDiskConfigsRequest.cpp

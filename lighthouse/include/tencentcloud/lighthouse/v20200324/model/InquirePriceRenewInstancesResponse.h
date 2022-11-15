@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lighthouse/v20200324/model/Price.h>
 #include <tencentcloud/lighthouse/v20200324/model/DataDiskPrice.h>
+#include <tencentcloud/lighthouse/v20200324/model/InstancePriceDetail.h>
 
 
 namespace TencentCloud
@@ -46,8 +47,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取询价信息。
-                     * @return Price 询价信息。
+                     * 获取询价信息。默认为列表中第一个实例的价格信息。
+                     * @return Price 询价信息。默认为列表中第一个实例的价格信息。
                      */
                     Price GetPrice() const;
 
@@ -71,10 +72,24 @@ namespace TencentCloud
                      */
                     bool DataDiskPriceSetHasBeenSet() const;
 
+                    /**
+                     * 获取待续费实例价格列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstancePriceDetailSet 待续费实例价格列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstancePriceDetail> GetInstancePriceDetailSet() const;
+
+                    /**
+                     * 判断参数 InstancePriceDetailSet 是否已赋值
+                     * @return InstancePriceDetailSet 是否已赋值
+                     */
+                    bool InstancePriceDetailSetHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 询价信息。
+                     * 询价信息。默认为列表中第一个实例的价格信息。
                      */
                     Price m_price;
                     bool m_priceHasBeenSet;
@@ -85,6 +100,13 @@ namespace TencentCloud
                      */
                     std::vector<DataDiskPrice> m_dataDiskPriceSet;
                     bool m_dataDiskPriceSetHasBeenSet;
+
+                    /**
+                     * 待续费实例价格列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstancePriceDetail> m_instancePriceDetailSet;
+                    bool m_instancePriceDetailSetHasBeenSet;
 
                 };
             }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。
+                     * @return Offset 偏移量。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量。
+                     * @param Offset 偏移量。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取限制数目
-                     * @return Limit 限制数目
+                     * 获取限制数目。最大50
+                     * @return Limit 限制数目。最大50
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数目
-                     * @param Limit 限制数目
+                     * 设置限制数目。最大50
+                     * @param Limit 限制数目。最大50
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LangHasBeenSet() const;
 
                     /**
-                     * 获取成员名或者成员ID搜索
-                     * @return SearchKey 成员名或者成员ID搜索
+                     * 获取成员名称或者成员ID搜索。
+                     * @return SearchKey 成员名称或者成员ID搜索。
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置成员名或者成员ID搜索
-                     * @param SearchKey 成员名或者成员ID搜索
+                     * 设置成员名称或者成员ID搜索。
+                     * @param SearchKey 成员名称或者成员ID搜索。
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取主体名称
-                     * @return AuthName 主体名称
+                     * 获取主体名称搜索。
+                     * @return AuthName 主体名称搜索。
                      */
                     std::string GetAuthName() const;
 
                     /**
-                     * 设置主体名称
-                     * @param AuthName 主体名称
+                     * 设置主体名称搜索。
+                     * @param AuthName 主体名称搜索。
                      */
                     void SetAuthName(const std::string& _authName);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool AuthNameHasBeenSet() const;
 
                     /**
-                     * 获取集团服务（服务管理员查询时，必须指定）
-                     * @return Product 集团服务（服务管理员查询时，必须指定）
+                     * 获取可信服务产品简称。可信服务管理员查询时必须指定
+                     * @return Product 可信服务产品简称。可信服务管理员查询时必须指定
                      */
                     std::string GetProduct() const;
 
                     /**
-                     * 设置集团服务（服务管理员查询时，必须指定）
-                     * @param Product 集团服务（服务管理员查询时，必须指定）
+                     * 设置可信服务产品简称。可信服务管理员查询时必须指定
+                     * @param Product 可信服务产品简称。可信服务管理员查询时必须指定
                      */
                     void SetProduct(const std::string& _product);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移量
+                     * 偏移量。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 限制数目
+                     * 限制数目。最大50
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -171,19 +171,19 @@ namespace TencentCloud
                     bool m_langHasBeenSet;
 
                     /**
-                     * 成员名或者成员ID搜索
+                     * 成员名称或者成员ID搜索。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * 主体名称
+                     * 主体名称搜索。
                      */
                     std::string m_authName;
                     bool m_authNameHasBeenSet;
 
                     /**
-                     * 集团服务（服务管理员查询时，必须指定）
+                     * 可信服务产品简称。可信服务管理员查询时必须指定
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;

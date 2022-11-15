@@ -229,14 +229,14 @@ namespace TencentCloud
                     bool ClearKeyFrameDescsHasBeenSet() const;
 
                     /**
-                     * 获取新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 16 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
-                     * @return AddTags 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 16 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * 获取新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * @return AddTags 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
                      */
                     std::vector<std::string> GetAddTags() const;
 
                     /**
-                     * 设置新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 16 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
-                     * @param AddTags 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 16 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * 设置新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * @param AddTags 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
                      */
                     void SetAddTags(const std::vector<std::string>& _addTags);
 
@@ -408,7 +408,7 @@ namespace TencentCloud
                     bool m_clearKeyFrameDescsHasBeenSet;
 
                     /**
-                     * 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 16 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
+                     * 新增的一组标签，单个媒体文件最多 16 个标签，单个标签最多 32 个字符。同一个请求里，AddTags 参数必须与 DeleteTags 都不同。
                      */
                     std::vector<std::string> m_addTags;
                     bool m_addTagsHasBeenSet;

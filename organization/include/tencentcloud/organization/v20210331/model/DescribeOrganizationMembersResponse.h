@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取成员列表
-                     * @return Items 成员列表
+                     * 获取成员列表。
+                     * @return Items 成员列表。
                      */
                     std::vector<OrgMember> GetItems() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取总数目
-                     * @return Total 总数目
+                     * 获取总数目。
+                     * @return Total 总数目。
                      */
                     uint64_t GetTotal() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 成员列表
+                     * 成员列表。
                      */
                     std::vector<OrgMember> m_items;
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 总数目
+                     * 总数目。
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;

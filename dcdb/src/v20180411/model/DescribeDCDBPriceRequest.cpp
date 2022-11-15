@@ -30,7 +30,8 @@ DescribeDCDBPriceRequest::DescribeDCDBPriceRequest() :
     m_shardMemoryHasBeenSet(false),
     m_shardStorageHasBeenSet(false),
     m_shardCountHasBeenSet(false),
-    m_paymodeHasBeenSet(false)
+    m_paymodeHasBeenSet(false),
+    m_amountUnitHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,14 @@ string DescribeDCDBPriceRequest::ToJsonString() const
         string key = "Paymode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_paymode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_amountUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -239,6 +248,22 @@ void DescribeDCDBPriceRequest::SetPaymode(const string& _paymode)
 bool DescribeDCDBPriceRequest::PaymodeHasBeenSet() const
 {
     return m_paymodeHasBeenSet;
+}
+
+string DescribeDCDBPriceRequest::GetAmountUnit() const
+{
+    return m_amountUnit;
+}
+
+void DescribeDCDBPriceRequest::SetAmountUnit(const string& _amountUnit)
+{
+    m_amountUnit = _amountUnit;
+    m_amountUnitHasBeenSet = true;
+}
+
+bool DescribeDCDBPriceRequest::AmountUnitHasBeenSet() const
+{
+    return m_amountUnitHasBeenSet;
 }
 
 

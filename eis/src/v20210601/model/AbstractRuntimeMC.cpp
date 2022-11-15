@@ -28,7 +28,9 @@ AbstractRuntimeMC::AbstractRuntimeMC() :
     m_areaHasBeenSet(false),
     m_addrHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_expiredAtHasBeenSet(false)
+    m_expiredAtHasBeenSet(false),
+    m_runtimeClassHasBeenSet(false),
+    m_deployedHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome AbstractRuntimeMC::Deserialize(const rapidjson::Value &value
         m_expiredAtHasBeenSet = true;
     }
 
+    if (value.HasMember("RuntimeClass") && !value["RuntimeClass"].IsNull())
+    {
+        if (!value["RuntimeClass"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.RuntimeClass` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtimeClass = value["RuntimeClass"].GetInt64();
+        m_runtimeClassHasBeenSet = true;
+    }
+
+    if (value.HasMember("Deployed") && !value["Deployed"].IsNull())
+    {
+        if (!value["Deployed"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AbstractRuntimeMC.Deployed` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_deployed = value["Deployed"].GetBool();
+        m_deployedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void AbstractRuntimeMC::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ExpiredAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_expiredAt, allocator);
+    }
+
+    if (m_runtimeClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_runtimeClass, allocator);
+    }
+
+    if (m_deployedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Deployed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_deployed, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void AbstractRuntimeMC::SetExpiredAt(const int64_t& _expiredAt)
 bool AbstractRuntimeMC::ExpiredAtHasBeenSet() const
 {
     return m_expiredAtHasBeenSet;
+}
+
+int64_t AbstractRuntimeMC::GetRuntimeClass() const
+{
+    return m_runtimeClass;
+}
+
+void AbstractRuntimeMC::SetRuntimeClass(const int64_t& _runtimeClass)
+{
+    m_runtimeClass = _runtimeClass;
+    m_runtimeClassHasBeenSet = true;
+}
+
+bool AbstractRuntimeMC::RuntimeClassHasBeenSet() const
+{
+    return m_runtimeClassHasBeenSet;
+}
+
+bool AbstractRuntimeMC::GetDeployed() const
+{
+    return m_deployed;
+}
+
+void AbstractRuntimeMC::SetDeployed(const bool& _deployed)
+{
+    m_deployed = _deployed;
+    m_deployedHasBeenSet = true;
+}
+
+bool AbstractRuntimeMC::DeployedHasBeenSet() const
+{
+    return m_deployedHasBeenSet;
 }
 

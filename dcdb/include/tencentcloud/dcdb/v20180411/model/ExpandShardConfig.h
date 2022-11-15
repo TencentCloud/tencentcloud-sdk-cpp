@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool ShardStorageHasBeenSet() const;
 
+                    /**
+                     * 获取分片节点数
+                     * @return ShardNodeCount 分片节点数
+                     */
+                    int64_t GetShardNodeCount() const;
+
+                    /**
+                     * 设置分片节点数
+                     * @param ShardNodeCount 分片节点数
+                     */
+                    void SetShardNodeCount(const int64_t& _shardNodeCount);
+
+                    /**
+                     * 判断参数 ShardNodeCount 是否已赋值
+                     * @return ShardNodeCount 是否已赋值
+                     */
+                    bool ShardNodeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     int64_t m_shardStorage;
                     bool m_shardStorageHasBeenSet;
+
+                    /**
+                     * 分片节点数
+                     */
+                    int64_t m_shardNodeCount;
+                    bool m_shardNodeCountHasBeenSet;
 
                 };
             }

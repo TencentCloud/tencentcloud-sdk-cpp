@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取待续费的实例。
-                     * @return InstanceIds 待续费的实例。
+                     * 获取待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。
+                     * @return InstanceIds 待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置待续费的实例。
-                     * @param InstanceIds 待续费的实例。
+                     * 设置待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。
+                     * @param InstanceIds 待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取是否续费数据盘
-                     * @return RenewDataDisk 是否续费数据盘
+                     * 获取是否续费数据盘。默认值: false, 即不续费。
+                     * @return RenewDataDisk 是否续费数据盘。默认值: false, 即不续费。
                      */
                     bool GetRenewDataDisk() const;
 
                     /**
-                     * 设置是否续费数据盘
-                     * @param RenewDataDisk 是否续费数据盘
+                     * 设置是否续费数据盘。默认值: false, 即不续费。
+                     * @param RenewDataDisk 是否续费数据盘。默认值: false, 即不续费。
                      */
                     void SetRenewDataDisk(const bool& _renewDataDisk);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool RenewDataDiskHasBeenSet() const;
 
                     /**
-                     * 获取数据盘是否对齐实例到期时间
-                     * @return AlignInstanceExpiredTime 数据盘是否对齐实例到期时间
+                     * 获取数据盘是否对齐实例到期时间。默认值: false, 即不对齐。
+                     * @return AlignInstanceExpiredTime 数据盘是否对齐实例到期时间。默认值: false, 即不对齐。
                      */
                     bool GetAlignInstanceExpiredTime() const;
 
                     /**
-                     * 设置数据盘是否对齐实例到期时间
-                     * @param AlignInstanceExpiredTime 数据盘是否对齐实例到期时间
+                     * 设置数据盘是否对齐实例到期时间。默认值: false, 即不对齐。
+                     * @param AlignInstanceExpiredTime 数据盘是否对齐实例到期时间。默认值: false, 即不对齐。
                      */
                     void SetAlignInstanceExpiredTime(const bool& _alignInstanceExpiredTime);
 
@@ -118,7 +118,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 待续费的实例。
+                     * 待续费的实例ID。可通过[DescribeInstances](https://cloud.tencent.com/document/api/1207/47573 )接口返回值中的InstanceId获取。每次请求批量实例的上限为50。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -130,13 +130,13 @@ namespace TencentCloud
                     bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
-                     * 是否续费数据盘
+                     * 是否续费数据盘。默认值: false, 即不续费。
                      */
                     bool m_renewDataDisk;
                     bool m_renewDataDiskHasBeenSet;
 
                     /**
-                     * 数据盘是否对齐实例到期时间
+                     * 数据盘是否对齐实例到期时间。默认值: false, 即不对齐。
                      */
                     bool m_alignInstanceExpiredTime;
                     bool m_alignInstanceExpiredTimeHasBeenSet;

@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取源端对应的引擎类型
+                     * @return SourceEngineTypes 源端对应的引擎类型
+                     */
+                    std::vector<uint64_t> GetSourceEngineTypes() const;
+
+                    /**
+                     * 设置源端对应的引擎类型
+                     * @param SourceEngineTypes 源端对应的引擎类型
+                     */
+                    void SetSourceEngineTypes(const std::vector<uint64_t>& _sourceEngineTypes);
+
+                    /**
+                     * 判断参数 SourceEngineTypes 是否已赋值
+                     * @return SourceEngineTypes 是否已赋值
+                     */
+                    bool SourceEngineTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 源端对应的引擎类型
+                     */
+                    std::vector<uint64_t> m_sourceEngineTypes;
+                    bool m_sourceEngineTypesHasBeenSet;
 
                 };
             }

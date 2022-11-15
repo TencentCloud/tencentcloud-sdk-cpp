@@ -25,7 +25,8 @@ UsageDetail::UsageDetail() :
     m_proxyOrganizationNameHasBeenSet(false),
     m_dateHasBeenSet(false),
     m_usageHasBeenSet(false),
-    m_cancelHasBeenSet(false)
+    m_cancelHasBeenSet(false),
+    m_flowChannelHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome UsageDetail::Deserialize(const rapidjson::Value &value)
         m_cancelHasBeenSet = true;
     }
 
+    if (value.HasMember("FlowChannel") && !value["FlowChannel"].IsNull())
+    {
+        if (!value["FlowChannel"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UsageDetail.FlowChannel` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowChannel = string(value["FlowChannel"].GetString());
+        m_flowChannelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void UsageDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Cancel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cancel, allocator);
+    }
+
+    if (m_flowChannelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowChannel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_flowChannel.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void UsageDetail::SetCancel(const uint64_t& _cancel)
 bool UsageDetail::CancelHasBeenSet() const
 {
     return m_cancelHasBeenSet;
+}
+
+string UsageDetail::GetFlowChannel() const
+{
+    return m_flowChannel;
+}
+
+void UsageDetail::SetFlowChannel(const string& _flowChannel)
+{
+    m_flowChannel = _flowChannel;
+    m_flowChannelHasBeenSet = true;
+}
+
+bool UsageDetail::FlowChannelHasBeenSet() const
+{
+    return m_flowChannelHasBeenSet;
 }
 

@@ -22,7 +22,8 @@
 using namespace TencentCloud::Eis::V20210601::Model;
 using namespace std;
 
-ListRuntimesMCRequest::ListRuntimesMCRequest()
+ListRuntimesMCRequest::ListRuntimesMCRequest() :
+    m_runtimeClassHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string ListRuntimesMCRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_runtimeClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_runtimeClass, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string ListRuntimesMCRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ListRuntimesMCRequest::GetRuntimeClass() const
+{
+    return m_runtimeClass;
+}
+
+void ListRuntimesMCRequest::SetRuntimeClass(const int64_t& _runtimeClass)
+{
+    m_runtimeClass = _runtimeClass;
+    m_runtimeClassHasBeenSet = true;
+}
+
+bool ListRuntimesMCRequest::RuntimeClassHasBeenSet() const
+{
+    return m_runtimeClassHasBeenSet;
+}
 
 

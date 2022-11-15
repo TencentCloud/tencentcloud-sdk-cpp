@@ -26,7 +26,8 @@ DescribeUpgradePriceRequest::DescribeUpgradePriceRequest() :
     m_instanceIdHasBeenSet(false),
     m_memoryHasBeenSet(false),
     m_storageHasBeenSet(false),
-    m_nodeCountHasBeenSet(false)
+    m_nodeCountHasBeenSet(false),
+    m_amountUnitHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeUpgradePriceRequest::ToJsonString() const
         string key = "NodeCount";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_nodeCount, allocator);
+    }
+
+    if (m_amountUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeUpgradePriceRequest::SetNodeCount(const int64_t& _nodeCount)
 bool DescribeUpgradePriceRequest::NodeCountHasBeenSet() const
 {
     return m_nodeCountHasBeenSet;
+}
+
+string DescribeUpgradePriceRequest::GetAmountUnit() const
+{
+    return m_amountUnit;
+}
+
+void DescribeUpgradePriceRequest::SetAmountUnit(const string& _amountUnit)
+{
+    m_amountUnit = _amountUnit;
+    m_amountUnitHasBeenSet = true;
+}
+
+bool DescribeUpgradePriceRequest::AmountUnitHasBeenSet() const
+{
+    return m_amountUnitHasBeenSet;
 }
 
 

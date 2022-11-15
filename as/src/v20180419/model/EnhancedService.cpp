@@ -23,7 +23,8 @@ using namespace std;
 EnhancedService::EnhancedService() :
     m_securityServiceHasBeenSet(false),
     m_monitorServiceHasBeenSet(false),
-    m_automationServiceHasBeenSet(false)
+    m_automationServiceHasBeenSet(false),
+    m_automationToolsServiceHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,23 @@ CoreInternalOutcome EnhancedService::Deserialize(const rapidjson::Value &value)
         m_automationServiceHasBeenSet = true;
     }
 
+    if (value.HasMember("AutomationToolsService") && !value["AutomationToolsService"].IsNull())
+    {
+        if (!value["AutomationToolsService"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnhancedService.AutomationToolsService` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_automationToolsService.Deserialize(value["AutomationToolsService"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_automationToolsServiceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -124,6 +142,15 @@ void EnhancedService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_automationToolsServiceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutomationToolsService";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_automationToolsService.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -175,5 +202,21 @@ void EnhancedService::SetAutomationService(const vector<RunAutomationServiceEnab
 bool EnhancedService::AutomationServiceHasBeenSet() const
 {
     return m_automationServiceHasBeenSet;
+}
+
+RunAutomationServiceEnabled EnhancedService::GetAutomationToolsService() const
+{
+    return m_automationToolsService;
+}
+
+void EnhancedService::SetAutomationToolsService(const RunAutomationServiceEnabled& _automationToolsService)
+{
+    m_automationToolsService = _automationToolsService;
+    m_automationToolsServiceHasBeenSet = true;
+}
+
+bool EnhancedService::AutomationToolsServiceHasBeenSet() const
+{
+    return m_automationToolsServiceHasBeenSet;
 }
 

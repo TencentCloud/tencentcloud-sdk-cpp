@@ -28,7 +28,8 @@ GetRuntimeResourceMonitorMetricMCRequest::GetRuntimeResourceMonitorMetricMCReque
     m_endTimeHasBeenSet(false),
     m_metricTypeHasBeenSet(false),
     m_rateTypeHasBeenSet(false),
-    m_intervalHasBeenSet(false)
+    m_intervalHasBeenSet(false),
+    m_runtimeClassHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string GetRuntimeResourceMonitorMetricMCRequest::ToJsonString() const
         string key = "Interval";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_interval, allocator);
+    }
+
+    if (m_runtimeClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_runtimeClass, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void GetRuntimeResourceMonitorMetricMCRequest::SetInterval(const int64_t& _inter
 bool GetRuntimeResourceMonitorMetricMCRequest::IntervalHasBeenSet() const
 {
     return m_intervalHasBeenSet;
+}
+
+int64_t GetRuntimeResourceMonitorMetricMCRequest::GetRuntimeClass() const
+{
+    return m_runtimeClass;
+}
+
+void GetRuntimeResourceMonitorMetricMCRequest::SetRuntimeClass(const int64_t& _runtimeClass)
+{
+    m_runtimeClass = _runtimeClass;
+    m_runtimeClassHasBeenSet = true;
+}
+
+bool GetRuntimeResourceMonitorMetricMCRequest::RuntimeClassHasBeenSet() const
+{
+    return m_runtimeClassHasBeenSet;
 }
 
 

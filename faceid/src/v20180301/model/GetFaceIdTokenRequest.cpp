@@ -29,7 +29,8 @@ GetFaceIdTokenRequest::GetFaceIdTokenRequest() :
     m_imageBase64HasBeenSet(false),
     m_metaHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_useCosHasBeenSet(false)
+    m_useCosHasBeenSet(false),
+    m_encryptionHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,15 @@ string GetFaceIdTokenRequest::ToJsonString() const
         string key = "UseCos";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_useCos, allocator);
+    }
+
+    if (m_encryptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encryption";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_encryption.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -214,6 +224,22 @@ void GetFaceIdTokenRequest::SetUseCos(const bool& _useCos)
 bool GetFaceIdTokenRequest::UseCosHasBeenSet() const
 {
     return m_useCosHasBeenSet;
+}
+
+Encryption GetFaceIdTokenRequest::GetEncryption() const
+{
+    return m_encryption;
+}
+
+void GetFaceIdTokenRequest::SetEncryption(const Encryption& _encryption)
+{
+    m_encryption = _encryption;
+    m_encryptionHasBeenSet = true;
+}
+
+bool GetFaceIdTokenRequest::EncryptionHasBeenSet() const
+{
+    return m_encryptionHasBeenSet;
 }
 
 

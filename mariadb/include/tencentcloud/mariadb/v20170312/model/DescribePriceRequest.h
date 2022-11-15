@@ -180,6 +180,32 @@ namespace TencentCloud
                      */
                     bool PaymodeHasBeenSet() const;
 
+                    /**
+                     * 获取价格金额单位，不传默认单位为分，取值：  
+* pent：分
+* microPent：微分
+                     * @return AmountUnit 价格金额单位，不传默认单位为分，取值：  
+* pent：分
+* microPent：微分
+                     */
+                    std::string GetAmountUnit() const;
+
+                    /**
+                     * 设置价格金额单位，不传默认单位为分，取值：  
+* pent：分
+* microPent：微分
+                     * @param AmountUnit 价格金额单位，不传默认单位为分，取值：  
+* pent：分
+* microPent：微分
+                     */
+                    void SetAmountUnit(const std::string& _amountUnit);
+
+                    /**
+                     * 判断参数 AmountUnit 是否已赋值
+                     * @return AmountUnit 是否已赋值
+                     */
+                    bool AmountUnitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -226,6 +252,14 @@ namespace TencentCloud
                      */
                     std::string m_paymode;
                     bool m_paymodeHasBeenSet;
+
+                    /**
+                     * 价格金额单位，不传默认单位为分，取值：  
+* pent：分
+* microPent：微分
+                     */
+                    std::string m_amountUnit;
+                    bool m_amountUnitHasBeenSet;
 
                 };
             }

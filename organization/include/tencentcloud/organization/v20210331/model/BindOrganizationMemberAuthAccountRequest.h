@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool MemberUinHasBeenSet() const;
 
                     /**
-                     * 获取策略ID。
-                     * @return PolicyId 策略ID。
+                     * 获取策略ID。可以调用DescribeOrganizationMemberPolicies获取
+                     * @return PolicyId 策略ID。可以调用DescribeOrganizationMemberPolicies获取
                      */
                     int64_t GetPolicyId() const;
 
                     /**
-                     * 设置策略ID。
-                     * @param PolicyId 策略ID。
+                     * 设置策略ID。可以调用DescribeOrganizationMemberPolicies获取
+                     * @param PolicyId 策略ID。可以调用DescribeOrganizationMemberPolicies获取
                      */
                     void SetPolicyId(const int64_t& _policyId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool PolicyIdHasBeenSet() const;
 
                     /**
-                     * 获取组织子账号Uin。
-                     * @return OrgSubAccountUins 组织子账号Uin。
+                     * 获取组织管理员子账号Uin列表。最大5个
+                     * @return OrgSubAccountUins 组织管理员子账号Uin列表。最大5个
                      */
                     std::vector<int64_t> GetOrgSubAccountUins() const;
 
                     /**
-                     * 设置组织子账号Uin。
-                     * @param OrgSubAccountUins 组织子账号Uin。
+                     * 设置组织管理员子账号Uin列表。最大5个
+                     * @param OrgSubAccountUins 组织管理员子账号Uin列表。最大5个
                      */
                     void SetOrgSubAccountUins(const std::vector<int64_t>& _orgSubAccountUins);
 
@@ -105,13 +105,13 @@ namespace TencentCloud
                     bool m_memberUinHasBeenSet;
 
                     /**
-                     * 策略ID。
+                     * 策略ID。可以调用DescribeOrganizationMemberPolicies获取
                      */
                     int64_t m_policyId;
                     bool m_policyIdHasBeenSet;
 
                     /**
-                     * 组织子账号Uin。
+                     * 组织管理员子账号Uin列表。最大5个
                      */
                     std::vector<int64_t> m_orgSubAccountUins;
                     bool m_orgSubAccountUinsHasBeenSet;

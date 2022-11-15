@@ -244,6 +244,24 @@ namespace TencentCloud
                      */
                     bool ProjectTypeHasBeenSet() const;
 
+                    /**
+                     * 获取应用版本：0:旧版 1:3.0新控制台
+                     * @return ProjectVersion 应用版本：0:旧版 1:3.0新控制台
+                     */
+                    int64_t GetProjectVersion() const;
+
+                    /**
+                     * 设置应用版本：0:旧版 1:3.0新控制台
+                     * @param ProjectVersion 应用版本：0:旧版 1:3.0新控制台
+                     */
+                    void SetProjectVersion(const int64_t& _projectVersion);
+
+                    /**
+                     * 判断参数 ProjectVersion 是否已赋值
+                     * @return ProjectVersion 是否已赋值
+                     */
+                    bool ProjectVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +329,12 @@ namespace TencentCloud
                      */
                     int64_t m_projectType;
                     bool m_projectTypeHasBeenSet;
+
+                    /**
+                     * 应用版本：0:旧版 1:3.0新控制台
+                     */
+                    int64_t m_projectVersion;
+                    bool m_projectVersionHasBeenSet;
 
                 };
             }

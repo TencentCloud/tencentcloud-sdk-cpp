@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取偏移
-                     * @return Offset 偏移
+                     * 获取数据偏移量，从1开始。
+                     * @return Offset 数据偏移量，从1开始。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移
-                     * @param Offset 偏移
+                     * 设置数据偏移量，从1开始。
+                     * @param Offset 数据偏移量，从1开始。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取容量
-                     * @return Limit 容量
+                     * 获取返回域名的数量
+                     * @return Limit 返回域名的数量
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置容量
-                     * @param Limit 容量
+                     * 设置返回域名的数量
+                     * @param Limit 返回域名的数量
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -100,13 +100,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 偏移
+                     * 数据偏移量，从1开始。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 容量
+                     * 返回域名的数量
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

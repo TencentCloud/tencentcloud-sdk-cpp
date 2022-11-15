@@ -79,6 +79,24 @@ namespace TencentCloud
                      */
                     bool StaffsHasBeenSet() const;
 
+                    /**
+                     * 获取是否发送密码邮件，默认true
+                     * @return SendPassword 是否发送密码邮件，默认true
+                     */
+                    bool GetSendPassword() const;
+
+                    /**
+                     * 设置是否发送密码邮件，默认true
+                     * @param SendPassword 是否发送密码邮件，默认true
+                     */
+                    void SetSendPassword(const bool& _sendPassword);
+
+                    /**
+                     * 判断参数 SendPassword 是否已赋值
+                     * @return SendPassword 是否已赋值
+                     */
+                    bool SendPasswordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -92,6 +110,12 @@ namespace TencentCloud
                      */
                     std::vector<SeatUserInfo> m_staffs;
                     bool m_staffsHasBeenSet;
+
+                    /**
+                     * 是否发送密码邮件，默认true
+                     */
+                    bool m_sendPassword;
+                    bool m_sendPasswordHasBeenSet;
 
                 };
             }

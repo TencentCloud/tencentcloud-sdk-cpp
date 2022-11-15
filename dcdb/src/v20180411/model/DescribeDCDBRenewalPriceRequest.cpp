@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeDCDBRenewalPriceRequest::DescribeDCDBRenewalPriceRequest() :
     m_instanceIdHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_amountUnitHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeDCDBRenewalPriceRequest::ToJsonString() const
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_amountUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeDCDBRenewalPriceRequest::SetPeriod(const int64_t& _period)
 bool DescribeDCDBRenewalPriceRequest::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+string DescribeDCDBRenewalPriceRequest::GetAmountUnit() const
+{
+    return m_amountUnit;
+}
+
+void DescribeDCDBRenewalPriceRequest::SetAmountUnit(const string& _amountUnit)
+{
+    m_amountUnit = _amountUnit;
+    m_amountUnitHasBeenSet = true;
+}
+
+bool DescribeDCDBRenewalPriceRequest::AmountUnitHasBeenSet() const
+{
+    return m_amountUnitHasBeenSet;
 }
 
 

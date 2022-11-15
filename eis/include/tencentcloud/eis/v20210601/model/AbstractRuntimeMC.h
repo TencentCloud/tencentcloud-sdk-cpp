@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取运行时id
-                     * @return RuntimeId 运行时id
+                     * 获取环境id
+                     * @return RuntimeId 环境id
                      */
                     int64_t GetRuntimeId() const;
 
                     /**
-                     * 设置运行时id
-                     * @param RuntimeId 运行时id
+                     * 设置环境id
+                     * @param RuntimeId 环境id
                      */
                     void SetRuntimeId(const int64_t& _runtimeId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RuntimeIdHasBeenSet() const;
 
                     /**
-                     * 获取运行时名称，用户输入，同一uin内唯一
-                     * @return DisplayName 运行时名称，用户输入，同一uin内唯一
+                     * 获取环境名称，用户输入，同一uin内唯一
+                     * @return DisplayName 环境名称，用户输入，同一uin内唯一
                      */
                     std::string GetDisplayName() const;
 
                     /**
-                     * 设置运行时名称，用户输入，同一uin内唯一
-                     * @param DisplayName 运行时名称，用户输入，同一uin内唯一
+                     * 设置环境名称，用户输入，同一uin内唯一
+                     * @param DisplayName 环境名称，用户输入，同一uin内唯一
                      */
                     void SetDisplayName(const std::string& _displayName);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool DisplayNameHasBeenSet() const;
 
                     /**
-                     * 获取运行时类型：0: sandbox, 1:shared, 2:private
-                     * @return Type 运行时类型：0: sandbox, 1:shared, 2:private
+                     * 获取环境类型：0: sandbox, 1:shared, 2:private
+                     * @return Type 环境类型：0: sandbox, 1:shared, 2:private
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置运行时类型：0: sandbox, 1:shared, 2:private
-                     * @param Type 运行时类型：0: sandbox, 1:shared, 2:private
+                     * 设置环境类型：0: sandbox, 1:shared, 2:private
+                     * @param Type 环境类型：0: sandbox, 1:shared, 2:private
                      */
                     void SetType(const int64_t& _type);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取运行时所在地域，tianjin，beijiing，guangzhou等
-                     * @return Zone 运行时所在地域，tianjin，beijiing，guangzhou等
+                     * 获取环境所在地域，tianjin，beijiing，guangzhou等
+                     * @return Zone 环境所在地域，tianjin，beijiing，guangzhou等
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置运行时所在地域，tianjin，beijiing，guangzhou等
-                     * @param Zone 运行时所在地域，tianjin，beijiing，guangzhou等
+                     * 设置环境所在地域，tianjin，beijiing，guangzhou等
+                     * @param Zone 环境所在地域，tianjin，beijiing，guangzhou等
                      */
                     void SetZone(const std::string& _zone);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取运行时所在地域，tianjin，beijiing，guangzhou等（同Zone）
-                     * @return Area 运行时所在地域，tianjin，beijiing，guangzhou等（同Zone）
+                     * 获取环境所在地域，tianjin，beijiing，guangzhou等（同Zone）
+                     * @return Area 环境所在地域，tianjin，beijiing，guangzhou等（同Zone）
                      */
                     std::string GetArea() const;
 
                     /**
-                     * 设置运行时所在地域，tianjin，beijiing，guangzhou等（同Zone）
-                     * @param Area 运行时所在地域，tianjin，beijiing，guangzhou等（同Zone）
+                     * 设置环境所在地域，tianjin，beijiing，guangzhou等（同Zone）
+                     * @param Area 环境所在地域，tianjin，beijiing，guangzhou等（同Zone）
                      */
                     void SetArea(const std::string& _area);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool AreaHasBeenSet() const;
 
                     /**
-                     * 获取运行时应用listener地址后缀
-                     * @return Addr 运行时应用listener地址后缀
+                     * 获取环境应用listener地址后缀
+                     * @return Addr 环境应用listener地址后缀
                      */
                     std::string GetAddr() const;
 
                     /**
-                     * 设置运行时应用listener地址后缀
-                     * @param Addr 运行时应用listener地址后缀
+                     * 设置环境应用listener地址后缀
+                     * @param Addr 环境应用listener地址后缀
                      */
                     void SetAddr(const std::string& _addr);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool AddrHasBeenSet() const;
 
                     /**
-                     * 获取运行时状态
-                     * @return Status 运行时状态
+                     * 获取环境状态
+                     * @return Status 环境状态
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置运行时状态
-                     * @param Status 运行时状态
+                     * 设置环境状态
+                     * @param Status 环境状态
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取运行时过期时间
-                     * @return ExpiredAt 运行时过期时间
+                     * 获取环境过期时间
+                     * @return ExpiredAt 环境过期时间
                      */
                     int64_t GetExpiredAt() const;
 
                     /**
-                     * 设置运行时过期时间
-                     * @param ExpiredAt 运行时过期时间
+                     * 设置环境过期时间
+                     * @param ExpiredAt 环境过期时间
                      */
                     void SetExpiredAt(const int64_t& _expiredAt);
 
@@ -190,55 +190,108 @@ namespace TencentCloud
                      */
                     bool ExpiredAtHasBeenSet() const;
 
+                    /**
+                     * 获取环境运行类型：0:运行时类型、1:api类型
+                     * @return RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     */
+                    int64_t GetRuntimeClass() const;
+
+                    /**
+                     * 设置环境运行类型：0:运行时类型、1:api类型
+                     * @param RuntimeClass 环境运行类型：0:运行时类型、1:api类型
+                     */
+                    void SetRuntimeClass(const int64_t& _runtimeClass);
+
+                    /**
+                     * 判断参数 RuntimeClass 是否已赋值
+                     * @return RuntimeClass 是否已赋值
+                     */
+                    bool RuntimeClassHasBeenSet() const;
+
+                    /**
+                     * 获取是否已在当前环境发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Deployed 是否已在当前环境发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDeployed() const;
+
+                    /**
+                     * 设置是否已在当前环境发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Deployed 是否已在当前环境发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeployed(const bool& _deployed);
+
+                    /**
+                     * 判断参数 Deployed 是否已赋值
+                     * @return Deployed 是否已赋值
+                     */
+                    bool DeployedHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 运行时id
+                     * 环境id
                      */
                     int64_t m_runtimeId;
                     bool m_runtimeIdHasBeenSet;
 
                     /**
-                     * 运行时名称，用户输入，同一uin内唯一
+                     * 环境名称，用户输入，同一uin内唯一
                      */
                     std::string m_displayName;
                     bool m_displayNameHasBeenSet;
 
                     /**
-                     * 运行时类型：0: sandbox, 1:shared, 2:private
+                     * 环境类型：0: sandbox, 1:shared, 2:private
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 运行时所在地域，tianjin，beijiing，guangzhou等
+                     * 环境所在地域，tianjin，beijiing，guangzhou等
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 运行时所在地域，tianjin，beijiing，guangzhou等（同Zone）
+                     * 环境所在地域，tianjin，beijiing，guangzhou等（同Zone）
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;
 
                     /**
-                     * 运行时应用listener地址后缀
+                     * 环境应用listener地址后缀
                      */
                     std::string m_addr;
                     bool m_addrHasBeenSet;
 
                     /**
-                     * 运行时状态
+                     * 环境状态
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 运行时过期时间
+                     * 环境过期时间
                      */
                     int64_t m_expiredAt;
                     bool m_expiredAtHasBeenSet;
+
+                    /**
+                     * 环境运行类型：0:运行时类型、1:api类型
+                     */
+                    int64_t m_runtimeClass;
+                    bool m_runtimeClassHasBeenSet;
+
+                    /**
+                     * 是否已在当前环境发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_deployed;
+                    bool m_deployedHasBeenSet;
 
                 };
             }

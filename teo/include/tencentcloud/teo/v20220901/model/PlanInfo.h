@@ -134,19 +134,27 @@ namespace TencentCloud
 <li> sta_with_bot ：全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
 <li> sta_cm ：中国大陆内容分发网络标准版套餐； </li>
 <li> sta_cm_with_bot ：中国大陆内容分发网络标准版套餐附带bot管理；</li>
+<li> sta_global ：全球内容分发网络（包括中国大陆）标准版套餐； </li>
+<li> sta_global_with_bot ：全球内容分发网络（包括中国大陆）标准版套餐附带bot管理；</li>
 <li> ent ：全球内容分发网络（不包括中国大陆）企业版套餐； </li>
 <li> ent_with_bot ： 全球内容分发网络（不包括中国大陆）企业版套餐附带bot管理；</li>
 <li> ent_cm ：中国大陆内容分发网络企业版套餐； </li>
-<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理。</li>
+<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理；</li>
+<li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>
                      * @return PlanType 套餐类型，取值有：
 <li> sta ：全球内容分发网络（不包括中国大陆）标准版套餐； </li>
 <li> sta_with_bot ：全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
 <li> sta_cm ：中国大陆内容分发网络标准版套餐； </li>
 <li> sta_cm_with_bot ：中国大陆内容分发网络标准版套餐附带bot管理；</li>
+<li> sta_global ：全球内容分发网络（包括中国大陆）标准版套餐； </li>
+<li> sta_global_with_bot ：全球内容分发网络（包括中国大陆）标准版套餐附带bot管理；</li>
 <li> ent ：全球内容分发网络（不包括中国大陆）企业版套餐； </li>
 <li> ent_with_bot ： 全球内容分发网络（不包括中国大陆）企业版套餐附带bot管理；</li>
 <li> ent_cm ：中国大陆内容分发网络企业版套餐； </li>
-<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理。</li>
+<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理；</li>
+<li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>
                      */
                     std::string GetPlanType() const;
 
@@ -156,19 +164,27 @@ namespace TencentCloud
 <li> sta_with_bot ：全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
 <li> sta_cm ：中国大陆内容分发网络标准版套餐； </li>
 <li> sta_cm_with_bot ：中国大陆内容分发网络标准版套餐附带bot管理；</li>
+<li> sta_global ：全球内容分发网络（包括中国大陆）标准版套餐； </li>
+<li> sta_global_with_bot ：全球内容分发网络（包括中国大陆）标准版套餐附带bot管理；</li>
 <li> ent ：全球内容分发网络（不包括中国大陆）企业版套餐； </li>
 <li> ent_with_bot ： 全球内容分发网络（不包括中国大陆）企业版套餐附带bot管理；</li>
 <li> ent_cm ：中国大陆内容分发网络企业版套餐； </li>
-<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理。</li>
+<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理；</li>
+<li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>
                      * @param PlanType 套餐类型，取值有：
 <li> sta ：全球内容分发网络（不包括中国大陆）标准版套餐； </li>
 <li> sta_with_bot ：全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
 <li> sta_cm ：中国大陆内容分发网络标准版套餐； </li>
 <li> sta_cm_with_bot ：中国大陆内容分发网络标准版套餐附带bot管理；</li>
+<li> sta_global ：全球内容分发网络（包括中国大陆）标准版套餐； </li>
+<li> sta_global_with_bot ：全球内容分发网络（包括中国大陆）标准版套餐附带bot管理；</li>
 <li> ent ：全球内容分发网络（不包括中国大陆）企业版套餐； </li>
 <li> ent_with_bot ： 全球内容分发网络（不包括中国大陆）企业版套餐附带bot管理；</li>
 <li> ent_cm ：中国大陆内容分发网络企业版套餐； </li>
-<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理。</li>
+<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理；</li>
+<li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>
                      */
                     void SetPlanType(const std::string& _planType);
 
@@ -235,20 +251,24 @@ namespace TencentCloud
                     /**
                      * 获取套餐加速区域类型，取值有：
 <li> mainland ：中国大陆； </li>
-<li> overseas ：全球（不包括中国大陆）。</li>
+<li> overseas ：全球（不包括中国大陆）；</li>
+<li> global ：全球（包括中国大陆）。 </li>
                      * @return Area 套餐加速区域类型，取值有：
 <li> mainland ：中国大陆； </li>
-<li> overseas ：全球（不包括中国大陆）。</li>
+<li> overseas ：全球（不包括中国大陆）；</li>
+<li> global ：全球（包括中国大陆）。 </li>
                      */
                     std::string GetArea() const;
 
                     /**
                      * 设置套餐加速区域类型，取值有：
 <li> mainland ：中国大陆； </li>
-<li> overseas ：全球（不包括中国大陆）。</li>
+<li> overseas ：全球（不包括中国大陆）；</li>
+<li> global ：全球（包括中国大陆）。 </li>
                      * @param Area 套餐加速区域类型，取值有：
 <li> mainland ：中国大陆； </li>
-<li> overseas ：全球（不包括中国大陆）。</li>
+<li> overseas ：全球（不包括中国大陆）；</li>
+<li> global ：全球（包括中国大陆）。 </li>
                      */
                     void SetArea(const std::string& _area);
 
@@ -291,10 +311,14 @@ namespace TencentCloud
 <li> sta_with_bot ：全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
 <li> sta_cm ：中国大陆内容分发网络标准版套餐； </li>
 <li> sta_cm_with_bot ：中国大陆内容分发网络标准版套餐附带bot管理；</li>
+<li> sta_global ：全球内容分发网络（包括中国大陆）标准版套餐； </li>
+<li> sta_global_with_bot ：全球内容分发网络（包括中国大陆）标准版套餐附带bot管理；</li>
 <li> ent ：全球内容分发网络（不包括中国大陆）企业版套餐； </li>
 <li> ent_with_bot ： 全球内容分发网络（不包括中国大陆）企业版套餐附带bot管理；</li>
 <li> ent_cm ：中国大陆内容分发网络企业版套餐； </li>
-<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理。</li>
+<li> ent_cm_with_bot ：中国大陆内容分发网络企业版套餐附带bot管理；</li>
+<li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>
                      */
                     std::string m_planType;
                     bool m_planTypeHasBeenSet;
@@ -320,7 +344,8 @@ namespace TencentCloud
                     /**
                      * 套餐加速区域类型，取值有：
 <li> mainland ：中国大陆； </li>
-<li> overseas ：全球（不包括中国大陆）。</li>
+<li> overseas ：全球（不包括中国大陆）；</li>
+<li> global ：全球（包括中国大陆）。 </li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

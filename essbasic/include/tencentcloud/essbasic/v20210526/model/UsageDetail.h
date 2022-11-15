@@ -148,6 +148,28 @@ namespace TencentCloud
                      */
                     bool CancelHasBeenSet() const;
 
+                    /**
+                     * 获取消耗渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FlowChannel 消耗渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFlowChannel() const;
+
+                    /**
+                     * 设置消耗渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FlowChannel 消耗渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFlowChannel(const std::string& _flowChannel);
+
+                    /**
+                     * 判断参数 FlowChannel 是否已赋值
+                     * @return FlowChannel 是否已赋值
+                     */
+                    bool FlowChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -182,6 +204,13 @@ namespace TencentCloud
                      */
                     uint64_t m_cancel;
                     bool m_cancelHasBeenSet;
+
+                    /**
+                     * 消耗渠道
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_flowChannel;
+                    bool m_flowChannelHasBeenSet;
 
                 };
             }

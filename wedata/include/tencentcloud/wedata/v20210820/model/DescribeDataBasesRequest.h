@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool DatasourceIdHasBeenSet() const;
 
+                    /**
+                     * 获取数据源类型
+                     * @return DsTypes 数据源类型
+                     */
+                    std::vector<uint64_t> GetDsTypes() const;
+
+                    /**
+                     * 设置数据源类型
+                     * @param DsTypes 数据源类型
+                     */
+                    void SetDsTypes(const std::vector<uint64_t>& _dsTypes);
+
+                    /**
+                     * 判断参数 DsTypes 是否已赋值
+                     * @return DsTypes 是否已赋值
+                     */
+                    bool DsTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_datasourceId;
                     bool m_datasourceIdHasBeenSet;
+
+                    /**
+                     * 数据源类型
+                     */
+                    std::vector<uint64_t> m_dsTypes;
+                    bool m_dsTypesHasBeenSet;
 
                 };
             }

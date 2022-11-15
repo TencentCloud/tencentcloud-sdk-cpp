@@ -25,7 +25,8 @@ using namespace std;
 
 EncryptedPhoneVerificationResponse::EncryptedPhoneVerificationResponse() :
     m_resultHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_iSPHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome EncryptedPhoneVerificationResponse::Deserialize(const string
         m_descriptionHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ISP") && !rsp["ISP"].IsNull())
+    {
+        if (!rsp["ISP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ISP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iSP = string(rsp["ISP"].GetString());
+        m_iSPHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string EncryptedPhoneVerificationResponse::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iSPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ISP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iSP.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string EncryptedPhoneVerificationResponse::GetDescription() const
 bool EncryptedPhoneVerificationResponse::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string EncryptedPhoneVerificationResponse::GetISP() const
+{
+    return m_iSP;
+}
+
+bool EncryptedPhoneVerificationResponse::ISPHasBeenSet() const
+{
+    return m_iSPHasBeenSet;
 }
 
 

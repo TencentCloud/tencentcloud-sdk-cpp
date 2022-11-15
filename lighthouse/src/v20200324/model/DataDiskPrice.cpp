@@ -25,7 +25,8 @@ DataDiskPrice::DataDiskPrice() :
     m_originalDiskPriceHasBeenSet(false),
     m_originalPriceHasBeenSet(false),
     m_discountHasBeenSet(false),
-    m_discountPriceHasBeenSet(false)
+    m_discountPriceHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DataDiskPrice::Deserialize(const rapidjson::Value &value)
         m_discountPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataDiskPrice.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DataDiskPrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DataDiskPrice::SetDiscountPrice(const double& _discountPrice)
 bool DataDiskPrice::DiscountPriceHasBeenSet() const
 {
     return m_discountPriceHasBeenSet;
+}
+
+string DataDiskPrice::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DataDiskPrice::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DataDiskPrice::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

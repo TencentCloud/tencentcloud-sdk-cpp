@@ -24,7 +24,8 @@ using namespace std;
 
 GetRuntimeMCRequest::GetRuntimeMCRequest() :
     m_runtimeIdHasBeenSet(false),
-    m_zoneHasBeenSet(false)
+    m_zoneHasBeenSet(false),
+    m_runtimeClassHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string GetRuntimeMCRequest::ToJsonString() const
         string key = "Zone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runtimeClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeClass";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_runtimeClass, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void GetRuntimeMCRequest::SetZone(const string& _zone)
 bool GetRuntimeMCRequest::ZoneHasBeenSet() const
 {
     return m_zoneHasBeenSet;
+}
+
+int64_t GetRuntimeMCRequest::GetRuntimeClass() const
+{
+    return m_runtimeClass;
+}
+
+void GetRuntimeMCRequest::SetRuntimeClass(const int64_t& _runtimeClass)
+{
+    m_runtimeClass = _runtimeClass;
+    m_runtimeClassHasBeenSet = true;
+}
+
+bool GetRuntimeMCRequest::RuntimeClassHasBeenSet() const
+{
+    return m_runtimeClassHasBeenSet;
 }
 
 

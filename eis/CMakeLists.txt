@@ -32,6 +32,7 @@ set(eis_public_header_model
   include/tencentcloud/eis/v20210601/model/RuntimeMC.h
   include/tencentcloud/eis/v20210601/model/GetRuntimeResourceMonitorMetricMCResponse.h
   include/tencentcloud/eis/v20210601/model/ListRuntimeDeployedInstancesMCRequest.h
+  include/tencentcloud/eis/v20210601/model/RuntimeExtensionMC.h
   include/tencentcloud/eis/v20210601/model/ListDeployableRuntimesMCResponse.h
   include/tencentcloud/eis/v20210601/model/GetRuntimeMCResponse.h
   include/tencentcloud/eis/v20210601/model/ListDeployableRuntimesMCRequest.h
@@ -59,6 +60,7 @@ set(eis_src
   src/v20210601/model/RuntimeMC.cpp
   src/v20210601/model/GetRuntimeResourceMonitorMetricMCResponse.cpp
   src/v20210601/model/ListRuntimeDeployedInstancesMCRequest.cpp
+  src/v20210601/model/RuntimeExtensionMC.cpp
   src/v20210601/model/ListDeployableRuntimesMCResponse.cpp
   src/v20210601/model/GetRuntimeMCResponse.cpp
   src/v20210601/model/ListDeployableRuntimesMCRequest.cpp

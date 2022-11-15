@@ -177,6 +177,20 @@ namespace TencentCloud
                      */
                     bool SubLabelHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回上下文关联文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContextText 该字段用于返回上下文关联文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContextText() const;
+
+                    /**
+                     * 判断参数 ContextText 是否已赋值
+                     * @return ContextText 是否已赋值
+                     */
+                    bool ContextTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -244,6 +258,13 @@ namespace TencentCloud
                      */
                     std::string m_subLabel;
                     bool m_subLabelHasBeenSet;
+
+                    /**
+                     * 该字段用于返回上下文关联文本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contextText;
+                    bool m_contextTextHasBeenSet;
 
                 };
             }

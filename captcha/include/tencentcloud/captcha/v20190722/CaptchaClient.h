@@ -224,7 +224,7 @@ namespace TencentCloud
                 DescribeCaptchaUserAllAppIdOutcomeCallable DescribeCaptchaUserAllAppIdCallable(const Model::DescribeCaptchaUserAllAppIdRequest& request);
 
                 /**
-                 *查询单个验证的统计数据，包括：票据校验量、票据校验通过量、票据校验拦截量。
+                 *查询单个CaptchaAppID票据校验数据，包括：票据校验量、票据校验通过量、票据校验拦截量。
                  * @param req GetTicketStatisticsRequest
                  * @return GetTicketStatisticsOutcome
                  */
@@ -233,7 +233,7 @@ namespace TencentCloud
                 GetTicketStatisticsOutcomeCallable GetTicketStatisticsCallable(const Model::GetTicketStatisticsRequest& request);
 
                 /**
-                 *查询所有验证的统计数据，包括：总票据校验量、总票据校验通过量、总票据校验拦截量。
+                 *查询全部票据校验的统计数据，包括：总票据校验量、总票据校验通过量、总票据校验拦截量。
                  * @param req GetTotalTicketStatisticsRequest
                  * @return GetTotalTicketStatisticsOutcome
                  */

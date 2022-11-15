@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdb::V20170320::Model;
 using namespace std;
 
 ReloadBalanceProxyNodeRequest::ReloadBalanceProxyNodeRequest() :
-    m_proxyGroupIdHasBeenSet(false)
+    m_proxyGroupIdHasBeenSet(false),
+    m_proxyAddressIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string ReloadBalanceProxyNodeRequest::ToJsonString() const
         string key = "ProxyGroupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_proxyGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_proxyAddressIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyAddressId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_proxyAddressId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void ReloadBalanceProxyNodeRequest::SetProxyGroupId(const string& _proxyGroupId)
 bool ReloadBalanceProxyNodeRequest::ProxyGroupIdHasBeenSet() const
 {
     return m_proxyGroupIdHasBeenSet;
+}
+
+string ReloadBalanceProxyNodeRequest::GetProxyAddressId() const
+{
+    return m_proxyAddressId;
+}
+
+void ReloadBalanceProxyNodeRequest::SetProxyAddressId(const string& _proxyAddressId)
+{
+    m_proxyAddressId = _proxyAddressId;
+    m_proxyAddressIdHasBeenSet = true;
+}
+
+bool ReloadBalanceProxyNodeRequest::ProxyAddressIdHasBeenSet() const
+{
+    return m_proxyAddressIdHasBeenSet;
 }
 
 

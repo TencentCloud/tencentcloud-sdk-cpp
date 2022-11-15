@@ -25,7 +25,8 @@ using namespace std;
 DescribeRuleTemplatesRequest::DescribeRuleTemplatesRequest() :
     m_typeHasBeenSet(false),
     m_sourceObjectTypeHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_sourceEngineTypesHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string DescribeRuleTemplatesRequest::ToJsonString() const
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceEngineTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceEngineTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sourceEngineTypes.begin(); itr != m_sourceEngineTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void DescribeRuleTemplatesRequest::SetProjectId(const string& _projectId)
 bool DescribeRuleTemplatesRequest::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<uint64_t> DescribeRuleTemplatesRequest::GetSourceEngineTypes() const
+{
+    return m_sourceEngineTypes;
+}
+
+void DescribeRuleTemplatesRequest::SetSourceEngineTypes(const vector<uint64_t>& _sourceEngineTypes)
+{
+    m_sourceEngineTypes = _sourceEngineTypes;
+    m_sourceEngineTypesHasBeenSet = true;
+}
+
+bool DescribeRuleTemplatesRequest::SourceEngineTypesHasBeenSet() const
+{
+    return m_sourceEngineTypesHasBeenSet;
 }
 
 

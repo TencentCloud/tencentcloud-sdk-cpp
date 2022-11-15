@@ -178,6 +178,50 @@ namespace TencentCloud
                      */
                     bool DatasourceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取数据库原始名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginDatabaseName 数据库原始名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOriginDatabaseName() const;
+
+                    /**
+                     * 设置数据库原始名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginDatabaseName 数据库原始名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginDatabaseName(const std::string& _originDatabaseName);
+
+                    /**
+                     * 判断参数 OriginDatabaseName 是否已赋值
+                     * @return OriginDatabaseName 是否已赋值
+                     */
+                    bool OriginDatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginSchemaName schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOriginSchemaName() const;
+
+                    /**
+                     * 设置schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginSchemaName schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginSchemaName(const std::string& _originSchemaName);
+
+                    /**
+                     * 判断参数 OriginSchemaName 是否已赋值
+                     * @return OriginSchemaName 是否已赋值
+                     */
+                    bool OriginSchemaNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +265,20 @@ namespace TencentCloud
                      */
                     uint64_t m_datasourceType;
                     bool m_datasourceTypeHasBeenSet;
+
+                    /**
+                     * 数据库原始名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originDatabaseName;
+                    bool m_originDatabaseNameHasBeenSet;
+
+                    /**
+                     * schema名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originSchemaName;
+                    bool m_originSchemaNameHasBeenSet;
 
                 };
             }

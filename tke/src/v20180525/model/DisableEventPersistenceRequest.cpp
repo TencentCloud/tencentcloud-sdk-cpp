@@ -23,7 +23,8 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 DisableEventPersistenceRequest::DisableEventPersistenceRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_deleteLogSetAndTopicHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DisableEventPersistenceRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deleteLogSetAndTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeleteLogSetAndTopic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_deleteLogSetAndTopic, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DisableEventPersistenceRequest::SetClusterId(const string& _clusterId)
 bool DisableEventPersistenceRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+bool DisableEventPersistenceRequest::GetDeleteLogSetAndTopic() const
+{
+    return m_deleteLogSetAndTopic;
+}
+
+void DisableEventPersistenceRequest::SetDeleteLogSetAndTopic(const bool& _deleteLogSetAndTopic)
+{
+    m_deleteLogSetAndTopic = _deleteLogSetAndTopic;
+    m_deleteLogSetAndTopicHasBeenSet = true;
+}
+
+bool DisableEventPersistenceRequest::DeleteLogSetAndTopicHasBeenSet() const
+{
+    return m_deleteLogSetAndTopicHasBeenSet;
 }
 
 

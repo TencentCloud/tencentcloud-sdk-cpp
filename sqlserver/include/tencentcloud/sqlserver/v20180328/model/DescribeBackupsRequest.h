@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool StrategyHasBeenSet() const;
 
                     /**
-                     * 获取按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
-                     * @return BackupWay 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     * 获取按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，2-定期备份，不填则不筛选此项
+                     * @return BackupWay 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，2-定期备份，不填则不筛选此项
                      */
                     int64_t GetBackupWay() const;
 
                     /**
-                     * 设置按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
-                     * @param BackupWay 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     * 设置按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，2-定期备份，不填则不筛选此项
+                     * @param BackupWay 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，2-定期备份，不填则不筛选此项
                      */
                     void SetBackupWay(const int64_t& _backupWay);
 
@@ -321,7 +321,7 @@ namespace TencentCloud
                     bool m_strategyHasBeenSet;
 
                     /**
-                     * 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，不填则不筛选此项
+                     * 按照备份方式筛选，0-后台自动定时备份，1-用户手动临时备份，2-定期备份，不填则不筛选此项
                      */
                     int64_t m_backupWay;
                     bool m_backupWayHasBeenSet;

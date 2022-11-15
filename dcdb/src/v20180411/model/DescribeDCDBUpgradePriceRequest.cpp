@@ -27,7 +27,8 @@ DescribeDCDBUpgradePriceRequest::DescribeDCDBUpgradePriceRequest() :
     m_upgradeTypeHasBeenSet(false),
     m_addShardConfigHasBeenSet(false),
     m_expandShardConfigHasBeenSet(false),
-    m_splitShardConfigHasBeenSet(false)
+    m_splitShardConfigHasBeenSet(false),
+    m_amountUnitHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,14 @@ string DescribeDCDBUpgradePriceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_splitShardConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_amountUnitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AmountUnit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_amountUnit.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -167,6 +176,22 @@ void DescribeDCDBUpgradePriceRequest::SetSplitShardConfig(const SplitShardConfig
 bool DescribeDCDBUpgradePriceRequest::SplitShardConfigHasBeenSet() const
 {
     return m_splitShardConfigHasBeenSet;
+}
+
+string DescribeDCDBUpgradePriceRequest::GetAmountUnit() const
+{
+    return m_amountUnit;
+}
+
+void DescribeDCDBUpgradePriceRequest::SetAmountUnit(const string& _amountUnit)
+{
+    m_amountUnit = _amountUnit;
+    m_amountUnitHasBeenSet = true;
+}
+
+bool DescribeDCDBUpgradePriceRequest::AmountUnitHasBeenSet() const
+{
+    return m_amountUnitHasBeenSet;
 }
 
 

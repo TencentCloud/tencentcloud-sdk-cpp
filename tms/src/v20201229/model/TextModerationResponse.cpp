@@ -33,7 +33,8 @@ TextModerationResponse::TextModerationResponse() :
     m_riskDetailsHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_dataIdHasBeenSet(false),
-    m_subLabelHasBeenSet(false)
+    m_subLabelHasBeenSet(false),
+    m_contextTextHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome TextModerationResponse::Deserialize(const string &payload)
         m_subLabelHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ContextText") && !rsp["ContextText"].IsNull())
+    {
+        if (!rsp["ContextText"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContextText` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contextText = string(rsp["ContextText"].GetString());
+        m_contextTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ string TextModerationResponse::ToJsonString() const
         string key = "SubLabel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subLabel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contextTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContextText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contextText.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -413,6 +432,16 @@ string TextModerationResponse::GetSubLabel() const
 bool TextModerationResponse::SubLabelHasBeenSet() const
 {
     return m_subLabelHasBeenSet;
+}
+
+string TextModerationResponse::GetContextText() const
+{
+    return m_contextText;
+}
+
+bool TextModerationResponse::ContextTextHasBeenSet() const
+{
+    return m_contextTextHasBeenSet;
 }
 
 

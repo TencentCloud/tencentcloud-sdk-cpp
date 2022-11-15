@@ -1,0 +1,115 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_AUTHNODE_H_
+#define TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_AUTHNODE_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+
+
+namespace TencentCloud
+{
+    namespace Organization
+    {
+        namespace V20210331
+        {
+            namespace Model
+            {
+                /**
+                * 认证主体主要信息
+                */
+                class AuthNode : public AbstractModel
+                {
+                public:
+                    AuthNode();
+                    ~AuthNode() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取主体关系ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RelationId 主体关系ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRelationId() const;
+
+                    /**
+                     * 设置主体关系ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RelationId 主体关系ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRelationId(const int64_t& _relationId);
+
+                    /**
+                     * 判断参数 RelationId 是否已赋值
+                     * @return RelationId 是否已赋值
+                     */
+                    bool RelationIdHasBeenSet() const;
+
+                    /**
+                     * 获取主体名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AuthName 主体名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAuthName() const;
+
+                    /**
+                     * 设置主体名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AuthName 主体名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAuthName(const std::string& _authName);
+
+                    /**
+                     * 判断参数 AuthName 是否已赋值
+                     * @return AuthName 是否已赋值
+                     */
+                    bool AuthNameHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 主体关系ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_relationId;
+                    bool m_relationIdHasBeenSet;
+
+                    /**
+                     * 主体名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_authName;
+                    bool m_authNameHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_ORGANIZATION_V20210331_MODEL_AUTHNODE_H_

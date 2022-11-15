@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了实例的增强服务启用情况与其设置，如云安全，云监控等实例 Agent。
+                * 描述了实例的增强服务启用情况与其设置，如云安全，云监控，自动化助手等实例 Agent。
                 */
                 class EnhancedService : public AbstractModel
                 {
@@ -103,6 +103,24 @@ namespace TencentCloud
                      */
                     bool AutomationServiceHasBeenSet() const;
 
+                    /**
+                     * 获取开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutomationToolsService 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RunAutomationServiceEnabled GetAutomationToolsService() const;
+
+                    /**
+                     * 设置开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutomationToolsService 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutomationToolsService(const RunAutomationServiceEnabled& _automationToolsService);
+
+                    /**
+                     * 判断参数 AutomationToolsService 是否已赋值
+                     * @return AutomationToolsService 是否已赋值
+                     */
+                    bool AutomationToolsServiceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -122,6 +140,12 @@ namespace TencentCloud
                      */
                     std::vector<RunAutomationServiceEnabled> m_automationService;
                     bool m_automationServiceHasBeenSet;
+
+                    /**
+                     * 开启自动化助手服务。若不指定该参数，则默认逻辑与CVM保持一致。注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RunAutomationServiceEnabled m_automationToolsService;
+                    bool m_automationToolsServiceHasBeenSet;
 
                 };
             }

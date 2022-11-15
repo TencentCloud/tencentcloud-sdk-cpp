@@ -642,6 +642,49 @@ WafClient::DescribeAutoDenyIPOutcomeCallable WafClient::DescribeAutoDenyIPCallab
     return task->get_future();
 }
 
+WafClient::DescribeDomainDetailsSaasOutcome WafClient::DescribeDomainDetailsSaas(const DescribeDomainDetailsSaasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainDetailsSaas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainDetailsSaasResponse rsp = DescribeDomainDetailsSaasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainDetailsSaasOutcome(rsp);
+        else
+            return DescribeDomainDetailsSaasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainDetailsSaasOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeDomainDetailsSaasAsync(const DescribeDomainDetailsSaasRequest& request, const DescribeDomainDetailsSaasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainDetailsSaas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeDomainDetailsSaasOutcomeCallable WafClient::DescribeDomainDetailsSaasCallable(const DescribeDomainDetailsSaasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainDetailsSaasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainDetailsSaas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeDomainWhiteRulesOutcome WafClient::DescribeDomainWhiteRules(const DescribeDomainWhiteRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainWhiteRules");

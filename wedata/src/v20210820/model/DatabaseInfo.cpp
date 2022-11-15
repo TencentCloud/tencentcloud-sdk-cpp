@@ -26,7 +26,9 @@ DatabaseInfo::DatabaseInfo() :
     m_databaseNameHasBeenSet(false),
     m_databaseIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_datasourceTypeHasBeenSet(false)
+    m_datasourceTypeHasBeenSet(false),
+    m_originDatabaseNameHasBeenSet(false),
+    m_originSchemaNameHasBeenSet(false)
 {
 }
 
@@ -95,6 +97,26 @@ CoreInternalOutcome DatabaseInfo::Deserialize(const rapidjson::Value &value)
         m_datasourceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("OriginDatabaseName") && !value["OriginDatabaseName"].IsNull())
+    {
+        if (!value["OriginDatabaseName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.OriginDatabaseName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originDatabaseName = string(value["OriginDatabaseName"].GetString());
+        m_originDatabaseNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("OriginSchemaName") && !value["OriginSchemaName"].IsNull())
+    {
+        if (!value["OriginSchemaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseInfo.OriginSchemaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_originSchemaName = string(value["OriginSchemaName"].GetString());
+        m_originSchemaNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +170,22 @@ void DatabaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DatasourceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_datasourceType, allocator);
+    }
+
+    if (m_originDatabaseNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginDatabaseName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originDatabaseName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_originSchemaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OriginSchemaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_originSchemaName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +285,37 @@ void DatabaseInfo::SetDatasourceType(const uint64_t& _datasourceType)
 bool DatabaseInfo::DatasourceTypeHasBeenSet() const
 {
     return m_datasourceTypeHasBeenSet;
+}
+
+string DatabaseInfo::GetOriginDatabaseName() const
+{
+    return m_originDatabaseName;
+}
+
+void DatabaseInfo::SetOriginDatabaseName(const string& _originDatabaseName)
+{
+    m_originDatabaseName = _originDatabaseName;
+    m_originDatabaseNameHasBeenSet = true;
+}
+
+bool DatabaseInfo::OriginDatabaseNameHasBeenSet() const
+{
+    return m_originDatabaseNameHasBeenSet;
+}
+
+string DatabaseInfo::GetOriginSchemaName() const
+{
+    return m_originSchemaName;
+}
+
+void DatabaseInfo::SetOriginSchemaName(const string& _originSchemaName)
+{
+    m_originSchemaName = _originSchemaName;
+    m_originSchemaNameHasBeenSet = true;
+}
+
+bool DatabaseInfo::OriginSchemaNameHasBeenSet() const
+{
+    return m_originSchemaNameHasBeenSet;
 }
 
