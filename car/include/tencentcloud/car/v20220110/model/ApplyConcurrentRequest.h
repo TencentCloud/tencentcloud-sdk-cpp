@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户IP
-                     * @return UserIp 用户IP
+                     * 获取用户IP，用户客户端的公网IP，用于就近调度
+                     * @return UserIp 用户IP，用户客户端的公网IP，用于就近调度
                      */
                     std::string GetUserIp() const;
 
                     /**
-                     * 设置用户IP
-                     * @param UserIp 用户IP
+                     * 设置用户IP，用户客户端的公网IP，用于就近调度
+                     * @param UserIp 用户IP，用户客户端的公网IP，用于就近调度
                      */
                     void SetUserIp(const std::string& _userIp);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户IP
+                     * 用户IP，用户客户端的公网IP，用于就近调度
                      */
                     std::string m_userIp;
                     bool m_userIpHasBeenSet;

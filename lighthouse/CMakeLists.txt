@@ -44,6 +44,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/SystemDisk.h
   include/tencentcloud/lighthouse/v20200324/model/ResetInstanceBlueprint.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleRequest.h
   include/tencentcloud/lighthouse/v20200324/model/InstancePriceDetail.h
   include/tencentcloud/lighthouse/v20200324/model/InquirePriceRenewInstancesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/DiscountDetail.h
@@ -178,6 +179,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/Price.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableResponse.h
   include/tencentcloud/lighthouse/v20200324/model/BlueprintPrice.h
+  include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesBundleResponse.h
   include/tencentcloud/lighthouse/v20200324/model/GeneralResourceQuota.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeDisksReturnableRequest.h
@@ -233,6 +235,7 @@ set(lighthouse_src
   src/v20200324/model/SystemDisk.cpp
   src/v20200324/model/ResetInstanceBlueprint.cpp
   src/v20200324/model/DescribeBundlesResponse.cpp
+  src/v20200324/model/ModifyInstancesBundleRequest.cpp
   src/v20200324/model/InstancePriceDetail.cpp
   src/v20200324/model/InquirePriceRenewInstancesRequest.cpp
   src/v20200324/model/DiscountDetail.cpp
@@ -367,6 +370,7 @@ set(lighthouse_src
   src/v20200324/model/Price.cpp
   src/v20200324/model/DescribeDisksReturnableResponse.cpp
   src/v20200324/model/BlueprintPrice.cpp
+  src/v20200324/model/ModifyInstancesBundleResponse.cpp
   src/v20200324/model/GeneralResourceQuota.cpp
   src/v20200324/model/DescribeResetInstanceBlueprintsResponse.cpp
   src/v20200324/model/DescribeDisksReturnableRequest.cpp

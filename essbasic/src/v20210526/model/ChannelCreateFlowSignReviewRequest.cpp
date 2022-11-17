@@ -26,7 +26,8 @@ ChannelCreateFlowSignReviewRequest::ChannelCreateFlowSignReviewRequest() :
     m_agentHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_reviewTypeHasBeenSet(false),
-    m_reviewMessageHasBeenSet(false)
+    m_reviewMessageHasBeenSet(false),
+    m_recipientIdHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,14 @@ string ChannelCreateFlowSignReviewRequest::ToJsonString() const
         string key = "ReviewMessage";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_reviewMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_recipientId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -140,6 +149,22 @@ void ChannelCreateFlowSignReviewRequest::SetReviewMessage(const string& _reviewM
 bool ChannelCreateFlowSignReviewRequest::ReviewMessageHasBeenSet() const
 {
     return m_reviewMessageHasBeenSet;
+}
+
+string ChannelCreateFlowSignReviewRequest::GetRecipientId() const
+{
+    return m_recipientId;
+}
+
+void ChannelCreateFlowSignReviewRequest::SetRecipientId(const string& _recipientId)
+{
+    m_recipientId = _recipientId;
+    m_recipientIdHasBeenSet = true;
+}
+
+bool ChannelCreateFlowSignReviewRequest::RecipientIdHasBeenSet() const
+{
+    return m_recipientIdHasBeenSet;
 }
 
 

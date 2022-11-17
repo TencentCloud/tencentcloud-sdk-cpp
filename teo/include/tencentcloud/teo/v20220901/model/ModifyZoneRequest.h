@@ -105,6 +105,24 @@ namespace TencentCloud
                      */
                     bool VanityNameServersHasBeenSet() const;
 
+                    /**
+                     * 获取站点别名。数字、英文、-和_组合，限制20个字符。
+                     * @return AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+                     */
+                    std::string GetAliasZoneName() const;
+
+                    /**
+                     * 设置站点别名。数字、英文、-和_组合，限制20个字符。
+                     * @param AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+                     */
+                    void SetAliasZoneName(const std::string& _aliasZoneName);
+
+                    /**
+                     * 判断参数 AliasZoneName 是否已赋值
+                     * @return AliasZoneName 是否已赋值
+                     */
+                    bool AliasZoneNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -126,6 +144,12 @@ namespace TencentCloud
                      */
                     VanityNameServers m_vanityNameServers;
                     bool m_vanityNameServersHasBeenSet;
+
+                    /**
+                     * 站点别名。数字、英文、-和_组合，限制20个字符。
+                     */
+                    std::string m_aliasZoneName;
+                    bool m_aliasZoneNameHasBeenSet;
 
                 };
             }

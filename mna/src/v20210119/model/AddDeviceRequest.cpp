@@ -25,7 +25,8 @@ using namespace std;
 AddDeviceRequest::AddDeviceRequest() :
     m_deviceNameHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_dataKeyHasBeenSet(false)
+    m_dataKeyHasBeenSet(false),
+    m_encryptedHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string AddDeviceRequest::ToJsonString() const
         string key = "DataKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Encrypted";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_encrypted, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void AddDeviceRequest::SetDataKey(const string& _dataKey)
 bool AddDeviceRequest::DataKeyHasBeenSet() const
 {
     return m_dataKeyHasBeenSet;
+}
+
+bool AddDeviceRequest::GetEncrypted() const
+{
+    return m_encrypted;
+}
+
+void AddDeviceRequest::SetEncrypted(const bool& _encrypted)
+{
+    m_encrypted = _encrypted;
+    m_encryptedHasBeenSet = true;
+}
+
+bool AddDeviceRequest::EncryptedHasBeenSet() const
+{
+    return m_encryptedHasBeenSet;
 }
 
 

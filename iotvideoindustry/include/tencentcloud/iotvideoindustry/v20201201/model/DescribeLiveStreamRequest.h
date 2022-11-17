@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LiveChannelIdHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取过期时间 秒级unix时间戳
+                     * @return ExpireTime 过期时间 秒级unix时间戳
                      */
                     int64_t GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param ExpireTime 过期时间
+                     * 设置过期时间 秒级unix时间戳
+                     * @param ExpireTime 过期时间 秒级unix时间戳
                      */
                     void SetExpireTime(const int64_t& _expireTime);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_liveChannelIdHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 过期时间 秒级unix时间戳
                      */
                     int64_t m_expireTime;
                     bool m_expireTimeHasBeenSet;

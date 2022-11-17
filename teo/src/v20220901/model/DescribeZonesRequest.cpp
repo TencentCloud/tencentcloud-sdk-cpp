@@ -25,7 +25,9 @@ using namespace std;
 DescribeZonesRequest::DescribeZonesRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_orderHasBeenSet(false),
+    m_directionHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string DescribeZonesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_orderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Order";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_order.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_directionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Direction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_direction.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -121,6 +139,38 @@ void DescribeZonesRequest::SetFilters(const vector<AdvancedFilter>& _filters)
 bool DescribeZonesRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string DescribeZonesRequest::GetOrder() const
+{
+    return m_order;
+}
+
+void DescribeZonesRequest::SetOrder(const string& _order)
+{
+    m_order = _order;
+    m_orderHasBeenSet = true;
+}
+
+bool DescribeZonesRequest::OrderHasBeenSet() const
+{
+    return m_orderHasBeenSet;
+}
+
+string DescribeZonesRequest::GetDirection() const
+{
+    return m_direction;
+}
+
+void DescribeZonesRequest::SetDirection(const string& _direction)
+{
+    m_direction = _direction;
+    m_directionHasBeenSet = true;
+}
+
+bool DescribeZonesRequest::DirectionHasBeenSet() const
+{
+    return m_directionHasBeenSet;
 }
 
 

@@ -40,6 +40,49 @@ TeoClient::TeoClient(const Credential &credential, const string &region, const C
 }
 
 
+TeoClient::BindZoneToPlanOutcome TeoClient::BindZoneToPlan(const BindZoneToPlanRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindZoneToPlan");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindZoneToPlanResponse rsp = BindZoneToPlanResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindZoneToPlanOutcome(rsp);
+        else
+            return BindZoneToPlanOutcome(o.GetError());
+    }
+    else
+    {
+        return BindZoneToPlanOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::BindZoneToPlanAsync(const BindZoneToPlanRequest& request, const BindZoneToPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindZoneToPlan(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::BindZoneToPlanOutcomeCallable TeoClient::BindZoneToPlanCallable(const BindZoneToPlanRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindZoneToPlanOutcome()>>(
+        [this, request]()
+        {
+            return this->BindZoneToPlan(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CheckCertificateOutcome TeoClient::CheckCertificate(const CheckCertificateRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckCertificate");

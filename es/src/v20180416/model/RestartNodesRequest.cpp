@@ -25,7 +25,9 @@ using namespace std;
 RestartNodesRequest::RestartNodesRequest() :
     m_instanceIdHasBeenSet(false),
     m_nodeNamesHasBeenSet(false),
-    m_forceRestartHasBeenSet(false)
+    m_forceRestartHasBeenSet(false),
+    m_restartModeHasBeenSet(false),
+    m_isOfflineHasBeenSet(false)
 {
 }
 
@@ -63,6 +65,22 @@ string RestartNodesRequest::ToJsonString() const
         string key = "ForceRestart";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_forceRestart, allocator);
+    }
+
+    if (m_restartModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestartMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_restartMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOfflineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOffline";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOffline, allocator);
     }
 
 
@@ -119,6 +137,38 @@ void RestartNodesRequest::SetForceRestart(const bool& _forceRestart)
 bool RestartNodesRequest::ForceRestartHasBeenSet() const
 {
     return m_forceRestartHasBeenSet;
+}
+
+string RestartNodesRequest::GetRestartMode() const
+{
+    return m_restartMode;
+}
+
+void RestartNodesRequest::SetRestartMode(const string& _restartMode)
+{
+    m_restartMode = _restartMode;
+    m_restartModeHasBeenSet = true;
+}
+
+bool RestartNodesRequest::RestartModeHasBeenSet() const
+{
+    return m_restartModeHasBeenSet;
+}
+
+bool RestartNodesRequest::GetIsOffline() const
+{
+    return m_isOffline;
+}
+
+void RestartNodesRequest::SetIsOffline(const bool& _isOffline)
+{
+    m_isOffline = _isOffline;
+    m_isOfflineHasBeenSet = true;
+}
+
+bool RestartNodesRequest::IsOfflineHasBeenSet() const
+{
+    return m_isOfflineHasBeenSet;
 }
 
 

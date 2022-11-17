@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取文本文件
-                     * @return TextUrl 文本文件
+                     * 获取文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
+                     * @return TextUrl 文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
                      */
                     std::string GetTextUrl() const;
 
                     /**
-                     * 设置文本文件
-                     * @param TextUrl 文本文件
+                     * 设置文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
+                     * @param TextUrl 文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
                      */
                     void SetTextUrl(const std::string& _textUrl);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 文本文件
+                     * 文本文件的下载地址，服务会从该地址下载文件，目前仅支持腾讯云cos
                      */
                     std::string m_textUrl;
                     bool m_textUrlHasBeenSet;

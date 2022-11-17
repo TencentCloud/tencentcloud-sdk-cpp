@@ -465,17 +465,17 @@ namespace TencentCloud
                     bool AccountRoleHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥Id，如果为跨账号实例此项必填
+                     * 获取临时密钥Id，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmpSecretId 临时秘钥Id，如果为跨账号实例此项必填
+                     * @return TmpSecretId 临时密钥Id，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
-                     * 设置临时秘钥Id，如果为跨账号实例此项必填
+                     * 设置临时密钥Id，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TmpSecretId 临时秘钥Id，如果为跨账号实例此项必填
+                     * @param TmpSecretId 临时密钥Id，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
@@ -487,17 +487,17 @@ namespace TencentCloud
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥Key，如果为跨账号实例此项必填
+                     * 获取临时密钥Key，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmpSecretKey 临时秘钥Key，如果为跨账号实例此项必填
+                     * @return TmpSecretKey 临时密钥Key，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
-                     * 设置临时秘钥Key，如果为跨账号实例此项必填
+                     * 设置临时密钥Key，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TmpSecretKey 临时秘钥Key，如果为跨账号实例此项必填
+                     * @param TmpSecretKey 临时密钥Key，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
@@ -666,14 +666,14 @@ namespace TencentCloud
                     bool m_accountRoleHasBeenSet;
 
                     /**
-                     * 临时秘钥Id，如果为跨账号实例此项必填
+                     * 临时密钥Id，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
-                     * 临时秘钥Key，如果为跨账号实例此项必填
+                     * 临时密钥Key，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretKey;

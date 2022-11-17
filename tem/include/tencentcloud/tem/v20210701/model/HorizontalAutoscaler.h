@@ -83,14 +83,70 @@ namespace TencentCloud
                     bool MaxReplicasHasBeenSet() const;
 
                     /**
-                     * 获取指标度量（CPU or MEMORY）
-                     * @return Metrics 指标度量（CPU or MEMORY）
+                     * 获取指标度量
+CPU（CPU使用率，%）
+MEMORY（内存使用率，%）
+CPU_CORE_USED（CPU使用量，core）
+MEMORY_SIZE_USED(内存使用量，MiB)
+NETWORK_BANDWIDTH_RECEIVE(网络入带宽，MBps)
+NETWORK_BANDWIDTH_TRANSMIT(网络出带宽，MBps)
+NETWORK_TRAFFIC_RECEIVE(网络入流量，MiB/s)
+NETWORK_TRAFFIC_TRANSMIT(网络出流量，MiB/s)
+NETWORK_PACKETS_RECEIVE(网络入包量，Count/s)
+NETWORK_PACKETS_TRANSMIT(网络出包量，Count/s)
+FS_IOPS_WRITE(磁盘写次数，Count/s)
+FS_IOPS_READ(磁盘读次数，Count/s)
+FS_SIZE_WRITE(磁盘写大小，MiB/s)
+FS_SIZE_READ(磁盘读大小，MiB/s)
+                     * @return Metrics 指标度量
+CPU（CPU使用率，%）
+MEMORY（内存使用率，%）
+CPU_CORE_USED（CPU使用量，core）
+MEMORY_SIZE_USED(内存使用量，MiB)
+NETWORK_BANDWIDTH_RECEIVE(网络入带宽，MBps)
+NETWORK_BANDWIDTH_TRANSMIT(网络出带宽，MBps)
+NETWORK_TRAFFIC_RECEIVE(网络入流量，MiB/s)
+NETWORK_TRAFFIC_TRANSMIT(网络出流量，MiB/s)
+NETWORK_PACKETS_RECEIVE(网络入包量，Count/s)
+NETWORK_PACKETS_TRANSMIT(网络出包量，Count/s)
+FS_IOPS_WRITE(磁盘写次数，Count/s)
+FS_IOPS_READ(磁盘读次数，Count/s)
+FS_SIZE_WRITE(磁盘写大小，MiB/s)
+FS_SIZE_READ(磁盘读大小，MiB/s)
                      */
                     std::string GetMetrics() const;
 
                     /**
-                     * 设置指标度量（CPU or MEMORY）
-                     * @param Metrics 指标度量（CPU or MEMORY）
+                     * 设置指标度量
+CPU（CPU使用率，%）
+MEMORY（内存使用率，%）
+CPU_CORE_USED（CPU使用量，core）
+MEMORY_SIZE_USED(内存使用量，MiB)
+NETWORK_BANDWIDTH_RECEIVE(网络入带宽，MBps)
+NETWORK_BANDWIDTH_TRANSMIT(网络出带宽，MBps)
+NETWORK_TRAFFIC_RECEIVE(网络入流量，MiB/s)
+NETWORK_TRAFFIC_TRANSMIT(网络出流量，MiB/s)
+NETWORK_PACKETS_RECEIVE(网络入包量，Count/s)
+NETWORK_PACKETS_TRANSMIT(网络出包量，Count/s)
+FS_IOPS_WRITE(磁盘写次数，Count/s)
+FS_IOPS_READ(磁盘读次数，Count/s)
+FS_SIZE_WRITE(磁盘写大小，MiB/s)
+FS_SIZE_READ(磁盘读大小，MiB/s)
+                     * @param Metrics 指标度量
+CPU（CPU使用率，%）
+MEMORY（内存使用率，%）
+CPU_CORE_USED（CPU使用量，core）
+MEMORY_SIZE_USED(内存使用量，MiB)
+NETWORK_BANDWIDTH_RECEIVE(网络入带宽，MBps)
+NETWORK_BANDWIDTH_TRANSMIT(网络出带宽，MBps)
+NETWORK_TRAFFIC_RECEIVE(网络入流量，MiB/s)
+NETWORK_TRAFFIC_TRANSMIT(网络出流量，MiB/s)
+NETWORK_PACKETS_RECEIVE(网络入包量，Count/s)
+NETWORK_PACKETS_TRANSMIT(网络出包量，Count/s)
+FS_IOPS_WRITE(磁盘写次数，Count/s)
+FS_IOPS_READ(磁盘读次数，Count/s)
+FS_SIZE_WRITE(磁盘写大小，MiB/s)
+FS_SIZE_READ(磁盘读大小，MiB/s)
                      */
                     void SetMetrics(const std::string& _metrics);
 
@@ -101,14 +157,14 @@ namespace TencentCloud
                     bool MetricsHasBeenSet() const;
 
                     /**
-                     * 获取阈值（百分比）
-                     * @return Threshold 阈值（百分比）
+                     * 获取阈值（整数）
+                     * @return Threshold 阈值（整数）
                      */
                     int64_t GetThreshold() const;
 
                     /**
-                     * 设置阈值（百分比）
-                     * @param Threshold 阈值（百分比）
+                     * 设置阈值（整数）
+                     * @param Threshold 阈值（整数）
                      */
                     void SetThreshold(const int64_t& _threshold);
 
@@ -136,6 +192,28 @@ namespace TencentCloud
                      */
                     bool EnabledHasBeenSet() const;
 
+                    /**
+                     * 获取阈值（小数，优先使用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DoubleThreshold 阈值（小数，优先使用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDoubleThreshold() const;
+
+                    /**
+                     * 设置阈值（小数，优先使用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DoubleThreshold 阈值（小数，优先使用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDoubleThreshold(const double& _doubleThreshold);
+
+                    /**
+                     * 判断参数 DoubleThreshold 是否已赋值
+                     * @return DoubleThreshold 是否已赋值
+                     */
+                    bool DoubleThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -151,13 +229,27 @@ namespace TencentCloud
                     bool m_maxReplicasHasBeenSet;
 
                     /**
-                     * 指标度量（CPU or MEMORY）
+                     * 指标度量
+CPU（CPU使用率，%）
+MEMORY（内存使用率，%）
+CPU_CORE_USED（CPU使用量，core）
+MEMORY_SIZE_USED(内存使用量，MiB)
+NETWORK_BANDWIDTH_RECEIVE(网络入带宽，MBps)
+NETWORK_BANDWIDTH_TRANSMIT(网络出带宽，MBps)
+NETWORK_TRAFFIC_RECEIVE(网络入流量，MiB/s)
+NETWORK_TRAFFIC_TRANSMIT(网络出流量，MiB/s)
+NETWORK_PACKETS_RECEIVE(网络入包量，Count/s)
+NETWORK_PACKETS_TRANSMIT(网络出包量，Count/s)
+FS_IOPS_WRITE(磁盘写次数，Count/s)
+FS_IOPS_READ(磁盘读次数，Count/s)
+FS_SIZE_WRITE(磁盘写大小，MiB/s)
+FS_SIZE_READ(磁盘读大小，MiB/s)
                      */
                     std::string m_metrics;
                     bool m_metricsHasBeenSet;
 
                     /**
-                     * 阈值（百分比）
+                     * 阈值（整数）
                      */
                     int64_t m_threshold;
                     bool m_thresholdHasBeenSet;
@@ -167,6 +259,13 @@ namespace TencentCloud
                      */
                     bool m_enabled;
                     bool m_enabledHasBeenSet;
+
+                    /**
+                     * 阈值（小数，优先使用）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_doubleThreshold;
+                    bool m_doubleThresholdHasBeenSet;
 
                 };
             }

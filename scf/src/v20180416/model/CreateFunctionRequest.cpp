@@ -48,7 +48,8 @@ CreateFunctionRequest::CreateFunctionRequest() :
     m_asyncRunEnableHasBeenSet(false),
     m_traceEnableHasBeenSet(false),
     m_protocolTypeHasBeenSet(false),
-    m_protocolParamsHasBeenSet(false)
+    m_protocolParamsHasBeenSet(false),
+    m_instanceConcurrencyConfigHasBeenSet(false)
 {
 }
 
@@ -286,6 +287,15 @@ string CreateFunctionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_protocolParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceConcurrencyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceConcurrencyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceConcurrencyConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -710,6 +720,22 @@ void CreateFunctionRequest::SetProtocolParams(const ProtocolParams& _protocolPar
 bool CreateFunctionRequest::ProtocolParamsHasBeenSet() const
 {
     return m_protocolParamsHasBeenSet;
+}
+
+InstanceConcurrencyConfig CreateFunctionRequest::GetInstanceConcurrencyConfig() const
+{
+    return m_instanceConcurrencyConfig;
+}
+
+void CreateFunctionRequest::SetInstanceConcurrencyConfig(const InstanceConcurrencyConfig& _instanceConcurrencyConfig)
+{
+    m_instanceConcurrencyConfig = _instanceConcurrencyConfig;
+    m_instanceConcurrencyConfigHasBeenSet = true;
+}
+
+bool CreateFunctionRequest::InstanceConcurrencyConfigHasBeenSet() const
+{
+    return m_instanceConcurrencyConfigHasBeenSet;
 }
 
 

@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool TextUrlHasBeenSet() const;
 
+                    /**
+                     * 获取模型名称，名称长度不超过36，默认为BizId。
+                     * @return ModelName 模型名称，名称长度不超过36，默认为BizId。
+                     */
+                    std::string GetModelName() const;
+
+                    /**
+                     * 设置模型名称，名称长度不超过36，默认为BizId。
+                     * @param ModelName 模型名称，名称长度不超过36，默认为BizId。
+                     */
+                    void SetModelName(const std::string& _modelName);
+
+                    /**
+                     * 判断参数 ModelName 是否已赋值
+                     * @return ModelName 是否已赋值
+                     */
+                    bool ModelNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_textUrl;
                     bool m_textUrlHasBeenSet;
+
+                    /**
+                     * 模型名称，名称长度不超过36，默认为BizId。
+                     */
+                    std::string m_modelName;
+                    bool m_modelNameHasBeenSet;
 
                 };
             }

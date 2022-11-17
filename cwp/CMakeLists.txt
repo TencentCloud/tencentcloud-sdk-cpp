@@ -174,6 +174,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ModifyOrderAttributeRequest.h
   include/tencentcloud/cwp/v20180228/model/JavaMemShellInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetSystemPackageListResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeClientExceptionResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetMachineListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeWebPageGeneralizeRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineDetailRequest.h
@@ -209,6 +210,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeBashEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/DeleteMachineRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetWebLocationListResponse.h
+  include/tencentcloud/cwp/v20180228/model/RecordInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetHostTotalCountResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetJarListRequest.h
   include/tencentcloud/cwp/v20180228/model/PrivilegeEscalationProcess.h
@@ -523,6 +525,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeScanTaskDetailsRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeProtectDirRelatedServerRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineItemListResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeClientExceptionRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBanRegionsRequest.h
   include/tencentcloud/cwp/v20180228/model/SecurityEventInfo.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineAnalysisDataResponse.h
@@ -758,6 +761,7 @@ set(cwp_src
   src/v20180228/model/ModifyOrderAttributeRequest.cpp
   src/v20180228/model/JavaMemShellInfo.cpp
   src/v20180228/model/DescribeAssetSystemPackageListResponse.cpp
+  src/v20180228/model/DescribeClientExceptionResponse.cpp
   src/v20180228/model/DescribeAssetMachineListResponse.cpp
   src/v20180228/model/DescribeWebPageGeneralizeRequest.cpp
   src/v20180228/model/DescribeBaselineDetailRequest.cpp
@@ -793,6 +797,7 @@ set(cwp_src
   src/v20180228/model/DescribeBashEventsRequest.cpp
   src/v20180228/model/DeleteMachineRequest.cpp
   src/v20180228/model/DescribeAssetWebLocationListResponse.cpp
+  src/v20180228/model/RecordInfo.cpp
   src/v20180228/model/DescribeAssetHostTotalCountResponse.cpp
   src/v20180228/model/DescribeAssetJarListRequest.cpp
   src/v20180228/model/PrivilegeEscalationProcess.cpp
@@ -1107,6 +1112,7 @@ set(cwp_src
   src/v20180228/model/DescribeScanTaskDetailsRequest.cpp
   src/v20180228/model/DescribeProtectDirRelatedServerRequest.cpp
   src/v20180228/model/DescribeBaselineItemListResponse.cpp
+  src/v20180228/model/DescribeClientExceptionRequest.cpp
   src/v20180228/model/DescribeBanRegionsRequest.cpp
   src/v20180228/model/SecurityEventInfo.cpp
   src/v20180228/model/DescribeBaselineAnalysisDataResponse.cpp

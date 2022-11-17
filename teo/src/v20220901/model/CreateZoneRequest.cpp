@@ -27,7 +27,8 @@ CreateZoneRequest::CreateZoneRequest() :
     m_typeHasBeenSet(false),
     m_jumpStartHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_allowDuplicatesHasBeenSet(false)
+    m_allowDuplicatesHasBeenSet(false),
+    m_aliasZoneNameHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,14 @@ string CreateZoneRequest::ToJsonString() const
         string key = "AllowDuplicates";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_allowDuplicates, allocator);
+    }
+
+    if (m_aliasZoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aliasZoneName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -171,6 +180,22 @@ void CreateZoneRequest::SetAllowDuplicates(const bool& _allowDuplicates)
 bool CreateZoneRequest::AllowDuplicatesHasBeenSet() const
 {
     return m_allowDuplicatesHasBeenSet;
+}
+
+string CreateZoneRequest::GetAliasZoneName() const
+{
+    return m_aliasZoneName;
+}
+
+void CreateZoneRequest::SetAliasZoneName(const string& _aliasZoneName)
+{
+    m_aliasZoneName = _aliasZoneName;
+    m_aliasZoneNameHasBeenSet = true;
+}
+
+bool CreateZoneRequest::AliasZoneNameHasBeenSet() const
+{
+    return m_aliasZoneNameHasBeenSet;
 }
 
 

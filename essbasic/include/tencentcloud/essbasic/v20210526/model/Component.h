@@ -124,7 +124,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -142,7 +143,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -164,7 +166,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -182,7 +185,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -403,37 +407,97 @@ KEYWORD - 关键字
 
                     /**
                      * 获取参数控件样式，json格式表述
+
 不同类型的控件会有部分非通用参数
+
 TEXT/MULTI_LINE_TEXT控件可以指定
 1 Font：目前只支持黑体、宋体
 2 FontSize： 范围12-72
 3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      * @return ComponentExtra 参数控件样式，json格式表述
+
 不同类型的控件会有部分非通用参数
+
 TEXT/MULTI_LINE_TEXT控件可以指定
 1 Font：目前只支持黑体、宋体
 2 FontSize： 范围12-72
 3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      */
                     std::string GetComponentExtra() const;
 
                     /**
                      * 设置参数控件样式，json格式表述
+
 不同类型的控件会有部分非通用参数
+
 TEXT/MULTI_LINE_TEXT控件可以指定
 1 Font：目前只支持黑体、宋体
 2 FontSize： 范围12-72
 3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      * @param ComponentExtra 参数控件样式，json格式表述
+
 不同类型的控件会有部分非通用参数
+
 TEXT/MULTI_LINE_TEXT控件可以指定
 1 Font：目前只支持黑体、宋体
 2 FontSize： 范围12-72
 3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      */
                     void SetComponentExtra(const std::string& _componentExtra);
 
@@ -595,6 +659,60 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                      */
                     bool OffsetYHasBeenSet() const;
 
+                    /**
+                     * 获取指定关键字页码
+                     * @return KeywordPage 指定关键字页码
+                     */
+                    int64_t GetKeywordPage() const;
+
+                    /**
+                     * 设置指定关键字页码
+                     * @param KeywordPage 指定关键字页码
+                     */
+                    void SetKeywordPage(const int64_t& _keywordPage);
+
+                    /**
+                     * 判断参数 KeywordPage 是否已赋值
+                     * @return KeywordPage 是否已赋值
+                     */
+                    bool KeywordPageHasBeenSet() const;
+
+                    /**
+                     * 获取关键字位置模式
+                     * @return RelativeLocation 关键字位置模式
+                     */
+                    std::string GetRelativeLocation() const;
+
+                    /**
+                     * 设置关键字位置模式
+                     * @param RelativeLocation 关键字位置模式
+                     */
+                    void SetRelativeLocation(const std::string& _relativeLocation);
+
+                    /**
+                     * 判断参数 RelativeLocation 是否已赋值
+                     * @return RelativeLocation 是否已赋值
+                     */
+                    bool RelativeLocationHasBeenSet() const;
+
+                    /**
+                     * 获取关键字索引
+                     * @return KeywordIndexes 关键字索引
+                     */
+                    std::vector<int64_t> GetKeywordIndexes() const;
+
+                    /**
+                     * 设置关键字索引
+                     * @param KeywordIndexes 关键字索引
+                     */
+                    void SetKeywordIndexes(const std::vector<int64_t>& _keywordIndexes);
+
+                    /**
+                     * 判断参数 KeywordIndexes 是否已赋值
+                     * @return KeywordIndexes 是否已赋值
+                     */
+                    bool KeywordIndexesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -623,7 +741,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -704,12 +823,27 @@ KEYWORD - 关键字
 
                     /**
                      * 参数控件样式，json格式表述
+
 不同类型的控件会有部分非通用参数
+
 TEXT/MULTI_LINE_TEXT控件可以指定
 1 Font：目前只支持黑体、宋体
 2 FontSize： 范围12-72
 3 FontAlign： Left/Right/Center，左对齐/居中/右对齐
 例如：{"FontSize":12}
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
+ComponentType为SIGN_SIGNATURE类型可以控制签署方式
+{“ComponentTypeLimit”: [“xxx”]}
+xxx可以为：
+HANDWRITE – 手写签名
+BORDERLESS_ESIGN – 自动生成无边框腾讯体
+OCR_ESIGN -- AI智能识别手写签名
+ESIGN -- 个人印章类型
+如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      */
                     std::string m_componentExtra;
                     bool m_componentExtraHasBeenSet;
@@ -760,6 +894,24 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;
+
+                    /**
+                     * 指定关键字页码
+                     */
+                    int64_t m_keywordPage;
+                    bool m_keywordPageHasBeenSet;
+
+                    /**
+                     * 关键字位置模式
+                     */
+                    std::string m_relativeLocation;
+                    bool m_relativeLocationHasBeenSet;
+
+                    /**
+                     * 关键字索引
+                     */
+                    std::vector<int64_t> m_keywordIndexes;
+                    bool m_keywordIndexesHasBeenSet;
 
                 };
             }

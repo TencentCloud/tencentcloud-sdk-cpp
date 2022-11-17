@@ -131,6 +131,24 @@ SIGN_REJECT:拒签(流程结束)
                      */
                     bool ReviewMessageHasBeenSet() const;
 
+                    /**
+                     * 获取签署节点审核时需要指定
+                     * @return RecipientId 签署节点审核时需要指定
+                     */
+                    std::string GetRecipientId() const;
+
+                    /**
+                     * 设置签署节点审核时需要指定
+                     * @param RecipientId 签署节点审核时需要指定
+                     */
+                    void SetRecipientId(const std::string& _recipientId);
+
+                    /**
+                     * 判断参数 RecipientId 是否已赋值
+                     * @return RecipientId 是否已赋值
+                     */
+                    bool RecipientIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -160,6 +178,12 @@ SIGN_REJECT:拒签(流程结束)
                      */
                     std::string m_reviewMessage;
                     bool m_reviewMessageHasBeenSet;
+
+                    /**
+                     * 签署节点审核时需要指定
+                     */
+                    std::string m_recipientId;
+                    bool m_recipientIdHasBeenSet;
 
                 };
             }

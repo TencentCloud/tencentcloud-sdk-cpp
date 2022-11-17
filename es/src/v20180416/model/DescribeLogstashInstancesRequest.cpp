@@ -30,7 +30,8 @@ DescribeLogstashInstancesRequest::DescribeLogstashInstancesRequest() :
     m_limitHasBeenSet(false),
     m_orderByKeyHasBeenSet(false),
     m_orderByTypeHasBeenSet(false),
-    m_vpcIdsHasBeenSet(false)
+    m_vpcIdsHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,21 @@ string DescribeLogstashInstancesRequest::ToJsonString() const
         for (auto itr = m_vpcIds.begin(); itr != m_vpcIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -254,6 +270,22 @@ void DescribeLogstashInstancesRequest::SetVpcIds(const vector<string>& _vpcIds)
 bool DescribeLogstashInstancesRequest::VpcIdsHasBeenSet() const
 {
     return m_vpcIdsHasBeenSet;
+}
+
+vector<TagInfo> DescribeLogstashInstancesRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void DescribeLogstashInstancesRequest::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool DescribeLogstashInstancesRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

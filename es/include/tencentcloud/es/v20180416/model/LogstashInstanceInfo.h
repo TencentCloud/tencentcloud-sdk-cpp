@@ -27,6 +27,7 @@
 #include <tencentcloud/es/v20180416/model/LogstashNodeInfo.h>
 #include <tencentcloud/es/v20180416/model/LogstashExtendedFile.h>
 #include <tencentcloud/es/v20180416/model/OperationDuration.h>
+#include <tencentcloud/es/v20180416/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -529,6 +530,72 @@ namespace TencentCloud
                      */
                     bool OperationDurationHasBeenSet() const;
 
+                    /**
+                     * 获取CPU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CpuNum CPU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCpuNum() const;
+
+                    /**
+                     * 设置CPU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CpuNum CPU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCpuNum(const uint64_t& _cpuNum);
+
+                    /**
+                     * 判断参数 CpuNum 是否已赋值
+                     * @return CpuNum 是否已赋值
+                     */
+                    bool CpuNumHasBeenSet() const;
+
+                    /**
+                     * 获取实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TagList 实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> GetTagList() const;
+
+                    /**
+                     * 设置实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TagList 实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTagList(const std::vector<TagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
+                    /**
+                     * 获取内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MemSize 内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMemSize() const;
+
+                    /**
+                     * 设置内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MemSize 内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMemSize(const uint64_t& _memSize);
+
+                    /**
+                     * 判断参数 MemSize 是否已赋值
+                     * @return MemSize 是否已赋值
+                     */
+                    bool MemSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -689,6 +756,27 @@ namespace TencentCloud
                      */
                     OperationDuration m_operationDuration;
                     bool m_operationDurationHasBeenSet;
+
+                    /**
+                     * CPU数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_cpuNum;
+                    bool m_cpuNumHasBeenSet;
+
+                    /**
+                     * 实例标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
+
+                    /**
+                     * 内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_memSize;
+                    bool m_memSizeHasBeenSet;
 
                 };
             }

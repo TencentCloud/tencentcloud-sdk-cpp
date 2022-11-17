@@ -25,7 +25,8 @@ using namespace std;
 ModifyZoneRequest::ModifyZoneRequest() :
     m_zoneIdHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_vanityNameServersHasBeenSet(false)
+    m_vanityNameServersHasBeenSet(false),
+    m_aliasZoneNameHasBeenSet(false)
 {
 }
 
@@ -59,6 +60,14 @@ string ModifyZoneRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_vanityNameServers.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_aliasZoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_aliasZoneName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -115,6 +124,22 @@ void ModifyZoneRequest::SetVanityNameServers(const VanityNameServers& _vanityNam
 bool ModifyZoneRequest::VanityNameServersHasBeenSet() const
 {
     return m_vanityNameServersHasBeenSet;
+}
+
+string ModifyZoneRequest::GetAliasZoneName() const
+{
+    return m_aliasZoneName;
+}
+
+void ModifyZoneRequest::SetAliasZoneName(const string& _aliasZoneName)
+{
+    m_aliasZoneName = _aliasZoneName;
+    m_aliasZoneNameHasBeenSet = true;
+}
+
+bool ModifyZoneRequest::AliasZoneNameHasBeenSet() const
+{
+    return m_aliasZoneNameHasBeenSet;
 }
 
 

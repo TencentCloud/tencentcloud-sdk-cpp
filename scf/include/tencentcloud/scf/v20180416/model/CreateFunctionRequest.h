@@ -30,6 +30,7 @@
 #include <tencentcloud/scf/v20180416/model/CfsConfig.h>
 #include <tencentcloud/scf/v20180416/model/Tag.h>
 #include <tencentcloud/scf/v20180416/model/ProtocolParams.h>
+#include <tencentcloud/scf/v20180416/model/InstanceConcurrencyConfig.h>
 
 
 namespace TencentCloud
@@ -519,6 +520,24 @@ namespace TencentCloud
                      */
                     bool ProtocolParamsHasBeenSet() const;
 
+                    /**
+                     * 获取单实例多并发配置。只支持Web函数。
+                     * @return InstanceConcurrencyConfig 单实例多并发配置。只支持Web函数。
+                     */
+                    InstanceConcurrencyConfig GetInstanceConcurrencyConfig() const;
+
+                    /**
+                     * 设置单实例多并发配置。只支持Web函数。
+                     * @param InstanceConcurrencyConfig 单实例多并发配置。只支持Web函数。
+                     */
+                    void SetInstanceConcurrencyConfig(const InstanceConcurrencyConfig& _instanceConcurrencyConfig);
+
+                    /**
+                     * 判断参数 InstanceConcurrencyConfig 是否已赋值
+                     * @return InstanceConcurrencyConfig 是否已赋值
+                     */
+                    bool InstanceConcurrencyConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -676,6 +695,12 @@ namespace TencentCloud
                      */
                     ProtocolParams m_protocolParams;
                     bool m_protocolParamsHasBeenSet;
+
+                    /**
+                     * 单实例多并发配置。只支持Web函数。
+                     */
+                    InstanceConcurrencyConfig m_instanceConcurrencyConfig;
+                    bool m_instanceConcurrencyConfigHasBeenSet;
 
                 };
             }

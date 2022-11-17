@@ -3867,6 +3867,49 @@ CwpClient::DescribeBruteAttackRulesOutcomeCallable CwpClient::DescribeBruteAttac
     return task->get_future();
 }
 
+CwpClient::DescribeClientExceptionOutcome CwpClient::DescribeClientException(const DescribeClientExceptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClientException");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClientExceptionResponse rsp = DescribeClientExceptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClientExceptionOutcome(rsp);
+        else
+            return DescribeClientExceptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClientExceptionOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeClientExceptionAsync(const DescribeClientExceptionRequest& request, const DescribeClientExceptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClientException(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeClientExceptionOutcomeCallable CwpClient::DescribeClientExceptionCallable(const DescribeClientExceptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClientExceptionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClientException(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeComponentStatisticsOutcome CwpClient::DescribeComponentStatistics(const DescribeComponentStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeComponentStatistics");

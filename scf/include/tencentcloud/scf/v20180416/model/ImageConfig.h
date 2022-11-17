@@ -170,6 +170,28 @@ namespace TencentCloud
                      */
                     bool ArgsHasBeenSet() const;
 
+                    /**
+                     * 获取镜像加速开关，默认False
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerImageAccelerate 镜像加速开关，默认False
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetContainerImageAccelerate() const;
+
+                    /**
+                     * 设置镜像加速开关，默认False
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerImageAccelerate 镜像加速开关，默认False
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerImageAccelerate(const bool& _containerImageAccelerate);
+
+                    /**
+                     * 判断参数 ContainerImageAccelerate 是否已赋值
+                     * @return ContainerImageAccelerate 是否已赋值
+                     */
+                    bool ContainerImageAccelerateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +233,13 @@ namespace TencentCloud
                      */
                     std::string m_args;
                     bool m_argsHasBeenSet;
+
+                    /**
+                     * 镜像加速开关，默认False
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_containerImageAccelerate;
+                    bool m_containerImageAccelerateHasBeenSet;
 
                 };
             }

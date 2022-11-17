@@ -25,7 +25,8 @@ using namespace std;
 
 AddDeviceResponse::AddDeviceResponse() :
     m_dataKeyHasBeenSet(false),
-    m_deviceIdHasBeenSet(false)
+    m_deviceIdHasBeenSet(false),
+    m_signatureHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome AddDeviceResponse::Deserialize(const string &payload)
         m_deviceIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Signature") && !rsp["Signature"].IsNull())
+    {
+        if (!rsp["Signature"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Signature` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_signature = string(rsp["Signature"].GetString());
+        m_signatureHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string AddDeviceResponse::ToJsonString() const
         string key = "DeviceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_deviceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Signature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_signature.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string AddDeviceResponse::GetDeviceId() const
 bool AddDeviceResponse::DeviceIdHasBeenSet() const
 {
     return m_deviceIdHasBeenSet;
+}
+
+string AddDeviceResponse::GetSignature() const
+{
+    return m_signature;
+}
+
+bool AddDeviceResponse::SignatureHasBeenSet() const
+{
+    return m_signatureHasBeenSet;
 }
 
 

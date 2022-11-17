@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool ForceRestartHasBeenSet() const;
 
+                    /**
+                     * 获取可选重启模式"in-place","blue-green"，分别表示重启，蓝绿重启；默认值为"in-place"
+                     * @return RestartMode 可选重启模式"in-place","blue-green"，分别表示重启，蓝绿重启；默认值为"in-place"
+                     */
+                    std::string GetRestartMode() const;
+
+                    /**
+                     * 设置可选重启模式"in-place","blue-green"，分别表示重启，蓝绿重启；默认值为"in-place"
+                     * @param RestartMode 可选重启模式"in-place","blue-green"，分别表示重启，蓝绿重启；默认值为"in-place"
+                     */
+                    void SetRestartMode(const std::string& _restartMode);
+
+                    /**
+                     * 判断参数 RestartMode 是否已赋值
+                     * @return RestartMode 是否已赋值
+                     */
+                    bool RestartModeHasBeenSet() const;
+
+                    /**
+                     * 获取节点状态，在蓝绿模式中使用；离线节点蓝绿有风险
+                     * @return IsOffline 节点状态，在蓝绿模式中使用；离线节点蓝绿有风险
+                     */
+                    bool GetIsOffline() const;
+
+                    /**
+                     * 设置节点状态，在蓝绿模式中使用；离线节点蓝绿有风险
+                     * @param IsOffline 节点状态，在蓝绿模式中使用；离线节点蓝绿有风险
+                     */
+                    void SetIsOffline(const bool& _isOffline);
+
+                    /**
+                     * 判断参数 IsOffline 是否已赋值
+                     * @return IsOffline 是否已赋值
+                     */
+                    bool IsOfflineHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     bool m_forceRestart;
                     bool m_forceRestartHasBeenSet;
+
+                    /**
+                     * 可选重启模式"in-place","blue-green"，分别表示重启，蓝绿重启；默认值为"in-place"
+                     */
+                    std::string m_restartMode;
+                    bool m_restartModeHasBeenSet;
+
+                    /**
+                     * 节点状态，在蓝绿模式中使用；离线节点蓝绿有风险
+                     */
+                    bool m_isOffline;
+                    bool m_isOfflineHasBeenSet;
 
                 };
             }

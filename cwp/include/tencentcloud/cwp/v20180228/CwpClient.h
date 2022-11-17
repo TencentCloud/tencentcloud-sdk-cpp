@@ -201,6 +201,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeClientExceptionRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeClientExceptionResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeComponentStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeESAggregationsRequest.h>
@@ -764,6 +766,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBruteAttackRulesResponse> DescribeBruteAttackRulesOutcome;
                 typedef std::future<DescribeBruteAttackRulesOutcome> DescribeBruteAttackRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBruteAttackRulesRequest&, DescribeBruteAttackRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBruteAttackRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClientExceptionResponse> DescribeClientExceptionOutcome;
+                typedef std::future<DescribeClientExceptionOutcome> DescribeClientExceptionOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeClientExceptionRequest&, DescribeClientExceptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClientExceptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeComponentStatisticsResponse> DescribeComponentStatisticsOutcome;
                 typedef std::future<DescribeComponentStatisticsOutcome> DescribeComponentStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeComponentStatisticsRequest&, DescribeComponentStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeComponentStatisticsAsyncHandler;
@@ -1993,6 +1998,15 @@ namespace TencentCloud
                 DescribeBruteAttackRulesOutcome DescribeBruteAttackRules(const Model::DescribeBruteAttackRulesRequest &request);
                 void DescribeBruteAttackRulesAsync(const Model::DescribeBruteAttackRulesRequest& request, const DescribeBruteAttackRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBruteAttackRulesOutcomeCallable DescribeBruteAttackRulesCallable(const Model::DescribeBruteAttackRulesRequest& request);
+
+                /**
+                 *获取客户端异常事件
+                 * @param req DescribeClientExceptionRequest
+                 * @return DescribeClientExceptionOutcome
+                 */
+                DescribeClientExceptionOutcome DescribeClientException(const Model::DescribeClientExceptionRequest &request);
+                void DescribeClientExceptionAsync(const Model::DescribeClientExceptionRequest& request, const DescribeClientExceptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClientExceptionOutcomeCallable DescribeClientExceptionCallable(const Model::DescribeClientExceptionRequest& request);
 
                 /**
                  *本接口 (DescribeComponentStatistics) 用于获取组件统计列表数据。

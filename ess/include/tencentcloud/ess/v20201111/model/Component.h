@@ -55,7 +55,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -74,7 +75,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -97,7 +99,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -116,7 +119,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -300,6 +304,12 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
 
                     /**
                      * 获取扩展参数：
+为JSON格式。
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
 ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
@@ -309,6 +319,12 @@ OCR_ESIGN -- AI智能识别手写签名
 ESIGN -- 个人印章类型
 如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      * @return ComponentExtra 扩展参数：
+为JSON格式。
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
 ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
@@ -322,6 +338,12 @@ ESIGN -- 个人印章类型
 
                     /**
                      * 设置扩展参数：
+为JSON格式。
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
 ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
@@ -331,6 +353,12 @@ OCR_ESIGN -- AI智能识别手写签名
 ESIGN -- 个人印章类型
 如：{“ComponentTypeLimit”: [“BORDERLESS_ESIGN”]}
                      * @param ComponentExtra 扩展参数：
+为JSON格式。
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
 ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
@@ -518,6 +546,78 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      */
                     bool OffsetYHasBeenSet() const;
 
+                    /**
+                     * 获取指定关键字排序规则
+                     * @return KeywordOrder 指定关键字排序规则
+                     */
+                    std::string GetKeywordOrder() const;
+
+                    /**
+                     * 设置指定关键字排序规则
+                     * @param KeywordOrder 指定关键字排序规则
+                     */
+                    void SetKeywordOrder(const std::string& _keywordOrder);
+
+                    /**
+                     * 判断参数 KeywordOrder 是否已赋值
+                     * @return KeywordOrder 是否已赋值
+                     */
+                    bool KeywordOrderHasBeenSet() const;
+
+                    /**
+                     * 获取指定关键字页码
+                     * @return KeywordPage 指定关键字页码
+                     */
+                    int64_t GetKeywordPage() const;
+
+                    /**
+                     * 设置指定关键字页码
+                     * @param KeywordPage 指定关键字页码
+                     */
+                    void SetKeywordPage(const int64_t& _keywordPage);
+
+                    /**
+                     * 判断参数 KeywordPage 是否已赋值
+                     * @return KeywordPage 是否已赋值
+                     */
+                    bool KeywordPageHasBeenSet() const;
+
+                    /**
+                     * 获取关键字位置模式
+                     * @return RelativeLocation 关键字位置模式
+                     */
+                    std::string GetRelativeLocation() const;
+
+                    /**
+                     * 设置关键字位置模式
+                     * @param RelativeLocation 关键字位置模式
+                     */
+                    void SetRelativeLocation(const std::string& _relativeLocation);
+
+                    /**
+                     * 判断参数 RelativeLocation 是否已赋值
+                     * @return RelativeLocation 是否已赋值
+                     */
+                    bool RelativeLocationHasBeenSet() const;
+
+                    /**
+                     * 获取关键字索引
+                     * @return KeywordIndexes 关键字索引
+                     */
+                    std::vector<int64_t> GetKeywordIndexes() const;
+
+                    /**
+                     * 设置关键字索引
+                     * @param KeywordIndexes 关键字索引
+                     */
+                    void SetKeywordIndexes(const std::vector<int64_t>& _keywordIndexes);
+
+                    /**
+                     * 判断参数 KeywordIndexes 是否已赋值
+                     * @return KeywordIndexes 是否已赋值
+                     */
+                    bool KeywordIndexesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,7 +629,8 @@ FILL_IMAGE - 图片控件；
 DYNAMIC_TABLE - 动态表格控件；
 ATTACHMENT - 附件控件；
 SELECTOR - 选择器控件；
-DATE - 日期控件；默认是格式化为xxxx年xx月xx日
+DATE - 日期控件；默认是格式化为xxxx年xx月xx日；
+DISTRICT - 省市区行政区划控件；
 
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
@@ -600,6 +701,12 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
 
                     /**
                      * 扩展参数：
+为JSON格式。
+
+ComponentType为FILL_IMAGE时，支持以下参数：
+NotMakeImageCenter：bool。是否设置图片居中。false：居中（默认）。 true: 不居中
+FillMethod: int. 填充方式。0-铺满（默认）；1-等比例缩放
+
 ComponentType为SIGN_SIGNATURE类型可以控制签署方式
 {“ComponentTypeLimit”: [“xxx”]}
 xxx可以为：
@@ -664,6 +771,30 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;
+
+                    /**
+                     * 指定关键字排序规则
+                     */
+                    std::string m_keywordOrder;
+                    bool m_keywordOrderHasBeenSet;
+
+                    /**
+                     * 指定关键字页码
+                     */
+                    int64_t m_keywordPage;
+                    bool m_keywordPageHasBeenSet;
+
+                    /**
+                     * 关键字位置模式
+                     */
+                    std::string m_relativeLocation;
+                    bool m_relativeLocationHasBeenSet;
+
+                    /**
+                     * 关键字索引
+                     */
+                    std::vector<int64_t> m_keywordIndexes;
+                    bool m_keywordIndexesHasBeenSet;
 
                 };
             }

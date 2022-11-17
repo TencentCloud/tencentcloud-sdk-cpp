@@ -2448,6 +2448,49 @@ LighthouseClient::ModifyInstancesAttributeOutcomeCallable LighthouseClient::Modi
     return task->get_future();
 }
 
+LighthouseClient::ModifyInstancesBundleOutcome LighthouseClient::ModifyInstancesBundle(const ModifyInstancesBundleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstancesBundle");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstancesBundleResponse rsp = ModifyInstancesBundleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstancesBundleOutcome(rsp);
+        else
+            return ModifyInstancesBundleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstancesBundleOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyInstancesBundleAsync(const ModifyInstancesBundleRequest& request, const ModifyInstancesBundleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstancesBundle(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyInstancesBundleOutcomeCallable LighthouseClient::ModifyInstancesBundleCallable(const ModifyInstancesBundleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstancesBundleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstancesBundle(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ModifyInstancesLoginKeyPairAttributeOutcome LighthouseClient::ModifyInstancesLoginKeyPairAttribute(const ModifyInstancesLoginKeyPairAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyInstancesLoginKeyPairAttribute");

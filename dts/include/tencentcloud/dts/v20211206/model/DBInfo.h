@@ -421,17 +421,17 @@ namespace TencentCloud
                     bool AccountModeHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥Id
+                     * 获取临时密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmpSecretId 临时秘钥Id
+                     * @return TmpSecretId 临时密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
-                     * 设置临时秘钥Id
+                     * 设置临时密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TmpSecretId 临时秘钥Id
+                     * @param TmpSecretId 临时密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
@@ -443,17 +443,17 @@ namespace TencentCloud
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥Key
+                     * 获取临时密钥Key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TmpSecretKey 临时秘钥Key
+                     * @return TmpSecretKey 临时密钥Key
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
-                     * 设置临时秘钥Key
+                     * 设置临时密钥Key
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TmpSecretKey 临时秘钥Key
+                     * @param TmpSecretKey 临时密钥Key
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
@@ -608,14 +608,14 @@ namespace TencentCloud
                     bool m_accountModeHasBeenSet;
 
                     /**
-                     * 临时秘钥Id
+                     * 临时密钥Id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
-                     * 临时秘钥Key
+                     * 临时密钥Key
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tmpSecretKey;

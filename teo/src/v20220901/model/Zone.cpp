@@ -36,7 +36,9 @@ Zone::Zone() :
     m_modifiedOnHasBeenSet(false),
     m_areaHasBeenSet(false),
     m_vanityNameServersHasBeenSet(false),
-    m_vanityNameServersIpsHasBeenSet(false)
+    m_vanityNameServersIpsHasBeenSet(false),
+    m_activeStatusHasBeenSet(false),
+    m_aliasZoneNameHasBeenSet(false)
 {
 }
 
@@ -248,6 +250,26 @@ CoreInternalOutcome Zone::Deserialize(const rapidjson::Value &value)
         m_vanityNameServersIpsHasBeenSet = true;
     }
 
+    if (value.HasMember("ActiveStatus") && !value["ActiveStatus"].IsNull())
+    {
+        if (!value["ActiveStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.ActiveStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_activeStatus = string(value["ActiveStatus"].GetString());
+        m_activeStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("AliasZoneName") && !value["AliasZoneName"].IsNull())
+    {
+        if (!value["AliasZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Zone.AliasZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_aliasZoneName = string(value["AliasZoneName"].GetString());
+        m_aliasZoneNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -413,6 +435,22 @@ void Zone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_activeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_activeStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasZoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AliasZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_aliasZoneName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -672,5 +710,37 @@ void Zone::SetVanityNameServersIps(const vector<VanityNameServersIps>& _vanityNa
 bool Zone::VanityNameServersIpsHasBeenSet() const
 {
     return m_vanityNameServersIpsHasBeenSet;
+}
+
+string Zone::GetActiveStatus() const
+{
+    return m_activeStatus;
+}
+
+void Zone::SetActiveStatus(const string& _activeStatus)
+{
+    m_activeStatus = _activeStatus;
+    m_activeStatusHasBeenSet = true;
+}
+
+bool Zone::ActiveStatusHasBeenSet() const
+{
+    return m_activeStatusHasBeenSet;
+}
+
+string Zone::GetAliasZoneName() const
+{
+    return m_aliasZoneName;
+}
+
+void Zone::SetAliasZoneName(const string& _aliasZoneName)
+{
+    m_aliasZoneName = _aliasZoneName;
+    m_aliasZoneNameHasBeenSet = true;
+}
+
+bool Zone::AliasZoneNameHasBeenSet() const
+{
+    return m_aliasZoneNameHasBeenSet;
 }
 

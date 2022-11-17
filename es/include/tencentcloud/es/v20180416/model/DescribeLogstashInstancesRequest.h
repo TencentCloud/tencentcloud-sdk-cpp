@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/es/v20180416/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -186,6 +187,24 @@ namespace TencentCloud
                      */
                     bool VpcIdsHasBeenSet() const;
 
+                    /**
+                     * 获取标签信息列表
+                     * @return TagList 标签信息列表
+                     */
+                    std::vector<TagInfo> GetTagList() const;
+
+                    /**
+                     * 设置标签信息列表
+                     * @param TagList 标签信息列表
+                     */
+                    void SetTagList(const std::vector<TagInfo>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +254,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_vpcIds;
                     bool m_vpcIdsHasBeenSet;
+
+                    /**
+                     * 标签信息列表
+                     */
+                    std::vector<TagInfo> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

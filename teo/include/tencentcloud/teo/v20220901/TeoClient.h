@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h>
+#include <tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h>
 #include <tencentcloud/teo/v20220901/model/CheckCertificateRequest.h>
 #include <tencentcloud/teo/v20220901/model/CheckCertificateResponse.h>
 #include <tencentcloud/teo/v20220901/model/CreateAliasDomainRequest.h>
@@ -287,6 +289,9 @@ namespace TencentCloud
                 TeoClient(const Credential &credential, const std::string &region);
                 TeoClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindZoneToPlanResponse> BindZoneToPlanOutcome;
+                typedef std::future<BindZoneToPlanOutcome> BindZoneToPlanOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::BindZoneToPlanRequest&, BindZoneToPlanOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindZoneToPlanAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckCertificateResponse> CheckCertificateOutcome;
                 typedef std::future<CheckCertificateOutcome> CheckCertificateOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::CheckCertificateRequest&, CheckCertificateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckCertificateAsyncHandler;
@@ -664,6 +669,15 @@ namespace TencentCloud
                 typedef std::function<void(const TeoClient*, const Model::SwitchLogTopicTaskRequest&, SwitchLogTopicTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchLogTopicTaskAsyncHandler;
 
 
+
+                /**
+                 *将未绑定套餐的站点绑定到已有套餐
+                 * @param req BindZoneToPlanRequest
+                 * @return BindZoneToPlanOutcome
+                 */
+                BindZoneToPlanOutcome BindZoneToPlan(const Model::BindZoneToPlanRequest &request);
+                void BindZoneToPlanAsync(const Model::BindZoneToPlanRequest& request, const BindZoneToPlanAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindZoneToPlanOutcomeCallable BindZoneToPlanCallable(const Model::BindZoneToPlanRequest& request);
 
                 /**
                  *校验证书

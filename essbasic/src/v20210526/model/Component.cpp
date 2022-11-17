@@ -39,7 +39,10 @@ Component::Component() :
     m_documentIdHasBeenSet(false),
     m_componentDescriptionHasBeenSet(false),
     m_offsetXHasBeenSet(false),
-    m_offsetYHasBeenSet(false)
+    m_offsetYHasBeenSet(false),
+    m_keywordPageHasBeenSet(false),
+    m_relativeLocationHasBeenSet(false),
+    m_keywordIndexesHasBeenSet(false)
 {
 }
 
@@ -238,6 +241,39 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_offsetYHasBeenSet = true;
     }
 
+    if (value.HasMember("KeywordPage") && !value["KeywordPage"].IsNull())
+    {
+        if (!value["KeywordPage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.KeywordPage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_keywordPage = value["KeywordPage"].GetInt64();
+        m_keywordPageHasBeenSet = true;
+    }
+
+    if (value.HasMember("RelativeLocation") && !value["RelativeLocation"].IsNull())
+    {
+        if (!value["RelativeLocation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.RelativeLocation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_relativeLocation = string(value["RelativeLocation"].GetString());
+        m_relativeLocationHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeywordIndexes") && !value["KeywordIndexes"].IsNull())
+    {
+        if (!value["KeywordIndexes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Component.KeywordIndexes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeywordIndexes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keywordIndexes.push_back((*itr).GetInt64());
+        }
+        m_keywordIndexesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -395,6 +431,35 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "OffsetY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offsetY, allocator);
+    }
+
+    if (m_keywordPageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordPage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keywordPage, allocator);
+    }
+
+    if (m_relativeLocationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RelativeLocation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_relativeLocation.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordIndexesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordIndexes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keywordIndexes.begin(); itr != m_keywordIndexes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 }
@@ -702,5 +767,53 @@ void Component::SetOffsetY(const double& _offsetY)
 bool Component::OffsetYHasBeenSet() const
 {
     return m_offsetYHasBeenSet;
+}
+
+int64_t Component::GetKeywordPage() const
+{
+    return m_keywordPage;
+}
+
+void Component::SetKeywordPage(const int64_t& _keywordPage)
+{
+    m_keywordPage = _keywordPage;
+    m_keywordPageHasBeenSet = true;
+}
+
+bool Component::KeywordPageHasBeenSet() const
+{
+    return m_keywordPageHasBeenSet;
+}
+
+string Component::GetRelativeLocation() const
+{
+    return m_relativeLocation;
+}
+
+void Component::SetRelativeLocation(const string& _relativeLocation)
+{
+    m_relativeLocation = _relativeLocation;
+    m_relativeLocationHasBeenSet = true;
+}
+
+bool Component::RelativeLocationHasBeenSet() const
+{
+    return m_relativeLocationHasBeenSet;
+}
+
+vector<int64_t> Component::GetKeywordIndexes() const
+{
+    return m_keywordIndexes;
+}
+
+void Component::SetKeywordIndexes(const vector<int64_t>& _keywordIndexes)
+{
+    m_keywordIndexes = _keywordIndexes;
+    m_keywordIndexesHasBeenSet = true;
+}
+
+bool Component::KeywordIndexesHasBeenSet() const
+{
+    return m_keywordIndexesHasBeenSet;
 }
 

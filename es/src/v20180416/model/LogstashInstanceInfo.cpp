@@ -46,7 +46,10 @@ LogstashInstanceInfo::LogstashInstanceInfo() :
     m_bindedESInstanceIdHasBeenSet(false),
     m_yMLConfigHasBeenSet(false),
     m_extendedFilesHasBeenSet(false),
-    m_operationDurationHasBeenSet(false)
+    m_operationDurationHasBeenSet(false),
+    m_cpuNumHasBeenSet(false),
+    m_tagListHasBeenSet(false),
+    m_memSizeHasBeenSet(false)
 {
 }
 
@@ -342,6 +345,46 @@ CoreInternalOutcome LogstashInstanceInfo::Deserialize(const rapidjson::Value &va
         m_operationDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("CpuNum") && !value["CpuNum"].IsNull())
+    {
+        if (!value["CpuNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogstashInstanceInfo.CpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpuNum = value["CpuNum"].GetUint64();
+        m_cpuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("TagList") && !value["TagList"].IsNull())
+    {
+        if (!value["TagList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LogstashInstanceInfo.TagList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TagList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tagList.push_back(item);
+        }
+        m_tagListHasBeenSet = true;
+    }
+
+    if (value.HasMember("MemSize") && !value["MemSize"].IsNull())
+    {
+        if (!value["MemSize"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogstashInstanceInfo.MemSize` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_memSize = value["MemSize"].GetUint64();
+        m_memSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -570,6 +613,37 @@ void LogstashInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operationDuration.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpuNum, allocator);
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_memSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MemSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_memSize, allocator);
     }
 
 }
@@ -989,5 +1063,53 @@ void LogstashInstanceInfo::SetOperationDuration(const OperationDuration& _operat
 bool LogstashInstanceInfo::OperationDurationHasBeenSet() const
 {
     return m_operationDurationHasBeenSet;
+}
+
+uint64_t LogstashInstanceInfo::GetCpuNum() const
+{
+    return m_cpuNum;
+}
+
+void LogstashInstanceInfo::SetCpuNum(const uint64_t& _cpuNum)
+{
+    m_cpuNum = _cpuNum;
+    m_cpuNumHasBeenSet = true;
+}
+
+bool LogstashInstanceInfo::CpuNumHasBeenSet() const
+{
+    return m_cpuNumHasBeenSet;
+}
+
+vector<TagInfo> LogstashInstanceInfo::GetTagList() const
+{
+    return m_tagList;
+}
+
+void LogstashInstanceInfo::SetTagList(const vector<TagInfo>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool LogstashInstanceInfo::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
+}
+
+uint64_t LogstashInstanceInfo::GetMemSize() const
+{
+    return m_memSize;
+}
+
+void LogstashInstanceInfo::SetMemSize(const uint64_t& _memSize)
+{
+    m_memSize = _memSize;
+    m_memSizeHasBeenSet = true;
+}
+
+bool LogstashInstanceInfo::MemSizeHasBeenSet() const
+{
+    return m_memSizeHasBeenSet;
 }
 

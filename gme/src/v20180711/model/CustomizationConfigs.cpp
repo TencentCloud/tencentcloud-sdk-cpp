@@ -23,7 +23,10 @@ using namespace std;
 CustomizationConfigs::CustomizationConfigs() :
     m_bizIdHasBeenSet(false),
     m_modelIdHasBeenSet(false),
-    m_modelStateHasBeenSet(false)
+    m_modelStateHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
+    m_textUrlHasBeenSet(false),
+    m_updateTimeHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome CustomizationConfigs::Deserialize(const rapidjson::Value &va
         m_modelStateHasBeenSet = true;
     }
 
+    if (value.HasMember("ModelName") && !value["ModelName"].IsNull())
+    {
+        if (!value["ModelName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomizationConfigs.ModelName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modelName = string(value["ModelName"].GetString());
+        m_modelNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TextUrl") && !value["TextUrl"].IsNull())
+    {
+        if (!value["TextUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomizationConfigs.TextUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_textUrl = string(value["TextUrl"].GetString());
+        m_textUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdateTime") && !value["UpdateTime"].IsNull())
+    {
+        if (!value["UpdateTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CustomizationConfigs.UpdateTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_updateTime = value["UpdateTime"].GetInt64();
+        m_updateTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void CustomizationConfigs::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ModelState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelState, allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_textUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_textUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updateTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_updateTime, allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void CustomizationConfigs::SetModelState(const int64_t& _modelState)
 bool CustomizationConfigs::ModelStateHasBeenSet() const
 {
     return m_modelStateHasBeenSet;
+}
+
+string CustomizationConfigs::GetModelName() const
+{
+    return m_modelName;
+}
+
+void CustomizationConfigs::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool CustomizationConfigs::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
+}
+
+string CustomizationConfigs::GetTextUrl() const
+{
+    return m_textUrl;
+}
+
+void CustomizationConfigs::SetTextUrl(const string& _textUrl)
+{
+    m_textUrl = _textUrl;
+    m_textUrlHasBeenSet = true;
+}
+
+bool CustomizationConfigs::TextUrlHasBeenSet() const
+{
+    return m_textUrlHasBeenSet;
+}
+
+int64_t CustomizationConfigs::GetUpdateTime() const
+{
+    return m_updateTime;
+}
+
+void CustomizationConfigs::SetUpdateTime(const int64_t& _updateTime)
+{
+    m_updateTime = _updateTime;
+    m_updateTimeHasBeenSet = true;
+}
+
+bool CustomizationConfigs::UpdateTimeHasBeenSet() const
+{
+    return m_updateTimeHasBeenSet;
 }
 

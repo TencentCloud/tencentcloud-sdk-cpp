@@ -42,7 +42,8 @@ UpdateFunctionConfigurationRequest::UpdateFunctionConfigurationRequest() :
     m_publicNetConfigHasBeenSet(false),
     m_cfsConfigHasBeenSet(false),
     m_initTimeoutHasBeenSet(false),
-    m_protocolParamsHasBeenSet(false)
+    m_protocolParamsHasBeenSet(false),
+    m_instanceConcurrencyConfigHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,15 @@ string UpdateFunctionConfigurationRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_protocolParams.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceConcurrencyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceConcurrencyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceConcurrencyConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -552,6 +562,22 @@ void UpdateFunctionConfigurationRequest::SetProtocolParams(const ProtocolParams&
 bool UpdateFunctionConfigurationRequest::ProtocolParamsHasBeenSet() const
 {
     return m_protocolParamsHasBeenSet;
+}
+
+InstanceConcurrencyConfig UpdateFunctionConfigurationRequest::GetInstanceConcurrencyConfig() const
+{
+    return m_instanceConcurrencyConfig;
+}
+
+void UpdateFunctionConfigurationRequest::SetInstanceConcurrencyConfig(const InstanceConcurrencyConfig& _instanceConcurrencyConfig)
+{
+    m_instanceConcurrencyConfig = _instanceConcurrencyConfig;
+    m_instanceConcurrencyConfigHasBeenSet = true;
+}
+
+bool UpdateFunctionConfigurationRequest::InstanceConcurrencyConfigHasBeenSet() const
+{
+    return m_instanceConcurrencyConfigHasBeenSet;
 }
 
 

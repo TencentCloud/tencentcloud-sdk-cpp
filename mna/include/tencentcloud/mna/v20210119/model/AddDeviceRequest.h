@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool DataKeyHasBeenSet() const;
 
+                    /**
+                     * 获取是否设置预置密钥
+                     * @return Encrypted 是否设置预置密钥
+                     */
+                    bool GetEncrypted() const;
+
+                    /**
+                     * 设置是否设置预置密钥
+                     * @param Encrypted 是否设置预置密钥
+                     */
+                    void SetEncrypted(const bool& _encrypted);
+
+                    /**
+                     * 判断参数 Encrypted 是否已赋值
+                     * @return Encrypted 是否已赋值
+                     */
+                    bool EncryptedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_dataKey;
                     bool m_dataKeyHasBeenSet;
+
+                    /**
+                     * 是否设置预置密钥
+                     */
+                    bool m_encrypted;
+                    bool m_encryptedHasBeenSet;
 
                 };
             }

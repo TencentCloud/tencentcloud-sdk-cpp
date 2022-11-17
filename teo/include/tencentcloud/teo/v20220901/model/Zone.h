@@ -398,6 +398,58 @@ namespace TencentCloud
                      */
                     bool VanityNameServersIpsHasBeenSet() const;
 
+                    /**
+                     * 获取展示状态，取值有：
+<li> active：已启用；</li>
+<li> inactive：未生效；</li>
+<li> paused：已停用。</li>
+                     * @return ActiveStatus 展示状态，取值有：
+<li> active：已启用；</li>
+<li> inactive：未生效；</li>
+<li> paused：已停用。</li>
+                     */
+                    std::string GetActiveStatus() const;
+
+                    /**
+                     * 设置展示状态，取值有：
+<li> active：已启用；</li>
+<li> inactive：未生效；</li>
+<li> paused：已停用。</li>
+                     * @param ActiveStatus 展示状态，取值有：
+<li> active：已启用；</li>
+<li> inactive：未生效；</li>
+<li> paused：已停用。</li>
+                     */
+                    void SetActiveStatus(const std::string& _activeStatus);
+
+                    /**
+                     * 判断参数 ActiveStatus 是否已赋值
+                     * @return ActiveStatus 是否已赋值
+                     */
+                    bool ActiveStatusHasBeenSet() const;
+
+                    /**
+                     * 获取站点别名。数字、英文、-和_组合，限制20个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAliasZoneName() const;
+
+                    /**
+                     * 设置站点别名。数字、英文、-和_组合，限制20个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AliasZoneName 站点别名。数字、英文、-和_组合，限制20个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAliasZoneName(const std::string& _aliasZoneName);
+
+                    /**
+                     * 判断参数 AliasZoneName 是否已赋值
+                     * @return AliasZoneName 是否已赋值
+                     */
+                    bool AliasZoneNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -510,6 +562,22 @@ namespace TencentCloud
                      */
                     std::vector<VanityNameServersIps> m_vanityNameServersIps;
                     bool m_vanityNameServersIpsHasBeenSet;
+
+                    /**
+                     * 展示状态，取值有：
+<li> active：已启用；</li>
+<li> inactive：未生效；</li>
+<li> paused：已停用。</li>
+                     */
+                    std::string m_activeStatus;
+                    bool m_activeStatusHasBeenSet;
+
+                    /**
+                     * 站点别名。数字、英文、-和_组合，限制20个字符。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_aliasZoneName;
+                    bool m_aliasZoneNameHasBeenSet;
 
                 };
             }

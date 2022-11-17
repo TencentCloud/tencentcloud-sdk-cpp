@@ -24,7 +24,8 @@ using namespace std;
 
 CreateCustomizationRequest::CreateCustomizationRequest() :
     m_bizIdHasBeenSet(false),
-    m_textUrlHasBeenSet(false)
+    m_textUrlHasBeenSet(false),
+    m_modelNameHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateCustomizationRequest::ToJsonString() const
         string key = "TextUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_textUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modelNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModelName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_modelName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateCustomizationRequest::SetTextUrl(const string& _textUrl)
 bool CreateCustomizationRequest::TextUrlHasBeenSet() const
 {
     return m_textUrlHasBeenSet;
+}
+
+string CreateCustomizationRequest::GetModelName() const
+{
+    return m_modelName;
+}
+
+void CreateCustomizationRequest::SetModelName(const string& _modelName)
+{
+    m_modelName = _modelName;
+    m_modelNameHasBeenSet = true;
+}
+
+bool CreateCustomizationRequest::ModelNameHasBeenSet() const
+{
+    return m_modelNameHasBeenSet;
 }
 
 

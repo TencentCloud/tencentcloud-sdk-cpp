@@ -24,7 +24,9 @@ using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
 CreateFlowEvidenceReportResponse::CreateFlowEvidenceReportResponse() :
-    m_reportUrlHasBeenSet(false)
+    m_reportIdHasBeenSet(false),
+    m_reportUrlHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,16 @@ CoreInternalOutcome CreateFlowEvidenceReportResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("ReportId") && !rsp["ReportId"].IsNull())
+    {
+        if (!rsp["ReportId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportId = string(rsp["ReportId"].GetString());
+        m_reportIdHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ReportUrl") && !rsp["ReportUrl"].IsNull())
     {
         if (!rsp["ReportUrl"].IsString())
@@ -70,6 +82,16 @@ CoreInternalOutcome CreateFlowEvidenceReportResponse::Deserialize(const string &
         }
         m_reportUrl = string(rsp["ReportUrl"].GetString());
         m_reportUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
+    {
+        if (!rsp["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(rsp["Status"].GetString());
+        m_statusHasBeenSet = true;
     }
 
 
@@ -82,12 +104,28 @@ string CreateFlowEvidenceReportResponse::ToJsonString() const
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
+    if (m_reportIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_reportUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ReportUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reportUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,6 +140,16 @@ string CreateFlowEvidenceReportResponse::ToJsonString() const
 }
 
 
+string CreateFlowEvidenceReportResponse::GetReportId() const
+{
+    return m_reportId;
+}
+
+bool CreateFlowEvidenceReportResponse::ReportIdHasBeenSet() const
+{
+    return m_reportIdHasBeenSet;
+}
+
 string CreateFlowEvidenceReportResponse::GetReportUrl() const
 {
     return m_reportUrl;
@@ -110,6 +158,16 @@ string CreateFlowEvidenceReportResponse::GetReportUrl() const
 bool CreateFlowEvidenceReportResponse::ReportUrlHasBeenSet() const
 {
     return m_reportUrlHasBeenSet;
+}
+
+string CreateFlowEvidenceReportResponse::GetStatus() const
+{
+    return m_status;
+}
+
+bool CreateFlowEvidenceReportResponse::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

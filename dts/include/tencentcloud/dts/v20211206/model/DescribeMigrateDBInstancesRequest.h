@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool AccountModeHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥Id，若为跨账号资源此项必填
-                     * @return TmpSecretId 临时秘钥Id，若为跨账号资源此项必填
+                     * 获取临时密钥Id，若为跨账号资源此项必填
+                     * @return TmpSecretId 临时密钥Id，若为跨账号资源此项必填
                      */
                     std::string GetTmpSecretId() const;
 
                     /**
-                     * 设置临时秘钥Id，若为跨账号资源此项必填
-                     * @param TmpSecretId 临时秘钥Id，若为跨账号资源此项必填
+                     * 设置临时密钥Id，若为跨账号资源此项必填
+                     * @param TmpSecretId 临时密钥Id，若为跨账号资源此项必填
                      */
                     void SetTmpSecretId(const std::string& _tmpSecretId);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool TmpSecretIdHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥Key，若为跨账号资源此项必填
-                     * @return TmpSecretKey 临时秘钥Key，若为跨账号资源此项必填
+                     * 获取临时密钥Key，若为跨账号资源此项必填
+                     * @return TmpSecretKey 临时密钥Key，若为跨账号资源此项必填
                      */
                     std::string GetTmpSecretKey() const;
 
                     /**
-                     * 设置临时秘钥Key，若为跨账号资源此项必填
-                     * @param TmpSecretKey 临时秘钥Key，若为跨账号资源此项必填
+                     * 设置临时密钥Key，若为跨账号资源此项必填
+                     * @param TmpSecretKey 临时密钥Key，若为跨账号资源此项必填
                      */
                     void SetTmpSecretKey(const std::string& _tmpSecretKey);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool TmpSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥Token，若为跨账号资源此项必填
-                     * @return TmpToken 临时秘钥Token，若为跨账号资源此项必填
+                     * 获取临时密钥Token，若为跨账号资源此项必填
+                     * @return TmpToken 临时密钥Token，若为跨账号资源此项必填
                      */
                     std::string GetTmpToken() const;
 
                     /**
-                     * 设置临时秘钥Token，若为跨账号资源此项必填
-                     * @param TmpToken 临时秘钥Token，若为跨账号资源此项必填
+                     * 设置临时密钥Token，若为跨账号资源此项必填
+                     * @param TmpToken 临时密钥Token，若为跨账号资源此项必填
                      */
                     void SetTmpToken(const std::string& _tmpToken);
 
@@ -267,19 +267,19 @@ namespace TencentCloud
                     bool m_accountModeHasBeenSet;
 
                     /**
-                     * 临时秘钥Id，若为跨账号资源此项必填
+                     * 临时密钥Id，若为跨账号资源此项必填
                      */
                     std::string m_tmpSecretId;
                     bool m_tmpSecretIdHasBeenSet;
 
                     /**
-                     * 临时秘钥Key，若为跨账号资源此项必填
+                     * 临时密钥Key，若为跨账号资源此项必填
                      */
                     std::string m_tmpSecretKey;
                     bool m_tmpSecretKeyHasBeenSet;
 
                     /**
-                     * 临时秘钥Token，若为跨账号资源此项必填
+                     * 临时密钥Token，若为跨账号资源此项必填
                      */
                     std::string m_tmpToken;
                     bool m_tmpTokenHasBeenSet;

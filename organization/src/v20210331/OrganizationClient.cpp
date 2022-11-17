@@ -126,6 +126,49 @@ OrganizationClient::BindOrganizationMemberAuthAccountOutcomeCallable Organizatio
     return task->get_future();
 }
 
+OrganizationClient::CancelOrganizationMemberAuthAccountOutcome OrganizationClient::CancelOrganizationMemberAuthAccount(const CancelOrganizationMemberAuthAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelOrganizationMemberAuthAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelOrganizationMemberAuthAccountResponse rsp = CancelOrganizationMemberAuthAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelOrganizationMemberAuthAccountOutcome(rsp);
+        else
+            return CancelOrganizationMemberAuthAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelOrganizationMemberAuthAccountOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::CancelOrganizationMemberAuthAccountAsync(const CancelOrganizationMemberAuthAccountRequest& request, const CancelOrganizationMemberAuthAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelOrganizationMemberAuthAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::CancelOrganizationMemberAuthAccountOutcomeCallable OrganizationClient::CancelOrganizationMemberAuthAccountCallable(const CancelOrganizationMemberAuthAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelOrganizationMemberAuthAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelOrganizationMemberAuthAccount(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OrganizationClient::CreateOrganizationMemberOutcome OrganizationClient::CreateOrganizationMember(const CreateOrganizationMemberRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateOrganizationMember");
@@ -377,6 +420,49 @@ OrganizationClient::DescribeOrganizationAuthNodeOutcomeCallable OrganizationClie
         [this, request]()
         {
             return this->DescribeOrganizationAuthNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OrganizationClient::DescribeOrganizationMemberAuthAccountsOutcome OrganizationClient::DescribeOrganizationMemberAuthAccounts(const DescribeOrganizationMemberAuthAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOrganizationMemberAuthAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOrganizationMemberAuthAccountsResponse rsp = DescribeOrganizationMemberAuthAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOrganizationMemberAuthAccountsOutcome(rsp);
+        else
+            return DescribeOrganizationMemberAuthAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOrganizationMemberAuthAccountsOutcome(outcome.GetError());
+    }
+}
+
+void OrganizationClient::DescribeOrganizationMemberAuthAccountsAsync(const DescribeOrganizationMemberAuthAccountsRequest& request, const DescribeOrganizationMemberAuthAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOrganizationMemberAuthAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OrganizationClient::DescribeOrganizationMemberAuthAccountsOutcomeCallable OrganizationClient::DescribeOrganizationMemberAuthAccountsCallable(const DescribeOrganizationMemberAuthAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOrganizationMemberAuthAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOrganizationMemberAuthAccounts(request);
         }
     );
 
