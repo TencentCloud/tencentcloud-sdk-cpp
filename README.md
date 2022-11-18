@@ -266,7 +266,7 @@ Common Client参考[example](https://github.com/TencentCloud/tencentcloud-sdk-cp
 
 ## C++ SDK支持压缩协议使用方式
 
-C++ SDK已支持压缩协议请求，如需启用，操作步骤如下：
+从3.0.622开始，C++ SDK已支持压缩协议请求，如需启用，操作步骤如下：
 
 1. 安装通用压缩库，安装例子如下：
 ```
