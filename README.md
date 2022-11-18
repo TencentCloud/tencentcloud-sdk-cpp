@@ -265,8 +265,10 @@ Common Client参考[example](https://github.com/TencentCloud/tencentcloud-sdk-cp
 
 
 ## C++ SDK支持压缩协议使用方式
-1. C++ SDK已支持压缩协议请求，
-2. 安装通用压缩库
+
+C++ SDK已支持压缩协议请求，如需启用，操作步骤如下：
+
+1. 需要安装通用压缩库，安装例子如下：
 ```
 ubuntu
 sudo apt-get install zlib1g-dev
@@ -276,8 +278,10 @@ yum install -y zlib zlib-devel
 
 ```
 
-通过指定编译选项，可以压缩模块是否进行编译，默认关闭。如需开启，将对应模块打开即可，如下所示：
-编译压缩模块：`cmake -DENABLE_COMPRESS_MODULE=on ..`。
+2.通过指定编译选项，可以压缩模块是否进行编译，默认关闭。如需开启，将对应模块打开即可，如下所示：
+```
+指定编译压缩模块：`cmake -DENABLE_COMPRESS_MODULE=on ..`。
+```
 
 
 # 单元测试
