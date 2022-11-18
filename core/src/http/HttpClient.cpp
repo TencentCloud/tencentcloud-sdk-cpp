@@ -19,11 +19,14 @@
 #include <cassert>
 #include <sstream>
 #include <vector>
+
+#ifdef ENABLE_COMPRESS_MODULE
 #include <string>
 #include <zlib.h>
 
 #define GZIPDECODING 16
 #define GZIPCOMPRESSMULTIPLE 1000000
+#endif // ENABLE_COMPRESS_MODULE
 
 using namespace TencentCloud;
 
@@ -185,7 +188,7 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
         curl_easy_getinfo(m_curlHandle, CURLINFO_RESPONSE_CODE, &response_code);
         response.SetStatusCode(response_code);
         response.SetBody(out.str());
-
+#ifdef ENABLE_COMPRESS_MODULE
         if (response.Header("Content-Encoding").find("gzip") != std::string::npos)
         {
             std::string decompressData;
@@ -194,6 +197,7 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
                 response.SetBody(decompressData);
             }
         }
+#endif // ENABLE_COMPRESS_MODULE
 
         if (response_code != 200)
         {
@@ -208,6 +212,7 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
     }
 }
 
+#ifdef ENABLE_COMPRESS_MODULE
 bool HttpClient::TryDecompress(const char *src, int srcLen, std::string &decompressData)
 {
     for (int i = 0; i < GZIPCOMPRESSMULTIPLE; i++) {
@@ -245,3 +250,4 @@ int HttpClient::GzipDecompress(const char *src, int srcLen, const char *dst, int
   inflateEnd(&stream);
   return err;
 }
+#endif // ENABLE_COMPRESS_MODULE
