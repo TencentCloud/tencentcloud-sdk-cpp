@@ -898,6 +898,50 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     bool NotificationHooksHasBeenSet() const;
 
+                    /**
+                     * 获取每秒接收字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkReceiveRate 每秒接收字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetNetworkReceiveRate() const;
+
+                    /**
+                     * 设置每秒接收字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetworkReceiveRate 每秒接收字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetworkReceiveRate(const double& _networkReceiveRate);
+
+                    /**
+                     * 判断参数 NetworkReceiveRate 是否已赋值
+                     * @return NetworkReceiveRate 是否已赋值
+                     */
+                    bool NetworkReceiveRateHasBeenSet() const;
+
+                    /**
+                     * 获取每秒发送字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkSendRate 每秒发送字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetNetworkSendRate() const;
+
+                    /**
+                     * 设置每秒发送字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetworkSendRate 每秒发送字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetworkSendRate(const double& _networkSendRate);
+
+                    /**
+                     * 判断参数 NetworkSendRate 是否已赋值
+                     * @return NetworkSendRate 是否已赋值
+                     */
+                    bool NetworkSendRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1167,6 +1211,20 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     std::vector<NotificationHook> m_notificationHooks;
                     bool m_notificationHooksHasBeenSet;
+
+                    /**
+                     * 每秒接收字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_networkReceiveRate;
+                    bool m_networkReceiveRateHasBeenSet;
+
+                    /**
+                     * 每秒发送字节数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_networkSendRate;
+                    bool m_networkSendRateHasBeenSet;
 
                 };
             }

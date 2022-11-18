@@ -33,7 +33,8 @@ DescribeOutput::DescribeOutput() :
     m_rTMPSettingsHasBeenSet(false),
     m_rTMPPullSettingsHasBeenSet(false),
     m_allowIpListHasBeenSet(false),
-    m_rTSPPullSettingsHasBeenSet(false)
+    m_rTSPPullSettingsHasBeenSet(false),
+    m_hLSPullSettingsHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,23 @@ CoreInternalOutcome DescribeOutput::Deserialize(const rapidjson::Value &value)
         m_rTSPPullSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("HLSPullSettings") && !value["HLSPullSettings"].IsNull())
+    {
+        if (!value["HLSPullSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeOutput.HLSPullSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hLSPullSettings.Deserialize(value["HLSPullSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hLSPullSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +364,15 @@ void DescribeOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rTSPPullSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hLSPullSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HLSPullSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hLSPullSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -557,5 +584,21 @@ void DescribeOutput::SetRTSPPullSettings(const DescribeOutputRTSPPullSettings& _
 bool DescribeOutput::RTSPPullSettingsHasBeenSet() const
 {
     return m_rTSPPullSettingsHasBeenSet;
+}
+
+DescribeOutputHLSPullSettings DescribeOutput::GetHLSPullSettings() const
+{
+    return m_hLSPullSettings;
+}
+
+void DescribeOutput::SetHLSPullSettings(const DescribeOutputHLSPullSettings& _hLSPullSettings)
+{
+    m_hLSPullSettings = _hLSPullSettings;
+    m_hLSPullSettingsHasBeenSet = true;
+}
+
+bool DescribeOutput::HLSPullSettingsHasBeenSet() const
+{
+    return m_hLSPullSettingsHasBeenSet;
 }
 

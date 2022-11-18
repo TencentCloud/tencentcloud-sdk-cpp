@@ -31,12 +31,15 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/UpdateNetInfo.h
   include/tencentcloud/mna/v20210119/model/CreateQosResponse.h
   include/tencentcloud/mna/v20210119/model/DescribeQosResponse.h
+  include/tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h
   include/tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h
   include/tencentcloud/mna/v20210119/model/UpdateDeviceResponse.h
   include/tencentcloud/mna/v20210119/model/DeviceDetails.h
   include/tencentcloud/mna/v20210119/model/CreateQosRequest.h
   include/tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h
   include/tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/GetPublicKeyResponse.h
   include/tencentcloud/mna/v20210119/model/DeviceBaseInfo.h
   include/tencentcloud/mna/v20210119/model/ExpectedThreshold.h
   include/tencentcloud/mna/v20210119/model/DeleteQosResponse.h
@@ -51,6 +54,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/DeviceInfo.h
   include/tencentcloud/mna/v20210119/model/GetDevicesRequest.h
   include/tencentcloud/mna/v20210119/model/AddDeviceRequest.h
+  include/tencentcloud/mna/v20210119/model/GetPublicKeyRequest.h
   )
 
 set(mna_src
@@ -67,12 +71,15 @@ set(mna_src
   src/v20210119/model/UpdateNetInfo.cpp
   src/v20210119/model/CreateQosResponse.cpp
   src/v20210119/model/DescribeQosResponse.cpp
+  src/v20210119/model/CreateEncryptedKeyRequest.cpp
   src/v20210119/model/DeleteDeviceRequest.cpp
+  src/v20210119/model/CreateEncryptedKeyResponse.cpp
   src/v20210119/model/UpdateDeviceResponse.cpp
   src/v20210119/model/DeviceDetails.cpp
   src/v20210119/model/CreateQosRequest.cpp
   src/v20210119/model/GetStatisticDataRequest.cpp
   src/v20210119/model/UpdateDeviceRequest.cpp
+  src/v20210119/model/GetPublicKeyResponse.cpp
   src/v20210119/model/DeviceBaseInfo.cpp
   src/v20210119/model/ExpectedThreshold.cpp
   src/v20210119/model/DeleteQosResponse.cpp
@@ -87,6 +94,7 @@ set(mna_src
   src/v20210119/model/DeviceInfo.cpp
   src/v20210119/model/GetDevicesRequest.cpp
   src/v20210119/model/AddDeviceRequest.cpp
+  src/v20210119/model/GetPublicKeyRequest.cpp
   )
 
 set(mna_include

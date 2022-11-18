@@ -31,6 +31,7 @@
 #include <tencentcloud/as/v20180419/model/HostNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
+#include <tencentcloud/as/v20180419/model/IPv6InternetAccessible.h>
 
 
 namespace TencentCloud
@@ -470,6 +471,24 @@ namespace TencentCloud
                      */
                     bool DiskTypePolicyHasBeenSet() const;
 
+                    /**
+                     * 获取IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。
+                     * @return IPv6InternetAccessible IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。
+                     */
+                    IPv6InternetAccessible GetIPv6InternetAccessible() const;
+
+                    /**
+                     * 设置IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。
+                     * @param IPv6InternetAccessible IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。
+                     */
+                    void SetIPv6InternetAccessible(const IPv6InternetAccessible& _iPv6InternetAccessible);
+
+                    /**
+                     * 判断参数 IPv6InternetAccessible 是否已赋值
+                     * @return IPv6InternetAccessible 是否已赋值
+                     */
+                    bool IPv6InternetAccessibleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -607,6 +626,12 @@ namespace TencentCloud
                      */
                     std::string m_diskTypePolicy;
                     bool m_diskTypePolicyHasBeenSet;
+
+                    /**
+                     * IPv6公网带宽相关信息设置。若新建实例包含IPv6地址，该参数可为新建实例的IPv6地址分配公网带宽。关联启动配置的伸缩组Ipv6AddressCount参数为0时，该参数不会生效。
+                     */
+                    IPv6InternetAccessible m_iPv6InternetAccessible;
+                    bool m_iPv6InternetAccessibleHasBeenSet;
 
                 };
             }

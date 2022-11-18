@@ -260,6 +260,24 @@ namespace TencentCloud
                      */
                     bool EnableSubtitleHasBeenSet() const;
 
+                    /**
+                     * 获取断句敏感度，默认值为:0，取值范围:[0,1,2]，值越大则敏感度越低，更易断句，此参数建议不要随意调整，可能会影响合成效果。
+                     * @return SegmentRate 断句敏感度，默认值为:0，取值范围:[0,1,2]，值越大则敏感度越低，更易断句，此参数建议不要随意调整，可能会影响合成效果。
+                     */
+                    uint64_t GetSegmentRate() const;
+
+                    /**
+                     * 设置断句敏感度，默认值为:0，取值范围:[0,1,2]，值越大则敏感度越低，更易断句，此参数建议不要随意调整，可能会影响合成效果。
+                     * @param SegmentRate 断句敏感度，默认值为:0，取值范围:[0,1,2]，值越大则敏感度越低，更易断句，此参数建议不要随意调整，可能会影响合成效果。
+                     */
+                    void SetSegmentRate(const uint64_t& _segmentRate);
+
+                    /**
+                     * 判断参数 SegmentRate 是否已赋值
+                     * @return SegmentRate 是否已赋值
+                     */
+                    bool SegmentRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +350,12 @@ namespace TencentCloud
                      */
                     bool m_enableSubtitle;
                     bool m_enableSubtitleHasBeenSet;
+
+                    /**
+                     * 断句敏感度，默认值为:0，取值范围:[0,1,2]，值越大则敏感度越低，更易断句，此参数建议不要随意调整，可能会影响合成效果。
+                     */
+                    uint64_t m_segmentRate;
+                    bool m_segmentRateHasBeenSet;
 
                 };
             }

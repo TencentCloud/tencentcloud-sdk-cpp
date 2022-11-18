@@ -36,6 +36,7 @@
 #include <tencentcloud/as/v20180419/model/HostNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceNameSettings.h>
 #include <tencentcloud/as/v20180419/model/InstanceChargePrepaid.h>
+#include <tencentcloud/as/v20180419/model/IPv6InternetAccessible.h>
 
 
 namespace TencentCloud
@@ -612,6 +613,24 @@ namespace TencentCloud
                      */
                     bool HpcClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取IPv6公网带宽相关信息设置。
+                     * @return IPv6InternetAccessible IPv6公网带宽相关信息设置。
+                     */
+                    IPv6InternetAccessible GetIPv6InternetAccessible() const;
+
+                    /**
+                     * 设置IPv6公网带宽相关信息设置。
+                     * @param IPv6InternetAccessible IPv6公网带宽相关信息设置。
+                     */
+                    void SetIPv6InternetAccessible(const IPv6InternetAccessible& _iPv6InternetAccessible);
+
+                    /**
+                     * 判断参数 IPv6InternetAccessible 是否已赋值
+                     * @return IPv6InternetAccessible 是否已赋值
+                     */
+                    bool IPv6InternetAccessibleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -795,6 +814,12 @@ namespace TencentCloud
                      */
                     std::string m_hpcClusterId;
                     bool m_hpcClusterIdHasBeenSet;
+
+                    /**
+                     * IPv6公网带宽相关信息设置。
+                     */
+                    IPv6InternetAccessible m_iPv6InternetAccessible;
+                    bool m_iPv6InternetAccessibleHasBeenSet;
 
                 };
             }

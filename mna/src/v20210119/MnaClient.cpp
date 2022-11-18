@@ -83,6 +83,49 @@ MnaClient::AddDeviceOutcomeCallable MnaClient::AddDeviceCallable(const AddDevice
     return task->get_future();
 }
 
+MnaClient::CreateEncryptedKeyOutcome MnaClient::CreateEncryptedKey(const CreateEncryptedKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateEncryptedKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateEncryptedKeyResponse rsp = CreateEncryptedKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateEncryptedKeyOutcome(rsp);
+        else
+            return CreateEncryptedKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateEncryptedKeyOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::CreateEncryptedKeyAsync(const CreateEncryptedKeyRequest& request, const CreateEncryptedKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateEncryptedKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::CreateEncryptedKeyOutcomeCallable MnaClient::CreateEncryptedKeyCallable(const CreateEncryptedKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateEncryptedKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateEncryptedKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::CreateQosOutcome MnaClient::CreateQos(const CreateQosRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateQos");
@@ -377,6 +420,49 @@ MnaClient::GetFlowStatisticOutcomeCallable MnaClient::GetFlowStatisticCallable(c
         [this, request]()
         {
             return this->GetFlowStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MnaClient::GetPublicKeyOutcome MnaClient::GetPublicKey(const GetPublicKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetPublicKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetPublicKeyResponse rsp = GetPublicKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetPublicKeyOutcome(rsp);
+        else
+            return GetPublicKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return GetPublicKeyOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetPublicKeyAsync(const GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetPublicKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetPublicKeyOutcomeCallable MnaClient::GetPublicKeyCallable(const GetPublicKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetPublicKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->GetPublicKey(request);
         }
     );
 

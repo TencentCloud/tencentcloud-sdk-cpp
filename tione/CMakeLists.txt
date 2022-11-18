@@ -61,6 +61,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/InferTemplate.h
   include/tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h
   include/tencentcloud/tione/v20211111/model/FrameworkVersion.h
+  include/tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccEngineVersionsResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteModelAccelerateTaskResponse.h
   include/tencentcloud/tione/v20211111/model/DataPoint.h
@@ -156,6 +157,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeDatasetDetailStructuredRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateTaskRequest.h
   include/tencentcloud/tione/v20211111/model/SegmentationInfo.h
+  include/tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigRequest.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccelerateTasksResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteDatasetResponse.h
   include/tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h
@@ -319,6 +321,7 @@ set(tione_src
   src/v20211111/model/InferTemplate.cpp
   src/v20211111/model/StopBatchTaskRequest.cpp
   src/v20211111/model/FrameworkVersion.cpp
+  src/v20211111/model/ModifyModelServicePartialConfigResponse.cpp
   src/v20211111/model/DescribeModelAccEngineVersionsResponse.cpp
   src/v20211111/model/DeleteModelAccelerateTaskResponse.cpp
   src/v20211111/model/DataPoint.cpp
@@ -414,6 +417,7 @@ set(tione_src
   src/v20211111/model/DescribeDatasetDetailStructuredRequest.cpp
   src/v20211111/model/DescribeModelAccelerateTaskRequest.cpp
   src/v20211111/model/SegmentationInfo.cpp
+  src/v20211111/model/ModifyModelServicePartialConfigRequest.cpp
   src/v20211111/model/DescribeModelAccelerateTasksResponse.cpp
   src/v20211111/model/DeleteDatasetResponse.cpp
   src/v20211111/model/HorizontalPodAutoscaler.cpp

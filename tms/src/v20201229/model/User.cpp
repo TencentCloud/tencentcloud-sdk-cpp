@@ -29,7 +29,10 @@ User::User() :
     m_levelHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_headUrlHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_roomIdHasBeenSet(false),
+    m_receiverIdHasBeenSet(false),
+    m_sendTimeHasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome User::Deserialize(const rapidjson::Value &value)
         m_descHasBeenSet = true;
     }
 
+    if (value.HasMember("RoomId") && !value["RoomId"].IsNull())
+    {
+        if (!value["RoomId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.RoomId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roomId = string(value["RoomId"].GetString());
+        m_roomIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReceiverId") && !value["ReceiverId"].IsNull())
+    {
+        if (!value["ReceiverId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.ReceiverId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_receiverId = string(value["ReceiverId"].GetString());
+        m_receiverIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SendTime") && !value["SendTime"].IsNull())
+    {
+        if (!value["SendTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `User.SendTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sendTime = value["SendTime"].GetInt64();
+        m_sendTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void User::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roomIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoomId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roomId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_receiverIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReceiverId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_receiverId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sendTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SendTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sendTime, allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void User::SetDesc(const string& _desc)
 bool User::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+string User::GetRoomId() const
+{
+    return m_roomId;
+}
+
+void User::SetRoomId(const string& _roomId)
+{
+    m_roomId = _roomId;
+    m_roomIdHasBeenSet = true;
+}
+
+bool User::RoomIdHasBeenSet() const
+{
+    return m_roomIdHasBeenSet;
+}
+
+string User::GetReceiverId() const
+{
+    return m_receiverId;
+}
+
+void User::SetReceiverId(const string& _receiverId)
+{
+    m_receiverId = _receiverId;
+    m_receiverIdHasBeenSet = true;
+}
+
+bool User::ReceiverIdHasBeenSet() const
+{
+    return m_receiverIdHasBeenSet;
+}
+
+int64_t User::GetSendTime() const
+{
+    return m_sendTime;
+}
+
+void User::SetSendTime(const int64_t& _sendTime)
+{
+    m_sendTime = _sendTime;
+    m_sendTimeHasBeenSet = true;
+}
+
+bool User::SendTimeHasBeenSet() const
+{
+    return m_sendTimeHasBeenSet;
 }
 

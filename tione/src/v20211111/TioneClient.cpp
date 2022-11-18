@@ -2018,6 +2018,49 @@ TioneClient::DescribeTrainingTasksOutcomeCallable TioneClient::DescribeTrainingT
     return task->get_future();
 }
 
+TioneClient::ModifyModelServicePartialConfigOutcome TioneClient::ModifyModelServicePartialConfig(const ModifyModelServicePartialConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelServicePartialConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelServicePartialConfigResponse rsp = ModifyModelServicePartialConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelServicePartialConfigOutcome(rsp);
+        else
+            return ModifyModelServicePartialConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelServicePartialConfigOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyModelServicePartialConfigAsync(const ModifyModelServicePartialConfigRequest& request, const ModifyModelServicePartialConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModelServicePartialConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyModelServicePartialConfigOutcomeCallable TioneClient::ModifyModelServicePartialConfigCallable(const ModifyModelServicePartialConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModelServicePartialConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModelServicePartialConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::ModifyServiceGroupWeightsOutcome TioneClient::ModifyServiceGroupWeights(const ModifyServiceGroupWeightsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyServiceGroupWeights");

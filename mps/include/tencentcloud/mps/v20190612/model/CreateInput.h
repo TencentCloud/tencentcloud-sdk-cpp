@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/CreateInputRTPSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateInputRTMPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/CreateInputRTSPPullSettings.h>
+#include <tencentcloud/mps/v20190612/model/CreateInputHLSPullSettings.h>
 
 
 namespace TencentCloud
@@ -212,6 +213,24 @@ namespace TencentCloud
                      */
                     bool RTSPPullSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取输入的HLS_PULL配置信息。
+                     * @return HLSPullSettings 输入的HLS_PULL配置信息。
+                     */
+                    CreateInputHLSPullSettings GetHLSPullSettings() const;
+
+                    /**
+                     * 设置输入的HLS_PULL配置信息。
+                     * @param HLSPullSettings 输入的HLS_PULL配置信息。
+                     */
+                    void SetHLSPullSettings(const CreateInputHLSPullSettings& _hLSPullSettings);
+
+                    /**
+                     * 判断参数 HLSPullSettings 是否已赋值
+                     * @return HLSPullSettings 是否已赋值
+                     */
+                    bool HLSPullSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -267,6 +286,12 @@ namespace TencentCloud
                      */
                     CreateInputRTSPPullSettings m_rTSPPullSettings;
                     bool m_rTSPPullSettingsHasBeenSet;
+
+                    /**
+                     * 输入的HLS_PULL配置信息。
+                     */
+                    CreateInputHLSPullSettings m_hLSPullSettings;
+                    bool m_hLSPullSettingsHasBeenSet;
 
                 };
             }

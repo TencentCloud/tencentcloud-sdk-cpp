@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTMPSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTMPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeOutputRTSPPullSettings.h>
+#include <tencentcloud/mps/v20190612/model/DescribeOutputHLSPullSettings.h>
 
 
 namespace TencentCloud
@@ -322,6 +323,28 @@ namespace TencentCloud
                      */
                     bool RTSPPullSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取输出的HLS拉流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HLSPullSettings 输出的HLS拉流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeOutputHLSPullSettings GetHLSPullSettings() const;
+
+                    /**
+                     * 设置输出的HLS拉流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HLSPullSettings 输出的HLS拉流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHLSPullSettings(const DescribeOutputHLSPullSettings& _hLSPullSettings);
+
+                    /**
+                     * 判断参数 HLSPullSettings 是否已赋值
+                     * @return HLSPullSettings 是否已赋值
+                     */
+                    bool HLSPullSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -410,6 +433,13 @@ namespace TencentCloud
                      */
                     DescribeOutputRTSPPullSettings m_rTSPPullSettings;
                     bool m_rTSPPullSettingsHasBeenSet;
+
+                    /**
+                     * 输出的HLS拉流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeOutputHLSPullSettings m_hLSPullSettings;
+                    bool m_hLSPullSettingsHasBeenSet;
 
                 };
             }

@@ -43,7 +43,8 @@ UpgradeLaunchConfigurationRequest::UpgradeLaunchConfigurationRequest() :
     m_hostNameSettingsHasBeenSet(false),
     m_instanceNameSettingsHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_diskTypePolicyHasBeenSet(false)
+    m_diskTypePolicyHasBeenSet(false),
+    m_iPv6InternetAccessibleHasBeenSet(false)
 {
 }
 
@@ -252,6 +253,15 @@ string UpgradeLaunchConfigurationRequest::ToJsonString() const
         string key = "DiskTypePolicy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_diskTypePolicy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6InternetAccessibleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6InternetAccessible";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPv6InternetAccessible.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -596,6 +606,22 @@ void UpgradeLaunchConfigurationRequest::SetDiskTypePolicy(const string& _diskTyp
 bool UpgradeLaunchConfigurationRequest::DiskTypePolicyHasBeenSet() const
 {
     return m_diskTypePolicyHasBeenSet;
+}
+
+IPv6InternetAccessible UpgradeLaunchConfigurationRequest::GetIPv6InternetAccessible() const
+{
+    return m_iPv6InternetAccessible;
+}
+
+void UpgradeLaunchConfigurationRequest::SetIPv6InternetAccessible(const IPv6InternetAccessible& _iPv6InternetAccessible)
+{
+    m_iPv6InternetAccessible = _iPv6InternetAccessible;
+    m_iPv6InternetAccessibleHasBeenSet = true;
+}
+
+bool UpgradeLaunchConfigurationRequest::IPv6InternetAccessibleHasBeenSet() const
+{
+    return m_iPv6InternetAccessibleHasBeenSet;
 }
 
 

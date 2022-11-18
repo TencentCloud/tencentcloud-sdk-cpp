@@ -229,17 +229,17 @@ namespace TencentCloud
                     bool CreatedOnHasBeenSet() const;
 
                     /**
-                     * 获取模板的预览链接
+                     * 获取模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreviewUrl 模板的预览链接
+                     * @return PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPreviewUrl() const;
 
                     /**
-                     * 设置模板的预览链接
+                     * 设置模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PreviewUrl 模板的预览链接
+                     * @param PreviewUrl 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPreviewUrl(const std::string& _previewUrl);
@@ -313,7 +313,7 @@ namespace TencentCloud
                     bool m_createdOnHasBeenSet;
 
                     /**
-                     * 模板的预览链接
+                     * 模板的H5预览链接,可以通过浏览器打开此链接预览模板，或者嵌入到iframe中预览模板。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_previewUrl;

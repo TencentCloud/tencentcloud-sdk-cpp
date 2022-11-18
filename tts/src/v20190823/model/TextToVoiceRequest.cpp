@@ -33,7 +33,8 @@ TextToVoiceRequest::TextToVoiceRequest() :
     m_primaryLanguageHasBeenSet(false),
     m_sampleRateHasBeenSet(false),
     m_codecHasBeenSet(false),
-    m_enableSubtitleHasBeenSet(false)
+    m_enableSubtitleHasBeenSet(false),
+    m_segmentRateHasBeenSet(false)
 {
 }
 
@@ -130,6 +131,14 @@ string TextToVoiceRequest::ToJsonString() const
         string key = "EnableSubtitle";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableSubtitle, allocator);
+    }
+
+    if (m_segmentRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SegmentRate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_segmentRate, allocator);
     }
 
 
@@ -314,6 +323,22 @@ void TextToVoiceRequest::SetEnableSubtitle(const bool& _enableSubtitle)
 bool TextToVoiceRequest::EnableSubtitleHasBeenSet() const
 {
     return m_enableSubtitleHasBeenSet;
+}
+
+uint64_t TextToVoiceRequest::GetSegmentRate() const
+{
+    return m_segmentRate;
+}
+
+void TextToVoiceRequest::SetSegmentRate(const uint64_t& _segmentRate)
+{
+    m_segmentRate = _segmentRate;
+    m_segmentRateHasBeenSet = true;
+}
+
+bool TextToVoiceRequest::SegmentRateHasBeenSet() const
+{
+    return m_segmentRateHasBeenSet;
 }
 
 

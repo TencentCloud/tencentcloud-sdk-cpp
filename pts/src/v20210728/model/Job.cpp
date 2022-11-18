@@ -58,7 +58,9 @@ Job::Job() :
     m_abortReasonHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_notificationHooksHasBeenSet(false)
+    m_notificationHooksHasBeenSet(false),
+    m_networkReceiveRateHasBeenSet(false),
+    m_networkSendRateHasBeenSet(false)
 {
 }
 
@@ -547,6 +549,26 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_notificationHooksHasBeenSet = true;
     }
 
+    if (value.HasMember("NetworkReceiveRate") && !value["NetworkReceiveRate"].IsNull())
+    {
+        if (!value["NetworkReceiveRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.NetworkReceiveRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkReceiveRate = value["NetworkReceiveRate"].GetDouble();
+        m_networkReceiveRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkSendRate") && !value["NetworkSendRate"].IsNull())
+    {
+        if (!value["NetworkSendRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.NetworkSendRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkSendRate = value["NetworkSendRate"].GetDouble();
+        m_networkSendRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -923,6 +945,22 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_networkReceiveRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkReceiveRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_networkReceiveRate, allocator);
+    }
+
+    if (m_networkSendRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkSendRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_networkSendRate, allocator);
     }
 
 }
@@ -1534,5 +1572,37 @@ void Job::SetNotificationHooks(const vector<NotificationHook>& _notificationHook
 bool Job::NotificationHooksHasBeenSet() const
 {
     return m_notificationHooksHasBeenSet;
+}
+
+double Job::GetNetworkReceiveRate() const
+{
+    return m_networkReceiveRate;
+}
+
+void Job::SetNetworkReceiveRate(const double& _networkReceiveRate)
+{
+    m_networkReceiveRate = _networkReceiveRate;
+    m_networkReceiveRateHasBeenSet = true;
+}
+
+bool Job::NetworkReceiveRateHasBeenSet() const
+{
+    return m_networkReceiveRateHasBeenSet;
+}
+
+double Job::GetNetworkSendRate() const
+{
+    return m_networkSendRate;
+}
+
+void Job::SetNetworkSendRate(const double& _networkSendRate)
+{
+    m_networkSendRate = _networkSendRate;
+    m_networkSendRateHasBeenSet = true;
+}
+
+bool Job::NetworkSendRateHasBeenSet() const
+{
+    return m_networkSendRateHasBeenSet;
 }
 

@@ -45,7 +45,8 @@ CreateLaunchConfigurationRequest::CreateLaunchConfigurationRequest() :
     m_instanceNameSettingsHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_diskTypePolicyHasBeenSet(false),
-    m_hpcClusterIdHasBeenSet(false)
+    m_hpcClusterIdHasBeenSet(false),
+    m_iPv6InternetAccessibleHasBeenSet(false)
 {
 }
 
@@ -277,6 +278,15 @@ string CreateLaunchConfigurationRequest::ToJsonString() const
         string key = "HpcClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6InternetAccessibleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6InternetAccessible";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPv6InternetAccessible.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -653,6 +663,22 @@ void CreateLaunchConfigurationRequest::SetHpcClusterId(const string& _hpcCluster
 bool CreateLaunchConfigurationRequest::HpcClusterIdHasBeenSet() const
 {
     return m_hpcClusterIdHasBeenSet;
+}
+
+IPv6InternetAccessible CreateLaunchConfigurationRequest::GetIPv6InternetAccessible() const
+{
+    return m_iPv6InternetAccessible;
+}
+
+void CreateLaunchConfigurationRequest::SetIPv6InternetAccessible(const IPv6InternetAccessible& _iPv6InternetAccessible)
+{
+    m_iPv6InternetAccessible = _iPv6InternetAccessible;
+    m_iPv6InternetAccessibleHasBeenSet = true;
+}
+
+bool CreateLaunchConfigurationRequest::IPv6InternetAccessibleHasBeenSet() const
+{
+    return m_iPv6InternetAccessibleHasBeenSet;
 }
 
 

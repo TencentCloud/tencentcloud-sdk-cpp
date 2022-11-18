@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceRequest.h>
 #include <tencentcloud/mna/v20210119/model/AddDeviceResponse.h>
+#include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyRequest.h>
+#include <tencentcloud/mna/v20210119/model/CreateEncryptedKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/CreateQosRequest.h>
 #include <tencentcloud/mna/v20210119/model/CreateQosResponse.h>
 #include <tencentcloud/mna/v20210119/model/DeleteDeviceRequest.h>
@@ -39,6 +41,8 @@
 #include <tencentcloud/mna/v20210119/model/GetDevicesResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h>
+#include <tencentcloud/mna/v20210119/model/GetPublicKeyRequest.h>
+#include <tencentcloud/mna/v20210119/model/GetPublicKeyResponse.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h>
 #include <tencentcloud/mna/v20210119/model/GetStatisticDataResponse.h>
 #include <tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h>
@@ -60,6 +64,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddDeviceResponse> AddDeviceOutcome;
                 typedef std::future<AddDeviceOutcome> AddDeviceOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::AddDeviceRequest&, AddDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateEncryptedKeyResponse> CreateEncryptedKeyOutcome;
+                typedef std::future<CreateEncryptedKeyOutcome> CreateEncryptedKeyOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::CreateEncryptedKeyRequest&, CreateEncryptedKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateEncryptedKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateQosResponse> CreateQosOutcome;
                 typedef std::future<CreateQosOutcome> CreateQosOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::CreateQosRequest&, CreateQosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateQosAsyncHandler;
@@ -81,6 +88,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetFlowStatisticResponse> GetFlowStatisticOutcome;
                 typedef std::future<GetFlowStatisticOutcome> GetFlowStatisticOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetFlowStatisticRequest&, GetFlowStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetFlowStatisticAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetPublicKeyResponse> GetPublicKeyOutcome;
+                typedef std::future<GetPublicKeyOutcome> GetPublicKeyOutcomeCallable;
+                typedef std::function<void(const MnaClient*, const Model::GetPublicKeyRequest&, GetPublicKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetPublicKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetStatisticDataResponse> GetStatisticDataOutcome;
                 typedef std::future<GetStatisticDataOutcome> GetStatisticDataOutcomeCallable;
                 typedef std::function<void(const MnaClient*, const Model::GetStatisticDataRequest&, GetStatisticDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetStatisticDataAsyncHandler;
@@ -98,6 +108,15 @@ namespace TencentCloud
                 AddDeviceOutcome AddDevice(const Model::AddDeviceRequest &request);
                 void AddDeviceAsync(const Model::AddDeviceRequest& request, const AddDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddDeviceOutcomeCallable AddDeviceCallable(const Model::AddDeviceRequest& request);
+
+                /**
+                 *通过此接口设置和更新预置密钥
+                 * @param req CreateEncryptedKeyRequest
+                 * @return CreateEncryptedKeyOutcome
+                 */
+                CreateEncryptedKeyOutcome CreateEncryptedKey(const Model::CreateEncryptedKeyRequest &request);
+                void CreateEncryptedKeyAsync(const Model::CreateEncryptedKeyRequest& request, const CreateEncryptedKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateEncryptedKeyOutcomeCallable CreateEncryptedKeyCallable(const Model::CreateEncryptedKeyRequest& request);
 
                 /**
                  *移动网络发起Qos加速过程
@@ -161,6 +180,15 @@ namespace TencentCloud
                 GetFlowStatisticOutcome GetFlowStatistic(const Model::GetFlowStatisticRequest &request);
                 void GetFlowStatisticAsync(const Model::GetFlowStatisticRequest& request, const GetFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetFlowStatisticOutcomeCallable GetFlowStatisticCallable(const Model::GetFlowStatisticRequest& request);
+
+                /**
+                 *获取公钥用于验签
+                 * @param req GetPublicKeyRequest
+                 * @return GetPublicKeyOutcome
+                 */
+                GetPublicKeyOutcome GetPublicKey(const Model::GetPublicKeyRequest &request);
+                void GetPublicKeyAsync(const Model::GetPublicKeyRequest& request, const GetPublicKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetPublicKeyOutcomeCallable GetPublicKeyCallable(const Model::GetPublicKeyRequest& request);
 
                 /**
                  *在用量统计页面下载流量数据

@@ -144,7 +144,8 @@ namespace TencentCloud
                 BindOrganizationMemberAuthAccountOutcomeCallable BindOrganizationMemberAuthAccountCallable(const Model::BindOrganizationMemberAuthAccountRequest& request);
 
                 /**
-                 *取消组织成员和子账号的授权绑定关系
+                 *取消组织成员和组织管理员子账号的授权关系
+
                  * @param req CancelOrganizationMemberAuthAccountRequest
                  * @return CancelOrganizationMemberAuthAccountOutcome
                  */
@@ -207,7 +208,7 @@ namespace TencentCloud
                 DescribeOrganizationAuthNodeOutcomeCallable DescribeOrganizationAuthNodeCallable(const Model::DescribeOrganizationAuthNodeRequest& request);
 
                 /**
-                 *获取组织成员被绑定的子账号列表
+                 *获取组织成员被绑定授权关系的子账号列表
                  * @param req DescribeOrganizationMemberAuthAccountsRequest
                  * @return DescribeOrganizationMemberAuthAccountsOutcome
                  */

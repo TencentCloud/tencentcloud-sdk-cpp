@@ -49,7 +49,8 @@ LaunchConfiguration::LaunchConfiguration() :
     m_instanceNameSettingsHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_diskTypePolicyHasBeenSet(false),
-    m_hpcClusterIdHasBeenSet(false)
+    m_hpcClusterIdHasBeenSet(false),
+    m_iPv6InternetAccessibleHasBeenSet(false)
 {
 }
 
@@ -450,6 +451,23 @@ CoreInternalOutcome LaunchConfiguration::Deserialize(const rapidjson::Value &val
         m_hpcClusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IPv6InternetAccessible") && !value["IPv6InternetAccessible"].IsNull())
+    {
+        if (!value["IPv6InternetAccessible"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaunchConfiguration.IPv6InternetAccessible` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_iPv6InternetAccessible.Deserialize(value["IPv6InternetAccessible"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_iPv6InternetAccessibleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -733,6 +751,15 @@ void LaunchConfiguration::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "HpcClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hpcClusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_iPv6InternetAccessibleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPv6InternetAccessible";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_iPv6InternetAccessible.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1200,5 +1227,21 @@ void LaunchConfiguration::SetHpcClusterId(const string& _hpcClusterId)
 bool LaunchConfiguration::HpcClusterIdHasBeenSet() const
 {
     return m_hpcClusterIdHasBeenSet;
+}
+
+IPv6InternetAccessible LaunchConfiguration::GetIPv6InternetAccessible() const
+{
+    return m_iPv6InternetAccessible;
+}
+
+void LaunchConfiguration::SetIPv6InternetAccessible(const IPv6InternetAccessible& _iPv6InternetAccessible)
+{
+    m_iPv6InternetAccessible = _iPv6InternetAccessible;
+    m_iPv6InternetAccessibleHasBeenSet = true;
+}
+
+bool LaunchConfiguration::IPv6InternetAccessibleHasBeenSet() const
+{
+    return m_iPv6InternetAccessibleHasBeenSet;
 }
 

@@ -236,6 +236,60 @@ namespace TencentCloud
                      */
                     bool DescHasBeenSet() const;
 
+                    /**
+                     * 获取该字段表示业务群聊场景时的房间ID。
+                     * @return RoomId 该字段表示业务群聊场景时的房间ID。
+                     */
+                    std::string GetRoomId() const;
+
+                    /**
+                     * 设置该字段表示业务群聊场景时的房间ID。
+                     * @param RoomId 该字段表示业务群聊场景时的房间ID。
+                     */
+                    void SetRoomId(const std::string& _roomId);
+
+                    /**
+                     * 判断参数 RoomId 是否已赋值
+                     * @return RoomId 是否已赋值
+                     */
+                    bool RoomIdHasBeenSet() const;
+
+                    /**
+                     * 获取该字段表示消息接受者ID
+                     * @return ReceiverId 该字段表示消息接受者ID
+                     */
+                    std::string GetReceiverId() const;
+
+                    /**
+                     * 设置该字段表示消息接受者ID
+                     * @param ReceiverId 该字段表示消息接受者ID
+                     */
+                    void SetReceiverId(const std::string& _receiverId);
+
+                    /**
+                     * 判断参数 ReceiverId 是否已赋值
+                     * @return ReceiverId 是否已赋值
+                     */
+                    bool ReceiverIdHasBeenSet() const;
+
+                    /**
+                     * 获取消息生成时间，精确到毫秒
+                     * @return SendTime 消息生成时间，精确到毫秒
+                     */
+                    int64_t GetSendTime() const;
+
+                    /**
+                     * 设置消息生成时间，精确到毫秒
+                     * @param SendTime 消息生成时间，精确到毫秒
+                     */
+                    void SetSendTime(const int64_t& _sendTime);
+
+                    /**
+                     * 判断参数 SendTime 是否已赋值
+                     * @return SendTime 是否已赋值
+                     */
+                    bool SendTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +352,24 @@ namespace TencentCloud
                      */
                     std::string m_desc;
                     bool m_descHasBeenSet;
+
+                    /**
+                     * 该字段表示业务群聊场景时的房间ID。
+                     */
+                    std::string m_roomId;
+                    bool m_roomIdHasBeenSet;
+
+                    /**
+                     * 该字段表示消息接受者ID
+                     */
+                    std::string m_receiverId;
+                    bool m_receiverIdHasBeenSet;
+
+                    /**
+                     * 消息生成时间，精确到毫秒
+                     */
+                    int64_t m_sendTime;
+                    bool m_sendTimeHasBeenSet;
 
                 };
             }

@@ -115,6 +115,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsResponse.h>
 #include <tencentcloud/tione/v20211111/model/PushTrainingMetricsRequest.h>
@@ -281,6 +283,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrainingTasksResponse> DescribeTrainingTasksOutcome;
                 typedef std::future<DescribeTrainingTasksOutcome> DescribeTrainingTasksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingTasksRequest&, DescribeTrainingTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyModelServicePartialConfigResponse> ModifyModelServicePartialConfigOutcome;
+                typedef std::future<ModifyModelServicePartialConfigOutcome> ModifyModelServicePartialConfigOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyModelServicePartialConfigRequest&, ModifyModelServicePartialConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServicePartialConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyServiceGroupWeightsResponse> ModifyServiceGroupWeightsOutcome;
                 typedef std::future<ModifyServiceGroupWeightsOutcome> ModifyServiceGroupWeightsOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyServiceGroupWeightsRequest&, ModifyServiceGroupWeightsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceGroupWeightsAsyncHandler;
@@ -718,6 +723,15 @@ namespace TencentCloud
                 DescribeTrainingTasksOutcome DescribeTrainingTasks(const Model::DescribeTrainingTasksRequest &request);
                 void DescribeTrainingTasksAsync(const Model::DescribeTrainingTasksRequest& request, const DescribeTrainingTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrainingTasksOutcomeCallable DescribeTrainingTasksCallable(const Model::DescribeTrainingTasksRequest& request);
+
+                /**
+                 *增量更新在线推理服务的部分配置，不更新的配置项不需要传入
+                 * @param req ModifyModelServicePartialConfigRequest
+                 * @return ModifyModelServicePartialConfigOutcome
+                 */
+                ModifyModelServicePartialConfigOutcome ModifyModelServicePartialConfig(const Model::ModifyModelServicePartialConfigRequest &request);
+                void ModifyModelServicePartialConfigAsync(const Model::ModifyModelServicePartialConfigRequest& request, const ModifyModelServicePartialConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModelServicePartialConfigOutcomeCallable ModifyModelServicePartialConfigCallable(const Model::ModifyModelServicePartialConfigRequest& request);
 
                 /**
                  *更新推理服务组流量分配

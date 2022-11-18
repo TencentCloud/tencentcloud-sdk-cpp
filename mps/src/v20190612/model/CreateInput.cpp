@@ -29,7 +29,8 @@ CreateInput::CreateInput() :
     m_rTPSettingsHasBeenSet(false),
     m_failOverHasBeenSet(false),
     m_rTMPPullSettingsHasBeenSet(false),
-    m_rTSPPullSettingsHasBeenSet(false)
+    m_rTSPPullSettingsHasBeenSet(false),
+    m_hLSPullSettingsHasBeenSet(false)
 {
 }
 
@@ -159,6 +160,23 @@ CoreInternalOutcome CreateInput::Deserialize(const rapidjson::Value &value)
         m_rTSPPullSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("HLSPullSettings") && !value["HLSPullSettings"].IsNull())
+    {
+        if (!value["HLSPullSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateInput.HLSPullSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hLSPullSettings.Deserialize(value["HLSPullSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hLSPullSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -245,6 +263,15 @@ void CreateInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rTSPPullSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hLSPullSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HLSPullSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hLSPullSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -392,5 +419,21 @@ void CreateInput::SetRTSPPullSettings(const CreateInputRTSPPullSettings& _rTSPPu
 bool CreateInput::RTSPPullSettingsHasBeenSet() const
 {
     return m_rTSPPullSettingsHasBeenSet;
+}
+
+CreateInputHLSPullSettings CreateInput::GetHLSPullSettings() const
+{
+    return m_hLSPullSettings;
+}
+
+void CreateInput::SetHLSPullSettings(const CreateInputHLSPullSettings& _hLSPullSettings)
+{
+    m_hLSPullSettings = _hLSPullSettings;
+    m_hLSPullSettingsHasBeenSet = true;
+}
+
+bool CreateInput::HLSPullSettingsHasBeenSet() const
+{
+    return m_hLSPullSettingsHasBeenSet;
 }
 
