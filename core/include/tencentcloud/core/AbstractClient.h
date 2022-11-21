@@ -39,6 +39,7 @@ namespace TencentCloud
         void SetCredential(const Credential &credential);
         Credential GetCredential() const;
         void SetNetworkProxy(const NetworkProxy &proxy);
+        void SetHeader(const std::map<std::string, std::string> &headers);
         HttpClient::HttpResponseOutcome MakeRequestJson(const std::string &actionName, const std::string &params);
         HttpClient::HttpResponseOutcome MakeRequestOctetStream(const std::string &actionName, std::map<std::string, std::string> &headers, const std::string &body);
 
@@ -57,6 +58,7 @@ namespace TencentCloud
         std::string m_apiVersion;
         HttpClient *m_httpClient;
         std::string m_service;
+        std::map<std::string, std::string> m_headers;
     };
 }
 

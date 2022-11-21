@@ -20,6 +20,14 @@
 #include <sstream>
 #include <vector>
 
+#ifdef ENABLE_COMPRESS_MODULE
+#include <string>
+#include <zlib.h>
+
+#define GZIPDECODING 16
+#define GZIPCOMPRESSMULTIPLE 1000000
+#endif // ENABLE_COMPRESS_MODULE
+
 using namespace TencentCloud;
 
 namespace
@@ -180,6 +188,16 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
         curl_easy_getinfo(m_curlHandle, CURLINFO_RESPONSE_CODE, &response_code);
         response.SetStatusCode(response_code);
         response.SetBody(out.str());
+#ifdef ENABLE_COMPRESS_MODULE
+        if (response.Header("Content-Encoding").find("gzip") != std::string::npos)
+        {
+            std::string decompressData;
+            if (TryDecompress(out.str().c_str(), out.str().size(), decompressData)) {
+                
+                response.SetBody(decompressData);
+            }
+        }
+#endif // ENABLE_COMPRESS_MODULE
 
         if (response_code != 200)
         {
@@ -193,3 +211,43 @@ HttpClient::HttpResponseOutcome HttpClient::SendRequest(const HttpRequest &reque
         return HttpResponseOutcome(Core::Error("NetworkError", std::string(errbuf)));
     }
 }
+
+#ifdef ENABLE_COMPRESS_MODULE
+bool HttpClient::TryDecompress(const char *src, int srcLen, std::string &decompressData)
+{
+    for (int i = 0; i < GZIPCOMPRESSMULTIPLE; i++) {
+        int buffSize = srcLen * 10 * (i + 1);
+        char *buffer = new char[buffSize]();
+        int ret = GzipDecompress(src, srcLen, buffer, &buffSize);
+        if (Z_STREAM_END == ret) {
+            decompressData = buffer;
+            delete []buffer;
+            return true;
+        } else {
+            delete []buffer;
+        }
+    }
+    return false;
+}
+
+int HttpClient::GzipDecompress(const char *src, int srcLen, const char *dst, int* dstLen) {
+  z_stream stream;
+  stream.zalloc = Z_NULL;
+  stream.zfree = Z_NULL;
+  stream.opaque = Z_NULL;
+  stream.avail_in = srcLen;
+  stream.avail_out = *dstLen;
+  stream.next_in = (Bytef *)src;
+  stream.next_out = (Bytef *)dst;
+
+  int err = inflateInit2(&stream, MAX_WBITS + GZIPDECODING);
+  if (err == Z_OK) {
+    err = inflate(&stream, Z_FINISH);
+    if (err == Z_STREAM_END) {
+      *dstLen = stream.total_out;
+    }
+  }
+  inflateEnd(&stream);
+  return err;
+}
+#endif // ENABLE_COMPRESS_MODULE

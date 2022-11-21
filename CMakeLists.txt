@@ -28,6 +28,7 @@ set(TARGET_OUTPUT_NAME_PREFIX "tencentcloud-sdk-cpp-" CACHE STRING "The target's
 option(BUILD_SHARED_LIBS  "Enable shared library" ON)
 option(BUILD_FUNCTION_TESTS "Enable function test" OFF)
 
+
 set(LIB_TYPE STATIC)
 if(BUILD_SHARED_LIBS)
     set(LIB_TYPE SHARED)
@@ -46,6 +47,11 @@ if(BUILD_FUNCTION_TESTS)
     enable_testing()
     add_subdirectory(test/function_test/cvm)
     add_subdirectory(test/function_test/cbs)
+endif()
+
+option(ENABLE_COMPRESS_MODULE "Compile compression module" OFF)
+if(ENABLE_COMPRESS_MODULE)
+    add_definitions(-DENABLE_COMPRESS_MODULE)
 endif()
 
 add_subdirectory(core)
