@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool SnapshotIdHasBeenSet() const;
 
+                    /**
+                     * 获取需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * @return SnapshotIds 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     */
+                    std::vector<std::string> GetSnapshotIds() const;
+
+                    /**
+                     * 设置需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     * @param SnapshotIds 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     */
+                    void SetSnapshotIds(const std::vector<std::string>& _snapshotIds);
+
+                    /**
+                     * 判断参数 SnapshotIds 是否已赋值
+                     * @return SnapshotIds 是否已赋值
+                     */
+                    bool SnapshotIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_snapshotId;
                     bool m_snapshotIdHasBeenSet;
+
+                    /**
+                     * 需要删除的文件文件系统快照ID 列表，快照ID，跟ID列表至少填一项
+                     */
+                    std::vector<std::string> m_snapshotIds;
+                    bool m_snapshotIdsHasBeenSet;
 
                 };
             }

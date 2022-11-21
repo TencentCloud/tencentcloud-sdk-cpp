@@ -212,6 +212,49 @@ EssbasicClient::ChannelCreateBatchCancelFlowUrlOutcomeCallable EssbasicClient::C
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateBoundFlowsOutcome EssbasicClient::ChannelCreateBoundFlows(const ChannelCreateBoundFlowsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateBoundFlows");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateBoundFlowsResponse rsp = ChannelCreateBoundFlowsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateBoundFlowsOutcome(rsp);
+        else
+            return ChannelCreateBoundFlowsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateBoundFlowsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateBoundFlowsAsync(const ChannelCreateBoundFlowsRequest& request, const ChannelCreateBoundFlowsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateBoundFlows(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateBoundFlowsOutcomeCallable EssbasicClient::ChannelCreateBoundFlowsCallable(const ChannelCreateBoundFlowsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateBoundFlowsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateBoundFlows(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateConvertTaskApiOutcome EssbasicClient::ChannelCreateConvertTaskApi(const ChannelCreateConvertTaskApiRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateConvertTaskApi");

@@ -33,10 +33,14 @@ ModifyClusterNodePoolRequest::ModifyClusterNodePoolRequest() :
     m_enableAutoscaleHasBeenSet(false),
     m_osNameHasBeenSet(false),
     m_osCustomizeTypeHasBeenSet(false),
+    m_gPUArgsHasBeenSet(false),
+    m_userScriptHasBeenSet(false),
+    m_ignoreExistedNodeHasBeenSet(false),
     m_extraArgsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_unschedulableHasBeenSet(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_dockerGraphPathHasBeenSet(false)
 {
 }
 
@@ -141,6 +145,31 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_osCustomizeType.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_gPUArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUArgs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gPUArgs.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_userScriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserScript";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ignoreExistedNodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreExistedNode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ignoreExistedNode, allocator);
+    }
+
     if (m_extraArgsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -179,6 +208,14 @@ string ModifyClusterNodePoolRequest::ToJsonString() const
         string key = "DeletionProtection";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deletionProtection, allocator);
+    }
+
+    if (m_dockerGraphPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DockerGraphPath";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dockerGraphPath.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -349,6 +386,54 @@ bool ModifyClusterNodePoolRequest::OsCustomizeTypeHasBeenSet() const
     return m_osCustomizeTypeHasBeenSet;
 }
 
+GPUArgs ModifyClusterNodePoolRequest::GetGPUArgs() const
+{
+    return m_gPUArgs;
+}
+
+void ModifyClusterNodePoolRequest::SetGPUArgs(const GPUArgs& _gPUArgs)
+{
+    m_gPUArgs = _gPUArgs;
+    m_gPUArgsHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::GPUArgsHasBeenSet() const
+{
+    return m_gPUArgsHasBeenSet;
+}
+
+string ModifyClusterNodePoolRequest::GetUserScript() const
+{
+    return m_userScript;
+}
+
+void ModifyClusterNodePoolRequest::SetUserScript(const string& _userScript)
+{
+    m_userScript = _userScript;
+    m_userScriptHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::UserScriptHasBeenSet() const
+{
+    return m_userScriptHasBeenSet;
+}
+
+bool ModifyClusterNodePoolRequest::GetIgnoreExistedNode() const
+{
+    return m_ignoreExistedNode;
+}
+
+void ModifyClusterNodePoolRequest::SetIgnoreExistedNode(const bool& _ignoreExistedNode)
+{
+    m_ignoreExistedNode = _ignoreExistedNode;
+    m_ignoreExistedNodeHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::IgnoreExistedNodeHasBeenSet() const
+{
+    return m_ignoreExistedNodeHasBeenSet;
+}
+
 InstanceExtraArgs ModifyClusterNodePoolRequest::GetExtraArgs() const
 {
     return m_extraArgs;
@@ -411,6 +496,22 @@ void ModifyClusterNodePoolRequest::SetDeletionProtection(const bool& _deletionPr
 bool ModifyClusterNodePoolRequest::DeletionProtectionHasBeenSet() const
 {
     return m_deletionProtectionHasBeenSet;
+}
+
+string ModifyClusterNodePoolRequest::GetDockerGraphPath() const
+{
+    return m_dockerGraphPath;
+}
+
+void ModifyClusterNodePoolRequest::SetDockerGraphPath(const string& _dockerGraphPath)
+{
+    m_dockerGraphPath = _dockerGraphPath;
+    m_dockerGraphPathHasBeenSet = true;
+}
+
+bool ModifyClusterNodePoolRequest::DockerGraphPathHasBeenSet() const
+{
+    return m_dockerGraphPathHasBeenSet;
 }
 
 

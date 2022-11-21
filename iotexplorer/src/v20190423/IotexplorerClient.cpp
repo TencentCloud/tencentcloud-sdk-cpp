@@ -1459,6 +1459,49 @@ IotexplorerClient::DescribeDeviceDataHistoryOutcomeCallable IotexplorerClient::D
     return task->get_future();
 }
 
+IotexplorerClient::DescribeDeviceLocationSolveOutcome IotexplorerClient::DescribeDeviceLocationSolve(const DescribeDeviceLocationSolveRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceLocationSolve");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceLocationSolveResponse rsp = DescribeDeviceLocationSolveResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceLocationSolveOutcome(rsp);
+        else
+            return DescribeDeviceLocationSolveOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceLocationSolveOutcome(outcome.GetError());
+    }
+}
+
+void IotexplorerClient::DescribeDeviceLocationSolveAsync(const DescribeDeviceLocationSolveRequest& request, const DescribeDeviceLocationSolveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceLocationSolve(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotexplorerClient::DescribeDeviceLocationSolveOutcomeCallable IotexplorerClient::DescribeDeviceLocationSolveCallable(const DescribeDeviceLocationSolveRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceLocationSolveOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceLocationSolve(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotexplorerClient::DescribeDevicePositionListOutcome IotexplorerClient::DescribeDevicePositionList(const DescribeDevicePositionListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDevicePositionList");

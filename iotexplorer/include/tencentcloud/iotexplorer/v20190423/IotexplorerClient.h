@@ -89,6 +89,8 @@
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceDataHistoryResponse.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceLocationSolveRequest.h>
+#include <tencentcloud/iotexplorer/v20190423/model/DescribeDeviceLocationSolveResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListRequest.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeDevicePositionListResponse.h>
 #include <tencentcloud/iotexplorer/v20190423/model/DescribeFenceBindListRequest.h>
@@ -314,6 +316,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDeviceDataHistoryResponse> DescribeDeviceDataHistoryOutcome;
                 typedef std::future<DescribeDeviceDataHistoryOutcome> DescribeDeviceDataHistoryOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceDataHistoryRequest&, DescribeDeviceDataHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceDataHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceLocationSolveResponse> DescribeDeviceLocationSolveOutcome;
+                typedef std::future<DescribeDeviceLocationSolveOutcome> DescribeDeviceLocationSolveOutcomeCallable;
+                typedef std::function<void(const IotexplorerClient*, const Model::DescribeDeviceLocationSolveRequest&, DescribeDeviceLocationSolveOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceLocationSolveAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDevicePositionListResponse> DescribeDevicePositionListOutcome;
                 typedef std::future<DescribeDevicePositionListOutcome> DescribeDevicePositionListOutcomeCallable;
                 typedef std::function<void(const IotexplorerClient*, const Model::DescribeDevicePositionListRequest&, DescribeDevicePositionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicePositionListAsyncHandler;
@@ -781,6 +786,15 @@ namespace TencentCloud
                 DescribeDeviceDataHistoryOutcome DescribeDeviceDataHistory(const Model::DescribeDeviceDataHistoryRequest &request);
                 void DescribeDeviceDataHistoryAsync(const Model::DescribeDeviceDataHistoryRequest& request, const DescribeDeviceDataHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDeviceDataHistoryOutcomeCallable DescribeDeviceDataHistoryCallable(const Model::DescribeDeviceDataHistoryRequest& request);
+
+                /**
+                 *获取实时位置解析
+                 * @param req DescribeDeviceLocationSolveRequest
+                 * @return DescribeDeviceLocationSolveOutcome
+                 */
+                DescribeDeviceLocationSolveOutcome DescribeDeviceLocationSolve(const Model::DescribeDeviceLocationSolveRequest &request);
+                void DescribeDeviceLocationSolveAsync(const Model::DescribeDeviceLocationSolveRequest& request, const DescribeDeviceLocationSolveAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceLocationSolveOutcomeCallable DescribeDeviceLocationSolveCallable(const Model::DescribeDeviceLocationSolveRequest& request);
 
                 /**
                  *获取设备位置列表

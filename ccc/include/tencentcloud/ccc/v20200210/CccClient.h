@@ -31,6 +31,8 @@
 #include <tencentcloud/ccc/v20200210/model/CreateCCCSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCallOutSessionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateCallOutSessionResponse.h>
+#include <tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.h>
+#include <tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/ccc/v20200210/model/DeleteExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeActiveCarrierPrivilegeNumberResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTasksRequest.h>
@@ -51,6 +55,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeCCCBuyInfoListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeCallInMetricsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeCallInMetricsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeCarrierPrivilegeNumberApplicantsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionRequest.h>
@@ -113,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCallOutSessionResponse> CreateCallOutSessionOutcome;
                 typedef std::future<CreateCallOutSessionOutcome> CreateCallOutSessionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateCallOutSessionRequest&, CreateCallOutSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCallOutSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCarrierPrivilegeNumberApplicantResponse> CreateCarrierPrivilegeNumberApplicantOutcome;
+                typedef std::future<CreateCarrierPrivilegeNumberApplicantOutcome> CreateCarrierPrivilegeNumberApplicantOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::CreateCarrierPrivilegeNumberApplicantRequest&, CreateCarrierPrivilegeNumberApplicantOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCarrierPrivilegeNumberApplicantAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExtensionResponse> CreateExtensionOutcome;
                 typedef std::future<CreateExtensionOutcome> CreateExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::CreateExtensionRequest&, CreateExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExtensionAsyncHandler;
@@ -131,6 +140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteStaffResponse> DeleteStaffOutcome;
                 typedef std::future<DeleteStaffOutcome> DeleteStaffOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DeleteStaffRequest&, DeleteStaffOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteStaffAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeActiveCarrierPrivilegeNumberResponse> DescribeActiveCarrierPrivilegeNumberOutcome;
+                typedef std::future<DescribeActiveCarrierPrivilegeNumberOutcome> DescribeActiveCarrierPrivilegeNumberOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeActiveCarrierPrivilegeNumberRequest&, DescribeActiveCarrierPrivilegeNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeActiveCarrierPrivilegeNumberAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAutoCalloutTaskResponse> DescribeAutoCalloutTaskOutcome;
                 typedef std::future<DescribeAutoCalloutTaskOutcome> DescribeAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeAutoCalloutTaskRequest&, DescribeAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoCalloutTaskAsyncHandler;
@@ -143,6 +155,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCallInMetricsResponse> DescribeCallInMetricsOutcome;
                 typedef std::future<DescribeCallInMetricsOutcome> DescribeCallInMetricsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeCallInMetricsRequest&, DescribeCallInMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCallInMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCarrierPrivilegeNumberApplicantsResponse> DescribeCarrierPrivilegeNumberApplicantsOutcome;
+                typedef std::future<DescribeCarrierPrivilegeNumberApplicantsOutcome> DescribeCarrierPrivilegeNumberApplicantsOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeCarrierPrivilegeNumberApplicantsRequest&, DescribeCarrierPrivilegeNumberApplicantsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCarrierPrivilegeNumberApplicantsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeChatMessagesResponse> DescribeChatMessagesOutcome;
                 typedef std::future<DescribeChatMessagesOutcome> DescribeChatMessagesOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeChatMessagesRequest&, DescribeChatMessagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChatMessagesAsyncHandler;
@@ -237,6 +252,15 @@ namespace TencentCloud
                 CreateCallOutSessionOutcomeCallable CreateCallOutSessionCallable(const Model::CreateCallOutSessionRequest& request);
 
                 /**
+                 *用于无限频率地呼叫坐席手机
+                 * @param req CreateCarrierPrivilegeNumberApplicantRequest
+                 * @return CreateCarrierPrivilegeNumberApplicantOutcome
+                 */
+                CreateCarrierPrivilegeNumberApplicantOutcome CreateCarrierPrivilegeNumberApplicant(const Model::CreateCarrierPrivilegeNumberApplicantRequest &request);
+                void CreateCarrierPrivilegeNumberApplicantAsync(const Model::CreateCarrierPrivilegeNumberApplicantRequest& request, const CreateCarrierPrivilegeNumberApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCarrierPrivilegeNumberApplicantOutcomeCallable CreateCarrierPrivilegeNumberApplicantCallable(const Model::CreateCarrierPrivilegeNumberApplicantRequest& request);
+
+                /**
                  *创建话机账号
                  * @param req CreateExtensionRequest
                  * @return CreateExtensionOutcome
@@ -291,6 +315,15 @@ namespace TencentCloud
                 DeleteStaffOutcomeCallable DeleteStaffCallable(const Model::DeleteStaffRequest& request);
 
                 /**
+                 *查询生效运营商白名单规则
+                 * @param req DescribeActiveCarrierPrivilegeNumberRequest
+                 * @return DescribeActiveCarrierPrivilegeNumberOutcome
+                 */
+                DescribeActiveCarrierPrivilegeNumberOutcome DescribeActiveCarrierPrivilegeNumber(const Model::DescribeActiveCarrierPrivilegeNumberRequest &request);
+                void DescribeActiveCarrierPrivilegeNumberAsync(const Model::DescribeActiveCarrierPrivilegeNumberRequest& request, const DescribeActiveCarrierPrivilegeNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeActiveCarrierPrivilegeNumberOutcomeCallable DescribeActiveCarrierPrivilegeNumberCallable(const Model::DescribeActiveCarrierPrivilegeNumberRequest& request);
+
+                /**
                  *查询自动外呼任务详情
                  * @param req DescribeAutoCalloutTaskRequest
                  * @return DescribeAutoCalloutTaskOutcome
@@ -325,6 +358,15 @@ namespace TencentCloud
                 DescribeCallInMetricsOutcome DescribeCallInMetrics(const Model::DescribeCallInMetricsRequest &request);
                 void DescribeCallInMetricsAsync(const Model::DescribeCallInMetricsRequest& request, const DescribeCallInMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCallInMetricsOutcomeCallable DescribeCallInMetricsCallable(const Model::DescribeCallInMetricsRequest& request);
+
+                /**
+                 *查询单状态
+                 * @param req DescribeCarrierPrivilegeNumberApplicantsRequest
+                 * @return DescribeCarrierPrivilegeNumberApplicantsOutcome
+                 */
+                DescribeCarrierPrivilegeNumberApplicantsOutcome DescribeCarrierPrivilegeNumberApplicants(const Model::DescribeCarrierPrivilegeNumberApplicantsRequest &request);
+                void DescribeCarrierPrivilegeNumberApplicantsAsync(const Model::DescribeCarrierPrivilegeNumberApplicantsRequest& request, const DescribeCarrierPrivilegeNumberApplicantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCarrierPrivilegeNumberApplicantsOutcomeCallable DescribeCarrierPrivilegeNumberApplicantsCallable(const Model::DescribeCarrierPrivilegeNumberApplicantsRequest& request);
 
                 /**
                  *包括具体聊天内容

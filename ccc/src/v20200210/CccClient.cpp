@@ -212,6 +212,49 @@ CccClient::CreateCallOutSessionOutcomeCallable CccClient::CreateCallOutSessionCa
     return task->get_future();
 }
 
+CccClient::CreateCarrierPrivilegeNumberApplicantOutcome CccClient::CreateCarrierPrivilegeNumberApplicant(const CreateCarrierPrivilegeNumberApplicantRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCarrierPrivilegeNumberApplicant");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCarrierPrivilegeNumberApplicantResponse rsp = CreateCarrierPrivilegeNumberApplicantResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCarrierPrivilegeNumberApplicantOutcome(rsp);
+        else
+            return CreateCarrierPrivilegeNumberApplicantOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCarrierPrivilegeNumberApplicantOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::CreateCarrierPrivilegeNumberApplicantAsync(const CreateCarrierPrivilegeNumberApplicantRequest& request, const CreateCarrierPrivilegeNumberApplicantAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCarrierPrivilegeNumberApplicant(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::CreateCarrierPrivilegeNumberApplicantOutcomeCallable CccClient::CreateCarrierPrivilegeNumberApplicantCallable(const CreateCarrierPrivilegeNumberApplicantRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCarrierPrivilegeNumberApplicantOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCarrierPrivilegeNumberApplicant(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::CreateExtensionOutcome CccClient::CreateExtension(const CreateExtensionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExtension");
@@ -470,6 +513,49 @@ CccClient::DeleteStaffOutcomeCallable CccClient::DeleteStaffCallable(const Delet
     return task->get_future();
 }
 
+CccClient::DescribeActiveCarrierPrivilegeNumberOutcome CccClient::DescribeActiveCarrierPrivilegeNumber(const DescribeActiveCarrierPrivilegeNumberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeActiveCarrierPrivilegeNumber");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeActiveCarrierPrivilegeNumberResponse rsp = DescribeActiveCarrierPrivilegeNumberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeActiveCarrierPrivilegeNumberOutcome(rsp);
+        else
+            return DescribeActiveCarrierPrivilegeNumberOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeActiveCarrierPrivilegeNumberOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeActiveCarrierPrivilegeNumberAsync(const DescribeActiveCarrierPrivilegeNumberRequest& request, const DescribeActiveCarrierPrivilegeNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeActiveCarrierPrivilegeNumber(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeActiveCarrierPrivilegeNumberOutcomeCallable CccClient::DescribeActiveCarrierPrivilegeNumberCallable(const DescribeActiveCarrierPrivilegeNumberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeActiveCarrierPrivilegeNumberOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeActiveCarrierPrivilegeNumber(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribeAutoCalloutTaskOutcome CccClient::DescribeAutoCalloutTask(const DescribeAutoCalloutTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoCalloutTask");
@@ -635,6 +721,49 @@ CccClient::DescribeCallInMetricsOutcomeCallable CccClient::DescribeCallInMetrics
         [this, request]()
         {
             return this->DescribeCallInMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::DescribeCarrierPrivilegeNumberApplicantsOutcome CccClient::DescribeCarrierPrivilegeNumberApplicants(const DescribeCarrierPrivilegeNumberApplicantsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCarrierPrivilegeNumberApplicants");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCarrierPrivilegeNumberApplicantsResponse rsp = DescribeCarrierPrivilegeNumberApplicantsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCarrierPrivilegeNumberApplicantsOutcome(rsp);
+        else
+            return DescribeCarrierPrivilegeNumberApplicantsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCarrierPrivilegeNumberApplicantsOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeCarrierPrivilegeNumberApplicantsAsync(const DescribeCarrierPrivilegeNumberApplicantsRequest& request, const DescribeCarrierPrivilegeNumberApplicantsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCarrierPrivilegeNumberApplicants(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeCarrierPrivilegeNumberApplicantsOutcomeCallable CccClient::DescribeCarrierPrivilegeNumberApplicantsCallable(const DescribeCarrierPrivilegeNumberApplicantsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCarrierPrivilegeNumberApplicantsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCarrierPrivilegeNumberApplicants(request);
         }
     );
 

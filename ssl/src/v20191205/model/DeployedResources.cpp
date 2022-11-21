@@ -24,7 +24,8 @@ DeployedResources::DeployedResources() :
     m_certificateIdHasBeenSet(false),
     m_countHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_resourceIdsHasBeenSet(false)
+    m_resourceIdsHasBeenSet(false),
+    m_resourcesHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ CoreInternalOutcome DeployedResources::Deserialize(const rapidjson::Value &value
         m_resourceIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("Resources") && !value["Resources"].IsNull())
+    {
+        if (!value["Resources"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeployedResources.Resources` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Resources"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_resources.push_back((*itr).GetString());
+        }
+        m_resourcesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +129,19 @@ void DeployedResources::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_resourceIds.begin(); itr != m_resourceIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_resourcesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Resources";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resources.begin(); itr != m_resources.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -185,5 +212,21 @@ void DeployedResources::SetResourceIds(const vector<string>& _resourceIds)
 bool DeployedResources::ResourceIdsHasBeenSet() const
 {
     return m_resourceIdsHasBeenSet;
+}
+
+vector<string> DeployedResources::GetResources() const
+{
+    return m_resources;
+}
+
+void DeployedResources::SetResources(const vector<string>& _resources)
+{
+    m_resources = _resources;
+    m_resourcesHasBeenSet = true;
+}
+
+bool DeployedResources::ResourcesHasBeenSet() const
+{
+    return m_resourcesHasBeenSet;
 }
 

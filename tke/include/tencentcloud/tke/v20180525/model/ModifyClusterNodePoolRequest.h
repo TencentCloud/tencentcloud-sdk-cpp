@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/Taint.h>
+#include <tencentcloud/tke/v20180525/model/GPUArgs.h>
 #include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
 #include <tencentcloud/tke/v20180525/model/Tag.h>
 
@@ -227,6 +228,60 @@ namespace TencentCloud
                     bool OsCustomizeTypeHasBeenSet() const;
 
                     /**
+                     * 获取GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * @return GPUArgs GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     */
+                    GPUArgs GetGPUArgs() const;
+
+                    /**
+                     * 设置GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     * @param GPUArgs GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     */
+                    void SetGPUArgs(const GPUArgs& _gPUArgs);
+
+                    /**
+                     * 判断参数 GPUArgs 是否已赋值
+                     * @return GPUArgs 是否已赋值
+                     */
+                    bool GPUArgsHasBeenSet() const;
+
+                    /**
+                     * 获取base64编码后的自定义脚本
+                     * @return UserScript base64编码后的自定义脚本
+                     */
+                    std::string GetUserScript() const;
+
+                    /**
+                     * 设置base64编码后的自定义脚本
+                     * @param UserScript base64编码后的自定义脚本
+                     */
+                    void SetUserScript(const std::string& _userScript);
+
+                    /**
+                     * 判断参数 UserScript 是否已赋值
+                     * @return UserScript 是否已赋值
+                     */
+                    bool UserScriptHasBeenSet() const;
+
+                    /**
+                     * 获取更新label和taint时忽略存量节点
+                     * @return IgnoreExistedNode 更新label和taint时忽略存量节点
+                     */
+                    bool GetIgnoreExistedNode() const;
+
+                    /**
+                     * 设置更新label和taint时忽略存量节点
+                     * @param IgnoreExistedNode 更新label和taint时忽略存量节点
+                     */
+                    void SetIgnoreExistedNode(const bool& _ignoreExistedNode);
+
+                    /**
+                     * 判断参数 IgnoreExistedNode 是否已赋值
+                     * @return IgnoreExistedNode 是否已赋值
+                     */
+                    bool IgnoreExistedNodeHasBeenSet() const;
+
+                    /**
                      * 获取节点自定义参数
                      * @return ExtraArgs 节点自定义参数
                      */
@@ -298,6 +353,24 @@ namespace TencentCloud
                      */
                     bool DeletionProtectionHasBeenSet() const;
 
+                    /**
+                     * 获取dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * @return DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     */
+                    std::string GetDockerGraphPath() const;
+
+                    /**
+                     * 设置dockerd --graph 指定值, 默认为 /var/lib/docker
+                     * @param DockerGraphPath dockerd --graph 指定值, 默认为 /var/lib/docker
+                     */
+                    void SetDockerGraphPath(const std::string& _dockerGraphPath);
+
+                    /**
+                     * 判断参数 DockerGraphPath 是否已赋值
+                     * @return DockerGraphPath 是否已赋值
+                     */
+                    bool DockerGraphPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -361,6 +434,24 @@ namespace TencentCloud
                     bool m_osCustomizeTypeHasBeenSet;
 
                     /**
+                     * GPU驱动版本，CUDA版本，cuDNN版本以及是否启用MIG特性
+                     */
+                    GPUArgs m_gPUArgs;
+                    bool m_gPUArgsHasBeenSet;
+
+                    /**
+                     * base64编码后的自定义脚本
+                     */
+                    std::string m_userScript;
+                    bool m_userScriptHasBeenSet;
+
+                    /**
+                     * 更新label和taint时忽略存量节点
+                     */
+                    bool m_ignoreExistedNode;
+                    bool m_ignoreExistedNodeHasBeenSet;
+
+                    /**
                      * 节点自定义参数
                      */
                     InstanceExtraArgs m_extraArgs;
@@ -383,6 +474,12 @@ namespace TencentCloud
                      */
                     bool m_deletionProtection;
                     bool m_deletionProtectionHasBeenSet;
+
+                    /**
+                     * dockerd --graph 指定值, 默认为 /var/lib/docker
+                     */
+                    std::string m_dockerGraphPath;
+                    bool m_dockerGraphPathHasBeenSet;
 
                 };
             }

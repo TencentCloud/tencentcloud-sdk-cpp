@@ -23,7 +23,8 @@ using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
 DeleteCfsSnapshotRequest::DeleteCfsSnapshotRequest() :
-    m_snapshotIdHasBeenSet(false)
+    m_snapshotIdHasBeenSet(false),
+    m_snapshotIdsHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,19 @@ string DeleteCfsSnapshotRequest::ToJsonString() const
         string key = "SnapshotId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_snapshotId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_snapshotIds.begin(); itr != m_snapshotIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -64,6 +78,22 @@ void DeleteCfsSnapshotRequest::SetSnapshotId(const string& _snapshotId)
 bool DeleteCfsSnapshotRequest::SnapshotIdHasBeenSet() const
 {
     return m_snapshotIdHasBeenSet;
+}
+
+vector<string> DeleteCfsSnapshotRequest::GetSnapshotIds() const
+{
+    return m_snapshotIds;
+}
+
+void DeleteCfsSnapshotRequest::SetSnapshotIds(const vector<string>& _snapshotIds)
+{
+    m_snapshotIds = _snapshotIds;
+    m_snapshotIdsHasBeenSet = true;
+}
+
+bool DeleteCfsSnapshotRequest::SnapshotIdsHasBeenSet() const
+{
+    return m_snapshotIdsHasBeenSet;
 }
 
 

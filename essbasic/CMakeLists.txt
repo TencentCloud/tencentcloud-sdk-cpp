@@ -65,6 +65,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h
   include/tencentcloud/essbasic/v20210526/model/Staff.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesRequest.h
   include/tencentcloud/essbasic/v20210526/model/AuthorizedUser.h
   include/tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsResponse.h
@@ -107,6 +108,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateBoundFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20201222/model/DescribeFaceIdResultsRequest.h
   include/tencentcloud/essbasic/v20201222/model/CreateSubOrganizationRequest.h
@@ -284,6 +286,7 @@ set(essbasic_src
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
   src/v20210526/model/DescribeUsageResponse.cpp
   src/v20210526/model/Staff.cpp
+  src/v20210526/model/ChannelCreateBoundFlowsRequest.cpp
   src/v20210526/model/ChannelDescribeEmployeesRequest.cpp
   src/v20210526/model/AuthorizedUser.cpp
   src/v20210526/model/DescribeResourceUrlsByFlowsResponse.cpp
@@ -326,6 +329,7 @@ set(essbasic_src
   src/v20210526/model/OperateChannelTemplateRequest.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/ChannelDescribeEmployeesResponse.cpp
+  src/v20210526/model/ChannelCreateBoundFlowsResponse.cpp
   src/v20210526/model/CcInfo.cpp
   src/v20201222/model/DescribeFaceIdResultsRequest.cpp
   src/v20201222/model/CreateSubOrganizationRequest.cpp
