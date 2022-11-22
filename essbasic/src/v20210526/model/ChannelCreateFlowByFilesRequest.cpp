@@ -37,7 +37,8 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_customerDataHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_approverVerifyTypeHasBeenSet(false)
+    m_approverVerifyTypeHasBeenSet(false),
+    m_signBeanTagHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,14 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "ApproverVerifyType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_approverVerifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signBeanTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignBeanTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_signBeanTag, allocator);
     }
 
 
@@ -435,6 +444,22 @@ void ChannelCreateFlowByFilesRequest::SetApproverVerifyType(const string& _appro
 bool ChannelCreateFlowByFilesRequest::ApproverVerifyTypeHasBeenSet() const
 {
     return m_approverVerifyTypeHasBeenSet;
+}
+
+int64_t ChannelCreateFlowByFilesRequest::GetSignBeanTag() const
+{
+    return m_signBeanTag;
+}
+
+void ChannelCreateFlowByFilesRequest::SetSignBeanTag(const int64_t& _signBeanTag)
+{
+    m_signBeanTag = _signBeanTag;
+    m_signBeanTagHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::SignBeanTagHasBeenSet() const
+{
+    return m_signBeanTagHasBeenSet;
 }
 
 

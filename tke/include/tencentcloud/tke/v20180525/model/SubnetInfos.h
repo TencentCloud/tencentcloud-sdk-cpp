@@ -100,6 +100,42 @@ namespace TencentCloud
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取系统
+                     * @return Os 系统
+                     */
+                    std::string GetOs() const;
+
+                    /**
+                     * 设置系统
+                     * @param Os 系统
+                     */
+                    void SetOs(const std::string& _os);
+
+                    /**
+                     * 判断参数 Os 是否已赋值
+                     * @return Os 是否已赋值
+                     */
+                    bool OsHasBeenSet() const;
+
+                    /**
+                     * 获取硬件架构
+                     * @return Arch 硬件架构
+                     */
+                    std::string GetArch() const;
+
+                    /**
+                     * 设置硬件架构
+                     * @param Arch 硬件架构
+                     */
+                    void SetArch(const std::string& _arch);
+
+                    /**
+                     * 判断参数 Arch 是否已赋值
+                     * @return Arch 是否已赋值
+                     */
+                    bool ArchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +155,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
+
+                    /**
+                     * 系统
+                     */
+                    std::string m_os;
+                    bool m_osHasBeenSet;
+
+                    /**
+                     * 硬件架构
+                     */
+                    std::string m_arch;
+                    bool m_archHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyCustomRuleStatusRequest::ModifyCustomRuleStatusRequest() :
     m_customIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_corpIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyCustomRuleStatusRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_corpIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CorpId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_corpId, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyCustomRuleStatusRequest::SetStatus(const int64_t& _status)
 bool ModifyCustomRuleStatusRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t ModifyCustomRuleStatusRequest::GetCorpId() const
+{
+    return m_corpId;
+}
+
+void ModifyCustomRuleStatusRequest::SetCorpId(const uint64_t& _corpId)
+{
+    m_corpId = _corpId;
+    m_corpIdHasBeenSet = true;
+}
+
+bool ModifyCustomRuleStatusRequest::CorpIdHasBeenSet() const
+{
+    return m_corpIdHasBeenSet;
 }
 
 

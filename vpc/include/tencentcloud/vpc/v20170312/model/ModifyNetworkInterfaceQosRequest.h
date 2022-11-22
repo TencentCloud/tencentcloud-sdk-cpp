@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool QosLevelHasBeenSet() const;
 
+                    /**
+                     * 获取DirectSend端口范围最大值。
+                     * @return DirectSendMaxPort DirectSend端口范围最大值。
+                     */
+                    uint64_t GetDirectSendMaxPort() const;
+
+                    /**
+                     * 设置DirectSend端口范围最大值。
+                     * @param DirectSendMaxPort DirectSend端口范围最大值。
+                     */
+                    void SetDirectSendMaxPort(const uint64_t& _directSendMaxPort);
+
+                    /**
+                     * 判断参数 DirectSendMaxPort 是否已赋值
+                     * @return DirectSendMaxPort 是否已赋值
+                     */
+                    bool DirectSendMaxPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_qosLevel;
                     bool m_qosLevelHasBeenSet;
+
+                    /**
+                     * DirectSend端口范围最大值。
+                     */
+                    uint64_t m_directSendMaxPort;
+                    bool m_directSendMaxPortHasBeenSet;
 
                 };
             }

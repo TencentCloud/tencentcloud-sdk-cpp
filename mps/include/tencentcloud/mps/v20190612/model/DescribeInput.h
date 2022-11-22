@@ -31,6 +31,7 @@
 #include <tencentcloud/mps/v20190612/model/DescribeInputRTMPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeInputRTSPPullSettings.h>
 #include <tencentcloud/mps/v20190612/model/DescribeInputHLSPullSettings.h>
+#include <tencentcloud/mps/v20190612/model/ResilientStreamConf.h>
 
 
 namespace TencentCloud
@@ -333,6 +334,28 @@ namespace TencentCloud
                      */
                     bool HLSPullSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取延播平滑吐流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResilientStream 延播平滑吐流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResilientStreamConf GetResilientStream() const;
+
+                    /**
+                     * 设置延播平滑吐流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResilientStream 延播平滑吐流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResilientStream(const ResilientStreamConf& _resilientStream);
+
+                    /**
+                     * 判断参数 ResilientStream 是否已赋值
+                     * @return ResilientStream 是否已赋值
+                     */
+                    bool ResilientStreamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +448,13 @@ namespace TencentCloud
                      */
                     DescribeInputHLSPullSettings m_hLSPullSettings;
                     bool m_hLSPullSettingsHasBeenSet;
+
+                    /**
+                     * 延播平滑吐流配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ResilientStreamConf m_resilientStream;
+                    bool m_resilientStreamHasBeenSet;
 
                 };
             }

@@ -660,6 +660,28 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool OffsetYHasBeenSet() const;
 
                     /**
+                     * 获取渠道控件ID。
+如果不为空，属于渠道预设控件；
+                     * @return ChannelComponentId 渠道控件ID。
+如果不为空，属于渠道预设控件；
+                     */
+                    std::string GetChannelComponentId() const;
+
+                    /**
+                     * 设置渠道控件ID。
+如果不为空，属于渠道预设控件；
+                     * @param ChannelComponentId 渠道控件ID。
+如果不为空，属于渠道预设控件；
+                     */
+                    void SetChannelComponentId(const std::string& _channelComponentId);
+
+                    /**
+                     * 判断参数 ChannelComponentId 是否已赋值
+                     * @return ChannelComponentId 是否已赋值
+                     */
+                    bool ChannelComponentIdHasBeenSet() const;
+
+                    /**
                      * 获取指定关键字页码
                      * @return KeywordPage 指定关键字页码
                      */
@@ -894,6 +916,13 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;
+
+                    /**
+                     * 渠道控件ID。
+如果不为空，属于渠道预设控件；
+                     */
+                    std::string m_channelComponentId;
+                    bool m_channelComponentIdHasBeenSet;
 
                     /**
                      * 指定关键字页码

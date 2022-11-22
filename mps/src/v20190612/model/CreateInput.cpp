@@ -30,7 +30,8 @@ CreateInput::CreateInput() :
     m_failOverHasBeenSet(false),
     m_rTMPPullSettingsHasBeenSet(false),
     m_rTSPPullSettingsHasBeenSet(false),
-    m_hLSPullSettingsHasBeenSet(false)
+    m_hLSPullSettingsHasBeenSet(false),
+    m_resilientStreamHasBeenSet(false)
 {
 }
 
@@ -177,6 +178,23 @@ CoreInternalOutcome CreateInput::Deserialize(const rapidjson::Value &value)
         m_hLSPullSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("ResilientStream") && !value["ResilientStream"].IsNull())
+    {
+        if (!value["ResilientStream"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateInput.ResilientStream` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_resilientStream.Deserialize(value["ResilientStream"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_resilientStreamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -272,6 +290,15 @@ void CreateInput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hLSPullSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_resilientStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResilientStream";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_resilientStream.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -435,5 +462,21 @@ void CreateInput::SetHLSPullSettings(const CreateInputHLSPullSettings& _hLSPullS
 bool CreateInput::HLSPullSettingsHasBeenSet() const
 {
     return m_hLSPullSettingsHasBeenSet;
+}
+
+ResilientStreamConf CreateInput::GetResilientStream() const
+{
+    return m_resilientStream;
+}
+
+void CreateInput::SetResilientStream(const ResilientStreamConf& _resilientStream)
+{
+    m_resilientStream = _resilientStream;
+    m_resilientStreamHasBeenSet = true;
+}
+
+bool CreateInput::ResilientStreamHasBeenSet() const
+{
+    return m_resilientStreamHasBeenSet;
 }
 

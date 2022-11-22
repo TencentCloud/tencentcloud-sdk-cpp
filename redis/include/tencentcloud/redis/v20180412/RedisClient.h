@@ -1200,7 +1200,7 @@ namespace TencentCloud
                 SwitchProxyOutcomeCallable SwitchProxyCallable(const Model::SwitchProxyRequest& request);
 
                 /**
-                 *升级实例
+                 *变更实例配置
                  * @param req UpgradeInstanceRequest
                  * @return UpgradeInstanceOutcome
                  */

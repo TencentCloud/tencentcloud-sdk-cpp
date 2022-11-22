@@ -341,6 +341,49 @@ TiiaClient::DescribeImagesOutcomeCallable TiiaClient::DescribeImagesCallable(con
     return task->get_future();
 }
 
+TiiaClient::DetectChefDressOutcome TiiaClient::DetectChefDress(const DetectChefDressRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectChefDress");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectChefDressResponse rsp = DetectChefDressResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectChefDressOutcome(rsp);
+        else
+            return DetectChefDressOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectChefDressOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectChefDressAsync(const DetectChefDressRequest& request, const DetectChefDressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectChefDress(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectChefDressOutcomeCallable TiiaClient::DetectChefDressCallable(const DetectChefDressRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectChefDressOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectChefDress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiiaClient::DetectDisgustOutcome TiiaClient::DetectDisgust(const DetectDisgustRequest &request)
 {
     auto outcome = MakeRequest(request, "DetectDisgust");
@@ -721,6 +764,49 @@ TiiaClient::DetectProductBetaOutcomeCallable TiiaClient::DetectProductBetaCallab
         [this, request]()
         {
             return this->DetectProductBeta(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiiaClient::DetectSecurityOutcome TiiaClient::DetectSecurity(const DetectSecurityRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetectSecurity");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetectSecurityResponse rsp = DetectSecurityResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetectSecurityOutcome(rsp);
+        else
+            return DetectSecurityOutcome(o.GetError());
+    }
+    else
+    {
+        return DetectSecurityOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::DetectSecurityAsync(const DetectSecurityRequest& request, const DetectSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetectSecurity(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::DetectSecurityOutcomeCallable TiiaClient::DetectSecurityCallable(const DetectSecurityRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetectSecurityOutcome()>>(
+        [this, request]()
+        {
+            return this->DetectSecurity(request);
         }
     );
 

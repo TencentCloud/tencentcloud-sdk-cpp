@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证码appid
-                     * @return CaptchaAppId 验证码appid
+                     * 获取验证码AppId
+                     * @return CaptchaAppId 验证码AppId
                      */
                     std::string GetCaptchaAppId() const;
 
                     /**
-                     * 设置验证码appid
-                     * @param CaptchaAppId 验证码appid
+                     * 设置验证码AppId
+                     * @param CaptchaAppId 验证码AppId
                      */
                     void SetCaptchaAppId(const std::string& _captchaAppId);
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验证码appid
+                     * 验证码AppId
                      */
                     std::string m_captchaAppId;
                     bool m_captchaAppIdHasBeenSet;

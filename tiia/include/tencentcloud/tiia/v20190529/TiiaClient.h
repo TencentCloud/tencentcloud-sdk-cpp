@@ -37,6 +37,8 @@
 #include <tencentcloud/tiia/v20190529/model/DescribeGroupsResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DescribeImagesRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DescribeImagesResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectChefDressRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectChefDressResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectDisgustResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectEnvelopeRequest.h>
@@ -55,6 +57,8 @@
 #include <tencentcloud/tiia/v20190529/model/DetectProductResponse.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductBetaRequest.h>
 #include <tencentcloud/tiia/v20190529/model/DetectProductBetaResponse.h>
+#include <tencentcloud/tiia/v20190529/model/DetectSecurityRequest.h>
+#include <tencentcloud/tiia/v20190529/model/DetectSecurityResponse.h>
 #include <tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h>
 #include <tencentcloud/tiia/v20190529/model/EnhanceImageResponse.h>
 #include <tencentcloud/tiia/v20190529/model/RecognizeCarRequest.h>
@@ -98,6 +102,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImagesResponse> DescribeImagesOutcome;
                 typedef std::future<DescribeImagesOutcome> DescribeImagesOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DescribeImagesRequest&, DescribeImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImagesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectChefDressResponse> DetectChefDressOutcome;
+                typedef std::future<DetectChefDressOutcome> DetectChefDressOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectChefDressRequest&, DetectChefDressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectChefDressAsyncHandler;
                 typedef Outcome<Core::Error, Model::DetectDisgustResponse> DetectDisgustOutcome;
                 typedef std::future<DetectDisgustOutcome> DetectDisgustOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectDisgustRequest&, DetectDisgustOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectDisgustAsyncHandler;
@@ -125,6 +132,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetectProductBetaResponse> DetectProductBetaOutcome;
                 typedef std::future<DetectProductBetaOutcome> DetectProductBetaOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::DetectProductBetaRequest&, DetectProductBetaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectProductBetaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetectSecurityResponse> DetectSecurityOutcome;
+                typedef std::future<DetectSecurityOutcome> DetectSecurityOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::DetectSecurityRequest&, DetectSecurityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetectSecurityAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnhanceImageResponse> EnhanceImageOutcome;
                 typedef std::future<EnhanceImageOutcome> EnhanceImageOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::EnhanceImageRequest&, EnhanceImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnhanceImageAsyncHandler;
@@ -217,6 +227,26 @@ namespace TencentCloud
                 DescribeImagesOutcome DescribeImages(const Model::DescribeImagesRequest &request);
                 void DescribeImagesAsync(const Model::DescribeImagesRequest& request, const DescribeImagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImagesOutcomeCallable DescribeImagesCallable(const Model::DescribeImagesRequest& request);
+
+                /**
+                 *可对图片中厨师穿戴进行识别，支持厨师服识别，厨师帽识别，赤膊识别和口罩识别,可应用于明厨亮灶场景。
+"被优选过滤"标签值在人体优选开关开启时才会返回。
+厨师服：厨师服定义为白色上衣
+厨师服识别(酒店版)：厨师服定义为红色，白色，黑色上衣
+
+|序号 | 标签名称 | 标签值 |
+| :-----|  :----------   |:-----------------  |
+| 1 | 厨师服识别<div style="width: 70pt"> |无厨师服、有厨师服、被优选过滤|
+| 2 | 厨师服识别（酒店版）<div style="width: 70pt"> |无厨师服、有厨师服、被优选过滤|
+| 3 | 厨师帽识别<div style="width: 70pt"> |无厨师帽、有厨师帽、被优选过滤	|
+| 4 | 赤膊识别<div style="width: 70pt"> |非赤膊、赤膊、被优选过滤|
+| 5 | 口罩识别<div style="width: 70pt"> |无口罩、有口罩、口罩不确定、被优选过滤	|
+                 * @param req DetectChefDressRequest
+                 * @return DetectChefDressOutcome
+                 */
+                DetectChefDressOutcome DetectChefDress(const Model::DetectChefDressRequest &request);
+                void DetectChefDressAsync(const Model::DetectChefDressRequest& request, const DetectChefDressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectChefDressOutcomeCallable DetectChefDressCallable(const Model::DetectChefDressRequest& request);
 
                 /**
                  *输入一张图片，返回AI针对一张图片是否是恶心的一系列判断值。
@@ -345,6 +375,28 @@ namespace TencentCloud
                 DetectProductBetaOutcome DetectProductBeta(const Model::DetectProductBetaRequest &request);
                 void DetectProductBetaAsync(const Model::DetectProductBetaRequest& request, const DetectProductBetaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DetectProductBetaOutcomeCallable DetectProductBetaCallable(const Model::DetectProductBetaRequest& request);
+
+                /**
+                 *识别常安全属性识别可对图片中人体安全防护属性进行识别，支持识别安全帽，反光衣，护目镜，工服，手套，工地安全带，口罩，抽烟，玩手机等多种属性。
+"被优选过滤"标签值在人体优选开关开启时才会返回。
+
+|序号 | 标签名称 | 标签值 |
+| :-----|  :----------   |:-----------------  |
+| 1 | 安全帽识别<div style="width: 70pt"> |无安全帽、有安全帽、被优选过滤|
+| 2 | 玩手机识别<div style="width: 70pt"> |没有电话、打电话、玩手机、被优选过滤|
+| 3 | 抽烟识别<div style="width: 70pt"> |没有抽烟、抽烟、被优选过滤	|
+| 4 | 口罩识别<div style="width: 70pt"> |无口罩、有口罩、口罩不确定、被优选过滤|
+| 5 | 工地安全带识别<div style="width: 70pt"> |无工地安全带、工地安全带、被优选过滤	|
+| 6 | 手套识别<div style="width: 70pt"> |无手套、有手套、手套不确定、被优选过滤	|
+| 7 | 工服识别<div style="width: 70pt"> |无工服、有工服、被优选过滤|
+| 8 | 护目镜识别<div style="width: 70pt"> |无护目镜、有护目镜、被优选过滤|
+| 9 | 反光衣识别<div style="width: 70pt"> |无反光衣、有反光衣、被优选过滤|
+                 * @param req DetectSecurityRequest
+                 * @return DetectSecurityOutcome
+                 */
+                DetectSecurityOutcome DetectSecurity(const Model::DetectSecurityRequest &request);
+                void DetectSecurityAsync(const Model::DetectSecurityRequest& request, const DetectSecurityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetectSecurityOutcomeCallable DetectSecurityCallable(const Model::DetectSecurityRequest& request);
 
                 /**
                  *传入一张图片，输出清晰度提升后的图片。

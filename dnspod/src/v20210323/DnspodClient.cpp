@@ -40,6 +40,92 @@ DnspodClient::DnspodClient(const Credential &credential, const string &region, c
 }
 
 
+DnspodClient::CheckRecordSnapshotRollbackOutcome DnspodClient::CheckRecordSnapshotRollback(const CheckRecordSnapshotRollbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckRecordSnapshotRollback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckRecordSnapshotRollbackResponse rsp = CheckRecordSnapshotRollbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckRecordSnapshotRollbackOutcome(rsp);
+        else
+            return CheckRecordSnapshotRollbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckRecordSnapshotRollbackOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CheckRecordSnapshotRollbackAsync(const CheckRecordSnapshotRollbackRequest& request, const CheckRecordSnapshotRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckRecordSnapshotRollback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CheckRecordSnapshotRollbackOutcomeCallable DnspodClient::CheckRecordSnapshotRollbackCallable(const CheckRecordSnapshotRollbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckRecordSnapshotRollbackOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckRecordSnapshotRollback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::CheckSnapshotRollbackOutcome DnspodClient::CheckSnapshotRollback(const CheckSnapshotRollbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "CheckSnapshotRollback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CheckSnapshotRollbackResponse rsp = CheckSnapshotRollbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CheckSnapshotRollbackOutcome(rsp);
+        else
+            return CheckSnapshotRollbackOutcome(o.GetError());
+    }
+    else
+    {
+        return CheckSnapshotRollbackOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CheckSnapshotRollbackAsync(const CheckSnapshotRollbackRequest& request, const CheckSnapshotRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CheckSnapshotRollback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CheckSnapshotRollbackOutcomeCallable DnspodClient::CheckSnapshotRollbackCallable(const CheckSnapshotRollbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CheckSnapshotRollbackOutcome()>>(
+        [this, request]()
+        {
+            return this->CheckSnapshotRollback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::CreateDealOutcome DnspodClient::CreateDeal(const CreateDealRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDeal");
@@ -341,6 +427,49 @@ DnspodClient::CreateRecordBatchOutcomeCallable DnspodClient::CreateRecordBatchCa
     return task->get_future();
 }
 
+DnspodClient::CreateSnapshotOutcome DnspodClient::CreateSnapshot(const CreateSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSnapshotResponse rsp = CreateSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSnapshotOutcome(rsp);
+        else
+            return CreateSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateSnapshotAsync(const CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateSnapshotOutcomeCallable DnspodClient::CreateSnapshotCallable(const CreateSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DeleteDomainOutcome DnspodClient::DeleteDomain(const DeleteDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDomain");
@@ -506,6 +635,49 @@ DnspodClient::DeleteShareDomainOutcomeCallable DnspodClient::DeleteShareDomainCa
         [this, request]()
         {
             return this->DeleteShareDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DeleteSnapshotOutcome DnspodClient::DeleteSnapshot(const DeleteSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSnapshotResponse rsp = DeleteSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSnapshotOutcome(rsp);
+        else
+            return DeleteSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DeleteSnapshotAsync(const DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DeleteSnapshotOutcomeCallable DnspodClient::DeleteSnapshotCallable(const DeleteSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSnapshot(request);
         }
     );
 
@@ -1029,6 +1201,49 @@ DnspodClient::DescribeRecordListOutcomeCallable DnspodClient::DescribeRecordList
     return task->get_future();
 }
 
+DnspodClient::DescribeRecordSnapshotRollbackResultOutcome DnspodClient::DescribeRecordSnapshotRollbackResult(const DescribeRecordSnapshotRollbackResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordSnapshotRollbackResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordSnapshotRollbackResultResponse rsp = DescribeRecordSnapshotRollbackResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordSnapshotRollbackResultOutcome(rsp);
+        else
+            return DescribeRecordSnapshotRollbackResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordSnapshotRollbackResultOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeRecordSnapshotRollbackResultAsync(const DescribeRecordSnapshotRollbackResultRequest& request, const DescribeRecordSnapshotRollbackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordSnapshotRollbackResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeRecordSnapshotRollbackResultOutcomeCallable DnspodClient::DescribeRecordSnapshotRollbackResultCallable(const DescribeRecordSnapshotRollbackResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordSnapshotRollbackResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordSnapshotRollbackResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeRecordTypeOutcome DnspodClient::DescribeRecordType(const DescribeRecordTypeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecordType");
@@ -1065,6 +1280,178 @@ DnspodClient::DescribeRecordTypeOutcomeCallable DnspodClient::DescribeRecordType
         [this, request]()
         {
             return this->DescribeRecordType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeSnapshotConfigOutcome DnspodClient::DescribeSnapshotConfig(const DescribeSnapshotConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotConfigResponse rsp = DescribeSnapshotConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotConfigOutcome(rsp);
+        else
+            return DescribeSnapshotConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotConfigOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeSnapshotConfigAsync(const DescribeSnapshotConfigRequest& request, const DescribeSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeSnapshotConfigOutcomeCallable DnspodClient::DescribeSnapshotConfigCallable(const DescribeSnapshotConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeSnapshotListOutcome DnspodClient::DescribeSnapshotList(const DescribeSnapshotListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotListResponse rsp = DescribeSnapshotListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotListOutcome(rsp);
+        else
+            return DescribeSnapshotListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeSnapshotListAsync(const DescribeSnapshotListRequest& request, const DescribeSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeSnapshotListOutcomeCallable DnspodClient::DescribeSnapshotListCallable(const DescribeSnapshotListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeSnapshotRollbackResultOutcome DnspodClient::DescribeSnapshotRollbackResult(const DescribeSnapshotRollbackResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotRollbackResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotRollbackResultResponse rsp = DescribeSnapshotRollbackResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotRollbackResultOutcome(rsp);
+        else
+            return DescribeSnapshotRollbackResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotRollbackResultOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeSnapshotRollbackResultAsync(const DescribeSnapshotRollbackResultRequest& request, const DescribeSnapshotRollbackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotRollbackResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeSnapshotRollbackResultOutcomeCallable DnspodClient::DescribeSnapshotRollbackResultCallable(const DescribeSnapshotRollbackResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotRollbackResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotRollbackResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeSnapshotRollbackTaskOutcome DnspodClient::DescribeSnapshotRollbackTask(const DescribeSnapshotRollbackTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotRollbackTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotRollbackTaskResponse rsp = DescribeSnapshotRollbackTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotRollbackTaskOutcome(rsp);
+        else
+            return DescribeSnapshotRollbackTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotRollbackTaskOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeSnapshotRollbackTaskAsync(const DescribeSnapshotRollbackTaskRequest& request, const DescribeSnapshotRollbackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotRollbackTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeSnapshotRollbackTaskOutcomeCallable DnspodClient::DescribeSnapshotRollbackTaskCallable(const DescribeSnapshotRollbackTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotRollbackTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotRollbackTask(request);
         }
     );
 
@@ -1151,6 +1538,49 @@ DnspodClient::DescribeUserDetailOutcomeCallable DnspodClient::DescribeUserDetail
         [this, request]()
         {
             return this->DescribeUserDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DownloadSnapshotOutcome DnspodClient::DownloadSnapshot(const DownloadSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "DownloadSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DownloadSnapshotResponse rsp = DownloadSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DownloadSnapshotOutcome(rsp);
+        else
+            return DownloadSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return DownloadSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DownloadSnapshotAsync(const DownloadSnapshotRequest& request, const DownloadSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DownloadSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DownloadSnapshotOutcomeCallable DnspodClient::DownloadSnapshotCallable(const DownloadSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DownloadSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->DownloadSnapshot(request);
         }
     );
 
@@ -1631,6 +2061,49 @@ DnspodClient::ModifyRecordStatusOutcomeCallable DnspodClient::ModifyRecordStatus
     return task->get_future();
 }
 
+DnspodClient::ModifySnapshotConfigOutcome DnspodClient::ModifySnapshotConfig(const ModifySnapshotConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySnapshotConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySnapshotConfigResponse rsp = ModifySnapshotConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySnapshotConfigOutcome(rsp);
+        else
+            return ModifySnapshotConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySnapshotConfigOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifySnapshotConfigAsync(const ModifySnapshotConfigRequest& request, const ModifySnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySnapshotConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifySnapshotConfigOutcomeCallable DnspodClient::ModifySnapshotConfigCallable(const ModifySnapshotConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySnapshotConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySnapshotConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::ModifySubdomainStatusOutcome DnspodClient::ModifySubdomainStatus(const ModifySubdomainStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySubdomainStatus");
@@ -1753,6 +2226,92 @@ DnspodClient::PayOrderWithBalanceOutcomeCallable DnspodClient::PayOrderWithBalan
         [this, request]()
         {
             return this->PayOrderWithBalance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::RollbackRecordSnapshotOutcome DnspodClient::RollbackRecordSnapshot(const RollbackRecordSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackRecordSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackRecordSnapshotResponse rsp = RollbackRecordSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackRecordSnapshotOutcome(rsp);
+        else
+            return RollbackRecordSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackRecordSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::RollbackRecordSnapshotAsync(const RollbackRecordSnapshotRequest& request, const RollbackRecordSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackRecordSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::RollbackRecordSnapshotOutcomeCallable DnspodClient::RollbackRecordSnapshotCallable(const RollbackRecordSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackRecordSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackRecordSnapshot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::RollbackSnapshotOutcome DnspodClient::RollbackSnapshot(const RollbackSnapshotRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackSnapshot");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackSnapshotResponse rsp = RollbackSnapshotResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackSnapshotOutcome(rsp);
+        else
+            return RollbackSnapshotOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackSnapshotOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::RollbackSnapshotAsync(const RollbackSnapshotRequest& request, const RollbackSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackSnapshot(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::RollbackSnapshotOutcomeCallable DnspodClient::RollbackSnapshotCallable(const RollbackSnapshotRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackSnapshotOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackSnapshot(request);
         }
     );
 

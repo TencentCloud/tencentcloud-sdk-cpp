@@ -39,7 +39,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_userDataHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_approverVerifyTypeHasBeenSet(false),
-    m_flowDescriptionHasBeenSet(false)
+    m_flowDescriptionHasBeenSet(false),
+    m_signBeanTagHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "FlowDescription";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flowDescription.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_signBeanTagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignBeanTag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_signBeanTag, allocator);
     }
 
 
@@ -492,6 +501,22 @@ void CreateFlowByFilesRequest::SetFlowDescription(const string& _flowDescription
 bool CreateFlowByFilesRequest::FlowDescriptionHasBeenSet() const
 {
     return m_flowDescriptionHasBeenSet;
+}
+
+int64_t CreateFlowByFilesRequest::GetSignBeanTag() const
+{
+    return m_signBeanTag;
+}
+
+void CreateFlowByFilesRequest::SetSignBeanTag(const int64_t& _signBeanTag)
+{
+    m_signBeanTag = _signBeanTag;
+    m_signBeanTagHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::SignBeanTagHasBeenSet() const
+{
+    return m_signBeanTagHasBeenSet;
 }
 
 

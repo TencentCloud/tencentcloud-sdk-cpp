@@ -187,6 +187,24 @@ namespace TencentCloud
                      */
                     bool PackSpecHasBeenSet() const;
 
+                    /**
+                     * 获取批次ID，如果传了生码后会同时绑定批次，并激活码
+                     * @return BatchId 批次ID，如果传了生码后会同时绑定批次，并激活码
+                     */
+                    std::string GetBatchId() const;
+
+                    /**
+                     * 设置批次ID，如果传了生码后会同时绑定批次，并激活码
+                     * @param BatchId 批次ID，如果传了生码后会同时绑定批次，并激活码
+                     */
+                    void SetBatchId(const std::string& _batchId);
+
+                    /**
+                     * 判断参数 BatchId 是否已赋值
+                     * @return BatchId 是否已赋值
+                     */
+                    bool BatchIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +254,12 @@ namespace TencentCloud
                      */
                     std::vector<PackSpec> m_packSpec;
                     bool m_packSpecHasBeenSet;
+
+                    /**
+                     * 批次ID，如果传了生码后会同时绑定批次，并激活码
+                     */
+                    std::string m_batchId;
+                    bool m_batchIdHasBeenSet;
 
                 };
             }

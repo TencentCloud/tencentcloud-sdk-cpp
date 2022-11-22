@@ -456,17 +456,25 @@ namespace TencentCloud
                     bool BusinessStatusHasBeenSet() const;
 
                     /**
-                     * 获取服务的创建来源 AUTO_ML,DEFAULT
+                     * 获取服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CreateSource 服务的创建来源 AUTO_ML,DEFAULT
+                     * @return CreateSource 服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreateSource() const;
 
                     /**
-                     * 设置服务的创建来源 AUTO_ML,DEFAULT
+                     * 设置服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CreateSource 服务的创建来源 AUTO_ML,DEFAULT
+                     * @param CreateSource 服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateSource(const std::string& _createSource);
@@ -501,16 +509,48 @@ namespace TencentCloud
 
                     /**
                      * 获取服务状态
+CREATING 创建中
+CREATE_FAILED 创建失败
+Normal	正常运行中
+Stopped  已停止
+Stopping 停止中
+Abnormal 异常
+Pending 启动中
+Waiting 就绪中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 服务状态
+CREATING 创建中
+CREATE_FAILED 创建失败
+Normal	正常运行中
+Stopped  已停止
+Stopping 停止中
+Abnormal 异常
+Pending 启动中
+Waiting 就绪中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
 
                     /**
                      * 设置服务状态
+CREATING 创建中
+CREATE_FAILED 创建失败
+Normal	正常运行中
+Stopped  已停止
+Stopping 停止中
+Abnormal 异常
+Pending 启动中
+Waiting 就绪中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param Status 服务状态
+CREATING 创建中
+CREATE_FAILED 创建失败
+Normal	正常运行中
+Stopped  已停止
+Stopping 停止中
+Abnormal 异常
+Pending 启动中
+Waiting 就绪中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const std::string& _status);
@@ -742,7 +782,9 @@ namespace TencentCloud
                     bool m_businessStatusHasBeenSet;
 
                     /**
-                     * 服务的创建来源 AUTO_ML,DEFAULT
+                     * 服务的创建来源
+AUTO_ML: 来自自动学习的一键发布
+DEFAULT: 其他来源
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createSource;
@@ -757,6 +799,14 @@ namespace TencentCloud
 
                     /**
                      * 服务状态
+CREATING 创建中
+CREATE_FAILED 创建失败
+Normal	正常运行中
+Stopped  已停止
+Stopping 停止中
+Abnormal 异常
+Pending 启动中
+Waiting 就绪中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;

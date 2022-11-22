@@ -23,6 +23,10 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/dnspod/v20210323/model/CheckRecordSnapshotRollbackRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CheckRecordSnapshotRollbackResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CheckSnapshotRollbackRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CheckSnapshotRollbackResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDealRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDealResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateDomainRequest.h>
@@ -37,6 +41,8 @@
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordBatchRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordBatchResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateSnapshotRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateSnapshotResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainAliasRequest.h>
@@ -45,6 +51,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteShareDomainRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteShareDomainResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteSnapshotRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteSnapshotResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeBatchTaskRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeBatchTaskResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainRequest.h>
@@ -69,12 +77,24 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordLineListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordListResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordSnapshotRollbackResultRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordSnapshotRollbackResultResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordTypeResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotConfigRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotConfigResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotListResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotRollbackResultRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotRollbackResultResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotRollbackTaskRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeSnapshotRollbackTaskResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainOwnerRequest.h>
@@ -97,12 +117,18 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRemarkResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordStatusResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifySnapshotConfigRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifySnapshotConfigResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyVasAutoRenewStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyVasAutoRenewStatusResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/RollbackRecordSnapshotRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/RollbackRecordSnapshotResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/RollbackSnapshotRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/RollbackSnapshotResponse.h>
 
 
 namespace TencentCloud
@@ -117,6 +143,12 @@ namespace TencentCloud
                 DnspodClient(const Credential &credential, const std::string &region);
                 DnspodClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::CheckRecordSnapshotRollbackResponse> CheckRecordSnapshotRollbackOutcome;
+                typedef std::future<CheckRecordSnapshotRollbackOutcome> CheckRecordSnapshotRollbackOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CheckRecordSnapshotRollbackRequest&, CheckRecordSnapshotRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckRecordSnapshotRollbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckSnapshotRollbackResponse> CheckSnapshotRollbackOutcome;
+                typedef std::future<CheckSnapshotRollbackOutcome> CheckSnapshotRollbackOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CheckSnapshotRollbackRequest&, CheckSnapshotRollbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckSnapshotRollbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDealResponse> CreateDealOutcome;
                 typedef std::future<CreateDealOutcome> CreateDealOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateDealRequest&, CreateDealOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDealAsyncHandler;
@@ -138,6 +170,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRecordBatchResponse> CreateRecordBatchOutcome;
                 typedef std::future<CreateRecordBatchOutcome> CreateRecordBatchOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateRecordBatchRequest&, CreateRecordBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSnapshotResponse> CreateSnapshotOutcome;
+                typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateSnapshotRequest&, CreateSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDomainResponse> DeleteDomainOutcome;
                 typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteDomainRequest&, DeleteDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAsyncHandler;
@@ -150,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteShareDomainResponse> DeleteShareDomainOutcome;
                 typedef std::future<DeleteShareDomainOutcome> DeleteShareDomainOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteShareDomainRequest&, DeleteShareDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShareDomainAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSnapshotResponse> DeleteSnapshotOutcome;
+                typedef std::future<DeleteSnapshotOutcome> DeleteSnapshotOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DeleteSnapshotRequest&, DeleteSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBatchTaskResponse> DescribeBatchTaskOutcome;
                 typedef std::future<DescribeBatchTaskOutcome> DescribeBatchTaskOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeBatchTaskRequest&, DescribeBatchTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBatchTaskAsyncHandler;
@@ -186,15 +224,33 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordListResponse> DescribeRecordListOutcome;
                 typedef std::future<DescribeRecordListOutcome> DescribeRecordListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordListRequest&, DescribeRecordListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordSnapshotRollbackResultResponse> DescribeRecordSnapshotRollbackResultOutcome;
+                typedef std::future<DescribeRecordSnapshotRollbackResultOutcome> DescribeRecordSnapshotRollbackResultOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeRecordSnapshotRollbackResultRequest&, DescribeRecordSnapshotRollbackResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordSnapshotRollbackResultAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordTypeResponse> DescribeRecordTypeOutcome;
                 typedef std::future<DescribeRecordTypeOutcome> DescribeRecordTypeOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordTypeRequest&, DescribeRecordTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotConfigResponse> DescribeSnapshotConfigOutcome;
+                typedef std::future<DescribeSnapshotConfigOutcome> DescribeSnapshotConfigOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeSnapshotConfigRequest&, DescribeSnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotListResponse> DescribeSnapshotListOutcome;
+                typedef std::future<DescribeSnapshotListOutcome> DescribeSnapshotListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeSnapshotListRequest&, DescribeSnapshotListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotRollbackResultResponse> DescribeSnapshotRollbackResultOutcome;
+                typedef std::future<DescribeSnapshotRollbackResultOutcome> DescribeSnapshotRollbackResultOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeSnapshotRollbackResultRequest&, DescribeSnapshotRollbackResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotRollbackResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotRollbackTaskResponse> DescribeSnapshotRollbackTaskOutcome;
+                typedef std::future<DescribeSnapshotRollbackTaskOutcome> DescribeSnapshotRollbackTaskOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeSnapshotRollbackTaskRequest&, DescribeSnapshotRollbackTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotRollbackTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubdomainAnalyticsResponse> DescribeSubdomainAnalyticsOutcome;
                 typedef std::future<DescribeSubdomainAnalyticsOutcome> DescribeSubdomainAnalyticsOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeSubdomainAnalyticsRequest&, DescribeSubdomainAnalyticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubdomainAnalyticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserDetailResponse> DescribeUserDetailOutcome;
                 typedef std::future<DescribeUserDetailOutcome> DescribeUserDetailOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeUserDetailRequest&, DescribeUserDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DownloadSnapshotResponse> DownloadSnapshotOutcome;
+                typedef std::future<DownloadSnapshotOutcome> DownloadSnapshotOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DownloadSnapshotRequest&, DownloadSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadSnapshotAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDomainLockResponse> ModifyDomainLockOutcome;
                 typedef std::future<ModifyDomainLockOutcome> ModifyDomainLockOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyDomainLockRequest&, ModifyDomainLockOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDomainLockAsyncHandler;
@@ -228,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRecordStatusResponse> ModifyRecordStatusOutcome;
                 typedef std::future<ModifyRecordStatusOutcome> ModifyRecordStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordStatusRequest&, ModifyRecordStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySnapshotConfigResponse> ModifySnapshotConfigOutcome;
+                typedef std::future<ModifySnapshotConfigOutcome> ModifySnapshotConfigOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifySnapshotConfigRequest&, ModifySnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySubdomainStatusResponse> ModifySubdomainStatusOutcome;
                 typedef std::future<ModifySubdomainStatusOutcome> ModifySubdomainStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifySubdomainStatusRequest&, ModifySubdomainStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubdomainStatusAsyncHandler;
@@ -237,8 +296,32 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PayOrderWithBalanceResponse> PayOrderWithBalanceOutcome;
                 typedef std::future<PayOrderWithBalanceOutcome> PayOrderWithBalanceOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::PayOrderWithBalanceRequest&, PayOrderWithBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PayOrderWithBalanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackRecordSnapshotResponse> RollbackRecordSnapshotOutcome;
+                typedef std::future<RollbackRecordSnapshotOutcome> RollbackRecordSnapshotOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::RollbackRecordSnapshotRequest&, RollbackRecordSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackRecordSnapshotAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackSnapshotResponse> RollbackSnapshotOutcome;
+                typedef std::future<RollbackSnapshotOutcome> RollbackSnapshotOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::RollbackSnapshotRequest&, RollbackSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackSnapshotAsyncHandler;
 
 
+
+                /**
+                 *回滚前检查单条记录
+                 * @param req CheckRecordSnapshotRollbackRequest
+                 * @return CheckRecordSnapshotRollbackOutcome
+                 */
+                CheckRecordSnapshotRollbackOutcome CheckRecordSnapshotRollback(const Model::CheckRecordSnapshotRollbackRequest &request);
+                void CheckRecordSnapshotRollbackAsync(const Model::CheckRecordSnapshotRollbackRequest& request, const CheckRecordSnapshotRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckRecordSnapshotRollbackOutcomeCallable CheckRecordSnapshotRollbackCallable(const Model::CheckRecordSnapshotRollbackRequest& request);
+
+                /**
+                 *快照回滚前检查
+                 * @param req CheckSnapshotRollbackRequest
+                 * @return CheckSnapshotRollbackOutcome
+                 */
+                CheckSnapshotRollbackOutcome CheckSnapshotRollback(const Model::CheckSnapshotRollbackRequest &request);
+                void CheckSnapshotRollbackAsync(const Model::CheckSnapshotRollbackRequest& request, const CheckSnapshotRollbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckSnapshotRollbackOutcomeCallable CheckSnapshotRollbackCallable(const Model::CheckSnapshotRollbackRequest& request);
 
                 /**
                  *DNSPod商品下单
@@ -306,6 +389,15 @@ namespace TencentCloud
                 CreateRecordBatchOutcomeCallable CreateRecordBatchCallable(const Model::CreateRecordBatchRequest& request);
 
                 /**
+                 *创建快照
+                 * @param req CreateSnapshotRequest
+                 * @return CreateSnapshotOutcome
+                 */
+                CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest &request);
+                void CreateSnapshotAsync(const Model::CreateSnapshotRequest& request, const CreateSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSnapshotOutcomeCallable CreateSnapshotCallable(const Model::CreateSnapshotRequest& request);
+
+                /**
                  *删除域名
 
                  * @param req DeleteDomainRequest
@@ -341,6 +433,15 @@ namespace TencentCloud
                 DeleteShareDomainOutcome DeleteShareDomain(const Model::DeleteShareDomainRequest &request);
                 void DeleteShareDomainAsync(const Model::DeleteShareDomainRequest& request, const DeleteShareDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteShareDomainOutcomeCallable DeleteShareDomainCallable(const Model::DeleteShareDomainRequest& request);
+
+                /**
+                 *删除快照
+                 * @param req DeleteSnapshotRequest
+                 * @return DeleteSnapshotOutcome
+                 */
+                DeleteSnapshotOutcome DeleteSnapshot(const Model::DeleteSnapshotRequest &request);
+                void DeleteSnapshotAsync(const Model::DeleteSnapshotRequest& request, const DeleteSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSnapshotOutcomeCallable DeleteSnapshotCallable(const Model::DeleteSnapshotRequest& request);
 
                 /**
                  *获取任务详情
@@ -451,6 +552,15 @@ namespace TencentCloud
                 DescribeRecordListOutcomeCallable DescribeRecordListCallable(const Model::DescribeRecordListRequest& request);
 
                 /**
+                 *查询解析记录重新回滚的结果
+                 * @param req DescribeRecordSnapshotRollbackResultRequest
+                 * @return DescribeRecordSnapshotRollbackResultOutcome
+                 */
+                DescribeRecordSnapshotRollbackResultOutcome DescribeRecordSnapshotRollbackResult(const Model::DescribeRecordSnapshotRollbackResultRequest &request);
+                void DescribeRecordSnapshotRollbackResultAsync(const Model::DescribeRecordSnapshotRollbackResultRequest& request, const DescribeRecordSnapshotRollbackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordSnapshotRollbackResultOutcomeCallable DescribeRecordSnapshotRollbackResultCallable(const Model::DescribeRecordSnapshotRollbackResultRequest& request);
+
+                /**
                  *获取等级允许的记录类型
                  * @param req DescribeRecordTypeRequest
                  * @return DescribeRecordTypeOutcome
@@ -458,6 +568,42 @@ namespace TencentCloud
                 DescribeRecordTypeOutcome DescribeRecordType(const Model::DescribeRecordTypeRequest &request);
                 void DescribeRecordTypeAsync(const Model::DescribeRecordTypeRequest& request, const DescribeRecordTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordTypeOutcomeCallable DescribeRecordTypeCallable(const Model::DescribeRecordTypeRequest& request);
+
+                /**
+                 *查询解析快照配置
+                 * @param req DescribeSnapshotConfigRequest
+                 * @return DescribeSnapshotConfigOutcome
+                 */
+                DescribeSnapshotConfigOutcome DescribeSnapshotConfig(const Model::DescribeSnapshotConfigRequest &request);
+                void DescribeSnapshotConfigAsync(const Model::DescribeSnapshotConfigRequest& request, const DescribeSnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotConfigOutcomeCallable DescribeSnapshotConfigCallable(const Model::DescribeSnapshotConfigRequest& request);
+
+                /**
+                 *查询快照列表
+                 * @param req DescribeSnapshotListRequest
+                 * @return DescribeSnapshotListOutcome
+                 */
+                DescribeSnapshotListOutcome DescribeSnapshotList(const Model::DescribeSnapshotListRequest &request);
+                void DescribeSnapshotListAsync(const Model::DescribeSnapshotListRequest& request, const DescribeSnapshotListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotListOutcomeCallable DescribeSnapshotListCallable(const Model::DescribeSnapshotListRequest& request);
+
+                /**
+                 *查询快照回滚结果
+                 * @param req DescribeSnapshotRollbackResultRequest
+                 * @return DescribeSnapshotRollbackResultOutcome
+                 */
+                DescribeSnapshotRollbackResultOutcome DescribeSnapshotRollbackResult(const Model::DescribeSnapshotRollbackResultRequest &request);
+                void DescribeSnapshotRollbackResultAsync(const Model::DescribeSnapshotRollbackResultRequest& request, const DescribeSnapshotRollbackResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotRollbackResultOutcomeCallable DescribeSnapshotRollbackResultCallable(const Model::DescribeSnapshotRollbackResultRequest& request);
+
+                /**
+                 *查询最近一次回滚
+                 * @param req DescribeSnapshotRollbackTaskRequest
+                 * @return DescribeSnapshotRollbackTaskOutcome
+                 */
+                DescribeSnapshotRollbackTaskOutcome DescribeSnapshotRollbackTask(const Model::DescribeSnapshotRollbackTaskRequest &request);
+                void DescribeSnapshotRollbackTaskAsync(const Model::DescribeSnapshotRollbackTaskRequest& request, const DescribeSnapshotRollbackTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotRollbackTaskOutcomeCallable DescribeSnapshotRollbackTaskCallable(const Model::DescribeSnapshotRollbackTaskRequest& request);
 
                 /**
                  *统计子域名的解析量，帮助您了解流量情况、时间段分布。支持查看近 3 个月内的统计情况。仅付费套餐域名可用。
@@ -476,6 +622,15 @@ namespace TencentCloud
                 DescribeUserDetailOutcome DescribeUserDetail(const Model::DescribeUserDetailRequest &request);
                 void DescribeUserDetailAsync(const Model::DescribeUserDetailRequest& request, const DescribeUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserDetailOutcomeCallable DescribeUserDetailCallable(const Model::DescribeUserDetailRequest& request);
+
+                /**
+                 *下载快照
+                 * @param req DownloadSnapshotRequest
+                 * @return DownloadSnapshotOutcome
+                 */
+                DownloadSnapshotOutcome DownloadSnapshot(const Model::DownloadSnapshotRequest &request);
+                void DownloadSnapshotAsync(const Model::DownloadSnapshotRequest& request, const DownloadSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DownloadSnapshotOutcomeCallable DownloadSnapshotCallable(const Model::DownloadSnapshotRequest& request);
 
                 /**
                  *锁定域名
@@ -578,6 +733,15 @@ namespace TencentCloud
                 ModifyRecordStatusOutcomeCallable ModifyRecordStatusCallable(const Model::ModifyRecordStatusRequest& request);
 
                 /**
+                 *修改快照配置
+                 * @param req ModifySnapshotConfigRequest
+                 * @return ModifySnapshotConfigOutcome
+                 */
+                ModifySnapshotConfigOutcome ModifySnapshotConfig(const Model::ModifySnapshotConfigRequest &request);
+                void ModifySnapshotConfigAsync(const Model::ModifySnapshotConfigRequest& request, const ModifySnapshotConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySnapshotConfigOutcomeCallable ModifySnapshotConfigCallable(const Model::ModifySnapshotConfigRequest& request);
+
+                /**
                  *暂停子域名的解析记录
                  * @param req ModifySubdomainStatusRequest
                  * @return ModifySubdomainStatusOutcome
@@ -603,6 +767,24 @@ namespace TencentCloud
                 PayOrderWithBalanceOutcome PayOrderWithBalance(const Model::PayOrderWithBalanceRequest &request);
                 void PayOrderWithBalanceAsync(const Model::PayOrderWithBalanceRequest& request, const PayOrderWithBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PayOrderWithBalanceOutcomeCallable PayOrderWithBalanceCallable(const Model::PayOrderWithBalanceRequest& request);
+
+                /**
+                 *重新回滚指定解析记录快照
+                 * @param req RollbackRecordSnapshotRequest
+                 * @return RollbackRecordSnapshotOutcome
+                 */
+                RollbackRecordSnapshotOutcome RollbackRecordSnapshot(const Model::RollbackRecordSnapshotRequest &request);
+                void RollbackRecordSnapshotAsync(const Model::RollbackRecordSnapshotRequest& request, const RollbackRecordSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackRecordSnapshotOutcomeCallable RollbackRecordSnapshotCallable(const Model::RollbackRecordSnapshotRequest& request);
+
+                /**
+                 *回滚快照
+                 * @param req RollbackSnapshotRequest
+                 * @return RollbackSnapshotOutcome
+                 */
+                RollbackSnapshotOutcome RollbackSnapshot(const Model::RollbackSnapshotRequest &request);
+                void RollbackSnapshotAsync(const Model::RollbackSnapshotRequest& request, const RollbackSnapshotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackSnapshotOutcomeCallable RollbackSnapshotCallable(const Model::RollbackSnapshotRequest& request);
 
             };
         }

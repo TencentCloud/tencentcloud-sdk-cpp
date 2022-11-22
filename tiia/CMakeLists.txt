@@ -20,26 +20,29 @@ set(tiia_public_header
 
 set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/DetectProductBetaResponse.h
-  include/tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectChefDressResponse.h
   include/tencentcloud/tiia/v20190529/model/SearchImageResponse.h
+  include/tencentcloud/tiia/v20190529/model/DetectDisgustRequest.h
   include/tencentcloud/tiia/v20190529/model/Pet.h
   include/tencentcloud/tiia/v20190529/model/DetectPetRequest.h
   include/tencentcloud/tiia/v20190529/model/RecognizeCarProResponse.h
   include/tencentcloud/tiia/v20190529/model/CreateImageRequest.h
-  include/tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h
+  include/tencentcloud/tiia/v20190529/model/BodyAttributes.h
   include/tencentcloud/tiia/v20190529/model/DeleteImagesResponse.h
   include/tencentcloud/tiia/v20190529/model/CropImageRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectProductRequest.h
+  include/tencentcloud/tiia/v20190529/model/DetectLabelBetaRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelResponse.h
   include/tencentcloud/tiia/v20190529/model/RegionDetected.h
   include/tencentcloud/tiia/v20190529/model/DescribeGroupsRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectMisbehaviorResponse.h
   include/tencentcloud/tiia/v20190529/model/AssessQualityResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectDisgustResponse.h
-  include/tencentcloud/tiia/v20190529/model/ObjectInfo.h
+  include/tencentcloud/tiia/v20190529/model/DetectChefDressRequest.h
   include/tencentcloud/tiia/v20190529/model/SearchImageRequest.h
-  include/tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h
+  include/tencentcloud/tiia/v20190529/model/AttributesForBody.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelRequest.h
+  include/tencentcloud/tiia/v20190529/model/RecognizeCarResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectLabelProResponse.h
   include/tencentcloud/tiia/v20190529/model/EnhanceImageResponse.h
   include/tencentcloud/tiia/v20190529/model/ProductInfo.h
@@ -50,12 +53,15 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/Rect.h
   include/tencentcloud/tiia/v20190529/model/DetectProductBetaRequest.h
   include/tencentcloud/tiia/v20190529/model/Box.h
+  include/tencentcloud/tiia/v20190529/model/DetectSecurityResponse.h
   include/tencentcloud/tiia/v20190529/model/RecognizeCarRequest.h
   include/tencentcloud/tiia/v20190529/model/EnhanceImageRequest.h
   include/tencentcloud/tiia/v20190529/model/GroupInfo.h
   include/tencentcloud/tiia/v20190529/model/CropImageResponse.h
+  include/tencentcloud/tiia/v20190529/model/ObjectInfo.h
   include/tencentcloud/tiia/v20190529/model/Product.h
   include/tencentcloud/tiia/v20190529/model/Coord.h
+  include/tencentcloud/tiia/v20190529/model/DetectSecurityRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectEnvelopeRequest.h
   include/tencentcloud/tiia/v20190529/model/DetectPetResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectProductResponse.h
@@ -83,26 +89,29 @@ set(tiia_public_header_model
 set(tiia_src
   src/v20190529/TiiaClient.cpp
   src/v20190529/model/DetectProductBetaResponse.cpp
-  src/v20190529/model/DetectDisgustRequest.cpp
+  src/v20190529/model/DetectChefDressResponse.cpp
   src/v20190529/model/SearchImageResponse.cpp
+  src/v20190529/model/DetectDisgustRequest.cpp
   src/v20190529/model/Pet.cpp
   src/v20190529/model/DetectPetRequest.cpp
   src/v20190529/model/RecognizeCarProResponse.cpp
   src/v20190529/model/CreateImageRequest.cpp
-  src/v20190529/model/DetectLabelBetaRequest.cpp
+  src/v20190529/model/BodyAttributes.cpp
   src/v20190529/model/DeleteImagesResponse.cpp
   src/v20190529/model/CropImageRequest.cpp
   src/v20190529/model/DetectProductRequest.cpp
+  src/v20190529/model/DetectLabelBetaRequest.cpp
   src/v20190529/model/DetectLabelResponse.cpp
   src/v20190529/model/RegionDetected.cpp
   src/v20190529/model/DescribeGroupsRequest.cpp
   src/v20190529/model/DetectMisbehaviorResponse.cpp
   src/v20190529/model/AssessQualityResponse.cpp
   src/v20190529/model/DetectDisgustResponse.cpp
-  src/v20190529/model/ObjectInfo.cpp
+  src/v20190529/model/DetectChefDressRequest.cpp
   src/v20190529/model/SearchImageRequest.cpp
-  src/v20190529/model/RecognizeCarResponse.cpp
+  src/v20190529/model/AttributesForBody.cpp
   src/v20190529/model/DetectLabelRequest.cpp
+  src/v20190529/model/RecognizeCarResponse.cpp
   src/v20190529/model/DetectLabelProResponse.cpp
   src/v20190529/model/EnhanceImageResponse.cpp
   src/v20190529/model/ProductInfo.cpp
@@ -113,12 +122,15 @@ set(tiia_src
   src/v20190529/model/Rect.cpp
   src/v20190529/model/DetectProductBetaRequest.cpp
   src/v20190529/model/Box.cpp
+  src/v20190529/model/DetectSecurityResponse.cpp
   src/v20190529/model/RecognizeCarRequest.cpp
   src/v20190529/model/EnhanceImageRequest.cpp
   src/v20190529/model/GroupInfo.cpp
   src/v20190529/model/CropImageResponse.cpp
+  src/v20190529/model/ObjectInfo.cpp
   src/v20190529/model/Product.cpp
   src/v20190529/model/Coord.cpp
+  src/v20190529/model/DetectSecurityRequest.cpp
   src/v20190529/model/DetectEnvelopeRequest.cpp
   src/v20190529/model/DetectPetResponse.cpp
   src/v20190529/model/DetectProductResponse.cpp

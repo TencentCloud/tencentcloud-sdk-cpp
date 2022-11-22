@@ -23,7 +23,9 @@ using namespace std;
 SubnetInfos::SubnetInfos() :
     m_subnetIdHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_osHasBeenSet(false),
+    m_archHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,26 @@ CoreInternalOutcome SubnetInfos::Deserialize(const rapidjson::Value &value)
         m_securityGroupsHasBeenSet = true;
     }
 
+    if (value.HasMember("Os") && !value["Os"].IsNull())
+    {
+        if (!value["Os"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubnetInfos.Os` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_os = string(value["Os"].GetString());
+        m_osHasBeenSet = true;
+    }
+
+    if (value.HasMember("Arch") && !value["Arch"].IsNull())
+    {
+        if (!value["Arch"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubnetInfos.Arch` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_arch = string(value["Arch"].GetString());
+        m_archHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +121,22 @@ void SubnetInfos::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_osHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Os";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_os.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_archHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Arch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_arch.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +188,37 @@ void SubnetInfos::SetSecurityGroups(const vector<string>& _securityGroups)
 bool SubnetInfos::SecurityGroupsHasBeenSet() const
 {
     return m_securityGroupsHasBeenSet;
+}
+
+string SubnetInfos::GetOs() const
+{
+    return m_os;
+}
+
+void SubnetInfos::SetOs(const string& _os)
+{
+    m_os = _os;
+    m_osHasBeenSet = true;
+}
+
+bool SubnetInfos::OsHasBeenSet() const
+{
+    return m_osHasBeenSet;
+}
+
+string SubnetInfos::GetArch() const
+{
+    return m_arch;
+}
+
+void SubnetInfos::SetArch(const string& _arch)
+{
+    m_arch = _arch;
+    m_archHasBeenSet = true;
+}
+
+bool SubnetInfos::ArchHasBeenSet() const
+{
+    return m_archHasBeenSet;
 }
 

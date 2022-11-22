@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyNetworkInterfaceQosRequest::ModifyNetworkInterfaceQosRequest() :
     m_networkInterfaceIdsHasBeenSet(false),
-    m_qosLevelHasBeenSet(false)
+    m_qosLevelHasBeenSet(false),
+    m_directSendMaxPortHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string ModifyNetworkInterfaceQosRequest::ToJsonString() const
         string key = "QosLevel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_qosLevel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_directSendMaxPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DirectSendMaxPort";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_directSendMaxPort, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void ModifyNetworkInterfaceQosRequest::SetQosLevel(const string& _qosLevel)
 bool ModifyNetworkInterfaceQosRequest::QosLevelHasBeenSet() const
 {
     return m_qosLevelHasBeenSet;
+}
+
+uint64_t ModifyNetworkInterfaceQosRequest::GetDirectSendMaxPort() const
+{
+    return m_directSendMaxPort;
+}
+
+void ModifyNetworkInterfaceQosRequest::SetDirectSendMaxPort(const uint64_t& _directSendMaxPort)
+{
+    m_directSendMaxPort = _directSendMaxPort;
+    m_directSendMaxPortHasBeenSet = true;
+}
+
+bool ModifyNetworkInterfaceQosRequest::DirectSendMaxPortHasBeenSet() const
+{
+    return m_directSendMaxPortHasBeenSet;
 }
 
 

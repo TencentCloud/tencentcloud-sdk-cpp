@@ -250,6 +250,28 @@ namespace TencentCloud
                      */
                     bool PreviewUrlHasBeenSet() const;
 
+                    /**
+                     * 获取渠道模板ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelTemplateId 渠道模板ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelTemplateId() const;
+
+                    /**
+                     * 设置渠道模板ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChannelTemplateId 渠道模板ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannelTemplateId(const std::string& _channelTemplateId);
+
+                    /**
+                     * 判断参数 ChannelTemplateId 是否已赋值
+                     * @return ChannelTemplateId 是否已赋值
+                     */
+                    bool ChannelTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -318,6 +340,13 @@ namespace TencentCloud
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
+
+                    /**
+                     * 渠道模板ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelTemplateId;
+                    bool m_channelTemplateIdHasBeenSet;
 
                 };
             }

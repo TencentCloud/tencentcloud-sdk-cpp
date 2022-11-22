@@ -328,6 +328,24 @@ MobileCheck：手机号验证
                      */
                     bool ApproverVerifyTypeHasBeenSet() const;
 
+                    /**
+                     * 获取标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     * @return SignBeanTag 标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     */
+                    int64_t GetSignBeanTag() const;
+
+                    /**
+                     * 设置标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     * @param SignBeanTag 标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     */
+                    void SetSignBeanTag(const int64_t& _signBeanTag);
+
+                    /**
+                     * 判断参数 SignBeanTag 是否已赋值
+                     * @return SignBeanTag 是否已赋值
+                     */
+                    bool SignBeanTagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -422,6 +440,12 @@ MobileCheck：手机号验证
                      */
                     std::string m_approverVerifyType;
                     bool m_approverVerifyTypeHasBeenSet;
+
+                    /**
+                     * 标识是否允许发起后添加控件。0为不允许1为允许。如果为1，创建的时候不能有签署控件，只能创建后添加。注意发起后添加控件功能不支持添加骑缝章和签批控件
+                     */
+                    int64_t m_signBeanTag;
+                    bool m_signBeanTagHasBeenSet;
 
                 };
             }

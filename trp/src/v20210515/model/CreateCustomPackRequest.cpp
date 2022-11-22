@@ -30,7 +30,8 @@ CreateCustomPackRequest::CreateCustomPackRequest() :
     m_packLevelHasBeenSet(false),
     m_packSpecHasBeenSet(false),
     m_customIdHasBeenSet(false),
-    m_codePartsHasBeenSet(false)
+    m_codePartsHasBeenSet(false),
+    m_batchIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateCustomPackRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_batchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -253,6 +262,22 @@ void CreateCustomPackRequest::SetCodeParts(const vector<CodePart>& _codeParts)
 bool CreateCustomPackRequest::CodePartsHasBeenSet() const
 {
     return m_codePartsHasBeenSet;
+}
+
+string CreateCustomPackRequest::GetBatchId() const
+{
+    return m_batchId;
+}
+
+void CreateCustomPackRequest::SetBatchId(const string& _batchId)
+{
+    m_batchId = _batchId;
+    m_batchIdHasBeenSet = true;
+}
+
+bool CreateCustomPackRequest::BatchIdHasBeenSet() const
+{
+    return m_batchIdHasBeenSet;
 }
 
 

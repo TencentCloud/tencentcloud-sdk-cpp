@@ -40,6 +40,7 @@ Component::Component() :
     m_componentDescriptionHasBeenSet(false),
     m_offsetXHasBeenSet(false),
     m_offsetYHasBeenSet(false),
+    m_channelComponentIdHasBeenSet(false),
     m_keywordPageHasBeenSet(false),
     m_relativeLocationHasBeenSet(false),
     m_keywordIndexesHasBeenSet(false)
@@ -241,6 +242,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_offsetYHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelComponentId") && !value["ChannelComponentId"].IsNull())
+    {
+        if (!value["ChannelComponentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ChannelComponentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelComponentId = string(value["ChannelComponentId"].GetString());
+        m_channelComponentIdHasBeenSet = true;
+    }
+
     if (value.HasMember("KeywordPage") && !value["KeywordPage"].IsNull())
     {
         if (!value["KeywordPage"].IsInt64())
@@ -431,6 +442,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "OffsetY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offsetY, allocator);
+    }
+
+    if (m_channelComponentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelComponentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelComponentId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordPageHasBeenSet)
@@ -767,6 +786,22 @@ void Component::SetOffsetY(const double& _offsetY)
 bool Component::OffsetYHasBeenSet() const
 {
     return m_offsetYHasBeenSet;
+}
+
+string Component::GetChannelComponentId() const
+{
+    return m_channelComponentId;
+}
+
+void Component::SetChannelComponentId(const string& _channelComponentId)
+{
+    m_channelComponentId = _channelComponentId;
+    m_channelComponentIdHasBeenSet = true;
+}
+
+bool Component::ChannelComponentIdHasBeenSet() const
+{
+    return m_channelComponentIdHasBeenSet;
 }
 
 int64_t Component::GetKeywordPage() const

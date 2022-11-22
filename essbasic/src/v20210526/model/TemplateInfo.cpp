@@ -31,7 +31,8 @@ TemplateInfo::TemplateInfo() :
     m_isPromoterHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_previewUrlHasBeenSet(false)
+    m_previewUrlHasBeenSet(false),
+    m_channelTemplateIdHasBeenSet(false)
 {
 }
 
@@ -180,6 +181,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_previewUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelTemplateId") && !value["ChannelTemplateId"].IsNull())
+    {
+        if (!value["ChannelTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.ChannelTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelTemplateId = string(value["ChannelTemplateId"].GetString());
+        m_channelTemplateIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -294,6 +305,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PreviewUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -473,5 +492,21 @@ void TemplateInfo::SetPreviewUrl(const string& _previewUrl)
 bool TemplateInfo::PreviewUrlHasBeenSet() const
 {
     return m_previewUrlHasBeenSet;
+}
+
+string TemplateInfo::GetChannelTemplateId() const
+{
+    return m_channelTemplateId;
+}
+
+void TemplateInfo::SetChannelTemplateId(const string& _channelTemplateId)
+{
+    m_channelTemplateId = _channelTemplateId;
+    m_channelTemplateIdHasBeenSet = true;
+}
+
+bool TemplateInfo::ChannelTemplateIdHasBeenSet() const
+{
+    return m_channelTemplateIdHasBeenSet;
 }
 
