@@ -24,7 +24,9 @@ ParamTemplateListInfo::ParamTemplateListInfo() :
     m_idHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_templateDescriptionHasBeenSet(false),
-    m_engineVersionHasBeenSet(false)
+    m_engineVersionHasBeenSet(false),
+    m_dbModeHasBeenSet(false),
+    m_paramInfoSetHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,36 @@ CoreInternalOutcome ParamTemplateListInfo::Deserialize(const rapidjson::Value &v
         m_engineVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("DbMode") && !value["DbMode"].IsNull())
+    {
+        if (!value["DbMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateListInfo.DbMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbMode = string(value["DbMode"].GetString());
+        m_dbModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParamInfoSet") && !value["ParamInfoSet"].IsNull())
+    {
+        if (!value["ParamInfoSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ParamTemplateListInfo.ParamInfoSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ParamInfoSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TemplateParamInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_paramInfoSet.push_back(item);
+        }
+        m_paramInfoSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +142,29 @@ void ParamTemplateListInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "EngineVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_engineVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dbModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramInfoSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamInfoSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_paramInfoSet.begin(); itr != m_paramInfoSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -177,5 +232,37 @@ void ParamTemplateListInfo::SetEngineVersion(const string& _engineVersion)
 bool ParamTemplateListInfo::EngineVersionHasBeenSet() const
 {
     return m_engineVersionHasBeenSet;
+}
+
+string ParamTemplateListInfo::GetDbMode() const
+{
+    return m_dbMode;
+}
+
+void ParamTemplateListInfo::SetDbMode(const string& _dbMode)
+{
+    m_dbMode = _dbMode;
+    m_dbModeHasBeenSet = true;
+}
+
+bool ParamTemplateListInfo::DbModeHasBeenSet() const
+{
+    return m_dbModeHasBeenSet;
+}
+
+vector<TemplateParamInfo> ParamTemplateListInfo::GetParamInfoSet() const
+{
+    return m_paramInfoSet;
+}
+
+void ParamTemplateListInfo::SetParamInfoSet(const vector<TemplateParamInfo>& _paramInfoSet)
+{
+    m_paramInfoSet = _paramInfoSet;
+    m_paramInfoSetHasBeenSet = true;
+}
+
+bool ParamTemplateListInfo::ParamInfoSetHasBeenSet() const
+{
+    return m_paramInfoSetHasBeenSet;
 }
 

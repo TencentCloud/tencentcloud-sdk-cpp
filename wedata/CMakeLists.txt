@@ -121,6 +121,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeProdTasksRequest.h
   include/tencentcloud/wedata/v20210820/model/CheckDuplicateTemplateNameRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchUpdateIntegrationTasksRequest.h
+  include/tencentcloud/wedata/v20210820/model/CreateResourcePathRequest.h
   include/tencentcloud/wedata/v20210820/model/ResumeIntegrationTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskNameResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeTaskReportDetailListResponse.h
@@ -282,6 +283,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsTaskStatusTrendRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleHistoryByPageResponse.h
   include/tencentcloud/wedata/v20210820/model/UnlockIntegrationTaskRequest.h
+  include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskAlarmRegularResponse.h
   include/tencentcloud/wedata/v20210820/model/CreateRuleResponse.h
   include/tencentcloud/wedata/v20210820/model/ModifyTaskLinksResponse.h
@@ -310,6 +312,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeRulesByPageRequest.h
   include/tencentcloud/wedata/v20210820/model/DescribeTopTableStatResponse.h
   include/tencentcloud/wedata/v20210820/model/ProdSchedulerTask.h
+  include/tencentcloud/wedata/v20210820/model/SourceFieldInfo.h
   include/tencentcloud/wedata/v20210820/model/FreezeTasksByMultiWorkflowResponse.h
   include/tencentcloud/wedata/v20210820/model/SaveCustomFunctionResponse.h
   include/tencentcloud/wedata/v20210820/model/OperateResult.h
@@ -402,7 +405,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/CreateIntegrationTaskRequest.h
   include/tencentcloud/wedata/v20210820/model/FieldConfig.h
   include/tencentcloud/wedata/v20210820/model/DescribeRealTimeTaskMetricOverviewRequest.h
-  include/tencentcloud/wedata/v20210820/model/ModifyDimensionWeightResponse.h
+  include/tencentcloud/wedata/v20210820/model/CreateResourcePathResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteFolderResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeResourceManagePathTreesResponse.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupMonitor.h
@@ -648,6 +651,7 @@ set(wedata_src
   src/v20210820/model/DescribeProdTasksRequest.cpp
   src/v20210820/model/CheckDuplicateTemplateNameRequest.cpp
   src/v20210820/model/BatchUpdateIntegrationTasksRequest.cpp
+  src/v20210820/model/CreateResourcePathRequest.cpp
   src/v20210820/model/ResumeIntegrationTaskResponse.cpp
   src/v20210820/model/ModifyTaskNameResponse.cpp
   src/v20210820/model/DescribeTaskReportDetailListResponse.cpp
@@ -809,6 +813,7 @@ set(wedata_src
   src/v20210820/model/DescribeIntegrationStatisticsTaskStatusTrendRequest.cpp
   src/v20210820/model/DescribeRuleHistoryByPageResponse.cpp
   src/v20210820/model/UnlockIntegrationTaskRequest.cpp
+  src/v20210820/model/ModifyDimensionWeightResponse.cpp
   src/v20210820/model/ModifyTaskAlarmRegularResponse.cpp
   src/v20210820/model/CreateRuleResponse.cpp
   src/v20210820/model/ModifyTaskLinksResponse.cpp
@@ -837,6 +842,7 @@ set(wedata_src
   src/v20210820/model/DescribeRulesByPageRequest.cpp
   src/v20210820/model/DescribeTopTableStatResponse.cpp
   src/v20210820/model/ProdSchedulerTask.cpp
+  src/v20210820/model/SourceFieldInfo.cpp
   src/v20210820/model/FreezeTasksByMultiWorkflowResponse.cpp
   src/v20210820/model/SaveCustomFunctionResponse.cpp
   src/v20210820/model/OperateResult.cpp
@@ -929,7 +935,7 @@ set(wedata_src
   src/v20210820/model/CreateIntegrationTaskRequest.cpp
   src/v20210820/model/FieldConfig.cpp
   src/v20210820/model/DescribeRealTimeTaskMetricOverviewRequest.cpp
-  src/v20210820/model/ModifyDimensionWeightResponse.cpp
+  src/v20210820/model/CreateResourcePathResponse.cpp
   src/v20210820/model/DeleteFolderResponse.cpp
   src/v20210820/model/DescribeResourceManagePathTreesResponse.cpp
   src/v20210820/model/RuleGroupMonitor.cpp

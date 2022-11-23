@@ -31,7 +31,8 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_sourceDatabaseHasBeenSet(false),
     m_tableNameHasBeenSet(false),
     m_sinkTypeHasBeenSet(false),
-    m_schemaNameHasBeenSet(false)
+    m_schemaNameHasBeenSet(false),
+    m_sourceFieldInfoListHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,21 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
         string key = "SchemaName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_schemaName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sourceFieldInfoListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceFieldInfoList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sourceFieldInfoList.begin(); itr != m_sourceFieldInfoList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -264,6 +280,22 @@ void GenHiveTableDDLSqlRequest::SetSchemaName(const string& _schemaName)
 bool GenHiveTableDDLSqlRequest::SchemaNameHasBeenSet() const
 {
     return m_schemaNameHasBeenSet;
+}
+
+vector<SourceFieldInfo> GenHiveTableDDLSqlRequest::GetSourceFieldInfoList() const
+{
+    return m_sourceFieldInfoList;
+}
+
+void GenHiveTableDDLSqlRequest::SetSourceFieldInfoList(const vector<SourceFieldInfo>& _sourceFieldInfoList)
+{
+    m_sourceFieldInfoList = _sourceFieldInfoList;
+    m_sourceFieldInfoListHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::SourceFieldInfoListHasBeenSet() const
+{
+    return m_sourceFieldInfoListHasBeenSet;
 }
 
 

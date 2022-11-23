@@ -38,7 +38,8 @@ DcnDetailItem::DcnDetailItem() :
     m_payModeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_periodEndTimeHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_encryptStatusHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome DcnDetailItem::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptStatus") && !value["EncryptStatus"].IsNull())
+    {
+        if (!value["EncryptStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.EncryptStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptStatus = value["EncryptStatus"].GetInt64();
+        m_encryptStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void DcnDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceType, allocator);
+    }
+
+    if (m_encryptStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptStatus, allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void DcnDetailItem::SetInstanceType(const int64_t& _instanceType)
 bool DcnDetailItem::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetEncryptStatus() const
+{
+    return m_encryptStatus;
+}
+
+void DcnDetailItem::SetEncryptStatus(const int64_t& _encryptStatus)
+{
+    m_encryptStatus = _encryptStatus;
+    m_encryptStatusHasBeenSet = true;
+}
+
+bool DcnDetailItem::EncryptStatusHasBeenSet() const
+{
+    return m_encryptStatusHasBeenSet;
 }
 

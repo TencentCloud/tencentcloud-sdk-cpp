@@ -115,6 +115,8 @@
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTaskPodsResponse.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksRequest.h>
 #include <tencentcloud/tione/v20211111/model/DescribeTrainingTasksResponse.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h>
+#include <tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigRequest.h>
 #include <tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigResponse.h>
 #include <tencentcloud/tione/v20211111/model/ModifyServiceGroupWeightsRequest.h>
@@ -283,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTrainingTasksResponse> DescribeTrainingTasksOutcome;
                 typedef std::future<DescribeTrainingTasksOutcome> DescribeTrainingTasksOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::DescribeTrainingTasksRequest&, DescribeTrainingTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrainingTasksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyModelServiceResponse> ModifyModelServiceOutcome;
+                typedef std::future<ModifyModelServiceOutcome> ModifyModelServiceOutcomeCallable;
+                typedef std::function<void(const TioneClient*, const Model::ModifyModelServiceRequest&, ModifyModelServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyModelServicePartialConfigResponse> ModifyModelServicePartialConfigOutcome;
                 typedef std::future<ModifyModelServicePartialConfigOutcome> ModifyModelServicePartialConfigOutcomeCallable;
                 typedef std::function<void(const TioneClient*, const Model::ModifyModelServicePartialConfigRequest&, ModifyModelServicePartialConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyModelServicePartialConfigAsyncHandler;
@@ -723,6 +728,15 @@ namespace TencentCloud
                 DescribeTrainingTasksOutcome DescribeTrainingTasks(const Model::DescribeTrainingTasksRequest &request);
                 void DescribeTrainingTasksAsync(const Model::DescribeTrainingTasksRequest& request, const DescribeTrainingTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTrainingTasksOutcomeCallable DescribeTrainingTasksCallable(const Model::DescribeTrainingTasksRequest& request);
+
+                /**
+                 *用于更新模型服务
+                 * @param req ModifyModelServiceRequest
+                 * @return ModifyModelServiceOutcome
+                 */
+                ModifyModelServiceOutcome ModifyModelService(const Model::ModifyModelServiceRequest &request);
+                void ModifyModelServiceAsync(const Model::ModifyModelServiceRequest& request, const ModifyModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyModelServiceOutcomeCallable ModifyModelServiceCallable(const Model::ModifyModelServiceRequest& request);
 
                 /**
                  *增量更新在线推理服务的部分配置，不更新的配置项不需要传入

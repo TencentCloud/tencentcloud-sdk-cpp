@@ -24,9 +24,9 @@ using namespace std;
 
 VerifySmsCodeRequest::VerifySmsCodeRequest() :
     m_purposeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false),
     m_phoneNumberHasBeenSet(false),
     m_codeHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_countryCodeHasBeenSet(false)
 {
 }
@@ -46,14 +46,6 @@ string VerifySmsCodeRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_purpose.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_phoneNumberHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -68,6 +60,14 @@ string VerifySmsCodeRequest::ToJsonString() const
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_countryCodeHasBeenSet)
@@ -102,22 +102,6 @@ bool VerifySmsCodeRequest::PurposeHasBeenSet() const
     return m_purposeHasBeenSet;
 }
 
-string VerifySmsCodeRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void VerifySmsCodeRequest::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool VerifySmsCodeRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
-
 string VerifySmsCodeRequest::GetPhoneNumber() const
 {
     return m_phoneNumber;
@@ -148,6 +132,22 @@ void VerifySmsCodeRequest::SetCode(const string& _code)
 bool VerifySmsCodeRequest::CodeHasBeenSet() const
 {
     return m_codeHasBeenSet;
+}
+
+string VerifySmsCodeRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void VerifySmsCodeRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool VerifySmsCodeRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 string VerifySmsCodeRequest::GetCountryCode() const

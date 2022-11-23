@@ -145,6 +145,28 @@ namespace TencentCloud
                      */
                     bool PropertiesHasBeenSet() const;
 
+                    /**
+                     * 获取schema别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Alias schema别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置schema别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Alias schema别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     */
+                    bool AliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -178,6 +200,13 @@ namespace TencentCloud
                      */
                     std::vector<RecordField> m_properties;
                     bool m_propertiesHasBeenSet;
+
+                    /**
+                     * schema别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                 };
             }

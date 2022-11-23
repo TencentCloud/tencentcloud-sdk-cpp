@@ -2018,6 +2018,49 @@ TioneClient::DescribeTrainingTasksOutcomeCallable TioneClient::DescribeTrainingT
     return task->get_future();
 }
 
+TioneClient::ModifyModelServiceOutcome TioneClient::ModifyModelService(const ModifyModelServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyModelService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyModelServiceResponse rsp = ModifyModelServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyModelServiceOutcome(rsp);
+        else
+            return ModifyModelServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyModelServiceOutcome(outcome.GetError());
+    }
+}
+
+void TioneClient::ModifyModelServiceAsync(const ModifyModelServiceRequest& request, const ModifyModelServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyModelService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TioneClient::ModifyModelServiceOutcomeCallable TioneClient::ModifyModelServiceCallable(const ModifyModelServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyModelServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyModelService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TioneClient::ModifyModelServicePartialConfigOutcome TioneClient::ModifyModelServicePartialConfig(const ModifyModelServicePartialConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyModelServicePartialConfig");

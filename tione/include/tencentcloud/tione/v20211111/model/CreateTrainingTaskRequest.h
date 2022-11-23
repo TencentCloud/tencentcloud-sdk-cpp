@@ -302,14 +302,14 @@ namespace TencentCloud
                     bool StartCmdInfoHasBeenSet() const;
 
                     /**
-                     * 获取数据配置
-                     * @return DataConfigs 数据配置
+                     * 获取数据配置，依赖DataSource字段
+                     * @return DataConfigs 数据配置，依赖DataSource字段
                      */
                     std::vector<DataConfig> GetDataConfigs() const;
 
                     /**
-                     * 设置数据配置
-                     * @param DataConfigs 数据配置
+                     * 设置数据配置，依赖DataSource字段
+                     * @param DataConfigs 数据配置，依赖DataSource字段
                      */
                     void SetDataConfigs(const std::vector<DataConfig>& _dataConfigs);
 
@@ -514,7 +514,7 @@ namespace TencentCloud
                     bool m_startCmdInfoHasBeenSet;
 
                     /**
-                     * 数据配置
+                     * 数据配置，依赖DataSource字段
                      */
                     std::vector<DataConfig> m_dataConfigs;
                     bool m_dataConfigsHasBeenSet;

@@ -190,6 +190,114 @@ namespace TencentCloud
                      */
                     bool UdpFloodPktThresholdHasBeenSet() const;
 
+                    /**
+                     * 获取ACK FLOOD流量阈值
+                     * @return AckFloodThreshold ACK FLOOD流量阈值
+                     */
+                    uint64_t GetAckFloodThreshold() const;
+
+                    /**
+                     * 设置ACK FLOOD流量阈值
+                     * @param AckFloodThreshold ACK FLOOD流量阈值
+                     */
+                    void SetAckFloodThreshold(const uint64_t& _ackFloodThreshold);
+
+                    /**
+                     * 判断参数 AckFloodThreshold 是否已赋值
+                     * @return AckFloodThreshold 是否已赋值
+                     */
+                    bool AckFloodThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取ACK FLOOD包量阈值
+                     * @return AckFloodPktThreshold ACK FLOOD包量阈值
+                     */
+                    uint64_t GetAckFloodPktThreshold() const;
+
+                    /**
+                     * 设置ACK FLOOD包量阈值
+                     * @param AckFloodPktThreshold ACK FLOOD包量阈值
+                     */
+                    void SetAckFloodPktThreshold(const uint64_t& _ackFloodPktThreshold);
+
+                    /**
+                     * 判断参数 AckFloodPktThreshold 是否已赋值
+                     * @return AckFloodPktThreshold 是否已赋值
+                     */
+                    bool AckFloodPktThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取SYNACK FLOOD流量阈值
+                     * @return SynAckFloodThreshold SYNACK FLOOD流量阈值
+                     */
+                    uint64_t GetSynAckFloodThreshold() const;
+
+                    /**
+                     * 设置SYNACK FLOOD流量阈值
+                     * @param SynAckFloodThreshold SYNACK FLOOD流量阈值
+                     */
+                    void SetSynAckFloodThreshold(const uint64_t& _synAckFloodThreshold);
+
+                    /**
+                     * 判断参数 SynAckFloodThreshold 是否已赋值
+                     * @return SynAckFloodThreshold 是否已赋值
+                     */
+                    bool SynAckFloodThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取SYNACK FLOOD包量阈值
+                     * @return SynAckFloodPktThreshold SYNACK FLOOD包量阈值
+                     */
+                    uint64_t GetSynAckFloodPktThreshold() const;
+
+                    /**
+                     * 设置SYNACK FLOOD包量阈值
+                     * @param SynAckFloodPktThreshold SYNACK FLOOD包量阈值
+                     */
+                    void SetSynAckFloodPktThreshold(const uint64_t& _synAckFloodPktThreshold);
+
+                    /**
+                     * 判断参数 SynAckFloodPktThreshold 是否已赋值
+                     * @return SynAckFloodPktThreshold 是否已赋值
+                     */
+                    bool SynAckFloodPktThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取RST FLOOD流量阈值
+                     * @return RstFloodThreshold RST FLOOD流量阈值
+                     */
+                    uint64_t GetRstFloodThreshold() const;
+
+                    /**
+                     * 设置RST FLOOD流量阈值
+                     * @param RstFloodThreshold RST FLOOD流量阈值
+                     */
+                    void SetRstFloodThreshold(const uint64_t& _rstFloodThreshold);
+
+                    /**
+                     * 判断参数 RstFloodThreshold 是否已赋值
+                     * @return RstFloodThreshold 是否已赋值
+                     */
+                    bool RstFloodThresholdHasBeenSet() const;
+
+                    /**
+                     * 获取RST FLOOD包量阈值
+                     * @return RstFloodPktThreshold RST FLOOD包量阈值
+                     */
+                    uint64_t GetRstFloodPktThreshold() const;
+
+                    /**
+                     * 设置RST FLOOD包量阈值
+                     * @param RstFloodPktThreshold RST FLOOD包量阈值
+                     */
+                    void SetRstFloodPktThreshold(const uint64_t& _rstFloodPktThreshold);
+
+                    /**
+                     * 判断参数 RstFloodPktThreshold 是否已赋值
+                     * @return RstFloodPktThreshold 是否已赋值
+                     */
+                    bool RstFloodPktThresholdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +348,42 @@ namespace TencentCloud
                      */
                     uint64_t m_udpFloodPktThreshold;
                     bool m_udpFloodPktThresholdHasBeenSet;
+
+                    /**
+                     * ACK FLOOD流量阈值
+                     */
+                    uint64_t m_ackFloodThreshold;
+                    bool m_ackFloodThresholdHasBeenSet;
+
+                    /**
+                     * ACK FLOOD包量阈值
+                     */
+                    uint64_t m_ackFloodPktThreshold;
+                    bool m_ackFloodPktThresholdHasBeenSet;
+
+                    /**
+                     * SYNACK FLOOD流量阈值
+                     */
+                    uint64_t m_synAckFloodThreshold;
+                    bool m_synAckFloodThresholdHasBeenSet;
+
+                    /**
+                     * SYNACK FLOOD包量阈值
+                     */
+                    uint64_t m_synAckFloodPktThreshold;
+                    bool m_synAckFloodPktThresholdHasBeenSet;
+
+                    /**
+                     * RST FLOOD流量阈值
+                     */
+                    uint64_t m_rstFloodThreshold;
+                    bool m_rstFloodThresholdHasBeenSet;
+
+                    /**
+                     * RST FLOOD包量阈值
+                     */
+                    uint64_t m_rstFloodPktThreshold;
+                    bool m_rstFloodPktThresholdHasBeenSet;
 
                 };
             }

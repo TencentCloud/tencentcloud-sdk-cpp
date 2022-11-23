@@ -41,6 +41,8 @@
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordBatchRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateRecordBatchResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateRecordGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/CreateRecordGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/CreateSnapshotResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainRequest.h>
@@ -49,6 +51,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainAliasResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteRecordGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteRecordGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteShareDomainRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteShareDomainResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteSnapshotRequest.h>
@@ -73,6 +77,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordLineListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordLineListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordListRequest.h>
@@ -113,10 +119,14 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRemarkRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRemarkResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordStatusRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordStatusResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordToGroupRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordToGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySnapshotConfigRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySnapshotConfigResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifySubdomainStatusRequest.h>
@@ -170,6 +180,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRecordBatchResponse> CreateRecordBatchOutcome;
                 typedef std::future<CreateRecordBatchOutcome> CreateRecordBatchOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateRecordBatchRequest&, CreateRecordBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRecordGroupResponse> CreateRecordGroupOutcome;
+                typedef std::future<CreateRecordGroupOutcome> CreateRecordGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::CreateRecordGroupRequest&, CreateRecordGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSnapshotResponse> CreateSnapshotOutcome;
                 typedef std::future<CreateSnapshotOutcome> CreateSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::CreateSnapshotRequest&, CreateSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotAsyncHandler;
@@ -182,6 +195,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRecordResponse> DeleteRecordOutcome;
                 typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteRecordRequest&, DeleteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRecordGroupResponse> DeleteRecordGroupOutcome;
+                typedef std::future<DeleteRecordGroupOutcome> DeleteRecordGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DeleteRecordGroupRequest&, DeleteRecordGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteShareDomainResponse> DeleteShareDomainOutcome;
                 typedef std::future<DeleteShareDomainOutcome> DeleteShareDomainOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteShareDomainRequest&, DeleteShareDomainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteShareDomainAsyncHandler;
@@ -218,6 +234,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRecordResponse> DescribeRecordOutcome;
                 typedef std::future<DescribeRecordOutcome> DescribeRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordRequest&, DescribeRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordGroupListResponse> DescribeRecordGroupListOutcome;
+                typedef std::future<DescribeRecordGroupListOutcome> DescribeRecordGroupListOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeRecordGroupListRequest&, DescribeRecordGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordGroupListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordLineListResponse> DescribeRecordLineListOutcome;
                 typedef std::future<DescribeRecordLineListOutcome> DescribeRecordLineListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordLineListRequest&, DescribeRecordLineListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordLineListAsyncHandler;
@@ -278,12 +297,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRecordBatchResponse> ModifyRecordBatchOutcome;
                 typedef std::future<ModifyRecordBatchOutcome> ModifyRecordBatchOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordBatchRequest&, ModifyRecordBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordGroupResponse> ModifyRecordGroupOutcome;
+                typedef std::future<ModifyRecordGroupOutcome> ModifyRecordGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyRecordGroupRequest&, ModifyRecordGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRecordRemarkResponse> ModifyRecordRemarkOutcome;
                 typedef std::future<ModifyRecordRemarkOutcome> ModifyRecordRemarkOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordRemarkRequest&, ModifyRecordRemarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordRemarkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRecordStatusResponse> ModifyRecordStatusOutcome;
                 typedef std::future<ModifyRecordStatusOutcome> ModifyRecordStatusOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordStatusRequest&, ModifyRecordStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordToGroupResponse> ModifyRecordToGroupOutcome;
+                typedef std::future<ModifyRecordToGroupOutcome> ModifyRecordToGroupOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyRecordToGroupRequest&, ModifyRecordToGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordToGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySnapshotConfigResponse> ModifySnapshotConfigOutcome;
                 typedef std::future<ModifySnapshotConfigOutcome> ModifySnapshotConfigOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifySnapshotConfigRequest&, ModifySnapshotConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotConfigAsyncHandler;
@@ -389,6 +414,15 @@ namespace TencentCloud
                 CreateRecordBatchOutcomeCallable CreateRecordBatchCallable(const Model::CreateRecordBatchRequest& request);
 
                 /**
+                 *添加记录分组
+                 * @param req CreateRecordGroupRequest
+                 * @return CreateRecordGroupOutcome
+                 */
+                CreateRecordGroupOutcome CreateRecordGroup(const Model::CreateRecordGroupRequest &request);
+                void CreateRecordGroupAsync(const Model::CreateRecordGroupRequest& request, const CreateRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRecordGroupOutcomeCallable CreateRecordGroupCallable(const Model::CreateRecordGroupRequest& request);
+
+                /**
                  *创建快照
                  * @param req CreateSnapshotRequest
                  * @return CreateSnapshotOutcome
@@ -424,6 +458,15 @@ namespace TencentCloud
                 DeleteRecordOutcome DeleteRecord(const Model::DeleteRecordRequest &request);
                 void DeleteRecordAsync(const Model::DeleteRecordRequest& request, const DeleteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteRecordOutcomeCallable DeleteRecordCallable(const Model::DeleteRecordRequest& request);
+
+                /**
+                 *删除记录分组
+                 * @param req DeleteRecordGroupRequest
+                 * @return DeleteRecordGroupOutcome
+                 */
+                DeleteRecordGroupOutcome DeleteRecordGroup(const Model::DeleteRecordGroupRequest &request);
+                void DeleteRecordGroupAsync(const Model::DeleteRecordGroupRequest& request, const DeleteRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRecordGroupOutcomeCallable DeleteRecordGroupCallable(const Model::DeleteRecordGroupRequest& request);
 
                 /**
                  *删除域名共享
@@ -532,6 +575,15 @@ namespace TencentCloud
                 DescribeRecordOutcome DescribeRecord(const Model::DescribeRecordRequest &request);
                 void DescribeRecordAsync(const Model::DescribeRecordRequest& request, const DescribeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordOutcomeCallable DescribeRecordCallable(const Model::DescribeRecordRequest& request);
+
+                /**
+                 *查询解析记录分组列表
+                 * @param req DescribeRecordGroupListRequest
+                 * @return DescribeRecordGroupListOutcome
+                 */
+                DescribeRecordGroupListOutcome DescribeRecordGroupList(const Model::DescribeRecordGroupListRequest &request);
+                void DescribeRecordGroupListAsync(const Model::DescribeRecordGroupListRequest& request, const DescribeRecordGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordGroupListOutcomeCallable DescribeRecordGroupListCallable(const Model::DescribeRecordGroupListRequest& request);
 
                 /**
                  *获取等级允许的线路
@@ -715,6 +767,15 @@ namespace TencentCloud
                 ModifyRecordBatchOutcomeCallable ModifyRecordBatchCallable(const Model::ModifyRecordBatchRequest& request);
 
                 /**
+                 *修改记录分组
+                 * @param req ModifyRecordGroupRequest
+                 * @return ModifyRecordGroupOutcome
+                 */
+                ModifyRecordGroupOutcome ModifyRecordGroup(const Model::ModifyRecordGroupRequest &request);
+                void ModifyRecordGroupAsync(const Model::ModifyRecordGroupRequest& request, const ModifyRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordGroupOutcomeCallable ModifyRecordGroupCallable(const Model::ModifyRecordGroupRequest& request);
+
+                /**
                  *设置记录备注
                  * @param req ModifyRecordRemarkRequest
                  * @return ModifyRecordRemarkOutcome
@@ -731,6 +792,15 @@ namespace TencentCloud
                 ModifyRecordStatusOutcome ModifyRecordStatus(const Model::ModifyRecordStatusRequest &request);
                 void ModifyRecordStatusAsync(const Model::ModifyRecordStatusRequest& request, const ModifyRecordStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRecordStatusOutcomeCallable ModifyRecordStatusCallable(const Model::ModifyRecordStatusRequest& request);
+
+                /**
+                 *将记录添加到分组
+                 * @param req ModifyRecordToGroupRequest
+                 * @return ModifyRecordToGroupOutcome
+                 */
+                ModifyRecordToGroupOutcome ModifyRecordToGroup(const Model::ModifyRecordToGroupRequest &request);
+                void ModifyRecordToGroupAsync(const Model::ModifyRecordToGroupRequest& request, const ModifyRecordToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordToGroupOutcomeCallable ModifyRecordToGroupCallable(const Model::ModifyRecordToGroupRequest& request);
 
                 /**
                  *修改快照配置

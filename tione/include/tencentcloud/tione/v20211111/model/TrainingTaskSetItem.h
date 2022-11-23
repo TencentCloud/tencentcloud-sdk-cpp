@@ -251,14 +251,14 @@ namespace TencentCloud
                     bool TrainingModeHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
+                     * @return Status 任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param Status 任务状态
+                     * 设置任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
+                     * @param Status 任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
                      */
                     void SetStatus(const std::string& _status);
 
@@ -580,7 +580,7 @@ namespace TencentCloud
                     bool m_trainingModeHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

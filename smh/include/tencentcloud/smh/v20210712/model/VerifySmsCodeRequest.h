@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。
-                     * @return Purpose 验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。
+                     * 获取验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
+                     * @return Purpose 验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
                      */
                     std::string GetPurpose() const;
 
                     /**
-                     * 设置验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。
-                     * @param Purpose 验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。
+                     * 设置验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
+                     * @param Purpose 验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
                      */
                     void SetPurpose(const std::string& _purpose);
 
@@ -59,24 +59,6 @@ namespace TencentCloud
                      * @return Purpose 是否已赋值
                      */
                     bool PurposeHasBeenSet() const;
-
-                    /**
-                     * 获取官方云盘实例 ID
-                     * @return InstanceId 官方云盘实例 ID
-                     */
-                    std::string GetInstanceId() const;
-
-                    /**
-                     * 设置官方云盘实例 ID
-                     * @param InstanceId 官方云盘实例 ID
-                     */
-                    void SetInstanceId(const std::string& _instanceId);
-
-                    /**
-                     * 判断参数 InstanceId 是否已赋值
-                     * @return InstanceId 是否已赋值
-                     */
-                    bool InstanceIdHasBeenSet() const;
 
                     /**
                      * 获取将作为超级管理员账号的手机号码
@@ -115,6 +97,24 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
+                     * 获取官方云盘实例 ID
+                     * @return InstanceId 官方云盘实例 ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置官方云盘实例 ID
+                     * @param InstanceId 官方云盘实例 ID
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
+                    /**
                      * 获取将作为超级管理员账号的手机号码的国家代码。默认为 +86。
                      * @return CountryCode 将作为超级管理员账号的手机号码的国家代码。默认为 +86。
                      */
@@ -135,16 +135,10 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验证码目的，当前仅支持换绑超级管理员账号，固定填写 BindSuperAdmin。
+                     * 验证码目的，当前支持换绑超级管理员账号，BindSuperAdmin；体验版企业升级验证ChannelUpdateVerify，等
                      */
                     std::string m_purpose;
                     bool m_purposeHasBeenSet;
-
-                    /**
-                     * 官方云盘实例 ID
-                     */
-                    std::string m_instanceId;
-                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 将作为超级管理员账号的手机号码
@@ -157,6 +151,12 @@ namespace TencentCloud
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
+
+                    /**
+                     * 官方云盘实例 ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                     /**
                      * 将作为超级管理员账号的手机号码的国家代码。默认为 +86。

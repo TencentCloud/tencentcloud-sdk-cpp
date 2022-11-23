@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/TemplateParamInfo.h>
 
 
 namespace TencentCloud
@@ -118,6 +119,46 @@ namespace TencentCloud
                      */
                     bool EngineVersionHasBeenSet() const;
 
+                    /**
+                     * 获取数据库类型，可选值：NORMAL，SERVERLESS
+                     * @return DbMode 数据库类型，可选值：NORMAL，SERVERLESS
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置数据库类型，可选值：NORMAL，SERVERLESS
+                     * @param DbMode 数据库类型，可选值：NORMAL，SERVERLESS
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     */
+                    bool DbModeHasBeenSet() const;
+
+                    /**
+                     * 获取参数模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParamInfoSet 参数模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TemplateParamInfo> GetParamInfoSet() const;
+
+                    /**
+                     * 设置参数模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ParamInfoSet 参数模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetParamInfoSet(const std::vector<TemplateParamInfo>& _paramInfoSet);
+
+                    /**
+                     * 判断参数 ParamInfoSet 是否已赋值
+                     * @return ParamInfoSet 是否已赋值
+                     */
+                    bool ParamInfoSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +184,19 @@ namespace TencentCloud
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;
+
+                    /**
+                     * 数据库类型，可选值：NORMAL，SERVERLESS
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
+
+                    /**
+                     * 参数模板详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TemplateParamInfo> m_paramInfoSet;
+                    bool m_paramInfoSetHasBeenSet;
 
                 };
             }

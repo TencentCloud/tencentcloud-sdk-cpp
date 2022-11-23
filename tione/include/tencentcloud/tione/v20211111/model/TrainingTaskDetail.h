@@ -144,17 +144,17 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取训练框架名称，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT
+                     * 获取训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FrameworkName 训练框架名称，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT
+                     * @return FrameworkName 训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFrameworkName() const;
 
                     /**
-                     * 设置训练框架名称，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT
+                     * 设置训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FrameworkName 训练框架名称，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT
+                     * @param FrameworkName 训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFrameworkName(const std::string& _frameworkName);
@@ -812,14 +812,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取任务状态
-                     * @return Status 任务状态
+                     * 获取任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
+                     * @return Status 任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置任务状态
-                     * @param Status 任务状态
+                     * 设置任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
+                     * @param Status 任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
                      */
                     void SetStatus(const std::string& _status);
 
@@ -862,7 +862,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 训练框架名称，eg：SPARK、TENSORFLOW、PYTORCH、LIGHT
+                     * 训练框架名称，eg：SPARK、PYSARK、TENSORFLOW、PYTORCH
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_frameworkName;
@@ -1077,7 +1077,7 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 任务状态
+                     * 任务状态，eg：STARTING启动中、RUNNING运行中、STOPPING停止中、STOPPED已停止、FAILED异常、SUCCEED已完成
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

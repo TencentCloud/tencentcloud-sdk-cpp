@@ -14,43 +14,42 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEBILLINGDATARESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEBILLINGDATARESPONSE_H_
+#ifndef TENCENTCLOUD_WEDATA_V20210820_MODEL_CREATERESOURCEPATHRESPONSE_H_
+#define TENCENTCLOUD_WEDATA_V20210820_MODEL_CREATERESOURCEPATHRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/teo/v20220901/model/DnsData.h>
 
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Wedata
     {
-        namespace V20220901
+        namespace V20210820
         {
             namespace Model
             {
                 /**
-                * DescribeBillingData返回参数结构体
+                * CreateResourcePath返回参数结构体
                 */
-                class DescribeBillingDataResponse : public AbstractModel
+                class CreateResourcePathResponse : public AbstractModel
                 {
                 public:
-                    DescribeBillingDataResponse();
-                    ~DescribeBillingDataResponse() = default;
+                    CreateResourcePathResponse();
+                    ~CreateResourcePathResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取统计曲线数据
+                     * 获取新建成功
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 统计曲线数据
+                     * @return Data 新建成功
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<DnsData> GetData() const;
+                    bool GetData() const;
 
                     /**
                      * 判断参数 Data 是否已赋值
@@ -58,35 +57,14 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
-                    /**
-                     * 获取时间粒度
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Interval 时间粒度
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetInterval() const;
-
-                    /**
-                     * 判断参数 Interval 是否已赋值
-                     * @return Interval 是否已赋值
-                     */
-                    bool IntervalHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 统计曲线数据
+                     * 新建成功
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<DnsData> m_data;
+                    bool m_data;
                     bool m_dataHasBeenSet;
-
-                    /**
-                     * 时间粒度
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_interval;
-                    bool m_intervalHasBeenSet;
 
                 };
             }
@@ -94,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEBILLINGDATARESPONSE_H_
+#endif // !TENCENTCLOUD_WEDATA_V20210820_MODEL_CREATERESOURCEPATHRESPONSE_H_

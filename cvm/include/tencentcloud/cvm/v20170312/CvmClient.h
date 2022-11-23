@@ -35,6 +35,8 @@
 #include <tencentcloud/cvm/v20170312/model/ConfigureChcDeployVpcResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupRequest.h>
 #include <tencentcloud/cvm/v20170312/model/CreateDisasterRecoverGroupResponse.h>
+#include <tencentcloud/cvm/v20170312/model/CreateHpcClusterRequest.h>
+#include <tencentcloud/cvm/v20170312/model/CreateHpcClusterResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateImageRequest.h>
 #include <tencentcloud/cvm/v20170312/model/CreateImageResponse.h>
 #include <tencentcloud/cvm/v20170312/model/CreateKeyPairRequest.h>
@@ -45,6 +47,8 @@
 #include <tencentcloud/cvm/v20170312/model/CreateLaunchTemplateVersionResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteHpcClustersRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DeleteHpcClustersResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteImagesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DeleteKeyPairsRequest.h>
@@ -65,6 +69,8 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeHostsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeHostsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeHpcClustersRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeHpcClustersResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeImageQuotaRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeImageQuotaResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionRequest.h>
@@ -143,6 +149,8 @@
 #include <tencentcloud/cvm/v20170312/model/ModifyDisasterRecoverGroupAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyHostsAttributeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyHpcClusterAttributeRequest.h>
+#include <tencentcloud/cvm/v20170312/model/ModifyHpcClusterAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyImageAttributeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyImageAttributeResponse.h>
 #include <tencentcloud/cvm/v20170312/model/ModifyImageSharePermissionRequest.h>
@@ -229,6 +237,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDisasterRecoverGroupResponse> CreateDisasterRecoverGroupOutcome;
                 typedef std::future<CreateDisasterRecoverGroupOutcome> CreateDisasterRecoverGroupOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::CreateDisasterRecoverGroupRequest&, CreateDisasterRecoverGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDisasterRecoverGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateHpcClusterResponse> CreateHpcClusterOutcome;
+                typedef std::future<CreateHpcClusterOutcome> CreateHpcClusterOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::CreateHpcClusterRequest&, CreateHpcClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateHpcClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateImageResponse> CreateImageOutcome;
                 typedef std::future<CreateImageOutcome> CreateImageOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::CreateImageRequest&, CreateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageAsyncHandler;
@@ -244,6 +255,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDisasterRecoverGroupsResponse> DeleteDisasterRecoverGroupsOutcome;
                 typedef std::future<DeleteDisasterRecoverGroupsOutcome> DeleteDisasterRecoverGroupsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteDisasterRecoverGroupsRequest&, DeleteDisasterRecoverGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDisasterRecoverGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteHpcClustersResponse> DeleteHpcClustersOutcome;
+                typedef std::future<DeleteHpcClustersOutcome> DeleteHpcClustersOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DeleteHpcClustersRequest&, DeleteHpcClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteHpcClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteImagesResponse> DeleteImagesOutcome;
                 typedef std::future<DeleteImagesOutcome> DeleteImagesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DeleteImagesRequest&, DeleteImagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteImagesAsyncHandler;
@@ -274,6 +288,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeHostsResponse> DescribeHostsOutcome;
                 typedef std::future<DescribeHostsOutcome> DescribeHostsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeHostsRequest&, DescribeHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHpcClustersResponse> DescribeHpcClustersOutcome;
+                typedef std::future<DescribeHpcClustersOutcome> DescribeHpcClustersOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeHpcClustersRequest&, DescribeHpcClustersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHpcClustersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageQuotaResponse> DescribeImageQuotaOutcome;
                 typedef std::future<DescribeImageQuotaOutcome> DescribeImageQuotaOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeImageQuotaRequest&, DescribeImageQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageQuotaAsyncHandler;
@@ -391,6 +408,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyHostsAttributeResponse> ModifyHostsAttributeOutcome;
                 typedef std::future<ModifyHostsAttributeOutcome> ModifyHostsAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyHostsAttributeRequest&, ModifyHostsAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHostsAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyHpcClusterAttributeResponse> ModifyHpcClusterAttributeOutcome;
+                typedef std::future<ModifyHpcClusterAttributeOutcome> ModifyHpcClusterAttributeOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::ModifyHpcClusterAttributeRequest&, ModifyHpcClusterAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyHpcClusterAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyImageAttributeResponse> ModifyImageAttributeOutcome;
                 typedef std::future<ModifyImageAttributeOutcome> ModifyImageAttributeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::ModifyImageAttributeRequest&, ModifyImageAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageAttributeAsyncHandler;
@@ -537,6 +557,15 @@ namespace TencentCloud
                 CreateDisasterRecoverGroupOutcomeCallable CreateDisasterRecoverGroupCallable(const Model::CreateDisasterRecoverGroupRequest& request);
 
                 /**
+                 *创建高性能计算集群
+                 * @param req CreateHpcClusterRequest
+                 * @return CreateHpcClusterOutcome
+                 */
+                CreateHpcClusterOutcome CreateHpcCluster(const Model::CreateHpcClusterRequest &request);
+                void CreateHpcClusterAsync(const Model::CreateHpcClusterRequest& request, const CreateHpcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateHpcClusterOutcomeCallable CreateHpcClusterCallable(const Model::CreateHpcClusterRequest& request);
+
+                /**
                  *本接口(CreateImage)用于将实例的系统盘制作为新镜像，创建后的镜像可以用于创建实例。
                  * @param req CreateImageRequest
                  * @return CreateImageOutcome
@@ -589,6 +618,15 @@ namespace TencentCloud
                 DeleteDisasterRecoverGroupsOutcome DeleteDisasterRecoverGroups(const Model::DeleteDisasterRecoverGroupsRequest &request);
                 void DeleteDisasterRecoverGroupsAsync(const Model::DeleteDisasterRecoverGroupsRequest& request, const DeleteDisasterRecoverGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDisasterRecoverGroupsOutcomeCallable DeleteDisasterRecoverGroupsCallable(const Model::DeleteDisasterRecoverGroupsRequest& request);
+
+                /**
+                 *当高性能计算集群为空, 即集群内没有任何设备时候, 可以删除改集群。
+                 * @param req DeleteHpcClustersRequest
+                 * @return DeleteHpcClustersOutcome
+                 */
+                DeleteHpcClustersOutcome DeleteHpcClusters(const Model::DeleteHpcClustersRequest &request);
+                void DeleteHpcClustersAsync(const Model::DeleteHpcClustersRequest& request, const DeleteHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteHpcClustersOutcomeCallable DeleteHpcClustersCallable(const Model::DeleteHpcClustersRequest& request);
 
                 /**
                  *本接口（DeleteImages）用于删除一个或多个镜像。
@@ -689,6 +727,15 @@ namespace TencentCloud
                 DescribeHostsOutcome DescribeHosts(const Model::DescribeHostsRequest &request);
                 void DescribeHostsAsync(const Model::DescribeHostsRequest& request, const DescribeHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeHostsOutcomeCallable DescribeHostsCallable(const Model::DescribeHostsRequest& request);
+
+                /**
+                 *查询高性能集群信息
+                 * @param req DescribeHpcClustersRequest
+                 * @return DescribeHpcClustersOutcome
+                 */
+                DescribeHpcClustersOutcome DescribeHpcClusters(const Model::DescribeHpcClustersRequest &request);
+                void DescribeHpcClustersAsync(const Model::DescribeHpcClustersRequest& request, const DescribeHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHpcClustersOutcomeCallable DescribeHpcClustersCallable(const Model::DescribeHpcClustersRequest& request);
 
                 /**
                  *本接口(DescribeImageQuota)用于查询用户帐号的镜像配额。
@@ -1110,6 +1157,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyHostsAttributeOutcome ModifyHostsAttribute(const Model::ModifyHostsAttributeRequest &request);
                 void ModifyHostsAttributeAsync(const Model::ModifyHostsAttributeRequest& request, const ModifyHostsAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyHostsAttributeOutcomeCallable ModifyHostsAttributeCallable(const Model::ModifyHostsAttributeRequest& request);
+
+                /**
+                 *修改高性能计算集群属性。
+                 * @param req ModifyHpcClusterAttributeRequest
+                 * @return ModifyHpcClusterAttributeOutcome
+                 */
+                ModifyHpcClusterAttributeOutcome ModifyHpcClusterAttribute(const Model::ModifyHpcClusterAttributeRequest &request);
+                void ModifyHpcClusterAttributeAsync(const Model::ModifyHpcClusterAttributeRequest& request, const ModifyHpcClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyHpcClusterAttributeOutcomeCallable ModifyHpcClusterAttributeCallable(const Model::ModifyHpcClusterAttributeRequest& request);
 
                 /**
                  *本接口（ModifyImageAttribute）用于修改镜像属性。

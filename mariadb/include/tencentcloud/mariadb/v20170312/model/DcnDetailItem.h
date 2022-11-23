@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mariadb/v20170312/model/DCNReplicaConfig.h>
+#include <tencentcloud/mariadb/v20170312/model/DCNReplicaStatus.h>
 
 
 namespace TencentCloud
@@ -370,6 +372,68 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取DCN复制的配置信息；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplicaConfig DCN复制的配置信息；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DCNReplicaConfig GetReplicaConfig() const;
+
+                    /**
+                     * 设置DCN复制的配置信息；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReplicaConfig DCN复制的配置信息；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReplicaConfig(const DCNReplicaConfig& _replicaConfig);
+
+                    /**
+                     * 判断参数 ReplicaConfig 是否已赋值
+                     * @return ReplicaConfig 是否已赋值
+                     */
+                    bool ReplicaConfigHasBeenSet() const;
+
+                    /**
+                     * 获取DCN复制的状态；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplicaStatus DCN复制的状态；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DCNReplicaStatus GetReplicaStatus() const;
+
+                    /**
+                     * 设置DCN复制的状态；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReplicaStatus DCN复制的状态；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReplicaStatus(const DCNReplicaStatus& _replicaStatus);
+
+                    /**
+                     * 判断参数 ReplicaStatus 是否已赋值
+                     * @return ReplicaStatus 是否已赋值
+                     */
+                    bool ReplicaStatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启了 kms
+                     * @return EncryptStatus 是否开启了 kms
+                     */
+                    int64_t GetEncryptStatus() const;
+
+                    /**
+                     * 设置是否开启了 kms
+                     * @param EncryptStatus 是否开启了 kms
+                     */
+                    void SetEncryptStatus(const int64_t& _encryptStatus);
+
+                    /**
+                     * 判断参数 EncryptStatus 是否已赋值
+                     * @return EncryptStatus 是否已赋值
+                     */
+                    bool EncryptStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +543,26 @@ namespace TencentCloud
                      */
                     int64_t m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * DCN复制的配置信息；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DCNReplicaConfig m_replicaConfig;
+                    bool m_replicaConfigHasBeenSet;
+
+                    /**
+                     * DCN复制的状态；对于主实例，此字段为null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DCNReplicaStatus m_replicaStatus;
+                    bool m_replicaStatusHasBeenSet;
+
+                    /**
+                     * 是否开启了 kms
+                     */
+                    int64_t m_encryptStatus;
+                    bool m_encryptStatusHasBeenSet;
 
                 };
             }

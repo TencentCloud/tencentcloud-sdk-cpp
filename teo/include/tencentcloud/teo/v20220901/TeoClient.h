@@ -91,8 +91,6 @@
 #include <tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h>
-#include <tencentcloud/teo/v20220901/model/DescribeBillingDataRequest.h>
-#include <tencentcloud/teo/v20220901/model/DescribeBillingDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeBotClientIpListRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeBotClientIpListResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeBotDataRequest.h>
@@ -391,9 +389,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAvailablePlansResponse> DescribeAvailablePlansOutcome;
                 typedef std::future<DescribeAvailablePlansOutcome> DescribeAvailablePlansOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeAvailablePlansRequest&, DescribeAvailablePlansOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailablePlansAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeBillingDataResponse> DescribeBillingDataOutcome;
-                typedef std::future<DescribeBillingDataOutcome> DescribeBillingDataOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::DescribeBillingDataRequest&, DescribeBillingDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBillingDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBotClientIpListResponse> DescribeBotClientIpListOutcome;
                 typedef std::future<DescribeBotClientIpListOutcome> DescribeBotClientIpListOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeBotClientIpListRequest&, DescribeBotClientIpListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBotClientIpListAsyncHandler;
@@ -975,15 +970,6 @@ namespace TencentCloud
                 DescribeAvailablePlansOutcome DescribeAvailablePlans(const Model::DescribeAvailablePlansRequest &request);
                 void DescribeAvailablePlansAsync(const Model::DescribeAvailablePlansRequest& request, const DescribeAvailablePlansAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAvailablePlansOutcomeCallable DescribeAvailablePlansCallable(const Model::DescribeAvailablePlansRequest& request);
-
-                /**
-                 *获取计费数据。
-                 * @param req DescribeBillingDataRequest
-                 * @return DescribeBillingDataOutcome
-                 */
-                DescribeBillingDataOutcome DescribeBillingData(const Model::DescribeBillingDataRequest &request);
-                void DescribeBillingDataAsync(const Model::DescribeBillingDataRequest& request, const DescribeBillingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeBillingDataOutcomeCallable DescribeBillingDataCallable(const Model::DescribeBillingDataRequest& request);
 
                 /**
                  *本接口（DescribeBotClientIpList）用于查询Bot攻击客户端Ip信息列表。

@@ -22,7 +22,8 @@ using namespace std;
 
 OnlineTaxiItineraryInfo::OnlineTaxiItineraryInfo() :
     m_nameHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_rowHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome OnlineTaxiItineraryInfo::Deserialize(const rapidjson::Value 
         m_valueHasBeenSet = true;
     }
 
+    if (value.HasMember("Row") && !value["Row"].IsNull())
+    {
+        if (!value["Row"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OnlineTaxiItineraryInfo.Row` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_row = value["Row"].GetInt64();
+        m_rowHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void OnlineTaxiItineraryInfo::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "Value";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_value.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rowHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Row";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_row, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void OnlineTaxiItineraryInfo::SetValue(const string& _value)
 bool OnlineTaxiItineraryInfo::ValueHasBeenSet() const
 {
     return m_valueHasBeenSet;
+}
+
+int64_t OnlineTaxiItineraryInfo::GetRow() const
+{
+    return m_row;
+}
+
+void OnlineTaxiItineraryInfo::SetRow(const int64_t& _row)
+{
+    m_row = _row;
+    m_rowHasBeenSet = true;
+}
+
+bool OnlineTaxiItineraryInfo::RowHasBeenSet() const
+{
+    return m_rowHasBeenSet;
 }
 

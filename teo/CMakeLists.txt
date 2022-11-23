@@ -368,7 +368,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeRulesResponse.h
   include/tencentcloud/teo/v20220901/model/TimingDataRecord.h
   include/tencentcloud/teo/v20220901/model/DDoSAttackEventDetailData.h
-  include/tencentcloud/teo/v20220901/model/DescribeBillingDataRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeBotDataResponse.h
   include/tencentcloud/teo/v20220901/model/Tag.h
   include/tencentcloud/teo/v20220901/model/RateLimitConfig.h
   include/tencentcloud/teo/v20220901/model/RuleExtraParameter.h
@@ -421,7 +421,6 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSBlockListRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSMajorAttackEventRequest.h
-  include/tencentcloud/teo/v20220901/model/BillingDataFilter.h
   include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyListRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeZonesResponse.h
@@ -615,7 +614,6 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusRequest.h
   include/tencentcloud/teo/v20220901/model/CreateZoneRequest.h
   include/tencentcloud/teo/v20220901/model/AscriptionInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeLogSetsResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeClientRuleListResponse.h
   include/tencentcloud/teo/v20220901/model/Waf.h
@@ -741,7 +739,6 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/IntelligenceRuleItem.h
   include/tencentcloud/teo/v20220901/model/DescribeLogTopicTaskDetailResponse.h
   include/tencentcloud/teo/v20220901/model/PostMaxSize.h
-  include/tencentcloud/teo/v20220901/model/DescribeBillingDataResponse.h
   include/tencentcloud/teo/v20220901/model/Filter.h
   include/tencentcloud/teo/v20220901/model/CreateZoneResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingQuotaRequest.h
@@ -1126,7 +1123,7 @@ set(teo_src
   src/v20220901/model/DescribeRulesResponse.cpp
   src/v20220901/model/TimingDataRecord.cpp
   src/v20220901/model/DDoSAttackEventDetailData.cpp
-  src/v20220901/model/DescribeBillingDataRequest.cpp
+  src/v20220901/model/DescribeBotDataResponse.cpp
   src/v20220901/model/Tag.cpp
   src/v20220901/model/RateLimitConfig.cpp
   src/v20220901/model/RuleExtraParameter.cpp
@@ -1179,7 +1176,6 @@ set(teo_src
   src/v20220901/model/CreateApplicationProxyRuleRequest.cpp
   src/v20220901/model/DescribeDDoSBlockListRequest.cpp
   src/v20220901/model/DescribeDDoSMajorAttackEventRequest.cpp
-  src/v20220901/model/BillingDataFilter.cpp
   src/v20220901/model/DescribeSecurityPolicyListRequest.cpp
   src/v20220901/model/DescribeTimingL7CacheDataResponse.cpp
   src/v20220901/model/DescribeZonesResponse.cpp
@@ -1373,7 +1369,6 @@ set(teo_src
   src/v20220901/model/ModifyApplicationProxyStatusRequest.cpp
   src/v20220901/model/CreateZoneRequest.cpp
   src/v20220901/model/AscriptionInfo.cpp
-  src/v20220901/model/DescribeBotDataResponse.cpp
   src/v20220901/model/DescribeLogSetsResponse.cpp
   src/v20220901/model/DescribeClientRuleListResponse.cpp
   src/v20220901/model/Waf.cpp
@@ -1499,7 +1494,6 @@ set(teo_src
   src/v20220901/model/IntelligenceRuleItem.cpp
   src/v20220901/model/DescribeLogTopicTaskDetailResponse.cpp
   src/v20220901/model/PostMaxSize.cpp
-  src/v20220901/model/DescribeBillingDataResponse.cpp
   src/v20220901/model/Filter.cpp
   src/v20220901/model/CreateZoneResponse.cpp
   src/v20220901/model/DescribeSpeedTestingQuotaRequest.cpp

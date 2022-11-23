@@ -1502,6 +1502,49 @@ WedataClient::CreateOrUpdateResourceOutcomeCallable WedataClient::CreateOrUpdate
     return task->get_future();
 }
 
+WedataClient::CreateResourcePathOutcome WedataClient::CreateResourcePath(const CreateResourcePathRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateResourcePath");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateResourcePathResponse rsp = CreateResourcePathResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateResourcePathOutcome(rsp);
+        else
+            return CreateResourcePathOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateResourcePathOutcome(outcome.GetError());
+    }
+}
+
+void WedataClient::CreateResourcePathAsync(const CreateResourcePathRequest& request, const CreateResourcePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateResourcePath(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WedataClient::CreateResourcePathOutcomeCallable WedataClient::CreateResourcePathCallable(const CreateResourcePathRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateResourcePathOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateResourcePath(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WedataClient::CreateRuleOutcome WedataClient::CreateRule(const CreateRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRule");

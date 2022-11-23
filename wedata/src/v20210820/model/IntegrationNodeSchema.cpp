@@ -25,7 +25,8 @@ IntegrationNodeSchema::IntegrationNodeSchema() :
     m_nameHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_propertiesHasBeenSet(false)
+    m_propertiesHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome IntegrationNodeSchema::Deserialize(const rapidjson::Value &v
         m_propertiesHasBeenSet = true;
     }
 
+    if (value.HasMember("Alias") && !value["Alias"].IsNull())
+    {
+        if (!value["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationNodeSchema.Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(value["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +157,14 @@ void IntegrationNodeSchema::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -229,5 +248,21 @@ void IntegrationNodeSchema::SetProperties(const vector<RecordField>& _properties
 bool IntegrationNodeSchema::PropertiesHasBeenSet() const
 {
     return m_propertiesHasBeenSet;
+}
+
+string IntegrationNodeSchema::GetAlias() const
+{
+    return m_alias;
+}
+
+void IntegrationNodeSchema::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool IntegrationNodeSchema::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 

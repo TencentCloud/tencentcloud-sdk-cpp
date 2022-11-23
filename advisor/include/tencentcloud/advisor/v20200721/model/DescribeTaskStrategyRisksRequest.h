@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StrategyIdHasBeenSet() const;
 
                     /**
-                     * 获取限制数量,默认100
-                     * @return Limit 限制数量,默认100
+                     * 获取返回数量,默认值为100,最大值为200
+                     * @return Limit 返回数量,默认值为100,最大值为200
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制数量,默认100
-                     * @param Limit 限制数量,默认100
+                     * 设置返回数量,默认值为100,最大值为200
+                     * @param Limit 返回数量,默认值为100,最大值为200
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -141,7 +141,7 @@ namespace TencentCloud
                     bool m_strategyIdHasBeenSet;
 
                     /**
-                     * 限制数量,默认100
+                     * 返回数量,默认值为100,最大值为200
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -60,6 +60,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/APIConfigDetail.h
   include/tencentcloud/tione/v20211111/model/InferTemplate.h
   include/tencentcloud/tione/v20211111/model/StopBatchTaskRequest.h
+  include/tencentcloud/tione/v20211111/model/ModifyModelServiceRequest.h
   include/tencentcloud/tione/v20211111/model/FrameworkVersion.h
   include/tencentcloud/tione/v20211111/model/ModifyModelServicePartialConfigResponse.h
   include/tencentcloud/tione/v20211111/model/DescribeModelAccEngineVersionsResponse.h
@@ -138,6 +139,7 @@ set(tione_public_header_model
   include/tencentcloud/tione/v20211111/model/DescribeModelServiceHistoryResponse.h
   include/tencentcloud/tione/v20211111/model/BatchModelAccTask.h
   include/tencentcloud/tione/v20211111/model/Filter.h
+  include/tencentcloud/tione/v20211111/model/ModifyModelServiceResponse.h
   include/tencentcloud/tione/v20211111/model/DeleteBatchTaskResponse.h
   include/tencentcloud/tione/v20211111/model/EngineVersion.h
   include/tencentcloud/tione/v20211111/model/DescribeBatchTasksRequest.h
@@ -320,6 +322,7 @@ set(tione_src
   src/v20211111/model/APIConfigDetail.cpp
   src/v20211111/model/InferTemplate.cpp
   src/v20211111/model/StopBatchTaskRequest.cpp
+  src/v20211111/model/ModifyModelServiceRequest.cpp
   src/v20211111/model/FrameworkVersion.cpp
   src/v20211111/model/ModifyModelServicePartialConfigResponse.cpp
   src/v20211111/model/DescribeModelAccEngineVersionsResponse.cpp
@@ -398,6 +401,7 @@ set(tione_src
   src/v20211111/model/DescribeModelServiceHistoryResponse.cpp
   src/v20211111/model/BatchModelAccTask.cpp
   src/v20211111/model/Filter.cpp
+  src/v20211111/model/ModifyModelServiceResponse.cpp
   src/v20211111/model/DeleteBatchTaskResponse.cpp
   src/v20211111/model/EngineVersion.cpp
   src/v20211111/model/DescribeBatchTasksRequest.cpp

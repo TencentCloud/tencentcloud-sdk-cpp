@@ -427,6 +427,49 @@ DnspodClient::CreateRecordBatchOutcomeCallable DnspodClient::CreateRecordBatchCa
     return task->get_future();
 }
 
+DnspodClient::CreateRecordGroupOutcome DnspodClient::CreateRecordGroup(const CreateRecordGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRecordGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRecordGroupResponse rsp = CreateRecordGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRecordGroupOutcome(rsp);
+        else
+            return CreateRecordGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRecordGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::CreateRecordGroupAsync(const CreateRecordGroupRequest& request, const CreateRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRecordGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::CreateRecordGroupOutcomeCallable DnspodClient::CreateRecordGroupCallable(const CreateRecordGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRecordGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRecordGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::CreateSnapshotOutcome DnspodClient::CreateSnapshot(const CreateSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSnapshot");
@@ -592,6 +635,49 @@ DnspodClient::DeleteRecordOutcomeCallable DnspodClient::DeleteRecordCallable(con
         [this, request]()
         {
             return this->DeleteRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DeleteRecordGroupOutcome DnspodClient::DeleteRecordGroup(const DeleteRecordGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecordGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecordGroupResponse rsp = DeleteRecordGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecordGroupOutcome(rsp);
+        else
+            return DeleteRecordGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecordGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DeleteRecordGroupAsync(const DeleteRecordGroupRequest& request, const DeleteRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRecordGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DeleteRecordGroupOutcomeCallable DnspodClient::DeleteRecordGroupCallable(const DeleteRecordGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRecordGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRecordGroup(request);
         }
     );
 
@@ -1108,6 +1194,49 @@ DnspodClient::DescribeRecordOutcomeCallable DnspodClient::DescribeRecordCallable
         [this, request]()
         {
             return this->DescribeRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeRecordGroupListOutcome DnspodClient::DescribeRecordGroupList(const DescribeRecordGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordGroupListResponse rsp = DescribeRecordGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordGroupListOutcome(rsp);
+        else
+            return DescribeRecordGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordGroupListOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeRecordGroupListAsync(const DescribeRecordGroupListRequest& request, const DescribeRecordGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeRecordGroupListOutcomeCallable DnspodClient::DescribeRecordGroupListCallable(const DescribeRecordGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordGroupList(request);
         }
     );
 
@@ -1975,6 +2104,49 @@ DnspodClient::ModifyRecordBatchOutcomeCallable DnspodClient::ModifyRecordBatchCa
     return task->get_future();
 }
 
+DnspodClient::ModifyRecordGroupOutcome DnspodClient::ModifyRecordGroup(const ModifyRecordGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordGroupResponse rsp = ModifyRecordGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordGroupOutcome(rsp);
+        else
+            return ModifyRecordGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyRecordGroupAsync(const ModifyRecordGroupRequest& request, const ModifyRecordGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRecordGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyRecordGroupOutcomeCallable DnspodClient::ModifyRecordGroupCallable(const ModifyRecordGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRecordGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRecordGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::ModifyRecordRemarkOutcome DnspodClient::ModifyRecordRemark(const ModifyRecordRemarkRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRecordRemark");
@@ -2054,6 +2226,49 @@ DnspodClient::ModifyRecordStatusOutcomeCallable DnspodClient::ModifyRecordStatus
         [this, request]()
         {
             return this->ModifyRecordStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::ModifyRecordToGroupOutcome DnspodClient::ModifyRecordToGroup(const ModifyRecordToGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordToGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordToGroupResponse rsp = ModifyRecordToGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordToGroupOutcome(rsp);
+        else
+            return ModifyRecordToGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordToGroupOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyRecordToGroupAsync(const ModifyRecordToGroupRequest& request, const ModifyRecordToGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRecordToGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyRecordToGroupOutcomeCallable DnspodClient::ModifyRecordToGroupCallable(const ModifyRecordToGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRecordToGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRecordToGroup(request);
         }
     );
 

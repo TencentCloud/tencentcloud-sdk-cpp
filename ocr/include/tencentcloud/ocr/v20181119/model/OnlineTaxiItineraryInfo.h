@@ -86,6 +86,24 @@ namespace TencentCloud
                      */
                     bool ValueHasBeenSet() const;
 
+                    /**
+                     * 获取字段所在行，下标从0开始，非行字段或未能识别行号的返回-1
+                     * @return Row 字段所在行，下标从0开始，非行字段或未能识别行号的返回-1
+                     */
+                    int64_t GetRow() const;
+
+                    /**
+                     * 设置字段所在行，下标从0开始，非行字段或未能识别行号的返回-1
+                     * @param Row 字段所在行，下标从0开始，非行字段或未能识别行号的返回-1
+                     */
+                    void SetRow(const int64_t& _row);
+
+                    /**
+                     * 判断参数 Row 是否已赋值
+                     * @return Row 是否已赋值
+                     */
+                    bool RowHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +118,12 @@ namespace TencentCloud
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
+
+                    /**
+                     * 字段所在行，下标从0开始，非行字段或未能识别行号的返回-1
+                     */
+                    int64_t m_row;
+                    bool m_rowHasBeenSet;
 
                 };
             }

@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/DescribeBillingDataResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateResourcePathResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
-DescribeBillingDataResponse::DescribeBillingDataResponse() :
-    m_dataHasBeenSet(false),
-    m_intervalHasBeenSet(false)
+CreateResourcePathResponse::CreateResourcePathResponse() :
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeBillingDataResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateResourcePathResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,39 +64,19 @@ CoreInternalOutcome DescribeBillingDataResponse::Deserialize(const string &paylo
 
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Data"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Data"].IsBool())
         {
-            DnsData item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_data.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Data` IsBool=false incorrectly").SetRequestId(requestId));
         }
+        m_data = rsp["Data"].GetBool();
         m_dataHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Interval") && !rsp["Interval"].IsNull())
-    {
-        if (!rsp["Interval"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Interval` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_interval = string(rsp["Interval"].GetString());
-        m_intervalHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeBillingDataResponse::ToJsonString() const
+string CreateResourcePathResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -108,22 +87,7 @@ string DescribeBillingDataResponse::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Data";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_intervalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Interval";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_interval.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_data, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +102,14 @@ string DescribeBillingDataResponse::ToJsonString() const
 }
 
 
-vector<DnsData> DescribeBillingDataResponse::GetData() const
+bool CreateResourcePathResponse::GetData() const
 {
     return m_data;
 }
 
-bool DescribeBillingDataResponse::DataHasBeenSet() const
+bool CreateResourcePathResponse::DataHasBeenSet() const
 {
     return m_dataHasBeenSet;
-}
-
-string DescribeBillingDataResponse::GetInterval() const
-{
-    return m_interval;
-}
-
-bool DescribeBillingDataResponse::IntervalHasBeenSet() const
-{
-    return m_intervalHasBeenSet;
 }
 
 

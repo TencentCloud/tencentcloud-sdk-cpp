@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/SourceFieldInfo.h>
 
 
 namespace TencentCloud
@@ -204,6 +205,24 @@ namespace TencentCloud
                      */
                     bool SchemaNameHasBeenSet() const;
 
+                    /**
+                     * 获取上游节点的字段信息
+                     * @return SourceFieldInfoList 上游节点的字段信息
+                     */
+                    std::vector<SourceFieldInfo> GetSourceFieldInfoList() const;
+
+                    /**
+                     * 设置上游节点的字段信息
+                     * @param SourceFieldInfoList 上游节点的字段信息
+                     */
+                    void SetSourceFieldInfoList(const std::vector<SourceFieldInfo>& _sourceFieldInfoList);
+
+                    /**
+                     * 判断参数 SourceFieldInfoList 是否已赋值
+                     * @return SourceFieldInfoList 是否已赋值
+                     */
+                    bool SourceFieldInfoListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +278,12 @@ namespace TencentCloud
                      */
                     std::string m_schemaName;
                     bool m_schemaNameHasBeenSet;
+
+                    /**
+                     * 上游节点的字段信息
+                     */
+                    std::vector<SourceFieldInfo> m_sourceFieldInfoList;
+                    bool m_sourceFieldInfoListHasBeenSet;
 
                 };
             }

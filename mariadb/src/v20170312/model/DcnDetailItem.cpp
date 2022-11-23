@@ -38,7 +38,10 @@ DcnDetailItem::DcnDetailItem() :
     m_payModeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_periodEndTimeHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_replicaConfigHasBeenSet(false),
+    m_replicaStatusHasBeenSet(false),
+    m_encryptStatusHasBeenSet(false)
 {
 }
 
@@ -227,6 +230,50 @@ CoreInternalOutcome DcnDetailItem::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplicaConfig") && !value["ReplicaConfig"].IsNull())
+    {
+        if (!value["ReplicaConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.ReplicaConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_replicaConfig.Deserialize(value["ReplicaConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_replicaConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReplicaStatus") && !value["ReplicaStatus"].IsNull())
+    {
+        if (!value["ReplicaStatus"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.ReplicaStatus` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_replicaStatus.Deserialize(value["ReplicaStatus"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_replicaStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EncryptStatus") && !value["EncryptStatus"].IsNull())
+    {
+        if (!value["EncryptStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DcnDetailItem.EncryptStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptStatus = value["EncryptStatus"].GetInt64();
+        m_encryptStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +423,32 @@ void DcnDetailItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceType, allocator);
+    }
+
+    if (m_replicaConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicaConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_replicaConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_replicaStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicaStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_replicaStatus.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_encryptStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_encryptStatus, allocator);
     }
 
 }
@@ -667,5 +740,53 @@ void DcnDetailItem::SetInstanceType(const int64_t& _instanceType)
 bool DcnDetailItem::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+DCNReplicaConfig DcnDetailItem::GetReplicaConfig() const
+{
+    return m_replicaConfig;
+}
+
+void DcnDetailItem::SetReplicaConfig(const DCNReplicaConfig& _replicaConfig)
+{
+    m_replicaConfig = _replicaConfig;
+    m_replicaConfigHasBeenSet = true;
+}
+
+bool DcnDetailItem::ReplicaConfigHasBeenSet() const
+{
+    return m_replicaConfigHasBeenSet;
+}
+
+DCNReplicaStatus DcnDetailItem::GetReplicaStatus() const
+{
+    return m_replicaStatus;
+}
+
+void DcnDetailItem::SetReplicaStatus(const DCNReplicaStatus& _replicaStatus)
+{
+    m_replicaStatus = _replicaStatus;
+    m_replicaStatusHasBeenSet = true;
+}
+
+bool DcnDetailItem::ReplicaStatusHasBeenSet() const
+{
+    return m_replicaStatusHasBeenSet;
+}
+
+int64_t DcnDetailItem::GetEncryptStatus() const
+{
+    return m_encryptStatus;
+}
+
+void DcnDetailItem::SetEncryptStatus(const int64_t& _encryptStatus)
+{
+    m_encryptStatus = _encryptStatus;
+    m_encryptStatusHasBeenSet = true;
+}
+
+bool DcnDetailItem::EncryptStatusHasBeenSet() const
+{
+    return m_encryptStatusHasBeenSet;
 }
 

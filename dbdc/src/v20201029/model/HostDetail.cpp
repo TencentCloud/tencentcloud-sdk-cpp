@@ -43,7 +43,8 @@ HostDetail::HostDetail() :
     m_machineNameHasBeenSet(false),
     m_machineTypeHasBeenSet(false),
     m_pidTagHasBeenSet(false),
-    m_pidHasBeenSet(false)
+    m_pidHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome HostDetail::Deserialize(const rapidjson::Value &value)
         m_pidHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostDetail.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -471,6 +482,14 @@ void HostDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Pid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_pid, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -842,5 +861,21 @@ void HostDetail::SetPid(const int64_t& _pid)
 bool HostDetail::PidHasBeenSet() const
 {
     return m_pidHasBeenSet;
+}
+
+string HostDetail::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void HostDetail::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool HostDetail::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

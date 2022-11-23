@@ -91,6 +91,8 @@
 #include <tencentcloud/wedata/v20210820/model/CreateOfflineTaskResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateOrUpdateResourceRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateOrUpdateResourceResponse.h>
+#include <tencentcloud/wedata/v20210820/model/CreateResourcePathRequest.h>
+#include <tencentcloud/wedata/v20210820/model/CreateResourcePathResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateRuleRequest.h>
 #include <tencentcloud/wedata/v20210820/model/CreateRuleResponse.h>
 #include <tencentcloud/wedata/v20210820/model/CreateRuleTemplateRequest.h>
@@ -527,6 +529,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOrUpdateResourceResponse> CreateOrUpdateResourceOutcome;
                 typedef std::future<CreateOrUpdateResourceOutcome> CreateOrUpdateResourceOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateOrUpdateResourceRequest&, CreateOrUpdateResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOrUpdateResourceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateResourcePathResponse> CreateResourcePathOutcome;
+                typedef std::future<CreateResourcePathOutcome> CreateResourcePathOutcomeCallable;
+                typedef std::function<void(const WedataClient*, const Model::CreateResourcePathRequest&, CreateResourcePathOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResourcePathAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRuleResponse> CreateRuleOutcome;
                 typedef std::future<CreateRuleOutcome> CreateRuleOutcomeCallable;
                 typedef std::function<void(const WedataClient*, const Model::CreateRuleRequest&, CreateRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRuleAsyncHandler;
@@ -1321,6 +1326,15 @@ namespace TencentCloud
                 CreateOrUpdateResourceOutcome CreateOrUpdateResource(const Model::CreateOrUpdateResourceRequest &request);
                 void CreateOrUpdateResourceAsync(const Model::CreateOrUpdateResourceRequest& request, const CreateOrUpdateResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOrUpdateResourceOutcomeCallable CreateOrUpdateResourceCallable(const Model::CreateOrUpdateResourceRequest& request);
+
+                /**
+                 *文件路径的根目录为 /datastudio/resource，如果要在根目录下创建 aaa 文件夹，FilePath的值应该为 /datastudio/resource，如果根目录下已经创建了 aaa 文件夹，要在 aaa 下创建  bbb 文件夹，FilePath的值应该为 /datastudio/resource/aaa
+                 * @param req CreateResourcePathRequest
+                 * @return CreateResourcePathOutcome
+                 */
+                CreateResourcePathOutcome CreateResourcePath(const Model::CreateResourcePathRequest &request);
+                void CreateResourcePathAsync(const Model::CreateResourcePathRequest& request, const CreateResourcePathAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateResourcePathOutcomeCallable CreateResourcePathCallable(const Model::CreateResourcePathRequest& request);
 
                 /**
                  *创建质量规则接口

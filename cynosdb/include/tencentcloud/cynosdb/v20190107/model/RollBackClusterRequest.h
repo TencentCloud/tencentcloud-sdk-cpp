@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool ExpectTimeHasBeenSet() const;
 
                     /**
-                     * 获取期望阈值
-                     * @return ExpectTimeThresh 期望阈值
+                     * 获取期望阈值（已废弃）
+                     * @return ExpectTimeThresh 期望阈值（已废弃）
                      */
                     uint64_t GetExpectTimeThresh() const;
 
                     /**
-                     * 设置期望阈值
-                     * @param ExpectTimeThresh 期望阈值
+                     * 设置期望阈值（已废弃）
+                     * @param ExpectTimeThresh 期望阈值（已废弃）
                      */
                     void SetExpectTimeThresh(const uint64_t& _expectTimeThresh);
 
@@ -153,14 +153,14 @@ namespace TencentCloud
                     bool RollbackDatabasesHasBeenSet() const;
 
                     /**
-                     * 获取回档数据库表
-                     * @return RollbackTables 回档数据库表
+                     * 获取回档数据库表列表
+                     * @return RollbackTables 回档数据库表列表
                      */
                     std::vector<RollbackTable> GetRollbackTables() const;
 
                     /**
-                     * 设置回档数据库表
-                     * @param RollbackTables 回档数据库表
+                     * 设置回档数据库表列表
+                     * @param RollbackTables 回档数据库表列表
                      */
                     void SetRollbackTables(const std::vector<RollbackTable>& _rollbackTables);
 
@@ -197,7 +197,7 @@ namespace TencentCloud
                     bool m_expectTimeHasBeenSet;
 
                     /**
-                     * 期望阈值
+                     * 期望阈值（已废弃）
                      */
                     uint64_t m_expectTimeThresh;
                     bool m_expectTimeThreshHasBeenSet;
@@ -209,7 +209,7 @@ namespace TencentCloud
                     bool m_rollbackDatabasesHasBeenSet;
 
                     /**
-                     * 回档数据库表
+                     * 回档数据库表列表
                      */
                     std::vector<RollbackTable> m_rollbackTables;
                     bool m_rollbackTablesHasBeenSet;

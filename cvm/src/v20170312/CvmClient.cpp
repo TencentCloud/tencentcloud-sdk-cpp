@@ -298,6 +298,49 @@ CvmClient::CreateDisasterRecoverGroupOutcomeCallable CvmClient::CreateDisasterRe
     return task->get_future();
 }
 
+CvmClient::CreateHpcClusterOutcome CvmClient::CreateHpcCluster(const CreateHpcClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHpcCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHpcClusterResponse rsp = CreateHpcClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHpcClusterOutcome(rsp);
+        else
+            return CreateHpcClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHpcClusterOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::CreateHpcClusterAsync(const CreateHpcClusterRequest& request, const CreateHpcClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHpcCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::CreateHpcClusterOutcomeCallable CvmClient::CreateHpcClusterCallable(const CreateHpcClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHpcClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHpcCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::CreateImageOutcome CvmClient::CreateImage(const CreateImageRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateImage");
@@ -506,6 +549,49 @@ CvmClient::DeleteDisasterRecoverGroupsOutcomeCallable CvmClient::DeleteDisasterR
         [this, request]()
         {
             return this->DeleteDisasterRecoverGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::DeleteHpcClustersOutcome CvmClient::DeleteHpcClusters(const DeleteHpcClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteHpcClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteHpcClustersResponse rsp = DeleteHpcClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteHpcClustersOutcome(rsp);
+        else
+            return DeleteHpcClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteHpcClustersOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DeleteHpcClustersAsync(const DeleteHpcClustersRequest& request, const DeleteHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteHpcClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DeleteHpcClustersOutcomeCallable CvmClient::DeleteHpcClustersCallable(const DeleteHpcClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteHpcClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteHpcClusters(request);
         }
     );
 
@@ -936,6 +1022,49 @@ CvmClient::DescribeHostsOutcomeCallable CvmClient::DescribeHostsCallable(const D
         [this, request]()
         {
             return this->DescribeHosts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::DescribeHpcClustersOutcome CvmClient::DescribeHpcClusters(const DescribeHpcClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHpcClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHpcClustersResponse rsp = DescribeHpcClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHpcClustersOutcome(rsp);
+        else
+            return DescribeHpcClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHpcClustersOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeHpcClustersAsync(const DescribeHpcClustersRequest& request, const DescribeHpcClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHpcClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeHpcClustersOutcomeCallable CvmClient::DescribeHpcClustersCallable(const DescribeHpcClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHpcClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHpcClusters(request);
         }
     );
 
@@ -2613,6 +2742,49 @@ CvmClient::ModifyHostsAttributeOutcomeCallable CvmClient::ModifyHostsAttributeCa
         [this, request]()
         {
             return this->ModifyHostsAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CvmClient::ModifyHpcClusterAttributeOutcome CvmClient::ModifyHpcClusterAttribute(const ModifyHpcClusterAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyHpcClusterAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyHpcClusterAttributeResponse rsp = ModifyHpcClusterAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyHpcClusterAttributeOutcome(rsp);
+        else
+            return ModifyHpcClusterAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyHpcClusterAttributeOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::ModifyHpcClusterAttributeAsync(const ModifyHpcClusterAttributeRequest& request, const ModifyHpcClusterAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyHpcClusterAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::ModifyHpcClusterAttributeOutcomeCallable CvmClient::ModifyHpcClusterAttributeCallable(const ModifyHpcClusterAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyHpcClusterAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyHpcClusterAttribute(request);
         }
     );
 

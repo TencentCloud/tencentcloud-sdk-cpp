@@ -1502,49 +1502,6 @@ TeoClient::DescribeAvailablePlansOutcomeCallable TeoClient::DescribeAvailablePla
     return task->get_future();
 }
 
-TeoClient::DescribeBillingDataOutcome TeoClient::DescribeBillingData(const DescribeBillingDataRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeBillingData");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeBillingDataResponse rsp = DescribeBillingDataResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeBillingDataOutcome(rsp);
-        else
-            return DescribeBillingDataOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeBillingDataOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeBillingDataAsync(const DescribeBillingDataRequest& request, const DescribeBillingDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeBillingData(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeBillingDataOutcomeCallable TeoClient::DescribeBillingDataCallable(const DescribeBillingDataRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeBillingDataOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeBillingData(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::DescribeBotClientIpListOutcome TeoClient::DescribeBotClientIpList(const DescribeBotClientIpListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBotClientIpList");

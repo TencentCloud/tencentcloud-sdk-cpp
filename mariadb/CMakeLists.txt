@@ -69,7 +69,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DcnDetailItem.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordRequest.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesResponse.h
-  include/tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyResponse.h
+  include/tencentcloud/mariadb/v20170312/model/DCNReplicaStatus.h
   include/tencentcloud/mariadb/v20170312/model/CloneAccountRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseObjectsRequest.h
   include/tencentcloud/mariadb/v20170312/model/SlowLogData.h
@@ -150,6 +150,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/IsolateDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/InstanceSpec.h
   include/tencentcloud/mariadb/v20170312/model/DescribeFlowRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DCNReplicaConfig.h
   include/tencentcloud/mariadb/v20170312/model/ModifyAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/DatabaseProcedure.h
   include/tencentcloud/mariadb/v20170312/model/ModifyDBSyncModeRequest.h
@@ -165,6 +166,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ConstraintRange.h
   include/tencentcloud/mariadb/v20170312/model/DescribeRenewalPriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/LogFileInfo.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyResponse.h
   include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/ProcedurePrivilege.h
   include/tencentcloud/mariadb/v20170312/model/DisassociateSecurityGroupsRequest.h
@@ -239,7 +241,7 @@ set(mariadb_src
   src/v20170312/model/DcnDetailItem.cpp
   src/v20170312/model/ResetAccountPasswordRequest.cpp
   src/v20170312/model/CopyAccountPrivilegesResponse.cpp
-  src/v20170312/model/ModifyRealServerAccessStrategyResponse.cpp
+  src/v20170312/model/DCNReplicaStatus.cpp
   src/v20170312/model/CloneAccountRequest.cpp
   src/v20170312/model/DescribeDatabaseObjectsRequest.cpp
   src/v20170312/model/SlowLogData.cpp
@@ -320,6 +322,7 @@ set(mariadb_src
   src/v20170312/model/IsolateDBInstanceRequest.cpp
   src/v20170312/model/InstanceSpec.cpp
   src/v20170312/model/DescribeFlowRequest.cpp
+  src/v20170312/model/DCNReplicaConfig.cpp
   src/v20170312/model/ModifyAccountPrivilegesRequest.cpp
   src/v20170312/model/DatabaseProcedure.cpp
   src/v20170312/model/ModifyDBSyncModeRequest.cpp
@@ -335,6 +338,7 @@ set(mariadb_src
   src/v20170312/model/ConstraintRange.cpp
   src/v20170312/model/DescribeRenewalPriceRequest.cpp
   src/v20170312/model/LogFileInfo.cpp
+  src/v20170312/model/ModifyRealServerAccessStrategyResponse.cpp
   src/v20170312/model/RestartDBInstancesRequest.cpp
   src/v20170312/model/ProcedurePrivilege.cpp
   src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
