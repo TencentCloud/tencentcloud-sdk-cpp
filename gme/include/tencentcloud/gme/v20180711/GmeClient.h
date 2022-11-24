@@ -43,6 +43,8 @@
 #include <tencentcloud/gme/v20180711/model/DescribeAppStatisticsResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationDataRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationDataResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeApplicationListRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeApplicationListResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h>
@@ -111,6 +113,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationDataResponse> DescribeApplicationDataOutcome;
                 typedef std::future<DescribeApplicationDataOutcome> DescribeApplicationDataOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeApplicationDataRequest&, DescribeApplicationDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeApplicationListResponse> DescribeApplicationListOutcome;
+                typedef std::future<DescribeApplicationListOutcome> DescribeApplicationListOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeApplicationListRequest&, DescribeApplicationListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRealtimeScanConfigResponse> DescribeRealtimeScanConfigOutcome;
                 typedef std::future<DescribeRealtimeScanConfigOutcome> DescribeRealtimeScanConfigOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeRealtimeScanConfigRequest&, DescribeRealtimeScanConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeScanConfigAsyncHandler;
@@ -249,6 +254,15 @@ namespace TencentCloud
                 DescribeApplicationDataOutcome DescribeApplicationData(const Model::DescribeApplicationDataRequest &request);
                 void DescribeApplicationDataAsync(const Model::DescribeApplicationDataRequest& request, const DescribeApplicationDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationDataOutcomeCallable DescribeApplicationDataCallable(const Model::DescribeApplicationDataRequest& request);
+
+                /**
+                 *本接口(DescribeApplicationList)用于查询自己账号下的应用列表
+                 * @param req DescribeApplicationListRequest
+                 * @return DescribeApplicationListOutcome
+                 */
+                DescribeApplicationListOutcome DescribeApplicationList(const Model::DescribeApplicationListRequest &request);
+                void DescribeApplicationListAsync(const Model::DescribeApplicationListRequest& request, const DescribeApplicationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeApplicationListOutcomeCallable DescribeApplicationListCallable(const Model::DescribeApplicationListRequest& request);
 
                 /**
                  *获取用户自定义送检信息

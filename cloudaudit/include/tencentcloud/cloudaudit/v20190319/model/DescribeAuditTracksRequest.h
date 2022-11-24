@@ -42,7 +42,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取页码
+                     * @return PageNumber 页码
+                     */
+                    uint64_t GetPageNumber() const;
+
+                    /**
+                     * 设置页码
+                     * @param PageNumber 页码
+                     */
+                    void SetPageNumber(const uint64_t& _pageNumber);
+
+                    /**
+                     * 判断参数 PageNumber 是否已赋值
+                     * @return PageNumber 是否已赋值
+                     */
+                    bool PageNumberHasBeenSet() const;
+
+                    /**
+                     * 获取每页数目
+                     * @return PageSize 每页数目
+                     */
+                    uint64_t GetPageSize() const;
+
+                    /**
+                     * 设置每页数目
+                     * @param PageSize 每页数目
+                     */
+                    void SetPageSize(const uint64_t& _pageSize);
+
+                    /**
+                     * 判断参数 PageSize 是否已赋值
+                     * @return PageSize 是否已赋值
+                     */
+                    bool PageSizeHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 页码
+                     */
+                    uint64_t m_pageNumber;
+                    bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 每页数目
+                     */
+                    uint64_t m_pageSize;
+                    bool m_pageSizeHasBeenSet;
 
                 };
             }

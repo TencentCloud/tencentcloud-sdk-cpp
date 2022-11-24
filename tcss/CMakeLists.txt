@@ -378,6 +378,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ReverseShellEventDescription.h
   include/tencentcloud/tcss/v20201101/model/DescribeImageRegistryNamespaceListResponse.h
   include/tencentcloud/tcss/v20201101/model/VulAffectedImageInfo.h
+  include/tencentcloud/tcss/v20201101/model/TagInfo.h
   include/tencentcloud/tcss/v20201101/model/DeleteCompliancePolicyAssetSetFromWhitelistResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeVirusTaskListResponse.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetHostDetailResponse.h
@@ -582,6 +583,7 @@ set(tcss_public_header_model
   include/tencentcloud/tcss/v20201101/model/ModifySecLogJoinObjectsRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAccessControlDetailResponse.h
   include/tencentcloud/tcss/v20201101/model/CreateImageExportJobResponse.h
+  include/tencentcloud/tcss/v20201101/model/ProjectInfo.h
   include/tencentcloud/tcss/v20201101/model/DescribeAffectedNodeListRequest.h
   include/tencentcloud/tcss/v20201101/model/DescribeAssetImageRegistryAssetStatusResponse.h
   include/tencentcloud/tcss/v20201101/model/ContainerNetwork.h
@@ -1150,6 +1152,7 @@ set(tcss_src
   src/v20201101/model/ReverseShellEventDescription.cpp
   src/v20201101/model/DescribeImageRegistryNamespaceListResponse.cpp
   src/v20201101/model/VulAffectedImageInfo.cpp
+  src/v20201101/model/TagInfo.cpp
   src/v20201101/model/DeleteCompliancePolicyAssetSetFromWhitelistResponse.cpp
   src/v20201101/model/DescribeVirusTaskListResponse.cpp
   src/v20201101/model/DescribeAssetHostDetailResponse.cpp
@@ -1354,6 +1357,7 @@ set(tcss_src
   src/v20201101/model/ModifySecLogJoinObjectsRequest.cpp
   src/v20201101/model/DescribeAccessControlDetailResponse.cpp
   src/v20201101/model/CreateImageExportJobResponse.cpp
+  src/v20201101/model/ProjectInfo.cpp
   src/v20201101/model/DescribeAffectedNodeListRequest.cpp
   src/v20201101/model/DescribeAssetImageRegistryAssetStatusResponse.cpp
   src/v20201101/model/ContainerNetwork.cpp

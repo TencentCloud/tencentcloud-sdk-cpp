@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取二维码/条形码坐标（二维码会返回位置坐标，条形码暂不返回位置坐标，因此默认X和Y返回值均为-1）
-                     * @return Position 二维码/条形码坐标（二维码会返回位置坐标，条形码暂不返回位置坐标，因此默认X和Y返回值均为-1）
+                     * 获取二维码/条形码坐标
+                     * @return Position 二维码/条形码坐标
                      */
                     QrcodePositionObj GetPosition() const;
 
                     /**
-                     * 设置二维码/条形码坐标（二维码会返回位置坐标，条形码暂不返回位置坐标，因此默认X和Y返回值均为-1）
-                     * @param Position 二维码/条形码坐标（二维码会返回位置坐标，条形码暂不返回位置坐标，因此默认X和Y返回值均为-1）
+                     * 设置二维码/条形码坐标
+                     * @param Position 二维码/条形码坐标
                      */
                     void SetPosition(const QrcodePositionObj& _position);
 
@@ -116,7 +116,7 @@ namespace TencentCloud
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 二维码/条形码坐标（二维码会返回位置坐标，条形码暂不返回位置坐标，因此默认X和Y返回值均为-1）
+                     * 二维码/条形码坐标
                      */
                     QrcodePositionObj m_position;
                     bool m_positionHasBeenSet;

@@ -35,7 +35,9 @@ HostInfo::HostInfo() :
     m_publicIpHasBeenSet(false),
     m_uuidHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
-    m_regionIDHasBeenSet(false)
+    m_regionIDHasBeenSet(false),
+    m_projectHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,43 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_regionIDHasBeenSet = true;
     }
 
+    if (value.HasMember("Project") && !value["Project"].IsNull())
+    {
+        if (!value["Project"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.Project` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_project.Deserialize(value["Project"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_projectHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostInfo.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +358,30 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "RegionID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionID, allocator);
+    }
+
+    if (m_projectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Project";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_project.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -562,5 +625,37 @@ void HostInfo::SetRegionID(const int64_t& _regionID)
 bool HostInfo::RegionIDHasBeenSet() const
 {
     return m_regionIDHasBeenSet;
+}
+
+ProjectInfo HostInfo::GetProject() const
+{
+    return m_project;
+}
+
+void HostInfo::SetProject(const ProjectInfo& _project)
+{
+    m_project = _project;
+    m_projectHasBeenSet = true;
+}
+
+bool HostInfo::ProjectHasBeenSet() const
+{
+    return m_projectHasBeenSet;
+}
+
+vector<TagInfo> HostInfo::GetTags() const
+{
+    return m_tags;
+}
+
+void HostInfo::SetTags(const vector<TagInfo>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool HostInfo::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

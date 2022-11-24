@@ -180,7 +180,7 @@ namespace TencentCloud
                 CreateInstanceOutcomeCallable CreateInstanceCallable(const Model::CreateInstanceRequest& request);
 
                 /**
-                 *查询硬件节点信息
+                 *查询集群节点信息
                  * @param req DescribeClusterNodesRequest
                  * @return DescribeClusterNodesOutcome
                  */
@@ -316,7 +316,7 @@ namespace TencentCloud
                 ModifyResourcePoolsOutcomeCallable ModifyResourcePoolsCallable(const Model::ModifyResourcePoolsRequest& request);
 
                 /**
-                 *修改yarn资源调度的资源配置
+                 *修改YARN资源调度的资源配置
                  * @param req ModifyResourceScheduleConfigRequest
                  * @return ModifyResourceScheduleConfigOutcome
                  */
@@ -343,7 +343,7 @@ namespace TencentCloud
                 RunJobFlowOutcomeCallable RunJobFlowCallable(const Model::RunJobFlowRequest& request);
 
                 /**
-                 *实例扩容
+                 *扩容节点
                  * @param req ScaleOutInstanceRequest
                  * @return ScaleOutInstanceOutcome
                  */

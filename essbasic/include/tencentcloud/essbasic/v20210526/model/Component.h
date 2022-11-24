@@ -682,14 +682,14 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool ChannelComponentIdHasBeenSet() const;
 
                     /**
-                     * 获取指定关键字页码
-                     * @return KeywordPage 指定关键字页码
+                     * 获取指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * @return KeywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      */
                     int64_t GetKeywordPage() const;
 
                     /**
-                     * 设置指定关键字页码
-                     * @param KeywordPage 指定关键字页码
+                     * 设置指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
+                     * @param KeywordPage 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      */
                     void SetKeywordPage(const int64_t& _keywordPage);
 
@@ -700,14 +700,14 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool KeywordPageHasBeenSet() const;
 
                     /**
-                     * 获取关键字位置模式
-                     * @return RelativeLocation 关键字位置模式
+                     * 获取关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * @return RelativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      */
                     std::string GetRelativeLocation() const;
 
                     /**
-                     * 设置关键字位置模式
-                     * @param RelativeLocation 关键字位置模式
+                     * 设置关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
+                     * @param RelativeLocation 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      */
                     void SetRelativeLocation(const std::string& _relativeLocation);
 
@@ -718,14 +718,14 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool RelativeLocationHasBeenSet() const;
 
                     /**
-                     * 获取关键字索引
-                     * @return KeywordIndexes 关键字索引
+                     * 获取关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * @return KeywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      */
                     std::vector<int64_t> GetKeywordIndexes() const;
 
                     /**
-                     * 设置关键字索引
-                     * @param KeywordIndexes 关键字索引
+                     * 设置关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
+                     * @param KeywordIndexes 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      */
                     void SetKeywordIndexes(const std::vector<int64_t>& _keywordIndexes);
 
@@ -925,19 +925,19 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool m_channelComponentIdHasBeenSet;
 
                     /**
-                     * 指定关键字页码
+                     * 指定关键字页码，可选参数，指定页码后，将只在指定的页码内查找关键字，非该页码的关键字将不会查询出来
                      */
                     int64_t m_keywordPage;
                     bool m_keywordPageHasBeenSet;
 
                     /**
-                     * 关键字位置模式
+                     * 关键字位置模式，Middle-居中，Below-正下方，Right-正右方，LowerRight-右上角，UpperRight-右下角。示例：如果设置Middle的关键字盖章，则印章的中心会和关键字的中心重合，如果设置Below，则印章在关键字的正下方
                      */
                     std::string m_relativeLocation;
                     bool m_relativeLocationHasBeenSet;
 
                     /**
-                     * 关键字索引
+                     * 关键字索引，可选参数，如果一个关键字在PDF文件中存在多个，可以通过关键字索引指定使用第几个关键字作为最后的结果，可指定多个索引。示例[0,2]，说明使用PDF文件内第1个和第3个关键字位置。
                      */
                     std::vector<int64_t> m_keywordIndexes;
                     bool m_keywordIndexesHasBeenSet;

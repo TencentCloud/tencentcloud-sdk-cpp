@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/tbaas/v20180416/model/ApplyChainMakerBatchUserCertRequest.h>
+#include <tencentcloud/tbaas/v20180416/model/ApplyChainMakerBatchUserCertResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/ApplyUserCertRequest.h>
 #include <tencentcloud/tbaas/v20180416/model/ApplyUserCertResponse.h>
 #include <tencentcloud/tbaas/v20180416/model/CreateChaincodeAndInstallForUserRequest.h>
@@ -103,6 +105,9 @@ namespace TencentCloud
                 TbaasClient(const Credential &credential, const std::string &region);
                 TbaasClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ApplyChainMakerBatchUserCertResponse> ApplyChainMakerBatchUserCertOutcome;
+                typedef std::future<ApplyChainMakerBatchUserCertOutcome> ApplyChainMakerBatchUserCertOutcomeCallable;
+                typedef std::function<void(const TbaasClient*, const Model::ApplyChainMakerBatchUserCertRequest&, ApplyChainMakerBatchUserCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyChainMakerBatchUserCertAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyUserCertResponse> ApplyUserCertOutcome;
                 typedef std::future<ApplyUserCertOutcome> ApplyUserCertOutcomeCallable;
                 typedef std::function<void(const TbaasClient*, const Model::ApplyUserCertRequest&, ApplyUserCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyUserCertAsyncHandler;
@@ -204,6 +209,15 @@ namespace TencentCloud
                 typedef std::function<void(const TbaasClient*, const Model::SrvInvokeRequest&, SrvInvokeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SrvInvokeAsyncHandler;
 
 
+
+                /**
+                 *批量申请长安链用户签名证书
+                 * @param req ApplyChainMakerBatchUserCertRequest
+                 * @return ApplyChainMakerBatchUserCertOutcome
+                 */
+                ApplyChainMakerBatchUserCertOutcome ApplyChainMakerBatchUserCert(const Model::ApplyChainMakerBatchUserCertRequest &request);
+                void ApplyChainMakerBatchUserCertAsync(const Model::ApplyChainMakerBatchUserCertRequest& request, const ApplyChainMakerBatchUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyChainMakerBatchUserCertOutcomeCallable ApplyChainMakerBatchUserCertCallable(const Model::ApplyChainMakerBatchUserCertRequest& request);
 
                 /**
                  *申请用户证书

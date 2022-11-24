@@ -127,6 +127,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateUserRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelTaskResponse.h
+  include/tencentcloud/dlc/v20210125/model/DataGovernPolicy.h
   include/tencentcloud/dlc/v20210125/model/UnlockMetaDataResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteWorkGroupResponse.h
   include/tencentcloud/dlc/v20210125/model/DropDMSTableResponse.h
@@ -298,6 +299,7 @@ set(dlc_src
   src/v20210125/model/CreateUserRequest.cpp
   src/v20210125/model/ModifyWorkGroupRequest.cpp
   src/v20210125/model/CancelTaskResponse.cpp
+  src/v20210125/model/DataGovernPolicy.cpp
   src/v20210125/model/UnlockMetaDataResponse.cpp
   src/v20210125/model/DeleteWorkGroupResponse.cpp
   src/v20210125/model/DropDMSTableResponse.cpp

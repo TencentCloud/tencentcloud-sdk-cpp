@@ -180,6 +180,24 @@ namespace TencentCloud
                      */
                     bool CurrencyHasBeenSet() const;
 
+                    /**
+                     * 获取批量变配资源ID列表
+                     * @return ResourceIdList 批量变配资源ID列表
+                     */
+                    std::vector<std::string> GetResourceIdList() const;
+
+                    /**
+                     * 设置批量变配资源ID列表
+                     * @param ResourceIdList 批量变配资源ID列表
+                     */
+                    void SetResourceIdList(const std::vector<std::string>& _resourceIdList);
+
+                    /**
+                     * 判断参数 ResourceIdList 是否已赋值
+                     * @return ResourceIdList 是否已赋值
+                     */
+                    bool ResourceIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +242,12 @@ namespace TencentCloud
                      */
                     std::string m_currency;
                     bool m_currencyHasBeenSet;
+
+                    /**
+                     * 批量变配资源ID列表
+                     */
+                    std::vector<std::string> m_resourceIdList;
+                    bool m_resourceIdListHasBeenSet;
 
                 };
             }

@@ -228,6 +228,24 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
+                     * @return AuthorizationTypes 支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
+                     */
+                    std::vector<int64_t> GetAuthorizationTypes() const;
+
+                    /**
+                     * 设置支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
+                     * @param AuthorizationTypes 支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
+                     */
+                    void SetAuthorizationTypes(const std::vector<int64_t>& _authorizationTypes);
+
+                    /**
+                     * 判断参数 AuthorizationTypes 是否已赋值
+                     * @return AuthorizationTypes 是否已赋值
+                     */
+                    bool AuthorizationTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +308,12 @@ namespace TencentCloud
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
+                     */
+                    std::vector<int64_t> m_authorizationTypes;
+                    bool m_authorizationTypesHasBeenSet;
 
                 };
             }

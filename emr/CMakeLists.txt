@@ -90,6 +90,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeUsersForUserManagerResponse.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/CdbInfo.h
+  include/tencentcloud/emr/v20190103/model/PriceDetail.h
   include/tencentcloud/emr/v20190103/model/InquirePriceRenewEmrResponse.h
   include/tencentcloud/emr/v20190103/model/MultiDiskMC.h
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h
@@ -196,6 +197,7 @@ set(emr_src
   src/v20190103/model/DescribeUsersForUserManagerResponse.cpp
   src/v20190103/model/InquiryPriceRenewInstanceRequest.cpp
   src/v20190103/model/CdbInfo.cpp
+  src/v20190103/model/PriceDetail.cpp
   src/v20190103/model/InquirePriceRenewEmrResponse.cpp
   src/v20190103/model/MultiDiskMC.cpp
   src/v20190103/model/AddUsersForUserManagerRequest.cpp

@@ -338,16 +338,20 @@ namespace TencentCloud
 
                     /**
                      * 获取模型处理状态
+STATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING：导入中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return TrainingModelStatus 模型处理状态
+STATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING：导入中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTrainingModelStatus() const;
 
                     /**
                      * 设置模型处理状态
+STATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING：导入中
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param TrainingModelStatus 模型处理状态
+STATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING：导入中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTrainingModelStatus(const std::string& _trainingModelStatus);
@@ -656,6 +660,7 @@ namespace TencentCloud
 
                     /**
                      * 模型处理状态
+STATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING：导入中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_trainingModelStatus;

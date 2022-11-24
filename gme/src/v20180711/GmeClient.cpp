@@ -470,6 +470,49 @@ GmeClient::DescribeApplicationDataOutcomeCallable GmeClient::DescribeApplication
     return task->get_future();
 }
 
+GmeClient::DescribeApplicationListOutcome GmeClient::DescribeApplicationList(const DescribeApplicationListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationListResponse rsp = DescribeApplicationListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationListOutcome(rsp);
+        else
+            return DescribeApplicationListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationListOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeApplicationListAsync(const DescribeApplicationListRequest& request, const DescribeApplicationListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeApplicationListOutcomeCallable GmeClient::DescribeApplicationListCallable(const DescribeApplicationListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeRealtimeScanConfigOutcome GmeClient::DescribeRealtimeScanConfig(const DescribeRealtimeScanConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRealtimeScanConfig");

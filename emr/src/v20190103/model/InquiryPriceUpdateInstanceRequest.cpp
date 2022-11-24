@@ -28,7 +28,8 @@ InquiryPriceUpdateInstanceRequest::InquiryPriceUpdateInstanceRequest() :
     m_updateSpecHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_placementHasBeenSet(false),
-    m_currencyHasBeenSet(false)
+    m_currencyHasBeenSet(false),
+    m_resourceIdListHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,19 @@ string InquiryPriceUpdateInstanceRequest::ToJsonString() const
         string key = "Currency";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_resourceIdList.begin(); itr != m_resourceIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -191,6 +205,22 @@ void InquiryPriceUpdateInstanceRequest::SetCurrency(const string& _currency)
 bool InquiryPriceUpdateInstanceRequest::CurrencyHasBeenSet() const
 {
     return m_currencyHasBeenSet;
+}
+
+vector<string> InquiryPriceUpdateInstanceRequest::GetResourceIdList() const
+{
+    return m_resourceIdList;
+}
+
+void InquiryPriceUpdateInstanceRequest::SetResourceIdList(const vector<string>& _resourceIdList)
+{
+    m_resourceIdList = _resourceIdList;
+    m_resourceIdListHasBeenSet = true;
+}
+
+bool InquiryPriceUpdateInstanceRequest::ResourceIdListHasBeenSet() const
+{
+    return m_resourceIdListHasBeenSet;
 }
 
 

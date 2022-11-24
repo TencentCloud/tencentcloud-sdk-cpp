@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dlc/v20210125/model/DataGovernPolicy.h>
 
 
 namespace TencentCloud
@@ -214,6 +215,28 @@ namespace TencentCloud
                      */
                     bool UserSubUinHasBeenSet() const;
 
+                    /**
+                     * 获取数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GovernPolicy 数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DataGovernPolicy GetGovernPolicy() const;
+
+                    /**
+                     * 设置数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GovernPolicy 数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGovernPolicy(const DataGovernPolicy& _governPolicy);
+
+                    /**
+                     * 判断参数 GovernPolicy 是否已赋值
+                     * @return GovernPolicy 是否已赋值
+                     */
+                    bool GovernPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +292,13 @@ namespace TencentCloud
                      */
                     std::string m_userSubUin;
                     bool m_userSubUinHasBeenSet;
+
+                    /**
+                     * 数据治理配置项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DataGovernPolicy m_governPolicy;
+                    bool m_governPolicyHasBeenSet;
 
                 };
             }

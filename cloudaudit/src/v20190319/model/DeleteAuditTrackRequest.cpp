@@ -22,7 +22,8 @@
 using namespace TencentCloud::Cloudaudit::V20190319::Model;
 using namespace std;
 
-DeleteAuditTrackRequest::DeleteAuditTrackRequest()
+DeleteAuditTrackRequest::DeleteAuditTrackRequest() :
+    m_trackIdHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,14 @@ string DeleteAuditTrackRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_trackIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrackId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_trackId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +49,21 @@ string DeleteAuditTrackRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DeleteAuditTrackRequest::GetTrackId() const
+{
+    return m_trackId;
+}
+
+void DeleteAuditTrackRequest::SetTrackId(const uint64_t& _trackId)
+{
+    m_trackId = _trackId;
+    m_trackIdHasBeenSet = true;
+}
+
+bool DeleteAuditTrackRequest::TrackIdHasBeenSet() const
+{
+    return m_trackIdHasBeenSet;
+}
 
 

@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/ProjectInfo.h>
+#include <tencentcloud/tcss/v20201101/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -331,6 +333,30 @@ namespace TencentCloud
                      */
                     bool RegionIDHasBeenSet() const;
 
+                    /**
+                     * 获取所属项目
+                     * @return Project 所属项目
+                     */
+                    ProjectInfo GetProject() const;
+
+                    /**
+                     * 判断参数 Project 是否已赋值
+                     * @return Project 是否已赋值
+                     */
+                    bool ProjectHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+                     * @return Tags 标签
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -476,6 +502,18 @@ namespace TencentCloud
                      */
                     int64_t m_regionID;
                     bool m_regionIDHasBeenSet;
+
+                    /**
+                     * 所属项目
+                     */
+                    ProjectInfo m_project;
+                    bool m_projectHasBeenSet;
+
+                    /**
+                     * 标签
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

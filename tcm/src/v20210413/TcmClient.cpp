@@ -126,6 +126,49 @@ TcmClient::DeleteMeshOutcomeCallable TcmClient::DeleteMeshCallable(const DeleteM
     return task->get_future();
 }
 
+TcmClient::DescribeAccessLogConfigOutcome TcmClient::DescribeAccessLogConfig(const DescribeAccessLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccessLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccessLogConfigResponse rsp = DescribeAccessLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccessLogConfigOutcome(rsp);
+        else
+            return DescribeAccessLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccessLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::DescribeAccessLogConfigAsync(const DescribeAccessLogConfigRequest& request, const DescribeAccessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccessLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::DescribeAccessLogConfigOutcomeCallable TcmClient::DescribeAccessLogConfigCallable(const DescribeAccessLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccessLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccessLogConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcmClient::DescribeMeshOutcome TcmClient::DescribeMesh(const DescribeMeshRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeMesh");
@@ -291,6 +334,49 @@ TcmClient::LinkPrometheusOutcomeCallable TcmClient::LinkPrometheusCallable(const
         [this, request]()
         {
             return this->LinkPrometheus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcmClient::ModifyAccessLogConfigOutcome TcmClient::ModifyAccessLogConfig(const ModifyAccessLogConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccessLogConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccessLogConfigResponse rsp = ModifyAccessLogConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccessLogConfigOutcome(rsp);
+        else
+            return ModifyAccessLogConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccessLogConfigOutcome(outcome.GetError());
+    }
+}
+
+void TcmClient::ModifyAccessLogConfigAsync(const ModifyAccessLogConfigRequest& request, const ModifyAccessLogConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccessLogConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcmClient::ModifyAccessLogConfigOutcomeCallable TcmClient::ModifyAccessLogConfigCallable(const ModifyAccessLogConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccessLogConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccessLogConfig(request);
         }
     );
 

@@ -47,16 +47,20 @@ namespace TencentCloud
                     /**
                      * 获取过滤器
 ModelAccTaskName 任务名称
+ModelSource 模型来源
                      * @return Filters 过滤器
 ModelAccTaskName 任务名称
+ModelSource 模型来源
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤器
 ModelAccTaskName 任务名称
+ModelSource 模型来源
                      * @param Filters 过滤器
 ModelAccTaskName 任务名称
+ModelSource 模型来源
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -121,14 +125,14 @@ ModelAccTaskName 任务名称
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数，默认20
-                     * @return Limit 返回记录条数，默认20
+                     * 获取返回记录条数，默认10
+                     * @return Limit 返回记录条数，默认10
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数，默认20
-                     * @param Limit 返回记录条数，默认20
+                     * 设置返回记录条数，默认10
+                     * @param Limit 返回记录条数，默认10
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -161,6 +165,7 @@ ModelAccTaskName 任务名称
                     /**
                      * 过滤器
 ModelAccTaskName 任务名称
+ModelSource 模型来源
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
@@ -184,7 +189,7 @@ ModelAccTaskName 任务名称
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回记录条数，默认20
+                     * 返回记录条数，默认10
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

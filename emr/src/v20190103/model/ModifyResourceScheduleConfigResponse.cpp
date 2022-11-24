@@ -25,7 +25,8 @@ using namespace std;
 
 ModifyResourceScheduleConfigResponse::ModifyResourceScheduleConfigResponse() :
     m_isDraftHasBeenSet(false),
-    m_errorMsgHasBeenSet(false)
+    m_errorMsgHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,16 @@ CoreInternalOutcome ModifyResourceScheduleConfigResponse::Deserialize(const stri
         m_errorMsgHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_data = string(rsp["Data"].GetString());
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string ModifyResourceScheduleConfigResponse::ToJsonString() const
         string key = "ErrorMsg";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_errorMsg.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +158,16 @@ string ModifyResourceScheduleConfigResponse::GetErrorMsg() const
 bool ModifyResourceScheduleConfigResponse::ErrorMsgHasBeenSet() const
 {
     return m_errorMsgHasBeenSet;
+}
+
+string ModifyResourceScheduleConfigResponse::GetData() const
+{
+    return m_data;
+}
+
+bool ModifyResourceScheduleConfigResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

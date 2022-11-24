@@ -255,6 +255,49 @@ CloudauditClient::DescribeAuditOutcomeCallable CloudauditClient::DescribeAuditCa
     return task->get_future();
 }
 
+CloudauditClient::DescribeAuditTrackOutcome CloudauditClient::DescribeAuditTrack(const DescribeAuditTrackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditTrack");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditTrackResponse rsp = DescribeAuditTrackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditTrackOutcome(rsp);
+        else
+            return DescribeAuditTrackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditTrackOutcome(outcome.GetError());
+    }
+}
+
+void CloudauditClient::DescribeAuditTrackAsync(const DescribeAuditTrackRequest& request, const DescribeAuditTrackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditTrack(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudauditClient::DescribeAuditTrackOutcomeCallable CloudauditClient::DescribeAuditTrackCallable(const DescribeAuditTrackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditTrackOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditTrack(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudauditClient::DescribeAuditTracksOutcome CloudauditClient::DescribeAuditTracks(const DescribeAuditTracksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAuditTracks");

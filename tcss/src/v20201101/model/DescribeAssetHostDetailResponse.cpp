@@ -47,7 +47,9 @@ DescribeAssetHostDetailResponse::DescribeAssetHostDetailResponse() :
     m_machineTypeHasBeenSet(false),
     m_publicIpHasBeenSet(false),
     m_instanceIDHasBeenSet(false),
-    m_regionIDHasBeenSet(false)
+    m_regionIDHasBeenSet(false),
+    m_projectHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -325,6 +327,43 @@ CoreInternalOutcome DescribeAssetHostDetailResponse::Deserialize(const string &p
         m_regionIDHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Project") && !rsp["Project"].IsNull())
+    {
+        if (!rsp["Project"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Project` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_project.Deserialize(rsp["Project"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_projectHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Tags") && !rsp["Tags"].IsNull())
+    {
+        if (!rsp["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TagInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,6 +564,30 @@ string DescribeAssetHostDetailResponse::ToJsonString() const
         string key = "RegionID";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_regionID, allocator);
+    }
+
+    if (m_projectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Project";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_project.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -777,6 +840,26 @@ int64_t DescribeAssetHostDetailResponse::GetRegionID() const
 bool DescribeAssetHostDetailResponse::RegionIDHasBeenSet() const
 {
     return m_regionIDHasBeenSet;
+}
+
+ProjectInfo DescribeAssetHostDetailResponse::GetProject() const
+{
+    return m_project;
+}
+
+bool DescribeAssetHostDetailResponse::ProjectHasBeenSet() const
+{
+    return m_projectHasBeenSet;
+}
+
+vector<TagInfo> DescribeAssetHostDetailResponse::GetTags() const
+{
+    return m_tags;
+}
+
+bool DescribeAssetHostDetailResponse::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 
 

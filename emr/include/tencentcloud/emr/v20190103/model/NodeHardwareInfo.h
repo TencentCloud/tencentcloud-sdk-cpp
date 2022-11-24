@@ -1110,6 +1110,50 @@ namespace TencentCloud
                      */
                     bool ServiceClientHasBeenSet() const;
 
+                    /**
+                     * 获取该实例是否开启实例保护，true为开启 false为关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisableApiTermination 该实例是否开启实例保护，true为开启 false为关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDisableApiTermination() const;
+
+                    /**
+                     * 设置该实例是否开启实例保护，true为开启 false为关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisableApiTermination 该实例是否开启实例保护，true为开启 false为关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisableApiTermination(const bool& _disableApiTermination);
+
+                    /**
+                     * 判断参数 DisableApiTermination 是否已赋值
+                     * @return DisableApiTermination 是否已赋值
+                     */
+                    bool DisableApiTerminationHasBeenSet() const;
+
+                    /**
+                     * 获取0表示老计费，1表示新计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TradeVersion 0表示老计费，1表示新计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTradeVersion() const;
+
+                    /**
+                     * 设置0表示老计费，1表示新计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TradeVersion 0表示老计费，1表示新计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTradeVersion(const int64_t& _tradeVersion);
+
+                    /**
+                     * 判断参数 TradeVersion 是否已赋值
+                     * @return TradeVersion 是否已赋值
+                     */
+                    bool TradeVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1448,6 +1492,20 @@ namespace TencentCloud
                      */
                     std::string m_serviceClient;
                     bool m_serviceClientHasBeenSet;
+
+                    /**
+                     * 该实例是否开启实例保护，true为开启 false为关闭
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_disableApiTermination;
+                    bool m_disableApiTerminationHasBeenSet;
+
+                    /**
+                     * 0表示老计费，1表示新计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_tradeVersion;
+                    bool m_tradeVersionHasBeenSet;
 
                 };
             }

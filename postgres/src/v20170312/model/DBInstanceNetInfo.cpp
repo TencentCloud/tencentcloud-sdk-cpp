@@ -27,7 +27,8 @@ DBInstanceNetInfo::DBInstanceNetInfo() :
     m_netTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_protocolTypeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome DBInstanceNetInfo::Deserialize(const rapidjson::Value &value
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtocolType") && !value["ProtocolType"].IsNull())
+    {
+        if (!value["ProtocolType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstanceNetInfo.ProtocolType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocolType = string(value["ProtocolType"].GetString());
+        m_protocolTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void DBInstanceNetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protocolTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtocolType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocolType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void DBInstanceNetInfo::SetSubnetId(const string& _subnetId)
 bool DBInstanceNetInfo::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string DBInstanceNetInfo::GetProtocolType() const
+{
+    return m_protocolType;
+}
+
+void DBInstanceNetInfo::SetProtocolType(const string& _protocolType)
+{
+    m_protocolType = _protocolType;
+    m_protocolTypeHasBeenSet = true;
+}
+
+bool DBInstanceNetInfo::ProtocolTypeHasBeenSet() const
+{
+    return m_protocolTypeHasBeenSet;
 }
 

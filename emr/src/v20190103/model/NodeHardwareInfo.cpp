@@ -68,7 +68,9 @@ NodeHardwareInfo::NodeHardwareInfo() :
     m_currentTimeHasBeenSet(false),
     m_isFederationHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_serviceClientHasBeenSet(false)
+    m_serviceClientHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false),
+    m_tradeVersionHasBeenSet(false)
 {
 }
 
@@ -591,6 +593,26 @@ CoreInternalOutcome NodeHardwareInfo::Deserialize(const rapidjson::Value &value)
         m_serviceClientHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableApiTermination") && !value["DisableApiTermination"].IsNull())
+    {
+        if (!value["DisableApiTermination"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.DisableApiTermination` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableApiTermination = value["DisableApiTermination"].GetBool();
+        m_disableApiTerminationHasBeenSet = true;
+    }
+
+    if (value.HasMember("TradeVersion") && !value["TradeVersion"].IsNull())
+    {
+        if (!value["TradeVersion"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NodeHardwareInfo.TradeVersion` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_tradeVersion = value["TradeVersion"].GetInt64();
+        m_tradeVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -996,6 +1018,22 @@ void NodeHardwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "ServiceClient";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serviceClient.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableApiTerminationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableApiTermination";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_tradeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_tradeVersion, allocator);
     }
 
 }
@@ -1767,5 +1805,37 @@ void NodeHardwareInfo::SetServiceClient(const string& _serviceClient)
 bool NodeHardwareInfo::ServiceClientHasBeenSet() const
 {
     return m_serviceClientHasBeenSet;
+}
+
+bool NodeHardwareInfo::GetDisableApiTermination() const
+{
+    return m_disableApiTermination;
+}
+
+void NodeHardwareInfo::SetDisableApiTermination(const bool& _disableApiTermination)
+{
+    m_disableApiTermination = _disableApiTermination;
+    m_disableApiTerminationHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::DisableApiTerminationHasBeenSet() const
+{
+    return m_disableApiTerminationHasBeenSet;
+}
+
+int64_t NodeHardwareInfo::GetTradeVersion() const
+{
+    return m_tradeVersion;
+}
+
+void NodeHardwareInfo::SetTradeVersion(const int64_t& _tradeVersion)
+{
+    m_tradeVersion = _tradeVersion;
+    m_tradeVersionHasBeenSet = true;
+}
+
+bool NodeHardwareInfo::TradeVersionHasBeenSet() const
+{
+    return m_tradeVersionHasBeenSet;
 }
 

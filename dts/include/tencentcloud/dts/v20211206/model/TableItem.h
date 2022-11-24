@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 表图对象集合，当 TableMode 为 partial 时，此项需要填写
+                * 表对象集合，当 TableMode 为 partial 时，此项需要填写
                 */
                 class TableItem : public AbstractModel
                 {

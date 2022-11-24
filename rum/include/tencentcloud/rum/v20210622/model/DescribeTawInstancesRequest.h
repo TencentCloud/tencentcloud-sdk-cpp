@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool AreaIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁)
-                     * @return InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁)
+                     * 获取实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
+                     * @return InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      */
                     std::vector<int64_t> GetInstanceStatuses() const;
 
                     /**
-                     * 设置实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁)
-                     * @param InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁)
+                     * 设置实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
+                     * @param InstanceStatuses 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      */
                     void SetInstanceStatuses(const std::vector<int64_t>& _instanceStatuses);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool InstanceStatusesHasBeenSet() const;
 
                     /**
-                     * 获取实例Id
-                     * @return InstanceIds 实例Id
+                     * 获取实例Id, 该参数已废弃，请在Filters内注明
+                     * @return InstanceIds 实例Id, 该参数已废弃，请在Filters内注明
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例Id
-                     * @param InstanceIds 实例Id
+                     * 设置实例Id, 该参数已废弃，请在Filters内注明
+                     * @param InstanceIds 实例Id, 该参数已废弃，请在Filters内注明
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -238,13 +238,13 @@ namespace TencentCloud
                     bool m_areaIdsHasBeenSet;
 
                     /**
-                     * 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁)
+                     * 实例状态(1=创建中，2=运行中，3=异常，4=重启中，5=停止中，6=已停止，7=销毁中，8=已销毁), 该参数已废弃，请在Filters内注明
                      */
                     std::vector<int64_t> m_instanceStatuses;
                     bool m_instanceStatusesHasBeenSet;
 
                     /**
-                     * 实例Id
+                     * 实例Id, 该参数已废弃，请在Filters内注明
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;

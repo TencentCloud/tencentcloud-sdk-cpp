@@ -32,7 +32,8 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_menuStatusHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_autoJumpBackEventHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_authorizationTypesHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,19 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_authorizationTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthorizationTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_authorizationTypes.begin(); itr != m_authorizationTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -291,6 +305,22 @@ void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
 bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+vector<int64_t> CreateConsoleLoginUrlRequest::GetAuthorizationTypes() const
+{
+    return m_authorizationTypes;
+}
+
+void CreateConsoleLoginUrlRequest::SetAuthorizationTypes(const vector<int64_t>& _authorizationTypes)
+{
+    m_authorizationTypes = _authorizationTypes;
+    m_authorizationTypesHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::AuthorizationTypesHasBeenSet() const
+{
+    return m_authorizationTypesHasBeenSet;
 }
 
 

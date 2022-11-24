@@ -28,7 +28,8 @@ TableBaseInfo::TableBaseInfo() :
     m_typeHasBeenSet(false),
     m_tableFormatHasBeenSet(false),
     m_userAliasHasBeenSet(false),
-    m_userSubUinHasBeenSet(false)
+    m_userSubUinHasBeenSet(false),
+    m_governPolicyHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,23 @@ CoreInternalOutcome TableBaseInfo::Deserialize(const rapidjson::Value &value)
         m_userSubUinHasBeenSet = true;
     }
 
+    if (value.HasMember("GovernPolicy") && !value["GovernPolicy"].IsNull())
+    {
+        if (!value["GovernPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TableBaseInfo.GovernPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_governPolicy.Deserialize(value["GovernPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_governPolicyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +204,15 @@ void TableBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "UserSubUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userSubUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_governPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GovernPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_governPolicy.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -317,5 +344,21 @@ void TableBaseInfo::SetUserSubUin(const string& _userSubUin)
 bool TableBaseInfo::UserSubUinHasBeenSet() const
 {
     return m_userSubUinHasBeenSet;
+}
+
+DataGovernPolicy TableBaseInfo::GetGovernPolicy() const
+{
+    return m_governPolicy;
+}
+
+void TableBaseInfo::SetGovernPolicy(const DataGovernPolicy& _governPolicy)
+{
+    m_governPolicy = _governPolicy;
+    m_governPolicyHasBeenSet = true;
+}
+
+bool TableBaseInfo::GovernPolicyHasBeenSet() const
+{
+    return m_governPolicyHasBeenSet;
 }
 

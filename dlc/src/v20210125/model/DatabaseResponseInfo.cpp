@@ -28,7 +28,9 @@ DatabaseResponseInfo::DatabaseResponseInfo() :
     m_modifiedTimeHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_userAliasHasBeenSet(false),
-    m_userSubUinHasBeenSet(false)
+    m_userSubUinHasBeenSet(false),
+    m_governPolicyHasBeenSet(false),
+    m_databaseIdHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,33 @@ CoreInternalOutcome DatabaseResponseInfo::Deserialize(const rapidjson::Value &va
         m_userSubUinHasBeenSet = true;
     }
 
+    if (value.HasMember("GovernPolicy") && !value["GovernPolicy"].IsNull())
+    {
+        if (!value["GovernPolicy"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.GovernPolicy` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_governPolicy.Deserialize(value["GovernPolicy"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_governPolicyHasBeenSet = true;
+    }
+
+    if (value.HasMember("DatabaseId") && !value["DatabaseId"].IsNull())
+    {
+        if (!value["DatabaseId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatabaseResponseInfo.DatabaseId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseId = string(value["DatabaseId"].GetString());
+        m_databaseIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +232,23 @@ void DatabaseResponseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "UserSubUin";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userSubUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_governPolicyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GovernPolicy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_governPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_databaseIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +380,37 @@ void DatabaseResponseInfo::SetUserSubUin(const string& _userSubUin)
 bool DatabaseResponseInfo::UserSubUinHasBeenSet() const
 {
     return m_userSubUinHasBeenSet;
+}
+
+DataGovernPolicy DatabaseResponseInfo::GetGovernPolicy() const
+{
+    return m_governPolicy;
+}
+
+void DatabaseResponseInfo::SetGovernPolicy(const DataGovernPolicy& _governPolicy)
+{
+    m_governPolicy = _governPolicy;
+    m_governPolicyHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::GovernPolicyHasBeenSet() const
+{
+    return m_governPolicyHasBeenSet;
+}
+
+string DatabaseResponseInfo::GetDatabaseId() const
+{
+    return m_databaseId;
+}
+
+void DatabaseResponseInfo::SetDatabaseId(const string& _databaseId)
+{
+    m_databaseId = _databaseId;
+    m_databaseIdHasBeenSet = true;
+}
+
+bool DatabaseResponseInfo::DatabaseIdHasBeenSet() const
+{
+    return m_databaseIdHasBeenSet;
 }
 

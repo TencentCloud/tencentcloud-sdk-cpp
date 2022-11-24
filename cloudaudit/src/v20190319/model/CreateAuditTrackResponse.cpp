@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cloudaudit::V20190319::Model;
 using namespace std;
 
-CreateAuditTrackResponse::CreateAuditTrackResponse()
+CreateAuditTrackResponse::CreateAuditTrackResponse() :
+    m_trackIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome CreateAuditTrackResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("TrackId") && !rsp["TrackId"].IsNull())
+    {
+        if (!rsp["TrackId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrackId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_trackId = rsp["TrackId"].GetUint64();
+        m_trackIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string CreateAuditTrackResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_trackIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrackId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_trackId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string CreateAuditTrackResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t CreateAuditTrackResponse::GetTrackId() const
+{
+    return m_trackId;
+}
+
+bool CreateAuditTrackResponse::TrackIdHasBeenSet() const
+{
+    return m_trackIdHasBeenSet;
+}
 
 

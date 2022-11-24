@@ -23,16 +23,19 @@ set(cloudaudit_public_header_model
   include/tencentcloud/cloudaudit/v20190319/model/StopLoggingRequest.h
   include/tencentcloud/cloudaudit/v20190319/model/CmqRegionInfo.h
   include/tencentcloud/cloudaudit/v20190319/model/GetAttributeKeyRequest.h
+  include/tencentcloud/cloudaudit/v20190319/model/Storage.h
   include/tencentcloud/cloudaudit/v20190319/model/DescribeAuditTracksResponse.h
+  include/tencentcloud/cloudaudit/v20190319/model/StartLoggingRequest.h
   include/tencentcloud/cloudaudit/v20190319/model/DeleteAuditResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/ModifyAuditTrackResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/InquireAuditCreditRequest.h
   include/tencentcloud/cloudaudit/v20190319/model/DescribeEventsResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/ListCosEnableRegionResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/LookUpEventsRequest.h
-  include/tencentcloud/cloudaudit/v20190319/model/StartLoggingRequest.h
+  include/tencentcloud/cloudaudit/v20190319/model/DescribeAuditTrackRequest.h
   include/tencentcloud/cloudaudit/v20190319/model/UpdateAuditRequest.h
   include/tencentcloud/cloudaudit/v20190319/model/DescribeAuditTracksRequest.h
+  include/tencentcloud/cloudaudit/v20190319/model/Tracks.h
   include/tencentcloud/cloudaudit/v20190319/model/CreateAuditResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/DeleteAuditTrackRequest.h
   include/tencentcloud/cloudaudit/v20190319/model/StartLoggingResponse.h
@@ -60,6 +63,7 @@ set(cloudaudit_public_header_model
   include/tencentcloud/cloudaudit/v20190319/model/LookUpEventsResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/DeleteAuditTrackResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/CosRegionInfo.h
+  include/tencentcloud/cloudaudit/v20190319/model/DescribeAuditTrackResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/DescribeAuditResponse.h
   include/tencentcloud/cloudaudit/v20190319/model/Event.h
   include/tencentcloud/cloudaudit/v20190319/model/AuditSummary.h
@@ -71,16 +75,19 @@ set(cloudaudit_src
   src/v20190319/model/StopLoggingRequest.cpp
   src/v20190319/model/CmqRegionInfo.cpp
   src/v20190319/model/GetAttributeKeyRequest.cpp
+  src/v20190319/model/Storage.cpp
   src/v20190319/model/DescribeAuditTracksResponse.cpp
+  src/v20190319/model/StartLoggingRequest.cpp
   src/v20190319/model/DeleteAuditResponse.cpp
   src/v20190319/model/ModifyAuditTrackResponse.cpp
   src/v20190319/model/InquireAuditCreditRequest.cpp
   src/v20190319/model/DescribeEventsResponse.cpp
   src/v20190319/model/ListCosEnableRegionResponse.cpp
   src/v20190319/model/LookUpEventsRequest.cpp
-  src/v20190319/model/StartLoggingRequest.cpp
+  src/v20190319/model/DescribeAuditTrackRequest.cpp
   src/v20190319/model/UpdateAuditRequest.cpp
   src/v20190319/model/DescribeAuditTracksRequest.cpp
+  src/v20190319/model/Tracks.cpp
   src/v20190319/model/CreateAuditResponse.cpp
   src/v20190319/model/DeleteAuditTrackRequest.cpp
   src/v20190319/model/StartLoggingResponse.cpp
@@ -108,6 +115,7 @@ set(cloudaudit_src
   src/v20190319/model/LookUpEventsResponse.cpp
   src/v20190319/model/DeleteAuditTrackResponse.cpp
   src/v20190319/model/CosRegionInfo.cpp
+  src/v20190319/model/DescribeAuditTrackResponse.cpp
   src/v20190319/model/DescribeAuditResponse.cpp
   src/v20190319/model/Event.cpp
   src/v20190319/model/AuditSummary.cpp

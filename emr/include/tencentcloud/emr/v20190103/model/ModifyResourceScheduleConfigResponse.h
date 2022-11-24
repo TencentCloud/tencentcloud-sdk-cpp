@@ -69,6 +69,20 @@ namespace TencentCloud
                      */
                     bool ErrorMsgHasBeenSet() const;
 
+                    /**
+                     * 获取返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -83,6 +97,13 @@ namespace TencentCloud
                      */
                     std::string m_errorMsg;
                     bool m_errorMsgHasBeenSet;
+
+                    /**
+                     * 返回数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

@@ -40,6 +40,49 @@ TbaasClient::TbaasClient(const Credential &credential, const string &region, con
 }
 
 
+TbaasClient::ApplyChainMakerBatchUserCertOutcome TbaasClient::ApplyChainMakerBatchUserCert(const ApplyChainMakerBatchUserCertRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyChainMakerBatchUserCert");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyChainMakerBatchUserCertResponse rsp = ApplyChainMakerBatchUserCertResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyChainMakerBatchUserCertOutcome(rsp);
+        else
+            return ApplyChainMakerBatchUserCertOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyChainMakerBatchUserCertOutcome(outcome.GetError());
+    }
+}
+
+void TbaasClient::ApplyChainMakerBatchUserCertAsync(const ApplyChainMakerBatchUserCertRequest& request, const ApplyChainMakerBatchUserCertAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyChainMakerBatchUserCert(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TbaasClient::ApplyChainMakerBatchUserCertOutcomeCallable TbaasClient::ApplyChainMakerBatchUserCertCallable(const ApplyChainMakerBatchUserCertRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyChainMakerBatchUserCertOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyChainMakerBatchUserCert(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TbaasClient::ApplyUserCertOutcome TbaasClient::ApplyUserCert(const ApplyUserCertRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyUserCert");

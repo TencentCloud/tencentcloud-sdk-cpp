@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcss/v20201101/model/ProjectInfo.h>
+#include <tencentcloud/tcss/v20201101/model/TagInfo.h>
 
 
 namespace TencentCloud
@@ -316,6 +318,50 @@ namespace TencentCloud
                      */
                     bool RegionIDHasBeenSet() const;
 
+                    /**
+                     * 获取所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Project 所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProjectInfo GetProject() const;
+
+                    /**
+                     * 设置所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Project 所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProject(const ProjectInfo& _project);
+
+                    /**
+                     * 判断参数 Project 是否已赋值
+                     * @return Project 是否已赋值
+                     */
+                    bool ProjectHasBeenSet() const;
+
+                    /**
+                     * 获取标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> GetTags() const;
+
+                    /**
+                     * 设置标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<TagInfo>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +453,20 @@ namespace TencentCloud
                      */
                     int64_t m_regionID;
                     bool m_regionIDHasBeenSet;
+
+                    /**
+                     * 所属项目
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ProjectInfo m_project;
+                    bool m_projectHasBeenSet;
+
+                    /**
+                     * 标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TagInfo> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }
