@@ -278,14 +278,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。密码必须是8-16位字符，且至少包含字母、数字和字符 !@#%^*() 中的两种
-                     * @return Password 实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。密码必须是8-16位字符，且至少包含字母、数字和字符 !@#%^*() 中的两种
+                     * 获取实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
+                     * @return Password 实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。密码必须是8-16位字符，且至少包含字母、数字和字符 !@#%^*() 中的两种
-                     * @param Password 实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。密码必须是8-16位字符，且至少包含字母、数字和字符 !@#%^*() 中的两种
+                     * 设置实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
+                     * @param Password 实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
                      */
                     void SetPassword(const std::string& _password);
 
@@ -511,6 +511,60 @@ namespace TencentCloud
                      */
                     bool MongosNodeNumHasBeenSet() const;
 
+                    /**
+                     * 获取只读节点数量，最大不超过7个
+                     * @return ReadonlyNodeNum 只读节点数量，最大不超过7个
+                     */
+                    uint64_t GetReadonlyNodeNum() const;
+
+                    /**
+                     * 设置只读节点数量，最大不超过7个
+                     * @param ReadonlyNodeNum 只读节点数量，最大不超过7个
+                     */
+                    void SetReadonlyNodeNum(const uint64_t& _readonlyNodeNum);
+
+                    /**
+                     * 判断参数 ReadonlyNodeNum 是否已赋值
+                     * @return ReadonlyNodeNum 是否已赋值
+                     */
+                    bool ReadonlyNodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取只读节点部署可用区
+                     * @return ReadonlyNodeAvailabilityZoneList 只读节点部署可用区
+                     */
+                    std::vector<std::string> GetReadonlyNodeAvailabilityZoneList() const;
+
+                    /**
+                     * 设置只读节点部署可用区
+                     * @param ReadonlyNodeAvailabilityZoneList 只读节点部署可用区
+                     */
+                    void SetReadonlyNodeAvailabilityZoneList(const std::vector<std::string>& _readonlyNodeAvailabilityZoneList);
+
+                    /**
+                     * 判断参数 ReadonlyNodeAvailabilityZoneList 是否已赋值
+                     * @return ReadonlyNodeAvailabilityZoneList 是否已赋值
+                     */
+                    bool ReadonlyNodeAvailabilityZoneListHasBeenSet() const;
+
+                    /**
+                     * 获取Hidden节点所在的可用区，跨可用区实例必传
+                     * @return HiddenZone Hidden节点所在的可用区，跨可用区实例必传
+                     */
+                    std::string GetHiddenZone() const;
+
+                    /**
+                     * 设置Hidden节点所在的可用区，跨可用区实例必传
+                     * @param HiddenZone Hidden节点所在的可用区，跨可用区实例必传
+                     */
+                    void SetHiddenZone(const std::string& _hiddenZone);
+
+                    /**
+                     * 判断参数 HiddenZone 是否已赋值
+                     * @return HiddenZone 是否已赋值
+                     */
+                    bool HiddenZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -592,7 +646,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。密码必须是8-16位字符，且至少包含字母、数字和字符 !@#%^*() 中的两种
+                     * 实例密码，不设置该参数则默认密码规则为 实例ID+"@"+主账户uin。举例实例id为cmgo-higv73ed，uin为100000001，则默认密码为"cmgo-higv73ed@100000001"。 自定义密码格式为8-32个字符长度，至少包含字母、数字和字符（!@#%^*()_）中的两种
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
@@ -668,6 +722,24 @@ namespace TencentCloud
                      */
                     uint64_t m_mongosNodeNum;
                     bool m_mongosNodeNumHasBeenSet;
+
+                    /**
+                     * 只读节点数量，最大不超过7个
+                     */
+                    uint64_t m_readonlyNodeNum;
+                    bool m_readonlyNodeNumHasBeenSet;
+
+                    /**
+                     * 只读节点部署可用区
+                     */
+                    std::vector<std::string> m_readonlyNodeAvailabilityZoneList;
+                    bool m_readonlyNodeAvailabilityZoneListHasBeenSet;
+
+                    /**
+                     * Hidden节点所在的可用区，跨可用区实例必传
+                     */
+                    std::string m_hiddenZone;
+                    bool m_hiddenZoneHasBeenSet;
 
                 };
             }

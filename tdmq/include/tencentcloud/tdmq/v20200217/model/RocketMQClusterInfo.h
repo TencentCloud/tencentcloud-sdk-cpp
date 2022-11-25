@@ -243,6 +243,28 @@ namespace TencentCloud
                      */
                     bool IsVipHasBeenSet() const;
 
+                    /**
+                     * 获取Rocketmq集群标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RocketMQFlag Rocketmq集群标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetRocketMQFlag() const;
+
+                    /**
+                     * 设置Rocketmq集群标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RocketMQFlag Rocketmq集群标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRocketMQFlag(const bool& _rocketMQFlag);
+
+                    /**
+                     * 判断参数 RocketMQFlag 是否已赋值
+                     * @return RocketMQFlag 是否已赋值
+                     */
+                    bool RocketMQFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     bool m_isVip;
                     bool m_isVipHasBeenSet;
+
+                    /**
+                     * Rocketmq集群标识
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_rocketMQFlag;
+                    bool m_rocketMQFlagHasBeenSet;
 
                 };
             }

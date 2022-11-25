@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取域名别名ID
-                     * @return DomainAliasId 域名别名ID
+                     * 获取域名别名ID。可以通过接口DescribeDomainAliasList查到所有的域名别名列表以及对应的ID
+                     * @return DomainAliasId 域名别名ID。可以通过接口DescribeDomainAliasList查到所有的域名别名列表以及对应的ID
                      */
                     int64_t GetDomainAliasId() const;
 
                     /**
-                     * 设置域名别名ID
-                     * @param DomainAliasId 域名别名ID
+                     * 设置域名别名ID。可以通过接口DescribeDomainAliasList查到所有的域名别名列表以及对应的ID
+                     * @param DomainAliasId 域名别名ID。可以通过接口DescribeDomainAliasList查到所有的域名别名列表以及对应的ID
                      */
                     void SetDomainAliasId(const int64_t& _domainAliasId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain
-                     * @return DomainId 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain
+                     * 获取域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @return DomainId 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     int64_t GetDomainId() const;
 
                     /**
-                     * 设置域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain
-                     * @param DomainId 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain
+                     * 设置域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param DomainId 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     void SetDomainId(const int64_t& _domainId);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 域名别名ID
+                     * 域名别名ID。可以通过接口DescribeDomainAliasList查到所有的域名别名列表以及对应的ID
                      */
                     int64_t m_domainAliasId;
                     bool m_domainAliasIdHasBeenSet;
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain
+                     * 域名ID，参数 DomainId 优先级比参数 Domain 高，如果传递参数 DomainId 将忽略参数 Domain。可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     int64_t m_domainId;
                     bool m_domainIdHasBeenSet;

@@ -93,6 +93,12 @@
 #include <tencentcloud/tcss/v20201101/model/CreateHostExportJobResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateImageExportJobRequest.h>
 #include <tencentcloud/tcss/v20201101/model/CreateImageExportJobResponse.h>
+#include <tencentcloud/tcss/v20201101/model/CreateK8sApiAbnormalEventExportJobRequest.h>
+#include <tencentcloud/tcss/v20201101/model/CreateK8sApiAbnormalEventExportJobResponse.h>
+#include <tencentcloud/tcss/v20201101/model/CreateK8sApiAbnormalRuleExportJobRequest.h>
+#include <tencentcloud/tcss/v20201101/model/CreateK8sApiAbnormalRuleExportJobResponse.h>
+#include <tencentcloud/tcss/v20201101/model/CreateK8sApiAbnormalRuleInfoRequest.h>
+#include <tencentcloud/tcss/v20201101/model/CreateK8sApiAbnormalRuleInfoResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateNetworkFirewallClusterRefreshRequest.h>
 #include <tencentcloud/tcss/v20201101/model/CreateNetworkFirewallClusterRefreshResponse.h>
 #include <tencentcloud/tcss/v20201101/model/CreateNetworkFirewallPolicyDiscoverRequest.h>
@@ -145,6 +151,8 @@
 #include <tencentcloud/tcss/v20201101/model/DeleteEscapeWhiteListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteIgnoreVulRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteIgnoreVulResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteK8sApiAbnormalRuleRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DeleteK8sApiAbnormalRuleResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteMachineRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteMachineResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DeleteNetworkFirewallPolicyDetailRequest.h>
@@ -201,6 +209,8 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeAgentInstallCommandResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetAppServiceListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetAppServiceListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeAssetClusterListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeAssetClusterListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetComponentListRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetComponentListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeAssetContainerDetailRequest.h>
@@ -365,6 +375,20 @@
 #include <tencentcloud/tcss/v20201101/model/DescribeIndexListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeInspectionReportRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeInspectionReportResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalEventInfoRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalEventInfoResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalEventListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalEventListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleInfoRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleInfoResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleScopeListRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalRuleScopeListResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalSummaryRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalSummaryResponse.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalTendencyRequest.h>
+#include <tencentcloud/tcss/v20201101/model/DescribeK8sApiAbnormalTendencyResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeLogStorageStatisticRequest.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeLogStorageStatisticResponse.h>
 #include <tencentcloud/tcss/v20201101/model/DescribeNetworkFirewallAuditRecordRequest.h>
@@ -579,6 +603,12 @@
 #include <tencentcloud/tcss/v20201101/model/ModifyEscapeWhiteListResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyImageAuthorizedRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyImageAuthorizedResponse.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalEventStatusRequest.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalEventStatusResponse.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalRuleInfoRequest.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalRuleInfoResponse.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalRuleStatusRequest.h>
+#include <tencentcloud/tcss/v20201101/model/ModifyK8sApiAbnormalRuleStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyReverseShellStatusRequest.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyReverseShellStatusResponse.h>
 #include <tencentcloud/tcss/v20201101/model/ModifyRiskSyscallStatusRequest.h>
@@ -768,6 +798,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImageExportJobResponse> CreateImageExportJobOutcome;
                 typedef std::future<CreateImageExportJobOutcome> CreateImageExportJobOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::CreateImageExportJobRequest&, CreateImageExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImageExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateK8sApiAbnormalEventExportJobResponse> CreateK8sApiAbnormalEventExportJobOutcome;
+                typedef std::future<CreateK8sApiAbnormalEventExportJobOutcome> CreateK8sApiAbnormalEventExportJobOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::CreateK8sApiAbnormalEventExportJobRequest&, CreateK8sApiAbnormalEventExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateK8sApiAbnormalEventExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateK8sApiAbnormalRuleExportJobResponse> CreateK8sApiAbnormalRuleExportJobOutcome;
+                typedef std::future<CreateK8sApiAbnormalRuleExportJobOutcome> CreateK8sApiAbnormalRuleExportJobOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::CreateK8sApiAbnormalRuleExportJobRequest&, CreateK8sApiAbnormalRuleExportJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateK8sApiAbnormalRuleExportJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateK8sApiAbnormalRuleInfoResponse> CreateK8sApiAbnormalRuleInfoOutcome;
+                typedef std::future<CreateK8sApiAbnormalRuleInfoOutcome> CreateK8sApiAbnormalRuleInfoOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::CreateK8sApiAbnormalRuleInfoRequest&, CreateK8sApiAbnormalRuleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateK8sApiAbnormalRuleInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNetworkFirewallClusterRefreshResponse> CreateNetworkFirewallClusterRefreshOutcome;
                 typedef std::future<CreateNetworkFirewallClusterRefreshOutcome> CreateNetworkFirewallClusterRefreshOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::CreateNetworkFirewallClusterRefreshRequest&, CreateNetworkFirewallClusterRefreshOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNetworkFirewallClusterRefreshAsyncHandler;
@@ -846,6 +885,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIgnoreVulResponse> DeleteIgnoreVulOutcome;
                 typedef std::future<DeleteIgnoreVulOutcome> DeleteIgnoreVulOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DeleteIgnoreVulRequest&, DeleteIgnoreVulOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIgnoreVulAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteK8sApiAbnormalRuleResponse> DeleteK8sApiAbnormalRuleOutcome;
+                typedef std::future<DeleteK8sApiAbnormalRuleOutcome> DeleteK8sApiAbnormalRuleOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DeleteK8sApiAbnormalRuleRequest&, DeleteK8sApiAbnormalRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteK8sApiAbnormalRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteMachineResponse> DeleteMachineOutcome;
                 typedef std::future<DeleteMachineOutcome> DeleteMachineOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DeleteMachineRequest&, DeleteMachineOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteMachineAsyncHandler;
@@ -930,6 +972,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetAppServiceListResponse> DescribeAssetAppServiceListOutcome;
                 typedef std::future<DescribeAssetAppServiceListOutcome> DescribeAssetAppServiceListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAssetAppServiceListRequest&, DescribeAssetAppServiceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetAppServiceListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetClusterListResponse> DescribeAssetClusterListOutcome;
+                typedef std::future<DescribeAssetClusterListOutcome> DescribeAssetClusterListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeAssetClusterListRequest&, DescribeAssetClusterListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetClusterListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetComponentListResponse> DescribeAssetComponentListOutcome;
                 typedef std::future<DescribeAssetComponentListOutcome> DescribeAssetComponentListOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeAssetComponentListRequest&, DescribeAssetComponentListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetComponentListAsyncHandler;
@@ -1176,6 +1221,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInspectionReportResponse> DescribeInspectionReportOutcome;
                 typedef std::future<DescribeInspectionReportOutcome> DescribeInspectionReportOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeInspectionReportRequest&, DescribeInspectionReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInspectionReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeK8sApiAbnormalEventInfoResponse> DescribeK8sApiAbnormalEventInfoOutcome;
+                typedef std::future<DescribeK8sApiAbnormalEventInfoOutcome> DescribeK8sApiAbnormalEventInfoOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeK8sApiAbnormalEventInfoRequest&, DescribeK8sApiAbnormalEventInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeK8sApiAbnormalEventInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeK8sApiAbnormalEventListResponse> DescribeK8sApiAbnormalEventListOutcome;
+                typedef std::future<DescribeK8sApiAbnormalEventListOutcome> DescribeK8sApiAbnormalEventListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeK8sApiAbnormalEventListRequest&, DescribeK8sApiAbnormalEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeK8sApiAbnormalEventListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeK8sApiAbnormalRuleInfoResponse> DescribeK8sApiAbnormalRuleInfoOutcome;
+                typedef std::future<DescribeK8sApiAbnormalRuleInfoOutcome> DescribeK8sApiAbnormalRuleInfoOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeK8sApiAbnormalRuleInfoRequest&, DescribeK8sApiAbnormalRuleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeK8sApiAbnormalRuleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeK8sApiAbnormalRuleListResponse> DescribeK8sApiAbnormalRuleListOutcome;
+                typedef std::future<DescribeK8sApiAbnormalRuleListOutcome> DescribeK8sApiAbnormalRuleListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeK8sApiAbnormalRuleListRequest&, DescribeK8sApiAbnormalRuleListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeK8sApiAbnormalRuleListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeK8sApiAbnormalRuleScopeListResponse> DescribeK8sApiAbnormalRuleScopeListOutcome;
+                typedef std::future<DescribeK8sApiAbnormalRuleScopeListOutcome> DescribeK8sApiAbnormalRuleScopeListOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeK8sApiAbnormalRuleScopeListRequest&, DescribeK8sApiAbnormalRuleScopeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeK8sApiAbnormalRuleScopeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeK8sApiAbnormalSummaryResponse> DescribeK8sApiAbnormalSummaryOutcome;
+                typedef std::future<DescribeK8sApiAbnormalSummaryOutcome> DescribeK8sApiAbnormalSummaryOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeK8sApiAbnormalSummaryRequest&, DescribeK8sApiAbnormalSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeK8sApiAbnormalSummaryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeK8sApiAbnormalTendencyResponse> DescribeK8sApiAbnormalTendencyOutcome;
+                typedef std::future<DescribeK8sApiAbnormalTendencyOutcome> DescribeK8sApiAbnormalTendencyOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::DescribeK8sApiAbnormalTendencyRequest&, DescribeK8sApiAbnormalTendencyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeK8sApiAbnormalTendencyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLogStorageStatisticResponse> DescribeLogStorageStatisticOutcome;
                 typedef std::future<DescribeLogStorageStatisticOutcome> DescribeLogStorageStatisticOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::DescribeLogStorageStatisticRequest&, DescribeLogStorageStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLogStorageStatisticAsyncHandler;
@@ -1497,6 +1563,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyImageAuthorizedResponse> ModifyImageAuthorizedOutcome;
                 typedef std::future<ModifyImageAuthorizedOutcome> ModifyImageAuthorizedOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyImageAuthorizedRequest&, ModifyImageAuthorizedOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyImageAuthorizedAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyK8sApiAbnormalEventStatusResponse> ModifyK8sApiAbnormalEventStatusOutcome;
+                typedef std::future<ModifyK8sApiAbnormalEventStatusOutcome> ModifyK8sApiAbnormalEventStatusOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::ModifyK8sApiAbnormalEventStatusRequest&, ModifyK8sApiAbnormalEventStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyK8sApiAbnormalEventStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyK8sApiAbnormalRuleInfoResponse> ModifyK8sApiAbnormalRuleInfoOutcome;
+                typedef std::future<ModifyK8sApiAbnormalRuleInfoOutcome> ModifyK8sApiAbnormalRuleInfoOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::ModifyK8sApiAbnormalRuleInfoRequest&, ModifyK8sApiAbnormalRuleInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyK8sApiAbnormalRuleInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyK8sApiAbnormalRuleStatusResponse> ModifyK8sApiAbnormalRuleStatusOutcome;
+                typedef std::future<ModifyK8sApiAbnormalRuleStatusOutcome> ModifyK8sApiAbnormalRuleStatusOutcomeCallable;
+                typedef std::function<void(const TcssClient*, const Model::ModifyK8sApiAbnormalRuleStatusRequest&, ModifyK8sApiAbnormalRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyK8sApiAbnormalRuleStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyReverseShellStatusResponse> ModifyReverseShellStatusOutcome;
                 typedef std::future<ModifyReverseShellStatusOutcome> ModifyReverseShellStatusOutcomeCallable;
                 typedef std::function<void(const TcssClient*, const Model::ModifyReverseShellStatusRequest&, ModifyReverseShellStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReverseShellStatusAsyncHandler;
@@ -1923,6 +1998,33 @@ namespace TencentCloud
                 CreateImageExportJobOutcomeCallable CreateImageExportJobCallable(const Model::CreateImageExportJobRequest& request);
 
                 /**
+                 *创建k8s api异常事件导出任务
+                 * @param req CreateK8sApiAbnormalEventExportJobRequest
+                 * @return CreateK8sApiAbnormalEventExportJobOutcome
+                 */
+                CreateK8sApiAbnormalEventExportJobOutcome CreateK8sApiAbnormalEventExportJob(const Model::CreateK8sApiAbnormalEventExportJobRequest &request);
+                void CreateK8sApiAbnormalEventExportJobAsync(const Model::CreateK8sApiAbnormalEventExportJobRequest& request, const CreateK8sApiAbnormalEventExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateK8sApiAbnormalEventExportJobOutcomeCallable CreateK8sApiAbnormalEventExportJobCallable(const Model::CreateK8sApiAbnormalEventExportJobRequest& request);
+
+                /**
+                 *创建k8sApi异常规则导出任务
+                 * @param req CreateK8sApiAbnormalRuleExportJobRequest
+                 * @return CreateK8sApiAbnormalRuleExportJobOutcome
+                 */
+                CreateK8sApiAbnormalRuleExportJobOutcome CreateK8sApiAbnormalRuleExportJob(const Model::CreateK8sApiAbnormalRuleExportJobRequest &request);
+                void CreateK8sApiAbnormalRuleExportJobAsync(const Model::CreateK8sApiAbnormalRuleExportJobRequest& request, const CreateK8sApiAbnormalRuleExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateK8sApiAbnormalRuleExportJobOutcomeCallable CreateK8sApiAbnormalRuleExportJobCallable(const Model::CreateK8sApiAbnormalRuleExportJobRequest& request);
+
+                /**
+                 *创建k8sapi异常事件规则
+                 * @param req CreateK8sApiAbnormalRuleInfoRequest
+                 * @return CreateK8sApiAbnormalRuleInfoOutcome
+                 */
+                CreateK8sApiAbnormalRuleInfoOutcome CreateK8sApiAbnormalRuleInfo(const Model::CreateK8sApiAbnormalRuleInfoRequest &request);
+                void CreateK8sApiAbnormalRuleInfoAsync(const Model::CreateK8sApiAbnormalRuleInfoRequest& request, const CreateK8sApiAbnormalRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateK8sApiAbnormalRuleInfoOutcomeCallable CreateK8sApiAbnormalRuleInfoCallable(const Model::CreateK8sApiAbnormalRuleInfoRequest& request);
+
+                /**
                  *容器网络集群下发刷新任务
                  * @param req CreateNetworkFirewallClusterRefreshRequest
                  * @return CreateNetworkFirewallClusterRefreshOutcome
@@ -2156,6 +2258,15 @@ namespace TencentCloud
                 DeleteIgnoreVulOutcome DeleteIgnoreVul(const Model::DeleteIgnoreVulRequest &request);
                 void DeleteIgnoreVulAsync(const Model::DeleteIgnoreVulRequest& request, const DeleteIgnoreVulAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIgnoreVulOutcomeCallable DeleteIgnoreVulCallable(const Model::DeleteIgnoreVulRequest& request);
+
+                /**
+                 *删除k8sapi异常事件规则
+                 * @param req DeleteK8sApiAbnormalRuleRequest
+                 * @return DeleteK8sApiAbnormalRuleOutcome
+                 */
+                DeleteK8sApiAbnormalRuleOutcome DeleteK8sApiAbnormalRule(const Model::DeleteK8sApiAbnormalRuleRequest &request);
+                void DeleteK8sApiAbnormalRuleAsync(const Model::DeleteK8sApiAbnormalRuleRequest& request, const DeleteK8sApiAbnormalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteK8sApiAbnormalRuleOutcomeCallable DeleteK8sApiAbnormalRuleCallable(const Model::DeleteK8sApiAbnormalRuleRequest& request);
 
                 /**
                  *卸载Agent客户端
@@ -2408,6 +2519,15 @@ namespace TencentCloud
                 DescribeAssetAppServiceListOutcome DescribeAssetAppServiceList(const Model::DescribeAssetAppServiceListRequest &request);
                 void DescribeAssetAppServiceListAsync(const Model::DescribeAssetAppServiceListRequest& request, const DescribeAssetAppServiceListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssetAppServiceListOutcomeCallable DescribeAssetAppServiceListCallable(const Model::DescribeAssetAppServiceListRequest& request);
+
+                /**
+                 *查询集群列表
+                 * @param req DescribeAssetClusterListRequest
+                 * @return DescribeAssetClusterListOutcome
+                 */
+                DescribeAssetClusterListOutcome DescribeAssetClusterList(const Model::DescribeAssetClusterListRequest &request);
+                void DescribeAssetClusterListAsync(const Model::DescribeAssetClusterListRequest& request, const DescribeAssetClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetClusterListOutcomeCallable DescribeAssetClusterListCallable(const Model::DescribeAssetClusterListRequest& request);
 
                 /**
                  *容器安全搜索查询容器组件列表
@@ -3146,6 +3266,69 @@ namespace TencentCloud
                 DescribeInspectionReportOutcome DescribeInspectionReport(const Model::DescribeInspectionReportRequest &request);
                 void DescribeInspectionReportAsync(const Model::DescribeInspectionReportRequest& request, const DescribeInspectionReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInspectionReportOutcomeCallable DescribeInspectionReportCallable(const Model::DescribeInspectionReportRequest& request);
+
+                /**
+                 *查询k8s api 异常事件详情
+                 * @param req DescribeK8sApiAbnormalEventInfoRequest
+                 * @return DescribeK8sApiAbnormalEventInfoOutcome
+                 */
+                DescribeK8sApiAbnormalEventInfoOutcome DescribeK8sApiAbnormalEventInfo(const Model::DescribeK8sApiAbnormalEventInfoRequest &request);
+                void DescribeK8sApiAbnormalEventInfoAsync(const Model::DescribeK8sApiAbnormalEventInfoRequest& request, const DescribeK8sApiAbnormalEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeK8sApiAbnormalEventInfoOutcomeCallable DescribeK8sApiAbnormalEventInfoCallable(const Model::DescribeK8sApiAbnormalEventInfoRequest& request);
+
+                /**
+                 *查询k8s api异常事件列表
+                 * @param req DescribeK8sApiAbnormalEventListRequest
+                 * @return DescribeK8sApiAbnormalEventListOutcome
+                 */
+                DescribeK8sApiAbnormalEventListOutcome DescribeK8sApiAbnormalEventList(const Model::DescribeK8sApiAbnormalEventListRequest &request);
+                void DescribeK8sApiAbnormalEventListAsync(const Model::DescribeK8sApiAbnormalEventListRequest& request, const DescribeK8sApiAbnormalEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeK8sApiAbnormalEventListOutcomeCallable DescribeK8sApiAbnormalEventListCallable(const Model::DescribeK8sApiAbnormalEventListRequest& request);
+
+                /**
+                 *查询k8sapi异常请求规则详情
+                 * @param req DescribeK8sApiAbnormalRuleInfoRequest
+                 * @return DescribeK8sApiAbnormalRuleInfoOutcome
+                 */
+                DescribeK8sApiAbnormalRuleInfoOutcome DescribeK8sApiAbnormalRuleInfo(const Model::DescribeK8sApiAbnormalRuleInfoRequest &request);
+                void DescribeK8sApiAbnormalRuleInfoAsync(const Model::DescribeK8sApiAbnormalRuleInfoRequest& request, const DescribeK8sApiAbnormalRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeK8sApiAbnormalRuleInfoOutcomeCallable DescribeK8sApiAbnormalRuleInfoCallable(const Model::DescribeK8sApiAbnormalRuleInfoRequest& request);
+
+                /**
+                 *查询k8sapi异常请求规则列表
+                 * @param req DescribeK8sApiAbnormalRuleListRequest
+                 * @return DescribeK8sApiAbnormalRuleListOutcome
+                 */
+                DescribeK8sApiAbnormalRuleListOutcome DescribeK8sApiAbnormalRuleList(const Model::DescribeK8sApiAbnormalRuleListRequest &request);
+                void DescribeK8sApiAbnormalRuleListAsync(const Model::DescribeK8sApiAbnormalRuleListRequest& request, const DescribeK8sApiAbnormalRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeK8sApiAbnormalRuleListOutcomeCallable DescribeK8sApiAbnormalRuleListCallable(const Model::DescribeK8sApiAbnormalRuleListRequest& request);
+
+                /**
+                 *查询k8s api 异常规则中范围列表
+                 * @param req DescribeK8sApiAbnormalRuleScopeListRequest
+                 * @return DescribeK8sApiAbnormalRuleScopeListOutcome
+                 */
+                DescribeK8sApiAbnormalRuleScopeListOutcome DescribeK8sApiAbnormalRuleScopeList(const Model::DescribeK8sApiAbnormalRuleScopeListRequest &request);
+                void DescribeK8sApiAbnormalRuleScopeListAsync(const Model::DescribeK8sApiAbnormalRuleScopeListRequest& request, const DescribeK8sApiAbnormalRuleScopeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeK8sApiAbnormalRuleScopeListOutcomeCallable DescribeK8sApiAbnormalRuleScopeListCallable(const Model::DescribeK8sApiAbnormalRuleScopeListRequest& request);
+
+                /**
+                 *查询k8sapi异常事件统计
+                 * @param req DescribeK8sApiAbnormalSummaryRequest
+                 * @return DescribeK8sApiAbnormalSummaryOutcome
+                 */
+                DescribeK8sApiAbnormalSummaryOutcome DescribeK8sApiAbnormalSummary(const Model::DescribeK8sApiAbnormalSummaryRequest &request);
+                void DescribeK8sApiAbnormalSummaryAsync(const Model::DescribeK8sApiAbnormalSummaryRequest& request, const DescribeK8sApiAbnormalSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeK8sApiAbnormalSummaryOutcomeCallable DescribeK8sApiAbnormalSummaryCallable(const Model::DescribeK8sApiAbnormalSummaryRequest& request);
+
+                /**
+                 *查询k8sapi异常事件趋势
+                 * @param req DescribeK8sApiAbnormalTendencyRequest
+                 * @return DescribeK8sApiAbnormalTendencyOutcome
+                 */
+                DescribeK8sApiAbnormalTendencyOutcome DescribeK8sApiAbnormalTendency(const Model::DescribeK8sApiAbnormalTendencyRequest &request);
+                void DescribeK8sApiAbnormalTendencyAsync(const Model::DescribeK8sApiAbnormalTendencyRequest& request, const DescribeK8sApiAbnormalTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeK8sApiAbnormalTendencyOutcomeCallable DescribeK8sApiAbnormalTendencyCallable(const Model::DescribeK8sApiAbnormalTendencyRequest& request);
 
                 /**
                  *获取日志检索容量使用统计
@@ -4109,6 +4292,33 @@ namespace TencentCloud
                 ModifyImageAuthorizedOutcome ModifyImageAuthorized(const Model::ModifyImageAuthorizedRequest &request);
                 void ModifyImageAuthorizedAsync(const Model::ModifyImageAuthorizedRequest& request, const ModifyImageAuthorizedAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyImageAuthorizedOutcomeCallable ModifyImageAuthorizedCallable(const Model::ModifyImageAuthorizedRequest& request);
+
+                /**
+                 *修改k8sapi异常事件状态
+                 * @param req ModifyK8sApiAbnormalEventStatusRequest
+                 * @return ModifyK8sApiAbnormalEventStatusOutcome
+                 */
+                ModifyK8sApiAbnormalEventStatusOutcome ModifyK8sApiAbnormalEventStatus(const Model::ModifyK8sApiAbnormalEventStatusRequest &request);
+                void ModifyK8sApiAbnormalEventStatusAsync(const Model::ModifyK8sApiAbnormalEventStatusRequest& request, const ModifyK8sApiAbnormalEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyK8sApiAbnormalEventStatusOutcomeCallable ModifyK8sApiAbnormalEventStatusCallable(const Model::ModifyK8sApiAbnormalEventStatusRequest& request);
+
+                /**
+                 *修改k8sapi异常规则信息
+                 * @param req ModifyK8sApiAbnormalRuleInfoRequest
+                 * @return ModifyK8sApiAbnormalRuleInfoOutcome
+                 */
+                ModifyK8sApiAbnormalRuleInfoOutcome ModifyK8sApiAbnormalRuleInfo(const Model::ModifyK8sApiAbnormalRuleInfoRequest &request);
+                void ModifyK8sApiAbnormalRuleInfoAsync(const Model::ModifyK8sApiAbnormalRuleInfoRequest& request, const ModifyK8sApiAbnormalRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyK8sApiAbnormalRuleInfoOutcomeCallable ModifyK8sApiAbnormalRuleInfoCallable(const Model::ModifyK8sApiAbnormalRuleInfoRequest& request);
+
+                /**
+                 *修改k8sapi异常事件规则状态
+                 * @param req ModifyK8sApiAbnormalRuleStatusRequest
+                 * @return ModifyK8sApiAbnormalRuleStatusOutcome
+                 */
+                ModifyK8sApiAbnormalRuleStatusOutcome ModifyK8sApiAbnormalRuleStatus(const Model::ModifyK8sApiAbnormalRuleStatusRequest &request);
+                void ModifyK8sApiAbnormalRuleStatusAsync(const Model::ModifyK8sApiAbnormalRuleStatusRequest& request, const ModifyK8sApiAbnormalRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyK8sApiAbnormalRuleStatusOutcomeCallable ModifyK8sApiAbnormalRuleStatusCallable(const Model::ModifyK8sApiAbnormalRuleStatusRequest& request);
 
                 /**
                  *修改反弹shell事件的状态信息

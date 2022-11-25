@@ -623,6 +623,58 @@ wechat:微信支付
                      */
                     bool PaymentMethodHasBeenSet() const;
 
+                    /**
+                     * 获取平台应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalPlatformIncome 平台应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalPlatformIncome() const;
+
+                    /**
+                     * 设置平台应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TotalPlatformIncome 平台应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotalPlatformIncome(const int64_t& _totalPlatformIncome);
+
+                    /**
+                     * 判断参数 TotalPlatformIncome 是否已赋值
+                     * @return TotalPlatformIncome 是否已赋值
+                     */
+                    bool TotalPlatformIncomeHasBeenSet() const;
+
+                    /**
+                     * 获取商户应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TotalMchIncome 商户应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTotalMchIncome() const;
+
+                    /**
+                     * 设置商户应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TotalMchIncome 商户应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTotalMchIncome(const int64_t& _totalMchIncome);
+
+                    /**
+                     * 判断参数 TotalMchIncome 是否已赋值
+                     * @return TotalMchIncome 是否已赋值
+                     */
+                    bool TotalMchIncomeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -809,6 +861,22 @@ wechat:微信支付
                      */
                     std::string m_paymentMethod;
                     bool m_paymentMethodHasBeenSet;
+
+                    /**
+                     * 平台应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalPlatformIncome;
+                    bool m_totalPlatformIncomeHasBeenSet;
+
+                    /**
+                     * 商户应收金额
+单位：分，需要注意的是，TotalAmt=TotalPlatformIncome+TotalMchIncome
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_totalMchIncome;
+                    bool m_totalMchIncomeHasBeenSet;
 
                 };
             }

@@ -30,7 +30,8 @@ RocketMQClusterInfo::RocketMQClusterInfo() :
     m_vpcEndPointHasBeenSet(false),
     m_supportNamespaceEndpointHasBeenSet(false),
     m_vpcsHasBeenSet(false),
-    m_isVipHasBeenSet(false)
+    m_isVipHasBeenSet(false),
+    m_rocketMQFlagHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome RocketMQClusterInfo::Deserialize(const rapidjson::Value &val
         m_isVipHasBeenSet = true;
     }
 
+    if (value.HasMember("RocketMQFlag") && !value["RocketMQFlag"].IsNull())
+    {
+        if (!value["RocketMQFlag"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterInfo.RocketMQFlag` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_rocketMQFlag = value["RocketMQFlag"].GetBool();
+        m_rocketMQFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void RocketMQClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "IsVip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isVip, allocator);
+    }
+
+    if (m_rocketMQFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RocketMQFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rocketMQFlag, allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void RocketMQClusterInfo::SetIsVip(const bool& _isVip)
 bool RocketMQClusterInfo::IsVipHasBeenSet() const
 {
     return m_isVipHasBeenSet;
+}
+
+bool RocketMQClusterInfo::GetRocketMQFlag() const
+{
+    return m_rocketMQFlag;
+}
+
+void RocketMQClusterInfo::SetRocketMQFlag(const bool& _rocketMQFlag)
+{
+    m_rocketMQFlag = _rocketMQFlag;
+    m_rocketMQFlagHasBeenSet = true;
+}
+
+bool RocketMQClusterInfo::RocketMQFlagHasBeenSet() const
+{
+    return m_rocketMQFlagHasBeenSet;
 }
 

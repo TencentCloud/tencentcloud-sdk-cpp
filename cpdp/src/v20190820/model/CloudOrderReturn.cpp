@@ -48,7 +48,9 @@ CloudOrderReturn::CloudOrderReturn() :
     m_sceneInfoHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_paySceneHasBeenSet(false),
-    m_paymentMethodHasBeenSet(false)
+    m_paymentMethodHasBeenSet(false),
+    m_totalPlatformIncomeHasBeenSet(false),
+    m_totalMchIncomeHasBeenSet(false)
 {
 }
 
@@ -384,6 +386,26 @@ CoreInternalOutcome CloudOrderReturn::Deserialize(const rapidjson::Value &value)
         m_paymentMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("TotalPlatformIncome") && !value["TotalPlatformIncome"].IsNull())
+    {
+        if (!value["TotalPlatformIncome"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudOrderReturn.TotalPlatformIncome` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalPlatformIncome = value["TotalPlatformIncome"].GetInt64();
+        m_totalPlatformIncomeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TotalMchIncome") && !value["TotalMchIncome"].IsNull())
+    {
+        if (!value["TotalMchIncome"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudOrderReturn.TotalMchIncome` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalMchIncome = value["TotalMchIncome"].GetInt64();
+        m_totalMchIncomeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -642,6 +664,22 @@ void CloudOrderReturn::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "PaymentMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_paymentMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_totalPlatformIncomeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalPlatformIncome";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalPlatformIncome, allocator);
+    }
+
+    if (m_totalMchIncomeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalMchIncome";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalMchIncome, allocator);
     }
 
 }
@@ -1093,5 +1131,37 @@ void CloudOrderReturn::SetPaymentMethod(const string& _paymentMethod)
 bool CloudOrderReturn::PaymentMethodHasBeenSet() const
 {
     return m_paymentMethodHasBeenSet;
+}
+
+int64_t CloudOrderReturn::GetTotalPlatformIncome() const
+{
+    return m_totalPlatformIncome;
+}
+
+void CloudOrderReturn::SetTotalPlatformIncome(const int64_t& _totalPlatformIncome)
+{
+    m_totalPlatformIncome = _totalPlatformIncome;
+    m_totalPlatformIncomeHasBeenSet = true;
+}
+
+bool CloudOrderReturn::TotalPlatformIncomeHasBeenSet() const
+{
+    return m_totalPlatformIncomeHasBeenSet;
+}
+
+int64_t CloudOrderReturn::GetTotalMchIncome() const
+{
+    return m_totalMchIncome;
+}
+
+void CloudOrderReturn::SetTotalMchIncome(const int64_t& _totalMchIncome)
+{
+    m_totalMchIncome = _totalMchIncome;
+    m_totalMchIncomeHasBeenSet = true;
+}
+
+bool CloudOrderReturn::TotalMchIncomeHasBeenSet() const
+{
+    return m_totalMchIncomeHasBeenSet;
 }
 

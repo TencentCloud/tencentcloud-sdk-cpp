@@ -83,9 +83,9 @@ namespace TencentCloud
                     bool FilenamesHasBeenSet() const;
 
                     /**
-                     * 获取备份文件信息列表
+                     * 获取备份文件信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BackupInfos 备份文件信息列表
+                     * @return BackupInfos 备份文件信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupDownloadInfo> GetBackupInfos() const;
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_filenamesHasBeenSet;
 
                     /**
-                     * 备份文件信息列表
+                     * 备份文件信息列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<BackupDownloadInfo> m_backupInfos;

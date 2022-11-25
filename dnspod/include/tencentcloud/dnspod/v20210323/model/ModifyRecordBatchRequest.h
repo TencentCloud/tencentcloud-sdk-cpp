@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取记录ID数组
-                     * @return RecordIdList 记录ID数组
+                     * 获取记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * @return RecordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
                      */
                     std::vector<uint64_t> GetRecordIdList() const;
 
                     /**
-                     * 设置记录ID数组
-                     * @param RecordIdList 记录ID数组
+                     * 设置记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
+                     * @param RecordIdList 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
                      */
                     void SetRecordIdList(const std::vector<uint64_t>& _recordIdList);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 记录ID数组
+                     * 记录ID数组。可以通过接口DescribeRecordList查到所有的解析记录列表以及对应的RecordId
                      */
                     std::vector<uint64_t> m_recordIdList;
                     bool m_recordIdListHasBeenSet;

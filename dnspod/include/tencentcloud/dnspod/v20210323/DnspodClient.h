@@ -119,6 +119,8 @@
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordBatchResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordGroupRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordGroupResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyRecordRemarkRequest.h>
@@ -297,6 +299,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyRecordBatchResponse> ModifyRecordBatchOutcome;
                 typedef std::future<ModifyRecordBatchOutcome> ModifyRecordBatchOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordBatchRequest&, ModifyRecordBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordBatchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordFieldsResponse> ModifyRecordFieldsOutcome;
+                typedef std::future<ModifyRecordFieldsOutcome> ModifyRecordFieldsOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::ModifyRecordFieldsRequest&, ModifyRecordFieldsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordFieldsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRecordGroupResponse> ModifyRecordGroupOutcome;
                 typedef std::future<ModifyRecordGroupOutcome> ModifyRecordGroupOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::ModifyRecordGroupRequest&, ModifyRecordGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordGroupAsyncHandler;
@@ -595,7 +600,7 @@ namespace TencentCloud
                 DescribeRecordLineListOutcomeCallable DescribeRecordLineListCallable(const Model::DescribeRecordLineListRequest& request);
 
                 /**
-                 *获取某个域名下的解析记录
+                 *获取某个域名下的解析记录列表
                  * @param req DescribeRecordListRequest
                  * @return DescribeRecordListOutcome
                  */
@@ -765,6 +770,15 @@ namespace TencentCloud
                 ModifyRecordBatchOutcome ModifyRecordBatch(const Model::ModifyRecordBatchRequest &request);
                 void ModifyRecordBatchAsync(const Model::ModifyRecordBatchRequest& request, const ModifyRecordBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyRecordBatchOutcomeCallable ModifyRecordBatchCallable(const Model::ModifyRecordBatchRequest& request);
+
+                /**
+                 *修改记录可选字段
+                 * @param req ModifyRecordFieldsRequest
+                 * @return ModifyRecordFieldsOutcome
+                 */
+                ModifyRecordFieldsOutcome ModifyRecordFields(const Model::ModifyRecordFieldsRequest &request);
+                void ModifyRecordFieldsAsync(const Model::ModifyRecordFieldsRequest& request, const ModifyRecordFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordFieldsOutcomeCallable ModifyRecordFieldsCallable(const Model::ModifyRecordFieldsRequest& request);
 
                 /**
                  *修改记录分组

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取域名分组ID
-                     * @return GroupId 域名分组ID
+                     * 获取域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
+                     * @return GroupId 域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置域名分组ID
-                     * @param GroupId 域名分组ID
+                     * 设置域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
+                     * @param GroupId 域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 域名分组ID
+                     * 域名分组ID。可以通过接口DescribeDomainGroupList查看当前域名分组信息
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;

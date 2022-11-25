@@ -36,6 +36,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/DescribeBatchTaskRequest.h
   include/tencentcloud/dnspod/v20210323/model/DomainAnalyticsDetail.h
   include/tencentcloud/dnspod/v20210323/model/CreateSnapshotResponse.h
+  include/tencentcloud/dnspod/v20210323/model/KeyValue.h
   include/tencentcloud/dnspod/v20210323/model/DeleteRecordGroupRequest.h
   include/tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainResponse.h
@@ -126,6 +127,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/PayOrderWithBalanceRequest.h
   include/tencentcloud/dnspod/v20210323/model/ModifySnapshotConfigResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordResponse.h
+  include/tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsRequest.h
   include/tencentcloud/dnspod/v20210323/model/DeleteSnapshotResponse.h
   include/tencentcloud/dnspod/v20210323/model/DescribeDomainPurviewResponse.h
   include/tencentcloud/dnspod/v20210323/model/Deals.h
@@ -146,6 +148,7 @@ set(dnspod_public_header_model
   include/tencentcloud/dnspod/v20210323/model/SnapshotInfo.h
   include/tencentcloud/dnspod/v20210323/model/ModifyDynamicDNSRequest.h
   include/tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListRequest.h
+  include/tencentcloud/dnspod/v20210323/model/ModifyRecordFieldsResponse.h
   include/tencentcloud/dnspod/v20210323/model/PurviewInfo.h
   include/tencentcloud/dnspod/v20210323/model/ModifyRecordRemarkRequest.h
   include/tencentcloud/dnspod/v20210323/model/RollbackRecordSnapshotResponse.h
@@ -190,6 +193,7 @@ set(dnspod_src
   src/v20210323/model/DescribeBatchTaskRequest.cpp
   src/v20210323/model/DomainAnalyticsDetail.cpp
   src/v20210323/model/CreateSnapshotResponse.cpp
+  src/v20210323/model/KeyValue.cpp
   src/v20210323/model/DeleteRecordGroupRequest.cpp
   src/v20210323/model/PayOrderWithBalanceResponse.cpp
   src/v20210323/model/DescribeDomainResponse.cpp
@@ -280,6 +284,7 @@ set(dnspod_src
   src/v20210323/model/PayOrderWithBalanceRequest.cpp
   src/v20210323/model/ModifySnapshotConfigResponse.cpp
   src/v20210323/model/DescribeRecordResponse.cpp
+  src/v20210323/model/ModifyRecordFieldsRequest.cpp
   src/v20210323/model/DeleteSnapshotResponse.cpp
   src/v20210323/model/DescribeDomainPurviewResponse.cpp
   src/v20210323/model/Deals.cpp
@@ -300,6 +305,7 @@ set(dnspod_src
   src/v20210323/model/SnapshotInfo.cpp
   src/v20210323/model/ModifyDynamicDNSRequest.cpp
   src/v20210323/model/DescribeRecordGroupListRequest.cpp
+  src/v20210323/model/ModifyRecordFieldsResponse.cpp
   src/v20210323/model/PurviewInfo.cpp
   src/v20210323/model/ModifyRecordRemarkRequest.cpp
   src/v20210323/model/RollbackRecordSnapshotResponse.cpp

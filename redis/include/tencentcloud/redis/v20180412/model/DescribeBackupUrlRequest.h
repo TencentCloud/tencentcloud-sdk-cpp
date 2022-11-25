@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取备份ID，通过DescribeInstanceBackups接口可查
-                     * @return BackupId 备份ID，通过DescribeInstanceBackups接口可查
+                     * 获取备份 ID，可通过DescribeInstanceBackups接口返回的参数 BackupSet 获取。
+                     * @return BackupId 备份 ID，可通过DescribeInstanceBackups接口返回的参数 BackupSet 获取。
                      */
                     std::string GetBackupId() const;
 
                     /**
-                     * 设置备份ID，通过DescribeInstanceBackups接口可查
-                     * @param BackupId 备份ID，通过DescribeInstanceBackups接口可查
+                     * 设置备份 ID，可通过DescribeInstanceBackups接口返回的参数 BackupSet 获取。
+                     * @param BackupId 备份 ID，可通过DescribeInstanceBackups接口返回的参数 BackupSet 获取。
                      */
                     void SetBackupId(const std::string& _backupId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 备份ID，通过DescribeInstanceBackups接口可查
+                     * 备份 ID，可通过DescribeInstanceBackups接口返回的参数 BackupSet 获取。
                      */
                     std::string m_backupId;
                     bool m_backupIdHasBeenSet;

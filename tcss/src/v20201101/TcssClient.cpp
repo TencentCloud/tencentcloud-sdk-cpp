@@ -1545,6 +1545,135 @@ TcssClient::CreateImageExportJobOutcomeCallable TcssClient::CreateImageExportJob
     return task->get_future();
 }
 
+TcssClient::CreateK8sApiAbnormalEventExportJobOutcome TcssClient::CreateK8sApiAbnormalEventExportJob(const CreateK8sApiAbnormalEventExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateK8sApiAbnormalEventExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateK8sApiAbnormalEventExportJobResponse rsp = CreateK8sApiAbnormalEventExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateK8sApiAbnormalEventExportJobOutcome(rsp);
+        else
+            return CreateK8sApiAbnormalEventExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateK8sApiAbnormalEventExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateK8sApiAbnormalEventExportJobAsync(const CreateK8sApiAbnormalEventExportJobRequest& request, const CreateK8sApiAbnormalEventExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateK8sApiAbnormalEventExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateK8sApiAbnormalEventExportJobOutcomeCallable TcssClient::CreateK8sApiAbnormalEventExportJobCallable(const CreateK8sApiAbnormalEventExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateK8sApiAbnormalEventExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateK8sApiAbnormalEventExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateK8sApiAbnormalRuleExportJobOutcome TcssClient::CreateK8sApiAbnormalRuleExportJob(const CreateK8sApiAbnormalRuleExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateK8sApiAbnormalRuleExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateK8sApiAbnormalRuleExportJobResponse rsp = CreateK8sApiAbnormalRuleExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateK8sApiAbnormalRuleExportJobOutcome(rsp);
+        else
+            return CreateK8sApiAbnormalRuleExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateK8sApiAbnormalRuleExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateK8sApiAbnormalRuleExportJobAsync(const CreateK8sApiAbnormalRuleExportJobRequest& request, const CreateK8sApiAbnormalRuleExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateK8sApiAbnormalRuleExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateK8sApiAbnormalRuleExportJobOutcomeCallable TcssClient::CreateK8sApiAbnormalRuleExportJobCallable(const CreateK8sApiAbnormalRuleExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateK8sApiAbnormalRuleExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateK8sApiAbnormalRuleExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateK8sApiAbnormalRuleInfoOutcome TcssClient::CreateK8sApiAbnormalRuleInfo(const CreateK8sApiAbnormalRuleInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateK8sApiAbnormalRuleInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateK8sApiAbnormalRuleInfoResponse rsp = CreateK8sApiAbnormalRuleInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateK8sApiAbnormalRuleInfoOutcome(rsp);
+        else
+            return CreateK8sApiAbnormalRuleInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateK8sApiAbnormalRuleInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateK8sApiAbnormalRuleInfoAsync(const CreateK8sApiAbnormalRuleInfoRequest& request, const CreateK8sApiAbnormalRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateK8sApiAbnormalRuleInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateK8sApiAbnormalRuleInfoOutcomeCallable TcssClient::CreateK8sApiAbnormalRuleInfoCallable(const CreateK8sApiAbnormalRuleInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateK8sApiAbnormalRuleInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateK8sApiAbnormalRuleInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::CreateNetworkFirewallClusterRefreshOutcome TcssClient::CreateNetworkFirewallClusterRefresh(const CreateNetworkFirewallClusterRefreshRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNetworkFirewallClusterRefresh");
@@ -2656,6 +2785,49 @@ TcssClient::DeleteIgnoreVulOutcomeCallable TcssClient::DeleteIgnoreVulCallable(c
         [this, request]()
         {
             return this->DeleteIgnoreVul(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DeleteK8sApiAbnormalRuleOutcome TcssClient::DeleteK8sApiAbnormalRule(const DeleteK8sApiAbnormalRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteK8sApiAbnormalRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteK8sApiAbnormalRuleResponse rsp = DeleteK8sApiAbnormalRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteK8sApiAbnormalRuleOutcome(rsp);
+        else
+            return DeleteK8sApiAbnormalRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteK8sApiAbnormalRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DeleteK8sApiAbnormalRuleAsync(const DeleteK8sApiAbnormalRuleRequest& request, const DeleteK8sApiAbnormalRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteK8sApiAbnormalRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DeleteK8sApiAbnormalRuleOutcomeCallable TcssClient::DeleteK8sApiAbnormalRuleCallable(const DeleteK8sApiAbnormalRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteK8sApiAbnormalRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteK8sApiAbnormalRule(request);
         }
     );
 
@@ -3860,6 +4032,49 @@ TcssClient::DescribeAssetAppServiceListOutcomeCallable TcssClient::DescribeAsset
         [this, request]()
         {
             return this->DescribeAssetAppServiceList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeAssetClusterListOutcome TcssClient::DescribeAssetClusterList(const DescribeAssetClusterListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetClusterList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetClusterListResponse rsp = DescribeAssetClusterListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetClusterListOutcome(rsp);
+        else
+            return DescribeAssetClusterListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetClusterListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeAssetClusterListAsync(const DescribeAssetClusterListRequest& request, const DescribeAssetClusterListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetClusterList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeAssetClusterListOutcomeCallable TcssClient::DescribeAssetClusterListCallable(const DescribeAssetClusterListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetClusterListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetClusterList(request);
         }
     );
 
@@ -7386,6 +7601,307 @@ TcssClient::DescribeInspectionReportOutcomeCallable TcssClient::DescribeInspecti
         [this, request]()
         {
             return this->DescribeInspectionReport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeK8sApiAbnormalEventInfoOutcome TcssClient::DescribeK8sApiAbnormalEventInfo(const DescribeK8sApiAbnormalEventInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeK8sApiAbnormalEventInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeK8sApiAbnormalEventInfoResponse rsp = DescribeK8sApiAbnormalEventInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeK8sApiAbnormalEventInfoOutcome(rsp);
+        else
+            return DescribeK8sApiAbnormalEventInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeK8sApiAbnormalEventInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeK8sApiAbnormalEventInfoAsync(const DescribeK8sApiAbnormalEventInfoRequest& request, const DescribeK8sApiAbnormalEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeK8sApiAbnormalEventInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeK8sApiAbnormalEventInfoOutcomeCallable TcssClient::DescribeK8sApiAbnormalEventInfoCallable(const DescribeK8sApiAbnormalEventInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeK8sApiAbnormalEventInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeK8sApiAbnormalEventInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeK8sApiAbnormalEventListOutcome TcssClient::DescribeK8sApiAbnormalEventList(const DescribeK8sApiAbnormalEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeK8sApiAbnormalEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeK8sApiAbnormalEventListResponse rsp = DescribeK8sApiAbnormalEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeK8sApiAbnormalEventListOutcome(rsp);
+        else
+            return DescribeK8sApiAbnormalEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeK8sApiAbnormalEventListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeK8sApiAbnormalEventListAsync(const DescribeK8sApiAbnormalEventListRequest& request, const DescribeK8sApiAbnormalEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeK8sApiAbnormalEventList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeK8sApiAbnormalEventListOutcomeCallable TcssClient::DescribeK8sApiAbnormalEventListCallable(const DescribeK8sApiAbnormalEventListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeK8sApiAbnormalEventListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeK8sApiAbnormalEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeK8sApiAbnormalRuleInfoOutcome TcssClient::DescribeK8sApiAbnormalRuleInfo(const DescribeK8sApiAbnormalRuleInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeK8sApiAbnormalRuleInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeK8sApiAbnormalRuleInfoResponse rsp = DescribeK8sApiAbnormalRuleInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeK8sApiAbnormalRuleInfoOutcome(rsp);
+        else
+            return DescribeK8sApiAbnormalRuleInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeK8sApiAbnormalRuleInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeK8sApiAbnormalRuleInfoAsync(const DescribeK8sApiAbnormalRuleInfoRequest& request, const DescribeK8sApiAbnormalRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeK8sApiAbnormalRuleInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeK8sApiAbnormalRuleInfoOutcomeCallable TcssClient::DescribeK8sApiAbnormalRuleInfoCallable(const DescribeK8sApiAbnormalRuleInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeK8sApiAbnormalRuleInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeK8sApiAbnormalRuleInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeK8sApiAbnormalRuleListOutcome TcssClient::DescribeK8sApiAbnormalRuleList(const DescribeK8sApiAbnormalRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeK8sApiAbnormalRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeK8sApiAbnormalRuleListResponse rsp = DescribeK8sApiAbnormalRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeK8sApiAbnormalRuleListOutcome(rsp);
+        else
+            return DescribeK8sApiAbnormalRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeK8sApiAbnormalRuleListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeK8sApiAbnormalRuleListAsync(const DescribeK8sApiAbnormalRuleListRequest& request, const DescribeK8sApiAbnormalRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeK8sApiAbnormalRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeK8sApiAbnormalRuleListOutcomeCallable TcssClient::DescribeK8sApiAbnormalRuleListCallable(const DescribeK8sApiAbnormalRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeK8sApiAbnormalRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeK8sApiAbnormalRuleList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeK8sApiAbnormalRuleScopeListOutcome TcssClient::DescribeK8sApiAbnormalRuleScopeList(const DescribeK8sApiAbnormalRuleScopeListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeK8sApiAbnormalRuleScopeList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeK8sApiAbnormalRuleScopeListResponse rsp = DescribeK8sApiAbnormalRuleScopeListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeK8sApiAbnormalRuleScopeListOutcome(rsp);
+        else
+            return DescribeK8sApiAbnormalRuleScopeListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeK8sApiAbnormalRuleScopeListOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeK8sApiAbnormalRuleScopeListAsync(const DescribeK8sApiAbnormalRuleScopeListRequest& request, const DescribeK8sApiAbnormalRuleScopeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeK8sApiAbnormalRuleScopeList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeK8sApiAbnormalRuleScopeListOutcomeCallable TcssClient::DescribeK8sApiAbnormalRuleScopeListCallable(const DescribeK8sApiAbnormalRuleScopeListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeK8sApiAbnormalRuleScopeListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeK8sApiAbnormalRuleScopeList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeK8sApiAbnormalSummaryOutcome TcssClient::DescribeK8sApiAbnormalSummary(const DescribeK8sApiAbnormalSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeK8sApiAbnormalSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeK8sApiAbnormalSummaryResponse rsp = DescribeK8sApiAbnormalSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeK8sApiAbnormalSummaryOutcome(rsp);
+        else
+            return DescribeK8sApiAbnormalSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeK8sApiAbnormalSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeK8sApiAbnormalSummaryAsync(const DescribeK8sApiAbnormalSummaryRequest& request, const DescribeK8sApiAbnormalSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeK8sApiAbnormalSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeK8sApiAbnormalSummaryOutcomeCallable TcssClient::DescribeK8sApiAbnormalSummaryCallable(const DescribeK8sApiAbnormalSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeK8sApiAbnormalSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeK8sApiAbnormalSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::DescribeK8sApiAbnormalTendencyOutcome TcssClient::DescribeK8sApiAbnormalTendency(const DescribeK8sApiAbnormalTendencyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeK8sApiAbnormalTendency");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeK8sApiAbnormalTendencyResponse rsp = DescribeK8sApiAbnormalTendencyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeK8sApiAbnormalTendencyOutcome(rsp);
+        else
+            return DescribeK8sApiAbnormalTendencyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeK8sApiAbnormalTendencyOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::DescribeK8sApiAbnormalTendencyAsync(const DescribeK8sApiAbnormalTendencyRequest& request, const DescribeK8sApiAbnormalTendencyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeK8sApiAbnormalTendency(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::DescribeK8sApiAbnormalTendencyOutcomeCallable TcssClient::DescribeK8sApiAbnormalTendencyCallable(const DescribeK8sApiAbnormalTendencyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeK8sApiAbnormalTendencyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeK8sApiAbnormalTendency(request);
         }
     );
 
@@ -11987,6 +12503,135 @@ TcssClient::ModifyImageAuthorizedOutcomeCallable TcssClient::ModifyImageAuthoriz
         [this, request]()
         {
             return this->ModifyImageAuthorized(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyK8sApiAbnormalEventStatusOutcome TcssClient::ModifyK8sApiAbnormalEventStatus(const ModifyK8sApiAbnormalEventStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyK8sApiAbnormalEventStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyK8sApiAbnormalEventStatusResponse rsp = ModifyK8sApiAbnormalEventStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyK8sApiAbnormalEventStatusOutcome(rsp);
+        else
+            return ModifyK8sApiAbnormalEventStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyK8sApiAbnormalEventStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyK8sApiAbnormalEventStatusAsync(const ModifyK8sApiAbnormalEventStatusRequest& request, const ModifyK8sApiAbnormalEventStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyK8sApiAbnormalEventStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyK8sApiAbnormalEventStatusOutcomeCallable TcssClient::ModifyK8sApiAbnormalEventStatusCallable(const ModifyK8sApiAbnormalEventStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyK8sApiAbnormalEventStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyK8sApiAbnormalEventStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyK8sApiAbnormalRuleInfoOutcome TcssClient::ModifyK8sApiAbnormalRuleInfo(const ModifyK8sApiAbnormalRuleInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyK8sApiAbnormalRuleInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyK8sApiAbnormalRuleInfoResponse rsp = ModifyK8sApiAbnormalRuleInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyK8sApiAbnormalRuleInfoOutcome(rsp);
+        else
+            return ModifyK8sApiAbnormalRuleInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyK8sApiAbnormalRuleInfoOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyK8sApiAbnormalRuleInfoAsync(const ModifyK8sApiAbnormalRuleInfoRequest& request, const ModifyK8sApiAbnormalRuleInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyK8sApiAbnormalRuleInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyK8sApiAbnormalRuleInfoOutcomeCallable TcssClient::ModifyK8sApiAbnormalRuleInfoCallable(const ModifyK8sApiAbnormalRuleInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyK8sApiAbnormalRuleInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyK8sApiAbnormalRuleInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::ModifyK8sApiAbnormalRuleStatusOutcome TcssClient::ModifyK8sApiAbnormalRuleStatus(const ModifyK8sApiAbnormalRuleStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyK8sApiAbnormalRuleStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyK8sApiAbnormalRuleStatusResponse rsp = ModifyK8sApiAbnormalRuleStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyK8sApiAbnormalRuleStatusOutcome(rsp);
+        else
+            return ModifyK8sApiAbnormalRuleStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyK8sApiAbnormalRuleStatusOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::ModifyK8sApiAbnormalRuleStatusAsync(const ModifyK8sApiAbnormalRuleStatusRequest& request, const ModifyK8sApiAbnormalRuleStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyK8sApiAbnormalRuleStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::ModifyK8sApiAbnormalRuleStatusOutcomeCallable TcssClient::ModifyK8sApiAbnormalRuleStatusCallable(const ModifyK8sApiAbnormalRuleStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyK8sApiAbnormalRuleStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyK8sApiAbnormalRuleStatus(request);
         }
     );
 

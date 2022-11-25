@@ -2104,6 +2104,49 @@ DnspodClient::ModifyRecordBatchOutcomeCallable DnspodClient::ModifyRecordBatchCa
     return task->get_future();
 }
 
+DnspodClient::ModifyRecordFieldsOutcome DnspodClient::ModifyRecordFields(const ModifyRecordFieldsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordFields");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordFieldsResponse rsp = ModifyRecordFieldsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordFieldsOutcome(rsp);
+        else
+            return ModifyRecordFieldsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordFieldsOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::ModifyRecordFieldsAsync(const ModifyRecordFieldsRequest& request, const ModifyRecordFieldsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRecordFields(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::ModifyRecordFieldsOutcomeCallable DnspodClient::ModifyRecordFieldsCallable(const ModifyRecordFieldsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRecordFieldsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRecordFields(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::ModifyRecordGroupOutcome DnspodClient::ModifyRecordGroup(const ModifyRecordGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRecordGroup");

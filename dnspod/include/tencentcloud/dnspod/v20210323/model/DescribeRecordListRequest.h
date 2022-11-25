@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数
-                     * @return DomainId 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数
+                     * 获取要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @return DomainId 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     uint64_t GetDomainId() const;
 
                     /**
-                     * 设置要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数
-                     * @param DomainId 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数
+                     * 设置要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
+                     * @param DomainId 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     void SetDomainId(const uint64_t& _domainId);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool RecordTypeHasBeenSet() const;
 
                     /**
-                     * 获取获取某条线路名称的解析记录
-                     * @return RecordLine 获取某条线路名称的解析记录
+                     * 获取获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * @return RecordLine 获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
                      */
                     std::string GetRecordLine() const;
 
                     /**
-                     * 设置获取某条线路名称的解析记录
-                     * @param RecordLine 获取某条线路名称的解析记录
+                     * 设置获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * @param RecordLine 获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
                      */
                     void SetRecordLine(const std::string& _recordLine);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool RecordLineHasBeenSet() const;
 
                     /**
-                     * 获取获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数
-                     * @return RecordLineId 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数
+                     * 获取获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * @return RecordLineId 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
                      */
                     std::string GetRecordLineId() const;
 
                     /**
-                     * 设置获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数
-                     * @param RecordLineId 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数
+                     * 设置获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
+                     * @param RecordLineId 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
                      */
                     void SetRecordLineId(const std::string& _recordLineId);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool RecordLineIdHasBeenSet() const;
 
                     /**
-                     * 获取获取某个分组下的解析记录时，传这个分组Id
-                     * @return GroupId 获取某个分组下的解析记录时，传这个分组Id
+                     * 获取获取某个分组下的解析记录时，传这个分组Id。
+                     * @return GroupId 获取某个分组下的解析记录时，传这个分组Id。
                      */
                     uint64_t GetGroupId() const;
 
                     /**
-                     * 设置获取某个分组下的解析记录时，传这个分组Id
-                     * @param GroupId 获取某个分组下的解析记录时，传这个分组Id
+                     * 设置获取某个分组下的解析记录时，传这个分组Id。
+                     * @param GroupId 获取某个分组下的解析记录时，传这个分组Id。
                      */
                     void SetGroupId(const uint64_t& _groupId);
 
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数
+                     * 要获取的解析记录所属的域名Id，如果传了DomainId，系统将会忽略Domain参数。 可以通过接口DescribeDomainList查到所有的Domain以及DomainId
                      */
                     uint64_t m_domainId;
                     bool m_domainIdHasBeenSet;
@@ -285,19 +285,19 @@ namespace TencentCloud
                     bool m_recordTypeHasBeenSet;
 
                     /**
-                     * 获取某条线路名称的解析记录
+                     * 获取某条线路名称的解析记录。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
                      */
                     std::string m_recordLine;
                     bool m_recordLineHasBeenSet;
 
                     /**
-                     * 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数
+                     * 获取某个线路Id对应的解析记录，如果传RecordLineId，系统会忽略RecordLine参数。可以通过接口DescribeRecordLineList查看当前域名允许的线路信息
                      */
                     std::string m_recordLineId;
                     bool m_recordLineIdHasBeenSet;
 
                     /**
-                     * 获取某个分组下的解析记录时，传这个分组Id
+                     * 获取某个分组下的解析记录时，传这个分组Id。
                      */
                     uint64_t m_groupId;
                     bool m_groupIdHasBeenSet;

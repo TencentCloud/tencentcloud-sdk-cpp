@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BigDealIdListHasBeenSet() const;
 
                     /**
-                     * 获取代金券ID数组
-                     * @return VoucherIdList 代金券ID数组
+                     * 获取代金券ID数组。可以从控制台查到拥有的代金券
+                     * @return VoucherIdList 代金券ID数组。可以从控制台查到拥有的代金券
                      */
                     std::vector<std::string> GetVoucherIdList() const;
 
                     /**
-                     * 设置代金券ID数组
-                     * @param VoucherIdList 代金券ID数组
+                     * 设置代金券ID数组。可以从控制台查到拥有的代金券
+                     * @param VoucherIdList 代金券ID数组。可以从控制台查到拥有的代金券
                      */
                     void SetVoucherIdList(const std::vector<std::string>& _voucherIdList);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_bigDealIdListHasBeenSet;
 
                     /**
-                     * 代金券ID数组
+                     * 代金券ID数组。可以从控制台查到拥有的代金券
                      */
                     std::vector<std::string> m_voucherIdList;
                     bool m_voucherIdListHasBeenSet;
