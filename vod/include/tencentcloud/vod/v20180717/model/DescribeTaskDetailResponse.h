@@ -71,7 +71,6 @@ namespace TencentCloud
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
 <li> ReviewAudioVideo：音视频审核任务。</li>
-<li> ReduceMediaBitrate：降码率任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
@@ -83,7 +82,6 @@ namespace TencentCloud
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
 <li> ReviewAudioVideo：音视频审核任务。</li>
-<li> ReduceMediaBitrate：降码率任务。</li>
                      */
                     std::string GetTaskType() const;
 
@@ -358,9 +356,9 @@ namespace TencentCloud
                     bool ReviewAudioVideoTaskHasBeenSet() const;
 
                     /**
-                     * 获取降码率任务信息，仅当 TaskType 为 ReduceMediaBitrate，该字段有值。
+                     * 获取该字段已无效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReduceMediaBitrateTask 降码率任务信息，仅当 TaskType 为 ReduceMediaBitrate，该字段有值。
+                     * @return ReduceMediaBitrateTask 该字段已无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReduceMediaBitrateTask GetReduceMediaBitrateTask() const;
@@ -385,7 +383,6 @@ namespace TencentCloud
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
 <li> ReviewAudioVideo：音视频审核任务。</li>
-<li> ReduceMediaBitrate：降码率任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -523,7 +520,7 @@ namespace TencentCloud
                     bool m_reviewAudioVideoTaskHasBeenSet;
 
                     /**
-                     * 降码率任务信息，仅当 TaskType 为 ReduceMediaBitrate，该字段有值。
+                     * 该字段已无效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     ReduceMediaBitrateTask m_reduceMediaBitrateTask;

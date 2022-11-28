@@ -39,7 +39,9 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_customizationIdHasBeenSet(false),
     m_extraHasBeenSet(false),
     m_filterPuncHasBeenSet(false),
-    m_filterModalHasBeenSet(false)
+    m_filterModalHasBeenSet(false),
+    m_emotionalEnergyHasBeenSet(false),
+    m_reinforceHotwordHasBeenSet(false)
 {
 }
 
@@ -184,6 +186,22 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "FilterModal";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterModal, allocator);
+    }
+
+    if (m_emotionalEnergyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmotionalEnergy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_emotionalEnergy, allocator);
+    }
+
+    if (m_reinforceHotwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReinforceHotword";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_reinforceHotword, allocator);
     }
 
 
@@ -464,6 +482,38 @@ void CreateRecTaskRequest::SetFilterModal(const int64_t& _filterModal)
 bool CreateRecTaskRequest::FilterModalHasBeenSet() const
 {
     return m_filterModalHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetEmotionalEnergy() const
+{
+    return m_emotionalEnergy;
+}
+
+void CreateRecTaskRequest::SetEmotionalEnergy(const int64_t& _emotionalEnergy)
+{
+    m_emotionalEnergy = _emotionalEnergy;
+    m_emotionalEnergyHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::EmotionalEnergyHasBeenSet() const
+{
+    return m_emotionalEnergyHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetReinforceHotword() const
+{
+    return m_reinforceHotword;
+}
+
+void CreateRecTaskRequest::SetReinforceHotword(const int64_t& _reinforceHotword)
+{
+    m_reinforceHotword = _reinforceHotword;
+    m_reinforceHotwordHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::ReinforceHotwordHasBeenSet() const
+{
+    return m_reinforceHotwordHasBeenSet;
 }
 
 

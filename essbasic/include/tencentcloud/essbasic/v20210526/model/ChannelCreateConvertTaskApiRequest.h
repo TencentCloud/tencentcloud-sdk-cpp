@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取资源类型 取值范围doc,docx,html,excel之一
-                     * @return ResourceType 资源类型 取值范围doc,docx,html,excel之一
+                     * 获取资源类型 取值范围doc,docx,html,xls,xlsx之一
+                     * @return ResourceType 资源类型 取值范围doc,docx,html,xls,xlsx之一
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置资源类型 取值范围doc,docx,html,excel之一
-                     * @param ResourceType 资源类型 取值范围doc,docx,html,excel之一
+                     * 设置资源类型 取值范围doc,docx,html,xls,xlsx之一
+                     * @param ResourceType 资源类型 取值范围doc,docx,html,xls,xlsx之一
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -162,7 +162,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 资源类型 取值范围doc,docx,html,excel之一
+                     * 资源类型 取值范围doc,docx,html,xls,xlsx之一
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;

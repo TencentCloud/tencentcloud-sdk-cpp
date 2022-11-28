@@ -28,7 +28,8 @@ SplitMediaTask::SplitMediaTask() :
     m_messageHasBeenSet(false),
     m_fileInfoSetHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_progressHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome SplitMediaTask::Deserialize(const rapidjson::Value &value)
         m_sessionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTask.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetInt64();
+        m_progressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void SplitMediaTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void SplitMediaTask::SetSessionId(const string& _sessionId)
 bool SplitMediaTask::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+int64_t SplitMediaTask::GetProgress() const
+{
+    return m_progress;
+}
+
+void SplitMediaTask::SetProgress(const int64_t& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool SplitMediaTask::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 

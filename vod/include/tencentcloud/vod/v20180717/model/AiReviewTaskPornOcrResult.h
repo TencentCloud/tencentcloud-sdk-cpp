@@ -160,6 +160,24 @@ namespace TencentCloud
                      */
                     bool OutputHasBeenSet() const;
 
+                    /**
+                     * 获取Ocr 文字音视频审核涉及令人反感的信息的任务进度，取值范围 [0-100] 。
+                     * @return Progress Ocr 文字音视频审核涉及令人反感的信息的任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t GetProgress() const;
+
+                    /**
+                     * 设置Ocr 文字音视频审核涉及令人反感的信息的任务进度，取值范围 [0-100] 。
+                     * @param Progress Ocr 文字音视频审核涉及令人反感的信息的任务进度，取值范围 [0-100] 。
+                     */
+                    void SetProgress(const int64_t& _progress);
+
+                    /**
+                     * 判断参数 Progress 是否已赋值
+                     * @return Progress 是否已赋值
+                     */
+                    bool ProgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +216,12 @@ namespace TencentCloud
                      */
                     AiReviewPornOcrTaskOutput m_output;
                     bool m_outputHasBeenSet;
+
+                    /**
+                     * Ocr 文字音视频审核涉及令人反感的信息的任务进度，取值范围 [0-100] 。
+                     */
+                    int64_t m_progress;
+                    bool m_progressHasBeenSet;
 
                 };
             }

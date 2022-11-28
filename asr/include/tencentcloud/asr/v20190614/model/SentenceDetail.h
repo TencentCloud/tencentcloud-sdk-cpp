@@ -223,6 +223,50 @@ namespace TencentCloud
                      */
                     bool SpeakerIdHasBeenSet() const;
 
+                    /**
+                     * 获取情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetEmotionalEnergy() const;
+
+                    /**
+                     * 设置情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EmotionalEnergy 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEmotionalEnergy(const double& _emotionalEnergy);
+
+                    /**
+                     * 判断参数 EmotionalEnergy 是否已赋值
+                     * @return EmotionalEnergy 是否已赋值
+                     */
+                    bool EmotionalEnergyHasBeenSet() const;
+
+                    /**
+                     * 获取本句与上一句之间的静音时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SilenceTime 本句与上一句之间的静音时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSilenceTime() const;
+
+                    /**
+                     * 设置本句与上一句之间的静音时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SilenceTime 本句与上一句之间的静音时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSilenceTime(const int64_t& _silenceTime);
+
+                    /**
+                     * 判断参数 SilenceTime 是否已赋值
+                     * @return SilenceTime 是否已赋值
+                     */
+                    bool SilenceTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +324,20 @@ namespace TencentCloud
                      */
                     int64_t m_speakerId;
                     bool m_speakerIdHasBeenSet;
+
+                    /**
+                     * 情绪能量值，取值为音量分贝值/10。取值范围：[1,10]。值越高情绪越强烈。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_emotionalEnergy;
+                    bool m_emotionalEnergyHasBeenSet;
+
+                    /**
+                     * 本句与上一句之间的静音时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_silenceTime;
+                    bool m_silenceTimeHasBeenSet;
 
                 };
             }

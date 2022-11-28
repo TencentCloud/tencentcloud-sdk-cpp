@@ -64,20 +64,20 @@ namespace TencentCloud
                     /**
                      * 获取接入方式，取值有：
 <li> full：NS接入；</li>
-<li> partial：CNAME接入。</li>不填写使用默认值full。
+<li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
                      * @return Type 接入方式，取值有：
 <li> full：NS接入；</li>
-<li> partial：CNAME接入。</li>不填写使用默认值full。
+<li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
                      */
                     std::string GetType() const;
 
                     /**
                      * 设置接入方式，取值有：
 <li> full：NS接入；</li>
-<li> partial：CNAME接入。</li>不填写使用默认值full。
+<li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
                      * @param Type 接入方式，取值有：
 <li> full：NS接入；</li>
-<li> partial：CNAME接入。</li>不填写使用默认值full。
+<li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
                      */
                     void SetType(const std::string& _type);
 
@@ -178,7 +178,7 @@ namespace TencentCloud
                     /**
                      * 接入方式，取值有：
 <li> full：NS接入；</li>
-<li> partial：CNAME接入。</li>不填写使用默认值full。
+<li> partial：CNAME接入，请先调用认证站点API（IdentifyZone）进行站点归属权校验，校验通过后继续调用本接口创建站点。</li>不填写使用默认值full。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

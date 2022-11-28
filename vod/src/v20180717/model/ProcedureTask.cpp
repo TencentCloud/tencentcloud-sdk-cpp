@@ -36,7 +36,9 @@ ProcedureTask::ProcedureTask() :
     m_tasksPriorityHasBeenSet(false),
     m_tasksNotifyModeHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_sessionIdHasBeenSet(false)
+    m_sessionIdHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_operationTypeHasBeenSet(false)
 {
 }
 
@@ -252,6 +254,26 @@ CoreInternalOutcome ProcedureTask::Deserialize(const rapidjson::Value &value)
         m_sessionIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
+    {
+        if (!value["Operator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.Operator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
+    }
+
+    if (value.HasMember("OperationType") && !value["OperationType"].IsNull())
+    {
+        if (!value["OperationType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcedureTask.OperationType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_operationType = string(value["OperationType"].GetString());
+        m_operationTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +436,22 @@ void ProcedureTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "SessionId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_operationTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OperationType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operationType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -673,5 +711,37 @@ void ProcedureTask::SetSessionId(const string& _sessionId)
 bool ProcedureTask::SessionIdHasBeenSet() const
 {
     return m_sessionIdHasBeenSet;
+}
+
+string ProcedureTask::GetOperator() const
+{
+    return m_operator;
+}
+
+void ProcedureTask::SetOperator(const string& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ProcedureTask::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
+}
+
+string ProcedureTask::GetOperationType() const
+{
+    return m_operationType;
+}
+
+void ProcedureTask::SetOperationType(const string& _operationType)
+{
+    m_operationType = _operationType;
+    m_operationTypeHasBeenSet = true;
+}
+
+bool ProcedureTask::OperationTypeHasBeenSet() const
+{
+    return m_operationTypeHasBeenSet;
 }
 

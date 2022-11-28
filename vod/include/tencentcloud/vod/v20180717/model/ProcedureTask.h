@@ -387,6 +387,50 @@ namespace TencentCloud
                      */
                     bool SessionIdHasBeenSet() const;
 
+                    /**
+                     * 获取操作者。取值范围：
+<li>System: 表示系统触发。</li>
+                     * @return Operator 操作者。取值范围：
+<li>System: 表示系统触发。</li>
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作者。取值范围：
+<li>System: 表示系统触发。</li>
+                     * @param Operator 操作者。取值范围：
+<li>System: 表示系统触发。</li>
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取操作类型。取值范围：
+<li>TSC: 表示使用极速高清进行智能降码。</li>
+                     * @return OperationType 操作类型。取值范围：
+<li>TSC: 表示使用极速高清进行智能降码。</li>
+                     */
+                    std::string GetOperationType() const;
+
+                    /**
+                     * 设置操作类型。取值范围：
+<li>TSC: 表示使用极速高清进行智能降码。</li>
+                     * @param OperationType 操作类型。取值范围：
+<li>TSC: 表示使用极速高清进行智能降码。</li>
+                     */
+                    void SetOperationType(const std::string& _operationType);
+
+                    /**
+                     * 判断参数 OperationType 是否已赋值
+                     * @return OperationType 是否已赋值
+                     */
+                    bool OperationTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -496,6 +540,20 @@ namespace TencentCloud
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;
+
+                    /**
+                     * 操作者。取值范围：
+<li>System: 表示系统触发。</li>
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
+                     * 操作类型。取值范围：
+<li>TSC: 表示使用极速高清进行智能降码。</li>
+                     */
+                    std::string m_operationType;
+                    bool m_operationTypeHasBeenSet;
 
                 };
             }

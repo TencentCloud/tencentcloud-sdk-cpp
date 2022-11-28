@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取1拦截列表 2 忽略列表
-                     * @return RuleType 1拦截列表 2 忽略列表
+                     * 获取1封禁列表 2 放通列表
+                     * @return RuleType 1封禁列表 2 放通列表
                      */
                     int64_t GetRuleType() const;
 
                     /**
-                     * 设置1拦截列表 2 忽略列表
-                     * @param RuleType 1拦截列表 2 忽略列表
+                     * 设置1封禁列表 2 放通列表
+                     * @param RuleType 1封禁列表 2 放通列表
                      */
                     void SetRuleType(const int64_t& _ruleType);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
-                     * @return EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * 获取时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * @return EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
-                     * @param EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * 设置时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
+                     * @param EndTime 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 1拦截列表 2 忽略列表
+                     * 1封禁列表 2 放通列表
                      */
                     int64_t m_ruleType;
                     bool m_ruleTypeHasBeenSet;
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填
+                     * 时间格式：yyyy-MM-dd HH:mm:ss，IocAction 为edit或add时必填，必须大于当前时间且大于StartTime
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -26,7 +26,8 @@ AiRecognitionTaskObjectResult::AiRecognitionTaskObjectResult() :
     m_errCodeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_inputHasBeenSet(false),
-    m_outputHasBeenSet(false)
+    m_outputHasBeenSet(false),
+    m_progressHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome AiRecognitionTaskObjectResult::Deserialize(const rapidjson::
         m_outputHasBeenSet = true;
     }
 
+    if (value.HasMember("Progress") && !value["Progress"].IsNull())
+    {
+        if (!value["Progress"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiRecognitionTaskObjectResult.Progress` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_progress = value["Progress"].GetInt64();
+        m_progressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ void AiRecognitionTaskObjectResult::ToJsonObject(rapidjson::Value &value, rapidj
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_output.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_progressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Progress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_progress, allocator);
     }
 
 }
@@ -263,5 +282,21 @@ void AiRecognitionTaskObjectResult::SetOutput(const AiRecognitionTaskObjectResul
 bool AiRecognitionTaskObjectResult::OutputHasBeenSet() const
 {
     return m_outputHasBeenSet;
+}
+
+int64_t AiRecognitionTaskObjectResult::GetProgress() const
+{
+    return m_progress;
+}
+
+void AiRecognitionTaskObjectResult::SetProgress(const int64_t& _progress)
+{
+    m_progress = _progress;
+    m_progressHasBeenSet = true;
+}
+
+bool AiRecognitionTaskObjectResult::ProgressHasBeenSet() const
+{
+    return m_progressHasBeenSet;
 }
 

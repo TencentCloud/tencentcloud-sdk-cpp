@@ -642,6 +642,49 @@ EssbasicClient::ChannelVerifyPdfOutcomeCallable EssbasicClient::ChannelVerifyPdf
     return task->get_future();
 }
 
+EssbasicClient::CreateChannelFlowEvidenceReportOutcome EssbasicClient::CreateChannelFlowEvidenceReport(const CreateChannelFlowEvidenceReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateChannelFlowEvidenceReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateChannelFlowEvidenceReportResponse rsp = CreateChannelFlowEvidenceReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateChannelFlowEvidenceReportOutcome(rsp);
+        else
+            return CreateChannelFlowEvidenceReportOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateChannelFlowEvidenceReportOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::CreateChannelFlowEvidenceReportAsync(const CreateChannelFlowEvidenceReportRequest& request, const CreateChannelFlowEvidenceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateChannelFlowEvidenceReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::CreateChannelFlowEvidenceReportOutcomeCallable EssbasicClient::CreateChannelFlowEvidenceReportCallable(const CreateChannelFlowEvidenceReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateChannelFlowEvidenceReportOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateChannelFlowEvidenceReport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::CreateConsoleLoginUrlOutcome EssbasicClient::CreateConsoleLoginUrl(const CreateConsoleLoginUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateConsoleLoginUrl");
@@ -807,6 +850,49 @@ EssbasicClient::CreateSignUrlsOutcomeCallable EssbasicClient::CreateSignUrlsCall
         [this, request]()
         {
             return this->CreateSignUrls(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::DescribeChannelFlowEvidenceReportOutcome EssbasicClient::DescribeChannelFlowEvidenceReport(const DescribeChannelFlowEvidenceReportRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChannelFlowEvidenceReport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChannelFlowEvidenceReportResponse rsp = DescribeChannelFlowEvidenceReportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChannelFlowEvidenceReportOutcome(rsp);
+        else
+            return DescribeChannelFlowEvidenceReportOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChannelFlowEvidenceReportOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeChannelFlowEvidenceReportAsync(const DescribeChannelFlowEvidenceReportRequest& request, const DescribeChannelFlowEvidenceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChannelFlowEvidenceReport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeChannelFlowEvidenceReportOutcomeCallable EssbasicClient::DescribeChannelFlowEvidenceReportCallable(const DescribeChannelFlowEvidenceReportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChannelFlowEvidenceReportOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChannelFlowEvidenceReport(request);
         }
     );
 
