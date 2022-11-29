@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询信息类型，为0时不返回授权用户，为1时返回
-                     * @return InfoType 查询信息类型，为0时不返回授权用户，为1时返回
+                     * 获取查询信息类型，为1时返回授权用户，为其他值时不返回
+                     * @return InfoType 查询信息类型，为1时返回授权用户，为其他值时不返回
                      */
                     int64_t GetInfoType() const;
 
                     /**
-                     * 设置查询信息类型，为0时不返回授权用户，为1时返回
-                     * @param InfoType 查询信息类型，为0时不返回授权用户，为1时返回
+                     * 设置查询信息类型，为1时返回授权用户，为其他值时不返回
+                     * @param InfoType 查询信息类型，为1时返回授权用户，为其他值时不返回
                      */
                     void SetInfoType(const int64_t& _infoType);
 
@@ -154,7 +154,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询信息类型，为0时不返回授权用户，为1时返回
+                     * 查询信息类型，为1时返回授权用户，为其他值时不返回
                      */
                     int64_t m_infoType;
                     bool m_infoTypeHasBeenSet;

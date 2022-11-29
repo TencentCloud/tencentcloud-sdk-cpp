@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/faceid/v20180301/model/Encryption.h>
 #include <tencentcloud/faceid/v20180301/model/IntentionQuestion.h>
+#include <tencentcloud/faceid/v20180301/model/RuleIdConfig.h>
 
 
 namespace TencentCloud
@@ -232,6 +233,24 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     bool IntentionQuestionsHasBeenSet() const;
 
+                    /**
+                     * 获取RuleId相关配置
+                     * @return Config RuleId相关配置
+                     */
+                    RuleIdConfig GetConfig() const;
+
+                    /**
+                     * 设置RuleId相关配置
+                     * @param Config RuleId相关配置
+                     */
+                    void SetConfig(const RuleIdConfig& _config);
+
+                    /**
+                     * 判断参数 Config 是否已赋值
+                     * @return Config 是否已赋值
+                     */
+                    bool ConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -295,6 +314,12 @@ Base64编码后的图片数据大小不超过3M，仅支持jpg、png格式。请
                      */
                     std::vector<IntentionQuestion> m_intentionQuestions;
                     bool m_intentionQuestionsHasBeenSet;
+
+                    /**
+                     * RuleId相关配置
+                     */
+                    RuleIdConfig m_config;
+                    bool m_configHasBeenSet;
 
                 };
             }

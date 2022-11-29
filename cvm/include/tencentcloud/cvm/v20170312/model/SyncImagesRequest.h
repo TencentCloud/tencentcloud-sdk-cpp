@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool ImageNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要返回目的地域的镜像ID。
+                     * @return ImageSetRequired 是否需要返回目的地域的镜像ID。
+                     */
+                    bool GetImageSetRequired() const;
+
+                    /**
+                     * 设置是否需要返回目的地域的镜像ID。
+                     * @param ImageSetRequired 是否需要返回目的地域的镜像ID。
+                     */
+                    void SetImageSetRequired(const bool& _imageSetRequired);
+
+                    /**
+                     * 判断参数 ImageSetRequired 是否已赋值
+                     * @return ImageSetRequired 是否已赋值
+                     */
+                    bool ImageSetRequiredHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     std::string m_imageName;
                     bool m_imageNameHasBeenSet;
+
+                    /**
+                     * 是否需要返回目的地域的镜像ID。
+                     */
+                    bool m_imageSetRequired;
+                    bool m_imageSetRequiredHasBeenSet;
 
                 };
             }

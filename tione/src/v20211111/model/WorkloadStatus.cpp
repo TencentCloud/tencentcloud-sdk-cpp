@@ -27,7 +27,8 @@ WorkloadStatus::WorkloadStatus() :
     m_availableReplicasHasBeenSet(false),
     m_unavailableReplicasHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_statefulSetConditionHasBeenSet(false)
+    m_statefulSetConditionHasBeenSet(false),
+    m_conditionsHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,26 @@ CoreInternalOutcome WorkloadStatus::Deserialize(const rapidjson::Value &value)
         m_statefulSetConditionHasBeenSet = true;
     }
 
+    if (value.HasMember("Conditions") && !value["Conditions"].IsNull())
+    {
+        if (!value["Conditions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WorkloadStatus.Conditions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Conditions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            StatefulSetCondition item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_conditions.push_back(item);
+        }
+        m_conditionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +201,21 @@ void WorkloadStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
         int i=0;
         for (auto itr = m_statefulSetCondition.begin(); itr != m_statefulSetCondition.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_conditionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Conditions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_conditions.begin(); itr != m_conditions.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -299,5 +335,21 @@ void WorkloadStatus::SetStatefulSetCondition(const vector<StatefulSetCondition>&
 bool WorkloadStatus::StatefulSetConditionHasBeenSet() const
 {
     return m_statefulSetConditionHasBeenSet;
+}
+
+vector<StatefulSetCondition> WorkloadStatus::GetConditions() const
+{
+    return m_conditions;
+}
+
+void WorkloadStatus::SetConditions(const vector<StatefulSetCondition>& _conditions)
+{
+    m_conditions = _conditions;
+    m_conditionsHasBeenSet = true;
+}
+
+bool WorkloadStatus::ConditionsHasBeenSet() const
+{
+    return m_conditionsHasBeenSet;
 }
 

@@ -27,8 +27,8 @@ ParamInfo::ParamInfo() :
     m_unitHasBeenSet(false),
     m_defaultValueHasBeenSet(false),
     m_currentValueHasBeenSet(false),
-    m_enumValueHasBeenSet(false),
     m_maxHasBeenSet(false),
+    m_enumValueHasBeenSet(false),
     m_minHasBeenSet(false),
     m_paramDescriptionCHHasBeenSet(false),
     m_paramDescriptionENHasBeenSet(false),
@@ -37,7 +37,10 @@ ParamInfo::ParamInfo() :
     m_classificationENHasBeenSet(false),
     m_specRelatedHasBeenSet(false),
     m_advancedHasBeenSet(false),
-    m_lastModifyTimeHasBeenSet(false)
+    m_lastModifyTimeHasBeenSet(false),
+    m_standbyRelatedHasBeenSet(false),
+    m_versionRelationSetHasBeenSet(false),
+    m_specRelationSetHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,16 @@ CoreInternalOutcome ParamInfo::Deserialize(const rapidjson::Value &value)
         m_currentValueHasBeenSet = true;
     }
 
+    if (value.HasMember("Max") && !value["Max"].IsNull())
+    {
+        if (!value["Max"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.Max` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_max = value["Max"].GetDouble();
+        m_maxHasBeenSet = true;
+    }
+
     if (value.HasMember("EnumValue") && !value["EnumValue"].IsNull())
     {
         if (!value["EnumValue"].IsArray())
@@ -117,16 +130,6 @@ CoreInternalOutcome ParamInfo::Deserialize(const rapidjson::Value &value)
             m_enumValue.push_back((*itr).GetString());
         }
         m_enumValueHasBeenSet = true;
-    }
-
-    if (value.HasMember("Max") && !value["Max"].IsNull())
-    {
-        if (!value["Max"].IsLosslessDouble())
-        {
-            return CoreInternalOutcome(Core::Error("response `ParamInfo.Max` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
-        }
-        m_max = value["Max"].GetDouble();
-        m_maxHasBeenSet = true;
     }
 
     if (value.HasMember("Min") && !value["Min"].IsNull())
@@ -219,6 +222,56 @@ CoreInternalOutcome ParamInfo::Deserialize(const rapidjson::Value &value)
         m_lastModifyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("StandbyRelated") && !value["StandbyRelated"].IsNull())
+    {
+        if (!value["StandbyRelated"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.StandbyRelated` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_standbyRelated = value["StandbyRelated"].GetInt64();
+        m_standbyRelatedHasBeenSet = true;
+    }
+
+    if (value.HasMember("VersionRelationSet") && !value["VersionRelationSet"].IsNull())
+    {
+        if (!value["VersionRelationSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.VersionRelationSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VersionRelationSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ParamVersionRelation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_versionRelationSet.push_back(item);
+        }
+        m_versionRelationSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("SpecRelationSet") && !value["SpecRelationSet"].IsNull())
+    {
+        if (!value["SpecRelationSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.SpecRelationSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SpecRelationSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ParamSpecRelation item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_specRelationSet.push_back(item);
+        }
+        m_specRelationSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -274,6 +327,14 @@ void ParamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_currentValue.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_maxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Max";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_max, allocator);
+    }
+
     if (m_enumValueHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -285,14 +346,6 @@ void ParamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_maxHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Max";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_max, allocator);
     }
 
     if (m_minHasBeenSet)
@@ -365,6 +418,44 @@ void ParamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LastModifyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lastModifyTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_standbyRelatedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StandbyRelated";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_standbyRelated, allocator);
+    }
+
+    if (m_versionRelationSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VersionRelationSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_versionRelationSet.begin(); itr != m_versionRelationSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_specRelationSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecRelationSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_specRelationSet.begin(); itr != m_specRelationSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -466,22 +557,6 @@ bool ParamInfo::CurrentValueHasBeenSet() const
     return m_currentValueHasBeenSet;
 }
 
-vector<string> ParamInfo::GetEnumValue() const
-{
-    return m_enumValue;
-}
-
-void ParamInfo::SetEnumValue(const vector<string>& _enumValue)
-{
-    m_enumValue = _enumValue;
-    m_enumValueHasBeenSet = true;
-}
-
-bool ParamInfo::EnumValueHasBeenSet() const
-{
-    return m_enumValueHasBeenSet;
-}
-
 double ParamInfo::GetMax() const
 {
     return m_max;
@@ -496,6 +571,22 @@ void ParamInfo::SetMax(const double& _max)
 bool ParamInfo::MaxHasBeenSet() const
 {
     return m_maxHasBeenSet;
+}
+
+vector<string> ParamInfo::GetEnumValue() const
+{
+    return m_enumValue;
+}
+
+void ParamInfo::SetEnumValue(const vector<string>& _enumValue)
+{
+    m_enumValue = _enumValue;
+    m_enumValueHasBeenSet = true;
+}
+
+bool ParamInfo::EnumValueHasBeenSet() const
+{
+    return m_enumValueHasBeenSet;
 }
 
 double ParamInfo::GetMin() const
@@ -640,5 +731,53 @@ void ParamInfo::SetLastModifyTime(const string& _lastModifyTime)
 bool ParamInfo::LastModifyTimeHasBeenSet() const
 {
     return m_lastModifyTimeHasBeenSet;
+}
+
+int64_t ParamInfo::GetStandbyRelated() const
+{
+    return m_standbyRelated;
+}
+
+void ParamInfo::SetStandbyRelated(const int64_t& _standbyRelated)
+{
+    m_standbyRelated = _standbyRelated;
+    m_standbyRelatedHasBeenSet = true;
+}
+
+bool ParamInfo::StandbyRelatedHasBeenSet() const
+{
+    return m_standbyRelatedHasBeenSet;
+}
+
+vector<ParamVersionRelation> ParamInfo::GetVersionRelationSet() const
+{
+    return m_versionRelationSet;
+}
+
+void ParamInfo::SetVersionRelationSet(const vector<ParamVersionRelation>& _versionRelationSet)
+{
+    m_versionRelationSet = _versionRelationSet;
+    m_versionRelationSetHasBeenSet = true;
+}
+
+bool ParamInfo::VersionRelationSetHasBeenSet() const
+{
+    return m_versionRelationSetHasBeenSet;
+}
+
+vector<ParamSpecRelation> ParamInfo::GetSpecRelationSet() const
+{
+    return m_specRelationSet;
+}
+
+void ParamInfo::SetSpecRelationSet(const vector<ParamSpecRelation>& _specRelationSet)
+{
+    m_specRelationSet = _specRelationSet;
+    m_specRelationSetHasBeenSet = true;
+}
+
+bool ParamInfo::SpecRelationSetHasBeenSet() const
+{
+    return m_specRelationSetHasBeenSet;
 }
 

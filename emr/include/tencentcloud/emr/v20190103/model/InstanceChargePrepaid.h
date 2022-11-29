@@ -71,13 +71,21 @@ namespace TencentCloud
 
                     /**
                      * 获取是否自动续费，默认为否。
+<li>true：是</li>
+<li>false：否</li>
                      * @return RenewFlag 是否自动续费，默认为否。
+<li>true：是</li>
+<li>false：否</li>
                      */
                     bool GetRenewFlag() const;
 
                     /**
                      * 设置是否自动续费，默认为否。
+<li>true：是</li>
+<li>false：否</li>
                      * @param RenewFlag 是否自动续费，默认为否。
+<li>true：是</li>
+<li>false：否</li>
                      */
                     void SetRenewFlag(const bool& _renewFlag);
 
@@ -98,6 +106,8 @@ namespace TencentCloud
 
                     /**
                      * 是否自动续费，默认为否。
+<li>true：是</li>
+<li>false：否</li>
                      */
                     bool m_renewFlag;
                     bool m_renewFlagHasBeenSet;

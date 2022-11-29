@@ -156,6 +156,24 @@ global: 全球节点
                      */
                     bool ShowIpv6HasBeenSet() const;
 
+                    /**
+                     * 获取是否对IPV6进行缩写。
+                     * @return AbbreviationIpv6 是否对IPV6进行缩写。
+                     */
+                    bool GetAbbreviationIpv6() const;
+
+                    /**
+                     * 设置是否对IPV6进行缩写。
+                     * @param AbbreviationIpv6 是否对IPV6进行缩写。
+                     */
+                    void SetAbbreviationIpv6(const bool& _abbreviationIpv6);
+
+                    /**
+                     * 判断参数 AbbreviationIpv6 是否已赋值
+                     * @return AbbreviationIpv6 是否已赋值
+                     */
+                    bool AbbreviationIpv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +211,12 @@ global: 全球节点
                      */
                     bool m_showIpv6;
                     bool m_showIpv6HasBeenSet;
+
+                    /**
+                     * 是否对IPV6进行缩写。
+                     */
+                    bool m_abbreviationIpv6;
+                    bool m_abbreviationIpv6HasBeenSet;
 
                 };
             }

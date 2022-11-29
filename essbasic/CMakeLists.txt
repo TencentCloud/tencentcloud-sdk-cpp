@@ -42,6 +42,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/Agent.h
   include/tencentcloud/essbasic/v20210526/model/FlowApproverDetail.h
+  include/tencentcloud/essbasic/v20210526/model/RelieveInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h
   include/tencentcloud/essbasic/v20210526/model/ResourceUrlInfo.h
@@ -83,6 +84,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/FlowResourceUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/UploadFile.h
   include/tencentcloud/essbasic/v20210526/model/Filter.h
+  include/tencentcloud/essbasic/v20210526/model/ReleasedApprover.h
   include/tencentcloud/essbasic/v20210526/model/DescribeUsageRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h
   include/tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h
@@ -93,6 +95,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.h
   include/tencentcloud/essbasic/v20210526/model/ApproverOption.h
@@ -112,6 +115,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncFailReason.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h
   include/tencentcloud/essbasic/v20210526/model/CcInfo.h
   include/tencentcloud/essbasic/v20201222/model/DescribeFaceIdResultsRequest.h
@@ -267,6 +271,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateFlowByFilesRequest.cpp
   src/v20210526/model/Agent.cpp
   src/v20210526/model/FlowApproverDetail.cpp
+  src/v20210526/model/RelieveInfo.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesRequest.cpp
   src/v20210526/model/DescribeFlowDetailInfoResponse.cpp
   src/v20210526/model/ResourceUrlInfo.cpp
@@ -308,6 +313,7 @@ set(essbasic_src
   src/v20210526/model/FlowResourceUrlInfo.cpp
   src/v20210526/model/UploadFile.cpp
   src/v20210526/model/Filter.cpp
+  src/v20210526/model/ReleasedApprover.cpp
   src/v20210526/model/DescribeUsageRequest.cpp
   src/v20210526/model/CreateSignUrlsResponse.cpp
   src/v20210526/model/UploadFilesResponse.cpp
@@ -318,6 +324,7 @@ set(essbasic_src
   src/v20210526/model/ChannelCreateFlowSignReviewResponse.cpp
   src/v20210526/model/ChannelDescribeOrganizationSealsResponse.cpp
   src/v20210526/model/ChannelCancelMultiFlowSignQRCodeResponse.cpp
+  src/v20210526/model/ChannelCreateReleaseFlowRequest.cpp
   src/v20210526/model/ChannelCreateFlowGroupByFilesResponse.cpp
   src/v20210526/model/ChannelCreateMultiFlowSignQRCodeResponse.cpp
   src/v20210526/model/ApproverOption.cpp
@@ -337,6 +344,7 @@ set(essbasic_src
   src/v20210526/model/CreateChannelFlowEvidenceReportResponse.cpp
   src/v20210526/model/SyncFailReason.cpp
   src/v20210526/model/ChannelDescribeEmployeesResponse.cpp
+  src/v20210526/model/ChannelCreateReleaseFlowResponse.cpp
   src/v20210526/model/DescribeChannelFlowEvidenceReportResponse.cpp
   src/v20210526/model/CcInfo.cpp
   src/v20201222/model/DescribeFaceIdResultsRequest.cpp

@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/postgres/v20170312/model/ParamVersionRelation.h>
+#include <tencentcloud/postgres/v20170312/model/ParamSpecRelation.h>
 
 
 namespace TencentCloud
@@ -125,17 +127,17 @@ namespace TencentCloud
                     bool ParamValueTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数值 单位。参数没有单位是，该字段返回空
+                     * 获取参数值 单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Unit 参数值 单位。参数没有单位是，该字段返回空
+                     * @return Unit 参数值 单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUnit() const;
 
                     /**
-                     * 设置参数值 单位。参数没有单位是，该字段返回空
+                     * 设置参数值 单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Unit 参数值 单位。参数没有单位是，该字段返回空
+                     * @param Unit 参数值 单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUnit(const std::string& _unit);
@@ -191,28 +193,6 @@ namespace TencentCloud
                     bool CurrentValueHasBeenSet() const;
 
                     /**
-                     * 获取枚举类型参数，取值范围
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EnumValue 枚举类型参数，取值范围
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> GetEnumValue() const;
-
-                    /**
-                     * 设置枚举类型参数，取值范围
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EnumValue 枚举类型参数，取值范围
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetEnumValue(const std::vector<std::string>& _enumValue);
-
-                    /**
-                     * 判断参数 EnumValue 是否已赋值
-                     * @return EnumValue 是否已赋值
-                     */
-                    bool EnumValueHasBeenSet() const;
-
-                    /**
                      * 获取数值类型（integer、real）参数，取值下界
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Max 数值类型（integer、real）参数，取值下界
@@ -233,6 +213,28 @@ namespace TencentCloud
                      * @return Max 是否已赋值
                      */
                     bool MaxHasBeenSet() const;
+
+                    /**
+                     * 获取枚举类型参数，取值范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnumValue 枚举类型参数，取值范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetEnumValue() const;
+
+                    /**
+                     * 设置枚举类型参数，取值范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnumValue 枚举类型参数，取值范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnumValue(const std::vector<std::string>& _enumValue);
+
+                    /**
+                     * 判断参数 EnumValue 是否已赋值
+                     * @return EnumValue 是否已赋值
+                     */
+                    bool EnumValueHasBeenSet() const;
 
                     /**
                      * 获取数值类型（integer、real）参数，取值上界
@@ -432,6 +434,72 @@ namespace TencentCloud
                      */
                     bool LastModifyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StandbyRelated 参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStandbyRelated() const;
+
+                    /**
+                     * 设置参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StandbyRelated 参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStandbyRelated(const int64_t& _standbyRelated);
+
+                    /**
+                     * 判断参数 StandbyRelated 是否已赋值
+                     * @return StandbyRelated 是否已赋值
+                     */
+                    bool StandbyRelatedHasBeenSet() const;
+
+                    /**
+                     * 获取参数版本关联信息，存储具体内核版本下的具体参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VersionRelationSet 参数版本关联信息，存储具体内核版本下的具体参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ParamVersionRelation> GetVersionRelationSet() const;
+
+                    /**
+                     * 设置参数版本关联信息，存储具体内核版本下的具体参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VersionRelationSet 参数版本关联信息，存储具体内核版本下的具体参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersionRelationSet(const std::vector<ParamVersionRelation>& _versionRelationSet);
+
+                    /**
+                     * 判断参数 VersionRelationSet 是否已赋值
+                     * @return VersionRelationSet 是否已赋值
+                     */
+                    bool VersionRelationSetHasBeenSet() const;
+
+                    /**
+                     * 获取参数规格关联信息，存储具体规格下具体的参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecRelationSet 参数规格关联信息，存储具体规格下具体的参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ParamSpecRelation> GetSpecRelationSet() const;
+
+                    /**
+                     * 设置参数规格关联信息，存储具体规格下具体的参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SpecRelationSet 参数规格关联信息，存储具体规格下具体的参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSpecRelationSet(const std::vector<ParamSpecRelation>& _specRelationSet);
+
+                    /**
+                     * 判断参数 SpecRelationSet 是否已赋值
+                     * @return SpecRelationSet 是否已赋值
+                     */
+                    bool SpecRelationSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -459,7 +527,7 @@ namespace TencentCloud
                     bool m_paramValueTypeHasBeenSet;
 
                     /**
-                     * 参数值 单位。参数没有单位是，该字段返回空
+                     * 参数值 单位。参数没有单位时，该字段返回空
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unit;
@@ -480,18 +548,18 @@ namespace TencentCloud
                     bool m_currentValueHasBeenSet;
 
                     /**
-                     * 枚举类型参数，取值范围
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<std::string> m_enumValue;
-                    bool m_enumValueHasBeenSet;
-
-                    /**
                      * 数值类型（integer、real）参数，取值下界
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_max;
                     bool m_maxHasBeenSet;
+
+                    /**
+                     * 枚举类型参数，取值范围
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_enumValue;
+                    bool m_enumValueHasBeenSet;
 
                     /**
                      * 数值类型（integer、real）参数，取值上界
@@ -555,6 +623,27 @@ namespace TencentCloud
                      */
                     std::string m_lastModifyTime;
                     bool m_lastModifyTimeHasBeenSet;
+
+                    /**
+                     * 参数存在主备制约，0：无主备制约关系，1:备机参数值需比主机大，2:主机参数值需比备机大
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_standbyRelated;
+                    bool m_standbyRelatedHasBeenSet;
+
+                    /**
+                     * 参数版本关联信息，存储具体内核版本下的具体参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ParamVersionRelation> m_versionRelationSet;
+                    bool m_versionRelationSetHasBeenSet;
+
+                    /**
+                     * 参数规格关联信息，存储具体规格下具体的参数信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ParamSpecRelation> m_specRelationSet;
+                    bool m_specRelationSetHasBeenSet;
 
                 };
             }

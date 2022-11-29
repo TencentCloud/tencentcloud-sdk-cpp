@@ -4125,49 +4125,6 @@ CdbClient::ModifyBackupDownloadRestrictionOutcomeCallable CdbClient::ModifyBacku
     return task->get_future();
 }
 
-CdbClient::ModifyCDBProxyOutcome CdbClient::ModifyCDBProxy(const ModifyCDBProxyRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyCDBProxy");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyCDBProxyResponse rsp = ModifyCDBProxyResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyCDBProxyOutcome(rsp);
-        else
-            return ModifyCDBProxyOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyCDBProxyOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::ModifyCDBProxyAsync(const ModifyCDBProxyRequest& request, const ModifyCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyCDBProxy(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::ModifyCDBProxyOutcomeCallable CdbClient::ModifyCDBProxyCallable(const ModifyCDBProxyRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyCDBProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyCDBProxy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::ModifyCDBProxyConnectionPoolOutcome CdbClient::ModifyCDBProxyConnectionPool(const ModifyCDBProxyConnectionPoolRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCDBProxyConnectionPool");

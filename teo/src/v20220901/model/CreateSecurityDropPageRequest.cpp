@@ -28,7 +28,8 @@ CreateSecurityDropPageRequest::CreateSecurityDropPageRequest() :
     m_nameHasBeenSet(false),
     m_contentHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_moduleHasBeenSet(false)
+    m_moduleHasBeenSet(false),
+    m_templateIdHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string CreateSecurityDropPageRequest::ToJsonString() const
         string key = "Module";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_module.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void CreateSecurityDropPageRequest::SetModule(const string& _module)
 bool CreateSecurityDropPageRequest::ModuleHasBeenSet() const
 {
     return m_moduleHasBeenSet;
+}
+
+string CreateSecurityDropPageRequest::GetTemplateId() const
+{
+    return m_templateId;
+}
+
+void CreateSecurityDropPageRequest::SetTemplateId(const string& _templateId)
+{
+    m_templateId = _templateId;
+    m_templateIdHasBeenSet = true;
+}
+
+bool CreateSecurityDropPageRequest::TemplateIdHasBeenSet() const
+{
+    return m_templateIdHasBeenSet;
 }
 
 

@@ -213,8 +213,6 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionResponse.h>
-#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyRequest.h>
-#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescRequest.h>
@@ -592,9 +590,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupDownloadRestrictionResponse> ModifyBackupDownloadRestrictionOutcome;
                 typedef std::future<ModifyBackupDownloadRestrictionOutcome> ModifyBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyBackupDownloadRestrictionRequest&, ModifyBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupDownloadRestrictionAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyCDBProxyResponse> ModifyCDBProxyOutcome;
-                typedef std::future<ModifyCDBProxyOutcome> ModifyCDBProxyOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyRequest&, ModifyCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCDBProxyConnectionPoolResponse> ModifyCDBProxyConnectionPoolOutcome;
                 typedef std::future<ModifyCDBProxyConnectionPoolOutcome> ModifyCDBProxyConnectionPoolOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyConnectionPoolRequest&, ModifyCDBProxyConnectionPoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyConnectionPoolAsyncHandler;
@@ -1599,15 +1594,6 @@ namespace TencentCloud
                 ModifyBackupDownloadRestrictionOutcome ModifyBackupDownloadRestriction(const Model::ModifyBackupDownloadRestrictionRequest &request);
                 void ModifyBackupDownloadRestrictionAsync(const Model::ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
-
-                /**
-                 *配置数据库代理读写分离
-                 * @param req ModifyCDBProxyRequest
-                 * @return ModifyCDBProxyOutcome
-                 */
-                ModifyCDBProxyOutcome ModifyCDBProxy(const Model::ModifyCDBProxyRequest &request);
-                void ModifyCDBProxyAsync(const Model::ModifyCDBProxyRequest& request, const ModifyCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyCDBProxyOutcomeCallable ModifyCDBProxyCallable(const Model::ModifyCDBProxyRequest& request);
 
                 /**
                  *请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。

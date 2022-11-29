@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
-SyncImagesResponse::SyncImagesResponse()
+SyncImagesResponse::SyncImagesResponse() :
+    m_imageSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome SyncImagesResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ImageSet") && !rsp["ImageSet"].IsNull())
+    {
+        if (!rsp["ImageSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ImageSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ImageSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SyncImage item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_imageSet.push_back(item);
+        }
+        m_imageSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string SyncImagesResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_imageSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageSet.begin(); itr != m_imageSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string SyncImagesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<SyncImage> SyncImagesResponse::GetImageSet() const
+{
+    return m_imageSet;
+}
+
+bool SyncImagesResponse::ImageSetHasBeenSet() const
+{
+    return m_imageSetHasBeenSet;
+}
 
 

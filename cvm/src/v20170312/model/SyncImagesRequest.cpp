@@ -26,7 +26,8 @@ SyncImagesRequest::SyncImagesRequest() :
     m_imageIdsHasBeenSet(false),
     m_destinationRegionsHasBeenSet(false),
     m_dryRunHasBeenSet(false),
-    m_imageNameHasBeenSet(false)
+    m_imageNameHasBeenSet(false),
+    m_imageSetRequiredHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,14 @@ string SyncImagesRequest::ToJsonString() const
         string key = "ImageName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageSetRequiredHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageSetRequired";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_imageSetRequired, allocator);
     }
 
 
@@ -149,6 +158,22 @@ void SyncImagesRequest::SetImageName(const string& _imageName)
 bool SyncImagesRequest::ImageNameHasBeenSet() const
 {
     return m_imageNameHasBeenSet;
+}
+
+bool SyncImagesRequest::GetImageSetRequired() const
+{
+    return m_imageSetRequired;
+}
+
+void SyncImagesRequest::SetImageSetRequired(const bool& _imageSetRequired)
+{
+    m_imageSetRequired = _imageSetRequired;
+    m_imageSetRequiredHasBeenSet = true;
+}
+
+bool SyncImagesRequest::ImageSetRequiredHasBeenSet() const
+{
+    return m_imageSetRequiredHasBeenSet;
 }
 
 

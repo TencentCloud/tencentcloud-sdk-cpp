@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool ConnectTimeoutHasBeenSet() const;
 
                     /**
-                     * 获取回源接收超时时间，单位为秒，要求10 ~ 60之间
+                     * 获取回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReceiveTimeout 回源接收超时时间，单位为秒，要求10 ~ 60之间
+                     * @return ReceiveTimeout 回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetReceiveTimeout() const;
 
                     /**
-                     * 设置回源接收超时时间，单位为秒，要求10 ~ 60之间
+                     * 设置回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReceiveTimeout 回源接收超时时间，单位为秒，要求10 ~ 60之间
+                     * @param ReceiveTimeout 回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReceiveTimeout(const uint64_t& _receiveTimeout);
@@ -100,7 +100,7 @@ namespace TencentCloud
                     bool m_connectTimeoutHasBeenSet;
 
                     /**
-                     * 回源接收超时时间，单位为秒，要求10 ~ 60之间
+                     * 回源接收超时时间，单位为秒，要求10 ~ 300之间
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_receiveTimeout;

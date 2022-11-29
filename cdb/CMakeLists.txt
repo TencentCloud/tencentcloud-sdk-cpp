@@ -183,10 +183,9 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyInstancePasswordComplexityResponse.h
   include/tencentcloud/cdb/v20170320/model/DeviceMemInfo.h
   include/tencentcloud/cdb/v20170320/model/UpgradeDBInstanceEngineVersionRequest.h
-  include/tencentcloud/cdb/v20170320/model/SlowLogItem.h
+  include/tencentcloud/cdb/v20170320/model/DatabasesWithCharacterLists.h
   include/tencentcloud/cdb/v20170320/model/TagInfo.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstancesResponse.h
-  include/tencentcloud/cdb/v20170320/model/ModifyCDBProxyResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateDeployGroupRequest.h
   include/tencentcloud/cdb/v20170320/model/DeleteAccountsRequest.h
@@ -231,14 +230,13 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/SwitchForUpgradeRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateDBInstanceHourResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionResponse.h
-  include/tencentcloud/cdb/v20170320/model/DatabasesWithCharacterLists.h
+  include/tencentcloud/cdb/v20170320/model/SlowLogItem.h
   include/tencentcloud/cdb/v20170320/model/CloneItem.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.h
   include/tencentcloud/cdb/v20170320/model/CreateAccountsRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDeployGroupListRequest.h
   include/tencentcloud/cdb/v20170320/model/BackupInfo.h
   include/tencentcloud/cdb/v20170320/model/CloseWanServiceResponse.h
-  include/tencentcloud/cdb/v20170320/model/RoWeight.h
   include/tencentcloud/cdb/v20170320/model/RenewDBInstanceRequest.h
   include/tencentcloud/cdb/v20170320/model/SlowLogInfo.h
   include/tencentcloud/cdb/v20170320/model/ModifyLocalBinlogConfigResponse.h
@@ -299,7 +297,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyInstancePasswordComplexityRequest.h
   include/tencentcloud/cdb/v20170320/model/OpenWanServiceResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceGTIDRequest.h
-  include/tencentcloud/cdb/v20170320/model/ModifyCDBProxyRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditConfigRequest.h
   include/tencentcloud/cdb/v20170320/model/DeviceDiskInfo.h
   include/tencentcloud/cdb/v20170320/model/RoWeightValue.h
@@ -547,10 +544,9 @@ set(cdb_src
   src/v20170320/model/ModifyInstancePasswordComplexityResponse.cpp
   src/v20170320/model/DeviceMemInfo.cpp
   src/v20170320/model/UpgradeDBInstanceEngineVersionRequest.cpp
-  src/v20170320/model/SlowLogItem.cpp
+  src/v20170320/model/DatabasesWithCharacterLists.cpp
   src/v20170320/model/TagInfo.cpp
   src/v20170320/model/DescribeDBInstancesResponse.cpp
-  src/v20170320/model/ModifyCDBProxyResponse.cpp
   src/v20170320/model/DescribeBackupDownloadRestrictionRequest.cpp
   src/v20170320/model/CreateDeployGroupRequest.cpp
   src/v20170320/model/DeleteAccountsRequest.cpp
@@ -595,14 +591,13 @@ set(cdb_src
   src/v20170320/model/SwitchForUpgradeRequest.cpp
   src/v20170320/model/CreateDBInstanceHourResponse.cpp
   src/v20170320/model/DescribeBackupDownloadRestrictionResponse.cpp
-  src/v20170320/model/DatabasesWithCharacterLists.cpp
+  src/v20170320/model/SlowLogItem.cpp
   src/v20170320/model/CloneItem.cpp
   src/v20170320/model/ModifyDBInstanceSecurityGroupsResponse.cpp
   src/v20170320/model/CreateAccountsRequest.cpp
   src/v20170320/model/DescribeDeployGroupListRequest.cpp
   src/v20170320/model/BackupInfo.cpp
   src/v20170320/model/CloseWanServiceResponse.cpp
-  src/v20170320/model/RoWeight.cpp
   src/v20170320/model/RenewDBInstanceRequest.cpp
   src/v20170320/model/SlowLogInfo.cpp
   src/v20170320/model/ModifyLocalBinlogConfigResponse.cpp
@@ -663,7 +658,6 @@ set(cdb_src
   src/v20170320/model/ModifyInstancePasswordComplexityRequest.cpp
   src/v20170320/model/OpenWanServiceResponse.cpp
   src/v20170320/model/DescribeDBInstanceGTIDRequest.cpp
-  src/v20170320/model/ModifyCDBProxyRequest.cpp
   src/v20170320/model/ModifyAuditConfigRequest.cpp
   src/v20170320/model/DeviceDiskInfo.cpp
   src/v20170320/model/RoWeightValue.cpp

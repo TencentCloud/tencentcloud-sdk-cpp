@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取站点Id。
-                     * @return ZoneId 站点Id。
+                     * 获取站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @return ZoneId 站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      */
                     std::string GetZoneId() const;
 
                     /**
-                     * 设置站点Id。
-                     * @param ZoneId 站点Id。
+                     * 设置站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @param ZoneId 站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      */
                     void SetZoneId(const std::string& _zoneId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取站点子域名。
-                     * @return Entity 站点子域名。
+                     * 获取子域名/应用名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @return Entity 子域名/应用名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      */
                     std::string GetEntity() const;
 
                     /**
-                     * 设置站点子域名。
-                     * @param Entity 站点子域名。
+                     * 设置子域名/应用名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
+                     * @param Entity 子域名/应用名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      */
                     void SetEntity(const std::string& _entity);
 
@@ -166,16 +166,34 @@ namespace TencentCloud
                      */
                     bool ModuleHasBeenSet() const;
 
+                    /**
+                     * 获取模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     * @return TemplateId 模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     */
+                    std::string GetTemplateId() const;
+
+                    /**
+                     * 设置模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     * @param TemplateId 模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     */
+                    void SetTemplateId(const std::string& _templateId);
+
+                    /**
+                     * 判断参数 TemplateId 是否已赋值
+                     * @return TemplateId 是否已赋值
+                     */
+                    bool TemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 站点Id。
+                     * 站点Id。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 站点子域名。
+                     * 子域名/应用名。当使用ZoneId和Entity时可不填写TemplateId，否则必须填写TemplateId。
                      */
                     std::string m_entity;
                     bool m_entityHasBeenSet;
@@ -207,6 +225,12 @@ namespace TencentCloud
                      */
                     std::string m_module;
                     bool m_moduleHasBeenSet;
+
+                    /**
+                     * 模板Id。当使用模板Id时可不填ZoneId和Entity，否则必须填写ZoneId和Entity。
+                     */
+                    std::string m_templateId;
+                    bool m_templateIdHasBeenSet;
 
                 };
             }

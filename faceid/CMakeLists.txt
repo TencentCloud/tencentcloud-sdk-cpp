@@ -23,6 +23,7 @@ set(faceid_public_header_model
   include/tencentcloud/faceid/v20180301/model/GetDetectInfoEnhancedRequest.h
   include/tencentcloud/faceid/v20180301/model/GetFaceIdTokenRequest.h
   include/tencentcloud/faceid/v20180301/model/LivenessRequest.h
+  include/tencentcloud/faceid/v20180301/model/RuleIdConfig.h
   include/tencentcloud/faceid/v20180301/model/Encryption.h
   include/tencentcloud/faceid/v20180301/model/CheckBankCardInformationRequest.h
   include/tencentcloud/faceid/v20180301/model/MobileNetworkTimeVerificationResponse.h
@@ -110,6 +111,7 @@ set(faceid_src
   src/v20180301/model/GetDetectInfoEnhancedRequest.cpp
   src/v20180301/model/GetFaceIdTokenRequest.cpp
   src/v20180301/model/LivenessRequest.cpp
+  src/v20180301/model/RuleIdConfig.cpp
   src/v20180301/model/Encryption.cpp
   src/v20180301/model/CheckBankCardInformationRequest.cpp
   src/v20180301/model/MobileNetworkTimeVerificationResponse.cpp

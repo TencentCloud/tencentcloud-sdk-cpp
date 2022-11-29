@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcm/v20210413/model/SelectedRange.h>
+#include <tencentcloud/tcm/v20210413/model/CLS.h>
 
 
 namespace TencentCloud
@@ -96,9 +97,7 @@ namespace TencentCloud
 
                     /**
                      * 获取采用的模板，可取值为"istio, trace，默认为istio
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Template 采用的模板，可取值为"istio, trace，默认为istio
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTemplate() const;
 
@@ -107,6 +106,68 @@ namespace TencentCloud
                      * @return Template 是否已赋值
                      */
                     bool TemplateHasBeenSet() const;
+
+                    /**
+                     * 获取腾讯云日志服务相关参数
+                     * @return CLS 腾讯云日志服务相关参数
+                     */
+                    CLS GetCLS() const;
+
+                    /**
+                     * 判断参数 CLS 是否已赋值
+                     * @return CLS 是否已赋值
+                     */
+                    bool CLSHasBeenSet() const;
+
+                    /**
+                     * 获取GRPC第三方服务器地址
+                     * @return Address GRPC第三方服务器地址
+                     */
+                    std::string GetAddress() const;
+
+                    /**
+                     * 判断参数 Address 是否已赋值
+                     * @return Address 是否已赋值
+                     */
+                    bool AddressHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用GRPC第三方服务器
+                     * @return EnableServer 是否启用GRPC第三方服务器
+                     */
+                    bool GetEnableServer() const;
+
+                    /**
+                     * 判断参数 EnableServer 是否已赋值
+                     * @return EnableServer 是否已赋值
+                     */
+                    bool EnableServerHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用标准输出
+                     * @return EnableStdout 是否启用标准输出
+                     */
+                    bool GetEnableStdout() const;
+
+                    /**
+                     * 判断参数 EnableStdout 是否已赋值
+                     * @return EnableStdout 是否已赋值
+                     */
+                    bool EnableStdoutHasBeenSet() const;
+
+                    /**
+                     * 获取是否启用访问日志采集
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Enable 是否启用访问日志采集
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnable() const;
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     */
+                    bool EnableHasBeenSet() const;
 
                 private:
 
@@ -137,10 +198,40 @@ namespace TencentCloud
 
                     /**
                      * 采用的模板，可取值为"istio, trace，默认为istio
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_template;
                     bool m_templateHasBeenSet;
+
+                    /**
+                     * 腾讯云日志服务相关参数
+                     */
+                    CLS m_cLS;
+                    bool m_cLSHasBeenSet;
+
+                    /**
+                     * GRPC第三方服务器地址
+                     */
+                    std::string m_address;
+                    bool m_addressHasBeenSet;
+
+                    /**
+                     * 是否启用GRPC第三方服务器
+                     */
+                    bool m_enableServer;
+                    bool m_enableServerHasBeenSet;
+
+                    /**
+                     * 是否启用标准输出
+                     */
+                    bool m_enableStdout;
+                    bool m_enableStdoutHasBeenSet;
+
+                    /**
+                     * 是否启用访问日志采集
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enable;
+                    bool m_enableHasBeenSet;
 
                 };
             }

@@ -193,6 +193,24 @@ Stopping 停止中
                      */
                     bool StatefulSetConditionHasBeenSet() const;
 
+                    /**
+                     * 获取工作负载历史的状况信息
+                     * @return Conditions 工作负载历史的状况信息
+                     */
+                    std::vector<StatefulSetCondition> GetConditions() const;
+
+                    /**
+                     * 设置工作负载历史的状况信息
+                     * @param Conditions 工作负载历史的状况信息
+                     */
+                    void SetConditions(const std::vector<StatefulSetCondition>& _conditions);
+
+                    /**
+                     * 判断参数 Conditions 是否已赋值
+                     * @return Conditions 是否已赋值
+                     */
+                    bool ConditionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +259,12 @@ Stopping 停止中
                      */
                     std::vector<StatefulSetCondition> m_statefulSetCondition;
                     bool m_statefulSetConditionHasBeenSet;
+
+                    /**
+                     * 工作负载历史的状况信息
+                     */
+                    std::vector<StatefulSetCondition> m_conditions;
+                    bool m_conditionsHasBeenSet;
 
                 };
             }

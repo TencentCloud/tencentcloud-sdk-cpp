@@ -409,14 +409,14 @@ namespace TencentCloud
                     bool CacheHasBeenSet() const;
 
                     /**
-                     * 获取跨国链路优化配置
-                     * @return OriginPullOptimization 跨国链路优化配置
+                     * 获取跨国链路优化配置（已下线）
+                     * @return OriginPullOptimization 跨国链路优化配置（已下线）
                      */
                     OriginPullOptimization GetOriginPullOptimization() const;
 
                     /**
-                     * 设置跨国链路优化配置
-                     * @param OriginPullOptimization 跨国链路优化配置
+                     * 设置跨国链路优化配置（已下线）
+                     * @param OriginPullOptimization 跨国链路优化配置（已下线）
                      */
                     void SetOriginPullOptimization(const OriginPullOptimization& _originPullOptimization);
 
@@ -1073,7 +1073,7 @@ global：全球加速
                     bool m_cacheHasBeenSet;
 
                     /**
-                     * 跨国链路优化配置
+                     * 跨国链路优化配置（已下线）
                      */
                     OriginPullOptimization m_originPullOptimization;
                     bool m_originPullOptimizationHasBeenSet;

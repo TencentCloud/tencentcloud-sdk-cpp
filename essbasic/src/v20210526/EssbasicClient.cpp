@@ -470,6 +470,49 @@ EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcomeCallable EssbasicClient::
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateReleaseFlowOutcome EssbasicClient::ChannelCreateReleaseFlow(const ChannelCreateReleaseFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateReleaseFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateReleaseFlowResponse rsp = ChannelCreateReleaseFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateReleaseFlowOutcome(rsp);
+        else
+            return ChannelCreateReleaseFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateReleaseFlowOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateReleaseFlowAsync(const ChannelCreateReleaseFlowRequest& request, const ChannelCreateReleaseFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateReleaseFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateReleaseFlowOutcomeCallable EssbasicClient::ChannelCreateReleaseFlowCallable(const ChannelCreateReleaseFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateReleaseFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateReleaseFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelDescribeEmployeesOutcome EssbasicClient::ChannelDescribeEmployees(const ChannelDescribeEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelDescribeEmployees");

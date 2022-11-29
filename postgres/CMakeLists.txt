@@ -74,12 +74,14 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h
   include/tencentcloud/postgres/v20170312/model/SpecInfo.h
+  include/tencentcloud/postgres/v20170312/model/ParamVersionRelation.h
   include/tencentcloud/postgres/v20170312/model/DescribeReadOnlyGroupsResponse.h
   include/tencentcloud/postgres/v20170312/model/SetAutoRenewFlagResponse.h
   include/tencentcloud/postgres/v20170312/model/NetworkAccess.h
   include/tencentcloud/postgres/v20170312/model/ResetAccountPasswordResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstancesProjectResponse.h
   include/tencentcloud/postgres/v20170312/model/ReadOnlyGroup.h
+  include/tencentcloud/postgres/v20170312/model/ParamSpecRelation.h
   include/tencentcloud/postgres/v20170312/model/PgDeal.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupNetworkAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBErrlogsRequest.h
@@ -235,12 +237,14 @@ set(postgres_src
   src/v20170312/model/UpgradeDBInstanceRequest.cpp
   src/v20170312/model/DescribeZonesRequest.cpp
   src/v20170312/model/SpecInfo.cpp
+  src/v20170312/model/ParamVersionRelation.cpp
   src/v20170312/model/DescribeReadOnlyGroupsResponse.cpp
   src/v20170312/model/SetAutoRenewFlagResponse.cpp
   src/v20170312/model/NetworkAccess.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
   src/v20170312/model/ModifyDBInstancesProjectResponse.cpp
   src/v20170312/model/ReadOnlyGroup.cpp
+  src/v20170312/model/ParamSpecRelation.cpp
   src/v20170312/model/PgDeal.cpp
   src/v20170312/model/DeleteReadOnlyGroupNetworkAccessResponse.cpp
   src/v20170312/model/DescribeDBErrlogsRequest.cpp

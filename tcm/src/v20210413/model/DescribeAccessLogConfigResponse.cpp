@@ -28,7 +28,12 @@ DescribeAccessLogConfigResponse::DescribeAccessLogConfigResponse() :
     m_formatHasBeenSet(false),
     m_encodingHasBeenSet(false),
     m_selectedRangeHasBeenSet(false),
-    m_templateHasBeenSet(false)
+    m_templateHasBeenSet(false),
+    m_cLSHasBeenSet(false),
+    m_addressHasBeenSet(false),
+    m_enableServerHasBeenSet(false),
+    m_enableStdoutHasBeenSet(false),
+    m_enableHasBeenSet(false)
 {
 }
 
@@ -123,6 +128,63 @@ CoreInternalOutcome DescribeAccessLogConfigResponse::Deserialize(const string &p
         m_templateHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CLS") && !rsp["CLS"].IsNull())
+    {
+        if (!rsp["CLS"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CLS` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_cLS.Deserialize(rsp["CLS"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_cLSHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Address") && !rsp["Address"].IsNull())
+    {
+        if (!rsp["Address"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Address` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_address = string(rsp["Address"].GetString());
+        m_addressHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableServer") && !rsp["EnableServer"].IsNull())
+    {
+        if (!rsp["EnableServer"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableServer` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableServer = rsp["EnableServer"].GetBool();
+        m_enableServerHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableStdout") && !rsp["EnableStdout"].IsNull())
+    {
+        if (!rsp["EnableStdout"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableStdout` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableStdout = rsp["EnableStdout"].GetBool();
+        m_enableStdoutHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Enable") && !rsp["Enable"].IsNull())
+    {
+        if (!rsp["Enable"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Enable` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enable = rsp["Enable"].GetBool();
+        m_enableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -172,6 +234,47 @@ string DescribeAccessLogConfigResponse::ToJsonString() const
         string key = "Template";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_template.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cLSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CLS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_cLS.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_addressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Address";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_address.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableServerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableServer";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableServer, allocator);
+    }
+
+    if (m_enableStdoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableStdout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableStdout, allocator);
+    }
+
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enable, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -234,6 +337,56 @@ string DescribeAccessLogConfigResponse::GetTemplate() const
 bool DescribeAccessLogConfigResponse::TemplateHasBeenSet() const
 {
     return m_templateHasBeenSet;
+}
+
+CLS DescribeAccessLogConfigResponse::GetCLS() const
+{
+    return m_cLS;
+}
+
+bool DescribeAccessLogConfigResponse::CLSHasBeenSet() const
+{
+    return m_cLSHasBeenSet;
+}
+
+string DescribeAccessLogConfigResponse::GetAddress() const
+{
+    return m_address;
+}
+
+bool DescribeAccessLogConfigResponse::AddressHasBeenSet() const
+{
+    return m_addressHasBeenSet;
+}
+
+bool DescribeAccessLogConfigResponse::GetEnableServer() const
+{
+    return m_enableServer;
+}
+
+bool DescribeAccessLogConfigResponse::EnableServerHasBeenSet() const
+{
+    return m_enableServerHasBeenSet;
+}
+
+bool DescribeAccessLogConfigResponse::GetEnableStdout() const
+{
+    return m_enableStdout;
+}
+
+bool DescribeAccessLogConfigResponse::EnableStdoutHasBeenSet() const
+{
+    return m_enableStdoutHasBeenSet;
+}
+
+bool DescribeAccessLogConfigResponse::GetEnable() const
+{
+    return m_enable;
+}
+
+bool DescribeAccessLogConfigResponse::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
 }
 
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云项目 ID，废弃参数，默认填写0即可。
-                     * @return ProjectId 腾讯云项目 ID，废弃参数，默认填写0即可。
+                     * 获取腾讯云项目 ID，废弃参数，填写0即可。
+                     * @return ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置腾讯云项目 ID，废弃参数，默认填写0即可。
-                     * @param ProjectId 腾讯云项目 ID，废弃参数，默认填写0即可。
+                     * 设置腾讯云项目 ID，废弃参数，填写0即可。
+                     * @param ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool VoiceFormatHasBeenSet() const;
 
                     /**
-                     * 获取用户端对此任务的唯一标识。废弃参数，忽略即可。
-                     * @return UsrAudioKey 用户端对此任务的唯一标识。废弃参数，忽略即可。
+                     * 获取废弃参数，填写任意字符串即可。
+                     * @return UsrAudioKey 废弃参数，填写任意字符串即可。
                      */
                     std::string GetUsrAudioKey() const;
 
                     /**
-                     * 设置用户端对此任务的唯一标识。废弃参数，忽略即可。
-                     * @param UsrAudioKey 用户端对此任务的唯一标识。废弃参数，忽略即可。
+                     * 设置废弃参数，填写任意字符串即可。
+                     * @param UsrAudioKey 废弃参数，填写任意字符串即可。
                      */
                     void SetUsrAudioKey(const std::string& _usrAudioKey);
 
@@ -395,7 +395,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云项目 ID，废弃参数，默认填写0即可。
+                     * 腾讯云项目 ID，废弃参数，填写0即可。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -436,7 +436,7 @@ namespace TencentCloud
                     bool m_voiceFormatHasBeenSet;
 
                     /**
-                     * 用户端对此任务的唯一标识。废弃参数，忽略即可。
+                     * 废弃参数，填写任意字符串即可。
                      */
                     std::string m_usrAudioKey;
                     bool m_usrAudioKeyHasBeenSet;

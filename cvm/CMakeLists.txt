@@ -242,6 +242,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/ImportKeyPairRequest.h
+  include/tencentcloud/cvm/v20170312/model/SyncImage.h
   include/tencentcloud/cvm/v20170312/model/KeyPair.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesModificationResponse.h
   include/tencentcloud/cvm/v20170312/model/RenewInstancesResponse.h
@@ -495,6 +496,7 @@ set(cvm_src
   src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
   src/v20170312/model/ModifyHostsAttributeRequest.cpp
   src/v20170312/model/ImportKeyPairRequest.cpp
+  src/v20170312/model/SyncImage.cpp
   src/v20170312/model/KeyPair.cpp
   src/v20170312/model/DescribeInstancesModificationResponse.cpp
   src/v20170312/model/RenewInstancesResponse.cpp

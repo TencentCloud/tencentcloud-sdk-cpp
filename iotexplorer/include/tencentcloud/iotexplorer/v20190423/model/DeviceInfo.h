@@ -478,6 +478,28 @@ namespace TencentCloud
                      */
                     bool DeviceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取是否是 lora 设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsLora 是否是 lora 设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsLora() const;
+
+                    /**
+                     * 设置是否是 lora 设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsLora 是否是 lora 设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsLora(const bool& _isLora);
+
+                    /**
+                     * 判断参数 IsLora 是否已赋值
+                     * @return IsLora 是否已赋值
+                     */
+                    bool IsLoraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -617,6 +639,13 @@ namespace TencentCloud
                      */
                     std::string m_deviceType;
                     bool m_deviceTypeHasBeenSet;
+
+                    /**
+                     * 是否是 lora 设备
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isLora;
+                    bool m_isLoraHasBeenSet;
 
                 };
             }

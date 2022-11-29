@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 跨国回源优化配置，默认为关闭状态（功能灰度中，尚未全量）
+                * 跨国回源优化配置，默认为关闭状态 (已下线)
                 */
                 class OriginPullOptimization : public AbstractModel
                 {

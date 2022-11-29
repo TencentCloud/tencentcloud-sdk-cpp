@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/ModifyAccountPrivilegesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Dcdb::V20180411::Model;
 using namespace std;
 
-ModifyCDBProxyResponse::ModifyCDBProxyResponse()
+ModifyAccountPrivilegesResponse::ModifyAccountPrivilegesResponse() :
+    m_flowIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ModifyCDBProxyResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyAccountPrivilegesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,33 @@ CoreInternalOutcome ModifyCDBProxyResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string ModifyCDBProxyResponse::ToJsonString() const
+string ModifyAccountPrivilegesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string ModifyCDBProxyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+int64_t ModifyAccountPrivilegesResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool ModifyAccountPrivilegesResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
+}
 
 
