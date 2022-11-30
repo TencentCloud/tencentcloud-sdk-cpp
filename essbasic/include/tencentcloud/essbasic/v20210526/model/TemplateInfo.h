@@ -121,24 +121,6 @@ namespace TencentCloud
                     bool ComponentsHasBeenSet() const;
 
                     /**
-                     * 获取签署区模板信息结构
-                     * @return SignComponents 签署区模板信息结构
-                     */
-                    std::vector<Component> GetSignComponents() const;
-
-                    /**
-                     * 设置签署区模板信息结构
-                     * @param SignComponents 签署区模板信息结构
-                     */
-                    void SetSignComponents(const std::vector<Component>& _signComponents);
-
-                    /**
-                     * 判断参数 SignComponents 是否已赋值
-                     * @return SignComponents 是否已赋值
-                     */
-                    bool SignComponentsHasBeenSet() const;
-
-                    /**
                      * 获取模板中的流程参与人信息
                      * @return Recipients 模板中的流程参与人信息
                      */
@@ -155,6 +137,24 @@ namespace TencentCloud
                      * @return Recipients 是否已赋值
                      */
                     bool RecipientsHasBeenSet() const;
+
+                    /**
+                     * 获取签署区模板信息结构
+                     * @return SignComponents 签署区模板信息结构
+                     */
+                    std::vector<Component> GetSignComponents() const;
+
+                    /**
+                     * 设置签署区模板信息结构
+                     * @param SignComponents 签署区模板信息结构
+                     */
+                    void SetSignComponents(const std::vector<Component>& _signComponents);
+
+                    /**
+                     * 判断参数 SignComponents 是否已赋值
+                     * @return SignComponents 是否已赋值
+                     */
+                    bool SignComponentsHasBeenSet() const;
 
                     /**
                      * 获取模板类型：1-静默签；3-普通模板
@@ -252,17 +252,13 @@ namespace TencentCloud
 
                     /**
                      * 获取渠道模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ChannelTemplateId 渠道模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
                      * 设置渠道模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ChannelTemplateId 渠道模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
 
@@ -271,6 +267,28 @@ namespace TencentCloud
                      * @return ChannelTemplateId 是否已赋值
                      */
                     bool ChannelTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取渠道版-模板PDF文件链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PdfUrl 渠道版-模板PDF文件链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPdfUrl() const;
+
+                    /**
+                     * 设置渠道版-模板PDF文件链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PdfUrl 渠道版-模板PDF文件链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPdfUrl(const std::string& _pdfUrl);
+
+                    /**
+                     * 判断参数 PdfUrl 是否已赋值
+                     * @return PdfUrl 是否已赋值
+                     */
+                    bool PdfUrlHasBeenSet() const;
 
                 private:
 
@@ -299,16 +317,16 @@ namespace TencentCloud
                     bool m_componentsHasBeenSet;
 
                     /**
-                     * 签署区模板信息结构
-                     */
-                    std::vector<Component> m_signComponents;
-                    bool m_signComponentsHasBeenSet;
-
-                    /**
                      * 模板中的流程参与人信息
                      */
                     std::vector<Recipient> m_recipients;
                     bool m_recipientsHasBeenSet;
+
+                    /**
+                     * 签署区模板信息结构
+                     */
+                    std::vector<Component> m_signComponents;
+                    bool m_signComponentsHasBeenSet;
 
                     /**
                      * 模板类型：1-静默签；3-普通模板
@@ -343,10 +361,16 @@ namespace TencentCloud
 
                     /**
                      * 渠道模板ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelTemplateId;
                     bool m_channelTemplateIdHasBeenSet;
+
+                    /**
+                     * 渠道版-模板PDF文件链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pdfUrl;
+                    bool m_pdfUrlHasBeenSet;
 
                 };
             }

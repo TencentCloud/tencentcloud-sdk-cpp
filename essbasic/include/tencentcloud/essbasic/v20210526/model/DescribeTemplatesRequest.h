@@ -206,6 +206,24 @@ namespace TencentCloud
                      */
                     bool WithPreviewUrlHasBeenSet() const;
 
+                    /**
+                     * 获取是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     * @return WithPdfUrl 是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     */
+                    bool GetWithPdfUrl() const;
+
+                    /**
+                     * 设置是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     * @param WithPdfUrl 是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     */
+                    void SetWithPdfUrl(const bool& _withPdfUrl);
+
+                    /**
+                     * 判断参数 WithPdfUrl 是否已赋值
+                     * @return WithPdfUrl 是否已赋值
+                     */
+                    bool WithPdfUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +279,12 @@ namespace TencentCloud
                      */
                     bool m_withPreviewUrl;
                     bool m_withPreviewUrlHasBeenSet;
+
+                    /**
+                     * 是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     */
+                    bool m_withPdfUrl;
+                    bool m_withPdfUrlHasBeenSet;
 
                 };
             }

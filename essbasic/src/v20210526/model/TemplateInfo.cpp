@@ -25,14 +25,15 @@ TemplateInfo::TemplateInfo() :
     m_templateNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_componentsHasBeenSet(false),
-    m_signComponentsHasBeenSet(false),
     m_recipientsHasBeenSet(false),
+    m_signComponentsHasBeenSet(false),
     m_templateTypeHasBeenSet(false),
     m_isPromoterHasBeenSet(false),
     m_creatorHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_previewUrlHasBeenSet(false),
-    m_channelTemplateIdHasBeenSet(false)
+    m_channelTemplateIdHasBeenSet(false),
+    m_pdfUrlHasBeenSet(false)
 {
 }
 
@@ -91,26 +92,6 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_componentsHasBeenSet = true;
     }
 
-    if (value.HasMember("SignComponents") && !value["SignComponents"].IsNull())
-    {
-        if (!value["SignComponents"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TemplateInfo.SignComponents` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["SignComponents"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Component item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_signComponents.push_back(item);
-        }
-        m_signComponentsHasBeenSet = true;
-    }
-
     if (value.HasMember("Recipients") && !value["Recipients"].IsNull())
     {
         if (!value["Recipients"].IsArray())
@@ -129,6 +110,26 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
             m_recipients.push_back(item);
         }
         m_recipientsHasBeenSet = true;
+    }
+
+    if (value.HasMember("SignComponents") && !value["SignComponents"].IsNull())
+    {
+        if (!value["SignComponents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.SignComponents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SignComponents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Component item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_signComponents.push_back(item);
+        }
+        m_signComponentsHasBeenSet = true;
     }
 
     if (value.HasMember("TemplateType") && !value["TemplateType"].IsNull())
@@ -191,6 +192,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_channelTemplateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PdfUrl") && !value["PdfUrl"].IsNull())
+    {
+        if (!value["PdfUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.PdfUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pdfUrl = string(value["PdfUrl"].GetString());
+        m_pdfUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -237,21 +248,6 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
-    if (m_signComponentsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SignComponents";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_signComponents.begin(); itr != m_signComponents.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
     if (m_recipientsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -261,6 +257,21 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
 
         int i=0;
         for (auto itr = m_recipients.begin(); itr != m_recipients.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_signComponentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SignComponents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_signComponents.begin(); itr != m_signComponents.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -313,6 +324,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ChannelTemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channelTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pdfUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pdfUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -382,22 +401,6 @@ bool TemplateInfo::ComponentsHasBeenSet() const
     return m_componentsHasBeenSet;
 }
 
-vector<Component> TemplateInfo::GetSignComponents() const
-{
-    return m_signComponents;
-}
-
-void TemplateInfo::SetSignComponents(const vector<Component>& _signComponents)
-{
-    m_signComponents = _signComponents;
-    m_signComponentsHasBeenSet = true;
-}
-
-bool TemplateInfo::SignComponentsHasBeenSet() const
-{
-    return m_signComponentsHasBeenSet;
-}
-
 vector<Recipient> TemplateInfo::GetRecipients() const
 {
     return m_recipients;
@@ -412,6 +415,22 @@ void TemplateInfo::SetRecipients(const vector<Recipient>& _recipients)
 bool TemplateInfo::RecipientsHasBeenSet() const
 {
     return m_recipientsHasBeenSet;
+}
+
+vector<Component> TemplateInfo::GetSignComponents() const
+{
+    return m_signComponents;
+}
+
+void TemplateInfo::SetSignComponents(const vector<Component>& _signComponents)
+{
+    m_signComponents = _signComponents;
+    m_signComponentsHasBeenSet = true;
+}
+
+bool TemplateInfo::SignComponentsHasBeenSet() const
+{
+    return m_signComponentsHasBeenSet;
 }
 
 int64_t TemplateInfo::GetTemplateType() const
@@ -508,5 +527,21 @@ void TemplateInfo::SetChannelTemplateId(const string& _channelTemplateId)
 bool TemplateInfo::ChannelTemplateIdHasBeenSet() const
 {
     return m_channelTemplateIdHasBeenSet;
+}
+
+string TemplateInfo::GetPdfUrl() const
+{
+    return m_pdfUrl;
+}
+
+void TemplateInfo::SetPdfUrl(const string& _pdfUrl)
+{
+    m_pdfUrl = _pdfUrl;
+    m_pdfUrlHasBeenSet = true;
+}
+
+bool TemplateInfo::PdfUrlHasBeenSet() const
+{
+    return m_pdfUrlHasBeenSet;
 }
 

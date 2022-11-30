@@ -20,20 +20,24 @@ set(cdwch_public_header
 
 set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h
-  include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpRequest.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h
+  include/tencentcloud/cdwch/v20200915/model/DiskSpec.h
   include/tencentcloud/cdwch/v20200915/model/BackupTableContent.h
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpResponse.h
+  include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h
   include/tencentcloud/cdwch/v20200915/model/ConfigSubmitContext.h
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserRequest.h
   include/tencentcloud/cdwch/v20200915/model/CkUserAlterInfo.h
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleResponse.h
-  include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeResponse.h
   )
@@ -41,20 +45,24 @@ set(cdwch_public_header_model
 set(cdwch_src
   src/v20200915/CdwchClient.cpp
   src/v20200915/model/DescribeInstanceShardsRequest.cpp
-  src/v20200915/model/ModifyUserNewPrivilegeRequest.cpp
+  src/v20200915/model/ModifyClusterConfigsRequest.cpp
   src/v20200915/model/CreateBackUpScheduleRequest.cpp
   src/v20200915/model/DescribeInstanceShardsResponse.cpp
   src/v20200915/model/OpenBackUpRequest.cpp
   src/v20200915/model/ModifyClusterConfigsResponse.cpp
+  src/v20200915/model/DiskSpec.cpp
   src/v20200915/model/BackupTableContent.cpp
   src/v20200915/model/OpenBackUpResponse.cpp
+  src/v20200915/model/ModifyUserNewPrivilegeRequest.cpp
+  src/v20200915/model/DescribeSpecRequest.cpp
   src/v20200915/model/ConfigSubmitContext.cpp
   src/v20200915/model/ActionAlterCkUserResponse.cpp
   src/v20200915/model/DescribeCkSqlApisRequest.cpp
   src/v20200915/model/ActionAlterCkUserRequest.cpp
   src/v20200915/model/CkUserAlterInfo.cpp
   src/v20200915/model/CreateBackUpScheduleResponse.cpp
-  src/v20200915/model/ModifyClusterConfigsRequest.cpp
+  src/v20200915/model/ResourceSpec.cpp
+  src/v20200915/model/DescribeSpecResponse.cpp
   src/v20200915/model/DescribeCkSqlApisResponse.cpp
   src/v20200915/model/ModifyUserNewPrivilegeResponse.cpp
   )

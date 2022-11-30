@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 支持的操作系统类型，根据windows和Linux分类。
+                * 支持的操作系统类型，根据Windows和Linux分类。
                 */
                 class ImageOsList : public AbstractModel
                 {
@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支持的windows操作系统。
+                     * 获取支持的Windows操作系统。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Windows 支持的windows操作系统。
+                     * @return Windows 支持的Windows操作系统。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetWindows() const;
 
                     /**
-                     * 设置支持的windows操作系统。
+                     * 设置支持的Windows操作系统。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Windows 支持的windows操作系统。
+                     * @param Windows 支持的Windows操作系统。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWindows(const std::vector<std::string>& _windows);
@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool WindowsHasBeenSet() const;
 
                     /**
-                     * 获取支持的linux操作系统
+                     * 获取支持的Linux操作系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Linux 支持的linux操作系统
+                     * @return Linux 支持的Linux操作系统
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetLinux() const;
 
                     /**
-                     * 设置支持的linux操作系统
+                     * 设置支持的Linux操作系统
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Linux 支持的linux操作系统
+                     * @param Linux 支持的Linux操作系统
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLinux(const std::vector<std::string>& _linux);
@@ -93,14 +93,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支持的windows操作系统。
+                     * 支持的Windows操作系统。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_windows;
                     bool m_windowsHasBeenSet;
 
                     /**
-                     * 支持的linux操作系统
+                     * 支持的Linux操作系统
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_linux;

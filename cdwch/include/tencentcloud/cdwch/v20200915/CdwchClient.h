@@ -31,6 +31,8 @@
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h>
@@ -63,6 +65,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceShardsResponse> DescribeInstanceShardsOutcome;
                 typedef std::future<DescribeInstanceShardsOutcome> DescribeInstanceShardsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceShardsRequest&, DescribeInstanceShardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceShardsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSpecResponse> DescribeSpecOutcome;
+                typedef std::future<DescribeSpecOutcome> DescribeSpecOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeSpecRequest&, DescribeSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterConfigsResponse> ModifyClusterConfigsOutcome;
                 typedef std::future<ModifyClusterConfigsOutcome> ModifyClusterConfigsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::ModifyClusterConfigsRequest&, ModifyClusterConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterConfigsAsyncHandler;
@@ -110,6 +115,15 @@ namespace TencentCloud
                 DescribeInstanceShardsOutcome DescribeInstanceShards(const Model::DescribeInstanceShardsRequest &request);
                 void DescribeInstanceShardsAsync(const Model::DescribeInstanceShardsRequest& request, const DescribeInstanceShardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceShardsOutcomeCallable DescribeInstanceShardsCallable(const Model::DescribeInstanceShardsRequest& request);
+
+                /**
+                 *购买页拉取集群的数据节点和zookeeper节点的规格列表
+                 * @param req DescribeSpecRequest
+                 * @return DescribeSpecOutcome
+                 */
+                DescribeSpecOutcome DescribeSpec(const Model::DescribeSpecRequest &request);
+                void DescribeSpecAsync(const Model::DescribeSpecRequest& request, const DescribeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSpecOutcomeCallable DescribeSpecCallable(const Model::DescribeSpecRequest& request);
 
                 /**
                  *在集群配置页面修改集群配置文件接口，xml模式

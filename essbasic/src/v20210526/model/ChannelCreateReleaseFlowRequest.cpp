@@ -23,9 +23,9 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelCreateReleaseFlowRequest::ChannelCreateReleaseFlowRequest() :
+    m_agentHasBeenSet(false),
     m_needRelievedFlowIdHasBeenSet(false),
     m_reliveInfoHasBeenSet(false),
-    m_agentHasBeenSet(false),
     m_releasedApproversHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_organizationHasBeenSet(false),
@@ -39,6 +39,15 @@ string ChannelCreateReleaseFlowRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
 
     if (m_needRelievedFlowIdHasBeenSet)
     {
@@ -55,15 +64,6 @@ string ChannelCreateReleaseFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reliveInfo.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_agentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_releasedApproversHasBeenSet)
@@ -115,6 +115,22 @@ string ChannelCreateReleaseFlowRequest::ToJsonString() const
 }
 
 
+Agent ChannelCreateReleaseFlowRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void ChannelCreateReleaseFlowRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool ChannelCreateReleaseFlowRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
+}
+
 string ChannelCreateReleaseFlowRequest::GetNeedRelievedFlowId() const
 {
     return m_needRelievedFlowId;
@@ -145,22 +161,6 @@ void ChannelCreateReleaseFlowRequest::SetReliveInfo(const RelieveInfo& _reliveIn
 bool ChannelCreateReleaseFlowRequest::ReliveInfoHasBeenSet() const
 {
     return m_reliveInfoHasBeenSet;
-}
-
-Agent ChannelCreateReleaseFlowRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void ChannelCreateReleaseFlowRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool ChannelCreateReleaseFlowRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
 }
 
 vector<ReleasedApprover> ChannelCreateReleaseFlowRequest::GetReleasedApprovers() const

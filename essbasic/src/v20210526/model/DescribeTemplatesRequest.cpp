@@ -31,7 +31,8 @@ DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_queryAllComponentsHasBeenSet(false),
     m_templateNameHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_withPreviewUrlHasBeenSet(false)
+    m_withPreviewUrlHasBeenSet(false),
+    m_withPdfUrlHasBeenSet(false)
 {
 }
 
@@ -114,6 +115,14 @@ string DescribeTemplatesRequest::ToJsonString() const
         string key = "WithPreviewUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_withPreviewUrl, allocator);
+    }
+
+    if (m_withPdfUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithPdfUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withPdfUrl, allocator);
     }
 
 
@@ -266,6 +275,22 @@ void DescribeTemplatesRequest::SetWithPreviewUrl(const bool& _withPreviewUrl)
 bool DescribeTemplatesRequest::WithPreviewUrlHasBeenSet() const
 {
     return m_withPreviewUrlHasBeenSet;
+}
+
+bool DescribeTemplatesRequest::GetWithPdfUrl() const
+{
+    return m_withPdfUrl;
+}
+
+void DescribeTemplatesRequest::SetWithPdfUrl(const bool& _withPdfUrl)
+{
+    m_withPdfUrl = _withPdfUrl;
+    m_withPdfUrlHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::WithPdfUrlHasBeenSet() const
+{
+    return m_withPdfUrlHasBeenSet;
 }
 
 

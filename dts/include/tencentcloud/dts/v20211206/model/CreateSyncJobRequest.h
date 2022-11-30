@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取支付类型，PrePay：包年包月  PostPay：按时按量
-                     * @return PayMode 支付类型，PrePay：包年包月  PostPay：按时按量
+                     * 获取付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
+                     * @return PayMode 付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置支付类型，PrePay：包年包月  PostPay：按时按量
-                     * @param PayMode 支付类型，PrePay：包年包月  PostPay：按时按量
+                     * 设置付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
+                     * @param PayMode 付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
                      */
                     void SetPayMode(const std::string& _payMode);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool SpecificationHasBeenSet() const;
 
                     /**
-                     * 获取无
-                     * @return Tags 无
+                     * 获取标签信息
+                     * @return Tags 标签信息
                      */
                     std::vector<TagItem> GetTags() const;
 
                     /**
-                     * 设置无
-                     * @param Tags 无
+                     * 设置标签信息
+                     * @param Tags 标签信息
                      */
                     void SetTags(const std::vector<TagItem>& _tags);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取同步任务数量
-                     * @return Count 同步任务数量
+                     * 获取一次购买的同步任务数量，取值范围为[1, 10]，默认为1
+                     * @return Count 一次购买的同步任务数量，取值范围为[1, 10]，默认为1
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置同步任务数量
-                     * @param Count 同步任务数量
+                     * 设置一次购买的同步任务数量，取值范围为[1, 10]，默认为1
+                     * @param Count 一次购买的同步任务数量，取值范围为[1, 10]，默认为1
                      */
                     void SetCount(const uint64_t& _count);
 
@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识
-                     * @return AutoRenew 自动续费标识
+                     * 获取自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
+                     * @return AutoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置自动续费标识
-                     * @param AutoRenew 自动续费标识
+                     * 设置自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
+                     * @param AutoRenew 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
@@ -206,14 +206,14 @@ namespace TencentCloud
                     bool AutoRenewHasBeenSet() const;
 
                     /**
-                     * 获取同步链路规格
-                     * @return InstanceClass 同步链路规格
+                     * 获取同步链路规格，如micro,small,medium,large，默认为medium
+                     * @return InstanceClass 同步链路规格，如micro,small,medium,large，默认为medium
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置同步链路规格
-                     * @param InstanceClass 同步链路规格
+                     * 设置同步链路规格，如micro,small,medium,large，默认为medium
+                     * @param InstanceClass 同步链路规格，如micro,small,medium,large，默认为medium
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
 
@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool InstanceClassHasBeenSet() const;
 
                     /**
-                     * 获取同步链路名称
-                     * @return JobName 同步链路名称
+                     * 获取同步任务名称
+                     * @return JobName 同步任务名称
                      */
                     std::string GetJobName() const;
 
                     /**
-                     * 设置同步链路名称
-                     * @param JobName 同步链路名称
+                     * 设置同步任务名称
+                     * @param JobName 同步任务名称
                      */
                     void SetJobName(const std::string& _jobName);
 
@@ -262,7 +262,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 支付类型，PrePay：包年包月  PostPay：按时按量
+                     * 付款类型, 如：PrePay(表示包年包月)、PostPay(表示按时按量)
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
@@ -298,31 +298,31 @@ namespace TencentCloud
                     bool m_specificationHasBeenSet;
 
                     /**
-                     * 无
+                     * 标签信息
                      */
                     std::vector<TagItem> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 同步任务数量
+                     * 一次购买的同步任务数量，取值范围为[1, 10]，默认为1
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;
 
                     /**
-                     * 自动续费标识
+                     * 自动续费标识，当PayMode值为PrePay则此项配置有意义，取值为：1（表示自动续费）、0（不自动续费，默认为此值）
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
 
                     /**
-                     * 同步链路规格
+                     * 同步链路规格，如micro,small,medium,large，默认为medium
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;
 
                     /**
-                     * 同步链路名称
+                     * 同步任务名称
                      */
                     std::string m_jobName;
                     bool m_jobNameHasBeenSet;

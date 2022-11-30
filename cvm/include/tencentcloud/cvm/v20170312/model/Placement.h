@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机ip等
+                * 描述了实例的抽象位置，包括其所在的可用区，所属的项目，宿主机（仅专用宿主机产品可用），母机IP等
                 */
                 class Placement : public AbstractModel
                 {
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool HostIdsHasBeenSet() const;
 
                     /**
-                     * 获取指定母机ip生产子机
-                     * @return HostIps 指定母机ip生产子机
+                     * 获取指定母机IP生产子机
+                     * @return HostIps 指定母机IP生产子机
                      */
                     std::vector<std::string> GetHostIps() const;
 
                     /**
-                     * 设置指定母机ip生产子机
-                     * @param HostIps 指定母机ip生产子机
+                     * 设置指定母机IP生产子机
+                     * @param HostIps 指定母机IP生产子机
                      */
                     void SetHostIps(const std::vector<std::string>& _hostIps);
 
@@ -157,7 +157,7 @@ namespace TencentCloud
                     bool m_hostIdsHasBeenSet;
 
                     /**
-                     * 指定母机ip生产子机
+                     * 指定母机IP生产子机
                      */
                     std::vector<std::string> m_hostIps;
                     bool m_hostIpsHasBeenSet;

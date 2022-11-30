@@ -122,8 +122,8 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取最大连麦人数（不包括老师）。取值范围[0, 17)
-                     * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
+                     * 获取最大连麦人数（不包括老师）。取值范围[0, 16]
+                     * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 16]
                      */
                     uint64_t GetMaxMicNumber() const;
 
@@ -269,7 +269,7 @@ coteaching 双师
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 最大连麦人数（不包括老师）。取值范围[0, 17)
+                     * 最大连麦人数（不包括老师）。取值范围[0, 16]
                      */
                     uint64_t m_maxMicNumber;
                     bool m_maxMicNumberHasBeenSet;

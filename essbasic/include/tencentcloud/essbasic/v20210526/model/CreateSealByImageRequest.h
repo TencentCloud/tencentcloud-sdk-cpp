@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取印章名称，最大长度不超过30字符
-                     * @return SealName 印章名称，最大长度不超过30字符
+                     * 获取印章名称，最大长度不超过50字符
+                     * @return SealName 印章名称，最大长度不超过50字符
                      */
                     std::string GetSealName() const;
 
                     /**
-                     * 设置印章名称，最大长度不超过30字符
-                     * @param SealName 印章名称，最大长度不超过30字符
+                     * 设置印章名称，最大长度不超过50字符
+                     * @param SealName 印章名称，最大长度不超过50字符
                      */
                     void SetSealName(const std::string& _sealName);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool SealNameHasBeenSet() const;
 
                     /**
-                     * 获取印章图片base64
-                     * @return SealImage 印章图片base64
+                     * 获取印章图片base64，大小不超过10M（原始图片不超过7.6M）
+                     * @return SealImage 印章图片base64，大小不超过10M（原始图片不超过7.6M）
                      */
                     std::string GetSealImage() const;
 
                     /**
-                     * 设置印章图片base64
-                     * @param SealImage 印章图片base64
+                     * 设置印章图片base64，大小不超过10M（原始图片不超过7.6M）
+                     * @param SealImage 印章图片base64，大小不超过10M（原始图片不超过7.6M）
                      */
                     void SetSealImage(const std::string& _sealImage);
 
@@ -125,13 +125,13 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 印章名称，最大长度不超过30字符
+                     * 印章名称，最大长度不超过50字符
                      */
                     std::string m_sealName;
                     bool m_sealNameHasBeenSet;
 
                     /**
-                     * 印章图片base64
+                     * 印章图片base64，大小不超过10M（原始图片不超过7.6M）
                      */
                     std::string m_sealImage;
                     bool m_sealImageHasBeenSet;

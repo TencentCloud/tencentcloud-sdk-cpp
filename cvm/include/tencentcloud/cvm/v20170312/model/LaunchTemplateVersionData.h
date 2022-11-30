@@ -410,17 +410,17 @@ namespace TencentCloud
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取置放群组id，仅支持指定一个。
+                     * 获取置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     * @return DisasterRecoverGroupIds 置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetDisasterRecoverGroupIds() const;
 
                     /**
-                     * 设置置放群组id，仅支持指定一个。
+                     * 设置置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     * @param DisasterRecoverGroupIds 置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
@@ -678,7 +678,7 @@ namespace TencentCloud
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 置放群组id，仅支持指定一个。
+                     * 置放群组ID，仅支持指定一个。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_disasterRecoverGroupIds;

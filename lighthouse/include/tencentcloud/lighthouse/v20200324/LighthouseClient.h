@@ -49,6 +49,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteSnapshotsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeAllScenesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeAllScenesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBlueprintsRequest.h>
@@ -97,6 +99,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeRegionsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeResetInstanceBlueprintsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeScenesRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeScenesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeSnapshotsDeniedActionsRequest.h>
@@ -214,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSnapshotsResponse> DeleteSnapshotsOutcome;
                 typedef std::future<DeleteSnapshotsOutcome> DeleteSnapshotsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteSnapshotsRequest&, DeleteSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAllScenesResponse> DescribeAllScenesOutcome;
+                typedef std::future<DescribeAllScenesOutcome> DescribeAllScenesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeAllScenesRequest&, DescribeAllScenesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllScenesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBlueprintInstancesResponse> DescribeBlueprintInstancesOutcome;
                 typedef std::future<DescribeBlueprintInstancesOutcome> DescribeBlueprintInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeBlueprintInstancesRequest&, DescribeBlueprintInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlueprintInstancesAsyncHandler;
@@ -286,6 +293,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeResetInstanceBlueprintsResponse> DescribeResetInstanceBlueprintsOutcome;
                 typedef std::future<DescribeResetInstanceBlueprintsOutcome> DescribeResetInstanceBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeResetInstanceBlueprintsRequest&, DescribeResetInstanceBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResetInstanceBlueprintsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScenesResponse> DescribeScenesOutcome;
+                typedef std::future<DescribeScenesOutcome> DescribeScenesOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeScenesRequest&, DescribeScenesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScenesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotsResponse> DescribeSnapshotsOutcome;
                 typedef std::future<DescribeSnapshotsOutcome> DescribeSnapshotsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeSnapshotsRequest&, DescribeSnapshotsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotsAsyncHandler;
@@ -532,6 +542,15 @@ namespace TencentCloud
                 DeleteSnapshotsOutcomeCallable DeleteSnapshotsCallable(const Model::DeleteSnapshotsRequest& request);
 
                 /**
+                 *本接口(DescribeAllScenes)用于查询全地域使用场景列表。
+                 * @param req DescribeAllScenesRequest
+                 * @return DescribeAllScenesOutcome
+                 */
+                DescribeAllScenesOutcome DescribeAllScenes(const Model::DescribeAllScenesRequest &request);
+                void DescribeAllScenesAsync(const Model::DescribeAllScenesRequest& request, const DescribeAllScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAllScenesOutcomeCallable DescribeAllScenesCallable(const Model::DescribeAllScenesRequest& request);
+
+                /**
                  *本接口（DescribeBlueprintInstances）用于查询镜像实例信息。
                  * @param req DescribeBlueprintInstancesRequest
                  * @return DescribeBlueprintInstancesOutcome
@@ -764,6 +783,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeResetInstanceBlueprintsOutcome DescribeResetInstanceBlueprints(const Model::DescribeResetInstanceBlueprintsRequest &request);
                 void DescribeResetInstanceBlueprintsAsync(const Model::DescribeResetInstanceBlueprintsRequest& request, const DescribeResetInstanceBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeResetInstanceBlueprintsOutcomeCallable DescribeResetInstanceBlueprintsCallable(const Model::DescribeResetInstanceBlueprintsRequest& request);
+
+                /**
+                 *本接口(DescribeScenes)用于查看使用场景列表。
+                 * @param req DescribeScenesRequest
+                 * @return DescribeScenesOutcome
+                 */
+                DescribeScenesOutcome DescribeScenes(const Model::DescribeScenesRequest &request);
+                void DescribeScenesAsync(const Model::DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScenesOutcomeCallable DescribeScenesCallable(const Model::DescribeScenesRequest& request);
 
                 /**
                  *本接口（DescribeSnapshots）用于查询快照的详细信息。

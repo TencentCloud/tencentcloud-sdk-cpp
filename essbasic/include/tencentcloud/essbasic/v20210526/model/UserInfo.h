@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户在渠道的编号，最大64位字符串
-                     * @return OpenId 用户在渠道的编号，最大64位字符串
+                     * 获取渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
+                     * @return OpenId 渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户在渠道的编号，最大64位字符串
-                     * @param OpenId 用户在渠道的编号，最大64位字符串
+                     * 设置渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
+                     * @param OpenId 渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的来源渠道
-                     * @return Channel 用户的来源渠道
+                     * 获取内部参数，暂未开放使用
+                     * @return Channel 内部参数，暂未开放使用
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置用户的来源渠道
-                     * @param Channel 用户的来源渠道
+                     * 设置内部参数，暂未开放使用
+                     * @param Channel 内部参数，暂未开放使用
                      */
                     void SetChannel(const std::string& _channel);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取自定义用户编号
-                     * @return CustomUserId 自定义用户编号
+                     * 获取内部参数，暂未开放使用
+                     * @return CustomUserId 内部参数，暂未开放使用
                      */
                     std::string GetCustomUserId() const;
 
                     /**
-                     * 设置自定义用户编号
-                     * @param CustomUserId 自定义用户编号
+                     * 设置内部参数，暂未开放使用
+                     * @param CustomUserId 内部参数，暂未开放使用
                      */
                     void SetCustomUserId(const std::string& _customUserId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool CustomUserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户真实IP
-                     * @return ClientIp 用户真实IP
+                     * 获取内部参数，暂未开放使用
+                     * @return ClientIp 内部参数，暂未开放使用
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置用户真实IP
-                     * @param ClientIp 用户真实IP
+                     * 设置内部参数，暂未开放使用
+                     * @param ClientIp 内部参数，暂未开放使用
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ClientIpHasBeenSet() const;
 
                     /**
-                     * 获取用户代理IP
-                     * @return ProxyIp 用户代理IP
+                     * 获取内部参数，暂未开放使用
+                     * @return ProxyIp 内部参数，暂未开放使用
                      */
                     std::string GetProxyIp() const;
 
                     /**
-                     * 设置用户代理IP
-                     * @param ProxyIp 用户代理IP
+                     * 设置内部参数，暂未开放使用
+                     * @param ProxyIp 内部参数，暂未开放使用
                      */
                     void SetProxyIp(const std::string& _proxyIp);
 
@@ -139,31 +139,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户在渠道的编号，最大64位字符串
+                     * 渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 用户的来源渠道
+                     * 内部参数，暂未开放使用
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 自定义用户编号
+                     * 内部参数，暂未开放使用
                      */
                     std::string m_customUserId;
                     bool m_customUserIdHasBeenSet;
 
                     /**
-                     * 用户真实IP
+                     * 内部参数，暂未开放使用
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
-                     * 用户代理IP
+                     * 内部参数，暂未开放使用
                      */
                     std::string m_proxyIp;
                     bool m_proxyIpHasBeenSet;

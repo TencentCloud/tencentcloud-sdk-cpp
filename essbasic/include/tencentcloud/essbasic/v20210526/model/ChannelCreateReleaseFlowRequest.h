@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/essbasic/v20210526/model/RelieveInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/RelieveInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/ReleasedApprover.h>
 #include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
@@ -46,6 +46,24 @@ namespace TencentCloud
                     ~ChannelCreateReleaseFlowRequest() = default;
                     std::string ToJsonString() const;
 
+
+                    /**
+                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
 
                     /**
                      * 获取待解除的流程编号（即原流程的编号）
@@ -84,32 +102,14 @@ namespace TencentCloud
                     bool ReliveInfoHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（比如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
-                     * @return ReleasedApprovers 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（比如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * 获取非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * @return ReleasedApprovers 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
                      */
                     std::vector<ReleasedApprover> GetReleasedApprovers() const;
 
                     /**
-                     * 设置非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（比如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
-                     * @param ReleasedApprovers 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（比如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * 设置非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * @param ReleasedApprovers 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
                      */
                     void SetReleasedApprovers(const std::vector<ReleasedApprover>& _releasedApprovers);
 
@@ -176,6 +176,12 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
                      * 待解除的流程编号（即原流程的编号）
                      */
                     std::string m_needRelievedFlowId;
@@ -188,13 +194,7 @@ namespace TencentCloud
                     bool m_reliveInfoHasBeenSet;
 
                     /**
-                     * 应用相关信息
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（比如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
+                     * 非必须，解除协议的本企业签署人列表，默认使用原流程的签署人列表；当解除协议的签署人与原流程的签署人不能相同时（例如原流程签署人离职了），需要指定本企业的其他签署人来替换原流程中的原签署人，注意需要指明ApproverNumber来代表需要替换哪一个签署人，解除协议的签署人数量不能多于原流程的签署人数量
                      */
                     std::vector<ReleasedApprover> m_releasedApprovers;
                     bool m_releasedApproversHasBeenSet;

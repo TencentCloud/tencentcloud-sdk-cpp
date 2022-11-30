@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool FormatHasBeenSet() const;
 
                     /**
-                     * 获取访问日志输出编码。默认 “TEXT”。除此之外还有“JSON”
-                     * @return Encoding 访问日志输出编码。默认 “TEXT”。除此之外还有“JSON”
+                     * 获取访问日志输出编码，可取值为 "TEXT" 或 "JSON"，默认 TEXT"
+                     * @return Encoding 访问日志输出编码，可取值为 "TEXT" 或 "JSON"，默认 TEXT"
                      */
                     std::string GetEncoding() const;
 
@@ -96,8 +96,8 @@ namespace TencentCloud
                     bool SelectedRangeHasBeenSet() const;
 
                     /**
-                     * 获取采用的模板，可取值为"istio, trace，默认为istio
-                     * @return Template 采用的模板，可取值为"istio, trace，默认为istio
+                     * 获取采用的模板，可取值为"istio" 或 "trace"，默认为"istio"
+                     * @return Template 采用的模板，可取值为"istio" 或 "trace"，默认为"istio"
                      */
                     std::string GetTemplate() const;
 
@@ -184,7 +184,7 @@ namespace TencentCloud
                     bool m_formatHasBeenSet;
 
                     /**
-                     * 访问日志输出编码。默认 “TEXT”。除此之外还有“JSON”
+                     * 访问日志输出编码，可取值为 "TEXT" 或 "JSON"，默认 TEXT"
                      */
                     std::string m_encoding;
                     bool m_encodingHasBeenSet;
@@ -197,7 +197,7 @@ namespace TencentCloud
                     bool m_selectedRangeHasBeenSet;
 
                     /**
-                     * 采用的模板，可取值为"istio, trace，默认为istio
+                     * 采用的模板，可取值为"istio" 或 "trace"，默认为"istio"
                      */
                     std::string m_template;
                     bool m_templateHasBeenSet;

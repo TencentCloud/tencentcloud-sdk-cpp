@@ -159,18 +159,18 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取预留实例计费的平台描述（即操作系统）。形如：linux。
-返回项： linux 。
-                     * @return ProductDescription 预留实例计费的平台描述（即操作系统）。形如：linux。
-返回项： linux 。
+                     * 获取预留实例计费的平台描述（即操作系统）。形如：Linux。
+返回项： Linux 。
+                     * @return ProductDescription 预留实例计费的平台描述（即操作系统）。形如：Linux。
+返回项： Linux 。
                      */
                     std::string GetProductDescription() const;
 
                     /**
-                     * 设置预留实例计费的平台描述（即操作系统）。形如：linux。
-返回项： linux 。
-                     * @param ProductDescription 预留实例计费的平台描述（即操作系统）。形如：linux。
-返回项： linux 。
+                     * 设置预留实例计费的平台描述（即操作系统）。形如：Linux。
+返回项： Linux 。
+                     * @param ProductDescription 预留实例计费的平台描述（即操作系统）。形如：Linux。
+返回项： Linux 。
                      */
                     void SetProductDescription(const std::string& _productDescription);
 
@@ -220,8 +220,8 @@ namespace TencentCloud
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 预留实例计费的平台描述（即操作系统）。形如：linux。
-返回项： linux 。
+                     * 预留实例计费的平台描述（即操作系统）。形如：Linux。
+返回项： Linux 。
                      */
                     std::string m_productDescription;
                     bool m_productDescriptionHasBeenSet;

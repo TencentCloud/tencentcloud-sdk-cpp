@@ -150,14 +150,14 @@ namespace TencentCloud
                     bool SysprepHasBeenSet() const;
 
                     /**
-                     * 获取基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
-                     * @return DataDiskIds 基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
+                     * 获取基于实例创建整机镜像时，指定包含在镜像里的数据盘ID
+                     * @return DataDiskIds 基于实例创建整机镜像时，指定包含在镜像里的数据盘ID
                      */
                     std::vector<std::string> GetDataDiskIds() const;
 
                     /**
-                     * 设置基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
-                     * @param DataDiskIds 基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
+                     * 设置基于实例创建整机镜像时，指定包含在镜像里的数据盘ID
+                     * @param DataDiskIds 基于实例创建整机镜像时，指定包含在镜像里的数据盘ID
                      */
                     void SetDataDiskIds(const std::vector<std::string>& _dataDiskIds);
 
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_sysprepHasBeenSet;
 
                     /**
-                     * 基于实例创建整机镜像时，指定包含在镜像里的数据盘Id
+                     * 基于实例创建整机镜像时，指定包含在镜像里的数据盘ID
                      */
                     std::vector<std::string> m_dataDiskIds;
                     bool m_dataDiskIdsHasBeenSet;

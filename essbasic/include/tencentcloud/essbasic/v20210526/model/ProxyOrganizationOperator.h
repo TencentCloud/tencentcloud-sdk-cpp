@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取经办人ID（渠道颁发），最大长度64个字符
-                     * @return Id 经办人ID（渠道颁发），最大长度64个字符
+                     * 获取对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（比如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
+                     * @return Id 对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（比如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置经办人ID（渠道颁发），最大长度64个字符
-                     * @param Id 经办人ID（渠道颁发），最大长度64个字符
+                     * 设置对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（比如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
+                     * @param Id 对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（比如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
                      */
                     void SetId(const std::string& _id);
 
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 经办人ID（渠道颁发），最大长度64个字符
+                     * 对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（比如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;

@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool PlacementHasBeenSet() const;
 
                     /**
-                     * 获取专用宿主机实例id
-                     * @return HostId 专用宿主机实例id
+                     * 获取专用宿主机实例ID
+                     * @return HostId 专用宿主机实例ID
                      */
                     std::string GetHostId() const;
 
                     /**
-                     * 设置专用宿主机实例id
-                     * @param HostId 专用宿主机实例id
+                     * 设置专用宿主机实例ID
+                     * @param HostId 专用宿主机实例ID
                      */
                     void SetHostId(const std::string& _hostId);
 
@@ -229,14 +229,14 @@ namespace TencentCloud
                     bool HostStateHasBeenSet() const;
 
                     /**
-                     * 获取专用宿主机实例ip
-                     * @return HostIp 专用宿主机实例ip
+                     * 获取专用宿主机实例IP
+                     * @return HostIp 专用宿主机实例IP
                      */
                     std::string GetHostIp() const;
 
                     /**
-                     * 设置专用宿主机实例ip
-                     * @param HostIp 专用宿主机实例ip
+                     * 设置专用宿主机实例IP
+                     * @param HostIp 专用宿主机实例IP
                      */
                     void SetHostIp(const std::string& _hostIp);
 
@@ -295,7 +295,7 @@ namespace TencentCloud
                     bool m_placementHasBeenSet;
 
                     /**
-                     * 专用宿主机实例id
+                     * 专用宿主机实例ID
                      */
                     std::string m_hostId;
                     bool m_hostIdHasBeenSet;
@@ -349,7 +349,7 @@ namespace TencentCloud
                     bool m_hostStateHasBeenSet;
 
                     /**
-                     * 专用宿主机实例ip
+                     * 专用宿主机实例IP
                      */
                     std::string m_hostIp;
                     bool m_hostIpHasBeenSet;

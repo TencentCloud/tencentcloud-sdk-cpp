@@ -599,6 +599,49 @@ LighthouseClient::DeleteSnapshotsOutcomeCallable LighthouseClient::DeleteSnapsho
     return task->get_future();
 }
 
+LighthouseClient::DescribeAllScenesOutcome LighthouseClient::DescribeAllScenes(const DescribeAllScenesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAllScenes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAllScenesResponse rsp = DescribeAllScenesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAllScenesOutcome(rsp);
+        else
+            return DescribeAllScenesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAllScenesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeAllScenesAsync(const DescribeAllScenesRequest& request, const DescribeAllScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAllScenes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeAllScenesOutcomeCallable LighthouseClient::DescribeAllScenesCallable(const DescribeAllScenesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAllScenesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAllScenes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::DescribeBlueprintInstancesOutcome LighthouseClient::DescribeBlueprintInstances(const DescribeBlueprintInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlueprintInstances");
@@ -1624,6 +1667,49 @@ LighthouseClient::DescribeResetInstanceBlueprintsOutcomeCallable LighthouseClien
         [this, request]()
         {
             return this->DescribeResetInstanceBlueprints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeScenesOutcome LighthouseClient::DescribeScenes(const DescribeScenesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScenes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScenesResponse rsp = DescribeScenesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScenesOutcome(rsp);
+        else
+            return DescribeScenesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScenesOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeScenesAsync(const DescribeScenesRequest& request, const DescribeScenesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScenes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeScenesOutcomeCallable LighthouseClient::DescribeScenesCallable(const DescribeScenesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScenesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScenes(request);
         }
     );
 

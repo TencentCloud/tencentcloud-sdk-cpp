@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool LongitudeHasBeenSet() const;
 
                     /**
-                     * 获取维度
-                     * @return Latitude 维度
+                     * 获取纬度
+                     * @return Latitude 纬度
                      */
                     double GetLatitude() const;
 
@@ -102,7 +102,7 @@ namespace TencentCloud
                     bool m_longitudeHasBeenSet;
 
                     /**
-                     * 维度
+                     * 纬度
                      */
                     double m_latitude;
                     bool m_latitudeHasBeenSet;

@@ -85,14 +85,14 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
+                     * 获取暂未开放
+                     * @return Operator 暂未开放
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * 设置暂未开放
+                     * @param Operator 暂未开放
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -118,7 +118,7 @@ namespace TencentCloud
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 操作者的信息
+                     * 暂未开放
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

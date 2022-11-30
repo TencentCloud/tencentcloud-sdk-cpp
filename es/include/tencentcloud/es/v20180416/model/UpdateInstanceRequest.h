@@ -327,14 +327,22 @@ namespace TencentCloud
                     bool NodeInfoListHasBeenSet() const;
 
                     /**
-                     * 获取公网访问状态
-                     * @return PublicAccess 公网访问状态
+                     * 获取ES集群公网访问状态
+OPEN 开启
+CLOSE 关闭
+                     * @return PublicAccess ES集群公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string GetPublicAccess() const;
 
                     /**
-                     * 设置公网访问状态
-                     * @param PublicAccess 公网访问状态
+                     * 设置ES集群公网访问状态
+OPEN 开启
+CLOSE 关闭
+                     * @param PublicAccess ES集群公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     void SetPublicAccess(const std::string& _publicAccess);
 
@@ -364,13 +372,21 @@ namespace TencentCloud
 
                     /**
                      * 获取Kibana公网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @return KibanaPublicAccess Kibana公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string GetKibanaPublicAccess() const;
 
                     /**
                      * 设置Kibana公网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @param KibanaPublicAccess Kibana公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     void SetKibanaPublicAccess(const std::string& _kibanaPublicAccess);
 
@@ -382,13 +398,21 @@ namespace TencentCloud
 
                     /**
                      * 获取Kibana内网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @return KibanaPrivateAccess Kibana内网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string GetKibanaPrivateAccess() const;
 
                     /**
                      * 设置Kibana内网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @param KibanaPrivateAccess Kibana内网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     void SetKibanaPrivateAccess(const std::string& _kibanaPrivateAccess);
 
@@ -562,13 +586,21 @@ namespace TencentCloud
 
                     /**
                      * 获取Cerebro公网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @return CerebroPublicAccess Cerebro公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string GetCerebroPublicAccess() const;
 
                     /**
                      * 设置Cerebro公网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @param CerebroPublicAccess Cerebro公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     void SetCerebroPublicAccess(const std::string& _cerebroPublicAccess);
 
@@ -580,13 +612,21 @@ namespace TencentCloud
 
                     /**
                      * 获取Cerebro内网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @return CerebroPrivateAccess Cerebro内网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string GetCerebroPrivateAccess() const;
 
                     /**
                      * 设置Cerebro内网访问状态
+OPEN 开启
+CLOSE 关闭
                      * @param CerebroPrivateAccess Cerebro内网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     void SetCerebroPrivateAccess(const std::string& _cerebroPrivateAccess);
 
@@ -633,14 +673,22 @@ namespace TencentCloud
                     bool OperationDurationHasBeenSet() const;
 
                     /**
-                     * 获取是否开启Altering 外网告警输出
-                     * @return KibanaAlteringPublicAccess 是否开启Altering 外网告警输出
+                     * 获取是否开启Alerting 外网告警输出：
+OPEN 开启
+CLOSE 关闭
+                     * @return KibanaAlteringPublicAccess 是否开启Alerting 外网告警输出：
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string GetKibanaAlteringPublicAccess() const;
 
                     /**
-                     * 设置是否开启Altering 外网告警输出
-                     * @param KibanaAlteringPublicAccess 是否开启Altering 外网告警输出
+                     * 设置是否开启Alerting 外网告警输出：
+OPEN 开启
+CLOSE 关闭
+                     * @param KibanaAlteringPublicAccess 是否开启Alerting 外网告警输出：
+OPEN 开启
+CLOSE 关闭
                      */
                     void SetKibanaAlteringPublicAccess(const std::string& _kibanaAlteringPublicAccess);
 
@@ -743,7 +791,9 @@ namespace TencentCloud
                     bool m_nodeInfoListHasBeenSet;
 
                     /**
-                     * 公网访问状态
+                     * ES集群公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string m_publicAccess;
                     bool m_publicAccessHasBeenSet;
@@ -756,12 +806,16 @@ namespace TencentCloud
 
                     /**
                      * Kibana公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string m_kibanaPublicAccess;
                     bool m_kibanaPublicAccessHasBeenSet;
 
                     /**
                      * Kibana内网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string m_kibanaPrivateAccess;
                     bool m_kibanaPrivateAccessHasBeenSet;
@@ -822,12 +876,16 @@ namespace TencentCloud
 
                     /**
                      * Cerebro公网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string m_cerebroPublicAccess;
                     bool m_cerebroPublicAccessHasBeenSet;
 
                     /**
                      * Cerebro内网访问状态
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string m_cerebroPrivateAccess;
                     bool m_cerebroPrivateAccessHasBeenSet;
@@ -845,7 +903,9 @@ namespace TencentCloud
                     bool m_operationDurationHasBeenSet;
 
                     /**
-                     * 是否开启Altering 外网告警输出
+                     * 是否开启Alerting 外网告警输出：
+OPEN 开启
+CLOSE 关闭
                      */
                     std::string m_kibanaAlteringPublicAccess;
                     bool m_kibanaAlteringPublicAccessHasBeenSet;

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取专用宿主机实例总cpu核数
-                     * @return CpuTotal 专用宿主机实例总cpu核数
+                     * 获取专用宿主机实例总CPU核数
+                     * @return CpuTotal 专用宿主机实例总CPU核数
                      */
                     uint64_t GetCpuTotal() const;
 
                     /**
-                     * 设置专用宿主机实例总cpu核数
-                     * @param CpuTotal 专用宿主机实例总cpu核数
+                     * 设置专用宿主机实例总CPU核数
+                     * @param CpuTotal 专用宿主机实例总CPU核数
                      */
                     void SetCpuTotal(const uint64_t& _cpuTotal);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool CpuTotalHasBeenSet() const;
 
                     /**
-                     * 获取专用宿主机实例可用cpu核数
-                     * @return CpuAvailable 专用宿主机实例可用cpu核数
+                     * 获取专用宿主机实例可用CPU核数
+                     * @return CpuAvailable 专用宿主机实例可用CPU核数
                      */
                     uint64_t GetCpuAvailable() const;
 
                     /**
-                     * 设置专用宿主机实例可用cpu核数
-                     * @param CpuAvailable 专用宿主机实例可用cpu核数
+                     * 设置专用宿主机实例可用CPU核数
+                     * @param CpuAvailable 专用宿主机实例可用CPU核数
                      */
                     void SetCpuAvailable(const uint64_t& _cpuAvailable);
 
@@ -211,13 +211,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 专用宿主机实例总cpu核数
+                     * 专用宿主机实例总CPU核数
                      */
                     uint64_t m_cpuTotal;
                     bool m_cpuTotalHasBeenSet;
 
                     /**
-                     * 专用宿主机实例可用cpu核数
+                     * 专用宿主机实例可用CPU核数
                      */
                     uint64_t m_cpuAvailable;
                     bool m_cpuAvailableHasBeenSet;

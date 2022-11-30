@@ -212,6 +212,49 @@ CdwchClient::DescribeInstanceShardsOutcomeCallable CdwchClient::DescribeInstance
     return task->get_future();
 }
 
+CdwchClient::DescribeSpecOutcome CdwchClient::DescribeSpec(const DescribeSpecRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSpec");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSpecResponse rsp = DescribeSpecResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSpecOutcome(rsp);
+        else
+            return DescribeSpecOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSpecOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeSpecAsync(const DescribeSpecRequest& request, const DescribeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSpec(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeSpecOutcomeCallable CdwchClient::DescribeSpecCallable(const DescribeSpecRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSpecOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSpec(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::ModifyClusterConfigsOutcome CdwchClient::ModifyClusterConfigs(const ModifyClusterConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterConfigs");
