@@ -21,7 +21,8 @@ using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
 ReviewAudioVideoTaskInput::ReviewAudioVideoTaskInput() :
-    m_fileIdHasBeenSet(false)
+    m_fileIdHasBeenSet(false),
+    m_definitionHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome ReviewAudioVideoTaskInput::Deserialize(const rapidjson::Valu
         m_fileIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Definition") && !value["Definition"].IsNull())
+    {
+        if (!value["Definition"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReviewAudioVideoTaskInput.Definition` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_definition = value["Definition"].GetUint64();
+        m_definitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void ReviewAudioVideoTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_definition, allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void ReviewAudioVideoTaskInput::SetFileId(const string& _fileId)
 bool ReviewAudioVideoTaskInput::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+uint64_t ReviewAudioVideoTaskInput::GetDefinition() const
+{
+    return m_definition;
+}
+
+void ReviewAudioVideoTaskInput::SetDefinition(const uint64_t& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool ReviewAudioVideoTaskInput::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
 }
 

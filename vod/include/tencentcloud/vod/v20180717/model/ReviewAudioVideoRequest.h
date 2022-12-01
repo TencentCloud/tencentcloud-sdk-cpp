@@ -79,6 +79,28 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
+                     * 获取音视频审核模板 ID，默认值为 10。取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
+                     * @return Definition 音视频审核模板 ID，默认值为 10。取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
+                     */
+                    uint64_t GetDefinition() const;
+
+                    /**
+                     * 设置音视频审核模板 ID，默认值为 10。取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
+                     * @param Definition 音视频审核模板 ID，默认值为 10。取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
+                     */
+                    void SetDefinition(const uint64_t& _definition);
+
+                    /**
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
+                     */
+                    bool DefinitionHasBeenSet() const;
+
+                    /**
                      * 获取任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      * @return TasksPriority 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。
                      */
@@ -163,6 +185,13 @@ namespace TencentCloud
                      */
                     uint64_t m_subAppId;
                     bool m_subAppIdHasBeenSet;
+
+                    /**
+                     * 音视频审核模板 ID，默认值为 10。取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
+                     */
+                    uint64_t m_definition;
+                    bool m_definitionHasBeenSet;
 
                     /**
                      * 任务流的优先级，数值越大优先级越高，取值范围是 -10 到 10，不填代表 0。

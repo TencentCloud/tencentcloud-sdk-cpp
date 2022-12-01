@@ -25,6 +25,7 @@ using namespace std;
 ReviewAudioVideoRequest::ReviewAudioVideoRequest() :
     m_fileIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
+    m_definitionHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -53,6 +54,14 @@ string ReviewAudioVideoRequest::ToJsonString() const
         string key = "SubAppId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_subAppId, allocator);
+    }
+
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_definition, allocator);
     }
 
     if (m_tasksPriorityHasBeenSet)
@@ -125,6 +134,22 @@ void ReviewAudioVideoRequest::SetSubAppId(const uint64_t& _subAppId)
 bool ReviewAudioVideoRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+uint64_t ReviewAudioVideoRequest::GetDefinition() const
+{
+    return m_definition;
+}
+
+void ReviewAudioVideoRequest::SetDefinition(const uint64_t& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool ReviewAudioVideoRequest::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
 }
 
 int64_t ReviewAudioVideoRequest::GetTasksPriority() const
