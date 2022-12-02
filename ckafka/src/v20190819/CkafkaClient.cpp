@@ -513,6 +513,49 @@ CkafkaClient::CreateDatahubTaskOutcomeCallable CkafkaClient::CreateDatahubTaskCa
     return task->get_future();
 }
 
+CkafkaClient::CreateInstancePostOutcome CkafkaClient::CreateInstancePost(const CreateInstancePostRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstancePost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstancePostResponse rsp = CreateInstancePostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstancePostOutcome(rsp);
+        else
+            return CreateInstancePostOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstancePostOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateInstancePostAsync(const CreateInstancePostRequest& request, const CreateInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstancePost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateInstancePostOutcomeCallable CkafkaClient::CreateInstancePostCallable(const CreateInstancePostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstancePostOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstancePost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateInstancePreOutcome CkafkaClient::CreateInstancePre(const CreateInstancePreRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstancePre");
@@ -2484,6 +2527,49 @@ CkafkaClient::FetchMessageListByOffsetOutcomeCallable CkafkaClient::FetchMessage
         [this, request]()
         {
             return this->FetchMessageListByOffset(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::InquireCkafkaPriceOutcome CkafkaClient::InquireCkafkaPrice(const InquireCkafkaPriceRequest &request)
+{
+    auto outcome = MakeRequest(request, "InquireCkafkaPrice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        InquireCkafkaPriceResponse rsp = InquireCkafkaPriceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return InquireCkafkaPriceOutcome(rsp);
+        else
+            return InquireCkafkaPriceOutcome(o.GetError());
+    }
+    else
+    {
+        return InquireCkafkaPriceOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::InquireCkafkaPriceAsync(const InquireCkafkaPriceRequest& request, const InquireCkafkaPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->InquireCkafkaPrice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::InquireCkafkaPriceOutcomeCallable CkafkaClient::InquireCkafkaPriceCallable(const InquireCkafkaPriceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<InquireCkafkaPriceOutcome()>>(
+        [this, request]()
+        {
+            return this->InquireCkafkaPrice(request);
         }
     );
 

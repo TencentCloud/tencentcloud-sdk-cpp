@@ -45,6 +45,8 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateInstancePostRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateInstancePostResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreatePartitionRequest.h>
@@ -137,6 +139,8 @@
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskRequest.h>
@@ -200,6 +204,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatahubTaskResponse> CreateDatahubTaskOutcome;
                 typedef std::future<CreateDatahubTaskOutcome> CreateDatahubTaskOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateDatahubTaskRequest&, CreateDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstancePostResponse> CreateInstancePostOutcome;
+                typedef std::future<CreateInstancePostOutcome> CreateInstancePostOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePostRequest&, CreateInstancePostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePostAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancePreResponse> CreateInstancePreOutcome;
                 typedef std::future<CreateInstancePreOutcome> CreateInstancePreOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePreRequest&, CreateInstancePreOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePreAsyncHandler;
@@ -338,6 +345,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::FetchMessageListByOffsetResponse> FetchMessageListByOffsetOutcome;
                 typedef std::future<FetchMessageListByOffsetOutcome> FetchMessageListByOffsetOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::FetchMessageListByOffsetRequest&, FetchMessageListByOffsetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FetchMessageListByOffsetAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquireCkafkaPriceResponse> InquireCkafkaPriceOutcome;
+                typedef std::future<InquireCkafkaPriceOutcome> InquireCkafkaPriceOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::InquireCkafkaPriceRequest&, InquireCkafkaPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquireCkafkaPriceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConnectResourceResponse> ModifyConnectResourceOutcome;
                 typedef std::future<ModifyConnectResourceOutcome> ModifyConnectResourceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyConnectResourceRequest&, ModifyConnectResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectResourceAsyncHandler;
@@ -463,6 +473,15 @@ namespace TencentCloud
                 CreateDatahubTaskOutcome CreateDatahubTask(const Model::CreateDatahubTaskRequest &request);
                 void CreateDatahubTaskAsync(const Model::CreateDatahubTaskRequest& request, const CreateDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDatahubTaskOutcomeCallable CreateDatahubTaskCallable(const Model::CreateDatahubTaskRequest& request);
+
+                /**
+                 *创建按量计费实例
+                 * @param req CreateInstancePostRequest
+                 * @return CreateInstancePostOutcome
+                 */
+                CreateInstancePostOutcome CreateInstancePost(const Model::CreateInstancePostRequest &request);
+                void CreateInstancePostAsync(const Model::CreateInstancePostRequest& request, const CreateInstancePostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstancePostOutcomeCallable CreateInstancePostCallable(const Model::CreateInstancePostRequest& request);
 
                 /**
                  *创建实例(预付费包年包月)
@@ -879,6 +898,15 @@ namespace TencentCloud
                 FetchMessageListByOffsetOutcome FetchMessageListByOffset(const Model::FetchMessageListByOffsetRequest &request);
                 void FetchMessageListByOffsetAsync(const Model::FetchMessageListByOffsetRequest& request, const FetchMessageListByOffsetAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 FetchMessageListByOffsetOutcomeCallable FetchMessageListByOffsetCallable(const Model::FetchMessageListByOffsetRequest& request);
+
+                /**
+                 *Ckafka实例购买/续费询价
+                 * @param req InquireCkafkaPriceRequest
+                 * @return InquireCkafkaPriceOutcome
+                 */
+                InquireCkafkaPriceOutcome InquireCkafkaPrice(const Model::InquireCkafkaPriceRequest &request);
+                void InquireCkafkaPriceAsync(const Model::InquireCkafkaPriceRequest& request, const InquireCkafkaPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquireCkafkaPriceOutcomeCallable InquireCkafkaPriceCallable(const Model::InquireCkafkaPriceRequest& request);
 
                 /**
                  *编辑Datahub连接源

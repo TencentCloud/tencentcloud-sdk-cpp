@@ -599,6 +599,49 @@ TkeClient::CreateClusterNodePoolFromExistingAsgOutcomeCallable TkeClient::Create
     return task->get_future();
 }
 
+TkeClient::CreateClusterReleaseOutcome TkeClient::CreateClusterRelease(const CreateClusterReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterReleaseResponse rsp = CreateClusterReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterReleaseOutcome(rsp);
+        else
+            return CreateClusterReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterReleaseAsync(const CreateClusterReleaseRequest& request, const CreateClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterReleaseOutcomeCallable TkeClient::CreateClusterReleaseCallable(const CreateClusterReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterRelease(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateClusterRouteOutcome TkeClient::CreateClusterRoute(const CreateClusterRouteRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusterRoute");

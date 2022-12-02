@@ -21,9 +21,11 @@ set(ckafka_public_header
 set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/TopicDetail.h
   include/tencentcloud/ckafka/v20190819/model/DeleteAclRequest.h
+  include/tencentcloud/ckafka/v20190819/model/CreateInstancePostResponse.h
   include/tencentcloud/ckafka/v20190819/model/DropCls.h
   include/tencentcloud/ckafka/v20190819/model/PostgreSQLModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/GroupInfoMember.h
+  include/tencentcloud/ckafka/v20190819/model/RowParam.h
   include/tencentcloud/ckafka/v20190819/model/EsConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/BatchCreateAclRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskResponse.h
@@ -31,6 +33,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/PartitionOffset.h
   include/tencentcloud/ckafka/v20190819/model/SQLServerConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateConnectResourceResponse.h
+  include/tencentcloud/ckafka/v20190819/model/TopicRetentionTimeConfigRsp.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicResultDTO.h
   include/tencentcloud/ckafka/v20190819/model/SubscribedInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicAttributesRequest.h
@@ -50,6 +53,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CancelAuthorizationTokenRequest.h
   include/tencentcloud/ckafka/v20190819/model/CancelAuthorizationTokenResponse.h
   include/tencentcloud/ckafka/v20190819/model/MySQLConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResp.h
   include/tencentcloud/ckafka/v20190819/model/CreateRouteRequest.h
   include/tencentcloud/ckafka/v20190819/model/SQLServerModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicRequest.h
@@ -113,6 +117,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRes.h
   include/tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h
   include/tencentcloud/ckafka/v20190819/model/MongoDBConnectParam.h
+  include/tencentcloud/ckafka/v20190819/model/MySQLParam.h
   include/tencentcloud/ckafka/v20190819/model/ClusterInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h
@@ -141,6 +146,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DeleteInstancePreResponse.h
   include/tencentcloud/ckafka/v20190819/model/TableMapping.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesRequest.h
+  include/tencentcloud/ckafka/v20190819/model/InquiryPublicNetworkParam.h
   include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteConnectResourceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRegionRequest.h
@@ -191,13 +197,14 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DeleteDatahubTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h
-  include/tencentcloud/ckafka/v20190819/model/MongoDBParam.h
+  include/tencentcloud/ckafka/v20190819/model/InquiryDetailPrice.h
   include/tencentcloud/ckafka/v20190819/model/DeleteDatahubTaskRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupOffsetsRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteRouteTriggerTimeRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeInstancesRequest.h
   include/tencentcloud/ckafka/v20190819/model/InstanceAttributesResponse.h
+  include/tencentcloud/ckafka/v20190819/model/CreateInstancePostRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConnectResourceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/Filter.h
@@ -219,14 +226,16 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/SubstrParam.h
   include/tencentcloud/ckafka/v20190819/model/FetchMessageByOffsetResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateConsumerRequest.h
+  include/tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteRequest.h
-  include/tencentcloud/ckafka/v20190819/model/RowParam.h
+  include/tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceRequest.h
   include/tencentcloud/ckafka/v20190819/model/DateParam.h
   include/tencentcloud/ckafka/v20190819/model/ValueParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksResponse.h
   include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaResult.h
   include/tencentcloud/ckafka/v20190819/model/SendMessageResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsRequest.h
+  include/tencentcloud/ckafka/v20190819/model/InquiryBasePrice.h
   include/tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneResponse.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyGroupOffsetsRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicAttributesResponse.h
@@ -247,8 +256,9 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteResponse.h
   include/tencentcloud/ckafka/v20190819/model/EsModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h
+  include/tencentcloud/ckafka/v20190819/model/InstanceChargeParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTaskRequest.h
-  include/tencentcloud/ckafka/v20190819/model/PostgreSQLParam.h
+  include/tencentcloud/ckafka/v20190819/model/InquiryPrice.h
   include/tencentcloud/ckafka/v20190819/model/TopicResult.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicDetailRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeGroupOffsetsResponse.h
@@ -260,10 +270,11 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupResponse.h
   include/tencentcloud/ckafka/v20190819/model/CreateTopicIpWhiteListRequest.h
+  include/tencentcloud/ckafka/v20190819/model/PostgreSQLParam.h
   include/tencentcloud/ckafka/v20190819/model/MariaDBConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/AclRuleInfo.h
   include/tencentcloud/ckafka/v20190819/model/Acl.h
-  include/tencentcloud/ckafka/v20190819/model/TopicRetentionTimeConfigRsp.h
+  include/tencentcloud/ckafka/v20190819/model/MongoDBParam.h
   include/tencentcloud/ckafka/v20190819/model/TopicParam.h
   include/tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/SecondaryAnalyseParam.h
@@ -274,7 +285,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/ClickHouseConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
-  include/tencentcloud/ckafka/v20190819/model/MySQLParam.h
+  include/tencentcloud/ckafka/v20190819/model/InquiryDiskParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeTopicSyncReplicaRequest.h
   include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskRequest.h
   include/tencentcloud/ckafka/v20190819/model/InstanceDetail.h
@@ -291,9 +302,11 @@ set(ckafka_src
   src/v20190819/CkafkaClient.cpp
   src/v20190819/model/TopicDetail.cpp
   src/v20190819/model/DeleteAclRequest.cpp
+  src/v20190819/model/CreateInstancePostResponse.cpp
   src/v20190819/model/DropCls.cpp
   src/v20190819/model/PostgreSQLModifyConnectParam.cpp
   src/v20190819/model/GroupInfoMember.cpp
+  src/v20190819/model/RowParam.cpp
   src/v20190819/model/EsConnectParam.cpp
   src/v20190819/model/BatchCreateAclRequest.cpp
   src/v20190819/model/DescribeDatahubTaskResponse.cpp
@@ -301,6 +314,7 @@ set(ckafka_src
   src/v20190819/model/PartitionOffset.cpp
   src/v20190819/model/SQLServerConnectParam.cpp
   src/v20190819/model/CreateConnectResourceResponse.cpp
+  src/v20190819/model/TopicRetentionTimeConfigRsp.cpp
   src/v20190819/model/BatchModifyTopicResultDTO.cpp
   src/v20190819/model/SubscribedInfo.cpp
   src/v20190819/model/DescribeTopicAttributesRequest.cpp
@@ -320,6 +334,7 @@ set(ckafka_src
   src/v20190819/model/CancelAuthorizationTokenRequest.cpp
   src/v20190819/model/CancelAuthorizationTokenResponse.cpp
   src/v20190819/model/MySQLConnectParam.cpp
+  src/v20190819/model/InquireCkafkaPriceResp.cpp
   src/v20190819/model/CreateRouteRequest.cpp
   src/v20190819/model/SQLServerModifyConnectParam.cpp
   src/v20190819/model/DeleteTopicRequest.cpp
@@ -383,6 +398,7 @@ set(ckafka_src
   src/v20190819/model/DescribeDatahubTaskRes.cpp
   src/v20190819/model/CreatePartitionResponse.cpp
   src/v20190819/model/MongoDBConnectParam.cpp
+  src/v20190819/model/MySQLParam.cpp
   src/v20190819/model/ClusterInfo.cpp
   src/v20190819/model/DeleteGroupRequest.cpp
   src/v20190819/model/DescribeConsumerGroupRequest.cpp
@@ -411,6 +427,7 @@ set(ckafka_src
   src/v20190819/model/DeleteInstancePreResponse.cpp
   src/v20190819/model/TableMapping.cpp
   src/v20190819/model/DescribeInstanceAttributesRequest.cpp
+  src/v20190819/model/InquiryPublicNetworkParam.cpp
   src/v20190819/model/TopicInSyncReplicaInfo.cpp
   src/v20190819/model/DeleteConnectResourceResponse.cpp
   src/v20190819/model/DescribeRegionRequest.cpp
@@ -461,13 +478,14 @@ set(ckafka_src
   src/v20190819/model/DeleteDatahubTopicResponse.cpp
   src/v20190819/model/DescribeConsumerGroupResponse.cpp
   src/v20190819/model/FetchMessageListByOffsetResponse.cpp
-  src/v20190819/model/MongoDBParam.cpp
+  src/v20190819/model/InquiryDetailPrice.cpp
   src/v20190819/model/DeleteDatahubTaskRequest.cpp
   src/v20190819/model/DescribeGroupOffsetsRequest.cpp
   src/v20190819/model/DeleteRouteTriggerTimeRequest.cpp
   src/v20190819/model/DeleteDatahubTaskResponse.cpp
   src/v20190819/model/DescribeInstancesRequest.cpp
   src/v20190819/model/InstanceAttributesResponse.cpp
+  src/v20190819/model/CreateInstancePostRequest.cpp
   src/v20190819/model/DescribeConnectResourceResponse.cpp
   src/v20190819/model/DescribeGroupRequest.cpp
   src/v20190819/model/Filter.cpp
@@ -489,14 +507,16 @@ set(ckafka_src
   src/v20190819/model/SubstrParam.cpp
   src/v20190819/model/FetchMessageByOffsetResponse.cpp
   src/v20190819/model/CreateConsumerRequest.cpp
+  src/v20190819/model/InquireCkafkaPriceResponse.cpp
   src/v20190819/model/DescribeRouteRequest.cpp
-  src/v20190819/model/RowParam.cpp
+  src/v20190819/model/InquireCkafkaPriceRequest.cpp
   src/v20190819/model/DateParam.cpp
   src/v20190819/model/ValueParam.cpp
   src/v20190819/model/DescribeDatahubTasksResponse.cpp
   src/v20190819/model/TopicInSyncReplicaResult.cpp
   src/v20190819/model/SendMessageResponse.cpp
   src/v20190819/model/DescribeDatahubGroupOffsetsRequest.cpp
+  src/v20190819/model/InquiryBasePrice.cpp
   src/v20190819/model/DescribeCkafkaZoneResponse.cpp
   src/v20190819/model/BatchModifyGroupOffsetsRequest.cpp
   src/v20190819/model/TopicAttributesResponse.cpp
@@ -517,8 +537,9 @@ set(ckafka_src
   src/v20190819/model/DescribeRouteResponse.cpp
   src/v20190819/model/EsModifyConnectParam.cpp
   src/v20190819/model/ModifyConnectResourceResponse.cpp
+  src/v20190819/model/InstanceChargeParam.cpp
   src/v20190819/model/CreateDatahubTaskRequest.cpp
-  src/v20190819/model/PostgreSQLParam.cpp
+  src/v20190819/model/InquiryPrice.cpp
   src/v20190819/model/TopicResult.cpp
   src/v20190819/model/DescribeTopicDetailRequest.cpp
   src/v20190819/model/DescribeGroupOffsetsResponse.cpp
@@ -530,10 +551,11 @@ set(ckafka_src
   src/v20190819/model/BatchModifyTopicAttributesRequest.cpp
   src/v20190819/model/DeleteGroupResponse.cpp
   src/v20190819/model/CreateTopicIpWhiteListRequest.cpp
+  src/v20190819/model/PostgreSQLParam.cpp
   src/v20190819/model/MariaDBConnectParam.cpp
   src/v20190819/model/AclRuleInfo.cpp
   src/v20190819/model/Acl.cpp
-  src/v20190819/model/TopicRetentionTimeConfigRsp.cpp
+  src/v20190819/model/MongoDBParam.cpp
   src/v20190819/model/TopicParam.cpp
   src/v20190819/model/ModifyTopicAttributesRequest.cpp
   src/v20190819/model/SecondaryAnalyseParam.cpp
@@ -544,7 +566,7 @@ set(ckafka_src
   src/v20190819/model/CreateDatahubTaskResponse.cpp
   src/v20190819/model/ClickHouseConnectParam.cpp
   src/v20190819/model/DescribeUserRequest.cpp
-  src/v20190819/model/MySQLParam.cpp
+  src/v20190819/model/InquiryDiskParam.cpp
   src/v20190819/model/DescribeTopicSyncReplicaRequest.cpp
   src/v20190819/model/ModifyDatahubTaskRequest.cpp
   src/v20190819/model/InstanceDetail.cpp
