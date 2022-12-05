@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取当前黑名单类型，取值black时黑名单；取值white时白名单
-                     * @return OldIpType 当前黑名单类型，取值black时黑名单；取值white时白名单
+                     * 获取当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
+                     * @return OldIpType 当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
                      */
                     std::string GetOldIpType() const;
 
                     /**
-                     * 设置当前黑名单类型，取值black时黑名单；取值white时白名单
-                     * @param OldIpType 当前黑名单类型，取值black时黑名单；取值white时白名单
+                     * 设置当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
+                     * @param OldIpType 当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
                      */
                     void SetOldIpType(const std::string& _oldIpType);
 
@@ -142,7 +142,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 当前黑名单类型，取值black时黑名单；取值white时白名单
+                     * 当前配置的黑白名单类型，取值black时表示黑名单；取值white时表示白名单
                      */
                     std::string m_oldIpType;
                     bool m_oldIpTypeHasBeenSet;

@@ -530,6 +530,28 @@ namespace TencentCloud
                      */
                     bool TmpTokenHasBeenSet() const;
 
+                    /**
+                     * 获取外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoleExternalId 外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRoleExternalId() const;
+
+                    /**
+                     * 设置外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RoleExternalId 外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRoleExternalId(const std::string& _roleExternalId);
+
+                    /**
+                     * 判断参数 RoleExternalId 是否已赋值
+                     * @return RoleExternalId 是否已赋值
+                     */
+                    bool RoleExternalIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -685,6 +707,13 @@ namespace TencentCloud
                      */
                     std::string m_tmpToken;
                     bool m_tmpTokenHasBeenSet;
+
+                    /**
+                     * 外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roleExternalId;
+                    bool m_roleExternalIdHasBeenSet;
 
                 };
             }

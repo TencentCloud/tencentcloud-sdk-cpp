@@ -27,7 +27,8 @@ FirmwareInfo::FirmwareInfo() :
     m_productNameHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_productIdHasBeenSet(false)
+    m_productIdHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome FirmwareInfo::Deserialize(const rapidjson::Value &value)
         m_productIdHasBeenSet = true;
     }
 
+    if (value.HasMember("FwType") && !value["FwType"].IsNull())
+    {
+        if (!value["FwType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FirmwareInfo.FwType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwType = string(value["FwType"].GetString());
+        m_fwTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void FirmwareInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ProductId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void FirmwareInfo::SetProductId(const string& _productId)
 bool FirmwareInfo::ProductIdHasBeenSet() const
 {
     return m_productIdHasBeenSet;
+}
+
+string FirmwareInfo::GetFwType() const
+{
+    return m_fwType;
+}
+
+void FirmwareInfo::SetFwType(const string& _fwType)
+{
+    m_fwType = _fwType;
+    m_fwTypeHasBeenSet = true;
+}
+
+bool FirmwareInfo::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 

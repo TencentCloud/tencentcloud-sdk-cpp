@@ -44,13 +44,25 @@ namespace TencentCloud
 
                     /**
                      * 获取转账类型
+1 微信企业付款 
+2 支付宝转账 
+3 平安银企直连代发转账
                      * @return TransferType 转账类型
+1 微信企业付款 
+2 支付宝转账 
+3 平安银企直连代发转账
                      */
                     uint64_t GetTransferType() const;
 
                     /**
                      * 设置转账类型
+1 微信企业付款 
+2 支付宝转账 
+3 平安银企直连代发转账
                      * @param TransferType 转账类型
+1 微信企业付款 
+2 支付宝转账 
+3 平安银企直连代发转账
                      */
                     void SetTransferType(const uint64_t& _transferType);
 
@@ -208,6 +220,9 @@ namespace TencentCloud
 
                     /**
                      * 转账类型
+1 微信企业付款 
+2 支付宝转账 
+3 平安银企直连代发转账
                      */
                     uint64_t m_transferType;
                     bool m_transferTypeHasBeenSet;

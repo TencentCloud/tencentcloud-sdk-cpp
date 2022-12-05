@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return StartTime 起始时间
+                     * 获取统计开始时间
+                     * @return StartTime 统计开始时间
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置起始时间
-                     * @param StartTime 起始时间
+                     * 设置统计开始时间
+                     * @param StartTime 统计开始时间
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取统计结束时间
+                     * @return EndTime 统计结束时间
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置统计结束时间
+                     * @param EndTime 统计结束时间
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * 统计开始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 统计结束时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

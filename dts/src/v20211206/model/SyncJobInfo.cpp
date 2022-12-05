@@ -45,7 +45,11 @@ SyncJobInfo::SyncJobInfo() :
     m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_detailHasBeenSet(false)
+    m_detailHasBeenSet(false),
+    m_tradeStatusHasBeenSet(false),
+    m_instanceClassHasBeenSet(false),
+    m_autoRenewHasBeenSet(false),
+    m_offlineTimeHasBeenSet(false)
 {
 }
 
@@ -355,6 +359,46 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         m_detailHasBeenSet = true;
     }
 
+    if (value.HasMember("TradeStatus") && !value["TradeStatus"].IsNull())
+    {
+        if (!value["TradeStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.TradeStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tradeStatus = string(value["TradeStatus"].GetString());
+        m_tradeStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceClass") && !value["InstanceClass"].IsNull())
+    {
+        if (!value["InstanceClass"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.InstanceClass` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceClass = string(value["InstanceClass"].GetString());
+        m_instanceClassHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenew") && !value["AutoRenew"].IsNull())
+    {
+        if (!value["AutoRenew"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.AutoRenew` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenew = value["AutoRenew"].GetUint64();
+        m_autoRenewHasBeenSet = true;
+    }
+
+    if (value.HasMember("OfflineTime") && !value["OfflineTime"].IsNull())
+    {
+        if (!value["OfflineTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.OfflineTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_offlineTime = string(value["OfflineTime"].GetString());
+        m_offlineTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -582,6 +626,38 @@ void SyncJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_detail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tradeStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TradeStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tradeStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceClassHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceClass";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceClass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenew, allocator);
+    }
+
+    if (m_offlineTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OfflineTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -985,5 +1061,69 @@ void SyncJobInfo::SetDetail(const SyncDetailInfo& _detail)
 bool SyncJobInfo::DetailHasBeenSet() const
 {
     return m_detailHasBeenSet;
+}
+
+string SyncJobInfo::GetTradeStatus() const
+{
+    return m_tradeStatus;
+}
+
+void SyncJobInfo::SetTradeStatus(const string& _tradeStatus)
+{
+    m_tradeStatus = _tradeStatus;
+    m_tradeStatusHasBeenSet = true;
+}
+
+bool SyncJobInfo::TradeStatusHasBeenSet() const
+{
+    return m_tradeStatusHasBeenSet;
+}
+
+string SyncJobInfo::GetInstanceClass() const
+{
+    return m_instanceClass;
+}
+
+void SyncJobInfo::SetInstanceClass(const string& _instanceClass)
+{
+    m_instanceClass = _instanceClass;
+    m_instanceClassHasBeenSet = true;
+}
+
+bool SyncJobInfo::InstanceClassHasBeenSet() const
+{
+    return m_instanceClassHasBeenSet;
+}
+
+uint64_t SyncJobInfo::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void SyncJobInfo::SetAutoRenew(const uint64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool SyncJobInfo::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
+}
+
+string SyncJobInfo::GetOfflineTime() const
+{
+    return m_offlineTime;
+}
+
+void SyncJobInfo::SetOfflineTime(const string& _offlineTime)
+{
+    m_offlineTime = _offlineTime;
+    m_offlineTimeHasBeenSet = true;
+}
+
+bool SyncJobInfo::OfflineTimeHasBeenSet() const
+{
+    return m_offlineTimeHasBeenSet;
 }
 

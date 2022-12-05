@@ -620,7 +620,7 @@ namespace TencentCloud
                 DeleteDisasterRecoverGroupsOutcomeCallable DeleteDisasterRecoverGroupsCallable(const Model::DeleteDisasterRecoverGroupsRequest& request);
 
                 /**
-                 *当高性能计算集群为空, 即集群内没有任何设备时候, 可以删除改集群。
+                 *当高性能计算集群为空, 即集群内没有任何设备时候, 可以删除该集群。
                  * @param req DeleteHpcClustersRequest
                  * @return DeleteHpcClustersOutcome
                  */

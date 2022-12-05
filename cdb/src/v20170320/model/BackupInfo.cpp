@@ -39,7 +39,8 @@ BackupInfo::BackupInfo() :
     m_regionHasBeenSet(false),
     m_remoteInfoHasBeenSet(false),
     m_cosStorageTypeHasBeenSet(false),
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_encryptionFlagHasBeenSet(false)
 {
 }
 
@@ -248,6 +249,16 @@ CoreInternalOutcome BackupInfo::Deserialize(const rapidjson::Value &value)
         m_instanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EncryptionFlag") && !value["EncryptionFlag"].IsNull())
+    {
+        if (!value["EncryptionFlag"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupInfo.EncryptionFlag` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_encryptionFlag = string(value["EncryptionFlag"].GetString());
+        m_encryptionFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +423,14 @@ void BackupInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_encryptionFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EncryptionFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptionFlag.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -719,5 +738,21 @@ void BackupInfo::SetInstanceId(const string& _instanceId)
 bool BackupInfo::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+string BackupInfo::GetEncryptionFlag() const
+{
+    return m_encryptionFlag;
+}
+
+void BackupInfo::SetEncryptionFlag(const string& _encryptionFlag)
+{
+    m_encryptionFlag = _encryptionFlag;
+    m_encryptionFlagHasBeenSet = true;
+}
+
+bool BackupInfo::EncryptionFlagHasBeenSet() const
+{
+    return m_encryptionFlagHasBeenSet;
 }
 

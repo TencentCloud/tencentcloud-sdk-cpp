@@ -30,7 +30,8 @@ DescribeFirmwareResponse::DescribeFirmwareResponse() :
     m_descriptionHasBeenSet(false),
     m_md5sumHasBeenSet(false),
     m_createtimeHasBeenSet(false),
-    m_productNameHasBeenSet(false)
+    m_productNameHasBeenSet(false),
+    m_fwTypeHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome DescribeFirmwareResponse::Deserialize(const string &payload)
         m_productNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FwType") && !rsp["FwType"].IsNull())
+    {
+        if (!rsp["FwType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FwType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fwType = string(rsp["FwType"].GetString());
+        m_fwTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -202,6 +213,14 @@ string DescribeFirmwareResponse::ToJsonString() const
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fwTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fwType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -284,6 +303,16 @@ string DescribeFirmwareResponse::GetProductName() const
 bool DescribeFirmwareResponse::ProductNameHasBeenSet() const
 {
     return m_productNameHasBeenSet;
+}
+
+string DescribeFirmwareResponse::GetFwType() const
+{
+    return m_fwType;
+}
+
+bool DescribeFirmwareResponse::FwTypeHasBeenSet() const
+{
+    return m_fwTypeHasBeenSet;
 }
 
 

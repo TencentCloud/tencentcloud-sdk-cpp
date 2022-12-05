@@ -24,7 +24,8 @@ StepTip::StepTip() :
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false),
     m_solutionHasBeenSet(false),
-    m_helpDocHasBeenSet(false)
+    m_helpDocHasBeenSet(false),
+    m_skipInfoHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome StepTip::Deserialize(const rapidjson::Value &value)
         m_helpDocHasBeenSet = true;
     }
 
+    if (value.HasMember("SkipInfo") && !value["SkipInfo"].IsNull())
+    {
+        if (!value["SkipInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StepTip.SkipInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_skipInfo = string(value["SkipInfo"].GetString());
+        m_skipInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void StepTip::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "HelpDoc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_helpDoc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skipInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_skipInfo.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void StepTip::SetHelpDoc(const string& _helpDoc)
 bool StepTip::HelpDocHasBeenSet() const
 {
     return m_helpDocHasBeenSet;
+}
+
+string StepTip::GetSkipInfo() const
+{
+    return m_skipInfo;
+}
+
+void StepTip::SetSkipInfo(const string& _skipInfo)
+{
+    m_skipInfo = _skipInfo;
+    m_skipInfoHasBeenSet = true;
+}
+
+bool StepTip::SkipInfoHasBeenSet() const
+{
+    return m_skipInfoHasBeenSet;
 }
 

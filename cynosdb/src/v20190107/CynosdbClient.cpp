@@ -2491,6 +2491,49 @@ CynosdbClient::RemoveClusterSlaveZoneOutcomeCallable CynosdbClient::RemoveCluste
     return task->get_future();
 }
 
+CynosdbClient::ResetAccountPasswordOutcome CynosdbClient::ResetAccountPassword(const ResetAccountPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetAccountPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetAccountPasswordResponse rsp = ResetAccountPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetAccountPasswordOutcome(rsp);
+        else
+            return ResetAccountPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetAccountPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ResetAccountPasswordAsync(const ResetAccountPasswordRequest& request, const ResetAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetAccountPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ResetAccountPasswordOutcomeCallable CynosdbClient::ResetAccountPasswordCallable(const ResetAccountPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetAccountPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetAccountPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ResumeServerlessOutcome CynosdbClient::ResumeServerless(const ResumeServerlessRequest &request)
 {
     auto outcome = MakeRequest(request, "ResumeServerless");
@@ -2620,6 +2663,92 @@ CynosdbClient::RollBackClusterOutcomeCallable CynosdbClient::RollBackClusterCall
     return task->get_future();
 }
 
+CynosdbClient::SearchClusterDatabasesOutcome CynosdbClient::SearchClusterDatabases(const SearchClusterDatabasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchClusterDatabases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchClusterDatabasesResponse rsp = SearchClusterDatabasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchClusterDatabasesOutcome(rsp);
+        else
+            return SearchClusterDatabasesOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchClusterDatabasesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::SearchClusterDatabasesAsync(const SearchClusterDatabasesRequest& request, const SearchClusterDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchClusterDatabases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::SearchClusterDatabasesOutcomeCallable CynosdbClient::SearchClusterDatabasesCallable(const SearchClusterDatabasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchClusterDatabasesOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchClusterDatabases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::SearchClusterTablesOutcome CynosdbClient::SearchClusterTables(const SearchClusterTablesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchClusterTables");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchClusterTablesResponse rsp = SearchClusterTablesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchClusterTablesOutcome(rsp);
+        else
+            return SearchClusterTablesOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchClusterTablesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::SearchClusterTablesAsync(const SearchClusterTablesRequest& request, const SearchClusterTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchClusterTables(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::SearchClusterTablesOutcomeCallable CynosdbClient::SearchClusterTablesCallable(const SearchClusterTablesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchClusterTablesOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchClusterTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::SetRenewFlagOutcome CynosdbClient::SetRenewFlag(const SetRenewFlagRequest &request)
 {
     auto outcome = MakeRequest(request, "SetRenewFlag");
@@ -2699,6 +2828,49 @@ CynosdbClient::SwitchClusterZoneOutcomeCallable CynosdbClient::SwitchClusterZone
         [this, request]()
         {
             return this->SwitchClusterZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::SwitchProxyVpcOutcome CynosdbClient::SwitchProxyVpc(const SwitchProxyVpcRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchProxyVpc");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchProxyVpcResponse rsp = SwitchProxyVpcResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchProxyVpcOutcome(rsp);
+        else
+            return SwitchProxyVpcOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchProxyVpcOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::SwitchProxyVpcAsync(const SwitchProxyVpcRequest& request, const SwitchProxyVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchProxyVpc(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::SwitchProxyVpcOutcomeCallable CynosdbClient::SwitchProxyVpcCallable(const SwitchProxyVpcRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchProxyVpcOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchProxyVpc(request);
         }
     );
 

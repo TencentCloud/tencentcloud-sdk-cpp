@@ -26,7 +26,8 @@ using namespace std;
 InquirePriceRenewInstancesResponse::InquirePriceRenewInstancesResponse() :
     m_priceHasBeenSet(false),
     m_dataDiskPriceSetHasBeenSet(false),
-    m_instancePriceDetailSetHasBeenSet(false)
+    m_instancePriceDetailSetHasBeenSet(false),
+    m_totalPriceHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,23 @@ CoreInternalOutcome InquirePriceRenewInstancesResponse::Deserialize(const string
         m_instancePriceDetailSetHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalPrice") && !rsp["TotalPrice"].IsNull())
+    {
+        if (!rsp["TotalPrice"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalPrice` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_totalPrice.Deserialize(rsp["TotalPrice"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_totalPriceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -170,6 +188,15 @@ string InquirePriceRenewInstancesResponse::ToJsonString() const
         }
     }
 
+    if (m_totalPriceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalPrice";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_totalPrice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -210,6 +237,16 @@ vector<InstancePriceDetail> InquirePriceRenewInstancesResponse::GetInstancePrice
 bool InquirePriceRenewInstancesResponse::InstancePriceDetailSetHasBeenSet() const
 {
     return m_instancePriceDetailSetHasBeenSet;
+}
+
+TotalPrice InquirePriceRenewInstancesResponse::GetTotalPrice() const
+{
+    return m_totalPrice;
+}
+
+bool InquirePriceRenewInstancesResponse::TotalPriceHasBeenSet() const
+{
+    return m_totalPriceHasBeenSet;
 }
 
 

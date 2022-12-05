@@ -62,13 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取函数的版本号
+默认值: $LATEST
                      * @return Qualifier 函数的版本号
+默认值: $LATEST
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置函数的版本号
+默认值: $LATEST
                      * @param Qualifier 函数的版本号
+默认值: $LATEST
                      */
                     void SetQualifier(const std::string& _qualifier);
 
@@ -80,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取函数所属命名空间
+默认值: default
                      * @return Namespace 函数所属命名空间
+默认值: default
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置函数所属命名空间
+默认值: default
                      * @param Namespace 函数所属命名空间
+默认值: default
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -124,12 +132,14 @@ namespace TencentCloud
 
                     /**
                      * 函数的版本号
+默认值: $LATEST
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;
 
                     /**
                      * 函数所属命名空间
+默认值: default
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

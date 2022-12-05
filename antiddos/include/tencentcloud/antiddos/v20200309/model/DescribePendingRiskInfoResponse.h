@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否为付费用户
-                     * @return IsPaidUsr 是否为付费用户
+                     * 获取是否为付费用户，true：付费用户， false：普通用户
+                     * @return IsPaidUsr 是否为付费用户，true：付费用户， false：普通用户
                      */
                     bool GetIsPaidUsr() const;
 
@@ -106,7 +106,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否为付费用户
+                     * 是否为付费用户，true：付费用户， false：普通用户
                      */
                     bool m_isPaidUsr;
                     bool m_isPaidUsrHasBeenSet;

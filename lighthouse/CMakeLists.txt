@@ -127,6 +127,7 @@ set(lighthouse_public_header_model
   include/tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeBundlesRequest.h
   include/tencentcloud/lighthouse/v20200324/model/Blueprint.h
+  include/tencentcloud/lighthouse/v20200324/model/TotalPrice.h
   include/tencentcloud/lighthouse/v20200324/model/DeniedAction.h
   include/tencentcloud/lighthouse/v20200324/model/DescribeAllScenesResponse.h
   include/tencentcloud/lighthouse/v20200324/model/ModifyInstancesLoginKeyPairAttributeResponse.h
@@ -324,6 +325,7 @@ set(lighthouse_src
   src/v20200324/model/DescribeCcnAttachedInstancesResponse.cpp
   src/v20200324/model/DescribeBundlesRequest.cpp
   src/v20200324/model/Blueprint.cpp
+  src/v20200324/model/TotalPrice.cpp
   src/v20200324/model/DeniedAction.cpp
   src/v20200324/model/DescribeAllScenesResponse.cpp
   src/v20200324/model/ModifyInstancesLoginKeyPairAttributeResponse.cpp

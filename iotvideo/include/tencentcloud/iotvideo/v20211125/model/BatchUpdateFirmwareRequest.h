@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool DeviceNamesHasBeenSet() const;
 
+                    /**
+                     * 获取固件升级任务默认超时时间。 最小取值60秒，最大为3600秒
+                     * @return TimeoutInterval 固件升级任务默认超时时间。 最小取值60秒，最大为3600秒
+                     */
+                    int64_t GetTimeoutInterval() const;
+
+                    /**
+                     * 设置固件升级任务默认超时时间。 最小取值60秒，最大为3600秒
+                     * @param TimeoutInterval 固件升级任务默认超时时间。 最小取值60秒，最大为3600秒
+                     */
+                    void SetTimeoutInterval(const int64_t& _timeoutInterval);
+
+                    /**
+                     * 判断参数 TimeoutInterval 是否已赋值
+                     * @return TimeoutInterval 是否已赋值
+                     */
+                    bool TimeoutIntervalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_deviceNames;
                     bool m_deviceNamesHasBeenSet;
+
+                    /**
+                     * 固件升级任务默认超时时间。 最小取值60秒，最大为3600秒
+                     */
+                    int64_t m_timeoutInterval;
+                    bool m_timeoutIntervalHasBeenSet;
 
                 };
             }

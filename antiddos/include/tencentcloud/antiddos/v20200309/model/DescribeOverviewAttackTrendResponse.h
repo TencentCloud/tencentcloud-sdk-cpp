@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取起始时间
-                     * @return StartTime 起始时间
+                     * 获取统计起始时间
+                     * @return StartTime 统计起始时间
                      */
                     std::string GetStartTime() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取统计结束时间
+                     * @return EndTime 统计结束时间
                      */
                     std::string GetEndTime() const;
 
@@ -124,13 +124,13 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 起始时间
+                     * 统计起始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 统计结束时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

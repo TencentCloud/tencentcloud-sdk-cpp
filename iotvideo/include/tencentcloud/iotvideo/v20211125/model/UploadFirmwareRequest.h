@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool FirmwareDescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取固件升级模块；可选值 mcu|moudule
+                     * @return FwType 固件升级模块；可选值 mcu|moudule
+                     */
+                    std::string GetFwType() const;
+
+                    /**
+                     * 设置固件升级模块；可选值 mcu|moudule
+                     * @param FwType 固件升级模块；可选值 mcu|moudule
+                     */
+                    void SetFwType(const std::string& _fwType);
+
+                    /**
+                     * 判断参数 FwType 是否已赋值
+                     * @return FwType 是否已赋值
+                     */
+                    bool FwTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_firmwareDescription;
                     bool m_firmwareDescriptionHasBeenSet;
+
+                    /**
+                     * 固件升级模块；可选值 mcu|moudule
+                     */
+                    std::string m_fwType;
+                    bool m_fwTypeHasBeenSet;
 
                 };
             }

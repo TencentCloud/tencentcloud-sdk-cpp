@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool ProtocolHasBeenSet() const;
 
                     /**
-                     * 获取CC区域封禁配置，填写参数时配置ID请为空
-                     * @return CcGeoIPBlockConfig CC区域封禁配置，填写参数时配置ID请为空
+                     * 获取CC区域封禁配置
+                     * @return CcGeoIPBlockConfig CC区域封禁配置
                      */
                     CcGeoIPBlockConfig GetCcGeoIPBlockConfig() const;
 
                     /**
-                     * 设置CC区域封禁配置，填写参数时配置ID请为空
-                     * @param CcGeoIPBlockConfig CC区域封禁配置，填写参数时配置ID请为空
+                     * 设置CC区域封禁配置
+                     * @param CcGeoIPBlockConfig CC区域封禁配置
                      */
                     void SetCcGeoIPBlockConfig(const CcGeoIPBlockConfig& _ccGeoIPBlockConfig);
 
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_protocolHasBeenSet;
 
                     /**
-                     * CC区域封禁配置，填写参数时配置ID请为空
+                     * CC区域封禁配置
                      */
                     CcGeoIPBlockConfig m_ccGeoIPBlockConfig;
                     bool m_ccGeoIPBlockConfigHasBeenSet;

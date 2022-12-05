@@ -25,7 +25,8 @@ using namespace std;
 QueryFlexPayeeAccountBalanceRequest::QueryFlexPayeeAccountBalanceRequest() :
     m_payeeIdHasBeenSet(false),
     m_incomeTypeHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_snapshotDateHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string QueryFlexPayeeAccountBalanceRequest::ToJsonString() const
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_snapshotDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotDate";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_snapshotDate.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void QueryFlexPayeeAccountBalanceRequest::SetEnvironment(const string& _environm
 bool QueryFlexPayeeAccountBalanceRequest::EnvironmentHasBeenSet() const
 {
     return m_environmentHasBeenSet;
+}
+
+string QueryFlexPayeeAccountBalanceRequest::GetSnapshotDate() const
+{
+    return m_snapshotDate;
+}
+
+void QueryFlexPayeeAccountBalanceRequest::SetSnapshotDate(const string& _snapshotDate)
+{
+    m_snapshotDate = _snapshotDate;
+    m_snapshotDateHasBeenSet = true;
+}
+
+bool QueryFlexPayeeAccountBalanceRequest::SnapshotDateHasBeenSet() const
+{
+    return m_snapshotDateHasBeenSet;
 }
 
 

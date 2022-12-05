@@ -120,6 +120,24 @@ __test__:测试环境
                      */
                     bool EnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取快照日期。格式yyyy-MM-dd
+                     * @return SnapshotDate 快照日期。格式yyyy-MM-dd
+                     */
+                    std::string GetSnapshotDate() const;
+
+                    /**
+                     * 设置快照日期。格式yyyy-MM-dd
+                     * @param SnapshotDate 快照日期。格式yyyy-MM-dd
+                     */
+                    void SetSnapshotDate(const std::string& _snapshotDate);
+
+                    /**
+                     * 判断参数 SnapshotDate 是否已赋值
+                     * @return SnapshotDate 是否已赋值
+                     */
+                    bool SnapshotDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +163,12 @@ __test__:测试环境
                      */
                     std::string m_environment;
                     bool m_environmentHasBeenSet;
+
+                    /**
+                     * 快照日期。格式yyyy-MM-dd
+                     */
+                    std::string m_snapshotDate;
+                    bool m_snapshotDateHasBeenSet;
 
                 };
             }

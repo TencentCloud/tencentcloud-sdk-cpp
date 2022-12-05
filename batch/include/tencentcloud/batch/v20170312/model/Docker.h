@@ -154,6 +154,28 @@ namespace TencentCloud
                      */
                     bool DelayOnRetryHasBeenSet() const;
 
+                    /**
+                     * 获取Docker命令运行参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DockerRunOption Docker命令运行参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDockerRunOption() const;
+
+                    /**
+                     * 设置Docker命令运行参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DockerRunOption Docker命令运行参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDockerRunOption(const std::string& _dockerRunOption);
+
+                    /**
+                     * 判断参数 DockerRunOption 是否已赋值
+                     * @return DockerRunOption 是否已赋值
+                     */
+                    bool DockerRunOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +213,13 @@ namespace TencentCloud
                      */
                     uint64_t m_delayOnRetry;
                     bool m_delayOnRetryHasBeenSet;
+
+                    /**
+                     * Docker命令运行参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dockerRunOption;
+                    bool m_dockerRunOptionHasBeenSet;
 
                 };
             }

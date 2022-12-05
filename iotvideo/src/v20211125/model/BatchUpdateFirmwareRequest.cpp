@@ -30,7 +30,8 @@ BatchUpdateFirmwareRequest::BatchUpdateFirmwareRequest() :
     m_fileNameHasBeenSet(false),
     m_fileMd5HasBeenSet(false),
     m_fileSizeHasBeenSet(false),
-    m_deviceNamesHasBeenSet(false)
+    m_deviceNamesHasBeenSet(false),
+    m_timeoutIntervalHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string BatchUpdateFirmwareRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_timeoutIntervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutInterval";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeoutInterval, allocator);
     }
 
 
@@ -244,6 +253,22 @@ void BatchUpdateFirmwareRequest::SetDeviceNames(const vector<string>& _deviceNam
 bool BatchUpdateFirmwareRequest::DeviceNamesHasBeenSet() const
 {
     return m_deviceNamesHasBeenSet;
+}
+
+int64_t BatchUpdateFirmwareRequest::GetTimeoutInterval() const
+{
+    return m_timeoutInterval;
+}
+
+void BatchUpdateFirmwareRequest::SetTimeoutInterval(const int64_t& _timeoutInterval)
+{
+    m_timeoutInterval = _timeoutInterval;
+    m_timeoutIntervalHasBeenSet = true;
+}
+
+bool BatchUpdateFirmwareRequest::TimeoutIntervalHasBeenSet() const
+{
+    return m_timeoutIntervalHasBeenSet;
 }
 
 

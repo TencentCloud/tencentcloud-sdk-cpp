@@ -26,7 +26,8 @@ Docker::Docker() :
     m_imageHasBeenSet(false),
     m_serverHasBeenSet(false),
     m_maxRetryCountHasBeenSet(false),
-    m_delayOnRetryHasBeenSet(false)
+    m_delayOnRetryHasBeenSet(false),
+    m_dockerRunOptionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome Docker::Deserialize(const rapidjson::Value &value)
         m_delayOnRetryHasBeenSet = true;
     }
 
+    if (value.HasMember("DockerRunOption") && !value["DockerRunOption"].IsNull())
+    {
+        if (!value["DockerRunOption"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Docker.DockerRunOption` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dockerRunOption = string(value["DockerRunOption"].GetString());
+        m_dockerRunOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void Docker::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "DelayOnRetry";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_delayOnRetry, allocator);
+    }
+
+    if (m_dockerRunOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DockerRunOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dockerRunOption.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void Docker::SetDelayOnRetry(const uint64_t& _delayOnRetry)
 bool Docker::DelayOnRetryHasBeenSet() const
 {
     return m_delayOnRetryHasBeenSet;
+}
+
+string Docker::GetDockerRunOption() const
+{
+    return m_dockerRunOption;
+}
+
+void Docker::SetDockerRunOption(const string& _dockerRunOption)
+{
+    m_dockerRunOption = _dockerRunOption;
+    m_dockerRunOptionHasBeenSet = true;
+}
+
+bool Docker::DockerRunOptionHasBeenSet() const
+{
+    return m_dockerRunOptionHasBeenSet;
 }
 

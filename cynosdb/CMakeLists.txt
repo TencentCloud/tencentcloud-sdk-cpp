@@ -49,6 +49,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/AuditLogFilter.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/SearchClusterTablesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/PauseServerlessRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ObjectTask.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesResponse.h
@@ -87,11 +88,13 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CreateAuditLogFileResponse.h
   include/tencentcloud/cynosdb/v20190107/model/PauseServerlessResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordResponse.h
   include/tencentcloud/cynosdb/v20190107/model/NewAccount.h
   include/tencentcloud/cynosdb/v20190107/model/BackupFileInfo.h
   include/tencentcloud/cynosdb/v20190107/model/TablePrivileges.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupListRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstance.h
   include/tencentcloud/cynosdb/v20190107/model/DbTable.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterSlaveZoneResponse.h
@@ -133,7 +136,9 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ModifyAccountParamsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbCluster.h
   include/tencentcloud/cynosdb/v20190107/model/IsolateClusterResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceSpec.h
   include/tencentcloud/cynosdb/v20190107/model/InquirePriceCreateResponse.h
@@ -142,8 +147,10 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/Account.h
   include/tencentcloud/cynosdb/v20190107/model/CreateBackupRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/SearchClusterTablesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/PolicyRule.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeMaintainPeriodResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupListResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RollBackClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogSaveDaysRequest.h
@@ -159,6 +166,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbInstanceDetail.h
   include/tencentcloud/cynosdb/v20190107/model/CynosdbClusterDetail.h
+  include/tencentcloud/cynosdb/v20190107/model/ResetAccountPasswordRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DisassociateSecurityGroupsRequest.h
@@ -219,6 +227,7 @@ set(cynosdb_src
   src/v20190107/model/AuditLogFilter.cpp
   src/v20190107/model/DescribeParamTemplatesRequest.cpp
   src/v20190107/model/DescribeAuditLogsResponse.cpp
+  src/v20190107/model/SearchClusterTablesRequest.cpp
   src/v20190107/model/PauseServerlessRequest.cpp
   src/v20190107/model/ObjectTask.cpp
   src/v20190107/model/RevokeAccountPrivilegesResponse.cpp
@@ -257,11 +266,13 @@ set(cynosdb_src
   src/v20190107/model/CreateAuditLogFileResponse.cpp
   src/v20190107/model/PauseServerlessResponse.cpp
   src/v20190107/model/OfflineClusterRequest.cpp
+  src/v20190107/model/ResetAccountPasswordResponse.cpp
   src/v20190107/model/NewAccount.cpp
   src/v20190107/model/BackupFileInfo.cpp
   src/v20190107/model/TablePrivileges.cpp
   src/v20190107/model/DescribeBinlogDownloadUrlResponse.cpp
   src/v20190107/model/DescribeBackupListRequest.cpp
+  src/v20190107/model/SearchClusterDatabasesRequest.cpp
   src/v20190107/model/CynosdbInstance.cpp
   src/v20190107/model/DbTable.cpp
   src/v20190107/model/ModifyClusterSlaveZoneResponse.cpp
@@ -303,7 +314,9 @@ set(cynosdb_src
   src/v20190107/model/ModifyAccountParamsRequest.cpp
   src/v20190107/model/CynosdbCluster.cpp
   src/v20190107/model/IsolateClusterResponse.cpp
+  src/v20190107/model/SearchClusterDatabasesResponse.cpp
   src/v20190107/model/OfflineClusterResponse.cpp
+  src/v20190107/model/SwitchProxyVpcResponse.cpp
   src/v20190107/model/RevokeAccountPrivilegesRequest.cpp
   src/v20190107/model/InstanceSpec.cpp
   src/v20190107/model/InquirePriceCreateResponse.cpp
@@ -312,8 +325,10 @@ set(cynosdb_src
   src/v20190107/model/Account.cpp
   src/v20190107/model/CreateBackupRequest.cpp
   src/v20190107/model/DescribeClusterParamLogsRequest.cpp
+  src/v20190107/model/SearchClusterTablesResponse.cpp
   src/v20190107/model/PolicyRule.cpp
   src/v20190107/model/DescribeMaintainPeriodResponse.cpp
+  src/v20190107/model/SwitchProxyVpcRequest.cpp
   src/v20190107/model/DescribeBackupListResponse.cpp
   src/v20190107/model/RollBackClusterResponse.cpp
   src/v20190107/model/DescribeBinlogSaveDaysRequest.cpp
@@ -329,6 +344,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeInstanceSlowQueriesRequest.cpp
   src/v20190107/model/CynosdbInstanceDetail.cpp
   src/v20190107/model/CynosdbClusterDetail.cpp
+  src/v20190107/model/ResetAccountPasswordRequest.cpp
   src/v20190107/model/DescribeInstanceDetailRequest.cpp
   src/v20190107/model/ModifyMaintainPeriodConfigResponse.cpp
   src/v20190107/model/DisassociateSecurityGroupsRequest.cpp

@@ -24,6 +24,7 @@
 #include <tencentcloud/lighthouse/v20200324/model/Price.h>
 #include <tencentcloud/lighthouse/v20200324/model/DataDiskPrice.h>
 #include <tencentcloud/lighthouse/v20200324/model/InstancePriceDetail.h>
+#include <tencentcloud/lighthouse/v20200324/model/TotalPrice.h>
 
 
 namespace TencentCloud
@@ -86,6 +87,18 @@ namespace TencentCloud
                      */
                     bool InstancePriceDetailSetHasBeenSet() const;
 
+                    /**
+                     * 获取总计价格。
+                     * @return TotalPrice 总计价格。
+                     */
+                    TotalPrice GetTotalPrice() const;
+
+                    /**
+                     * 判断参数 TotalPrice 是否已赋值
+                     * @return TotalPrice 是否已赋值
+                     */
+                    bool TotalPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -107,6 +120,12 @@ namespace TencentCloud
                      */
                     std::vector<InstancePriceDetail> m_instancePriceDetailSet;
                     bool m_instancePriceDetailSetHasBeenSet;
+
+                    /**
+                     * 总计价格。
+                     */
+                    TotalPrice m_totalPrice;
+                    bool m_totalPriceHasBeenSet;
 
                 };
             }

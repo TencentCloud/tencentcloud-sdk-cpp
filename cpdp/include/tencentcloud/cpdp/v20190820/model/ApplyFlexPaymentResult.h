@@ -118,6 +118,94 @@ namespace TencentCloud
                      */
                     bool TaxHasBeenSet() const;
 
+                    /**
+                     * 获取增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Vat 增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVat() const;
+
+                    /**
+                     * 设置增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Vat 增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVat(const std::string& _vat);
+
+                    /**
+                     * 判断参数 Vat 是否已赋值
+                     * @return Vat 是否已赋值
+                     */
+                    bool VatHasBeenSet() const;
+
+                    /**
+                     * 获取个人所得税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndividualIncomeTax 个人所得税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIndividualIncomeTax() const;
+
+                    /**
+                     * 设置个人所得税
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndividualIncomeTax 个人所得税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndividualIncomeTax(const std::string& _individualIncomeTax);
+
+                    /**
+                     * 判断参数 IndividualIncomeTax 是否已赋值
+                     * @return IndividualIncomeTax 是否已赋值
+                     */
+                    bool IndividualIncomeTaxHasBeenSet() const;
+
+                    /**
+                     * 获取附加税总税额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdditionalTaxSum 附加税总税额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAdditionalTaxSum() const;
+
+                    /**
+                     * 设置附加税总税额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdditionalTaxSum 附加税总税额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdditionalTaxSum(const std::string& _additionalTaxSum);
+
+                    /**
+                     * 判断参数 AdditionalTaxSum 是否已赋值
+                     * @return AdditionalTaxSum 是否已赋值
+                     */
+                    bool AdditionalTaxSumHasBeenSet() const;
+
+                    /**
+                     * 获取附加税税项。格式为JSON格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdditionalTaxItem 附加税税项。格式为JSON格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAdditionalTaxItem() const;
+
+                    /**
+                     * 设置附加税税项。格式为JSON格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdditionalTaxItem 附加税税项。格式为JSON格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdditionalTaxItem(const std::string& _additionalTaxItem);
+
+                    /**
+                     * 判断参数 AdditionalTaxItem 是否已赋值
+                     * @return AdditionalTaxItem 是否已赋值
+                     */
+                    bool AdditionalTaxItemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +231,34 @@ namespace TencentCloud
                      */
                     std::string m_tax;
                     bool m_taxHasBeenSet;
+
+                    /**
+                     * 增值税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vat;
+                    bool m_vatHasBeenSet;
+
+                    /**
+                     * 个人所得税
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_individualIncomeTax;
+                    bool m_individualIncomeTaxHasBeenSet;
+
+                    /**
+                     * 附加税总税额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_additionalTaxSum;
+                    bool m_additionalTaxSumHasBeenSet;
+
+                    /**
+                     * 附加税税项。格式为JSON格式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_additionalTaxItem;
+                    bool m_additionalTaxItemHasBeenSet;
 
                 };
             }

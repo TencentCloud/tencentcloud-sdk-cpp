@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户ID
-                     * @return Uid 用户ID
+                     * 获取客户端用于标识用户的Openid。
+                     * @return Uid 客户端用于标识用户的Openid。
                      */
                     int64_t GetUid() const;
 
                     /**
-                     * 设置用户ID
-                     * @param Uid 用户ID
+                     * 设置客户端用于标识用户的Openid。
+                     * @param Uid 客户端用于标识用户的Openid。
                      */
                     void SetUid(const int64_t& _uid);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool UidHasBeenSet() const;
 
                     /**
-                     * 获取是否开麦 。1闭麦  2开麦
-                     * @return EnableMic 是否开麦 。1闭麦  2开麦
+                     * 获取开麦状态。1表示关闭麦克风，2表示打开麦克风。
+                     * @return EnableMic 开麦状态。1表示关闭麦克风，2表示打开麦克风。
                      */
                     int64_t GetEnableMic() const;
 
                     /**
-                     * 设置是否开麦 。1闭麦  2开麦
-                     * @param EnableMic 是否开麦 。1闭麦  2开麦
+                     * 设置开麦状态。1表示关闭麦克风，2表示打开麦克风。
+                     * @param EnableMic 开麦状态。1表示关闭麦克风，2表示打开麦克风。
                      */
                     void SetEnableMic(const int64_t& _enableMic);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户ID
+                     * 客户端用于标识用户的Openid。
                      */
                     int64_t m_uid;
                     bool m_uidHasBeenSet;
 
                     /**
-                     * 是否开麦 。1闭麦  2开麦
+                     * 开麦状态。1表示关闭麦克风，2表示打开麦克风。
                      */
                     int64_t m_enableMic;
                     bool m_enableMicHasBeenSet;

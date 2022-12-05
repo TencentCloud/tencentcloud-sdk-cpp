@@ -117,9 +117,9 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取导出项目输出信息。
+                     * 获取导出项目输出信息。仅当 TaskType 为 VIDEO_EDIT_PROJECT_EXPORT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VideoEditProjectOutput 导出项目输出信息。
+                     * @return VideoEditProjectOutput 导出项目输出信息。仅当 TaskType 为 VIDEO_EDIT_PROJECT_EXPORT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoEditProjectOutput GetVideoEditProjectOutput() const;
@@ -181,7 +181,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 导出项目输出信息。
+                     * 导出项目输出信息。仅当 TaskType 为 VIDEO_EDIT_PROJECT_EXPORT 时有效。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VideoEditProjectOutput m_videoEditProjectOutput;

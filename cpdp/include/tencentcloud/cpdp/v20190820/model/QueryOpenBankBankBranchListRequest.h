@@ -154,14 +154,14 @@ __OPENBANK_PAYMENT__: openbank付款
                     bool BankAbbreviationHasBeenSet() const;
 
                     /**
-                     * 获取页码。Index和Count必须大于等于1。
-                     * @return PageNumber 页码。Index和Count必须大于等于1。
+                     * 获取页码。Index和Count必须大于等于1。Count建议不超过100。
+                     * @return PageNumber 页码。Index和Count必须大于等于1。Count建议不超过100。
                      */
                     Paging GetPageNumber() const;
 
                     /**
-                     * 设置页码。Index和Count必须大于等于1。
-                     * @param PageNumber 页码。Index和Count必须大于等于1。
+                     * 设置页码。Index和Count必须大于等于1。Count建议不超过100。
+                     * @param PageNumber 页码。Index和Count必须大于等于1。Count建议不超过100。
                      */
                     void SetPageNumber(const Paging& _pageNumber);
 
@@ -239,7 +239,7 @@ __OPENBANK_PAYMENT__: openbank付款
                     bool m_bankAbbreviationHasBeenSet;
 
                     /**
-                     * 页码。Index和Count必须大于等于1。
+                     * 页码。Index和Count必须大于等于1。Count建议不超过100。
                      */
                     Paging m_pageNumber;
                     bool m_pageNumberHasBeenSet;

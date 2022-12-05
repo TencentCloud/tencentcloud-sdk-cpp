@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取返回结果：0为成功，非0为失败
-                     * @return Result 返回结果：0为成功，非0为失败
+                     * 获取返回结果：0为成功，非0为失败。
+                     * @return Result 返回结果：0为成功，非0为失败。
                      */
                     int64_t GetResult() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool ResultHasBeenSet() const;
 
                     /**
-                     * 获取错误信息
-                     * @return ErrMsg 错误信息
+                     * 获取错误信息。
+                     * @return ErrMsg 错误信息。
                      */
                     std::string GetErrMsg() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 返回结果：0为成功，非0为失败
+                     * 返回结果：0为成功，非0为失败。
                      */
                     int64_t m_result;
                     bool m_resultHasBeenSet;
 
                     /**
-                     * 错误信息
+                     * 错误信息。
                      */
                     std::string m_errMsg;
                     bool m_errMsgHasBeenSet;

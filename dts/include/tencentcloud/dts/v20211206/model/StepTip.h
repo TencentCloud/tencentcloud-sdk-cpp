@@ -134,6 +134,28 @@ namespace TencentCloud
                      */
                     bool HelpDocHasBeenSet() const;
 
+                    /**
+                     * 获取当前步骤跳过信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SkipInfo 当前步骤跳过信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSkipInfo() const;
+
+                    /**
+                     * 设置当前步骤跳过信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SkipInfo 当前步骤跳过信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSkipInfo(const std::string& _skipInfo);
+
+                    /**
+                     * 判断参数 SkipInfo 是否已赋值
+                     * @return SkipInfo 是否已赋值
+                     */
+                    bool SkipInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +185,13 @@ namespace TencentCloud
                      */
                     std::string m_helpDoc;
                     bool m_helpDocHasBeenSet;
+
+                    /**
+                     * 当前步骤跳过信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_skipInfo;
+                    bool m_skipInfoHasBeenSet;
 
                 };
             }

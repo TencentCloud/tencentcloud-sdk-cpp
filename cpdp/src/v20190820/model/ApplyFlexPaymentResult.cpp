@@ -24,7 +24,11 @@ ApplyFlexPaymentResult::ApplyFlexPaymentResult() :
     m_orderIdHasBeenSet(false),
     m_amountBeforeTaxHasBeenSet(false),
     m_amountAfterTaxHasBeenSet(false),
-    m_taxHasBeenSet(false)
+    m_taxHasBeenSet(false),
+    m_vatHasBeenSet(false),
+    m_individualIncomeTaxHasBeenSet(false),
+    m_additionalTaxSumHasBeenSet(false),
+    m_additionalTaxItemHasBeenSet(false)
 {
 }
 
@@ -73,6 +77,46 @@ CoreInternalOutcome ApplyFlexPaymentResult::Deserialize(const rapidjson::Value &
         m_taxHasBeenSet = true;
     }
 
+    if (value.HasMember("Vat") && !value["Vat"].IsNull())
+    {
+        if (!value["Vat"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplyFlexPaymentResult.Vat` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vat = string(value["Vat"].GetString());
+        m_vatHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndividualIncomeTax") && !value["IndividualIncomeTax"].IsNull())
+    {
+        if (!value["IndividualIncomeTax"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplyFlexPaymentResult.IndividualIncomeTax` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_individualIncomeTax = string(value["IndividualIncomeTax"].GetString());
+        m_individualIncomeTaxHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdditionalTaxSum") && !value["AdditionalTaxSum"].IsNull())
+    {
+        if (!value["AdditionalTaxSum"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplyFlexPaymentResult.AdditionalTaxSum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_additionalTaxSum = string(value["AdditionalTaxSum"].GetString());
+        m_additionalTaxSumHasBeenSet = true;
+    }
+
+    if (value.HasMember("AdditionalTaxItem") && !value["AdditionalTaxItem"].IsNull())
+    {
+        if (!value["AdditionalTaxItem"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplyFlexPaymentResult.AdditionalTaxItem` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_additionalTaxItem = string(value["AdditionalTaxItem"].GetString());
+        m_additionalTaxItemHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +154,38 @@ void ApplyFlexPaymentResult::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Tax";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_tax.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vat";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_individualIncomeTaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndividualIncomeTax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_individualIncomeTax.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_additionalTaxSumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalTaxSum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_additionalTaxSum.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_additionalTaxItemHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdditionalTaxItem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_additionalTaxItem.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +253,69 @@ void ApplyFlexPaymentResult::SetTax(const string& _tax)
 bool ApplyFlexPaymentResult::TaxHasBeenSet() const
 {
     return m_taxHasBeenSet;
+}
+
+string ApplyFlexPaymentResult::GetVat() const
+{
+    return m_vat;
+}
+
+void ApplyFlexPaymentResult::SetVat(const string& _vat)
+{
+    m_vat = _vat;
+    m_vatHasBeenSet = true;
+}
+
+bool ApplyFlexPaymentResult::VatHasBeenSet() const
+{
+    return m_vatHasBeenSet;
+}
+
+string ApplyFlexPaymentResult::GetIndividualIncomeTax() const
+{
+    return m_individualIncomeTax;
+}
+
+void ApplyFlexPaymentResult::SetIndividualIncomeTax(const string& _individualIncomeTax)
+{
+    m_individualIncomeTax = _individualIncomeTax;
+    m_individualIncomeTaxHasBeenSet = true;
+}
+
+bool ApplyFlexPaymentResult::IndividualIncomeTaxHasBeenSet() const
+{
+    return m_individualIncomeTaxHasBeenSet;
+}
+
+string ApplyFlexPaymentResult::GetAdditionalTaxSum() const
+{
+    return m_additionalTaxSum;
+}
+
+void ApplyFlexPaymentResult::SetAdditionalTaxSum(const string& _additionalTaxSum)
+{
+    m_additionalTaxSum = _additionalTaxSum;
+    m_additionalTaxSumHasBeenSet = true;
+}
+
+bool ApplyFlexPaymentResult::AdditionalTaxSumHasBeenSet() const
+{
+    return m_additionalTaxSumHasBeenSet;
+}
+
+string ApplyFlexPaymentResult::GetAdditionalTaxItem() const
+{
+    return m_additionalTaxItem;
+}
+
+void ApplyFlexPaymentResult::SetAdditionalTaxItem(const string& _additionalTaxItem)
+{
+    m_additionalTaxItem = _additionalTaxItem;
+    m_additionalTaxItemHasBeenSet = true;
+}
+
+bool ApplyFlexPaymentResult::AdditionalTaxItemHasBeenSet() const
+{
+    return m_additionalTaxItemHasBeenSet;
 }
 
