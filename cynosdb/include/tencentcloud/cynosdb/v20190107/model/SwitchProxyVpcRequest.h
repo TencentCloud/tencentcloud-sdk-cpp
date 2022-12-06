@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool OldIpReserveHoursHasBeenSet() const;
 
                     /**
-                     * 获取数据库代理组Id
-                     * @return ProxyGroupId 数据库代理组Id
+                     * 获取数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）
+                     * @return ProxyGroupId 数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）
                      */
                     std::string GetProxyGroupId() const;
 
                     /**
-                     * 设置数据库代理组Id
-                     * @param ProxyGroupId 数据库代理组Id
+                     * 设置数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）
+                     * @param ProxyGroupId 数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）
                      */
                     void SetProxyGroupId(const std::string& _proxyGroupId);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_oldIpReserveHoursHasBeenSet;
 
                     /**
-                     * 数据库代理组Id
+                     * 数据库代理组Id（该参数为必填项，可以通过DescribeProxies接口获得）
                      */
                     std::string m_proxyGroupId;
                     bool m_proxyGroupIdHasBeenSet;

@@ -27,6 +27,8 @@
 #include <tencentcloud/tds/v20220801/model/DescribeFraudBaseResponse.h>
 #include <tencentcloud/tds/v20220801/model/DescribeFraudPremiumRequest.h>
 #include <tencentcloud/tds/v20220801/model/DescribeFraudPremiumResponse.h>
+#include <tencentcloud/tds/v20220801/model/DescribeFraudUltimateRequest.h>
+#include <tencentcloud/tds/v20220801/model/DescribeFraudUltimateResponse.h>
 #include <tencentcloud/tds/v20220801/model/DescribeTrustedIDRequest.h>
 #include <tencentcloud/tds/v20220801/model/DescribeTrustedIDResponse.h>
 
@@ -49,6 +51,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeFraudPremiumResponse> DescribeFraudPremiumOutcome;
                 typedef std::future<DescribeFraudPremiumOutcome> DescribeFraudPremiumOutcomeCallable;
                 typedef std::function<void(const TdsClient*, const Model::DescribeFraudPremiumRequest&, DescribeFraudPremiumOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFraudPremiumAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFraudUltimateResponse> DescribeFraudUltimateOutcome;
+                typedef std::future<DescribeFraudUltimateOutcome> DescribeFraudUltimateOutcomeCallable;
+                typedef std::function<void(const TdsClient*, const Model::DescribeFraudUltimateRequest&, DescribeFraudUltimateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFraudUltimateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTrustedIDResponse> DescribeTrustedIDOutcome;
                 typedef std::future<DescribeTrustedIDOutcome> DescribeTrustedIDOutcomeCallable;
                 typedef std::function<void(const TdsClient*, const Model::DescribeTrustedIDRequest&, DescribeTrustedIDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTrustedIDAsyncHandler;
@@ -72,6 +77,15 @@ namespace TencentCloud
                 DescribeFraudPremiumOutcome DescribeFraudPremium(const Model::DescribeFraudPremiumRequest &request);
                 void DescribeFraudPremiumAsync(const Model::DescribeFraudPremiumRequest& request, const DescribeFraudPremiumAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeFraudPremiumOutcomeCallable DescribeFraudPremiumCallable(const Model::DescribeFraudPremiumRequest& request);
+
+                /**
+                 *查询设备标识及风险（旗舰版）
+                 * @param req DescribeFraudUltimateRequest
+                 * @return DescribeFraudUltimateOutcome
+                 */
+                DescribeFraudUltimateOutcome DescribeFraudUltimate(const Model::DescribeFraudUltimateRequest &request);
+                void DescribeFraudUltimateAsync(const Model::DescribeFraudUltimateRequest& request, const DescribeFraudUltimateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFraudUltimateOutcomeCallable DescribeFraudUltimateCallable(const Model::DescribeFraudUltimateRequest& request);
 
                 /**
                  *查询设备标识

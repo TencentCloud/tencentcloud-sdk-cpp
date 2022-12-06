@@ -145,14 +145,14 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取访问控制列表
-                     * @return EsAcl 访问控制列表
+                     * 获取可视化组件（Kibana、Cerebro）的公网访问策略
+                     * @return EsAcl 可视化组件（Kibana、Cerebro）的公网访问策略
                      */
                     EsAcl GetEsAcl() const;
 
                     /**
-                     * 设置访问控制列表
-                     * @param EsAcl 访问控制列表
+                     * 设置可视化组件（Kibana、Cerebro）的公网访问策略
+                     * @param EsAcl 可视化组件（Kibana、Cerebro）的公网访问策略
                      */
                     void SetEsAcl(const EsAcl& _esAcl);
 
@@ -732,7 +732,7 @@ CLOSE 关闭
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 访问控制列表
+                     * 可视化组件（Kibana、Cerebro）的公网访问策略
                      */
                     EsAcl m_esAcl;
                     bool m_esAclHasBeenSet;

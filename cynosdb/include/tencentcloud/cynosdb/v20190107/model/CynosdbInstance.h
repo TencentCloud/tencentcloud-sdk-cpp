@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
+#include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 
 
 namespace TencentCloud
@@ -814,6 +816,112 @@ pause
                      */
                     bool StoragePayModeHasBeenSet() const;
 
+                    /**
+                     * 获取物理区
+                     * @return PhysicalZone 物理区
+                     */
+                    std::string GetPhysicalZone() const;
+
+                    /**
+                     * 设置物理区
+                     * @param PhysicalZone 物理区
+                     */
+                    void SetPhysicalZone(const std::string& _physicalZone);
+
+                    /**
+                     * 判断参数 PhysicalZone 是否已赋值
+                     * @return PhysicalZone 是否已赋值
+                     */
+                    bool PhysicalZoneHasBeenSet() const;
+
+                    /**
+                     * 获取商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessType 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBusinessType() const;
+
+                    /**
+                     * 设置商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BusinessType 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusinessType(const std::string& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
+                    /**
+                     * 获取任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tasks 任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ObjectTask> GetTasks() const;
+
+                    /**
+                     * 设置任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tasks 任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTasks(const std::vector<ObjectTask>& _tasks);
+
+                    /**
+                     * 判断参数 Tasks 是否已赋值
+                     * @return Tasks 是否已赋值
+                     */
+                    bool TasksHasBeenSet() const;
+
+                    /**
+                     * 获取是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFreeze 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsFreeze() const;
+
+                    /**
+                     * 设置是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsFreeze 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsFreeze(const std::string& _isFreeze);
+
+                    /**
+                     * 判断参数 IsFreeze 是否已赋值
+                     * @return IsFreeze 是否已赋值
+                     */
+                    bool IsFreezeHasBeenSet() const;
+
+                    /**
+                     * 获取资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceTags 资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetResourceTags() const;
+
+                    /**
+                     * 设置资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceTags 资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceTags(const std::vector<Tag>& _resourceTags);
+
+                    /**
+                     * 判断参数 ResourceTags 是否已赋值
+                     * @return ResourceTags 是否已赋值
+                     */
+                    bool ResourceTagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1070,6 +1178,40 @@ pause
                      */
                     int64_t m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
+
+                    /**
+                     * 物理区
+                     */
+                    std::string m_physicalZone;
+                    bool m_physicalZoneHasBeenSet;
+
+                    /**
+                     * 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_businessType;
+                    bool m_businessTypeHasBeenSet;
+
+                    /**
+                     * 任务
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ObjectTask> m_tasks;
+                    bool m_tasksHasBeenSet;
+
+                    /**
+                     * 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isFreeze;
+                    bool m_isFreezeHasBeenSet;
+
+                    /**
+                     * 资源标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_resourceTags;
+                    bool m_resourceTagsHasBeenSet;
 
                 };
             }

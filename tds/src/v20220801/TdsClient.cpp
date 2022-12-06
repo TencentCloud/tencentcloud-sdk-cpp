@@ -126,6 +126,49 @@ TdsClient::DescribeFraudPremiumOutcomeCallable TdsClient::DescribeFraudPremiumCa
     return task->get_future();
 }
 
+TdsClient::DescribeFraudUltimateOutcome TdsClient::DescribeFraudUltimate(const DescribeFraudUltimateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFraudUltimate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFraudUltimateResponse rsp = DescribeFraudUltimateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFraudUltimateOutcome(rsp);
+        else
+            return DescribeFraudUltimateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFraudUltimateOutcome(outcome.GetError());
+    }
+}
+
+void TdsClient::DescribeFraudUltimateAsync(const DescribeFraudUltimateRequest& request, const DescribeFraudUltimateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFraudUltimate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdsClient::DescribeFraudUltimateOutcomeCallable TdsClient::DescribeFraudUltimateCallable(const DescribeFraudUltimateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFraudUltimateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFraudUltimate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdsClient::DescribeTrustedIDOutcome TdsClient::DescribeTrustedID(const DescribeTrustedIDRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrustedID");

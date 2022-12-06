@@ -1373,6 +1373,49 @@ TrtcClient::StartMCUMixTranscodeByStrRoomIdOutcomeCallable TrtcClient::StartMCUM
     return task->get_future();
 }
 
+TrtcClient::StartPublishCdnStreamOutcome TrtcClient::StartPublishCdnStream(const StartPublishCdnStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartPublishCdnStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartPublishCdnStreamResponse rsp = StartPublishCdnStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartPublishCdnStreamOutcome(rsp);
+        else
+            return StartPublishCdnStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return StartPublishCdnStreamOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StartPublishCdnStreamAsync(const StartPublishCdnStreamRequest& request, const StartPublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartPublishCdnStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StartPublishCdnStreamOutcomeCallable TrtcClient::StartPublishCdnStreamCallable(const StartPublishCdnStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartPublishCdnStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->StartPublishCdnStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::StopMCUMixTranscodeOutcome TrtcClient::StopMCUMixTranscode(const StopMCUMixTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "StopMCUMixTranscode");
@@ -1452,6 +1495,92 @@ TrtcClient::StopMCUMixTranscodeByStrRoomIdOutcomeCallable TrtcClient::StopMCUMix
         [this, request]()
         {
             return this->StopMCUMixTranscodeByStrRoomId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::StopPublishCdnStreamOutcome TrtcClient::StopPublishCdnStream(const StopPublishCdnStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopPublishCdnStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopPublishCdnStreamResponse rsp = StopPublishCdnStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopPublishCdnStreamOutcome(rsp);
+        else
+            return StopPublishCdnStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return StopPublishCdnStreamOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::StopPublishCdnStreamAsync(const StopPublishCdnStreamRequest& request, const StopPublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopPublishCdnStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::StopPublishCdnStreamOutcomeCallable TrtcClient::StopPublishCdnStreamCallable(const StopPublishCdnStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopPublishCdnStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->StopPublishCdnStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrtcClient::UpdatePublishCdnStreamOutcome TrtcClient::UpdatePublishCdnStream(const UpdatePublishCdnStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdatePublishCdnStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdatePublishCdnStreamResponse rsp = UpdatePublishCdnStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdatePublishCdnStreamOutcome(rsp);
+        else
+            return UpdatePublishCdnStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdatePublishCdnStreamOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::UpdatePublishCdnStreamAsync(const UpdatePublishCdnStreamRequest& request, const UpdatePublishCdnStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdatePublishCdnStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::UpdatePublishCdnStreamOutcomeCallable TrtcClient::UpdatePublishCdnStreamCallable(const UpdatePublishCdnStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdatePublishCdnStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdatePublishCdnStream(request);
         }
     );
 

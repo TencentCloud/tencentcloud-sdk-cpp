@@ -61,14 +61,58 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取api接口名称
-                     * @return ApiType api接口名称
+                     * 获取api接口名称,GetClusters:获取集群cluster列表
+GetSystemUsers:获取系统用户列表
+CheckNodeCluster: 检查节点是否隶属一个cluster
+GetClusterDatabases: 获取一个cluster下的数据库列表
+GetClusterTables: 获取一个cluster下的数据库表列表
+GetPrivilegeUsers: 获取授权的用户列表
+GET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   
+GetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）
+RevokeClusterUser:解绑cluster用户
+DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
+GetUserOptionMessages:获取用户配置备注信息
+GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
+                     * @return ApiType api接口名称,GetClusters:获取集群cluster列表
+GetSystemUsers:获取系统用户列表
+CheckNodeCluster: 检查节点是否隶属一个cluster
+GetClusterDatabases: 获取一个cluster下的数据库列表
+GetClusterTables: 获取一个cluster下的数据库表列表
+GetPrivilegeUsers: 获取授权的用户列表
+GET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   
+GetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）
+RevokeClusterUser:解绑cluster用户
+DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
+GetUserOptionMessages:获取用户配置备注信息
+GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
                      */
                     std::string GetApiType() const;
 
                     /**
-                     * 设置api接口名称
-                     * @param ApiType api接口名称
+                     * 设置api接口名称,GetClusters:获取集群cluster列表
+GetSystemUsers:获取系统用户列表
+CheckNodeCluster: 检查节点是否隶属一个cluster
+GetClusterDatabases: 获取一个cluster下的数据库列表
+GetClusterTables: 获取一个cluster下的数据库表列表
+GetPrivilegeUsers: 获取授权的用户列表
+GET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   
+GetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）
+RevokeClusterUser:解绑cluster用户
+DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
+GetUserOptionMessages:获取用户配置备注信息
+GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
+                     * @param ApiType api接口名称,GetClusters:获取集群cluster列表
+GetSystemUsers:获取系统用户列表
+CheckNodeCluster: 检查节点是否隶属一个cluster
+GetClusterDatabases: 获取一个cluster下的数据库列表
+GetClusterTables: 获取一个cluster下的数据库表列表
+GetPrivilegeUsers: 获取授权的用户列表
+GET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   
+GetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）
+RevokeClusterUser:解绑cluster用户
+DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
+GetUserOptionMessages:获取用户配置备注信息
+GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
                      */
                     void SetApiType(const std::string& _apiType);
 
@@ -79,14 +123,14 @@ namespace TencentCloud
                     bool ApiTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群名称
-                     * @return Cluster 集群名称
+                     * 获取集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
+                     * @return Cluster 集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
                      */
                     std::string GetCluster() const;
 
                     /**
-                     * 设置集群名称
-                     * @param Cluster 集群名称
+                     * 设置集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
+                     * @param Cluster 集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
                      */
                     void SetCluster(const std::string& _cluster);
 
@@ -97,14 +141,14 @@ namespace TencentCloud
                     bool ClusterHasBeenSet() const;
 
                     /**
-                     * 获取用户名称
-                     * @return UserName 用户名称
+                     * 获取用户名称，api与user相关的必填
+                     * @return UserName 用户名称，api与user相关的必填
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置用户名称
-                     * @param UserName 用户名称
+                     * 设置用户名称，api与user相关的必填
+                     * @param UserName 用户名称，api与user相关的必填
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -123,19 +167,30 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * api接口名称
+                     * api接口名称,GetClusters:获取集群cluster列表
+GetSystemUsers:获取系统用户列表
+CheckNodeCluster: 检查节点是否隶属一个cluster
+GetClusterDatabases: 获取一个cluster下的数据库列表
+GetClusterTables: 获取一个cluster下的数据库表列表
+GetPrivilegeUsers: 获取授权的用户列表
+GET_USER_CLUSTER_PRIVILEGES:获取用户cluster下的权限   
+GetUserClusterNewPrivileges:获取用户cluster下的权限 (新版）
+RevokeClusterUser:解绑cluster用户
+DeleteSystemUser:删除系统用户 —— 必须所有cluster先解绑
+GetUserOptionMessages:获取用户配置备注信息
+GET_USER_CONFIGS:获取用户配置列表  QUOTA、PROFILE、POLICY
                      */
                     std::string m_apiType;
                     bool m_apiTypeHasBeenSet;
 
                     /**
-                     * 集群名称
+                     * 集群名称，GET_SYSTEM_USERS，GET_PRIVILEGE_USERS，GET_CLUSTER_DATABASES，GET_CLUSTER_TABLES 必填
                      */
                     std::string m_cluster;
                     bool m_clusterHasBeenSet;
 
                     /**
-                     * 用户名称
+                     * 用户名称，api与user相关的必填
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;

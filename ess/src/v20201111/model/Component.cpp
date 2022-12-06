@@ -22,23 +22,25 @@ using namespace std;
 
 Component::Component() :
     m_componentTypeHasBeenSet(false),
-    m_componentWidthHasBeenSet(false),
+    m_fileIndexHasBeenSet(false),
     m_componentHeightHasBeenSet(false),
+    m_componentWidthHasBeenSet(false),
     m_componentPageHasBeenSet(false),
     m_componentPosXHasBeenSet(false),
     m_componentPosYHasBeenSet(false),
-    m_fileIndexHasBeenSet(false),
     m_componentIdHasBeenSet(false),
     m_componentNameHasBeenSet(false),
     m_componentRequiredHasBeenSet(false),
-    m_componentExtraHasBeenSet(false),
     m_componentRecipientIdHasBeenSet(false),
-    m_componentValueHasBeenSet(false),
+    m_componentExtraHasBeenSet(false),
     m_isFormTypeHasBeenSet(false),
+    m_componentValueHasBeenSet(false),
     m_generateModeHasBeenSet(false),
     m_componentDateFontSizeHasBeenSet(false),
+    m_channelComponentIdHasBeenSet(false),
     m_offsetXHasBeenSet(false),
     m_offsetYHasBeenSet(false),
+    m_channelComponentSourceHasBeenSet(false),
     m_keywordOrderHasBeenSet(false),
     m_keywordPageHasBeenSet(false),
     m_relativeLocationHasBeenSet(false),
@@ -61,14 +63,14 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_componentTypeHasBeenSet = true;
     }
 
-    if (value.HasMember("ComponentWidth") && !value["ComponentWidth"].IsNull())
+    if (value.HasMember("FileIndex") && !value["FileIndex"].IsNull())
     {
-        if (!value["ComponentWidth"].IsLosslessDouble())
+        if (!value["FileIndex"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Component.ComponentWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Component.FileIndex` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_componentWidth = value["ComponentWidth"].GetDouble();
-        m_componentWidthHasBeenSet = true;
+        m_fileIndex = value["FileIndex"].GetInt64();
+        m_fileIndexHasBeenSet = true;
     }
 
     if (value.HasMember("ComponentHeight") && !value["ComponentHeight"].IsNull())
@@ -79,6 +81,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         }
         m_componentHeight = value["ComponentHeight"].GetDouble();
         m_componentHeightHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComponentWidth") && !value["ComponentWidth"].IsNull())
+    {
+        if (!value["ComponentWidth"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ComponentWidth` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentWidth = value["ComponentWidth"].GetDouble();
+        m_componentWidthHasBeenSet = true;
     }
 
     if (value.HasMember("ComponentPage") && !value["ComponentPage"].IsNull())
@@ -111,16 +123,6 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_componentPosYHasBeenSet = true;
     }
 
-    if (value.HasMember("FileIndex") && !value["FileIndex"].IsNull())
-    {
-        if (!value["FileIndex"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Component.FileIndex` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_fileIndex = value["FileIndex"].GetInt64();
-        m_fileIndexHasBeenSet = true;
-    }
-
     if (value.HasMember("ComponentId") && !value["ComponentId"].IsNull())
     {
         if (!value["ComponentId"].IsString())
@@ -151,16 +153,6 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_componentRequiredHasBeenSet = true;
     }
 
-    if (value.HasMember("ComponentExtra") && !value["ComponentExtra"].IsNull())
-    {
-        if (!value["ComponentExtra"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Component.ComponentExtra` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_componentExtra = string(value["ComponentExtra"].GetString());
-        m_componentExtraHasBeenSet = true;
-    }
-
     if (value.HasMember("ComponentRecipientId") && !value["ComponentRecipientId"].IsNull())
     {
         if (!value["ComponentRecipientId"].IsString())
@@ -171,14 +163,14 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_componentRecipientIdHasBeenSet = true;
     }
 
-    if (value.HasMember("ComponentValue") && !value["ComponentValue"].IsNull())
+    if (value.HasMember("ComponentExtra") && !value["ComponentExtra"].IsNull())
     {
-        if (!value["ComponentValue"].IsString())
+        if (!value["ComponentExtra"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Component.ComponentValue` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Component.ComponentExtra` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_componentValue = string(value["ComponentValue"].GetString());
-        m_componentValueHasBeenSet = true;
+        m_componentExtra = string(value["ComponentExtra"].GetString());
+        m_componentExtraHasBeenSet = true;
     }
 
     if (value.HasMember("IsFormType") && !value["IsFormType"].IsNull())
@@ -189,6 +181,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         }
         m_isFormType = value["IsFormType"].GetBool();
         m_isFormTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ComponentValue") && !value["ComponentValue"].IsNull())
+    {
+        if (!value["ComponentValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ComponentValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_componentValue = string(value["ComponentValue"].GetString());
+        m_componentValueHasBeenSet = true;
     }
 
     if (value.HasMember("GenerateMode") && !value["GenerateMode"].IsNull())
@@ -211,6 +213,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_componentDateFontSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("ChannelComponentId") && !value["ChannelComponentId"].IsNull())
+    {
+        if (!value["ChannelComponentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ChannelComponentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelComponentId = string(value["ChannelComponentId"].GetString());
+        m_channelComponentIdHasBeenSet = true;
+    }
+
     if (value.HasMember("OffsetX") && !value["OffsetX"].IsNull())
     {
         if (!value["OffsetX"].IsLosslessDouble())
@@ -229,6 +241,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         }
         m_offsetY = value["OffsetY"].GetDouble();
         m_offsetYHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelComponentSource") && !value["ChannelComponentSource"].IsNull())
+    {
+        if (!value["ChannelComponentSource"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.ChannelComponentSource` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelComponentSource = value["ChannelComponentSource"].GetUint64();
+        m_channelComponentSourceHasBeenSet = true;
     }
 
     if (value.HasMember("KeywordOrder") && !value["KeywordOrder"].IsNull())
@@ -289,12 +311,12 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_componentType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_componentWidthHasBeenSet)
+    if (m_fileIndexHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ComponentWidth";
+        string key = "FileIndex";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_componentWidth, allocator);
+        value.AddMember(iKey, m_fileIndex, allocator);
     }
 
     if (m_componentHeightHasBeenSet)
@@ -303,6 +325,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ComponentHeight";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_componentHeight, allocator);
+    }
+
+    if (m_componentWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_componentWidth, allocator);
     }
 
     if (m_componentPageHasBeenSet)
@@ -329,14 +359,6 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_componentPosY, allocator);
     }
 
-    if (m_fileIndexHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileIndex";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_fileIndex, allocator);
-    }
-
     if (m_componentIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -361,14 +383,6 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_componentRequired, allocator);
     }
 
-    if (m_componentExtraHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ComponentExtra";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_componentExtra.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_componentRecipientIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -377,12 +391,12 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, rapidjson::Value(m_componentRecipientId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_componentValueHasBeenSet)
+    if (m_componentExtraHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ComponentValue";
+        string key = "ComponentExtra";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_componentValue.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_componentExtra.c_str(), allocator).Move(), allocator);
     }
 
     if (m_isFormTypeHasBeenSet)
@@ -391,6 +405,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsFormType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isFormType, allocator);
+    }
+
+    if (m_componentValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComponentValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_componentValue.c_str(), allocator).Move(), allocator);
     }
 
     if (m_generateModeHasBeenSet)
@@ -409,6 +431,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         value.AddMember(iKey, m_componentDateFontSize, allocator);
     }
 
+    if (m_channelComponentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelComponentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelComponentId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_offsetXHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -423,6 +453,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "OffsetY";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_offsetY, allocator);
+    }
+
+    if (m_channelComponentSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelComponentSource";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelComponentSource, allocator);
     }
 
     if (m_keywordOrderHasBeenSet)
@@ -481,20 +519,20 @@ bool Component::ComponentTypeHasBeenSet() const
     return m_componentTypeHasBeenSet;
 }
 
-double Component::GetComponentWidth() const
+int64_t Component::GetFileIndex() const
 {
-    return m_componentWidth;
+    return m_fileIndex;
 }
 
-void Component::SetComponentWidth(const double& _componentWidth)
+void Component::SetFileIndex(const int64_t& _fileIndex)
 {
-    m_componentWidth = _componentWidth;
-    m_componentWidthHasBeenSet = true;
+    m_fileIndex = _fileIndex;
+    m_fileIndexHasBeenSet = true;
 }
 
-bool Component::ComponentWidthHasBeenSet() const
+bool Component::FileIndexHasBeenSet() const
 {
-    return m_componentWidthHasBeenSet;
+    return m_fileIndexHasBeenSet;
 }
 
 double Component::GetComponentHeight() const
@@ -511,6 +549,22 @@ void Component::SetComponentHeight(const double& _componentHeight)
 bool Component::ComponentHeightHasBeenSet() const
 {
     return m_componentHeightHasBeenSet;
+}
+
+double Component::GetComponentWidth() const
+{
+    return m_componentWidth;
+}
+
+void Component::SetComponentWidth(const double& _componentWidth)
+{
+    m_componentWidth = _componentWidth;
+    m_componentWidthHasBeenSet = true;
+}
+
+bool Component::ComponentWidthHasBeenSet() const
+{
+    return m_componentWidthHasBeenSet;
 }
 
 int64_t Component::GetComponentPage() const
@@ -561,22 +615,6 @@ bool Component::ComponentPosYHasBeenSet() const
     return m_componentPosYHasBeenSet;
 }
 
-int64_t Component::GetFileIndex() const
-{
-    return m_fileIndex;
-}
-
-void Component::SetFileIndex(const int64_t& _fileIndex)
-{
-    m_fileIndex = _fileIndex;
-    m_fileIndexHasBeenSet = true;
-}
-
-bool Component::FileIndexHasBeenSet() const
-{
-    return m_fileIndexHasBeenSet;
-}
-
 string Component::GetComponentId() const
 {
     return m_componentId;
@@ -625,22 +663,6 @@ bool Component::ComponentRequiredHasBeenSet() const
     return m_componentRequiredHasBeenSet;
 }
 
-string Component::GetComponentExtra() const
-{
-    return m_componentExtra;
-}
-
-void Component::SetComponentExtra(const string& _componentExtra)
-{
-    m_componentExtra = _componentExtra;
-    m_componentExtraHasBeenSet = true;
-}
-
-bool Component::ComponentExtraHasBeenSet() const
-{
-    return m_componentExtraHasBeenSet;
-}
-
 string Component::GetComponentRecipientId() const
 {
     return m_componentRecipientId;
@@ -657,20 +679,20 @@ bool Component::ComponentRecipientIdHasBeenSet() const
     return m_componentRecipientIdHasBeenSet;
 }
 
-string Component::GetComponentValue() const
+string Component::GetComponentExtra() const
 {
-    return m_componentValue;
+    return m_componentExtra;
 }
 
-void Component::SetComponentValue(const string& _componentValue)
+void Component::SetComponentExtra(const string& _componentExtra)
 {
-    m_componentValue = _componentValue;
-    m_componentValueHasBeenSet = true;
+    m_componentExtra = _componentExtra;
+    m_componentExtraHasBeenSet = true;
 }
 
-bool Component::ComponentValueHasBeenSet() const
+bool Component::ComponentExtraHasBeenSet() const
 {
-    return m_componentValueHasBeenSet;
+    return m_componentExtraHasBeenSet;
 }
 
 bool Component::GetIsFormType() const
@@ -687,6 +709,22 @@ void Component::SetIsFormType(const bool& _isFormType)
 bool Component::IsFormTypeHasBeenSet() const
 {
     return m_isFormTypeHasBeenSet;
+}
+
+string Component::GetComponentValue() const
+{
+    return m_componentValue;
+}
+
+void Component::SetComponentValue(const string& _componentValue)
+{
+    m_componentValue = _componentValue;
+    m_componentValueHasBeenSet = true;
+}
+
+bool Component::ComponentValueHasBeenSet() const
+{
+    return m_componentValueHasBeenSet;
 }
 
 string Component::GetGenerateMode() const
@@ -721,6 +759,22 @@ bool Component::ComponentDateFontSizeHasBeenSet() const
     return m_componentDateFontSizeHasBeenSet;
 }
 
+string Component::GetChannelComponentId() const
+{
+    return m_channelComponentId;
+}
+
+void Component::SetChannelComponentId(const string& _channelComponentId)
+{
+    m_channelComponentId = _channelComponentId;
+    m_channelComponentIdHasBeenSet = true;
+}
+
+bool Component::ChannelComponentIdHasBeenSet() const
+{
+    return m_channelComponentIdHasBeenSet;
+}
+
 double Component::GetOffsetX() const
 {
     return m_offsetX;
@@ -751,6 +805,22 @@ void Component::SetOffsetY(const double& _offsetY)
 bool Component::OffsetYHasBeenSet() const
 {
     return m_offsetYHasBeenSet;
+}
+
+uint64_t Component::GetChannelComponentSource() const
+{
+    return m_channelComponentSource;
+}
+
+void Component::SetChannelComponentSource(const uint64_t& _channelComponentSource)
+{
+    m_channelComponentSource = _channelComponentSource;
+    m_channelComponentSourceHasBeenSet = true;
+}
+
+bool Component::ChannelComponentSourceHasBeenSet() const
+{
+    return m_channelComponentSourceHasBeenSet;
 }
 
 string Component::GetKeywordOrder() const

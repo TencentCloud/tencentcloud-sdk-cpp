@@ -25,7 +25,8 @@ ApmField::ApmField() :
     m_compareValsHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_unitHasBeenSet(false),
-    m_keyHasBeenSet(false)
+    m_keyHasBeenSet(false),
+    m_lastPeriodValueHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,26 @@ CoreInternalOutcome ApmField::Deserialize(const rapidjson::Value &value)
         m_keyHasBeenSet = true;
     }
 
+    if (value.HasMember("LastPeriodValue") && !value["LastPeriodValue"].IsNull())
+    {
+        if (!value["LastPeriodValue"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ApmField.LastPeriodValue` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["LastPeriodValue"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            APMKV item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_lastPeriodValue.push_back(item);
+        }
+        m_lastPeriodValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -146,6 +167,21 @@ void ApmField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Key";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_key.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastPeriodValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastPeriodValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_lastPeriodValue.begin(); itr != m_lastPeriodValue.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -229,5 +265,21 @@ void ApmField::SetKey(const string& _key)
 bool ApmField::KeyHasBeenSet() const
 {
     return m_keyHasBeenSet;
+}
+
+vector<APMKV> ApmField::GetLastPeriodValue() const
+{
+    return m_lastPeriodValue;
+}
+
+void ApmField::SetLastPeriodValue(const vector<APMKV>& _lastPeriodValue)
+{
+    m_lastPeriodValue = _lastPeriodValue;
+    m_lastPeriodValueHasBeenSet = true;
+}
+
+bool ApmField::LastPeriodValueHasBeenSet() const
+{
+    return m_lastPeriodValueHasBeenSet;
 }
 

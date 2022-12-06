@@ -61,10 +61,10 @@ DISTRICT - 省市区行政区划控件；
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
-DATE， 日期控件，默认是格式化为xxxx年xx月xx日
 SIGN_SIGNATURE - 用户签名控件；
 SIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；
 SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight
+SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认
 
 表单域的控件不能作为印章和签名控件
                      * @return ComponentType 如果是Component控件类型，则可选的字段为：
@@ -81,10 +81,10 @@ DISTRICT - 省市区行政区划控件；
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
-DATE， 日期控件，默认是格式化为xxxx年xx月xx日
 SIGN_SIGNATURE - 用户签名控件；
 SIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；
 SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight
+SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认
 
 表单域的控件不能作为印章和签名控件
                      */
@@ -105,10 +105,10 @@ DISTRICT - 省市区行政区划控件；
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
-DATE， 日期控件，默认是格式化为xxxx年xx月xx日
 SIGN_SIGNATURE - 用户签名控件；
 SIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；
 SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight
+SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认
 
 表单域的控件不能作为印章和签名控件
                      * @param ComponentType 如果是Component控件类型，则可选的字段为：
@@ -125,10 +125,10 @@ DISTRICT - 省市区行政区划控件；
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
-DATE， 日期控件，默认是格式化为xxxx年xx月xx日
 SIGN_SIGNATURE - 用户签名控件；
 SIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；
 SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight
+SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认
 
 表单域的控件不能作为印章和签名控件
                      */
@@ -141,22 +141,22 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
                     bool ComponentTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数控件宽度，单位pt
-                     * @return ComponentWidth 参数控件宽度，单位pt
+                     * 获取控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
+                     * @return FileIndex 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
                      */
-                    double GetComponentWidth() const;
+                    int64_t GetFileIndex() const;
 
                     /**
-                     * 设置参数控件宽度，单位pt
-                     * @param ComponentWidth 参数控件宽度，单位pt
+                     * 设置控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
+                     * @param FileIndex 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
                      */
-                    void SetComponentWidth(const double& _componentWidth);
+                    void SetFileIndex(const int64_t& _fileIndex);
 
                     /**
-                     * 判断参数 ComponentWidth 是否已赋值
-                     * @return ComponentWidth 是否已赋值
+                     * 判断参数 FileIndex 是否已赋值
+                     * @return FileIndex 是否已赋值
                      */
-                    bool ComponentWidthHasBeenSet() const;
+                    bool FileIndexHasBeenSet() const;
 
                     /**
                      * 获取参数控件高度，单位pt
@@ -175,6 +175,24 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
                      * @return ComponentHeight 是否已赋值
                      */
                     bool ComponentHeightHasBeenSet() const;
+
+                    /**
+                     * 获取参数控件宽度，单位pt
+                     * @return ComponentWidth 参数控件宽度，单位pt
+                     */
+                    double GetComponentWidth() const;
+
+                    /**
+                     * 设置参数控件宽度，单位pt
+                     * @param ComponentWidth 参数控件宽度，单位pt
+                     */
+                    void SetComponentWidth(const double& _componentWidth);
+
+                    /**
+                     * 判断参数 ComponentWidth 是否已赋值
+                     * @return ComponentWidth 是否已赋值
+                     */
+                    bool ComponentWidthHasBeenSet() const;
 
                     /**
                      * 获取参数控件所在页码，取值为：1-N
@@ -231,24 +249,6 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
                     bool ComponentPosYHasBeenSet() const;
 
                     /**
-                     * 获取控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
-                     * @return FileIndex 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
-                     */
-                    int64_t GetFileIndex() const;
-
-                    /**
-                     * 设置控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
-                     * @param FileIndex 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
-                     */
-                    void SetFileIndex(const int64_t& _fileIndex);
-
-                    /**
-                     * 判断参数 FileIndex 是否已赋值
-                     * @return FileIndex 是否已赋值
-                     */
-                    bool FileIndexHasBeenSet() const;
-
-                    /**
                      * 获取GenerateMode==KEYWORD 指定关键字
                      * @return ComponentId GenerateMode==KEYWORD 指定关键字
                      */
@@ -301,6 +301,24 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
                      * @return ComponentRequired 是否已赋值
                      */
                     bool ComponentRequiredHasBeenSet() const;
+
+                    /**
+                     * 获取控件关联的签署人ID
+                     * @return ComponentRecipientId 控件关联的签署人ID
+                     */
+                    std::string GetComponentRecipientId() const;
+
+                    /**
+                     * 设置控件关联的签署人ID
+                     * @param ComponentRecipientId 控件关联的签署人ID
+                     */
+                    void SetComponentRecipientId(const std::string& _componentRecipientId);
+
+                    /**
+                     * 判断参数 ComponentRecipientId 是否已赋值
+                     * @return ComponentRecipientId 是否已赋值
+                     */
+                    bool ComponentRecipientIdHasBeenSet() const;
 
                     /**
                      * 获取扩展参数：
@@ -377,22 +395,22 @@ ESIGN -- 个人印章类型
                     bool ComponentExtraHasBeenSet() const;
 
                     /**
-                     * 获取控件关联的签署人ID
-                     * @return ComponentRecipientId 控件关联的签署人ID
+                     * 获取是否是表单域类型，默认不存在
+                     * @return IsFormType 是否是表单域类型，默认不存在
                      */
-                    std::string GetComponentRecipientId() const;
+                    bool GetIsFormType() const;
 
                     /**
-                     * 设置控件关联的签署人ID
-                     * @param ComponentRecipientId 控件关联的签署人ID
+                     * 设置是否是表单域类型，默认不存在
+                     * @param IsFormType 是否是表单域类型，默认不存在
                      */
-                    void SetComponentRecipientId(const std::string& _componentRecipientId);
+                    void SetIsFormType(const bool& _isFormType);
 
                     /**
-                     * 判断参数 ComponentRecipientId 是否已赋值
-                     * @return ComponentRecipientId 是否已赋值
+                     * 判断参数 IsFormType 是否已赋值
+                     * @return IsFormType 是否已赋值
                      */
-                    bool ComponentRecipientIdHasBeenSet() const;
+                    bool IsFormTypeHasBeenSet() const;
 
                     /**
                      * 获取控件填充vaule，ComponentType和传入值类型对应关系：
@@ -449,24 +467,6 @@ SIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取
                     bool ComponentValueHasBeenSet() const;
 
                     /**
-                     * 获取是否是表单域类型，默认不存在
-                     * @return IsFormType 是否是表单域类型，默认不存在
-                     */
-                    bool GetIsFormType() const;
-
-                    /**
-                     * 设置是否是表单域类型，默认不存在
-                     * @param IsFormType 是否是表单域类型，默认不存在
-                     */
-                    void SetIsFormType(const bool& _isFormType);
-
-                    /**
-                     * 判断参数 IsFormType 是否已赋值
-                     * @return IsFormType 是否已赋值
-                     */
-                    bool IsFormTypeHasBeenSet() const;
-
-                    /**
                      * 获取NORMAL 正常模式，使用坐标制定签署控件位置
 FIELD 表单域，需使用ComponentName指定表单域名称
 KEYWORD 关键字，使用ComponentId指定关键字
@@ -493,14 +493,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool GenerateModeHasBeenSet() const;
 
                     /**
-                     * 获取日期控件类型字号
-                     * @return ComponentDateFontSize 日期控件类型字号
+                     * 获取日期签署控件的字号，默认为 12
+                     * @return ComponentDateFontSize 日期签署控件的字号，默认为 12
                      */
                     int64_t GetComponentDateFontSize() const;
 
                     /**
-                     * 设置日期控件类型字号
-                     * @param ComponentDateFontSize 日期控件类型字号
+                     * 设置日期签署控件的字号，默认为 12
+                     * @param ComponentDateFontSize 日期签署控件的字号，默认为 12
                      */
                     void SetComponentDateFontSize(const int64_t& _componentDateFontSize);
 
@@ -509,6 +509,24 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      * @return ComponentDateFontSize 是否已赋值
                      */
                     bool ComponentDateFontSizeHasBeenSet() const;
+
+                    /**
+                     * 获取渠道版控件 id 标识
+                     * @return ChannelComponentId 渠道版控件 id 标识
+                     */
+                    std::string GetChannelComponentId() const;
+
+                    /**
+                     * 设置渠道版控件 id 标识
+                     * @param ChannelComponentId 渠道版控件 id 标识
+                     */
+                    void SetChannelComponentId(const std::string& _channelComponentId);
+
+                    /**
+                     * 判断参数 ChannelComponentId 是否已赋值
+                     * @return ChannelComponentId 是否已赋值
+                     */
+                    bool ChannelComponentIdHasBeenSet() const;
 
                     /**
                      * 获取指定关键字时横坐标偏移量，单位pt
@@ -545,6 +563,24 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      * @return OffsetY 是否已赋值
                      */
                     bool OffsetYHasBeenSet() const;
+
+                    /**
+                     * 获取//渠道子客控件来源。0-渠道指定；1-用户自定义
+                     * @return ChannelComponentSource //渠道子客控件来源。0-渠道指定；1-用户自定义
+                     */
+                    uint64_t GetChannelComponentSource() const;
+
+                    /**
+                     * 设置//渠道子客控件来源。0-渠道指定；1-用户自定义
+                     * @param ChannelComponentSource //渠道子客控件来源。0-渠道指定；1-用户自定义
+                     */
+                    void SetChannelComponentSource(const uint64_t& _channelComponentSource);
+
+                    /**
+                     * 判断参数 ChannelComponentSource 是否已赋值
+                     * @return ChannelComponentSource 是否已赋值
+                     */
+                    bool ChannelComponentSourceHasBeenSet() const;
 
                     /**
                      * 获取指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。
@@ -639,10 +675,10 @@ DISTRICT - 省市区行政区划控件；
 如果是SignComponent控件类型，则可选的字段为
 SIGN_SEAL - 签署印章控件；
 SIGN_DATE - 签署日期控件；
-DATE， 日期控件，默认是格式化为xxxx年xx月xx日
 SIGN_SIGNATURE - 用户签名控件；
 SIGN_PERSONAL_SEAL - 个人签署印章控件（使用文件发起暂不支持此类型）；
 SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY、ComponentWidth、ComponentHeight
+SIGN_OPINION - 签署意见控件，用户需要根据配置的签署意见内容，完成对意见内容的确认
 
 表单域的控件不能作为印章和签名控件
                      */
@@ -650,16 +686,22 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
                     bool m_componentTypeHasBeenSet;
 
                     /**
-                     * 参数控件宽度，单位pt
+                     * 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
                      */
-                    double m_componentWidth;
-                    bool m_componentWidthHasBeenSet;
+                    int64_t m_fileIndex;
+                    bool m_fileIndexHasBeenSet;
 
                     /**
                      * 参数控件高度，单位pt
                      */
                     double m_componentHeight;
                     bool m_componentHeightHasBeenSet;
+
+                    /**
+                     * 参数控件宽度，单位pt
+                     */
+                    double m_componentWidth;
+                    bool m_componentWidthHasBeenSet;
 
                     /**
                      * 参数控件所在页码，取值为：1-N
@@ -680,12 +722,6 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
                     bool m_componentPosYHasBeenSet;
 
                     /**
-                     * 控件所属文件的序号（模板中的resourceId排列序号，取值为：0-N）
-                     */
-                    int64_t m_fileIndex;
-                    bool m_fileIndexHasBeenSet;
-
-                    /**
                      * GenerateMode==KEYWORD 指定关键字
                      */
                     std::string m_componentId;
@@ -702,6 +738,12 @@ SIGN_PAGING_SEAL - 骑缝章；若文件发起，需要对应填充ComponentPosY
                      */
                     bool m_componentRequired;
                     bool m_componentRequiredHasBeenSet;
+
+                    /**
+                     * 控件关联的签署人ID
+                     */
+                    std::string m_componentRecipientId;
+                    bool m_componentRecipientIdHasBeenSet;
 
                     /**
                      * 扩展参数：
@@ -724,10 +766,10 @@ ESIGN -- 个人印章类型
                     bool m_componentExtraHasBeenSet;
 
                     /**
-                     * 控件关联的签署人ID
+                     * 是否是表单域类型，默认不存在
                      */
-                    std::string m_componentRecipientId;
-                    bool m_componentRecipientIdHasBeenSet;
+                    bool m_isFormType;
+                    bool m_isFormTypeHasBeenSet;
 
                     /**
                      * 控件填充vaule，ComponentType和传入值类型对应关系：
@@ -745,12 +787,6 @@ SIGN_PAGING_SEAL - 可以指定印章ID，于控制台查询获取
                     bool m_componentValueHasBeenSet;
 
                     /**
-                     * 是否是表单域类型，默认不存在
-                     */
-                    bool m_isFormType;
-                    bool m_isFormTypeHasBeenSet;
-
-                    /**
                      * NORMAL 正常模式，使用坐标制定签署控件位置
 FIELD 表单域，需使用ComponentName指定表单域名称
 KEYWORD 关键字，使用ComponentId指定关键字
@@ -759,10 +795,16 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_generateModeHasBeenSet;
 
                     /**
-                     * 日期控件类型字号
+                     * 日期签署控件的字号，默认为 12
                      */
                     int64_t m_componentDateFontSize;
                     bool m_componentDateFontSizeHasBeenSet;
+
+                    /**
+                     * 渠道版控件 id 标识
+                     */
+                    std::string m_channelComponentId;
+                    bool m_channelComponentIdHasBeenSet;
 
                     /**
                      * 指定关键字时横坐标偏移量，单位pt
@@ -775,6 +817,12 @@ KEYWORD 关键字，使用ComponentId指定关键字
                      */
                     double m_offsetY;
                     bool m_offsetYHasBeenSet;
+
+                    /**
+                     * //渠道子客控件来源。0-渠道指定；1-用户自定义
+                     */
+                    uint64_t m_channelComponentSource;
+                    bool m_channelComponentSourceHasBeenSet;
 
                     /**
                      * 指定关键字排序规则，Positive-正序，Reverse-倒序。传入Positive时会根据关键字在PDF文件内的顺序进行排列。在指定KeywordIndexes时，0代表在PDF内查找内容时，查找到的第一个关键字。

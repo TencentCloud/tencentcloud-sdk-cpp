@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取统计起始时间
-                     * @return StartTime 统计起始时间
+                     * 获取防护概览攻击趋势起始时间
+                     * @return StartTime 防护概览攻击趋势起始时间
                      */
                     std::string GetStartTime() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取统计结束时间
-                     * @return EndTime 统计结束时间
+                     * 获取防护概览攻击趋势结束时间
+                     * @return EndTime 防护概览攻击趋势结束时间
                      */
                     std::string GetEndTime() const;
 
@@ -124,13 +124,13 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 统计起始时间
+                     * 防护概览攻击趋势起始时间
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 统计结束时间
+                     * 防护概览攻击趋势结束时间
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

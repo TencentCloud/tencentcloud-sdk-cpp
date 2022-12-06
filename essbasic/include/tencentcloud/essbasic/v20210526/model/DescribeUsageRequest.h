@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取应用信息
-                     * @return Agent 应用信息
+                     * 获取应用信息，此接口Agent.AppId必填
+                     * @return Agent 应用信息，此接口Agent.AppId必填
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置应用信息
-                     * @param Agent 应用信息
+                     * 设置应用信息，此接口Agent.AppId必填
+                     * @param Agent 应用信息，此接口Agent.AppId必填
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -185,7 +185,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 应用信息
+                     * 应用信息，此接口Agent.AppId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

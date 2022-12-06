@@ -31,7 +31,11 @@ ParamInfo::ParamInfo() :
     m_paramTypeHasBeenSet(false),
     m_matchTypeHasBeenSet(false),
     m_matchValueHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_isGlobalHasBeenSet(false),
+    m_modifiableInfoHasBeenSet(false),
+    m_isFuncHasBeenSet(false),
+    m_funcHasBeenSet(false)
 {
 }
 
@@ -153,6 +157,53 @@ CoreInternalOutcome ParamInfo::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("IsGlobal") && !value["IsGlobal"].IsNull())
+    {
+        if (!value["IsGlobal"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.IsGlobal` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isGlobal = value["IsGlobal"].GetInt64();
+        m_isGlobalHasBeenSet = true;
+    }
+
+    if (value.HasMember("ModifiableInfo") && !value["ModifiableInfo"].IsNull())
+    {
+        if (!value["ModifiableInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.ModifiableInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_modifiableInfo.Deserialize(value["ModifiableInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_modifiableInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsFunc") && !value["IsFunc"].IsNull())
+    {
+        if (!value["IsFunc"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.IsFunc` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFunc = value["IsFunc"].GetBool();
+        m_isFuncHasBeenSet = true;
+    }
+
+    if (value.HasMember("Func") && !value["Func"].IsNull())
+    {
+        if (!value["Func"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ParamInfo.Func` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_func = string(value["Func"].GetString());
+        m_funcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +302,39 @@ void ParamInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isGlobalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsGlobal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isGlobal, allocator);
+    }
+
+    if (m_modifiableInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifiableInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modifiableInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_isFuncHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFunc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFunc, allocator);
+    }
+
+    if (m_funcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Func";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_func.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -430,5 +514,69 @@ void ParamInfo::SetDescription(const string& _description)
 bool ParamInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t ParamInfo::GetIsGlobal() const
+{
+    return m_isGlobal;
+}
+
+void ParamInfo::SetIsGlobal(const int64_t& _isGlobal)
+{
+    m_isGlobal = _isGlobal;
+    m_isGlobalHasBeenSet = true;
+}
+
+bool ParamInfo::IsGlobalHasBeenSet() const
+{
+    return m_isGlobalHasBeenSet;
+}
+
+ModifiableInfo ParamInfo::GetModifiableInfo() const
+{
+    return m_modifiableInfo;
+}
+
+void ParamInfo::SetModifiableInfo(const ModifiableInfo& _modifiableInfo)
+{
+    m_modifiableInfo = _modifiableInfo;
+    m_modifiableInfoHasBeenSet = true;
+}
+
+bool ParamInfo::ModifiableInfoHasBeenSet() const
+{
+    return m_modifiableInfoHasBeenSet;
+}
+
+bool ParamInfo::GetIsFunc() const
+{
+    return m_isFunc;
+}
+
+void ParamInfo::SetIsFunc(const bool& _isFunc)
+{
+    m_isFunc = _isFunc;
+    m_isFuncHasBeenSet = true;
+}
+
+bool ParamInfo::IsFuncHasBeenSet() const
+{
+    return m_isFuncHasBeenSet;
+}
+
+string ParamInfo::GetFunc() const
+{
+    return m_func;
+}
+
+void ParamInfo::SetFunc(const string& _func)
+{
+    m_func = _func;
+    m_funcHasBeenSet = true;
+}
+
+bool ParamInfo::FuncHasBeenSet() const
+{
+    return m_funcHasBeenSet;
 }
 

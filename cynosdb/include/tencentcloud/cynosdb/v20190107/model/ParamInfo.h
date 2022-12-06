@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifiableInfo.h>
 
 
 namespace TencentCloud
@@ -248,6 +249,94 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取是否为全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsGlobal 是否为全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsGlobal() const;
+
+                    /**
+                     * 设置是否为全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsGlobal 是否为全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsGlobal(const int64_t& _isGlobal);
+
+                    /**
+                     * 判断参数 IsGlobal 是否已赋值
+                     * @return IsGlobal 是否已赋值
+                     */
+                    bool IsGlobalHasBeenSet() const;
+
+                    /**
+                     * 获取参数是否可修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ModifiableInfo 参数是否可修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModifiableInfo GetModifiableInfo() const;
+
+                    /**
+                     * 设置参数是否可修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ModifiableInfo 参数是否可修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetModifiableInfo(const ModifiableInfo& _modifiableInfo);
+
+                    /**
+                     * 判断参数 ModifiableInfo 是否已赋值
+                     * @return ModifiableInfo 是否已赋值
+                     */
+                    bool ModifiableInfoHasBeenSet() const;
+
+                    /**
+                     * 获取是否为函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFunc 是否为函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsFunc() const;
+
+                    /**
+                     * 设置是否为函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsFunc 是否为函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsFunc(const bool& _isFunc);
+
+                    /**
+                     * 判断参数 IsFunc 是否已赋值
+                     * @return IsFunc 是否已赋值
+                     */
+                    bool IsFuncHasBeenSet() const;
+
+                    /**
+                     * 获取函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Func 函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFunc() const;
+
+                    /**
+                     * 设置函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Func 函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFunc(const std::string& _func);
+
+                    /**
+                     * 判断参数 Func 是否已赋值
+                     * @return Func 是否已赋值
+                     */
+                    bool FuncHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +405,34 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 是否为全局参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isGlobal;
+                    bool m_isGlobalHasBeenSet;
+
+                    /**
+                     * 参数是否可修改
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ModifiableInfo m_modifiableInfo;
+                    bool m_modifiableInfoHasBeenSet;
+
+                    /**
+                     * 是否为函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isFunc;
+                    bool m_isFuncHasBeenSet;
+
+                    /**
+                     * 函数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_func;
+                    bool m_funcHasBeenSet;
 
                 };
             }

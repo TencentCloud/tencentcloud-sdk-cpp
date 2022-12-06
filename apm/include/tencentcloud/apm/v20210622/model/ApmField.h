@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/apm/v20210622/model/APMKVItem.h>
+#include <tencentcloud/apm/v20210622/model/APMKV.h>
 
 
 namespace TencentCloud
@@ -153,6 +154,28 @@ namespace TencentCloud
                      */
                     bool KeyHasBeenSet() const;
 
+                    /**
+                     * 获取同环比上周期具体数值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastPeriodValue 同环比上周期具体数值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<APMKV> GetLastPeriodValue() const;
+
+                    /**
+                     * 设置同环比上周期具体数值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastPeriodValue 同环比上周期具体数值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastPeriodValue(const std::vector<APMKV>& _lastPeriodValue);
+
+                    /**
+                     * 判断参数 LastPeriodValue 是否已赋值
+                     * @return LastPeriodValue 是否已赋值
+                     */
+                    bool LastPeriodValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +211,13 @@ namespace TencentCloud
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
+
+                    /**
+                     * 同环比上周期具体数值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<APMKV> m_lastPeriodValue;
+                    bool m_lastPeriodValueHasBeenSet;
 
                 };
             }

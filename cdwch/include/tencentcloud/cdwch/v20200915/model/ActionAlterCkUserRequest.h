@@ -62,14 +62,18 @@ namespace TencentCloud
                     bool UserInfoHasBeenSet() const;
 
                     /**
-                     * 获取api接口类型
-                     * @return ApiType api接口类型
+                     * 获取api接口类型，
+AddSystemUser新增用户，UpdateSystemUser，修改用户
+                     * @return ApiType api接口类型，
+AddSystemUser新增用户，UpdateSystemUser，修改用户
                      */
                     std::string GetApiType() const;
 
                     /**
-                     * 设置api接口类型
-                     * @param ApiType api接口类型
+                     * 设置api接口类型，
+AddSystemUser新增用户，UpdateSystemUser，修改用户
+                     * @param ApiType api接口类型，
+AddSystemUser新增用户，UpdateSystemUser，修改用户
                      */
                     void SetApiType(const std::string& _apiType);
 
@@ -88,7 +92,8 @@ namespace TencentCloud
                     bool m_userInfoHasBeenSet;
 
                     /**
-                     * api接口类型
+                     * api接口类型，
+AddSystemUser新增用户，UpdateSystemUser，修改用户
                      */
                     std::string m_apiType;
                     bool m_apiTypeHasBeenSet;

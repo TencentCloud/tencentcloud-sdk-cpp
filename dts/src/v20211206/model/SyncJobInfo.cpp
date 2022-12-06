@@ -42,8 +42,8 @@ SyncJobInfo::SyncJobInfo() :
     m_dstInfoHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_endTimeHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_detailHasBeenSet(false),
     m_tradeStatusHasBeenSet(false),
@@ -302,16 +302,6 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         m_startTimeHasBeenSet = true;
     }
 
-    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
-    {
-        if (!value["EndTime"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_endTime = string(value["EndTime"].GetString());
-        m_endTimeHasBeenSet = true;
-    }
-
     if (value.HasMember("Status") && !value["Status"].IsNull())
     {
         if (!value["Status"].IsString())
@@ -320,6 +310,16 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndTime") && !value["EndTime"].IsNull())
+    {
+        if (!value["EndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.EndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endTime = string(value["EndTime"].GetString());
+        m_endTimeHasBeenSet = true;
     }
 
     if (value.HasMember("Tags") && !value["Tags"].IsNull())
@@ -588,20 +588,20 @@ void SyncJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_startTime.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_endTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EndTime";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tagsHasBeenSet)
@@ -999,22 +999,6 @@ bool SyncJobInfo::StartTimeHasBeenSet() const
     return m_startTimeHasBeenSet;
 }
 
-string SyncJobInfo::GetEndTime() const
-{
-    return m_endTime;
-}
-
-void SyncJobInfo::SetEndTime(const string& _endTime)
-{
-    m_endTime = _endTime;
-    m_endTimeHasBeenSet = true;
-}
-
-bool SyncJobInfo::EndTimeHasBeenSet() const
-{
-    return m_endTimeHasBeenSet;
-}
-
 string SyncJobInfo::GetStatus() const
 {
     return m_status;
@@ -1029,6 +1013,22 @@ void SyncJobInfo::SetStatus(const string& _status)
 bool SyncJobInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string SyncJobInfo::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void SyncJobInfo::SetEndTime(const string& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool SyncJobInfo::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 vector<TagItem> SyncJobInfo::GetTags() const

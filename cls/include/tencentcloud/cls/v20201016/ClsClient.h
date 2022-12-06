@@ -405,7 +405,7 @@ namespace TencentCloud
                 CreateConfigOutcomeCallable CreateConfigCallable(const Model::CreateConfigRequest& request);
 
                 /**
-                 *本接口用于创建特殊采集配置任务
+                 *本接口用于创建特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent
                  * @param req CreateConfigExtraRequest
                  * @return CreateConfigExtraOutcome
                  */
@@ -504,7 +504,7 @@ namespace TencentCloud
                 DeleteConfigOutcomeCallable DeleteConfigCallable(const Model::DeleteConfigRequest& request);
 
                 /**
-                 *本接口用于删除特殊采集规则配置
+                 *本接口用于删除特殊采集规则配置，特殊采集配置应用于自建K8S环境的采集Agent
                  * @param req DeleteConfigExtraRequest
                  * @return DeleteConfigExtraOutcome
                  */
@@ -612,7 +612,7 @@ namespace TencentCloud
                 DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request);
 
                 /**
-                 *本接口用于获取特殊采集配置
+                 *本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent
                  * @param req DescribeConfigExtrasRequest
                  * @return DescribeConfigExtrasOutcome
                  */
@@ -801,7 +801,7 @@ namespace TencentCloud
                 ModifyConfigOutcomeCallable ModifyConfigCallable(const Model::ModifyConfigRequest& request);
 
                 /**
-                 *本接口用于修改特殊采集配置任务
+                 *本接口用于修改特殊采集配置任务，特殊采集配置应用于自建K8S环境的采集Agent
                  * @param req ModifyConfigExtraRequest
                  * @return ModifyConfigExtraOutcome
                  */

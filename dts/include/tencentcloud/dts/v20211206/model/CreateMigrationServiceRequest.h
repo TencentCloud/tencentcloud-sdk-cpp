@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool DstRegionHasBeenSet() const;
 
                     /**
-                     * 获取实例规格，包括：micro、small、medium、large、xlarge、2xlarge
-                     * @return InstanceClass 实例规格，包括：micro、small、medium、large、xlarge、2xlarge
+                     * 获取实例规格，包括：small、medium、large、xlarge、2xlarge
+                     * @return InstanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge
                      */
                     std::string GetInstanceClass() const;
 
                     /**
-                     * 设置实例规格，包括：micro、small、medium、large、xlarge、2xlarge
-                     * @param InstanceClass 实例规格，包括：micro、small、medium、large、xlarge、2xlarge
+                     * 设置实例规格，包括：small、medium、large、xlarge、2xlarge
+                     * @param InstanceClass 实例规格，包括：small、medium、large、xlarge、2xlarge
                      */
                     void SetInstanceClass(const std::string& _instanceClass);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_dstRegionHasBeenSet;
 
                     /**
-                     * 实例规格，包括：micro、small、medium、large、xlarge、2xlarge
+                     * 实例规格，包括：small、medium、large、xlarge、2xlarge
                      */
                     std::string m_instanceClass;
                     bool m_instanceClassHasBeenSet;

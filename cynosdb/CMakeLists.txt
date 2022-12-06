@@ -51,7 +51,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SearchClusterTablesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/PauseServerlessRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/ObjectTask.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifiableInfo.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CreateClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h
@@ -137,6 +137,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/CynosdbCluster.h
   include/tencentcloud/cynosdb/v20190107/model/IsolateClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SearchClusterDatabasesResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ObjectTask.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h
@@ -229,7 +230,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeAuditLogsResponse.cpp
   src/v20190107/model/SearchClusterTablesRequest.cpp
   src/v20190107/model/PauseServerlessRequest.cpp
-  src/v20190107/model/ObjectTask.cpp
+  src/v20190107/model/ModifiableInfo.cpp
   src/v20190107/model/RevokeAccountPrivilegesResponse.cpp
   src/v20190107/model/CreateClustersResponse.cpp
   src/v20190107/model/SetRenewFlagRequest.cpp
@@ -315,6 +316,7 @@ set(cynosdb_src
   src/v20190107/model/CynosdbCluster.cpp
   src/v20190107/model/IsolateClusterResponse.cpp
   src/v20190107/model/SearchClusterDatabasesResponse.cpp
+  src/v20190107/model/ObjectTask.cpp
   src/v20190107/model/OfflineClusterResponse.cpp
   src/v20190107/model/SwitchProxyVpcResponse.cpp
   src/v20190107/model/RevokeAccountPrivilegesRequest.cpp

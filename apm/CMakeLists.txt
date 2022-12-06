@@ -35,6 +35,7 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h
   include/tencentcloud/apm/v20210622/model/ApmTag.h
   include/tencentcloud/apm/v20210622/model/Filter.h
+  include/tencentcloud/apm/v20210622/model/APMKV.h
   include/tencentcloud/apm/v20210622/model/DescribeApmAgentRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h
@@ -62,6 +63,7 @@ set(apm_src
   src/v20210622/model/DescribeMetricRecordsResponse.cpp
   src/v20210622/model/ApmTag.cpp
   src/v20210622/model/Filter.cpp
+  src/v20210622/model/APMKV.cpp
   src/v20210622/model/DescribeApmAgentRequest.cpp
   src/v20210622/model/DescribeMetricRecordsRequest.cpp
   src/v20210622/model/DescribeGeneralMetricDataRequest.cpp
