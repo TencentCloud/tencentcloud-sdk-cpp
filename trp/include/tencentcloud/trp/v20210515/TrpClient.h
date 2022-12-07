@@ -65,6 +65,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeCodePacksResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodesByPackRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCodesByPackResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCorpQuotasRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeCorpQuotasResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCustomRuleByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeCustomRulesRequest.h>
@@ -180,6 +182,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCodesByPackResponse> DescribeCodesByPackOutcome;
                 typedef std::future<DescribeCodesByPackOutcome> DescribeCodesByPackOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCodesByPackRequest&, DescribeCodesByPackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCodesByPackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCorpQuotasResponse> DescribeCorpQuotasOutcome;
+                typedef std::future<DescribeCorpQuotasOutcome> DescribeCorpQuotasOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeCorpQuotasRequest&, DescribeCorpQuotasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCorpQuotasAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCustomRuleByIdResponse> DescribeCustomRuleByIdOutcome;
                 typedef std::future<DescribeCustomRuleByIdOutcome> DescribeCustomRuleByIdOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeCustomRuleByIdRequest&, DescribeCustomRuleByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomRuleByIdAsyncHandler;
@@ -428,6 +433,15 @@ namespace TencentCloud
                 DescribeCodesByPackOutcome DescribeCodesByPack(const Model::DescribeCodesByPackRequest &request);
                 void DescribeCodesByPackAsync(const Model::DescribeCodesByPackRequest& request, const DescribeCodesByPackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCodesByPackOutcomeCallable DescribeCodesByPackCallable(const Model::DescribeCodesByPackRequest& request);
+
+                /**
+                 *查询渠道商下属企业额度使用情况
+                 * @param req DescribeCorpQuotasRequest
+                 * @return DescribeCorpQuotasOutcome
+                 */
+                DescribeCorpQuotasOutcome DescribeCorpQuotas(const Model::DescribeCorpQuotasRequest &request);
+                void DescribeCorpQuotasAsync(const Model::DescribeCorpQuotasRequest& request, const DescribeCorpQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCorpQuotasOutcomeCallable DescribeCorpQuotasCallable(const Model::DescribeCorpQuotasRequest& request);
 
                 /**
                  *查自定义码规则

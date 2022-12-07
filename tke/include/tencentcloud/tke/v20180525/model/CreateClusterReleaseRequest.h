@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool ValuesHasBeenSet() const;
 
                     /**
-                     * 获取制品来源，范围：tke-market/tcr/other
-                     * @return ChartFrom 制品来源，范围：tke-market/tcr/other
+                     * 获取制品来源，范围：tke 应用市场/第三方chart
+                     * @return ChartFrom 制品来源，范围：tke 应用市场/第三方chart
                      */
                     std::string GetChartFrom() const;
 
                     /**
-                     * 设置制品来源，范围：tke-market/tcr/other
-                     * @param ChartFrom 制品来源，范围：tke-market/tcr/other
+                     * 设置制品来源，范围：tke 应用市场/第三方chart
+                     * @param ChartFrom 制品来源，范围：tke 应用市场/第三方chart
                      */
                     void SetChartFrom(const std::string& _chartFrom);
 
@@ -241,6 +241,24 @@ namespace TencentCloud
                      */
                     bool ChartNamespaceHasBeenSet() const;
 
+                    /**
+                     * 获取集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     * @return ClusterType 集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     * @param ClusterType 集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -274,7 +292,7 @@ namespace TencentCloud
                     bool m_valuesHasBeenSet;
 
                     /**
-                     * 制品来源，范围：tke-market/tcr/other
+                     * 制品来源，范围：tke 应用市场/第三方chart
                      */
                     std::string m_chartFrom;
                     bool m_chartFromHasBeenSet;
@@ -308,6 +326,12 @@ namespace TencentCloud
                      */
                     std::string m_chartNamespace;
                     bool m_chartNamespaceHasBeenSet;
+
+                    /**
+                     * 集群类型，支持传 tke, eks, tkeedge, exernal(注册集群）
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                 };
             }

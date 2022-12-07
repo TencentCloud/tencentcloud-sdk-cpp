@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool DealModeHasBeenSet() const;
 
+                    /**
+                     * 获取NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     * @return UpgradeMode NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     */
+                    std::string GetUpgradeMode() const;
+
+                    /**
+                     * 设置NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     * @param UpgradeMode NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     */
+                    void SetUpgradeMode(const std::string& _upgradeMode);
+
+                    /**
+                     * 判断参数 UpgradeMode 是否已赋值
+                     * @return UpgradeMode 是否已赋值
+                     */
+                    bool UpgradeModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     int64_t m_dealMode;
                     bool m_dealModeHasBeenSet;
+
+                    /**
+                     * NormalUpgrade：普通变配，FastUpgrade：极速变配，若变配过程判断会造成闪断，变配流程会终止。
+                     */
+                    std::string m_upgradeMode;
+                    bool m_upgradeModeHasBeenSet;
 
                 };
             }

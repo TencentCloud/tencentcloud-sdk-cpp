@@ -248,14 +248,14 @@ __ALIPAY__: 支付宝
                     bool NotifyUrlHasBeenSet() const;
 
                     /**
-                     * 获取备注信息。
-                     * @return Remark 备注信息。
+                     * 获取备注信息。限制200个字符。
+                     * @return Remark 备注信息。限制200个字符。
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息。
-                     * @param Remark 备注信息。
+                     * 设置备注信息。限制200个字符。
+                     * @param Remark 备注信息。限制200个字符。
                      */
                     void SetRemark(const std::string& _remark);
 
@@ -364,7 +364,7 @@ __ALIPAY__: 支付宝
                     bool m_notifyUrlHasBeenSet;
 
                     /**
-                     * 备注信息。
+                     * 备注信息。限制200个字符。
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;

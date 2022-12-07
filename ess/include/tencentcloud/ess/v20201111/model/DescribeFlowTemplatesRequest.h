@@ -22,8 +22,9 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
-#include <tencentcloud/ess/v20201111/model/Filter.h>
+#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/Filter.h>
 
 
 namespace TencentCloud
@@ -64,40 +65,40 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     * @return Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 获取企业组织相关信息
+                     * @return Organization 企业组织相关信息
                      */
-                    std::vector<Filter> GetFilters() const;
+                    OrganizationInfo GetOrganization() const;
 
                     /**
-                     * 设置搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
-                     * @param Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 设置企业组织相关信息
+                     * @param Organization 企业组织相关信息
                      */
-                    void SetFilters(const std::vector<Filter>& _filters);
+                    void SetOrganization(const OrganizationInfo& _organization);
 
                     /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
+                     * 判断参数 Organization 是否已赋值
+                     * @return Organization 是否已赋值
                      */
-                    bool FiltersHasBeenSet() const;
+                    bool OrganizationHasBeenSet() const;
 
                     /**
-                     * 获取查询个数，默认20，最大200
-                     * @return Limit 查询个数，默认20，最大200
+                     * 获取应用相关信息
+                     * @return Agent 应用相关信息
                      */
-                    uint64_t GetLimit() const;
+                    Agent GetAgent() const;
 
                     /**
-                     * 设置查询个数，默认20，最大200
-                     * @param Limit 查询个数，默认20，最大200
+                     * 设置应用相关信息
+                     * @param Agent 应用相关信息
                      */
-                    void SetLimit(const uint64_t& _limit);
+                    void SetAgent(const Agent& _agent);
 
                     /**
-                     * 判断参数 Limit 是否已赋值
-                     * @return Limit 是否已赋值
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
                      */
-                    bool LimitHasBeenSet() const;
+                    bool AgentHasBeenSet() const;
 
                     /**
                      * 获取查询偏移位置，默认0
@@ -118,22 +119,92 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 获取查询个数，默认20，最大200
+                     * @return Limit 查询个数，默认20，最大200
                      */
-                    int64_t GetContentType() const;
+                    uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
-                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 设置查询个数，默认20，最大200
+                     * @param Limit 查询个数，默认20，最大200
                      */
-                    void SetContentType(const int64_t& _contentType);
+                    void SetLimit(const uint64_t& _limit);
 
                     /**
-                     * 判断参数 ContentType 是否已赋值
-                     * @return ContentType 是否已赋值
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
                      */
-                    bool ContentTypeHasBeenSet() const;
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * @return Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * @param Filters 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取这个参数跟下面的IsChannel参数配合使用。
+IsChannel=false时，ApplicationId参数不起任何作用。
+IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
+ApplicationId为空，查询渠道模板列表
+                     * @return ApplicationId 这个参数跟下面的IsChannel参数配合使用。
+IsChannel=false时，ApplicationId参数不起任何作用。
+IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
+ApplicationId为空，查询渠道模板列表
+                     */
+                    std::string GetApplicationId() const;
+
+                    /**
+                     * 设置这个参数跟下面的IsChannel参数配合使用。
+IsChannel=false时，ApplicationId参数不起任何作用。
+IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
+ApplicationId为空，查询渠道模板列表
+                     * @param ApplicationId 这个参数跟下面的IsChannel参数配合使用。
+IsChannel=false时，ApplicationId参数不起任何作用。
+IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
+ApplicationId为空，查询渠道模板列表
+                     */
+                    void SetApplicationId(const std::string& _applicationId);
+
+                    /**
+                     * 判断参数 ApplicationId 是否已赋值
+                     * @return ApplicationId 是否已赋值
+                     */
+                    bool ApplicationIdHasBeenSet() const;
+
+                    /**
+                     * 获取默认为false，查询SaaS模板库列表；
+为true，查询渠道模板库管理列表
+                     * @return IsChannel 默认为false，查询SaaS模板库列表；
+为true，查询渠道模板库管理列表
+                     */
+                    bool GetIsChannel() const;
+
+                    /**
+                     * 设置默认为false，查询SaaS模板库列表；
+为true，查询渠道模板库管理列表
+                     * @param IsChannel 默认为false，查询SaaS模板库列表；
+为true，查询渠道模板库管理列表
+                     */
+                    void SetIsChannel(const bool& _isChannel);
+
+                    /**
+                     * 判断参数 IsChannel 是否已赋值
+                     * @return IsChannel 是否已赋值
+                     */
+                    bool IsChannelHasBeenSet() const;
 
                     /**
                      * 获取暂未开放
@@ -154,22 +225,22 @@ namespace TencentCloud
                     bool GenerateSourceHasBeenSet() const;
 
                     /**
-                     * 获取应用相关信息
-                     * @return Agent 应用相关信息
+                     * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
-                    Agent GetAgent() const;
+                    int64_t GetContentType() const;
 
                     /**
-                     * 设置应用相关信息
-                     * @param Agent 应用相关信息
+                     * 设置查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * @param ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
-                    void SetAgent(const Agent& _agent);
+                    void SetContentType(const int64_t& _contentType);
 
                     /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
+                     * 判断参数 ContentType 是否已赋值
+                     * @return ContentType 是否已赋值
                      */
-                    bool AgentHasBeenSet() const;
+                    bool ContentTypeHasBeenSet() const;
 
                 private:
 
@@ -180,16 +251,16 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     * 企业组织相关信息
                      */
-                    std::vector<Filter> m_filters;
-                    bool m_filtersHasBeenSet;
+                    OrganizationInfo m_organization;
+                    bool m_organizationHasBeenSet;
 
                     /**
-                     * 查询个数，默认20，最大200
+                     * 应用相关信息
                      */
-                    uint64_t m_limit;
-                    bool m_limitHasBeenSet;
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                     /**
                      * 查询偏移位置，默认0
@@ -198,10 +269,32 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
+                     * 查询个数，默认20，最大200
                      */
-                    int64_t m_contentType;
-                    bool m_contentTypeHasBeenSet;
+                    uint64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 搜索条件，具体参考Filter结构体。本接口取值：template-id：按照【 **模板唯一标识** 】进行过滤
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 这个参数跟下面的IsChannel参数配合使用。
+IsChannel=false时，ApplicationId参数不起任何作用。
+IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
+ApplicationId为空，查询渠道模板列表
+                     */
+                    std::string m_applicationId;
+                    bool m_applicationIdHasBeenSet;
+
+                    /**
+                     * 默认为false，查询SaaS模板库列表；
+为true，查询渠道模板库管理列表
+                     */
+                    bool m_isChannel;
+                    bool m_isChannelHasBeenSet;
 
                     /**
                      * 暂未开放
@@ -210,10 +303,10 @@ namespace TencentCloud
                     bool m_generateSourceHasBeenSet;
 
                     /**
-                     * 应用相关信息
+                     * 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
+                    int64_t m_contentType;
+                    bool m_contentTypeHasBeenSet;
 
                 };
             }

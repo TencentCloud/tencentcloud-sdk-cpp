@@ -56,7 +56,9 @@ ContainerGroupDeploy::ContainerGroupDeploy() :
     m_volumeInfosHasBeenSet(false),
     m_volumeMountInfosHasBeenSet(false),
     m_kubeInjectEnableHasBeenSet(false),
-    m_repoTypeHasBeenSet(false)
+    m_repoTypeHasBeenSet(false),
+    m_warmupSettingHasBeenSet(false),
+    m_gatewayConfigHasBeenSet(false)
 {
 }
 
@@ -479,6 +481,40 @@ CoreInternalOutcome ContainerGroupDeploy::Deserialize(const rapidjson::Value &va
         m_repoTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("WarmupSetting") && !value["WarmupSetting"].IsNull())
+    {
+        if (!value["WarmupSetting"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDeploy.WarmupSetting` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_warmupSetting.Deserialize(value["WarmupSetting"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_warmupSettingHasBeenSet = true;
+    }
+
+    if (value.HasMember("GatewayConfig") && !value["GatewayConfig"].IsNull())
+    {
+        if (!value["GatewayConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDeploy.GatewayConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gatewayConfig.Deserialize(value["GatewayConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gatewayConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -802,6 +838,24 @@ void ContainerGroupDeploy::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "RepoType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_repoType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warmupSettingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarmupSetting";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_warmupSetting.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gatewayConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gatewayConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1381,5 +1435,37 @@ void ContainerGroupDeploy::SetRepoType(const string& _repoType)
 bool ContainerGroupDeploy::RepoTypeHasBeenSet() const
 {
     return m_repoTypeHasBeenSet;
+}
+
+WarmupSetting ContainerGroupDeploy::GetWarmupSetting() const
+{
+    return m_warmupSetting;
+}
+
+void ContainerGroupDeploy::SetWarmupSetting(const WarmupSetting& _warmupSetting)
+{
+    m_warmupSetting = _warmupSetting;
+    m_warmupSettingHasBeenSet = true;
+}
+
+bool ContainerGroupDeploy::WarmupSettingHasBeenSet() const
+{
+    return m_warmupSettingHasBeenSet;
+}
+
+GatewayConfig ContainerGroupDeploy::GetGatewayConfig() const
+{
+    return m_gatewayConfig;
+}
+
+void ContainerGroupDeploy::SetGatewayConfig(const GatewayConfig& _gatewayConfig)
+{
+    m_gatewayConfig = _gatewayConfig;
+    m_gatewayConfigHasBeenSet = true;
+}
+
+bool ContainerGroupDeploy::GatewayConfigHasBeenSet() const
+{
+    return m_gatewayConfigHasBeenSet;
 }
 

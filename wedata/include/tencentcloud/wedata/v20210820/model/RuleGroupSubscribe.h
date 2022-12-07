@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/SubscribeReceiver.h>
+#include <tencentcloud/wedata/v20210820/model/SubscribeWebHook.h>
 
 
 namespace TencentCloud
@@ -113,6 +114,28 @@ namespace TencentCloud
                      */
                     bool SubscribeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取群机器人配置的webhook信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WebHooks 群机器人配置的webhook信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SubscribeWebHook> GetWebHooks() const;
+
+                    /**
+                     * 设置群机器人配置的webhook信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WebHooks 群机器人配置的webhook信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWebHooks(const std::vector<SubscribeWebHook>& _webHooks);
+
+                    /**
+                     * 判断参数 WebHooks 是否已赋值
+                     * @return WebHooks 是否已赋值
+                     */
+                    bool WebHooksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +158,13 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_subscribeType;
                     bool m_subscribeTypeHasBeenSet;
+
+                    /**
+                     * 群机器人配置的webhook信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SubscribeWebHook> m_webHooks;
+                    bool m_webHooksHasBeenSet;
 
                 };
             }

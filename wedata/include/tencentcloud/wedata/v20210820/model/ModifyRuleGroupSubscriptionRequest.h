@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/SubscribeReceiver.h>
+#include <tencentcloud/wedata/v20210820/model/SubscribeWebHook.h>
 
 
 namespace TencentCloud
@@ -169,6 +170,24 @@ namespace TencentCloud
                      */
                     bool TableIdHasBeenSet() const;
 
+                    /**
+                     * 获取群机器人webhook信息
+                     * @return WebHooks 群机器人webhook信息
+                     */
+                    std::vector<SubscribeWebHook> GetWebHooks() const;
+
+                    /**
+                     * 设置群机器人webhook信息
+                     * @param WebHooks 群机器人webhook信息
+                     */
+                    void SetWebHooks(const std::vector<SubscribeWebHook>& _webHooks);
+
+                    /**
+                     * 判断参数 WebHooks 是否已赋值
+                     * @return WebHooks 是否已赋值
+                     */
+                    bool WebHooksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +231,12 @@ namespace TencentCloud
                      */
                     std::string m_tableId;
                     bool m_tableIdHasBeenSet;
+
+                    /**
+                     * 群机器人webhook信息
+                     */
+                    std::vector<SubscribeWebHook> m_webHooks;
+                    bool m_webHooksHasBeenSet;
 
                 };
             }

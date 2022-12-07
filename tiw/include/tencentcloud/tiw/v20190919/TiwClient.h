@@ -39,6 +39,8 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTIWDailyUsageRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTIWDailyUsageResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeTIWRoomDailyUsageRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeTIWRoomDailyUsageResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h>
@@ -117,6 +119,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTIWDailyUsageResponse> DescribeTIWDailyUsageOutcome;
                 typedef std::future<DescribeTIWDailyUsageOutcome> DescribeTIWDailyUsageOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeTIWDailyUsageRequest&, DescribeTIWDailyUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTIWDailyUsageAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTIWRoomDailyUsageResponse> DescribeTIWRoomDailyUsageOutcome;
+                typedef std::future<DescribeTIWRoomDailyUsageOutcome> DescribeTIWRoomDailyUsageOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeTIWRoomDailyUsageRequest&, DescribeTIWRoomDailyUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTIWRoomDailyUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTranscodeResponse> DescribeTranscodeOutcome;
                 typedef std::future<DescribeTranscodeOutcome> DescribeTranscodeOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeTranscodeRequest&, DescribeTranscodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTranscodeAsyncHandler;
@@ -254,6 +259,18 @@ namespace TencentCloud
                 DescribeTIWDailyUsageOutcome DescribeTIWDailyUsage(const Model::DescribeTIWDailyUsageRequest &request);
                 void DescribeTIWDailyUsageAsync(const Model::DescribeTIWDailyUsageRequest& request, const DescribeTIWDailyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTIWDailyUsageOutcomeCallable DescribeTIWDailyUsageCallable(const Model::DescribeTIWDailyUsageRequest& request);
+
+                /**
+                 *查询互动白板房间维度每天计费用量。
+1. 单次查询统计区间最多不能超过31天。
+2. 由于统计延迟等原因，暂时不支持查询当天数据，建议在次日上午7点以后再来查询前一天的用量，例如在10月27日上午7点后，再来查询到10月26日整天的用量
+
+                 * @param req DescribeTIWRoomDailyUsageRequest
+                 * @return DescribeTIWRoomDailyUsageOutcome
+                 */
+                DescribeTIWRoomDailyUsageOutcome DescribeTIWRoomDailyUsage(const Model::DescribeTIWRoomDailyUsageRequest &request);
+                void DescribeTIWRoomDailyUsageAsync(const Model::DescribeTIWRoomDailyUsageRequest& request, const DescribeTIWRoomDailyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTIWRoomDailyUsageOutcomeCallable DescribeTIWRoomDailyUsageCallable(const Model::DescribeTIWRoomDailyUsageRequest& request);
 
                 /**
                  *查询文档转码任务的执行进度与转码结果

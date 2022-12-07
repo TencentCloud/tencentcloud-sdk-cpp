@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/ApplyCDBProxyResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeTIWRoomDailyUsageResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Tiw::V20190919::Model;
 using namespace std;
 
-ApplyCDBProxyResponse::ApplyCDBProxyResponse() :
-    m_asyncRequestIdHasBeenSet(false)
+DescribeTIWRoomDailyUsageResponse::DescribeTIWRoomDailyUsageResponse() :
+    m_usagesHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ApplyCDBProxyResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTIWRoomDailyUsageResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +63,67 @@ CoreInternalOutcome ApplyCDBProxyResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("AsyncRequestId") && !rsp["AsyncRequestId"].IsNull())
+    if (rsp.HasMember("Usages") && !rsp["Usages"].IsNull())
     {
-        if (!rsp["AsyncRequestId"].IsString())
+        if (!rsp["Usages"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Usages` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Usages"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `AsyncRequestId` IsString=false incorrectly").SetRequestId(requestId));
+            RoomUsageDataItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_usages.push_back(item);
         }
-        m_asyncRequestId = string(rsp["AsyncRequestId"].GetString());
-        m_asyncRequestIdHasBeenSet = true;
+        m_usagesHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ApplyCDBProxyResponse::ToJsonString() const
+string DescribeTIWRoomDailyUsageResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_asyncRequestIdHasBeenSet)
+    if (m_usagesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AsyncRequestId";
+        string key = "Usages";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_usages.begin(); itr != m_usages.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +138,24 @@ string ApplyCDBProxyResponse::ToJsonString() const
 }
 
 
-string ApplyCDBProxyResponse::GetAsyncRequestId() const
+vector<RoomUsageDataItem> DescribeTIWRoomDailyUsageResponse::GetUsages() const
 {
-    return m_asyncRequestId;
+    return m_usages;
 }
 
-bool ApplyCDBProxyResponse::AsyncRequestIdHasBeenSet() const
+bool DescribeTIWRoomDailyUsageResponse::UsagesHasBeenSet() const
 {
-    return m_asyncRequestIdHasBeenSet;
+    return m_usagesHasBeenSet;
+}
+
+uint64_t DescribeTIWRoomDailyUsageResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeTIWRoomDailyUsageResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

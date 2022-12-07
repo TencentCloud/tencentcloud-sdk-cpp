@@ -70,7 +70,9 @@ DBInstance::DBInstance() :
     m_dnsPodDomainHasBeenSet(false),
     m_tgwWanVPortHasBeenSet(false),
     m_collationHasBeenSet(false),
-    m_timeZoneHasBeenSet(false)
+    m_timeZoneHasBeenSet(false),
+    m_isDrZoneHasBeenSet(false),
+    m_slaveZonesHasBeenSet(false)
 {
 }
 
@@ -595,6 +597,33 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_timeZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("IsDrZone") && !value["IsDrZone"].IsNull())
+    {
+        if (!value["IsDrZone"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.IsDrZone` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isDrZone = value["IsDrZone"].GetBool();
+        m_isDrZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaveZones") && !value["SlaveZones"].IsNull())
+    {
+        if (!value["SlaveZones"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.SlaveZones` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_slaveZones.Deserialize(value["SlaveZones"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_slaveZonesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1017,6 +1046,23 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "TimeZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_timeZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isDrZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsDrZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isDrZone, allocator);
+    }
+
+    if (m_slaveZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_slaveZones.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1820,5 +1866,37 @@ void DBInstance::SetTimeZone(const string& _timeZone)
 bool DBInstance::TimeZoneHasBeenSet() const
 {
     return m_timeZoneHasBeenSet;
+}
+
+bool DBInstance::GetIsDrZone() const
+{
+    return m_isDrZone;
+}
+
+void DBInstance::SetIsDrZone(const bool& _isDrZone)
+{
+    m_isDrZone = _isDrZone;
+    m_isDrZoneHasBeenSet = true;
+}
+
+bool DBInstance::IsDrZoneHasBeenSet() const
+{
+    return m_isDrZoneHasBeenSet;
+}
+
+SlaveZones DBInstance::GetSlaveZones() const
+{
+    return m_slaveZones;
+}
+
+void DBInstance::SetSlaveZones(const SlaveZones& _slaveZones)
+{
+    m_slaveZones = _slaveZones;
+    m_slaveZonesHasBeenSet = true;
+}
+
+bool DBInstance::SlaveZonesHasBeenSet() const
+{
+    return m_slaveZonesHasBeenSet;
 }
 

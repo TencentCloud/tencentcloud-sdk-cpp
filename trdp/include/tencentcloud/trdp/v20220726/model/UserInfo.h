@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ChannelSourceHasBeenSet() const;
 
                     /**
-                     * 获取用户登录平台。1：安卓 2：iOS 3：H5 4：小程序
-                     * @return Platform 用户登录平台。1：安卓 2：iOS 3：H5 4：小程序
+                     * 获取用户登录平台。1：Android 2：iOS 3：H5 4：小程序
+                     * @return Platform 用户登录平台。1：Android 2：iOS 3：H5 4：小程序
                      */
                     int64_t GetPlatform() const;
 
                     /**
-                     * 设置用户登录平台。1：安卓 2：iOS 3：H5 4：小程序
-                     * @param Platform 用户登录平台。1：安卓 2：iOS 3：H5 4：小程序
+                     * 设置用户登录平台。1：Android 2：iOS 3：H5 4：小程序
+                     * @param Platform 用户登录平台。1：Android 2：iOS 3：H5 4：小程序
                      */
                     void SetPlatform(const int64_t& _platform);
 
@@ -249,7 +249,7 @@ female（女）
                     bool m_channelSourceHasBeenSet;
 
                     /**
-                     * 用户登录平台。1：安卓 2：iOS 3：H5 4：小程序
+                     * 用户登录平台。1：Android 2：iOS 3：H5 4：小程序
                      */
                     int64_t m_platform;
                     bool m_platformHasBeenSet;

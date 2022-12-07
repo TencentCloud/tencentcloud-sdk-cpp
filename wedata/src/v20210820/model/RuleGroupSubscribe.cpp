@@ -23,7 +23,8 @@ using namespace std;
 RuleGroupSubscribe::RuleGroupSubscribe() :
     m_ruleGroupIdHasBeenSet(false),
     m_receiversHasBeenSet(false),
-    m_subscribeTypeHasBeenSet(false)
+    m_subscribeTypeHasBeenSet(false),
+    m_webHooksHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,26 @@ CoreInternalOutcome RuleGroupSubscribe::Deserialize(const rapidjson::Value &valu
         m_subscribeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("WebHooks") && !value["WebHooks"].IsNull())
+    {
+        if (!value["WebHooks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleGroupSubscribe.WebHooks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["WebHooks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SubscribeWebHook item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_webHooks.push_back(item);
+        }
+        m_webHooksHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +136,21 @@ void RuleGroupSubscribe::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         for (auto itr = m_subscribeType.begin(); itr != m_subscribeType.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_webHooksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebHooks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_webHooks.begin(); itr != m_webHooks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -167,5 +203,21 @@ void RuleGroupSubscribe::SetSubscribeType(const vector<uint64_t>& _subscribeType
 bool RuleGroupSubscribe::SubscribeTypeHasBeenSet() const
 {
     return m_subscribeTypeHasBeenSet;
+}
+
+vector<SubscribeWebHook> RuleGroupSubscribe::GetWebHooks() const
+{
+    return m_webHooks;
+}
+
+void RuleGroupSubscribe::SetWebHooks(const vector<SubscribeWebHook>& _webHooks)
+{
+    m_webHooks = _webHooks;
+    m_webHooksHasBeenSet = true;
+}
+
+bool RuleGroupSubscribe::WebHooksHasBeenSet() const
+{
+    return m_webHooksHasBeenSet;
 }
 

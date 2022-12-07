@@ -1023,7 +1023,7 @@ namespace TencentCloud
                 CreateClusterNodePoolFromExistingAsgOutcomeCallable CreateClusterNodePoolFromExistingAsgCallable(const Model::CreateClusterNodePoolFromExistingAsgRequest& request);
 
                 /**
-                 *在应用市场中集群创建应用
+                 *在应用市场中给集群创建应用
                  * @param req CreateClusterReleaseRequest
                  * @return CreateClusterReleaseOutcome
                  */

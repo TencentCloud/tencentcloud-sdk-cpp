@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ScheduleIdHasBeenSet() const;
 
                     /**
-                     * 获取选择的星期 逗号分隔
-                     * @return WeekDays 选择的星期 逗号分隔
+                     * 获取选择的星期 逗号分隔，例如 2 代表周二
+                     * @return WeekDays 选择的星期 逗号分隔，例如 2 代表周二
                      */
                     std::string GetWeekDays() const;
 
                     /**
-                     * 设置选择的星期 逗号分隔
-                     * @param WeekDays 选择的星期 逗号分隔
+                     * 设置选择的星期 逗号分隔，例如 2 代表周二
+                     * @param WeekDays 选择的星期 逗号分隔，例如 2 代表周二
                      */
                     void SetWeekDays(const std::string& _weekDays);
 
@@ -124,7 +124,7 @@ namespace TencentCloud
                     bool m_scheduleIdHasBeenSet;
 
                     /**
-                     * 选择的星期 逗号分隔
+                     * 选择的星期 逗号分隔，例如 2 代表周二
                      */
                     std::string m_weekDays;
                     bool m_weekDaysHasBeenSet;

@@ -417,6 +417,42 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     * @return GpuCount 实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     */
+                    double GetGpuCount() const;
+
+                    /**
+                     * 设置实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     * @param GpuCount 实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     */
+                    void SetGpuCount(const double& _gpuCount);
+
+                    /**
+                     * 判断参数 GpuCount 是否已赋值
+                     * @return GpuCount 是否已赋值
+                     */
+                    bool GpuCountHasBeenSet() const;
+
+                    /**
+                     * 获取实例的CPU主频信息
+                     * @return Frequency 实例的CPU主频信息
+                     */
+                    std::string GetFrequency() const;
+
+                    /**
+                     * 设置实例的CPU主频信息
+                     * @param Frequency 实例的CPU主频信息
+                     */
+                    void SetFrequency(const std::string& _frequency);
+
+                    /**
+                     * 判断参数 Frequency 是否已赋值
+                     * @return Frequency 是否已赋值
+                     */
+                    bool FrequencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -540,6 +576,18 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 实例机型映射的物理GPU卡数，单位：卡。vGPU卡型小于1，直通卡型大于等于1。vGPU是通过分片虚拟化技术，将物理GPU卡重新划分，同一块GPU卡经虚拟化分割后可分配至不同的实例使用。直通卡型会将GPU设备直接挂载给实例使用。
+                     */
+                    double m_gpuCount;
+                    bool m_gpuCountHasBeenSet;
+
+                    /**
+                     * 实例的CPU主频信息
+                     */
+                    std::string m_frequency;
+                    bool m_frequencyHasBeenSet;
 
                 };
             }

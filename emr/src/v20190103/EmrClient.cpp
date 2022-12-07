@@ -126,6 +126,49 @@ EmrClient::CreateInstanceOutcomeCallable EmrClient::CreateInstanceCallable(const
     return task->get_future();
 }
 
+EmrClient::DeleteUserManagerUserListOutcome EmrClient::DeleteUserManagerUserList(const DeleteUserManagerUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteUserManagerUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteUserManagerUserListResponse rsp = DeleteUserManagerUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteUserManagerUserListOutcome(rsp);
+        else
+            return DeleteUserManagerUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteUserManagerUserListOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::DeleteUserManagerUserListAsync(const DeleteUserManagerUserListRequest& request, const DeleteUserManagerUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteUserManagerUserList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::DeleteUserManagerUserListOutcomeCallable EmrClient::DeleteUserManagerUserListCallable(const DeleteUserManagerUserListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteUserManagerUserListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteUserManagerUserList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::DescribeClusterNodesOutcome EmrClient::DescribeClusterNodes(const DescribeClusterNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterNodes");

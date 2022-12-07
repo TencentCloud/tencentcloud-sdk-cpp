@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TagNameHasBeenSet() const;
 
                     /**
-                     * 获取镜像Id
-                     * @return TagId 镜像Id
+                     * 获取制品的 ID
+                     * @return TagId 制品的 ID
                      */
                     std::string GetTagId() const;
 
                     /**
-                     * 设置镜像Id
-                     * @param TagId 镜像Id
+                     * 设置制品的 ID
+                     * @param TagId 制品的 ID
                      */
                     void SetTagId(const std::string& _tagId);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool SizeHasBeenSet() const;
 
                     /**
-                     * 获取镜像的创建时间
-                     * @return CreationTime 镜像的创建时间
+                     * 获取制品的创建时间
+                     * @return CreationTime 制品的创建时间
                      */
                     std::string GetCreationTime() const;
 
                     /**
-                     * 设置镜像的创建时间
-                     * @param CreationTime 镜像的创建时间
+                     * 设置制品的创建时间
+                     * @param CreationTime 制品的创建时间
                      */
                     void SetCreationTime(const std::string& _creationTime);
 
@@ -137,17 +137,17 @@ namespace TencentCloud
                     bool CreationTimeHasBeenSet() const;
 
                     /**
-                     * 获取镜像创建至今时间长度
+                     * 获取制品创建至今时间长度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DurationDays 镜像创建至今时间长度
+                     * @return DurationDays 制品创建至今时间长度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDurationDays() const;
 
                     /**
-                     * 设置镜像创建至今时间长度
+                     * 设置制品创建至今时间长度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DurationDays 镜像创建至今时间长度
+                     * @param DurationDays 制品创建至今时间长度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDurationDays(const std::string& _durationDays);
@@ -159,14 +159,14 @@ namespace TencentCloud
                     bool DurationDaysHasBeenSet() const;
 
                     /**
-                     * 获取镜像的作者
-                     * @return Author 镜像的作者
+                     * 获取标注的制品作者
+                     * @return Author 标注的制品作者
                      */
                     std::string GetAuthor() const;
 
                     /**
-                     * 设置镜像的作者
-                     * @param Author 镜像的作者
+                     * 设置标注的制品作者
+                     * @param Author 标注的制品作者
                      */
                     void SetAuthor(const std::string& _author);
 
@@ -177,14 +177,14 @@ namespace TencentCloud
                     bool AuthorHasBeenSet() const;
 
                     /**
-                     * 获取次镜像建议运行的系统架构
-                     * @return Architecture 次镜像建议运行的系统架构
+                     * 获取标注的制品平台
+                     * @return Architecture 标注的制品平台
                      */
                     std::string GetArchitecture() const;
 
                     /**
-                     * 设置次镜像建议运行的系统架构
-                     * @param Architecture 次镜像建议运行的系统架构
+                     * 设置标注的制品平台
+                     * @param Architecture 标注的制品平台
                      */
                     void SetArchitecture(const std::string& _architecture);
 
@@ -195,14 +195,14 @@ namespace TencentCloud
                     bool ArchitectureHasBeenSet() const;
 
                     /**
-                     * 获取创建此镜像的docker版本
-                     * @return DockerVersion 创建此镜像的docker版本
+                     * 获取创建制品的 Docker 版本
+                     * @return DockerVersion 创建制品的 Docker 版本
                      */
                     std::string GetDockerVersion() const;
 
                     /**
-                     * 设置创建此镜像的docker版本
-                     * @param DockerVersion 创建此镜像的docker版本
+                     * 设置创建制品的 Docker 版本
+                     * @param DockerVersion 创建制品的 Docker 版本
                      */
                     void SetDockerVersion(const std::string& _dockerVersion);
 
@@ -213,14 +213,14 @@ namespace TencentCloud
                     bool DockerVersionHasBeenSet() const;
 
                     /**
-                     * 获取此镜像建议运行系统
-                     * @return OS 此镜像建议运行系统
+                     * 获取标注的制品操作系统
+                     * @return OS 标注的制品操作系统
                      */
                     std::string GetOS() const;
 
                     /**
-                     * 设置此镜像建议运行系统
-                     * @param OS 此镜像建议运行系统
+                     * 设置标注的制品操作系统
+                     * @param OS 标注的制品操作系统
                      */
                     void SetOS(const std::string& _oS);
 
@@ -231,14 +231,14 @@ namespace TencentCloud
                     bool OSHasBeenSet() const;
 
                     /**
-                     * 获取SizeByte
-                     * @return SizeByte SizeByte
+                     * 获取制品大小
+                     * @return SizeByte 制品大小
                      */
                     int64_t GetSizeByte() const;
 
                     /**
-                     * 设置SizeByte
-                     * @param SizeByte SizeByte
+                     * 设置制品大小
+                     * @param SizeByte 制品大小
                      */
                     void SetSizeByte(const int64_t& _sizeByte);
 
@@ -249,14 +249,14 @@ namespace TencentCloud
                     bool SizeByteHasBeenSet() const;
 
                     /**
-                     * 获取Id
-                     * @return Id Id
+                     * 获取序号
+                     * @return Id 序号
                      */
                     int64_t GetId() const;
 
                     /**
-                     * 设置Id
-                     * @param Id Id
+                     * 设置序号
+                     * @param Id 序号
                      */
                     void SetId(const int64_t& _id);
 
@@ -285,14 +285,14 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取镜像更新时间
-                     * @return PushTime 镜像更新时间
+                     * 获取制品更新时间
+                     * @return PushTime 制品更新时间
                      */
                     std::string GetPushTime() const;
 
                     /**
-                     * 设置镜像更新时间
-                     * @param PushTime 镜像更新时间
+                     * 设置制品更新时间
+                     * @param PushTime 制品更新时间
                      */
                     void SetPushTime(const std::string& _pushTime);
 
@@ -301,6 +301,24 @@ namespace TencentCloud
                      * @return PushTime 是否已赋值
                      */
                     bool PushTimeHasBeenSet() const;
+
+                    /**
+                     * 获取制品类型
+                     * @return Kind 制品类型
+                     */
+                    std::string GetKind() const;
+
+                    /**
+                     * 设置制品类型
+                     * @param Kind 制品类型
+                     */
+                    void SetKind(const std::string& _kind);
+
+                    /**
+                     * 判断参数 Kind 是否已赋值
+                     * @return Kind 是否已赋值
+                     */
+                    bool KindHasBeenSet() const;
 
                 private:
 
@@ -311,7 +329,7 @@ namespace TencentCloud
                     bool m_tagNameHasBeenSet;
 
                     /**
-                     * 镜像Id
+                     * 制品的 ID
                      */
                     std::string m_tagId;
                     bool m_tagIdHasBeenSet;
@@ -329,50 +347,50 @@ namespace TencentCloud
                     bool m_sizeHasBeenSet;
 
                     /**
-                     * 镜像的创建时间
+                     * 制品的创建时间
                      */
                     std::string m_creationTime;
                     bool m_creationTimeHasBeenSet;
 
                     /**
-                     * 镜像创建至今时间长度
+                     * 制品创建至今时间长度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_durationDays;
                     bool m_durationDaysHasBeenSet;
 
                     /**
-                     * 镜像的作者
+                     * 标注的制品作者
                      */
                     std::string m_author;
                     bool m_authorHasBeenSet;
 
                     /**
-                     * 次镜像建议运行的系统架构
+                     * 标注的制品平台
                      */
                     std::string m_architecture;
                     bool m_architectureHasBeenSet;
 
                     /**
-                     * 创建此镜像的docker版本
+                     * 创建制品的 Docker 版本
                      */
                     std::string m_dockerVersion;
                     bool m_dockerVersionHasBeenSet;
 
                     /**
-                     * 此镜像建议运行系统
+                     * 标注的制品操作系统
                      */
                     std::string m_oS;
                     bool m_oSHasBeenSet;
 
                     /**
-                     * SizeByte
+                     * 制品大小
                      */
                     int64_t m_sizeByte;
                     bool m_sizeByteHasBeenSet;
 
                     /**
-                     * Id
+                     * 序号
                      */
                     int64_t m_id;
                     bool m_idHasBeenSet;
@@ -384,10 +402,16 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 镜像更新时间
+                     * 制品更新时间
                      */
                     std::string m_pushTime;
                     bool m_pushTimeHasBeenSet;
+
+                    /**
+                     * 制品类型
+                     */
+                    std::string m_kind;
+                    bool m_kindHasBeenSet;
 
                 };
             }

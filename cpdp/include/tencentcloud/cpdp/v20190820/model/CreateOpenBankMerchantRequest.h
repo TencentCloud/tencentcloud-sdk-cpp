@@ -63,24 +63,16 @@ namespace TencentCloud
                     /**
                      * 获取渠道名称。
 __TENPAY__: 商企付
-__WECHAT__: 微信支付
-__ALIPAY__: 支付宝
                      * @return ChannelName 渠道名称。
 __TENPAY__: 商企付
-__WECHAT__: 微信支付
-__ALIPAY__: 支付宝
                      */
                     std::string GetChannelName() const;
 
                     /**
                      * 设置渠道名称。
 __TENPAY__: 商企付
-__WECHAT__: 微信支付
-__ALIPAY__: 支付宝
                      * @param ChannelName 渠道名称。
 __TENPAY__: 商企付
-__WECHAT__: 微信支付
-__ALIPAY__: 支付宝
                      */
                     void SetChannelName(const std::string& _channelName);
 
@@ -203,8 +195,6 @@ _不填默认为生产环境_
                     /**
                      * 渠道名称。
 __TENPAY__: 商企付
-__WECHAT__: 微信支付
-__ALIPAY__: 支付宝
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;

@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取数据库名称
+                     * @return Name 数据库名称
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置数据库名称
+                     * @param Name 数据库名称
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取排序规则（desc-降序，asc-升序），默认desc
+                     * @return OrderByType 排序规则（desc-降序，asc-升序），默认desc
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序规则（desc-降序，asc-升序），默认desc
+                     * @param OrderByType 排序规则（desc-降序，asc-升序），默认desc
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 数据库名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * 排序规则（desc-降序，asc-升序），默认desc
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
 
                 };
             }

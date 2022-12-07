@@ -26,7 +26,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/RWInfo.h
   include/tencentcloud/cdb/v20170320/model/InstanceRollbackRangeTime.h
   include/tencentcloud/cdb/v20170320/model/DescribeTablesResponse.h
-  include/tencentcloud/cdb/v20170320/model/ApplyCDBProxyResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyTimeWindowResponse.h
   include/tencentcloud/cdb/v20170320/model/ParamRecord.h
@@ -107,7 +106,6 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/CreateAuditRuleResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h
-  include/tencentcloud/cdb/v20170320/model/ApplyCDBProxyRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditRuleRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleRequest.h
@@ -387,7 +385,6 @@ set(cdb_src
   src/v20170320/model/RWInfo.cpp
   src/v20170320/model/InstanceRollbackRangeTime.cpp
   src/v20170320/model/DescribeTablesResponse.cpp
-  src/v20170320/model/ApplyCDBProxyResponse.cpp
   src/v20170320/model/ModifyBackupDownloadRestrictionResponse.cpp
   src/v20170320/model/ModifyTimeWindowResponse.cpp
   src/v20170320/model/ParamRecord.cpp
@@ -468,7 +465,6 @@ set(cdb_src
   src/v20170320/model/CreateAuditRuleResponse.cpp
   src/v20170320/model/DescribeDBInstanceInfoResponse.cpp
   src/v20170320/model/AssociateSecurityGroupsRequest.cpp
-  src/v20170320/model/ApplyCDBProxyRequest.cpp
   src/v20170320/model/ModifyAuditRuleRequest.cpp
   src/v20170320/model/DescribeBinlogsResponse.cpp
   src/v20170320/model/DescribeRoMinScaleRequest.cpp

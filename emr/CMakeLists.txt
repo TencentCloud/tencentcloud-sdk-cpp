@@ -65,6 +65,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceResponse.h
   include/tencentcloud/emr/v20190103/model/NewResourceSpec.h
   include/tencentcloud/emr/v20190103/model/PersistentVolumeContext.h
+  include/tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeResourceScheduleResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceSchedulerRequest.h
   include/tencentcloud/emr/v20190103/model/LoginSettings.h
@@ -84,6 +85,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/InquiryPriceUpdateInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesListRequest.h
   include/tencentcloud/emr/v20190103/model/OutterResource.h
+  include/tencentcloud/emr/v20190103/model/DeleteUserManagerUserListResponse.h
   include/tencentcloud/emr/v20190103/model/ModifyResourcePoolsResponse.h
   include/tencentcloud/emr/v20190103/model/TerminateTasksResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeInstancesResponse.h
@@ -172,6 +174,7 @@ set(emr_src
   src/v20190103/model/InquiryPriceUpdateInstanceResponse.cpp
   src/v20190103/model/NewResourceSpec.cpp
   src/v20190103/model/PersistentVolumeContext.cpp
+  src/v20190103/model/DeleteUserManagerUserListRequest.cpp
   src/v20190103/model/DescribeResourceScheduleResponse.cpp
   src/v20190103/model/ModifyResourceSchedulerRequest.cpp
   src/v20190103/model/LoginSettings.cpp
@@ -191,6 +194,7 @@ set(emr_src
   src/v20190103/model/InquiryPriceUpdateInstanceRequest.cpp
   src/v20190103/model/DescribeInstancesListRequest.cpp
   src/v20190103/model/OutterResource.cpp
+  src/v20190103/model/DeleteUserManagerUserListResponse.cpp
   src/v20190103/model/ModifyResourcePoolsResponse.cpp
   src/v20190103/model/TerminateTasksResponse.cpp
   src/v20190103/model/DescribeInstancesResponse.cpp

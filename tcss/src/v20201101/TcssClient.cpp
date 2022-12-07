@@ -857,6 +857,92 @@ TcssClient::ConfirmNetworkFirewallPolicyOutcomeCallable TcssClient::ConfirmNetwo
     return task->get_future();
 }
 
+TcssClient::CreateAbnormalProcessRulesExportJobOutcome TcssClient::CreateAbnormalProcessRulesExportJob(const CreateAbnormalProcessRulesExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAbnormalProcessRulesExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAbnormalProcessRulesExportJobResponse rsp = CreateAbnormalProcessRulesExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAbnormalProcessRulesExportJobOutcome(rsp);
+        else
+            return CreateAbnormalProcessRulesExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAbnormalProcessRulesExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateAbnormalProcessRulesExportJobAsync(const CreateAbnormalProcessRulesExportJobRequest& request, const CreateAbnormalProcessRulesExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAbnormalProcessRulesExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateAbnormalProcessRulesExportJobOutcomeCallable TcssClient::CreateAbnormalProcessRulesExportJobCallable(const CreateAbnormalProcessRulesExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAbnormalProcessRulesExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAbnormalProcessRulesExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcssClient::CreateAccessControlsRuleExportJobOutcome TcssClient::CreateAccessControlsRuleExportJob(const CreateAccessControlsRuleExportJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccessControlsRuleExportJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccessControlsRuleExportJobResponse rsp = CreateAccessControlsRuleExportJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccessControlsRuleExportJobOutcome(rsp);
+        else
+            return CreateAccessControlsRuleExportJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccessControlsRuleExportJobOutcome(outcome.GetError());
+    }
+}
+
+void TcssClient::CreateAccessControlsRuleExportJobAsync(const CreateAccessControlsRuleExportJobRequest& request, const CreateAccessControlsRuleExportJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccessControlsRuleExportJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcssClient::CreateAccessControlsRuleExportJobOutcomeCallable TcssClient::CreateAccessControlsRuleExportJobCallable(const CreateAccessControlsRuleExportJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccessControlsRuleExportJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccessControlsRuleExportJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcssClient::CreateAssetImageRegistryScanTaskOutcome TcssClient::CreateAssetImageRegistryScanTask(const CreateAssetImageRegistryScanTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAssetImageRegistryScanTask");

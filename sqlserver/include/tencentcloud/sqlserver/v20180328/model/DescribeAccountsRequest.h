@@ -96,6 +96,60 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取账号名称
+                     * @return Name 账号名称
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置账号名称
+                     * @param Name 账号名称
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取createTime,updateTime,passTime" note:"排序字段，默认按照账号创建时间倒序
+                     * @return OrderBy createTime,updateTime,passTime" note:"排序字段，默认按照账号创建时间倒序
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置createTime,updateTime,passTime" note:"排序字段，默认按照账号创建时间倒序
+                     * @param OrderBy createTime,updateTime,passTime" note:"排序字段，默认按照账号创建时间倒序
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取排序规则（desc-降序，asc-升序），默认desc
+                     * @return OrderByType 排序规则（desc-降序，asc-升序），默认desc
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置排序规则（desc-降序，asc-升序），默认desc
+                     * @param OrderByType 排序规则（desc-降序，asc-升序），默认desc
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +169,24 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 账号名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * createTime,updateTime,passTime" note:"排序字段，默认按照账号创建时间倒序
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 排序规则（desc-降序，asc-升序），默认desc
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
 
                 };
             }

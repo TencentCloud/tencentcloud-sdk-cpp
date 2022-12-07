@@ -33,7 +33,8 @@ CreateClusterReleaseRequest::CreateClusterReleaseRequest() :
     m_chartRepoURLHasBeenSet(false),
     m_usernameHasBeenSet(false),
     m_passwordHasBeenSet(false),
-    m_chartNamespaceHasBeenSet(false)
+    m_chartNamespaceHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,14 @@ string CreateClusterReleaseRequest::ToJsonString() const
         string key = "ChartNamespace";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_chartNamespace.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -315,6 +324,22 @@ void CreateClusterReleaseRequest::SetChartNamespace(const string& _chartNamespac
 bool CreateClusterReleaseRequest::ChartNamespaceHasBeenSet() const
 {
     return m_chartNamespaceHasBeenSet;
+}
+
+string CreateClusterReleaseRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void CreateClusterReleaseRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool CreateClusterReleaseRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 

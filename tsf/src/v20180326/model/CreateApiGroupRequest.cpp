@@ -28,7 +28,11 @@ CreateApiGroupRequest::CreateApiGroupRequest() :
     m_authTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_groupTypeHasBeenSet(false),
-    m_gatewayInstanceIdHasBeenSet(false)
+    m_gatewayInstanceIdHasBeenSet(false),
+    m_namespaceNameKeyHasBeenSet(false),
+    m_serviceNameKeyHasBeenSet(false),
+    m_namespaceNameKeyPositionHasBeenSet(false),
+    m_serviceNameKeyPositionHasBeenSet(false)
 {
 }
 
@@ -85,6 +89,38 @@ string CreateApiGroupRequest::ToJsonString() const
         string key = "GatewayInstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_gatewayInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceNameKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceNameKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_namespaceNameKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNameKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceNameKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceNameKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_namespaceNameKeyPositionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NamespaceNameKeyPosition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_namespaceNameKeyPosition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceNameKeyPositionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceNameKeyPosition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceNameKeyPosition.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +225,70 @@ void CreateApiGroupRequest::SetGatewayInstanceId(const string& _gatewayInstanceI
 bool CreateApiGroupRequest::GatewayInstanceIdHasBeenSet() const
 {
     return m_gatewayInstanceIdHasBeenSet;
+}
+
+string CreateApiGroupRequest::GetNamespaceNameKey() const
+{
+    return m_namespaceNameKey;
+}
+
+void CreateApiGroupRequest::SetNamespaceNameKey(const string& _namespaceNameKey)
+{
+    m_namespaceNameKey = _namespaceNameKey;
+    m_namespaceNameKeyHasBeenSet = true;
+}
+
+bool CreateApiGroupRequest::NamespaceNameKeyHasBeenSet() const
+{
+    return m_namespaceNameKeyHasBeenSet;
+}
+
+string CreateApiGroupRequest::GetServiceNameKey() const
+{
+    return m_serviceNameKey;
+}
+
+void CreateApiGroupRequest::SetServiceNameKey(const string& _serviceNameKey)
+{
+    m_serviceNameKey = _serviceNameKey;
+    m_serviceNameKeyHasBeenSet = true;
+}
+
+bool CreateApiGroupRequest::ServiceNameKeyHasBeenSet() const
+{
+    return m_serviceNameKeyHasBeenSet;
+}
+
+string CreateApiGroupRequest::GetNamespaceNameKeyPosition() const
+{
+    return m_namespaceNameKeyPosition;
+}
+
+void CreateApiGroupRequest::SetNamespaceNameKeyPosition(const string& _namespaceNameKeyPosition)
+{
+    m_namespaceNameKeyPosition = _namespaceNameKeyPosition;
+    m_namespaceNameKeyPositionHasBeenSet = true;
+}
+
+bool CreateApiGroupRequest::NamespaceNameKeyPositionHasBeenSet() const
+{
+    return m_namespaceNameKeyPositionHasBeenSet;
+}
+
+string CreateApiGroupRequest::GetServiceNameKeyPosition() const
+{
+    return m_serviceNameKeyPosition;
+}
+
+void CreateApiGroupRequest::SetServiceNameKeyPosition(const string& _serviceNameKeyPosition)
+{
+    m_serviceNameKeyPosition = _serviceNameKeyPosition;
+    m_serviceNameKeyPositionHasBeenSet = true;
+}
+
+bool CreateApiGroupRequest::ServiceNameKeyPositionHasBeenSet() const
+{
+    return m_serviceNameKeyPositionHasBeenSet;
 }
 
 

@@ -389,6 +389,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DeleteTaskAlarmRegularRequest.h
   include/tencentcloud/wedata/v20210820/model/CompareRule.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsAgentStatusRequest.h
+  include/tencentcloud/wedata/v20210820/model/SubscribeWebHook.h
   include/tencentcloud/wedata/v20210820/model/DeleteOfflineTaskResponse.h
   include/tencentcloud/wedata/v20210820/model/TaskScriptContent.h
   include/tencentcloud/wedata/v20210820/model/IntegrationStatisticsTrendResult.h
@@ -919,6 +920,7 @@ set(wedata_src
   src/v20210820/model/DeleteTaskAlarmRegularRequest.cpp
   src/v20210820/model/CompareRule.cpp
   src/v20210820/model/DescribeIntegrationStatisticsAgentStatusRequest.cpp
+  src/v20210820/model/SubscribeWebHook.cpp
   src/v20210820/model/DeleteOfflineTaskResponse.cpp
   src/v20210820/model/TaskScriptContent.cpp
   src/v20210820/model/IntegrationStatisticsTrendResult.cpp

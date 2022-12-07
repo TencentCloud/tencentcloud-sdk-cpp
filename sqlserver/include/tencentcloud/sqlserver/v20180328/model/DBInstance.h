@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/sqlserver/v20180328/model/ResourceTag.h>
+#include <tencentcloud/sqlserver/v20180328/model/SlaveZones.h>
 
 
 namespace TencentCloud
@@ -975,6 +976,46 @@ namespace TencentCloud
                      */
                     bool TimeZoneHasBeenSet() const;
 
+                    /**
+                     * 获取是否跨AZ
+                     * @return IsDrZone 是否跨AZ
+                     */
+                    bool GetIsDrZone() const;
+
+                    /**
+                     * 设置是否跨AZ
+                     * @param IsDrZone 是否跨AZ
+                     */
+                    void SetIsDrZone(const bool& _isDrZone);
+
+                    /**
+                     * 判断参数 IsDrZone 是否已赋值
+                     * @return IsDrZone 是否已赋值
+                     */
+                    bool IsDrZoneHasBeenSet() const;
+
+                    /**
+                     * 获取备可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZones 备可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SlaveZones GetSlaveZones() const;
+
+                    /**
+                     * 设置备可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SlaveZones 备可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSlaveZones(const SlaveZones& _slaveZones);
+
+                    /**
+                     * 判断参数 SlaveZones 是否已赋值
+                     * @return SlaveZones 是否已赋值
+                     */
+                    bool SlaveZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1283,6 +1324,19 @@ namespace TencentCloud
                      */
                     std::string m_timeZone;
                     bool m_timeZoneHasBeenSet;
+
+                    /**
+                     * 是否跨AZ
+                     */
+                    bool m_isDrZone;
+                    bool m_isDrZoneHasBeenSet;
+
+                    /**
+                     * 备可用区信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SlaveZones m_slaveZones;
+                    bool m_slaveZonesHasBeenSet;
 
                 };
             }

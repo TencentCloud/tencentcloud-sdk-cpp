@@ -34,7 +34,8 @@ TagInfo::TagInfo() :
     m_sizeByteHasBeenSet(false),
     m_idHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_pushTimeHasBeenSet(false)
+    m_pushTimeHasBeenSet(false),
+    m_kindHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome TagInfo::Deserialize(const rapidjson::Value &value)
         m_pushTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Kind") && !value["Kind"].IsNull())
+    {
+        if (!value["Kind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TagInfo.Kind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kind = string(value["Kind"].GetString());
+        m_kindHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void TagInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "PushTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pushTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kind.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void TagInfo::SetPushTime(const string& _pushTime)
 bool TagInfo::PushTimeHasBeenSet() const
 {
     return m_pushTimeHasBeenSet;
+}
+
+string TagInfo::GetKind() const
+{
+    return m_kind;
+}
+
+void TagInfo::SetKind(const string& _kind)
+{
+    m_kind = _kind;
+    m_kindHasBeenSet = true;
+}
+
+bool TagInfo::KindHasBeenSet() const
+{
+    return m_kindHasBeenSet;
 }
 

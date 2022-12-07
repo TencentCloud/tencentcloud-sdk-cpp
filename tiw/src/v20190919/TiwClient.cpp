@@ -384,6 +384,49 @@ TiwClient::DescribeTIWDailyUsageOutcomeCallable TiwClient::DescribeTIWDailyUsage
     return task->get_future();
 }
 
+TiwClient::DescribeTIWRoomDailyUsageOutcome TiwClient::DescribeTIWRoomDailyUsage(const DescribeTIWRoomDailyUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTIWRoomDailyUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTIWRoomDailyUsageResponse rsp = DescribeTIWRoomDailyUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTIWRoomDailyUsageOutcome(rsp);
+        else
+            return DescribeTIWRoomDailyUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTIWRoomDailyUsageOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeTIWRoomDailyUsageAsync(const DescribeTIWRoomDailyUsageRequest& request, const DescribeTIWRoomDailyUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTIWRoomDailyUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeTIWRoomDailyUsageOutcomeCallable TiwClient::DescribeTIWRoomDailyUsageCallable(const DescribeTIWRoomDailyUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTIWRoomDailyUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTIWRoomDailyUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeTranscodeOutcome TiwClient::DescribeTranscode(const DescribeTranscodeRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTranscode");

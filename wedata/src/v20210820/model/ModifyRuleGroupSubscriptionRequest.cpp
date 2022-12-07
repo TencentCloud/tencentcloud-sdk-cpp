@@ -29,7 +29,8 @@ ModifyRuleGroupSubscriptionRequest::ModifyRuleGroupSubscriptionRequest() :
     m_projectIdHasBeenSet(false),
     m_databaseIdHasBeenSet(false),
     m_datasourceIdHasBeenSet(false),
-    m_tableIdHasBeenSet(false)
+    m_tableIdHasBeenSet(false),
+    m_webHooksHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,21 @@ string ModifyRuleGroupSubscriptionRequest::ToJsonString() const
         string key = "TableId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_tableId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_webHooksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebHooks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_webHooks.begin(); itr != m_webHooks.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -226,6 +242,22 @@ void ModifyRuleGroupSubscriptionRequest::SetTableId(const string& _tableId)
 bool ModifyRuleGroupSubscriptionRequest::TableIdHasBeenSet() const
 {
     return m_tableIdHasBeenSet;
+}
+
+vector<SubscribeWebHook> ModifyRuleGroupSubscriptionRequest::GetWebHooks() const
+{
+    return m_webHooks;
+}
+
+void ModifyRuleGroupSubscriptionRequest::SetWebHooks(const vector<SubscribeWebHook>& _webHooks)
+{
+    m_webHooks = _webHooks;
+    m_webHooksHasBeenSet = true;
+}
+
+bool ModifyRuleGroupSubscriptionRequest::WebHooksHasBeenSet() const
+{
+    return m_webHooksHasBeenSet;
 }
 
 

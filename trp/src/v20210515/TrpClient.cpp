@@ -943,6 +943,49 @@ TrpClient::DescribeCodesByPackOutcomeCallable TrpClient::DescribeCodesByPackCall
     return task->get_future();
 }
 
+TrpClient::DescribeCorpQuotasOutcome TrpClient::DescribeCorpQuotas(const DescribeCorpQuotasRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCorpQuotas");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCorpQuotasResponse rsp = DescribeCorpQuotasResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCorpQuotasOutcome(rsp);
+        else
+            return DescribeCorpQuotasOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCorpQuotasOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeCorpQuotasAsync(const DescribeCorpQuotasRequest& request, const DescribeCorpQuotasAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCorpQuotas(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeCorpQuotasOutcomeCallable TrpClient::DescribeCorpQuotasCallable(const DescribeCorpQuotasRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCorpQuotasOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCorpQuotas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeCustomRuleByIdOutcome TrpClient::DescribeCustomRuleById(const DescribeCustomRuleByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCustomRuleById");

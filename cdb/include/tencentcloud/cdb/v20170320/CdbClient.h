@@ -25,8 +25,6 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowResponse.h>
-#include <tencentcloud/cdb/v20170320/model/ApplyCDBProxyRequest.h>
-#include <tencentcloud/cdb/v20170320/model/ApplyCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadRequest.h>
@@ -308,9 +306,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddTimeWindowResponse> AddTimeWindowOutcome;
                 typedef std::future<AddTimeWindowOutcome> AddTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AddTimeWindowRequest&, AddTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTimeWindowAsyncHandler;
-                typedef Outcome<Core::Error, Model::ApplyCDBProxyResponse> ApplyCDBProxyOutcome;
-                typedef std::future<ApplyCDBProxyOutcome> ApplyCDBProxyOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::ApplyCDBProxyRequest&, ApplyCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
@@ -718,15 +713,6 @@ namespace TencentCloud
                 AddTimeWindowOutcome AddTimeWindow(const Model::AddTimeWindowRequest &request);
                 void AddTimeWindowAsync(const Model::AddTimeWindowRequest& request, const AddTimeWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddTimeWindowOutcomeCallable AddTimeWindowCallable(const Model::AddTimeWindowRequest& request);
-
-                /**
-                 *针对主实例申请创建数据库代理。
-                 * @param req ApplyCDBProxyRequest
-                 * @return ApplyCDBProxyOutcome
-                 */
-                ApplyCDBProxyOutcome ApplyCDBProxy(const Model::ApplyCDBProxyRequest &request);
-                void ApplyCDBProxyAsync(const Model::ApplyCDBProxyRequest& request, const ApplyCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ApplyCDBProxyOutcomeCallable ApplyCDBProxyCallable(const Model::ApplyCDBProxyRequest& request);
 
                 /**
                  *本接口(AssociateSecurityGroups)用于安全组批量绑定实例。

@@ -27,7 +27,8 @@ SkillGroupInfoItem::SkillGroupInfoItem() :
     m_routePolicyHasBeenSet(false),
     m_usingLastSeatHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
-    m_lastModifyTimestampHasBeenSet(false)
+    m_lastModifyTimestampHasBeenSet(false),
+    m_skillGroupTypeHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome SkillGroupInfoItem::Deserialize(const rapidjson::Value &valu
         m_lastModifyTimestampHasBeenSet = true;
     }
 
+    if (value.HasMember("SkillGroupType") && !value["SkillGroupType"].IsNull())
+    {
+        if (!value["SkillGroupType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SkillGroupInfoItem.SkillGroupType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_skillGroupType = value["SkillGroupType"].GetInt64();
+        m_skillGroupTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void SkillGroupInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LastModifyTimestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_lastModifyTimestamp, allocator);
+    }
+
+    if (m_skillGroupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkillGroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_skillGroupType, allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void SkillGroupInfoItem::SetLastModifyTimestamp(const int64_t& _lastModifyTimest
 bool SkillGroupInfoItem::LastModifyTimestampHasBeenSet() const
 {
     return m_lastModifyTimestampHasBeenSet;
+}
+
+int64_t SkillGroupInfoItem::GetSkillGroupType() const
+{
+    return m_skillGroupType;
+}
+
+void SkillGroupInfoItem::SetSkillGroupType(const int64_t& _skillGroupType)
+{
+    m_skillGroupType = _skillGroupType;
+    m_skillGroupTypeHasBeenSet = true;
+}
+
+bool SkillGroupInfoItem::SkillGroupTypeHasBeenSet() const
+{
+    return m_skillGroupTypeHasBeenSet;
 }
 

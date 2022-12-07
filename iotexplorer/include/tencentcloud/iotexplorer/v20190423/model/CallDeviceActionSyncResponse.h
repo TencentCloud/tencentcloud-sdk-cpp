@@ -56,9 +56,9 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取输出参数
+                     * 获取输出参数，取值设备端上报$thing/up/action method为action_reply 的 response字段，物模型协议参考https://cloud.tencent.com/document/product/1081/34916#.E8.AE.BE.E5.A4.87.E8.A1.8C.E4.B8.BA.E8.B0.83.E7.94.A8
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OutputParams 输出参数
+                     * @return OutputParams 输出参数，取值设备端上报$thing/up/action method为action_reply 的 response字段，物模型协议参考https://cloud.tencent.com/document/product/1081/34916#.E8.AE.BE.E5.A4.87.E8.A1.8C.E4.B8.BA.E8.B0.83.E7.94.A8
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOutputParams() const;
@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool OutputParamsHasBeenSet() const;
 
                     /**
-                     * 获取返回状态，当设备不在线等部分情况，会通过该 Status 返回。
-                     * @return Status 返回状态，当设备不在线等部分情况，会通过该 Status 返回。
+                     * 获取返回状态，取值设备端上报$thing/up/action	method为action_reply 的 status字段，如果不包含status字段，则取默认值，空字符串，物模型协议参考https://cloud.tencent.com/document/product/1081/34916#.E8.AE.BE.E5.A4.87.E8.A1.8C.E4.B8.BA.E8.B0.83.E7.94.A8
+                     * @return Status 返回状态，取值设备端上报$thing/up/action	method为action_reply 的 status字段，如果不包含status字段，则取默认值，空字符串，物模型协议参考https://cloud.tencent.com/document/product/1081/34916#.E8.AE.BE.E5.A4.87.E8.A1.8C.E4.B8.BA.E8.B0.83.E7.94.A8
                      */
                     std::string GetStatus() const;
 
@@ -90,14 +90,14 @@ namespace TencentCloud
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 输出参数
+                     * 输出参数，取值设备端上报$thing/up/action method为action_reply 的 response字段，物模型协议参考https://cloud.tencent.com/document/product/1081/34916#.E8.AE.BE.E5.A4.87.E8.A1.8C.E4.B8.BA.E8.B0.83.E7.94.A8
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_outputParams;
                     bool m_outputParamsHasBeenSet;
 
                     /**
-                     * 返回状态，当设备不在线等部分情况，会通过该 Status 返回。
+                     * 返回状态，取值设备端上报$thing/up/action	method为action_reply 的 status字段，如果不包含status字段，则取默认值，空字符串，物模型协议参考https://cloud.tencent.com/document/product/1081/34916#.E8.AE.BE.E5.A4.87.E8.A1.8C.E4.B8.BA.E8.B0.83.E7.94.A8
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

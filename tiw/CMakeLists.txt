@@ -29,9 +29,10 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/AuthParam.h
   include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/StartWhiteboardPushRequest.h
-  include/tencentcloud/tiw/v20190919/model/OmittedDuration.h
+  include/tencentcloud/tiw/v20190919/model/DescribeTIWRoomDailyUsageRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardPushRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeQualityMetricsResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeTIWRoomDailyUsageResponse.h
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordResponse.h
   include/tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackKeyResponse.h
@@ -39,12 +40,12 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h
+  include/tencentcloud/tiw/v20190919/model/OmittedDuration.h
   include/tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskResponse.h
   include/tencentcloud/tiw/v20190919/model/StartWhiteboardPushResponse.h
   include/tencentcloud/tiw/v20190919/model/ResumeOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/SnapshotCOS.h
-  include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StopWhiteboardPushRequest.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StopOnlineRecordRequest.h
@@ -75,14 +76,16 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/CreateSnapshotTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StreamLayout.h
   include/tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h
   include/tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeTranscodeRequest.h
-  include/tencentcloud/tiw/v20190919/model/DescribeTranscodeCallbackResponse.h
+  include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackRequest.h
+  include/tencentcloud/tiw/v20190919/model/RoomUsageDataItem.h
   include/tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackRequest.h
   include/tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/RecordControl.h
@@ -108,9 +111,10 @@ set(tiw_src
   src/v20190919/model/AuthParam.cpp
   src/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.cpp
   src/v20190919/model/StartWhiteboardPushRequest.cpp
-  src/v20190919/model/OmittedDuration.cpp
+  src/v20190919/model/DescribeTIWRoomDailyUsageRequest.cpp
   src/v20190919/model/DescribeWhiteboardPushRequest.cpp
   src/v20190919/model/DescribeQualityMetricsResponse.cpp
+  src/v20190919/model/DescribeTIWRoomDailyUsageResponse.cpp
   src/v20190919/model/ResumeOnlineRecordResponse.cpp
   src/v20190919/model/SetVideoGenerationTaskCallbackResponse.cpp
   src/v20190919/model/SetWhiteboardPushCallbackKeyResponse.cpp
@@ -118,12 +122,12 @@ set(tiw_src
   src/v20190919/model/DescribeSnapshotTaskRequest.cpp
   src/v20190919/model/StartOnlineRecordRequest.cpp
   src/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.cpp
+  src/v20190919/model/OmittedDuration.cpp
   src/v20190919/model/DescribeSnapshotTaskResponse.cpp
   src/v20190919/model/StartWhiteboardPushResponse.cpp
   src/v20190919/model/ResumeOnlineRecordRequest.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackRequest.cpp
   src/v20190919/model/SnapshotCOS.cpp
-  src/v20190919/model/DescribeOnlineRecordCallbackResponse.cpp
   src/v20190919/model/StopWhiteboardPushRequest.cpp
   src/v20190919/model/SetTranscodeCallbackResponse.cpp
   src/v20190919/model/StopOnlineRecordRequest.cpp
@@ -154,14 +158,16 @@ set(tiw_src
   src/v20190919/model/SetTranscodeCallbackKeyRequest.cpp
   src/v20190919/model/CreateSnapshotTaskRequest.cpp
   src/v20190919/model/DescribeTranscodeResponse.cpp
+  src/v20190919/model/DescribeTranscodeCallbackResponse.cpp
   src/v20190919/model/StreamLayout.cpp
   src/v20190919/model/DescribeQualityMetricsRequest.cpp
   src/v20190919/model/SetOnlineRecordCallbackKeyRequest.cpp
   src/v20190919/model/CreateVideoGenerationTaskRequest.cpp
   src/v20190919/model/DescribeTranscodeCallbackRequest.cpp
   src/v20190919/model/DescribeTranscodeRequest.cpp
-  src/v20190919/model/DescribeTranscodeCallbackResponse.cpp
+  src/v20190919/model/DescribeOnlineRecordCallbackResponse.cpp
   src/v20190919/model/SetTranscodeCallbackRequest.cpp
+  src/v20190919/model/RoomUsageDataItem.cpp
   src/v20190919/model/SetWhiteboardPushCallbackRequest.cpp
   src/v20190919/model/SetWhiteboardPushCallbackResponse.cpp
   src/v20190919/model/RecordControl.cpp

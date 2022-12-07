@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_APPLYCDBPROXYRESPONSE_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_APPLYCDBPROXYRESPONSE_H_
+#ifndef TENCENTCLOUD_TCSS_V20201101_MODEL_CREATEACCESSCONTROLSRULEEXPORTJOBRESPONSE_H_
+#define TENCENTCLOUD_TCSS_V20201101_MODEL_CREATEACCESSCONTROLSRULEEXPORTJOBRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,46 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Tcss
     {
-        namespace V20170320
+        namespace V20201101
         {
             namespace Model
             {
                 /**
-                * ApplyCDBProxy返回参数结构体
+                * CreateAccessControlsRuleExportJob返回参数结构体
                 */
-                class ApplyCDBProxyResponse : public AbstractModel
+                class CreateAccessControlsRuleExportJobResponse : public AbstractModel
                 {
                 public:
-                    ApplyCDBProxyResponse();
-                    ~ApplyCDBProxyResponse() = default;
+                    CreateAccessControlsRuleExportJobResponse();
+                    ~CreateAccessControlsRuleExportJobResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取异步处理ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncRequestId 异步处理ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取导出任务ID，前端拿着任务ID查询任务进度
+                     * @return JobId 导出任务ID，前端拿着任务ID查询任务进度
                      */
-                    std::string GetAsyncRequestId() const;
+                    std::string GetJobId() const;
 
                     /**
-                     * 判断参数 AsyncRequestId 是否已赋值
-                     * @return AsyncRequestId 是否已赋值
+                     * 判断参数 JobId 是否已赋值
+                     * @return JobId 是否已赋值
                      */
-                    bool AsyncRequestIdHasBeenSet() const;
+                    bool JobIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 异步处理ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 导出任务ID，前端拿着任务ID查询任务进度
                      */
-                    std::string m_asyncRequestId;
-                    bool m_asyncRequestIdHasBeenSet;
+                    std::string m_jobId;
+                    bool m_jobIdHasBeenSet;
 
                 };
             }
@@ -72,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_APPLYCDBPROXYRESPONSE_H_
+#endif // !TENCENTCLOUD_TCSS_V20201101_MODEL_CREATEACCESSCONTROLSRULEEXPORTJOBRESPONSE_H_

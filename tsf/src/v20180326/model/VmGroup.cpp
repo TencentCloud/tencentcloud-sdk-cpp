@@ -57,7 +57,8 @@ VmGroup::VmGroup() :
     m_stopScriptHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_agentProfileListHasBeenSet(false),
-    m_warmupSettingHasBeenSet(false)
+    m_warmupSettingHasBeenSet(false),
+    m_gatewayConfigHasBeenSet(false)
 {
 }
 
@@ -463,6 +464,23 @@ CoreInternalOutcome VmGroup::Deserialize(const rapidjson::Value &value)
         m_warmupSettingHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewayConfig") && !value["GatewayConfig"].IsNull())
+    {
+        if (!value["GatewayConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroup.GatewayConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gatewayConfig.Deserialize(value["GatewayConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gatewayConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -778,6 +796,15 @@ void VmGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_warmupSetting.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_gatewayConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewayConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gatewayConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1373,5 +1400,21 @@ void VmGroup::SetWarmupSetting(const WarmupSetting& _warmupSetting)
 bool VmGroup::WarmupSettingHasBeenSet() const
 {
     return m_warmupSettingHasBeenSet;
+}
+
+GatewayConfig VmGroup::GetGatewayConfig() const
+{
+    return m_gatewayConfig;
+}
+
+void VmGroup::SetGatewayConfig(const GatewayConfig& _gatewayConfig)
+{
+    m_gatewayConfig = _gatewayConfig;
+    m_gatewayConfigHasBeenSet = true;
+}
+
+bool VmGroup::GatewayConfigHasBeenSet() const
+{
+    return m_gatewayConfigHasBeenSet;
 }
 

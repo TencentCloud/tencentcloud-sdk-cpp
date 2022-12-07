@@ -122,11 +122,11 @@ namespace TencentCloud
                     /**
                      * 获取场景Code，不传默认活动防刷；
 e_activity_antirush；活动防刷场景
-e_login_protection；登陆保护场景
+e_login_protection；登录保护场景
 e_register_protection：注册保护场景
                      * @return SceneCode 场景Code，不传默认活动防刷；
 e_activity_antirush；活动防刷场景
-e_login_protection；登陆保护场景
+e_login_protection；登录保护场景
 e_register_protection：注册保护场景
                      */
                     std::string GetSceneCode() const;
@@ -134,11 +134,11 @@ e_register_protection：注册保护场景
                     /**
                      * 设置场景Code，不传默认活动防刷；
 e_activity_antirush；活动防刷场景
-e_login_protection；登陆保护场景
+e_login_protection；登录保护场景
 e_register_protection：注册保护场景
                      * @param SceneCode 场景Code，不传默认活动防刷；
 e_activity_antirush；活动防刷场景
-e_login_protection；登陆保护场景
+e_login_protection；登录保护场景
 e_register_protection：注册保护场景
                      */
                     void SetSceneCode(const std::string& _sceneCode);
@@ -214,7 +214,7 @@ e_register_protection：注册保护场景
                     /**
                      * 场景Code，不传默认活动防刷；
 e_activity_antirush；活动防刷场景
-e_login_protection；登陆保护场景
+e_login_protection；登录保护场景
 e_register_protection：注册保护场景
                      */
                     std::string m_sceneCode;

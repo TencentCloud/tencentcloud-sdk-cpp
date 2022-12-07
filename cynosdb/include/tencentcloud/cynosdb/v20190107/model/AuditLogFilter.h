@@ -244,6 +244,42 @@ namespace TencentCloud
                      */
                     bool SqlsHasBeenSet() const;
 
+                    /**
+                     * 获取返回行数。
+                     * @return SentRows 返回行数。
+                     */
+                    uint64_t GetSentRows() const;
+
+                    /**
+                     * 设置返回行数。
+                     * @param SentRows 返回行数。
+                     */
+                    void SetSentRows(const uint64_t& _sentRows);
+
+                    /**
+                     * 判断参数 SentRows 是否已赋值
+                     * @return SentRows 是否已赋值
+                     */
+                    bool SentRowsHasBeenSet() const;
+
+                    /**
+                     * 获取线程ID。
+                     * @return ThreadId 线程ID。
+                     */
+                    std::vector<std::string> GetThreadId() const;
+
+                    /**
+                     * 设置线程ID。
+                     * @param ThreadId 线程ID。
+                     */
+                    void SetThreadId(const std::vector<std::string>& _threadId);
+
+                    /**
+                     * 判断参数 ThreadId 是否已赋值
+                     * @return ThreadId 是否已赋值
+                     */
+                    bool ThreadIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +347,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sqls;
                     bool m_sqlsHasBeenSet;
+
+                    /**
+                     * 返回行数。
+                     */
+                    uint64_t m_sentRows;
+                    bool m_sentRowsHasBeenSet;
+
+                    /**
+                     * 线程ID。
+                     */
+                    std::vector<std::string> m_threadId;
+                    bool m_threadIdHasBeenSet;
 
                 };
             }

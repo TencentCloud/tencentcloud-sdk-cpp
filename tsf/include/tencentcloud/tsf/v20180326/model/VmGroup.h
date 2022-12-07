@@ -27,6 +27,7 @@
 #include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 #include <tencentcloud/tsf/v20180326/model/AgentProfile.h>
 #include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
+#include <tencentcloud/tsf/v20180326/model/GatewayConfig.h>
 
 
 namespace TencentCloud
@@ -863,6 +864,28 @@ namespace TencentCloud
                      */
                     bool WarmupSettingHasBeenSet() const;
 
+                    /**
+                     * 获取Envoy网关配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayConfig Envoy网关配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GatewayConfig GetGatewayConfig() const;
+
+                    /**
+                     * 设置Envoy网关配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GatewayConfig Envoy网关配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGatewayConfig(const GatewayConfig& _gatewayConfig);
+
+                    /**
+                     * 判断参数 GatewayConfig 是否已赋值
+                     * @return GatewayConfig 是否已赋值
+                     */
+                    bool GatewayConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1123,6 +1146,13 @@ namespace TencentCloud
                      */
                     WarmupSetting m_warmupSetting;
                     bool m_warmupSettingHasBeenSet;
+
+                    /**
+                     * Envoy网关配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GatewayConfig m_gatewayConfig;
+                    bool m_gatewayConfigHasBeenSet;
 
                 };
             }

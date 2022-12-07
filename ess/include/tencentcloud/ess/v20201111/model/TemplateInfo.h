@@ -301,6 +301,46 @@ namespace TencentCloud
                      */
                     bool PromoterHasBeenSet() const;
 
+                    /**
+                     * 获取模板创建组织id
+                     * @return OrganizationId 模板创建组织id
+                     */
+                    std::string GetOrganizationId() const;
+
+                    /**
+                     * 设置模板创建组织id
+                     * @param OrganizationId 模板创建组织id
+                     */
+                    void SetOrganizationId(const std::string& _organizationId);
+
+                    /**
+                     * 判断参数 OrganizationId 是否已赋值
+                     * @return OrganizationId 是否已赋值
+                     */
+                    bool OrganizationIdHasBeenSet() const;
+
+                    /**
+                     * 获取模板预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreviewUrl 模板预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPreviewUrl() const;
+
+                    /**
+                     * 设置模板预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PreviewUrl 模板预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPreviewUrl(const std::string& _previewUrl);
+
+                    /**
+                     * 判断参数 PreviewUrl 是否已赋值
+                     * @return PreviewUrl 是否已赋值
+                     */
+                    bool PreviewUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -386,6 +426,19 @@ namespace TencentCloud
                      */
                     Recipient m_promoter;
                     bool m_promoterHasBeenSet;
+
+                    /**
+                     * 模板创建组织id
+                     */
+                    std::string m_organizationId;
+                    bool m_organizationIdHasBeenSet;
+
+                    /**
+                     * 模板预览链接
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_previewUrl;
+                    bool m_previewUrlHasBeenSet;
 
                 };
             }

@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool SkillGroupNameHasBeenSet() const;
 
                     /**
-                     * 获取类型：IM、TEL、ALL（全媒体）
-                     * @return Type 类型：IM、TEL、ALL（全媒体）
+                     * 获取（废弃）类型：IM、TEL、ALL（全媒体）
+                     * @return Type （废弃）类型：IM、TEL、ALL（全媒体）
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型：IM、TEL、ALL（全媒体）
-                     * @param Type 类型：IM、TEL、ALL（全媒体）
+                     * 设置（废弃）类型：IM、TEL、ALL（全媒体）
+                     * @param Type （废弃）类型：IM、TEL、ALL（全媒体）
                      */
                     void SetType(const std::string& _type);
 
@@ -188,6 +188,28 @@ namespace TencentCloud
                      */
                     bool LastModifyTimestampHasBeenSet() const;
 
+                    /**
+                     * 获取技能组类型0-电话，1-在线，3-音频，4-视频	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SkillGroupType 技能组类型0-电话，1-在线，3-音频，4-视频	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSkillGroupType() const;
+
+                    /**
+                     * 设置技能组类型0-电话，1-在线，3-音频，4-视频	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SkillGroupType 技能组类型0-电话，1-在线，3-音频，4-视频	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSkillGroupType(const int64_t& _skillGroupType);
+
+                    /**
+                     * 判断参数 SkillGroupType 是否已赋值
+                     * @return SkillGroupType 是否已赋值
+                     */
+                    bool SkillGroupTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -203,7 +225,7 @@ namespace TencentCloud
                     bool m_skillGroupNameHasBeenSet;
 
                     /**
-                     * 类型：IM、TEL、ALL（全媒体）
+                     * （废弃）类型：IM、TEL、ALL（全媒体）
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -235,6 +257,13 @@ namespace TencentCloud
                      */
                     int64_t m_lastModifyTimestamp;
                     bool m_lastModifyTimestampHasBeenSet;
+
+                    /**
+                     * 技能组类型0-电话，1-在线，3-音频，4-视频	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_skillGroupType;
+                    bool m_skillGroupTypeHasBeenSet;
 
                 };
             }

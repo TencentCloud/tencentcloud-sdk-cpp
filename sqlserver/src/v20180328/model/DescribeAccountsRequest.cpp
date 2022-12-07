@@ -25,7 +25,10 @@ using namespace std;
 DescribeAccountsRequest::DescribeAccountsRequest() :
     m_instanceIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +61,30 @@ string DescribeAccountsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +141,54 @@ void DescribeAccountsRequest::SetOffset(const uint64_t& _offset)
 bool DescribeAccountsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeAccountsRequest::GetName() const
+{
+    return m_name;
+}
+
+void DescribeAccountsRequest::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
+}
+
+string DescribeAccountsRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeAccountsRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string DescribeAccountsRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void DescribeAccountsRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
 }
 
 

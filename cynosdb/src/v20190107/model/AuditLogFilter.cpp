@@ -31,7 +31,9 @@ AuditLogFilter::AuditLogFilter() :
     m_execTimeHasBeenSet(false),
     m_affectRowsHasBeenSet(false),
     m_sqlTypesHasBeenSet(false),
-    m_sqlsHasBeenSet(false)
+    m_sqlsHasBeenSet(false),
+    m_sentRowsHasBeenSet(false),
+    m_threadIdHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,29 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
         m_sqlsHasBeenSet = true;
     }
 
+    if (value.HasMember("SentRows") && !value["SentRows"].IsNull())
+    {
+        if (!value["SentRows"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.SentRows` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sentRows = value["SentRows"].GetUint64();
+        m_sentRowsHasBeenSet = true;
+    }
+
+    if (value.HasMember("ThreadId") && !value["ThreadId"].IsNull())
+    {
+        if (!value["ThreadId"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.ThreadId` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ThreadId"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_threadId.push_back((*itr).GetString());
+        }
+        m_threadIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +321,27 @@ void AuditLogFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_sqls.begin(); itr != m_sqls.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sentRowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SentRows";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sentRows, allocator);
+    }
+
+    if (m_threadIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ThreadId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_threadId.begin(); itr != m_threadId.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -478,5 +524,37 @@ void AuditLogFilter::SetSqls(const vector<string>& _sqls)
 bool AuditLogFilter::SqlsHasBeenSet() const
 {
     return m_sqlsHasBeenSet;
+}
+
+uint64_t AuditLogFilter::GetSentRows() const
+{
+    return m_sentRows;
+}
+
+void AuditLogFilter::SetSentRows(const uint64_t& _sentRows)
+{
+    m_sentRows = _sentRows;
+    m_sentRowsHasBeenSet = true;
+}
+
+bool AuditLogFilter::SentRowsHasBeenSet() const
+{
+    return m_sentRowsHasBeenSet;
+}
+
+vector<string> AuditLogFilter::GetThreadId() const
+{
+    return m_threadId;
+}
+
+void AuditLogFilter::SetThreadId(const vector<string>& _threadId)
+{
+    m_threadId = _threadId;
+    m_threadIdHasBeenSet = true;
+}
+
+bool AuditLogFilter::ThreadIdHasBeenSet() const
+{
+    return m_threadIdHasBeenSet;
 }
 

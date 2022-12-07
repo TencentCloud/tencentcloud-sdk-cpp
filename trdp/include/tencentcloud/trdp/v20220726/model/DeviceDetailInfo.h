@@ -509,17 +509,17 @@ Android设备
                     bool VendorIdHasBeenSet() const;
 
                     /**
-                     * 获取安卓API等级
+                     * 获取Android API等级
 Android设备
-                     * @return AndroidApiLevel 安卓API等级
+                     * @return AndroidApiLevel Android API等级
 Android设备
                      */
                     std::string GetAndroidApiLevel() const;
 
                     /**
-                     * 设置安卓API等级
+                     * 设置Android API等级
 Android设备
-                     * @param AndroidApiLevel 安卓API等级
+                     * @param AndroidApiLevel Android API等级
 Android设备
                      */
                     void SetAndroidApiLevel(const std::string& _androidApiLevel);
@@ -817,17 +817,17 @@ Android设备
                     bool ChargeStatusHasBeenSet() const;
 
                     /**
-                     * 获取网络类型：2G/3G/4G/5G/WiFi/WWAN/other
+                     * 获取网络类型：2G/3G/4G/5G/Wi-Fi/WWAN/other
 Android设备
-                     * @return NetworkType 网络类型：2G/3G/4G/5G/WiFi/WWAN/other
+                     * @return NetworkType 网络类型：2G/3G/4G/5G/Wi-Fi/WWAN/other
 Android设备
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置网络类型：2G/3G/4G/5G/WiFi/WWAN/other
+                     * 设置网络类型：2G/3G/4G/5G/Wi-Fi/WWAN/other
 Android设备
-                     * @param NetworkType 网络类型：2G/3G/4G/5G/WiFi/WWAN/other
+                     * @param NetworkType 网络类型：2G/3G/4G/5G/Wi-Fi/WWAN/other
 Android设备
                      */
                     void SetNetworkType(const std::string& _networkType);
@@ -839,17 +839,17 @@ Android设备
                     bool NetworkTypeHasBeenSet() const;
 
                     /**
-                     * 获取WiFi MAC地址
+                     * 获取Wi-Fi MAC地址
 Android设备
-                     * @return WifiMac WiFi MAC地址
+                     * @return WifiMac Wi-Fi MAC地址
 Android设备
                      */
                     std::string GetWifiMac() const;
 
                     /**
-                     * 设置WiFi MAC地址
+                     * 设置Wi-Fi MAC地址
 Android设备
-                     * @param WifiMac WiFi MAC地址
+                     * @param WifiMac Wi-Fi MAC地址
 Android设备
                      */
                     void SetWifiMac(const std::string& _wifiMac);
@@ -1096,7 +1096,7 @@ Android设备
                     bool m_vendorIdHasBeenSet;
 
                     /**
-                     * 安卓API等级
+                     * Android API等级
 Android设备
                      */
                     std::string m_androidApiLevel;
@@ -1194,14 +1194,14 @@ Android设备
                     bool m_chargeStatusHasBeenSet;
 
                     /**
-                     * 网络类型：2G/3G/4G/5G/WiFi/WWAN/other
+                     * 网络类型：2G/3G/4G/5G/Wi-Fi/WWAN/other
 Android设备
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;
 
                     /**
-                     * WiFi MAC地址
+                     * Wi-Fi MAC地址
 Android设备
                      */
                     std::string m_wifiMac;

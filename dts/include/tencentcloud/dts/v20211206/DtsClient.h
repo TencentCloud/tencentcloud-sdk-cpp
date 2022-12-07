@@ -290,7 +290,7 @@ namespace TencentCloud
                 CreateSyncJobOutcomeCallable CreateSyncJobCallable(const Model::CreateSyncJobRequest& request);
 
                 /**
-                 *删除一致性校验任务
+                 *删除一致性校验任务。当一致性校验任务状态为success、failed、canceled 时可以执行此操作。
                  * @param req DeleteCompareTaskRequest
                  * @return DeleteCompareTaskOutcome
                  */

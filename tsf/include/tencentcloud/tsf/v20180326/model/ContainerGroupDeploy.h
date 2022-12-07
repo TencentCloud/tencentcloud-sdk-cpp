@@ -30,6 +30,8 @@
 #include <tencentcloud/tsf/v20180326/model/TcrRepoInfo.h>
 #include <tencentcloud/tsf/v20180326/model/VolumeInfo.h>
 #include <tencentcloud/tsf/v20180326/model/VolumeMountInfo.h>
+#include <tencentcloud/tsf/v20180326/model/WarmupSetting.h>
+#include <tencentcloud/tsf/v20180326/model/GatewayConfig.h>
 
 
 namespace TencentCloud
@@ -844,6 +846,50 @@ namespace TencentCloud
                      */
                     bool RepoTypeHasBeenSet() const;
 
+                    /**
+                     * 获取预热配置设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WarmupSetting 预热配置设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WarmupSetting GetWarmupSetting() const;
+
+                    /**
+                     * 设置预热配置设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WarmupSetting 预热配置设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWarmupSetting(const WarmupSetting& _warmupSetting);
+
+                    /**
+                     * 判断参数 WarmupSetting 是否已赋值
+                     * @return WarmupSetting 是否已赋值
+                     */
+                    bool WarmupSettingHasBeenSet() const;
+
+                    /**
+                     * 获取Envoy网关服务配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayConfig Envoy网关服务配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GatewayConfig GetGatewayConfig() const;
+
+                    /**
+                     * 设置Envoy网关服务配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GatewayConfig Envoy网关服务配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGatewayConfig(const GatewayConfig& _gatewayConfig);
+
+                    /**
+                     * 判断参数 GatewayConfig 是否已赋值
+                     * @return GatewayConfig 是否已赋值
+                     */
+                    bool GatewayConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1097,6 +1143,20 @@ namespace TencentCloud
                      */
                     std::string m_repoType;
                     bool m_repoTypeHasBeenSet;
+
+                    /**
+                     * 预热配置设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WarmupSetting m_warmupSetting;
+                    bool m_warmupSettingHasBeenSet;
+
+                    /**
+                     * Envoy网关服务配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GatewayConfig m_gatewayConfig;
+                    bool m_gatewayConfigHasBeenSet;
 
                 };
             }

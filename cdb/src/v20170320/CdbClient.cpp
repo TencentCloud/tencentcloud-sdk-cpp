@@ -83,49 +83,6 @@ CdbClient::AddTimeWindowOutcomeCallable CdbClient::AddTimeWindowCallable(const A
     return task->get_future();
 }
 
-CdbClient::ApplyCDBProxyOutcome CdbClient::ApplyCDBProxy(const ApplyCDBProxyRequest &request)
-{
-    auto outcome = MakeRequest(request, "ApplyCDBProxy");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ApplyCDBProxyResponse rsp = ApplyCDBProxyResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ApplyCDBProxyOutcome(rsp);
-        else
-            return ApplyCDBProxyOutcome(o.GetError());
-    }
-    else
-    {
-        return ApplyCDBProxyOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::ApplyCDBProxyAsync(const ApplyCDBProxyRequest& request, const ApplyCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ApplyCDBProxy(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::ApplyCDBProxyOutcomeCallable CdbClient::ApplyCDBProxyCallable(const ApplyCDBProxyRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ApplyCDBProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->ApplyCDBProxy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::AssociateSecurityGroupsOutcome CdbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateSecurityGroups");
