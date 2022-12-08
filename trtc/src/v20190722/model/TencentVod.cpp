@@ -28,7 +28,8 @@ TencentVod::TencentVod() :
     m_subAppIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sourceContextHasBeenSet(false),
-    m_mediaTypeHasBeenSet(false)
+    m_mediaTypeHasBeenSet(false),
+    m_userDefineRecordIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome TencentVod::Deserialize(const rapidjson::Value &value)
         m_mediaTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("UserDefineRecordId") && !value["UserDefineRecordId"].IsNull())
+    {
+        if (!value["UserDefineRecordId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TencentVod.UserDefineRecordId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userDefineRecordId = string(value["UserDefineRecordId"].GetString());
+        m_userDefineRecordIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void TencentVod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MediaType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mediaType, allocator);
+    }
+
+    if (m_userDefineRecordIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserDefineRecordId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userDefineRecordId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void TencentVod::SetMediaType(const uint64_t& _mediaType)
 bool TencentVod::MediaTypeHasBeenSet() const
 {
     return m_mediaTypeHasBeenSet;
+}
+
+string TencentVod::GetUserDefineRecordId() const
+{
+    return m_userDefineRecordId;
+}
+
+void TencentVod::SetUserDefineRecordId(const string& _userDefineRecordId)
+{
+    m_userDefineRecordId = _userDefineRecordId;
+    m_userDefineRecordIdHasBeenSet = true;
+}
+
+bool TencentVod::UserDefineRecordIdHasBeenSet() const
+{
+    return m_userDefineRecordIdHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Mrs::V20200910::Model;
 using namespace std;
 
 TextToClassRequest::TextToClassRequest() :
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string TextToClassRequest::ToJsonString() const
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_userType, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void TextToClassRequest::SetText(const string& _text)
 bool TextToClassRequest::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+uint64_t TextToClassRequest::GetUserType() const
+{
+    return m_userType;
+}
+
+void TextToClassRequest::SetUserType(const uint64_t& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool TextToClassRequest::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 
 

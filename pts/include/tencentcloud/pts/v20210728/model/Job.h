@@ -121,17 +121,17 @@ namespace TencentCloud
                     bool LoadHasBeenSet() const;
 
                     /**
-                     * 获取deprecated
+                     * 获取此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Configs deprecated
+                     * @return Configs 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetConfigs() const;
 
                     /**
-                     * 设置deprecated
+                     * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Configs deprecated
+                     * @param Configs 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfigs(const std::vector<std::string>& _configs);
@@ -165,17 +165,17 @@ namespace TencentCloud
                     bool DatasetsHasBeenSet() const;
 
                     /**
-                     * 获取deprecated
+                     * 获取此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Extensions deprecated
+                     * @return Extensions 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetExtensions() const;
 
                     /**
-                     * 设置deprecated
+                     * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Extensions deprecated
+                     * @param Extensions 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExtensions(const std::vector<std::string>& _extensions);
@@ -349,17 +349,17 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                     bool JobOwnerHasBeenSet() const;
 
                     /**
-                     * 获取deprecated
+                     * 获取此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LoadSources deprecated
+                     * @return LoadSources 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LoadSource GetLoadSources() const;
 
                     /**
-                     * 设置deprecated
+                     * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LoadSources deprecated
+                     * @param LoadSources 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLoadSources(const LoadSource& _loadSources);
@@ -547,17 +547,17 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                     bool ResponseTimeP90HasBeenSet() const;
 
                     /**
-                     * 获取deprecated
+                     * 获取此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Scripts deprecated
+                     * @return Scripts 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetScripts() const;
 
                     /**
-                     * 设置deprecated
+                     * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Scripts deprecated
+                     * @param Scripts 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetScripts(const std::vector<std::string>& _scripts);
@@ -942,6 +942,28 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     bool NetworkSendRateHasBeenSet() const;
 
+                    /**
+                     * 获取任务状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Message 任务状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置任务状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Message 任务状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -966,7 +988,7 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                     bool m_loadHasBeenSet;
 
                     /**
-                     * deprecated
+                     * 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_configs;
@@ -980,7 +1002,7 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                     bool m_datasetsHasBeenSet;
 
                     /**
-                     * deprecated
+                     * 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_extensions;
@@ -1038,7 +1060,7 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                     bool m_jobOwnerHasBeenSet;
 
                     /**
-                     * deprecated
+                     * 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LoadSource m_loadSources;
@@ -1101,7 +1123,7 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                     bool m_responseTimeP90HasBeenSet;
 
                     /**
-                     * deprecated
+                     * 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_scripts;
@@ -1225,6 +1247,13 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     double m_networkSendRate;
                     bool m_networkSendRateHasBeenSet;
+
+                    /**
+                     * 任务状态描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

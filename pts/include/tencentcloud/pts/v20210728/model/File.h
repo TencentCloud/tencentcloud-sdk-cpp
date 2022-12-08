@@ -377,17 +377,17 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取用户账号的 App ID
+                     * 获取此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppID 用户账号的 App ID
+                     * @return AppID 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetAppID() const;
 
                     /**
-                     * 设置用户账号的 App ID
+                     * 设置此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AppID 用户账号的 App ID
+                     * @param AppID 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAppID(const int64_t& _appID);
@@ -573,7 +573,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 用户账号的 App ID
+                     * 此字段不再使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appID;

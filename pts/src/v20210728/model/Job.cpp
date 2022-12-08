@@ -60,7 +60,8 @@ Job::Job() :
     m_projectIdHasBeenSet(false),
     m_notificationHooksHasBeenSet(false),
     m_networkReceiveRateHasBeenSet(false),
-    m_networkSendRateHasBeenSet(false)
+    m_networkSendRateHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -569,6 +570,16 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_networkSendRateHasBeenSet = true;
     }
 
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -961,6 +972,14 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "NetworkSendRate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_networkSendRate, allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1604,5 +1623,21 @@ void Job::SetNetworkSendRate(const double& _networkSendRate)
 bool Job::NetworkSendRateHasBeenSet() const
 {
     return m_networkSendRateHasBeenSet;
+}
+
+string Job::GetMessage() const
+{
+    return m_message;
+}
+
+void Job::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool Job::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

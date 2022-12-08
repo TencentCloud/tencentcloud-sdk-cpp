@@ -22,7 +22,8 @@ using namespace std;
 
 PaymentOrderStatusResult::PaymentOrderStatusResult() :
     m_statusHasBeenSet(false),
-    m_statusDescHasBeenSet(false)
+    m_statusDescHasBeenSet(false),
+    m_failReasonHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome PaymentOrderStatusResult::Deserialize(const rapidjson::Value
         m_statusDescHasBeenSet = true;
     }
 
+    if (value.HasMember("FailReason") && !value["FailReason"].IsNull())
+    {
+        if (!value["FailReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PaymentOrderStatusResult.FailReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failReason = string(value["FailReason"].GetString());
+        m_failReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void PaymentOrderStatusResult::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "StatusDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statusDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void PaymentOrderStatusResult::SetStatusDesc(const string& _statusDesc)
 bool PaymentOrderStatusResult::StatusDescHasBeenSet() const
 {
     return m_statusDescHasBeenSet;
+}
+
+string PaymentOrderStatusResult::GetFailReason() const
+{
+    return m_failReason;
+}
+
+void PaymentOrderStatusResult::SetFailReason(const string& _failReason)
+{
+    m_failReason = _failReason;
+    m_failReasonHasBeenSet = true;
+}
+
+bool PaymentOrderStatusResult::FailReasonHasBeenSet() const
+{
+    return m_failReasonHasBeenSet;
 }
 

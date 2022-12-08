@@ -30,7 +30,9 @@ MixLayoutParams::MixLayoutParams() :
     m_placeHolderModeHasBeenSet(false),
     m_backgroundImageRenderModeHasBeenSet(false),
     m_defaultSubBackgroundImageHasBeenSet(false),
-    m_waterMarkListHasBeenSet(false)
+    m_waterMarkListHasBeenSet(false),
+    m_renderModeHasBeenSet(false),
+    m_maxResolutionUserAlignHasBeenSet(false)
 {
 }
 
@@ -159,6 +161,26 @@ CoreInternalOutcome MixLayoutParams::Deserialize(const rapidjson::Value &value)
         m_waterMarkListHasBeenSet = true;
     }
 
+    if (value.HasMember("RenderMode") && !value["RenderMode"].IsNull())
+    {
+        if (!value["RenderMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MixLayoutParams.RenderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renderMode = value["RenderMode"].GetUint64();
+        m_renderModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxResolutionUserAlign") && !value["MaxResolutionUserAlign"].IsNull())
+    {
+        if (!value["MaxResolutionUserAlign"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MixLayoutParams.MaxResolutionUserAlign` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxResolutionUserAlign = value["MaxResolutionUserAlign"].GetUint64();
+        m_maxResolutionUserAlignHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -258,6 +280,22 @@ void MixLayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_renderModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenderMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renderMode, allocator);
+    }
+
+    if (m_maxResolutionUserAlignHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxResolutionUserAlign";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxResolutionUserAlign, allocator);
     }
 
 }
@@ -421,5 +459,37 @@ void MixLayoutParams::SetWaterMarkList(const vector<WaterMark>& _waterMarkList)
 bool MixLayoutParams::WaterMarkListHasBeenSet() const
 {
     return m_waterMarkListHasBeenSet;
+}
+
+uint64_t MixLayoutParams::GetRenderMode() const
+{
+    return m_renderMode;
+}
+
+void MixLayoutParams::SetRenderMode(const uint64_t& _renderMode)
+{
+    m_renderMode = _renderMode;
+    m_renderModeHasBeenSet = true;
+}
+
+bool MixLayoutParams::RenderModeHasBeenSet() const
+{
+    return m_renderModeHasBeenSet;
+}
+
+uint64_t MixLayoutParams::GetMaxResolutionUserAlign() const
+{
+    return m_maxResolutionUserAlign;
+}
+
+void MixLayoutParams::SetMaxResolutionUserAlign(const uint64_t& _maxResolutionUserAlign)
+{
+    m_maxResolutionUserAlign = _maxResolutionUserAlign;
+    m_maxResolutionUserAlignHasBeenSet = true;
+}
+
+bool MixLayoutParams::MaxResolutionUserAlignHasBeenSet() const
+{
+    return m_maxResolutionUserAlignHasBeenSet;
 }
 

@@ -61,6 +61,60 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
+                     * 获取实例ID列表，用来记录具体操作哪些实例
+                     * @return InstanceIds 实例ID列表，用来记录具体操作哪些实例
+                     */
+                    std::vector<std::string> GetInstanceIds() const;
+
+                    /**
+                     * 设置实例ID列表，用来记录具体操作哪些实例
+                     * @param InstanceIds 实例ID列表，用来记录具体操作哪些实例
+                     */
+                    void SetInstanceIds(const std::vector<std::string>& _instanceIds);
+
+                    /**
+                     * 判断参数 InstanceIds 是否已赋值
+                     * @return InstanceIds 是否已赋值
+                     */
+                    bool InstanceIdsHasBeenSet() const;
+
+                    /**
+                     * 获取排序字段，定义在回返结果的基于哪个字段进行排序
+                     * @return OrderBy 排序字段，定义在回返结果的基于哪个字段进行排序
+                     */
+                    std::string GetOrderBy() const;
+
+                    /**
+                     * 设置排序字段，定义在回返结果的基于哪个字段进行排序
+                     * @param OrderBy 排序字段，定义在回返结果的基于哪个字段进行排序
+                     */
+                    void SetOrderBy(const std::string& _orderBy);
+
+                    /**
+                     * 判断参数 OrderBy 是否已赋值
+                     * @return OrderBy 是否已赋值
+                     */
+                    bool OrderByHasBeenSet() const;
+
+                    /**
+                     * 获取定义具体的排序规则，限定为desc,asc,DESC,ASC其中之一
+                     * @return OrderByType 定义具体的排序规则，限定为desc,asc,DESC,ASC其中之一
+                     */
+                    std::string GetOrderByType() const;
+
+                    /**
+                     * 设置定义具体的排序规则，限定为desc,asc,DESC,ASC其中之一
+                     * @param OrderByType 定义具体的排序规则，限定为desc,asc,DESC,ASC其中之一
+                     */
+                    void SetOrderByType(const std::string& _orderByType);
+
+                    /**
+                     * 判断参数 OrderByType 是否已赋值
+                     * @return OrderByType 是否已赋值
+                     */
+                    bool OrderByTypeHasBeenSet() const;
+
+                    /**
                      * 获取返回数量，默认为 20，取值范围为(0,100]
                      * @return Limit 返回数量，默认为 20，取值范围为(0,100]
                      */
@@ -103,6 +157,24 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 实例ID列表，用来记录具体操作哪些实例
+                     */
+                    std::vector<std::string> m_instanceIds;
+                    bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 排序字段，定义在回返结果的基于哪个字段进行排序
+                     */
+                    std::string m_orderBy;
+                    bool m_orderByHasBeenSet;
+
+                    /**
+                     * 定义具体的排序规则，限定为desc,asc,DESC,ASC其中之一
+                     */
+                    std::string m_orderByType;
+                    bool m_orderByTypeHasBeenSet;
 
                     /**
                      * 返回数量，默认为 20，取值范围为(0,100]

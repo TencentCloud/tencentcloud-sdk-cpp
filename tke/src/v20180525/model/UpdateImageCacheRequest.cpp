@@ -24,7 +24,12 @@ using namespace std;
 
 UpdateImageCacheRequest::UpdateImageCacheRequest() :
     m_imageCacheIdHasBeenSet(false),
-    m_imageCacheNameHasBeenSet(false)
+    m_imageCacheNameHasBeenSet(false),
+    m_imageRegistryCredentialsHasBeenSet(false),
+    m_imagesHasBeenSet(false),
+    m_imageCacheSizeHasBeenSet(false),
+    m_retentionDaysHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -49,6 +54,63 @@ string UpdateImageCacheRequest::ToJsonString() const
         string key = "ImageCacheName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageCacheName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageRegistryCredentialsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageRegistryCredentials";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_imageRegistryCredentials.begin(); itr != m_imageRegistryCredentials.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_imagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Images";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_images.begin(); itr != m_images.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_imageCacheSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageCacheSize";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_imageCacheSize, allocator);
+    }
+
+    if (m_retentionDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetentionDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retentionDays, allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +151,86 @@ void UpdateImageCacheRequest::SetImageCacheName(const string& _imageCacheName)
 bool UpdateImageCacheRequest::ImageCacheNameHasBeenSet() const
 {
     return m_imageCacheNameHasBeenSet;
+}
+
+vector<ImageRegistryCredential> UpdateImageCacheRequest::GetImageRegistryCredentials() const
+{
+    return m_imageRegistryCredentials;
+}
+
+void UpdateImageCacheRequest::SetImageRegistryCredentials(const vector<ImageRegistryCredential>& _imageRegistryCredentials)
+{
+    m_imageRegistryCredentials = _imageRegistryCredentials;
+    m_imageRegistryCredentialsHasBeenSet = true;
+}
+
+bool UpdateImageCacheRequest::ImageRegistryCredentialsHasBeenSet() const
+{
+    return m_imageRegistryCredentialsHasBeenSet;
+}
+
+vector<string> UpdateImageCacheRequest::GetImages() const
+{
+    return m_images;
+}
+
+void UpdateImageCacheRequest::SetImages(const vector<string>& _images)
+{
+    m_images = _images;
+    m_imagesHasBeenSet = true;
+}
+
+bool UpdateImageCacheRequest::ImagesHasBeenSet() const
+{
+    return m_imagesHasBeenSet;
+}
+
+uint64_t UpdateImageCacheRequest::GetImageCacheSize() const
+{
+    return m_imageCacheSize;
+}
+
+void UpdateImageCacheRequest::SetImageCacheSize(const uint64_t& _imageCacheSize)
+{
+    m_imageCacheSize = _imageCacheSize;
+    m_imageCacheSizeHasBeenSet = true;
+}
+
+bool UpdateImageCacheRequest::ImageCacheSizeHasBeenSet() const
+{
+    return m_imageCacheSizeHasBeenSet;
+}
+
+uint64_t UpdateImageCacheRequest::GetRetentionDays() const
+{
+    return m_retentionDays;
+}
+
+void UpdateImageCacheRequest::SetRetentionDays(const uint64_t& _retentionDays)
+{
+    m_retentionDays = _retentionDays;
+    m_retentionDaysHasBeenSet = true;
+}
+
+bool UpdateImageCacheRequest::RetentionDaysHasBeenSet() const
+{
+    return m_retentionDaysHasBeenSet;
+}
+
+vector<string> UpdateImageCacheRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void UpdateImageCacheRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool UpdateImageCacheRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

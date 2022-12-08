@@ -24,6 +24,9 @@ using namespace std;
 
 DescribeClusterParamLogsRequest::DescribeClusterParamLogsRequest() :
     m_clusterIdHasBeenSet(false),
+    m_instanceIdsHasBeenSet(false),
+    m_orderByHasBeenSet(false),
+    m_orderByTypeHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false)
 {
@@ -42,6 +45,35 @@ string DescribeClusterParamLogsRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_instanceIds.begin(); itr != m_instanceIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_orderByHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderBy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderBy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderByTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderByType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderByType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -82,6 +114,54 @@ void DescribeClusterParamLogsRequest::SetClusterId(const string& _clusterId)
 bool DescribeClusterParamLogsRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+vector<string> DescribeClusterParamLogsRequest::GetInstanceIds() const
+{
+    return m_instanceIds;
+}
+
+void DescribeClusterParamLogsRequest::SetInstanceIds(const vector<string>& _instanceIds)
+{
+    m_instanceIds = _instanceIds;
+    m_instanceIdsHasBeenSet = true;
+}
+
+bool DescribeClusterParamLogsRequest::InstanceIdsHasBeenSet() const
+{
+    return m_instanceIdsHasBeenSet;
+}
+
+string DescribeClusterParamLogsRequest::GetOrderBy() const
+{
+    return m_orderBy;
+}
+
+void DescribeClusterParamLogsRequest::SetOrderBy(const string& _orderBy)
+{
+    m_orderBy = _orderBy;
+    m_orderByHasBeenSet = true;
+}
+
+bool DescribeClusterParamLogsRequest::OrderByHasBeenSet() const
+{
+    return m_orderByHasBeenSet;
+}
+
+string DescribeClusterParamLogsRequest::GetOrderByType() const
+{
+    return m_orderByType;
+}
+
+void DescribeClusterParamLogsRequest::SetOrderByType(const string& _orderByType)
+{
+    m_orderByType = _orderByType;
+    m_orderByTypeHasBeenSet = true;
+}
+
+bool DescribeClusterParamLogsRequest::OrderByTypeHasBeenSet() const
+{
+    return m_orderByTypeHasBeenSet;
 }
 
 int64_t DescribeClusterParamLogsRequest::GetLimit() const

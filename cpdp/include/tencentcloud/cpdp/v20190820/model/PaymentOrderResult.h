@@ -430,6 +430,28 @@ FAILED:已失败
                      */
                     bool AdditionalTaxItemHasBeenSet() const;
 
+                    /**
+                     * 获取失败原因。当Status为FAILED时，改字段为失败的原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FailReason 失败原因。当Status为FAILED时，改字段为失败的原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFailReason() const;
+
+                    /**
+                     * 设置失败原因。当Status为FAILED时，改字段为失败的原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FailReason 失败原因。当Status为FAILED时，改字段为失败的原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFailReason(const std::string& _failReason);
+
+                    /**
+                     * 判断参数 FailReason 是否已赋值
+                     * @return FailReason 是否已赋值
+                     */
+                    bool FailReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -554,6 +576,13 @@ FAILED:已失败
                      */
                     std::string m_additionalTaxItem;
                     bool m_additionalTaxItemHasBeenSet;
+
+                    /**
+                     * 失败原因。当Status为FAILED时，改字段为失败的原因。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_failReason;
+                    bool m_failReasonHasBeenSet;
 
                 };
             }

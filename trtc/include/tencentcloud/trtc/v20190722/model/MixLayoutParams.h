@@ -254,14 +254,14 @@ namespace TencentCloud
                     bool BackgroundImageRenderModeHasBeenSet() const;
 
                     /**
-                     * 获取下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
-                     * @return DefaultSubBackgroundImage 下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * 获取子画面占位图url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * @return DefaultSubBackgroundImage 子画面占位图url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
                      */
                     std::string GetDefaultSubBackgroundImage() const;
 
                     /**
-                     * 设置下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
-                     * @param DefaultSubBackgroundImage 下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * 设置子画面占位图url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * @param DefaultSubBackgroundImage 子画面占位图url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
                      */
                     void SetDefaultSubBackgroundImage(const std::string& _defaultSubBackgroundImage);
 
@@ -288,6 +288,42 @@ namespace TencentCloud
                      * @return WaterMarkList 是否已赋值
                      */
                     bool WaterMarkListHasBeenSet() const;
+
+                    /**
+                     * 获取模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     * @return RenderMode 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     */
+                    uint64_t GetRenderMode() const;
+
+                    /**
+                     * 设置模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     * @param RenderMode 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     */
+                    void SetRenderMode(const uint64_t& _renderMode);
+
+                    /**
+                     * 判断参数 RenderMode 是否已赋值
+                     * @return RenderMode 是否已赋值
+                     */
+                    bool RenderModeHasBeenSet() const;
+
+                    /**
+                     * 获取屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     * @return MaxResolutionUserAlign 屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     */
+                    uint64_t GetMaxResolutionUserAlign() const;
+
+                    /**
+                     * 设置屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     * @param MaxResolutionUserAlign 屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     */
+                    void SetMaxResolutionUserAlign(const uint64_t& _maxResolutionUserAlign);
+
+                    /**
+                     * 判断参数 MaxResolutionUserAlign 是否已赋值
+                     * @return MaxResolutionUserAlign 是否已赋值
+                     */
+                    bool MaxResolutionUserAlignHasBeenSet() const;
 
                 private:
 
@@ -355,7 +391,7 @@ namespace TencentCloud
                     bool m_backgroundImageRenderModeHasBeenSet;
 
                     /**
-                     * 下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * 子画面占位图url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
                      */
                     std::string m_defaultSubBackgroundImage;
                     bool m_defaultSubBackgroundImageHasBeenSet;
@@ -365,6 +401,18 @@ namespace TencentCloud
                      */
                     std::vector<WaterMark> m_waterMarkList;
                     bool m_waterMarkListHasBeenSet;
+
+                    /**
+                     * 模板布局下，背景画面宽高比不一致的时候处理方案。自定义布局不生效，与MixLayoufList定义的RenderMode一致。
+                     */
+                    uint64_t m_renderMode;
+                    bool m_renderModeHasBeenSet;
+
+                    /**
+                     * 屏幕分享模板有效。设置为1时代表大画面居右，小画面居左布局。默认为0。
+                     */
+                    uint64_t m_maxResolutionUserAlign;
+                    bool m_maxResolutionUserAlignHasBeenSet;
 
                 };
             }

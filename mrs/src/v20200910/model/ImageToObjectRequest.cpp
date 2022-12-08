@@ -26,7 +26,8 @@ ImageToObjectRequest::ImageToObjectRequest() :
     m_imageInfoListHasBeenSet(false),
     m_handleParamHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_isUsedClassifyHasBeenSet(false)
+    m_isUsedClassifyHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,14 @@ string ImageToObjectRequest::ToJsonString() const
         string key = "IsUsedClassify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isUsedClassify, allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_userType, allocator);
     }
 
 
@@ -147,6 +156,22 @@ void ImageToObjectRequest::SetIsUsedClassify(const bool& _isUsedClassify)
 bool ImageToObjectRequest::IsUsedClassifyHasBeenSet() const
 {
     return m_isUsedClassifyHasBeenSet;
+}
+
+int64_t ImageToObjectRequest::GetUserType() const
+{
+    return m_userType;
+}
+
+void ImageToObjectRequest::SetUserType(const int64_t& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool ImageToObjectRequest::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 
 

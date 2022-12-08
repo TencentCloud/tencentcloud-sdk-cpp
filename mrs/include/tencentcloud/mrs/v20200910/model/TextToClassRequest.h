@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool TextHasBeenSet() const;
 
+                    /**
+                     * 获取用户类型，新客户传1，老客户可不传
+                     * @return UserType 用户类型，新客户传1，老客户可不传
+                     */
+                    uint64_t GetUserType() const;
+
+                    /**
+                     * 设置用户类型，新客户传1，老客户可不传
+                     * @param UserType 用户类型，新客户传1，老客户可不传
+                     */
+                    void SetUserType(const uint64_t& _userType);
+
+                    /**
+                     * 判断参数 UserType 是否已赋值
+                     * @return UserType 是否已赋值
+                     */
+                    bool UserTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
+
+                    /**
+                     * 用户类型，新客户传1，老客户可不传
+                     */
+                    uint64_t m_userType;
+                    bool m_userTypeHasBeenSet;
 
                 };
             }

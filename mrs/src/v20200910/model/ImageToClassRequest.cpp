@@ -25,7 +25,8 @@ using namespace std;
 ImageToClassRequest::ImageToClassRequest() :
     m_imageInfoListHasBeenSet(false),
     m_handleParamHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string ImageToClassRequest::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_userType, allocator);
     }
 
 
@@ -122,6 +131,22 @@ void ImageToClassRequest::SetType(const uint64_t& _type)
 bool ImageToClassRequest::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+uint64_t ImageToClassRequest::GetUserType() const
+{
+    return m_userType;
+}
+
+void ImageToClassRequest::SetUserType(const uint64_t& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool ImageToClassRequest::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 
 

@@ -140,14 +140,14 @@ namespace TencentCloud
                     bool SubscribeStreamUserIdsHasBeenSet() const;
 
                     /**
-                     * 获取输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
-                     * @return OutputFormat 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
+                     * 获取输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。
+                     * @return OutputFormat 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。
                      */
                     uint64_t GetOutputFormat() const;
 
                     /**
-                     * 设置输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
-                     * @param OutputFormat 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
+                     * 设置输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。
+                     * @param OutputFormat 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。
                      */
                     void SetOutputFormat(const uint64_t& _outputFormat);
 
@@ -174,6 +174,28 @@ namespace TencentCloud
                      * @return AvMerge 是否已赋值
                      */
                     bool AvMergeHasBeenSet() const;
+
+                    /**
+                     * 获取如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+                     * @return MaxMediaFileDuration 如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+                     */
+                    uint64_t GetMaxMediaFileDuration() const;
+
+                    /**
+                     * 设置如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+                     * @param MaxMediaFileDuration 如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+                     */
+                    void SetMaxMediaFileDuration(const uint64_t& _maxMediaFileDuration);
+
+                    /**
+                     * 判断参数 MaxMediaFileDuration 是否已赋值
+                     * @return MaxMediaFileDuration 是否已赋值
+                     */
+                    bool MaxMediaFileDurationHasBeenSet() const;
 
                 private:
 
@@ -207,7 +229,7 @@ namespace TencentCloud
                     bool m_subscribeStreamUserIdsHasBeenSet;
 
                     /**
-                     * 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4（hls录制完成后转mp4文件）。
+                     * 输出文件的格式，上传到云点播时此参数无效，存储到云点播时请关注TencentVod内的MediaType参数。0：(默认)输出文件为hls格式。1：输出文件格式为hls+mp4。2：输出文件格式为hls+aac 。
                      */
                     uint64_t m_outputFormat;
                     bool m_outputFormatHasBeenSet;
@@ -217,6 +239,13 @@ namespace TencentCloud
                      */
                     uint64_t m_avMerge;
                     bool m_avMergeHasBeenSet;
+
+                    /**
+                     * 如果是aac或者mp4文件格式，超过长度限制后，系统会自动拆分视频文件。单位：分钟。默认为1440min（24h），取值范围为1-1440。【单文件限制最大为2G，满足文件大小 >2G 或录制时长度 > 24h任意一个条件，文件都会自动切分】
+Hls 格式录制此参数不生效。
+                     */
+                    uint64_t m_maxMediaFileDuration;
+                    bool m_maxMediaFileDurationHasBeenSet;
 
                 };
             }

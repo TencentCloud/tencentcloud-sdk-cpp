@@ -27,6 +27,7 @@
 #include <tencentcloud/tione/v20211111/model/ServiceInfo.h>
 #include <tencentcloud/tione/v20211111/model/ServiceLimit.h>
 #include <tencentcloud/tione/v20211111/model/ScheduledAction.h>
+#include <tencentcloud/tione/v20211111/model/Tag.h>
 
 
 namespace TencentCloud
@@ -649,6 +650,72 @@ Waiting 就绪中
                      */
                     bool ScheduledActionHasBeenSet() const;
 
+                    /**
+                     * 获取服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateFailedReason 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateFailedReason() const;
+
+                    /**
+                     * 设置服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateFailedReason 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateFailedReason(const std::string& _createFailedReason);
+
+                    /**
+                     * 判断参数 CreateFailedReason 是否已赋值
+                     * @return CreateFailedReason 是否已赋值
+                     */
+                    bool CreateFailedReasonHasBeenSet() const;
+
+                    /**
+                     * 获取预付费服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceGroupName 预付费服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceGroupName() const;
+
+                    /**
+                     * 设置预付费服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceGroupName 预付费服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceGroupName(const std::string& _resourceGroupName);
+
+                    /**
+                     * 判断参数 ResourceGroupName 是否已赋值
+                     * @return ResourceGroupName 是否已赋值
+                     */
+                    bool ResourceGroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -839,6 +906,27 @@ Waiting 就绪中
                      */
                     ScheduledAction m_scheduledAction;
                     bool m_scheduledActionHasBeenSet;
+
+                    /**
+                     * 服务创建失败的原因，创建成功后该字段为默认值 CREATE_SUCCEED
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createFailedReason;
+                    bool m_createFailedReasonHasBeenSet;
+
+                    /**
+                     * 预付费服务对应的资源组名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceGroupName;
+                    bool m_resourceGroupNameHasBeenSet;
+
+                    /**
+                     * 服务的标签
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

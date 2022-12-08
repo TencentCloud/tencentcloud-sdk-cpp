@@ -255,6 +255,49 @@ TkeClient::AddVpcCniSubnetsOutcomeCallable TkeClient::AddVpcCniSubnetsCallable(c
     return task->get_future();
 }
 
+TkeClient::CancelClusterReleaseOutcome TkeClient::CancelClusterRelease(const CancelClusterReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelClusterRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelClusterReleaseResponse rsp = CancelClusterReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelClusterReleaseOutcome(rsp);
+        else
+            return CancelClusterReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelClusterReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CancelClusterReleaseAsync(const CancelClusterReleaseRequest& request, const CancelClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelClusterRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CancelClusterReleaseOutcomeCallable TkeClient::CancelClusterReleaseCallable(const CancelClusterReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelClusterReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelClusterRelease(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CheckEdgeClusterCIDROutcome TkeClient::CheckEdgeClusterCIDR(const CheckEdgeClusterCIDRRequest &request)
 {
     auto outcome = MakeRequest(request, "CheckEdgeClusterCIDR");
@@ -3129,6 +3172,178 @@ TkeClient::DescribeClusterNodePoolsOutcomeCallable TkeClient::DescribeClusterNod
         [this, request]()
         {
             return this->DescribeClusterNodePools(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterPendingReleasesOutcome TkeClient::DescribeClusterPendingReleases(const DescribeClusterPendingReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterPendingReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterPendingReleasesResponse rsp = DescribeClusterPendingReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterPendingReleasesOutcome(rsp);
+        else
+            return DescribeClusterPendingReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterPendingReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterPendingReleasesAsync(const DescribeClusterPendingReleasesRequest& request, const DescribeClusterPendingReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterPendingReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterPendingReleasesOutcomeCallable TkeClient::DescribeClusterPendingReleasesCallable(const DescribeClusterPendingReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterPendingReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterPendingReleases(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterReleaseDetailsOutcome TkeClient::DescribeClusterReleaseDetails(const DescribeClusterReleaseDetailsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterReleaseDetails");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterReleaseDetailsResponse rsp = DescribeClusterReleaseDetailsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterReleaseDetailsOutcome(rsp);
+        else
+            return DescribeClusterReleaseDetailsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterReleaseDetailsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterReleaseDetailsAsync(const DescribeClusterReleaseDetailsRequest& request, const DescribeClusterReleaseDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterReleaseDetails(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterReleaseDetailsOutcomeCallable TkeClient::DescribeClusterReleaseDetailsCallable(const DescribeClusterReleaseDetailsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterReleaseDetailsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterReleaseDetails(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterReleaseHistoryOutcome TkeClient::DescribeClusterReleaseHistory(const DescribeClusterReleaseHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterReleaseHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterReleaseHistoryResponse rsp = DescribeClusterReleaseHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterReleaseHistoryOutcome(rsp);
+        else
+            return DescribeClusterReleaseHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterReleaseHistoryOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterReleaseHistoryAsync(const DescribeClusterReleaseHistoryRequest& request, const DescribeClusterReleaseHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterReleaseHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterReleaseHistoryOutcomeCallable TkeClient::DescribeClusterReleaseHistoryCallable(const DescribeClusterReleaseHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterReleaseHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterReleaseHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterReleasesOutcome TkeClient::DescribeClusterReleases(const DescribeClusterReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterReleasesResponse rsp = DescribeClusterReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterReleasesOutcome(rsp);
+        else
+            return DescribeClusterReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterReleasesAsync(const DescribeClusterReleasesRequest& request, const DescribeClusterReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterReleasesOutcomeCallable TkeClient::DescribeClusterReleasesCallable(const DescribeClusterReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterReleases(request);
         }
     );
 
@@ -6834,6 +7049,49 @@ TkeClient::RestartEKSContainerInstancesOutcomeCallable TkeClient::RestartEKSCont
     return task->get_future();
 }
 
+TkeClient::RollbackClusterReleaseOutcome TkeClient::RollbackClusterRelease(const RollbackClusterReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "RollbackClusterRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RollbackClusterReleaseResponse rsp = RollbackClusterReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RollbackClusterReleaseOutcome(rsp);
+        else
+            return RollbackClusterReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return RollbackClusterReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::RollbackClusterReleaseAsync(const RollbackClusterReleaseRequest& request, const RollbackClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RollbackClusterRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::RollbackClusterReleaseOutcomeCallable TkeClient::RollbackClusterReleaseCallable(const RollbackClusterReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RollbackClusterReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->RollbackClusterRelease(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::RunPrometheusInstanceOutcome TkeClient::RunPrometheusInstance(const RunPrometheusInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "RunPrometheusInstance");
@@ -7085,6 +7343,49 @@ TkeClient::SyncPrometheusTemplateOutcomeCallable TkeClient::SyncPrometheusTempla
         [this, request]()
         {
             return this->SyncPrometheusTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UninstallClusterReleaseOutcome TkeClient::UninstallClusterRelease(const UninstallClusterReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "UninstallClusterRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UninstallClusterReleaseResponse rsp = UninstallClusterReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UninstallClusterReleaseOutcome(rsp);
+        else
+            return UninstallClusterReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return UninstallClusterReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UninstallClusterReleaseAsync(const UninstallClusterReleaseRequest& request, const UninstallClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UninstallClusterRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UninstallClusterReleaseOutcomeCallable TkeClient::UninstallClusterReleaseCallable(const UninstallClusterReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UninstallClusterReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->UninstallClusterRelease(request);
         }
     );
 
@@ -7472,6 +7773,49 @@ TkeClient::UpgradeClusterInstancesOutcomeCallable TkeClient::UpgradeClusterInsta
         [this, request]()
         {
             return this->UpgradeClusterInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::UpgradeClusterReleaseOutcome TkeClient::UpgradeClusterRelease(const UpgradeClusterReleaseRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeClusterRelease");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeClusterReleaseResponse rsp = UpgradeClusterReleaseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeClusterReleaseOutcome(rsp);
+        else
+            return UpgradeClusterReleaseOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeClusterReleaseOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpgradeClusterReleaseAsync(const UpgradeClusterReleaseRequest& request, const UpgradeClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeClusterRelease(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpgradeClusterReleaseOutcomeCallable TkeClient::UpgradeClusterReleaseCallable(const UpgradeClusterReleaseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeClusterReleaseOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeClusterRelease(request);
         }
     );
 

@@ -25,7 +25,8 @@ using namespace std;
 TextToObjectRequest::TextToObjectRequest() :
     m_textHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_isUsedClassifyHasBeenSet(false)
+    m_isUsedClassifyHasBeenSet(false),
+    m_userTypeHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string TextToObjectRequest::ToJsonString() const
         string key = "IsUsedClassify";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isUsedClassify, allocator);
+    }
+
+    if (m_userTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_userType, allocator);
     }
 
 
@@ -114,6 +123,22 @@ void TextToObjectRequest::SetIsUsedClassify(const bool& _isUsedClassify)
 bool TextToObjectRequest::IsUsedClassifyHasBeenSet() const
 {
     return m_isUsedClassifyHasBeenSet;
+}
+
+uint64_t TextToObjectRequest::GetUserType() const
+{
+    return m_userType;
+}
+
+void TextToObjectRequest::SetUserType(const uint64_t& _userType)
+{
+    m_userType = _userType;
+    m_userTypeHasBeenSet = true;
+}
+
+bool TextToObjectRequest::UserTypeHasBeenSet() const
+{
+    return m_userTypeHasBeenSet;
 }
 
 

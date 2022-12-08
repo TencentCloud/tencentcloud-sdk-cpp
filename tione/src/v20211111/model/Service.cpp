@@ -46,7 +46,10 @@ Service::Service() :
     m_weightHasBeenSet(false),
     m_ingressNameHasBeenSet(false),
     m_serviceLimitHasBeenSet(false),
-    m_scheduledActionHasBeenSet(false)
+    m_scheduledActionHasBeenSet(false),
+    m_createFailedReasonHasBeenSet(false),
+    m_resourceGroupNameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -336,6 +339,46 @@ CoreInternalOutcome Service::Deserialize(const rapidjson::Value &value)
         m_scheduledActionHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateFailedReason") && !value["CreateFailedReason"].IsNull())
+    {
+        if (!value["CreateFailedReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.CreateFailedReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createFailedReason = string(value["CreateFailedReason"].GetString());
+        m_createFailedReasonHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourceGroupName") && !value["ResourceGroupName"].IsNull())
+    {
+        if (!value["ResourceGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Service.ResourceGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceGroupName = string(value["ResourceGroupName"].GetString());
+        m_resourceGroupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Service.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -552,6 +595,37 @@ void Service::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_scheduledAction.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_createFailedReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateFailedReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createFailedReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -971,5 +1045,53 @@ void Service::SetScheduledAction(const ScheduledAction& _scheduledAction)
 bool Service::ScheduledActionHasBeenSet() const
 {
     return m_scheduledActionHasBeenSet;
+}
+
+string Service::GetCreateFailedReason() const
+{
+    return m_createFailedReason;
+}
+
+void Service::SetCreateFailedReason(const string& _createFailedReason)
+{
+    m_createFailedReason = _createFailedReason;
+    m_createFailedReasonHasBeenSet = true;
+}
+
+bool Service::CreateFailedReasonHasBeenSet() const
+{
+    return m_createFailedReasonHasBeenSet;
+}
+
+string Service::GetResourceGroupName() const
+{
+    return m_resourceGroupName;
+}
+
+void Service::SetResourceGroupName(const string& _resourceGroupName)
+{
+    m_resourceGroupName = _resourceGroupName;
+    m_resourceGroupNameHasBeenSet = true;
+}
+
+bool Service::ResourceGroupNameHasBeenSet() const
+{
+    return m_resourceGroupNameHasBeenSet;
+}
+
+vector<Tag> Service::GetTags() const
+{
+    return m_tags;
+}
+
+void Service::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool Service::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

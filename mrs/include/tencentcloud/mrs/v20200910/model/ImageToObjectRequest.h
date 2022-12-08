@@ -120,6 +120,24 @@ namespace TencentCloud
                      */
                     bool IsUsedClassifyHasBeenSet() const;
 
+                    /**
+                     * 获取用户类型，新客户传1，老客户可不传
+                     * @return UserType 用户类型，新客户传1，老客户可不传
+                     */
+                    int64_t GetUserType() const;
+
+                    /**
+                     * 设置用户类型，新客户传1，老客户可不传
+                     * @param UserType 用户类型，新客户传1，老客户可不传
+                     */
+                    void SetUserType(const int64_t& _userType);
+
+                    /**
+                     * 判断参数 UserType 是否已赋值
+                     * @return UserType 是否已赋值
+                     */
+                    bool UserTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +164,12 @@ namespace TencentCloud
                      */
                     bool m_isUsedClassify;
                     bool m_isUsedClassifyHasBeenSet;
+
+                    /**
+                     * 用户类型，新客户传1，老客户可不传
+                     */
+                    int64_t m_userType;
+                    bool m_userTypeHasBeenSet;
 
                 };
             }

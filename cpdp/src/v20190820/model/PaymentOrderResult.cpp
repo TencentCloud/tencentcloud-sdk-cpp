@@ -38,7 +38,8 @@ PaymentOrderResult::PaymentOrderResult() :
     m_vatHasBeenSet(false),
     m_individualIncomeTaxHasBeenSet(false),
     m_additionalTaxSumHasBeenSet(false),
-    m_additionalTaxItemHasBeenSet(false)
+    m_additionalTaxItemHasBeenSet(false),
+    m_failReasonHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome PaymentOrderResult::Deserialize(const rapidjson::Value &valu
         m_additionalTaxItemHasBeenSet = true;
     }
 
+    if (value.HasMember("FailReason") && !value["FailReason"].IsNull())
+    {
+        if (!value["FailReason"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PaymentOrderResult.FailReason` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_failReason = string(value["FailReason"].GetString());
+        m_failReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void PaymentOrderResult::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "AdditionalTaxItem";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_additionalTaxItem.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_failReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FailReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_failReason.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void PaymentOrderResult::SetAdditionalTaxItem(const string& _additionalTaxItem)
 bool PaymentOrderResult::AdditionalTaxItemHasBeenSet() const
 {
     return m_additionalTaxItemHasBeenSet;
+}
+
+string PaymentOrderResult::GetFailReason() const
+{
+    return m_failReason;
+}
+
+void PaymentOrderResult::SetFailReason(const string& _failReason)
+{
+    m_failReason = _failReason;
+    m_failReasonHasBeenSet = true;
+}
+
+bool PaymentOrderResult::FailReasonHasBeenSet() const
+{
+    return m_failReasonHasBeenSet;
 }
 

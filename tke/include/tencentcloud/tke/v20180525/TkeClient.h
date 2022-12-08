@@ -33,6 +33,8 @@
 #include <tencentcloud/tke/v20180525/model/AddNodeToNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/AddVpcCniSubnetsRequest.h>
 #include <tencentcloud/tke/v20180525/model/AddVpcCniSubnetsResponse.h>
+#include <tencentcloud/tke/v20180525/model/CancelClusterReleaseRequest.h>
+#include <tencentcloud/tke/v20180525/model/CancelClusterReleaseResponse.h>
 #include <tencentcloud/tke/v20180525/model/CheckEdgeClusterCIDRRequest.h>
 #include <tencentcloud/tke/v20180525/model/CheckEdgeClusterCIDRResponse.h>
 #include <tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleRequest.h>
@@ -167,6 +169,14 @@
 #include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterPendingReleasesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterPendingReleasesResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterReleaseDetailsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterReleaseDetailsResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterReleaseHistoryRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterReleaseHistoryResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterReleasesRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeClusterReleasesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRouteTablesResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h>
@@ -339,6 +349,8 @@
 #include <tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h>
 #include <tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/RollbackClusterReleaseRequest.h>
+#include <tencentcloud/tke/v20180525/model/RollbackClusterReleaseResponse.h>
 #include <tencentcloud/tke/v20180525/model/RunPrometheusInstanceRequest.h>
 #include <tencentcloud/tke/v20180525/model/RunPrometheusInstanceResponse.h>
 #include <tencentcloud/tke/v20180525/model/ScaleInClusterMasterRequest.h>
@@ -351,6 +363,8 @@
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTempResponse.h>
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateRequest.h>
 #include <tencentcloud/tke/v20180525/model/SyncPrometheusTemplateResponse.h>
+#include <tencentcloud/tke/v20180525/model/UninstallClusterReleaseRequest.h>
+#include <tencentcloud/tke/v20180525/model/UninstallClusterReleaseResponse.h>
 #include <tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentRequest.h>
 #include <tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/UninstallLogAgentRequest.h>
@@ -369,6 +383,8 @@
 #include <tencentcloud/tke/v20180525/model/UpdateTKEEdgeClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeClusterInstancesResponse.h>
+#include <tencentcloud/tke/v20180525/model/UpgradeClusterReleaseRequest.h>
+#include <tencentcloud/tke/v20180525/model/UpgradeClusterReleaseResponse.h>
 
 
 namespace TencentCloud
@@ -398,6 +414,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddVpcCniSubnetsResponse> AddVpcCniSubnetsOutcome;
                 typedef std::future<AddVpcCniSubnetsOutcome> AddVpcCniSubnetsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::AddVpcCniSubnetsRequest&, AddVpcCniSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddVpcCniSubnetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelClusterReleaseResponse> CancelClusterReleaseOutcome;
+                typedef std::future<CancelClusterReleaseOutcome> CancelClusterReleaseOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CancelClusterReleaseRequest&, CancelClusterReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelClusterReleaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::CheckEdgeClusterCIDRResponse> CheckEdgeClusterCIDROutcome;
                 typedef std::future<CheckEdgeClusterCIDROutcome> CheckEdgeClusterCIDROutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CheckEdgeClusterCIDRRequest&, CheckEdgeClusterCIDROutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckEdgeClusterCIDRAsyncHandler;
@@ -599,6 +618,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeClusterNodePoolsResponse> DescribeClusterNodePoolsOutcome;
                 typedef std::future<DescribeClusterNodePoolsOutcome> DescribeClusterNodePoolsOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterNodePoolsRequest&, DescribeClusterNodePoolsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterNodePoolsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterPendingReleasesResponse> DescribeClusterPendingReleasesOutcome;
+                typedef std::future<DescribeClusterPendingReleasesOutcome> DescribeClusterPendingReleasesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterPendingReleasesRequest&, DescribeClusterPendingReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterPendingReleasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterReleaseDetailsResponse> DescribeClusterReleaseDetailsOutcome;
+                typedef std::future<DescribeClusterReleaseDetailsOutcome> DescribeClusterReleaseDetailsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterReleaseDetailsRequest&, DescribeClusterReleaseDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterReleaseDetailsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterReleaseHistoryResponse> DescribeClusterReleaseHistoryOutcome;
+                typedef std::future<DescribeClusterReleaseHistoryOutcome> DescribeClusterReleaseHistoryOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterReleaseHistoryRequest&, DescribeClusterReleaseHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterReleaseHistoryAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterReleasesResponse> DescribeClusterReleasesOutcome;
+                typedef std::future<DescribeClusterReleasesOutcome> DescribeClusterReleasesOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeClusterReleasesRequest&, DescribeClusterReleasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterReleasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterRouteTablesResponse> DescribeClusterRouteTablesOutcome;
                 typedef std::future<DescribeClusterRouteTablesOutcome> DescribeClusterRouteTablesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterRouteTablesRequest&, DescribeClusterRouteTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterRouteTablesAsyncHandler;
@@ -857,6 +888,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RestartEKSContainerInstancesResponse> RestartEKSContainerInstancesOutcome;
                 typedef std::future<RestartEKSContainerInstancesOutcome> RestartEKSContainerInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RestartEKSContainerInstancesRequest&, RestartEKSContainerInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RestartEKSContainerInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RollbackClusterReleaseResponse> RollbackClusterReleaseOutcome;
+                typedef std::future<RollbackClusterReleaseOutcome> RollbackClusterReleaseOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::RollbackClusterReleaseRequest&, RollbackClusterReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackClusterReleaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::RunPrometheusInstanceResponse> RunPrometheusInstanceOutcome;
                 typedef std::future<RunPrometheusInstanceOutcome> RunPrometheusInstanceOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::RunPrometheusInstanceRequest&, RunPrometheusInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunPrometheusInstanceAsyncHandler;
@@ -875,6 +909,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SyncPrometheusTemplateResponse> SyncPrometheusTemplateOutcome;
                 typedef std::future<SyncPrometheusTemplateOutcome> SyncPrometheusTemplateOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::SyncPrometheusTemplateRequest&, SyncPrometheusTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncPrometheusTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::UninstallClusterReleaseResponse> UninstallClusterReleaseOutcome;
+                typedef std::future<UninstallClusterReleaseOutcome> UninstallClusterReleaseOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UninstallClusterReleaseRequest&, UninstallClusterReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallClusterReleaseAsyncHandler;
                 typedef Outcome<Core::Error, Model::UninstallEdgeLogAgentResponse> UninstallEdgeLogAgentOutcome;
                 typedef std::future<UninstallEdgeLogAgentOutcome> UninstallEdgeLogAgentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UninstallEdgeLogAgentRequest&, UninstallEdgeLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallEdgeLogAgentAsyncHandler;
@@ -902,6 +939,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeClusterInstancesResponse> UpgradeClusterInstancesOutcome;
                 typedef std::future<UpgradeClusterInstancesOutcome> UpgradeClusterInstancesOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpgradeClusterInstancesRequest&, UpgradeClusterInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeClusterReleaseResponse> UpgradeClusterReleaseOutcome;
+                typedef std::future<UpgradeClusterReleaseOutcome> UpgradeClusterReleaseOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UpgradeClusterReleaseRequest&, UpgradeClusterReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeClusterReleaseAsyncHandler;
 
 
 
@@ -949,6 +989,15 @@ namespace TencentCloud
                 AddVpcCniSubnetsOutcome AddVpcCniSubnets(const Model::AddVpcCniSubnetsRequest &request);
                 void AddVpcCniSubnetsAsync(const Model::AddVpcCniSubnetsRequest& request, const AddVpcCniSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddVpcCniSubnetsOutcomeCallable AddVpcCniSubnetsCallable(const Model::AddVpcCniSubnetsRequest& request);
+
+                /**
+                 *在应用市场中取消安装失败的应用
+                 * @param req CancelClusterReleaseRequest
+                 * @return CancelClusterReleaseOutcome
+                 */
+                CancelClusterReleaseOutcome CancelClusterRelease(const Model::CancelClusterReleaseRequest &request);
+                void CancelClusterReleaseAsync(const Model::CancelClusterReleaseRequest& request, const CancelClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelClusterReleaseOutcomeCallable CancelClusterReleaseCallable(const Model::CancelClusterReleaseRequest& request);
 
                 /**
                  *检查边缘计算集群的CIDR是否冲突
@@ -1552,6 +1601,42 @@ namespace TencentCloud
                 DescribeClusterNodePoolsOutcome DescribeClusterNodePools(const Model::DescribeClusterNodePoolsRequest &request);
                 void DescribeClusterNodePoolsAsync(const Model::DescribeClusterNodePoolsRequest& request, const DescribeClusterNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeClusterNodePoolsOutcomeCallable DescribeClusterNodePoolsCallable(const Model::DescribeClusterNodePoolsRequest& request);
+
+                /**
+                 *在应用市场中查询正在安装中的应用列表
+                 * @param req DescribeClusterPendingReleasesRequest
+                 * @return DescribeClusterPendingReleasesOutcome
+                 */
+                DescribeClusterPendingReleasesOutcome DescribeClusterPendingReleases(const Model::DescribeClusterPendingReleasesRequest &request);
+                void DescribeClusterPendingReleasesAsync(const Model::DescribeClusterPendingReleasesRequest& request, const DescribeClusterPendingReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterPendingReleasesOutcomeCallable DescribeClusterPendingReleasesCallable(const Model::DescribeClusterPendingReleasesRequest& request);
+
+                /**
+                 *查询通过应用市场安装的某个应用详情
+                 * @param req DescribeClusterReleaseDetailsRequest
+                 * @return DescribeClusterReleaseDetailsOutcome
+                 */
+                DescribeClusterReleaseDetailsOutcome DescribeClusterReleaseDetails(const Model::DescribeClusterReleaseDetailsRequest &request);
+                void DescribeClusterReleaseDetailsAsync(const Model::DescribeClusterReleaseDetailsRequest& request, const DescribeClusterReleaseDetailsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterReleaseDetailsOutcomeCallable DescribeClusterReleaseDetailsCallable(const Model::DescribeClusterReleaseDetailsRequest& request);
+
+                /**
+                 *查询集群在应用市场中某个已安装应用的版本历史
+                 * @param req DescribeClusterReleaseHistoryRequest
+                 * @return DescribeClusterReleaseHistoryOutcome
+                 */
+                DescribeClusterReleaseHistoryOutcome DescribeClusterReleaseHistory(const Model::DescribeClusterReleaseHistoryRequest &request);
+                void DescribeClusterReleaseHistoryAsync(const Model::DescribeClusterReleaseHistoryRequest& request, const DescribeClusterReleaseHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterReleaseHistoryOutcomeCallable DescribeClusterReleaseHistoryCallable(const Model::DescribeClusterReleaseHistoryRequest& request);
+
+                /**
+                 *查询集群在应用市场中已安装应用列表
+                 * @param req DescribeClusterReleasesRequest
+                 * @return DescribeClusterReleasesOutcome
+                 */
+                DescribeClusterReleasesOutcome DescribeClusterReleases(const Model::DescribeClusterReleasesRequest &request);
+                void DescribeClusterReleasesAsync(const Model::DescribeClusterReleasesRequest& request, const DescribeClusterReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterReleasesOutcomeCallable DescribeClusterReleasesCallable(const Model::DescribeClusterReleasesRequest& request);
 
                 /**
                  *查询集群路由表
@@ -2328,6 +2413,15 @@ namespace TencentCloud
                 RestartEKSContainerInstancesOutcomeCallable RestartEKSContainerInstancesCallable(const Model::RestartEKSContainerInstancesRequest& request);
 
                 /**
+                 *在应用市场中集群回滚应用至某个历史版本
+                 * @param req RollbackClusterReleaseRequest
+                 * @return RollbackClusterReleaseOutcome
+                 */
+                RollbackClusterReleaseOutcome RollbackClusterRelease(const Model::RollbackClusterReleaseRequest &request);
+                void RollbackClusterReleaseAsync(const Model::RollbackClusterReleaseRequest& request, const RollbackClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RollbackClusterReleaseOutcomeCallable RollbackClusterReleaseCallable(const Model::RollbackClusterReleaseRequest& request);
+
+                /**
                  *初始化TMP实例，开启集成中心时调用
                  * @param req RunPrometheusInstanceRequest
                  * @return RunPrometheusInstanceOutcome
@@ -2380,6 +2474,15 @@ namespace TencentCloud
                 SyncPrometheusTemplateOutcome SyncPrometheusTemplate(const Model::SyncPrometheusTemplateRequest &request);
                 void SyncPrometheusTemplateAsync(const Model::SyncPrometheusTemplateRequest& request, const SyncPrometheusTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncPrometheusTemplateOutcomeCallable SyncPrometheusTemplateCallable(const Model::SyncPrometheusTemplateRequest& request);
+
+                /**
+                 *在应用市场中集群删除某个应用
+                 * @param req UninstallClusterReleaseRequest
+                 * @return UninstallClusterReleaseOutcome
+                 */
+                UninstallClusterReleaseOutcome UninstallClusterRelease(const Model::UninstallClusterReleaseRequest &request);
+                void UninstallClusterReleaseAsync(const Model::UninstallClusterReleaseRequest& request, const UninstallClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UninstallClusterReleaseOutcomeCallable UninstallClusterReleaseCallable(const Model::UninstallClusterReleaseRequest& request);
 
                 /**
                  *从tke@edge集群边缘节点上卸载日志采集组件
@@ -2461,6 +2564,15 @@ namespace TencentCloud
                 UpgradeClusterInstancesOutcome UpgradeClusterInstances(const Model::UpgradeClusterInstancesRequest &request);
                 void UpgradeClusterInstancesAsync(const Model::UpgradeClusterInstancesRequest& request, const UpgradeClusterInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeClusterInstancesOutcomeCallable UpgradeClusterInstancesCallable(const Model::UpgradeClusterInstancesRequest& request);
+
+                /**
+                 *升级集群中已安装的应用
+                 * @param req UpgradeClusterReleaseRequest
+                 * @return UpgradeClusterReleaseOutcome
+                 */
+                UpgradeClusterReleaseOutcome UpgradeClusterRelease(const Model::UpgradeClusterReleaseRequest &request);
+                void UpgradeClusterReleaseAsync(const Model::UpgradeClusterReleaseRequest& request, const UpgradeClusterReleaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeClusterReleaseOutcomeCallable UpgradeClusterReleaseCallable(const Model::UpgradeClusterReleaseRequest& request);
 
             };
         }
