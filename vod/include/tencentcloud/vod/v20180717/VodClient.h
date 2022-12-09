@@ -145,6 +145,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeEventConfigResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeEventsStateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeFileAttributesRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeFileAttributesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeHeadTailTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeHeadTailTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeImageProcessingTemplatesRequest.h>
@@ -488,6 +490,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEventsStateResponse> DescribeEventsStateOutcome;
                 typedef std::future<DescribeEventsStateOutcome> DescribeEventsStateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeEventsStateRequest&, DescribeEventsStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventsStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFileAttributesResponse> DescribeFileAttributesOutcome;
+                typedef std::future<DescribeFileAttributesOutcome> DescribeFileAttributesOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeFileAttributesRequest&, DescribeFileAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHeadTailTemplatesResponse> DescribeHeadTailTemplatesOutcome;
                 typedef std::future<DescribeHeadTailTemplatesOutcome> DescribeHeadTailTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeHeadTailTemplatesRequest&, DescribeHeadTailTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHeadTailTemplatesAsyncHandler;
@@ -1322,6 +1327,17 @@ namespace TencentCloud
                 DescribeEventsStateOutcome DescribeEventsState(const Model::DescribeEventsStateRequest &request);
                 void DescribeEventsStateAsync(const Model::DescribeEventsStateRequest& request, const DescribeEventsStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEventsStateOutcomeCallable DescribeEventsStateCallable(const Model::DescribeEventsStateRequest& request);
+
+                /**
+                 *用于异步获取文件属性。
+- 当前仅支持获取源文件的 Md5。
+- 对输入文件为 HLS 或 DASH 的情况，仅获取索引文件的属性。
+                 * @param req DescribeFileAttributesRequest
+                 * @return DescribeFileAttributesOutcome
+                 */
+                DescribeFileAttributesOutcome DescribeFileAttributes(const Model::DescribeFileAttributesRequest &request);
+                void DescribeFileAttributesAsync(const Model::DescribeFileAttributesRequest& request, const DescribeFileAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileAttributesOutcomeCallable DescribeFileAttributesCallable(const Model::DescribeFileAttributesRequest& request);
 
                 /**
                  *获取片头片尾模板列表。

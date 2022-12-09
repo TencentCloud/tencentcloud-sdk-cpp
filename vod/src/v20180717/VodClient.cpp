@@ -2663,6 +2663,49 @@ VodClient::DescribeEventsStateOutcomeCallable VodClient::DescribeEventsStateCall
     return task->get_future();
 }
 
+VodClient::DescribeFileAttributesOutcome VodClient::DescribeFileAttributes(const DescribeFileAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileAttributesResponse rsp = DescribeFileAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileAttributesOutcome(rsp);
+        else
+            return DescribeFileAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileAttributesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeFileAttributesAsync(const DescribeFileAttributesRequest& request, const DescribeFileAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeFileAttributesOutcomeCallable VodClient::DescribeFileAttributesCallable(const DescribeFileAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeHeadTailTemplatesOutcome VodClient::DescribeHeadTailTemplates(const DescribeHeadTailTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHeadTailTemplates");

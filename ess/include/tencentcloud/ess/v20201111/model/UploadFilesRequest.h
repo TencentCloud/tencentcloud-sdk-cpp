@@ -75,14 +75,14 @@ namespace TencentCloud
                     bool BusinessTypeHasBeenSet() const;
 
                     /**
-                     * 获取调用方信息
-                     * @return Caller 调用方信息
+                     * 获取调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * @return Caller 调用方信息，其中OperatorId为必填字段，即用户的UserId
                      */
                     Caller GetCaller() const;
 
                     /**
-                     * 设置调用方信息
-                     * @param Caller 调用方信息
+                     * 设置调用方信息，其中OperatorId为必填字段，即用户的UserId
+                     * @param Caller 调用方信息，其中OperatorId为必填字段，即用户的UserId
                      */
                     void SetCaller(const Caller& _caller);
 
@@ -111,50 +111,6 @@ namespace TencentCloud
                     bool FileInfosHasBeenSet() const;
 
                     /**
-                     * 获取不再使用，上传文件链接数组，最多支持20个URL
-                     * @return FileUrls 不再使用，上传文件链接数组，最多支持20个URL
-                     */
-                    std::string GetFileUrls() const;
-
-                    /**
-                     * 设置不再使用，上传文件链接数组，最多支持20个URL
-                     * @param FileUrls 不再使用，上传文件链接数组，最多支持20个URL
-                     */
-                    void SetFileUrls(const std::string& _fileUrls);
-
-                    /**
-                     * 判断参数 FileUrls 是否已赋值
-                     * @return FileUrls 是否已赋值
-                     */
-                    bool FileUrlsHasBeenSet() const;
-
-                    /**
-                     * 获取此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-false--否，不处理
-                     * @return CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-false--否，不处理
-                     */
-                    bool GetCoverRect() const;
-
-                    /**
-                     * 设置此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-false--否，不处理
-                     * @param CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-false--否，不处理
-                     */
-                    void SetCoverRect(const bool& _coverRect);
-
-                    /**
-                     * 判断参数 CoverRect 是否已赋值
-                     * @return CoverRect 是否已赋值
-                     */
-                    bool CoverRectHasBeenSet() const;
-
-                    /**
                      * 获取文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
 如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
                      * @return FileType 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
@@ -177,6 +133,32 @@ false--否，不处理
                     bool FileTypeHasBeenSet() const;
 
                     /**
+                     * 获取此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
+true--是，处理置白
+默认为false--否，不处理
+                     * @return CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
+true--是，处理置白
+默认为false--否，不处理
+                     */
+                    bool GetCoverRect() const;
+
+                    /**
+                     * 设置此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
+true--是，处理置白
+默认为false--否，不处理
+                     * @param CoverRect 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
+true--是，处理置白
+默认为false--否，不处理
+                     */
+                    void SetCoverRect(const bool& _coverRect);
+
+                    /**
+                     * 判断参数 CoverRect 是否已赋值
+                     * @return CoverRect 是否已赋值
+                     */
+                    bool CoverRectHasBeenSet() const;
+
+                    /**
                      * 获取用户自定义ID数组，与上传文件一一对应
                      * @return CustomIds 用户自定义ID数组，与上传文件一一对应
                      */
@@ -194,6 +176,24 @@ false--否，不处理
                      */
                     bool CustomIdsHasBeenSet() const;
 
+                    /**
+                     * 获取不再使用，上传文件链接数组，最多支持20个URL
+                     * @return FileUrls 不再使用，上传文件链接数组，最多支持20个URL
+                     */
+                    std::string GetFileUrls() const;
+
+                    /**
+                     * 设置不再使用，上传文件链接数组，最多支持20个URL
+                     * @param FileUrls 不再使用，上传文件链接数组，最多支持20个URL
+                     */
+                    void SetFileUrls(const std::string& _fileUrls);
+
+                    /**
+                     * 判断参数 FileUrls 是否已赋值
+                     * @return FileUrls 是否已赋值
+                     */
+                    bool FileUrlsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,7 +206,7 @@ false--否，不处理
                     bool m_businessTypeHasBeenSet;
 
                     /**
-                     * 调用方信息
+                     * 调用方信息，其中OperatorId为必填字段，即用户的UserId
                      */
                     Caller m_caller;
                     bool m_callerHasBeenSet;
@@ -218,20 +218,6 @@ false--否，不处理
                     bool m_fileInfosHasBeenSet;
 
                     /**
-                     * 不再使用，上传文件链接数组，最多支持20个URL
-                     */
-                    std::string m_fileUrls;
-                    bool m_fileUrlsHasBeenSet;
-
-                    /**
-                     * 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
-true--是，处理置白
-false--否，不处理
-                     */
-                    bool m_coverRect;
-                    bool m_coverRectHasBeenSet;
-
-                    /**
                      * 文件类型， 默认通过文件内容解析得到文件类型，客户可以显示的说明上传文件的类型。
 如：PDF 表示上传的文件 xxx.pdf的文件类型是 PDF
                      */
@@ -239,10 +225,24 @@ false--否，不处理
                     bool m_fileTypeHasBeenSet;
 
                     /**
+                     * 此参数只对 PDF 文件有效。是否将pdf灰色矩阵置白
+true--是，处理置白
+默认为false--否，不处理
+                     */
+                    bool m_coverRect;
+                    bool m_coverRectHasBeenSet;
+
+                    /**
                      * 用户自定义ID数组，与上传文件一一对应
                      */
                     std::vector<std::string> m_customIds;
                     bool m_customIdsHasBeenSet;
+
+                    /**
+                     * 不再使用，上传文件链接数组，最多支持20个URL
+                     */
+                    std::string m_fileUrls;
+                    bool m_fileUrlsHasBeenSet;
 
                 };
             }

@@ -26,10 +26,10 @@ UploadFilesRequest::UploadFilesRequest() :
     m_businessTypeHasBeenSet(false),
     m_callerHasBeenSet(false),
     m_fileInfosHasBeenSet(false),
-    m_fileUrlsHasBeenSet(false),
-    m_coverRectHasBeenSet(false),
     m_fileTypeHasBeenSet(false),
-    m_customIdsHasBeenSet(false)
+    m_coverRectHasBeenSet(false),
+    m_customIdsHasBeenSet(false),
+    m_fileUrlsHasBeenSet(false)
 {
 }
 
@@ -72,12 +72,12 @@ string UploadFilesRequest::ToJsonString() const
         }
     }
 
-    if (m_fileUrlsHasBeenSet)
+    if (m_fileTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileUrls";
+        string key = "FileType";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_fileUrls.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_coverRectHasBeenSet)
@@ -86,14 +86,6 @@ string UploadFilesRequest::ToJsonString() const
         string key = "CoverRect";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_coverRect, allocator);
-    }
-
-    if (m_fileTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FileType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_customIdsHasBeenSet)
@@ -107,6 +99,14 @@ string UploadFilesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_fileUrlsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileUrls";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileUrls.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -165,20 +165,20 @@ bool UploadFilesRequest::FileInfosHasBeenSet() const
     return m_fileInfosHasBeenSet;
 }
 
-string UploadFilesRequest::GetFileUrls() const
+string UploadFilesRequest::GetFileType() const
 {
-    return m_fileUrls;
+    return m_fileType;
 }
 
-void UploadFilesRequest::SetFileUrls(const string& _fileUrls)
+void UploadFilesRequest::SetFileType(const string& _fileType)
 {
-    m_fileUrls = _fileUrls;
-    m_fileUrlsHasBeenSet = true;
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
 }
 
-bool UploadFilesRequest::FileUrlsHasBeenSet() const
+bool UploadFilesRequest::FileTypeHasBeenSet() const
 {
-    return m_fileUrlsHasBeenSet;
+    return m_fileTypeHasBeenSet;
 }
 
 bool UploadFilesRequest::GetCoverRect() const
@@ -197,22 +197,6 @@ bool UploadFilesRequest::CoverRectHasBeenSet() const
     return m_coverRectHasBeenSet;
 }
 
-string UploadFilesRequest::GetFileType() const
-{
-    return m_fileType;
-}
-
-void UploadFilesRequest::SetFileType(const string& _fileType)
-{
-    m_fileType = _fileType;
-    m_fileTypeHasBeenSet = true;
-}
-
-bool UploadFilesRequest::FileTypeHasBeenSet() const
-{
-    return m_fileTypeHasBeenSet;
-}
-
 vector<string> UploadFilesRequest::GetCustomIds() const
 {
     return m_customIds;
@@ -227,6 +211,22 @@ void UploadFilesRequest::SetCustomIds(const vector<string>& _customIds)
 bool UploadFilesRequest::CustomIdsHasBeenSet() const
 {
     return m_customIdsHasBeenSet;
+}
+
+string UploadFilesRequest::GetFileUrls() const
+{
+    return m_fileUrls;
+}
+
+void UploadFilesRequest::SetFileUrls(const string& _fileUrls)
+{
+    m_fileUrls = _fileUrls;
+    m_fileUrlsHasBeenSet = true;
+}
+
+bool UploadFilesRequest::FileUrlsHasBeenSet() const
+{
+    return m_fileUrlsHasBeenSet;
 }
 
 

@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取资源Id,通过上传uploadfile接口获得
-                     * @return ResourceId 资源Id,通过上传uploadfile接口获得
+                     * 获取资源Id，通过多文件上传（UploadFiles）接口获得
+                     * @return ResourceId 资源Id，通过多文件上传（UploadFiles）接口获得
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源Id,通过上传uploadfile接口获得
-                     * @param ResourceId 资源Id,通过上传uploadfile接口获得
+                     * 设置资源Id，通过多文件上传（UploadFiles）接口获得
+                     * @param ResourceId 资源Id，通过多文件上传（UploadFiles）接口获得
                      */
                     void SetResourceId(const std::string& _resourceId);
 
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 资源Id,通过上传uploadfile接口获得
+                     * 资源Id，通过多文件上传（UploadFiles）接口获得
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
