@@ -30,7 +30,8 @@ Staff::Staff() :
     m_departmentHasBeenSet(false),
     m_verifiedHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_verifiedOnHasBeenSet(false)
+    m_verifiedOnHasBeenSet(false),
+    m_quiteJobHasBeenSet(false)
 {
 }
 
@@ -156,6 +157,16 @@ CoreInternalOutcome Staff::Deserialize(const rapidjson::Value &value)
         m_verifiedOnHasBeenSet = true;
     }
 
+    if (value.HasMember("QuiteJob") && !value["QuiteJob"].IsNull())
+    {
+        if (!value["QuiteJob"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Staff.QuiteJob` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_quiteJob = value["QuiteJob"].GetInt64();
+        m_quiteJobHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +260,14 @@ void Staff::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "VerifiedOn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_verifiedOn, allocator);
+    }
+
+    if (m_quiteJobHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QuiteJob";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_quiteJob, allocator);
     }
 
 }
@@ -412,5 +431,21 @@ void Staff::SetVerifiedOn(const int64_t& _verifiedOn)
 bool Staff::VerifiedOnHasBeenSet() const
 {
     return m_verifiedOnHasBeenSet;
+}
+
+int64_t Staff::GetQuiteJob() const
+{
+    return m_quiteJob;
+}
+
+void Staff::SetQuiteJob(const int64_t& _quiteJob)
+{
+    m_quiteJob = _quiteJob;
+    m_quiteJobHasBeenSet = true;
+}
+
+bool Staff::QuiteJobHasBeenSet() const
+{
+    return m_quiteJobHasBeenSet;
 }
 

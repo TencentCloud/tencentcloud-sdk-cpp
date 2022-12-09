@@ -58,6 +58,7 @@ namespace TencentCloud
 <li>accept：请求内容类型；</li>
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
+<li>app_proto：应用层协议；</li>
 <li>sip_proto：网络层协议。</li>
                      * @return MatchFrom 匹配字段，取值有：
 <li>host：请求域名；</li>
@@ -70,6 +71,7 @@ namespace TencentCloud
 <li>accept：请求内容类型；</li>
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
+<li>app_proto：应用层协议；</li>
 <li>sip_proto：网络层协议。</li>
                      */
                     std::string GetMatchFrom() const;
@@ -86,6 +88,7 @@ namespace TencentCloud
 <li>accept：请求内容类型；</li>
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
+<li>app_proto：应用层协议；</li>
 <li>sip_proto：网络层协议。</li>
                      * @param MatchFrom 匹配字段，取值有：
 <li>host：请求域名；</li>
@@ -98,6 +101,7 @@ namespace TencentCloud
 <li>accept：请求内容类型；</li>
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
+<li>app_proto：应用层协议；</li>
 <li>sip_proto：网络层协议。</li>
                      */
                     void SetMatchFrom(const std::string& _matchFrom);
@@ -240,6 +244,7 @@ namespace TencentCloud
 <li>accept：请求内容类型；</li>
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
+<li>app_proto：应用层协议；</li>
 <li>sip_proto：网络层协议。</li>
                      */
                     std::string m_matchFrom;

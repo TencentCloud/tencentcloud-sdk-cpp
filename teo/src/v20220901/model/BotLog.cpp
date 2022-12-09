@@ -25,21 +25,22 @@ BotLog::BotLog() :
     m_attackIpHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_requestUriHasBeenSet(false),
-    m_attackTypeHasBeenSet(false),
     m_requestMethodHasBeenSet(false),
     m_attackContentHasBeenSet(false),
-    m_riskLevelHasBeenSet(false),
-    m_ruleIdHasBeenSet(false),
     m_sipCountryCodeHasBeenSet(false),
+    m_uaHasBeenSet(false),
     m_eventIdHasBeenSet(false),
+    m_ruleIdHasBeenSet(false),
+    m_attackTypeHasBeenSet(false),
     m_disposalMethodHasBeenSet(false),
     m_httpLogHasBeenSet(false),
-    m_uaHasBeenSet(false),
+    m_riskLevelHasBeenSet(false),
     m_detectionMethodHasBeenSet(false),
     m_confidenceHasBeenSet(false),
     m_maliciousnessHasBeenSet(false),
     m_ruleDetailListHasBeenSet(false),
-    m_labelHasBeenSet(false)
+    m_labelHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -88,16 +89,6 @@ CoreInternalOutcome BotLog::Deserialize(const rapidjson::Value &value)
         m_requestUriHasBeenSet = true;
     }
 
-    if (value.HasMember("AttackType") && !value["AttackType"].IsNull())
-    {
-        if (!value["AttackType"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotLog.AttackType` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_attackType = string(value["AttackType"].GetString());
-        m_attackTypeHasBeenSet = true;
-    }
-
     if (value.HasMember("RequestMethod") && !value["RequestMethod"].IsNull())
     {
         if (!value["RequestMethod"].IsString())
@@ -118,14 +109,34 @@ CoreInternalOutcome BotLog::Deserialize(const rapidjson::Value &value)
         m_attackContentHasBeenSet = true;
     }
 
-    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
+    if (value.HasMember("SipCountryCode") && !value["SipCountryCode"].IsNull())
     {
-        if (!value["RiskLevel"].IsString())
+        if (!value["SipCountryCode"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BotLog.RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotLog.SipCountryCode` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_riskLevel = string(value["RiskLevel"].GetString());
-        m_riskLevelHasBeenSet = true;
+        m_sipCountryCode = string(value["SipCountryCode"].GetString());
+        m_sipCountryCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ua") && !value["Ua"].IsNull())
+    {
+        if (!value["Ua"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotLog.Ua` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ua = string(value["Ua"].GetString());
+        m_uaHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventId") && !value["EventId"].IsNull())
+    {
+        if (!value["EventId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotLog.EventId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventId = string(value["EventId"].GetString());
+        m_eventIdHasBeenSet = true;
     }
 
     if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
@@ -138,24 +149,14 @@ CoreInternalOutcome BotLog::Deserialize(const rapidjson::Value &value)
         m_ruleIdHasBeenSet = true;
     }
 
-    if (value.HasMember("SipCountryCode") && !value["SipCountryCode"].IsNull())
+    if (value.HasMember("AttackType") && !value["AttackType"].IsNull())
     {
-        if (!value["SipCountryCode"].IsString())
+        if (!value["AttackType"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BotLog.SipCountryCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotLog.AttackType` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_sipCountryCode = string(value["SipCountryCode"].GetString());
-        m_sipCountryCodeHasBeenSet = true;
-    }
-
-    if (value.HasMember("EventId") && !value["EventId"].IsNull())
-    {
-        if (!value["EventId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `BotLog.EventId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_eventId = string(value["EventId"].GetString());
-        m_eventIdHasBeenSet = true;
+        m_attackType = string(value["AttackType"].GetString());
+        m_attackTypeHasBeenSet = true;
     }
 
     if (value.HasMember("DisposalMethod") && !value["DisposalMethod"].IsNull())
@@ -178,14 +179,14 @@ CoreInternalOutcome BotLog::Deserialize(const rapidjson::Value &value)
         m_httpLogHasBeenSet = true;
     }
 
-    if (value.HasMember("Ua") && !value["Ua"].IsNull())
+    if (value.HasMember("RiskLevel") && !value["RiskLevel"].IsNull())
     {
-        if (!value["Ua"].IsString())
+        if (!value["RiskLevel"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `BotLog.Ua` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BotLog.RiskLevel` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_ua = string(value["Ua"].GetString());
-        m_uaHasBeenSet = true;
+        m_riskLevel = string(value["RiskLevel"].GetString());
+        m_riskLevelHasBeenSet = true;
     }
 
     if (value.HasMember("DetectionMethod") && !value["DetectionMethod"].IsNull())
@@ -248,6 +249,16 @@ CoreInternalOutcome BotLog::Deserialize(const rapidjson::Value &value)
         m_labelHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BotLog.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -287,14 +298,6 @@ void BotLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_requestUri.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_attackTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AttackType";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_attackType.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_requestMethodHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -311,12 +314,28 @@ void BotLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_attackContent.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_riskLevelHasBeenSet)
+    if (m_sipCountryCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RiskLevel";
+        string key = "SipCountryCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sipCountryCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ua";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ua.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleIdHasBeenSet)
@@ -327,20 +346,12 @@ void BotLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, m_ruleId, allocator);
     }
 
-    if (m_sipCountryCodeHasBeenSet)
+    if (m_attackTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SipCountryCode";
+        string key = "AttackType";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sipCountryCode.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_eventIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EventId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_disposalMethodHasBeenSet)
@@ -359,12 +370,12 @@ void BotLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         value.AddMember(iKey, rapidjson::Value(m_httpLog.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_uaHasBeenSet)
+    if (m_riskLevelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Ua";
+        string key = "RiskLevel";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_ua.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_riskLevel.c_str(), allocator).Move(), allocator);
     }
 
     if (m_detectionMethodHasBeenSet)
@@ -412,6 +423,14 @@ void BotLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "Label";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_label.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -481,22 +500,6 @@ bool BotLog::RequestUriHasBeenSet() const
     return m_requestUriHasBeenSet;
 }
 
-string BotLog::GetAttackType() const
-{
-    return m_attackType;
-}
-
-void BotLog::SetAttackType(const string& _attackType)
-{
-    m_attackType = _attackType;
-    m_attackTypeHasBeenSet = true;
-}
-
-bool BotLog::AttackTypeHasBeenSet() const
-{
-    return m_attackTypeHasBeenSet;
-}
-
 string BotLog::GetRequestMethod() const
 {
     return m_requestMethod;
@@ -529,20 +532,52 @@ bool BotLog::AttackContentHasBeenSet() const
     return m_attackContentHasBeenSet;
 }
 
-string BotLog::GetRiskLevel() const
+string BotLog::GetSipCountryCode() const
 {
-    return m_riskLevel;
+    return m_sipCountryCode;
 }
 
-void BotLog::SetRiskLevel(const string& _riskLevel)
+void BotLog::SetSipCountryCode(const string& _sipCountryCode)
 {
-    m_riskLevel = _riskLevel;
-    m_riskLevelHasBeenSet = true;
+    m_sipCountryCode = _sipCountryCode;
+    m_sipCountryCodeHasBeenSet = true;
 }
 
-bool BotLog::RiskLevelHasBeenSet() const
+bool BotLog::SipCountryCodeHasBeenSet() const
 {
-    return m_riskLevelHasBeenSet;
+    return m_sipCountryCodeHasBeenSet;
+}
+
+string BotLog::GetUa() const
+{
+    return m_ua;
+}
+
+void BotLog::SetUa(const string& _ua)
+{
+    m_ua = _ua;
+    m_uaHasBeenSet = true;
+}
+
+bool BotLog::UaHasBeenSet() const
+{
+    return m_uaHasBeenSet;
+}
+
+string BotLog::GetEventId() const
+{
+    return m_eventId;
+}
+
+void BotLog::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool BotLog::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
 }
 
 uint64_t BotLog::GetRuleId() const
@@ -561,36 +596,20 @@ bool BotLog::RuleIdHasBeenSet() const
     return m_ruleIdHasBeenSet;
 }
 
-string BotLog::GetSipCountryCode() const
+string BotLog::GetAttackType() const
 {
-    return m_sipCountryCode;
+    return m_attackType;
 }
 
-void BotLog::SetSipCountryCode(const string& _sipCountryCode)
+void BotLog::SetAttackType(const string& _attackType)
 {
-    m_sipCountryCode = _sipCountryCode;
-    m_sipCountryCodeHasBeenSet = true;
+    m_attackType = _attackType;
+    m_attackTypeHasBeenSet = true;
 }
 
-bool BotLog::SipCountryCodeHasBeenSet() const
+bool BotLog::AttackTypeHasBeenSet() const
 {
-    return m_sipCountryCodeHasBeenSet;
-}
-
-string BotLog::GetEventId() const
-{
-    return m_eventId;
-}
-
-void BotLog::SetEventId(const string& _eventId)
-{
-    m_eventId = _eventId;
-    m_eventIdHasBeenSet = true;
-}
-
-bool BotLog::EventIdHasBeenSet() const
-{
-    return m_eventIdHasBeenSet;
+    return m_attackTypeHasBeenSet;
 }
 
 string BotLog::GetDisposalMethod() const
@@ -625,20 +644,20 @@ bool BotLog::HttpLogHasBeenSet() const
     return m_httpLogHasBeenSet;
 }
 
-string BotLog::GetUa() const
+string BotLog::GetRiskLevel() const
 {
-    return m_ua;
+    return m_riskLevel;
 }
 
-void BotLog::SetUa(const string& _ua)
+void BotLog::SetRiskLevel(const string& _riskLevel)
 {
-    m_ua = _ua;
-    m_uaHasBeenSet = true;
+    m_riskLevel = _riskLevel;
+    m_riskLevelHasBeenSet = true;
 }
 
-bool BotLog::UaHasBeenSet() const
+bool BotLog::RiskLevelHasBeenSet() const
 {
-    return m_uaHasBeenSet;
+    return m_riskLevelHasBeenSet;
 }
 
 string BotLog::GetDetectionMethod() const
@@ -719,5 +738,21 @@ void BotLog::SetLabel(const string& _label)
 bool BotLog::LabelHasBeenSet() const
 {
     return m_labelHasBeenSet;
+}
+
+string BotLog::GetArea() const
+{
+    return m_area;
+}
+
+void BotLog::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool BotLog::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

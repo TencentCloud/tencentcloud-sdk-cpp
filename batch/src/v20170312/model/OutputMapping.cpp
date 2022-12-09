@@ -22,7 +22,8 @@ using namespace std;
 
 OutputMapping::OutputMapping() :
     m_sourcePathHasBeenSet(false),
-    m_destinationPathHasBeenSet(false)
+    m_destinationPathHasBeenSet(false),
+    m_outputMappingOptionHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,23 @@ CoreInternalOutcome OutputMapping::Deserialize(const rapidjson::Value &value)
         m_destinationPathHasBeenSet = true;
     }
 
+    if (value.HasMember("OutputMappingOption") && !value["OutputMappingOption"].IsNull())
+    {
+        if (!value["OutputMappingOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `OutputMapping.OutputMappingOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_outputMappingOption.Deserialize(value["OutputMappingOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_outputMappingOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +90,15 @@ void OutputMapping::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DestinationPath";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_destinationPath.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_outputMappingOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutputMappingOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_outputMappingOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +134,21 @@ void OutputMapping::SetDestinationPath(const string& _destinationPath)
 bool OutputMapping::DestinationPathHasBeenSet() const
 {
     return m_destinationPathHasBeenSet;
+}
+
+OutputMappingOption OutputMapping::GetOutputMappingOption() const
+{
+    return m_outputMappingOption;
+}
+
+void OutputMapping::SetOutputMappingOption(const OutputMappingOption& _outputMappingOption)
+{
+    m_outputMappingOption = _outputMappingOption;
+    m_outputMappingOptionHasBeenSet = true;
+}
+
+bool OutputMapping::OutputMappingOptionHasBeenSet() const
+{
+    return m_outputMappingOptionHasBeenSet;
 }
 

@@ -224,6 +224,102 @@ namespace TencentCloud
                      */
                     bool AttackContentHasBeenSet() const;
 
+                    /**
+                     * 获取规则类型，取值有：
+<li>waf: 托管规则；</li>
+<li>acl：自定义规则；</li>
+<li>rate：速率限制规则；</li>
+<li>bot：bot防护规则。</li>
+                     * @return RuleType 规则类型，取值有：
+<li>waf: 托管规则；</li>
+<li>acl：自定义规则；</li>
+<li>rate：速率限制规则；</li>
+<li>bot：bot防护规则。</li>
+                     */
+                    std::string GetRuleType() const;
+
+                    /**
+                     * 设置规则类型，取值有：
+<li>waf: 托管规则；</li>
+<li>acl：自定义规则；</li>
+<li>rate：速率限制规则；</li>
+<li>bot：bot防护规则。</li>
+                     * @param RuleType 规则类型，取值有：
+<li>waf: 托管规则；</li>
+<li>acl：自定义规则；</li>
+<li>rate：速率限制规则；</li>
+<li>bot：bot防护规则。</li>
+                     */
+                    void SetRuleType(const std::string& _ruleType);
+
+                    /**
+                     * 判断参数 RuleType 是否已赋值
+                     * @return RuleType 是否已赋值
+                     */
+                    bool RuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则是否开启。
+                     * @return RuleEnabled 规则是否开启。
+                     */
+                    bool GetRuleEnabled() const;
+
+                    /**
+                     * 设置规则是否开启。
+                     * @param RuleEnabled 规则是否开启。
+                     */
+                    void SetRuleEnabled(const bool& _ruleEnabled);
+
+                    /**
+                     * 判断参数 RuleEnabled 是否已赋值
+                     * @return RuleEnabled 是否已赋值
+                     */
+                    bool RuleEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     * @return RuleDeleted 规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     */
+                    bool GetRuleDeleted() const;
+
+                    /**
+                     * 设置规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     * @param RuleDeleted 规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     */
+                    void SetRuleDeleted(const bool& _ruleDeleted);
+
+                    /**
+                     * 判断参数 RuleDeleted 是否已赋值
+                     * @return RuleDeleted 是否已赋值
+                     */
+                    bool RuleDeletedHasBeenSet() const;
+
+                    /**
+                     * 获取规则是否启用监控告警。
+                     * @return AlarmEnabled 规则是否启用监控告警。
+                     */
+                    bool GetAlarmEnabled() const;
+
+                    /**
+                     * 设置规则是否启用监控告警。
+                     * @param AlarmEnabled 规则是否启用监控告警。
+                     */
+                    void SetAlarmEnabled(const bool& _alarmEnabled);
+
+                    /**
+                     * 判断参数 AlarmEnabled 是否已赋值
+                     * @return AlarmEnabled 是否已赋值
+                     */
+                    bool AlarmEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +376,36 @@ namespace TencentCloud
                      */
                     std::string m_attackContent;
                     bool m_attackContentHasBeenSet;
+
+                    /**
+                     * 规则类型，取值有：
+<li>waf: 托管规则；</li>
+<li>acl：自定义规则；</li>
+<li>rate：速率限制规则；</li>
+<li>bot：bot防护规则。</li>
+                     */
+                    std::string m_ruleType;
+                    bool m_ruleTypeHasBeenSet;
+
+                    /**
+                     * 规则是否开启。
+                     */
+                    bool m_ruleEnabled;
+                    bool m_ruleEnabledHasBeenSet;
+
+                    /**
+                     * 规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     */
+                    bool m_ruleDeleted;
+                    bool m_ruleDeletedHasBeenSet;
+
+                    /**
+                     * 规则是否启用监控告警。
+                     */
+                    bool m_alarmEnabled;
+                    bool m_alarmEnabledHasBeenSet;
 
                 };
             }

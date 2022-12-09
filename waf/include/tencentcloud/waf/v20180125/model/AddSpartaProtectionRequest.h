@@ -547,6 +547,42 @@ namespace TencentCloud
                      */
                     bool CipherTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取300s
+                     * @return ProxyReadTimeout 300s
+                     */
+                    int64_t GetProxyReadTimeout() const;
+
+                    /**
+                     * 设置300s
+                     * @param ProxyReadTimeout 300s
+                     */
+                    void SetProxyReadTimeout(const int64_t& _proxyReadTimeout);
+
+                    /**
+                     * 判断参数 ProxyReadTimeout 是否已赋值
+                     * @return ProxyReadTimeout 是否已赋值
+                     */
+                    bool ProxyReadTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取300s
+                     * @return ProxySendTimeout 300s
+                     */
+                    int64_t GetProxySendTimeout() const;
+
+                    /**
+                     * 设置300s
+                     * @param ProxySendTimeout 300s
+                     */
+                    void SetProxySendTimeout(const int64_t& _proxySendTimeout);
+
+                    /**
+                     * 判断参数 ProxySendTimeout 是否已赋值
+                     * @return ProxySendTimeout 是否已赋值
+                     */
+                    bool ProxySendTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -716,6 +752,18 @@ namespace TencentCloud
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;
+
+                    /**
+                     * 300s
+                     */
+                    int64_t m_proxyReadTimeout;
+                    bool m_proxyReadTimeoutHasBeenSet;
+
+                    /**
+                     * 300s
+                     */
+                    int64_t m_proxySendTimeout;
+                    bool m_proxySendTimeoutHasBeenSet;
 
                 };
             }

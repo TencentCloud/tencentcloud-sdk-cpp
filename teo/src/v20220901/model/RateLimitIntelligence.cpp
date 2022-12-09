@@ -22,7 +22,8 @@ using namespace std;
 
 RateLimitIntelligence::RateLimitIntelligence() :
     m_switchHasBeenSet(false),
-    m_actionHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_ruleIdHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome RateLimitIntelligence::Deserialize(const rapidjson::Value &v
         m_actionHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
+    {
+        if (!value["RuleId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RateLimitIntelligence.RuleId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleId = value["RuleId"].GetInt64();
+        m_ruleIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void RateLimitIntelligence::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "Action";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleId, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void RateLimitIntelligence::SetAction(const string& _action)
 bool RateLimitIntelligence::ActionHasBeenSet() const
 {
     return m_actionHasBeenSet;
+}
+
+int64_t RateLimitIntelligence::GetRuleId() const
+{
+    return m_ruleId;
+}
+
+void RateLimitIntelligence::SetRuleId(const int64_t& _ruleId)
+{
+    m_ruleId = _ruleId;
+    m_ruleIdHasBeenSet = true;
+}
+
+bool RateLimitIntelligence::RuleIdHasBeenSet() const
+{
+    return m_ruleIdHasBeenSet;
 }
 

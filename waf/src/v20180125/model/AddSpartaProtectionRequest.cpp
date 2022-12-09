@@ -50,7 +50,9 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_activeCheckHasBeenSet(false),
     m_tLSVersionHasBeenSet(false),
     m_ciphersHasBeenSet(false),
-    m_cipherTemplateHasBeenSet(false)
+    m_cipherTemplateHasBeenSet(false),
+    m_proxyReadTimeoutHasBeenSet(false),
+    m_proxySendTimeoutHasBeenSet(false)
 {
 }
 
@@ -310,6 +312,22 @@ string AddSpartaProtectionRequest::ToJsonString() const
         string key = "CipherTemplate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_cipherTemplate, allocator);
+    }
+
+    if (m_proxyReadTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyReadTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxyReadTimeout, allocator);
+    }
+
+    if (m_proxySendTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxySendTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_proxySendTimeout, allocator);
     }
 
 
@@ -766,6 +784,38 @@ void AddSpartaProtectionRequest::SetCipherTemplate(const int64_t& _cipherTemplat
 bool AddSpartaProtectionRequest::CipherTemplateHasBeenSet() const
 {
     return m_cipherTemplateHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetProxyReadTimeout() const
+{
+    return m_proxyReadTimeout;
+}
+
+void AddSpartaProtectionRequest::SetProxyReadTimeout(const int64_t& _proxyReadTimeout)
+{
+    m_proxyReadTimeout = _proxyReadTimeout;
+    m_proxyReadTimeoutHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::ProxyReadTimeoutHasBeenSet() const
+{
+    return m_proxyReadTimeoutHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetProxySendTimeout() const
+{
+    return m_proxySendTimeout;
+}
+
+void AddSpartaProtectionRequest::SetProxySendTimeout(const int64_t& _proxySendTimeout)
+{
+    m_proxySendTimeout = _proxySendTimeout;
+    m_proxySendTimeoutHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::ProxySendTimeoutHasBeenSet() const
+{
+    return m_proxySendTimeoutHasBeenSet;
 }
 
 

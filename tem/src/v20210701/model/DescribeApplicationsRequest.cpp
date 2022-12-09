@@ -29,7 +29,8 @@ DescribeApplicationsRequest::DescribeApplicationsRequest() :
     m_sourceChannelHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_keywordHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_sortInfoHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,15 @@ string DescribeApplicationsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sortInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sortInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -221,6 +231,22 @@ void DescribeApplicationsRequest::SetFilters(const vector<QueryFilter>& _filters
 bool DescribeApplicationsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+SortType DescribeApplicationsRequest::GetSortInfo() const
+{
+    return m_sortInfo;
+}
+
+void DescribeApplicationsRequest::SetSortInfo(const SortType& _sortInfo)
+{
+    m_sortInfo = _sortInfo;
+    m_sortInfoHasBeenSet = true;
+}
+
+bool DescribeApplicationsRequest::SortInfoHasBeenSet() const
+{
+    return m_sortInfoHasBeenSet;
 }
 
 

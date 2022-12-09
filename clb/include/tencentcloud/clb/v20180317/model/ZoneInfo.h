@@ -156,6 +156,28 @@ namespace TencentCloud
                      */
                     bool LocalZoneHasBeenSet() const;
 
+                    /**
+                     * 获取可用区是否是EdgeZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EdgeZone 可用区是否是EdgeZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEdgeZone() const;
+
+                    /**
+                     * 设置可用区是否是EdgeZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EdgeZone 可用区是否是EdgeZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEdgeZone(const bool& _edgeZone);
+
+                    /**
+                     * 判断参数 EdgeZone 是否已赋值
+                     * @return EdgeZone 是否已赋值
+                     */
+                    bool EdgeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     bool m_localZone;
                     bool m_localZoneHasBeenSet;
+
+                    /**
+                     * 可用区是否是EdgeZone可用区，如：false
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_edgeZone;
+                    bool m_edgeZoneHasBeenSet;
 
                 };
             }

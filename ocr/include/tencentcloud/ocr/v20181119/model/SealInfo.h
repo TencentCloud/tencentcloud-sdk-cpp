@@ -101,6 +101,44 @@ namespace TencentCloud
                      */
                     bool OtherTextsHasBeenSet() const;
 
+                    /**
+                     * 获取印章类型，表示为:
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     * @return SealShape 印章类型，表示为:
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     */
+                    std::string GetSealShape() const;
+
+                    /**
+                     * 设置印章类型，表示为:
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     * @param SealShape 印章类型，表示为:
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     */
+                    void SetSealShape(const std::string& _sealShape);
+
+                    /**
+                     * 判断参数 SealShape 是否已赋值
+                     * @return SealShape 是否已赋值
+                     */
+                    bool SealShapeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -120,6 +158,17 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_otherTexts;
                     bool m_otherTextsHasBeenSet;
+
+                    /**
+                     * 印章类型，表示为:
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     */
+                    std::string m_sealShape;
+                    bool m_sealShapeHasBeenSet;
 
                 };
             }

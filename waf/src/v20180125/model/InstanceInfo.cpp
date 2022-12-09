@@ -43,7 +43,9 @@ InstanceInfo::InstanceInfo() :
     m_fraudPkgHasBeenSet(false),
     m_botPkgHasBeenSet(false),
     m_botQPSHasBeenSet(false),
-    m_elasticBillingHasBeenSet(false)
+    m_elasticBillingHasBeenSet(false),
+    m_attackLogPostHasBeenSet(false),
+    m_maxBandwidthHasBeenSet(false)
 {
 }
 
@@ -317,6 +319,26 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_elasticBillingHasBeenSet = true;
     }
 
+    if (value.HasMember("AttackLogPost") && !value["AttackLogPost"].IsNull())
+    {
+        if (!value["AttackLogPost"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.AttackLogPost` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_attackLogPost = value["AttackLogPost"].GetInt64();
+        m_attackLogPostHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxBandwidth") && !value["MaxBandwidth"].IsNull())
+    {
+        if (!value["MaxBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MaxBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxBandwidth = value["MaxBandwidth"].GetUint64();
+        m_maxBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -511,6 +533,22 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ElasticBilling";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elasticBilling, allocator);
+    }
+
+    if (m_attackLogPostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AttackLogPost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_attackLogPost, allocator);
+    }
+
+    if (m_maxBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxBandwidth, allocator);
     }
 
 }
@@ -882,5 +920,37 @@ void InstanceInfo::SetElasticBilling(const uint64_t& _elasticBilling)
 bool InstanceInfo::ElasticBillingHasBeenSet() const
 {
     return m_elasticBillingHasBeenSet;
+}
+
+int64_t InstanceInfo::GetAttackLogPost() const
+{
+    return m_attackLogPost;
+}
+
+void InstanceInfo::SetAttackLogPost(const int64_t& _attackLogPost)
+{
+    m_attackLogPost = _attackLogPost;
+    m_attackLogPostHasBeenSet = true;
+}
+
+bool InstanceInfo::AttackLogPostHasBeenSet() const
+{
+    return m_attackLogPostHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetMaxBandwidth() const
+{
+    return m_maxBandwidth;
+}
+
+void InstanceInfo::SetMaxBandwidth(const uint64_t& _maxBandwidth)
+{
+    m_maxBandwidth = _maxBandwidth;
+    m_maxBandwidthHasBeenSet = true;
+}
+
+bool InstanceInfo::MaxBandwidthHasBeenSet() const
+{
+    return m_maxBandwidthHasBeenSet;
 }
 

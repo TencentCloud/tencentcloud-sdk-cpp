@@ -244,6 +244,24 @@ namespace TencentCloud
                      */
                     bool VerifiedOnHasBeenSet() const;
 
+                    /**
+                     * 获取员工是否离职：0-未离职，1-离职
+                     * @return QuiteJob 员工是否离职：0-未离职，1-离职
+                     */
+                    int64_t GetQuiteJob() const;
+
+                    /**
+                     * 设置员工是否离职：0-未离职，1-离职
+                     * @param QuiteJob 员工是否离职：0-未离职，1-离职
+                     */
+                    void SetQuiteJob(const int64_t& _quiteJob);
+
+                    /**
+                     * 判断参数 QuiteJob 是否已赋值
+                     * @return QuiteJob 是否已赋值
+                     */
+                    bool QuiteJobHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +327,12 @@ namespace TencentCloud
                      */
                     int64_t m_verifiedOn;
                     bool m_verifiedOnHasBeenSet;
+
+                    /**
+                     * 员工是否离职：0-未离职，1-离职
+                     */
+                    int64_t m_quiteJob;
+                    bool m_quiteJobHasBeenSet;
 
                 };
             }

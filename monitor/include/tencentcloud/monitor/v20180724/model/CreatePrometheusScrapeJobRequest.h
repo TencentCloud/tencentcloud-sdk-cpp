@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Prometheus 实例 ID，例如：prom-abcd1234
+                     * @return InstanceId Prometheus 实例 ID，例如：prom-abcd1234
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Prometheus 实例 ID，例如：prom-abcd1234
+                     * @param InstanceId Prometheus 实例 ID，例如：prom-abcd1234
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取Agent ID
-                     * @return AgentId Agent ID
+                     * 获取Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * @return AgentId Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
                      */
                     std::string GetAgentId() const;
 
                     /**
-                     * 设置Agent ID
-                     * @param AgentId Agent ID
+                     * 设置Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
+                     * @param AgentId Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
                      */
                     void SetAgentId(const std::string& _agentId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AgentIdHasBeenSet() const;
 
                     /**
-                     * 获取任务内容
-                     * @return Config 任务内容
+                     * 获取抓取任务配置，格式：job_name:xx
+                     * @return Config 抓取任务配置，格式：job_name:xx
                      */
                     std::string GetConfig() const;
 
                     /**
-                     * 设置任务内容
-                     * @param Config 任务内容
+                     * 设置抓取任务配置，格式：job_name:xx
+                     * @param Config 抓取任务配置，格式：job_name:xx
                      */
                     void SetConfig(const std::string& _config);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * Prometheus 实例 ID，例如：prom-abcd1234
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * Agent ID
+                     * Agent ID，例如：agent-abcd1234，可在控制台 Agent 管理中获取
                      */
                     std::string m_agentId;
                     bool m_agentIdHasBeenSet;
 
                     /**
-                     * 任务内容
+                     * 抓取任务配置，格式：job_name:xx
                      */
                     std::string m_config;
                     bool m_configHasBeenSet;

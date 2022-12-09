@@ -21,14 +21,18 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 SecHitRuleInfo::SecHitRuleInfo() :
+    m_zoneIdHasBeenSet(false),
     m_ruleIdHasBeenSet(false),
     m_ruleTypeNameHasBeenSet(false),
-    m_actionHasBeenSet(false),
     m_hitTimeHasBeenSet(false),
     m_requestNumHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_domainHasBeenSet(false),
-    m_botLabelHasBeenSet(false)
+    m_actionHasBeenSet(false),
+    m_botLabelHasBeenSet(false),
+    m_ruleEnabledHasBeenSet(false),
+    m_alarmEnabledHasBeenSet(false),
+    m_ruleDeletedHasBeenSet(false)
 {
 }
 
@@ -36,6 +40,16 @@ CoreInternalOutcome SecHitRuleInfo::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
+
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecHitRuleInfo.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(value["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
 
     if (value.HasMember("RuleId") && !value["RuleId"].IsNull())
     {
@@ -55,16 +69,6 @@ CoreInternalOutcome SecHitRuleInfo::Deserialize(const rapidjson::Value &value)
         }
         m_ruleTypeName = string(value["RuleTypeName"].GetString());
         m_ruleTypeNameHasBeenSet = true;
-    }
-
-    if (value.HasMember("Action") && !value["Action"].IsNull())
-    {
-        if (!value["Action"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SecHitRuleInfo.Action` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_action = string(value["Action"].GetString());
-        m_actionHasBeenSet = true;
     }
 
     if (value.HasMember("HitTime") && !value["HitTime"].IsNull())
@@ -107,6 +111,16 @@ CoreInternalOutcome SecHitRuleInfo::Deserialize(const rapidjson::Value &value)
         m_domainHasBeenSet = true;
     }
 
+    if (value.HasMember("Action") && !value["Action"].IsNull())
+    {
+        if (!value["Action"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecHitRuleInfo.Action` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_action = string(value["Action"].GetString());
+        m_actionHasBeenSet = true;
+    }
+
     if (value.HasMember("BotLabel") && !value["BotLabel"].IsNull())
     {
         if (!value["BotLabel"].IsString())
@@ -117,12 +131,50 @@ CoreInternalOutcome SecHitRuleInfo::Deserialize(const rapidjson::Value &value)
         m_botLabelHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleEnabled") && !value["RuleEnabled"].IsNull())
+    {
+        if (!value["RuleEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecHitRuleInfo.RuleEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleEnabled = value["RuleEnabled"].GetBool();
+        m_ruleEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmEnabled") && !value["AlarmEnabled"].IsNull())
+    {
+        if (!value["AlarmEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecHitRuleInfo.AlarmEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmEnabled = value["AlarmEnabled"].GetBool();
+        m_alarmEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleDeleted") && !value["RuleDeleted"].IsNull())
+    {
+        if (!value["RuleDeleted"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecHitRuleInfo.RuleDeleted` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleDeleted = value["RuleDeleted"].GetBool();
+        m_ruleDeletedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void SecHitRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
 
     if (m_ruleIdHasBeenSet)
     {
@@ -138,14 +190,6 @@ void SecHitRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RuleTypeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ruleTypeName.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_actionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Action";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
     }
 
     if (m_hitTimeHasBeenSet)
@@ -180,6 +224,14 @@ void SecHitRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_actionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Action";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_action.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_botLabelHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -188,8 +240,48 @@ void SecHitRuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_botLabel.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_ruleEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleEnabled, allocator);
+    }
+
+    if (m_alarmEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmEnabled, allocator);
+    }
+
+    if (m_ruleDeletedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleDeleted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleDeleted, allocator);
+    }
+
 }
 
+
+string SecHitRuleInfo::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void SecHitRuleInfo::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool SecHitRuleInfo::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
 
 int64_t SecHitRuleInfo::GetRuleId() const
 {
@@ -221,22 +313,6 @@ void SecHitRuleInfo::SetRuleTypeName(const string& _ruleTypeName)
 bool SecHitRuleInfo::RuleTypeNameHasBeenSet() const
 {
     return m_ruleTypeNameHasBeenSet;
-}
-
-string SecHitRuleInfo::GetAction() const
-{
-    return m_action;
-}
-
-void SecHitRuleInfo::SetAction(const string& _action)
-{
-    m_action = _action;
-    m_actionHasBeenSet = true;
-}
-
-bool SecHitRuleInfo::ActionHasBeenSet() const
-{
-    return m_actionHasBeenSet;
 }
 
 int64_t SecHitRuleInfo::GetHitTime() const
@@ -303,6 +379,22 @@ bool SecHitRuleInfo::DomainHasBeenSet() const
     return m_domainHasBeenSet;
 }
 
+string SecHitRuleInfo::GetAction() const
+{
+    return m_action;
+}
+
+void SecHitRuleInfo::SetAction(const string& _action)
+{
+    m_action = _action;
+    m_actionHasBeenSet = true;
+}
+
+bool SecHitRuleInfo::ActionHasBeenSet() const
+{
+    return m_actionHasBeenSet;
+}
+
 string SecHitRuleInfo::GetBotLabel() const
 {
     return m_botLabel;
@@ -317,5 +409,53 @@ void SecHitRuleInfo::SetBotLabel(const string& _botLabel)
 bool SecHitRuleInfo::BotLabelHasBeenSet() const
 {
     return m_botLabelHasBeenSet;
+}
+
+bool SecHitRuleInfo::GetRuleEnabled() const
+{
+    return m_ruleEnabled;
+}
+
+void SecHitRuleInfo::SetRuleEnabled(const bool& _ruleEnabled)
+{
+    m_ruleEnabled = _ruleEnabled;
+    m_ruleEnabledHasBeenSet = true;
+}
+
+bool SecHitRuleInfo::RuleEnabledHasBeenSet() const
+{
+    return m_ruleEnabledHasBeenSet;
+}
+
+bool SecHitRuleInfo::GetAlarmEnabled() const
+{
+    return m_alarmEnabled;
+}
+
+void SecHitRuleInfo::SetAlarmEnabled(const bool& _alarmEnabled)
+{
+    m_alarmEnabled = _alarmEnabled;
+    m_alarmEnabledHasBeenSet = true;
+}
+
+bool SecHitRuleInfo::AlarmEnabledHasBeenSet() const
+{
+    return m_alarmEnabledHasBeenSet;
+}
+
+bool SecHitRuleInfo::GetRuleDeleted() const
+{
+    return m_ruleDeleted;
+}
+
+void SecHitRuleInfo::SetRuleDeleted(const bool& _ruleDeleted)
+{
+    m_ruleDeleted = _ruleDeleted;
+    m_ruleDeletedHasBeenSet = true;
+}
+
+bool SecHitRuleInfo::RuleDeletedHasBeenSet() const
+{
+    return m_ruleDeletedHasBeenSet;
 }
 

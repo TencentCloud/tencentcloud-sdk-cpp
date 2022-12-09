@@ -23,10 +23,12 @@ using namespace std;
 IpTableRule::IpTableRule() :
     m_actionHasBeenSet(false),
     m_matchFromHasBeenSet(false),
-    m_matchContentHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_ruleIDHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_ruleNameHasBeenSet(false),
+    m_matchContentHasBeenSet(false)
 {
 }
 
@@ -55,14 +57,14 @@ CoreInternalOutcome IpTableRule::Deserialize(const rapidjson::Value &value)
         m_matchFromHasBeenSet = true;
     }
 
-    if (value.HasMember("MatchContent") && !value["MatchContent"].IsNull())
+    if (value.HasMember("Operator") && !value["Operator"].IsNull())
     {
-        if (!value["MatchContent"].IsString())
+        if (!value["Operator"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `IpTableRule.MatchContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IpTableRule.Operator` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_matchContent = string(value["MatchContent"].GetString());
-        m_matchContentHasBeenSet = true;
+        m_operator = string(value["Operator"].GetString());
+        m_operatorHasBeenSet = true;
     }
 
     if (value.HasMember("RuleID") && !value["RuleID"].IsNull())
@@ -95,6 +97,26 @@ CoreInternalOutcome IpTableRule::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleName") && !value["RuleName"].IsNull())
+    {
+        if (!value["RuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpTableRule.RuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleName = string(value["RuleName"].GetString());
+        m_ruleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MatchContent") && !value["MatchContent"].IsNull())
+    {
+        if (!value["MatchContent"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpTableRule.MatchContent` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_matchContent = string(value["MatchContent"].GetString());
+        m_matchContentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,12 +140,12 @@ void IpTableRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_matchFrom.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_matchContentHasBeenSet)
+    if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MatchContent";
+        string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_matchContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operator.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleIDHasBeenSet)
@@ -148,6 +170,22 @@ void IpTableRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_matchContentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MatchContent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_matchContent.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,20 +223,20 @@ bool IpTableRule::MatchFromHasBeenSet() const
     return m_matchFromHasBeenSet;
 }
 
-string IpTableRule::GetMatchContent() const
+string IpTableRule::GetOperator() const
 {
-    return m_matchContent;
+    return m_operator;
 }
 
-void IpTableRule::SetMatchContent(const string& _matchContent)
+void IpTableRule::SetOperator(const string& _operator)
 {
-    m_matchContent = _matchContent;
-    m_matchContentHasBeenSet = true;
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
 }
 
-bool IpTableRule::MatchContentHasBeenSet() const
+bool IpTableRule::OperatorHasBeenSet() const
 {
-    return m_matchContentHasBeenSet;
+    return m_operatorHasBeenSet;
 }
 
 int64_t IpTableRule::GetRuleID() const
@@ -247,5 +285,37 @@ void IpTableRule::SetStatus(const string& _status)
 bool IpTableRule::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string IpTableRule::GetRuleName() const
+{
+    return m_ruleName;
+}
+
+void IpTableRule::SetRuleName(const string& _ruleName)
+{
+    m_ruleName = _ruleName;
+    m_ruleNameHasBeenSet = true;
+}
+
+bool IpTableRule::RuleNameHasBeenSet() const
+{
+    return m_ruleNameHasBeenSet;
+}
+
+string IpTableRule::GetMatchContent() const
+{
+    return m_matchContent;
+}
+
+void IpTableRule::SetMatchContent(const string& _matchContent)
+{
+    m_matchContent = _matchContent;
+    m_matchContentHasBeenSet = true;
+}
+
+bool IpTableRule::MatchContentHasBeenSet() const
+{
+    return m_matchContentHasBeenSet;
 }
 

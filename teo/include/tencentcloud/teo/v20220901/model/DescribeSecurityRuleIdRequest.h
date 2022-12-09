@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则Id数组。
-                     * @return RuleIdList 规则Id数组。
-                     */
-                    std::vector<int64_t> GetRuleIdList() const;
-
-                    /**
-                     * 设置规则Id数组。
-                     * @param RuleIdList 规则Id数组。
-                     */
-                    void SetRuleIdList(const std::vector<int64_t>& _ruleIdList);
-
-                    /**
-                     * 判断参数 RuleIdList 是否已赋值
-                     * @return RuleIdList 是否已赋值
-                     */
-                    bool RuleIdListHasBeenSet() const;
-
-                    /**
                      * 获取规则类型，取值有：
 <li>waf：web托管规则；</li>
 <li>acl：自定义规则；</li>
@@ -112,13 +94,43 @@ namespace TencentCloud
                      */
                     bool EntityHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取规则Id数组。 当为空时查询 子域名或者应用名下所有规则
+                     * @return RuleIdList 规则Id数组。 当为空时查询 子域名或者应用名下所有规则
+                     */
+                    std::vector<int64_t> GetRuleIdList() const;
 
                     /**
-                     * 规则Id数组。
+                     * 设置规则Id数组。 当为空时查询 子域名或者应用名下所有规则
+                     * @param RuleIdList 规则Id数组。 当为空时查询 子域名或者应用名下所有规则
                      */
-                    std::vector<int64_t> m_ruleIdList;
-                    bool m_ruleIdListHasBeenSet;
+                    void SetRuleIdList(const std::vector<int64_t>& _ruleIdList);
+
+                    /**
+                     * 判断参数 RuleIdList 是否已赋值
+                     * @return RuleIdList 是否已赋值
+                     */
+                    bool RuleIdListHasBeenSet() const;
+
+                    /**
+                     * 获取子域名数组。
+                     * @return Domains 子域名数组。
+                     */
+                    std::vector<std::string> GetDomains() const;
+
+                    /**
+                     * 设置子域名数组。
+                     * @param Domains 子域名数组。
+                     */
+                    void SetDomains(const std::vector<std::string>& _domains);
+
+                    /**
+                     * 判断参数 Domains 是否已赋值
+                     * @return Domains 是否已赋值
+                     */
+                    bool DomainsHasBeenSet() const;
+
+                private:
 
                     /**
                      * 规则类型，取值有：
@@ -135,6 +147,18 @@ namespace TencentCloud
                      */
                     std::string m_entity;
                     bool m_entityHasBeenSet;
+
+                    /**
+                     * 规则Id数组。 当为空时查询 子域名或者应用名下所有规则
+                     */
+                    std::vector<int64_t> m_ruleIdList;
+                    bool m_ruleIdListHasBeenSet;
+
+                    /**
+                     * 子域名数组。
+                     */
+                    std::vector<std::string> m_domains;
+                    bool m_domainsHasBeenSet;
 
                 };
             }

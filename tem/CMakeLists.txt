@@ -157,6 +157,7 @@ set(tem_public_header_model
   include/tencentcloud/tem/v20210701/model/DescribeLogConfigResponse.h
   include/tencentcloud/tem/v20210701/model/ServicePortMappingItem.h
   include/tencentcloud/tem/v20210701/model/RevertDeployApplicationRequest.h
+  include/tencentcloud/tem/v20210701/model/SortType.h
   include/tencentcloud/tem/v20210701/model/CreateApplicationResponse.h
   include/tencentcloud/tem/v20210701/model/HorizontalAutoscaler.h
   include/tencentcloud/tem/v20210701/model/ModifyApplicationServiceResponse.h
@@ -366,6 +367,7 @@ set(tem_src
   src/v20210701/model/DescribeLogConfigResponse.cpp
   src/v20210701/model/ServicePortMappingItem.cpp
   src/v20210701/model/RevertDeployApplicationRequest.cpp
+  src/v20210701/model/SortType.cpp
   src/v20210701/model/CreateApplicationResponse.cpp
   src/v20210701/model/HorizontalAutoscaler.cpp
   src/v20210701/model/ModifyApplicationServiceResponse.cpp

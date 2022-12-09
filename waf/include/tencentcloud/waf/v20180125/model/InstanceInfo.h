@@ -481,6 +481,50 @@ namespace TencentCloud
                      */
                     bool ElasticBillingHasBeenSet() const;
 
+                    /**
+                     * 获取攻击日志投递开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackLogPost 攻击日志投递开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAttackLogPost() const;
+
+                    /**
+                     * 设置攻击日志投递开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttackLogPost 攻击日志投递开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttackLogPost(const int64_t& _attackLogPost);
+
+                    /**
+                     * 判断参数 AttackLogPost 是否已赋值
+                     * @return AttackLogPost 是否已赋值
+                     */
+                    bool AttackLogPostHasBeenSet() const;
+
+                    /**
+                     * 获取带宽峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxBandwidth 带宽峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxBandwidth() const;
+
+                    /**
+                     * 设置带宽峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxBandwidth 带宽峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxBandwidth(const uint64_t& _maxBandwidth);
+
+                    /**
+                     * 判断参数 MaxBandwidth 是否已赋值
+                     * @return MaxBandwidth 是否已赋值
+                     */
+                    bool MaxBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -624,6 +668,20 @@ namespace TencentCloud
                      */
                     uint64_t m_elasticBilling;
                     bool m_elasticBillingHasBeenSet;
+
+                    /**
+                     * 攻击日志投递开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_attackLogPost;
+                    bool m_attackLogPostHasBeenSet;
+
+                    /**
+                     * 带宽峰值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxBandwidth;
+                    bool m_maxBandwidthHasBeenSet;
 
                 };
             }

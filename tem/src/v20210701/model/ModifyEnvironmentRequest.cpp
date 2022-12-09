@@ -28,7 +28,8 @@ ModifyEnvironmentRequest::ModifyEnvironmentRequest() :
     m_descriptionHasBeenSet(false),
     m_vpcHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_sourceChannelHasBeenSet(false)
+    m_sourceChannelHasBeenSet(false),
+    m_envTypeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string ModifyEnvironmentRequest::ToJsonString() const
         string key = "SourceChannel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sourceChannel, allocator);
+    }
+
+    if (m_envTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -194,6 +203,22 @@ void ModifyEnvironmentRequest::SetSourceChannel(const int64_t& _sourceChannel)
 bool ModifyEnvironmentRequest::SourceChannelHasBeenSet() const
 {
     return m_sourceChannelHasBeenSet;
+}
+
+string ModifyEnvironmentRequest::GetEnvType() const
+{
+    return m_envType;
+}
+
+void ModifyEnvironmentRequest::SetEnvType(const string& _envType)
+{
+    m_envType = _envType;
+    m_envTypeHasBeenSet = true;
+}
+
+bool ModifyEnvironmentRequest::EnvTypeHasBeenSet() const
+{
+    return m_envTypeHasBeenSet;
 }
 
 

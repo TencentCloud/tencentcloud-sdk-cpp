@@ -24,7 +24,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeSecurityRuleIdResponse::DescribeSecurityRuleIdResponse() :
-    m_wafGroupRulesHasBeenSet(false)
+    m_wafGroupRulesHasBeenSet(false),
+    m_securityRulesHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome DescribeSecurityRuleIdResponse::Deserialize(const string &pa
         m_wafGroupRulesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SecurityRules") && !rsp["SecurityRules"].IsNull())
+    {
+        if (!rsp["SecurityRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SecurityRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["SecurityRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SecurityRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_securityRules.push_back(item);
+        }
+        m_securityRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -101,6 +122,21 @@ string DescribeSecurityRuleIdResponse::ToJsonString() const
 
         int i=0;
         for (auto itr = m_wafGroupRules.begin(); itr != m_wafGroupRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_securityRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_securityRules.begin(); itr != m_securityRules.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -127,6 +163,16 @@ vector<WafGroupRule> DescribeSecurityRuleIdResponse::GetWafGroupRules() const
 bool DescribeSecurityRuleIdResponse::WafGroupRulesHasBeenSet() const
 {
     return m_wafGroupRulesHasBeenSet;
+}
+
+vector<SecurityRule> DescribeSecurityRuleIdResponse::GetSecurityRules() const
+{
+    return m_securityRules;
+}
+
+bool DescribeSecurityRuleIdResponse::SecurityRulesHasBeenSet() const
+{
+    return m_securityRulesHasBeenSet;
 }
 
 

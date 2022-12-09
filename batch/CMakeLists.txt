@@ -130,6 +130,7 @@ set(batch_public_header_model
   include/tencentcloud/batch/v20170312/model/AttachInstancesRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeComputeEnvsRequest.h
   include/tencentcloud/batch/v20170312/model/DescribeCvmZoneInstanceConfigInfosResponse.h
+  include/tencentcloud/batch/v20170312/model/OutputMappingOption.h
   include/tencentcloud/batch/v20170312/model/DescribeJobsResponse.h
   include/tencentcloud/batch/v20170312/model/Activity.h
   include/tencentcloud/batch/v20170312/model/RunMonitorServiceEnabled.h
@@ -256,6 +257,7 @@ set(batch_src
   src/v20170312/model/AttachInstancesRequest.cpp
   src/v20170312/model/DescribeComputeEnvsRequest.cpp
   src/v20170312/model/DescribeCvmZoneInstanceConfigInfosResponse.cpp
+  src/v20170312/model/OutputMappingOption.cpp
   src/v20170312/model/DescribeJobsResponse.cpp
   src/v20170312/model/Activity.cpp
   src/v20170312/model/RunMonitorServiceEnabled.cpp

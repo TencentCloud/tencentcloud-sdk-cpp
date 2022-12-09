@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取按账号 UIN 进行过滤
-                     * @return UserId 按账号 UIN 进行过滤
+                     * 获取填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * @return UserId 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
                      */
                     std::string GetUserId() const;
 
                     /**
-                     * 设置按账号 UIN 进行过滤
-                     * @param UserId 按账号 UIN 进行过滤
+                     * 设置填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
+                     * @param UserId 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
                      */
                     void SetUserId(const std::string& _userId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 按账号 UIN 进行过滤
+                     * 填写对应的账号 ID，将会按账号 ID 进行过滤，例如：10000
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;

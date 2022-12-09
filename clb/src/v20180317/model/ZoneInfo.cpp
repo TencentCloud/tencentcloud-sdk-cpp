@@ -25,7 +25,8 @@ ZoneInfo::ZoneInfo() :
     m_zoneHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
     m_zoneRegionHasBeenSet(false),
-    m_localZoneHasBeenSet(false)
+    m_localZoneHasBeenSet(false),
+    m_edgeZoneHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_localZoneHasBeenSet = true;
     }
 
+    if (value.HasMember("EdgeZone") && !value["EdgeZone"].IsNull())
+    {
+        if (!value["EdgeZone"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.EdgeZone` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeZone = value["EdgeZone"].GetBool();
+        m_edgeZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "LocalZone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_localZone, allocator);
+    }
+
+    if (m_edgeZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_edgeZone, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ZoneInfo::SetLocalZone(const bool& _localZone)
 bool ZoneInfo::LocalZoneHasBeenSet() const
 {
     return m_localZoneHasBeenSet;
+}
+
+bool ZoneInfo::GetEdgeZone() const
+{
+    return m_edgeZone;
+}
+
+void ZoneInfo::SetEdgeZone(const bool& _edgeZone)
+{
+    m_edgeZone = _edgeZone;
+    m_edgeZoneHasBeenSet = true;
+}
+
+bool ZoneInfo::EdgeZoneHasBeenSet() const
+{
+    return m_edgeZoneHasBeenSet;
 }
 

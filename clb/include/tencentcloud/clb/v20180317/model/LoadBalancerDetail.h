@@ -798,6 +798,72 @@ Public：公网属性， Private：内网属性。
                      */
                     bool DomainsHasBeenSet() const;
 
+                    /**
+                     * 获取多可用区负载均衡实例所选备区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZone 多可用区负载均衡实例所选备区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSlaveZone() const;
+
+                    /**
+                     * 设置多可用区负载均衡实例所选备区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SlaveZone 多可用区负载均衡实例所选备区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSlaveZone(const std::vector<std::string>& _slaveZone);
+
+                    /**
+                     * 判断参数 SlaveZone 是否已赋值
+                     * @return SlaveZone 是否已赋值
+                     */
+                    bool SlaveZoneHasBeenSet() const;
+
+                    /**
+                     * 获取内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zones 内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetZones() const;
+
+                    /**
+                     * 设置内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zones 内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZones(const std::vector<std::string>& _zones);
+
+                    /**
+                     * 判断参数 Zones 是否已赋值
+                     * @return Zones 是否已赋值
+                     */
+                    bool ZonesHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启SNI特性（本参数仅对于HTTPS监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SniSwitch 是否开启SNI特性（本参数仅对于HTTPS监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSniSwitch() const;
+
+                    /**
+                     * 设置是否开启SNI特性（本参数仅对于HTTPS监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SniSwitch 是否开启SNI特性（本参数仅对于HTTPS监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSniSwitch(const int64_t& _sniSwitch);
+
+                    /**
+                     * 判断参数 SniSwitch 是否已赋值
+                     * @return SniSwitch 是否已赋值
+                     */
+                    bool SniSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1037,6 +1103,27 @@ Public：公网属性， Private：内网属性。
                      */
                     std::string m_domains;
                     bool m_domainsHasBeenSet;
+
+                    /**
+                     * 多可用区负载均衡实例所选备区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_slaveZone;
+                    bool m_slaveZoneHasBeenSet;
+
+                    /**
+                     * 内网负载均衡实例所在可用区，由白名单CLB_Internal_Zone控制
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_zones;
+                    bool m_zonesHasBeenSet;
+
+                    /**
+                     * 是否开启SNI特性（本参数仅对于HTTPS监听器有意义）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sniSwitch;
+                    bool m_sniSwitchHasBeenSet;
 
                 };
             }

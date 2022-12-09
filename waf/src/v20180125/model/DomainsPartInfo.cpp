@@ -43,7 +43,9 @@ DomainsPartInfo::DomainsPartInfo() :
     m_activeCheckHasBeenSet(false),
     m_tLSVersionHasBeenSet(false),
     m_ciphersHasBeenSet(false),
-    m_cipherTemplateHasBeenSet(false)
+    m_cipherTemplateHasBeenSet(false),
+    m_proxyReadTimeoutHasBeenSet(false),
+    m_proxySendTimeoutHasBeenSet(false)
 {
 }
 
@@ -298,6 +300,26 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_cipherTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("ProxyReadTimeout") && !value["ProxyReadTimeout"].IsNull())
+    {
+        if (!value["ProxyReadTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ProxyReadTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyReadTimeout = value["ProxyReadTimeout"].GetInt64();
+        m_proxyReadTimeoutHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxySendTimeout") && !value["ProxySendTimeout"].IsNull())
+    {
+        if (!value["ProxySendTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.ProxySendTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxySendTimeout = value["ProxySendTimeout"].GetInt64();
+        m_proxySendTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -504,6 +526,22 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CipherTemplate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cipherTemplate, allocator);
+    }
+
+    if (m_proxyReadTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyReadTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxyReadTimeout, allocator);
+    }
+
+    if (m_proxySendTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxySendTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_proxySendTimeout, allocator);
     }
 
 }
@@ -875,5 +913,37 @@ void DomainsPartInfo::SetCipherTemplate(const int64_t& _cipherTemplate)
 bool DomainsPartInfo::CipherTemplateHasBeenSet() const
 {
     return m_cipherTemplateHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetProxyReadTimeout() const
+{
+    return m_proxyReadTimeout;
+}
+
+void DomainsPartInfo::SetProxyReadTimeout(const int64_t& _proxyReadTimeout)
+{
+    m_proxyReadTimeout = _proxyReadTimeout;
+    m_proxyReadTimeoutHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ProxyReadTimeoutHasBeenSet() const
+{
+    return m_proxyReadTimeoutHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetProxySendTimeout() const
+{
+    return m_proxySendTimeout;
+}
+
+void DomainsPartInfo::SetProxySendTimeout(const int64_t& _proxySendTimeout)
+{
+    m_proxySendTimeout = _proxySendTimeout;
+    m_proxySendTimeoutHasBeenSet = true;
+}
+
+bool DomainsPartInfo::ProxySendTimeoutHasBeenSet() const
+{
+    return m_proxySendTimeoutHasBeenSet;
 }
 

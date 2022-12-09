@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prometheus 实例 ID
-                     * @return InstanceId Prometheus 实例 ID
+                     * 获取Prometheus 实例 ID，例如：prom-sdfk2342a
+                     * @return InstanceId Prometheus 实例 ID，例如：prom-sdfk2342a
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Prometheus 实例 ID
-                     * @param InstanceId Prometheus 实例 ID
+                     * 设置Prometheus 实例 ID，例如：prom-sdfk2342a
+                     * @param InstanceId Prometheus 实例 ID，例如：prom-sdfk2342a
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -151,7 +151,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prometheus 实例 ID
+                     * Prometheus 实例 ID，例如：prom-sdfk2342a
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

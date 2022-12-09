@@ -490,6 +490,28 @@ namespace TencentCloud
                      */
                     bool DomainsHasBeenSet() const;
 
+                    /**
+                     * 获取绑定的目标组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetGroupList 绑定的目标组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BasicTargetGroupInfo> GetTargetGroupList() const;
+
+                    /**
+                     * 设置绑定的目标组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetGroupList 绑定的目标组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetGroupList(const std::vector<BasicTargetGroupInfo>& _targetGroupList);
+
+                    /**
+                     * 判断参数 TargetGroupList 是否已赋值
+                     * @return TargetGroupList 是否已赋值
+                     */
+                    bool TargetGroupListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -634,6 +656,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_domains;
                     bool m_domainsHasBeenSet;
+
+                    /**
+                     * 绑定的目标组列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BasicTargetGroupInfo> m_targetGroupList;
+                    bool m_targetGroupListHasBeenSet;
 
                 };
             }

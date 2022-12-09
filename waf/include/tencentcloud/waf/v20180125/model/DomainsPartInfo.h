@@ -477,6 +477,50 @@ namespace TencentCloud
                      */
                     bool CipherTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyReadTimeout 300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProxyReadTimeout() const;
+
+                    /**
+                     * 设置300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyReadTimeout 300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyReadTimeout(const int64_t& _proxyReadTimeout);
+
+                    /**
+                     * 判断参数 ProxyReadTimeout 是否已赋值
+                     * @return ProxyReadTimeout 是否已赋值
+                     */
+                    bool ProxyReadTimeoutHasBeenSet() const;
+
+                    /**
+                     * 获取300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxySendTimeout 300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetProxySendTimeout() const;
+
+                    /**
+                     * 设置300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxySendTimeout 300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxySendTimeout(const int64_t& _proxySendTimeout);
+
+                    /**
+                     * 判断参数 ProxySendTimeout 是否已赋值
+                     * @return ProxySendTimeout 是否已赋值
+                     */
+                    bool ProxySendTimeoutHasBeenSet() const;
+
                 private:
 
                     /**
@@ -620,6 +664,20 @@ namespace TencentCloud
                      */
                     int64_t m_cipherTemplate;
                     bool m_cipherTemplateHasBeenSet;
+
+                    /**
+                     * 300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_proxyReadTimeout;
+                    bool m_proxyReadTimeoutHasBeenSet;
+
+                    /**
+                     * 300s
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_proxySendTimeout;
+                    bool m_proxySendTimeoutHasBeenSet;
 
                 };
             }

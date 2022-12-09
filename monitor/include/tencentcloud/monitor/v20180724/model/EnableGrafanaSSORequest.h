@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否开启 SSO
-                     * @return EnableSSO 是否开启 SSO
+                     * 获取是否开启 SSO，true为开启，false 为不开启
+                     * @return EnableSSO 是否开启 SSO，true为开启，false 为不开启
                      */
                     bool GetEnableSSO() const;
 
                     /**
-                     * 设置是否开启 SSO
-                     * @param EnableSSO 是否开启 SSO
+                     * 设置是否开启 SSO，true为开启，false 为不开启
+                     * @param EnableSSO 是否开启 SSO，true为开启，false 为不开启
                      */
                     void SetEnableSSO(const bool& _enableSSO);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EnableSSOHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否开启 SSO
+                     * 是否开启 SSO，true为开启，false 为不开启
                      */
                     bool m_enableSSO;
                     bool m_enableSSOHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

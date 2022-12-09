@@ -489,6 +489,50 @@ namespace TencentCloud
                      */
                     bool HasAuthorityHasBeenSet() const;
 
+                    /**
+                     * 获取环境类型: test、pre、prod
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnvType 环境类型: test、pre、prod
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEnvType() const;
+
+                    /**
+                     * 设置环境类型: test、pre、prod
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnvType 环境类型: test、pre、prod
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnvType(const std::string& _envType);
+
+                    /**
+                     * 判断参数 EnvType 是否已赋值
+                     * @return EnvType 是否已赋值
+                     */
+                    bool EnvTypeHasBeenSet() const;
+
+                    /**
+                     * 获取地域码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionId 地域码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegionId() const;
+
+                    /**
+                     * 设置地域码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionId 地域码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionId(const std::string& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -635,6 +679,20 @@ namespace TencentCloud
                      */
                     bool m_hasAuthority;
                     bool m_hasAuthorityHasBeenSet;
+
+                    /**
+                     * 环境类型: test、pre、prod
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_envType;
+                    bool m_envTypeHasBeenSet;
+
+                    /**
+                     * 地域码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

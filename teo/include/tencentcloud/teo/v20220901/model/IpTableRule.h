@@ -103,22 +103,54 @@ namespace TencentCloud
                     bool MatchFromHasBeenSet() const;
 
                     /**
-                     * 获取匹配内容。
-                     * @return MatchContent 匹配内容。
+                     * 获取规则的匹配方式，默认为空代表等于。
+取值有：
+<li> is_emty：配置为空；</li>
+<li> not_exists：配置为不存在；</li>
+<li> include：包含；</li>
+<li> not_include：不包含；</li>
+<li> equal：等于；</li>
+<li> not_equal：不等于。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Operator 规则的匹配方式，默认为空代表等于。
+取值有：
+<li> is_emty：配置为空；</li>
+<li> not_exists：配置为不存在；</li>
+<li> include：包含；</li>
+<li> not_include：不包含；</li>
+<li> equal：等于；</li>
+<li> not_equal：不等于。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetMatchContent() const;
+                    std::string GetOperator() const;
 
                     /**
-                     * 设置匹配内容。
-                     * @param MatchContent 匹配内容。
+                     * 设置规则的匹配方式，默认为空代表等于。
+取值有：
+<li> is_emty：配置为空；</li>
+<li> not_exists：配置为不存在；</li>
+<li> include：包含；</li>
+<li> not_include：不包含；</li>
+<li> equal：等于；</li>
+<li> not_equal：不等于。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Operator 规则的匹配方式，默认为空代表等于。
+取值有：
+<li> is_emty：配置为空；</li>
+<li> not_exists：配置为不存在；</li>
+<li> include：包含；</li>
+<li> not_include：不包含；</li>
+<li> equal：等于；</li>
+<li> not_equal：不等于。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetMatchContent(const std::string& _matchContent);
+                    void SetOperator(const std::string& _operator);
 
                     /**
-                     * 判断参数 MatchContent 是否已赋值
-                     * @return MatchContent 是否已赋值
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
                      */
-                    bool MatchContentHasBeenSet() const;
+                    bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取规则id。仅出参使用。
@@ -186,6 +218,46 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取规则名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleName 规则名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRuleName() const;
+
+                    /**
+                     * 设置规则名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleName 规则名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleName(const std::string& _ruleName);
+
+                    /**
+                     * 判断参数 RuleName 是否已赋值
+                     * @return RuleName 是否已赋值
+                     */
+                    bool RuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * @return MatchContent 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     */
+                    std::string GetMatchContent() const;
+
+                    /**
+                     * 设置匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     * @param MatchContent 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     */
+                    void SetMatchContent(const std::string& _matchContent);
+
+                    /**
+                     * 判断参数 MatchContent 是否已赋值
+                     * @return MatchContent 是否已赋值
+                     */
+                    bool MatchContentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,10 +278,18 @@ namespace TencentCloud
                     bool m_matchFromHasBeenSet;
 
                     /**
-                     * 匹配内容。
+                     * 规则的匹配方式，默认为空代表等于。
+取值有：
+<li> is_emty：配置为空；</li>
+<li> not_exists：配置为不存在；</li>
+<li> include：包含；</li>
+<li> not_include：不包含；</li>
+<li> equal：等于；</li>
+<li> not_equal：不等于。</li>
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_matchContent;
-                    bool m_matchContentHasBeenSet;
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
 
                     /**
                      * 规则id。仅出参使用。
@@ -231,6 +311,19 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 规则名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ruleName;
+                    bool m_ruleNameHasBeenSet;
+
+                    /**
+                     * 匹配内容。当 Operator为is_emty 或not_exists时，此值允许为空。
+                     */
+                    std::string m_matchContent;
+                    bool m_matchContentHasBeenSet;
 
                 };
             }

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-kleu3gt0
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Grafana 实例 ID，例如：grafana-kleu3gt0
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-kleu3gt0
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取按插件 ID 过滤
-                     * @return PluginId 按插件 ID 过滤
+                     * 获取按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
+                     * @return PluginId 按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
                      */
                     std::string GetPluginId() const;
 
                     /**
-                     * 设置按插件 ID 过滤
-                     * @param PluginId 按插件 ID 过滤
+                     * 设置按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
+                     * @param PluginId 按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
                      */
                     void SetPluginId(const std::string& _pluginId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * Grafana 实例 ID，例如：grafana-kleu3gt0
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 按插件 ID 过滤
+                     * 按插件 ID 过滤，例如：grafana-piechart-panel，可通过接口 DescribeInstalledPlugins 查看已安装的插件 ID
                      */
                     std::string m_pluginId;
                     bool m_pluginIdHasBeenSet;

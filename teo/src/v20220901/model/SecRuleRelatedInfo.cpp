@@ -27,7 +27,11 @@ SecRuleRelatedInfo::SecRuleRelatedInfo() :
     m_ruleLevelHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_ruleTypeNameHasBeenSet(false),
-    m_attackContentHasBeenSet(false)
+    m_attackContentHasBeenSet(false),
+    m_ruleTypeHasBeenSet(false),
+    m_ruleEnabledHasBeenSet(false),
+    m_ruleDeletedHasBeenSet(false),
+    m_alarmEnabledHasBeenSet(false)
 {
 }
 
@@ -106,6 +110,46 @@ CoreInternalOutcome SecRuleRelatedInfo::Deserialize(const rapidjson::Value &valu
         m_attackContentHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleType") && !value["RuleType"].IsNull())
+    {
+        if (!value["RuleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecRuleRelatedInfo.RuleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleType = string(value["RuleType"].GetString());
+        m_ruleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleEnabled") && !value["RuleEnabled"].IsNull())
+    {
+        if (!value["RuleEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecRuleRelatedInfo.RuleEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleEnabled = value["RuleEnabled"].GetBool();
+        m_ruleEnabledHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleDeleted") && !value["RuleDeleted"].IsNull())
+    {
+        if (!value["RuleDeleted"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecRuleRelatedInfo.RuleDeleted` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleDeleted = value["RuleDeleted"].GetBool();
+        m_ruleDeletedHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmEnabled") && !value["AlarmEnabled"].IsNull())
+    {
+        if (!value["AlarmEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecRuleRelatedInfo.AlarmEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmEnabled = value["AlarmEnabled"].GetBool();
+        m_alarmEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +211,38 @@ void SecRuleRelatedInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "AttackContent";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_attackContent.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ruleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleEnabled, allocator);
+    }
+
+    if (m_ruleDeletedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleDeleted";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleDeleted, allocator);
+    }
+
+    if (m_alarmEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmEnabled, allocator);
     }
 
 }
@@ -282,5 +358,69 @@ void SecRuleRelatedInfo::SetAttackContent(const string& _attackContent)
 bool SecRuleRelatedInfo::AttackContentHasBeenSet() const
 {
     return m_attackContentHasBeenSet;
+}
+
+string SecRuleRelatedInfo::GetRuleType() const
+{
+    return m_ruleType;
+}
+
+void SecRuleRelatedInfo::SetRuleType(const string& _ruleType)
+{
+    m_ruleType = _ruleType;
+    m_ruleTypeHasBeenSet = true;
+}
+
+bool SecRuleRelatedInfo::RuleTypeHasBeenSet() const
+{
+    return m_ruleTypeHasBeenSet;
+}
+
+bool SecRuleRelatedInfo::GetRuleEnabled() const
+{
+    return m_ruleEnabled;
+}
+
+void SecRuleRelatedInfo::SetRuleEnabled(const bool& _ruleEnabled)
+{
+    m_ruleEnabled = _ruleEnabled;
+    m_ruleEnabledHasBeenSet = true;
+}
+
+bool SecRuleRelatedInfo::RuleEnabledHasBeenSet() const
+{
+    return m_ruleEnabledHasBeenSet;
+}
+
+bool SecRuleRelatedInfo::GetRuleDeleted() const
+{
+    return m_ruleDeleted;
+}
+
+void SecRuleRelatedInfo::SetRuleDeleted(const bool& _ruleDeleted)
+{
+    m_ruleDeleted = _ruleDeleted;
+    m_ruleDeletedHasBeenSet = true;
+}
+
+bool SecRuleRelatedInfo::RuleDeletedHasBeenSet() const
+{
+    return m_ruleDeletedHasBeenSet;
+}
+
+bool SecRuleRelatedInfo::GetAlarmEnabled() const
+{
+    return m_alarmEnabled;
+}
+
+void SecRuleRelatedInfo::SetAlarmEnabled(const bool& _alarmEnabled)
+{
+    m_alarmEnabled = _alarmEnabled;
+    m_alarmEnabledHasBeenSet = true;
+}
+
+bool SecRuleRelatedInfo::AlarmEnabledHasBeenSet() const
+{
+    return m_alarmEnabledHasBeenSet;
 }
 

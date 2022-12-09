@@ -39,7 +39,8 @@ Listener::Listener() :
     m_keepaliveEnableHasBeenSet(false),
     m_toaHasBeenSet(false),
     m_deregisterTargetRstHasBeenSet(false),
-    m_attrFlagsHasBeenSet(false)
+    m_attrFlagsHasBeenSet(false),
+    m_targetGroupListHasBeenSet(false)
 {
 }
 
@@ -272,6 +273,26 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_attrFlagsHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetGroupList") && !value["TargetGroupList"].IsNull())
+    {
+        if (!value["TargetGroupList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Listener.TargetGroupList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TargetGroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BasicTargetGroupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_targetGroupList.push_back(item);
+        }
+        m_targetGroupListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -443,6 +464,21 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         for (auto itr = m_attrFlags.begin(); itr != m_attrFlags.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_targetGroupListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetGroupList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_targetGroupList.begin(); itr != m_targetGroupList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -751,5 +787,21 @@ void Listener::SetAttrFlags(const vector<string>& _attrFlags)
 bool Listener::AttrFlagsHasBeenSet() const
 {
     return m_attrFlagsHasBeenSet;
+}
+
+vector<BasicTargetGroupInfo> Listener::GetTargetGroupList() const
+{
+    return m_targetGroupList;
+}
+
+void Listener::SetTargetGroupList(const vector<BasicTargetGroupInfo>& _targetGroupList)
+{
+    m_targetGroupList = _targetGroupList;
+    m_targetGroupListHasBeenSet = true;
+}
+
+bool Listener::TargetGroupListHasBeenSet() const
+{
+    return m_targetGroupListHasBeenSet;
 }
 

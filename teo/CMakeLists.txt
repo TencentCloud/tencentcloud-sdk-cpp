@@ -549,6 +549,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribePurgeTasksRequest.h
   include/tencentcloud/teo/v20220901/model/IdentifyZoneRequest.h
   include/tencentcloud/teo/v20220901/model/CacheConfig.h
+  include/tencentcloud/teo/v20220901/model/SecurityRule.h
   include/tencentcloud/teo/v20220901/model/ModifyDDoSPolicyResponse.h
   include/tencentcloud/teo/v20220901/model/DDoSFeaturesFilter.h
   include/tencentcloud/teo/v20220901/model/IntelligenceRule.h
@@ -1304,6 +1305,7 @@ set(teo_src
   src/v20220901/model/DescribePurgeTasksRequest.cpp
   src/v20220901/model/IdentifyZoneRequest.cpp
   src/v20220901/model/CacheConfig.cpp
+  src/v20220901/model/SecurityRule.cpp
   src/v20220901/model/ModifyDDoSPolicyResponse.cpp
   src/v20220901/model/DDoSFeaturesFilter.cpp
   src/v20220901/model/IntelligenceRule.cpp

@@ -31,7 +31,9 @@ CreateTawInstanceRequest::CreateTawInstanceRequest() :
     m_instanceDescHasBeenSet(false),
     m_countNumHasBeenSet(false),
     m_periodRetainHasBeenSet(false),
-    m_buyingChannelHasBeenSet(false)
+    m_buyingChannelHasBeenSet(false),
+    m_resourcePackageTypeHasBeenSet(false),
+    m_resourcePackageNumHasBeenSet(false)
 {
 }
 
@@ -119,6 +121,22 @@ string CreateTawInstanceRequest::ToJsonString() const
         string key = "BuyingChannel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_buyingChannel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourcePackageTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePackageType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resourcePackageType, allocator);
+    }
+
+    if (m_resourcePackageNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePackageNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_resourcePackageNum, allocator);
     }
 
 
@@ -271,6 +289,38 @@ void CreateTawInstanceRequest::SetBuyingChannel(const string& _buyingChannel)
 bool CreateTawInstanceRequest::BuyingChannelHasBeenSet() const
 {
     return m_buyingChannelHasBeenSet;
+}
+
+uint64_t CreateTawInstanceRequest::GetResourcePackageType() const
+{
+    return m_resourcePackageType;
+}
+
+void CreateTawInstanceRequest::SetResourcePackageType(const uint64_t& _resourcePackageType)
+{
+    m_resourcePackageType = _resourcePackageType;
+    m_resourcePackageTypeHasBeenSet = true;
+}
+
+bool CreateTawInstanceRequest::ResourcePackageTypeHasBeenSet() const
+{
+    return m_resourcePackageTypeHasBeenSet;
+}
+
+uint64_t CreateTawInstanceRequest::GetResourcePackageNum() const
+{
+    return m_resourcePackageNum;
+}
+
+void CreateTawInstanceRequest::SetResourcePackageNum(const uint64_t& _resourcePackageNum)
+{
+    m_resourcePackageNum = _resourcePackageNum;
+    m_resourcePackageNumHasBeenSet = true;
+}
+
+bool CreateTawInstanceRequest::ResourcePackageNumHasBeenSet() const
+{
+    return m_resourcePackageNumHasBeenSet;
 }
 
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否开启cam鉴权
-                     * @return EnableSSOCamCheck 是否开启cam鉴权
+                     * 获取是否开启 cam 鉴权，true为开启，false 为不开启
+                     * @return EnableSSOCamCheck 是否开启 cam 鉴权，true为开启，false 为不开启
                      */
                     bool GetEnableSSOCamCheck() const;
 
                     /**
-                     * 设置是否开启cam鉴权
-                     * @param EnableSSOCamCheck 是否开启cam鉴权
+                     * 设置是否开启 cam 鉴权，true为开启，false 为不开启
+                     * @param EnableSSOCamCheck 是否开启 cam 鉴权，true为开启，false 为不开启
                      */
                     void SetEnableSSOCamCheck(const bool& _enableSSOCamCheck);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 是否开启cam鉴权
+                     * 是否开启 cam 鉴权，true为开启，false 为不开启
                      */
                     bool m_enableSSOCamCheck;
                     bool m_enableSSOCamCheckHasBeenSet;

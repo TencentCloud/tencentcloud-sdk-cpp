@@ -23,9 +23,10 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeSecurityRuleIdRequest::DescribeSecurityRuleIdRequest() :
-    m_ruleIdListHasBeenSet(false),
     m_ruleTypeHasBeenSet(false),
-    m_entityHasBeenSet(false)
+    m_entityHasBeenSet(false),
+    m_ruleIdListHasBeenSet(false),
+    m_domainsHasBeenSet(false)
 {
 }
 
@@ -35,19 +36,6 @@ string DescribeSecurityRuleIdRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_ruleIdListHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RuleIdList";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_ruleIdList.begin(); itr != m_ruleIdList.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
-        }
-    }
 
     if (m_ruleTypeHasBeenSet)
     {
@@ -65,6 +53,32 @@ string DescribeSecurityRuleIdRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_entity.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_ruleIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ruleIdList.begin(); itr != m_ruleIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_domainsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domains";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -72,22 +86,6 @@ string DescribeSecurityRuleIdRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-vector<int64_t> DescribeSecurityRuleIdRequest::GetRuleIdList() const
-{
-    return m_ruleIdList;
-}
-
-void DescribeSecurityRuleIdRequest::SetRuleIdList(const vector<int64_t>& _ruleIdList)
-{
-    m_ruleIdList = _ruleIdList;
-    m_ruleIdListHasBeenSet = true;
-}
-
-bool DescribeSecurityRuleIdRequest::RuleIdListHasBeenSet() const
-{
-    return m_ruleIdListHasBeenSet;
-}
 
 string DescribeSecurityRuleIdRequest::GetRuleType() const
 {
@@ -119,6 +117,38 @@ void DescribeSecurityRuleIdRequest::SetEntity(const string& _entity)
 bool DescribeSecurityRuleIdRequest::EntityHasBeenSet() const
 {
     return m_entityHasBeenSet;
+}
+
+vector<int64_t> DescribeSecurityRuleIdRequest::GetRuleIdList() const
+{
+    return m_ruleIdList;
+}
+
+void DescribeSecurityRuleIdRequest::SetRuleIdList(const vector<int64_t>& _ruleIdList)
+{
+    m_ruleIdList = _ruleIdList;
+    m_ruleIdListHasBeenSet = true;
+}
+
+bool DescribeSecurityRuleIdRequest::RuleIdListHasBeenSet() const
+{
+    return m_ruleIdListHasBeenSet;
+}
+
+vector<string> DescribeSecurityRuleIdRequest::GetDomains() const
+{
+    return m_domains;
+}
+
+void DescribeSecurityRuleIdRequest::SetDomains(const vector<string>& _domains)
+{
+    m_domains = _domains;
+    m_domainsHasBeenSet = true;
+}
+
+bool DescribeSecurityRuleIdRequest::DomainsHasBeenSet() const
+{
+    return m_domainsHasBeenSet;
 }
 
 

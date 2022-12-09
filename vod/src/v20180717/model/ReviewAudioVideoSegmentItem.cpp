@@ -30,7 +30,9 @@ ReviewAudioVideoSegmentItem::ReviewAudioVideoSegmentItem() :
     m_formHasBeenSet(false),
     m_areaCoordSetHasBeenSet(false),
     m_textHasBeenSet(false),
-    m_keywordSetHasBeenSet(false)
+    m_keywordSetHasBeenSet(false),
+    m_urlHasBeenSet(false),
+    m_picUrlExpireTimeHasBeenSet(false)
 {
 }
 
@@ -145,6 +147,26 @@ CoreInternalOutcome ReviewAudioVideoSegmentItem::Deserialize(const rapidjson::Va
         m_keywordSetHasBeenSet = true;
     }
 
+    if (value.HasMember("Url") && !value["Url"].IsNull())
+    {
+        if (!value["Url"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReviewAudioVideoSegmentItem.Url` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_url = string(value["Url"].GetString());
+        m_urlHasBeenSet = true;
+    }
+
+    if (value.HasMember("PicUrlExpireTime") && !value["PicUrlExpireTime"].IsNull())
+    {
+        if (!value["PicUrlExpireTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReviewAudioVideoSegmentItem.PicUrlExpireTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_picUrlExpireTime = string(value["PicUrlExpireTime"].GetString());
+        m_picUrlExpireTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +262,22 @@ void ReviewAudioVideoSegmentItem::ToJsonObject(rapidjson::Value &value, rapidjso
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_urlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Url";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_picUrlExpireTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PicUrlExpireTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_picUrlExpireTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -403,5 +441,37 @@ void ReviewAudioVideoSegmentItem::SetKeywordSet(const vector<string>& _keywordSe
 bool ReviewAudioVideoSegmentItem::KeywordSetHasBeenSet() const
 {
     return m_keywordSetHasBeenSet;
+}
+
+string ReviewAudioVideoSegmentItem::GetUrl() const
+{
+    return m_url;
+}
+
+void ReviewAudioVideoSegmentItem::SetUrl(const string& _url)
+{
+    m_url = _url;
+    m_urlHasBeenSet = true;
+}
+
+bool ReviewAudioVideoSegmentItem::UrlHasBeenSet() const
+{
+    return m_urlHasBeenSet;
+}
+
+string ReviewAudioVideoSegmentItem::GetPicUrlExpireTime() const
+{
+    return m_picUrlExpireTime;
+}
+
+void ReviewAudioVideoSegmentItem::SetPicUrlExpireTime(const string& _picUrlExpireTime)
+{
+    m_picUrlExpireTime = _picUrlExpireTime;
+    m_picUrlExpireTimeHasBeenSet = true;
+}
+
+bool ReviewAudioVideoSegmentItem::PicUrlExpireTimeHasBeenSet() const
+{
+    return m_picUrlExpireTimeHasBeenSet;
 }
 

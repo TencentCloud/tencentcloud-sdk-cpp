@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取插件 ID 数组
-                     * @return PluginIds 插件 ID 数组
+                     * 获取插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
+                     * @return PluginIds 插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
                      */
                     std::vector<std::string> GetPluginIds() const;
 
                     /**
-                     * 设置插件 ID 数组
-                     * @param PluginIds 插件 ID 数组
+                     * 设置插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
+                     * @param PluginIds 插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
                      */
                     void SetPluginIds(const std::vector<std::string>& _pluginIds);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool PluginIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Grafana 实例 ID，例如：grafana-abcdefg
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefg
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Grafana 实例 ID，例如：grafana-abcdefg
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefg
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 插件 ID 数组
+                     * 插件 ID 数组，例如"PluginIds": [ "grafana-clock-panel" ]，可通过 DescribePluginOverviews 获取 PluginId
                      */
                     std::vector<std::string> m_pluginIds;
                     bool m_pluginIdsHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * Grafana 实例 ID，例如：grafana-abcdefg
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

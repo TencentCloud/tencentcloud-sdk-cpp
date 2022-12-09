@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Prometheus 实例 ID
-                     * @return InstanceId Prometheus 实例 ID
+                     * 获取Prometheus 实例 ID，例如：prom-abcd1234
+                     * @return InstanceId Prometheus 实例 ID，例如：prom-abcd1234
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Prometheus 实例 ID
-                     * @param InstanceId Prometheus 实例 ID
+                     * 设置Prometheus 实例 ID，例如：prom-abcd1234
+                     * @param InstanceId Prometheus 实例 ID，例如：prom-abcd1234
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool RuleNameHasBeenSet() const;
 
                     /**
-                     * 获取规则表达式
-                     * @return Expr 规则表达式
+                     * 获取规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
+                     * @return Expr 规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
                      */
                     std::string GetExpr() const;
 
                     /**
-                     * 设置规则表达式
-                     * @param Expr 规则表达式
+                     * 设置规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
+                     * @param Expr 规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
                      */
                     void SetExpr(const std::string& _expr);
 
@@ -224,7 +224,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Prometheus 实例 ID
+                     * Prometheus 实例 ID，例如：prom-abcd1234
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -236,7 +236,7 @@ namespace TencentCloud
                     bool m_ruleNameHasBeenSet;
 
                     /**
-                     * 规则表达式
+                     * 规则表达式，可参考<a href="https://cloud.tencent.com/document/product/1416/56008">告警规则说明</a>
                      */
                     std::string m_expr;
                     bool m_exprHasBeenSet;

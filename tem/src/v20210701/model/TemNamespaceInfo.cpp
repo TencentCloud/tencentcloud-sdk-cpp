@@ -43,7 +43,9 @@ TemNamespaceInfo::TemNamespaceInfo() :
     m_subAccountUinHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_hasAuthorityHasBeenSet(false)
+    m_hasAuthorityHasBeenSet(false),
+    m_envTypeHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -292,6 +294,26 @@ CoreInternalOutcome TemNamespaceInfo::Deserialize(const rapidjson::Value &value)
         m_hasAuthorityHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvType") && !value["EnvType"].IsNull())
+    {
+        if (!value["EnvType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.EnvType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envType = string(value["EnvType"].GetString());
+        m_envTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemNamespaceInfo.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = string(value["RegionId"].GetString());
+        m_regionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -488,6 +510,22 @@ void TemNamespaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "HasAuthority";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasAuthority, allocator);
+    }
+
+    if (m_envTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -859,5 +897,37 @@ void TemNamespaceInfo::SetHasAuthority(const bool& _hasAuthority)
 bool TemNamespaceInfo::HasAuthorityHasBeenSet() const
 {
     return m_hasAuthorityHasBeenSet;
+}
+
+string TemNamespaceInfo::GetEnvType() const
+{
+    return m_envType;
+}
+
+void TemNamespaceInfo::SetEnvType(const string& _envType)
+{
+    m_envType = _envType;
+    m_envTypeHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::EnvTypeHasBeenSet() const
+{
+    return m_envTypeHasBeenSet;
+}
+
+string TemNamespaceInfo::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void TemNamespaceInfo::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool TemNamespaceInfo::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 

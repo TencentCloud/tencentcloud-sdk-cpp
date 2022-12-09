@@ -44,7 +44,8 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_removeWatermarkTaskHasBeenSet(false),
     m_extractTraceWatermarkTaskHasBeenSet(false),
     m_reviewAudioVideoTaskHasBeenSet(false),
-    m_reduceMediaBitrateTaskHasBeenSet(false)
+    m_reduceMediaBitrateTaskHasBeenSet(false),
+    m_describeFileAttributesTaskHasBeenSet(false)
 {
 }
 
@@ -404,6 +405,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_reduceMediaBitrateTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DescribeFileAttributesTask") && !rsp["DescribeFileAttributesTask"].IsNull())
+    {
+        if (!rsp["DescribeFileAttributesTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeFileAttributesTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_describeFileAttributesTask.Deserialize(rsp["DescribeFileAttributesTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_describeFileAttributesTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -596,6 +614,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reduceMediaBitrateTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_describeFileAttributesTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescribeFileAttributesTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_describeFileAttributesTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -818,6 +845,16 @@ ReduceMediaBitrateTask DescribeTaskDetailResponse::GetReduceMediaBitrateTask() c
 bool DescribeTaskDetailResponse::ReduceMediaBitrateTaskHasBeenSet() const
 {
     return m_reduceMediaBitrateTaskHasBeenSet;
+}
+
+DescribeFileAttributesTask DescribeTaskDetailResponse::GetDescribeFileAttributesTask() const
+{
+    return m_describeFileAttributesTask;
+}
+
+bool DescribeTaskDetailResponse::DescribeFileAttributesTaskHasBeenSet() const
+{
+    return m_describeFileAttributesTaskHasBeenSet;
 }
 
 

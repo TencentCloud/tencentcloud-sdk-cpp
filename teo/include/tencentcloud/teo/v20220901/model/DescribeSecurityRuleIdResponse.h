@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/teo/v20220901/model/WafGroupRule.h>
+#include <tencentcloud/teo/v20220901/model/SecurityRule.h>
 
 
 namespace TencentCloud
@@ -45,8 +46,10 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取规则列表。
-                     * @return WafGroupRules 规则列表。
+                     * 获取托管规则类型的规则列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WafGroupRules 托管规则类型的规则列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WafGroupRule> GetWafGroupRules() const;
 
@@ -56,13 +59,35 @@ namespace TencentCloud
                      */
                     bool WafGroupRulesHasBeenSet() const;
 
+                    /**
+                     * 获取自定义规则、速率限制、Bot规则的规则列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SecurityRules 自定义规则、速率限制、Bot规则的规则列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecurityRule> GetSecurityRules() const;
+
+                    /**
+                     * 判断参数 SecurityRules 是否已赋值
+                     * @return SecurityRules 是否已赋值
+                     */
+                    bool SecurityRulesHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 规则列表。
+                     * 托管规则类型的规则列表。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<WafGroupRule> m_wafGroupRules;
                     bool m_wafGroupRulesHasBeenSet;
+
+                    /**
+                     * 自定义规则、速率限制、Bot规则的规则列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SecurityRule> m_securityRules;
+                    bool m_securityRulesHasBeenSet;
 
                 };
             }

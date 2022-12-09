@@ -54,7 +54,10 @@ LoadBalancerDetail::LoadBalancerDetail() :
     m_securityGroupHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
     m_targetHealthHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+    m_domainsHasBeenSet(false),
+    m_slaveZoneHasBeenSet(false),
+    m_zonesHasBeenSet(false),
+    m_sniSwitchHasBeenSet(false)
 {
 }
 
@@ -437,6 +440,42 @@ CoreInternalOutcome LoadBalancerDetail::Deserialize(const rapidjson::Value &valu
         m_domainsHasBeenSet = true;
     }
 
+    if (value.HasMember("SlaveZone") && !value["SlaveZone"].IsNull())
+    {
+        if (!value["SlaveZone"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.SlaveZone` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SlaveZone"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_slaveZone.push_back((*itr).GetString());
+        }
+        m_slaveZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zones") && !value["Zones"].IsNull())
+    {
+        if (!value["Zones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.Zones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Zones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_zones.push_back((*itr).GetString());
+        }
+        m_zonesHasBeenSet = true;
+    }
+
+    if (value.HasMember("SniSwitch") && !value["SniSwitch"].IsNull())
+    {
+        if (!value["SniSwitch"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerDetail.SniSwitch` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sniSwitch = value["SniSwitch"].GetInt64();
+        m_sniSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -729,6 +768,40 @@ void LoadBalancerDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Domains";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_domains.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaveZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_slaveZone.begin(); itr != m_slaveZone.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_zonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_zones.begin(); itr != m_zones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_sniSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SniSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sniSwitch, allocator);
     }
 
 }
@@ -1276,5 +1349,53 @@ void LoadBalancerDetail::SetDomains(const string& _domains)
 bool LoadBalancerDetail::DomainsHasBeenSet() const
 {
     return m_domainsHasBeenSet;
+}
+
+vector<string> LoadBalancerDetail::GetSlaveZone() const
+{
+    return m_slaveZone;
+}
+
+void LoadBalancerDetail::SetSlaveZone(const vector<string>& _slaveZone)
+{
+    m_slaveZone = _slaveZone;
+    m_slaveZoneHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::SlaveZoneHasBeenSet() const
+{
+    return m_slaveZoneHasBeenSet;
+}
+
+vector<string> LoadBalancerDetail::GetZones() const
+{
+    return m_zones;
+}
+
+void LoadBalancerDetail::SetZones(const vector<string>& _zones)
+{
+    m_zones = _zones;
+    m_zonesHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::ZonesHasBeenSet() const
+{
+    return m_zonesHasBeenSet;
+}
+
+int64_t LoadBalancerDetail::GetSniSwitch() const
+{
+    return m_sniSwitch;
+}
+
+void LoadBalancerDetail::SetSniSwitch(const int64_t& _sniSwitch)
+{
+    m_sniSwitch = _sniSwitch;
+    m_sniSwitchHasBeenSet = true;
+}
+
+bool LoadBalancerDetail::SniSwitchHasBeenSet() const
+{
+    return m_sniSwitchHasBeenSet;
 }
 

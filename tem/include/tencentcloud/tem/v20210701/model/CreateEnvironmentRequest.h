@@ -187,6 +187,42 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取环境类型：test、pre、prod
+                     * @return EnvType 环境类型：test、pre、prod
+                     */
+                    std::string GetEnvType() const;
+
+                    /**
+                     * 设置环境类型：test、pre、prod
+                     * @param EnvType 环境类型：test、pre、prod
+                     */
+                    void SetEnvType(const std::string& _envType);
+
+                    /**
+                     * 判断参数 EnvType 是否已赋值
+                     * @return EnvType 是否已赋值
+                     */
+                    bool EnvTypeHasBeenSet() const;
+
+                    /**
+                     * 获取创建环境的region
+                     * @return CreateRegion 创建环境的region
+                     */
+                    std::string GetCreateRegion() const;
+
+                    /**
+                     * 设置创建环境的region
+                     * @param CreateRegion 创建环境的region
+                     */
+                    void SetCreateRegion(const std::string& _createRegion);
+
+                    /**
+                     * 判断参数 CreateRegion 是否已赋值
+                     * @return CreateRegion 是否已赋值
+                     */
+                    bool CreateRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +272,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 环境类型：test、pre、prod
+                     */
+                    std::string m_envType;
+                    bool m_envTypeHasBeenSet;
+
+                    /**
+                     * 创建环境的region
+                     */
+                    std::string m_createRegion;
+                    bool m_createRegionHasBeenSet;
 
                 };
             }

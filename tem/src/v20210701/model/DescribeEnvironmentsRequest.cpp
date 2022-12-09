@@ -26,7 +26,8 @@ DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_sourceChannelHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_sortInfoHasBeenSet(false)
 {
 }
 
@@ -74,6 +75,15 @@ string DescribeEnvironmentsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_sortInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_sortInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -146,6 +156,22 @@ void DescribeEnvironmentsRequest::SetFilters(const vector<QueryFilter>& _filters
 bool DescribeEnvironmentsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+SortType DescribeEnvironmentsRequest::GetSortInfo() const
+{
+    return m_sortInfo;
+}
+
+void DescribeEnvironmentsRequest::SetSortInfo(const SortType& _sortInfo)
+{
+    m_sortInfo = _sortInfo;
+    m_sortInfoHasBeenSet = true;
+}
+
+bool DescribeEnvironmentsRequest::SortInfoHasBeenSet() const
+{
+    return m_sortInfoHasBeenSet;
 }
 
 

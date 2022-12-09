@@ -41,7 +41,8 @@ EventContent::EventContent() :
     m_restoreMediaCompleteEventHasBeenSet(false),
     m_extractTraceWatermarkCompleteEventHasBeenSet(false),
     m_reviewAudioVideoCompleteEventHasBeenSet(false),
-    m_reduceMediaBitrateCompleteEventHasBeenSet(false)
+    m_reduceMediaBitrateCompleteEventHasBeenSet(false),
+    m_describeFileAttributesCompleteEventHasBeenSet(false)
 {
 }
 
@@ -393,6 +394,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_reduceMediaBitrateCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("DescribeFileAttributesCompleteEvent") && !value["DescribeFileAttributesCompleteEvent"].IsNull())
+    {
+        if (!value["DescribeFileAttributesCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.DescribeFileAttributesCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_describeFileAttributesCompleteEvent.Deserialize(value["DescribeFileAttributesCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_describeFileAttributesCompleteEventHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -585,6 +603,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_reduceMediaBitrateCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_describeFileAttributesCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DescribeFileAttributesCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_describeFileAttributesCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -924,5 +951,21 @@ void EventContent::SetReduceMediaBitrateCompleteEvent(const ReduceMediaBitrateTa
 bool EventContent::ReduceMediaBitrateCompleteEventHasBeenSet() const
 {
     return m_reduceMediaBitrateCompleteEventHasBeenSet;
+}
+
+DescribeFileAttributesTask EventContent::GetDescribeFileAttributesCompleteEvent() const
+{
+    return m_describeFileAttributesCompleteEvent;
+}
+
+void EventContent::SetDescribeFileAttributesCompleteEvent(const DescribeFileAttributesTask& _describeFileAttributesCompleteEvent)
+{
+    m_describeFileAttributesCompleteEvent = _describeFileAttributesCompleteEvent;
+    m_describeFileAttributesCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::DescribeFileAttributesCompleteEventHasBeenSet() const
+{
+    return m_describeFileAttributesCompleteEventHasBeenSet;
 }
 

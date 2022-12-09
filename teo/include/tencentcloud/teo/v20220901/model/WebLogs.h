@@ -239,6 +239,28 @@ namespace TencentCloud
                      */
                     bool ReqMethodHasBeenSet() const;
 
+                    /**
+                     * 获取日志所属区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Area 日志所属区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置日志所属区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Area 日志所属区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +325,13 @@ namespace TencentCloud
                      */
                     std::string m_reqMethod;
                     bool m_reqMethodHasBeenSet;
+
+                    /**
+                     * 日志所属区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

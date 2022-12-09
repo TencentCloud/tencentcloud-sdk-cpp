@@ -30,7 +30,8 @@ WebLogs::WebLogs() :
     m_requestUriHasBeenSet(false),
     m_attackContentHasBeenSet(false),
     m_ruleDetailListHasBeenSet(false),
-    m_reqMethodHasBeenSet(false)
+    m_reqMethodHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome WebLogs::Deserialize(const rapidjson::Value &value)
         m_reqMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("Area") && !value["Area"].IsNull())
+    {
+        if (!value["Area"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebLogs.Area` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_area = string(value["Area"].GetString());
+        m_areaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void WebLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ReqMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_reqMethod.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void WebLogs::SetReqMethod(const string& _reqMethod)
 bool WebLogs::ReqMethodHasBeenSet() const
 {
     return m_reqMethodHasBeenSet;
+}
+
+string WebLogs::GetArea() const
+{
+    return m_area;
+}
+
+void WebLogs::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool WebLogs::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 

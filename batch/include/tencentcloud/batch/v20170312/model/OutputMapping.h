@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/batch/v20170312/model/OutputMappingOption.h>
 
 
 namespace TencentCloud
@@ -82,6 +83,28 @@ namespace TencentCloud
                      */
                     bool DestinationPathHasBeenSet() const;
 
+                    /**
+                     * 获取输出映射选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutputMappingOption 输出映射选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutputMappingOption GetOutputMappingOption() const;
+
+                    /**
+                     * 设置输出映射选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OutputMappingOption 输出映射选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOutputMappingOption(const OutputMappingOption& _outputMappingOption);
+
+                    /**
+                     * 判断参数 OutputMappingOption 是否已赋值
+                     * @return OutputMappingOption 是否已赋值
+                     */
+                    bool OutputMappingOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +118,13 @@ namespace TencentCloud
                      */
                     std::string m_destinationPath;
                     bool m_destinationPathHasBeenSet;
+
+                    /**
+                     * 输出映射选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OutputMappingOption m_outputMappingOption;
+                    bool m_outputMappingOptionHasBeenSet;
 
                 };
             }

@@ -120,28 +120,6 @@ namespace TencentCloud
                     bool RequestUriHasBeenSet() const;
 
                     /**
-                     * 获取攻击类型。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackType 攻击类型。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetAttackType() const;
-
-                    /**
-                     * 设置攻击类型。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackType 攻击类型。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetAttackType(const std::string& _attackType);
-
-                    /**
-                     * 判断参数 AttackType 是否已赋值
-                     * @return AttackType 是否已赋值
-                     */
-                    bool AttackTypeHasBeenSet() const;
-
-                    /**
                      * 获取请求方法。
                      * @return RequestMethod 请求方法。
                      */
@@ -178,26 +156,58 @@ namespace TencentCloud
                     bool AttackContentHasBeenSet() const;
 
                     /**
-                     * 获取攻击等级。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RiskLevel 攻击等级。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
+                     * @return SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
                      */
-                    std::string GetRiskLevel() const;
+                    std::string GetSipCountryCode() const;
 
                     /**
-                     * 设置攻击等级。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RiskLevel 攻击等级。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
+                     * @param SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
                      */
-                    void SetRiskLevel(const std::string& _riskLevel);
+                    void SetSipCountryCode(const std::string& _sipCountryCode);
 
                     /**
-                     * 判断参数 RiskLevel 是否已赋值
-                     * @return RiskLevel 是否已赋值
+                     * 判断参数 SipCountryCode 是否已赋值
+                     * @return SipCountryCode 是否已赋值
                      */
-                    bool RiskLevelHasBeenSet() const;
+                    bool SipCountryCodeHasBeenSet() const;
+
+                    /**
+                     * 获取user agent。
+                     * @return Ua user agent。
+                     */
+                    std::string GetUa() const;
+
+                    /**
+                     * 设置user agent。
+                     * @param Ua user agent。
+                     */
+                    void SetUa(const std::string& _ua);
+
+                    /**
+                     * 判断参数 Ua 是否已赋值
+                     * @return Ua 是否已赋值
+                     */
+                    bool UaHasBeenSet() const;
+
+                    /**
+                     * 获取攻击事件ID。
+                     * @return EventId 攻击事件ID。
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置攻击事件ID。
+                     * @param EventId 攻击事件ID。
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
 
                     /**
                      * 获取规则ID。
@@ -222,40 +232,26 @@ namespace TencentCloud
                     bool RuleIdHasBeenSet() const;
 
                     /**
-                     * 获取IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
-                     * @return SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
+                     * 获取攻击类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttackType 攻击类型。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetSipCountryCode() const;
+                    std::string GetAttackType() const;
 
                     /**
-                     * 设置IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
-                     * @param SipCountryCode IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
+                     * 设置攻击类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttackType 攻击类型。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetSipCountryCode(const std::string& _sipCountryCode);
+                    void SetAttackType(const std::string& _attackType);
 
                     /**
-                     * 判断参数 SipCountryCode 是否已赋值
-                     * @return SipCountryCode 是否已赋值
+                     * 判断参数 AttackType 是否已赋值
+                     * @return AttackType 是否已赋值
                      */
-                    bool SipCountryCodeHasBeenSet() const;
-
-                    /**
-                     * 获取请求（事件）ID。
-                     * @return EventId 请求（事件）ID。
-                     */
-                    std::string GetEventId() const;
-
-                    /**
-                     * 设置请求（事件）ID。
-                     * @param EventId 请求（事件）ID。
-                     */
-                    void SetEventId(const std::string& _eventId);
-
-                    /**
-                     * 判断参数 EventId 是否已赋值
-                     * @return EventId 是否已赋值
-                     */
-                    bool EventIdHasBeenSet() const;
+                    bool AttackTypeHasBeenSet() const;
 
                     /**
                      * 获取处置方式。
@@ -302,22 +298,26 @@ namespace TencentCloud
                     bool HttpLogHasBeenSet() const;
 
                     /**
-                     * 获取user agent。
-                     * @return Ua user agent。
+                     * 获取攻击等级。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RiskLevel 攻击等级。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetUa() const;
+                    std::string GetRiskLevel() const;
 
                     /**
-                     * 设置user agent。
-                     * @param Ua user agent。
+                     * 设置攻击等级。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RiskLevel 攻击等级。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetUa(const std::string& _ua);
+                    void SetRiskLevel(const std::string& _riskLevel);
 
                     /**
-                     * 判断参数 Ua 是否已赋值
-                     * @return Ua 是否已赋值
+                     * 判断参数 RiskLevel 是否已赋值
+                     * @return RiskLevel 是否已赋值
                      */
-                    bool UaHasBeenSet() const;
+                    bool RiskLevelHasBeenSet() const;
 
                     /**
                      * 获取检出方法。
@@ -429,6 +429,28 @@ namespace TencentCloud
                      */
                     bool LabelHasBeenSet() const;
 
+                    /**
+                     * 获取日志所属的区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Area 日志所属的区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置日志所属的区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Area 日志所属的区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -456,13 +478,6 @@ namespace TencentCloud
                     bool m_requestUriHasBeenSet;
 
                     /**
-                     * 攻击类型。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_attackType;
-                    bool m_attackTypeHasBeenSet;
-
-                    /**
                      * 请求方法。
                      */
                     std::string m_requestMethod;
@@ -475,11 +490,22 @@ namespace TencentCloud
                     bool m_attackContentHasBeenSet;
 
                     /**
-                     * 攻击等级。
-注意：此字段可能返回 null，表示取不到有效值。
+                     * IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
                      */
-                    std::string m_riskLevel;
-                    bool m_riskLevelHasBeenSet;
+                    std::string m_sipCountryCode;
+                    bool m_sipCountryCodeHasBeenSet;
+
+                    /**
+                     * user agent。
+                     */
+                    std::string m_ua;
+                    bool m_uaHasBeenSet;
+
+                    /**
+                     * 攻击事件ID。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                     /**
                      * 规则ID。
@@ -489,16 +515,11 @@ namespace TencentCloud
                     bool m_ruleIdHasBeenSet;
 
                     /**
-                     * IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)。
+                     * 攻击类型。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_sipCountryCode;
-                    bool m_sipCountryCodeHasBeenSet;
-
-                    /**
-                     * 请求（事件）ID。
-                     */
-                    std::string m_eventId;
-                    bool m_eventIdHasBeenSet;
+                    std::string m_attackType;
+                    bool m_attackTypeHasBeenSet;
 
                     /**
                      * 处置方式。
@@ -515,10 +536,11 @@ namespace TencentCloud
                     bool m_httpLogHasBeenSet;
 
                     /**
-                     * user agent。
+                     * 攻击等级。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_ua;
-                    bool m_uaHasBeenSet;
+                    std::string m_riskLevel;
+                    bool m_riskLevelHasBeenSet;
 
                     /**
                      * 检出方法。
@@ -554,6 +576,13 @@ namespace TencentCloud
                      */
                     std::string m_label;
                     bool m_labelHasBeenSet;
+
+                    /**
+                     * 日志所属的区域。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

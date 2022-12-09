@@ -313,6 +313,94 @@ namespace TencentCloud
                      */
                     bool CnameSpeedupStatusHasBeenSet() const;
 
+                    /**
+                     * 获取转发规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ForwardRuleName 转发规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetForwardRuleName() const;
+
+                    /**
+                     * 设置转发规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ForwardRuleName 转发规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetForwardRuleName(const std::string& _forwardRuleName);
+
+                    /**
+                     * 判断参数 ForwardRuleName 是否已赋值
+                     * @return ForwardRuleName 是否已赋值
+                     */
+                    bool ForwardRuleNameHasBeenSet() const;
+
+                    /**
+                     * 获取转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ForwardRuleType 转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetForwardRuleType() const;
+
+                    /**
+                     * 设置转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ForwardRuleType 转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetForwardRuleType(const std::string& _forwardRuleType);
+
+                    /**
+                     * 判断参数 ForwardRuleType 是否已赋值
+                     * @return ForwardRuleType 是否已赋值
+                     */
+                    bool ForwardRuleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取转发的地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ForwardAddress 转发的地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetForwardAddress() const;
+
+                    /**
+                     * 设置转发的地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ForwardAddress 转发的地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetForwardAddress(const std::string& _forwardAddress);
+
+                    /**
+                     * 判断参数 ForwardAddress 是否已赋值
+                     * @return ForwardAddress 是否已赋值
+                     */
+                    bool ForwardAddressHasBeenSet() const;
+
+                    /**
+                     * 获取终端节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EndPointName 终端节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEndPointName() const;
+
+                    /**
+                     * 设置终端节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EndPointName 终端节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEndPointName(const std::string& _endPointName);
+
+                    /**
+                     * 判断参数 EndPointName 是否已赋值
+                     * @return EndPointName 是否已赋值
+                     */
+                    bool EndPointNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +489,34 @@ namespace TencentCloud
                      */
                     std::string m_cnameSpeedupStatus;
                     bool m_cnameSpeedupStatusHasBeenSet;
+
+                    /**
+                     * 转发规则名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_forwardRuleName;
+                    bool m_forwardRuleNameHasBeenSet;
+
+                    /**
+                     * 转发规则类型：云上到云下，DOWN；云下到云上，UP，目前只支持DOWN
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_forwardRuleType;
+                    bool m_forwardRuleTypeHasBeenSet;
+
+                    /**
+                     * 转发的地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_forwardAddress;
+                    bool m_forwardAddressHasBeenSet;
+
+                    /**
+                     * 终端节点名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_endPointName;
+                    bool m_endPointNameHasBeenSet;
 
                 };
             }

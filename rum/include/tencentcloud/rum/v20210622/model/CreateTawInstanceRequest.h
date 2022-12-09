@@ -205,6 +205,42 @@ namespace TencentCloud
                      */
                     bool BuyingChannelHasBeenSet() const;
 
+                    /**
+                     * 获取预付费资源包类型(仅预付费需要)
+                     * @return ResourcePackageType 预付费资源包类型(仅预付费需要)
+                     */
+                    uint64_t GetResourcePackageType() const;
+
+                    /**
+                     * 设置预付费资源包类型(仅预付费需要)
+                     * @param ResourcePackageType 预付费资源包类型(仅预付费需要)
+                     */
+                    void SetResourcePackageType(const uint64_t& _resourcePackageType);
+
+                    /**
+                     * 判断参数 ResourcePackageType 是否已赋值
+                     * @return ResourcePackageType 是否已赋值
+                     */
+                    bool ResourcePackageTypeHasBeenSet() const;
+
+                    /**
+                     * 获取预付费资源包数量(仅预付费需要)
+                     * @return ResourcePackageNum 预付费资源包数量(仅预付费需要)
+                     */
+                    uint64_t GetResourcePackageNum() const;
+
+                    /**
+                     * 设置预付费资源包数量(仅预付费需要)
+                     * @param ResourcePackageNum 预付费资源包数量(仅预付费需要)
+                     */
+                    void SetResourcePackageNum(const uint64_t& _resourcePackageNum);
+
+                    /**
+                     * 判断参数 ResourcePackageNum 是否已赋值
+                     * @return ResourcePackageNum 是否已赋值
+                     */
+                    bool ResourcePackageNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +296,18 @@ namespace TencentCloud
                      */
                     std::string m_buyingChannel;
                     bool m_buyingChannelHasBeenSet;
+
+                    /**
+                     * 预付费资源包类型(仅预付费需要)
+                     */
+                    uint64_t m_resourcePackageType;
+                    bool m_resourcePackageTypeHasBeenSet;
+
+                    /**
+                     * 预付费资源包数量(仅预付费需要)
+                     */
+                    uint64_t m_resourcePackageNum;
+                    bool m_resourcePackageNumHasBeenSet;
 
                 };
             }

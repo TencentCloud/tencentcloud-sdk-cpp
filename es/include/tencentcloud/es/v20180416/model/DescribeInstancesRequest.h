@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
-                     * @return OrderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
+                     * 获取排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
+                     * @return OrderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
                      */
                     uint64_t GetOrderByKey() const;
 
                     /**
-                     * 设置排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
-                     * @param OrderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
+                     * 设置排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
+                     * @param OrderByKey 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
                      */
                     void SetOrderByKey(const uint64_t& _orderByKey);
 
@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool ZoneListHasBeenSet() const;
 
                     /**
-                     * 获取健康状态筛列表
-                     * @return HealthStatus 健康状态筛列表
+                     * 获取健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
+                     * @return HealthStatus 健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
                      */
                     std::vector<int64_t> GetHealthStatus() const;
 
                     /**
-                     * 设置健康状态筛列表
-                     * @param HealthStatus 健康状态筛列表
+                     * 设置健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
+                     * @param HealthStatus 健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
                      */
                     void SetHealthStatus(const std::vector<int64_t>& _healthStatus);
 
@@ -292,7 +292,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderKey未传递则按创建时间降序排序
+                     * 排序字段<li>1：实例ID</li><li>2：实例名称</li><li>3：可用区</li><li>4：创建时间</li>若orderByKey未传递则按创建时间降序排序
                      */
                     uint64_t m_orderByKey;
                     bool m_orderByKeyHasBeenSet;
@@ -322,7 +322,7 @@ namespace TencentCloud
                     bool m_zoneListHasBeenSet;
 
                     /**
-                     * 健康状态筛列表
+                     * 健康状态筛列表:0表示绿色，1表示黄色，2表示红色,-1表示未知
                      */
                     std::vector<int64_t> m_healthStatus;
                     bool m_healthStatusHasBeenSet;

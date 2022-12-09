@@ -34,7 +34,11 @@ PrivateZone::PrivateZone() :
     m_tagsHasBeenSet(false),
     m_accountVpcSetHasBeenSet(false),
     m_isCustomTldHasBeenSet(false),
-    m_cnameSpeedupStatusHasBeenSet(false)
+    m_cnameSpeedupStatusHasBeenSet(false),
+    m_forwardRuleNameHasBeenSet(false),
+    m_forwardRuleTypeHasBeenSet(false),
+    m_forwardAddressHasBeenSet(false),
+    m_endPointNameHasBeenSet(false)
 {
 }
 
@@ -213,6 +217,46 @@ CoreInternalOutcome PrivateZone::Deserialize(const rapidjson::Value &value)
         m_cnameSpeedupStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("ForwardRuleName") && !value["ForwardRuleName"].IsNull())
+    {
+        if (!value["ForwardRuleName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.ForwardRuleName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardRuleName = string(value["ForwardRuleName"].GetString());
+        m_forwardRuleNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForwardRuleType") && !value["ForwardRuleType"].IsNull())
+    {
+        if (!value["ForwardRuleType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.ForwardRuleType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardRuleType = string(value["ForwardRuleType"].GetString());
+        m_forwardRuleTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ForwardAddress") && !value["ForwardAddress"].IsNull())
+    {
+        if (!value["ForwardAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.ForwardAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_forwardAddress = string(value["ForwardAddress"].GetString());
+        m_forwardAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("EndPointName") && !value["EndPointName"].IsNull())
+    {
+        if (!value["EndPointName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivateZone.EndPointName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_endPointName = string(value["EndPointName"].GetString());
+        m_endPointNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -351,6 +395,38 @@ void PrivateZone::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CnameSpeedupStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cnameSpeedupStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardRuleNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardRuleName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardRuleName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardRuleTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardRuleType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardRuleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_forwardAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForwardAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_forwardAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endPointNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndPointName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_endPointName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -578,5 +654,69 @@ void PrivateZone::SetCnameSpeedupStatus(const string& _cnameSpeedupStatus)
 bool PrivateZone::CnameSpeedupStatusHasBeenSet() const
 {
     return m_cnameSpeedupStatusHasBeenSet;
+}
+
+string PrivateZone::GetForwardRuleName() const
+{
+    return m_forwardRuleName;
+}
+
+void PrivateZone::SetForwardRuleName(const string& _forwardRuleName)
+{
+    m_forwardRuleName = _forwardRuleName;
+    m_forwardRuleNameHasBeenSet = true;
+}
+
+bool PrivateZone::ForwardRuleNameHasBeenSet() const
+{
+    return m_forwardRuleNameHasBeenSet;
+}
+
+string PrivateZone::GetForwardRuleType() const
+{
+    return m_forwardRuleType;
+}
+
+void PrivateZone::SetForwardRuleType(const string& _forwardRuleType)
+{
+    m_forwardRuleType = _forwardRuleType;
+    m_forwardRuleTypeHasBeenSet = true;
+}
+
+bool PrivateZone::ForwardRuleTypeHasBeenSet() const
+{
+    return m_forwardRuleTypeHasBeenSet;
+}
+
+string PrivateZone::GetForwardAddress() const
+{
+    return m_forwardAddress;
+}
+
+void PrivateZone::SetForwardAddress(const string& _forwardAddress)
+{
+    m_forwardAddress = _forwardAddress;
+    m_forwardAddressHasBeenSet = true;
+}
+
+bool PrivateZone::ForwardAddressHasBeenSet() const
+{
+    return m_forwardAddressHasBeenSet;
+}
+
+string PrivateZone::GetEndPointName() const
+{
+    return m_endPointName;
+}
+
+void PrivateZone::SetEndPointName(const string& _endPointName)
+{
+    m_endPointName = _endPointName;
+    m_endPointNameHasBeenSet = true;
+}
+
+bool PrivateZone::EndPointNameHasBeenSet() const
+{
+    return m_endPointNameHasBeenSet;
 }
 

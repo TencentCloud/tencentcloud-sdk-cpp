@@ -246,6 +246,28 @@ namespace TencentCloud
                      */
                     bool AudioDurationHasBeenSet() const;
 
+                    /**
+                     * 获取媒体文件的 Md5 值。
+<li><font color=red>注意</font>：如需要获取媒体文件的 Md5，调用 DescribeFileAttributes 接口，待任务执行完成后获取。</li>
+                     * @return Md5 媒体文件的 Md5 值。
+<li><font color=red>注意</font>：如需要获取媒体文件的 Md5，调用 DescribeFileAttributes 接口，待任务执行完成后获取。</li>
+                     */
+                    std::string GetMd5() const;
+
+                    /**
+                     * 设置媒体文件的 Md5 值。
+<li><font color=red>注意</font>：如需要获取媒体文件的 Md5，调用 DescribeFileAttributes 接口，待任务执行完成后获取。</li>
+                     * @param Md5 媒体文件的 Md5 值。
+<li><font color=red>注意</font>：如需要获取媒体文件的 Md5，调用 DescribeFileAttributes 接口，待任务执行完成后获取。</li>
+                     */
+                    void SetMd5(const std::string& _md5);
+
+                    /**
+                     * 判断参数 Md5 是否已赋值
+                     * @return Md5 是否已赋值
+                     */
+                    bool Md5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +335,13 @@ namespace TencentCloud
                      */
                     double m_audioDuration;
                     bool m_audioDurationHasBeenSet;
+
+                    /**
+                     * 媒体文件的 Md5 值。
+<li><font color=red>注意</font>：如需要获取媒体文件的 Md5，调用 DescribeFileAttributes 接口，待任务执行完成后获取。</li>
+                     */
+                    std::string m_md5;
+                    bool m_md5HasBeenSet;
 
                 };
             }

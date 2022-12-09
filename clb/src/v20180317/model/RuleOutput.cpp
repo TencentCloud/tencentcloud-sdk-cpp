@@ -42,7 +42,8 @@ RuleOutput::RuleOutput() :
     m_trpcCalleeHasBeenSet(false),
     m_trpcFuncHasBeenSet(false),
     m_quicStatusHasBeenSet(false),
-    m_domainsHasBeenSet(false)
+    m_domainsHasBeenSet(false),
+    m_targetGroupListHasBeenSet(false)
 {
 }
 
@@ -302,6 +303,26 @@ CoreInternalOutcome RuleOutput::Deserialize(const rapidjson::Value &value)
         m_domainsHasBeenSet = true;
     }
 
+    if (value.HasMember("TargetGroupList") && !value["TargetGroupList"].IsNull())
+    {
+        if (!value["TargetGroupList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleOutput.TargetGroupList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TargetGroupList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BasicTargetGroupInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_targetGroupList.push_back(item);
+        }
+        m_targetGroupListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -491,6 +512,21 @@ void RuleOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_targetGroupListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetGroupList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_targetGroupList.begin(); itr != m_targetGroupList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -847,5 +883,21 @@ void RuleOutput::SetDomains(const vector<string>& _domains)
 bool RuleOutput::DomainsHasBeenSet() const
 {
     return m_domainsHasBeenSet;
+}
+
+vector<BasicTargetGroupInfo> RuleOutput::GetTargetGroupList() const
+{
+    return m_targetGroupList;
+}
+
+void RuleOutput::SetTargetGroupList(const vector<BasicTargetGroupInfo>& _targetGroupList)
+{
+    m_targetGroupList = _targetGroupList;
+    m_targetGroupListHasBeenSet = true;
+}
+
+bool RuleOutput::TargetGroupListHasBeenSet() const
+{
+    return m_targetGroupListHasBeenSet;
 }
 

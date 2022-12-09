@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SSLModeHasBeenSet() const;
 
                     /**
-                     * 获取服务端证书的 ID。
-                     * @return CertId 服务端证书的 ID。
+                     * 获取服务端证书的ID。
+                     * @return CertId 服务端证书的ID。
                      */
                     std::string GetCertId() const;
 
                     /**
-                     * 设置服务端证书的 ID。
-                     * @param CertId 服务端证书的 ID。
+                     * 设置服务端证书的ID。
+                     * @param CertId 服务端证书的ID。
                      */
                     void SetCertId(const std::string& _certId);
 
@@ -104,6 +104,28 @@ namespace TencentCloud
                      */
                     bool CertCaIdHasBeenSet() const;
 
+                    /**
+                     * 获取多本服务器证书场景扩展的服务器证书ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtCertIds 多本服务器证书场景扩展的服务器证书ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetExtCertIds() const;
+
+                    /**
+                     * 设置多本服务器证书场景扩展的服务器证书ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtCertIds 多本服务器证书场景扩展的服务器证书ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtCertIds(const std::vector<std::string>& _extCertIds);
+
+                    /**
+                     * 判断参数 ExtCertIds 是否已赋值
+                     * @return ExtCertIds 是否已赋值
+                     */
+                    bool ExtCertIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -113,7 +135,7 @@ namespace TencentCloud
                     bool m_sSLModeHasBeenSet;
 
                     /**
-                     * 服务端证书的 ID。
+                     * 服务端证书的ID。
                      */
                     std::string m_certId;
                     bool m_certIdHasBeenSet;
@@ -124,6 +146,13 @@ namespace TencentCloud
                      */
                     std::string m_certCaId;
                     bool m_certCaIdHasBeenSet;
+
+                    /**
+                     * 多本服务器证书场景扩展的服务器证书ID。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_extCertIds;
+                    bool m_extCertIdsHasBeenSet;
 
                 };
             }

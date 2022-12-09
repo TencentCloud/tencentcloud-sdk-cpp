@@ -23,7 +23,8 @@ using namespace std;
 CertificateOutput::CertificateOutput() :
     m_sSLModeHasBeenSet(false),
     m_certIdHasBeenSet(false),
-    m_certCaIdHasBeenSet(false)
+    m_certCaIdHasBeenSet(false),
+    m_extCertIdsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,19 @@ CoreInternalOutcome CertificateOutput::Deserialize(const rapidjson::Value &value
         m_certCaIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ExtCertIds") && !value["ExtCertIds"].IsNull())
+    {
+        if (!value["ExtCertIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CertificateOutput.ExtCertIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ExtCertIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_extCertIds.push_back((*itr).GetString());
+        }
+        m_extCertIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +105,19 @@ void CertificateOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "CertCaId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_certCaId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extCertIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExtCertIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_extCertIds.begin(); itr != m_extCertIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -142,5 +169,21 @@ void CertificateOutput::SetCertCaId(const string& _certCaId)
 bool CertificateOutput::CertCaIdHasBeenSet() const
 {
     return m_certCaIdHasBeenSet;
+}
+
+vector<string> CertificateOutput::GetExtCertIds() const
+{
+    return m_extCertIds;
+}
+
+void CertificateOutput::SetExtCertIds(const vector<string>& _extCertIds)
+{
+    m_extCertIds = _extCertIds;
+    m_extCertIdsHasBeenSet = true;
+}
+
+bool CertificateOutput::ExtCertIdsHasBeenSet() const
+{
+    return m_extCertIdsHasBeenSet;
 }
 

@@ -37,6 +37,7 @@
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h>
 #include <tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h>
+#include <tencentcloud/vod/v20180717/model/DescribeFileAttributesTask.h>
 
 
 namespace TencentCloud
@@ -70,6 +71,7 @@ namespace TencentCloud
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
+<li>DescribeFileAttributesTask：获取文件属性任务；</li>
 <li> ReviewAudioVideo：音视频审核任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
@@ -81,6 +83,7 @@ namespace TencentCloud
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
+<li>DescribeFileAttributesTask：获取文件属性任务；</li>
 <li> ReviewAudioVideo：音视频审核任务。</li>
                      */
                     std::string GetTaskType() const;
@@ -369,6 +372,20 @@ namespace TencentCloud
                      */
                     bool ReduceMediaBitrateTaskHasBeenSet() const;
 
+                    /**
+                     * 获取获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DescribeFileAttributesTask 获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeFileAttributesTask GetDescribeFileAttributesTask() const;
+
+                    /**
+                     * 判断参数 DescribeFileAttributesTask 是否已赋值
+                     * @return DescribeFileAttributesTask 是否已赋值
+                     */
+                    bool DescribeFileAttributesTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +399,7 @@ namespace TencentCloud
 <li>PullUpload：拉取上传媒体文件任务；</li>
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
+<li>DescribeFileAttributesTask：获取文件属性任务；</li>
 <li> ReviewAudioVideo：音视频审核任务。</li>
                      */
                     std::string m_taskType;
@@ -525,6 +543,13 @@ namespace TencentCloud
                      */
                     ReduceMediaBitrateTask m_reduceMediaBitrateTask;
                     bool m_reduceMediaBitrateTaskHasBeenSet;
+
+                    /**
+                     * 获取文件属性任务信息，仅当 TaskType 为 DescribeFileAttributes，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribeFileAttributesTask m_describeFileAttributesTask;
+                    bool m_describeFileAttributesTaskHasBeenSet;
 
                 };
             }

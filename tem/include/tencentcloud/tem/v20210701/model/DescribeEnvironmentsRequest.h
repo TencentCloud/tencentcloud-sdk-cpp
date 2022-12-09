@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tem/v20210701/model/QueryFilter.h>
+#include <tencentcloud/tem/v20210701/model/SortType.h>
 
 
 namespace TencentCloud
@@ -115,6 +116,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取排序字段
+                     * @return SortInfo 排序字段
+                     */
+                    SortType GetSortInfo() const;
+
+                    /**
+                     * 设置排序字段
+                     * @param SortInfo 排序字段
+                     */
+                    void SetSortInfo(const SortType& _sortInfo);
+
+                    /**
+                     * 判断参数 SortInfo 是否已赋值
+                     * @return SortInfo 是否已赋值
+                     */
+                    bool SortInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -140,6 +159,12 @@ namespace TencentCloud
                      */
                     std::vector<QueryFilter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * 排序字段
+                     */
+                    SortType m_sortInfo;
+                    bool m_sortInfoHasBeenSet;
 
                 };
             }

@@ -47,6 +47,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取站点ID。
+                     * @return ZoneId 站点ID。
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置站点ID。
+                     * @param ZoneId 站点ID。
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
                      * 获取规则ID。
                      * @return RuleId 规则ID。
                      */
@@ -81,52 +99,6 @@ namespace TencentCloud
                      * @return RuleTypeName 是否已赋值
                      */
                     bool RuleTypeNameHasBeenSet() const;
-
-                    /**
-                     * 获取执行动作（处置方式），取值有：
-<li>trans ：通过 ；</li>
-<li>alg ：算法挑战 ；</li>
-<li>drop ：丢弃 ；</li>
-<li>ban ：封禁源ip ；</li>
-<li>redirect ：重定向 ；</li>
-<li>page ：返回指定页面 ；</li>
-<li>monitor ：观察 。</li>
-                     * @return Action 执行动作（处置方式），取值有：
-<li>trans ：通过 ；</li>
-<li>alg ：算法挑战 ；</li>
-<li>drop ：丢弃 ；</li>
-<li>ban ：封禁源ip ；</li>
-<li>redirect ：重定向 ；</li>
-<li>page ：返回指定页面 ；</li>
-<li>monitor ：观察 。</li>
-                     */
-                    std::string GetAction() const;
-
-                    /**
-                     * 设置执行动作（处置方式），取值有：
-<li>trans ：通过 ；</li>
-<li>alg ：算法挑战 ；</li>
-<li>drop ：丢弃 ；</li>
-<li>ban ：封禁源ip ；</li>
-<li>redirect ：重定向 ；</li>
-<li>page ：返回指定页面 ；</li>
-<li>monitor ：观察 。</li>
-                     * @param Action 执行动作（处置方式），取值有：
-<li>trans ：通过 ；</li>
-<li>alg ：算法挑战 ；</li>
-<li>drop ：丢弃 ；</li>
-<li>ban ：封禁源ip ；</li>
-<li>redirect ：重定向 ；</li>
-<li>page ：返回指定页面 ；</li>
-<li>monitor ：观察 。</li>
-                     */
-                    void SetAction(const std::string& _action);
-
-                    /**
-                     * 判断参数 Action 是否已赋值
-                     * @return Action 是否已赋值
-                     */
-                    bool ActionHasBeenSet() const;
 
                     /**
                      * 获取命中时间，采用unix秒级时间戳。
@@ -201,6 +173,52 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
+                     * 获取执行动作（处置方式），取值有：
+<li>trans ：通过 ；</li>
+<li>alg ：算法挑战 ；</li>
+<li>drop ：丢弃 ；</li>
+<li>ban ：封禁源ip ；</li>
+<li>redirect ：重定向 ；</li>
+<li>page ：返回指定页面 ；</li>
+<li>monitor ：观察 。</li>
+                     * @return Action 执行动作（处置方式），取值有：
+<li>trans ：通过 ；</li>
+<li>alg ：算法挑战 ；</li>
+<li>drop ：丢弃 ；</li>
+<li>ban ：封禁源ip ；</li>
+<li>redirect ：重定向 ；</li>
+<li>page ：返回指定页面 ；</li>
+<li>monitor ：观察 。</li>
+                     */
+                    std::string GetAction() const;
+
+                    /**
+                     * 设置执行动作（处置方式），取值有：
+<li>trans ：通过 ；</li>
+<li>alg ：算法挑战 ；</li>
+<li>drop ：丢弃 ；</li>
+<li>ban ：封禁源ip ；</li>
+<li>redirect ：重定向 ；</li>
+<li>page ：返回指定页面 ；</li>
+<li>monitor ：观察 。</li>
+                     * @param Action 执行动作（处置方式），取值有：
+<li>trans ：通过 ；</li>
+<li>alg ：算法挑战 ；</li>
+<li>drop ：丢弃 ；</li>
+<li>ban ：封禁源ip ；</li>
+<li>redirect ：重定向 ；</li>
+<li>page ：返回指定页面 ；</li>
+<li>monitor ：观察 。</li>
+                     */
+                    void SetAction(const std::string& _action);
+
+                    /**
+                     * 判断参数 Action 是否已赋值
+                     * @return Action 是否已赋值
+                     */
+                    bool ActionHasBeenSet() const;
+
+                    /**
                      * 获取Bot标签，取值有:
 <li>evil_bot：恶意Bot；</li>
 <li>suspect_bot：疑似Bot；</li>
@@ -238,7 +256,75 @@ namespace TencentCloud
                      */
                     bool BotLabelHasBeenSet() const;
 
+                    /**
+                     * 获取规则是否启用。
+                     * @return RuleEnabled 规则是否启用。
+                     */
+                    bool GetRuleEnabled() const;
+
+                    /**
+                     * 设置规则是否启用。
+                     * @param RuleEnabled 规则是否启用。
+                     */
+                    void SetRuleEnabled(const bool& _ruleEnabled);
+
+                    /**
+                     * 判断参数 RuleEnabled 是否已赋值
+                     * @return RuleEnabled 是否已赋值
+                     */
+                    bool RuleEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取规则是否启用监控告警。
+                     * @return AlarmEnabled 规则是否启用监控告警。
+                     */
+                    bool GetAlarmEnabled() const;
+
+                    /**
+                     * 设置规则是否启用监控告警。
+                     * @param AlarmEnabled 规则是否启用监控告警。
+                     */
+                    void SetAlarmEnabled(const bool& _alarmEnabled);
+
+                    /**
+                     * 判断参数 AlarmEnabled 是否已赋值
+                     * @return AlarmEnabled 是否已赋值
+                     */
+                    bool AlarmEnabledHasBeenSet() const;
+
+                    /**
+                     * 获取规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     * @return RuleDeleted 规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     */
+                    bool GetRuleDeleted() const;
+
+                    /**
+                     * 设置规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     * @param RuleDeleted 规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     */
+                    void SetRuleDeleted(const bool& _ruleDeleted);
+
+                    /**
+                     * 判断参数 RuleDeleted 是否已赋值
+                     * @return RuleDeleted 是否已赋值
+                     */
+                    bool RuleDeletedHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 站点ID。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
 
                     /**
                      * 规则ID。
@@ -251,19 +337,6 @@ namespace TencentCloud
                      */
                     std::string m_ruleTypeName;
                     bool m_ruleTypeNameHasBeenSet;
-
-                    /**
-                     * 执行动作（处置方式），取值有：
-<li>trans ：通过 ；</li>
-<li>alg ：算法挑战 ；</li>
-<li>drop ：丢弃 ；</li>
-<li>ban ：封禁源ip ；</li>
-<li>redirect ：重定向 ；</li>
-<li>page ：返回指定页面 ；</li>
-<li>monitor ：观察 。</li>
-                     */
-                    std::string m_action;
-                    bool m_actionHasBeenSet;
 
                     /**
                      * 命中时间，采用unix秒级时间戳。
@@ -290,6 +363,19 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
+                     * 执行动作（处置方式），取值有：
+<li>trans ：通过 ；</li>
+<li>alg ：算法挑战 ；</li>
+<li>drop ：丢弃 ；</li>
+<li>ban ：封禁源ip ；</li>
+<li>redirect ：重定向 ；</li>
+<li>page ：返回指定页面 ；</li>
+<li>monitor ：观察 。</li>
+                     */
+                    std::string m_action;
+                    bool m_actionHasBeenSet;
+
+                    /**
                      * Bot标签，取值有:
 <li>evil_bot：恶意Bot；</li>
 <li>suspect_bot：疑似Bot；</li>
@@ -299,6 +385,26 @@ namespace TencentCloud
                      */
                     std::string m_botLabel;
                     bool m_botLabelHasBeenSet;
+
+                    /**
+                     * 规则是否启用。
+                     */
+                    bool m_ruleEnabled;
+                    bool m_ruleEnabledHasBeenSet;
+
+                    /**
+                     * 规则是否启用监控告警。
+                     */
+                    bool m_alarmEnabled;
+                    bool m_alarmEnabledHasBeenSet;
+
+                    /**
+                     * 规则是否存在，取值有：
+<li>true: 规则不存在；</li>
+<li>false: 规则存在。</li>
+                     */
+                    bool m_ruleDeleted;
+                    bool m_ruleDeletedHasBeenSet;
 
                 };
             }
