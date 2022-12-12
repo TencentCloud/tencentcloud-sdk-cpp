@@ -1330,6 +1330,92 @@ DtsClient::ResumeSyncJobOutcomeCallable DtsClient::ResumeSyncJobCallable(const R
     return task->get_future();
 }
 
+DtsClient::SkipCheckItemOutcome DtsClient::SkipCheckItem(const SkipCheckItemRequest &request)
+{
+    auto outcome = MakeRequest(request, "SkipCheckItem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SkipCheckItemResponse rsp = SkipCheckItemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SkipCheckItemOutcome(rsp);
+        else
+            return SkipCheckItemOutcome(o.GetError());
+    }
+    else
+    {
+        return SkipCheckItemOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::SkipCheckItemAsync(const SkipCheckItemRequest& request, const SkipCheckItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SkipCheckItem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::SkipCheckItemOutcomeCallable DtsClient::SkipCheckItemCallable(const SkipCheckItemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SkipCheckItemOutcome()>>(
+        [this, request]()
+        {
+            return this->SkipCheckItem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::SkipSyncCheckItemOutcome DtsClient::SkipSyncCheckItem(const SkipSyncCheckItemRequest &request)
+{
+    auto outcome = MakeRequest(request, "SkipSyncCheckItem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SkipSyncCheckItemResponse rsp = SkipSyncCheckItemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SkipSyncCheckItemOutcome(rsp);
+        else
+            return SkipSyncCheckItemOutcome(o.GetError());
+    }
+    else
+    {
+        return SkipSyncCheckItemOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::SkipSyncCheckItemAsync(const SkipSyncCheckItemRequest& request, const SkipSyncCheckItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SkipSyncCheckItem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::SkipSyncCheckItemOutcomeCallable DtsClient::SkipSyncCheckItemCallable(const SkipSyncCheckItemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SkipSyncCheckItemOutcome()>>(
+        [this, request]()
+        {
+            return this->SkipSyncCheckItem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::StartCompareOutcome DtsClient::StartCompare(const StartCompareRequest &request)
 {
     auto outcome = MakeRequest(request, "StartCompare");

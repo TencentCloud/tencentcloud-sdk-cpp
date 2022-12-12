@@ -336,6 +336,28 @@ namespace TencentCloud
                      */
                     bool AppIdHasBeenSet() const;
 
+                    /**
+                     * 获取索引文档数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexDocs 索引文档数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIndexDocs() const;
+
+                    /**
+                     * 设置索引文档数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndexDocs 索引文档数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndexDocs(const uint64_t& _indexDocs);
+
+                    /**
+                     * 判断参数 IndexDocs 是否已赋值
+                     * @return IndexDocs 是否已赋值
+                     */
+                    bool IndexDocsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -428,6 +450,13 @@ namespace TencentCloud
                      */
                     uint64_t m_appId;
                     bool m_appIdHasBeenSet;
+
+                    /**
+                     * 索引文档数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_indexDocs;
+                    bool m_indexDocsHasBeenSet;
 
                 };
             }

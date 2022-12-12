@@ -11908,6 +11908,49 @@ VpcClient::ResetVpnGatewayInternetMaxBandwidthOutcomeCallable VpcClient::ResetVp
     return task->get_future();
 }
 
+VpcClient::ReturnNormalAddressesOutcome VpcClient::ReturnNormalAddresses(const ReturnNormalAddressesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReturnNormalAddresses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReturnNormalAddressesResponse rsp = ReturnNormalAddressesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReturnNormalAddressesOutcome(rsp);
+        else
+            return ReturnNormalAddressesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReturnNormalAddressesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReturnNormalAddressesAsync(const ReturnNormalAddressesRequest& request, const ReturnNormalAddressesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReturnNormalAddresses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReturnNormalAddressesOutcomeCallable VpcClient::ReturnNormalAddressesCallable(const ReturnNormalAddressesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReturnNormalAddressesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReturnNormalAddresses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::SetCcnRegionBandwidthLimitsOutcome VpcClient::SetCcnRegionBandwidthLimits(const SetCcnRegionBandwidthLimitsRequest &request)
 {
     auto outcome = MakeRequest(request, "SetCcnRegionBandwidthLimits");

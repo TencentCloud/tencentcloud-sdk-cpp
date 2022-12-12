@@ -93,6 +93,28 @@ namespace TencentCloud
                      */
                     bool SealInfosHasBeenSet() const;
 
+                    /**
+                     * 获取印章类型，表示为：
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     * @return SealShape 印章类型，表示为：
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     */
+                    std::string GetSealShape() const;
+
+                    /**
+                     * 判断参数 SealShape 是否已赋值
+                     * @return SealShape 是否已赋值
+                     */
+                    bool SealShapeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -118,6 +140,17 @@ namespace TencentCloud
                      */
                     std::vector<SealInfo> m_sealInfos;
                     bool m_sealInfosHasBeenSet;
+
+                    /**
+                     * 印章类型，表示为：
+圆形印章：0
+椭圆形印章：1
+方形印章：2
+菱形印章：3
+三角形印章：4
+                     */
+                    std::string m_sealShape;
+                    bool m_sealShapeHasBeenSet;
 
                 };
             }

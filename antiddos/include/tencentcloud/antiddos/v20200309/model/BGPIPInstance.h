@@ -570,6 +570,28 @@ namespace TencentCloud
                      */
                     bool InstanceVersionHasBeenSet() const;
 
+                    /**
+                     * 获取重保实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConvoyId 重保实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetConvoyId() const;
+
+                    /**
+                     * 设置重保实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConvoyId 重保实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConvoyId(const std::string& _convoyId);
+
+                    /**
+                     * 判断参数 ConvoyId 是否已赋值
+                     * @return ConvoyId 是否已赋值
+                     */
+                    bool ConvoyIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -734,6 +756,13 @@ namespace TencentCloud
                      */
                     uint64_t m_instanceVersion;
                     bool m_instanceVersionHasBeenSet;
+
+                    /**
+                     * 重保实例
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_convoyId;
+                    bool m_convoyIdHasBeenSet;
 
                 };
             }

@@ -33,7 +33,8 @@ IndexMetaField::IndexMetaField() :
     m_indexPolicyFieldHasBeenSet(false),
     m_indexOptionsFieldHasBeenSet(false),
     m_indexSettingsFieldHasBeenSet(false),
-    m_appIdHasBeenSet(false)
+    m_appIdHasBeenSet(false),
+    m_indexDocsHasBeenSet(false)
 {
 }
 
@@ -203,6 +204,16 @@ CoreInternalOutcome IndexMetaField::Deserialize(const rapidjson::Value &value)
         m_appIdHasBeenSet = true;
     }
 
+    if (value.HasMember("IndexDocs") && !value["IndexDocs"].IsNull())
+    {
+        if (!value["IndexDocs"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndexMetaField.IndexDocs` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexDocs = value["IndexDocs"].GetUint64();
+        m_indexDocsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -322,6 +333,14 @@ void IndexMetaField::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "AppId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_appId, allocator);
+    }
+
+    if (m_indexDocsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexDocs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_indexDocs, allocator);
     }
 
 }
@@ -533,5 +552,21 @@ void IndexMetaField::SetAppId(const uint64_t& _appId)
 bool IndexMetaField::AppIdHasBeenSet() const
 {
     return m_appIdHasBeenSet;
+}
+
+uint64_t IndexMetaField::GetIndexDocs() const
+{
+    return m_indexDocs;
+}
+
+void IndexMetaField::SetIndexDocs(const uint64_t& _indexDocs)
+{
+    m_indexDocs = _indexDocs;
+    m_indexDocsHasBeenSet = true;
+}
+
+bool IndexMetaField::IndexDocsHasBeenSet() const
+{
+    return m_indexDocsHasBeenSet;
 }
 

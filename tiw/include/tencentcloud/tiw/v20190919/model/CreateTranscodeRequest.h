@@ -264,6 +264,44 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     bool MinScaleResolutionHasBeenSet() const;
 
+                    /**
+                     * 获取是否对不支持元素开启自动处理的功能。默认不开启。
+
+在开启自动处理的情况下，会自动进行如下处理：
+1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
+2. 自动翻页：移除PPT上所有的自动翻页设置
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
+                     * @return AutoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认不开启。
+
+在开启自动处理的情况下，会自动进行如下处理：
+1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
+2. 自动翻页：移除PPT上所有的自动翻页设置
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
+                     */
+                    bool GetAutoHandleUnsupportedElement() const;
+
+                    /**
+                     * 设置是否对不支持元素开启自动处理的功能。默认不开启。
+
+在开启自动处理的情况下，会自动进行如下处理：
+1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
+2. 自动翻页：移除PPT上所有的自动翻页设置
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
+                     * @param AutoHandleUnsupportedElement 是否对不支持元素开启自动处理的功能。默认不开启。
+
+在开启自动处理的情况下，会自动进行如下处理：
+1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
+2. 自动翻页：移除PPT上所有的自动翻页设置
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
+                     */
+                    void SetAutoHandleUnsupportedElement(const bool& _autoHandleUnsupportedElement);
+
+                    /**
+                     * 判断参数 AutoHandleUnsupportedElement 是否已赋值
+                     * @return AutoHandleUnsupportedElement 是否已赋值
+                     */
+                    bool AutoHandleUnsupportedElementHasBeenSet() const;
+
                 private:
 
                     /**
@@ -334,6 +372,17 @@ tar.gz： 生成`.tar.gz`压缩包
                      */
                     std::string m_minScaleResolution;
                     bool m_minScaleResolutionHasBeenSet;
+
+                    /**
+                     * 是否对不支持元素开启自动处理的功能。默认不开启。
+
+在开启自动处理的情况下，会自动进行如下处理：
+1. 墨迹：移除不支持的墨迹（比如使用WPS画的）
+2. 自动翻页：移除PPT上所有的自动翻页设置
+3. 已损坏音视频：移除PPT上对损坏音视频的引用
+                     */
+                    bool m_autoHandleUnsupportedElement;
+                    bool m_autoHandleUnsupportedElementHasBeenSet;
 
                 };
             }

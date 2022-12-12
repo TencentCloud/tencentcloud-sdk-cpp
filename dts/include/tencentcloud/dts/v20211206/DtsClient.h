@@ -83,6 +83,10 @@
 #include <tencentcloud/dts/v20211206/model/ResumeMigrateJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/ResumeSyncJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/ResumeSyncJobResponse.h>
+#include <tencentcloud/dts/v20211206/model/SkipCheckItemRequest.h>
+#include <tencentcloud/dts/v20211206/model/SkipCheckItemResponse.h>
+#include <tencentcloud/dts/v20211206/model/SkipSyncCheckItemRequest.h>
+#include <tencentcloud/dts/v20211206/model/SkipSyncCheckItemResponse.h>
 #include <tencentcloud/dts/v20211206/model/StartCompareRequest.h>
 #include <tencentcloud/dts/v20211206/model/StartCompareResponse.h>
 #include <tencentcloud/dts/v20211206/model/StartMigrateJobRequest.h>
@@ -199,6 +203,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResumeSyncJobResponse> ResumeSyncJobOutcome;
                 typedef std::future<ResumeSyncJobOutcome> ResumeSyncJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ResumeSyncJobRequest&, ResumeSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeSyncJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::SkipCheckItemResponse> SkipCheckItemOutcome;
+                typedef std::future<SkipCheckItemOutcome> SkipCheckItemOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::SkipCheckItemRequest&, SkipCheckItemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SkipCheckItemAsyncHandler;
+                typedef Outcome<Core::Error, Model::SkipSyncCheckItemResponse> SkipSyncCheckItemOutcome;
+                typedef std::future<SkipSyncCheckItemOutcome> SkipSyncCheckItemOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::SkipSyncCheckItemRequest&, SkipSyncCheckItemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SkipSyncCheckItemAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartCompareResponse> StartCompareOutcome;
                 typedef std::future<StartCompareOutcome> StartCompareOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::StartCompareRequest&, StartCompareOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartCompareAsyncHandler;
@@ -497,6 +507,24 @@ namespace TencentCloud
                 ResumeSyncJobOutcome ResumeSyncJob(const Model::ResumeSyncJobRequest &request);
                 void ResumeSyncJobAsync(const Model::ResumeSyncJobRequest& request, const ResumeSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResumeSyncJobOutcomeCallable ResumeSyncJobCallable(const Model::ResumeSyncJobRequest& request);
+
+                /**
+                 *本接口用于校验检查项不通过后，可进行跳过此校验项操作，后端将不再校验该项。任何校验步骤都是不应该跳过的，通过校验是能正确执行的前置条件。支持跳过的产品及链路的校验项可 [参考文档](https://cloud.tencent.com/document/product/571/61639)。
+                 * @param req SkipCheckItemRequest
+                 * @return SkipCheckItemOutcome
+                 */
+                SkipCheckItemOutcome SkipCheckItem(const Model::SkipCheckItemRequest &request);
+                void SkipCheckItemAsync(const Model::SkipCheckItemRequest& request, const SkipCheckItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SkipCheckItemOutcomeCallable SkipCheckItemCallable(const Model::SkipCheckItemRequest& request);
+
+                /**
+                 *本接口用于校验检查项不通过后，可进行跳过此校验项操作，后端将不再校验该项。任何校验步骤都是不应该跳过的，通过校验是能正确执行的前置条件。支持跳过的产品及链路的校验项可 [参考文档](https://cloud.tencent.com/document/product/571/61639)。
+                 * @param req SkipSyncCheckItemRequest
+                 * @return SkipSyncCheckItemOutcome
+                 */
+                SkipSyncCheckItemOutcome SkipSyncCheckItem(const Model::SkipSyncCheckItemRequest &request);
+                void SkipSyncCheckItemAsync(const Model::SkipSyncCheckItemRequest& request, const SkipSyncCheckItemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SkipSyncCheckItemOutcomeCallable SkipSyncCheckItemCallable(const Model::SkipSyncCheckItemRequest& request);
 
                 /**
                  *启动一致性校验任务，启动之前需要先通过接口`CreateCompareTask` 创建一致性校验任务，启动后可通过接口`DescribeCompareTasks` 查询一致性校验任务列表来获得启动后的状态

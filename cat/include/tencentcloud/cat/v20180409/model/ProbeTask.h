@@ -88,14 +88,46 @@ namespace TencentCloud
                     bool TaskIdHasBeenSet() const;
 
                     /**
-                     * 获取任务类型
-                     * @return TaskType 任务类型
+                     * 获取拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
+
+即时拨测只支持页面浏览，网络质量，文件下载
+                     * @return TaskType 拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
+
+即时拨测只支持页面浏览，网络质量，文件下载
                      */
                     int64_t GetTaskType() const;
 
                     /**
-                     * 设置任务类型
-                     * @param TaskType 任务类型
+                     * 设置拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
+
+即时拨测只支持页面浏览，网络质量，文件下载
+                     * @param TaskType 拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
+
+即时拨测只支持页面浏览，网络质量，文件下载
                      */
                     void SetTaskType(const int64_t& _taskType);
 
@@ -161,13 +193,53 @@ namespace TencentCloud
 
                     /**
                      * 获取任务状态
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      * @return Status 任务状态
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置任务状态
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      * @param Status 任务状态
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -315,16 +387,24 @@ namespace TencentCloud
 
                     /**
                      * 获取定时任务启动状态
+<li>1 = 定时任务表达式生效</li>
+<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CronState 定时任务启动状态
+<li>1 = 定时任务表达式生效</li>
+<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCronState() const;
 
                     /**
                      * 设置定时任务启动状态
+<li>1 = 定时任务表达式生效</li>
+<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param CronState 定时任务启动状态
+<li>1 = 定时任务表达式生效</li>
+<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCronState(const int64_t& _cronState);
@@ -373,7 +453,15 @@ namespace TencentCloud
                     bool m_taskIdHasBeenSet;
 
                     /**
-                     * 任务类型
+                     * 拨测类型
+<li>1 = 页面浏览</li>
+<li> 2 =文件上传 </li>
+<li> 3 = 文件下载</li>
+<li> 4 = 端口性能 </li>
+<li> 5 = 网络质量 </li>
+<li> 6 =流媒体 </li>
+
+即时拨测只支持页面浏览，网络质量，文件下载
                      */
                     int64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -398,6 +486,16 @@ namespace TencentCloud
 
                     /**
                      * 任务状态
+<li>1 = 创建中</li>
+<li> 2 = 运行中 </li>
+<li> 3 = 运行异常 </li>
+<li> 4 = 暂停中 </li>
+<li> 5 = 暂停异常 </li>
+<li> 6 = 任务暂停 </li>
+<li> 7 = 任务删除中 </li>
+<li> 8 = 任务删除异常 </li>
+<li> 9 = 任务删除</li>
+<li> 10 = 定时任务暂停中 </li>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
@@ -447,6 +545,8 @@ namespace TencentCloud
 
                     /**
                      * 定时任务启动状态
+<li>1 = 定时任务表达式生效</li>
+<li> 2 = 定时任务表达式未生效（一般为任务手动暂停）</li>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_cronState;

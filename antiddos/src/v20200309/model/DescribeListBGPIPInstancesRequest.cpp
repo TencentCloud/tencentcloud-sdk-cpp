@@ -37,7 +37,8 @@ DescribeListBGPIPInstancesRequest::DescribeListBGPIPInstancesRequest() :
     m_filterCnameHasBeenSet(false),
     m_filterInstanceIdListHasBeenSet(false),
     m_filterTagHasBeenSet(false),
-    m_filterPackTypeHasBeenSet(false)
+    m_filterPackTypeHasBeenSet(false),
+    m_filterConvoyHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,14 @@ string DescribeListBGPIPInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_filterConvoyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterConvoy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_filterConvoy, allocator);
     }
 
 
@@ -430,6 +439,22 @@ void DescribeListBGPIPInstancesRequest::SetFilterPackType(const vector<string>& 
 bool DescribeListBGPIPInstancesRequest::FilterPackTypeHasBeenSet() const
 {
     return m_filterPackTypeHasBeenSet;
+}
+
+uint64_t DescribeListBGPIPInstancesRequest::GetFilterConvoy() const
+{
+    return m_filterConvoy;
+}
+
+void DescribeListBGPIPInstancesRequest::SetFilterConvoy(const uint64_t& _filterConvoy)
+{
+    m_filterConvoy = _filterConvoy;
+    m_filterConvoyHasBeenSet = true;
+}
+
+bool DescribeListBGPIPInstancesRequest::FilterConvoyHasBeenSet() const
+{
+    return m_filterConvoyHasBeenSet;
 }
 
 

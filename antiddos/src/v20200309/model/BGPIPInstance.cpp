@@ -43,7 +43,8 @@ BGPIPInstance::BGPIPInstance() :
     m_bGPIPChannelFlagHasBeenSet(false),
     m_tagInfoListHasBeenSet(false),
     m_anycastOutPackRelationHasBeenSet(false),
-    m_instanceVersionHasBeenSet(false)
+    m_instanceVersionHasBeenSet(false),
+    m_convoyIdHasBeenSet(false)
 {
 }
 
@@ -355,6 +356,16 @@ CoreInternalOutcome BGPIPInstance::Deserialize(const rapidjson::Value &value)
         m_instanceVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ConvoyId") && !value["ConvoyId"].IsNull())
+    {
+        if (!value["ConvoyId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPIPInstance.ConvoyId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_convoyId = string(value["ConvoyId"].GetString());
+        m_convoyIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -560,6 +571,14 @@ void BGPIPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "InstanceVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceVersion, allocator);
+    }
+
+    if (m_convoyIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConvoyId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_convoyId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -931,5 +950,21 @@ void BGPIPInstance::SetInstanceVersion(const uint64_t& _instanceVersion)
 bool BGPIPInstance::InstanceVersionHasBeenSet() const
 {
     return m_instanceVersionHasBeenSet;
+}
+
+string BGPIPInstance::GetConvoyId() const
+{
+    return m_convoyId;
+}
+
+void BGPIPInstance::SetConvoyId(const string& _convoyId)
+{
+    m_convoyId = _convoyId;
+    m_convoyIdHasBeenSet = true;
+}
+
+bool BGPIPInstance::ConvoyIdHasBeenSet() const
+{
+    return m_convoyIdHasBeenSet;
 }
 

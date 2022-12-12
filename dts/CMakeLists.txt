@@ -27,6 +27,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/StartMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/StepTip.h
   include/tencentcloud/dts/v20211206/model/DestroyMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/SkipCheckItemResponse.h
   include/tencentcloud/dts/v20211206/model/ResizeSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/ResumeMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/DifferenceItem.h
@@ -73,6 +74,8 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/SkippedItem.h
   include/tencentcloud/dts/v20211206/model/DestroyMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/ProcessProgress.h
+  include/tencentcloud/dts/v20211206/model/SkipSyncCheckItemRequest.h
+  include/tencentcloud/dts/v20211206/model/SkipSyncCheckItemResponse.h
   include/tencentcloud/dts/v20211206/model/IsolateSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationJobsRequest.h
@@ -106,6 +109,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/StartCompareResponse.h
   include/tencentcloud/dts/v20211206/model/CreateCompareTaskResponse.h
   include/tencentcloud/dts/v20211206/model/StopCompareResponse.h
+  include/tencentcloud/dts/v20211206/model/SkipCheckItemRequest.h
   include/tencentcloud/dts/v20211206/model/CompareAbstractInfo.h
   include/tencentcloud/dts/v20211206/model/CheckStep.h
   include/tencentcloud/dts/v20211206/model/CompareTaskItem.h
@@ -212,6 +216,7 @@ set(dts_src
   src/v20211206/model/StartMigrateJobRequest.cpp
   src/v20211206/model/StepTip.cpp
   src/v20211206/model/DestroyMigrateJobRequest.cpp
+  src/v20211206/model/SkipCheckItemResponse.cpp
   src/v20211206/model/ResizeSyncJobResponse.cpp
   src/v20211206/model/ResumeMigrateJobResponse.cpp
   src/v20211206/model/DifferenceItem.cpp
@@ -258,6 +263,8 @@ set(dts_src
   src/v20211206/model/SkippedItem.cpp
   src/v20211206/model/DestroyMigrateJobResponse.cpp
   src/v20211206/model/ProcessProgress.cpp
+  src/v20211206/model/SkipSyncCheckItemRequest.cpp
+  src/v20211206/model/SkipSyncCheckItemResponse.cpp
   src/v20211206/model/IsolateSyncJobResponse.cpp
   src/v20211206/model/CreateMigrateCheckJobRequest.cpp
   src/v20211206/model/DescribeMigrationJobsRequest.cpp
@@ -291,6 +298,7 @@ set(dts_src
   src/v20211206/model/StartCompareResponse.cpp
   src/v20211206/model/CreateCompareTaskResponse.cpp
   src/v20211206/model/StopCompareResponse.cpp
+  src/v20211206/model/SkipCheckItemRequest.cpp
   src/v20211206/model/CompareAbstractInfo.cpp
   src/v20211206/model/CheckStep.cpp
   src/v20211206/model/CompareTaskItem.cpp

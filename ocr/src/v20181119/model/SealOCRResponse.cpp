@@ -27,7 +27,8 @@ SealOCRResponse::SealOCRResponse() :
     m_sealBodyHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_otherTextsHasBeenSet(false),
-    m_sealInfosHasBeenSet(false)
+    m_sealInfosHasBeenSet(false),
+    m_sealShapeHasBeenSet(false)
 {
 }
 
@@ -125,6 +126,16 @@ CoreInternalOutcome SealOCRResponse::Deserialize(const string &payload)
         m_sealInfosHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SealShape") && !rsp["SealShape"].IsNull())
+    {
+        if (!rsp["SealShape"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SealShape` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sealShape = string(rsp["SealShape"].GetString());
+        m_sealShapeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -180,6 +191,14 @@ string SealOCRResponse::ToJsonString() const
         }
     }
 
+    if (m_sealShapeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealShape";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sealShape.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -230,6 +249,16 @@ vector<SealInfo> SealOCRResponse::GetSealInfos() const
 bool SealOCRResponse::SealInfosHasBeenSet() const
 {
     return m_sealInfosHasBeenSet;
+}
+
+string SealOCRResponse::GetSealShape() const
+{
+    return m_sealShape;
+}
+
+bool SealOCRResponse::SealShapeHasBeenSet() const
+{
+    return m_sealShapeHasBeenSet;
 }
 
 

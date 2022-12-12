@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据查询范围:结束时间
-                     * @return EndTime 数据查询范围:结束时间
+                     * 获取数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置数据查询范围:结束时间
-                     * @param EndTime 数据查询范围:结束时间
+                     * 设置数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
+                     * @param EndTime 数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据查询范围:开始时间
-                     * @return StartTime 数据查询范围:开始时间
+                     * 获取数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置数据查询范围:开始时间
-                     * @param StartTime 数据查询范围:开始时间
+                     * 设置数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
+                     * @param StartTime 数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -79,14 +79,22 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据
-                     * @return DataType 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据
+                     * 获取数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
+NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
+NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
+                     * @return DataType 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
+NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
+NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
                      */
                     std::string GetDataType() const;
 
                     /**
-                     * 设置数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据
-                     * @param DataType 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据
+                     * 设置数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
+NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
+NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
+                     * @param DataType 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
+NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
+NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
                      */
                     void SetDataType(const std::string& _dataType);
 
@@ -99,19 +107,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 数据查询范围:结束时间
+                     * 数据查询范围:结束时间 yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 数据查询范围:开始时间
+                     * 数据查询范围:开始时间 yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据
+                     * 数据类型：ADDED_INVOICE_REPORT  增值税开票数据，NATURAL_FINANCE_REPORT 自然人金融数据,
+NATURAL_FINANCE_REPORT_BY_TIME 按次报税数据导出,
+NATURAL_FINANCE_REPORT_STAT_BY_DAY 按日累计报税数据导出
                      */
                     std::string m_dataType;
                     bool m_dataTypeHasBeenSet;

@@ -295,6 +295,42 @@ namespace TencentCloud
                      */
                     bool FilterTagHasBeenSet() const;
 
+                    /**
+                     * 获取试用资源搜索，1: 应急防护资源；2：PLG试用资源
+                     * @return FilterTrialFlag 试用资源搜索，1: 应急防护资源；2：PLG试用资源
+                     */
+                    uint64_t GetFilterTrialFlag() const;
+
+                    /**
+                     * 设置试用资源搜索，1: 应急防护资源；2：PLG试用资源
+                     * @param FilterTrialFlag 试用资源搜索，1: 应急防护资源；2：PLG试用资源
+                     */
+                    void SetFilterTrialFlag(const uint64_t& _filterTrialFlag);
+
+                    /**
+                     * 判断参数 FilterTrialFlag 是否已赋值
+                     * @return FilterTrialFlag 是否已赋值
+                     */
+                    bool FilterTrialFlagHasBeenSet() const;
+
+                    /**
+                     * 获取重保护航搜索
+                     * @return FilterConvoy 重保护航搜索
+                     */
+                    uint64_t GetFilterConvoy() const;
+
+                    /**
+                     * 设置重保护航搜索
+                     * @param FilterConvoy 重保护航搜索
+                     */
+                    void SetFilterConvoy(const uint64_t& _filterConvoy);
+
+                    /**
+                     * 判断参数 FilterConvoy 是否已赋值
+                     * @return FilterConvoy 是否已赋值
+                     */
+                    bool FilterConvoyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +416,18 @@ namespace TencentCloud
                      */
                     TagFilter m_filterTag;
                     bool m_filterTagHasBeenSet;
+
+                    /**
+                     * 试用资源搜索，1: 应急防护资源；2：PLG试用资源
+                     */
+                    uint64_t m_filterTrialFlag;
+                    bool m_filterTrialFlagHasBeenSet;
+
+                    /**
+                     * 重保护航搜索
+                     */
+                    uint64_t m_filterConvoy;
+                    bool m_filterConvoyHasBeenSet;
 
                 };
             }

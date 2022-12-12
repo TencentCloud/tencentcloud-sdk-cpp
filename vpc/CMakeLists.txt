@@ -160,6 +160,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeSecurityGroupsRequest.h
   include/tencentcloud/vpc/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest.h
+  include/tencentcloud/vpc/v20170312/model/ReturnNormalAddressesRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyNetworkAclAttributeResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateVpnGatewayRoutesRequest.h
   include/tencentcloud/vpc/v20170312/model/DisassociateNetworkAclSubnetsResponse.h
@@ -337,6 +338,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeProductQuotaResponse.h
   include/tencentcloud/vpc/v20170312/model/Price.h
   include/tencentcloud/vpc/v20170312/model/HaVipDisassociateAddressIpRequest.h
+  include/tencentcloud/vpc/v20170312/model/ReturnNormalAddressesResponse.h
   include/tencentcloud/vpc/v20170312/model/DisableFlowLogsResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageResourcesResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeCrossBorderComplianceResponse.h
@@ -848,6 +850,7 @@ set(vpc_src
   src/v20170312/model/DescribeSecurityGroupsRequest.cpp
   src/v20170312/model/RefreshDirectConnectGatewayRouteToNatGatewayRequest.cpp
   src/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesRequest.cpp
+  src/v20170312/model/ReturnNormalAddressesRequest.cpp
   src/v20170312/model/ModifyNetworkAclAttributeResponse.cpp
   src/v20170312/model/CreateVpnGatewayRoutesRequest.cpp
   src/v20170312/model/DisassociateNetworkAclSubnetsResponse.cpp
@@ -1025,6 +1028,7 @@ set(vpc_src
   src/v20170312/model/DescribeProductQuotaResponse.cpp
   src/v20170312/model/Price.cpp
   src/v20170312/model/HaVipDisassociateAddressIpRequest.cpp
+  src/v20170312/model/ReturnNormalAddressesResponse.cpp
   src/v20170312/model/DisableFlowLogsResponse.cpp
   src/v20170312/model/DescribeBandwidthPackageResourcesResponse.cpp
   src/v20170312/model/DescribeCrossBorderComplianceResponse.cpp

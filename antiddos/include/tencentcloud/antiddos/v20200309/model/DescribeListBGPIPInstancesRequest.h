@@ -248,14 +248,14 @@ namespace TencentCloud
                     bool FilterDamDDoSStatusHasBeenSet() const;
 
                     /**
-                     * 获取获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
-                     * @return FilterStatus 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     * 获取获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking，试用资源填trial
+                     * @return FilterStatus 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking，试用资源填trial
                      */
                     std::string GetFilterStatus() const;
 
                     /**
-                     * 设置获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
-                     * @param FilterStatus 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     * 设置获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking，试用资源填trial
+                     * @param FilterStatus 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking，试用资源填trial
                      */
                     void SetFilterStatus(const std::string& _filterStatus);
 
@@ -337,6 +337,24 @@ namespace TencentCloud
                      */
                     bool FilterPackTypeHasBeenSet() const;
 
+                    /**
+                     * 获取重保护航搜索
+                     * @return FilterConvoy 重保护航搜索
+                     */
+                    uint64_t GetFilterConvoy() const;
+
+                    /**
+                     * 设置重保护航搜索
+                     * @param FilterConvoy 重保护航搜索
+                     */
+                    void SetFilterConvoy(const uint64_t& _filterConvoy);
+
+                    /**
+                     * 判断参数 FilterConvoy 是否已赋值
+                     * @return FilterConvoy 是否已赋值
+                     */
+                    bool FilterConvoyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -406,7 +424,7 @@ namespace TencentCloud
                     bool m_filterDamDDoSStatusHasBeenSet;
 
                     /**
-                     * 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking
+                     * 获取特定状态的资源，运行中填idle，攻击中填attacking，封堵中填blocking，试用资源填trial
                      */
                     std::string m_filterStatus;
                     bool m_filterStatusHasBeenSet;
@@ -434,6 +452,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_filterPackType;
                     bool m_filterPackTypeHasBeenSet;
+
+                    /**
+                     * 重保护航搜索
+                     */
+                    uint64_t m_filterConvoy;
+                    bool m_filterConvoyHasBeenSet;
 
                 };
             }
