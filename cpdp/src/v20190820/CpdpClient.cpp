@@ -5630,6 +5630,49 @@ CpdpClient::QueryFlexPaymentOrderStatusOutcomeCallable CpdpClient::QueryFlexPaym
     return task->get_future();
 }
 
+CpdpClient::QueryFlexPlatformAccountBalanceOutcome CpdpClient::QueryFlexPlatformAccountBalance(const QueryFlexPlatformAccountBalanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryFlexPlatformAccountBalance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryFlexPlatformAccountBalanceResponse rsp = QueryFlexPlatformAccountBalanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryFlexPlatformAccountBalanceOutcome(rsp);
+        else
+            return QueryFlexPlatformAccountBalanceOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryFlexPlatformAccountBalanceOutcome(outcome.GetError());
+    }
+}
+
+void CpdpClient::QueryFlexPlatformAccountBalanceAsync(const QueryFlexPlatformAccountBalanceRequest& request, const QueryFlexPlatformAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryFlexPlatformAccountBalance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CpdpClient::QueryFlexPlatformAccountBalanceOutcomeCallable CpdpClient::QueryFlexPlatformAccountBalanceCallable(const QueryFlexPlatformAccountBalanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryFlexPlatformAccountBalanceOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryFlexPlatformAccountBalance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CpdpClient::QueryFlexSettlementOrderListOutcome CpdpClient::QueryFlexSettlementOrderList(const QueryFlexSettlementOrderListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryFlexSettlementOrderList");

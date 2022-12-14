@@ -283,6 +283,8 @@
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderStatusRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexPaymentOrderStatusResponse.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPlatformAccountBalanceRequest.h>
+#include <tencentcloud/cpdp/v20190820/model/QueryFlexPlatformAccountBalanceResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexSettlementOrderListRequest.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFlexSettlementOrderListResponse.h>
 #include <tencentcloud/cpdp/v20190820/model/QueryFundsTransactionDetailsRequest.h>
@@ -855,6 +857,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryFlexPaymentOrderStatusResponse> QueryFlexPaymentOrderStatusOutcome;
                 typedef std::future<QueryFlexPaymentOrderStatusOutcome> QueryFlexPaymentOrderStatusOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFlexPaymentOrderStatusRequest&, QueryFlexPaymentOrderStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPaymentOrderStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryFlexPlatformAccountBalanceResponse> QueryFlexPlatformAccountBalanceOutcome;
+                typedef std::future<QueryFlexPlatformAccountBalanceOutcome> QueryFlexPlatformAccountBalanceOutcomeCallable;
+                typedef std::function<void(const CpdpClient*, const Model::QueryFlexPlatformAccountBalanceRequest&, QueryFlexPlatformAccountBalanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexPlatformAccountBalanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryFlexSettlementOrderListResponse> QueryFlexSettlementOrderListOutcome;
                 typedef std::future<QueryFlexSettlementOrderListOutcome> QueryFlexSettlementOrderListOutcomeCallable;
                 typedef std::function<void(const CpdpClient*, const Model::QueryFlexSettlementOrderListRequest&, QueryFlexSettlementOrderListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryFlexSettlementOrderListAsyncHandler;
@@ -2289,6 +2294,15 @@ namespace TencentCloud
                 QueryFlexPaymentOrderStatusOutcome QueryFlexPaymentOrderStatus(const Model::QueryFlexPaymentOrderStatusRequest &request);
                 void QueryFlexPaymentOrderStatusAsync(const Model::QueryFlexPaymentOrderStatusRequest& request, const QueryFlexPaymentOrderStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryFlexPaymentOrderStatusOutcomeCallable QueryFlexPaymentOrderStatusCallable(const Model::QueryFlexPaymentOrderStatusRequest& request);
+
+                /**
+                 *灵云V2-平台账户余额查询
+                 * @param req QueryFlexPlatformAccountBalanceRequest
+                 * @return QueryFlexPlatformAccountBalanceOutcome
+                 */
+                QueryFlexPlatformAccountBalanceOutcome QueryFlexPlatformAccountBalance(const Model::QueryFlexPlatformAccountBalanceRequest &request);
+                void QueryFlexPlatformAccountBalanceAsync(const Model::QueryFlexPlatformAccountBalanceRequest& request, const QueryFlexPlatformAccountBalanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryFlexPlatformAccountBalanceOutcomeCallable QueryFlexPlatformAccountBalanceCallable(const Model::QueryFlexPlatformAccountBalanceRequest& request);
 
                 /**
                  *灵云V2-查询结算订单列表
