@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/lighthouse/v20200324/model/InstancePrice.h>
+#include <tencentcloud/lighthouse/v20200324/model/DiscountDetail.h>
 
 
 namespace TencentCloud
@@ -91,6 +92,28 @@ namespace TencentCloud
                      */
                     bool InstancePriceHasBeenSet() const;
 
+                    /**
+                     * 获取折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountDetail 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DiscountDetail> GetDiscountDetail() const;
+
+                    /**
+                     * 设置折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountDetail 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountDetail(const std::vector<DiscountDetail>& _discountDetail);
+
+                    /**
+                     * 判断参数 DiscountDetail 是否已赋值
+                     * @return DiscountDetail 是否已赋值
+                     */
+                    bool DiscountDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +129,13 @@ namespace TencentCloud
                      */
                     InstancePrice m_instancePrice;
                     bool m_instancePriceHasBeenSet;
+
+                    /**
+                     * 折扣梯度详情，每个梯度包含的信息有：时长，折扣数，总价，折扣价，折扣详情（用户折扣、官网折扣、最终折扣）。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DiscountDetail> m_discountDetail;
+                    bool m_discountDetailHasBeenSet;
 
                 };
             }

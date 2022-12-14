@@ -23,7 +23,9 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 ModifyAutoOpenProVersionConfigRequest::ModifyAutoOpenProVersionConfigRequest() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_autoRepurchaseSwitchHasBeenSet(false),
+    m_autoRepurchaseRenewSwitchHasBeenSet(false)
 {
 }
 
@@ -40,6 +42,22 @@ string ModifyAutoOpenProVersionConfigRequest::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRepurchaseSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRepurchaseSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRepurchaseSwitch, allocator);
+    }
+
+    if (m_autoRepurchaseRenewSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRepurchaseRenewSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRepurchaseRenewSwitch, allocator);
     }
 
 
@@ -64,6 +82,38 @@ void ModifyAutoOpenProVersionConfigRequest::SetStatus(const string& _status)
 bool ModifyAutoOpenProVersionConfigRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t ModifyAutoOpenProVersionConfigRequest::GetAutoRepurchaseSwitch() const
+{
+    return m_autoRepurchaseSwitch;
+}
+
+void ModifyAutoOpenProVersionConfigRequest::SetAutoRepurchaseSwitch(const uint64_t& _autoRepurchaseSwitch)
+{
+    m_autoRepurchaseSwitch = _autoRepurchaseSwitch;
+    m_autoRepurchaseSwitchHasBeenSet = true;
+}
+
+bool ModifyAutoOpenProVersionConfigRequest::AutoRepurchaseSwitchHasBeenSet() const
+{
+    return m_autoRepurchaseSwitchHasBeenSet;
+}
+
+uint64_t ModifyAutoOpenProVersionConfigRequest::GetAutoRepurchaseRenewSwitch() const
+{
+    return m_autoRepurchaseRenewSwitch;
+}
+
+void ModifyAutoOpenProVersionConfigRequest::SetAutoRepurchaseRenewSwitch(const uint64_t& _autoRepurchaseRenewSwitch)
+{
+    m_autoRepurchaseRenewSwitch = _autoRepurchaseRenewSwitch;
+    m_autoRepurchaseRenewSwitchHasBeenSet = true;
+}
+
+bool ModifyAutoOpenProVersionConfigRequest::AutoRepurchaseRenewSwitchHasBeenSet() const
+{
+    return m_autoRepurchaseRenewSwitchHasBeenSet;
 }
 
 

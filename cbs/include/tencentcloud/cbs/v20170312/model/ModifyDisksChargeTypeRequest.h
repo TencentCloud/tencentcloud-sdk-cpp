@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool DiskIdsHasBeenSet() const;
 
                     /**
-                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
-                     * @return DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * 获取设置为预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * @return DiskChargePrepaid 设置为预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
                      */
                     DiskChargePrepaid GetDiskChargePrepaid() const;
 
                     /**
-                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
-                     * @param DiskChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * 设置设置为预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * @param DiskChargePrepaid 设置为预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
                      */
                     void SetDiskChargePrepaid(const DiskChargePrepaid& _diskChargePrepaid);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool DiskChargePrepaidHasBeenSet() const;
 
                     /**
-                     * 获取后付费模式
-                     * @return DiskChargePostpaid 后付费模式
+                     * 获取设置为后付费模式
+                     * @return DiskChargePostpaid 设置为后付费模式
                      */
                     bool GetDiskChargePostpaid() const;
 
                     /**
-                     * 设置后付费模式
-                     * @param DiskChargePostpaid 后付费模式
+                     * 设置设置为后付费模式
+                     * @param DiskChargePostpaid 设置为后付费模式
                      */
                     void SetDiskChargePostpaid(const bool& _diskChargePostpaid);
 
@@ -106,13 +106,13 @@ namespace TencentCloud
                     bool m_diskIdsHasBeenSet;
 
                     /**
-                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * 设置为预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
                      */
                     DiskChargePrepaid m_diskChargePrepaid;
                     bool m_diskChargePrepaidHasBeenSet;
 
                     /**
-                     * 后付费模式
+                     * 设置为后付费模式
                      */
                     bool m_diskChargePostpaid;
                     bool m_diskChargePostpaidHasBeenSet;

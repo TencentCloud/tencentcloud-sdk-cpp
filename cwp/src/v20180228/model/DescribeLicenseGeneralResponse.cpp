@@ -38,7 +38,9 @@ DescribeLicenseGeneralResponse::DescribeLicenseGeneralResponse() :
     m_flagshipVersionLicenseCntHasBeenSet(false),
     m_proVersionLicenseCntHasBeenSet(false),
     m_cwpVersionLicenseCntHasBeenSet(false),
-    m_availableLHLicenseCntHasBeenSet(false)
+    m_availableLHLicenseCntHasBeenSet(false),
+    m_autoRepurchaseSwitchHasBeenSet(false),
+    m_autoRepurchaseRenewSwitchHasBeenSet(false)
 {
 }
 
@@ -226,6 +228,26 @@ CoreInternalOutcome DescribeLicenseGeneralResponse::Deserialize(const string &pa
         m_availableLHLicenseCntHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AutoRepurchaseSwitch") && !rsp["AutoRepurchaseSwitch"].IsNull())
+    {
+        if (!rsp["AutoRepurchaseSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoRepurchaseSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRepurchaseSwitch = rsp["AutoRepurchaseSwitch"].GetBool();
+        m_autoRepurchaseSwitchHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AutoRepurchaseRenewSwitch") && !rsp["AutoRepurchaseRenewSwitch"].IsNull())
+    {
+        if (!rsp["AutoRepurchaseRenewSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoRepurchaseRenewSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRepurchaseRenewSwitch = rsp["AutoRepurchaseRenewSwitch"].GetBool();
+        m_autoRepurchaseRenewSwitchHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +376,22 @@ string DescribeLicenseGeneralResponse::ToJsonString() const
         string key = "AvailableLHLicenseCnt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_availableLHLicenseCnt, allocator);
+    }
+
+    if (m_autoRepurchaseSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRepurchaseSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRepurchaseSwitch, allocator);
+    }
+
+    if (m_autoRepurchaseRenewSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRepurchaseRenewSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRepurchaseRenewSwitch, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -516,6 +554,26 @@ uint64_t DescribeLicenseGeneralResponse::GetAvailableLHLicenseCnt() const
 bool DescribeLicenseGeneralResponse::AvailableLHLicenseCntHasBeenSet() const
 {
     return m_availableLHLicenseCntHasBeenSet;
+}
+
+bool DescribeLicenseGeneralResponse::GetAutoRepurchaseSwitch() const
+{
+    return m_autoRepurchaseSwitch;
+}
+
+bool DescribeLicenseGeneralResponse::AutoRepurchaseSwitchHasBeenSet() const
+{
+    return m_autoRepurchaseSwitchHasBeenSet;
+}
+
+bool DescribeLicenseGeneralResponse::GetAutoRepurchaseRenewSwitch() const
+{
+    return m_autoRepurchaseRenewSwitch;
+}
+
+bool DescribeLicenseGeneralResponse::AutoRepurchaseRenewSwitchHasBeenSet() const
+{
+    return m_autoRepurchaseRenewSwitchHasBeenSet;
 }
 
 

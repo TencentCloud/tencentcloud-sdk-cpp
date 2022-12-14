@@ -341,6 +341,50 @@ namespace TencentCloud
                      */
                     bool PreviewUrlHasBeenSet() const;
 
+                    /**
+                     * 获取模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateVersion 模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTemplateVersion() const;
+
+                    /**
+                     * 设置模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TemplateVersion 模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTemplateVersion(const std::string& _templateVersion);
+
+                    /**
+                     * 判断参数 TemplateVersion 是否已赋值
+                     * @return TemplateVersion 是否已赋值
+                     */
+                    bool TemplateVersionHasBeenSet() const;
+
+                    /**
+                     * 获取模板是否已发布。true-已发布；false-未发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Published 模板是否已发布。true-已发布；false-未发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPublished() const;
+
+                    /**
+                     * 设置模板是否已发布。true-已发布；false-未发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Published 模板是否已发布。true-已发布；false-未发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublished(const bool& _published);
+
+                    /**
+                     * 判断参数 Published 是否已赋值
+                     * @return Published 是否已赋值
+                     */
+                    bool PublishedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -439,6 +483,20 @@ namespace TencentCloud
                      */
                     std::string m_previewUrl;
                     bool m_previewUrlHasBeenSet;
+
+                    /**
+                     * 模板版本。默认为空时，全数字字符，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_templateVersion;
+                    bool m_templateVersionHasBeenSet;
+
+                    /**
+                     * 模板是否已发布。true-已发布；false-未发布
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_published;
+                    bool m_publishedHasBeenSet;
 
                 };
             }

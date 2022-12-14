@@ -14,21 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgResponse.h>
+#include <tencentcloud/emr/v20190103/model/ScaleOutClusterResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tke::V20180525::Model;
+using namespace TencentCloud::Emr::V20190103::Model;
 using namespace std;
 
-CreateClusterNodePoolFromExistingAsgResponse::CreateClusterNodePoolFromExistingAsgResponse() :
-    m_nodePoolIdHasBeenSet(false)
+ScaleOutClusterResponse::ScaleOutClusterResponse() :
+    m_instanceIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
+    m_flowIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateClusterNodePoolFromExistingAsgResponse::Deserialize(const string &payload)
+CoreInternalOutcome ScaleOutClusterResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +64,68 @@ CoreInternalOutcome CreateClusterNodePoolFromExistingAsgResponse::Deserialize(co
     }
 
 
-    if (rsp.HasMember("NodePoolId") && !rsp["NodePoolId"].IsNull())
+    if (rsp.HasMember("InstanceId") && !rsp["InstanceId"].IsNull())
     {
-        if (!rsp["NodePoolId"].IsString())
+        if (!rsp["InstanceId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `NodePoolId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `InstanceId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_nodePoolId = string(rsp["NodePoolId"].GetString());
-        m_nodePoolIdHasBeenSet = true;
+        m_instanceId = string(rsp["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ClientToken") && !rsp["ClientToken"].IsNull())
+    {
+        if (!rsp["ClientToken"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClientToken` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clientToken = string(rsp["ClientToken"].GetString());
+        m_clientTokenHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FlowId") && !rsp["FlowId"].IsNull())
+    {
+        if (!rsp["FlowId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_flowId = rsp["FlowId"].GetInt64();
+        m_flowIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateClusterNodePoolFromExistingAsgResponse::ToJsonString() const
+string ScaleOutClusterResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_nodePoolIdHasBeenSet)
+    if (m_instanceIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NodePoolId";
+        string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_nodePoolId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientTokenHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientToken";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clientToken.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_flowId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +140,34 @@ string CreateClusterNodePoolFromExistingAsgResponse::ToJsonString() const
 }
 
 
-string CreateClusterNodePoolFromExistingAsgResponse::GetNodePoolId() const
+string ScaleOutClusterResponse::GetInstanceId() const
 {
-    return m_nodePoolId;
+    return m_instanceId;
 }
 
-bool CreateClusterNodePoolFromExistingAsgResponse::NodePoolIdHasBeenSet() const
+bool ScaleOutClusterResponse::InstanceIdHasBeenSet() const
 {
-    return m_nodePoolIdHasBeenSet;
+    return m_instanceIdHasBeenSet;
+}
+
+string ScaleOutClusterResponse::GetClientToken() const
+{
+    return m_clientToken;
+}
+
+bool ScaleOutClusterResponse::ClientTokenHasBeenSet() const
+{
+    return m_clientTokenHasBeenSet;
+}
+
+int64_t ScaleOutClusterResponse::GetFlowId() const
+{
+    return m_flowId;
+}
+
+bool ScaleOutClusterResponse::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TKE_V20180525_MODEL_CREATECLUSTERNODEPOOLFROMEXISTINGASGRESPONSE_H_
-#define TENCENTCLOUD_TKE_V20180525_MODEL_CREATECLUSTERNODEPOOLFROMEXISTINGASGRESPONSE_H_
+#ifndef TENCENTCLOUD_EMR_V20190103_MODEL_CREATECLUSTERRESPONSE_H_
+#define TENCENTCLOUD_EMR_V20190103_MODEL_CREATECLUSTERRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,46 @@
 
 namespace TencentCloud
 {
-    namespace Tke
+    namespace Emr
     {
-        namespace V20180525
+        namespace V20190103
         {
             namespace Model
             {
                 /**
-                * CreateClusterNodePoolFromExistingAsg返回参数结构体
+                * CreateCluster返回参数结构体
                 */
-                class CreateClusterNodePoolFromExistingAsgResponse : public AbstractModel
+                class CreateClusterResponse : public AbstractModel
                 {
                 public:
-                    CreateClusterNodePoolFromExistingAsgResponse();
-                    ~CreateClusterNodePoolFromExistingAsgResponse() = default;
+                    CreateClusterResponse();
+                    ~CreateClusterResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取节点池ID
-                     * @return NodePoolId 节点池ID
+                     * 获取实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceId 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetNodePoolId() const;
+                    std::string GetInstanceId() const;
 
                     /**
-                     * 判断参数 NodePoolId 是否已赋值
-                     * @return NodePoolId 是否已赋值
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
                      */
-                    bool NodePoolIdHasBeenSet() const;
+                    bool InstanceIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 节点池ID
+                     * 实例ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_nodePoolId;
-                    bool m_nodePoolIdHasBeenSet;
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }
@@ -69,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TKE_V20180525_MODEL_CREATECLUSTERNODEPOOLFROMEXISTINGASGRESPONSE_H_
+#endif // !TENCENTCLOUD_EMR_V20190103_MODEL_CREATECLUSTERRESPONSE_H_

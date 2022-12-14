@@ -24,7 +24,8 @@ InstancePrice::InstancePrice() :
     m_originalBundlePriceHasBeenSet(false),
     m_originalPriceHasBeenSet(false),
     m_discountHasBeenSet(false),
-    m_discountPriceHasBeenSet(false)
+    m_discountPriceHasBeenSet(false),
+    m_currencyHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome InstancePrice::Deserialize(const rapidjson::Value &value)
         m_discountPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("Currency") && !value["Currency"].IsNull())
+    {
+        if (!value["Currency"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstancePrice.Currency` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_currency = string(value["Currency"].GetString());
+        m_currencyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void InstancePrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "DiscountPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_discountPrice, allocator);
+    }
+
+    if (m_currencyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Currency";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_currency.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void InstancePrice::SetDiscountPrice(const double& _discountPrice)
 bool InstancePrice::DiscountPriceHasBeenSet() const
 {
     return m_discountPriceHasBeenSet;
+}
+
+string InstancePrice::GetCurrency() const
+{
+    return m_currency;
+}
+
+void InstancePrice::SetCurrency(const string& _currency)
+{
+    m_currency = _currency;
+    m_currencyHasBeenSet = true;
+}
+
+bool InstancePrice::CurrencyHasBeenSet() const
+{
+    return m_currencyHasBeenSet;
 }
 

@@ -30,7 +30,8 @@ CreateLicenseOrderRequest::CreateLicenseOrderRequest() :
     m_projectIdHasBeenSet(false),
     m_timeSpanHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
-    m_autoProtectOpenConfigHasBeenSet(false)
+    m_autoProtectOpenConfigHasBeenSet(false),
+    m_modifyConfigHasBeenSet(false)
 {
 }
 
@@ -110,6 +111,15 @@ string CreateLicenseOrderRequest::ToJsonString() const
         string key = "AutoProtectOpenConfig";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_autoProtectOpenConfig.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_modifyConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_modifyConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -246,6 +256,22 @@ void CreateLicenseOrderRequest::SetAutoProtectOpenConfig(const string& _autoProt
 bool CreateLicenseOrderRequest::AutoProtectOpenConfigHasBeenSet() const
 {
     return m_autoProtectOpenConfigHasBeenSet;
+}
+
+OrderModifyObject CreateLicenseOrderRequest::GetModifyConfig() const
+{
+    return m_modifyConfig;
+}
+
+void CreateLicenseOrderRequest::SetModifyConfig(const OrderModifyObject& _modifyConfig)
+{
+    m_modifyConfig = _modifyConfig;
+    m_modifyConfigHasBeenSet = true;
+}
+
+bool CreateLicenseOrderRequest::ModifyConfigHasBeenSet() const
+{
+    return m_modifyConfigHasBeenSet;
 }
 
 

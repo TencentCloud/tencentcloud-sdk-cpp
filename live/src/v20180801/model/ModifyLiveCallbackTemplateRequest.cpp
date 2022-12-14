@@ -31,7 +31,8 @@ ModifyLiveCallbackTemplateRequest::ModifyLiveCallbackTemplateRequest() :
     m_recordNotifyUrlHasBeenSet(false),
     m_snapshotNotifyUrlHasBeenSet(false),
     m_pornCensorshipNotifyUrlHasBeenSet(false),
-    m_callbackKeyHasBeenSet(false)
+    m_callbackKeyHasBeenSet(false),
+    m_pushExceptionNotifyUrlHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string ModifyLiveCallbackTemplateRequest::ToJsonString() const
         string key = "CallbackKey";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callbackKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pushExceptionNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PushExceptionNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pushExceptionNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void ModifyLiveCallbackTemplateRequest::SetCallbackKey(const string& _callbackKe
 bool ModifyLiveCallbackTemplateRequest::CallbackKeyHasBeenSet() const
 {
     return m_callbackKeyHasBeenSet;
+}
+
+string ModifyLiveCallbackTemplateRequest::GetPushExceptionNotifyUrl() const
+{
+    return m_pushExceptionNotifyUrl;
+}
+
+void ModifyLiveCallbackTemplateRequest::SetPushExceptionNotifyUrl(const string& _pushExceptionNotifyUrl)
+{
+    m_pushExceptionNotifyUrl = _pushExceptionNotifyUrl;
+    m_pushExceptionNotifyUrlHasBeenSet = true;
+}
+
+bool ModifyLiveCallbackTemplateRequest::PushExceptionNotifyUrlHasBeenSet() const
+{
+    return m_pushExceptionNotifyUrlHasBeenSet;
 }
 
 

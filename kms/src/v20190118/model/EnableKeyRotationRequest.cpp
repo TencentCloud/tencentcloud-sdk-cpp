@@ -23,7 +23,8 @@ using namespace TencentCloud::Kms::V20190118::Model;
 using namespace std;
 
 EnableKeyRotationRequest::EnableKeyRotationRequest() :
-    m_keyIdHasBeenSet(false)
+    m_keyIdHasBeenSet(false),
+    m_rotateDaysHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string EnableKeyRotationRequest::ToJsonString() const
         string key = "KeyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_keyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rotateDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RotateDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rotateDays, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void EnableKeyRotationRequest::SetKeyId(const string& _keyId)
 bool EnableKeyRotationRequest::KeyIdHasBeenSet() const
 {
     return m_keyIdHasBeenSet;
+}
+
+uint64_t EnableKeyRotationRequest::GetRotateDays() const
+{
+    return m_rotateDays;
+}
+
+void EnableKeyRotationRequest::SetRotateDays(const uint64_t& _rotateDays)
+{
+    m_rotateDays = _rotateDays;
+    m_rotateDaysHasBeenSet = true;
+}
+
+bool EnableKeyRotationRequest::RotateDaysHasBeenSet() const
+{
+    return m_rotateDaysHasBeenSet;
 }
 
 

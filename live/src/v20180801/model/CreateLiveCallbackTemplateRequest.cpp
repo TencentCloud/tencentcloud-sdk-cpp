@@ -31,7 +31,8 @@ CreateLiveCallbackTemplateRequest::CreateLiveCallbackTemplateRequest() :
     m_snapshotNotifyUrlHasBeenSet(false),
     m_pornCensorshipNotifyUrlHasBeenSet(false),
     m_callbackKeyHasBeenSet(false),
-    m_streamMixNotifyUrlHasBeenSet(false)
+    m_streamMixNotifyUrlHasBeenSet(false),
+    m_pushExceptionNotifyUrlHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string CreateLiveCallbackTemplateRequest::ToJsonString() const
         string key = "StreamMixNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_streamMixNotifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pushExceptionNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PushExceptionNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_pushExceptionNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void CreateLiveCallbackTemplateRequest::SetStreamMixNotifyUrl(const string& _str
 bool CreateLiveCallbackTemplateRequest::StreamMixNotifyUrlHasBeenSet() const
 {
     return m_streamMixNotifyUrlHasBeenSet;
+}
+
+string CreateLiveCallbackTemplateRequest::GetPushExceptionNotifyUrl() const
+{
+    return m_pushExceptionNotifyUrl;
+}
+
+void CreateLiveCallbackTemplateRequest::SetPushExceptionNotifyUrl(const string& _pushExceptionNotifyUrl)
+{
+    m_pushExceptionNotifyUrl = _pushExceptionNotifyUrl;
+    m_pushExceptionNotifyUrlHasBeenSet = true;
+}
+
+bool CreateLiveCallbackTemplateRequest::PushExceptionNotifyUrlHasBeenSet() const
+{
+    return m_pushExceptionNotifyUrlHasBeenSet;
 }
 
 

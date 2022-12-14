@@ -431,6 +431,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/CreateScanMalwareSettingRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeMalwareTimingScanSettingResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeHostLoginListRequest.h
+  include/tencentcloud/cwp/v20180228/model/OrderModifyObject.h
   include/tencentcloud/cwp/v20180228/model/SecurityTrend.h
   include/tencentcloud/cwp/v20180228/model/DescribeAssetWebServiceProcessListRequest.h
   include/tencentcloud/cwp/v20180228/model/LicenseDetail.h
@@ -1018,6 +1019,7 @@ set(cwp_src
   src/v20180228/model/CreateScanMalwareSettingRequest.cpp
   src/v20180228/model/DescribeMalwareTimingScanSettingResponse.cpp
   src/v20180228/model/DescribeHostLoginListRequest.cpp
+  src/v20180228/model/OrderModifyObject.cpp
   src/v20180228/model/SecurityTrend.cpp
   src/v20180228/model/DescribeAssetWebServiceProcessListRequest.cpp
   src/v20180228/model/LicenseDetail.cpp

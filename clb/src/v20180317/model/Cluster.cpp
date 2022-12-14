@@ -42,7 +42,8 @@ Cluster::Cluster() :
     m_loadBalanceDirectorCountHasBeenSet(false),
     m_ispHasBeenSet(false),
     m_clustersZoneHasBeenSet(false),
-    m_clustersVersionHasBeenSet(false)
+    m_clustersVersionHasBeenSet(false),
+    m_disasterRecoveryTypeHasBeenSet(false)
 {
 }
 
@@ -278,6 +279,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_clustersVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("DisasterRecoveryType") && !value["DisasterRecoveryType"].IsNull())
+    {
+        if (!value["DisasterRecoveryType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.DisasterRecoveryType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_disasterRecoveryType = string(value["DisasterRecoveryType"].GetString());
+        m_disasterRecoveryTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +471,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "ClustersVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clustersVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disasterRecoveryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoveryType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_disasterRecoveryType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -815,5 +834,21 @@ void Cluster::SetClustersVersion(const string& _clustersVersion)
 bool Cluster::ClustersVersionHasBeenSet() const
 {
     return m_clustersVersionHasBeenSet;
+}
+
+string Cluster::GetDisasterRecoveryType() const
+{
+    return m_disasterRecoveryType;
+}
+
+void Cluster::SetDisasterRecoveryType(const string& _disasterRecoveryType)
+{
+    m_disasterRecoveryType = _disasterRecoveryType;
+    m_disasterRecoveryTypeHasBeenSet = true;
+}
+
+bool Cluster::DisasterRecoveryTypeHasBeenSet() const
+{
+    return m_disasterRecoveryTypeHasBeenSet;
 }
 

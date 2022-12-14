@@ -246,6 +246,64 @@ namespace TencentCloud
                      */
                     bool RetentionDaysHasBeenSet() const;
 
+                    /**
+                     * 获取指定拉取镜像仓库的镜像时不校验证书。如["harbor.example.com"]。
+                     * @return RegistrySkipVerifyList 指定拉取镜像仓库的镜像时不校验证书。如["harbor.example.com"]。
+                     */
+                    std::vector<std::string> GetRegistrySkipVerifyList() const;
+
+                    /**
+                     * 设置指定拉取镜像仓库的镜像时不校验证书。如["harbor.example.com"]。
+                     * @param RegistrySkipVerifyList 指定拉取镜像仓库的镜像时不校验证书。如["harbor.example.com"]。
+                     */
+                    void SetRegistrySkipVerifyList(const std::vector<std::string>& _registrySkipVerifyList);
+
+                    /**
+                     * 判断参数 RegistrySkipVerifyList 是否已赋值
+                     * @return RegistrySkipVerifyList 是否已赋值
+                     */
+                    bool RegistrySkipVerifyListHasBeenSet() const;
+
+                    /**
+                     * 获取指定拉取镜像仓库的镜像时使用 HTTP 协议。如["harbor.example.com"]。
+                     * @return RegistryHttpEndPointList 指定拉取镜像仓库的镜像时使用 HTTP 协议。如["harbor.example.com"]。
+                     */
+                    std::vector<std::string> GetRegistryHttpEndPointList() const;
+
+                    /**
+                     * 设置指定拉取镜像仓库的镜像时使用 HTTP 协议。如["harbor.example.com"]。
+                     * @param RegistryHttpEndPointList 指定拉取镜像仓库的镜像时使用 HTTP 协议。如["harbor.example.com"]。
+                     */
+                    void SetRegistryHttpEndPointList(const std::vector<std::string>& _registryHttpEndPointList);
+
+                    /**
+                     * 判断参数 RegistryHttpEndPointList 是否已赋值
+                     * @return RegistryHttpEndPointList 是否已赋值
+                     */
+                    bool RegistryHttpEndPointListHasBeenSet() const;
+
+                    /**
+                     * 获取自定义制作镜像缓存过程中容器实例的宿主机上的 DNS。如：
+"nameserver 4.4.4.4\nnameserver 8.8.8.8"
+                     * @return ResolveConfig 自定义制作镜像缓存过程中容器实例的宿主机上的 DNS。如：
+"nameserver 4.4.4.4\nnameserver 8.8.8.8"
+                     */
+                    std::string GetResolveConfig() const;
+
+                    /**
+                     * 设置自定义制作镜像缓存过程中容器实例的宿主机上的 DNS。如：
+"nameserver 4.4.4.4\nnameserver 8.8.8.8"
+                     * @param ResolveConfig 自定义制作镜像缓存过程中容器实例的宿主机上的 DNS。如：
+"nameserver 4.4.4.4\nnameserver 8.8.8.8"
+                     */
+                    void SetResolveConfig(const std::string& _resolveConfig);
+
+                    /**
+                     * 判断参数 ResolveConfig 是否已赋值
+                     * @return ResolveConfig 是否已赋值
+                     */
+                    bool ResolveConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +372,25 @@ namespace TencentCloud
                      */
                     uint64_t m_retentionDays;
                     bool m_retentionDaysHasBeenSet;
+
+                    /**
+                     * 指定拉取镜像仓库的镜像时不校验证书。如["harbor.example.com"]。
+                     */
+                    std::vector<std::string> m_registrySkipVerifyList;
+                    bool m_registrySkipVerifyListHasBeenSet;
+
+                    /**
+                     * 指定拉取镜像仓库的镜像时使用 HTTP 协议。如["harbor.example.com"]。
+                     */
+                    std::vector<std::string> m_registryHttpEndPointList;
+                    bool m_registryHttpEndPointListHasBeenSet;
+
+                    /**
+                     * 自定义制作镜像缓存过程中容器实例的宿主机上的 DNS。如：
+"nameserver 4.4.4.4\nnameserver 8.8.8.8"
+                     */
+                    std::string m_resolveConfig;
+                    bool m_resolveConfigHasBeenSet;
 
                 };
             }

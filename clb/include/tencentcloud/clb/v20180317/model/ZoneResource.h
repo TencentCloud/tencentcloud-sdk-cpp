@@ -163,6 +163,42 @@ namespace TencentCloud
                      */
                     bool LocalZoneHasBeenSet() const;
 
+                    /**
+                     * 获取可用区资源的类型，SHARED表示共享资源，EXCLUSIVE表示独占资源。
+                     * @return ZoneResourceType 可用区资源的类型，SHARED表示共享资源，EXCLUSIVE表示独占资源。
+                     */
+                    std::string GetZoneResourceType() const;
+
+                    /**
+                     * 设置可用区资源的类型，SHARED表示共享资源，EXCLUSIVE表示独占资源。
+                     * @param ZoneResourceType 可用区资源的类型，SHARED表示共享资源，EXCLUSIVE表示独占资源。
+                     */
+                    void SetZoneResourceType(const std::string& _zoneResourceType);
+
+                    /**
+                     * 判断参数 ZoneResourceType 是否已赋值
+                     * @return ZoneResourceType 是否已赋值
+                     */
+                    bool ZoneResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取可用区是否是EdgeZone可用区，如：false
+                     * @return EdgeZone 可用区是否是EdgeZone可用区，如：false
+                     */
+                    bool GetEdgeZone() const;
+
+                    /**
+                     * 设置可用区是否是EdgeZone可用区，如：false
+                     * @param EdgeZone 可用区是否是EdgeZone可用区，如：false
+                     */
+                    void SetEdgeZone(const bool& _edgeZone);
+
+                    /**
+                     * 判断参数 EdgeZone 是否已赋值
+                     * @return EdgeZone 是否已赋值
+                     */
+                    bool EdgeZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +238,18 @@ namespace TencentCloud
                      */
                     bool m_localZone;
                     bool m_localZoneHasBeenSet;
+
+                    /**
+                     * 可用区资源的类型，SHARED表示共享资源，EXCLUSIVE表示独占资源。
+                     */
+                    std::string m_zoneResourceType;
+                    bool m_zoneResourceTypeHasBeenSet;
+
+                    /**
+                     * 可用区是否是EdgeZone可用区，如：false
+                     */
+                    bool m_edgeZone;
+                    bool m_edgeZoneHasBeenSet;
 
                 };
             }

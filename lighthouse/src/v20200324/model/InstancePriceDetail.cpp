@@ -22,7 +22,8 @@ using namespace std;
 
 InstancePriceDetail::InstancePriceDetail() :
     m_instanceIdHasBeenSet(false),
-    m_instancePriceHasBeenSet(false)
+    m_instancePriceHasBeenSet(false),
+    m_discountDetailHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,26 @@ CoreInternalOutcome InstancePriceDetail::Deserialize(const rapidjson::Value &val
         m_instancePriceHasBeenSet = true;
     }
 
+    if (value.HasMember("DiscountDetail") && !value["DiscountDetail"].IsNull())
+    {
+        if (!value["DiscountDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstancePriceDetail.DiscountDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DiscountDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DiscountDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_discountDetail.push_back(item);
+        }
+        m_discountDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +101,21 @@ void InstancePriceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instancePrice.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_discountDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiscountDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_discountDetail.begin(); itr != m_discountDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -115,5 +151,21 @@ void InstancePriceDetail::SetInstancePrice(const InstancePrice& _instancePrice)
 bool InstancePriceDetail::InstancePriceHasBeenSet() const
 {
     return m_instancePriceHasBeenSet;
+}
+
+vector<DiscountDetail> InstancePriceDetail::GetDiscountDetail() const
+{
+    return m_discountDetail;
+}
+
+void InstancePriceDetail::SetDiscountDetail(const vector<DiscountDetail>& _discountDetail)
+{
+    m_discountDetail = _discountDetail;
+    m_discountDetailHasBeenSet = true;
+}
+
+bool InstancePriceDetail::DiscountDetailHasBeenSet() const
+{
+    return m_discountDetailHasBeenSet;
 }
 

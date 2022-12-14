@@ -129,6 +129,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/ClassicalListener.h
   include/tencentcloud/clb/v20180317/model/DeleteLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/CertificateInput.h
+  include/tencentcloud/clb/v20180317/model/ResourceAvailability.h
   include/tencentcloud/clb/v20180317/model/DescribeCustomizedConfigAssociateListResponse.h
   include/tencentcloud/clb/v20180317/model/SetCustomizedConfigForLoadBalancerRequest.h
   include/tencentcloud/clb/v20180317/model/CreateListenerResponse.h
@@ -347,6 +348,7 @@ set(clb_src
   src/v20180317/model/ClassicalListener.cpp
   src/v20180317/model/DeleteLoadBalancerRequest.cpp
   src/v20180317/model/CertificateInput.cpp
+  src/v20180317/model/ResourceAvailability.cpp
   src/v20180317/model/DescribeCustomizedConfigAssociateListResponse.cpp
   src/v20180317/model/SetCustomizedConfigForLoadBalancerRequest.cpp
   src/v20180317/model/CreateListenerResponse.cpp

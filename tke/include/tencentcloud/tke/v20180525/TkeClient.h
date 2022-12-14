@@ -49,8 +49,6 @@
 #include <tencentcloud/tke/v20180525/model/CreateClusterInstancesResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolResponse.h>
-#include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgRequest.h>
-#include <tencentcloud/tke/v20180525/model/CreateClusterNodePoolFromExistingAsgResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterReleaseRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterReleaseResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRouteRequest.h>
@@ -438,9 +436,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateClusterNodePoolResponse> CreateClusterNodePoolOutcome;
                 typedef std::future<CreateClusterNodePoolOutcome> CreateClusterNodePoolOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterNodePoolRequest&, CreateClusterNodePoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterNodePoolAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateClusterNodePoolFromExistingAsgResponse> CreateClusterNodePoolFromExistingAsgOutcome;
-                typedef std::future<CreateClusterNodePoolFromExistingAsgOutcome> CreateClusterNodePoolFromExistingAsgOutcomeCallable;
-                typedef std::function<void(const TkeClient*, const Model::CreateClusterNodePoolFromExistingAsgRequest&, CreateClusterNodePoolFromExistingAsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterNodePoolFromExistingAsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterReleaseResponse> CreateClusterReleaseOutcome;
                 typedef std::future<CreateClusterReleaseOutcome> CreateClusterReleaseOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterReleaseRequest&, CreateClusterReleaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterReleaseAsyncHandler;
@@ -1061,15 +1056,6 @@ namespace TencentCloud
                 CreateClusterNodePoolOutcome CreateClusterNodePool(const Model::CreateClusterNodePoolRequest &request);
                 void CreateClusterNodePoolAsync(const Model::CreateClusterNodePoolRequest& request, const CreateClusterNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateClusterNodePoolOutcomeCallable CreateClusterNodePoolCallable(const Model::CreateClusterNodePoolRequest& request);
-
-                /**
-                 *从伸缩组创建节点池
-                 * @param req CreateClusterNodePoolFromExistingAsgRequest
-                 * @return CreateClusterNodePoolFromExistingAsgOutcome
-                 */
-                CreateClusterNodePoolFromExistingAsgOutcome CreateClusterNodePoolFromExistingAsg(const Model::CreateClusterNodePoolFromExistingAsgRequest &request);
-                void CreateClusterNodePoolFromExistingAsgAsync(const Model::CreateClusterNodePoolFromExistingAsgRequest& request, const CreateClusterNodePoolFromExistingAsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateClusterNodePoolFromExistingAsgOutcomeCallable CreateClusterNodePoolFromExistingAsgCallable(const Model::CreateClusterNodePoolFromExistingAsgRequest& request);
 
                 /**
                  *在应用市场中给集群创建应用

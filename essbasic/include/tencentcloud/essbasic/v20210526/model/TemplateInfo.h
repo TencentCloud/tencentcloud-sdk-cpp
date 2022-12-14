@@ -251,24 +251,6 @@ namespace TencentCloud
                     bool PreviewUrlHasBeenSet() const;
 
                     /**
-                     * 获取渠道模板ID
-                     * @return ChannelTemplateId 渠道模板ID
-                     */
-                    std::string GetChannelTemplateId() const;
-
-                    /**
-                     * 设置渠道模板ID
-                     * @param ChannelTemplateId 渠道模板ID
-                     */
-                    void SetChannelTemplateId(const std::string& _channelTemplateId);
-
-                    /**
-                     * 判断参数 ChannelTemplateId 是否已赋值
-                     * @return ChannelTemplateId 是否已赋值
-                     */
-                    bool ChannelTemplateIdHasBeenSet() const;
-
-                    /**
                      * 获取渠道版-模板PDF文件链接
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return PdfUrl 渠道版-模板PDF文件链接
@@ -289,6 +271,90 @@ namespace TencentCloud
                      * @return PdfUrl 是否已赋值
                      */
                     bool PdfUrlHasBeenSet() const;
+
+                    /**
+                     * 获取关联的渠道模板ID
+                     * @return ChannelTemplateId 关联的渠道模板ID
+                     */
+                    std::string GetChannelTemplateId() const;
+
+                    /**
+                     * 设置关联的渠道模板ID
+                     * @param ChannelTemplateId 关联的渠道模板ID
+                     */
+                    void SetChannelTemplateId(const std::string& _channelTemplateId);
+
+                    /**
+                     * 判断参数 ChannelTemplateId 是否已赋值
+                     * @return ChannelTemplateId 是否已赋值
+                     */
+                    bool ChannelTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取关联的渠道模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelTemplateName 关联的渠道模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChannelTemplateName() const;
+
+                    /**
+                     * 设置关联的渠道模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChannelTemplateName 关联的渠道模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannelTemplateName(const std::string& _channelTemplateName);
+
+                    /**
+                     * 判断参数 ChannelTemplateName 是否已赋值
+                     * @return ChannelTemplateName 是否已赋值
+                     */
+                    bool ChannelTemplateNameHasBeenSet() const;
+
+                    /**
+                     * 获取0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChannelAutoSave 0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetChannelAutoSave() const;
+
+                    /**
+                     * 设置0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChannelAutoSave 0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChannelAutoSave(const int64_t& _channelAutoSave);
+
+                    /**
+                     * 判断参数 ChannelAutoSave 是否已赋值
+                     * @return ChannelAutoSave 是否已赋值
+                     */
+                    bool ChannelAutoSaveHasBeenSet() const;
+
+                    /**
+                     * 获取模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateVersion 模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTemplateVersion() const;
+
+                    /**
+                     * 设置模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TemplateVersion 模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTemplateVersion(const std::string& _templateVersion);
+
+                    /**
+                     * 判断参数 TemplateVersion 是否已赋值
+                     * @return TemplateVersion 是否已赋值
+                     */
+                    bool TemplateVersionHasBeenSet() const;
 
                 private:
 
@@ -360,17 +426,38 @@ namespace TencentCloud
                     bool m_previewUrlHasBeenSet;
 
                     /**
-                     * 渠道模板ID
-                     */
-                    std::string m_channelTemplateId;
-                    bool m_channelTemplateIdHasBeenSet;
-
-                    /**
                      * 渠道版-模板PDF文件链接
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pdfUrl;
                     bool m_pdfUrlHasBeenSet;
+
+                    /**
+                     * 关联的渠道模板ID
+                     */
+                    std::string m_channelTemplateId;
+                    bool m_channelTemplateIdHasBeenSet;
+
+                    /**
+                     * 关联的渠道模板名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_channelTemplateName;
+                    bool m_channelTemplateNameHasBeenSet;
+
+                    /**
+                     * 0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_channelAutoSave;
+                    bool m_channelAutoSaveHasBeenSet;
+
+                    /**
+                     * 模板版本，全数字字符。默认为空，初始版本为yyyyMMdd001。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_templateVersion;
+                    bool m_templateVersionHasBeenSet;
 
                 };
             }

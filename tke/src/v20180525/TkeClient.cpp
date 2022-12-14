@@ -599,49 +599,6 @@ TkeClient::CreateClusterNodePoolOutcomeCallable TkeClient::CreateClusterNodePool
     return task->get_future();
 }
 
-TkeClient::CreateClusterNodePoolFromExistingAsgOutcome TkeClient::CreateClusterNodePoolFromExistingAsg(const CreateClusterNodePoolFromExistingAsgRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateClusterNodePoolFromExistingAsg");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateClusterNodePoolFromExistingAsgResponse rsp = CreateClusterNodePoolFromExistingAsgResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateClusterNodePoolFromExistingAsgOutcome(rsp);
-        else
-            return CreateClusterNodePoolFromExistingAsgOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateClusterNodePoolFromExistingAsgOutcome(outcome.GetError());
-    }
-}
-
-void TkeClient::CreateClusterNodePoolFromExistingAsgAsync(const CreateClusterNodePoolFromExistingAsgRequest& request, const CreateClusterNodePoolFromExistingAsgAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateClusterNodePoolFromExistingAsg(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TkeClient::CreateClusterNodePoolFromExistingAsgOutcomeCallable TkeClient::CreateClusterNodePoolFromExistingAsgCallable(const CreateClusterNodePoolFromExistingAsgRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateClusterNodePoolFromExistingAsgOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateClusterNodePoolFromExistingAsg(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TkeClient::CreateClusterReleaseOutcome TkeClient::CreateClusterRelease(const CreateClusterReleaseRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateClusterRelease");

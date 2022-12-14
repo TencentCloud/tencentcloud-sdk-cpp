@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool KeyIdHasBeenSet() const;
 
+                    /**
+                     * 获取密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     * @return RotateDays 密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     */
+                    uint64_t GetRotateDays() const;
+
+                    /**
+                     * 设置密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     * @param RotateDays 密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     */
+                    void SetRotateDays(const uint64_t& _rotateDays);
+
+                    /**
+                     * 判断参数 RotateDays 是否已赋值
+                     * @return RotateDays 是否已赋值
+                     */
+                    bool RotateDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_keyId;
                     bool m_keyIdHasBeenSet;
+
+                    /**
+                     * 密钥轮转周期，单位天，允许范围 7 ~ 365，默认值 365。
+                     */
+                    uint64_t m_rotateDays;
+                    bool m_rotateDaysHasBeenSet;
 
                 };
             }

@@ -223,6 +223,30 @@ namespace TencentCloud
                      */
                     bool AvailableLHLicenseCntHasBeenSet() const;
 
+                    /**
+                     * 获取自动加购开关, true 开启, false 关闭
+                     * @return AutoRepurchaseSwitch 自动加购开关, true 开启, false 关闭
+                     */
+                    bool GetAutoRepurchaseSwitch() const;
+
+                    /**
+                     * 判断参数 AutoRepurchaseSwitch 是否已赋值
+                     * @return AutoRepurchaseSwitch 是否已赋值
+                     */
+                    bool AutoRepurchaseSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取自动加购订单是否自动续费 ,true 开启, false 关闭
+                     * @return AutoRepurchaseRenewSwitch 自动加购订单是否自动续费 ,true 开启, false 关闭
+                     */
+                    bool GetAutoRepurchaseRenewSwitch() const;
+
+                    /**
+                     * 判断参数 AutoRepurchaseRenewSwitch 是否已赋值
+                     * @return AutoRepurchaseRenewSwitch 是否已赋值
+                     */
+                    bool AutoRepurchaseRenewSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -314,6 +338,18 @@ namespace TencentCloud
                      */
                     uint64_t m_availableLHLicenseCnt;
                     bool m_availableLHLicenseCntHasBeenSet;
+
+                    /**
+                     * 自动加购开关, true 开启, false 关闭
+                     */
+                    bool m_autoRepurchaseSwitch;
+                    bool m_autoRepurchaseSwitchHasBeenSet;
+
+                    /**
+                     * 自动加购订单是否自动续费 ,true 开启, false 关闭
+                     */
+                    bool m_autoRepurchaseRenewSwitch;
+                    bool m_autoRepurchaseRenewSwitchHasBeenSet;
 
                 };
             }

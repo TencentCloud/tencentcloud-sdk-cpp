@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID 数组
-                     * @return InstanceIds 实例 ID 数组
+                     * 获取Grafana 实例 ID 数组
+                     * @return InstanceIds Grafana 实例 ID 数组
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例 ID 数组
-                     * @param InstanceIds 实例 ID 数组
+                     * 设置Grafana 实例 ID 数组
+                     * @param InstanceIds Grafana 实例 ID 数组
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool InstanceIdsHasBeenSet() const;
 
                     /**
-                     * 获取实例名，支持前缀模糊搜索
-                     * @return InstanceName 实例名，支持前缀模糊搜索
+                     * 获取Grafana 实例名，支持前缀模糊搜索
+                     * @return InstanceName Grafana 实例名，支持前缀模糊搜索
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名，支持前缀模糊搜索
-                     * @param InstanceName 实例名，支持前缀模糊搜索
+                     * 设置Grafana 实例名，支持前缀模糊搜索
+                     * @param InstanceName Grafana 实例名，支持前缀模糊搜索
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -166,13 +166,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 实例 ID 数组
+                     * Grafana 实例 ID 数组
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
 
                     /**
-                     * 实例名，支持前缀模糊搜索
+                     * Grafana 实例名，支持前缀模糊搜索
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

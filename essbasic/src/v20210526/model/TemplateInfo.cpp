@@ -32,8 +32,11 @@ TemplateInfo::TemplateInfo() :
     m_creatorHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_previewUrlHasBeenSet(false),
+    m_pdfUrlHasBeenSet(false),
     m_channelTemplateIdHasBeenSet(false),
-    m_pdfUrlHasBeenSet(false)
+    m_channelTemplateNameHasBeenSet(false),
+    m_channelAutoSaveHasBeenSet(false),
+    m_templateVersionHasBeenSet(false)
 {
 }
 
@@ -182,6 +185,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_previewUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("PdfUrl") && !value["PdfUrl"].IsNull())
+    {
+        if (!value["PdfUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.PdfUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pdfUrl = string(value["PdfUrl"].GetString());
+        m_pdfUrlHasBeenSet = true;
+    }
+
     if (value.HasMember("ChannelTemplateId") && !value["ChannelTemplateId"].IsNull())
     {
         if (!value["ChannelTemplateId"].IsString())
@@ -192,14 +205,34 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_channelTemplateIdHasBeenSet = true;
     }
 
-    if (value.HasMember("PdfUrl") && !value["PdfUrl"].IsNull())
+    if (value.HasMember("ChannelTemplateName") && !value["ChannelTemplateName"].IsNull())
     {
-        if (!value["PdfUrl"].IsString())
+        if (!value["ChannelTemplateName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `TemplateInfo.PdfUrl` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.ChannelTemplateName` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_pdfUrl = string(value["PdfUrl"].GetString());
-        m_pdfUrlHasBeenSet = true;
+        m_channelTemplateName = string(value["ChannelTemplateName"].GetString());
+        m_channelTemplateNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChannelAutoSave") && !value["ChannelAutoSave"].IsNull())
+    {
+        if (!value["ChannelAutoSave"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.ChannelAutoSave` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_channelAutoSave = value["ChannelAutoSave"].GetInt64();
+        m_channelAutoSaveHasBeenSet = true;
+    }
+
+    if (value.HasMember("TemplateVersion") && !value["TemplateVersion"].IsNull())
+    {
+        if (!value["TemplateVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateVersion = string(value["TemplateVersion"].GetString());
+        m_templateVersionHasBeenSet = true;
     }
 
 
@@ -318,6 +351,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_pdfUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PdfUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pdfUrl.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_channelTemplateIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -326,12 +367,28 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_channelTemplateId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_pdfUrlHasBeenSet)
+    if (m_channelTemplateNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PdfUrl";
+        string key = "ChannelTemplateName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_pdfUrl.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_channelTemplateName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelAutoSaveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelAutoSave";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_channelAutoSave, allocator);
+    }
+
+    if (m_templateVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -513,6 +570,22 @@ bool TemplateInfo::PreviewUrlHasBeenSet() const
     return m_previewUrlHasBeenSet;
 }
 
+string TemplateInfo::GetPdfUrl() const
+{
+    return m_pdfUrl;
+}
+
+void TemplateInfo::SetPdfUrl(const string& _pdfUrl)
+{
+    m_pdfUrl = _pdfUrl;
+    m_pdfUrlHasBeenSet = true;
+}
+
+bool TemplateInfo::PdfUrlHasBeenSet() const
+{
+    return m_pdfUrlHasBeenSet;
+}
+
 string TemplateInfo::GetChannelTemplateId() const
 {
     return m_channelTemplateId;
@@ -529,19 +602,51 @@ bool TemplateInfo::ChannelTemplateIdHasBeenSet() const
     return m_channelTemplateIdHasBeenSet;
 }
 
-string TemplateInfo::GetPdfUrl() const
+string TemplateInfo::GetChannelTemplateName() const
 {
-    return m_pdfUrl;
+    return m_channelTemplateName;
 }
 
-void TemplateInfo::SetPdfUrl(const string& _pdfUrl)
+void TemplateInfo::SetChannelTemplateName(const string& _channelTemplateName)
 {
-    m_pdfUrl = _pdfUrl;
-    m_pdfUrlHasBeenSet = true;
+    m_channelTemplateName = _channelTemplateName;
+    m_channelTemplateNameHasBeenSet = true;
 }
 
-bool TemplateInfo::PdfUrlHasBeenSet() const
+bool TemplateInfo::ChannelTemplateNameHasBeenSet() const
 {
-    return m_pdfUrlHasBeenSet;
+    return m_channelTemplateNameHasBeenSet;
+}
+
+int64_t TemplateInfo::GetChannelAutoSave() const
+{
+    return m_channelAutoSave;
+}
+
+void TemplateInfo::SetChannelAutoSave(const int64_t& _channelAutoSave)
+{
+    m_channelAutoSave = _channelAutoSave;
+    m_channelAutoSaveHasBeenSet = true;
+}
+
+bool TemplateInfo::ChannelAutoSaveHasBeenSet() const
+{
+    return m_channelAutoSaveHasBeenSet;
+}
+
+string TemplateInfo::GetTemplateVersion() const
+{
+    return m_templateVersion;
+}
+
+void TemplateInfo::SetTemplateVersion(const string& _templateVersion)
+{
+    m_templateVersion = _templateVersion;
+    m_templateVersionHasBeenSet = true;
+}
+
+bool TemplateInfo::TemplateVersionHasBeenSet() const
+{
+    return m_templateVersionHasBeenSet;
 }
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Grafana 实例 ID，例如：grafana-12345678
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-12345678
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Grafana 实例 ID，例如：grafana-12345678
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-12345678
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取渠道名
-                     * @return ChannelName 渠道名
+                     * 获取告警通道名称，例如：test
+                     * @return ChannelName 告警通道名称，例如：test
                      */
                     std::string GetChannelName() const;
 
                     /**
-                     * 设置渠道名
-                     * @param ChannelName 渠道名
+                     * 设置告警通道名称，例如：test
+                     * @param ChannelName 告警通道名称，例如：test
                      */
                     void SetChannelName(const std::string& _channelName);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取渠道 ID
-                     * @return ChannelIds 渠道 ID
+                     * 获取告警通道 ID，例如：nchannel-abcd1234
+                     * @return ChannelIds 告警通道 ID，例如：nchannel-abcd1234
                      */
                     std::vector<std::string> GetChannelIds() const;
 
                     /**
-                     * 设置渠道 ID
-                     * @param ChannelIds 渠道 ID
+                     * 设置告警通道 ID，例如：nchannel-abcd1234
+                     * @param ChannelIds 告警通道 ID，例如：nchannel-abcd1234
                      */
                     void SetChannelIds(const std::vector<std::string>& _channelIds);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool ChannelIdsHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return ChannelState 状态
+                     * 获取告警通道状态
+                     * @return ChannelState 告警通道状态
                      */
                     int64_t GetChannelState() const;
 
                     /**
-                     * 设置状态
-                     * @param ChannelState 状态
+                     * 设置告警通道状态
+                     * @param ChannelState 告警通道状态
                      */
                     void SetChannelState(const int64_t& _channelState);
 
@@ -153,7 +153,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * Grafana 实例 ID，例如：grafana-12345678
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -171,19 +171,19 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 渠道名
+                     * 告警通道名称，例如：test
                      */
                     std::string m_channelName;
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 渠道 ID
+                     * 告警通道 ID，例如：nchannel-abcd1234
                      */
                     std::vector<std::string> m_channelIds;
                     bool m_channelIdsHasBeenSet;
 
                     /**
-                     * 状态
+                     * 告警通道状态
                      */
                     int64_t m_channelState;
                     bool m_channelStateHasBeenSet;

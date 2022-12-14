@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerRequest.h>
 #include <tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h>
+#include <tencentcloud/emr/v20190103/model/CreateClusterRequest.h>
+#include <tencentcloud/emr/v20190103/model/CreateClusterResponse.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/CreateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/DeleteUserManagerUserListRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/emr/v20190103/model/ModifyResourceSchedulerResponse.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowRequest.h>
 #include <tencentcloud/emr/v20190103/model/RunJobFlowResponse.h>
+#include <tencentcloud/emr/v20190103/model/ScaleOutClusterRequest.h>
+#include <tencentcloud/emr/v20190103/model/ScaleOutClusterResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/SyncPodStateRequest.h>
@@ -90,6 +94,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUsersForUserManagerResponse> AddUsersForUserManagerOutcome;
                 typedef std::future<AddUsersForUserManagerOutcome> AddUsersForUserManagerOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::AddUsersForUserManagerRequest&, AddUsersForUserManagerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUsersForUserManagerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
+                typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstanceResponse> CreateInstanceOutcome;
                 typedef std::future<CreateInstanceOutcome> CreateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::CreateInstanceRequest&, CreateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceAsyncHandler;
@@ -150,6 +157,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RunJobFlowResponse> RunJobFlowOutcome;
                 typedef std::future<RunJobFlowOutcome> RunJobFlowOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::RunJobFlowRequest&, RunJobFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunJobFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleOutClusterResponse> ScaleOutClusterOutcome;
+                typedef std::future<ScaleOutClusterOutcome> ScaleOutClusterOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::ScaleOutClusterRequest&, ScaleOutClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutClusterAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScaleOutInstanceResponse> ScaleOutInstanceOutcome;
                 typedef std::future<ScaleOutInstanceOutcome> ScaleOutInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ScaleOutInstanceRequest&, ScaleOutInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutInstanceAsyncHandler;
@@ -174,6 +184,15 @@ namespace TencentCloud
                 AddUsersForUserManagerOutcome AddUsersForUserManager(const Model::AddUsersForUserManagerRequest &request);
                 void AddUsersForUserManagerAsync(const Model::AddUsersForUserManagerRequest& request, const AddUsersForUserManagerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddUsersForUserManagerOutcomeCallable AddUsersForUserManagerCallable(const Model::AddUsersForUserManagerRequest& request);
+
+                /**
+                 *创建EMR集群实例
+                 * @param req CreateClusterRequest
+                 * @return CreateClusterOutcome
+                 */
+                CreateClusterOutcome CreateCluster(const Model::CreateClusterRequest &request);
+                void CreateClusterAsync(const Model::CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateClusterOutcomeCallable CreateClusterCallable(const Model::CreateClusterRequest& request);
 
                 /**
                  *创建EMR集群实例
@@ -356,6 +375,15 @@ namespace TencentCloud
                 RunJobFlowOutcome RunJobFlow(const Model::RunJobFlowRequest &request);
                 void RunJobFlowAsync(const Model::RunJobFlowRequest& request, const RunJobFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RunJobFlowOutcomeCallable RunJobFlowCallable(const Model::RunJobFlowRequest& request);
+
+                /**
+                 *扩容集群节点
+                 * @param req ScaleOutClusterRequest
+                 * @return ScaleOutClusterOutcome
+                 */
+                ScaleOutClusterOutcome ScaleOutCluster(const Model::ScaleOutClusterRequest &request);
+                void ScaleOutClusterAsync(const Model::ScaleOutClusterRequest& request, const ScaleOutClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleOutClusterOutcomeCallable ScaleOutClusterCallable(const Model::ScaleOutClusterRequest& request);
 
                 /**
                  *扩容节点

@@ -22,7 +22,8 @@ using namespace std;
 
 Resource::Resource() :
     m_typeHasBeenSet(false),
-    m_ispHasBeenSet(false)
+    m_ispHasBeenSet(false),
+    m_availabilitySetHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,26 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_ispHasBeenSet = true;
     }
 
+    if (value.HasMember("AvailabilitySet") && !value["AvailabilitySet"].IsNull())
+    {
+        if (!value["AvailabilitySet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resource.AvailabilitySet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AvailabilitySet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ResourceAvailability item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_availabilitySet.push_back(item);
+        }
+        m_availabilitySetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +101,21 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availabilitySetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailabilitySet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_availabilitySet.begin(); itr != m_availabilitySet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -115,5 +151,21 @@ void Resource::SetIsp(const string& _isp)
 bool Resource::IspHasBeenSet() const
 {
     return m_ispHasBeenSet;
+}
+
+vector<ResourceAvailability> Resource::GetAvailabilitySet() const
+{
+    return m_availabilitySet;
+}
+
+void Resource::SetAvailabilitySet(const vector<ResourceAvailability>& _availabilitySet)
+{
+    m_availabilitySet = _availabilitySet;
+    m_availabilitySetHasBeenSet = true;
+}
+
+bool Resource::AvailabilitySetHasBeenSet() const
+{
+    return m_availabilitySetHasBeenSet;
 }
 

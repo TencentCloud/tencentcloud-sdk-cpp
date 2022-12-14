@@ -93,17 +93,17 @@ namespace TencentCloud
                     bool ResourceNameHasBeenSet() const;
 
                     /**
-                     * 获取资源状态
+                     * 获取资源状态，1-正常，2-隔离，3-销毁
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 资源状态
+                     * @return Status 资源状态，1-正常，2-隔离，3-销毁
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置资源状态
+                     * 设置资源状态，1-正常，2-隔离，3-销毁
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 资源状态
+                     * @param Status 资源状态，1-正常，2-隔离，3-销毁
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const int64_t& _status);
@@ -203,17 +203,17 @@ namespace TencentCloud
                     bool ModelHasBeenSet() const;
 
                     /**
-                     * 获取资源类型
+                     * 获取云加密机类型id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VsmType 资源类型
+                     * @return VsmType 云加密机类型id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetVsmType() const;
 
                     /**
-                     * 设置资源类型
+                     * 设置云加密机类型id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VsmType 资源类型
+                     * @param VsmType 云加密机类型id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVsmType(const int64_t& _vsmType);
@@ -549,7 +549,7 @@ namespace TencentCloud
                     bool m_resourceNameHasBeenSet;
 
                     /**
-                     * 资源状态
+                     * 资源状态，1-正常，2-隔离，3-销毁
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
@@ -584,7 +584,7 @@ namespace TencentCloud
                     bool m_modelHasBeenSet;
 
                     /**
-                     * 资源类型
+                     * 云加密机类型id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vsmType;

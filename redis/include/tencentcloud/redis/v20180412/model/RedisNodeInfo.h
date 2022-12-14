@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述Redis实例的主节点或者副本节点信息
+                * 描述 Redis 实例的主节点或者副本节点信息。
                 */
                 class RedisNodeInfo : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取节点类型，0 为主节点，1 为副本节点
-                     * @return NodeType 节点类型，0 为主节点，1 为副本节点
+                     * 获取节点类型。<ul><li>0：为主节点。</li><li>1：为副本节点。</li></ul>
+                     * @return NodeType 节点类型。<ul><li>0：为主节点。</li><li>1：为副本节点。</li></ul>
                      */
                     int64_t GetNodeType() const;
 
                     /**
-                     * 设置节点类型，0 为主节点，1 为副本节点
-                     * @param NodeType 节点类型，0 为主节点，1 为副本节点
+                     * 设置节点类型。<ul><li>0：为主节点。</li><li>1：为副本节点。</li></ul>
+                     * @param NodeType 节点类型。<ul><li>0：为主节点。</li><li>1：为副本节点。</li></ul>
                      */
                     void SetNodeType(const int64_t& _nodeType);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool NodeTypeHasBeenSet() const;
 
                     /**
-                     * 获取主节点或者副本节点的ID，创建时不需要传递此参数。
-                     * @return NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 获取主节点或者副本节点的 ID。<ul><li>该参数用于创建 Redis 实例接口[CreateInstances](https://cloud.tencent.com/document/product/239/20026) 并不需要设置，而用于变更实例配置的接口 [UpgradeInstance](https://cloud.tencent.com/document/product/239/20013) 则需要设置。</li><li>该参数可使用接口 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 获取Integer类型的节点 ID。</li></ul>
+                     * @return NodeId 主节点或者副本节点的 ID。<ul><li>该参数用于创建 Redis 实例接口[CreateInstances](https://cloud.tencent.com/document/product/239/20026) 并不需要设置，而用于变更实例配置的接口 [UpgradeInstance](https://cloud.tencent.com/document/product/239/20013) 则需要设置。</li><li>该参数可使用接口 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 获取Integer类型的节点 ID。</li></ul>
                      */
                     int64_t GetNodeId() const;
 
                     /**
-                     * 设置主节点或者副本节点的ID，创建时不需要传递此参数。
-                     * @param NodeId 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 设置主节点或者副本节点的 ID。<ul><li>该参数用于创建 Redis 实例接口[CreateInstances](https://cloud.tencent.com/document/product/239/20026) 并不需要设置，而用于变更实例配置的接口 [UpgradeInstance](https://cloud.tencent.com/document/product/239/20013) 则需要设置。</li><li>该参数可使用接口 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 获取Integer类型的节点 ID。</li></ul>
+                     * @param NodeId 主节点或者副本节点的 ID。<ul><li>该参数用于创建 Redis 实例接口[CreateInstances](https://cloud.tencent.com/document/product/239/20026) 并不需要设置，而用于变更实例配置的接口 [UpgradeInstance](https://cloud.tencent.com/document/product/239/20013) 则需要设置。</li><li>该参数可使用接口 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 获取Integer类型的节点 ID。</li></ul>
                      */
                     void SetNodeId(const int64_t& _nodeId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool NodeIdHasBeenSet() const;
 
                     /**
-                     * 获取主节点或者副本节点的可用区ID
-                     * @return ZoneId 主节点或者副本节点的可用区ID
+                     * 获取主节点或者副本节点的可用区 ID。
+                     * @return ZoneId 主节点或者副本节点的可用区 ID。
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置主节点或者副本节点的可用区ID
-                     * @param ZoneId 主节点或者副本节点的可用区ID
+                     * 设置主节点或者副本节点的可用区 ID。
+                     * @param ZoneId 主节点或者副本节点的可用区 ID。
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取主节点或者副本节点的可用区名称
-                     * @return ZoneName 主节点或者副本节点的可用区名称
+                     * 获取主节点或者副本节点的可用区名称。
+                     * @return ZoneName 主节点或者副本节点的可用区名称。
                      */
                     std::string GetZoneName() const;
 
                     /**
-                     * 设置主节点或者副本节点的可用区名称
-                     * @param ZoneName 主节点或者副本节点的可用区名称
+                     * 设置主节点或者副本节点的可用区名称。
+                     * @param ZoneName 主节点或者副本节点的可用区名称。
                      */
                     void SetZoneName(const std::string& _zoneName);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 节点类型，0 为主节点，1 为副本节点
+                     * 节点类型。<ul><li>0：为主节点。</li><li>1：为副本节点。</li></ul>
                      */
                     int64_t m_nodeType;
                     bool m_nodeTypeHasBeenSet;
 
                     /**
-                     * 主节点或者副本节点的ID，创建时不需要传递此参数。
+                     * 主节点或者副本节点的 ID。<ul><li>该参数用于创建 Redis 实例接口[CreateInstances](https://cloud.tencent.com/document/product/239/20026) 并不需要设置，而用于变更实例配置的接口 [UpgradeInstance](https://cloud.tencent.com/document/product/239/20013) 则需要设置。</li><li>该参数可使用接口 [DescribeInstances](https://cloud.tencent.com/document/product/239/20018) 获取Integer类型的节点 ID。</li></ul>
                      */
                     int64_t m_nodeId;
                     bool m_nodeIdHasBeenSet;
 
                     /**
-                     * 主节点或者副本节点的可用区ID
+                     * 主节点或者副本节点的可用区 ID。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 主节点或者副本节点的可用区名称
+                     * 主节点或者副本节点的可用区名称。
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;

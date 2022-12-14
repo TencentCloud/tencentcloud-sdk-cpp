@@ -83,6 +83,49 @@ EmrClient::AddUsersForUserManagerOutcomeCallable EmrClient::AddUsersForUserManag
     return task->get_future();
 }
 
+EmrClient::CreateClusterOutcome EmrClient::CreateCluster(const CreateClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterResponse rsp = CreateClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterOutcome(rsp);
+        else
+            return CreateClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::CreateClusterAsync(const CreateClusterRequest& request, const CreateClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::CreateClusterOutcomeCallable EmrClient::CreateClusterCallable(const CreateClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::CreateInstanceOutcome EmrClient::CreateInstance(const CreateInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstance");
@@ -936,6 +979,49 @@ EmrClient::RunJobFlowOutcomeCallable EmrClient::RunJobFlowCallable(const RunJobF
         [this, request]()
         {
             return this->RunJobFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::ScaleOutClusterOutcome EmrClient::ScaleOutCluster(const ScaleOutClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleOutCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleOutClusterResponse rsp = ScaleOutClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleOutClusterOutcome(rsp);
+        else
+            return ScaleOutClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleOutClusterOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::ScaleOutClusterAsync(const ScaleOutClusterRequest& request, const ScaleOutClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleOutCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::ScaleOutClusterOutcomeCallable EmrClient::ScaleOutClusterCallable(const ScaleOutClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleOutClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleOutCluster(request);
         }
     );
 

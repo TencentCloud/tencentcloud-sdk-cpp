@@ -507,6 +507,28 @@ namespace TencentCloud
                      */
                     bool ClustersVersionHasBeenSet() const;
 
+                    /**
+                     * 获取集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisasterRecoveryType 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDisasterRecoveryType() const;
+
+                    /**
+                     * 设置集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisasterRecoveryType 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisasterRecoveryType(const std::string& _disasterRecoveryType);
+
+                    /**
+                     * 判断参数 DisasterRecoveryType 是否已赋值
+                     * @return DisasterRecoveryType 是否已赋值
+                     */
+                    bool DisasterRecoveryTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -656,6 +678,13 @@ namespace TencentCloud
                      */
                     std::string m_clustersVersion;
                     bool m_clustersVersionHasBeenSet;
+
+                    /**
+                     * 集群容灾类型，如SINGLE-ZONE，DISASTER-RECOVERY，MUTUAL-DISASTER-RECOVERY
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_disasterRecoveryType;
+                    bool m_disasterRecoveryTypeHasBeenSet;
 
                 };
             }

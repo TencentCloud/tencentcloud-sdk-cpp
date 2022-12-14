@@ -118,6 +118,28 @@ namespace TencentCloud
                      */
                     bool DiscountPriceHasBeenSet() const;
 
+                    /**
+                     * 获取价格货币单位。取值范围CNY:人民币。USD:美元。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Currency 价格货币单位。取值范围CNY:人民币。USD:美元。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCurrency() const;
+
+                    /**
+                     * 设置价格货币单位。取值范围CNY:人民币。USD:美元。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Currency 价格货币单位。取值范围CNY:人民币。USD:美元。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCurrency(const std::string& _currency);
+
+                    /**
+                     * 判断参数 Currency 是否已赋值
+                     * @return Currency 是否已赋值
+                     */
+                    bool CurrencyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +165,13 @@ namespace TencentCloud
                      */
                     double m_discountPrice;
                     bool m_discountPriceHasBeenSet;
+
+                    /**
+                     * 价格货币单位。取值范围CNY:人民币。USD:美元。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_currency;
+                    bool m_currencyHasBeenSet;
 
                 };
             }

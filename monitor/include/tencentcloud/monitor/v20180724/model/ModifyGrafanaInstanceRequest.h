@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取Grafana 实例名称，例如：test
+                     * @return InstanceName Grafana 实例名称，例如：test
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * 设置Grafana 实例名称，例如：test
+                     * @param InstanceName Grafana 实例名称，例如：test
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * Grafana 实例名称，例如：test
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;

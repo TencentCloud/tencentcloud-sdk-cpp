@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取类型
-                     * @return Kind 类型
+                     * 获取集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
+                     * @return Kind 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置类型
-                     * @param Kind 类型
+                     * 设置集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
+                     * @param Kind 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
                      */
                     void SetKind(const std::string& _kind);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool KindHasBeenSet() const;
 
                     /**
-                     * 获取配置
-                     * @return Content 配置
+                     * 获取集成配置
+                     * @return Content 集成配置
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置配置
-                     * @param Content 配置
+                     * 设置集成配置
+                     * @param Content 集成配置
                      */
                     void SetContent(const std::string& _content);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例 ID
+                     * Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 类型
+                     * 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;
 
                     /**
-                     * 配置
+                     * 集成配置
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

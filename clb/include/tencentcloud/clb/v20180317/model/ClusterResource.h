@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/clb/v20180317/model/ClustersZone.h>
 
 
 namespace TencentCloud
@@ -166,6 +167,28 @@ namespace TencentCloud
                      */
                     bool IspHasBeenSet() const;
 
+                    /**
+                     * 获取集群所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ClustersZone 集群所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClustersZone GetClustersZone() const;
+
+                    /**
+                     * 设置集群所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ClustersZone 集群所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetClustersZone(const ClustersZone& _clustersZone);
+
+                    /**
+                     * 判断参数 ClustersZone 是否已赋值
+                     * @return ClustersZone 是否已赋值
+                     */
+                    bool ClustersZoneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +229,13 @@ namespace TencentCloud
                      */
                     std::string m_isp;
                     bool m_ispHasBeenSet;
+
+                    /**
+                     * 集群所在的可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ClustersZone m_clustersZone;
+                    bool m_clustersZoneHasBeenSet;
 
                 };
             }

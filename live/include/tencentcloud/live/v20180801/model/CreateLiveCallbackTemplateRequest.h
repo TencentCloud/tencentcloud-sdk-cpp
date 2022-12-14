@@ -244,6 +244,24 @@ namespace TencentCloud
                      */
                     bool StreamMixNotifyUrlHasBeenSet() const;
 
+                    /**
+                     * 获取推流异常回调 URL。
+                     * @return PushExceptionNotifyUrl 推流异常回调 URL。
+                     */
+                    std::string GetPushExceptionNotifyUrl() const;
+
+                    /**
+                     * 设置推流异常回调 URL。
+                     * @param PushExceptionNotifyUrl 推流异常回调 URL。
+                     */
+                    void SetPushExceptionNotifyUrl(const std::string& _pushExceptionNotifyUrl);
+
+                    /**
+                     * 判断参数 PushExceptionNotifyUrl 是否已赋值
+                     * @return PushExceptionNotifyUrl 是否已赋值
+                     */
+                    bool PushExceptionNotifyUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +327,12 @@ namespace TencentCloud
                      */
                     std::string m_streamMixNotifyUrl;
                     bool m_streamMixNotifyUrlHasBeenSet;
+
+                    /**
+                     * 推流异常回调 URL。
+                     */
+                    std::string m_pushExceptionNotifyUrl;
+                    bool m_pushExceptionNotifyUrlHasBeenSet;
 
                 };
             }

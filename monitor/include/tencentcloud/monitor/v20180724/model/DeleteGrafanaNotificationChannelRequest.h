@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取通道 ID 数组
-                     * @return ChannelIDs 通道 ID 数组
+                     * 获取通道 ID 数组。例如：nchannel-abcd1234
+                     * @return ChannelIDs 通道 ID 数组。例如：nchannel-abcd1234
                      */
                     std::vector<std::string> GetChannelIDs() const;
 
                     /**
-                     * 设置通道 ID 数组
-                     * @param ChannelIDs 通道 ID 数组
+                     * 设置通道 ID 数组。例如：nchannel-abcd1234
+                     * @param ChannelIDs 通道 ID 数组。例如：nchannel-abcd1234
                      */
                     void SetChannelIDs(const std::vector<std::string>& _channelIDs);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ChannelIDsHasBeenSet() const;
 
                     /**
-                     * 获取实例名
-                     * @return InstanceId 实例名
+                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例名
-                     * @param InstanceId 实例名
+                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 通道 ID 数组
+                     * 通道 ID 数组。例如：nchannel-abcd1234
                      */
                     std::vector<std::string> m_channelIDs;
                     bool m_channelIDsHasBeenSet;
 
                     /**
-                     * 实例名
+                     * Grafana 实例 ID，例如：grafana-abcdefgh
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集成 ID
-                     * @return IntegrationId 集成 ID
+                     * 获取集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * @return IntegrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
                      */
                     std::string GetIntegrationId() const;
 
                     /**
-                     * 设置集成 ID
-                     * @param IntegrationId 集成 ID
+                     * 设置集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
+                     * @param IntegrationId 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
                      */
                     void SetIntegrationId(const std::string& _integrationId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool IntegrationIdHasBeenSet() const;
 
                     /**
-                     * 获取实例 ID
-                     * @return InstanceId 实例 ID
+                     * 获取Grafana 实例 ID，例如：grafana-12345678
+                     * @return InstanceId Grafana 实例 ID，例如：grafana-12345678
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例 ID
-                     * @param InstanceId 实例 ID
+                     * 设置Grafana 实例 ID，例如：grafana-12345678
+                     * @param InstanceId Grafana 实例 ID，例如：grafana-12345678
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取集成类型
-                     * @return Kind 集成类型
+                     * 获取集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
+                     * @return Kind 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
                      */
                     std::string GetKind() const;
 
                     /**
-                     * 设置集成类型
-                     * @param Kind 集成类型
+                     * 设置集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
+                     * @param Kind 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
                      */
                     void SetKind(const std::string& _kind);
 
@@ -117,19 +117,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集成 ID
+                     * 集成 ID，可在实例详情-云产品集成-集成列表查看。例如：integration-abcd1234
                      */
                     std::string m_integrationId;
                     bool m_integrationIdHasBeenSet;
 
                     /**
-                     * 实例 ID
+                     * Grafana 实例 ID，例如：grafana-12345678
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 集成类型
+                     * 集成类型，可在实例详情-云产品集成-集成列表查看。例如：tencent-cloud-prometheus
                      */
                     std::string m_kind;
                     bool m_kindHasBeenSet;

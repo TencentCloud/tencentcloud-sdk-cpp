@@ -235,6 +235,24 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取挂载的PAAS服务类型，CLB,CDB,CRS
+                     * @return ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置挂载的PAAS服务类型，CLB,CDB,CRS
+                     * @param ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     */
+                    bool ServiceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +316,12 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 挂载的PAAS服务类型，CLB,CDB,CRS
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
 
                 };
             }

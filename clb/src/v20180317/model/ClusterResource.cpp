@@ -26,7 +26,8 @@ ClusterResource::ClusterResource() :
     m_loadBalancerIdHasBeenSet(false),
     m_idleHasBeenSet(false),
     m_clusterNameHasBeenSet(false),
-    m_ispHasBeenSet(false)
+    m_ispHasBeenSet(false),
+    m_clustersZoneHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome ClusterResource::Deserialize(const rapidjson::Value &value)
         m_ispHasBeenSet = true;
     }
 
+    if (value.HasMember("ClustersZone") && !value["ClustersZone"].IsNull())
+    {
+        if (!value["ClustersZone"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterResource.ClustersZone` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_clustersZone.Deserialize(value["ClustersZone"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_clustersZoneHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +166,15 @@ void ClusterResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Isp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clustersZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClustersZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_clustersZone.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -247,5 +274,21 @@ void ClusterResource::SetIsp(const string& _isp)
 bool ClusterResource::IspHasBeenSet() const
 {
     return m_ispHasBeenSet;
+}
+
+ClustersZone ClusterResource::GetClustersZone() const
+{
+    return m_clustersZone;
+}
+
+void ClusterResource::SetClustersZone(const ClustersZone& _clustersZone)
+{
+    m_clustersZone = _clustersZone;
+    m_clustersZoneHasBeenSet = true;
+}
+
+bool ClusterResource::ClustersZoneHasBeenSet() const
+{
+    return m_clustersZoneHasBeenSet;
 }
 

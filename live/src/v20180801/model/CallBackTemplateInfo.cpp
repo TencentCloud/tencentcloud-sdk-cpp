@@ -30,7 +30,8 @@ CallBackTemplateInfo::CallBackTemplateInfo() :
     m_recordNotifyUrlHasBeenSet(false),
     m_snapshotNotifyUrlHasBeenSet(false),
     m_pornCensorshipNotifyUrlHasBeenSet(false),
-    m_callbackKeyHasBeenSet(false)
+    m_callbackKeyHasBeenSet(false),
+    m_pushExceptionNotifyUrlHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
         m_callbackKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("PushExceptionNotifyUrl") && !value["PushExceptionNotifyUrl"].IsNull())
+    {
+        if (!value["PushExceptionNotifyUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.PushExceptionNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pushExceptionNotifyUrl = string(value["PushExceptionNotifyUrl"].GetString());
+        m_pushExceptionNotifyUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void CallBackTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CallbackKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_callbackKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pushExceptionNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PushExceptionNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pushExceptionNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void CallBackTemplateInfo::SetCallbackKey(const string& _callbackKey)
 bool CallBackTemplateInfo::CallbackKeyHasBeenSet() const
 {
     return m_callbackKeyHasBeenSet;
+}
+
+string CallBackTemplateInfo::GetPushExceptionNotifyUrl() const
+{
+    return m_pushExceptionNotifyUrl;
+}
+
+void CallBackTemplateInfo::SetPushExceptionNotifyUrl(const string& _pushExceptionNotifyUrl)
+{
+    m_pushExceptionNotifyUrl = _pushExceptionNotifyUrl;
+    m_pushExceptionNotifyUrlHasBeenSet = true;
+}
+
+bool CallBackTemplateInfo::PushExceptionNotifyUrlHasBeenSet() const
+{
+    return m_pushExceptionNotifyUrlHasBeenSet;
 }
 

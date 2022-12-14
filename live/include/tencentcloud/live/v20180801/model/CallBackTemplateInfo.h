@@ -226,6 +226,28 @@ namespace TencentCloud
                      */
                     bool CallbackKeyHasBeenSet() const;
 
+                    /**
+                     * 获取推流异常回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PushExceptionNotifyUrl 推流异常回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPushExceptionNotifyUrl() const;
+
+                    /**
+                     * 设置推流异常回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PushExceptionNotifyUrl 推流异常回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPushExceptionNotifyUrl(const std::string& _pushExceptionNotifyUrl);
+
+                    /**
+                     * 判断参数 PushExceptionNotifyUrl 是否已赋值
+                     * @return PushExceptionNotifyUrl 是否已赋值
+                     */
+                    bool PushExceptionNotifyUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +309,13 @@ namespace TencentCloud
                      */
                     std::string m_callbackKey;
                     bool m_callbackKeyHasBeenSet;
+
+                    /**
+                     * 推流异常回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pushExceptionNotifyUrl;
+                    bool m_pushExceptionNotifyUrlHasBeenSet;
 
                 };
             }

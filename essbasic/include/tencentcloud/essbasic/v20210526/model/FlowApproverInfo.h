@@ -226,12 +226,12 @@ RecipientId参数：
                      * 获取签署人类型
 PERSON-个人/自然人；
 PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
-ORGANIZATION-企业（企业签署方或模版发起时的企业静默签）；
+ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * @return ApproverType 签署人类型
 PERSON-个人/自然人；
 PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
-ORGANIZATION-企业（企业签署方或模版发起时的企业静默签）；
+ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      */
                     std::string GetApproverType() const;
@@ -240,12 +240,12 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * 设置签署人类型
 PERSON-个人/自然人；
 PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
-ORGANIZATION-企业（企业签署方或模版发起时的企业静默签）；
+ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * @param ApproverType 签署人类型
 PERSON-个人/自然人；
 PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
-ORGANIZATION-企业（企业签署方或模版发起时的企业静默签）；
+ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      */
                     void SetApproverType(const std::string& _approverType);
@@ -477,7 +477,7 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      * 签署人类型
 PERSON-个人/自然人；
 PERSON_AUTO_SIGN-个人自动签（定制化场景下使用）；
-ORGANIZATION-企业（企业签署方或模版发起时的企业静默签）；
+ORGANIZATION-企业（企业签署方或模板发起时的企业静默签）；
 ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                      */
                     std::string m_approverType;

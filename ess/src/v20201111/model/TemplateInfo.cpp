@@ -36,7 +36,9 @@ TemplateInfo::TemplateInfo() :
     m_createdOnHasBeenSet(false),
     m_promoterHasBeenSet(false),
     m_organizationIdHasBeenSet(false),
-    m_previewUrlHasBeenSet(false)
+    m_previewUrlHasBeenSet(false),
+    m_templateVersionHasBeenSet(false),
+    m_publishedHasBeenSet(false)
 {
 }
 
@@ -261,6 +263,26 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_previewUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateVersion") && !value["TemplateVersion"].IsNull())
+    {
+        if (!value["TemplateVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.TemplateVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateVersion = string(value["TemplateVersion"].GetString());
+        m_templateVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Published") && !value["Published"].IsNull())
+    {
+        if (!value["Published"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Published` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_published = value["Published"].GetBool();
+        m_publishedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +460,22 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PreviewUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_previewUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_templateVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publishedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Published";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_published, allocator);
     }
 
 }
@@ -697,5 +735,37 @@ void TemplateInfo::SetPreviewUrl(const string& _previewUrl)
 bool TemplateInfo::PreviewUrlHasBeenSet() const
 {
     return m_previewUrlHasBeenSet;
+}
+
+string TemplateInfo::GetTemplateVersion() const
+{
+    return m_templateVersion;
+}
+
+void TemplateInfo::SetTemplateVersion(const string& _templateVersion)
+{
+    m_templateVersion = _templateVersion;
+    m_templateVersionHasBeenSet = true;
+}
+
+bool TemplateInfo::TemplateVersionHasBeenSet() const
+{
+    return m_templateVersionHasBeenSet;
+}
+
+bool TemplateInfo::GetPublished() const
+{
+    return m_published;
+}
+
+void TemplateInfo::SetPublished(const bool& _published)
+{
+    m_published = _published;
+    m_publishedHasBeenSet = true;
+}
+
+bool TemplateInfo::PublishedHasBeenSet() const
+{
+    return m_publishedHasBeenSet;
 }
 

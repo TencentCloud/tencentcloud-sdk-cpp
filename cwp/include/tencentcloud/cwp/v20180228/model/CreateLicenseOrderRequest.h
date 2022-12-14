@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/Tags.h>
+#include <tencentcloud/cwp/v20180228/model/OrderModifyObject.h>
 
 
 namespace TencentCloud
@@ -194,14 +195,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取自动防护授权配置值, 不空则表示开启
-                     * @return AutoProtectOpenConfig 自动防护授权配置值, 不空则表示开启
+                     * 获取该字段作废
+                     * @return AutoProtectOpenConfig 该字段作废
                      */
                     std::string GetAutoProtectOpenConfig() const;
 
                     /**
-                     * 设置自动防护授权配置值, 不空则表示开启
-                     * @param AutoProtectOpenConfig 自动防护授权配置值, 不空则表示开启
+                     * 设置该字段作废
+                     * @param AutoProtectOpenConfig 该字段作废
                      */
                     void SetAutoProtectOpenConfig(const std::string& _autoProtectOpenConfig);
 
@@ -210,6 +211,24 @@ namespace TencentCloud
                      * @return AutoProtectOpenConfig 是否已赋值
                      */
                     bool AutoProtectOpenConfigHasBeenSet() const;
+
+                    /**
+                     * 获取变配参数
+                     * @return ModifyConfig 变配参数
+                     */
+                    OrderModifyObject GetModifyConfig() const;
+
+                    /**
+                     * 设置变配参数
+                     * @param ModifyConfig 变配参数
+                     */
+                    void SetModifyConfig(const OrderModifyObject& _modifyConfig);
+
+                    /**
+                     * 判断参数 ModifyConfig 是否已赋值
+                     * @return ModifyConfig 是否已赋值
+                     */
+                    bool ModifyConfigHasBeenSet() const;
 
                 private:
 
@@ -262,10 +281,16 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 自动防护授权配置值, 不空则表示开启
+                     * 该字段作废
                      */
                     std::string m_autoProtectOpenConfig;
                     bool m_autoProtectOpenConfigHasBeenSet;
+
+                    /**
+                     * 变配参数
+                     */
+                    OrderModifyObject m_modifyConfig;
+                    bool m_modifyConfigHasBeenSet;
 
                 };
             }

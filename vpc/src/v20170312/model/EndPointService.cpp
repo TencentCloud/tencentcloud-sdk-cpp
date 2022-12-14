@@ -30,7 +30,8 @@ EndPointService::EndPointService() :
     m_autoAcceptFlagHasBeenSet(false),
     m_endPointCountHasBeenSet(false),
     m_endPointSetHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome EndPointService::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ServiceType") && !value["ServiceType"].IsNull())
+    {
+        if (!value["ServiceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EndPointService.ServiceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_serviceType = string(value["ServiceType"].GetString());
+        m_serviceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void EndPointService::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void EndPointService::SetCreateTime(const string& _createTime)
 bool EndPointService::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string EndPointService::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void EndPointService::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool EndPointService::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
 }
 

@@ -68,6 +68,42 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取自动加购/扩容授权开关,默认 1, 0关闭, 1开启
+                     * @return AutoRepurchaseSwitch 自动加购/扩容授权开关,默认 1, 0关闭, 1开启
+                     */
+                    uint64_t GetAutoRepurchaseSwitch() const;
+
+                    /**
+                     * 设置自动加购/扩容授权开关,默认 1, 0关闭, 1开启
+                     * @param AutoRepurchaseSwitch 自动加购/扩容授权开关,默认 1, 0关闭, 1开启
+                     */
+                    void SetAutoRepurchaseSwitch(const uint64_t& _autoRepurchaseSwitch);
+
+                    /**
+                     * 判断参数 AutoRepurchaseSwitch 是否已赋值
+                     * @return AutoRepurchaseSwitch 是否已赋值
+                     */
+                    bool AutoRepurchaseSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取自动加购的订单是否自动续费,默认0 ,0关闭, 1开启
+                     * @return AutoRepurchaseRenewSwitch 自动加购的订单是否自动续费,默认0 ,0关闭, 1开启
+                     */
+                    uint64_t GetAutoRepurchaseRenewSwitch() const;
+
+                    /**
+                     * 设置自动加购的订单是否自动续费,默认0 ,0关闭, 1开启
+                     * @param AutoRepurchaseRenewSwitch 自动加购的订单是否自动续费,默认0 ,0关闭, 1开启
+                     */
+                    void SetAutoRepurchaseRenewSwitch(const uint64_t& _autoRepurchaseRenewSwitch);
+
+                    /**
+                     * 判断参数 AutoRepurchaseRenewSwitch 是否已赋值
+                     * @return AutoRepurchaseRenewSwitch 是否已赋值
+                     */
+                    bool AutoRepurchaseRenewSwitchHasBeenSet() const;
+
                 private:
 
                     /**
@@ -77,6 +113,18 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 自动加购/扩容授权开关,默认 1, 0关闭, 1开启
+                     */
+                    uint64_t m_autoRepurchaseSwitch;
+                    bool m_autoRepurchaseSwitchHasBeenSet;
+
+                    /**
+                     * 自动加购的订单是否自动续费,默认0 ,0关闭, 1开启
+                     */
+                    uint64_t m_autoRepurchaseRenewSwitch;
+                    bool m_autoRepurchaseRenewSwitchHasBeenSet;
 
                 };
             }

@@ -99,24 +99,20 @@ namespace TencentCloud
                     /**
                      * 获取证书配置，取值有：
 <li> none：不配置；</li>
-<li> hosting：SSL托管证书；</li>
-<li> apply：申请免费证书。</li>默认取值为 none。
+<li> hosting：SSL托管证书。</li>默认取值为 none。
                      * @return CertType 证书配置，取值有：
 <li> none：不配置；</li>
-<li> hosting：SSL托管证书；</li>
-<li> apply：申请免费证书。</li>默认取值为 none。
+<li> hosting：SSL托管证书。</li>默认取值为 none。
                      */
                     std::string GetCertType() const;
 
                     /**
                      * 设置证书配置，取值有：
 <li> none：不配置；</li>
-<li> hosting：SSL托管证书；</li>
-<li> apply：申请免费证书。</li>默认取值为 none。
+<li> hosting：SSL托管证书。</li>默认取值为 none。
                      * @param CertType 证书配置，取值有：
 <li> none：不配置；</li>
-<li> hosting：SSL托管证书；</li>
-<li> apply：申请免费证书。</li>默认取值为 none。
+<li> hosting：SSL托管证书。</li>默认取值为 none。
                      */
                     void SetCertType(const std::string& _certType);
 
@@ -167,8 +163,7 @@ namespace TencentCloud
                     /**
                      * 证书配置，取值有：
 <li> none：不配置；</li>
-<li> hosting：SSL托管证书；</li>
-<li> apply：申请免费证书。</li>默认取值为 none。
+<li> hosting：SSL托管证书。</li>默认取值为 none。
                      */
                     std::string m_certType;
                     bool m_certTypeHasBeenSet;
