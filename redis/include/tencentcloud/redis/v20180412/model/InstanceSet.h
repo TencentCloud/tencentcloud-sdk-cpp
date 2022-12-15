@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例详细信息列表
+                * 实例详细信息列表。
                 */
                 class InstanceSet : public AbstractModel
                 {
@@ -68,14 +68,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例Id。
-                     * @return InstanceId 实例Id。
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例Id。
-                     * @param InstanceId 实例Id。
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -86,14 +86,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的Appid。
-                     * @return Appid 用户的Appid。
+                     * 获取用户的 AppID。
+                     * @return Appid 用户的 AppID。
                      */
                     int64_t GetAppid() const;
 
                     /**
-                     * 设置用户的Appid。
-                     * @param Appid 用户的Appid。
+                     * 设置用户的 AppID。
+                     * @param Appid 用户的 AppID。
                      */
                     void SetAppid(const int64_t& _appid);
 
@@ -104,14 +104,14 @@ namespace TencentCloud
                     bool AppidHasBeenSet() const;
 
                     /**
-                     * 获取项目Id。
-                     * @return ProjectId 项目Id。
+                     * 获取项目 ID。
+                     * @return ProjectId 项目 ID。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目Id。
-                     * @param ProjectId 项目Id。
+                     * 设置项目 ID。
+                     * @param ProjectId 项目 ID。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -122,14 +122,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取地域id 。1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     * @return RegionId 地域id 。1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * 获取地域 ID。<ul><li>1：广州。</li><li>4：上海。</li><li>5：中国香港。</li><li>6：多伦多。</li> <li>7：上海金融。</li> <li>8：北京。</li> <li>9：新加坡。</li> <li>11：深圳金融。</li> <li>15：美西（硅谷）。</li><li>16：成都。</li><li>17：法兰克福。</li><li>18：首尔。</li><li>19：重庆。</li><li>21：孟买。</li><li>22：美东（弗吉尼亚）。</li><li>23：曼谷。</li><li>24：莫斯科。</li><li>25：东京。</li></ul>
+                     * @return RegionId 地域 ID。<ul><li>1：广州。</li><li>4：上海。</li><li>5：中国香港。</li><li>6：多伦多。</li> <li>7：上海金融。</li> <li>8：北京。</li> <li>9：新加坡。</li> <li>11：深圳金融。</li> <li>15：美西（硅谷）。</li><li>16：成都。</li><li>17：法兰克福。</li><li>18：首尔。</li><li>19：重庆。</li><li>21：孟买。</li><li>22：美东（弗吉尼亚）。</li><li>23：曼谷。</li><li>24：莫斯科。</li><li>25：东京。</li></ul>
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域id 。1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     * @param RegionId 地域id 。1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * 设置地域 ID。<ul><li>1：广州。</li><li>4：上海。</li><li>5：中国香港。</li><li>6：多伦多。</li> <li>7：上海金融。</li> <li>8：北京。</li> <li>9：新加坡。</li> <li>11：深圳金融。</li> <li>15：美西（硅谷）。</li><li>16：成都。</li><li>17：法兰克福。</li><li>18：首尔。</li><li>19：重庆。</li><li>21：孟买。</li><li>22：美东（弗吉尼亚）。</li><li>23：曼谷。</li><li>24：莫斯科。</li><li>25：东京。</li></ul>
+                     * @param RegionId 地域 ID。<ul><li>1：广州。</li><li>4：上海。</li><li>5：中国香港。</li><li>6：多伦多。</li> <li>7：上海金融。</li> <li>8：北京。</li> <li>9：新加坡。</li> <li>11：深圳金融。</li> <li>15：美西（硅谷）。</li><li>16：成都。</li><li>17：法兰克福。</li><li>18：首尔。</li><li>19：重庆。</li><li>21：孟买。</li><li>22：美东（弗吉尼亚）。</li><li>23：曼谷。</li><li>24：莫斯科。</li><li>25：东京。</li></ul>
                      */
                     void SetRegionId(const int64_t& _regionId);
 
@@ -140,14 +140,14 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取区域id。
-                     * @return ZoneId 区域id。
+                     * 获取区域 ID。
+                     * @return ZoneId 区域 ID。
                      */
                     int64_t GetZoneId() const;
 
                     /**
-                     * 设置区域id。
-                     * @param ZoneId 区域id。
+                     * 设置区域 ID。
+                     * @param ZoneId 区域 ID。
                      */
                     void SetZoneId(const int64_t& _zoneId);
 
@@ -158,14 +158,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络id，例如75101。
-                     * @return VpcId vpc网络id，例如75101。
+                     * 获取vpc网络 ID，例如75101。
+                     * @return VpcId vpc网络 ID，例如75101。
                      */
                     int64_t GetVpcId() const;
 
                     /**
-                     * 设置vpc网络id，例如75101。
-                     * @param VpcId vpc网络id，例如75101。
+                     * 设置vpc网络 ID，例如75101。
+                     * @param VpcId vpc网络 ID，例如75101。
                      */
                     void SetVpcId(const int64_t& _vpcId);
 
@@ -176,14 +176,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取vpc网络下子网id 如：46315。
-                     * @return SubnetId vpc网络下子网id 如：46315。
+                     * 获取vpc网络下子网ID，如：46315。
+                     * @return SubnetId vpc网络下子网ID，如：46315。
                      */
                     int64_t GetSubnetId() const;
 
                     /**
-                     * 设置vpc网络下子网id 如：46315。
-                     * @param SubnetId vpc网络下子网id 如：46315。
+                     * 设置vpc网络下子网ID，如：46315。
+                     * @param SubnetId vpc网络下子网ID，如：46315。
                      */
                     void SetSubnetId(const int64_t& _subnetId);
 
@@ -212,14 +212,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例vip。
-                     * @return WanIp 实例vip。
+                     * 获取实例 VIP。
+                     * @return WanIp 实例 VIP。
                      */
                     std::string GetWanIp() const;
 
                     /**
-                     * 设置实例vip。
-                     * @param WanIp 实例vip。
+                     * 设置实例 VIP。
+                     * @param WanIp 实例 VIP。
                      */
                     void SetWanIp(const std::string& _wanIp);
 
@@ -590,14 +590,14 @@ namespace TencentCloud
                     bool RedisReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取计费Id。
-                     * @return PriceId 计费Id。
+                     * 获取计费 ID。
+                     * @return PriceId 计费 ID。
                      */
                     int64_t GetPriceId() const;
 
                     /**
-                     * 设置计费Id。
-                     * @param PriceId 计费Id。
+                     * 设置计费 ID。
+                     * @param PriceId 计费 ID。
                      */
                     void SetPriceId(const int64_t& _priceId);
 
@@ -1136,43 +1136,43 @@ namespace TencentCloud
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例Id。
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户的Appid。
+                     * 用户的 AppID。
                      */
                     int64_t m_appid;
                     bool m_appidHasBeenSet;
 
                     /**
-                     * 项目Id。
+                     * 项目 ID。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 地域id 。1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * 地域 ID。<ul><li>1：广州。</li><li>4：上海。</li><li>5：中国香港。</li><li>6：多伦多。</li> <li>7：上海金融。</li> <li>8：北京。</li> <li>9：新加坡。</li> <li>11：深圳金融。</li> <li>15：美西（硅谷）。</li><li>16：成都。</li><li>17：法兰克福。</li><li>18：首尔。</li><li>19：重庆。</li><li>21：孟买。</li><li>22：美东（弗吉尼亚）。</li><li>23：曼谷。</li><li>24：莫斯科。</li><li>25：东京。</li></ul>
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 区域id。
+                     * 区域 ID。
                      */
                     int64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * vpc网络id，例如75101。
+                     * vpc网络 ID，例如75101。
                      */
                     int64_t m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * vpc网络下子网id 如：46315。
+                     * vpc网络下子网ID，如：46315。
                      */
                     int64_t m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -1184,7 +1184,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例vip。
+                     * 实例 VIP。
                      */
                     std::string m_wanIp;
                     bool m_wanIpHasBeenSet;
@@ -1310,7 +1310,7 @@ namespace TencentCloud
                     bool m_redisReplicasNumHasBeenSet;
 
                     /**
-                     * 计费Id。
+                     * 计费 ID。
                      */
                     int64_t m_priceId;
                     bool m_priceIdHasBeenSet;

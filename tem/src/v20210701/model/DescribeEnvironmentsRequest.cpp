@@ -27,7 +27,8 @@ DescribeEnvironmentsRequest::DescribeEnvironmentsRequest() :
     m_offsetHasBeenSet(false),
     m_sourceChannelHasBeenSet(false),
     m_filtersHasBeenSet(false),
-    m_sortInfoHasBeenSet(false)
+    m_sortInfoHasBeenSet(false),
+    m_environmentIdHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,14 @@ string DescribeEnvironmentsRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_sortInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_environmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvironmentId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_environmentId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -172,6 +181,22 @@ void DescribeEnvironmentsRequest::SetSortInfo(const SortType& _sortInfo)
 bool DescribeEnvironmentsRequest::SortInfoHasBeenSet() const
 {
     return m_sortInfoHasBeenSet;
+}
+
+string DescribeEnvironmentsRequest::GetEnvironmentId() const
+{
+    return m_environmentId;
+}
+
+void DescribeEnvironmentsRequest::SetEnvironmentId(const string& _environmentId)
+{
+    m_environmentId = _environmentId;
+    m_environmentIdHasBeenSet = true;
+}
+
+bool DescribeEnvironmentsRequest::EnvironmentIdHasBeenSet() const
+{
+    return m_environmentIdHasBeenSet;
 }
 
 

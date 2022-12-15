@@ -25,7 +25,8 @@ using namespace std;
 SegmentPortraitPicRequest::SegmentPortraitPicRequest() :
     m_imageHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_rspImgTypeHasBeenSet(false)
+    m_rspImgTypeHasBeenSet(false),
+    m_sceneHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string SegmentPortraitPicRequest::ToJsonString() const
         string key = "RspImgType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_rspImgType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scene.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void SegmentPortraitPicRequest::SetRspImgType(const string& _rspImgType)
 bool SegmentPortraitPicRequest::RspImgTypeHasBeenSet() const
 {
     return m_rspImgTypeHasBeenSet;
+}
+
+string SegmentPortraitPicRequest::GetScene() const
+{
+    return m_scene;
+}
+
+void SegmentPortraitPicRequest::SetScene(const string& _scene)
+{
+    m_scene = _scene;
+    m_sceneHasBeenSet = true;
+}
+
+bool SegmentPortraitPicRequest::SceneHasBeenSet() const
+{
+    return m_sceneHasBeenSet;
 }
 
 

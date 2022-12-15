@@ -134,6 +134,24 @@ namespace TencentCloud
                      */
                     bool SortInfoHasBeenSet() const;
 
+                    /**
+                     * 获取环境id
+                     * @return EnvironmentId 环境id
+                     */
+                    std::string GetEnvironmentId() const;
+
+                    /**
+                     * 设置环境id
+                     * @param EnvironmentId 环境id
+                     */
+                    void SetEnvironmentId(const std::string& _environmentId);
+
+                    /**
+                     * 判断参数 EnvironmentId 是否已赋值
+                     * @return EnvironmentId 是否已赋值
+                     */
+                    bool EnvironmentIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -165,6 +183,12 @@ namespace TencentCloud
                      */
                     SortType m_sortInfo;
                     bool m_sortInfoHasBeenSet;
+
+                    /**
+                     * 环境id
+                     */
+                    std::string m_environmentId;
+                    bool m_environmentIdHasBeenSet;
 
                 };
             }

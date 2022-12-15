@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 快照操作日志。
+                * 快照操作日志，已废弃。
                 */
                 class SnapshotOperationLog : public AbstractModel
                 {
@@ -45,92 +45,6 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
-
-                    /**
-                     * 获取操作者的UIN。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Operator 操作者的UIN。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetOperator() const;
-
-                    /**
-                     * 设置操作者的UIN。
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Operator 操作者的UIN。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetOperator(const std::string& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取操作类型。取值范围：
-SNAP_OPERATION_DELETE：删除快照
-SNAP_OPERATION_ROLLBACK：回滚快照
-SNAP_OPERATION_MODIFY：修改快照属性
-SNAP_OPERATION_CREATE：创建快照
-SNAP_OPERATION_COPY：跨地域复制快照
-ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
-ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
-                     * @return Operation 操作类型。取值范围：
-SNAP_OPERATION_DELETE：删除快照
-SNAP_OPERATION_ROLLBACK：回滚快照
-SNAP_OPERATION_MODIFY：修改快照属性
-SNAP_OPERATION_CREATE：创建快照
-SNAP_OPERATION_COPY：跨地域复制快照
-ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
-ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
-                     */
-                    std::string GetOperation() const;
-
-                    /**
-                     * 设置操作类型。取值范围：
-SNAP_OPERATION_DELETE：删除快照
-SNAP_OPERATION_ROLLBACK：回滚快照
-SNAP_OPERATION_MODIFY：修改快照属性
-SNAP_OPERATION_CREATE：创建快照
-SNAP_OPERATION_COPY：跨地域复制快照
-ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
-ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
-                     * @param Operation 操作类型。取值范围：
-SNAP_OPERATION_DELETE：删除快照
-SNAP_OPERATION_ROLLBACK：回滚快照
-SNAP_OPERATION_MODIFY：修改快照属性
-SNAP_OPERATION_CREATE：创建快照
-SNAP_OPERATION_COPY：跨地域复制快照
-ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
-ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
-                     */
-                    void SetOperation(const std::string& _operation);
-
-                    /**
-                     * 判断参数 Operation 是否已赋值
-                     * @return Operation 是否已赋值
-                     */
-                    bool OperationHasBeenSet() const;
-
-                    /**
-                     * 获取操作的快照ID。
-                     * @return SnapshotId 操作的快照ID。
-                     */
-                    std::string GetSnapshotId() const;
-
-                    /**
-                     * 设置操作的快照ID。
-                     * @param SnapshotId 操作的快照ID。
-                     */
-                    void SetSnapshotId(const std::string& _snapshotId);
-
-                    /**
-                     * 判断参数 SnapshotId 是否已赋值
-                     * @return SnapshotId 是否已赋值
-                     */
-                    bool SnapshotIdHasBeenSet() const;
 
                     /**
                      * 获取操作的状态。取值范围：
@@ -181,6 +95,92 @@ PROCESSING :表示操作中。
                     bool StartTimeHasBeenSet() const;
 
                     /**
+                     * 获取操作者的UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Operator 操作者的UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOperator() const;
+
+                    /**
+                     * 设置操作者的UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Operator 操作者的UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOperator(const std::string& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取操作的快照ID。
+                     * @return SnapshotId 操作的快照ID。
+                     */
+                    std::string GetSnapshotId() const;
+
+                    /**
+                     * 设置操作的快照ID。
+                     * @param SnapshotId 操作的快照ID。
+                     */
+                    void SetSnapshotId(const std::string& _snapshotId);
+
+                    /**
+                     * 判断参数 SnapshotId 是否已赋值
+                     * @return SnapshotId 是否已赋值
+                     */
+                    bool SnapshotIdHasBeenSet() const;
+
+                    /**
+                     * 获取操作类型。取值范围：
+SNAP_OPERATION_DELETE：删除快照
+SNAP_OPERATION_ROLLBACK：回滚快照
+SNAP_OPERATION_MODIFY：修改快照属性
+SNAP_OPERATION_CREATE：创建快照
+SNAP_OPERATION_COPY：跨地域复制快照
+ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
+ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
+                     * @return Operation 操作类型。取值范围：
+SNAP_OPERATION_DELETE：删除快照
+SNAP_OPERATION_ROLLBACK：回滚快照
+SNAP_OPERATION_MODIFY：修改快照属性
+SNAP_OPERATION_CREATE：创建快照
+SNAP_OPERATION_COPY：跨地域复制快照
+ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
+ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
+                     */
+                    std::string GetOperation() const;
+
+                    /**
+                     * 设置操作类型。取值范围：
+SNAP_OPERATION_DELETE：删除快照
+SNAP_OPERATION_ROLLBACK：回滚快照
+SNAP_OPERATION_MODIFY：修改快照属性
+SNAP_OPERATION_CREATE：创建快照
+SNAP_OPERATION_COPY：跨地域复制快照
+ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
+ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
+                     * @param Operation 操作类型。取值范围：
+SNAP_OPERATION_DELETE：删除快照
+SNAP_OPERATION_ROLLBACK：回滚快照
+SNAP_OPERATION_MODIFY：修改快照属性
+SNAP_OPERATION_CREATE：创建快照
+SNAP_OPERATION_COPY：跨地域复制快照
+ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
+ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
+                     */
+                    void SetOperation(const std::string& _operation);
+
+                    /**
+                     * 判断参数 Operation 是否已赋值
+                     * @return Operation 是否已赋值
+                     */
+                    bool OperationHasBeenSet() const;
+
+                    /**
                      * 获取结束时间。
                      * @return EndTime 结束时间。
                      */
@@ -201,32 +201,6 @@ PROCESSING :表示操作中。
                 private:
 
                     /**
-                     * 操作者的UIN。
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
-                     * 操作类型。取值范围：
-SNAP_OPERATION_DELETE：删除快照
-SNAP_OPERATION_ROLLBACK：回滚快照
-SNAP_OPERATION_MODIFY：修改快照属性
-SNAP_OPERATION_CREATE：创建快照
-SNAP_OPERATION_COPY：跨地域复制快照
-ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
-ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
-                     */
-                    std::string m_operation;
-                    bool m_operationHasBeenSet;
-
-                    /**
-                     * 操作的快照ID。
-                     */
-                    std::string m_snapshotId;
-                    bool m_snapshotIdHasBeenSet;
-
-                    /**
                      * 操作的状态。取值范围：
 SUCCESS :表示操作成功 
 FAILED :表示操作失败 
@@ -240,6 +214,32 @@ PROCESSING :表示操作中。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
+
+                    /**
+                     * 操作者的UIN。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
+                     * 操作的快照ID。
+                     */
+                    std::string m_snapshotId;
+                    bool m_snapshotIdHasBeenSet;
+
+                    /**
+                     * 操作类型。取值范围：
+SNAP_OPERATION_DELETE：删除快照
+SNAP_OPERATION_ROLLBACK：回滚快照
+SNAP_OPERATION_MODIFY：修改快照属性
+SNAP_OPERATION_CREATE：创建快照
+SNAP_OPERATION_COPY：跨地域复制快照
+ASP_OPERATION_CREATE_SNAP：由定期快照策略创建快照
+ASP_OPERATION_DELETE_SNAP：由定期快照策略删除快照
+                     */
+                    std::string m_operation;
+                    bool m_operationHasBeenSet;
 
                     /**
                      * 结束时间。

@@ -36,7 +36,11 @@ StatusNode::StatusNode() :
     m_approveIdHasBeenSet(false),
     m_approveMethodHasBeenSet(false),
     m_approveTypeHasBeenSet(false),
-    m_callMethodHasBeenSet(false)
+    m_callMethodHasBeenSet(false),
+    m_dataHubIdHasBeenSet(false),
+    m_taskNameHasBeenSet(false),
+    m_cKafkaRegionHasBeenSet(false),
+    m_externalUrlHasBeenSet(false)
 {
 }
 
@@ -222,6 +226,46 @@ CoreInternalOutcome StatusNode::Deserialize(const rapidjson::Value &value)
         m_callMethodHasBeenSet = true;
     }
 
+    if (value.HasMember("DataHubId") && !value["DataHubId"].IsNull())
+    {
+        if (!value["DataHubId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusNode.DataHubId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dataHubId = string(value["DataHubId"].GetString());
+        m_dataHubIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TaskName") && !value["TaskName"].IsNull())
+    {
+        if (!value["TaskName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusNode.TaskName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_taskName = string(value["TaskName"].GetString());
+        m_taskNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CKafkaRegion") && !value["CKafkaRegion"].IsNull())
+    {
+        if (!value["CKafkaRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusNode.CKafkaRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cKafkaRegion = string(value["CKafkaRegion"].GetString());
+        m_cKafkaRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExternalUrl") && !value["ExternalUrl"].IsNull())
+    {
+        if (!value["ExternalUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusNode.ExternalUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalUrl = string(value["ExternalUrl"].GetString());
+        m_externalUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +406,38 @@ void StatusNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CallMethod";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_callMethod, allocator);
+    }
+
+    if (m_dataHubIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataHubId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataHubId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cKafkaRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CKafkaRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cKafkaRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_externalUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -621,5 +697,69 @@ void StatusNode::SetCallMethod(const uint64_t& _callMethod)
 bool StatusNode::CallMethodHasBeenSet() const
 {
     return m_callMethodHasBeenSet;
+}
+
+string StatusNode::GetDataHubId() const
+{
+    return m_dataHubId;
+}
+
+void StatusNode::SetDataHubId(const string& _dataHubId)
+{
+    m_dataHubId = _dataHubId;
+    m_dataHubIdHasBeenSet = true;
+}
+
+bool StatusNode::DataHubIdHasBeenSet() const
+{
+    return m_dataHubIdHasBeenSet;
+}
+
+string StatusNode::GetTaskName() const
+{
+    return m_taskName;
+}
+
+void StatusNode::SetTaskName(const string& _taskName)
+{
+    m_taskName = _taskName;
+    m_taskNameHasBeenSet = true;
+}
+
+bool StatusNode::TaskNameHasBeenSet() const
+{
+    return m_taskNameHasBeenSet;
+}
+
+string StatusNode::GetCKafkaRegion() const
+{
+    return m_cKafkaRegion;
+}
+
+void StatusNode::SetCKafkaRegion(const string& _cKafkaRegion)
+{
+    m_cKafkaRegion = _cKafkaRegion;
+    m_cKafkaRegionHasBeenSet = true;
+}
+
+bool StatusNode::CKafkaRegionHasBeenSet() const
+{
+    return m_cKafkaRegionHasBeenSet;
+}
+
+string StatusNode::GetExternalUrl() const
+{
+    return m_externalUrl;
+}
+
+void StatusNode::SetExternalUrl(const string& _externalUrl)
+{
+    m_externalUrl = _externalUrl;
+    m_externalUrlHasBeenSet = true;
+}
+
+bool StatusNode::ExternalUrlHasBeenSet() const
+{
+    return m_externalUrlHasBeenSet;
 }
 

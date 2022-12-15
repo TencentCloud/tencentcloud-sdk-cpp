@@ -165,17 +165,17 @@ namespace TencentCloud
                     bool ScfNameHasBeenSet() const;
 
                     /**
-                     * 获取状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）
+                     * 获取状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubStatus 状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）
+                     * @return SubStatus 状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetSubStatus() const;
 
                     /**
-                     * 设置状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）
+                     * 设置状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubStatus 状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）
+                     * @param SubStatus 状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubStatus(const uint64_t& _subStatus);
@@ -384,6 +384,94 @@ namespace TencentCloud
                      */
                     bool CallMethodHasBeenSet() const;
 
+                    /**
+                     * 获取CKafka - 接入资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataHubId CKafka - 接入资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDataHubId() const;
+
+                    /**
+                     * 设置CKafka - 接入资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataHubId CKafka - 接入资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataHubId(const std::string& _dataHubId);
+
+                    /**
+                     * 判断参数 DataHubId 是否已赋值
+                     * @return DataHubId 是否已赋值
+                     */
+                    bool DataHubIdHasBeenSet() const;
+
+                    /**
+                     * 获取CKafka - 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskName CKafka - 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskName() const;
+
+                    /**
+                     * 设置CKafka - 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TaskName CKafka - 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaskName(const std::string& _taskName);
+
+                    /**
+                     * 判断参数 TaskName 是否已赋值
+                     * @return TaskName 是否已赋值
+                     */
+                    bool TaskNameHasBeenSet() const;
+
+                    /**
+                     * 获取CKafka - 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CKafkaRegion CKafka - 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCKafkaRegion() const;
+
+                    /**
+                     * 设置CKafka - 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CKafkaRegion CKafka - 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCKafkaRegion(const std::string& _cKafkaRegion);
+
+                    /**
+                     * 判断参数 CKafkaRegion 是否已赋值
+                     * @return CKafkaRegion 是否已赋值
+                     */
+                    bool CKafkaRegionHasBeenSet() const;
+
+                    /**
+                     * 获取外部审批Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExternalUrl 外部审批Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExternalUrl() const;
+
+                    /**
+                     * 设置外部审批Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExternalUrl 外部审批Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExternalUrl(const std::string& _externalUrl);
+
+                    /**
+                     * 判断参数 ExternalUrl 是否已赋值
+                     * @return ExternalUrl 是否已赋值
+                     */
+                    bool ExternalUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,7 +513,7 @@ namespace TencentCloud
                     bool m_scfNameHasBeenSet;
 
                     /**
-                     * 状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）
+                     * 状态（0：待审批，1：审批通过，2：拒绝，3：scf执行失败，4：scf执行成功）18: 外部审批中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_subStatus;
@@ -493,6 +581,34 @@ namespace TencentCloud
                      */
                     uint64_t m_callMethod;
                     bool m_callMethodHasBeenSet;
+
+                    /**
+                     * CKafka - 接入资源ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dataHubId;
+                    bool m_dataHubIdHasBeenSet;
+
+                    /**
+                     * CKafka - 任务名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskName;
+                    bool m_taskNameHasBeenSet;
+
+                    /**
+                     * CKafka - 地域
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cKafkaRegion;
+                    bool m_cKafkaRegionHasBeenSet;
+
+                    /**
+                     * 外部审批Url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_externalUrl;
+                    bool m_externalUrlHasBeenSet;
 
                 };
             }

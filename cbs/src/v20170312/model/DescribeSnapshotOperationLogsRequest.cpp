@@ -24,8 +24,8 @@ using namespace std;
 
 DescribeSnapshotOperationLogsRequest::DescribeSnapshotOperationLogsRequest() :
     m_filtersHasBeenSet(false),
-    m_beginTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_beginTimeHasBeenSet(false)
 {
 }
 
@@ -51,20 +51,20 @@ string DescribeSnapshotOperationLogsRequest::ToJsonString() const
         }
     }
 
-    if (m_beginTimeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BeginTime";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_beginTime.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_endTimeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_beginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_beginTime.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -91,22 +91,6 @@ bool DescribeSnapshotOperationLogsRequest::FiltersHasBeenSet() const
     return m_filtersHasBeenSet;
 }
 
-string DescribeSnapshotOperationLogsRequest::GetBeginTime() const
-{
-    return m_beginTime;
-}
-
-void DescribeSnapshotOperationLogsRequest::SetBeginTime(const string& _beginTime)
-{
-    m_beginTime = _beginTime;
-    m_beginTimeHasBeenSet = true;
-}
-
-bool DescribeSnapshotOperationLogsRequest::BeginTimeHasBeenSet() const
-{
-    return m_beginTimeHasBeenSet;
-}
-
 string DescribeSnapshotOperationLogsRequest::GetEndTime() const
 {
     return m_endTime;
@@ -121,6 +105,22 @@ void DescribeSnapshotOperationLogsRequest::SetEndTime(const string& _endTime)
 bool DescribeSnapshotOperationLogsRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string DescribeSnapshotOperationLogsRequest::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+void DescribeSnapshotOperationLogsRequest::SetBeginTime(const string& _beginTime)
+{
+    m_beginTime = _beginTime;
+    m_beginTimeHasBeenSet = true;
+}
+
+bool DescribeSnapshotOperationLogsRequest::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
 }
 
 

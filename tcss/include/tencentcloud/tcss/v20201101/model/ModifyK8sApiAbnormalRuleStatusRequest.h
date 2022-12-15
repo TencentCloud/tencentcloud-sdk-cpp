@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RuleIDHasBeenSet() const;
 
                     /**
-                     * 获取状态(ture:开 false:关)
-                     * @return Status 状态(ture:开 false:关)
+                     * 获取状态(true:开 false:关)
+                     * @return Status 状态(true:开 false:关)
                      */
                     bool GetStatus() const;
 
                     /**
-                     * 设置状态(ture:开 false:关)
-                     * @param Status 状态(ture:开 false:关)
+                     * 设置状态(true:开 false:关)
+                     * @param Status 状态(true:开 false:关)
                      */
                     void SetStatus(const bool& _status);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_ruleIDHasBeenSet;
 
                     /**
-                     * 状态(ture:开 false:关)
+                     * 状态(true:开 false:关)
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;

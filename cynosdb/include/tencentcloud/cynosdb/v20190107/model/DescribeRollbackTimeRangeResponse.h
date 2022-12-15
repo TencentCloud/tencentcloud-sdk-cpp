@@ -46,7 +46,9 @@ namespace TencentCloud
 
                     /**
                      * 获取有效回归时间范围开始时间点（已废弃）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeRangeStart 有效回归时间范围开始时间点（已废弃）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTimeRangeStart() const;
 
@@ -58,7 +60,9 @@ namespace TencentCloud
 
                     /**
                      * 获取有效回归时间范围结束时间点（已废弃）
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeRangeEnd 有效回归时间范围结束时间点（已废弃）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTimeRangeEnd() const;
 
@@ -84,12 +88,14 @@ namespace TencentCloud
 
                     /**
                      * 有效回归时间范围开始时间点（已废弃）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeRangeStart;
                     bool m_timeRangeStartHasBeenSet;
 
                     /**
                      * 有效回归时间范围结束时间点（已废弃）
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timeRangeEnd;
                     bool m_timeRangeEndHasBeenSet;

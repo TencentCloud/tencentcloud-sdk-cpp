@@ -39,7 +39,8 @@ DedicatedClusterOrder::DedicatedClusterOrder() :
     m_payStatusHasBeenSet(false),
     m_payTypeHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_orderTypeHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,16 @@ CoreInternalOutcome DedicatedClusterOrder::Deserialize(const rapidjson::Value &v
         m_timeSpanHasBeenSet = true;
     }
 
+    if (value.HasMember("OrderType") && !value["OrderType"].IsNull())
+    {
+        if (!value["OrderType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DedicatedClusterOrder.OrderType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_orderType = string(value["OrderType"].GetString());
+        m_orderTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -436,6 +447,14 @@ void DedicatedClusterOrder::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_orderTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_orderType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -743,5 +762,21 @@ void DedicatedClusterOrder::SetTimeSpan(const int64_t& _timeSpan)
 bool DedicatedClusterOrder::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+string DedicatedClusterOrder::GetOrderType() const
+{
+    return m_orderType;
+}
+
+void DedicatedClusterOrder::SetOrderType(const string& _orderType)
+{
+    m_orderType = _orderType;
+    m_orderTypeHasBeenSet = true;
+}
+
+bool DedicatedClusterOrder::OrderTypeHasBeenSet() const
+{
+    return m_orderTypeHasBeenSet;
 }
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeClusterParamsRequest::DescribeClusterParamsRequest() :
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_paramNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeClusterParamsRequest::ToJsonString() const
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_paramNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_paramName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeClusterParamsRequest::SetClusterId(const string& _clusterId)
 bool DescribeClusterParamsRequest::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+string DescribeClusterParamsRequest::GetParamName() const
+{
+    return m_paramName;
+}
+
+void DescribeClusterParamsRequest::SetParamName(const string& _paramName)
+{
+    m_paramName = _paramName;
+    m_paramNameHasBeenSet = true;
+}
+
+bool DescribeClusterParamsRequest::ParamNameHasBeenSet() const
+{
+    return m_paramNameHasBeenSet;
 }
 
 

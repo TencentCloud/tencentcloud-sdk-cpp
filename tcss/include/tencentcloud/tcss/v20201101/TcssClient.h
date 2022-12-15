@@ -3332,7 +3332,7 @@ namespace TencentCloud
                 DescribeK8sApiAbnormalRuleListOutcomeCallable DescribeK8sApiAbnormalRuleListCallable(const Model::DescribeK8sApiAbnormalRuleListRequest& request);
 
                 /**
-                 *查询k8s api 异常规则中范围列表
+                 *查询k8sapi 异常规则中范围列表
                  * @param req DescribeK8sApiAbnormalRuleScopeListRequest
                  * @return DescribeK8sApiAbnormalRuleScopeListOutcome
                  */

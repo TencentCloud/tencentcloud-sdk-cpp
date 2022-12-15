@@ -107,14 +107,14 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                     bool UrlHasBeenSet() const;
 
                     /**
-                     * 获取返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
-                     * @return RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     * 获取返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
+                     * @return RspImgType 返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
                      */
                     std::string GetRspImgType() const;
 
                     /**
-                     * 设置返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
-                     * @param RspImgType 返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     * 设置返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
+                     * @param RspImgType 返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
                      */
                     void SetRspImgType(const std::string& _rspImgType);
 
@@ -123,6 +123,36 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                      * @return RspImgType 是否已赋值
                      */
                     bool RspImgTypeHasBeenSet() const;
+
+                    /**
+                     * 获取适用场景类型。
+
+取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
+两种模式选择一种传入，默认为GEN。
+                     * @return Scene 适用场景类型。
+
+取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
+两种模式选择一种传入，默认为GEN。
+                     */
+                    std::string GetScene() const;
+
+                    /**
+                     * 设置适用场景类型。
+
+取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
+两种模式选择一种传入，默认为GEN。
+                     * @param Scene 适用场景类型。
+
+取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
+两种模式选择一种传入，默认为GEN。
+                     */
+                    void SetScene(const std::string& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     */
+                    bool SceneHasBeenSet() const;
 
                 private:
 
@@ -146,10 +176,19 @@ Url、Image必须提供一个，如果都提供，只使用 Url。
                     bool m_urlHasBeenSet;
 
                     /**
-                     * 返回图像方式（base64 或 url ) ，二选一。url有效期为30分钟。
+                     * 返回图像方式（base64 或 Url ) ，二选一。url有效期为30分钟。
                      */
                     std::string m_rspImgType;
                     bool m_rspImgTypeHasBeenSet;
+
+                    /**
+                     * 适用场景类型。
+
+取值：GEN/GS。GEN为通用场景模式；GS为绿幕场景模式，针对绿幕场景下的人像分割效果更好。
+两种模式选择一种传入，默认为GEN。
+                     */
+                    std::string m_scene;
+                    bool m_sceneHasBeenSet;
 
                 };
             }

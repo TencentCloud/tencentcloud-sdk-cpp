@@ -56,6 +56,18 @@ namespace TencentCloud
                      */
                     bool GroupsHasBeenSet() const;
 
+                    /**
+                     * 获取总数量
+                     * @return Total 总数量
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +75,12 @@ namespace TencentCloud
                      */
                     std::vector<SecurityGroup> m_groups;
                     bool m_groupsHasBeenSet;
+
+                    /**
+                     * 总数量
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

@@ -421,6 +421,28 @@ namespace TencentCloud
                      */
                     bool TimeSpanHasBeenSet() const;
 
+                    /**
+                     * 获取订单类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrderType 订单类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrderType() const;
+
+                    /**
+                     * 设置订单类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OrderType 订单类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrderType(const std::string& _orderType);
+
+                    /**
+                     * 判断参数 OrderType 是否已赋值
+                     * @return OrderType 是否已赋值
+                     */
+                    bool OrderTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -544,6 +566,13 @@ namespace TencentCloud
                      */
                     int64_t m_timeSpan;
                     bool m_timeSpanHasBeenSet;
+
+                    /**
+                     * 订单类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orderType;
+                    bool m_orderTypeHasBeenSet;
 
                 };
             }

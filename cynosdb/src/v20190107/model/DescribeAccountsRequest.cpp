@@ -25,7 +25,10 @@ using namespace std;
 DescribeAccountsRequest::DescribeAccountsRequest() :
     m_clusterIdHasBeenSet(false),
     m_accountNamesHasBeenSet(false),
-    m_dbTypeHasBeenSet(false)
+    m_dbTypeHasBeenSet(false),
+    m_hostsHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -63,6 +66,35 @@ string DescribeAccountsRequest::ToJsonString() const
         string key = "DbType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dbType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Hosts";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_hosts.begin(); itr != m_hosts.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -119,6 +151,54 @@ void DescribeAccountsRequest::SetDbType(const string& _dbType)
 bool DescribeAccountsRequest::DbTypeHasBeenSet() const
 {
     return m_dbTypeHasBeenSet;
+}
+
+vector<string> DescribeAccountsRequest::GetHosts() const
+{
+    return m_hosts;
+}
+
+void DescribeAccountsRequest::SetHosts(const vector<string>& _hosts)
+{
+    m_hosts = _hosts;
+    m_hostsHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::HostsHasBeenSet() const
+{
+    return m_hostsHasBeenSet;
+}
+
+int64_t DescribeAccountsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeAccountsRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeAccountsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeAccountsRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeAccountsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

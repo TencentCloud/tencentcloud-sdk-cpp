@@ -24,7 +24,8 @@ using namespace TencentCloud::Cynosdb::V20190107::Model;
 using namespace std;
 
 DescribeProjectSecurityGroupsResponse::DescribeProjectSecurityGroupsResponse() :
-    m_groupsHasBeenSet(false)
+    m_groupsHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeProjectSecurityGroupsResponse::Deserialize(const str
         m_groupsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    {
+        if (!rsp["Total"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeProjectSecurityGroupsResponse::ToJsonString() const
         }
     }
 
+    if (m_totalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Total";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_total, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<SecurityGroup> DescribeProjectSecurityGroupsResponse::GetGroups() const
 bool DescribeProjectSecurityGroupsResponse::GroupsHasBeenSet() const
 {
     return m_groupsHasBeenSet;
+}
+
+int64_t DescribeProjectSecurityGroupsResponse::GetTotal() const
+{
+    return m_total;
+}
+
+bool DescribeProjectSecurityGroupsResponse::TotalHasBeenSet() const
+{
+    return m_totalHasBeenSet;
 }
 
 

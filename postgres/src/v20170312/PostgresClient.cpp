@@ -341,6 +341,49 @@ PostgresClient::CreateInstancesOutcomeCallable PostgresClient::CreateInstancesCa
     return task->get_future();
 }
 
+PostgresClient::CreateParameterTemplateOutcome PostgresClient::CreateParameterTemplate(const CreateParameterTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateParameterTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateParameterTemplateResponse rsp = CreateParameterTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateParameterTemplateOutcome(rsp);
+        else
+            return CreateParameterTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateParameterTemplateOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateParameterTemplateAsync(const CreateParameterTemplateRequest& request, const CreateParameterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateParameterTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateParameterTemplateOutcomeCallable PostgresClient::CreateParameterTemplateCallable(const CreateParameterTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateParameterTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateParameterTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateReadOnlyDBInstanceOutcome PostgresClient::CreateReadOnlyDBInstance(const CreateReadOnlyDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateReadOnlyDBInstance");
@@ -549,6 +592,49 @@ PostgresClient::DeleteDBInstanceNetworkAccessOutcomeCallable PostgresClient::Del
         [this, request]()
         {
             return this->DeleteDBInstanceNetworkAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DeleteParameterTemplateOutcome PostgresClient::DeleteParameterTemplate(const DeleteParameterTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteParameterTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteParameterTemplateResponse rsp = DeleteParameterTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteParameterTemplateOutcome(rsp);
+        else
+            return DeleteParameterTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteParameterTemplateOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteParameterTemplateAsync(const DeleteParameterTemplateRequest& request, const DeleteParameterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteParameterTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteParameterTemplateOutcomeCallable PostgresClient::DeleteParameterTemplateCallable(const DeleteParameterTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteParameterTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteParameterTemplate(request);
         }
     );
 
@@ -1029,6 +1115,49 @@ PostgresClient::DescribeDBInstanceParametersOutcomeCallable PostgresClient::Desc
     return task->get_future();
 }
 
+PostgresClient::DescribeDBInstanceSecurityGroupsOutcome PostgresClient::DescribeDBInstanceSecurityGroups(const DescribeDBInstanceSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstanceSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstanceSecurityGroupsResponse rsp = DescribeDBInstanceSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstanceSecurityGroupsOutcome(rsp);
+        else
+            return DescribeDBInstanceSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstanceSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDBInstanceSecurityGroupsAsync(const DescribeDBInstanceSecurityGroupsRequest& request, const DescribeDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstanceSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDBInstanceSecurityGroupsOutcomeCallable PostgresClient::DescribeDBInstanceSecurityGroupsCallable(const DescribeDBInstanceSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstanceSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstanceSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeDBInstancesOutcome PostgresClient::DescribeDBInstances(const DescribeDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstances");
@@ -1201,6 +1330,49 @@ PostgresClient::DescribeDatabasesOutcomeCallable PostgresClient::DescribeDatabas
     return task->get_future();
 }
 
+PostgresClient::DescribeDefaultParametersOutcome PostgresClient::DescribeDefaultParameters(const DescribeDefaultParametersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDefaultParameters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDefaultParametersResponse rsp = DescribeDefaultParametersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDefaultParametersOutcome(rsp);
+        else
+            return DescribeDefaultParametersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDefaultParametersOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDefaultParametersAsync(const DescribeDefaultParametersRequest& request, const DescribeDefaultParametersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDefaultParameters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDefaultParametersOutcomeCallable PostgresClient::DescribeDefaultParametersCallable(const DescribeDefaultParametersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDefaultParametersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDefaultParameters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeEncryptionKeysOutcome PostgresClient::DescribeEncryptionKeys(const DescribeEncryptionKeysRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEncryptionKeys");
@@ -1280,6 +1452,92 @@ PostgresClient::DescribeOrdersOutcomeCallable PostgresClient::DescribeOrdersCall
         [this, request]()
         {
             return this->DescribeOrders(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeParameterTemplateAttributesOutcome PostgresClient::DescribeParameterTemplateAttributes(const DescribeParameterTemplateAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeParameterTemplateAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeParameterTemplateAttributesResponse rsp = DescribeParameterTemplateAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeParameterTemplateAttributesOutcome(rsp);
+        else
+            return DescribeParameterTemplateAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeParameterTemplateAttributesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeParameterTemplateAttributesAsync(const DescribeParameterTemplateAttributesRequest& request, const DescribeParameterTemplateAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeParameterTemplateAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeParameterTemplateAttributesOutcomeCallable PostgresClient::DescribeParameterTemplateAttributesCallable(const DescribeParameterTemplateAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeParameterTemplateAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeParameterTemplateAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeParameterTemplatesOutcome PostgresClient::DescribeParameterTemplates(const DescribeParameterTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeParameterTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeParameterTemplatesResponse rsp = DescribeParameterTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeParameterTemplatesOutcome(rsp);
+        else
+            return DescribeParameterTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeParameterTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeParameterTemplatesAsync(const DescribeParameterTemplatesRequest& request, const DescribeParameterTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeParameterTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeParameterTemplatesOutcomeCallable PostgresClient::DescribeParameterTemplatesCallable(const DescribeParameterTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeParameterTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeParameterTemplates(request);
         }
     );
 
@@ -2190,6 +2448,49 @@ PostgresClient::ModifyDBInstanceReadOnlyGroupOutcomeCallable PostgresClient::Mod
     return task->get_future();
 }
 
+PostgresClient::ModifyDBInstanceSecurityGroupsOutcome PostgresClient::ModifyDBInstanceSecurityGroups(const ModifyDBInstanceSecurityGroupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceSecurityGroups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceSecurityGroupsResponse rsp = ModifyDBInstanceSecurityGroupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceSecurityGroupsOutcome(rsp);
+        else
+            return ModifyDBInstanceSecurityGroupsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceSecurityGroupsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceSecurityGroupsAsync(const ModifyDBInstanceSecurityGroupsRequest& request, const ModifyDBInstanceSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceSecurityGroups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceSecurityGroupsOutcomeCallable PostgresClient::ModifyDBInstanceSecurityGroupsCallable(const ModifyDBInstanceSecurityGroupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceSecurityGroupsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceSecurityGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyDBInstanceSpecOutcome PostgresClient::ModifyDBInstanceSpec(const ModifyDBInstanceSpecRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceSpec");
@@ -2269,6 +2570,49 @@ PostgresClient::ModifyDBInstancesProjectOutcomeCallable PostgresClient::ModifyDB
         [this, request]()
         {
             return this->ModifyDBInstancesProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyParameterTemplateOutcome PostgresClient::ModifyParameterTemplate(const ModifyParameterTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyParameterTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyParameterTemplateResponse rsp = ModifyParameterTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyParameterTemplateOutcome(rsp);
+        else
+            return ModifyParameterTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyParameterTemplateOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyParameterTemplateAsync(const ModifyParameterTemplateRequest& request, const ModifyParameterTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyParameterTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyParameterTemplateOutcomeCallable PostgresClient::ModifyParameterTemplateCallable(const ModifyParameterTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyParameterTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyParameterTemplate(request);
         }
     );
 

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例数量，参数默认值20，最大值为1000。
-                     * @return Limit 实例数量，参数默认值20，最大值为1000。
+                     * 获取每页输出实例的数量，参数默认值20，最大值为1000。
+                     * @return Limit 每页输出实例的数量，参数默认值20，最大值为1000。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置实例数量，参数默认值20，最大值为1000。
-                     * @param Limit 实例数量，参数默认值20，最大值为1000。
+                     * 设置每页输出实例的数量，参数默认值20，最大值为1000。
+                     * @param Limit 每页输出实例的数量，参数默认值20，最大值为1000。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍。
-                     * @return Offset 偏移量，取Limit整数倍。
+                     * 获取分页偏移量，取Limit整数倍。
+                     * @return Offset 分页偏移量，取Limit整数倍。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍。
-                     * @param Offset 偏移量，取Limit整数倍。
+                     * 设置分页偏移量，取Limit整数倍。
+                     * @param Offset 分页偏移量，取Limit整数倍。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -532,13 +532,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例数量，参数默认值20，最大值为1000。
+                     * 每页输出实例的数量，参数默认值20，最大值为1000。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍。
+                     * 分页偏移量，取Limit整数倍。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;

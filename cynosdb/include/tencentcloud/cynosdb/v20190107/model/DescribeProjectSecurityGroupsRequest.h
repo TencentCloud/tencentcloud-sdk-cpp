@@ -60,6 +60,60 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取限制量
+                     * @return Limit 限制量
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置限制量
+                     * @param Limit 限制量
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取偏移量
+                     * @return Offset 偏移量
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置偏移量
+                     * @param Offset 偏移量
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
+                    /**
+                     * 获取搜索关键字
+                     * @return SearchKey 搜索关键字
+                     */
+                    std::string GetSearchKey() const;
+
+                    /**
+                     * 设置搜索关键字
+                     * @param SearchKey 搜索关键字
+                     */
+                    void SetSearchKey(const std::string& _searchKey);
+
+                    /**
+                     * 判断参数 SearchKey 是否已赋值
+                     * @return SearchKey 是否已赋值
+                     */
+                    bool SearchKeyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +121,24 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 限制量
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 偏移量
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
+
+                    /**
+                     * 搜索关键字
+                     */
+                    std::string m_searchKey;
+                    bool m_searchKeyHasBeenSet;
 
                 };
             }

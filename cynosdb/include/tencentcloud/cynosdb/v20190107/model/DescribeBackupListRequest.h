@@ -262,6 +262,24 @@ namespace TencentCloud
                      */
                     bool BackupNamesHasBeenSet() const;
 
+                    /**
+                     * 获取快照备份Id列表
+                     * @return SnapshotIdList 快照备份Id列表
+                     */
+                    std::vector<int64_t> GetSnapshotIdList() const;
+
+                    /**
+                     * 设置快照备份Id列表
+                     * @param SnapshotIdList 快照备份Id列表
+                     */
+                    void SetSnapshotIdList(const std::vector<int64_t>& _snapshotIdList);
+
+                    /**
+                     * 判断参数 SnapshotIdList 是否已赋值
+                     * @return SnapshotIdList 是否已赋值
+                     */
+                    bool SnapshotIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -336,6 +354,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_backupNames;
                     bool m_backupNamesHasBeenSet;
+
+                    /**
+                     * 快照备份Id列表
+                     */
+                    std::vector<int64_t> m_snapshotIdList;
+                    bool m_snapshotIdListHasBeenSet;
 
                 };
             }

@@ -34,7 +34,8 @@ DescribeBackupListRequest::DescribeBackupListRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_fileNamesHasBeenSet(false),
-    m_backupNamesHasBeenSet(false)
+    m_backupNamesHasBeenSet(false),
+    m_snapshotIdListHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,19 @@ string DescribeBackupListRequest::ToJsonString() const
         for (auto itr = m_backupNames.begin(); itr != m_backupNames.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_snapshotIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SnapshotIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_snapshotIdList.begin(); itr != m_snapshotIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
     }
 
@@ -354,6 +368,22 @@ void DescribeBackupListRequest::SetBackupNames(const vector<string>& _backupName
 bool DescribeBackupListRequest::BackupNamesHasBeenSet() const
 {
     return m_backupNamesHasBeenSet;
+}
+
+vector<int64_t> DescribeBackupListRequest::GetSnapshotIdList() const
+{
+    return m_snapshotIdList;
+}
+
+void DescribeBackupListRequest::SetSnapshotIdList(const vector<int64_t>& _snapshotIdList)
+{
+    m_snapshotIdList = _snapshotIdList;
+    m_snapshotIdListHasBeenSet = true;
+}
+
+bool DescribeBackupListRequest::SnapshotIdListHasBeenSet() const
+{
+    return m_snapshotIdListHasBeenSet;
 }
 
 

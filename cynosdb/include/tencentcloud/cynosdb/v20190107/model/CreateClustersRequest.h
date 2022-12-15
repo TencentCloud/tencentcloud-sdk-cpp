@@ -777,14 +777,14 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool AlarmPolicyIdsHasBeenSet() const;
 
                     /**
-                     * 获取参数数组
-                     * @return ClusterParams 参数数组
+                     * 获取参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
+                     * @return ClusterParams 参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
                      */
                     std::vector<ParamItem> GetClusterParams() const;
 
                     /**
-                     * 设置参数数组
-                     * @param ClusterParams 参数数组
+                     * 设置参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
+                     * @param ClusterParams 参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
                      */
                     void SetClusterParams(const std::vector<ParamItem>& _clusterParams);
 
@@ -1088,7 +1088,7 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                     bool m_alarmPolicyIdsHasBeenSet;
 
                     /**
-                     * 参数数组
+                     * 参数数组，暂时支持character_set_server （utf8｜latin1｜gbk｜utf8mb4） ，lower_case_table_names，1-大小写不敏感，0-大小写敏感
                      */
                     std::vector<ParamItem> m_clusterParams;
                     bool m_clusterParamsHasBeenSet;

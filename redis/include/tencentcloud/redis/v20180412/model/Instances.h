@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户AppID
-                     * @return AppId 用户AppID
+                     * 获取用户AppID。
+                     * @return AppId 用户AppID。
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户AppID
-                     * @param AppId 用户AppID
+                     * 设置用户AppID。
+                     * @param AppId 用户AppID。
                      */
                     void SetAppId(const int64_t& _appId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取实例名称。
+                     * @return InstanceName 实例名称。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * 设置实例名称。
+                     * @param InstanceName 实例名称。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取地域ID 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）
-                     * @return RegionId 地域ID 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）
+                     * 获取地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li> 5：香港。</li> <li> 6：多伦多。</li> <li> 7：上海金融。</li> <li> 8：北京。</li> <li> 9：新加坡。</li> <li> 11：深圳金融。</li> <li> 15：美西（硅谷）。</li> </ul>
+                     * @return RegionId 地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li> 5：香港。</li> <li> 6：多伦多。</li> <li> 7：上海金融。</li> <li> 8：北京。</li> <li> 9：新加坡。</li> <li> 11：深圳金融。</li> <li> 15：美西（硅谷）。</li> </ul>
                      */
                     uint64_t GetRegionId() const;
 
                     /**
-                     * 设置地域ID 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）
-                     * @param RegionId 地域ID 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）
+                     * 设置地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li> 5：香港。</li> <li> 6：多伦多。</li> <li> 7：上海金融。</li> <li> 8：北京。</li> <li> 9：新加坡。</li> <li> 11：深圳金融。</li> <li> 15：美西（硅谷）。</li> </ul>
+                     * @param RegionId 地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li> 5：香港。</li> <li> 6：多伦多。</li> <li> 7：上海金融。</li> <li> 8：北京。</li> <li> 9：新加坡。</li> <li> 11：深圳金融。</li> <li> 15：美西（硅谷）。</li> </ul>
                      */
                     void SetRegionId(const uint64_t& _regionId);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取区域ID
-                     * @return ZoneId 区域ID
+                     * 获取区域 ID。
+                     * @return ZoneId 区域 ID。
                      */
                     uint64_t GetZoneId() const;
 
                     /**
-                     * 设置区域ID
-                     * @param ZoneId 区域ID
+                     * 设置区域 ID。
+                     * @param ZoneId 区域 ID。
                      */
                     void SetZoneId(const uint64_t& _zoneId);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取副本数量
-                     * @return RedisReplicasNum 副本数量
+                     * 获取副本数量。
+                     * @return RedisReplicasNum 副本数量。
                      */
                     uint64_t GetRedisReplicasNum() const;
 
                     /**
-                     * 设置副本数量
-                     * @param RedisReplicasNum 副本数量
+                     * 设置副本数量。
+                     * @param RedisReplicasNum 副本数量。
                      */
                     void SetRedisReplicasNum(const uint64_t& _redisReplicasNum);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool RedisReplicasNumHasBeenSet() const;
 
                     /**
-                     * 获取分片数量
-                     * @return RedisShardNum 分片数量
+                     * 获取分片数量。
+                     * @return RedisShardNum 分片数量。
                      */
                     int64_t GetRedisShardNum() const;
 
                     /**
-                     * 设置分片数量
-                     * @param RedisShardNum 分片数量
+                     * 设置分片数量。
+                     * @param RedisShardNum 分片数量。
                      */
                     void SetRedisShardNum(const int64_t& _redisShardNum);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool RedisShardNumHasBeenSet() const;
 
                     /**
-                     * 获取分片大小
-                     * @return RedisShardSize 分片大小
+                     * 获取分片内存大小。
+                     * @return RedisShardSize 分片内存大小。
                      */
                     int64_t GetRedisShardSize() const;
 
                     /**
-                     * 设置分片大小
-                     * @param RedisShardSize 分片大小
+                     * 设置分片内存大小。
+                     * @param RedisShardSize 分片内存大小。
                      */
                     void SetRedisShardSize(const int64_t& _redisShardSize);
 
@@ -213,14 +213,14 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取引擎：社区版Redis、腾讯云CKV
-                     * @return Engine 引擎：社区版Redis、腾讯云CKV
+                     * 获取引擎：社区版Redis、腾讯云CKV。
+                     * @return Engine 引擎：社区版Redis、腾讯云CKV。
                      */
                     std::string GetEngine() const;
 
                     /**
-                     * 设置引擎：社区版Redis、腾讯云CKV
-                     * @param Engine 引擎：社区版Redis、腾讯云CKV
+                     * 设置引擎：社区版Redis、腾讯云CKV。
+                     * @param Engine 引擎：社区版Redis、腾讯云CKV。
                      */
                     void SetEngine(const std::string& _engine);
 
@@ -231,14 +231,14 @@ namespace TencentCloud
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取实例角色，rw可读写，r只读
-                     * @return Role 实例角色，rw可读写，r只读
+                     * 获取实例读写权限。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
+                     * @return Role 实例读写权限。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
                      */
                     std::string GetRole() const;
 
                     /**
-                     * 设置实例角色，rw可读写，r只读
-                     * @param Role 实例角色，rw可读写，r只读
+                     * 设置实例读写权限。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
+                     * @param Role 实例读写权限。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
                      */
                     void SetRole(const std::string& _role);
 
@@ -249,14 +249,14 @@ namespace TencentCloud
                     bool RoleHasBeenSet() const;
 
                     /**
-                     * 获取实例VIP
-                     * @return Vip 实例VIP
+                     * 获取实例 VIP 地址。
+                     * @return Vip 实例 VIP 地址。
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置实例VIP
-                     * @param Vip 实例VIP
+                     * 设置实例 VIP 地址。
+                     * @param Vip 实例 VIP 地址。
                      */
                     void SetVip(const std::string& _vip);
 
@@ -267,17 +267,17 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取内部参数，用户可忽略
+                     * 获取内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Vip6 内部参数，用户可忽略
+                     * @return Vip6 内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVip6() const;
 
                     /**
-                     * 设置内部参数，用户可忽略
+                     * 设置内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Vip6 内部参数，用户可忽略
+                     * @param Vip6 内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVip6(const std::string& _vip6);
@@ -289,14 +289,14 @@ namespace TencentCloud
                     bool Vip6HasBeenSet() const;
 
                     /**
-                     * 获取vpc网络ID 如：75101
-                     * @return VpcID vpc网络ID 如：75101
+                     * 获取VPC 网络ID，如：75101。
+                     * @return VpcID VPC 网络ID，如：75101。
                      */
                     int64_t GetVpcID() const;
 
                     /**
-                     * 设置vpc网络ID 如：75101
-                     * @param VpcID vpc网络ID 如：75101
+                     * 设置VPC 网络ID，如：75101。
+                     * @param VpcID VPC 网络ID，如：75101。
                      */
                     void SetVpcID(const int64_t& _vpcID);
 
@@ -307,14 +307,14 @@ namespace TencentCloud
                     bool VpcIDHasBeenSet() const;
 
                     /**
-                     * 获取实例端口
-                     * @return VPort 实例端口
+                     * 获取实例端口。
+                     * @return VPort 实例端口。
                      */
                     int64_t GetVPort() const;
 
                     /**
-                     * 设置实例端口
-                     * @param VPort 实例端口
+                     * 设置实例端口。
+                     * @param VPort 实例端口。
                      */
                     void SetVPort(const int64_t& _vPort);
 
@@ -325,14 +325,14 @@ namespace TencentCloud
                     bool VPortHasBeenSet() const;
 
                     /**
-                     * 获取实例状态：0-待初始化，1-流程中，2-运行中，-2-已隔离，-3-待删除
-                     * @return Status 实例状态：0-待初始化，1-流程中，2-运行中，-2-已隔离，-3-待删除
+                     * 获取实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * @return Status 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态：0-待初始化，1-流程中，2-运行中，-2-已隔离，-3-待删除
-                     * @param Status 实例状态：0-待初始化，1-流程中，2-运行中，-2-已隔离，-3-待删除
+                     * 设置实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
+                     * @param Status 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -343,14 +343,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取仓库ID
-                     * @return GrocerySysId 仓库ID
+                     * 获取仓库ID。
+                     * @return GrocerySysId 仓库ID。
                      */
                     int64_t GetGrocerySysId() const;
 
                     /**
-                     * 设置仓库ID
-                     * @param GrocerySysId 仓库ID
+                     * 设置仓库ID。
+                     * @param GrocerySysId 仓库ID。
                      */
                     void SetGrocerySysId(const int64_t& _grocerySysId);
 
@@ -361,14 +361,14 @@ namespace TencentCloud
                     bool GrocerySysIdHasBeenSet() const;
 
                     /**
-                     * 获取实例类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
-                     * @return ProductType 实例类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
+                     * 获取实例类型。<ul><li>1：Redis 2.8 内存版（集群架构）。</li><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li></ul>
+                     * @return ProductType 实例类型。<ul><li>1：Redis 2.8 内存版（集群架构）。</li><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li></ul>
                      */
                     int64_t GetProductType() const;
 
                     /**
-                     * 设置实例类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
-                     * @param ProductType 实例类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
+                     * 设置实例类型。<ul><li>1：Redis 2.8 内存版（集群架构）。</li><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li></ul>
+                     * @param ProductType 实例类型。<ul><li>1：Redis 2.8 内存版（集群架构）。</li><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li></ul>
                      */
                     void SetProductType(const int64_t& _productType);
 
@@ -379,14 +379,14 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取实例加入复制组的时间。
+                     * @return CreateTime 实例加入复制组的时间。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * 设置实例加入复制组的时间。
+                     * @param CreateTime 实例加入复制组的时间。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -397,14 +397,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新实例
-                     * @return UpdateTime 更新实例
+                     * 获取复制组中实例更新的时间。
+                     * @return UpdateTime 复制组中实例更新的时间。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新实例
-                     * @param UpdateTime 更新实例
+                     * 设置复制组中实例更新的时间。
+                     * @param UpdateTime 复制组中实例更新的时间。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -417,49 +417,49 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户AppID
+                     * 用户AppID。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 地域ID 1--广州 4--上海 5-- 香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）
+                     * 地域ID。<ul><li>1：广州。</li><li>4：上海。</li><li> 5：香港。</li> <li> 6：多伦多。</li> <li> 7：上海金融。</li> <li> 8：北京。</li> <li> 9：新加坡。</li> <li> 11：深圳金融。</li> <li> 15：美西（硅谷）。</li> </ul>
                      */
                     uint64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 区域ID
+                     * 区域 ID。
                      */
                     uint64_t m_zoneId;
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 副本数量
+                     * 副本数量。
                      */
                     uint64_t m_redisReplicasNum;
                     bool m_redisReplicasNumHasBeenSet;
 
                     /**
-                     * 分片数量
+                     * 分片数量。
                      */
                     int64_t m_redisShardNum;
                     bool m_redisShardNumHasBeenSet;
 
                     /**
-                     * 分片大小
+                     * 分片内存大小。
                      */
                     int64_t m_redisShardSize;
                     bool m_redisShardSizeHasBeenSet;
@@ -472,68 +472,68 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 引擎：社区版Redis、腾讯云CKV
+                     * 引擎：社区版Redis、腾讯云CKV。
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;
 
                     /**
-                     * 实例角色，rw可读写，r只读
+                     * 实例读写权限。<ul><li>rw：可读写。</li><li>r：只读。</li></ul>
                      */
                     std::string m_role;
                     bool m_roleHasBeenSet;
 
                     /**
-                     * 实例VIP
+                     * 实例 VIP 地址。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 内部参数，用户可忽略
+                     * 内部参数，用户可忽略。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip6;
                     bool m_vip6HasBeenSet;
 
                     /**
-                     * vpc网络ID 如：75101
+                     * VPC 网络ID，如：75101。
                      */
                     int64_t m_vpcID;
                     bool m_vpcIDHasBeenSet;
 
                     /**
-                     * 实例端口
+                     * 实例端口。
                      */
                     int64_t m_vPort;
                     bool m_vPortHasBeenSet;
 
                     /**
-                     * 实例状态：0-待初始化，1-流程中，2-运行中，-2-已隔离，-3-待删除
+                     * 实例状态。<ul><li>0：待初始化。</li><li>1：流程中。</li><li>2：运行中。</li><li>-2：已隔离。</li><li>-3：待删除。</li></ul>
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 仓库ID
+                     * 仓库ID。
                      */
                     int64_t m_grocerySysId;
                     bool m_grocerySysIdHasBeenSet;
 
                     /**
-                     * 实例类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
+                     * 实例类型。<ul><li>1：Redis 2.8 内存版（集群架构）。</li><li>2：Redis 2.8 内存版（标准架构）。</li><li>3：CKV 3.2 内存版（标准架构）。</li><li>4：CKV 3.2 内存版（集群架构）。</li><li>5：Redis 2.8 单机版。</li><li>6：Redis 4.0 内存版（标准架构）。</li><li>7：Redis 4.0 内存版（集群架构）。</li><li>8：Redis 5.0 内存版（标准架构）。</li><li>9：Redis 5.0 内存版（集群架构）。</li></ul>
                      */
                     int64_t m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 实例加入复制组的时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新实例
+                     * 复制组中实例更新的时间。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
