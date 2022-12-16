@@ -389,6 +389,46 @@ namespace TencentCloud
                      */
                     bool VitalityVersionHasBeenSet() const;
 
+                    /**
+                     * 获取网络线路
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Line 网络线路
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetLine() const;
+
+                    /**
+                     * 设置网络线路
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Line 网络线路
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLine(const uint64_t& _line);
+
+                    /**
+                     * 判断参数 Line 是否已赋值
+                     * @return Line 是否已赋值
+                     */
+                    bool LineHasBeenSet() const;
+
+                    /**
+                     * 获取弹性业务带宽开关
+                     * @return ElasticServiceBandwidth 弹性业务带宽开关
+                     */
+                    uint64_t GetElasticServiceBandwidth() const;
+
+                    /**
+                     * 设置弹性业务带宽开关
+                     * @param ElasticServiceBandwidth 弹性业务带宽开关
+                     */
+                    void SetElasticServiceBandwidth(const uint64_t& _elasticServiceBandwidth);
+
+                    /**
+                     * 判断参数 ElasticServiceBandwidth 是否已赋值
+                     * @return ElasticServiceBandwidth 是否已赋值
+                     */
+                    bool ElasticServiceBandwidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -498,6 +538,19 @@ namespace TencentCloud
                      */
                     uint64_t m_vitalityVersion;
                     bool m_vitalityVersionHasBeenSet;
+
+                    /**
+                     * 网络线路
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_line;
+                    bool m_lineHasBeenSet;
+
+                    /**
+                     * 弹性业务带宽开关
+                     */
+                    uint64_t m_elasticServiceBandwidth;
+                    bool m_elasticServiceBandwidthHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ WaterPrintConfig::WaterPrintConfig() :
     m_openStatusHasBeenSet(false),
     m_listenersHasBeenSet(false),
     m_keysHasBeenSet(false),
-    m_verifyHasBeenSet(false)
+    m_verifyHasBeenSet(false),
+    m_cloudSdkProxyHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome WaterPrintConfig::Deserialize(const rapidjson::Value &value)
         m_verifyHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudSdkProxy") && !value["CloudSdkProxy"].IsNull())
+    {
+        if (!value["CloudSdkProxy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WaterPrintConfig.CloudSdkProxy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cloudSdkProxy = value["CloudSdkProxy"].GetInt64();
+        m_cloudSdkProxyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -163,6 +174,14 @@ void WaterPrintConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Verify";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_verify.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudSdkProxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudSdkProxy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cloudSdkProxy, allocator);
     }
 
 }
@@ -246,5 +265,21 @@ void WaterPrintConfig::SetVerify(const string& _verify)
 bool WaterPrintConfig::VerifyHasBeenSet() const
 {
     return m_verifyHasBeenSet;
+}
+
+int64_t WaterPrintConfig::GetCloudSdkProxy() const
+{
+    return m_cloudSdkProxy;
+}
+
+void WaterPrintConfig::SetCloudSdkProxy(const int64_t& _cloudSdkProxy)
+{
+    m_cloudSdkProxy = _cloudSdkProxy;
+    m_cloudSdkProxyHasBeenSet = true;
+}
+
+bool WaterPrintConfig::CloudSdkProxyHasBeenSet() const
+{
+    return m_cloudSdkProxyHasBeenSet;
 }
 

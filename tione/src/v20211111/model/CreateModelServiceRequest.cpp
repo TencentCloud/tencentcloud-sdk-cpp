@@ -48,7 +48,8 @@ CreateModelServiceRequest::CreateModelServiceRequest() :
     m_modelHotUpdateEnableHasBeenSet(false),
     m_scheduledActionHasBeenSet(false),
     m_volumeMountHasBeenSet(false),
-    m_serviceLimitHasBeenSet(false)
+    m_serviceLimitHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -294,6 +295,14 @@ string CreateModelServiceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_serviceLimit.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -718,6 +727,22 @@ void CreateModelServiceRequest::SetServiceLimit(const ServiceLimit& _serviceLimi
 bool CreateModelServiceRequest::ServiceLimitHasBeenSet() const
 {
     return m_serviceLimitHasBeenSet;
+}
+
+string CreateModelServiceRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void CreateModelServiceRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool CreateModelServiceRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 
 

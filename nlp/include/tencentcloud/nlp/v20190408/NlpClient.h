@@ -43,6 +43,10 @@
 #include <tencentcloud/nlp/v20190408/model/DescribeDictsResponse.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeWordItemsRequest.h>
 #include <tencentcloud/nlp/v20190408/model/DescribeWordItemsResponse.h>
+#include <tencentcloud/nlp/v20190408/model/GenerateCoupletRequest.h>
+#include <tencentcloud/nlp/v20190408/model/GenerateCoupletResponse.h>
+#include <tencentcloud/nlp/v20190408/model/GeneratePoetryRequest.h>
+#include <tencentcloud/nlp/v20190408/model/GeneratePoetryResponse.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionRequest.h>
 #include <tencentcloud/nlp/v20190408/model/KeywordsExtractionResponse.h>
 #include <tencentcloud/nlp/v20190408/model/LexicalAnalysisRequest.h>
@@ -115,6 +119,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWordItemsResponse> DescribeWordItemsOutcome;
                 typedef std::future<DescribeWordItemsOutcome> DescribeWordItemsOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::DescribeWordItemsRequest&, DescribeWordItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWordItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateCoupletResponse> GenerateCoupletOutcome;
+                typedef std::future<GenerateCoupletOutcome> GenerateCoupletOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::GenerateCoupletRequest&, GenerateCoupletOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateCoupletAsyncHandler;
+                typedef Outcome<Core::Error, Model::GeneratePoetryResponse> GeneratePoetryOutcome;
+                typedef std::future<GeneratePoetryOutcome> GeneratePoetryOutcomeCallable;
+                typedef std::function<void(const NlpClient*, const Model::GeneratePoetryRequest&, GeneratePoetryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GeneratePoetryAsyncHandler;
                 typedef Outcome<Core::Error, Model::KeywordsExtractionResponse> KeywordsExtractionOutcome;
                 typedef std::future<KeywordsExtractionOutcome> KeywordsExtractionOutcomeCallable;
                 typedef std::function<void(const NlpClient*, const Model::KeywordsExtractionRequest&, KeywordsExtractionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> KeywordsExtractionAsyncHandler;
@@ -251,6 +261,24 @@ namespace TencentCloud
                 DescribeWordItemsOutcome DescribeWordItems(const Model::DescribeWordItemsRequest &request);
                 void DescribeWordItemsAsync(const Model::DescribeWordItemsRequest& request, const DescribeWordItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWordItemsOutcomeCallable DescribeWordItemsCallable(const Model::DescribeWordItemsRequest& request);
+
+                /**
+                 *根据用户输入的命题关键词自动生成一副春联，包括上联、下联和横批。（如需开通请联系商务）
+                 * @param req GenerateCoupletRequest
+                 * @return GenerateCoupletOutcome
+                 */
+                GenerateCoupletOutcome GenerateCouplet(const Model::GenerateCoupletRequest &request);
+                void GenerateCoupletAsync(const Model::GenerateCoupletRequest& request, const GenerateCoupletAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateCoupletOutcomeCallable GenerateCoupletCallable(const Model::GenerateCoupletRequest& request);
+
+                /**
+                 *根据用户输入的命题关键词自动生成一首七言律诗或五言律诗。（如需开通请联系商务）
+                 * @param req GeneratePoetryRequest
+                 * @return GeneratePoetryOutcome
+                 */
+                GeneratePoetryOutcome GeneratePoetry(const Model::GeneratePoetryRequest &request);
+                void GeneratePoetryAsync(const Model::GeneratePoetryRequest& request, const GeneratePoetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GeneratePoetryOutcomeCallable GeneratePoetryCallable(const Model::GeneratePoetryRequest& request);
 
                 /**
                  *基于关键词提取平台，通过对文本内容进行深度分析，提取出文本内容中的关键信息，为用户实现诸如新闻内容关键词自动提取、评论关键词提取等提供基础服务。

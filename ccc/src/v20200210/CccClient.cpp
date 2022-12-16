@@ -1330,6 +1330,49 @@ CccClient::DisableCCCPhoneNumberOutcomeCallable CccClient::DisableCCCPhoneNumber
     return task->get_future();
 }
 
+CccClient::HangUpCallOutcome CccClient::HangUpCall(const HangUpCallRequest &request)
+{
+    auto outcome = MakeRequest(request, "HangUpCall");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HangUpCallResponse rsp = HangUpCallResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HangUpCallOutcome(rsp);
+        else
+            return HangUpCallOutcome(o.GetError());
+    }
+    else
+    {
+        return HangUpCallOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::HangUpCallAsync(const HangUpCallRequest& request, const HangUpCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HangUpCall(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::HangUpCallOutcomeCallable CccClient::HangUpCallCallable(const HangUpCallRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HangUpCallOutcome()>>(
+        [this, request]()
+        {
+            return this->HangUpCall(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::ModifyExtensionOutcome CccClient::ModifyExtension(const ModifyExtensionRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyExtension");

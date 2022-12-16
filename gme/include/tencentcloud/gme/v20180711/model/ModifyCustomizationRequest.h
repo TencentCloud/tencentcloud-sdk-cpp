@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool TextUrlHasBeenSet() const;
 
                     /**
-                     * 获取要修改的模型ID
-                     * @return ModelId 要修改的模型ID
+                     * 获取修改的模型ID
+                     * @return ModelId 修改的模型ID
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置要修改的模型ID
-                     * @param ModelId 要修改的模型ID
+                     * 设置修改的模型ID
+                     * @param ModelId 修改的模型ID
                      */
                     void SetModelId(const std::string& _modelId);
 
@@ -111,7 +111,7 @@ namespace TencentCloud
                     bool m_textUrlHasBeenSet;
 
                     /**
-                     * 要修改的模型ID
+                     * 修改的模型ID
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 语音消息转文本自学习模型配置
+                * 语音消息转文本热句模型配置
                 */
                 class CustomizationConfigs : public AbstractModel
                 {

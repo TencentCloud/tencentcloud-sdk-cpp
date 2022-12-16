@@ -1072,6 +1072,49 @@ SesClient::UpdateEmailIdentityOutcomeCallable SesClient::UpdateEmailIdentityCall
     return task->get_future();
 }
 
+SesClient::UpdateEmailSmtpPassWordOutcome SesClient::UpdateEmailSmtpPassWord(const UpdateEmailSmtpPassWordRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateEmailSmtpPassWord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateEmailSmtpPassWordResponse rsp = UpdateEmailSmtpPassWordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateEmailSmtpPassWordOutcome(rsp);
+        else
+            return UpdateEmailSmtpPassWordOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateEmailSmtpPassWordOutcome(outcome.GetError());
+    }
+}
+
+void SesClient::UpdateEmailSmtpPassWordAsync(const UpdateEmailSmtpPassWordRequest& request, const UpdateEmailSmtpPassWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateEmailSmtpPassWord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SesClient::UpdateEmailSmtpPassWordOutcomeCallable SesClient::UpdateEmailSmtpPassWordCallable(const UpdateEmailSmtpPassWordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateEmailSmtpPassWordOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateEmailSmtpPassWord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SesClient::UpdateEmailTemplateOutcome SesClient::UpdateEmailTemplate(const UpdateEmailTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateEmailTemplate");

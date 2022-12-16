@@ -184,7 +184,7 @@ namespace TencentCloud
                 CreateAppOutcomeCallable CreateAppCallable(const Model::CreateAppRequest& request);
 
                 /**
-                 *用户使用该接口可以创建语音消息转文本自学习模型，以供识别调用
+                 *用户使用该接口可以创建语音消息转文本热句模型，以供识别调用
                  * @param req CreateCustomizationRequest
                  * @return CreateCustomizationOutcome
                  */
@@ -202,7 +202,7 @@ namespace TencentCloud
                 CreateScanUserOutcomeCallable CreateScanUserCallable(const Model::CreateScanUserRequest& request);
 
                 /**
-                 *用户通过该接口可以删除语音消息转文本自学习模型
+                 *用户通过该接口可以删除语音消息转文本热句模型
                  * @param req DeleteCustomizationRequest
                  * @return DeleteCustomizationOutcome
                  */
@@ -302,7 +302,7 @@ namespace TencentCloud
                 DescribeUserInAndOutTimeOutcomeCallable DescribeUserInAndOutTimeCallable(const Model::DescribeUserInAndOutTimeRequest& request);
 
                 /**
-                 *查询语音消息转文本自学习模型列表
+                 *查询语音消息转文本热句模型列表
                  * @param req GetCustomizationListRequest
                  * @return GetCustomizationListOutcome
                  */
@@ -320,7 +320,7 @@ namespace TencentCloud
                 ModifyAppStatusOutcomeCallable ModifyAppStatusCallable(const Model::ModifyAppStatusRequest& request);
 
                 /**
-                 *用户通过该接口可以更新语音消息转文本自学习模型。
+                 *用户通过该接口可以更新语音消息转文本热句模型。
                  * @param req ModifyCustomizationRequest
                  * @return ModifyCustomizationOutcome
                  */
@@ -329,7 +329,7 @@ namespace TencentCloud
                 ModifyCustomizationOutcomeCallable ModifyCustomizationCallable(const Model::ModifyCustomizationRequest& request);
 
                 /**
-                 *通过该接口，用户可以修改语音消息转文本自学习模型状态，上下线自学习模型
+                 *通过该接口，用户可以修改语音消息转文本热句模型状态，上下线热句模型
                  * @param req ModifyCustomizationStateRequest
                  * @return ModifyCustomizationStateOutcome
                  */
@@ -403,7 +403,7 @@ namespace TencentCloud
 <h4 id="Callback_Declare"><b>回调相关说明：</b></h4>
 <li>如果在请求参数中指定了回调地址参数 Callback，即一个 HTTP(S) 协议接口的 URL，则需要支持 POST 方法，传输数据编码采用 UTF-8。</li>
 <li>在推送回调数据后，接收到的 HTTP 状态码为 200 时，表示推送成功。</li>
-<li>HTTP 头参数说明：</li>
+<li>HTTP 请求参数（query）说明：</li>
 <table>
 <thread>
 <tr>

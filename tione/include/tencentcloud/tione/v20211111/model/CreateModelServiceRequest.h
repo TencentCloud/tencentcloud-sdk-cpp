@@ -613,6 +613,24 @@ HYBRID_PAID:
                      */
                     bool ServiceLimitHasBeenSet() const;
 
+                    /**
+                     * 获取回调地址，用于回调创建服务状态信息
+                     * @return CallbackUrl 回调地址，用于回调创建服务状态信息
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置回调地址，用于回调创建服务状态信息
+                     * @param CallbackUrl 回调地址，用于回调创建服务状态信息
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -793,6 +811,12 @@ HYBRID_PAID:
                      */
                     ServiceLimit m_serviceLimit;
                     bool m_serviceLimitHasBeenSet;
+
+                    /**
+                     * 回调地址，用于回调创建服务状态信息
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
 
                 };
             }

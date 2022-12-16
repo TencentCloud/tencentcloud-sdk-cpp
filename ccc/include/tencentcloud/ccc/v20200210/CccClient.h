@@ -83,6 +83,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeTelSessionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h>
+#include <tencentcloud/ccc/v20200210/model/HangUpCallRequest.h>
+#include <tencentcloud/ccc/v20200210/model/HangUpCallResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyExtensionResponse.h>
 #include <tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h>
@@ -197,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableCCCPhoneNumberResponse> DisableCCCPhoneNumberOutcome;
                 typedef std::future<DisableCCCPhoneNumberOutcome> DisableCCCPhoneNumberOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DisableCCCPhoneNumberRequest&, DisableCCCPhoneNumberOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCCCPhoneNumberAsyncHandler;
+                typedef Outcome<Core::Error, Model::HangUpCallResponse> HangUpCallOutcome;
+                typedef std::future<HangUpCallOutcome> HangUpCallOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::HangUpCallRequest&, HangUpCallOutcome, const std::shared_ptr<const AsyncCallerContext>&)> HangUpCallAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyExtensionResponse> ModifyExtensionOutcome;
                 typedef std::future<ModifyExtensionOutcome> ModifyExtensionOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::ModifyExtensionRequest&, ModifyExtensionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExtensionAsyncHandler;
@@ -484,6 +489,15 @@ namespace TencentCloud
                 DisableCCCPhoneNumberOutcome DisableCCCPhoneNumber(const Model::DisableCCCPhoneNumberRequest &request);
                 void DisableCCCPhoneNumberAsync(const Model::DisableCCCPhoneNumberRequest& request, const DisableCCCPhoneNumberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableCCCPhoneNumberOutcomeCallable DisableCCCPhoneNumberCallable(const Model::DisableCCCPhoneNumberRequest& request);
+
+                /**
+                 *挂断电话
+                 * @param req HangUpCallRequest
+                 * @return HangUpCallOutcome
+                 */
+                HangUpCallOutcome HangUpCall(const Model::HangUpCallRequest &request);
+                void HangUpCallAsync(const Model::HangUpCallRequest& request, const HangUpCallAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                HangUpCallOutcomeCallable HangUpCallCallable(const Model::HangUpCallRequest& request);
 
                 /**
                  *修改话机账号(绑定技能组、绑定坐席账号)

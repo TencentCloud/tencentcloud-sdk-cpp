@@ -71,6 +71,8 @@
 #include <tencentcloud/ses/v20201002/model/SendEmailResponse.h>
 #include <tencentcloud/ses/v20201002/model/UpdateEmailIdentityRequest.h>
 #include <tencentcloud/ses/v20201002/model/UpdateEmailIdentityResponse.h>
+#include <tencentcloud/ses/v20201002/model/UpdateEmailSmtpPassWordRequest.h>
+#include <tencentcloud/ses/v20201002/model/UpdateEmailSmtpPassWordResponse.h>
 #include <tencentcloud/ses/v20201002/model/UpdateEmailTemplateRequest.h>
 #include <tencentcloud/ses/v20201002/model/UpdateEmailTemplateResponse.h>
 
@@ -159,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateEmailIdentityResponse> UpdateEmailIdentityOutcome;
                 typedef std::future<UpdateEmailIdentityOutcome> UpdateEmailIdentityOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::UpdateEmailIdentityRequest&, UpdateEmailIdentityOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmailIdentityAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateEmailSmtpPassWordResponse> UpdateEmailSmtpPassWordOutcome;
+                typedef std::future<UpdateEmailSmtpPassWordOutcome> UpdateEmailSmtpPassWordOutcomeCallable;
+                typedef std::function<void(const SesClient*, const Model::UpdateEmailSmtpPassWordRequest&, UpdateEmailSmtpPassWordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmailSmtpPassWordAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateEmailTemplateResponse> UpdateEmailTemplateOutcome;
                 typedef std::future<UpdateEmailTemplateOutcome> UpdateEmailTemplateOutcomeCallable;
                 typedef std::function<void(const SesClient*, const Model::UpdateEmailTemplateRequest&, UpdateEmailTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateEmailTemplateAsyncHandler;
@@ -382,6 +387,15 @@ namespace TencentCloud
                 UpdateEmailIdentityOutcome UpdateEmailIdentity(const Model::UpdateEmailIdentityRequest &request);
                 void UpdateEmailIdentityAsync(const Model::UpdateEmailIdentityRequest& request, const UpdateEmailIdentityAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateEmailIdentityOutcomeCallable UpdateEmailIdentityCallable(const Model::UpdateEmailIdentityRequest& request);
+
+                /**
+                 *设置邮箱的smtp密码。若要通过smtp发送邮件，必须为邮箱设置smtp密码。初始时，邮箱没有设置smtp密码，不能使用smtp的方式发送邮件。设置smtp密码后，可以修改密码。
+                 * @param req UpdateEmailSmtpPassWordRequest
+                 * @return UpdateEmailSmtpPassWordOutcome
+                 */
+                UpdateEmailSmtpPassWordOutcome UpdateEmailSmtpPassWord(const Model::UpdateEmailSmtpPassWordRequest &request);
+                void UpdateEmailSmtpPassWordAsync(const Model::UpdateEmailSmtpPassWordRequest& request, const UpdateEmailSmtpPassWordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateEmailSmtpPassWordOutcomeCallable UpdateEmailSmtpPassWordCallable(const Model::UpdateEmailSmtpPassWordRequest& request);
 
                 /**
                  *更新邮件模板，更新后需再次审核

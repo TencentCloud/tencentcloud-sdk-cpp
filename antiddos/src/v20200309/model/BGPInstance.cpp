@@ -36,7 +36,9 @@ BGPInstance::BGPInstance() :
     m_cCEnableHasBeenSet(false),
     m_tagInfoListHasBeenSet(false),
     m_ipCountNewFlagHasBeenSet(false),
-    m_vitalityVersionHasBeenSet(false)
+    m_vitalityVersionHasBeenSet(false),
+    m_lineHasBeenSet(false),
+    m_elasticServiceBandwidthHasBeenSet(false)
 {
 }
 
@@ -260,6 +262,26 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_vitalityVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Line") && !value["Line"].IsNull())
+    {
+        if (!value["Line"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.Line` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_line = value["Line"].GetUint64();
+        m_lineHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticServiceBandwidth") && !value["ElasticServiceBandwidth"].IsNull())
+    {
+        if (!value["ElasticServiceBandwidth"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.ElasticServiceBandwidth` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticServiceBandwidth = value["ElasticServiceBandwidth"].GetUint64();
+        m_elasticServiceBandwidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -412,6 +434,22 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "VitalityVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vitalityVersion, allocator);
+    }
+
+    if (m_lineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Line";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_line, allocator);
+    }
+
+    if (m_elasticServiceBandwidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticServiceBandwidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticServiceBandwidth, allocator);
     }
 
 }
@@ -671,5 +709,37 @@ void BGPInstance::SetVitalityVersion(const uint64_t& _vitalityVersion)
 bool BGPInstance::VitalityVersionHasBeenSet() const
 {
     return m_vitalityVersionHasBeenSet;
+}
+
+uint64_t BGPInstance::GetLine() const
+{
+    return m_line;
+}
+
+void BGPInstance::SetLine(const uint64_t& _line)
+{
+    m_line = _line;
+    m_lineHasBeenSet = true;
+}
+
+bool BGPInstance::LineHasBeenSet() const
+{
+    return m_lineHasBeenSet;
+}
+
+uint64_t BGPInstance::GetElasticServiceBandwidth() const
+{
+    return m_elasticServiceBandwidth;
+}
+
+void BGPInstance::SetElasticServiceBandwidth(const uint64_t& _elasticServiceBandwidth)
+{
+    m_elasticServiceBandwidth = _elasticServiceBandwidth;
+    m_elasticServiceBandwidthHasBeenSet = true;
+}
+
+bool BGPInstance::ElasticServiceBandwidthHasBeenSet() const
+{
+    return m_elasticServiceBandwidthHasBeenSet;
 }
 

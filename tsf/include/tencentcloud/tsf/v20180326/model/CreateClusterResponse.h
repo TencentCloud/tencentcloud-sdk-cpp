@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取集群ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Result 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResult() const;
 
@@ -59,6 +61,7 @@ namespace TencentCloud
 
                     /**
                      * 集群ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_result;
                     bool m_resultHasBeenSet;

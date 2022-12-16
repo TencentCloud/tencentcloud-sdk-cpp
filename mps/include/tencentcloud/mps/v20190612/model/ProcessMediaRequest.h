@@ -289,6 +289,32 @@ namespace TencentCloud
                      */
                     bool ScheduleIdHasBeenSet() const;
 
+                    /**
+                     * 获取任务类型，默认Online
+<li> Online：实时任务</li>
+<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * @return TaskType 任务类型，默认Online
+<li> Online：实时任务</li>
+<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     */
+                    std::string GetTaskType() const;
+
+                    /**
+                     * 设置任务类型，默认Online
+<li> Online：实时任务</li>
+<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     * @param TaskType 任务类型，默认Online
+<li> Online：实时任务</li>
+<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     */
+                    void SetTaskType(const std::string& _taskType);
+
+                    /**
+                     * 判断参数 TaskType 是否已赋值
+                     * @return TaskType 是否已赋值
+                     */
+                    bool TaskTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -368,6 +394,14 @@ namespace TencentCloud
                      */
                     int64_t m_scheduleId;
                     bool m_scheduleIdHasBeenSet;
+
+                    /**
+                     * 任务类型，默认Online
+<li> Online：实时任务</li>
+<li> Offline：闲时任务，不保证实效性，默认3天内处理完</li>
+                     */
+                    std::string m_taskType;
+                    bool m_taskTypeHasBeenSet;
 
                 };
             }

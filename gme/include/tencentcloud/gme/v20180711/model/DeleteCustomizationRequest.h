@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要删除的模型ID
-                     * @return ModelId 要删除的模型ID
+                     * 获取删除的模型ID
+                     * @return ModelId 删除的模型ID
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置要删除的模型ID
-                     * @param ModelId 要删除的模型ID
+                     * 设置删除的模型ID
+                     * @param ModelId 删除的模型ID
                      */
                     void SetModelId(const std::string& _modelId);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要删除的模型ID
+                     * 删除的模型ID
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;

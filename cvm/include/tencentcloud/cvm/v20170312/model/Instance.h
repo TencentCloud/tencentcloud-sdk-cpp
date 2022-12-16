@@ -772,6 +772,64 @@ namespace TencentCloud
                      */
                     bool DisableApiTerminationHasBeenSet() const;
 
+                    /**
+                     * 获取默认登录用户。
+                     * @return DefaultLoginUser 默认登录用户。
+                     */
+                    std::string GetDefaultLoginUser() const;
+
+                    /**
+                     * 设置默认登录用户。
+                     * @param DefaultLoginUser 默认登录用户。
+                     */
+                    void SetDefaultLoginUser(const std::string& _defaultLoginUser);
+
+                    /**
+                     * 判断参数 DefaultLoginUser 是否已赋值
+                     * @return DefaultLoginUser 是否已赋值
+                     */
+                    bool DefaultLoginUserHasBeenSet() const;
+
+                    /**
+                     * 获取默认登录端口。
+                     * @return DefaultLoginPort 默认登录端口。
+                     */
+                    int64_t GetDefaultLoginPort() const;
+
+                    /**
+                     * 设置默认登录端口。
+                     * @param DefaultLoginPort 默认登录端口。
+                     */
+                    void SetDefaultLoginPort(const int64_t& _defaultLoginPort);
+
+                    /**
+                     * 判断参数 DefaultLoginPort 是否已赋值
+                     * @return DefaultLoginPort 是否已赋值
+                     */
+                    bool DefaultLoginPortHasBeenSet() const;
+
+                    /**
+                     * 获取实例的最新操作错误信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LatestOperationErrorMsg 实例的最新操作错误信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLatestOperationErrorMsg() const;
+
+                    /**
+                     * 设置实例的最新操作错误信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LatestOperationErrorMsg 实例的最新操作错误信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLatestOperationErrorMsg(const std::string& _latestOperationErrorMsg);
+
+                    /**
+                     * 判断参数 LatestOperationErrorMsg 是否已赋值
+                     * @return LatestOperationErrorMsg 是否已赋值
+                     */
+                    bool LatestOperationErrorMsgHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1008,6 +1066,25 @@ namespace TencentCloud
                      */
                     bool m_disableApiTermination;
                     bool m_disableApiTerminationHasBeenSet;
+
+                    /**
+                     * 默认登录用户。
+                     */
+                    std::string m_defaultLoginUser;
+                    bool m_defaultLoginUserHasBeenSet;
+
+                    /**
+                     * 默认登录端口。
+                     */
+                    int64_t m_defaultLoginPort;
+                    bool m_defaultLoginPortHasBeenSet;
+
+                    /**
+                     * 实例的最新操作错误信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_latestOperationErrorMsg;
+                    bool m_latestOperationErrorMsgHasBeenSet;
 
                 };
             }

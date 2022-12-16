@@ -57,7 +57,10 @@ Instance::Instance() :
     m_isolatedSourceHasBeenSet(false),
     m_gPUInfoHasBeenSet(false),
     m_licenseTypeHasBeenSet(false),
-    m_disableApiTerminationHasBeenSet(false)
+    m_disableApiTerminationHasBeenSet(false),
+    m_defaultLoginUserHasBeenSet(false),
+    m_defaultLoginPortHasBeenSet(false),
+    m_latestOperationErrorMsgHasBeenSet(false)
 {
 }
 
@@ -513,6 +516,36 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_disableApiTerminationHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultLoginUser") && !value["DefaultLoginUser"].IsNull())
+    {
+        if (!value["DefaultLoginUser"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.DefaultLoginUser` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultLoginUser = string(value["DefaultLoginUser"].GetString());
+        m_defaultLoginUserHasBeenSet = true;
+    }
+
+    if (value.HasMember("DefaultLoginPort") && !value["DefaultLoginPort"].IsNull())
+    {
+        if (!value["DefaultLoginPort"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.DefaultLoginPort` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultLoginPort = value["DefaultLoginPort"].GetInt64();
+        m_defaultLoginPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("LatestOperationErrorMsg") && !value["LatestOperationErrorMsg"].IsNull())
+    {
+        if (!value["LatestOperationErrorMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.LatestOperationErrorMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_latestOperationErrorMsg = string(value["LatestOperationErrorMsg"].GetString());
+        m_latestOperationErrorMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -859,6 +892,30 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "DisableApiTermination";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_disableApiTermination, allocator);
+    }
+
+    if (m_defaultLoginUserHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultLoginUser";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultLoginUser.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultLoginPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultLoginPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultLoginPort, allocator);
+    }
+
+    if (m_latestOperationErrorMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LatestOperationErrorMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_latestOperationErrorMsg.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1454,5 +1511,53 @@ void Instance::SetDisableApiTermination(const bool& _disableApiTermination)
 bool Instance::DisableApiTerminationHasBeenSet() const
 {
     return m_disableApiTerminationHasBeenSet;
+}
+
+string Instance::GetDefaultLoginUser() const
+{
+    return m_defaultLoginUser;
+}
+
+void Instance::SetDefaultLoginUser(const string& _defaultLoginUser)
+{
+    m_defaultLoginUser = _defaultLoginUser;
+    m_defaultLoginUserHasBeenSet = true;
+}
+
+bool Instance::DefaultLoginUserHasBeenSet() const
+{
+    return m_defaultLoginUserHasBeenSet;
+}
+
+int64_t Instance::GetDefaultLoginPort() const
+{
+    return m_defaultLoginPort;
+}
+
+void Instance::SetDefaultLoginPort(const int64_t& _defaultLoginPort)
+{
+    m_defaultLoginPort = _defaultLoginPort;
+    m_defaultLoginPortHasBeenSet = true;
+}
+
+bool Instance::DefaultLoginPortHasBeenSet() const
+{
+    return m_defaultLoginPortHasBeenSet;
+}
+
+string Instance::GetLatestOperationErrorMsg() const
+{
+    return m_latestOperationErrorMsg;
+}
+
+void Instance::SetLatestOperationErrorMsg(const string& _latestOperationErrorMsg)
+{
+    m_latestOperationErrorMsg = _latestOperationErrorMsg;
+    m_latestOperationErrorMsgHasBeenSet = true;
+}
+
+bool Instance::LatestOperationErrorMsgHasBeenSet() const
+{
+    return m_latestOperationErrorMsgHasBeenSet;
 }
 

@@ -120,13 +120,21 @@ namespace TencentCloud
 
                     /**
                      * 获取通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      * @return NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      */
                     std::string GetNotifyType() const;
 
                     /**
                      * 设置通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      * @param NotifyType 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      */
                     void SetNotifyType(const std::string& _notifyType);
 
@@ -182,6 +190,8 @@ namespace TencentCloud
 
                     /**
                      * 通知类型，默认CMQ，指定URL时HTTP回调推送到 NotifyUrl 指定的地址。
+
+<font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      */
                     std::string m_notifyType;
                     bool m_notifyTypeHasBeenSet;

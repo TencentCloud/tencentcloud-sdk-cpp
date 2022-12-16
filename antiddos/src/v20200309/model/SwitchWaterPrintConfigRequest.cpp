@@ -24,7 +24,8 @@ using namespace std;
 
 SwitchWaterPrintConfigRequest::SwitchWaterPrintConfigRequest() :
     m_instanceIdHasBeenSet(false),
-    m_openStatusHasBeenSet(false)
+    m_openStatusHasBeenSet(false),
+    m_cloudSdkProxyHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string SwitchWaterPrintConfigRequest::ToJsonString() const
         string key = "OpenStatus";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_openStatus, allocator);
+    }
+
+    if (m_cloudSdkProxyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudSdkProxy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cloudSdkProxy, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void SwitchWaterPrintConfigRequest::SetOpenStatus(const int64_t& _openStatus)
 bool SwitchWaterPrintConfigRequest::OpenStatusHasBeenSet() const
 {
     return m_openStatusHasBeenSet;
+}
+
+int64_t SwitchWaterPrintConfigRequest::GetCloudSdkProxy() const
+{
+    return m_cloudSdkProxy;
+}
+
+void SwitchWaterPrintConfigRequest::SetCloudSdkProxy(const int64_t& _cloudSdkProxy)
+{
+    m_cloudSdkProxy = _cloudSdkProxy;
+    m_cloudSdkProxyHasBeenSet = true;
+}
+
+bool SwitchWaterPrintConfigRequest::CloudSdkProxyHasBeenSet() const
+{
+    return m_cloudSdkProxyHasBeenSet;
 }
 
 

@@ -470,6 +470,92 @@ NlpClient::DescribeWordItemsOutcomeCallable NlpClient::DescribeWordItemsCallable
     return task->get_future();
 }
 
+NlpClient::GenerateCoupletOutcome NlpClient::GenerateCouplet(const GenerateCoupletRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateCouplet");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateCoupletResponse rsp = GenerateCoupletResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateCoupletOutcome(rsp);
+        else
+            return GenerateCoupletOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateCoupletOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::GenerateCoupletAsync(const GenerateCoupletRequest& request, const GenerateCoupletAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateCouplet(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::GenerateCoupletOutcomeCallable NlpClient::GenerateCoupletCallable(const GenerateCoupletRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateCoupletOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateCouplet(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+NlpClient::GeneratePoetryOutcome NlpClient::GeneratePoetry(const GeneratePoetryRequest &request)
+{
+    auto outcome = MakeRequest(request, "GeneratePoetry");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GeneratePoetryResponse rsp = GeneratePoetryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GeneratePoetryOutcome(rsp);
+        else
+            return GeneratePoetryOutcome(o.GetError());
+    }
+    else
+    {
+        return GeneratePoetryOutcome(outcome.GetError());
+    }
+}
+
+void NlpClient::GeneratePoetryAsync(const GeneratePoetryRequest& request, const GeneratePoetryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GeneratePoetry(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+NlpClient::GeneratePoetryOutcomeCallable NlpClient::GeneratePoetryCallable(const GeneratePoetryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GeneratePoetryOutcome()>>(
+        [this, request]()
+        {
+            return this->GeneratePoetry(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 NlpClient::KeywordsExtractionOutcome NlpClient::KeywordsExtraction(const KeywordsExtractionRequest &request)
 {
     auto outcome = MakeRequest(request, "KeywordsExtraction");

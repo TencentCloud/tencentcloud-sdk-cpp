@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool BusinessHasBeenSet() const;
 
                     /**
-                     * 获取统计周期，可取值300，1800，3600，21600，86400，单位秒
-                     * @return Period 统计周期，可取值300，1800，3600，21600，86400，单位秒
+                     * 获取统计周期，可取值60，300，1800，3600，21600，86400，单位秒
+                     * @return Period 统计周期，可取值60，300，1800，3600，21600，86400，单位秒
                      */
                     uint64_t GetPeriod() const;
 
                     /**
-                     * 设置统计周期，可取值300，1800，3600，21600，86400，单位秒
-                     * @param Period 统计周期，可取值300，1800，3600，21600，86400，单位秒
+                     * 设置统计周期，可取值60，300，1800，3600，21600，86400，单位秒
+                     * @param Period 统计周期，可取值60，300，1800，3600，21600，86400，单位秒
                      */
                     void SetPeriod(const uint64_t& _period);
 
@@ -220,7 +220,7 @@ namespace TencentCloud
                     bool m_businessHasBeenSet;
 
                     /**
-                     * 统计周期，可取值300，1800，3600，21600，86400，单位秒
+                     * 统计周期，可取值60，300，1800，3600，21600，86400，单位秒
                      */
                     uint64_t m_period;
                     bool m_periodHasBeenSet;

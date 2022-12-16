@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入来源对象的类型，支持 COS 和 URL 两种。
-                     * @return Type 输入来源对象的类型，支持 COS 和 URL 两种。
+                     * 获取输入来源对象的类型，支持 COS、URL 两种。
+                     * @return Type 输入来源对象的类型，支持 COS、URL 两种。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置输入来源对象的类型，支持 COS 和 URL 两种。
-                     * @param Type 输入来源对象的类型，支持 COS 和 URL 两种。
+                     * 设置输入来源对象的类型，支持 COS、URL 两种。
+                     * @param Type 输入来源对象的类型，支持 COS、URL 两种。
                      */
                     void SetType(const std::string& _type);
 
@@ -109,7 +109,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 输入来源对象的类型，支持 COS 和 URL 两种。
+                     * 输入来源对象的类型，支持 COS、URL 两种。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
