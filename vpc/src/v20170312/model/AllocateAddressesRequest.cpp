@@ -33,7 +33,8 @@ AllocateAddressesRequest::AllocateAddressesRequest() :
     m_applicableForCLBHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_bandwidthPackageIdHasBeenSet(false),
-    m_addressNameHasBeenSet(false)
+    m_addressNameHasBeenSet(false),
+    m_egressHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,14 @@ string AllocateAddressesRequest::ToJsonString() const
         string key = "AddressName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_addressName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_egressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Egress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_egress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -322,6 +331,22 @@ void AllocateAddressesRequest::SetAddressName(const string& _addressName)
 bool AllocateAddressesRequest::AddressNameHasBeenSet() const
 {
     return m_addressNameHasBeenSet;
+}
+
+string AllocateAddressesRequest::GetEgress() const
+{
+    return m_egress;
+}
+
+void AllocateAddressesRequest::SetEgress(const string& _egress)
+{
+    m_egress = _egress;
+    m_egressHasBeenSet = true;
+}
+
+bool AllocateAddressesRequest::EgressHasBeenSet() const
+{
+    return m_egressHasBeenSet;
 }
 
 

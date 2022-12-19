@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ServiceInstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取是否是PassService类型。
-                     * @return IsPassService 是否是PassService类型。
+                     * 获取~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
+                     * @return IsPassService ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
                      */
                     bool GetIsPassService() const;
 
                     /**
-                     * 设置是否是PassService类型。
-                     * @param IsPassService 是否是PassService类型。
+                     * 设置~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
+                     * @param IsPassService ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
                      */
                     void SetIsPassService(const bool& _isPassService);
 
@@ -131,6 +131,24 @@ namespace TencentCloud
                      * @return IsPassService 是否已赋值
                      */
                     bool IsPassServiceHasBeenSet() const;
+
+                    /**
+                     * 获取挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * @return ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     */
+                    std::string GetServiceType() const;
+
+                    /**
+                     * 设置挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     * @param ServiceType 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     */
+                    void SetServiceType(const std::string& _serviceType);
+
+                    /**
+                     * 判断参数 ServiceType 是否已赋值
+                     * @return ServiceType 是否已赋值
+                     */
+                    bool ServiceTypeHasBeenSet() const;
 
                 private:
 
@@ -159,10 +177,16 @@ namespace TencentCloud
                     bool m_serviceInstanceIdHasBeenSet;
 
                     /**
-                     * 是否是PassService类型。
+                     * ~~是否是PassService类型。该字段已废弃，请不要使用该字段。~~
                      */
                     bool m_isPassService;
                     bool m_isPassServiceHasBeenSet;
+
+                    /**
+                     * 挂载的PAAS服务类型，CLB,CDB,CRS，不填默认挂载为CLB。
+                     */
+                    std::string m_serviceType;
+                    bool m_serviceTypeHasBeenSet;
 
                 };
             }

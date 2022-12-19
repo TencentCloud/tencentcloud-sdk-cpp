@@ -136,6 +136,50 @@ namespace TencentCloud
                      */
                     bool FileSystemIdHasBeenSet() const;
 
+                    /**
+                     * 获取容量使用，单位GiB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CapacityUsed 容量使用，单位GiB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCapacityUsed() const;
+
+                    /**
+                     * 设置容量使用，单位GiB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CapacityUsed 容量使用，单位GiB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCapacityUsed(const uint64_t& _capacityUsed);
+
+                    /**
+                     * 判断参数 CapacityUsed 是否已赋值
+                     * @return CapacityUsed 是否已赋值
+                     */
+                    bool CapacityUsedHasBeenSet() const;
+
+                    /**
+                     * 获取文件使用个数，单位个
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileUsed 文件使用个数，单位个
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetFileUsed() const;
+
+                    /**
+                     * 设置文件使用个数，单位个
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileUsed 文件使用个数，单位个
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileUsed(const uint64_t& _fileUsed);
+
+                    /**
+                     * 判断参数 FileUsed 是否已赋值
+                     * @return FileUsed 是否已赋值
+                     */
+                    bool FileUsedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +211,20 @@ namespace TencentCloud
                      */
                     std::string m_fileSystemId;
                     bool m_fileSystemIdHasBeenSet;
+
+                    /**
+                     * 容量使用，单位GiB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_capacityUsed;
+                    bool m_capacityUsedHasBeenSet;
+
+                    /**
+                     * 文件使用个数，单位个
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_fileUsed;
+                    bool m_fileUsedHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
 ExportImagesResponse::ExportImagesResponse() :
-    m_taskIdHasBeenSet(false)
+    m_taskIdHasBeenSet(false),
+    m_cosPathsHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,19 @@ CoreInternalOutcome ExportImagesResponse::Deserialize(const string &payload)
         m_taskIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CosPaths") && !rsp["CosPaths"].IsNull())
+    {
+        if (!rsp["CosPaths"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CosPaths` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CosPaths"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cosPaths.push_back((*itr).GetString());
+        }
+        m_cosPathsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +102,19 @@ string ExportImagesResponse::ToJsonString() const
         string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskId, allocator);
+    }
+
+    if (m_cosPathsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosPaths";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cosPaths.begin(); itr != m_cosPaths.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +137,16 @@ uint64_t ExportImagesResponse::GetTaskId() const
 bool ExportImagesResponse::TaskIdHasBeenSet() const
 {
     return m_taskIdHasBeenSet;
+}
+
+vector<string> ExportImagesResponse::GetCosPaths() const
+{
+    return m_cosPaths;
+}
+
+bool ExportImagesResponse::CosPathsHasBeenSet() const
+{
+    return m_cosPathsHasBeenSet;
 }
 
 

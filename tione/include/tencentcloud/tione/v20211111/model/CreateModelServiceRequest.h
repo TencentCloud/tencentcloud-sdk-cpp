@@ -614,14 +614,14 @@ HYBRID_PAID:
                     bool ServiceLimitHasBeenSet() const;
 
                     /**
-                     * 获取回调地址，用于回调创建服务状态信息
-                     * @return CallbackUrl 回调地址，用于回调创建服务状态信息
+                     * 获取回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
+                     * @return CallbackUrl 回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
                      */
                     std::string GetCallbackUrl() const;
 
                     /**
-                     * 设置回调地址，用于回调创建服务状态信息
-                     * @param CallbackUrl 回调地址，用于回调创建服务状态信息
+                     * 设置回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
+                     * @param CallbackUrl 回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
                      */
                     void SetCallbackUrl(const std::string& _callbackUrl);
 
@@ -813,7 +813,7 @@ HYBRID_PAID:
                     bool m_serviceLimitHasBeenSet;
 
                     /**
-                     * 回调地址，用于回调创建服务状态信息
+                     * 回调地址，用于回调创建服务状态信息，回调格式&内容详情见：[TI-ONE 接口回调说明](https://cloud.tencent.com/document/product/851/84292)
                      */
                     std::string m_callbackUrl;
                     bool m_callbackUrlHasBeenSet;

@@ -40,7 +40,8 @@ CreateBatchTaskRequest::CreateBatchTaskRequest() :
     m_logConfigHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -220,6 +221,14 @@ string CreateBatchTaskRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -516,6 +525,22 @@ void CreateBatchTaskRequest::SetRemark(const string& _remark)
 bool CreateBatchTaskRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string CreateBatchTaskRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void CreateBatchTaskRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool CreateBatchTaskRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 
 

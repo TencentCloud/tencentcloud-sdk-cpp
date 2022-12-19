@@ -93,6 +93,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationResponse.h
   include/tencentcloud/ssl/v20191205/model/RevokeCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/PreAuditInfo.h
   include/tencentcloud/ssl/v20191205/model/SubmittedData.h
   )
 
@@ -172,6 +173,7 @@ set(ssl_src
   src/v20191205/model/CompleteCertificateResponse.cpp
   src/v20191205/model/SubmitCertificateInformationResponse.cpp
   src/v20191205/model/RevokeCertificateRequest.cpp
+  src/v20191205/model/PreAuditInfo.cpp
   src/v20191205/model/SubmittedData.cpp
   )
 

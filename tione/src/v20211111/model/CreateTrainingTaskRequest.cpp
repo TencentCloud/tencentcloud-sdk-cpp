@@ -43,7 +43,8 @@ CreateTrainingTaskRequest::CreateTrainingTaskRequest() :
     m_logConfigHasBeenSet(false),
     m_tuningParametersHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_dataSourceHasBeenSet(false)
+    m_dataSourceHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -246,6 +247,14 @@ string CreateTrainingTaskRequest::ToJsonString() const
         string key = "DataSource";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dataSource.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -590,6 +599,22 @@ void CreateTrainingTaskRequest::SetDataSource(const string& _dataSource)
 bool CreateTrainingTaskRequest::DataSourceHasBeenSet() const
 {
     return m_dataSourceHasBeenSet;
+}
+
+string CreateTrainingTaskRequest::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void CreateTrainingTaskRequest::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool CreateTrainingTaskRequest::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 
 

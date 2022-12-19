@@ -27,7 +27,8 @@ CreateVpcEndPointServiceRequest::CreateVpcEndPointServiceRequest() :
     m_endPointServiceNameHasBeenSet(false),
     m_autoAcceptFlagHasBeenSet(false),
     m_serviceInstanceIdHasBeenSet(false),
-    m_isPassServiceHasBeenSet(false)
+    m_isPassServiceHasBeenSet(false),
+    m_serviceTypeHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string CreateVpcEndPointServiceRequest::ToJsonString() const
         string key = "IsPassService";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isPassService, allocator);
+    }
+
+    if (m_serviceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_serviceType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +173,22 @@ void CreateVpcEndPointServiceRequest::SetIsPassService(const bool& _isPassServic
 bool CreateVpcEndPointServiceRequest::IsPassServiceHasBeenSet() const
 {
     return m_isPassServiceHasBeenSet;
+}
+
+string CreateVpcEndPointServiceRequest::GetServiceType() const
+{
+    return m_serviceType;
+}
+
+void CreateVpcEndPointServiceRequest::SetServiceType(const string& _serviceType)
+{
+    m_serviceType = _serviceType;
+    m_serviceTypeHasBeenSet = true;
+}
+
+bool CreateVpcEndPointServiceRequest::ServiceTypeHasBeenSet() const
+{
+    return m_serviceTypeHasBeenSet;
 }
 
 

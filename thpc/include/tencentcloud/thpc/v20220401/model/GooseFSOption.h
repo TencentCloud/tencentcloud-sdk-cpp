@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取文件系统本地挂载路径
-                     * @return LocalPath 文件系统本地挂载路径
+                     * 获取文件系统本地挂载路径。
+                     * @return LocalPath 文件系统本地挂载路径。
                      */
                     std::string GetLocalPath() const;
 
                     /**
-                     * 设置文件系统本地挂载路径
-                     * @param LocalPath 文件系统本地挂载路径
+                     * 设置文件系统本地挂载路径。
+                     * @param LocalPath 文件系统本地挂载路径。
                      */
                     void SetLocalPath(const std::string& _localPath);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool LocalPathHasBeenSet() const;
 
                     /**
-                     * 获取文件系统远程挂载路径
-                     * @return RemotePath 文件系统远程挂载路径
+                     * 获取文件系统远程挂载路径。
+                     * @return RemotePath 文件系统远程挂载路径。
                      */
                     std::string GetRemotePath() const;
 
                     /**
-                     * 设置文件系统远程挂载路径
-                     * @param RemotePath 文件系统远程挂载路径
+                     * 设置文件系统远程挂载路径。
+                     * @param RemotePath 文件系统远程挂载路径。
                      */
                     void SetRemotePath(const std::string& _remotePath);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RemotePathHasBeenSet() const;
 
                     /**
-                     * 获取文件系统master的ip和端口
-                     * @return Masters 文件系统master的ip和端口
+                     * 获取文件系统master的ip和端口。
+                     * @return Masters 文件系统master的ip和端口。
                      */
                     std::vector<std::string> GetMasters() const;
 
                     /**
-                     * 设置文件系统master的ip和端口
-                     * @param Masters 文件系统master的ip和端口
+                     * 设置文件系统master的ip和端口。
+                     * @param Masters 文件系统master的ip和端口。
                      */
                     void SetMasters(const std::vector<std::string>& _masters);
 
@@ -103,19 +103,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 文件系统本地挂载路径
+                     * 文件系统本地挂载路径。
                      */
                     std::string m_localPath;
                     bool m_localPathHasBeenSet;
 
                     /**
-                     * 文件系统远程挂载路径
+                     * 文件系统远程挂载路径。
                      */
                     std::string m_remotePath;
                     bool m_remotePathHasBeenSet;
 
                     /**
-                     * 文件系统master的ip和端口
+                     * 文件系统master的ip和端口。
                      */
                     std::vector<std::string> m_masters;
                     bool m_mastersHasBeenSet;

@@ -53,7 +53,11 @@ Certificates::Certificates() :
     m_tagsHasBeenSet(false),
     m_isIgnoreHasBeenSet(false),
     m_isSMHasBeenSet(false),
-    m_encryptAlgorithmHasBeenSet(false)
+    m_encryptAlgorithmHasBeenSet(false),
+    m_cAEncryptAlgorithmsHasBeenSet(false),
+    m_cAEndTimesHasBeenSet(false),
+    m_cACommonNamesHasBeenSet(false),
+    m_preAuditInfoHasBeenSet(false)
 {
 }
 
@@ -422,6 +426,62 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_encryptAlgorithmHasBeenSet = true;
     }
 
+    if (value.HasMember("CAEncryptAlgorithms") && !value["CAEncryptAlgorithms"].IsNull())
+    {
+        if (!value["CAEncryptAlgorithms"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Certificates.CAEncryptAlgorithms` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CAEncryptAlgorithms"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cAEncryptAlgorithms.push_back((*itr).GetString());
+        }
+        m_cAEncryptAlgorithmsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CAEndTimes") && !value["CAEndTimes"].IsNull())
+    {
+        if (!value["CAEndTimes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Certificates.CAEndTimes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CAEndTimes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cAEndTimes.push_back((*itr).GetString());
+        }
+        m_cAEndTimesHasBeenSet = true;
+    }
+
+    if (value.HasMember("CACommonNames") && !value["CACommonNames"].IsNull())
+    {
+        if (!value["CACommonNames"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Certificates.CACommonNames` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CACommonNames"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_cACommonNames.push_back((*itr).GetString());
+        }
+        m_cACommonNamesHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreAuditInfo") && !value["PreAuditInfo"].IsNull())
+    {
+        if (!value["PreAuditInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.PreAuditInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_preAuditInfo.Deserialize(value["PreAuditInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_preAuditInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -710,6 +770,54 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "EncryptAlgorithm";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptAlgorithm.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cAEncryptAlgorithmsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAEncryptAlgorithms";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cAEncryptAlgorithms.begin(); itr != m_cAEncryptAlgorithms.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cAEndTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CAEndTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cAEndTimes.begin(); itr != m_cAEndTimes.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_cACommonNamesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CACommonNames";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_cACommonNames.begin(); itr != m_cACommonNames.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_preAuditInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreAuditInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_preAuditInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -1241,5 +1349,69 @@ void Certificates::SetEncryptAlgorithm(const string& _encryptAlgorithm)
 bool Certificates::EncryptAlgorithmHasBeenSet() const
 {
     return m_encryptAlgorithmHasBeenSet;
+}
+
+vector<string> Certificates::GetCAEncryptAlgorithms() const
+{
+    return m_cAEncryptAlgorithms;
+}
+
+void Certificates::SetCAEncryptAlgorithms(const vector<string>& _cAEncryptAlgorithms)
+{
+    m_cAEncryptAlgorithms = _cAEncryptAlgorithms;
+    m_cAEncryptAlgorithmsHasBeenSet = true;
+}
+
+bool Certificates::CAEncryptAlgorithmsHasBeenSet() const
+{
+    return m_cAEncryptAlgorithmsHasBeenSet;
+}
+
+vector<string> Certificates::GetCAEndTimes() const
+{
+    return m_cAEndTimes;
+}
+
+void Certificates::SetCAEndTimes(const vector<string>& _cAEndTimes)
+{
+    m_cAEndTimes = _cAEndTimes;
+    m_cAEndTimesHasBeenSet = true;
+}
+
+bool Certificates::CAEndTimesHasBeenSet() const
+{
+    return m_cAEndTimesHasBeenSet;
+}
+
+vector<string> Certificates::GetCACommonNames() const
+{
+    return m_cACommonNames;
+}
+
+void Certificates::SetCACommonNames(const vector<string>& _cACommonNames)
+{
+    m_cACommonNames = _cACommonNames;
+    m_cACommonNamesHasBeenSet = true;
+}
+
+bool Certificates::CACommonNamesHasBeenSet() const
+{
+    return m_cACommonNamesHasBeenSet;
+}
+
+PreAuditInfo Certificates::GetPreAuditInfo() const
+{
+    return m_preAuditInfo;
+}
+
+void Certificates::SetPreAuditInfo(const PreAuditInfo& _preAuditInfo)
+{
+    m_preAuditInfo = _preAuditInfo;
+    m_preAuditInfoHasBeenSet = true;
+}
+
+bool Certificates::PreAuditInfoHasBeenSet() const
+{
+    return m_preAuditInfoHasBeenSet;
 }
 

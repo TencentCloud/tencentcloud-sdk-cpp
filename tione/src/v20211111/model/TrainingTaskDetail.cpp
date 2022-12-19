@@ -58,7 +58,8 @@ TrainingTaskDetail::TrainingTaskDetail() :
     m_billingInfoHasBeenSet(false),
     m_resourceGroupNameHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -512,6 +513,16 @@ CoreInternalOutcome TrainingTaskDetail::Deserialize(const rapidjson::Value &valu
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
+    {
+        if (!value["CallbackUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskDetail.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackUrl = string(value["CallbackUrl"].GetString());
+        m_callbackUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -847,6 +858,14 @@ void TrainingTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1458,5 +1477,21 @@ void TrainingTaskDetail::SetStatus(const string& _status)
 bool TrainingTaskDetail::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string TrainingTaskDetail::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void TrainingTaskDetail::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool TrainingTaskDetail::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 

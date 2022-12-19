@@ -318,6 +318,24 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     bool AddressNameHasBeenSet() const;
 
+                    /**
+                     * 获取网络出口，默认是：center_egress1
+                     * @return Egress 网络出口，默认是：center_egress1
+                     */
+                    std::string GetEgress() const;
+
+                    /**
+                     * 设置网络出口，默认是：center_egress1
+                     * @param Egress 网络出口，默认是：center_egress1
+                     */
+                    void SetEgress(const std::string& _egress);
+
+                    /**
+                     * 判断参数 Egress 是否已赋值
+                     * @return Egress 是否已赋值
+                     */
+                    bool EgressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -404,6 +422,12 @@ AnycastEIP是否用于绑定负载均衡。
                      */
                     std::string m_addressName;
                     bool m_addressNameHasBeenSet;
+
+                    /**
+                     * 网络出口，默认是：center_egress1
+                     */
+                    std::string m_egress;
+                    bool m_egressHasBeenSet;
 
                 };
             }

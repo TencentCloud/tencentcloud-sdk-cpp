@@ -55,6 +55,18 @@ namespace TencentCloud
                      */
                     bool TaskIdHasBeenSet() const;
 
+                    /**
+                     * 获取导出镜像的COS文件名列表
+                     * @return CosPaths 导出镜像的COS文件名列表
+                     */
+                    std::vector<std::string> GetCosPaths() const;
+
+                    /**
+                     * 判断参数 CosPaths 是否已赋值
+                     * @return CosPaths 是否已赋值
+                     */
+                    bool CosPathsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -62,6 +74,12 @@ namespace TencentCloud
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 导出镜像的COS文件名列表
+                     */
+                    std::vector<std::string> m_cosPaths;
+                    bool m_cosPathsHasBeenSet;
 
                 };
             }

@@ -79,14 +79,18 @@ namespace TencentCloud
                     bool BandwidthPackageNameHasBeenSet() const;
 
                     /**
-                     * 获取带宽包计费模式
-                     * @return ChargeType 带宽包计费模式
+                     * 获取带宽包计费模式，示例 ：
+'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
+                     * @return ChargeType 带宽包计费模式，示例 ：
+'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
                      */
                     std::string GetChargeType() const;
 
                     /**
-                     * 设置带宽包计费模式
-                     * @param ChargeType 带宽包计费模式
+                     * 设置带宽包计费模式，示例 ：
+'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
+                     * @param ChargeType 带宽包计费模式，示例 ：
+'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
                      */
                     void SetChargeType(const std::string& _chargeType);
 
@@ -95,24 +99,6 @@ namespace TencentCloud
                      * @return ChargeType 是否已赋值
                      */
                     bool ChargeTypeHasBeenSet() const;
-
-                    /**
-                     * 获取退款时迁移为后付费带宽包。默认值：否
-                     * @return MigrateOnRefund 退款时迁移为后付费带宽包。默认值：否
-                     */
-                    bool GetMigrateOnRefund() const;
-
-                    /**
-                     * 设置退款时迁移为后付费带宽包。默认值：否
-                     * @param MigrateOnRefund 退款时迁移为后付费带宽包。默认值：否
-                     */
-                    void SetMigrateOnRefund(const bool& _migrateOnRefund);
-
-                    /**
-                     * 判断参数 MigrateOnRefund 是否已赋值
-                     * @return MigrateOnRefund 是否已赋值
-                     */
-                    bool MigrateOnRefundHasBeenSet() const;
 
                 private:
 
@@ -129,16 +115,11 @@ namespace TencentCloud
                     bool m_bandwidthPackageNameHasBeenSet;
 
                     /**
-                     * 带宽包计费模式
+                     * 带宽包计费模式，示例 ：
+'TOP5_POSTPAID_BY_MONTH'（后付费-TOP5计费）
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
-
-                    /**
-                     * 退款时迁移为后付费带宽包。默认值：否
-                     */
-                    bool m_migrateOnRefund;
-                    bool m_migrateOnRefundHasBeenSet;
 
                 };
             }

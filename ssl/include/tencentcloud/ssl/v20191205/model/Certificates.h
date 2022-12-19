@@ -27,6 +27,7 @@
 #include <tencentcloud/ssl/v20191205/model/CertificateExtra.h>
 #include <tencentcloud/ssl/v20191205/model/ProjectInfo.h>
 #include <tencentcloud/ssl/v20191205/model/Tags.h>
+#include <tencentcloud/ssl/v20191205/model/PreAuditInfo.h>
 
 
 namespace TencentCloud
@@ -775,6 +776,94 @@ namespace TencentCloud
                      */
                     bool EncryptAlgorithmHasBeenSet() const;
 
+                    /**
+                     * 获取上传CA证书的加密算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CAEncryptAlgorithms 上传CA证书的加密算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCAEncryptAlgorithms() const;
+
+                    /**
+                     * 设置上传CA证书的加密算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CAEncryptAlgorithms 上传CA证书的加密算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCAEncryptAlgorithms(const std::vector<std::string>& _cAEncryptAlgorithms);
+
+                    /**
+                     * 判断参数 CAEncryptAlgorithms 是否已赋值
+                     * @return CAEncryptAlgorithms 是否已赋值
+                     */
+                    bool CAEncryptAlgorithmsHasBeenSet() const;
+
+                    /**
+                     * 获取上传CA证书的过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CAEndTimes 上传CA证书的过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCAEndTimes() const;
+
+                    /**
+                     * 设置上传CA证书的过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CAEndTimes 上传CA证书的过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCAEndTimes(const std::vector<std::string>& _cAEndTimes);
+
+                    /**
+                     * 判断参数 CAEndTimes 是否已赋值
+                     * @return CAEndTimes 是否已赋值
+                     */
+                    bool CAEndTimesHasBeenSet() const;
+
+                    /**
+                     * 获取上传CA证书的通用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CACommonNames 上传CA证书的通用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetCACommonNames() const;
+
+                    /**
+                     * 设置上传CA证书的通用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CACommonNames 上传CA证书的通用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCACommonNames(const std::vector<std::string>& _cACommonNames);
+
+                    /**
+                     * 判断参数 CACommonNames 是否已赋值
+                     * @return CACommonNames 是否已赋值
+                     */
+                    bool CACommonNamesHasBeenSet() const;
+
+                    /**
+                     * 获取证书预审核信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreAuditInfo 证书预审核信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PreAuditInfo GetPreAuditInfo() const;
+
+                    /**
+                     * 设置证书预审核信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PreAuditInfo 证书预审核信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPreAuditInfo(const PreAuditInfo& _preAuditInfo);
+
+                    /**
+                     * 判断参数 PreAuditInfo 是否已赋值
+                     * @return PreAuditInfo 是否已赋值
+                     */
+                    bool PreAuditInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1007,6 +1096,34 @@ namespace TencentCloud
                      */
                     std::string m_encryptAlgorithm;
                     bool m_encryptAlgorithmHasBeenSet;
+
+                    /**
+                     * 上传CA证书的加密算法
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cAEncryptAlgorithms;
+                    bool m_cAEncryptAlgorithmsHasBeenSet;
+
+                    /**
+                     * 上传CA证书的过期时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cAEndTimes;
+                    bool m_cAEndTimesHasBeenSet;
+
+                    /**
+                     * 上传CA证书的通用名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_cACommonNames;
+                    bool m_cACommonNamesHasBeenSet;
+
+                    /**
+                     * 证书预审核信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PreAuditInfo m_preAuditInfo;
+                    bool m_preAuditInfoHasBeenSet;
 
                 };
             }

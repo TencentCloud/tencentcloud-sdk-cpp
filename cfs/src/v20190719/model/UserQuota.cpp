@@ -25,7 +25,9 @@ UserQuota::UserQuota() :
     m_userIdHasBeenSet(false),
     m_capacityHardLimitHasBeenSet(false),
     m_fileHardLimitHasBeenSet(false),
-    m_fileSystemIdHasBeenSet(false)
+    m_fileSystemIdHasBeenSet(false),
+    m_capacityUsedHasBeenSet(false),
+    m_fileUsedHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,26 @@ CoreInternalOutcome UserQuota::Deserialize(const rapidjson::Value &value)
         m_fileSystemIdHasBeenSet = true;
     }
 
+    if (value.HasMember("CapacityUsed") && !value["CapacityUsed"].IsNull())
+    {
+        if (!value["CapacityUsed"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserQuota.CapacityUsed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_capacityUsed = value["CapacityUsed"].GetUint64();
+        m_capacityUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileUsed") && !value["FileUsed"].IsNull())
+    {
+        if (!value["FileUsed"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `UserQuota.FileUsed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileUsed = value["FileUsed"].GetUint64();
+        m_fileUsedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +151,22 @@ void UserQuota::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "FileSystemId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileSystemId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_capacityUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CapacityUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_capacityUsed, allocator);
+    }
+
+    if (m_fileUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileUsed, allocator);
     }
 
 }
@@ -212,5 +250,37 @@ void UserQuota::SetFileSystemId(const string& _fileSystemId)
 bool UserQuota::FileSystemIdHasBeenSet() const
 {
     return m_fileSystemIdHasBeenSet;
+}
+
+uint64_t UserQuota::GetCapacityUsed() const
+{
+    return m_capacityUsed;
+}
+
+void UserQuota::SetCapacityUsed(const uint64_t& _capacityUsed)
+{
+    m_capacityUsed = _capacityUsed;
+    m_capacityUsedHasBeenSet = true;
+}
+
+bool UserQuota::CapacityUsedHasBeenSet() const
+{
+    return m_capacityUsedHasBeenSet;
+}
+
+uint64_t UserQuota::GetFileUsed() const
+{
+    return m_fileUsed;
+}
+
+void UserQuota::SetFileUsed(const uint64_t& _fileUsed)
+{
+    m_fileUsed = _fileUsed;
+    m_fileUsedHasBeenSet = true;
+}
+
+bool UserQuota::FileUsedHasBeenSet() const
+{
+    return m_fileUsedHasBeenSet;
 }
 

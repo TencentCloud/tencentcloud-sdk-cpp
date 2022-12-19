@@ -829,6 +829,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CallbackUrl 回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCallbackUrl() const;
+
+                    /**
+                     * 设置回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CallbackUrl 回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCallbackUrl(const std::string& _callbackUrl);
+
+                    /**
+                     * 判断参数 CallbackUrl 是否已赋值
+                     * @return CallbackUrl 是否已赋值
+                     */
+                    bool CallbackUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1081,6 +1103,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 回调地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_callbackUrl;
+                    bool m_callbackUrlHasBeenSet;
 
                 };
             }

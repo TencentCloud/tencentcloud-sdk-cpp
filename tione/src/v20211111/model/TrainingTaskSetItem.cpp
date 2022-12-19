@@ -43,7 +43,8 @@ TrainingTaskSetItem::TrainingTaskSetItem() :
     m_resourceGroupNameHasBeenSet(false),
     m_imageInfoHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_callbackUrlHasBeenSet(false)
 {
 }
 
@@ -316,6 +317,16 @@ CoreInternalOutcome TrainingTaskSetItem::Deserialize(const rapidjson::Value &val
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("CallbackUrl") && !value["CallbackUrl"].IsNull())
+    {
+        if (!value["CallbackUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingTaskSetItem.CallbackUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_callbackUrl = string(value["CallbackUrl"].GetString());
+        m_callbackUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -521,6 +532,14 @@ void TrainingTaskSetItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_callbackUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_callbackUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -892,5 +911,21 @@ void TrainingTaskSetItem::SetTags(const vector<Tag>& _tags)
 bool TrainingTaskSetItem::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string TrainingTaskSetItem::GetCallbackUrl() const
+{
+    return m_callbackUrl;
+}
+
+void TrainingTaskSetItem::SetCallbackUrl(const string& _callbackUrl)
+{
+    m_callbackUrl = _callbackUrl;
+    m_callbackUrlHasBeenSet = true;
+}
+
+bool TrainingTaskSetItem::CallbackUrlHasBeenSet() const
+{
+    return m_callbackUrlHasBeenSet;
 }
 
