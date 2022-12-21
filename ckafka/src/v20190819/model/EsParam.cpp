@@ -36,7 +36,8 @@ EsParam::EsParam() :
     m_documentIdFieldHasBeenSet(false),
     m_indexTypeHasBeenSet(false),
     m_dropClsHasBeenSet(false),
-    m_databasePrimaryKeyHasBeenSet(false)
+    m_databasePrimaryKeyHasBeenSet(false),
+    m_dropDlqHasBeenSet(false)
 {
 }
 
@@ -212,6 +213,23 @@ CoreInternalOutcome EsParam::Deserialize(const rapidjson::Value &value)
         m_databasePrimaryKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("DropDlq") && !value["DropDlq"].IsNull())
+    {
+        if (!value["DropDlq"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EsParam.DropDlq` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dropDlq.Deserialize(value["DropDlq"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dropDlqHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +364,15 @@ void EsParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "DatabasePrimaryKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_databasePrimaryKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dropDlqHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DropDlq";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dropDlq.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -605,5 +632,21 @@ void EsParam::SetDatabasePrimaryKey(const string& _databasePrimaryKey)
 bool EsParam::DatabasePrimaryKeyHasBeenSet() const
 {
     return m_databasePrimaryKeyHasBeenSet;
+}
+
+FailureParam EsParam::GetDropDlq() const
+{
+    return m_dropDlq;
+}
+
+void EsParam::SetDropDlq(const FailureParam& _dropDlq)
+{
+    m_dropDlq = _dropDlq;
+    m_dropDlqHasBeenSet = true;
+}
+
+bool EsParam::DropDlqHasBeenSet() const
+{
+    return m_dropDlqHasBeenSet;
 }
 

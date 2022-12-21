@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYLOADBALANCINGSTATUSRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYLOADBALANCINGSTATUSRESPONSE_H_
+#ifndef TENCENTCLOUD_VOD_V20180717_MODEL_DELETEREVIEWTEMPLATERESPONSE_H_
+#define TENCENTCLOUD_VOD_V20180717_MODEL_DELETEREVIEWTEMPLATERESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,20 +25,20 @@
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Vod
     {
-        namespace V20220901
+        namespace V20180717
         {
             namespace Model
             {
                 /**
-                * ModifyLoadBalancingStatus返回参数结构体
+                * DeleteReviewTemplate返回参数结构体
                 */
-                class ModifyLoadBalancingStatusResponse : public AbstractModel
+                class DeleteReviewTemplateResponse : public AbstractModel
                 {
                 public:
-                    ModifyLoadBalancingStatusResponse();
-                    ~ModifyLoadBalancingStatusResponse() = default;
+                    DeleteReviewTemplateResponse();
+                    ~DeleteReviewTemplateResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -51,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_MODIFYLOADBALANCINGSTATUSRESPONSE_H_
+#endif // !TENCENTCLOUD_VOD_V20180717_MODEL_DELETEREVIEWTEMPLATERESPONSE_H_

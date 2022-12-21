@@ -14,20 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/ModifyLoadBalancingStatusResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyReviewTemplateResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Vod::V20180717::Model;
 using namespace std;
 
-ModifyLoadBalancingStatusResponse::ModifyLoadBalancingStatusResponse()
+ModifyReviewTemplateResponse::ModifyReviewTemplateResponse()
 {
 }
 
-CoreInternalOutcome ModifyLoadBalancingStatusResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyReviewTemplateResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -65,7 +65,7 @@ CoreInternalOutcome ModifyLoadBalancingStatusResponse::Deserialize(const string 
     return CoreInternalOutcome(true);
 }
 
-string ModifyLoadBalancingStatusResponse::ToJsonString() const
+string ModifyReviewTemplateResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();

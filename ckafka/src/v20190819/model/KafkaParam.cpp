@@ -35,7 +35,8 @@ KafkaParam::KafkaParam() :
     m_tableMappingsHasBeenSet(false),
     m_useTableMappingHasBeenSet(false),
     m_useAutoCreateTopicHasBeenSet(false),
-    m_compressionTypeHasBeenSet(false)
+    m_compressionTypeHasBeenSet(false),
+    m_msgMultipleHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome KafkaParam::Deserialize(const rapidjson::Value &value)
         m_compressionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("MsgMultiple") && !value["MsgMultiple"].IsNull())
+    {
+        if (!value["MsgMultiple"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.MsgMultiple` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgMultiple = value["MsgMultiple"].GetInt64();
+        m_msgMultipleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void KafkaParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "CompressionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_compressionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_msgMultipleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgMultiple";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_msgMultiple, allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void KafkaParam::SetCompressionType(const string& _compressionType)
 bool KafkaParam::CompressionTypeHasBeenSet() const
 {
     return m_compressionTypeHasBeenSet;
+}
+
+int64_t KafkaParam::GetMsgMultiple() const
+{
+    return m_msgMultiple;
+}
+
+void KafkaParam::SetMsgMultiple(const int64_t& _msgMultiple)
+{
+    m_msgMultiple = _msgMultiple;
+    m_msgMultipleHasBeenSet = true;
+}
+
+bool KafkaParam::MsgMultipleHasBeenSet() const
+{
+    return m_msgMultipleHasBeenSet;
 }
 

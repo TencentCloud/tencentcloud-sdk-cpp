@@ -40,6 +40,49 @@ ThpcClient::ThpcClient(const Credential &credential, const string &region, const
 }
 
 
+ThpcClient::AddClusterStorageOptionOutcome ThpcClient::AddClusterStorageOption(const AddClusterStorageOptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddClusterStorageOption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddClusterStorageOptionResponse rsp = AddClusterStorageOptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddClusterStorageOptionOutcome(rsp);
+        else
+            return AddClusterStorageOptionOutcome(o.GetError());
+    }
+    else
+    {
+        return AddClusterStorageOptionOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::AddClusterStorageOptionAsync(const AddClusterStorageOptionRequest& request, const AddClusterStorageOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddClusterStorageOption(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::AddClusterStorageOptionOutcomeCallable ThpcClient::AddClusterStorageOptionCallable(const AddClusterStorageOptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddClusterStorageOptionOutcome()>>(
+        [this, request]()
+        {
+            return this->AddClusterStorageOption(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::AddNodesOutcome ThpcClient::AddNodes(const AddNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "AddNodes");
@@ -212,6 +255,49 @@ ThpcClient::DeleteClusterOutcomeCallable ThpcClient::DeleteClusterCallable(const
     return task->get_future();
 }
 
+ThpcClient::DeleteClusterStorageOptionOutcome ThpcClient::DeleteClusterStorageOption(const DeleteClusterStorageOptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterStorageOption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterStorageOptionResponse rsp = DeleteClusterStorageOptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterStorageOptionOutcome(rsp);
+        else
+            return DeleteClusterStorageOptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterStorageOptionOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DeleteClusterStorageOptionAsync(const DeleteClusterStorageOptionRequest& request, const DeleteClusterStorageOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterStorageOption(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DeleteClusterStorageOptionOutcomeCallable ThpcClient::DeleteClusterStorageOptionCallable(const DeleteClusterStorageOptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterStorageOptionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterStorageOption(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DeleteNodesOutcome ThpcClient::DeleteNodes(const DeleteNodesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteNodes");
@@ -291,6 +377,49 @@ ThpcClient::DescribeClusterActivitiesOutcomeCallable ThpcClient::DescribeCluster
         [this, request]()
         {
             return this->DescribeClusterActivities(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::DescribeClusterStorageOptionOutcome ThpcClient::DescribeClusterStorageOption(const DescribeClusterStorageOptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterStorageOption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterStorageOptionResponse rsp = DescribeClusterStorageOptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterStorageOptionOutcome(rsp);
+        else
+            return DescribeClusterStorageOptionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterStorageOptionOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeClusterStorageOptionAsync(const DescribeClusterStorageOptionRequest& request, const DescribeClusterStorageOptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterStorageOption(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeClusterStorageOptionOutcomeCallable ThpcClient::DescribeClusterStorageOptionCallable(const DescribeClusterStorageOptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterStorageOptionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterStorageOption(request);
         }
     );
 

@@ -28,6 +28,7 @@
 #include <tencentcloud/ckafka/v20190819/model/FilterMapParam.h>
 #include <tencentcloud/ckafka/v20190819/model/FailureParam.h>
 #include <tencentcloud/ckafka/v20190819/model/RowParam.h>
+#include <tencentcloud/ckafka/v20190819/model/BatchAnalyseParam.h>
 
 
 namespace TencentCloud
@@ -240,6 +241,28 @@ namespace TencentCloud
                      */
                     bool KeepMetadataHasBeenSet() const;
 
+                    /**
+                     * 获取数组解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BatchAnalyse 数组解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BatchAnalyseParam GetBatchAnalyse() const;
+
+                    /**
+                     * 设置数组解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BatchAnalyse 数组解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBatchAnalyse(const BatchAnalyseParam& _batchAnalyse);
+
+                    /**
+                     * 判断参数 BatchAnalyse 是否已赋值
+                     * @return BatchAnalyse 是否已赋值
+                     */
+                    bool BatchAnalyseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -302,6 +325,13 @@ namespace TencentCloud
                      */
                     bool m_keepMetadata;
                     bool m_keepMetadataHasBeenSet;
+
+                    /**
+                     * 数组解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BatchAnalyseParam m_batchAnalyse;
+                    bool m_batchAnalyseHasBeenSet;
 
                 };
             }

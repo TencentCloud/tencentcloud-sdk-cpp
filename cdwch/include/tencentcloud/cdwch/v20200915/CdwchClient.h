@@ -27,8 +27,12 @@
 #include <tencentcloud/cdwch/v20200915/model/ActionAlterCkUserResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h>
@@ -59,9 +63,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBackUpScheduleResponse> CreateBackUpScheduleOutcome;
                 typedef std::future<CreateBackUpScheduleOutcome> CreateBackUpScheduleOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::CreateBackUpScheduleRequest&, CreateBackUpScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackUpScheduleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInstanceNewResponse> CreateInstanceNewOutcome;
+                typedef std::future<CreateInstanceNewOutcome> CreateInstanceNewOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::CreateInstanceNewRequest&, CreateInstanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCkSqlApisResponse> DescribeCkSqlApisOutcome;
                 typedef std::future<DescribeCkSqlApisOutcome> DescribeCkSqlApisOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeCkSqlApisRequest&, DescribeCkSqlApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkSqlApisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
+                typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceShardsResponse> DescribeInstanceShardsOutcome;
                 typedef std::future<DescribeInstanceShardsOutcome> DescribeInstanceShardsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceShardsRequest&, DescribeInstanceShardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceShardsAsyncHandler;
@@ -99,6 +109,15 @@ namespace TencentCloud
                 CreateBackUpScheduleOutcomeCallable CreateBackUpScheduleCallable(const Model::CreateBackUpScheduleRequest& request);
 
                 /**
+                 *创建集群
+                 * @param req CreateInstanceNewRequest
+                 * @return CreateInstanceNewOutcome
+                 */
+                CreateInstanceNewOutcome CreateInstanceNew(const Model::CreateInstanceNewRequest &request);
+                void CreateInstanceNewAsync(const Model::CreateInstanceNewRequest& request, const CreateInstanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInstanceNewOutcomeCallable CreateInstanceNewCallable(const Model::CreateInstanceNewRequest& request);
+
+                /**
                  *查询集群用户、集群表，数据库等相关信息
                  * @param req DescribeCkSqlApisRequest
                  * @return DescribeCkSqlApisOutcome
@@ -106,6 +125,15 @@ namespace TencentCloud
                 DescribeCkSqlApisOutcome DescribeCkSqlApis(const Model::DescribeCkSqlApisRequest &request);
                 void DescribeCkSqlApisAsync(const Model::DescribeCkSqlApisRequest& request, const DescribeCkSqlApisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCkSqlApisOutcomeCallable DescribeCkSqlApisCallable(const Model::DescribeCkSqlApisRequest& request);
+
+                /**
+                 *根据实例ID查询某个实例的具体信息
+                 * @param req DescribeInstanceRequest
+                 * @return DescribeInstanceOutcome
+                 */
+                DescribeInstanceOutcome DescribeInstance(const Model::DescribeInstanceRequest &request);
+                void DescribeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceOutcomeCallable DescribeInstanceCallable(const Model::DescribeInstanceRequest& request);
 
                 /**
                  *获取实例shard信息列表

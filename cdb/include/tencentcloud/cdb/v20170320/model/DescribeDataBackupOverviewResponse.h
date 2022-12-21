@@ -163,6 +163,30 @@ namespace TencentCloud
                      */
                     bool DataBackupArchiveCountHasBeenSet() const;
 
+                    /**
+                     * 获取当前地域标准存储备份总容量。
+                     * @return DataBackupStandbyVolume 当前地域标准存储备份总容量。
+                     */
+                    int64_t GetDataBackupStandbyVolume() const;
+
+                    /**
+                     * 判断参数 DataBackupStandbyVolume 是否已赋值
+                     * @return DataBackupStandbyVolume 是否已赋值
+                     */
+                    bool DataBackupStandbyVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取当前地域标准存储备份总个数。
+                     * @return DataBackupStandbyCount 当前地域标准存储备份总个数。
+                     */
+                    int64_t GetDataBackupStandbyCount() const;
+
+                    /**
+                     * 判断参数 DataBackupStandbyCount 是否已赋值
+                     * @return DataBackupStandbyCount 是否已赋值
+                     */
+                    bool DataBackupStandbyCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -224,6 +248,18 @@ namespace TencentCloud
                      */
                     int64_t m_dataBackupArchiveCount;
                     bool m_dataBackupArchiveCountHasBeenSet;
+
+                    /**
+                     * 当前地域标准存储备份总容量。
+                     */
+                    int64_t m_dataBackupStandbyVolume;
+                    bool m_dataBackupStandbyVolumeHasBeenSet;
+
+                    /**
+                     * 当前地域标准存储备份总个数。
+                     */
+                    int64_t m_dataBackupStandbyCount;
+                    bool m_dataBackupStandbyCountHasBeenSet;
 
                 };
             }

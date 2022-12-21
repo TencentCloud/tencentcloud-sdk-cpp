@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool FileIdsHasBeenSet() const;
 
                     /**
+                     * 获取<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    uint64_t GetSubAppId() const;
+
+                    /**
+                     * 设置<b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     * @param SubAppId <b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    void SetSubAppId(const uint64_t& _subAppId);
+
+                    /**
+                     * 判断参数 SubAppId 是否已赋值
+                     * @return SubAppId 是否已赋值
+                     */
+                    bool SubAppIdHasBeenSet() const;
+
+                    /**
                      * 获取指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
 <li>basicInfo（视频基础信息）。</li>
 <li>metaData（视频元信息）。</li>
@@ -72,6 +90,8 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
+<li>subtitleInfo（字幕信息）。</li>
+<li>reviewInfo（审核信息）。</li>
                      * @return Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
 <li>basicInfo（视频基础信息）。</li>
 <li>metaData（视频元信息）。</li>
@@ -83,6 +103,8 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
+<li>subtitleInfo（字幕信息）。</li>
+<li>reviewInfo（审核信息）。</li>
                      */
                     std::vector<std::string> GetFilters() const;
 
@@ -98,6 +120,8 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
+<li>subtitleInfo（字幕信息）。</li>
+<li>reviewInfo（审核信息）。</li>
                      * @param Filters 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
 <li>basicInfo（视频基础信息）。</li>
 <li>metaData（视频元信息）。</li>
@@ -109,6 +133,8 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
+<li>subtitleInfo（字幕信息）。</li>
+<li>reviewInfo（审核信息）。</li>
                      */
                     void SetFilters(const std::vector<std::string>& _filters);
 
@@ -118,24 +144,6 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
-                    /**
-                     * 获取点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @return SubAppId 点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t GetSubAppId() const;
-
-                    /**
-                     * 设置点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     * @param SubAppId 点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    void SetSubAppId(const uint64_t& _subAppId);
-
-                    /**
-                     * 判断参数 SubAppId 是否已赋值
-                     * @return SubAppId 是否已赋值
-                     */
-                    bool SubAppIdHasBeenSet() const;
-
                 private:
 
                     /**
@@ -143,6 +151,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_fileIds;
                     bool m_fileIdsHasBeenSet;
+
+                    /**
+                     * <b>点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
+                     */
+                    uint64_t m_subAppId;
+                    bool m_subAppIdHasBeenSet;
 
                     /**
                      * 指定所有媒体文件需要返回的信息，可同时指定多个信息，N 从 0 开始递增。如果未填写该字段，默认返回所有信息。选项有：
@@ -156,15 +170,11 @@ namespace TencentCloud
 <li>keyFrameDescInfo（打点信息）。</li>
 <li>adaptiveDynamicStreamingInfo（转自适应码流信息）。</li>
 <li>miniProgramReviewInfo（小程序审核信息）。</li>
+<li>subtitleInfo（字幕信息）。</li>
+<li>reviewInfo（审核信息）。</li>
                      */
                     std::vector<std::string> m_filters;
                     bool m_filtersHasBeenSet;
-
-                    /**
-                     * 点播[子应用](/document/product/266/14574) ID 。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。
-                     */
-                    uint64_t m_subAppId;
-                    bool m_subAppIdHasBeenSet;
 
                 };
             }

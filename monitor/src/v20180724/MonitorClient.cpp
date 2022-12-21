@@ -2749,6 +2749,49 @@ MonitorClient::DescribePrometheusAgentsOutcomeCallable MonitorClient::DescribePr
     return task->get_future();
 }
 
+MonitorClient::DescribePrometheusInstanceUsageOutcome MonitorClient::DescribePrometheusInstanceUsage(const DescribePrometheusInstanceUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrometheusInstanceUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrometheusInstanceUsageResponse rsp = DescribePrometheusInstanceUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrometheusInstanceUsageOutcome(rsp);
+        else
+            return DescribePrometheusInstanceUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrometheusInstanceUsageOutcome(outcome.GetError());
+    }
+}
+
+void MonitorClient::DescribePrometheusInstanceUsageAsync(const DescribePrometheusInstanceUsageRequest& request, const DescribePrometheusInstanceUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrometheusInstanceUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MonitorClient::DescribePrometheusInstanceUsageOutcomeCallable MonitorClient::DescribePrometheusInstanceUsageCallable(const DescribePrometheusInstanceUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrometheusInstanceUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrometheusInstanceUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MonitorClient::DescribePrometheusInstancesOutcome MonitorClient::DescribePrometheusInstances(const DescribePrometheusInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrometheusInstances");

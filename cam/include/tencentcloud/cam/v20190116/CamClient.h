@@ -471,7 +471,7 @@ namespace TencentCloud
 
 
                 /**
-                 *添加子用户
+                 *创建子用户
                  * @param req AddUserRequest
                  * @return AddUserOutcome
                  */

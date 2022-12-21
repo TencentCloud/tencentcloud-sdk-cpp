@@ -32,7 +32,8 @@ MediaInfo::MediaInfo() :
     m_adaptiveDynamicStreamingInfoHasBeenSet(false),
     m_miniProgramReviewInfoHasBeenSet(false),
     m_subtitleInfoHasBeenSet(false),
-    m_fileIdHasBeenSet(false)
+    m_fileIdHasBeenSet(false),
+    m_reviewInfoHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,23 @@ CoreInternalOutcome MediaInfo::Deserialize(const rapidjson::Value &value)
         m_fileIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ReviewInfo") && !value["ReviewInfo"].IsNull())
+    {
+        if (!value["ReviewInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInfo.ReviewInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reviewInfo.Deserialize(value["ReviewInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reviewInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -350,6 +368,15 @@ void MediaInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "FileId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviewInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reviewInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -545,5 +572,21 @@ void MediaInfo::SetFileId(const string& _fileId)
 bool MediaInfo::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+FileReviewInfo MediaInfo::GetReviewInfo() const
+{
+    return m_reviewInfo;
+}
+
+void MediaInfo::SetReviewInfo(const FileReviewInfo& _reviewInfo)
+{
+    m_reviewInfo = _reviewInfo;
+    m_reviewInfoHasBeenSet = true;
+}
+
+bool MediaInfo::ReviewInfoHasBeenSet() const
+{
+    return m_reviewInfoHasBeenSet;
 }
 

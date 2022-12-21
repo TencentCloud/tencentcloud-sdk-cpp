@@ -276,6 +276,24 @@ namespace TencentCloud
                      */
                     bool PackageIdHasBeenSet() const;
 
+                    /**
+                     * 获取签发后是否删除自动域名验证记录， 默认为否；仅域名为DNS_AUTO验证类型支持传参
+                     * @return DeleteDnsAutoRecord 签发后是否删除自动域名验证记录， 默认为否；仅域名为DNS_AUTO验证类型支持传参
+                     */
+                    bool GetDeleteDnsAutoRecord() const;
+
+                    /**
+                     * 设置签发后是否删除自动域名验证记录， 默认为否；仅域名为DNS_AUTO验证类型支持传参
+                     * @param DeleteDnsAutoRecord 签发后是否删除自动域名验证记录， 默认为否；仅域名为DNS_AUTO验证类型支持传参
+                     */
+                    void SetDeleteDnsAutoRecord(const bool& _deleteDnsAutoRecord);
+
+                    /**
+                     * 判断参数 DeleteDnsAutoRecord 是否已赋值
+                     * @return DeleteDnsAutoRecord 是否已赋值
+                     */
+                    bool DeleteDnsAutoRecordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -355,6 +373,12 @@ namespace TencentCloud
                      */
                     std::string m_packageId;
                     bool m_packageIdHasBeenSet;
+
+                    /**
+                     * 签发后是否删除自动域名验证记录， 默认为否；仅域名为DNS_AUTO验证类型支持传参
+                     */
+                    bool m_deleteDnsAutoRecord;
+                    bool m_deleteDnsAutoRecordHasBeenSet;
 
                 };
             }

@@ -24,8 +24,8 @@ using namespace std;
 
 DescribeMediaInfosRequest::DescribeMediaInfosRequest() :
     m_fileIdsHasBeenSet(false),
-    m_filtersHasBeenSet(false),
-    m_subAppIdHasBeenSet(false)
+    m_subAppIdHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -49,6 +49,14 @@ string DescribeMediaInfosRequest::ToJsonString() const
         }
     }
 
+    if (m_subAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_subAppId, allocator);
+    }
+
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -60,14 +68,6 @@ string DescribeMediaInfosRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_subAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
     }
 
 
@@ -94,22 +94,6 @@ bool DescribeMediaInfosRequest::FileIdsHasBeenSet() const
     return m_fileIdsHasBeenSet;
 }
 
-vector<string> DescribeMediaInfosRequest::GetFilters() const
-{
-    return m_filters;
-}
-
-void DescribeMediaInfosRequest::SetFilters(const vector<string>& _filters)
-{
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
-}
-
-bool DescribeMediaInfosRequest::FiltersHasBeenSet() const
-{
-    return m_filtersHasBeenSet;
-}
-
 uint64_t DescribeMediaInfosRequest::GetSubAppId() const
 {
     return m_subAppId;
@@ -124,6 +108,22 @@ void DescribeMediaInfosRequest::SetSubAppId(const uint64_t& _subAppId)
 bool DescribeMediaInfosRequest::SubAppIdHasBeenSet() const
 {
     return m_subAppIdHasBeenSet;
+}
+
+vector<string> DescribeMediaInfosRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeMediaInfosRequest::SetFilters(const vector<string>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeMediaInfosRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

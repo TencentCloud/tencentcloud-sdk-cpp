@@ -224,6 +224,54 @@ namespace TencentCloud
                      */
                     bool BinlogArchiveDaysHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
+                     * @return EnableBackupStandby 是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string GetEnableBackupStandby() const;
+
+                    /**
+                     * 判断参数 EnableBackupStandby 是否已赋值
+                     * @return EnableBackupStandby 是否已赋值
+                     */
+                    bool EnableBackupStandbyHasBeenSet() const;
+
+                    /**
+                     * 获取数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * @return BackupStandbyDays 数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     */
+                    int64_t GetBackupStandbyDays() const;
+
+                    /**
+                     * 判断参数 BackupStandbyDays 是否已赋值
+                     * @return BackupStandbyDays 是否已赋值
+                     */
+                    bool BackupStandbyDaysHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
+                     * @return EnableBinlogStandby 是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string GetEnableBinlogStandby() const;
+
+                    /**
+                     * 判断参数 EnableBinlogStandby 是否已赋值
+                     * @return EnableBinlogStandby 是否已赋值
+                     */
+                    bool EnableBinlogStandbyHasBeenSet() const;
+
+                    /**
+                     * 获取日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     * @return BinlogStandbyDays 日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     */
+                    int64_t GetBinlogStandbyDays() const;
+
+                    /**
+                     * 判断参数 BinlogStandbyDays 是否已赋值
+                     * @return BinlogStandbyDays 是否已赋值
+                     */
+                    bool BinlogStandbyDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -315,6 +363,30 @@ namespace TencentCloud
                      */
                     int64_t m_binlogArchiveDays;
                     bool m_binlogArchiveDaysHasBeenSet;
+
+                    /**
+                     * 是否开启数据备份标准存储策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string m_enableBackupStandby;
+                    bool m_enableBackupStandbyHasBeenSet;
+
+                    /**
+                     * 数据备份标准存储起始天数，数据备份达到标准存储起始天数时进行转换，最小为30天，不得大于数据备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     */
+                    int64_t m_backupStandbyDays;
+                    bool m_backupStandbyDaysHasBeenSet;
+
+                    /**
+                     * 是否开启日志备份标准存储策略，off-关闭，on-打开，默认为off
+                     */
+                    std::string m_enableBinlogStandby;
+                    bool m_enableBinlogStandbyHasBeenSet;
+
+                    /**
+                     * 日志备份标准存储起始天数，日志备份达到标准存储起始天数时进行转换，最小为30天，不得大于日志备份保留天数。如果开启备份归档，不得大于等于备份归档天数
+                     */
+                    int64_t m_binlogStandbyDays;
+                    bool m_binlogStandbyDaysHasBeenSet;
 
                 };
             }

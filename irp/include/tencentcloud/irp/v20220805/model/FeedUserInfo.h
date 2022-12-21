@@ -373,14 +373,14 @@ namespace TencentCloud
                     bool LastModifyTimestampHasBeenSet() const;
 
                     /**
-                     * 获取json字符串，用于画像数据的扩展
-                     * @return Extension json字符串，用于画像数据的扩展
+                     * 获取json字符串，用于画像数据的扩展，需要base64加密
+                     * @return Extension json字符串，用于画像数据的扩展，需要base64加密
                      */
                     std::string GetExtension() const;
 
                     /**
-                     * 设置json字符串，用于画像数据的扩展
-                     * @param Extension json字符串，用于画像数据的扩展
+                     * 设置json字符串，用于画像数据的扩展，需要base64加密
+                     * @param Extension json字符串，用于画像数据的扩展，需要base64加密
                      */
                     void SetExtension(const std::string& _extension);
 
@@ -501,7 +501,7 @@ namespace TencentCloud
                     bool m_lastModifyTimestampHasBeenSet;
 
                     /**
-                     * json字符串，用于画像数据的扩展
+                     * json字符串，用于画像数据的扩展，需要base64加密
                      */
                     std::string m_extension;
                     bool m_extensionHasBeenSet;

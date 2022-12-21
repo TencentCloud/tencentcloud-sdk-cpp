@@ -36,7 +36,8 @@ DatahubResource::DatahubResource() :
     m_topicParamHasBeenSet(false),
     m_mariaDBParamHasBeenSet(false),
     m_sQLServerParamHasBeenSet(false),
-    m_ctsdbParamHasBeenSet(false)
+    m_ctsdbParamHasBeenSet(false),
+    m_scfParamHasBeenSet(false)
 {
 }
 
@@ -310,6 +311,23 @@ CoreInternalOutcome DatahubResource::Deserialize(const rapidjson::Value &value)
         m_ctsdbParamHasBeenSet = true;
     }
 
+    if (value.HasMember("ScfParam") && !value["ScfParam"].IsNull())
+    {
+        if (!value["ScfParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubResource.ScfParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_scfParam.Deserialize(value["ScfParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_scfParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -458,6 +476,15 @@ void DatahubResource::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ctsdbParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_scfParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScfParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_scfParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -717,5 +744,21 @@ void DatahubResource::SetCtsdbParam(const CtsdbParam& _ctsdbParam)
 bool DatahubResource::CtsdbParamHasBeenSet() const
 {
     return m_ctsdbParamHasBeenSet;
+}
+
+ScfParam DatahubResource::GetScfParam() const
+{
+    return m_scfParam;
+}
+
+void DatahubResource::SetScfParam(const ScfParam& _scfParam)
+{
+    m_scfParam = _scfParam;
+    m_scfParamHasBeenSet = true;
+}
+
+bool DatahubResource::ScfParamHasBeenSet() const
+{
+    return m_scfParamHasBeenSet;
 }
 

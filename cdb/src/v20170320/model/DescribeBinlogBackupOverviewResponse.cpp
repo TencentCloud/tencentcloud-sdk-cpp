@@ -29,7 +29,9 @@ DescribeBinlogBackupOverviewResponse::DescribeBinlogBackupOverviewResponse() :
     m_remoteBinlogVolumeHasBeenSet(false),
     m_remoteBinlogCountHasBeenSet(false),
     m_binlogArchiveVolumeHasBeenSet(false),
-    m_binlogArchiveCountHasBeenSet(false)
+    m_binlogArchiveCountHasBeenSet(false),
+    m_binlogStandbyVolumeHasBeenSet(false),
+    m_binlogStandbyCountHasBeenSet(false)
 {
 }
 
@@ -127,6 +129,26 @@ CoreInternalOutcome DescribeBinlogBackupOverviewResponse::Deserialize(const stri
         m_binlogArchiveCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("BinlogStandbyVolume") && !rsp["BinlogStandbyVolume"].IsNull())
+    {
+        if (!rsp["BinlogStandbyVolume"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogStandbyVolume` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_binlogStandbyVolume = rsp["BinlogStandbyVolume"].GetInt64();
+        m_binlogStandbyVolumeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BinlogStandbyCount") && !rsp["BinlogStandbyCount"].IsNull())
+    {
+        if (!rsp["BinlogStandbyCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogStandbyCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_binlogStandbyCount = rsp["BinlogStandbyCount"].GetInt64();
+        m_binlogStandbyCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +205,22 @@ string DescribeBinlogBackupOverviewResponse::ToJsonString() const
         string key = "BinlogArchiveCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_binlogArchiveCount, allocator);
+    }
+
+    if (m_binlogStandbyVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogStandbyVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_binlogStandbyVolume, allocator);
+    }
+
+    if (m_binlogStandbyCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogStandbyCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_binlogStandbyCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +293,26 @@ int64_t DescribeBinlogBackupOverviewResponse::GetBinlogArchiveCount() const
 bool DescribeBinlogBackupOverviewResponse::BinlogArchiveCountHasBeenSet() const
 {
     return m_binlogArchiveCountHasBeenSet;
+}
+
+int64_t DescribeBinlogBackupOverviewResponse::GetBinlogStandbyVolume() const
+{
+    return m_binlogStandbyVolume;
+}
+
+bool DescribeBinlogBackupOverviewResponse::BinlogStandbyVolumeHasBeenSet() const
+{
+    return m_binlogStandbyVolumeHasBeenSet;
+}
+
+int64_t DescribeBinlogBackupOverviewResponse::GetBinlogStandbyCount() const
+{
+    return m_binlogStandbyCount;
+}
+
+bool DescribeBinlogBackupOverviewResponse::BinlogStandbyCountHasBeenSet() const
+{
+    return m_binlogStandbyCountHasBeenSet;
 }
 
 

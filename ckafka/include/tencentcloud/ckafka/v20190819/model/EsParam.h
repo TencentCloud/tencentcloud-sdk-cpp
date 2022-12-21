@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/DropCls.h>
+#include <tencentcloud/ckafka/v20190819/model/FailureParam.h>
 
 
 namespace TencentCloud
@@ -335,6 +336,24 @@ namespace TencentCloud
                      */
                     bool DatabasePrimaryKeyHasBeenSet() const;
 
+                    /**
+                     * 获取死信队列
+                     * @return DropDlq 死信队列
+                     */
+                    FailureParam GetDropDlq() const;
+
+                    /**
+                     * 设置死信队列
+                     * @param DropDlq 死信队列
+                     */
+                    void SetDropDlq(const FailureParam& _dropDlq);
+
+                    /**
+                     * 判断参数 DropDlq 是否已赋值
+                     * @return DropDlq 是否已赋值
+                     */
+                    bool DropDlqHasBeenSet() const;
+
                 private:
 
                     /**
@@ -432,6 +451,12 @@ namespace TencentCloud
                      */
                     std::string m_databasePrimaryKey;
                     bool m_databasePrimaryKeyHasBeenSet;
+
+                    /**
+                     * 死信队列
+                     */
+                    FailureParam m_dropDlq;
+                    bool m_dropDlqHasBeenSet;
 
                 };
             }

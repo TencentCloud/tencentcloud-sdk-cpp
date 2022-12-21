@@ -26,7 +26,8 @@ TopicParam::TopicParam() :
     m_startTimeHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_compressionTypeHasBeenSet(false),
-    m_useAutoCreateTopicHasBeenSet(false)
+    m_useAutoCreateTopicHasBeenSet(false),
+    m_msgMultipleHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome TopicParam::Deserialize(const rapidjson::Value &value)
         m_useAutoCreateTopicHasBeenSet = true;
     }
 
+    if (value.HasMember("MsgMultiple") && !value["MsgMultiple"].IsNull())
+    {
+        if (!value["MsgMultiple"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicParam.MsgMultiple` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_msgMultiple = value["MsgMultiple"].GetInt64();
+        m_msgMultipleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void TopicParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "UseAutoCreateTopic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useAutoCreateTopic, allocator);
+    }
+
+    if (m_msgMultipleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MsgMultiple";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_msgMultiple, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void TopicParam::SetUseAutoCreateTopic(const bool& _useAutoCreateTopic)
 bool TopicParam::UseAutoCreateTopicHasBeenSet() const
 {
     return m_useAutoCreateTopicHasBeenSet;
+}
+
+int64_t TopicParam::GetMsgMultiple() const
+{
+    return m_msgMultiple;
+}
+
+void TopicParam::SetMsgMultiple(const int64_t& _msgMultiple)
+{
+    m_msgMultiple = _msgMultiple;
+    m_msgMultipleHasBeenSet = true;
+}
+
+bool TopicParam::MsgMultipleHasBeenSet() const
+{
+    return m_msgMultipleHasBeenSet;
 }
 

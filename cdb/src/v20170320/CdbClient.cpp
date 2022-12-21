@@ -2964,6 +2964,49 @@ CdbClient::DescribeProxyCustomConfOutcomeCallable CdbClient::DescribeProxyCustom
     return task->get_future();
 }
 
+CdbClient::DescribeRemoteBackupConfigOutcome CdbClient::DescribeRemoteBackupConfig(const DescribeRemoteBackupConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRemoteBackupConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRemoteBackupConfigResponse rsp = DescribeRemoteBackupConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRemoteBackupConfigOutcome(rsp);
+        else
+            return DescribeRemoteBackupConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRemoteBackupConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeRemoteBackupConfigAsync(const DescribeRemoteBackupConfigRequest& request, const DescribeRemoteBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRemoteBackupConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeRemoteBackupConfigOutcomeCallable CdbClient::DescribeRemoteBackupConfigCallable(const DescribeRemoteBackupConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRemoteBackupConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRemoteBackupConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeRoGroupsOutcome CdbClient::DescribeRoGroups(const DescribeRoGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoGroups");
@@ -4634,6 +4677,49 @@ CdbClient::ModifyParamTemplateOutcomeCallable CdbClient::ModifyParamTemplateCall
         [this, request]()
         {
             return this->ModifyParamTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyRemoteBackupConfigOutcome CdbClient::ModifyRemoteBackupConfig(const ModifyRemoteBackupConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRemoteBackupConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRemoteBackupConfigResponse rsp = ModifyRemoteBackupConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRemoteBackupConfigOutcome(rsp);
+        else
+            return ModifyRemoteBackupConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRemoteBackupConfigOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyRemoteBackupConfigAsync(const ModifyRemoteBackupConfigRequest& request, const ModifyRemoteBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRemoteBackupConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyRemoteBackupConfigOutcomeCallable CdbClient::ModifyRemoteBackupConfigCallable(const ModifyRemoteBackupConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRemoteBackupConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRemoteBackupConfig(request);
         }
     );
 

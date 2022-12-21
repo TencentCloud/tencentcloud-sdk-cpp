@@ -4813,49 +4813,6 @@ TeoClient::ModifyLoadBalancingOutcomeCallable TeoClient::ModifyLoadBalancingCall
     return task->get_future();
 }
 
-TeoClient::ModifyLoadBalancingStatusOutcome TeoClient::ModifyLoadBalancingStatus(const ModifyLoadBalancingStatusRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyLoadBalancingStatus");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyLoadBalancingStatusResponse rsp = ModifyLoadBalancingStatusResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyLoadBalancingStatusOutcome(rsp);
-        else
-            return ModifyLoadBalancingStatusOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyLoadBalancingStatusOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ModifyLoadBalancingStatusAsync(const ModifyLoadBalancingStatusRequest& request, const ModifyLoadBalancingStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancingStatus(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ModifyLoadBalancingStatusOutcomeCallable TeoClient::ModifyLoadBalancingStatusCallable(const ModifyLoadBalancingStatusRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancingStatusOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancingStatus(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::ModifyLogTopicTaskOutcome TeoClient::ModifyLogTopicTask(const ModifyLogTopicTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyLogTopicTask");

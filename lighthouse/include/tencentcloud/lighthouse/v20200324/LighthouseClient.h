@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lighthouse/v20200324/model/ApplyDiskBackupRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ApplyDiskBackupResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ApplyInstanceSnapshotResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/AssociateInstancesKeyPairsRequest.h>
@@ -33,6 +35,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/AttachDisksResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateBlueprintResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateDiskBackupRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/CreateDiskBackupResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/CreateInstanceSnapshotRequest.h>
@@ -43,6 +47,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/CreateKeyPairResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteBlueprintsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteDiskBackupsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DeleteDiskBackupsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteFirewallRulesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DeleteKeyPairsRequest.h>
@@ -61,6 +67,10 @@
 #include <tencentcloud/lighthouse/v20200324/model/DescribeBundlesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeCcnAttachedInstancesResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsDeniedActionsRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/DescribeDiskBackupsDeniedActionsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeDiskConfigsResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/DescribeDiskDiscountRequest.h>
@@ -129,6 +139,8 @@
 #include <tencentcloud/lighthouse/v20200324/model/IsolateInstancesResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyBlueprintAttributeResponse.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDiskBackupsAttributeRequest.h>
+#include <tencentcloud/lighthouse/v20200324/model/ModifyDiskBackupsAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeRequest.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksAttributeResponse.h>
 #include <tencentcloud/lighthouse/v20200324/model/ModifyDisksRenewFlagRequest.h>
@@ -179,6 +191,9 @@ namespace TencentCloud
                 LighthouseClient(const Credential &credential, const std::string &region);
                 LighthouseClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ApplyDiskBackupResponse> ApplyDiskBackupOutcome;
+                typedef std::future<ApplyDiskBackupOutcome> ApplyDiskBackupOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ApplyDiskBackupRequest&, ApplyDiskBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyDiskBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ApplyInstanceSnapshotResponse> ApplyInstanceSnapshotOutcome;
                 typedef std::future<ApplyInstanceSnapshotOutcome> ApplyInstanceSnapshotOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ApplyInstanceSnapshotRequest&, ApplyInstanceSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyInstanceSnapshotAsyncHandler;
@@ -194,6 +209,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateBlueprintResponse> CreateBlueprintOutcome;
                 typedef std::future<CreateBlueprintOutcome> CreateBlueprintOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateBlueprintRequest&, CreateBlueprintOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBlueprintAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDiskBackupResponse> CreateDiskBackupOutcome;
+                typedef std::future<CreateDiskBackupOutcome> CreateDiskBackupOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::CreateDiskBackupRequest&, CreateDiskBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFirewallRulesResponse> CreateFirewallRulesOutcome;
                 typedef std::future<CreateFirewallRulesOutcome> CreateFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::CreateFirewallRulesRequest&, CreateFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFirewallRulesAsyncHandler;
@@ -209,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteBlueprintsResponse> DeleteBlueprintsOutcome;
                 typedef std::future<DeleteBlueprintsOutcome> DeleteBlueprintsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteBlueprintsRequest&, DeleteBlueprintsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBlueprintsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDiskBackupsResponse> DeleteDiskBackupsOutcome;
+                typedef std::future<DeleteDiskBackupsOutcome> DeleteDiskBackupsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DeleteDiskBackupsRequest&, DeleteDiskBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDiskBackupsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteFirewallRulesResponse> DeleteFirewallRulesOutcome;
                 typedef std::future<DeleteFirewallRulesOutcome> DeleteFirewallRulesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DeleteFirewallRulesRequest&, DeleteFirewallRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFirewallRulesAsyncHandler;
@@ -236,6 +257,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCcnAttachedInstancesResponse> DescribeCcnAttachedInstancesOutcome;
                 typedef std::future<DescribeCcnAttachedInstancesOutcome> DescribeCcnAttachedInstancesOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeCcnAttachedInstancesRequest&, DescribeCcnAttachedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCcnAttachedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDiskBackupsResponse> DescribeDiskBackupsOutcome;
+                typedef std::future<DescribeDiskBackupsOutcome> DescribeDiskBackupsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDiskBackupsRequest&, DescribeDiskBackupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskBackupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDiskBackupsDeniedActionsResponse> DescribeDiskBackupsDeniedActionsOutcome;
+                typedef std::future<DescribeDiskBackupsDeniedActionsOutcome> DescribeDiskBackupsDeniedActionsOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::DescribeDiskBackupsDeniedActionsRequest&, DescribeDiskBackupsDeniedActionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskBackupsDeniedActionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDiskConfigsResponse> DescribeDiskConfigsOutcome;
                 typedef std::future<DescribeDiskConfigsOutcome> DescribeDiskConfigsOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::DescribeDiskConfigsRequest&, DescribeDiskConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDiskConfigsAsyncHandler;
@@ -338,6 +365,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlueprintAttributeResponse> ModifyBlueprintAttributeOutcome;
                 typedef std::future<ModifyBlueprintAttributeOutcome> ModifyBlueprintAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyBlueprintAttributeRequest&, ModifyBlueprintAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlueprintAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDiskBackupsAttributeResponse> ModifyDiskBackupsAttributeOutcome;
+                typedef std::future<ModifyDiskBackupsAttributeOutcome> ModifyDiskBackupsAttributeOutcomeCallable;
+                typedef std::function<void(const LighthouseClient*, const Model::ModifyDiskBackupsAttributeRequest&, ModifyDiskBackupsAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDiskBackupsAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDisksAttributeResponse> ModifyDisksAttributeOutcome;
                 typedef std::future<ModifyDisksAttributeOutcome> ModifyDisksAttributeOutcomeCallable;
                 typedef std::function<void(const LighthouseClient*, const Model::ModifyDisksAttributeRequest&, ModifyDisksAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDisksAttributeAsyncHandler;
@@ -396,6 +426,22 @@ namespace TencentCloud
 
 
                 /**
+                 *本接口（ApplyDiskBackup）用于回滚指定云硬盘的备份点。
+* 仅支持回滚到原云硬盘。
+* 用于回滚的云硬盘备份点必须处于 NORMAL 状态。
+  云硬盘备份点状态可以通过 DescribeDiskBackups 接口查询。
+* 回滚云硬盘备份点时，云硬盘的状态必须为 UNATTACHED或ATTACHED。
+  云硬盘状态可通过 [DescribeDisks](https://cloud.tencent.com/document/api/1207/66093) 接口查询。
+* 如果云硬盘处于 ATTACHED状态，相关RUNNING 状态的实例会强制关机，然后回滚云硬盘备份点。
+
+                 * @param req ApplyDiskBackupRequest
+                 * @return ApplyDiskBackupOutcome
+                 */
+                ApplyDiskBackupOutcome ApplyDiskBackup(const Model::ApplyDiskBackupRequest &request);
+                void ApplyDiskBackupAsync(const Model::ApplyDiskBackupRequest& request, const ApplyDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyDiskBackupOutcomeCallable ApplyDiskBackupCallable(const Model::ApplyDiskBackupRequest& request);
+
+                /**
                  *本接口（ApplyInstanceSnapshot）用于回滚指定实例的系统盘快照。
 <li>仅支持回滚到原系统盘。</li>
 <li>用于回滚的快照必须处于 NORMAL 状态。快照状态可以通 DescribeSnapshots 接口查询，见输出参数中 SnapshotState 字段解释。</li>
@@ -448,6 +494,15 @@ namespace TencentCloud
                 CreateBlueprintOutcome CreateBlueprint(const Model::CreateBlueprintRequest &request);
                 void CreateBlueprintAsync(const Model::CreateBlueprintRequest& request, const CreateBlueprintAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateBlueprintOutcomeCallable CreateBlueprintCallable(const Model::CreateBlueprintRequest& request);
+
+                /**
+                 *本接口 ( CreateDiskBackup  ) 用于创建指定云硬盘（当前只支持数据盘）的备份点。
+                 * @param req CreateDiskBackupRequest
+                 * @return CreateDiskBackupOutcome
+                 */
+                CreateDiskBackupOutcome CreateDiskBackup(const Model::CreateDiskBackupRequest &request);
+                void CreateDiskBackupAsync(const Model::CreateDiskBackupRequest& request, const CreateDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDiskBackupOutcomeCallable CreateDiskBackupCallable(const Model::CreateDiskBackupRequest& request);
 
                 /**
                  *本接口（CreateFirewallRules）用于在实例上添加防火墙规则。
@@ -503,6 +558,16 @@ namespace TencentCloud
                 DeleteBlueprintsOutcome DeleteBlueprints(const Model::DeleteBlueprintsRequest &request);
                 void DeleteBlueprintsAsync(const Model::DeleteBlueprintsRequest& request, const DeleteBlueprintsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteBlueprintsOutcomeCallable DeleteBlueprintsCallable(const Model::DeleteBlueprintsRequest& request);
+
+                /**
+                 *本接口（DeleteDiskBackups）用于删除云硬盘备份点。
+云硬盘备份点必须处于 NORMAL 状态，云硬盘备份点状态可以通过 DescribeDiskBackups接口查询，见输出参数中 DiskBackupState 字段解释。
+                 * @param req DeleteDiskBackupsRequest
+                 * @return DeleteDiskBackupsOutcome
+                 */
+                DeleteDiskBackupsOutcome DeleteDiskBackups(const Model::DeleteDiskBackupsRequest &request);
+                void DeleteDiskBackupsAsync(const Model::DeleteDiskBackupsRequest& request, const DeleteDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDiskBackupsOutcomeCallable DeleteDiskBackupsCallable(const Model::DeleteDiskBackupsRequest& request);
 
                 /**
                  *本接口（DeleteFirewallRules）用于删除实例的防火墙规则。
@@ -594,6 +659,24 @@ namespace TencentCloud
                 DescribeCcnAttachedInstancesOutcome DescribeCcnAttachedInstances(const Model::DescribeCcnAttachedInstancesRequest &request);
                 void DescribeCcnAttachedInstancesAsync(const Model::DescribeCcnAttachedInstancesRequest& request, const DescribeCcnAttachedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCcnAttachedInstancesOutcomeCallable DescribeCcnAttachedInstancesCallable(const Model::DescribeCcnAttachedInstancesRequest& request);
+
+                /**
+                 *本接口（DescribeDiskBackups）用于查询云硬盘备份点的详细信息。
+                 * @param req DescribeDiskBackupsRequest
+                 * @return DescribeDiskBackupsOutcome
+                 */
+                DescribeDiskBackupsOutcome DescribeDiskBackups(const Model::DescribeDiskBackupsRequest &request);
+                void DescribeDiskBackupsAsync(const Model::DescribeDiskBackupsRequest& request, const DescribeDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiskBackupsOutcomeCallable DescribeDiskBackupsCallable(const Model::DescribeDiskBackupsRequest& request);
+
+                /**
+                 *本接口（DescribeDiskBackupsDeniedActions）用于查询一个或多个云硬盘备份点的操作限制列表信息。
+                 * @param req DescribeDiskBackupsDeniedActionsRequest
+                 * @return DescribeDiskBackupsDeniedActionsOutcome
+                 */
+                DescribeDiskBackupsDeniedActionsOutcome DescribeDiskBackupsDeniedActions(const Model::DescribeDiskBackupsDeniedActionsRequest &request);
+                void DescribeDiskBackupsDeniedActionsAsync(const Model::DescribeDiskBackupsDeniedActionsRequest& request, const DescribeDiskBackupsDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDiskBackupsDeniedActionsOutcomeCallable DescribeDiskBackupsDeniedActionsCallable(const Model::DescribeDiskBackupsDeniedActionsRequest& request);
 
                 /**
                  *本接口（DescribeDiskConfigs）用于查询云硬盘配置。
@@ -928,6 +1011,15 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 ModifyBlueprintAttributeOutcome ModifyBlueprintAttribute(const Model::ModifyBlueprintAttributeRequest &request);
                 void ModifyBlueprintAttributeAsync(const Model::ModifyBlueprintAttributeRequest& request, const ModifyBlueprintAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBlueprintAttributeOutcomeCallable ModifyBlueprintAttributeCallable(const Model::ModifyBlueprintAttributeRequest& request);
+
+                /**
+                 *本接口 (ModifyDiskBackupsAttribute) 用于修改云硬盘备份点属性。
+                 * @param req ModifyDiskBackupsAttributeRequest
+                 * @return ModifyDiskBackupsAttributeOutcome
+                 */
+                ModifyDiskBackupsAttributeOutcome ModifyDiskBackupsAttribute(const Model::ModifyDiskBackupsAttributeRequest &request);
+                void ModifyDiskBackupsAttributeAsync(const Model::ModifyDiskBackupsAttributeRequest& request, const ModifyDiskBackupsAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDiskBackupsAttributeOutcomeCallable ModifyDiskBackupsAttributeCallable(const Model::ModifyDiskBackupsAttributeRequest& request);
 
                 /**
                  *本接口(ModifyDisksAttribute)用于修改云硬盘属性。

@@ -35,6 +35,7 @@
 #include <tencentcloud/vod/v20180717/model/MediaAdaptiveDynamicStreamingInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaMiniProgramReviewInfo.h>
 #include <tencentcloud/vod/v20180717/model/MediaSubtitleInfo.h>
+#include <tencentcloud/vod/v20180717/model/FileReviewInfo.h>
 
 
 namespace TencentCloud
@@ -317,6 +318,28 @@ namespace TencentCloud
                      */
                     bool FileIdHasBeenSet() const;
 
+                    /**
+                     * 获取审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReviewInfo 审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileReviewInfo GetReviewInfo() const;
+
+                    /**
+                     * 设置审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReviewInfo 审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReviewInfo(const FileReviewInfo& _reviewInfo);
+
+                    /**
+                     * 判断参数 ReviewInfo 是否已赋值
+                     * @return ReviewInfo 是否已赋值
+                     */
+                    bool ReviewInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -401,6 +424,13 @@ namespace TencentCloud
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
+
+                    /**
+                     * 审核信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    FileReviewInfo m_reviewInfo;
+                    bool m_reviewInfoHasBeenSet;
 
                 };
             }

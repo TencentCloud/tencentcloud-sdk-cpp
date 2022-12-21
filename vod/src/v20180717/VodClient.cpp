@@ -728,6 +728,49 @@ VodClient::CreateProcedureTemplateOutcomeCallable VodClient::CreateProcedureTemp
     return task->get_future();
 }
 
+VodClient::CreateReviewTemplateOutcome VodClient::CreateReviewTemplate(const CreateReviewTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReviewTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReviewTemplateResponse rsp = CreateReviewTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReviewTemplateOutcome(rsp);
+        else
+            return CreateReviewTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReviewTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateReviewTemplateAsync(const CreateReviewTemplateRequest& request, const CreateReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReviewTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateReviewTemplateOutcomeCallable VodClient::CreateReviewTemplateCallable(const CreateReviewTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReviewTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReviewTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateSampleSnapshotTemplateOutcome VodClient::CreateSampleSnapshotTemplate(const CreateSampleSnapshotTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSampleSnapshotTemplate");
@@ -1624,6 +1667,49 @@ VodClient::DeleteProcedureTemplateOutcomeCallable VodClient::DeleteProcedureTemp
         [this, request]()
         {
             return this->DeleteProcedureTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteReviewTemplateOutcome VodClient::DeleteReviewTemplate(const DeleteReviewTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteReviewTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteReviewTemplateResponse rsp = DeleteReviewTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteReviewTemplateOutcome(rsp);
+        else
+            return DeleteReviewTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteReviewTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteReviewTemplateAsync(const DeleteReviewTemplateRequest& request, const DeleteReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteReviewTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteReviewTemplateOutcomeCallable VodClient::DeleteReviewTemplateCallable(const DeleteReviewTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteReviewTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteReviewTemplate(request);
         }
     );
 
@@ -3222,6 +3308,49 @@ VodClient::DescribeReviewDetailsOutcomeCallable VodClient::DescribeReviewDetails
     return task->get_future();
 }
 
+VodClient::DescribeReviewTemplatesOutcome VodClient::DescribeReviewTemplates(const DescribeReviewTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReviewTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReviewTemplatesResponse rsp = DescribeReviewTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReviewTemplatesOutcome(rsp);
+        else
+            return DescribeReviewTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReviewTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeReviewTemplatesAsync(const DescribeReviewTemplatesRequest& request, const DescribeReviewTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReviewTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeReviewTemplatesOutcomeCallable VodClient::DescribeReviewTemplatesCallable(const DescribeReviewTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReviewTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReviewTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeSampleSnapshotTemplatesOutcome VodClient::DescribeSampleSnapshotTemplates(const DescribeSampleSnapshotTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSampleSnapshotTemplates");
@@ -4591,6 +4720,49 @@ VodClient::ModifyPersonSampleOutcomeCallable VodClient::ModifyPersonSampleCallab
         [this, request]()
         {
             return this->ModifyPersonSample(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ModifyReviewTemplateOutcome VodClient::ModifyReviewTemplate(const ModifyReviewTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyReviewTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyReviewTemplateResponse rsp = ModifyReviewTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyReviewTemplateOutcome(rsp);
+        else
+            return ModifyReviewTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyReviewTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyReviewTemplateAsync(const ModifyReviewTemplateRequest& request, const ModifyReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyReviewTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyReviewTemplateOutcomeCallable VodClient::ModifyReviewTemplateCallable(const ModifyReviewTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyReviewTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyReviewTemplate(request);
         }
     );
 

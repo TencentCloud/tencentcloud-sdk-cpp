@@ -29,7 +29,8 @@ TransformsParam::TransformsParam() :
     m_sourceTypeHasBeenSet(false),
     m_outputFormatHasBeenSet(false),
     m_rowParamHasBeenSet(false),
-    m_keepMetadataHasBeenSet(false)
+    m_keepMetadataHasBeenSet(false),
+    m_batchAnalyseHasBeenSet(false)
 {
 }
 
@@ -162,6 +163,23 @@ CoreInternalOutcome TransformsParam::Deserialize(const rapidjson::Value &value)
         m_keepMetadataHasBeenSet = true;
     }
 
+    if (value.HasMember("BatchAnalyse") && !value["BatchAnalyse"].IsNull())
+    {
+        if (!value["BatchAnalyse"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TransformsParam.BatchAnalyse` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_batchAnalyse.Deserialize(value["BatchAnalyse"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_batchAnalyseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -255,6 +273,15 @@ void TransformsParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "KeepMetadata";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_keepMetadata, allocator);
+    }
+
+    if (m_batchAnalyseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchAnalyse";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_batchAnalyse.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -402,5 +429,21 @@ void TransformsParam::SetKeepMetadata(const bool& _keepMetadata)
 bool TransformsParam::KeepMetadataHasBeenSet() const
 {
     return m_keepMetadataHasBeenSet;
+}
+
+BatchAnalyseParam TransformsParam::GetBatchAnalyse() const
+{
+    return m_batchAnalyse;
+}
+
+void TransformsParam::SetBatchAnalyse(const BatchAnalyseParam& _batchAnalyse)
+{
+    m_batchAnalyse = _batchAnalyse;
+    m_batchAnalyseHasBeenSet = true;
+}
+
+bool TransformsParam::BatchAnalyseHasBeenSet() const
+{
+    return m_batchAnalyseHasBeenSet;
 }
 

@@ -126,6 +126,49 @@ CdwchClient::CreateBackUpScheduleOutcomeCallable CdwchClient::CreateBackUpSchedu
     return task->get_future();
 }
 
+CdwchClient::CreateInstanceNewOutcome CdwchClient::CreateInstanceNew(const CreateInstanceNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInstanceNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInstanceNewResponse rsp = CreateInstanceNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInstanceNewOutcome(rsp);
+        else
+            return CreateInstanceNewOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInstanceNewOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::CreateInstanceNewAsync(const CreateInstanceNewRequest& request, const CreateInstanceNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInstanceNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::CreateInstanceNewOutcomeCallable CdwchClient::CreateInstanceNewCallable(const CreateInstanceNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInstanceNewOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInstanceNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeCkSqlApisOutcome CdwchClient::DescribeCkSqlApis(const DescribeCkSqlApisRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCkSqlApis");
@@ -162,6 +205,49 @@ CdwchClient::DescribeCkSqlApisOutcomeCallable CdwchClient::DescribeCkSqlApisCall
         [this, request]()
         {
             return this->DescribeCkSqlApis(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::DescribeInstanceOutcome CdwchClient::DescribeInstance(const DescribeInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceResponse rsp = DescribeInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceOutcome(rsp);
+        else
+            return DescribeInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeInstanceAsync(const DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeInstanceOutcomeCallable CdwchClient::DescribeInstanceCallable(const DescribeInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstance(request);
         }
     );
 

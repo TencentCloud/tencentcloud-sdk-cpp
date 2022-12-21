@@ -38,7 +38,11 @@ ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
     m_enableBackupArchiveHasBeenSet(false),
     m_backupArchiveDaysHasBeenSet(false),
     m_binlogArchiveDaysHasBeenSet(false),
-    m_enableBinlogArchiveHasBeenSet(false)
+    m_enableBinlogArchiveHasBeenSet(false),
+    m_enableBackupStandbyHasBeenSet(false),
+    m_backupStandbyDaysHasBeenSet(false),
+    m_enableBinlogStandbyHasBeenSet(false),
+    m_binlogStandbyDaysHasBeenSet(false)
 {
 }
 
@@ -176,6 +180,38 @@ string ModifyBackupConfigRequest::ToJsonString() const
         string key = "EnableBinlogArchive";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_enableBinlogArchive.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableBackupStandbyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBackupStandby";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableBackupStandby.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupStandbyDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupStandbyDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_backupStandbyDays, allocator);
+    }
+
+    if (m_enableBinlogStandbyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBinlogStandby";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_enableBinlogStandby.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogStandbyDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogStandbyDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_binlogStandbyDays, allocator);
     }
 
 
@@ -440,6 +476,70 @@ void ModifyBackupConfigRequest::SetEnableBinlogArchive(const string& _enableBinl
 bool ModifyBackupConfigRequest::EnableBinlogArchiveHasBeenSet() const
 {
     return m_enableBinlogArchiveHasBeenSet;
+}
+
+string ModifyBackupConfigRequest::GetEnableBackupStandby() const
+{
+    return m_enableBackupStandby;
+}
+
+void ModifyBackupConfigRequest::SetEnableBackupStandby(const string& _enableBackupStandby)
+{
+    m_enableBackupStandby = _enableBackupStandby;
+    m_enableBackupStandbyHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::EnableBackupStandbyHasBeenSet() const
+{
+    return m_enableBackupStandbyHasBeenSet;
+}
+
+int64_t ModifyBackupConfigRequest::GetBackupStandbyDays() const
+{
+    return m_backupStandbyDays;
+}
+
+void ModifyBackupConfigRequest::SetBackupStandbyDays(const int64_t& _backupStandbyDays)
+{
+    m_backupStandbyDays = _backupStandbyDays;
+    m_backupStandbyDaysHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::BackupStandbyDaysHasBeenSet() const
+{
+    return m_backupStandbyDaysHasBeenSet;
+}
+
+string ModifyBackupConfigRequest::GetEnableBinlogStandby() const
+{
+    return m_enableBinlogStandby;
+}
+
+void ModifyBackupConfigRequest::SetEnableBinlogStandby(const string& _enableBinlogStandby)
+{
+    m_enableBinlogStandby = _enableBinlogStandby;
+    m_enableBinlogStandbyHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::EnableBinlogStandbyHasBeenSet() const
+{
+    return m_enableBinlogStandbyHasBeenSet;
+}
+
+int64_t ModifyBackupConfigRequest::GetBinlogStandbyDays() const
+{
+    return m_binlogStandbyDays;
+}
+
+void ModifyBackupConfigRequest::SetBinlogStandbyDays(const int64_t& _binlogStandbyDays)
+{
+    m_binlogStandbyDays = _binlogStandbyDays;
+    m_binlogStandbyDaysHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::BinlogStandbyDaysHasBeenSet() const
+{
+    return m_binlogStandbyDaysHasBeenSet;
 }
 
 

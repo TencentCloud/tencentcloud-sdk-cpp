@@ -245,8 +245,6 @@
 #include <tencentcloud/teo/v20220901/model/ModifyHostsCertificateResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancingRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLoadBalancingResponse.h>
-#include <tencentcloud/teo/v20220901/model/ModifyLoadBalancingStatusRequest.h>
-#include <tencentcloud/teo/v20220901/model/ModifyLoadBalancingStatusResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLogTopicTaskRequest.h>
 #include <tencentcloud/teo/v20220901/model/ModifyLogTopicTaskResponse.h>
 #include <tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h>
@@ -620,9 +618,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyLoadBalancingResponse> ModifyLoadBalancingOutcome;
                 typedef std::future<ModifyLoadBalancingOutcome> ModifyLoadBalancingOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyLoadBalancingRequest&, ModifyLoadBalancingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancingAsyncHandler;
-                typedef Outcome<Core::Error, Model::ModifyLoadBalancingStatusResponse> ModifyLoadBalancingStatusOutcome;
-                typedef std::future<ModifyLoadBalancingStatusOutcome> ModifyLoadBalancingStatusOutcomeCallable;
-                typedef std::function<void(const TeoClient*, const Model::ModifyLoadBalancingStatusRequest&, ModifyLoadBalancingStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLoadBalancingStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyLogTopicTaskResponse> ModifyLogTopicTaskOutcome;
                 typedef std::future<ModifyLogTopicTaskOutcome> ModifyLogTopicTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::ModifyLogTopicTaskRequest&, ModifyLogTopicTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyLogTopicTaskAsyncHandler;
@@ -1663,15 +1658,6 @@ namespace TencentCloud
                 ModifyLoadBalancingOutcome ModifyLoadBalancing(const Model::ModifyLoadBalancingRequest &request);
                 void ModifyLoadBalancingAsync(const Model::ModifyLoadBalancingRequest& request, const ModifyLoadBalancingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyLoadBalancingOutcomeCallable ModifyLoadBalancingCallable(const Model::ModifyLoadBalancingRequest& request);
-
-                /**
-                 *修改负载均衡状态
-                 * @param req ModifyLoadBalancingStatusRequest
-                 * @return ModifyLoadBalancingStatusOutcome
-                 */
-                ModifyLoadBalancingStatusOutcome ModifyLoadBalancingStatus(const Model::ModifyLoadBalancingStatusRequest &request);
-                void ModifyLoadBalancingStatusAsync(const Model::ModifyLoadBalancingStatusRequest& request, const ModifyLoadBalancingStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                ModifyLoadBalancingStatusOutcomeCallable ModifyLoadBalancingStatusCallable(const Model::ModifyLoadBalancingStatusRequest& request);
 
                 /**
                  *本接口（ModifyLogTopicTask）用于修改日志推送任务信息。

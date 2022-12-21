@@ -119,6 +119,20 @@ namespace TencentCloud
                      */
                     bool BackupArchiveVolumeHasBeenSet() const;
 
+                    /**
+                     * 获取标准存储备份容量，包含数据备份以及日志备份。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BackupStandbyVolume 标准存储备份容量，包含数据备份以及日志备份。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetBackupStandbyVolume() const;
+
+                    /**
+                     * 判断参数 BackupStandbyVolume 是否已赋值
+                     * @return BackupStandbyVolume 是否已赋值
+                     */
+                    bool BackupStandbyVolumeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -158,6 +172,13 @@ namespace TencentCloud
                      */
                     int64_t m_backupArchiveVolume;
                     bool m_backupArchiveVolumeHasBeenSet;
+
+                    /**
+                     * 标准存储备份容量，包含数据备份以及日志备份。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_backupStandbyVolume;
+                    bool m_backupStandbyVolumeHasBeenSet;
 
                 };
             }

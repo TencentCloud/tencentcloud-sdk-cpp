@@ -101,6 +101,8 @@
 #include <tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendResponse.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBizHttpStatusRequest.h>
+#include <tencentcloud/antiddos/v20200309/model/DescribeBizHttpStatusResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizTrendRequest.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBizTrendResponse.h>
 #include <tencentcloud/antiddos/v20200309/model/DescribeBlackWhiteIpListRequest.h>
@@ -338,6 +340,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBgpBizTrendResponse> DescribeBgpBizTrendOutcome;
                 typedef std::future<DescribeBgpBizTrendOutcome> DescribeBgpBizTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBgpBizTrendRequest&, DescribeBgpBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBgpBizTrendAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBizHttpStatusResponse> DescribeBizHttpStatusOutcome;
+                typedef std::future<DescribeBizHttpStatusOutcome> DescribeBizHttpStatusOutcomeCallable;
+                typedef std::function<void(const AntiddosClient*, const Model::DescribeBizHttpStatusRequest&, DescribeBizHttpStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizHttpStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBizTrendResponse> DescribeBizTrendOutcome;
                 typedef std::future<DescribeBizTrendOutcome> DescribeBizTrendOutcomeCallable;
                 typedef std::function<void(const AntiddosClient*, const Model::DescribeBizTrendRequest&, DescribeBizTrendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBizTrendAsyncHandler;
@@ -850,6 +855,15 @@ namespace TencentCloud
                 DescribeBgpBizTrendOutcome DescribeBgpBizTrend(const Model::DescribeBgpBizTrendRequest &request);
                 void DescribeBgpBizTrendAsync(const Model::DescribeBgpBizTrendRequest& request, const DescribeBgpBizTrendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBgpBizTrendOutcomeCallable DescribeBgpBizTrendCallable(const Model::DescribeBgpBizTrendRequest& request);
+
+                /**
+                 *获取业务流量状态码统计列表
+                 * @param req DescribeBizHttpStatusRequest
+                 * @return DescribeBizHttpStatusOutcome
+                 */
+                DescribeBizHttpStatusOutcome DescribeBizHttpStatus(const Model::DescribeBizHttpStatusRequest &request);
+                void DescribeBizHttpStatusAsync(const Model::DescribeBizHttpStatusRequest& request, const DescribeBizHttpStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBizHttpStatusOutcomeCallable DescribeBizHttpStatusCallable(const Model::DescribeBizHttpStatusRequest& request);
 
                 /**
                  *获取业务流量曲线

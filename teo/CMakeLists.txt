@@ -357,7 +357,6 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/DescribeBotManagedRulesRequest.h
   include/tencentcloud/teo/v20220901/model/Compression.h
   include/tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyLoadBalancingStatusResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeBotDataRequest.h
   include/tencentcloud/teo/v20220901/model/SpeedTestingInfo.h
   include/tencentcloud/teo/v20220901/model/DescribeSingleL7AnalysisDataRequest.h
@@ -495,7 +494,6 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeDnsDataResponse.h
   include/tencentcloud/teo/v20220901/model/Zone.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackSourceEventRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyLoadBalancingStatusRequest.h
   include/tencentcloud/teo/v20220901/model/DDoSAttackEvent.h
   include/tencentcloud/teo/v20220901/model/DropPageDetail.h
   include/tencentcloud/teo/v20220901/model/SwitchLogTopicTaskResponse.h
@@ -1113,7 +1111,6 @@ set(teo_src
   src/v20220106/model/DescribeBotManagedRulesRequest.cpp
   src/v20220901/model/Compression.cpp
   src/v20220901/model/DescribeOriginGroupResponse.cpp
-  src/v20220901/model/ModifyLoadBalancingStatusResponse.cpp
   src/v20220901/model/DescribeBotDataRequest.cpp
   src/v20220901/model/SpeedTestingInfo.cpp
   src/v20220901/model/DescribeSingleL7AnalysisDataRequest.cpp
@@ -1251,7 +1248,6 @@ set(teo_src
   src/v20220901/model/DescribeDnsDataResponse.cpp
   src/v20220901/model/Zone.cpp
   src/v20220901/model/DescribeDDoSAttackSourceEventRequest.cpp
-  src/v20220901/model/ModifyLoadBalancingStatusRequest.cpp
   src/v20220901/model/DDoSAttackEvent.cpp
   src/v20220901/model/DropPageDetail.cpp
   src/v20220901/model/SwitchLogTopicTaskResponse.cpp

@@ -115,6 +115,30 @@ namespace TencentCloud
                      */
                     bool BinlogArchiveCountHasBeenSet() const;
 
+                    /**
+                     * 获取标准存储日志备份容量（单位为字节）。
+                     * @return BinlogStandbyVolume 标准存储日志备份容量（单位为字节）。
+                     */
+                    int64_t GetBinlogStandbyVolume() const;
+
+                    /**
+                     * 判断参数 BinlogStandbyVolume 是否已赋值
+                     * @return BinlogStandbyVolume 是否已赋值
+                     */
+                    bool BinlogStandbyVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取标准存储日志备份个数。
+                     * @return BinlogStandbyCount 标准存储日志备份个数。
+                     */
+                    int64_t GetBinlogStandbyCount() const;
+
+                    /**
+                     * 判断参数 BinlogStandbyCount 是否已赋值
+                     * @return BinlogStandbyCount 是否已赋值
+                     */
+                    bool BinlogStandbyCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +176,18 @@ namespace TencentCloud
                      */
                     int64_t m_binlogArchiveCount;
                     bool m_binlogArchiveCountHasBeenSet;
+
+                    /**
+                     * 标准存储日志备份容量（单位为字节）。
+                     */
+                    int64_t m_binlogStandbyVolume;
+                    bool m_binlogStandbyVolumeHasBeenSet;
+
+                    /**
+                     * 标准存储日志备份个数。
+                     */
+                    int64_t m_binlogStandbyCount;
+                    bool m_binlogStandbyCountHasBeenSet;
 
                 };
             }

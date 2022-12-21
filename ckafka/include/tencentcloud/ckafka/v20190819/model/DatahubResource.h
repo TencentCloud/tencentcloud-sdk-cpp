@@ -39,6 +39,7 @@
 #include <tencentcloud/ckafka/v20190819/model/MariaDBParam.h>
 #include <tencentcloud/ckafka/v20190819/model/SQLServerParam.h>
 #include <tencentcloud/ckafka/v20190819/model/CtsdbParam.h>
+#include <tencentcloud/ckafka/v20190819/model/ScfParam.h>
 
 
 namespace TencentCloud
@@ -409,6 +410,28 @@ namespace TencentCloud
                      */
                     bool CtsdbParamHasBeenSet() const;
 
+                    /**
+                     * 获取Scf配置，Type为SCF时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScfParam Scf配置，Type为SCF时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScfParam GetScfParam() const;
+
+                    /**
+                     * 设置Scf配置，Type为SCF时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ScfParam Scf配置，Type为SCF时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetScfParam(const ScfParam& _scfParam);
+
+                    /**
+                     * 判断参数 ScfParam 是否已赋值
+                     * @return ScfParam 是否已赋值
+                     */
+                    bool ScfParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -521,6 +544,13 @@ namespace TencentCloud
                      */
                     CtsdbParam m_ctsdbParam;
                     bool m_ctsdbParamHasBeenSet;
+
+                    /**
+                     * Scf配置，Type为SCF时必填
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScfParam m_scfParam;
+                    bool m_scfParamHasBeenSet;
 
                 };
             }

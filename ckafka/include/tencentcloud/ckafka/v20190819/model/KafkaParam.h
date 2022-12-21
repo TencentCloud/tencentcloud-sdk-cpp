@@ -365,6 +365,28 @@ namespace TencentCloud
                      */
                     bool CompressionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMsgMultiple() const;
+
+                    /**
+                     * 设置源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MsgMultiple 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMsgMultiple(const int64_t& _msgMultiple);
+
+                    /**
+                     * 判断参数 MsgMultiple 是否已赋值
+                     * @return MsgMultiple 是否已赋值
+                     */
+                    bool MsgMultipleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -468,6 +490,13 @@ namespace TencentCloud
                      */
                     std::string m_compressionType;
                     bool m_compressionTypeHasBeenSet;
+
+                    /**
+                     * 源topic消息1条扩增成msgMultiple条写入目标topic(该参数目前只有ckafka流入ckafka适用)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_msgMultiple;
+                    bool m_msgMultipleHasBeenSet;
 
                 };
             }

@@ -38,7 +38,11 @@ DescribeBackupConfigResponse::DescribeBackupConfigResponse() :
     m_enableBackupArchiveHasBeenSet(false),
     m_backupArchiveDaysHasBeenSet(false),
     m_enableBinlogArchiveHasBeenSet(false),
-    m_binlogArchiveDaysHasBeenSet(false)
+    m_binlogArchiveDaysHasBeenSet(false),
+    m_enableBackupStandbyHasBeenSet(false),
+    m_backupStandbyDaysHasBeenSet(false),
+    m_enableBinlogStandbyHasBeenSet(false),
+    m_binlogStandbyDaysHasBeenSet(false)
 {
 }
 
@@ -233,6 +237,46 @@ CoreInternalOutcome DescribeBackupConfigResponse::Deserialize(const string &payl
         m_binlogArchiveDaysHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EnableBackupStandby") && !rsp["EnableBackupStandby"].IsNull())
+    {
+        if (!rsp["EnableBackupStandby"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableBackupStandby` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBackupStandby = string(rsp["EnableBackupStandby"].GetString());
+        m_enableBackupStandbyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BackupStandbyDays") && !rsp["BackupStandbyDays"].IsNull())
+    {
+        if (!rsp["BackupStandbyDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BackupStandbyDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupStandbyDays = rsp["BackupStandbyDays"].GetInt64();
+        m_backupStandbyDaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableBinlogStandby") && !rsp["EnableBinlogStandby"].IsNull())
+    {
+        if (!rsp["EnableBinlogStandby"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableBinlogStandby` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableBinlogStandby = string(rsp["EnableBinlogStandby"].GetString());
+        m_enableBinlogStandbyHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("BinlogStandbyDays") && !rsp["BinlogStandbyDays"].IsNull())
+    {
+        if (!rsp["BinlogStandbyDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BinlogStandbyDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_binlogStandbyDays = rsp["BinlogStandbyDays"].GetInt64();
+        m_binlogStandbyDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +406,38 @@ string DescribeBackupConfigResponse::ToJsonString() const
         string key = "BinlogArchiveDays";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_binlogArchiveDays, allocator);
+    }
+
+    if (m_enableBackupStandbyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBackupStandby";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enableBackupStandby.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupStandbyDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupStandbyDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_backupStandbyDays, allocator);
+    }
+
+    if (m_enableBinlogStandbyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableBinlogStandby";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_enableBinlogStandby.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_binlogStandbyDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BinlogStandbyDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_binlogStandbyDays, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -524,6 +600,46 @@ int64_t DescribeBackupConfigResponse::GetBinlogArchiveDays() const
 bool DescribeBackupConfigResponse::BinlogArchiveDaysHasBeenSet() const
 {
     return m_binlogArchiveDaysHasBeenSet;
+}
+
+string DescribeBackupConfigResponse::GetEnableBackupStandby() const
+{
+    return m_enableBackupStandby;
+}
+
+bool DescribeBackupConfigResponse::EnableBackupStandbyHasBeenSet() const
+{
+    return m_enableBackupStandbyHasBeenSet;
+}
+
+int64_t DescribeBackupConfigResponse::GetBackupStandbyDays() const
+{
+    return m_backupStandbyDays;
+}
+
+bool DescribeBackupConfigResponse::BackupStandbyDaysHasBeenSet() const
+{
+    return m_backupStandbyDaysHasBeenSet;
+}
+
+string DescribeBackupConfigResponse::GetEnableBinlogStandby() const
+{
+    return m_enableBinlogStandby;
+}
+
+bool DescribeBackupConfigResponse::EnableBinlogStandbyHasBeenSet() const
+{
+    return m_enableBinlogStandbyHasBeenSet;
+}
+
+int64_t DescribeBackupConfigResponse::GetBinlogStandbyDays() const
+{
+    return m_binlogStandbyDays;
+}
+
+bool DescribeBackupConfigResponse::BinlogStandbyDaysHasBeenSet() const
+{
+    return m_binlogStandbyDaysHasBeenSet;
 }
 
 

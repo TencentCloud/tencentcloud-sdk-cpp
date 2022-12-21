@@ -118,6 +118,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/CreatePartitionResponse.h
   include/tencentcloud/ckafka/v20190819/model/MongoDBConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/MySQLParam.h
+  include/tencentcloud/ckafka/v20190819/model/BatchAnalyseParam.h
   include/tencentcloud/ckafka/v20190819/model/ClusterInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteGroupRequest.h
   include/tencentcloud/ckafka/v20190819/model/DescribeConsumerGroupRequest.h
@@ -282,6 +283,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicIpWhiteListRequest.h
   include/tencentcloud/ckafka/v20190819/model/SaleInfo.h
   include/tencentcloud/ckafka/v20190819/model/DeleteTopicResponse.h
+  include/tencentcloud/ckafka/v20190819/model/ScfParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h
   include/tencentcloud/ckafka/v20190819/model/ClickHouseConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeUserRequest.h
@@ -399,6 +401,7 @@ set(ckafka_src
   src/v20190819/model/CreatePartitionResponse.cpp
   src/v20190819/model/MongoDBConnectParam.cpp
   src/v20190819/model/MySQLParam.cpp
+  src/v20190819/model/BatchAnalyseParam.cpp
   src/v20190819/model/ClusterInfo.cpp
   src/v20190819/model/DeleteGroupRequest.cpp
   src/v20190819/model/DescribeConsumerGroupRequest.cpp
@@ -563,6 +566,7 @@ set(ckafka_src
   src/v20190819/model/DeleteTopicIpWhiteListRequest.cpp
   src/v20190819/model/SaleInfo.cpp
   src/v20190819/model/DeleteTopicResponse.cpp
+  src/v20190819/model/ScfParam.cpp
   src/v20190819/model/CreateDatahubTaskResponse.cpp
   src/v20190819/model/ClickHouseConnectParam.cpp
   src/v20190819/model/DescribeUserRequest.cpp

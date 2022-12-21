@@ -40,6 +40,49 @@ LighthouseClient::LighthouseClient(const Credential &credential, const string &r
 }
 
 
+LighthouseClient::ApplyDiskBackupOutcome LighthouseClient::ApplyDiskBackup(const ApplyDiskBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyDiskBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyDiskBackupResponse rsp = ApplyDiskBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyDiskBackupOutcome(rsp);
+        else
+            return ApplyDiskBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyDiskBackupOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ApplyDiskBackupAsync(const ApplyDiskBackupRequest& request, const ApplyDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyDiskBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ApplyDiskBackupOutcomeCallable LighthouseClient::ApplyDiskBackupCallable(const ApplyDiskBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyDiskBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyDiskBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::ApplyInstanceSnapshotOutcome LighthouseClient::ApplyInstanceSnapshot(const ApplyInstanceSnapshotRequest &request)
 {
     auto outcome = MakeRequest(request, "ApplyInstanceSnapshot");
@@ -255,6 +298,49 @@ LighthouseClient::CreateBlueprintOutcomeCallable LighthouseClient::CreateBluepri
     return task->get_future();
 }
 
+LighthouseClient::CreateDiskBackupOutcome LighthouseClient::CreateDiskBackup(const CreateDiskBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDiskBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDiskBackupResponse rsp = CreateDiskBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDiskBackupOutcome(rsp);
+        else
+            return CreateDiskBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDiskBackupOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::CreateDiskBackupAsync(const CreateDiskBackupRequest& request, const CreateDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDiskBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::CreateDiskBackupOutcomeCallable LighthouseClient::CreateDiskBackupCallable(const CreateDiskBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDiskBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDiskBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LighthouseClient::CreateFirewallRulesOutcome LighthouseClient::CreateFirewallRules(const CreateFirewallRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFirewallRules");
@@ -463,6 +549,49 @@ LighthouseClient::DeleteBlueprintsOutcomeCallable LighthouseClient::DeleteBluepr
         [this, request]()
         {
             return this->DeleteBlueprints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DeleteDiskBackupsOutcome LighthouseClient::DeleteDiskBackups(const DeleteDiskBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDiskBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDiskBackupsResponse rsp = DeleteDiskBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDiskBackupsOutcome(rsp);
+        else
+            return DeleteDiskBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDiskBackupsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DeleteDiskBackupsAsync(const DeleteDiskBackupsRequest& request, const DeleteDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDiskBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DeleteDiskBackupsOutcomeCallable LighthouseClient::DeleteDiskBackupsCallable(const DeleteDiskBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDiskBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDiskBackups(request);
         }
     );
 
@@ -850,6 +979,92 @@ LighthouseClient::DescribeCcnAttachedInstancesOutcomeCallable LighthouseClient::
         [this, request]()
         {
             return this->DescribeCcnAttachedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeDiskBackupsOutcome LighthouseClient::DescribeDiskBackups(const DescribeDiskBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiskBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiskBackupsResponse rsp = DescribeDiskBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiskBackupsOutcome(rsp);
+        else
+            return DescribeDiskBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiskBackupsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeDiskBackupsAsync(const DescribeDiskBackupsRequest& request, const DescribeDiskBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiskBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeDiskBackupsOutcomeCallable LighthouseClient::DescribeDiskBackupsCallable(const DescribeDiskBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiskBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiskBackups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::DescribeDiskBackupsDeniedActionsOutcome LighthouseClient::DescribeDiskBackupsDeniedActions(const DescribeDiskBackupsDeniedActionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDiskBackupsDeniedActions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDiskBackupsDeniedActionsResponse rsp = DescribeDiskBackupsDeniedActionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDiskBackupsDeniedActionsOutcome(rsp);
+        else
+            return DescribeDiskBackupsDeniedActionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDiskBackupsDeniedActionsOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::DescribeDiskBackupsDeniedActionsAsync(const DescribeDiskBackupsDeniedActionsRequest& request, const DescribeDiskBackupsDeniedActionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDiskBackupsDeniedActions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::DescribeDiskBackupsDeniedActionsOutcomeCallable LighthouseClient::DescribeDiskBackupsDeniedActionsCallable(const DescribeDiskBackupsDeniedActionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDiskBackupsDeniedActionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDiskBackupsDeniedActions(request);
         }
     );
 
@@ -2312,6 +2527,49 @@ LighthouseClient::ModifyBlueprintAttributeOutcomeCallable LighthouseClient::Modi
         [this, request]()
         {
             return this->ModifyBlueprintAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LighthouseClient::ModifyDiskBackupsAttributeOutcome LighthouseClient::ModifyDiskBackupsAttribute(const ModifyDiskBackupsAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDiskBackupsAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDiskBackupsAttributeResponse rsp = ModifyDiskBackupsAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDiskBackupsAttributeOutcome(rsp);
+        else
+            return ModifyDiskBackupsAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDiskBackupsAttributeOutcome(outcome.GetError());
+    }
+}
+
+void LighthouseClient::ModifyDiskBackupsAttributeAsync(const ModifyDiskBackupsAttributeRequest& request, const ModifyDiskBackupsAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDiskBackupsAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LighthouseClient::ModifyDiskBackupsAttributeOutcomeCallable LighthouseClient::ModifyDiskBackupsAttributeCallable(const ModifyDiskBackupsAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDiskBackupsAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDiskBackupsAttribute(request);
         }
     );
 

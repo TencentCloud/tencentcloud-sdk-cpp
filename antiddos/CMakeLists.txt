@@ -86,6 +86,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DisassociateDDoSEipAddressResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeBgpBizTrendRequest.h
   include/tencentcloud/antiddos/v20200309/model/DeleteCCThresholdPolicyResponse.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeBizHttpStatusRequest.h
   include/tencentcloud/antiddos/v20200309/model/SourceServer.h
   include/tencentcloud/antiddos/v20200309/model/CCLevelPolicy.h
   include/tencentcloud/antiddos/v20200309/model/DescribeOverviewIndexResponse.h
@@ -108,6 +109,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DescribeOverviewDDoSEventListResponse.h
   include/tencentcloud/antiddos/v20200309/model/CreateCcGeoIPBlockConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeOverviewAttackTrendResponse.h
+  include/tencentcloud/antiddos/v20200309/model/HttpStatusMap.h
   include/tencentcloud/antiddos/v20200309/model/Layer7Rule.h
   include/tencentcloud/antiddos/v20200309/model/ModifyPortAclConfigResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeBasicDeviceStatusRequest.h
@@ -160,6 +162,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/DeleteDDoSBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/PackInfo.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSConnectLimitResponse.h
+  include/tencentcloud/antiddos/v20200309/model/WaterPrintRelation.h
   include/tencentcloud/antiddos/v20200309/model/IPLineInfo.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCcBlackWhiteIpListRequest.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListListenerResponse.h
@@ -201,7 +204,7 @@ set(antiddos_public_header_model
   include/tencentcloud/antiddos/v20200309/model/ModifyDomainUsrNameRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateDDoSConnectLimitRequest.h
   include/tencentcloud/antiddos/v20200309/model/CreateWaterPrintKeyRequest.h
-  include/tencentcloud/antiddos/v20200309/model/WaterPrintRelation.h
+  include/tencentcloud/antiddos/v20200309/model/DescribeBizHttpStatusResponse.h
   include/tencentcloud/antiddos/v20200309/model/InsL7Rules.h
   include/tencentcloud/antiddos/v20200309/model/DescribeCCReqLimitPolicyListResponse.h
   include/tencentcloud/antiddos/v20200309/model/DescribeListDDoSAIResponse.h
@@ -342,6 +345,7 @@ set(antiddos_src
   src/v20200309/model/DisassociateDDoSEipAddressResponse.cpp
   src/v20200309/model/DescribeBgpBizTrendRequest.cpp
   src/v20200309/model/DeleteCCThresholdPolicyResponse.cpp
+  src/v20200309/model/DescribeBizHttpStatusRequest.cpp
   src/v20200309/model/SourceServer.cpp
   src/v20200309/model/CCLevelPolicy.cpp
   src/v20200309/model/DescribeOverviewIndexResponse.cpp
@@ -364,6 +368,7 @@ set(antiddos_src
   src/v20200309/model/DescribeOverviewDDoSEventListResponse.cpp
   src/v20200309/model/CreateCcGeoIPBlockConfigResponse.cpp
   src/v20200309/model/DescribeOverviewAttackTrendResponse.cpp
+  src/v20200309/model/HttpStatusMap.cpp
   src/v20200309/model/Layer7Rule.cpp
   src/v20200309/model/ModifyPortAclConfigResponse.cpp
   src/v20200309/model/DescribeBasicDeviceStatusRequest.cpp
@@ -416,6 +421,7 @@ set(antiddos_src
   src/v20200309/model/DeleteDDoSBlackWhiteIpListRequest.cpp
   src/v20200309/model/PackInfo.cpp
   src/v20200309/model/CreateDDoSConnectLimitResponse.cpp
+  src/v20200309/model/WaterPrintRelation.cpp
   src/v20200309/model/IPLineInfo.cpp
   src/v20200309/model/DescribeCcBlackWhiteIpListRequest.cpp
   src/v20200309/model/DescribeListListenerResponse.cpp
@@ -457,7 +463,7 @@ set(antiddos_src
   src/v20200309/model/ModifyDomainUsrNameRequest.cpp
   src/v20200309/model/CreateDDoSConnectLimitRequest.cpp
   src/v20200309/model/CreateWaterPrintKeyRequest.cpp
-  src/v20200309/model/WaterPrintRelation.cpp
+  src/v20200309/model/DescribeBizHttpStatusResponse.cpp
   src/v20200309/model/InsL7Rules.cpp
   src/v20200309/model/DescribeCCReqLimitPolicyListResponse.cpp
   src/v20200309/model/DescribeListDDoSAIResponse.cpp
