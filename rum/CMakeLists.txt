@@ -28,6 +28,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeTawInstancesRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteOfflineLogConfigResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlInfoResponse.h
+  include/tencentcloud/rum/v20210622/model/StopProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataFetchUrlResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeErrorRequest.h
   include/tencentcloud/rum/v20210622/model/StopInstanceRequest.h
@@ -58,6 +59,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeUvListRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeTawAreasResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeDataRequest.h
+  include/tencentcloud/rum/v20210622/model/StopProjectRequest.h
   include/tencentcloud/rum/v20210622/model/CreateOfflineLogConfigResponse.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectLimitRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteInstanceResponse.h
@@ -152,6 +154,7 @@ set(rum_src
   src/v20210622/model/DescribeTawInstancesRequest.cpp
   src/v20210622/model/DeleteOfflineLogConfigResponse.cpp
   src/v20210622/model/DescribeDataPvUrlInfoResponse.cpp
+  src/v20210622/model/StopProjectResponse.cpp
   src/v20210622/model/DescribeDataFetchUrlResponse.cpp
   src/v20210622/model/DescribeErrorRequest.cpp
   src/v20210622/model/StopInstanceRequest.cpp
@@ -182,6 +185,7 @@ set(rum_src
   src/v20210622/model/DescribeUvListRequest.cpp
   src/v20210622/model/DescribeTawAreasResponse.cpp
   src/v20210622/model/DescribeDataRequest.cpp
+  src/v20210622/model/StopProjectRequest.cpp
   src/v20210622/model/CreateOfflineLogConfigResponse.cpp
   src/v20210622/model/ModifyProjectLimitRequest.cpp
   src/v20210622/model/DeleteInstanceResponse.cpp

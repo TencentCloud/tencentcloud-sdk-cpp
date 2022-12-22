@@ -14,22 +14,23 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
+#include <tencentcloud/anicloud/v20220923/model/CheckAppidExistResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Vod::V20180717::Model;
+using namespace TencentCloud::Anicloud::V20220923::Model;
 using namespace std;
 
-ReviewImageResponse::ReviewImageResponse() :
-    m_reviewResultSetHasBeenSet(false),
-    m_mediaReviewResultHasBeenSet(false)
+CheckAppidExistResponse::CheckAppidExistResponse() :
+    m_existHasBeenSet(false),
+    m_hasErrorHasBeenSet(false),
+    m_msgHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ReviewImageResponse::Deserialize(const string &payload)
+CoreInternalOutcome CheckAppidExistResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,75 +64,68 @@ CoreInternalOutcome ReviewImageResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ReviewResultSet") && !rsp["ReviewResultSet"].IsNull())
+    if (rsp.HasMember("Exist") && !rsp["Exist"].IsNull())
     {
-        if (!rsp["ReviewResultSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ReviewResultSet` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["ReviewResultSet"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["Exist"].IsBool())
         {
-            ContentReviewResult item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_reviewResultSet.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `Exist` IsBool=false incorrectly").SetRequestId(requestId));
         }
-        m_reviewResultSetHasBeenSet = true;
+        m_exist = rsp["Exist"].GetBool();
+        m_existHasBeenSet = true;
     }
 
-    if (rsp.HasMember("MediaReviewResult") && !rsp["MediaReviewResult"].IsNull())
+    if (rsp.HasMember("HasError") && !rsp["HasError"].IsNull())
     {
-        if (!rsp["MediaReviewResult"].IsObject())
+        if (!rsp["HasError"].IsBool())
         {
-            return CoreInternalOutcome(Core::Error("response `MediaReviewResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `HasError` IsBool=false incorrectly").SetRequestId(requestId));
         }
+        m_hasError = rsp["HasError"].GetBool();
+        m_hasErrorHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_mediaReviewResult.Deserialize(rsp["MediaReviewResult"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("Msg") && !rsp["Msg"].IsNull())
+    {
+        if (!rsp["Msg"].IsString())
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            return CoreInternalOutcome(Core::Error("response `Msg` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        m_mediaReviewResultHasBeenSet = true;
+        m_msg = string(rsp["Msg"].GetString());
+        m_msgHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ReviewImageResponse::ToJsonString() const
+string CheckAppidExistResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_reviewResultSetHasBeenSet)
+    if (m_existHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReviewResultSet";
+        string key = "Exist";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_reviewResultSet.begin(); itr != m_reviewResultSet.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, m_exist, allocator);
     }
 
-    if (m_mediaReviewResultHasBeenSet)
+    if (m_hasErrorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MediaReviewResult";
+        string key = "HasError";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_mediaReviewResult.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_hasError, allocator);
+    }
+
+    if (m_msgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Msg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_msg.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,24 +140,34 @@ string ReviewImageResponse::ToJsonString() const
 }
 
 
-vector<ContentReviewResult> ReviewImageResponse::GetReviewResultSet() const
+bool CheckAppidExistResponse::GetExist() const
 {
-    return m_reviewResultSet;
+    return m_exist;
 }
 
-bool ReviewImageResponse::ReviewResultSetHasBeenSet() const
+bool CheckAppidExistResponse::ExistHasBeenSet() const
 {
-    return m_reviewResultSetHasBeenSet;
+    return m_existHasBeenSet;
 }
 
-ReviewImageResult ReviewImageResponse::GetMediaReviewResult() const
+bool CheckAppidExistResponse::GetHasError() const
 {
-    return m_mediaReviewResult;
+    return m_hasError;
 }
 
-bool ReviewImageResponse::MediaReviewResultHasBeenSet() const
+bool CheckAppidExistResponse::HasErrorHasBeenSet() const
 {
-    return m_mediaReviewResultHasBeenSet;
+    return m_hasErrorHasBeenSet;
+}
+
+string CheckAppidExistResponse::GetMsg() const
+{
+    return m_msg;
+}
+
+bool CheckAppidExistResponse::MsgHasBeenSet() const
+{
+    return m_msgHasBeenSet;
 }
 
 

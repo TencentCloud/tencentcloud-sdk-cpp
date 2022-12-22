@@ -23,7 +23,8 @@ using namespace std;
 FollowOrigin::FollowOrigin() :
     m_switchHasBeenSet(false),
     m_defaultCacheTimeHasBeenSet(false),
-    m_defaultCacheHasBeenSet(false)
+    m_defaultCacheHasBeenSet(false),
+    m_defaultCacheStrategyHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome FollowOrigin::Deserialize(const rapidjson::Value &value)
         m_defaultCacheHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultCacheStrategy") && !value["DefaultCacheStrategy"].IsNull())
+    {
+        if (!value["DefaultCacheStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FollowOrigin.DefaultCacheStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultCacheStrategy = string(value["DefaultCacheStrategy"].GetString());
+        m_defaultCacheStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void FollowOrigin::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DefaultCache";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_defaultCache.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultCacheStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultCacheStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultCacheStrategy.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void FollowOrigin::SetDefaultCache(const string& _defaultCache)
 bool FollowOrigin::DefaultCacheHasBeenSet() const
 {
     return m_defaultCacheHasBeenSet;
+}
+
+string FollowOrigin::GetDefaultCacheStrategy() const
+{
+    return m_defaultCacheStrategy;
+}
+
+void FollowOrigin::SetDefaultCacheStrategy(const string& _defaultCacheStrategy)
+{
+    m_defaultCacheStrategy = _defaultCacheStrategy;
+    m_defaultCacheStrategyHasBeenSet = true;
+}
+
+bool FollowOrigin::DefaultCacheStrategyHasBeenSet() const
+{
+    return m_defaultCacheStrategyHasBeenSet;
 }
 

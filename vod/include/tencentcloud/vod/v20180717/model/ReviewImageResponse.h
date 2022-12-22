@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ContentReviewResult.h>
+#include <tencentcloud/vod/v20180717/model/ReviewImageResult.h>
 
 
 namespace TencentCloud
@@ -46,7 +47,9 @@ namespace TencentCloud
 
                     /**
                      * 获取图片审核任务结果。
+<font color=red>注意：该字段已废弃，建议使用 ReviewResult。</font> 
                      * @return ReviewResultSet 图片审核任务结果。
+<font color=red>注意：该字段已废弃，建议使用 ReviewResult。</font> 
                      */
                     std::vector<ContentReviewResult> GetReviewResultSet() const;
 
@@ -56,13 +59,35 @@ namespace TencentCloud
                      */
                     bool ReviewResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取图片审核任务结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaReviewResult 图片审核任务结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewImageResult GetMediaReviewResult() const;
+
+                    /**
+                     * 判断参数 MediaReviewResult 是否已赋值
+                     * @return MediaReviewResult 是否已赋值
+                     */
+                    bool MediaReviewResultHasBeenSet() const;
+
                 private:
 
                     /**
                      * 图片审核任务结果。
+<font color=red>注意：该字段已废弃，建议使用 ReviewResult。</font> 
                      */
                     std::vector<ContentReviewResult> m_reviewResultSet;
                     bool m_reviewResultSetHasBeenSet;
+
+                    /**
+                     * 图片审核任务结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewImageResult m_mediaReviewResult;
+                    bool m_mediaReviewResultHasBeenSet;
 
                 };
             }

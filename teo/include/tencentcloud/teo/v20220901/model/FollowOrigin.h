@@ -116,6 +116,28 @@ namespace TencentCloud
                      */
                     bool DefaultCacheHasBeenSet() const;
 
+                    /**
+                     * 获取源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultCacheStrategy 源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDefaultCacheStrategy() const;
+
+                    /**
+                     * 设置源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefaultCacheStrategy 源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefaultCacheStrategy(const std::string& _defaultCacheStrategy);
+
+                    /**
+                     * 判断参数 DefaultCacheStrategy 是否已赋值
+                     * @return DefaultCacheStrategy 是否已赋值
+                     */
+                    bool DefaultCacheStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +161,13 @@ namespace TencentCloud
                      */
                     std::string m_defaultCache;
                     bool m_defaultCacheHasBeenSet;
+
+                    /**
+                     * 源站未返回 Cache-Control 头时, 使用/不使用默认缓存策略
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_defaultCacheStrategy;
+                    bool m_defaultCacheStrategyHasBeenSet;
 
                 };
             }

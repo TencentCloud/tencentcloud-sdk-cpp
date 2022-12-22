@@ -131,6 +131,8 @@
 #include <tencentcloud/rum/v20210622/model/ResumeInstanceResponse.h>
 #include <tencentcloud/rum/v20210622/model/StopInstanceRequest.h>
 #include <tencentcloud/rum/v20210622/model/StopInstanceResponse.h>
+#include <tencentcloud/rum/v20210622/model/StopProjectRequest.h>
+#include <tencentcloud/rum/v20210622/model/StopProjectResponse.h>
 
 
 namespace TencentCloud
@@ -307,6 +309,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopInstanceResponse> StopInstanceOutcome;
                 typedef std::future<StopInstanceOutcome> StopInstanceOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::StopInstanceRequest&, StopInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopProjectResponse> StopProjectOutcome;
+                typedef std::future<StopProjectOutcome> StopProjectOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::StopProjectRequest&, StopProjectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopProjectAsyncHandler;
 
 
 
@@ -808,6 +813,15 @@ namespace TencentCloud
                 StopInstanceOutcome StopInstance(const Model::StopInstanceRequest &request);
                 void StopInstanceAsync(const Model::StopInstanceRequest& request, const StopInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopInstanceOutcomeCallable StopInstanceCallable(const Model::StopInstanceRequest& request);
+
+                /**
+                 *停止项目使用与上报数据
+                 * @param req StopProjectRequest
+                 * @return StopProjectOutcome
+                 */
+                StopProjectOutcome StopProject(const Model::StopProjectRequest &request);
+                void StopProjectAsync(const Model::StopProjectRequest& request, const StopProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopProjectOutcomeCallable StopProjectCallable(const Model::StopProjectRequest& request);
 
             };
         }

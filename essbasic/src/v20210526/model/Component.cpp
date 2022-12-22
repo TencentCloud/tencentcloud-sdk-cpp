@@ -41,6 +41,7 @@ Component::Component() :
     m_offsetXHasBeenSet(false),
     m_offsetYHasBeenSet(false),
     m_channelComponentIdHasBeenSet(false),
+    m_keywordOrderHasBeenSet(false),
     m_keywordPageHasBeenSet(false),
     m_relativeLocationHasBeenSet(false),
     m_keywordIndexesHasBeenSet(false)
@@ -252,6 +253,16 @@ CoreInternalOutcome Component::Deserialize(const rapidjson::Value &value)
         m_channelComponentIdHasBeenSet = true;
     }
 
+    if (value.HasMember("KeywordOrder") && !value["KeywordOrder"].IsNull())
+    {
+        if (!value["KeywordOrder"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Component.KeywordOrder` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_keywordOrder = string(value["KeywordOrder"].GetString());
+        m_keywordOrderHasBeenSet = true;
+    }
+
     if (value.HasMember("KeywordPage") && !value["KeywordPage"].IsNull())
     {
         if (!value["KeywordPage"].IsInt64())
@@ -450,6 +461,14 @@ void Component::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ChannelComponentId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_channelComponentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keywordOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeywordOrder";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_keywordOrder.c_str(), allocator).Move(), allocator);
     }
 
     if (m_keywordPageHasBeenSet)
@@ -802,6 +821,22 @@ void Component::SetChannelComponentId(const string& _channelComponentId)
 bool Component::ChannelComponentIdHasBeenSet() const
 {
     return m_channelComponentIdHasBeenSet;
+}
+
+string Component::GetKeywordOrder() const
+{
+    return m_keywordOrder;
+}
+
+void Component::SetKeywordOrder(const string& _keywordOrder)
+{
+    m_keywordOrder = _keywordOrder;
+    m_keywordOrderHasBeenSet = true;
+}
+
+bool Component::KeywordOrderHasBeenSet() const
+{
+    return m_keywordOrderHasBeenSet;
 }
 
 int64_t Component::GetKeywordPage() const

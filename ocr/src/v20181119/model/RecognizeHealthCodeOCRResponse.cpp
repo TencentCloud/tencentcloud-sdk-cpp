@@ -32,7 +32,8 @@ RecognizeHealthCodeOCRResponse::RecognizeHealthCodeOCRResponse() :
     m_testingResultHasBeenSet(false),
     m_testingTimeHasBeenSet(false),
     m_vaccinationHasBeenSet(false),
-    m_spotNameHasBeenSet(false)
+    m_spotNameHasBeenSet(false),
+    m_vaccinationTimeHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,16 @@ CoreInternalOutcome RecognizeHealthCodeOCRResponse::Deserialize(const string &pa
         m_spotNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VaccinationTime") && !rsp["VaccinationTime"].IsNull())
+    {
+        if (!rsp["VaccinationTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VaccinationTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vaccinationTime = string(rsp["VaccinationTime"].GetString());
+        m_vaccinationTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +251,14 @@ string RecognizeHealthCodeOCRResponse::ToJsonString() const
         string key = "SpotName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_spotName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vaccinationTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VaccinationTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vaccinationTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +361,16 @@ string RecognizeHealthCodeOCRResponse::GetSpotName() const
 bool RecognizeHealthCodeOCRResponse::SpotNameHasBeenSet() const
 {
     return m_spotNameHasBeenSet;
+}
+
+string RecognizeHealthCodeOCRResponse::GetVaccinationTime() const
+{
+    return m_vaccinationTime;
+}
+
+bool RecognizeHealthCodeOCRResponse::VaccinationTimeHasBeenSet() const
+{
+    return m_vaccinationTimeHasBeenSet;
 }
 
 

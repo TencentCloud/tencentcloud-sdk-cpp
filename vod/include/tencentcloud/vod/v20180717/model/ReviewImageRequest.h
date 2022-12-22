@@ -61,14 +61,18 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取图片审核模板 ID，当前固定填 10。
-                     * @return Definition 图片审核模板 ID，当前固定填 10。
+                     * 获取图片审核模板 ID，取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
+                     * @return Definition 图片审核模板 ID，取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置图片审核模板 ID，当前固定填 10。
-                     * @param Definition 图片审核模板 ID，当前固定填 10。
+                     * 设置图片审核模板 ID，取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
+                     * @param Definition 图片审核模板 ID，取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
                      */
                     void SetDefinition(const uint64_t& _definition);
 
@@ -105,7 +109,8 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 图片审核模板 ID，当前固定填 10。
+                     * 图片审核模板 ID，取值范围：
+<li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;

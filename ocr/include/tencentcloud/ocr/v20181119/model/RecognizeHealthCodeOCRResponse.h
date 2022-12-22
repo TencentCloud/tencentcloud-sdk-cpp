@@ -151,6 +151,18 @@ namespace TencentCloud
                      */
                     bool SpotNameHasBeenSet() const;
 
+                    /**
+                     * 获取疫苗接种时间
+                     * @return VaccinationTime 疫苗接种时间
+                     */
+                    std::string GetVaccinationTime() const;
+
+                    /**
+                     * 判断参数 VaccinationTime 是否已赋值
+                     * @return VaccinationTime 是否已赋值
+                     */
+                    bool VaccinationTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +218,12 @@ namespace TencentCloud
                      */
                     std::string m_spotName;
                     bool m_spotNameHasBeenSet;
+
+                    /**
+                     * 疫苗接种时间
+                     */
+                    std::string m_vaccinationTime;
+                    bool m_vaccinationTimeHasBeenSet;
 
                 };
             }

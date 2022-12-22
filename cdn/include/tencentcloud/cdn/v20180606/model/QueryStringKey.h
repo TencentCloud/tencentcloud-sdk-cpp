@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool ReorderHasBeenSet() const;
 
                     /**
-                     * 获取includeAll | excludeAll | includeCustom | excludeAll 使用/排除部分url参数
+                     * 获取includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Action includeAll | excludeAll | includeCustom | excludeAll 使用/排除部分url参数
+                     * @return Action includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAction() const;
 
                     /**
-                     * 设置includeAll | excludeAll | includeCustom | excludeAll 使用/排除部分url参数
+                     * 设置includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Action includeAll | excludeAll | includeCustom | excludeAll 使用/排除部分url参数
+                     * @param Action includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAction(const std::string& _action);
@@ -151,7 +151,7 @@ namespace TencentCloud
                     bool m_reorderHasBeenSet;
 
                     /**
-                     * includeAll | excludeAll | includeCustom | excludeAll 使用/排除部分url参数
+                     * includeAll | excludeAll | includeCustom | excludeCustom 使用/排除部分url参数
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_action;

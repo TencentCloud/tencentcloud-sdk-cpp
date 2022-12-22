@@ -26,6 +26,7 @@ ChannelCreateFlowGroupByFilesRequest::ChannelCreateFlowGroupByFilesRequest() :
     m_flowFileInfosHasBeenSet(false),
     m_flowGroupNameHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_approverVerifyTypeHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -67,6 +68,14 @@ string ChannelCreateFlowGroupByFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_approverVerifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApproverVerifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_approverVerifyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -132,6 +141,22 @@ void ChannelCreateFlowGroupByFilesRequest::SetAgent(const Agent& _agent)
 bool ChannelCreateFlowGroupByFilesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string ChannelCreateFlowGroupByFilesRequest::GetApproverVerifyType() const
+{
+    return m_approverVerifyType;
+}
+
+void ChannelCreateFlowGroupByFilesRequest::SetApproverVerifyType(const string& _approverVerifyType)
+{
+    m_approverVerifyType = _approverVerifyType;
+    m_approverVerifyTypeHasBeenSet = true;
+}
+
+bool ChannelCreateFlowGroupByFilesRequest::ApproverVerifyTypeHasBeenSet() const
+{
+    return m_approverVerifyTypeHasBeenSet;
 }
 
 UserInfo ChannelCreateFlowGroupByFilesRequest::GetOperator() const

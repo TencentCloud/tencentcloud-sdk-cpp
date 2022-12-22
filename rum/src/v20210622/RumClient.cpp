@@ -2362,3 +2362,46 @@ RumClient::StopInstanceOutcomeCallable RumClient::StopInstanceCallable(const Sto
     return task->get_future();
 }
 
+RumClient::StopProjectOutcome RumClient::StopProject(const StopProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopProjectResponse rsp = StopProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopProjectOutcome(rsp);
+        else
+            return StopProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return StopProjectOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::StopProjectAsync(const StopProjectRequest& request, const StopProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::StopProjectOutcomeCallable RumClient::StopProjectCallable(const StopProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->StopProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

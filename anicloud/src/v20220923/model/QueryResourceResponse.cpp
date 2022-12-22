@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/vod/v20180717/model/ReviewImageResponse.h>
+#include <tencentcloud/anicloud/v20220923/model/QueryResourceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Vod::V20180717::Model;
+using namespace TencentCloud::Anicloud::V20220923::Model;
 using namespace std;
 
-ReviewImageResponse::ReviewImageResponse() :
-    m_reviewResultSetHasBeenSet(false),
-    m_mediaReviewResultHasBeenSet(false)
+QueryResourceResponse::QueryResourceResponse() :
+    m_resourcesHasBeenSet(false),
+    m_totalHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome ReviewImageResponse::Deserialize(const string &payload)
+CoreInternalOutcome QueryResourceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,75 +63,67 @@ CoreInternalOutcome ReviewImageResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ReviewResultSet") && !rsp["ReviewResultSet"].IsNull())
+    if (rsp.HasMember("Resources") && !rsp["Resources"].IsNull())
     {
-        if (!rsp["ReviewResultSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ReviewResultSet` is not array type"));
+        if (!rsp["Resources"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Resources` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["ReviewResultSet"];
+        const rapidjson::Value &tmpValue = rsp["Resources"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ContentReviewResult item;
+            Resource item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_reviewResultSet.push_back(item);
+            m_resources.push_back(item);
         }
-        m_reviewResultSetHasBeenSet = true;
+        m_resourcesHasBeenSet = true;
     }
 
-    if (rsp.HasMember("MediaReviewResult") && !rsp["MediaReviewResult"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["MediaReviewResult"].IsObject())
+        if (!rsp["Total"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `MediaReviewResult` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_mediaReviewResult.Deserialize(rsp["MediaReviewResult"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_mediaReviewResultHasBeenSet = true;
+        m_total = rsp["Total"].GetInt64();
+        m_totalHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string ReviewImageResponse::ToJsonString() const
+string QueryResourceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_reviewResultSetHasBeenSet)
+    if (m_resourcesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReviewResultSet";
+        string key = "Resources";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_reviewResultSet.begin(); itr != m_reviewResultSet.end(); ++itr, ++i)
+        for (auto itr = m_resources.begin(); itr != m_resources.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
-    if (m_mediaReviewResultHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MediaReviewResult";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_mediaReviewResult.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,24 +138,24 @@ string ReviewImageResponse::ToJsonString() const
 }
 
 
-vector<ContentReviewResult> ReviewImageResponse::GetReviewResultSet() const
+vector<Resource> QueryResourceResponse::GetResources() const
 {
-    return m_reviewResultSet;
+    return m_resources;
 }
 
-bool ReviewImageResponse::ReviewResultSetHasBeenSet() const
+bool QueryResourceResponse::ResourcesHasBeenSet() const
 {
-    return m_reviewResultSetHasBeenSet;
+    return m_resourcesHasBeenSet;
 }
 
-ReviewImageResult ReviewImageResponse::GetMediaReviewResult() const
+int64_t QueryResourceResponse::GetTotal() const
 {
-    return m_mediaReviewResult;
+    return m_total;
 }
 
-bool ReviewImageResponse::MediaReviewResultHasBeenSet() const
+bool QueryResourceResponse::TotalHasBeenSet() const
 {
-    return m_mediaReviewResultHasBeenSet;
+    return m_totalHasBeenSet;
 }
 
 

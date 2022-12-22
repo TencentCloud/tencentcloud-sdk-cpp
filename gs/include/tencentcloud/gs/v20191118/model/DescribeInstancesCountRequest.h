@@ -96,6 +96,32 @@ namespace TencentCloud
                      */
                     bool GameRegionHasBeenSet() const;
 
+                    /**
+                     * 获取游戏类型。
+MOBILE：手游
+PC：默认值，端游
+                     * @return GameType 游戏类型。
+MOBILE：手游
+PC：默认值，端游
+                     */
+                    std::string GetGameType() const;
+
+                    /**
+                     * 设置游戏类型。
+MOBILE：手游
+PC：默认值，端游
+                     * @param GameType 游戏类型。
+MOBILE：手游
+PC：默认值，端游
+                     */
+                    void SetGameType(const std::string& _gameType);
+
+                    /**
+                     * 判断参数 GameType 是否已赋值
+                     * @return GameType 是否已赋值
+                     */
+                    bool GameTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +141,14 @@ namespace TencentCloud
                      */
                     std::string m_gameRegion;
                     bool m_gameRegionHasBeenSet;
+
+                    /**
+                     * 游戏类型。
+MOBILE：手游
+PC：默认值，端游
+                     */
+                    std::string m_gameType;
+                    bool m_gameTypeHasBeenSet;
 
                 };
             }
