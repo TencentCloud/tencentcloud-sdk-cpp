@@ -39,7 +39,8 @@ ZoneSetting::ZoneSetting() :
     m_cachePrefreshHasBeenSet(false),
     m_ipv6HasBeenSet(false),
     m_httpsHasBeenSet(false),
-    m_clientIpCountryHasBeenSet(false)
+    m_clientIpCountryHasBeenSet(false),
+    m_grpcHasBeenSet(false)
 {
 }
 
@@ -357,6 +358,23 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
         m_clientIpCountryHasBeenSet = true;
     }
 
+    if (value.HasMember("Grpc") && !value["Grpc"].IsNull())
+    {
+        if (!value["Grpc"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.Grpc` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_grpc.Deserialize(value["Grpc"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_grpcHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -531,6 +549,15 @@ void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clientIpCountry.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_grpcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Grpc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_grpc.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -838,5 +865,21 @@ void ZoneSetting::SetClientIpCountry(const ClientIpCountry& _clientIpCountry)
 bool ZoneSetting::ClientIpCountryHasBeenSet() const
 {
     return m_clientIpCountryHasBeenSet;
+}
+
+Grpc ZoneSetting::GetGrpc() const
+{
+    return m_grpc;
+}
+
+void ZoneSetting::SetGrpc(const Grpc& _grpc)
+{
+    m_grpc = _grpc;
+    m_grpcHasBeenSet = true;
+}
+
+bool ZoneSetting::GrpcHasBeenSet() const
+{
+    return m_grpcHasBeenSet;
 }
 

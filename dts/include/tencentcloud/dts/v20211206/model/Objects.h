@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/Database.h>
+#include <tencentcloud/dts/v20211206/model/OnlineDDL.h>
 
 
 namespace TencentCloud
@@ -113,6 +114,28 @@ namespace TencentCloud
                      */
                     bool AdvancedObjectsHasBeenSet() const;
 
+                    /**
+                     * 获取OnlineDDL类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OnlineDDL OnlineDDL类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OnlineDDL GetOnlineDDL() const;
+
+                    /**
+                     * 设置OnlineDDL类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OnlineDDL OnlineDDL类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOnlineDDL(const OnlineDDL& _onlineDDL);
+
+                    /**
+                     * 判断参数 OnlineDDL 是否已赋值
+                     * @return OnlineDDL 是否已赋值
+                     */
+                    bool OnlineDDLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +158,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_advancedObjects;
                     bool m_advancedObjectsHasBeenSet;
+
+                    /**
+                     * OnlineDDL类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OnlineDDL m_onlineDDL;
+                    bool m_onlineDDLHasBeenSet;
 
                 };
             }

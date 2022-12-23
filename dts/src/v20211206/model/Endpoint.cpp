@@ -22,6 +22,7 @@ using namespace std;
 
 Endpoint::Endpoint() :
     m_regionHasBeenSet(false),
+    m_roleHasBeenSet(false),
     m_dbKernelHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_ipHasBeenSet(false),
@@ -37,13 +38,14 @@ Endpoint::Endpoint() :
     m_ccnIdHasBeenSet(false),
     m_supplierHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_accountModeHasBeenSet(false),
     m_accountHasBeenSet(false),
+    m_accountModeHasBeenSet(false),
     m_accountRoleHasBeenSet(false),
+    m_roleExternalIdHasBeenSet(false),
     m_tmpSecretIdHasBeenSet(false),
     m_tmpSecretKeyHasBeenSet(false),
     m_tmpTokenHasBeenSet(false),
-    m_roleExternalIdHasBeenSet(false)
+    m_encryptConnHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,16 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         }
         m_region = string(value["Region"].GetString());
         m_regionHasBeenSet = true;
+    }
+
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Endpoint.Role` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = string(value["Role"].GetString());
+        m_roleHasBeenSet = true;
     }
 
     if (value.HasMember("DbKernel") && !value["DbKernel"].IsNull())
@@ -212,16 +224,6 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         m_engineVersionHasBeenSet = true;
     }
 
-    if (value.HasMember("AccountMode") && !value["AccountMode"].IsNull())
-    {
-        if (!value["AccountMode"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `Endpoint.AccountMode` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_accountMode = string(value["AccountMode"].GetString());
-        m_accountModeHasBeenSet = true;
-    }
-
     if (value.HasMember("Account") && !value["Account"].IsNull())
     {
         if (!value["Account"].IsString())
@@ -232,6 +234,16 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         m_accountHasBeenSet = true;
     }
 
+    if (value.HasMember("AccountMode") && !value["AccountMode"].IsNull())
+    {
+        if (!value["AccountMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Endpoint.AccountMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_accountMode = string(value["AccountMode"].GetString());
+        m_accountModeHasBeenSet = true;
+    }
+
     if (value.HasMember("AccountRole") && !value["AccountRole"].IsNull())
     {
         if (!value["AccountRole"].IsString())
@@ -240,6 +252,16 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         }
         m_accountRole = string(value["AccountRole"].GetString());
         m_accountRoleHasBeenSet = true;
+    }
+
+    if (value.HasMember("RoleExternalId") && !value["RoleExternalId"].IsNull())
+    {
+        if (!value["RoleExternalId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Endpoint.RoleExternalId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_roleExternalId = string(value["RoleExternalId"].GetString());
+        m_roleExternalIdHasBeenSet = true;
     }
 
     if (value.HasMember("TmpSecretId") && !value["TmpSecretId"].IsNull())
@@ -272,14 +294,14 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         m_tmpTokenHasBeenSet = true;
     }
 
-    if (value.HasMember("RoleExternalId") && !value["RoleExternalId"].IsNull())
+    if (value.HasMember("EncryptConn") && !value["EncryptConn"].IsNull())
     {
-        if (!value["RoleExternalId"].IsString())
+        if (!value["EncryptConn"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Endpoint.RoleExternalId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Endpoint.EncryptConn` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_roleExternalId = string(value["RoleExternalId"].GetString());
-        m_roleExternalIdHasBeenSet = true;
+        m_encryptConn = string(value["EncryptConn"].GetString());
+        m_encryptConnHasBeenSet = true;
     }
 
 
@@ -295,6 +317,14 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Region";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
     if (m_dbKernelHasBeenSet)
@@ -417,14 +447,6 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_engineVersion.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_accountModeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AccountMode";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_accountMode.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_accountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -433,12 +455,28 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_account.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_accountModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccountMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_accountMode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_accountRoleHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AccountRole";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_accountRole.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleExternalIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoleExternalId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_roleExternalId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_tmpSecretIdHasBeenSet)
@@ -465,12 +503,12 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(m_tmpToken.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_roleExternalIdHasBeenSet)
+    if (m_encryptConnHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RoleExternalId";
+        string key = "EncryptConn";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_roleExternalId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_encryptConn.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -490,6 +528,22 @@ void Endpoint::SetRegion(const string& _region)
 bool Endpoint::RegionHasBeenSet() const
 {
     return m_regionHasBeenSet;
+}
+
+string Endpoint::GetRole() const
+{
+    return m_role;
+}
+
+void Endpoint::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool Endpoint::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 
 string Endpoint::GetDbKernel() const
@@ -732,22 +786,6 @@ bool Endpoint::EngineVersionHasBeenSet() const
     return m_engineVersionHasBeenSet;
 }
 
-string Endpoint::GetAccountMode() const
-{
-    return m_accountMode;
-}
-
-void Endpoint::SetAccountMode(const string& _accountMode)
-{
-    m_accountMode = _accountMode;
-    m_accountModeHasBeenSet = true;
-}
-
-bool Endpoint::AccountModeHasBeenSet() const
-{
-    return m_accountModeHasBeenSet;
-}
-
 string Endpoint::GetAccount() const
 {
     return m_account;
@@ -764,6 +802,22 @@ bool Endpoint::AccountHasBeenSet() const
     return m_accountHasBeenSet;
 }
 
+string Endpoint::GetAccountMode() const
+{
+    return m_accountMode;
+}
+
+void Endpoint::SetAccountMode(const string& _accountMode)
+{
+    m_accountMode = _accountMode;
+    m_accountModeHasBeenSet = true;
+}
+
+bool Endpoint::AccountModeHasBeenSet() const
+{
+    return m_accountModeHasBeenSet;
+}
+
 string Endpoint::GetAccountRole() const
 {
     return m_accountRole;
@@ -778,6 +832,22 @@ void Endpoint::SetAccountRole(const string& _accountRole)
 bool Endpoint::AccountRoleHasBeenSet() const
 {
     return m_accountRoleHasBeenSet;
+}
+
+string Endpoint::GetRoleExternalId() const
+{
+    return m_roleExternalId;
+}
+
+void Endpoint::SetRoleExternalId(const string& _roleExternalId)
+{
+    m_roleExternalId = _roleExternalId;
+    m_roleExternalIdHasBeenSet = true;
+}
+
+bool Endpoint::RoleExternalIdHasBeenSet() const
+{
+    return m_roleExternalIdHasBeenSet;
 }
 
 string Endpoint::GetTmpSecretId() const
@@ -828,19 +898,19 @@ bool Endpoint::TmpTokenHasBeenSet() const
     return m_tmpTokenHasBeenSet;
 }
 
-string Endpoint::GetRoleExternalId() const
+string Endpoint::GetEncryptConn() const
 {
-    return m_roleExternalId;
+    return m_encryptConn;
 }
 
-void Endpoint::SetRoleExternalId(const string& _roleExternalId)
+void Endpoint::SetEncryptConn(const string& _encryptConn)
 {
-    m_roleExternalId = _roleExternalId;
-    m_roleExternalIdHasBeenSet = true;
+    m_encryptConn = _encryptConn;
+    m_encryptConnHasBeenSet = true;
 }
 
-bool Endpoint::RoleExternalIdHasBeenSet() const
+bool Endpoint::EncryptConnHasBeenSet() const
 {
-    return m_roleExternalIdHasBeenSet;
+    return m_encryptConnHasBeenSet;
 }
 

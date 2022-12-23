@@ -25,14 +25,16 @@ using namespace std;
 ConfigureSyncJobRequest::ConfigureSyncJobRequest() :
     m_jobIdHasBeenSet(false),
     m_srcAccessTypeHasBeenSet(false),
-    m_srcInfoHasBeenSet(false),
     m_dstAccessTypeHasBeenSet(false),
-    m_dstInfoHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_objectsHasBeenSet(false),
     m_jobNameHasBeenSet(false),
+    m_jobModeHasBeenSet(false),
     m_runModeHasBeenSet(false),
-    m_expectRunTimeHasBeenSet(false)
+    m_expectRunTimeHasBeenSet(false),
+    m_srcInfoHasBeenSet(false),
+    m_dstInfoHasBeenSet(false),
+    m_autoRetryTimeRangeMinutesHasBeenSet(false)
 {
 }
 
@@ -59,30 +61,12 @@ string ConfigureSyncJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_srcAccessType.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_srcInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SrcInfo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_srcInfo.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_dstAccessTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "DstAccessType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dstAccessType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_dstInfoHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DstInfo";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_dstInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_optionsHasBeenSet)
@@ -111,6 +95,14 @@ string ConfigureSyncJobRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_jobName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_jobModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_jobMode.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_runModeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -125,6 +117,32 @@ string ConfigureSyncJobRequest::ToJsonString() const
         string key = "ExpectRunTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_expectRunTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_srcInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dstInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dstInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_autoRetryTimeRangeMinutesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRetryTimeRangeMinutes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
     }
 
 
@@ -167,22 +185,6 @@ bool ConfigureSyncJobRequest::SrcAccessTypeHasBeenSet() const
     return m_srcAccessTypeHasBeenSet;
 }
 
-Endpoint ConfigureSyncJobRequest::GetSrcInfo() const
-{
-    return m_srcInfo;
-}
-
-void ConfigureSyncJobRequest::SetSrcInfo(const Endpoint& _srcInfo)
-{
-    m_srcInfo = _srcInfo;
-    m_srcInfoHasBeenSet = true;
-}
-
-bool ConfigureSyncJobRequest::SrcInfoHasBeenSet() const
-{
-    return m_srcInfoHasBeenSet;
-}
-
 string ConfigureSyncJobRequest::GetDstAccessType() const
 {
     return m_dstAccessType;
@@ -197,22 +199,6 @@ void ConfigureSyncJobRequest::SetDstAccessType(const string& _dstAccessType)
 bool ConfigureSyncJobRequest::DstAccessTypeHasBeenSet() const
 {
     return m_dstAccessTypeHasBeenSet;
-}
-
-Endpoint ConfigureSyncJobRequest::GetDstInfo() const
-{
-    return m_dstInfo;
-}
-
-void ConfigureSyncJobRequest::SetDstInfo(const Endpoint& _dstInfo)
-{
-    m_dstInfo = _dstInfo;
-    m_dstInfoHasBeenSet = true;
-}
-
-bool ConfigureSyncJobRequest::DstInfoHasBeenSet() const
-{
-    return m_dstInfoHasBeenSet;
 }
 
 Options ConfigureSyncJobRequest::GetOptions() const
@@ -263,6 +249,22 @@ bool ConfigureSyncJobRequest::JobNameHasBeenSet() const
     return m_jobNameHasBeenSet;
 }
 
+string ConfigureSyncJobRequest::GetJobMode() const
+{
+    return m_jobMode;
+}
+
+void ConfigureSyncJobRequest::SetJobMode(const string& _jobMode)
+{
+    m_jobMode = _jobMode;
+    m_jobModeHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::JobModeHasBeenSet() const
+{
+    return m_jobModeHasBeenSet;
+}
+
 string ConfigureSyncJobRequest::GetRunMode() const
 {
     return m_runMode;
@@ -293,6 +295,54 @@ void ConfigureSyncJobRequest::SetExpectRunTime(const string& _expectRunTime)
 bool ConfigureSyncJobRequest::ExpectRunTimeHasBeenSet() const
 {
     return m_expectRunTimeHasBeenSet;
+}
+
+Endpoint ConfigureSyncJobRequest::GetSrcInfo() const
+{
+    return m_srcInfo;
+}
+
+void ConfigureSyncJobRequest::SetSrcInfo(const Endpoint& _srcInfo)
+{
+    m_srcInfo = _srcInfo;
+    m_srcInfoHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::SrcInfoHasBeenSet() const
+{
+    return m_srcInfoHasBeenSet;
+}
+
+Endpoint ConfigureSyncJobRequest::GetDstInfo() const
+{
+    return m_dstInfo;
+}
+
+void ConfigureSyncJobRequest::SetDstInfo(const Endpoint& _dstInfo)
+{
+    m_dstInfo = _dstInfo;
+    m_dstInfoHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::DstInfoHasBeenSet() const
+{
+    return m_dstInfoHasBeenSet;
+}
+
+int64_t ConfigureSyncJobRequest::GetAutoRetryTimeRangeMinutes() const
+{
+    return m_autoRetryTimeRangeMinutes;
+}
+
+void ConfigureSyncJobRequest::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes)
+{
+    m_autoRetryTimeRangeMinutes = _autoRetryTimeRangeMinutes;
+    m_autoRetryTimeRangeMinutesHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::AutoRetryTimeRangeMinutesHasBeenSet() const
+{
+    return m_autoRetryTimeRangeMinutesHasBeenSet;
 }
 
 

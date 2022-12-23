@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunNfsVolumeSource.h>
 #include <tencentcloud/tcb/v20180608/model/CloudBaseRunEmptyDirVolumeSource.h>
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunServiceVolumeHostPath.h>
 
 
 namespace TencentCloud
@@ -158,6 +159,28 @@ namespace TencentCloud
                      */
                     bool EmptyDirHasBeenSet() const;
 
+                    /**
+                     * 获取主机路径挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostPath 主机路径挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CloudBaseRunServiceVolumeHostPath GetHostPath() const;
+
+                    /**
+                     * 设置主机路径挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostPath 主机路径挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostPath(const CloudBaseRunServiceVolumeHostPath& _hostPath);
+
+                    /**
+                     * 判断参数 HostPath 是否已赋值
+                     * @return HostPath 是否已赋值
+                     */
+                    bool HostPathHasBeenSet() const;
+
                 private:
 
                     /**
@@ -194,6 +217,13 @@ namespace TencentCloud
                      */
                     CloudBaseRunEmptyDirVolumeSource m_emptyDir;
                     bool m_emptyDirHasBeenSet;
+
+                    /**
+                     * 主机路径挂载信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CloudBaseRunServiceVolumeHostPath m_hostPath;
+                    bool m_hostPathHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcb/v20180608/model/HpaPolicy.h>
+#include <tencentcloud/tcb/v20180608/model/TkeClusterInfo.h>
 
 
 namespace TencentCloud
@@ -544,6 +545,34 @@ namespace TencentCloud
                      */
                     bool PolicyDetailHasBeenSet() const;
 
+                    /**
+                     * 获取Tke集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TkeClusterInfo Tke集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TkeClusterInfo GetTkeClusterInfo() const;
+
+                    /**
+                     * 判断参数 TkeClusterInfo 是否已赋值
+                     * @return TkeClusterInfo 是否已赋值
+                     */
+                    bool TkeClusterInfoHasBeenSet() const;
+
+                    /**
+                     * 获取版本工作负载类型；deployment/deamonset
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TkeWorkloadType 版本工作负载类型；deployment/deamonset
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTkeWorkloadType() const;
+
+                    /**
+                     * 判断参数 TkeWorkloadType 是否已赋值
+                     * @return TkeWorkloadType 是否已赋值
+                     */
+                    bool TkeWorkloadTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -795,6 +824,20 @@ namespace TencentCloud
                      */
                     std::vector<HpaPolicy> m_policyDetail;
                     bool m_policyDetailHasBeenSet;
+
+                    /**
+                     * Tke集群信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TkeClusterInfo m_tkeClusterInfo;
+                    bool m_tkeClusterInfoHasBeenSet;
+
+                    /**
+                     * 版本工作负载类型；deployment/deamonset
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_tkeWorkloadType;
+                    bool m_tkeWorkloadTypeHasBeenSet;
 
                 };
             }

@@ -139,6 +139,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/View.h
   include/tencentcloud/dts/v20211206/model/TagItem.h
   include/tencentcloud/dts/v20211206/model/RecoverMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/OnlineDDL.h
   include/tencentcloud/dts/v20211206/model/DatabaseTableObject.h
   include/tencentcloud/dts/v20211206/model/Table.h
   include/tencentcloud/dts/v20211206/model/CompareDetailInfo.h
@@ -328,6 +329,7 @@ set(dts_src
   src/v20211206/model/View.cpp
   src/v20211206/model/TagItem.cpp
   src/v20211206/model/RecoverMigrateJobRequest.cpp
+  src/v20211206/model/OnlineDDL.cpp
   src/v20211206/model/DatabaseTableObject.cpp
   src/v20211206/model/Table.cpp
   src/v20211206/model/CompareDetailInfo.cpp

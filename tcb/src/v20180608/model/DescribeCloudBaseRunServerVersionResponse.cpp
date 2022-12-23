@@ -60,7 +60,9 @@ DescribeCloudBaseRunServerVersionResponse::DescribeCloudBaseRunServerVersionResp
     m_baseImageHasBeenSet(false),
     m_entryPointHasBeenSet(false),
     m_repoLanguageHasBeenSet(false),
-    m_policyDetailHasBeenSet(false)
+    m_policyDetailHasBeenSet(false),
+    m_tkeClusterInfoHasBeenSet(false),
+    m_tkeWorkloadTypeHasBeenSet(false)
 {
 }
 
@@ -481,6 +483,33 @@ CoreInternalOutcome DescribeCloudBaseRunServerVersionResponse::Deserialize(const
         m_policyDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TkeClusterInfo") && !rsp["TkeClusterInfo"].IsNull())
+    {
+        if (!rsp["TkeClusterInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TkeClusterInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tkeClusterInfo.Deserialize(rsp["TkeClusterInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tkeClusterInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("TkeWorkloadType") && !rsp["TkeWorkloadType"].IsNull())
+    {
+        if (!rsp["TkeWorkloadType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TkeWorkloadType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tkeWorkloadType = string(rsp["TkeWorkloadType"].GetString());
+        m_tkeWorkloadTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -797,6 +826,23 @@ string DescribeCloudBaseRunServerVersionResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tkeClusterInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TkeClusterInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tkeClusterInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_tkeWorkloadTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TkeWorkloadType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tkeWorkloadType.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1179,6 +1225,26 @@ vector<HpaPolicy> DescribeCloudBaseRunServerVersionResponse::GetPolicyDetail() c
 bool DescribeCloudBaseRunServerVersionResponse::PolicyDetailHasBeenSet() const
 {
     return m_policyDetailHasBeenSet;
+}
+
+TkeClusterInfo DescribeCloudBaseRunServerVersionResponse::GetTkeClusterInfo() const
+{
+    return m_tkeClusterInfo;
+}
+
+bool DescribeCloudBaseRunServerVersionResponse::TkeClusterInfoHasBeenSet() const
+{
+    return m_tkeClusterInfoHasBeenSet;
+}
+
+string DescribeCloudBaseRunServerVersionResponse::GetTkeWorkloadType() const
+{
+    return m_tkeWorkloadType;
+}
+
+bool DescribeCloudBaseRunServerVersionResponse::TkeWorkloadTypeHasBeenSet() const
+{
+    return m_tkeWorkloadTypeHasBeenSet;
 }
 
 

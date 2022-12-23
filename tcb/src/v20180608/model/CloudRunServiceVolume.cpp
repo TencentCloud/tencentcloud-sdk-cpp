@@ -25,7 +25,8 @@ CloudRunServiceVolume::CloudRunServiceVolume() :
     m_nFSHasBeenSet(false),
     m_secretNameHasBeenSet(false),
     m_enableEmptyDirVolumeHasBeenSet(false),
-    m_emptyDirHasBeenSet(false)
+    m_emptyDirHasBeenSet(false),
+    m_hostPathHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,23 @@ CoreInternalOutcome CloudRunServiceVolume::Deserialize(const rapidjson::Value &v
         m_emptyDirHasBeenSet = true;
     }
 
+    if (value.HasMember("HostPath") && !value["HostPath"].IsNull())
+    {
+        if (!value["HostPath"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudRunServiceVolume.HostPath` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_hostPath.Deserialize(value["HostPath"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_hostPathHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +163,15 @@ void CloudRunServiceVolume::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_emptyDir.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hostPathHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostPath";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_hostPath.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -228,5 +255,21 @@ void CloudRunServiceVolume::SetEmptyDir(const CloudBaseRunEmptyDirVolumeSource& 
 bool CloudRunServiceVolume::EmptyDirHasBeenSet() const
 {
     return m_emptyDirHasBeenSet;
+}
+
+CloudBaseRunServiceVolumeHostPath CloudRunServiceVolume::GetHostPath() const
+{
+    return m_hostPath;
+}
+
+void CloudRunServiceVolume::SetHostPath(const CloudBaseRunServiceVolumeHostPath& _hostPath)
+{
+    m_hostPath = _hostPath;
+    m_hostPathHasBeenSet = true;
+}
+
+bool CloudRunServiceVolume::HostPathHasBeenSet() const
+{
+    return m_hostPathHasBeenSet;
 }
 

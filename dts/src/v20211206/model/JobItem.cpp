@@ -37,7 +37,8 @@ JobItem::JobItem() :
     m_dstInfoHasBeenSet(false),
     m_compareTaskHasBeenSet(false),
     m_tradeInfoHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autoRetryTimeRangeMinutesHasBeenSet(false)
 {
 }
 
@@ -268,6 +269,16 @@ CoreInternalOutcome JobItem::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRetryTimeRangeMinutes") && !value["AutoRetryTimeRangeMinutes"].IsNull())
+    {
+        if (!value["AutoRetryTimeRangeMinutes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobItem.AutoRetryTimeRangeMinutes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRetryTimeRangeMinutes = value["AutoRetryTimeRangeMinutes"].GetInt64();
+        m_autoRetryTimeRangeMinutesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -422,6 +433,14 @@ void JobItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoRetryTimeRangeMinutesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRetryTimeRangeMinutes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
     }
 
 }
@@ -697,5 +716,21 @@ void JobItem::SetTags(const vector<TagItem>& _tags)
 bool JobItem::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t JobItem::GetAutoRetryTimeRangeMinutes() const
+{
+    return m_autoRetryTimeRangeMinutes;
+}
+
+void JobItem::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes)
+{
+    m_autoRetryTimeRangeMinutes = _autoRetryTimeRangeMinutes;
+    m_autoRetryTimeRangeMinutesHasBeenSet = true;
+}
+
+bool JobItem::AutoRetryTimeRangeMinutesHasBeenSet() const
+{
+    return m_autoRetryTimeRangeMinutesHasBeenSet;
 }
 

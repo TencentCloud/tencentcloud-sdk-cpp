@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 从经验模版创建演练时需要配置的任务参数
+                * 从经验模板创建演练时需要配置的任务参数
                 */
                 class TaskConfig : public AbstractModel
                 {

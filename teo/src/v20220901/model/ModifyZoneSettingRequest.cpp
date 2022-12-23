@@ -40,7 +40,8 @@ ModifyZoneSettingRequest::ModifyZoneSettingRequest() :
     m_clientIpHeaderHasBeenSet(false),
     m_cachePrefreshHasBeenSet(false),
     m_ipv6HasBeenSet(false),
-    m_clientIpCountryHasBeenSet(false)
+    m_clientIpCountryHasBeenSet(false),
+    m_grpcHasBeenSet(false)
 {
 }
 
@@ -210,6 +211,15 @@ string ModifyZoneSettingRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clientIpCountry.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_grpcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Grpc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_grpc.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -506,6 +516,22 @@ void ModifyZoneSettingRequest::SetClientIpCountry(const ClientIpCountry& _client
 bool ModifyZoneSettingRequest::ClientIpCountryHasBeenSet() const
 {
     return m_clientIpCountryHasBeenSet;
+}
+
+Grpc ModifyZoneSettingRequest::GetGrpc() const
+{
+    return m_grpc;
+}
+
+void ModifyZoneSettingRequest::SetGrpc(const Grpc& _grpc)
+{
+    m_grpc = _grpc;
+    m_grpcHasBeenSet = true;
+}
+
+bool ModifyZoneSettingRequest::GrpcHasBeenSet() const
+{
+    return m_grpcHasBeenSet;
 }
 
 

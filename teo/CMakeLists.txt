@@ -560,6 +560,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CreateSpeedTestingResponse.h
   include/tencentcloud/teo/v20220901/model/SecHitRuleInfo.h
   include/tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeLogTopicTasksResponse.h
   include/tencentcloud/teo/v20220901/model/CreatePlanForZoneResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeLogTopicTasksRequest.h
@@ -591,7 +592,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DDoSStatusInfo.h
   include/tencentcloud/teo/v20220901/model/AclConfig.h
   include/tencentcloud/teo/v20220901/model/SubRuleItem.h
-  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsResponse.h
+  include/tencentcloud/teo/v20220901/model/Grpc.h
   include/tencentcloud/teo/v20220901/model/WafGroupDetail.h
   include/tencentcloud/teo/v20220901/model/CreateAliasDomainResponse.h
   include/tencentcloud/teo/v20220901/model/ClientIpCountry.h
@@ -1314,6 +1315,7 @@ set(teo_src
   src/v20220901/model/CreateSpeedTestingResponse.cpp
   src/v20220901/model/SecHitRuleInfo.cpp
   src/v20220901/model/DescribeOriginGroupRequest.cpp
+  src/v20220901/model/DescribeSpeedTestingDetailsResponse.cpp
   src/v20220901/model/DescribeLogTopicTasksResponse.cpp
   src/v20220901/model/CreatePlanForZoneResponse.cpp
   src/v20220901/model/DescribeLogTopicTasksRequest.cpp
@@ -1345,7 +1347,7 @@ set(teo_src
   src/v20220901/model/DDoSStatusInfo.cpp
   src/v20220901/model/AclConfig.cpp
   src/v20220901/model/SubRuleItem.cpp
-  src/v20220901/model/DescribeSpeedTestingDetailsResponse.cpp
+  src/v20220901/model/Grpc.cpp
   src/v20220901/model/WafGroupDetail.cpp
   src/v20220901/model/CreateAliasDomainResponse.cpp
   src/v20220901/model/ClientIpCountry.cpp

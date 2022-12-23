@@ -30,7 +30,8 @@ ModifyMigrationJobRequest::ModifyMigrationJobRequest() :
     m_dstInfoHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_expectRunTimeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_autoRetryTimeRangeMinutesHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,14 @@ string ModifyMigrationJobRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_autoRetryTimeRangeMinutesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRetryTimeRangeMinutes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
     }
 
 
@@ -249,6 +258,22 @@ void ModifyMigrationJobRequest::SetTags(const vector<TagItem>& _tags)
 bool ModifyMigrationJobRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+int64_t ModifyMigrationJobRequest::GetAutoRetryTimeRangeMinutes() const
+{
+    return m_autoRetryTimeRangeMinutes;
+}
+
+void ModifyMigrationJobRequest::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes)
+{
+    m_autoRetryTimeRangeMinutes = _autoRetryTimeRangeMinutes;
+    m_autoRetryTimeRangeMinutesHasBeenSet = true;
+}
+
+bool ModifyMigrationJobRequest::AutoRetryTimeRangeMinutesHasBeenSet() const
+{
+    return m_autoRetryTimeRangeMinutesHasBeenSet;
 }
 
 

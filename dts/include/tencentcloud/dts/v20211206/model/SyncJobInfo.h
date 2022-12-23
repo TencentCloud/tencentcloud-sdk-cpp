@@ -360,17 +360,17 @@ namespace TencentCloud
                     bool SrcAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端信息
+                     * 获取源端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SrcInfo 源端信息
+                     * @return SrcInfo 源端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Endpoint GetSrcInfo() const;
 
                     /**
-                     * 设置源端信息
+                     * 设置源端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SrcInfo 源端信息
+                     * @param SrcInfo 源端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSrcInfo(const Endpoint& _srcInfo);
@@ -448,17 +448,17 @@ namespace TencentCloud
                     bool DstAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取目标端信息
+                     * 获取目标端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DstInfo 目标端信息
+                     * @return DstInfo 目标端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Endpoint GetDstInfo() const;
 
                     /**
-                     * 设置目标端信息
+                     * 设置目标端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DstInfo 目标端信息
+                     * @param DstInfo 目标端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDstInfo(const Endpoint& _dstInfo);
@@ -689,6 +689,28 @@ namespace TencentCloud
                      */
                     bool OfflineTimeHasBeenSet() const;
 
+                    /**
+                     * 获取自动重试时间段设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRetryTimeRangeMinutes 自动重试时间段设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAutoRetryTimeRangeMinutes() const;
+
+                    /**
+                     * 设置自动重试时间段设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoRetryTimeRangeMinutes 自动重试时间段设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes);
+
+                    /**
+                     * 判断参数 AutoRetryTimeRangeMinutes 是否已赋值
+                     * @return AutoRetryTimeRangeMinutes 是否已赋值
+                     */
+                    bool AutoRetryTimeRangeMinutesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -790,7 +812,7 @@ namespace TencentCloud
                     bool m_srcAccessTypeHasBeenSet;
 
                     /**
-                     * 源端信息
+                     * 源端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Endpoint m_srcInfo;
@@ -818,7 +840,7 @@ namespace TencentCloud
                     bool m_dstAccessTypeHasBeenSet;
 
                     /**
-                     * 目标端信息
+                     * 目标端信息，单节点数据库使用
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     Endpoint m_dstInfo;
@@ -893,6 +915,13 @@ namespace TencentCloud
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
+
+                    /**
+                     * 自动重试时间段设置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRetryTimeRangeMinutes;
+                    bool m_autoRetryTimeRangeMinutesHasBeenSet;
 
                 };
             }

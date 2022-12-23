@@ -41,6 +41,7 @@
 #include <tencentcloud/teo/v20220901/model/Ipv6.h>
 #include <tencentcloud/teo/v20220901/model/Https.h>
 #include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
+#include <tencentcloud/teo/v20220901/model/Grpc.h>
 
 
 namespace TencentCloud
@@ -481,6 +482,28 @@ namespace TencentCloud
                      */
                     bool ClientIpCountryHasBeenSet() const;
 
+                    /**
+                     * 获取Grpc协议支持配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Grpc Grpc协议支持配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Grpc GetGrpc() const;
+
+                    /**
+                     * 设置Grpc协议支持配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Grpc Grpc协议支持配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGrpc(const Grpc& _grpc);
+
+                    /**
+                     * 判断参数 Grpc 是否已赋值
+                     * @return Grpc 是否已赋值
+                     */
+                    bool GrpcHasBeenSet() const;
+
                 private:
 
                     /**
@@ -615,6 +638,13 @@ namespace TencentCloud
                      */
                     ClientIpCountry m_clientIpCountry;
                     bool m_clientIpCountryHasBeenSet;
+
+                    /**
+                     * Grpc协议支持配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Grpc m_grpc;
+                    bool m_grpcHasBeenSet;
 
                 };
             }

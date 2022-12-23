@@ -14,12 +14,28 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CORE_CONFIG_H_
-#define TENCENTCLOUD_CORE_CONFIG_H_
+#include <tencentcloud/tcb/v20180608/model/CloudBaseRunServiceVolumeHostPath.h>
 
-// version = (major << 16) + (minor << 8) + patch
-#define TENCENTCLOUD_VERSION ((3 << 16) + (0 << 8) + 8)
+using TencentCloud::CoreInternalOutcome;
+using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace std;
 
-#define TENCENTCLOUD_VERSION_STR "3.0.646"
+CloudBaseRunServiceVolumeHostPath::CloudBaseRunServiceVolumeHostPath()
+{
+}
 
-#endif // !TENCENTCLOUD_CORE_CONFIG_H_
+CoreInternalOutcome CloudBaseRunServiceVolumeHostPath::Deserialize(const rapidjson::Value &value)
+{
+    string requestId = "";
+
+
+
+    return CoreInternalOutcome(true);
+}
+
+void CloudBaseRunServiceVolumeHostPath::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
+{
+
+}
+
+

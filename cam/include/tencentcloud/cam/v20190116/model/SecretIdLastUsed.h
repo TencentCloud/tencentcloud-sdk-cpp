@@ -86,6 +86,28 @@ namespace TencentCloud
                      */
                     bool LastUsedDateHasBeenSet() const;
 
+                    /**
+                     * 获取最后密钥访问日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastSecretUsedDate 最后密钥访问日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetLastSecretUsedDate() const;
+
+                    /**
+                     * 设置最后密钥访问日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastSecretUsedDate 最后密钥访问日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastSecretUsedDate(const uint64_t& _lastSecretUsedDate);
+
+                    /**
+                     * 判断参数 LastSecretUsedDate 是否已赋值
+                     * @return LastSecretUsedDate 是否已赋值
+                     */
+                    bool LastSecretUsedDateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -100,6 +122,13 @@ namespace TencentCloud
                      */
                     std::string m_lastUsedDate;
                     bool m_lastUsedDateHasBeenSet;
+
+                    /**
+                     * 最后密钥访问日期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_lastSecretUsedDate;
+                    bool m_lastSecretUsedDateHasBeenSet;
 
                 };
             }

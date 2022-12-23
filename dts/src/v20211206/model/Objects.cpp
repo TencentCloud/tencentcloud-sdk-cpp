@@ -23,7 +23,8 @@ using namespace std;
 Objects::Objects() :
     m_modeHasBeenSet(false),
     m_databasesHasBeenSet(false),
-    m_advancedObjectsHasBeenSet(false)
+    m_advancedObjectsHasBeenSet(false),
+    m_onlineDDLHasBeenSet(false)
 {
 }
 
@@ -75,6 +76,23 @@ CoreInternalOutcome Objects::Deserialize(const rapidjson::Value &value)
         m_advancedObjectsHasBeenSet = true;
     }
 
+    if (value.HasMember("OnlineDDL") && !value["OnlineDDL"].IsNull())
+    {
+        if (!value["OnlineDDL"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Objects.OnlineDDL` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_onlineDDL.Deserialize(value["OnlineDDL"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_onlineDDLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -116,6 +134,15 @@ void Objects::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_onlineDDLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OnlineDDL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_onlineDDL.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -167,5 +194,21 @@ void Objects::SetAdvancedObjects(const vector<string>& _advancedObjects)
 bool Objects::AdvancedObjectsHasBeenSet() const
 {
     return m_advancedObjectsHasBeenSet;
+}
+
+OnlineDDL Objects::GetOnlineDDL() const
+{
+    return m_onlineDDL;
+}
+
+void Objects::SetOnlineDDL(const OnlineDDL& _onlineDDL)
+{
+    m_onlineDDL = _onlineDDL;
+    m_onlineDDLHasBeenSet = true;
+}
+
+bool Objects::OnlineDDLHasBeenSet() const
+{
+    return m_onlineDDLHasBeenSet;
 }
 

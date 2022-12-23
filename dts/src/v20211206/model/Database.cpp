@@ -33,7 +33,11 @@ Database::Database() :
     m_functionModeHasBeenSet(false),
     m_functionsHasBeenSet(false),
     m_procedureModeHasBeenSet(false),
-    m_proceduresHasBeenSet(false)
+    m_proceduresHasBeenSet(false),
+    m_triggerModeHasBeenSet(false),
+    m_triggersHasBeenSet(false),
+    m_eventModeHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
 }
 
@@ -198,6 +202,52 @@ CoreInternalOutcome Database::Deserialize(const rapidjson::Value &value)
         m_proceduresHasBeenSet = true;
     }
 
+    if (value.HasMember("TriggerMode") && !value["TriggerMode"].IsNull())
+    {
+        if (!value["TriggerMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Database.TriggerMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_triggerMode = string(value["TriggerMode"].GetString());
+        m_triggerModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Triggers") && !value["Triggers"].IsNull())
+    {
+        if (!value["Triggers"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Database.Triggers` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Triggers"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_triggers.push_back((*itr).GetString());
+        }
+        m_triggersHasBeenSet = true;
+    }
+
+    if (value.HasMember("EventMode") && !value["EventMode"].IsNull())
+    {
+        if (!value["EventMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Database.EventMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventMode = string(value["EventMode"].GetString());
+        m_eventModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Events") && !value["Events"].IsNull())
+    {
+        if (!value["Events"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Database.Events` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Events"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_events.push_back((*itr).GetString());
+        }
+        m_eventsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -328,6 +378,48 @@ void Database::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_procedures.begin(); itr != m_procedures.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_triggerModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_triggerMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_triggersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Triggers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_triggers.begin(); itr != m_triggers.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_eventModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Events";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_events.begin(); itr != m_events.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -542,5 +634,69 @@ void Database::SetProcedures(const vector<string>& _procedures)
 bool Database::ProceduresHasBeenSet() const
 {
     return m_proceduresHasBeenSet;
+}
+
+string Database::GetTriggerMode() const
+{
+    return m_triggerMode;
+}
+
+void Database::SetTriggerMode(const string& _triggerMode)
+{
+    m_triggerMode = _triggerMode;
+    m_triggerModeHasBeenSet = true;
+}
+
+bool Database::TriggerModeHasBeenSet() const
+{
+    return m_triggerModeHasBeenSet;
+}
+
+vector<string> Database::GetTriggers() const
+{
+    return m_triggers;
+}
+
+void Database::SetTriggers(const vector<string>& _triggers)
+{
+    m_triggers = _triggers;
+    m_triggersHasBeenSet = true;
+}
+
+bool Database::TriggersHasBeenSet() const
+{
+    return m_triggersHasBeenSet;
+}
+
+string Database::GetEventMode() const
+{
+    return m_eventMode;
+}
+
+void Database::SetEventMode(const string& _eventMode)
+{
+    m_eventMode = _eventMode;
+    m_eventModeHasBeenSet = true;
+}
+
+bool Database::EventModeHasBeenSet() const
+{
+    return m_eventModeHasBeenSet;
+}
+
+vector<string> Database::GetEvents() const
+{
+    return m_events;
+}
+
+void Database::SetEvents(const vector<string>& _events)
+{
+    m_events = _events;
+    m_eventsHasBeenSet = true;
+}
+
+bool Database::EventsHasBeenSet() const
+{
+    return m_eventsHasBeenSet;
 }
 

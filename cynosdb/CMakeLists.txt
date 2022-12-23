@@ -30,6 +30,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeRollbackTimeRangeResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyBackupNameResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterStorageRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/RollBackClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h
   include/tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsRequest.h
@@ -77,7 +78,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/RollBackClusterRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackTable.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterDetailRequest.h
@@ -209,6 +210,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeRollbackTimeRangeResponse.cpp
   src/v20190107/model/ModifyBackupNameResponse.cpp
   src/v20190107/model/ModifyClusterStorageRequest.cpp
+  src/v20190107/model/RollBackClusterRequest.cpp
   src/v20190107/model/DescribeAuditLogFilesResponse.cpp
   src/v20190107/model/SwitchClusterZoneResponse.cpp
   src/v20190107/model/AssociateSecurityGroupsRequest.cpp
@@ -256,7 +258,7 @@ set(cynosdb_src
   src/v20190107/model/ExportInstanceSlowQueriesResponse.cpp
   src/v20190107/model/SwitchClusterZoneRequest.cpp
   src/v20190107/model/DescribeDBSecurityGroupsRequest.cpp
-  src/v20190107/model/RollBackClusterRequest.cpp
+  src/v20190107/model/InstanceInitInfo.cpp
   src/v20190107/model/UpgradeInstanceRequest.cpp
   src/v20190107/model/RollbackTable.cpp
   src/v20190107/model/DescribeClusterDetailRequest.cpp

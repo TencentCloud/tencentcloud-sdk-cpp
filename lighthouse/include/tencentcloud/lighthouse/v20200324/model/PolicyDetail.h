@@ -100,6 +100,54 @@ namespace TencentCloud
                      */
                     bool FinalDiscountHasBeenSet() const;
 
+                    /**
+                     * 获取活动折扣。取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ActivityDiscount 活动折扣。取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetActivityDiscount() const;
+
+                    /**
+                     * 设置活动折扣。取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ActivityDiscount 活动折扣。取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetActivityDiscount(const double& _activityDiscount);
+
+                    /**
+                     * 判断参数 ActivityDiscount 是否已赋值
+                     * @return ActivityDiscount 是否已赋值
+                     */
+                    bool ActivityDiscountHasBeenSet() const;
+
+                    /**
+                     * 获取折扣类型。
+user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiscountType 折扣类型。
+user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDiscountType() const;
+
+                    /**
+                     * 设置折扣类型。
+user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiscountType 折扣类型。
+user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiscountType(const std::string& _discountType);
+
+                    /**
+                     * 判断参数 DiscountType 是否已赋值
+                     * @return DiscountType 是否已赋值
+                     */
+                    bool DiscountTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +167,21 @@ namespace TencentCloud
                      */
                     int64_t m_finalDiscount;
                     bool m_finalDiscountHasBeenSet;
+
+                    /**
+                     * 活动折扣。取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_activityDiscount;
+                    bool m_activityDiscountHasBeenSet;
+
+                    /**
+                     * 折扣类型。
+user：用户折扣; common：官网折扣; activity：活动折扣。 取值为null，表示无有效值，即没有折扣。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_discountType;
+                    bool m_discountTypeHasBeenSet;
 
                 };
             }

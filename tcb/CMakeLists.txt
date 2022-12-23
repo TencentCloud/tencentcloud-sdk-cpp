@@ -87,6 +87,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvRequest.h
   include/tencentcloud/tcb/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeActivityRecordResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRsByConditionResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h
@@ -128,6 +129,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateHostingDomainResponse.h
+  include/tencentcloud/tcb/v20180608/model/TkeClusterInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeActivityRecordRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunEnvResponse.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseRunServerVersionRequest.h
@@ -176,7 +178,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CloudBaseRunNfsVolumeSource.h
   include/tencentcloud/tcb/v20180608/model/DescribeSmsQuotasResponse.h
   include/tencentcloud/tcb/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.h
-  include/tencentcloud/tcb/v20180608/model/DescribeCloudBaseRunVersionRsByConditionResponse.h
+  include/tencentcloud/tcb/v20180608/model/CloudBaseRunServiceVolumeHostPath.h
   include/tencentcloud/tcb/v20180608/model/DescribeCurveDataRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeActivityInfoRequest.h
   include/tencentcloud/tcb/v20180608/model/BindEnvGatewayRequest.h
@@ -307,6 +309,7 @@ set(tcb_src
   src/v20180608/model/CreateWxCloudBaseRunEnvRequest.cpp
   src/v20180608/model/ModifyCloudBaseRunServerFlowConfRequest.cpp
   src/v20180608/model/DescribeActivityRecordResponse.cpp
+  src/v20180608/model/DescribeCloudBaseRunVersionRsByConditionResponse.cpp
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.cpp
   src/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.cpp
@@ -348,6 +351,7 @@ set(tcb_src
   src/v20180608/model/DescribeEnvsResponse.cpp
   src/v20180608/model/CreateAuthDomainRequest.cpp
   src/v20180608/model/CreateHostingDomainResponse.cpp
+  src/v20180608/model/TkeClusterInfo.cpp
   src/v20180608/model/DescribeActivityRecordRequest.cpp
   src/v20180608/model/CreateWxCloudBaseRunEnvResponse.cpp
   src/v20180608/model/DeleteCloudBaseRunServerVersionRequest.cpp
@@ -396,7 +400,7 @@ set(tcb_src
   src/v20180608/model/CloudBaseRunNfsVolumeSource.cpp
   src/v20180608/model/DescribeSmsQuotasResponse.cpp
   src/v20180608/model/DescribeWxCloudBaseRunEnvsRequest.cpp
-  src/v20180608/model/DescribeCloudBaseRunVersionRsByConditionResponse.cpp
+  src/v20180608/model/CloudBaseRunServiceVolumeHostPath.cpp
   src/v20180608/model/DescribeCurveDataRequest.cpp
   src/v20180608/model/DescribeActivityInfoRequest.cpp
   src/v20180608/model/BindEnvGatewayRequest.cpp

@@ -21,9 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dts/v20211206/model/Endpoint.h>
 #include <tencentcloud/dts/v20211206/model/Options.h>
 #include <tencentcloud/dts/v20211206/model/Objects.h>
+#include <tencentcloud/dts/v20211206/model/Endpoint.h>
 
 
 namespace TencentCloud
@@ -82,24 +82,6 @@ namespace TencentCloud
                     bool SrcAccessTypeHasBeenSet() const;
 
                     /**
-                     * 获取源端信息
-                     * @return SrcInfo 源端信息
-                     */
-                    Endpoint GetSrcInfo() const;
-
-                    /**
-                     * 设置源端信息
-                     * @param SrcInfo 源端信息
-                     */
-                    void SetSrcInfo(const Endpoint& _srcInfo);
-
-                    /**
-                     * 判断参数 SrcInfo 是否已赋值
-                     * @return SrcInfo 是否已赋值
-                     */
-                    bool SrcInfoHasBeenSet() const;
-
-                    /**
                      * 获取目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、noProxy,注意具体可选值依赖当前链路
                      * @return DstAccessType 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、noProxy,注意具体可选值依赖当前链路
                      */
@@ -116,24 +98,6 @@ namespace TencentCloud
                      * @return DstAccessType 是否已赋值
                      */
                     bool DstAccessTypeHasBeenSet() const;
-
-                    /**
-                     * 获取目标端信息
-                     * @return DstInfo 目标端信息
-                     */
-                    Endpoint GetDstInfo() const;
-
-                    /**
-                     * 设置目标端信息
-                     * @param DstInfo 目标端信息
-                     */
-                    void SetDstInfo(const Endpoint& _dstInfo);
-
-                    /**
-                     * 判断参数 DstInfo 是否已赋值
-                     * @return DstInfo 是否已赋值
-                     */
-                    bool DstInfoHasBeenSet() const;
 
                     /**
                      * 获取同步任务选项
@@ -190,6 +154,24 @@ namespace TencentCloud
                     bool JobNameHasBeenSet() const;
 
                     /**
+                     * 获取枚举值是 liteMode 和 fullMode ，分别对应精简模式或正常模式
+                     * @return JobMode 枚举值是 liteMode 和 fullMode ，分别对应精简模式或正常模式
+                     */
+                    std::string GetJobMode() const;
+
+                    /**
+                     * 设置枚举值是 liteMode 和 fullMode ，分别对应精简模式或正常模式
+                     * @param JobMode 枚举值是 liteMode 和 fullMode ，分别对应精简模式或正常模式
+                     */
+                    void SetJobMode(const std::string& _jobMode);
+
+                    /**
+                     * 判断参数 JobMode 是否已赋值
+                     * @return JobMode 是否已赋值
+                     */
+                    bool JobModeHasBeenSet() const;
+
+                    /**
                      * 获取运行模式，取值如：Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
                      * @return RunMode 运行模式，取值如：Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
                      */
@@ -225,6 +207,60 @@ namespace TencentCloud
                      */
                     bool ExpectRunTimeHasBeenSet() const;
 
+                    /**
+                     * 获取源端信息，单节点数据库使用
+                     * @return SrcInfo 源端信息，单节点数据库使用
+                     */
+                    Endpoint GetSrcInfo() const;
+
+                    /**
+                     * 设置源端信息，单节点数据库使用
+                     * @param SrcInfo 源端信息，单节点数据库使用
+                     */
+                    void SetSrcInfo(const Endpoint& _srcInfo);
+
+                    /**
+                     * 判断参数 SrcInfo 是否已赋值
+                     * @return SrcInfo 是否已赋值
+                     */
+                    bool SrcInfoHasBeenSet() const;
+
+                    /**
+                     * 获取目标端信息，单节点数据库使用
+                     * @return DstInfo 目标端信息，单节点数据库使用
+                     */
+                    Endpoint GetDstInfo() const;
+
+                    /**
+                     * 设置目标端信息，单节点数据库使用
+                     * @param DstInfo 目标端信息，单节点数据库使用
+                     */
+                    void SetDstInfo(const Endpoint& _dstInfo);
+
+                    /**
+                     * 判断参数 DstInfo 是否已赋值
+                     * @return DstInfo 是否已赋值
+                     */
+                    bool DstInfoHasBeenSet() const;
+
+                    /**
+                     * 获取自动重试的时间段、可设置5至720分钟、0表示不重试
+                     * @return AutoRetryTimeRangeMinutes 自动重试的时间段、可设置5至720分钟、0表示不重试
+                     */
+                    int64_t GetAutoRetryTimeRangeMinutes() const;
+
+                    /**
+                     * 设置自动重试的时间段、可设置5至720分钟、0表示不重试
+                     * @param AutoRetryTimeRangeMinutes 自动重试的时间段、可设置5至720分钟、0表示不重试
+                     */
+                    void SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes);
+
+                    /**
+                     * 判断参数 AutoRetryTimeRangeMinutes 是否已赋值
+                     * @return AutoRetryTimeRangeMinutes 是否已赋值
+                     */
+                    bool AutoRetryTimeRangeMinutesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,22 +276,10 @@ namespace TencentCloud
                     bool m_srcAccessTypeHasBeenSet;
 
                     /**
-                     * 源端信息
-                     */
-                    Endpoint m_srcInfo;
-                    bool m_srcInfoHasBeenSet;
-
-                    /**
                      * 目标端接入类型，cdb(云数据库)、cvm(云主机自建)、vpc(私有网络)、extranet(外网)、vpncloud(vpn接入)、dcg(专线接入)、ccn(云联网)、intranet(自研上云)、noProxy,注意具体可选值依赖当前链路
                      */
                     std::string m_dstAccessType;
                     bool m_dstAccessTypeHasBeenSet;
-
-                    /**
-                     * 目标端信息
-                     */
-                    Endpoint m_dstInfo;
-                    bool m_dstInfoHasBeenSet;
 
                     /**
                      * 同步任务选项
@@ -276,6 +300,12 @@ namespace TencentCloud
                     bool m_jobNameHasBeenSet;
 
                     /**
+                     * 枚举值是 liteMode 和 fullMode ，分别对应精简模式或正常模式
+                     */
+                    std::string m_jobMode;
+                    bool m_jobModeHasBeenSet;
+
+                    /**
                      * 运行模式，取值如：Immediate(表示立即运行，默认为此项值)、Timed(表示定时运行)
                      */
                     std::string m_runMode;
@@ -286,6 +316,24 @@ namespace TencentCloud
                      */
                     std::string m_expectRunTime;
                     bool m_expectRunTimeHasBeenSet;
+
+                    /**
+                     * 源端信息，单节点数据库使用
+                     */
+                    Endpoint m_srcInfo;
+                    bool m_srcInfoHasBeenSet;
+
+                    /**
+                     * 目标端信息，单节点数据库使用
+                     */
+                    Endpoint m_dstInfo;
+                    bool m_dstInfoHasBeenSet;
+
+                    /**
+                     * 自动重试的时间段、可设置5至720分钟、0表示不重试
+                     */
+                    int64_t m_autoRetryTimeRangeMinutes;
+                    bool m_autoRetryTimeRangeMinutesHasBeenSet;
 
                 };
             }

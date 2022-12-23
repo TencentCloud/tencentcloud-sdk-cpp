@@ -69,6 +69,28 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
+                     * 获取tdsql mysql版的节点类型，枚举值为proxy、set
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Role tdsql mysql版的节点类型，枚举值为proxy、set
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置tdsql mysql版的节点类型，枚举值为proxy、set
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Role tdsql mysql版的节点类型，枚举值为proxy、set
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
+                    /**
                      * 获取数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbKernel 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
@@ -399,28 +421,6 @@ namespace TencentCloud
                     bool EngineVersionHasBeenSet() const;
 
                     /**
-                     * 获取资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AccountMode 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetAccountMode() const;
-
-                    /**
-                     * 设置资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AccountMode 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetAccountMode(const std::string& _accountMode);
-
-                    /**
-                     * 判断参数 AccountMode 是否已赋值
-                     * @return AccountMode 是否已赋值
-                     */
-                    bool AccountModeHasBeenSet() const;
-
-                    /**
                      * 获取实例所属账号，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Account 实例所属账号，如果为跨账号实例此项必填
@@ -443,6 +443,28 @@ namespace TencentCloud
                     bool AccountHasBeenSet() const;
 
                     /**
+                     * 获取资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccountMode 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAccountMode() const;
+
+                    /**
+                     * 设置资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AccountMode 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAccountMode(const std::string& _accountMode);
+
+                    /**
+                     * 判断参数 AccountMode 是否已赋值
+                     * @return AccountMode 是否已赋值
+                     */
+                    bool AccountModeHasBeenSet() const;
+
+                    /**
                      * 获取跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return AccountRole 跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
@@ -463,6 +485,28 @@ namespace TencentCloud
                      * @return AccountRole 是否已赋值
                      */
                     bool AccountRoleHasBeenSet() const;
+
+                    /**
+                     * 获取外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RoleExternalId 外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRoleExternalId() const;
+
+                    /**
+                     * 设置外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RoleExternalId 外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRoleExternalId(const std::string& _roleExternalId);
+
+                    /**
+                     * 判断参数 RoleExternalId 是否已赋值
+                     * @return RoleExternalId 是否已赋值
+                     */
+                    bool RoleExternalIdHasBeenSet() const;
 
                     /**
                      * 获取临时密钥Id，如果为跨账号实例此项必填
@@ -531,26 +575,26 @@ namespace TencentCloud
                     bool TmpTokenHasBeenSet() const;
 
                     /**
-                     * 获取外部角色id
+                     * 获取是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RoleExternalId 外部角色id
+                     * @return EncryptConn 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetRoleExternalId() const;
+                    std::string GetEncryptConn() const;
 
                     /**
-                     * 设置外部角色id
+                     * 设置是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RoleExternalId 外部角色id
+                     * @param EncryptConn 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetRoleExternalId(const std::string& _roleExternalId);
+                    void SetEncryptConn(const std::string& _encryptConn);
 
                     /**
-                     * 判断参数 RoleExternalId 是否已赋值
-                     * @return RoleExternalId 是否已赋值
+                     * 判断参数 EncryptConn 是否已赋值
+                     * @return EncryptConn 是否已赋值
                      */
-                    bool RoleExternalIdHasBeenSet() const;
+                    bool EncryptConnHasBeenSet() const;
 
                 private:
 
@@ -560,6 +604,13 @@ namespace TencentCloud
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
+
+                    /**
+                     * tdsql mysql版的节点类型，枚举值为proxy、set
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                     /**
                      * 数据库内核类型，tdsql中用于区分不同内核：percona,mariadb,mysql
@@ -667,13 +718,6 @@ namespace TencentCloud
                     bool m_engineVersionHasBeenSet;
 
                     /**
-                     * 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_accountMode;
-                    bool m_accountModeHasBeenSet;
-
-                    /**
                      * 实例所属账号，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -681,11 +725,25 @@ namespace TencentCloud
                     bool m_accountHasBeenSet;
 
                     /**
+                     * 资源所属账号 为空或self(表示本账号内资源)、other(表示跨账号资源)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_accountMode;
+                    bool m_accountModeHasBeenSet;
+
+                    /**
                      * 跨账号同步时的角色，只允许[a-zA-Z0-9\-\_]+，如果为跨账号实例此项必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_accountRole;
                     bool m_accountRoleHasBeenSet;
+
+                    /**
+                     * 外部角色id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_roleExternalId;
+                    bool m_roleExternalIdHasBeenSet;
 
                     /**
                      * 临时密钥Id，如果为跨账号实例此项必填
@@ -709,11 +767,11 @@ namespace TencentCloud
                     bool m_tmpTokenHasBeenSet;
 
                     /**
-                     * 外部角色id
+                     * 是否走加密传输、UnEncrypted表示不走加密传输，Encrypted表示走加密传输，默认UnEncrypted
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_roleExternalId;
-                    bool m_roleExternalIdHasBeenSet;
+                    std::string m_encryptConn;
+                    bool m_encryptConnHasBeenSet;
 
                 };
             }

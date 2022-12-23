@@ -334,6 +334,94 @@ namespace TencentCloud
                      */
                     bool ProceduresHasBeenSet() const;
 
+                    /**
+                     * 获取触发器迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TriggerMode 触发器迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTriggerMode() const;
+
+                    /**
+                     * 设置触发器迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TriggerMode 触发器迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTriggerMode(const std::string& _triggerMode);
+
+                    /**
+                     * 判断参数 TriggerMode 是否已赋值
+                     * @return TriggerMode 是否已赋值
+                     */
+                    bool TriggerModeHasBeenSet() const;
+
+                    /**
+                     * 获取当TriggerMode为partial，指定要迁移的触发器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Triggers 当TriggerMode为partial，指定要迁移的触发器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetTriggers() const;
+
+                    /**
+                     * 设置当TriggerMode为partial，指定要迁移的触发器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Triggers 当TriggerMode为partial，指定要迁移的触发器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTriggers(const std::vector<std::string>& _triggers);
+
+                    /**
+                     * 判断参数 Triggers 是否已赋值
+                     * @return Triggers 是否已赋值
+                     */
+                    bool TriggersHasBeenSet() const;
+
+                    /**
+                     * 获取事件迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventMode 事件迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEventMode() const;
+
+                    /**
+                     * 设置事件迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EventMode 事件迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEventMode(const std::string& _eventMode);
+
+                    /**
+                     * 判断参数 EventMode 是否已赋值
+                     * @return EventMode 是否已赋值
+                     */
+                    bool EventModeHasBeenSet() const;
+
+                    /**
+                     * 获取当EventMode为partial，指定要迁移的事件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Events 当EventMode为partial，指定要迁移的事件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetEvents() const;
+
+                    /**
+                     * 设置当EventMode为partial，指定要迁移的事件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Events 当EventMode为partial，指定要迁移的事件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEvents(const std::vector<std::string>& _events);
+
+                    /**
+                     * 判断参数 Events 是否已赋值
+                     * @return Events 是否已赋值
+                     */
+                    bool EventsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -426,6 +514,34 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_procedures;
                     bool m_proceduresHasBeenSet;
+
+                    /**
+                     * 触发器迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_triggerMode;
+                    bool m_triggerModeHasBeenSet;
+
+                    /**
+                     * 当TriggerMode为partial，指定要迁移的触发器名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_triggers;
+                    bool m_triggersHasBeenSet;
+
+                    /**
+                     * 事件迁移模式，all(为当前对象下的所有对象)，partial(部分对象)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventMode;
+                    bool m_eventModeHasBeenSet;
+
+                    /**
+                     * 当EventMode为partial，指定要迁移的事件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_events;
+                    bool m_eventsHasBeenSet;
 
                 };
             }

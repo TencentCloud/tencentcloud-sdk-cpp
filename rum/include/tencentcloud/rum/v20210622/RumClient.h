@@ -111,6 +111,10 @@
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFileSignResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFilesRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFilesResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeRumLogListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeRumLogListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeRumStatsLogListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeRumStatsLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeScoresResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeTawAreasRequest.h>
@@ -279,6 +283,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReleaseFilesResponse> DescribeReleaseFilesOutcome;
                 typedef std::future<DescribeReleaseFilesOutcome> DescribeReleaseFilesOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeReleaseFilesRequest&, DescribeReleaseFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReleaseFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRumLogListResponse> DescribeRumLogListOutcome;
+                typedef std::future<DescribeRumLogListOutcome> DescribeRumLogListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeRumLogListRequest&, DescribeRumLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRumStatsLogListResponse> DescribeRumStatsLogListOutcome;
+                typedef std::future<DescribeRumStatsLogListOutcome> DescribeRumStatsLogListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeRumStatsLogListRequest&, DescribeRumStatsLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumStatsLogListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScoresResponse> DescribeScoresOutcome;
                 typedef std::future<DescribeScoresOutcome> DescribeScoresOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeScoresRequest&, DescribeScoresOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScoresAsyncHandler;
@@ -723,6 +733,24 @@ namespace TencentCloud
                 DescribeReleaseFilesOutcome DescribeReleaseFiles(const Model::DescribeReleaseFilesRequest &request);
                 void DescribeReleaseFilesAsync(const Model::DescribeReleaseFilesRequest& request, const DescribeReleaseFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReleaseFilesOutcomeCallable DescribeReleaseFilesCallable(const Model::DescribeReleaseFilesRequest& request);
+
+                /**
+                 *获取项目下的日志列表（实例创建的项目下的日志列表）
+                 * @param req DescribeRumLogListRequest
+                 * @return DescribeRumLogListOutcome
+                 */
+                DescribeRumLogListOutcome DescribeRumLogList(const Model::DescribeRumLogListRequest &request);
+                void DescribeRumLogListAsync(const Model::DescribeRumLogListRequest& request, const DescribeRumLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRumLogListOutcomeCallable DescribeRumLogListCallable(const Model::DescribeRumLogListRequest& request);
+
+                /**
+                 *获取项目下的日志列表，分钟级
+                 * @param req DescribeRumStatsLogListRequest
+                 * @return DescribeRumStatsLogListOutcome
+                 */
+                DescribeRumStatsLogListOutcome DescribeRumStatsLogList(const Model::DescribeRumStatsLogListRequest &request);
+                void DescribeRumStatsLogListAsync(const Model::DescribeRumStatsLogListRequest& request, const DescribeRumStatsLogListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRumStatsLogListOutcomeCallable DescribeRumStatsLogListCallable(const Model::DescribeRumStatsLogListRequest& request);
 
                 /**
                  *获取首页分数列表

@@ -62,7 +62,8 @@ CreateClustersRequest::CreateClustersRequest() :
     m_clusterParamsHasBeenSet(false),
     m_dealModeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
-    m_slaveZoneHasBeenSet(false)
+    m_slaveZoneHasBeenSet(false),
+    m_instanceInitInfosHasBeenSet(false)
 {
 }
 
@@ -415,6 +416,21 @@ string CreateClustersRequest::ToJsonString() const
         string key = "SlaveZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_slaveZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceInitInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceInitInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceInitInfos.begin(); itr != m_instanceInitInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -1063,6 +1079,22 @@ void CreateClustersRequest::SetSlaveZone(const string& _slaveZone)
 bool CreateClustersRequest::SlaveZoneHasBeenSet() const
 {
     return m_slaveZoneHasBeenSet;
+}
+
+vector<InstanceInitInfo> CreateClustersRequest::GetInstanceInitInfos() const
+{
+    return m_instanceInitInfos;
+}
+
+void CreateClustersRequest::SetInstanceInitInfos(const vector<InstanceInitInfo>& _instanceInitInfos)
+{
+    m_instanceInitInfos = _instanceInitInfos;
+    m_instanceInitInfosHasBeenSet = true;
+}
+
+bool CreateClustersRequest::InstanceInitInfosHasBeenSet() const
+{
+    return m_instanceInitInfosHasBeenSet;
 }
 
 

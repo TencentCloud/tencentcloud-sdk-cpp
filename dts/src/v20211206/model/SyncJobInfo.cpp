@@ -49,7 +49,8 @@ SyncJobInfo::SyncJobInfo() :
     m_tradeStatusHasBeenSet(false),
     m_instanceClassHasBeenSet(false),
     m_autoRenewHasBeenSet(false),
-    m_offlineTimeHasBeenSet(false)
+    m_offlineTimeHasBeenSet(false),
+    m_autoRetryTimeRangeMinutesHasBeenSet(false)
 {
 }
 
@@ -399,6 +400,16 @@ CoreInternalOutcome SyncJobInfo::Deserialize(const rapidjson::Value &value)
         m_offlineTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRetryTimeRangeMinutes") && !value["AutoRetryTimeRangeMinutes"].IsNull())
+    {
+        if (!value["AutoRetryTimeRangeMinutes"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncJobInfo.AutoRetryTimeRangeMinutes` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRetryTimeRangeMinutes = value["AutoRetryTimeRangeMinutes"].GetInt64();
+        m_autoRetryTimeRangeMinutesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -658,6 +669,14 @@ void SyncJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "OfflineTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_offlineTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRetryTimeRangeMinutesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRetryTimeRangeMinutes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRetryTimeRangeMinutes, allocator);
     }
 
 }
@@ -1125,5 +1144,21 @@ void SyncJobInfo::SetOfflineTime(const string& _offlineTime)
 bool SyncJobInfo::OfflineTimeHasBeenSet() const
 {
     return m_offlineTimeHasBeenSet;
+}
+
+int64_t SyncJobInfo::GetAutoRetryTimeRangeMinutes() const
+{
+    return m_autoRetryTimeRangeMinutes;
+}
+
+void SyncJobInfo::SetAutoRetryTimeRangeMinutes(const int64_t& _autoRetryTimeRangeMinutes)
+{
+    m_autoRetryTimeRangeMinutes = _autoRetryTimeRangeMinutes;
+    m_autoRetryTimeRangeMinutesHasBeenSet = true;
+}
+
+bool SyncJobInfo::AutoRetryTimeRangeMinutesHasBeenSet() const
+{
+    return m_autoRetryTimeRangeMinutesHasBeenSet;
 }
 

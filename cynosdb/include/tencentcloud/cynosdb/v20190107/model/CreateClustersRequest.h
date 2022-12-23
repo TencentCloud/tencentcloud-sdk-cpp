@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/ParamItem.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h>
 
 
 namespace TencentCloud
@@ -848,6 +849,24 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     bool SlaveZoneHasBeenSet() const;
 
+                    /**
+                     * 获取实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     * @return InstanceInitInfos 实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     */
+                    std::vector<InstanceInitInfo> GetInstanceInitInfos() const;
+
+                    /**
+                     * 设置实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     * @param InstanceInitInfos 实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     */
+                    void SetInstanceInitInfos(const std::vector<InstanceInitInfo>& _instanceInitInfos);
+
+                    /**
+                     * 判断参数 InstanceInitInfos 是否已赋值
+                     * @return InstanceInitInfos 是否已赋值
+                     */
+                    bool InstanceInitInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1110,6 +1129,12 @@ cpu最大值，可选范围参考DescribeServerlessInstanceSpecs接口返回
                      */
                     std::string m_slaveZone;
                     bool m_slaveZoneHasBeenSet;
+
+                    /**
+                     * 实例初始化配置信息，主要用于购买集群时选不同规格实例
+                     */
+                    std::vector<InstanceInitInfo> m_instanceInitInfos;
+                    bool m_instanceInitInfosHasBeenSet;
 
                 };
             }
