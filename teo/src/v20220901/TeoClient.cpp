@@ -2233,6 +2233,49 @@ TeoClient::DescribeDefaultCertificatesOutcomeCallable TeoClient::DescribeDefault
     return task->get_future();
 }
 
+TeoClient::DescribeDistributionL4AccessDataOutcome TeoClient::DescribeDistributionL4AccessData(const DescribeDistributionL4AccessDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDistributionL4AccessData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDistributionL4AccessDataResponse rsp = DescribeDistributionL4AccessDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDistributionL4AccessDataOutcome(rsp);
+        else
+            return DescribeDistributionL4AccessDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDistributionL4AccessDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeDistributionL4AccessDataAsync(const DescribeDistributionL4AccessDataRequest& request, const DescribeDistributionL4AccessDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDistributionL4AccessData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeDistributionL4AccessDataOutcomeCallable TeoClient::DescribeDistributionL4AccessDataCallable(const DescribeDistributionL4AccessDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDistributionL4AccessDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDistributionL4AccessData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeDnsDataOutcome TeoClient::DescribeDnsData(const DescribeDnsDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDnsData");
@@ -3344,6 +3387,49 @@ TeoClient::DescribeSpeedTestingQuotaOutcomeCallable TeoClient::DescribeSpeedTest
         [this, request]()
         {
             return this->DescribeSpeedTestingQuota(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeTimingL4AccessDataOutcome TeoClient::DescribeTimingL4AccessData(const DescribeTimingL4AccessDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimingL4AccessData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimingL4AccessDataResponse rsp = DescribeTimingL4AccessDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimingL4AccessDataOutcome(rsp);
+        else
+            return DescribeTimingL4AccessDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimingL4AccessDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeTimingL4AccessDataAsync(const DescribeTimingL4AccessDataRequest& request, const DescribeTimingL4AccessDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTimingL4AccessData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeTimingL4AccessDataOutcomeCallable TeoClient::DescribeTimingL4AccessDataCallable(const DescribeTimingL4AccessDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTimingL4AccessDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTimingL4AccessData(request);
         }
     );
 

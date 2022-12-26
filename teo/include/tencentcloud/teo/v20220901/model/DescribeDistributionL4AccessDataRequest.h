@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBESINGLEL7ANALYSISDATAREQUEST_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBESINGLEL7ANALYSISDATAREQUEST_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEDISTRIBUTIONL4ACCESSDATAREQUEST_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEDISTRIBUTIONL4ACCESSDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -33,13 +33,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeSingleL7AnalysisData请求参数结构体
+                * DescribeDistributionL4AccessData请求参数结构体
                 */
-                class DescribeSingleL7AnalysisDataRequest : public AbstractModel
+                class DescribeDistributionL4AccessDataRequest : public AbstractModel
                 {
                 public:
-                    DescribeSingleL7AnalysisDataRequest();
-                    ~DescribeSingleL7AnalysisDataRequest() = default;
+                    DescribeDistributionL4AccessDataRequest();
+                    ~DescribeDistributionL4AccessDataRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -80,18 +80,18 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询的指标，取值有:
-<li> l7Flow_singleIpRequest：独立IP请求数。</li>
-                     * @return MetricNames 查询的指标，取值有:
-<li> l7Flow_singleIpRequest：独立IP请求数。</li>
+                     * 获取查询指标, 取值有：
+<li>l4Flow_connection_distribution：连接时长分布情况。</li>
+                     * @return MetricNames 查询指标, 取值有：
+<li>l4Flow_connection_distribution：连接时长分布情况。</li>
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
-                     * 设置查询的指标，取值有:
-<li> l7Flow_singleIpRequest：独立IP请求数。</li>
-                     * @param MetricNames 查询的指标，取值有:
-<li> l7Flow_singleIpRequest：独立IP请求数。</li>
+                     * 设置查询指标, 取值有：
+<li>l4Flow_connection_distribution：连接时长分布情况。</li>
+                     * @param MetricNames 查询指标, 取值有：
+<li>l4Flow_connection_distribution：连接时长分布情况。</li>
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取查询的站点集合，不填默认查询所有站点。
-                     * @return ZoneIds 查询的站点集合，不填默认查询所有站点。
+                     * 获取站点ID集合，不填默认选择全部站点。
+                     * @return ZoneIds 站点ID集合，不填默认选择全部站点。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置查询的站点集合，不填默认查询所有站点。
-                     * @param ZoneIds 查询的站点集合，不填默认查询所有站点。
+                     * 设置站点ID集合，不填默认选择全部站点。
+                     * @param ZoneIds 站点ID集合，不填默认选择全部站点。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -118,44 +118,6 @@ namespace TencentCloud
                      * @return ZoneIds 是否已赋值
                      */
                     bool ZoneIdsHasBeenSet() const;
-
-                    /**
-                     * 获取过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     * @return Filters 过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     */
-                    std::vector<QueryCondition> GetFilters() const;
-
-                    /**
-                     * 设置过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     * @param Filters 过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     */
-                    void SetFilters(const std::vector<QueryCondition>& _filters);
-
-                    /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
-                     */
-                    bool FiltersHasBeenSet() const;
 
                     /**
                      * 获取查询时间粒度，取值有：
@@ -190,6 +152,32 @@ namespace TencentCloud
                      * @return Interval 是否已赋值
                      */
                     bool IntervalHasBeenSet() const;
+
+                    /**
+                     * 获取过滤条件，详细的过滤条件如下：
+<li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+<li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     * @return QueryConditions 过滤条件，详细的过滤条件如下：
+<li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+<li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     */
+                    std::vector<QueryCondition> GetQueryConditions() const;
+
+                    /**
+                     * 设置过滤条件，详细的过滤条件如下：
+<li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+<li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     * @param QueryConditions 过滤条件，详细的过滤条件如下：
+<li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+<li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     */
+                    void SetQueryConditions(const std::vector<QueryCondition>& _queryConditions);
+
+                    /**
+                     * 判断参数 QueryConditions 是否已赋值
+                     * @return QueryConditions 是否已赋值
+                     */
+                    bool QueryConditionsHasBeenSet() const;
 
                     /**
                      * 获取数据归属地区，取值有：
@@ -236,28 +224,17 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询的指标，取值有:
-<li> l7Flow_singleIpRequest：独立IP请求数。</li>
+                     * 查询指标, 取值有：
+<li>l4Flow_connection_distribution：连接时长分布情况。</li>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 查询的站点集合，不填默认查询所有站点。
+                     * 站点ID集合，不填默认选择全部站点。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
-
-                    /**
-                     * 过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     */
-                    std::vector<QueryCondition> m_filters;
-                    bool m_filtersHasBeenSet;
 
                     /**
                      * 查询时间粒度，取值有：
@@ -268,6 +245,14 @@ namespace TencentCloud
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
+
+                    /**
+                     * 过滤条件，详细的过滤条件如下：
+<li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+<li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     */
+                    std::vector<QueryCondition> m_queryConditions;
+                    bool m_queryConditionsHasBeenSet;
 
                     /**
                      * 数据归属地区，取值有：
@@ -284,4 +269,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBESINGLEL7ANALYSISDATAREQUEST_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBEDISTRIBUTIONL4ACCESSDATAREQUEST_H_

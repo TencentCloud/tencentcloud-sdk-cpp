@@ -125,6 +125,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeDDoSPolicyResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDistributionL4AccessDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDistributionL4AccessDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDnsDataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDnsDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeDnsRecordsRequest.h>
@@ -177,6 +179,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingQuotaRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeSpeedTestingQuotaResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingL4AccessDataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingL4AccessDataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h>
@@ -438,6 +442,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDefaultCertificatesResponse> DescribeDefaultCertificatesOutcome;
                 typedef std::future<DescribeDefaultCertificatesOutcome> DescribeDefaultCertificatesOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDefaultCertificatesRequest&, DescribeDefaultCertificatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDefaultCertificatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDistributionL4AccessDataResponse> DescribeDistributionL4AccessDataOutcome;
+                typedef std::future<DescribeDistributionL4AccessDataOutcome> DescribeDistributionL4AccessDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeDistributionL4AccessDataRequest&, DescribeDistributionL4AccessDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDistributionL4AccessDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDnsDataResponse> DescribeDnsDataOutcome;
                 typedef std::future<DescribeDnsDataOutcome> DescribeDnsDataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeDnsDataRequest&, DescribeDnsDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDnsDataAsyncHandler;
@@ -516,6 +523,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSpeedTestingQuotaResponse> DescribeSpeedTestingQuotaOutcome;
                 typedef std::future<DescribeSpeedTestingQuotaOutcome> DescribeSpeedTestingQuotaOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeSpeedTestingQuotaRequest&, DescribeSpeedTestingQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpeedTestingQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimingL4AccessDataResponse> DescribeTimingL4AccessDataOutcome;
+                typedef std::future<DescribeTimingL4AccessDataOutcome> DescribeTimingL4AccessDataOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeTimingL4AccessDataRequest&, DescribeTimingL4AccessDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL4AccessDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTimingL4DataResponse> DescribeTimingL4DataOutcome;
                 typedef std::future<DescribeTimingL4DataOutcome> DescribeTimingL4DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeTimingL4DataRequest&, DescribeTimingL4DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimingL4DataAsyncHandler;
@@ -1120,6 +1130,15 @@ namespace TencentCloud
                 DescribeDefaultCertificatesOutcomeCallable DescribeDefaultCertificatesCallable(const Model::DescribeDefaultCertificatesRequest& request);
 
                 /**
+                 *本接口（DescribeDistributionL4AccessData）用于查询四层连接时长的时序数据。
+                 * @param req DescribeDistributionL4AccessDataRequest
+                 * @return DescribeDistributionL4AccessDataOutcome
+                 */
+                DescribeDistributionL4AccessDataOutcome DescribeDistributionL4AccessData(const Model::DescribeDistributionL4AccessDataRequest &request);
+                void DescribeDistributionL4AccessDataAsync(const Model::DescribeDistributionL4AccessDataRequest& request, const DescribeDistributionL4AccessDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDistributionL4AccessDataOutcomeCallable DescribeDistributionL4AccessDataCallable(const Model::DescribeDistributionL4AccessDataRequest& request);
+
+                /**
                  *获取DNS请求数统计曲线
                  * @param req DescribeDnsDataRequest
                  * @return DescribeDnsDataOutcome
@@ -1352,6 +1371,15 @@ namespace TencentCloud
                 DescribeSpeedTestingQuotaOutcome DescribeSpeedTestingQuota(const Model::DescribeSpeedTestingQuotaRequest &request);
                 void DescribeSpeedTestingQuotaAsync(const Model::DescribeSpeedTestingQuotaRequest& request, const DescribeSpeedTestingQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpeedTestingQuotaOutcomeCallable DescribeSpeedTestingQuotaCallable(const Model::DescribeSpeedTestingQuotaRequest& request);
+
+                /**
+                 *本接口（DescribeTimingL4AccessData）用于查询四层连接数的时序数据列表。
+                 * @param req DescribeTimingL4AccessDataRequest
+                 * @return DescribeTimingL4AccessDataOutcome
+                 */
+                DescribeTimingL4AccessDataOutcome DescribeTimingL4AccessData(const Model::DescribeTimingL4AccessDataRequest &request);
+                void DescribeTimingL4AccessDataAsync(const Model::DescribeTimingL4AccessDataRequest& request, const DescribeTimingL4AccessDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimingL4AccessDataOutcomeCallable DescribeTimingL4AccessDataCallable(const Model::DescribeTimingL4AccessDataRequest& request);
 
                 /**
                  *本接口（DescribeTimingL4Data）用于查询四层时序流量数据列表。

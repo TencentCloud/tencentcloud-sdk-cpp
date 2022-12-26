@@ -24,7 +24,8 @@ using namespace TencentCloud::Cfg::V20210820::Model;
 using namespace std;
 
 DescribeTaskResponse::DescribeTaskResponse() :
-    m_taskHasBeenSet(false)
+    m_taskHasBeenSet(false),
+    m_reportInfoHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,23 @@ CoreInternalOutcome DescribeTaskResponse::Deserialize(const string &payload)
         m_taskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ReportInfo") && !rsp["ReportInfo"].IsNull())
+    {
+        if (!rsp["ReportInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reportInfo.Deserialize(rsp["ReportInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reportInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +114,15 @@ string DescribeTaskResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_task.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reportInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reportInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +145,16 @@ Task DescribeTaskResponse::GetTask() const
 bool DescribeTaskResponse::TaskHasBeenSet() const
 {
     return m_taskHasBeenSet;
+}
+
+TaskReportInfo DescribeTaskResponse::GetReportInfo() const
+{
+    return m_reportInfo;
+}
+
+bool DescribeTaskResponse::ReportInfoHasBeenSet() const
+{
+    return m_reportInfoHasBeenSet;
 }
 
 

@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfg/v20210820/model/Task.h>
+#include <tencentcloud/cfg/v20210820/model/TaskReportInfo.h>
 
 
 namespace TencentCloud
@@ -56,6 +57,20 @@ namespace TencentCloud
                      */
                     bool TaskHasBeenSet() const;
 
+                    /**
+                     * 获取任务对应的演练报告信息，null表示未导出报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportInfo 任务对应的演练报告信息，null表示未导出报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskReportInfo GetReportInfo() const;
+
+                    /**
+                     * 判断参数 ReportInfo 是否已赋值
+                     * @return ReportInfo 是否已赋值
+                     */
+                    bool ReportInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +78,13 @@ namespace TencentCloud
                      */
                     Task m_task;
                     bool m_taskHasBeenSet;
+
+                    /**
+                     * 任务对应的演练报告信息，null表示未导出报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TaskReportInfo m_reportInfo;
+                    bool m_reportInfoHasBeenSet;
 
                 };
             }

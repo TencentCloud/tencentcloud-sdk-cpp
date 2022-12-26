@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool ServicesHasBeenSet() const;
 
                     /**
-                     * 获取工厂配额
+                     * 获取商户配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FactoryQuota 工厂配额
+                     * @return FactoryQuota 商户配额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetFactoryQuota() const;
 
                     /**
-                     * 设置工厂配额
+                     * 设置商户配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FactoryQuota 工厂配额
+                     * @param FactoryQuota 商户配额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFactoryQuota(const int64_t& _factoryQuota);
@@ -179,17 +179,17 @@ namespace TencentCloud
                     bool FactoryQuotaHasBeenSet() const;
 
                     /**
-                     * 获取产品配额
+                     * 获取商品配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ItemQuota 产品配额
+                     * @return ItemQuota 商品配额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetItemQuota() const;
 
                     /**
-                     * 设置产品配额
+                     * 设置商品配额
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ItemQuota 产品配额
+                     * @param ItemQuota 商品配额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetItemQuota(const int64_t& _itemQuota);
@@ -311,17 +311,17 @@ namespace TencentCloud
                     bool TrackTypeHasBeenSet() const;
 
                     /**
-                     * 获取开通版本 basic standard enterprise
+                     * 获取开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Version 开通版本 basic standard enterprise
+                     * @return Version 开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置开通版本 basic standard enterprise
+                     * 设置开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Version 开通版本 basic standard enterprise
+                     * @param Version 开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVersion(const std::string& _version);
@@ -370,14 +370,14 @@ namespace TencentCloud
                     bool m_servicesHasBeenSet;
 
                     /**
-                     * 工厂配额
+                     * 商户配额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_factoryQuota;
                     bool m_factoryQuotaHasBeenSet;
 
                     /**
-                     * 产品配额
+                     * 商品配额
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_itemQuota;
@@ -419,7 +419,7 @@ namespace TencentCloud
                     bool m_trackTypeHasBeenSet;
 
                     /**
-                     * 开通版本 basic standard enterprise
+                     * 开通版本 lite:轻量版, basic:基础版, standard:标准版
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_version;

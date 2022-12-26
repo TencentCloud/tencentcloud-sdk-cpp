@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4DATAREQUEST_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4DATAREQUEST_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4ACCESSDATAREQUEST_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4ACCESSDATAREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -33,13 +33,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeTimingL4Data请求参数结构体
+                * DescribeTimingL4AccessData请求参数结构体
                 */
-                class DescribeTimingL4DataRequest : public AbstractModel
+                class DescribeTimingL4AccessDataRequest : public AbstractModel
                 {
                 public:
-                    DescribeTimingL4DataRequest();
-                    ~DescribeTimingL4DataRequest() = default;
+                    DescribeTimingL4AccessDataRequest();
+                    ~DescribeTimingL4AccessDataRequest() = default;
                     std::string ToJsonString() const;
 
 
@@ -81,33 +81,17 @@ namespace TencentCloud
 
                     /**
                      * 获取查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li> l4Flow_outPkt: 访问出包量。</li>
+<li> l4Flow_connections：连接数。</li>
                      * @return MetricNames 查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li> l4Flow_outPkt: 访问出包量。</li>
+<li> l4Flow_connections：连接数。</li>
                      */
                     std::vector<std::string> GetMetricNames() const;
 
                     /**
                      * 设置查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li> l4Flow_outPkt: 访问出包量。</li>
+<li> l4Flow_connections：连接数。</li>
                      * @param MetricNames 查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li> l4Flow_outPkt: 访问出包量。</li>
+<li> l4Flow_connections：连接数。</li>
                      */
                     void SetMetricNames(const std::vector<std::string>& _metricNames);
 
@@ -118,14 +102,14 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取站点集合，不填默认选择全部站点。
-                     * @return ZoneIds 站点集合，不填默认选择全部站点。
+                     * 获取站点ID集合，不填默认选择全部站点。
+                     * @return ZoneIds 站点ID集合，不填默认选择全部站点。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合，不填默认选择全部站点。
-                     * @param ZoneIds 站点集合，不填默认选择全部站点。
+                     * 设置站点ID集合，不填默认选择全部站点。
+                     * @param ZoneIds 站点ID集合，不填默认选择全部站点。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -136,48 +120,30 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取四层实例列表, 不填表示选择全部实例。
-                     * @return ProxyIds 四层实例列表, 不填表示选择全部实例。
-                     */
-                    std::vector<std::string> GetProxyIds() const;
-
-                    /**
-                     * 设置四层实例列表, 不填表示选择全部实例。
-                     * @param ProxyIds 四层实例列表, 不填表示选择全部实例。
-                     */
-                    void SetProxyIds(const std::vector<std::string>& _proxyIds);
-
-                    /**
-                     * 判断参数 ProxyIds 是否已赋值
-                     * @return ProxyIds 是否已赋值
-                     */
-                    bool ProxyIdsHasBeenSet() const;
-
-                    /**
                      * 获取查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>min：1分钟；</li>
+<li>5min：5分钟；</li>
+<li>hour：1小时；</li>
+<li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
                      * @return Interval 查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>min：1分钟；</li>
+<li>5min：5分钟；</li>
+<li>hour：1小时；</li>
+<li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
                      */
                     std::string GetInterval() const;
 
                     /**
                      * 设置查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>min：1分钟；</li>
+<li>5min：5分钟；</li>
+<li>hour：1小时；</li>
+<li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
                      * @param Interval 查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>min：1分钟；</li>
+<li>5min：5分钟；</li>
+<li>hour：1小时；</li>
+<li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
                      */
                     void SetInterval(const std::string& _interval);
 
@@ -191,27 +157,27 @@ namespace TencentCloud
                      * 获取过滤条件，详细的过滤条件如下：
 <li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
 <li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     * @return Filters 过滤条件，详细的过滤条件如下：
+                     * @return QueryConditions 过滤条件，详细的过滤条件如下：
 <li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
 <li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
                      */
-                    std::vector<QueryCondition> GetFilters() const;
+                    std::vector<QueryCondition> GetQueryConditions() const;
 
                     /**
                      * 设置过滤条件，详细的过滤条件如下：
 <li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
 <li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     * @param Filters 过滤条件，详细的过滤条件如下：
+                     * @param QueryConditions 过滤条件，详细的过滤条件如下：
 <li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
 <li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
                      */
-                    void SetFilters(const std::vector<QueryCondition>& _filters);
+                    void SetQueryConditions(const std::vector<QueryCondition>& _queryConditions);
 
                     /**
-                     * 判断参数 Filters 是否已赋值
-                     * @return Filters 是否已赋值
+                     * 判断参数 QueryConditions 是否已赋值
+                     * @return QueryConditions 是否已赋值
                      */
-                    bool FiltersHasBeenSet() const;
+                    bool QueryConditionsHasBeenSet() const;
 
                     /**
                      * 获取数据归属地区，取值有：
@@ -259,33 +225,23 @@ namespace TencentCloud
 
                     /**
                      * 查询指标，取值有：
-<li>l4Flow_connections: 访问连接数；</li>
-<li>l4Flow_flux: 访问总流量；</li>
-<li>l4Flow_inFlux: 访问入流量；</li>
-<li>l4Flow_outFlux: 访问出流量；</li>
-<li> l4Flow_outPkt: 访问出包量。</li>
+<li> l4Flow_connections：连接数。</li>
                      */
                     std::vector<std::string> m_metricNames;
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 站点集合，不填默认选择全部站点。
+                     * 站点ID集合，不填默认选择全部站点。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 四层实例列表, 不填表示选择全部实例。
-                     */
-                    std::vector<std::string> m_proxyIds;
-                    bool m_proxyIdsHasBeenSet;
-
-                    /**
                      * 查询时间粒度，取值有：
-<li>min: 1分钟 ；</li>
-<li>5min: 5分钟 ；</li>
-<li>hour: 1小时 ；</li>
-<li>day: 1天 。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>min：1分钟；</li>
+<li>5min：5分钟；</li>
+<li>hour：1小时；</li>
+<li>day：1天。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;
@@ -295,8 +251,8 @@ namespace TencentCloud
 <li>ruleId<br>   按照【<strong>转发规则ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
 <li>proxyId<br>   按照【<strong>四层代理实例ID</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
                      */
-                    std::vector<QueryCondition> m_filters;
-                    bool m_filtersHasBeenSet;
+                    std::vector<QueryCondition> m_queryConditions;
+                    bool m_queryConditionsHasBeenSet;
 
                     /**
                      * 数据归属地区，取值有：
@@ -313,4 +269,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4DATAREQUEST_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4ACCESSDATAREQUEST_H_

@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingL4AccessDataRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -22,20 +22,18 @@
 using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-DescribeOverviewL7DataRequest::DescribeOverviewL7DataRequest() :
+DescribeTimingL4AccessDataRequest::DescribeTimingL4AccessDataRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_metricNamesHasBeenSet(false),
     m_zoneIdsHasBeenSet(false),
-    m_domainsHasBeenSet(false),
-    m_protocolHasBeenSet(false),
     m_intervalHasBeenSet(false),
-    m_filtersHasBeenSet(false),
+    m_queryConditionsHasBeenSet(false),
     m_areaHasBeenSet(false)
 {
 }
 
-string DescribeOverviewL7DataRequest::ToJsonString() const
+string DescribeTimingL4AccessDataRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
@@ -84,27 +82,6 @@ string DescribeOverviewL7DataRequest::ToJsonString() const
         }
     }
 
-    if (m_domainsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Domains";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_domains.begin(); itr != m_domains.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
-    if (m_protocolHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Protocol";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_intervalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -113,15 +90,15 @@ string DescribeOverviewL7DataRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_interval.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_filtersHasBeenSet)
+    if (m_queryConditionsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Filters";
+        string key = "QueryConditions";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        for (auto itr = m_queryConditions.begin(); itr != m_queryConditions.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -144,146 +121,114 @@ string DescribeOverviewL7DataRequest::ToJsonString() const
 }
 
 
-string DescribeOverviewL7DataRequest::GetStartTime() const
+string DescribeTimingL4AccessDataRequest::GetStartTime() const
 {
     return m_startTime;
 }
 
-void DescribeOverviewL7DataRequest::SetStartTime(const string& _startTime)
+void DescribeTimingL4AccessDataRequest::SetStartTime(const string& _startTime)
 {
     m_startTime = _startTime;
     m_startTimeHasBeenSet = true;
 }
 
-bool DescribeOverviewL7DataRequest::StartTimeHasBeenSet() const
+bool DescribeTimingL4AccessDataRequest::StartTimeHasBeenSet() const
 {
     return m_startTimeHasBeenSet;
 }
 
-string DescribeOverviewL7DataRequest::GetEndTime() const
+string DescribeTimingL4AccessDataRequest::GetEndTime() const
 {
     return m_endTime;
 }
 
-void DescribeOverviewL7DataRequest::SetEndTime(const string& _endTime)
+void DescribeTimingL4AccessDataRequest::SetEndTime(const string& _endTime)
 {
     m_endTime = _endTime;
     m_endTimeHasBeenSet = true;
 }
 
-bool DescribeOverviewL7DataRequest::EndTimeHasBeenSet() const
+bool DescribeTimingL4AccessDataRequest::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
 }
 
-vector<string> DescribeOverviewL7DataRequest::GetMetricNames() const
+vector<string> DescribeTimingL4AccessDataRequest::GetMetricNames() const
 {
     return m_metricNames;
 }
 
-void DescribeOverviewL7DataRequest::SetMetricNames(const vector<string>& _metricNames)
+void DescribeTimingL4AccessDataRequest::SetMetricNames(const vector<string>& _metricNames)
 {
     m_metricNames = _metricNames;
     m_metricNamesHasBeenSet = true;
 }
 
-bool DescribeOverviewL7DataRequest::MetricNamesHasBeenSet() const
+bool DescribeTimingL4AccessDataRequest::MetricNamesHasBeenSet() const
 {
     return m_metricNamesHasBeenSet;
 }
 
-vector<string> DescribeOverviewL7DataRequest::GetZoneIds() const
+vector<string> DescribeTimingL4AccessDataRequest::GetZoneIds() const
 {
     return m_zoneIds;
 }
 
-void DescribeOverviewL7DataRequest::SetZoneIds(const vector<string>& _zoneIds)
+void DescribeTimingL4AccessDataRequest::SetZoneIds(const vector<string>& _zoneIds)
 {
     m_zoneIds = _zoneIds;
     m_zoneIdsHasBeenSet = true;
 }
 
-bool DescribeOverviewL7DataRequest::ZoneIdsHasBeenSet() const
+bool DescribeTimingL4AccessDataRequest::ZoneIdsHasBeenSet() const
 {
     return m_zoneIdsHasBeenSet;
 }
 
-vector<string> DescribeOverviewL7DataRequest::GetDomains() const
-{
-    return m_domains;
-}
-
-void DescribeOverviewL7DataRequest::SetDomains(const vector<string>& _domains)
-{
-    m_domains = _domains;
-    m_domainsHasBeenSet = true;
-}
-
-bool DescribeOverviewL7DataRequest::DomainsHasBeenSet() const
-{
-    return m_domainsHasBeenSet;
-}
-
-string DescribeOverviewL7DataRequest::GetProtocol() const
-{
-    return m_protocol;
-}
-
-void DescribeOverviewL7DataRequest::SetProtocol(const string& _protocol)
-{
-    m_protocol = _protocol;
-    m_protocolHasBeenSet = true;
-}
-
-bool DescribeOverviewL7DataRequest::ProtocolHasBeenSet() const
-{
-    return m_protocolHasBeenSet;
-}
-
-string DescribeOverviewL7DataRequest::GetInterval() const
+string DescribeTimingL4AccessDataRequest::GetInterval() const
 {
     return m_interval;
 }
 
-void DescribeOverviewL7DataRequest::SetInterval(const string& _interval)
+void DescribeTimingL4AccessDataRequest::SetInterval(const string& _interval)
 {
     m_interval = _interval;
     m_intervalHasBeenSet = true;
 }
 
-bool DescribeOverviewL7DataRequest::IntervalHasBeenSet() const
+bool DescribeTimingL4AccessDataRequest::IntervalHasBeenSet() const
 {
     return m_intervalHasBeenSet;
 }
 
-vector<QueryCondition> DescribeOverviewL7DataRequest::GetFilters() const
+vector<QueryCondition> DescribeTimingL4AccessDataRequest::GetQueryConditions() const
 {
-    return m_filters;
+    return m_queryConditions;
 }
 
-void DescribeOverviewL7DataRequest::SetFilters(const vector<QueryCondition>& _filters)
+void DescribeTimingL4AccessDataRequest::SetQueryConditions(const vector<QueryCondition>& _queryConditions)
 {
-    m_filters = _filters;
-    m_filtersHasBeenSet = true;
+    m_queryConditions = _queryConditions;
+    m_queryConditionsHasBeenSet = true;
 }
 
-bool DescribeOverviewL7DataRequest::FiltersHasBeenSet() const
+bool DescribeTimingL4AccessDataRequest::QueryConditionsHasBeenSet() const
 {
-    return m_filtersHasBeenSet;
+    return m_queryConditionsHasBeenSet;
 }
 
-string DescribeOverviewL7DataRequest::GetArea() const
+string DescribeTimingL4AccessDataRequest::GetArea() const
 {
     return m_area;
 }
 
-void DescribeOverviewL7DataRequest::SetArea(const string& _area)
+void DescribeTimingL4AccessDataRequest::SetArea(const string& _area)
 {
     m_area = _area;
     m_areaHasBeenSet = true;
 }
 
-bool DescribeOverviewL7DataRequest::AreaHasBeenSet() const
+bool DescribeTimingL4AccessDataRequest::AreaHasBeenSet() const
 {
     return m_areaHasBeenSet;
 }

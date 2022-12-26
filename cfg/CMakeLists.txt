@@ -45,6 +45,7 @@ set(cfg_public_header_model
   include/tencentcloud/cfg/v20210820/model/DeleteTaskResponse.h
   include/tencentcloud/cfg/v20210820/model/DescribeTaskRequest.h
   include/tencentcloud/cfg/v20210820/model/Task.h
+  include/tencentcloud/cfg/v20210820/model/TaskReportInfo.h
   include/tencentcloud/cfg/v20210820/model/CreateTaskFromTemplateRequest.h
   include/tencentcloud/cfg/v20210820/model/DescribeTaskListRequest.h
   include/tencentcloud/cfg/v20210820/model/TaskListItem.h
@@ -87,6 +88,7 @@ set(cfg_src
   src/v20210820/model/DeleteTaskResponse.cpp
   src/v20210820/model/DescribeTaskRequest.cpp
   src/v20210820/model/Task.cpp
+  src/v20210820/model/TaskReportInfo.cpp
   src/v20210820/model/CreateTaskFromTemplateRequest.cpp
   src/v20210820/model/DescribeTaskListRequest.cpp
   src/v20210820/model/TaskListItem.cpp

@@ -24,8 +24,8 @@ using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
 DescribeTimingL7CacheDataResponse::DescribeTimingL7CacheDataResponse() :
-    m_dataHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,16 @@ CoreInternalOutcome DescribeTimingL7CacheDataResponse::Deserialize(const string 
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
     if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
     {
         if (!rsp["Data"].IsArray())
@@ -83,16 +93,6 @@ CoreInternalOutcome DescribeTimingL7CacheDataResponse::Deserialize(const string 
         m_dataHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetUint64();
-        m_totalCountHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -102,6 +102,14 @@ string DescribeTimingL7CacheDataResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
 
     if (m_dataHasBeenSet)
     {
@@ -118,14 +126,6 @@ string DescribeTimingL7CacheDataResponse::ToJsonString() const
         }
     }
 
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -138,16 +138,6 @@ string DescribeTimingL7CacheDataResponse::ToJsonString() const
 }
 
 
-vector<TimingDataRecord> DescribeTimingL7CacheDataResponse::GetData() const
-{
-    return m_data;
-}
-
-bool DescribeTimingL7CacheDataResponse::DataHasBeenSet() const
-{
-    return m_dataHasBeenSet;
-}
-
 uint64_t DescribeTimingL7CacheDataResponse::GetTotalCount() const
 {
     return m_totalCount;
@@ -156,6 +146,16 @@ uint64_t DescribeTimingL7CacheDataResponse::GetTotalCount() const
 bool DescribeTimingL7CacheDataResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<TimingDataRecord> DescribeTimingL7CacheDataResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DescribeTimingL7CacheDataResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

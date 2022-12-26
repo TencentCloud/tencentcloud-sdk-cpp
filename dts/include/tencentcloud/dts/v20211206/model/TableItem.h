@@ -47,17 +47,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移的表名
+                     * 获取迁移的表名，大小写敏感
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TableName 迁移的表名
+                     * @return TableName 迁移的表名，大小写敏感
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTableName() const;
 
                     /**
-                     * 设置迁移的表名
+                     * 设置迁移的表名，大小写敏感
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TableName 迁移的表名
+                     * @param TableName 迁移的表名，大小写敏感
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTableName(const std::string& _tableName);
@@ -137,7 +137,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移的表名
+                     * 迁移的表名，大小写敏感
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_tableName;

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL7ANALYSISDATARESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL7ANALYSISDATARESPONSE_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4ACCESSDATARESPONSE_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4ACCESSDATARESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -33,13 +33,13 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeTimingL7AnalysisData返回参数结构体
+                * DescribeTimingL4AccessData返回参数结构体
                 */
-                class DescribeTimingL7AnalysisDataResponse : public AbstractModel
+                class DescribeTimingL4AccessDataResponse : public AbstractModel
                 {
                 public:
-                    DescribeTimingL7AnalysisDataResponse();
-                    ~DescribeTimingL7AnalysisDataResponse() = default;
+                    DescribeTimingL4AccessDataResponse();
+                    ~DescribeTimingL4AccessDataResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
@@ -57,18 +57,18 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取时序流量数据列表。
+                     * 获取四层连接数列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Data 时序流量数据列表。
+                     * @return TimingDataRecords 四层连接数列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<TimingDataRecord> GetData() const;
+                    std::vector<TimingDataRecord> GetTimingDataRecords() const;
 
                     /**
-                     * 判断参数 Data 是否已赋值
-                     * @return Data 是否已赋值
+                     * 判断参数 TimingDataRecords 是否已赋值
+                     * @return TimingDataRecords 是否已赋值
                      */
-                    bool DataHasBeenSet() const;
+                    bool TimingDataRecordsHasBeenSet() const;
 
                 private:
 
@@ -79,11 +79,11 @@ namespace TencentCloud
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 时序流量数据列表。
+                     * 四层连接数列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::vector<TimingDataRecord> m_data;
-                    bool m_dataHasBeenSet;
+                    std::vector<TimingDataRecord> m_timingDataRecords;
+                    bool m_timingDataRecordsHasBeenSet;
 
                 };
             }
@@ -91,4 +91,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL7ANALYSISDATARESPONSE_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DESCRIBETIMINGL4ACCESSDATARESPONSE_H_

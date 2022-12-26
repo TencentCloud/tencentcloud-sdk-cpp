@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeTimingL4AccessDataResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,13 +23,13 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-DescribeTopL7AnalysisDataResponse::DescribeTopL7AnalysisDataResponse() :
+DescribeTimingL4AccessDataResponse::DescribeTimingL4AccessDataResponse() :
     m_totalCountHasBeenSet(false),
-    m_dataHasBeenSet(false)
+    m_timingDataRecordsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeTopL7AnalysisDataResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTimingL4AccessDataResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -73,31 +73,31 @@ CoreInternalOutcome DescribeTopL7AnalysisDataResponse::Deserialize(const string 
         m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    if (rsp.HasMember("TimingDataRecords") && !rsp["TimingDataRecords"].IsNull())
     {
-        if (!rsp["Data"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
+        if (!rsp["TimingDataRecords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TimingDataRecords` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["Data"];
+        const rapidjson::Value &tmpValue = rsp["TimingDataRecords"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TopDataRecord item;
+            TimingDataRecord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_data.push_back(item);
+            m_timingDataRecords.push_back(item);
         }
-        m_dataHasBeenSet = true;
+        m_timingDataRecordsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeTopL7AnalysisDataResponse::ToJsonString() const
+string DescribeTimingL4AccessDataResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
@@ -111,15 +111,15 @@ string DescribeTopL7AnalysisDataResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_dataHasBeenSet)
+    if (m_timingDataRecordsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Data";
+        string key = "TimingDataRecords";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        for (auto itr = m_timingDataRecords.begin(); itr != m_timingDataRecords.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -138,24 +138,24 @@ string DescribeTopL7AnalysisDataResponse::ToJsonString() const
 }
 
 
-uint64_t DescribeTopL7AnalysisDataResponse::GetTotalCount() const
+uint64_t DescribeTimingL4AccessDataResponse::GetTotalCount() const
 {
     return m_totalCount;
 }
 
-bool DescribeTopL7AnalysisDataResponse::TotalCountHasBeenSet() const
+bool DescribeTimingL4AccessDataResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
 }
 
-vector<TopDataRecord> DescribeTopL7AnalysisDataResponse::GetData() const
+vector<TimingDataRecord> DescribeTimingL4AccessDataResponse::GetTimingDataRecords() const
 {
-    return m_data;
+    return m_timingDataRecords;
 }
 
-bool DescribeTopL7AnalysisDataResponse::DataHasBeenSet() const
+bool DescribeTimingL4AccessDataResponse::TimingDataRecordsHasBeenSet() const
 {
-    return m_dataHasBeenSet;
+    return m_timingDataRecordsHasBeenSet;
 }
 
 

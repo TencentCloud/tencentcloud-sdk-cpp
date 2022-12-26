@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 迁移对象信息
+                * 迁移对象信息，在配置库表视图等对象信息时大小写敏感
                 */
                 class DBItem : public AbstractModel
                 {

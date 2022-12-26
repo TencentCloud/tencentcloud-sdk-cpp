@@ -45,6 +45,18 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取查询结果的总条数。
+                     * @return TotalCount 查询结果的总条数。
+                     */
+                    uint64_t GetTotalCount() const;
+
+                    /**
+                     * 判断参数 TotalCount 是否已赋值
+                     * @return TotalCount 是否已赋值
+                     */
+                    bool TotalCountHasBeenSet() const;
+
+                    /**
                      * 获取七层流量前topN数据列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Data 七层流量前topN数据列表。
@@ -58,19 +70,13 @@ namespace TencentCloud
                      */
                     bool DataHasBeenSet() const;
 
-                    /**
-                     * 获取查询结果的总条数。
-                     * @return TotalCount 查询结果的总条数。
-                     */
-                    uint64_t GetTotalCount() const;
-
-                    /**
-                     * 判断参数 TotalCount 是否已赋值
-                     * @return TotalCount 是否已赋值
-                     */
-                    bool TotalCountHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 查询结果的总条数。
+                     */
+                    uint64_t m_totalCount;
+                    bool m_totalCountHasBeenSet;
 
                     /**
                      * 七层流量前topN数据列表。
@@ -78,12 +84,6 @@ namespace TencentCloud
                      */
                     std::vector<TopDataRecord> m_data;
                     bool m_dataHasBeenSet;
-
-                    /**
-                     * 查询结果的总条数。
-                     */
-                    uint64_t m_totalCount;
-                    bool m_totalCountHasBeenSet;
 
                 };
             }
