@@ -31,7 +31,8 @@ CreateCustomPackRequest::CreateCustomPackRequest() :
     m_packSpecHasBeenSet(false),
     m_customIdHasBeenSet(false),
     m_codePartsHasBeenSet(false),
-    m_batchIdHasBeenSet(false)
+    m_batchIdHasBeenSet(false),
+    m_serialTypeHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,14 @@ string CreateCustomPackRequest::ToJsonString() const
         string key = "BatchId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serialTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_serialType, allocator);
     }
 
 
@@ -278,6 +287,22 @@ void CreateCustomPackRequest::SetBatchId(const string& _batchId)
 bool CreateCustomPackRequest::BatchIdHasBeenSet() const
 {
     return m_batchIdHasBeenSet;
+}
+
+uint64_t CreateCustomPackRequest::GetSerialType() const
+{
+    return m_serialType;
+}
+
+void CreateCustomPackRequest::SetSerialType(const uint64_t& _serialType)
+{
+    m_serialType = _serialType;
+    m_serialTypeHasBeenSet = true;
+}
+
+bool CreateCustomPackRequest::SerialTypeHasBeenSet() const
+{
+    return m_serialTypeHasBeenSet;
 }
 
 

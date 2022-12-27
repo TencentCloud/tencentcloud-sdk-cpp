@@ -71,6 +71,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeNoPrimaryKeyTablesResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeRedisTopBigKeysRequest.h>
@@ -195,6 +197,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeNoPrimaryKeyTablesResponse> DescribeNoPrimaryKeyTablesOutcome;
                 typedef std::future<DescribeNoPrimaryKeyTablesOutcome> DescribeNoPrimaryKeyTablesOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeNoPrimaryKeyTablesRequest&, DescribeNoPrimaryKeyTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNoPrimaryKeyTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeProxyProcessStatisticsResponse> DescribeProxyProcessStatisticsOutcome;
+                typedef std::future<DescribeProxyProcessStatisticsOutcome> DescribeProxyProcessStatisticsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeProxyProcessStatisticsRequest&, DescribeProxyProcessStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxyProcessStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeProxySessionKillTasksResponse> DescribeProxySessionKillTasksOutcome;
                 typedef std::future<DescribeProxySessionKillTasksOutcome> DescribeProxySessionKillTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeProxySessionKillTasksRequest&, DescribeProxySessionKillTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProxySessionKillTasksAsyncHandler;
@@ -470,6 +475,15 @@ namespace TencentCloud
                 DescribeNoPrimaryKeyTablesOutcome DescribeNoPrimaryKeyTables(const Model::DescribeNoPrimaryKeyTablesRequest &request);
                 void DescribeNoPrimaryKeyTablesAsync(const Model::DescribeNoPrimaryKeyTablesRequest& request, const DescribeNoPrimaryKeyTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNoPrimaryKeyTablesOutcomeCallable DescribeNoPrimaryKeyTablesCallable(const Model::DescribeNoPrimaryKeyTablesRequest& request);
+
+                /**
+                 *获取当前实例会话统计详情信息。【注意】该接口仅限部分环境调用。
+                 * @param req DescribeProxyProcessStatisticsRequest
+                 * @return DescribeProxyProcessStatisticsOutcome
+                 */
+                DescribeProxyProcessStatisticsOutcome DescribeProxyProcessStatistics(const Model::DescribeProxyProcessStatisticsRequest &request);
+                void DescribeProxyProcessStatisticsAsync(const Model::DescribeProxyProcessStatisticsRequest& request, const DescribeProxyProcessStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeProxyProcessStatisticsOutcomeCallable DescribeProxyProcessStatisticsCallable(const Model::DescribeProxyProcessStatisticsRequest& request);
 
                 /**
                  *用于查询 redis 执行 kill 会话任务后代理节点的执行结果，入参异步任务 ID 从接口 CreateProxySessionKillTask 调用成功后取得。当前 product 只支持：redis。

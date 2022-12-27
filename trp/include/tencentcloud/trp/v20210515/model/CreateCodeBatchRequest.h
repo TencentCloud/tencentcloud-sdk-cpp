@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool BatchTypeHasBeenSet() const;
 
                     /**
-                     * 获取批次ID，系统自动生成
-                     * @return BatchId 批次ID，系统自动生成
+                     * 获取批次ID，留空时系统自动生成
+                     * @return BatchId 批次ID，留空时系统自动生成
                      */
                     std::string GetBatchId() const;
 
                     /**
-                     * 设置批次ID，系统自动生成
-                     * @param BatchId 批次ID，系统自动生成
+                     * 设置批次ID，留空时系统自动生成
+                     * @param BatchId 批次ID，留空时系统自动生成
                      */
                     void SetBatchId(const std::string& _batchId);
 
@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool CloneIdHasBeenSet() const;
 
+                    /**
+                     * 获取批次编号，业务字段不判断唯一性
+                     * @return BatchCode 批次编号，业务字段不判断唯一性
+                     */
+                    std::string GetBatchCode() const;
+
+                    /**
+                     * 设置批次编号，业务字段不判断唯一性
+                     * @param BatchCode 批次编号，业务字段不判断唯一性
+                     */
+                    void SetBatchCode(const std::string& _batchCode);
+
+                    /**
+                     * 判断参数 BatchCode 是否已赋值
+                     * @return BatchCode 是否已赋值
+                     */
+                    bool BatchCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,7 +231,7 @@ namespace TencentCloud
                     bool m_batchTypeHasBeenSet;
 
                     /**
-                     * 批次ID，系统自动生成
+                     * 批次ID，留空时系统自动生成
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_cloneId;
                     bool m_cloneIdHasBeenSet;
+
+                    /**
+                     * 批次编号，业务字段不判断唯一性
+                     */
+                    std::string m_batchCode;
+                    bool m_batchCodeHasBeenSet;
 
                 };
             }

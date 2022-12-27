@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/yinsuda/v20220527/model/KTVMusicBaseInfo.h>
 #include <tencentcloud/yinsuda/v20220527/model/KTVMatchRule.h>
+#include <tencentcloud/yinsuda/v20220527/model/AMEMusicBaseInfo.h>
 
 
 namespace TencentCloud
@@ -84,6 +85,28 @@ namespace TencentCloud
                      */
                     bool MatchRuleHasBeenSet() const;
 
+                    /**
+                     * 获取AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AMEMusicBaseInfo AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AMEMusicBaseInfo GetAMEMusicBaseInfo() const;
+
+                    /**
+                     * 设置AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AMEMusicBaseInfo AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAMEMusicBaseInfo(const AMEMusicBaseInfo& _aMEMusicBaseInfo);
+
+                    /**
+                     * 判断参数 AMEMusicBaseInfo 是否已赋值
+                     * @return AMEMusicBaseInfo 是否已赋值
+                     */
+                    bool AMEMusicBaseInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -97,6 +120,13 @@ namespace TencentCloud
                      */
                     KTVMatchRule m_matchRule;
                     bool m_matchRuleHasBeenSet;
+
+                    /**
+                     * AME 歌曲基础信息，仅在使用音速达歌曲 Id 匹配 AME 曲库时有效。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AMEMusicBaseInfo m_aMEMusicBaseInfo;
+                    bool m_aMEMusicBaseInfoHasBeenSet;
 
                 };
             }

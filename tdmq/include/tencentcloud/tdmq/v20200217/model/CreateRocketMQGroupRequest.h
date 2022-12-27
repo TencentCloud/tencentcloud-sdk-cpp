@@ -150,6 +150,42 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取Group类型（TCP/HTTP）
+                     * @return GroupType Group类型（TCP/HTTP）
+                     */
+                    std::string GetGroupType() const;
+
+                    /**
+                     * 设置Group类型（TCP/HTTP）
+                     * @param GroupType Group类型（TCP/HTTP）
+                     */
+                    void SetGroupType(const std::string& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取Group最大重试次数
+                     * @return RetryMaxTimes Group最大重试次数
+                     */
+                    uint64_t GetRetryMaxTimes() const;
+
+                    /**
+                     * 设置Group最大重试次数
+                     * @param RetryMaxTimes Group最大重试次数
+                     */
+                    void SetRetryMaxTimes(const uint64_t& _retryMaxTimes);
+
+                    /**
+                     * 判断参数 RetryMaxTimes 是否已赋值
+                     * @return RetryMaxTimes 是否已赋值
+                     */
+                    bool RetryMaxTimesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * Group类型（TCP/HTTP）
+                     */
+                    std::string m_groupType;
+                    bool m_groupTypeHasBeenSet;
+
+                    /**
+                     * Group最大重试次数
+                     */
+                    uint64_t m_retryMaxTimes;
+                    bool m_retryMaxTimesHasBeenSet;
 
                 };
             }

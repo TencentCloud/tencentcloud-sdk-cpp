@@ -28,7 +28,8 @@ ModifyRocketMQGroupRequest::ModifyRocketMQGroupRequest() :
     m_groupIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_readEnableHasBeenSet(false),
-    m_broadcastEnableHasBeenSet(false)
+    m_broadcastEnableHasBeenSet(false),
+    m_retryMaxTimesHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string ModifyRocketMQGroupRequest::ToJsonString() const
         string key = "BroadcastEnable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_broadcastEnable, allocator);
+    }
+
+    if (m_retryMaxTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryMaxTimes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_retryMaxTimes, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void ModifyRocketMQGroupRequest::SetBroadcastEnable(const bool& _broadcastEnable
 bool ModifyRocketMQGroupRequest::BroadcastEnableHasBeenSet() const
 {
     return m_broadcastEnableHasBeenSet;
+}
+
+uint64_t ModifyRocketMQGroupRequest::GetRetryMaxTimes() const
+{
+    return m_retryMaxTimes;
+}
+
+void ModifyRocketMQGroupRequest::SetRetryMaxTimes(const uint64_t& _retryMaxTimes)
+{
+    m_retryMaxTimes = _retryMaxTimes;
+    m_retryMaxTimesHasBeenSet = true;
+}
+
+bool ModifyRocketMQGroupRequest::RetryMaxTimesHasBeenSet() const
+{
+    return m_retryMaxTimesHasBeenSet;
 }
 
 

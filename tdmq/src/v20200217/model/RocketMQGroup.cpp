@@ -33,7 +33,9 @@ RocketMQGroup::RocketMQGroup() :
     m_clientProtocolHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_consumerTypeHasBeenSet(false),
-    m_broadcastEnabledHasBeenSet(false)
+    m_broadcastEnabledHasBeenSet(false),
+    m_groupTypeHasBeenSet(false),
+    m_retryMaxTimesHasBeenSet(false)
 {
 }
 
@@ -172,6 +174,26 @@ CoreInternalOutcome RocketMQGroup::Deserialize(const rapidjson::Value &value)
         m_broadcastEnabledHasBeenSet = true;
     }
 
+    if (value.HasMember("GroupType") && !value["GroupType"].IsNull())
+    {
+        if (!value["GroupType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQGroup.GroupType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupType = string(value["GroupType"].GetString());
+        m_groupTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RetryMaxTimes") && !value["RetryMaxTimes"].IsNull())
+    {
+        if (!value["RetryMaxTimes"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQGroup.RetryMaxTimes` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_retryMaxTimes = value["RetryMaxTimes"].GetUint64();
+        m_retryMaxTimesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +303,22 @@ void RocketMQGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "BroadcastEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_broadcastEnabled, allocator);
+    }
+
+    if (m_groupTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_retryMaxTimesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RetryMaxTimes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_retryMaxTimes, allocator);
     }
 
 }
@@ -492,5 +530,37 @@ void RocketMQGroup::SetBroadcastEnabled(const bool& _broadcastEnabled)
 bool RocketMQGroup::BroadcastEnabledHasBeenSet() const
 {
     return m_broadcastEnabledHasBeenSet;
+}
+
+string RocketMQGroup::GetGroupType() const
+{
+    return m_groupType;
+}
+
+void RocketMQGroup::SetGroupType(const string& _groupType)
+{
+    m_groupType = _groupType;
+    m_groupTypeHasBeenSet = true;
+}
+
+bool RocketMQGroup::GroupTypeHasBeenSet() const
+{
+    return m_groupTypeHasBeenSet;
+}
+
+uint64_t RocketMQGroup::GetRetryMaxTimes() const
+{
+    return m_retryMaxTimes;
+}
+
+void RocketMQGroup::SetRetryMaxTimes(const uint64_t& _retryMaxTimes)
+{
+    m_retryMaxTimes = _retryMaxTimes;
+    m_retryMaxTimesHasBeenSet = true;
+}
+
+bool RocketMQGroup::RetryMaxTimesHasBeenSet() const
+{
+    return m_retryMaxTimesHasBeenSet;
 }
 

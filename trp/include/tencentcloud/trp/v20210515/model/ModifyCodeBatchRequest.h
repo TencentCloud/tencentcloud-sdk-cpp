@@ -168,6 +168,24 @@ namespace TencentCloud
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取批次编码，业务字段不判断唯一性
+                     * @return BatchCode 批次编码，业务字段不判断唯一性
+                     */
+                    std::string GetBatchCode() const;
+
+                    /**
+                     * 设置批次编码，业务字段不判断唯一性
+                     * @param BatchCode 批次编码，业务字段不判断唯一性
+                     */
+                    void SetBatchCode(const std::string& _batchCode);
+
+                    /**
+                     * 判断参数 BatchCode 是否已赋值
+                     * @return BatchCode 是否已赋值
+                     */
+                    bool BatchCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -211,6 +229,12 @@ namespace TencentCloud
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 批次编码，业务字段不判断唯一性
+                     */
+                    std::string m_batchCode;
+                    bool m_batchCodeHasBeenSet;
 
                 };
             }

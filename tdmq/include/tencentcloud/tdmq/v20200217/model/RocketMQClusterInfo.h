@@ -265,6 +265,94 @@ namespace TencentCloud
                      */
                     bool RocketMQFlagHasBeenSet() const;
 
+                    /**
+                     * 获取计费状态，1表示正常，2表示已停服，3表示已销毁
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 计费状态，1表示正常，2表示已停服，3表示已销毁
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置计费状态，1表示正常，2表示已停服，3表示已销毁
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 计费状态，1表示正常，2表示已停服，3表示已销毁
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取欠费停服时间，毫秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsolateTime 欠费停服时间，毫秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsolateTime() const;
+
+                    /**
+                     * 设置欠费停服时间，毫秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsolateTime 欠费停服时间，毫秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsolateTime(const int64_t& _isolateTime);
+
+                    /**
+                     * 判断参数 IsolateTime 是否已赋值
+                     * @return IsolateTime 是否已赋值
+                     */
+                    bool IsolateTimeHasBeenSet() const;
+
+                    /**
+                     * 获取HTTP协议公网接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HttpPublicEndpoint HTTP协议公网接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHttpPublicEndpoint() const;
+
+                    /**
+                     * 设置HTTP协议公网接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HttpPublicEndpoint HTTP协议公网接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttpPublicEndpoint(const std::string& _httpPublicEndpoint);
+
+                    /**
+                     * 判断参数 HttpPublicEndpoint 是否已赋值
+                     * @return HttpPublicEndpoint 是否已赋值
+                     */
+                    bool HttpPublicEndpointHasBeenSet() const;
+
+                    /**
+                     * 获取HTTP协议VPC接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HttpVpcEndpoint HTTP协议VPC接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHttpVpcEndpoint() const;
+
+                    /**
+                     * 设置HTTP协议VPC接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HttpVpcEndpoint HTTP协议VPC接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttpVpcEndpoint(const std::string& _httpVpcEndpoint);
+
+                    /**
+                     * 判断参数 HttpVpcEndpoint 是否已赋值
+                     * @return HttpVpcEndpoint 是否已赋值
+                     */
+                    bool HttpVpcEndpointHasBeenSet() const;
+
                 private:
 
                     /**
@@ -337,6 +425,34 @@ namespace TencentCloud
                      */
                     bool m_rocketMQFlag;
                     bool m_rocketMQFlagHasBeenSet;
+
+                    /**
+                     * 计费状态，1表示正常，2表示已停服，3表示已销毁
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 欠费停服时间，毫秒为单位
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isolateTime;
+                    bool m_isolateTimeHasBeenSet;
+
+                    /**
+                     * HTTP协议公网接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_httpPublicEndpoint;
+                    bool m_httpPublicEndpointHasBeenSet;
+
+                    /**
+                     * HTTP协议VPC接入地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_httpVpcEndpoint;
+                    bool m_httpVpcEndpointHasBeenSet;
 
                 };
             }

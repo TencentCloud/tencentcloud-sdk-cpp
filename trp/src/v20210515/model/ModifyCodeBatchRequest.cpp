@@ -29,7 +29,8 @@ ModifyCodeBatchRequest::ModifyCodeBatchRequest() :
     m_mpTplHasBeenSet(false),
     m_merchantIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_batchCodeHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,14 @@ string ModifyCodeBatchRequest::ToJsonString() const
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchCode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_batchCode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -214,6 +223,22 @@ void ModifyCodeBatchRequest::SetRemark(const string& _remark)
 bool ModifyCodeBatchRequest::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string ModifyCodeBatchRequest::GetBatchCode() const
+{
+    return m_batchCode;
+}
+
+void ModifyCodeBatchRequest::SetBatchCode(const string& _batchCode)
+{
+    m_batchCode = _batchCode;
+    m_batchCodeHasBeenSet = true;
+}
+
+bool ModifyCodeBatchRequest::BatchCodeHasBeenSet() const
+{
+    return m_batchCodeHasBeenSet;
 }
 
 

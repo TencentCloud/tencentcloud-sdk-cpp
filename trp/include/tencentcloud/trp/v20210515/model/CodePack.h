@@ -246,17 +246,17 @@ namespace TencentCloud
                     bool AmountHasBeenSet() const;
 
                     /**
-                     * 获取码长度
+                     * 获取防伪码长度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CodeLength 码长度
+                     * @return CodeLength 防伪码长度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCodeLength() const;
 
                     /**
-                     * 设置码长度
+                     * 设置防伪码长度
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CodeLength 码长度
+                     * @param CodeLength 防伪码长度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCodeLength(const int64_t& _codeLength);
@@ -553,7 +553,7 @@ namespace TencentCloud
                     bool m_amountHasBeenSet;
 
                     /**
-                     * 码长度
+                     * 防伪码长度
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_codeLength;

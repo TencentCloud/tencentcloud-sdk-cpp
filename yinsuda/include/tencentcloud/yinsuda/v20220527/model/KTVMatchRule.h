@@ -87,6 +87,24 @@ namespace TencentCloud
                      */
                     bool MusicInfoHasBeenSet() const;
 
+                    /**
+                     * 获取音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     * @return MusicIdToMatchAME 音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     */
+                    std::string GetMusicIdToMatchAME() const;
+
+                    /**
+                     * 设置音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     * @param MusicIdToMatchAME 音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     */
+                    void SetMusicIdToMatchAME(const std::string& _musicIdToMatchAME);
+
+                    /**
+                     * 判断参数 MusicIdToMatchAME 是否已赋值
+                     * @return MusicIdToMatchAME 是否已赋值
+                     */
+                    bool MusicIdToMatchAMEHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +119,12 @@ namespace TencentCloud
                      */
                     KTVMatchRuleMusicInfo m_musicInfo;
                     bool m_musicInfoHasBeenSet;
+
+                    /**
+                     * 音速达歌曲 Id，用于匹配 AME 曲库歌曲。
+                     */
+                    std::string m_musicIdToMatchAME;
+                    bool m_musicIdToMatchAMEHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@ using namespace std;
 
 KTVMatchRule::KTVMatchRule() :
     m_aMEMusicIdHasBeenSet(false),
-    m_musicInfoHasBeenSet(false)
+    m_musicInfoHasBeenSet(false),
+    m_musicIdToMatchAMEHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,16 @@ CoreInternalOutcome KTVMatchRule::Deserialize(const rapidjson::Value &value)
         m_musicInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("MusicIdToMatchAME") && !value["MusicIdToMatchAME"].IsNull())
+    {
+        if (!value["MusicIdToMatchAME"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KTVMatchRule.MusicIdToMatchAME` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_musicIdToMatchAME = string(value["MusicIdToMatchAME"].GetString());
+        m_musicIdToMatchAMEHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +91,14 @@ void KTVMatchRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_musicInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_musicIdToMatchAMEHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MusicIdToMatchAME";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_musicIdToMatchAME.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -115,5 +134,21 @@ void KTVMatchRule::SetMusicInfo(const KTVMatchRuleMusicInfo& _musicInfo)
 bool KTVMatchRule::MusicInfoHasBeenSet() const
 {
     return m_musicInfoHasBeenSet;
+}
+
+string KTVMatchRule::GetMusicIdToMatchAME() const
+{
+    return m_musicIdToMatchAME;
+}
+
+void KTVMatchRule::SetMusicIdToMatchAME(const string& _musicIdToMatchAME)
+{
+    m_musicIdToMatchAME = _musicIdToMatchAME;
+    m_musicIdToMatchAMEHasBeenSet = true;
+}
+
+bool KTVMatchRule::MusicIdToMatchAMEHasBeenSet() const
+{
+    return m_musicIdToMatchAMEHasBeenSet;
 }
 

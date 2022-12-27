@@ -26,7 +26,8 @@ DescribeCodePacksRequest::DescribeCodePacksRequest() :
     m_pageSizeHasBeenSet(false),
     m_pageNumberHasBeenSet(false),
     m_keywordHasBeenSet(false),
-    m_corpIdHasBeenSet(false)
+    m_corpIdHasBeenSet(false),
+    m_serialTypeHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeCodePacksRequest::ToJsonString() const
         string key = "CorpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_corpId, allocator);
+    }
+
+    if (m_serialTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SerialType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_serialType, allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeCodePacksRequest::SetCorpId(const uint64_t& _corpId)
 bool DescribeCodePacksRequest::CorpIdHasBeenSet() const
 {
     return m_corpIdHasBeenSet;
+}
+
+uint64_t DescribeCodePacksRequest::GetSerialType() const
+{
+    return m_serialType;
+}
+
+void DescribeCodePacksRequest::SetSerialType(const uint64_t& _serialType)
+{
+    m_serialType = _serialType;
+    m_serialTypeHasBeenSet = true;
+}
+
+bool DescribeCodePacksRequest::SerialTypeHasBeenSet() const
+{
+    return m_serialTypeHasBeenSet;
 }
 
 

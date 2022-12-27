@@ -206,6 +206,24 @@ namespace TencentCloud
                      */
                     bool BatchIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否有流水码 0:无 1:有
+                     * @return SerialType 是否有流水码 0:无 1:有
+                     */
+                    uint64_t GetSerialType() const;
+
+                    /**
+                     * 设置是否有流水码 0:无 1:有
+                     * @param SerialType 是否有流水码 0:无 1:有
+                     */
+                    void SetSerialType(const uint64_t& _serialType);
+
+                    /**
+                     * 判断参数 SerialType 是否已赋值
+                     * @return SerialType 是否已赋值
+                     */
+                    bool SerialTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -261,6 +279,12 @@ namespace TencentCloud
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
+
+                    /**
+                     * 是否有流水码 0:无 1:有
+                     */
+                    uint64_t m_serialType;
+                    bool m_serialTypeHasBeenSet;
 
                 };
             }

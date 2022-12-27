@@ -1072,6 +1072,49 @@ DbbrainClient::DescribeNoPrimaryKeyTablesOutcomeCallable DbbrainClient::Describe
     return task->get_future();
 }
 
+DbbrainClient::DescribeProxyProcessStatisticsOutcome DbbrainClient::DescribeProxyProcessStatistics(const DescribeProxyProcessStatisticsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeProxyProcessStatistics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeProxyProcessStatisticsResponse rsp = DescribeProxyProcessStatisticsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeProxyProcessStatisticsOutcome(rsp);
+        else
+            return DescribeProxyProcessStatisticsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeProxyProcessStatisticsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeProxyProcessStatisticsAsync(const DescribeProxyProcessStatisticsRequest& request, const DescribeProxyProcessStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeProxyProcessStatistics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeProxyProcessStatisticsOutcomeCallable DbbrainClient::DescribeProxyProcessStatisticsCallable(const DescribeProxyProcessStatisticsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeProxyProcessStatisticsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeProxyProcessStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeProxySessionKillTasksOutcome DbbrainClient::DescribeProxySessionKillTasks(const DescribeProxySessionKillTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeProxySessionKillTasks");

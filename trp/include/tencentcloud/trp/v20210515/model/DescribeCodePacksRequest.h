@@ -114,6 +114,24 @@ namespace TencentCloud
                      */
                     bool CorpIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否有流水码 0:无 1:有
+                     * @return SerialType 是否有流水码 0:无 1:有
+                     */
+                    uint64_t GetSerialType() const;
+
+                    /**
+                     * 设置是否有流水码 0:无 1:有
+                     * @param SerialType 是否有流水码 0:无 1:有
+                     */
+                    void SetSerialType(const uint64_t& _serialType);
+
+                    /**
+                     * 判断参数 SerialType 是否已赋值
+                     * @return SerialType 是否已赋值
+                     */
+                    bool SerialTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +157,12 @@ namespace TencentCloud
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
+
+                    /**
+                     * 是否有流水码 0:无 1:有
+                     */
+                    uint64_t m_serialType;
+                    bool m_serialTypeHasBeenSet;
 
                 };
             }

@@ -14,33 +14,36 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_DELETELOADBALANCINGRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_DELETELOADBALANCINGRESPONSE_H_
+#ifndef TENCENTCLOUD_DBBRAIN_V20210527_MODEL_PROCESSSTATISTIC_H_
+#define TENCENTCLOUD_DBBRAIN_V20210527_MODEL_PROCESSSTATISTIC_H_
 
 #include <string>
 #include <vector>
 #include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Dbbrain
     {
-        namespace V20220901
+        namespace V20210527
         {
             namespace Model
             {
                 /**
-                * DeleteLoadBalancing返回参数结构体
+                * 实时会话统计详情。
                 */
-                class DeleteLoadBalancingResponse : public AbstractModel
+                class ProcessStatistic : public AbstractModel
                 {
                 public:
-                    DeleteLoadBalancingResponse();
-                    ~DeleteLoadBalancingResponse() = default;
-                    CoreInternalOutcome Deserialize(const std::string &payload);
-                    std::string ToJsonString() const;
+                    ProcessStatistic();
+                    ~ProcessStatistic() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                 private:
@@ -51,4 +54,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_DELETELOADBALANCINGRESPONSE_H_
+#endif // !TENCENTCLOUD_DBBRAIN_V20210527_MODEL_PROCESSSTATISTIC_H_

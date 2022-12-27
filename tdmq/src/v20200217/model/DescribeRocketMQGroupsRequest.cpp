@@ -31,7 +31,8 @@ DescribeRocketMQGroupsRequest::DescribeRocketMQGroupsRequest() :
     m_filterGroupHasBeenSet(false),
     m_sortedByHasBeenSet(false),
     m_sortOrderHasBeenSet(false),
-    m_filterOneGroupHasBeenSet(false)
+    m_filterOneGroupHasBeenSet(false),
+    m_typesHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,19 @@ string DescribeRocketMQGroupsRequest::ToJsonString() const
         string key = "FilterOneGroup";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filterOneGroup.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_typesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Types";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_types.begin(); itr != m_types.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -264,6 +278,22 @@ void DescribeRocketMQGroupsRequest::SetFilterOneGroup(const string& _filterOneGr
 bool DescribeRocketMQGroupsRequest::FilterOneGroupHasBeenSet() const
 {
     return m_filterOneGroupHasBeenSet;
+}
+
+vector<string> DescribeRocketMQGroupsRequest::GetTypes() const
+{
+    return m_types;
+}
+
+void DescribeRocketMQGroupsRequest::SetTypes(const vector<string>& _types)
+{
+    m_types = _types;
+    m_typesHasBeenSet = true;
+}
+
+bool DescribeRocketMQGroupsRequest::TypesHasBeenSet() const
+{
+    return m_typesHasBeenSet;
 }
 
 

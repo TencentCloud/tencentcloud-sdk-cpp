@@ -292,6 +292,50 @@ namespace TencentCloud
                      */
                     bool BroadcastEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取Group类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupType Group类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupType() const;
+
+                    /**
+                     * 设置Group类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupType Group类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupType(const std::string& _groupType);
+
+                    /**
+                     * 判断参数 GroupType 是否已赋值
+                     * @return GroupType 是否已赋值
+                     */
+                    bool GroupTypeHasBeenSet() const;
+
+                    /**
+                     * 获取重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetryMaxTimes 重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRetryMaxTimes() const;
+
+                    /**
+                     * 设置重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetryMaxTimes 重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetryMaxTimes(const uint64_t& _retryMaxTimes);
+
+                    /**
+                     * 判断参数 RetryMaxTimes 是否已赋值
+                     * @return RetryMaxTimes 是否已赋值
+                     */
+                    bool RetryMaxTimesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -374,6 +418,20 @@ namespace TencentCloud
                      */
                     bool m_broadcastEnabled;
                     bool m_broadcastEnabledHasBeenSet;
+
+                    /**
+                     * Group类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupType;
+                    bool m_groupTypeHasBeenSet;
+
+                    /**
+                     * 重试次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_retryMaxTimes;
+                    bool m_retryMaxTimesHasBeenSet;
 
                 };
             }

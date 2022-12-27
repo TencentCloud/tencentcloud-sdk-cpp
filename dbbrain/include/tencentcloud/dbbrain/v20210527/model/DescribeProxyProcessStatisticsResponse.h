@@ -14,54 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_CREATEDNSRECORDRESPONSE_H_
-#define TENCENTCLOUD_TEO_V20220901_MODEL_CREATEDNSRECORDRESPONSE_H_
+#ifndef TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEPROXYPROCESSSTATISTICSRESPONSE_H_
+#define TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEPROXYPROCESSSTATISTICSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbbrain/v20210527/model/ProcessStatistic.h>
 
 
 namespace TencentCloud
 {
-    namespace Teo
+    namespace Dbbrain
     {
-        namespace V20220901
+        namespace V20210527
         {
             namespace Model
             {
                 /**
-                * CreateDnsRecord返回参数结构体
+                * DescribeProxyProcessStatistics返回参数结构体
                 */
-                class CreateDnsRecordResponse : public AbstractModel
+                class DescribeProxyProcessStatisticsResponse : public AbstractModel
                 {
                 public:
-                    CreateDnsRecordResponse();
-                    ~CreateDnsRecordResponse() = default;
+                    DescribeProxyProcessStatisticsResponse();
+                    ~DescribeProxyProcessStatisticsResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取DNS解析记录ID。
-                     * @return DnsRecordId DNS解析记录ID。
+                     * 获取实时会话统计详情。
+                     * @return ProcessStatistics 实时会话统计详情。
                      */
-                    std::string GetDnsRecordId() const;
+                    ProcessStatistic GetProcessStatistics() const;
 
                     /**
-                     * 判断参数 DnsRecordId 是否已赋值
-                     * @return DnsRecordId 是否已赋值
+                     * 判断参数 ProcessStatistics 是否已赋值
+                     * @return ProcessStatistics 是否已赋值
                      */
-                    bool DnsRecordIdHasBeenSet() const;
+                    bool ProcessStatisticsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * DNS解析记录ID。
+                     * 实时会话统计详情。
                      */
-                    std::string m_dnsRecordId;
-                    bool m_dnsRecordIdHasBeenSet;
+                    ProcessStatistic m_processStatistics;
+                    bool m_processStatisticsHasBeenSet;
 
                 };
             }
@@ -69,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_CREATEDNSRECORDRESPONSE_H_
+#endif // !TENCENTCLOUD_DBBRAIN_V20210527_MODEL_DESCRIBEPROXYPROCESSSTATISTICSRESPONSE_H_

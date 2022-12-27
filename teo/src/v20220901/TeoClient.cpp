@@ -341,49 +341,6 @@ TeoClient::CreateCustomErrorPageOutcomeCallable TeoClient::CreateCustomErrorPage
     return task->get_future();
 }
 
-TeoClient::CreateDnsRecordOutcome TeoClient::CreateDnsRecord(const CreateDnsRecordRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateDnsRecord");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateDnsRecordResponse rsp = CreateDnsRecordResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateDnsRecordOutcome(rsp);
-        else
-            return CreateDnsRecordOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateDnsRecordOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::CreateDnsRecordAsync(const CreateDnsRecordRequest& request, const CreateDnsRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateDnsRecord(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::CreateDnsRecordOutcomeCallable TeoClient::CreateDnsRecordCallable(const CreateDnsRecordRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateDnsRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateDnsRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::CreateIpTableListOutcome TeoClient::CreateIpTableList(const CreateIpTableListRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIpTableList");
@@ -420,49 +377,6 @@ TeoClient::CreateIpTableListOutcomeCallable TeoClient::CreateIpTableListCallable
         [this, request]()
         {
             return this->CreateIpTableList(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::CreateLoadBalancingOutcome TeoClient::CreateLoadBalancing(const CreateLoadBalancingRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateLoadBalancing");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateLoadBalancingResponse rsp = CreateLoadBalancingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateLoadBalancingOutcome(rsp);
-        else
-            return CreateLoadBalancingOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateLoadBalancingOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::CreateLoadBalancingAsync(const CreateLoadBalancingRequest& request, const CreateLoadBalancingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateLoadBalancing(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::CreateLoadBalancingOutcomeCallable TeoClient::CreateLoadBalancingCallable(const CreateLoadBalancingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateLoadBalancingOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateLoadBalancing(request);
         }
     );
 
@@ -1065,92 +979,6 @@ TeoClient::DeleteApplicationProxyRuleOutcomeCallable TeoClient::DeleteApplicatio
         [this, request]()
         {
             return this->DeleteApplicationProxyRule(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DeleteDnsRecordsOutcome TeoClient::DeleteDnsRecords(const DeleteDnsRecordsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteDnsRecords");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteDnsRecordsResponse rsp = DeleteDnsRecordsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteDnsRecordsOutcome(rsp);
-        else
-            return DeleteDnsRecordsOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteDnsRecordsOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DeleteDnsRecordsAsync(const DeleteDnsRecordsRequest& request, const DeleteDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteDnsRecords(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DeleteDnsRecordsOutcomeCallable TeoClient::DeleteDnsRecordsCallable(const DeleteDnsRecordsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteDnsRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteDnsRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DeleteLoadBalancingOutcome TeoClient::DeleteLoadBalancing(const DeleteLoadBalancingRequest &request)
-{
-    auto outcome = MakeRequest(request, "DeleteLoadBalancing");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DeleteLoadBalancingResponse rsp = DeleteLoadBalancingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DeleteLoadBalancingOutcome(rsp);
-        else
-            return DeleteLoadBalancingOutcome(o.GetError());
-    }
-    else
-    {
-        return DeleteLoadBalancingOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DeleteLoadBalancingAsync(const DeleteLoadBalancingRequest& request, const DeleteLoadBalancingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DeleteLoadBalancing(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DeleteLoadBalancingOutcomeCallable TeoClient::DeleteLoadBalancingCallable(const DeleteLoadBalancingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DeleteLoadBalancingOutcome()>>(
-        [this, request]()
-        {
-            return this->DeleteLoadBalancing(request);
         }
     );
 
@@ -2319,49 +2147,6 @@ TeoClient::DescribeDnsDataOutcomeCallable TeoClient::DescribeDnsDataCallable(con
     return task->get_future();
 }
 
-TeoClient::DescribeDnsRecordsOutcome TeoClient::DescribeDnsRecords(const DescribeDnsRecordsRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeDnsRecords");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeDnsRecordsResponse rsp = DescribeDnsRecordsResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeDnsRecordsOutcome(rsp);
-        else
-            return DescribeDnsRecordsOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeDnsRecordsOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeDnsRecordsAsync(const DescribeDnsRecordsRequest& request, const DescribeDnsRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeDnsRecords(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeDnsRecordsOutcomeCallable TeoClient::DescribeDnsRecordsCallable(const DescribeDnsRecordsRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeDnsRecordsOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeDnsRecords(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::DescribeDnssecOutcome TeoClient::DescribeDnssec(const DescribeDnssecRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDnssec");
@@ -2484,49 +2269,6 @@ TeoClient::DescribeIdentificationsOutcomeCallable TeoClient::DescribeIdentificat
         [this, request]()
         {
             return this->DescribeIdentifications(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::DescribeLoadBalancingOutcome TeoClient::DescribeLoadBalancing(const DescribeLoadBalancingRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeLoadBalancing");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeLoadBalancingResponse rsp = DescribeLoadBalancingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeLoadBalancingOutcome(rsp);
-        else
-            return DescribeLoadBalancingOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeLoadBalancingOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::DescribeLoadBalancingAsync(const DescribeLoadBalancingRequest& request, const DescribeLoadBalancingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeLoadBalancing(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::DescribeLoadBalancingOutcomeCallable TeoClient::DescribeLoadBalancingCallable(const DescribeLoadBalancingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeLoadBalancingOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeLoadBalancing(request);
         }
     );
 
@@ -4727,49 +4469,6 @@ TeoClient::ModifyDefaultCertificateOutcomeCallable TeoClient::ModifyDefaultCerti
     return task->get_future();
 }
 
-TeoClient::ModifyDnsRecordOutcome TeoClient::ModifyDnsRecord(const ModifyDnsRecordRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyDnsRecord");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyDnsRecordResponse rsp = ModifyDnsRecordResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyDnsRecordOutcome(rsp);
-        else
-            return ModifyDnsRecordOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyDnsRecordOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ModifyDnsRecordAsync(const ModifyDnsRecordRequest& request, const ModifyDnsRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyDnsRecord(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ModifyDnsRecordOutcomeCallable TeoClient::ModifyDnsRecordCallable(const ModifyDnsRecordRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyDnsRecordOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyDnsRecord(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TeoClient::ModifyDnssecOutcome TeoClient::ModifyDnssec(const ModifyDnssecRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDnssec");
@@ -4849,49 +4548,6 @@ TeoClient::ModifyHostsCertificateOutcomeCallable TeoClient::ModifyHostsCertifica
         [this, request]()
         {
             return this->ModifyHostsCertificate(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
-TeoClient::ModifyLoadBalancingOutcome TeoClient::ModifyLoadBalancing(const ModifyLoadBalancingRequest &request)
-{
-    auto outcome = MakeRequest(request, "ModifyLoadBalancing");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        ModifyLoadBalancingResponse rsp = ModifyLoadBalancingResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return ModifyLoadBalancingOutcome(rsp);
-        else
-            return ModifyLoadBalancingOutcome(o.GetError());
-    }
-    else
-    {
-        return ModifyLoadBalancingOutcome(outcome.GetError());
-    }
-}
-
-void TeoClient::ModifyLoadBalancingAsync(const ModifyLoadBalancingRequest& request, const ModifyLoadBalancingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->ModifyLoadBalancing(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TeoClient::ModifyLoadBalancingOutcomeCallable TeoClient::ModifyLoadBalancingCallable(const ModifyLoadBalancingRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<ModifyLoadBalancingOutcome()>>(
-        [this, request]()
-        {
-            return this->ModifyLoadBalancing(request);
         }
     );
 

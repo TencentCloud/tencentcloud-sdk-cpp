@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 协议端口模版
+                * 协议端口模板
                 */
                 class ServiceTemplateSpecification : public AbstractModel
                 {

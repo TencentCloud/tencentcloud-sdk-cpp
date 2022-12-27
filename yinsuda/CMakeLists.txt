@@ -25,10 +25,11 @@ set(yinsuda_public_header_model
   include/tencentcloud/yinsuda/v20220527/model/JoinRoomInput.h
   include/tencentcloud/yinsuda/v20220527/model/DestroyKTVRobotResponse.h
   include/tencentcloud/yinsuda/v20220527/model/MusicAlbumCoverInfo.h
-  include/tencentcloud/yinsuda/v20220527/model/CreateKTVRobotRequest.h
+  include/tencentcloud/yinsuda/v20220527/model/AMEMusicBaseInfo.h
   include/tencentcloud/yinsuda/v20220527/model/KTVSuggestionInfo.h
   include/tencentcloud/yinsuda/v20220527/model/SyncKTVRobotCommandRequest.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVPlaylistDetailRequest.h
+  include/tencentcloud/yinsuda/v20220527/model/KTVMusicDetailInfo.h
   include/tencentcloud/yinsuda/v20220527/model/CreateKTVRobotResponse.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVSuggestionsRequest.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVMatchMusicsRequest.h
@@ -42,7 +43,7 @@ set(yinsuda_public_header_model
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVRobotsResponse.h
   include/tencentcloud/yinsuda/v20220527/model/KTVTagGroupInfo.h
   include/tencentcloud/yinsuda/v20220527/model/BatchDescribeKTVMusicDetailsRequest.h
-  include/tencentcloud/yinsuda/v20220527/model/KTVMusicDetailInfo.h
+  include/tencentcloud/yinsuda/v20220527/model/CreateKTVRobotRequest.h
   include/tencentcloud/yinsuda/v20220527/model/DescribeKTVMusicsByTagResponse.h
   include/tencentcloud/yinsuda/v20220527/model/KTVTagInfo.h
   include/tencentcloud/yinsuda/v20220527/model/MusicAlbumInfo.h
@@ -78,10 +79,11 @@ set(yinsuda_src
   src/v20220527/model/JoinRoomInput.cpp
   src/v20220527/model/DestroyKTVRobotResponse.cpp
   src/v20220527/model/MusicAlbumCoverInfo.cpp
-  src/v20220527/model/CreateKTVRobotRequest.cpp
+  src/v20220527/model/AMEMusicBaseInfo.cpp
   src/v20220527/model/KTVSuggestionInfo.cpp
   src/v20220527/model/SyncKTVRobotCommandRequest.cpp
   src/v20220527/model/DescribeKTVPlaylistDetailRequest.cpp
+  src/v20220527/model/KTVMusicDetailInfo.cpp
   src/v20220527/model/CreateKTVRobotResponse.cpp
   src/v20220527/model/DescribeKTVSuggestionsRequest.cpp
   src/v20220527/model/DescribeKTVMatchMusicsRequest.cpp
@@ -95,7 +97,7 @@ set(yinsuda_src
   src/v20220527/model/DescribeKTVRobotsResponse.cpp
   src/v20220527/model/KTVTagGroupInfo.cpp
   src/v20220527/model/BatchDescribeKTVMusicDetailsRequest.cpp
-  src/v20220527/model/KTVMusicDetailInfo.cpp
+  src/v20220527/model/CreateKTVRobotRequest.cpp
   src/v20220527/model/DescribeKTVMusicsByTagResponse.cpp
   src/v20220527/model/KTVTagInfo.cpp
   src/v20220527/model/MusicAlbumInfo.cpp

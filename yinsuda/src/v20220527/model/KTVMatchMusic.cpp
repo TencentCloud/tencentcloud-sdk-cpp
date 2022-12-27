@@ -22,7 +22,8 @@ using namespace std;
 
 KTVMatchMusic::KTVMatchMusic() :
     m_kTVMusicBaseInfoHasBeenSet(false),
-    m_matchRuleHasBeenSet(false)
+    m_matchRuleHasBeenSet(false),
+    m_aMEMusicBaseInfoHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,23 @@ CoreInternalOutcome KTVMatchMusic::Deserialize(const rapidjson::Value &value)
         m_matchRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("AMEMusicBaseInfo") && !value["AMEMusicBaseInfo"].IsNull())
+    {
+        if (!value["AMEMusicBaseInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `KTVMatchMusic.AMEMusicBaseInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aMEMusicBaseInfo.Deserialize(value["AMEMusicBaseInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aMEMusicBaseInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +106,15 @@ void KTVMatchMusic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_matchRule.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_aMEMusicBaseInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AMEMusicBaseInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aMEMusicBaseInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -123,5 +150,21 @@ void KTVMatchMusic::SetMatchRule(const KTVMatchRule& _matchRule)
 bool KTVMatchMusic::MatchRuleHasBeenSet() const
 {
     return m_matchRuleHasBeenSet;
+}
+
+AMEMusicBaseInfo KTVMatchMusic::GetAMEMusicBaseInfo() const
+{
+    return m_aMEMusicBaseInfo;
+}
+
+void KTVMatchMusic::SetAMEMusicBaseInfo(const AMEMusicBaseInfo& _aMEMusicBaseInfo)
+{
+    m_aMEMusicBaseInfo = _aMEMusicBaseInfo;
+    m_aMEMusicBaseInfoHasBeenSet = true;
+}
+
+bool KTVMatchMusic::AMEMusicBaseInfoHasBeenSet() const
+{
+    return m_aMEMusicBaseInfoHasBeenSet;
 }
 

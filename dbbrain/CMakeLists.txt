@@ -54,6 +54,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/ProcessStatistic.h
   include/tencentcloud/dbbrain/v20210527/model/CreateMailProfileResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CancelKillTaskRequest.h
@@ -64,6 +65,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateKillTaskRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SlowLogHost.h
   include/tencentcloud/dbbrain/v20210527/model/CreateMailProfileRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorFloatMetricSeriesData.h
@@ -118,6 +120,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceSchemasResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateProxySessionKillTaskResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/MonitorFloatMetric.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeRedisTopKeyPrefixListResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupResponse.h
@@ -263,6 +266,7 @@ set(dbbrain_src
   src/v20210527/model/ModifyDiagDBInstanceConfRequest.cpp
   src/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.cpp
   src/v20210527/model/CreateDBDiagReportTaskResponse.cpp
+  src/v20210527/model/ProcessStatistic.cpp
   src/v20210527/model/CreateMailProfileResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsRequest.cpp
   src/v20210527/model/CancelKillTaskRequest.cpp
@@ -273,6 +277,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeDBDiagEventsRequest.cpp
   src/v20210527/model/CreateDBDiagReportUrlResponse.cpp
   src/v20210527/model/CreateKillTaskRequest.cpp
+  src/v20210527/model/DescribeProxyProcessStatisticsResponse.cpp
   src/v20210527/model/SlowLogHost.cpp
   src/v20210527/model/CreateMailProfileRequest.cpp
   src/v20210527/model/MonitorFloatMetricSeriesData.cpp
@@ -327,6 +332,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeTopSpaceSchemasResponse.cpp
   src/v20210527/model/CreateProxySessionKillTaskResponse.cpp
   src/v20210527/model/DescribeSlowLogTimeSeriesStatsResponse.cpp
+  src/v20210527/model/DescribeProxyProcessStatisticsRequest.cpp
   src/v20210527/model/MonitorFloatMetric.cpp
   src/v20210527/model/DescribeRedisTopKeyPrefixListResponse.cpp
   src/v20210527/model/DescribeAllUserGroupResponse.cpp

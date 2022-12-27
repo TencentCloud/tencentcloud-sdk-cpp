@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool FilterOneGroupHasBeenSet() const;
 
+                    /**
+                     * 获取group类型
+                     * @return Types group类型
+                     */
+                    std::vector<std::string> GetTypes() const;
+
+                    /**
+                     * 设置group类型
+                     * @param Types group类型
+                     */
+                    void SetTypes(const std::vector<std::string>& _types);
+
+                    /**
+                     * 判断参数 Types 是否已赋值
+                     * @return Types 是否已赋值
+                     */
+                    bool TypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     std::string m_filterOneGroup;
                     bool m_filterOneGroupHasBeenSet;
+
+                    /**
+                     * group类型
+                     */
+                    std::vector<std::string> m_types;
+                    bool m_typesHasBeenSet;
 
                 };
             }
