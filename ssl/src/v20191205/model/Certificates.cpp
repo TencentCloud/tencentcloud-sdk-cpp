@@ -57,7 +57,8 @@ Certificates::Certificates() :
     m_cAEncryptAlgorithmsHasBeenSet(false),
     m_cAEndTimesHasBeenSet(false),
     m_cACommonNamesHasBeenSet(false),
-    m_preAuditInfoHasBeenSet(false)
+    m_preAuditInfoHasBeenSet(false),
+    m_autoRenewFlagHasBeenSet(false)
 {
 }
 
@@ -482,6 +483,16 @@ CoreInternalOutcome Certificates::Deserialize(const rapidjson::Value &value)
         m_preAuditInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoRenewFlag") && !value["AutoRenewFlag"].IsNull())
+    {
+        if (!value["AutoRenewFlag"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Certificates.AutoRenewFlag` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenewFlag = value["AutoRenewFlag"].GetInt64();
+        m_autoRenewFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -818,6 +829,14 @@ void Certificates::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_preAuditInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_autoRenewFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenewFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenewFlag, allocator);
     }
 
 }
@@ -1413,5 +1432,21 @@ void Certificates::SetPreAuditInfo(const PreAuditInfo& _preAuditInfo)
 bool Certificates::PreAuditInfoHasBeenSet() const
 {
     return m_preAuditInfoHasBeenSet;
+}
+
+int64_t Certificates::GetAutoRenewFlag() const
+{
+    return m_autoRenewFlag;
+}
+
+void Certificates::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
+{
+    m_autoRenewFlag = _autoRenewFlag;
+    m_autoRenewFlagHasBeenSet = true;
+}
+
+bool Certificates::AutoRenewFlagHasBeenSet() const
+{
+    return m_autoRenewFlagHasBeenSet;
 }
 

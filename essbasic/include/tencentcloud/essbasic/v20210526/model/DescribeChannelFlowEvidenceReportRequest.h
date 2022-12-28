@@ -45,24 +45,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取出证报告编号
-                     * @return ReportId 出证报告编号
-                     */
-                    std::string GetReportId() const;
-
-                    /**
-                     * 设置出证报告编号
-                     * @param ReportId 出证报告编号
-                     */
-                    void SetReportId(const std::string& _reportId);
-
-                    /**
-                     * 判断参数 ReportId 是否已赋值
-                     * @return ReportId 是否已赋值
-                     */
-                    bool ReportIdHasBeenSet() const;
-
-                    /**
                      * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
                      * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
                      */
@@ -79,6 +61,24 @@ namespace TencentCloud
                      * @return Agent 是否已赋值
                      */
                     bool AgentHasBeenSet() const;
+
+                    /**
+                     * 获取出证报告编号
+                     * @return ReportId 出证报告编号
+                     */
+                    std::string GetReportId() const;
+
+                    /**
+                     * 设置出证报告编号
+                     * @param ReportId 出证报告编号
+                     */
+                    void SetReportId(const std::string& _reportId);
+
+                    /**
+                     * 判断参数 ReportId 是否已赋值
+                     * @return ReportId 是否已赋值
+                     */
+                    bool ReportIdHasBeenSet() const;
 
                     /**
                      * 获取操作者的信息
@@ -101,16 +101,16 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 出证报告编号
-                     */
-                    std::string m_reportId;
-                    bool m_reportIdHasBeenSet;
-
-                    /**
                      * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 出证报告编号
+                     */
+                    std::string m_reportId;
+                    bool m_reportIdHasBeenSet;
 
                     /**
                      * 操作者的信息

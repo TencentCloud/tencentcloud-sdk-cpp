@@ -864,6 +864,28 @@ namespace TencentCloud
                      */
                     bool PreAuditInfoHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoRenewFlag 是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAutoRenewFlag() const;
+
+                    /**
+                     * 设置是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoRenewFlag 是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
+
+                    /**
+                     * 判断参数 AutoRenewFlag 是否已赋值
+                     * @return AutoRenewFlag 是否已赋值
+                     */
+                    bool AutoRenewFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1124,6 +1146,13 @@ namespace TencentCloud
                      */
                     PreAuditInfo m_preAuditInfo;
                     bool m_preAuditInfoHasBeenSet;
+
+                    /**
+                     * 是否自动续费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_autoRenewFlag;
+                    bool m_autoRenewFlagHasBeenSet;
 
                 };
             }

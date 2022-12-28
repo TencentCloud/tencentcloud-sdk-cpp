@@ -39,7 +39,8 @@ CreateScenarioRequest::CreateScenarioRequest() :
     m_requestFilesHasBeenSet(false),
     m_sLAPolicyHasBeenSet(false),
     m_pluginsHasBeenSet(false),
-    m_domainNameConfigHasBeenSet(false)
+    m_domainNameConfigHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -237,6 +238,14 @@ string CreateScenarioRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_domainNameConfig.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -517,6 +526,22 @@ void CreateScenarioRequest::SetDomainNameConfig(const DomainNameConfig& _domainN
 bool CreateScenarioRequest::DomainNameConfigHasBeenSet() const
 {
     return m_domainNameConfigHasBeenSet;
+}
+
+string CreateScenarioRequest::GetOwner() const
+{
+    return m_owner;
+}
+
+void CreateScenarioRequest::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool CreateScenarioRequest::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
 }
 
 

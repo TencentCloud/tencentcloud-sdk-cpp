@@ -588,6 +588,28 @@ namespace TencentCloud
                      */
                     bool NotificationHooksHasBeenSet() const;
 
+                    /**
+                     * 获取创建人员
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Owner 创建人员
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOwner() const;
+
+                    /**
+                     * 设置创建人员
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Owner 创建人员
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOwner(const std::string& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     */
+                    bool OwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -760,6 +782,13 @@ namespace TencentCloud
                      */
                     std::vector<NotificationHook> m_notificationHooks;
                     bool m_notificationHooksHasBeenSet;
+
+                    /**
+                     * 创建人员
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_owner;
+                    bool m_ownerHasBeenSet;
 
                 };
             }

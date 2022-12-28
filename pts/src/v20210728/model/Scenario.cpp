@@ -45,7 +45,8 @@ Scenario::Scenario() :
     m_sLAPolicyHasBeenSet(false),
     m_pluginsHasBeenSet(false),
     m_domainNameConfigHasBeenSet(false),
-    m_notificationHooksHasBeenSet(false)
+    m_notificationHooksHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -391,6 +392,16 @@ CoreInternalOutcome Scenario::Deserialize(const rapidjson::Value &value)
         m_notificationHooksHasBeenSet = true;
     }
 
+    if (value.HasMember("Owner") && !value["Owner"].IsNull())
+    {
+        if (!value["Owner"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Scenario.Owner` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_owner = string(value["Owner"].GetString());
+        m_ownerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -651,6 +662,14 @@ void Scenario::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1054,5 +1073,21 @@ void Scenario::SetNotificationHooks(const vector<NotificationHook>& _notificatio
 bool Scenario::NotificationHooksHasBeenSet() const
 {
     return m_notificationHooksHasBeenSet;
+}
+
+string Scenario::GetOwner() const
+{
+    return m_owner;
+}
+
+void Scenario::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool Scenario::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
 }
 

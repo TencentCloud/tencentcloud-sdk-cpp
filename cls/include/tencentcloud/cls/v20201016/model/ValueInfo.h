@@ -113,17 +113,17 @@ long及double类型字段需为空；
                     bool SqlFlagHasBeenSet() const;
 
                     /**
-                     * 获取是否包含中文
+                     * 获取是否包含中文，long及double类型字段需为false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ContainZH 是否包含中文
+                     * @return ContainZH 是否包含中文，long及double类型字段需为false
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetContainZH() const;
 
                     /**
-                     * 设置是否包含中文
+                     * 设置是否包含中文，long及double类型字段需为false
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ContainZH 是否包含中文
+                     * @param ContainZH 是否包含中文，long及double类型字段需为false
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContainZH(const bool& _containZH);
@@ -158,7 +158,7 @@ long及double类型字段需为空；
                     bool m_sqlFlagHasBeenSet;
 
                     /**
-                     * 是否包含中文
+                     * 是否包含中文，long及double类型字段需为false
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_containZH;

@@ -182,7 +182,7 @@ namespace TencentCloud
                      * @return OrgIds 生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetOrgIds() const;
+                    std::vector<std::string> GetOrgIds() const;
 
                     /**
                      * 设置生效组织，已废弃，请使用 OrganizationIds
@@ -190,7 +190,7 @@ namespace TencentCloud
                      * @param OrgIds 生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetOrgIds(const std::string& _orgIds);
+                    void SetOrgIds(const std::vector<std::string>& _orgIds);
 
                     /**
                      * 判断参数 OrgIds 是否已赋值
@@ -204,7 +204,7 @@ namespace TencentCloud
                      * @return OrganizationIds 告警渠道的所有生效组织
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetOrganizationIds() const;
+                    std::vector<std::string> GetOrganizationIds() const;
 
                     /**
                      * 设置告警渠道的所有生效组织
@@ -212,7 +212,7 @@ namespace TencentCloud
                      * @param OrganizationIds 告警渠道的所有生效组织
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetOrganizationIds(const std::string& _organizationIds);
+                    void SetOrganizationIds(const std::vector<std::string>& _organizationIds);
 
                     /**
                      * 判断参数 OrganizationIds 是否已赋值
@@ -269,14 +269,14 @@ namespace TencentCloud
                      * 生效组织，已废弃，请使用 OrganizationIds
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_orgIds;
+                    std::vector<std::string> m_orgIds;
                     bool m_orgIdsHasBeenSet;
 
                     /**
                      * 告警渠道的所有生效组织
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_organizationIds;
+                    std::vector<std::string> m_organizationIds;
                     bool m_organizationIdsHasBeenSet;
 
                 };

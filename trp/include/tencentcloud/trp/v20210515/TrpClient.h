@@ -101,6 +101,8 @@
 #include <tencentcloud/trp/v20210515/model/ModifyProductResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyTraceCodeRequest.h>
 #include <tencentcloud/trp/v20210515/model/ModifyTraceCodeResponse.h>
+#include <tencentcloud/trp/v20210515/model/ModifyTraceCodeUnlinkRequest.h>
+#include <tencentcloud/trp/v20210515/model/ModifyTraceCodeUnlinkResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyTraceDataRequest.h>
 #include <tencentcloud/trp/v20210515/model/ModifyTraceDataResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyTraceDataRanksRequest.h>
@@ -236,6 +238,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTraceCodeResponse> ModifyTraceCodeOutcome;
                 typedef std::future<ModifyTraceCodeOutcome> ModifyTraceCodeOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::ModifyTraceCodeRequest&, ModifyTraceCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTraceCodeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyTraceCodeUnlinkResponse> ModifyTraceCodeUnlinkOutcome;
+                typedef std::future<ModifyTraceCodeUnlinkOutcome> ModifyTraceCodeUnlinkOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::ModifyTraceCodeUnlinkRequest&, ModifyTraceCodeUnlinkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTraceCodeUnlinkAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTraceDataResponse> ModifyTraceDataOutcome;
                 typedef std::future<ModifyTraceDataOutcome> ModifyTraceDataOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::ModifyTraceDataRequest&, ModifyTraceDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTraceDataAsyncHandler;
@@ -595,6 +600,16 @@ namespace TencentCloud
                 ModifyTraceCodeOutcome ModifyTraceCode(const Model::ModifyTraceCodeRequest &request);
                 void ModifyTraceCodeAsync(const Model::ModifyTraceCodeRequest& request, const ModifyTraceCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTraceCodeOutcomeCallable ModifyTraceCodeCallable(const Model::ModifyTraceCodeRequest& request);
+
+                /**
+                 *解绑溯源码和批次的关系，让溯源码重置为未关联的状态，以便关联其他批次
+注意：溯源码必须属于指定的批次才会解绑
+                 * @param req ModifyTraceCodeUnlinkRequest
+                 * @return ModifyTraceCodeUnlinkOutcome
+                 */
+                ModifyTraceCodeUnlinkOutcome ModifyTraceCodeUnlink(const Model::ModifyTraceCodeUnlinkRequest &request);
+                void ModifyTraceCodeUnlinkAsync(const Model::ModifyTraceCodeUnlinkRequest& request, const ModifyTraceCodeUnlinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyTraceCodeUnlinkOutcomeCallable ModifyTraceCodeUnlinkCallable(const Model::ModifyTraceCodeUnlinkRequest& request);
 
                 /**
                  *修改溯源信息

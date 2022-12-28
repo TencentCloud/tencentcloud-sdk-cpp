@@ -298,6 +298,49 @@ CbsClient::CreateAutoSnapshotPolicyOutcomeCallable CbsClient::CreateAutoSnapshot
     return task->get_future();
 }
 
+CbsClient::CreateDiskBackupOutcome CbsClient::CreateDiskBackup(const CreateDiskBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDiskBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDiskBackupResponse rsp = CreateDiskBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDiskBackupOutcome(rsp);
+        else
+            return CreateDiskBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDiskBackupOutcome(outcome.GetError());
+    }
+}
+
+void CbsClient::CreateDiskBackupAsync(const CreateDiskBackupRequest& request, const CreateDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDiskBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CbsClient::CreateDiskBackupOutcomeCallable CbsClient::CreateDiskBackupCallable(const CreateDiskBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDiskBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDiskBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CbsClient::CreateDisksOutcome CbsClient::CreateDisks(const CreateDisksRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDisks");

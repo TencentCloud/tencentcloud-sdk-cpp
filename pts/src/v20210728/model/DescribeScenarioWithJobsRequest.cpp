@@ -33,7 +33,9 @@ DescribeScenarioWithJobsRequest::DescribeScenarioWithJobsRequest() :
     m_ascendHasBeenSet(false),
     m_scenarioRelatedJobsParamsHasBeenSet(false),
     m_ignoreScriptHasBeenSet(false),
-    m_ignoreDatasetHasBeenSet(false)
+    m_ignoreDatasetHasBeenSet(false),
+    m_scenarioTypeHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -141,6 +143,22 @@ string DescribeScenarioWithJobsRequest::ToJsonString() const
         string key = "IgnoreDataset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_ignoreDataset, allocator);
+    }
+
+    if (m_scenarioTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScenarioType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scenarioType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -325,6 +343,38 @@ void DescribeScenarioWithJobsRequest::SetIgnoreDataset(const bool& _ignoreDatase
 bool DescribeScenarioWithJobsRequest::IgnoreDatasetHasBeenSet() const
 {
     return m_ignoreDatasetHasBeenSet;
+}
+
+string DescribeScenarioWithJobsRequest::GetScenarioType() const
+{
+    return m_scenarioType;
+}
+
+void DescribeScenarioWithJobsRequest::SetScenarioType(const string& _scenarioType)
+{
+    m_scenarioType = _scenarioType;
+    m_scenarioTypeHasBeenSet = true;
+}
+
+bool DescribeScenarioWithJobsRequest::ScenarioTypeHasBeenSet() const
+{
+    return m_scenarioTypeHasBeenSet;
+}
+
+string DescribeScenarioWithJobsRequest::GetOwner() const
+{
+    return m_owner;
+}
+
+void DescribeScenarioWithJobsRequest::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool DescribeScenarioWithJobsRequest::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
 }
 
 

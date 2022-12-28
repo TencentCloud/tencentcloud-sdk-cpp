@@ -25,8 +25,8 @@ using namespace std;
 
 CreateFlowEvidenceReportResponse::CreateFlowEvidenceReportResponse() :
     m_reportIdHasBeenSet(false),
-    m_reportUrlHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_reportUrlHasBeenSet(false)
 {
 }
 
@@ -74,16 +74,6 @@ CoreInternalOutcome CreateFlowEvidenceReportResponse::Deserialize(const string &
         m_reportIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("ReportUrl") && !rsp["ReportUrl"].IsNull())
-    {
-        if (!rsp["ReportUrl"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `ReportUrl` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_reportUrl = string(rsp["ReportUrl"].GetString());
-        m_reportUrlHasBeenSet = true;
-    }
-
     if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
         if (!rsp["Status"].IsString())
@@ -92,6 +82,16 @@ CoreInternalOutcome CreateFlowEvidenceReportResponse::Deserialize(const string &
         }
         m_status = string(rsp["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ReportUrl") && !rsp["ReportUrl"].IsNull())
+    {
+        if (!rsp["ReportUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReportUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportUrl = string(rsp["ReportUrl"].GetString());
+        m_reportUrlHasBeenSet = true;
     }
 
 
@@ -112,20 +112,20 @@ string CreateFlowEvidenceReportResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_reportId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_reportUrlHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReportUrl";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_reportUrl.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -150,16 +150,6 @@ bool CreateFlowEvidenceReportResponse::ReportIdHasBeenSet() const
     return m_reportIdHasBeenSet;
 }
 
-string CreateFlowEvidenceReportResponse::GetReportUrl() const
-{
-    return m_reportUrl;
-}
-
-bool CreateFlowEvidenceReportResponse::ReportUrlHasBeenSet() const
-{
-    return m_reportUrlHasBeenSet;
-}
-
 string CreateFlowEvidenceReportResponse::GetStatus() const
 {
     return m_status;
@@ -168,6 +158,16 @@ string CreateFlowEvidenceReportResponse::GetStatus() const
 bool CreateFlowEvidenceReportResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string CreateFlowEvidenceReportResponse::GetReportUrl() const
+{
+    return m_reportUrl;
+}
+
+bool CreateFlowEvidenceReportResponse::ReportUrlHasBeenSet() const
+{
+    return m_reportUrlHasBeenSet;
 }
 
 

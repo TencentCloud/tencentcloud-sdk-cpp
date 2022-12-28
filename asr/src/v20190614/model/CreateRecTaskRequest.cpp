@@ -41,7 +41,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_filterPuncHasBeenSet(false),
     m_filterModalHasBeenSet(false),
     m_emotionalEnergyHasBeenSet(false),
-    m_reinforceHotwordHasBeenSet(false)
+    m_reinforceHotwordHasBeenSet(false),
+    m_sentenceMaxLengthHasBeenSet(false)
 {
 }
 
@@ -202,6 +203,14 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "ReinforceHotword";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_reinforceHotword, allocator);
+    }
+
+    if (m_sentenceMaxLengthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SentenceMaxLength";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sentenceMaxLength, allocator);
     }
 
 
@@ -514,6 +523,22 @@ void CreateRecTaskRequest::SetReinforceHotword(const int64_t& _reinforceHotword)
 bool CreateRecTaskRequest::ReinforceHotwordHasBeenSet() const
 {
     return m_reinforceHotwordHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetSentenceMaxLength() const
+{
+    return m_sentenceMaxLength;
+}
+
+void CreateRecTaskRequest::SetSentenceMaxLength(const int64_t& _sentenceMaxLength)
+{
+    m_sentenceMaxLength = _sentenceMaxLength;
+    m_sentenceMaxLengthHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::SentenceMaxLengthHasBeenSet() const
+{
+    return m_sentenceMaxLengthHasBeenSet;
 }
 
 

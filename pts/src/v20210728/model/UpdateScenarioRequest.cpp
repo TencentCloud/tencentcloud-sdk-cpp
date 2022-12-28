@@ -42,7 +42,8 @@ UpdateScenarioRequest::UpdateScenarioRequest() :
     m_sLAPolicyHasBeenSet(false),
     m_pluginsHasBeenSet(false),
     m_domainNameConfigHasBeenSet(false),
-    m_notificationHooksHasBeenSet(false)
+    m_notificationHooksHasBeenSet(false),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -266,6 +267,14 @@ string UpdateScenarioRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ownerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Owner";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -594,6 +603,22 @@ void UpdateScenarioRequest::SetNotificationHooks(const vector<Notification>& _no
 bool UpdateScenarioRequest::NotificationHooksHasBeenSet() const
 {
     return m_notificationHooksHasBeenSet;
+}
+
+string UpdateScenarioRequest::GetOwner() const
+{
+    return m_owner;
+}
+
+void UpdateScenarioRequest::SetOwner(const string& _owner)
+{
+    m_owner = _owner;
+    m_ownerHasBeenSet = true;
+}
+
+bool UpdateScenarioRequest::OwnerHasBeenSet() const
+{
+    return m_ownerHasBeenSet;
 }
 
 

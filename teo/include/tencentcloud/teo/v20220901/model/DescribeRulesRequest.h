@@ -63,17 +63,17 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
-<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否
+<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否</li>
                      * @return Filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
-<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否
+<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
-<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否
+<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否</li>
                      * @param Filters 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
-<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否
+<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -93,7 +93,7 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件，Filters.Values的上限为20。详细的过滤条件如下：
-<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否
+<li>rule-id<br>   按照【<strong>规则ID</strong>】进行过滤。<br>   类型：string<br>   必选：否</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

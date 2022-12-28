@@ -1717,6 +1717,49 @@ TrpClient::ModifyTraceCodeOutcomeCallable TrpClient::ModifyTraceCodeCallable(con
     return task->get_future();
 }
 
+TrpClient::ModifyTraceCodeUnlinkOutcome TrpClient::ModifyTraceCodeUnlink(const ModifyTraceCodeUnlinkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyTraceCodeUnlink");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyTraceCodeUnlinkResponse rsp = ModifyTraceCodeUnlinkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyTraceCodeUnlinkOutcome(rsp);
+        else
+            return ModifyTraceCodeUnlinkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyTraceCodeUnlinkOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::ModifyTraceCodeUnlinkAsync(const ModifyTraceCodeUnlinkRequest& request, const ModifyTraceCodeUnlinkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyTraceCodeUnlink(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::ModifyTraceCodeUnlinkOutcomeCallable TrpClient::ModifyTraceCodeUnlinkCallable(const ModifyTraceCodeUnlinkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyTraceCodeUnlinkOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyTraceCodeUnlink(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::ModifyTraceDataOutcome TrpClient::ModifyTraceData(const ModifyTraceDataRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTraceData");

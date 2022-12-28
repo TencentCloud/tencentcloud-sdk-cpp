@@ -129,6 +129,8 @@
 #include <tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceModifyInstancesChargeTypeResponse.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceRenewHostsRequest.h>
+#include <tencentcloud/cvm/v20170312/model/InquiryPriceRenewHostsResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesRequest.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceRenewInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/InquiryPriceResetInstanceRequest.h>
@@ -378,6 +380,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquiryPriceModifyInstancesChargeTypeResponse> InquiryPriceModifyInstancesChargeTypeOutcome;
                 typedef std::future<InquiryPriceModifyInstancesChargeTypeOutcome> InquiryPriceModifyInstancesChargeTypeOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::InquiryPriceModifyInstancesChargeTypeRequest&, InquiryPriceModifyInstancesChargeTypeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceModifyInstancesChargeTypeAsyncHandler;
+                typedef Outcome<Core::Error, Model::InquiryPriceRenewHostsResponse> InquiryPriceRenewHostsOutcome;
+                typedef std::future<InquiryPriceRenewHostsOutcome> InquiryPriceRenewHostsOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::InquiryPriceRenewHostsRequest&, InquiryPriceRenewHostsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewHostsAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceRenewInstancesResponse> InquiryPriceRenewInstancesOutcome;
                 typedef std::future<InquiryPriceRenewInstancesOutcome> InquiryPriceRenewInstancesOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::InquiryPriceRenewInstancesRequest&, InquiryPriceRenewInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceRenewInstancesAsyncHandler;
@@ -1045,6 +1050,16 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 InquiryPriceModifyInstancesChargeTypeOutcome InquiryPriceModifyInstancesChargeType(const Model::InquiryPriceModifyInstancesChargeTypeRequest &request);
                 void InquiryPriceModifyInstancesChargeTypeAsync(const Model::InquiryPriceModifyInstancesChargeTypeRequest& request, const InquiryPriceModifyInstancesChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceModifyInstancesChargeTypeOutcomeCallable InquiryPriceModifyInstancesChargeTypeCallable(const Model::InquiryPriceModifyInstancesChargeTypeRequest& request);
+
+                /**
+                 *本接口 (InquiryPriceRenewHosts) 用于续费包年包月`CDH`实例询价。
+* 只支持查询包年包月`CDH`实例的续费价格。
+                 * @param req InquiryPriceRenewHostsRequest
+                 * @return InquiryPriceRenewHostsOutcome
+                 */
+                InquiryPriceRenewHostsOutcome InquiryPriceRenewHosts(const Model::InquiryPriceRenewHostsRequest &request);
+                void InquiryPriceRenewHostsAsync(const Model::InquiryPriceRenewHostsRequest& request, const InquiryPriceRenewHostsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                InquiryPriceRenewHostsOutcomeCallable InquiryPriceRenewHostsCallable(const Model::InquiryPriceRenewHostsRequest& request);
 
                 /**
                  *本接口 (InquiryPriceRenewInstances) 用于续费包年包月实例询价。

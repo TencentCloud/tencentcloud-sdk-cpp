@@ -241,6 +241,42 @@ namespace TencentCloud
                      */
                     bool IgnoreDatasetHasBeenSet() const;
 
+                    /**
+                     * 获取场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter	
+                     * @return ScenarioType 场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter	
+                     */
+                    std::string GetScenarioType() const;
+
+                    /**
+                     * 设置场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter	
+                     * @param ScenarioType 场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter	
+                     */
+                    void SetScenarioType(const std::string& _scenarioType);
+
+                    /**
+                     * 判断参数 ScenarioType 是否已赋值
+                     * @return ScenarioType 是否已赋值
+                     */
+                    bool ScenarioTypeHasBeenSet() const;
+
+                    /**
+                     * 获取创建人员
+                     * @return Owner 创建人员
+                     */
+                    std::string GetOwner() const;
+
+                    /**
+                     * 设置创建人员
+                     * @param Owner 创建人员
+                     */
+                    void SetOwner(const std::string& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     */
+                    bool OwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +344,18 @@ namespace TencentCloud
                      */
                     bool m_ignoreDataset;
                     bool m_ignoreDatasetHasBeenSet;
+
+                    /**
+                     * 场景类型，如pts-http, pts-js, pts-trpc, pts-jmeter	
+                     */
+                    std::string m_scenarioType;
+                    bool m_scenarioTypeHasBeenSet;
+
+                    /**
+                     * 创建人员
+                     */
+                    std::string m_owner;
+                    bool m_ownerHasBeenSet;
 
                 };
             }

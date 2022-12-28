@@ -116,21 +116,27 @@ CoreInternalOutcome GrafanaNotificationChannel::Deserialize(const rapidjson::Val
 
     if (value.HasMember("OrgIds") && !value["OrgIds"].IsNull())
     {
-        if (!value["OrgIds"].IsString())
+        if (!value["OrgIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.OrgIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OrgIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.OrgIds` IsString=false incorrectly").SetRequestId(requestId));
+            m_orgIds.push_back((*itr).GetString());
         }
-        m_orgIds = string(value["OrgIds"].GetString());
         m_orgIdsHasBeenSet = true;
     }
 
     if (value.HasMember("OrganizationIds") && !value["OrganizationIds"].IsNull())
     {
-        if (!value["OrganizationIds"].IsString())
+        if (!value["OrganizationIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.OrganizationIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OrganizationIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `GrafanaNotificationChannel.OrganizationIds` IsString=false incorrectly").SetRequestId(requestId));
+            m_organizationIds.push_back((*itr).GetString());
         }
-        m_organizationIds = string(value["OrganizationIds"].GetString());
         m_organizationIdsHasBeenSet = true;
     }
 
@@ -212,7 +218,12 @@ void GrafanaNotificationChannel::ToJsonObject(rapidjson::Value &value, rapidjson
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrgIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_orgIds.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_orgIds.begin(); itr != m_orgIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_organizationIdsHasBeenSet)
@@ -220,7 +231,12 @@ void GrafanaNotificationChannel::ToJsonObject(rapidjson::Value &value, rapidjson
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "OrganizationIds";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_organizationIds.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_organizationIds.begin(); itr != m_organizationIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -338,12 +354,12 @@ bool GrafanaNotificationChannel::ExtraOrgIdsHasBeenSet() const
     return m_extraOrgIdsHasBeenSet;
 }
 
-string GrafanaNotificationChannel::GetOrgIds() const
+vector<string> GrafanaNotificationChannel::GetOrgIds() const
 {
     return m_orgIds;
 }
 
-void GrafanaNotificationChannel::SetOrgIds(const string& _orgIds)
+void GrafanaNotificationChannel::SetOrgIds(const vector<string>& _orgIds)
 {
     m_orgIds = _orgIds;
     m_orgIdsHasBeenSet = true;
@@ -354,12 +370,12 @@ bool GrafanaNotificationChannel::OrgIdsHasBeenSet() const
     return m_orgIdsHasBeenSet;
 }
 
-string GrafanaNotificationChannel::GetOrganizationIds() const
+vector<string> GrafanaNotificationChannel::GetOrganizationIds() const
 {
     return m_organizationIds;
 }
 
-void GrafanaNotificationChannel::SetOrganizationIds(const string& _organizationIds)
+void GrafanaNotificationChannel::SetOrganizationIds(const vector<string>& _organizationIds)
 {
     m_organizationIds = _organizationIds;
     m_organizationIdsHasBeenSet = true;

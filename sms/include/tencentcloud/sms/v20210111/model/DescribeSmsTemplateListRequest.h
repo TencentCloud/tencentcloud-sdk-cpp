@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool InternationalHasBeenSet() const;
 
                     /**
-                     * 获取模板 ID 数组。数组为空时默认查询模板列表信息（仅允许主账号使用），请使用 Limit 和 Offset 字段设置查询范围。
+                     * 获取模板 ID 数组。数组为空时默认查询模板列表信息，请使用 Limit 和 Offset 字段设置查询范围。
 <dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
-                     * @return TemplateIdSet 模板 ID 数组。数组为空时默认查询模板列表信息（仅允许主账号使用），请使用 Limit 和 Offset 字段设置查询范围。
+                     * @return TemplateIdSet 模板 ID 数组。数组为空时默认查询模板列表信息，请使用 Limit 和 Offset 字段设置查询范围。
 <dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      */
                     std::vector<uint64_t> GetTemplateIdSet() const;
 
                     /**
-                     * 设置模板 ID 数组。数组为空时默认查询模板列表信息（仅允许主账号使用），请使用 Limit 和 Offset 字段设置查询范围。
+                     * 设置模板 ID 数组。数组为空时默认查询模板列表信息，请使用 Limit 和 Offset 字段设置查询范围。
 <dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
-                     * @param TemplateIdSet 模板 ID 数组。数组为空时默认查询模板列表信息（仅允许主账号使用），请使用 Limit 和 Offset 字段设置查询范围。
+                     * @param TemplateIdSet 模板 ID 数组。数组为空时默认查询模板列表信息，请使用 Limit 和 Offset 字段设置查询范围。
 <dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      */
                     void SetTemplateIdSet(const std::vector<uint64_t>& _templateIdSet);
@@ -145,7 +145,7 @@ namespace TencentCloud
                     bool m_internationalHasBeenSet;
 
                     /**
-                     * 模板 ID 数组。数组为空时默认查询模板列表信息（仅允许主账号使用），请使用 Limit 和 Offset 字段设置查询范围。
+                     * 模板 ID 数组。数组为空时默认查询模板列表信息，请使用 Limit 和 Offset 字段设置查询范围。
 <dx-alert infotype="notice" title="注意">默认数组长度最大100</dx-alert>
                      */
                     std::vector<uint64_t> m_templateIdSet;

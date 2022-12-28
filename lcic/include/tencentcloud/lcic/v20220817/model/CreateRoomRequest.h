@@ -145,14 +145,14 @@ namespace TencentCloud
                     bool ResolutionHasBeenSet() const;
 
                     /**
-                     * 获取最大连麦人数（不包括老师）。取值范围[0, 17)
-                     * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
+                     * 获取最大连麦人数（不包括老师）。取值范围[0, 16]
+                     * @return MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 16]
                      */
                     uint64_t GetMaxMicNumber() const;
 
                     /**
-                     * 设置最大连麦人数（不包括老师）。取值范围[0, 17)
-                     * @param MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 17)
+                     * 设置最大连麦人数（不包括老师）。取值范围[0, 16]
+                     * @param MaxMicNumber 最大连麦人数（不包括老师）。取值范围[0, 16]
                      */
                     void SetMaxMicNumber(const uint64_t& _maxMicNumber);
 
@@ -193,14 +193,14 @@ coteaching 双师
                     bool SubTypeHasBeenSet() const;
 
                     /**
-                     * 获取老师ID。
-                     * @return TeacherId 老师ID。
+                     * 获取老师ID。通过[注册用户]接口获取的UserId。
+                     * @return TeacherId 老师ID。通过[注册用户]接口获取的UserId。
                      */
                     std::string GetTeacherId() const;
 
                     /**
-                     * 设置老师ID。
-                     * @param TeacherId 老师ID。
+                     * 设置老师ID。通过[注册用户]接口获取的UserId。
+                     * @param TeacherId 老师ID。通过[注册用户]接口获取的UserId。
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
@@ -289,14 +289,14 @@ coteaching 双师
                     bool DisableRecordHasBeenSet() const;
 
                     /**
-                     * 获取助教Id列表。
-                     * @return Assistants 助教Id列表。
+                     * 获取助教Id列表。通过[注册用户]接口获取的UserId。
+                     * @return Assistants 助教Id列表。通过[注册用户]接口获取的UserId。
                      */
                     std::vector<std::string> GetAssistants() const;
 
                     /**
-                     * 设置助教Id列表。
-                     * @param Assistants 助教Id列表。
+                     * 设置助教Id列表。通过[注册用户]接口获取的UserId。
+                     * @param Assistants 助教Id列表。通过[注册用户]接口获取的UserId。
                      */
                     void SetAssistants(const std::vector<std::string>& _assistants);
 
@@ -360,7 +360,7 @@ coteaching 双师
                     bool m_resolutionHasBeenSet;
 
                     /**
-                     * 最大连麦人数（不包括老师）。取值范围[0, 17)
+                     * 最大连麦人数（不包括老师）。取值范围[0, 16]
                      */
                     uint64_t m_maxMicNumber;
                     bool m_maxMicNumberHasBeenSet;
@@ -375,7 +375,7 @@ coteaching 双师
                     bool m_subTypeHasBeenSet;
 
                     /**
-                     * 老师ID。
+                     * 老师ID。通过[注册用户]接口获取的UserId。
                      */
                     std::string m_teacherId;
                     bool m_teacherIdHasBeenSet;
@@ -405,7 +405,7 @@ coteaching 双师
                     bool m_disableRecordHasBeenSet;
 
                     /**
-                     * 助教Id列表。
+                     * 助教Id列表。通过[注册用户]接口获取的UserId。
                      */
                     std::vector<std::string> m_assistants;
                     bool m_assistantsHasBeenSet;

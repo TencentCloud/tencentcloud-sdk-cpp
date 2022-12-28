@@ -44,23 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取废除，字段无效
+                     * 获取出证报告 ID，用于查询出证报告接口DescribeChannelFlowEvidenceReport时用到
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportUrl 废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetReportUrl() const;
-
-                    /**
-                     * 判断参数 ReportUrl 是否已赋值
-                     * @return ReportUrl 是否已赋值
-                     */
-                    bool ReportUrlHasBeenSet() const;
-
-                    /**
-                     * 获取出证报告 ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportId 出证报告 ID
+                     * @return ReportId 出证报告 ID，用于查询出证报告接口DescribeChannelFlowEvidenceReport时用到
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetReportId() const;
@@ -87,17 +73,24 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取废除，字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportUrl 废除，字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReportUrl() const;
+
+                    /**
+                     * 判断参数 ReportUrl 是否已赋值
+                     * @return ReportUrl 是否已赋值
+                     */
+                    bool ReportUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_reportUrl;
-                    bool m_reportUrlHasBeenSet;
-
-                    /**
-                     * 出证报告 ID
+                     * 出证报告 ID，用于查询出证报告接口DescribeChannelFlowEvidenceReport时用到
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportId;
@@ -110,6 +103,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 废除，字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reportUrl;
+                    bool m_reportUrlHasBeenSet;
 
                 };
             }

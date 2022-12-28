@@ -355,6 +355,24 @@ namespace TencentCloud
                      */
                     bool DomainNameConfigHasBeenSet() const;
 
+                    /**
+                     * 获取创建人名
+                     * @return Owner 创建人名
+                     */
+                    std::string GetOwner() const;
+
+                    /**
+                     * 设置创建人名
+                     * @param Owner 创建人名
+                     */
+                    void SetOwner(const std::string& _owner);
+
+                    /**
+                     * 判断参数 Owner 是否已赋值
+                     * @return Owner 是否已赋值
+                     */
+                    bool OwnerHasBeenSet() const;
+
                 private:
 
                     /**
@@ -458,6 +476,12 @@ namespace TencentCloud
                      */
                     DomainNameConfig m_domainNameConfig;
                     bool m_domainNameConfigHasBeenSet;
+
+                    /**
+                     * 创建人名
+                     */
+                    std::string m_owner;
+                    bool m_ownerHasBeenSet;
 
                 };
             }

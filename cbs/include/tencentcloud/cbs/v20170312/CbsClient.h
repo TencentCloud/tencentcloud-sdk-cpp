@@ -35,6 +35,8 @@
 #include <tencentcloud/cbs/v20170312/model/CopySnapshotCrossRegionsResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateAutoSnapshotPolicyRequest.h>
 #include <tencentcloud/cbs/v20170312/model/CreateAutoSnapshotPolicyResponse.h>
+#include <tencentcloud/cbs/v20170312/model/CreateDiskBackupRequest.h>
+#include <tencentcloud/cbs/v20170312/model/CreateDiskBackupResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateDisksRequest.h>
 #include <tencentcloud/cbs/v20170312/model/CreateDisksResponse.h>
 #include <tencentcloud/cbs/v20170312/model/CreateSnapshotRequest.h>
@@ -139,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAutoSnapshotPolicyResponse> CreateAutoSnapshotPolicyOutcome;
                 typedef std::future<CreateAutoSnapshotPolicyOutcome> CreateAutoSnapshotPolicyOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::CreateAutoSnapshotPolicyRequest&, CreateAutoSnapshotPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAutoSnapshotPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDiskBackupResponse> CreateDiskBackupOutcome;
+                typedef std::future<CreateDiskBackupOutcome> CreateDiskBackupOutcomeCallable;
+                typedef std::function<void(const CbsClient*, const Model::CreateDiskBackupRequest&, CreateDiskBackupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDiskBackupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDisksResponse> CreateDisksOutcome;
                 typedef std::future<CreateDisksOutcome> CreateDisksOutcomeCallable;
                 typedef std::function<void(const CbsClient*, const Model::CreateDisksRequest&, CreateDisksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDisksAsyncHandler;
@@ -323,6 +328,15 @@ namespace TencentCloud
                 CreateAutoSnapshotPolicyOutcome CreateAutoSnapshotPolicy(const Model::CreateAutoSnapshotPolicyRequest &request);
                 void CreateAutoSnapshotPolicyAsync(const Model::CreateAutoSnapshotPolicyRequest& request, const CreateAutoSnapshotPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAutoSnapshotPolicyOutcomeCallable CreateAutoSnapshotPolicyCallable(const Model::CreateAutoSnapshotPolicyRequest& request);
+
+                /**
+                 *为云硬盘创建一个备份点。
+                 * @param req CreateDiskBackupRequest
+                 * @return CreateDiskBackupOutcome
+                 */
+                CreateDiskBackupOutcome CreateDiskBackup(const Model::CreateDiskBackupRequest &request);
+                void CreateDiskBackupAsync(const Model::CreateDiskBackupRequest& request, const CreateDiskBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDiskBackupOutcomeCallable CreateDiskBackupCallable(const Model::CreateDiskBackupRequest& request);
 
                 /**
                  *本接口（CreateDisks）用于创建云硬盘。

@@ -44,9 +44,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取出证报告 ID
+                     * 获取出证报告 ID，用于查询出证报告DescribeFlowEvidenceReport接口时用到
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportId 出证报告 ID
+                     * @return ReportId 出证报告 ID，用于查询出证报告DescribeFlowEvidenceReport接口时用到
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetReportId() const;
@@ -56,20 +56,6 @@ namespace TencentCloud
                      * @return ReportId 是否已赋值
                      */
                     bool ReportIdHasBeenSet() const;
-
-                    /**
-                     * 获取废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReportUrl 废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetReportUrl() const;
-
-                    /**
-                     * 判断参数 ReportUrl 是否已赋值
-                     * @return ReportUrl 是否已赋值
-                     */
-                    bool ReportUrlHasBeenSet() const;
 
                     /**
                      * 获取执行中：EvidenceStatusExecuting
@@ -87,21 +73,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取废除，字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportUrl 废除，字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReportUrl() const;
+
+                    /**
+                     * 判断参数 ReportUrl 是否已赋值
+                     * @return ReportUrl 是否已赋值
+                     */
+                    bool ReportUrlHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 出证报告 ID
+                     * 出证报告 ID，用于查询出证报告DescribeFlowEvidenceReport接口时用到
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reportId;
                     bool m_reportIdHasBeenSet;
-
-                    /**
-                     * 废除，字段无效
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_reportUrl;
-                    bool m_reportUrlHasBeenSet;
 
                     /**
                      * 执行中：EvidenceStatusExecuting
@@ -110,6 +103,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 废除，字段无效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reportUrl;
+                    bool m_reportUrlHasBeenSet;
 
                 };
             }
