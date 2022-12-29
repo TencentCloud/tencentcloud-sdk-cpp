@@ -44,7 +44,29 @@ CynosdbClusterDetail::CynosdbClusterDetail() :
     m_projectIDHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
-    m_serverlessStatusHasBeenSet(false)
+    m_serverlessStatusHasBeenSet(false),
+    m_logBinHasBeenSet(false),
+    m_pitrTypeHasBeenSet(false),
+    m_physicalZoneHasBeenSet(false),
+    m_storageIdHasBeenSet(false),
+    m_storageHasBeenSet(false),
+    m_maxStorageSizeHasBeenSet(false),
+    m_minStorageSizeHasBeenSet(false),
+    m_storagePayModeHasBeenSet(false),
+    m_dbModeHasBeenSet(false),
+    m_storageLimitHasBeenSet(false),
+    m_abilityHasBeenSet(false),
+    m_cynosVersionHasBeenSet(false),
+    m_businessTypeHasBeenSet(false),
+    m_hasSlaveZoneHasBeenSet(false),
+    m_isFreezeHasBeenSet(false),
+    m_tasksHasBeenSet(false),
+    m_masterZoneHasBeenSet(false),
+    m_slaveZonesHasBeenSet(false),
+    m_proxyStatusHasBeenSet(false),
+    m_isSkipTradeHasBeenSet(false),
+    m_isOpenPasswordComplexityHasBeenSet(false),
+    m_networkStatusHasBeenSet(false)
 {
 }
 
@@ -323,6 +345,246 @@ CoreInternalOutcome CynosdbClusterDetail::Deserialize(const rapidjson::Value &va
         m_serverlessStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("LogBin") && !value["LogBin"].IsNull())
+    {
+        if (!value["LogBin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.LogBin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logBin = string(value["LogBin"].GetString());
+        m_logBinHasBeenSet = true;
+    }
+
+    if (value.HasMember("PitrType") && !value["PitrType"].IsNull())
+    {
+        if (!value["PitrType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.PitrType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pitrType = string(value["PitrType"].GetString());
+        m_pitrTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("PhysicalZone") && !value["PhysicalZone"].IsNull())
+    {
+        if (!value["PhysicalZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.PhysicalZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_physicalZone = string(value["PhysicalZone"].GetString());
+        m_physicalZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageId") && !value["StorageId"].IsNull())
+    {
+        if (!value["StorageId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StorageId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageId = string(value["StorageId"].GetString());
+        m_storageIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Storage") && !value["Storage"].IsNull())
+    {
+        if (!value["Storage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Storage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storage = value["Storage"].GetInt64();
+        m_storageHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxStorageSize") && !value["MaxStorageSize"].IsNull())
+    {
+        if (!value["MaxStorageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.MaxStorageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxStorageSize = value["MaxStorageSize"].GetInt64();
+        m_maxStorageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MinStorageSize") && !value["MinStorageSize"].IsNull())
+    {
+        if (!value["MinStorageSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.MinStorageSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_minStorageSize = value["MinStorageSize"].GetInt64();
+        m_minStorageSizeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StoragePayMode") && !value["StoragePayMode"].IsNull())
+    {
+        if (!value["StoragePayMode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StoragePayMode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storagePayMode = value["StoragePayMode"].GetInt64();
+        m_storagePayModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DbMode") && !value["DbMode"].IsNull())
+    {
+        if (!value["DbMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.DbMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dbMode = string(value["DbMode"].GetString());
+        m_dbModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("StorageLimit") && !value["StorageLimit"].IsNull())
+    {
+        if (!value["StorageLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.StorageLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_storageLimit = value["StorageLimit"].GetInt64();
+        m_storageLimitHasBeenSet = true;
+    }
+
+    if (value.HasMember("Ability") && !value["Ability"].IsNull())
+    {
+        if (!value["Ability"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Ability` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ability.Deserialize(value["Ability"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_abilityHasBeenSet = true;
+    }
+
+    if (value.HasMember("CynosVersion") && !value["CynosVersion"].IsNull())
+    {
+        if (!value["CynosVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.CynosVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cynosVersion = string(value["CynosVersion"].GetString());
+        m_cynosVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessType") && !value["BusinessType"].IsNull())
+    {
+        if (!value["BusinessType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.BusinessType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessType = string(value["BusinessType"].GetString());
+        m_businessTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("HasSlaveZone") && !value["HasSlaveZone"].IsNull())
+    {
+        if (!value["HasSlaveZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.HasSlaveZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hasSlaveZone = string(value["HasSlaveZone"].GetString());
+        m_hasSlaveZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsFreeze") && !value["IsFreeze"].IsNull())
+    {
+        if (!value["IsFreeze"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.IsFreeze` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFreeze = string(value["IsFreeze"].GetString());
+        m_isFreezeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tasks") && !value["Tasks"].IsNull())
+    {
+        if (!value["Tasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.Tasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ObjectTask item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tasks.push_back(item);
+        }
+        m_tasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("MasterZone") && !value["MasterZone"].IsNull())
+    {
+        if (!value["MasterZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.MasterZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_masterZone = string(value["MasterZone"].GetString());
+        m_masterZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("SlaveZones") && !value["SlaveZones"].IsNull())
+    {
+        if (!value["SlaveZones"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.SlaveZones` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SlaveZones"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_slaveZones.push_back((*itr).GetString());
+        }
+        m_slaveZonesHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProxyStatus") && !value["ProxyStatus"].IsNull())
+    {
+        if (!value["ProxyStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.ProxyStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_proxyStatus = string(value["ProxyStatus"].GetString());
+        m_proxyStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsSkipTrade") && !value["IsSkipTrade"].IsNull())
+    {
+        if (!value["IsSkipTrade"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.IsSkipTrade` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSkipTrade = string(value["IsSkipTrade"].GetString());
+        m_isSkipTradeHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsOpenPasswordComplexity") && !value["IsOpenPasswordComplexity"].IsNull())
+    {
+        if (!value["IsOpenPasswordComplexity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.IsOpenPasswordComplexity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_isOpenPasswordComplexity = string(value["IsOpenPasswordComplexity"].GetString());
+        m_isOpenPasswordComplexityHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetworkStatus") && !value["NetworkStatus"].IsNull())
+    {
+        if (!value["NetworkStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbClusterDetail.NetworkStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_networkStatus = string(value["NetworkStatus"].GetString());
+        m_networkStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -541,6 +803,195 @@ void CynosdbClusterDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "ServerlessStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serverlessStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_logBinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogBin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logBin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pitrTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PitrType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pitrType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_physicalZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhysicalZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_physicalZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_storageId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Storage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storage, allocator);
+    }
+
+    if (m_maxStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxStorageSize, allocator);
+    }
+
+    if (m_minStorageSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MinStorageSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_minStorageSize, allocator);
+    }
+
+    if (m_storagePayModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StoragePayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storagePayMode, allocator);
+    }
+
+    if (m_dbModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DbMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dbMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_storageLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StorageLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_storageLimit, allocator);
+    }
+
+    if (m_abilityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ability";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ability.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_cynosVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CynosVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cynosVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_businessType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hasSlaveZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HasSlaveZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hasSlaveZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isFreezeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFreeze";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isFreeze.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tasks.begin(); itr != m_tasks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_masterZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_slaveZonesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlaveZones";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_slaveZones.begin(); itr != m_slaveZones.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_proxyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_proxyStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSkipTradeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSkipTrade";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isSkipTrade.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOpenPasswordComplexityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpenPasswordComplexity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_isOpenPasswordComplexity.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_networkStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -928,5 +1379,357 @@ void CynosdbClusterDetail::SetServerlessStatus(const string& _serverlessStatus)
 bool CynosdbClusterDetail::ServerlessStatusHasBeenSet() const
 {
     return m_serverlessStatusHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetLogBin() const
+{
+    return m_logBin;
+}
+
+void CynosdbClusterDetail::SetLogBin(const string& _logBin)
+{
+    m_logBin = _logBin;
+    m_logBinHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::LogBinHasBeenSet() const
+{
+    return m_logBinHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetPitrType() const
+{
+    return m_pitrType;
+}
+
+void CynosdbClusterDetail::SetPitrType(const string& _pitrType)
+{
+    m_pitrType = _pitrType;
+    m_pitrTypeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::PitrTypeHasBeenSet() const
+{
+    return m_pitrTypeHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetPhysicalZone() const
+{
+    return m_physicalZone;
+}
+
+void CynosdbClusterDetail::SetPhysicalZone(const string& _physicalZone)
+{
+    m_physicalZone = _physicalZone;
+    m_physicalZoneHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::PhysicalZoneHasBeenSet() const
+{
+    return m_physicalZoneHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetStorageId() const
+{
+    return m_storageId;
+}
+
+void CynosdbClusterDetail::SetStorageId(const string& _storageId)
+{
+    m_storageId = _storageId;
+    m_storageIdHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StorageIdHasBeenSet() const
+{
+    return m_storageIdHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetStorage() const
+{
+    return m_storage;
+}
+
+void CynosdbClusterDetail::SetStorage(const int64_t& _storage)
+{
+    m_storage = _storage;
+    m_storageHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StorageHasBeenSet() const
+{
+    return m_storageHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetMaxStorageSize() const
+{
+    return m_maxStorageSize;
+}
+
+void CynosdbClusterDetail::SetMaxStorageSize(const int64_t& _maxStorageSize)
+{
+    m_maxStorageSize = _maxStorageSize;
+    m_maxStorageSizeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::MaxStorageSizeHasBeenSet() const
+{
+    return m_maxStorageSizeHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetMinStorageSize() const
+{
+    return m_minStorageSize;
+}
+
+void CynosdbClusterDetail::SetMinStorageSize(const int64_t& _minStorageSize)
+{
+    m_minStorageSize = _minStorageSize;
+    m_minStorageSizeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::MinStorageSizeHasBeenSet() const
+{
+    return m_minStorageSizeHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetStoragePayMode() const
+{
+    return m_storagePayMode;
+}
+
+void CynosdbClusterDetail::SetStoragePayMode(const int64_t& _storagePayMode)
+{
+    m_storagePayMode = _storagePayMode;
+    m_storagePayModeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StoragePayModeHasBeenSet() const
+{
+    return m_storagePayModeHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetDbMode() const
+{
+    return m_dbMode;
+}
+
+void CynosdbClusterDetail::SetDbMode(const string& _dbMode)
+{
+    m_dbMode = _dbMode;
+    m_dbModeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::DbModeHasBeenSet() const
+{
+    return m_dbModeHasBeenSet;
+}
+
+int64_t CynosdbClusterDetail::GetStorageLimit() const
+{
+    return m_storageLimit;
+}
+
+void CynosdbClusterDetail::SetStorageLimit(const int64_t& _storageLimit)
+{
+    m_storageLimit = _storageLimit;
+    m_storageLimitHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::StorageLimitHasBeenSet() const
+{
+    return m_storageLimitHasBeenSet;
+}
+
+Ability CynosdbClusterDetail::GetAbility() const
+{
+    return m_ability;
+}
+
+void CynosdbClusterDetail::SetAbility(const Ability& _ability)
+{
+    m_ability = _ability;
+    m_abilityHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::AbilityHasBeenSet() const
+{
+    return m_abilityHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetCynosVersion() const
+{
+    return m_cynosVersion;
+}
+
+void CynosdbClusterDetail::SetCynosVersion(const string& _cynosVersion)
+{
+    m_cynosVersion = _cynosVersion;
+    m_cynosVersionHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::CynosVersionHasBeenSet() const
+{
+    return m_cynosVersionHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetBusinessType() const
+{
+    return m_businessType;
+}
+
+void CynosdbClusterDetail::SetBusinessType(const string& _businessType)
+{
+    m_businessType = _businessType;
+    m_businessTypeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::BusinessTypeHasBeenSet() const
+{
+    return m_businessTypeHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetHasSlaveZone() const
+{
+    return m_hasSlaveZone;
+}
+
+void CynosdbClusterDetail::SetHasSlaveZone(const string& _hasSlaveZone)
+{
+    m_hasSlaveZone = _hasSlaveZone;
+    m_hasSlaveZoneHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::HasSlaveZoneHasBeenSet() const
+{
+    return m_hasSlaveZoneHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetIsFreeze() const
+{
+    return m_isFreeze;
+}
+
+void CynosdbClusterDetail::SetIsFreeze(const string& _isFreeze)
+{
+    m_isFreeze = _isFreeze;
+    m_isFreezeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::IsFreezeHasBeenSet() const
+{
+    return m_isFreezeHasBeenSet;
+}
+
+vector<ObjectTask> CynosdbClusterDetail::GetTasks() const
+{
+    return m_tasks;
+}
+
+void CynosdbClusterDetail::SetTasks(const vector<ObjectTask>& _tasks)
+{
+    m_tasks = _tasks;
+    m_tasksHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::TasksHasBeenSet() const
+{
+    return m_tasksHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetMasterZone() const
+{
+    return m_masterZone;
+}
+
+void CynosdbClusterDetail::SetMasterZone(const string& _masterZone)
+{
+    m_masterZone = _masterZone;
+    m_masterZoneHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::MasterZoneHasBeenSet() const
+{
+    return m_masterZoneHasBeenSet;
+}
+
+vector<string> CynosdbClusterDetail::GetSlaveZones() const
+{
+    return m_slaveZones;
+}
+
+void CynosdbClusterDetail::SetSlaveZones(const vector<string>& _slaveZones)
+{
+    m_slaveZones = _slaveZones;
+    m_slaveZonesHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::SlaveZonesHasBeenSet() const
+{
+    return m_slaveZonesHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetProxyStatus() const
+{
+    return m_proxyStatus;
+}
+
+void CynosdbClusterDetail::SetProxyStatus(const string& _proxyStatus)
+{
+    m_proxyStatus = _proxyStatus;
+    m_proxyStatusHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::ProxyStatusHasBeenSet() const
+{
+    return m_proxyStatusHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetIsSkipTrade() const
+{
+    return m_isSkipTrade;
+}
+
+void CynosdbClusterDetail::SetIsSkipTrade(const string& _isSkipTrade)
+{
+    m_isSkipTrade = _isSkipTrade;
+    m_isSkipTradeHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::IsSkipTradeHasBeenSet() const
+{
+    return m_isSkipTradeHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetIsOpenPasswordComplexity() const
+{
+    return m_isOpenPasswordComplexity;
+}
+
+void CynosdbClusterDetail::SetIsOpenPasswordComplexity(const string& _isOpenPasswordComplexity)
+{
+    m_isOpenPasswordComplexity = _isOpenPasswordComplexity;
+    m_isOpenPasswordComplexityHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::IsOpenPasswordComplexityHasBeenSet() const
+{
+    return m_isOpenPasswordComplexityHasBeenSet;
+}
+
+string CynosdbClusterDetail::GetNetworkStatus() const
+{
+    return m_networkStatus;
+}
+
+void CynosdbClusterDetail::SetNetworkStatus(const string& _networkStatus)
+{
+    m_networkStatus = _networkStatus;
+    m_networkStatusHasBeenSet = true;
+}
+
+bool CynosdbClusterDetail::NetworkStatusHasBeenSet() const
+{
+    return m_networkStatusHasBeenSet;
 }
 

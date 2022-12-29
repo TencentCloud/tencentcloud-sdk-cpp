@@ -87,14 +87,14 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
-                     * @return StartTime 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
+                     * 获取该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为秒。
+                     * @return StartTime 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为秒。
                      */
                     double GetStartTime() const;
 
                     /**
-                     * 设置该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
-                     * @param StartTime 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
+                     * 设置该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为秒。
+                     * @param StartTime 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为秒。
                      */
                     void SetStartTime(const double& _startTime);
 
@@ -105,14 +105,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
-                     * @return EndTime 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
+                     * 获取该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为秒。
+                     * @return EndTime 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为秒。
                      */
                     double GetEndTime() const;
 
                     /**
-                     * 设置该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
-                     * @param EndTime 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
+                     * 设置该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为秒。
+                     * @param EndTime 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为秒。
                      */
                     void SetEndTime(const double& _endTime);
 
@@ -196,13 +196,13 @@ namespace TencentCloud
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为毫秒。
+                     * 该字段用于返回对应呻吟标签的片段在音频文件内的开始时间，单位为秒。
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为毫秒。
+                     * 该字段用于返回对应呻吟标签的片段在音频文件内的结束时间，单位为秒。
                      */
                     double m_endTime;
                     bool m_endTimeHasBeenSet;

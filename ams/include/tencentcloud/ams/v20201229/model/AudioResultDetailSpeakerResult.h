@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool ScoreHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为毫秒。
+                     * 获取该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StartTime 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为毫秒。
+                     * @return StartTime 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetStartTime() const;
 
                     /**
-                     * 设置该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为毫秒。
+                     * 设置该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StartTime 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为毫秒。
+                     * @param StartTime 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStartTime(const double& _startTime);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为毫秒。
+                     * 获取该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EndTime 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为毫秒。
+                     * @return EndTime 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetEndTime() const;
 
                     /**
-                     * 设置该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为毫秒。
+                     * 设置该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EndTime 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为毫秒。
+                     * @param EndTime 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEndTime(const double& _endTime);
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool m_scoreHasBeenSet;
 
                     /**
-                     * 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为毫秒。
+                     * 该字段用于返回对应说话人的片段在音频文件内的开始时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为毫秒。
+                     * 该字段用于返回对应说话人的片段在音频文件内的结束时间，单位为秒。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_endTime;

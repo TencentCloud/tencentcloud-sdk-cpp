@@ -77,7 +77,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/AuditLogFile.h
   include/tencentcloud/cynosdb/v20190107/model/ExportInstanceSlowQueriesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneRequest.h
-  include/tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/Ability.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceInitInfo.h
   include/tencentcloud/cynosdb/v20190107/model/UpgradeInstanceRequest.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackTable.h
@@ -183,6 +183,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterParamsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/AuditLog.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeInstanceSpecsResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/OfflineInstanceResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ParamItem.h
@@ -257,7 +258,7 @@ set(cynosdb_src
   src/v20190107/model/AuditLogFile.cpp
   src/v20190107/model/ExportInstanceSlowQueriesResponse.cpp
   src/v20190107/model/SwitchClusterZoneRequest.cpp
-  src/v20190107/model/DescribeDBSecurityGroupsRequest.cpp
+  src/v20190107/model/Ability.cpp
   src/v20190107/model/InstanceInitInfo.cpp
   src/v20190107/model/UpgradeInstanceRequest.cpp
   src/v20190107/model/RollbackTable.cpp
@@ -363,6 +364,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterParamsRequest.cpp
   src/v20190107/model/AuditLog.cpp
   src/v20190107/model/DescribeInstanceSpecsResponse.cpp
+  src/v20190107/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20190107/model/DescribeAccountAllGrantPrivilegesRequest.cpp
   src/v20190107/model/OfflineInstanceResponse.cpp
   src/v20190107/model/ParamItem.cpp

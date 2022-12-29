@@ -364,7 +364,6 @@ namespace TencentCloud
 
                 /**
                  *添加域名
-
                  * @param req CreateDomainRequest
                  * @return CreateDomainOutcome
                  */
@@ -401,7 +400,6 @@ namespace TencentCloud
 
                 /**
                  *添加记录
-
                  * @param req CreateRecordRequest
                  * @return CreateRecordOutcome
                  */
@@ -438,7 +436,6 @@ namespace TencentCloud
 
                 /**
                  *删除域名
-
                  * @param req DeleteDomainRequest
                  * @return DeleteDomainOutcome
                  */
@@ -736,7 +733,6 @@ namespace TencentCloud
 
                 /**
                  *更新动态 DNS 记录
-
                  * @param req ModifyDynamicDNSRequest
                  * @return ModifyDynamicDNSOutcome
                  */
@@ -745,7 +741,7 @@ namespace TencentCloud
                 ModifyDynamicDNSOutcomeCallable ModifyDynamicDNSCallable(const Model::ModifyDynamicDNSRequest& request);
 
                 /**
-                 * DNS 解析套餐自动续费设置
+                 *DNS 解析套餐自动续费设置
                  * @param req ModifyPackageAutoRenewRequest
                  * @return ModifyPackageAutoRenewOutcome
                  */

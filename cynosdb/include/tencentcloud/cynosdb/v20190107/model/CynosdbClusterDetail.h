@@ -27,6 +27,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/Addr.h>
 #include <tencentcloud/cynosdb/v20190107/model/ClusterInstanceDetail.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
+#include <tencentcloud/cynosdb/v20190107/model/Ability.h>
+#include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
 
 
 namespace TencentCloud
@@ -497,6 +499,490 @@ pausing
                      */
                     bool ServerlessStatusHasBeenSet() const;
 
+                    /**
+                     * 获取binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogBin binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogBin() const;
+
+                    /**
+                     * 设置binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogBin binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogBin(const std::string& _logBin);
+
+                    /**
+                     * 判断参数 LogBin 是否已赋值
+                     * @return LogBin 是否已赋值
+                     */
+                    bool LogBinHasBeenSet() const;
+
+                    /**
+                     * 获取pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PitrType pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPitrType() const;
+
+                    /**
+                     * 设置pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PitrType pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPitrType(const std::string& _pitrType);
+
+                    /**
+                     * 判断参数 PitrType 是否已赋值
+                     * @return PitrType 是否已赋值
+                     */
+                    bool PitrTypeHasBeenSet() const;
+
+                    /**
+                     * 获取物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PhysicalZone 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPhysicalZone() const;
+
+                    /**
+                     * 设置物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PhysicalZone 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhysicalZone(const std::string& _physicalZone);
+
+                    /**
+                     * 判断参数 PhysicalZone 是否已赋值
+                     * @return PhysicalZone 是否已赋值
+                     */
+                    bool PhysicalZoneHasBeenSet() const;
+
+                    /**
+                     * 获取存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageId 存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStorageId() const;
+
+                    /**
+                     * 设置存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StorageId 存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorageId(const std::string& _storageId);
+
+                    /**
+                     * 判断参数 StorageId 是否已赋值
+                     * @return StorageId 是否已赋值
+                     */
+                    bool StorageIdHasBeenSet() const;
+
+                    /**
+                     * 获取存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Storage 存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStorage() const;
+
+                    /**
+                     * 设置存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Storage 存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorage(const int64_t& _storage);
+
+                    /**
+                     * 判断参数 Storage 是否已赋值
+                     * @return Storage 是否已赋值
+                     */
+                    bool StorageHasBeenSet() const;
+
+                    /**
+                     * 获取最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxStorageSize 最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxStorageSize() const;
+
+                    /**
+                     * 设置最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxStorageSize 最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxStorageSize(const int64_t& _maxStorageSize);
+
+                    /**
+                     * 判断参数 MaxStorageSize 是否已赋值
+                     * @return MaxStorageSize 是否已赋值
+                     */
+                    bool MaxStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MinStorageSize 最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMinStorageSize() const;
+
+                    /**
+                     * 设置最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MinStorageSize 最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMinStorageSize(const int64_t& _minStorageSize);
+
+                    /**
+                     * 判断参数 MinStorageSize 是否已赋值
+                     * @return MinStorageSize 是否已赋值
+                     */
+                    bool MinStorageSizeHasBeenSet() const;
+
+                    /**
+                     * 获取存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StoragePayMode 存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStoragePayMode() const;
+
+                    /**
+                     * 设置存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StoragePayMode 存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStoragePayMode(const int64_t& _storagePayMode);
+
+                    /**
+                     * 判断参数 StoragePayMode 是否已赋值
+                     * @return StoragePayMode 是否已赋值
+                     */
+                    bool StoragePayModeHasBeenSet() const;
+
+                    /**
+                     * 获取数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DbMode 数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDbMode() const;
+
+                    /**
+                     * 设置数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DbMode 数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDbMode(const std::string& _dbMode);
+
+                    /**
+                     * 判断参数 DbMode 是否已赋值
+                     * @return DbMode 是否已赋值
+                     */
+                    bool DbModeHasBeenSet() const;
+
+                    /**
+                     * 获取存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StorageLimit 存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStorageLimit() const;
+
+                    /**
+                     * 设置存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StorageLimit 存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStorageLimit(const int64_t& _storageLimit);
+
+                    /**
+                     * 判断参数 StorageLimit 是否已赋值
+                     * @return StorageLimit 是否已赋值
+                     */
+                    bool StorageLimitHasBeenSet() const;
+
+                    /**
+                     * 获取集群支持的功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ability 集群支持的功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ability GetAbility() const;
+
+                    /**
+                     * 设置集群支持的功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ability 集群支持的功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAbility(const Ability& _ability);
+
+                    /**
+                     * 判断参数 Ability 是否已赋值
+                     * @return Ability 是否已赋值
+                     */
+                    bool AbilityHasBeenSet() const;
+
+                    /**
+                     * 获取cynos版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CynosVersion cynos版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCynosVersion() const;
+
+                    /**
+                     * 设置cynos版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CynosVersion cynos版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCynosVersion(const std::string& _cynosVersion);
+
+                    /**
+                     * 判断参数 CynosVersion 是否已赋值
+                     * @return CynosVersion 是否已赋值
+                     */
+                    bool CynosVersionHasBeenSet() const;
+
+                    /**
+                     * 获取商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessType 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBusinessType() const;
+
+                    /**
+                     * 设置商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BusinessType 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusinessType(const std::string& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasSlaveZone 是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHasSlaveZone() const;
+
+                    /**
+                     * 设置是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HasSlaveZone 是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHasSlaveZone(const std::string& _hasSlaveZone);
+
+                    /**
+                     * 判断参数 HasSlaveZone 是否已赋值
+                     * @return HasSlaveZone 是否已赋值
+                     */
+                    bool HasSlaveZoneHasBeenSet() const;
+
+                    /**
+                     * 获取是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFreeze 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsFreeze() const;
+
+                    /**
+                     * 设置是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsFreeze 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsFreeze(const std::string& _isFreeze);
+
+                    /**
+                     * 判断参数 IsFreeze 是否已赋值
+                     * @return IsFreeze 是否已赋值
+                     */
+                    bool IsFreezeHasBeenSet() const;
+
+                    /**
+                     * 获取任务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tasks 任务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ObjectTask> GetTasks() const;
+
+                    /**
+                     * 设置任务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tasks 任务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTasks(const std::vector<ObjectTask>& _tasks);
+
+                    /**
+                     * 判断参数 Tasks 是否已赋值
+                     * @return Tasks 是否已赋值
+                     */
+                    bool TasksHasBeenSet() const;
+
+                    /**
+                     * 获取主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMasterZone() const;
+
+                    /**
+                     * 设置主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMasterZone(const std::string& _masterZone);
+
+                    /**
+                     * 判断参数 MasterZone 是否已赋值
+                     * @return MasterZone 是否已赋值
+                     */
+                    bool MasterZoneHasBeenSet() const;
+
+                    /**
+                     * 获取从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZones 从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSlaveZones() const;
+
+                    /**
+                     * 设置从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SlaveZones 从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSlaveZones(const std::vector<std::string>& _slaveZones);
+
+                    /**
+                     * 判断参数 SlaveZones 是否已赋值
+                     * @return SlaveZones 是否已赋值
+                     */
+                    bool SlaveZonesHasBeenSet() const;
+
+                    /**
+                     * 获取Proxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProxyStatus Proxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProxyStatus() const;
+
+                    /**
+                     * 设置Proxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProxyStatus Proxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProxyStatus(const std::string& _proxyStatus);
+
+                    /**
+                     * 判断参数 ProxyStatus 是否已赋值
+                     * @return ProxyStatus 是否已赋值
+                     */
+                    bool ProxyStatusHasBeenSet() const;
+
+                    /**
+                     * 获取是否跳过交易
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSkipTrade 是否跳过交易
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsSkipTrade() const;
+
+                    /**
+                     * 设置是否跳过交易
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSkipTrade 是否跳过交易
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSkipTrade(const std::string& _isSkipTrade);
+
+                    /**
+                     * 判断参数 IsSkipTrade 是否已赋值
+                     * @return IsSkipTrade 是否已赋值
+                     */
+                    bool IsSkipTradeHasBeenSet() const;
+
+                    /**
+                     * 获取是否打开密码复杂度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsOpenPasswordComplexity 是否打开密码复杂度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsOpenPasswordComplexity() const;
+
+                    /**
+                     * 设置是否打开密码复杂度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsOpenPasswordComplexity 是否打开密码复杂度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsOpenPasswordComplexity(const std::string& _isOpenPasswordComplexity);
+
+                    /**
+                     * 判断参数 IsOpenPasswordComplexity 是否已赋值
+                     * @return IsOpenPasswordComplexity 是否已赋值
+                     */
+                    bool IsOpenPasswordComplexityHasBeenSet() const;
+
+                    /**
+                     * 获取网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NetworkStatus 网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNetworkStatus() const;
+
+                    /**
+                     * 设置网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NetworkStatus 网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNetworkStatus(const std::string& _networkStatus);
+
+                    /**
+                     * 判断参数 NetworkStatus 是否已赋值
+                     * @return NetworkStatus 是否已赋值
+                     */
+                    bool NetworkStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -646,6 +1132,160 @@ pausing
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
+
+                    /**
+                     * binlog开关，可选值：ON, OFF
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logBin;
+                    bool m_logBinHasBeenSet;
+
+                    /**
+                     * pitr类型，可选值：normal, redo_pitr
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pitrType;
+                    bool m_pitrTypeHasBeenSet;
+
+                    /**
+                     * 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_physicalZone;
+                    bool m_physicalZoneHasBeenSet;
+
+                    /**
+                     * 存储Id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_storageId;
+                    bool m_storageIdHasBeenSet;
+
+                    /**
+                     * 存储大小，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_storage;
+                    bool m_storageHasBeenSet;
+
+                    /**
+                     * 最大存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxStorageSize;
+                    bool m_maxStorageSizeHasBeenSet;
+
+                    /**
+                     * 最小存储规格，单位为G
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_minStorageSize;
+                    bool m_minStorageSizeHasBeenSet;
+
+                    /**
+                     * 存储付费类型，1为包年包月，0为按量计费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_storagePayMode;
+                    bool m_storagePayModeHasBeenSet;
+
+                    /**
+                     * 数据库类型，normal，serverless
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dbMode;
+                    bool m_dbModeHasBeenSet;
+
+                    /**
+                     * 存储空间上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_storageLimit;
+                    bool m_storageLimitHasBeenSet;
+
+                    /**
+                     * 集群支持的功能
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ability m_ability;
+                    bool m_abilityHasBeenSet;
+
+                    /**
+                     * cynos版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cynosVersion;
+                    bool m_cynosVersionHasBeenSet;
+
+                    /**
+                     * 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_businessType;
+                    bool m_businessTypeHasBeenSet;
+
+                    /**
+                     * 是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hasSlaveZone;
+                    bool m_hasSlaveZoneHasBeenSet;
+
+                    /**
+                     * 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isFreeze;
+                    bool m_isFreezeHasBeenSet;
+
+                    /**
+                     * 任务列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ObjectTask> m_tasks;
+                    bool m_tasksHasBeenSet;
+
+                    /**
+                     * 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_masterZone;
+                    bool m_masterZoneHasBeenSet;
+
+                    /**
+                     * 从可用区列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_slaveZones;
+                    bool m_slaveZonesHasBeenSet;
+
+                    /**
+                     * Proxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_proxyStatus;
+                    bool m_proxyStatusHasBeenSet;
+
+                    /**
+                     * 是否跳过交易
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isSkipTrade;
+                    bool m_isSkipTradeHasBeenSet;
+
+                    /**
+                     * 是否打开密码复杂度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isOpenPasswordComplexity;
+                    bool m_isOpenPasswordComplexityHasBeenSet;
+
+                    /**
+                     * 网络类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_networkStatus;
+                    bool m_networkStatusHasBeenSet;
 
                 };
             }

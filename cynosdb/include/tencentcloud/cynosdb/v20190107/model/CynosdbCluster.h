@@ -27,6 +27,7 @@
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
 #include <tencentcloud/cynosdb/v20190107/model/NetAddr.h>
+#include <tencentcloud/cynosdb/v20190107/model/Ability.h>
 
 
 namespace TencentCloud
@@ -231,13 +232,17 @@ deleted:已删除
 
                     /**
                      * 获取用户uin
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uin 用户uin
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUin() const;
 
                     /**
                      * 设置用户uin
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Uin 用户uin
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUin(const std::string& _uin);
 
@@ -249,13 +254,17 @@ deleted:已删除
 
                     /**
                      * 获取引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbType 引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDbType() const;
 
                     /**
                      * 设置引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param DbType 引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDbType(const std::string& _dbType);
 
@@ -267,13 +276,17 @@ deleted:已删除
 
                     /**
                      * 获取用户appid
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return AppId 用户appid
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetAppId() const;
 
                     /**
                      * 设置用户appid
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param AppId 用户appid
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAppId(const int64_t& _appId);
 
@@ -285,13 +298,17 @@ deleted:已删除
 
                     /**
                      * 获取集群状态描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusDesc 集群状态描述
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatusDesc() const;
 
                     /**
                      * 设置集群状态描述
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param StatusDesc 集群状态描述
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatusDesc(const std::string& _statusDesc);
 
@@ -303,13 +320,17 @@ deleted:已删除
 
                     /**
                      * 获取集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param CreateTime 集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -321,13 +342,17 @@ deleted:已删除
 
                     /**
                      * 获取付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PayMode 付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPayMode() const;
 
                     /**
                      * 设置付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param PayMode 付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPayMode(const int64_t& _payMode);
 
@@ -339,13 +364,17 @@ deleted:已删除
 
                     /**
                      * 获取截止时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return PeriodEndTime 截止时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPeriodEndTime() const;
 
                     /**
                      * 设置截止时间
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param PeriodEndTime 截止时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPeriodEndTime(const std::string& _periodEndTime);
 
@@ -357,13 +386,17 @@ deleted:已删除
 
                     /**
                      * 获取集群读写vip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vip 集群读写vip
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVip() const;
 
                     /**
                      * 设置集群读写vip
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Vip 集群读写vip
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVip(const std::string& _vip);
 
@@ -375,13 +408,17 @@ deleted:已删除
 
                     /**
                      * 获取集群读写vport
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Vport 集群读写vport
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetVport() const;
 
                     /**
                      * 设置集群读写vport
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Vport 集群读写vport
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVport(const int64_t& _vport);
 
@@ -393,13 +430,17 @@ deleted:已删除
 
                     /**
                      * 获取项目id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectID 项目id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetProjectID() const;
 
                     /**
                      * 设置项目id
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProjectID 项目id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProjectID(const int64_t& _projectID);
 
@@ -411,13 +452,17 @@ deleted:已删除
 
                     /**
                      * 获取私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcId 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetVpcId() const;
 
                     /**
                      * 设置私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param VpcId 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -429,13 +474,17 @@ deleted:已删除
 
                     /**
                      * 获取子网ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return SubnetId 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSubnetId() const;
 
                     /**
                      * 设置子网ID
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param SubnetId 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -447,13 +496,17 @@ deleted:已删除
 
                     /**
                      * 获取cynos内核版本
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CynosVersion cynos内核版本
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCynosVersion() const;
 
                     /**
                      * 设置cynos内核版本
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param CynosVersion cynos内核版本
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCynosVersion(const std::string& _cynosVersion);
 
@@ -465,13 +518,17 @@ deleted:已删除
 
                     /**
                      * 获取存储容量
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageLimit 存储容量
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStorageLimit() const;
 
                     /**
                      * 设置存储容量
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param StorageLimit 存储容量
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStorageLimit(const int64_t& _storageLimit);
 
@@ -483,13 +540,17 @@ deleted:已删除
 
                     /**
                      * 获取续费标志
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return RenewFlag 续费标志
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetRenewFlag() const;
 
                     /**
                      * 设置续费标志
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param RenewFlag 续费标志
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRenewFlag(const int64_t& _renewFlag);
 
@@ -501,13 +562,17 @@ deleted:已删除
 
                     /**
                      * 获取正在处理的任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProcessingTask 正在处理的任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProcessingTask() const;
 
                     /**
                      * 设置正在处理的任务
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProcessingTask 正在处理的任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProcessingTask(const std::string& _processingTask);
 
@@ -519,13 +584,17 @@ deleted:已删除
 
                     /**
                      * 获取集群的任务数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tasks 集群的任务数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectTask> GetTasks() const;
 
                     /**
                      * 设置集群的任务数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Tasks 集群的任务数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTasks(const std::vector<ObjectTask>& _tasks);
 
@@ -537,13 +606,17 @@ deleted:已删除
 
                     /**
                      * 获取集群绑定的tag数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceTags 集群绑定的tag数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> GetResourceTags() const;
 
                     /**
                      * 设置集群绑定的tag数组
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ResourceTags 集群绑定的tag数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceTags(const std::vector<Tag>& _resourceTags);
 
@@ -555,13 +628,17 @@ deleted:已删除
 
                     /**
                      * 获取Db类型(NORMAL, SERVERLESS)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return DbMode Db类型(NORMAL, SERVERLESS)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDbMode() const;
 
                     /**
                      * 设置Db类型(NORMAL, SERVERLESS)
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param DbMode Db类型(NORMAL, SERVERLESS)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDbMode(const std::string& _dbMode);
 
@@ -575,9 +652,11 @@ deleted:已删除
                      * 获取当Db类型为SERVERLESS时，serverless集群状态，可选值:
 resume
 pause
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
 resume
 pause
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetServerlessStatus() const;
 
@@ -585,9 +664,11 @@ pause
                      * 设置当Db类型为SERVERLESS时，serverless集群状态，可选值:
 resume
 pause
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param ServerlessStatus 当Db类型为SERVERLESS时，serverless集群状态，可选值:
 resume
 pause
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetServerlessStatus(const std::string& _serverlessStatus);
 
@@ -599,13 +680,17 @@ pause
 
                     /**
                      * 获取集群预付费存储值大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Storage 集群预付费存储值大小
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStorage() const;
 
                     /**
                      * 设置集群预付费存储值大小
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Storage 集群预付费存储值大小
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStorage(const int64_t& _storage);
 
@@ -617,13 +702,17 @@ pause
 
                     /**
                      * 获取集群存储为预付费时的存储ID，用于预付费存储变配
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StorageId 集群存储为预付费时的存储ID，用于预付费存储变配
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStorageId() const;
 
                     /**
                      * 设置集群存储为预付费时的存储ID，用于预付费存储变配
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param StorageId 集群存储为预付费时的存储ID，用于预付费存储变配
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStorageId(const std::string& _storageId);
 
@@ -635,13 +724,17 @@ pause
 
                     /**
                      * 获取集群存储付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return StoragePayMode 集群存储付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStoragePayMode() const;
 
                     /**
                      * 设置集群存储付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param StoragePayMode 集群存储付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStoragePayMode(const int64_t& _storagePayMode);
 
@@ -653,13 +746,17 @@ pause
 
                     /**
                      * 获取集群计算规格对应的最小存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MinStorageSize 集群计算规格对应的最小存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetMinStorageSize() const;
 
                     /**
                      * 设置集群计算规格对应的最小存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param MinStorageSize 集群计算规格对应的最小存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMinStorageSize(const int64_t& _minStorageSize);
 
@@ -671,13 +768,17 @@ pause
 
                     /**
                      * 获取集群计算规格对应的最大存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return MaxStorageSize 集群计算规格对应的最大存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetMaxStorageSize() const;
 
                     /**
                      * 设置集群计算规格对应的最大存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param MaxStorageSize 集群计算规格对应的最大存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMaxStorageSize(const int64_t& _maxStorageSize);
 
@@ -689,13 +790,17 @@ pause
 
                     /**
                      * 获取集群网络信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return NetAddrs 集群网络信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetAddr> GetNetAddrs() const;
 
                     /**
                      * 设置集群网络信息
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param NetAddrs 集群网络信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNetAddrs(const std::vector<NetAddr>& _netAddrs);
 
@@ -704,6 +809,182 @@ pause
                      * @return NetAddrs 是否已赋值
                      */
                     bool NetAddrsHasBeenSet() const;
+
+                    /**
+                     * 获取物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PhysicalZone 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPhysicalZone() const;
+
+                    /**
+                     * 设置物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PhysicalZone 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhysicalZone(const std::string& _physicalZone);
+
+                    /**
+                     * 判断参数 PhysicalZone 是否已赋值
+                     * @return PhysicalZone 是否已赋值
+                     */
+                    bool PhysicalZoneHasBeenSet() const;
+
+                    /**
+                     * 获取主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMasterZone() const;
+
+                    /**
+                     * 设置主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMasterZone(const std::string& _masterZone);
+
+                    /**
+                     * 判断参数 MasterZone 是否已赋值
+                     * @return MasterZone 是否已赋值
+                     */
+                    bool MasterZoneHasBeenSet() const;
+
+                    /**
+                     * 获取是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HasSlaveZone 是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHasSlaveZone() const;
+
+                    /**
+                     * 设置是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HasSlaveZone 是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHasSlaveZone(const std::string& _hasSlaveZone);
+
+                    /**
+                     * 判断参数 HasSlaveZone 是否已赋值
+                     * @return HasSlaveZone 是否已赋值
+                     */
+                    bool HasSlaveZoneHasBeenSet() const;
+
+                    /**
+                     * 获取从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZones 从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSlaveZones() const;
+
+                    /**
+                     * 设置从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SlaveZones 从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSlaveZones(const std::vector<std::string>& _slaveZones);
+
+                    /**
+                     * 判断参数 SlaveZones 是否已赋值
+                     * @return SlaveZones 是否已赋值
+                     */
+                    bool SlaveZonesHasBeenSet() const;
+
+                    /**
+                     * 获取商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessType 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBusinessType() const;
+
+                    /**
+                     * 设置商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BusinessType 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusinessType(const std::string& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
+                    /**
+                     * 获取是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFreeze 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIsFreeze() const;
+
+                    /**
+                     * 设置是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsFreeze 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsFreeze(const std::string& _isFreeze);
+
+                    /**
+                     * 判断参数 IsFreeze 是否已赋值
+                     * @return IsFreeze 是否已赋值
+                     */
+                    bool IsFreezeHasBeenSet() const;
+
+                    /**
+                     * 获取订单来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OrderSource 订单来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOrderSource() const;
+
+                    /**
+                     * 设置订单来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OrderSource 订单来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOrderSource(const std::string& _orderSource);
+
+                    /**
+                     * 判断参数 OrderSource 是否已赋值
+                     * @return OrderSource 是否已赋值
+                     */
+                    bool OrderSourceHasBeenSet() const;
+
+                    /**
+                     * 获取能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ability 能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ability GetAbility() const;
+
+                    /**
+                     * 设置能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Ability 能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAbility(const Ability& _ability);
+
+                    /**
+                     * 判断参数 Ability 是否已赋值
+                     * @return Ability 是否已赋值
+                     */
+                    bool AbilityHasBeenSet() const;
 
                 private:
 
@@ -766,114 +1047,133 @@ deleted:已删除
 
                     /**
                      * 用户uin
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uin;
                     bool m_uinHasBeenSet;
 
                     /**
                      * 引擎类型
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbType;
                     bool m_dbTypeHasBeenSet;
 
                     /**
                      * 用户appid
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
                      * 集群状态描述
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_statusDesc;
                     bool m_statusDescHasBeenSet;
 
                     /**
                      * 集群创建时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
                      * 截止时间
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_periodEndTime;
                     bool m_periodEndTimeHasBeenSet;
 
                     /**
                      * 集群读写vip
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
                      * 集群读写vport
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
                      * 项目id
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_projectID;
                     bool m_projectIDHasBeenSet;
 
                     /**
                      * 私有网络ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
                      * 子网ID
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
                      * cynos内核版本
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cynosVersion;
                     bool m_cynosVersionHasBeenSet;
 
                     /**
                      * 存储容量
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storageLimit;
                     bool m_storageLimitHasBeenSet;
 
                     /**
                      * 续费标志
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_renewFlag;
                     bool m_renewFlagHasBeenSet;
 
                     /**
                      * 正在处理的任务
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_processingTask;
                     bool m_processingTaskHasBeenSet;
 
                     /**
                      * 集群的任务数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<ObjectTask> m_tasks;
                     bool m_tasksHasBeenSet;
 
                     /**
                      * 集群绑定的tag数组
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
 
                     /**
                      * Db类型(NORMAL, SERVERLESS)
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbMode;
                     bool m_dbModeHasBeenSet;
@@ -882,45 +1182,108 @@ deleted:已删除
                      * 当Db类型为SERVERLESS时，serverless集群状态，可选值:
 resume
 pause
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_serverlessStatus;
                     bool m_serverlessStatusHasBeenSet;
 
                     /**
                      * 集群预付费存储值大小
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storage;
                     bool m_storageHasBeenSet;
 
                     /**
                      * 集群存储为预付费时的存储ID，用于预付费存储变配
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_storageId;
                     bool m_storageIdHasBeenSet;
 
                     /**
                      * 集群存储付费模式。0-按量计费，1-包年包月
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_storagePayMode;
                     bool m_storagePayModeHasBeenSet;
 
                     /**
                      * 集群计算规格对应的最小存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_minStorageSize;
                     bool m_minStorageSizeHasBeenSet;
 
                     /**
                      * 集群计算规格对应的最大存储值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_maxStorageSize;
                     bool m_maxStorageSizeHasBeenSet;
 
                     /**
                      * 集群网络信息
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<NetAddr> m_netAddrs;
                     bool m_netAddrsHasBeenSet;
+
+                    /**
+                     * 物理可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_physicalZone;
+                    bool m_physicalZoneHasBeenSet;
+
+                    /**
+                     * 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_masterZone;
+                    bool m_masterZoneHasBeenSet;
+
+                    /**
+                     * 是否有从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hasSlaveZone;
+                    bool m_hasSlaveZoneHasBeenSet;
+
+                    /**
+                     * 从可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_slaveZones;
+                    bool m_slaveZonesHasBeenSet;
+
+                    /**
+                     * 商业类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_businessType;
+                    bool m_businessTypeHasBeenSet;
+
+                    /**
+                     * 是否冻结
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_isFreeze;
+                    bool m_isFreezeHasBeenSet;
+
+                    /**
+                     * 订单来源
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_orderSource;
+                    bool m_orderSourceHasBeenSet;
+
+                    /**
+                     * 能力
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Ability m_ability;
+                    bool m_abilityHasBeenSet;
 
                 };
             }

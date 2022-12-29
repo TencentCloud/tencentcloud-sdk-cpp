@@ -222,6 +222,20 @@ Block 建议屏蔽；
                      */
                     bool RecognitionResultsHasBeenSet() const;
 
+                    /**
+                     * 获取识别音频时长，单位为毫秒；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Duration 识别音频时长，单位为毫秒；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDuration() const;
+
+                    /**
+                     * 判断参数 Duration 是否已赋值
+                     * @return Duration 是否已赋值
+                     */
+                    bool DurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -310,6 +324,13 @@ Block 建议屏蔽；
                      */
                     std::vector<RecognitionResult> m_recognitionResults;
                     bool m_recognitionResultsHasBeenSet;
+
+                    /**
+                     * 识别音频时长，单位为毫秒；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_duration;
+                    bool m_durationHasBeenSet;
 
                 };
             }

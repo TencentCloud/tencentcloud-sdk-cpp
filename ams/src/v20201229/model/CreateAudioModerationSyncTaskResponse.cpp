@@ -35,7 +35,8 @@ CreateAudioModerationSyncTaskResponse::CreateAudioModerationSyncTaskResponse() :
     m_subLabelHasBeenSet(false),
     m_languageResultsHasBeenSet(false),
     m_speakerResultsHasBeenSet(false),
-    m_recognitionResultsHasBeenSet(false)
+    m_recognitionResultsHasBeenSet(false),
+    m_durationHasBeenSet(false)
 {
 }
 
@@ -243,6 +244,16 @@ CoreInternalOutcome CreateAudioModerationSyncTaskResponse::Deserialize(const str
         m_recognitionResultsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Duration") && !rsp["Duration"].IsNull())
+    {
+        if (!rsp["Duration"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Duration` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_duration = string(rsp["Duration"].GetString());
+        m_durationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -384,6 +395,14 @@ string CreateAudioModerationSyncTaskResponse::ToJsonString() const
         }
     }
 
+    if (m_durationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_duration.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -514,6 +533,16 @@ vector<RecognitionResult> CreateAudioModerationSyncTaskResponse::GetRecognitionR
 bool CreateAudioModerationSyncTaskResponse::RecognitionResultsHasBeenSet() const
 {
     return m_recognitionResultsHasBeenSet;
+}
+
+string CreateAudioModerationSyncTaskResponse::GetDuration() const
+{
+    return m_duration;
+}
+
+bool CreateAudioModerationSyncTaskResponse::DurationHasBeenSet() const
+{
+    return m_durationHasBeenSet;
 }
 
 

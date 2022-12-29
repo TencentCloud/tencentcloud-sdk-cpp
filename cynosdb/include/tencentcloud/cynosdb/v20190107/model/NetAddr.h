@@ -222,6 +222,50 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取外网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WanIP 外网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWanIP() const;
+
+                    /**
+                     * 设置外网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WanIP 外网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWanIP(const std::string& _wanIP);
+
+                    /**
+                     * 判断参数 WanIP 是否已赋值
+                     * @return WanIP 是否已赋值
+                     */
+                    bool WanIPHasBeenSet() const;
+
+                    /**
+                     * 获取外网状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WanStatus 外网状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWanStatus() const;
+
+                    /**
+                     * 设置外网状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WanStatus 外网状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWanStatus(const std::string& _wanStatus);
+
+                    /**
+                     * 判断参数 WanStatus 是否已赋值
+                     * @return WanStatus 是否已赋值
+                     */
+                    bool WanStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -279,6 +323,20 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 外网IP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wanIP;
+                    bool m_wanIPHasBeenSet;
+
+                    /**
+                     * 外网状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_wanStatus;
+                    bool m_wanStatusHasBeenSet;
 
                 };
             }

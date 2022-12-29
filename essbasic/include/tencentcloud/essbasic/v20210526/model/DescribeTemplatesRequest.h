@@ -224,6 +224,24 @@ namespace TencentCloud
                      */
                     bool WithPdfUrlHasBeenSet() const;
 
+                    /**
+                     * 获取渠道模板ID
+                     * @return ChannelTemplateId 渠道模板ID
+                     */
+                    std::string GetChannelTemplateId() const;
+
+                    /**
+                     * 设置渠道模板ID
+                     * @param ChannelTemplateId 渠道模板ID
+                     */
+                    void SetChannelTemplateId(const std::string& _channelTemplateId);
+
+                    /**
+                     * 判断参数 ChannelTemplateId 是否已赋值
+                     * @return ChannelTemplateId 是否已赋值
+                     */
+                    bool ChannelTemplateIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -285,6 +303,12 @@ namespace TencentCloud
                      */
                     bool m_withPdfUrl;
                     bool m_withPdfUrlHasBeenSet;
+
+                    /**
+                     * 渠道模板ID
+                     */
+                    std::string m_channelTemplateId;
+                    bool m_channelTemplateIdHasBeenSet;
 
                 };
             }

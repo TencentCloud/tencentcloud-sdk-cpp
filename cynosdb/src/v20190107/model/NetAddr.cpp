@@ -28,7 +28,9 @@ NetAddr::NetAddr() :
     m_netTypeHasBeenSet(false),
     m_uniqSubnetIdHasBeenSet(false),
     m_uniqVpcIdHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_wanIPHasBeenSet(false),
+    m_wanStatusHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome NetAddr::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("WanIP") && !value["WanIP"].IsNull())
+    {
+        if (!value["WanIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetAddr.WanIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanIP = string(value["WanIP"].GetString());
+        m_wanIPHasBeenSet = true;
+    }
+
+    if (value.HasMember("WanStatus") && !value["WanStatus"].IsNull())
+    {
+        if (!value["WanStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetAddr.WanStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_wanStatus = string(value["WanStatus"].GetString());
+        m_wanStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void NetAddr::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wanIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WanIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wanIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_wanStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WanStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_wanStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void NetAddr::SetDescription(const string& _description)
 bool NetAddr::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string NetAddr::GetWanIP() const
+{
+    return m_wanIP;
+}
+
+void NetAddr::SetWanIP(const string& _wanIP)
+{
+    m_wanIP = _wanIP;
+    m_wanIPHasBeenSet = true;
+}
+
+bool NetAddr::WanIPHasBeenSet() const
+{
+    return m_wanIPHasBeenSet;
+}
+
+string NetAddr::GetWanStatus() const
+{
+    return m_wanStatus;
+}
+
+void NetAddr::SetWanStatus(const string& _wanStatus)
+{
+    m_wanStatus = _wanStatus;
+    m_wanStatusHasBeenSet = true;
+}
+
+bool NetAddr::WanStatusHasBeenSet() const
+{
+    return m_wanStatusHasBeenSet;
 }
 

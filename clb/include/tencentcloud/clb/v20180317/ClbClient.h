@@ -63,6 +63,8 @@
 #include <tencentcloud/clb/v20180317/model/DeleteRuleResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeleteTargetGroupsRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeleteTargetGroupsResponse.h>
+#include <tencentcloud/clb/v20180317/model/DeregisterFunctionTargetsRequest.h>
+#include <tencentcloud/clb/v20180317/model/DeregisterFunctionTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetGroupInstancesRequest.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetGroupInstancesResponse.h>
 #include <tencentcloud/clb/v20180317/model/DeregisterTargetsRequest.h>
@@ -159,6 +161,8 @@
 #include <tencentcloud/clb/v20180317/model/ModifyTargetPortResponse.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetWeightRequest.h>
 #include <tencentcloud/clb/v20180317/model/ModifyTargetWeightResponse.h>
+#include <tencentcloud/clb/v20180317/model/RegisterFunctionTargetsRequest.h>
+#include <tencentcloud/clb/v20180317/model/RegisterFunctionTargetsResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetGroupInstancesRequest.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetGroupInstancesResponse.h>
 #include <tencentcloud/clb/v20180317/model/RegisterTargetsRequest.h>
@@ -249,6 +253,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteTargetGroupsResponse> DeleteTargetGroupsOutcome;
                 typedef std::future<DeleteTargetGroupsOutcome> DeleteTargetGroupsOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeleteTargetGroupsRequest&, DeleteTargetGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteTargetGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeregisterFunctionTargetsResponse> DeregisterFunctionTargetsOutcome;
+                typedef std::future<DeregisterFunctionTargetsOutcome> DeregisterFunctionTargetsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::DeregisterFunctionTargetsRequest&, DeregisterFunctionTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterFunctionTargetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeregisterTargetGroupInstancesResponse> DeregisterTargetGroupInstancesOutcome;
                 typedef std::future<DeregisterTargetGroupInstancesOutcome> DeregisterTargetGroupInstancesOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::DeregisterTargetGroupInstancesRequest&, DeregisterTargetGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeregisterTargetGroupInstancesAsyncHandler;
@@ -393,6 +400,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTargetWeightResponse> ModifyTargetWeightOutcome;
                 typedef std::future<ModifyTargetWeightOutcome> ModifyTargetWeightOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::ModifyTargetWeightRequest&, ModifyTargetWeightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTargetWeightAsyncHandler;
+                typedef Outcome<Core::Error, Model::RegisterFunctionTargetsResponse> RegisterFunctionTargetsOutcome;
+                typedef std::future<RegisterFunctionTargetsOutcome> RegisterFunctionTargetsOutcomeCallable;
+                typedef std::function<void(const ClbClient*, const Model::RegisterFunctionTargetsRequest&, RegisterFunctionTargetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterFunctionTargetsAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterTargetGroupInstancesResponse> RegisterTargetGroupInstancesOutcome;
                 typedef std::future<RegisterTargetGroupInstancesOutcome> RegisterTargetGroupInstancesOutcomeCallable;
                 typedef std::function<void(const ClbClient*, const Model::RegisterTargetGroupInstancesRequest&, RegisterTargetGroupInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterTargetGroupInstancesAsyncHandler;
@@ -625,6 +635,26 @@ BGP带宽包必须传带宽包id
                 DeleteTargetGroupsOutcome DeleteTargetGroups(const Model::DeleteTargetGroupsRequest &request);
                 void DeleteTargetGroupsAsync(const Model::DeleteTargetGroupsRequest& request, const DeleteTargetGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteTargetGroupsOutcomeCallable DeleteTargetGroupsCallable(const Model::DeleteTargetGroupsRequest& request);
+
+                /**
+                 *DeregisterFunctionTargets 接口用来将一个云函数从负载均衡的转发规则上解绑，对于七层监听器，还需通过 LocationId 或 Domain+Url 指定转发规则。
+本接口为异步接口，本接口返回成功后需以返回的 RequestID 为入参，调用 [DescribeTaskStatus](https://cloud.tencent.com/document/product/214/30683) 接口查询本次任务是否成功。
+<br/>限制说明：
+
+- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、孟买、东京、硅谷地域支持绑定 SCF。
+- 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。
+- 传统型负载均衡不支持绑定 SCF。
+- 基础网络类型不支持绑定 SCF。
+- CLB 默认支持绑定同地域下的所有 SCF，可支持跨 VPC 绑定 SCF，不支持跨地域绑定。
+- 目前仅 IPv4、IPv6 NAT64 版本的负载均衡支持绑定 SCF，IPv6 版本的暂不支持。
+- 仅七层（HTTP、HTTPS）监听器支持绑定 SCF，四层（TCP、UDP、TCP SSL）监听器和七层 QUIC 监听器不支持。
+- CLB 绑定 SCF 仅支持绑定“Event 函数”类型的云函数。
+                 * @param req DeregisterFunctionTargetsRequest
+                 * @return DeregisterFunctionTargetsOutcome
+                 */
+                DeregisterFunctionTargetsOutcome DeregisterFunctionTargets(const Model::DeregisterFunctionTargetsRequest &request);
+                void DeregisterFunctionTargetsAsync(const Model::DeregisterFunctionTargetsRequest& request, const DeregisterFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeregisterFunctionTargetsOutcomeCallable DeregisterFunctionTargetsCallable(const Model::DeregisterFunctionTargetsRequest& request);
 
                 /**
                  *从目标组中解绑服务器。
@@ -1073,6 +1103,25 @@ BGP带宽包必须传带宽包id
                 ModifyTargetWeightOutcome ModifyTargetWeight(const Model::ModifyTargetWeightRequest &request);
                 void ModifyTargetWeightAsync(const Model::ModifyTargetWeightRequest& request, const ModifyTargetWeightAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTargetWeightOutcomeCallable ModifyTargetWeightCallable(const Model::ModifyTargetWeightRequest& request);
+
+                /**
+                 *RegisterFunctionTargets 接口用来将一个云函数绑定到负载均衡的7层转发规则，在此之前您需要先行创建相关的7层监听器（HTTP、HTTPS）和转发规则。
+本接口为异步接口，本接口返回成功后需以返回的RequestID为入参，调用DescribeTaskStatus接口查询本次任务是否成功。<br/>
+限制说明：
+- 仅广州、深圳金融、上海、上海金融、北京、成都、中国香港、新加坡、孟买、东京、硅谷地域支持绑定 SCF。
+- 仅标准账户类型支持绑定 SCF，传统账户类型不支持。建议升级为标准账户类型，详情可参见 [账户类型升级说明](https://cloud.tencent.com/document/product/1199/49090)。 
+- 传统型负载均衡不支持绑定 SCF。
+- 基础网络类型不支持绑定 SCF。
+- CLB 默认支持绑定同地域下的所有 SCF，可支持跨 VPC 绑定 SCF，不支持跨地域绑定。
+- 目前仅 IPv4、IPv6 NAT64 版本的负载均衡支持绑定 SCF，IPv6 版本的暂不支持。
+- 仅七层（HTTP、HTTPS）监听器支持绑定 SCF，四层（TCP、UDP、TCP SSL）监听器和七层 QUIC 监听器不支持。
+- CLB 绑定 SCF 仅支持绑定“Event 函数”类型的云函数。
+                 * @param req RegisterFunctionTargetsRequest
+                 * @return RegisterFunctionTargetsOutcome
+                 */
+                RegisterFunctionTargetsOutcome RegisterFunctionTargets(const Model::RegisterFunctionTargetsRequest &request);
+                void RegisterFunctionTargetsAsync(const Model::RegisterFunctionTargetsRequest& request, const RegisterFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RegisterFunctionTargetsOutcomeCallable RegisterFunctionTargetsCallable(const Model::RegisterFunctionTargetsRequest& request);
 
                 /**
                  *注册服务器到目标组。

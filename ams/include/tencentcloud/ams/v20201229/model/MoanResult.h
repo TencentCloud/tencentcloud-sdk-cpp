@@ -113,14 +113,14 @@ namespace TencentCloud
                     bool SuggestionHasBeenSet() const;
 
                     /**
-                     * 获取违规事件开始时间，单位为毫秒（ms）；
-                     * @return StartTime 违规事件开始时间，单位为毫秒（ms）；
+                     * 获取违规事件开始时间，单位为秒（s）；
+                     * @return StartTime 违规事件开始时间，单位为秒（s）；
                      */
                     double GetStartTime() const;
 
                     /**
-                     * 设置违规事件开始时间，单位为毫秒（ms）；
-                     * @param StartTime 违规事件开始时间，单位为毫秒（ms）；
+                     * 设置违规事件开始时间，单位为秒（s）；
+                     * @param StartTime 违规事件开始时间，单位为秒（s）；
                      */
                     void SetStartTime(const double& _startTime);
 
@@ -131,14 +131,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取违规事件结束时间，单位为毫秒（ms）；
-                     * @return EndTime 违规事件结束时间，单位为毫秒（ms）；
+                     * 获取违规事件结束时间，单位为秒（s）；
+                     * @return EndTime 违规事件结束时间，单位为秒（s）；
                      */
                     double GetEndTime() const;
 
                     /**
-                     * 设置违规事件结束时间，单位为毫秒（ms）；
-                     * @param EndTime 违规事件结束时间，单位为毫秒（ms）；
+                     * 设置违规事件结束时间，单位为秒（s）；
+                     * @param EndTime 违规事件结束时间，单位为秒（s）；
                      */
                     void SetEndTime(const double& _endTime);
 
@@ -198,13 +198,13 @@ namespace TencentCloud
                     bool m_suggestionHasBeenSet;
 
                     /**
-                     * 违规事件开始时间，单位为毫秒（ms）；
+                     * 违规事件开始时间，单位为秒（s）；
                      */
                     double m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 违规事件结束时间，单位为毫秒（ms）；
+                     * 违规事件结束时间，单位为秒（s）；
                      */
                     double m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -28,7 +28,8 @@ ClusterInstanceDetail::ClusterInstanceDetail() :
     m_instanceStatusDescHasBeenSet(false),
     m_instanceCpuHasBeenSet(false),
     m_instanceMemoryHasBeenSet(false),
-    m_instanceStorageHasBeenSet(false)
+    m_instanceStorageHasBeenSet(false),
+    m_instanceRoleHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome ClusterInstanceDetail::Deserialize(const rapidjson::Value &v
         m_instanceStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceRole") && !value["InstanceRole"].IsNull())
+    {
+        if (!value["InstanceRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstanceDetail.InstanceRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceRole = string(value["InstanceRole"].GetString());
+        m_instanceRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void ClusterInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "InstanceStorage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_instanceStorage, allocator);
+    }
+
+    if (m_instanceRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceRole.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void ClusterInstanceDetail::SetInstanceStorage(const int64_t& _instanceStorage)
 bool ClusterInstanceDetail::InstanceStorageHasBeenSet() const
 {
     return m_instanceStorageHasBeenSet;
+}
+
+string ClusterInstanceDetail::GetInstanceRole() const
+{
+    return m_instanceRole;
+}
+
+void ClusterInstanceDetail::SetInstanceRole(const string& _instanceRole)
+{
+    m_instanceRole = _instanceRole;
+    m_instanceRoleHasBeenSet = true;
+}
+
+bool ClusterInstanceDetail::InstanceRoleHasBeenSet() const
+{
+    return m_instanceRoleHasBeenSet;
 }
 

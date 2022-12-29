@@ -900,6 +900,49 @@ ClbClient::DeleteTargetGroupsOutcomeCallable ClbClient::DeleteTargetGroupsCallab
     return task->get_future();
 }
 
+ClbClient::DeregisterFunctionTargetsOutcome ClbClient::DeregisterFunctionTargets(const DeregisterFunctionTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeregisterFunctionTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeregisterFunctionTargetsResponse rsp = DeregisterFunctionTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeregisterFunctionTargetsOutcome(rsp);
+        else
+            return DeregisterFunctionTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeregisterFunctionTargetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::DeregisterFunctionTargetsAsync(const DeregisterFunctionTargetsRequest& request, const DeregisterFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeregisterFunctionTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::DeregisterFunctionTargetsOutcomeCallable ClbClient::DeregisterFunctionTargetsCallable(const DeregisterFunctionTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeregisterFunctionTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeregisterFunctionTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::DeregisterTargetGroupInstancesOutcome ClbClient::DeregisterTargetGroupInstances(const DeregisterTargetGroupInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeregisterTargetGroupInstances");
@@ -2957,6 +3000,49 @@ ClbClient::ModifyTargetWeightOutcomeCallable ClbClient::ModifyTargetWeightCallab
         [this, request]()
         {
             return this->ModifyTargetWeight(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClbClient::RegisterFunctionTargetsOutcome ClbClient::RegisterFunctionTargets(const RegisterFunctionTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "RegisterFunctionTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RegisterFunctionTargetsResponse rsp = RegisterFunctionTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RegisterFunctionTargetsOutcome(rsp);
+        else
+            return RegisterFunctionTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return RegisterFunctionTargetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::RegisterFunctionTargetsAsync(const RegisterFunctionTargetsRequest& request, const RegisterFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RegisterFunctionTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::RegisterFunctionTargetsOutcomeCallable ClbClient::RegisterFunctionTargetsCallable(const RegisterFunctionTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RegisterFunctionTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->RegisterFunctionTargets(request);
         }
     );
 

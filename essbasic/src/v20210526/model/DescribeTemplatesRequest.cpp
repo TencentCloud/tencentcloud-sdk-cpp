@@ -32,7 +32,8 @@ DescribeTemplatesRequest::DescribeTemplatesRequest() :
     m_templateNameHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_withPreviewUrlHasBeenSet(false),
-    m_withPdfUrlHasBeenSet(false)
+    m_withPdfUrlHasBeenSet(false),
+    m_channelTemplateIdHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,14 @@ string DescribeTemplatesRequest::ToJsonString() const
         string key = "WithPdfUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_withPdfUrl, allocator);
+    }
+
+    if (m_channelTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelTemplateId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -291,6 +300,22 @@ void DescribeTemplatesRequest::SetWithPdfUrl(const bool& _withPdfUrl)
 bool DescribeTemplatesRequest::WithPdfUrlHasBeenSet() const
 {
     return m_withPdfUrlHasBeenSet;
+}
+
+string DescribeTemplatesRequest::GetChannelTemplateId() const
+{
+    return m_channelTemplateId;
+}
+
+void DescribeTemplatesRequest::SetChannelTemplateId(const string& _channelTemplateId)
+{
+    m_channelTemplateId = _channelTemplateId;
+    m_channelTemplateIdHasBeenSet = true;
+}
+
+bool DescribeTemplatesRequest::ChannelTemplateIdHasBeenSet() const
+{
+    return m_channelTemplateIdHasBeenSet;
 }
 
 

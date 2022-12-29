@@ -190,6 +190,24 @@ namespace TencentCloud
                      */
                     bool InstanceStorageHasBeenSet() const;
 
+                    /**
+                     * 获取实例角色
+                     * @return InstanceRole 实例角色
+                     */
+                    std::string GetInstanceRole() const;
+
+                    /**
+                     * 设置实例角色
+                     * @param InstanceRole 实例角色
+                     */
+                    void SetInstanceRole(const std::string& _instanceRole);
+
+                    /**
+                     * 判断参数 InstanceRole 是否已赋值
+                     * @return InstanceRole 是否已赋值
+                     */
+                    bool InstanceRoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +257,12 @@ namespace TencentCloud
                      */
                     int64_t m_instanceStorage;
                     bool m_instanceStorageHasBeenSet;
+
+                    /**
+                     * 实例角色
+                     */
+                    std::string m_instanceRole;
+                    bool m_instanceRoleHasBeenSet;
 
                 };
             }

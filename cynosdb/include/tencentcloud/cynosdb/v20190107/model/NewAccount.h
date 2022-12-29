@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 新创建的账号
+                * x08新创建的账号
                 */
                 class NewAccount : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取账户名
-                     * @return AccountName 账户名
+                     * 获取账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * @return AccountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
                      */
                     std::string GetAccountName() const;
 
                     /**
-                     * 设置账户名
-                     * @param AccountName 账户名
+                     * 设置账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
+                     * @param AccountName 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
                      */
                     void SetAccountName(const std::string& _accountName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool AccountNameHasBeenSet() const;
 
                     /**
-                     * 获取密码
-                     * @return AccountPassword 密码
+                     * 获取密码，密码长度范围为8到64个字符
+                     * @return AccountPassword 密码，密码长度范围为8到64个字符
                      */
                     std::string GetAccountPassword() const;
 
                     /**
-                     * 设置密码
-                     * @param AccountPassword 密码
+                     * 设置密码，密码长度范围为8到64个字符
+                     * @param AccountPassword 密码，密码长度范围为8到64个字符
                      */
                     void SetAccountPassword(const std::string& _accountPassword);
 
@@ -118,16 +118,34 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取用户最大连接数，不能大于10240
+                     * @return MaxUserConnections 用户最大连接数，不能大于10240
+                     */
+                    int64_t GetMaxUserConnections() const;
+
+                    /**
+                     * 设置用户最大连接数，不能大于10240
+                     * @param MaxUserConnections 用户最大连接数，不能大于10240
+                     */
+                    void SetMaxUserConnections(const int64_t& _maxUserConnections);
+
+                    /**
+                     * 判断参数 MaxUserConnections 是否已赋值
+                     * @return MaxUserConnections 是否已赋值
+                     */
+                    bool MaxUserConnectionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 账户名
+                     * 账户名，包含字母数字_,以字母开头，字母或数字结尾，长度1-16
                      */
                     std::string m_accountName;
                     bool m_accountNameHasBeenSet;
 
                     /**
-                     * 密码
+                     * 密码，密码长度范围为8到64个字符
                      */
                     std::string m_accountPassword;
                     bool m_accountPasswordHasBeenSet;
@@ -143,6 +161,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 用户最大连接数，不能大于10240
+                     */
+                    int64_t m_maxUserConnections;
+                    bool m_maxUserConnectionsHasBeenSet;
 
                 };
             }

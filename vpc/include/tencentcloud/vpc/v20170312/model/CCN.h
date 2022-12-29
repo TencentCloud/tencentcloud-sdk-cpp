@@ -297,6 +297,28 @@ namespace TencentCloud
                      */
                     bool RouteTableFlagHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RouteBroadcastPolicyFlag 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetRouteBroadcastPolicyFlag() const;
+
+                    /**
+                     * 设置是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RouteBroadcastPolicyFlag 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRouteBroadcastPolicyFlag(const bool& _routeBroadcastPolicyFlag);
+
+                    /**
+                     * 判断参数 RouteBroadcastPolicyFlag 是否已赋值
+                     * @return RouteBroadcastPolicyFlag 是否已赋值
+                     */
+                    bool RouteBroadcastPolicyFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +402,13 @@ namespace TencentCloud
                      */
                     bool m_routeTableFlag;
                     bool m_routeTableFlagHasBeenSet;
+
+                    /**
+                     * 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_routeBroadcastPolicyFlag;
+                    bool m_routeBroadcastPolicyFlagHasBeenSet;
 
                 };
             }
