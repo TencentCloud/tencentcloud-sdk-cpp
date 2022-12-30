@@ -170,6 +170,24 @@ namespace TencentCloud
                      */
                     bool RollbackTablesHasBeenSet() const;
 
+                    /**
+                     * 获取按时间点回档模式，full: 普通; db: 快速; table: 极速  （默认是普通）
+                     * @return RollbackMode 按时间点回档模式，full: 普通; db: 快速; table: 极速  （默认是普通）
+                     */
+                    std::string GetRollbackMode() const;
+
+                    /**
+                     * 设置按时间点回档模式，full: 普通; db: 快速; table: 极速  （默认是普通）
+                     * @param RollbackMode 按时间点回档模式，full: 普通; db: 快速; table: 极速  （默认是普通）
+                     */
+                    void SetRollbackMode(const std::string& _rollbackMode);
+
+                    /**
+                     * 判断参数 RollbackMode 是否已赋值
+                     * @return RollbackMode 是否已赋值
+                     */
+                    bool RollbackModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +231,12 @@ namespace TencentCloud
                      */
                     std::vector<RollbackTable> m_rollbackTables;
                     bool m_rollbackTablesHasBeenSet;
+
+                    /**
+                     * 按时间点回档模式，full: 普通; db: 快速; table: 极速  （默认是普通）
+                     */
+                    std::string m_rollbackMode;
+                    bool m_rollbackModeHasBeenSet;
 
                 };
             }

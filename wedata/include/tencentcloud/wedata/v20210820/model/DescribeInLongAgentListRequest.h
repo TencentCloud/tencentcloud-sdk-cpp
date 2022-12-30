@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool AgentNameHasBeenSet() const;
 
                     /**
-                     * 获取集群类型，1：TKE Agent，2：BOSS SDK，默认：1
-                     * @return AgentType 集群类型，1：TKE Agent，2：BOSS SDK，默认：1
+                     * 获取集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
+                     * @return AgentType 集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
                      */
                     uint64_t GetAgentType() const;
 
                     /**
-                     * 设置集群类型，1：TKE Agent，2：BOSS SDK，默认：1
-                     * @param AgentType 集群类型，1：TKE Agent，2：BOSS SDK，默认：1
+                     * 设置集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
+                     * @param AgentType 集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
                      */
                     void SetAgentType(const uint64_t& _agentType);
 
@@ -204,6 +204,24 @@ namespace TencentCloud
                      */
                     bool LikeHasBeenSet() const;
 
+                    /**
+                     * 获取agent类型【多个用逗号分隔】
+                     * @return AgentTypes agent类型【多个用逗号分隔】
+                     */
+                    std::string GetAgentTypes() const;
+
+                    /**
+                     * 设置agent类型【多个用逗号分隔】
+                     * @param AgentTypes agent类型【多个用逗号分隔】
+                     */
+                    void SetAgentTypes(const std::string& _agentTypes);
+
+                    /**
+                     * 判断参数 AgentTypes 是否已赋值
+                     * @return AgentTypes 是否已赋值
+                     */
+                    bool AgentTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -225,7 +243,7 @@ namespace TencentCloud
                     bool m_agentNameHasBeenSet;
 
                     /**
-                     * 集群类型，1：TKE Agent，2：BOSS SDK，默认：1
+                     * 集群类型，1：TKE Agent，2：BOSS SDK，默认：1，3：CVM，4：自建服务器 【传多个用逗号分割】
                      */
                     uint64_t m_agentType;
                     bool m_agentTypeHasBeenSet;
@@ -259,6 +277,12 @@ namespace TencentCloud
                      */
                     uint64_t m_like;
                     bool m_likeHasBeenSet;
+
+                    /**
+                     * agent类型【多个用逗号分隔】
+                     */
+                    std::string m_agentTypes;
+                    bool m_agentTypesHasBeenSet;
 
                 };
             }

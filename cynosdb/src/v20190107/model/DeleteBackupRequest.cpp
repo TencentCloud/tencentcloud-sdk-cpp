@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteBackupRequest::DeleteBackupRequest() :
     m_clusterIdHasBeenSet(false),
-    m_snapshotIdListHasBeenSet(false)
+    m_snapshotIdListHasBeenSet(false),
+    m_backupIdsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ string DeleteBackupRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_snapshotIdList.begin(); itr != m_snapshotIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_backupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_backupIds.begin(); itr != m_backupIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
@@ -94,6 +108,22 @@ void DeleteBackupRequest::SetSnapshotIdList(const vector<int64_t>& _snapshotIdLi
 bool DeleteBackupRequest::SnapshotIdListHasBeenSet() const
 {
     return m_snapshotIdListHasBeenSet;
+}
+
+vector<int64_t> DeleteBackupRequest::GetBackupIds() const
+{
+    return m_backupIds;
+}
+
+void DeleteBackupRequest::SetBackupIds(const vector<int64_t>& _backupIds)
+{
+    m_backupIds = _backupIds;
+    m_backupIdsHasBeenSet = true;
+}
+
+bool DeleteBackupRequest::BackupIdsHasBeenSet() const
+{
+    return m_backupIdsHasBeenSet;
 }
 
 

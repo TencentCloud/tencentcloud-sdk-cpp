@@ -152,13 +152,17 @@ namespace TencentCloud
 
                     /**
                      * 获取购买时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return BuyTime 购买时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetBuyTime() const;
 
                     /**
                      * 设置购买时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param BuyTime 购买时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetBuyTime(const std::string& _buyTime);
 
@@ -170,13 +174,17 @@ namespace TencentCloud
 
                     /**
                      * 获取过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return ExpireTime 过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param ExpireTime 过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
@@ -298,12 +306,14 @@ namespace TencentCloud
 
                     /**
                      * 购买时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_buyTime;
                     bool m_buyTimeHasBeenSet;
 
                     /**
                      * 过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

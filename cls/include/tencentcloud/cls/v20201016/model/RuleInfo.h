@@ -39,6 +39,7 @@ namespace TencentCloud
             {
                 /**
                 * 索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数
+
                 */
                 class RuleInfo : public AbstractModel
                 {
@@ -50,17 +51,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取全文索引配置
+                     * 获取全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FullText 全文索引配置
+                     * @return FullText 全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FullTextInfo GetFullText() const;
 
                     /**
-                     * 设置全文索引配置
+                     * 设置全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FullText 全文索引配置
+                     * @param FullText 全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFullText(const FullTextInfo& _fullText);
@@ -72,17 +73,17 @@ namespace TencentCloud
                     bool FullTextHasBeenSet() const;
 
                     /**
-                     * 获取键值索引配置
+                     * 获取键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return KeyValue 键值索引配置
+                     * @return KeyValue 键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleKeyValueInfo GetKeyValue() const;
 
                     /**
-                     * 设置键值索引配置
+                     * 设置键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param KeyValue 键值索引配置
+                     * @param KeyValue 键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetKeyValue(const RuleKeyValueInfo& _keyValue);
@@ -94,17 +95,17 @@ namespace TencentCloud
                     bool KeyValueHasBeenSet() const;
 
                     /**
-                     * 获取元字段索引配置
+                     * 获取元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tag 元字段索引配置
+                     * @return Tag 元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleTagInfo GetTag() const;
 
                     /**
-                     * 设置元字段索引配置
+                     * 设置元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag 元字段索引配置
+                     * @param Tag 元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTag(const RuleTagInfo& _tag);
@@ -118,21 +119,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 全文索引配置
+                     * 全文索引配置, 如果为空时代表未开启全文索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FullTextInfo m_fullText;
                     bool m_fullTextHasBeenSet;
 
                     /**
-                     * 键值索引配置
+                     * 键值索引配置，如果为空时代表未开启键值索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleKeyValueInfo m_keyValue;
                     bool m_keyValueHasBeenSet;
 
                     /**
-                     * 元字段索引配置
+                     * 元字段索引配置，如果为空时代表未开启元字段索引
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     RuleTagInfo m_tag;

@@ -102,13 +102,17 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      * @return CreateTime 创建时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      * @param CreateTime 创建时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -164,13 +168,17 @@ namespace TencentCloud
 
                     /**
                      * 获取证书过期时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      * @return CertExpireTime 证书过期时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetCertExpireTime() const;
 
                     /**
                      * 设置证书过期时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      * @param CertExpireTime 证书过期时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetCertExpireTime(const std::string& _certExpireTime);
 
@@ -220,6 +228,7 @@ namespace TencentCloud
 
                     /**
                      * 创建时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
@@ -240,6 +249,7 @@ namespace TencentCloud
 
                     /**
                      * 证书过期时间，UTC 格式。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_certExpireTime;
                     bool m_certExpireTimeHasBeenSet;

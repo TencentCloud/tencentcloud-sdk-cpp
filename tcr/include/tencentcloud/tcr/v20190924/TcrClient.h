@@ -59,8 +59,6 @@
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateRepositoryPersonalResponse.h>
-#include <tencentcloud/tcr/v20190924/model/CreateSecurityPoliciesRequest.h>
-#include <tencentcloud/tcr/v20190924/model/CreateSecurityPoliciesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSecurityPolicyResponse.h>
 #include <tencentcloud/tcr/v20190924/model/CreateSignatureRequest.h>
@@ -307,9 +305,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateRepositoryPersonalResponse> CreateRepositoryPersonalOutcome;
                 typedef std::future<CreateRepositoryPersonalOutcome> CreateRepositoryPersonalOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateRepositoryPersonalRequest&, CreateRepositoryPersonalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRepositoryPersonalAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateSecurityPoliciesResponse> CreateSecurityPoliciesOutcome;
-                typedef std::future<CreateSecurityPoliciesOutcome> CreateSecurityPoliciesOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::CreateSecurityPoliciesRequest&, CreateSecurityPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSecurityPolicyResponse> CreateSecurityPolicyOutcome;
                 typedef std::future<CreateSecurityPolicyOutcome> CreateSecurityPolicyOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::CreateSecurityPolicyRequest&, CreateSecurityPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSecurityPolicyAsyncHandler;
@@ -741,15 +736,6 @@ namespace TencentCloud
                 CreateRepositoryPersonalOutcome CreateRepositoryPersonal(const Model::CreateRepositoryPersonalRequest &request);
                 void CreateRepositoryPersonalAsync(const Model::CreateRepositoryPersonalRequest& request, const CreateRepositoryPersonalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateRepositoryPersonalOutcomeCallable CreateRepositoryPersonalCallable(const Model::CreateRepositoryPersonalRequest& request);
-
-                /**
-                 *创建实例公网访问白名单策略
-                 * @param req CreateSecurityPoliciesRequest
-                 * @return CreateSecurityPoliciesOutcome
-                 */
-                CreateSecurityPoliciesOutcome CreateSecurityPolicies(const Model::CreateSecurityPoliciesRequest &request);
-                void CreateSecurityPoliciesAsync(const Model::CreateSecurityPoliciesRequest& request, const CreateSecurityPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateSecurityPoliciesOutcomeCallable CreateSecurityPoliciesCallable(const Model::CreateSecurityPoliciesRequest& request);
 
                 /**
                  *创建实例公网访问白名单策略

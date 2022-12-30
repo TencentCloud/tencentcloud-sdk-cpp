@@ -814,49 +814,6 @@ TcrClient::CreateRepositoryPersonalOutcomeCallable TcrClient::CreateRepositoryPe
     return task->get_future();
 }
 
-TcrClient::CreateSecurityPoliciesOutcome TcrClient::CreateSecurityPolicies(const CreateSecurityPoliciesRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateSecurityPolicies");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateSecurityPoliciesResponse rsp = CreateSecurityPoliciesResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateSecurityPoliciesOutcome(rsp);
-        else
-            return CreateSecurityPoliciesOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateSecurityPoliciesOutcome(outcome.GetError());
-    }
-}
-
-void TcrClient::CreateSecurityPoliciesAsync(const CreateSecurityPoliciesRequest& request, const CreateSecurityPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateSecurityPolicies(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcrClient::CreateSecurityPoliciesOutcomeCallable TcrClient::CreateSecurityPoliciesCallable(const CreateSecurityPoliciesRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateSecurityPoliciesOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateSecurityPolicies(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TcrClient::CreateSecurityPolicyOutcome TcrClient::CreateSecurityPolicy(const CreateSecurityPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSecurityPolicy");

@@ -156,13 +156,17 @@ namespace TencentCloud
 
                     /**
                      * 获取添加时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return CreateTime 添加时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置添加时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param CreateTime 添加时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -248,6 +252,7 @@ namespace TencentCloud
 
                     /**
                      * 添加时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

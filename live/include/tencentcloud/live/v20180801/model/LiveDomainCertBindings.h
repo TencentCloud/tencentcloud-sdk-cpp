@@ -136,13 +136,17 @@ namespace TencentCloud
 
                     /**
                      * 获取证书过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return CertExpireTime 证书过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetCertExpireTime() const;
 
                     /**
                      * 设置证书过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param CertExpireTime 证书过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetCertExpireTime(const std::string& _certExpireTime);
 
@@ -190,16 +194,20 @@ namespace TencentCloud
 
                     /**
                      * 获取规则最后更新时间。
+注：此字段为北京时间（UTC+8时区）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 规则最后更新时间。
+注：此字段为北京时间（UTC+8时区）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置规则最后更新时间。
+注：此字段为北京时间（UTC+8时区）。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param UpdateTime 规则最后更新时间。
+注：此字段为北京时间（UTC+8时区）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
@@ -242,6 +250,7 @@ namespace TencentCloud
 
                     /**
                      * 证书过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_certExpireTime;
                     bool m_certExpireTimeHasBeenSet;
@@ -260,6 +269,7 @@ namespace TencentCloud
 
                     /**
                      * 规则最后更新时间。
+注：此字段为北京时间（UTC+8时区）。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;

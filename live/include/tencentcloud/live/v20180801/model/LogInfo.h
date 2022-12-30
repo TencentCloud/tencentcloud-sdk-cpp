@@ -84,13 +84,17 @@ namespace TencentCloud
 
                     /**
                      * 获取日志生成时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return LogTime 日志生成时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetLogTime() const;
 
                     /**
                      * 设置日志生成时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param LogTime 日志生成时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetLogTime(const std::string& _logTime);
 
@@ -134,6 +138,7 @@ namespace TencentCloud
 
                     /**
                      * 日志生成时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_logTime;
                     bool m_logTimeHasBeenSet;

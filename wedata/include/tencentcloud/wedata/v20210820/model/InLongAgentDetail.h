@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/CvmAgentStatus.h>
 
 
 namespace TencentCloud
@@ -230,6 +231,72 @@ namespace TencentCloud
                      */
                     bool TaskCountHasBeenSet() const;
 
+                    /**
+                     * 获取采集器组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentGroupId 采集器组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAgentGroupId() const;
+
+                    /**
+                     * 设置采集器组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AgentGroupId 采集器组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAgentGroupId(const std::string& _agentGroupId);
+
+                    /**
+                     * 判断参数 AgentGroupId 是否已赋值
+                     * @return AgentGroupId 是否已赋值
+                     */
+                    bool AgentGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取agent状态统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CvmAgentStatusList agent状态统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CvmAgentStatus> GetCvmAgentStatusList() const;
+
+                    /**
+                     * 设置agent状态统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CvmAgentStatusList agent状态统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCvmAgentStatusList(const std::vector<CvmAgentStatus>& _cvmAgentStatusList);
+
+                    /**
+                     * 判断参数 CvmAgentStatusList 是否已赋值
+                     * @return CvmAgentStatusList 是否已赋值
+                     */
+                    bool CvmAgentStatusListHasBeenSet() const;
+
+                    /**
+                     * 获取agent数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AgentTotal agent数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetAgentTotal() const;
+
+                    /**
+                     * 设置agent数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AgentTotal agent数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAgentTotal(const uint64_t& _agentTotal);
+
+                    /**
+                     * 判断参数 AgentTotal 是否已赋值
+                     * @return AgentTotal 是否已赋值
+                     */
+                    bool AgentTotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -292,6 +359,27 @@ namespace TencentCloud
                      */
                     uint64_t m_taskCount;
                     bool m_taskCountHasBeenSet;
+
+                    /**
+                     * 采集器组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_agentGroupId;
+                    bool m_agentGroupIdHasBeenSet;
+
+                    /**
+                     * agent状态统计
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<CvmAgentStatus> m_cvmAgentStatusList;
+                    bool m_cvmAgentStatusListHasBeenSet;
+
+                    /**
+                     * agent数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_agentTotal;
+                    bool m_agentTotalHasBeenSet;
 
                 };
             }

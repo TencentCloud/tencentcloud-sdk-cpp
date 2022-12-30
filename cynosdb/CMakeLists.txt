@@ -33,6 +33,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/RollBackClusterRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditLogFilesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyParamItem.h
   include/tencentcloud/cynosdb/v20190107/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBinlogDownloadUrlRequest.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAccountsResponse.h
@@ -214,6 +215,7 @@ set(cynosdb_src
   src/v20190107/model/RollBackClusterRequest.cpp
   src/v20190107/model/DescribeAuditLogFilesResponse.cpp
   src/v20190107/model/SwitchClusterZoneResponse.cpp
+  src/v20190107/model/ModifyParamItem.cpp
   src/v20190107/model/AssociateSecurityGroupsRequest.cpp
   src/v20190107/model/DescribeBinlogDownloadUrlRequest.cpp
   src/v20190107/model/CreateAccountsResponse.cpp

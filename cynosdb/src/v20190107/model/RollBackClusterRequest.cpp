@@ -29,7 +29,8 @@ RollBackClusterRequest::RollBackClusterRequest() :
     m_expectTimeHasBeenSet(false),
     m_expectTimeThreshHasBeenSet(false),
     m_rollbackDatabasesHasBeenSet(false),
-    m_rollbackTablesHasBeenSet(false)
+    m_rollbackTablesHasBeenSet(false),
+    m_rollbackModeHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string RollBackClusterRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_rollbackModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RollbackMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_rollbackMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -228,6 +237,22 @@ void RollBackClusterRequest::SetRollbackTables(const vector<RollbackTable>& _rol
 bool RollBackClusterRequest::RollbackTablesHasBeenSet() const
 {
     return m_rollbackTablesHasBeenSet;
+}
+
+string RollBackClusterRequest::GetRollbackMode() const
+{
+    return m_rollbackMode;
+}
+
+void RollBackClusterRequest::SetRollbackMode(const string& _rollbackMode)
+{
+    m_rollbackMode = _rollbackMode;
+    m_rollbackModeHasBeenSet = true;
+}
+
+bool RollBackClusterRequest::RollbackModeHasBeenSet() const
+{
+    return m_rollbackModeHasBeenSet;
 }
 
 

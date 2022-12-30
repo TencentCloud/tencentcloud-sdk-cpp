@@ -25,6 +25,7 @@
 #include <tencentcloud/vod/v20180717/model/AiContentReviewTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/AiAnalysisTaskInput.h>
 #include <tencentcloud/vod/v20180717/model/AiRecognitionTaskInput.h>
+#include <tencentcloud/vod/v20180717/model/ProcedureReviewAudioVideoTaskInput.h>
 
 
 namespace TencentCloud
@@ -119,14 +120,18 @@ namespace TencentCloud
                     bool MediaProcessTaskHasBeenSet() const;
 
                     /**
-                     * 获取AI 内容审核类型任务参数。
-                     * @return AiContentReviewTask AI 内容审核类型任务参数。
+                     * 获取AI 内容审核类型任务参数 \*。
+<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
+                     * @return AiContentReviewTask AI 内容审核类型任务参数 \*。
+<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
                      */
                     AiContentReviewTaskInput GetAiContentReviewTask() const;
 
                     /**
-                     * 设置AI 内容审核类型任务参数。
-                     * @param AiContentReviewTask AI 内容审核类型任务参数。
+                     * 设置AI 内容审核类型任务参数 \*。
+<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
+                     * @param AiContentReviewTask AI 内容审核类型任务参数 \*。
+<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
                      */
                     void SetAiContentReviewTask(const AiContentReviewTaskInput& _aiContentReviewTask);
 
@@ -172,6 +177,24 @@ namespace TencentCloud
                      */
                     bool AiRecognitionTaskHasBeenSet() const;
 
+                    /**
+                     * 获取音视频审核类型任务参数。
+                     * @return ReviewAudioVideoTask 音视频审核类型任务参数。
+                     */
+                    ProcedureReviewAudioVideoTaskInput GetReviewAudioVideoTask() const;
+
+                    /**
+                     * 设置音视频审核类型任务参数。
+                     * @param ReviewAudioVideoTask 音视频审核类型任务参数。
+                     */
+                    void SetReviewAudioVideoTask(const ProcedureReviewAudioVideoTaskInput& _reviewAudioVideoTask);
+
+                    /**
+                     * 判断参数 ReviewAudioVideoTask 是否已赋值
+                     * @return ReviewAudioVideoTask 是否已赋值
+                     */
+                    bool ReviewAudioVideoTaskHasBeenSet() const;
+
                 private:
 
                     /**
@@ -199,7 +222,8 @@ namespace TencentCloud
                     bool m_mediaProcessTaskHasBeenSet;
 
                     /**
-                     * AI 内容审核类型任务参数。
+                     * AI 内容审核类型任务参数 \*。
+<font color=red>\*：该参数用于发起旧版审核，不建议使用。推荐使用 ReviewAudioVideoTask 参数发起审核。</font> 
                      */
                     AiContentReviewTaskInput m_aiContentReviewTask;
                     bool m_aiContentReviewTaskHasBeenSet;
@@ -215,6 +239,12 @@ namespace TencentCloud
                      */
                     AiRecognitionTaskInput m_aiRecognitionTask;
                     bool m_aiRecognitionTaskHasBeenSet;
+
+                    /**
+                     * 音视频审核类型任务参数。
+                     */
+                    ProcedureReviewAudioVideoTaskInput m_reviewAudioVideoTask;
+                    bool m_reviewAudioVideoTaskHasBeenSet;
 
                 };
             }

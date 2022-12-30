@@ -65,6 +65,42 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
+                     * 获取主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     * @return Type 主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     */
+                    std::string GetType() const;
+
+                    /**
+                     * 设置主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     * @param Type 主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     */
+                    void SetType(const std::string& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取订阅组数量
+                     * @return GroupNum 订阅组数量
+                     */
+                    uint64_t GetGroupNum() const;
+
+                    /**
+                     * 设置订阅组数量
+                     * @param GroupNum 订阅组数量
+                     */
+                    void SetGroupNum(const uint64_t& _groupNum);
+
+                    /**
+                     * 判断参数 GroupNum 是否已赋值
+                     * @return GroupNum 是否已赋值
+                     */
+                    bool GroupNumHasBeenSet() const;
+
+                    /**
                      * 获取说明
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Remark 说明
@@ -147,6 +183,18 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 主题的类别，为枚举类型，Normal，GlobalOrder，PartitionedOrder，Transaction，Retry及DeadLetter
+                     */
+                    std::string m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 订阅组数量
+                     */
+                    uint64_t m_groupNum;
+                    bool m_groupNumHasBeenSet;
 
                     /**
                      * 说明

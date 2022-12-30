@@ -253,6 +253,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RecordField.h
   include/tencentcloud/wedata/v20210820/model/DescribeQualityScoreResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeRulesByPageResponse.h
+  include/tencentcloud/wedata/v20210820/model/CvmAgentStatus.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTablesByPageRequest.h
   include/tencentcloud/wedata/v20210820/model/TopTableStatItem.h
   include/tencentcloud/wedata/v20210820/model/DeleteRuleResponse.h
@@ -784,6 +785,7 @@ set(wedata_src
   src/v20210820/model/RecordField.cpp
   src/v20210820/model/DescribeQualityScoreResponse.cpp
   src/v20210820/model/DescribeRulesByPageResponse.cpp
+  src/v20210820/model/CvmAgentStatus.cpp
   src/v20210820/model/DescribeRuleTablesByPageRequest.cpp
   src/v20210820/model/TopTableStatItem.cpp
   src/v20210820/model/DeleteRuleResponse.cpp

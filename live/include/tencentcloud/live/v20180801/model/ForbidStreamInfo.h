@@ -66,13 +66,17 @@ namespace TencentCloud
 
                     /**
                      * 获取创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return CreateTime 创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param CreateTime 创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -84,13 +88,17 @@ namespace TencentCloud
 
                     /**
                      * 获取禁推过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return ExpireTime 禁推过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetExpireTime() const;
 
                     /**
                      * 设置禁推过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param ExpireTime 禁推过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
@@ -154,12 +162,14 @@ namespace TencentCloud
 
                     /**
                      * 创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 禁推过期时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

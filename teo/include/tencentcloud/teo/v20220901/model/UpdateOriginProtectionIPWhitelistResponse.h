@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_TCR_V20190924_MODEL_CREATESECURITYPOLICIESRESPONSE_H_
-#define TENCENTCLOUD_TCR_V20190924_MODEL_CREATESECURITYPOLICIESRESPONSE_H_
+#ifndef TENCENTCLOUD_TEO_V20220901_MODEL_UPDATEORIGINPROTECTIONIPWHITELISTRESPONSE_H_
+#define TENCENTCLOUD_TEO_V20220901_MODEL_UPDATEORIGINPROTECTIONIPWHITELISTRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,43 +25,25 @@
 
 namespace TencentCloud
 {
-    namespace Tcr
+    namespace Teo
     {
-        namespace V20190924
+        namespace V20220901
         {
             namespace Model
             {
                 /**
-                * CreateSecurityPolicies返回参数结构体
+                * UpdateOriginProtectionIPWhitelist返回参数结构体
                 */
-                class CreateSecurityPoliciesResponse : public AbstractModel
+                class UpdateOriginProtectionIPWhitelistResponse : public AbstractModel
                 {
                 public:
-                    CreateSecurityPoliciesResponse();
-                    ~CreateSecurityPoliciesResponse() = default;
+                    UpdateOriginProtectionIPWhitelistResponse();
+                    ~UpdateOriginProtectionIPWhitelistResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
-                    /**
-                     * 获取实例Id
-                     * @return RegistryId 实例Id
-                     */
-                    std::string GetRegistryId() const;
-
-                    /**
-                     * 判断参数 RegistryId 是否已赋值
-                     * @return RegistryId 是否已赋值
-                     */
-                    bool RegistryIdHasBeenSet() const;
-
                 private:
-
-                    /**
-                     * 实例Id
-                     */
-                    std::string m_registryId;
-                    bool m_registryIdHasBeenSet;
 
                 };
             }
@@ -69,4 +51,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_TCR_V20190924_MODEL_CREATESECURITYPOLICIESRESPONSE_H_
+#endif // !TENCENTCLOUD_TEO_V20220901_MODEL_UPDATEORIGINPROTECTIONIPWHITELISTRESPONSE_H_

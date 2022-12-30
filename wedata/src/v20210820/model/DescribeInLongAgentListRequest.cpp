@@ -31,7 +31,8 @@ DescribeInLongAgentListRequest::DescribeInLongAgentListRequest() :
     m_vpcIdHasBeenSet(false),
     m_pageIndexHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_likeHasBeenSet(false)
+    m_likeHasBeenSet(false),
+    m_agentTypesHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string DescribeInLongAgentListRequest::ToJsonString() const
         string key = "Like";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_like, allocator);
+    }
+
+    if (m_agentTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_agentTypes.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +273,22 @@ void DescribeInLongAgentListRequest::SetLike(const uint64_t& _like)
 bool DescribeInLongAgentListRequest::LikeHasBeenSet() const
 {
     return m_likeHasBeenSet;
+}
+
+string DescribeInLongAgentListRequest::GetAgentTypes() const
+{
+    return m_agentTypes;
+}
+
+void DescribeInLongAgentListRequest::SetAgentTypes(const string& _agentTypes)
+{
+    m_agentTypes = _agentTypes;
+    m_agentTypesHasBeenSet = true;
+}
+
+bool DescribeInLongAgentListRequest::AgentTypesHasBeenSet() const
+{
+    return m_agentTypesHasBeenSet;
 }
 
 

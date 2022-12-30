@@ -35,7 +35,9 @@ AddInstancesRequest::AddInstancesRequest() :
     m_autoVoucherHasBeenSet(false),
     m_dbTypeHasBeenSet(false),
     m_orderSourceHasBeenSet(false),
-    m_dealModeHasBeenSet(false)
+    m_dealModeHasBeenSet(false),
+    m_paramTemplateIdHasBeenSet(false),
+    m_instanceParamsHasBeenSet(false)
 {
 }
 
@@ -148,6 +150,29 @@ string AddInstancesRequest::ToJsonString() const
         string key = "DealMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dealMode, allocator);
+    }
+
+    if (m_paramTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParamTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_paramTemplateId, allocator);
+    }
+
+    if (m_instanceParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceParams";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceParams.begin(); itr != m_instanceParams.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -364,6 +389,38 @@ void AddInstancesRequest::SetDealMode(const int64_t& _dealMode)
 bool AddInstancesRequest::DealModeHasBeenSet() const
 {
     return m_dealModeHasBeenSet;
+}
+
+int64_t AddInstancesRequest::GetParamTemplateId() const
+{
+    return m_paramTemplateId;
+}
+
+void AddInstancesRequest::SetParamTemplateId(const int64_t& _paramTemplateId)
+{
+    m_paramTemplateId = _paramTemplateId;
+    m_paramTemplateIdHasBeenSet = true;
+}
+
+bool AddInstancesRequest::ParamTemplateIdHasBeenSet() const
+{
+    return m_paramTemplateIdHasBeenSet;
+}
+
+vector<ModifyParamItem> AddInstancesRequest::GetInstanceParams() const
+{
+    return m_instanceParams;
+}
+
+void AddInstancesRequest::SetInstanceParams(const vector<ModifyParamItem>& _instanceParams)
+{
+    m_instanceParams = _instanceParams;
+    m_instanceParamsHasBeenSet = true;
+}
+
+bool AddInstancesRequest::InstanceParamsHasBeenSet() const
+{
+    return m_instanceParamsHasBeenSet;
 }
 
 

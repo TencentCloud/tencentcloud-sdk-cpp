@@ -14,57 +14,49 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Vod::V20180717::Model;
+using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-DescribeProcedureTemplatesRequest::DescribeProcedureTemplatesRequest() :
-    m_subAppIdHasBeenSet(false),
-    m_namesHasBeenSet(false),
-    m_typeHasBeenSet(false),
+DescribeOriginProtectionRequest::DescribeOriginProtectionRequest() :
+    m_zoneIdsHasBeenSet(false),
+    m_filtersHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
 {
 }
 
-string DescribeProcedureTemplatesRequest::ToJsonString() const
+string DescribeOriginProtectionRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_subAppIdHasBeenSet)
+    if (m_zoneIdsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SubAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_subAppId, allocator);
-    }
-
-    if (m_namesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Names";
+        string key = "ZoneIds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-        for (auto itr = m_names.begin(); itr != m_names.end(); ++itr)
+        for (auto itr = m_zoneIds.begin(); itr != m_zoneIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
-    if (m_typeHasBeenSet)
+    if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Type";
+        string key = "Filters";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_filters.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_offsetHasBeenSet)
@@ -91,82 +83,66 @@ string DescribeProcedureTemplatesRequest::ToJsonString() const
 }
 
 
-uint64_t DescribeProcedureTemplatesRequest::GetSubAppId() const
+vector<string> DescribeOriginProtectionRequest::GetZoneIds() const
 {
-    return m_subAppId;
+    return m_zoneIds;
 }
 
-void DescribeProcedureTemplatesRequest::SetSubAppId(const uint64_t& _subAppId)
+void DescribeOriginProtectionRequest::SetZoneIds(const vector<string>& _zoneIds)
 {
-    m_subAppId = _subAppId;
-    m_subAppIdHasBeenSet = true;
+    m_zoneIds = _zoneIds;
+    m_zoneIdsHasBeenSet = true;
 }
 
-bool DescribeProcedureTemplatesRequest::SubAppIdHasBeenSet() const
+bool DescribeOriginProtectionRequest::ZoneIdsHasBeenSet() const
 {
-    return m_subAppIdHasBeenSet;
+    return m_zoneIdsHasBeenSet;
 }
 
-vector<string> DescribeProcedureTemplatesRequest::GetNames() const
+Filter DescribeOriginProtectionRequest::GetFilters() const
 {
-    return m_names;
+    return m_filters;
 }
 
-void DescribeProcedureTemplatesRequest::SetNames(const vector<string>& _names)
+void DescribeOriginProtectionRequest::SetFilters(const Filter& _filters)
 {
-    m_names = _names;
-    m_namesHasBeenSet = true;
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
 }
 
-bool DescribeProcedureTemplatesRequest::NamesHasBeenSet() const
+bool DescribeOriginProtectionRequest::FiltersHasBeenSet() const
 {
-    return m_namesHasBeenSet;
+    return m_filtersHasBeenSet;
 }
 
-string DescribeProcedureTemplatesRequest::GetType() const
-{
-    return m_type;
-}
-
-void DescribeProcedureTemplatesRequest::SetType(const string& _type)
-{
-    m_type = _type;
-    m_typeHasBeenSet = true;
-}
-
-bool DescribeProcedureTemplatesRequest::TypeHasBeenSet() const
-{
-    return m_typeHasBeenSet;
-}
-
-uint64_t DescribeProcedureTemplatesRequest::GetOffset() const
+int64_t DescribeOriginProtectionRequest::GetOffset() const
 {
     return m_offset;
 }
 
-void DescribeProcedureTemplatesRequest::SetOffset(const uint64_t& _offset)
+void DescribeOriginProtectionRequest::SetOffset(const int64_t& _offset)
 {
     m_offset = _offset;
     m_offsetHasBeenSet = true;
 }
 
-bool DescribeProcedureTemplatesRequest::OffsetHasBeenSet() const
+bool DescribeOriginProtectionRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
 }
 
-uint64_t DescribeProcedureTemplatesRequest::GetLimit() const
+int64_t DescribeOriginProtectionRequest::GetLimit() const
 {
     return m_limit;
 }
 
-void DescribeProcedureTemplatesRequest::SetLimit(const uint64_t& _limit)
+void DescribeOriginProtectionRequest::SetLimit(const int64_t& _limit)
 {
     m_limit = _limit;
     m_limitHasBeenSet = true;
 }
 
-bool DescribeProcedureTemplatesRequest::LimitHasBeenSet() const
+bool DescribeOriginProtectionRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
 }

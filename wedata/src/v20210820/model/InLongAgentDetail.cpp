@@ -30,7 +30,10 @@ InLongAgentDetail::InLongAgentDetail() :
     m_vpcIdHasBeenSet(false),
     m_executorGroupIdHasBeenSet(false),
     m_executorGroupNameHasBeenSet(false),
-    m_taskCountHasBeenSet(false)
+    m_taskCountHasBeenSet(false),
+    m_agentGroupIdHasBeenSet(false),
+    m_cvmAgentStatusListHasBeenSet(false),
+    m_agentTotalHasBeenSet(false)
 {
 }
 
@@ -139,6 +142,46 @@ CoreInternalOutcome InLongAgentDetail::Deserialize(const rapidjson::Value &value
         m_taskCountHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentGroupId") && !value["AgentGroupId"].IsNull())
+    {
+        if (!value["AgentGroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InLongAgentDetail.AgentGroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentGroupId = string(value["AgentGroupId"].GetString());
+        m_agentGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("CvmAgentStatusList") && !value["CvmAgentStatusList"].IsNull())
+    {
+        if (!value["CvmAgentStatusList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InLongAgentDetail.CvmAgentStatusList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CvmAgentStatusList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CvmAgentStatus item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cvmAgentStatusList.push_back(item);
+        }
+        m_cvmAgentStatusListHasBeenSet = true;
+    }
+
+    if (value.HasMember("AgentTotal") && !value["AgentTotal"].IsNull())
+    {
+        if (!value["AgentTotal"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InLongAgentDetail.AgentTotal` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentTotal = value["AgentTotal"].GetUint64();
+        m_agentTotalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +267,37 @@ void InLongAgentDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TaskCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskCount, allocator);
+    }
+
+    if (m_agentGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_agentGroupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cvmAgentStatusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CvmAgentStatusList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cvmAgentStatusList.begin(); itr != m_cvmAgentStatusList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_agentTotalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentTotal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentTotal, allocator);
     }
 
 }
@@ -387,5 +461,53 @@ void InLongAgentDetail::SetTaskCount(const uint64_t& _taskCount)
 bool InLongAgentDetail::TaskCountHasBeenSet() const
 {
     return m_taskCountHasBeenSet;
+}
+
+string InLongAgentDetail::GetAgentGroupId() const
+{
+    return m_agentGroupId;
+}
+
+void InLongAgentDetail::SetAgentGroupId(const string& _agentGroupId)
+{
+    m_agentGroupId = _agentGroupId;
+    m_agentGroupIdHasBeenSet = true;
+}
+
+bool InLongAgentDetail::AgentGroupIdHasBeenSet() const
+{
+    return m_agentGroupIdHasBeenSet;
+}
+
+vector<CvmAgentStatus> InLongAgentDetail::GetCvmAgentStatusList() const
+{
+    return m_cvmAgentStatusList;
+}
+
+void InLongAgentDetail::SetCvmAgentStatusList(const vector<CvmAgentStatus>& _cvmAgentStatusList)
+{
+    m_cvmAgentStatusList = _cvmAgentStatusList;
+    m_cvmAgentStatusListHasBeenSet = true;
+}
+
+bool InLongAgentDetail::CvmAgentStatusListHasBeenSet() const
+{
+    return m_cvmAgentStatusListHasBeenSet;
+}
+
+uint64_t InLongAgentDetail::GetAgentTotal() const
+{
+    return m_agentTotal;
+}
+
+void InLongAgentDetail::SetAgentTotal(const uint64_t& _agentTotal)
+{
+    m_agentTotal = _agentTotal;
+    m_agentTotalHasBeenSet = true;
+}
+
+bool InLongAgentDetail::AgentTotalHasBeenSet() const
+{
+    return m_agentTotalHasBeenSet;
 }
 

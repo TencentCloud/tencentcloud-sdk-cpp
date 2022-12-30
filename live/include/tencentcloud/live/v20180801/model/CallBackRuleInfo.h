@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取规则创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return CreateTime 规则创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置规则创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param CreateTime 规则创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -66,13 +70,17 @@ namespace TencentCloud
 
                     /**
                      * 获取规则更新时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @return UpdateTime 规则更新时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置规则更新时间。
+注：此字段为北京时间（UTC+8时区）。
                      * @param UpdateTime 规则更新时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -140,12 +148,14 @@ namespace TencentCloud
 
                     /**
                      * 规则创建时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
                      * 规则更新时间。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

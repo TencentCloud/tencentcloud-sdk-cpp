@@ -81,6 +81,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeDailyMediaPlayStatResponse.h
   include/tencentcloud/vod/v20180717/model/ModifySubAppIdInfoRequest.h
   include/tencentcloud/vod/v20180717/model/DeletePersonSampleRequest.h
+  include/tencentcloud/vod/v20180717/model/ProcedureReviewAudioVideoTaskInput.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskAsrWordsSegmentItem.h
   include/tencentcloud/vod/v20180717/model/AiRecognitionTaskInput.h
   include/tencentcloud/vod/v20180717/model/AudioTemplateInfo.h
@@ -727,6 +728,7 @@ set(vod_src
   src/v20180717/model/DescribeDailyMediaPlayStatResponse.cpp
   src/v20180717/model/ModifySubAppIdInfoRequest.cpp
   src/v20180717/model/DeletePersonSampleRequest.cpp
+  src/v20180717/model/ProcedureReviewAudioVideoTaskInput.cpp
   src/v20180717/model/AiRecognitionTaskAsrWordsSegmentItem.cpp
   src/v20180717/model/AiRecognitionTaskInput.cpp
   src/v20180717/model/AudioTemplateInfo.cpp

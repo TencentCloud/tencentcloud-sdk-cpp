@@ -29,7 +29,8 @@ CreateProcedureTemplateRequest::CreateProcedureTemplateRequest() :
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
-    m_aiRecognitionTaskHasBeenSet(false)
+    m_aiRecognitionTaskHasBeenSet(false),
+    m_reviewAudioVideoTaskHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,15 @@ string CreateProcedureTemplateRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_aiRecognitionTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_reviewAudioVideoTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewAudioVideoTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reviewAudioVideoTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -218,6 +228,22 @@ void CreateProcedureTemplateRequest::SetAiRecognitionTask(const AiRecognitionTas
 bool CreateProcedureTemplateRequest::AiRecognitionTaskHasBeenSet() const
 {
     return m_aiRecognitionTaskHasBeenSet;
+}
+
+ProcedureReviewAudioVideoTaskInput CreateProcedureTemplateRequest::GetReviewAudioVideoTask() const
+{
+    return m_reviewAudioVideoTask;
+}
+
+void CreateProcedureTemplateRequest::SetReviewAudioVideoTask(const ProcedureReviewAudioVideoTaskInput& _reviewAudioVideoTask)
+{
+    m_reviewAudioVideoTask = _reviewAudioVideoTask;
+    m_reviewAudioVideoTaskHasBeenSet = true;
+}
+
+bool CreateProcedureTemplateRequest::ReviewAudioVideoTaskHasBeenSet() const
+{
+    return m_reviewAudioVideoTaskHasBeenSet;
 }
 
 

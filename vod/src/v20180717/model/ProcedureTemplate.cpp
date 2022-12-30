@@ -29,6 +29,7 @@ ProcedureTemplate::ProcedureTemplate() :
     m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
     m_miniProgramPublishTaskHasBeenSet(false),
+    m_reviewAudioVideoTaskHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false)
 {
@@ -154,6 +155,23 @@ CoreInternalOutcome ProcedureTemplate::Deserialize(const rapidjson::Value &value
         m_miniProgramPublishTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("ReviewAudioVideoTask") && !value["ReviewAudioVideoTask"].IsNull())
+    {
+        if (!value["ReviewAudioVideoTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProcedureTemplate.ReviewAudioVideoTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_reviewAudioVideoTask.Deserialize(value["ReviewAudioVideoTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_reviewAudioVideoTaskHasBeenSet = true;
+    }
+
     if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
     {
         if (!value["CreateTime"].IsString())
@@ -248,6 +266,15 @@ void ProcedureTemplate::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_miniProgramPublishTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reviewAudioVideoTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewAudioVideoTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_reviewAudioVideoTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_createTimeHasBeenSet)
@@ -395,6 +422,22 @@ void ProcedureTemplate::SetMiniProgramPublishTask(const WechatMiniProgramPublish
 bool ProcedureTemplate::MiniProgramPublishTaskHasBeenSet() const
 {
     return m_miniProgramPublishTaskHasBeenSet;
+}
+
+ProcedureReviewAudioVideoTaskInput ProcedureTemplate::GetReviewAudioVideoTask() const
+{
+    return m_reviewAudioVideoTask;
+}
+
+void ProcedureTemplate::SetReviewAudioVideoTask(const ProcedureReviewAudioVideoTaskInput& _reviewAudioVideoTask)
+{
+    m_reviewAudioVideoTask = _reviewAudioVideoTask;
+    m_reviewAudioVideoTaskHasBeenSet = true;
+}
+
+bool ProcedureTemplate::ReviewAudioVideoTaskHasBeenSet() const
+{
+    return m_reviewAudioVideoTaskHasBeenSet;
 }
 
 string ProcedureTemplate::GetCreateTime() const

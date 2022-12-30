@@ -556,7 +556,7 @@ namespace TencentCloud
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
 
                 /**
-                 *显示集群详情
+                 *该接口（DescribeClusterDetail）显示集群详情
                  * @param req DescribeClusterDetailRequest
                  * @return DescribeClusterDetailOutcome
                  */

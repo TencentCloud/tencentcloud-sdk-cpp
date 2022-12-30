@@ -367,6 +367,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeRulesResponse.h
   include/tencentcloud/teo/v20220901/model/TimingDataRecord.h
   include/tencentcloud/teo/v20220901/model/DDoSAttackEventDetailData.h
+  include/tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeBotDataResponse.h
   include/tencentcloud/teo/v20220901/model/Tag.h
   include/tencentcloud/teo/v20220901/model/RateLimitConfig.h
@@ -460,6 +461,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/MaxAge.h
   include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyResponse.h
   include/tencentcloud/teo/v20220901/model/SecEntryValue.h
+  include/tencentcloud/teo/v20220901/model/DiffIPWhitelist.h
   include/tencentcloud/teo/v20220901/model/ModifyAlarmDefaultThresholdResponse.h
   include/tencentcloud/teo/v20220901/model/CreateCredentialRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleRequest.h
@@ -529,6 +531,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DeleteOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/CreateSecurityDropPageResponse.h
   include/tencentcloud/teo/v20220901/model/SpeedTestingMetricData.h
+  include/tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyHostsCertificateResponse.h
   include/tencentcloud/teo/v20220901/model/CreateLogSetRequest.h
@@ -650,6 +653,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataResponse.h
   include/tencentcloud/teo/v20220901/model/ClientIpHeader.h
   include/tencentcloud/teo/v20220901/model/Resource.h
+  include/tencentcloud/teo/v20220901/model/DescribeOriginProtectionRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeBotHitRuleDetailResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventDetailRequest.h
@@ -683,6 +687,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyZoneResponse.h
   include/tencentcloud/teo/v20220901/model/WafGroupRule.h
   include/tencentcloud/teo/v20220901/model/DDoSAclRule.h
+  include/tencentcloud/teo/v20220901/model/OriginProtectionInfo.h
   include/tencentcloud/teo/v20220901/model/DescribeBotTopDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeBotClientIpListRequest.h
   include/tencentcloud/teo/v20220901/model/AliasDomain.h
@@ -711,6 +716,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/SpeedTestingStatistics.h
   include/tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h
   include/tencentcloud/teo/v20220901/model/SecurityType.h
+  include/tencentcloud/teo/v20220901/model/IPWhitelist.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/CheckCertificateResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeWebProtectionDataRequest.h
@@ -719,6 +725,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusResponse.h
   include/tencentcloud/teo/v20220901/model/Identification.h
   include/tencentcloud/teo/v20220901/model/ModifyAlarmConfigRequest.h
+  include/tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.h
   include/tencentcloud/teo/v20220901/model/DeleteLogTopicTaskResponse.h
   include/tencentcloud/teo/v20220901/model/TopEntry.h
   include/tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h
@@ -1106,6 +1113,7 @@ set(teo_src
   src/v20220901/model/DescribeRulesResponse.cpp
   src/v20220901/model/TimingDataRecord.cpp
   src/v20220901/model/DDoSAttackEventDetailData.cpp
+  src/v20220901/model/DescribeOriginProtectionResponse.cpp
   src/v20220901/model/DescribeBotDataResponse.cpp
   src/v20220901/model/Tag.cpp
   src/v20220901/model/RateLimitConfig.cpp
@@ -1199,6 +1207,7 @@ set(teo_src
   src/v20220901/model/MaxAge.cpp
   src/v20220901/model/DeleteApplicationProxyResponse.cpp
   src/v20220901/model/SecEntryValue.cpp
+  src/v20220901/model/DiffIPWhitelist.cpp
   src/v20220901/model/ModifyAlarmDefaultThresholdResponse.cpp
   src/v20220901/model/CreateCredentialRequest.cpp
   src/v20220901/model/ModifyRuleRequest.cpp
@@ -1268,6 +1277,7 @@ set(teo_src
   src/v20220901/model/DeleteOriginGroupResponse.cpp
   src/v20220901/model/CreateSecurityDropPageResponse.cpp
   src/v20220901/model/SpeedTestingMetricData.cpp
+  src/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.cpp
   src/v20220901/model/DescribeIdentificationsRequest.cpp
   src/v20220901/model/ModifyHostsCertificateResponse.cpp
   src/v20220901/model/CreateLogSetRequest.cpp
@@ -1389,6 +1399,7 @@ set(teo_src
   src/v20220901/model/DescribeTopL7AnalysisDataResponse.cpp
   src/v20220901/model/ClientIpHeader.cpp
   src/v20220901/model/Resource.cpp
+  src/v20220901/model/DescribeOriginProtectionRequest.cpp
   src/v20220901/model/DescribeHostsSettingRequest.cpp
   src/v20220901/model/DescribeBotHitRuleDetailResponse.cpp
   src/v20220901/model/DescribeDDoSAttackEventDetailRequest.cpp
@@ -1422,6 +1433,7 @@ set(teo_src
   src/v20220901/model/ModifyZoneResponse.cpp
   src/v20220901/model/WafGroupRule.cpp
   src/v20220901/model/DDoSAclRule.cpp
+  src/v20220901/model/OriginProtectionInfo.cpp
   src/v20220901/model/DescribeBotTopDataResponse.cpp
   src/v20220901/model/DescribeBotClientIpListRequest.cpp
   src/v20220901/model/AliasDomain.cpp
@@ -1450,6 +1462,7 @@ set(teo_src
   src/v20220901/model/SpeedTestingStatistics.cpp
   src/v20220901/model/BindZoneToPlanRequest.cpp
   src/v20220901/model/SecurityType.cpp
+  src/v20220901/model/IPWhitelist.cpp
   src/v20220901/model/ModifyRuleResponse.cpp
   src/v20220901/model/CheckCertificateResponse.cpp
   src/v20220901/model/DescribeWebProtectionDataRequest.cpp
@@ -1458,6 +1471,7 @@ set(teo_src
   src/v20220901/model/ModifyApplicationProxyStatusResponse.cpp
   src/v20220901/model/Identification.cpp
   src/v20220901/model/ModifyAlarmConfigRequest.cpp
+  src/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.cpp
   src/v20220901/model/DeleteLogTopicTaskResponse.cpp
   src/v20220901/model/TopEntry.cpp
   src/v20220901/model/DescribeRulesSettingResponse.cpp

@@ -22,6 +22,8 @@ using namespace std;
 
 RocketMQTopic::RocketMQTopic() :
     m_nameHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_groupNumHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_partitionNumHasBeenSet(false),
     m_createTimeHasBeenSet(false),
@@ -42,6 +44,26 @@ CoreInternalOutcome RocketMQTopic::Deserialize(const rapidjson::Value &value)
         }
         m_name = string(value["Name"].GetString());
         m_nameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Type") && !value["Type"].IsNull())
+    {
+        if (!value["Type"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQTopic.Type` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_type = string(value["Type"].GetString());
+        m_typeHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupNum") && !value["GroupNum"].IsNull())
+    {
+        if (!value["GroupNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQTopic.GroupNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupNum = value["GroupNum"].GetUint64();
+        m_groupNumHasBeenSet = true;
     }
 
     if (value.HasMember("Remark") && !value["Remark"].IsNull())
@@ -99,6 +121,22 @@ void RocketMQTopic::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_groupNum, allocator);
+    }
+
     if (m_remarkHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -148,6 +186,38 @@ void RocketMQTopic::SetName(const string& _name)
 bool RocketMQTopic::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string RocketMQTopic::GetType() const
+{
+    return m_type;
+}
+
+void RocketMQTopic::SetType(const string& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool RocketMQTopic::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+uint64_t RocketMQTopic::GetGroupNum() const
+{
+    return m_groupNum;
+}
+
+void RocketMQTopic::SetGroupNum(const uint64_t& _groupNum)
+{
+    m_groupNum = _groupNum;
+    m_groupNumHasBeenSet = true;
+}
+
+bool RocketMQTopic::GroupNumHasBeenSet() const
+{
+    return m_groupNumHasBeenSet;
 }
 
 string RocketMQTopic::GetRemark() const

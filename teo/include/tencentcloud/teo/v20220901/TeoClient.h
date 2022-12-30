@@ -135,6 +135,8 @@
 #include <tencentcloud/teo/v20220901/model/DescribeLogTopicTasksResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionRequest.h>
+#include <tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataRequest.h>
 #include <tencentcloud/teo/v20220901/model/DescribeOverviewL7DataResponse.h>
 #include <tencentcloud/teo/v20220901/model/DescribePrefetchTasksRequest.h>
@@ -259,6 +261,8 @@
 #include <tencentcloud/teo/v20220901/model/ReclaimZoneResponse.h>
 #include <tencentcloud/teo/v20220901/model/SwitchLogTopicTaskRequest.h>
 #include <tencentcloud/teo/v20220901/model/SwitchLogTopicTaskResponse.h>
+#include <tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.h>
+#include <tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.h>
 
 
 namespace TencentCloud
@@ -441,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOriginGroupResponse> DescribeOriginGroupOutcome;
                 typedef std::future<DescribeOriginGroupOutcome> DescribeOriginGroupOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOriginGroupRequest&, DescribeOriginGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOriginProtectionResponse> DescribeOriginProtectionOutcome;
+                typedef std::future<DescribeOriginProtectionOutcome> DescribeOriginProtectionOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::DescribeOriginProtectionRequest&, DescribeOriginProtectionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOriginProtectionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOverviewL7DataResponse> DescribeOverviewL7DataOutcome;
                 typedef std::future<DescribeOverviewL7DataOutcome> DescribeOverviewL7DataOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::DescribeOverviewL7DataRequest&, DescribeOverviewL7DataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewL7DataAsyncHandler;
@@ -627,6 +634,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchLogTopicTaskResponse> SwitchLogTopicTaskOutcome;
                 typedef std::future<SwitchLogTopicTaskOutcome> SwitchLogTopicTaskOutcomeCallable;
                 typedef std::function<void(const TeoClient*, const Model::SwitchLogTopicTaskRequest&, SwitchLogTopicTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchLogTopicTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateOriginProtectionIPWhitelistResponse> UpdateOriginProtectionIPWhitelistOutcome;
+                typedef std::future<UpdateOriginProtectionIPWhitelistOutcome> UpdateOriginProtectionIPWhitelistOutcomeCallable;
+                typedef std::function<void(const TeoClient*, const Model::UpdateOriginProtectionIPWhitelistRequest&, UpdateOriginProtectionIPWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateOriginProtectionIPWhitelistAsyncHandler;
 
 
 
@@ -1133,6 +1143,15 @@ namespace TencentCloud
                 DescribeOriginGroupOutcome DescribeOriginGroup(const Model::DescribeOriginGroupRequest &request);
                 void DescribeOriginGroupAsync(const Model::DescribeOriginGroupRequest& request, const DescribeOriginGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeOriginGroupOutcomeCallable DescribeOriginGroupCallable(const Model::DescribeOriginGroupRequest& request);
+
+                /**
+                 *查询源站防护信息
+                 * @param req DescribeOriginProtectionRequest
+                 * @return DescribeOriginProtectionOutcome
+                 */
+                DescribeOriginProtectionOutcome DescribeOriginProtection(const Model::DescribeOriginProtectionRequest &request);
+                void DescribeOriginProtectionAsync(const Model::DescribeOriginProtectionRequest& request, const DescribeOriginProtectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOriginProtectionOutcomeCallable DescribeOriginProtectionCallable(const Model::DescribeOriginProtectionRequest& request);
 
                 /**
                  *本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。
@@ -1691,6 +1710,15 @@ namespace TencentCloud
                 SwitchLogTopicTaskOutcome SwitchLogTopicTask(const Model::SwitchLogTopicTaskRequest &request);
                 void SwitchLogTopicTaskAsync(const Model::SwitchLogTopicTaskRequest& request, const SwitchLogTopicTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchLogTopicTaskOutcomeCallable SwitchLogTopicTaskCallable(const Model::SwitchLogTopicTaskRequest& request);
+
+                /**
+                 *更新源站防护IP白名单
+                 * @param req UpdateOriginProtectionIPWhitelistRequest
+                 * @return UpdateOriginProtectionIPWhitelistOutcome
+                 */
+                UpdateOriginProtectionIPWhitelistOutcome UpdateOriginProtectionIPWhitelist(const Model::UpdateOriginProtectionIPWhitelistRequest &request);
+                void UpdateOriginProtectionIPWhitelistAsync(const Model::UpdateOriginProtectionIPWhitelistRequest& request, const UpdateOriginProtectionIPWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateOriginProtectionIPWhitelistOutcomeCallable UpdateOriginProtectionIPWhitelistCallable(const Model::UpdateOriginProtectionIPWhitelistRequest& request);
 
             };
         }

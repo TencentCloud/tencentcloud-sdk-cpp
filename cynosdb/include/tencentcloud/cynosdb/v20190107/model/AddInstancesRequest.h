@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyParamItem.h>
 
 
 namespace TencentCloud
@@ -280,6 +281,42 @@ namespace TencentCloud
                      */
                     bool DealModeHasBeenSet() const;
 
+                    /**
+                     * 获取参数模版ID
+                     * @return ParamTemplateId 参数模版ID
+                     */
+                    int64_t GetParamTemplateId() const;
+
+                    /**
+                     * 设置参数模版ID
+                     * @param ParamTemplateId 参数模版ID
+                     */
+                    void SetParamTemplateId(const int64_t& _paramTemplateId);
+
+                    /**
+                     * 判断参数 ParamTemplateId 是否已赋值
+                     * @return ParamTemplateId 是否已赋值
+                     */
+                    bool ParamTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     * @return InstanceParams 参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     */
+                    std::vector<ModifyParamItem> GetInstanceParams() const;
+
+                    /**
+                     * 设置参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     * @param InstanceParams 参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     */
+                    void SetInstanceParams(const std::vector<ModifyParamItem>& _instanceParams);
+
+                    /**
+                     * 判断参数 InstanceParams 是否已赋值
+                     * @return InstanceParams 是否已赋值
+                     */
+                    bool InstanceParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -360,6 +397,18 @@ namespace TencentCloud
                      */
                     int64_t m_dealMode;
                     bool m_dealModeHasBeenSet;
+
+                    /**
+                     * 参数模版ID
+                     */
+                    int64_t m_paramTemplateId;
+                    bool m_paramTemplateIdHasBeenSet;
+
+                    /**
+                     * 参数列表，ParamTemplateId 传入时InstanceParams才有效
+                     */
+                    std::vector<ModifyParamItem> m_instanceParams;
+                    bool m_instanceParamsHasBeenSet;
 
                 };
             }

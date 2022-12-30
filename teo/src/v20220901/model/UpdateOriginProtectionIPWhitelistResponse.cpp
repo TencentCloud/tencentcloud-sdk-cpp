@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcr/v20190924/model/CreateSecurityPoliciesResponse.h>
+#include <tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-CreateSecurityPoliciesResponse::CreateSecurityPoliciesResponse() :
-    m_registryIdHasBeenSet(false)
+UpdateOriginProtectionIPWhitelistResponse::UpdateOriginProtectionIPWhitelistResponse()
 {
 }
 
-CoreInternalOutcome CreateSecurityPoliciesResponse::Deserialize(const string &payload)
+CoreInternalOutcome UpdateOriginProtectionIPWhitelistResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome CreateSecurityPoliciesResponse::Deserialize(const string &pa
     }
 
 
-    if (rsp.HasMember("RegistryId") && !rsp["RegistryId"].IsNull())
-    {
-        if (!rsp["RegistryId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RegistryId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_registryId = string(rsp["RegistryId"].GetString());
-        m_registryIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string CreateSecurityPoliciesResponse::ToJsonString() const
+string UpdateOriginProtectionIPWhitelistResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_registryIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RegistryId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_registryId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string CreateSecurityPoliciesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateSecurityPoliciesResponse::GetRegistryId() const
-{
-    return m_registryId;
-}
-
-bool CreateSecurityPoliciesResponse::RegistryIdHasBeenSet() const
-{
-    return m_registryIdHasBeenSet;
-}
 
 

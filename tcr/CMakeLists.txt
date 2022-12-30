@@ -75,7 +75,6 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeWebhookTriggerLogResponse.h
   include/tencentcloud/tcr/v20190924/model/DownloadHelmChartResponse.h
   include/tencentcloud/tcr/v20190924/model/ManageReplicationRequest.h
-  include/tencentcloud/tcr/v20190924/model/CreateSecurityPoliciesRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/ModifySecurityPolicyRequest.h
@@ -152,7 +151,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/RegistryStatus.h
   include/tencentcloud/tcr/v20190924/model/SecurityPolicy.h
   include/tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalRequest.h
-  include/tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceTokenResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalResp.h
   include/tencentcloud/tcr/v20190924/model/DeleteImagePersonalRequest.h
@@ -187,7 +186,6 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeInstanceTokenRequest.h
   include/tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespaceRequest.h
-  include/tencentcloud/tcr/v20190924/model/CreateSecurityPoliciesResponse.h
   include/tencentcloud/tcr/v20190924/model/BatchDeleteRepositoryPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/GCJobInfo.h
   include/tencentcloud/tcr/v20190924/model/Registry.h
@@ -279,7 +277,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespacePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteImmutableTagRulesRequest.h
-  include/tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateSignaturePolicyRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleRequest.h
   include/tencentcloud/tcr/v20190924/model/ReplicationFilter.h
@@ -355,7 +353,6 @@ set(tcr_src
   src/v20190924/model/DescribeWebhookTriggerLogResponse.cpp
   src/v20190924/model/DownloadHelmChartResponse.cpp
   src/v20190924/model/ManageReplicationRequest.cpp
-  src/v20190924/model/CreateSecurityPoliciesRequest.cpp
   src/v20190924/model/DeleteWebhookTriggerResponse.cpp
   src/v20190924/model/DeleteImageLifecycleGlobalPersonalResponse.cpp
   src/v20190924/model/ModifySecurityPolicyRequest.cpp
@@ -432,7 +429,7 @@ set(tcr_src
   src/v20190924/model/RegistryStatus.cpp
   src/v20190924/model/SecurityPolicy.cpp
   src/v20190924/model/DescribeNamespacePersonalRequest.cpp
-  src/v20190924/model/DeleteRepositoryPersonalResponse.cpp
+  src/v20190924/model/CreateWebhookTriggerResponse.cpp
   src/v20190924/model/CreateInstanceTokenResponse.cpp
   src/v20190924/model/DescribeApplicationTriggerLogPersonalResp.cpp
   src/v20190924/model/DeleteImagePersonalRequest.cpp
@@ -467,7 +464,6 @@ set(tcr_src
   src/v20190924/model/DescribeInstanceTokenRequest.cpp
   src/v20190924/model/BatchDeleteRepositoryPersonalResponse.cpp
   src/v20190924/model/CreateNamespaceRequest.cpp
-  src/v20190924/model/CreateSecurityPoliciesResponse.cpp
   src/v20190924/model/BatchDeleteRepositoryPersonalRequest.cpp
   src/v20190924/model/GCJobInfo.cpp
   src/v20190924/model/Registry.cpp
@@ -559,7 +555,7 @@ set(tcr_src
   src/v20190924/model/DescribeTagRetentionExecutionResponse.cpp
   src/v20190924/model/CreateNamespacePersonalRequest.cpp
   src/v20190924/model/DeleteImmutableTagRulesRequest.cpp
-  src/v20190924/model/CreateWebhookTriggerResponse.cpp
+  src/v20190924/model/DeleteRepositoryPersonalResponse.cpp
   src/v20190924/model/CreateSignaturePolicyRequest.cpp
   src/v20190924/model/DeleteTagRetentionRuleRequest.cpp
   src/v20190924/model/ReplicationFilter.cpp

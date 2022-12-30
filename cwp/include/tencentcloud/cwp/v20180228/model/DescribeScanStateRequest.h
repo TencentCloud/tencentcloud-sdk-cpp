@@ -63,17 +63,17 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤参数;
-<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要<li/>
+<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
                      * @return Filters 过滤参数;
-<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要<li/>
+<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
                      */
                     std::vector<Filters> GetFilters() const;
 
                     /**
                      * 设置过滤参数;
-<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要<li/>
+<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
                      * @param Filters 过滤参数;
-<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要<li/>
+<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
@@ -93,7 +93,7 @@ namespace TencentCloud
 
                     /**
                      * 过滤参数;
-<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要<li/>
+<li>StrategyId 基线策略ID ,仅ModuleType 为 Baseline 时需要</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

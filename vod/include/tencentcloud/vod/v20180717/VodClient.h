@@ -2111,7 +2111,7 @@ namespace TencentCloud
                 RemoveWatermarkOutcomeCallable RemoveWatermarkCallable(const Model::RemoveWatermarkRequest& request);
 
                 /**
-                 *重新设置用户自定义任务流模板的内容。  
+                 *重新设置用户自定义任务流模板的内容。
                  * @param req ResetProcedureTemplateRequest
                  * @return ResetProcedureTemplateOutcome
                  */
