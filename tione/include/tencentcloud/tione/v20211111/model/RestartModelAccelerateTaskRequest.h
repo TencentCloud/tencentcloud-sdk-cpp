@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool ModelInputPathHasBeenSet() const;
 
                     /**
-                     * 获取优化级别（NO_LOSS/FP16），默认FP16
-                     * @return OptimizationLevel 优化级别（NO_LOSS/FP16），默认FP16
+                     * 获取优化级别（NO_LOSS/FP16/INT8），默认FP16
+                     * @return OptimizationLevel 优化级别（NO_LOSS/FP16/INT8），默认FP16
                      */
                     std::string GetOptimizationLevel() const;
 
                     /**
-                     * 设置优化级别（NO_LOSS/FP16），默认FP16
-                     * @param OptimizationLevel 优化级别（NO_LOSS/FP16），默认FP16
+                     * 设置优化级别（NO_LOSS/FP16/INT8），默认FP16
+                     * @param OptimizationLevel 优化级别（NO_LOSS/FP16/INT8），默认FP16
                      */
                     void SetOptimizationLevel(const std::string& _optimizationLevel);
 
@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool TensorInfosHasBeenSet() const;
 
                     /**
-                     * 获取GPU类型（T4/V100），默认T4
-                     * @return GPUType GPU类型（T4/V100），默认T4
+                     * 获取GPU类型（T4/V100/A10），默认T4
+                     * @return GPUType GPU类型（T4/V100/A10），默认T4
                      */
                     std::string GetGPUType() const;
 
                     /**
-                     * 设置GPU类型（T4/V100），默认T4
-                     * @param GPUType GPU类型（T4/V100），默认T4
+                     * 设置GPU类型（T4/V100/A10），默认T4
+                     * @param GPUType GPU类型（T4/V100/A10），默认T4
                      */
                     void SetGPUType(const std::string& _gPUType);
 
@@ -439,7 +439,7 @@ namespace TencentCloud
                     bool m_modelInputPathHasBeenSet;
 
                     /**
-                     * 优化级别（NO_LOSS/FP16），默认FP16
+                     * 优化级别（NO_LOSS/FP16/INT8），默认FP16
                      */
                     std::string m_optimizationLevel;
                     bool m_optimizationLevelHasBeenSet;
@@ -475,7 +475,7 @@ namespace TencentCloud
                     bool m_tensorInfosHasBeenSet;
 
                     /**
-                     * GPU类型（T4/V100），默认T4
+                     * GPU类型（T4/V100/A10），默认T4
                      */
                     std::string m_gPUType;
                     bool m_gPUTypeHasBeenSet;

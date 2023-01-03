@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/NoticeBindPolicys.h>
 
 
 namespace TencentCloud
@@ -78,6 +79,24 @@ namespace TencentCloud
                      */
                     bool NoticeIdsHasBeenSet() const;
 
+                    /**
+                     * 获取通知模版与策略绑定关系
+                     * @return NoticeBindPolicys 通知模版与策略绑定关系
+                     */
+                    std::vector<NoticeBindPolicys> GetNoticeBindPolicys() const;
+
+                    /**
+                     * 设置通知模版与策略绑定关系
+                     * @param NoticeBindPolicys 通知模版与策略绑定关系
+                     */
+                    void SetNoticeBindPolicys(const std::vector<NoticeBindPolicys>& _noticeBindPolicys);
+
+                    /**
+                     * 判断参数 NoticeBindPolicys 是否已赋值
+                     * @return NoticeBindPolicys 是否已赋值
+                     */
+                    bool NoticeBindPolicysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +110,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_noticeIds;
                     bool m_noticeIdsHasBeenSet;
+
+                    /**
+                     * 通知模版与策略绑定关系
+                     */
+                    std::vector<NoticeBindPolicys> m_noticeBindPolicys;
+                    bool m_noticeBindPolicysHasBeenSet;
 
                 };
             }

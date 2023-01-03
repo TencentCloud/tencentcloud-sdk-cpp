@@ -22,7 +22,8 @@ using namespace std;
 
 ReviewAudioVideoTaskInput::ReviewAudioVideoTaskInput() :
     m_fileIdHasBeenSet(false),
-    m_definitionHasBeenSet(false)
+    m_definitionHasBeenSet(false),
+    m_reviewContentsHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome ReviewAudioVideoTaskInput::Deserialize(const rapidjson::Valu
         m_definitionHasBeenSet = true;
     }
 
+    if (value.HasMember("ReviewContents") && !value["ReviewContents"].IsNull())
+    {
+        if (!value["ReviewContents"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ReviewAudioVideoTaskInput.ReviewContents` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ReviewContents"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_reviewContents.push_back((*itr).GetString());
+        }
+        m_reviewContentsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void ReviewAudioVideoTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Definition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_definition, allocator);
+    }
+
+    if (m_reviewContentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewContents";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_reviewContents.begin(); itr != m_reviewContents.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void ReviewAudioVideoTaskInput::SetDefinition(const uint64_t& _definition)
 bool ReviewAudioVideoTaskInput::DefinitionHasBeenSet() const
 {
     return m_definitionHasBeenSet;
+}
+
+vector<string> ReviewAudioVideoTaskInput::GetReviewContents() const
+{
+    return m_reviewContents;
+}
+
+void ReviewAudioVideoTaskInput::SetReviewContents(const vector<string>& _reviewContents)
+{
+    m_reviewContents = _reviewContents;
+    m_reviewContentsHasBeenSet = true;
+}
+
+bool ReviewAudioVideoTaskInput::ReviewContentsHasBeenSet() const
+{
+    return m_reviewContentsHasBeenSet;
 }
 

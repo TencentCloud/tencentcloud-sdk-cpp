@@ -37,7 +37,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 视频转拉任务信息
+                * 拉取上传任务信息
                 */
                 class PullUploadTask : public AbstractModel
                 {
@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取转拉上传任务 ID。
-                     * @return TaskId 转拉上传任务 ID。
+                     * 获取拉取上传任务 ID。
+                     * @return TaskId 拉取上传任务 ID。
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置转拉上传任务 ID。
-                     * @param TaskId 转拉上传任务 ID。
+                     * 设置拉取上传任务 ID。
+                     * @param TaskId 拉取上传任务 ID。
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -141,14 +141,14 @@ namespace TencentCloud
                     bool MessageHasBeenSet() const;
 
                     /**
-                     * 获取转拉上传完成后生成的视频 ID。
-                     * @return FileId 转拉上传完成后生成的视频 ID。
+                     * 获取拉取上传完成后生成的视频 ID。
+                     * @return FileId 拉取上传完成后生成的视频 ID。
                      */
                     std::string GetFileId() const;
 
                     /**
-                     * 设置转拉上传完成后生成的视频 ID。
-                     * @param FileId 转拉上传完成后生成的视频 ID。
+                     * 设置拉取上传完成后生成的视频 ID。
+                     * @param FileId 拉取上传完成后生成的视频 ID。
                      */
                     void SetFileId(const std::string& _fileId);
 
@@ -159,17 +159,17 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取转拉完成后生成的媒体文件基础信息。
+                     * 获取拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MediaBasicInfo 转拉完成后生成的媒体文件基础信息。
+                     * @return MediaBasicInfo 拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaBasicInfo GetMediaBasicInfo() const;
 
                     /**
-                     * 设置转拉完成后生成的媒体文件基础信息。
+                     * 设置拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MediaBasicInfo 转拉完成后生成的媒体文件基础信息。
+                     * @param MediaBasicInfo 拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMediaBasicInfo(const MediaBasicInfo& _mediaBasicInfo);
@@ -199,14 +199,14 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取转拉上传完成后生成的播放地址。
-                     * @return FileUrl 转拉上传完成后生成的播放地址。
+                     * 获取拉取上传完成后生成的播放地址。
+                     * @return FileUrl 拉取上传完成后生成的播放地址。
                      */
                     std::string GetFileUrl() const;
 
                     /**
-                     * 设置转拉上传完成后生成的播放地址。
-                     * @param FileUrl 转拉上传完成后生成的播放地址。
+                     * 设置拉取上传完成后生成的播放地址。
+                     * @param FileUrl 拉取上传完成后生成的播放地址。
                      */
                     void SetFileUrl(const std::string& _fileUrl);
 
@@ -217,14 +217,14 @@ namespace TencentCloud
                     bool FileUrlHasBeenSet() const;
 
                     /**
-                     * 获取若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
-                     * @return ProcedureTaskId 若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
+                     * 获取任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * @return ProcedureTaskId 任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
-                     * 设置若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
-                     * @param ProcedureTaskId 若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
+                     * 设置任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * @param ProcedureTaskId 任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
 
@@ -235,14 +235,32 @@ namespace TencentCloud
                     bool ProcedureTaskIdHasBeenSet() const;
 
                     /**
-                     * 获取来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @return SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 获取任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * @return ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     */
+                    std::string GetReviewAudioVideoTaskId() const;
+
+                    /**
+                     * 设置任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * @param ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     */
+                    void SetReviewAudioVideoTaskId(const std::string& _reviewAudioVideoTaskId);
+
+                    /**
+                     * 判断参数 ReviewAudioVideoTaskId 是否已赋值
+                     * @return ReviewAudioVideoTaskId 是否已赋值
+                     */
+                    bool ReviewAudioVideoTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
+                     * @return SessionContext 来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
                      */
                     std::string GetSessionContext() const;
 
                     /**
-                     * 设置来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
-                     * @param SessionContext 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 设置来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
+                     * @param SessionContext 来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
                      */
                     void SetSessionContext(const std::string& _sessionContext);
 
@@ -271,14 +289,14 @@ namespace TencentCloud
                     bool SessionIdHasBeenSet() const;
 
                     /**
-                     * 获取转拉任务进度，取值范围 [0-100] 。
-                     * @return Progress 转拉任务进度，取值范围 [0-100] 。
+                     * 获取拉取上传进度，取值范围 [0-100] 。
+                     * @return Progress 拉取上传进度，取值范围 [0-100] 。
                      */
                     int64_t GetProgress() const;
 
                     /**
-                     * 设置转拉任务进度，取值范围 [0-100] 。
-                     * @param Progress 转拉任务进度，取值范围 [0-100] 。
+                     * 设置拉取上传进度，取值范围 [0-100] 。
+                     * @param Progress 拉取上传进度，取值范围 [0-100] 。
                      */
                     void SetProgress(const int64_t& _progress);
 
@@ -291,7 +309,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 转拉上传任务 ID。
+                     * 拉取上传任务 ID。
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;
@@ -320,13 +338,13 @@ namespace TencentCloud
                     bool m_messageHasBeenSet;
 
                     /**
-                     * 转拉上传完成后生成的视频 ID。
+                     * 拉取上传完成后生成的视频 ID。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 转拉完成后生成的媒体文件基础信息。
+                     * 拉取上传完成后生成的媒体文件基础信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     MediaBasicInfo m_mediaBasicInfo;
@@ -339,19 +357,25 @@ namespace TencentCloud
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 转拉上传完成后生成的播放地址。
+                     * 拉取上传完成后生成的播放地址。
                      */
                     std::string m_fileUrl;
                     bool m_fileUrlHasBeenSet;
 
                     /**
-                     * 若转拉上传时指定了视频处理流程，则该参数为流程任务 ID。
+                     * 任务类型为 Procedure 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;
 
                     /**
-                     * 来源上下文，用于透传用户请求信息，任务流状态变更回调将返回该字段值，最长 1000 个字符。
+                     * 任务类型为 ReviewAudioVideo 的任务 ID。若[拉取上传](https://cloud.tencent.com/document/api/266/35575)时指定了媒体后续任务操作(Procedure)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     */
+                    std::string m_reviewAudioVideoTaskId;
+                    bool m_reviewAudioVideoTaskIdHasBeenSet;
+
+                    /**
+                     * 来源上下文，用于透传用户请求信息，[URL 拉取视频上传完成](https://cloud.tencent.com/document/product/266/7831)将返回该字段值，最长 1000 个字符。
                      */
                     std::string m_sessionContext;
                     bool m_sessionContextHasBeenSet;
@@ -363,7 +387,7 @@ namespace TencentCloud
                     bool m_sessionIdHasBeenSet;
 
                     /**
-                     * 转拉任务进度，取值范围 [0-100] 。
+                     * 拉取上传进度，取值范围 [0-100] 。
                      */
                     int64_t m_progress;
                     bool m_progressHasBeenSet;

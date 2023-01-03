@@ -190,6 +190,78 @@ namespace TencentCloud
                      */
                     bool LogAlarmReqInfoHasBeenSet() const;
 
+                    /**
+                     * 获取模版id，专供prom使用
+                     * @return NoticeIds 模版id，专供prom使用
+                     */
+                    std::vector<std::string> GetNoticeIds() const;
+
+                    /**
+                     * 设置模版id，专供prom使用
+                     * @param NoticeIds 模版id，专供prom使用
+                     */
+                    void SetNoticeIds(const std::vector<std::string>& _noticeIds);
+
+                    /**
+                     * 判断参数 NoticeIds 是否已赋值
+                     * @return NoticeIds 是否已赋值
+                     */
+                    bool NoticeIdsHasBeenSet() const;
+
+                    /**
+                     * 获取启停状态，0=停用，1=启用
+                     * @return Enable 启停状态，0=停用，1=启用
+                     */
+                    int64_t GetEnable() const;
+
+                    /**
+                     * 设置启停状态，0=停用，1=启用
+                     * @param Enable 启停状态，0=停用，1=启用
+                     */
+                    void SetEnable(const int64_t& _enable);
+
+                    /**
+                     * 判断参数 Enable 是否已赋值
+                     * @return Enable 是否已赋值
+                     */
+                    bool EnableHasBeenSet() const;
+
+                    /**
+                     * 获取专供prom策略名称
+                     * @return PolicyName 专供prom策略名称
+                     */
+                    std::string GetPolicyName() const;
+
+                    /**
+                     * 设置专供prom策略名称
+                     * @param PolicyName 专供prom策略名称
+                     */
+                    void SetPolicyName(const std::string& _policyName);
+
+                    /**
+                     * 判断参数 PolicyName 是否已赋值
+                     * @return PolicyName 是否已赋值
+                     */
+                    bool PolicyNameHasBeenSet() const;
+
+                    /**
+                     * 获取事件配置的告警
+                     * @return EbSubject 事件配置的告警
+                     */
+                    std::string GetEbSubject() const;
+
+                    /**
+                     * 设置事件配置的告警
+                     * @param EbSubject 事件配置的告警
+                     */
+                    void SetEbSubject(const std::string& _ebSubject);
+
+                    /**
+                     * 判断参数 EbSubject 是否已赋值
+                     * @return EbSubject 是否已赋值
+                     */
+                    bool EbSubjectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +311,30 @@ namespace TencentCloud
                      */
                     LogAlarmReq m_logAlarmReqInfo;
                     bool m_logAlarmReqInfoHasBeenSet;
+
+                    /**
+                     * 模版id，专供prom使用
+                     */
+                    std::vector<std::string> m_noticeIds;
+                    bool m_noticeIdsHasBeenSet;
+
+                    /**
+                     * 启停状态，0=停用，1=启用
+                     */
+                    int64_t m_enable;
+                    bool m_enableHasBeenSet;
+
+                    /**
+                     * 专供prom策略名称
+                     */
+                    std::string m_policyName;
+                    bool m_policyNameHasBeenSet;
+
+                    /**
+                     * 事件配置的告警
+                     */
+                    std::string m_ebSubject;
+                    bool m_ebSubjectHasBeenSet;
 
                 };
             }

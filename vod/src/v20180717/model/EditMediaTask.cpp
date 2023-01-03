@@ -31,6 +31,7 @@ EditMediaTask::EditMediaTask() :
     m_outputHasBeenSet(false),
     m_metaDataHasBeenSet(false),
     m_procedureTaskIdHasBeenSet(false),
+    m_reviewAudioVideoTaskIdHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false)
 {
@@ -162,6 +163,16 @@ CoreInternalOutcome EditMediaTask::Deserialize(const rapidjson::Value &value)
         m_procedureTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ReviewAudioVideoTaskId") && !value["ReviewAudioVideoTaskId"].IsNull())
+    {
+        if (!value["ReviewAudioVideoTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EditMediaTask.ReviewAudioVideoTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reviewAudioVideoTaskId = string(value["ReviewAudioVideoTaskId"].GetString());
+        m_reviewAudioVideoTaskIdHasBeenSet = true;
+    }
+
     if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
     {
         if (!value["SessionId"].IsString())
@@ -270,6 +281,14 @@ void EditMediaTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ProcedureTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_procedureTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviewAudioVideoTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewAudioVideoTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reviewAudioVideoTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sessionIdHasBeenSet)
@@ -449,6 +468,22 @@ void EditMediaTask::SetProcedureTaskId(const string& _procedureTaskId)
 bool EditMediaTask::ProcedureTaskIdHasBeenSet() const
 {
     return m_procedureTaskIdHasBeenSet;
+}
+
+string EditMediaTask::GetReviewAudioVideoTaskId() const
+{
+    return m_reviewAudioVideoTaskId;
+}
+
+void EditMediaTask::SetReviewAudioVideoTaskId(const string& _reviewAudioVideoTaskId)
+{
+    m_reviewAudioVideoTaskId = _reviewAudioVideoTaskId;
+    m_reviewAudioVideoTaskIdHasBeenSet = true;
+}
+
+bool EditMediaTask::ReviewAudioVideoTaskIdHasBeenSet() const
+{
+    return m_reviewAudioVideoTaskIdHasBeenSet;
 }
 
 string EditMediaTask::GetSessionId() const

@@ -413,7 +413,9 @@ namespace TencentCloud
                 EnableHashOutcomeCallable EnableHashCallable(const Model::EnableHashRequest& request);
 
                 /**
-                 *本机构DID详情
+                 *该接口已废弃
+
+本机构DID详情
                  * @param req GetAgencyTDidRequest
                  * @return GetAgencyTDidOutcome
                  */
@@ -722,7 +724,9 @@ namespace TencentCloud
                 VerifyCredentialOutcomeCallable VerifyCredentialCallable(const Model::VerifyCredentialRequest& request);
 
                 /**
-                 *验证购买
+                 *该接口已废弃
+
+验证购买
                  * @param req VerifyPurchaseRequest
                  * @return VerifyPurchaseOutcome
                  */

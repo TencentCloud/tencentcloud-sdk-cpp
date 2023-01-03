@@ -25,7 +25,9 @@ using namespace std;
 UnBindingAllPolicyObjectRequest::UnBindingAllPolicyObjectRequest() :
     m_moduleHasBeenSet(false),
     m_groupIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false)
+    m_policyIdHasBeenSet(false),
+    m_ebSubjectHasBeenSet(false),
+    m_ebEventFlagHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string UnBindingAllPolicyObjectRequest::ToJsonString() const
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ebSubjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbSubject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ebSubject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ebEventFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbEventFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ebEventFlag, allocator);
     }
 
 
@@ -114,6 +132,38 @@ void UnBindingAllPolicyObjectRequest::SetPolicyId(const string& _policyId)
 bool UnBindingAllPolicyObjectRequest::PolicyIdHasBeenSet() const
 {
     return m_policyIdHasBeenSet;
+}
+
+string UnBindingAllPolicyObjectRequest::GetEbSubject() const
+{
+    return m_ebSubject;
+}
+
+void UnBindingAllPolicyObjectRequest::SetEbSubject(const string& _ebSubject)
+{
+    m_ebSubject = _ebSubject;
+    m_ebSubjectHasBeenSet = true;
+}
+
+bool UnBindingAllPolicyObjectRequest::EbSubjectHasBeenSet() const
+{
+    return m_ebSubjectHasBeenSet;
+}
+
+int64_t UnBindingAllPolicyObjectRequest::GetEbEventFlag() const
+{
+    return m_ebEventFlag;
+}
+
+void UnBindingAllPolicyObjectRequest::SetEbEventFlag(const int64_t& _ebEventFlag)
+{
+    m_ebEventFlag = _ebEventFlag;
+    m_ebEventFlagHasBeenSet = true;
+}
+
+bool UnBindingAllPolicyObjectRequest::EbEventFlagHasBeenSet() const
+{
+    return m_ebEventFlagHasBeenSet;
 }
 
 

@@ -30,7 +30,8 @@ ModifyAlarmNoticeRequest::ModifyAlarmNoticeRequest() :
     m_noticeIdHasBeenSet(false),
     m_userNoticesHasBeenSet(false),
     m_uRLNoticesHasBeenSet(false),
-    m_cLSNoticesHasBeenSet(false)
+    m_cLSNoticesHasBeenSet(false),
+    m_policyIdsHasBeenSet(false)
 {
 }
 
@@ -123,6 +124,19 @@ string ModifyAlarmNoticeRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_policyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_policyIds.begin(); itr != m_policyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -260,6 +274,22 @@ void ModifyAlarmNoticeRequest::SetCLSNotices(const vector<CLSNotice>& _cLSNotice
 bool ModifyAlarmNoticeRequest::CLSNoticesHasBeenSet() const
 {
     return m_cLSNoticesHasBeenSet;
+}
+
+vector<string> ModifyAlarmNoticeRequest::GetPolicyIds() const
+{
+    return m_policyIds;
+}
+
+void ModifyAlarmNoticeRequest::SetPolicyIds(const vector<string>& _policyIds)
+{
+    m_policyIds = _policyIds;
+    m_policyIdsHasBeenSet = true;
+}
+
+bool ModifyAlarmNoticeRequest::PolicyIdsHasBeenSet() const
+{
+    return m_policyIdsHasBeenSet;
 }
 
 

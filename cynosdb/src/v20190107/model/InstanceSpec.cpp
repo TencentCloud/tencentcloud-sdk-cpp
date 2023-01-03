@@ -29,7 +29,8 @@ InstanceSpec::InstanceSpec() :
     m_machineTypeHasBeenSet(false),
     m_maxIopsHasBeenSet(false),
     m_maxIoBandWidthHasBeenSet(false),
-    m_zoneStockInfosHasBeenSet(false)
+    m_zoneStockInfosHasBeenSet(false),
+    m_stockCountHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome InstanceSpec::Deserialize(const rapidjson::Value &value)
         m_zoneStockInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("StockCount") && !value["StockCount"].IsNull())
+    {
+        if (!value["StockCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceSpec.StockCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stockCount = value["StockCount"].GetInt64();
+        m_stockCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -222,6 +233,14 @@ void InstanceSpec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_stockCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StockCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stockCount, allocator);
     }
 
 }
@@ -369,5 +388,21 @@ void InstanceSpec::SetZoneStockInfos(const vector<ZoneStockInfo>& _zoneStockInfo
 bool InstanceSpec::ZoneStockInfosHasBeenSet() const
 {
     return m_zoneStockInfosHasBeenSet;
+}
+
+int64_t InstanceSpec::GetStockCount() const
+{
+    return m_stockCount;
+}
+
+void InstanceSpec::SetStockCount(const int64_t& _stockCount)
+{
+    m_stockCount = _stockCount;
+    m_stockCountHasBeenSet = true;
+}
+
+bool InstanceSpec::StockCountHasBeenSet() const
+{
+    return m_stockCountHasBeenSet;
 }
 

@@ -83,6 +83,49 @@ MongodbClient::AssignProjectOutcomeCallable MongodbClient::AssignProjectCallable
     return task->get_future();
 }
 
+MongodbClient::CreateAccountUserOutcome MongodbClient::CreateAccountUser(const CreateAccountUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccountUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccountUserResponse rsp = CreateAccountUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccountUserOutcome(rsp);
+        else
+            return CreateAccountUserOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccountUserOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::CreateAccountUserAsync(const CreateAccountUserRequest& request, const CreateAccountUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccountUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::CreateAccountUserOutcomeCallable MongodbClient::CreateAccountUserCallable(const CreateAccountUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccountUserOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccountUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::CreateBackupDBInstanceOutcome MongodbClient::CreateBackupDBInstance(const CreateBackupDBInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBackupDBInstance");

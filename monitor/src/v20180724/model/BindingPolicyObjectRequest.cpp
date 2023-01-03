@@ -27,7 +27,9 @@ BindingPolicyObjectRequest::BindingPolicyObjectRequest() :
     m_groupIdHasBeenSet(false),
     m_policyIdHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
-    m_dimensionsHasBeenSet(false)
+    m_dimensionsHasBeenSet(false),
+    m_ebSubjectHasBeenSet(false),
+    m_ebEventFlagHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,22 @@ string BindingPolicyObjectRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ebSubjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbSubject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ebSubject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ebEventFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbEventFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ebEventFlag, allocator);
     }
 
 
@@ -171,6 +189,38 @@ void BindingPolicyObjectRequest::SetDimensions(const vector<BindingPolicyObjectD
 bool BindingPolicyObjectRequest::DimensionsHasBeenSet() const
 {
     return m_dimensionsHasBeenSet;
+}
+
+string BindingPolicyObjectRequest::GetEbSubject() const
+{
+    return m_ebSubject;
+}
+
+void BindingPolicyObjectRequest::SetEbSubject(const string& _ebSubject)
+{
+    m_ebSubject = _ebSubject;
+    m_ebSubjectHasBeenSet = true;
+}
+
+bool BindingPolicyObjectRequest::EbSubjectHasBeenSet() const
+{
+    return m_ebSubjectHasBeenSet;
+}
+
+int64_t BindingPolicyObjectRequest::GetEbEventFlag() const
+{
+    return m_ebEventFlag;
+}
+
+void BindingPolicyObjectRequest::SetEbEventFlag(const int64_t& _ebEventFlag)
+{
+    m_ebEventFlag = _ebEventFlag;
+    m_ebEventFlagHasBeenSet = true;
+}
+
+bool BindingPolicyObjectRequest::EbEventFlagHasBeenSet() const
+{
+    return m_ebEventFlagHasBeenSet;
 }
 
 

@@ -189,6 +189,24 @@ namespace TencentCloud
                      */
                     bool CLSNoticesHasBeenSet() const;
 
+                    /**
+                     * 获取告警通知模板绑定的告警策略ID列表
+                     * @return PolicyIds 告警通知模板绑定的告警策略ID列表
+                     */
+                    std::vector<std::string> GetPolicyIds() const;
+
+                    /**
+                     * 设置告警通知模板绑定的告警策略ID列表
+                     * @param PolicyIds 告警通知模板绑定的告警策略ID列表
+                     */
+                    void SetPolicyIds(const std::vector<std::string>& _policyIds);
+
+                    /**
+                     * 判断参数 PolicyIds 是否已赋值
+                     * @return PolicyIds 是否已赋值
+                     */
+                    bool PolicyIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -238,6 +256,12 @@ namespace TencentCloud
                      */
                     std::vector<CLSNotice> m_cLSNotices;
                     bool m_cLSNoticesHasBeenSet;
+
+                    /**
+                     * 告警通知模板绑定的告警策略ID列表
+                     */
+                    std::vector<std::string> m_policyIds;
+                    bool m_policyIdsHasBeenSet;
 
                 };
             }

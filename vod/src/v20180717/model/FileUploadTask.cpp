@@ -24,6 +24,7 @@ FileUploadTask::FileUploadTask() :
     m_fileIdHasBeenSet(false),
     m_mediaBasicInfoHasBeenSet(false),
     m_procedureTaskIdHasBeenSet(false),
+    m_reviewAudioVideoTaskIdHasBeenSet(false),
     m_metaDataHasBeenSet(false)
 {
 }
@@ -68,6 +69,16 @@ CoreInternalOutcome FileUploadTask::Deserialize(const rapidjson::Value &value)
         }
         m_procedureTaskId = string(value["ProcedureTaskId"].GetString());
         m_procedureTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReviewAudioVideoTaskId") && !value["ReviewAudioVideoTaskId"].IsNull())
+    {
+        if (!value["ReviewAudioVideoTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileUploadTask.ReviewAudioVideoTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reviewAudioVideoTaskId = string(value["ReviewAudioVideoTaskId"].GetString());
+        m_reviewAudioVideoTaskIdHasBeenSet = true;
     }
 
     if (value.HasMember("MetaData") && !value["MetaData"].IsNull())
@@ -117,6 +128,14 @@ void FileUploadTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ProcedureTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_procedureTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviewAudioVideoTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewAudioVideoTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reviewAudioVideoTaskId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_metaDataHasBeenSet)
@@ -177,6 +196,22 @@ void FileUploadTask::SetProcedureTaskId(const string& _procedureTaskId)
 bool FileUploadTask::ProcedureTaskIdHasBeenSet() const
 {
     return m_procedureTaskIdHasBeenSet;
+}
+
+string FileUploadTask::GetReviewAudioVideoTaskId() const
+{
+    return m_reviewAudioVideoTaskId;
+}
+
+void FileUploadTask::SetReviewAudioVideoTaskId(const string& _reviewAudioVideoTaskId)
+{
+    m_reviewAudioVideoTaskId = _reviewAudioVideoTaskId;
+    m_reviewAudioVideoTaskIdHasBeenSet = true;
+}
+
+bool FileUploadTask::ReviewAudioVideoTaskIdHasBeenSet() const
+{
+    return m_reviewAudioVideoTaskIdHasBeenSet;
 }
 
 MediaMetaData FileUploadTask::GetMetaData() const

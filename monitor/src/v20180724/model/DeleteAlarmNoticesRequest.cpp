@@ -24,7 +24,8 @@ using namespace std;
 
 DeleteAlarmNoticesRequest::DeleteAlarmNoticesRequest() :
     m_moduleHasBeenSet(false),
-    m_noticeIdsHasBeenSet(false)
+    m_noticeIdsHasBeenSet(false),
+    m_noticeBindPolicysHasBeenSet(false)
 {
 }
 
@@ -53,6 +54,21 @@ string DeleteAlarmNoticesRequest::ToJsonString() const
         for (auto itr = m_noticeIds.begin(); itr != m_noticeIds.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_noticeBindPolicysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeBindPolicys";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_noticeBindPolicys.begin(); itr != m_noticeBindPolicys.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -94,6 +110,22 @@ void DeleteAlarmNoticesRequest::SetNoticeIds(const vector<string>& _noticeIds)
 bool DeleteAlarmNoticesRequest::NoticeIdsHasBeenSet() const
 {
     return m_noticeIdsHasBeenSet;
+}
+
+vector<NoticeBindPolicys> DeleteAlarmNoticesRequest::GetNoticeBindPolicys() const
+{
+    return m_noticeBindPolicys;
+}
+
+void DeleteAlarmNoticesRequest::SetNoticeBindPolicys(const vector<NoticeBindPolicys>& _noticeBindPolicys)
+{
+    m_noticeBindPolicys = _noticeBindPolicys;
+    m_noticeBindPolicysHasBeenSet = true;
+}
+
+bool DeleteAlarmNoticesRequest::NoticeBindPolicysHasBeenSet() const
+{
+    return m_noticeBindPolicysHasBeenSet;
 }
 
 

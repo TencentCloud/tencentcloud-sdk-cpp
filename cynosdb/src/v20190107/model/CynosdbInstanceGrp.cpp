@@ -35,7 +35,13 @@ CynosdbInstanceGrp::CynosdbInstanceGrp() :
     m_wanIPHasBeenSet(false),
     m_wanPortHasBeenSet(false),
     m_wanStatusHasBeenSet(false),
-    m_instanceSetHasBeenSet(false)
+    m_instanceSetHasBeenSet(false),
+    m_uniqVpcIdHasBeenSet(false),
+    m_uniqSubnetIdHasBeenSet(false),
+    m_oldAddrInfoHasBeenSet(false),
+    m_processingTasksHasBeenSet(false),
+    m_tasksHasBeenSet(false),
+    m_netServiceIdHasBeenSet(false)
 {
 }
 
@@ -204,6 +210,86 @@ CoreInternalOutcome CynosdbInstanceGrp::Deserialize(const rapidjson::Value &valu
         m_instanceSetHasBeenSet = true;
     }
 
+    if (value.HasMember("UniqVpcId") && !value["UniqVpcId"].IsNull())
+    {
+        if (!value["UniqVpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.UniqVpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqVpcId = string(value["UniqVpcId"].GetString());
+        m_uniqVpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("UniqSubnetId") && !value["UniqSubnetId"].IsNull())
+    {
+        if (!value["UniqSubnetId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.UniqSubnetId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uniqSubnetId = string(value["UniqSubnetId"].GetString());
+        m_uniqSubnetIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("OldAddrInfo") && !value["OldAddrInfo"].IsNull())
+    {
+        if (!value["OldAddrInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.OldAddrInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_oldAddrInfo.Deserialize(value["OldAddrInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_oldAddrInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProcessingTasks") && !value["ProcessingTasks"].IsNull())
+    {
+        if (!value["ProcessingTasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.ProcessingTasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ProcessingTasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_processingTasks.push_back((*itr).GetString());
+        }
+        m_processingTasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tasks") && !value["Tasks"].IsNull())
+    {
+        if (!value["Tasks"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.Tasks` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tasks"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ObjectTask item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tasks.push_back(item);
+        }
+        m_tasksHasBeenSet = true;
+    }
+
+    if (value.HasMember("NetServiceId") && !value["NetServiceId"].IsNull())
+    {
+        if (!value["NetServiceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstanceGrp.NetServiceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_netServiceId = value["NetServiceId"].GetInt64();
+        m_netServiceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +422,67 @@ void CynosdbInstanceGrp::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_uniqVpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqVpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqVpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_uniqSubnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UniqSubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uniqSubnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_oldAddrInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OldAddrInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_oldAddrInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_processingTasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProcessingTasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_processingTasks.begin(); itr != m_processingTasks.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tasksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tasks";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tasks.begin(); itr != m_tasks.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_netServiceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetServiceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_netServiceId, allocator);
     }
 
 }
@@ -579,5 +726,101 @@ void CynosdbInstanceGrp::SetInstanceSet(const vector<CynosdbInstance>& _instance
 bool CynosdbInstanceGrp::InstanceSetHasBeenSet() const
 {
     return m_instanceSetHasBeenSet;
+}
+
+string CynosdbInstanceGrp::GetUniqVpcId() const
+{
+    return m_uniqVpcId;
+}
+
+void CynosdbInstanceGrp::SetUniqVpcId(const string& _uniqVpcId)
+{
+    m_uniqVpcId = _uniqVpcId;
+    m_uniqVpcIdHasBeenSet = true;
+}
+
+bool CynosdbInstanceGrp::UniqVpcIdHasBeenSet() const
+{
+    return m_uniqVpcIdHasBeenSet;
+}
+
+string CynosdbInstanceGrp::GetUniqSubnetId() const
+{
+    return m_uniqSubnetId;
+}
+
+void CynosdbInstanceGrp::SetUniqSubnetId(const string& _uniqSubnetId)
+{
+    m_uniqSubnetId = _uniqSubnetId;
+    m_uniqSubnetIdHasBeenSet = true;
+}
+
+bool CynosdbInstanceGrp::UniqSubnetIdHasBeenSet() const
+{
+    return m_uniqSubnetIdHasBeenSet;
+}
+
+OldAddrInfo CynosdbInstanceGrp::GetOldAddrInfo() const
+{
+    return m_oldAddrInfo;
+}
+
+void CynosdbInstanceGrp::SetOldAddrInfo(const OldAddrInfo& _oldAddrInfo)
+{
+    m_oldAddrInfo = _oldAddrInfo;
+    m_oldAddrInfoHasBeenSet = true;
+}
+
+bool CynosdbInstanceGrp::OldAddrInfoHasBeenSet() const
+{
+    return m_oldAddrInfoHasBeenSet;
+}
+
+vector<string> CynosdbInstanceGrp::GetProcessingTasks() const
+{
+    return m_processingTasks;
+}
+
+void CynosdbInstanceGrp::SetProcessingTasks(const vector<string>& _processingTasks)
+{
+    m_processingTasks = _processingTasks;
+    m_processingTasksHasBeenSet = true;
+}
+
+bool CynosdbInstanceGrp::ProcessingTasksHasBeenSet() const
+{
+    return m_processingTasksHasBeenSet;
+}
+
+vector<ObjectTask> CynosdbInstanceGrp::GetTasks() const
+{
+    return m_tasks;
+}
+
+void CynosdbInstanceGrp::SetTasks(const vector<ObjectTask>& _tasks)
+{
+    m_tasks = _tasks;
+    m_tasksHasBeenSet = true;
+}
+
+bool CynosdbInstanceGrp::TasksHasBeenSet() const
+{
+    return m_tasksHasBeenSet;
+}
+
+int64_t CynosdbInstanceGrp::GetNetServiceId() const
+{
+    return m_netServiceId;
+}
+
+void CynosdbInstanceGrp::SetNetServiceId(const int64_t& _netServiceId)
+{
+    m_netServiceId = _netServiceId;
+    m_netServiceIdHasBeenSet = true;
+}
+
+bool CynosdbInstanceGrp::NetServiceIdHasBeenSet() const
+{
+    return m_netServiceIdHasBeenSet;
 }
 

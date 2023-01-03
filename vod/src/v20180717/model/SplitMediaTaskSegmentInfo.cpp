@@ -23,7 +23,8 @@ using namespace std;
 SplitMediaTaskSegmentInfo::SplitMediaTaskSegmentInfo() :
     m_inputHasBeenSet(false),
     m_outputHasBeenSet(false),
-    m_procedureTaskIdHasBeenSet(false)
+    m_procedureTaskIdHasBeenSet(false),
+    m_reviewAudioVideoTaskIdHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ CoreInternalOutcome SplitMediaTaskSegmentInfo::Deserialize(const rapidjson::Valu
         m_procedureTaskIdHasBeenSet = true;
     }
 
+    if (value.HasMember("ReviewAudioVideoTaskId") && !value["ReviewAudioVideoTaskId"].IsNull())
+    {
+        if (!value["ReviewAudioVideoTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SplitMediaTaskSegmentInfo.ReviewAudioVideoTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reviewAudioVideoTaskId = string(value["ReviewAudioVideoTaskId"].GetString());
+        m_reviewAudioVideoTaskIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ void SplitMediaTaskSegmentInfo::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "ProcedureTaskId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_procedureTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reviewAudioVideoTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewAudioVideoTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reviewAudioVideoTaskId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -158,5 +177,21 @@ void SplitMediaTaskSegmentInfo::SetProcedureTaskId(const string& _procedureTaskI
 bool SplitMediaTaskSegmentInfo::ProcedureTaskIdHasBeenSet() const
 {
     return m_procedureTaskIdHasBeenSet;
+}
+
+string SplitMediaTaskSegmentInfo::GetReviewAudioVideoTaskId() const
+{
+    return m_reviewAudioVideoTaskId;
+}
+
+void SplitMediaTaskSegmentInfo::SetReviewAudioVideoTaskId(const string& _reviewAudioVideoTaskId)
+{
+    m_reviewAudioVideoTaskId = _reviewAudioVideoTaskId;
+    m_reviewAudioVideoTaskIdHasBeenSet = true;
+}
+
+bool SplitMediaTaskSegmentInfo::ReviewAudioVideoTaskIdHasBeenSet() const
+{
+    return m_reviewAudioVideoTaskIdHasBeenSet;
 }
 

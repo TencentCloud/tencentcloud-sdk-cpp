@@ -212,6 +212,49 @@ CynosdbClient::AssociateSecurityGroupsOutcomeCallable CynosdbClient::AssociateSe
     return task->get_future();
 }
 
+CynosdbClient::CloseAuditServiceOutcome CynosdbClient::CloseAuditService(const CloseAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloseAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloseAuditServiceResponse rsp = CloseAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloseAuditServiceOutcome(rsp);
+        else
+            return CloseAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return CloseAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CloseAuditServiceAsync(const CloseAuditServiceRequest& request, const CloseAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloseAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CloseAuditServiceOutcomeCallable CynosdbClient::CloseAuditServiceCallable(const CloseAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloseAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->CloseAuditService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::CreateAccountsOutcome CynosdbClient::CreateAccounts(const CreateAccountsRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAccounts");
@@ -291,6 +334,49 @@ CynosdbClient::CreateAuditLogFileOutcomeCallable CynosdbClient::CreateAuditLogFi
         [this, request]()
         {
             return this->CreateAuditLogFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::CreateAuditRuleTemplateOutcome CynosdbClient::CreateAuditRuleTemplate(const CreateAuditRuleTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditRuleTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditRuleTemplateResponse rsp = CreateAuditRuleTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditRuleTemplateOutcome(rsp);
+        else
+            return CreateAuditRuleTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditRuleTemplateOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::CreateAuditRuleTemplateAsync(const CreateAuditRuleTemplateRequest& request, const CreateAuditRuleTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAuditRuleTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::CreateAuditRuleTemplateOutcomeCallable CynosdbClient::CreateAuditRuleTemplateCallable(const CreateAuditRuleTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAuditRuleTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAuditRuleTemplate(request);
         }
     );
 
@@ -420,6 +506,49 @@ CynosdbClient::DeleteAuditLogFileOutcomeCallable CynosdbClient::DeleteAuditLogFi
         [this, request]()
         {
             return this->DeleteAuditLogFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DeleteAuditRuleTemplatesOutcome CynosdbClient::DeleteAuditRuleTemplates(const DeleteAuditRuleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditRuleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditRuleTemplatesResponse rsp = DeleteAuditRuleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditRuleTemplatesOutcome(rsp);
+        else
+            return DeleteAuditRuleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditRuleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DeleteAuditRuleTemplatesAsync(const DeleteAuditRuleTemplatesRequest& request, const DeleteAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAuditRuleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DeleteAuditRuleTemplatesOutcomeCallable CynosdbClient::DeleteAuditRuleTemplatesCallable(const DeleteAuditRuleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAuditRuleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAuditRuleTemplates(request);
         }
     );
 
@@ -635,6 +764,92 @@ CynosdbClient::DescribeAuditLogsOutcomeCallable CynosdbClient::DescribeAuditLogs
         [this, request]()
         {
             return this->DescribeAuditLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeAuditRuleTemplatesOutcome CynosdbClient::DescribeAuditRuleTemplates(const DescribeAuditRuleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditRuleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditRuleTemplatesResponse rsp = DescribeAuditRuleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditRuleTemplatesOutcome(rsp);
+        else
+            return DescribeAuditRuleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditRuleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeAuditRuleTemplatesAsync(const DescribeAuditRuleTemplatesRequest& request, const DescribeAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditRuleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeAuditRuleTemplatesOutcomeCallable CynosdbClient::DescribeAuditRuleTemplatesCallable(const DescribeAuditRuleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditRuleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditRuleTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::DescribeAuditRuleWithInstanceIdsOutcome CynosdbClient::DescribeAuditRuleWithInstanceIds(const DescribeAuditRuleWithInstanceIdsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditRuleWithInstanceIds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditRuleWithInstanceIdsResponse rsp = DescribeAuditRuleWithInstanceIdsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditRuleWithInstanceIdsOutcome(rsp);
+        else
+            return DescribeAuditRuleWithInstanceIdsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditRuleWithInstanceIdsOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeAuditRuleWithInstanceIdsAsync(const DescribeAuditRuleWithInstanceIdsRequest& request, const DescribeAuditRuleWithInstanceIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditRuleWithInstanceIds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeAuditRuleWithInstanceIdsOutcomeCallable CynosdbClient::DescribeAuditRuleWithInstanceIdsCallable(const DescribeAuditRuleWithInstanceIdsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditRuleWithInstanceIdsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditRuleWithInstanceIds(request);
         }
     );
 
@@ -1932,6 +2147,92 @@ CynosdbClient::ModifyAccountParamsOutcomeCallable CynosdbClient::ModifyAccountPa
     return task->get_future();
 }
 
+CynosdbClient::ModifyAuditRuleTemplatesOutcome CynosdbClient::ModifyAuditRuleTemplates(const ModifyAuditRuleTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditRuleTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditRuleTemplatesResponse rsp = ModifyAuditRuleTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditRuleTemplatesOutcome(rsp);
+        else
+            return ModifyAuditRuleTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditRuleTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyAuditRuleTemplatesAsync(const ModifyAuditRuleTemplatesRequest& request, const ModifyAuditRuleTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAuditRuleTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyAuditRuleTemplatesOutcomeCallable CynosdbClient::ModifyAuditRuleTemplatesCallable(const ModifyAuditRuleTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAuditRuleTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAuditRuleTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::ModifyAuditServiceOutcome CynosdbClient::ModifyAuditService(const ModifyAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAuditServiceResponse rsp = ModifyAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAuditServiceOutcome(rsp);
+        else
+            return ModifyAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyAuditServiceAsync(const ModifyAuditServiceRequest& request, const ModifyAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyAuditServiceOutcomeCallable CynosdbClient::ModifyAuditServiceCallable(const ModifyAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAuditService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::ModifyBackupConfigOutcome CynosdbClient::ModifyBackupConfig(const ModifyBackupConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBackupConfig");
@@ -2398,6 +2699,49 @@ CynosdbClient::OfflineInstanceOutcomeCallable CynosdbClient::OfflineInstanceCall
         [this, request]()
         {
             return this->OfflineInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CynosdbClient::OpenAuditServiceOutcome CynosdbClient::OpenAuditService(const OpenAuditServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenAuditService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenAuditServiceResponse rsp = OpenAuditServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenAuditServiceOutcome(rsp);
+        else
+            return OpenAuditServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenAuditServiceOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::OpenAuditServiceAsync(const OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenAuditService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::OpenAuditServiceOutcomeCallable CynosdbClient::OpenAuditServiceCallable(const OpenAuditServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenAuditServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenAuditService(request);
         }
     );
 

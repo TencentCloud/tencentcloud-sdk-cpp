@@ -27,7 +27,9 @@ UnBindingPolicyObjectRequest::UnBindingPolicyObjectRequest() :
     m_groupIdHasBeenSet(false),
     m_uniqueIdHasBeenSet(false),
     m_instanceGroupIdHasBeenSet(false),
-    m_policyIdHasBeenSet(false)
+    m_policyIdHasBeenSet(false),
+    m_ebSubjectHasBeenSet(false),
+    m_ebEventFlagHasBeenSet(false)
 {
 }
 
@@ -81,6 +83,22 @@ string UnBindingPolicyObjectRequest::ToJsonString() const
         string key = "PolicyId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_policyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ebSubjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbSubject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ebSubject.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ebEventFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbEventFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ebEventFlag, allocator);
     }
 
 
@@ -169,6 +187,38 @@ void UnBindingPolicyObjectRequest::SetPolicyId(const string& _policyId)
 bool UnBindingPolicyObjectRequest::PolicyIdHasBeenSet() const
 {
     return m_policyIdHasBeenSet;
+}
+
+string UnBindingPolicyObjectRequest::GetEbSubject() const
+{
+    return m_ebSubject;
+}
+
+void UnBindingPolicyObjectRequest::SetEbSubject(const string& _ebSubject)
+{
+    m_ebSubject = _ebSubject;
+    m_ebSubjectHasBeenSet = true;
+}
+
+bool UnBindingPolicyObjectRequest::EbSubjectHasBeenSet() const
+{
+    return m_ebSubjectHasBeenSet;
+}
+
+int64_t UnBindingPolicyObjectRequest::GetEbEventFlag() const
+{
+    return m_ebEventFlag;
+}
+
+void UnBindingPolicyObjectRequest::SetEbEventFlag(const int64_t& _ebEventFlag)
+{
+    m_ebEventFlag = _ebEventFlag;
+    m_ebEventFlagHasBeenSet = true;
+}
+
+bool UnBindingPolicyObjectRequest::EbEventFlagHasBeenSet() const
+{
+    return m_ebEventFlagHasBeenSet;
 }
 
 

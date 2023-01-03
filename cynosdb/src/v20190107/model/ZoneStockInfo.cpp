@@ -22,7 +22,8 @@ using namespace std;
 
 ZoneStockInfo::ZoneStockInfo() :
     m_zoneHasBeenSet(false),
-    m_hasStockHasBeenSet(false)
+    m_hasStockHasBeenSet(false),
+    m_stockCountHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome ZoneStockInfo::Deserialize(const rapidjson::Value &value)
         m_hasStockHasBeenSet = true;
     }
 
+    if (value.HasMember("StockCount") && !value["StockCount"].IsNull())
+    {
+        if (!value["StockCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneStockInfo.StockCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stockCount = value["StockCount"].GetInt64();
+        m_stockCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void ZoneStockInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "HasStock";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hasStock, allocator);
+    }
+
+    if (m_stockCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StockCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stockCount, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void ZoneStockInfo::SetHasStock(const bool& _hasStock)
 bool ZoneStockInfo::HasStockHasBeenSet() const
 {
     return m_hasStockHasBeenSet;
+}
+
+int64_t ZoneStockInfo::GetStockCount() const
+{
+    return m_stockCount;
+}
+
+void ZoneStockInfo::SetStockCount(const int64_t& _stockCount)
+{
+    m_stockCount = _stockCount;
+    m_stockCountHasBeenSet = true;
+}
+
+bool ZoneStockInfo::StockCountHasBeenSet() const
+{
+    return m_stockCountHasBeenSet;
 }
 

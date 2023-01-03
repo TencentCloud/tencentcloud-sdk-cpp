@@ -132,6 +132,42 @@ namespace TencentCloud
                      */
                     bool PolicyIdHasBeenSet() const;
 
+                    /**
+                     * 获取事件配置的告警
+                     * @return EbSubject 事件配置的告警
+                     */
+                    std::string GetEbSubject() const;
+
+                    /**
+                     * 设置事件配置的告警
+                     * @param EbSubject 事件配置的告警
+                     */
+                    void SetEbSubject(const std::string& _ebSubject);
+
+                    /**
+                     * 判断参数 EbSubject 是否已赋值
+                     * @return EbSubject 是否已赋值
+                     */
+                    bool EbSubjectHasBeenSet() const;
+
+                    /**
+                     * 获取是否配置了事件告警
+                     * @return EbEventFlag 是否配置了事件告警
+                     */
+                    int64_t GetEbEventFlag() const;
+
+                    /**
+                     * 设置是否配置了事件告警
+                     * @param EbEventFlag 是否配置了事件告警
+                     */
+                    void SetEbEventFlag(const int64_t& _ebEventFlag);
+
+                    /**
+                     * 判断参数 EbEventFlag 是否已赋值
+                     * @return EbEventFlag 是否已赋值
+                     */
+                    bool EbEventFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +199,18 @@ namespace TencentCloud
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;
+
+                    /**
+                     * 事件配置的告警
+                     */
+                    std::string m_ebSubject;
+                    bool m_ebSubjectHasBeenSet;
+
+                    /**
+                     * 是否配置了事件告警
+                     */
+                    int64_t m_ebEventFlag;
+                    bool m_ebEventFlagHasBeenSet;
 
                 };
             }

@@ -213,6 +213,28 @@ namespace TencentCloud
                      */
                     bool ZoneStockInfosHasBeenSet() const;
 
+                    /**
+                     * 获取库存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StockCount 库存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStockCount() const;
+
+                    /**
+                     * 设置库存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StockCount 库存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStockCount(const int64_t& _stockCount);
+
+                    /**
+                     * 判断参数 StockCount 是否已赋值
+                     * @return StockCount 是否已赋值
+                     */
+                    bool StockCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +291,13 @@ namespace TencentCloud
                      */
                     std::vector<ZoneStockInfo> m_zoneStockInfos;
                     bool m_zoneStockInfosHasBeenSet;
+
+                    /**
+                     * 库存数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_stockCount;
+                    bool m_stockCountHasBeenSet;
 
                 };
             }

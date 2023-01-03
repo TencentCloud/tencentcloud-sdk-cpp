@@ -40,7 +40,8 @@ CreateAlarmPolicyRequest::CreateAlarmPolicyRequest() :
     m_tagsHasBeenSet(false),
     m_logAlarmReqInfoHasBeenSet(false),
     m_hierarchicalNoticesHasBeenSet(false),
-    m_migrateFlagHasBeenSet(false)
+    m_migrateFlagHasBeenSet(false),
+    m_ebSubjectHasBeenSet(false)
 {
 }
 
@@ -228,6 +229,14 @@ string CreateAlarmPolicyRequest::ToJsonString() const
         string key = "MigrateFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_migrateFlag, allocator);
+    }
+
+    if (m_ebSubjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbSubject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ebSubject.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -524,6 +533,22 @@ void CreateAlarmPolicyRequest::SetMigrateFlag(const int64_t& _migrateFlag)
 bool CreateAlarmPolicyRequest::MigrateFlagHasBeenSet() const
 {
     return m_migrateFlagHasBeenSet;
+}
+
+string CreateAlarmPolicyRequest::GetEbSubject() const
+{
+    return m_ebSubject;
+}
+
+void CreateAlarmPolicyRequest::SetEbSubject(const string& _ebSubject)
+{
+    m_ebSubject = _ebSubject;
+    m_ebSubjectHasBeenSet = true;
+}
+
+bool CreateAlarmPolicyRequest::EbSubjectHasBeenSet() const
+{
+    return m_ebSubjectHasBeenSet;
 }
 
 

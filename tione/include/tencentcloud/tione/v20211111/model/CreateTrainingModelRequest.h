@@ -515,6 +515,24 @@ EXIST：导入现有版本
                      */
                     bool ModelCleanPeriodHasBeenSet() const;
 
+                    /**
+                     * 获取是否QAT模型
+                     * @return IsQAT 是否QAT模型
+                     */
+                    bool GetIsQAT() const;
+
+                    /**
+                     * 设置是否QAT模型
+                     * @param IsQAT 是否QAT模型
+                     */
+                    void SetIsQAT(const bool& _isQAT);
+
+                    /**
+                     * 判断参数 IsQAT 是否已赋值
+                     * @return IsQAT 是否已赋值
+                     */
+                    bool IsQATHasBeenSet() const;
+
                 private:
 
                     /**
@@ -671,6 +689,12 @@ EXIST：导入现有版本
                      */
                     uint64_t m_modelCleanPeriod;
                     bool m_modelCleanPeriodHasBeenSet;
+
+                    /**
+                     * 是否QAT模型
+                     */
+                    bool m_isQAT;
+                    bool m_isQATHasBeenSet;
 
                 };
             }

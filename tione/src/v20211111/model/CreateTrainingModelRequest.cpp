@@ -47,7 +47,8 @@ CreateTrainingModelRequest::CreateTrainingModelRequest() :
     m_reasoningEnvironmentIdHasBeenSet(false),
     m_autoCleanHasBeenSet(false),
     m_maxReservedModelsHasBeenSet(false),
-    m_modelCleanPeriodHasBeenSet(false)
+    m_modelCleanPeriodHasBeenSet(false),
+    m_isQATHasBeenSet(false)
 {
 }
 
@@ -266,6 +267,14 @@ string CreateTrainingModelRequest::ToJsonString() const
         string key = "ModelCleanPeriod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_modelCleanPeriod, allocator);
+    }
+
+    if (m_isQATHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsQAT";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isQAT, allocator);
     }
 
 
@@ -674,6 +683,22 @@ void CreateTrainingModelRequest::SetModelCleanPeriod(const uint64_t& _modelClean
 bool CreateTrainingModelRequest::ModelCleanPeriodHasBeenSet() const
 {
     return m_modelCleanPeriodHasBeenSet;
+}
+
+bool CreateTrainingModelRequest::GetIsQAT() const
+{
+    return m_isQAT;
+}
+
+void CreateTrainingModelRequest::SetIsQAT(const bool& _isQAT)
+{
+    m_isQAT = _isQAT;
+    m_isQATHasBeenSet = true;
+}
+
+bool CreateTrainingModelRequest::IsQATHasBeenSet() const
+{
+    return m_isQATHasBeenSet;
 }
 
 

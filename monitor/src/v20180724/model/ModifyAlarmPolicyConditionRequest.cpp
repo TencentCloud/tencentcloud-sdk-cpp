@@ -30,7 +30,11 @@ ModifyAlarmPolicyConditionRequest::ModifyAlarmPolicyConditionRequest() :
     m_eventConditionHasBeenSet(false),
     m_filterHasBeenSet(false),
     m_groupByHasBeenSet(false),
-    m_logAlarmReqInfoHasBeenSet(false)
+    m_logAlarmReqInfoHasBeenSet(false),
+    m_noticeIdsHasBeenSet(false),
+    m_enableHasBeenSet(false),
+    m_policyNameHasBeenSet(false),
+    m_ebSubjectHasBeenSet(false)
 {
 }
 
@@ -112,6 +116,43 @@ string ModifyAlarmPolicyConditionRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_logAlarmReqInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_noticeIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NoticeIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_noticeIds.begin(); itr != m_noticeIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_enableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Enable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enable, allocator);
+    }
+
+    if (m_policyNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_policyName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ebSubjectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EbSubject";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ebSubject.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -248,6 +289,70 @@ void ModifyAlarmPolicyConditionRequest::SetLogAlarmReqInfo(const LogAlarmReq& _l
 bool ModifyAlarmPolicyConditionRequest::LogAlarmReqInfoHasBeenSet() const
 {
     return m_logAlarmReqInfoHasBeenSet;
+}
+
+vector<string> ModifyAlarmPolicyConditionRequest::GetNoticeIds() const
+{
+    return m_noticeIds;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetNoticeIds(const vector<string>& _noticeIds)
+{
+    m_noticeIds = _noticeIds;
+    m_noticeIdsHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::NoticeIdsHasBeenSet() const
+{
+    return m_noticeIdsHasBeenSet;
+}
+
+int64_t ModifyAlarmPolicyConditionRequest::GetEnable() const
+{
+    return m_enable;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetEnable(const int64_t& _enable)
+{
+    m_enable = _enable;
+    m_enableHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::EnableHasBeenSet() const
+{
+    return m_enableHasBeenSet;
+}
+
+string ModifyAlarmPolicyConditionRequest::GetPolicyName() const
+{
+    return m_policyName;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetPolicyName(const string& _policyName)
+{
+    m_policyName = _policyName;
+    m_policyNameHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::PolicyNameHasBeenSet() const
+{
+    return m_policyNameHasBeenSet;
+}
+
+string ModifyAlarmPolicyConditionRequest::GetEbSubject() const
+{
+    return m_ebSubject;
+}
+
+void ModifyAlarmPolicyConditionRequest::SetEbSubject(const string& _ebSubject)
+{
+    m_ebSubject = _ebSubject;
+    m_ebSubjectHasBeenSet = true;
+}
+
+bool ModifyAlarmPolicyConditionRequest::EbSubjectHasBeenSet() const
+{
+    return m_ebSubjectHasBeenSet;
 }
 
 

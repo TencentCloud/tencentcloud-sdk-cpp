@@ -80,6 +80,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/Operation.h
   include/tencentcloud/mongodb/v20190725/model/SpecItem.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h
+  include/tencentcloud/mongodb/v20190725/model/CreateAccountUserResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogPatternsResponse.h
   include/tencentcloud/mongodb/v20190725/model/BackupDownloadTaskStatus.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogsResponse.h
@@ -94,6 +95,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/ModifyNetworkAddress.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoResponse.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h
+  include/tencentcloud/mongodb/v20190725/model/CreateAccountUserRequest.h
   include/tencentcloud/mongodb/v20190725/model/InstanceTextParam.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAccountUsersResponse.h
@@ -214,6 +216,7 @@ set(mongodb_src
   src/v20190725/model/Operation.cpp
   src/v20190725/model/SpecItem.cpp
   src/v20190725/model/ModifyDBInstanceNetworkAddressResponse.cpp
+  src/v20190725/model/CreateAccountUserResponse.cpp
   src/v20190725/model/DescribeSlowLogPatternsResponse.cpp
   src/v20190725/model/BackupDownloadTaskStatus.cpp
   src/v20190725/model/DescribeSlowLogsResponse.cpp
@@ -228,6 +231,7 @@ set(mongodb_src
   src/v20190725/model/ModifyNetworkAddress.cpp
   src/v20190725/model/DescribeAsyncRequestInfoResponse.cpp
   src/v20190725/model/CreateDBInstanceResponse.cpp
+  src/v20190725/model/CreateAccountUserRequest.cpp
   src/v20190725/model/InstanceTextParam.cpp
   src/v20190725/model/ModifyDBInstanceSecurityGroupRequest.cpp
   src/v20190725/model/DescribeAccountUsersResponse.cpp

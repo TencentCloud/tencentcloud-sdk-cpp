@@ -644,6 +644,28 @@ namespace TencentCloud
                      */
                     bool ModelSignatureHasBeenSet() const;
 
+                    /**
+                     * 获取是否是QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QATModel 是否是QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetQATModel() const;
+
+                    /**
+                     * 设置是否是QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QATModel 是否是QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQATModel(const bool& _qATModel);
+
+                    /**
+                     * 判断参数 QATModel 是否已赋值
+                     * @return QATModel 是否已赋值
+                     */
+                    bool QATModelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -834,6 +856,13 @@ namespace TencentCloud
                      */
                     std::string m_modelSignature;
                     bool m_modelSignatureHasBeenSet;
+
+                    /**
+                     * 是否是QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_qATModel;
+                    bool m_qATModelHasBeenSet;
 
                 };
             }

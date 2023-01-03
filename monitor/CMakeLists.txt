@@ -183,6 +183,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmNoticeCallbacksResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceUsageRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h
+  include/tencentcloud/monitor/v20180724/model/NoticeBindPolicys.h
   include/tencentcloud/monitor/v20180724/model/DeleteSSOAccountRequest.h
   include/tencentcloud/monitor/v20180724/model/PrometheusScrapeJob.h
   include/tencentcloud/monitor/v20180724/model/CreateGrafanaIntegrationResponse.h
@@ -517,6 +518,7 @@ set(monitor_src
   src/v20180724/model/DescribeAlarmNoticeCallbacksResponse.cpp
   src/v20180724/model/DescribePrometheusInstanceUsageRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyConditionRequest.cpp
+  src/v20180724/model/NoticeBindPolicys.cpp
   src/v20180724/model/DeleteSSOAccountRequest.cpp
   src/v20180724/model/PrometheusScrapeJob.cpp
   src/v20180724/model/CreateGrafanaIntegrationResponse.cpp

@@ -47,7 +47,8 @@ ModelAccelerateTask::ModelAccelerateTask() :
     m_accEngineVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_isSavedHasBeenSet(false),
-    m_modelSignatureHasBeenSet(false)
+    m_modelSignatureHasBeenSet(false),
+    m_qATModelHasBeenSet(false)
 {
 }
 
@@ -370,6 +371,16 @@ CoreInternalOutcome ModelAccelerateTask::Deserialize(const rapidjson::Value &val
         m_modelSignatureHasBeenSet = true;
     }
 
+    if (value.HasMember("QATModel") && !value["QATModel"].IsNull())
+    {
+        if (!value["QATModel"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelAccelerateTask.QATModel` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_qATModel = value["QATModel"].GetBool();
+        m_qATModelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -613,6 +624,14 @@ void ModelAccelerateTask::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "ModelSignature";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelSignature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qATModelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QATModel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qATModel, allocator);
     }
 
 }
@@ -1048,5 +1067,21 @@ void ModelAccelerateTask::SetModelSignature(const string& _modelSignature)
 bool ModelAccelerateTask::ModelSignatureHasBeenSet() const
 {
     return m_modelSignatureHasBeenSet;
+}
+
+bool ModelAccelerateTask::GetQATModel() const
+{
+    return m_qATModel;
+}
+
+void ModelAccelerateTask::SetQATModel(const bool& _qATModel)
+{
+    m_qATModel = _qATModel;
+    m_qATModelHasBeenSet = true;
+}
+
+bool ModelAccelerateTask::QATModelHasBeenSet() const
+{
+    return m_qATModelHasBeenSet;
 }
 

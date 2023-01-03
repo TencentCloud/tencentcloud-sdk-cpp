@@ -240,14 +240,14 @@ namespace TencentCloud
                     bool MetaDataHasBeenSet() const;
 
                     /**
-                     * 获取若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
-                     * @return ProcedureTaskId 若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
+                     * 获取任务类型为 Procedure 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * @return ProcedureTaskId 任务类型为 Procedure 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      */
                     std::string GetProcedureTaskId() const;
 
                     /**
-                     * 设置若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
-                     * @param ProcedureTaskId 若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
+                     * 设置任务类型为 Procedure 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
+                     * @param ProcedureTaskId 任务类型为 Procedure 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      */
                     void SetProcedureTaskId(const std::string& _procedureTaskId);
 
@@ -256,6 +256,24 @@ namespace TencentCloud
                      * @return ProcedureTaskId 是否已赋值
                      */
                     bool ProcedureTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务类型为 ReviewAudioVideo 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * @return ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     */
+                    std::string GetReviewAudioVideoTaskId() const;
+
+                    /**
+                     * 设置任务类型为 ReviewAudioVideo 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     * @param ReviewAudioVideoTaskId 任务类型为 ReviewAudioVideo 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     */
+                    void SetReviewAudioVideoTaskId(const std::string& _reviewAudioVideoTaskId);
+
+                    /**
+                     * 判断参数 ReviewAudioVideoTaskId 是否已赋值
+                     * @return ReviewAudioVideoTaskId 是否已赋值
+                     */
+                    bool ReviewAudioVideoTaskIdHasBeenSet() const;
 
                     /**
                      * 获取用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。
@@ -357,10 +375,16 @@ namespace TencentCloud
                     bool m_metaDataHasBeenSet;
 
                     /**
-                     * 若发起视频编辑任务时指定了视频处理流程，则该字段为流程任务 ID。
+                     * 任务类型为 Procedure 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 MediaProcessTask、AiAnalysisTask、AiRecognitionTask 中的一个或多个时发起该任务。
                      */
                     std::string m_procedureTaskId;
                     bool m_procedureTaskIdHasBeenSet;
+
+                    /**
+                     * 任务类型为 ReviewAudioVideo 的任务 ID。若发起[编辑视频](https://cloud.tencent.com/document/api/266/34783)任务时指定了任务流模板(ProcedureName)，当该任务流模板指定了 ReviewAudioVideoTask 时，发起该任务。
+                     */
+                    std::string m_reviewAudioVideoTaskId;
+                    bool m_reviewAudioVideoTaskIdHasBeenSet;
 
                     /**
                      * 用于去重的识别码，如果七天内曾有过相同的识别码的请求，则本次的请求会返回错误。最长 50 个字符，不带或者带空字符串表示不做去重。

@@ -82,6 +82,32 @@ namespace TencentCloud
                      */
                     bool DefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取审核的内容，可选值：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+                     * @return ReviewContents 审核的内容，可选值：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+                     */
+                    std::vector<std::string> GetReviewContents() const;
+
+                    /**
+                     * 设置审核的内容，可选值：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+                     * @param ReviewContents 审核的内容，可选值：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+                     */
+                    void SetReviewContents(const std::vector<std::string>& _reviewContents);
+
+                    /**
+                     * 判断参数 ReviewContents 是否已赋值
+                     * @return ReviewContents 是否已赋值
+                     */
+                    bool ReviewContentsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +121,14 @@ namespace TencentCloud
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * 审核的内容，可选值：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+                     */
+                    std::vector<std::string> m_reviewContents;
+                    bool m_reviewContentsHasBeenSet;
 
                 };
             }
