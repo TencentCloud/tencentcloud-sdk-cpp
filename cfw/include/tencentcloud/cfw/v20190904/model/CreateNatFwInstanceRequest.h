@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfw/v20190904/model/NewModeItems.h>
+#include <tencentcloud/cfw/v20190904/model/FwCidrInfo.h>
 
 
 namespace TencentCloud
@@ -187,6 +188,24 @@ namespace TencentCloud
                      */
                     bool CrossAZoneHasBeenSet() const;
 
+                    /**
+                     * 获取指定防火墙使用网段信息
+                     * @return FwCidrInfo 指定防火墙使用网段信息
+                     */
+                    FwCidrInfo GetFwCidrInfo() const;
+
+                    /**
+                     * 设置指定防火墙使用网段信息
+                     * @param FwCidrInfo 指定防火墙使用网段信息
+                     */
+                    void SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo);
+
+                    /**
+                     * 判断参数 FwCidrInfo 是否已赋值
+                     * @return FwCidrInfo 是否已赋值
+                     */
+                    bool FwCidrInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -236,6 +255,12 @@ namespace TencentCloud
                      */
                     int64_t m_crossAZone;
                     bool m_crossAZoneHasBeenSet;
+
+                    /**
+                     * 指定防火墙使用网段信息
+                     */
+                    FwCidrInfo m_fwCidrInfo;
+                    bool m_fwCidrInfoHasBeenSet;
 
                 };
             }

@@ -47,7 +47,10 @@ Machine::Machine() :
     m_protectTypeHasBeenSet(false),
     m_cloudTagsHasBeenSet(false),
     m_isAddedOnTheFifteenHasBeenSet(false),
-    m_ipListHasBeenSet(false)
+    m_ipListHasBeenSet(false),
+    m_vpcIdHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -353,6 +356,43 @@ CoreInternalOutcome Machine::Deserialize(const rapidjson::Value &value)
         m_ipListHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Machine.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -589,6 +629,31 @@ void Machine::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "IpList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ipList.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1024,5 +1089,53 @@ void Machine::SetIpList(const string& _ipList)
 bool Machine::IpListHasBeenSet() const
 {
     return m_ipListHasBeenSet;
+}
+
+string Machine::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void Machine::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool Machine::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
+}
+
+MachineExtraInfo Machine::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void Machine::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool Machine::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
+}
+
+string Machine::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void Machine::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool Machine::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

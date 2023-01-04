@@ -27,7 +27,8 @@ InquiryPriceCreateInstanceResponse::InquiryPriceCreateInstanceResponse() :
     m_originalCostHasBeenSet(false),
     m_discountCostHasBeenSet(false),
     m_timeUnitHasBeenSet(false),
-    m_timeSpanHasBeenSet(false)
+    m_timeSpanHasBeenSet(false),
+    m_priceListHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,26 @@ CoreInternalOutcome InquiryPriceCreateInstanceResponse::Deserialize(const string
         m_timeSpanHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PriceList") && !rsp["PriceList"].IsNull())
+    {
+        if (!rsp["PriceList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PriceList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PriceList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ZoneDetailPriceResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_priceList.push_back(item);
+        }
+        m_priceListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +166,21 @@ string InquiryPriceCreateInstanceResponse::ToJsonString() const
         string key = "TimeSpan";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timeSpan, allocator);
+    }
+
+    if (m_priceListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriceList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_priceList.begin(); itr != m_priceList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +233,16 @@ int64_t InquiryPriceCreateInstanceResponse::GetTimeSpan() const
 bool InquiryPriceCreateInstanceResponse::TimeSpanHasBeenSet() const
 {
     return m_timeSpanHasBeenSet;
+}
+
+vector<ZoneDetailPriceResult> InquiryPriceCreateInstanceResponse::GetPriceList() const
+{
+    return m_priceList;
+}
+
+bool InquiryPriceCreateInstanceResponse::PriceListHasBeenSet() const
+{
+    return m_priceListHasBeenSet;
 }
 
 

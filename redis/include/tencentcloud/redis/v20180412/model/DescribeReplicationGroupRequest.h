@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例列表的大小，参数默认值20
-                     * @return Limit 实例列表的大小，参数默认值20
+                     * 获取每页输出实例列表的大小，参数默认值20。
+                     * @return Limit 每页输出实例列表的大小，参数默认值20。
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置实例列表的大小，参数默认值20
-                     * @param Limit 实例列表的大小，参数默认值20
+                     * 设置每页输出实例列表的大小，参数默认值20。
+                     * @param Limit 每页输出实例列表的大小，参数默认值20。
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取偏移量，取Limit整数倍
-                     * @return Offset 偏移量，取Limit整数倍
+                     * 获取分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @return Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量，取Limit整数倍
-                     * @param Offset 偏移量，取Limit整数倍
+                     * 设置分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
+                     * @param Offset 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取复制组ID
-                     * @return GroupId 复制组ID
+                     * 获取复制组ID。
+                     * @return GroupId 复制组ID。
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组ID
-                     * @param GroupId 复制组ID
+                     * 设置复制组ID。
+                     * @param GroupId 复制组ID。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取实例ID和实例名称，支持模糊查询
-                     * @return SearchKey 实例ID和实例名称，支持模糊查询
+                     * 获取设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
+                     * @return SearchKey 设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置实例ID和实例名称，支持模糊查询
-                     * @param SearchKey 实例ID和实例名称，支持模糊查询
+                     * 设置设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
+                     * @param SearchKey 设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例列表的大小，参数默认值20
+                     * 每页输出实例列表的大小，参数默认值20。
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 偏移量，取Limit整数倍
+                     * 分页偏移量，取Limit整数倍。计算公式：offset=limit*(页码-1)。
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 复制组ID
+                     * 复制组ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 实例ID和实例名称，支持模糊查询
+                     * 设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

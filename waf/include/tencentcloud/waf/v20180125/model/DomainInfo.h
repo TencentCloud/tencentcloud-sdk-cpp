@@ -480,6 +480,28 @@ namespace TencentCloud
                      */
                     bool PostCKafkaStatusHasBeenSet() const;
 
+                    /**
+                     * 获取应用型负载均衡类型: clb或者apisix，默认clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlbType 应用型负载均衡类型: clb或者apisix，默认clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlbType() const;
+
+                    /**
+                     * 设置应用型负载均衡类型: clb或者apisix，默认clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlbType 应用型负载均衡类型: clb或者apisix，默认clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlbType(const std::string& _albType);
+
+                    /**
+                     * 判断参数 AlbType 是否已赋值
+                     * @return AlbType 是否已赋值
+                     */
+                    bool AlbTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -625,6 +647,13 @@ namespace TencentCloud
                      */
                     int64_t m_postCKafkaStatus;
                     bool m_postCKafkaStatusHasBeenSet;
+
+                    /**
+                     * 应用型负载均衡类型: clb或者apisix，默认clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_albType;
+                    bool m_albTypeHasBeenSet;
 
                 };
             }

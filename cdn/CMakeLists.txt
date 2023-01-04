@@ -301,6 +301,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeDistrictIspDataResponse.h
   include/tencentcloud/cdn/v20180606/model/RuleEngine.h
   include/tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h
+  include/tencentcloud/cdn/v20180606/model/HttpsBilling.h
   include/tencentcloud/cdn/v20180606/model/DescribeCdnIpRequest.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitResponse.h
   include/tencentcloud/cdn/v20180606/model/UserAgentFilterRule.h
@@ -650,6 +651,7 @@ set(cdn_src
   src/v20180606/model/DescribeDistrictIspDataResponse.cpp
   src/v20180606/model/RuleEngine.cpp
   src/v20180606/model/DescribeDomainsConfigResponse.cpp
+  src/v20180606/model/HttpsBilling.cpp
   src/v20180606/model/DescribeCdnIpRequest.cpp
   src/v20180606/model/DescribeIpVisitResponse.cpp
   src/v20180606/model/UserAgentFilterRule.cpp

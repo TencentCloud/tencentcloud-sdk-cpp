@@ -44,7 +44,8 @@ DomainInfo::DomainInfo() :
     m_botStatusHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_postCLSStatusHasBeenSet(false),
-    m_postCKafkaStatusHasBeenSet(false)
+    m_postCKafkaStatusHasBeenSet(false),
+    m_albTypeHasBeenSet(false)
 {
 }
 
@@ -319,6 +320,16 @@ CoreInternalOutcome DomainInfo::Deserialize(const rapidjson::Value &value)
         m_postCKafkaStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("AlbType") && !value["AlbType"].IsNull())
+    {
+        if (!value["AlbType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainInfo.AlbType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_albType = string(value["AlbType"].GetString());
+        m_albTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -540,6 +551,14 @@ void DomainInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "PostCKafkaStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_postCKafkaStatus, allocator);
+    }
+
+    if (m_albTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlbType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_albType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -927,5 +946,21 @@ void DomainInfo::SetPostCKafkaStatus(const int64_t& _postCKafkaStatus)
 bool DomainInfo::PostCKafkaStatusHasBeenSet() const
 {
     return m_postCKafkaStatusHasBeenSet;
+}
+
+string DomainInfo::GetAlbType() const
+{
+    return m_albType;
+}
+
+void DomainInfo::SetAlbType(const string& _albType)
+{
+    m_albType = _albType;
+    m_albTypeHasBeenSet = true;
+}
+
+bool DomainInfo::AlbTypeHasBeenSet() const
+{
+    return m_albTypeHasBeenSet;
 }
 

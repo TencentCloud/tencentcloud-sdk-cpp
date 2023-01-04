@@ -73,6 +73,7 @@
 #include <tencentcloud/cdn/v20180606/model/RuleEngine.h>
 #include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/HttpsBilling.h>
 
 
 namespace TencentCloud
@@ -1571,6 +1572,28 @@ off：不支持
                      */
                     bool QnPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取https 请求计费开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HttpsBilling https 请求计费开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HttpsBilling GetHttpsBilling() const;
+
+                    /**
+                     * 设置https 请求计费开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HttpsBilling https 请求计费开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHttpsBilling(const HttpsBilling& _httpsBilling);
+
+                    /**
+                     * 判断参数 HttpsBilling 是否已赋值
+                     * @return HttpsBilling 是否已赋值
+                     */
+                    bool HttpsBillingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2037,6 +2060,13 @@ off：不支持
                      */
                     QnPrivateAccess m_qnPrivateAccess;
                     bool m_qnPrivateAccessHasBeenSet;
+
+                    /**
+                     * https 请求计费开关
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HttpsBilling m_httpsBilling;
+                    bool m_httpsBillingHasBeenSet;
 
                 };
             }

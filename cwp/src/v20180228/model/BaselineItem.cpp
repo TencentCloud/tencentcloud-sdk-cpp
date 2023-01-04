@@ -37,7 +37,8 @@ BaselineItem::BaselineItem() :
     m_firstTimeHasBeenSet(false),
     m_lastTimeHasBeenSet(false),
     m_canBeFixedHasBeenSet(false),
-    m_uuidHasBeenSet(false)
+    m_uuidHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,23 @@ CoreInternalOutcome BaselineItem::Deserialize(const rapidjson::Value &value)
         m_uuidHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaselineItem.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +375,15 @@ void BaselineItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Uuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -632,5 +659,21 @@ void BaselineItem::SetUuid(const string& _uuid)
 bool BaselineItem::UuidHasBeenSet() const
 {
     return m_uuidHasBeenSet;
+}
+
+MachineExtraInfo BaselineItem::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void BaselineItem::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool BaselineItem::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

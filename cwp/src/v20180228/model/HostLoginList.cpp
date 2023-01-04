@@ -40,7 +40,8 @@ HostLoginList::HostLoginList() :
     m_riskLevelHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_quuidHasBeenSet(false),
-    m_descHasBeenSet(false)
+    m_descHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,23 @@ CoreInternalOutcome HostLoginList::Deserialize(const rapidjson::Value &value)
         m_descHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +432,15 @@ void HostLoginList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Desc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_desc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -737,5 +764,21 @@ void HostLoginList::SetDesc(const string& _desc)
 bool HostLoginList::DescHasBeenSet() const
 {
     return m_descHasBeenSet;
+}
+
+MachineExtraInfo HostLoginList::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void HostLoginList::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool HostLoginList::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

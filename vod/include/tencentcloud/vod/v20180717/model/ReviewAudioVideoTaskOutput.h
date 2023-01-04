@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoSegmentItem.h>
+#include <tencentcloud/vod/v20180717/model/ReviewImageResult.h>
 
 
 namespace TencentCloud
@@ -219,6 +220,28 @@ namespace TencentCloud
                      */
                     bool SegmentSetFileUrlExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取封面审核结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CoverReviewResult 封面审核结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewImageResult GetCoverReviewResult() const;
+
+                    /**
+                     * 设置封面审核结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CoverReviewResult 封面审核结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCoverReviewResult(const ReviewImageResult& _coverReviewResult);
+
+                    /**
+                     * 判断参数 CoverReviewResult 是否已赋值
+                     * @return CoverReviewResult 是否已赋值
+                     */
+                    bool CoverReviewResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -272,6 +295,13 @@ namespace TencentCloud
                      */
                     std::string m_segmentSetFileUrlExpireTime;
                     bool m_segmentSetFileUrlExpireTimeHasBeenSet;
+
+                    /**
+                     * 封面审核结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ReviewImageResult m_coverReviewResult;
+                    bool m_coverReviewResultHasBeenSet;
 
                 };
             }

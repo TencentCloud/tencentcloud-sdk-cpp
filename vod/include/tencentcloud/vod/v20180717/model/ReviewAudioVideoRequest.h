@@ -79,17 +79,47 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取音视频审核模板 ID，默认值为 10。取值范围：
+                     * 获取审核的内容，可选值有：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+不填或填空数组时，默认为审核 Media。
+                     * @return ReviewContents 审核的内容，可选值有：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+不填或填空数组时，默认为审核 Media。
+                     */
+                    std::vector<std::string> GetReviewContents() const;
+
+                    /**
+                     * 设置审核的内容，可选值有：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+不填或填空数组时，默认为审核 Media。
+                     * @param ReviewContents 审核的内容，可选值有：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+不填或填空数组时，默认为审核 Media。
+                     */
+                    void SetReviewContents(const std::vector<std::string>& _reviewContents);
+
+                    /**
+                     * 判断参数 ReviewContents 是否已赋值
+                     * @return ReviewContents 是否已赋值
+                     */
+                    bool ReviewContentsHasBeenSet() const;
+
+                    /**
+                     * 获取审核模板 ID，默认值为 10。取值范围：
 <li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
-                     * @return Definition 音视频审核模板 ID，默认值为 10。取值范围：
+                     * @return Definition 审核模板 ID，默认值为 10。取值范围：
 <li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
                      */
                     uint64_t GetDefinition() const;
 
                     /**
-                     * 设置音视频审核模板 ID，默认值为 10。取值范围：
+                     * 设置审核模板 ID，默认值为 10。取值范围：
 <li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
-                     * @param Definition 音视频审核模板 ID，默认值为 10。取值范围：
+                     * @param Definition 审核模板 ID，默认值为 10。取值范围：
 <li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
                      */
                     void SetDefinition(const uint64_t& _definition);
@@ -187,7 +217,16 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 音视频审核模板 ID，默认值为 10。取值范围：
+                     * 审核的内容，可选值有：
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
+不填或填空数组时，默认为审核 Media。
+                     */
+                    std::vector<std::string> m_reviewContents;
+                    bool m_reviewContentsHasBeenSet;
+
+                    /**
+                     * 审核模板 ID，默认值为 10。取值范围：
 <li>10：预置模板，支持检测的违规标签包括色情（Porn）、暴恐（Terror）和不适宜的信息（Polity）。</li>
                      */
                     uint64_t m_definition;

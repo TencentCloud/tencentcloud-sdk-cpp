@@ -48,7 +48,8 @@ EmrListInstance::EmrListInstance() :
     m_uniqSubnetIdHasBeenSet(false),
     m_clusterClassHasBeenSet(false),
     m_isMultiZoneClusterHasBeenSet(false),
-    m_isHandsClusterHasBeenSet(false)
+    m_isHandsClusterHasBeenSet(false),
+    m_outSideSoftInfoHasBeenSet(false)
 {
 }
 
@@ -347,6 +348,26 @@ CoreInternalOutcome EmrListInstance::Deserialize(const rapidjson::Value &value)
         m_isHandsClusterHasBeenSet = true;
     }
 
+    if (value.HasMember("OutSideSoftInfo") && !value["OutSideSoftInfo"].IsNull())
+    {
+        if (!value["OutSideSoftInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.OutSideSoftInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["OutSideSoftInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SoftDependInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_outSideSoftInfo.push_back(item);
+        }
+        m_outSideSoftInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -583,6 +604,21 @@ void EmrListInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "IsHandsCluster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isHandsCluster, allocator);
+    }
+
+    if (m_outSideSoftInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OutSideSoftInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_outSideSoftInfo.begin(); itr != m_outSideSoftInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1034,5 +1070,21 @@ void EmrListInstance::SetIsHandsCluster(const bool& _isHandsCluster)
 bool EmrListInstance::IsHandsClusterHasBeenSet() const
 {
     return m_isHandsClusterHasBeenSet;
+}
+
+vector<SoftDependInfo> EmrListInstance::GetOutSideSoftInfo() const
+{
+    return m_outSideSoftInfo;
+}
+
+void EmrListInstance::SetOutSideSoftInfo(const vector<SoftDependInfo>& _outSideSoftInfo)
+{
+    m_outSideSoftInfo = _outSideSoftInfo;
+    m_outSideSoftInfoHasBeenSet = true;
+}
+
+bool EmrListInstance::OutSideSoftInfoHasBeenSet() const
+{
+    return m_outSideSoftInfoHasBeenSet;
 }
 

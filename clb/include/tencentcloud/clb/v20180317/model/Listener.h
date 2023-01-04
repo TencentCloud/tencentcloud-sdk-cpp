@@ -478,6 +478,50 @@ namespace TencentCloud
                      */
                     bool TargetGroupListHasBeenSet() const;
 
+                    /**
+                     * 获取监听器最大连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxConn 监听器最大连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxConn() const;
+
+                    /**
+                     * 设置监听器最大连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxConn 监听器最大连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxConn(const int64_t& _maxConn);
+
+                    /**
+                     * 判断参数 MaxConn 是否已赋值
+                     * @return MaxConn 是否已赋值
+                     */
+                    bool MaxConnHasBeenSet() const;
+
+                    /**
+                     * 获取监听器最大新增连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxCps 监听器最大新增连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxCps() const;
+
+                    /**
+                     * 设置监听器最大新增连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxCps 监听器最大新增连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxCps(const int64_t& _maxCps);
+
+                    /**
+                     * 判断参数 MaxCps 是否已赋值
+                     * @return MaxCps 是否已赋值
+                     */
+                    bool MaxCpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -616,6 +660,20 @@ namespace TencentCloud
                      */
                     std::vector<BasicTargetGroupInfo> m_targetGroupList;
                     bool m_targetGroupListHasBeenSet;
+
+                    /**
+                     * 监听器最大连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxConn;
+                    bool m_maxConnHasBeenSet;
+
+                    /**
+                     * 监听器最大新增连接数，-1表示监听器维度不限速。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxCps;
+                    bool m_maxCpsHasBeenSet;
 
                 };
             }

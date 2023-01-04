@@ -29,7 +29,8 @@ JavaMemShellInfo::JavaMemShellInfo() :
     m_createTimeHasBeenSet(false),
     m_recentFoundTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_quuidHasBeenSet(false)
+    m_quuidHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,23 @@ CoreInternalOutcome JavaMemShellInfo::Deserialize(const rapidjson::Value &value)
         m_quuidHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `JavaMemShellInfo.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +223,15 @@ void JavaMemShellInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Quuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -352,5 +379,21 @@ void JavaMemShellInfo::SetQuuid(const string& _quuid)
 bool JavaMemShellInfo::QuuidHasBeenSet() const
 {
     return m_quuidHasBeenSet;
+}
+
+MachineExtraInfo JavaMemShellInfo::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void JavaMemShellInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool JavaMemShellInfo::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

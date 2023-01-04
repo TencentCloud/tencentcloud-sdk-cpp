@@ -36,7 +36,9 @@ VulEffectHostList::VulEffectHostList() :
     m_fixStatusMsgHasBeenSet(false),
     m_firstDiscoveryTimeHasBeenSet(false),
     m_instanceStateHasBeenSet(false),
-    m_publicIpAddressesHasBeenSet(false)
+    m_publicIpAddressesHasBeenSet(false),
+    m_cloudTagsHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -208,6 +210,43 @@ CoreInternalOutcome VulEffectHostList::Deserialize(const rapidjson::Value &value
         m_publicIpAddressesHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudTags") && !value["CloudTags"].IsNull())
+    {
+        if (!value["CloudTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.CloudTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CloudTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tags item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cloudTags.push_back(item);
+        }
+        m_cloudTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VulEffectHostList.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -346,6 +385,30 @@ void VulEffectHostList::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "PublicIpAddresses";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_publicIpAddresses.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cloudTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cloudTags.begin(); itr != m_cloudTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -605,5 +668,37 @@ void VulEffectHostList::SetPublicIpAddresses(const string& _publicIpAddresses)
 bool VulEffectHostList::PublicIpAddressesHasBeenSet() const
 {
     return m_publicIpAddressesHasBeenSet;
+}
+
+vector<Tags> VulEffectHostList::GetCloudTags() const
+{
+    return m_cloudTags;
+}
+
+void VulEffectHostList::SetCloudTags(const vector<Tags>& _cloudTags)
+{
+    m_cloudTags = _cloudTags;
+    m_cloudTagsHasBeenSet = true;
+}
+
+bool VulEffectHostList::CloudTagsHasBeenSet() const
+{
+    return m_cloudTagsHasBeenSet;
+}
+
+MachineExtraInfo VulEffectHostList::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void VulEffectHostList::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool VulEffectHostList::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

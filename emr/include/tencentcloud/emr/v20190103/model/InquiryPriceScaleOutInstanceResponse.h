@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/PriceResource.h>
+#include <tencentcloud/emr/v20190103/model/EmrPrice.h>
 
 
 namespace TencentCloud
@@ -104,6 +105,20 @@ namespace TencentCloud
                      */
                     bool PriceSpecHasBeenSet() const;
 
+                    /**
+                     * 获取对应入参MultipleResources中多个规格的询价结果，其它出参返回的是第一个规格的询价结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MultipleEmrPrice 对应入参MultipleResources中多个规格的询价结果，其它出参返回的是第一个规格的询价结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EmrPrice> GetMultipleEmrPrice() const;
+
+                    /**
+                     * 判断参数 MultipleEmrPrice 是否已赋值
+                     * @return MultipleEmrPrice 是否已赋值
+                     */
+                    bool MultipleEmrPriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -135,6 +150,13 @@ namespace TencentCloud
                      */
                     PriceResource m_priceSpec;
                     bool m_priceSpecHasBeenSet;
+
+                    /**
+                     * 对应入参MultipleResources中多个规格的询价结果，其它出参返回的是第一个规格的询价结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<EmrPrice> m_multipleEmrPrice;
+                    bool m_multipleEmrPriceHasBeenSet;
 
                 };
             }

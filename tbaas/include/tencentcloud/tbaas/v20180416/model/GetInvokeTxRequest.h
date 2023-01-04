@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ChannelNameHasBeenSet() const;
 
                     /**
-                     * 获取执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
-                     * @return PeerName 执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
+                     * 获取执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
+                     * @return PeerName 执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
                      */
                     std::string GetPeerName() const;
 
                     /**
-                     * 设置执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
-                     * @param PeerName 执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
+                     * 设置执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
+                     * @param PeerName 执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
                      */
                     void SetPeerName(const std::string& _peerName);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool PeerNameHasBeenSet() const;
 
                     /**
-                     * 获取执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
-                     * @return PeerGroup 执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
+                     * 获取执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
+                     * @return PeerGroup 执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
                      */
                     std::string GetPeerGroup() const;
 
                     /**
-                     * 设置执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
-                     * @param PeerGroup 执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
+                     * 设置执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
+                     * @param PeerGroup 执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
                      */
                     void SetPeerGroup(const std::string& _peerGroup);
 
@@ -213,13 +213,13 @@ namespace TencentCloud
                     bool m_channelNameHasBeenSet;
 
                     /**
-                     * 执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
+                     * 执行该查询交易的节点名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
                      */
                     std::string m_peerName;
                     bool m_peerNameHasBeenSet;
 
                     /**
-                     * 执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称极其所属组织名称
+                     * 执行该查询交易的节点所属组织名称，可以在通道详情中获取该通道上的节点名称及其所属组织名称
                      */
                     std::string m_peerGroup;
                     bool m_peerGroupHasBeenSet;

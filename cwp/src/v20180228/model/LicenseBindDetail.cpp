@@ -29,7 +29,8 @@ LicenseBindDetail::LicenseBindDetail() :
     m_tagsHasBeenSet(false),
     m_agentStatusHasBeenSet(false),
     m_isUnBindHasBeenSet(false),
-    m_isSwitchBindHasBeenSet(false)
+    m_isSwitchBindHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -131,6 +132,23 @@ CoreInternalOutcome LicenseBindDetail::Deserialize(const rapidjson::Value &value
         m_isSwitchBindHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LicenseBindDetail.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -213,6 +231,15 @@ void LicenseBindDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "IsSwitchBind";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSwitchBind, allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -360,5 +387,21 @@ void LicenseBindDetail::SetIsSwitchBind(const bool& _isSwitchBind)
 bool LicenseBindDetail::IsSwitchBindHasBeenSet() const
 {
     return m_isSwitchBindHasBeenSet;
+}
+
+MachineExtraInfo LicenseBindDetail::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void LicenseBindDetail::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool LicenseBindDetail::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
-                     * @return WeekDays 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
+                     * 获取设置自动备份周期。可设置为Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。该参数暂不支持修改。
+                     * @return WeekDays 设置自动备份周期。可设置为Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。该参数暂不支持修改。
                      */
                     std::vector<std::string> GetWeekDays() const;
 
                     /**
-                     * 设置日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
-                     * @param WeekDays 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
+                     * 设置设置自动备份周期。可设置为Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。该参数暂不支持修改。
+                     * @param WeekDays 设置自动备份周期。可设置为Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。该参数暂不支持修改。
                      */
                     void SetWeekDays(const std::vector<std::string>& _weekDays);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool WeekDaysHasBeenSet() const;
 
                     /**
-                     * 获取时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
-                     * @return TimePeriod 时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
+                     * 获取备份时间段。可设置为每个整点。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
+                     * @return TimePeriod 备份时间段。可设置为每个整点。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
                      */
                     std::string GetTimePeriod() const;
 
                     /**
-                     * 设置时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
-                     * @param TimePeriod 时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
+                     * 设置备份时间段。可设置为每个整点。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
+                     * @param TimePeriod 备份时间段。可设置为每个整点。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
                      */
                     void SetTimePeriod(const std::string& _timePeriod);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TimePeriodHasBeenSet() const;
 
                     /**
-                     * 获取自动备份类型： 1 “定时回档”
-                     * @return AutoBackupType 自动备份类型： 1 “定时回档”
+                     * 获取自动备份类型： 1 “定时回档”。
+                     * @return AutoBackupType 自动备份类型： 1 “定时回档”。
                      */
                     int64_t GetAutoBackupType() const;
 
                     /**
-                     * 设置自动备份类型： 1 “定时回档”
-                     * @param AutoBackupType 自动备份类型： 1 “定时回档”
+                     * 设置自动备份类型： 1 “定时回档”。
+                     * @param AutoBackupType 自动备份类型： 1 “定时回档”。
                      */
                     void SetAutoBackupType(const int64_t& _autoBackupType);
 
@@ -117,25 +117,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 日期 Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday，该参数暂不支持修改。
+                     * 设置自动备份周期。可设置为Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。该参数暂不支持修改。
                      */
                     std::vector<std::string> m_weekDays;
                     bool m_weekDaysHasBeenSet;
 
                     /**
-                     * 时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
+                     * 备份时间段。可设置为每个整点。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
                      */
                     std::string m_timePeriod;
                     bool m_timePeriodHasBeenSet;
 
                     /**
-                     * 自动备份类型： 1 “定时回档”
+                     * 自动备份类型： 1 “定时回档”。
                      */
                     int64_t m_autoBackupType;
                     bool m_autoBackupTypeHasBeenSet;

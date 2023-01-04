@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cwp/v20180228/model/MachineExtraInfo.h>
 
 
 namespace TencentCloud
@@ -356,6 +357,28 @@ namespace TencentCloud
                      */
                     bool MachineWanIpHasBeenSet() const;
 
+                    /**
+                     * 获取 附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineExtraInfo  附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo GetMachineExtraInfo() const;
+
+                    /**
+                     * 设置 附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MachineExtraInfo  附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
+
+                    /**
+                     * 判断参数 MachineExtraInfo 是否已赋值
+                     * @return MachineExtraInfo 是否已赋值
+                     */
+                    bool MachineExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -460,6 +483,13 @@ namespace TencentCloud
                      */
                     std::string m_machineWanIp;
                     bool m_machineWanIpHasBeenSet;
+
+                    /**
+                     *  附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo m_machineExtraInfo;
+                    bool m_machineExtraInfoHasBeenSet;
 
                 };
             }

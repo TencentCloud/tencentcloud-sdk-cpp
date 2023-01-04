@@ -38,10 +38,12 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/COSSettings.h
   include/tencentcloud/emr/v20190103/model/ClusterInstancesInfo.h
   include/tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h
+  include/tencentcloud/emr/v20190103/model/ZoneDetailPriceResult.h
   include/tencentcloud/emr/v20190103/model/PodNewSpec.h
   include/tencentcloud/emr/v20190103/model/NodeResourceSpec.h
   include/tencentcloud/emr/v20190103/model/ModifyResourceScheduleConfigResponse.h
   include/tencentcloud/emr/v20190103/model/TopologyInfo.h
+  include/tencentcloud/emr/v20190103/model/NodeDetailPriceResult.h
   include/tencentcloud/emr/v20190103/model/Tag.h
   include/tencentcloud/emr/v20190103/model/EmrListInstance.h
   include/tencentcloud/emr/v20190103/model/AddUsersForUserManagerResponse.h
@@ -50,6 +52,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/DescribeInstancesListResponse.h
   include/tencentcloud/emr/v20190103/model/DescribeInstanceRenewNodesRequest.h
   include/tencentcloud/emr/v20190103/model/JobResult.h
+  include/tencentcloud/emr/v20190103/model/PartDetailPriceItem.h
   include/tencentcloud/emr/v20190103/model/DependService.h
   include/tencentcloud/emr/v20190103/model/PodSpec.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceRenewInstanceResponse.h
@@ -121,6 +124,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/ExternalService.h
   include/tencentcloud/emr/v20190103/model/PreExecuteFileSettings.h
   include/tencentcloud/emr/v20190103/model/ClusterExternalServiceInfo.h
+  include/tencentcloud/emr/v20190103/model/SoftDependInfo.h
   include/tencentcloud/emr/v20190103/model/InquiryPriceScaleOutInstanceRequest.h
   include/tencentcloud/emr/v20190103/model/Resource.h
   include/tencentcloud/emr/v20190103/model/Filters.h
@@ -135,6 +139,7 @@ set(emr_public_header_model
   include/tencentcloud/emr/v20190103/model/VirtualPrivateCloud.h
   include/tencentcloud/emr/v20190103/model/SceneSoftwareConfig.h
   include/tencentcloud/emr/v20190103/model/ShortNodeInfo.h
+  include/tencentcloud/emr/v20190103/model/EmrPrice.h
   include/tencentcloud/emr/v20190103/model/NodeHardwareInfo.h
   include/tencentcloud/emr/v20190103/model/ScaleOutClusterResponse.h
   include/tencentcloud/emr/v20190103/model/JobFlowResource.h
@@ -164,10 +169,12 @@ set(emr_src
   src/v20190103/model/COSSettings.cpp
   src/v20190103/model/ClusterInstancesInfo.cpp
   src/v20190103/model/ScaleOutInstanceRequest.cpp
+  src/v20190103/model/ZoneDetailPriceResult.cpp
   src/v20190103/model/PodNewSpec.cpp
   src/v20190103/model/NodeResourceSpec.cpp
   src/v20190103/model/ModifyResourceScheduleConfigResponse.cpp
   src/v20190103/model/TopologyInfo.cpp
+  src/v20190103/model/NodeDetailPriceResult.cpp
   src/v20190103/model/Tag.cpp
   src/v20190103/model/EmrListInstance.cpp
   src/v20190103/model/AddUsersForUserManagerResponse.cpp
@@ -176,6 +183,7 @@ set(emr_src
   src/v20190103/model/DescribeInstancesListResponse.cpp
   src/v20190103/model/DescribeInstanceRenewNodesRequest.cpp
   src/v20190103/model/JobResult.cpp
+  src/v20190103/model/PartDetailPriceItem.cpp
   src/v20190103/model/DependService.cpp
   src/v20190103/model/PodSpec.cpp
   src/v20190103/model/InquiryPriceRenewInstanceResponse.cpp
@@ -247,6 +255,7 @@ set(emr_src
   src/v20190103/model/ExternalService.cpp
   src/v20190103/model/PreExecuteFileSettings.cpp
   src/v20190103/model/ClusterExternalServiceInfo.cpp
+  src/v20190103/model/SoftDependInfo.cpp
   src/v20190103/model/InquiryPriceScaleOutInstanceRequest.cpp
   src/v20190103/model/Resource.cpp
   src/v20190103/model/Filters.cpp
@@ -261,6 +270,7 @@ set(emr_src
   src/v20190103/model/VirtualPrivateCloud.cpp
   src/v20190103/model/SceneSoftwareConfig.cpp
   src/v20190103/model/ShortNodeInfo.cpp
+  src/v20190103/model/EmrPrice.cpp
   src/v20190103/model/NodeHardwareInfo.cpp
   src/v20190103/model/ScaleOutClusterResponse.cpp
   src/v20190103/model/JobFlowResource.cpp

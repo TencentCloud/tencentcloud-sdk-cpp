@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool CertNameHasBeenSet() const;
 
                     /**
-                     * 获取上传证书的公钥，如果没有 CertId，则此项必传。
-                     * @return CertContent 上传证书的公钥，如果没有 CertId，则此项必传。
+                     * 获取上传证书的公钥；如果没有 CertId，则此项必传。
+                     * @return CertContent 上传证书的公钥；如果没有 CertId，则此项必传。
                      */
                     std::string GetCertContent() const;
 
                     /**
-                     * 设置上传证书的公钥，如果没有 CertId，则此项必传。
-                     * @param CertContent 上传证书的公钥，如果没有 CertId，则此项必传。
+                     * 设置上传证书的公钥；如果没有 CertId，则此项必传。
+                     * @param CertContent 上传证书的公钥；如果没有 CertId，则此项必传。
                      */
                     void SetCertContent(const std::string& _certContent);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool CertContentHasBeenSet() const;
 
                     /**
-                     * 获取上传服务端证书的私钥，如果没有 CertId，则此项必传。
-                     * @return CertKey 上传服务端证书的私钥，如果没有 CertId，则此项必传。
+                     * 获取上传服务端证书的私钥；如果没有 CertId，则此项必传。
+                     * @return CertKey 上传服务端证书的私钥；如果没有 CertId，则此项必传。
                      */
                     std::string GetCertKey() const;
 
                     /**
-                     * 设置上传服务端证书的私钥，如果没有 CertId，则此项必传。
-                     * @param CertKey 上传服务端证书的私钥，如果没有 CertId，则此项必传。
+                     * 设置上传服务端证书的私钥；如果没有 CertId，则此项必传。
+                     * @param CertKey 上传服务端证书的私钥；如果没有 CertId，则此项必传。
                      */
                     void SetCertKey(const std::string& _certKey);
 
@@ -133,13 +133,13 @@ namespace TencentCloud
                     bool m_certNameHasBeenSet;
 
                     /**
-                     * 上传证书的公钥，如果没有 CertId，则此项必传。
+                     * 上传证书的公钥；如果没有 CertId，则此项必传。
                      */
                     std::string m_certContent;
                     bool m_certContentHasBeenSet;
 
                     /**
-                     * 上传服务端证书的私钥，如果没有 CertId，则此项必传。
+                     * 上传服务端证书的私钥；如果没有 CertId，则此项必传。
                      */
                     std::string m_certKey;
                     bool m_certKeyHasBeenSet;

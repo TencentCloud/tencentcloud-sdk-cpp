@@ -26,7 +26,8 @@ ModifyNatFwReSelectRequest::ModifyNatFwReSelectRequest() :
     m_modeHasBeenSet(false),
     m_cfwInstanceHasBeenSet(false),
     m_natGwListHasBeenSet(false),
-    m_vpcListHasBeenSet(false)
+    m_vpcListHasBeenSet(false),
+    m_fwCidrInfoHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,15 @@ string ModifyNatFwReSelectRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_fwCidrInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwCidrInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fwCidrInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -149,6 +159,22 @@ void ModifyNatFwReSelectRequest::SetVpcList(const vector<string>& _vpcList)
 bool ModifyNatFwReSelectRequest::VpcListHasBeenSet() const
 {
     return m_vpcListHasBeenSet;
+}
+
+FwCidrInfo ModifyNatFwReSelectRequest::GetFwCidrInfo() const
+{
+    return m_fwCidrInfo;
+}
+
+void ModifyNatFwReSelectRequest::SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo)
+{
+    m_fwCidrInfo = _fwCidrInfo;
+    m_fwCidrInfoHasBeenSet = true;
+}
+
+bool ModifyNatFwReSelectRequest::FwCidrInfoHasBeenSet() const
+{
+    return m_fwCidrInfoHasBeenSet;
 }
 
 

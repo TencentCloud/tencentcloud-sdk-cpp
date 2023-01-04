@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取复制组数
-                     * @return TotalCount 复制组数
+                     * 获取复制组数量。
+                     * @return TotalCount 复制组数量。
                      */
                     int64_t GetTotalCount() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool TotalCountHasBeenSet() const;
 
                     /**
-                     * 获取复制组信息
-                     * @return Groups 复制组信息
+                     * 获取复制组信息。
+                     * @return Groups 复制组信息。
                      */
                     std::vector<Groups> GetGroups() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 复制组数
+                     * 复制组数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
 
                     /**
-                     * 复制组信息
+                     * 复制组信息。
                      */
                     std::vector<Groups> m_groups;
                     bool m_groupsHasBeenSet;

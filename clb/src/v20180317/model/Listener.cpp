@@ -40,7 +40,9 @@ Listener::Listener() :
     m_toaHasBeenSet(false),
     m_deregisterTargetRstHasBeenSet(false),
     m_attrFlagsHasBeenSet(false),
-    m_targetGroupListHasBeenSet(false)
+    m_targetGroupListHasBeenSet(false),
+    m_maxConnHasBeenSet(false),
+    m_maxCpsHasBeenSet(false)
 {
 }
 
@@ -293,6 +295,26 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_targetGroupListHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxConn") && !value["MaxConn"].IsNull())
+    {
+        if (!value["MaxConn"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Listener.MaxConn` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConn = value["MaxConn"].GetInt64();
+        m_maxConnHasBeenSet = true;
+    }
+
+    if (value.HasMember("MaxCps") && !value["MaxCps"].IsNull())
+    {
+        if (!value["MaxCps"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Listener.MaxCps` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxCps = value["MaxCps"].GetInt64();
+        m_maxCpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -480,6 +502,22 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_maxConnHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConn, allocator);
+    }
+
+    if (m_maxCpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxCps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxCps, allocator);
     }
 
 }
@@ -803,5 +841,37 @@ void Listener::SetTargetGroupList(const vector<BasicTargetGroupInfo>& _targetGro
 bool Listener::TargetGroupListHasBeenSet() const
 {
     return m_targetGroupListHasBeenSet;
+}
+
+int64_t Listener::GetMaxConn() const
+{
+    return m_maxConn;
+}
+
+void Listener::SetMaxConn(const int64_t& _maxConn)
+{
+    m_maxConn = _maxConn;
+    m_maxConnHasBeenSet = true;
+}
+
+bool Listener::MaxConnHasBeenSet() const
+{
+    return m_maxConnHasBeenSet;
+}
+
+int64_t Listener::GetMaxCps() const
+{
+    return m_maxCps;
+}
+
+void Listener::SetMaxCps(const int64_t& _maxCps)
+{
+    m_maxCps = _maxCps;
+    m_maxCpsHasBeenSet = true;
+}
+
+bool Listener::MaxCpsHasBeenSet() const
+{
+    return m_maxCpsHasBeenSet;
 }
 

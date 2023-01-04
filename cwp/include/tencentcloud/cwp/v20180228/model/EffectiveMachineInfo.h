@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/MachineTag.h>
 #include <tencentcloud/cwp/v20180228/model/LicenseOrder.h>
+#include <tencentcloud/cwp/v20180228/model/Tags.h>
 
 
 namespace TencentCloud
@@ -268,6 +269,50 @@ namespace TencentCloud
                      */
                     bool VulNumHasBeenSet() const;
 
+                    /**
+                     * 获取云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CloudTags 云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tags> GetCloudTags() const;
+
+                    /**
+                     * 设置云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CloudTags 云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCloudTags(const std::vector<Tags>& _cloudTags);
+
+                    /**
+                     * 判断参数 CloudTags 是否已赋值
+                     * @return CloudTags 是否已赋值
+                     */
+                    bool CloudTagsHasBeenSet() const;
+
+                    /**
+                     * 获取机器instance ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceID 机器instance ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceID() const;
+
+                    /**
+                     * 设置机器instance ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceID 机器instance ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceID(const std::string& _instanceID);
+
+                    /**
+                     * 判断参数 InstanceID 是否已赋值
+                     * @return InstanceID 是否已赋值
+                     */
+                    bool InstanceIDHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +384,20 @@ namespace TencentCloud
                      */
                     uint64_t m_vulNum;
                     bool m_vulNumHasBeenSet;
+
+                    /**
+                     * 云标签信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tags> m_cloudTags;
+                    bool m_cloudTagsHasBeenSet;
+
+                    /**
+                     * 机器instance ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceID;
+                    bool m_instanceIDHasBeenSet;
 
                 };
             }

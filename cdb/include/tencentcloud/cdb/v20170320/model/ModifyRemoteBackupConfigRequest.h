@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool RemoteRegionHasBeenSet() const;
 
                     /**
-                     * 获取异地备份保留天时间，单位为天
-                     * @return ExpireDays 异地备份保留天时间，单位为天
+                     * 获取异地备份保留时间，单位为天
+                     * @return ExpireDays 异地备份保留时间，单位为天
                      */
                     int64_t GetExpireDays() const;
 
                     /**
-                     * 设置异地备份保留天时间，单位为天
-                     * @param ExpireDays 异地备份保留天时间，单位为天
+                     * 设置异地备份保留时间，单位为天
+                     * @param ExpireDays 异地备份保留时间，单位为天
                      */
                     void SetExpireDays(const int64_t& _expireDays);
 
@@ -159,7 +159,7 @@ namespace TencentCloud
                     bool m_remoteRegionHasBeenSet;
 
                     /**
-                     * 异地备份保留天时间，单位为天
+                     * 异地备份保留时间，单位为天
                      */
                     int64_t m_expireDays;
                     bool m_expireDaysHasBeenSet;

@@ -32,7 +32,8 @@ CreateNatFwInstanceWithDomainRequest::CreateNatFwInstanceWithDomainRequest() :
     m_zoneBakHasBeenSet(false),
     m_crossAZoneHasBeenSet(false),
     m_isCreateDomainHasBeenSet(false),
-    m_domainHasBeenSet(false)
+    m_domainHasBeenSet(false),
+    m_fwCidrInfoHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,15 @@ string CreateNatFwInstanceWithDomainRequest::ToJsonString() const
         string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fwCidrInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwCidrInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fwCidrInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -295,6 +305,22 @@ void CreateNatFwInstanceWithDomainRequest::SetDomain(const string& _domain)
 bool CreateNatFwInstanceWithDomainRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
+}
+
+FwCidrInfo CreateNatFwInstanceWithDomainRequest::GetFwCidrInfo() const
+{
+    return m_fwCidrInfo;
+}
+
+void CreateNatFwInstanceWithDomainRequest::SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo)
+{
+    m_fwCidrInfo = _fwCidrInfo;
+    m_fwCidrInfoHasBeenSet = true;
+}
+
+bool CreateNatFwInstanceWithDomainRequest::FwCidrInfoHasBeenSet() const
+{
+    return m_fwCidrInfoHasBeenSet;
 }
 
 

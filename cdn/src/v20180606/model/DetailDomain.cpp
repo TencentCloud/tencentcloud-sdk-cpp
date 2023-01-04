@@ -84,7 +84,8 @@ DetailDomain::DetailDomain() :
     m_ruleEngineHasBeenSet(false),
     m_parentHostHasBeenSet(false),
     m_hwPrivateAccessHasBeenSet(false),
-    m_qnPrivateAccessHasBeenSet(false)
+    m_qnPrivateAccessHasBeenSet(false),
+    m_httpsBillingHasBeenSet(false)
 {
 }
 
@@ -1085,6 +1086,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_qnPrivateAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("HttpsBilling") && !value["HttpsBilling"].IsNull())
+    {
+        if (!value["HttpsBilling"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.HttpsBilling` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_httpsBilling.Deserialize(value["HttpsBilling"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_httpsBillingHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1668,6 +1686,15 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qnPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_httpsBillingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpsBilling";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_httpsBilling.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2695,5 +2722,21 @@ void DetailDomain::SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAccess)
 bool DetailDomain::QnPrivateAccessHasBeenSet() const
 {
     return m_qnPrivateAccessHasBeenSet;
+}
+
+HttpsBilling DetailDomain::GetHttpsBilling() const
+{
+    return m_httpsBilling;
+}
+
+void DetailDomain::SetHttpsBilling(const HttpsBilling& _httpsBilling)
+{
+    m_httpsBilling = _httpsBilling;
+    m_httpsBillingHasBeenSet = true;
+}
+
+bool DetailDomain::HttpsBillingHasBeenSet() const
+{
+    return m_httpsBillingHasBeenSet;
 }
 

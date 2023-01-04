@@ -41,7 +41,8 @@ BruteAttackInfo::BruteAttackInfo() :
     m_portHasBeenSet(false),
     m_modifyTimeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_dataStatusHasBeenSet(false)
+    m_dataStatusHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,23 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
         m_dataStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +451,15 @@ void BruteAttackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "DataStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataStatus, allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -772,5 +799,21 @@ void BruteAttackInfo::SetDataStatus(const uint64_t& _dataStatus)
 bool BruteAttackInfo::DataStatusHasBeenSet() const
 {
     return m_dataStatusHasBeenSet;
+}
+
+MachineExtraInfo BruteAttackInfo::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void BruteAttackInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool BruteAttackInfo::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

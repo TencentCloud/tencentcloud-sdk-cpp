@@ -30,7 +30,9 @@ EffectiveMachineInfo::EffectiveMachineInfo() :
     m_kernelVersionHasBeenSet(false),
     m_machineStatusHasBeenSet(false),
     m_licenseOrderHasBeenSet(false),
-    m_vulNumHasBeenSet(false)
+    m_vulNumHasBeenSet(false),
+    m_cloudTagsHasBeenSet(false),
+    m_instanceIDHasBeenSet(false)
 {
 }
 
@@ -156,6 +158,36 @@ CoreInternalOutcome EffectiveMachineInfo::Deserialize(const rapidjson::Value &va
         m_vulNumHasBeenSet = true;
     }
 
+    if (value.HasMember("CloudTags") && !value["CloudTags"].IsNull())
+    {
+        if (!value["CloudTags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.CloudTags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CloudTags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tags item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cloudTags.push_back(item);
+        }
+        m_cloudTagsHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceID") && !value["InstanceID"].IsNull())
+    {
+        if (!value["InstanceID"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EffectiveMachineInfo.InstanceID` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceID = string(value["InstanceID"].GetString());
+        m_instanceIDHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +281,29 @@ void EffectiveMachineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "VulNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_vulNum, allocator);
+    }
+
+    if (m_cloudTagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CloudTags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cloudTags.begin(); itr != m_cloudTags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_instanceIDHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceID";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceID.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -412,5 +467,37 @@ void EffectiveMachineInfo::SetVulNum(const uint64_t& _vulNum)
 bool EffectiveMachineInfo::VulNumHasBeenSet() const
 {
     return m_vulNumHasBeenSet;
+}
+
+vector<Tags> EffectiveMachineInfo::GetCloudTags() const
+{
+    return m_cloudTags;
+}
+
+void EffectiveMachineInfo::SetCloudTags(const vector<Tags>& _cloudTags)
+{
+    m_cloudTags = _cloudTags;
+    m_cloudTagsHasBeenSet = true;
+}
+
+bool EffectiveMachineInfo::CloudTagsHasBeenSet() const
+{
+    return m_cloudTagsHasBeenSet;
+}
+
+string EffectiveMachineInfo::GetInstanceID() const
+{
+    return m_instanceID;
+}
+
+void EffectiveMachineInfo::SetInstanceID(const string& _instanceID)
+{
+    m_instanceID = _instanceID;
+    m_instanceIDHasBeenSet = true;
+}
+
+bool EffectiveMachineInfo::InstanceIDHasBeenSet() const
+{
+    return m_instanceIDHasBeenSet;
 }
 

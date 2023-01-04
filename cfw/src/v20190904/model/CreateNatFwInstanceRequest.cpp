@@ -30,7 +30,8 @@ CreateNatFwInstanceRequest::CreateNatFwInstanceRequest() :
     m_natGwListHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_zoneBakHasBeenSet(false),
-    m_crossAZoneHasBeenSet(false)
+    m_crossAZoneHasBeenSet(false),
+    m_fwCidrInfoHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,15 @@ string CreateNatFwInstanceRequest::ToJsonString() const
         string key = "CrossAZone";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_crossAZone, allocator);
+    }
+
+    if (m_fwCidrInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FwCidrInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_fwCidrInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -245,6 +255,22 @@ void CreateNatFwInstanceRequest::SetCrossAZone(const int64_t& _crossAZone)
 bool CreateNatFwInstanceRequest::CrossAZoneHasBeenSet() const
 {
     return m_crossAZoneHasBeenSet;
+}
+
+FwCidrInfo CreateNatFwInstanceRequest::GetFwCidrInfo() const
+{
+    return m_fwCidrInfo;
+}
+
+void CreateNatFwInstanceRequest::SetFwCidrInfo(const FwCidrInfo& _fwCidrInfo)
+{
+    m_fwCidrInfo = _fwCidrInfo;
+    m_fwCidrInfoHasBeenSet = true;
+}
+
+bool CreateNatFwInstanceRequest::FwCidrInfoHasBeenSet() const
+{
+    return m_fwCidrInfoHasBeenSet;
 }
 
 

@@ -34,7 +34,8 @@ AssetInitServiceBaseInfo::AssetInitServiceBaseInfo() :
     m_updateTimeHasBeenSet(false),
     m_firstTimeHasBeenSet(false),
     m_isNewHasBeenSet(false),
-    m_machineWanIpHasBeenSet(false)
+    m_machineWanIpHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,23 @@ CoreInternalOutcome AssetInitServiceBaseInfo::Deserialize(const rapidjson::Value
         m_machineWanIpHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetInitServiceBaseInfo.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +318,15 @@ void AssetInitServiceBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "MachineWanIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineWanIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -527,5 +554,21 @@ void AssetInitServiceBaseInfo::SetMachineWanIp(const string& _machineWanIp)
 bool AssetInitServiceBaseInfo::MachineWanIpHasBeenSet() const
 {
     return m_machineWanIpHasBeenSet;
+}
+
+MachineExtraInfo AssetInitServiceBaseInfo::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void AssetInitServiceBaseInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool AssetInitServiceBaseInfo::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

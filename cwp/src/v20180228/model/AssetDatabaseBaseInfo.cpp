@@ -46,7 +46,8 @@ AssetDatabaseBaseInfo::AssetDatabaseBaseInfo() :
     m_updateTimeHasBeenSet(false),
     m_firstTimeHasBeenSet(false),
     m_isNewHasBeenSet(false),
-    m_machineNameHasBeenSet(false)
+    m_machineNameHasBeenSet(false),
+    m_machineExtraInfoHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,23 @@ CoreInternalOutcome AssetDatabaseBaseInfo::Deserialize(const rapidjson::Value &v
         m_machineNameHasBeenSet = true;
     }
 
+    if (value.HasMember("MachineExtraInfo") && !value["MachineExtraInfo"].IsNull())
+    {
+        if (!value["MachineExtraInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AssetDatabaseBaseInfo.MachineExtraInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_machineExtraInfo.Deserialize(value["MachineExtraInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_machineExtraInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +563,15 @@ void AssetDatabaseBaseInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MachineName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_machineName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineExtraInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineExtraInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -964,5 +991,21 @@ void AssetDatabaseBaseInfo::SetMachineName(const string& _machineName)
 bool AssetDatabaseBaseInfo::MachineNameHasBeenSet() const
 {
     return m_machineNameHasBeenSet;
+}
+
+MachineExtraInfo AssetDatabaseBaseInfo::GetMachineExtraInfo() const
+{
+    return m_machineExtraInfo;
+}
+
+void AssetDatabaseBaseInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo)
+{
+    m_machineExtraInfo = _machineExtraInfo;
+    m_machineExtraInfoHasBeenSet = true;
+}
+
+bool AssetDatabaseBaseInfo::MachineExtraInfoHasBeenSet() const
+{
+    return m_machineExtraInfoHasBeenSet;
 }
 

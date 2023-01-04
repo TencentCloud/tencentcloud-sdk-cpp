@@ -894,7 +894,7 @@ namespace TencentCloud
                 DescribeProxySlowLogOutcomeCallable DescribeProxySlowLogCallable(const Model::DescribeProxySlowLogRequest& request);
 
                 /**
-                 *查询复制组
+                 *本接口（DescribeReplicationGroup）查询复制组。
                  * @param req DescribeReplicationGroupRequest
                  * @return DescribeReplicationGroupOutcome
                  */

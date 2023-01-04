@@ -51,6 +51,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ConflictHandleOption.h
   include/tencentcloud/dts/v20211206/model/ResumeSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskNameResponse.h
+  include/tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobResponse.h
   include/tencentcloud/dts/v20211206/model/CreateMigrationServiceRequest.h
   include/tencentcloud/dts/v20211206/model/DetailCheckItem.h
@@ -105,6 +106,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CompareViewItem.h
   include/tencentcloud/dts/v20211206/model/StepInfo.h
   include/tencentcloud/dts/v20211206/model/ResumeMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/PauseSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/TradeInfo.h
   include/tencentcloud/dts/v20211206/model/StartCompareResponse.h
   include/tencentcloud/dts/v20211206/model/CreateCompareTaskResponse.h
@@ -241,6 +243,7 @@ set(dts_src
   src/v20211206/model/ConflictHandleOption.cpp
   src/v20211206/model/ResumeSyncJobResponse.cpp
   src/v20211206/model/ModifyCompareTaskNameResponse.cpp
+  src/v20211206/model/PauseSyncJobRequest.cpp
   src/v20211206/model/CreateMigrateCheckJobResponse.cpp
   src/v20211206/model/CreateMigrationServiceRequest.cpp
   src/v20211206/model/DetailCheckItem.cpp
@@ -295,6 +298,7 @@ set(dts_src
   src/v20211206/model/CompareViewItem.cpp
   src/v20211206/model/StepInfo.cpp
   src/v20211206/model/ResumeMigrateJobRequest.cpp
+  src/v20211206/model/PauseSyncJobResponse.cpp
   src/v20211206/model/TradeInfo.cpp
   src/v20211206/model/StartCompareResponse.cpp
   src/v20211206/model/CreateCompareTaskResponse.cpp

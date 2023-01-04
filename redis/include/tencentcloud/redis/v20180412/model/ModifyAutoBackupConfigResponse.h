@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool AutoBackupTypeHasBeenSet() const;
 
                     /**
-                     * 获取日期Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
-                     * @return WeekDays 日期Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+                     * 获取自动备份周期。取值为：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+                     * @return WeekDays 自动备份周期。取值为：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
                      */
                     std::vector<std::string> GetWeekDays() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool WeekDaysHasBeenSet() const;
 
                     /**
-                     * 获取时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
-                     * @return TimePeriod 时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
+                     * 获取自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
+                     * @return TimePeriod 自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
                      */
                     std::string GetTimePeriod() const;
 
@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool TimePeriodHasBeenSet() const;
 
                     /**
-                     * 获取全量备份文件保存天数,单位：天
-                     * @return BackupStorageDays 全量备份文件保存天数,单位：天
+                     * 获取全量备份文件保存天数,单位：天。
+                     * @return BackupStorageDays 全量备份文件保存天数,单位：天。
                      */
                     int64_t GetBackupStorageDays() const;
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                     bool m_autoBackupTypeHasBeenSet;
 
                     /**
-                     * 日期Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
+                     * 自动备份周期。取值为：Monday，Tuesday，Wednesday，Thursday，Friday，Saturday，Sunday。
                      */
                     std::vector<std::string> m_weekDays;
                     bool m_weekDaysHasBeenSet;
 
                     /**
-                     * 时间段 00:00-01:00, 01:00-02:00...... 23:00-00:00
+                     * 自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
                      */
                     std::string m_timePeriod;
                     bool m_timePeriodHasBeenSet;
 
                     /**
-                     * 全量备份文件保存天数,单位：天
+                     * 全量备份文件保存天数,单位：天。
                      */
                     int64_t m_backupStorageDays;
                     bool m_backupStorageDaysHasBeenSet;

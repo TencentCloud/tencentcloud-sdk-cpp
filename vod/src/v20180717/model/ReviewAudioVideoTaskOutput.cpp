@@ -26,7 +26,8 @@ ReviewAudioVideoTaskOutput::ReviewAudioVideoTaskOutput() :
     m_formHasBeenSet(false),
     m_segmentSetHasBeenSet(false),
     m_segmentSetFileUrlHasBeenSet(false),
-    m_segmentSetFileUrlExpireTimeHasBeenSet(false)
+    m_segmentSetFileUrlExpireTimeHasBeenSet(false),
+    m_coverReviewResultHasBeenSet(false)
 {
 }
 
@@ -105,6 +106,23 @@ CoreInternalOutcome ReviewAudioVideoTaskOutput::Deserialize(const rapidjson::Val
         m_segmentSetFileUrlExpireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CoverReviewResult") && !value["CoverReviewResult"].IsNull())
+    {
+        if (!value["CoverReviewResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReviewAudioVideoTaskOutput.CoverReviewResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_coverReviewResult.Deserialize(value["CoverReviewResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_coverReviewResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +183,15 @@ void ReviewAudioVideoTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson
         string key = "SegmentSetFileUrlExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_segmentSetFileUrlExpireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coverReviewResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverReviewResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_coverReviewResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -264,5 +291,21 @@ void ReviewAudioVideoTaskOutput::SetSegmentSetFileUrlExpireTime(const string& _s
 bool ReviewAudioVideoTaskOutput::SegmentSetFileUrlExpireTimeHasBeenSet() const
 {
     return m_segmentSetFileUrlExpireTimeHasBeenSet;
+}
+
+ReviewImageResult ReviewAudioVideoTaskOutput::GetCoverReviewResult() const
+{
+    return m_coverReviewResult;
+}
+
+void ReviewAudioVideoTaskOutput::SetCoverReviewResult(const ReviewImageResult& _coverReviewResult)
+{
+    m_coverReviewResult = _coverReviewResult;
+    m_coverReviewResultHasBeenSet = true;
+}
+
+bool ReviewAudioVideoTaskOutput::CoverReviewResultHasBeenSet() const
+{
+    return m_coverReviewResultHasBeenSet;
 }
 

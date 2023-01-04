@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cwp/v20180228/model/AssetNetworkCardInfo.h>
 #include <tencentcloud/cwp/v20180228/model/AssetDiskPartitionInfo.h>
+#include <tencentcloud/cwp/v20180228/model/MachineExtraInfo.h>
 
 
 namespace TencentCloud
@@ -301,14 +302,14 @@ namespace TencentCloud
                     bool CpuLoadHasBeenSet() const;
 
                     /**
-                     * 获取防护级别：0基础版，1专业版
-                     * @return ProtectLevel 防护级别：0基础版，1专业版
+                     * 获取防护级别：0基础版，1专业版，2旗舰版，3普惠版
+                     * @return ProtectLevel 防护级别：0基础版，1专业版，2旗舰版，3普惠版
                      */
                     uint64_t GetProtectLevel() const;
 
                     /**
-                     * 设置防护级别：0基础版，1专业版
-                     * @param ProtectLevel 防护级别：0基础版，1专业版
+                     * 设置防护级别：0基础版，1专业版，2旗舰版，3普惠版
+                     * @param ProtectLevel 防护级别：0基础版，1专业版，2旗舰版，3普惠版
                      */
                     void SetProtectLevel(const uint64_t& _protectLevel);
 
@@ -690,6 +691,28 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取主机二外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineExtraInfo 主机二外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo GetMachineExtraInfo() const;
+
+                    /**
+                     * 设置主机二外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MachineExtraInfo 主机二外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
+
+                    /**
+                     * 判断参数 MachineExtraInfo 是否已赋值
+                     * @return MachineExtraInfo 是否已赋值
+                     */
+                    bool MachineExtraInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -777,7 +800,7 @@ namespace TencentCloud
                     bool m_cpuLoadHasBeenSet;
 
                     /**
-                     * 防护级别：0基础版，1专业版
+                     * 防护级别：0基础版，1专业版，2旗舰版，3普惠版
                      */
                     uint64_t m_protectLevel;
                     bool m_protectLevelHasBeenSet;
@@ -904,6 +927,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 主机二外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo m_machineExtraInfo;
+                    bool m_machineExtraInfoHasBeenSet;
 
                 };
             }

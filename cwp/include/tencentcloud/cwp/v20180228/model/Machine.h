@@ -27,6 +27,7 @@
 #include <tencentcloud/cwp/v20180228/model/MachineTag.h>
 #include <tencentcloud/cwp/v20180228/model/RegionInfo.h>
 #include <tencentcloud/cwp/v20180228/model/Tags.h>
+#include <tencentcloud/cwp/v20180228/model/MachineExtraInfo.h>
 
 
 namespace TencentCloud
@@ -591,6 +592,68 @@ namespace TencentCloud
                      */
                     bool IpListHasBeenSet() const;
 
+                    /**
+                     * 获取所属网络
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId 所属网络
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置所属网络
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcId 所属网络
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
+                    /**
+                     * 获取附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MachineExtraInfo 附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo GetMachineExtraInfo() const;
+
+                    /**
+                     * 设置附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MachineExtraInfo 附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo);
+
+                    /**
+                     * 判断参数 MachineExtraInfo 是否已赋值
+                     * @return MachineExtraInfo 是否已赋值
+                     */
+                    bool MachineExtraInfoHasBeenSet() const;
+
+                    /**
+                     * 获取实例ID
+                     * @return InstanceId 实例ID
+                     */
+                    std::string GetInstanceId() const;
+
+                    /**
+                     * 设置实例ID
+                     * @param InstanceId 实例ID
+                     */
+                    void SetInstanceId(const std::string& _instanceId);
+
+                    /**
+                     * 判断参数 InstanceId 是否已赋值
+                     * @return InstanceId 是否已赋值
+                     */
+                    bool InstanceIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -768,6 +831,26 @@ namespace TencentCloud
                      */
                     std::string m_ipList;
                     bool m_ipListHasBeenSet;
+
+                    /**
+                     * 所属网络
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
+
+                    /**
+                     * 附加信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MachineExtraInfo m_machineExtraInfo;
+                    bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 实例ID
+                     */
+                    std::string m_instanceId;
+                    bool m_instanceIdHasBeenSet;
 
                 };
             }

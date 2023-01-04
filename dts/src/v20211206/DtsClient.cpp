@@ -1115,6 +1115,49 @@ DtsClient::ModifyMigrationJobOutcomeCallable DtsClient::ModifyMigrationJobCallab
     return task->get_future();
 }
 
+DtsClient::PauseSyncJobOutcome DtsClient::PauseSyncJob(const PauseSyncJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseSyncJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseSyncJobResponse rsp = PauseSyncJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseSyncJobOutcome(rsp);
+        else
+            return PauseSyncJobOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseSyncJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::PauseSyncJobAsync(const PauseSyncJobRequest& request, const PauseSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PauseSyncJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::PauseSyncJobOutcomeCallable DtsClient::PauseSyncJobCallable(const PauseSyncJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PauseSyncJobOutcome()>>(
+        [this, request]()
+        {
+            return this->PauseSyncJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::RecoverMigrateJobOutcome DtsClient::RecoverMigrateJob(const RecoverMigrateJobRequest &request)
 {
     auto outcome = MakeRequest(request, "RecoverMigrateJob");

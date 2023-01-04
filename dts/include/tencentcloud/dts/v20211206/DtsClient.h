@@ -73,6 +73,8 @@
 #include <tencentcloud/dts/v20211206/model/ModifyMigrateNameResponse.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrationJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/ModifyMigrationJobResponse.h>
+#include <tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h>
+#include <tencentcloud/dts/v20211206/model/PauseSyncJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/RecoverMigrateJobRequest.h>
 #include <tencentcloud/dts/v20211206/model/RecoverMigrateJobResponse.h>
 #include <tencentcloud/dts/v20211206/model/RecoverSyncJobRequest.h>
@@ -188,6 +190,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMigrationJobResponse> ModifyMigrationJobOutcome;
                 typedef std::future<ModifyMigrationJobOutcome> ModifyMigrationJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::ModifyMigrationJobRequest&, ModifyMigrationJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMigrationJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::PauseSyncJobResponse> PauseSyncJobOutcome;
+                typedef std::future<PauseSyncJobOutcome> PauseSyncJobOutcomeCallable;
+                typedef std::function<void(const DtsClient*, const Model::PauseSyncJobRequest&, PauseSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PauseSyncJobAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecoverMigrateJobResponse> RecoverMigrateJobOutcome;
                 typedef std::future<RecoverMigrateJobOutcome> RecoverMigrateJobOutcomeCallable;
                 typedef std::function<void(const DtsClient*, const Model::RecoverMigrateJobRequest&, RecoverMigrateJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecoverMigrateJobAsyncHandler;
@@ -462,6 +467,15 @@ namespace TencentCloud
                 ModifyMigrationJobOutcome ModifyMigrationJob(const Model::ModifyMigrationJobRequest &request);
                 void ModifyMigrationJobAsync(const Model::ModifyMigrationJobRequest& request, const ModifyMigrationJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMigrationJobOutcomeCallable ModifyMigrationJobCallable(const Model::ModifyMigrationJobRequest& request);
+
+                /**
+                 *暂停处于同步中的数据同步任务。
+                 * @param req PauseSyncJobRequest
+                 * @return PauseSyncJobOutcome
+                 */
+                PauseSyncJobOutcome PauseSyncJob(const Model::PauseSyncJobRequest &request);
+                void PauseSyncJobAsync(const Model::PauseSyncJobRequest& request, const PauseSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                PauseSyncJobOutcomeCallable PauseSyncJobCallable(const Model::PauseSyncJobRequest& request);
 
                 /**
                  *解除隔离数据迁移任务，用户手动发起隔离后的手动解隔离，只有任务状态为已隔离(手动操作)状态下才能触发此操作。调用此接口后可通过查询迁移服务列表接口`DescribeMigrationJobs`来查询当前任务状态。

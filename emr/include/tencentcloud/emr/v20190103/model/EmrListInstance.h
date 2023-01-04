@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/emr/v20190103/model/Tag.h>
+#include <tencentcloud/emr/v20190103/model/SoftDependInfo.h>
 
 
 namespace TencentCloud
@@ -623,6 +624,28 @@ namespace TencentCloud
                      */
                     bool IsHandsClusterHasBeenSet() const;
 
+                    /**
+                     * 获取体外客户端组件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OutSideSoftInfo 体外客户端组件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SoftDependInfo> GetOutSideSoftInfo() const;
+
+                    /**
+                     * 设置体外客户端组件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OutSideSoftInfo 体外客户端组件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOutSideSoftInfo(const std::vector<SoftDependInfo>& _outSideSoftInfo);
+
+                    /**
+                     * 判断参数 OutSideSoftInfo 是否已赋值
+                     * @return OutSideSoftInfo 是否已赋值
+                     */
+                    bool OutSideSoftInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -810,6 +833,13 @@ namespace TencentCloud
                      */
                     bool m_isHandsCluster;
                     bool m_isHandsClusterHasBeenSet;
+
+                    /**
+                     * 体外客户端组件信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SoftDependInfo> m_outSideSoftInfo;
+                    bool m_outSideSoftInfoHasBeenSet;
 
                 };
             }
