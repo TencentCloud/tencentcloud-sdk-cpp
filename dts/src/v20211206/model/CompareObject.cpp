@@ -22,7 +22,8 @@ using namespace std;
 
 CompareObject::CompareObject() :
     m_objectModeHasBeenSet(false),
-    m_objectItemsHasBeenSet(false)
+    m_objectItemsHasBeenSet(false),
+    m_advancedObjectsHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,19 @@ CoreInternalOutcome CompareObject::Deserialize(const rapidjson::Value &value)
         m_objectItemsHasBeenSet = true;
     }
 
+    if (value.HasMember("AdvancedObjects") && !value["AdvancedObjects"].IsNull())
+    {
+        if (!value["AdvancedObjects"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CompareObject.AdvancedObjects` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AdvancedObjects"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_advancedObjects.push_back((*itr).GetString());
+        }
+        m_advancedObjectsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +102,19 @@ void CompareObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_advancedObjectsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AdvancedObjects";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_advancedObjects.begin(); itr != m_advancedObjects.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -124,5 +151,21 @@ void CompareObject::SetObjectItems(const vector<CompareObjectItem>& _objectItems
 bool CompareObject::ObjectItemsHasBeenSet() const
 {
     return m_objectItemsHasBeenSet;
+}
+
+vector<string> CompareObject::GetAdvancedObjects() const
+{
+    return m_advancedObjects;
+}
+
+void CompareObject::SetAdvancedObjects(const vector<string>& _advancedObjects)
+{
+    m_advancedObjects = _advancedObjects;
+    m_advancedObjectsHasBeenSet = true;
+}
+
+bool CompareObject::AdvancedObjectsHasBeenSet() const
+{
+    return m_advancedObjectsHasBeenSet;
 }
 

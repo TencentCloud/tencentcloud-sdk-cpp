@@ -24,7 +24,13 @@ ZoneInfo::ZoneInfo() :
     m_zoneHasBeenSet(false),
     m_zoneNameHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_zoneStateHasBeenSet(false)
+    m_zoneStateHasBeenSet(false),
+    m_parentZoneHasBeenSet(false),
+    m_parentZoneIdHasBeenSet(false),
+    m_parentZoneNameHasBeenSet(false),
+    m_zoneTypeHasBeenSet(false),
+    m_machineRoomTypeMCHasBeenSet(false),
+    m_zoneIdMCHasBeenSet(false)
 {
 }
 
@@ -73,6 +79,66 @@ CoreInternalOutcome ZoneInfo::Deserialize(const rapidjson::Value &value)
         m_zoneStateHasBeenSet = true;
     }
 
+    if (value.HasMember("ParentZone") && !value["ParentZone"].IsNull())
+    {
+        if (!value["ParentZone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ParentZone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentZone = string(value["ParentZone"].GetString());
+        m_parentZoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentZoneId") && !value["ParentZoneId"].IsNull())
+    {
+        if (!value["ParentZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ParentZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentZoneId = string(value["ParentZoneId"].GetString());
+        m_parentZoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ParentZoneName") && !value["ParentZoneName"].IsNull())
+    {
+        if (!value["ParentZoneName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ParentZoneName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parentZoneName = string(value["ParentZoneName"].GetString());
+        m_parentZoneNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneType") && !value["ZoneType"].IsNull())
+    {
+        if (!value["ZoneType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneType = string(value["ZoneType"].GetString());
+        m_zoneTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("MachineRoomTypeMC") && !value["MachineRoomTypeMC"].IsNull())
+    {
+        if (!value["MachineRoomTypeMC"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.MachineRoomTypeMC` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_machineRoomTypeMC = string(value["MachineRoomTypeMC"].GetString());
+        m_machineRoomTypeMCHasBeenSet = true;
+    }
+
+    if (value.HasMember("ZoneIdMC") && !value["ZoneIdMC"].IsNull())
+    {
+        if (!value["ZoneIdMC"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneInfo.ZoneIdMC` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneIdMC = string(value["ZoneIdMC"].GetString());
+        m_zoneIdMCHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +176,54 @@ void ZoneInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ZoneState";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentZone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentZone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentZoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentZoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parentZoneNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParentZoneName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parentZoneName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_machineRoomTypeMCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MachineRoomTypeMC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_machineRoomTypeMC.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdMCHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneIdMC";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneIdMC.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +291,101 @@ void ZoneInfo::SetZoneState(const string& _zoneState)
 bool ZoneInfo::ZoneStateHasBeenSet() const
 {
     return m_zoneStateHasBeenSet;
+}
+
+string ZoneInfo::GetParentZone() const
+{
+    return m_parentZone;
+}
+
+void ZoneInfo::SetParentZone(const string& _parentZone)
+{
+    m_parentZone = _parentZone;
+    m_parentZoneHasBeenSet = true;
+}
+
+bool ZoneInfo::ParentZoneHasBeenSet() const
+{
+    return m_parentZoneHasBeenSet;
+}
+
+string ZoneInfo::GetParentZoneId() const
+{
+    return m_parentZoneId;
+}
+
+void ZoneInfo::SetParentZoneId(const string& _parentZoneId)
+{
+    m_parentZoneId = _parentZoneId;
+    m_parentZoneIdHasBeenSet = true;
+}
+
+bool ZoneInfo::ParentZoneIdHasBeenSet() const
+{
+    return m_parentZoneIdHasBeenSet;
+}
+
+string ZoneInfo::GetParentZoneName() const
+{
+    return m_parentZoneName;
+}
+
+void ZoneInfo::SetParentZoneName(const string& _parentZoneName)
+{
+    m_parentZoneName = _parentZoneName;
+    m_parentZoneNameHasBeenSet = true;
+}
+
+bool ZoneInfo::ParentZoneNameHasBeenSet() const
+{
+    return m_parentZoneNameHasBeenSet;
+}
+
+string ZoneInfo::GetZoneType() const
+{
+    return m_zoneType;
+}
+
+void ZoneInfo::SetZoneType(const string& _zoneType)
+{
+    m_zoneType = _zoneType;
+    m_zoneTypeHasBeenSet = true;
+}
+
+bool ZoneInfo::ZoneTypeHasBeenSet() const
+{
+    return m_zoneTypeHasBeenSet;
+}
+
+string ZoneInfo::GetMachineRoomTypeMC() const
+{
+    return m_machineRoomTypeMC;
+}
+
+void ZoneInfo::SetMachineRoomTypeMC(const string& _machineRoomTypeMC)
+{
+    m_machineRoomTypeMC = _machineRoomTypeMC;
+    m_machineRoomTypeMCHasBeenSet = true;
+}
+
+bool ZoneInfo::MachineRoomTypeMCHasBeenSet() const
+{
+    return m_machineRoomTypeMCHasBeenSet;
+}
+
+string ZoneInfo::GetZoneIdMC() const
+{
+    return m_zoneIdMC;
+}
+
+void ZoneInfo::SetZoneIdMC(const string& _zoneIdMC)
+{
+    m_zoneIdMC = _zoneIdMC;
+    m_zoneIdMCHasBeenSet = true;
+}
+
+bool ZoneInfo::ZoneIdMCHasBeenSet() const
+{
+    return m_zoneIdMCHasBeenSet;
 }
 

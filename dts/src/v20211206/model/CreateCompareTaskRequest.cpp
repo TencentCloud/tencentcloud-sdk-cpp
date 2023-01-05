@@ -26,7 +26,8 @@ CreateCompareTaskRequest::CreateCompareTaskRequest() :
     m_jobIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_objectModeHasBeenSet(false),
-    m_objectsHasBeenSet(false)
+    m_objectsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -68,6 +69,15 @@ string CreateCompareTaskRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_objects.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_options.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -140,6 +150,22 @@ void CreateCompareTaskRequest::SetObjects(const CompareObject& _objects)
 bool CreateCompareTaskRequest::ObjectsHasBeenSet() const
 {
     return m_objectsHasBeenSet;
+}
+
+CompareOptions CreateCompareTaskRequest::GetOptions() const
+{
+    return m_options;
+}
+
+void CreateCompareTaskRequest::SetOptions(const CompareOptions& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool CreateCompareTaskRequest::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 
 

@@ -31,7 +31,10 @@ CompareTaskItem::CompareTaskItem() :
     m_conclusionHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_startedAtHasBeenSet(false),
-    m_finishedAtHasBeenSet(false)
+    m_finishedAtHasBeenSet(false),
+    m_methodHasBeenSet(false),
+    m_optionsHasBeenSet(false),
+    m_messageHasBeenSet(false)
 {
 }
 
@@ -171,6 +174,43 @@ CoreInternalOutcome CompareTaskItem::Deserialize(const rapidjson::Value &value)
         m_finishedAtHasBeenSet = true;
     }
 
+    if (value.HasMember("Method") && !value["Method"].IsNull())
+    {
+        if (!value["Method"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareTaskItem.Method` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_method = string(value["Method"].GetString());
+        m_methodHasBeenSet = true;
+    }
+
+    if (value.HasMember("Options") && !value["Options"].IsNull())
+    {
+        if (!value["Options"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareTaskItem.Options` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_options.Deserialize(value["Options"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_optionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareTaskItem.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -267,6 +307,31 @@ void CompareTaskItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "FinishedAt";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_finishedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_methodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Method";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_method.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_options.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -446,5 +511,53 @@ void CompareTaskItem::SetFinishedAt(const string& _finishedAt)
 bool CompareTaskItem::FinishedAtHasBeenSet() const
 {
     return m_finishedAtHasBeenSet;
+}
+
+string CompareTaskItem::GetMethod() const
+{
+    return m_method;
+}
+
+void CompareTaskItem::SetMethod(const string& _method)
+{
+    m_method = _method;
+    m_methodHasBeenSet = true;
+}
+
+bool CompareTaskItem::MethodHasBeenSet() const
+{
+    return m_methodHasBeenSet;
+}
+
+CompareOptions CompareTaskItem::GetOptions() const
+{
+    return m_options;
+}
+
+void CompareTaskItem::SetOptions(const CompareOptions& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool CompareTaskItem::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
+}
+
+string CompareTaskItem::GetMessage() const
+{
+    return m_message;
+}
+
+void CompareTaskItem::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool CompareTaskItem::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 

@@ -1932,6 +1932,49 @@ RumClient::DescribeReleaseFilesOutcomeCallable RumClient::DescribeReleaseFilesCa
     return task->get_future();
 }
 
+RumClient::DescribeRumGroupLogOutcome RumClient::DescribeRumGroupLog(const DescribeRumGroupLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRumGroupLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRumGroupLogResponse rsp = DescribeRumGroupLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRumGroupLogOutcome(rsp);
+        else
+            return DescribeRumGroupLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRumGroupLogOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeRumGroupLogAsync(const DescribeRumGroupLogRequest& request, const DescribeRumGroupLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRumGroupLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeRumGroupLogOutcomeCallable RumClient::DescribeRumGroupLogCallable(const DescribeRumGroupLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRumGroupLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRumGroupLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RumClient::DescribeRumLogListOutcome RumClient::DescribeRumLogList(const DescribeRumLogListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRumLogList");

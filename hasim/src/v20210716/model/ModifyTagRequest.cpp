@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenRequest.h>
+#include <tencentcloud/hasim/v20210716/model/ModifyTagRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Faceid::V20180301::Model;
+using namespace TencentCloud::Hasim::V20210716::Model;
 using namespace std;
 
-GetRealNameAuthTokenRequest::GetRealNameAuthTokenRequest() :
+ModifyTagRequest::ModifyTagRequest() :
     m_nameHasBeenSet(false),
-    m_iDCardHasBeenSet(false),
-    m_callbackURLHasBeenSet(false)
+    m_tagIDHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
-string GetRealNameAuthTokenRequest::ToJsonString() const
+string ModifyTagRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
@@ -44,20 +44,20 @@ string GetRealNameAuthTokenRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_iDCardHasBeenSet)
+    if (m_tagIDHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "IDCard";
+        string key = "TagID";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_iDCard.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, m_tagID, allocator);
     }
 
-    if (m_callbackURLHasBeenSet)
+    if (m_commentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CallbackURL";
+        string key = "Comment";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_callbackURL.c_str(), allocator).Move(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_comment.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -68,52 +68,52 @@ string GetRealNameAuthTokenRequest::ToJsonString() const
 }
 
 
-string GetRealNameAuthTokenRequest::GetName() const
+string ModifyTagRequest::GetName() const
 {
     return m_name;
 }
 
-void GetRealNameAuthTokenRequest::SetName(const string& _name)
+void ModifyTagRequest::SetName(const string& _name)
 {
     m_name = _name;
     m_nameHasBeenSet = true;
 }
 
-bool GetRealNameAuthTokenRequest::NameHasBeenSet() const
+bool ModifyTagRequest::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
 }
 
-string GetRealNameAuthTokenRequest::GetIDCard() const
+int64_t ModifyTagRequest::GetTagID() const
 {
-    return m_iDCard;
+    return m_tagID;
 }
 
-void GetRealNameAuthTokenRequest::SetIDCard(const string& _iDCard)
+void ModifyTagRequest::SetTagID(const int64_t& _tagID)
 {
-    m_iDCard = _iDCard;
-    m_iDCardHasBeenSet = true;
+    m_tagID = _tagID;
+    m_tagIDHasBeenSet = true;
 }
 
-bool GetRealNameAuthTokenRequest::IDCardHasBeenSet() const
+bool ModifyTagRequest::TagIDHasBeenSet() const
 {
-    return m_iDCardHasBeenSet;
+    return m_tagIDHasBeenSet;
 }
 
-string GetRealNameAuthTokenRequest::GetCallbackURL() const
+string ModifyTagRequest::GetComment() const
 {
-    return m_callbackURL;
+    return m_comment;
 }
 
-void GetRealNameAuthTokenRequest::SetCallbackURL(const string& _callbackURL)
+void ModifyTagRequest::SetComment(const string& _comment)
 {
-    m_callbackURL = _callbackURL;
-    m_callbackURLHasBeenSet = true;
+    m_comment = _comment;
+    m_commentHasBeenSet = true;
 }
 
-bool GetRealNameAuthTokenRequest::CallbackURLHasBeenSet() const
+bool ModifyTagRequest::CommentHasBeenSet() const
 {
-    return m_callbackURLHasBeenSet;
+    return m_commentHasBeenSet;
 }
 
 

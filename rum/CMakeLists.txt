@@ -82,7 +82,7 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListRequest.h
   include/tencentcloud/rum/v20210622/model/ProjectLimit.h
   include/tencentcloud/rum/v20210622/model/DeleteLogExportRequest.h
-  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeRumStatsLogListResponse.h
   include/tencentcloud/rum/v20210622/model/CreateWhitelistRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataPvUrlStatisticsResponse.h
@@ -126,7 +126,9 @@ set(rum_public_header_model
   include/tencentcloud/rum/v20210622/model/DescribeProjectsRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeDataEventUrlRequest.h
   include/tencentcloud/rum/v20210622/model/DescribeOfflineLogConfigsRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h
   include/tencentcloud/rum/v20210622/model/DeleteOfflineLogConfigRequest.h
+  include/tencentcloud/rum/v20210622/model/DescribeWhitelistsResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeProjectsResponse.h
   include/tencentcloud/rum/v20210622/model/ModifyProjectResponse.h
   include/tencentcloud/rum/v20210622/model/DescribeLogExportsRequest.h
@@ -212,7 +214,7 @@ set(rum_src
   src/v20210622/model/DescribeRumStatsLogListRequest.cpp
   src/v20210622/model/ProjectLimit.cpp
   src/v20210622/model/DeleteLogExportRequest.cpp
-  src/v20210622/model/DescribeWhitelistsResponse.cpp
+  src/v20210622/model/DescribeRumGroupLogResponse.cpp
   src/v20210622/model/DescribeRumStatsLogListResponse.cpp
   src/v20210622/model/CreateWhitelistRequest.cpp
   src/v20210622/model/DescribeDataPvUrlStatisticsResponse.cpp
@@ -256,7 +258,9 @@ set(rum_src
   src/v20210622/model/DescribeProjectsRequest.cpp
   src/v20210622/model/DescribeDataEventUrlRequest.cpp
   src/v20210622/model/DescribeOfflineLogConfigsRequest.cpp
+  src/v20210622/model/DescribeRumGroupLogRequest.cpp
   src/v20210622/model/DeleteOfflineLogConfigRequest.cpp
+  src/v20210622/model/DescribeWhitelistsResponse.cpp
   src/v20210622/model/DescribeProjectsResponse.cpp
   src/v20210622/model/ModifyProjectResponse.cpp
   src/v20210622/model/DescribeLogExportsRequest.cpp

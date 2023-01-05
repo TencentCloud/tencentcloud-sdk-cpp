@@ -25,7 +25,9 @@ using namespace std;
 DescribeCompareTasksRequest::DescribeCompareTasksRequest() :
     m_jobIdHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false)
+    m_offsetHasBeenSet(false),
+    m_compareTaskIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,27 @@ string DescribeCompareTasksRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_compareTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CompareTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_compareTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +137,38 @@ void DescribeCompareTasksRequest::SetOffset(const uint64_t& _offset)
 bool DescribeCompareTasksRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeCompareTasksRequest::GetCompareTaskId() const
+{
+    return m_compareTaskId;
+}
+
+void DescribeCompareTasksRequest::SetCompareTaskId(const string& _compareTaskId)
+{
+    m_compareTaskId = _compareTaskId;
+    m_compareTaskIdHasBeenSet = true;
+}
+
+bool DescribeCompareTasksRequest::CompareTaskIdHasBeenSet() const
+{
+    return m_compareTaskIdHasBeenSet;
+}
+
+vector<string> DescribeCompareTasksRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeCompareTasksRequest::SetStatus(const vector<string>& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeCompareTasksRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dts/v20211206/model/CompareOptions.h>
+#include <tencentcloud/dts/v20211206/model/CompareObject.h>
 
 
 namespace TencentCloud
@@ -45,6 +47,50 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取校验配置参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Options 校验配置参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CompareOptions GetOptions() const;
+
+                    /**
+                     * 设置校验配置参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Options 校验配置参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOptions(const CompareOptions& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     */
+                    bool OptionsHasBeenSet() const;
+
+                    /**
+                     * 获取一致性校验对比对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Objects 一致性校验对比对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CompareObject GetObjects() const;
+
+                    /**
+                     * 设置一致性校验对比对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Objects 一致性校验对比对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetObjects(const CompareObject& _objects);
+
+                    /**
+                     * 判断参数 Objects 是否已赋值
+                     * @return Objects 是否已赋值
+                     */
+                    bool ObjectsHasBeenSet() const;
 
                     /**
                      * 获取对比结论: same,different
@@ -179,6 +225,28 @@ namespace TencentCloud
                     bool SkippedTablesHasBeenSet() const;
 
                     /**
+                     * 获取预估表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NearlyTableCount 预估表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetNearlyTableCount() const;
+
+                    /**
+                     * 设置预估表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NearlyTableCount 预估表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNearlyTableCount(const uint64_t& _nearlyTableCount);
+
+                    /**
+                     * 判断参数 NearlyTableCount 是否已赋值
+                     * @return NearlyTableCount 是否已赋值
+                     */
+                    bool NearlyTableCountHasBeenSet() const;
+
+                    /**
                      * 获取不一致的数据行数量
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return DifferentRows 不一致的数据行数量
@@ -200,7 +268,109 @@ namespace TencentCloud
                      */
                     bool DifferentRowsHasBeenSet() const;
 
+                    /**
+                     * 获取源库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SrcSampleRows 源库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSrcSampleRows() const;
+
+                    /**
+                     * 设置源库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SrcSampleRows 源库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSrcSampleRows(const uint64_t& _srcSampleRows);
+
+                    /**
+                     * 判断参数 SrcSampleRows 是否已赋值
+                     * @return SrcSampleRows 是否已赋值
+                     */
+                    bool SrcSampleRowsHasBeenSet() const;
+
+                    /**
+                     * 获取目标库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DstSampleRows 目标库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDstSampleRows() const;
+
+                    /**
+                     * 设置目标库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DstSampleRows 目标库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDstSampleRows(const uint64_t& _dstSampleRows);
+
+                    /**
+                     * 判断参数 DstSampleRows 是否已赋值
+                     * @return DstSampleRows 是否已赋值
+                     */
+                    bool DstSampleRowsHasBeenSet() const;
+
+                    /**
+                     * 获取开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartedAt 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStartedAt() const;
+
+                    /**
+                     * 设置开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartedAt 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartedAt(const std::string& _startedAt);
+
+                    /**
+                     * 判断参数 StartedAt 是否已赋值
+                     * @return StartedAt 是否已赋值
+                     */
+                    bool StartedAtHasBeenSet() const;
+
+                    /**
+                     * 获取结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FinishedAt 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFinishedAt() const;
+
+                    /**
+                     * 设置结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FinishedAt 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFinishedAt(const std::string& _finishedAt);
+
+                    /**
+                     * 判断参数 FinishedAt 是否已赋值
+                     * @return FinishedAt 是否已赋值
+                     */
+                    bool FinishedAtHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 校验配置参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CompareOptions m_options;
+                    bool m_optionsHasBeenSet;
+
+                    /**
+                     * 一致性校验对比对象
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CompareObject m_objects;
+                    bool m_objectsHasBeenSet;
 
                     /**
                      * 对比结论: same,different
@@ -245,11 +415,46 @@ namespace TencentCloud
                     bool m_skippedTablesHasBeenSet;
 
                     /**
+                     * 预估表总数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_nearlyTableCount;
+                    bool m_nearlyTableCountHasBeenSet;
+
+                    /**
                      * 不一致的数据行数量
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_differentRows;
                     bool m_differentRowsHasBeenSet;
+
+                    /**
+                     * 源库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_srcSampleRows;
+                    bool m_srcSampleRowsHasBeenSet;
+
+                    /**
+                     * 目标库行数，当对比类型为**行数对比**时此项有意义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_dstSampleRows;
+                    bool m_dstSampleRowsHasBeenSet;
+
+                    /**
+                     * 开始时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_startedAt;
+                    bool m_startedAtHasBeenSet;
+
+                    /**
+                     * 结束时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_finishedAt;
+                    bool m_finishedAtHasBeenSet;
 
                 };
             }

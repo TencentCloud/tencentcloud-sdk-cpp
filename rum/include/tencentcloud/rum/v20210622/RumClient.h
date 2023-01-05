@@ -111,6 +111,8 @@
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFileSignResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFilesRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeReleaseFilesResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeRumGroupLogRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeRumGroupLogResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogListRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumLogListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeRumStatsLogListRequest.h>
@@ -283,6 +285,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReleaseFilesResponse> DescribeReleaseFilesOutcome;
                 typedef std::future<DescribeReleaseFilesOutcome> DescribeReleaseFilesOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeReleaseFilesRequest&, DescribeReleaseFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReleaseFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRumGroupLogResponse> DescribeRumGroupLogOutcome;
+                typedef std::future<DescribeRumGroupLogOutcome> DescribeRumGroupLogOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeRumGroupLogRequest&, DescribeRumGroupLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumGroupLogAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRumLogListResponse> DescribeRumLogListOutcome;
                 typedef std::future<DescribeRumLogListOutcome> DescribeRumLogListOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeRumLogListRequest&, DescribeRumLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRumLogListAsyncHandler;
@@ -733,6 +738,15 @@ namespace TencentCloud
                 DescribeReleaseFilesOutcome DescribeReleaseFiles(const Model::DescribeReleaseFilesRequest &request);
                 void DescribeReleaseFilesAsync(const Model::DescribeReleaseFilesRequest& request, const DescribeReleaseFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReleaseFilesOutcomeCallable DescribeReleaseFilesCallable(const Model::DescribeReleaseFilesRequest& request);
+
+                /**
+                 *获取项目下的日志聚合信息
+                 * @param req DescribeRumGroupLogRequest
+                 * @return DescribeRumGroupLogOutcome
+                 */
+                DescribeRumGroupLogOutcome DescribeRumGroupLog(const Model::DescribeRumGroupLogRequest &request);
+                void DescribeRumGroupLogAsync(const Model::DescribeRumGroupLogRequest& request, const DescribeRumGroupLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRumGroupLogOutcomeCallable DescribeRumGroupLogCallable(const Model::DescribeRumGroupLogRequest& request);
 
                 /**
                  *获取项目下的日志列表（实例创建的项目下的日志列表）

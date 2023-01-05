@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/faceid/v20180301/model/GetRealNameAuthTokenResponse.h>
+#include <tencentcloud/dts/v20211206/model/ContinueMigrateJobResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Faceid::V20180301::Model;
+using namespace TencentCloud::Dts::V20211206::Model;
 using namespace std;
 
-GetRealNameAuthTokenResponse::GetRealNameAuthTokenResponse() :
-    m_authTokenHasBeenSet(false),
-    m_redirectURLHasBeenSet(false)
+ContinueMigrateJobResponse::ContinueMigrateJobResponse()
 {
 }
 
-CoreInternalOutcome GetRealNameAuthTokenResponse::Deserialize(const string &payload)
+CoreInternalOutcome ContinueMigrateJobResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,51 +61,15 @@ CoreInternalOutcome GetRealNameAuthTokenResponse::Deserialize(const string &payl
     }
 
 
-    if (rsp.HasMember("AuthToken") && !rsp["AuthToken"].IsNull())
-    {
-        if (!rsp["AuthToken"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AuthToken` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_authToken = string(rsp["AuthToken"].GetString());
-        m_authTokenHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("RedirectURL") && !rsp["RedirectURL"].IsNull())
-    {
-        if (!rsp["RedirectURL"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `RedirectURL` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_redirectURL = string(rsp["RedirectURL"].GetString());
-        m_redirectURLHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string GetRealNameAuthTokenResponse::ToJsonString() const
+string ContinueMigrateJobResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_authTokenHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AuthToken";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_authToken.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_redirectURLHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RedirectURL";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_redirectURL.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -120,25 +82,5 @@ string GetRealNameAuthTokenResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string GetRealNameAuthTokenResponse::GetAuthToken() const
-{
-    return m_authToken;
-}
-
-bool GetRealNameAuthTokenResponse::AuthTokenHasBeenSet() const
-{
-    return m_authTokenHasBeenSet;
-}
-
-string GetRealNameAuthTokenResponse::GetRedirectURL() const
-{
-    return m_redirectURL;
-}
-
-bool GetRealNameAuthTokenResponse::RedirectURLHasBeenSet() const
-{
-    return m_redirectURLHasBeenSet;
-}
 
 

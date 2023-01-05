@@ -21,13 +21,20 @@ using namespace TencentCloud::Dts::V20211206::Model;
 using namespace std;
 
 CompareAbstractInfo::CompareAbstractInfo() :
+    m_optionsHasBeenSet(false),
+    m_objectsHasBeenSet(false),
     m_conclusionHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_totalTablesHasBeenSet(false),
     m_checkedTablesHasBeenSet(false),
     m_differentTablesHasBeenSet(false),
     m_skippedTablesHasBeenSet(false),
-    m_differentRowsHasBeenSet(false)
+    m_nearlyTableCountHasBeenSet(false),
+    m_differentRowsHasBeenSet(false),
+    m_srcSampleRowsHasBeenSet(false),
+    m_dstSampleRowsHasBeenSet(false),
+    m_startedAtHasBeenSet(false),
+    m_finishedAtHasBeenSet(false)
 {
 }
 
@@ -35,6 +42,40 @@ CoreInternalOutcome CompareAbstractInfo::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
+
+    if (value.HasMember("Options") && !value["Options"].IsNull())
+    {
+        if (!value["Options"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareAbstractInfo.Options` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_options.Deserialize(value["Options"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_optionsHasBeenSet = true;
+    }
+
+    if (value.HasMember("Objects") && !value["Objects"].IsNull())
+    {
+        if (!value["Objects"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareAbstractInfo.Objects` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_objects.Deserialize(value["Objects"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_objectsHasBeenSet = true;
+    }
 
     if (value.HasMember("Conclusion") && !value["Conclusion"].IsNull())
     {
@@ -96,6 +137,16 @@ CoreInternalOutcome CompareAbstractInfo::Deserialize(const rapidjson::Value &val
         m_skippedTablesHasBeenSet = true;
     }
 
+    if (value.HasMember("NearlyTableCount") && !value["NearlyTableCount"].IsNull())
+    {
+        if (!value["NearlyTableCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareAbstractInfo.NearlyTableCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nearlyTableCount = value["NearlyTableCount"].GetUint64();
+        m_nearlyTableCountHasBeenSet = true;
+    }
+
     if (value.HasMember("DifferentRows") && !value["DifferentRows"].IsNull())
     {
         if (!value["DifferentRows"].IsUint64())
@@ -106,12 +157,70 @@ CoreInternalOutcome CompareAbstractInfo::Deserialize(const rapidjson::Value &val
         m_differentRowsHasBeenSet = true;
     }
 
+    if (value.HasMember("SrcSampleRows") && !value["SrcSampleRows"].IsNull())
+    {
+        if (!value["SrcSampleRows"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareAbstractInfo.SrcSampleRows` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcSampleRows = value["SrcSampleRows"].GetUint64();
+        m_srcSampleRowsHasBeenSet = true;
+    }
+
+    if (value.HasMember("DstSampleRows") && !value["DstSampleRows"].IsNull())
+    {
+        if (!value["DstSampleRows"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareAbstractInfo.DstSampleRows` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_dstSampleRows = value["DstSampleRows"].GetUint64();
+        m_dstSampleRowsHasBeenSet = true;
+    }
+
+    if (value.HasMember("StartedAt") && !value["StartedAt"].IsNull())
+    {
+        if (!value["StartedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareAbstractInfo.StartedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_startedAt = string(value["StartedAt"].GetString());
+        m_startedAtHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinishedAt") && !value["FinishedAt"].IsNull())
+    {
+        if (!value["FinishedAt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareAbstractInfo.FinishedAt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishedAt = string(value["FinishedAt"].GetString());
+        m_finishedAtHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void CompareAbstractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_options.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_objectsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Objects";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_objects.ToJsonObject(value[key.c_str()], allocator);
+    }
 
     if (m_conclusionHasBeenSet)
     {
@@ -161,6 +270,14 @@ void CompareAbstractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, m_skippedTables, allocator);
     }
 
+    if (m_nearlyTableCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NearlyTableCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nearlyTableCount, allocator);
+    }
+
     if (m_differentRowsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -169,8 +286,72 @@ void CompareAbstractInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, m_differentRows, allocator);
     }
 
+    if (m_srcSampleRowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcSampleRows";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_srcSampleRows, allocator);
+    }
+
+    if (m_dstSampleRowsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstSampleRows";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_dstSampleRows, allocator);
+    }
+
+    if (m_startedAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_startedAt.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_finishedAtHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishedAt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finishedAt.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+CompareOptions CompareAbstractInfo::GetOptions() const
+{
+    return m_options;
+}
+
+void CompareAbstractInfo::SetOptions(const CompareOptions& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool CompareAbstractInfo::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
+}
+
+CompareObject CompareAbstractInfo::GetObjects() const
+{
+    return m_objects;
+}
+
+void CompareAbstractInfo::SetObjects(const CompareObject& _objects)
+{
+    m_objects = _objects;
+    m_objectsHasBeenSet = true;
+}
+
+bool CompareAbstractInfo::ObjectsHasBeenSet() const
+{
+    return m_objectsHasBeenSet;
+}
 
 string CompareAbstractInfo::GetConclusion() const
 {
@@ -268,6 +449,22 @@ bool CompareAbstractInfo::SkippedTablesHasBeenSet() const
     return m_skippedTablesHasBeenSet;
 }
 
+uint64_t CompareAbstractInfo::GetNearlyTableCount() const
+{
+    return m_nearlyTableCount;
+}
+
+void CompareAbstractInfo::SetNearlyTableCount(const uint64_t& _nearlyTableCount)
+{
+    m_nearlyTableCount = _nearlyTableCount;
+    m_nearlyTableCountHasBeenSet = true;
+}
+
+bool CompareAbstractInfo::NearlyTableCountHasBeenSet() const
+{
+    return m_nearlyTableCountHasBeenSet;
+}
+
 uint64_t CompareAbstractInfo::GetDifferentRows() const
 {
     return m_differentRows;
@@ -282,5 +479,69 @@ void CompareAbstractInfo::SetDifferentRows(const uint64_t& _differentRows)
 bool CompareAbstractInfo::DifferentRowsHasBeenSet() const
 {
     return m_differentRowsHasBeenSet;
+}
+
+uint64_t CompareAbstractInfo::GetSrcSampleRows() const
+{
+    return m_srcSampleRows;
+}
+
+void CompareAbstractInfo::SetSrcSampleRows(const uint64_t& _srcSampleRows)
+{
+    m_srcSampleRows = _srcSampleRows;
+    m_srcSampleRowsHasBeenSet = true;
+}
+
+bool CompareAbstractInfo::SrcSampleRowsHasBeenSet() const
+{
+    return m_srcSampleRowsHasBeenSet;
+}
+
+uint64_t CompareAbstractInfo::GetDstSampleRows() const
+{
+    return m_dstSampleRows;
+}
+
+void CompareAbstractInfo::SetDstSampleRows(const uint64_t& _dstSampleRows)
+{
+    m_dstSampleRows = _dstSampleRows;
+    m_dstSampleRowsHasBeenSet = true;
+}
+
+bool CompareAbstractInfo::DstSampleRowsHasBeenSet() const
+{
+    return m_dstSampleRowsHasBeenSet;
+}
+
+string CompareAbstractInfo::GetStartedAt() const
+{
+    return m_startedAt;
+}
+
+void CompareAbstractInfo::SetStartedAt(const string& _startedAt)
+{
+    m_startedAt = _startedAt;
+    m_startedAtHasBeenSet = true;
+}
+
+bool CompareAbstractInfo::StartedAtHasBeenSet() const
+{
+    return m_startedAtHasBeenSet;
+}
+
+string CompareAbstractInfo::GetFinishedAt() const
+{
+    return m_finishedAt;
+}
+
+void CompareAbstractInfo::SetFinishedAt(const string& _finishedAt)
+{
+    m_finishedAt = _finishedAt;
+    m_finishedAtHasBeenSet = true;
+}
+
+bool CompareAbstractInfo::FinishedAtHasBeenSet() const
+{
+    return m_finishedAtHasBeenSet;
 }
 

@@ -83,6 +83,49 @@ SsaClient::DescribeAssetDetailOutcomeCallable SsaClient::DescribeAssetDetailCall
     return task->get_future();
 }
 
+SsaClient::DescribeAssetDetailListOutcome SsaClient::DescribeAssetDetailList(const DescribeAssetDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetDetailListResponse rsp = DescribeAssetDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetDetailListOutcome(rsp);
+        else
+            return DescribeAssetDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetDetailListOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::DescribeAssetDetailListAsync(const DescribeAssetDetailListRequest& request, const DescribeAssetDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetDetailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::DescribeAssetDetailListOutcomeCallable SsaClient::DescribeAssetDetailListCallable(const DescribeAssetDetailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetDetailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetDetailList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SsaClient::DescribeAssetListOutcome SsaClient::DescribeAssetList(const DescribeAssetListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetList");

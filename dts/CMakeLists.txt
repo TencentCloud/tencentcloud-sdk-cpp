@@ -32,6 +32,8 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ResumeMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/DifferenceItem.h
   include/tencentcloud/dts/v20211206/model/IsolateSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/PauseMigrateJobRequest.h
+  include/tencentcloud/dts/v20211206/model/ContinueMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultRequest.h
   include/tencentcloud/dts/v20211206/model/DestroySyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/DescribeCompareReportResponse.h
@@ -53,6 +55,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskNameResponse.h
   include/tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobResponse.h
+  include/tencentcloud/dts/v20211206/model/ContinueMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/CreateMigrationServiceRequest.h
   include/tencentcloud/dts/v20211206/model/DetailCheckItem.h
   include/tencentcloud/dts/v20211206/model/DescribeCompareTasksRequest.h
@@ -62,6 +65,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/MigrateAction.h
   include/tencentcloud/dts/v20211206/model/DeleteCompareTaskResponse.h
   include/tencentcloud/dts/v20211206/model/DBEndpointInfo.h
+  include/tencentcloud/dts/v20211206/model/ContinueSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/Options.h
   include/tencentcloud/dts/v20211206/model/CompleteMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeCompareTasksResponse.h
@@ -81,14 +85,15 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationJobsRequest.h
   include/tencentcloud/dts/v20211206/model/CompareTaskInfo.h
+  include/tencentcloud/dts/v20211206/model/ContinueSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/CreateMigrationServiceResponse.h
   include/tencentcloud/dts/v20211206/model/StartSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationCheckJobResponse.h
-  include/tencentcloud/dts/v20211206/model/CompareObjectItem.h
+  include/tencentcloud/dts/v20211206/model/DBInfo.h
   include/tencentcloud/dts/v20211206/model/Endpoint.h
   include/tencentcloud/dts/v20211206/model/DifferenceDetail.h
   include/tencentcloud/dts/v20211206/model/CreateCheckSyncJobResponse.h
-  include/tencentcloud/dts/v20211206/model/DBInfo.h
+  include/tencentcloud/dts/v20211206/model/CompareObjectItem.h
   include/tencentcloud/dts/v20211206/model/ConfigureSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/MigrateDBItem.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrateDBInstancesRequest.h
@@ -132,6 +137,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/StopMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/IsolateMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/SyncJobInfo.h
+  include/tencentcloud/dts/v20211206/model/CompareOptions.h
   include/tencentcloud/dts/v20211206/model/RoleItem.h
   include/tencentcloud/dts/v20211206/model/TagFilter.h
   include/tencentcloud/dts/v20211206/model/StepDetailInfo.h
@@ -143,6 +149,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/RecoverMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/OnlineDDL.h
   include/tencentcloud/dts/v20211206/model/DatabaseTableObject.h
+  include/tencentcloud/dts/v20211206/model/PauseMigrateJobResponse.h
   include/tencentcloud/dts/v20211206/model/Table.h
   include/tencentcloud/dts/v20211206/model/CompareDetailInfo.h
   include/tencentcloud/dts/v20211206/model/StartMigrateJobResponse.h
@@ -224,6 +231,8 @@ set(dts_src
   src/v20211206/model/ResumeMigrateJobResponse.cpp
   src/v20211206/model/DifferenceItem.cpp
   src/v20211206/model/IsolateSyncJobRequest.cpp
+  src/v20211206/model/PauseMigrateJobRequest.cpp
+  src/v20211206/model/ContinueMigrateJobRequest.cpp
   src/v20211206/model/DescribeCheckSyncJobResultRequest.cpp
   src/v20211206/model/DestroySyncJobResponse.cpp
   src/v20211206/model/DescribeCompareReportResponse.cpp
@@ -245,6 +254,7 @@ set(dts_src
   src/v20211206/model/ModifyCompareTaskNameResponse.cpp
   src/v20211206/model/PauseSyncJobRequest.cpp
   src/v20211206/model/CreateMigrateCheckJobResponse.cpp
+  src/v20211206/model/ContinueMigrateJobResponse.cpp
   src/v20211206/model/CreateMigrationServiceRequest.cpp
   src/v20211206/model/DetailCheckItem.cpp
   src/v20211206/model/DescribeCompareTasksRequest.cpp
@@ -254,6 +264,7 @@ set(dts_src
   src/v20211206/model/MigrateAction.cpp
   src/v20211206/model/DeleteCompareTaskResponse.cpp
   src/v20211206/model/DBEndpointInfo.cpp
+  src/v20211206/model/ContinueSyncJobResponse.cpp
   src/v20211206/model/Options.cpp
   src/v20211206/model/CompleteMigrateJobRequest.cpp
   src/v20211206/model/DescribeCompareTasksResponse.cpp
@@ -273,14 +284,15 @@ set(dts_src
   src/v20211206/model/CreateMigrateCheckJobRequest.cpp
   src/v20211206/model/DescribeMigrationJobsRequest.cpp
   src/v20211206/model/CompareTaskInfo.cpp
+  src/v20211206/model/ContinueSyncJobRequest.cpp
   src/v20211206/model/CreateMigrationServiceResponse.cpp
   src/v20211206/model/StartSyncJobRequest.cpp
   src/v20211206/model/DescribeMigrationCheckJobResponse.cpp
-  src/v20211206/model/CompareObjectItem.cpp
+  src/v20211206/model/DBInfo.cpp
   src/v20211206/model/Endpoint.cpp
   src/v20211206/model/DifferenceDetail.cpp
   src/v20211206/model/CreateCheckSyncJobResponse.cpp
-  src/v20211206/model/DBInfo.cpp
+  src/v20211206/model/CompareObjectItem.cpp
   src/v20211206/model/ConfigureSyncJobRequest.cpp
   src/v20211206/model/MigrateDBItem.cpp
   src/v20211206/model/DescribeMigrateDBInstancesRequest.cpp
@@ -324,6 +336,7 @@ set(dts_src
   src/v20211206/model/StopMigrateJobRequest.cpp
   src/v20211206/model/IsolateMigrateJobResponse.cpp
   src/v20211206/model/SyncJobInfo.cpp
+  src/v20211206/model/CompareOptions.cpp
   src/v20211206/model/RoleItem.cpp
   src/v20211206/model/TagFilter.cpp
   src/v20211206/model/StepDetailInfo.cpp
@@ -335,6 +348,7 @@ set(dts_src
   src/v20211206/model/RecoverMigrateJobRequest.cpp
   src/v20211206/model/OnlineDDL.cpp
   src/v20211206/model/DatabaseTableObject.cpp
+  src/v20211206/model/PauseMigrateJobResponse.cpp
   src/v20211206/model/Table.cpp
   src/v20211206/model/CompareDetailInfo.cpp
   src/v20211206/model/StartMigrateJobResponse.cpp

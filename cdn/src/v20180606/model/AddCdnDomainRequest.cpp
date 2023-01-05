@@ -60,7 +60,8 @@ AddCdnDomainRequest::AddCdnDomainRequest() :
     m_awsPrivateAccessHasBeenSet(false),
     m_ossPrivateAccessHasBeenSet(false),
     m_hwPrivateAccessHasBeenSet(false),
-    m_qnPrivateAccessHasBeenSet(false)
+    m_qnPrivateAccessHasBeenSet(false),
+    m_httpsBillingHasBeenSet(false)
 {
 }
 
@@ -413,6 +414,15 @@ string AddCdnDomainRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qnPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_httpsBillingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HttpsBilling";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_httpsBilling.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -1029,6 +1039,22 @@ void AddCdnDomainRequest::SetQnPrivateAccess(const QnPrivateAccess& _qnPrivateAc
 bool AddCdnDomainRequest::QnPrivateAccessHasBeenSet() const
 {
     return m_qnPrivateAccessHasBeenSet;
+}
+
+HttpsBilling AddCdnDomainRequest::GetHttpsBilling() const
+{
+    return m_httpsBilling;
+}
+
+void AddCdnDomainRequest::SetHttpsBilling(const HttpsBilling& _httpsBilling)
+{
+    m_httpsBilling = _httpsBilling;
+    m_httpsBillingHasBeenSet = true;
+}
+
+bool AddCdnDomainRequest::HttpsBillingHasBeenSet() const
+{
+    return m_httpsBillingHasBeenSet;
 }
 
 

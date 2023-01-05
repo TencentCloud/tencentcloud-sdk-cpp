@@ -63,6 +63,8 @@
 #include <tencentcloud/vpc/v20170312/model/AttachClassicLinkVpcResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AttachNetworkInterfaceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AttachNetworkInterfaceResponse.h>
+#include <tencentcloud/vpc/v20170312/model/AttachSnapshotInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/AttachSnapshotInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/AuditCrossBorderComplianceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/AuditCrossBorderComplianceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CheckAssistantCidrRequest.h>
@@ -133,6 +135,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateServiceTemplateResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateServiceTemplateGroupRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateServiceTemplateGroupResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateSnapshotPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateSnapshotPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsRequest.h>
@@ -207,6 +211,8 @@
 #include <tencentcloud/vpc/v20170312/model/DeleteServiceTemplateResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteServiceTemplateGroupRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteServiceTemplateGroupResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteSnapshotPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DeleteSnapshotPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DeleteTemplateMemberRequest.h>
@@ -337,6 +343,14 @@
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplateGroupsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplatesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeServiceTemplatesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSgSnapshotFileContentRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSgSnapshotFileContentResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSnapshotAttachedInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSnapshotAttachedInstancesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSnapshotFilesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSnapshotFilesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSnapshotPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DescribeSnapshotPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeSubnetsResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DescribeTaskResultRequest.h>
@@ -385,6 +399,8 @@
 #include <tencentcloud/vpc/v20170312/model/DetachClassicLinkVpcResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DetachNetworkInterfaceRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DetachNetworkInterfaceResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DetachSnapshotInstancesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DetachSnapshotInstancesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableCcnRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableCcnRoutesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableFlowLogsRequest.h>
@@ -393,6 +409,8 @@
 #include <tencentcloud/vpc/v20170312/model/DisableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/DisableSnapshotPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/DisableSnapshotPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisableVpnGatewaySslClientCertRequest.h>
 #include <tencentcloud/vpc/v20170312/model/DisableVpnGatewaySslClientCertResponse.h>
 #include <tencentcloud/vpc/v20170312/model/DisassociateAddressRequest.h>
@@ -421,6 +439,8 @@
 #include <tencentcloud/vpc/v20170312/model/EnableGatewayFlowMonitorResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableRoutesResponse.h>
+#include <tencentcloud/vpc/v20170312/model/EnableSnapshotPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/EnableSnapshotPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableVpcEndPointConnectRequest.h>
 #include <tencentcloud/vpc/v20170312/model/EnableVpcEndPointConnectResponse.h>
 #include <tencentcloud/vpc/v20170312/model/EnableVpnGatewaySslClientCertRequest.h>
@@ -519,6 +539,8 @@
 #include <tencentcloud/vpc/v20170312/model/ModifyServiceTemplateAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyServiceTemplateGroupAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyServiceTemplateGroupAttributeResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ModifySnapshotPoliciesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ModifySnapshotPoliciesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySubnetAttributeRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ModifySubnetAttributeResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ModifyTemplateMemberRequest.h>
@@ -575,6 +597,8 @@
 #include <tencentcloud/vpc/v20170312/model/ResetVpnConnectionResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnGatewayInternetMaxBandwidthRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ResetVpnGatewayInternetMaxBandwidthResponse.h>
+#include <tencentcloud/vpc/v20170312/model/ResumeSnapshotInstanceRequest.h>
+#include <tencentcloud/vpc/v20170312/model/ResumeSnapshotInstanceResponse.h>
 #include <tencentcloud/vpc/v20170312/model/ReturnNormalAddressesRequest.h>
 #include <tencentcloud/vpc/v20170312/model/ReturnNormalAddressesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/SetCcnRegionBandwidthLimitsRequest.h>
@@ -671,6 +695,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AttachNetworkInterfaceResponse> AttachNetworkInterfaceOutcome;
                 typedef std::future<AttachNetworkInterfaceOutcome> AttachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AttachNetworkInterfaceRequest&, AttachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachNetworkInterfaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::AttachSnapshotInstancesResponse> AttachSnapshotInstancesOutcome;
+                typedef std::future<AttachSnapshotInstancesOutcome> AttachSnapshotInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::AttachSnapshotInstancesRequest&, AttachSnapshotInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AttachSnapshotInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AuditCrossBorderComplianceResponse> AuditCrossBorderComplianceOutcome;
                 typedef std::future<AuditCrossBorderComplianceOutcome> AuditCrossBorderComplianceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::AuditCrossBorderComplianceRequest&, AuditCrossBorderComplianceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuditCrossBorderComplianceAsyncHandler;
@@ -776,6 +803,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateServiceTemplateGroupResponse> CreateServiceTemplateGroupOutcome;
                 typedef std::future<CreateServiceTemplateGroupOutcome> CreateServiceTemplateGroupOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateServiceTemplateGroupRequest&, CreateServiceTemplateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateServiceTemplateGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSnapshotPoliciesResponse> CreateSnapshotPoliciesOutcome;
+                typedef std::future<CreateSnapshotPoliciesOutcome> CreateSnapshotPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateSnapshotPoliciesRequest&, CreateSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSubnetResponse> CreateSubnetOutcome;
                 typedef std::future<CreateSubnetOutcome> CreateSubnetOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateSubnetRequest&, CreateSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubnetAsyncHandler;
@@ -887,6 +917,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteServiceTemplateGroupResponse> DeleteServiceTemplateGroupOutcome;
                 typedef std::future<DeleteServiceTemplateGroupOutcome> DeleteServiceTemplateGroupOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteServiceTemplateGroupRequest&, DeleteServiceTemplateGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteServiceTemplateGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSnapshotPoliciesResponse> DeleteSnapshotPoliciesOutcome;
+                typedef std::future<DeleteSnapshotPoliciesOutcome> DeleteSnapshotPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DeleteSnapshotPoliciesRequest&, DeleteSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSubnetResponse> DeleteSubnetOutcome;
                 typedef std::future<DeleteSubnetOutcome> DeleteSubnetOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DeleteSubnetRequest&, DeleteSubnetOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSubnetAsyncHandler;
@@ -1082,6 +1115,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceTemplatesResponse> DescribeServiceTemplatesOutcome;
                 typedef std::future<DescribeServiceTemplatesOutcome> DescribeServiceTemplatesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeServiceTemplatesRequest&, DescribeServiceTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSgSnapshotFileContentResponse> DescribeSgSnapshotFileContentOutcome;
+                typedef std::future<DescribeSgSnapshotFileContentOutcome> DescribeSgSnapshotFileContentOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeSgSnapshotFileContentRequest&, DescribeSgSnapshotFileContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSgSnapshotFileContentAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotAttachedInstancesResponse> DescribeSnapshotAttachedInstancesOutcome;
+                typedef std::future<DescribeSnapshotAttachedInstancesOutcome> DescribeSnapshotAttachedInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeSnapshotAttachedInstancesRequest&, DescribeSnapshotAttachedInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotAttachedInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotFilesResponse> DescribeSnapshotFilesOutcome;
+                typedef std::future<DescribeSnapshotFilesOutcome> DescribeSnapshotFilesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeSnapshotFilesRequest&, DescribeSnapshotFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSnapshotPoliciesResponse> DescribeSnapshotPoliciesOutcome;
+                typedef std::future<DescribeSnapshotPoliciesOutcome> DescribeSnapshotPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DescribeSnapshotPoliciesRequest&, DescribeSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSubnetsResponse> DescribeSubnetsOutcome;
                 typedef std::future<DescribeSubnetsOutcome> DescribeSubnetsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DescribeSubnetsRequest&, DescribeSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSubnetsAsyncHandler;
@@ -1154,6 +1199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DetachNetworkInterfaceResponse> DetachNetworkInterfaceOutcome;
                 typedef std::future<DetachNetworkInterfaceOutcome> DetachNetworkInterfaceOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DetachNetworkInterfaceRequest&, DetachNetworkInterfaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachNetworkInterfaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DetachSnapshotInstancesResponse> DetachSnapshotInstancesOutcome;
+                typedef std::future<DetachSnapshotInstancesOutcome> DetachSnapshotInstancesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DetachSnapshotInstancesRequest&, DetachSnapshotInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DetachSnapshotInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableCcnRoutesResponse> DisableCcnRoutesOutcome;
                 typedef std::future<DisableCcnRoutesOutcome> DisableCcnRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableCcnRoutesRequest&, DisableCcnRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableCcnRoutesAsyncHandler;
@@ -1166,6 +1214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DisableRoutesResponse> DisableRoutesOutcome;
                 typedef std::future<DisableRoutesOutcome> DisableRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableRoutesRequest&, DisableRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableSnapshotPoliciesResponse> DisableSnapshotPoliciesOutcome;
+                typedef std::future<DisableSnapshotPoliciesOutcome> DisableSnapshotPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::DisableSnapshotPoliciesRequest&, DisableSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableSnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableVpnGatewaySslClientCertResponse> DisableVpnGatewaySslClientCertOutcome;
                 typedef std::future<DisableVpnGatewaySslClientCertOutcome> DisableVpnGatewaySslClientCertOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::DisableVpnGatewaySslClientCertRequest&, DisableVpnGatewaySslClientCertOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableVpnGatewaySslClientCertAsyncHandler;
@@ -1208,6 +1259,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::EnableRoutesResponse> EnableRoutesOutcome;
                 typedef std::future<EnableRoutesOutcome> EnableRoutesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableRoutesRequest&, EnableRoutesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableRoutesAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableSnapshotPoliciesResponse> EnableSnapshotPoliciesOutcome;
+                typedef std::future<EnableSnapshotPoliciesOutcome> EnableSnapshotPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::EnableSnapshotPoliciesRequest&, EnableSnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableSnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableVpcEndPointConnectResponse> EnableVpcEndPointConnectOutcome;
                 typedef std::future<EnableVpcEndPointConnectOutcome> EnableVpcEndPointConnectOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::EnableVpcEndPointConnectRequest&, EnableVpcEndPointConnectOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableVpcEndPointConnectAsyncHandler;
@@ -1355,6 +1409,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyServiceTemplateGroupAttributeResponse> ModifyServiceTemplateGroupAttributeOutcome;
                 typedef std::future<ModifyServiceTemplateGroupAttributeOutcome> ModifyServiceTemplateGroupAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifyServiceTemplateGroupAttributeRequest&, ModifyServiceTemplateGroupAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyServiceTemplateGroupAttributeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifySnapshotPoliciesResponse> ModifySnapshotPoliciesOutcome;
+                typedef std::future<ModifySnapshotPoliciesOutcome> ModifySnapshotPoliciesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ModifySnapshotPoliciesRequest&, ModifySnapshotPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySubnetAttributeResponse> ModifySubnetAttributeOutcome;
                 typedef std::future<ModifySubnetAttributeOutcome> ModifySubnetAttributeOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ModifySubnetAttributeRequest&, ModifySubnetAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySubnetAttributeAsyncHandler;
@@ -1439,6 +1496,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetVpnGatewayInternetMaxBandwidthResponse> ResetVpnGatewayInternetMaxBandwidthOutcome;
                 typedef std::future<ResetVpnGatewayInternetMaxBandwidthOutcome> ResetVpnGatewayInternetMaxBandwidthOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ResetVpnGatewayInternetMaxBandwidthRequest&, ResetVpnGatewayInternetMaxBandwidthOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetVpnGatewayInternetMaxBandwidthAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResumeSnapshotInstanceResponse> ResumeSnapshotInstanceOutcome;
+                typedef std::future<ResumeSnapshotInstanceOutcome> ResumeSnapshotInstanceOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::ResumeSnapshotInstanceRequest&, ResumeSnapshotInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeSnapshotInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ReturnNormalAddressesResponse> ReturnNormalAddressesOutcome;
                 typedef std::future<ReturnNormalAddressesOutcome> ReturnNormalAddressesOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::ReturnNormalAddressesRequest&, ReturnNormalAddressesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReturnNormalAddressesAsyncHandler;
@@ -1695,6 +1755,15 @@ namespace TencentCloud
                 AttachNetworkInterfaceOutcome AttachNetworkInterface(const Model::AttachNetworkInterfaceRequest &request);
                 void AttachNetworkInterfaceAsync(const Model::AttachNetworkInterfaceRequest& request, const AttachNetworkInterfaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AttachNetworkInterfaceOutcomeCallable AttachNetworkInterfaceCallable(const Model::AttachNetworkInterfaceRequest& request);
+
+                /**
+                 *本接口（AttachSnapshotInstances）用于快照策略关联实例。
+                 * @param req AttachSnapshotInstancesRequest
+                 * @return AttachSnapshotInstancesOutcome
+                 */
+                AttachSnapshotInstancesOutcome AttachSnapshotInstances(const Model::AttachSnapshotInstancesRequest &request);
+                void AttachSnapshotInstancesAsync(const Model::AttachSnapshotInstancesRequest& request, const AttachSnapshotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AttachSnapshotInstancesOutcomeCallable AttachSnapshotInstancesCallable(const Model::AttachSnapshotInstancesRequest& request);
 
                 /**
                  *本接口（AuditCrossBorderCompliance）用于服务商操作合规化资质审批。
@@ -2080,6 +2149,15 @@ namespace TencentCloud
                 CreateServiceTemplateGroupOutcomeCallable CreateServiceTemplateGroupCallable(const Model::CreateServiceTemplateGroupRequest& request);
 
                 /**
+                 *本接口（CreateSnapshotPolicies）用于创建快照策略。
+                 * @param req CreateSnapshotPoliciesRequest
+                 * @return CreateSnapshotPoliciesOutcome
+                 */
+                CreateSnapshotPoliciesOutcome CreateSnapshotPolicies(const Model::CreateSnapshotPoliciesRequest &request);
+                void CreateSnapshotPoliciesAsync(const Model::CreateSnapshotPoliciesRequest& request, const CreateSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSnapshotPoliciesOutcomeCallable CreateSnapshotPoliciesCallable(const Model::CreateSnapshotPoliciesRequest& request);
+
+                /**
                  *本接口(CreateSubnet)用于创建子网。
 * 创建子网前必须创建好 VPC。
 * 子网创建成功后，子网网段不能修改。子网网段必须在VPC网段内，可以和VPC网段相同（VPC有且只有一个子网时），建议子网网段在VPC网段内，预留网段给其他子网使用。
@@ -2447,6 +2525,15 @@ namespace TencentCloud
                 DeleteServiceTemplateGroupOutcome DeleteServiceTemplateGroup(const Model::DeleteServiceTemplateGroupRequest &request);
                 void DeleteServiceTemplateGroupAsync(const Model::DeleteServiceTemplateGroupRequest& request, const DeleteServiceTemplateGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteServiceTemplateGroupOutcomeCallable DeleteServiceTemplateGroupCallable(const Model::DeleteServiceTemplateGroupRequest& request);
+
+                /**
+                 *本接口（DeleteSnapshotPolicies）用于删除快照策略。
+                 * @param req DeleteSnapshotPoliciesRequest
+                 * @return DeleteSnapshotPoliciesOutcome
+                 */
+                DeleteSnapshotPoliciesOutcome DeleteSnapshotPolicies(const Model::DeleteSnapshotPoliciesRequest &request);
+                void DeleteSnapshotPoliciesAsync(const Model::DeleteSnapshotPoliciesRequest& request, const DeleteSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSnapshotPoliciesOutcomeCallable DeleteSnapshotPoliciesCallable(const Model::DeleteSnapshotPoliciesRequest& request);
 
                 /**
                  *本接口（DeleteSubnet）用于用于删除子网(Subnet)。
@@ -3049,6 +3136,42 @@ namespace TencentCloud
                 DescribeServiceTemplatesOutcomeCallable DescribeServiceTemplatesCallable(const Model::DescribeServiceTemplatesRequest& request);
 
                 /**
+                 *本接口（DescribeSgSnapshotFileContent）用于查询安全组快照文件内容。
+                 * @param req DescribeSgSnapshotFileContentRequest
+                 * @return DescribeSgSnapshotFileContentOutcome
+                 */
+                DescribeSgSnapshotFileContentOutcome DescribeSgSnapshotFileContent(const Model::DescribeSgSnapshotFileContentRequest &request);
+                void DescribeSgSnapshotFileContentAsync(const Model::DescribeSgSnapshotFileContentRequest& request, const DescribeSgSnapshotFileContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSgSnapshotFileContentOutcomeCallable DescribeSgSnapshotFileContentCallable(const Model::DescribeSgSnapshotFileContentRequest& request);
+
+                /**
+                 *本接口（DescribeSnapshotAttachedInstances）用于查询快照策略关联实例列表。
+                 * @param req DescribeSnapshotAttachedInstancesRequest
+                 * @return DescribeSnapshotAttachedInstancesOutcome
+                 */
+                DescribeSnapshotAttachedInstancesOutcome DescribeSnapshotAttachedInstances(const Model::DescribeSnapshotAttachedInstancesRequest &request);
+                void DescribeSnapshotAttachedInstancesAsync(const Model::DescribeSnapshotAttachedInstancesRequest& request, const DescribeSnapshotAttachedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotAttachedInstancesOutcomeCallable DescribeSnapshotAttachedInstancesCallable(const Model::DescribeSnapshotAttachedInstancesRequest& request);
+
+                /**
+                 *本接口（DescribeSnapshotFiles）用于查询快照文件。
+                 * @param req DescribeSnapshotFilesRequest
+                 * @return DescribeSnapshotFilesOutcome
+                 */
+                DescribeSnapshotFilesOutcome DescribeSnapshotFiles(const Model::DescribeSnapshotFilesRequest &request);
+                void DescribeSnapshotFilesAsync(const Model::DescribeSnapshotFilesRequest& request, const DescribeSnapshotFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotFilesOutcomeCallable DescribeSnapshotFilesCallable(const Model::DescribeSnapshotFilesRequest& request);
+
+                /**
+                 *本接口（DescribeSnapshotPolicies）用于查询快照策略。
+                 * @param req DescribeSnapshotPoliciesRequest
+                 * @return DescribeSnapshotPoliciesOutcome
+                 */
+                DescribeSnapshotPoliciesOutcome DescribeSnapshotPolicies(const Model::DescribeSnapshotPoliciesRequest &request);
+                void DescribeSnapshotPoliciesAsync(const Model::DescribeSnapshotPoliciesRequest& request, const DescribeSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSnapshotPoliciesOutcomeCallable DescribeSnapshotPoliciesCallable(const Model::DescribeSnapshotPoliciesRequest& request);
+
+                /**
                  *本接口（DescribeSubnets）用于查询子网列表。
                  * @param req DescribeSubnetsRequest
                  * @return DescribeSubnetsOutcome
@@ -3302,6 +3425,15 @@ LimitTypes取值范围：
                 DetachNetworkInterfaceOutcomeCallable DetachNetworkInterfaceCallable(const Model::DetachNetworkInterfaceRequest& request);
 
                 /**
+                 *本接口（DetachSnapshotInstances）用于快照策略解关联实例。
+                 * @param req DetachSnapshotInstancesRequest
+                 * @return DetachSnapshotInstancesOutcome
+                 */
+                DetachSnapshotInstancesOutcome DetachSnapshotInstances(const Model::DetachSnapshotInstancesRequest &request);
+                void DetachSnapshotInstancesAsync(const Model::DetachSnapshotInstancesRequest& request, const DetachSnapshotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DetachSnapshotInstancesOutcomeCallable DetachSnapshotInstancesCallable(const Model::DetachSnapshotInstancesRequest& request);
+
+                /**
                  *本接口（DisableCcnRoutes）用于禁用已经启用的云联网（CCN）路由
                  * @param req DisableCcnRoutesRequest
                  * @return DisableCcnRoutesOutcome
@@ -3336,6 +3468,15 @@ LimitTypes取值范围：
                 DisableRoutesOutcome DisableRoutes(const Model::DisableRoutesRequest &request);
                 void DisableRoutesAsync(const Model::DisableRoutesRequest& request, const DisableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DisableRoutesOutcomeCallable DisableRoutesCallable(const Model::DisableRoutesRequest& request);
+
+                /**
+                 *本接口（DisableSnapshotPolicies）用于停用快照策略。
+                 * @param req DisableSnapshotPoliciesRequest
+                 * @return DisableSnapshotPoliciesOutcome
+                 */
+                DisableSnapshotPoliciesOutcome DisableSnapshotPolicies(const Model::DisableSnapshotPoliciesRequest &request);
+                void DisableSnapshotPoliciesAsync(const Model::DisableSnapshotPoliciesRequest& request, const DisableSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableSnapshotPoliciesOutcomeCallable DisableSnapshotPoliciesCallable(const Model::DisableSnapshotPoliciesRequest& request);
 
                 /**
                  *禁用SSL-VPN-CLIENT 证书
@@ -3470,6 +3611,15 @@ LimitTypes取值范围：
                 EnableRoutesOutcome EnableRoutes(const Model::EnableRoutesRequest &request);
                 void EnableRoutesAsync(const Model::EnableRoutesRequest& request, const EnableRoutesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EnableRoutesOutcomeCallable EnableRoutesCallable(const Model::EnableRoutesRequest& request);
+
+                /**
+                 *本接口（EnableSnapshotPolicies）用于启用快照策略。
+                 * @param req EnableSnapshotPoliciesRequest
+                 * @return EnableSnapshotPoliciesOutcome
+                 */
+                EnableSnapshotPoliciesOutcome EnableSnapshotPolicies(const Model::EnableSnapshotPoliciesRequest &request);
+                void EnableSnapshotPoliciesAsync(const Model::EnableSnapshotPoliciesRequest& request, const EnableSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableSnapshotPoliciesOutcomeCallable EnableSnapshotPoliciesCallable(const Model::EnableSnapshotPoliciesRequest& request);
 
                 /**
                  *是否接受终端节点连接请求。
@@ -3948,6 +4098,15 @@ LimitTypes取值范围：
                 ModifyServiceTemplateGroupAttributeOutcomeCallable ModifyServiceTemplateGroupAttributeCallable(const Model::ModifyServiceTemplateGroupAttributeRequest& request);
 
                 /**
+                 *本接口（ModifySnapshotPolicies）用于修改快照策略。
+                 * @param req ModifySnapshotPoliciesRequest
+                 * @return ModifySnapshotPoliciesOutcome
+                 */
+                ModifySnapshotPoliciesOutcome ModifySnapshotPolicies(const Model::ModifySnapshotPoliciesRequest &request);
+                void ModifySnapshotPoliciesAsync(const Model::ModifySnapshotPoliciesRequest& request, const ModifySnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifySnapshotPoliciesOutcomeCallable ModifySnapshotPoliciesCallable(const Model::ModifySnapshotPoliciesRequest& request);
+
+                /**
                  *本接口（ModifySubnetAttribute）用于修改子网属性。
                  * @param req ModifySubnetAttributeRequest
                  * @return ModifySubnetAttributeOutcome
@@ -4207,6 +4366,15 @@ LimitTypes取值范围：
                 ResetVpnGatewayInternetMaxBandwidthOutcome ResetVpnGatewayInternetMaxBandwidth(const Model::ResetVpnGatewayInternetMaxBandwidthRequest &request);
                 void ResetVpnGatewayInternetMaxBandwidthAsync(const Model::ResetVpnGatewayInternetMaxBandwidthRequest& request, const ResetVpnGatewayInternetMaxBandwidthAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetVpnGatewayInternetMaxBandwidthOutcomeCallable ResetVpnGatewayInternetMaxBandwidthCallable(const Model::ResetVpnGatewayInternetMaxBandwidthRequest& request);
+
+                /**
+                 *本接口（ResumeSnapshotInstance）用于根据备份内容恢复安全组策略。
+                 * @param req ResumeSnapshotInstanceRequest
+                 * @return ResumeSnapshotInstanceOutcome
+                 */
+                ResumeSnapshotInstanceOutcome ResumeSnapshotInstance(const Model::ResumeSnapshotInstanceRequest &request);
+                void ResumeSnapshotInstanceAsync(const Model::ResumeSnapshotInstanceRequest& request, const ResumeSnapshotInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResumeSnapshotInstanceOutcomeCallable ResumeSnapshotInstanceCallable(const Model::ResumeSnapshotInstanceRequest& request);
 
                 /**
                  *本接口（ReturnNormalAddresses）用于解绑并释放普通公网IP。

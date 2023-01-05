@@ -126,6 +126,92 @@ DtsClient::ConfigureSyncJobOutcomeCallable DtsClient::ConfigureSyncJobCallable(c
     return task->get_future();
 }
 
+DtsClient::ContinueMigrateJobOutcome DtsClient::ContinueMigrateJob(const ContinueMigrateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "ContinueMigrateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ContinueMigrateJobResponse rsp = ContinueMigrateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ContinueMigrateJobOutcome(rsp);
+        else
+            return ContinueMigrateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return ContinueMigrateJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ContinueMigrateJobAsync(const ContinueMigrateJobRequest& request, const ContinueMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ContinueMigrateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ContinueMigrateJobOutcomeCallable DtsClient::ContinueMigrateJobCallable(const ContinueMigrateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ContinueMigrateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->ContinueMigrateJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::ContinueSyncJobOutcome DtsClient::ContinueSyncJob(const ContinueSyncJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "ContinueSyncJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ContinueSyncJobResponse rsp = ContinueSyncJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ContinueSyncJobOutcome(rsp);
+        else
+            return ContinueSyncJobOutcome(o.GetError());
+    }
+    else
+    {
+        return ContinueSyncJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::ContinueSyncJobAsync(const ContinueSyncJobRequest& request, const ContinueSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ContinueSyncJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::ContinueSyncJobOutcomeCallable DtsClient::ContinueSyncJobCallable(const ContinueSyncJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ContinueSyncJobOutcome()>>(
+        [this, request]()
+        {
+            return this->ContinueSyncJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DtsClient::CreateCheckSyncJobOutcome DtsClient::CreateCheckSyncJob(const CreateCheckSyncJobRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCheckSyncJob");
@@ -1108,6 +1194,49 @@ DtsClient::ModifyMigrationJobOutcomeCallable DtsClient::ModifyMigrationJobCallab
         [this, request]()
         {
             return this->ModifyMigrationJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DtsClient::PauseMigrateJobOutcome DtsClient::PauseMigrateJob(const PauseMigrateJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "PauseMigrateJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        PauseMigrateJobResponse rsp = PauseMigrateJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return PauseMigrateJobOutcome(rsp);
+        else
+            return PauseMigrateJobOutcome(o.GetError());
+    }
+    else
+    {
+        return PauseMigrateJobOutcome(outcome.GetError());
+    }
+}
+
+void DtsClient::PauseMigrateJobAsync(const PauseMigrateJobRequest& request, const PauseMigrateJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->PauseMigrateJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DtsClient::PauseMigrateJobOutcomeCallable DtsClient::PauseMigrateJobCallable(const PauseMigrateJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<PauseMigrateJobOutcome()>>(
+        [this, request]()
+        {
+            return this->PauseMigrateJob(request);
         }
     );
 

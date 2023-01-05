@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool OffsetHasBeenSet() const;
 
+                    /**
+                     * 获取校验任务 ID
+                     * @return CompareTaskId 校验任务 ID
+                     */
+                    std::string GetCompareTaskId() const;
+
+                    /**
+                     * 设置校验任务 ID
+                     * @param CompareTaskId 校验任务 ID
+                     */
+                    void SetCompareTaskId(const std::string& _compareTaskId);
+
+                    /**
+                     * 判断参数 CompareTaskId 是否已赋值
+                     * @return CompareTaskId 是否已赋值
+                     */
+                    bool CompareTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * @return Status 任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     */
+                    std::vector<std::string> GetStatus() const;
+
+                    /**
+                     * 设置任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     * @param Status 任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     */
+                    void SetStatus(const std::vector<std::string>& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 校验任务 ID
+                     */
+                    std::string m_compareTaskId;
+                    bool m_compareTaskIdHasBeenSet;
+
+                    /**
+                     * 任务状态过滤，可能的值：created - 创建完成；readyRun - 等待运行；running - 运行中；success - 成功；stopping - 结束中；failed - 失败；canceled - 已终止
+                     */
+                    std::vector<std::string> m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

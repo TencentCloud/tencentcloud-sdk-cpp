@@ -55,6 +55,7 @@
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/HttpsBilling.h>
 
 
 namespace TencentCloud
@@ -800,6 +801,24 @@ global：全球加速
                      */
                     bool QnPrivateAccessHasBeenSet() const;
 
+                    /**
+                     * 获取HTTPS服务
+                     * @return HttpsBilling HTTPS服务
+                     */
+                    HttpsBilling GetHttpsBilling() const;
+
+                    /**
+                     * 设置HTTPS服务
+                     * @param HttpsBilling HTTPS服务
+                     */
+                    void SetHttpsBilling(const HttpsBilling& _httpsBilling);
+
+                    /**
+                     * 判断参数 HttpsBilling 是否已赋值
+                     * @return HttpsBilling 是否已赋值
+                     */
+                    bool HttpsBillingHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1039,6 +1058,12 @@ global：全球加速
                      */
                     QnPrivateAccess m_qnPrivateAccess;
                     bool m_qnPrivateAccessHasBeenSet;
+
+                    /**
+                     * HTTPS服务
+                     */
+                    HttpsBilling m_httpsBilling;
+                    bool m_httpsBillingHasBeenSet;
 
                 };
             }

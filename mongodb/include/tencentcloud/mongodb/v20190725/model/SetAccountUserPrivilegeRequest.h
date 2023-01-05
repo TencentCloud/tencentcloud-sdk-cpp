@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取账号名称
-                     * @return UserName 账号名称
+                     * 获取账号名称。
+                     * @return UserName 账号名称。
                      */
                     std::string GetUserName() const;
 
                     /**
-                     * 设置账号名称
-                     * @param UserName 账号名称
+                     * 设置账号名称。
+                     * @param UserName 账号名称。
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取权限信息
-                     * @return AuthRole 权限信息
+                     * 获取权限信息。
+                     * @return AuthRole 权限信息。
                      */
                     std::vector<Auth> GetAuthRole() const;
 
                     /**
-                     * 设置权限信息
-                     * @param AuthRole 权限信息
+                     * 设置权限信息。
+                     * @param AuthRole 权限信息。
                      */
                     void SetAuthRole(const std::vector<Auth>& _authRole);
 
@@ -100,19 +100,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 账号名称
+                     * 账号名称。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 权限信息
+                     * 权限信息。
                      */
                     std::vector<Auth> m_authRole;
                     bool m_authRoleHasBeenSet;

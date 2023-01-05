@@ -226,7 +226,7 @@ namespace TencentCloud
                 AssignProjectOutcomeCallable AssignProjectCallable(const Model::AssignProjectRequest& request);
 
                 /**
-                 *创建实例账号。
+                 *本接口(CreateAccountUser)用于创建mongodb实例账号。
                  * @param req CreateAccountUserRequest
                  * @return CreateAccountUserOutcome
                  */
@@ -271,7 +271,7 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
 
                 /**
-                 *本接口(DescribeAccountUsers)用于获取当前实例的全部账号列表。
+                 *本接口(DescribeAccountUsers)用于获取当前实例的全部账号。
                  * @param req DescribeAccountUsersRequest
                  * @return DescribeAccountUsersOutcome
                  */
@@ -514,7 +514,7 @@ namespace TencentCloud
                 ResetDBInstancePasswordOutcomeCallable ResetDBInstancePasswordCallable(const Model::ResetDBInstancePasswordRequest& request);
 
                 /**
-                 *账户权限设置。
+                 *本接口(SetAccountUserPrivilege)用于设置mongodb实例的账号权限。
                  * @param req SetAccountUserPrivilegeRequest
                  * @return SetAccountUserPrivilegeOutcome
                  */

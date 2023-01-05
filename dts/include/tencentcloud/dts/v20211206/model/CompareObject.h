@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移对象模式 all(所有迁移对象)，partial(部分对象迁移)
+                     * 获取对象模式 整实例-all,部分对象-partial
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObjectMode 迁移对象模式 all(所有迁移对象)，partial(部分对象迁移)
+                     * @return ObjectMode 对象模式 整实例-all,部分对象-partial
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetObjectMode() const;
 
                     /**
-                     * 设置迁移对象模式 all(所有迁移对象)，partial(部分对象迁移)
+                     * 设置对象模式 整实例-all,部分对象-partial
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjectMode 迁移对象模式 all(所有迁移对象)，partial(部分对象迁移)
+                     * @param ObjectMode 对象模式 整实例-all,部分对象-partial
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetObjectMode(const std::string& _objectMode);
@@ -70,17 +70,17 @@ namespace TencentCloud
                     bool ObjectModeHasBeenSet() const;
 
                     /**
-                     * 获取迁移对象库表配置
+                     * 获取对象列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ObjectItems 迁移对象库表配置
+                     * @return ObjectItems 对象列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareObjectItem> GetObjectItems() const;
 
                     /**
-                     * 设置迁移对象库表配置
+                     * 设置对象列表
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ObjectItems 迁移对象库表配置
+                     * @param ObjectItems 对象列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetObjectItems(const std::vector<CompareObjectItem>& _objectItems);
@@ -91,21 +91,50 @@ namespace TencentCloud
                      */
                     bool ObjectItemsHasBeenSet() const;
 
+                    /**
+                     * 获取高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedObjects 高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetAdvancedObjects() const;
+
+                    /**
+                     * 设置高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvancedObjects 高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvancedObjects(const std::vector<std::string>& _advancedObjects);
+
+                    /**
+                     * 判断参数 AdvancedObjects 是否已赋值
+                     * @return AdvancedObjects 是否已赋值
+                     */
+                    bool AdvancedObjectsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 迁移对象模式 all(所有迁移对象)，partial(部分对象迁移)
+                     * 对象模式 整实例-all,部分对象-partial
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_objectMode;
                     bool m_objectModeHasBeenSet;
 
                     /**
-                     * 迁移对象库表配置
+                     * 对象列表
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CompareObjectItem> m_objectItems;
                     bool m_objectItemsHasBeenSet;
+
+                    /**
+                     * 高级对象类型，如account(账号),index(索引),shardkey(片建，后面可能会调整),schema(库表结构)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_advancedObjects;
+                    bool m_advancedObjectsHasBeenSet;
 
                 };
             }

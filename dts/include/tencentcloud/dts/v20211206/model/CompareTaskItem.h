@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/CompareObject.h>
 #include <tencentcloud/dts/v20211206/model/ProcessProgress.h>
+#include <tencentcloud/dts/v20211206/model/CompareOptions.h>
 
 
 namespace TencentCloud
@@ -49,17 +50,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务id
+                     * 获取任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return JobId 迁移任务id
+                     * @return JobId 任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置迁移任务id
+                     * 设置任务id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param JobId 迁移任务id
+                     * @param JobId 任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetJobId(const std::string& _jobId);
@@ -290,10 +291,76 @@ namespace TencentCloud
                      */
                     bool FinishedAtHasBeenSet() const;
 
+                    /**
+                     * 获取对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMethod() const;
+
+                    /**
+                     * 设置对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Method 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMethod(const std::string& _method);
+
+                    /**
+                     * 判断参数 Method 是否已赋值
+                     * @return Method 是否已赋值
+                     */
+                    bool MethodHasBeenSet() const;
+
+                    /**
+                     * 获取对比配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Options 对比配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CompareOptions GetOptions() const;
+
+                    /**
+                     * 设置对比配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Options 对比配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOptions(const CompareOptions& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     */
+                    bool OptionsHasBeenSet() const;
+
+                    /**
+                     * 获取一致性校验提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Message 一致性校验提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置一致性校验提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Message 一致性校验提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     */
+                    bool MessageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 迁移任务id
+                     * 任务id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_jobId;
@@ -368,6 +435,27 @@ namespace TencentCloud
                      */
                     std::string m_finishedAt;
                     bool m_finishedAtHasBeenSet;
+
+                    /**
+                     * 对比类型，dataCheck(完整数据对比)、sampleDataCheck(抽样数据对比)、rowsCount(行数对比)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_method;
+                    bool m_methodHasBeenSet;
+
+                    /**
+                     * 对比配置信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CompareOptions m_options;
+                    bool m_optionsHasBeenSet;
+
+                    /**
+                     * 一致性校验提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                 };
             }

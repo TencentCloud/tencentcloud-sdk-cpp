@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailResponse.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailListRequest.h>
+#include <tencentcloud/ssa/v20180608/model/DescribeAssetDetailListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetListRequest.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/DescribeAssetsMappingListRequest.h>
@@ -82,6 +84,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAssetDetailResponse> DescribeAssetDetailOutcome;
                 typedef std::future<DescribeAssetDetailOutcome> DescribeAssetDetailOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeAssetDetailRequest&, DescribeAssetDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetDetailListResponse> DescribeAssetDetailListOutcome;
+                typedef std::future<DescribeAssetDetailListOutcome> DescribeAssetDetailListOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::DescribeAssetDetailListRequest&, DescribeAssetDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetDetailListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetListResponse> DescribeAssetListOutcome;
                 typedef std::future<DescribeAssetListOutcome> DescribeAssetListOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::DescribeAssetListRequest&, DescribeAssetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetListAsyncHandler;
@@ -153,6 +158,15 @@ namespace TencentCloud
                 DescribeAssetDetailOutcome DescribeAssetDetail(const Model::DescribeAssetDetailRequest &request);
                 void DescribeAssetDetailAsync(const Model::DescribeAssetDetailRequest& request, const DescribeAssetDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAssetDetailOutcomeCallable DescribeAssetDetailCallable(const Model::DescribeAssetDetailRequest& request);
+
+                /**
+                 *资产条件查询
+                 * @param req DescribeAssetDetailListRequest
+                 * @return DescribeAssetDetailListOutcome
+                 */
+                DescribeAssetDetailListOutcome DescribeAssetDetailList(const Model::DescribeAssetDetailListRequest &request);
+                void DescribeAssetDetailListAsync(const Model::DescribeAssetDetailListRequest& request, const DescribeAssetDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetDetailListOutcomeCallable DescribeAssetDetailListCallable(const Model::DescribeAssetDetailListRequest& request);
 
                 /**
                  *资产安全资产列表

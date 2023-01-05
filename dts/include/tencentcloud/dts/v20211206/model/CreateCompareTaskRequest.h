@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/CompareObject.h>
+#include <tencentcloud/dts/v20211206/model/CompareOptions.h>
 
 
 namespace TencentCloud
@@ -44,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移任务 Id
-                     * @return JobId 迁移任务 Id
+                     * 获取任务 Id
+                     * @return JobId 任务 Id
                      */
                     std::string GetJobId() const;
 
                     /**
-                     * 设置迁移任务 Id
-                     * @param JobId 迁移任务 Id
+                     * 设置任务 Id
+                     * @param JobId 任务 Id
                      */
                     void SetJobId(const std::string& _jobId);
 
@@ -115,10 +116,28 @@ namespace TencentCloud
                      */
                     bool ObjectsHasBeenSet() const;
 
+                    /**
+                     * 获取一致性校验选项
+                     * @return Options 一致性校验选项
+                     */
+                    CompareOptions GetOptions() const;
+
+                    /**
+                     * 设置一致性校验选项
+                     * @param Options 一致性校验选项
+                     */
+                    void SetOptions(const CompareOptions& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     */
+                    bool OptionsHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 迁移任务 Id
+                     * 任务 Id
                      */
                     std::string m_jobId;
                     bool m_jobIdHasBeenSet;
@@ -140,6 +159,12 @@ namespace TencentCloud
                      */
                     CompareObject m_objects;
                     bool m_objectsHasBeenSet;
+
+                    /**
+                     * 一致性校验选项
+                     */
+                    CompareOptions m_options;
+                    bool m_optionsHasBeenSet;
 
                 };
             }

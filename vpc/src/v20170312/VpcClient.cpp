@@ -900,6 +900,49 @@ VpcClient::AttachNetworkInterfaceOutcomeCallable VpcClient::AttachNetworkInterfa
     return task->get_future();
 }
 
+VpcClient::AttachSnapshotInstancesOutcome VpcClient::AttachSnapshotInstances(const AttachSnapshotInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AttachSnapshotInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AttachSnapshotInstancesResponse rsp = AttachSnapshotInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AttachSnapshotInstancesOutcome(rsp);
+        else
+            return AttachSnapshotInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return AttachSnapshotInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::AttachSnapshotInstancesAsync(const AttachSnapshotInstancesRequest& request, const AttachSnapshotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AttachSnapshotInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::AttachSnapshotInstancesOutcomeCallable VpcClient::AttachSnapshotInstancesCallable(const AttachSnapshotInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AttachSnapshotInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->AttachSnapshotInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::AuditCrossBorderComplianceOutcome VpcClient::AuditCrossBorderCompliance(const AuditCrossBorderComplianceRequest &request)
 {
     auto outcome = MakeRequest(request, "AuditCrossBorderCompliance");
@@ -2398,6 +2441,49 @@ VpcClient::CreateServiceTemplateGroupOutcomeCallable VpcClient::CreateServiceTem
         [this, request]()
         {
             return this->CreateServiceTemplateGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::CreateSnapshotPoliciesOutcome VpcClient::CreateSnapshotPolicies(const CreateSnapshotPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSnapshotPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSnapshotPoliciesResponse rsp = CreateSnapshotPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSnapshotPoliciesOutcome(rsp);
+        else
+            return CreateSnapshotPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSnapshotPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateSnapshotPoliciesAsync(const CreateSnapshotPoliciesRequest& request, const CreateSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSnapshotPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateSnapshotPoliciesOutcomeCallable VpcClient::CreateSnapshotPoliciesCallable(const CreateSnapshotPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSnapshotPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSnapshotPolicies(request);
         }
     );
 
@@ -3989,6 +4075,49 @@ VpcClient::DeleteServiceTemplateGroupOutcomeCallable VpcClient::DeleteServiceTem
         [this, request]()
         {
             return this->DeleteServiceTemplateGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DeleteSnapshotPoliciesOutcome VpcClient::DeleteSnapshotPolicies(const DeleteSnapshotPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSnapshotPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSnapshotPoliciesResponse rsp = DeleteSnapshotPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSnapshotPoliciesOutcome(rsp);
+        else
+            return DeleteSnapshotPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSnapshotPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DeleteSnapshotPoliciesAsync(const DeleteSnapshotPoliciesRequest& request, const DeleteSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSnapshotPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DeleteSnapshotPoliciesOutcomeCallable VpcClient::DeleteSnapshotPoliciesCallable(const DeleteSnapshotPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSnapshotPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSnapshotPolicies(request);
         }
     );
 
@@ -6791,6 +6920,178 @@ VpcClient::DescribeServiceTemplatesOutcomeCallable VpcClient::DescribeServiceTem
     return task->get_future();
 }
 
+VpcClient::DescribeSgSnapshotFileContentOutcome VpcClient::DescribeSgSnapshotFileContent(const DescribeSgSnapshotFileContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSgSnapshotFileContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSgSnapshotFileContentResponse rsp = DescribeSgSnapshotFileContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSgSnapshotFileContentOutcome(rsp);
+        else
+            return DescribeSgSnapshotFileContentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSgSnapshotFileContentOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeSgSnapshotFileContentAsync(const DescribeSgSnapshotFileContentRequest& request, const DescribeSgSnapshotFileContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSgSnapshotFileContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeSgSnapshotFileContentOutcomeCallable VpcClient::DescribeSgSnapshotFileContentCallable(const DescribeSgSnapshotFileContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSgSnapshotFileContentOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSgSnapshotFileContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeSnapshotAttachedInstancesOutcome VpcClient::DescribeSnapshotAttachedInstances(const DescribeSnapshotAttachedInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotAttachedInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotAttachedInstancesResponse rsp = DescribeSnapshotAttachedInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotAttachedInstancesOutcome(rsp);
+        else
+            return DescribeSnapshotAttachedInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotAttachedInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeSnapshotAttachedInstancesAsync(const DescribeSnapshotAttachedInstancesRequest& request, const DescribeSnapshotAttachedInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotAttachedInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeSnapshotAttachedInstancesOutcomeCallable VpcClient::DescribeSnapshotAttachedInstancesCallable(const DescribeSnapshotAttachedInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotAttachedInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotAttachedInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeSnapshotFilesOutcome VpcClient::DescribeSnapshotFiles(const DescribeSnapshotFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotFilesResponse rsp = DescribeSnapshotFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotFilesOutcome(rsp);
+        else
+            return DescribeSnapshotFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotFilesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeSnapshotFilesAsync(const DescribeSnapshotFilesRequest& request, const DescribeSnapshotFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeSnapshotFilesOutcomeCallable VpcClient::DescribeSnapshotFilesCallable(const DescribeSnapshotFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotFiles(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DescribeSnapshotPoliciesOutcome VpcClient::DescribeSnapshotPolicies(const DescribeSnapshotPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSnapshotPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSnapshotPoliciesResponse rsp = DescribeSnapshotPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSnapshotPoliciesOutcome(rsp);
+        else
+            return DescribeSnapshotPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSnapshotPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeSnapshotPoliciesAsync(const DescribeSnapshotPoliciesRequest& request, const DescribeSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSnapshotPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeSnapshotPoliciesOutcomeCallable VpcClient::DescribeSnapshotPoliciesCallable(const DescribeSnapshotPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSnapshotPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSnapshotPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeSubnetsOutcome VpcClient::DescribeSubnets(const DescribeSubnetsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSubnets");
@@ -7823,6 +8124,49 @@ VpcClient::DetachNetworkInterfaceOutcomeCallable VpcClient::DetachNetworkInterfa
     return task->get_future();
 }
 
+VpcClient::DetachSnapshotInstancesOutcome VpcClient::DetachSnapshotInstances(const DetachSnapshotInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DetachSnapshotInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DetachSnapshotInstancesResponse rsp = DetachSnapshotInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DetachSnapshotInstancesOutcome(rsp);
+        else
+            return DetachSnapshotInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DetachSnapshotInstancesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DetachSnapshotInstancesAsync(const DetachSnapshotInstancesRequest& request, const DetachSnapshotInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DetachSnapshotInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DetachSnapshotInstancesOutcomeCallable VpcClient::DetachSnapshotInstancesCallable(const DetachSnapshotInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DetachSnapshotInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DetachSnapshotInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DisableCcnRoutesOutcome VpcClient::DisableCcnRoutes(const DisableCcnRoutesRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableCcnRoutes");
@@ -7988,6 +8332,49 @@ VpcClient::DisableRoutesOutcomeCallable VpcClient::DisableRoutesCallable(const D
         [this, request]()
         {
             return this->DisableRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::DisableSnapshotPoliciesOutcome VpcClient::DisableSnapshotPolicies(const DisableSnapshotPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableSnapshotPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableSnapshotPoliciesResponse rsp = DisableSnapshotPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableSnapshotPoliciesOutcome(rsp);
+        else
+            return DisableSnapshotPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableSnapshotPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DisableSnapshotPoliciesAsync(const DisableSnapshotPoliciesRequest& request, const DisableSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableSnapshotPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DisableSnapshotPoliciesOutcomeCallable VpcClient::DisableSnapshotPoliciesCallable(const DisableSnapshotPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableSnapshotPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableSnapshotPolicies(request);
         }
     );
 
@@ -8590,6 +8977,49 @@ VpcClient::EnableRoutesOutcomeCallable VpcClient::EnableRoutesCallable(const Ena
         [this, request]()
         {
             return this->EnableRoutes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::EnableSnapshotPoliciesOutcome VpcClient::EnableSnapshotPolicies(const EnableSnapshotPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableSnapshotPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableSnapshotPoliciesResponse rsp = EnableSnapshotPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableSnapshotPoliciesOutcome(rsp);
+        else
+            return EnableSnapshotPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableSnapshotPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::EnableSnapshotPoliciesAsync(const EnableSnapshotPoliciesRequest& request, const EnableSnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableSnapshotPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::EnableSnapshotPoliciesOutcomeCallable VpcClient::EnableSnapshotPoliciesCallable(const EnableSnapshotPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableSnapshotPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableSnapshotPolicies(request);
         }
     );
 
@@ -10704,6 +11134,49 @@ VpcClient::ModifyServiceTemplateGroupAttributeOutcomeCallable VpcClient::ModifyS
     return task->get_future();
 }
 
+VpcClient::ModifySnapshotPoliciesOutcome VpcClient::ModifySnapshotPolicies(const ModifySnapshotPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySnapshotPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifySnapshotPoliciesResponse rsp = ModifySnapshotPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifySnapshotPoliciesOutcome(rsp);
+        else
+            return ModifySnapshotPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifySnapshotPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ModifySnapshotPoliciesAsync(const ModifySnapshotPoliciesRequest& request, const ModifySnapshotPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySnapshotPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ModifySnapshotPoliciesOutcomeCallable VpcClient::ModifySnapshotPoliciesCallable(const ModifySnapshotPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifySnapshotPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySnapshotPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ModifySubnetAttributeOutcome VpcClient::ModifySubnetAttribute(const ModifySubnetAttributeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySubnetAttribute");
@@ -11901,6 +12374,49 @@ VpcClient::ResetVpnGatewayInternetMaxBandwidthOutcomeCallable VpcClient::ResetVp
         [this, request]()
         {
             return this->ResetVpnGatewayInternetMaxBandwidth(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VpcClient::ResumeSnapshotInstanceOutcome VpcClient::ResumeSnapshotInstance(const ResumeSnapshotInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResumeSnapshotInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResumeSnapshotInstanceResponse rsp = ResumeSnapshotInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResumeSnapshotInstanceOutcome(rsp);
+        else
+            return ResumeSnapshotInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ResumeSnapshotInstanceOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ResumeSnapshotInstanceAsync(const ResumeSnapshotInstanceRequest& request, const ResumeSnapshotInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResumeSnapshotInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ResumeSnapshotInstanceOutcomeCallable VpcClient::ResumeSnapshotInstanceCallable(const ResumeSnapshotInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResumeSnapshotInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ResumeSnapshotInstance(request);
         }
     );
 

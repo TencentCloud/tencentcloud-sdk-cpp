@@ -49,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取迁移的库
+                     * 获取数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DbName 迁移的库
+                     * @return DbName 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDbName() const;
 
                     /**
-                     * 设置迁移的库
+                     * 设置数据库名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DbName 迁移的库
+                     * @param DbName 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDbName(const std::string& _dbName);
@@ -93,17 +93,17 @@ namespace TencentCloud
                     bool DbModeHasBeenSet() const;
 
                     /**
-                     * 获取迁移的 schema
+                     * 获取schema名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SchemaName 迁移的 schema
+                     * @return SchemaName schema名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSchemaName() const;
 
                     /**
-                     * 设置迁移的 schema
+                     * 设置schema名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SchemaName 迁移的 schema
+                     * @param SchemaName schema名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSchemaName(const std::string& _schemaName);
@@ -205,7 +205,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 迁移的库
+                     * 数据库名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_dbName;
@@ -219,7 +219,7 @@ namespace TencentCloud
                     bool m_dbModeHasBeenSet;
 
                     /**
-                     * 迁移的 schema
+                     * schema名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_schemaName;

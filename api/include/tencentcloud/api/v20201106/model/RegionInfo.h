@@ -100,6 +100,94 @@ namespace TencentCloud
                      */
                     bool RegionStateHasBeenSet() const;
 
+                    /**
+                     * 获取控制台类型，api调用时默认null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionTypeMC 控制台类型，api调用时默认null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRegionTypeMC() const;
+
+                    /**
+                     * 设置控制台类型，api调用时默认null
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionTypeMC 控制台类型，api调用时默认null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionTypeMC(const int64_t& _regionTypeMC);
+
+                    /**
+                     * 判断参数 RegionTypeMC 是否已赋值
+                     * @return RegionTypeMC 是否已赋值
+                     */
+                    bool RegionTypeMCHasBeenSet() const;
+
+                    /**
+                     * 获取不同语言的地区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocationMC 不同语言的地区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLocationMC() const;
+
+                    /**
+                     * 设置不同语言的地区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LocationMC 不同语言的地区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocationMC(const std::string& _locationMC);
+
+                    /**
+                     * 判断参数 LocationMC 是否已赋值
+                     * @return LocationMC 是否已赋值
+                     */
+                    bool LocationMCHasBeenSet() const;
+
+                    /**
+                     * 获取控制台展示的地域描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionNameMC 控制台展示的地域描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegionNameMC() const;
+
+                    /**
+                     * 设置控制台展示的地域描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionNameMC 控制台展示的地域描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionNameMC(const std::string& _regionNameMC);
+
+                    /**
+                     * 判断参数 RegionNameMC 是否已赋值
+                     * @return RegionNameMC 是否已赋值
+                     */
+                    bool RegionNameMCHasBeenSet() const;
+
+                    /**
+                     * 获取控制台展示的RegionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionIdMC 控制台展示的RegionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegionIdMC() const;
+
+                    /**
+                     * 设置控制台展示的RegionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionIdMC 控制台展示的RegionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionIdMC(const std::string& _regionIdMC);
+
+                    /**
+                     * 判断参数 RegionIdMC 是否已赋值
+                     * @return RegionIdMC 是否已赋值
+                     */
+                    bool RegionIdMCHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +207,34 @@ namespace TencentCloud
                      */
                     std::string m_regionState;
                     bool m_regionStateHasBeenSet;
+
+                    /**
+                     * 控制台类型，api调用时默认null
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_regionTypeMC;
+                    bool m_regionTypeMCHasBeenSet;
+
+                    /**
+                     * 不同语言的地区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_locationMC;
+                    bool m_locationMCHasBeenSet;
+
+                    /**
+                     * 控制台展示的地域描述
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionNameMC;
+                    bool m_regionNameMCHasBeenSet;
+
+                    /**
+                     * 控制台展示的RegionId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionIdMC;
+                    bool m_regionIdMCHasBeenSet;
 
                 };
             }

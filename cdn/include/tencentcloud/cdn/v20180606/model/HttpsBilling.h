@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取https请求计费开关
-                     * @return Switch https请求计费开关
+                     * 获取HTTPS服务
+                     * @return Switch HTTPS服务
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置https请求计费开关
-                     * @param Switch https请求计费开关
+                     * 设置HTTPS服务
+                     * @param Switch HTTPS服务
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * https请求计费开关
+                     * HTTPS服务
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;
