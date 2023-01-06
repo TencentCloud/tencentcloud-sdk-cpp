@@ -43,7 +43,43 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
+                     * @return TaskId 异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
+                     */
+                    uint64_t GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取转为弹性公网IP后的唯一ID
+                     * @return AddressId 转为弹性公网IP后的唯一ID
+                     */
+                    std::string GetAddressId() const;
+
+                    /**
+                     * 判断参数 AddressId 是否已赋值
+                     * @return AddressId 是否已赋值
+                     */
+                    bool AddressIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 异步任务TaskId。可以使用[DescribeTaskResult](https://cloud.tencent.com/document/api/215/36271)接口查询任务状态。
+                     */
+                    uint64_t m_taskId;
+                    bool m_taskIdHasBeenSet;
+
+                    /**
+                     * 转为弹性公网IP后的唯一ID
+                     */
+                    std::string m_addressId;
+                    bool m_addressIdHasBeenSet;
 
                 };
             }

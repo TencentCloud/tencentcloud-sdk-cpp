@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/vpc/v20170312/model/TransformAddressResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficPackagesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
@@ -23,13 +23,12 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-TransformAddressResponse::TransformAddressResponse() :
-    m_taskIdHasBeenSet(false),
-    m_addressIdHasBeenSet(false)
+CreateTrafficPackagesResponse::CreateTrafficPackagesResponse() :
+    m_trafficPackageSetHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome TransformAddressResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateTrafficPackagesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,40 @@ CoreInternalOutcome TransformAddressResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("TrafficPackageSet") && !rsp["TrafficPackageSet"].IsNull())
     {
-        if (!rsp["TaskId"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskId = rsp["TaskId"].GetUint64();
-        m_taskIdHasBeenSet = true;
-    }
+        if (!rsp["TrafficPackageSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrafficPackageSet` is not array type"));
 
-    if (rsp.HasMember("AddressId") && !rsp["AddressId"].IsNull())
-    {
-        if (!rsp["AddressId"].IsString())
+        const rapidjson::Value &tmpValue = rsp["TrafficPackageSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `AddressId` IsString=false incorrectly").SetRequestId(requestId));
+            m_trafficPackageSet.push_back((*itr).GetString());
         }
-        m_addressId = string(rsp["AddressId"].GetString());
-        m_addressIdHasBeenSet = true;
+        m_trafficPackageSetHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string TransformAddressResponse::ToJsonString() const
+string CreateTrafficPackagesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_taskIdHasBeenSet)
+    if (m_trafficPackageSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "TrafficPackageSet";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_taskId, allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_addressIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AddressId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_addressId.c_str(), allocator).Move(), allocator);
+        for (auto itr = m_trafficPackageSet.begin(); itr != m_trafficPackageSet.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +110,14 @@ string TransformAddressResponse::ToJsonString() const
 }
 
 
-uint64_t TransformAddressResponse::GetTaskId() const
+vector<string> CreateTrafficPackagesResponse::GetTrafficPackageSet() const
 {
-    return m_taskId;
+    return m_trafficPackageSet;
 }
 
-bool TransformAddressResponse::TaskIdHasBeenSet() const
+bool CreateTrafficPackagesResponse::TrafficPackageSetHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
-}
-
-string TransformAddressResponse::GetAddressId() const
-{
-    return m_addressId;
-}
-
-bool TransformAddressResponse::AddressIdHasBeenSet() const
-{
-    return m_addressIdHasBeenSet;
+    return m_trafficPackageSetHasBeenSet;
 }
 
 

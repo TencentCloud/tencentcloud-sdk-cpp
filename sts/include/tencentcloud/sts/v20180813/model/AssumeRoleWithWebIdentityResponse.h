@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取临时秘钥过期时间(时间戳)
-                     * @return ExpiredTime 临时秘钥过期时间(时间戳)
+                     * 获取临时密钥过期时间(时间戳)
+                     * @return ExpiredTime 临时密钥过期时间(时间戳)
                      */
                     uint64_t GetExpiredTime() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥过期时间
-                     * @return Expiration 临时秘钥过期时间
+                     * 获取临时密钥过期时间
+                     * @return Expiration 临时密钥过期时间
                      */
                     std::string GetExpiration() const;
 
@@ -69,8 +69,8 @@ namespace TencentCloud
                     bool ExpirationHasBeenSet() const;
 
                     /**
-                     * 获取临时秘钥
-                     * @return Credentials 临时秘钥
+                     * 获取临时密钥
+                     * @return Credentials 临时密钥
                      */
                     Credentials GetCredentials() const;
 
@@ -83,19 +83,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 临时秘钥过期时间(时间戳)
+                     * 临时密钥过期时间(时间戳)
                      */
                     uint64_t m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 临时秘钥过期时间
+                     * 临时密钥过期时间
                      */
                     std::string m_expiration;
                     bool m_expirationHasBeenSet;
 
                     /**
-                     * 临时秘钥
+                     * 临时密钥
                      */
                     Credentials m_credentials;
                     bool m_credentialsHasBeenSet;

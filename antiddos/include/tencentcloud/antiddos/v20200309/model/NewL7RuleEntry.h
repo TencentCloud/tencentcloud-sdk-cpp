@@ -519,6 +519,28 @@ namespace TencentCloud
                      */
                     bool ErrCodeHasBeenSet() const;
 
+                    /**
+                     * 获取版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Version 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetVersion() const;
+
+                    /**
+                     * 设置版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Version 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVersion(const uint64_t& _version);
+
+                    /**
+                     * 判断参数 Version 是否已赋值
+                     * @return Version 是否已赋值
+                     */
+                    bool VersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -677,6 +699,13 @@ namespace TencentCloud
                      */
                     uint64_t m_errCode;
                     bool m_errCodeHasBeenSet;
+
+                    /**
+                     * 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_version;
+                    bool m_versionHasBeenSet;
 
                 };
             }

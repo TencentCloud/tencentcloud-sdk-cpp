@@ -227,7 +227,7 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取查询交易类型，如下：
+                     * 获取查询交易类型（请使用交易类型名称入参），入参示例枚举如下：
 包年包月新购
 包年包月续费
 包年包月配置变更
@@ -254,7 +254,7 @@ namespace TencentCloud
 预留实例退款
 按量计费冲正
 包年包月转按量
-                     * @return ActionType 查询交易类型，如下：
+                     * @return ActionType 查询交易类型（请使用交易类型名称入参），入参示例枚举如下：
 包年包月新购
 包年包月续费
 包年包月配置变更
@@ -285,7 +285,7 @@ namespace TencentCloud
                     std::string GetActionType() const;
 
                     /**
-                     * 设置查询交易类型，如下：
+                     * 设置查询交易类型（请使用交易类型名称入参），入参示例枚举如下：
 包年包月新购
 包年包月续费
 包年包月配置变更
@@ -312,7 +312,7 @@ namespace TencentCloud
 预留实例退款
 按量计费冲正
 包年包月转按量
-                     * @param ActionType 查询交易类型，如下：
+                     * @param ActionType 查询交易类型（请使用交易类型名称入参），入参示例枚举如下：
 包年包月新购
 包年包月续费
 包年包月配置变更
@@ -452,7 +452,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 查询交易类型，如下：
+                     * 查询交易类型（请使用交易类型名称入参），入参示例枚举如下：
 包年包月新购
 包年包月续费
 包年包月配置变更

@@ -2233,6 +2233,49 @@ CkafkaClient::DescribeTopicDetailOutcomeCallable CkafkaClient::DescribeTopicDeta
     return task->get_future();
 }
 
+CkafkaClient::DescribeTopicProduceConnectionOutcome CkafkaClient::DescribeTopicProduceConnection(const DescribeTopicProduceConnectionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTopicProduceConnection");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTopicProduceConnectionResponse rsp = DescribeTopicProduceConnectionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTopicProduceConnectionOutcome(rsp);
+        else
+            return DescribeTopicProduceConnectionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTopicProduceConnectionOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeTopicProduceConnectionAsync(const DescribeTopicProduceConnectionRequest& request, const DescribeTopicProduceConnectionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTopicProduceConnection(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeTopicProduceConnectionOutcomeCallable CkafkaClient::DescribeTopicProduceConnectionCallable(const DescribeTopicProduceConnectionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTopicProduceConnectionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTopicProduceConnection(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeTopicSubscribeGroupOutcome CkafkaClient::DescribeTopicSubscribeGroup(const DescribeTopicSubscribeGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopicSubscribeGroup");

@@ -355,412 +355,301 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220106/model/BotConfig.h
   include/tencentcloud/teo/v20220106/model/TimingTypeValue.h
   include/tencentcloud/teo/v20220106/model/DescribeBotManagedRulesRequest.h
-  include/tencentcloud/teo/v20220901/model/Compression.h
-  include/tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotDataRequest.h
-  include/tencentcloud/teo/v20220901/model/SpeedTestingInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeSingleL7AnalysisDataRequest.h
-  include/tencentcloud/teo/v20220901/model/TopEntryValue.h
-  include/tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h
-  include/tencentcloud/teo/v20220901/model/ShieldArea.h
-  include/tencentcloud/teo/v20220901/model/Origin.h
-  include/tencentcloud/teo/v20220901/model/DescribeRulesResponse.h
-  include/tencentcloud/teo/v20220901/model/TimingDataRecord.h
-  include/tencentcloud/teo/v20220901/model/DDoSAttackEventDetailData.h
-  include/tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotDataResponse.h
-  include/tencentcloud/teo/v20220901/model/Tag.h
-  include/tencentcloud/teo/v20220901/model/RateLimitConfig.h
-  include/tencentcloud/teo/v20220901/model/RuleExtraParameter.h
-  include/tencentcloud/teo/v20220901/model/ClsLogTopicInfo.h
-  include/tencentcloud/teo/v20220901/model/WafConfig.h
-  include/tencentcloud/teo/v20220901/model/CreateAliasDomainRequest.h
-  include/tencentcloud/teo/v20220901/model/CreatePrefetchTaskRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSAttackSourceEvent.h
-  include/tencentcloud/teo/v20220901/model/ModifyRulePriorityResponse.h
-  include/tencentcloud/teo/v20220901/model/SwitchConfig.h
-  include/tencentcloud/teo/v20220901/model/IdentifyZoneResponse.h
-  include/tencentcloud/teo/v20220901/model/SpeedTestingDetailData.h
-  include/tencentcloud/teo/v20220901/model/BotManagedRuleDetail.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackSourceEventResponse.h
-  include/tencentcloud/teo/v20220901/model/DDoSAntiPly.h
-  include/tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h
-  include/tencentcloud/teo/v20220901/model/PlanInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyListResponse.h
-  include/tencentcloud/teo/v20220901/model/CheckCertificateRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventResponse.h
-  include/tencentcloud/teo/v20220901/model/ForceRedirect.h
-  include/tencentcloud/teo/v20220901/model/CodeAction.h
-  include/tencentcloud/teo/v20220901/model/CachePrefresh.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionClientIpListResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataResponse.h
-  include/tencentcloud/teo/v20220901/model/BotPortraitRule.h
-  include/tencentcloud/teo/v20220901/model/DDoSRule.h
-  include/tencentcloud/teo/v20220901/model/RulesProperties.h
-  include/tencentcloud/teo/v20220901/model/RuleCodeActionParams.h
-  include/tencentcloud/teo/v20220901/model/ModifyDDoSPolicyHostResponse.h
-  include/tencentcloud/teo/v20220901/model/ExceptUserRule.h
-  include/tencentcloud/teo/v20220901/model/SecEntry.h
-  include/tencentcloud/teo/v20220901/model/SubRule.h
-  include/tencentcloud/teo/v20220901/model/DDoSPacketFilter.h
-  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataResponse.h
-  include/tencentcloud/teo/v20220901/model/Sv.h
-  include/tencentcloud/teo/v20220901/model/Rule.h
-  include/tencentcloud/teo/v20220901/model/CreateLogSetResponse.h
-  include/tencentcloud/teo/v20220901/model/DownloadL4LogsRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateCustomErrorPageRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDnssecResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneCnameSpeedUpRequest.h
-  include/tencentcloud/teo/v20220901/model/SecurityEntity.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSPolicyResponse.h
-  include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSBlockListRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSMajorAttackEventRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyListRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeZonesResponse.h
-  include/tencentcloud/teo/v20220901/model/Header.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSPolicyRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSSpeedLimit.h
-  include/tencentcloud/teo/v20220901/model/RateLimitIntelligenceRuleDetail.h
-  include/tencentcloud/teo/v20220901/model/ReclaimZoneRequest.h
-  include/tencentcloud/teo/v20220901/model/DeleteZoneRequest.h
-  include/tencentcloud/teo/v20220901/model/BotManagedRule.h
-  include/tencentcloud/teo/v20220901/model/SecurityConfig.h
-  include/tencentcloud/teo/v20220901/model/L4OfflineLog.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneCnameSpeedUpResponse.h
-  include/tencentcloud/teo/v20220901/model/FailReason.h
-  include/tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h
-  include/tencentcloud/teo/v20220901/model/LogSetInfo.h
-  include/tencentcloud/teo/v20220901/model/OptimizeAction.h
-  include/tencentcloud/teo/v20220901/model/DescribeDnsDataRequest.h
-  include/tencentcloud/teo/v20220901/model/RuleNormalActionParams.h
-  include/tencentcloud/teo/v20220901/model/PrivateParameter.h
-  include/tencentcloud/teo/v20220901/model/CreateOriginGroupRequest.h
-  include/tencentcloud/teo/v20220901/model/TopDataRecord.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesLogRequest.h
-  include/tencentcloud/teo/v20220901/model/WafGroup.h
-  include/tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h
-  include/tencentcloud/teo/v20220901/model/RateLimitTemplate.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionTopDataResponse.h
-  include/tencentcloud/teo/v20220901/model/WafGroupInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeLogTopicTaskDetailResponse.h
-  include/tencentcloud/teo/v20220901/model/DefaultServerCertInfo.h
-  include/tencentcloud/teo/v20220901/model/OfflineCache.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataResponse.h
-  include/tencentcloud/teo/v20220901/model/SecRuleRelatedInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeDistributionL4AccessDataRequest.h
+  include/tencentcloud/teo/v20220901/model/CreatePlanForZoneResponse.h
+  include/tencentcloud/teo/v20220901/model/DownloadL7LogsRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingQuotaResponse.h
+  include/tencentcloud/teo/v20220901/model/Compression.h
   include/tencentcloud/teo/v20220901/model/DeleteRulesRequest.h
   include/tencentcloud/teo/v20220901/model/ExceptUserRuleCondition.h
   include/tencentcloud/teo/v20220901/model/ModifyDefaultCertificateRequest.h
-  include/tencentcloud/teo/v20220901/model/MaxAge.h
+  include/tencentcloud/teo/v20220901/model/SingleDataRecord.h
+  include/tencentcloud/teo/v20220901/model/DescribeOriginGroupResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesLogResponse.h
+  include/tencentcloud/teo/v20220901/model/SecClientIp.h
+  include/tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataRequest.h
+  include/tencentcloud/teo/v20220901/model/SingleTypeValue.h
+  include/tencentcloud/teo/v20220901/model/CreateCredentialResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyResponse.h
+  include/tencentcloud/teo/v20220901/model/Https.h
   include/tencentcloud/teo/v20220901/model/SecEntryValue.h
+  include/tencentcloud/teo/v20220901/model/DescribeZonesRequest.h
   include/tencentcloud/teo/v20220901/model/DiffIPWhitelist.h
-  include/tencentcloud/teo/v20220901/model/ModifyAlarmDefaultThresholdResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeLogTopicTasksRequest.h
   include/tencentcloud/teo/v20220901/model/CreateCredentialRequest.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleRequest.h
+  include/tencentcloud/teo/v20220901/model/OriginRecord.h
   include/tencentcloud/teo/v20220901/model/DescribePrefetchTasksResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesHitRuleDetailRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotClientIpListResponse.h
+  include/tencentcloud/teo/v20220901/model/AdvancedFilter.h
+  include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyRequest.h
   include/tencentcloud/teo/v20220901/model/ModifySecurityWafGroupPolicyRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeZoneSettingRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeClientRuleListResponse.h
   include/tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyDnssecRequest.h
-  include/tencentcloud/teo/v20220901/model/SmartRouting.h
+  include/tencentcloud/teo/v20220901/model/Waf.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeClientRuleListRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h
+  include/tencentcloud/teo/v20220901/model/RuleRewriteActionParams.h
   include/tencentcloud/teo/v20220901/model/CreateApplicationProxyResponse.h
+  include/tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/Task.h
-  include/tencentcloud/teo/v20220901/model/BotLog.h
+  include/tencentcloud/teo/v20220901/model/ExceptUserRuleScope.h
+  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h
+  include/tencentcloud/teo/v20220901/model/SpeedTestingInfo.h
   include/tencentcloud/teo/v20220901/model/DistrictStatistics.h
-  include/tencentcloud/teo/v20220901/model/CreateIpTableListRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyDDoSPolicyHostRequest.h
-  include/tencentcloud/teo/v20220901/model/DeleteAliasDomainRequest.h
+  include/tencentcloud/teo/v20220901/model/ReclaimZoneResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeSingleL7AnalysisDataRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeHostsSettingResponse.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneResponse.h
+  include/tencentcloud/teo/v20220901/model/WafRule.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/DeleteZoneResponse.h
+  include/tencentcloud/teo/v20220901/model/CreateRuleResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h
   include/tencentcloud/teo/v20220901/model/CreatePurgeTaskResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/ReclaimAliasDomainRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateSecurityDropPageRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeRulesResponse.h
+  include/tencentcloud/teo/v20220901/model/TimingDataRecord.h
+  include/tencentcloud/teo/v20220901/model/OriginProtectionInfo.h
+  include/tencentcloud/teo/v20220901/model/DescribeOriginProtectionResponse.h
+  include/tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h
   include/tencentcloud/teo/v20220901/model/ExceptConfig.h
   include/tencentcloud/teo/v20220901/model/DeleteOriginGroupRequest.h
-  include/tencentcloud/teo/v20220901/model/DetailHost.h
-  include/tencentcloud/teo/v20220901/model/AclCondition.h
-  include/tencentcloud/teo/v20220901/model/PortraitManagedRuleDetail.h
-  include/tencentcloud/teo/v20220901/model/L7OfflineLog.h
-  include/tencentcloud/teo/v20220901/model/CreateLogTopicTaskResponse.h
-  include/tencentcloud/teo/v20220901/model/ApplicationProxyRule.h
-  include/tencentcloud/teo/v20220901/model/DescribeDnsDataResponse.h
-  include/tencentcloud/teo/v20220901/model/Zone.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackSourceEventRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSAttackEvent.h
-  include/tencentcloud/teo/v20220901/model/DropPageDetail.h
-  include/tencentcloud/teo/v20220901/model/SwitchLogTopicTaskResponse.h
-  include/tencentcloud/teo/v20220901/model/ServerCertInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeZonesRequest.h
-  include/tencentcloud/teo/v20220901/model/OriginRecord.h
-  include/tencentcloud/teo/v20220901/model/DeleteLogTopicTaskRequest.h
-  include/tencentcloud/teo/v20220901/model/VanityNameServers.h
-  include/tencentcloud/teo/v20220901/model/CreatePrefetchTaskResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionHitRuleDetailRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoS.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityRuleIdRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSHost.h
-  include/tencentcloud/teo/v20220901/model/DownloadL7LogsRequest.h
-  include/tencentcloud/teo/v20220901/model/RuleItem.h
-  include/tencentcloud/teo/v20220901/model/DescribeAddableEntityListResponse.h
-  include/tencentcloud/teo/v20220901/model/Cache.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotHitRuleDetailRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionHitRuleDetailResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyLogTopicTaskResponse.h
-  include/tencentcloud/teo/v20220901/model/RuleCondition.h
-  include/tencentcloud/teo/v20220901/model/DescribeOverviewL7DataResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRequest.h
-  include/tencentcloud/teo/v20220901/model/TimingDataItem.h
-  include/tencentcloud/teo/v20220901/model/RateLimitUserRule.h
-  include/tencentcloud/teo/v20220901/model/CreatePlanForZoneRequest.h
-  include/tencentcloud/teo/v20220901/model/CacheKey.h
-  include/tencentcloud/teo/v20220901/model/DownloadL4LogsResponse.h
-  include/tencentcloud/teo/v20220901/model/IpTableConfig.h
-  include/tencentcloud/teo/v20220901/model/DeleteOriginGroupResponse.h
-  include/tencentcloud/teo/v20220901/model/CreateSecurityDropPageResponse.h
-  include/tencentcloud/teo/v20220901/model/SpeedTestingMetricData.h
-  include/tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyHostsCertificateResponse.h
-  include/tencentcloud/teo/v20220901/model/CreateLogSetRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateIpTableListResponse.h
-  include/tencentcloud/teo/v20220901/model/NormalAction.h
-  include/tencentcloud/teo/v20220901/model/TopDetailData.h
-  include/tencentcloud/teo/v20220901/model/DescribeZoneSettingResponse.h
-  include/tencentcloud/teo/v20220901/model/DDoSAllowBlock.h
-  include/tencentcloud/teo/v20220901/model/DescribePurgeTasksRequest.h
-  include/tencentcloud/teo/v20220901/model/IdentifyZoneRequest.h
-  include/tencentcloud/teo/v20220901/model/CacheConfig.h
-  include/tencentcloud/teo/v20220901/model/SecurityRule.h
-  include/tencentcloud/teo/v20220901/model/ModifyDDoSPolicyResponse.h
-  include/tencentcloud/teo/v20220901/model/DDoSFeaturesFilter.h
-  include/tencentcloud/teo/v20220901/model/DDoSAllowBlockRule.h
-  include/tencentcloud/teo/v20220901/model/DescribeZoneDDoSPolicyRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyLogTopicTaskRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionClientIpListRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyDnssecResponse.h
-  include/tencentcloud/teo/v20220901/model/CreateSpeedTestingResponse.h
-  include/tencentcloud/teo/v20220901/model/SecHitRuleInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h
-  include/tencentcloud/teo/v20220901/model/Grpc.h
-  include/tencentcloud/teo/v20220901/model/DescribeLogTopicTasksResponse.h
-  include/tencentcloud/teo/v20220901/model/CreatePlanForZoneResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeLogTopicTasksRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventDetailResponse.h
-  include/tencentcloud/teo/v20220901/model/SingleTypeValue.h
-  include/tencentcloud/teo/v20220901/model/CreateCredentialResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeAliasDomainsRequest.h
-  include/tencentcloud/teo/v20220901/model/SwitchLogTopicTaskRequest.h
-  include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneStatusRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h
-  include/tencentcloud/teo/v20220901/model/ExceptUserRuleScope.h
-  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPortraitRulesRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRegionsResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotTopDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DeleteZoneResponse.h
-  include/tencentcloud/teo/v20220901/model/ReclaimZoneResponse.h
-  include/tencentcloud/teo/v20220901/model/BindZoneToPlanResponse.h
-  include/tencentcloud/teo/v20220901/model/WafRule.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusRequest.h
-  include/tencentcloud/teo/v20220901/model/RulesSettingAction.h
-  include/tencentcloud/teo/v20220901/model/Ipv6.h
-  include/tencentcloud/teo/v20220901/model/ModifyAlarmDefaultThresholdRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSStatusInfo.h
-  include/tencentcloud/teo/v20220901/model/AclConfig.h
-  include/tencentcloud/teo/v20220901/model/SubRuleItem.h
-  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsResponse.h
-  include/tencentcloud/teo/v20220901/model/WafGroupDetail.h
-  include/tencentcloud/teo/v20220901/model/CreateAliasDomainResponse.h
-  include/tencentcloud/teo/v20220901/model/ClientIpCountry.h
-  include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyRuleRequest.h
-  include/tencentcloud/teo/v20220901/model/FileAscriptionInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSBlockListResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataResponse.h
-  include/tencentcloud/teo/v20220901/model/SpeedTestingStatus.h
-  include/tencentcloud/teo/v20220901/model/DescribeDnssecRequest.h
-  include/tencentcloud/teo/v20220901/model/RuleChoicePropertiesItem.h
-  include/tencentcloud/teo/v20220901/model/ModifyAlarmConfigResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeTimingL4AccessDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h
-  include/tencentcloud/teo/v20220901/model/NoCache.h
-  include/tencentcloud/teo/v20220901/model/GeoIp.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityGroupManagedRulesRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateZoneRequest.h
-  include/tencentcloud/teo/v20220901/model/AscriptionInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeLogSetsResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeClientRuleListResponse.h
-  include/tencentcloud/teo/v20220901/model/Waf.h
-  include/tencentcloud/teo/v20220901/model/DescribeLogTopicTaskDetailRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateSpeedTestingRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateReplayTaskRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeRateLimitIntelligenceRuleRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesDataResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionAttackEventsRequest.h
-  include/tencentcloud/teo/v20220901/model/Hsts.h
-  include/tencentcloud/teo/v20220901/model/CreateRuleRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeRateLimitIntelligenceRuleResponse.h
-  include/tencentcloud/teo/v20220901/model/RateLimitTemplateDetail.h
-  include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeLogSetsRequest.h
-  include/tencentcloud/teo/v20220901/model/ClientRule.h
-  include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRequest.h
-  include/tencentcloud/teo/v20220901/model/CC.h
-  include/tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h
-  include/tencentcloud/teo/v20220901/model/Action.h
-  include/tencentcloud/teo/v20220901/model/LogTopicDetailInfo.h
-  include/tencentcloud/teo/v20220901/model/ApplicationProxy.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyResponse.h
-  include/tencentcloud/teo/v20220901/model/ZoneSetting.h
-  include/tencentcloud/teo/v20220901/model/RuleAndConditions.h
-  include/tencentcloud/teo/v20220901/model/DropPageConfig.h
-  include/tencentcloud/teo/v20220901/model/PartialModule.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusRequest.h
-  include/tencentcloud/teo/v20220901/model/AccelerateType.h
-  include/tencentcloud/teo/v20220901/model/ModifyDefaultCertificateResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityGroupManagedRulesResponse.h
-  include/tencentcloud/teo/v20220901/model/FollowOrigin.h
-  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateLogTopicTaskRequest.h
-  include/tencentcloud/teo/v20220901/model/QueryCondition.h
-  include/tencentcloud/teo/v20220901/model/RuleRewriteActionParams.h
-  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotLogRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSGeoIp.h
-  include/tencentcloud/teo/v20220901/model/ModifyHostsCertificateRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSMajorAttackEvent.h
-  include/tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataResponse.h
-  include/tencentcloud/teo/v20220901/model/ClientIpHeader.h
-  include/tencentcloud/teo/v20220901/model/Resource.h
-  include/tencentcloud/teo/v20220901/model/DescribeOriginProtectionRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotHitRuleDetailResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackEventDetailRequest.h
-  include/tencentcloud/teo/v20220901/model/DeleteRulesResponse.h
-  include/tencentcloud/teo/v20220901/model/OriginGroup.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesHitRuleDetailResponse.h
-  include/tencentcloud/teo/v20220901/model/WebLogs.h
-  include/tencentcloud/teo/v20220901/model/SkipCondition.h
-  include/tencentcloud/teo/v20220901/model/DnssecInfo.h
-  include/tencentcloud/teo/v20220901/model/UpstreamHttp2.h
-  include/tencentcloud/teo/v20220901/model/ReclaimAliasDomainResponse.h
-  include/tencentcloud/teo/v20220901/model/DeleteAliasDomainResponse.h
-  include/tencentcloud/teo/v20220901/model/BotConfig.h
-  include/tencentcloud/teo/v20220901/model/CreateReplayTaskResponse.h
-  include/tencentcloud/teo/v20220901/model/SingleDataRecord.h
-  include/tencentcloud/teo/v20220901/model/SecClientIp.h
-  include/tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeDistributionL4AccessDataResponse.h
-  include/tencentcloud/teo/v20220901/model/Https.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotManagedRulesResponse.h
-  include/tencentcloud/teo/v20220901/model/AdvancedFilter.h
-  include/tencentcloud/teo/v20220901/model/CreateCustomErrorPageResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataResponse.h
-  include/tencentcloud/teo/v20220901/model/TemplateConfig.h
-  include/tencentcloud/teo/v20220901/model/DDoSAcl.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeClientRuleListRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeAvailablePlansRequest.h
-  include/tencentcloud/teo/v20220901/model/CreateRuleResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneResponse.h
-  include/tencentcloud/teo/v20220901/model/WafGroupRule.h
-  include/tencentcloud/teo/v20220901/model/DDoSAclRule.h
-  include/tencentcloud/teo/v20220901/model/OriginProtectionInfo.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotTopDataResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotClientIpListRequest.h
   include/tencentcloud/teo/v20220901/model/AliasDomain.h
+  include/tencentcloud/teo/v20220901/model/AclCondition.h
+  include/tencentcloud/teo/v20220901/model/RateLimitConfig.h
+  include/tencentcloud/teo/v20220901/model/DescribeAliasDomainsRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusRequest.h
+  include/tencentcloud/teo/v20220901/model/SkipCondition.h
   include/tencentcloud/teo/v20220901/model/IpTableRule.h
+  include/tencentcloud/teo/v20220901/model/L7OfflineLog.h
+  include/tencentcloud/teo/v20220901/model/ModifyHostsCertificateRequest.h
+  include/tencentcloud/teo/v20220901/model/ApplicationProxyRule.h
+  include/tencentcloud/teo/v20220901/model/SmartRouting.h
+  include/tencentcloud/teo/v20220901/model/DescribeDnsDataResponse.h
+  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusRequest.h
+  include/tencentcloud/teo/v20220901/model/Zone.h
+  include/tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h
+  include/tencentcloud/teo/v20220901/model/RuleExtraParameter.h
+  include/tencentcloud/teo/v20220901/model/RulesSettingAction.h
+  include/tencentcloud/teo/v20220901/model/ClientIpHeader.h
   include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataRequest.h
   include/tencentcloud/teo/v20220901/model/Quic.h
+  include/tencentcloud/teo/v20220901/model/Ipv6.h
   include/tencentcloud/teo/v20220901/model/DescribeRulesRequest.h
-  include/tencentcloud/teo/v20220901/model/CCInterceptEvent.h
-  include/tencentcloud/teo/v20220901/model/DescribeDDoSMajorAttackEventResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h
+  include/tencentcloud/teo/v20220901/model/ClsLogTopicInfo.h
+  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataRequest.h
+  include/tencentcloud/teo/v20220901/model/TopDataRecord.h
+  include/tencentcloud/teo/v20220901/model/AclConfig.h
   include/tencentcloud/teo/v20220901/model/ModifyZoneSettingResponse.h
-  include/tencentcloud/teo/v20220901/model/DownloadL7LogsResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeZonesResponse.h
+  include/tencentcloud/teo/v20220901/model/SubRuleItem.h
+  include/tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.h
+  include/tencentcloud/teo/v20220901/model/Origin.h
+  include/tencentcloud/teo/v20220901/model/WafConfig.h
+  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsResponse.h
+  include/tencentcloud/teo/v20220901/model/TimingTypeValue.h
   include/tencentcloud/teo/v20220901/model/DnsData.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesLogResponse.h
-  include/tencentcloud/teo/v20220901/model/AclUserRule.h
-  include/tencentcloud/teo/v20220901/model/RewriteAction.h
+  include/tencentcloud/teo/v20220901/model/ServerCertInfo.h
+  include/tencentcloud/teo/v20220901/model/CreateAliasDomainRequest.h
+  include/tencentcloud/teo/v20220901/model/CreateAliasDomainResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeOriginProtectionRequest.h
+  include/tencentcloud/teo/v20220901/model/ClientIpCountry.h
+  include/tencentcloud/teo/v20220901/model/CreatePrefetchTaskRequest.h
+  include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyRuleRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeApplicationProxiesResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataRequest.h
+  include/tencentcloud/teo/v20220901/model/FileAscriptionInfo.h
+  include/tencentcloud/teo/v20220901/model/ZoneSetting.h
+  include/tencentcloud/teo/v20220901/model/ModifyRulePriorityResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeTopL7CacheDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeOverviewL7DataRequest.h
+  include/tencentcloud/teo/v20220901/model/SwitchConfig.h
+  include/tencentcloud/teo/v20220901/model/IdentifyZoneResponse.h
   include/tencentcloud/teo/v20220901/model/WebSocket.h
   include/tencentcloud/teo/v20220901/model/DescribeWebProtectionTopDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DDoSBlockData.h
+  include/tencentcloud/teo/v20220901/model/SpeedTestingDetailData.h
+  include/tencentcloud/teo/v20220901/model/VanityNameServers.h
+  include/tencentcloud/teo/v20220901/model/RuleItem.h
   include/tencentcloud/teo/v20220901/model/ModifySecurityWafGroupPolicyResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesDataRequest.h
-  include/tencentcloud/teo/v20220901/model/SpeedTestingQuota.h
-  include/tencentcloud/teo/v20220901/model/DescribePrefetchTasksRequest.h
+  include/tencentcloud/teo/v20220901/model/RuleChoicePropertiesItem.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesDataResponse.h
+  include/tencentcloud/teo/v20220901/model/SecurityConfig.h
+  include/tencentcloud/teo/v20220901/model/CreateSpeedTestingRequest.h
+  include/tencentcloud/teo/v20220901/model/MaxAge.h
+  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/RuleCodeActionParams.h
   include/tencentcloud/teo/v20220901/model/ModifyRulePriorityRequest.h
-  include/tencentcloud/teo/v20220901/model/SpeedTestingStatistics.h
-  include/tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h
-  include/tencentcloud/teo/v20220901/model/SecurityType.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataRequest.h
+  include/tencentcloud/teo/v20220901/model/CreatePrefetchTaskResponse.h
+  include/tencentcloud/teo/v20220901/model/NoCache.h
+  include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeAliasDomainsResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionHitRuleDetailRequest.h
   include/tencentcloud/teo/v20220901/model/IPWhitelist.h
+  include/tencentcloud/teo/v20220901/model/DDoS.h
+  include/tencentcloud/teo/v20220901/model/CreateZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/PlanInfo.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataRequest.h
+  include/tencentcloud/teo/v20220901/model/SpeedTestingQuota.h
   include/tencentcloud/teo/v20220901/model/ModifyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/CheckCertificateResponse.h
+  include/tencentcloud/teo/v20220901/model/AscriptionInfo.h
+  include/tencentcloud/teo/v20220901/model/DescribeLogSetsResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeWebProtectionDataRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPortraitRulesResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyDDoSPolicyRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusResponse.h
+  include/tencentcloud/teo/v20220901/model/CheckCertificateRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeAddableEntityListResponse.h
+  include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleRequest.h
+  include/tencentcloud/teo/v20220901/model/Cache.h
+  include/tencentcloud/teo/v20220901/model/ForceRedirect.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRequest.h
+  include/tencentcloud/teo/v20220901/model/CodeAction.h
+  include/tencentcloud/teo/v20220901/model/CreateReplayTaskRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionHitRuleDetailResponse.h
   include/tencentcloud/teo/v20220901/model/Identification.h
-  include/tencentcloud/teo/v20220901/model/ModifyAlarmConfigRequest.h
-  include/tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.h
-  include/tencentcloud/teo/v20220901/model/DeleteLogTopicTaskResponse.h
+  include/tencentcloud/teo/v20220901/model/CachePrefresh.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionClientIpListResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataResponse.h
+  include/tencentcloud/teo/v20220901/model/TopDetailData.h
+  include/tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
+  include/tencentcloud/teo/v20220901/model/BotPortraitRule.h
+  include/tencentcloud/teo/v20220901/model/RuleCondition.h
+  include/tencentcloud/teo/v20220901/model/RulesProperties.h
+  include/tencentcloud/teo/v20220901/model/DescribeOverviewL7DataResponse.h
+  include/tencentcloud/teo/v20220901/model/Hsts.h
+  include/tencentcloud/teo/v20220901/model/RateLimitTemplate.h
+  include/tencentcloud/teo/v20220901/model/ModifyHostsCertificateResponse.h
+  include/tencentcloud/teo/v20220901/model/CreateRuleRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyZoneStatusRequest.h
   include/tencentcloud/teo/v20220901/model/TopEntry.h
-  include/tencentcloud/teo/v20220901/model/DescribeRulesSettingResponse.h
+  include/tencentcloud/teo/v20220901/model/RateLimitTemplateDetail.h
+  include/tencentcloud/teo/v20220901/model/ExceptUserRule.h
+  include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRuleResponse.h
+  include/tencentcloud/teo/v20220901/model/RateLimitUserRule.h
+  include/tencentcloud/teo/v20220901/model/SubRule.h
+  include/tencentcloud/teo/v20220901/model/DescribeLogSetsRequest.h
+  include/tencentcloud/teo/v20220901/model/CreatePlanForZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/ClientRule.h
+  include/tencentcloud/teo/v20220901/model/TimingDataItem.h
+  include/tencentcloud/teo/v20220901/model/SpeedTestingConfig.h
+  include/tencentcloud/teo/v20220901/model/CreateApplicationProxyRequest.h
+  include/tencentcloud/teo/v20220901/model/SpeedTestingStatus.h
+  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingMetricDataResponse.h
+  include/tencentcloud/teo/v20220901/model/CC.h
   include/tencentcloud/teo/v20220901/model/IntelligenceRuleItem.h
   include/tencentcloud/teo/v20220901/model/IntelligenceRule.h
   include/tencentcloud/teo/v20220901/model/PostMaxSize.h
+  include/tencentcloud/teo/v20220901/model/Sv.h
+  include/tencentcloud/teo/v20220901/model/Rule.h
   include/tencentcloud/teo/v20220901/model/Filter.h
+  include/tencentcloud/teo/v20220901/model/DownloadL4LogsRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL4DataResponse.h
   include/tencentcloud/teo/v20220901/model/CreateZoneResponse.h
+  include/tencentcloud/teo/v20220901/model/Action.h
+  include/tencentcloud/teo/v20220901/model/SpeedTestingStatistics.h
   include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingQuotaRequest.h
-  include/tencentcloud/teo/v20220901/model/ModifySecurityPolicyResponse.h
+  include/tencentcloud/teo/v20220901/model/ApplicationProxy.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyResponse.h
+  include/tencentcloud/teo/v20220901/model/CacheKey.h
   include/tencentcloud/teo/v20220901/model/ModifyOriginGroupRequest.h
+  include/tencentcloud/teo/v20220901/model/WebLogs.h
+  include/tencentcloud/teo/v20220901/model/DownloadL4LogsResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7CacheDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeAddableEntityListRequest.h
+  include/tencentcloud/teo/v20220901/model/IpTableConfig.h
   include/tencentcloud/teo/v20220901/model/DescribeSingleL7AnalysisDataResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeTimingL4AccessDataResponse.h
+  include/tencentcloud/teo/v20220901/model/DeleteOriginGroupResponse.h
+  include/tencentcloud/teo/v20220901/model/Header.h
+  include/tencentcloud/teo/v20220901/model/RuleAndConditions.h
+  include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsRequest.h
+  include/tencentcloud/teo/v20220901/model/DropPageConfig.h
+  include/tencentcloud/teo/v20220901/model/SpeedTestingMetricData.h
+  include/tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.h
+  include/tencentcloud/teo/v20220901/model/SecEntry.h
+  include/tencentcloud/teo/v20220901/model/DescribeIdentificationsRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeDefaultCertificatesResponse.h
+  include/tencentcloud/teo/v20220901/model/PartialModule.h
   include/tencentcloud/teo/v20220901/model/CreateOriginGroupResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyResponse.h
-  include/tencentcloud/teo/v20220901/model/SpeedTestingConfig.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityPolicyRegionsRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusRequest.h
+  include/tencentcloud/teo/v20220901/model/AccelerateType.h
+  include/tencentcloud/teo/v20220901/model/NormalAction.h
+  include/tencentcloud/teo/v20220901/model/BindZoneToPlanRequest.h
+  include/tencentcloud/teo/v20220901/model/ReclaimZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/FollowOrigin.h
+  include/tencentcloud/teo/v20220901/model/DeleteZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/SecurityType.h
+  include/tencentcloud/teo/v20220901/model/BotManagedRule.h
+  include/tencentcloud/teo/v20220901/model/ModifyDefaultCertificateResponse.h
+  include/tencentcloud/teo/v20220901/model/DetailHost.h
+  include/tencentcloud/teo/v20220901/model/DescribeTopL7AnalysisDataResponse.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeZoneSettingResponse.h
   include/tencentcloud/teo/v20220901/model/AiRule.h
+  include/tencentcloud/teo/v20220901/model/L4OfflineLog.h
+  include/tencentcloud/teo/v20220901/model/DropPageDetail.h
+  include/tencentcloud/teo/v20220901/model/DeleteRulesResponse.h
+  include/tencentcloud/teo/v20220901/model/QueryCondition.h
   include/tencentcloud/teo/v20220901/model/DescribeWebProtectionDataResponse.h
-  include/tencentcloud/teo/v20220901/model/Quota.h
-  include/tencentcloud/teo/v20220901/model/DescribeZoneDDoSPolicyResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyZoneStatusResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionAttackEventsResponse.h
+  include/tencentcloud/teo/v20220901/model/CacheConfig.h
+  include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleRequest.h
+  include/tencentcloud/teo/v20220901/model/FailReason.h
+  include/tencentcloud/teo/v20220901/model/DescribePrefetchTasksRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeRulesSettingRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainResponse.h
+  include/tencentcloud/teo/v20220901/model/LogSetInfo.h
+  include/tencentcloud/teo/v20220901/model/RewriteAction.h
+  include/tencentcloud/teo/v20220901/model/OptimizeAction.h
+  include/tencentcloud/teo/v20220901/model/DeleteAliasDomainRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeContentQuotaResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeDnsDataRequest.h
+  include/tencentcloud/teo/v20220901/model/RuleNormalActionParams.h
+  include/tencentcloud/teo/v20220901/model/Tag.h
   include/tencentcloud/teo/v20220901/model/CreatePurgeTaskRequest.h
-  include/tencentcloud/teo/v20220901/model/DescribeSecurityRuleIdResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribePurgeTasksResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotLogResponse.h
-  include/tencentcloud/teo/v20220901/model/RateLimitIntelligence.h
-  include/tencentcloud/teo/v20220901/model/QueryString.h
-  include/tencentcloud/teo/v20220901/model/TimingTypeValue.h
+  include/tencentcloud/teo/v20220901/model/Resource.h
+  include/tencentcloud/teo/v20220901/model/PrivateParameter.h
+  include/tencentcloud/teo/v20220901/model/DownloadL7LogsResponse.h
+  include/tencentcloud/teo/v20220901/model/AclUserRule.h
+  include/tencentcloud/teo/v20220901/model/Quota.h
+  include/tencentcloud/teo/v20220901/model/CreateOriginGroupRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeTimingL4DataRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeHostsSettingRequest.h
+  include/tencentcloud/teo/v20220901/model/TemplateConfig.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesLogRequest.h
+  include/tencentcloud/teo/v20220901/model/WafGroup.h
+  include/tencentcloud/teo/v20220901/model/DescribePurgeTasksResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeAvailablePlansResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribePurgeTasksRequest.h
+  include/tencentcloud/teo/v20220901/model/OriginGroup.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionTopDataResponse.h
   include/tencentcloud/teo/v20220901/model/VanityNameServersIps.h
-  include/tencentcloud/teo/v20220901/model/DescribeBotManagedRulesRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesHitRuleDetailResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeWebProtectionClientIpListRequest.h
+  include/tencentcloud/teo/v20220901/model/IdentifyZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/RateLimitIntelligence.h
+  include/tencentcloud/teo/v20220901/model/CreateSpeedTestingResponse.h
+  include/tencentcloud/teo/v20220901/model/QueryString.h
+  include/tencentcloud/teo/v20220901/model/DefaultServerCertInfo.h
+  include/tencentcloud/teo/v20220901/model/SecHitRuleInfo.h
+  include/tencentcloud/teo/v20220901/model/DescribeOriginGroupRequest.h
+  include/tencentcloud/teo/v20220901/model/Grpc.h
+  include/tencentcloud/teo/v20220901/model/UpstreamHttp2.h
+  include/tencentcloud/teo/v20220901/model/TopEntryValue.h
+  include/tencentcloud/teo/v20220901/model/ReclaimAliasDomainResponse.h
+  include/tencentcloud/teo/v20220901/model/OfflineCache.h
+  include/tencentcloud/teo/v20220901/model/DescribeDDoSAttackTopDataResponse.h
+  include/tencentcloud/teo/v20220901/model/DeleteAliasDomainResponse.h
+  include/tencentcloud/teo/v20220901/model/SecRuleRelatedInfo.h
+  include/tencentcloud/teo/v20220901/model/BotConfig.h
+  include/tencentcloud/teo/v20220901/model/DescribeLogTopicTasksResponse.h
+  include/tencentcloud/teo/v20220901/model/CreateReplayTaskResponse.h
   )
 
 set(teo_src
@@ -1101,412 +990,301 @@ set(teo_src
   src/v20220106/model/BotConfig.cpp
   src/v20220106/model/TimingTypeValue.cpp
   src/v20220106/model/DescribeBotManagedRulesRequest.cpp
-  src/v20220901/model/Compression.cpp
-  src/v20220901/model/DescribeOriginGroupResponse.cpp
-  src/v20220901/model/DescribeBotDataRequest.cpp
-  src/v20220901/model/SpeedTestingInfo.cpp
-  src/v20220901/model/DescribeSingleL7AnalysisDataRequest.cpp
-  src/v20220901/model/TopEntryValue.cpp
-  src/v20220901/model/DescribeHostsSettingResponse.cpp
-  src/v20220901/model/ShieldArea.cpp
-  src/v20220901/model/Origin.cpp
-  src/v20220901/model/DescribeRulesResponse.cpp
-  src/v20220901/model/TimingDataRecord.cpp
-  src/v20220901/model/DDoSAttackEventDetailData.cpp
-  src/v20220901/model/DescribeOriginProtectionResponse.cpp
-  src/v20220901/model/DescribeBotDataResponse.cpp
-  src/v20220901/model/Tag.cpp
-  src/v20220901/model/RateLimitConfig.cpp
-  src/v20220901/model/RuleExtraParameter.cpp
-  src/v20220901/model/ClsLogTopicInfo.cpp
-  src/v20220901/model/WafConfig.cpp
-  src/v20220901/model/CreateAliasDomainRequest.cpp
-  src/v20220901/model/CreatePrefetchTaskRequest.cpp
-  src/v20220901/model/DescribeApplicationProxiesResponse.cpp
-  src/v20220901/model/DescribeTopL7AnalysisDataRequest.cpp
-  src/v20220901/model/DDoSAttackSourceEvent.cpp
-  src/v20220901/model/ModifyRulePriorityResponse.cpp
-  src/v20220901/model/SwitchConfig.cpp
-  src/v20220901/model/IdentifyZoneResponse.cpp
-  src/v20220901/model/SpeedTestingDetailData.cpp
-  src/v20220901/model/BotManagedRuleDetail.cpp
-  src/v20220901/model/DescribeDDoSAttackSourceEventResponse.cpp
-  src/v20220901/model/DDoSAntiPly.cpp
-  src/v20220901/model/DescribeAliasDomainsResponse.cpp
-  src/v20220901/model/PlanInfo.cpp
-  src/v20220901/model/DescribeTimingL7CacheDataRequest.cpp
-  src/v20220901/model/DescribeSecurityPolicyListResponse.cpp
-  src/v20220901/model/CheckCertificateRequest.cpp
-  src/v20220901/model/DescribeDDoSAttackEventResponse.cpp
-  src/v20220901/model/ForceRedirect.cpp
-  src/v20220901/model/CodeAction.cpp
-  src/v20220901/model/CachePrefresh.cpp
-  src/v20220901/model/DescribeWebProtectionClientIpListResponse.cpp
-  src/v20220901/model/DescribeTimingL7AnalysisDataResponse.cpp
-  src/v20220901/model/BotPortraitRule.cpp
-  src/v20220901/model/DDoSRule.cpp
-  src/v20220901/model/RulesProperties.cpp
-  src/v20220901/model/RuleCodeActionParams.cpp
-  src/v20220901/model/ModifyDDoSPolicyHostResponse.cpp
-  src/v20220901/model/ExceptUserRule.cpp
-  src/v20220901/model/SecEntry.cpp
-  src/v20220901/model/SubRule.cpp
-  src/v20220901/model/DDoSPacketFilter.cpp
-  src/v20220901/model/DescribeSpeedTestingMetricDataResponse.cpp
-  src/v20220901/model/Sv.cpp
-  src/v20220901/model/Rule.cpp
-  src/v20220901/model/CreateLogSetResponse.cpp
-  src/v20220901/model/DownloadL4LogsRequest.cpp
-  src/v20220901/model/CreateCustomErrorPageRequest.cpp
-  src/v20220901/model/DescribeDnssecResponse.cpp
-  src/v20220901/model/ModifyZoneCnameSpeedUpRequest.cpp
-  src/v20220901/model/SecurityEntity.cpp
-  src/v20220901/model/ModifyZoneSettingRequest.cpp
-  src/v20220901/model/DescribeDDoSPolicyResponse.cpp
-  src/v20220901/model/CreateApplicationProxyRuleRequest.cpp
-  src/v20220901/model/DescribeDDoSBlockListRequest.cpp
-  src/v20220901/model/DescribeDDoSMajorAttackEventRequest.cpp
-  src/v20220901/model/DescribeSecurityPolicyListRequest.cpp
-  src/v20220901/model/DescribeTimingL7CacheDataResponse.cpp
-  src/v20220901/model/DescribeZonesResponse.cpp
-  src/v20220901/model/Header.cpp
-  src/v20220901/model/DescribeDDoSPolicyRequest.cpp
-  src/v20220901/model/DDoSSpeedLimit.cpp
-  src/v20220901/model/RateLimitIntelligenceRuleDetail.cpp
-  src/v20220901/model/ReclaimZoneRequest.cpp
-  src/v20220901/model/DeleteZoneRequest.cpp
-  src/v20220901/model/BotManagedRule.cpp
-  src/v20220901/model/SecurityConfig.cpp
-  src/v20220901/model/L4OfflineLog.cpp
-  src/v20220901/model/ModifyZoneCnameSpeedUpResponse.cpp
-  src/v20220901/model/FailReason.cpp
-  src/v20220901/model/DescribeRulesSettingRequest.cpp
-  src/v20220901/model/LogSetInfo.cpp
-  src/v20220901/model/OptimizeAction.cpp
-  src/v20220901/model/DescribeDnsDataRequest.cpp
-  src/v20220901/model/RuleNormalActionParams.cpp
-  src/v20220901/model/PrivateParameter.cpp
-  src/v20220901/model/CreateOriginGroupRequest.cpp
-  src/v20220901/model/TopDataRecord.cpp
-  src/v20220901/model/DescribeWebManagedRulesLogRequest.cpp
-  src/v20220901/model/WafGroup.cpp
-  src/v20220901/model/DescribeAvailablePlansResponse.cpp
-  src/v20220901/model/RateLimitTemplate.cpp
-  src/v20220901/model/DescribeWebProtectionTopDataResponse.cpp
-  src/v20220901/model/WafGroupInfo.cpp
-  src/v20220901/model/DescribeLogTopicTaskDetailResponse.cpp
-  src/v20220901/model/DefaultServerCertInfo.cpp
-  src/v20220901/model/OfflineCache.cpp
-  src/v20220901/model/DescribeDDoSAttackTopDataResponse.cpp
-  src/v20220901/model/SecRuleRelatedInfo.cpp
-  src/v20220901/model/DescribeDistributionL4AccessDataRequest.cpp
+  src/v20220901/model/CreatePlanForZoneResponse.cpp
+  src/v20220901/model/DownloadL7LogsRequest.cpp
   src/v20220901/model/DescribeSpeedTestingQuotaResponse.cpp
+  src/v20220901/model/Compression.cpp
   src/v20220901/model/DeleteRulesRequest.cpp
   src/v20220901/model/ExceptUserRuleCondition.cpp
   src/v20220901/model/ModifyDefaultCertificateRequest.cpp
-  src/v20220901/model/MaxAge.cpp
+  src/v20220901/model/SingleDataRecord.cpp
+  src/v20220901/model/DescribeOriginGroupResponse.cpp
+  src/v20220901/model/DescribeWebManagedRulesLogResponse.cpp
+  src/v20220901/model/SecClientIp.cpp
+  src/v20220901/model/DescribeTopL7CacheDataRequest.cpp
+  src/v20220901/model/SingleTypeValue.cpp
+  src/v20220901/model/CreateCredentialResponse.cpp
   src/v20220901/model/DeleteApplicationProxyResponse.cpp
+  src/v20220901/model/Https.cpp
   src/v20220901/model/SecEntryValue.cpp
+  src/v20220901/model/DescribeZonesRequest.cpp
   src/v20220901/model/DiffIPWhitelist.cpp
-  src/v20220901/model/ModifyAlarmDefaultThresholdResponse.cpp
+  src/v20220901/model/DescribeLogTopicTasksRequest.cpp
   src/v20220901/model/CreateCredentialRequest.cpp
   src/v20220901/model/ModifyRuleRequest.cpp
+  src/v20220901/model/OriginRecord.cpp
   src/v20220901/model/DescribePrefetchTasksResponse.cpp
   src/v20220901/model/DescribeWebManagedRulesHitRuleDetailRequest.cpp
-  src/v20220901/model/DescribeBotClientIpListResponse.cpp
+  src/v20220901/model/AdvancedFilter.cpp
+  src/v20220901/model/DeleteApplicationProxyRequest.cpp
   src/v20220901/model/ModifySecurityWafGroupPolicyRequest.cpp
   src/v20220901/model/DescribeZoneSettingRequest.cpp
+  src/v20220901/model/DescribeClientRuleListResponse.cpp
   src/v20220901/model/ModifySecurityPolicyRequest.cpp
-  src/v20220901/model/ModifyDnssecRequest.cpp
-  src/v20220901/model/SmartRouting.cpp
+  src/v20220901/model/Waf.cpp
+  src/v20220901/model/ModifyApplicationProxyRuleStatusResponse.cpp
+  src/v20220901/model/DescribeClientRuleListRequest.cpp
+  src/v20220901/model/ModifyZoneSettingRequest.cpp
+  src/v20220901/model/RuleRewriteActionParams.cpp
   src/v20220901/model/CreateApplicationProxyResponse.cpp
+  src/v20220901/model/ModifyOriginGroupResponse.cpp
   src/v20220901/model/Task.cpp
-  src/v20220901/model/BotLog.cpp
+  src/v20220901/model/ExceptUserRuleScope.cpp
+  src/v20220901/model/ModifyAliasDomainRequest.cpp
+  src/v20220901/model/DescribeAvailablePlansRequest.cpp
+  src/v20220901/model/SpeedTestingInfo.cpp
   src/v20220901/model/DistrictStatistics.cpp
-  src/v20220901/model/CreateIpTableListRequest.cpp
-  src/v20220901/model/ModifyDDoSPolicyHostRequest.cpp
-  src/v20220901/model/DeleteAliasDomainRequest.cpp
+  src/v20220901/model/ReclaimZoneResponse.cpp
+  src/v20220901/model/DescribeSingleL7AnalysisDataRequest.cpp
+  src/v20220901/model/ModifySecurityPolicyResponse.cpp
+  src/v20220901/model/DescribeHostsSettingResponse.cpp
+  src/v20220901/model/ModifyZoneStatusResponse.cpp
+  src/v20220901/model/ModifyZoneResponse.cpp
+  src/v20220901/model/WafRule.cpp
+  src/v20220901/model/ModifyZoneRequest.cpp
+  src/v20220901/model/ModifyApplicationProxyStatusResponse.cpp
+  src/v20220901/model/DeleteZoneResponse.cpp
+  src/v20220901/model/CreateRuleResponse.cpp
   src/v20220901/model/DescribeIdentificationsResponse.cpp
   src/v20220901/model/CreatePurgeTaskResponse.cpp
   src/v20220901/model/DeleteApplicationProxyRuleResponse.cpp
   src/v20220901/model/ReclaimAliasDomainRequest.cpp
-  src/v20220901/model/CreateSecurityDropPageRequest.cpp
+  src/v20220901/model/DescribeRulesResponse.cpp
+  src/v20220901/model/TimingDataRecord.cpp
+  src/v20220901/model/OriginProtectionInfo.cpp
+  src/v20220901/model/DescribeOriginProtectionResponse.cpp
+  src/v20220901/model/BindZoneToPlanResponse.cpp
   src/v20220901/model/ExceptConfig.cpp
   src/v20220901/model/DeleteOriginGroupRequest.cpp
-  src/v20220901/model/DetailHost.cpp
-  src/v20220901/model/AclCondition.cpp
-  src/v20220901/model/PortraitManagedRuleDetail.cpp
-  src/v20220901/model/L7OfflineLog.cpp
-  src/v20220901/model/CreateLogTopicTaskResponse.cpp
-  src/v20220901/model/ApplicationProxyRule.cpp
-  src/v20220901/model/DescribeDnsDataResponse.cpp
-  src/v20220901/model/Zone.cpp
-  src/v20220901/model/DescribeDDoSAttackSourceEventRequest.cpp
-  src/v20220901/model/DDoSAttackEvent.cpp
-  src/v20220901/model/DropPageDetail.cpp
-  src/v20220901/model/SwitchLogTopicTaskResponse.cpp
-  src/v20220901/model/ServerCertInfo.cpp
-  src/v20220901/model/DescribeZonesRequest.cpp
-  src/v20220901/model/OriginRecord.cpp
-  src/v20220901/model/DeleteLogTopicTaskRequest.cpp
-  src/v20220901/model/VanityNameServers.cpp
-  src/v20220901/model/CreatePrefetchTaskResponse.cpp
-  src/v20220901/model/DescribeDefaultCertificatesRequest.cpp
-  src/v20220901/model/ModifyApplicationProxyRuleResponse.cpp
-  src/v20220901/model/DescribeWebProtectionHitRuleDetailRequest.cpp
-  src/v20220901/model/DDoS.cpp
-  src/v20220901/model/DescribeSecurityRuleIdRequest.cpp
-  src/v20220901/model/DDoSHost.cpp
-  src/v20220901/model/DownloadL7LogsRequest.cpp
-  src/v20220901/model/RuleItem.cpp
-  src/v20220901/model/DescribeAddableEntityListResponse.cpp
-  src/v20220901/model/Cache.cpp
-  src/v20220901/model/DescribeBotHitRuleDetailRequest.cpp
-  src/v20220901/model/DescribeWebProtectionHitRuleDetailResponse.cpp
-  src/v20220901/model/DescribeSpeedTestingMetricDataRequest.cpp
-  src/v20220901/model/ModifyLogTopicTaskResponse.cpp
-  src/v20220901/model/RuleCondition.cpp
-  src/v20220901/model/DescribeOverviewL7DataResponse.cpp
-  src/v20220901/model/DescribeSecurityPolicyRequest.cpp
-  src/v20220901/model/TimingDataItem.cpp
-  src/v20220901/model/RateLimitUserRule.cpp
-  src/v20220901/model/CreatePlanForZoneRequest.cpp
-  src/v20220901/model/CacheKey.cpp
-  src/v20220901/model/DownloadL4LogsResponse.cpp
-  src/v20220901/model/IpTableConfig.cpp
-  src/v20220901/model/DeleteOriginGroupResponse.cpp
-  src/v20220901/model/CreateSecurityDropPageResponse.cpp
-  src/v20220901/model/SpeedTestingMetricData.cpp
-  src/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.cpp
-  src/v20220901/model/DescribeIdentificationsRequest.cpp
-  src/v20220901/model/ModifyHostsCertificateResponse.cpp
-  src/v20220901/model/CreateLogSetRequest.cpp
-  src/v20220901/model/CreateIpTableListResponse.cpp
-  src/v20220901/model/NormalAction.cpp
-  src/v20220901/model/TopDetailData.cpp
-  src/v20220901/model/DescribeZoneSettingResponse.cpp
-  src/v20220901/model/DDoSAllowBlock.cpp
-  src/v20220901/model/DescribePurgeTasksRequest.cpp
-  src/v20220901/model/IdentifyZoneRequest.cpp
-  src/v20220901/model/CacheConfig.cpp
-  src/v20220901/model/SecurityRule.cpp
-  src/v20220901/model/ModifyDDoSPolicyResponse.cpp
-  src/v20220901/model/DDoSFeaturesFilter.cpp
-  src/v20220901/model/DDoSAllowBlockRule.cpp
-  src/v20220901/model/DescribeZoneDDoSPolicyRequest.cpp
-  src/v20220901/model/ModifyLogTopicTaskRequest.cpp
-  src/v20220901/model/DescribeDDoSAttackEventRequest.cpp
-  src/v20220901/model/DescribeWebProtectionClientIpListRequest.cpp
-  src/v20220901/model/ModifyDnssecResponse.cpp
-  src/v20220901/model/CreateSpeedTestingResponse.cpp
-  src/v20220901/model/SecHitRuleInfo.cpp
-  src/v20220901/model/DescribeOriginGroupRequest.cpp
-  src/v20220901/model/Grpc.cpp
-  src/v20220901/model/DescribeLogTopicTasksResponse.cpp
-  src/v20220901/model/CreatePlanForZoneResponse.cpp
-  src/v20220901/model/DescribeLogTopicTasksRequest.cpp
-  src/v20220901/model/DescribeDDoSAttackEventDetailResponse.cpp
-  src/v20220901/model/SingleTypeValue.cpp
-  src/v20220901/model/CreateCredentialResponse.cpp
-  src/v20220901/model/DescribeAliasDomainsRequest.cpp
-  src/v20220901/model/SwitchLogTopicTaskRequest.cpp
-  src/v20220901/model/DeleteApplicationProxyRequest.cpp
-  src/v20220901/model/ModifyZoneStatusRequest.cpp
-  src/v20220901/model/ModifyOriginGroupResponse.cpp
-  src/v20220901/model/ExceptUserRuleScope.cpp
-  src/v20220901/model/ModifyAliasDomainRequest.cpp
-  src/v20220901/model/DescribeSecurityPortraitRulesRequest.cpp
-  src/v20220901/model/DescribeSecurityPolicyRegionsResponse.cpp
-  src/v20220901/model/DescribeBotTopDataRequest.cpp
-  src/v20220901/model/DeleteZoneResponse.cpp
-  src/v20220901/model/ReclaimZoneResponse.cpp
-  src/v20220901/model/BindZoneToPlanResponse.cpp
-  src/v20220901/model/WafRule.cpp
-  src/v20220901/model/ModifyApplicationProxyRequest.cpp
-  src/v20220901/model/ModifyAliasDomainStatusRequest.cpp
-  src/v20220901/model/RulesSettingAction.cpp
-  src/v20220901/model/Ipv6.cpp
-  src/v20220901/model/ModifyAlarmDefaultThresholdRequest.cpp
-  src/v20220901/model/ModifyApplicationProxyRuleRequest.cpp
-  src/v20220901/model/DDoSStatusInfo.cpp
-  src/v20220901/model/AclConfig.cpp
-  src/v20220901/model/SubRuleItem.cpp
-  src/v20220901/model/DescribeSpeedTestingDetailsResponse.cpp
-  src/v20220901/model/WafGroupDetail.cpp
-  src/v20220901/model/CreateAliasDomainResponse.cpp
-  src/v20220901/model/ClientIpCountry.cpp
-  src/v20220901/model/DeleteApplicationProxyRuleRequest.cpp
-  src/v20220901/model/FileAscriptionInfo.cpp
-  src/v20220901/model/DescribeDDoSBlockListResponse.cpp
-  src/v20220901/model/DescribeTopL7CacheDataResponse.cpp
-  src/v20220901/model/SpeedTestingStatus.cpp
-  src/v20220901/model/DescribeDnssecRequest.cpp
-  src/v20220901/model/RuleChoicePropertiesItem.cpp
-  src/v20220901/model/ModifyAlarmConfigResponse.cpp
-  src/v20220901/model/ModifyAliasDomainStatusResponse.cpp
-  src/v20220901/model/DescribeTimingL4AccessDataRequest.cpp
-  src/v20220901/model/DescribeTimingL7AnalysisDataRequest.cpp
-  src/v20220901/model/NoCache.cpp
-  src/v20220901/model/GeoIp.cpp
-  src/v20220901/model/DescribeSecurityGroupManagedRulesRequest.cpp
-  src/v20220901/model/ModifyApplicationProxyStatusRequest.cpp
-  src/v20220901/model/CreateZoneRequest.cpp
-  src/v20220901/model/AscriptionInfo.cpp
-  src/v20220901/model/DescribeLogSetsResponse.cpp
-  src/v20220901/model/DescribeClientRuleListResponse.cpp
-  src/v20220901/model/Waf.cpp
-  src/v20220901/model/DescribeLogTopicTaskDetailRequest.cpp
-  src/v20220901/model/CreateSpeedTestingRequest.cpp
-  src/v20220901/model/CreateReplayTaskRequest.cpp
-  src/v20220901/model/DescribeRateLimitIntelligenceRuleRequest.cpp
-  src/v20220901/model/DescribeDDoSAttackDataRequest.cpp
-  src/v20220901/model/DescribeWebManagedRulesDataResponse.cpp
-  src/v20220901/model/DescribeApplicationProxiesRequest.cpp
-  src/v20220901/model/DescribeContentQuotaRequest.cpp
-  src/v20220901/model/DescribeWebProtectionAttackEventsRequest.cpp
-  src/v20220901/model/Hsts.cpp
-  src/v20220901/model/CreateRuleRequest.cpp
-  src/v20220901/model/DescribeRateLimitIntelligenceRuleResponse.cpp
-  src/v20220901/model/RateLimitTemplateDetail.cpp
-  src/v20220901/model/CreateApplicationProxyRuleResponse.cpp
-  src/v20220901/model/DescribeLogSetsRequest.cpp
-  src/v20220901/model/ClientRule.cpp
-  src/v20220901/model/CreateApplicationProxyRequest.cpp
-  src/v20220901/model/CC.cpp
-  src/v20220901/model/DescribeTimingL4DataResponse.cpp
-  src/v20220901/model/Action.cpp
-  src/v20220901/model/LogTopicDetailInfo.cpp
-  src/v20220901/model/ApplicationProxy.cpp
-  src/v20220901/model/ModifyApplicationProxyResponse.cpp
-  src/v20220901/model/ZoneSetting.cpp
-  src/v20220901/model/RuleAndConditions.cpp
-  src/v20220901/model/DropPageConfig.cpp
-  src/v20220901/model/PartialModule.cpp
-  src/v20220901/model/ModifyApplicationProxyRuleStatusRequest.cpp
-  src/v20220901/model/AccelerateType.cpp
-  src/v20220901/model/ModifyDefaultCertificateResponse.cpp
-  src/v20220901/model/DescribeSecurityGroupManagedRulesResponse.cpp
-  src/v20220901/model/FollowOrigin.cpp
-  src/v20220901/model/DescribeSpeedTestingDetailsRequest.cpp
-  src/v20220901/model/CreateLogTopicTaskRequest.cpp
-  src/v20220901/model/QueryCondition.cpp
-  src/v20220901/model/RuleRewriteActionParams.cpp
-  src/v20220901/model/ModifyAliasDomainResponse.cpp
-  src/v20220901/model/DescribeBotLogRequest.cpp
-  src/v20220901/model/DDoSGeoIp.cpp
-  src/v20220901/model/ModifyHostsCertificateRequest.cpp
-  src/v20220901/model/DDoSMajorAttackEvent.cpp
-  src/v20220901/model/DescribeTopL7AnalysisDataResponse.cpp
-  src/v20220901/model/ClientIpHeader.cpp
-  src/v20220901/model/Resource.cpp
-  src/v20220901/model/DescribeOriginProtectionRequest.cpp
-  src/v20220901/model/DescribeHostsSettingRequest.cpp
-  src/v20220901/model/DescribeBotHitRuleDetailResponse.cpp
-  src/v20220901/model/DescribeDDoSAttackEventDetailRequest.cpp
-  src/v20220901/model/DeleteRulesResponse.cpp
-  src/v20220901/model/OriginGroup.cpp
-  src/v20220901/model/DescribeWebManagedRulesHitRuleDetailResponse.cpp
-  src/v20220901/model/WebLogs.cpp
-  src/v20220901/model/SkipCondition.cpp
-  src/v20220901/model/DnssecInfo.cpp
-  src/v20220901/model/UpstreamHttp2.cpp
-  src/v20220901/model/ReclaimAliasDomainResponse.cpp
-  src/v20220901/model/DeleteAliasDomainResponse.cpp
-  src/v20220901/model/BotConfig.cpp
-  src/v20220901/model/CreateReplayTaskResponse.cpp
-  src/v20220901/model/SingleDataRecord.cpp
-  src/v20220901/model/SecClientIp.cpp
-  src/v20220901/model/DescribeTopL7CacheDataRequest.cpp
-  src/v20220901/model/DescribeDistributionL4AccessDataResponse.cpp
-  src/v20220901/model/Https.cpp
-  src/v20220901/model/DescribeBotManagedRulesResponse.cpp
-  src/v20220901/model/AdvancedFilter.cpp
-  src/v20220901/model/CreateCustomErrorPageResponse.cpp
-  src/v20220901/model/DescribeDDoSAttackDataResponse.cpp
-  src/v20220901/model/TemplateConfig.cpp
-  src/v20220901/model/DDoSAcl.cpp
-  src/v20220901/model/ModifyApplicationProxyRuleStatusResponse.cpp
-  src/v20220901/model/DescribeClientRuleListRequest.cpp
-  src/v20220901/model/ModifyZoneRequest.cpp
-  src/v20220901/model/DescribeAvailablePlansRequest.cpp
-  src/v20220901/model/CreateRuleResponse.cpp
-  src/v20220901/model/ModifyZoneResponse.cpp
-  src/v20220901/model/WafGroupRule.cpp
-  src/v20220901/model/DDoSAclRule.cpp
-  src/v20220901/model/OriginProtectionInfo.cpp
-  src/v20220901/model/DescribeBotTopDataResponse.cpp
-  src/v20220901/model/DescribeBotClientIpListRequest.cpp
   src/v20220901/model/AliasDomain.cpp
+  src/v20220901/model/AclCondition.cpp
+  src/v20220901/model/RateLimitConfig.cpp
+  src/v20220901/model/DescribeAliasDomainsRequest.cpp
+  src/v20220901/model/ModifyApplicationProxyStatusRequest.cpp
+  src/v20220901/model/SkipCondition.cpp
   src/v20220901/model/IpTableRule.cpp
+  src/v20220901/model/L7OfflineLog.cpp
+  src/v20220901/model/ModifyHostsCertificateRequest.cpp
+  src/v20220901/model/ApplicationProxyRule.cpp
+  src/v20220901/model/SmartRouting.cpp
+  src/v20220901/model/DescribeDnsDataResponse.cpp
+  src/v20220901/model/ModifyAliasDomainStatusRequest.cpp
+  src/v20220901/model/Zone.cpp
+  src/v20220901/model/DescribeRulesSettingResponse.cpp
+  src/v20220901/model/RuleExtraParameter.cpp
+  src/v20220901/model/RulesSettingAction.cpp
+  src/v20220901/model/ClientIpHeader.cpp
   src/v20220901/model/DescribeDDoSAttackTopDataRequest.cpp
   src/v20220901/model/Quic.cpp
+  src/v20220901/model/Ipv6.cpp
   src/v20220901/model/DescribeRulesRequest.cpp
-  src/v20220901/model/CCInterceptEvent.cpp
-  src/v20220901/model/DescribeDDoSMajorAttackEventResponse.cpp
-  src/v20220901/model/DescribeContentQuotaResponse.cpp
+  src/v20220901/model/ClsLogTopicInfo.cpp
+  src/v20220901/model/DescribeSpeedTestingMetricDataRequest.cpp
+  src/v20220901/model/TopDataRecord.cpp
+  src/v20220901/model/AclConfig.cpp
   src/v20220901/model/ModifyZoneSettingResponse.cpp
-  src/v20220901/model/DownloadL7LogsResponse.cpp
+  src/v20220901/model/DescribeZonesResponse.cpp
+  src/v20220901/model/SubRuleItem.cpp
+  src/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.cpp
+  src/v20220901/model/Origin.cpp
+  src/v20220901/model/WafConfig.cpp
+  src/v20220901/model/DescribeSpeedTestingDetailsResponse.cpp
+  src/v20220901/model/TimingTypeValue.cpp
   src/v20220901/model/DnsData.cpp
-  src/v20220901/model/DescribeWebManagedRulesLogResponse.cpp
-  src/v20220901/model/AclUserRule.cpp
-  src/v20220901/model/RewriteAction.cpp
+  src/v20220901/model/ServerCertInfo.cpp
+  src/v20220901/model/CreateAliasDomainRequest.cpp
+  src/v20220901/model/CreateAliasDomainResponse.cpp
+  src/v20220901/model/DescribeOriginProtectionRequest.cpp
+  src/v20220901/model/ClientIpCountry.cpp
+  src/v20220901/model/CreatePrefetchTaskRequest.cpp
+  src/v20220901/model/DeleteApplicationProxyRuleRequest.cpp
+  src/v20220901/model/DescribeApplicationProxiesResponse.cpp
+  src/v20220901/model/DescribeTopL7AnalysisDataRequest.cpp
+  src/v20220901/model/FileAscriptionInfo.cpp
+  src/v20220901/model/ZoneSetting.cpp
+  src/v20220901/model/ModifyRulePriorityResponse.cpp
+  src/v20220901/model/DescribeTopL7CacheDataResponse.cpp
   src/v20220901/model/DescribeOverviewL7DataRequest.cpp
+  src/v20220901/model/SwitchConfig.cpp
+  src/v20220901/model/IdentifyZoneResponse.cpp
   src/v20220901/model/WebSocket.cpp
   src/v20220901/model/DescribeWebProtectionTopDataRequest.cpp
-  src/v20220901/model/DDoSBlockData.cpp
+  src/v20220901/model/SpeedTestingDetailData.cpp
+  src/v20220901/model/VanityNameServers.cpp
+  src/v20220901/model/RuleItem.cpp
   src/v20220901/model/ModifySecurityWafGroupPolicyResponse.cpp
   src/v20220901/model/DescribeWebManagedRulesDataRequest.cpp
-  src/v20220901/model/SpeedTestingQuota.cpp
-  src/v20220901/model/DescribePrefetchTasksRequest.cpp
+  src/v20220901/model/RuleChoicePropertiesItem.cpp
+  src/v20220901/model/DescribeWebManagedRulesDataResponse.cpp
+  src/v20220901/model/SecurityConfig.cpp
+  src/v20220901/model/CreateSpeedTestingRequest.cpp
+  src/v20220901/model/MaxAge.cpp
+  src/v20220901/model/ModifyAliasDomainStatusResponse.cpp
+  src/v20220901/model/RuleCodeActionParams.cpp
   src/v20220901/model/ModifyRulePriorityRequest.cpp
-  src/v20220901/model/SpeedTestingStatistics.cpp
-  src/v20220901/model/BindZoneToPlanRequest.cpp
-  src/v20220901/model/SecurityType.cpp
+  src/v20220901/model/DescribeTimingL7AnalysisDataRequest.cpp
+  src/v20220901/model/CreatePrefetchTaskResponse.cpp
+  src/v20220901/model/NoCache.cpp
+  src/v20220901/model/DescribeDefaultCertificatesRequest.cpp
+  src/v20220901/model/DescribeAliasDomainsResponse.cpp
+  src/v20220901/model/DescribeWebProtectionHitRuleDetailRequest.cpp
   src/v20220901/model/IPWhitelist.cpp
+  src/v20220901/model/DDoS.cpp
+  src/v20220901/model/CreateZoneRequest.cpp
+  src/v20220901/model/PlanInfo.cpp
+  src/v20220901/model/DescribeTimingL7CacheDataRequest.cpp
+  src/v20220901/model/SpeedTestingQuota.cpp
   src/v20220901/model/ModifyRuleResponse.cpp
   src/v20220901/model/CheckCertificateResponse.cpp
+  src/v20220901/model/AscriptionInfo.cpp
+  src/v20220901/model/DescribeLogSetsResponse.cpp
   src/v20220901/model/DescribeWebProtectionDataRequest.cpp
-  src/v20220901/model/DescribeSecurityPortraitRulesResponse.cpp
-  src/v20220901/model/ModifyDDoSPolicyRequest.cpp
-  src/v20220901/model/ModifyApplicationProxyStatusResponse.cpp
+  src/v20220901/model/CheckCertificateRequest.cpp
+  src/v20220901/model/DescribeAddableEntityListResponse.cpp
+  src/v20220901/model/CreateApplicationProxyRuleRequest.cpp
+  src/v20220901/model/Cache.cpp
+  src/v20220901/model/ForceRedirect.cpp
+  src/v20220901/model/ModifyApplicationProxyRequest.cpp
+  src/v20220901/model/CodeAction.cpp
+  src/v20220901/model/CreateReplayTaskRequest.cpp
+  src/v20220901/model/DescribeWebProtectionHitRuleDetailResponse.cpp
   src/v20220901/model/Identification.cpp
-  src/v20220901/model/ModifyAlarmConfigRequest.cpp
-  src/v20220901/model/UpdateOriginProtectionIPWhitelistRequest.cpp
-  src/v20220901/model/DeleteLogTopicTaskResponse.cpp
+  src/v20220901/model/CachePrefresh.cpp
+  src/v20220901/model/DescribeWebProtectionClientIpListResponse.cpp
+  src/v20220901/model/DescribeTimingL7AnalysisDataResponse.cpp
+  src/v20220901/model/TopDetailData.cpp
+  src/v20220901/model/DescribeApplicationProxiesRequest.cpp
+  src/v20220901/model/DescribeContentQuotaRequest.cpp
+  src/v20220901/model/BotPortraitRule.cpp
+  src/v20220901/model/RuleCondition.cpp
+  src/v20220901/model/RulesProperties.cpp
+  src/v20220901/model/DescribeOverviewL7DataResponse.cpp
+  src/v20220901/model/Hsts.cpp
+  src/v20220901/model/RateLimitTemplate.cpp
+  src/v20220901/model/ModifyHostsCertificateResponse.cpp
+  src/v20220901/model/CreateRuleRequest.cpp
+  src/v20220901/model/ModifyZoneStatusRequest.cpp
   src/v20220901/model/TopEntry.cpp
-  src/v20220901/model/DescribeRulesSettingResponse.cpp
+  src/v20220901/model/RateLimitTemplateDetail.cpp
+  src/v20220901/model/ExceptUserRule.cpp
+  src/v20220901/model/CreateApplicationProxyRuleResponse.cpp
+  src/v20220901/model/RateLimitUserRule.cpp
+  src/v20220901/model/SubRule.cpp
+  src/v20220901/model/DescribeLogSetsRequest.cpp
+  src/v20220901/model/CreatePlanForZoneRequest.cpp
+  src/v20220901/model/ClientRule.cpp
+  src/v20220901/model/TimingDataItem.cpp
+  src/v20220901/model/SpeedTestingConfig.cpp
+  src/v20220901/model/CreateApplicationProxyRequest.cpp
+  src/v20220901/model/SpeedTestingStatus.cpp
+  src/v20220901/model/DescribeSpeedTestingMetricDataResponse.cpp
+  src/v20220901/model/CC.cpp
   src/v20220901/model/IntelligenceRuleItem.cpp
   src/v20220901/model/IntelligenceRule.cpp
   src/v20220901/model/PostMaxSize.cpp
+  src/v20220901/model/Sv.cpp
+  src/v20220901/model/Rule.cpp
   src/v20220901/model/Filter.cpp
+  src/v20220901/model/DownloadL4LogsRequest.cpp
+  src/v20220901/model/DescribeTimingL4DataResponse.cpp
   src/v20220901/model/CreateZoneResponse.cpp
+  src/v20220901/model/Action.cpp
+  src/v20220901/model/SpeedTestingStatistics.cpp
   src/v20220901/model/DescribeSpeedTestingQuotaRequest.cpp
-  src/v20220901/model/ModifySecurityPolicyResponse.cpp
+  src/v20220901/model/ApplicationProxy.cpp
+  src/v20220901/model/ModifyApplicationProxyResponse.cpp
+  src/v20220901/model/CacheKey.cpp
   src/v20220901/model/ModifyOriginGroupRequest.cpp
+  src/v20220901/model/WebLogs.cpp
+  src/v20220901/model/DownloadL4LogsResponse.cpp
+  src/v20220901/model/DescribeTimingL7CacheDataResponse.cpp
   src/v20220901/model/DescribeAddableEntityListRequest.cpp
+  src/v20220901/model/IpTableConfig.cpp
   src/v20220901/model/DescribeSingleL7AnalysisDataResponse.cpp
-  src/v20220901/model/DescribeTimingL4AccessDataResponse.cpp
+  src/v20220901/model/DeleteOriginGroupResponse.cpp
+  src/v20220901/model/Header.cpp
+  src/v20220901/model/RuleAndConditions.cpp
+  src/v20220901/model/DescribeSpeedTestingDetailsRequest.cpp
+  src/v20220901/model/DropPageConfig.cpp
+  src/v20220901/model/SpeedTestingMetricData.cpp
+  src/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.cpp
+  src/v20220901/model/SecEntry.cpp
+  src/v20220901/model/DescribeIdentificationsRequest.cpp
   src/v20220901/model/DescribeDefaultCertificatesResponse.cpp
+  src/v20220901/model/PartialModule.cpp
   src/v20220901/model/CreateOriginGroupResponse.cpp
-  src/v20220901/model/DescribeSecurityPolicyResponse.cpp
-  src/v20220901/model/SpeedTestingConfig.cpp
-  src/v20220901/model/DescribeSecurityPolicyRegionsRequest.cpp
+  src/v20220901/model/ModifyApplicationProxyRuleStatusRequest.cpp
+  src/v20220901/model/AccelerateType.cpp
+  src/v20220901/model/NormalAction.cpp
+  src/v20220901/model/BindZoneToPlanRequest.cpp
+  src/v20220901/model/ReclaimZoneRequest.cpp
+  src/v20220901/model/FollowOrigin.cpp
+  src/v20220901/model/DeleteZoneRequest.cpp
+  src/v20220901/model/SecurityType.cpp
+  src/v20220901/model/BotManagedRule.cpp
+  src/v20220901/model/ModifyDefaultCertificateResponse.cpp
+  src/v20220901/model/DetailHost.cpp
+  src/v20220901/model/DescribeTopL7AnalysisDataResponse.cpp
+  src/v20220901/model/ModifyApplicationProxyRuleResponse.cpp
+  src/v20220901/model/DescribeZoneSettingResponse.cpp
   src/v20220901/model/AiRule.cpp
+  src/v20220901/model/L4OfflineLog.cpp
+  src/v20220901/model/DropPageDetail.cpp
+  src/v20220901/model/DeleteRulesResponse.cpp
+  src/v20220901/model/QueryCondition.cpp
   src/v20220901/model/DescribeWebProtectionDataResponse.cpp
-  src/v20220901/model/Quota.cpp
-  src/v20220901/model/DescribeZoneDDoSPolicyResponse.cpp
-  src/v20220901/model/ModifyZoneStatusResponse.cpp
-  src/v20220901/model/DescribeWebProtectionAttackEventsResponse.cpp
+  src/v20220901/model/CacheConfig.cpp
+  src/v20220901/model/ModifyApplicationProxyRuleRequest.cpp
+  src/v20220901/model/FailReason.cpp
+  src/v20220901/model/DescribePrefetchTasksRequest.cpp
+  src/v20220901/model/DescribeRulesSettingRequest.cpp
+  src/v20220901/model/ModifyAliasDomainResponse.cpp
+  src/v20220901/model/LogSetInfo.cpp
+  src/v20220901/model/RewriteAction.cpp
+  src/v20220901/model/OptimizeAction.cpp
+  src/v20220901/model/DeleteAliasDomainRequest.cpp
+  src/v20220901/model/DescribeContentQuotaResponse.cpp
+  src/v20220901/model/DescribeDnsDataRequest.cpp
+  src/v20220901/model/RuleNormalActionParams.cpp
+  src/v20220901/model/Tag.cpp
   src/v20220901/model/CreatePurgeTaskRequest.cpp
-  src/v20220901/model/DescribeSecurityRuleIdResponse.cpp
-  src/v20220901/model/DescribePurgeTasksResponse.cpp
-  src/v20220901/model/DescribeBotLogResponse.cpp
-  src/v20220901/model/RateLimitIntelligence.cpp
-  src/v20220901/model/QueryString.cpp
-  src/v20220901/model/TimingTypeValue.cpp
+  src/v20220901/model/Resource.cpp
+  src/v20220901/model/PrivateParameter.cpp
+  src/v20220901/model/DownloadL7LogsResponse.cpp
+  src/v20220901/model/AclUserRule.cpp
+  src/v20220901/model/Quota.cpp
+  src/v20220901/model/CreateOriginGroupRequest.cpp
   src/v20220901/model/DescribeTimingL4DataRequest.cpp
+  src/v20220901/model/DescribeHostsSettingRequest.cpp
+  src/v20220901/model/TemplateConfig.cpp
+  src/v20220901/model/DescribeWebManagedRulesLogRequest.cpp
+  src/v20220901/model/WafGroup.cpp
+  src/v20220901/model/DescribePurgeTasksResponse.cpp
+  src/v20220901/model/DescribeAvailablePlansResponse.cpp
+  src/v20220901/model/DescribePurgeTasksRequest.cpp
+  src/v20220901/model/OriginGroup.cpp
+  src/v20220901/model/DescribeWebProtectionTopDataResponse.cpp
   src/v20220901/model/VanityNameServersIps.cpp
-  src/v20220901/model/DescribeBotManagedRulesRequest.cpp
+  src/v20220901/model/DescribeWebManagedRulesHitRuleDetailResponse.cpp
+  src/v20220901/model/DescribeWebProtectionClientIpListRequest.cpp
+  src/v20220901/model/IdentifyZoneRequest.cpp
+  src/v20220901/model/RateLimitIntelligence.cpp
+  src/v20220901/model/CreateSpeedTestingResponse.cpp
+  src/v20220901/model/QueryString.cpp
+  src/v20220901/model/DefaultServerCertInfo.cpp
+  src/v20220901/model/SecHitRuleInfo.cpp
+  src/v20220901/model/DescribeOriginGroupRequest.cpp
+  src/v20220901/model/Grpc.cpp
+  src/v20220901/model/UpstreamHttp2.cpp
+  src/v20220901/model/TopEntryValue.cpp
+  src/v20220901/model/ReclaimAliasDomainResponse.cpp
+  src/v20220901/model/OfflineCache.cpp
+  src/v20220901/model/DescribeDDoSAttackTopDataResponse.cpp
+  src/v20220901/model/DeleteAliasDomainResponse.cpp
+  src/v20220901/model/SecRuleRelatedInfo.cpp
+  src/v20220901/model/BotConfig.cpp
+  src/v20220901/model/DescribeLogTopicTasksResponse.cpp
+  src/v20220901/model/CreateReplayTaskResponse.cpp
   )
 
 set(teo_include

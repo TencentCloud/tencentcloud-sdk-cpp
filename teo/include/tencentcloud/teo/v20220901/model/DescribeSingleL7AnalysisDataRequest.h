@@ -102,14 +102,22 @@ namespace TencentCloud
                     bool MetricNamesHasBeenSet() const;
 
                     /**
-                     * 获取查询的站点集合，不填默认查询所有站点。
-                     * @return ZoneIds 查询的站点集合，不填默认查询所有站点。
+                     * 获取站点集合。
+若不填写，默认选择全部站点，且最多只能查询近30天的数据；
+若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
+                     * @return ZoneIds 站点集合。
+若不填写，默认选择全部站点，且最多只能查询近30天的数据；
+若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置查询的站点集合，不填默认查询所有站点。
-                     * @param ZoneIds 查询的站点集合，不填默认查询所有站点。
+                     * 设置站点集合。
+若不填写，默认选择全部站点，且最多只能查询近30天的数据；
+若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
+                     * @param ZoneIds 站点集合。
+若不填写，默认选择全部站点，且最多只能查询近30天的数据；
+若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -120,34 +128,34 @@ namespace TencentCloud
                     bool ZoneIdsHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     * @return Filters 过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     * 获取过滤条件，详细的过滤条件Key值如下：
+<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。</li>
+<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。</li>
+<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
+<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
+<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
+                     * @return Filters 过滤条件，详细的过滤条件Key值如下：
+<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。</li>
+<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。</li>
+<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
+<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
+<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
                      */
                     std::vector<QueryCondition> GetFilters() const;
 
                     /**
-                     * 设置过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-                     * @param Filters 过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     * 设置过滤条件，详细的过滤条件Key值如下：
+<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。</li>
+<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。</li>
+<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
+<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
+<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
+                     * @param Filters 过滤条件，详细的过滤条件Key值如下：
+<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。</li>
+<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。</li>
+<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
+<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
+<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
                      */
                     void SetFilters(const std::vector<QueryCondition>& _filters);
 
@@ -162,12 +170,12 @@ namespace TencentCloud
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
-<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
                      * @return Interval 查询时间粒度，取值有：
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
-<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
                      */
                     std::string GetInterval() const;
 
@@ -176,12 +184,12 @@ namespace TencentCloud
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
-<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
                      * @param Interval 查询时间粒度，取值有：
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
-<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
                      */
                     void SetInterval(const std::string& _interval);
 
@@ -243,18 +251,20 @@ namespace TencentCloud
                     bool m_metricNamesHasBeenSet;
 
                     /**
-                     * 查询的站点集合，不填默认查询所有站点。
+                     * 站点集合。
+若不填写，默认选择全部站点，且最多只能查询近30天的数据；
+若填写，则可查询站点绑定套餐支持的<a href="https://cloud.tencent.com/document/product/1552/77380#edgeone-.E5.A5.97.E9.A4.90">数据分析最大查询范围</a>。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;
 
                     /**
-                     * 过滤条件，详细的过滤条件如下：
-<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。<br>   类型：String<br>   必选：否</li>
-<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。<br>   类型：String<br>   必选：否</li>
-<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   类型：String<br>   必选：否<br>   可选项：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
-<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
-<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。<br>   类型：String<br>   必选：否</li>
+                     * 过滤条件，详细的过滤条件Key值如下：
+<li>country<br>   按照【<strong>国家/地区</strong>】进行过滤，国家/地区遵循<a href="https://zh.wikipedia.org/wiki/ISO_3166-1">ISO 3166</a>规范。</li>
+<li>domain<br>   按照【<strong>子域名</strong>】进行过滤，子域名形如： test.example.com。</li>
+<li>protocol<br>   按照【<strong>HTTP协议</strong>】进行过滤。<br>   对应的Value可选项如下：<br>   HTTP/1.0：HTTP 1.0；<br>   HTTP/1.1：HTTP 1.1；<br>   HTTP/2.0：HTTP 2.0；<br>   HTTP/3.0：HTTP 3.0；<br>   WebSocket：WebSocket。</li>
+<li>tagKey<br>   按照【<strong>标签Key</strong>】进行过滤。</li>
+<li>tagValue<br>   按照【<strong>标签Value</strong>】进行过滤。</li>
                      */
                     std::vector<QueryCondition> m_filters;
                     bool m_filtersHasBeenSet;
@@ -264,7 +274,7 @@ namespace TencentCloud
 <li>min：1分钟；</li>
 <li>5min：5分钟；</li>
 <li>hour：1小时；</li>
-<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：一小时范围内以min粒度查询，两天范围内以5min粒度查询，七天范围内以hour粒度查询，超过七天以day粒度查询。
+<li>day：1天;。</li>不填将根据开始时间跟结束时间的间距自动推算粒度，具体为：1小时范围内以min粒度查询，2天范围内以5min粒度查询，7天范围内以hour粒度查询，超过7天以day粒度查询。
                      */
                     std::string m_interval;
                     bool m_intervalHasBeenSet;

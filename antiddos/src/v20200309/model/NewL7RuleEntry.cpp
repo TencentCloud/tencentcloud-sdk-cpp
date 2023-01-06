@@ -46,7 +46,8 @@ NewL7RuleEntry::NewL7RuleEntry() :
     m_httpsToHttpEnableHasBeenSet(false),
     m_virtualPortHasBeenSet(false),
     m_rewriteHttpsHasBeenSet(false),
-    m_errCodeHasBeenSet(false)
+    m_errCodeHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,16 @@ CoreInternalOutcome NewL7RuleEntry::Deserialize(const rapidjson::Value &value)
         m_errCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewL7RuleEntry.Version` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = value["Version"].GetUint64();
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -545,6 +556,14 @@ void NewL7RuleEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ErrCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_errCode, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_version, allocator);
     }
 
 }
@@ -964,5 +983,21 @@ void NewL7RuleEntry::SetErrCode(const uint64_t& _errCode)
 bool NewL7RuleEntry::ErrCodeHasBeenSet() const
 {
     return m_errCodeHasBeenSet;
+}
+
+uint64_t NewL7RuleEntry::GetVersion() const
+{
+    return m_version;
+}
+
+void NewL7RuleEntry::SetVersion(const uint64_t& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool NewL7RuleEntry::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 

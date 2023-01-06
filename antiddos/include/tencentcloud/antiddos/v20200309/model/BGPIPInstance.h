@@ -592,6 +592,50 @@ namespace TencentCloud
                      */
                     bool ConvoyIdHasBeenSet() const;
 
+                    /**
+                     * 获取带宽后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticBandwidth 带宽后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetElasticBandwidth() const;
+
+                    /**
+                     * 设置带宽后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ElasticBandwidth 带宽后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetElasticBandwidth(const uint64_t& _elasticBandwidth);
+
+                    /**
+                     * 判断参数 ElasticBandwidth 是否已赋值
+                     * @return ElasticBandwidth 是否已赋值
+                     */
+                    bool ElasticBandwidthHasBeenSet() const;
+
+                    /**
+                     * 获取是否为EO代播的ip: 1是，0不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EOFlag 是否为EO代播的ip: 1是，0不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEOFlag() const;
+
+                    /**
+                     * 设置是否为EO代播的ip: 1是，0不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EOFlag 是否为EO代播的ip: 1是，0不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEOFlag(const uint64_t& _eOFlag);
+
+                    /**
+                     * 判断参数 EOFlag 是否已赋值
+                     * @return EOFlag 是否已赋值
+                     */
+                    bool EOFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -763,6 +807,20 @@ namespace TencentCloud
                      */
                     std::string m_convoyId;
                     bool m_convoyIdHasBeenSet;
+
+                    /**
+                     * 带宽后付费
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_elasticBandwidth;
+                    bool m_elasticBandwidthHasBeenSet;
+
+                    /**
+                     * 是否为EO代播的ip: 1是，0不是
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_eOFlag;
+                    bool m_eOFlagHasBeenSet;
 
                 };
             }

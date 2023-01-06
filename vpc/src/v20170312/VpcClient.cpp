@@ -2577,6 +2577,49 @@ VpcClient::CreateSubnetsOutcomeCallable VpcClient::CreateSubnetsCallable(const C
     return task->get_future();
 }
 
+VpcClient::CreateTrafficPackagesOutcome VpcClient::CreateTrafficPackages(const CreateTrafficPackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateTrafficPackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateTrafficPackagesResponse rsp = CreateTrafficPackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateTrafficPackagesOutcome(rsp);
+        else
+            return CreateTrafficPackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateTrafficPackagesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::CreateTrafficPackagesAsync(const CreateTrafficPackagesRequest& request, const CreateTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateTrafficPackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::CreateTrafficPackagesOutcomeCallable VpcClient::CreateTrafficPackagesCallable(const CreateTrafficPackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateTrafficPackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateTrafficPackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::CreateVpcOutcome VpcClient::CreateVpc(const CreateVpcRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateVpc");

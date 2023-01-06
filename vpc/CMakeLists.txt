@@ -192,6 +192,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeVpnGatewaySslClientsRequest.h
   include/tencentcloud/vpc/v20170312/model/VpcEndPointServiceUser.h
   include/tencentcloud/vpc/v20170312/model/DescribeIp6TranslatorQuotaRequest.h
+  include/tencentcloud/vpc/v20170312/model/CreateTrafficPackagesResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifySecurityGroupAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeVpnGatewaySslServersRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyNetDetectRequest.h
@@ -515,6 +516,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DeleteNetDetectRequest.h
   include/tencentcloud/vpc/v20170312/model/IPSECOptionsSpecification.h
   include/tencentcloud/vpc/v20170312/model/UnassignIpv6AddressesRequest.h
+  include/tencentcloud/vpc/v20170312/model/CreateTrafficPackagesRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateAndAttachNetworkInterfaceResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyCcnAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteSecurityGroupPoliciesResponse.h
@@ -911,6 +913,7 @@ set(vpc_src
   src/v20170312/model/DescribeVpnGatewaySslClientsRequest.cpp
   src/v20170312/model/VpcEndPointServiceUser.cpp
   src/v20170312/model/DescribeIp6TranslatorQuotaRequest.cpp
+  src/v20170312/model/CreateTrafficPackagesResponse.cpp
   src/v20170312/model/ModifySecurityGroupAttributeRequest.cpp
   src/v20170312/model/DescribeVpnGatewaySslServersRequest.cpp
   src/v20170312/model/ModifyNetDetectRequest.cpp
@@ -1234,6 +1237,7 @@ set(vpc_src
   src/v20170312/model/DeleteNetDetectRequest.cpp
   src/v20170312/model/IPSECOptionsSpecification.cpp
   src/v20170312/model/UnassignIpv6AddressesRequest.cpp
+  src/v20170312/model/CreateTrafficPackagesRequest.cpp
   src/v20170312/model/CreateAndAttachNetworkInterfaceResponse.cpp
   src/v20170312/model/ModifyCcnAttributeRequest.cpp
   src/v20170312/model/DeleteSecurityGroupPoliciesResponse.cpp

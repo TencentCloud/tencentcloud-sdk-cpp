@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取查询带宽包偏移量
-                     * @return Offset 查询带宽包偏移量
+                     * 获取查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * @return Offset 查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置查询带宽包偏移量
-                     * @param Offset 查询带宽包偏移量
+                     * 设置查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * @param Offset 查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -138,14 +138,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询带宽包数量限制
-                     * @return Limit 查询带宽包数量限制
+                     * 获取查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * @return Limit 查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置查询带宽包数量限制
-                     * @param Limit 查询带宽包数量限制
+                     * 设置查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
+                     * @param Limit 查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -180,13 +180,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 查询带宽包偏移量
+                     * 查询带宽包偏移量，默认为0。关于Offset的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询带宽包数量限制
+                     * 查询带宽包返回数量，默认为20，最大值为100。关于Limit的更进一步介绍请参考 API [简介](https://cloud.tencent.com/document/api/213/15688)中的相关小结。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

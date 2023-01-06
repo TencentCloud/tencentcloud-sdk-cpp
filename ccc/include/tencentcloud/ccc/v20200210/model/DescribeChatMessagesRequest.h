@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取服务记录ID
-                     * @return CdrId 服务记录ID
+                     * 获取服务记录ID（废弃）
+                     * @return CdrId 服务记录ID（废弃）
                      */
                     std::string GetCdrId() const;
 
                     /**
-                     * 设置服务记录ID
-                     * @param CdrId 服务记录ID
+                     * 设置服务记录ID（废弃）
+                     * @param CdrId 服务记录ID（废弃）
                      */
                     void SetCdrId(const std::string& _cdrId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool CdrIdHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数 最大为100默认20
-                     * @return Limit 返回记录条数 最大为100默认20
+                     * 获取返回记录条数，最大为100 默认20
+                     * @return Limit 返回记录条数，最大为100 默认20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数 最大为100默认20
-                     * @param Limit 返回记录条数 最大为100默认20
+                     * 设置返回记录条数，最大为100 默认20
+                     * @param Limit 返回记录条数，最大为100 默认20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取返回记录偏移 默认为0
-                     * @return Offset 返回记录偏移 默认为0
+                     * 获取返回记录偏移，默认为 0
+                     * @return Offset 返回记录偏移，默认为 0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置返回记录偏移 默认为0
-                     * @param Offset 返回记录偏移 默认为0
+                     * 设置返回记录偏移，默认为 0
+                     * @param Offset 返回记录偏移，默认为 0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool OrderHasBeenSet() const;
 
                     /**
-                     * 获取服务记录SessionID
-                     * @return SessionId 服务记录SessionID
+                     * 获取服务记录 SessionID（必填）
+                     * @return SessionId 服务记录 SessionID（必填）
                      */
                     std::string GetSessionId() const;
 
                     /**
-                     * 设置服务记录SessionID
-                     * @param SessionId 服务记录SessionID
+                     * 设置服务记录 SessionID（必填）
+                     * @param SessionId 服务记录 SessionID（必填）
                      */
                     void SetSessionId(const std::string& _sessionId);
 
@@ -183,19 +183,19 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 服务记录ID
+                     * 服务记录ID（废弃）
                      */
                     std::string m_cdrId;
                     bool m_cdrIdHasBeenSet;
 
                     /**
-                     * 返回记录条数 最大为100默认20
+                     * 返回记录条数，最大为100 默认20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 返回记录偏移 默认为0
+                     * 返回记录偏移，默认为 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_orderHasBeenSet;
 
                     /**
-                     * 服务记录SessionID
+                     * 服务记录 SessionID（必填）
                      */
                     std::string m_sessionId;
                     bool m_sessionIdHasBeenSet;

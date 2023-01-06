@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/vpc/v20170312/model/TransformAddressResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeTopicProduceConnectionResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Vpc::V20170312::Model;
+using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
-TransformAddressResponse::TransformAddressResponse() :
-    m_taskIdHasBeenSet(false),
-    m_addressIdHasBeenSet(false)
+DescribeTopicProduceConnectionResponse::DescribeTopicProduceConnectionResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome TransformAddressResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTopicProduceConnectionResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,49 @@ CoreInternalOutcome TransformAddressResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["TaskId"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskId` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_taskId = rsp["TaskId"].GetUint64();
-        m_taskIdHasBeenSet = true;
-    }
+        if (!rsp["Result"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Result` is not array type"));
 
-    if (rsp.HasMember("AddressId") && !rsp["AddressId"].IsNull())
-    {
-        if (!rsp["AddressId"].IsString())
+        const rapidjson::Value &tmpValue = rsp["Result"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `AddressId` IsString=false incorrectly").SetRequestId(requestId));
+            DescribeConnectInfoResultDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_result.push_back(item);
         }
-        m_addressId = string(rsp["AddressId"].GetString());
-        m_addressIdHasBeenSet = true;
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string TransformAddressResponse::ToJsonString() const
+string DescribeTopicProduceConnectionResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_taskIdHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TaskId";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_taskId, allocator);
-    }
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
-    if (m_addressIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AddressId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_addressId.c_str(), allocator).Move(), allocator);
+        int i=0;
+        for (auto itr = m_result.begin(); itr != m_result.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +119,14 @@ string TransformAddressResponse::ToJsonString() const
 }
 
 
-uint64_t TransformAddressResponse::GetTaskId() const
+vector<DescribeConnectInfoResultDTO> DescribeTopicProduceConnectionResponse::GetResult() const
 {
-    return m_taskId;
+    return m_result;
 }
 
-bool TransformAddressResponse::TaskIdHasBeenSet() const
+bool DescribeTopicProduceConnectionResponse::ResultHasBeenSet() const
 {
-    return m_taskIdHasBeenSet;
-}
-
-string TransformAddressResponse::GetAddressId() const
-{
-    return m_addressId;
-}
-
-bool TransformAddressResponse::AddressIdHasBeenSet() const
-{
-    return m_addressIdHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

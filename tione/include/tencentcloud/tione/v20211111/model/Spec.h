@@ -100,6 +100,42 @@ namespace TencentCloud
                      */
                     bool SpecAliasHasBeenSet() const;
 
+                    /**
+                     * 获取是否售罄
+                     * @return Available 是否售罄
+                     */
+                    bool GetAvailable() const;
+
+                    /**
+                     * 设置是否售罄
+                     * @param Available 是否售罄
+                     */
+                    void SetAvailable(const bool& _available);
+
+                    /**
+                     * 判断参数 Available 是否已赋值
+                     * @return Available 是否已赋值
+                     */
+                    bool AvailableHasBeenSet() const;
+
+                    /**
+                     * 获取当前资源售罄时，可用的区域有哪些
+                     * @return AvailableRegion 当前资源售罄时，可用的区域有哪些
+                     */
+                    std::vector<std::string> GetAvailableRegion() const;
+
+                    /**
+                     * 设置当前资源售罄时，可用的区域有哪些
+                     * @param AvailableRegion 当前资源售罄时，可用的区域有哪些
+                     */
+                    void SetAvailableRegion(const std::vector<std::string>& _availableRegion);
+
+                    /**
+                     * 判断参数 AvailableRegion 是否已赋值
+                     * @return AvailableRegion 是否已赋值
+                     */
+                    bool AvailableRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +155,18 @@ namespace TencentCloud
                      */
                     std::string m_specAlias;
                     bool m_specAliasHasBeenSet;
+
+                    /**
+                     * 是否售罄
+                     */
+                    bool m_available;
+                    bool m_availableHasBeenSet;
+
+                    /**
+                     * 当前资源售罄时，可用的区域有哪些
+                     */
+                    std::vector<std::string> m_availableRegion;
+                    bool m_availableRegionHasBeenSet;
 
                 };
             }

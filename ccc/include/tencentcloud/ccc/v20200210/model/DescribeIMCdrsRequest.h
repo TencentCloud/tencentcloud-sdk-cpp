@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始时间
-                     * @return StartTimestamp 起始时间
+                     * 获取起始时间（必填），Unix 秒级时间戳
+                     * @return StartTimestamp 起始时间（必填），Unix 秒级时间戳
                      */
                     int64_t GetStartTimestamp() const;
 
                     /**
-                     * 设置起始时间
-                     * @param StartTimestamp 起始时间
+                     * 设置起始时间（必填），Unix 秒级时间戳
+                     * @param StartTimestamp 起始时间（必填），Unix 秒级时间戳
                      */
                     void SetStartTimestamp(const int64_t& _startTimestamp);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimestampHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTimestamp 结束时间
+                     * 获取结束时间（必填），Unix 秒级时间戳
+                     * @return EndTimestamp 结束时间（必填），Unix 秒级时间戳
                      */
                     int64_t GetEndTimestamp() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTimestamp 结束时间
+                     * 设置结束时间（必填），Unix 秒级时间戳
+                     * @param EndTimestamp 结束时间（必填），Unix 秒级时间戳
                      */
                     void SetEndTimestamp(const int64_t& _endTimestamp);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取返回记录条数 最大为100默认20
-                     * @return Limit 返回记录条数 最大为100默认20
+                     * 获取返回记录条数，最大为100默认20
+                     * @return Limit 返回记录条数，最大为100默认20
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置返回记录条数 最大为100默认20
-                     * @param Limit 返回记录条数 最大为100默认20
+                     * 设置返回记录条数，最大为100默认20
+                     * @param Limit 返回记录条数，最大为100默认20
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取返回记录偏移 默认为0
-                     * @return Offset 返回记录偏移 默认为0
+                     * 获取返回记录偏移，默认为 0
+                     * @return Offset 返回记录偏移，默认为 0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置返回记录偏移 默认为0
-                     * @param Offset 返回记录偏移 默认为0
+                     * 设置返回记录偏移，默认为 0
+                     * @param Offset 返回记录偏移，默认为 0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -171,13 +171,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始时间
+                     * 起始时间（必填），Unix 秒级时间戳
                      */
                     int64_t m_startTimestamp;
                     bool m_startTimestampHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间（必填），Unix 秒级时间戳
                      */
                     int64_t m_endTimestamp;
                     bool m_endTimestampHasBeenSet;
@@ -195,13 +195,13 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 返回记录条数 最大为100默认20
+                     * 返回记录条数，最大为100默认20
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 返回记录偏移 默认为0
+                     * 返回记录偏移，默认为 0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;

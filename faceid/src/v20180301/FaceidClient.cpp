@@ -814,49 +814,6 @@ FaceidClient::GetLiveCodeOutcomeCallable FaceidClient::GetLiveCodeCallable(const
     return task->get_future();
 }
 
-FaceidClient::GetRealNameAuthResultOutcome FaceidClient::GetRealNameAuthResult(const GetRealNameAuthResultRequest &request)
-{
-    auto outcome = MakeRequest(request, "GetRealNameAuthResult");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        GetRealNameAuthResultResponse rsp = GetRealNameAuthResultResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return GetRealNameAuthResultOutcome(rsp);
-        else
-            return GetRealNameAuthResultOutcome(o.GetError());
-    }
-    else
-    {
-        return GetRealNameAuthResultOutcome(outcome.GetError());
-    }
-}
-
-void FaceidClient::GetRealNameAuthResultAsync(const GetRealNameAuthResultRequest& request, const GetRealNameAuthResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->GetRealNameAuthResult(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-FaceidClient::GetRealNameAuthResultOutcomeCallable FaceidClient::GetRealNameAuthResultCallable(const GetRealNameAuthResultRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<GetRealNameAuthResultOutcome()>>(
-        [this, request]()
-        {
-            return this->GetRealNameAuthResult(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 FaceidClient::GetWeChatBillDetailsOutcome FaceidClient::GetWeChatBillDetails(const GetWeChatBillDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "GetWeChatBillDetails");

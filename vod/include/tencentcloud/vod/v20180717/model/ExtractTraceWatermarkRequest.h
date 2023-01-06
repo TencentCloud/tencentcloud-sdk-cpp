@@ -61,6 +61,28 @@ namespace TencentCloud
                     bool UrlHasBeenSet() const;
 
                     /**
+                     * 获取媒体文件 ID。Url 对应的原始媒体文件 ID。
+<li><font color=red>注意</font>：此字段必填。</li>
+                     * @return FileId 媒体文件 ID。Url 对应的原始媒体文件 ID。
+<li><font color=red>注意</font>：此字段必填。</li>
+                     */
+                    std::string GetFileId() const;
+
+                    /**
+                     * 设置媒体文件 ID。Url 对应的原始媒体文件 ID。
+<li><font color=red>注意</font>：此字段必填。</li>
+                     * @param FileId 媒体文件 ID。Url 对应的原始媒体文件 ID。
+<li><font color=red>注意</font>：此字段必填。</li>
+                     */
+                    void SetFileId(const std::string& _fileId);
+
+                    /**
+                     * 判断参数 FileId 是否已赋值
+                     * @return FileId 是否已赋值
+                     */
+                    bool FileIdHasBeenSet() const;
+
+                    /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      */
@@ -157,6 +179,13 @@ namespace TencentCloud
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 媒体文件 ID。Url 对应的原始媒体文件 ID。
+<li><font color=red>注意</font>：此字段必填。</li>
+                     */
+                    std::string m_fileId;
+                    bool m_fileIdHasBeenSet;
 
                     /**
                      * <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>

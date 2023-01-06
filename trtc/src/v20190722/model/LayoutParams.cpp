@@ -30,7 +30,8 @@ LayoutParams::LayoutParams() :
     m_presetLayoutConfigHasBeenSet(false),
     m_placeHolderModeHasBeenSet(false),
     m_pureAudioHoldPlaceModeHasBeenSet(false),
-    m_waterMarkParamsHasBeenSet(false)
+    m_waterMarkParamsHasBeenSet(false),
+    m_renderModeHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,16 @@ CoreInternalOutcome LayoutParams::Deserialize(const rapidjson::Value &value)
         m_waterMarkParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("RenderMode") && !value["RenderMode"].IsNull())
+    {
+        if (!value["RenderMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LayoutParams.RenderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renderMode = value["RenderMode"].GetUint64();
+        m_renderModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -265,6 +276,14 @@ void LayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_waterMarkParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_renderModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenderMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renderMode, allocator);
     }
 
 }
@@ -428,5 +447,21 @@ void LayoutParams::SetWaterMarkParams(const WaterMarkParams& _waterMarkParams)
 bool LayoutParams::WaterMarkParamsHasBeenSet() const
 {
     return m_waterMarkParamsHasBeenSet;
+}
+
+uint64_t LayoutParams::GetRenderMode() const
+{
+    return m_renderMode;
+}
+
+void LayoutParams::SetRenderMode(const uint64_t& _renderMode)
+{
+    m_renderMode = _renderMode;
+    m_renderModeHasBeenSet = true;
+}
+
+bool LayoutParams::RenderModeHasBeenSet() const
+{
+    return m_renderModeHasBeenSet;
 }
 

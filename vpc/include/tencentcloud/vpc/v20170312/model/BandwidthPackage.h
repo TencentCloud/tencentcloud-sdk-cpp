@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool BandwidthPackageIdHasBeenSet() const;
 
                     /**
-                     * 获取带宽包类型，包括'BGP','SINGLEISP','ANYCAST'
-                     * @return NetworkType 带宽包类型，包括'BGP','SINGLEISP','ANYCAST'
+                     * 获取带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
+                     * @return NetworkType 带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
                      */
                     std::string GetNetworkType() const;
 
                     /**
-                     * 设置带宽包类型，包括'BGP','SINGLEISP','ANYCAST'
-                     * @param NetworkType 带宽包类型，包括'BGP','SINGLEISP','ANYCAST'
+                     * 设置带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
+                     * @param NetworkType 带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
                      */
                     void SetNetworkType(const std::string& _networkType);
 
@@ -200,7 +200,7 @@ namespace TencentCloud
                     bool m_bandwidthPackageIdHasBeenSet;
 
                     /**
-                     * 带宽包类型，包括'BGP','SINGLEISP','ANYCAST'
+                     * 带宽包类型，包括'BGP','SINGLEISP','ANYCAST','SINGLEISP_CMCC','SINGLEISP_CTCC','SINGLEISP_CUCC'
                      */
                     std::string m_networkType;
                     bool m_networkTypeHasBeenSet;

@@ -141,6 +141,8 @@
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateSubnetsResponse.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficPackagesRequest.h>
+#include <tencentcloud/vpc/v20170312/model/CreateTrafficPackagesResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcRequest.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcResponse.h>
 #include <tencentcloud/vpc/v20170312/model/CreateVpcEndPointRequest.h>
@@ -812,6 +814,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSubnetsResponse> CreateSubnetsOutcome;
                 typedef std::future<CreateSubnetsOutcome> CreateSubnetsOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateSubnetsRequest&, CreateSubnetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSubnetsAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateTrafficPackagesResponse> CreateTrafficPackagesOutcome;
+                typedef std::future<CreateTrafficPackagesOutcome> CreateTrafficPackagesOutcomeCallable;
+                typedef std::function<void(const VpcClient*, const Model::CreateTrafficPackagesRequest&, CreateTrafficPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTrafficPackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateVpcResponse> CreateVpcOutcome;
                 typedef std::future<CreateVpcOutcome> CreateVpcOutcomeCallable;
                 typedef std::function<void(const VpcClient*, const Model::CreateVpcRequest&, CreateVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateVpcAsyncHandler;
@@ -2186,6 +2191,15 @@ namespace TencentCloud
                 CreateSubnetsOutcome CreateSubnets(const Model::CreateSubnetsRequest &request);
                 void CreateSubnetsAsync(const Model::CreateSubnetsRequest& request, const CreateSubnetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSubnetsOutcomeCallable CreateSubnetsCallable(const Model::CreateSubnetsRequest& request);
+
+                /**
+                 *本接口 (CreateTrafficPackages) 用于创建共享流量包。
+                 * @param req CreateTrafficPackagesRequest
+                 * @return CreateTrafficPackagesOutcome
+                 */
+                CreateTrafficPackagesOutcome CreateTrafficPackages(const Model::CreateTrafficPackagesRequest &request);
+                void CreateTrafficPackagesAsync(const Model::CreateTrafficPackagesRequest& request, const CreateTrafficPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateTrafficPackagesOutcomeCallable CreateTrafficPackagesCallable(const Model::CreateTrafficPackagesRequest& request);
 
                 /**
                  *本接口(CreateVpc)用于创建私有网络(VPC)。

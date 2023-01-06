@@ -24,6 +24,7 @@ using namespace std;
 
 ExtractTraceWatermarkRequest::ExtractTraceWatermarkRequest() :
     m_urlHasBeenSet(false),
+    m_fileIdHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
@@ -45,6 +46,14 @@ string ExtractTraceWatermarkRequest::ToJsonString() const
         string key = "Url";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_url.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -109,6 +118,22 @@ void ExtractTraceWatermarkRequest::SetUrl(const string& _url)
 bool ExtractTraceWatermarkRequest::UrlHasBeenSet() const
 {
     return m_urlHasBeenSet;
+}
+
+string ExtractTraceWatermarkRequest::GetFileId() const
+{
+    return m_fileId;
+}
+
+void ExtractTraceWatermarkRequest::SetFileId(const string& _fileId)
+{
+    m_fileId = _fileId;
+    m_fileIdHasBeenSet = true;
+}
+
+bool ExtractTraceWatermarkRequest::FileIdHasBeenSet() const
+{
+    return m_fileIdHasBeenSet;
 }
 
 uint64_t ExtractTraceWatermarkRequest::GetSubAppId() const

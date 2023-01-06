@@ -229,6 +229,24 @@ namespace TencentCloud
                      */
                     bool WaterMarkParamsHasBeenSet() const;
 
+                    /**
+                     * 获取屏幕分享模板、悬浮模板、九宫格模板、画中画模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底，不填采用后台的默认渲染方式（屏幕分享大画面为缩放，其他为裁剪）。
+                     * @return RenderMode 屏幕分享模板、悬浮模板、九宫格模板、画中画模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底，不填采用后台的默认渲染方式（屏幕分享大画面为缩放，其他为裁剪）。
+                     */
+                    uint64_t GetRenderMode() const;
+
+                    /**
+                     * 设置屏幕分享模板、悬浮模板、九宫格模板、画中画模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底，不填采用后台的默认渲染方式（屏幕分享大画面为缩放，其他为裁剪）。
+                     * @param RenderMode 屏幕分享模板、悬浮模板、九宫格模板、画中画模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底，不填采用后台的默认渲染方式（屏幕分享大画面为缩放，其他为裁剪）。
+                     */
+                    void SetRenderMode(const uint64_t& _renderMode);
+
+                    /**
+                     * 判断参数 RenderMode 是否已赋值
+                     * @return RenderMode 是否已赋值
+                     */
+                    bool RenderModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +308,12 @@ namespace TencentCloud
                      */
                     WaterMarkParams m_waterMarkParams;
                     bool m_waterMarkParamsHasBeenSet;
+
+                    /**
+                     * 屏幕分享模板、悬浮模板、九宫格模板、画中画模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底，不填采用后台的默认渲染方式（屏幕分享大画面为缩放，其他为裁剪）。
+                     */
+                    uint64_t m_renderMode;
+                    bool m_renderModeHasBeenSet;
 
                 };
             }

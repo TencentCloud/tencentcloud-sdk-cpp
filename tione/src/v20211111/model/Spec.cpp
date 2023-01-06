@@ -23,7 +23,9 @@ using namespace std;
 Spec::Spec() :
     m_specIdHasBeenSet(false),
     m_specNameHasBeenSet(false),
-    m_specAliasHasBeenSet(false)
+    m_specAliasHasBeenSet(false),
+    m_availableHasBeenSet(false),
+    m_availableRegionHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,29 @@ CoreInternalOutcome Spec::Deserialize(const rapidjson::Value &value)
         m_specAliasHasBeenSet = true;
     }
 
+    if (value.HasMember("Available") && !value["Available"].IsNull())
+    {
+        if (!value["Available"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `Spec.Available` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_available = value["Available"].GetBool();
+        m_availableHasBeenSet = true;
+    }
+
+    if (value.HasMember("AvailableRegion") && !value["AvailableRegion"].IsNull())
+    {
+        if (!value["AvailableRegion"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Spec.AvailableRegion` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AvailableRegion"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_availableRegion.push_back((*itr).GetString());
+        }
+        m_availableRegionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +116,27 @@ void Spec::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "SpecAlias";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_specAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Available";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_available, allocator);
+    }
+
+    if (m_availableRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AvailableRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_availableRegion.begin(); itr != m_availableRegion.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -142,5 +188,37 @@ void Spec::SetSpecAlias(const string& _specAlias)
 bool Spec::SpecAliasHasBeenSet() const
 {
     return m_specAliasHasBeenSet;
+}
+
+bool Spec::GetAvailable() const
+{
+    return m_available;
+}
+
+void Spec::SetAvailable(const bool& _available)
+{
+    m_available = _available;
+    m_availableHasBeenSet = true;
+}
+
+bool Spec::AvailableHasBeenSet() const
+{
+    return m_availableHasBeenSet;
+}
+
+vector<string> Spec::GetAvailableRegion() const
+{
+    return m_availableRegion;
+}
+
+void Spec::SetAvailableRegion(const vector<string>& _availableRegion)
+{
+    m_availableRegion = _availableRegion;
+    m_availableRegionHasBeenSet = true;
+}
+
+bool Spec::AvailableRegionHasBeenSet() const
+{
+    return m_availableRegionHasBeenSet;
 }
 
