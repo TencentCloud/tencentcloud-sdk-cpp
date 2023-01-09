@@ -112,6 +112,34 @@ namespace TencentCloud
                      */
                     bool DegradeCapacityUsedHasBeenSet() const;
 
+                    /**
+                     * 获取已使用COS深度归档存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeepArchiveCapacityUsed 已使用COS深度归档存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDeepArchiveCapacityUsed() const;
+
+                    /**
+                     * 判断参数 DeepArchiveCapacityUsed 是否已赋值
+                     * @return DeepArchiveCapacityUsed 是否已赋值
+                     */
+                    bool DeepArchiveCapacityUsedHasBeenSet() const;
+
+                    /**
+                     * 获取已使用COS智能分层存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntelligentCapacityUsed 已使用COS智能分层存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIntelligentCapacityUsed() const;
+
+                    /**
+                     * 判断参数 IntelligentCapacityUsed 是否已赋值
+                     * @return IntelligentCapacityUsed 是否已赋值
+                     */
+                    bool IntelligentCapacityUsedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -147,6 +175,20 @@ namespace TencentCloud
                      */
                     uint64_t m_degradeCapacityUsed;
                     bool m_degradeCapacityUsedHasBeenSet;
+
+                    /**
+                     * 已使用COS深度归档存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_deepArchiveCapacityUsed;
+                    bool m_deepArchiveCapacityUsedHasBeenSet;
+
+                    /**
+                     * 已使用COS智能分层存储容量（byte）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_intelligentCapacityUsed;
+                    bool m_intelligentCapacityUsedHasBeenSet;
 
                 };
             }

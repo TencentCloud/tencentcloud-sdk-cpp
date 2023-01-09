@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/dbbrain/v20210527/model/SessionItem.h>
 
 
 namespace TencentCloud
@@ -46,7 +47,79 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取会话详情数组。
+                     * @return Items 会话详情数组。
+                     */
+                    std::vector<SessionItem> GetItems() const;
+
+                    /**
+                     * 设置会话详情数组。
+                     * @param Items 会话详情数组。
+                     */
+                    void SetItems(const std::vector<SessionItem>& _items);
+
+                    /**
+                     * 判断参数 Items 是否已赋值
+                     * @return Items 是否已赋值
+                     */
+                    bool ItemsHasBeenSet() const;
+
+                    /**
+                     * 获取总连接数。
+                     * @return AllConnSum 总连接数。
+                     */
+                    int64_t GetAllConnSum() const;
+
+                    /**
+                     * 设置总连接数。
+                     * @param AllConnSum 总连接数。
+                     */
+                    void SetAllConnSum(const int64_t& _allConnSum);
+
+                    /**
+                     * 判断参数 AllConnSum 是否已赋值
+                     * @return AllConnSum 是否已赋值
+                     */
+                    bool AllConnSumHasBeenSet() const;
+
+                    /**
+                     * 获取总活跃连接数。
+                     * @return ActiveConnSum 总活跃连接数。
+                     */
+                    int64_t GetActiveConnSum() const;
+
+                    /**
+                     * 设置总活跃连接数。
+                     * @param ActiveConnSum 总活跃连接数。
+                     */
+                    void SetActiveConnSum(const int64_t& _activeConnSum);
+
+                    /**
+                     * 判断参数 ActiveConnSum 是否已赋值
+                     * @return ActiveConnSum 是否已赋值
+                     */
+                    bool ActiveConnSumHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 会话详情数组。
+                     */
+                    std::vector<SessionItem> m_items;
+                    bool m_itemsHasBeenSet;
+
+                    /**
+                     * 总连接数。
+                     */
+                    int64_t m_allConnSum;
+                    bool m_allConnSumHasBeenSet;
+
+                    /**
+                     * 总活跃连接数。
+                     */
+                    int64_t m_activeConnSum;
+                    bool m_activeConnSumHasBeenSet;
 
                 };
             }

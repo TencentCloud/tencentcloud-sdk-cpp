@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/yinsuda/v20220527/model/ApplyChorusRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/ApplyChorusResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/BatchDescribeKTVMusicDetailsRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/BatchDescribeKTVMusicDetailsResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/CreateKTVRobotRequest.h>
@@ -61,6 +63,9 @@ namespace TencentCloud
                 YinsudaClient(const Credential &credential, const std::string &region);
                 YinsudaClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::ApplyChorusResponse> ApplyChorusOutcome;
+                typedef std::future<ApplyChorusOutcome> ApplyChorusOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::ApplyChorusRequest&, ApplyChorusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ApplyChorusAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchDescribeKTVMusicDetailsResponse> BatchDescribeKTVMusicDetailsOutcome;
                 typedef std::future<BatchDescribeKTVMusicDetailsOutcome> BatchDescribeKTVMusicDetailsOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::BatchDescribeKTVMusicDetailsRequest&, BatchDescribeKTVMusicDetailsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeKTVMusicDetailsAsyncHandler;
@@ -99,6 +104,15 @@ namespace TencentCloud
                 typedef std::function<void(const YinsudaClient*, const Model::SyncKTVRobotCommandRequest&, SyncKTVRobotCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncKTVRobotCommandAsyncHandler;
 
 
+
+                /**
+                 *申请合唱相关信息，用于标记用户的演唱是在合唱场景下。
+                 * @param req ApplyChorusRequest
+                 * @return ApplyChorusOutcome
+                 */
+                ApplyChorusOutcome ApplyChorus(const Model::ApplyChorusRequest &request);
+                void ApplyChorusAsync(const Model::ApplyChorusRequest& request, const ApplyChorusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ApplyChorusOutcomeCallable ApplyChorusCallable(const Model::ApplyChorusRequest& request);
 
                 /**
                  *批量获取歌曲详细信息，包括：歌词下载链接、播放凭证、音高数据下载链接信息等。

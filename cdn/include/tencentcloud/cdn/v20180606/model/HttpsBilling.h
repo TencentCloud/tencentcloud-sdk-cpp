@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 支持 https 请求开关，若关闭，下发配置拦截https请求
+                * HTTPS服务，若关闭，下发配置拦截https请求，开启时会产生计费
                 */
                 class HttpsBilling : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取HTTPS服务
-                     * @return Switch HTTPS服务
+                     * 获取HTTPS服务，缺省时默认开启【会产生计费】
+                     * @return Switch HTTPS服务，缺省时默认开启【会产生计费】
                      */
                     std::string GetSwitch() const;
 
                     /**
-                     * 设置HTTPS服务
-                     * @param Switch HTTPS服务
+                     * 设置HTTPS服务，缺省时默认开启【会产生计费】
+                     * @param Switch HTTPS服务，缺省时默认开启【会产生计费】
                      */
                     void SetSwitch(const std::string& _switch);
 
@@ -67,7 +67,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * HTTPS服务
+                     * HTTPS服务，缺省时默认开启【会产生计费】
                      */
                     std::string m_switch;
                     bool m_switchHasBeenSet;

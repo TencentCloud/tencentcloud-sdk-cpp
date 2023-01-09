@@ -51,7 +51,8 @@ TelCdrInfo::TelCdrInfo() :
     m_iVRKeyPressedExHasBeenSet(false),
     m_asrUrlHasBeenSet(false),
     m_customRecordURLHasBeenSet(false),
-    m_remarkHasBeenSet(false)
+    m_remarkHasBeenSet(false),
+    m_queuedSkillGroupNameHasBeenSet(false)
 {
 }
 
@@ -410,6 +411,16 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_remarkHasBeenSet = true;
     }
 
+    if (value.HasMember("QueuedSkillGroupName") && !value["QueuedSkillGroupName"].IsNull())
+    {
+        if (!value["QueuedSkillGroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.QueuedSkillGroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_queuedSkillGroupName = string(value["QueuedSkillGroupName"].GetString());
+        m_queuedSkillGroupNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -690,6 +701,14 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Remark";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_remark.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_queuedSkillGroupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QueuedSkillGroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_queuedSkillGroupName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1189,5 +1208,21 @@ void TelCdrInfo::SetRemark(const string& _remark)
 bool TelCdrInfo::RemarkHasBeenSet() const
 {
     return m_remarkHasBeenSet;
+}
+
+string TelCdrInfo::GetQueuedSkillGroupName() const
+{
+    return m_queuedSkillGroupName;
+}
+
+void TelCdrInfo::SetQueuedSkillGroupName(const string& _queuedSkillGroupName)
+{
+    m_queuedSkillGroupName = _queuedSkillGroupName;
+    m_queuedSkillGroupNameHasBeenSet = true;
+}
+
+bool TelCdrInfo::QueuedSkillGroupNameHasBeenSet() const
+{
+    return m_queuedSkillGroupNameHasBeenSet;
 }
 

@@ -863,6 +863,28 @@ notInService       不在服务区
                      */
                     bool RemarkHasBeenSet() const;
 
+                    /**
+                     * 获取排队技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QueuedSkillGroupName 排队技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetQueuedSkillGroupName() const;
+
+                    /**
+                     * 设置排队技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QueuedSkillGroupName 排队技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQueuedSkillGroupName(const std::string& _queuedSkillGroupName);
+
+                    /**
+                     * 判断参数 QueuedSkillGroupName 是否已赋值
+                     * @return QueuedSkillGroupName 是否已赋值
+                     */
+                    bool QueuedSkillGroupNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1114,6 +1136,13 @@ notInService       不在服务区
                      */
                     std::string m_remark;
                     bool m_remarkHasBeenSet;
+
+                    /**
+                     * 排队技能组名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_queuedSkillGroupName;
+                    bool m_queuedSkillGroupNameHasBeenSet;
 
                 };
             }

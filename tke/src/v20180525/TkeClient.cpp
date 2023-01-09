@@ -728,6 +728,92 @@ TkeClient::CreateClusterRouteTableOutcomeCallable TkeClient::CreateClusterRouteT
     return task->get_future();
 }
 
+TkeClient::CreateClusterVirtualNodeOutcome TkeClient::CreateClusterVirtualNode(const CreateClusterVirtualNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterVirtualNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterVirtualNodeResponse rsp = CreateClusterVirtualNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterVirtualNodeOutcome(rsp);
+        else
+            return CreateClusterVirtualNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterVirtualNodeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterVirtualNodeAsync(const CreateClusterVirtualNodeRequest& request, const CreateClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterVirtualNode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterVirtualNodeOutcomeCallable TkeClient::CreateClusterVirtualNodeCallable(const CreateClusterVirtualNodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterVirtualNodeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterVirtualNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::CreateClusterVirtualNodePoolOutcome TkeClient::CreateClusterVirtualNodePool(const CreateClusterVirtualNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateClusterVirtualNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateClusterVirtualNodePoolResponse rsp = CreateClusterVirtualNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateClusterVirtualNodePoolOutcome(rsp);
+        else
+            return CreateClusterVirtualNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateClusterVirtualNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::CreateClusterVirtualNodePoolAsync(const CreateClusterVirtualNodePoolRequest& request, const CreateClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateClusterVirtualNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::CreateClusterVirtualNodePoolOutcomeCallable TkeClient::CreateClusterVirtualNodePoolCallable(const CreateClusterVirtualNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateClusterVirtualNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateClusterVirtualNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::CreateECMInstancesOutcome TkeClient::CreateECMInstances(const CreateECMInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateECMInstances");
@@ -1753,6 +1839,92 @@ TkeClient::DeleteClusterRouteTableOutcomeCallable TkeClient::DeleteClusterRouteT
         [this, request]()
         {
             return this->DeleteClusterRouteTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteClusterVirtualNodeOutcome TkeClient::DeleteClusterVirtualNode(const DeleteClusterVirtualNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterVirtualNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterVirtualNodeResponse rsp = DeleteClusterVirtualNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterVirtualNodeOutcome(rsp);
+        else
+            return DeleteClusterVirtualNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterVirtualNodeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterVirtualNodeAsync(const DeleteClusterVirtualNodeRequest& request, const DeleteClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterVirtualNode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterVirtualNodeOutcomeCallable TkeClient::DeleteClusterVirtualNodeCallable(const DeleteClusterVirtualNodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterVirtualNodeOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterVirtualNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DeleteClusterVirtualNodePoolOutcome TkeClient::DeleteClusterVirtualNodePool(const DeleteClusterVirtualNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteClusterVirtualNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterVirtualNodePoolResponse rsp = DeleteClusterVirtualNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterVirtualNodePoolOutcome(rsp);
+        else
+            return DeleteClusterVirtualNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterVirtualNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DeleteClusterVirtualNodePoolAsync(const DeleteClusterVirtualNodePoolRequest& request, const DeleteClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteClusterVirtualNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DeleteClusterVirtualNodePoolOutcomeCallable TkeClient::DeleteClusterVirtualNodePoolCallable(const DeleteClusterVirtualNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterVirtualNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteClusterVirtualNodePool(request);
         }
     );
 
@@ -3473,6 +3645,92 @@ TkeClient::DescribeClusterStatusOutcomeCallable TkeClient::DescribeClusterStatus
         [this, request]()
         {
             return this->DescribeClusterStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterVirtualNodeOutcome TkeClient::DescribeClusterVirtualNode(const DescribeClusterVirtualNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterVirtualNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterVirtualNodeResponse rsp = DescribeClusterVirtualNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterVirtualNodeOutcome(rsp);
+        else
+            return DescribeClusterVirtualNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterVirtualNodeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterVirtualNodeAsync(const DescribeClusterVirtualNodeRequest& request, const DescribeClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterVirtualNode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterVirtualNodeOutcomeCallable TkeClient::DescribeClusterVirtualNodeCallable(const DescribeClusterVirtualNodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterVirtualNodeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterVirtualNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::DescribeClusterVirtualNodePoolsOutcome TkeClient::DescribeClusterVirtualNodePools(const DescribeClusterVirtualNodePoolsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterVirtualNodePools");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterVirtualNodePoolsResponse rsp = DescribeClusterVirtualNodePoolsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterVirtualNodePoolsOutcome(rsp);
+        else
+            return DescribeClusterVirtualNodePoolsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterVirtualNodePoolsOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DescribeClusterVirtualNodePoolsAsync(const DescribeClusterVirtualNodePoolsRequest& request, const DescribeClusterVirtualNodePoolsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterVirtualNodePools(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DescribeClusterVirtualNodePoolsOutcomeCallable TkeClient::DescribeClusterVirtualNodePoolsCallable(const DescribeClusterVirtualNodePoolsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterVirtualNodePoolsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterVirtualNodePools(request);
         }
     );
 
@@ -5716,6 +5974,49 @@ TkeClient::DisableVpcCniNetworkTypeOutcomeCallable TkeClient::DisableVpcCniNetwo
     return task->get_future();
 }
 
+TkeClient::DrainClusterVirtualNodeOutcome TkeClient::DrainClusterVirtualNode(const DrainClusterVirtualNodeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DrainClusterVirtualNode");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DrainClusterVirtualNodeResponse rsp = DrainClusterVirtualNodeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DrainClusterVirtualNodeOutcome(rsp);
+        else
+            return DrainClusterVirtualNodeOutcome(o.GetError());
+    }
+    else
+    {
+        return DrainClusterVirtualNodeOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::DrainClusterVirtualNodeAsync(const DrainClusterVirtualNodeRequest& request, const DrainClusterVirtualNodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DrainClusterVirtualNode(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::DrainClusterVirtualNodeOutcomeCallable TkeClient::DrainClusterVirtualNodeCallable(const DrainClusterVirtualNodeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DrainClusterVirtualNodeOutcome()>>(
+        [this, request]()
+        {
+            return this->DrainClusterVirtualNode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::EnableClusterAuditOutcome TkeClient::EnableClusterAudit(const EnableClusterAuditRequest &request)
 {
     auto outcome = MakeRequest(request, "EnableClusterAudit");
@@ -6483,6 +6784,49 @@ TkeClient::ModifyClusterNodePoolOutcomeCallable TkeClient::ModifyClusterNodePool
         [this, request]()
         {
             return this->ModifyClusterNodePool(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TkeClient::ModifyClusterVirtualNodePoolOutcome TkeClient::ModifyClusterVirtualNodePool(const ModifyClusterVirtualNodePoolRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyClusterVirtualNodePool");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterVirtualNodePoolResponse rsp = ModifyClusterVirtualNodePoolResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterVirtualNodePoolOutcome(rsp);
+        else
+            return ModifyClusterVirtualNodePoolOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterVirtualNodePoolOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::ModifyClusterVirtualNodePoolAsync(const ModifyClusterVirtualNodePoolRequest& request, const ModifyClusterVirtualNodePoolAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyClusterVirtualNodePool(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::ModifyClusterVirtualNodePoolOutcomeCallable TkeClient::ModifyClusterVirtualNodePoolCallable(const ModifyClusterVirtualNodePoolRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterVirtualNodePoolOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyClusterVirtualNodePool(request);
         }
     );
 

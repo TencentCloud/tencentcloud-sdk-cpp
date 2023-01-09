@@ -22,6 +22,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterSecurityRequest.h
   include/tencentcloud/tke/v20180525/model/EksCiVolume.h
+  include/tencentcloud/tke/v20180525/model/GetTkeAppChartListRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeCVMInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/InstallLogAgentRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterEndpointVipStatusResponse.h
@@ -33,7 +34,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeEKSClustersRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusInstancesOverviewRequest.h
   include/tencentcloud/tke/v20180525/model/ServiceAccountAuthenticationOptions.h
-  include/tencentcloud/tke/v20180525/model/DescribeEdgeClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/UpgradeClusterReleaseRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeClusterUpgradeInfoRequest.h
   include/tencentcloud/tke/v20180525/model/RunInstancesForNode.h
@@ -78,6 +79,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialResponse.h
   include/tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusTemplateRequest.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterVirtualNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeImageCachesRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertRuleRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeAvailableExtraArgsRequest.h
@@ -110,8 +112,10 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ControllerStatus.h
   include/tencentcloud/tke/v20180525/model/DeletePrometheusTempSyncResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusRecordRulesRequest.h
+  include/tencentcloud/tke/v20180525/model/VirtualNodePool.h
   include/tencentcloud/tke/v20180525/model/DescribeTKEEdgeClusterStatusRequest.h
   include/tencentcloud/tke/v20180525/model/AcquireClusterAdminRoleResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeEdgeClusterInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/UpdateEdgeClusterVersionRequest.h
   include/tencentcloud/tke/v20180525/model/GetTkeAppChartListResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTemplateSyncRequest.h
@@ -128,9 +132,10 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeRegionsRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointRequest.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterVirtualNodeRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolDetailRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTempSyncRequest.h
-  include/tencentcloud/tke/v20180525/model/DescribeClustersResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalConfigResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterReleaseHistoryResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeImagesRequest.h
   include/tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentResponse.h
@@ -181,6 +186,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalNotificationResponse.h
   include/tencentcloud/tke/v20180525/model/HttpGet.h
   include/tencentcloud/tke/v20180525/model/ResourceUsage.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterVirtualNodeRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeTKEEdgeClustersRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusAlertHistoryRequest.h
   include/tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionResponse.h
@@ -201,7 +207,8 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeClusterReleaseHistoryRequest.h
   include/tencentcloud/tke/v20180525/model/NodePoolOption.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeClusterExtraArgsRequest.h
-  include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalConfigResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClustersResponse.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterVirtualNodeResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAgentInfo.h
   include/tencentcloud/tke/v20180525/model/CreateEdgeCVMInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeLogSwitchesResponse.h
@@ -241,9 +248,10 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/UpdateTKEEdgeClusterRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeTKEEdgeExternalKubeconfigResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradeClusterStatus.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterRoutesRequest.h
-  include/tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.h
+  include/tencentcloud/tke/v20180525/model/DeleteECMInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterLevelAttribute.h
   include/tencentcloud/tke/v20180525/model/RemoveNodeFromNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/SetNodePoolNodeProtectionRequest.h
@@ -276,6 +284,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/RollbackClusterReleaseResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterVersion.h
   include/tencentcloud/tke/v20180525/model/InstanceUpgradeProgressItem.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterVirtualNodePoolsRequest.h
   include/tencentcloud/tke/v20180525/model/GetMostSuitableImageCacheRequest.h
   include/tencentcloud/tke/v20180525/model/SecurityContext.h
   include/tencentcloud/tke/v20180525/model/DNSConfig.h
@@ -283,12 +292,15 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribeTKEEdgeExternalKubeconfigRequest.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusAlertPolicyResponse.h
   include/tencentcloud/tke/v20180525/model/DNSConfigOption.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterVirtualNodeRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterReleasesResponse.h
   include/tencentcloud/tke/v20180525/model/AddNodeToNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeExternalClusterSpecRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusGlobalNotificationResponse.h
   include/tencentcloud/tke/v20180525/model/UninstallClusterReleaseRequest.h
+  include/tencentcloud/tke/v20180525/model/VirtualNode.h
   include/tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Response.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterVirtualNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusConfigRequest.h
   include/tencentcloud/tke/v20180525/model/AutoScalingGroupRange.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalNotificationRequest.h
@@ -305,13 +317,15 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/EksCi.h
   include/tencentcloud/tke/v20180525/model/UpdateImageCacheResponse.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusConfigRequest.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterVirtualNodeResponse.h
   include/tencentcloud/tke/v20180525/model/ImageCacheEvent.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusClusterAgentRequest.h
-  include/tencentcloud/tke/v20180525/model/DeleteEKSContainerInstancesResponse.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusInstancesOverviewResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSClusterCredentialRequest.h
   include/tencentcloud/tke/v20180525/model/EnableClusterDeletionProtectionRequest.h
   include/tencentcloud/tke/v20180525/model/RestartEKSContainerInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/DrainClusterVirtualNodeRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterLevelAttributeRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeClusterReleaseDetailsRequest.h
   include/tencentcloud/tke/v20180525/model/CreateECMInstancesRequest.h
@@ -331,7 +345,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/EdgeClusterPublicLB.h
   include/tencentcloud/tke/v20180525/model/EnableEventPersistenceResponse.h
   include/tencentcloud/tke/v20180525/model/EnhancedService.h
-  include/tencentcloud/tke/v20180525/model/DescribeClusterNodePoolsResponse.h
+  include/tencentcloud/tke/v20180525/model/DeleteEKSContainerInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/UninstallLogAgentRequest.h
   include/tencentcloud/tke/v20180525/model/TcpSocket.h
   include/tencentcloud/tke/v20180525/model/TagSpecification.h
@@ -350,9 +364,9 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/PrometheusGrafanaInfo.h
   include/tencentcloud/tke/v20180525/model/ImageInstance.h
   include/tencentcloud/tke/v20180525/model/CreatePrometheusAlertPolicyRequest.h
-  include/tencentcloud/tke/v20180525/model/GetTkeAppChartListRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeImageCachesResponse.h
   include/tencentcloud/tke/v20180525/model/ResourceUsageDetail.h
-  include/tencentcloud/tke/v20180525/model/CreateClusterNodePoolRequest.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterVirtualNodePoolsResponse.h
   include/tencentcloud/tke/v20180525/model/CheckEdgeClusterCIDRResponse.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusClusterAgentsRequest.h
   include/tencentcloud/tke/v20180525/model/EdgeArgsFlag.h
@@ -361,7 +375,6 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreatePrometheusDashboardRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterRouteTableResponse.h
   include/tencentcloud/tke/v20180525/model/DisableClusterDeletionProtectionRequest.h
-  include/tencentcloud/tke/v20180525/model/DescribeImageCachesResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusJobTargets.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAsGroupOptionAttributeResponse.h
   include/tencentcloud/tke/v20180525/model/UninstallLogAgentResponse.h
@@ -379,7 +392,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/SyncPrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/UninstallClusterReleaseResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAsGroupAttribute.h
-  include/tencentcloud/tke/v20180525/model/DeleteECMInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.h
   include/tencentcloud/tke/v20180525/model/DisableEventPersistenceRequest.h
   include/tencentcloud/tke/v20180525/model/RunMonitorServiceEnabled.h
   include/tencentcloud/tke/v20180525/model/CreateEKSContainerInstancesRequest.h
@@ -400,6 +413,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreatePrometheusAlertRuleRequest.h
   include/tencentcloud/tke/v20180525/model/UpdateEKSClusterRequest.h
   include/tencentcloud/tke/v20180525/model/CreateTKEEdgeClusterRequest.h
+  include/tencentcloud/tke/v20180525/model/CreateClusterVirtualNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/CreateEKSClusterResponse.h
   include/tencentcloud/tke/v20180525/model/CreateImageCacheResponse.h
   include/tencentcloud/tke/v20180525/model/CreateEdgeLogConfigResponse.h
@@ -414,20 +428,23 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreateEKSClusterRequest.h
   include/tencentcloud/tke/v20180525/model/CommonName.h
   include/tencentcloud/tke/v20180525/model/EnableEventPersistenceRequest.h
+  include/tencentcloud/tke/v20180525/model/ModifyClusterVirtualNodePoolRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeRegionsResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterRouteResponse.h
   include/tencentcloud/tke/v20180525/model/Release.h
   include/tencentcloud/tke/v20180525/model/DescribeEKSContainerInstanceRegionsRequest.h
   include/tencentcloud/tke/v20180525/model/DescribeECMInstancesRequest.h
+  include/tencentcloud/tke/v20180525/model/DrainClusterVirtualNodeResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeVpcCniPodLimitsResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeVersionsResponse.h
   include/tencentcloud/tke/v20180525/model/ScaleInClusterMasterRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteEdgeClusterInstancesRequest.h
   include/tencentcloud/tke/v20180525/model/PrometheusAlertRule.h
+  include/tencentcloud/tke/v20180525/model/VirtualNodeSpec.h
   include/tencentcloud/tke/v20180525/model/ClusterNetworkSettings.h
   include/tencentcloud/tke/v20180525/model/DescribeImagesResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterExtraArgs.h
-  include/tencentcloud/tke/v20180525/model/EdgeClusterAdvancedSettings.h
+  include/tencentcloud/tke/v20180525/model/DeleteClusterVirtualNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointVipResponse.h
   include/tencentcloud/tke/v20180525/model/TaskStepInfo.h
   include/tencentcloud/tke/v20180525/model/ECMZoneInstanceCountISP.h
@@ -459,6 +476,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/ModifyClusterNodePoolResponse.h
   include/tencentcloud/tke/v20180525/model/PrometheusAlertPolicyItem.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusAgentExternalLabelsRequest.h
+  include/tencentcloud/tke/v20180525/model/EdgeClusterAdvancedSettings.h
   include/tencentcloud/tke/v20180525/model/PrometheusTarget.h
   include/tencentcloud/tke/v20180525/model/LoginSettings.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusTempResponse.h
@@ -515,6 +533,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/GPUArgs.h
   include/tencentcloud/tke/v20180525/model/RouteTableConflict.h
   include/tencentcloud/tke/v20180525/model/PrometheusInstanceOverview.h
+  include/tencentcloud/tke/v20180525/model/DescribeClusterVirtualNodeResponse.h
   include/tencentcloud/tke/v20180525/model/ScaleInMaster.h
   include/tencentcloud/tke/v20180525/model/RunPrometheusInstanceRequest.h
   include/tencentcloud/tke/v20180525/model/PendingRelease.h
@@ -525,6 +544,7 @@ set(tke_src
   src/v20180525/model/DescribeClusterEndpointVipStatusRequest.cpp
   src/v20180525/model/DescribeClusterSecurityRequest.cpp
   src/v20180525/model/EksCiVolume.cpp
+  src/v20180525/model/GetTkeAppChartListRequest.cpp
   src/v20180525/model/DescribeEdgeCVMInstancesRequest.cpp
   src/v20180525/model/InstallLogAgentRequest.cpp
   src/v20180525/model/DescribeClusterEndpointVipStatusResponse.cpp
@@ -536,7 +556,7 @@ set(tke_src
   src/v20180525/model/DescribeEKSClustersRequest.cpp
   src/v20180525/model/DescribePrometheusInstancesOverviewRequest.cpp
   src/v20180525/model/ServiceAccountAuthenticationOptions.cpp
-  src/v20180525/model/DescribeEdgeClusterInstancesResponse.cpp
+  src/v20180525/model/CreateClusterNodePoolRequest.cpp
   src/v20180525/model/UpgradeClusterReleaseRequest.cpp
   src/v20180525/model/DescribeEdgeClusterUpgradeInfoRequest.cpp
   src/v20180525/model/RunInstancesForNode.cpp
@@ -581,6 +601,7 @@ set(tke_src
   src/v20180525/model/DescribeEKSClusterCredentialResponse.cpp
   src/v20180525/model/CheckInstancesUpgradeAbleRequest.cpp
   src/v20180525/model/ModifyPrometheusTemplateRequest.cpp
+  src/v20180525/model/DeleteClusterVirtualNodePoolRequest.cpp
   src/v20180525/model/DescribeImageCachesRequest.cpp
   src/v20180525/model/DescribePrometheusAlertRuleRequest.cpp
   src/v20180525/model/DescribeEdgeAvailableExtraArgsRequest.cpp
@@ -613,8 +634,10 @@ set(tke_src
   src/v20180525/model/ControllerStatus.cpp
   src/v20180525/model/DeletePrometheusTempSyncResponse.cpp
   src/v20180525/model/DescribePrometheusRecordRulesRequest.cpp
+  src/v20180525/model/VirtualNodePool.cpp
   src/v20180525/model/DescribeTKEEdgeClusterStatusRequest.cpp
   src/v20180525/model/AcquireClusterAdminRoleResponse.cpp
+  src/v20180525/model/DescribeEdgeClusterInstancesResponse.cpp
   src/v20180525/model/UpdateEdgeClusterVersionRequest.cpp
   src/v20180525/model/GetTkeAppChartListResponse.cpp
   src/v20180525/model/DescribePrometheusTemplateSyncRequest.cpp
@@ -631,9 +654,10 @@ set(tke_src
   src/v20180525/model/DescribeRegionsRequest.cpp
   src/v20180525/model/DeleteClusterRouteRequest.cpp
   src/v20180525/model/DeleteClusterEndpointRequest.cpp
+  src/v20180525/model/DeleteClusterVirtualNodeRequest.cpp
   src/v20180525/model/DescribeClusterNodePoolDetailRequest.cpp
   src/v20180525/model/DescribePrometheusTempSyncRequest.cpp
-  src/v20180525/model/DescribeClustersResponse.cpp
+  src/v20180525/model/DescribePrometheusGlobalConfigResponse.cpp
   src/v20180525/model/DescribeClusterReleaseHistoryResponse.cpp
   src/v20180525/model/DescribeImagesRequest.cpp
   src/v20180525/model/UninstallEdgeLogAgentResponse.cpp
@@ -684,6 +708,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusGlobalNotificationResponse.cpp
   src/v20180525/model/HttpGet.cpp
   src/v20180525/model/ResourceUsage.cpp
+  src/v20180525/model/CreateClusterVirtualNodeRequest.cpp
   src/v20180525/model/DescribeTKEEdgeClustersRequest.cpp
   src/v20180525/model/DescribePrometheusAlertHistoryRequest.cpp
   src/v20180525/model/SetNodePoolNodeProtectionResponse.cpp
@@ -704,7 +729,8 @@ set(tke_src
   src/v20180525/model/DescribeClusterReleaseHistoryRequest.cpp
   src/v20180525/model/NodePoolOption.cpp
   src/v20180525/model/DescribeEdgeClusterExtraArgsRequest.cpp
-  src/v20180525/model/DescribePrometheusGlobalConfigResponse.cpp
+  src/v20180525/model/DescribeClustersResponse.cpp
+  src/v20180525/model/DeleteClusterVirtualNodeResponse.cpp
   src/v20180525/model/PrometheusAgentInfo.cpp
   src/v20180525/model/CreateEdgeCVMInstancesResponse.cpp
   src/v20180525/model/DescribeEdgeLogSwitchesResponse.cpp
@@ -744,9 +770,10 @@ set(tke_src
   src/v20180525/model/UpdateTKEEdgeClusterRequest.cpp
   src/v20180525/model/DescribeTKEEdgeExternalKubeconfigResponse.cpp
   src/v20180525/model/CreateClusterInstancesResponse.cpp
+  src/v20180525/model/ModifyClusterVirtualNodePoolResponse.cpp
   src/v20180525/model/InstanceUpgradeClusterStatus.cpp
   src/v20180525/model/DescribeClusterRoutesRequest.cpp
-  src/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.cpp
+  src/v20180525/model/DeleteECMInstancesRequest.cpp
   src/v20180525/model/ClusterLevelAttribute.cpp
   src/v20180525/model/RemoveNodeFromNodePoolResponse.cpp
   src/v20180525/model/SetNodePoolNodeProtectionRequest.cpp
@@ -779,6 +806,7 @@ set(tke_src
   src/v20180525/model/RollbackClusterReleaseResponse.cpp
   src/v20180525/model/ClusterVersion.cpp
   src/v20180525/model/InstanceUpgradeProgressItem.cpp
+  src/v20180525/model/DescribeClusterVirtualNodePoolsRequest.cpp
   src/v20180525/model/GetMostSuitableImageCacheRequest.cpp
   src/v20180525/model/SecurityContext.cpp
   src/v20180525/model/DNSConfig.cpp
@@ -786,12 +814,15 @@ set(tke_src
   src/v20180525/model/DescribeTKEEdgeExternalKubeconfigRequest.cpp
   src/v20180525/model/CreatePrometheusAlertPolicyResponse.cpp
   src/v20180525/model/DNSConfigOption.cpp
+  src/v20180525/model/DescribeClusterVirtualNodeRequest.cpp
   src/v20180525/model/DescribeClusterReleasesResponse.cpp
   src/v20180525/model/AddNodeToNodePoolRequest.cpp
   src/v20180525/model/DescribeExternalClusterSpecRequest.cpp
   src/v20180525/model/ModifyPrometheusGlobalNotificationResponse.cpp
   src/v20180525/model/UninstallClusterReleaseRequest.cpp
+  src/v20180525/model/VirtualNode.cpp
   src/v20180525/model/ForwardTKEEdgeApplicationRequestV3Response.cpp
+  src/v20180525/model/CreateClusterVirtualNodePoolRequest.cpp
   src/v20180525/model/ModifyPrometheusConfigRequest.cpp
   src/v20180525/model/AutoScalingGroupRange.cpp
   src/v20180525/model/DescribePrometheusGlobalNotificationRequest.cpp
@@ -808,13 +839,15 @@ set(tke_src
   src/v20180525/model/EksCi.cpp
   src/v20180525/model/UpdateImageCacheResponse.cpp
   src/v20180525/model/CreatePrometheusConfigRequest.cpp
+  src/v20180525/model/CreateClusterVirtualNodeResponse.cpp
   src/v20180525/model/ImageCacheEvent.cpp
   src/v20180525/model/CreatePrometheusClusterAgentRequest.cpp
-  src/v20180525/model/DeleteEKSContainerInstancesResponse.cpp
+  src/v20180525/model/DescribeClusterNodePoolsResponse.cpp
   src/v20180525/model/DescribePrometheusInstancesOverviewResponse.cpp
   src/v20180525/model/DescribeEKSClusterCredentialRequest.cpp
   src/v20180525/model/EnableClusterDeletionProtectionRequest.cpp
   src/v20180525/model/RestartEKSContainerInstancesRequest.cpp
+  src/v20180525/model/DrainClusterVirtualNodeRequest.cpp
   src/v20180525/model/DescribeClusterLevelAttributeRequest.cpp
   src/v20180525/model/DescribeClusterReleaseDetailsRequest.cpp
   src/v20180525/model/CreateECMInstancesRequest.cpp
@@ -834,7 +867,7 @@ set(tke_src
   src/v20180525/model/EdgeClusterPublicLB.cpp
   src/v20180525/model/EnableEventPersistenceResponse.cpp
   src/v20180525/model/EnhancedService.cpp
-  src/v20180525/model/DescribeClusterNodePoolsResponse.cpp
+  src/v20180525/model/DeleteEKSContainerInstancesResponse.cpp
   src/v20180525/model/UninstallLogAgentRequest.cpp
   src/v20180525/model/TcpSocket.cpp
   src/v20180525/model/TagSpecification.cpp
@@ -853,9 +886,9 @@ set(tke_src
   src/v20180525/model/PrometheusGrafanaInfo.cpp
   src/v20180525/model/ImageInstance.cpp
   src/v20180525/model/CreatePrometheusAlertPolicyRequest.cpp
-  src/v20180525/model/GetTkeAppChartListRequest.cpp
+  src/v20180525/model/DescribeImageCachesResponse.cpp
   src/v20180525/model/ResourceUsageDetail.cpp
-  src/v20180525/model/CreateClusterNodePoolRequest.cpp
+  src/v20180525/model/DescribeClusterVirtualNodePoolsResponse.cpp
   src/v20180525/model/CheckEdgeClusterCIDRResponse.cpp
   src/v20180525/model/DescribePrometheusClusterAgentsRequest.cpp
   src/v20180525/model/EdgeArgsFlag.cpp
@@ -864,7 +897,6 @@ set(tke_src
   src/v20180525/model/CreatePrometheusDashboardRequest.cpp
   src/v20180525/model/DeleteClusterRouteTableResponse.cpp
   src/v20180525/model/DisableClusterDeletionProtectionRequest.cpp
-  src/v20180525/model/DescribeImageCachesResponse.cpp
   src/v20180525/model/PrometheusJobTargets.cpp
   src/v20180525/model/ModifyClusterAsGroupOptionAttributeResponse.cpp
   src/v20180525/model/UninstallLogAgentResponse.cpp
@@ -882,7 +914,7 @@ set(tke_src
   src/v20180525/model/SyncPrometheusTemplateResponse.cpp
   src/v20180525/model/UninstallClusterReleaseResponse.cpp
   src/v20180525/model/ClusterAsGroupAttribute.cpp
-  src/v20180525/model/DeleteECMInstancesRequest.cpp
+  src/v20180525/model/ForwardTKEEdgeApplicationRequestV3Request.cpp
   src/v20180525/model/DisableEventPersistenceRequest.cpp
   src/v20180525/model/RunMonitorServiceEnabled.cpp
   src/v20180525/model/CreateEKSContainerInstancesRequest.cpp
@@ -903,6 +935,7 @@ set(tke_src
   src/v20180525/model/CreatePrometheusAlertRuleRequest.cpp
   src/v20180525/model/UpdateEKSClusterRequest.cpp
   src/v20180525/model/CreateTKEEdgeClusterRequest.cpp
+  src/v20180525/model/CreateClusterVirtualNodePoolResponse.cpp
   src/v20180525/model/CreateEKSClusterResponse.cpp
   src/v20180525/model/CreateImageCacheResponse.cpp
   src/v20180525/model/CreateEdgeLogConfigResponse.cpp
@@ -917,20 +950,23 @@ set(tke_src
   src/v20180525/model/CreateEKSClusterRequest.cpp
   src/v20180525/model/CommonName.cpp
   src/v20180525/model/EnableEventPersistenceRequest.cpp
+  src/v20180525/model/ModifyClusterVirtualNodePoolRequest.cpp
   src/v20180525/model/DescribeRegionsResponse.cpp
   src/v20180525/model/CreateClusterRouteResponse.cpp
   src/v20180525/model/Release.cpp
   src/v20180525/model/DescribeEKSContainerInstanceRegionsRequest.cpp
   src/v20180525/model/DescribeECMInstancesRequest.cpp
+  src/v20180525/model/DrainClusterVirtualNodeResponse.cpp
   src/v20180525/model/DescribeVpcCniPodLimitsResponse.cpp
   src/v20180525/model/DescribeVersionsResponse.cpp
   src/v20180525/model/ScaleInClusterMasterRequest.cpp
   src/v20180525/model/DeleteEdgeClusterInstancesRequest.cpp
   src/v20180525/model/PrometheusAlertRule.cpp
+  src/v20180525/model/VirtualNodeSpec.cpp
   src/v20180525/model/ClusterNetworkSettings.cpp
   src/v20180525/model/DescribeImagesResponse.cpp
   src/v20180525/model/ClusterExtraArgs.cpp
-  src/v20180525/model/EdgeClusterAdvancedSettings.cpp
+  src/v20180525/model/DeleteClusterVirtualNodePoolResponse.cpp
   src/v20180525/model/CreateClusterEndpointVipResponse.cpp
   src/v20180525/model/TaskStepInfo.cpp
   src/v20180525/model/ECMZoneInstanceCountISP.cpp
@@ -962,6 +998,7 @@ set(tke_src
   src/v20180525/model/ModifyClusterNodePoolResponse.cpp
   src/v20180525/model/PrometheusAlertPolicyItem.cpp
   src/v20180525/model/ModifyPrometheusAgentExternalLabelsRequest.cpp
+  src/v20180525/model/EdgeClusterAdvancedSettings.cpp
   src/v20180525/model/PrometheusTarget.cpp
   src/v20180525/model/LoginSettings.cpp
   src/v20180525/model/DescribePrometheusTempResponse.cpp
@@ -1018,6 +1055,7 @@ set(tke_src
   src/v20180525/model/GPUArgs.cpp
   src/v20180525/model/RouteTableConflict.cpp
   src/v20180525/model/PrometheusInstanceOverview.cpp
+  src/v20180525/model/DescribeClusterVirtualNodeResponse.cpp
   src/v20180525/model/ScaleInMaster.cpp
   src/v20180525/model/RunPrometheusInstanceRequest.cpp
   src/v20180525/model/PendingRelease.cpp

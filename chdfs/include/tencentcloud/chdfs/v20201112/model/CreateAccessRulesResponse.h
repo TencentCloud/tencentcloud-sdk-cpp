@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/chdfs/v20201112/model/AccessRule.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,28 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取权限规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AccessRules 权限规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AccessRule> GetAccessRules() const;
+
+                    /**
+                     * 判断参数 AccessRules 是否已赋值
+                     * @return AccessRules 是否已赋值
+                     */
+                    bool AccessRulesHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 权限规则列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AccessRule> m_accessRules;
+                    bool m_accessRulesHasBeenSet;
 
                 };
             }

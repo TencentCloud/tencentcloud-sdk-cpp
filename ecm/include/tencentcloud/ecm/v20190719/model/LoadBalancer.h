@@ -383,6 +383,28 @@ namespace TencentCloud
                      */
                     bool LoadBalancerPassToTargetHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddressIPv6 负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAddressIPv6() const;
+
+                    /**
+                     * 设置负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AddressIPv6 负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAddressIPv6(const std::string& _addressIPv6);
+
+                    /**
+                     * 判断参数 AddressIPv6 是否已赋值
+                     * @return AddressIPv6 是否已赋值
+                     */
+                    bool AddressIPv6HasBeenSet() const;
+
                 private:
 
                     /**
@@ -490,6 +512,13 @@ namespace TencentCloud
                      */
                     bool m_loadBalancerPassToTarget;
                     bool m_loadBalancerPassToTargetHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的IPv6地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_addressIPv6;
+                    bool m_addressIPv6HasBeenSet;
 
                 };
             }

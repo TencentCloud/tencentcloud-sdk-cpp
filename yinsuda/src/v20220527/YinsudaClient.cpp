@@ -40,6 +40,49 @@ YinsudaClient::YinsudaClient(const Credential &credential, const string &region,
 }
 
 
+YinsudaClient::ApplyChorusOutcome YinsudaClient::ApplyChorus(const ApplyChorusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyChorus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyChorusResponse rsp = ApplyChorusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyChorusOutcome(rsp);
+        else
+            return ApplyChorusOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyChorusOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::ApplyChorusAsync(const ApplyChorusRequest& request, const ApplyChorusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyChorus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::ApplyChorusOutcomeCallable YinsudaClient::ApplyChorusCallable(const ApplyChorusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyChorusOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyChorus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YinsudaClient::BatchDescribeKTVMusicDetailsOutcome YinsudaClient::BatchDescribeKTVMusicDetails(const BatchDescribeKTVMusicDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchDescribeKTVMusicDetails");

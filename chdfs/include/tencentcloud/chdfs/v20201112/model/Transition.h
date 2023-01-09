@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DaysHasBeenSet() const;
 
                     /**
-                     * 获取转换类型（1：归档；2：删除；3：低频）
-                     * @return Type 转换类型（1：归档；2：删除；3：低频）
+                     * 获取转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
+                     * @return Type 转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
                      */
                     uint64_t GetType() const;
 
                     /**
-                     * 设置转换类型（1：归档；2：删除；3：低频）
-                     * @param Type 转换类型（1：归档；2：删除；3：低频）
+                     * 设置转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
+                     * @param Type 转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
                      */
                     void SetType(const uint64_t& _type);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_daysHasBeenSet;
 
                     /**
-                     * 转换类型（1：归档；2：删除；3：低频）
+                     * 转换类型（1：归档；2：删除；3：低频；4：深度归档；5：智能分层）
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;

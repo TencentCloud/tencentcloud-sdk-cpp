@@ -1573,17 +1573,17 @@ off：不支持
                     bool QnPrivateAccessHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS服务
+                     * 获取HTTPS服务，缺省时默认开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return HttpsBilling HTTPS服务
+                     * @return HttpsBilling HTTPS服务，缺省时默认开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HttpsBilling GetHttpsBilling() const;
 
                     /**
-                     * 设置HTTPS服务
+                     * 设置HTTPS服务，缺省时默认开启
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param HttpsBilling HTTPS服务
+                     * @param HttpsBilling HTTPS服务，缺省时默认开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHttpsBilling(const HttpsBilling& _httpsBilling);
@@ -2062,7 +2062,7 @@ off：不支持
                     bool m_qnPrivateAccessHasBeenSet;
 
                     /**
-                     * HTTPS服务
+                     * HTTPS服务，缺省时默认开启
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     HttpsBilling m_httpsBilling;

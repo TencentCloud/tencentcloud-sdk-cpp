@@ -25,7 +25,8 @@ using namespace std;
 
 VerifyPdfResponse::VerifyPdfResponse() :
     m_verifyResultHasBeenSet(false),
-    m_pdfVerifyResultsHasBeenSet(false)
+    m_pdfVerifyResultsHasBeenSet(false),
+    m_verifySerialNoHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome VerifyPdfResponse::Deserialize(const string &payload)
         m_pdfVerifyResultsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VerifySerialNo") && !rsp["VerifySerialNo"].IsNull())
+    {
+        if (!rsp["VerifySerialNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VerifySerialNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_verifySerialNo = string(rsp["VerifySerialNo"].GetString());
+        m_verifySerialNoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string VerifyPdfResponse::ToJsonString() const
         }
     }
 
+    if (m_verifySerialNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VerifySerialNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_verifySerialNo.c_str(), allocator).Move(), allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ vector<PdfVerifyResult> VerifyPdfResponse::GetPdfVerifyResults() const
 bool VerifyPdfResponse::PdfVerifyResultsHasBeenSet() const
 {
     return m_pdfVerifyResultsHasBeenSet;
+}
+
+string VerifyPdfResponse::GetVerifySerialNo() const
+{
+    return m_verifySerialNo;
+}
+
+bool VerifyPdfResponse::VerifySerialNoHasBeenSet() const
+{
+    return m_verifySerialNoHasBeenSet;
 }
 
 

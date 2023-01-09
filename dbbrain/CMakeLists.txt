@@ -42,6 +42,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DiagHistoryEventItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeProxySessionKillTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeMySqlProcessListResponse.h
+  include/tencentcloud/dbbrain/v20210527/model/SessionItem.h
   include/tencentcloud/dbbrain/v20210527/model/HealthStatus.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeTopSpaceTablesResponse.h
   include/tencentcloud/dbbrain/v20210527/model/TaskInfo.h
@@ -254,6 +255,7 @@ set(dbbrain_src
   src/v20210527/model/DiagHistoryEventItem.cpp
   src/v20210527/model/DescribeProxySessionKillTasksRequest.cpp
   src/v20210527/model/DescribeMySqlProcessListResponse.cpp
+  src/v20210527/model/SessionItem.cpp
   src/v20210527/model/HealthStatus.cpp
   src/v20210527/model/DescribeTopSpaceTablesResponse.cpp
   src/v20210527/model/TaskInfo.cpp

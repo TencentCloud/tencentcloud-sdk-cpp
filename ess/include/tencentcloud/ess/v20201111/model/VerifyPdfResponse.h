@@ -70,6 +70,18 @@ namespace TencentCloud
                      */
                     bool PdfVerifyResultsHasBeenSet() const;
 
+                    /**
+                     * 获取验签序列号
+                     * @return VerifySerialNo 验签序列号
+                     */
+                    std::string GetVerifySerialNo() const;
+
+                    /**
+                     * 判断参数 VerifySerialNo 是否已赋值
+                     * @return VerifySerialNo 是否已赋值
+                     */
+                    bool VerifySerialNoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +96,12 @@ namespace TencentCloud
                      */
                     std::vector<PdfVerifyResult> m_pdfVerifyResults;
                     bool m_pdfVerifyResultsHasBeenSet;
+
+                    /**
+                     * 验签序列号
+                     */
+                    std::string m_verifySerialNo;
+                    bool m_verifySerialNoHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ ApplyConcurrentRequest::ApplyConcurrentRequest() :
     m_userIdHasBeenSet(false),
     m_userIpHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_applicationVersionIdHasBeenSet(false)
+    m_applicationVersionIdHasBeenSet(false),
+    m_applicationIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string ApplyConcurrentRequest::ToJsonString() const
         string key = "ApplicationVersionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applicationVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_applicationIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApplicationId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_applicationId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void ApplyConcurrentRequest::SetApplicationVersionId(const string& _applicationV
 bool ApplyConcurrentRequest::ApplicationVersionIdHasBeenSet() const
 {
     return m_applicationVersionIdHasBeenSet;
+}
+
+string ApplyConcurrentRequest::GetApplicationId() const
+{
+    return m_applicationId;
+}
+
+void ApplyConcurrentRequest::SetApplicationId(const string& _applicationId)
+{
+    m_applicationId = _applicationId;
+    m_applicationIdHasBeenSet = true;
+}
+
+bool ApplyConcurrentRequest::ApplicationIdHasBeenSet() const
+{
+    return m_applicationIdHasBeenSet;
 }
 
 

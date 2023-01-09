@@ -35,7 +35,8 @@ LoadBalancer::LoadBalancer() :
     m_vipIspHasBeenSet(false),
     m_networkAttributesHasBeenSet(false),
     m_secureGroupsHasBeenSet(false),
-    m_loadBalancerPassToTargetHasBeenSet(false)
+    m_loadBalancerPassToTargetHasBeenSet(false),
+    m_addressIPv6HasBeenSet(false)
 {
 }
 
@@ -224,6 +225,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_loadBalancerPassToTargetHasBeenSet = true;
     }
 
+    if (value.HasMember("AddressIPv6") && !value["AddressIPv6"].IsNull())
+    {
+        if (!value["AddressIPv6"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.AddressIPv6` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressIPv6 = string(value["AddressIPv6"].GetString());
+        m_addressIPv6HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -368,6 +379,14 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LoadBalancerPassToTarget";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_loadBalancerPassToTarget, allocator);
+    }
+
+    if (m_addressIPv6HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressIPv6";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressIPv6.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -611,5 +630,21 @@ void LoadBalancer::SetLoadBalancerPassToTarget(const bool& _loadBalancerPassToTa
 bool LoadBalancer::LoadBalancerPassToTargetHasBeenSet() const
 {
     return m_loadBalancerPassToTargetHasBeenSet;
+}
+
+string LoadBalancer::GetAddressIPv6() const
+{
+    return m_addressIPv6;
+}
+
+void LoadBalancer::SetAddressIPv6(const string& _addressIPv6)
+{
+    m_addressIPv6 = _addressIPv6;
+    m_addressIPv6HasBeenSet = true;
+}
+
+bool LoadBalancer::AddressIPv6HasBeenSet() const
+{
+    return m_addressIPv6HasBeenSet;
 }
 

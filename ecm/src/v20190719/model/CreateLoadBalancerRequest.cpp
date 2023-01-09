@@ -31,7 +31,9 @@ CreateLoadBalancerRequest::CreateLoadBalancerRequest() :
     m_numberHasBeenSet(false),
     m_internetAccessibleHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_securityGroupsHasBeenSet(false)
+    m_securityGroupsHasBeenSet(false),
+    m_addressIPVersionHasBeenSet(false),
+    m_subnetIdHasBeenSet(false)
 {
 }
 
@@ -125,6 +127,22 @@ string CreateLoadBalancerRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_addressIPVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressIPVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_addressIPVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -277,6 +295,38 @@ void CreateLoadBalancerRequest::SetSecurityGroups(const vector<string>& _securit
 bool CreateLoadBalancerRequest::SecurityGroupsHasBeenSet() const
 {
     return m_securityGroupsHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetAddressIPVersion() const
+{
+    return m_addressIPVersion;
+}
+
+void CreateLoadBalancerRequest::SetAddressIPVersion(const string& _addressIPVersion)
+{
+    m_addressIPVersion = _addressIPVersion;
+    m_addressIPVersionHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::AddressIPVersionHasBeenSet() const
+{
+    return m_addressIPVersionHasBeenSet;
+}
+
+string CreateLoadBalancerRequest::GetSubnetId() const
+{
+    return m_subnetId;
+}
+
+void CreateLoadBalancerRequest::SetSubnetId(const string& _subnetId)
+{
+    m_subnetId = _subnetId;
+    m_subnetIdHasBeenSet = true;
+}
+
+bool CreateLoadBalancerRequest::SubnetIdHasBeenSet() const
+{
+    return m_subnetIdHasBeenSet;
 }
 
 

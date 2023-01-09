@@ -210,6 +210,42 @@ namespace TencentCloud
                      */
                     bool SecurityGroupsHasBeenSet() const;
 
+                    /**
+                     * 获取仅适用于公网负载均衡。IP版本，可取值：IPV4、IPv6FullChain，默认值 IPV4。说明：取值为IPv6FullChain，表示为IPv6版本。
+                     * @return AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPv6FullChain，默认值 IPV4。说明：取值为IPv6FullChain，表示为IPv6版本。
+                     */
+                    std::string GetAddressIPVersion() const;
+
+                    /**
+                     * 设置仅适用于公网负载均衡。IP版本，可取值：IPV4、IPv6FullChain，默认值 IPV4。说明：取值为IPv6FullChain，表示为IPv6版本。
+                     * @param AddressIPVersion 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPv6FullChain，默认值 IPV4。说明：取值为IPv6FullChain，表示为IPv6版本。
+                     */
+                    void SetAddressIPVersion(const std::string& _addressIPVersion);
+
+                    /**
+                     * 判断参数 AddressIPVersion 是否已赋值
+                     * @return AddressIPVersion 是否已赋值
+                     */
+                    bool AddressIPVersionHasBeenSet() const;
+
+                    /**
+                     * 获取在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     * @return SubnetId 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     */
+                    std::string GetSubnetId() const;
+
+                    /**
+                     * 设置在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     * @param SubnetId 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     */
+                    void SetSubnetId(const std::string& _subnetId);
+
+                    /**
+                     * 判断参数 SubnetId 是否已赋值
+                     * @return SubnetId 是否已赋值
+                     */
+                    bool SubnetIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -266,6 +302,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_securityGroups;
                     bool m_securityGroupsHasBeenSet;
+
+                    /**
+                     * 仅适用于公网负载均衡。IP版本，可取值：IPV4、IPv6FullChain，默认值 IPV4。说明：取值为IPv6FullChain，表示为IPv6版本。
+                     */
+                    std::string m_addressIPVersion;
+                    bool m_addressIPVersionHasBeenSet;
+
+                    /**
+                     * 在购买IPV6负载均衡实例的情况下，必须指定子网 ID, 此参数必填。
+                     */
+                    std::string m_subnetId;
+                    bool m_subnetIdHasBeenSet;
 
                 };
             }

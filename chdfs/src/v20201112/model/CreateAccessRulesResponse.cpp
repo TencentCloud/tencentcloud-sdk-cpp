@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Chdfs::V20201112::Model;
 using namespace std;
 
-CreateAccessRulesResponse::CreateAccessRulesResponse()
+CreateAccessRulesResponse::CreateAccessRulesResponse() :
+    m_accessRulesHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome CreateAccessRulesResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("AccessRules") && !rsp["AccessRules"].IsNull())
+    {
+        if (!rsp["AccessRules"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AccessRules` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["AccessRules"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AccessRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_accessRules.push_back(item);
+        }
+        m_accessRulesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +91,21 @@ string CreateAccessRulesResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_accessRulesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AccessRules";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_accessRules.begin(); itr != m_accessRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string CreateAccessRulesResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<AccessRule> CreateAccessRulesResponse::GetAccessRules() const
+{
+    return m_accessRules;
+}
+
+bool CreateAccessRulesResponse::AccessRulesHasBeenSet() const
+{
+    return m_accessRulesHasBeenSet;
+}
 
 

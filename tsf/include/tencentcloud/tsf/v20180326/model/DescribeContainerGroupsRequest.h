@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SearchWordHasBeenSet() const;
 
                     /**
-                     * 获取分组所属应用ID
-                     * @return ApplicationId 分组所属应用ID
+                     * 获取分组所属应用ID。必填
+                     * @return ApplicationId 分组所属应用ID。必填
                      */
                     std::string GetApplicationId() const;
 
                     /**
-                     * 设置分组所属应用ID
-                     * @param ApplicationId 分组所属应用ID
+                     * 设置分组所属应用ID。必填
+                     * @param ApplicationId 分组所属应用ID。必填
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_searchWordHasBeenSet;
 
                     /**
-                     * 分组所属应用ID
+                     * 分组所属应用ID。必填
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;

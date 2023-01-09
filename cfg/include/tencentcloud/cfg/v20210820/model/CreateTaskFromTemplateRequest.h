@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取从经验库中查询到的经验模版ID
-                     * @return TemplateId 从经验库中查询到的经验模版ID
+                     * 获取从经验库中查询到的经验模板ID
+                     * @return TemplateId 从经验库中查询到的经验模板ID
                      */
                     uint64_t GetTemplateId() const;
 
                     /**
-                     * 设置从经验库中查询到的经验模版ID
-                     * @param TemplateId 从经验库中查询到的经验模版ID
+                     * 设置从经验库中查询到的经验模板ID
+                     * @param TemplateId 从经验库中查询到的经验模板ID
                      */
                     void SetTemplateId(const uint64_t& _templateId);
 
@@ -82,7 +82,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 从经验库中查询到的经验模版ID
+                     * 从经验库中查询到的经验模板ID
                      */
                     uint64_t m_templateId;
                     bool m_templateIdHasBeenSet;

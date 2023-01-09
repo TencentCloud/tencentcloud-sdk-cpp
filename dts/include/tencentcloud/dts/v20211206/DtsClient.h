@@ -281,7 +281,7 @@ namespace TencentCloud
                 ContinueMigrateJobOutcomeCallable ContinueMigrateJobCallable(const Model::ContinueMigrateJobRequest& request);
 
                 /**
-                 *恢复处于暂停中中的数据同步任务。
+                 *恢复处于暂停中的数据同步任务。
                  * @param req ContinueSyncJobRequest
                  * @return ContinueSyncJobOutcome
                  */
