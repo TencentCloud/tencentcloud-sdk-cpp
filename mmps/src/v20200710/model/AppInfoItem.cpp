@@ -29,7 +29,10 @@ AppInfoItem::AppInfoItem() :
     m_reportTitleHasBeenSet(false),
     m_behaviorUrlHasBeenSet(false),
     m_behaviorTitleHasBeenSet(false),
-    m_highRiskCountHasBeenSet(false)
+    m_highRiskCountHasBeenSet(false),
+    m_privacyTextNameHasBeenSet(false),
+    m_softwareMD5HasBeenSet(false),
+    m_privacyTextMD5HasBeenSet(false)
 {
 }
 
@@ -128,6 +131,36 @@ CoreInternalOutcome AppInfoItem::Deserialize(const rapidjson::Value &value)
         m_highRiskCountHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivacyTextName") && !value["PrivacyTextName"].IsNull())
+    {
+        if (!value["PrivacyTextName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfoItem.PrivacyTextName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privacyTextName = string(value["PrivacyTextName"].GetString());
+        m_privacyTextNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SoftwareMD5") && !value["SoftwareMD5"].IsNull())
+    {
+        if (!value["SoftwareMD5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfoItem.SoftwareMD5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_softwareMD5 = string(value["SoftwareMD5"].GetString());
+        m_softwareMD5HasBeenSet = true;
+    }
+
+    if (value.HasMember("PrivacyTextMD5") && !value["PrivacyTextMD5"].IsNull())
+    {
+        if (!value["PrivacyTextMD5"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppInfoItem.PrivacyTextMD5` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privacyTextMD5 = string(value["PrivacyTextMD5"].GetString());
+        m_privacyTextMD5HasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +238,30 @@ void AppInfoItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "HighRiskCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_highRiskCount, allocator);
+    }
+
+    if (m_privacyTextNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivacyTextName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privacyTextName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_softwareMD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SoftwareMD5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_softwareMD5.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privacyTextMD5HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivacyTextMD5";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privacyTextMD5.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +409,53 @@ void AppInfoItem::SetHighRiskCount(const int64_t& _highRiskCount)
 bool AppInfoItem::HighRiskCountHasBeenSet() const
 {
     return m_highRiskCountHasBeenSet;
+}
+
+string AppInfoItem::GetPrivacyTextName() const
+{
+    return m_privacyTextName;
+}
+
+void AppInfoItem::SetPrivacyTextName(const string& _privacyTextName)
+{
+    m_privacyTextName = _privacyTextName;
+    m_privacyTextNameHasBeenSet = true;
+}
+
+bool AppInfoItem::PrivacyTextNameHasBeenSet() const
+{
+    return m_privacyTextNameHasBeenSet;
+}
+
+string AppInfoItem::GetSoftwareMD5() const
+{
+    return m_softwareMD5;
+}
+
+void AppInfoItem::SetSoftwareMD5(const string& _softwareMD5)
+{
+    m_softwareMD5 = _softwareMD5;
+    m_softwareMD5HasBeenSet = true;
+}
+
+bool AppInfoItem::SoftwareMD5HasBeenSet() const
+{
+    return m_softwareMD5HasBeenSet;
+}
+
+string AppInfoItem::GetPrivacyTextMD5() const
+{
+    return m_privacyTextMD5;
+}
+
+void AppInfoItem::SetPrivacyTextMD5(const string& _privacyTextMD5)
+{
+    m_privacyTextMD5 = _privacyTextMD5;
+    m_privacyTextMD5HasBeenSet = true;
+}
+
+bool AppInfoItem::PrivacyTextMD5HasBeenSet() const
+{
+    return m_privacyTextMD5HasBeenSet;
 }
 

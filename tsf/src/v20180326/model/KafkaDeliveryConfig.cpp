@@ -27,7 +27,13 @@ KafkaDeliveryConfig::KafkaDeliveryConfig() :
     m_kafkaVIpHasBeenSet(false),
     m_kafkaVPortHasBeenSet(false),
     m_topicHasBeenSet(false),
-    m_lineRuleHasBeenSet(false)
+    m_lineRuleHasBeenSet(false),
+    m_enableAuthHasBeenSet(false),
+    m_usernameHasBeenSet(false),
+    m_passwordHasBeenSet(false),
+    m_kafkaInfosHasBeenSet(false),
+    m_enableGlobalLineRuleHasBeenSet(false),
+    m_customRuleHasBeenSet(false)
 {
 }
 
@@ -109,6 +115,76 @@ CoreInternalOutcome KafkaDeliveryConfig::Deserialize(const rapidjson::Value &val
         m_lineRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("EnableAuth") && !value["EnableAuth"].IsNull())
+    {
+        if (!value["EnableAuth"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaDeliveryConfig.EnableAuth` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAuth = value["EnableAuth"].GetBool();
+        m_enableAuthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Username") && !value["Username"].IsNull())
+    {
+        if (!value["Username"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaDeliveryConfig.Username` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_username = string(value["Username"].GetString());
+        m_usernameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaDeliveryConfig.Password` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_password = string(value["Password"].GetString());
+        m_passwordHasBeenSet = true;
+    }
+
+    if (value.HasMember("KafkaInfos") && !value["KafkaInfos"].IsNull())
+    {
+        if (!value["KafkaInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `KafkaDeliveryConfig.KafkaInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KafkaInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeliveryKafkaInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_kafkaInfos.push_back(item);
+        }
+        m_kafkaInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableGlobalLineRule") && !value["EnableGlobalLineRule"].IsNull())
+    {
+        if (!value["EnableGlobalLineRule"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaDeliveryConfig.EnableGlobalLineRule` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableGlobalLineRule = value["EnableGlobalLineRule"].GetBool();
+        m_enableGlobalLineRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomRule") && !value["CustomRule"].IsNull())
+    {
+        if (!value["CustomRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaDeliveryConfig.CustomRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customRule = string(value["CustomRule"].GetString());
+        m_customRuleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +251,61 @@ void KafkaDeliveryConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "LineRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_lineRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAuth, allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kafkaInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_kafkaInfos.begin(); itr != m_kafkaInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_enableGlobalLineRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGlobalLineRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableGlobalLineRule, allocator);
+    }
+
+    if (m_customRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customRule.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +421,101 @@ void KafkaDeliveryConfig::SetLineRule(const string& _lineRule)
 bool KafkaDeliveryConfig::LineRuleHasBeenSet() const
 {
     return m_lineRuleHasBeenSet;
+}
+
+bool KafkaDeliveryConfig::GetEnableAuth() const
+{
+    return m_enableAuth;
+}
+
+void KafkaDeliveryConfig::SetEnableAuth(const bool& _enableAuth)
+{
+    m_enableAuth = _enableAuth;
+    m_enableAuthHasBeenSet = true;
+}
+
+bool KafkaDeliveryConfig::EnableAuthHasBeenSet() const
+{
+    return m_enableAuthHasBeenSet;
+}
+
+string KafkaDeliveryConfig::GetUsername() const
+{
+    return m_username;
+}
+
+void KafkaDeliveryConfig::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool KafkaDeliveryConfig::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
+}
+
+string KafkaDeliveryConfig::GetPassword() const
+{
+    return m_password;
+}
+
+void KafkaDeliveryConfig::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool KafkaDeliveryConfig::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+vector<DeliveryKafkaInfo> KafkaDeliveryConfig::GetKafkaInfos() const
+{
+    return m_kafkaInfos;
+}
+
+void KafkaDeliveryConfig::SetKafkaInfos(const vector<DeliveryKafkaInfo>& _kafkaInfos)
+{
+    m_kafkaInfos = _kafkaInfos;
+    m_kafkaInfosHasBeenSet = true;
+}
+
+bool KafkaDeliveryConfig::KafkaInfosHasBeenSet() const
+{
+    return m_kafkaInfosHasBeenSet;
+}
+
+bool KafkaDeliveryConfig::GetEnableGlobalLineRule() const
+{
+    return m_enableGlobalLineRule;
+}
+
+void KafkaDeliveryConfig::SetEnableGlobalLineRule(const bool& _enableGlobalLineRule)
+{
+    m_enableGlobalLineRule = _enableGlobalLineRule;
+    m_enableGlobalLineRuleHasBeenSet = true;
+}
+
+bool KafkaDeliveryConfig::EnableGlobalLineRuleHasBeenSet() const
+{
+    return m_enableGlobalLineRuleHasBeenSet;
+}
+
+string KafkaDeliveryConfig::GetCustomRule() const
+{
+    return m_customRule;
+}
+
+void KafkaDeliveryConfig::SetCustomRule(const string& _customRule)
+{
+    m_customRule = _customRule;
+    m_customRuleHasBeenSet = true;
+}
+
+bool KafkaDeliveryConfig::CustomRuleHasBeenSet() const
+{
+    return m_customRuleHasBeenSet;
 }
 

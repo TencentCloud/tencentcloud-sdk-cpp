@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/DeliveryKafkaInfo.h>
 
 
 namespace TencentCloud
@@ -200,6 +201,138 @@ namespace TencentCloud
                      */
                     bool LineRuleHasBeenSet() const;
 
+                    /**
+                     * 获取是否需要认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableAuth 是否需要认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableAuth() const;
+
+                    /**
+                     * 设置是否需要认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableAuth 是否需要认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableAuth(const bool& _enableAuth);
+
+                    /**
+                     * 判断参数 EnableAuth 是否已赋值
+                     * @return EnableAuth 是否已赋值
+                     */
+                    bool EnableAuthHasBeenSet() const;
+
+                    /**
+                     * 获取用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Username 用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Username 用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     */
+                    bool UsernameHasBeenSet() const;
+
+                    /**
+                     * 获取密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Password 密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Password 密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     */
+                    bool PasswordHasBeenSet() const;
+
+                    /**
+                     * 获取投递的topic和path
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaInfos 投递的topic和path
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeliveryKafkaInfo> GetKafkaInfos() const;
+
+                    /**
+                     * 设置投递的topic和path
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaInfos 投递的topic和path
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaInfos(const std::vector<DeliveryKafkaInfo>& _kafkaInfos);
+
+                    /**
+                     * 判断参数 KafkaInfos 是否已赋值
+                     * @return KafkaInfos 是否已赋值
+                     */
+                    bool KafkaInfosHasBeenSet() const;
+
+                    /**
+                     * 获取是否应用单行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableGlobalLineRule 是否应用单行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableGlobalLineRule() const;
+
+                    /**
+                     * 设置是否应用单行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableGlobalLineRule 是否应用单行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableGlobalLineRule(const bool& _enableGlobalLineRule);
+
+                    /**
+                     * 判断参数 EnableGlobalLineRule 是否已赋值
+                     * @return EnableGlobalLineRule 是否已赋值
+                     */
+                    bool EnableGlobalLineRuleHasBeenSet() const;
+
+                    /**
+                     * 获取自定义分行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomRule 自定义分行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCustomRule() const;
+
+                    /**
+                     * 设置自定义分行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CustomRule 自定义分行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomRule(const std::string& _customRule);
+
+                    /**
+                     * 判断参数 CustomRule 是否已赋值
+                     * @return CustomRule 是否已赋值
+                     */
+                    bool CustomRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +383,48 @@ namespace TencentCloud
                      */
                     std::string m_lineRule;
                     bool m_lineRuleHasBeenSet;
+
+                    /**
+                     * 是否需要认证
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableAuth;
+                    bool m_enableAuthHasBeenSet;
+
+                    /**
+                     * 用户名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
+
+                    /**
+                     * 密码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
+
+                    /**
+                     * 投递的topic和path
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeliveryKafkaInfo> m_kafkaInfos;
+                    bool m_kafkaInfosHasBeenSet;
+
+                    /**
+                     * 是否应用单行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableGlobalLineRule;
+                    bool m_enableGlobalLineRuleHasBeenSet;
+
+                    /**
+                     * 自定义分行规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customRule;
+                    bool m_customRuleHasBeenSet;
 
                 };
             }

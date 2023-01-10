@@ -208,6 +208,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DeleteContainerGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteServerlessGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/DeleteImageTagsResponse.h
+  include/tencentcloud/tsf/v20180326/model/DeliveryKafkaInfo.h
   include/tencentcloud/tsf/v20180326/model/GroupUnitApiDailyUseStatistics.h
   include/tencentcloud/tsf/v20180326/model/DisableUnitRouteResponse.h
   include/tencentcloud/tsf/v20180326/model/ExecuteTaskRequest.h
@@ -764,6 +765,7 @@ set(tsf_src
   src/v20180326/model/DeleteContainerGroupResponse.cpp
   src/v20180326/model/DeleteServerlessGroupResponse.cpp
   src/v20180326/model/DeleteImageTagsResponse.cpp
+  src/v20180326/model/DeliveryKafkaInfo.cpp
   src/v20180326/model/GroupUnitApiDailyUseStatistics.cpp
   src/v20180326/model/DisableUnitRouteResponse.cpp
   src/v20180326/model/ExecuteTaskRequest.cpp

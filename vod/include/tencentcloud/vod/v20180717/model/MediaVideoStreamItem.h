@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/DynamicRangeInfo.h>
 
 
 namespace TencentCloud
@@ -154,6 +155,28 @@ namespace TencentCloud
                      */
                     bool CodecTagHasBeenSet() const;
 
+                    /**
+                     * 获取画面动态范围信息。
+<li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
+                     * @return DynamicRangeInfo 画面动态范围信息。
+<li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
+                     */
+                    DynamicRangeInfo GetDynamicRangeInfo() const;
+
+                    /**
+                     * 设置画面动态范围信息。
+<li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
+                     * @param DynamicRangeInfo 画面动态范围信息。
+<li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
+                     */
+                    void SetDynamicRangeInfo(const DynamicRangeInfo& _dynamicRangeInfo);
+
+                    /**
+                     * 判断参数 DynamicRangeInfo 是否已赋值
+                     * @return DynamicRangeInfo 是否已赋值
+                     */
+                    bool DynamicRangeInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_codecTag;
                     bool m_codecTagHasBeenSet;
+
+                    /**
+                     * 画面动态范围信息。
+<li><font color=red>注意</font>：在 2023-01-10T00:00:00Z 后处理的转码文件，此字段有效。</li>
+                     */
+                    DynamicRangeInfo m_dynamicRangeInfo;
+                    bool m_dynamicRangeInfoHasBeenSet;
 
                 };
             }

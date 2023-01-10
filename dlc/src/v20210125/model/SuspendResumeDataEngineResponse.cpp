@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Thpc::V20220401::Model;
+using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-DescribeClusterStorageOptionResponse::DescribeClusterStorageOptionResponse() :
-    m_storageOptionHasBeenSet(false)
+SuspendResumeDataEngineResponse::SuspendResumeDataEngineResponse() :
+    m_dataEngineNameHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterStorageOptionResponse::Deserialize(const string &payload)
+CoreInternalOutcome SuspendResumeDataEngineResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome DescribeClusterStorageOptionResponse::Deserialize(const stri
     }
 
 
-    if (rsp.HasMember("StorageOption") && !rsp["StorageOption"].IsNull())
+    if (rsp.HasMember("DataEngineName") && !rsp["DataEngineName"].IsNull())
     {
-        if (!rsp["StorageOption"].IsObject())
+        if (!rsp["DataEngineName"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `StorageOption` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DataEngineName` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_storageOption.Deserialize(rsp["StorageOption"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_storageOptionHasBeenSet = true;
+        m_dataEngineName = string(rsp["DataEngineName"].GetString());
+        m_dataEngineNameHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeClusterStorageOptionResponse::ToJsonString() const
+string SuspendResumeDataEngineResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_storageOptionHasBeenSet)
+    if (m_dataEngineNameHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StorageOption";
+        string key = "DataEngineName";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_storageOption.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dataEngineName.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string DescribeClusterStorageOptionResponse::ToJsonString() const
 }
 
 
-StorageOptionOverview DescribeClusterStorageOptionResponse::GetStorageOption() const
+string SuspendResumeDataEngineResponse::GetDataEngineName() const
 {
-    return m_storageOption;
+    return m_dataEngineName;
 }
 
-bool DescribeClusterStorageOptionResponse::StorageOptionHasBeenSet() const
+bool SuspendResumeDataEngineResponse::DataEngineNameHasBeenSet() const
 {
-    return m_storageOptionHasBeenSet;
+    return m_dataEngineNameHasBeenSet;
 }
 
 

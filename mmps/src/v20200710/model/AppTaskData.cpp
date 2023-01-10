@@ -28,7 +28,8 @@ AppTaskData::AppTaskData() :
     m_sourceHasBeenSet(false),
     m_appInfoHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_contactNameHasBeenSet(false)
 {
 }
 
@@ -124,6 +125,16 @@ CoreInternalOutcome AppTaskData::Deserialize(const rapidjson::Value &value)
         m_endTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("ContactName") && !value["ContactName"].IsNull())
+    {
+        if (!value["ContactName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AppTaskData.ContactName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contactName = string(value["ContactName"].GetString());
+        m_contactNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +205,14 @@ void AppTaskData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "EndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_endTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contactNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContactName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contactName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -325,5 +344,21 @@ void AppTaskData::SetEndTime(const string& _endTime)
 bool AppTaskData::EndTimeHasBeenSet() const
 {
     return m_endTimeHasBeenSet;
+}
+
+string AppTaskData::GetContactName() const
+{
+    return m_contactName;
+}
+
+void AppTaskData::SetContactName(const string& _contactName)
+{
+    m_contactName = _contactName;
+    m_contactNameHasBeenSet = true;
+}
+
+bool AppTaskData::ContactNameHasBeenSet() const
+{
+    return m_contactNameHasBeenSet;
 }
 

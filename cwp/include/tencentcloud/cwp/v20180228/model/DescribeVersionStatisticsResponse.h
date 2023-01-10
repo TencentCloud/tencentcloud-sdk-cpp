@@ -79,6 +79,18 @@ namespace TencentCloud
                      */
                     bool UltimateVersionNumHasBeenSet() const;
 
+                    /**
+                     * 获取普惠版数量
+                     * @return GeneralVersionNum 普惠版数量
+                     */
+                    uint64_t GetGeneralVersionNum() const;
+
+                    /**
+                     * 判断参数 GeneralVersionNum 是否已赋值
+                     * @return GeneralVersionNum 是否已赋值
+                     */
+                    bool GeneralVersionNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +110,12 @@ namespace TencentCloud
                      */
                     uint64_t m_ultimateVersionNum;
                     bool m_ultimateVersionNumHasBeenSet;
+
+                    /**
+                     * 普惠版数量
+                     */
+                    uint64_t m_generalVersionNum;
+                    bool m_generalVersionNumHasBeenSet;
 
                 };
             }

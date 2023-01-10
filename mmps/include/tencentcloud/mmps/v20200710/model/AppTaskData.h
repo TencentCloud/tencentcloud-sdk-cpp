@@ -195,6 +195,28 @@ namespace TencentCloud
                      */
                     bool EndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取联系人信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContactName 联系人信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContactName() const;
+
+                    /**
+                     * 设置联系人信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContactName 联系人信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContactName(const std::string& _contactName);
+
+                    /**
+                     * 判断参数 ContactName 是否已赋值
+                     * @return ContactName 是否已赋值
+                     */
+                    bool ContactNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,6 +267,13 @@ namespace TencentCloud
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
+
+                    /**
+                     * 联系人信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contactName;
+                    bool m_contactNameHasBeenSet;
 
                 };
             }

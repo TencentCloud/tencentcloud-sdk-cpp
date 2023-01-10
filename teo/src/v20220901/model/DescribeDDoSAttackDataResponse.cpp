@@ -14,21 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionResponse.h>
+#include <tencentcloud/teo/v20220901/model/DescribeDDoSAttackDataResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Thpc::V20220401::Model;
+using namespace TencentCloud::Teo::V20220901::Model;
 using namespace std;
 
-DescribeClusterStorageOptionResponse::DescribeClusterStorageOptionResponse() :
-    m_storageOptionHasBeenSet(false)
+DescribeDDoSAttackDataResponse::DescribeDDoSAttackDataResponse() :
+    m_totalCountHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeClusterStorageOptionResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDDoSAttackDataResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +63,67 @@ CoreInternalOutcome DescribeClusterStorageOptionResponse::Deserialize(const stri
     }
 
 
-    if (rsp.HasMember("StorageOption") && !rsp["StorageOption"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["StorageOption"].IsObject())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `StorageOption` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
 
-        CoreInternalOutcome outcome = m_storageOption.Deserialize(rsp["StorageOption"]);
-        if (!outcome.IsSuccess())
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Data` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Data"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
+            SecEntry item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_data.push_back(item);
         }
-
-        m_storageOptionHasBeenSet = true;
+        m_dataHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeClusterStorageOptionResponse::ToJsonString() const
+string DescribeDDoSAttackDataResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_storageOptionHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StorageOption";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_storageOption.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_data.begin(); itr != m_data.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +138,24 @@ string DescribeClusterStorageOptionResponse::ToJsonString() const
 }
 
 
-StorageOptionOverview DescribeClusterStorageOptionResponse::GetStorageOption() const
+uint64_t DescribeDDoSAttackDataResponse::GetTotalCount() const
 {
-    return m_storageOption;
+    return m_totalCount;
 }
 
-bool DescribeClusterStorageOptionResponse::StorageOptionHasBeenSet() const
+bool DescribeDDoSAttackDataResponse::TotalCountHasBeenSet() const
 {
-    return m_storageOptionHasBeenSet;
+    return m_totalCountHasBeenSet;
+}
+
+vector<SecEntry> DescribeDDoSAttackDataResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DescribeDDoSAttackDataResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

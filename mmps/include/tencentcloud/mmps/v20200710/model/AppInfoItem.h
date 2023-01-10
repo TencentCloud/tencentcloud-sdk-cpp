@@ -236,6 +236,72 @@ namespace TencentCloud
                      */
                     bool HighRiskCountHasBeenSet() const;
 
+                    /**
+                     * 获取隐私申明文件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrivacyTextName 隐私申明文件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPrivacyTextName() const;
+
+                    /**
+                     * 设置隐私申明文件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PrivacyTextName 隐私申明文件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrivacyTextName(const std::string& _privacyTextName);
+
+                    /**
+                     * 判断参数 PrivacyTextName 是否已赋值
+                     * @return PrivacyTextName 是否已赋值
+                     */
+                    bool PrivacyTextNameHasBeenSet() const;
+
+                    /**
+                     * 获取软件MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SoftwareMD5 软件MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSoftwareMD5() const;
+
+                    /**
+                     * 设置软件MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SoftwareMD5 软件MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSoftwareMD5(const std::string& _softwareMD5);
+
+                    /**
+                     * 判断参数 SoftwareMD5 是否已赋值
+                     * @return SoftwareMD5 是否已赋值
+                     */
+                    bool SoftwareMD5HasBeenSet() const;
+
+                    /**
+                     * 获取隐私文本MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PrivacyTextMD5 隐私文本MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPrivacyTextMD5() const;
+
+                    /**
+                     * 设置隐私文本MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PrivacyTextMD5 隐私文本MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrivacyTextMD5(const std::string& _privacyTextMD5);
+
+                    /**
+                     * 判断参数 PrivacyTextMD5 是否已赋值
+                     * @return PrivacyTextMD5 是否已赋值
+                     */
+                    bool PrivacyTextMD5HasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,6 +364,27 @@ namespace TencentCloud
                      */
                     int64_t m_highRiskCount;
                     bool m_highRiskCountHasBeenSet;
+
+                    /**
+                     * 隐私申明文件名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privacyTextName;
+                    bool m_privacyTextNameHasBeenSet;
+
+                    /**
+                     * 软件MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_softwareMD5;
+                    bool m_softwareMD5HasBeenSet;
+
+                    /**
+                     * 隐私文本MD5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_privacyTextMD5;
+                    bool m_privacyTextMD5HasBeenSet;
 
                 };
             }

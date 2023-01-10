@@ -508,6 +508,28 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取API路径匹配类型。normal：普通API；wildcard：通配API。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ApiMatchType API路径匹配类型。normal：普通API；wildcard：通配API。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetApiMatchType() const;
+
+                    /**
+                     * 设置API路径匹配类型。normal：普通API；wildcard：通配API。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ApiMatchType API路径匹配类型。normal：普通API；wildcard：通配API。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetApiMatchType(const std::string& _apiMatchType);
+
+                    /**
+                     * 判断参数 ApiMatchType 是否已赋值
+                     * @return ApiMatchType 是否已赋值
+                     */
+                    bool ApiMatchTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -656,6 +678,13 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * API路径匹配类型。normal：普通API；wildcard：通配API。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_apiMatchType;
+                    bool m_apiMatchTypeHasBeenSet;
 
                 };
             }

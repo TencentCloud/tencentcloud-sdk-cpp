@@ -66,20 +66,24 @@ namespace TencentCloud
 
                     /**
                      * 获取审核的内容，可选值：
-<li>Media：原始音视频。</li>
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
                      * @return ReviewContents 审核的内容，可选值：
-<li>Media：原始音视频。</li>
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
                      */
                     std::vector<std::string> GetReviewContents() const;
 
                     /**
                      * 设置审核的内容，可选值：
-<li>Media：原始音视频。</li>
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
                      * @param ReviewContents 审核的内容，可选值：
-<li>Media：原始音视频。</li>
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
                      */
                     void SetReviewContents(const std::vector<std::string>& _reviewContents);
@@ -100,7 +104,8 @@ namespace TencentCloud
 
                     /**
                      * 审核的内容，可选值：
-<li>Media：原始音视频。</li>
+<li>Media：原始音视频；</li>
+<li>Cover：封面。</li>
 不填或填空数组时，默认为审核 Media。
                      */
                     std::vector<std::string> m_reviewContents;

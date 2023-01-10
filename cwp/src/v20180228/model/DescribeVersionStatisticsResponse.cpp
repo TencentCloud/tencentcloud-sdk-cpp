@@ -26,7 +26,8 @@ using namespace std;
 DescribeVersionStatisticsResponse::DescribeVersionStatisticsResponse() :
     m_basicVersionNumHasBeenSet(false),
     m_proVersionNumHasBeenSet(false),
-    m_ultimateVersionNumHasBeenSet(false)
+    m_ultimateVersionNumHasBeenSet(false),
+    m_generalVersionNumHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeVersionStatisticsResponse::Deserialize(const string 
         m_ultimateVersionNumHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GeneralVersionNum") && !rsp["GeneralVersionNum"].IsNull())
+    {
+        if (!rsp["GeneralVersionNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `GeneralVersionNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_generalVersionNum = rsp["GeneralVersionNum"].GetUint64();
+        m_generalVersionNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeVersionStatisticsResponse::ToJsonString() const
         string key = "UltimateVersionNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ultimateVersionNum, allocator);
+    }
+
+    if (m_generalVersionNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GeneralVersionNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_generalVersionNum, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ uint64_t DescribeVersionStatisticsResponse::GetUltimateVersionNum() const
 bool DescribeVersionStatisticsResponse::UltimateVersionNumHasBeenSet() const
 {
     return m_ultimateVersionNumHasBeenSet;
+}
+
+uint64_t DescribeVersionStatisticsResponse::GetGeneralVersionNum() const
+{
+    return m_generalVersionNum;
+}
+
+bool DescribeVersionStatisticsResponse::GeneralVersionNumHasBeenSet() const
+{
+    return m_generalVersionNumHasBeenSet;
 }
 
 

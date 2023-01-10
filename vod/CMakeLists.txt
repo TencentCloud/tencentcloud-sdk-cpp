@@ -603,6 +603,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/CreateSubAppIdRequest.h
   include/tencentcloud/vod/v20180717/model/DescribeProcedureTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/SearchMediaRequest.h
+  include/tencentcloud/vod/v20180717/model/DynamicRangeInfo.h
   include/tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/MediaContentReviewOcrTextSegmentItem.h
   include/tencentcloud/vod/v20180717/model/AudioVolumeParam.h
@@ -1250,6 +1251,7 @@ set(vod_src
   src/v20180717/model/CreateSubAppIdRequest.cpp
   src/v20180717/model/DescribeProcedureTemplatesResponse.cpp
   src/v20180717/model/SearchMediaRequest.cpp
+  src/v20180717/model/DynamicRangeInfo.cpp
   src/v20180717/model/CreateSampleSnapshotTemplateRequest.cpp
   src/v20180717/model/MediaContentReviewOcrTextSegmentItem.cpp
   src/v20180717/model/AudioVolumeParam.cpp

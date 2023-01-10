@@ -1158,6 +1158,49 @@ TeoClient::DescribeContentQuotaOutcomeCallable TeoClient::DescribeContentQuotaCa
     return task->get_future();
 }
 
+TeoClient::DescribeDDoSAttackDataOutcome TeoClient::DescribeDDoSAttackData(const DescribeDDoSAttackDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDDoSAttackData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDDoSAttackDataResponse rsp = DescribeDDoSAttackDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDDoSAttackDataOutcome(rsp);
+        else
+            return DescribeDDoSAttackDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDDoSAttackDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeDDoSAttackDataAsync(const DescribeDDoSAttackDataRequest& request, const DescribeDDoSAttackDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDDoSAttackData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeDDoSAttackDataOutcomeCallable TeoClient::DescribeDDoSAttackDataCallable(const DescribeDDoSAttackDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDDoSAttackDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDDoSAttackData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeDDoSAttackTopDataOutcome TeoClient::DescribeDDoSAttackTopData(const DescribeDDoSAttackTopDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDDoSAttackTopData");

@@ -41,7 +41,8 @@ ApiDetailInfo::ApiDetailInfo() :
     m_timeoutHasBeenSet(false),
     m_hostHasBeenSet(false),
     m_apiTypeHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_apiMatchTypeHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome ApiDetailInfo::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("ApiMatchType") && !value["ApiMatchType"].IsNull())
+    {
+        if (!value["ApiMatchType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiDetailInfo.ApiMatchType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiMatchType = string(value["ApiMatchType"].GetString());
+        m_apiMatchTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void ApiDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apiMatchTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiMatchType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_apiMatchType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void ApiDetailInfo::SetDescription(const string& _description)
 bool ApiDetailInfo::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+string ApiDetailInfo::GetApiMatchType() const
+{
+    return m_apiMatchType;
+}
+
+void ApiDetailInfo::SetApiMatchType(const string& _apiMatchType)
+{
+    m_apiMatchType = _apiMatchType;
+    m_apiMatchTypeHasBeenSet = true;
+}
+
+bool ApiDetailInfo::ApiMatchTypeHasBeenSet() const
+{
+    return m_apiMatchTypeHasBeenSet;
 }
 

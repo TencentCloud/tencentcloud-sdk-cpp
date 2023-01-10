@@ -14,55 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_THPC_V20220401_MODEL_DESCRIBECLUSTERSTORAGEOPTIONRESPONSE_H_
-#define TENCENTCLOUD_THPC_V20220401_MODEL_DESCRIBECLUSTERSTORAGEOPTIONRESPONSE_H_
+#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_SUSPENDRESUMEDATAENGINERESPONSE_H_
+#define TENCENTCLOUD_DLC_V20210125_MODEL_SUSPENDRESUMEDATAENGINERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/thpc/v20220401/model/StorageOptionOverview.h>
 
 
 namespace TencentCloud
 {
-    namespace Thpc
+    namespace Dlc
     {
-        namespace V20220401
+        namespace V20210125
         {
             namespace Model
             {
                 /**
-                * DescribeClusterStorageOption返回参数结构体
+                * SuspendResumeDataEngine返回参数结构体
                 */
-                class DescribeClusterStorageOptionResponse : public AbstractModel
+                class SuspendResumeDataEngineResponse : public AbstractModel
                 {
                 public:
-                    DescribeClusterStorageOptionResponse();
-                    ~DescribeClusterStorageOptionResponse() = default;
+                    SuspendResumeDataEngineResponse();
+                    ~SuspendResumeDataEngineResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取集群存储选项信息概览。
-                     * @return StorageOption 集群存储选项信息概览。
+                     * 获取虚拟集群详细信息
+                     * @return DataEngineName 虚拟集群详细信息
                      */
-                    StorageOptionOverview GetStorageOption() const;
+                    std::string GetDataEngineName() const;
 
                     /**
-                     * 判断参数 StorageOption 是否已赋值
-                     * @return StorageOption 是否已赋值
+                     * 判断参数 DataEngineName 是否已赋值
+                     * @return DataEngineName 是否已赋值
                      */
-                    bool StorageOptionHasBeenSet() const;
+                    bool DataEngineNameHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 集群存储选项信息概览。
+                     * 虚拟集群详细信息
                      */
-                    StorageOptionOverview m_storageOption;
-                    bool m_storageOptionHasBeenSet;
+                    std::string m_dataEngineName;
+                    bool m_dataEngineNameHasBeenSet;
 
                 };
             }
@@ -70,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_THPC_V20220401_MODEL_DESCRIBECLUSTERSTORAGEOPTIONRESPONSE_H_
+#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_SUSPENDRESUMEDATAENGINERESPONSE_H_

@@ -37,6 +37,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateTasksInOrderResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTablesResponse.h
   include/tencentcloud/dlc/v20210125/model/SparkJobInfo.h
+  include/tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyUserResponse.h
   include/tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h
@@ -157,6 +158,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DeleteSparkAppResponse.h
   include/tencentcloud/dlc/v20210125/model/AlterDMSPartitionResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateTasksRequest.h
+  include/tencentcloud/dlc/v20210125/model/SuspendResumeDataEngineRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeTableResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsResponse.h
   include/tencentcloud/dlc/v20210125/model/TableResponseInfo.h
@@ -209,6 +211,7 @@ set(dlc_src
   src/v20210125/model/CreateTasksInOrderResponse.cpp
   src/v20210125/model/DescribeTablesResponse.cpp
   src/v20210125/model/SparkJobInfo.cpp
+  src/v20210125/model/SuspendResumeDataEngineResponse.cpp
   src/v20210125/model/DeleteSparkAppRequest.cpp
   src/v20210125/model/ModifyUserResponse.cpp
   src/v20210125/model/DeleteScriptResponse.cpp
@@ -329,6 +332,7 @@ set(dlc_src
   src/v20210125/model/DeleteSparkAppResponse.cpp
   src/v20210125/model/AlterDMSPartitionResponse.cpp
   src/v20210125/model/CreateTasksRequest.cpp
+  src/v20210125/model/SuspendResumeDataEngineRequest.cpp
   src/v20210125/model/DescribeTableResponse.cpp
   src/v20210125/model/DescribeSparkAppJobsResponse.cpp
   src/v20210125/model/TableResponseInfo.cpp

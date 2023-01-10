@@ -26,7 +26,8 @@ MediaVideoStreamItem::MediaVideoStreamItem() :
     m_widthHasBeenSet(false),
     m_codecHasBeenSet(false),
     m_fpsHasBeenSet(false),
-    m_codecTagHasBeenSet(false)
+    m_codecTagHasBeenSet(false),
+    m_dynamicRangeInfoHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,23 @@ CoreInternalOutcome MediaVideoStreamItem::Deserialize(const rapidjson::Value &va
         m_codecTagHasBeenSet = true;
     }
 
+    if (value.HasMember("DynamicRangeInfo") && !value["DynamicRangeInfo"].IsNull())
+    {
+        if (!value["DynamicRangeInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaVideoStreamItem.DynamicRangeInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dynamicRangeInfo.Deserialize(value["DynamicRangeInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dynamicRangeInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +166,15 @@ void MediaVideoStreamItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "CodecTag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_codecTag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dynamicRangeInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicRangeInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicRangeInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -247,5 +274,21 @@ void MediaVideoStreamItem::SetCodecTag(const string& _codecTag)
 bool MediaVideoStreamItem::CodecTagHasBeenSet() const
 {
     return m_codecTagHasBeenSet;
+}
+
+DynamicRangeInfo MediaVideoStreamItem::GetDynamicRangeInfo() const
+{
+    return m_dynamicRangeInfo;
+}
+
+void MediaVideoStreamItem::SetDynamicRangeInfo(const DynamicRangeInfo& _dynamicRangeInfo)
+{
+    m_dynamicRangeInfo = _dynamicRangeInfo;
+    m_dynamicRangeInfoHasBeenSet = true;
+}
+
+bool MediaVideoStreamItem::DynamicRangeInfoHasBeenSet() const
+{
+    return m_dynamicRangeInfoHasBeenSet;
 }
 

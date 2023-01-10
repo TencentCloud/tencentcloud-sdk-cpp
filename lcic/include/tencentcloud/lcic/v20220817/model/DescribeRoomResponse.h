@@ -134,11 +134,11 @@ namespace TencentCloud
                     bool MaxMicNumberHasBeenSet() const;
 
                     /**
-                     * 获取进入房间时是否自动连麦。可以有以下取值：
-0 不自动连麦（默认值）
+                     * 获取进入课堂时是否自动连麦。可以有以下取值：
+0 不自动连麦（需要手动申请上麦，默认值）
 1 自动连麦
-                     * @return AutoMic 进入房间时是否自动连麦。可以有以下取值：
-0 不自动连麦（默认值）
+                     * @return AutoMic 进入课堂时是否自动连麦。可以有以下取值：
+0 不自动连麦（需要手动申请上麦，默认值）
 1 自动连麦
                      */
                     uint64_t GetAutoMic() const;
@@ -184,12 +184,14 @@ coteaching 双师
                     bool SubTypeHasBeenSet() const;
 
                     /**
-                     * 获取禁止录制。可以有以下取值：
-0 不禁止录制（默认值）
+                     * 获取上课后是否禁止自动录制。可以有以下取值：
+0 不禁止录制（自动开启录制，默认值）
 1 禁止录制
-                     * @return DisableRecord 禁止录制。可以有以下取值：
-0 不禁止录制（默认值）
+注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
+                     * @return DisableRecord 上课后是否禁止自动录制。可以有以下取值：
+0 不禁止录制（自动开启录制，默认值）
 1 禁止录制
+注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
                      */
                     uint64_t GetDisableRecord() const;
 
@@ -275,8 +277,8 @@ coteaching 双师
                     bool m_maxMicNumberHasBeenSet;
 
                     /**
-                     * 进入房间时是否自动连麦。可以有以下取值：
-0 不自动连麦（默认值）
+                     * 进入课堂时是否自动连麦。可以有以下取值：
+0 不自动连麦（需要手动申请上麦，默认值）
 1 自动连麦
                      */
                     uint64_t m_autoMic;
@@ -300,9 +302,10 @@ coteaching 双师
                     bool m_subTypeHasBeenSet;
 
                     /**
-                     * 禁止录制。可以有以下取值：
-0 不禁止录制（默认值）
+                     * 上课后是否禁止自动录制。可以有以下取值：
+0 不禁止录制（自动开启录制，默认值）
 1 禁止录制
+注：如果该配置取值为0，录制将从上课后开始，课堂结束后停止。
                      */
                     uint64_t m_disableRecord;
                     bool m_disableRecordHasBeenSet;

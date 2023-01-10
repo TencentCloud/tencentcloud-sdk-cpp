@@ -2620,6 +2620,49 @@ DlcClient::ReportHeartbeatMetaDataOutcomeCallable DlcClient::ReportHeartbeatMeta
     return task->get_future();
 }
 
+DlcClient::SuspendResumeDataEngineOutcome DlcClient::SuspendResumeDataEngine(const SuspendResumeDataEngineRequest &request)
+{
+    auto outcome = MakeRequest(request, "SuspendResumeDataEngine");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SuspendResumeDataEngineResponse rsp = SuspendResumeDataEngineResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SuspendResumeDataEngineOutcome(rsp);
+        else
+            return SuspendResumeDataEngineOutcome(o.GetError());
+    }
+    else
+    {
+        return SuspendResumeDataEngineOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::SuspendResumeDataEngineAsync(const SuspendResumeDataEngineRequest& request, const SuspendResumeDataEngineAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SuspendResumeDataEngine(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::SuspendResumeDataEngineOutcomeCallable DlcClient::SuspendResumeDataEngineCallable(const SuspendResumeDataEngineRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SuspendResumeDataEngineOutcome()>>(
+        [this, request]()
+        {
+            return this->SuspendResumeDataEngine(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::UnbindWorkGroupsFromUserOutcome DlcClient::UnbindWorkGroupsFromUser(const UnbindWorkGroupsFromUserRequest &request)
 {
     auto outcome = MakeRequest(request, "UnbindWorkGroupsFromUser");
