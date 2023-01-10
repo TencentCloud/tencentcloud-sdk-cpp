@@ -27,6 +27,7 @@
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 using namespace TencentCloud;
 using namespace TencentCloud::Cvm::V20170312;
@@ -38,9 +39,10 @@ int main()
     TencentCloud::InitAPI();
 
     // use the sdk
-
-    string secretId = "<your secret id>";
-    string secretKey = "<your secret key>";
+    const char * sid = getenv("TENCENTCLOUD_SECRET_ID");
+    const char * skey = getenv("TENCENTCLOUD_SECRET_KEY");
+    string secretId = nullptr == sid ? "" : sid;
+    string secretKey = nullptr == skey ? "" : skey;
     Credential cred = Credential(secretId, secretKey);
 
     HttpProfile httpProfile = HttpProfile();

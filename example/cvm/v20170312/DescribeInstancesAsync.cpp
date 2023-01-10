@@ -29,6 +29,7 @@
 #include <string>
 #include <thread>
 #include <chrono>
+#include <cstdlib>
 
 using namespace TencentCloud;
 using namespace TencentCloud::Cvm::V20170312;
@@ -43,7 +44,8 @@ int main()
 
     string secretId = "<your secret id>";
     string secretKey = "<your secret key>";
-    Credential cred = Credential(secretId, secretKey);
+    Credential cred = Credential(getenv("TENCENTCLOUD_SECRET_ID"),
+                                 getenv("TENCENTCLOUD_SECRET_KEY"));
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
     req.SetOffset(0);

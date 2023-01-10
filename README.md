@@ -105,6 +105,7 @@ sudo make install
 
 #include <iostream>
 #include <string>
+#include <cstdlib>
 
 using namespace TencentCloud;
 using namespace TencentCloud::Cvm::V20170312;
@@ -116,7 +117,10 @@ int main()
     TencentCloud::InitAPI();
 
     // 前往 https://console.cloud.tencent.com/cam/capi 获取 API 密钥 SecretId SecretKey
-    Credential cred = Credential("YourSecretId", "YourSecretKey");
+    // 硬编码密钥到代码中有可能随代码泄露而暴露，有安全隐患，并不推荐。
+    // 为了保护密钥安全，建议将密钥设置在环境变量中或者配置文件中。
+    Credential cred = Credential(getenv("TENCENTCLOUD_SECRET_ID"),
+                                 getenv("TENCENTCLOUD_SECRET_KEY"));
 
     DescribeInstancesRequest req = DescribeInstancesRequest();
 
@@ -162,6 +166,7 @@ int main()
 #include <tencentcloud/cvm/v20170312/model/DescribeInstancesResponse.h>
 #include <tencentcloud/cvm/v20170312/model/Instance.h>
 
+#include <cstdlib>
 #include <iostream>
 #include <string>
 
@@ -175,9 +180,12 @@ int main()
     TencentCloud::InitAPI();
 
     // use the sdk
-    // 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey, 切勿将密钥泄露给他人
     // 前往 https://console.cloud.tencent.com/cam/capi 获取 API 密钥 SecretId SecretKey
-    Credential cred = Credential("YourSecretId, YourSecretKey");
+    // 实例化一个认证对象，入参需要传入腾讯云账户 SecretId 和 SecretKey, 切勿将密钥泄露给他人
+    // 硬编码密钥到代码中有可能随代码泄露而暴露，有安全隐患，并不推荐。
+    // 为了保护密钥安全，建议将密钥设置在环境变量中或者配置文件中。
+    Credential cred = Credential(getenv("TENCENTCLOUD_SECRET_ID"),
+                                 getenv("TENCENTCLOUD_SECRET_KEY"));
 
     // 实例化一个http选项，可选的，没有特殊需求可以跳过。
     HttpProfile httpProfile = HttpProfile();
