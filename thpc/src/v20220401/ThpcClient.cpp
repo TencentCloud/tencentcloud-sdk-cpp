@@ -341,6 +341,49 @@ ThpcClient::DeleteNodesOutcomeCallable ThpcClient::DeleteNodesCallable(const Del
     return task->get_future();
 }
 
+ThpcClient::DescribeAutoScalingConfigurationOutcome ThpcClient::DescribeAutoScalingConfiguration(const DescribeAutoScalingConfigurationRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAutoScalingConfiguration");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAutoScalingConfigurationResponse rsp = DescribeAutoScalingConfigurationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAutoScalingConfigurationOutcome(rsp);
+        else
+            return DescribeAutoScalingConfigurationOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAutoScalingConfigurationOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeAutoScalingConfigurationAsync(const DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAutoScalingConfiguration(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeAutoScalingConfigurationOutcomeCallable ThpcClient::DescribeAutoScalingConfigurationCallable(const DescribeAutoScalingConfigurationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAutoScalingConfigurationOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAutoScalingConfiguration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DescribeClusterActivitiesOutcome ThpcClient::DescribeClusterActivities(const DescribeClusterActivitiesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeClusterActivities");

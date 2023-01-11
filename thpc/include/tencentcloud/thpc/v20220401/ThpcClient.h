@@ -37,6 +37,8 @@
 #include <tencentcloud/thpc/v20220401/model/DeleteClusterStorageOptionResponse.h>
 #include <tencentcloud/thpc/v20220401/model/DeleteNodesRequest.h>
 #include <tencentcloud/thpc/v20220401/model/DeleteNodesResponse.h>
+#include <tencentcloud/thpc/v20220401/model/DescribeAutoScalingConfigurationRequest.h>
+#include <tencentcloud/thpc/v20220401/model/DescribeAutoScalingConfigurationResponse.h>
 #include <tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesRequest.h>
 #include <tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesResponse.h>
 #include <tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionRequest.h>
@@ -80,6 +82,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteNodesResponse> DeleteNodesOutcome;
                 typedef std::future<DeleteNodesOutcome> DeleteNodesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DeleteNodesRequest&, DeleteNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAutoScalingConfigurationResponse> DescribeAutoScalingConfigurationOutcome;
+                typedef std::future<DescribeAutoScalingConfigurationOutcome> DescribeAutoScalingConfigurationOutcomeCallable;
+                typedef std::function<void(const ThpcClient*, const Model::DescribeAutoScalingConfigurationRequest&, DescribeAutoScalingConfigurationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoScalingConfigurationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterActivitiesResponse> DescribeClusterActivitiesOutcome;
                 typedef std::future<DescribeClusterActivitiesOutcome> DescribeClusterActivitiesOutcomeCallable;
                 typedef std::function<void(const ThpcClient*, const Model::DescribeClusterActivitiesRequest&, DescribeClusterActivitiesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterActivitiesAsyncHandler;
@@ -157,6 +162,15 @@ namespace TencentCloud
                 DeleteNodesOutcome DeleteNodes(const Model::DeleteNodesRequest &request);
                 void DeleteNodesAsync(const Model::DeleteNodesRequest& request, const DeleteNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteNodesOutcomeCallable DeleteNodesCallable(const Model::DeleteNodesRequest& request);
+
+                /**
+                 *本接口(DescribeAutoScalingConfiguration)用于查询集群弹性伸缩配置信息。本接口仅适用于弹性伸缩类型为THPC_AS的集群。
+                 * @param req DescribeAutoScalingConfigurationRequest
+                 * @return DescribeAutoScalingConfigurationOutcome
+                 */
+                DescribeAutoScalingConfigurationOutcome DescribeAutoScalingConfiguration(const Model::DescribeAutoScalingConfigurationRequest &request);
+                void DescribeAutoScalingConfigurationAsync(const Model::DescribeAutoScalingConfigurationRequest& request, const DescribeAutoScalingConfigurationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAutoScalingConfigurationOutcomeCallable DescribeAutoScalingConfigurationCallable(const Model::DescribeAutoScalingConfigurationRequest& request);
 
                 /**
                  *本接口（DescribeClusterActivities）用于查询集群活动历史记录列表。

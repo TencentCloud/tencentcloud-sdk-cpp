@@ -1388,7 +1388,7 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeLiveTimeShiftBillInfoListOutcomeCallable DescribeLiveTimeShiftBillInfoListCallable(const Model::DescribeLiveTimeShiftBillInfoListRequest& request);
 
                 /**
-                 *支持查询某天或某段时间的转码详细信息。
+                 *支持查询某天或某段时间的转码详细信息。由于转码数据量较大，如果查询时间跨度太长可能会拉不到数据，可以尝试将查询时间范围缩小些再重试。
                  * @param req DescribeLiveTranscodeDetailInfoRequest
                  * @return DescribeLiveTranscodeDetailInfoOutcome
                  */

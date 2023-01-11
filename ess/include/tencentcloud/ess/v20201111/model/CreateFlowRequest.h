@@ -24,6 +24,7 @@
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
 #include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
+#include <tencentcloud/ess/v20201111/model/CcInfo.h>
 
 
 namespace TencentCloud
@@ -325,6 +326,28 @@ false：有序签
                      */
                     bool AgentHasBeenSet() const;
 
+                    /**
+                     * 获取被抄送人的信息列表。
+注: 此功能为白名单功能，若有需要，请联系电子签客服开白使用。
+                     * @return CcInfos 被抄送人的信息列表。
+注: 此功能为白名单功能，若有需要，请联系电子签客服开白使用。
+                     */
+                    std::vector<CcInfo> GetCcInfos() const;
+
+                    /**
+                     * 设置被抄送人的信息列表。
+注: 此功能为白名单功能，若有需要，请联系电子签客服开白使用。
+                     * @param CcInfos 被抄送人的信息列表。
+注: 此功能为白名单功能，若有需要，请联系电子签客服开白使用。
+                     */
+                    void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
+
+                    /**
+                     * 判断参数 CcInfos 是否已赋值
+                     * @return CcInfos 是否已赋值
+                     */
+                    bool CcInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -417,6 +440,13 @@ false：有序签
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
+
+                    /**
+                     * 被抄送人的信息列表。
+注: 此功能为白名单功能，若有需要，请联系电子签客服开白使用。
+                     */
+                    std::vector<CcInfo> m_ccInfos;
+                    bool m_ccInfosHasBeenSet;
 
                 };
             }

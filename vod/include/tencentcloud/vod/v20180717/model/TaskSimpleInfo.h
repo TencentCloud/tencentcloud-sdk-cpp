@@ -103,9 +103,10 @@ namespace TencentCloud
                     /**
                      * 获取任务类型，取值：
 <li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务</li>
-<li>ReduceMediaBitrate：降码率任务</li>
-<li>WechatDistribute：微信发布任务。</li>
+<li>EditMedia：视频编辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务；</li>
+<li>WechatDistribute：微信发布任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -114,9 +115,10 @@ namespace TencentCloud
 <li>ImageSprites：截取雪碧图任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务</li>
-<li>ReduceMediaBitrate：降码率任务</li>
-<li>WechatDistribute：微信发布任务。</li>
+<li>EditMedia：视频编辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务；</li>
+<li>WechatDistribute：微信发布任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -129,9 +131,10 @@ namespace TencentCloud
                     /**
                      * 设置任务类型，取值：
 <li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务</li>
-<li>ReduceMediaBitrate：降码率任务</li>
-<li>WechatDistribute：微信发布任务。</li>
+<li>EditMedia：视频编辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务；</li>
+<li>WechatDistribute：微信发布任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -140,9 +143,10 @@ namespace TencentCloud
 <li>ImageSprites：截取雪碧图任务。</li>
                      * @param TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务</li>
-<li>ReduceMediaBitrate：降码率任务</li>
-<li>WechatDistribute：微信发布任务。</li>
+<li>EditMedia：视频编辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务；</li>
+<li>WechatDistribute：微信发布任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>
@@ -271,9 +275,10 @@ namespace TencentCloud
                     /**
                      * 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
-<li>EditMedia：视频编辑任务</li>
-<li>ReduceMediaBitrate：降码率任务</li>
-<li>WechatDistribute：微信发布任务。</li>
+<li>EditMedia：视频编辑任务；</li>
+<li>ReduceMediaBitrate：降码率任务；</li>
+<li>WechatDistribute：微信发布任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
 兼容 2017 版的任务类型：
 <li>Transcode：视频转码任务；</li>
 <li>SnapshotByTimeOffset：视频截图任务；</li>

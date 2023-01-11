@@ -20,6 +20,8 @@ set(thpc_public_header
   )
 
 set(thpc_public_header_model
+  include/tencentcloud/thpc/v20220401/model/DescribeAutoScalingConfigurationResponse.h
+  include/tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionRequest.h
   include/tencentcloud/thpc/v20220401/model/ClusterOverview.h
   include/tencentcloud/thpc/v20220401/model/DescribeClustersRequest.h
   include/tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationRequest.h
@@ -39,6 +41,7 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/CreateClusterRequest.h
   include/tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionResponse.h
   include/tencentcloud/thpc/v20220401/model/GooseFSOptionOverview.h
+  include/tencentcloud/thpc/v20220401/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20220401/model/Tag.h
   include/tencentcloud/thpc/v20220401/model/LoginNode.h
   include/tencentcloud/thpc/v20220401/model/BindAutoScalingGroupResponse.h
@@ -53,10 +56,11 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/CFSOptionOverview.h
   include/tencentcloud/thpc/v20220401/model/DeleteClusterStorageOptionRequest.h
   include/tencentcloud/thpc/v20220401/model/AddClusterStorageOptionRequest.h
+  include/tencentcloud/thpc/v20220401/model/QueueConfigOverview.h
   include/tencentcloud/thpc/v20220401/model/BindAutoScalingGroupRequest.h
   include/tencentcloud/thpc/v20220401/model/VirtualPrivateCloud.h
-  include/tencentcloud/thpc/v20220401/model/InstanceChargePrepaid.h
-  include/tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionRequest.h
+  include/tencentcloud/thpc/v20220401/model/ExpansionNodeConfigOverview.h
+  include/tencentcloud/thpc/v20220401/model/DescribeAutoScalingConfigurationRequest.h
   include/tencentcloud/thpc/v20220401/model/StorageOption.h
   include/tencentcloud/thpc/v20220401/model/InternetAccessible.h
   include/tencentcloud/thpc/v20220401/model/ComputeNode.h
@@ -98,6 +102,8 @@ set(thpc_public_header_model
 set(thpc_src
   src/v20220401/ThpcClient.cpp
   src/v20211109/ThpcClient.cpp
+  src/v20220401/model/DescribeAutoScalingConfigurationResponse.cpp
+  src/v20220401/model/DescribeClusterStorageOptionRequest.cpp
   src/v20220401/model/ClusterOverview.cpp
   src/v20220401/model/DescribeClustersRequest.cpp
   src/v20220401/model/SetAutoScalingConfigurationRequest.cpp
@@ -117,6 +123,7 @@ set(thpc_src
   src/v20220401/model/CreateClusterRequest.cpp
   src/v20220401/model/DescribeClusterStorageOptionResponse.cpp
   src/v20220401/model/GooseFSOptionOverview.cpp
+  src/v20220401/model/InstanceChargePrepaid.cpp
   src/v20220401/model/Tag.cpp
   src/v20220401/model/LoginNode.cpp
   src/v20220401/model/BindAutoScalingGroupResponse.cpp
@@ -131,10 +138,11 @@ set(thpc_src
   src/v20220401/model/CFSOptionOverview.cpp
   src/v20220401/model/DeleteClusterStorageOptionRequest.cpp
   src/v20220401/model/AddClusterStorageOptionRequest.cpp
+  src/v20220401/model/QueueConfigOverview.cpp
   src/v20220401/model/BindAutoScalingGroupRequest.cpp
   src/v20220401/model/VirtualPrivateCloud.cpp
-  src/v20220401/model/InstanceChargePrepaid.cpp
-  src/v20220401/model/DescribeClusterStorageOptionRequest.cpp
+  src/v20220401/model/ExpansionNodeConfigOverview.cpp
+  src/v20220401/model/DescribeAutoScalingConfigurationRequest.cpp
   src/v20220401/model/StorageOption.cpp
   src/v20220401/model/InternetAccessible.cpp
   src/v20220401/model/ComputeNode.cpp

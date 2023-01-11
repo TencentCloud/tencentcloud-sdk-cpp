@@ -27,9 +27,11 @@ set(acp_public_header_model
   include/tencentcloud/acp/v20220105/model/ResourceUsageInfoData.h
   include/tencentcloud/acp/v20220105/model/TaskFlowStepsInfo.h
   include/tencentcloud/acp/v20220105/model/CreateAppScanTaskRequest.h
-  include/tencentcloud/acp/v20220105/model/DescribeScanTaskStatusResponse.h
+  include/tencentcloud/acp/v20220105/model/DescribeChannelTaskReportUrlResponse.h
   include/tencentcloud/acp/v20220105/model/DescribeFileTicketResponse.h
+  include/tencentcloud/acp/v20220105/model/DescribeScanTaskStatusResponse.h
   include/tencentcloud/acp/v20220105/model/DescribeScanTaskReportUrlRequest.h
+  include/tencentcloud/acp/v20220105/model/DescribeChannelTaskReportUrlRequest.h
   include/tencentcloud/acp/v20220105/model/AppTaskData.h
   include/tencentcloud/acp/v20220105/model/DescribeScanTaskStatusRequest.h
   include/tencentcloud/acp/v20220105/model/DescribeFileTicketRequest.h
@@ -49,9 +51,11 @@ set(acp_src
   src/v20220105/model/ResourceUsageInfoData.cpp
   src/v20220105/model/TaskFlowStepsInfo.cpp
   src/v20220105/model/CreateAppScanTaskRequest.cpp
-  src/v20220105/model/DescribeScanTaskStatusResponse.cpp
+  src/v20220105/model/DescribeChannelTaskReportUrlResponse.cpp
   src/v20220105/model/DescribeFileTicketResponse.cpp
+  src/v20220105/model/DescribeScanTaskStatusResponse.cpp
   src/v20220105/model/DescribeScanTaskReportUrlRequest.cpp
+  src/v20220105/model/DescribeChannelTaskReportUrlRequest.cpp
   src/v20220105/model/AppTaskData.cpp
   src/v20220105/model/DescribeScanTaskStatusRequest.cpp
   src/v20220105/model/DescribeFileTicketRequest.cpp

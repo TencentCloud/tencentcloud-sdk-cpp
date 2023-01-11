@@ -90,20 +90,20 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
-<li>单个文件名长度限制：40个字符。</li>
+<li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      * @return Names 文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
-<li>单个文件名长度限制：40个字符。</li>
+<li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> GetNames() const;
 
                     /**
                      * 设置文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
-<li>单个文件名长度限制：40个字符。</li>
+<li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      * @param Names 文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
-<li>单个文件名长度限制：40个字符。</li>
+<li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     void SetNames(const std::vector<std::string>& _names);
@@ -116,20 +116,20 @@ namespace TencentCloud
 
                     /**
                      * 获取文件名前缀，前缀匹配媒体文件的文件名。
-<li>单个文件名前缀长度限制：20个字符。</li>
+<li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      * @return NamePrefixes 文件名前缀，前缀匹配媒体文件的文件名。
-<li>单个文件名前缀长度限制：20个字符。</li>
+<li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> GetNamePrefixes() const;
 
                     /**
                      * 设置文件名前缀，前缀匹配媒体文件的文件名。
-<li>单个文件名前缀长度限制：20个字符。</li>
+<li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      * @param NamePrefixes 文件名前缀，前缀匹配媒体文件的文件名。
-<li>单个文件名前缀长度限制：20个字符。</li>
+<li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     void SetNamePrefixes(const std::vector<std::string>& _namePrefixes);
@@ -190,21 +190,21 @@ namespace TencentCloud
 
                     /**
                      * 获取标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：16个字符。</li>
-<li>数组长度限制：10。</li>
+<li>单个标签长度限制：32个字符。</li>
+<li>数组长度限制：16。</li>
                      * @return Tags 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：16个字符。</li>
-<li>数组长度限制：10。</li>
+<li>单个标签长度限制：32个字符。</li>
+<li>数组长度限制：16。</li>
                      */
                     std::vector<std::string> GetTags() const;
 
                     /**
                      * 设置标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：16个字符。</li>
-<li>数组长度限制：10。</li>
+<li>单个标签长度限制：32个字符。</li>
+<li>数组长度限制：16。</li>
                      * @param Tags 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：16个字符。</li>
-<li>数组长度限制：10。</li>
+<li>单个标签长度限制：32个字符。</li>
+<li>数组长度限制：16。</li>
                      */
                     void SetTags(const std::vector<std::string>& _tags);
 
@@ -756,7 +756,7 @@ namespace TencentCloud
 
                     /**
                      * 文件名集合，模糊匹配媒体文件的文件名，匹配度越高，排序越优先。
-<li>单个文件名长度限制：40个字符。</li>
+<li>单个文件名长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> m_names;
@@ -764,7 +764,7 @@ namespace TencentCloud
 
                     /**
                      * 文件名前缀，前缀匹配媒体文件的文件名。
-<li>单个文件名前缀长度限制：20个字符。</li>
+<li>单个文件名前缀长度限制：100个字符。</li>
 <li>数组长度限制：10。</li>
                      */
                     std::vector<std::string> m_namePrefixes;
@@ -787,8 +787,8 @@ namespace TencentCloud
 
                     /**
                      * 标签集合，匹配集合中任意元素。
-<li>单个标签长度限制：16个字符。</li>
-<li>数组长度限制：10。</li>
+<li>单个标签长度限制：32个字符。</li>
+<li>数组长度限制：16。</li>
                      */
                     std::vector<std::string> m_tags;
                     bool m_tagsHasBeenSet;

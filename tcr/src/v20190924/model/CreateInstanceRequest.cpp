@@ -27,6 +27,7 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_registryTypeHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
     m_registryChargeTypeHasBeenSet(false),
+    m_registryChargePrepaidHasBeenSet(false),
     m_syncTagHasBeenSet(false)
 {
 }
@@ -69,6 +70,15 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "RegistryChargeType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_registryChargeType, allocator);
+    }
+
+    if (m_registryChargePrepaidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistryChargePrepaid";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_registryChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_syncTagHasBeenSet)
@@ -149,6 +159,22 @@ void CreateInstanceRequest::SetRegistryChargeType(const int64_t& _registryCharge
 bool CreateInstanceRequest::RegistryChargeTypeHasBeenSet() const
 {
     return m_registryChargeTypeHasBeenSet;
+}
+
+RegistryChargePrepaid CreateInstanceRequest::GetRegistryChargePrepaid() const
+{
+    return m_registryChargePrepaid;
+}
+
+void CreateInstanceRequest::SetRegistryChargePrepaid(const RegistryChargePrepaid& _registryChargePrepaid)
+{
+    m_registryChargePrepaid = _registryChargePrepaid;
+    m_registryChargePrepaidHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::RegistryChargePrepaidHasBeenSet() const
+{
+    return m_registryChargePrepaidHasBeenSet;
 }
 
 bool CreateInstanceRequest::GetSyncTag() const

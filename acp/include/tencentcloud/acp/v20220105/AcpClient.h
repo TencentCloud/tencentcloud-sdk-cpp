@@ -27,6 +27,8 @@
 #include <tencentcloud/acp/v20220105/model/CreateAppScanTaskResponse.h>
 #include <tencentcloud/acp/v20220105/model/CreateAppScanTaskRepeatRequest.h>
 #include <tencentcloud/acp/v20220105/model/CreateAppScanTaskRepeatResponse.h>
+#include <tencentcloud/acp/v20220105/model/DescribeChannelTaskReportUrlRequest.h>
+#include <tencentcloud/acp/v20220105/model/DescribeChannelTaskReportUrlResponse.h>
 #include <tencentcloud/acp/v20220105/model/DescribeFileTicketRequest.h>
 #include <tencentcloud/acp/v20220105/model/DescribeFileTicketResponse.h>
 #include <tencentcloud/acp/v20220105/model/DescribeResourceUsageInfoRequest.h>
@@ -57,6 +59,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAppScanTaskRepeatResponse> CreateAppScanTaskRepeatOutcome;
                 typedef std::future<CreateAppScanTaskRepeatOutcome> CreateAppScanTaskRepeatOutcomeCallable;
                 typedef std::function<void(const AcpClient*, const Model::CreateAppScanTaskRepeatRequest&, CreateAppScanTaskRepeatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAppScanTaskRepeatAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeChannelTaskReportUrlResponse> DescribeChannelTaskReportUrlOutcome;
+                typedef std::future<DescribeChannelTaskReportUrlOutcome> DescribeChannelTaskReportUrlOutcomeCallable;
+                typedef std::function<void(const AcpClient*, const Model::DescribeChannelTaskReportUrlRequest&, DescribeChannelTaskReportUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelTaskReportUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFileTicketResponse> DescribeFileTicketOutcome;
                 typedef std::future<DescribeFileTicketOutcome> DescribeFileTicketOutcomeCallable;
                 typedef std::function<void(const AcpClient*, const Model::DescribeFileTicketRequest&, DescribeFileTicketOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileTicketAsyncHandler;
@@ -92,6 +97,15 @@ namespace TencentCloud
                 CreateAppScanTaskRepeatOutcome CreateAppScanTaskRepeat(const Model::CreateAppScanTaskRepeatRequest &request);
                 void CreateAppScanTaskRepeatAsync(const Model::CreateAppScanTaskRepeatRequest& request, const CreateAppScanTaskRepeatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAppScanTaskRepeatOutcomeCallable CreateAppScanTaskRepeatCallable(const Model::CreateAppScanTaskRepeatRequest& request);
+
+                /**
+                 *获取子渠道的App合规诊断任务报告url
+                 * @param req DescribeChannelTaskReportUrlRequest
+                 * @return DescribeChannelTaskReportUrlOutcome
+                 */
+                DescribeChannelTaskReportUrlOutcome DescribeChannelTaskReportUrl(const Model::DescribeChannelTaskReportUrlRequest &request);
+                void DescribeChannelTaskReportUrlAsync(const Model::DescribeChannelTaskReportUrlRequest& request, const DescribeChannelTaskReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeChannelTaskReportUrlOutcomeCallable DescribeChannelTaskReportUrlCallable(const Model::DescribeChannelTaskReportUrlRequest& request);
 
                 /**
                  *获取应用合规文件上传凭证，用于上传诊断文件

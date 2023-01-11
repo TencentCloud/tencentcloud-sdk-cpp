@@ -26,7 +26,8 @@ DescribeSnapshotsRequest::DescribeSnapshotsRequest() :
     m_clusterIdHasBeenSet(false),
     m_tableGroupIdHasBeenSet(false),
     m_tableNameHasBeenSet(false),
-    m_snapshotNameHasBeenSet(false)
+    m_snapshotNameHasBeenSet(false),
+    m_selectedTablesHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string DescribeSnapshotsRequest::ToJsonString() const
         string key = "SnapshotName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_snapshotName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_selectedTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SelectedTables";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_selectedTables.begin(); itr != m_selectedTables.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void DescribeSnapshotsRequest::SetSnapshotName(const string& _snapshotName)
 bool DescribeSnapshotsRequest::SnapshotNameHasBeenSet() const
 {
     return m_snapshotNameHasBeenSet;
+}
+
+vector<SelectedTableInfoNew> DescribeSnapshotsRequest::GetSelectedTables() const
+{
+    return m_selectedTables;
+}
+
+void DescribeSnapshotsRequest::SetSelectedTables(const vector<SelectedTableInfoNew>& _selectedTables)
+{
+    m_selectedTables = _selectedTables;
+    m_selectedTablesHasBeenSet = true;
+}
+
+bool DescribeSnapshotsRequest::SelectedTablesHasBeenSet() const
+{
+    return m_selectedTablesHasBeenSet;
 }
 
 

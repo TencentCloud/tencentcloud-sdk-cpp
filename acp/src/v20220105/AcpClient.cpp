@@ -126,6 +126,49 @@ AcpClient::CreateAppScanTaskRepeatOutcomeCallable AcpClient::CreateAppScanTaskRe
     return task->get_future();
 }
 
+AcpClient::DescribeChannelTaskReportUrlOutcome AcpClient::DescribeChannelTaskReportUrl(const DescribeChannelTaskReportUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeChannelTaskReportUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeChannelTaskReportUrlResponse rsp = DescribeChannelTaskReportUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeChannelTaskReportUrlOutcome(rsp);
+        else
+            return DescribeChannelTaskReportUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeChannelTaskReportUrlOutcome(outcome.GetError());
+    }
+}
+
+void AcpClient::DescribeChannelTaskReportUrlAsync(const DescribeChannelTaskReportUrlRequest& request, const DescribeChannelTaskReportUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeChannelTaskReportUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+AcpClient::DescribeChannelTaskReportUrlOutcomeCallable AcpClient::DescribeChannelTaskReportUrlCallable(const DescribeChannelTaskReportUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeChannelTaskReportUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeChannelTaskReportUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 AcpClient::DescribeFileTicketOutcome AcpClient::DescribeFileTicket(const DescribeFileTicketRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFileTicket");

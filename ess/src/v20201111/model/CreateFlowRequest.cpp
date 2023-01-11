@@ -36,7 +36,8 @@ CreateFlowRequest::CreateFlowRequest() :
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_ccInfosHasBeenSet(false)
 {
 }
 
@@ -166,6 +167,21 @@ string CreateFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ccInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -398,6 +414,22 @@ void CreateFlowRequest::SetAgent(const Agent& _agent)
 bool CreateFlowRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+vector<CcInfo> CreateFlowRequest::GetCcInfos() const
+{
+    return m_ccInfos;
+}
+
+void CreateFlowRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
+{
+    m_ccInfos = _ccInfos;
+    m_ccInfosHasBeenSet = true;
+}
+
+bool CreateFlowRequest::CcInfosHasBeenSet() const
+{
+    return m_ccInfosHasBeenSet;
 }
 
 
