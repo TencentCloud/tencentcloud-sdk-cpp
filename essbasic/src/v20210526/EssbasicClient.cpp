@@ -943,6 +943,49 @@ EssbasicClient::DescribeChannelFlowEvidenceReportOutcomeCallable EssbasicClient:
     return task->get_future();
 }
 
+EssbasicClient::DescribeExtendedServiceAuthInfoOutcome EssbasicClient::DescribeExtendedServiceAuthInfo(const DescribeExtendedServiceAuthInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeExtendedServiceAuthInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeExtendedServiceAuthInfoResponse rsp = DescribeExtendedServiceAuthInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeExtendedServiceAuthInfoOutcome(rsp);
+        else
+            return DescribeExtendedServiceAuthInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeExtendedServiceAuthInfoOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::DescribeExtendedServiceAuthInfoAsync(const DescribeExtendedServiceAuthInfoRequest& request, const DescribeExtendedServiceAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeExtendedServiceAuthInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::DescribeExtendedServiceAuthInfoOutcomeCallable EssbasicClient::DescribeExtendedServiceAuthInfoCallable(const DescribeExtendedServiceAuthInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeExtendedServiceAuthInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeExtendedServiceAuthInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::DescribeFlowDetailInfoOutcome EssbasicClient::DescribeFlowDetailInfo(const DescribeFlowDetailInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFlowDetailInfo");
@@ -1151,6 +1194,49 @@ EssbasicClient::GetDownloadFlowUrlOutcomeCallable EssbasicClient::GetDownloadFlo
         [this, request]()
         {
             return this->GetDownloadFlowUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ModifyExtendedServiceOutcome EssbasicClient::ModifyExtendedService(const ModifyExtendedServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyExtendedService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyExtendedServiceResponse rsp = ModifyExtendedServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyExtendedServiceOutcome(rsp);
+        else
+            return ModifyExtendedServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyExtendedServiceOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ModifyExtendedServiceAsync(const ModifyExtendedServiceRequest& request, const ModifyExtendedServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyExtendedService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ModifyExtendedServiceOutcomeCallable EssbasicClient::ModifyExtendedServiceCallable(const ModifyExtendedServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyExtendedServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyExtendedService(request);
         }
     );
 

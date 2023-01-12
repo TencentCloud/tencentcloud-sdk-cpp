@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取业务链编号，可在业务链列表中获取
-                     * @return ChainId 业务链编号，可在业务链列表中获取
+                     * 获取业务链ID，可在网络概览页获取
+                     * @return ChainId 业务链ID，可在网络概览页获取
                      */
                     std::string GetChainId() const;
 
                     /**
-                     * 设置业务链编号，可在业务链列表中获取
-                     * @param ChainId 业务链编号，可在业务链列表中获取
+                     * 设置业务链ID，可在网络概览页获取
+                     * @param ChainId 业务链ID，可在网络概览页获取
                      */
                     void SetChainId(const std::string& _chainId);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 业务链编号，可在业务链列表中获取
+                     * 业务链ID，可在网络概览页获取
                      */
                     std::string m_chainId;
                     bool m_chainIdHasBeenSet;

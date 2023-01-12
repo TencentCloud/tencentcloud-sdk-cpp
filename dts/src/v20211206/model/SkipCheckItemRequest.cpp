@@ -24,7 +24,8 @@ using namespace std;
 
 SkipCheckItemRequest::SkipCheckItemRequest() :
     m_jobIdHasBeenSet(false),
-    m_stepIdsHasBeenSet(false)
+    m_stepIdsHasBeenSet(false),
+    m_foreignKeyFlagHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string SkipCheckItemRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_foreignKeyFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ForeignKeyFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_foreignKeyFlag.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -94,6 +103,22 @@ void SkipCheckItemRequest::SetStepIds(const vector<string>& _stepIds)
 bool SkipCheckItemRequest::StepIdsHasBeenSet() const
 {
     return m_stepIdsHasBeenSet;
+}
+
+string SkipCheckItemRequest::GetForeignKeyFlag() const
+{
+    return m_foreignKeyFlag;
+}
+
+void SkipCheckItemRequest::SetForeignKeyFlag(const string& _foreignKeyFlag)
+{
+    m_foreignKeyFlag = _foreignKeyFlag;
+    m_foreignKeyFlagHasBeenSet = true;
+}
+
+bool SkipCheckItemRequest::ForeignKeyFlagHasBeenSet() const
+{
+    return m_foreignKeyFlagHasBeenSet;
 }
 
 

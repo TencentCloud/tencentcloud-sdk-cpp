@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ims/v20200713/model/DescribeImsListResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ims::V20200713::Model;
+using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-DescribeImsListResponse::DescribeImsListResponse() :
-    m_imsDetailSetHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+DescribeExtendedServiceAuthInfoResponse::DescribeExtendedServiceAuthInfoResponse() :
+    m_authInfoHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeImsListResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeExtendedServiceAuthInfoResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,49 @@ CoreInternalOutcome DescribeImsListResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("ImsDetailSet") && !rsp["ImsDetailSet"].IsNull())
+    if (rsp.HasMember("AuthInfo") && !rsp["AuthInfo"].IsNull())
     {
-        if (!rsp["ImsDetailSet"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `ImsDetailSet` is not array type"));
+        if (!rsp["AuthInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AuthInfo` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["ImsDetailSet"];
+        const rapidjson::Value &tmpValue = rsp["AuthInfo"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            ImsDetail item;
+            ExtentServiceAuthInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_imsDetailSet.push_back(item);
+            m_authInfo.push_back(item);
         }
-        m_imsDetailSetHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
+        m_authInfoHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeImsListResponse::ToJsonString() const
+string DescribeExtendedServiceAuthInfoResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_imsDetailSetHasBeenSet)
+    if (m_authInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImsDetailSet";
+        string key = "AuthInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_imsDetailSet.begin(); itr != m_imsDetailSet.end(); ++itr, ++i)
+        for (auto itr = m_authInfo.begin(); itr != m_authInfo.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +119,14 @@ string DescribeImsListResponse::ToJsonString() const
 }
 
 
-vector<ImsDetail> DescribeImsListResponse::GetImsDetailSet() const
+vector<ExtentServiceAuthInfo> DescribeExtendedServiceAuthInfoResponse::GetAuthInfo() const
 {
-    return m_imsDetailSet;
+    return m_authInfo;
 }
 
-bool DescribeImsListResponse::ImsDetailSetHasBeenSet() const
+bool DescribeExtendedServiceAuthInfoResponse::AuthInfoHasBeenSet() const
 {
-    return m_imsDetailSetHasBeenSet;
-}
-
-int64_t DescribeImsListResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeImsListResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
+    return m_authInfoHasBeenSet;
 }
 
 

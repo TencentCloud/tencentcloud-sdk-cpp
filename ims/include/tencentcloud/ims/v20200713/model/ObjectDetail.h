@@ -141,6 +141,24 @@ namespace TencentCloud
                      */
                     bool LocationHasBeenSet() const;
 
+                    /**
+                     * 获取二级标签名称
+                     * @return SubLabel 二级标签名称
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 设置二级标签名称
+                     * @param SubLabel 二级标签名称
+                     */
+                    void SetSubLabel(const std::string& _subLabel);
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     */
+                    bool SubLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -173,6 +191,12 @@ namespace TencentCloud
                      */
                     Location m_location;
                     bool m_locationHasBeenSet;
+
+                    /**
+                     * 二级标签名称
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
 
                 };
             }

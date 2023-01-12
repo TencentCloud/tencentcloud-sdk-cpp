@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dts/v20211206/model/SkipCheckItemResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dts::V20211206::Model;
+using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
-SkipCheckItemResponse::SkipCheckItemResponse() :
-    m_messageHasBeenSet(false)
+ModifyExtendedServiceResponse::ModifyExtendedServiceResponse() :
+    m_operateUrlHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome SkipCheckItemResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyExtendedServiceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,32 +62,32 @@ CoreInternalOutcome SkipCheckItemResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("Message") && !rsp["Message"].IsNull())
+    if (rsp.HasMember("OperateUrl") && !rsp["OperateUrl"].IsNull())
     {
-        if (!rsp["Message"].IsString())
+        if (!rsp["OperateUrl"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Message` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `OperateUrl` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_message = string(rsp["Message"].GetString());
-        m_messageHasBeenSet = true;
+        m_operateUrl = string(rsp["OperateUrl"].GetString());
+        m_operateUrlHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string SkipCheckItemResponse::ToJsonString() const
+string ModifyExtendedServiceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_messageHasBeenSet)
+    if (m_operateUrlHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Message";
+        string key = "OperateUrl";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_operateUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -102,14 +102,14 @@ string SkipCheckItemResponse::ToJsonString() const
 }
 
 
-string SkipCheckItemResponse::GetMessage() const
+string ModifyExtendedServiceResponse::GetOperateUrl() const
 {
-    return m_message;
+    return m_operateUrl;
 }
 
-bool SkipCheckItemResponse::MessageHasBeenSet() const
+bool ModifyExtendedServiceResponse::OperateUrlHasBeenSet() const
 {
-    return m_messageHasBeenSet;
+    return m_operateUrlHasBeenSet;
 }
 
 

@@ -195,6 +195,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineTopResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBashEventsNewRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBashEventsNewResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBruteAttackListRequest.h>
@@ -757,6 +759,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBashEventsResponse> DescribeBashEventsOutcome;
                 typedef std::future<DescribeBashEventsOutcome> DescribeBashEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBashEventsRequest&, DescribeBashEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBashEventsNewResponse> DescribeBashEventsNewOutcome;
+                typedef std::future<DescribeBashEventsNewOutcome> DescribeBashEventsNewOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBashEventsNewRequest&, DescribeBashEventsNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashEventsNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBashRulesResponse> DescribeBashRulesOutcome;
                 typedef std::future<DescribeBashRulesOutcome> DescribeBashRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBashRulesRequest&, DescribeBashRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashRulesAsyncHandler;
@@ -1971,6 +1976,15 @@ namespace TencentCloud
                 DescribeBashEventsOutcome DescribeBashEvents(const Model::DescribeBashEventsRequest &request);
                 void DescribeBashEventsAsync(const Model::DescribeBashEventsRequest& request, const DescribeBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBashEventsOutcomeCallable DescribeBashEventsCallable(const Model::DescribeBashEventsRequest& request);
+
+                /**
+                 *获取高危命令列表(新)
+                 * @param req DescribeBashEventsNewRequest
+                 * @return DescribeBashEventsNewOutcome
+                 */
+                DescribeBashEventsNewOutcome DescribeBashEventsNew(const Model::DescribeBashEventsNewRequest &request);
+                void DescribeBashEventsNewAsync(const Model::DescribeBashEventsNewRequest& request, const DescribeBashEventsNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBashEventsNewOutcomeCallable DescribeBashEventsNewCallable(const Model::DescribeBashEventsNewRequest& request);
 
                 /**
                  *获取高危命令规则列表

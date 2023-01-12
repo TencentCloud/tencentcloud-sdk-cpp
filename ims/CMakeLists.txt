@@ -33,29 +33,19 @@ set(ims_public_header_model
   include/tencentcloud/ims/v20201229/model/LibResult.h
   include/tencentcloud/ims/v20201229/model/ImageModerationResponse.h
   include/tencentcloud/ims/v20201229/model/User.h
-  include/tencentcloud/ims/v20200713/model/DescribeImageStatRequest.h
-  include/tencentcloud/ims/v20200713/model/TrendCount.h
-  include/tencentcloud/ims/v20200713/model/Location.h
-  include/tencentcloud/ims/v20200713/model/LabelDetailItem.h
-  include/tencentcloud/ims/v20200713/model/ImageModerationResponse.h
   include/tencentcloud/ims/v20200713/model/ImageModerationRequest.h
-  include/tencentcloud/ims/v20200713/model/DescribeImsListResponse.h
-  include/tencentcloud/ims/v20200713/model/OcrResult.h
-  include/tencentcloud/ims/v20200713/model/User.h
-  include/tencentcloud/ims/v20200713/model/LabelResult.h
-  include/tencentcloud/ims/v20200713/model/Device.h
-  include/tencentcloud/ims/v20200713/model/ImsDetail.h
-  include/tencentcloud/ims/v20200713/model/EvilCount.h
   include/tencentcloud/ims/v20200713/model/ObjectResult.h
   include/tencentcloud/ims/v20200713/model/OcrTextDetail.h
   include/tencentcloud/ims/v20200713/model/ObjectDetail.h
-  include/tencentcloud/ims/v20200713/model/Filter.h
-  include/tencentcloud/ims/v20200713/model/DescribeImageStatResponse.h
-  include/tencentcloud/ims/v20200713/model/DescribeImsListRequest.h
-  include/tencentcloud/ims/v20200713/model/LibResult.h
-  include/tencentcloud/ims/v20200713/model/Overview.h
+  include/tencentcloud/ims/v20200713/model/OcrResult.h
   include/tencentcloud/ims/v20200713/model/LibDetail.h
-  include/tencentcloud/ims/v20200713/model/Filters.h
+  include/tencentcloud/ims/v20200713/model/Location.h
+  include/tencentcloud/ims/v20200713/model/LabelResult.h
+  include/tencentcloud/ims/v20200713/model/LabelDetailItem.h
+  include/tencentcloud/ims/v20200713/model/Device.h
+  include/tencentcloud/ims/v20200713/model/LibResult.h
+  include/tencentcloud/ims/v20200713/model/ImageModerationResponse.h
+  include/tencentcloud/ims/v20200713/model/User.h
   )
 
 set(ims_src
@@ -74,29 +64,19 @@ set(ims_src
   src/v20201229/model/LibResult.cpp
   src/v20201229/model/ImageModerationResponse.cpp
   src/v20201229/model/User.cpp
-  src/v20200713/model/DescribeImageStatRequest.cpp
-  src/v20200713/model/TrendCount.cpp
-  src/v20200713/model/Location.cpp
-  src/v20200713/model/LabelDetailItem.cpp
-  src/v20200713/model/ImageModerationResponse.cpp
   src/v20200713/model/ImageModerationRequest.cpp
-  src/v20200713/model/DescribeImsListResponse.cpp
-  src/v20200713/model/OcrResult.cpp
-  src/v20200713/model/User.cpp
-  src/v20200713/model/LabelResult.cpp
-  src/v20200713/model/Device.cpp
-  src/v20200713/model/ImsDetail.cpp
-  src/v20200713/model/EvilCount.cpp
   src/v20200713/model/ObjectResult.cpp
   src/v20200713/model/OcrTextDetail.cpp
   src/v20200713/model/ObjectDetail.cpp
-  src/v20200713/model/Filter.cpp
-  src/v20200713/model/DescribeImageStatResponse.cpp
-  src/v20200713/model/DescribeImsListRequest.cpp
-  src/v20200713/model/LibResult.cpp
-  src/v20200713/model/Overview.cpp
+  src/v20200713/model/OcrResult.cpp
   src/v20200713/model/LibDetail.cpp
-  src/v20200713/model/Filters.cpp
+  src/v20200713/model/Location.cpp
+  src/v20200713/model/LabelResult.cpp
+  src/v20200713/model/LabelDetailItem.cpp
+  src/v20200713/model/Device.cpp
+  src/v20200713/model/LibResult.cpp
+  src/v20200713/model/ImageModerationResponse.cpp
+  src/v20200713/model/User.cpp
   )
 
 set(ims_include

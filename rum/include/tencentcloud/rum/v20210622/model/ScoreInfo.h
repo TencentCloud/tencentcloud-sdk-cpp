@@ -280,6 +280,28 @@ namespace TencentCloud
                      */
                     bool PageDurationHasBeenSet() const;
 
+                    /**
+                     * 获取时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreateTime 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreateTime 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -359,6 +381,13 @@ namespace TencentCloud
                      */
                     std::string m_pageDuration;
                     bool m_pageDurationHasBeenSet;
+
+                    /**
+                     * 时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

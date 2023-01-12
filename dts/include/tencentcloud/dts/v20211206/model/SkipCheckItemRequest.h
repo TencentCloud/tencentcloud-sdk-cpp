@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool StepIdsHasBeenSet() const;
 
+                    /**
+                     * 获取当出现外键依赖检查导致校验不通过时、可以通过该字段选择是否迁移外键依赖，当StepIds包含ConstraintCheck且该字段值为shield时表示不迁移外键依赖、当StepIds包含ConstraintCheck且值为migrate时表示迁移外键依赖
+                     * @return ForeignKeyFlag 当出现外键依赖检查导致校验不通过时、可以通过该字段选择是否迁移外键依赖，当StepIds包含ConstraintCheck且该字段值为shield时表示不迁移外键依赖、当StepIds包含ConstraintCheck且值为migrate时表示迁移外键依赖
+                     */
+                    std::string GetForeignKeyFlag() const;
+
+                    /**
+                     * 设置当出现外键依赖检查导致校验不通过时、可以通过该字段选择是否迁移外键依赖，当StepIds包含ConstraintCheck且该字段值为shield时表示不迁移外键依赖、当StepIds包含ConstraintCheck且值为migrate时表示迁移外键依赖
+                     * @param ForeignKeyFlag 当出现外键依赖检查导致校验不通过时、可以通过该字段选择是否迁移外键依赖，当StepIds包含ConstraintCheck且该字段值为shield时表示不迁移外键依赖、当StepIds包含ConstraintCheck且值为migrate时表示迁移外键依赖
+                     */
+                    void SetForeignKeyFlag(const std::string& _foreignKeyFlag);
+
+                    /**
+                     * 判断参数 ForeignKeyFlag 是否已赋值
+                     * @return ForeignKeyFlag 是否已赋值
+                     */
+                    bool ForeignKeyFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_stepIds;
                     bool m_stepIdsHasBeenSet;
+
+                    /**
+                     * 当出现外键依赖检查导致校验不通过时、可以通过该字段选择是否迁移外键依赖，当StepIds包含ConstraintCheck且该字段值为shield时表示不迁移外键依赖、当StepIds包含ConstraintCheck且值为migrate时表示迁移外键依赖
+                     */
+                    std::string m_foreignKeyFlag;
+                    bool m_foreignKeyFlagHasBeenSet;
 
                 };
             }

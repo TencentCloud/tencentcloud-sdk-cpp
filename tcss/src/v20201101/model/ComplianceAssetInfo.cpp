@@ -31,7 +31,8 @@ ComplianceAssetInfo::ComplianceAssetInfo() :
     m_passedPolicyItemCountHasBeenSet(false),
     m_failedPolicyItemCountHasBeenSet(false),
     m_lastCheckTimeHasBeenSet(false),
-    m_checkResultHasBeenSet(false)
+    m_checkResultHasBeenSet(false),
+    m_instanceIdHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome ComplianceAssetInfo::Deserialize(const rapidjson::Value &val
         m_checkResultHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceId") && !value["InstanceId"].IsNull())
+    {
+        if (!value["InstanceId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ComplianceAssetInfo.InstanceId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceId = string(value["InstanceId"].GetString());
+        m_instanceIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void ComplianceAssetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CheckResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_checkResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void ComplianceAssetInfo::SetCheckResult(const string& _checkResult)
 bool ComplianceAssetInfo::CheckResultHasBeenSet() const
 {
     return m_checkResultHasBeenSet;
+}
+
+string ComplianceAssetInfo::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void ComplianceAssetInfo::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool ComplianceAssetInfo::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 

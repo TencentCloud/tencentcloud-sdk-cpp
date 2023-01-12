@@ -14,57 +14,58 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DTS_V20211206_MODEL_SKIPCHECKITEMRESPONSE_H_
-#define TENCENTCLOUD_DTS_V20211206_MODEL_SKIPCHECKITEMRESPONSE_H_
+#ifndef TENCENTCLOUD_ESSBASIC_V20210526_MODEL_DESCRIBEEXTENDEDSERVICEAUTHINFORESPONSE_H_
+#define TENCENTCLOUD_ESSBASIC_V20210526_MODEL_DESCRIBEEXTENDEDSERVICEAUTHINFORESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/essbasic/v20210526/model/ExtentServiceAuthInfo.h>
 
 
 namespace TencentCloud
 {
-    namespace Dts
+    namespace Essbasic
     {
-        namespace V20211206
+        namespace V20210526
         {
             namespace Model
             {
                 /**
-                * SkipCheckItem返回参数结构体
+                * DescribeExtendedServiceAuthInfo返回参数结构体
                 */
-                class SkipCheckItemResponse : public AbstractModel
+                class DescribeExtendedServiceAuthInfoResponse : public AbstractModel
                 {
                 public:
-                    SkipCheckItemResponse();
-                    ~SkipCheckItemResponse() = default;
+                    DescribeExtendedServiceAuthInfoResponse();
+                    ~DescribeExtendedServiceAuthInfoResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取跳过的提示信息
+                     * 获取企业扩展服务授权信息
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Message 跳过的提示信息
+                     * @return AuthInfo 企业扩展服务授权信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetMessage() const;
+                    std::vector<ExtentServiceAuthInfo> GetAuthInfo() const;
 
                     /**
-                     * 判断参数 Message 是否已赋值
-                     * @return Message 是否已赋值
+                     * 判断参数 AuthInfo 是否已赋值
+                     * @return AuthInfo 是否已赋值
                      */
-                    bool MessageHasBeenSet() const;
+                    bool AuthInfoHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 跳过的提示信息
+                     * 企业扩展服务授权信息
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_message;
-                    bool m_messageHasBeenSet;
+                    std::vector<ExtentServiceAuthInfo> m_authInfo;
+                    bool m_authInfoHasBeenSet;
 
                 };
             }
@@ -72,4 +73,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DTS_V20211206_MODEL_SKIPCHECKITEMRESPONSE_H_
+#endif // !TENCENTCLOUD_ESSBASIC_V20210526_MODEL_DESCRIBEEXTENDEDSERVICEAUTHINFORESPONSE_H_

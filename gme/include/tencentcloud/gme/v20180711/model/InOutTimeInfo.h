@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 用户进出房间信息
+                * 房间内的事件
                 */
                 class InOutTimeInfo : public AbstractModel
                 {

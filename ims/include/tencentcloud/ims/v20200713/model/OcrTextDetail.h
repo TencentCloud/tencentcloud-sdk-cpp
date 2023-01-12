@@ -195,6 +195,24 @@ namespace TencentCloud
                      */
                     bool RateHasBeenSet() const;
 
+                    /**
+                     * 获取OCR文本命中的二级标签
+                     * @return SubLabel OCR文本命中的二级标签
+                     */
+                    std::string GetSubLabel() const;
+
+                    /**
+                     * 设置OCR文本命中的二级标签
+                     * @param SubLabel OCR文本命中的二级标签
+                     */
+                    void SetSubLabel(const std::string& _subLabel);
+
+                    /**
+                     * 判断参数 SubLabel 是否已赋值
+                     * @return SubLabel 是否已赋值
+                     */
+                    bool SubLabelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -245,6 +263,12 @@ namespace TencentCloud
                      */
                     uint64_t m_rate;
                     bool m_rateHasBeenSet;
+
+                    /**
+                     * OCR文本命中的二级标签
+                     */
+                    std::string m_subLabel;
+                    bool m_subLabelHasBeenSet;
 
                 };
             }

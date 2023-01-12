@@ -14,55 +14,41 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_IMS_V20200713_MODEL_DESCRIBEIMSLISTRESPONSE_H_
-#define TENCENTCLOUD_IMS_V20200713_MODEL_DESCRIBEIMSLISTRESPONSE_H_
+#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEBASHEVENTSNEWRESPONSE_H_
+#define TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEBASHEVENTSNEWRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ims/v20200713/model/ImsDetail.h>
+#include <tencentcloud/cwp/v20180228/model/BashEventNew.h>
 
 
 namespace TencentCloud
 {
-    namespace Ims
+    namespace Cwp
     {
-        namespace V20200713
+        namespace V20180228
         {
             namespace Model
             {
                 /**
-                * DescribeImsList返回参数结构体
+                * DescribeBashEventsNew返回参数结构体
                 */
-                class DescribeImsListResponse : public AbstractModel
+                class DescribeBashEventsNewResponse : public AbstractModel
                 {
                 public:
-                    DescribeImsListResponse();
-                    ~DescribeImsListResponse() = default;
+                    DescribeBashEventsNewResponse();
+                    ~DescribeBashEventsNewResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取返回列表数据----非必选，该参数暂未对外开放
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ImsDetailSet 返回列表数据----非必选，该参数暂未对外开放
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<ImsDetail> GetImsDetailSet() const;
-
-                    /**
-                     * 判断参数 ImsDetailSet 是否已赋值
-                     * @return ImsDetailSet 是否已赋值
-                     */
-                    bool ImsDetailSetHasBeenSet() const;
-
-                    /**
                      * 获取总条数
                      * @return TotalCount 总条数
                      */
-                    int64_t GetTotalCount() const;
+                    uint64_t GetTotalCount() const;
 
                     /**
                      * 判断参数 TotalCount 是否已赋值
@@ -70,20 +56,31 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取高危命令事件列表
+                     * @return List 高危命令事件列表
+                     */
+                    std::vector<BashEventNew> GetList() const;
 
                     /**
-                     * 返回列表数据----非必选，该参数暂未对外开放
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 判断参数 List 是否已赋值
+                     * @return List 是否已赋值
                      */
-                    std::vector<ImsDetail> m_imsDetailSet;
-                    bool m_imsDetailSetHasBeenSet;
+                    bool ListHasBeenSet() const;
+
+                private:
 
                     /**
                      * 总条数
                      */
-                    int64_t m_totalCount;
+                    uint64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * 高危命令事件列表
+                     */
+                    std::vector<BashEventNew> m_list;
+                    bool m_listHasBeenSet;
 
                 };
             }
@@ -91,4 +88,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_IMS_V20200713_MODEL_DESCRIBEIMSLISTRESPONSE_H_
+#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEBASHEVENTSNEWRESPONSE_H_

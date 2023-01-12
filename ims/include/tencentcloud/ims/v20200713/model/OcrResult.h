@@ -181,6 +181,24 @@ namespace TencentCloud
                      */
                     bool TextHasBeenSet() const;
 
+                    /**
+                     * 获取是否命中结果，0 未命中 1命中
+                     * @return HitFlag 是否命中结果，0 未命中 1命中
+                     */
+                    uint64_t GetHitFlag() const;
+
+                    /**
+                     * 设置是否命中结果，0 未命中 1命中
+                     * @param HitFlag 是否命中结果，0 未命中 1命中
+                     */
+                    void SetHitFlag(const uint64_t& _hitFlag);
+
+                    /**
+                     * 判断参数 HitFlag 是否已赋值
+                     * @return HitFlag 是否已赋值
+                     */
+                    bool HitFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -226,6 +244,12 @@ namespace TencentCloud
                      */
                     std::string m_text;
                     bool m_textHasBeenSet;
+
+                    /**
+                     * 是否命中结果，0 未命中 1命中
+                     */
+                    uint64_t m_hitFlag;
+                    bool m_hitFlagHasBeenSet;
 
                 };
             }

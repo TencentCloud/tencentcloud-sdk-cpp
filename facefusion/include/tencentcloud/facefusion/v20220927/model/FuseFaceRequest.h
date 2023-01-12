@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取活动 ID，请在人脸融合控制台查看。
-                     * @return ProjectId 活动 ID，请在人脸融合控制台查看。
+                     * 获取活动 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
+                     * @return ProjectId 活动 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
                      */
                     std::string GetProjectId() const;
 
                     /**
-                     * 设置活动 ID，请在人脸融合控制台查看。
-                     * @param ProjectId 活动 ID，请在人脸融合控制台查看。
+                     * 设置活动 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
+                     * @param ProjectId 活动 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
                      */
                     void SetProjectId(const std::string& _projectId);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取素材 ID，请在人脸融合控制台查看。
-                     * @return ModelId 素材 ID，请在人脸融合控制台查看。
+                     * 获取素材 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
+                     * @return ModelId 素材 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
                      */
                     std::string GetModelId() const;
 
                     /**
-                     * 设置素材 ID，请在人脸融合控制台查看。
-                     * @param ModelId 素材 ID，请在人脸融合控制台查看。
+                     * 设置素材 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
+                     * @param ModelId 素材 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
                      */
                     void SetModelId(const std::string& _modelId);
 
@@ -219,13 +219,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 活动 ID，请在人脸融合控制台查看。
+                     * 活动 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 素材 ID，请在人脸融合控制台查看。
+                     * 素材 ID，请在<a href="https://console.cloud.tencent.com/facefusion" target="_blank">人脸融合控制台</a>查看。
                      */
                     std::string m_modelId;
                     bool m_modelIdHasBeenSet;

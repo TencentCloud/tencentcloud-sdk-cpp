@@ -65,6 +65,8 @@
 #include <tencentcloud/essbasic/v20210526/model/CreateSignUrlsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/DescribeExtendedServiceAuthInfoResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeFlowDetailInfoResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/DescribeResourceUrlsByFlowsRequest.h>
@@ -75,6 +77,8 @@
 #include <tencentcloud/essbasic/v20210526/model/DescribeUsageResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/GetDownloadFlowUrlResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ModifyExtendedServiceResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/OperateChannelTemplateRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/OperateChannelTemplateResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h>
@@ -162,6 +166,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeChannelFlowEvidenceReportResponse> DescribeChannelFlowEvidenceReportOutcome;
                 typedef std::future<DescribeChannelFlowEvidenceReportOutcome> DescribeChannelFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeChannelFlowEvidenceReportRequest&, DescribeChannelFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeChannelFlowEvidenceReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeExtendedServiceAuthInfoResponse> DescribeExtendedServiceAuthInfoOutcome;
+                typedef std::future<DescribeExtendedServiceAuthInfoOutcome> DescribeExtendedServiceAuthInfoOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::DescribeExtendedServiceAuthInfoRequest&, DescribeExtendedServiceAuthInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtendedServiceAuthInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFlowDetailInfoResponse> DescribeFlowDetailInfoOutcome;
                 typedef std::future<DescribeFlowDetailInfoOutcome> DescribeFlowDetailInfoOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::DescribeFlowDetailInfoRequest&, DescribeFlowDetailInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowDetailInfoAsyncHandler;
@@ -177,6 +184,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetDownloadFlowUrlResponse> GetDownloadFlowUrlOutcome;
                 typedef std::future<GetDownloadFlowUrlOutcome> GetDownloadFlowUrlOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::GetDownloadFlowUrlRequest&, GetDownloadFlowUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDownloadFlowUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyExtendedServiceResponse> ModifyExtendedServiceOutcome;
+                typedef std::future<ModifyExtendedServiceOutcome> ModifyExtendedServiceOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ModifyExtendedServiceRequest&, ModifyExtendedServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyExtendedServiceAsyncHandler;
                 typedef Outcome<Core::Error, Model::OperateChannelTemplateResponse> OperateChannelTemplateOutcome;
                 typedef std::future<OperateChannelTemplateOutcome> OperateChannelTemplateOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::OperateChannelTemplateRequest&, OperateChannelTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OperateChannelTemplateAsyncHandler;
@@ -425,6 +435,15 @@ namespace TencentCloud
                 DescribeChannelFlowEvidenceReportOutcomeCallable DescribeChannelFlowEvidenceReportCallable(const Model::DescribeChannelFlowEvidenceReportRequest& request);
 
                 /**
+                 *查询企业扩展服务授权信息，企业经办人需要时企业超管或者法人
+                 * @param req DescribeExtendedServiceAuthInfoRequest
+                 * @return DescribeExtendedServiceAuthInfoOutcome
+                 */
+                DescribeExtendedServiceAuthInfoOutcome DescribeExtendedServiceAuthInfo(const Model::DescribeExtendedServiceAuthInfoRequest &request);
+                void DescribeExtendedServiceAuthInfoAsync(const Model::DescribeExtendedServiceAuthInfoRequest& request, const DescribeExtendedServiceAuthInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeExtendedServiceAuthInfoOutcomeCallable DescribeExtendedServiceAuthInfoCallable(const Model::DescribeExtendedServiceAuthInfoRequest& request);
+
+                /**
                  *此接口（DescribeFlowDetailInfo）用于查询合同(签署流程)的详细信息。
                  * @param req DescribeFlowDetailInfoRequest
                  * @return DescribeFlowDetailInfoOutcome
@@ -472,6 +491,15 @@ namespace TencentCloud
                 GetDownloadFlowUrlOutcome GetDownloadFlowUrl(const Model::GetDownloadFlowUrlRequest &request);
                 void GetDownloadFlowUrlAsync(const Model::GetDownloadFlowUrlRequest& request, const GetDownloadFlowUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetDownloadFlowUrlOutcomeCallable GetDownloadFlowUrlCallable(const Model::GetDownloadFlowUrlRequest& request);
+
+                /**
+                 *修改（操作）企业扩展服务 ，企业经办人需要时企业超管或者法人
+                 * @param req ModifyExtendedServiceRequest
+                 * @return ModifyExtendedServiceOutcome
+                 */
+                ModifyExtendedServiceOutcome ModifyExtendedService(const Model::ModifyExtendedServiceRequest &request);
+                void ModifyExtendedServiceAsync(const Model::ModifyExtendedServiceRequest& request, const ModifyExtendedServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyExtendedServiceOutcomeCallable ModifyExtendedServiceCallable(const Model::ModifyExtendedServiceRequest& request);
 
                 /**
                  *此接口（OperateChannelTemplate）用于针对渠道模板库中的模板对子客企业可见性的查询和设置，不会直接分配渠道模板给子客企业。

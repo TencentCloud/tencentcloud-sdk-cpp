@@ -21,7 +21,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 CompareRule::CompareRule() :
-    m_itemsHasBeenSet(false)
+    m_itemsHasBeenSet(false),
+    m_cycleStepHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,16 @@ CoreInternalOutcome CompareRule::Deserialize(const rapidjson::Value &value)
         m_itemsHasBeenSet = true;
     }
 
+    if (value.HasMember("CycleStep") && !value["CycleStep"].IsNull())
+    {
+        if (!value["CycleStep"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CompareRule.CycleStep` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_cycleStep = value["CycleStep"].GetUint64();
+        m_cycleStepHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void CompareRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         }
     }
 
+    if (m_cycleStepHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CycleStep";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cycleStep, allocator);
+    }
+
 }
 
 
@@ -89,5 +108,21 @@ void CompareRule::SetItems(const vector<CompareRuleItem>& _items)
 bool CompareRule::ItemsHasBeenSet() const
 {
     return m_itemsHasBeenSet;
+}
+
+uint64_t CompareRule::GetCycleStep() const
+{
+    return m_cycleStep;
+}
+
+void CompareRule::SetCycleStep(const uint64_t& _cycleStep)
+{
+    m_cycleStep = _cycleStep;
+    m_cycleStepHasBeenSet = true;
+}
+
+bool CompareRule::CycleStepHasBeenSet() const
+{
+    return m_cycleStepHasBeenSet;
 }
 

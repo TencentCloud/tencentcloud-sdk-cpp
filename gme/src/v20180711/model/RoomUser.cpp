@@ -23,7 +23,8 @@ using namespace std;
 RoomUser::RoomUser() :
     m_roomIdHasBeenSet(false),
     m_uinsHasBeenSet(false),
-    m_strRoomIdHasBeenSet(false)
+    m_strRoomIdHasBeenSet(false),
+    m_strUinsHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,19 @@ CoreInternalOutcome RoomUser::Deserialize(const rapidjson::Value &value)
         m_strRoomIdHasBeenSet = true;
     }
 
+    if (value.HasMember("StrUins") && !value["StrUins"].IsNull())
+    {
+        if (!value["StrUins"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RoomUser.StrUins` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StrUins"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_strUins.push_back((*itr).GetString());
+        }
+        m_strUinsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +113,19 @@ void RoomUser::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "StrRoomId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_strRoomId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_strUinsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StrUins";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_strUins.begin(); itr != m_strUins.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -150,5 +177,21 @@ void RoomUser::SetStrRoomId(const string& _strRoomId)
 bool RoomUser::StrRoomIdHasBeenSet() const
 {
     return m_strRoomIdHasBeenSet;
+}
+
+vector<string> RoomUser::GetStrUins() const
+{
+    return m_strUins;
+}
+
+void RoomUser::SetStrUins(const vector<string>& _strUins)
+{
+    m_strUins = _strUins;
+    m_strUinsHasBeenSet = true;
+}
+
+bool RoomUser::StrUinsHasBeenSet() const
+{
+    return m_strUinsHasBeenSet;
 }
 

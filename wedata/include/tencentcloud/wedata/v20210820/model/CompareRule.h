@@ -69,6 +69,28 @@ namespace TencentCloud
                      */
                     bool ItemsHasBeenSet() const;
 
+                    /**
+                     * 获取周期性模板默认周期，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CycleStep 周期性模板默认周期，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCycleStep() const;
+
+                    /**
+                     * 设置周期性模板默认周期，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CycleStep 周期性模板默认周期，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCycleStep(const uint64_t& _cycleStep);
+
+                    /**
+                     * 判断参数 CycleStep 是否已赋值
+                     * @return CycleStep 是否已赋值
+                     */
+                    bool CycleStepHasBeenSet() const;
+
                 private:
 
                     /**
@@ -77,6 +99,13 @@ namespace TencentCloud
                      */
                     std::vector<CompareRuleItem> m_items;
                     bool m_itemsHasBeenSet;
+
+                    /**
+                     * 周期性模板默认周期，单位秒
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_cycleStep;
+                    bool m_cycleStepHasBeenSet;
 
                 };
             }

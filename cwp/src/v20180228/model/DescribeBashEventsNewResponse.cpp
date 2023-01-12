@@ -14,23 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ims/v20200713/model/DescribeImageStatResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBashEventsNewResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ims::V20200713::Model;
+using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
-DescribeImageStatResponse::DescribeImageStatResponse() :
-    m_overviewHasBeenSet(false),
-    m_trendCountHasBeenSet(false),
-    m_evilCountHasBeenSet(false)
+DescribeBashEventsNewResponse::DescribeBashEventsNewResponse() :
+    m_totalCountHasBeenSet(false),
+    m_listHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeImageStatResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeBashEventsNewResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,106 +63,63 @@ CoreInternalOutcome DescribeImageStatResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("Overview") && !rsp["Overview"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["Overview"].IsObject())
+        if (!rsp["TotalCount"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `Overview` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_overview.Deserialize(rsp["Overview"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_overviewHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
     }
 
-    if (rsp.HasMember("TrendCount") && !rsp["TrendCount"].IsNull())
+    if (rsp.HasMember("List") && !rsp["List"].IsNull())
     {
-        if (!rsp["TrendCount"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `TrendCount` is not array type"));
+        if (!rsp["List"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `List` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["TrendCount"];
+        const rapidjson::Value &tmpValue = rsp["List"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            TrendCount item;
+            BashEventNew item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_trendCount.push_back(item);
+            m_list.push_back(item);
         }
-        m_trendCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("EvilCount") && !rsp["EvilCount"].IsNull())
-    {
-        if (!rsp["EvilCount"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `EvilCount` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["EvilCount"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            EvilCount item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_evilCount.push_back(item);
-        }
-        m_evilCountHasBeenSet = true;
+        m_listHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeImageStatResponse::ToJsonString() const
+string DescribeBashEventsNewResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_overviewHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Overview";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_overview.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
-    if (m_trendCountHasBeenSet)
+    if (m_listHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TrendCount";
+        string key = "List";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_trendCount.begin(); itr != m_trendCount.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
-    if (m_evilCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EvilCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_evilCount.begin(); itr != m_evilCount.end(); ++itr, ++i)
+        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -182,34 +138,24 @@ string DescribeImageStatResponse::ToJsonString() const
 }
 
 
-Overview DescribeImageStatResponse::GetOverview() const
+uint64_t DescribeBashEventsNewResponse::GetTotalCount() const
 {
-    return m_overview;
+    return m_totalCount;
 }
 
-bool DescribeImageStatResponse::OverviewHasBeenSet() const
+bool DescribeBashEventsNewResponse::TotalCountHasBeenSet() const
 {
-    return m_overviewHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
-vector<TrendCount> DescribeImageStatResponse::GetTrendCount() const
+vector<BashEventNew> DescribeBashEventsNewResponse::GetList() const
 {
-    return m_trendCount;
+    return m_list;
 }
 
-bool DescribeImageStatResponse::TrendCountHasBeenSet() const
+bool DescribeBashEventsNewResponse::ListHasBeenSet() const
 {
-    return m_trendCountHasBeenSet;
-}
-
-vector<EvilCount> DescribeImageStatResponse::GetEvilCount() const
-{
-    return m_evilCount;
-}
-
-bool DescribeImageStatResponse::EvilCountHasBeenSet() const
-{
-    return m_evilCountHasBeenSet;
+    return m_listHasBeenSet;
 }
 
 

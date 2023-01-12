@@ -27,7 +27,8 @@ OcrResult::OcrResult() :
     m_subLabelHasBeenSet(false),
     m_scoreHasBeenSet(false),
     m_detailsHasBeenSet(false),
-    m_textHasBeenSet(false)
+    m_textHasBeenSet(false),
+    m_hitFlagHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome OcrResult::Deserialize(const rapidjson::Value &value)
         m_textHasBeenSet = true;
     }
 
+    if (value.HasMember("HitFlag") && !value["HitFlag"].IsNull())
+    {
+        if (!value["HitFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OcrResult.HitFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hitFlag = value["HitFlag"].GetUint64();
+        m_hitFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -184,6 +195,14 @@ void OcrResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Text";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_text.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hitFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HitFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hitFlag, allocator);
     }
 
 }
@@ -299,5 +318,21 @@ void OcrResult::SetText(const string& _text)
 bool OcrResult::TextHasBeenSet() const
 {
     return m_textHasBeenSet;
+}
+
+uint64_t OcrResult::GetHitFlag() const
+{
+    return m_hitFlag;
+}
+
+void OcrResult::SetHitFlag(const uint64_t& _hitFlag)
+{
+    m_hitFlag = _hitFlag;
+    m_hitFlagHasBeenSet = true;
+}
+
+bool OcrResult::HitFlagHasBeenSet() const
+{
+    return m_hitFlagHasBeenSet;
 }
 

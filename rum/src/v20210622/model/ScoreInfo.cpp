@@ -33,7 +33,8 @@ ScoreInfo::ScoreInfo() :
     m_pageErrorHasBeenSet(false),
     m_staticNumHasBeenSet(false),
     m_recordNumHasBeenSet(false),
-    m_pageDurationHasBeenSet(false)
+    m_pageDurationHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome ScoreInfo::Deserialize(const rapidjson::Value &value)
         m_pageDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScoreInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void ScoreInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "PageDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pageDuration.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void ScoreInfo::SetPageDuration(const string& _pageDuration)
 bool ScoreInfo::PageDurationHasBeenSet() const
 {
     return m_pageDurationHasBeenSet;
+}
+
+string ScoreInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void ScoreInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool ScoreInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 
