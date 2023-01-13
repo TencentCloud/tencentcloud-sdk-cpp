@@ -310,6 +310,50 @@ namespace TencentCloud
                      */
                     bool SerialIdHasBeenSet() const;
 
+                    /**
+                     * 获取耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TimeConsuming 耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetTimeConsuming() const;
+
+                    /**
+                     * 设置耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TimeConsuming 耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimeConsuming(const int64_t& _timeConsuming);
+
+                    /**
+                     * 判断参数 TimeConsuming 是否已赋值
+                     * @return TimeConsuming 是否已赋值
+                     */
+                    bool TimeConsumingHasBeenSet() const;
+
+                    /**
+                     * 获取快照路径状态 1：可用；2：不可用；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PathStatus 快照路径状态 1：可用；2：不可用；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPathStatus() const;
+
+                    /**
+                     * 设置快照路径状态 1：可用；2：不可用；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PathStatus 快照路径状态 1：可用；2：不可用；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPathStatus(const int64_t& _pathStatus);
+
+                    /**
+                     * 判断参数 PathStatus 是否已赋值
+                     * @return PathStatus 是否已赋值
+                     */
+                    bool PathStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -395,6 +439,20 @@ namespace TencentCloud
                      */
                     std::string m_serialId;
                     bool m_serialIdHasBeenSet;
+
+                    /**
+                     * 耗时
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_timeConsuming;
+                    bool m_timeConsumingHasBeenSet;
+
+                    /**
+                     * 快照路径状态 1：可用；2：不可用；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pathStatus;
+                    bool m_pathStatusHasBeenSet;
 
                 };
             }

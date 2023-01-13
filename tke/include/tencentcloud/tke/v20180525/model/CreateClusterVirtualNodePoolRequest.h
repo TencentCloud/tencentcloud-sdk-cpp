@@ -100,6 +100,24 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
+                     * 获取安全组ID列表
+                     * @return SecurityGroupIds 安全组ID列表
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组ID列表
+                     * @param SecurityGroupIds 安全组ID列表
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
+                    /**
                      * 获取虚拟节点label
                      * @return Labels 虚拟节点label
                      */
@@ -216,6 +234,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
+
+                    /**
+                     * 安全组ID列表
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                     /**
                      * 虚拟节点label

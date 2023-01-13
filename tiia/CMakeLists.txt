@@ -49,6 +49,7 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/AssessQualityRequest.h
   include/tencentcloud/tiia/v20190529/model/DeleteImagesRequest.h
   include/tencentcloud/tiia/v20190529/model/CreateGroupRequest.h
+  include/tencentcloud/tiia/v20190529/model/UpdateImageRequest.h
   include/tencentcloud/tiia/v20190529/model/DescribeImagesRequest.h
   include/tencentcloud/tiia/v20190529/model/Rect.h
   include/tencentcloud/tiia/v20190529/model/DetectProductBetaRequest.h
@@ -83,6 +84,7 @@ set(tiia_public_header_model
   include/tencentcloud/tiia/v20190529/model/LemmaInfo.h
   include/tencentcloud/tiia/v20190529/model/DescribeImagesResponse.h
   include/tencentcloud/tiia/v20190529/model/DetectMisbehaviorRequest.h
+  include/tencentcloud/tiia/v20190529/model/UpdateImageResponse.h
   include/tencentcloud/tiia/v20190529/model/CreateGroupResponse.h
   )
 
@@ -118,6 +120,7 @@ set(tiia_src
   src/v20190529/model/AssessQualityRequest.cpp
   src/v20190529/model/DeleteImagesRequest.cpp
   src/v20190529/model/CreateGroupRequest.cpp
+  src/v20190529/model/UpdateImageRequest.cpp
   src/v20190529/model/DescribeImagesRequest.cpp
   src/v20190529/model/Rect.cpp
   src/v20190529/model/DetectProductBetaRequest.cpp
@@ -152,6 +155,7 @@ set(tiia_src
   src/v20190529/model/LemmaInfo.cpp
   src/v20190529/model/DescribeImagesResponse.cpp
   src/v20190529/model/DetectMisbehaviorRequest.cpp
+  src/v20190529/model/UpdateImageResponse.cpp
   src/v20190529/model/CreateGroupResponse.cpp
   )
 

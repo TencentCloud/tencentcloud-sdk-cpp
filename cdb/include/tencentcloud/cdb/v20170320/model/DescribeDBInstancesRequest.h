@@ -619,6 +619,42 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取数据库代理 IP 。
+                     * @return ProxyVips 数据库代理 IP 。
+                     */
+                    std::vector<std::string> GetProxyVips() const;
+
+                    /**
+                     * 设置数据库代理 IP 。
+                     * @param ProxyVips 数据库代理 IP 。
+                     */
+                    void SetProxyVips(const std::vector<std::string>& _proxyVips);
+
+                    /**
+                     * 判断参数 ProxyVips 是否已赋值
+                     * @return ProxyVips 是否已赋值
+                     */
+                    bool ProxyVipsHasBeenSet() const;
+
+                    /**
+                     * 获取数据库代理 ID 。
+                     * @return ProxyIds 数据库代理 ID 。
+                     */
+                    std::vector<std::string> GetProxyIds() const;
+
+                    /**
+                     * 设置数据库代理 ID 。
+                     * @param ProxyIds 数据库代理 ID 。
+                     */
+                    void SetProxyIds(const std::vector<std::string>& _proxyIds);
+
+                    /**
+                     * 判断参数 ProxyIds 是否已赋值
+                     * @return ProxyIds 是否已赋值
+                     */
+                    bool ProxyIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -812,6 +848,18 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 数据库代理 IP 。
+                     */
+                    std::vector<std::string> m_proxyVips;
+                    bool m_proxyVipsHasBeenSet;
+
+                    /**
+                     * 数据库代理 ID 。
+                     */
+                    std::vector<std::string> m_proxyIds;
+                    bool m_proxyIdsHasBeenSet;
 
                 };
             }

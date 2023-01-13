@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要查询的日志主题ID
-                     * @return TopicId 要查询的日志主题ID
-                     */
-                    std::string GetTopicId() const;
-
-                    /**
-                     * 设置要查询的日志主题ID
-                     * @param TopicId 要查询的日志主题ID
-                     */
-                    void SetTopicId(const std::string& _topicId);
-
-                    /**
-                     * 判断参数 TopicId 是否已赋值
-                     * @return TopicId 是否已赋值
-                     */
-                    bool TopicIdHasBeenSet() const;
-
-                    /**
                      * 获取要查询的日志的起始时间，Unix时间戳，单位ms
                      * @return From 要查询的日志的起始时间，Unix时间戳，单位ms
                      */
@@ -115,6 +97,24 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
+                     * 获取要查询的日志主题ID
+                     * @return TopicId 要查询的日志主题ID
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置要查询的日志主题ID
+                     * @param TopicId 要查询的日志主题ID
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     */
+                    bool TopicIdHasBeenSet() const;
+
+                    /**
                      * 获取时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200
                      * @return Interval 时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200
                      */
@@ -135,12 +135,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的日志主题ID
-                     */
-                    std::string m_topicId;
-                    bool m_topicIdHasBeenSet;
-
-                    /**
                      * 要查询的日志的起始时间，Unix时间戳，单位ms
                      */
                     int64_t m_from;
@@ -157,6 +151,12 @@ namespace TencentCloud
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
+
+                    /**
+                     * 要查询的日志主题ID
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
 
                     /**
                      * 时间间隔: 单位ms  限制性条件：(To-From) / interval <= 200

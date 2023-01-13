@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool FilterInstanceIdListHasBeenSet() const;
 
                     /**
-                     * 获取企业版搜索
-                     * @return FilterEnterpriseFlag 企业版搜索
+                     * 获取企业版搜索,  1：包含重保护航套餐下的企业版列表, 2: 不包含重保护航套餐的企业版列表
+                     * @return FilterEnterpriseFlag 企业版搜索,  1：包含重保护航套餐下的企业版列表, 2: 不包含重保护航套餐的企业版列表
                      */
                     uint64_t GetFilterEnterpriseFlag() const;
 
                     /**
-                     * 设置企业版搜索
-                     * @param FilterEnterpriseFlag 企业版搜索
+                     * 设置企业版搜索,  1：包含重保护航套餐下的企业版列表, 2: 不包含重保护航套餐的企业版列表
+                     * @param FilterEnterpriseFlag 企业版搜索,  1：包含重保护航套餐下的企业版列表, 2: 不包含重保护航套餐的企业版列表
                      */
                     void SetFilterEnterpriseFlag(const uint64_t& _filterEnterpriseFlag);
 
@@ -331,6 +331,24 @@ namespace TencentCloud
                      */
                     bool FilterConvoyHasBeenSet() const;
 
+                    /**
+                     * 获取默认false；接口传true，返回数据中不包含高级信息，高级信息包含：InstanceList[0].Usage。
+                     * @return ExcludeAdvancedInfo 默认false；接口传true，返回数据中不包含高级信息，高级信息包含：InstanceList[0].Usage。
+                     */
+                    bool GetExcludeAdvancedInfo() const;
+
+                    /**
+                     * 设置默认false；接口传true，返回数据中不包含高级信息，高级信息包含：InstanceList[0].Usage。
+                     * @param ExcludeAdvancedInfo 默认false；接口传true，返回数据中不包含高级信息，高级信息包含：InstanceList[0].Usage。
+                     */
+                    void SetExcludeAdvancedInfo(const bool& _excludeAdvancedInfo);
+
+                    /**
+                     * 判断参数 ExcludeAdvancedInfo 是否已赋值
+                     * @return ExcludeAdvancedInfo 是否已赋值
+                     */
+                    bool ExcludeAdvancedInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -394,7 +412,7 @@ namespace TencentCloud
                     bool m_filterInstanceIdListHasBeenSet;
 
                     /**
-                     * 企业版搜索
+                     * 企业版搜索,  1：包含重保护航套餐下的企业版列表, 2: 不包含重保护航套餐的企业版列表
                      */
                     uint64_t m_filterEnterpriseFlag;
                     bool m_filterEnterpriseFlagHasBeenSet;
@@ -428,6 +446,12 @@ namespace TencentCloud
                      */
                     uint64_t m_filterConvoy;
                     bool m_filterConvoyHasBeenSet;
+
+                    /**
+                     * 默认false；接口传true，返回数据中不包含高级信息，高级信息包含：InstanceList[0].Usage。
+                     */
+                    bool m_excludeAdvancedInfo;
+                    bool m_excludeAdvancedInfoHasBeenSet;
 
                 };
             }

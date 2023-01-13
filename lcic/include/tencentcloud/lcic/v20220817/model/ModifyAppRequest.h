@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取回调地址。端口目前仅支持80、443
-                     * @return Callback 回调地址。端口目前仅支持80、443
+                     * 获取回调地址。
+                     * @return Callback 回调地址。
                      */
                     std::string GetCallback() const;
 
                     /**
-                     * 设置回调地址。端口目前仅支持80、443
-                     * @param Callback 回调地址。端口目前仅支持80、443
+                     * 设置回调地址。
+                     * @param Callback 回调地址。
                      */
                     void SetCallback(const std::string& _callback);
 
@@ -77,6 +77,24 @@ namespace TencentCloud
                      * @return Callback 是否已赋值
                      */
                     bool CallbackHasBeenSet() const;
+
+                    /**
+                     * 获取回调key。
+                     * @return CallbackKey 回调key。
+                     */
+                    std::string GetCallbackKey() const;
+
+                    /**
+                     * 设置回调key。
+                     * @param CallbackKey 回调key。
+                     */
+                    void SetCallbackKey(const std::string& _callbackKey);
+
+                    /**
+                     * 判断参数 CallbackKey 是否已赋值
+                     * @return CallbackKey 是否已赋值
+                     */
+                    bool CallbackKeyHasBeenSet() const;
 
                 private:
 
@@ -87,10 +105,16 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 回调地址。端口目前仅支持80、443
+                     * 回调地址。
                      */
                     std::string m_callback;
                     bool m_callbackHasBeenSet;
+
+                    /**
+                     * 回调key。
+                     */
+                    std::string m_callbackKey;
+                    bool m_callbackKeyHasBeenSet;
 
                 };
             }

@@ -29,6 +29,8 @@
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyObjectResponse.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagRequest.h>
 #include <tencentcloud/monitor/v20180724/model/BindingPolicyTagResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CheckIsPrometheusNewUserRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CheckIsPrometheusNewUserResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CleanGrafanaInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateAlarmNoticeRequest.h>
@@ -51,8 +53,12 @@
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusAgentResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreatePrometheusRecordRuleYamlRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreatePrometheusRecordRuleYamlResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusScrapeJobRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreatePrometheusScrapeJobResponse.h>
+#include <tencentcloud/monitor/v20180724/model/CreatePrometheusTempRequest.h>
+#include <tencentcloud/monitor/v20180724/model/CreatePrometheusTempResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateRecordingRuleRequest.h>
 #include <tencentcloud/monitor/v20180724/model/CreateRecordingRuleResponse.h>
 #include <tencentcloud/monitor/v20180724/model/CreateSSOAccountRequest.h>
@@ -75,8 +81,14 @@
 #include <tencentcloud/monitor/v20180724/model/DeleteGrafanaNotificationChannelResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePolicyGroupResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusRecordRuleYamlRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusRecordRuleYamlResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusScrapeJobsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeletePrometheusScrapeJobsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusTempRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusTempResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusTempSyncRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DeletePrometheusTempSyncResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteRecordingRulesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteRecordingRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DeleteSSOAccountRequest.h>
@@ -147,14 +159,34 @@
 #include <tencentcloud/monitor/v20180724/model/DescribeProductEventListResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeProductListResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAgentInstancesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAgentInstancesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAgentsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusAgentsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertPolicyRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusAlertPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusConfigRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusConfigResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceDetailRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceDetailResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceInitStatusRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceInitStatusResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceUsageRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstanceUsageResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusInstancesOverviewResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRuleYamlRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRuleYamlResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusRecordRulesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusScrapeJobsResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusTempRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusTempResponse.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusTempSyncRequest.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePrometheusTempSyncResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusZonesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePrometheusZonesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/DescribeRecordingRulesRequest.h>
@@ -199,14 +231,22 @@
 #include <tencentcloud/monitor/v20180724/model/ModifyPolicyGroupResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ModifyPrometheusInstanceAttributesResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPrometheusRecordRuleYamlRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPrometheusRecordRuleYamlResponse.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPrometheusTempRequest.h>
+#include <tencentcloud/monitor/v20180724/model/ModifyPrometheusTempResponse.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataRequest.h>
 #include <tencentcloud/monitor/v20180724/model/PutMonitorDataResponse.h>
 #include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceRequest.h>
 #include <tencentcloud/monitor/v20180724/model/ResumeGrafanaInstanceResponse.h>
+#include <tencentcloud/monitor/v20180724/model/RunPrometheusInstanceRequest.h>
+#include <tencentcloud/monitor/v20180724/model/RunPrometheusInstanceResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h>
 #include <tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgResponse.h>
 #include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyRequest.h>
 #include <tencentcloud/monitor/v20180724/model/SetDefaultAlarmPolicyResponse.h>
+#include <tencentcloud/monitor/v20180724/model/SyncPrometheusTempRequest.h>
+#include <tencentcloud/monitor/v20180724/model/SyncPrometheusTempResponse.h>
 #include <tencentcloud/monitor/v20180724/model/TerminatePrometheusInstancesRequest.h>
 #include <tencentcloud/monitor/v20180724/model/TerminatePrometheusInstancesResponse.h>
 #include <tencentcloud/monitor/v20180724/model/UnBindingAllPolicyObjectRequest.h>
@@ -274,6 +314,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindingPolicyTagResponse> BindingPolicyTagOutcome;
                 typedef std::future<BindingPolicyTagOutcome> BindingPolicyTagOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::BindingPolicyTagRequest&, BindingPolicyTagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindingPolicyTagAsyncHandler;
+                typedef Outcome<Core::Error, Model::CheckIsPrometheusNewUserResponse> CheckIsPrometheusNewUserOutcome;
+                typedef std::future<CheckIsPrometheusNewUserOutcome> CheckIsPrometheusNewUserOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CheckIsPrometheusNewUserRequest&, CheckIsPrometheusNewUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckIsPrometheusNewUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::CleanGrafanaInstanceResponse> CleanGrafanaInstanceOutcome;
                 typedef std::future<CleanGrafanaInstanceOutcome> CleanGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CleanGrafanaInstanceRequest&, CleanGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CleanGrafanaInstanceAsyncHandler;
@@ -307,9 +350,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrometheusMultiTenantInstancePostPayModeResponse> CreatePrometheusMultiTenantInstancePostPayModeOutcome;
                 typedef std::future<CreatePrometheusMultiTenantInstancePostPayModeOutcome> CreatePrometheusMultiTenantInstancePostPayModeOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusMultiTenantInstancePostPayModeRequest&, CreatePrometheusMultiTenantInstancePostPayModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusMultiTenantInstancePostPayModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrometheusRecordRuleYamlResponse> CreatePrometheusRecordRuleYamlOutcome;
+                typedef std::future<CreatePrometheusRecordRuleYamlOutcome> CreatePrometheusRecordRuleYamlOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusRecordRuleYamlRequest&, CreatePrometheusRecordRuleYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusRecordRuleYamlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreatePrometheusScrapeJobResponse> CreatePrometheusScrapeJobOutcome;
                 typedef std::future<CreatePrometheusScrapeJobOutcome> CreatePrometheusScrapeJobOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusScrapeJobRequest&, CreatePrometheusScrapeJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusScrapeJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePrometheusTempResponse> CreatePrometheusTempOutcome;
+                typedef std::future<CreatePrometheusTempOutcome> CreatePrometheusTempOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::CreatePrometheusTempRequest&, CreatePrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrometheusTempAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateRecordingRuleResponse> CreateRecordingRuleOutcome;
                 typedef std::future<CreateRecordingRuleOutcome> CreateRecordingRuleOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::CreateRecordingRuleRequest&, CreateRecordingRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRecordingRuleAsyncHandler;
@@ -343,9 +392,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeletePolicyGroupResponse> DeletePolicyGroupOutcome;
                 typedef std::future<DeletePolicyGroupOutcome> DeletePolicyGroupOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePolicyGroupRequest&, DeletePolicyGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePolicyGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePrometheusRecordRuleYamlResponse> DeletePrometheusRecordRuleYamlOutcome;
+                typedef std::future<DeletePrometheusRecordRuleYamlOutcome> DeletePrometheusRecordRuleYamlOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeletePrometheusRecordRuleYamlRequest&, DeletePrometheusRecordRuleYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusRecordRuleYamlAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeletePrometheusScrapeJobsResponse> DeletePrometheusScrapeJobsOutcome;
                 typedef std::future<DeletePrometheusScrapeJobsOutcome> DeletePrometheusScrapeJobsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeletePrometheusScrapeJobsRequest&, DeletePrometheusScrapeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusScrapeJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePrometheusTempResponse> DeletePrometheusTempOutcome;
+                typedef std::future<DeletePrometheusTempOutcome> DeletePrometheusTempOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeletePrometheusTempRequest&, DeletePrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusTempAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeletePrometheusTempSyncResponse> DeletePrometheusTempSyncOutcome;
+                typedef std::future<DeletePrometheusTempSyncOutcome> DeletePrometheusTempSyncOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DeletePrometheusTempSyncRequest&, DeletePrometheusTempSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeletePrometheusTempSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordingRulesResponse> DeleteRecordingRulesOutcome;
                 typedef std::future<DeleteRecordingRulesOutcome> DeleteRecordingRulesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DeleteRecordingRulesRequest&, DeleteRecordingRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordingRulesAsyncHandler;
@@ -451,18 +509,48 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductListResponse> DescribeProductListOutcome;
                 typedef std::future<DescribeProductListOutcome> DescribeProductListOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribeProductListRequest&, DescribeProductListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusAgentInstancesResponse> DescribePrometheusAgentInstancesOutcome;
+                typedef std::future<DescribePrometheusAgentInstancesOutcome> DescribePrometheusAgentInstancesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAgentInstancesRequest&, DescribePrometheusAgentInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAgentInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusAgentsResponse> DescribePrometheusAgentsOutcome;
                 typedef std::future<DescribePrometheusAgentsOutcome> DescribePrometheusAgentsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAgentsRequest&, DescribePrometheusAgentsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAgentsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusAlertPolicyResponse> DescribePrometheusAlertPolicyOutcome;
+                typedef std::future<DescribePrometheusAlertPolicyOutcome> DescribePrometheusAlertPolicyOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusAlertPolicyRequest&, DescribePrometheusAlertPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusAlertPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusConfigResponse> DescribePrometheusConfigOutcome;
+                typedef std::future<DescribePrometheusConfigOutcome> DescribePrometheusConfigOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusConfigRequest&, DescribePrometheusConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusInstanceDetailResponse> DescribePrometheusInstanceDetailOutcome;
+                typedef std::future<DescribePrometheusInstanceDetailOutcome> DescribePrometheusInstanceDetailOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstanceDetailRequest&, DescribePrometheusInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstanceDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusInstanceInitStatusResponse> DescribePrometheusInstanceInitStatusOutcome;
+                typedef std::future<DescribePrometheusInstanceInitStatusOutcome> DescribePrometheusInstanceInitStatusOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstanceInitStatusRequest&, DescribePrometheusInstanceInitStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstanceInitStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusInstanceUsageResponse> DescribePrometheusInstanceUsageOutcome;
                 typedef std::future<DescribePrometheusInstanceUsageOutcome> DescribePrometheusInstanceUsageOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstanceUsageRequest&, DescribePrometheusInstanceUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstanceUsageAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusInstancesResponse> DescribePrometheusInstancesOutcome;
                 typedef std::future<DescribePrometheusInstancesOutcome> DescribePrometheusInstancesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstancesRequest&, DescribePrometheusInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusInstancesOverviewResponse> DescribePrometheusInstancesOverviewOutcome;
+                typedef std::future<DescribePrometheusInstancesOverviewOutcome> DescribePrometheusInstancesOverviewOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusInstancesOverviewRequest&, DescribePrometheusInstancesOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusInstancesOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusRecordRuleYamlResponse> DescribePrometheusRecordRuleYamlOutcome;
+                typedef std::future<DescribePrometheusRecordRuleYamlOutcome> DescribePrometheusRecordRuleYamlOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusRecordRuleYamlRequest&, DescribePrometheusRecordRuleYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusRecordRuleYamlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusRecordRulesResponse> DescribePrometheusRecordRulesOutcome;
+                typedef std::future<DescribePrometheusRecordRulesOutcome> DescribePrometheusRecordRulesOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusRecordRulesRequest&, DescribePrometheusRecordRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusRecordRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusScrapeJobsResponse> DescribePrometheusScrapeJobsOutcome;
                 typedef std::future<DescribePrometheusScrapeJobsOutcome> DescribePrometheusScrapeJobsOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusScrapeJobsRequest&, DescribePrometheusScrapeJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusScrapeJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusTempResponse> DescribePrometheusTempOutcome;
+                typedef std::future<DescribePrometheusTempOutcome> DescribePrometheusTempOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusTempRequest&, DescribePrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusTempAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrometheusTempSyncResponse> DescribePrometheusTempSyncOutcome;
+                typedef std::future<DescribePrometheusTempSyncOutcome> DescribePrometheusTempSyncOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusTempSyncRequest&, DescribePrometheusTempSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusTempSyncAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrometheusZonesResponse> DescribePrometheusZonesOutcome;
                 typedef std::future<DescribePrometheusZonesOutcome> DescribePrometheusZonesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::DescribePrometheusZonesRequest&, DescribePrometheusZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrometheusZonesAsyncHandler;
@@ -529,18 +617,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyPrometheusInstanceAttributesResponse> ModifyPrometheusInstanceAttributesOutcome;
                 typedef std::future<ModifyPrometheusInstanceAttributesOutcome> ModifyPrometheusInstanceAttributesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ModifyPrometheusInstanceAttributesRequest&, ModifyPrometheusInstanceAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusInstanceAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPrometheusRecordRuleYamlResponse> ModifyPrometheusRecordRuleYamlOutcome;
+                typedef std::future<ModifyPrometheusRecordRuleYamlOutcome> ModifyPrometheusRecordRuleYamlOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyPrometheusRecordRuleYamlRequest&, ModifyPrometheusRecordRuleYamlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusRecordRuleYamlAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyPrometheusTempResponse> ModifyPrometheusTempOutcome;
+                typedef std::future<ModifyPrometheusTempOutcome> ModifyPrometheusTempOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::ModifyPrometheusTempRequest&, ModifyPrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPrometheusTempAsyncHandler;
                 typedef Outcome<Core::Error, Model::PutMonitorDataResponse> PutMonitorDataOutcome;
                 typedef std::future<PutMonitorDataOutcome> PutMonitorDataOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::PutMonitorDataRequest&, PutMonitorDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PutMonitorDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::ResumeGrafanaInstanceResponse> ResumeGrafanaInstanceOutcome;
                 typedef std::future<ResumeGrafanaInstanceOutcome> ResumeGrafanaInstanceOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::ResumeGrafanaInstanceRequest&, ResumeGrafanaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResumeGrafanaInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::RunPrometheusInstanceResponse> RunPrometheusInstanceOutcome;
+                typedef std::future<RunPrometheusInstanceOutcome> RunPrometheusInstanceOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::RunPrometheusInstanceRequest&, RunPrometheusInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RunPrometheusInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendCustomAlarmMsgResponse> SendCustomAlarmMsgOutcome;
                 typedef std::future<SendCustomAlarmMsgOutcome> SendCustomAlarmMsgOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::SendCustomAlarmMsgRequest&, SendCustomAlarmMsgOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendCustomAlarmMsgAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetDefaultAlarmPolicyResponse> SetDefaultAlarmPolicyOutcome;
                 typedef std::future<SetDefaultAlarmPolicyOutcome> SetDefaultAlarmPolicyOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::SetDefaultAlarmPolicyRequest&, SetDefaultAlarmPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetDefaultAlarmPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::SyncPrometheusTempResponse> SyncPrometheusTempOutcome;
+                typedef std::future<SyncPrometheusTempOutcome> SyncPrometheusTempOutcomeCallable;
+                typedef std::function<void(const MonitorClient*, const Model::SyncPrometheusTempRequest&, SyncPrometheusTempOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncPrometheusTempAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminatePrometheusInstancesResponse> TerminatePrometheusInstancesOutcome;
                 typedef std::future<TerminatePrometheusInstancesOutcome> TerminatePrometheusInstancesOutcomeCallable;
                 typedef std::function<void(const MonitorClient*, const Model::TerminatePrometheusInstancesRequest&, TerminatePrometheusInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminatePrometheusInstancesAsyncHandler;
@@ -636,6 +736,15 @@ namespace TencentCloud
                 BindingPolicyTagOutcome BindingPolicyTag(const Model::BindingPolicyTagRequest &request);
                 void BindingPolicyTagAsync(const Model::BindingPolicyTagRequest& request, const BindingPolicyTagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BindingPolicyTagOutcomeCallable BindingPolicyTagCallable(const Model::BindingPolicyTagRequest& request);
+
+                /**
+                 *判断用户是否为云原生监控新用户，即在任何地域下均未创建过监控实例的用户
+                 * @param req CheckIsPrometheusNewUserRequest
+                 * @return CheckIsPrometheusNewUserOutcome
+                 */
+                CheckIsPrometheusNewUserOutcome CheckIsPrometheusNewUser(const Model::CheckIsPrometheusNewUserRequest &request);
+                void CheckIsPrometheusNewUserAsync(const Model::CheckIsPrometheusNewUserRequest& request, const CheckIsPrometheusNewUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CheckIsPrometheusNewUserOutcomeCallable CheckIsPrometheusNewUserCallable(const Model::CheckIsPrometheusNewUserRequest& request);
 
                 /**
                  *强制销毁 Grafana 实例
@@ -739,6 +848,15 @@ namespace TencentCloud
                 CreatePrometheusMultiTenantInstancePostPayModeOutcomeCallable CreatePrometheusMultiTenantInstancePostPayModeCallable(const Model::CreatePrometheusMultiTenantInstancePostPayModeRequest& request);
 
                 /**
+                 *以Yaml的方式创建聚合规则
+                 * @param req CreatePrometheusRecordRuleYamlRequest
+                 * @return CreatePrometheusRecordRuleYamlOutcome
+                 */
+                CreatePrometheusRecordRuleYamlOutcome CreatePrometheusRecordRuleYaml(const Model::CreatePrometheusRecordRuleYamlRequest &request);
+                void CreatePrometheusRecordRuleYamlAsync(const Model::CreatePrometheusRecordRuleYamlRequest& request, const CreatePrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrometheusRecordRuleYamlOutcomeCallable CreatePrometheusRecordRuleYamlCallable(const Model::CreatePrometheusRecordRuleYamlRequest& request);
+
+                /**
                  *创建 Prometheus 抓取任务
                  * @param req CreatePrometheusScrapeJobRequest
                  * @return CreatePrometheusScrapeJobOutcome
@@ -746,6 +864,15 @@ namespace TencentCloud
                 CreatePrometheusScrapeJobOutcome CreatePrometheusScrapeJob(const Model::CreatePrometheusScrapeJobRequest &request);
                 void CreatePrometheusScrapeJobAsync(const Model::CreatePrometheusScrapeJobRequest& request, const CreatePrometheusScrapeJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrometheusScrapeJobOutcomeCallable CreatePrometheusScrapeJobCallable(const Model::CreatePrometheusScrapeJobRequest& request);
+
+                /**
+                 *创建一个云原生Prometheus模板
+                 * @param req CreatePrometheusTempRequest
+                 * @return CreatePrometheusTempOutcome
+                 */
+                CreatePrometheusTempOutcome CreatePrometheusTemp(const Model::CreatePrometheusTempRequest &request);
+                void CreatePrometheusTempAsync(const Model::CreatePrometheusTempRequest& request, const CreatePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePrometheusTempOutcomeCallable CreatePrometheusTempCallable(const Model::CreatePrometheusTempRequest& request);
 
                 /**
                  *创建 Prometheus 的预聚合规则
@@ -849,6 +976,15 @@ namespace TencentCloud
                 DeletePolicyGroupOutcomeCallable DeletePolicyGroupCallable(const Model::DeletePolicyGroupRequest& request);
 
                 /**
+                 *删除聚合实例
+                 * @param req DeletePrometheusRecordRuleYamlRequest
+                 * @return DeletePrometheusRecordRuleYamlOutcome
+                 */
+                DeletePrometheusRecordRuleYamlOutcome DeletePrometheusRecordRuleYaml(const Model::DeletePrometheusRecordRuleYamlRequest &request);
+                void DeletePrometheusRecordRuleYamlAsync(const Model::DeletePrometheusRecordRuleYamlRequest& request, const DeletePrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrometheusRecordRuleYamlOutcomeCallable DeletePrometheusRecordRuleYamlCallable(const Model::DeletePrometheusRecordRuleYamlRequest& request);
+
+                /**
                  *删除 Prometheus 抓取任务
                  * @param req DeletePrometheusScrapeJobsRequest
                  * @return DeletePrometheusScrapeJobsOutcome
@@ -856,6 +992,24 @@ namespace TencentCloud
                 DeletePrometheusScrapeJobsOutcome DeletePrometheusScrapeJobs(const Model::DeletePrometheusScrapeJobsRequest &request);
                 void DeletePrometheusScrapeJobsAsync(const Model::DeletePrometheusScrapeJobsRequest& request, const DeletePrometheusScrapeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeletePrometheusScrapeJobsOutcomeCallable DeletePrometheusScrapeJobsCallable(const Model::DeletePrometheusScrapeJobsRequest& request);
+
+                /**
+                 *删除一个云原生Prometheus配置模板
+                 * @param req DeletePrometheusTempRequest
+                 * @return DeletePrometheusTempOutcome
+                 */
+                DeletePrometheusTempOutcome DeletePrometheusTemp(const Model::DeletePrometheusTempRequest &request);
+                void DeletePrometheusTempAsync(const Model::DeletePrometheusTempRequest& request, const DeletePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrometheusTempOutcomeCallable DeletePrometheusTempCallable(const Model::DeletePrometheusTempRequest& request);
+
+                /**
+                 *解除模板同步，这将会删除目标中该模板所生产的配置，针对V2版本实例
+                 * @param req DeletePrometheusTempSyncRequest
+                 * @return DeletePrometheusTempSyncOutcome
+                 */
+                DeletePrometheusTempSyncOutcome DeletePrometheusTempSync(const Model::DeletePrometheusTempSyncRequest &request);
+                void DeletePrometheusTempSyncAsync(const Model::DeletePrometheusTempSyncRequest& request, const DeletePrometheusTempSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeletePrometheusTempSyncOutcomeCallable DeletePrometheusTempSyncCallable(const Model::DeletePrometheusTempSyncRequest& request);
 
                 /**
                  *批量删除 Prometheus 预聚合规则
@@ -1177,6 +1331,15 @@ namespace TencentCloud
                 DescribeProductListOutcomeCallable DescribeProductListCallable(const Model::DescribeProductListRequest& request);
 
                 /**
+                 *获取关联目标集群的实例列表
+                 * @param req DescribePrometheusAgentInstancesRequest
+                 * @return DescribePrometheusAgentInstancesOutcome
+                 */
+                DescribePrometheusAgentInstancesOutcome DescribePrometheusAgentInstances(const Model::DescribePrometheusAgentInstancesRequest &request);
+                void DescribePrometheusAgentInstancesAsync(const Model::DescribePrometheusAgentInstancesRequest& request, const DescribePrometheusAgentInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAgentInstancesOutcomeCallable DescribePrometheusAgentInstancesCallable(const Model::DescribePrometheusAgentInstancesRequest& request);
+
+                /**
                  *列出 Prometheus CVM Agent
                  * @param req DescribePrometheusAgentsRequest
                  * @return DescribePrometheusAgentsOutcome
@@ -1184,6 +1347,42 @@ namespace TencentCloud
                 DescribePrometheusAgentsOutcome DescribePrometheusAgents(const Model::DescribePrometheusAgentsRequest &request);
                 void DescribePrometheusAgentsAsync(const Model::DescribePrometheusAgentsRequest& request, const DescribePrometheusAgentsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusAgentsOutcomeCallable DescribePrometheusAgentsCallable(const Model::DescribePrometheusAgentsRequest& request);
+
+                /**
+                 *获取2.0实例告警策略列表
+                 * @param req DescribePrometheusAlertPolicyRequest
+                 * @return DescribePrometheusAlertPolicyOutcome
+                 */
+                DescribePrometheusAlertPolicyOutcome DescribePrometheusAlertPolicy(const Model::DescribePrometheusAlertPolicyRequest &request);
+                void DescribePrometheusAlertPolicyAsync(const Model::DescribePrometheusAlertPolicyRequest& request, const DescribePrometheusAlertPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusAlertPolicyOutcomeCallable DescribePrometheusAlertPolicyCallable(const Model::DescribePrometheusAlertPolicyRequest& request);
+
+                /**
+                 *拉取Prometheus配置
+                 * @param req DescribePrometheusConfigRequest
+                 * @return DescribePrometheusConfigOutcome
+                 */
+                DescribePrometheusConfigOutcome DescribePrometheusConfig(const Model::DescribePrometheusConfigRequest &request);
+                void DescribePrometheusConfigAsync(const Model::DescribePrometheusConfigRequest& request, const DescribePrometheusConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusConfigOutcomeCallable DescribePrometheusConfigCallable(const Model::DescribePrometheusConfigRequest& request);
+
+                /**
+                 *获取TMP实例详情
+                 * @param req DescribePrometheusInstanceDetailRequest
+                 * @return DescribePrometheusInstanceDetailOutcome
+                 */
+                DescribePrometheusInstanceDetailOutcome DescribePrometheusInstanceDetail(const Model::DescribePrometheusInstanceDetailRequest &request);
+                void DescribePrometheusInstanceDetailAsync(const Model::DescribePrometheusInstanceDetailRequest& request, const DescribePrometheusInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusInstanceDetailOutcomeCallable DescribePrometheusInstanceDetailCallable(const Model::DescribePrometheusInstanceDetailRequest& request);
+
+                /**
+                 *获取2.0实例初始化任务状态
+                 * @param req DescribePrometheusInstanceInitStatusRequest
+                 * @return DescribePrometheusInstanceInitStatusOutcome
+                 */
+                DescribePrometheusInstanceInitStatusOutcome DescribePrometheusInstanceInitStatus(const Model::DescribePrometheusInstanceInitStatusRequest &request);
+                void DescribePrometheusInstanceInitStatusAsync(const Model::DescribePrometheusInstanceInitStatusRequest& request, const DescribePrometheusInstanceInitStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusInstanceInitStatusOutcomeCallable DescribePrometheusInstanceInitStatusCallable(const Model::DescribePrometheusInstanceInitStatusRequest& request);
 
                 /**
                  * 查询Prometheus按量实例用量
@@ -1208,6 +1407,33 @@ namespace TencentCloud
                 DescribePrometheusInstancesOutcomeCallable DescribePrometheusInstancesCallable(const Model::DescribePrometheusInstancesRequest& request);
 
                 /**
+                 *获取与云监控融合实例列表
+                 * @param req DescribePrometheusInstancesOverviewRequest
+                 * @return DescribePrometheusInstancesOverviewOutcome
+                 */
+                DescribePrometheusInstancesOverviewOutcome DescribePrometheusInstancesOverview(const Model::DescribePrometheusInstancesOverviewRequest &request);
+                void DescribePrometheusInstancesOverviewAsync(const Model::DescribePrometheusInstancesOverviewRequest& request, const DescribePrometheusInstancesOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusInstancesOverviewOutcomeCallable DescribePrometheusInstancesOverviewCallable(const Model::DescribePrometheusInstancesOverviewRequest& request);
+
+                /**
+                 *拉取Prometheus聚合规则yaml列表
+                 * @param req DescribePrometheusRecordRuleYamlRequest
+                 * @return DescribePrometheusRecordRuleYamlOutcome
+                 */
+                DescribePrometheusRecordRuleYamlOutcome DescribePrometheusRecordRuleYaml(const Model::DescribePrometheusRecordRuleYamlRequest &request);
+                void DescribePrometheusRecordRuleYamlAsync(const Model::DescribePrometheusRecordRuleYamlRequest& request, const DescribePrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusRecordRuleYamlOutcomeCallable DescribePrometheusRecordRuleYamlCallable(const Model::DescribePrometheusRecordRuleYamlRequest& request);
+
+                /**
+                 *获取聚合规则列表，包含关联集群内crd资源创建的record rule
+                 * @param req DescribePrometheusRecordRulesRequest
+                 * @return DescribePrometheusRecordRulesOutcome
+                 */
+                DescribePrometheusRecordRulesOutcome DescribePrometheusRecordRules(const Model::DescribePrometheusRecordRulesRequest &request);
+                void DescribePrometheusRecordRulesAsync(const Model::DescribePrometheusRecordRulesRequest& request, const DescribePrometheusRecordRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusRecordRulesOutcomeCallable DescribePrometheusRecordRulesCallable(const Model::DescribePrometheusRecordRulesRequest& request);
+
+                /**
                  *列出 Prometheus 抓取任务
                  * @param req DescribePrometheusScrapeJobsRequest
                  * @return DescribePrometheusScrapeJobsOutcome
@@ -1215,6 +1441,24 @@ namespace TencentCloud
                 DescribePrometheusScrapeJobsOutcome DescribePrometheusScrapeJobs(const Model::DescribePrometheusScrapeJobsRequest &request);
                 void DescribePrometheusScrapeJobsAsync(const Model::DescribePrometheusScrapeJobsRequest& request, const DescribePrometheusScrapeJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribePrometheusScrapeJobsOutcomeCallable DescribePrometheusScrapeJobsCallable(const Model::DescribePrometheusScrapeJobsRequest& request);
+
+                /**
+                 *拉取模板列表，默认模板将总是在最前面
+                 * @param req DescribePrometheusTempRequest
+                 * @return DescribePrometheusTempOutcome
+                 */
+                DescribePrometheusTempOutcome DescribePrometheusTemp(const Model::DescribePrometheusTempRequest &request);
+                void DescribePrometheusTempAsync(const Model::DescribePrometheusTempRequest& request, const DescribePrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusTempOutcomeCallable DescribePrometheusTempCallable(const Model::DescribePrometheusTempRequest& request);
+
+                /**
+                 *获取模板关联实例信息，针对V2版本实例
+                 * @param req DescribePrometheusTempSyncRequest
+                 * @return DescribePrometheusTempSyncOutcome
+                 */
+                DescribePrometheusTempSyncOutcome DescribePrometheusTempSync(const Model::DescribePrometheusTempSyncRequest &request);
+                void DescribePrometheusTempSyncAsync(const Model::DescribePrometheusTempSyncRequest& request, const DescribePrometheusTempSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrometheusTempSyncOutcomeCallable DescribePrometheusTempSyncCallable(const Model::DescribePrometheusTempSyncRequest& request);
 
                 /**
                  *列出 Prometheus 服务可用区
@@ -1423,6 +1667,24 @@ namespace TencentCloud
                 ModifyPrometheusInstanceAttributesOutcomeCallable ModifyPrometheusInstanceAttributesCallable(const Model::ModifyPrometheusInstanceAttributesRequest& request);
 
                 /**
+                 *通过yaml的方式修改Prometheus聚合实例
+                 * @param req ModifyPrometheusRecordRuleYamlRequest
+                 * @return ModifyPrometheusRecordRuleYamlOutcome
+                 */
+                ModifyPrometheusRecordRuleYamlOutcome ModifyPrometheusRecordRuleYaml(const Model::ModifyPrometheusRecordRuleYamlRequest &request);
+                void ModifyPrometheusRecordRuleYamlAsync(const Model::ModifyPrometheusRecordRuleYamlRequest& request, const ModifyPrometheusRecordRuleYamlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrometheusRecordRuleYamlOutcomeCallable ModifyPrometheusRecordRuleYamlCallable(const Model::ModifyPrometheusRecordRuleYamlRequest& request);
+
+                /**
+                 *修改模板内容
+                 * @param req ModifyPrometheusTempRequest
+                 * @return ModifyPrometheusTempOutcome
+                 */
+                ModifyPrometheusTempOutcome ModifyPrometheusTemp(const Model::ModifyPrometheusTempRequest &request);
+                void ModifyPrometheusTempAsync(const Model::ModifyPrometheusTempRequest& request, const ModifyPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyPrometheusTempOutcomeCallable ModifyPrometheusTempCallable(const Model::ModifyPrometheusTempRequest& request);
+
+                /**
                  *默认接口请求频率限制：50次/秒。
 默认单租户指标上限：100个。
 单次上报最多 30 个指标/值对，请求返回错误时，请求中所有的指标/值均不会被保存。
@@ -1447,6 +1709,15 @@ namespace TencentCloud
                 ResumeGrafanaInstanceOutcomeCallable ResumeGrafanaInstanceCallable(const Model::ResumeGrafanaInstanceRequest& request);
 
                 /**
+                 *初始化TMP实例，开启集成中心时调用
+                 * @param req RunPrometheusInstanceRequest
+                 * @return RunPrometheusInstanceOutcome
+                 */
+                RunPrometheusInstanceOutcome RunPrometheusInstance(const Model::RunPrometheusInstanceRequest &request);
+                void RunPrometheusInstanceAsync(const Model::RunPrometheusInstanceRequest& request, const RunPrometheusInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RunPrometheusInstanceOutcomeCallable RunPrometheusInstanceCallable(const Model::RunPrometheusInstanceRequest& request);
+
+                /**
                  *发送自定义消息告警
                  * @param req SendCustomAlarmMsgRequest
                  * @return SendCustomAlarmMsgOutcome
@@ -1464,6 +1735,15 @@ namespace TencentCloud
                 SetDefaultAlarmPolicyOutcome SetDefaultAlarmPolicy(const Model::SetDefaultAlarmPolicyRequest &request);
                 void SetDefaultAlarmPolicyAsync(const Model::SetDefaultAlarmPolicyRequest& request, const SetDefaultAlarmPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetDefaultAlarmPolicyOutcomeCallable SetDefaultAlarmPolicyCallable(const Model::SetDefaultAlarmPolicyRequest& request);
+
+                /**
+                 *同步模板到实例或者集群，针对V2版本实例
+                 * @param req SyncPrometheusTempRequest
+                 * @return SyncPrometheusTempOutcome
+                 */
+                SyncPrometheusTempOutcome SyncPrometheusTemp(const Model::SyncPrometheusTempRequest &request);
+                void SyncPrometheusTempAsync(const Model::SyncPrometheusTempRequest& request, const SyncPrometheusTempAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SyncPrometheusTempOutcomeCallable SyncPrometheusTempCallable(const Model::SyncPrometheusTempRequest& request);
 
                 /**
                  *销毁按量 Prometheus 实例

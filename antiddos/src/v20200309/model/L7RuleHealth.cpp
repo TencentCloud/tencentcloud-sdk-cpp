@@ -35,7 +35,8 @@ L7RuleHealth::L7RuleHealth() :
     m_blockInterHasBeenSet(false),
     m_failedCountInterHasBeenSet(false),
     m_failedThresholdHasBeenSet(false),
-    m_passiveStatusCodeHasBeenSet(false)
+    m_passiveStatusCodeHasBeenSet(false),
+    m_passiveStatusHasBeenSet(false)
 {
 }
 
@@ -194,6 +195,16 @@ CoreInternalOutcome L7RuleHealth::Deserialize(const rapidjson::Value &value)
         m_passiveStatusCodeHasBeenSet = true;
     }
 
+    if (value.HasMember("PassiveStatus") && !value["PassiveStatus"].IsNull())
+    {
+        if (!value["PassiveStatus"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `L7RuleHealth.PassiveStatus` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_passiveStatus = value["PassiveStatus"].GetUint64();
+        m_passiveStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +330,14 @@ void L7RuleHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PassiveStatusCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_passiveStatusCode, allocator);
+    }
+
+    if (m_passiveStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PassiveStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_passiveStatus, allocator);
     }
 
 }
@@ -562,5 +581,21 @@ void L7RuleHealth::SetPassiveStatusCode(const uint64_t& _passiveStatusCode)
 bool L7RuleHealth::PassiveStatusCodeHasBeenSet() const
 {
     return m_passiveStatusCodeHasBeenSet;
+}
+
+uint64_t L7RuleHealth::GetPassiveStatus() const
+{
+    return m_passiveStatus;
+}
+
+void L7RuleHealth::SetPassiveStatus(const uint64_t& _passiveStatus)
+{
+    m_passiveStatus = _passiveStatus;
+    m_passiveStatusHasBeenSet = true;
+}
+
+bool L7RuleHealth::PassiveStatusHasBeenSet() const
+{
+    return m_passiveStatusHasBeenSet;
 }
 

@@ -98,14 +98,22 @@ namespace TencentCloud
                     bool RuleHasBeenSet() const;
 
                     /**
-                     * 获取全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
-                     * @return IncludeInternalFields 全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     * 获取内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
+* false:不包含
+* true:包含
+                     * @return IncludeInternalFields 内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
+* false:不包含
+* true:包含
                      */
                     bool GetIncludeInternalFields() const;
 
                     /**
-                     * 设置全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
-                     * @param IncludeInternalFields 全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     * 设置内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
+* false:不包含
+* true:包含
+                     * @param IncludeInternalFields 内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
+* false:不包含
+* true:包含
                      */
                     void SetIncludeInternalFields(const bool& _includeInternalFields);
 
@@ -116,14 +124,26 @@ namespace TencentCloud
                     bool IncludeInternalFieldsHasBeenSet() const;
 
                     /**
-                     * 获取元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
-                     * @return MetadataFlag 元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     * 获取元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1
+* 0:仅包含开启键值索引的元数据字段
+* 1:包含所有元数据字段
+* 2:不包含任何元数据字段
+                     * @return MetadataFlag 元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1
+* 0:仅包含开启键值索引的元数据字段
+* 1:包含所有元数据字段
+* 2:不包含任何元数据字段
                      */
                     uint64_t GetMetadataFlag() const;
 
                     /**
-                     * 设置元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
-                     * @param MetadataFlag 元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     * 设置元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1
+* 0:仅包含开启键值索引的元数据字段
+* 1:包含所有元数据字段
+* 2:不包含任何元数据字段
+                     * @param MetadataFlag 元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1
+* 0:仅包含开启键值索引的元数据字段
+* 1:包含所有元数据字段
+* 2:不包含任何元数据字段
                      */
                     void SetMetadataFlag(const uint64_t& _metadataFlag);
 
@@ -154,13 +174,18 @@ namespace TencentCloud
                     bool m_ruleHasBeenSet;
 
                     /**
-                     * 全文索引系统预置字段标记，默认false。  false:不包含系统预置字段， true:包含系统预置字段
+                     * 内置保留字段（`__FILENAME__`，`__HOSTNAME__`及`__SOURCE__`）是否包含至全文索引，默认为false，推荐设置为true
+* false:不包含
+* true:包含
                      */
                     bool m_includeInternalFields;
                     bool m_includeInternalFieldsHasBeenSet;
 
                     /**
-                     * 元数据相关标志位，默认为0。 0：全文索引包括开启键值索引的元数据字段， 1：全文索引包括所有元数据字段，2：全文索引不包括元数据字段。
+                     * 元数据字段（前缀为`__TAG__`的字段）是否包含至全文索引，默认为0，推荐设置为1
+* 0:仅包含开启键值索引的元数据字段
+* 1:包含所有元数据字段
+* 2:不包含任何元数据字段
                      */
                     uint64_t m_metadataFlag;
                     bool m_metadataFlagHasBeenSet;

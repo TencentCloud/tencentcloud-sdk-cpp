@@ -30,6 +30,8 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginUserResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h
+  include/tencentcloud/lcic/v20220817/model/ModifyAppResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/AppCustomContent.h
@@ -37,7 +39,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/RegisterUserResponse.h
-  include/tencentcloud/lcic/v20220817/model/ModifyAppResponse.h
+  include/tencentcloud/lcic/v20220817/model/DescribeAppDetailResponse.h
   include/tencentcloud/lcic/v20220817/model/MemberRecord.h
   include/tencentcloud/lcic/v20220817/model/ModifyAppRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h
@@ -64,6 +66,8 @@ set(lcic_src
   src/v20220817/model/SetAppCustomContentResponse.cpp
   src/v20220817/model/LoginOriginIdResponse.cpp
   src/v20220817/model/LoginUserResponse.cpp
+  src/v20220817/model/DescribeAppDetailRequest.cpp
+  src/v20220817/model/ModifyAppResponse.cpp
   src/v20220817/model/DescribeRoomResponse.cpp
   src/v20220817/model/DeleteRoomResponse.cpp
   src/v20220817/model/AppCustomContent.cpp
@@ -71,7 +75,7 @@ set(lcic_src
   src/v20220817/model/CreateSupervisorResponse.cpp
   src/v20220817/model/DeleteRoomRequest.cpp
   src/v20220817/model/RegisterUserResponse.cpp
-  src/v20220817/model/ModifyAppResponse.cpp
+  src/v20220817/model/DescribeAppDetailResponse.cpp
   src/v20220817/model/MemberRecord.cpp
   src/v20220817/model/ModifyAppRequest.cpp
   src/v20220817/model/CreateSupervisorRequest.cpp

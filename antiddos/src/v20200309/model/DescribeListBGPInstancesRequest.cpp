@@ -38,7 +38,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterChannelFlagHasBeenSet(false),
     m_filterTagHasBeenSet(false),
     m_filterTrialFlagHasBeenSet(false),
-    m_filterConvoyHasBeenSet(false)
+    m_filterConvoyHasBeenSet(false),
+    m_excludeAdvancedInfoHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,14 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "FilterConvoy";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_filterConvoy, allocator);
+    }
+
+    if (m_excludeAdvancedInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExcludeAdvancedInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_excludeAdvancedInfo, allocator);
     }
 
 
@@ -445,6 +454,22 @@ void DescribeListBGPInstancesRequest::SetFilterConvoy(const uint64_t& _filterCon
 bool DescribeListBGPInstancesRequest::FilterConvoyHasBeenSet() const
 {
     return m_filterConvoyHasBeenSet;
+}
+
+bool DescribeListBGPInstancesRequest::GetExcludeAdvancedInfo() const
+{
+    return m_excludeAdvancedInfo;
+}
+
+void DescribeListBGPInstancesRequest::SetExcludeAdvancedInfo(const bool& _excludeAdvancedInfo)
+{
+    m_excludeAdvancedInfo = _excludeAdvancedInfo;
+    m_excludeAdvancedInfoHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::ExcludeAdvancedInfoHasBeenSet() const
+{
+    return m_excludeAdvancedInfoHasBeenSet;
 }
 
 

@@ -64,6 +64,32 @@ namespace TencentCloud
                      */
                     bool DefinitionHasBeenSet() const;
 
+                    /**
+                     * 获取扩展参数，其值为序列化的 json字符串。
+注意：此参数为定制需求参数，需要线下对接。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExtendedParameter 扩展参数，其值为序列化的 json字符串。
+注意：此参数为定制需求参数，需要线下对接。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExtendedParameter() const;
+
+                    /**
+                     * 设置扩展参数，其值为序列化的 json字符串。
+注意：此参数为定制需求参数，需要线下对接。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExtendedParameter 扩展参数，其值为序列化的 json字符串。
+注意：此参数为定制需求参数，需要线下对接。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExtendedParameter(const std::string& _extendedParameter);
+
+                    /**
+                     * 判断参数 ExtendedParameter 是否已赋值
+                     * @return ExtendedParameter 是否已赋值
+                     */
+                    bool ExtendedParameterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +97,14 @@ namespace TencentCloud
                      */
                     uint64_t m_definition;
                     bool m_definitionHasBeenSet;
+
+                    /**
+                     * 扩展参数，其值为序列化的 json字符串。
+注意：此参数为定制需求参数，需要线下对接。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_extendedParameter;
+                    bool m_extendedParameterHasBeenSet;
 
                 };
             }

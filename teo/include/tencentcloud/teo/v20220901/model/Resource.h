@@ -241,9 +241,11 @@ namespace TencentCloud
                      * 获取地域，取值有：
 <li>mainland：国内；</li>
 <li>overseas：海外。</li>
+<li>global：全球。</li>
                      * @return Area 地域，取值有：
 <li>mainland：国内；</li>
 <li>overseas：海外。</li>
+<li>global：全球。</li>
                      */
                     std::string GetArea() const;
 
@@ -251,9 +253,11 @@ namespace TencentCloud
                      * 设置地域，取值有：
 <li>mainland：国内；</li>
 <li>overseas：海外。</li>
+<li>global：全球。</li>
                      * @param Area 地域，取值有：
 <li>mainland：国内；</li>
 <li>overseas：海外。</li>
+<li>global：全球。</li>
                      */
                     void SetArea(const std::string& _area);
 
@@ -330,6 +334,7 @@ namespace TencentCloud
                      * 地域，取值有：
 <li>mainland：国内；</li>
 <li>overseas：海外。</li>
+<li>global：全球。</li>
                      */
                     std::string m_area;
                     bool m_areaHasBeenSet;

@@ -2655,7 +2655,7 @@ namespace TencentCloud
                 UpdateTKEEdgeClusterOutcomeCallable UpdateTKEEdgeClusterCallable(const Model::UpdateTKEEdgeClusterRequest& request);
 
                 /**
-                 *给集群的一批work节点进行升级 
+                 *给集群的一批work节点进行升级
                  * @param req UpgradeClusterInstancesRequest
                  * @return UpgradeClusterInstancesOutcome
                  */

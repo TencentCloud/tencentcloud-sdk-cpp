@@ -316,6 +316,24 @@ namespace TencentCloud
                      */
                     bool PassiveStatusCodeHasBeenSet() const;
 
+                    /**
+                     * 获取被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     * @return PassiveStatus 被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     */
+                    uint64_t GetPassiveStatus() const;
+
+                    /**
+                     * 设置被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     * @param PassiveStatus 被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     */
+                    void SetPassiveStatus(const uint64_t& _passiveStatus);
+
+                    /**
+                     * 判断参数 PassiveStatus 是否已赋值
+                     * @return PassiveStatus 是否已赋值
+                     */
+                    bool PassiveStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -407,6 +425,12 @@ namespace TencentCloud
                      */
                     uint64_t m_passiveStatusCode;
                     bool m_passiveStatusCodeHasBeenSet;
+
+                    /**
+                     * 被动探测配置状态，0： 正常，1：配置中，2：配置失败
+                     */
+                    uint64_t m_passiveStatus;
+                    bool m_passiveStatusHasBeenSet;
 
                 };
             }

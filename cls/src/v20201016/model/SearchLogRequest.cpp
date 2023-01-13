@@ -23,10 +23,10 @@ using namespace TencentCloud::Cls::V20201016::Model;
 using namespace std;
 
 SearchLogRequest::SearchLogRequest() :
-    m_topicIdHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
     m_queryHasBeenSet(false),
+    m_topicIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_sortHasBeenSet(false),
@@ -41,14 +41,6 @@ string SearchLogRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_topicIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TopicId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_fromHasBeenSet)
     {
@@ -72,6 +64,14 @@ string SearchLogRequest::ToJsonString() const
         string key = "Query";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_query.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_limitHasBeenSet)
@@ -122,22 +122,6 @@ string SearchLogRequest::ToJsonString() const
 }
 
 
-string SearchLogRequest::GetTopicId() const
-{
-    return m_topicId;
-}
-
-void SearchLogRequest::SetTopicId(const string& _topicId)
-{
-    m_topicId = _topicId;
-    m_topicIdHasBeenSet = true;
-}
-
-bool SearchLogRequest::TopicIdHasBeenSet() const
-{
-    return m_topicIdHasBeenSet;
-}
-
 int64_t SearchLogRequest::GetFrom() const
 {
     return m_from;
@@ -184,6 +168,22 @@ void SearchLogRequest::SetQuery(const string& _query)
 bool SearchLogRequest::QueryHasBeenSet() const
 {
     return m_queryHasBeenSet;
+}
+
+string SearchLogRequest::GetTopicId() const
+{
+    return m_topicId;
+}
+
+void SearchLogRequest::SetTopicId(const string& _topicId)
+{
+    m_topicId = _topicId;
+    m_topicIdHasBeenSet = true;
+}
+
+bool SearchLogRequest::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
 }
 
 int64_t SearchLogRequest::GetLimit() const

@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取要检索分析的日志主题ID
-                     * @return TopicId 要检索分析的日志主题ID
-                     */
-                    std::string GetTopicId() const;
-
-                    /**
-                     * 设置要检索分析的日志主题ID
-                     * @param TopicId 要检索分析的日志主题ID
-                     */
-                    void SetTopicId(const std::string& _topicId);
-
-                    /**
-                     * 判断参数 TopicId 是否已赋值
-                     * @return TopicId 是否已赋值
-                     */
-                    bool TopicIdHasBeenSet() const;
-
-                    /**
                      * 获取要检索分析的日志的起始时间，Unix时间戳（毫秒）
                      * @return From 要检索分析的日志的起始时间，Unix时间戳（毫秒）
                      */
@@ -99,16 +81,20 @@ namespace TencentCloud
                     /**
                      * 获取检索分析语句，最大长度为12KB
 语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
+使用*或空字符串可查询所有日志
                      * @return Query 检索分析语句，最大长度为12KB
 语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
+使用*或空字符串可查询所有日志
                      */
                     std::string GetQuery() const;
 
                     /**
                      * 设置检索分析语句，最大长度为12KB
 语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
+使用*或空字符串可查询所有日志
                      * @param Query 检索分析语句，最大长度为12KB
 语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
+使用*或空字符串可查询所有日志
                      */
                     void SetQuery(const std::string& _query);
 
@@ -117,6 +103,24 @@ namespace TencentCloud
                      * @return Query 是否已赋值
                      */
                     bool QueryHasBeenSet() const;
+
+                    /**
+                     * 获取要检索分析的日志主题ID
+                     * @return TopicId 要检索分析的日志主题ID
+                     */
+                    std::string GetTopicId() const;
+
+                    /**
+                     * 设置要检索分析的日志主题ID
+                     * @param TopicId 要检索分析的日志主题ID
+                     */
+                    void SetTopicId(const std::string& _topicId);
+
+                    /**
+                     * 判断参数 TopicId 是否已赋值
+                     * @return TopicId 是否已赋值
+                     */
+                    bool TopicIdHasBeenSet() const;
 
                     /**
                      * 获取表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数
@@ -275,12 +279,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要检索分析的日志主题ID
-                     */
-                    std::string m_topicId;
-                    bool m_topicIdHasBeenSet;
-
-                    /**
                      * 要检索分析的日志的起始时间，Unix时间戳（毫秒）
                      */
                     int64_t m_from;
@@ -295,9 +293,16 @@ namespace TencentCloud
                     /**
                      * 检索分析语句，最大长度为12KB
 语句由 <a href="https://cloud.tencent.com/document/product/614/47044" target="_blank">[检索条件]</a> | <a href="https://cloud.tencent.com/document/product/614/44061" target="_blank">[SQL语句]</a>构成，无需对日志进行统计分析时，可省略其中的管道符<code> | </code>及SQL语句
+使用*或空字符串可查询所有日志
                      */
                     std::string m_query;
                     bool m_queryHasBeenSet;
+
+                    /**
+                     * 要检索分析的日志主题ID
+                     */
+                    std::string m_topicId;
+                    bool m_topicIdHasBeenSet;
 
                     /**
                      * 表示单次查询返回的原始日志条数，最大值为1000，获取后续日志需使用Context参数

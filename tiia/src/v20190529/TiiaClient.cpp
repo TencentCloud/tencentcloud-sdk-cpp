@@ -986,3 +986,46 @@ TiiaClient::SearchImageOutcomeCallable TiiaClient::SearchImageCallable(const Sea
     return task->get_future();
 }
 
+TiiaClient::UpdateImageOutcome TiiaClient::UpdateImage(const UpdateImageRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateImage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateImageResponse rsp = UpdateImageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateImageOutcome(rsp);
+        else
+            return UpdateImageOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateImageOutcome(outcome.GetError());
+    }
+}
+
+void TiiaClient::UpdateImageAsync(const UpdateImageRequest& request, const UpdateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateImage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiiaClient::UpdateImageOutcomeCallable TiiaClient::UpdateImageCallable(const UpdateImageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateImageOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateImage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

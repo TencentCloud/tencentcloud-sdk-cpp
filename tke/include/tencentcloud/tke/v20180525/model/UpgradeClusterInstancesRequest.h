@@ -193,6 +193,24 @@ major 大版本原地升级
                      */
                     bool MaxNotReadyPercentHasBeenSet() const;
 
+                    /**
+                     * 获取是否升级节点运行时，默认false不升级
+                     * @return UpgradeRunTime 是否升级节点运行时，默认false不升级
+                     */
+                    bool GetUpgradeRunTime() const;
+
+                    /**
+                     * 设置是否升级节点运行时，默认false不升级
+                     * @param UpgradeRunTime 是否升级节点运行时，默认false不升级
+                     */
+                    void SetUpgradeRunTime(const bool& _upgradeRunTime);
+
+                    /**
+                     * 判断参数 UpgradeRunTime 是否已赋值
+                     * @return UpgradeRunTime 是否已赋值
+                     */
+                    bool UpgradeRunTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -242,6 +260,12 @@ major 大版本原地升级
                      */
                     double m_maxNotReadyPercent;
                     bool m_maxNotReadyPercentHasBeenSet;
+
+                    /**
+                     * 是否升级节点运行时，默认false不升级
+                     */
+                    bool m_upgradeRunTime;
+                    bool m_upgradeRunTimeHasBeenSet;
 
                 };
             }

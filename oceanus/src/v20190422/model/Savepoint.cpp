@@ -32,7 +32,9 @@ Savepoint::Savepoint() :
     m_jobRuntimeIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_timeoutHasBeenSet(false),
-    m_serialIdHasBeenSet(false)
+    m_serialIdHasBeenSet(false),
+    m_timeConsumingHasBeenSet(false),
+    m_pathStatusHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome Savepoint::Deserialize(const rapidjson::Value &value)
         m_serialIdHasBeenSet = true;
     }
 
+    if (value.HasMember("TimeConsuming") && !value["TimeConsuming"].IsNull())
+    {
+        if (!value["TimeConsuming"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Savepoint.TimeConsuming` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_timeConsuming = value["TimeConsuming"].GetInt64();
+        m_timeConsumingHasBeenSet = true;
+    }
+
+    if (value.HasMember("PathStatus") && !value["PathStatus"].IsNull())
+    {
+        if (!value["PathStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Savepoint.PathStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pathStatus = value["PathStatus"].GetInt64();
+        m_pathStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void Savepoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "SerialId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_serialId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeConsumingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeConsuming";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_timeConsuming, allocator);
+    }
+
+    if (m_pathStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PathStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pathStatus, allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void Savepoint::SetSerialId(const string& _serialId)
 bool Savepoint::SerialIdHasBeenSet() const
 {
     return m_serialIdHasBeenSet;
+}
+
+int64_t Savepoint::GetTimeConsuming() const
+{
+    return m_timeConsuming;
+}
+
+void Savepoint::SetTimeConsuming(const int64_t& _timeConsuming)
+{
+    m_timeConsuming = _timeConsuming;
+    m_timeConsumingHasBeenSet = true;
+}
+
+bool Savepoint::TimeConsumingHasBeenSet() const
+{
+    return m_timeConsumingHasBeenSet;
+}
+
+int64_t Savepoint::GetPathStatus() const
+{
+    return m_pathStatus;
+}
+
+void Savepoint::SetPathStatus(const int64_t& _pathStatus)
+{
+    m_pathStatus = _pathStatus;
+    m_pathStatusHasBeenSet = true;
+}
+
+bool Savepoint::PathStatusHasBeenSet() const
+{
+    return m_pathStatusHasBeenSet;
 }
 

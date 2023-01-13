@@ -67,6 +67,8 @@
 #include <tencentcloud/tiia/v20190529/model/RecognizeCarProResponse.h>
 #include <tencentcloud/tiia/v20190529/model/SearchImageRequest.h>
 #include <tencentcloud/tiia/v20190529/model/SearchImageResponse.h>
+#include <tencentcloud/tiia/v20190529/model/UpdateImageRequest.h>
+#include <tencentcloud/tiia/v20190529/model/UpdateImageResponse.h>
 
 
 namespace TencentCloud
@@ -147,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchImageResponse> SearchImageOutcome;
                 typedef std::future<SearchImageOutcome> SearchImageOutcomeCallable;
                 typedef std::function<void(const TiiaClient*, const Model::SearchImageRequest&, SearchImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchImageAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateImageResponse> UpdateImageOutcome;
+                typedef std::future<UpdateImageOutcome> UpdateImageOutcomeCallable;
+                typedef std::function<void(const TiiaClient*, const Model::UpdateImageRequest&, UpdateImageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateImageAsyncHandler;
 
 
 
@@ -481,12 +486,27 @@ namespace TencentCloud
 >   
 - 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
 
+
                  * @param req SearchImageRequest
                  * @return SearchImageOutcome
                  */
                 SearchImageOutcome SearchImage(const Model::SearchImageRequest &request);
                 void SearchImageAsync(const Model::SearchImageRequest& request, const SearchImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchImageOutcomeCallable SearchImageCallable(const Model::SearchImageRequest& request);
+
+                /**
+                 *本接口支持根据图库ID、物品ID、图片名称来修改图片信息（暂仅支持修改Tags）
+
+>   
+- 可前往 [图像搜索](https://cloud.tencent.com/document/product/1589) 产品文档中查看更多产品信息。
+
+
+                 * @param req UpdateImageRequest
+                 * @return UpdateImageOutcome
+                 */
+                UpdateImageOutcome UpdateImage(const Model::UpdateImageRequest &request);
+                void UpdateImageAsync(const Model::UpdateImageRequest& request, const UpdateImageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateImageOutcomeCallable UpdateImageCallable(const Model::UpdateImageRequest& request);
 
             };
         }

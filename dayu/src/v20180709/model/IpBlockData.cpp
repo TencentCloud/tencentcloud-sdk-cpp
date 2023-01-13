@@ -25,7 +25,8 @@ IpBlockData::IpBlockData() :
     m_statusHasBeenSet(false),
     m_blockTimeHasBeenSet(false),
     m_unBlockTimeHasBeenSet(false),
-    m_actionTypeHasBeenSet(false)
+    m_actionTypeHasBeenSet(false),
+    m_protectFlagHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome IpBlockData::Deserialize(const rapidjson::Value &value)
         m_actionTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("ProtectFlag") && !value["ProtectFlag"].IsNull())
+    {
+        if (!value["ProtectFlag"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `IpBlockData.ProtectFlag` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_protectFlag = value["ProtectFlag"].GetUint64();
+        m_protectFlagHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void IpBlockData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ActionType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_actionType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_protectFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProtectFlag";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_protectFlag, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void IpBlockData::SetActionType(const string& _actionType)
 bool IpBlockData::ActionTypeHasBeenSet() const
 {
     return m_actionTypeHasBeenSet;
+}
+
+uint64_t IpBlockData::GetProtectFlag() const
+{
+    return m_protectFlag;
+}
+
+void IpBlockData::SetProtectFlag(const uint64_t& _protectFlag)
+{
+    m_protectFlag = _protectFlag;
+    m_protectFlagHasBeenSet = true;
+}
+
+bool IpBlockData::ProtectFlagHasBeenSet() const
+{
+    return m_protectFlagHasBeenSet;
 }
 

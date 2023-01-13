@@ -54,7 +54,9 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_tagValuesHasBeenSet(false),
     m_uniqueVpcIdsHasBeenSet(false),
     m_uniqSubnetIdsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_proxyVipsHasBeenSet(false),
+    m_proxyIdsHasBeenSet(false)
 {
 }
 
@@ -415,6 +417,32 @@ string DescribeDBInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_proxyVipsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyVips";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_proxyVips.begin(); itr != m_proxyVips.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_proxyIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProxyIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_proxyIds.begin(); itr != m_proxyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -936,6 +964,38 @@ void DescribeDBInstancesRequest::SetTags(const vector<Tag>& _tags)
 bool DescribeDBInstancesRequest::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetProxyVips() const
+{
+    return m_proxyVips;
+}
+
+void DescribeDBInstancesRequest::SetProxyVips(const vector<string>& _proxyVips)
+{
+    m_proxyVips = _proxyVips;
+    m_proxyVipsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::ProxyVipsHasBeenSet() const
+{
+    return m_proxyVipsHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetProxyIds() const
+{
+    return m_proxyIds;
+}
+
+void DescribeDBInstancesRequest::SetProxyIds(const vector<string>& _proxyIds)
+{
+    m_proxyIds = _proxyIds;
+    m_proxyIdsHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::ProxyIdsHasBeenSet() const
+{
+    return m_proxyIdsHasBeenSet;
 }
 
 

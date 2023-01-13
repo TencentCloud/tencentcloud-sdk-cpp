@@ -136,6 +136,24 @@ namespace TencentCloud
                      */
                     bool ActionTypeHasBeenSet() const;
 
+                    /**
+                     * 获取高防标记，0：非高防，1：高防
+                     * @return ProtectFlag 高防标记，0：非高防，1：高防
+                     */
+                    uint64_t GetProtectFlag() const;
+
+                    /**
+                     * 设置高防标记，0：非高防，1：高防
+                     * @param ProtectFlag 高防标记，0：非高防，1：高防
+                     */
+                    void SetProtectFlag(const uint64_t& _protectFlag);
+
+                    /**
+                     * 判断参数 ProtectFlag 是否已赋值
+                     * @return ProtectFlag 是否已赋值
+                     */
+                    bool ProtectFlagHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +185,12 @@ namespace TencentCloud
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;
+
+                    /**
+                     * 高防标记，0：非高防，1：高防
+                     */
+                    uint64_t m_protectFlag;
+                    bool m_protectFlagHasBeenSet;
 
                 };
             }

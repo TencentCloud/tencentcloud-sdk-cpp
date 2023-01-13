@@ -24,7 +24,8 @@ using namespace std;
 
 ModifyAppRequest::ModifyAppRequest() :
     m_sdkAppIdHasBeenSet(false),
-    m_callbackHasBeenSet(false)
+    m_callbackHasBeenSet(false),
+    m_callbackKeyHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string ModifyAppRequest::ToJsonString() const
         string key = "Callback";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_callback.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_callbackKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CallbackKey";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_callbackKey.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void ModifyAppRequest::SetCallback(const string& _callback)
 bool ModifyAppRequest::CallbackHasBeenSet() const
 {
     return m_callbackHasBeenSet;
+}
+
+string ModifyAppRequest::GetCallbackKey() const
+{
+    return m_callbackKey;
+}
+
+void ModifyAppRequest::SetCallbackKey(const string& _callbackKey)
+{
+    m_callbackKey = _callbackKey;
+    m_callbackKeyHasBeenSet = true;
+}
+
+bool ModifyAppRequest::CallbackKeyHasBeenSet() const
+{
+    return m_callbackKeyHasBeenSet;
 }
 
 
