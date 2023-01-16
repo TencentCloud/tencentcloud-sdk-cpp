@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取（过滤条件）按照实例名称过滤，支持模糊查询
-                     * @return SearchWord （过滤条件）按照实例名称过滤，支持模糊查询
+                     * 获取（过滤条件）按照实例名,实例Id,可用区,私有网络id,子网id 过滤，支持模糊查询
+                     * @return SearchWord （过滤条件）按照实例名,实例Id,可用区,私有网络id,子网id 过滤，支持模糊查询
                      */
                     std::string GetSearchWord() const;
 
                     /**
-                     * 设置（过滤条件）按照实例名称过滤，支持模糊查询
-                     * @param SearchWord （过滤条件）按照实例名称过滤，支持模糊查询
+                     * 设置（过滤条件）按照实例名,实例Id,可用区,私有网络id,子网id 过滤，支持模糊查询
+                     * @param SearchWord （过滤条件）按照实例名,实例Id,可用区,私有网络id,子网id 过滤，支持模糊查询
                      */
                     void SetSearchWord(const std::string& _searchWord);
 
@@ -214,7 +214,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * （过滤条件）按照实例名称过滤，支持模糊查询
+                     * （过滤条件）按照实例名,实例Id,可用区,私有网络id,子网id 过滤，支持模糊查询
                      */
                     std::string m_searchWord;
                     bool m_searchWordHasBeenSet;

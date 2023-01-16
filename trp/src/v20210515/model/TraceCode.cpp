@@ -31,7 +31,9 @@ TraceCode::TraceCode() :
     m_createTimeHasBeenSet(false),
     m_updateTimeHasBeenSet(false),
     m_merchantNameHasBeenSet(false),
-    m_productNameHasBeenSet(false)
+    m_productNameHasBeenSet(false),
+    m_agentIdHasBeenSet(false),
+    m_levelHasBeenSet(false)
 {
 }
 
@@ -150,6 +152,26 @@ CoreInternalOutcome TraceCode::Deserialize(const rapidjson::Value &value)
         m_productNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AgentId") && !value["AgentId"].IsNull())
+    {
+        if (!value["AgentId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceCode.AgentId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_agentId = value["AgentId"].GetUint64();
+        m_agentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Level") && !value["Level"].IsNull())
+    {
+        if (!value["Level"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TraceCode.Level` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_level = value["Level"].GetUint64();
+        m_levelHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +265,22 @@ void TraceCode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ProductName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_agentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AgentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_agentId, allocator);
+    }
+
+    if (m_levelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Level";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_level, allocator);
     }
 
 }
@@ -422,5 +460,37 @@ void TraceCode::SetProductName(const string& _productName)
 bool TraceCode::ProductNameHasBeenSet() const
 {
     return m_productNameHasBeenSet;
+}
+
+uint64_t TraceCode::GetAgentId() const
+{
+    return m_agentId;
+}
+
+void TraceCode::SetAgentId(const uint64_t& _agentId)
+{
+    m_agentId = _agentId;
+    m_agentIdHasBeenSet = true;
+}
+
+bool TraceCode::AgentIdHasBeenSet() const
+{
+    return m_agentIdHasBeenSet;
+}
+
+uint64_t TraceCode::GetLevel() const
+{
+    return m_level;
+}
+
+void TraceCode::SetLevel(const uint64_t& _level)
+{
+    m_level = _level;
+    m_levelHasBeenSet = true;
+}
+
+bool TraceCode::LevelHasBeenSet() const
+{
+    return m_levelHasBeenSet;
 }
 

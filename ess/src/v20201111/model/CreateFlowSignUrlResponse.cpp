@@ -14,23 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lcic/v20220817/model/DescribeAppDetailResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Lcic::V20220817::Model;
+using namespace TencentCloud::Ess::V20201111::Model;
 using namespace std;
 
-DescribeAppDetailResponse::DescribeAppDetailResponse() :
-    m_sdkAppIdHasBeenSet(false),
-    m_appConfigHasBeenSet(false),
-    m_sceneConfigHasBeenSet(false)
+CreateFlowSignUrlResponse::CreateFlowSignUrlResponse() :
+    m_flowApproverUrlInfosHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeAppDetailResponse::Deserialize(const string &payload)
+CoreInternalOutcome CreateFlowSignUrlResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -64,89 +62,45 @@ CoreInternalOutcome DescribeAppDetailResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("SdkAppId") && !rsp["SdkAppId"].IsNull())
+    if (rsp.HasMember("FlowApproverUrlInfos") && !rsp["FlowApproverUrlInfos"].IsNull())
     {
-        if (!rsp["SdkAppId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SdkAppId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_sdkAppId = string(rsp["SdkAppId"].GetString());
-        m_sdkAppIdHasBeenSet = true;
-    }
+        if (!rsp["FlowApproverUrlInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowApproverUrlInfos` is not array type"));
 
-    if (rsp.HasMember("AppConfig") && !rsp["AppConfig"].IsNull())
-    {
-        if (!rsp["AppConfig"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `AppConfig` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_appConfig.Deserialize(rsp["AppConfig"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_appConfigHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("SceneConfig") && !rsp["SceneConfig"].IsNull())
-    {
-        if (!rsp["SceneConfig"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `SceneConfig` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["SceneConfig"];
+        const rapidjson::Value &tmpValue = rsp["FlowApproverUrlInfos"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            SceneItem item;
+            FlowApproverUrlInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_sceneConfig.push_back(item);
+            m_flowApproverUrlInfos.push_back(item);
         }
-        m_sceneConfigHasBeenSet = true;
+        m_flowApproverUrlInfosHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeAppDetailResponse::ToJsonString() const
+string CreateFlowSignUrlResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_sdkAppIdHasBeenSet)
+    if (m_flowApproverUrlInfosHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkAppId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_sdkAppId.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_appConfigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AppConfig";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_appConfig.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_sceneConfigHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SceneConfig";
+        string key = "FlowApproverUrlInfos";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_sceneConfig.begin(); itr != m_sceneConfig.end(); ++itr, ++i)
+        for (auto itr = m_flowApproverUrlInfos.begin(); itr != m_flowApproverUrlInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -165,34 +119,14 @@ string DescribeAppDetailResponse::ToJsonString() const
 }
 
 
-string DescribeAppDetailResponse::GetSdkAppId() const
+vector<FlowApproverUrlInfo> CreateFlowSignUrlResponse::GetFlowApproverUrlInfos() const
 {
-    return m_sdkAppId;
+    return m_flowApproverUrlInfos;
 }
 
-bool DescribeAppDetailResponse::SdkAppIdHasBeenSet() const
+bool CreateFlowSignUrlResponse::FlowApproverUrlInfosHasBeenSet() const
 {
-    return m_sdkAppIdHasBeenSet;
-}
-
-AppConfig DescribeAppDetailResponse::GetAppConfig() const
-{
-    return m_appConfig;
-}
-
-bool DescribeAppDetailResponse::AppConfigHasBeenSet() const
-{
-    return m_appConfigHasBeenSet;
-}
-
-vector<SceneItem> DescribeAppDetailResponse::GetSceneConfig() const
-{
-    return m_sceneConfig;
-}
-
-bool DescribeAppDetailResponse::SceneConfigHasBeenSet() const
-{
-    return m_sceneConfigHasBeenSet;
+    return m_flowApproverUrlInfosHasBeenSet;
 }
 
 

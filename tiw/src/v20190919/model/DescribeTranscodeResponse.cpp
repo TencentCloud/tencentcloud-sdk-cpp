@@ -33,7 +33,9 @@ DescribeTranscodeResponse::DescribeTranscodeResponse() :
     m_titleHasBeenSet(false),
     m_thumbnailUrlHasBeenSet(false),
     m_thumbnailResolutionHasBeenSet(false),
-    m_compressFileUrlHasBeenSet(false)
+    m_compressFileUrlHasBeenSet(false),
+    m_resourceListUrlHasBeenSet(false),
+    m_extHasBeenSet(false)
 {
 }
 
@@ -171,6 +173,26 @@ CoreInternalOutcome DescribeTranscodeResponse::Deserialize(const string &payload
         m_compressFileUrlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ResourceListUrl") && !rsp["ResourceListUrl"].IsNull())
+    {
+        if (!rsp["ResourceListUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceListUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceListUrl = string(rsp["ResourceListUrl"].GetString());
+        m_resourceListUrlHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Ext") && !rsp["Ext"].IsNull())
+    {
+        if (!rsp["Ext"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Ext` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ext = string(rsp["Ext"].GetString());
+        m_extHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +281,22 @@ string DescribeTranscodeResponse::ToJsonString() const
         string key = "CompressFileUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_compressFileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceListUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceListUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceListUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Ext";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ext.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +409,26 @@ string DescribeTranscodeResponse::GetCompressFileUrl() const
 bool DescribeTranscodeResponse::CompressFileUrlHasBeenSet() const
 {
     return m_compressFileUrlHasBeenSet;
+}
+
+string DescribeTranscodeResponse::GetResourceListUrl() const
+{
+    return m_resourceListUrl;
+}
+
+bool DescribeTranscodeResponse::ResourceListUrlHasBeenSet() const
+{
+    return m_resourceListUrlHasBeenSet;
+}
+
+string DescribeTranscodeResponse::GetExt() const
+{
+    return m_ext;
+}
+
+bool DescribeTranscodeResponse::ExtHasBeenSet() const
+{
+    return m_extHasBeenSet;
 }
 
 

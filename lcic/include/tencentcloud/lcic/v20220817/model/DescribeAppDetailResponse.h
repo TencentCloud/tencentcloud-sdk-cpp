@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/lcic/v20220817/model/AppConfig.h>
+#include <tencentcloud/lcic/v20220817/model/SceneItem.h>
 
 
 namespace TencentCloud
@@ -43,7 +45,61 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取SdkAppId 
+                     * @return SdkAppId SdkAppId 
+                     */
+                    std::string GetSdkAppId() const;
+
+                    /**
+                     * 判断参数 SdkAppId 是否已赋值
+                     * @return SdkAppId 是否已赋值
+                     */
+                    bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取应用配置
+                     * @return AppConfig 应用配置
+                     */
+                    AppConfig GetAppConfig() const;
+
+                    /**
+                     * 判断参数 AppConfig 是否已赋值
+                     * @return AppConfig 是否已赋值
+                     */
+                    bool AppConfigHasBeenSet() const;
+
+                    /**
+                     * 获取场景配置
+                     * @return SceneConfig 场景配置
+                     */
+                    std::vector<SceneItem> GetSceneConfig() const;
+
+                    /**
+                     * 判断参数 SceneConfig 是否已赋值
+                     * @return SceneConfig 是否已赋值
+                     */
+                    bool SceneConfigHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * SdkAppId 
+                     */
+                    std::string m_sdkAppId;
+                    bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 应用配置
+                     */
+                    AppConfig m_appConfig;
+                    bool m_appConfigHasBeenSet;
+
+                    /**
+                     * 场景配置
+                     */
+                    std::vector<SceneItem> m_sceneConfig;
+                    bool m_sceneConfigHasBeenSet;
 
                 };
             }

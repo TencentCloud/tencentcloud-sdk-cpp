@@ -470,6 +470,49 @@ EssClient::CreateFlowSignReviewOutcomeCallable EssClient::CreateFlowSignReviewCa
     return task->get_future();
 }
 
+EssClient::CreateFlowSignUrlOutcome EssClient::CreateFlowSignUrl(const CreateFlowSignUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowSignUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowSignUrlResponse rsp = CreateFlowSignUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowSignUrlOutcome(rsp);
+        else
+            return CreateFlowSignUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowSignUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowSignUrlAsync(const CreateFlowSignUrlRequest& request, const CreateFlowSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowSignUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowSignUrlOutcomeCallable EssClient::CreateFlowSignUrlCallable(const CreateFlowSignUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowSignUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowSignUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateIntegrationEmployeesOutcome EssClient::CreateIntegrationEmployees(const CreateIntegrationEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateIntegrationEmployees");

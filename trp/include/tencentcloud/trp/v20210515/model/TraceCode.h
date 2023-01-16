@@ -244,6 +244,42 @@ namespace TencentCloud
                      */
                     bool ProductNameHasBeenSet() const;
 
+                    /**
+                     * 获取渠道商ID
+                     * @return AgentId 渠道商ID
+                     */
+                    uint64_t GetAgentId() const;
+
+                    /**
+                     * 设置渠道商ID
+                     * @param AgentId 渠道商ID
+                     */
+                    void SetAgentId(const uint64_t& _agentId);
+
+                    /**
+                     * 判断参数 AgentId 是否已赋值
+                     * @return AgentId 是否已赋值
+                     */
+                    bool AgentIdHasBeenSet() const;
+
+                    /**
+                     * 获取码层级 0: 最小级, 1: 一级, 2: 二级
+                     * @return Level 码层级 0: 最小级, 1: 一级, 2: 二级
+                     */
+                    uint64_t GetLevel() const;
+
+                    /**
+                     * 设置码层级 0: 最小级, 1: 一级, 2: 二级
+                     * @param Level 码层级 0: 最小级, 1: 一级, 2: 二级
+                     */
+                    void SetLevel(const uint64_t& _level);
+
+                    /**
+                     * 判断参数 Level 是否已赋值
+                     * @return Level 是否已赋值
+                     */
+                    bool LevelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +347,18 @@ namespace TencentCloud
                      */
                     std::string m_productName;
                     bool m_productNameHasBeenSet;
+
+                    /**
+                     * 渠道商ID
+                     */
+                    uint64_t m_agentId;
+                    bool m_agentIdHasBeenSet;
+
+                    /**
+                     * 码层级 0: 最小级, 1: 一级, 2: 二级
+                     */
+                    uint64_t m_level;
+                    bool m_levelHasBeenSet;
 
                 };
             }

@@ -55,8 +55,14 @@ string DescribeOriginProtectionRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Filters";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_filters.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
     if (m_offsetHasBeenSet)
@@ -99,12 +105,12 @@ bool DescribeOriginProtectionRequest::ZoneIdsHasBeenSet() const
     return m_zoneIdsHasBeenSet;
 }
 
-Filter DescribeOriginProtectionRequest::GetFilters() const
+vector<Filter> DescribeOriginProtectionRequest::GetFilters() const
 {
     return m_filters;
 }
 
-void DescribeOriginProtectionRequest::SetFilters(const Filter& _filters)
+void DescribeOriginProtectionRequest::SetFilters(const vector<Filter>& _filters)
 {
     m_filters = _filters;
     m_filtersHasBeenSet = true;

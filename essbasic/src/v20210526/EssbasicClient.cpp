@@ -427,6 +427,49 @@ EssbasicClient::ChannelCreateFlowSignReviewOutcomeCallable EssbasicClient::Chann
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateFlowSignUrlOutcome EssbasicClient::ChannelCreateFlowSignUrl(const ChannelCreateFlowSignUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowSignUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowSignUrlResponse rsp = ChannelCreateFlowSignUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowSignUrlOutcome(rsp);
+        else
+            return ChannelCreateFlowSignUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowSignUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowSignUrlAsync(const ChannelCreateFlowSignUrlRequest& request, const ChannelCreateFlowSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowSignUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowSignUrlOutcomeCallable EssbasicClient::ChannelCreateFlowSignUrlCallable(const ChannelCreateFlowSignUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowSignUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowSignUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcome EssbasicClient::ChannelCreateMultiFlowSignQRCode(const ChannelCreateMultiFlowSignQRCodeRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateMultiFlowSignQRCode");

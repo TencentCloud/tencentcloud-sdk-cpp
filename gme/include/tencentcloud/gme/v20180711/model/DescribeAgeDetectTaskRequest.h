@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool BizIdHasBeenSet() const;
 
                     /**
-                     * 获取创建年龄语音识别任务时返回的taskid
-                     * @return TaskId 创建年龄语音识别任务时返回的taskid
+                     * 获取[创建年龄语音识别任务](https://cloud.tencent.com/document/product/607/60620)时返回的taskid
+                     * @return TaskId [创建年龄语音识别任务](https://cloud.tencent.com/document/product/607/60620)时返回的taskid
                      */
                     std::string GetTaskId() const;
 
                     /**
-                     * 设置创建年龄语音识别任务时返回的taskid
-                     * @param TaskId 创建年龄语音识别任务时返回的taskid
+                     * 设置[创建年龄语音识别任务](https://cloud.tencent.com/document/product/607/60620)时返回的taskid
+                     * @param TaskId [创建年龄语音识别任务](https://cloud.tencent.com/document/product/607/60620)时返回的taskid
                      */
                     void SetTaskId(const std::string& _taskId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_bizIdHasBeenSet;
 
                     /**
-                     * 创建年龄语音识别任务时返回的taskid
+                     * [创建年龄语音识别任务](https://cloud.tencent.com/document/product/607/60620)时返回的taskid
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

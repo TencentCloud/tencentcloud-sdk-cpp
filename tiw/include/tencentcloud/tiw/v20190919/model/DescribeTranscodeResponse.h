@@ -181,6 +181,34 @@ namespace TencentCloud
                      */
                     bool CompressFileUrlHasBeenSet() const;
 
+                    /**
+                     * 获取资源清单文件下载URL(内测体验)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceListUrl 资源清单文件下载URL(内测体验)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceListUrl() const;
+
+                    /**
+                     * 判断参数 ResourceListUrl 是否已赋值
+                     * @return ResourceListUrl 是否已赋值
+                     */
+                    bool ResourceListUrlHasBeenSet() const;
+
+                    /**
+                     * 获取文档制作方式(内测体验)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Ext 文档制作方式(内测体验)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExt() const;
+
+                    /**
+                     * 判断参数 Ext 是否已赋值
+                     * @return Ext 是否已赋值
+                     */
+                    bool ExtHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +279,20 @@ namespace TencentCloud
                      */
                     std::string m_compressFileUrl;
                     bool m_compressFileUrlHasBeenSet;
+
+                    /**
+                     * 资源清单文件下载URL(内测体验)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceListUrl;
+                    bool m_resourceListUrlHasBeenSet;
+
+                    /**
+                     * 文档制作方式(内测体验)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ext;
+                    bool m_extHasBeenSet;
 
                 };
             }

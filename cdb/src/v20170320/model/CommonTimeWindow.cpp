@@ -27,7 +27,10 @@ CommonTimeWindow::CommonTimeWindow() :
     m_thursdayHasBeenSet(false),
     m_fridayHasBeenSet(false),
     m_saturdayHasBeenSet(false),
-    m_sundayHasBeenSet(false)
+    m_sundayHasBeenSet(false),
+    m_backupPeriodStrategyHasBeenSet(false),
+    m_daysHasBeenSet(false),
+    m_backupPeriodTimeHasBeenSet(false)
 {
 }
 
@@ -106,6 +109,39 @@ CoreInternalOutcome CommonTimeWindow::Deserialize(const rapidjson::Value &value)
         m_sundayHasBeenSet = true;
     }
 
+    if (value.HasMember("BackupPeriodStrategy") && !value["BackupPeriodStrategy"].IsNull())
+    {
+        if (!value["BackupPeriodStrategy"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.BackupPeriodStrategy` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupPeriodStrategy = string(value["BackupPeriodStrategy"].GetString());
+        m_backupPeriodStrategyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Days") && !value["Days"].IsNull())
+    {
+        if (!value["Days"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.Days` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Days"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_days.push_back((*itr).GetInt64());
+        }
+        m_daysHasBeenSet = true;
+    }
+
+    if (value.HasMember("BackupPeriodTime") && !value["BackupPeriodTime"].IsNull())
+    {
+        if (!value["BackupPeriodTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CommonTimeWindow.BackupPeriodTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backupPeriodTime = string(value["BackupPeriodTime"].GetString());
+        m_backupPeriodTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +203,35 @@ void CommonTimeWindow::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Sunday";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sunday.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backupPeriodStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupPeriodStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupPeriodStrategy.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_daysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Days";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_days.begin(); itr != m_days.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_backupPeriodTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupPeriodTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backupPeriodTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +347,53 @@ void CommonTimeWindow::SetSunday(const string& _sunday)
 bool CommonTimeWindow::SundayHasBeenSet() const
 {
     return m_sundayHasBeenSet;
+}
+
+string CommonTimeWindow::GetBackupPeriodStrategy() const
+{
+    return m_backupPeriodStrategy;
+}
+
+void CommonTimeWindow::SetBackupPeriodStrategy(const string& _backupPeriodStrategy)
+{
+    m_backupPeriodStrategy = _backupPeriodStrategy;
+    m_backupPeriodStrategyHasBeenSet = true;
+}
+
+bool CommonTimeWindow::BackupPeriodStrategyHasBeenSet() const
+{
+    return m_backupPeriodStrategyHasBeenSet;
+}
+
+vector<int64_t> CommonTimeWindow::GetDays() const
+{
+    return m_days;
+}
+
+void CommonTimeWindow::SetDays(const vector<int64_t>& _days)
+{
+    m_days = _days;
+    m_daysHasBeenSet = true;
+}
+
+bool CommonTimeWindow::DaysHasBeenSet() const
+{
+    return m_daysHasBeenSet;
+}
+
+string CommonTimeWindow::GetBackupPeriodTime() const
+{
+    return m_backupPeriodTime;
+}
+
+void CommonTimeWindow::SetBackupPeriodTime(const string& _backupPeriodTime)
+{
+    m_backupPeriodTime = _backupPeriodTime;
+    m_backupPeriodTimeHasBeenSet = true;
+}
+
+bool CommonTimeWindow::BackupPeriodTimeHasBeenSet() const
+{
+    return m_backupPeriodTimeHasBeenSet;
 }
 

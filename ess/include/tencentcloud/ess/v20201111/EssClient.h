@@ -43,6 +43,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
@@ -121,6 +123,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowSignReviewResponse> CreateFlowSignReviewOutcome;
                 typedef std::future<CreateFlowSignReviewOutcome> CreateFlowSignReviewOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowSignReviewRequest&, CreateFlowSignReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignReviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowSignUrlResponse> CreateFlowSignUrlOutcome;
+                typedef std::future<CreateFlowSignUrlOutcome> CreateFlowSignUrlOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFlowSignUrlRequest&, CreateFlowSignUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignUrlAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateIntegrationEmployeesResponse> CreateIntegrationEmployeesOutcome;
                 typedef std::future<CreateIntegrationEmployeesOutcome> CreateIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationEmployeesRequest&, CreateIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationEmployeesAsyncHandler;
@@ -283,6 +288,15 @@ namespace TencentCloud
                 CreateFlowSignReviewOutcome CreateFlowSignReview(const Model::CreateFlowSignReviewRequest &request);
                 void CreateFlowSignReviewAsync(const Model::CreateFlowSignReviewRequest& request, const CreateFlowSignReviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFlowSignReviewOutcomeCallable CreateFlowSignReviewCallable(const Model::CreateFlowSignReviewRequest& request);
+
+                /**
+                 *创建签署链接，需要联系运营人员开白后才可使用
+                 * @param req CreateFlowSignUrlRequest
+                 * @return CreateFlowSignUrlOutcome
+                 */
+                CreateFlowSignUrlOutcome CreateFlowSignUrl(const Model::CreateFlowSignUrlRequest &request);
+                void CreateFlowSignUrlAsync(const Model::CreateFlowSignUrlRequest& request, const CreateFlowSignUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowSignUrlOutcomeCallable CreateFlowSignUrlCallable(const Model::CreateFlowSignUrlRequest& request);
 
                 /**
                  *创建员工

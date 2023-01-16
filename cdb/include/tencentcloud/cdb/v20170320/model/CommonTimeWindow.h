@@ -172,6 +172,60 @@ namespace TencentCloud
                      */
                     bool SundayHasBeenSet() const;
 
+                    /**
+                     * 获取常规备份保留策略，weekly-按周备份，monthly-按月备份，默认为weekly
+                     * @return BackupPeriodStrategy 常规备份保留策略，weekly-按周备份，monthly-按月备份，默认为weekly
+                     */
+                    std::string GetBackupPeriodStrategy() const;
+
+                    /**
+                     * 设置常规备份保留策略，weekly-按周备份，monthly-按月备份，默认为weekly
+                     * @param BackupPeriodStrategy 常规备份保留策略，weekly-按周备份，monthly-按月备份，默认为weekly
+                     */
+                    void SetBackupPeriodStrategy(const std::string& _backupPeriodStrategy);
+
+                    /**
+                     * 判断参数 BackupPeriodStrategy 是否已赋值
+                     * @return BackupPeriodStrategy 是否已赋值
+                     */
+                    bool BackupPeriodStrategyHasBeenSet() const;
+
+                    /**
+                     * 获取如果设置为按月备份，需填入每月具体备份日期，相邻备份天数不得超过两天。例[1,4,7,9,11,14,17,19,22,25,28,30,31]
+                     * @return Days 如果设置为按月备份，需填入每月具体备份日期，相邻备份天数不得超过两天。例[1,4,7,9,11,14,17,19,22,25,28,30,31]
+                     */
+                    std::vector<int64_t> GetDays() const;
+
+                    /**
+                     * 设置如果设置为按月备份，需填入每月具体备份日期，相邻备份天数不得超过两天。例[1,4,7,9,11,14,17,19,22,25,28,30,31]
+                     * @param Days 如果设置为按月备份，需填入每月具体备份日期，相邻备份天数不得超过两天。例[1,4,7,9,11,14,17,19,22,25,28,30,31]
+                     */
+                    void SetDays(const std::vector<int64_t>& _days);
+
+                    /**
+                     * 判断参数 Days 是否已赋值
+                     * @return Days 是否已赋值
+                     */
+                    bool DaysHasBeenSet() const;
+
+                    /**
+                     * 获取月度备份时间窗，BackupPeriodStrategy为monthly时必填。格式如： 02:00-06:00
+                     * @return BackupPeriodTime 月度备份时间窗，BackupPeriodStrategy为monthly时必填。格式如： 02:00-06:00
+                     */
+                    std::string GetBackupPeriodTime() const;
+
+                    /**
+                     * 设置月度备份时间窗，BackupPeriodStrategy为monthly时必填。格式如： 02:00-06:00
+                     * @param BackupPeriodTime 月度备份时间窗，BackupPeriodStrategy为monthly时必填。格式如： 02:00-06:00
+                     */
+                    void SetBackupPeriodTime(const std::string& _backupPeriodTime);
+
+                    /**
+                     * 判断参数 BackupPeriodTime 是否已赋值
+                     * @return BackupPeriodTime 是否已赋值
+                     */
+                    bool BackupPeriodTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +269,24 @@ namespace TencentCloud
                      */
                     std::string m_sunday;
                     bool m_sundayHasBeenSet;
+
+                    /**
+                     * 常规备份保留策略，weekly-按周备份，monthly-按月备份，默认为weekly
+                     */
+                    std::string m_backupPeriodStrategy;
+                    bool m_backupPeriodStrategyHasBeenSet;
+
+                    /**
+                     * 如果设置为按月备份，需填入每月具体备份日期，相邻备份天数不得超过两天。例[1,4,7,9,11,14,17,19,22,25,28,30,31]
+                     */
+                    std::vector<int64_t> m_days;
+                    bool m_daysHasBeenSet;
+
+                    /**
+                     * 月度备份时间窗，BackupPeriodStrategy为monthly时必填。格式如： 02:00-06:00
+                     */
+                    std::string m_backupPeriodTime;
+                    bool m_backupPeriodTimeHasBeenSet;
 
                 };
             }

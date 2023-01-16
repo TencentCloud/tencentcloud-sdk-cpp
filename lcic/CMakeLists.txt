@@ -37,6 +37,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/AppCustomContent.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorResponse.h
+  include/tencentcloud/lcic/v20220817/model/SceneItem.h
   include/tencentcloud/lcic/v20220817/model/DeleteRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/RegisterUserResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeAppDetailResponse.h
@@ -45,12 +46,13 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h
   include/tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdRequest.h
-  include/tencentcloud/lcic/v20220817/model/RegisterUserRequest.h
+  include/tencentcloud/lcic/v20220817/model/AppConfig.h
   include/tencentcloud/lcic/v20220817/model/LoginUserRequest.h
   include/tencentcloud/lcic/v20220817/model/BindDocumentToRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeUserResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h
+  include/tencentcloud/lcic/v20220817/model/RegisterUserRequest.h
   )
 
 set(lcic_src
@@ -73,6 +75,7 @@ set(lcic_src
   src/v20220817/model/AppCustomContent.cpp
   src/v20220817/model/DescribeRoomStatisticsResponse.cpp
   src/v20220817/model/CreateSupervisorResponse.cpp
+  src/v20220817/model/SceneItem.cpp
   src/v20220817/model/DeleteRoomRequest.cpp
   src/v20220817/model/RegisterUserResponse.cpp
   src/v20220817/model/DescribeAppDetailResponse.cpp
@@ -81,12 +84,13 @@ set(lcic_src
   src/v20220817/model/CreateSupervisorRequest.cpp
   src/v20220817/model/UnbindDocumentFromRoomRequest.cpp
   src/v20220817/model/LoginOriginIdRequest.cpp
-  src/v20220817/model/RegisterUserRequest.cpp
+  src/v20220817/model/AppConfig.cpp
   src/v20220817/model/LoginUserRequest.cpp
   src/v20220817/model/BindDocumentToRoomResponse.cpp
   src/v20220817/model/CreateRoomResponse.cpp
   src/v20220817/model/DescribeUserResponse.cpp
   src/v20220817/model/DescribeRoomRequest.cpp
+  src/v20220817/model/RegisterUserRequest.cpp
   )
 
 set(lcic_include

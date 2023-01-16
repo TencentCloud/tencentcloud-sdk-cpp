@@ -22,6 +22,7 @@ set(essbasic_public_header
 set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiResponse.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelBatchCancelFlowsResponse.h
   include/tencentcloud/essbasic/v20210526/model/Department.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h
@@ -35,9 +36,10 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlResponse.h
   include/tencentcloud/essbasic/v20210526/model/SyncProxyOrganizationRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateSealByImageRequest.h
-  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
+  include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCancelFlowResponse.h
   include/tencentcloud/essbasic/v20210526/model/DownloadFlowInfo.h
+  include/tencentcloud/essbasic/v20210526/model/FlowApproverUrlInfo.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateConvertTaskApiRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesRequest.h
   include/tencentcloud/essbasic/v20210526/model/Agent.h
@@ -55,6 +57,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelVerifyPdfResponse.h
+  include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h
   include/tencentcloud/essbasic/v20210526/model/CreateConsoleLoginUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/OrganizationInfo.h
   include/tencentcloud/essbasic/v20210526/model/PdfVerifyResult.h
@@ -93,7 +96,7 @@ set(essbasic_public_header_model
   include/tencentcloud/essbasic/v20210526/model/UploadFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/essbasic/v20210526/model/ApproverRestriction.h
-  include/tencentcloud/essbasic/v20210526/model/DescribeChannelFlowEvidenceReportRequest.h
+  include/tencentcloud/essbasic/v20210526/model/PrepareFlowsRequest.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewResponse.h
   include/tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsResponse.h
@@ -256,6 +259,7 @@ set(essbasic_src
   src/v20201222/EssbasicClient.cpp
   src/v20210526/model/SyncProxyOrganizationResponse.cpp
   src/v20210526/model/ChannelCreateConvertTaskApiResponse.cpp
+  src/v20210526/model/ChannelCreateFlowSignUrlResponse.cpp
   src/v20210526/model/ChannelBatchCancelFlowsResponse.cpp
   src/v20210526/model/Department.cpp
   src/v20210526/model/ChannelCreateFlowSignReviewRequest.cpp
@@ -269,9 +273,10 @@ set(essbasic_src
   src/v20210526/model/CreateConsoleLoginUrlResponse.cpp
   src/v20210526/model/SyncProxyOrganizationRequest.cpp
   src/v20210526/model/CreateSealByImageRequest.cpp
-  src/v20210526/model/PrepareFlowsRequest.cpp
+  src/v20210526/model/ChannelCreateFlowSignUrlRequest.cpp
   src/v20210526/model/ChannelCancelFlowResponse.cpp
   src/v20210526/model/DownloadFlowInfo.cpp
+  src/v20210526/model/FlowApproverUrlInfo.cpp
   src/v20210526/model/ChannelCreateConvertTaskApiRequest.cpp
   src/v20210526/model/ChannelCreateFlowByFilesRequest.cpp
   src/v20210526/model/Agent.cpp
@@ -289,6 +294,7 @@ set(essbasic_src
   src/v20210526/model/ChannelVerifyPdfRequest.cpp
   src/v20210526/model/CreateChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/ChannelVerifyPdfResponse.cpp
+  src/v20210526/model/DescribeChannelFlowEvidenceReportRequest.cpp
   src/v20210526/model/CreateConsoleLoginUrlRequest.cpp
   src/v20210526/model/OrganizationInfo.cpp
   src/v20210526/model/PdfVerifyResult.cpp
@@ -327,7 +333,7 @@ set(essbasic_src
   src/v20210526/model/UploadFilesResponse.cpp
   src/v20210526/model/ChannelCreateBatchCancelFlowUrlRequest.cpp
   src/v20210526/model/ApproverRestriction.cpp
-  src/v20210526/model/DescribeChannelFlowEvidenceReportRequest.cpp
+  src/v20210526/model/PrepareFlowsRequest.cpp
   src/v20210526/model/ChannelCreateFlowByFilesResponse.cpp
   src/v20210526/model/ChannelCreateFlowSignReviewResponse.cpp
   src/v20210526/model/ChannelDescribeOrganizationSealsResponse.cpp
