@@ -71,6 +71,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeDomainsConfigResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeEdgePackTaskStatusRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeEdgePackTaskStatusResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h>
@@ -265,6 +267,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainsConfigResponse> DescribeDomainsConfigOutcome;
                 typedef std::future<DescribeDomainsConfigOutcome> DescribeDomainsConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeDomainsConfigRequest&, DescribeDomainsConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainsConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEdgePackTaskStatusResponse> DescribeEdgePackTaskStatusOutcome;
+                typedef std::future<DescribeEdgePackTaskStatusOutcome> DescribeEdgePackTaskStatusOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeEdgePackTaskStatusRequest&, DescribeEdgePackTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEdgePackTaskStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeEventLogDataResponse> DescribeEventLogDataOutcome;
                 typedef std::future<DescribeEventLogDataOutcome> DescribeEventLogDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeEventLogDataRequest&, DescribeEventLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventLogDataAsyncHandler;
@@ -659,6 +664,15 @@ namespace TencentCloud
                 DescribeDomainsConfigOutcome DescribeDomainsConfig(const Model::DescribeDomainsConfigRequest &request);
                 void DescribeDomainsConfigAsync(const Model::DescribeDomainsConfigRequest& request, const DescribeDomainsConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDomainsConfigOutcomeCallable DescribeDomainsConfigCallable(const Model::DescribeDomainsConfigRequest& request);
+
+                /**
+                 *DescribeEdgePackTaskStatus 用于查询动态打包任务状态列表
+                 * @param req DescribeEdgePackTaskStatusRequest
+                 * @return DescribeEdgePackTaskStatusOutcome
+                 */
+                DescribeEdgePackTaskStatusOutcome DescribeEdgePackTaskStatus(const Model::DescribeEdgePackTaskStatusRequest &request);
+                void DescribeEdgePackTaskStatusAsync(const Model::DescribeEdgePackTaskStatusRequest& request, const DescribeEdgePackTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEdgePackTaskStatusOutcomeCallable DescribeEdgePackTaskStatusCallable(const Model::DescribeEdgePackTaskStatusRequest& request);
 
                 /**
                  *DescribeEventLogData 用于查询事件日志统计曲线

@@ -24,7 +24,8 @@ RateLimitConfig::RateLimitConfig() :
     m_switchHasBeenSet(false),
     m_rateLimitUserRulesHasBeenSet(false),
     m_rateLimitTemplateHasBeenSet(false),
-    m_rateLimitIntelligenceHasBeenSet(false)
+    m_rateLimitIntelligenceHasBeenSet(false),
+    m_rateLimitCustomizesHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,26 @@ CoreInternalOutcome RateLimitConfig::Deserialize(const rapidjson::Value &value)
         m_rateLimitIntelligenceHasBeenSet = true;
     }
 
+    if (value.HasMember("RateLimitCustomizes") && !value["RateLimitCustomizes"].IsNull())
+    {
+        if (!value["RateLimitCustomizes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RateLimitConfig.RateLimitCustomizes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RateLimitCustomizes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RateLimitUserRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_rateLimitCustomizes.push_back(item);
+        }
+        m_rateLimitCustomizesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +164,21 @@ void RateLimitConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_rateLimitIntelligence.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rateLimitCustomizesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RateLimitCustomizes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_rateLimitCustomizes.begin(); itr != m_rateLimitCustomizes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -210,5 +246,21 @@ void RateLimitConfig::SetRateLimitIntelligence(const RateLimitIntelligence& _rat
 bool RateLimitConfig::RateLimitIntelligenceHasBeenSet() const
 {
     return m_rateLimitIntelligenceHasBeenSet;
+}
+
+vector<RateLimitUserRule> RateLimitConfig::GetRateLimitCustomizes() const
+{
+    return m_rateLimitCustomizes;
+}
+
+void RateLimitConfig::SetRateLimitCustomizes(const vector<RateLimitUserRule>& _rateLimitCustomizes)
+{
+    m_rateLimitCustomizes = _rateLimitCustomizes;
+    m_rateLimitCustomizesHasBeenSet = true;
+}
+
+bool RateLimitConfig::RateLimitCustomizesHasBeenSet() const
+{
+    return m_rateLimitCustomizesHasBeenSet;
 }
 

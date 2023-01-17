@@ -298,6 +298,42 @@ namespace TencentCloud
                      */
                     bool TortSiteNumHasBeenSet() const;
 
+                    /**
+                     * 获取监测截止时间
+                     * @return MonitorEndTime 监测截止时间
+                     */
+                    std::string GetMonitorEndTime() const;
+
+                    /**
+                     * 设置监测截止时间
+                     * @param MonitorEndTime 监测截止时间
+                     */
+                    void SetMonitorEndTime(const std::string& _monitorEndTime);
+
+                    /**
+                     * 判断参数 MonitorEndTime 是否已赋值
+                     * @return MonitorEndTime 是否已赋值
+                     */
+                    bool MonitorEndTimeHasBeenSet() const;
+
+                    /**
+                     * 获取是否自动续费
+                     * @return AutoRenew 是否自动续费
+                     */
+                    int64_t GetAutoRenew() const;
+
+                    /**
+                     * 设置是否自动续费
+                     * @param AutoRenew 是否自动续费
+                     */
+                    void SetAutoRenew(const int64_t& _autoRenew);
+
+                    /**
+                     * 判断参数 AutoRenew 是否已赋值
+                     * @return AutoRenew 是否已赋值
+                     */
+                    bool AutoRenewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +419,18 @@ namespace TencentCloud
                      */
                     int64_t m_tortSiteNum;
                     bool m_tortSiteNumHasBeenSet;
+
+                    /**
+                     * 监测截止时间
+                     */
+                    std::string m_monitorEndTime;
+                    bool m_monitorEndTimeHasBeenSet;
+
+                    /**
+                     * 是否自动续费
+                     */
+                    int64_t m_autoRenew;
+                    bool m_autoRenewHasBeenSet;
 
                 };
             }

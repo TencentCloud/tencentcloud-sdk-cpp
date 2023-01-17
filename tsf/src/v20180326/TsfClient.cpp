@@ -642,6 +642,49 @@ TsfClient::CreateConfigOutcomeCallable TsfClient::CreateConfigCallable(const Cre
     return task->get_future();
 }
 
+TsfClient::CreateConfigTemplateOutcome TsfClient::CreateConfigTemplate(const CreateConfigTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigTemplateResponse rsp = CreateConfigTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigTemplateOutcome(rsp);
+        else
+            return CreateConfigTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateConfigTemplateAsync(const CreateConfigTemplateRequest& request, const CreateConfigTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateConfigTemplateOutcomeCallable TsfClient::CreateConfigTemplateCallable(const CreateConfigTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateContainGroupOutcome TsfClient::CreateContainGroup(const CreateContainGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContainGroup");
@@ -936,6 +979,49 @@ TsfClient::CreateMicroserviceOutcomeCallable TsfClient::CreateMicroserviceCallab
         [this, request]()
         {
             return this->CreateMicroservice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateMicroserviceWithDetailRespOutcome TsfClient::CreateMicroserviceWithDetailResp(const CreateMicroserviceWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateMicroserviceWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateMicroserviceWithDetailRespResponse rsp = CreateMicroserviceWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateMicroserviceWithDetailRespOutcome(rsp);
+        else
+            return CreateMicroserviceWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateMicroserviceWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateMicroserviceWithDetailRespAsync(const CreateMicroserviceWithDetailRespRequest& request, const CreateMicroserviceWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateMicroserviceWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateMicroserviceWithDetailRespOutcomeCallable TsfClient::CreateMicroserviceWithDetailRespCallable(const CreateMicroserviceWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateMicroserviceWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateMicroserviceWithDetailResp(request);
         }
     );
 
@@ -1330,6 +1416,49 @@ TsfClient::DeleteApplicationOutcomeCallable TsfClient::DeleteApplicationCallable
     return task->get_future();
 }
 
+TsfClient::DeleteClusterOutcome TsfClient::DeleteCluster(const DeleteClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteClusterResponse rsp = DeleteClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteClusterOutcome(rsp);
+        else
+            return DeleteClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteClusterOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteClusterAsync(const DeleteClusterRequest& request, const DeleteClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteClusterOutcomeCallable TsfClient::DeleteClusterCallable(const DeleteClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeleteConfigOutcome TsfClient::DeleteConfig(const DeleteConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteConfig");
@@ -1366,6 +1495,49 @@ TsfClient::DeleteConfigOutcomeCallable TsfClient::DeleteConfigCallable(const Del
         [this, request]()
         {
             return this->DeleteConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeleteConfigTemplateOutcome TsfClient::DeleteConfigTemplate(const DeleteConfigTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteConfigTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteConfigTemplateResponse rsp = DeleteConfigTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteConfigTemplateOutcome(rsp);
+        else
+            return DeleteConfigTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteConfigTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteConfigTemplateAsync(const DeleteConfigTemplateRequest& request, const DeleteConfigTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteConfigTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteConfigTemplateOutcomeCallable TsfClient::DeleteConfigTemplateCallable(const DeleteConfigTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteConfigTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteConfigTemplate(request);
         }
     );
 
@@ -2706,6 +2878,49 @@ TsfClient::DescribeClusterInstancesOutcomeCallable TsfClient::DescribeClusterIns
     return task->get_future();
 }
 
+TsfClient::DescribeClustersOutcome TsfClient::DescribeClusters(const DescribeClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClustersResponse rsp = DescribeClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClustersOutcome(rsp);
+        else
+            return DescribeClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClustersOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeClustersAsync(const DescribeClustersRequest& request, const DescribeClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeClustersOutcomeCallable TsfClient::DescribeClustersCallable(const DescribeClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeConfigOutcome TsfClient::DescribeConfig(const DescribeConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConfig");
@@ -2871,6 +3086,49 @@ TsfClient::DescribeConfigSummaryOutcomeCallable TsfClient::DescribeConfigSummary
         [this, request]()
         {
             return this->DescribeConfigSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeConfigTemplateOutcome TsfClient::DescribeConfigTemplate(const DescribeConfigTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConfigTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConfigTemplateResponse rsp = DescribeConfigTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConfigTemplateOutcome(rsp);
+        else
+            return DescribeConfigTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConfigTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeConfigTemplateAsync(const DescribeConfigTemplateRequest& request, const DescribeConfigTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConfigTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeConfigTemplateOutcomeCallable TsfClient::DescribeConfigTemplateCallable(const DescribeConfigTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConfigTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConfigTemplate(request);
         }
     );
 
@@ -3344,6 +3602,49 @@ TsfClient::DescribeEnabledUnitRuleOutcomeCallable TsfClient::DescribeEnabledUnit
         [this, request]()
         {
             return this->DescribeEnabledUnitRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DescribeFileConfigReleasesOutcome TsfClient::DescribeFileConfigReleases(const DescribeFileConfigReleasesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileConfigReleases");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileConfigReleasesResponse rsp = DescribeFileConfigReleasesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileConfigReleasesOutcome(rsp);
+        else
+            return DescribeFileConfigReleasesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileConfigReleasesOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeFileConfigReleasesAsync(const DescribeFileConfigReleasesRequest& request, const DescribeFileConfigReleasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileConfigReleases(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeFileConfigReleasesOutcomeCallable TsfClient::DescribeFileConfigReleasesCallable(const DescribeFileConfigReleasesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileConfigReleasesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileConfigReleases(request);
         }
     );
 
@@ -6447,6 +6748,92 @@ TsfClient::ExpandGroupOutcomeCallable TsfClient::ExpandGroupCallable(const Expan
     return task->get_future();
 }
 
+TsfClient::ModifyApplicationOutcome TsfClient::ModifyApplication(const ModifyApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApplicationResponse rsp = ModifyApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApplicationOutcome(rsp);
+        else
+            return ModifyApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApplicationOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyApplicationAsync(const ModifyApplicationRequest& request, const ModifyApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyApplicationOutcomeCallable TsfClient::ModifyApplicationCallable(const ModifyApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ModifyClusterOutcome TsfClient::ModifyCluster(const ModifyClusterRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCluster");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyClusterResponse rsp = ModifyClusterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyClusterOutcome(rsp);
+        else
+            return ModifyClusterOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyClusterOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyClusterAsync(const ModifyClusterRequest& request, const ModifyClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCluster(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyClusterOutcomeCallable TsfClient::ModifyClusterCallable(const ModifyClusterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyClusterOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCluster(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::ModifyContainerGroupOutcome TsfClient::ModifyContainerGroup(const ModifyContainerGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyContainerGroup");
@@ -6526,6 +6913,49 @@ TsfClient::ModifyContainerReplicasOutcomeCallable TsfClient::ModifyContainerRepl
         [this, request]()
         {
             return this->ModifyContainerReplicas(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ModifyGroupOutcome TsfClient::ModifyGroup(const ModifyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGroupResponse rsp = ModifyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGroupOutcome(rsp);
+        else
+            return ModifyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGroupOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyGroupAsync(const ModifyGroupRequest& request, const ModifyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyGroupOutcomeCallable TsfClient::ModifyGroupCallable(const ModifyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGroup(request);
         }
     );
 
@@ -6655,6 +7085,49 @@ TsfClient::ModifyMicroserviceOutcomeCallable TsfClient::ModifyMicroserviceCallab
         [this, request]()
         {
             return this->ModifyMicroservice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ModifyNamespaceOutcome TsfClient::ModifyNamespace(const ModifyNamespaceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNamespace");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNamespaceResponse rsp = ModifyNamespaceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNamespaceOutcome(rsp);
+        else
+            return ModifyNamespaceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNamespaceOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ModifyNamespaceAsync(const ModifyNamespaceRequest& request, const ModifyNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNamespace(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ModifyNamespaceOutcomeCallable TsfClient::ModifyNamespaceCallable(const ModifyNamespaceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNamespaceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNamespace(request);
         }
     );
 
@@ -7343,6 +7816,49 @@ TsfClient::RevocationPublicConfigOutcomeCallable TsfClient::RevocationPublicConf
         [this, request]()
         {
             return this->RevocationPublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::RevokeFileConfigOutcome TsfClient::RevokeFileConfig(const RevokeFileConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "RevokeFileConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RevokeFileConfigResponse rsp = RevokeFileConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RevokeFileConfigOutcome(rsp);
+        else
+            return RevokeFileConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return RevokeFileConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::RevokeFileConfigAsync(const RevokeFileConfigRequest& request, const RevokeFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RevokeFileConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::RevokeFileConfigOutcomeCallable TsfClient::RevokeFileConfigCallable(const RevokeFileConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RevokeFileConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->RevokeFileConfig(request);
         }
     );
 
@@ -8074,6 +8590,49 @@ TsfClient::UpdateApiTimeoutsOutcomeCallable TsfClient::UpdateApiTimeoutsCallable
         [this, request]()
         {
             return this->UpdateApiTimeouts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::UpdateConfigTemplateOutcome TsfClient::UpdateConfigTemplate(const UpdateConfigTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateConfigTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateConfigTemplateResponse rsp = UpdateConfigTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateConfigTemplateOutcome(rsp);
+        else
+            return UpdateConfigTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateConfigTemplateOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::UpdateConfigTemplateAsync(const UpdateConfigTemplateRequest& request, const UpdateConfigTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateConfigTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::UpdateConfigTemplateOutcomeCallable TsfClient::UpdateConfigTemplateCallable(const UpdateConfigTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateConfigTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateConfigTemplate(request);
         }
     );
 

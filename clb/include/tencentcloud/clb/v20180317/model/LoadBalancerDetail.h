@@ -425,17 +425,17 @@ Public：公网属性， Private：内网属性。
                     bool ExtraInfoHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡维度的个性化配置ID。
+                     * 获取负载均衡维度的个性化配置ID，多个配置用逗号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ConfigId 负载均衡维度的个性化配置ID。
+                     * @return ConfigId 负载均衡维度的个性化配置ID，多个配置用逗号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetConfigId() const;
 
                     /**
-                     * 设置负载均衡维度的个性化配置ID。
+                     * 设置负载均衡维度的个性化配置ID，多个配置用逗号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ConfigId 负载均衡维度的个性化配置ID。
+                     * @param ConfigId 负载均衡维度的个性化配置ID，多个配置用逗号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetConfigId(const std::string& _configId);
@@ -986,7 +986,7 @@ Public：公网属性， Private：内网属性。
                     bool m_extraInfoHasBeenSet;
 
                     /**
-                     * 负载均衡维度的个性化配置ID。
+                     * 负载均衡维度的个性化配置ID，多个配置用逗号隔开。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_configId;

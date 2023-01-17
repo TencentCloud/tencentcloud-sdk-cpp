@@ -33,6 +33,7 @@
 #include <tencentcloud/teo/v20220901/model/ExceptConfig.h>
 #include <tencentcloud/teo/v20220901/model/DropPageConfig.h>
 #include <tencentcloud/teo/v20220901/model/TemplateConfig.h>
+#include <tencentcloud/teo/v20220901/model/SlowPostConfig.h>
 
 
 namespace TencentCloud
@@ -253,6 +254,28 @@ namespace TencentCloud
                      */
                     bool TemplateConfigHasBeenSet() const;
 
+                    /**
+                     * 获取慢速攻击配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlowPostConfig 慢速攻击配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SlowPostConfig GetSlowPostConfig() const;
+
+                    /**
+                     * 设置慢速攻击配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SlowPostConfig 慢速攻击配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSlowPostConfig(const SlowPostConfig& _slowPostConfig);
+
+                    /**
+                     * 判断参数 SlowPostConfig 是否已赋值
+                     * @return SlowPostConfig 是否已赋值
+                     */
+                    bool SlowPostConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -317,6 +340,13 @@ namespace TencentCloud
                      */
                     TemplateConfig m_templateConfig;
                     bool m_templateConfigHasBeenSet;
+
+                    /**
+                     * 慢速攻击配置。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    SlowPostConfig m_slowPostConfig;
+                    bool m_slowPostConfigHasBeenSet;
 
                 };
             }

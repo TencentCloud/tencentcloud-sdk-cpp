@@ -600,6 +600,24 @@ namespace TencentCloud
                      */
                     bool ApplierNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动续期
+                     * @return IsAutoRenew 是否自动续期
+                     */
+                    std::string GetIsAutoRenew() const;
+
+                    /**
+                     * 设置是否自动续期
+                     * @param IsAutoRenew 是否自动续期
+                     */
+                    void SetIsAutoRenew(const std::string& _isAutoRenew);
+
+                    /**
+                     * 判断参数 IsAutoRenew 是否已赋值
+                     * @return IsAutoRenew 是否已赋值
+                     */
+                    bool IsAutoRenewHasBeenSet() const;
+
                 private:
 
                     /**
@@ -787,6 +805,12 @@ namespace TencentCloud
                      */
                     std::string m_applierName;
                     bool m_applierNameHasBeenSet;
+
+                    /**
+                     * 是否自动续期
+                     */
+                    std::string m_isAutoRenew;
+                    bool m_isAutoRenewHasBeenSet;
 
                 };
             }

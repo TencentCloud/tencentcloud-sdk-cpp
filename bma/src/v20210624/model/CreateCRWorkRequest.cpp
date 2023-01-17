@@ -53,7 +53,8 @@ CreateCRWorkRequest::CreateCRWorkRequest() :
     m_contentHasBeenSet(false),
     m_monitorEndTimeHasBeenSet(false),
     m_applierIdHasBeenSet(false),
-    m_applierNameHasBeenSet(false)
+    m_applierNameHasBeenSet(false),
+    m_isAutoRenewHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,14 @@ string CreateCRWorkRequest::ToJsonString() const
         string key = "ApplierName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_applierName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isAutoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_isAutoRenew.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -819,6 +828,22 @@ void CreateCRWorkRequest::SetApplierName(const string& _applierName)
 bool CreateCRWorkRequest::ApplierNameHasBeenSet() const
 {
     return m_applierNameHasBeenSet;
+}
+
+string CreateCRWorkRequest::GetIsAutoRenew() const
+{
+    return m_isAutoRenew;
+}
+
+void CreateCRWorkRequest::SetIsAutoRenew(const string& _isAutoRenew)
+{
+    m_isAutoRenew = _isAutoRenew;
+    m_isAutoRenewHasBeenSet = true;
+}
+
+bool CreateCRWorkRequest::IsAutoRenewHasBeenSet() const
+{
+    return m_isAutoRenewHasBeenSet;
 }
 
 

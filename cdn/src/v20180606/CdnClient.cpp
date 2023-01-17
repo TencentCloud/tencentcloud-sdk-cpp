@@ -1072,6 +1072,49 @@ CdnClient::DescribeDomainsConfigOutcomeCallable CdnClient::DescribeDomainsConfig
     return task->get_future();
 }
 
+CdnClient::DescribeEdgePackTaskStatusOutcome CdnClient::DescribeEdgePackTaskStatus(const DescribeEdgePackTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEdgePackTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEdgePackTaskStatusResponse rsp = DescribeEdgePackTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEdgePackTaskStatusOutcome(rsp);
+        else
+            return DescribeEdgePackTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEdgePackTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeEdgePackTaskStatusAsync(const DescribeEdgePackTaskStatusRequest& request, const DescribeEdgePackTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEdgePackTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeEdgePackTaskStatusOutcomeCallable CdnClient::DescribeEdgePackTaskStatusCallable(const DescribeEdgePackTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEdgePackTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEdgePackTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeEventLogDataOutcome CdnClient::DescribeEventLogData(const DescribeEventLogDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeEventLogData");

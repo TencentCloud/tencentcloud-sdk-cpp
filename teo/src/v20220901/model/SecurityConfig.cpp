@@ -29,7 +29,8 @@ SecurityConfig::SecurityConfig() :
     m_ipTableConfigHasBeenSet(false),
     m_exceptConfigHasBeenSet(false),
     m_dropPageConfigHasBeenSet(false),
-    m_templateConfigHasBeenSet(false)
+    m_templateConfigHasBeenSet(false),
+    m_slowPostConfigHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,23 @@ CoreInternalOutcome SecurityConfig::Deserialize(const rapidjson::Value &value)
         m_templateConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("SlowPostConfig") && !value["SlowPostConfig"].IsNull())
+    {
+        if (!value["SlowPostConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SecurityConfig.SlowPostConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_slowPostConfig.Deserialize(value["SlowPostConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_slowPostConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +295,15 @@ void SecurityConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_templateConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_slowPostConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SlowPostConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_slowPostConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -424,5 +451,21 @@ void SecurityConfig::SetTemplateConfig(const TemplateConfig& _templateConfig)
 bool SecurityConfig::TemplateConfigHasBeenSet() const
 {
     return m_templateConfigHasBeenSet;
+}
+
+SlowPostConfig SecurityConfig::GetSlowPostConfig() const
+{
+    return m_slowPostConfig;
+}
+
+void SecurityConfig::SetSlowPostConfig(const SlowPostConfig& _slowPostConfig)
+{
+    m_slowPostConfig = _slowPostConfig;
+    m_slowPostConfigHasBeenSet = true;
+}
+
+bool SecurityConfig::SlowPostConfigHasBeenSet() const
+{
+    return m_slowPostConfigHasBeenSet;
 }
 

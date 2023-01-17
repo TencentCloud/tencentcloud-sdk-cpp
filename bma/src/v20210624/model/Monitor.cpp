@@ -34,7 +34,9 @@ Monitor::Monitor() :
     m_workCategoryAllHasBeenSet(false),
     m_evidenceStatusHasBeenSet(false),
     m_evidenceNoteHasBeenSet(false),
-    m_tortSiteNumHasBeenSet(false)
+    m_tortSiteNumHasBeenSet(false),
+    m_monitorEndTimeHasBeenSet(false),
+    m_autoRenewHasBeenSet(false)
 {
 }
 
@@ -183,6 +185,26 @@ CoreInternalOutcome Monitor::Deserialize(const rapidjson::Value &value)
         m_tortSiteNumHasBeenSet = true;
     }
 
+    if (value.HasMember("MonitorEndTime") && !value["MonitorEndTime"].IsNull())
+    {
+        if (!value["MonitorEndTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Monitor.MonitorEndTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_monitorEndTime = string(value["MonitorEndTime"].GetString());
+        m_monitorEndTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoRenew") && !value["AutoRenew"].IsNull())
+    {
+        if (!value["AutoRenew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Monitor.AutoRenew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoRenew = value["AutoRenew"].GetInt64();
+        m_autoRenewHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +322,22 @@ void Monitor::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "TortSiteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_tortSiteNum, allocator);
+    }
+
+    if (m_monitorEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MonitorEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_monitorEndTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoRenew, allocator);
     }
 
 }
@@ -527,5 +565,37 @@ void Monitor::SetTortSiteNum(const int64_t& _tortSiteNum)
 bool Monitor::TortSiteNumHasBeenSet() const
 {
     return m_tortSiteNumHasBeenSet;
+}
+
+string Monitor::GetMonitorEndTime() const
+{
+    return m_monitorEndTime;
+}
+
+void Monitor::SetMonitorEndTime(const string& _monitorEndTime)
+{
+    m_monitorEndTime = _monitorEndTime;
+    m_monitorEndTimeHasBeenSet = true;
+}
+
+bool Monitor::MonitorEndTimeHasBeenSet() const
+{
+    return m_monitorEndTimeHasBeenSet;
+}
+
+int64_t Monitor::GetAutoRenew() const
+{
+    return m_autoRenew;
+}
+
+void Monitor::SetAutoRenew(const int64_t& _autoRenew)
+{
+    m_autoRenew = _autoRenew;
+    m_autoRenewHasBeenSet = true;
+}
+
+bool Monitor::AutoRenewHasBeenSet() const
+{
+    return m_autoRenewHasBeenSet;
 }
 

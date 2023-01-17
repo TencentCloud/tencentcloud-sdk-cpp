@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * RateLimit配置
+                * 速率限制规则
                 */
                 class RateLimitConfig : public AbstractModel
                 {
@@ -137,6 +137,28 @@ namespace TencentCloud
                      */
                     bool RateLimitIntelligenceHasBeenSet() const;
 
+                    /**
+                     * 获取速率限制-托管定制规则。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RateLimitCustomizes 速率限制-托管定制规则。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RateLimitUserRule> GetRateLimitCustomizes() const;
+
+                    /**
+                     * 设置速率限制-托管定制规则。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RateLimitCustomizes 速率限制-托管定制规则。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRateLimitCustomizes(const std::vector<RateLimitUserRule>& _rateLimitCustomizes);
+
+                    /**
+                     * 判断参数 RateLimitCustomizes 是否已赋值
+                     * @return RateLimitCustomizes 是否已赋值
+                     */
+                    bool RateLimitCustomizesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -166,6 +188,13 @@ namespace TencentCloud
                      */
                     RateLimitIntelligence m_rateLimitIntelligence;
                     bool m_rateLimitIntelligenceHasBeenSet;
+
+                    /**
+                     * 速率限制-托管定制规则。如果为null，默认使用历史配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RateLimitUserRule> m_rateLimitCustomizes;
+                    bool m_rateLimitCustomizesHasBeenSet;
 
                 };
             }

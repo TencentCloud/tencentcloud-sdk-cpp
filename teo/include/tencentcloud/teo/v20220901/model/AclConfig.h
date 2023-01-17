@@ -91,6 +91,28 @@ namespace TencentCloud
                      */
                     bool AclUserRulesHasBeenSet() const;
 
+                    /**
+                     * 获取托管定制规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Customizes 托管定制规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AclUserRule> GetCustomizes() const;
+
+                    /**
+                     * 设置托管定制规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Customizes 托管定制规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomizes(const std::vector<AclUserRule>& _customizes);
+
+                    /**
+                     * 判断参数 Customizes 是否已赋值
+                     * @return Customizes 是否已赋值
+                     */
+                    bool CustomizesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +128,13 @@ namespace TencentCloud
                      */
                     std::vector<AclUserRule> m_aclUserRules;
                     bool m_aclUserRulesHasBeenSet;
+
+                    /**
+                     * 托管定制规则
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AclUserRule> m_customizes;
+                    bool m_customizesHasBeenSet;
 
                 };
             }

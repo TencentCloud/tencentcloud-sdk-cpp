@@ -22,7 +22,8 @@ using namespace std;
 
 AclConfig::AclConfig() :
     m_switchHasBeenSet(false),
-    m_aclUserRulesHasBeenSet(false)
+    m_aclUserRulesHasBeenSet(false),
+    m_customizesHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,26 @@ CoreInternalOutcome AclConfig::Deserialize(const rapidjson::Value &value)
         m_aclUserRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("Customizes") && !value["Customizes"].IsNull())
+    {
+        if (!value["Customizes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AclConfig.Customizes` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Customizes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AclUserRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_customizes.push_back(item);
+        }
+        m_customizesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -85,6 +106,21 @@ void AclConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_aclUserRules.begin(); itr != m_aclUserRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_customizesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Customizes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_customizes.begin(); itr != m_customizes.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -124,5 +160,21 @@ void AclConfig::SetAclUserRules(const vector<AclUserRule>& _aclUserRules)
 bool AclConfig::AclUserRulesHasBeenSet() const
 {
     return m_aclUserRulesHasBeenSet;
+}
+
+vector<AclUserRule> AclConfig::GetCustomizes() const
+{
+    return m_customizes;
+}
+
+void AclConfig::SetCustomizes(const vector<AclUserRule>& _customizes)
+{
+    m_customizes = _customizes;
+    m_customizesHasBeenSet = true;
+}
+
+bool AclConfig::CustomizesHasBeenSet() const
+{
+    return m_customizesHasBeenSet;
 }
 

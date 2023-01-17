@@ -62,6 +62,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/CreateDiagnoseUrlResponse.h
   include/tencentcloud/cdn/v20180606/model/ListScdnDomainsResponse.h
   include/tencentcloud/cdn/v20180606/model/CreateScdnLogTaskRequest.h
+  include/tencentcloud/cdn/v20180606/model/DescribeEdgePackTaskStatusResponse.h
   include/tencentcloud/cdn/v20180606/model/HeuristicCache.h
   include/tencentcloud/cdn/v20180606/model/SummarizedData.h
   include/tencentcloud/cdn/v20180606/model/ManageClsTopicDomainsRequest.h
@@ -159,6 +160,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/RefererRule.h
   include/tencentcloud/cdn/v20180606/model/DescribeScdnIpStrategyRequest.h
   include/tencentcloud/cdn/v20180606/model/IpFreqLimit.h
+  include/tencentcloud/cdn/v20180606/model/EdgePackTaskFilter.h
   include/tencentcloud/cdn/v20180606/model/TopDetailDataMore.h
   include/tencentcloud/cdn/v20180606/model/DescribeIpVisitRequest.h
   include/tencentcloud/cdn/v20180606/model/StatusCodeCacheRule.h
@@ -242,6 +244,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/Ipv6Access.h
   include/tencentcloud/cdn/v20180606/model/BotSortBy.h
   include/tencentcloud/cdn/v20180606/model/AddCLSTopicDomainsRequest.h
+  include/tencentcloud/cdn/v20180606/model/EdgePackTaskStatus.h
   include/tencentcloud/cdn/v20180606/model/MainlandConfig.h
   include/tencentcloud/cdn/v20180606/model/DescribeDDoSDataRequest.h
   include/tencentcloud/cdn/v20180606/model/CreateEdgePackTaskRequest.h
@@ -252,6 +255,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/DescribeMapInfoRequest.h
   include/tencentcloud/cdn/v20180606/model/RuleQueryString.h
   include/tencentcloud/cdn/v20180606/model/AdvancedScdnAclRule.h
+  include/tencentcloud/cdn/v20180606/model/DescribeEdgePackTaskStatusRequest.h
   include/tencentcloud/cdn/v20180606/model/GetDisableRecordsRequest.h
   include/tencentcloud/cdn/v20180606/model/PurgeUrlsCacheResponse.h
   include/tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h
@@ -270,7 +274,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/Sort.h
   include/tencentcloud/cdn/v20180606/model/DescribeEventLogDataResponse.h
   include/tencentcloud/cdn/v20180606/model/ScdnLogTaskDetail.h
-  include/tencentcloud/cdn/v20180606/model/ListTopWafDataResponse.h
+  include/tencentcloud/cdn/v20180606/model/ResourceBillingData.h
   include/tencentcloud/cdn/v20180606/model/SearchClsLogRequest.h
   include/tencentcloud/cdn/v20180606/model/UpdateDomainConfigRequest.h
   include/tencentcloud/cdn/v20180606/model/AdvancedScdnAclGroup.h
@@ -347,7 +351,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/CreateEdgePackTaskResponse.h
   include/tencentcloud/cdn/v20180606/model/TimestampData.h
   include/tencentcloud/cdn/v20180606/model/StartCdnDomainResponse.h
-  include/tencentcloud/cdn/v20180606/model/ResourceBillingData.h
+  include/tencentcloud/cdn/v20180606/model/ListTopWafDataResponse.h
   include/tencentcloud/cdn/v20180606/model/ClientInfo.h
   include/tencentcloud/cdn/v20180606/model/ErrorPageRule.h
   include/tencentcloud/cdn/v20180606/model/HwPrivateAccess.h
@@ -412,6 +416,7 @@ set(cdn_src
   src/v20180606/model/CreateDiagnoseUrlResponse.cpp
   src/v20180606/model/ListScdnDomainsResponse.cpp
   src/v20180606/model/CreateScdnLogTaskRequest.cpp
+  src/v20180606/model/DescribeEdgePackTaskStatusResponse.cpp
   src/v20180606/model/HeuristicCache.cpp
   src/v20180606/model/SummarizedData.cpp
   src/v20180606/model/ManageClsTopicDomainsRequest.cpp
@@ -509,6 +514,7 @@ set(cdn_src
   src/v20180606/model/RefererRule.cpp
   src/v20180606/model/DescribeScdnIpStrategyRequest.cpp
   src/v20180606/model/IpFreqLimit.cpp
+  src/v20180606/model/EdgePackTaskFilter.cpp
   src/v20180606/model/TopDetailDataMore.cpp
   src/v20180606/model/DescribeIpVisitRequest.cpp
   src/v20180606/model/StatusCodeCacheRule.cpp
@@ -592,6 +598,7 @@ set(cdn_src
   src/v20180606/model/Ipv6Access.cpp
   src/v20180606/model/BotSortBy.cpp
   src/v20180606/model/AddCLSTopicDomainsRequest.cpp
+  src/v20180606/model/EdgePackTaskStatus.cpp
   src/v20180606/model/MainlandConfig.cpp
   src/v20180606/model/DescribeDDoSDataRequest.cpp
   src/v20180606/model/CreateEdgePackTaskRequest.cpp
@@ -602,6 +609,7 @@ set(cdn_src
   src/v20180606/model/DescribeMapInfoRequest.cpp
   src/v20180606/model/RuleQueryString.cpp
   src/v20180606/model/AdvancedScdnAclRule.cpp
+  src/v20180606/model/DescribeEdgePackTaskStatusRequest.cpp
   src/v20180606/model/GetDisableRecordsRequest.cpp
   src/v20180606/model/PurgeUrlsCacheResponse.cpp
   src/v20180606/model/DescribeImageConfigRequest.cpp
@@ -620,7 +628,7 @@ set(cdn_src
   src/v20180606/model/Sort.cpp
   src/v20180606/model/DescribeEventLogDataResponse.cpp
   src/v20180606/model/ScdnLogTaskDetail.cpp
-  src/v20180606/model/ListTopWafDataResponse.cpp
+  src/v20180606/model/ResourceBillingData.cpp
   src/v20180606/model/SearchClsLogRequest.cpp
   src/v20180606/model/UpdateDomainConfigRequest.cpp
   src/v20180606/model/AdvancedScdnAclGroup.cpp
@@ -697,7 +705,7 @@ set(cdn_src
   src/v20180606/model/CreateEdgePackTaskResponse.cpp
   src/v20180606/model/TimestampData.cpp
   src/v20180606/model/StartCdnDomainResponse.cpp
-  src/v20180606/model/ResourceBillingData.cpp
+  src/v20180606/model/ListTopWafDataResponse.cpp
   src/v20180606/model/ClientInfo.cpp
   src/v20180606/model/ErrorPageRule.cpp
   src/v20180606/model/HwPrivateAccess.cpp
