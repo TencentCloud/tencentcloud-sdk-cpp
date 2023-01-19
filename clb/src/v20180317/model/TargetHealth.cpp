@@ -25,6 +25,7 @@ TargetHealth::TargetHealth() :
     m_portHasBeenSet(false),
     m_healthStatusHasBeenSet(false),
     m_targetIdHasBeenSet(false),
+    m_healthStatusDetailHasBeenSet(false),
     m_healthStatusDetialHasBeenSet(false)
 {
 }
@@ -74,6 +75,16 @@ CoreInternalOutcome TargetHealth::Deserialize(const rapidjson::Value &value)
         m_targetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthStatusDetail") && !value["HealthStatusDetail"].IsNull())
+    {
+        if (!value["HealthStatusDetail"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TargetHealth.HealthStatusDetail` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_healthStatusDetail = string(value["HealthStatusDetail"].GetString());
+        m_healthStatusDetailHasBeenSet = true;
+    }
+
     if (value.HasMember("HealthStatusDetial") && !value["HealthStatusDetial"].IsNull())
     {
         if (!value["HealthStatusDetial"].IsString())
@@ -121,6 +132,14 @@ void TargetHealth::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TargetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_targetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_healthStatusDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthStatusDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_healthStatusDetail.c_str(), allocator).Move(), allocator);
     }
 
     if (m_healthStatusDetialHasBeenSet)
@@ -196,6 +215,22 @@ void TargetHealth::SetTargetId(const string& _targetId)
 bool TargetHealth::TargetIdHasBeenSet() const
 {
     return m_targetIdHasBeenSet;
+}
+
+string TargetHealth::GetHealthStatusDetail() const
+{
+    return m_healthStatusDetail;
+}
+
+void TargetHealth::SetHealthStatusDetail(const string& _healthStatusDetail)
+{
+    m_healthStatusDetail = _healthStatusDetail;
+    m_healthStatusDetailHasBeenSet = true;
+}
+
+bool TargetHealth::HealthStatusDetailHasBeenSet() const
+{
+    return m_healthStatusDetailHasBeenSet;
 }
 
 string TargetHealth::GetHealthStatusDetial() const

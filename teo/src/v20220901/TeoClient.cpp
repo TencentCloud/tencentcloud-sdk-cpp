@@ -2104,6 +2104,49 @@ TeoClient::DescribeTimingL7CacheDataOutcomeCallable TeoClient::DescribeTimingL7C
     return task->get_future();
 }
 
+TeoClient::DescribeTimingL7SourceDataOutcome TeoClient::DescribeTimingL7SourceData(const DescribeTimingL7SourceDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimingL7SourceData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimingL7SourceDataResponse rsp = DescribeTimingL7SourceDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimingL7SourceDataOutcome(rsp);
+        else
+            return DescribeTimingL7SourceDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimingL7SourceDataOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeTimingL7SourceDataAsync(const DescribeTimingL7SourceDataRequest& request, const DescribeTimingL7SourceDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTimingL7SourceData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeTimingL7SourceDataOutcomeCallable TeoClient::DescribeTimingL7SourceDataCallable(const DescribeTimingL7SourceDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTimingL7SourceDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTimingL7SourceData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DescribeTopL7AnalysisDataOutcome TeoClient::DescribeTopL7AnalysisData(const DescribeTopL7AnalysisDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopL7AnalysisData");

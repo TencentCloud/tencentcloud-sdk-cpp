@@ -329,14 +329,14 @@ namespace TencentCloud
                     bool ClusterIdsHasBeenSet() const;
 
                     /**
-                     * 获取性能保障规格。
-                     * @return SlaType 性能保障规格。
+                     * 获取性能容量型规格。
+                     * @return SlaType 性能容量型规格。
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置性能保障规格。
-                     * @param SlaType 性能保障规格。
+                     * 设置性能容量型规格。
+                     * @param SlaType 性能容量型规格。
                      */
                     void SetSlaType(const std::string& _slaType);
 
@@ -496,7 +496,7 @@ namespace TencentCloud
                     bool m_clusterIdsHasBeenSet;
 
                     /**
-                     * 性能保障规格。
+                     * 性能容量型规格。
                      */
                     std::string m_slaType;
                     bool m_slaTypeHasBeenSet;

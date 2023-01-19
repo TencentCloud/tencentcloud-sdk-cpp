@@ -945,17 +945,17 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool SnatIpsHasBeenSet() const;
 
                     /**
-                     * 获取性能保障规格
+                     * 获取性能容量型规格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SlaType 性能保障规格
+                     * @return SlaType 性能容量型规格
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSlaType() const;
 
                     /**
-                     * 设置性能保障规格
+                     * 设置性能容量型规格
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SlaType 性能保障规格
+                     * @param SlaType 性能容量型规格
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSlaType(const std::string& _slaType);
@@ -1165,17 +1165,17 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool HealthLogTopicIdHasBeenSet() const;
 
                     /**
-                     * 获取集群ID.
+                     * 获取集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterIds 集群ID.
+                     * @return ClusterIds 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetClusterIds() const;
 
                     /**
-                     * 设置集群ID.
+                     * 设置集群ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterIds 集群ID.
+                     * @param ClusterIds 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetClusterIds(const std::vector<std::string>& _clusterIds);
@@ -1495,7 +1495,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_snatIpsHasBeenSet;
 
                     /**
-                     * 性能保障规格
+                     * 性能容量型规格
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_slaType;
@@ -1565,7 +1565,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_healthLogTopicIdHasBeenSet;
 
                     /**
-                     * 集群ID.
+                     * 集群ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_clusterIds;

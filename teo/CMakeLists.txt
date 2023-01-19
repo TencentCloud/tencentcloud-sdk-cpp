@@ -480,6 +480,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/VanityNameServers.h
   include/tencentcloud/teo/v20220901/model/RuleItem.h
   include/tencentcloud/teo/v20220901/model/ModifySecurityWafGroupPolicyResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7SourceDataResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesDataRequest.h
   include/tencentcloud/teo/v20220901/model/RuleChoicePropertiesItem.h
   include/tencentcloud/teo/v20220901/model/DescribeWebManagedRulesDataResponse.h
@@ -575,6 +576,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/Header.h
   include/tencentcloud/teo/v20220901/model/RuleAndConditions.h
   include/tencentcloud/teo/v20220901/model/DescribeSpeedTestingDetailsRequest.h
+  include/tencentcloud/teo/v20220901/model/DescribeTimingL7SourceDataRequest.h
   include/tencentcloud/teo/v20220901/model/DropPageConfig.h
   include/tencentcloud/teo/v20220901/model/SpeedTestingMetricData.h
   include/tencentcloud/teo/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.h
@@ -1120,6 +1122,7 @@ set(teo_src
   src/v20220901/model/VanityNameServers.cpp
   src/v20220901/model/RuleItem.cpp
   src/v20220901/model/ModifySecurityWafGroupPolicyResponse.cpp
+  src/v20220901/model/DescribeTimingL7SourceDataResponse.cpp
   src/v20220901/model/DescribeWebManagedRulesDataRequest.cpp
   src/v20220901/model/RuleChoicePropertiesItem.cpp
   src/v20220901/model/DescribeWebManagedRulesDataResponse.cpp
@@ -1215,6 +1218,7 @@ set(teo_src
   src/v20220901/model/Header.cpp
   src/v20220901/model/RuleAndConditions.cpp
   src/v20220901/model/DescribeSpeedTestingDetailsRequest.cpp
+  src/v20220901/model/DescribeTimingL7SourceDataRequest.cpp
   src/v20220901/model/DropPageConfig.cpp
   src/v20220901/model/SpeedTestingMetricData.cpp
   src/v20220901/model/UpdateOriginProtectionIPWhitelistResponse.cpp
