@@ -107,6 +107,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/ModifyRemoteBackupConfigResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceInfoResponse.h
   include/tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeDBFeaturesResponse.h
   include/tencentcloud/cdb/v20170320/model/ModifyAuditRuleRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogsResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeRoMinScaleRequest.h
@@ -333,6 +334,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/StartReplicationRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetResponse.h
   include/tencentcloud/cdb/v20170320/model/UpgradeCDBProxyRequest.h
+  include/tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeBackupSummariesResponse.h
   include/tencentcloud/cdb/v20170320/model/DescribeBinlogBackupOverviewRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.h
@@ -470,6 +472,7 @@ set(cdb_src
   src/v20170320/model/ModifyRemoteBackupConfigResponse.cpp
   src/v20170320/model/DescribeDBInstanceInfoResponse.cpp
   src/v20170320/model/AssociateSecurityGroupsRequest.cpp
+  src/v20170320/model/DescribeDBFeaturesResponse.cpp
   src/v20170320/model/ModifyAuditRuleRequest.cpp
   src/v20170320/model/DescribeBinlogsResponse.cpp
   src/v20170320/model/DescribeRoMinScaleRequest.cpp
@@ -696,6 +699,7 @@ set(cdb_src
   src/v20170320/model/StartReplicationRequest.cpp
   src/v20170320/model/DescribeDBInstanceCharsetResponse.cpp
   src/v20170320/model/UpgradeCDBProxyRequest.cpp
+  src/v20170320/model/DescribeDBFeaturesRequest.cpp
   src/v20170320/model/DescribeBackupSummariesResponse.cpp
   src/v20170320/model/DescribeBinlogBackupOverviewRequest.cpp
   src/v20170320/model/ModifyDBInstanceSecurityGroupsRequest.cpp

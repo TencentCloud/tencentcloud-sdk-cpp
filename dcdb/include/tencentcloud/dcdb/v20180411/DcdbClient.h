@@ -147,6 +147,8 @@
 #include <tencentcloud/dcdb/v20180411/model/TerminateDedicatedDBInstanceResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/UpgradeDCDBInstanceRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/UpgradeDCDBInstanceResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/UpgradeHourDCDBInstanceRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/UpgradeHourDCDBInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -347,6 +349,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpgradeDCDBInstanceResponse> UpgradeDCDBInstanceOutcome;
                 typedef std::future<UpgradeDCDBInstanceOutcome> UpgradeDCDBInstanceOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::UpgradeDCDBInstanceRequest&, UpgradeDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeDCDBInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpgradeHourDCDBInstanceResponse> UpgradeHourDCDBInstanceOutcome;
+                typedef std::future<UpgradeHourDCDBInstanceOutcome> UpgradeHourDCDBInstanceOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::UpgradeHourDCDBInstanceRequest&, UpgradeHourDCDBInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeHourDCDBInstanceAsyncHandler;
 
 
 
@@ -923,6 +928,15 @@ namespace TencentCloud
                 UpgradeDCDBInstanceOutcome UpgradeDCDBInstance(const Model::UpgradeDCDBInstanceRequest &request);
                 void UpgradeDCDBInstanceAsync(const Model::UpgradeDCDBInstanceRequest& request, const UpgradeDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpgradeDCDBInstanceOutcomeCallable UpgradeDCDBInstanceCallable(const Model::UpgradeDCDBInstanceRequest& request);
+
+                /**
+                 *本接口（UpgradeHourDCDBInstance）用于升级后付费分布式数据库实例。
+                 * @param req UpgradeHourDCDBInstanceRequest
+                 * @return UpgradeHourDCDBInstanceOutcome
+                 */
+                UpgradeHourDCDBInstanceOutcome UpgradeHourDCDBInstance(const Model::UpgradeHourDCDBInstanceRequest &request);
+                void UpgradeHourDCDBInstanceAsync(const Model::UpgradeHourDCDBInstanceRequest& request, const UpgradeHourDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpgradeHourDCDBInstanceOutcomeCallable UpgradeHourDCDBInstanceCallable(const Model::UpgradeHourDCDBInstanceRequest& request);
 
             };
         }

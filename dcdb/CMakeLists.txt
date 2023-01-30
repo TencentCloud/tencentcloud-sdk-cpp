@@ -29,6 +29,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBParametersRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountsRequest.h
   include/tencentcloud/dcdb/v20180411/model/SpecConfig.h
+  include/tencentcloud/dcdb/v20180411/model/UpgradeHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyRealServerAccessStrategyResponse.h
   include/tencentcloud/dcdb/v20180411/model/ActiveHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceResponse.h
@@ -49,6 +50,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceNameResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h
+  include/tencentcloud/dcdb/v20180411/model/UpgradeHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/CloneAccountResponse.h
   include/tencentcloud/dcdb/v20180411/model/IsolateDedicatedDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyAccountDescriptionResponse.h
@@ -196,6 +198,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBParametersRequest.cpp
   src/v20180411/model/DescribeAccountsRequest.cpp
   src/v20180411/model/SpecConfig.cpp
+  src/v20180411/model/UpgradeHourDCDBInstanceResponse.cpp
   src/v20180411/model/ModifyRealServerAccessStrategyResponse.cpp
   src/v20180411/model/ActiveHourDCDBInstanceResponse.cpp
   src/v20180411/model/DescribeDCDBPriceResponse.cpp
@@ -216,6 +219,7 @@ set(dcdb_src
   src/v20180411/model/IsolateHourDCDBInstanceRequest.cpp
   src/v20180411/model/ModifyDBInstanceNameResponse.cpp
   src/v20180411/model/DescribeFlowResponse.cpp
+  src/v20180411/model/UpgradeHourDCDBInstanceRequest.cpp
   src/v20180411/model/CloneAccountResponse.cpp
   src/v20180411/model/IsolateDedicatedDBInstanceRequest.cpp
   src/v20180411/model/ModifyAccountDescriptionResponse.cpp

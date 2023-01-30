@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBEGRAFANAENVIRONMENTSREQUEST_H_
-#define TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBEGRAFANAENVIRONMENTSREQUEST_H_
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEDBFEATURESREQUEST_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEDBFEATURESREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,32 +25,32 @@
 
 namespace TencentCloud
 {
-    namespace Monitor
+    namespace Cdb
     {
-        namespace V20180724
+        namespace V20170320
         {
             namespace Model
             {
                 /**
-                * DescribeGrafanaEnvironments请求参数结构体
+                * DescribeDBFeatures请求参数结构体
                 */
-                class DescribeGrafanaEnvironmentsRequest : public AbstractModel
+                class DescribeDBFeaturesRequest : public AbstractModel
                 {
                 public:
-                    DescribeGrafanaEnvironmentsRequest();
-                    ~DescribeGrafanaEnvironmentsRequest() = default;
+                    DescribeDBFeaturesRequest();
+                    ~DescribeDBFeaturesRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @return InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 获取实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置Grafana 实例 ID，例如：grafana-abcdefgh
-                     * @param InstanceId Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 设置实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param InstanceId 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Grafana 实例 ID，例如：grafana-abcdefgh
+                     * 实例 ID，格式如：cdb-c1nl9rpv 或者 cdbro-c1nl9rpv，与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -74,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_MONITOR_V20180724_MODEL_DESCRIBEGRAFANAENVIRONMENTSREQUEST_H_
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEDBFEATURESREQUEST_H_

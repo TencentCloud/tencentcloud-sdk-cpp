@@ -111,6 +111,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeCdbZoneConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeDBFeaturesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBImportRecordsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetRequest.h>
@@ -439,6 +441,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCloneListResponse> DescribeCloneListOutcome;
                 typedef std::future<DescribeCloneListOutcome> DescribeCloneListOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeCloneListRequest&, DescribeCloneListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCloneListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBFeaturesResponse> DescribeDBFeaturesOutcome;
+                typedef std::future<DescribeDBFeaturesOutcome> DescribeDBFeaturesOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeDBFeaturesRequest&, DescribeDBFeaturesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBFeaturesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBImportRecordsResponse> DescribeDBImportRecordsOutcome;
                 typedef std::future<DescribeDBImportRecordsOutcome> DescribeDBImportRecordsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeDBImportRecordsRequest&, DescribeDBImportRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBImportRecordsAsyncHandler;
@@ -1133,6 +1138,15 @@ namespace TencentCloud
                 DescribeCloneListOutcome DescribeCloneList(const Model::DescribeCloneListRequest &request);
                 void DescribeCloneListAsync(const Model::DescribeCloneListRequest& request, const DescribeCloneListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCloneListOutcomeCallable DescribeCloneListCallable(const Model::DescribeCloneListRequest& request);
+
+                /**
+                 *本接口(DescribeDBFeatures)用于查询云数据库版本属性，包括是否支持数据库加密、数据库审计等功能。
+                 * @param req DescribeDBFeaturesRequest
+                 * @return DescribeDBFeaturesOutcome
+                 */
+                DescribeDBFeaturesOutcome DescribeDBFeatures(const Model::DescribeDBFeaturesRequest &request);
+                void DescribeDBFeaturesAsync(const Model::DescribeDBFeaturesRequest& request, const DescribeDBFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBFeaturesOutcomeCallable DescribeDBFeaturesCallable(const Model::DescribeDBFeaturesRequest& request);
 
                 /**
                  *本接口(DescribeDBImportRecords)用于查询云数据库导入任务操作日志。

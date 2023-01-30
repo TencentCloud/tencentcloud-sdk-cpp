@@ -1932,6 +1932,49 @@ CdbClient::DescribeCloneListOutcomeCallable CdbClient::DescribeCloneListCallable
     return task->get_future();
 }
 
+CdbClient::DescribeDBFeaturesOutcome CdbClient::DescribeDBFeatures(const DescribeDBFeaturesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBFeatures");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBFeaturesResponse rsp = DescribeDBFeaturesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBFeaturesOutcome(rsp);
+        else
+            return DescribeDBFeaturesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBFeaturesOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeDBFeaturesAsync(const DescribeDBFeaturesRequest& request, const DescribeDBFeaturesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBFeatures(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeDBFeaturesOutcomeCallable CdbClient::DescribeDBFeaturesCallable(const DescribeDBFeaturesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBFeaturesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBFeatures(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeDBImportRecordsOutcome CdbClient::DescribeDBImportRecords(const DescribeDBImportRecordsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBImportRecords");

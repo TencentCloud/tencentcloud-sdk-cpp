@@ -2706,3 +2706,46 @@ DcdbClient::UpgradeDCDBInstanceOutcomeCallable DcdbClient::UpgradeDCDBInstanceCa
     return task->get_future();
 }
 
+DcdbClient::UpgradeHourDCDBInstanceOutcome DcdbClient::UpgradeHourDCDBInstance(const UpgradeHourDCDBInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeHourDCDBInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeHourDCDBInstanceResponse rsp = UpgradeHourDCDBInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeHourDCDBInstanceOutcome(rsp);
+        else
+            return UpgradeHourDCDBInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeHourDCDBInstanceOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::UpgradeHourDCDBInstanceAsync(const UpgradeHourDCDBInstanceRequest& request, const UpgradeHourDCDBInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeHourDCDBInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::UpgradeHourDCDBInstanceOutcomeCallable DcdbClient::UpgradeHourDCDBInstanceCallable(const UpgradeHourDCDBInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeHourDCDBInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeHourDCDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
