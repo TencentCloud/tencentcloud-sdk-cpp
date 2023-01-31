@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool RedirectHasBeenSet() const;
 
                     /**
-                     * 获取"clb-waf"或者"sparta-waf"
-                     * @return Edition "clb-waf"或者"sparta-waf"
+                     * 获取WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * @return Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置"clb-waf"或者"sparta-waf"
-                     * @param Edition "clb-waf"或者"sparta-waf"
+                     * 设置WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * @param Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      */
                     void SetEdition(const std::string& _edition);
 
@@ -204,6 +204,24 @@ namespace TencentCloud
                      * @return Bypass 是否已赋值
                      */
                     bool BypassHasBeenSet() const;
+
+                    /**
+                     * 获取添加规则的来源，默认为空
+                     * @return EventId 添加规则的来源，默认为空
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置添加规则的来源，默认为空
+                     * @param EventId 添加规则的来源，默认为空
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
 
                 private:
 
@@ -250,7 +268,7 @@ namespace TencentCloud
                     bool m_redirectHasBeenSet;
 
                     /**
-                     * "clb-waf"或者"sparta-waf"
+                     * WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
@@ -260,6 +278,12 @@ namespace TencentCloud
                      */
                     std::string m_bypass;
                     bool m_bypassHasBeenSet;
+
+                    /**
+                     * 添加规则的来源，默认为空
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                 };
             }

@@ -119,8 +119,6 @@
 #include <tencentcloud/tdid/v20210519/model/SetCredentialStatusResponse.h>
 #include <tencentcloud/tdid/v20210519/model/VerifyCredentialRequest.h>
 #include <tencentcloud/tdid/v20210519/model/VerifyCredentialResponse.h>
-#include <tencentcloud/tdid/v20210519/model/VerifyPurchaseRequest.h>
-#include <tencentcloud/tdid/v20210519/model/VerifyPurchaseResponse.h>
 
 
 namespace TencentCloud
@@ -279,9 +277,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::VerifyCredentialResponse> VerifyCredentialOutcome;
                 typedef std::future<VerifyCredentialOutcome> VerifyCredentialOutcomeCallable;
                 typedef std::function<void(const TdidClient*, const Model::VerifyCredentialRequest&, VerifyCredentialOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyCredentialAsyncHandler;
-                typedef Outcome<Core::Error, Model::VerifyPurchaseResponse> VerifyPurchaseOutcome;
-                typedef std::future<VerifyPurchaseOutcome> VerifyPurchaseOutcomeCallable;
-                typedef std::function<void(const TdidClient*, const Model::VerifyPurchaseRequest&, VerifyPurchaseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPurchaseAsyncHandler;
 
 
 
@@ -722,17 +717,6 @@ namespace TencentCloud
                 VerifyCredentialOutcome VerifyCredential(const Model::VerifyCredentialRequest &request);
                 void VerifyCredentialAsync(const Model::VerifyCredentialRequest& request, const VerifyCredentialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 VerifyCredentialOutcomeCallable VerifyCredentialCallable(const Model::VerifyCredentialRequest& request);
-
-                /**
-                 *该接口已废弃
-
-验证购买
-                 * @param req VerifyPurchaseRequest
-                 * @return VerifyPurchaseOutcome
-                 */
-                VerifyPurchaseOutcome VerifyPurchase(const Model::VerifyPurchaseRequest &request);
-                void VerifyPurchaseAsync(const Model::VerifyPurchaseRequest& request, const VerifyPurchaseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                VerifyPurchaseOutcomeCallable VerifyPurchaseCallable(const Model::VerifyPurchaseRequest& request);
 
             };
         }

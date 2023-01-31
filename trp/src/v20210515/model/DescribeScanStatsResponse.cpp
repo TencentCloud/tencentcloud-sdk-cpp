@@ -14,20 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdid/v20210519/model/VerifyPurchaseResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeScanStatsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tdid::V20210519::Model;
+using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
-VerifyPurchaseResponse::VerifyPurchaseResponse()
+DescribeScanStatsResponse::DescribeScanStatsResponse() :
+    m_scanStatsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome VerifyPurchaseResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeScanStatsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -61,15 +62,50 @@ CoreInternalOutcome VerifyPurchaseResponse::Deserialize(const string &payload)
     }
 
 
+    if (rsp.HasMember("ScanStats") && !rsp["ScanStats"].IsNull())
+    {
+        if (!rsp["ScanStats"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScanStats` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ScanStats"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ScanStat item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_scanStats.push_back(item);
+        }
+        m_scanStatsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
-string VerifyPurchaseResponse::ToJsonString() const
+string DescribeScanStatsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_scanStatsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanStats";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_scanStats.begin(); itr != m_scanStats.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +118,15 @@ string VerifyPurchaseResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<ScanStat> DescribeScanStatsResponse::GetScanStats() const
+{
+    return m_scanStats;
+}
+
+bool DescribeScanStatsResponse::ScanStatsHasBeenSet() const
+{
+    return m_scanStatsHasBeenSet;
+}
 
 

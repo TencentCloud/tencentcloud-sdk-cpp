@@ -14,24 +14,33 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tdid/v20210519/model/VerifyPurchaseRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Tdid::V20210519::Model;
+using namespace TencentCloud::Mariadb::V20170312::Model;
 using namespace std;
 
-VerifyPurchaseRequest::VerifyPurchaseRequest()
+DescribeDBEncryptAttributesRequest::DescribeDBEncryptAttributesRequest() :
+    m_instanceIdHasBeenSet(false)
 {
 }
 
-string VerifyPurchaseRequest::ToJsonString() const
+string DescribeDBEncryptAttributesRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
 
 
     rapidjson::StringBuffer buffer;
@@ -40,5 +49,21 @@ string VerifyPurchaseRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDBEncryptAttributesRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeDBEncryptAttributesRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeDBEncryptAttributesRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
+}
 
 

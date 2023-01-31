@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取是否生效
-                     * @return Status 是否生效
+                     * 获取是否生效，true表示生效，false表示未生效
+                     * @return Status 是否生效，true表示生效，false表示未生效
                      */
                     bool GetStatus() const;
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 是否生效
+                     * 是否生效，true表示生效，false表示未生效
                      */
                     bool m_status;
                     bool m_statusHasBeenSet;

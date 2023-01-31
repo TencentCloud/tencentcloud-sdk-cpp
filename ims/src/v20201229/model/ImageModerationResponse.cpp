@@ -35,7 +35,8 @@ ImageModerationResponse::ImageModerationResponse() :
     m_dataIdHasBeenSet(false),
     m_bizTypeHasBeenSet(false),
     m_extraHasBeenSet(false),
-    m_fileMD5HasBeenSet(false)
+    m_fileMD5HasBeenSet(false),
+    m_recognitionResultsHasBeenSet(false)
 {
 }
 
@@ -233,6 +234,26 @@ CoreInternalOutcome ImageModerationResponse::Deserialize(const string &payload)
         m_fileMD5HasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecognitionResults") && !rsp["RecognitionResults"].IsNull())
+    {
+        if (!rsp["RecognitionResults"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecognitionResults` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RecognitionResults"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RecognitionResult item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_recognitionResults.push_back(item);
+        }
+        m_recognitionResultsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -367,6 +388,21 @@ string ImageModerationResponse::ToJsonString() const
         value.AddMember(iKey, rapidjson::Value(m_fileMD5.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_recognitionResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecognitionResults";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_recognitionResults.begin(); itr != m_recognitionResults.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -497,6 +533,16 @@ string ImageModerationResponse::GetFileMD5() const
 bool ImageModerationResponse::FileMD5HasBeenSet() const
 {
     return m_fileMD5HasBeenSet;
+}
+
+vector<RecognitionResult> ImageModerationResponse::GetRecognitionResults() const
+{
+    return m_recognitionResults;
+}
+
+bool ImageModerationResponse::RecognitionResultsHasBeenSet() const
+{
+    return m_recognitionResultsHasBeenSet;
 }
 
 

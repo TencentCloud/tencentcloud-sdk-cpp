@@ -353,7 +353,7 @@ namespace TencentCloud
                 CreateOfflineLogConfigOutcomeCallable CreateOfflineLogConfigCallable(const Model::CreateOfflineLogConfigRequest& request);
 
                 /**
-                 *创建项目（归属于某个团队）
+                 *创建 RUM 应用（归属于某个团队）
                  * @param req CreateProjectRequest
                  * @return CreateProjectOutcome
                  */
@@ -380,7 +380,7 @@ namespace TencentCloud
                 CreateStarProjectOutcomeCallable CreateStarProjectCallable(const Model::CreateStarProjectRequest& request);
 
                 /**
-                 *创建Rum实例
+                 *创建 RUM 业务系统
                  * @param req CreateTawInstanceRequest
                  * @return CreateTawInstanceOutcome
                  */
@@ -695,7 +695,7 @@ namespace TencentCloud
                 DescribeOfflineLogsOutcomeCallable DescribeOfflineLogsCallable(const Model::DescribeOfflineLogsRequest& request);
 
                 /**
-                 *获取项目上报率列表
+                 *获取应用上报抽样信息
                  * @param req DescribeProjectLimitsRequest
                  * @return DescribeProjectLimitsOutcome
                  */
@@ -731,7 +731,7 @@ namespace TencentCloud
                 DescribeReleaseFileSignOutcomeCallable DescribeReleaseFileSignCallable(const Model::DescribeReleaseFileSignRequest& request);
 
                 /**
-                 *获取项目对应sourcemap文件列表
+                 *获取应用对应sourcemap文件列表
                  * @param req DescribeReleaseFilesRequest
                  * @return DescribeReleaseFilesOutcome
                  */
@@ -812,7 +812,7 @@ namespace TencentCloud
                 DescribeWhitelistsOutcomeCallable DescribeWhitelistsCallable(const Model::DescribeWhitelistsRequest& request);
 
                 /**
-                 *修改实例信息
+                 *修改 RUM 业务系统
                  * @param req ModifyInstanceRequest
                  * @return ModifyInstanceOutcome
                  */
@@ -821,7 +821,7 @@ namespace TencentCloud
                 ModifyInstanceOutcomeCallable ModifyInstanceCallable(const Model::ModifyInstanceRequest& request);
 
                 /**
-                 *修改 rum 项目信息
+                 *修改 RUM 应用信息
                  * @param req ModifyProjectRequest
                  * @return ModifyProjectOutcome
                  */
@@ -839,7 +839,7 @@ namespace TencentCloud
                 ModifyProjectLimitOutcomeCallable ModifyProjectLimitCallable(const Model::ModifyProjectLimitRequest& request);
 
                 /**
-                 *恢复实例
+                 *恢复 RUM 业务系统，恢复后，用户可以正常使用和上报数据
                  * @param req ResumeInstanceRequest
                  * @return ResumeInstanceOutcome
                  */

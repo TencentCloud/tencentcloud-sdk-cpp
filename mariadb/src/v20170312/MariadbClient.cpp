@@ -685,6 +685,49 @@ MariadbClient::DescribeBackupTimeOutcomeCallable MariadbClient::DescribeBackupTi
     return task->get_future();
 }
 
+MariadbClient::DescribeDBEncryptAttributesOutcome MariadbClient::DescribeDBEncryptAttributes(const DescribeDBEncryptAttributesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBEncryptAttributes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBEncryptAttributesResponse rsp = DescribeDBEncryptAttributesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBEncryptAttributesOutcome(rsp);
+        else
+            return DescribeDBEncryptAttributesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBEncryptAttributesOutcome(outcome.GetError());
+    }
+}
+
+void MariadbClient::DescribeDBEncryptAttributesAsync(const DescribeDBEncryptAttributesRequest& request, const DescribeDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBEncryptAttributes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MariadbClient::DescribeDBEncryptAttributesOutcomeCallable MariadbClient::DescribeDBEncryptAttributesCallable(const DescribeDBEncryptAttributesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBEncryptAttributesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBEncryptAttributes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MariadbClient::DescribeDBInstanceSpecsOutcome MariadbClient::DescribeDBInstanceSpecs(const DescribeDBInstanceSpecsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBInstanceSpecs");

@@ -44,7 +44,6 @@ set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/Authority.h
   include/tencentcloud/tdid/v20210519/model/CreateLabelResponse.h
   include/tencentcloud/tdid/v20210519/model/GetPublicKeyRequest.h
-  include/tencentcloud/tdid/v20210519/model/VerifyPurchaseRequest.h
   include/tencentcloud/tdid/v20210519/model/Label.h
   include/tencentcloud/tdid/v20210519/model/GetDidServiceListResponse.h
   include/tencentcloud/tdid/v20210519/model/DeployByNameResponse.h
@@ -83,7 +82,6 @@ set(tdid_public_header_model
   include/tencentcloud/tdid/v20210519/model/DeployByNameRequest.h
   include/tencentcloud/tdid/v20210519/model/GetDidServiceListRequest.h
   include/tencentcloud/tdid/v20210519/model/GetAuthorityIssuerRequest.h
-  include/tencentcloud/tdid/v20210519/model/VerifyPurchaseResponse.h
   include/tencentcloud/tdid/v20210519/model/GetDidClusterListResponse.h
   include/tencentcloud/tdid/v20210519/model/RecognizeAuthorityIssuerRequest.h
   include/tencentcloud/tdid/v20210519/model/GetCredentialStatusRequest.h
@@ -166,7 +164,6 @@ set(tdid_src
   src/v20210519/model/Authority.cpp
   src/v20210519/model/CreateLabelResponse.cpp
   src/v20210519/model/GetPublicKeyRequest.cpp
-  src/v20210519/model/VerifyPurchaseRequest.cpp
   src/v20210519/model/Label.cpp
   src/v20210519/model/GetDidServiceListResponse.cpp
   src/v20210519/model/DeployByNameResponse.cpp
@@ -205,7 +202,6 @@ set(tdid_src
   src/v20210519/model/DeployByNameRequest.cpp
   src/v20210519/model/GetDidServiceListRequest.cpp
   src/v20210519/model/GetAuthorityIssuerRequest.cpp
-  src/v20210519/model/VerifyPurchaseResponse.cpp
   src/v20210519/model/GetDidClusterListResponse.cpp
   src/v20210519/model/RecognizeAuthorityIssuerRequest.cpp
   src/v20210519/model/GetCredentialStatusRequest.cpp

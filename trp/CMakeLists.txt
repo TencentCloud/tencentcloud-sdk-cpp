@@ -20,6 +20,9 @@ set(trp_public_header
 
 set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/CodeBatch.h
+  include/tencentcloud/trp/v20210515/model/DescribeScanLogsResponse.h
+  include/tencentcloud/trp/v20210515/model/Quota.h
+  include/tencentcloud/trp/v20210515/model/ScanLog.h
   include/tencentcloud/trp/v20210515/model/DescribeProductsRequest.h
   include/tencentcloud/trp/v20210515/model/CreateCorporationOrderResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyProductResponse.h
@@ -100,15 +103,17 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/CreateCorporationOrderRequest.h
   include/tencentcloud/trp/v20210515/model/CreateTraceCodesResponse.h
   include/tencentcloud/trp/v20210515/model/DeleteTraceDataRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeScanLogsRequest.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeUnlinkResponse.h
   include/tencentcloud/trp/v20210515/model/Merchant.h
   include/tencentcloud/trp/v20210515/model/Product.h
   include/tencentcloud/trp/v20210515/model/DescribeTmpTokenRequest.h
   include/tencentcloud/trp/v20210515/model/TraceCode.h
-  include/tencentcloud/trp/v20210515/model/Quota.h
+  include/tencentcloud/trp/v20210515/model/DescribeScanStatsResponse.h
   include/tencentcloud/trp/v20210515/model/CreateMerchantResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeMerchantsResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceDataListRequest.h
+  include/tencentcloud/trp/v20210515/model/DescribeScanStatsRequest.h
   include/tencentcloud/trp/v20210515/model/DeleteMerchantResponse.h
   include/tencentcloud/trp/v20210515/model/DeleteCodeBatchResponse.h
   include/tencentcloud/trp/v20210515/model/CreateTraceChainRequest.h
@@ -118,6 +123,7 @@ set(trp_public_header_model
   include/tencentcloud/trp/v20210515/model/DescribeJobFileUrlResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdRequest.h
   include/tencentcloud/trp/v20210515/model/DeleteMerchantRequest.h
+  include/tencentcloud/trp/v20210515/model/ScanStat.h
   include/tencentcloud/trp/v20210515/model/ModifyTraceCodeResponse.h
   include/tencentcloud/trp/v20210515/model/DescribeCodePackUrlResponse.h
   include/tencentcloud/trp/v20210515/model/ModifyCodeBatchResponse.h
@@ -126,6 +132,9 @@ set(trp_public_header_model
 set(trp_src
   src/v20210515/TrpClient.cpp
   src/v20210515/model/CodeBatch.cpp
+  src/v20210515/model/DescribeScanLogsResponse.cpp
+  src/v20210515/model/Quota.cpp
+  src/v20210515/model/ScanLog.cpp
   src/v20210515/model/DescribeProductsRequest.cpp
   src/v20210515/model/CreateCorporationOrderResponse.cpp
   src/v20210515/model/ModifyProductResponse.cpp
@@ -206,15 +215,17 @@ set(trp_src
   src/v20210515/model/CreateCorporationOrderRequest.cpp
   src/v20210515/model/CreateTraceCodesResponse.cpp
   src/v20210515/model/DeleteTraceDataRequest.cpp
+  src/v20210515/model/DescribeScanLogsRequest.cpp
   src/v20210515/model/ModifyTraceCodeUnlinkResponse.cpp
   src/v20210515/model/Merchant.cpp
   src/v20210515/model/Product.cpp
   src/v20210515/model/DescribeTmpTokenRequest.cpp
   src/v20210515/model/TraceCode.cpp
-  src/v20210515/model/Quota.cpp
+  src/v20210515/model/DescribeScanStatsResponse.cpp
   src/v20210515/model/CreateMerchantResponse.cpp
   src/v20210515/model/DescribeMerchantsResponse.cpp
   src/v20210515/model/DescribeTraceDataListRequest.cpp
+  src/v20210515/model/DescribeScanStatsRequest.cpp
   src/v20210515/model/DeleteMerchantResponse.cpp
   src/v20210515/model/DeleteCodeBatchResponse.cpp
   src/v20210515/model/CreateTraceChainRequest.cpp
@@ -224,6 +235,7 @@ set(trp_src
   src/v20210515/model/DescribeJobFileUrlResponse.cpp
   src/v20210515/model/DescribeTraceCodeByIdRequest.cpp
   src/v20210515/model/DeleteMerchantRequest.cpp
+  src/v20210515/model/ScanStat.cpp
   src/v20210515/model/ModifyTraceCodeResponse.cpp
   src/v20210515/model/DescribeCodePackUrlResponse.cpp
   src/v20210515/model/ModifyCodeBatchResponse.cpp

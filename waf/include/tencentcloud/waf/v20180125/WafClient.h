@@ -221,7 +221,7 @@ namespace TencentCloud
 
 
                 /**
-                 *增加自定义策略
+                 *增加访问控制（自定义策略）
                  * @param req AddCustomRuleRequest
                  * @return AddCustomRuleOutcome
                  */
@@ -477,7 +477,7 @@ namespace TencentCloud
                 ModifyAccessPeriodOutcomeCallable ModifyAccessPeriodCallable(const Model::ModifyAccessPeriodRequest& request);
 
                 /**
-                 *开启或禁用自定义策略
+                 *开启或禁用访问控制（自定义策略）
                  * @param req ModifyCustomRuleStatusRequest
                  * @return ModifyCustomRuleStatusOutcome
                  */

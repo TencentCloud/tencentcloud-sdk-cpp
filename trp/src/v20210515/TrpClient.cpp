@@ -1287,6 +1287,92 @@ TrpClient::DescribeProductsOutcomeCallable TrpClient::DescribeProductsCallable(c
     return task->get_future();
 }
 
+TrpClient::DescribeScanLogsOutcome TrpClient::DescribeScanLogs(const DescribeScanLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanLogsResponse rsp = DescribeScanLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanLogsOutcome(rsp);
+        else
+            return DescribeScanLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanLogsOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeScanLogsAsync(const DescribeScanLogsRequest& request, const DescribeScanLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeScanLogsOutcomeCallable TrpClient::DescribeScanLogsCallable(const DescribeScanLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::DescribeScanStatsOutcome TrpClient::DescribeScanStats(const DescribeScanStatsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeScanStats");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeScanStatsResponse rsp = DescribeScanStatsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeScanStatsOutcome(rsp);
+        else
+            return DescribeScanStatsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeScanStatsOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeScanStatsAsync(const DescribeScanStatsRequest& request, const DescribeScanStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeScanStats(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeScanStatsOutcomeCallable TrpClient::DescribeScanStatsCallable(const DescribeScanStatsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeScanStatsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeScanStats(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeTmpTokenOutcome TrpClient::DescribeTmpToken(const DescribeTmpTokenRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTmpToken");

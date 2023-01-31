@@ -81,6 +81,10 @@
 #include <tencentcloud/trp/v20210515/model/DescribeProductByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductsRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeProductsResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeScanLogsRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeScanLogsResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeScanStatsRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeScanStatsResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTmpTokenRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTmpTokenResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdRequest.h>
@@ -208,6 +212,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProductsResponse> DescribeProductsOutcome;
                 typedef std::future<DescribeProductsOutcome> DescribeProductsOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeProductsRequest&, DescribeProductsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProductsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScanLogsResponse> DescribeScanLogsOutcome;
+                typedef std::future<DescribeScanLogsOutcome> DescribeScanLogsOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeScanLogsRequest&, DescribeScanLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanLogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeScanStatsResponse> DescribeScanStatsOutcome;
+                typedef std::future<DescribeScanStatsOutcome> DescribeScanStatsOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeScanStatsRequest&, DescribeScanStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanStatsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTmpTokenResponse> DescribeTmpTokenOutcome;
                 typedef std::future<DescribeTmpTokenOutcome> DescribeTmpTokenOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeTmpTokenRequest&, DescribeTmpTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTmpTokenAsyncHandler;
@@ -510,6 +520,24 @@ namespace TencentCloud
                 DescribeProductsOutcome DescribeProducts(const Model::DescribeProductsRequest &request);
                 void DescribeProductsAsync(const Model::DescribeProductsRequest& request, const DescribeProductsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeProductsOutcomeCallable DescribeProductsCallable(const Model::DescribeProductsRequest& request);
+
+                /**
+                 *查询扫码日志明细
+                 * @param req DescribeScanLogsRequest
+                 * @return DescribeScanLogsOutcome
+                 */
+                DescribeScanLogsOutcome DescribeScanLogs(const Model::DescribeScanLogsRequest &request);
+                void DescribeScanLogsAsync(const Model::DescribeScanLogsRequest& request, const DescribeScanLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScanLogsOutcomeCallable DescribeScanLogsCallable(const Model::DescribeScanLogsRequest& request);
+
+                /**
+                 *查询某个批次被扫码的统计列表，没有被扫过的不会返回
+                 * @param req DescribeScanStatsRequest
+                 * @return DescribeScanStatsOutcome
+                 */
+                DescribeScanStatsOutcome DescribeScanStats(const Model::DescribeScanStatsRequest &request);
+                void DescribeScanStatsAsync(const Model::DescribeScanStatsRequest& request, const DescribeScanStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeScanStatsOutcomeCallable DescribeScanStatsCallable(const Model::DescribeScanStatsRequest& request);
 
                 /**
                  *查询临时Token，主要用于上传接口

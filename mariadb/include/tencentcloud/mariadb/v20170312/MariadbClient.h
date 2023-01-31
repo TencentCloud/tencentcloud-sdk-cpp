@@ -53,6 +53,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeAccountsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupTimeRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupTimeResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBInstancesRequest.h>
@@ -214,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupTimeResponse> DescribeBackupTimeOutcome;
                 typedef std::future<DescribeBackupTimeOutcome> DescribeBackupTimeOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeBackupTimeRequest&, DescribeBackupTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBEncryptAttributesResponse> DescribeDBEncryptAttributesOutcome;
+                typedef std::future<DescribeDBEncryptAttributesOutcome> DescribeDBEncryptAttributesOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeDBEncryptAttributesRequest&, DescribeDBEncryptAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBEncryptAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceSpecsResponse> DescribeDBInstanceSpecsOutcome;
                 typedef std::future<DescribeDBInstanceSpecsOutcome> DescribeDBInstanceSpecsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBInstanceSpecsRequest&, DescribeDBInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceSpecsAsyncHandler;
@@ -506,6 +511,15 @@ namespace TencentCloud
                 DescribeBackupTimeOutcome DescribeBackupTime(const Model::DescribeBackupTimeRequest &request);
                 void DescribeBackupTimeAsync(const Model::DescribeBackupTimeRequest& request, const DescribeBackupTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupTimeOutcomeCallable DescribeBackupTimeCallable(const Model::DescribeBackupTimeRequest& request);
+
+                /**
+                 *本接口(DescribeDBEncryptAttributes)用于查询实例数据加密状态。
+                 * @param req DescribeDBEncryptAttributesRequest
+                 * @return DescribeDBEncryptAttributesOutcome
+                 */
+                DescribeDBEncryptAttributesOutcome DescribeDBEncryptAttributes(const Model::DescribeDBEncryptAttributesRequest &request);
+                void DescribeDBEncryptAttributesAsync(const Model::DescribeDBEncryptAttributesRequest& request, const DescribeDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBEncryptAttributesOutcomeCallable DescribeDBEncryptAttributesCallable(const Model::DescribeDBEncryptAttributesRequest& request);
 
                 /**
                  *本接口(DescribeDBInstanceSpecs)用于查询可创建的云数据库可售卖的规格配置。

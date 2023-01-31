@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取clb-waf或者sparta-waf
-                     * @return Edition clb-waf或者sparta-waf
+                     * 获取WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * @return Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置clb-waf或者sparta-waf
-                     * @param Edition clb-waf或者sparta-waf
+                     * 设置WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
+                     * @param Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      */
                     void SetEdition(const std::string& _edition);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * clb-waf或者sparta-waf
+                     * WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;

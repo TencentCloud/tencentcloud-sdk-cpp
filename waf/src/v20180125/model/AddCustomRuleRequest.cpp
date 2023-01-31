@@ -31,7 +31,8 @@ AddCustomRuleRequest::AddCustomRuleRequest() :
     m_actionTypeHasBeenSet(false),
     m_redirectHasBeenSet(false),
     m_editionHasBeenSet(false),
-    m_bypassHasBeenSet(false)
+    m_bypassHasBeenSet(false),
+    m_eventIdHasBeenSet(false)
 {
 }
 
@@ -119,6 +120,14 @@ string AddCustomRuleRequest::ToJsonString() const
         string key = "Bypass";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_bypass.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -271,6 +280,22 @@ void AddCustomRuleRequest::SetBypass(const string& _bypass)
 bool AddCustomRuleRequest::BypassHasBeenSet() const
 {
     return m_bypassHasBeenSet;
+}
+
+string AddCustomRuleRequest::GetEventId() const
+{
+    return m_eventId;
+}
+
+void AddCustomRuleRequest::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool AddCustomRuleRequest::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
 }
 
 
