@@ -25,7 +25,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesRequest.h
-  include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
+  include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
   include/tencentcloud/ess/v20201111/model/FlowCreateApprover.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h
@@ -34,6 +34,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StaffRole.h
   include/tencentcloud/ess/v20201111/model/FlowApproverUrlInfo.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h
   include/tencentcloud/ess/v20201111/model/Agent.h
   include/tencentcloud/ess/v20201111/model/FlowApproverDetail.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
@@ -67,6 +68,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h
   include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/SignQrCode.h
@@ -98,6 +100,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CancelFlowRequest.h
   include/tencentcloud/ess/v20201111/model/UploadFile.h
   include/tencentcloud/ess/v20201111/model/Component.h
+  include/tencentcloud/ess/v20201111/model/CreateFlowRemindsRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
   include/tencentcloud/ess/v20201111/model/SignUrl.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfResponse.h
@@ -122,7 +125,7 @@ set(ess_src
   src/v20201111/model/CreateSchemeUrlRequest.cpp
   src/v20201111/model/CreateFlowApproversResponse.cpp
   src/v20201111/model/UploadFilesRequest.cpp
-  src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
+  src/v20201111/model/RemindFlowRecords.cpp
   src/v20201111/model/FlowCreateApprover.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/CreateIntegrationEmployeesRequest.cpp
@@ -131,6 +134,7 @@ set(ess_src
   src/v20201111/model/StaffRole.cpp
   src/v20201111/model/FlowApproverUrlInfo.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
+  src/v20201111/model/CreateFlowRemindsResponse.cpp
   src/v20201111/model/Agent.cpp
   src/v20201111/model/FlowApproverDetail.cpp
   src/v20201111/model/DescribeFlowTemplatesRequest.cpp
@@ -164,6 +168,7 @@ set(ess_src
   src/v20201111/model/DescribeFileUrlsResponse.cpp
   src/v20201111/model/AuthorizedUser.cpp
   src/v20201111/model/CreateDocumentRequest.cpp
+  src/v20201111/model/CreateMultiFlowSignQRCodeResponse.cpp
   src/v20201111/model/DescribeOrganizationSealsResponse.cpp
   src/v20201111/model/DeleteIntegrationEmployeesRequest.cpp
   src/v20201111/model/SignQrCode.cpp
@@ -195,6 +200,7 @@ set(ess_src
   src/v20201111/model/CancelFlowRequest.cpp
   src/v20201111/model/UploadFile.cpp
   src/v20201111/model/Component.cpp
+  src/v20201111/model/CreateFlowRemindsRequest.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
   src/v20201111/model/SignUrl.cpp
   src/v20201111/model/VerifyPdfResponse.cpp

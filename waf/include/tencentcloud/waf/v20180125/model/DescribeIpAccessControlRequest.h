@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取动作
-                     * @return ActionType 动作
+                     * 获取动作，40表示查询白名单，42表示查询黑名单
+                     * @return ActionType 动作，40表示查询白名单，42表示查询黑名单
                      */
                     uint64_t GetActionType() const;
 
                     /**
-                     * 设置动作
-                     * @param ActionType 动作
+                     * 设置动作，40表示查询白名单，42表示查询黑名单
+                     * @param ActionType 动作，40表示查询白名单，42表示查询黑名单
                      */
                     void SetActionType(const uint64_t& _actionType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ActionTypeHasBeenSet() const;
 
                     /**
-                     * 获取有效时间最小时间戳
-                     * @return VtsMin 有效时间最小时间戳
+                     * 获取最小有效时间的时间戳
+                     * @return VtsMin 最小有效时间的时间戳
                      */
                     uint64_t GetVtsMin() const;
 
                     /**
-                     * 设置有效时间最小时间戳
-                     * @param VtsMin 有效时间最小时间戳
+                     * 设置最小有效时间的时间戳
+                     * @param VtsMin 最小有效时间的时间戳
                      */
                     void SetVtsMin(const uint64_t& _vtsMin);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool VtsMinHasBeenSet() const;
 
                     /**
-                     * 获取有效时间最大时间戳
-                     * @return VtsMax 有效时间最大时间戳
+                     * 获取最大有效时间的时间戳
+                     * @return VtsMax 最大有效时间的时间戳
                      */
                     uint64_t GetVtsMax() const;
 
                     /**
-                     * 设置有效时间最大时间戳
-                     * @param VtsMax 有效时间最大时间戳
+                     * 设置最大有效时间的时间戳
+                     * @param VtsMax 最大有效时间的时间戳
                      */
                     void SetVtsMax(const uint64_t& _vtsMax);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool VtsMaxHasBeenSet() const;
 
                     /**
-                     * 获取创建时间最小时间戳
-                     * @return CtsMin 创建时间最小时间戳
+                     * 获取最小创建时间的时间戳
+                     * @return CtsMin 最小创建时间的时间戳
                      */
                     uint64_t GetCtsMin() const;
 
                     /**
-                     * 设置创建时间最小时间戳
-                     * @param CtsMin 创建时间最小时间戳
+                     * 设置最小创建时间的时间戳
+                     * @param CtsMin 最小创建时间的时间戳
                      */
                     void SetCtsMin(const uint64_t& _ctsMin);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool CtsMinHasBeenSet() const;
 
                     /**
-                     * 获取创建时间最大时间戳
-                     * @return CtsMax 创建时间最大时间戳
+                     * 获取最大创建时间的时间戳
+                     * @return CtsMax 最大创建时间的时间戳
                      */
                     uint64_t GetCtsMax() const;
 
                     /**
-                     * 设置创建时间最大时间戳
-                     * @param CtsMax 创建时间最大时间戳
+                     * 设置最大创建时间的时间戳
+                     * @param CtsMax 最大创建时间的时间戳
                      */
                     void SetCtsMax(const uint64_t& _ctsMax);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool CtsMaxHasBeenSet() const;
 
                     /**
-                     * 获取偏移
-                     * @return OffSet 偏移
+                     * 获取分页开始条数
+                     * @return OffSet 分页开始条数
                      */
                     uint64_t GetOffSet() const;
 
                     /**
-                     * 设置偏移
-                     * @param OffSet 偏移
+                     * 设置分页开始条数
+                     * @param OffSet 分页开始条数
                      */
                     void SetOffSet(const uint64_t& _offSet);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool OffSetHasBeenSet() const;
 
                     /**
-                     * 获取限制
-                     * @return Limit 限制
+                     * 获取每页的条数
+                     * @return Limit 每页的条数
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置限制
-                     * @param Limit 限制
+                     * 设置每页的条数
+                     * @param Limit 每页的条数
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -273,43 +273,43 @@ namespace TencentCloud
                     bool m_countHasBeenSet;
 
                     /**
-                     * 动作
+                     * 动作，40表示查询白名单，42表示查询黑名单
                      */
                     uint64_t m_actionType;
                     bool m_actionTypeHasBeenSet;
 
                     /**
-                     * 有效时间最小时间戳
+                     * 最小有效时间的时间戳
                      */
                     uint64_t m_vtsMin;
                     bool m_vtsMinHasBeenSet;
 
                     /**
-                     * 有效时间最大时间戳
+                     * 最大有效时间的时间戳
                      */
                     uint64_t m_vtsMax;
                     bool m_vtsMaxHasBeenSet;
 
                     /**
-                     * 创建时间最小时间戳
+                     * 最小创建时间的时间戳
                      */
                     uint64_t m_ctsMin;
                     bool m_ctsMinHasBeenSet;
 
                     /**
-                     * 创建时间最大时间戳
+                     * 最大创建时间的时间戳
                      */
                     uint64_t m_ctsMax;
                     bool m_ctsMaxHasBeenSet;
 
                     /**
-                     * 偏移
+                     * 分页开始条数
                      */
                     uint64_t m_offSet;
                     bool m_offSetHasBeenSet;
 
                     /**
-                     * 限制
+                     * 每页的条数
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

@@ -448,6 +448,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/GetCcnRegionBandwidthLimitsRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyIpv6AddressesAttributeRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeCustomerGatewayVendorsRequest.h
+  include/tencentcloud/vpc/v20170312/model/CcnFlowLock.h
   include/tencentcloud/vpc/v20170312/model/DetachSnapshotInstancesRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteLocalGatewayRequest.h
   include/tencentcloud/vpc/v20170312/model/ResetVpnGatewayInternetMaxBandwidthResponse.h
@@ -1169,6 +1170,7 @@ set(vpc_src
   src/v20170312/model/GetCcnRegionBandwidthLimitsRequest.cpp
   src/v20170312/model/ModifyIpv6AddressesAttributeRequest.cpp
   src/v20170312/model/DescribeCustomerGatewayVendorsRequest.cpp
+  src/v20170312/model/CcnFlowLock.cpp
   src/v20170312/model/DetachSnapshotInstancesRequest.cpp
   src/v20170312/model/DeleteLocalGatewayRequest.cpp
   src/v20170312/model/ResetVpnGatewayInternetMaxBandwidthResponse.cpp

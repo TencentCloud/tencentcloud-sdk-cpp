@@ -39,6 +39,8 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowByFilesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowGroupByFilesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowRemindsResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignReviewResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateFlowSignUrlRequest.h>
@@ -129,6 +131,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateFlowGroupByFilesResponse> ChannelCreateFlowGroupByFilesOutcome;
                 typedef std::future<ChannelCreateFlowGroupByFilesOutcome> ChannelCreateFlowGroupByFilesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowGroupByFilesRequest&, ChannelCreateFlowGroupByFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowGroupByFilesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateFlowRemindsResponse> ChannelCreateFlowRemindsOutcome;
+                typedef std::future<ChannelCreateFlowRemindsOutcome> ChannelCreateFlowRemindsOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowRemindsRequest&, ChannelCreateFlowRemindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowRemindsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelCreateFlowSignReviewResponse> ChannelCreateFlowSignReviewOutcome;
                 typedef std::future<ChannelCreateFlowSignReviewOutcome> ChannelCreateFlowSignReviewOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateFlowSignReviewRequest&, ChannelCreateFlowSignReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateFlowSignReviewAsyncHandler;
@@ -294,6 +299,19 @@ namespace TencentCloud
                 ChannelCreateFlowGroupByFilesOutcomeCallable ChannelCreateFlowGroupByFilesCallable(const Model::ChannelCreateFlowGroupByFilesRequest& request);
 
                 /**
+                 *指定需要批量撤销的签署流程Id，批量催办合同
+客户指定需要撤销的签署流程Id，最多100个，超过100不处理；接口失败后返回错误信息
+注意:
+能撤回合同的只能是合同的发起人或者签署人
+该接口需要开白后使用
+                 * @param req ChannelCreateFlowRemindsRequest
+                 * @return ChannelCreateFlowRemindsOutcome
+                 */
+                ChannelCreateFlowRemindsOutcome ChannelCreateFlowReminds(const Model::ChannelCreateFlowRemindsRequest &request);
+                void ChannelCreateFlowRemindsAsync(const Model::ChannelCreateFlowRemindsRequest& request, const ChannelCreateFlowRemindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateFlowRemindsOutcomeCallable ChannelCreateFlowRemindsCallable(const Model::ChannelCreateFlowRemindsRequest& request);
+
+                /**
                  *提交企业签署流程审批结果
 
 在通过接口(CreateFlowsByTemplates 或者ChannelCreateFlowByFiles)创建签署流程时，若指定了参数 NeedSignReview 为true,则可以调用此接口提交企业内部签署审批结果。
@@ -449,7 +467,7 @@ namespace TencentCloud
                 DescribeChannelFlowEvidenceReportOutcomeCallable DescribeChannelFlowEvidenceReportCallable(const Model::DescribeChannelFlowEvidenceReportRequest& request);
 
                 /**
-                 *查询企业扩展服务授权信息，企业经办人需要时企业超管或者法人
+                 *查询企业扩展服务授权信息，企业经办人需要是企业超管或者法人
                  * @param req DescribeExtendedServiceAuthInfoRequest
                  * @return DescribeExtendedServiceAuthInfoOutcome
                  */
@@ -507,7 +525,7 @@ namespace TencentCloud
                 GetDownloadFlowUrlOutcomeCallable GetDownloadFlowUrlCallable(const Model::GetDownloadFlowUrlRequest& request);
 
                 /**
-                 *修改（操作）企业扩展服务 ，企业经办人需要时企业超管或者法人
+                 *修改（操作）企业扩展服务 ，企业经办人需要是企业超管或者法人
                  * @param req ModifyExtendedServiceRequest
                  * @return ModifyExtendedServiceOutcome
                  */

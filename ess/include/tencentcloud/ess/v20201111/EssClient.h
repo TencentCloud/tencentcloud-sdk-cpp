@@ -41,6 +41,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowByFilesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowRemindsRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateFlowRemindsResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignReviewResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlRequest.h>
@@ -120,6 +122,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateFlowEvidenceReportResponse> CreateFlowEvidenceReportOutcome;
                 typedef std::future<CreateFlowEvidenceReportOutcome> CreateFlowEvidenceReportOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowEvidenceReportRequest&, CreateFlowEvidenceReportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowEvidenceReportAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFlowRemindsResponse> CreateFlowRemindsOutcome;
+                typedef std::future<CreateFlowRemindsOutcome> CreateFlowRemindsOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateFlowRemindsRequest&, CreateFlowRemindsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowRemindsAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFlowSignReviewResponse> CreateFlowSignReviewOutcome;
                 typedef std::future<CreateFlowSignReviewOutcome> CreateFlowSignReviewOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateFlowSignReviewRequest&, CreateFlowSignReviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFlowSignReviewAsyncHandler;
@@ -275,6 +280,19 @@ namespace TencentCloud
                 CreateFlowEvidenceReportOutcome CreateFlowEvidenceReport(const Model::CreateFlowEvidenceReportRequest &request);
                 void CreateFlowEvidenceReportAsync(const Model::CreateFlowEvidenceReportRequest& request, const CreateFlowEvidenceReportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFlowEvidenceReportOutcomeCallable CreateFlowEvidenceReportCallable(const Model::CreateFlowEvidenceReportRequest& request);
+
+                /**
+                 *指定需要批量撤销的签署流程Id，批量催办合同
+客户指定需要撤销的签署流程Id，最多100个；接口失败后返回错误信息
+注意:
+能撤回合同的只能是合同的发起人或者签署人
+该接口需要开白后使用
+                 * @param req CreateFlowRemindsRequest
+                 * @return CreateFlowRemindsOutcome
+                 */
+                CreateFlowRemindsOutcome CreateFlowReminds(const Model::CreateFlowRemindsRequest &request);
+                void CreateFlowRemindsAsync(const Model::CreateFlowRemindsRequest& request, const CreateFlowRemindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFlowRemindsOutcomeCallable CreateFlowRemindsCallable(const Model::CreateFlowRemindsRequest& request);
 
                 /**
                  *提交企业签署流程审批结果

@@ -55,7 +55,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_protocolHasBeenSet(false),
     m_operationDurationHasBeenSet(false),
     m_enableHybridStorageHasBeenSet(false),
-    m_diskEnhanceHasBeenSet(false)
+    m_diskEnhanceHasBeenSet(false),
+    m_enableDiagnoseHasBeenSet(false)
 {
 }
 
@@ -356,6 +357,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "DiskEnhance";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_diskEnhance, allocator);
+    }
+
+    if (m_enableDiagnoseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableDiagnose";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableDiagnose, allocator);
     }
 
 
@@ -892,6 +901,22 @@ void CreateInstanceRequest::SetDiskEnhance(const uint64_t& _diskEnhance)
 bool CreateInstanceRequest::DiskEnhanceHasBeenSet() const
 {
     return m_diskEnhanceHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetEnableDiagnose() const
+{
+    return m_enableDiagnose;
+}
+
+void CreateInstanceRequest::SetEnableDiagnose(const bool& _enableDiagnose)
+{
+    m_enableDiagnose = _enableDiagnose;
+    m_enableDiagnoseHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableDiagnoseHasBeenSet() const
+{
+    return m_enableDiagnoseHasBeenSet;
 }
 
 

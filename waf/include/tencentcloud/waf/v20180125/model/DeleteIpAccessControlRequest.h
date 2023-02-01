@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool ItemsHasBeenSet() const;
 
                     /**
-                     * 获取删除对应的域名下的所有黑/白IP名额单
-                     * @return DeleteAll 删除对应的域名下的所有黑/白IP名额单
+                     * 获取是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * @return DeleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
                      */
                     bool GetDeleteAll() const;
 
                     /**
-                     * 设置删除对应的域名下的所有黑/白IP名额单
-                     * @param DeleteAll 删除对应的域名下的所有黑/白IP名额单
+                     * 设置是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
+                     * @param DeleteAll 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
                      */
                     void SetDeleteAll(const bool& _deleteAll);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_itemsHasBeenSet;
 
                     /**
-                     * 删除对应的域名下的所有黑/白IP名额单
+                     * 是否删除对应的域名下的所有黑/白IP名单，true表示全部删除，false表示只删除指定ip名单
                      */
                     bool m_deleteAll;
                     bool m_deleteAllHasBeenSet;

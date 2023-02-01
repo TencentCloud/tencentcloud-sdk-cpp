@@ -384,6 +384,49 @@ EssbasicClient::ChannelCreateFlowGroupByFilesOutcomeCallable EssbasicClient::Cha
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateFlowRemindsOutcome EssbasicClient::ChannelCreateFlowReminds(const ChannelCreateFlowRemindsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateFlowReminds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateFlowRemindsResponse rsp = ChannelCreateFlowRemindsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateFlowRemindsOutcome(rsp);
+        else
+            return ChannelCreateFlowRemindsOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateFlowRemindsOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateFlowRemindsAsync(const ChannelCreateFlowRemindsRequest& request, const ChannelCreateFlowRemindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateFlowReminds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateFlowRemindsOutcomeCallable EssbasicClient::ChannelCreateFlowRemindsCallable(const ChannelCreateFlowRemindsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateFlowRemindsOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateFlowReminds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateFlowSignReviewOutcome EssbasicClient::ChannelCreateFlowSignReview(const ChannelCreateFlowSignReviewRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateFlowSignReview");

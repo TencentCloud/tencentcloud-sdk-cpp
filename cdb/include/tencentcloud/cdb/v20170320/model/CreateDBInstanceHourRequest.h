@@ -154,14 +154,14 @@ namespace TencentCloud
                     bool UniqSubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID，不填为默认项目。请使用 [查询项目列表](https://cloud.tencent.com/document/product/378/4400) 接口获取项目 ID。
-                     * @return ProjectId 项目 ID，不填为默认项目。请使用 [查询项目列表](https://cloud.tencent.com/document/product/378/4400) 接口获取项目 ID。
+                     * 获取项目 ID，不填为默认项目。
+                     * @return ProjectId 项目 ID，不填为默认项目。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID，不填为默认项目。请使用 [查询项目列表](https://cloud.tencent.com/document/product/378/4400) 接口获取项目 ID。
-                     * @param ProjectId 项目 ID，不填为默认项目。请使用 [查询项目列表](https://cloud.tencent.com/document/product/378/4400) 接口获取项目 ID。
+                     * 设置项目 ID，不填为默认项目。
+                     * @param ProjectId 项目 ID，不填为默认项目。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -750,7 +750,7 @@ namespace TencentCloud
                     bool m_uniqSubnetIdHasBeenSet;
 
                     /**
-                     * 项目 ID，不填为默认项目。请使用 [查询项目列表](https://cloud.tencent.com/document/product/378/4400) 接口获取项目 ID。
+                     * 项目 ID，不填为默认项目。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;

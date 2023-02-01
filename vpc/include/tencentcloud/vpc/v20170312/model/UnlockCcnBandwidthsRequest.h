@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vpc/v20170312/model/CcnFlowLock.h>
 
 
 namespace TencentCloud
@@ -42,7 +43,31 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取带宽实例对象数组。
+                     * @return Instances 带宽实例对象数组。
+                     */
+                    std::vector<CcnFlowLock> GetInstances() const;
+
+                    /**
+                     * 设置带宽实例对象数组。
+                     * @param Instances 带宽实例对象数组。
+                     */
+                    void SetInstances(const std::vector<CcnFlowLock>& _instances);
+
+                    /**
+                     * 判断参数 Instances 是否已赋值
+                     * @return Instances 是否已赋值
+                     */
+                    bool InstancesHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 带宽实例对象数组。
+                     */
+                    std::vector<CcnFlowLock> m_instances;
+                    bool m_instancesHasBeenSet;
 
                 };
             }

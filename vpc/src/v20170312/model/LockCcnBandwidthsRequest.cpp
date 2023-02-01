@@ -22,7 +22,8 @@
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-LockCcnBandwidthsRequest::LockCcnBandwidthsRequest()
+LockCcnBandwidthsRequest::LockCcnBandwidthsRequest() :
+    m_instancesHasBeenSet(false)
 {
 }
 
@@ -33,6 +34,21 @@ string LockCcnBandwidthsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_instancesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Instances";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instances.begin(); itr != m_instances.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +56,21 @@ string LockCcnBandwidthsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<CcnFlowLock> LockCcnBandwidthsRequest::GetInstances() const
+{
+    return m_instances;
+}
+
+void LockCcnBandwidthsRequest::SetInstances(const vector<CcnFlowLock>& _instances)
+{
+    m_instances = _instances;
+    m_instancesHasBeenSet = true;
+}
+
+bool LockCcnBandwidthsRequest::InstancesHasBeenSet() const
+{
+    return m_instancesHasBeenSet;
+}
 
 

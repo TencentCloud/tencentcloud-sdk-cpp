@@ -427,6 +427,49 @@ EssClient::CreateFlowEvidenceReportOutcomeCallable EssClient::CreateFlowEvidence
     return task->get_future();
 }
 
+EssClient::CreateFlowRemindsOutcome EssClient::CreateFlowReminds(const CreateFlowRemindsRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFlowReminds");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFlowRemindsResponse rsp = CreateFlowRemindsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFlowRemindsOutcome(rsp);
+        else
+            return CreateFlowRemindsOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFlowRemindsOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateFlowRemindsAsync(const CreateFlowRemindsRequest& request, const CreateFlowRemindsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFlowReminds(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateFlowRemindsOutcomeCallable EssClient::CreateFlowRemindsCallable(const CreateFlowRemindsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFlowRemindsOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFlowReminds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateFlowSignReviewOutcome EssClient::CreateFlowSignReview(const CreateFlowSignReviewRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateFlowSignReview");

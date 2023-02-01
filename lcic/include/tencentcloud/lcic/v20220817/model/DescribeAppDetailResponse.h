@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取SdkAppId 
-                     * @return SdkAppId SdkAppId 
+                     * 获取SDK 对应的AppId 
+                     * @return SdkAppId SDK 对应的AppId 
                      */
                     std::string GetSdkAppId() const;
 
@@ -84,7 +84,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * SdkAppId 
+                     * SDK 对应的AppId 
                      */
                     std::string m_sdkAppId;
                     bool m_sdkAppIdHasBeenSet;

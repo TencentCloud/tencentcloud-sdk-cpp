@@ -673,6 +673,24 @@ namespace TencentCloud
                      */
                     bool DiskEnhanceHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启智能巡检
+                     * @return EnableDiagnose 是否开启智能巡检
+                     */
+                    bool GetEnableDiagnose() const;
+
+                    /**
+                     * 设置是否开启智能巡检
+                     * @param EnableDiagnose 是否开启智能巡检
+                     */
+                    void SetEnableDiagnose(const bool& _enableDiagnose);
+
+                    /**
+                     * 判断参数 EnableDiagnose 是否已赋值
+                     * @return EnableDiagnose 是否已赋值
+                     */
+                    bool EnableDiagnoseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -880,6 +898,12 @@ namespace TencentCloud
                      */
                     uint64_t m_diskEnhance;
                     bool m_diskEnhanceHasBeenSet;
+
+                    /**
+                     * 是否开启智能巡检
+                     */
+                    bool m_enableDiagnose;
+                    bool m_enableDiagnoseHasBeenSet;
 
                 };
             }
