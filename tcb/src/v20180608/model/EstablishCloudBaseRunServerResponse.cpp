@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Tcb::V20180608::Model;
 using namespace std;
 
-EstablishCloudBaseRunServerResponse::EstablishCloudBaseRunServerResponse()
+EstablishCloudBaseRunServerResponse::EstablishCloudBaseRunServerResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome EstablishCloudBaseRunServerResponse::Deserialize(const strin
     }
 
 
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
+    {
+        if (!rsp["Result"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string EstablishCloudBaseRunServerResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_resultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Result";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string EstablishCloudBaseRunServerResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string EstablishCloudBaseRunServerResponse::GetResult() const
+{
+    return m_result;
+}
+
+bool EstablishCloudBaseRunServerResponse::ResultHasBeenSet() const
+{
+    return m_resultHasBeenSet;
+}
 
 

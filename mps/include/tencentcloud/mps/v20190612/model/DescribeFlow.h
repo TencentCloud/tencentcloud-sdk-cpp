@@ -160,6 +160,42 @@ namespace TencentCloud
                      */
                     bool OutputGroupHasBeenSet() const;
 
+                    /**
+                     * 获取该Flow关联的媒体传输事件EventId。
+                     * @return EventId 该Flow关联的媒体传输事件EventId。
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置该Flow关联的媒体传输事件EventId。
+                     * @param EventId 该Flow关联的媒体传输事件EventId。
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
+
+                    /**
+                     * 获取媒体传输输入流所属的区域，取值和InputRegion相同。
+                     * @return Region 媒体传输输入流所属的区域，取值和InputRegion相同。
+                     */
+                    std::string GetRegion() const;
+
+                    /**
+                     * 设置媒体传输输入流所属的区域，取值和InputRegion相同。
+                     * @param Region 媒体传输输入流所属的区域，取值和InputRegion相同。
+                     */
+                    void SetRegion(const std::string& _region);
+
+                    /**
+                     * 判断参数 Region 是否已赋值
+                     * @return Region 是否已赋值
+                     */
+                    bool RegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -198,6 +234,18 @@ namespace TencentCloud
                      */
                     std::vector<DescribeOutput> m_outputGroup;
                     bool m_outputGroupHasBeenSet;
+
+                    /**
+                     * 该Flow关联的媒体传输事件EventId。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
+
+                    /**
+                     * 媒体传输输入流所属的区域，取值和InputRegion相同。
+                     */
+                    std::string m_region;
+                    bool m_regionHasBeenSet;
 
                 };
             }

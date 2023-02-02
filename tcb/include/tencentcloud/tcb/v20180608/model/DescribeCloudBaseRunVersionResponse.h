@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcb/v20180608/model/HpaPolicy.h>
 
 
 namespace TencentCloud
@@ -449,6 +450,48 @@ namespace TencentCloud
                      */
                     bool MemSizeHasBeenSet() const;
 
+                    /**
+                     * 获取扩缩容策略详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PolicyDetail 扩缩容策略详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HpaPolicy> GetPolicyDetail() const;
+
+                    /**
+                     * 判断参数 PolicyDetail 是否已赋值
+                     * @return PolicyDetail 是否已赋值
+                     */
+                    bool PolicyDetailHasBeenSet() const;
+
+                    /**
+                     * 获取Cpu的Request值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Cpu Cpu的Request值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetCpu() const;
+
+                    /**
+                     * 判断参数 Cpu 是否已赋值
+                     * @return Cpu 是否已赋值
+                     */
+                    bool CpuHasBeenSet() const;
+
+                    /**
+                     * 获取Mem的Request值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Mem Mem的Request值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetMem() const;
+
+                    /**
+                     * 判断参数 Mem 是否已赋值
+                     * @return Mem 是否已赋值
+                     */
+                    bool MemHasBeenSet() const;
+
                 private:
 
                     /**
@@ -653,6 +696,27 @@ namespace TencentCloud
                      */
                     double m_memSize;
                     bool m_memSizeHasBeenSet;
+
+                    /**
+                     * 扩缩容策略详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<HpaPolicy> m_policyDetail;
+                    bool m_policyDetailHasBeenSet;
+
+                    /**
+                     * Cpu的Request值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_cpu;
+                    bool m_cpuHasBeenSet;
+
+                    /**
+                     * Mem的Request值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_mem;
+                    bool m_memHasBeenSet;
 
                 };
             }

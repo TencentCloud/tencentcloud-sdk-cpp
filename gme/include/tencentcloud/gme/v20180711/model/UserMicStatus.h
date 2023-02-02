@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端用于标识用户的Openid。
-                     * @return Uid 客户端用于标识用户的Openid。
-                     */
-                    int64_t GetUid() const;
-
-                    /**
-                     * 设置客户端用于标识用户的Openid。
-                     * @param Uid 客户端用于标识用户的Openid。
-                     */
-                    void SetUid(const int64_t& _uid);
-
-                    /**
-                     * 判断参数 Uid 是否已赋值
-                     * @return Uid 是否已赋值
-                     */
-                    bool UidHasBeenSet() const;
-
-                    /**
                      * 获取开麦状态。1表示关闭麦克风，2表示打开麦克风。
                      * @return EnableMic 开麦状态。1表示关闭麦克风，2表示打开麦克风。
                      */
@@ -82,19 +64,66 @@ namespace TencentCloud
                      */
                     bool EnableMicHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+                     * @return Uid 客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+                     */
+                    int64_t GetUid() const;
 
                     /**
-                     * 客户端用于标识用户的Openid。
+                     * 设置客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+                     * @param Uid 客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
                      */
-                    int64_t m_uid;
-                    bool m_uidHasBeenSet;
+                    void SetUid(const int64_t& _uid);
+
+                    /**
+                     * 判断参数 Uid 是否已赋值
+                     * @return Uid 是否已赋值
+                     */
+                    bool UidHasBeenSet() const;
+
+                    /**
+                     * 获取客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StrUid 客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStrUid() const;
+
+                    /**
+                     * 设置客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StrUid 客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStrUid(const std::string& _strUid);
+
+                    /**
+                     * 判断参数 StrUid 是否已赋值
+                     * @return StrUid 是否已赋值
+                     */
+                    bool StrUidHasBeenSet() const;
+
+                private:
 
                     /**
                      * 开麦状态。1表示关闭麦克风，2表示打开麦克风。
                      */
                     int64_t m_enableMic;
                     bool m_enableMicHasBeenSet;
+
+                    /**
+                     * 客户端用于标识用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+                     */
+                    int64_t m_uid;
+                    bool m_uidHasBeenSet;
+
+                    /**
+                     * 客户端用于标识字符串型用户的Openid。（Uid、StrUid必须填一个，优先处理StrUid。）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_strUid;
+                    bool m_strUidHasBeenSet;
 
                 };
             }

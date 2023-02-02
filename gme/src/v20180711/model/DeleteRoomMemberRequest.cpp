@@ -24,9 +24,9 @@ using namespace std;
 
 DeleteRoomMemberRequest::DeleteRoomMemberRequest() :
     m_roomIdHasBeenSet(false),
-    m_uidsHasBeenSet(false),
     m_deleteTypeHasBeenSet(false),
-    m_bizIdHasBeenSet(false)
+    m_bizIdHasBeenSet(false),
+    m_uidsHasBeenSet(false)
 {
 }
 
@@ -45,19 +45,6 @@ string DeleteRoomMemberRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_roomId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_uidsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Uids";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_uids.begin(); itr != m_uids.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
-    }
-
     if (m_deleteTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -72,6 +59,19 @@ string DeleteRoomMemberRequest::ToJsonString() const
         string key = "BizId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_bizId, allocator);
+    }
+
+    if (m_uidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uids.begin(); itr != m_uids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -96,22 +96,6 @@ void DeleteRoomMemberRequest::SetRoomId(const string& _roomId)
 bool DeleteRoomMemberRequest::RoomIdHasBeenSet() const
 {
     return m_roomIdHasBeenSet;
-}
-
-vector<string> DeleteRoomMemberRequest::GetUids() const
-{
-    return m_uids;
-}
-
-void DeleteRoomMemberRequest::SetUids(const vector<string>& _uids)
-{
-    m_uids = _uids;
-    m_uidsHasBeenSet = true;
-}
-
-bool DeleteRoomMemberRequest::UidsHasBeenSet() const
-{
-    return m_uidsHasBeenSet;
 }
 
 uint64_t DeleteRoomMemberRequest::GetDeleteType() const
@@ -144,6 +128,22 @@ void DeleteRoomMemberRequest::SetBizId(const uint64_t& _bizId)
 bool DeleteRoomMemberRequest::BizIdHasBeenSet() const
 {
     return m_bizIdHasBeenSet;
+}
+
+vector<string> DeleteRoomMemberRequest::GetUids() const
+{
+    return m_uids;
+}
+
+void DeleteRoomMemberRequest::SetUids(const vector<string>& _uids)
+{
+    m_uids = _uids;
+    m_uidsHasBeenSet = true;
+}
+
+bool DeleteRoomMemberRequest::UidsHasBeenSet() const
+{
+    return m_uidsHasBeenSet;
 }
 
 

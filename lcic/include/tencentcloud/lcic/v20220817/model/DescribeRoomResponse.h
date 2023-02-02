@@ -80,8 +80,8 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取老师ID。
-                     * @return TeacherId 老师ID。
+                     * 获取老师的UserId。
+                     * @return TeacherId 老师的UserId。
                      */
                     std::string GetTeacherId() const;
 
@@ -202,9 +202,9 @@ coteaching 双师
                     bool DisableRecordHasBeenSet() const;
 
                     /**
-                     * 获取助教Id列表。
+                     * 获取助教UserId列表。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Assistants 助教Id列表。
+                     * @return Assistants 助教UserId列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetAssistants() const;
@@ -250,7 +250,7 @@ coteaching 双师
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 老师ID。
+                     * 老师的UserId。
                      */
                     std::string m_teacherId;
                     bool m_teacherIdHasBeenSet;
@@ -311,7 +311,7 @@ coteaching 双师
                     bool m_disableRecordHasBeenSet;
 
                     /**
-                     * 助教Id列表。
+                     * 助教UserId列表。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_assistants;

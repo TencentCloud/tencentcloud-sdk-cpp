@@ -97,6 +97,24 @@ namespace TencentCloud
                      */
                     bool InputGroupHasBeenSet() const;
 
+                    /**
+                     * 获取该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     * @return EventId 该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     * @param EventId 该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +134,12 @@ namespace TencentCloud
                      */
                     std::vector<CreateInput> m_inputGroup;
                     bool m_inputGroupHasBeenSet;
+
+                    /**
+                     * 该Flow关联的媒体传输事件ID，每个flow只能关联一个Event。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                 };
             }

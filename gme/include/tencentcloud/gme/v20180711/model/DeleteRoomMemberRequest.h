@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取要剔除的用户列表
-                     * @return Uids 要剔除的用户列表
-                     */
-                    std::vector<std::string> GetUids() const;
-
-                    /**
-                     * 设置要剔除的用户列表
-                     * @param Uids 要剔除的用户列表
-                     */
-                    void SetUids(const std::vector<std::string>& _uids);
-
-                    /**
-                     * 判断参数 Uids 是否已赋值
-                     * @return Uids 是否已赋值
-                     */
-                    bool UidsHasBeenSet() const;
-
-                    /**
                      * 获取剔除类型 1-删除房间 2-剔除用户
                      * @return DeleteType 剔除类型 1-删除房间 2-剔除用户
                      */
@@ -114,6 +96,24 @@ namespace TencentCloud
                      */
                     bool BizIdHasBeenSet() const;
 
+                    /**
+                     * 获取要剔除的用户列表
+                     * @return Uids 要剔除的用户列表
+                     */
+                    std::vector<std::string> GetUids() const;
+
+                    /**
+                     * 设置要剔除的用户列表
+                     * @param Uids 要剔除的用户列表
+                     */
+                    void SetUids(const std::vector<std::string>& _uids);
+
+                    /**
+                     * 判断参数 Uids 是否已赋值
+                     * @return Uids 是否已赋值
+                     */
+                    bool UidsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,12 +121,6 @@ namespace TencentCloud
                      */
                     std::string m_roomId;
                     bool m_roomIdHasBeenSet;
-
-                    /**
-                     * 要剔除的用户列表
-                     */
-                    std::vector<std::string> m_uids;
-                    bool m_uidsHasBeenSet;
 
                     /**
                      * 剔除类型 1-删除房间 2-剔除用户
@@ -139,6 +133,12 @@ namespace TencentCloud
                      */
                     uint64_t m_bizId;
                     bool m_bizIdHasBeenSet;
+
+                    /**
+                     * 要剔除的用户列表
+                     */
+                    std::vector<std::string> m_uids;
+                    bool m_uidsHasBeenSet;
 
                 };
             }

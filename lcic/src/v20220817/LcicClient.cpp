@@ -40,6 +40,49 @@ LcicClient::LcicClient(const Credential &credential, const string &region, const
 }
 
 
+LcicClient::BatchRegisterOutcome LcicClient::BatchRegister(const BatchRegisterRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchRegister");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchRegisterResponse rsp = BatchRegisterResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchRegisterOutcome(rsp);
+        else
+            return BatchRegisterOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchRegisterOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchRegisterAsync(const BatchRegisterRequest& request, const BatchRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchRegister(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BatchRegisterOutcomeCallable LcicClient::BatchRegisterCallable(const BatchRegisterRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchRegisterOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchRegister(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::BindDocumentToRoomOutcome LcicClient::BindDocumentToRoom(const BindDocumentToRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "BindDocumentToRoom");
@@ -549,6 +592,49 @@ LcicClient::ModifyAppOutcomeCallable LcicClient::ModifyAppCallable(const ModifyA
         [this, request]()
         {
             return this->ModifyApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::ModifyRoomOutcome LcicClient::ModifyRoom(const ModifyRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoomResponse rsp = ModifyRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoomOutcome(rsp);
+        else
+            return ModifyRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::ModifyRoomAsync(const ModifyRoomRequest& request, const ModifyRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::ModifyRoomOutcomeCallable LcicClient::ModifyRoomCallable(const ModifyRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoom(request);
         }
     );
 

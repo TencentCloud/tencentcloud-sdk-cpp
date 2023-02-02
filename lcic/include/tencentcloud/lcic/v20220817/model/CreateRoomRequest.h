@@ -193,14 +193,14 @@ coteaching 双师
                     bool SubTypeHasBeenSet() const;
 
                     /**
-                     * 获取老师ID。通过[注册用户]接口获取的UserId。
-                     * @return TeacherId 老师ID。通过[注册用户]接口获取的UserId。
+                     * 获取老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
+                     * @return TeacherId 老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
                      */
                     std::string GetTeacherId() const;
 
                     /**
-                     * 设置老师ID。通过[注册用户]接口获取的UserId。
-                     * @param TeacherId 老师ID。通过[注册用户]接口获取的UserId。
+                     * 设置老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
+                     * @param TeacherId 老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
@@ -293,14 +293,14 @@ coteaching 双师
                     bool DisableRecordHasBeenSet() const;
 
                     /**
-                     * 获取助教Id列表。通过[注册用户]接口获取的UserId。
-                     * @return Assistants 助教Id列表。通过[注册用户]接口获取的UserId。
+                     * 获取助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
+                     * @return Assistants 助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
                      */
                     std::vector<std::string> GetAssistants() const;
 
                     /**
-                     * 设置助教Id列表。通过[注册用户]接口获取的UserId。
-                     * @param Assistants 助教Id列表。通过[注册用户]接口获取的UserId。
+                     * 设置助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
+                     * @param Assistants 助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
                      */
                     void SetAssistants(const std::vector<std::string>& _assistants);
 
@@ -379,7 +379,7 @@ coteaching 双师
                     bool m_subTypeHasBeenSet;
 
                     /**
-                     * 老师ID。通过[注册用户]接口获取的UserId。
+                     * 老师ID。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有老师权限。
                      */
                     std::string m_teacherId;
                     bool m_teacherIdHasBeenSet;
@@ -410,7 +410,7 @@ coteaching 双师
                     bool m_disableRecordHasBeenSet;
 
                     /**
-                     * 助教Id列表。通过[注册用户]接口获取的UserId。
+                     * 助教Id列表。通过[注册用户]接口获取的UserId。指定后该用户在房间内拥有助教权限。
                      */
                     std::vector<std::string> m_assistants;
                     bool m_assistantsHasBeenSet;

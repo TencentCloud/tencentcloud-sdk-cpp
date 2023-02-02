@@ -91,6 +91,28 @@ namespace TencentCloud
                      */
                     bool GroupListHasBeenSet() const;
 
+                    /**
+                     * 获取消费分组配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupCountQuota 消费分组配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetGroupCountQuota() const;
+
+                    /**
+                     * 设置消费分组配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupCountQuota 消费分组配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupCountQuota(const uint64_t& _groupCountQuota);
+
+                    /**
+                     * 判断参数 GroupCountQuota 是否已赋值
+                     * @return GroupCountQuota 是否已赋值
+                     */
+                    bool GroupCountQuotaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -106,6 +128,13 @@ namespace TencentCloud
                      */
                     std::vector<DescribeGroup> m_groupList;
                     bool m_groupListHasBeenSet;
+
+                    /**
+                     * 消费分组配额
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_groupCountQuota;
+                    bool m_groupCountQuotaHasBeenSet;
 
                 };
             }

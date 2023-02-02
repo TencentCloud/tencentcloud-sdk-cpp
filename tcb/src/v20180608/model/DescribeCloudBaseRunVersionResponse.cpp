@@ -53,7 +53,10 @@ DescribeCloudBaseRunVersionResponse::DescribeCloudBaseRunVersionResponse() :
     m_initialDelaySecondsHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_cpuSizeHasBeenSet(false),
-    m_memSizeHasBeenSet(false)
+    m_memSizeHasBeenSet(false),
+    m_policyDetailHasBeenSet(false),
+    m_cpuHasBeenSet(false),
+    m_memHasBeenSet(false)
 {
 }
 
@@ -394,6 +397,46 @@ CoreInternalOutcome DescribeCloudBaseRunVersionResponse::Deserialize(const strin
         m_memSizeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PolicyDetail") && !rsp["PolicyDetail"].IsNull())
+    {
+        if (!rsp["PolicyDetail"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PolicyDetail` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PolicyDetail"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            HpaPolicy item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_policyDetail.push_back(item);
+        }
+        m_policyDetailHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Cpu") && !rsp["Cpu"].IsNull())
+    {
+        if (!rsp["Cpu"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cpu` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_cpu = rsp["Cpu"].GetDouble();
+        m_cpuHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Mem") && !rsp["Mem"].IsNull())
+    {
+        if (!rsp["Mem"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `Mem` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_mem = rsp["Mem"].GetDouble();
+        m_memHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -647,6 +690,37 @@ string DescribeCloudBaseRunVersionResponse::ToJsonString() const
         string key = "MemSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_memSize, allocator);
+    }
+
+    if (m_policyDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PolicyDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_policyDetail.begin(); itr != m_policyDetail.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_cpuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cpu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_cpu, allocator);
+    }
+
+    if (m_memHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Mem";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mem, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -959,6 +1033,36 @@ double DescribeCloudBaseRunVersionResponse::GetMemSize() const
 bool DescribeCloudBaseRunVersionResponse::MemSizeHasBeenSet() const
 {
     return m_memSizeHasBeenSet;
+}
+
+vector<HpaPolicy> DescribeCloudBaseRunVersionResponse::GetPolicyDetail() const
+{
+    return m_policyDetail;
+}
+
+bool DescribeCloudBaseRunVersionResponse::PolicyDetailHasBeenSet() const
+{
+    return m_policyDetailHasBeenSet;
+}
+
+double DescribeCloudBaseRunVersionResponse::GetCpu() const
+{
+    return m_cpu;
+}
+
+bool DescribeCloudBaseRunVersionResponse::CpuHasBeenSet() const
+{
+    return m_cpuHasBeenSet;
+}
+
+double DescribeCloudBaseRunVersionResponse::GetMem() const
+{
+    return m_mem;
+}
+
+bool DescribeCloudBaseRunVersionResponse::MemHasBeenSet() const
+{
+    return m_memHasBeenSet;
 }
 
 

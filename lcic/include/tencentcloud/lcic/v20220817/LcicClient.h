@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/lcic/v20220817/model/BatchRegisterRequest.h>
+#include <tencentcloud/lcic/v20220817/model/BatchRegisterResponse.h>
 #include <tencentcloud/lcic/v20220817/model/BindDocumentToRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/BindDocumentToRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateDocumentRequest.h>
@@ -47,6 +49,8 @@
 #include <tencentcloud/lcic/v20220817/model/LoginUserResponse.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyAppRequest.h>
 #include <tencentcloud/lcic/v20220817/model/ModifyAppResponse.h>
+#include <tencentcloud/lcic/v20220817/model/ModifyRoomRequest.h>
+#include <tencentcloud/lcic/v20220817/model/ModifyRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/RegisterUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/RegisterUserResponse.h>
 #include <tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h>
@@ -67,6 +71,9 @@ namespace TencentCloud
                 LcicClient(const Credential &credential, const std::string &region);
                 LcicClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BatchRegisterResponse> BatchRegisterOutcome;
+                typedef std::future<BatchRegisterOutcome> BatchRegisterOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::BatchRegisterRequest&, BatchRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindDocumentToRoomResponse> BindDocumentToRoomOutcome;
                 typedef std::future<BindDocumentToRoomOutcome> BindDocumentToRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::BindDocumentToRoomRequest&, BindDocumentToRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDocumentToRoomAsyncHandler;
@@ -103,6 +110,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAppResponse> ModifyAppOutcome;
                 typedef std::future<ModifyAppOutcome> ModifyAppOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::ModifyAppRequest&, ModifyAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAppAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoomResponse> ModifyRoomOutcome;
+                typedef std::future<ModifyRoomOutcome> ModifyRoomOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::ModifyRoomRequest&, ModifyRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoomAsyncHandler;
                 typedef Outcome<Core::Error, Model::RegisterUserResponse> RegisterUserOutcome;
                 typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::RegisterUserRequest&, RegisterUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RegisterUserAsyncHandler;
@@ -114,6 +124,15 @@ namespace TencentCloud
                 typedef std::function<void(const LcicClient*, const Model::UnbindDocumentFromRoomRequest&, UnbindDocumentFromRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindDocumentFromRoomAsyncHandler;
 
 
+
+                /**
+                 *如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒
+                 * @param req BatchRegisterRequest
+                 * @return BatchRegisterOutcome
+                 */
+                BatchRegisterOutcome BatchRegister(const Model::BatchRegisterRequest &request);
+                void BatchRegisterAsync(const Model::BatchRegisterRequest& request, const BatchRegisterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchRegisterOutcomeCallable BatchRegisterCallable(const Model::BatchRegisterRequest& request);
 
                 /**
                  *绑定文档到房间
@@ -222,6 +241,15 @@ namespace TencentCloud
                 ModifyAppOutcome ModifyApp(const Model::ModifyAppRequest &request);
                 void ModifyAppAsync(const Model::ModifyAppRequest& request, const ModifyAppAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyAppOutcomeCallable ModifyAppCallable(const Model::ModifyAppRequest& request);
+
+                /**
+                 *修改房间
+                 * @param req ModifyRoomRequest
+                 * @return ModifyRoomOutcome
+                 */
+                ModifyRoomOutcome ModifyRoom(const Model::ModifyRoomRequest &request);
+                void ModifyRoomAsync(const Model::ModifyRoomRequest& request, const ModifyRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoomOutcomeCallable ModifyRoomCallable(const Model::ModifyRoomRequest& request);
 
                 /**
                  *注册用户

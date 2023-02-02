@@ -45,7 +45,9 @@ namespace TencentCloud
 
                     /**
                      * 获取RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultImage RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResultImage() const;
 
@@ -57,7 +59,9 @@ namespace TencentCloud
 
                     /**
                      * 获取RspImgType 为 url 时，返回处理后的图片 url 数据。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResultUrl RspImgType 为 url 时，返回处理后的图片 url 数据。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResultUrl() const;
 
@@ -71,12 +75,14 @@ namespace TencentCloud
 
                     /**
                      * RspImgType 为 base64 时，返回处理后的图片 base64 数据。默认返回base64
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultImage;
                     bool m_resultImageHasBeenSet;
 
                     /**
                      * RspImgType 为 url 时，返回处理后的图片 url 数据。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resultUrl;
                     bool m_resultUrlHasBeenSet;

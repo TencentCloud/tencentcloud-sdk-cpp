@@ -21,17 +21,22 @@ set(lcic_public_header
 set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/CreateRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/SetAppCustomContentRequest.h
+  include/tencentcloud/lcic/v20220817/model/ModifyRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeUserRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateDocumentResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsRequest.h
   include/tencentcloud/lcic/v20220817/model/BindDocumentToRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateDocumentRequest.h
+  include/tencentcloud/lcic/v20220817/model/ModifyRoomRequest.h
+  include/tencentcloud/lcic/v20220817/model/BatchUserInfo.h
   include/tencentcloud/lcic/v20220817/model/SetAppCustomContentResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
+  include/tencentcloud/lcic/v20220817/model/BatchUserRequest.h
   include/tencentcloud/lcic/v20220817/model/LoginUserResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h
   include/tencentcloud/lcic/v20220817/model/ModifyAppResponse.h
+  include/tencentcloud/lcic/v20220817/model/BatchRegisterRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/DeleteRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/AppCustomContent.h
@@ -47,6 +52,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/UnbindDocumentFromRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdRequest.h
   include/tencentcloud/lcic/v20220817/model/AppConfig.h
+  include/tencentcloud/lcic/v20220817/model/BatchRegisterResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginUserRequest.h
   include/tencentcloud/lcic/v20220817/model/BindDocumentToRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateRoomResponse.h
@@ -59,17 +65,22 @@ set(lcic_src
   src/v20220817/LcicClient.cpp
   src/v20220817/model/CreateRoomRequest.cpp
   src/v20220817/model/SetAppCustomContentRequest.cpp
+  src/v20220817/model/ModifyRoomResponse.cpp
   src/v20220817/model/UnbindDocumentFromRoomResponse.cpp
   src/v20220817/model/DescribeUserRequest.cpp
   src/v20220817/model/CreateDocumentResponse.cpp
   src/v20220817/model/DescribeRoomStatisticsRequest.cpp
   src/v20220817/model/BindDocumentToRoomRequest.cpp
   src/v20220817/model/CreateDocumentRequest.cpp
+  src/v20220817/model/ModifyRoomRequest.cpp
+  src/v20220817/model/BatchUserInfo.cpp
   src/v20220817/model/SetAppCustomContentResponse.cpp
   src/v20220817/model/LoginOriginIdResponse.cpp
+  src/v20220817/model/BatchUserRequest.cpp
   src/v20220817/model/LoginUserResponse.cpp
   src/v20220817/model/DescribeAppDetailRequest.cpp
   src/v20220817/model/ModifyAppResponse.cpp
+  src/v20220817/model/BatchRegisterRequest.cpp
   src/v20220817/model/DescribeRoomResponse.cpp
   src/v20220817/model/DeleteRoomResponse.cpp
   src/v20220817/model/AppCustomContent.cpp
@@ -85,6 +96,7 @@ set(lcic_src
   src/v20220817/model/UnbindDocumentFromRoomRequest.cpp
   src/v20220817/model/LoginOriginIdRequest.cpp
   src/v20220817/model/AppConfig.cpp
+  src/v20220817/model/BatchRegisterResponse.cpp
   src/v20220817/model/LoginUserRequest.cpp
   src/v20220817/model/BindDocumentToRoomResponse.cpp
   src/v20220817/model/CreateRoomResponse.cpp

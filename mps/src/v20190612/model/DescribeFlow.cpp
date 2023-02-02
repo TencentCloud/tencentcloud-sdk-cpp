@@ -26,7 +26,9 @@ DescribeFlow::DescribeFlow() :
     m_stateHasBeenSet(false),
     m_maxBandwidthHasBeenSet(false),
     m_inputGroupHasBeenSet(false),
-    m_outputGroupHasBeenSet(false)
+    m_outputGroupHasBeenSet(false),
+    m_eventIdHasBeenSet(false),
+    m_regionHasBeenSet(false)
 {
 }
 
@@ -115,6 +117,26 @@ CoreInternalOutcome DescribeFlow::Deserialize(const rapidjson::Value &value)
         m_outputGroupHasBeenSet = true;
     }
 
+    if (value.HasMember("EventId") && !value["EventId"].IsNull())
+    {
+        if (!value["EventId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeFlow.EventId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventId = string(value["EventId"].GetString());
+        m_eventIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Region") && !value["Region"].IsNull())
+    {
+        if (!value["Region"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeFlow.Region` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_region = string(value["Region"].GetString());
+        m_regionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -182,6 +204,22 @@ void DescribeFlow::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Region";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_region.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -281,5 +319,37 @@ void DescribeFlow::SetOutputGroup(const vector<DescribeOutput>& _outputGroup)
 bool DescribeFlow::OutputGroupHasBeenSet() const
 {
     return m_outputGroupHasBeenSet;
+}
+
+string DescribeFlow::GetEventId() const
+{
+    return m_eventId;
+}
+
+void DescribeFlow::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool DescribeFlow::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
+}
+
+string DescribeFlow::GetRegion() const
+{
+    return m_region;
+}
+
+void DescribeFlow::SetRegion(const string& _region)
+{
+    m_region = _region;
+    m_regionHasBeenSet = true;
+}
+
+bool DescribeFlow::RegionHasBeenSet() const
+{
+    return m_regionHasBeenSet;
 }
 
