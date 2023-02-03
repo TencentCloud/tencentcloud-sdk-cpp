@@ -56,6 +56,18 @@ namespace TencentCloud
                      */
                     bool EnvListHasBeenSet() const;
 
+                    /**
+                     * 获取环境个数
+                     * @return Total 环境个数
+                     */
+                    int64_t GetTotal() const;
+
+                    /**
+                     * 判断参数 Total 是否已赋值
+                     * @return Total 是否已赋值
+                     */
+                    bool TotalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -63,6 +75,12 @@ namespace TencentCloud
                      */
                     std::vector<EnvInfo> m_envList;
                     bool m_envListHasBeenSet;
+
+                    /**
+                     * 环境个数
+                     */
+                    int64_t m_total;
+                    bool m_totalHasBeenSet;
 
                 };
             }

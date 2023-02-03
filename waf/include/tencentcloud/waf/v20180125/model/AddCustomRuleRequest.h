@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取动作类型
-                     * @return ActionType 动作类型
+                     * 获取动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * @return ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
                      */
                     std::string GetActionType() const;
 
                     /**
-                     * 设置动作类型
-                     * @param ActionType 动作类型
+                     * 设置动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
+                     * @param ActionType 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
                      */
                     void SetActionType(const std::string& _actionType);
 
@@ -256,7 +256,7 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 动作类型
+                     * 动作类型，1代表阻断，2代表人机识别，3代表观察，4代表重定向
                      */
                     std::string m_actionType;
                     bool m_actionTypeHasBeenSet;

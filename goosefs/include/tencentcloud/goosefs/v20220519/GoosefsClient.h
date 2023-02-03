@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h>
 #include <tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusRequest.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h>
 
 
 namespace TencentCloud
@@ -42,6 +44,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDataRepositoryTaskResponse> CreateDataRepositoryTaskOutcome;
                 typedef std::future<CreateDataRepositoryTaskOutcome> CreateDataRepositoryTaskOutcomeCallable;
                 typedef std::function<void(const GoosefsClient*, const Model::CreateDataRepositoryTaskRequest&, CreateDataRepositoryTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDataRepositoryTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataRepositoryTaskStatusResponse> DescribeDataRepositoryTaskStatusOutcome;
+                typedef std::future<DescribeDataRepositoryTaskStatusOutcome> DescribeDataRepositoryTaskStatusOutcomeCallable;
+                typedef std::function<void(const GoosefsClient*, const Model::DescribeDataRepositoryTaskStatusRequest&, DescribeDataRepositoryTaskStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataRepositoryTaskStatusAsyncHandler;
 
 
 
@@ -53,6 +58,15 @@ namespace TencentCloud
                 CreateDataRepositoryTaskOutcome CreateDataRepositoryTask(const Model::CreateDataRepositoryTaskRequest &request);
                 void CreateDataRepositoryTaskAsync(const Model::CreateDataRepositoryTaskRequest& request, const CreateDataRepositoryTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDataRepositoryTaskOutcomeCallable CreateDataRepositoryTaskCallable(const Model::CreateDataRepositoryTaskRequest& request);
+
+                /**
+                 *获取数据流通任务实时状态，用作客户端控制
+                 * @param req DescribeDataRepositoryTaskStatusRequest
+                 * @return DescribeDataRepositoryTaskStatusOutcome
+                 */
+                DescribeDataRepositoryTaskStatusOutcome DescribeDataRepositoryTaskStatus(const Model::DescribeDataRepositoryTaskStatusRequest &request);
+                void DescribeDataRepositoryTaskStatusAsync(const Model::DescribeDataRepositoryTaskStatusRequest& request, const DescribeDataRepositoryTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataRepositoryTaskStatusOutcomeCallable DescribeDataRepositoryTaskStatusCallable(const Model::DescribeDataRepositoryTaskStatusRequest& request);
 
             };
         }

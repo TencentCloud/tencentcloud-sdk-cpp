@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取攻击次数阈值
-                     * @return AttackThreshold 攻击次数阈值
+                     * 获取触发IP封禁的攻击次数阈值，范围为2~100次
+                     * @return AttackThreshold 触发IP封禁的攻击次数阈值，范围为2~100次
                      */
                     int64_t GetAttackThreshold() const;
 
                     /**
-                     * 设置攻击次数阈值
-                     * @param AttackThreshold 攻击次数阈值
+                     * 设置触发IP封禁的攻击次数阈值，范围为2~100次
+                     * @param AttackThreshold 触发IP封禁的攻击次数阈值，范围为2~100次
                      */
                     void SetAttackThreshold(const int64_t& _attackThreshold);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool AttackThresholdHasBeenSet() const;
 
                     /**
-                     * 获取攻击时间阈值
-                     * @return TimeThreshold 攻击时间阈值
+                     * 获取IP封禁统计时间，范围为1-60分钟
+                     * @return TimeThreshold IP封禁统计时间，范围为1-60分钟
                      */
                     int64_t GetTimeThreshold() const;
 
                     /**
-                     * 设置攻击时间阈值
-                     * @param TimeThreshold 攻击时间阈值
+                     * 设置IP封禁统计时间，范围为1-60分钟
+                     * @param TimeThreshold IP封禁统计时间，范围为1-60分钟
                      */
                     void SetTimeThreshold(const int64_t& _timeThreshold);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool TimeThresholdHasBeenSet() const;
 
                     /**
-                     * 获取自动封禁时间
-                     * @return DenyTimeThreshold 自动封禁时间
+                     * 获取触发IP封禁后的封禁时间，范围为5~360分钟
+                     * @return DenyTimeThreshold 触发IP封禁后的封禁时间，范围为5~360分钟
                      */
                     int64_t GetDenyTimeThreshold() const;
 
                     /**
-                     * 设置自动封禁时间
-                     * @param DenyTimeThreshold 自动封禁时间
+                     * 设置触发IP封禁后的封禁时间，范围为5~360分钟
+                     * @param DenyTimeThreshold 触发IP封禁后的封禁时间，范围为5~360分钟
                      */
                     void SetDenyTimeThreshold(const int64_t& _denyTimeThreshold);
 
@@ -141,19 +141,19 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * 攻击次数阈值
+                     * 触发IP封禁的攻击次数阈值，范围为2~100次
                      */
                     int64_t m_attackThreshold;
                     bool m_attackThresholdHasBeenSet;
 
                     /**
-                     * 攻击时间阈值
+                     * IP封禁统计时间，范围为1-60分钟
                      */
                     int64_t m_timeThreshold;
                     bool m_timeThresholdHasBeenSet;
 
                     /**
-                     * 自动封禁时间
+                     * 触发IP封禁后的封禁时间，范围为5~360分钟
                      */
                     int64_t m_denyTimeThreshold;
                     bool m_denyTimeThresholdHasBeenSet;

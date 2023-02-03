@@ -4082,6 +4082,92 @@ LiveClient::DescribeStreamPushInfoListOutcomeCallable LiveClient::DescribeStream
     return task->get_future();
 }
 
+LiveClient::DescribeTimeShiftRecordDetailOutcome LiveClient::DescribeTimeShiftRecordDetail(const DescribeTimeShiftRecordDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimeShiftRecordDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimeShiftRecordDetailResponse rsp = DescribeTimeShiftRecordDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimeShiftRecordDetailOutcome(rsp);
+        else
+            return DescribeTimeShiftRecordDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimeShiftRecordDetailOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeTimeShiftRecordDetailAsync(const DescribeTimeShiftRecordDetailRequest& request, const DescribeTimeShiftRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTimeShiftRecordDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeTimeShiftRecordDetailOutcomeCallable LiveClient::DescribeTimeShiftRecordDetailCallable(const DescribeTimeShiftRecordDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTimeShiftRecordDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTimeShiftRecordDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeTimeShiftStreamListOutcome LiveClient::DescribeTimeShiftStreamList(const DescribeTimeShiftStreamListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTimeShiftStreamList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTimeShiftStreamListResponse rsp = DescribeTimeShiftStreamListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTimeShiftStreamListOutcome(rsp);
+        else
+            return DescribeTimeShiftStreamListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTimeShiftStreamListOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeTimeShiftStreamListAsync(const DescribeTimeShiftStreamListRequest& request, const DescribeTimeShiftStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTimeShiftStreamList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeTimeShiftStreamListOutcomeCallable LiveClient::DescribeTimeShiftStreamListCallable(const DescribeTimeShiftStreamListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTimeShiftStreamListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTimeShiftStreamList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeTopClientIpSumInfoListOutcome LiveClient::DescribeTopClientIpSumInfoList(const DescribeTopClientIpSumInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTopClientIpSumInfoList");

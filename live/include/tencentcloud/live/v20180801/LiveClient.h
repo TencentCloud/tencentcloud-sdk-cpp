@@ -211,6 +211,10 @@
 #include <tencentcloud/live/v20180801/model/DescribeStreamPlayInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamPushInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeStreamPushInfoListResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeTimeShiftRecordDetailRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeTimeShiftRecordDetailResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeTimeShiftStreamListRequest.h>
+#include <tencentcloud/live/v20180801/model/DescribeTimeShiftStreamListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeTopClientIpSumInfoListRequest.h>
 #include <tencentcloud/live/v20180801/model/DescribeTopClientIpSumInfoListResponse.h>
 #include <tencentcloud/live/v20180801/model/DescribeTranscodeTaskNumRequest.h>
@@ -561,6 +565,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeStreamPushInfoListResponse> DescribeStreamPushInfoListOutcome;
                 typedef std::future<DescribeStreamPushInfoListOutcome> DescribeStreamPushInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeStreamPushInfoListRequest&, DescribeStreamPushInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeStreamPushInfoListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimeShiftRecordDetailResponse> DescribeTimeShiftRecordDetailOutcome;
+                typedef std::future<DescribeTimeShiftRecordDetailOutcome> DescribeTimeShiftRecordDetailOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeTimeShiftRecordDetailRequest&, DescribeTimeShiftRecordDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimeShiftRecordDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTimeShiftStreamListResponse> DescribeTimeShiftStreamListOutcome;
+                typedef std::future<DescribeTimeShiftStreamListOutcome> DescribeTimeShiftStreamListOutcomeCallable;
+                typedef std::function<void(const LiveClient*, const Model::DescribeTimeShiftStreamListRequest&, DescribeTimeShiftStreamListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTimeShiftStreamListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTopClientIpSumInfoListResponse> DescribeTopClientIpSumInfoListOutcome;
                 typedef std::future<DescribeTopClientIpSumInfoListOutcome> DescribeTopClientIpSumInfoListOutcomeCallable;
                 typedef std::function<void(const LiveClient*, const Model::DescribeTopClientIpSumInfoListRequest&, DescribeTopClientIpSumInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTopClientIpSumInfoListAsyncHandler;
@@ -1589,6 +1599,24 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 DescribeStreamPushInfoListOutcome DescribeStreamPushInfoList(const Model::DescribeStreamPushInfoListRequest &request);
                 void DescribeStreamPushInfoListAsync(const Model::DescribeStreamPushInfoListRequest& request, const DescribeStreamPushInfoListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeStreamPushInfoListOutcomeCallable DescribeStreamPushInfoListCallable(const Model::DescribeStreamPushInfoListRequest& request);
+
+                /**
+                 *前提调用 DescribeTimeShiftStreamList 获得请求必要参数。查询指定范围内的时移流录制详情，最大支持24小时范围查询。
+                 * @param req DescribeTimeShiftRecordDetailRequest
+                 * @return DescribeTimeShiftRecordDetailOutcome
+                 */
+                DescribeTimeShiftRecordDetailOutcome DescribeTimeShiftRecordDetail(const Model::DescribeTimeShiftRecordDetailRequest &request);
+                void DescribeTimeShiftRecordDetailAsync(const Model::DescribeTimeShiftRecordDetailRequest& request, const DescribeTimeShiftRecordDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimeShiftRecordDetailOutcomeCallable DescribeTimeShiftRecordDetailCallable(const Model::DescribeTimeShiftRecordDetailRequest& request);
+
+                /**
+                 *查询某个时间范围内所有时移流列表。最大支持查询24小时内的数据。
+                 * @param req DescribeTimeShiftStreamListRequest
+                 * @return DescribeTimeShiftStreamListOutcome
+                 */
+                DescribeTimeShiftStreamListOutcome DescribeTimeShiftStreamList(const Model::DescribeTimeShiftStreamListRequest &request);
+                void DescribeTimeShiftStreamListAsync(const Model::DescribeTimeShiftStreamListRequest& request, const DescribeTimeShiftStreamListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTimeShiftStreamListOutcomeCallable DescribeTimeShiftStreamListCallable(const Model::DescribeTimeShiftStreamListRequest& request);
 
                 /**
                  *查询某段时间top n客户端ip汇总信息（暂支持top 1000）

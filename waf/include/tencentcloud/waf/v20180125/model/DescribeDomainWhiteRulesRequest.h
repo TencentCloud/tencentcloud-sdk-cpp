@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool CountHasBeenSet() const;
 
                     /**
-                     * 获取排序方式
-                     * @return Sort 排序方式
+                     * 获取排序方式,desc表示降序，asc表示升序
+                     * @return Sort 排序方式,desc表示降序，asc表示升序
                      */
                     std::string GetSort() const;
 
                     /**
-                     * 设置排序方式
-                     * @param Sort 排序方式
+                     * 设置排序方式,desc表示降序，asc表示升序
+                     * @param Sort 排序方式,desc表示降序，asc表示升序
                      */
                     void SetSort(const std::string& _sort);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_countHasBeenSet;
 
                     /**
-                     * 排序方式
+                     * 排序方式,desc表示降序，asc表示升序
                      */
                     std::string m_sort;
                     bool m_sortHasBeenSet;

@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeTimeShiftStreamListResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeEnvsResponse::DescribeEnvsResponse() :
-    m_envListHasBeenSet(false),
-    m_totalHasBeenSet(false)
+DescribeTimeShiftStreamListResponse::DescribeTimeShiftStreamListResponse() :
+    m_totalSizeHasBeenSet(false),
+    m_streamListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeEnvsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTimeShiftStreamListResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +63,67 @@ CoreInternalOutcome DescribeEnvsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("EnvList") && !rsp["EnvList"].IsNull())
+    if (rsp.HasMember("TotalSize") && !rsp["TotalSize"].IsNull())
     {
-        if (!rsp["EnvList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `EnvList` is not array type"));
+        if (!rsp["TotalSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalSize = rsp["TotalSize"].GetInt64();
+        m_totalSizeHasBeenSet = true;
+    }
 
-        const rapidjson::Value &tmpValue = rsp["EnvList"];
+    if (rsp.HasMember("StreamList") && !rsp["StreamList"].IsNull())
+    {
+        if (!rsp["StreamList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StreamList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["StreamList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            EnvInfo item;
+            TimeShiftStreamInfo item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_envList.push_back(item);
+            m_streamList.push_back(item);
         }
-        m_envListHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
-    {
-        if (!rsp["Total"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_total = rsp["Total"].GetInt64();
-        m_totalHasBeenSet = true;
+        m_streamListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeEnvsResponse::ToJsonString() const
+string DescribeTimeShiftStreamListResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_envListHasBeenSet)
+    if (m_totalSizeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EnvList";
+        string key = "TotalSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalSize, allocator);
+    }
+
+    if (m_streamListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StreamList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_envList.begin(); itr != m_envList.end(); ++itr, ++i)
+        for (auto itr = m_streamList.begin(); itr != m_streamList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_totalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +138,24 @@ string DescribeEnvsResponse::ToJsonString() const
 }
 
 
-vector<EnvInfo> DescribeEnvsResponse::GetEnvList() const
+int64_t DescribeTimeShiftStreamListResponse::GetTotalSize() const
 {
-    return m_envList;
+    return m_totalSize;
 }
 
-bool DescribeEnvsResponse::EnvListHasBeenSet() const
+bool DescribeTimeShiftStreamListResponse::TotalSizeHasBeenSet() const
 {
-    return m_envListHasBeenSet;
+    return m_totalSizeHasBeenSet;
 }
 
-int64_t DescribeEnvsResponse::GetTotal() const
+vector<TimeShiftStreamInfo> DescribeTimeShiftStreamListResponse::GetStreamList() const
 {
-    return m_total;
+    return m_streamList;
 }
 
-bool DescribeEnvsResponse::TotalHasBeenSet() const
+bool DescribeTimeShiftStreamListResponse::StreamListHasBeenSet() const
 {
-    return m_totalHasBeenSet;
+    return m_streamListHasBeenSet;
 }
 
 

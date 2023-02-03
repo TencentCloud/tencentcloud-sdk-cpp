@@ -83,3 +83,46 @@ GoosefsClient::CreateDataRepositoryTaskOutcomeCallable GoosefsClient::CreateData
     return task->get_future();
 }
 
+GoosefsClient::DescribeDataRepositoryTaskStatusOutcome GoosefsClient::DescribeDataRepositoryTaskStatus(const DescribeDataRepositoryTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataRepositoryTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataRepositoryTaskStatusResponse rsp = DescribeDataRepositoryTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataRepositoryTaskStatusOutcome(rsp);
+        else
+            return DescribeDataRepositoryTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataRepositoryTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void GoosefsClient::DescribeDataRepositoryTaskStatusAsync(const DescribeDataRepositoryTaskStatusRequest& request, const DescribeDataRepositoryTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataRepositoryTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GoosefsClient::DescribeDataRepositoryTaskStatusOutcomeCallable GoosefsClient::DescribeDataRepositoryTaskStatusCallable(const DescribeDataRepositoryTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataRepositoryTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataRepositoryTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

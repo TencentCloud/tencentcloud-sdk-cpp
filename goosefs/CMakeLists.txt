@@ -21,12 +21,16 @@ set(goosefs_public_header
 set(goosefs_public_header_model
   include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskRequest.h
   include/tencentcloud/goosefs/v20220519/model/CreateDataRepositoryTaskResponse.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusRequest.h
+  include/tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h
   )
 
 set(goosefs_src
   src/v20220519/GoosefsClient.cpp
   src/v20220519/model/CreateDataRepositoryTaskRequest.cpp
   src/v20220519/model/CreateDataRepositoryTaskResponse.cpp
+  src/v20220519/model/DescribeDataRepositoryTaskStatusRequest.cpp
+  src/v20220519/model/DescribeDataRepositoryTaskStatusResponse.cpp
   )
 
 set(goosefs_include

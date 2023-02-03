@@ -27,7 +27,9 @@ CreateDataRepositoryTaskRequest::CreateDataRepositoryTaskRequest() :
     m_bucketHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_taskPathHasBeenSet(false),
-    m_taskNameHasBeenSet(false)
+    m_taskNameHasBeenSet(false),
+    m_repositoryTypeHasBeenSet(false),
+    m_textLocationHasBeenSet(false)
 {
 }
 
@@ -76,6 +78,22 @@ string CreateDataRepositoryTaskRequest::ToJsonString() const
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repositoryTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepositoryType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_repositoryType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_textLocationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TextLocation";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_textLocation.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -164,6 +182,38 @@ void CreateDataRepositoryTaskRequest::SetTaskName(const string& _taskName)
 bool CreateDataRepositoryTaskRequest::TaskNameHasBeenSet() const
 {
     return m_taskNameHasBeenSet;
+}
+
+string CreateDataRepositoryTaskRequest::GetRepositoryType() const
+{
+    return m_repositoryType;
+}
+
+void CreateDataRepositoryTaskRequest::SetRepositoryType(const string& _repositoryType)
+{
+    m_repositoryType = _repositoryType;
+    m_repositoryTypeHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::RepositoryTypeHasBeenSet() const
+{
+    return m_repositoryTypeHasBeenSet;
+}
+
+string CreateDataRepositoryTaskRequest::GetTextLocation() const
+{
+    return m_textLocation;
+}
+
+void CreateDataRepositoryTaskRequest::SetTextLocation(const string& _textLocation)
+{
+    m_textLocation = _textLocation;
+    m_textLocationHasBeenSet = true;
+}
+
+bool CreateDataRepositoryTaskRequest::TextLocationHasBeenSet() const
+{
+    return m_textLocationHasBeenSet;
 }
 
 

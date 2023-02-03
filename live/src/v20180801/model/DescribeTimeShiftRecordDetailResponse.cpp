@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
+#include <tencentcloud/live/v20180801/model/DescribeTimeShiftRecordDetailResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace TencentCloud::Live::V20180801::Model;
 using namespace std;
 
-DescribeEnvsResponse::DescribeEnvsResponse() :
-    m_envListHasBeenSet(false),
-    m_totalHasBeenSet(false)
+DescribeTimeShiftRecordDetailResponse::DescribeTimeShiftRecordDetailResponse() :
+    m_recordListHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeEnvsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeTimeShiftRecordDetailResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +62,49 @@ CoreInternalOutcome DescribeEnvsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("EnvList") && !rsp["EnvList"].IsNull())
+    if (rsp.HasMember("RecordList") && !rsp["RecordList"].IsNull())
     {
-        if (!rsp["EnvList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `EnvList` is not array type"));
+        if (!rsp["RecordList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RecordList` is not array type"));
 
-        const rapidjson::Value &tmpValue = rsp["EnvList"];
+        const rapidjson::Value &tmpValue = rsp["RecordList"];
         for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            EnvInfo item;
+            TimeShiftRecord item;
             CoreInternalOutcome outcome = item.Deserialize(*itr);
             if (!outcome.IsSuccess())
             {
                 outcome.GetError().SetRequestId(requestId);
                 return outcome;
             }
-            m_envList.push_back(item);
+            m_recordList.push_back(item);
         }
-        m_envListHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
-    {
-        if (!rsp["Total"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_total = rsp["Total"].GetInt64();
-        m_totalHasBeenSet = true;
+        m_recordListHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeEnvsResponse::ToJsonString() const
+string DescribeTimeShiftRecordDetailResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_envListHasBeenSet)
+    if (m_recordListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EnvList";
+        string key = "RecordList";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         int i=0;
-        for (auto itr = m_envList.begin(); itr != m_envList.end(); ++itr, ++i)
+        for (auto itr = m_recordList.begin(); itr != m_recordList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
-    }
-
-    if (m_totalHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_total, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +119,14 @@ string DescribeEnvsResponse::ToJsonString() const
 }
 
 
-vector<EnvInfo> DescribeEnvsResponse::GetEnvList() const
+vector<TimeShiftRecord> DescribeTimeShiftRecordDetailResponse::GetRecordList() const
 {
-    return m_envList;
+    return m_recordList;
 }
 
-bool DescribeEnvsResponse::EnvListHasBeenSet() const
+bool DescribeTimeShiftRecordDetailResponse::RecordListHasBeenSet() const
 {
-    return m_envListHasBeenSet;
-}
-
-int64_t DescribeEnvsResponse::GetTotal() const
-{
-    return m_total;
-}
-
-bool DescribeEnvsResponse::TotalHasBeenSet() const
-{
-    return m_totalHasBeenSet;
+    return m_recordListHasBeenSet;
 }
 
 

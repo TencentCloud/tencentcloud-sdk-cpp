@@ -58,8 +58,8 @@ namespace TencentCloud
                     bool ContextHasBeenSet() const;
 
                     /**
-                     * 获取日志查询结果是否全部返回
-                     * @return ListOver 日志查询结果是否全部返回
+                     * 获取日志查询结果是否全部返回，其中，“true”表示结果返回，“false”表示结果为返回
+                     * @return ListOver 日志查询结果是否全部返回，其中，“true”表示结果返回，“false”表示结果为返回
                      */
                     bool GetListOver() const;
 
@@ -70,8 +70,8 @@ namespace TencentCloud
                     bool ListOverHasBeenSet() const;
 
                     /**
-                     * 获取返回的是否为分析结果
-                     * @return Analysis 返回的是否为分析结果
+                     * 获取返回的是否为分析结果，其中，“true”表示返回分析结果，“false”表示未返回分析结果
+                     * @return Analysis 返回的是否为分析结果，其中，“true”表示返回分析结果，“false”表示未返回分析结果
                      */
                     bool GetAnalysis() const;
 
@@ -138,13 +138,13 @@ namespace TencentCloud
                     bool m_contextHasBeenSet;
 
                     /**
-                     * 日志查询结果是否全部返回
+                     * 日志查询结果是否全部返回，其中，“true”表示结果返回，“false”表示结果为返回
                      */
                     bool m_listOver;
                     bool m_listOverHasBeenSet;
 
                     /**
-                     * 返回的是否为分析结果
+                     * 返回的是否为分析结果，其中，“true”表示返回分析结果，“false”表示未返回分析结果
                      */
                     bool m_analysis;
                     bool m_analysisHasBeenSet;

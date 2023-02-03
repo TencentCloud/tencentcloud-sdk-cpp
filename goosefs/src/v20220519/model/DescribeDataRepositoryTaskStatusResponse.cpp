@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcb/v20180608/model/DescribeEnvsResponse.h>
+#include <tencentcloud/goosefs/v20220519/model/DescribeDataRepositoryTaskStatusResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcb::V20180608::Model;
+using namespace TencentCloud::Goosefs::V20220519::Model;
 using namespace std;
 
-DescribeEnvsResponse::DescribeEnvsResponse() :
-    m_envListHasBeenSet(false),
-    m_totalHasBeenSet(false)
+DescribeDataRepositoryTaskStatusResponse::DescribeDataRepositoryTaskStatusResponse() :
+    m_taskIdHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome DescribeEnvsResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeDataRepositoryTaskStatusResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,67 +63,50 @@ CoreInternalOutcome DescribeEnvsResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("EnvList") && !rsp["EnvList"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["EnvList"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `EnvList` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["EnvList"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        if (!rsp["TaskId"].IsString())
         {
-            EnvInfo item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_envList.push_back(item);
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_envListHasBeenSet = true;
+        m_taskId = string(rsp["TaskId"].GetString());
+        m_taskIdHasBeenSet = true;
     }
 
-    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
+    if (rsp.HasMember("Status") && !rsp["Status"].IsNull())
     {
-        if (!rsp["Total"].IsInt64())
+        if (!rsp["Status"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `Total` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Status` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_total = rsp["Total"].GetInt64();
-        m_totalHasBeenSet = true;
+        m_status = rsp["Status"].GetInt64();
+        m_statusHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeEnvsResponse::ToJsonString() const
+string DescribeDataRepositoryTaskStatusResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_envListHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "EnvList";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_envList.begin(); itr != m_envList.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
+        value.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_totalHasBeenSet)
+    if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Total";
+        string key = "Status";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_total, allocator);
+        value.AddMember(iKey, m_status, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -138,24 +121,24 @@ string DescribeEnvsResponse::ToJsonString() const
 }
 
 
-vector<EnvInfo> DescribeEnvsResponse::GetEnvList() const
+string DescribeDataRepositoryTaskStatusResponse::GetTaskId() const
 {
-    return m_envList;
+    return m_taskId;
 }
 
-bool DescribeEnvsResponse::EnvListHasBeenSet() const
+bool DescribeDataRepositoryTaskStatusResponse::TaskIdHasBeenSet() const
 {
-    return m_envListHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
-int64_t DescribeEnvsResponse::GetTotal() const
+int64_t DescribeDataRepositoryTaskStatusResponse::GetStatus() const
 {
-    return m_total;
+    return m_status;
 }
 
-bool DescribeEnvsResponse::TotalHasBeenSet() const
+bool DescribeDataRepositoryTaskStatusResponse::StatusHasBeenSet() const
 {
-    return m_totalHasBeenSet;
+    return m_statusHasBeenSet;
 }
 
 

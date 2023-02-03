@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者Bucket到文件系统(COS_TO_FS)
-                     * @return TaskType 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者Bucket到文件系统(COS_TO_FS)
+                     * 获取数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
+                     * @return TaskType 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
                      */
                     std::string GetTaskType() const;
 
                     /**
-                     * 设置数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者Bucket到文件系统(COS_TO_FS)
-                     * @param TaskType 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者Bucket到文件系统(COS_TO_FS)
+                     * 设置数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
+                     * @param TaskType 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
                      */
                     void SetTaskType(const std::string& _taskType);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取bucket名
-                     * @return Bucket bucket名
+                     * 获取COS存储桶名
+                     * @return Bucket COS存储桶名
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置bucket名
-                     * @param Bucket bucket名
+                     * 设置COS存储桶名
+                     * @param Bucket COS存储桶名
                      */
                     void SetBucket(const std::string& _bucket);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置位空, 则表示全部数据
-                     * @return TaskPath 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置位空, 则表示全部数据
+                     * 获取对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
+                     * @return TaskPath 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
                      */
                     std::string GetTaskPath() const;
 
                     /**
-                     * 设置对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置位空, 则表示全部数据
-                     * @param TaskPath 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置位空, 则表示全部数据
+                     * 设置对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
+                     * @param TaskPath 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
                      */
                     void SetTaskPath(const std::string& _taskPath);
 
@@ -132,16 +132,52 @@ namespace TencentCloud
                      */
                     bool TaskNameHasBeenSet() const;
 
+                    /**
+                     * 获取数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     * @return RepositoryType 数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     */
+                    std::string GetRepositoryType() const;
+
+                    /**
+                     * 设置数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     * @param RepositoryType 数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     */
+                    void SetRepositoryType(const std::string& _repositoryType);
+
+                    /**
+                     * 判断参数 RepositoryType 是否已赋值
+                     * @return RepositoryType 是否已赋值
+                     */
+                    bool RepositoryTypeHasBeenSet() const;
+
+                    /**
+                     * 获取文件列表下载地址，以http开头
+                     * @return TextLocation 文件列表下载地址，以http开头
+                     */
+                    std::string GetTextLocation() const;
+
+                    /**
+                     * 设置文件列表下载地址，以http开头
+                     * @param TextLocation 文件列表下载地址，以http开头
+                     */
+                    void SetTextLocation(const std::string& _textLocation);
+
+                    /**
+                     * 判断参数 TextLocation 是否已赋值
+                     * @return TextLocation 是否已赋值
+                     */
+                    bool TextLocationHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者Bucket到文件系统(COS_TO_FS)
+                     * 数据流通任务类型, FS_TO_COS(文件系统到COS Bucket),或者COS_TO_FS(COS Bucket到文件系统)
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * bucket名
+                     * COS存储桶名
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
@@ -153,7 +189,7 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置位空, 则表示全部数据
+                     * 对于FS_TO_COS, TaskPath是Bucket映射目录的相对路径, 对于COS_TO_FS是COS上的路径。如果置为空, 则表示全部数据
                      */
                     std::string m_taskPath;
                     bool m_taskPathHasBeenSet;
@@ -163,6 +199,18 @@ namespace TencentCloud
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
+
+                    /**
+                     * 数据流通方式 MSP_AFM 手动加载  RAW_AFM 按需加载
+                     */
+                    std::string m_repositoryType;
+                    bool m_repositoryTypeHasBeenSet;
+
+                    /**
+                     * 文件列表下载地址，以http开头
+                     */
+                    std::string m_textLocation;
+                    bool m_textLocationHasBeenSet;
 
                 };
             }
