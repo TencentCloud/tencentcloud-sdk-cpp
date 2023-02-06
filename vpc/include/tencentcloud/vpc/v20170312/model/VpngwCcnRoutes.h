@@ -90,6 +90,24 @@ DISABLE：不启用该路由
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取路由CIDR
+                     * @return DestinationCidrBlock 路由CIDR
+                     */
+                    std::string GetDestinationCidrBlock() const;
+
+                    /**
+                     * 设置路由CIDR
+                     * @param DestinationCidrBlock 路由CIDR
+                     */
+                    void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
+
+                    /**
+                     * 判断参数 DestinationCidrBlock 是否已赋值
+                     * @return DestinationCidrBlock 是否已赋值
+                     */
+                    bool DestinationCidrBlockHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +123,12 @@ DISABLE：不启用该路由
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 路由CIDR
+                     */
+                    std::string m_destinationCidrBlock;
+                    bool m_destinationCidrBlockHasBeenSet;
 
                 };
             }

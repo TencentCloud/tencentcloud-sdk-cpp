@@ -53,6 +53,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateResultDownloadRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSTablesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
@@ -208,6 +212,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImportTaskResponse> CreateImportTaskOutcome;
                 typedef std::future<CreateImportTaskOutcome> CreateImportTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateImportTaskRequest&, CreateImportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNotebookSessionResponse> CreateNotebookSessionOutcome;
+                typedef std::future<CreateNotebookSessionOutcome> CreateNotebookSessionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionRequest&, CreateNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResultDownloadResponse> CreateResultDownloadOutcome;
                 typedef std::future<CreateResultDownloadOutcome> CreateResultDownloadOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateResultDownloadRequest&, CreateResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResultDownloadAsyncHandler;
@@ -271,6 +278,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookSessionResponse> DescribeNotebookSessionOutcome;
+                typedef std::future<DescribeNotebookSessionOutcome> DescribeNotebookSessionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionRequest&, DescribeNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResultDownloadResponse> DescribeResultDownloadOutcome;
                 typedef std::future<DescribeResultDownloadOutcome> DescribeResultDownloadOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeResultDownloadRequest&, DescribeResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResultDownloadAsyncHandler;
@@ -491,6 +501,15 @@ namespace TencentCloud
                 CreateImportTaskOutcomeCallable CreateImportTaskCallable(const Model::CreateImportTaskRequest& request);
 
                 /**
+                 *本接口（CreateNotebookSession）用于创建notebook livy session
+                 * @param req CreateNotebookSessionRequest
+                 * @return CreateNotebookSessionOutcome
+                 */
+                CreateNotebookSessionOutcome CreateNotebookSession(const Model::CreateNotebookSessionRequest &request);
+                void CreateNotebookSessionAsync(const Model::CreateNotebookSessionRequest& request, const CreateNotebookSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNotebookSessionOutcomeCallable CreateNotebookSessionCallable(const Model::CreateNotebookSessionRequest& request);
+
+                /**
                  *创建查询结果下载任务
                  * @param req CreateResultDownloadRequest
                  * @return CreateResultDownloadOutcome
@@ -678,6 +697,15 @@ namespace TencentCloud
                 DescribeDatabasesOutcome DescribeDatabases(const Model::DescribeDatabasesRequest &request);
                 void DescribeDatabasesAsync(const Model::DescribeDatabasesRequest& request, const DescribeDatabasesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDatabasesOutcomeCallable DescribeDatabasesCallable(const Model::DescribeDatabasesRequest& request);
+
+                /**
+                 *本接口（DescribeNotebookSession）用于获取notebook livy session详情信息
+                 * @param req DescribeNotebookSessionRequest
+                 * @return DescribeNotebookSessionOutcome
+                 */
+                DescribeNotebookSessionOutcome DescribeNotebookSession(const Model::DescribeNotebookSessionRequest &request);
+                void DescribeNotebookSessionAsync(const Model::DescribeNotebookSessionRequest& request, const DescribeNotebookSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookSessionOutcomeCallable DescribeNotebookSessionCallable(const Model::DescribeNotebookSessionRequest& request);
 
                 /**
                  *查询结果下载任务

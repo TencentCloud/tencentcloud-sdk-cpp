@@ -79,6 +79,8 @@
 #include <tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/ModifyAreaBanStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/ModifyCustomRuleStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleRequest.h>
@@ -93,6 +95,10 @@
 #include <tencentcloud/waf/v20180125/model/PostAttackDownloadTaskResponse.h>
 #include <tencentcloud/waf/v20180125/model/SearchAccessLogRequest.h>
 #include <tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h>
+#include <tencentcloud/waf/v20180125/model/SearchAttackLogRequest.h>
+#include <tencentcloud/waf/v20180125/model/SearchAttackLogResponse.h>
+#include <tencentcloud/waf/v20180125/model/SwitchDomainRulesRequest.h>
+#include <tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/UpsertIpAccessControlRequest.h>
 #include <tencentcloud/waf/v20180125/model/UpsertIpAccessControlResponse.h>
 
@@ -193,6 +199,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyAccessPeriodResponse> ModifyAccessPeriodOutcome;
                 typedef std::future<ModifyAccessPeriodOutcome> ModifyAccessPeriodOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyAccessPeriodRequest&, ModifyAccessPeriodOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAccessPeriodAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAreaBanStatusResponse> ModifyAreaBanStatusOutcome;
+                typedef std::future<ModifyAreaBanStatusOutcome> ModifyAreaBanStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::ModifyAreaBanStatusRequest&, ModifyAreaBanStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAreaBanStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCustomRuleStatusResponse> ModifyCustomRuleStatusOutcome;
                 typedef std::future<ModifyCustomRuleStatusOutcome> ModifyCustomRuleStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::ModifyCustomRuleStatusRequest&, ModifyCustomRuleStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomRuleStatusAsyncHandler;
@@ -214,6 +223,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SearchAccessLogResponse> SearchAccessLogOutcome;
                 typedef std::future<SearchAccessLogOutcome> SearchAccessLogOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::SearchAccessLogRequest&, SearchAccessLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAccessLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchAttackLogResponse> SearchAttackLogOutcome;
+                typedef std::future<SearchAttackLogOutcome> SearchAttackLogOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::SearchAttackLogRequest&, SearchAttackLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAttackLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchDomainRulesResponse> SwitchDomainRulesOutcome;
+                typedef std::future<SwitchDomainRulesOutcome> SwitchDomainRulesOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::SwitchDomainRulesRequest&, SwitchDomainRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchDomainRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpsertIpAccessControlResponse> UpsertIpAccessControlOutcome;
                 typedef std::future<UpsertIpAccessControlOutcome> UpsertIpAccessControlOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::UpsertIpAccessControlRequest&, UpsertIpAccessControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpsertIpAccessControlAsyncHandler;
@@ -475,6 +490,15 @@ namespace TencentCloud
                 ModifyAccessPeriodOutcomeCallable ModifyAccessPeriodCallable(const Model::ModifyAccessPeriodRequest& request);
 
                 /**
+                 *修改防护域名的地域封禁状态
+                 * @param req ModifyAreaBanStatusRequest
+                 * @return ModifyAreaBanStatusOutcome
+                 */
+                ModifyAreaBanStatusOutcome ModifyAreaBanStatus(const Model::ModifyAreaBanStatusRequest &request);
+                void ModifyAreaBanStatusAsync(const Model::ModifyAreaBanStatusRequest& request, const ModifyAreaBanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAreaBanStatusOutcomeCallable ModifyAreaBanStatusCallable(const Model::ModifyAreaBanStatusRequest& request);
+
+                /**
                  *开启或禁用访问控制（自定义策略）
                  * @param req ModifyCustomRuleStatusRequest
                  * @return ModifyCustomRuleStatusOutcome
@@ -536,6 +560,24 @@ namespace TencentCloud
                 SearchAccessLogOutcome SearchAccessLog(const Model::SearchAccessLogRequest &request);
                 void SearchAccessLogAsync(const Model::SearchAccessLogRequest& request, const SearchAccessLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SearchAccessLogOutcomeCallable SearchAccessLogCallable(const Model::SearchAccessLogRequest& request);
+
+                /**
+                 *新版本CLS接口存在参数变化，query改成了query_string支持lucence语法接口搜索查询。
+                 * @param req SearchAttackLogRequest
+                 * @return SearchAttackLogOutcome
+                 */
+                SearchAttackLogOutcome SearchAttackLog(const Model::SearchAttackLogRequest &request);
+                void SearchAttackLogAsync(const Model::SearchAttackLogRequest& request, const SearchAttackLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchAttackLogOutcomeCallable SearchAttackLogCallable(const Model::SearchAttackLogRequest& request);
+
+                /**
+                 *切换域名的规则开关
+                 * @param req SwitchDomainRulesRequest
+                 * @return SwitchDomainRulesOutcome
+                 */
+                SwitchDomainRulesOutcome SwitchDomainRules(const Model::SwitchDomainRulesRequest &request);
+                void SwitchDomainRulesAsync(const Model::SwitchDomainRulesRequest& request, const SwitchDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchDomainRulesOutcomeCallable SwitchDomainRulesCallable(const Model::SwitchDomainRulesRequest& request);
 
                 /**
                  *Waf IP黑白名单Upsert接口

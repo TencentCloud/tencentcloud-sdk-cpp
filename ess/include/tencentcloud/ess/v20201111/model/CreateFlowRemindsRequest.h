@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool OperatorHasBeenSet() const;
 
                     /**
-                     * 获取需要执行撤回的签署流程id数组，最多100个
-                     * @return FlowIds 需要执行撤回的签署流程id数组，最多100个
+                     * 获取需要执行催办的签署流程id数组，最多100个
+                     * @return FlowIds 需要执行催办的签署流程id数组，最多100个
                      */
                     std::vector<std::string> GetFlowIds() const;
 
                     /**
-                     * 设置需要执行撤回的签署流程id数组，最多100个
-                     * @param FlowIds 需要执行撤回的签署流程id数组，最多100个
+                     * 设置需要执行催办的签署流程id数组，最多100个
+                     * @param FlowIds 需要执行催办的签署流程id数组，最多100个
                      */
                     void SetFlowIds(const std::vector<std::string>& _flowIds);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_operatorHasBeenSet;
 
                     /**
-                     * 需要执行撤回的签署流程id数组，最多100个
+                     * 需要执行催办的签署流程id数组，最多100个
                      */
                     std::vector<std::string> m_flowIds;
                     bool m_flowIdsHasBeenSet;

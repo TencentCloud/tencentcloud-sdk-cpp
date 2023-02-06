@@ -69,6 +69,10 @@
 #include <tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationSealsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h>
@@ -164,6 +168,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationEmployeesResponse> DescribeIntegrationEmployeesOutcome;
                 typedef std::future<DescribeIntegrationEmployeesOutcome> DescribeIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeIntegrationEmployeesRequest&, DescribeIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationEmployeesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIntegrationMainOrganizationUserResponse> DescribeIntegrationMainOrganizationUserOutcome;
+                typedef std::future<DescribeIntegrationMainOrganizationUserOutcome> DescribeIntegrationMainOrganizationUserOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeIntegrationMainOrganizationUserRequest&, DescribeIntegrationMainOrganizationUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationMainOrganizationUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOrganizationGroupOrganizationsResponse> DescribeOrganizationGroupOrganizationsOutcome;
+                typedef std::future<DescribeOrganizationGroupOrganizationsOutcome> DescribeOrganizationGroupOrganizationsOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeOrganizationGroupOrganizationsRequest&, DescribeOrganizationGroupOrganizationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationGroupOrganizationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationSealsResponse> DescribeOrganizationSealsOutcome;
                 typedef std::future<DescribeOrganizationSealsOutcome> DescribeOrganizationSealsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeOrganizationSealsRequest&, DescribeOrganizationSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationSealsAsyncHandler;
@@ -430,6 +440,24 @@ namespace TencentCloud
                 DescribeIntegrationEmployeesOutcome DescribeIntegrationEmployees(const Model::DescribeIntegrationEmployeesRequest &request);
                 void DescribeIntegrationEmployeesAsync(const Model::DescribeIntegrationEmployeesRequest& request, const DescribeIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIntegrationEmployeesOutcomeCallable DescribeIntegrationEmployeesCallable(const Model::DescribeIntegrationEmployeesRequest& request);
+
+                /**
+                 *通过子企业影子账号查询主企业员工账号
+                 * @param req DescribeIntegrationMainOrganizationUserRequest
+                 * @return DescribeIntegrationMainOrganizationUserOutcome
+                 */
+                DescribeIntegrationMainOrganizationUserOutcome DescribeIntegrationMainOrganizationUser(const Model::DescribeIntegrationMainOrganizationUserRequest &request);
+                void DescribeIntegrationMainOrganizationUserAsync(const Model::DescribeIntegrationMainOrganizationUserRequest& request, const DescribeIntegrationMainOrganizationUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIntegrationMainOrganizationUserOutcomeCallable DescribeIntegrationMainOrganizationUserCallable(const Model::DescribeIntegrationMainOrganizationUserRequest& request);
+
+                /**
+                 *此API接口用户查询加入集团的成员企业
+                 * @param req DescribeOrganizationGroupOrganizationsRequest
+                 * @return DescribeOrganizationGroupOrganizationsOutcome
+                 */
+                DescribeOrganizationGroupOrganizationsOutcome DescribeOrganizationGroupOrganizations(const Model::DescribeOrganizationGroupOrganizationsRequest &request);
+                void DescribeOrganizationGroupOrganizationsAsync(const Model::DescribeOrganizationGroupOrganizationsRequest& request, const DescribeOrganizationGroupOrganizationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOrganizationGroupOrganizationsOutcomeCallable DescribeOrganizationGroupOrganizationsCallable(const Model::DescribeOrganizationGroupOrganizationsRequest& request);
 
                 /**
                  *查询企业印章的列表，需要操作者具有查询印章权限

@@ -1244,6 +1244,49 @@ WafClient::ModifyAccessPeriodOutcomeCallable WafClient::ModifyAccessPeriodCallab
     return task->get_future();
 }
 
+WafClient::ModifyAreaBanStatusOutcome WafClient::ModifyAreaBanStatus(const ModifyAreaBanStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAreaBanStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAreaBanStatusResponse rsp = ModifyAreaBanStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAreaBanStatusOutcome(rsp);
+        else
+            return ModifyAreaBanStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAreaBanStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyAreaBanStatusAsync(const ModifyAreaBanStatusRequest& request, const ModifyAreaBanStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAreaBanStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyAreaBanStatusOutcomeCallable WafClient::ModifyAreaBanStatusCallable(const ModifyAreaBanStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAreaBanStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAreaBanStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::ModifyCustomRuleStatusOutcome WafClient::ModifyCustomRuleStatus(const ModifyCustomRuleStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCustomRuleStatus");
@@ -1538,6 +1581,92 @@ WafClient::SearchAccessLogOutcomeCallable WafClient::SearchAccessLogCallable(con
         [this, request]()
         {
             return this->SearchAccessLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::SearchAttackLogOutcome WafClient::SearchAttackLog(const SearchAttackLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchAttackLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchAttackLogResponse rsp = SearchAttackLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchAttackLogOutcome(rsp);
+        else
+            return SearchAttackLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchAttackLogOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::SearchAttackLogAsync(const SearchAttackLogRequest& request, const SearchAttackLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchAttackLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::SearchAttackLogOutcomeCallable WafClient::SearchAttackLogCallable(const SearchAttackLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchAttackLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchAttackLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::SwitchDomainRulesOutcome WafClient::SwitchDomainRules(const SwitchDomainRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "SwitchDomainRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SwitchDomainRulesResponse rsp = SwitchDomainRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SwitchDomainRulesOutcome(rsp);
+        else
+            return SwitchDomainRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return SwitchDomainRulesOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::SwitchDomainRulesAsync(const SwitchDomainRulesRequest& request, const SwitchDomainRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SwitchDomainRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::SwitchDomainRulesOutcomeCallable WafClient::SwitchDomainRulesCallable(const SwitchDomainRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SwitchDomainRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->SwitchDomainRules(request);
         }
     );
 
