@@ -139,6 +139,8 @@
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataResponse.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleRequest.h>
+#include <tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ModifySparkAppResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ModifyUserRequest.h>
@@ -341,6 +343,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::LockMetaDataResponse> LockMetaDataOutcome;
                 typedef std::future<LockMetaDataOutcome> LockMetaDataOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::LockMetaDataRequest&, LockMetaDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> LockMetaDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyGovernEventRuleResponse> ModifyGovernEventRuleOutcome;
+                typedef std::future<ModifyGovernEventRuleOutcome> ModifyGovernEventRuleOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::ModifyGovernEventRuleRequest&, ModifyGovernEventRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGovernEventRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySparkAppResponse> ModifySparkAppOutcome;
                 typedef std::future<ModifySparkAppOutcome> ModifySparkAppOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ModifySparkAppRequest&, ModifySparkAppOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySparkAppAsyncHandler;
@@ -886,6 +891,15 @@ namespace TencentCloud
                 LockMetaDataOutcome LockMetaData(const Model::LockMetaDataRequest &request);
                 void LockMetaDataAsync(const Model::LockMetaDataRequest& request, const LockMetaDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 LockMetaDataOutcomeCallable LockMetaDataCallable(const Model::LockMetaDataRequest& request);
+
+                /**
+                 *修改数据治理事件阈值
+                 * @param req ModifyGovernEventRuleRequest
+                 * @return ModifyGovernEventRuleOutcome
+                 */
+                ModifyGovernEventRuleOutcome ModifyGovernEventRule(const Model::ModifyGovernEventRuleRequest &request);
+                void ModifyGovernEventRuleAsync(const Model::ModifyGovernEventRuleRequest& request, const ModifyGovernEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyGovernEventRuleOutcomeCallable ModifyGovernEventRuleCallable(const Model::ModifyGovernEventRuleRequest& request);
 
                 /**
                  *更新spark应用

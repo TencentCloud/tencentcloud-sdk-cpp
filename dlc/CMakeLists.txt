@@ -28,6 +28,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h
   include/tencentcloud/dlc/v20210125/model/Asset.h
   include/tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h
+  include/tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateStoreLocationResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h
@@ -189,6 +190,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/CreateDMSDatabaseRequest.h
   include/tencentcloud/dlc/v20210125/model/DetachWorkGroupPolicyRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSTableRequest.h
+  include/tencentcloud/dlc/v20210125/model/ModifyGovernEventRuleRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeViewsResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeScriptsResponse.h
   include/tencentcloud/dlc/v20210125/model/DatabaseResponseInfo.h
@@ -207,6 +209,7 @@ set(dlc_src
   src/v20210125/model/ListTaskJobLogDetailResponse.cpp
   src/v20210125/model/Asset.cpp
   src/v20210125/model/CreateResultDownloadResponse.cpp
+  src/v20210125/model/ModifyGovernEventRuleResponse.cpp
   src/v20210125/model/CreateDMSDatabaseResponse.cpp
   src/v20210125/model/CreateStoreLocationResponse.cpp
   src/v20210125/model/DescribeNotebookSessionResponse.cpp
@@ -368,6 +371,7 @@ set(dlc_src
   src/v20210125/model/CreateDMSDatabaseRequest.cpp
   src/v20210125/model/DetachWorkGroupPolicyRequest.cpp
   src/v20210125/model/DescribeDMSTableRequest.cpp
+  src/v20210125/model/ModifyGovernEventRuleRequest.cpp
   src/v20210125/model/DescribeViewsResponse.cpp
   src/v20210125/model/DescribeScriptsResponse.cpp
   src/v20210125/model/DatabaseResponseInfo.cpp

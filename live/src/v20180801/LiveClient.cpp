@@ -642,6 +642,92 @@ LiveClient::CreateLiveSnapshotTemplateOutcomeCallable LiveClient::CreateLiveSnap
     return task->get_future();
 }
 
+LiveClient::CreateLiveTimeShiftRuleOutcome LiveClient::CreateLiveTimeShiftRule(const CreateLiveTimeShiftRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveTimeShiftRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveTimeShiftRuleResponse rsp = CreateLiveTimeShiftRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveTimeShiftRuleOutcome(rsp);
+        else
+            return CreateLiveTimeShiftRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveTimeShiftRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLiveTimeShiftRuleAsync(const CreateLiveTimeShiftRuleRequest& request, const CreateLiveTimeShiftRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLiveTimeShiftRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateLiveTimeShiftRuleOutcomeCallable LiveClient::CreateLiveTimeShiftRuleCallable(const CreateLiveTimeShiftRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLiveTimeShiftRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLiveTimeShiftRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::CreateLiveTimeShiftTemplateOutcome LiveClient::CreateLiveTimeShiftTemplate(const CreateLiveTimeShiftTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateLiveTimeShiftTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateLiveTimeShiftTemplateResponse rsp = CreateLiveTimeShiftTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateLiveTimeShiftTemplateOutcome(rsp);
+        else
+            return CreateLiveTimeShiftTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateLiveTimeShiftTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::CreateLiveTimeShiftTemplateAsync(const CreateLiveTimeShiftTemplateRequest& request, const CreateLiveTimeShiftTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateLiveTimeShiftTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::CreateLiveTimeShiftTemplateOutcomeCallable LiveClient::CreateLiveTimeShiftTemplateCallable(const CreateLiveTimeShiftTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateLiveTimeShiftTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateLiveTimeShiftTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::CreateLiveTranscodeRuleOutcome LiveClient::CreateLiveTranscodeRule(const CreateLiveTranscodeRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateLiveTranscodeRule");
@@ -1280,6 +1366,92 @@ LiveClient::DeleteLiveSnapshotTemplateOutcomeCallable LiveClient::DeleteLiveSnap
         [this, request]()
         {
             return this->DeleteLiveSnapshotTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteLiveTimeShiftRuleOutcome LiveClient::DeleteLiveTimeShiftRule(const DeleteLiveTimeShiftRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveTimeShiftRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveTimeShiftRuleResponse rsp = DeleteLiveTimeShiftRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveTimeShiftRuleOutcome(rsp);
+        else
+            return DeleteLiveTimeShiftRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveTimeShiftRuleOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLiveTimeShiftRuleAsync(const DeleteLiveTimeShiftRuleRequest& request, const DeleteLiveTimeShiftRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLiveTimeShiftRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveTimeShiftRuleOutcomeCallable LiveClient::DeleteLiveTimeShiftRuleCallable(const DeleteLiveTimeShiftRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLiveTimeShiftRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLiveTimeShiftRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DeleteLiveTimeShiftTemplateOutcome LiveClient::DeleteLiveTimeShiftTemplate(const DeleteLiveTimeShiftTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLiveTimeShiftTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLiveTimeShiftTemplateResponse rsp = DeleteLiveTimeShiftTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLiveTimeShiftTemplateOutcome(rsp);
+        else
+            return DeleteLiveTimeShiftTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLiveTimeShiftTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DeleteLiveTimeShiftTemplateAsync(const DeleteLiveTimeShiftTemplateRequest& request, const DeleteLiveTimeShiftTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLiveTimeShiftTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DeleteLiveTimeShiftTemplateOutcomeCallable LiveClient::DeleteLiveTimeShiftTemplateCallable(const DeleteLiveTimeShiftTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLiveTimeShiftTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLiveTimeShiftTemplate(request);
         }
     );
 
@@ -3179,6 +3351,92 @@ LiveClient::DescribeLiveTimeShiftBillInfoListOutcomeCallable LiveClient::Describ
     return task->get_future();
 }
 
+LiveClient::DescribeLiveTimeShiftRulesOutcome LiveClient::DescribeLiveTimeShiftRules(const DescribeLiveTimeShiftRulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveTimeShiftRules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveTimeShiftRulesResponse rsp = DescribeLiveTimeShiftRulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveTimeShiftRulesOutcome(rsp);
+        else
+            return DescribeLiveTimeShiftRulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveTimeShiftRulesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveTimeShiftRulesAsync(const DescribeLiveTimeShiftRulesRequest& request, const DescribeLiveTimeShiftRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveTimeShiftRules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveTimeShiftRulesOutcomeCallable LiveClient::DescribeLiveTimeShiftRulesCallable(const DescribeLiveTimeShiftRulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveTimeShiftRulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveTimeShiftRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::DescribeLiveTimeShiftTemplatesOutcome LiveClient::DescribeLiveTimeShiftTemplates(const DescribeLiveTimeShiftTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveTimeShiftTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveTimeShiftTemplatesResponse rsp = DescribeLiveTimeShiftTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveTimeShiftTemplatesOutcome(rsp);
+        else
+            return DescribeLiveTimeShiftTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveTimeShiftTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::DescribeLiveTimeShiftTemplatesAsync(const DescribeLiveTimeShiftTemplatesRequest& request, const DescribeLiveTimeShiftTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveTimeShiftTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::DescribeLiveTimeShiftTemplatesOutcomeCallable LiveClient::DescribeLiveTimeShiftTemplatesCallable(const DescribeLiveTimeShiftTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveTimeShiftTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveTimeShiftTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LiveClient::DescribeLiveTranscodeDetailInfoOutcome LiveClient::DescribeLiveTranscodeDetailInfo(const DescribeLiveTranscodeDetailInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLiveTranscodeDetailInfo");
@@ -4892,6 +5150,49 @@ LiveClient::ModifyLiveSnapshotTemplateOutcomeCallable LiveClient::ModifyLiveSnap
         [this, request]()
         {
             return this->ModifyLiveSnapshotTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LiveClient::ModifyLiveTimeShiftTemplateOutcome LiveClient::ModifyLiveTimeShiftTemplate(const ModifyLiveTimeShiftTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyLiveTimeShiftTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyLiveTimeShiftTemplateResponse rsp = ModifyLiveTimeShiftTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyLiveTimeShiftTemplateOutcome(rsp);
+        else
+            return ModifyLiveTimeShiftTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyLiveTimeShiftTemplateOutcome(outcome.GetError());
+    }
+}
+
+void LiveClient::ModifyLiveTimeShiftTemplateAsync(const ModifyLiveTimeShiftTemplateRequest& request, const ModifyLiveTimeShiftTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyLiveTimeShiftTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LiveClient::ModifyLiveTimeShiftTemplateOutcomeCallable LiveClient::ModifyLiveTimeShiftTemplateCallable(const ModifyLiveTimeShiftTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyLiveTimeShiftTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyLiveTimeShiftTemplate(request);
         }
     );
 

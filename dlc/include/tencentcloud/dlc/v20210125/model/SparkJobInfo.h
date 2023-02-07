@@ -36,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * spark作业详情
+                * spark作业详情。
                 */
                 class SparkJobInfo : public AbstractModel
                 {
@@ -612,6 +612,28 @@ namespace TencentCloud
                     bool JobArchivesHasBeenSet() const;
 
                     /**
+                     * 获取Spark Image 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SparkImage Spark Image 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSparkImage() const;
+
+                    /**
+                     * 设置Spark Image 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SparkImage Spark Image 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSparkImage(const std::string& _sparkImage);
+
+                    /**
+                     * 判断参数 SparkImage 是否已赋值
+                     * @return SparkImage 是否已赋值
+                     */
+                    bool SparkImageHasBeenSet() const;
+
+                    /**
                      * 获取pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return JobPythonFiles pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
@@ -676,6 +698,28 @@ namespace TencentCloud
                      * @return DataEngineStatus 是否已赋值
                      */
                     bool DataEngineStatusHasBeenSet() const;
+
+                    /**
+                     * 获取指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return JobExecutorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetJobExecutorMaxNumbers() const;
+
+                    /**
+                     * 设置指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param JobExecutorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetJobExecutorMaxNumbers(const int64_t& _jobExecutorMaxNumbers);
+
+                    /**
+                     * 判断参数 JobExecutorMaxNumbers 是否已赋值
+                     * @return JobExecutorMaxNumbers 是否已赋值
+                     */
+                    bool JobExecutorMaxNumbersHasBeenSet() const;
 
                 private:
 
@@ -866,6 +910,13 @@ namespace TencentCloud
                     bool m_jobArchivesHasBeenSet;
 
                     /**
+                     * Spark Image 版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sparkImage;
+                    bool m_sparkImageHasBeenSet;
+
+                    /**
                      * pyspark：python依赖, 除py文件外，还支持zip/egg等归档格式，多文件以逗号分隔
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -885,6 +936,13 @@ namespace TencentCloud
                      */
                     int64_t m_dataEngineStatus;
                     bool m_dataEngineStatusHasBeenSet;
+
+                    /**
+                     * 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于JobExecutorNums
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_jobExecutorMaxNumbers;
+                    bool m_jobExecutorMaxNumbersHasBeenSet;
 
                 };
             }

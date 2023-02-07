@@ -2534,6 +2534,49 @@ DlcClient::LockMetaDataOutcomeCallable DlcClient::LockMetaDataCallable(const Loc
     return task->get_future();
 }
 
+DlcClient::ModifyGovernEventRuleOutcome DlcClient::ModifyGovernEventRule(const ModifyGovernEventRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGovernEventRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGovernEventRuleResponse rsp = ModifyGovernEventRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGovernEventRuleOutcome(rsp);
+        else
+            return ModifyGovernEventRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGovernEventRuleOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::ModifyGovernEventRuleAsync(const ModifyGovernEventRuleRequest& request, const ModifyGovernEventRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGovernEventRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::ModifyGovernEventRuleOutcomeCallable DlcClient::ModifyGovernEventRuleCallable(const ModifyGovernEventRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGovernEventRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGovernEventRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::ModifySparkAppOutcome DlcClient::ModifySparkApp(const ModifySparkAppRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifySparkApp");

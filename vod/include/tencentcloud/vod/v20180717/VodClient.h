@@ -57,6 +57,8 @@
 #include <tencentcloud/vod/v20180717/model/CreateProcedureTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/CreateRoundPlayRequest.h>
+#include <tencentcloud/vod/v20180717/model/CreateRoundPlayResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/CreateSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/CreateSnapshotByTimeOffsetTemplateRequest.h>
@@ -101,6 +103,8 @@
 #include <tencentcloud/vod/v20180717/model/DeleteProcedureTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/DeleteRoundPlayRequest.h>
+#include <tencentcloud/vod/v20180717/model/DeleteRoundPlayResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/DeleteSampleSnapshotTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/DeleteSnapshotByTimeOffsetTemplateRequest.h>
@@ -177,6 +181,8 @@
 #include <tencentcloud/vod/v20180717/model/DescribeReviewDetailsResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeReviewTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeReviewTemplatesResponse.h>
+#include <tencentcloud/vod/v20180717/model/DescribeRoundPlaysRequest.h>
+#include <tencentcloud/vod/v20180717/model/DescribeRoundPlaysResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeSampleSnapshotTemplatesRequest.h>
 #include <tencentcloud/vod/v20180717/model/DescribeSampleSnapshotTemplatesResponse.h>
 #include <tencentcloud/vod/v20180717/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h>
@@ -243,6 +249,8 @@
 #include <tencentcloud/vod/v20180717/model/ModifyPersonSampleResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifyReviewTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifyReviewTemplateResponse.h>
+#include <tencentcloud/vod/v20180717/model/ModifyRoundPlayRequest.h>
+#include <tencentcloud/vod/v20180717/model/ModifyRoundPlayResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifySampleSnapshotTemplateRequest.h>
 #include <tencentcloud/vod/v20180717/model/ModifySampleSnapshotTemplateResponse.h>
 #include <tencentcloud/vod/v20180717/model/ModifySnapshotByTimeOffsetTemplateRequest.h>
@@ -366,6 +374,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateReviewTemplateResponse> CreateReviewTemplateOutcome;
                 typedef std::future<CreateReviewTemplateOutcome> CreateReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateReviewTemplateRequest&, CreateReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateRoundPlayResponse> CreateRoundPlayOutcome;
+                typedef std::future<CreateRoundPlayOutcome> CreateRoundPlayOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::CreateRoundPlayRequest&, CreateRoundPlayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateRoundPlayAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSampleSnapshotTemplateResponse> CreateSampleSnapshotTemplateOutcome;
                 typedef std::future<CreateSampleSnapshotTemplateOutcome> CreateSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::CreateSampleSnapshotTemplateRequest&, CreateSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSampleSnapshotTemplateAsyncHandler;
@@ -432,6 +443,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteReviewTemplateResponse> DeleteReviewTemplateOutcome;
                 typedef std::future<DeleteReviewTemplateOutcome> DeleteReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteReviewTemplateRequest&, DeleteReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteRoundPlayResponse> DeleteRoundPlayOutcome;
+                typedef std::future<DeleteRoundPlayOutcome> DeleteRoundPlayOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DeleteRoundPlayRequest&, DeleteRoundPlayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoundPlayAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSampleSnapshotTemplateResponse> DeleteSampleSnapshotTemplateOutcome;
                 typedef std::future<DeleteSampleSnapshotTemplateOutcome> DeleteSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DeleteSampleSnapshotTemplateRequest&, DeleteSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSampleSnapshotTemplateAsyncHandler;
@@ -546,6 +560,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReviewTemplatesResponse> DescribeReviewTemplatesOutcome;
                 typedef std::future<DescribeReviewTemplatesOutcome> DescribeReviewTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeReviewTemplatesRequest&, DescribeReviewTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReviewTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRoundPlaysResponse> DescribeRoundPlaysOutcome;
+                typedef std::future<DescribeRoundPlaysOutcome> DescribeRoundPlaysOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::DescribeRoundPlaysRequest&, DescribeRoundPlaysOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoundPlaysAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSampleSnapshotTemplatesResponse> DescribeSampleSnapshotTemplatesOutcome;
                 typedef std::future<DescribeSampleSnapshotTemplatesOutcome> DescribeSampleSnapshotTemplatesOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::DescribeSampleSnapshotTemplatesRequest&, DescribeSampleSnapshotTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSampleSnapshotTemplatesAsyncHandler;
@@ -645,6 +662,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyReviewTemplateResponse> ModifyReviewTemplateOutcome;
                 typedef std::future<ModifyReviewTemplateOutcome> ModifyReviewTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifyReviewTemplateRequest&, ModifyReviewTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyReviewTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRoundPlayResponse> ModifyRoundPlayOutcome;
+                typedef std::future<ModifyRoundPlayOutcome> ModifyRoundPlayOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::ModifyRoundPlayRequest&, ModifyRoundPlayOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRoundPlayAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySampleSnapshotTemplateResponse> ModifySampleSnapshotTemplateOutcome;
                 typedef std::future<ModifySampleSnapshotTemplateOutcome> ModifySampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::ModifySampleSnapshotTemplateRequest&, ModifySampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySampleSnapshotTemplateAsyncHandler;
@@ -909,6 +929,17 @@ namespace TencentCloud
                 CreateReviewTemplateOutcomeCallable CreateReviewTemplateCallable(const Model::CreateReviewTemplateRequest& request);
 
                 /**
+                 *该接口用于创建轮播播单，数量上限：100。
+轮播播单的每个文件可以指定源文件，也可以指定某个转码文件。
+指定的文件必须是hls格式，所有的播单文件最好保持相同的码率和分辨率。
+                 * @param req CreateRoundPlayRequest
+                 * @return CreateRoundPlayOutcome
+                 */
+                CreateRoundPlayOutcome CreateRoundPlay(const Model::CreateRoundPlayRequest &request);
+                void CreateRoundPlayAsync(const Model::CreateRoundPlayRequest& request, const CreateRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateRoundPlayOutcomeCallable CreateRoundPlayCallable(const Model::CreateRoundPlayRequest& request);
+
+                /**
                  *创建用户自定义采样截图模板，数量上限：16。
                  * @param req CreateSampleSnapshotTemplateRequest
                  * @return CreateSampleSnapshotTemplateOutcome
@@ -1116,6 +1147,15 @@ namespace TencentCloud
                 DeleteReviewTemplateOutcome DeleteReviewTemplate(const Model::DeleteReviewTemplateRequest &request);
                 void DeleteReviewTemplateAsync(const Model::DeleteReviewTemplateRequest& request, const DeleteReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteReviewTemplateOutcomeCallable DeleteReviewTemplateCallable(const Model::DeleteReviewTemplateRequest& request);
+
+                /**
+                 *该接口用于删除轮播播单。
+                 * @param req DeleteRoundPlayRequest
+                 * @return DeleteRoundPlayOutcome
+                 */
+                DeleteRoundPlayOutcome DeleteRoundPlay(const Model::DeleteRoundPlayRequest &request);
+                void DeleteRoundPlayAsync(const Model::DeleteRoundPlayRequest& request, const DeleteRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteRoundPlayOutcomeCallable DeleteRoundPlayCallable(const Model::DeleteRoundPlayRequest& request);
 
                 /**
                  *删除用户自定义采样截图模板。
@@ -1533,6 +1573,15 @@ namespace TencentCloud
                 DescribeReviewTemplatesOutcomeCallable DescribeReviewTemplatesCallable(const Model::DescribeReviewTemplatesRequest& request);
 
                 /**
+                 *该接口用于获取轮播播单列表。
+                 * @param req DescribeRoundPlaysRequest
+                 * @return DescribeRoundPlaysOutcome
+                 */
+                DescribeRoundPlaysOutcome DescribeRoundPlays(const Model::DescribeRoundPlaysRequest &request);
+                void DescribeRoundPlaysAsync(const Model::DescribeRoundPlaysRequest& request, const DescribeRoundPlaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRoundPlaysOutcomeCallable DescribeRoundPlaysCallable(const Model::DescribeRoundPlaysRequest& request);
+
+                /**
                  *查询采样截图模板，支持根据条件，分页查询。
                  * @param req DescribeSampleSnapshotTemplatesRequest
                  * @return DescribeSampleSnapshotTemplatesOutcome
@@ -1897,6 +1946,16 @@ namespace TencentCloud
                 ModifyReviewTemplateOutcome ModifyReviewTemplate(const Model::ModifyReviewTemplateRequest &request);
                 void ModifyReviewTemplateAsync(const Model::ModifyReviewTemplateRequest& request, const ModifyReviewTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyReviewTemplateOutcomeCallable ModifyReviewTemplateCallable(const Model::ModifyReviewTemplateRequest& request);
+
+                /**
+                 *该接口用于修改轮播播单。
+修改后只有新的播放请求会生效，已经在播放中的用户在七天之内还可以播放修改前的播单。
+                 * @param req ModifyRoundPlayRequest
+                 * @return ModifyRoundPlayOutcome
+                 */
+                ModifyRoundPlayOutcome ModifyRoundPlay(const Model::ModifyRoundPlayRequest &request);
+                void ModifyRoundPlayAsync(const Model::ModifyRoundPlayRequest& request, const ModifyRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRoundPlayOutcomeCallable ModifyRoundPlayCallable(const Model::ModifyRoundPlayRequest& request);
 
                 /**
                  *修改用户自定义采样截图模板。

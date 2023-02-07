@@ -85,6 +85,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/DescribeClustersResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeDBSecurityGroupsResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeFlowRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/DescribeFlowResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceDetailResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/DescribeInstanceSlowQueriesRequest.h>
@@ -282,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFlowResponse> DescribeFlowOutcome;
+                typedef std::future<DescribeFlowOutcome> DescribeFlowOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::DescribeFlowRequest&, DescribeFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceDetailResponse> DescribeInstanceDetailOutcome;
                 typedef std::future<DescribeInstanceDetailOutcome> DescribeInstanceDetailOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::DescribeInstanceDetailRequest&, DescribeInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDetailAsyncHandler;
@@ -698,6 +703,15 @@ namespace TencentCloud
                 DescribeDBSecurityGroupsOutcome DescribeDBSecurityGroups(const Model::DescribeDBSecurityGroupsRequest &request);
                 void DescribeDBSecurityGroupsAsync(const Model::DescribeDBSecurityGroupsRequest& request, const DescribeDBSecurityGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSecurityGroupsOutcomeCallable DescribeDBSecurityGroupsCallable(const Model::DescribeDBSecurityGroupsRequest& request);
+
+                /**
+                 *本接口（DescribeFlow）用于查询任务流信息
+                 * @param req DescribeFlowRequest
+                 * @return DescribeFlowOutcome
+                 */
+                DescribeFlowOutcome DescribeFlow(const Model::DescribeFlowRequest &request);
+                void DescribeFlowAsync(const Model::DescribeFlowRequest& request, const DescribeFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFlowOutcomeCallable DescribeFlowCallable(const Model::DescribeFlowRequest& request);
 
                 /**
                  *本接口(DescribeInstanceDetail)用于查询实例详情。

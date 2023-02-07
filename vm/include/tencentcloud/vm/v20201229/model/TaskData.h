@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vm/v20201229/model/TaskLabel.h>
 #include <tencentcloud/vm/v20201229/model/MediaInfo.h>
+#include <tencentcloud/vm/v20201229/model/InputInfo.h>
 
 
 namespace TencentCloud
@@ -282,6 +283,28 @@ namespace TencentCloud
                      */
                     bool UpdatedAtHasBeenSet() const;
 
+                    /**
+                     * 获取该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InputInfo 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InputInfo GetInputInfo() const;
+
+                    /**
+                     * 设置该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InputInfo 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInputInfo(const InputInfo& _inputInfo);
+
+                    /**
+                     * 判断参数 InputInfo 是否已赋值
+                     * @return InputInfo 是否已赋值
+                     */
+                    bool InputInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -358,6 +381,13 @@ namespace TencentCloud
                      */
                     std::string m_updatedAt;
                     bool m_updatedAtHasBeenSet;
+
+                    /**
+                     * 该字段用于返回审核服务的媒体内容信息，主要包括传入文件类型和访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InputInfo m_inputInfo;
+                    bool m_inputInfoHasBeenSet;
 
                 };
             }

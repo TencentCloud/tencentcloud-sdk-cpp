@@ -29,20 +29,34 @@
 #include <tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/OpenBackUpRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/OpenBackUpResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/ScaleOutInstanceResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/ScaleUpInstanceRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/ScaleUpInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -66,12 +80,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateInstanceNewResponse> CreateInstanceNewOutcome;
                 typedef std::future<CreateInstanceNewOutcome> CreateInstanceNewOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::CreateInstanceNewRequest&, CreateInstanceNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstanceNewAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackUpScheduleResponse> DescribeBackUpScheduleOutcome;
+                typedef std::future<DescribeBackUpScheduleOutcome> DescribeBackUpScheduleOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeBackUpScheduleRequest&, DescribeBackUpScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackUpScheduleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCkSqlApisResponse> DescribeCkSqlApisOutcome;
                 typedef std::future<DescribeCkSqlApisOutcome> DescribeCkSqlApisOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeCkSqlApisRequest&, DescribeCkSqlApisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCkSqlApisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeClusterConfigsResponse> DescribeClusterConfigsOutcome;
+                typedef std::future<DescribeClusterConfigsOutcome> DescribeClusterConfigsOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeClusterConfigsRequest&, DescribeClusterConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceResponse> DescribeInstanceOutcome;
                 typedef std::future<DescribeInstanceOutcome> DescribeInstanceOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceRequest&, DescribeInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceKeyValConfigsResponse> DescribeInstanceKeyValConfigsOutcome;
+                typedef std::future<DescribeInstanceKeyValConfigsOutcome> DescribeInstanceKeyValConfigsOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceKeyValConfigsRequest&, DescribeInstanceKeyValConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceKeyValConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceShardsResponse> DescribeInstanceShardsOutcome;
                 typedef std::future<DescribeInstanceShardsOutcome> DescribeInstanceShardsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceShardsRequest&, DescribeInstanceShardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceShardsAsyncHandler;
@@ -81,12 +104,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyClusterConfigsResponse> ModifyClusterConfigsOutcome;
                 typedef std::future<ModifyClusterConfigsOutcome> ModifyClusterConfigsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::ModifyClusterConfigsRequest&, ModifyClusterConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterConfigsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyInstanceKeyValConfigsResponse> ModifyInstanceKeyValConfigsOutcome;
+                typedef std::future<ModifyInstanceKeyValConfigsOutcome> ModifyInstanceKeyValConfigsOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::ModifyInstanceKeyValConfigsRequest&, ModifyInstanceKeyValConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyInstanceKeyValConfigsAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserNewPrivilegeResponse> ModifyUserNewPrivilegeOutcome;
                 typedef std::future<ModifyUserNewPrivilegeOutcome> ModifyUserNewPrivilegeOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::ModifyUserNewPrivilegeRequest&, ModifyUserNewPrivilegeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserNewPrivilegeAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenBackUpResponse> OpenBackUpOutcome;
                 typedef std::future<OpenBackUpOutcome> OpenBackUpOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::OpenBackUpRequest&, OpenBackUpOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenBackUpAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResizeDiskResponse> ResizeDiskOutcome;
+                typedef std::future<ResizeDiskOutcome> ResizeDiskOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::ResizeDiskRequest&, ResizeDiskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResizeDiskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleOutInstanceResponse> ScaleOutInstanceOutcome;
+                typedef std::future<ScaleOutInstanceOutcome> ScaleOutInstanceOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::ScaleOutInstanceRequest&, ScaleOutInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleUpInstanceResponse> ScaleUpInstanceOutcome;
+                typedef std::future<ScaleUpInstanceOutcome> ScaleUpInstanceOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::ScaleUpInstanceRequest&, ScaleUpInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleUpInstanceAsyncHandler;
 
 
 
@@ -118,6 +153,15 @@ namespace TencentCloud
                 CreateInstanceNewOutcomeCallable CreateInstanceNewCallable(const Model::CreateInstanceNewRequest& request);
 
                 /**
+                 *查询备份策略信息
+                 * @param req DescribeBackUpScheduleRequest
+                 * @return DescribeBackUpScheduleOutcome
+                 */
+                DescribeBackUpScheduleOutcome DescribeBackUpSchedule(const Model::DescribeBackUpScheduleRequest &request);
+                void DescribeBackUpScheduleAsync(const Model::DescribeBackUpScheduleRequest& request, const DescribeBackUpScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackUpScheduleOutcomeCallable DescribeBackUpScheduleCallable(const Model::DescribeBackUpScheduleRequest& request);
+
+                /**
                  *查询集群用户、集群表，数据库等相关信息
                  * @param req DescribeCkSqlApisRequest
                  * @return DescribeCkSqlApisOutcome
@@ -127,6 +171,15 @@ namespace TencentCloud
                 DescribeCkSqlApisOutcomeCallable DescribeCkSqlApisCallable(const Model::DescribeCkSqlApisRequest& request);
 
                 /**
+                 *获取集群的最新的几个配置文件（config.xml、metrika.xml、user.xml）的内容，显示给用户
+                 * @param req DescribeClusterConfigsRequest
+                 * @return DescribeClusterConfigsOutcome
+                 */
+                DescribeClusterConfigsOutcome DescribeClusterConfigs(const Model::DescribeClusterConfigsRequest &request);
+                void DescribeClusterConfigsAsync(const Model::DescribeClusterConfigsRequest& request, const DescribeClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeClusterConfigsOutcomeCallable DescribeClusterConfigsCallable(const Model::DescribeClusterConfigsRequest& request);
+
+                /**
                  *根据实例ID查询某个实例的具体信息
                  * @param req DescribeInstanceRequest
                  * @return DescribeInstanceOutcome
@@ -134,6 +187,15 @@ namespace TencentCloud
                 DescribeInstanceOutcome DescribeInstance(const Model::DescribeInstanceRequest &request);
                 void DescribeInstanceAsync(const Model::DescribeInstanceRequest& request, const DescribeInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceOutcomeCallable DescribeInstanceCallable(const Model::DescribeInstanceRequest& request);
+
+                /**
+                 *在集群详情页面获取所有参数列表
+                 * @param req DescribeInstanceKeyValConfigsRequest
+                 * @return DescribeInstanceKeyValConfigsOutcome
+                 */
+                DescribeInstanceKeyValConfigsOutcome DescribeInstanceKeyValConfigs(const Model::DescribeInstanceKeyValConfigsRequest &request);
+                void DescribeInstanceKeyValConfigsAsync(const Model::DescribeInstanceKeyValConfigsRequest& request, const DescribeInstanceKeyValConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceKeyValConfigsOutcomeCallable DescribeInstanceKeyValConfigsCallable(const Model::DescribeInstanceKeyValConfigsRequest& request);
 
                 /**
                  *获取实例shard信息列表
@@ -163,6 +225,15 @@ namespace TencentCloud
                 ModifyClusterConfigsOutcomeCallable ModifyClusterConfigsCallable(const Model::ModifyClusterConfigsRequest& request);
 
                 /**
+                 *KV模式修改配置接口
+                 * @param req ModifyInstanceKeyValConfigsRequest
+                 * @return ModifyInstanceKeyValConfigsOutcome
+                 */
+                ModifyInstanceKeyValConfigsOutcome ModifyInstanceKeyValConfigs(const Model::ModifyInstanceKeyValConfigsRequest &request);
+                void ModifyInstanceKeyValConfigsAsync(const Model::ModifyInstanceKeyValConfigsRequest& request, const ModifyInstanceKeyValConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyInstanceKeyValConfigsOutcomeCallable ModifyInstanceKeyValConfigsCallable(const Model::ModifyInstanceKeyValConfigsRequest& request);
+
+                /**
                  *针对ck账号的权限做管控（新版）
                  * @param req ModifyUserNewPrivilegeRequest
                  * @return ModifyUserNewPrivilegeOutcome
@@ -179,6 +250,33 @@ namespace TencentCloud
                 OpenBackUpOutcome OpenBackUp(const Model::OpenBackUpRequest &request);
                 void OpenBackUpAsync(const Model::OpenBackUpRequest& request, const OpenBackUpAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenBackUpOutcomeCallable OpenBackUpCallable(const Model::OpenBackUpRequest& request);
+
+                /**
+                 *扩容磁盘，包含扩容数据节点，zk节点
+                 * @param req ResizeDiskRequest
+                 * @return ResizeDiskOutcome
+                 */
+                ResizeDiskOutcome ResizeDisk(const Model::ResizeDiskRequest &request);
+                void ResizeDiskAsync(const Model::ResizeDiskRequest& request, const ResizeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResizeDiskOutcomeCallable ResizeDiskCallable(const Model::ResizeDiskRequest& request);
+
+                /**
+                 *调整clickhouse节点数量
+                 * @param req ScaleOutInstanceRequest
+                 * @return ScaleOutInstanceOutcome
+                 */
+                ScaleOutInstanceOutcome ScaleOutInstance(const Model::ScaleOutInstanceRequest &request);
+                void ScaleOutInstanceAsync(const Model::ScaleOutInstanceRequest& request, const ScaleOutInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleOutInstanceOutcomeCallable ScaleOutInstanceCallable(const Model::ScaleOutInstanceRequest& request);
+
+                /**
+                 *垂直扩缩容节点规格，修改节点cvm的规格cpu，内存。 规格变化阶段，服务不可用。
+                 * @param req ScaleUpInstanceRequest
+                 * @return ScaleUpInstanceOutcome
+                 */
+                ScaleUpInstanceOutcome ScaleUpInstance(const Model::ScaleUpInstanceRequest &request);
+                void ScaleUpInstanceAsync(const Model::ScaleUpInstanceRequest& request, const ScaleUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleUpInstanceOutcomeCallable ScaleUpInstanceCallable(const Model::ScaleUpInstanceRequest& request);
 
             };
         }

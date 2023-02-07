@@ -55,6 +55,7 @@ set(dasb_public_header_model
   include/tencentcloud/dasb/v20191018/model/DescribeAclsResponse.h
   include/tencentcloud/dasb/v20191018/model/DescribeUsersResponse.h
   include/tencentcloud/dasb/v20191018/model/Acl.h
+  include/tencentcloud/dasb/v20191018/model/Filter.h
   include/tencentcloud/dasb/v20191018/model/DescribeDevicesRequest.h
   include/tencentcloud/dasb/v20191018/model/DescribeDeviceGroupsRequest.h
   include/tencentcloud/dasb/v20191018/model/ModifyAclRequest.h
@@ -115,6 +116,7 @@ set(dasb_src
   src/v20191018/model/DescribeAclsResponse.cpp
   src/v20191018/model/DescribeUsersResponse.cpp
   src/v20191018/model/Acl.cpp
+  src/v20191018/model/Filter.cpp
   src/v20191018/model/DescribeDevicesRequest.cpp
   src/v20191018/model/DescribeDeviceGroupsRequest.cpp
   src/v20191018/model/ModifyAclRequest.cpp

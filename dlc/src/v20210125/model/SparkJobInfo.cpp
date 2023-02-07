@@ -51,9 +51,11 @@ SparkJobInfo::SparkJobInfo() :
     m_appPythonFilesHasBeenSet(false),
     m_isLocalArchivesHasBeenSet(false),
     m_jobArchivesHasBeenSet(false),
+    m_sparkImageHasBeenSet(false),
     m_jobPythonFilesHasBeenSet(false),
     m_taskNumHasBeenSet(false),
-    m_dataEngineStatusHasBeenSet(false)
+    m_dataEngineStatusHasBeenSet(false),
+    m_jobExecutorMaxNumbersHasBeenSet(false)
 {
 }
 
@@ -369,6 +371,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_jobArchivesHasBeenSet = true;
     }
 
+    if (value.HasMember("SparkImage") && !value["SparkImage"].IsNull())
+    {
+        if (!value["SparkImage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.SparkImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sparkImage = string(value["SparkImage"].GetString());
+        m_sparkImageHasBeenSet = true;
+    }
+
     if (value.HasMember("JobPythonFiles") && !value["JobPythonFiles"].IsNull())
     {
         if (!value["JobPythonFiles"].IsString())
@@ -397,6 +409,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         }
         m_dataEngineStatus = value["DataEngineStatus"].GetInt64();
         m_dataEngineStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("JobExecutorMaxNumbers") && !value["JobExecutorMaxNumbers"].IsNull())
+    {
+        if (!value["JobExecutorMaxNumbers"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.JobExecutorMaxNumbers` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_jobExecutorMaxNumbers = value["JobExecutorMaxNumbers"].GetInt64();
+        m_jobExecutorMaxNumbersHasBeenSet = true;
     }
 
 
@@ -647,6 +669,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_jobArchives.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_sparkImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sparkImage.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_jobPythonFilesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -669,6 +699,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DataEngineStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_dataEngineStatus, allocator);
+    }
+
+    if (m_jobExecutorMaxNumbersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "JobExecutorMaxNumbers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_jobExecutorMaxNumbers, allocator);
     }
 
 }
@@ -1154,6 +1192,22 @@ bool SparkJobInfo::JobArchivesHasBeenSet() const
     return m_jobArchivesHasBeenSet;
 }
 
+string SparkJobInfo::GetSparkImage() const
+{
+    return m_sparkImage;
+}
+
+void SparkJobInfo::SetSparkImage(const string& _sparkImage)
+{
+    m_sparkImage = _sparkImage;
+    m_sparkImageHasBeenSet = true;
+}
+
+bool SparkJobInfo::SparkImageHasBeenSet() const
+{
+    return m_sparkImageHasBeenSet;
+}
+
 string SparkJobInfo::GetJobPythonFiles() const
 {
     return m_jobPythonFiles;
@@ -1200,5 +1254,21 @@ void SparkJobInfo::SetDataEngineStatus(const int64_t& _dataEngineStatus)
 bool SparkJobInfo::DataEngineStatusHasBeenSet() const
 {
     return m_dataEngineStatusHasBeenSet;
+}
+
+int64_t SparkJobInfo::GetJobExecutorMaxNumbers() const
+{
+    return m_jobExecutorMaxNumbers;
+}
+
+void SparkJobInfo::SetJobExecutorMaxNumbers(const int64_t& _jobExecutorMaxNumbers)
+{
+    m_jobExecutorMaxNumbers = _jobExecutorMaxNumbers;
+    m_jobExecutorMaxNumbersHasBeenSet = true;
+}
+
+bool SparkJobInfo::JobExecutorMaxNumbersHasBeenSet() const
+{
+    return m_jobExecutorMaxNumbersHasBeenSet;
 }
 

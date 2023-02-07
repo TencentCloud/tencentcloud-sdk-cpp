@@ -23,7 +23,8 @@ using namespace std;
 Group::Group() :
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_departmentHasBeenSet(false)
+    m_departmentHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome Group::Deserialize(const rapidjson::Value &value)
         m_departmentHasBeenSet = true;
     }
 
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Group.Count` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetUint64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void Group::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_department.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void Group::SetDepartment(const Department& _department)
 bool Group::DepartmentHasBeenSet() const
 {
     return m_departmentHasBeenSet;
+}
+
+uint64_t Group::GetCount() const
+{
+    return m_count;
+}
+
+void Group::SetCount(const uint64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool Group::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 

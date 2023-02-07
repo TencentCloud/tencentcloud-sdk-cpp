@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool ToDeviceNameHasBeenSet() const;
 
+                    /**
+                     * 获取未开通云存的设备产品ID
+                     * @return ToProductId 未开通云存的设备产品ID
+                     */
+                    std::string GetToProductId() const;
+
+                    /**
+                     * 设置未开通云存的设备产品ID
+                     * @param ToProductId 未开通云存的设备产品ID
+                     */
+                    void SetToProductId(const std::string& _toProductId);
+
+                    /**
+                     * 判断参数 ToProductId 是否已赋值
+                     * @return ToProductId 是否已赋值
+                     */
+                    bool ToProductIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_toDeviceName;
                     bool m_toDeviceNameHasBeenSet;
+
+                    /**
+                     * 未开通云存的设备产品ID
+                     */
+                    std::string m_toProductId;
+                    bool m_toProductIdHasBeenSet;
 
                 };
             }

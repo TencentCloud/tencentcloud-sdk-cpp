@@ -24,15 +24,19 @@ using namespace std;
 
 CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_environmentNameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_vpcHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_k8sVersionHasBeenSet(false),
     m_sourceChannelHasBeenSet(false),
     m_enableTswTraceServiceHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_envTypeHasBeenSet(false),
-    m_createRegionHasBeenSet(false)
+    m_createRegionHasBeenSet(false),
+    m_setupVpcHasBeenSet(false),
+    m_setupPrometheusHasBeenSet(false),
+    m_prometheusIdHasBeenSet(false),
+    m_apmIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +53,14 @@ string CreateEnvironmentRequest::ToJsonString() const
         string key = "EnvironmentName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_environmentName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_vpcHasBeenSet)
@@ -70,14 +82,6 @@ string CreateEnvironmentRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_descriptionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Description";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
     if (m_k8sVersionHasBeenSet)
@@ -135,6 +139,38 @@ string CreateEnvironmentRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_createRegion.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_setupVpcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetupVpc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_setupVpc, allocator);
+    }
+
+    if (m_setupPrometheusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetupPrometheus";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_setupPrometheus, allocator);
+    }
+
+    if (m_prometheusIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrometheusId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_prometheusId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_apmIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApmId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_apmId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -157,6 +193,22 @@ void CreateEnvironmentRequest::SetEnvironmentName(const string& _environmentName
 bool CreateEnvironmentRequest::EnvironmentNameHasBeenSet() const
 {
     return m_environmentNameHasBeenSet;
+}
+
+string CreateEnvironmentRequest::GetDescription() const
+{
+    return m_description;
+}
+
+void CreateEnvironmentRequest::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 
 string CreateEnvironmentRequest::GetVpc() const
@@ -189,22 +241,6 @@ void CreateEnvironmentRequest::SetSubnetIds(const vector<string>& _subnetIds)
 bool CreateEnvironmentRequest::SubnetIdsHasBeenSet() const
 {
     return m_subnetIdsHasBeenSet;
-}
-
-string CreateEnvironmentRequest::GetDescription() const
-{
-    return m_description;
-}
-
-void CreateEnvironmentRequest::SetDescription(const string& _description)
-{
-    m_description = _description;
-    m_descriptionHasBeenSet = true;
-}
-
-bool CreateEnvironmentRequest::DescriptionHasBeenSet() const
-{
-    return m_descriptionHasBeenSet;
 }
 
 string CreateEnvironmentRequest::GetK8sVersion() const
@@ -301,6 +337,70 @@ void CreateEnvironmentRequest::SetCreateRegion(const string& _createRegion)
 bool CreateEnvironmentRequest::CreateRegionHasBeenSet() const
 {
     return m_createRegionHasBeenSet;
+}
+
+bool CreateEnvironmentRequest::GetSetupVpc() const
+{
+    return m_setupVpc;
+}
+
+void CreateEnvironmentRequest::SetSetupVpc(const bool& _setupVpc)
+{
+    m_setupVpc = _setupVpc;
+    m_setupVpcHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::SetupVpcHasBeenSet() const
+{
+    return m_setupVpcHasBeenSet;
+}
+
+bool CreateEnvironmentRequest::GetSetupPrometheus() const
+{
+    return m_setupPrometheus;
+}
+
+void CreateEnvironmentRequest::SetSetupPrometheus(const bool& _setupPrometheus)
+{
+    m_setupPrometheus = _setupPrometheus;
+    m_setupPrometheusHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::SetupPrometheusHasBeenSet() const
+{
+    return m_setupPrometheusHasBeenSet;
+}
+
+string CreateEnvironmentRequest::GetPrometheusId() const
+{
+    return m_prometheusId;
+}
+
+void CreateEnvironmentRequest::SetPrometheusId(const string& _prometheusId)
+{
+    m_prometheusId = _prometheusId;
+    m_prometheusIdHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::PrometheusIdHasBeenSet() const
+{
+    return m_prometheusIdHasBeenSet;
+}
+
+string CreateEnvironmentRequest::GetApmId() const
+{
+    return m_apmId;
+}
+
+void CreateEnvironmentRequest::SetApmId(const string& _apmId)
+{
+    m_apmId = _apmId;
+    m_apmIdHasBeenSet = true;
+}
+
+bool CreateEnvironmentRequest::ApmIdHasBeenSet() const
+{
+    return m_apmIdHasBeenSet;
 }
 
 

@@ -34,7 +34,8 @@ DescribeDevicesRequest::DescribeDevicesRequest() :
     m_resourceIdSetHasBeenSet(false),
     m_kindSetHasBeenSet(false),
     m_departmentIdHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_filtersHasBeenSet(false)
 {
 }
 
@@ -167,6 +168,21 @@ string DescribeDevicesRequest::ToJsonString() const
 
         int i=0;
         for (auto itr = m_tagFilters.begin(); itr != m_tagFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
@@ -371,6 +387,22 @@ void DescribeDevicesRequest::SetTagFilters(const vector<TagFilter>& _tagFilters)
 bool DescribeDevicesRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+vector<Filter> DescribeDevicesRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeDevicesRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeDevicesRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
 }
 
 

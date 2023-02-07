@@ -886,17 +886,17 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * 获取监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonitorVersion 监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * @return MonitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMonitorVersion() const;
 
                     /**
-                     * 设置监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * 设置监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonitorVersion 监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * @param MonitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMonitorVersion(const std::string& _monitorVersion);
@@ -1405,7 +1405,7 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 监控版本。<ul><li>1m：分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * 监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_monitorVersion;

@@ -474,6 +474,60 @@ namespace TencentCloud
                      */
                     bool AppArchivesHasBeenSet() const;
 
+                    /**
+                     * 获取Spark Image 版本
+                     * @return SparkImage Spark Image 版本
+                     */
+                    std::string GetSparkImage() const;
+
+                    /**
+                     * 设置Spark Image 版本
+                     * @param SparkImage Spark Image 版本
+                     */
+                    void SetSparkImage(const std::string& _sparkImage);
+
+                    /**
+                     * 判断参数 SparkImage 是否已赋值
+                     * @return SparkImage 是否已赋值
+                     */
+                    bool SparkImageHasBeenSet() const;
+
+                    /**
+                     * 获取Spark Image 版本名称
+                     * @return SparkImageVersion Spark Image 版本名称
+                     */
+                    std::string GetSparkImageVersion() const;
+
+                    /**
+                     * 设置Spark Image 版本名称
+                     * @param SparkImageVersion Spark Image 版本名称
+                     */
+                    void SetSparkImageVersion(const std::string& _sparkImageVersion);
+
+                    /**
+                     * 判断参数 SparkImageVersion 是否已赋值
+                     * @return SparkImageVersion 是否已赋值
+                     */
+                    bool SparkImageVersionHasBeenSet() const;
+
+                    /**
+                     * 获取指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums
+                     * @return AppExecutorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums
+                     */
+                    int64_t GetAppExecutorMaxNumbers() const;
+
+                    /**
+                     * 设置指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums
+                     * @param AppExecutorMaxNumbers 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums
+                     */
+                    void SetAppExecutorMaxNumbers(const int64_t& _appExecutorMaxNumbers);
+
+                    /**
+                     * 判断参数 AppExecutorMaxNumbers 是否已赋值
+                     * @return AppExecutorMaxNumbers 是否已赋值
+                     */
+                    bool AppExecutorMaxNumbersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -619,6 +673,24 @@ namespace TencentCloud
                      */
                     std::string m_appArchives;
                     bool m_appArchivesHasBeenSet;
+
+                    /**
+                     * Spark Image 版本
+                     */
+                    std::string m_sparkImage;
+                    bool m_sparkImageHasBeenSet;
+
+                    /**
+                     * Spark Image 版本名称
+                     */
+                    std::string m_sparkImageVersion;
+                    bool m_sparkImageVersionHasBeenSet;
+
+                    /**
+                     * 指定的Executor数量（最大值），默认为1，当开启动态分配有效，若未开启，则该值等于AppExecutorNums
+                     */
+                    int64_t m_appExecutorMaxNumbers;
+                    bool m_appExecutorMaxNumbersHasBeenSet;
 
                 };
             }

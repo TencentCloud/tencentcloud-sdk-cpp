@@ -45,7 +45,10 @@ CreateSparkAppRequest::CreateSparkAppRequest() :
     m_isLocalPythonFilesHasBeenSet(false),
     m_appPythonFilesHasBeenSet(false),
     m_isLocalArchivesHasBeenSet(false),
-    m_appArchivesHasBeenSet(false)
+    m_appArchivesHasBeenSet(false),
+    m_sparkImageHasBeenSet(false),
+    m_sparkImageVersionHasBeenSet(false),
+    m_appExecutorMaxNumbersHasBeenSet(false)
 {
 }
 
@@ -238,6 +241,30 @@ string CreateSparkAppRequest::ToJsonString() const
         string key = "AppArchives";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_appArchives.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sparkImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkImage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sparkImage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sparkImageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkImageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sparkImageVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_appExecutorMaxNumbersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AppExecutorMaxNumbers";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_appExecutorMaxNumbers, allocator);
     }
 
 
@@ -614,6 +641,54 @@ void CreateSparkAppRequest::SetAppArchives(const string& _appArchives)
 bool CreateSparkAppRequest::AppArchivesHasBeenSet() const
 {
     return m_appArchivesHasBeenSet;
+}
+
+string CreateSparkAppRequest::GetSparkImage() const
+{
+    return m_sparkImage;
+}
+
+void CreateSparkAppRequest::SetSparkImage(const string& _sparkImage)
+{
+    m_sparkImage = _sparkImage;
+    m_sparkImageHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::SparkImageHasBeenSet() const
+{
+    return m_sparkImageHasBeenSet;
+}
+
+string CreateSparkAppRequest::GetSparkImageVersion() const
+{
+    return m_sparkImageVersion;
+}
+
+void CreateSparkAppRequest::SetSparkImageVersion(const string& _sparkImageVersion)
+{
+    m_sparkImageVersion = _sparkImageVersion;
+    m_sparkImageVersionHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::SparkImageVersionHasBeenSet() const
+{
+    return m_sparkImageVersionHasBeenSet;
+}
+
+int64_t CreateSparkAppRequest::GetAppExecutorMaxNumbers() const
+{
+    return m_appExecutorMaxNumbers;
+}
+
+void CreateSparkAppRequest::SetAppExecutorMaxNumbers(const int64_t& _appExecutorMaxNumbers)
+{
+    m_appExecutorMaxNumbers = _appExecutorMaxNumbers;
+    m_appExecutorMaxNumbersHasBeenSet = true;
+}
+
+bool CreateSparkAppRequest::AppExecutorMaxNumbersHasBeenSet() const
+{
+    return m_appExecutorMaxNumbersHasBeenSet;
 }
 
 

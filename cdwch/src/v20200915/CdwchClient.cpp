@@ -169,6 +169,49 @@ CdwchClient::CreateInstanceNewOutcomeCallable CdwchClient::CreateInstanceNewCall
     return task->get_future();
 }
 
+CdwchClient::DescribeBackUpScheduleOutcome CdwchClient::DescribeBackUpSchedule(const DescribeBackUpScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackUpSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackUpScheduleResponse rsp = DescribeBackUpScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackUpScheduleOutcome(rsp);
+        else
+            return DescribeBackUpScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackUpScheduleOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeBackUpScheduleAsync(const DescribeBackUpScheduleRequest& request, const DescribeBackUpScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackUpSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeBackUpScheduleOutcomeCallable CdwchClient::DescribeBackUpScheduleCallable(const DescribeBackUpScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackUpScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackUpSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeCkSqlApisOutcome CdwchClient::DescribeCkSqlApis(const DescribeCkSqlApisRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCkSqlApis");
@@ -212,6 +255,49 @@ CdwchClient::DescribeCkSqlApisOutcomeCallable CdwchClient::DescribeCkSqlApisCall
     return task->get_future();
 }
 
+CdwchClient::DescribeClusterConfigsOutcome CdwchClient::DescribeClusterConfigs(const DescribeClusterConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClusterConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClusterConfigsResponse rsp = DescribeClusterConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClusterConfigsOutcome(rsp);
+        else
+            return DescribeClusterConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClusterConfigsOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeClusterConfigsAsync(const DescribeClusterConfigsRequest& request, const DescribeClusterConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClusterConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeClusterConfigsOutcomeCallable CdwchClient::DescribeClusterConfigsCallable(const DescribeClusterConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClusterConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClusterConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeInstanceOutcome CdwchClient::DescribeInstance(const DescribeInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstance");
@@ -248,6 +334,49 @@ CdwchClient::DescribeInstanceOutcomeCallable CdwchClient::DescribeInstanceCallab
         [this, request]()
         {
             return this->DescribeInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::DescribeInstanceKeyValConfigsOutcome CdwchClient::DescribeInstanceKeyValConfigs(const DescribeInstanceKeyValConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceKeyValConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceKeyValConfigsResponse rsp = DescribeInstanceKeyValConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceKeyValConfigsOutcome(rsp);
+        else
+            return DescribeInstanceKeyValConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceKeyValConfigsOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeInstanceKeyValConfigsAsync(const DescribeInstanceKeyValConfigsRequest& request, const DescribeInstanceKeyValConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceKeyValConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeInstanceKeyValConfigsOutcomeCallable CdwchClient::DescribeInstanceKeyValConfigsCallable(const DescribeInstanceKeyValConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceKeyValConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceKeyValConfigs(request);
         }
     );
 
@@ -384,6 +513,49 @@ CdwchClient::ModifyClusterConfigsOutcomeCallable CdwchClient::ModifyClusterConfi
     return task->get_future();
 }
 
+CdwchClient::ModifyInstanceKeyValConfigsOutcome CdwchClient::ModifyInstanceKeyValConfigs(const ModifyInstanceKeyValConfigsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyInstanceKeyValConfigs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyInstanceKeyValConfigsResponse rsp = ModifyInstanceKeyValConfigsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyInstanceKeyValConfigsOutcome(rsp);
+        else
+            return ModifyInstanceKeyValConfigsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyInstanceKeyValConfigsOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::ModifyInstanceKeyValConfigsAsync(const ModifyInstanceKeyValConfigsRequest& request, const ModifyInstanceKeyValConfigsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyInstanceKeyValConfigs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::ModifyInstanceKeyValConfigsOutcomeCallable CdwchClient::ModifyInstanceKeyValConfigsCallable(const ModifyInstanceKeyValConfigsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyInstanceKeyValConfigsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyInstanceKeyValConfigs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::ModifyUserNewPrivilegeOutcome CdwchClient::ModifyUserNewPrivilege(const ModifyUserNewPrivilegeRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserNewPrivilege");
@@ -463,6 +635,135 @@ CdwchClient::OpenBackUpOutcomeCallable CdwchClient::OpenBackUpCallable(const Ope
         [this, request]()
         {
             return this->OpenBackUp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::ResizeDiskOutcome CdwchClient::ResizeDisk(const ResizeDiskRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResizeDisk");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResizeDiskResponse rsp = ResizeDiskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResizeDiskOutcome(rsp);
+        else
+            return ResizeDiskOutcome(o.GetError());
+    }
+    else
+    {
+        return ResizeDiskOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::ResizeDiskAsync(const ResizeDiskRequest& request, const ResizeDiskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResizeDisk(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::ResizeDiskOutcomeCallable CdwchClient::ResizeDiskCallable(const ResizeDiskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResizeDiskOutcome()>>(
+        [this, request]()
+        {
+            return this->ResizeDisk(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::ScaleOutInstanceOutcome CdwchClient::ScaleOutInstance(const ScaleOutInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleOutInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleOutInstanceResponse rsp = ScaleOutInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleOutInstanceOutcome(rsp);
+        else
+            return ScaleOutInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleOutInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::ScaleOutInstanceAsync(const ScaleOutInstanceRequest& request, const ScaleOutInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleOutInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::ScaleOutInstanceOutcomeCallable CdwchClient::ScaleOutInstanceCallable(const ScaleOutInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleOutInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleOutInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdwchClient::ScaleUpInstanceOutcome CdwchClient::ScaleUpInstance(const ScaleUpInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleUpInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleUpInstanceResponse rsp = ScaleUpInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleUpInstanceOutcome(rsp);
+        else
+            return ScaleUpInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleUpInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::ScaleUpInstanceAsync(const ScaleUpInstanceRequest& request, const ScaleUpInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleUpInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::ScaleUpInstanceOutcomeCallable CdwchClient::ScaleUpInstanceCallable(const ScaleUpInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleUpInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleUpInstance(request);
         }
     );
 

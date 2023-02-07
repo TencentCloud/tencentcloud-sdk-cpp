@@ -25,7 +25,8 @@ using namespace std;
 TransferCloudStorageRequest::TransferCloudStorageRequest() :
     m_productIdHasBeenSet(false),
     m_deviceNameHasBeenSet(false),
-    m_toDeviceNameHasBeenSet(false)
+    m_toDeviceNameHasBeenSet(false),
+    m_toProductIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string TransferCloudStorageRequest::ToJsonString() const
         string key = "ToDeviceName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_toDeviceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_toProductIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ToProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_toProductId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void TransferCloudStorageRequest::SetToDeviceName(const string& _toDeviceName)
 bool TransferCloudStorageRequest::ToDeviceNameHasBeenSet() const
 {
     return m_toDeviceNameHasBeenSet;
+}
+
+string TransferCloudStorageRequest::GetToProductId() const
+{
+    return m_toProductId;
+}
+
+void TransferCloudStorageRequest::SetToProductId(const string& _toProductId)
+{
+    m_toProductId = _toProductId;
+    m_toProductIdHasBeenSet = true;
+}
+
+bool TransferCloudStorageRequest::ToProductIdHasBeenSet() const
+{
+    return m_toProductIdHasBeenSet;
 }
 
 

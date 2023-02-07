@@ -105,6 +105,28 @@ namespace TencentCloud
                      */
                     bool DepartmentHasBeenSet() const;
 
+                    /**
+                     * 获取个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Count 个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetCount() const;
+
+                    /**
+                     * 设置个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Count 个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCount(const uint64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +147,13 @@ namespace TencentCloud
                      */
                     Department m_department;
                     bool m_departmentHasBeenSet;
+
+                    /**
+                     * 个数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

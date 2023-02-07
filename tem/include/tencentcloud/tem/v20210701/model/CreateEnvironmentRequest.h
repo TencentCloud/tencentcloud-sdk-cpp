@@ -62,6 +62,24 @@ namespace TencentCloud
                     bool EnvironmentNameHasBeenSet() const;
 
                     /**
+                     * 获取环境描述
+                     * @return Description 环境描述
+                     */
+                    std::string GetDescription() const;
+
+                    /**
+                     * 设置环境描述
+                     * @param Description 环境描述
+                     */
+                    void SetDescription(const std::string& _description);
+
+                    /**
+                     * 判断参数 Description 是否已赋值
+                     * @return Description 是否已赋值
+                     */
+                    bool DescriptionHasBeenSet() const;
+
+                    /**
                      * 获取私有网络名称
                      * @return Vpc 私有网络名称
                      */
@@ -96,24 +114,6 @@ namespace TencentCloud
                      * @return SubnetIds 是否已赋值
                      */
                     bool SubnetIdsHasBeenSet() const;
-
-                    /**
-                     * 获取环境描述
-                     * @return Description 环境描述
-                     */
-                    std::string GetDescription() const;
-
-                    /**
-                     * 设置环境描述
-                     * @param Description 环境描述
-                     */
-                    void SetDescription(const std::string& _description);
-
-                    /**
-                     * 判断参数 Description 是否已赋值
-                     * @return Description 是否已赋值
-                     */
-                    bool DescriptionHasBeenSet() const;
 
                     /**
                      * 获取K8s version
@@ -223,6 +223,78 @@ namespace TencentCloud
                      */
                     bool CreateRegionHasBeenSet() const;
 
+                    /**
+                     * 获取是否创建私有网络
+                     * @return SetupVpc 是否创建私有网络
+                     */
+                    bool GetSetupVpc() const;
+
+                    /**
+                     * 设置是否创建私有网络
+                     * @param SetupVpc 是否创建私有网络
+                     */
+                    void SetSetupVpc(const bool& _setupVpc);
+
+                    /**
+                     * 判断参数 SetupVpc 是否已赋值
+                     * @return SetupVpc 是否已赋值
+                     */
+                    bool SetupVpcHasBeenSet() const;
+
+                    /**
+                     * 获取是否创建 Prometheus 实例
+                     * @return SetupPrometheus 是否创建 Prometheus 实例
+                     */
+                    bool GetSetupPrometheus() const;
+
+                    /**
+                     * 设置是否创建 Prometheus 实例
+                     * @param SetupPrometheus 是否创建 Prometheus 实例
+                     */
+                    void SetSetupPrometheus(const bool& _setupPrometheus);
+
+                    /**
+                     * 判断参数 SetupPrometheus 是否已赋值
+                     * @return SetupPrometheus 是否已赋值
+                     */
+                    bool SetupPrometheusHasBeenSet() const;
+
+                    /**
+                     * 获取prometheus 实例 id
+                     * @return PrometheusId prometheus 实例 id
+                     */
+                    std::string GetPrometheusId() const;
+
+                    /**
+                     * 设置prometheus 实例 id
+                     * @param PrometheusId prometheus 实例 id
+                     */
+                    void SetPrometheusId(const std::string& _prometheusId);
+
+                    /**
+                     * 判断参数 PrometheusId 是否已赋值
+                     * @return PrometheusId 是否已赋值
+                     */
+                    bool PrometheusIdHasBeenSet() const;
+
+                    /**
+                     * 获取apm id
+                     * @return ApmId apm id
+                     */
+                    std::string GetApmId() const;
+
+                    /**
+                     * 设置apm id
+                     * @param ApmId apm id
+                     */
+                    void SetApmId(const std::string& _apmId);
+
+                    /**
+                     * 判断参数 ApmId 是否已赋值
+                     * @return ApmId 是否已赋值
+                     */
+                    bool ApmIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +302,12 @@ namespace TencentCloud
                      */
                     std::string m_environmentName;
                     bool m_environmentNameHasBeenSet;
+
+                    /**
+                     * 环境描述
+                     */
+                    std::string m_description;
+                    bool m_descriptionHasBeenSet;
 
                     /**
                      * 私有网络名称
@@ -242,12 +320,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_subnetIds;
                     bool m_subnetIdsHasBeenSet;
-
-                    /**
-                     * 环境描述
-                     */
-                    std::string m_description;
-                    bool m_descriptionHasBeenSet;
 
                     /**
                      * K8s version
@@ -284,6 +356,30 @@ namespace TencentCloud
                      */
                     std::string m_createRegion;
                     bool m_createRegionHasBeenSet;
+
+                    /**
+                     * 是否创建私有网络
+                     */
+                    bool m_setupVpc;
+                    bool m_setupVpcHasBeenSet;
+
+                    /**
+                     * 是否创建 Prometheus 实例
+                     */
+                    bool m_setupPrometheus;
+                    bool m_setupPrometheusHasBeenSet;
+
+                    /**
+                     * prometheus 实例 id
+                     */
+                    std::string m_prometheusId;
+                    bool m_prometheusIdHasBeenSet;
+
+                    /**
+                     * apm id
+                     */
+                    std::string m_apmId;
+                    bool m_apmIdHasBeenSet;
 
                 };
             }

@@ -771,6 +771,49 @@ VodClient::CreateReviewTemplateOutcomeCallable VodClient::CreateReviewTemplateCa
     return task->get_future();
 }
 
+VodClient::CreateRoundPlayOutcome VodClient::CreateRoundPlay(const CreateRoundPlayRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRoundPlay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRoundPlayResponse rsp = CreateRoundPlayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRoundPlayOutcome(rsp);
+        else
+            return CreateRoundPlayOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRoundPlayOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateRoundPlayAsync(const CreateRoundPlayRequest& request, const CreateRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRoundPlay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateRoundPlayOutcomeCallable VodClient::CreateRoundPlayCallable(const CreateRoundPlayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRoundPlayOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRoundPlay(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateSampleSnapshotTemplateOutcome VodClient::CreateSampleSnapshotTemplate(const CreateSampleSnapshotTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSampleSnapshotTemplate");
@@ -1710,6 +1753,49 @@ VodClient::DeleteReviewTemplateOutcomeCallable VodClient::DeleteReviewTemplateCa
         [this, request]()
         {
             return this->DeleteReviewTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteRoundPlayOutcome VodClient::DeleteRoundPlay(const DeleteRoundPlayRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRoundPlay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRoundPlayResponse rsp = DeleteRoundPlayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRoundPlayOutcome(rsp);
+        else
+            return DeleteRoundPlayOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRoundPlayOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteRoundPlayAsync(const DeleteRoundPlayRequest& request, const DeleteRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRoundPlay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteRoundPlayOutcomeCallable VodClient::DeleteRoundPlayCallable(const DeleteRoundPlayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRoundPlayOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRoundPlay(request);
         }
     );
 
@@ -3351,6 +3437,49 @@ VodClient::DescribeReviewTemplatesOutcomeCallable VodClient::DescribeReviewTempl
     return task->get_future();
 }
 
+VodClient::DescribeRoundPlaysOutcome VodClient::DescribeRoundPlays(const DescribeRoundPlaysRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoundPlays");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoundPlaysResponse rsp = DescribeRoundPlaysResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoundPlaysOutcome(rsp);
+        else
+            return DescribeRoundPlaysOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoundPlaysOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeRoundPlaysAsync(const DescribeRoundPlaysRequest& request, const DescribeRoundPlaysAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoundPlays(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeRoundPlaysOutcomeCallable VodClient::DescribeRoundPlaysCallable(const DescribeRoundPlaysRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoundPlaysOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoundPlays(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeSampleSnapshotTemplatesOutcome VodClient::DescribeSampleSnapshotTemplates(const DescribeSampleSnapshotTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSampleSnapshotTemplates");
@@ -4763,6 +4892,49 @@ VodClient::ModifyReviewTemplateOutcomeCallable VodClient::ModifyReviewTemplateCa
         [this, request]()
         {
             return this->ModifyReviewTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::ModifyRoundPlayOutcome VodClient::ModifyRoundPlay(const ModifyRoundPlayRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRoundPlay");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRoundPlayResponse rsp = ModifyRoundPlayResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRoundPlayOutcome(rsp);
+        else
+            return ModifyRoundPlayOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRoundPlayOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyRoundPlayAsync(const ModifyRoundPlayRequest& request, const ModifyRoundPlayAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRoundPlay(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyRoundPlayOutcomeCallable VodClient::ModifyRoundPlayCallable(const ModifyRoundPlayRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRoundPlayOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRoundPlay(request);
         }
     );
 
