@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/clb/v20180317/model/Backend.h>
+#include <tencentcloud/clb/v20180317/model/FunctionTarget.h>
 
 
 namespace TencentCloud
@@ -123,6 +124,28 @@ namespace TencentCloud
                      */
                     bool TargetsHasBeenSet() const;
 
+                    /**
+                     * 获取后端云函数的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FunctionTargets 后端云函数的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FunctionTarget> GetFunctionTargets() const;
+
+                    /**
+                     * 设置后端云函数的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FunctionTargets 后端云函数的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFunctionTargets(const std::vector<FunctionTarget>& _functionTargets);
+
+                    /**
+                     * 判断参数 FunctionTargets 是否已赋值
+                     * @return FunctionTargets 是否已赋值
+                     */
+                    bool FunctionTargetsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -149,6 +172,13 @@ namespace TencentCloud
                      */
                     std::vector<Backend> m_targets;
                     bool m_targetsHasBeenSet;
+
+                    /**
+                     * 后端云函数的信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<FunctionTarget> m_functionTargets;
+                    bool m_functionTargetsHasBeenSet;
 
                 };
             }

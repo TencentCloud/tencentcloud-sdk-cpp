@@ -115,6 +115,18 @@ namespace TencentCloud
                      */
                     bool TimeHasBeenSet() const;
 
+                    /**
+                     * 获取有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到.
+                     * @return NewValues 有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到.
+                     */
+                    double GetNewValues() const;
+
+                    /**
+                     * 判断参数 NewValues 是否已赋值
+                     * @return NewValues 是否已赋值
+                     */
+                    bool NewValuesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +164,12 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_time;
                     bool m_timeHasBeenSet;
+
+                    /**
+                     * 有效的监控数据, 每个有效监控数据的上报时间可以从时间数组中的对应位置上获取到.
+                     */
+                    double m_newValues;
+                    bool m_newValuesHasBeenSet;
 
                 };
             }

@@ -86,24 +86,6 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
-                     * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜。
-                     * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜。
-                     */
-                    std::string GetImageId() const;
-
-                    /**
-                     * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜。
-                     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜。
-                     */
-                    void SetImageId(const std::string& _imageId);
-
-                    /**
-                     * 判断参数 ImageId 是否已赋值
-                     * @return ImageId 是否已赋值
-                     */
-                    bool ImageIdHasBeenSet() const;
-
-                    /**
                      * 获取私有网络相关信息配置。
                      * @return VirtualPrivateCloud 私有网络相关信息配置。
                      */
@@ -138,6 +120,24 @@ namespace TencentCloud
                      * @return Count 是否已赋值
                      */
                     bool CountHasBeenSet() const;
+
+                    /**
+                     * 获取指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和特定自定义镜像。
+                     * @return ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和特定自定义镜像。
+                     */
+                    std::string GetImageId() const;
+
+                    /**
+                     * 设置指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和特定自定义镜像。
+                     * @param ImageId 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和特定自定义镜像。
+                     */
+                    void SetImageId(const std::string& _imageId);
+
+                    /**
+                     * 判断参数 ImageId 是否已赋值
+                     * @return ImageId 是否已赋值
+                     */
+                    bool ImageIdHasBeenSet() const;
 
                     /**
                      * 获取节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。
@@ -328,14 +328,22 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取队列名称。
-                     * @return QueueName 队列名称。
+                     * 获取队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
+<li>SGE默认队列为：all.q。<br>
+
+                     * @return QueueName 队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
+<li>SGE默认队列为：all.q。<br>
+
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称。
-                     * @param QueueName 队列名称。
+                     * 设置队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
+<li>SGE默认队列为：all.q。<br>
+
+                     * @param QueueName 队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
+<li>SGE默认队列为：all.q。<br>
+
                      */
                     void SetQueueName(const std::string& _queueName);
 
@@ -412,12 +420,6 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_clusterIdHasBeenSet;
 
                     /**
-                     * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜。
-                     */
-                    std::string m_imageId;
-                    bool m_imageIdHasBeenSet;
-
-                    /**
                      * 私有网络相关信息配置。
                      */
                     VirtualPrivateCloud m_virtualPrivateCloud;
@@ -428,6 +430,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     int64_t m_count;
                     bool m_countHasBeenSet;
+
+                    /**
+                     * 指定有效的[镜像](https://cloud.tencent.com/document/product/213/4940)ID，格式形如`img-xxx`。目前仅支持公有镜像和特定自定义镜像。
+                     */
+                    std::string m_imageId;
+                    bool m_imageIdHasBeenSet;
 
                     /**
                      * 节点[计费类型](https://cloud.tencent.com/document/product/213/2180)。<br><li>PREPAID：预付费，即包年包月<br><li>POSTPAID_BY_HOUR：按小时后付费<br><li>SPOTPAID：竞价付费<br>默认值：POSTPAID_BY_HOUR。
@@ -492,7 +500,9 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 队列名称。
+                     * 队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
+<li>SGE默认队列为：all.q。<br>
+
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;

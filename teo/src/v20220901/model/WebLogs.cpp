@@ -22,15 +22,17 @@ using namespace std;
 
 WebLogs::WebLogs() :
     m_eventIdHasBeenSet(false),
-    m_attackIpHasBeenSet(false),
-    m_domainHasBeenSet(false),
     m_httpLogHasBeenSet(false),
+    m_domainHasBeenSet(false),
+    m_attackIpHasBeenSet(false),
     m_sipCountryCodeHasBeenSet(false),
+    m_realClientIpHasBeenSet(false),
+    m_realClientIpCountryCodeHasBeenSet(false),
     m_attackTimeHasBeenSet(false),
     m_requestUriHasBeenSet(false),
-    m_attackContentHasBeenSet(false),
-    m_ruleDetailListHasBeenSet(false),
     m_reqMethodHasBeenSet(false),
+    m_ruleDetailListHasBeenSet(false),
+    m_attackContentHasBeenSet(false),
     m_areaHasBeenSet(false)
 {
 }
@@ -50,14 +52,14 @@ CoreInternalOutcome WebLogs::Deserialize(const rapidjson::Value &value)
         m_eventIdHasBeenSet = true;
     }
 
-    if (value.HasMember("AttackIp") && !value["AttackIp"].IsNull())
+    if (value.HasMember("HttpLog") && !value["HttpLog"].IsNull())
     {
-        if (!value["AttackIp"].IsString())
+        if (!value["HttpLog"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `WebLogs.AttackIp` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebLogs.HttpLog` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_attackIp = string(value["AttackIp"].GetString());
-        m_attackIpHasBeenSet = true;
+        m_httpLog = string(value["HttpLog"].GetString());
+        m_httpLogHasBeenSet = true;
     }
 
     if (value.HasMember("Domain") && !value["Domain"].IsNull())
@@ -70,14 +72,14 @@ CoreInternalOutcome WebLogs::Deserialize(const rapidjson::Value &value)
         m_domainHasBeenSet = true;
     }
 
-    if (value.HasMember("HttpLog") && !value["HttpLog"].IsNull())
+    if (value.HasMember("AttackIp") && !value["AttackIp"].IsNull())
     {
-        if (!value["HttpLog"].IsString())
+        if (!value["AttackIp"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `WebLogs.HttpLog` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebLogs.AttackIp` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_httpLog = string(value["HttpLog"].GetString());
-        m_httpLogHasBeenSet = true;
+        m_attackIp = string(value["AttackIp"].GetString());
+        m_attackIpHasBeenSet = true;
     }
 
     if (value.HasMember("SipCountryCode") && !value["SipCountryCode"].IsNull())
@@ -88,6 +90,26 @@ CoreInternalOutcome WebLogs::Deserialize(const rapidjson::Value &value)
         }
         m_sipCountryCode = string(value["SipCountryCode"].GetString());
         m_sipCountryCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealClientIp") && !value["RealClientIp"].IsNull())
+    {
+        if (!value["RealClientIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebLogs.RealClientIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realClientIp = string(value["RealClientIp"].GetString());
+        m_realClientIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("RealClientIpCountryCode") && !value["RealClientIpCountryCode"].IsNull())
+    {
+        if (!value["RealClientIpCountryCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebLogs.RealClientIpCountryCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_realClientIpCountryCode = string(value["RealClientIpCountryCode"].GetString());
+        m_realClientIpCountryCodeHasBeenSet = true;
     }
 
     if (value.HasMember("AttackTime") && !value["AttackTime"].IsNull())
@@ -110,14 +132,14 @@ CoreInternalOutcome WebLogs::Deserialize(const rapidjson::Value &value)
         m_requestUriHasBeenSet = true;
     }
 
-    if (value.HasMember("AttackContent") && !value["AttackContent"].IsNull())
+    if (value.HasMember("ReqMethod") && !value["ReqMethod"].IsNull())
     {
-        if (!value["AttackContent"].IsString())
+        if (!value["ReqMethod"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `WebLogs.AttackContent` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebLogs.ReqMethod` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_attackContent = string(value["AttackContent"].GetString());
-        m_attackContentHasBeenSet = true;
+        m_reqMethod = string(value["ReqMethod"].GetString());
+        m_reqMethodHasBeenSet = true;
     }
 
     if (value.HasMember("RuleDetailList") && !value["RuleDetailList"].IsNull())
@@ -140,14 +162,14 @@ CoreInternalOutcome WebLogs::Deserialize(const rapidjson::Value &value)
         m_ruleDetailListHasBeenSet = true;
     }
 
-    if (value.HasMember("ReqMethod") && !value["ReqMethod"].IsNull())
+    if (value.HasMember("AttackContent") && !value["AttackContent"].IsNull())
     {
-        if (!value["ReqMethod"].IsString())
+        if (!value["AttackContent"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `WebLogs.ReqMethod` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `WebLogs.AttackContent` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_reqMethod = string(value["ReqMethod"].GetString());
-        m_reqMethodHasBeenSet = true;
+        m_attackContent = string(value["AttackContent"].GetString());
+        m_attackContentHasBeenSet = true;
     }
 
     if (value.HasMember("Area") && !value["Area"].IsNull())
@@ -175,12 +197,12 @@ void WebLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_attackIpHasBeenSet)
+    if (m_httpLogHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AttackIp";
+        string key = "HttpLog";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_attackIp.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_httpLog.c_str(), allocator).Move(), allocator);
     }
 
     if (m_domainHasBeenSet)
@@ -191,12 +213,12 @@ void WebLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_httpLogHasBeenSet)
+    if (m_attackIpHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "HttpLog";
+        string key = "AttackIp";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_httpLog.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackIp.c_str(), allocator).Move(), allocator);
     }
 
     if (m_sipCountryCodeHasBeenSet)
@@ -205,6 +227,22 @@ void WebLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "SipCountryCode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sipCountryCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realClientIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealClientIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realClientIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_realClientIpCountryCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealClientIpCountryCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_realClientIpCountryCode.c_str(), allocator).Move(), allocator);
     }
 
     if (m_attackTimeHasBeenSet)
@@ -223,12 +261,12 @@ void WebLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         value.AddMember(iKey, rapidjson::Value(m_requestUri.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_attackContentHasBeenSet)
+    if (m_reqMethodHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AttackContent";
+        string key = "ReqMethod";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_attackContent.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reqMethod.c_str(), allocator).Move(), allocator);
     }
 
     if (m_ruleDetailListHasBeenSet)
@@ -246,12 +284,12 @@ void WebLogs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         }
     }
 
-    if (m_reqMethodHasBeenSet)
+    if (m_attackContentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReqMethod";
+        string key = "AttackContent";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_reqMethod.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_attackContent.c_str(), allocator).Move(), allocator);
     }
 
     if (m_areaHasBeenSet)
@@ -281,20 +319,20 @@ bool WebLogs::EventIdHasBeenSet() const
     return m_eventIdHasBeenSet;
 }
 
-string WebLogs::GetAttackIp() const
+string WebLogs::GetHttpLog() const
 {
-    return m_attackIp;
+    return m_httpLog;
 }
 
-void WebLogs::SetAttackIp(const string& _attackIp)
+void WebLogs::SetHttpLog(const string& _httpLog)
 {
-    m_attackIp = _attackIp;
-    m_attackIpHasBeenSet = true;
+    m_httpLog = _httpLog;
+    m_httpLogHasBeenSet = true;
 }
 
-bool WebLogs::AttackIpHasBeenSet() const
+bool WebLogs::HttpLogHasBeenSet() const
 {
-    return m_attackIpHasBeenSet;
+    return m_httpLogHasBeenSet;
 }
 
 string WebLogs::GetDomain() const
@@ -313,20 +351,20 @@ bool WebLogs::DomainHasBeenSet() const
     return m_domainHasBeenSet;
 }
 
-string WebLogs::GetHttpLog() const
+string WebLogs::GetAttackIp() const
 {
-    return m_httpLog;
+    return m_attackIp;
 }
 
-void WebLogs::SetHttpLog(const string& _httpLog)
+void WebLogs::SetAttackIp(const string& _attackIp)
 {
-    m_httpLog = _httpLog;
-    m_httpLogHasBeenSet = true;
+    m_attackIp = _attackIp;
+    m_attackIpHasBeenSet = true;
 }
 
-bool WebLogs::HttpLogHasBeenSet() const
+bool WebLogs::AttackIpHasBeenSet() const
 {
-    return m_httpLogHasBeenSet;
+    return m_attackIpHasBeenSet;
 }
 
 string WebLogs::GetSipCountryCode() const
@@ -343,6 +381,38 @@ void WebLogs::SetSipCountryCode(const string& _sipCountryCode)
 bool WebLogs::SipCountryCodeHasBeenSet() const
 {
     return m_sipCountryCodeHasBeenSet;
+}
+
+string WebLogs::GetRealClientIp() const
+{
+    return m_realClientIp;
+}
+
+void WebLogs::SetRealClientIp(const string& _realClientIp)
+{
+    m_realClientIp = _realClientIp;
+    m_realClientIpHasBeenSet = true;
+}
+
+bool WebLogs::RealClientIpHasBeenSet() const
+{
+    return m_realClientIpHasBeenSet;
+}
+
+string WebLogs::GetRealClientIpCountryCode() const
+{
+    return m_realClientIpCountryCode;
+}
+
+void WebLogs::SetRealClientIpCountryCode(const string& _realClientIpCountryCode)
+{
+    m_realClientIpCountryCode = _realClientIpCountryCode;
+    m_realClientIpCountryCodeHasBeenSet = true;
+}
+
+bool WebLogs::RealClientIpCountryCodeHasBeenSet() const
+{
+    return m_realClientIpCountryCodeHasBeenSet;
 }
 
 uint64_t WebLogs::GetAttackTime() const
@@ -377,20 +447,20 @@ bool WebLogs::RequestUriHasBeenSet() const
     return m_requestUriHasBeenSet;
 }
 
-string WebLogs::GetAttackContent() const
+string WebLogs::GetReqMethod() const
 {
-    return m_attackContent;
+    return m_reqMethod;
 }
 
-void WebLogs::SetAttackContent(const string& _attackContent)
+void WebLogs::SetReqMethod(const string& _reqMethod)
 {
-    m_attackContent = _attackContent;
-    m_attackContentHasBeenSet = true;
+    m_reqMethod = _reqMethod;
+    m_reqMethodHasBeenSet = true;
 }
 
-bool WebLogs::AttackContentHasBeenSet() const
+bool WebLogs::ReqMethodHasBeenSet() const
 {
-    return m_attackContentHasBeenSet;
+    return m_reqMethodHasBeenSet;
 }
 
 vector<SecRuleRelatedInfo> WebLogs::GetRuleDetailList() const
@@ -409,20 +479,20 @@ bool WebLogs::RuleDetailListHasBeenSet() const
     return m_ruleDetailListHasBeenSet;
 }
 
-string WebLogs::GetReqMethod() const
+string WebLogs::GetAttackContent() const
 {
-    return m_reqMethod;
+    return m_attackContent;
 }
 
-void WebLogs::SetReqMethod(const string& _reqMethod)
+void WebLogs::SetAttackContent(const string& _attackContent)
 {
-    m_reqMethod = _reqMethod;
-    m_reqMethodHasBeenSet = true;
+    m_attackContent = _attackContent;
+    m_attackContentHasBeenSet = true;
 }
 
-bool WebLogs::ReqMethodHasBeenSet() const
+bool WebLogs::AttackContentHasBeenSet() const
 {
-    return m_reqMethodHasBeenSet;
+    return m_attackContentHasBeenSet;
 }
 
 string WebLogs::GetArea() const

@@ -599,6 +599,92 @@ EssbasicClient::ChannelCreateReleaseFlowOutcomeCallable EssbasicClient::ChannelC
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateSealPolicyOutcome EssbasicClient::ChannelCreateSealPolicy(const ChannelCreateSealPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateSealPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateSealPolicyResponse rsp = ChannelCreateSealPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateSealPolicyOutcome(rsp);
+        else
+            return ChannelCreateSealPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateSealPolicyOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateSealPolicyAsync(const ChannelCreateSealPolicyRequest& request, const ChannelCreateSealPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateSealPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateSealPolicyOutcomeCallable EssbasicClient::ChannelCreateSealPolicyCallable(const ChannelCreateSealPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateSealPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateSealPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssbasicClient::ChannelDeleteSealPoliciesOutcome EssbasicClient::ChannelDeleteSealPolicies(const ChannelDeleteSealPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelDeleteSealPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelDeleteSealPoliciesResponse rsp = ChannelDeleteSealPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelDeleteSealPoliciesOutcome(rsp);
+        else
+            return ChannelDeleteSealPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelDeleteSealPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelDeleteSealPoliciesAsync(const ChannelDeleteSealPoliciesRequest& request, const ChannelDeleteSealPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelDeleteSealPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelDeleteSealPoliciesOutcomeCallable EssbasicClient::ChannelDeleteSealPoliciesCallable(const ChannelDeleteSealPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelDeleteSealPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelDeleteSealPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelDescribeEmployeesOutcome EssbasicClient::ChannelDescribeEmployees(const ChannelDescribeEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelDescribeEmployees");

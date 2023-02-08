@@ -728,6 +728,49 @@ EssClient::CreateSchemeUrlOutcomeCallable EssClient::CreateSchemeUrlCallable(con
     return task->get_future();
 }
 
+EssClient::CreateSealPolicyOutcome EssClient::CreateSealPolicy(const CreateSealPolicyRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSealPolicy");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateSealPolicyResponse rsp = CreateSealPolicyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateSealPolicyOutcome(rsp);
+        else
+            return CreateSealPolicyOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateSealPolicyOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateSealPolicyAsync(const CreateSealPolicyRequest& request, const CreateSealPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSealPolicy(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateSealPolicyOutcomeCallable EssClient::CreateSealPolicyCallable(const CreateSealPolicyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateSealPolicyOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSealPolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DeleteIntegrationEmployeesOutcome EssClient::DeleteIntegrationEmployees(const DeleteIntegrationEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteIntegrationEmployees");
@@ -764,6 +807,49 @@ EssClient::DeleteIntegrationEmployeesOutcomeCallable EssClient::DeleteIntegratio
         [this, request]()
         {
             return this->DeleteIntegrationEmployees(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DeleteSealPoliciesOutcome EssClient::DeleteSealPolicies(const DeleteSealPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSealPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteSealPoliciesResponse rsp = DeleteSealPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteSealPoliciesOutcome(rsp);
+        else
+            return DeleteSealPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteSealPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DeleteSealPoliciesAsync(const DeleteSealPoliciesRequest& request, const DeleteSealPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSealPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DeleteSealPoliciesOutcomeCallable EssClient::DeleteSealPoliciesCallable(const DeleteSealPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteSealPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSealPolicies(request);
         }
     );
 

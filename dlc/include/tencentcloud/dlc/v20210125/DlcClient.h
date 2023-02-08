@@ -53,6 +53,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateExportTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateImportTaskResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateInternalTableRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateInternalTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateResultDownloadRequest.h>
@@ -214,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateImportTaskResponse> CreateImportTaskOutcome;
                 typedef std::future<CreateImportTaskOutcome> CreateImportTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateImportTaskRequest&, CreateImportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateImportTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateInternalTableResponse> CreateInternalTableOutcome;
+                typedef std::future<CreateInternalTableOutcome> CreateInternalTableOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateInternalTableRequest&, CreateInternalTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInternalTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateNotebookSessionResponse> CreateNotebookSessionOutcome;
                 typedef std::future<CreateNotebookSessionOutcome> CreateNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionRequest&, CreateNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionAsyncHandler;
@@ -504,6 +509,15 @@ namespace TencentCloud
                 CreateImportTaskOutcome CreateImportTask(const Model::CreateImportTaskRequest &request);
                 void CreateImportTaskAsync(const Model::CreateImportTaskRequest& request, const CreateImportTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateImportTaskOutcomeCallable CreateImportTaskCallable(const Model::CreateImportTaskRequest& request);
+
+                /**
+                 *创建托管存储内表
+                 * @param req CreateInternalTableRequest
+                 * @return CreateInternalTableOutcome
+                 */
+                CreateInternalTableOutcome CreateInternalTable(const Model::CreateInternalTableRequest &request);
+                void CreateInternalTableAsync(const Model::CreateInternalTableRequest& request, const CreateInternalTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateInternalTableOutcomeCallable CreateInternalTableCallable(const Model::CreateInternalTableRequest& request);
 
                 /**
                  *本接口（CreateNotebookSession）用于创建notebook livy session

@@ -470,6 +470,49 @@ CdwchClient::DescribeSpecOutcomeCallable CdwchClient::DescribeSpecCallable(const
     return task->get_future();
 }
 
+CdwchClient::DestroyInstanceOutcome CdwchClient::DestroyInstance(const DestroyInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DestroyInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DestroyInstanceResponse rsp = DestroyInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DestroyInstanceOutcome(rsp);
+        else
+            return DestroyInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return DestroyInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DestroyInstanceAsync(const DestroyInstanceRequest& request, const DestroyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DestroyInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DestroyInstanceOutcomeCallable CdwchClient::DestroyInstanceCallable(const DestroyInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DestroyInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->DestroyInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::ModifyClusterConfigsOutcome CdwchClient::ModifyClusterConfigs(const ModifyClusterConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyClusterConfigs");

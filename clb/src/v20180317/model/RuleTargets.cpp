@@ -24,7 +24,8 @@ RuleTargets::RuleTargets() :
     m_locationIdHasBeenSet(false),
     m_domainHasBeenSet(false),
     m_urlHasBeenSet(false),
-    m_targetsHasBeenSet(false)
+    m_targetsHasBeenSet(false),
+    m_functionTargetsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome RuleTargets::Deserialize(const rapidjson::Value &value)
         m_targetsHasBeenSet = true;
     }
 
+    if (value.HasMember("FunctionTargets") && !value["FunctionTargets"].IsNull())
+    {
+        if (!value["FunctionTargets"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RuleTargets.FunctionTargets` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["FunctionTargets"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FunctionTarget item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_functionTargets.push_back(item);
+        }
+        m_functionTargetsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +144,21 @@ void RuleTargets::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
 
         int i=0;
         for (auto itr = m_targets.begin(); itr != m_targets.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_functionTargetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FunctionTargets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_functionTargets.begin(); itr != m_functionTargets.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -194,5 +230,21 @@ void RuleTargets::SetTargets(const vector<Backend>& _targets)
 bool RuleTargets::TargetsHasBeenSet() const
 {
     return m_targetsHasBeenSet;
+}
+
+vector<FunctionTarget> RuleTargets::GetFunctionTargets() const
+{
+    return m_functionTargets;
+}
+
+void RuleTargets::SetFunctionTargets(const vector<FunctionTarget>& _functionTargets)
+{
+    m_functionTargets = _functionTargets;
+    m_functionTargetsHasBeenSet = true;
+}
+
+bool RuleTargets::FunctionTargetsHasBeenSet() const
+{
+    return m_functionTargetsHasBeenSet;
 }
 

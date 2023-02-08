@@ -25,9 +25,9 @@ using namespace std;
 AddNodesRequest::AddNodesRequest() :
     m_placementHasBeenSet(false),
     m_clusterIdHasBeenSet(false),
-    m_imageIdHasBeenSet(false),
     m_virtualPrivateCloudHasBeenSet(false),
     m_countHasBeenSet(false),
+    m_imageIdHasBeenSet(false),
     m_instanceChargeTypeHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
@@ -68,14 +68,6 @@ string AddNodesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_imageIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ImageId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_virtualPrivateCloudHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -91,6 +83,14 @@ string AddNodesRequest::ToJsonString() const
         string key = "Count";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_count, allocator);
+    }
+
+    if (m_imageIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_imageId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_instanceChargeTypeHasBeenSet)
@@ -259,22 +259,6 @@ bool AddNodesRequest::ClusterIdHasBeenSet() const
     return m_clusterIdHasBeenSet;
 }
 
-string AddNodesRequest::GetImageId() const
-{
-    return m_imageId;
-}
-
-void AddNodesRequest::SetImageId(const string& _imageId)
-{
-    m_imageId = _imageId;
-    m_imageIdHasBeenSet = true;
-}
-
-bool AddNodesRequest::ImageIdHasBeenSet() const
-{
-    return m_imageIdHasBeenSet;
-}
-
 VirtualPrivateCloud AddNodesRequest::GetVirtualPrivateCloud() const
 {
     return m_virtualPrivateCloud;
@@ -305,6 +289,22 @@ void AddNodesRequest::SetCount(const int64_t& _count)
 bool AddNodesRequest::CountHasBeenSet() const
 {
     return m_countHasBeenSet;
+}
+
+string AddNodesRequest::GetImageId() const
+{
+    return m_imageId;
+}
+
+void AddNodesRequest::SetImageId(const string& _imageId)
+{
+    m_imageId = _imageId;
+    m_imageIdHasBeenSet = true;
+}
+
+bool AddNodesRequest::ImageIdHasBeenSet() const
+{
+    return m_imageIdHasBeenSet;
 }
 
 string AddNodesRequest::GetInstanceChargeType() const

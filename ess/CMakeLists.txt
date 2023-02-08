@@ -48,12 +48,14 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FileUrl.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
+  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
   include/tencentcloud/ess/v20201111/model/OrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/FillApproverInfo.h
-  include/tencentcloud/ess/v20201111/model/Caller.h
-  include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
+  include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
   include/tencentcloud/ess/v20201111/model/FailedDeleteStaffData.h
+  include/tencentcloud/ess/v20201111/model/PdfVerifyResult.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/SuccessDeleteStaffData.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h
@@ -92,6 +94,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/ApproverRestriction.h
+  include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h
   include/tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h
   include/tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h
@@ -99,19 +102,20 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/StartFlowRequest.h
   include/tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h
   include/tencentcloud/ess/v20201111/model/ApproverOption.h
-  include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h
+  include/tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsRequest.h
   include/tencentcloud/ess/v20201111/model/CancelFlowRequest.h
   include/tencentcloud/ess/v20201111/model/UploadFile.h
   include/tencentcloud/ess/v20201111/model/Component.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRemindsRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h
+  include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h
   include/tencentcloud/ess/v20201111/model/SignUrl.h
   include/tencentcloud/ess/v20201111/model/VerifyPdfResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteStaffsResult.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowBriefsResponse.h
   include/tencentcloud/ess/v20201111/model/Admin.h
-  include/tencentcloud/ess/v20201111/model/OccupiedSeal.h
+  include/tencentcloud/ess/v20201111/model/Caller.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesResponse.h
   include/tencentcloud/ess/v20201111/model/UploadFilesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
@@ -155,12 +159,14 @@ set(ess_src
   src/v20201111/model/FileUrl.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeRequest.cpp
   src/v20201111/model/DescribeFlowInfoRequest.cpp
+  src/v20201111/model/DeleteSealPoliciesResponse.cpp
   src/v20201111/model/OrganizationInfo.cpp
   src/v20201111/model/FillApproverInfo.cpp
-  src/v20201111/model/Caller.cpp
-  src/v20201111/model/PdfVerifyResult.cpp
+  src/v20201111/model/OccupiedSeal.cpp
   src/v20201111/model/FailedDeleteStaffData.cpp
+  src/v20201111/model/PdfVerifyResult.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlResponse.cpp
+  src/v20201111/model/CreateSealPolicyResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesResponse.cpp
   src/v20201111/model/SuccessDeleteStaffData.cpp
   src/v20201111/model/CreateConvertTaskApiResponse.cpp
@@ -199,6 +205,7 @@ set(ess_src
   src/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.cpp
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/ApproverRestriction.cpp
+  src/v20201111/model/DeleteSealPoliciesRequest.cpp
   src/v20201111/model/CreatePrepareFlowResponse.cpp
   src/v20201111/model/GetTaskResultApiResponse.cpp
   src/v20201111/model/CancelMultiFlowSignQRCodeRequest.cpp
@@ -206,19 +213,20 @@ set(ess_src
   src/v20201111/model/StartFlowRequest.cpp
   src/v20201111/model/CreatePrepareFlowRequest.cpp
   src/v20201111/model/ApproverOption.cpp
-  src/v20201111/model/DeleteIntegrationEmployeesResponse.cpp
+  src/v20201111/model/CreateSealPolicyRequest.cpp
   src/v20201111/model/DescribeOrganizationSealsRequest.cpp
   src/v20201111/model/CancelFlowRequest.cpp
   src/v20201111/model/UploadFile.cpp
   src/v20201111/model/Component.cpp
   src/v20201111/model/CreateFlowRemindsRequest.cpp
   src/v20201111/model/DescribeFlowBriefsRequest.cpp
+  src/v20201111/model/DeleteIntegrationEmployeesResponse.cpp
   src/v20201111/model/SignUrl.cpp
   src/v20201111/model/VerifyPdfResponse.cpp
   src/v20201111/model/DeleteStaffsResult.cpp
   src/v20201111/model/DescribeFlowBriefsResponse.cpp
   src/v20201111/model/Admin.cpp
-  src/v20201111/model/OccupiedSeal.cpp
+  src/v20201111/model/Caller.cpp
   src/v20201111/model/DescribeFlowTemplatesResponse.cpp
   src/v20201111/model/UploadFilesRequest.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp

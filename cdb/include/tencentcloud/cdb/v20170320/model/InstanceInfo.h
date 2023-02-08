@@ -147,14 +147,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
-                     * @return Status 实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
+                     * 获取实例状态，可能的返回值：0-创建中；1-运行中；4-正在进行隔离操作；5-已隔离
+                     * @return Status 实例状态，可能的返回值：0-创建中；1-运行中；4-正在进行隔离操作；5-已隔离
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
-                     * @param Status 实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
+                     * 设置实例状态，可能的返回值：0-创建中；1-运行中；4-正在进行隔离操作；5-已隔离
+                     * @param Status 实例状态，可能的返回值：0-创建中；1-运行中；4-正在进行隔离操作；5-已隔离
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -940,7 +940,7 @@ namespace TencentCloud
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例状态，可能的返回值：0-创建中；1-运行中；4-隔离中；5-已隔离
+                     * 实例状态，可能的返回值：0-创建中；1-运行中；4-正在进行隔离操作；5-已隔离
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

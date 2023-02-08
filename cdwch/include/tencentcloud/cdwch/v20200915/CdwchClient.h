@@ -43,6 +43,8 @@
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DestroyInstanceRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DestroyInstanceResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsRequest.h>
@@ -101,6 +103,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSpecResponse> DescribeSpecOutcome;
                 typedef std::future<DescribeSpecOutcome> DescribeSpecOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeSpecRequest&, DescribeSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecAsyncHandler;
+                typedef Outcome<Core::Error, Model::DestroyInstanceResponse> DestroyInstanceOutcome;
+                typedef std::future<DestroyInstanceOutcome> DestroyInstanceOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DestroyInstanceRequest&, DestroyInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyClusterConfigsResponse> ModifyClusterConfigsOutcome;
                 typedef std::future<ModifyClusterConfigsOutcome> ModifyClusterConfigsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::ModifyClusterConfigsRequest&, ModifyClusterConfigsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyClusterConfigsAsyncHandler;
@@ -214,6 +219,15 @@ namespace TencentCloud
                 DescribeSpecOutcome DescribeSpec(const Model::DescribeSpecRequest &request);
                 void DescribeSpecAsync(const Model::DescribeSpecRequest& request, const DescribeSpecAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSpecOutcomeCallable DescribeSpecCallable(const Model::DescribeSpecRequest& request);
+
+                /**
+                 *销毁集群 open api
+                 * @param req DestroyInstanceRequest
+                 * @return DestroyInstanceOutcome
+                 */
+                DestroyInstanceOutcome DestroyInstance(const Model::DestroyInstanceRequest &request);
+                void DestroyInstanceAsync(const Model::DestroyInstanceRequest& request, const DestroyInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DestroyInstanceOutcomeCallable DestroyInstanceCallable(const Model::DestroyInstanceRequest& request);
 
                 /**
                  *在集群配置页面修改集群配置文件接口，xml模式

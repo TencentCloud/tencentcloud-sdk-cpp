@@ -55,8 +55,12 @@
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateSealPolicyResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFlowBriefsRequest.h>
@@ -147,9 +151,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSchemeUrlResponse> CreateSchemeUrlOutcome;
                 typedef std::future<CreateSchemeUrlOutcome> CreateSchemeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSchemeUrlRequest&, CreateSchemeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchemeUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateSealPolicyResponse> CreateSealPolicyOutcome;
+                typedef std::future<CreateSealPolicyOutcome> CreateSealPolicyOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateSealPolicyRequest&, CreateSealPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSealPolicyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteIntegrationEmployeesResponse> DeleteIntegrationEmployeesOutcome;
                 typedef std::future<DeleteIntegrationEmployeesOutcome> DeleteIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteIntegrationEmployeesRequest&, DeleteIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationEmployeesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteSealPoliciesResponse> DeleteSealPoliciesOutcome;
+                typedef std::future<DeleteSealPoliciesOutcome> DeleteSealPoliciesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DeleteSealPoliciesRequest&, DeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSealPoliciesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFileUrlsResponse> DescribeFileUrlsOutcome;
                 typedef std::future<DescribeFileUrlsOutcome> DescribeFileUrlsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeFileUrlsRequest&, DescribeFileUrlsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileUrlsAsyncHandler;
@@ -375,6 +385,15 @@ namespace TencentCloud
                 CreateSchemeUrlOutcomeCallable CreateSchemeUrlCallable(const Model::CreateSchemeUrlRequest& request);
 
                 /**
+                 *对企业员工进行印章授权
+                 * @param req CreateSealPolicyRequest
+                 * @return CreateSealPolicyOutcome
+                 */
+                CreateSealPolicyOutcome CreateSealPolicy(const Model::CreateSealPolicyRequest &request);
+                void CreateSealPolicyAsync(const Model::CreateSealPolicyRequest& request, const CreateSealPolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateSealPolicyOutcomeCallable CreateSealPolicyCallable(const Model::CreateSealPolicyRequest& request);
+
+                /**
                  *移除员工
                  * @param req DeleteIntegrationEmployeesRequest
                  * @return DeleteIntegrationEmployeesOutcome
@@ -382,6 +401,15 @@ namespace TencentCloud
                 DeleteIntegrationEmployeesOutcome DeleteIntegrationEmployees(const Model::DeleteIntegrationEmployeesRequest &request);
                 void DeleteIntegrationEmployeesAsync(const Model::DeleteIntegrationEmployeesRequest& request, const DeleteIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteIntegrationEmployeesOutcomeCallable DeleteIntegrationEmployeesCallable(const Model::DeleteIntegrationEmployeesRequest& request);
+
+                /**
+                 *撤销员工持有的印章权限
+                 * @param req DeleteSealPoliciesRequest
+                 * @return DeleteSealPoliciesOutcome
+                 */
+                DeleteSealPoliciesOutcome DeleteSealPolicies(const Model::DeleteSealPoliciesRequest &request);
+                void DeleteSealPoliciesAsync(const Model::DeleteSealPoliciesRequest& request, const DeleteSealPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteSealPoliciesOutcomeCallable DeleteSealPoliciesCallable(const Model::DeleteSealPoliciesRequest& request);
 
                 /**
                  *查询文件下载URL

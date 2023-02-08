@@ -306,6 +306,28 @@ namespace TencentCloud
                      */
                     bool SpecNameHasBeenSet() const;
 
+                    /**
+                     * 获取集群异常。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExceptionInformation 集群异常。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExceptionInformation() const;
+
+                    /**
+                     * 设置集群异常。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExceptionInformation 集群异常。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExceptionInformation(const std::string& _exceptionInformation);
+
+                    /**
+                     * 判断参数 ExceptionInformation 是否已赋值
+                     * @return ExceptionInformation 是否已赋值
+                     */
+                    bool ExceptionInformationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -393,6 +415,13 @@ namespace TencentCloud
                      */
                     std::string m_specName;
                     bool m_specNameHasBeenSet;
+
+                    /**
+                     * 集群异常。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_exceptionInformation;
+                    bool m_exceptionInformationHasBeenSet;
 
                 };
             }

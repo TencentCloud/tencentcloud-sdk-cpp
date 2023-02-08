@@ -22,6 +22,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskRequest.h
+  include/tencentcloud/cdwch/v20200915/model/DestroyInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpResponse.h
   include/tencentcloud/cdwch/v20200915/model/Charge.h
@@ -32,7 +33,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h
   include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsResponse.h
-  include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
+  include/tencentcloud/cdwch/v20200915/model/DestroyInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h
   include/tencentcloud/cdwch/v20200915/model/ClusterConfigsInfoFromEMR.h
@@ -44,6 +45,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/InstanceInfo.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h
+  include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/DiskSpec.h
   include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h
@@ -75,6 +77,7 @@ set(cdwch_src
   src/v20200915/model/DescribeInstanceShardsRequest.cpp
   src/v20200915/model/ScaleOutInstanceResponse.cpp
   src/v20200915/model/ResizeDiskRequest.cpp
+  src/v20200915/model/DestroyInstanceResponse.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsRequest.cpp
   src/v20200915/model/OpenBackUpResponse.cpp
   src/v20200915/model/Charge.cpp
@@ -85,7 +88,7 @@ set(cdwch_src
   src/v20200915/model/DescribeBackUpScheduleRequest.cpp
   src/v20200915/model/DescribeSpecResponse.cpp
   src/v20200915/model/ModifyInstanceKeyValConfigsResponse.cpp
-  src/v20200915/model/ResourceSpec.cpp
+  src/v20200915/model/DestroyInstanceRequest.cpp
   src/v20200915/model/ModifyUserNewPrivilegeRequest.cpp
   src/v20200915/model/DescribeCkSqlApisRequest.cpp
   src/v20200915/model/ClusterConfigsInfoFromEMR.cpp
@@ -97,6 +100,7 @@ set(cdwch_src
   src/v20200915/model/InstanceInfo.cpp
   src/v20200915/model/ModifyClusterConfigsRequest.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsResponse.cpp
+  src/v20200915/model/ResourceSpec.cpp
   src/v20200915/model/ModifyClusterConfigsResponse.cpp
   src/v20200915/model/DiskSpec.cpp
   src/v20200915/model/DescribeClusterConfigsRequest.cpp

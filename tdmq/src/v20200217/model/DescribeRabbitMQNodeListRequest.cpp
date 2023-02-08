@@ -25,7 +25,11 @@ using namespace std;
 DescribeRabbitMQNodeListRequest::DescribeRabbitMQNodeListRequest() :
     m_instanceIdHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_nodeNameHasBeenSet(false),
+    m_filtersHasBeenSet(false),
+    m_sortElementHasBeenSet(false),
+    m_sortOrderHasBeenSet(false)
 {
 }
 
@@ -58,6 +62,45 @@ string DescribeRabbitMQNodeListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_nodeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_sortElementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortElement";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortElement.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sortOrderHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SortOrder";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sortOrder.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +157,70 @@ void DescribeRabbitMQNodeListRequest::SetLimit(const uint64_t& _limit)
 bool DescribeRabbitMQNodeListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeRabbitMQNodeListRequest::GetNodeName() const
+{
+    return m_nodeName;
+}
+
+void DescribeRabbitMQNodeListRequest::SetNodeName(const string& _nodeName)
+{
+    m_nodeName = _nodeName;
+    m_nodeNameHasBeenSet = true;
+}
+
+bool DescribeRabbitMQNodeListRequest::NodeNameHasBeenSet() const
+{
+    return m_nodeNameHasBeenSet;
+}
+
+vector<Filter> DescribeRabbitMQNodeListRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeRabbitMQNodeListRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeRabbitMQNodeListRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+string DescribeRabbitMQNodeListRequest::GetSortElement() const
+{
+    return m_sortElement;
+}
+
+void DescribeRabbitMQNodeListRequest::SetSortElement(const string& _sortElement)
+{
+    m_sortElement = _sortElement;
+    m_sortElementHasBeenSet = true;
+}
+
+bool DescribeRabbitMQNodeListRequest::SortElementHasBeenSet() const
+{
+    return m_sortElementHasBeenSet;
+}
+
+string DescribeRabbitMQNodeListRequest::GetSortOrder() const
+{
+    return m_sortOrder;
+}
+
+void DescribeRabbitMQNodeListRequest::SetSortOrder(const string& _sortOrder)
+{
+    m_sortOrder = _sortOrder;
+    m_sortOrderHasBeenSet = true;
+}
+
+bool DescribeRabbitMQNodeListRequest::SortOrderHasBeenSet() const
+{
+    return m_sortOrderHasBeenSet;
 }
 
 

@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool UserSubnetIPNumHasBeenSet() const;
 
                     /**
-                     * 获取节点同步ip
-                     * @return ScaleOutNodeIp 节点同步ip
+                     * 获取同步元数据节点IP （uip）
+                     * @return ScaleOutNodeIp 同步元数据节点IP （uip）
                      */
                     std::string GetScaleOutNodeIp() const;
 
                     /**
-                     * 设置节点同步ip
-                     * @param ScaleOutNodeIp 节点同步ip
+                     * 设置同步元数据节点IP （uip）
+                     * @param ScaleOutNodeIp 同步元数据节点IP （uip）
                      */
                     void SetScaleOutNodeIp(const std::string& _scaleOutNodeIp);
 
@@ -153,6 +153,24 @@ namespace TencentCloud
                      * @return ScaleOutNodeIp 是否已赋值
                      */
                     bool ScaleOutNodeIpHasBeenSet() const;
+
+                    /**
+                     * 获取缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     * @return ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     */
+                    std::vector<std::string> GetReduceShardInfo() const;
+
+                    /**
+                     * 设置缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     * @param ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     */
+                    void SetReduceShardInfo(const std::vector<std::string>& _reduceShardInfo);
+
+                    /**
+                     * 判断参数 ReduceShardInfo 是否已赋值
+                     * @return ReduceShardInfo 是否已赋值
+                     */
+                    bool ReduceShardInfoHasBeenSet() const;
 
                 private:
 
@@ -188,10 +206,16 @@ namespace TencentCloud
                     bool m_userSubnetIPNumHasBeenSet;
 
                     /**
-                     * 节点同步ip
+                     * 同步元数据节点IP （uip）
                      */
                     std::string m_scaleOutNodeIp;
                     bool m_scaleOutNodeIpHasBeenSet;
+
+                    /**
+                     * 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     */
+                    std::vector<std::string> m_reduceShardInfo;
+                    bool m_reduceShardInfoHasBeenSet;
 
                 };
             }

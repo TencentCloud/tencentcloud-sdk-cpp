@@ -29,7 +29,8 @@ DescribeCurveDataResponse::DescribeCurveDataResponse() :
     m_metricNameHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_valuesHasBeenSet(false),
-    m_timeHasBeenSet(false)
+    m_timeHasBeenSet(false),
+    m_newValuesHasBeenSet(false)
 {
 }
 
@@ -133,6 +134,16 @@ CoreInternalOutcome DescribeCurveDataResponse::Deserialize(const string &payload
         m_timeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NewValues") && !rsp["NewValues"].IsNull())
+    {
+        if (!rsp["NewValues"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `NewValues` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_newValues = rsp["NewValues"].GetDouble();
+        m_newValuesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -199,6 +210,14 @@ string DescribeCurveDataResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_newValuesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewValues";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_newValues, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -271,6 +290,16 @@ vector<int64_t> DescribeCurveDataResponse::GetTime() const
 bool DescribeCurveDataResponse::TimeHasBeenSet() const
 {
     return m_timeHasBeenSet;
+}
+
+double DescribeCurveDataResponse::GetNewValues() const
+{
+    return m_newValues;
+}
+
+bool DescribeCurveDataResponse::NewValuesHasBeenSet() const
+{
+    return m_newValuesHasBeenSet;
 }
 
 

@@ -66,22 +66,22 @@ namespace TencentCloud
                     bool EventIdHasBeenSet() const;
 
                     /**
-                     * 获取攻击源（客户端）Ip。
-                     * @return AttackIp 攻击源（客户端）Ip。
+                     * 获取http 日志内容。
+                     * @return HttpLog http 日志内容。
                      */
-                    std::string GetAttackIp() const;
+                    std::string GetHttpLog() const;
 
                     /**
-                     * 设置攻击源（客户端）Ip。
-                     * @param AttackIp 攻击源（客户端）Ip。
+                     * 设置http 日志内容。
+                     * @param HttpLog http 日志内容。
                      */
-                    void SetAttackIp(const std::string& _attackIp);
+                    void SetHttpLog(const std::string& _httpLog);
 
                     /**
-                     * 判断参数 AttackIp 是否已赋值
-                     * @return AttackIp 是否已赋值
+                     * 判断参数 HttpLog 是否已赋值
+                     * @return HttpLog 是否已赋值
                      */
-                    bool AttackIpHasBeenSet() const;
+                    bool HttpLogHasBeenSet() const;
 
                     /**
                      * 获取受攻击子域名。
@@ -102,22 +102,22 @@ namespace TencentCloud
                     bool DomainHasBeenSet() const;
 
                     /**
-                     * 获取http 日志内容。
-                     * @return HttpLog http 日志内容。
+                     * 获取攻击源（客户端）Ip。
+                     * @return AttackIp 攻击源（客户端）Ip。
                      */
-                    std::string GetHttpLog() const;
+                    std::string GetAttackIp() const;
 
                     /**
-                     * 设置http 日志内容。
-                     * @param HttpLog http 日志内容。
+                     * 设置攻击源（客户端）Ip。
+                     * @param AttackIp 攻击源（客户端）Ip。
                      */
-                    void SetHttpLog(const std::string& _httpLog);
+                    void SetAttackIp(const std::string& _attackIp);
 
                     /**
-                     * 判断参数 HttpLog 是否已赋值
-                     * @return HttpLog 是否已赋值
+                     * 判断参数 AttackIp 是否已赋值
+                     * @return AttackIp 是否已赋值
                      */
-                    bool HttpLogHasBeenSet() const;
+                    bool AttackIpHasBeenSet() const;
 
                     /**
                      * 获取IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)
@@ -136,6 +136,42 @@ namespace TencentCloud
                      * @return SipCountryCode 是否已赋值
                      */
                     bool SipCountryCodeHasBeenSet() const;
+
+                    /**
+                     * 获取真实客户端Ip。
+                     * @return RealClientIp 真实客户端Ip。
+                     */
+                    std::string GetRealClientIp() const;
+
+                    /**
+                     * 设置真实客户端Ip。
+                     * @param RealClientIp 真实客户端Ip。
+                     */
+                    void SetRealClientIp(const std::string& _realClientIp);
+
+                    /**
+                     * 判断参数 RealClientIp 是否已赋值
+                     * @return RealClientIp 是否已赋值
+                     */
+                    bool RealClientIpHasBeenSet() const;
+
+                    /**
+                     * 获取真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     * @return RealClientIpCountryCode 真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     */
+                    std::string GetRealClientIpCountryCode() const;
+
+                    /**
+                     * 设置真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     * @param RealClientIpCountryCode 真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     */
+                    void SetRealClientIpCountryCode(const std::string& _realClientIpCountryCode);
+
+                    /**
+                     * 判断参数 RealClientIpCountryCode 是否已赋值
+                     * @return RealClientIpCountryCode 是否已赋值
+                     */
+                    bool RealClientIpCountryCodeHasBeenSet() const;
 
                     /**
                      * 获取攻击时间，采用unix秒级时间戳。
@@ -174,26 +210,26 @@ namespace TencentCloud
                     bool RequestUriHasBeenSet() const;
 
                     /**
-                     * 获取攻击内容。
+                     * 获取请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AttackContent 攻击内容。
+                     * @return ReqMethod 请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetAttackContent() const;
+                    std::string GetReqMethod() const;
 
                     /**
-                     * 设置攻击内容。
+                     * 设置请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AttackContent 攻击内容。
+                     * @param ReqMethod 请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetAttackContent(const std::string& _attackContent);
+                    void SetReqMethod(const std::string& _reqMethod);
 
                     /**
-                     * 判断参数 AttackContent 是否已赋值
-                     * @return AttackContent 是否已赋值
+                     * 判断参数 ReqMethod 是否已赋值
+                     * @return ReqMethod 是否已赋值
                      */
-                    bool AttackContentHasBeenSet() const;
+                    bool ReqMethodHasBeenSet() const;
 
                     /**
                      * 获取规则相关信息列表。
@@ -218,26 +254,26 @@ namespace TencentCloud
                     bool RuleDetailListHasBeenSet() const;
 
                     /**
-                     * 获取请求类型。
+                     * 获取攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ReqMethod 请求类型。
+                     * @return AttackContent 攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetReqMethod() const;
+                    std::string GetAttackContent() const;
 
                     /**
-                     * 设置请求类型。
+                     * 设置攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ReqMethod 请求类型。
+                     * @param AttackContent 攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetReqMethod(const std::string& _reqMethod);
+                    void SetAttackContent(const std::string& _attackContent);
 
                     /**
-                     * 判断参数 ReqMethod 是否已赋值
-                     * @return ReqMethod 是否已赋值
+                     * 判断参数 AttackContent 是否已赋值
+                     * @return AttackContent 是否已赋值
                      */
-                    bool ReqMethodHasBeenSet() const;
+                    bool AttackContentHasBeenSet() const;
 
                     /**
                      * 获取日志所属区域。
@@ -270,10 +306,10 @@ namespace TencentCloud
                     bool m_eventIdHasBeenSet;
 
                     /**
-                     * 攻击源（客户端）Ip。
+                     * http 日志内容。
                      */
-                    std::string m_attackIp;
-                    bool m_attackIpHasBeenSet;
+                    std::string m_httpLog;
+                    bool m_httpLogHasBeenSet;
 
                     /**
                      * 受攻击子域名。
@@ -282,16 +318,28 @@ namespace TencentCloud
                     bool m_domainHasBeenSet;
 
                     /**
-                     * http 日志内容。
+                     * 攻击源（客户端）Ip。
                      */
-                    std::string m_httpLog;
-                    bool m_httpLogHasBeenSet;
+                    std::string m_attackIp;
+                    bool m_attackIpHasBeenSet;
 
                     /**
                      * IP所在国家iso-3166中alpha-2编码，编码信息请参考[ISO-3166](https://git.woa.com/edgeone/iso-3166/blob/master/all/all.json)
                      */
                     std::string m_sipCountryCode;
                     bool m_sipCountryCodeHasBeenSet;
+
+                    /**
+                     * 真实客户端Ip。
+                     */
+                    std::string m_realClientIp;
+                    bool m_realClientIpHasBeenSet;
+
+                    /**
+                     * 真实客户端Ip所在国家iso-3166中alpha-2编码。
+                     */
+                    std::string m_realClientIpCountryCode;
+                    bool m_realClientIpCountryCodeHasBeenSet;
 
                     /**
                      * 攻击时间，采用unix秒级时间戳。
@@ -306,11 +354,11 @@ namespace TencentCloud
                     bool m_requestUriHasBeenSet;
 
                     /**
-                     * 攻击内容。
+                     * 请求类型。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_attackContent;
-                    bool m_attackContentHasBeenSet;
+                    std::string m_reqMethod;
+                    bool m_reqMethodHasBeenSet;
 
                     /**
                      * 规则相关信息列表。
@@ -320,11 +368,11 @@ namespace TencentCloud
                     bool m_ruleDetailListHasBeenSet;
 
                     /**
-                     * 请求类型。
+                     * 攻击内容。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_reqMethod;
-                    bool m_reqMethodHasBeenSet;
+                    std::string m_attackContent;
+                    bool m_attackContentHasBeenSet;
 
                     /**
                      * 日志所属区域。

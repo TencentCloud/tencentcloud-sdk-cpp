@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢查询耗时
-                     * @return Duration 慢查询耗时
+                     * 获取慢查询耗时（单位：毫秒）。
+                     * @return Duration 慢查询耗时（单位：毫秒）。
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置慢查询耗时
-                     * @param Duration 慢查询耗时
+                     * 设置慢查询耗时（单位：毫秒）。
+                     * @param Duration 慢查询耗时（单位：毫秒）。
                      */
                     void SetDuration(const int64_t& _duration);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DurationHasBeenSet() const;
 
                     /**
-                     * 获取客户端地址
-                     * @return Client 客户端地址
+                     * 获取客户端地址。
+                     * @return Client 客户端地址。
                      */
                     std::string GetClient() const;
 
                     /**
-                     * 设置客户端地址
-                     * @param Client 客户端地址
+                     * 设置客户端地址。
+                     * @param Client 客户端地址。
                      */
                     void SetClient(const std::string& _client);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ClientHasBeenSet() const;
 
                     /**
-                     * 获取命令
-                     * @return Command 命令
+                     * 获取命令。
+                     * @return Command 命令。
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置命令
-                     * @param Command 命令
+                     * 设置命令。
+                     * @param Command 命令。
                      */
                     void SetCommand(const std::string& _command);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取详细命令行信息
-                     * @return CommandLine 详细命令行信息
+                     * 获取详细命令行信息。
+                     * @return CommandLine 详细命令行信息。
                      */
                     std::string GetCommandLine() const;
 
                     /**
-                     * 设置详细命令行信息
-                     * @param CommandLine 详细命令行信息
+                     * 设置详细命令行信息。
+                     * @param CommandLine 详细命令行信息。
                      */
                     void SetCommandLine(const std::string& _commandLine);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool CommandLineHasBeenSet() const;
 
                     /**
-                     * 获取执行时间
-                     * @return ExecuteTime 执行时间
+                     * 获取执行时间。
+                     * @return ExecuteTime 执行时间。
                      */
                     std::string GetExecuteTime() const;
 
                     /**
-                     * 设置执行时间
-                     * @param ExecuteTime 执行时间
+                     * 设置执行时间。
+                     * @param ExecuteTime 执行时间。
                      */
                     void SetExecuteTime(const std::string& _executeTime);
 
@@ -139,31 +139,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 慢查询耗时
+                     * 慢查询耗时（单位：毫秒）。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
 
                     /**
-                     * 客户端地址
+                     * 客户端地址。
                      */
                     std::string m_client;
                     bool m_clientHasBeenSet;
 
                     /**
-                     * 命令
+                     * 命令。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 详细命令行信息
+                     * 详细命令行信息。
                      */
                     std::string m_commandLine;
                     bool m_commandLineHasBeenSet;
 
                     /**
-                     * 执行时间
+                     * 执行时间。
                      */
                     std::string m_executeTime;
                     bool m_executeTimeHasBeenSet;

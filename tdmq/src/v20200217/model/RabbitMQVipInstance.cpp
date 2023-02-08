@@ -34,7 +34,8 @@ RabbitMQVipInstance::RabbitMQVipInstance() :
     m_autoRenewFlagHasBeenSet(false),
     m_payModeHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_specNameHasBeenSet(false)
+    m_specNameHasBeenSet(false),
+    m_exceptionInformationHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,16 @@ CoreInternalOutcome RabbitMQVipInstance::Deserialize(const rapidjson::Value &val
         m_specNameHasBeenSet = true;
     }
 
+    if (value.HasMember("ExceptionInformation") && !value["ExceptionInformation"].IsNull())
+    {
+        if (!value["ExceptionInformation"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RabbitMQVipInstance.ExceptionInformation` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_exceptionInformation = string(value["ExceptionInformation"].GetString());
+        m_exceptionInformationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +311,14 @@ void RabbitMQVipInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "SpecName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_specName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_exceptionInformationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExceptionInformation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_exceptionInformation.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +546,21 @@ void RabbitMQVipInstance::SetSpecName(const string& _specName)
 bool RabbitMQVipInstance::SpecNameHasBeenSet() const
 {
     return m_specNameHasBeenSet;
+}
+
+string RabbitMQVipInstance::GetExceptionInformation() const
+{
+    return m_exceptionInformation;
+}
+
+void RabbitMQVipInstance::SetExceptionInformation(const string& _exceptionInformation)
+{
+    m_exceptionInformation = _exceptionInformation;
+    m_exceptionInformationHasBeenSet = true;
+}
+
+bool RabbitMQVipInstance::ExceptionInformationHasBeenSet() const
+{
+    return m_exceptionInformationHasBeenSet;
 }
 

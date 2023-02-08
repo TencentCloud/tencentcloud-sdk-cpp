@@ -68,6 +68,116 @@ namespace TencentCloud
                      */
                     bool NodeNameHasBeenSet() const;
 
+                    /**
+                     * 获取节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NodeStatus 节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetNodeStatus() const;
+
+                    /**
+                     * 设置节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NodeStatus 节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNodeStatus(const std::string& _nodeStatus);
+
+                    /**
+                     * 判断参数 NodeStatus 是否已赋值
+                     * @return NodeStatus 是否已赋值
+                     */
+                    bool NodeStatusHasBeenSet() const;
+
+                    /**
+                     * 获取CPU使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CPUUsage CPU使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCPUUsage() const;
+
+                    /**
+                     * 设置CPU使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CPUUsage CPU使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCPUUsage(const std::string& _cPUUsage);
+
+                    /**
+                     * 判断参数 CPUUsage 是否已赋值
+                     * @return CPUUsage 是否已赋值
+                     */
+                    bool CPUUsageHasBeenSet() const;
+
+                    /**
+                     * 获取内存使用情况，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Memory 内存使用情况，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMemory() const;
+
+                    /**
+                     * 设置内存使用情况，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Memory 内存使用情况，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMemory(const uint64_t& _memory);
+
+                    /**
+                     * 判断参数 Memory 是否已赋值
+                     * @return Memory 是否已赋值
+                     */
+                    bool MemoryHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskUsage 磁盘使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDiskUsage() const;
+
+                    /**
+                     * 设置磁盘使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskUsage 磁盘使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskUsage(const std::string& _diskUsage);
+
+                    /**
+                     * 判断参数 DiskUsage 是否已赋值
+                     * @return DiskUsage 是否已赋值
+                     */
+                    bool DiskUsageHasBeenSet() const;
+
+                    /**
+                     * 获取Rabbitmq的Erlang进程数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProcessNumber Rabbitmq的Erlang进程数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetProcessNumber() const;
+
+                    /**
+                     * 设置Rabbitmq的Erlang进程数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProcessNumber Rabbitmq的Erlang进程数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProcessNumber(const uint64_t& _processNumber);
+
+                    /**
+                     * 判断参数 ProcessNumber 是否已赋值
+                     * @return ProcessNumber 是否已赋值
+                     */
+                    bool ProcessNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -76,6 +186,41 @@ namespace TencentCloud
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 节点状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_nodeStatus;
+                    bool m_nodeStatusHasBeenSet;
+
+                    /**
+                     * CPU使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cPUUsage;
+                    bool m_cPUUsageHasBeenSet;
+
+                    /**
+                     * 内存使用情况，单位MB
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_memory;
+                    bool m_memoryHasBeenSet;
+
+                    /**
+                     * 磁盘使用率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_diskUsage;
+                    bool m_diskUsageHasBeenSet;
+
+                    /**
+                     * Rabbitmq的Erlang进程数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_processNumber;
+                    bool m_processNumberHasBeenSet;
 
                 };
             }

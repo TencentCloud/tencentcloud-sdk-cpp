@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tdmq/v20200217/model/Filter.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,102 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取模糊搜索节点名字
+                     * @return NodeName 模糊搜索节点名字
+                     */
+                    std::string GetNodeName() const;
+
+                    /**
+                     * 设置模糊搜索节点名字
+                     * @param NodeName 模糊搜索节点名字
+                     */
+                    void SetNodeName(const std::string& _nodeName);
+
+                    /**
+                     * 判断参数 NodeName 是否已赋值
+                     * @return NodeName 是否已赋值
+                     */
+                    bool NodeNameHasBeenSet() const;
+
+                    /**
+                     * 获取过滤参数的名字和数值
+现在只有一个nodeStatus
+running/down
+数组类型，兼容后续添加过滤参数
+
+                     * @return Filters 过滤参数的名字和数值
+现在只有一个nodeStatus
+running/down
+数组类型，兼容后续添加过滤参数
+
+                     */
+                    std::vector<Filter> GetFilters() const;
+
+                    /**
+                     * 设置过滤参数的名字和数值
+现在只有一个nodeStatus
+running/down
+数组类型，兼容后续添加过滤参数
+
+                     * @param Filters 过滤参数的名字和数值
+现在只有一个nodeStatus
+running/down
+数组类型，兼容后续添加过滤参数
+
+                     */
+                    void SetFilters(const std::vector<Filter>& _filters);
+
+                    /**
+                     * 判断参数 Filters 是否已赋值
+                     * @return Filters 是否已赋值
+                     */
+                    bool FiltersHasBeenSet() const;
+
+                    /**
+                     * 获取按指定元素排序，现在只有2个
+cpuUsage/diskUsage
+                     * @return SortElement 按指定元素排序，现在只有2个
+cpuUsage/diskUsage
+                     */
+                    std::string GetSortElement() const;
+
+                    /**
+                     * 设置按指定元素排序，现在只有2个
+cpuUsage/diskUsage
+                     * @param SortElement 按指定元素排序，现在只有2个
+cpuUsage/diskUsage
+                     */
+                    void SetSortElement(const std::string& _sortElement);
+
+                    /**
+                     * 判断参数 SortElement 是否已赋值
+                     * @return SortElement 是否已赋值
+                     */
+                    bool SortElementHasBeenSet() const;
+
+                    /**
+                     * 获取升序/降序
+ascend/descend
+                     * @return SortOrder 升序/降序
+ascend/descend
+                     */
+                    std::string GetSortOrder() const;
+
+                    /**
+                     * 设置升序/降序
+ascend/descend
+                     * @param SortOrder 升序/降序
+ascend/descend
+                     */
+                    void SetSortOrder(const std::string& _sortOrder);
+
+                    /**
+                     * 判断参数 SortOrder 是否已赋值
+                     * @return SortOrder 是否已赋值
+                     */
+                    bool SortOrderHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +212,36 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 模糊搜索节点名字
+                     */
+                    std::string m_nodeName;
+                    bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 过滤参数的名字和数值
+现在只有一个nodeStatus
+running/down
+数组类型，兼容后续添加过滤参数
+
+                     */
+                    std::vector<Filter> m_filters;
+                    bool m_filtersHasBeenSet;
+
+                    /**
+                     * 按指定元素排序，现在只有2个
+cpuUsage/diskUsage
+                     */
+                    std::string m_sortElement;
+                    bool m_sortElementHasBeenSet;
+
+                    /**
+                     * 升序/降序
+ascend/descend
+                     */
+                    std::string m_sortOrder;
+                    bool m_sortOrderHasBeenSet;
 
                 };
             }

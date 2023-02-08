@@ -28,7 +28,8 @@ ScaleOutInstanceRequest::ScaleOutInstanceRequest() :
     m_nodeCountHasBeenSet(false),
     m_scaleOutClusterHasBeenSet(false),
     m_userSubnetIPNumHasBeenSet(false),
-    m_scaleOutNodeIpHasBeenSet(false)
+    m_scaleOutNodeIpHasBeenSet(false),
+    m_reduceShardInfoHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,19 @@ string ScaleOutInstanceRequest::ToJsonString() const
         string key = "ScaleOutNodeIp";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_scaleOutNodeIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reduceShardInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReduceShardInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_reduceShardInfo.begin(); itr != m_reduceShardInfo.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -189,6 +203,22 @@ void ScaleOutInstanceRequest::SetScaleOutNodeIp(const string& _scaleOutNodeIp)
 bool ScaleOutInstanceRequest::ScaleOutNodeIpHasBeenSet() const
 {
     return m_scaleOutNodeIpHasBeenSet;
+}
+
+vector<string> ScaleOutInstanceRequest::GetReduceShardInfo() const
+{
+    return m_reduceShardInfo;
+}
+
+void ScaleOutInstanceRequest::SetReduceShardInfo(const vector<string>& _reduceShardInfo)
+{
+    m_reduceShardInfo = _reduceShardInfo;
+    m_reduceShardInfoHasBeenSet = true;
+}
+
+bool ScaleOutInstanceRequest::ReduceShardInfoHasBeenSet() const
+{
+    return m_reduceShardInfoHasBeenSet;
 }
 
 

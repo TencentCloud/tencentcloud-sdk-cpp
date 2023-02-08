@@ -685,6 +685,49 @@ DlcClient::CreateImportTaskOutcomeCallable DlcClient::CreateImportTaskCallable(c
     return task->get_future();
 }
 
+DlcClient::CreateInternalTableOutcome DlcClient::CreateInternalTable(const CreateInternalTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateInternalTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateInternalTableResponse rsp = CreateInternalTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateInternalTableOutcome(rsp);
+        else
+            return CreateInternalTableOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateInternalTableOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateInternalTableAsync(const CreateInternalTableRequest& request, const CreateInternalTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateInternalTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateInternalTableOutcomeCallable DlcClient::CreateInternalTableCallable(const CreateInternalTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateInternalTableOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateInternalTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CreateNotebookSessionOutcome DlcClient::CreateNotebookSession(const CreateNotebookSessionRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateNotebookSession");
