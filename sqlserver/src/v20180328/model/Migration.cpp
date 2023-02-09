@@ -36,7 +36,8 @@ Migration::Migration() :
     m_messageHasBeenSet(false),
     m_detailHasBeenSet(false),
     m_actionHasBeenSet(false),
-    m_isRecoveryHasBeenSet(false)
+    m_isRecoveryHasBeenSet(false),
+    m_dBRenameHasBeenSet(false)
 {
 }
 
@@ -222,6 +223,26 @@ CoreInternalOutcome Migration::Deserialize(const rapidjson::Value &value)
         m_isRecoveryHasBeenSet = true;
     }
 
+    if (value.HasMember("DBRename") && !value["DBRename"].IsNull())
+    {
+        if (!value["DBRename"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Migration.DBRename` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DBRename"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DBRenameRes item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_dBRename.push_back(item);
+        }
+        m_dBRenameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -362,6 +383,21 @@ void Migration::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "IsRecovery";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_isRecovery.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dBRenameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBRename";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dBRename.begin(); itr != m_dBRename.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -621,5 +657,21 @@ void Migration::SetIsRecovery(const string& _isRecovery)
 bool Migration::IsRecoveryHasBeenSet() const
 {
     return m_isRecoveryHasBeenSet;
+}
+
+vector<DBRenameRes> Migration::GetDBRename() const
+{
+    return m_dBRename;
+}
+
+void Migration::SetDBRename(const vector<DBRenameRes>& _dBRename)
+{
+    m_dBRename = _dBRename;
+    m_dBRenameHasBeenSet = true;
+}
+
+bool Migration::DBRenameHasBeenSet() const
+{
+    return m_dBRenameHasBeenSet;
 }
 

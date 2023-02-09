@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h>
+#include <tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/ccc/v20200210/model/DescribeExtensionsResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeIMCdrsResponse.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeNumbersRequest.h>
+#include <tencentcloud/ccc/v20200210/model/DescribeNumbersResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListResponse.h>
 #include <tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrRequest.h>
@@ -93,6 +97,8 @@
 #include <tencentcloud/ccc/v20200210/model/ResetExtensionPasswordResponse.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskRequest.h>
 #include <tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h>
+#include <tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupRequest.h>
+#include <tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupResponse.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h>
 #include <tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h>
 
@@ -109,6 +115,9 @@ namespace TencentCloud
                 CccClient(const Credential &credential, const std::string &region);
                 CccClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindNumberCallOutSkillGroupResponse> BindNumberCallOutSkillGroupOutcome;
+                typedef std::future<BindNumberCallOutSkillGroupOutcome> BindNumberCallOutSkillGroupOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::BindNumberCallOutSkillGroupRequest&, BindNumberCallOutSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindNumberCallOutSkillGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindStaffSkillGroupListResponse> BindStaffSkillGroupListOutcome;
                 typedef std::future<BindStaffSkillGroupListOutcome> BindStaffSkillGroupListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::BindStaffSkillGroupListRequest&, BindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindStaffSkillGroupListAsyncHandler;
@@ -172,6 +181,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIMCdrsResponse> DescribeIMCdrsOutcome;
                 typedef std::future<DescribeIMCdrsOutcome> DescribeIMCdrsOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribeIMCdrsRequest&, DescribeIMCdrsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIMCdrsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNumbersResponse> DescribeNumbersOutcome;
+                typedef std::future<DescribeNumbersOutcome> DescribeNumbersOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::DescribeNumbersRequest&, DescribeNumbersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNumbersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePSTNActiveSessionListResponse> DescribePSTNActiveSessionListOutcome;
                 typedef std::future<DescribePSTNActiveSessionListOutcome> DescribePSTNActiveSessionListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::DescribePSTNActiveSessionListRequest&, DescribePSTNActiveSessionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePSTNActiveSessionListAsyncHandler;
@@ -214,11 +226,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopAutoCalloutTaskResponse> StopAutoCalloutTaskOutcome;
                 typedef std::future<StopAutoCalloutTaskOutcome> StopAutoCalloutTaskOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::StopAutoCalloutTaskRequest&, StopAutoCalloutTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopAutoCalloutTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindNumberCallOutSkillGroupResponse> UnbindNumberCallOutSkillGroupOutcome;
+                typedef std::future<UnbindNumberCallOutSkillGroupOutcome> UnbindNumberCallOutSkillGroupOutcomeCallable;
+                typedef std::function<void(const CccClient*, const Model::UnbindNumberCallOutSkillGroupRequest&, UnbindNumberCallOutSkillGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindNumberCallOutSkillGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::UnbindStaffSkillGroupListResponse> UnbindStaffSkillGroupListOutcome;
                 typedef std::future<UnbindStaffSkillGroupListOutcome> UnbindStaffSkillGroupListOutcomeCallable;
                 typedef std::function<void(const CccClient*, const Model::UnbindStaffSkillGroupListRequest&, UnbindStaffSkillGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindStaffSkillGroupListAsyncHandler;
 
 
+
+                /**
+                 *绑定号码外呼技能组
+                 * @param req BindNumberCallOutSkillGroupRequest
+                 * @return BindNumberCallOutSkillGroupOutcome
+                 */
+                BindNumberCallOutSkillGroupOutcome BindNumberCallOutSkillGroup(const Model::BindNumberCallOutSkillGroupRequest &request);
+                void BindNumberCallOutSkillGroupAsync(const Model::BindNumberCallOutSkillGroupRequest& request, const BindNumberCallOutSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindNumberCallOutSkillGroupOutcomeCallable BindNumberCallOutSkillGroupCallable(const Model::BindNumberCallOutSkillGroupRequest& request);
 
                 /**
                  *绑定坐席所属技能组
@@ -412,6 +436,15 @@ namespace TencentCloud
                 DescribeIMCdrsOutcomeCallable DescribeIMCdrsCallable(const Model::DescribeIMCdrsRequest& request);
 
                 /**
+                 *查询号码列表
+                 * @param req DescribeNumbersRequest
+                 * @return DescribeNumbersOutcome
+                 */
+                DescribeNumbersOutcome DescribeNumbers(const Model::DescribeNumbersRequest &request);
+                void DescribeNumbersAsync(const Model::DescribeNumbersRequest& request, const DescribeNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNumbersOutcomeCallable DescribeNumbersCallable(const Model::DescribeNumbersRequest& request);
+
+                /**
                  *获取当前正在通话的会话列表
                  * @param req DescribePSTNActiveSessionListRequest
                  * @return DescribePSTNActiveSessionListOutcome
@@ -536,6 +569,15 @@ namespace TencentCloud
                 StopAutoCalloutTaskOutcome StopAutoCalloutTask(const Model::StopAutoCalloutTaskRequest &request);
                 void StopAutoCalloutTaskAsync(const Model::StopAutoCalloutTaskRequest& request, const StopAutoCalloutTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopAutoCalloutTaskOutcomeCallable StopAutoCalloutTaskCallable(const Model::StopAutoCalloutTaskRequest& request);
+
+                /**
+                 *解绑号码外呼技能组
+                 * @param req UnbindNumberCallOutSkillGroupRequest
+                 * @return UnbindNumberCallOutSkillGroupOutcome
+                 */
+                UnbindNumberCallOutSkillGroupOutcome UnbindNumberCallOutSkillGroup(const Model::UnbindNumberCallOutSkillGroupRequest &request);
+                void UnbindNumberCallOutSkillGroupAsync(const Model::UnbindNumberCallOutSkillGroupRequest& request, const UnbindNumberCallOutSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindNumberCallOutSkillGroupOutcomeCallable UnbindNumberCallOutSkillGroupCallable(const Model::UnbindNumberCallOutSkillGroupRequest& request);
 
                 /**
                  *解绑坐席所属技能组

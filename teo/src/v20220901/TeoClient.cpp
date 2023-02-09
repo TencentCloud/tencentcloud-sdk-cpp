@@ -126,6 +126,49 @@ TeoClient::CheckCertificateOutcomeCallable TeoClient::CheckCertificateCallable(c
     return task->get_future();
 }
 
+TeoClient::CreateAccelerationDomainOutcome TeoClient::CreateAccelerationDomain(const CreateAccelerationDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAccelerationDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAccelerationDomainResponse rsp = CreateAccelerationDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAccelerationDomainOutcome(rsp);
+        else
+            return CreateAccelerationDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAccelerationDomainOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::CreateAccelerationDomainAsync(const CreateAccelerationDomainRequest& request, const CreateAccelerationDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAccelerationDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::CreateAccelerationDomainOutcomeCallable TeoClient::CreateAccelerationDomainCallable(const CreateAccelerationDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAccelerationDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAccelerationDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::CreateAliasDomainOutcome TeoClient::CreateAliasDomain(const CreateAliasDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAliasDomain");
@@ -642,6 +685,49 @@ TeoClient::CreateZoneOutcomeCallable TeoClient::CreateZoneCallable(const CreateZ
     return task->get_future();
 }
 
+TeoClient::DeleteAccelerationDomainsOutcome TeoClient::DeleteAccelerationDomains(const DeleteAccelerationDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccelerationDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccelerationDomainsResponse rsp = DeleteAccelerationDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccelerationDomainsOutcome(rsp);
+        else
+            return DeleteAccelerationDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccelerationDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DeleteAccelerationDomainsAsync(const DeleteAccelerationDomainsRequest& request, const DeleteAccelerationDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccelerationDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DeleteAccelerationDomainsOutcomeCallable TeoClient::DeleteAccelerationDomainsCallable(const DeleteAccelerationDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccelerationDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccelerationDomains(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TeoClient::DeleteAliasDomainOutcome TeoClient::DeleteAliasDomain(const DeleteAliasDomainRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAliasDomain");
@@ -893,6 +979,49 @@ TeoClient::DeleteZoneOutcomeCallable TeoClient::DeleteZoneCallable(const DeleteZ
         [this, request]()
         {
             return this->DeleteZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::DescribeAccelerationDomainsOutcome TeoClient::DescribeAccelerationDomains(const DescribeAccelerationDomainsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAccelerationDomains");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAccelerationDomainsResponse rsp = DescribeAccelerationDomainsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAccelerationDomainsOutcome(rsp);
+        else
+            return DescribeAccelerationDomainsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAccelerationDomainsOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::DescribeAccelerationDomainsAsync(const DescribeAccelerationDomainsRequest& request, const DescribeAccelerationDomainsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAccelerationDomains(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::DescribeAccelerationDomainsOutcomeCallable TeoClient::DescribeAccelerationDomainsCallable(const DescribeAccelerationDomainsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAccelerationDomainsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAccelerationDomains(request);
         }
     );
 
@@ -2742,6 +2871,92 @@ TeoClient::IdentifyZoneOutcomeCallable TeoClient::IdentifyZoneCallable(const Ide
         [this, request]()
         {
             return this->IdentifyZone(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyAccelerationDomainOutcome TeoClient::ModifyAccelerationDomain(const ModifyAccelerationDomainRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccelerationDomain");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccelerationDomainResponse rsp = ModifyAccelerationDomainResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccelerationDomainOutcome(rsp);
+        else
+            return ModifyAccelerationDomainOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccelerationDomainOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyAccelerationDomainAsync(const ModifyAccelerationDomainRequest& request, const ModifyAccelerationDomainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccelerationDomain(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyAccelerationDomainOutcomeCallable TeoClient::ModifyAccelerationDomainCallable(const ModifyAccelerationDomainRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccelerationDomainOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccelerationDomain(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TeoClient::ModifyAccelerationDomainStatusesOutcome TeoClient::ModifyAccelerationDomainStatuses(const ModifyAccelerationDomainStatusesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAccelerationDomainStatuses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAccelerationDomainStatusesResponse rsp = ModifyAccelerationDomainStatusesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAccelerationDomainStatusesOutcome(rsp);
+        else
+            return ModifyAccelerationDomainStatusesOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAccelerationDomainStatusesOutcome(outcome.GetError());
+    }
+}
+
+void TeoClient::ModifyAccelerationDomainStatusesAsync(const ModifyAccelerationDomainStatusesRequest& request, const ModifyAccelerationDomainStatusesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAccelerationDomainStatuses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TeoClient::ModifyAccelerationDomainStatusesOutcomeCallable TeoClient::ModifyAccelerationDomainStatusesCallable(const ModifyAccelerationDomainStatusesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAccelerationDomainStatusesOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAccelerationDomainStatuses(request);
         }
     );
 

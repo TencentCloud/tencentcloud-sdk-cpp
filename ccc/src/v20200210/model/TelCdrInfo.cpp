@@ -52,7 +52,8 @@ TelCdrInfo::TelCdrInfo() :
     m_asrUrlHasBeenSet(false),
     m_customRecordURLHasBeenSet(false),
     m_remarkHasBeenSet(false),
-    m_queuedSkillGroupNameHasBeenSet(false)
+    m_queuedSkillGroupNameHasBeenSet(false),
+    m_voicemailRecordURLHasBeenSet(false)
 {
 }
 
@@ -421,6 +422,19 @@ CoreInternalOutcome TelCdrInfo::Deserialize(const rapidjson::Value &value)
         m_queuedSkillGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VoicemailRecordURL") && !value["VoicemailRecordURL"].IsNull())
+    {
+        if (!value["VoicemailRecordURL"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TelCdrInfo.VoicemailRecordURL` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["VoicemailRecordURL"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_voicemailRecordURL.push_back((*itr).GetString());
+        }
+        m_voicemailRecordURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -709,6 +723,19 @@ void TelCdrInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "QueuedSkillGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_queuedSkillGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_voicemailRecordURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoicemailRecordURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_voicemailRecordURL.begin(); itr != m_voicemailRecordURL.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1224,5 +1251,21 @@ void TelCdrInfo::SetQueuedSkillGroupName(const string& _queuedSkillGroupName)
 bool TelCdrInfo::QueuedSkillGroupNameHasBeenSet() const
 {
     return m_queuedSkillGroupNameHasBeenSet;
+}
+
+vector<string> TelCdrInfo::GetVoicemailRecordURL() const
+{
+    return m_voicemailRecordURL;
+}
+
+void TelCdrInfo::SetVoicemailRecordURL(const vector<string>& _voicemailRecordURL)
+{
+    m_voicemailRecordURL = _voicemailRecordURL;
+    m_voicemailRecordURLHasBeenSet = true;
+}
+
+bool TelCdrInfo::VoicemailRecordURLHasBeenSet() const
+{
+    return m_voicemailRecordURLHasBeenSet;
 }
 

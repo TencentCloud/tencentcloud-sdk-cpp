@@ -24,7 +24,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/HangUpCallRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateSDKLoginTokenResponse.h
   include/tencentcloud/ccc/v20200210/model/ModifyStaffRequest.h
-  include/tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h
+  include/tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h
   include/tencentcloud/ccc/v20200210/model/DisableCCCPhoneNumberResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeProtectedTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeAutoCalloutTaskRequest.h
@@ -45,8 +45,9 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/SeatUserInfo.h
   include/tencentcloud/ccc/v20200210/model/CreateStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeSkillGroupInfoListResponse.h
-  include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h
+  include/tencentcloud/ccc/v20200210/model/DescribeNumbersResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffInfoListResponse.h
+  include/tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupRequest.h
   include/tencentcloud/ccc/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.h
   include/tencentcloud/ccc/v20200210/model/CallInSkillGroupMetrics.h
   include/tencentcloud/ccc/v20200210/model/CreateExtensionResponse.h
@@ -69,11 +70,15 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/ModifyExtensionRequest.h
   include/tencentcloud/ccc/v20200210/model/PSTNSessionInfo.h
   include/tencentcloud/ccc/v20200210/model/Message.h
+  include/tencentcloud/ccc/v20200210/model/DescribeNumbersRequest.h
   include/tencentcloud/ccc/v20200210/model/ExtensionInfo.h
+  include/tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupRequest.h
   include/tencentcloud/ccc/v20200210/model/IVRKeyPressedElement.h
+  include/tencentcloud/ccc/v20200210/model/UnbindNumberCallOutSkillGroupResponse.h
   include/tencentcloud/ccc/v20200210/model/StaffInfo.h
   include/tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskResponse.h
   include/tencentcloud/ccc/v20200210/model/TelCdrInfo.h
+  include/tencentcloud/ccc/v20200210/model/NumberInfo.h
   include/tencentcloud/ccc/v20200210/model/DeleteStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/CallInMetrics.h
   include/tencentcloud/ccc/v20200210/model/DescribeCCCBuyInfoListRequest.h
@@ -84,6 +89,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/CreateAutoCalloutTaskRequest.h
   include/tencentcloud/ccc/v20200210/model/Filter.h
   include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListRequest.h
+  include/tencentcloud/ccc/v20200210/model/BindNumberCallOutSkillGroupResponse.h
   include/tencentcloud/ccc/v20200210/model/CreateCallOutSessionRequest.h
   include/tencentcloud/ccc/v20200210/model/StopAutoCalloutTaskResponse.h
   include/tencentcloud/ccc/v20200210/model/SkillGroupItem.h
@@ -91,6 +97,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/PhoneNumBuyInfo.h
   include/tencentcloud/ccc/v20200210/model/DescribeCCCBuyInfoListResponse.h
   include/tencentcloud/ccc/v20200210/model/ActiveCarrierPrivilegeNumber.h
+  include/tencentcloud/ccc/v20200210/model/UnbindStaffSkillGroupListResponse.h
   include/tencentcloud/ccc/v20200210/model/DeleteExtensionResponse.h
   include/tencentcloud/ccc/v20200210/model/BindStaffSkillGroupListRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribePSTNActiveSessionListRequest.h
@@ -99,7 +106,7 @@ set(ccc_public_header_model
   include/tencentcloud/ccc/v20200210/model/IMSatisfaction.h
   include/tencentcloud/ccc/v20200210/model/DescribeTelCdrResponse.h
   include/tencentcloud/ccc/v20200210/model/DescribeStaffStatusMetricsRequest.h
-  include/tencentcloud/ccc/v20200210/model/ResetExtensionPasswordRequest.h
+  include/tencentcloud/ccc/v20200210/model/DeleteStaffResponse.h
   include/tencentcloud/ccc/v20200210/model/StaffStatusExtra.h
   include/tencentcloud/ccc/v20200210/model/CreateStaffRequest.h
   include/tencentcloud/ccc/v20200210/model/DescribeChatMessagesResponse.h
@@ -130,7 +137,7 @@ set(ccc_src
   src/v20200210/model/HangUpCallRequest.cpp
   src/v20200210/model/CreateSDKLoginTokenResponse.cpp
   src/v20200210/model/ModifyStaffRequest.cpp
-  src/v20200210/model/DeleteStaffResponse.cpp
+  src/v20200210/model/ResetExtensionPasswordRequest.cpp
   src/v20200210/model/DisableCCCPhoneNumberResponse.cpp
   src/v20200210/model/DescribeProtectedTelCdrResponse.cpp
   src/v20200210/model/DescribeAutoCalloutTaskRequest.cpp
@@ -151,8 +158,9 @@ set(ccc_src
   src/v20200210/model/SeatUserInfo.cpp
   src/v20200210/model/CreateStaffResponse.cpp
   src/v20200210/model/DescribeSkillGroupInfoListResponse.cpp
-  src/v20200210/model/UnbindStaffSkillGroupListResponse.cpp
+  src/v20200210/model/DescribeNumbersResponse.cpp
   src/v20200210/model/DescribeStaffInfoListResponse.cpp
+  src/v20200210/model/UnbindNumberCallOutSkillGroupRequest.cpp
   src/v20200210/model/CreateCarrierPrivilegeNumberApplicantRequest.cpp
   src/v20200210/model/CallInSkillGroupMetrics.cpp
   src/v20200210/model/CreateExtensionResponse.cpp
@@ -175,11 +183,15 @@ set(ccc_src
   src/v20200210/model/ModifyExtensionRequest.cpp
   src/v20200210/model/PSTNSessionInfo.cpp
   src/v20200210/model/Message.cpp
+  src/v20200210/model/DescribeNumbersRequest.cpp
   src/v20200210/model/ExtensionInfo.cpp
+  src/v20200210/model/BindNumberCallOutSkillGroupRequest.cpp
   src/v20200210/model/IVRKeyPressedElement.cpp
+  src/v20200210/model/UnbindNumberCallOutSkillGroupResponse.cpp
   src/v20200210/model/StaffInfo.cpp
   src/v20200210/model/CreateAutoCalloutTaskResponse.cpp
   src/v20200210/model/TelCdrInfo.cpp
+  src/v20200210/model/NumberInfo.cpp
   src/v20200210/model/DeleteStaffRequest.cpp
   src/v20200210/model/CallInMetrics.cpp
   src/v20200210/model/DescribeCCCBuyInfoListRequest.cpp
@@ -190,6 +202,7 @@ set(ccc_src
   src/v20200210/model/CreateAutoCalloutTaskRequest.cpp
   src/v20200210/model/Filter.cpp
   src/v20200210/model/UnbindStaffSkillGroupListRequest.cpp
+  src/v20200210/model/BindNumberCallOutSkillGroupResponse.cpp
   src/v20200210/model/CreateCallOutSessionRequest.cpp
   src/v20200210/model/StopAutoCalloutTaskResponse.cpp
   src/v20200210/model/SkillGroupItem.cpp
@@ -197,6 +210,7 @@ set(ccc_src
   src/v20200210/model/PhoneNumBuyInfo.cpp
   src/v20200210/model/DescribeCCCBuyInfoListResponse.cpp
   src/v20200210/model/ActiveCarrierPrivilegeNumber.cpp
+  src/v20200210/model/UnbindStaffSkillGroupListResponse.cpp
   src/v20200210/model/DeleteExtensionResponse.cpp
   src/v20200210/model/BindStaffSkillGroupListRequest.cpp
   src/v20200210/model/DescribePSTNActiveSessionListRequest.cpp
@@ -205,7 +219,7 @@ set(ccc_src
   src/v20200210/model/IMSatisfaction.cpp
   src/v20200210/model/DescribeTelCdrResponse.cpp
   src/v20200210/model/DescribeStaffStatusMetricsRequest.cpp
-  src/v20200210/model/ResetExtensionPasswordRequest.cpp
+  src/v20200210/model/DeleteStaffResponse.cpp
   src/v20200210/model/StaffStatusExtra.cpp
   src/v20200210/model/CreateStaffRequest.cpp
   src/v20200210/model/DescribeChatMessagesResponse.cpp

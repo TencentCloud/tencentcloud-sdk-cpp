@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool UserNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库权限。ReadWrite表示可读写，ReadOnly表示只读
-                     * @return Privilege 数据库权限。ReadWrite表示可读写，ReadOnly表示只读
+                     * 获取数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
+                     * @return Privilege 数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
                      */
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置数据库权限。ReadWrite表示可读写，ReadOnly表示只读
-                     * @param Privilege 数据库权限。ReadWrite表示可读写，ReadOnly表示只读
+                     * 设置数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
+                     * @param Privilege 数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
                      */
                     void SetPrivilege(const std::string& _privilege);
 
@@ -81,6 +81,24 @@ namespace TencentCloud
                      * @return Privilege 是否已赋值
                      */
                     bool PrivilegeHasBeenSet() const;
+
+                    /**
+                     * 获取账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * @return AccountType 账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     */
+                    std::string GetAccountType() const;
+
+                    /**
+                     * 设置账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     * @param AccountType 账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     */
+                    void SetAccountType(const std::string& _accountType);
+
+                    /**
+                     * 判断参数 AccountType 是否已赋值
+                     * @return AccountType 是否已赋值
+                     */
+                    bool AccountTypeHasBeenSet() const;
 
                 private:
 
@@ -91,10 +109,16 @@ namespace TencentCloud
                     bool m_userNameHasBeenSet;
 
                     /**
-                     * 数据库权限。ReadWrite表示可读写，ReadOnly表示只读
+                     * 数据库权限。ReadWrite表示可读写，ReadOnly表示只读,Delete表示删除DB对该账户的权限，DBOwner所有者
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;
+
+                    /**
+                     * 账户名称，L0-超级权限(基础版独有),L1-高级权限,L2-特殊权限,L3-普通权限
+                     */
+                    std::string m_accountType;
+                    bool m_accountTypeHasBeenSet;
 
                 };
             }

@@ -57,6 +57,7 @@ Disk::Disk() :
     m_shareableHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_deleteSnapshotHasBeenSet(false),
+    m_diskBackupQuotaHasBeenSet(false),
     m_diskBackupCountHasBeenSet(false),
     m_instanceTypeHasBeenSet(false)
 {
@@ -450,6 +451,16 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_deleteSnapshotHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskBackupQuota") && !value["DiskBackupQuota"].IsNull())
+    {
+        if (!value["DiskBackupQuota"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.DiskBackupQuota` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskBackupQuota = value["DiskBackupQuota"].GetUint64();
+        m_diskBackupQuotaHasBeenSet = true;
+    }
+
     if (value.HasMember("DiskBackupCount") && !value["DiskBackupCount"].IsNull())
     {
         if (!value["DiskBackupCount"].IsUint64())
@@ -781,6 +792,14 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "DeleteSnapshot";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_deleteSnapshot, allocator);
+    }
+
+    if (m_diskBackupQuotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskBackupQuota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskBackupQuota, allocator);
     }
 
     if (m_diskBackupCountHasBeenSet)
@@ -1376,6 +1395,22 @@ void Disk::SetDeleteSnapshot(const int64_t& _deleteSnapshot)
 bool Disk::DeleteSnapshotHasBeenSet() const
 {
     return m_deleteSnapshotHasBeenSet;
+}
+
+uint64_t Disk::GetDiskBackupQuota() const
+{
+    return m_diskBackupQuota;
+}
+
+void Disk::SetDiskBackupQuota(const uint64_t& _diskBackupQuota)
+{
+    m_diskBackupQuota = _diskBackupQuota;
+    m_diskBackupQuotaHasBeenSet = true;
+}
+
+bool Disk::DiskBackupQuotaHasBeenSet() const
+{
+    return m_diskBackupQuotaHasBeenSet;
 }
 
 uint64_t Disk::GetDiskBackupCount() const

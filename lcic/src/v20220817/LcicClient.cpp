@@ -40,6 +40,92 @@ LcicClient::LcicClient(const Credential &credential, const string &region, const
 }
 
 
+LcicClient::BatchCreateRoomOutcome LcicClient::BatchCreateRoom(const BatchCreateRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchCreateRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchCreateRoomResponse rsp = BatchCreateRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchCreateRoomOutcome(rsp);
+        else
+            return BatchCreateRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchCreateRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchCreateRoomAsync(const BatchCreateRoomRequest& request, const BatchCreateRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchCreateRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BatchCreateRoomOutcomeCallable LcicClient::BatchCreateRoomCallable(const BatchCreateRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchCreateRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchCreateRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::BatchDeleteRecordOutcome LcicClient::BatchDeleteRecord(const BatchDeleteRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteRecordResponse rsp = BatchDeleteRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteRecordOutcome(rsp);
+        else
+            return BatchDeleteRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteRecordOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchDeleteRecordAsync(const BatchDeleteRecordRequest& request, const BatchDeleteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeleteRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BatchDeleteRecordOutcomeCallable LcicClient::BatchDeleteRecordCallable(const BatchDeleteRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeleteRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeleteRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::BatchRegisterOutcome LcicClient::BatchRegister(const BatchRegisterRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchRegister");
@@ -255,6 +341,92 @@ LcicClient::CreateSupervisorOutcomeCallable LcicClient::CreateSupervisorCallable
     return task->get_future();
 }
 
+LcicClient::DeleteDocumentOutcome LcicClient::DeleteDocument(const DeleteDocumentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDocument");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDocumentResponse rsp = DeleteDocumentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDocumentOutcome(rsp);
+        else
+            return DeleteDocumentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDocumentOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeleteDocumentAsync(const DeleteDocumentRequest& request, const DeleteDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDocument(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DeleteDocumentOutcomeCallable LcicClient::DeleteDocumentCallable(const DeleteDocumentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDocumentOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DeleteRecordOutcome LcicClient::DeleteRecord(const DeleteRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRecordResponse rsp = DeleteRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRecordOutcome(rsp);
+        else
+            return DeleteRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRecordOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeleteRecordAsync(const DeleteRecordRequest& request, const DeleteRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DeleteRecordOutcomeCallable LcicClient::DeleteRecordCallable(const DeleteRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DeleteRoomOutcome LcicClient::DeleteRoom(const DeleteRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRoom");
@@ -334,6 +506,92 @@ LcicClient::DescribeAppDetailOutcomeCallable LcicClient::DescribeAppDetailCallab
         [this, request]()
         {
             return this->DescribeAppDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DescribeDocumentOutcome LcicClient::DescribeDocument(const DescribeDocumentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDocument");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDocumentResponse rsp = DescribeDocumentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDocumentOutcome(rsp);
+        else
+            return DescribeDocumentOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDocumentOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeDocumentAsync(const DescribeDocumentRequest& request, const DescribeDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDocument(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeDocumentOutcomeCallable LcicClient::DescribeDocumentCallable(const DescribeDocumentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDocumentOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DescribeDocumentsByRoomOutcome LcicClient::DescribeDocumentsByRoom(const DescribeDocumentsByRoomRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDocumentsByRoom");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDocumentsByRoomResponse rsp = DescribeDocumentsByRoomResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDocumentsByRoomOutcome(rsp);
+        else
+            return DescribeDocumentsByRoomOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDocumentsByRoomOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeDocumentsByRoomAsync(const DescribeDocumentsByRoomRequest& request, const DescribeDocumentsByRoomAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDocumentsByRoom(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeDocumentsByRoomOutcomeCallable LcicClient::DescribeDocumentsByRoomCallable(const DescribeDocumentsByRoomRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDocumentsByRoomOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDocumentsByRoom(request);
         }
     );
 
@@ -427,6 +685,49 @@ LcicClient::DescribeRoomStatisticsOutcomeCallable LcicClient::DescribeRoomStatis
     return task->get_future();
 }
 
+LcicClient::DescribeSdkAppIdUsersOutcome LcicClient::DescribeSdkAppIdUsers(const DescribeSdkAppIdUsersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSdkAppIdUsers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSdkAppIdUsersResponse rsp = DescribeSdkAppIdUsersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSdkAppIdUsersOutcome(rsp);
+        else
+            return DescribeSdkAppIdUsersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSdkAppIdUsersOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeSdkAppIdUsersAsync(const DescribeSdkAppIdUsersRequest& request, const DescribeSdkAppIdUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSdkAppIdUsers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeSdkAppIdUsersOutcomeCallable LcicClient::DescribeSdkAppIdUsersCallable(const DescribeSdkAppIdUsersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSdkAppIdUsersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSdkAppIdUsers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeUserOutcome LcicClient::DescribeUser(const DescribeUserRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeUser");
@@ -463,6 +764,49 @@ LcicClient::DescribeUserOutcomeCallable LcicClient::DescribeUserCallable(const D
         [this, request]()
         {
             return this->DescribeUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::GetWatermarkOutcome LcicClient::GetWatermark(const GetWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetWatermarkResponse rsp = GetWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetWatermarkOutcome(rsp);
+        else
+            return GetWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return GetWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::GetWatermarkAsync(const GetWatermarkRequest& request, const GetWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetWatermark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::GetWatermarkOutcomeCallable LcicClient::GetWatermarkCallable(const GetWatermarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetWatermarkOutcome()>>(
+        [this, request]()
+        {
+            return this->GetWatermark(request);
         }
     );
 
@@ -642,6 +986,49 @@ LcicClient::ModifyRoomOutcomeCallable LcicClient::ModifyRoomCallable(const Modif
     return task->get_future();
 }
 
+LcicClient::ModifyUserProfileOutcome LcicClient::ModifyUserProfile(const ModifyUserProfileRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyUserProfile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyUserProfileResponse rsp = ModifyUserProfileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyUserProfileOutcome(rsp);
+        else
+            return ModifyUserProfileOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyUserProfileOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::ModifyUserProfileAsync(const ModifyUserProfileRequest& request, const ModifyUserProfileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyUserProfile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::ModifyUserProfileOutcomeCallable LcicClient::ModifyUserProfileCallable(const ModifyUserProfileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyUserProfileOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyUserProfile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::RegisterUserOutcome LcicClient::RegisterUser(const RegisterUserRequest &request)
 {
     auto outcome = MakeRequest(request, "RegisterUser");
@@ -721,6 +1108,49 @@ LcicClient::SetAppCustomContentOutcomeCallable LcicClient::SetAppCustomContentCa
         [this, request]()
         {
             return this->SetAppCustomContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::SetWatermarkOutcome LcicClient::SetWatermark(const SetWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetWatermarkResponse rsp = SetWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetWatermarkOutcome(rsp);
+        else
+            return SetWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return SetWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::SetWatermarkAsync(const SetWatermarkRequest& request, const SetWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetWatermark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::SetWatermarkOutcomeCallable LcicClient::SetWatermarkCallable(const SetWatermarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetWatermarkOutcome()>>(
+        [this, request]()
+        {
+            return this->SetWatermark(request);
         }
     );
 

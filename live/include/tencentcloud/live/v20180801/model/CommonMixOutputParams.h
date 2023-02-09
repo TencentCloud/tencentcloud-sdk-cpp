@@ -99,17 +99,17 @@ namespace TencentCloud
                     bool OutputStreamTypeHasBeenSet() const;
 
                     /**
-                     * 获取输出流比特率。取值范围[1，50000]。
+                     * 获取输出流比特率。取值范围[1，10000]。
 不填的情况下，系统会自动判断。
-                     * @return OutputStreamBitRate 输出流比特率。取值范围[1，50000]。
+                     * @return OutputStreamBitRate 输出流比特率。取值范围[1，10000]。
 不填的情况下，系统会自动判断。
                      */
                     int64_t GetOutputStreamBitRate() const;
 
                     /**
-                     * 设置输出流比特率。取值范围[1，50000]。
+                     * 设置输出流比特率。取值范围[1，10000]。
 不填的情况下，系统会自动判断。
-                     * @param OutputStreamBitRate 输出流比特率。取值范围[1，50000]。
+                     * @param OutputStreamBitRate 输出流比特率。取值范围[1，10000]。
 不填的情况下，系统会自动判断。
                      */
                     void SetOutputStreamBitRate(const int64_t& _outputStreamBitRate);
@@ -267,7 +267,7 @@ namespace TencentCloud
                     bool m_outputStreamTypeHasBeenSet;
 
                     /**
-                     * 输出流比特率。取值范围[1，50000]。
+                     * 输出流比特率。取值范围[1，10000]。
 不填的情况下，系统会自动判断。
                      */
                     int64_t m_outputStreamBitRate;

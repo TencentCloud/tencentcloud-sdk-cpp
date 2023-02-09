@@ -28,7 +28,8 @@ ModifyBackupMigrationRequest::ModifyBackupMigrationRequest() :
     m_migrationNameHasBeenSet(false),
     m_recoveryTypeHasBeenSet(false),
     m_uploadTypeHasBeenSet(false),
-    m_backupFilesHasBeenSet(false)
+    m_backupFilesHasBeenSet(false),
+    m_dBRenameHasBeenSet(false)
 {
 }
 
@@ -89,6 +90,21 @@ string ModifyBackupMigrationRequest::ToJsonString() const
         for (auto itr = m_backupFiles.begin(); itr != m_backupFiles.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_dBRenameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBRename";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_dBRename.begin(); itr != m_dBRename.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -194,6 +210,22 @@ void ModifyBackupMigrationRequest::SetBackupFiles(const vector<string>& _backupF
 bool ModifyBackupMigrationRequest::BackupFilesHasBeenSet() const
 {
     return m_backupFilesHasBeenSet;
+}
+
+vector<RenameRestoreDatabase> ModifyBackupMigrationRequest::GetDBRename() const
+{
+    return m_dBRename;
+}
+
+void ModifyBackupMigrationRequest::SetDBRename(const vector<RenameRestoreDatabase>& _dBRename)
+{
+    m_dBRename = _dBRename;
+    m_dBRenameHasBeenSet = true;
+}
+
+bool ModifyBackupMigrationRequest::DBRenameHasBeenSet() const
+{
+    return m_dBRenameHasBeenSet;
 }
 
 

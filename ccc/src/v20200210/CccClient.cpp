@@ -40,6 +40,49 @@ CccClient::CccClient(const Credential &credential, const string &region, const C
 }
 
 
+CccClient::BindNumberCallOutSkillGroupOutcome CccClient::BindNumberCallOutSkillGroup(const BindNumberCallOutSkillGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindNumberCallOutSkillGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindNumberCallOutSkillGroupResponse rsp = BindNumberCallOutSkillGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindNumberCallOutSkillGroupOutcome(rsp);
+        else
+            return BindNumberCallOutSkillGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return BindNumberCallOutSkillGroupOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::BindNumberCallOutSkillGroupAsync(const BindNumberCallOutSkillGroupRequest& request, const BindNumberCallOutSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindNumberCallOutSkillGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::BindNumberCallOutSkillGroupOutcomeCallable CccClient::BindNumberCallOutSkillGroupCallable(const BindNumberCallOutSkillGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindNumberCallOutSkillGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->BindNumberCallOutSkillGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::BindStaffSkillGroupListOutcome CccClient::BindStaffSkillGroupList(const BindStaffSkillGroupListRequest &request)
 {
     auto outcome = MakeRequest(request, "BindStaffSkillGroupList");
@@ -943,6 +986,49 @@ CccClient::DescribeIMCdrsOutcomeCallable CccClient::DescribeIMCdrsCallable(const
     return task->get_future();
 }
 
+CccClient::DescribeNumbersOutcome CccClient::DescribeNumbers(const DescribeNumbersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNumbers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNumbersResponse rsp = DescribeNumbersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNumbersOutcome(rsp);
+        else
+            return DescribeNumbersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNumbersOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::DescribeNumbersAsync(const DescribeNumbersRequest& request, const DescribeNumbersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNumbers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::DescribeNumbersOutcomeCallable CccClient::DescribeNumbersCallable(const DescribeNumbersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNumbersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNumbers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CccClient::DescribePSTNActiveSessionListOutcome CccClient::DescribePSTNActiveSessionList(const DescribePSTNActiveSessionListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePSTNActiveSessionList");
@@ -1538,6 +1624,49 @@ CccClient::StopAutoCalloutTaskOutcomeCallable CccClient::StopAutoCalloutTaskCall
         [this, request]()
         {
             return this->StopAutoCalloutTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CccClient::UnbindNumberCallOutSkillGroupOutcome CccClient::UnbindNumberCallOutSkillGroup(const UnbindNumberCallOutSkillGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindNumberCallOutSkillGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindNumberCallOutSkillGroupResponse rsp = UnbindNumberCallOutSkillGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindNumberCallOutSkillGroupOutcome(rsp);
+        else
+            return UnbindNumberCallOutSkillGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindNumberCallOutSkillGroupOutcome(outcome.GetError());
+    }
+}
+
+void CccClient::UnbindNumberCallOutSkillGroupAsync(const UnbindNumberCallOutSkillGroupRequest& request, const UnbindNumberCallOutSkillGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindNumberCallOutSkillGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CccClient::UnbindNumberCallOutSkillGroupOutcomeCallable CccClient::UnbindNumberCallOutSkillGroupCallable(const UnbindNumberCallOutSkillGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindNumberCallOutSkillGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindNumberCallOutSkillGroup(request);
         }
     );
 

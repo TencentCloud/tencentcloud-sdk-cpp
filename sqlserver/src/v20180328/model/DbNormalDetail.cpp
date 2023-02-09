@@ -38,7 +38,8 @@ DbNormalDetail::DbNormalDetail() :
     m_recoveryModelDescHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
     m_stateDescHasBeenSet(false),
-    m_userAccessDescHasBeenSet(false)
+    m_userAccessDescHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -227,6 +228,16 @@ CoreInternalOutcome DbNormalDetail::Deserialize(const rapidjson::Value &value)
         m_userAccessDescHasBeenSet = true;
     }
 
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DbNormalDetail.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -376,6 +387,14 @@ void DbNormalDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UserAccessDesc";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userAccessDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -667,5 +686,21 @@ void DbNormalDetail::SetUserAccessDesc(const string& _userAccessDesc)
 bool DbNormalDetail::UserAccessDescHasBeenSet() const
 {
     return m_userAccessDescHasBeenSet;
+}
+
+string DbNormalDetail::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void DbNormalDetail::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool DbNormalDetail::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

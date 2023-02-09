@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/sqlserver/v20180328/model/MigrationDetail.h>
 #include <tencentcloud/sqlserver/v20180328/model/MigrationAction.h>
+#include <tencentcloud/sqlserver/v20180328/model/DBRenameRes.h>
 
 
 namespace TencentCloud
@@ -344,6 +345,28 @@ namespace TencentCloud
                      */
                     bool IsRecoveryHasBeenSet() const;
 
+                    /**
+                     * 获取重命名的数据库名称集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DBRename 重命名的数据库名称集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DBRenameRes> GetDBRename() const;
+
+                    /**
+                     * 设置重命名的数据库名称集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DBRename 重命名的数据库名称集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDBRename(const std::vector<DBRenameRes>& _dBRename);
+
+                    /**
+                     * 判断参数 DBRename 是否已赋值
+                     * @return DBRename 是否已赋值
+                     */
+                    bool DBRenameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -443,6 +466,13 @@ namespace TencentCloud
                      */
                     std::string m_isRecovery;
                     bool m_isRecoveryHasBeenSet;
+
+                    /**
+                     * 重命名的数据库名称集合
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DBRenameRes> m_dBRename;
+                    bool m_dBRenameHasBeenSet;
 
                 };
             }

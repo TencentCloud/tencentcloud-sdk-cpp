@@ -39,6 +39,10 @@
 #include <tencentcloud/dlc/v20210125/model/AttachWorkGroupPolicyResponse.h>
 #include <tencentcloud/dlc/v20210125/model/BindWorkGroupsToUserRequest.h>
 #include <tencentcloud/dlc/v20210125/model/BindWorkGroupsToUserResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementBatchResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CancelTaskResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CheckLockMetaDataRequest.h>
@@ -57,6 +61,10 @@
 #include <tencentcloud/dlc/v20210125/model/CreateInternalTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementResponse.h>
+#include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLRequest.h>
+#include <tencentcloud/dlc/v20210125/model/CreateNotebookSessionStatementSupportBatchSQLResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateResultDownloadRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateScriptRequest.h>
@@ -79,6 +87,8 @@
 #include <tencentcloud/dlc/v20210125/model/CreateUserResponse.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupRequest.h>
 #include <tencentcloud/dlc/v20210125/model/CreateWorkGroupResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteNotebookSessionRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DeleteNotebookSessionResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteScriptRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteScriptResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DeleteSparkAppRequest.h>
@@ -97,10 +107,22 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSTableResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSTablesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDMSTablesResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeDataEnginesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionLogRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionLogResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementSqlResultRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementSqlResultResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementsResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeScriptsRequest.h>
@@ -137,6 +159,8 @@
 #include <tencentcloud/dlc/v20210125/model/DropDMSPartitionsResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DropDMSTableRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DropDMSTableResponse.h>
+#include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlRequest.h>
+#include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlResponse.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailRequest.h>
 #include <tencentcloud/dlc/v20210125/model/ListTaskJobLogDetailResponse.h>
 #include <tencentcloud/dlc/v20210125/model/LockMetaDataRequest.h>
@@ -195,6 +219,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BindWorkGroupsToUserResponse> BindWorkGroupsToUserOutcome;
                 typedef std::future<BindWorkGroupsToUserOutcome> BindWorkGroupsToUserOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::BindWorkGroupsToUserRequest&, BindWorkGroupsToUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindWorkGroupsToUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelNotebookSessionStatementResponse> CancelNotebookSessionStatementOutcome;
+                typedef std::future<CancelNotebookSessionStatementOutcome> CancelNotebookSessionStatementOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CancelNotebookSessionStatementRequest&, CancelNotebookSessionStatementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelNotebookSessionStatementAsyncHandler;
+                typedef Outcome<Core::Error, Model::CancelNotebookSessionStatementBatchResponse> CancelNotebookSessionStatementBatchOutcome;
+                typedef std::future<CancelNotebookSessionStatementBatchOutcome> CancelNotebookSessionStatementBatchOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CancelNotebookSessionStatementBatchRequest&, CancelNotebookSessionStatementBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelNotebookSessionStatementBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelTaskResponse> CancelTaskOutcome;
                 typedef std::future<CancelTaskOutcome> CancelTaskOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CancelTaskRequest&, CancelTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelTaskAsyncHandler;
@@ -222,6 +252,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateNotebookSessionResponse> CreateNotebookSessionOutcome;
                 typedef std::future<CreateNotebookSessionOutcome> CreateNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionRequest&, CreateNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNotebookSessionStatementResponse> CreateNotebookSessionStatementOutcome;
+                typedef std::future<CreateNotebookSessionStatementOutcome> CreateNotebookSessionStatementOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionStatementRequest&, CreateNotebookSessionStatementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionStatementAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateNotebookSessionStatementSupportBatchSQLResponse> CreateNotebookSessionStatementSupportBatchSQLOutcome;
+                typedef std::future<CreateNotebookSessionStatementSupportBatchSQLOutcome> CreateNotebookSessionStatementSupportBatchSQLOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::CreateNotebookSessionStatementSupportBatchSQLRequest&, CreateNotebookSessionStatementSupportBatchSQLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateNotebookSessionStatementSupportBatchSQLAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateResultDownloadResponse> CreateResultDownloadOutcome;
                 typedef std::future<CreateResultDownloadOutcome> CreateResultDownloadOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateResultDownloadRequest&, CreateResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateResultDownloadAsyncHandler;
@@ -255,6 +291,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWorkGroupResponse> CreateWorkGroupOutcome;
                 typedef std::future<CreateWorkGroupOutcome> CreateWorkGroupOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::CreateWorkGroupRequest&, CreateWorkGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteNotebookSessionResponse> DeleteNotebookSessionOutcome;
+                typedef std::future<DeleteNotebookSessionOutcome> DeleteNotebookSessionOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DeleteNotebookSessionRequest&, DeleteNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteNotebookSessionAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteScriptResponse> DeleteScriptOutcome;
                 typedef std::future<DeleteScriptOutcome> DeleteScriptOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DeleteScriptRequest&, DeleteScriptOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScriptAsyncHandler;
@@ -282,12 +321,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDMSTablesResponse> DescribeDMSTablesOutcome;
                 typedef std::future<DescribeDMSTablesOutcome> DescribeDMSTablesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDMSTablesRequest&, DescribeDMSTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDMSTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDataEnginesResponse> DescribeDataEnginesOutcome;
+                typedef std::future<DescribeDataEnginesOutcome> DescribeDataEnginesOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeDataEnginesRequest&, DescribeDataEnginesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataEnginesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDatabasesResponse> DescribeDatabasesOutcome;
                 typedef std::future<DescribeDatabasesOutcome> DescribeDatabasesOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeDatabasesRequest&, DescribeDatabasesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDatabasesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeNotebookSessionResponse> DescribeNotebookSessionOutcome;
                 typedef std::future<DescribeNotebookSessionOutcome> DescribeNotebookSessionOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionRequest&, DescribeNotebookSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookSessionLogResponse> DescribeNotebookSessionLogOutcome;
+                typedef std::future<DescribeNotebookSessionLogOutcome> DescribeNotebookSessionLogOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionLogRequest&, DescribeNotebookSessionLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookSessionStatementResponse> DescribeNotebookSessionStatementOutcome;
+                typedef std::future<DescribeNotebookSessionStatementOutcome> DescribeNotebookSessionStatementOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionStatementRequest&, DescribeNotebookSessionStatementOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionStatementAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookSessionStatementSqlResultResponse> DescribeNotebookSessionStatementSqlResultOutcome;
+                typedef std::future<DescribeNotebookSessionStatementSqlResultOutcome> DescribeNotebookSessionStatementSqlResultOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionStatementSqlResultRequest&, DescribeNotebookSessionStatementSqlResultOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionStatementSqlResultAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookSessionStatementsResponse> DescribeNotebookSessionStatementsOutcome;
+                typedef std::future<DescribeNotebookSessionStatementsOutcome> DescribeNotebookSessionStatementsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionStatementsRequest&, DescribeNotebookSessionStatementsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionStatementsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeNotebookSessionsResponse> DescribeNotebookSessionsOutcome;
+                typedef std::future<DescribeNotebookSessionsOutcome> DescribeNotebookSessionsOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeNotebookSessionsRequest&, DescribeNotebookSessionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeNotebookSessionsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResultDownloadResponse> DescribeResultDownloadOutcome;
                 typedef std::future<DescribeResultDownloadOutcome> DescribeResultDownloadOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeResultDownloadRequest&, DescribeResultDownloadOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResultDownloadAsyncHandler;
@@ -342,6 +399,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DropDMSTableResponse> DropDMSTableOutcome;
                 typedef std::future<DropDMSTableOutcome> DropDMSTableOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DropDMSTableRequest&, DropDMSTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DropDMSTableAsyncHandler;
+                typedef Outcome<Core::Error, Model::GenerateCreateMangedTableSqlResponse> GenerateCreateMangedTableSqlOutcome;
+                typedef std::future<GenerateCreateMangedTableSqlOutcome> GenerateCreateMangedTableSqlOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::GenerateCreateMangedTableSqlRequest&, GenerateCreateMangedTableSqlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GenerateCreateMangedTableSqlAsyncHandler;
                 typedef Outcome<Core::Error, Model::ListTaskJobLogDetailResponse> ListTaskJobLogDetailOutcome;
                 typedef std::future<ListTaskJobLogDetailOutcome> ListTaskJobLogDetailOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::ListTaskJobLogDetailRequest&, ListTaskJobLogDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ListTaskJobLogDetailAsyncHandler;
@@ -448,6 +508,24 @@ namespace TencentCloud
                 BindWorkGroupsToUserOutcomeCallable BindWorkGroupsToUserCallable(const Model::BindWorkGroupsToUserRequest& request);
 
                 /**
+                 *本接口（CancelNotebookSessionStatement）用于取消session statement
+                 * @param req CancelNotebookSessionStatementRequest
+                 * @return CancelNotebookSessionStatementOutcome
+                 */
+                CancelNotebookSessionStatementOutcome CancelNotebookSessionStatement(const Model::CancelNotebookSessionStatementRequest &request);
+                void CancelNotebookSessionStatementAsync(const Model::CancelNotebookSessionStatementRequest& request, const CancelNotebookSessionStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelNotebookSessionStatementOutcomeCallable CancelNotebookSessionStatementCallable(const Model::CancelNotebookSessionStatementRequest& request);
+
+                /**
+                 *本接口（CancelNotebookSessionStatementBatch）用于按批取消Session statement。
+                 * @param req CancelNotebookSessionStatementBatchRequest
+                 * @return CancelNotebookSessionStatementBatchOutcome
+                 */
+                CancelNotebookSessionStatementBatchOutcome CancelNotebookSessionStatementBatch(const Model::CancelNotebookSessionStatementBatchRequest &request);
+                void CancelNotebookSessionStatementBatchAsync(const Model::CancelNotebookSessionStatementBatchRequest& request, const CancelNotebookSessionStatementBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CancelNotebookSessionStatementBatchOutcomeCallable CancelNotebookSessionStatementBatchCallable(const Model::CancelNotebookSessionStatementBatchRequest& request);
+
+                /**
                  *本接口（CancelTask），用于取消任务执行
                  * @param req CancelTaskRequest
                  * @return CancelTaskOutcome
@@ -511,7 +589,7 @@ namespace TencentCloud
                 CreateImportTaskOutcomeCallable CreateImportTaskCallable(const Model::CreateImportTaskRequest& request);
 
                 /**
-                 *创建托管存储内表
+                 *创建托管存储内表（该接口已废弃）
                  * @param req CreateInternalTableRequest
                  * @return CreateInternalTableOutcome
                  */
@@ -527,6 +605,24 @@ namespace TencentCloud
                 CreateNotebookSessionOutcome CreateNotebookSession(const Model::CreateNotebookSessionRequest &request);
                 void CreateNotebookSessionAsync(const Model::CreateNotebookSessionRequest& request, const CreateNotebookSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateNotebookSessionOutcomeCallable CreateNotebookSessionCallable(const Model::CreateNotebookSessionRequest& request);
+
+                /**
+                 *本接口（CreateNotebookSessionStatement）用于创建session statement
+                 * @param req CreateNotebookSessionStatementRequest
+                 * @return CreateNotebookSessionStatementOutcome
+                 */
+                CreateNotebookSessionStatementOutcome CreateNotebookSessionStatement(const Model::CreateNotebookSessionStatementRequest &request);
+                void CreateNotebookSessionStatementAsync(const Model::CreateNotebookSessionStatementRequest& request, const CreateNotebookSessionStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNotebookSessionStatementOutcomeCallable CreateNotebookSessionStatementCallable(const Model::CreateNotebookSessionStatementRequest& request);
+
+                /**
+                 *本接口（CreateNotebookSessionStatementSupportBatchSQL）用于创建Statement批量运行SQL任务。
+                 * @param req CreateNotebookSessionStatementSupportBatchSQLRequest
+                 * @return CreateNotebookSessionStatementSupportBatchSQLOutcome
+                 */
+                CreateNotebookSessionStatementSupportBatchSQLOutcome CreateNotebookSessionStatementSupportBatchSQL(const Model::CreateNotebookSessionStatementSupportBatchSQLRequest &request);
+                void CreateNotebookSessionStatementSupportBatchSQLAsync(const Model::CreateNotebookSessionStatementSupportBatchSQLRequest& request, const CreateNotebookSessionStatementSupportBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateNotebookSessionStatementSupportBatchSQLOutcomeCallable CreateNotebookSessionStatementSupportBatchSQLCallable(const Model::CreateNotebookSessionStatementSupportBatchSQLRequest& request);
 
                 /**
                  *创建查询结果下载任务
@@ -628,6 +724,15 @@ namespace TencentCloud
                 CreateWorkGroupOutcomeCallable CreateWorkGroupCallable(const Model::CreateWorkGroupRequest& request);
 
                 /**
+                 *本接口（DeleteNotebookSession）用于删除notebook livy session
+                 * @param req DeleteNotebookSessionRequest
+                 * @return DeleteNotebookSessionOutcome
+                 */
+                DeleteNotebookSessionOutcome DeleteNotebookSession(const Model::DeleteNotebookSessionRequest &request);
+                void DeleteNotebookSessionAsync(const Model::DeleteNotebookSessionRequest& request, const DeleteNotebookSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteNotebookSessionOutcomeCallable DeleteNotebookSessionCallable(const Model::DeleteNotebookSessionRequest& request);
+
+                /**
                  *该接口（DeleteScript）用于删除sql脚本。
                  * @param req DeleteScriptRequest
                  * @return DeleteScriptOutcome
@@ -709,6 +814,15 @@ namespace TencentCloud
                 DescribeDMSTablesOutcomeCallable DescribeDMSTablesCallable(const Model::DescribeDMSTablesRequest& request);
 
                 /**
+                 *本接口（DescribeDataEngines）用于获取DataEngines信息列表
+                 * @param req DescribeDataEnginesRequest
+                 * @return DescribeDataEnginesOutcome
+                 */
+                DescribeDataEnginesOutcome DescribeDataEngines(const Model::DescribeDataEnginesRequest &request);
+                void DescribeDataEnginesAsync(const Model::DescribeDataEnginesRequest& request, const DescribeDataEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDataEnginesOutcomeCallable DescribeDataEnginesCallable(const Model::DescribeDataEnginesRequest& request);
+
+                /**
                  *本接口（DescribeDatabases）用于查询数据库列表。
                  * @param req DescribeDatabasesRequest
                  * @return DescribeDatabasesOutcome
@@ -725,6 +839,51 @@ namespace TencentCloud
                 DescribeNotebookSessionOutcome DescribeNotebookSession(const Model::DescribeNotebookSessionRequest &request);
                 void DescribeNotebookSessionAsync(const Model::DescribeNotebookSessionRequest& request, const DescribeNotebookSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeNotebookSessionOutcomeCallable DescribeNotebookSessionCallable(const Model::DescribeNotebookSessionRequest& request);
+
+                /**
+                 *本接口（DescribeNotebookSessionLog）用于获取notebook livy session日志
+                 * @param req DescribeNotebookSessionLogRequest
+                 * @return DescribeNotebookSessionLogOutcome
+                 */
+                DescribeNotebookSessionLogOutcome DescribeNotebookSessionLog(const Model::DescribeNotebookSessionLogRequest &request);
+                void DescribeNotebookSessionLogAsync(const Model::DescribeNotebookSessionLogRequest& request, const DescribeNotebookSessionLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookSessionLogOutcomeCallable DescribeNotebookSessionLogCallable(const Model::DescribeNotebookSessionLogRequest& request);
+
+                /**
+                 *本接口（DescribeNotebookSessionStatement）用于获取session statement信息
+                 * @param req DescribeNotebookSessionStatementRequest
+                 * @return DescribeNotebookSessionStatementOutcome
+                 */
+                DescribeNotebookSessionStatementOutcome DescribeNotebookSessionStatement(const Model::DescribeNotebookSessionStatementRequest &request);
+                void DescribeNotebookSessionStatementAsync(const Model::DescribeNotebookSessionStatementRequest& request, const DescribeNotebookSessionStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookSessionStatementOutcomeCallable DescribeNotebookSessionStatementCallable(const Model::DescribeNotebookSessionStatementRequest& request);
+
+                /**
+                 *本接口（DescribeNotebookSessionStatementSqlResult）用于获取statement运行结果。
+                 * @param req DescribeNotebookSessionStatementSqlResultRequest
+                 * @return DescribeNotebookSessionStatementSqlResultOutcome
+                 */
+                DescribeNotebookSessionStatementSqlResultOutcome DescribeNotebookSessionStatementSqlResult(const Model::DescribeNotebookSessionStatementSqlResultRequest &request);
+                void DescribeNotebookSessionStatementSqlResultAsync(const Model::DescribeNotebookSessionStatementSqlResultRequest& request, const DescribeNotebookSessionStatementSqlResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookSessionStatementSqlResultOutcomeCallable DescribeNotebookSessionStatementSqlResultCallable(const Model::DescribeNotebookSessionStatementSqlResultRequest& request);
+
+                /**
+                 *本接口（DescribeNotebookSessionStatements）用于获取Session Statement列表。
+                 * @param req DescribeNotebookSessionStatementsRequest
+                 * @return DescribeNotebookSessionStatementsOutcome
+                 */
+                DescribeNotebookSessionStatementsOutcome DescribeNotebookSessionStatements(const Model::DescribeNotebookSessionStatementsRequest &request);
+                void DescribeNotebookSessionStatementsAsync(const Model::DescribeNotebookSessionStatementsRequest& request, const DescribeNotebookSessionStatementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookSessionStatementsOutcomeCallable DescribeNotebookSessionStatementsCallable(const Model::DescribeNotebookSessionStatementsRequest& request);
+
+                /**
+                 *本接口（DescribeNotebookSessions）用于获取notebook livy session列表
+                 * @param req DescribeNotebookSessionsRequest
+                 * @return DescribeNotebookSessionsOutcome
+                 */
+                DescribeNotebookSessionsOutcome DescribeNotebookSessions(const Model::DescribeNotebookSessionsRequest &request);
+                void DescribeNotebookSessionsAsync(const Model::DescribeNotebookSessionsRequest& request, const DescribeNotebookSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeNotebookSessionsOutcomeCallable DescribeNotebookSessionsCallable(const Model::DescribeNotebookSessionsRequest& request);
 
                 /**
                  *查询结果下载任务
@@ -887,6 +1046,15 @@ namespace TencentCloud
                 DropDMSTableOutcome DropDMSTable(const Model::DropDMSTableRequest &request);
                 void DropDMSTableAsync(const Model::DropDMSTableRequest& request, const DropDMSTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DropDMSTableOutcomeCallable DropDMSTableCallable(const Model::DropDMSTableRequest& request);
+
+                /**
+                 *生成创建托管表语句
+                 * @param req GenerateCreateMangedTableSqlRequest
+                 * @return GenerateCreateMangedTableSqlOutcome
+                 */
+                GenerateCreateMangedTableSqlOutcome GenerateCreateMangedTableSql(const Model::GenerateCreateMangedTableSqlRequest &request);
+                void GenerateCreateMangedTableSqlAsync(const Model::GenerateCreateMangedTableSqlRequest& request, const GenerateCreateMangedTableSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GenerateCreateMangedTableSqlOutcomeCallable GenerateCreateMangedTableSqlCallable(const Model::GenerateCreateMangedTableSqlRequest& request);
 
                 /**
                  *本接口（ListTaskJobLogDetail）用于获取spark-jar日志列表

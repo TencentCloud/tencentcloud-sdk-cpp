@@ -42,7 +42,8 @@ CreateRecTaskRequest::CreateRecTaskRequest() :
     m_filterModalHasBeenSet(false),
     m_emotionalEnergyHasBeenSet(false),
     m_reinforceHotwordHasBeenSet(false),
-    m_sentenceMaxLengthHasBeenSet(false)
+    m_sentenceMaxLengthHasBeenSet(false),
+    m_emotionRecognitionHasBeenSet(false)
 {
 }
 
@@ -211,6 +212,14 @@ string CreateRecTaskRequest::ToJsonString() const
         string key = "SentenceMaxLength";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_sentenceMaxLength, allocator);
+    }
+
+    if (m_emotionRecognitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmotionRecognition";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_emotionRecognition, allocator);
     }
 
 
@@ -539,6 +548,22 @@ void CreateRecTaskRequest::SetSentenceMaxLength(const int64_t& _sentenceMaxLengt
 bool CreateRecTaskRequest::SentenceMaxLengthHasBeenSet() const
 {
     return m_sentenceMaxLengthHasBeenSet;
+}
+
+int64_t CreateRecTaskRequest::GetEmotionRecognition() const
+{
+    return m_emotionRecognition;
+}
+
+void CreateRecTaskRequest::SetEmotionRecognition(const int64_t& _emotionRecognition)
+{
+    m_emotionRecognition = _emotionRecognition;
+    m_emotionRecognitionHasBeenSet = true;
+}
+
+bool CreateRecTaskRequest::EmotionRecognitionHasBeenSet() const
+{
+    return m_emotionRecognitionHasBeenSet;
 }
 
 

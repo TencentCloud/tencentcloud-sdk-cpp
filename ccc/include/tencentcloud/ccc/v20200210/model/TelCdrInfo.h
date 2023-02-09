@@ -885,6 +885,28 @@ notInService       不在服务区
                      */
                     bool QueuedSkillGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取通话中语音留言录音URL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VoicemailRecordURL 通话中语音留言录音URL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetVoicemailRecordURL() const;
+
+                    /**
+                     * 设置通话中语音留言录音URL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VoicemailRecordURL 通话中语音留言录音URL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVoicemailRecordURL(const std::vector<std::string>& _voicemailRecordURL);
+
+                    /**
+                     * 判断参数 VoicemailRecordURL 是否已赋值
+                     * @return VoicemailRecordURL 是否已赋值
+                     */
+                    bool VoicemailRecordURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1143,6 +1165,13 @@ notInService       不在服务区
                      */
                     std::string m_queuedSkillGroupName;
                     bool m_queuedSkillGroupNameHasBeenSet;
+
+                    /**
+                     * 通话中语音留言录音URL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_voicemailRecordURL;
+                    bool m_voicemailRecordURLHasBeenSet;
 
                 };
             }

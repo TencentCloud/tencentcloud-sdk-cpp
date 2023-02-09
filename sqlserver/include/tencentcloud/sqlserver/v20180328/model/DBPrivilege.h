@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DBNameHasBeenSet() const;
 
                     /**
-                     * 获取数据库权限，ReadWrite表示可读写，ReadOnly表示只读
-                     * @return Privilege 数据库权限，ReadWrite表示可读写，ReadOnly表示只读
+                     * 获取数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
+                     * @return Privilege 数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
                      */
                     std::string GetPrivilege() const;
 
                     /**
-                     * 设置数据库权限，ReadWrite表示可读写，ReadOnly表示只读
-                     * @param Privilege 数据库权限，ReadWrite表示可读写，ReadOnly表示只读
+                     * 设置数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
+                     * @param Privilege 数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
                      */
                     void SetPrivilege(const std::string& _privilege);
 
@@ -91,7 +91,7 @@ namespace TencentCloud
                     bool m_dBNameHasBeenSet;
 
                     /**
-                     * 数据库权限，ReadWrite表示可读写，ReadOnly表示只读
+                     * 数据库权限，ReadWrite表示可读写，ReadOnly表示只读，DBOwner所有者
                      */
                     std::string m_privilege;
                     bool m_privilegeHasBeenSet;

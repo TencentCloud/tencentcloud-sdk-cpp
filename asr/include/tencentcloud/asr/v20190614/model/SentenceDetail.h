@@ -267,6 +267,28 @@ namespace TencentCloud
                      */
                     bool SilenceTimeHasBeenSet() const;
 
+                    /**
+                     * 获取情绪类型（可能为空）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EmotionType 情绪类型（可能为空）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetEmotionType() const;
+
+                    /**
+                     * 设置情绪类型（可能为空）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EmotionType 情绪类型（可能为空）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEmotionType(const std::vector<std::string>& _emotionType);
+
+                    /**
+                     * 判断参数 EmotionType 是否已赋值
+                     * @return EmotionType 是否已赋值
+                     */
+                    bool EmotionTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +360,13 @@ namespace TencentCloud
                      */
                     int64_t m_silenceTime;
                     bool m_silenceTimeHasBeenSet;
+
+                    /**
+                     * 情绪类型（可能为空）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_emotionType;
+                    bool m_emotionTypeHasBeenSet;
 
                 };
             }

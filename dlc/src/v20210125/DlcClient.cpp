@@ -384,6 +384,92 @@ DlcClient::BindWorkGroupsToUserOutcomeCallable DlcClient::BindWorkGroupsToUserCa
     return task->get_future();
 }
 
+DlcClient::CancelNotebookSessionStatementOutcome DlcClient::CancelNotebookSessionStatement(const CancelNotebookSessionStatementRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelNotebookSessionStatement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelNotebookSessionStatementResponse rsp = CancelNotebookSessionStatementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelNotebookSessionStatementOutcome(rsp);
+        else
+            return CancelNotebookSessionStatementOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelNotebookSessionStatementOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CancelNotebookSessionStatementAsync(const CancelNotebookSessionStatementRequest& request, const CancelNotebookSessionStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelNotebookSessionStatement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CancelNotebookSessionStatementOutcomeCallable DlcClient::CancelNotebookSessionStatementCallable(const CancelNotebookSessionStatementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelNotebookSessionStatementOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelNotebookSessionStatement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CancelNotebookSessionStatementBatchOutcome DlcClient::CancelNotebookSessionStatementBatch(const CancelNotebookSessionStatementBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "CancelNotebookSessionStatementBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CancelNotebookSessionStatementBatchResponse rsp = CancelNotebookSessionStatementBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CancelNotebookSessionStatementBatchOutcome(rsp);
+        else
+            return CancelNotebookSessionStatementBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return CancelNotebookSessionStatementBatchOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CancelNotebookSessionStatementBatchAsync(const CancelNotebookSessionStatementBatchRequest& request, const CancelNotebookSessionStatementBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CancelNotebookSessionStatementBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CancelNotebookSessionStatementBatchOutcomeCallable DlcClient::CancelNotebookSessionStatementBatchCallable(const CancelNotebookSessionStatementBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CancelNotebookSessionStatementBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->CancelNotebookSessionStatementBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::CancelTaskOutcome DlcClient::CancelTask(const CancelTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelTask");
@@ -764,6 +850,92 @@ DlcClient::CreateNotebookSessionOutcomeCallable DlcClient::CreateNotebookSession
         [this, request]()
         {
             return this->CreateNotebookSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateNotebookSessionStatementOutcome DlcClient::CreateNotebookSessionStatement(const CreateNotebookSessionStatementRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNotebookSessionStatement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNotebookSessionStatementResponse rsp = CreateNotebookSessionStatementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNotebookSessionStatementOutcome(rsp);
+        else
+            return CreateNotebookSessionStatementOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNotebookSessionStatementOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateNotebookSessionStatementAsync(const CreateNotebookSessionStatementRequest& request, const CreateNotebookSessionStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNotebookSessionStatement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateNotebookSessionStatementOutcomeCallable DlcClient::CreateNotebookSessionStatementCallable(const CreateNotebookSessionStatementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNotebookSessionStatementOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNotebookSessionStatement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::CreateNotebookSessionStatementSupportBatchSQLOutcome DlcClient::CreateNotebookSessionStatementSupportBatchSQL(const CreateNotebookSessionStatementSupportBatchSQLRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateNotebookSessionStatementSupportBatchSQL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateNotebookSessionStatementSupportBatchSQLResponse rsp = CreateNotebookSessionStatementSupportBatchSQLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateNotebookSessionStatementSupportBatchSQLOutcome(rsp);
+        else
+            return CreateNotebookSessionStatementSupportBatchSQLOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateNotebookSessionStatementSupportBatchSQLOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::CreateNotebookSessionStatementSupportBatchSQLAsync(const CreateNotebookSessionStatementSupportBatchSQLRequest& request, const CreateNotebookSessionStatementSupportBatchSQLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateNotebookSessionStatementSupportBatchSQL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::CreateNotebookSessionStatementSupportBatchSQLOutcomeCallable DlcClient::CreateNotebookSessionStatementSupportBatchSQLCallable(const CreateNotebookSessionStatementSupportBatchSQLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateNotebookSessionStatementSupportBatchSQLOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateNotebookSessionStatementSupportBatchSQL(request);
         }
     );
 
@@ -1244,6 +1416,49 @@ DlcClient::CreateWorkGroupOutcomeCallable DlcClient::CreateWorkGroupCallable(con
     return task->get_future();
 }
 
+DlcClient::DeleteNotebookSessionOutcome DlcClient::DeleteNotebookSession(const DeleteNotebookSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteNotebookSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteNotebookSessionResponse rsp = DeleteNotebookSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteNotebookSessionOutcome(rsp);
+        else
+            return DeleteNotebookSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteNotebookSessionOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DeleteNotebookSessionAsync(const DeleteNotebookSessionRequest& request, const DeleteNotebookSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteNotebookSession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DeleteNotebookSessionOutcomeCallable DlcClient::DeleteNotebookSessionCallable(const DeleteNotebookSessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteNotebookSessionOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteNotebookSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DeleteScriptOutcome DlcClient::DeleteScript(const DeleteScriptRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteScript");
@@ -1631,6 +1846,49 @@ DlcClient::DescribeDMSTablesOutcomeCallable DlcClient::DescribeDMSTablesCallable
     return task->get_future();
 }
 
+DlcClient::DescribeDataEnginesOutcome DlcClient::DescribeDataEngines(const DescribeDataEnginesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDataEngines");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDataEnginesResponse rsp = DescribeDataEnginesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDataEnginesOutcome(rsp);
+        else
+            return DescribeDataEnginesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDataEnginesOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeDataEnginesAsync(const DescribeDataEnginesRequest& request, const DescribeDataEnginesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDataEngines(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeDataEnginesOutcomeCallable DlcClient::DescribeDataEnginesCallable(const DescribeDataEnginesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDataEnginesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDataEngines(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeDatabasesOutcome DlcClient::DescribeDatabases(const DescribeDatabasesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDatabases");
@@ -1710,6 +1968,221 @@ DlcClient::DescribeNotebookSessionOutcomeCallable DlcClient::DescribeNotebookSes
         [this, request]()
         {
             return this->DescribeNotebookSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeNotebookSessionLogOutcome DlcClient::DescribeNotebookSessionLog(const DescribeNotebookSessionLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookSessionLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookSessionLogResponse rsp = DescribeNotebookSessionLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookSessionLogOutcome(rsp);
+        else
+            return DescribeNotebookSessionLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookSessionLogOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeNotebookSessionLogAsync(const DescribeNotebookSessionLogRequest& request, const DescribeNotebookSessionLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookSessionLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeNotebookSessionLogOutcomeCallable DlcClient::DescribeNotebookSessionLogCallable(const DescribeNotebookSessionLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookSessionLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookSessionLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeNotebookSessionStatementOutcome DlcClient::DescribeNotebookSessionStatement(const DescribeNotebookSessionStatementRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookSessionStatement");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookSessionStatementResponse rsp = DescribeNotebookSessionStatementResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookSessionStatementOutcome(rsp);
+        else
+            return DescribeNotebookSessionStatementOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookSessionStatementOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeNotebookSessionStatementAsync(const DescribeNotebookSessionStatementRequest& request, const DescribeNotebookSessionStatementAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookSessionStatement(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeNotebookSessionStatementOutcomeCallable DlcClient::DescribeNotebookSessionStatementCallable(const DescribeNotebookSessionStatementRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookSessionStatementOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookSessionStatement(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeNotebookSessionStatementSqlResultOutcome DlcClient::DescribeNotebookSessionStatementSqlResult(const DescribeNotebookSessionStatementSqlResultRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookSessionStatementSqlResult");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookSessionStatementSqlResultResponse rsp = DescribeNotebookSessionStatementSqlResultResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookSessionStatementSqlResultOutcome(rsp);
+        else
+            return DescribeNotebookSessionStatementSqlResultOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookSessionStatementSqlResultOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeNotebookSessionStatementSqlResultAsync(const DescribeNotebookSessionStatementSqlResultRequest& request, const DescribeNotebookSessionStatementSqlResultAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookSessionStatementSqlResult(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeNotebookSessionStatementSqlResultOutcomeCallable DlcClient::DescribeNotebookSessionStatementSqlResultCallable(const DescribeNotebookSessionStatementSqlResultRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookSessionStatementSqlResultOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookSessionStatementSqlResult(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeNotebookSessionStatementsOutcome DlcClient::DescribeNotebookSessionStatements(const DescribeNotebookSessionStatementsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookSessionStatements");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookSessionStatementsResponse rsp = DescribeNotebookSessionStatementsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookSessionStatementsOutcome(rsp);
+        else
+            return DescribeNotebookSessionStatementsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookSessionStatementsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeNotebookSessionStatementsAsync(const DescribeNotebookSessionStatementsRequest& request, const DescribeNotebookSessionStatementsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookSessionStatements(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeNotebookSessionStatementsOutcomeCallable DlcClient::DescribeNotebookSessionStatementsCallable(const DescribeNotebookSessionStatementsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookSessionStatementsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookSessionStatements(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::DescribeNotebookSessionsOutcome DlcClient::DescribeNotebookSessions(const DescribeNotebookSessionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNotebookSessions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNotebookSessionsResponse rsp = DescribeNotebookSessionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNotebookSessionsOutcome(rsp);
+        else
+            return DescribeNotebookSessionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNotebookSessionsOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeNotebookSessionsAsync(const DescribeNotebookSessionsRequest& request, const DescribeNotebookSessionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNotebookSessions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeNotebookSessionsOutcomeCallable DlcClient::DescribeNotebookSessionsCallable(const DescribeNotebookSessionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNotebookSessionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNotebookSessions(request);
         }
     );
 
@@ -2484,6 +2957,49 @@ DlcClient::DropDMSTableOutcomeCallable DlcClient::DropDMSTableCallable(const Dro
         [this, request]()
         {
             return this->DropDMSTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DlcClient::GenerateCreateMangedTableSqlOutcome DlcClient::GenerateCreateMangedTableSql(const GenerateCreateMangedTableSqlRequest &request)
+{
+    auto outcome = MakeRequest(request, "GenerateCreateMangedTableSql");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GenerateCreateMangedTableSqlResponse rsp = GenerateCreateMangedTableSqlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GenerateCreateMangedTableSqlOutcome(rsp);
+        else
+            return GenerateCreateMangedTableSqlOutcome(o.GetError());
+    }
+    else
+    {
+        return GenerateCreateMangedTableSqlOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::GenerateCreateMangedTableSqlAsync(const GenerateCreateMangedTableSqlRequest& request, const GenerateCreateMangedTableSqlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GenerateCreateMangedTableSql(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::GenerateCreateMangedTableSqlOutcomeCallable DlcClient::GenerateCreateMangedTableSqlCallable(const GenerateCreateMangedTableSqlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GenerateCreateMangedTableSqlOutcome()>>(
+        [this, request]()
+        {
+            return this->GenerateCreateMangedTableSql(request);
         }
     );
 

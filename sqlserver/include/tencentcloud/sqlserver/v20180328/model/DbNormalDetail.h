@@ -370,6 +370,24 @@ namespace TencentCloud
                      */
                     bool UserAccessDescHasBeenSet() const;
 
+                    /**
+                     * 获取数据库创建时间
+                     * @return CreateTime 数据库创建时间
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置数据库创建时间
+                     * @param CreateTime 数据库创建时间
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -479,6 +497,12 @@ namespace TencentCloud
                      */
                     std::string m_userAccessDesc;
                     bool m_userAccessDescHasBeenSet;
+
+                    /**
+                     * 数据库创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

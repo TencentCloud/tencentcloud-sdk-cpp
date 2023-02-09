@@ -30,7 +30,8 @@ SentenceDetail::SentenceDetail() :
     m_speechSpeedHasBeenSet(false),
     m_speakerIdHasBeenSet(false),
     m_emotionalEnergyHasBeenSet(false),
-    m_silenceTimeHasBeenSet(false)
+    m_silenceTimeHasBeenSet(false),
+    m_emotionTypeHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,19 @@ CoreInternalOutcome SentenceDetail::Deserialize(const rapidjson::Value &value)
         m_silenceTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("EmotionType") && !value["EmotionType"].IsNull())
+    {
+        if (!value["EmotionType"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SentenceDetail.EmotionType` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["EmotionType"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_emotionType.push_back((*itr).GetString());
+        }
+        m_emotionTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +255,19 @@ void SentenceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SilenceTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_silenceTime, allocator);
+    }
+
+    if (m_emotionTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmotionType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_emotionType.begin(); itr != m_emotionType.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -404,5 +431,21 @@ void SentenceDetail::SetSilenceTime(const int64_t& _silenceTime)
 bool SentenceDetail::SilenceTimeHasBeenSet() const
 {
     return m_silenceTimeHasBeenSet;
+}
+
+vector<string> SentenceDetail::GetEmotionType() const
+{
+    return m_emotionType;
+}
+
+void SentenceDetail::SetEmotionType(const vector<string>& _emotionType)
+{
+    m_emotionType = _emotionType;
+    m_emotionTypeHasBeenSet = true;
+}
+
+bool SentenceDetail::EmotionTypeHasBeenSet() const
+{
+    return m_emotionTypeHasBeenSet;
 }
 

@@ -107,7 +107,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsRequest.h
-  include/tencentcloud/sqlserver/v20180328/model/SlowlogInfo.h
+  include/tencentcloud/sqlserver/v20180328/model/MigrationStep.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyAccountRemarkResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeMigrationsResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeBackupFilesResponse.h
@@ -262,7 +262,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyBackupNameRequest.h
   include/tencentcloud/sqlserver/v20180328/model/StopMigrationResponse.h
-  include/tencentcloud/sqlserver/v20180328/model/MigrationStep.h
+  include/tencentcloud/sqlserver/v20180328/model/DBRenameRes.h
   include/tencentcloud/sqlserver/v20180328/model/CreatePublishSubscribeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeUploadBackupInfoRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeAccountsResponse.h
@@ -273,6 +273,7 @@ set(sqlserver_public_header_model
   include/tencentcloud/sqlserver/v20180328/model/StartBackupMigrationRequest.h
   include/tencentcloud/sqlserver/v20180328/model/DescribePublishSubscribeResponse.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeReadOnlyGroupListRequest.h
+  include/tencentcloud/sqlserver/v20180328/model/SlowlogInfo.h
   include/tencentcloud/sqlserver/v20180328/model/DescribeIncrementalMigrationResponse.h
   include/tencentcloud/sqlserver/v20180328/model/ModifyDBRemarkResponse.h
   include/tencentcloud/sqlserver/v20180328/model/MigrateTarget.h
@@ -373,7 +374,7 @@ set(sqlserver_src
   src/v20180328/model/DescribeDBsResponse.cpp
   src/v20180328/model/DescribeDBInstancesRequest.cpp
   src/v20180328/model/DescribeDBSecurityGroupsRequest.cpp
-  src/v20180328/model/SlowlogInfo.cpp
+  src/v20180328/model/MigrationStep.cpp
   src/v20180328/model/ModifyAccountRemarkResponse.cpp
   src/v20180328/model/DescribeMigrationsResponse.cpp
   src/v20180328/model/DescribeBackupFilesResponse.cpp
@@ -528,7 +529,7 @@ set(sqlserver_src
   src/v20180328/model/DisassociateSecurityGroupsRequest.cpp
   src/v20180328/model/ModifyBackupNameRequest.cpp
   src/v20180328/model/StopMigrationResponse.cpp
-  src/v20180328/model/MigrationStep.cpp
+  src/v20180328/model/DBRenameRes.cpp
   src/v20180328/model/CreatePublishSubscribeResponse.cpp
   src/v20180328/model/DescribeUploadBackupInfoRequest.cpp
   src/v20180328/model/DescribeAccountsResponse.cpp
@@ -539,6 +540,7 @@ set(sqlserver_src
   src/v20180328/model/StartBackupMigrationRequest.cpp
   src/v20180328/model/DescribePublishSubscribeResponse.cpp
   src/v20180328/model/DescribeReadOnlyGroupListRequest.cpp
+  src/v20180328/model/SlowlogInfo.cpp
   src/v20180328/model/DescribeIncrementalMigrationResponse.cpp
   src/v20180328/model/ModifyDBRemarkResponse.cpp
   src/v20180328/model/MigrateTarget.cpp
