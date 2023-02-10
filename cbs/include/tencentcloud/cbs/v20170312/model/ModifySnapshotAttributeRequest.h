@@ -61,24 +61,6 @@ namespace TencentCloud
                     bool SnapshotIdHasBeenSet() const;
 
                     /**
-                     * 获取新的快照名称。最长为60个字符。
-                     * @return SnapshotName 新的快照名称。最长为60个字符。
-                     */
-                    std::string GetSnapshotName() const;
-
-                    /**
-                     * 设置新的快照名称。最长为60个字符。
-                     * @param SnapshotName 新的快照名称。最长为60个字符。
-                     */
-                    void SetSnapshotName(const std::string& _snapshotName);
-
-                    /**
-                     * 判断参数 SnapshotName 是否已赋值
-                     * @return SnapshotName 是否已赋值
-                     */
-                    bool SnapshotNameHasBeenSet() const;
-
-                    /**
                      * 获取快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
                      * @return IsPermanent 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
                      */
@@ -95,6 +77,24 @@ namespace TencentCloud
                      * @return IsPermanent 是否已赋值
                      */
                     bool IsPermanentHasBeenSet() const;
+
+                    /**
+                     * 获取新的快照名称。最长为60个字符。
+                     * @return SnapshotName 新的快照名称。最长为60个字符。
+                     */
+                    std::string GetSnapshotName() const;
+
+                    /**
+                     * 设置新的快照名称。最长为60个字符。
+                     * @param SnapshotName 新的快照名称。最长为60个字符。
+                     */
+                    void SetSnapshotName(const std::string& _snapshotName);
+
+                    /**
+                     * 判断参数 SnapshotName 是否已赋值
+                     * @return SnapshotName 是否已赋值
+                     */
+                    bool SnapshotNameHasBeenSet() const;
 
                     /**
                      * 获取快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。
@@ -123,16 +123,16 @@ namespace TencentCloud
                     bool m_snapshotIdHasBeenSet;
 
                     /**
-                     * 新的快照名称。最长为60个字符。
-                     */
-                    std::string m_snapshotName;
-                    bool m_snapshotNameHasBeenSet;
-
-                    /**
                      * 快照的保留方式，FALSE表示非永久保留，TRUE表示永久保留。
                      */
                     bool m_isPermanent;
                     bool m_isPermanentHasBeenSet;
+
+                    /**
+                     * 新的快照名称。最长为60个字符。
+                     */
+                    std::string m_snapshotName;
+                    bool m_snapshotNameHasBeenSet;
 
                     /**
                      * 快照的到期时间；设置好快照将会被同时设置为非永久保留方式；超过到期时间后快照将会被自动删除。

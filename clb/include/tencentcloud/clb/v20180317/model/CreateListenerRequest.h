@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
-                     * @return Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
+                     * 获取监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
+                     * @return Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
                      */
                     std::string GetProtocol() const;
 
                     /**
-                     * 设置监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
-                     * @param Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
+                     * 设置监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
+                     * @param Protocol 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -370,7 +370,7 @@ namespace TencentCloud
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL（TCP_SSL 正在内测中，如需使用请通过工单申请）。
+                     * 监听器协议： TCP | UDP | HTTP | HTTPS | TCP_SSL | QUIC。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;

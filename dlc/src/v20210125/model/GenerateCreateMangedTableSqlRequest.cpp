@@ -22,7 +22,11 @@
 using namespace TencentCloud::Dlc::V20210125::Model;
 using namespace std;
 
-GenerateCreateMangedTableSqlRequest::GenerateCreateMangedTableSqlRequest()
+GenerateCreateMangedTableSqlRequest::GenerateCreateMangedTableSqlRequest() :
+    m_tableBaseInfoHasBeenSet(false),
+    m_columnsHasBeenSet(false),
+    m_partitionsHasBeenSet(false),
+    m_propertiesHasBeenSet(false)
 {
 }
 
@@ -33,6 +37,60 @@ string GenerateCreateMangedTableSqlRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_tableBaseInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableBaseInfo";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tableBaseInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_columnsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Columns";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_columns.begin(); itr != m_columns.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_partitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Partitions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_partitions.begin(); itr != m_partitions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_propertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Properties";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_properties.begin(); itr != m_properties.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +98,69 @@ string GenerateCreateMangedTableSqlRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+TableBaseInfo GenerateCreateMangedTableSqlRequest::GetTableBaseInfo() const
+{
+    return m_tableBaseInfo;
+}
+
+void GenerateCreateMangedTableSqlRequest::SetTableBaseInfo(const TableBaseInfo& _tableBaseInfo)
+{
+    m_tableBaseInfo = _tableBaseInfo;
+    m_tableBaseInfoHasBeenSet = true;
+}
+
+bool GenerateCreateMangedTableSqlRequest::TableBaseInfoHasBeenSet() const
+{
+    return m_tableBaseInfoHasBeenSet;
+}
+
+vector<TColumn> GenerateCreateMangedTableSqlRequest::GetColumns() const
+{
+    return m_columns;
+}
+
+void GenerateCreateMangedTableSqlRequest::SetColumns(const vector<TColumn>& _columns)
+{
+    m_columns = _columns;
+    m_columnsHasBeenSet = true;
+}
+
+bool GenerateCreateMangedTableSqlRequest::ColumnsHasBeenSet() const
+{
+    return m_columnsHasBeenSet;
+}
+
+vector<TPartition> GenerateCreateMangedTableSqlRequest::GetPartitions() const
+{
+    return m_partitions;
+}
+
+void GenerateCreateMangedTableSqlRequest::SetPartitions(const vector<TPartition>& _partitions)
+{
+    m_partitions = _partitions;
+    m_partitionsHasBeenSet = true;
+}
+
+bool GenerateCreateMangedTableSqlRequest::PartitionsHasBeenSet() const
+{
+    return m_partitionsHasBeenSet;
+}
+
+vector<Property> GenerateCreateMangedTableSqlRequest::GetProperties() const
+{
+    return m_properties;
+}
+
+void GenerateCreateMangedTableSqlRequest::SetProperties(const vector<Property>& _properties)
+{
+    m_properties = _properties;
+    m_propertiesHasBeenSet = true;
+}
+
+bool GenerateCreateMangedTableSqlRequest::PropertiesHasBeenSet() const
+{
+    return m_propertiesHasBeenSet;
+}
 
 

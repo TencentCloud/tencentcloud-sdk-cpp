@@ -115,6 +115,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeLanesResponse.h
   include/tencentcloud/tsf/v20180326/model/StartGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateNamespaceRequest.h
+  include/tencentcloud/tsf/v20180326/model/DescribeDownloadInfoRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeClusterInstancesRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupBindedGatewaysRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribeRepositoryRequest.h
@@ -346,9 +347,10 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DescribeUnitRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/UpdateGatewayApiResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeInstancesResponse.h
+  include/tencentcloud/tsf/v20180326/model/DeleteFileConfigResponse.h
   include/tencentcloud/tsf/v20180326/model/ContainerEvent.h
   include/tencentcloud/tsf/v20180326/model/ModifyLaneResponse.h
-  include/tencentcloud/tsf/v20180326/model/DescribeDownloadInfoRequest.h
+  include/tencentcloud/tsf/v20180326/model/DeleteFileConfigRequest.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigSummaryResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribePublicConfigReleaseLogsRequest.h
   include/tencentcloud/tsf/v20180326/model/ShardArgument.h
@@ -702,6 +704,7 @@ set(tsf_src
   src/v20180326/model/DescribeLanesResponse.cpp
   src/v20180326/model/StartGroupRequest.cpp
   src/v20180326/model/CreateNamespaceRequest.cpp
+  src/v20180326/model/DescribeDownloadInfoRequest.cpp
   src/v20180326/model/DescribeClusterInstancesRequest.cpp
   src/v20180326/model/DescribeGroupBindedGatewaysRequest.cpp
   src/v20180326/model/DescribeRepositoryRequest.cpp
@@ -933,9 +936,10 @@ set(tsf_src
   src/v20180326/model/DescribeUnitRuleRequest.cpp
   src/v20180326/model/UpdateGatewayApiResponse.cpp
   src/v20180326/model/DescribeInstancesResponse.cpp
+  src/v20180326/model/DeleteFileConfigResponse.cpp
   src/v20180326/model/ContainerEvent.cpp
   src/v20180326/model/ModifyLaneResponse.cpp
-  src/v20180326/model/DescribeDownloadInfoRequest.cpp
+  src/v20180326/model/DeleteFileConfigRequest.cpp
   src/v20180326/model/DescribePublicConfigSummaryResponse.cpp
   src/v20180326/model/DescribePublicConfigReleaseLogsRequest.cpp
   src/v20180326/model/ShardArgument.cpp

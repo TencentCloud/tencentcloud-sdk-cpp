@@ -57,7 +57,11 @@ ContainerGroupDetail::ContainerGroupDetail() :
     m_updatedTimeHasBeenSet(false),
     m_maxSurgeHasBeenSet(false),
     m_maxUnavailableHasBeenSet(false),
-    m_healthCheckSettingsHasBeenSet(false)
+    m_healthCheckSettingsHasBeenSet(false),
+    m_allowPlainYamlDeployHasBeenSet(false),
+    m_isNotEqualServiceConfigHasBeenSet(false),
+    m_repoNameHasBeenSet(false),
+    m_aliasHasBeenSet(false)
 {
 }
 
@@ -463,6 +467,46 @@ CoreInternalOutcome ContainerGroupDetail::Deserialize(const rapidjson::Value &va
         m_healthCheckSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("AllowPlainYamlDeploy") && !value["AllowPlainYamlDeploy"].IsNull())
+    {
+        if (!value["AllowPlainYamlDeploy"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.AllowPlainYamlDeploy` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_allowPlainYamlDeploy = value["AllowPlainYamlDeploy"].GetBool();
+        m_allowPlainYamlDeployHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsNotEqualServiceConfig") && !value["IsNotEqualServiceConfig"].IsNull())
+    {
+        if (!value["IsNotEqualServiceConfig"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.IsNotEqualServiceConfig` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isNotEqualServiceConfig = value["IsNotEqualServiceConfig"].GetBool();
+        m_isNotEqualServiceConfigHasBeenSet = true;
+    }
+
+    if (value.HasMember("RepoName") && !value["RepoName"].IsNull())
+    {
+        if (!value["RepoName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.RepoName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_repoName = string(value["RepoName"].GetString());
+        m_repoNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Alias") && !value["Alias"].IsNull())
+    {
+        if (!value["Alias"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainerGroupDetail.Alias` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alias = string(value["Alias"].GetString());
+        m_aliasHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -779,6 +823,38 @@ void ContainerGroupDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_healthCheckSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_allowPlainYamlDeployHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AllowPlainYamlDeploy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_allowPlainYamlDeploy, allocator);
+    }
+
+    if (m_isNotEqualServiceConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsNotEqualServiceConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isNotEqualServiceConfig, allocator);
+    }
+
+    if (m_repoNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RepoName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_repoName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_aliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Alias";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alias.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1374,5 +1450,69 @@ void ContainerGroupDetail::SetHealthCheckSettings(const HealthCheckSettings& _he
 bool ContainerGroupDetail::HealthCheckSettingsHasBeenSet() const
 {
     return m_healthCheckSettingsHasBeenSet;
+}
+
+bool ContainerGroupDetail::GetAllowPlainYamlDeploy() const
+{
+    return m_allowPlainYamlDeploy;
+}
+
+void ContainerGroupDetail::SetAllowPlainYamlDeploy(const bool& _allowPlainYamlDeploy)
+{
+    m_allowPlainYamlDeploy = _allowPlainYamlDeploy;
+    m_allowPlainYamlDeployHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::AllowPlainYamlDeployHasBeenSet() const
+{
+    return m_allowPlainYamlDeployHasBeenSet;
+}
+
+bool ContainerGroupDetail::GetIsNotEqualServiceConfig() const
+{
+    return m_isNotEqualServiceConfig;
+}
+
+void ContainerGroupDetail::SetIsNotEqualServiceConfig(const bool& _isNotEqualServiceConfig)
+{
+    m_isNotEqualServiceConfig = _isNotEqualServiceConfig;
+    m_isNotEqualServiceConfigHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::IsNotEqualServiceConfigHasBeenSet() const
+{
+    return m_isNotEqualServiceConfigHasBeenSet;
+}
+
+string ContainerGroupDetail::GetRepoName() const
+{
+    return m_repoName;
+}
+
+void ContainerGroupDetail::SetRepoName(const string& _repoName)
+{
+    m_repoName = _repoName;
+    m_repoNameHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::RepoNameHasBeenSet() const
+{
+    return m_repoNameHasBeenSet;
+}
+
+string ContainerGroupDetail::GetAlias() const
+{
+    return m_alias;
+}
+
+void ContainerGroupDetail::SetAlias(const string& _alias)
+{
+    m_alias = _alias;
+    m_aliasHasBeenSet = true;
+}
+
+bool ContainerGroupDetail::AliasHasBeenSet() const
+{
+    return m_aliasHasBeenSet;
 }
 

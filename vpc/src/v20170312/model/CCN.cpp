@@ -34,6 +34,7 @@ CCN::CCN() :
     m_routePriorityFlagHasBeenSet(false),
     m_routeTableCountHasBeenSet(false),
     m_routeTableFlagHasBeenSet(false),
+    m_isSecurityLockHasBeenSet(false),
     m_routeBroadcastPolicyFlagHasBeenSet(false)
 {
 }
@@ -183,6 +184,16 @@ CoreInternalOutcome CCN::Deserialize(const rapidjson::Value &value)
         m_routeTableFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSecurityLock") && !value["IsSecurityLock"].IsNull())
+    {
+        if (!value["IsSecurityLock"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `CCN.IsSecurityLock` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSecurityLock = value["IsSecurityLock"].GetBool();
+        m_isSecurityLockHasBeenSet = true;
+    }
+
     if (value.HasMember("RouteBroadcastPolicyFlag") && !value["RouteBroadcastPolicyFlag"].IsNull())
     {
         if (!value["RouteBroadcastPolicyFlag"].IsBool())
@@ -309,6 +320,14 @@ void CCN::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "RouteTableFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_routeTableFlag, allocator);
+    }
+
+    if (m_isSecurityLockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSecurityLock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSecurityLock, allocator);
     }
 
     if (m_routeBroadcastPolicyFlagHasBeenSet)
@@ -528,6 +547,22 @@ void CCN::SetRouteTableFlag(const bool& _routeTableFlag)
 bool CCN::RouteTableFlagHasBeenSet() const
 {
     return m_routeTableFlagHasBeenSet;
+}
+
+bool CCN::GetIsSecurityLock() const
+{
+    return m_isSecurityLock;
+}
+
+void CCN::SetIsSecurityLock(const bool& _isSecurityLock)
+{
+    m_isSecurityLock = _isSecurityLock;
+    m_isSecurityLockHasBeenSet = true;
+}
+
+bool CCN::IsSecurityLockHasBeenSet() const
+{
+    return m_isSecurityLockHasBeenSet;
 }
 
 bool CCN::GetRouteBroadcastPolicyFlag() const

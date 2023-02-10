@@ -115,17 +115,17 @@ namespace TencentCloud
                     bool AdvancedObjectsHasBeenSet() const;
 
                     /**
-                     * 获取OnlineDDL类型
+                     * 获取OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OnlineDDL OnlineDDL类型
+                     * @return OnlineDDL OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OnlineDDL GetOnlineDDL() const;
 
                     /**
-                     * 设置OnlineDDL类型
+                     * 设置OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OnlineDDL OnlineDDL类型
+                     * @param OnlineDDL OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOnlineDDL(const OnlineDDL& _onlineDDL);
@@ -160,7 +160,7 @@ namespace TencentCloud
                     bool m_advancedObjectsHasBeenSet;
 
                     /**
-                     * OnlineDDL类型
+                     * OnlineDDL类型，冗余字段不做配置用途
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     OnlineDDL m_onlineDDL;

@@ -41,7 +41,8 @@ InternalTenant::InternalTenant() :
     m_maxDispatchTpsHasBeenSet(false),
     m_maxDispatchRateInBytesHasBeenSet(false),
     m_maxPublishRateInBytesHasBeenSet(false),
-    m_maxRetentionSizeInMBHasBeenSet(false)
+    m_maxRetentionSizeInMBHasBeenSet(false),
+    m_publicAccessEnabledHasBeenSet(false)
 {
 }
 
@@ -260,6 +261,16 @@ CoreInternalOutcome InternalTenant::Deserialize(const rapidjson::Value &value)
         m_maxRetentionSizeInMBHasBeenSet = true;
     }
 
+    if (value.HasMember("PublicAccessEnabled") && !value["PublicAccessEnabled"].IsNull())
+    {
+        if (!value["PublicAccessEnabled"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InternalTenant.PublicAccessEnabled` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_publicAccessEnabled = value["PublicAccessEnabled"].GetBool();
+        m_publicAccessEnabledHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -433,6 +444,14 @@ void InternalTenant::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MaxRetentionSizeInMB";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxRetentionSizeInMB, allocator);
+    }
+
+    if (m_publicAccessEnabledHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PublicAccessEnabled";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_publicAccessEnabled, allocator);
     }
 
 }
@@ -772,5 +791,21 @@ void InternalTenant::SetMaxRetentionSizeInMB(const uint64_t& _maxRetentionSizeIn
 bool InternalTenant::MaxRetentionSizeInMBHasBeenSet() const
 {
     return m_maxRetentionSizeInMBHasBeenSet;
+}
+
+bool InternalTenant::GetPublicAccessEnabled() const
+{
+    return m_publicAccessEnabled;
+}
+
+void InternalTenant::SetPublicAccessEnabled(const bool& _publicAccessEnabled)
+{
+    m_publicAccessEnabled = _publicAccessEnabled;
+    m_publicAccessEnabledHasBeenSet = true;
+}
+
+bool InternalTenant::PublicAccessEnabledHasBeenSet() const
+{
+    return m_publicAccessEnabledHasBeenSet;
 }
 

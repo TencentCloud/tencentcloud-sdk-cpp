@@ -23,7 +23,9 @@ using namespace std;
 Table::Table() :
     m_tableNameHasBeenSet(false),
     m_newTableNameHasBeenSet(false),
-    m_filterConditionHasBeenSet(false)
+    m_filterConditionHasBeenSet(false),
+    m_tmpTablesHasBeenSet(false),
+    m_tableEditModeHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,29 @@ CoreInternalOutcome Table::Deserialize(const rapidjson::Value &value)
         m_filterConditionHasBeenSet = true;
     }
 
+    if (value.HasMember("TmpTables") && !value["TmpTables"].IsNull())
+    {
+        if (!value["TmpTables"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Table.TmpTables` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TmpTables"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_tmpTables.push_back((*itr).GetString());
+        }
+        m_tmpTablesHasBeenSet = true;
+    }
+
+    if (value.HasMember("TableEditMode") && !value["TableEditMode"].IsNull())
+    {
+        if (!value["TableEditMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Table.TableEditMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tableEditMode = string(value["TableEditMode"].GetString());
+        m_tableEditModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +116,27 @@ void Table::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "FilterCondition";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_filterCondition.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tmpTablesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TmpTables";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tmpTables.begin(); itr != m_tmpTables.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tableEditModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableEditMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tableEditMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +188,37 @@ void Table::SetFilterCondition(const string& _filterCondition)
 bool Table::FilterConditionHasBeenSet() const
 {
     return m_filterConditionHasBeenSet;
+}
+
+vector<string> Table::GetTmpTables() const
+{
+    return m_tmpTables;
+}
+
+void Table::SetTmpTables(const vector<string>& _tmpTables)
+{
+    m_tmpTables = _tmpTables;
+    m_tmpTablesHasBeenSet = true;
+}
+
+bool Table::TmpTablesHasBeenSet() const
+{
+    return m_tmpTablesHasBeenSet;
+}
+
+string Table::GetTableEditMode() const
+{
+    return m_tableEditMode;
+}
+
+void Table::SetTableEditMode(const string& _tableEditMode)
+{
+    m_tableEditMode = _tableEditMode;
+    m_tableEditModeHasBeenSet = true;
+}
+
+bool Table::TableEditModeHasBeenSet() const
+{
+    return m_tableEditModeHasBeenSet;
 }
 

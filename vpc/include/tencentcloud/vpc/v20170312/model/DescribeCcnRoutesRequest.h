@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取CCN实例ID，形如：ccn-gree226l。
-                     * @return CcnId CCN实例ID，形如：ccn-gree226l。
+                     * 获取CCN实例ID，形如：`ccn-gree226l`。
+                     * @return CcnId CCN实例ID，形如：`ccn-gree226l`。
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置CCN实例ID，形如：ccn-gree226l。
-                     * @param CcnId CCN实例ID，形如：ccn-gree226l。
+                     * 设置CCN实例ID，形如：`ccn-gree226l`。
+                     * @param CcnId CCN实例ID，形如：`ccn-gree226l`。
                      */
                     void SetCcnId(const std::string& _ccnId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
-                     * @return RouteIds CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
+                     * 获取CCN路由策略唯一ID，形如：`ccnr-f49l6u0z`。
+                     * @return RouteIds CCN路由策略唯一ID，形如：`ccnr-f49l6u0z`。
                      */
                     std::vector<std::string> GetRouteIds() const;
 
                     /**
-                     * 设置CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
-                     * @param RouteIds CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
+                     * 设置CCN路由策略唯一ID，形如：`ccnr-f49l6u0z`。
+                     * @param RouteIds CCN路由策略唯一ID，形如：`ccnr-f49l6u0z`。
                      */
                     void SetRouteIds(const std::vector<std::string>& _routeIds);
 
@@ -160,13 +160,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * CCN实例ID，形如：ccn-gree226l。
+                     * CCN实例ID，形如：`ccn-gree226l`。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * CCN路由策略唯一ID。形如：ccnr-f49l6u0z。
+                     * CCN路由策略唯一ID，形如：`ccnr-f49l6u0z`。
                      */
                     std::vector<std::string> m_routeIds;
                     bool m_routeIdsHasBeenSet;

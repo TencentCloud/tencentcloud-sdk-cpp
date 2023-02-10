@@ -66,13 +66,25 @@ namespace TencentCloud
 
                     /**
                      * 获取环境内引擎的节点规格 ID
+-1C2G
+-2C4G
+兼容原spec-xxxxxx形式的规格ID
                      * @return EngineResourceSpec 环境内引擎的节点规格 ID
+-1C2G
+-2C4G
+兼容原spec-xxxxxx形式的规格ID
                      */
                     std::string GetEngineResourceSpec() const;
 
                     /**
                      * 设置环境内引擎的节点规格 ID
+-1C2G
+-2C4G
+兼容原spec-xxxxxx形式的规格ID
                      * @param EngineResourceSpec 环境内引擎的节点规格 ID
+-1C2G
+-2C4G
+兼容原spec-xxxxxx形式的规格ID
                      */
                     void SetEngineResourceSpec(const std::string& _engineResourceSpec);
 
@@ -154,6 +166,24 @@ namespace TencentCloud
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取环境描述
+                     * @return EnvDesc 环境描述
+                     */
+                    std::string GetEnvDesc() const;
+
+                    /**
+                     * 设置环境描述
+                     * @param EnvDesc 环境描述
+                     */
+                    void SetEnvDesc(const std::string& _envDesc);
+
+                    /**
+                     * 判断参数 EnvDesc 是否已赋值
+                     * @return EnvDesc 是否已赋值
+                     */
+                    bool EnvDescHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +194,9 @@ namespace TencentCloud
 
                     /**
                      * 环境内引擎的节点规格 ID
+-1C2G
+-2C4G
+兼容原spec-xxxxxx形式的规格ID
                      */
                     std::string m_engineResourceSpec;
                     bool m_engineResourceSpecHasBeenSet;
@@ -191,6 +224,12 @@ namespace TencentCloud
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 环境描述
+                     */
+                    std::string m_envDesc;
+                    bool m_envDescHasBeenSet;
 
                 };
             }

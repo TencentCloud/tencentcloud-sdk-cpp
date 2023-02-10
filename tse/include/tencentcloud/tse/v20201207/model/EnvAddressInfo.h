@@ -122,6 +122,28 @@ namespace TencentCloud
                      */
                     bool ConfigIntranetAddressHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启config内网clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableConfigIntranet 是否开启config内网clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableConfigIntranet() const;
+
+                    /**
+                     * 设置是否开启config内网clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableConfigIntranet 是否开启config内网clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableConfigIntranet(const bool& _enableConfigIntranet);
+
+                    /**
+                     * 判断参数 EnableConfigIntranet 是否已赋值
+                     * @return EnableConfigIntranet 是否已赋值
+                     */
+                    bool EnableConfigIntranetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -148,6 +170,13 @@ namespace TencentCloud
                      */
                     std::string m_configIntranetAddress;
                     bool m_configIntranetAddressHasBeenSet;
+
+                    /**
+                     * 是否开启config内网clb
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableConfigIntranet;
+                    bool m_enableConfigIntranetHasBeenSet;
 
                 };
             }

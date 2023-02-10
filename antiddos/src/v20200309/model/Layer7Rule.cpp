@@ -25,7 +25,9 @@ Layer7Rule::Layer7Rule() :
     m_proxyTypeListHasBeenSet(false),
     m_realServersHasBeenSet(false),
     m_instanceDetailsHasBeenSet(false),
-    m_instanceDetailRuleHasBeenSet(false)
+    m_instanceDetailRuleHasBeenSet(false),
+    m_protocolHasBeenSet(false),
+    m_vportHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,26 @@ CoreInternalOutcome Layer7Rule::Deserialize(const rapidjson::Value &value)
         m_instanceDetailRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("Protocol") && !value["Protocol"].IsNull())
+    {
+        if (!value["Protocol"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Layer7Rule.Protocol` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_protocol = string(value["Protocol"].GetString());
+        m_protocolHasBeenSet = true;
+    }
+
+    if (value.HasMember("Vport") && !value["Vport"].IsNull())
+    {
+        if (!value["Vport"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Layer7Rule.Vport` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_vport = value["Vport"].GetInt64();
+        m_vportHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +219,22 @@ void Layer7Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_protocolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Protocol";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Vport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_vport, allocator);
     }
 
 }
@@ -280,5 +318,37 @@ void Layer7Rule::SetInstanceDetailRule(const vector<RuleInstanceRelation>& _inst
 bool Layer7Rule::InstanceDetailRuleHasBeenSet() const
 {
     return m_instanceDetailRuleHasBeenSet;
+}
+
+string Layer7Rule::GetProtocol() const
+{
+    return m_protocol;
+}
+
+void Layer7Rule::SetProtocol(const string& _protocol)
+{
+    m_protocol = _protocol;
+    m_protocolHasBeenSet = true;
+}
+
+bool Layer7Rule::ProtocolHasBeenSet() const
+{
+    return m_protocolHasBeenSet;
+}
+
+int64_t Layer7Rule::GetVport() const
+{
+    return m_vport;
+}
+
+void Layer7Rule::SetVport(const int64_t& _vport)
+{
+    m_vport = _vport;
+    m_vportHasBeenSet = true;
+}
+
+bool Layer7Rule::VportHasBeenSet() const
+{
+    return m_vportHasBeenSet;
 }
 

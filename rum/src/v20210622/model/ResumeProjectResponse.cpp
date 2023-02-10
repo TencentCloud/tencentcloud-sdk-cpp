@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlResponse.h>
+#include <tencentcloud/rum/v20210622/model/ResumeProjectResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dlc::V20210125::Model;
+using namespace TencentCloud::Rum::V20210622::Model;
 using namespace std;
 
-GenerateCreateMangedTableSqlResponse::GenerateCreateMangedTableSqlResponse() :
-    m_executionHasBeenSet(false)
+ResumeProjectResponse::ResumeProjectResponse()
 {
 }
 
-CoreInternalOutcome GenerateCreateMangedTableSqlResponse::Deserialize(const string &payload)
+CoreInternalOutcome ResumeProjectResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,41 +61,15 @@ CoreInternalOutcome GenerateCreateMangedTableSqlResponse::Deserialize(const stri
     }
 
 
-    if (rsp.HasMember("Execution") && !rsp["Execution"].IsNull())
-    {
-        if (!rsp["Execution"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `Execution` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_execution.Deserialize(rsp["Execution"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_executionHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string GenerateCreateMangedTableSqlResponse::ToJsonString() const
+string ResumeProjectResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_executionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Execution";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_execution.ToJsonObject(value[key.c_str()], allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -109,15 +82,5 @@ string GenerateCreateMangedTableSqlResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-Execution GenerateCreateMangedTableSqlResponse::GetExecution() const
-{
-    return m_execution;
-}
-
-bool GenerateCreateMangedTableSqlResponse::ExecutionHasBeenSet() const
-{
-    return m_executionHasBeenSet;
-}
 
 

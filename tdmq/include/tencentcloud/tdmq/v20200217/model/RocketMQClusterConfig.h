@@ -208,6 +208,28 @@ namespace TencentCloud
                      */
                     bool MaxLatencyTimeHasBeenSet() const;
 
+                    /**
+                     * 获取单个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxQueuesPerTopic 单个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxQueuesPerTopic() const;
+
+                    /**
+                     * 设置单个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxQueuesPerTopic 单个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxQueuesPerTopic(const uint64_t& _maxQueuesPerTopic);
+
+                    /**
+                     * 判断参数 MaxQueuesPerTopic 是否已赋值
+                     * @return MaxQueuesPerTopic 是否已赋值
+                     */
+                    bool MaxQueuesPerTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +285,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxLatencyTime;
                     bool m_maxLatencyTimeHasBeenSet;
+
+                    /**
+                     * 单个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxQueuesPerTopic;
+                    bool m_maxQueuesPerTopicHasBeenSet;
 
                 };
             }

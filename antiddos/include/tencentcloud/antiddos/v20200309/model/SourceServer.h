@@ -112,6 +112,24 @@ namespace TencentCloud
                      */
                     bool WeightHasBeenSet() const;
 
+                    /**
+                     * 获取端口号：0~65535
+                     * @return Port 端口号：0~65535
+                     */
+                    int64_t GetPort() const;
+
+                    /**
+                     * 设置端口号：0~65535
+                     * @param Port 端口号：0~65535
+                     */
+                    void SetPort(const int64_t& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     */
+                    bool PortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +152,12 @@ namespace TencentCloud
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;
+
+                    /**
+                     * 端口号：0~65535
+                     */
+                    int64_t m_port;
+                    bool m_portHasBeenSet;
 
                 };
             }

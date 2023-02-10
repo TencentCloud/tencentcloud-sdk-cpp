@@ -14,55 +14,57 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_DLC_V20210125_MODEL_GENERATECREATEMANGEDTABLESQLRESPONSE_H_
-#define TENCENTCLOUD_DLC_V20210125_MODEL_GENERATECREATEMANGEDTABLESQLRESPONSE_H_
+#ifndef TENCENTCLOUD_TSF_V20180326_MODEL_DELETEFILECONFIGRESPONSE_H_
+#define TENCENTCLOUD_TSF_V20180326_MODEL_DELETEFILECONFIGRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dlc/v20210125/model/Execution.h>
 
 
 namespace TencentCloud
 {
-    namespace Dlc
+    namespace Tsf
     {
-        namespace V20210125
+        namespace V20180326
         {
             namespace Model
             {
                 /**
-                * GenerateCreateMangedTableSql返回参数结构体
+                * DeleteFileConfig返回参数结构体
                 */
-                class GenerateCreateMangedTableSqlResponse : public AbstractModel
+                class DeleteFileConfigResponse : public AbstractModel
                 {
                 public:
-                    GenerateCreateMangedTableSqlResponse();
-                    ~GenerateCreateMangedTableSqlResponse() = default;
+                    DeleteFileConfigResponse();
+                    ~DeleteFileConfigResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取创建托管存储内表sql语句描述
-                     * @return Execution 创建托管存储内表sql语句描述
+                     * 获取删除结果
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Result 删除结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    Execution GetExecution() const;
+                    bool GetResult() const;
 
                     /**
-                     * 判断参数 Execution 是否已赋值
-                     * @return Execution 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool ExecutionHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 创建托管存储内表sql语句描述
+                     * 删除结果
+注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    Execution m_execution;
-                    bool m_executionHasBeenSet;
+                    bool m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -70,4 +72,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_DLC_V20210125_MODEL_GENERATECREATEMANGEDTABLESQLRESPONSE_H_
+#endif // !TENCENTCLOUD_TSF_V20180326_MODEL_DELETEFILECONFIGRESPONSE_H_

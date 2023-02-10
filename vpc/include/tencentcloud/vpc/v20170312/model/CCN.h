@@ -196,17 +196,17 @@ namespace TencentCloud
                     bool InstanceChargeTypeHasBeenSet() const;
 
                     /**
-                     * 获取限速类型，INTER_REGION_LIMIT为地域间限速；OUTER_REGION_LIMIT为地域出口限速。
+                     * 获取限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BandwidthLimitType 限速类型，INTER_REGION_LIMIT为地域间限速；OUTER_REGION_LIMIT为地域出口限速。
+                     * @return BandwidthLimitType 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBandwidthLimitType() const;
 
                     /**
-                     * 设置限速类型，INTER_REGION_LIMIT为地域间限速；OUTER_REGION_LIMIT为地域出口限速。
+                     * 设置限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BandwidthLimitType 限速类型，INTER_REGION_LIMIT为地域间限速；OUTER_REGION_LIMIT为地域出口限速。
+                     * @param BandwidthLimitType 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBandwidthLimitType(const std::string& _bandwidthLimitType);
@@ -236,14 +236,14 @@ namespace TencentCloud
                     bool TagSetHasBeenSet() const;
 
                     /**
-                     * 获取是否支持云联网路由优先级的功能。False：不支持，True：支持。
-                     * @return RoutePriorityFlag 是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     * 获取是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
+                     * @return RoutePriorityFlag 是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
                      */
                     bool GetRoutePriorityFlag() const;
 
                     /**
-                     * 设置是否支持云联网路由优先级的功能。False：不支持，True：支持。
-                     * @param RoutePriorityFlag 是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     * 设置是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
+                     * @param RoutePriorityFlag 是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
                      */
                     void SetRoutePriorityFlag(const bool& _routePriorityFlag);
 
@@ -276,17 +276,17 @@ namespace TencentCloud
                     bool RouteTableCountHasBeenSet() const;
 
                     /**
-                     * 获取是否开启云联网多路由表特性。False：未开启，True：开启。
+                     * 获取是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RouteTableFlag 是否开启云联网多路由表特性。False：未开启，True：开启。
+                     * @return RouteTableFlag 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetRouteTableFlag() const;
 
                     /**
-                     * 设置是否开启云联网多路由表特性。False：未开启，True：开启。
+                     * 设置是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RouteTableFlag 是否开启云联网多路由表特性。False：未开启，True：开启。
+                     * @param RouteTableFlag 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRouteTableFlag(const bool& _routeTableFlag);
@@ -296,6 +296,28 @@ namespace TencentCloud
                      * @return RouteTableFlag 是否已赋值
                      */
                     bool RouteTableFlagHasBeenSet() const;
+
+                    /**
+                     * 获取`true`：实例已被封禁，流量不通，`false`:解封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSecurityLock `true`：实例已被封禁，流量不通，`false`:解封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsSecurityLock() const;
+
+                    /**
+                     * 设置`true`：实例已被封禁，流量不通，`false`:解封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSecurityLock `true`：实例已被封禁，流量不通，`false`:解封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSecurityLock(const bool& _isSecurityLock);
+
+                    /**
+                     * 判断参数 IsSecurityLock 是否已赋值
+                     * @return IsSecurityLock 是否已赋值
+                     */
+                    bool IsSecurityLockHasBeenSet() const;
 
                     /**
                      * 获取是否开启云联网路由传播策略。`False` 未开启，`True` 开启。
@@ -371,7 +393,7 @@ namespace TencentCloud
                     bool m_instanceChargeTypeHasBeenSet;
 
                     /**
-                     * 限速类型，INTER_REGION_LIMIT为地域间限速；OUTER_REGION_LIMIT为地域出口限速。
+                     * 限速类型，`INTER_REGION_LIMIT` 为地域间限速；`OUTER_REGION_LIMIT` 为地域出口限速。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bandwidthLimitType;
@@ -384,7 +406,7 @@ namespace TencentCloud
                     bool m_tagSetHasBeenSet;
 
                     /**
-                     * 是否支持云联网路由优先级的功能。False：不支持，True：支持。
+                     * 是否支持云联网路由优先级的功能。`False`：不支持，`True`：支持。
                      */
                     bool m_routePriorityFlag;
                     bool m_routePriorityFlagHasBeenSet;
@@ -397,11 +419,18 @@ namespace TencentCloud
                     bool m_routeTableCountHasBeenSet;
 
                     /**
-                     * 是否开启云联网多路由表特性。False：未开启，True：开启。
+                     * 是否开启云联网多路由表特性。`False`：未开启，`True`：开启。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_routeTableFlag;
                     bool m_routeTableFlagHasBeenSet;
+
+                    /**
+                     * `true`：实例已被封禁，流量不通，`false`:解封禁。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSecurityLock;
+                    bool m_isSecurityLockHasBeenSet;
 
                     /**
                      * 是否开启云联网路由传播策略。`False` 未开启，`True` 开启。

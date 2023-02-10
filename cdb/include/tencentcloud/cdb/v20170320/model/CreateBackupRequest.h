@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。
-                     * @return BackupMethod 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。
+                     * 获取目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备，snapshot - 快照备份。基础版实例仅支持快照备份。
+                     * @return BackupMethod 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备，snapshot - 快照备份。基础版实例仅支持快照备份。
                      */
                     std::string GetBackupMethod() const;
 
                     /**
-                     * 设置目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。
-                     * @param BackupMethod 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。
+                     * 设置目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备，snapshot - 快照备份。基础版实例仅支持快照备份。
+                     * @param BackupMethod 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备，snapshot - 快照备份。基础版实例仅支持快照备份。
                      */
                     void SetBackupMethod(const std::string& _backupMethod);
 
@@ -128,7 +128,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备。
+                     * 目标备份方法，可选的值：logical - 逻辑冷备，physical - 物理冷备，snapshot - 快照备份。基础版实例仅支持快照备份。
                      */
                     std::string m_backupMethod;
                     bool m_backupMethodHasBeenSet;

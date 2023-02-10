@@ -436,6 +436,28 @@ namespace TencentCloud
                      */
                     bool MaxRetentionSizeInMBHasBeenSet() const;
 
+                    /**
+                     * 获取public Access Enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PublicAccessEnabled public Access Enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetPublicAccessEnabled() const;
+
+                    /**
+                     * 设置public Access Enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PublicAccessEnabled public Access Enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublicAccessEnabled(const bool& _publicAccessEnabled);
+
+                    /**
+                     * 判断参数 PublicAccessEnabled 是否已赋值
+                     * @return PublicAccessEnabled 是否已赋值
+                     */
+                    bool PublicAccessEnabledHasBeenSet() const;
+
                 private:
 
                     /**
@@ -566,6 +588,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxRetentionSizeInMB;
                     bool m_maxRetentionSizeInMBHasBeenSet;
+
+                    /**
+                     * public Access Enabled
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_publicAccessEnabled;
+                    bool m_publicAccessEnabledHasBeenSet;
 
                 };
             }

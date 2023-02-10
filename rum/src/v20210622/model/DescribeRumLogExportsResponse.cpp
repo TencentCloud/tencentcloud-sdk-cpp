@@ -14,21 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/dlc/v20210125/model/GenerateCreateMangedTableSqlResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeRumLogExportsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Dlc::V20210125::Model;
+using namespace TencentCloud::Rum::V20210622::Model;
 using namespace std;
 
-GenerateCreateMangedTableSqlResponse::GenerateCreateMangedTableSqlResponse() :
-    m_executionHasBeenSet(false)
+DescribeRumLogExportsResponse::DescribeRumLogExportsResponse() :
+    m_resultHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome GenerateCreateMangedTableSqlResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeRumLogExportsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,40 +62,32 @@ CoreInternalOutcome GenerateCreateMangedTableSqlResponse::Deserialize(const stri
     }
 
 
-    if (rsp.HasMember("Execution") && !rsp["Execution"].IsNull())
+    if (rsp.HasMember("Result") && !rsp["Result"].IsNull())
     {
-        if (!rsp["Execution"].IsObject())
+        if (!rsp["Result"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `Execution` is not object type").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Result` IsString=false incorrectly").SetRequestId(requestId));
         }
-
-        CoreInternalOutcome outcome = m_execution.Deserialize(rsp["Execution"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_executionHasBeenSet = true;
+        m_result = string(rsp["Result"].GetString());
+        m_resultHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string GenerateCreateMangedTableSqlResponse::ToJsonString() const
+string DescribeRumLogExportsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_executionHasBeenSet)
+    if (m_resultHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Execution";
+        string key = "Result";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_execution.ToJsonObject(value[key.c_str()], allocator);
+        value.AddMember(iKey, rapidjson::Value(m_result.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,14 +102,14 @@ string GenerateCreateMangedTableSqlResponse::ToJsonString() const
 }
 
 
-Execution GenerateCreateMangedTableSqlResponse::GetExecution() const
+string DescribeRumLogExportsResponse::GetResult() const
 {
-    return m_execution;
+    return m_result;
 }
 
-bool GenerateCreateMangedTableSqlResponse::ExecutionHasBeenSet() const
+bool DescribeRumLogExportsResponse::ResultHasBeenSet() const
 {
-    return m_executionHasBeenSet;
+    return m_resultHasBeenSet;
 }
 
 

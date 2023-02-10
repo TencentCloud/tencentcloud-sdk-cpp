@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取入带宽
-                     * @return InBandwidth 入带宽
+                     * 获取入带宽，单位：`bps`。
+                     * @return InBandwidth 入带宽，单位：`bps`。
                      */
                     std::vector<int64_t> GetInBandwidth() const;
 
                     /**
-                     * 设置入带宽
-                     * @param InBandwidth 入带宽
+                     * 设置入带宽，单位：`bps`。
+                     * @param InBandwidth 入带宽，单位：`bps`。
                      */
                     void SetInBandwidth(const std::vector<int64_t>& _inBandwidth);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool InBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取出带宽
-                     * @return OutBandwidth 出带宽
+                     * 获取出带宽，单位：`bps`。
+                     * @return OutBandwidth 出带宽，单位：`bps`。
                      */
                     std::vector<int64_t> GetOutBandwidth() const;
 
                     /**
-                     * 设置出带宽
-                     * @param OutBandwidth 出带宽
+                     * 设置出带宽，单位：`bps`。
+                     * @param OutBandwidth 出带宽，单位：`bps`。
                      */
                     void SetOutBandwidth(const std::vector<int64_t>& _outBandwidth);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool OutBandwidthHasBeenSet() const;
 
                     /**
-                     * 获取入包
-                     * @return InPkg 入包
+                     * 获取入包，单位：`pps`。
+                     * @return InPkg 入包，单位：`pps`。
                      */
                     std::vector<int64_t> GetInPkg() const;
 
                     /**
-                     * 设置入包
-                     * @param InPkg 入包
+                     * 设置入包，单位：`pps`。
+                     * @param InPkg 入包，单位：`pps`。
                      */
                     void SetInPkg(const std::vector<int64_t>& _inPkg);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool InPkgHasBeenSet() const;
 
                     /**
-                     * 获取出包
-                     * @return OutPkg 出包
+                     * 获取出包，单位：`pps`。
+                     * @return OutPkg 出包，单位：`pps`。
                      */
                     std::vector<int64_t> GetOutPkg() const;
 
                     /**
-                     * 设置出包
-                     * @param OutPkg 出包
+                     * 设置出包，单位：`pps`。
+                     * @param OutPkg 出包，单位：`pps`。
                      */
                     void SetOutPkg(const std::vector<int64_t>& _outPkg);
 
@@ -121,25 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 入带宽
+                     * 入带宽，单位：`bps`。
                      */
                     std::vector<int64_t> m_inBandwidth;
                     bool m_inBandwidthHasBeenSet;
 
                     /**
-                     * 出带宽
+                     * 出带宽，单位：`bps`。
                      */
                     std::vector<int64_t> m_outBandwidth;
                     bool m_outBandwidthHasBeenSet;
 
                     /**
-                     * 入包
+                     * 入包，单位：`pps`。
                      */
                     std::vector<int64_t> m_inPkg;
                     bool m_inPkgHasBeenSet;
 
                     /**
-                     * 出包
+                     * 出包，单位：`pps`。
                      */
                     std::vector<int64_t> m_outPkg;
                     bool m_outPkgHasBeenSet;

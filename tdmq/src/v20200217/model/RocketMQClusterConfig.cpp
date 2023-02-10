@@ -29,7 +29,8 @@ RocketMQClusterConfig::RocketMQClusterConfig() :
     m_maxGroupNumHasBeenSet(false),
     m_usedGroupNumHasBeenSet(false),
     m_maxRetentionTimeHasBeenSet(false),
-    m_maxLatencyTimeHasBeenSet(false)
+    m_maxLatencyTimeHasBeenSet(false),
+    m_maxQueuesPerTopicHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,16 @@ CoreInternalOutcome RocketMQClusterConfig::Deserialize(const rapidjson::Value &v
         m_maxLatencyTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxQueuesPerTopic") && !value["MaxQueuesPerTopic"].IsNull())
+    {
+        if (!value["MaxQueuesPerTopic"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQClusterConfig.MaxQueuesPerTopic` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxQueuesPerTopic = value["MaxQueuesPerTopic"].GetUint64();
+        m_maxQueuesPerTopicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +216,14 @@ void RocketMQClusterConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "MaxLatencyTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxLatencyTime, allocator);
+    }
+
+    if (m_maxQueuesPerTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxQueuesPerTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxQueuesPerTopic, allocator);
     }
 
 }
@@ -352,5 +371,21 @@ void RocketMQClusterConfig::SetMaxLatencyTime(const uint64_t& _maxLatencyTime)
 bool RocketMQClusterConfig::MaxLatencyTimeHasBeenSet() const
 {
     return m_maxLatencyTimeHasBeenSet;
+}
+
+uint64_t RocketMQClusterConfig::GetMaxQueuesPerTopic() const
+{
+    return m_maxQueuesPerTopic;
+}
+
+void RocketMQClusterConfig::SetMaxQueuesPerTopic(const uint64_t& _maxQueuesPerTopic)
+{
+    m_maxQueuesPerTopic = _maxQueuesPerTopic;
+    m_maxQueuesPerTopicHasBeenSet = true;
+}
+
+bool RocketMQClusterConfig::MaxQueuesPerTopicHasBeenSet() const
+{
+    return m_maxQueuesPerTopicHasBeenSet;
 }
 

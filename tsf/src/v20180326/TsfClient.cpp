@@ -1588,6 +1588,49 @@ TsfClient::DeleteContainerGroupOutcomeCallable TsfClient::DeleteContainerGroupCa
     return task->get_future();
 }
 
+TsfClient::DeleteFileConfigOutcome TsfClient::DeleteFileConfig(const DeleteFileConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteFileConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteFileConfigResponse rsp = DeleteFileConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteFileConfigOutcome(rsp);
+        else
+            return DeleteFileConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteFileConfigOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteFileConfigAsync(const DeleteFileConfigRequest& request, const DeleteFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteFileConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteFileConfigOutcomeCallable TsfClient::DeleteFileConfigCallable(const DeleteFileConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteFileConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteFileConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeleteGroupOutcome TsfClient::DeleteGroup(const DeleteGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteGroup");

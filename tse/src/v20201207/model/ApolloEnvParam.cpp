@@ -26,7 +26,8 @@ ApolloEnvParam::ApolloEnvParam() :
     m_engineNodeNumHasBeenSet(false),
     m_storageCapacityHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_envDescHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ApolloEnvParam::Deserialize(const rapidjson::Value &value)
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("EnvDesc") && !value["EnvDesc"].IsNull())
+    {
+        if (!value["EnvDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApolloEnvParam.EnvDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_envDesc = string(value["EnvDesc"].GetString());
+        m_envDescHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ApolloEnvParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_envDesc.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ApolloEnvParam::SetSubnetId(const string& _subnetId)
 bool ApolloEnvParam::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string ApolloEnvParam::GetEnvDesc() const
+{
+    return m_envDesc;
+}
+
+void ApolloEnvParam::SetEnvDesc(const string& _envDesc)
+{
+    m_envDesc = _envDesc;
+    m_envDescHasBeenSet = true;
+}
+
+bool ApolloEnvParam::EnvDescHasBeenSet() const
+{
+    return m_envDescHasBeenSet;
 }
 

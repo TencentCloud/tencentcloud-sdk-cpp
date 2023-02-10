@@ -95,6 +95,8 @@
 #include <tencentcloud/tsf/v20180326/model/DeleteConfigTemplateResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteContainerGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteContainerGroupResponse.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteFileConfigRequest.h>
+#include <tencentcloud/tsf/v20180326/model/DeleteFileConfigResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/DeleteImageTagsRequest.h>
@@ -553,6 +555,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteContainerGroupResponse> DeleteContainerGroupOutcome;
                 typedef std::future<DeleteContainerGroupOutcome> DeleteContainerGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteContainerGroupRequest&, DeleteContainerGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteContainerGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteFileConfigResponse> DeleteFileConfigOutcome;
+                typedef std::future<DeleteFileConfigOutcome> DeleteFileConfigOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::DeleteFileConfigRequest&, DeleteFileConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteFileConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteGroupResponse> DeleteGroupOutcome;
                 typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::DeleteGroupRequest&, DeleteGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteGroupAsyncHandler;
@@ -1383,6 +1388,15 @@ namespace TencentCloud
                 DeleteContainerGroupOutcome DeleteContainerGroup(const Model::DeleteContainerGroupRequest &request);
                 void DeleteContainerGroupAsync(const Model::DeleteContainerGroupRequest& request, const DeleteContainerGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteContainerGroupOutcomeCallable DeleteContainerGroupCallable(const Model::DeleteContainerGroupRequest& request);
+
+                /**
+                 *删除文件配置项
+                 * @param req DeleteFileConfigRequest
+                 * @return DeleteFileConfigOutcome
+                 */
+                DeleteFileConfigOutcome DeleteFileConfig(const Model::DeleteFileConfigRequest &request);
+                void DeleteFileConfigAsync(const Model::DeleteFileConfigRequest& request, const DeleteFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteFileConfigOutcomeCallable DeleteFileConfigCallable(const Model::DeleteFileConfigRequest& request);
 
                 /**
                  *删除容器部署组

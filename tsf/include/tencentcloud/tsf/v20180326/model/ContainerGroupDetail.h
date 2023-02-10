@@ -38,7 +38,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  容器部署组详情
+                * 容器部署组详情
                 */
                 class ContainerGroupDetail : public AbstractModel
                 {
@@ -863,6 +863,94 @@ namespace TencentCloud
                      */
                     bool HealthCheckSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取允许PlainYamlDeploy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AllowPlainYamlDeploy 允许PlainYamlDeploy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAllowPlainYamlDeploy() const;
+
+                    /**
+                     * 设置允许PlainYamlDeploy
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AllowPlainYamlDeploy 允许PlainYamlDeploy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAllowPlainYamlDeploy(const bool& _allowPlainYamlDeploy);
+
+                    /**
+                     * 判断参数 AllowPlainYamlDeploy 是否已赋值
+                     * @return AllowPlainYamlDeploy 是否已赋值
+                     */
+                    bool AllowPlainYamlDeployHasBeenSet() const;
+
+                    /**
+                     * 获取是否不等于ServiceConfig
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsNotEqualServiceConfig 是否不等于ServiceConfig
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsNotEqualServiceConfig() const;
+
+                    /**
+                     * 设置是否不等于ServiceConfig
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsNotEqualServiceConfig 是否不等于ServiceConfig
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsNotEqualServiceConfig(const bool& _isNotEqualServiceConfig);
+
+                    /**
+                     * 判断参数 IsNotEqualServiceConfig 是否已赋值
+                     * @return IsNotEqualServiceConfig 是否已赋值
+                     */
+                    bool IsNotEqualServiceConfigHasBeenSet() const;
+
+                    /**
+                     * 获取仓库名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RepoName 仓库名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRepoName() const;
+
+                    /**
+                     * 设置仓库名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RepoName 仓库名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRepoName(const std::string& _repoName);
+
+                    /**
+                     * 判断参数 RepoName 是否已赋值
+                     * @return RepoName 是否已赋值
+                     */
+                    bool RepoNameHasBeenSet() const;
+
+                    /**
+                     * 获取别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Alias 别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlias() const;
+
+                    /**
+                     * 设置别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Alias 别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlias(const std::string& _alias);
+
+                    /**
+                     * 判断参数 Alias 是否已赋值
+                     * @return Alias 是否已赋值
+                     */
+                    bool AliasHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1123,6 +1211,34 @@ namespace TencentCloud
                      */
                     HealthCheckSettings m_healthCheckSettings;
                     bool m_healthCheckSettingsHasBeenSet;
+
+                    /**
+                     * 允许PlainYamlDeploy
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_allowPlainYamlDeploy;
+                    bool m_allowPlainYamlDeployHasBeenSet;
+
+                    /**
+                     * 是否不等于ServiceConfig
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isNotEqualServiceConfig;
+                    bool m_isNotEqualServiceConfigHasBeenSet;
+
+                    /**
+                     * 仓库名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_repoName;
+                    bool m_repoNameHasBeenSet;
+
+                    /**
+                     * 别名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alias;
+                    bool m_aliasHasBeenSet;
 
                 };
             }
