@@ -246,6 +246,24 @@ namespace TencentCloud
                      */
                     bool InvalidReasonHasBeenSet() const;
 
+                    /**
+                     * 获取是包含黑名单手机或邮箱
+                     * @return IsBlack 是包含黑名单手机或邮箱
+                     */
+                    bool GetIsBlack() const;
+
+                    /**
+                     * 设置是包含黑名单手机或邮箱
+                     * @param IsBlack 是包含黑名单手机或邮箱
+                     */
+                    void SetIsBlack(const bool& _isBlack);
+
+                    /**
+                     * 判断参数 IsBlack 是否已赋值
+                     * @return IsBlack 是否已赋值
+                     */
+                    bool IsBlackHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +331,12 @@ namespace TencentCloud
                      */
                     std::string m_invalidReason;
                     bool m_invalidReasonHasBeenSet;
+
+                    /**
+                     * 是包含黑名单手机或邮箱
+                     */
+                    bool m_isBlack;
+                    bool m_isBlackHasBeenSet;
 
                 };
             }

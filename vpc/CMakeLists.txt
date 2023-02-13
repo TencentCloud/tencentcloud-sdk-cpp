@@ -228,6 +228,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/CreateVpnGatewayResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.h
   include/tencentcloud/vpc/v20170312/model/FlowLogStorage.h
+  include/tencentcloud/vpc/v20170312/model/AllocateIp6AddressesBandwidthRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeVpcIpv6AddressesResponse.h
   include/tencentcloud/vpc/v20170312/model/ResetAttachCcnInstancesResponse.h
   include/tencentcloud/vpc/v20170312/model/RejectAttachCcnInstancesRequest.h
@@ -650,7 +651,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/NetworkAclQuintupleEntries.h
   include/tencentcloud/vpc/v20170312/model/AttachNetworkInterfaceRequest.h
   include/tencentcloud/vpc/v20170312/model/DescribeCcnRoutesResponse.h
-  include/tencentcloud/vpc/v20170312/model/AllocateIp6AddressesBandwidthRequest.h
+  include/tencentcloud/vpc/v20170312/model/CcnInstanceInfo.h
   include/tencentcloud/vpc/v20170312/model/SecurityGroup.h
   include/tencentcloud/vpc/v20170312/model/UnlockCcnsResponse.h
   include/tencentcloud/vpc/v20170312/model/DisableGatewayFlowMonitorResponse.h
@@ -951,6 +952,7 @@ set(vpc_src
   src/v20170312/model/CreateVpnGatewayResponse.cpp
   src/v20170312/model/DescribeNatGatewayDestinationIpPortTranslationNatRulesResponse.cpp
   src/v20170312/model/FlowLogStorage.cpp
+  src/v20170312/model/AllocateIp6AddressesBandwidthRequest.cpp
   src/v20170312/model/DescribeVpcIpv6AddressesResponse.cpp
   src/v20170312/model/ResetAttachCcnInstancesResponse.cpp
   src/v20170312/model/RejectAttachCcnInstancesRequest.cpp
@@ -1373,7 +1375,7 @@ set(vpc_src
   src/v20170312/model/NetworkAclQuintupleEntries.cpp
   src/v20170312/model/AttachNetworkInterfaceRequest.cpp
   src/v20170312/model/DescribeCcnRoutesResponse.cpp
-  src/v20170312/model/AllocateIp6AddressesBandwidthRequest.cpp
+  src/v20170312/model/CcnInstanceInfo.cpp
   src/v20170312/model/SecurityGroup.cpp
   src/v20170312/model/UnlockCcnsResponse.cpp
   src/v20170312/model/DisableGatewayFlowMonitorResponse.cpp

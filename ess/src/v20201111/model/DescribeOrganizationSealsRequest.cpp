@@ -27,7 +27,8 @@ DescribeOrganizationSealsRequest::DescribeOrganizationSealsRequest() :
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_infoTypeHasBeenSet(false),
-    m_sealIdHasBeenSet(false)
+    m_sealIdHasBeenSet(false),
+    m_sealTypesHasBeenSet(false)
 {
 }
 
@@ -77,6 +78,19 @@ string DescribeOrganizationSealsRequest::ToJsonString() const
         string key = "SealId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sealId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sealTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SealTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_sealTypes.begin(); itr != m_sealTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -165,6 +179,22 @@ void DescribeOrganizationSealsRequest::SetSealId(const string& _sealId)
 bool DescribeOrganizationSealsRequest::SealIdHasBeenSet() const
 {
     return m_sealIdHasBeenSet;
+}
+
+vector<string> DescribeOrganizationSealsRequest::GetSealTypes() const
+{
+    return m_sealTypes;
+}
+
+void DescribeOrganizationSealsRequest::SetSealTypes(const vector<string>& _sealTypes)
+{
+    m_sealTypes = _sealTypes;
+    m_sealTypesHasBeenSet = true;
+}
+
+bool DescribeOrganizationSealsRequest::SealTypesHasBeenSet() const
+{
+    return m_sealTypesHasBeenSet;
 }
 
 

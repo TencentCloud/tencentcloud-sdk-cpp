@@ -26,7 +26,11 @@ TcrNamespaceInfo::TcrNamespaceInfo() :
     m_publicHasBeenSet(false),
     m_namespaceIdHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
-    m_metadataHasBeenSet(false)
+    m_metadataHasBeenSet(false),
+    m_cVEWhitelistItemsHasBeenSet(false),
+    m_autoScanHasBeenSet(false),
+    m_preventVULHasBeenSet(false),
+    m_severityHasBeenSet(false)
 {
 }
 
@@ -112,6 +116,56 @@ CoreInternalOutcome TcrNamespaceInfo::Deserialize(const rapidjson::Value &value)
         m_metadataHasBeenSet = true;
     }
 
+    if (value.HasMember("CVEWhitelistItems") && !value["CVEWhitelistItems"].IsNull())
+    {
+        if (!value["CVEWhitelistItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.CVEWhitelistItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CVEWhitelistItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CVEWhitelistItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cVEWhitelistItems.push_back(item);
+        }
+        m_cVEWhitelistItemsHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoScan") && !value["AutoScan"].IsNull())
+    {
+        if (!value["AutoScan"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.AutoScan` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoScan = value["AutoScan"].GetBool();
+        m_autoScanHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreventVUL") && !value["PreventVUL"].IsNull())
+    {
+        if (!value["PreventVUL"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.PreventVUL` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_preventVUL = value["PreventVUL"].GetBool();
+        m_preventVULHasBeenSet = true;
+    }
+
+    if (value.HasMember("Severity") && !value["Severity"].IsNull())
+    {
+        if (!value["Severity"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TcrNamespaceInfo.Severity` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_severity = string(value["Severity"].GetString());
+        m_severityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -173,6 +227,45 @@ void TcrNamespaceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_cVEWhitelistItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CVEWhitelistItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cVEWhitelistItems.begin(); itr != m_cVEWhitelistItems.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_autoScanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoScan";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoScan, allocator);
+    }
+
+    if (m_preventVULHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreventVUL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preventVUL, allocator);
+    }
+
+    if (m_severityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Severity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_severity.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -272,5 +365,69 @@ void TcrNamespaceInfo::SetMetadata(const vector<KeyValueString>& _metadata)
 bool TcrNamespaceInfo::MetadataHasBeenSet() const
 {
     return m_metadataHasBeenSet;
+}
+
+vector<CVEWhitelistItem> TcrNamespaceInfo::GetCVEWhitelistItems() const
+{
+    return m_cVEWhitelistItems;
+}
+
+void TcrNamespaceInfo::SetCVEWhitelistItems(const vector<CVEWhitelistItem>& _cVEWhitelistItems)
+{
+    m_cVEWhitelistItems = _cVEWhitelistItems;
+    m_cVEWhitelistItemsHasBeenSet = true;
+}
+
+bool TcrNamespaceInfo::CVEWhitelistItemsHasBeenSet() const
+{
+    return m_cVEWhitelistItemsHasBeenSet;
+}
+
+bool TcrNamespaceInfo::GetAutoScan() const
+{
+    return m_autoScan;
+}
+
+void TcrNamespaceInfo::SetAutoScan(const bool& _autoScan)
+{
+    m_autoScan = _autoScan;
+    m_autoScanHasBeenSet = true;
+}
+
+bool TcrNamespaceInfo::AutoScanHasBeenSet() const
+{
+    return m_autoScanHasBeenSet;
+}
+
+bool TcrNamespaceInfo::GetPreventVUL() const
+{
+    return m_preventVUL;
+}
+
+void TcrNamespaceInfo::SetPreventVUL(const bool& _preventVUL)
+{
+    m_preventVUL = _preventVUL;
+    m_preventVULHasBeenSet = true;
+}
+
+bool TcrNamespaceInfo::PreventVULHasBeenSet() const
+{
+    return m_preventVULHasBeenSet;
+}
+
+string TcrNamespaceInfo::GetSeverity() const
+{
+    return m_severity;
+}
+
+void TcrNamespaceInfo::SetSeverity(const string& _severity)
+{
+    m_severity = _severity;
+    m_severityHasBeenSet = true;
+}
+
+bool TcrNamespaceInfo::SeverityHasBeenSet() const
+{
+    return m_severityHasBeenSet;
 }
 

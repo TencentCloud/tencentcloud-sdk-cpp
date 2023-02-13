@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取源地域
-                     * @return SourceRegion 源地域
+                     * 获取源地域。
+                     * @return SourceRegion 源地域。
                      */
                     std::string GetSourceRegion() const;
 
                     /**
-                     * 设置源地域
-                     * @param SourceRegion 源地域
+                     * 设置源地域。
+                     * @param SourceRegion 源地域。
                      */
                     void SetSourceRegion(const std::string& _sourceRegion);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SourceRegionHasBeenSet() const;
 
                     /**
-                     * 获取目的地域
-                     * @return DestinationRegion 目的地域
+                     * 获取目的地域。
+                     * @return DestinationRegion 目的地域。
                      */
                     std::string GetDestinationRegion() const;
 
                     /**
-                     * 设置目的地域
-                     * @param DestinationRegion 目的地域
+                     * 设置目的地域。
+                     * @param DestinationRegion 目的地域。
                      */
                     void SetDestinationRegion(const std::string& _destinationRegion);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool DestinationRegionHasBeenSet() const;
 
                     /**
-                     * 获取云联网Id
-                     * @return CcnId 云联网Id
+                     * 获取云联网ID。
+                     * @return CcnId 云联网ID。
                      */
                     std::string GetCcnId() const;
 
                     /**
-                     * 设置云联网Id
-                     * @param CcnId 云联网Id
+                     * 设置云联网ID。
+                     * @param CcnId 云联网ID。
                      */
                     void SetCcnId(const std::string& _ccnId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取云联网所属账号
-                     * @return CcnUin 云联网所属账号
+                     * 获取云联网所属账号。
+                     * @return CcnUin 云联网所属账号。
                      */
                     std::string GetCcnUin() const;
 
                     /**
-                     * 设置云联网所属账号
-                     * @param CcnUin 云联网所属账号
+                     * 设置云联网所属账号。
+                     * @param CcnUin 云联网所属账号。
                      */
                     void SetCcnUin(const std::string& _ccnUin);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool CcnUinHasBeenSet() const;
 
                     /**
-                     * 获取时间粒度
-                     * @return Period 时间粒度
+                     * 获取时间粒度。
+                     * @return Period 时间粒度。
                      */
                     int64_t GetPeriod() const;
 
                     /**
-                     * 设置时间粒度
-                     * @param Period 时间粒度
+                     * 设置时间粒度。
+                     * @param Period 时间粒度。
                      */
                     void SetPeriod(const int64_t& _period);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool PeriodHasBeenSet() const;
 
                     /**
-                     * 获取开始时间
-                     * @return StartTime 开始时间
+                     * 获取开始时间。
+                     * @return StartTime 开始时间。
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间
-                     * @param StartTime 开始时间
+                     * 设置开始时间。
+                     * @param StartTime 开始时间。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间
-                     * @return EndTime 结束时间
+                     * 获取结束时间。
+                     * @return EndTime 结束时间。
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间
-                     * @param EndTime 结束时间
+                     * 设置结束时间。
+                     * @param EndTime 结束时间。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -171,43 +171,43 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 源地域
+                     * 源地域。
                      */
                     std::string m_sourceRegion;
                     bool m_sourceRegionHasBeenSet;
 
                     /**
-                     * 目的地域
+                     * 目的地域。
                      */
                     std::string m_destinationRegion;
                     bool m_destinationRegionHasBeenSet;
 
                     /**
-                     * 云联网Id
+                     * 云联网ID。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * 云联网所属账号
+                     * 云联网所属账号。
                      */
                     std::string m_ccnUin;
                     bool m_ccnUinHasBeenSet;
 
                     /**
-                     * 时间粒度
+                     * 时间粒度。
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
 
                     /**
-                     * 开始时间
+                     * 开始时间。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间
+                     * 结束时间。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

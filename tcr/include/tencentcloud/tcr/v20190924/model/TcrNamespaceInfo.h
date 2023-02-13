@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tcr/v20190924/model/TagSpecification.h>
 #include <tencentcloud/tcr/v20190924/model/KeyValueString.h>
+#include <tencentcloud/tcr/v20190924/model/CVEWhitelistItem.h>
 
 
 namespace TencentCloud
@@ -164,6 +165,78 @@ namespace TencentCloud
                      */
                     bool MetadataHasBeenSet() const;
 
+                    /**
+                     * 获取漏洞白名单列表
+                     * @return CVEWhitelistItems 漏洞白名单列表
+                     */
+                    std::vector<CVEWhitelistItem> GetCVEWhitelistItems() const;
+
+                    /**
+                     * 设置漏洞白名单列表
+                     * @param CVEWhitelistItems 漏洞白名单列表
+                     */
+                    void SetCVEWhitelistItems(const std::vector<CVEWhitelistItem>& _cVEWhitelistItems);
+
+                    /**
+                     * 判断参数 CVEWhitelistItems 是否已赋值
+                     * @return CVEWhitelistItems 是否已赋值
+                     */
+                    bool CVEWhitelistItemsHasBeenSet() const;
+
+                    /**
+                     * 获取扫描级别，true为自动，false为手动
+                     * @return AutoScan 扫描级别，true为自动，false为手动
+                     */
+                    bool GetAutoScan() const;
+
+                    /**
+                     * 设置扫描级别，true为自动，false为手动
+                     * @param AutoScan 扫描级别，true为自动，false为手动
+                     */
+                    void SetAutoScan(const bool& _autoScan);
+
+                    /**
+                     * 判断参数 AutoScan 是否已赋值
+                     * @return AutoScan 是否已赋值
+                     */
+                    bool AutoScanHasBeenSet() const;
+
+                    /**
+                     * 获取安全阻断级别，true为开启，false为关闭
+                     * @return PreventVUL 安全阻断级别，true为开启，false为关闭
+                     */
+                    bool GetPreventVUL() const;
+
+                    /**
+                     * 设置安全阻断级别，true为开启，false为关闭
+                     * @param PreventVUL 安全阻断级别，true为开启，false为关闭
+                     */
+                    void SetPreventVUL(const bool& _preventVUL);
+
+                    /**
+                     * 判断参数 PreventVUL 是否已赋值
+                     * @return PreventVUL 是否已赋值
+                     */
+                    bool PreventVULHasBeenSet() const;
+
+                    /**
+                     * 获取阻断漏洞等级，目前仅支持low、medium、high, 为""时表示没有设置
+                     * @return Severity 阻断漏洞等级，目前仅支持low、medium、high, 为""时表示没有设置
+                     */
+                    std::string GetSeverity() const;
+
+                    /**
+                     * 设置阻断漏洞等级，目前仅支持low、medium、high, 为""时表示没有设置
+                     * @param Severity 阻断漏洞等级，目前仅支持low、medium、high, 为""时表示没有设置
+                     */
+                    void SetSeverity(const std::string& _severity);
+
+                    /**
+                     * 判断参数 Severity 是否已赋值
+                     * @return Severity 是否已赋值
+                     */
+                    bool SeverityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -203,6 +276,30 @@ namespace TencentCloud
                      */
                     std::vector<KeyValueString> m_metadata;
                     bool m_metadataHasBeenSet;
+
+                    /**
+                     * 漏洞白名单列表
+                     */
+                    std::vector<CVEWhitelistItem> m_cVEWhitelistItems;
+                    bool m_cVEWhitelistItemsHasBeenSet;
+
+                    /**
+                     * 扫描级别，true为自动，false为手动
+                     */
+                    bool m_autoScan;
+                    bool m_autoScanHasBeenSet;
+
+                    /**
+                     * 安全阻断级别，true为开启，false为关闭
+                     */
+                    bool m_preventVUL;
+                    bool m_preventVULHasBeenSet;
+
+                    /**
+                     * 阻断漏洞等级，目前仅支持low、medium、high, 为""时表示没有设置
+                     */
+                    std::string m_severity;
+                    bool m_severityHasBeenSet;
 
                 };
             }

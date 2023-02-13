@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tcr/v20190924/model/CVEWhitelistItem.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,78 @@ namespace TencentCloud
                      */
                     bool IsPublicHasBeenSet() const;
 
+                    /**
+                     * 获取扫描级别，True为自动，False为手动
+                     * @return IsAutoScan 扫描级别，True为自动，False为手动
+                     */
+                    bool GetIsAutoScan() const;
+
+                    /**
+                     * 设置扫描级别，True为自动，False为手动
+                     * @param IsAutoScan 扫描级别，True为自动，False为手动
+                     */
+                    void SetIsAutoScan(const bool& _isAutoScan);
+
+                    /**
+                     * 判断参数 IsAutoScan 是否已赋值
+                     * @return IsAutoScan 是否已赋值
+                     */
+                    bool IsAutoScanHasBeenSet() const;
+
+                    /**
+                     * 获取阻断开关，True为开放，False为关闭
+                     * @return IsPreventVUL 阻断开关，True为开放，False为关闭
+                     */
+                    bool GetIsPreventVUL() const;
+
+                    /**
+                     * 设置阻断开关，True为开放，False为关闭
+                     * @param IsPreventVUL 阻断开关，True为开放，False为关闭
+                     */
+                    void SetIsPreventVUL(const bool& _isPreventVUL);
+
+                    /**
+                     * 判断参数 IsPreventVUL 是否已赋值
+                     * @return IsPreventVUL 是否已赋值
+                     */
+                    bool IsPreventVULHasBeenSet() const;
+
+                    /**
+                     * 获取阻断漏洞等级，目前仅支持 low、medium、high
+                     * @return Severity 阻断漏洞等级，目前仅支持 low、medium、high
+                     */
+                    std::string GetSeverity() const;
+
+                    /**
+                     * 设置阻断漏洞等级，目前仅支持 low、medium、high
+                     * @param Severity 阻断漏洞等级，目前仅支持 low、medium、high
+                     */
+                    void SetSeverity(const std::string& _severity);
+
+                    /**
+                     * 判断参数 Severity 是否已赋值
+                     * @return Severity 是否已赋值
+                     */
+                    bool SeverityHasBeenSet() const;
+
+                    /**
+                     * 获取漏洞白名单列表
+                     * @return CVEWhitelistItems 漏洞白名单列表
+                     */
+                    std::vector<CVEWhitelistItem> GetCVEWhitelistItems() const;
+
+                    /**
+                     * 设置漏洞白名单列表
+                     * @param CVEWhitelistItems 漏洞白名单列表
+                     */
+                    void SetCVEWhitelistItems(const std::vector<CVEWhitelistItem>& _cVEWhitelistItems);
+
+                    /**
+                     * 判断参数 CVEWhitelistItems 是否已赋值
+                     * @return CVEWhitelistItems 是否已赋值
+                     */
+                    bool CVEWhitelistItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +188,30 @@ namespace TencentCloud
                      */
                     bool m_isPublic;
                     bool m_isPublicHasBeenSet;
+
+                    /**
+                     * 扫描级别，True为自动，False为手动
+                     */
+                    bool m_isAutoScan;
+                    bool m_isAutoScanHasBeenSet;
+
+                    /**
+                     * 阻断开关，True为开放，False为关闭
+                     */
+                    bool m_isPreventVUL;
+                    bool m_isPreventVULHasBeenSet;
+
+                    /**
+                     * 阻断漏洞等级，目前仅支持 low、medium、high
+                     */
+                    std::string m_severity;
+                    bool m_severityHasBeenSet;
+
+                    /**
+                     * 漏洞白名单列表
+                     */
+                    std::vector<CVEWhitelistItem> m_cVEWhitelistItems;
+                    bool m_cVEWhitelistItemsHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
 DescribePrometheusZonesRequest::DescribePrometheusZonesRequest() :
-    m_regionIdHasBeenSet(false)
+    m_regionIdHasBeenSet(false),
+    m_regionNameHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribePrometheusZonesRequest::ToJsonString() const
         string key = "RegionId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_regionId, allocator);
+    }
+
+    if (m_regionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_regionName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribePrometheusZonesRequest::SetRegionId(const int64_t& _regionId)
 bool DescribePrometheusZonesRequest::RegionIdHasBeenSet() const
 {
     return m_regionIdHasBeenSet;
+}
+
+string DescribePrometheusZonesRequest::GetRegionName() const
+{
+    return m_regionName;
+}
+
+void DescribePrometheusZonesRequest::SetRegionName(const string& _regionName)
+{
+    m_regionName = _regionName;
+    m_regionNameHasBeenSet = true;
+}
+
+bool DescribePrometheusZonesRequest::RegionNameHasBeenSet() const
+{
+    return m_regionNameHasBeenSet;
 }
 
 

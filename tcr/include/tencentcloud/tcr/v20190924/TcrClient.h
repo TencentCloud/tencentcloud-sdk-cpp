@@ -1440,7 +1440,7 @@ namespace TencentCloud
                 ModifyInstanceTokenOutcomeCallable ModifyInstanceTokenCallable(const Model::ModifyInstanceTokenRequest& request);
 
                 /**
-                 *更新命名空间信息，当前仅支持修改命名空间访问级别
+                 *更新命名空间信息
                  * @param req ModifyNamespaceRequest
                  * @return ModifyNamespaceOutcome
                  */

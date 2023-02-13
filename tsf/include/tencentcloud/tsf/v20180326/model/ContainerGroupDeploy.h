@@ -43,7 +43,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                *  获取部署组
+                * 获取部署组
                 */
                 class ContainerGroupDeploy : public AbstractModel
                 {

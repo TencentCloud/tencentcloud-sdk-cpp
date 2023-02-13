@@ -31,7 +31,8 @@ TemplateInfo::TemplateInfo() :
     m_certificateInfoHasBeenSet(false),
     m_contactInfoHasBeenSet(false),
     m_isValidTemplateHasBeenSet(false),
-    m_invalidReasonHasBeenSet(false)
+    m_invalidReasonHasBeenSet(false),
+    m_isBlackHasBeenSet(false)
 {
 }
 
@@ -164,6 +165,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_invalidReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("IsBlack") && !value["IsBlack"].IsNull())
+    {
+        if (!value["IsBlack"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.IsBlack` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isBlack = value["IsBlack"].GetBool();
+        m_isBlackHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "InvalidReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_invalidReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isBlackHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsBlack";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isBlack, allocator);
     }
 
 }
@@ -438,5 +457,21 @@ void TemplateInfo::SetInvalidReason(const string& _invalidReason)
 bool TemplateInfo::InvalidReasonHasBeenSet() const
 {
     return m_invalidReasonHasBeenSet;
+}
+
+bool TemplateInfo::GetIsBlack() const
+{
+    return m_isBlack;
+}
+
+void TemplateInfo::SetIsBlack(const bool& _isBlack)
+{
+    m_isBlack = _isBlack;
+    m_isBlackHasBeenSet = true;
+}
+
+bool TemplateInfo::IsBlackHasBeenSet() const
+{
+    return m_isBlackHasBeenSet;
 }
 

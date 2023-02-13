@@ -151,7 +151,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/RegistryStatus.h
   include/tencentcloud/tcr/v20190924/model/SecurityPolicy.h
   include/tencentcloud/tcr/v20190924/model/DescribeNamespacePersonalRequest.h
-  include/tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h
+  include/tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateInstanceTokenResponse.h
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalResp.h
   include/tencentcloud/tcr/v20190924/model/DeleteImagePersonalRequest.h
@@ -224,6 +224,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/CreateSecurityPolicyRequest.h
   include/tencentcloud/tcr/v20190924/model/CreateWebhookTriggerRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteImageAccelerateServiceResponse.h
+  include/tencentcloud/tcr/v20190924/model/CVEWhitelistItem.h
   include/tencentcloud/tcr/v20190924/model/ModifyRepositoryInfoPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DescribeGCJobsResponse.h
@@ -277,7 +278,7 @@ set(tcr_public_header_model
   include/tencentcloud/tcr/v20190924/model/DescribeTagRetentionExecutionResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateNamespacePersonalRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteImmutableTagRulesRequest.h
-  include/tencentcloud/tcr/v20190924/model/DeleteRepositoryPersonalResponse.h
+  include/tencentcloud/tcr/v20190924/model/CreateWebhookTriggerResponse.h
   include/tencentcloud/tcr/v20190924/model/CreateSignaturePolicyRequest.h
   include/tencentcloud/tcr/v20190924/model/DeleteTagRetentionRuleRequest.h
   include/tencentcloud/tcr/v20190924/model/ReplicationFilter.h
@@ -429,7 +430,7 @@ set(tcr_src
   src/v20190924/model/RegistryStatus.cpp
   src/v20190924/model/SecurityPolicy.cpp
   src/v20190924/model/DescribeNamespacePersonalRequest.cpp
-  src/v20190924/model/CreateWebhookTriggerResponse.cpp
+  src/v20190924/model/DeleteRepositoryPersonalResponse.cpp
   src/v20190924/model/CreateInstanceTokenResponse.cpp
   src/v20190924/model/DescribeApplicationTriggerLogPersonalResp.cpp
   src/v20190924/model/DeleteImagePersonalRequest.cpp
@@ -502,6 +503,7 @@ set(tcr_src
   src/v20190924/model/CreateSecurityPolicyRequest.cpp
   src/v20190924/model/CreateWebhookTriggerRequest.cpp
   src/v20190924/model/DeleteImageAccelerateServiceResponse.cpp
+  src/v20190924/model/CVEWhitelistItem.cpp
   src/v20190924/model/ModifyRepositoryInfoPersonalRequest.cpp
   src/v20190924/model/DescribeApplicationTriggerLogPersonalRequest.cpp
   src/v20190924/model/DescribeGCJobsResponse.cpp
@@ -555,7 +557,7 @@ set(tcr_src
   src/v20190924/model/DescribeTagRetentionExecutionResponse.cpp
   src/v20190924/model/CreateNamespacePersonalRequest.cpp
   src/v20190924/model/DeleteImmutableTagRulesRequest.cpp
-  src/v20190924/model/DeleteRepositoryPersonalResponse.cpp
+  src/v20190924/model/CreateWebhookTriggerResponse.cpp
   src/v20190924/model/CreateSignaturePolicyRequest.cpp
   src/v20190924/model/DeleteTagRetentionRuleRequest.cpp
   src/v20190924/model/ReplicationFilter.cpp

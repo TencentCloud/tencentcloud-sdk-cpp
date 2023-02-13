@@ -133,6 +133,48 @@ namespace TencentCloud
                      */
                     bool SealIdHasBeenSet() const;
 
+                    /**
+                     * 获取印章类型列表（都是组织机构印章）。
+为空时查询所有类型的印章。
+目前支持以下类型：
+OFFICIAL：企业公章；
+CONTRACT：合同专用章；
+ORGANIZATION_SEAL：企业印章(图片上传创建)；
+LEGAL_PERSON_SEAL：法定代表人章
+                     * @return SealTypes 印章类型列表（都是组织机构印章）。
+为空时查询所有类型的印章。
+目前支持以下类型：
+OFFICIAL：企业公章；
+CONTRACT：合同专用章；
+ORGANIZATION_SEAL：企业印章(图片上传创建)；
+LEGAL_PERSON_SEAL：法定代表人章
+                     */
+                    std::vector<std::string> GetSealTypes() const;
+
+                    /**
+                     * 设置印章类型列表（都是组织机构印章）。
+为空时查询所有类型的印章。
+目前支持以下类型：
+OFFICIAL：企业公章；
+CONTRACT：合同专用章；
+ORGANIZATION_SEAL：企业印章(图片上传创建)；
+LEGAL_PERSON_SEAL：法定代表人章
+                     * @param SealTypes 印章类型列表（都是组织机构印章）。
+为空时查询所有类型的印章。
+目前支持以下类型：
+OFFICIAL：企业公章；
+CONTRACT：合同专用章；
+ORGANIZATION_SEAL：企业印章(图片上传创建)；
+LEGAL_PERSON_SEAL：法定代表人章
+                     */
+                    void SetSealTypes(const std::vector<std::string>& _sealTypes);
+
+                    /**
+                     * 判断参数 SealTypes 是否已赋值
+                     * @return SealTypes 是否已赋值
+                     */
+                    bool SealTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +206,18 @@ namespace TencentCloud
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
+
+                    /**
+                     * 印章类型列表（都是组织机构印章）。
+为空时查询所有类型的印章。
+目前支持以下类型：
+OFFICIAL：企业公章；
+CONTRACT：合同专用章；
+ORGANIZATION_SEAL：企业印章(图片上传创建)；
+LEGAL_PERSON_SEAL：法定代表人章
+                     */
+                    std::vector<std::string> m_sealTypes;
+                    bool m_sealTypesHasBeenSet;
 
                 };
             }

@@ -23,7 +23,8 @@ using namespace TencentCloud::Cwp::V20180228::Model;
 using namespace std;
 
 DeleteAttackLogsRequest::DeleteAttackLogsRequest() :
-    m_idsHasBeenSet(false)
+    m_idsHasBeenSet(false),
+    m_isAllHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string DeleteAttackLogsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
         }
+    }
+
+    if (m_isAllHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsAll";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isAll, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void DeleteAttackLogsRequest::SetIds(const vector<uint64_t>& _ids)
 bool DeleteAttackLogsRequest::IdsHasBeenSet() const
 {
     return m_idsHasBeenSet;
+}
+
+bool DeleteAttackLogsRequest::GetIsAll() const
+{
+    return m_isAll;
+}
+
+void DeleteAttackLogsRequest::SetIsAll(const bool& _isAll)
+{
+    m_isAll = _isAll;
+    m_isAllHasBeenSet = true;
+}
+
+bool DeleteAttackLogsRequest::IsAllHasBeenSet() const
+{
+    return m_isAllHasBeenSet;
 }
 
 

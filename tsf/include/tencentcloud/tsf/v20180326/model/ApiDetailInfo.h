@@ -530,6 +530,94 @@ namespace TencentCloud
                      */
                     bool ApiMatchTypeHasBeenSet() const;
 
+                    /**
+                     * 获取RPC 额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RpcExt RPC 额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRpcExt() const;
+
+                    /**
+                     * 设置RPC 额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RpcExt RPC 额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRpcExt(const std::string& _rpcExt);
+
+                    /**
+                     * 判断参数 RpcExt 是否已赋值
+                     * @return RpcExt 是否已赋值
+                     */
+                    bool RpcExtHasBeenSet() const;
+
+                    /**
+                     * 获取部署组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayDeployGroupId 部署组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewayDeployGroupId() const;
+
+                    /**
+                     * 设置部署组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GatewayDeployGroupId 部署组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGatewayDeployGroupId(const std::string& _gatewayDeployGroupId);
+
+                    /**
+                     * 判断参数 GatewayDeployGroupId 是否已赋值
+                     * @return GatewayDeployGroupId 是否已赋值
+                     */
+                    bool GatewayDeployGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Md5 md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMd5() const;
+
+                    /**
+                     * 设置md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Md5 md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMd5(const std::string& _md5);
+
+                    /**
+                     * 判断参数 Md5 是否已赋值
+                     * @return Md5 是否已赋值
+                     */
+                    bool Md5HasBeenSet() const;
+
+                    /**
+                     * 获取RPC 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RpcType RPC 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRpcType() const;
+
+                    /**
+                     * 设置RPC 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RpcType RPC 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRpcType(const std::string& _rpcType);
+
+                    /**
+                     * 判断参数 RpcType 是否已赋值
+                     * @return RpcType 是否已赋值
+                     */
+                    bool RpcTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -685,6 +773,34 @@ namespace TencentCloud
                      */
                     std::string m_apiMatchType;
                     bool m_apiMatchTypeHasBeenSet;
+
+                    /**
+                     * RPC 额外信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rpcExt;
+                    bool m_rpcExtHasBeenSet;
+
+                    /**
+                     * 部署组id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayDeployGroupId;
+                    bool m_gatewayDeployGroupIdHasBeenSet;
+
+                    /**
+                     * md5
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_md5;
+                    bool m_md5HasBeenSet;
+
+                    /**
+                     * RPC 类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rpcType;
+                    bool m_rpcTypeHasBeenSet;
 
                 };
             }
