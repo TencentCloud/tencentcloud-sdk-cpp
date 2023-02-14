@@ -333,6 +333,28 @@ namespace TencentCloud
                      */
                     bool CustomRuleHasBeenSet() const;
 
+                    /**
+                     * 获取KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaAddress KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKafkaAddress() const;
+
+                    /**
+                     * 设置KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaAddress KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaAddress(const std::string& _kafkaAddress);
+
+                    /**
+                     * 判断参数 KafkaAddress 是否已赋值
+                     * @return KafkaAddress 是否已赋值
+                     */
+                    bool KafkaAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +447,13 @@ namespace TencentCloud
                      */
                     std::string m_customRule;
                     bool m_customRuleHasBeenSet;
+
+                    /**
+                     * KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kafkaAddress;
+                    bool m_kafkaAddressHasBeenSet;
 
                 };
             }

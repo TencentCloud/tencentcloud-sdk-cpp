@@ -288,6 +288,24 @@ namespace TencentCloud
                      */
                     bool MXHasBeenSet() const;
 
+                    /**
+                     * 获取是否是默认的ns记录
+                     * @return DefaultNS 是否是默认的ns记录
+                     */
+                    bool GetDefaultNS() const;
+
+                    /**
+                     * 设置是否是默认的ns记录
+                     * @param DefaultNS 是否是默认的ns记录
+                     */
+                    void SetDefaultNS(const bool& _defaultNS);
+
+                    /**
+                     * 判断参数 DefaultNS 是否已赋值
+                     * @return DefaultNS 是否已赋值
+                     */
+                    bool DefaultNSHasBeenSet() const;
+
                 private:
 
                     /**
@@ -369,6 +387,12 @@ namespace TencentCloud
                      */
                     uint64_t m_mX;
                     bool m_mXHasBeenSet;
+
+                    /**
+                     * 是否是默认的ns记录
+                     */
+                    bool m_defaultNS;
+                    bool m_defaultNSHasBeenSet;
 
                 };
             }

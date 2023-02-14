@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBENETWORKINTERFACELIMITREQUEST_H_
-#define TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBENETWORKINTERFACELIMITREQUEST_H_
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEBACKUPENCRYPTIONSTATUSREQUEST_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEBACKUPENCRYPTIONSTATUSREQUEST_H_
 
 #include <string>
 #include <vector>
@@ -25,32 +25,32 @@
 
 namespace TencentCloud
 {
-    namespace Vpc
+    namespace Cdb
     {
-        namespace V20170312
+        namespace V20170320
         {
             namespace Model
             {
                 /**
-                * DescribeNetworkInterfaceLimit请求参数结构体
+                * DescribeBackupEncryptionStatus请求参数结构体
                 */
-                class DescribeNetworkInterfaceLimitRequest : public AbstractModel
+                class DescribeBackupEncryptionStatusRequest : public AbstractModel
                 {
                 public:
-                    DescribeNetworkInterfaceLimitRequest();
-                    ~DescribeNetworkInterfaceLimitRequest() = default;
+                    DescribeBackupEncryptionStatusRequest();
+                    ~DescribeBackupEncryptionStatusRequest() = default;
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取要查询的CVM实例ID或弹性网卡ID。
-                     * @return InstanceId 要查询的CVM实例ID或弹性网卡ID。
+                     * 获取实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @return InstanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置要查询的CVM实例ID或弹性网卡ID。
-                     * @param InstanceId 要查询的CVM实例ID或弹性网卡ID。
+                     * 设置实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
+                     * @param InstanceId 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 要查询的CVM实例ID或弹性网卡ID。
+                     * 实例ID，格式如：cdb-XXXX。与云数据库控制台页面中显示的实例 ID 相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -74,4 +74,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBENETWORKINTERFACELIMITREQUEST_H_
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEBACKUPENCRYPTIONSTATUSREQUEST_H_

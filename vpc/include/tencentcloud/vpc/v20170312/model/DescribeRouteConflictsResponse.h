@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取路由策略冲突列表
-                     * @return RouteConflictSet 路由策略冲突列表
+                     * 获取路由策略冲突列表。
+                     * @return RouteConflictSet 路由策略冲突列表。
                      */
                     std::vector<RouteConflict> GetRouteConflictSet() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 路由策略冲突列表
+                     * 路由策略冲突列表。
                      */
                     std::vector<RouteConflict> m_routeConflictSet;
                     bool m_routeConflictSetHasBeenSet;

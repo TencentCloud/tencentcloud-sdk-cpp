@@ -229,6 +229,20 @@ coteaching 双师
                      */
                     bool RecordUrlHasBeenSet() const;
 
+                    /**
+                     * 获取课堂状态。0为未开始，1为正在上课，2为已结束，3为已过期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 课堂状态。0为未开始，1为正在上课，2为已结束，3为已过期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -323,6 +337,13 @@ coteaching 双师
                      */
                     std::string m_recordUrl;
                     bool m_recordUrlHasBeenSet;
+
+                    /**
+                     * 课堂状态。0为未开始，1为正在上课，2为已结束，3为已过期。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

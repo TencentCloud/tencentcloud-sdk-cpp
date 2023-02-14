@@ -74,14 +74,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取偏移量。
-                     * @return Offset 偏移量。
+                     * 获取偏移量，默认为0。
+                     * @return Offset 偏移量，默认为0。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量。
-                     * @param Offset 偏移量。
+                     * 设置偏移量，默认为0。
+                     * @param Offset 偏移量，默认为0。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -92,14 +92,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取请求对象个数。
-                     * @return Limit 请求对象个数。
+                     * 获取返回数量，默认为20，最大值为100。
+                     * @return Limit 返回数量，默认为20，最大值为100。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置请求对象个数。
-                     * @param Limit 请求对象个数。
+                     * 设置返回数量，默认为20，最大值为100。
+                     * @param Limit 返回数量，默认为20，最大值为100。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -121,13 +121,13 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 偏移量。
+                     * 偏移量，默认为0。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 请求对象个数。
+                     * 返回数量，默认为20，最大值为100。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

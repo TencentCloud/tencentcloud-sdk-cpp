@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取协议端口模板名称
-                     * @return ServiceTemplateName 协议端口模板名称
+                     * 获取协议端口模板名称。
+                     * @return ServiceTemplateName 协议端口模板名称。
                      */
                     std::string GetServiceTemplateName() const;
 
                     /**
-                     * 设置协议端口模板名称
-                     * @param ServiceTemplateName 协议端口模板名称
+                     * 设置协议端口模板名称。
+                     * @param ServiceTemplateName 协议端口模板名称。
                      */
                     void SetServiceTemplateName(const std::string& _serviceTemplateName);
 
@@ -100,7 +100,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 协议端口模板名称
+                     * 协议端口模板名称。
                      */
                     std::string m_serviceTemplateName;
                     bool m_serviceTemplateNameHasBeenSet;

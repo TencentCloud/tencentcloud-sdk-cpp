@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool NetworkAclNameHasBeenSet() const;
 
                     /**
-                     * 获取网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
-                     * @return NetworkAclType 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     * 获取网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)。
+                     * @return NetworkAclType 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)。
                      */
                     std::string GetNetworkAclType() const;
 
                     /**
-                     * 设置网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
-                     * @param NetworkAclType 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     * 设置网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)。
+                     * @param NetworkAclType 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)。
                      */
                     void SetNetworkAclType(const std::string& _networkAclType);
 
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_networkAclNameHasBeenSet;
 
                     /**
-                     * 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)
+                     * 网络ACL类型，三元组(TRIPLE)或五元组(QUINTUPLE)。
                      */
                     std::string m_networkAclType;
                     bool m_networkAclTypeHasBeenSet;

@@ -14,14 +14,13 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEACCOUNTATTRIBUTESRESPONSE_H_
-#define TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEACCOUNTATTRIBUTESRESPONSE_H_
+#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBENETWORKACCOUNTTYPERESPONSE_H_
+#define TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBENETWORKACCOUNTTYPERESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/vpc/v20170312/model/AccountAttribute.h>
 
 
 namespace TencentCloud
@@ -33,36 +32,36 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * DescribeAccountAttributes返回参数结构体
+                * DescribeNetworkAccountType返回参数结构体
                 */
-                class DescribeAccountAttributesResponse : public AbstractModel
+                class DescribeNetworkAccountTypeResponse : public AbstractModel
                 {
                 public:
-                    DescribeAccountAttributesResponse();
-                    ~DescribeAccountAttributesResponse() = default;
+                    DescribeNetworkAccountTypeResponse();
+                    ~DescribeNetworkAccountTypeResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取用户账号属性对象。
-                     * @return AccountAttributeSet 用户账号属性对象。
+                     * 获取用户账号的网络类型，STANDARD为标准用户，LEGACY为传统用户
+                     * @return NetworkAccountType 用户账号的网络类型，STANDARD为标准用户，LEGACY为传统用户
                      */
-                    std::vector<AccountAttribute> GetAccountAttributeSet() const;
+                    std::string GetNetworkAccountType() const;
 
                     /**
-                     * 判断参数 AccountAttributeSet 是否已赋值
-                     * @return AccountAttributeSet 是否已赋值
+                     * 判断参数 NetworkAccountType 是否已赋值
+                     * @return NetworkAccountType 是否已赋值
                      */
-                    bool AccountAttributeSetHasBeenSet() const;
+                    bool NetworkAccountTypeHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 用户账号属性对象。
+                     * 用户账号的网络类型，STANDARD为标准用户，LEGACY为传统用户
                      */
-                    std::vector<AccountAttribute> m_accountAttributeSet;
-                    bool m_accountAttributeSetHasBeenSet;
+                    std::string m_networkAccountType;
+                    bool m_networkAccountTypeHasBeenSet;
 
                 };
             }
@@ -70,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEACCOUNTATTRIBUTESRESPONSE_H_
+#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBENETWORKACCOUNTTYPERESPONSE_H_

@@ -6361,6 +6361,49 @@ VpcClient::DescribeNetDetectsOutcomeCallable VpcClient::DescribeNetDetectsCallab
     return task->get_future();
 }
 
+VpcClient::DescribeNetworkAccountTypeOutcome VpcClient::DescribeNetworkAccountType(const DescribeNetworkAccountTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNetworkAccountType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNetworkAccountTypeResponse rsp = DescribeNetworkAccountTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNetworkAccountTypeOutcome(rsp);
+        else
+            return DescribeNetworkAccountTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNetworkAccountTypeOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::DescribeNetworkAccountTypeAsync(const DescribeNetworkAccountTypeRequest& request, const DescribeNetworkAccountTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNetworkAccountType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::DescribeNetworkAccountTypeOutcomeCallable VpcClient::DescribeNetworkAccountTypeCallable(const DescribeNetworkAccountTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNetworkAccountTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNetworkAccountType(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::DescribeNetworkAclQuintupleEntriesOutcome VpcClient::DescribeNetworkAclQuintupleEntries(const DescribeNetworkAclQuintupleEntriesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeNetworkAclQuintupleEntries");

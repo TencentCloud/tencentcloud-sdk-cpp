@@ -1060,6 +1060,28 @@ namespace TencentCloud
                      */
                     bool IsMultiZoneClusterHasBeenSet() const;
 
+                    /**
+                     * 获取是否开通异常节点自动补偿
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsCvmReplace 是否开通异常节点自动补偿
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsCvmReplace() const;
+
+                    /**
+                     * 设置是否开通异常节点自动补偿
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsCvmReplace 是否开通异常节点自动补偿
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsCvmReplace(const bool& _isCvmReplace);
+
+                    /**
+                     * 判断参数 IsCvmReplace 是否已赋值
+                     * @return IsCvmReplace 是否已赋值
+                     */
+                    bool IsCvmReplaceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1375,6 +1397,13 @@ namespace TencentCloud
                      */
                     bool m_isMultiZoneCluster;
                     bool m_isMultiZoneClusterHasBeenSet;
+
+                    /**
+                     * 是否开通异常节点自动补偿
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isCvmReplace;
+                    bool m_isCvmReplaceHasBeenSet;
 
                 };
             }

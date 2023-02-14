@@ -24,12 +24,12 @@ using namespace std;
 
 CheckNetDetectStateRequest::CheckNetDetectStateRequest() :
     m_detectDestinationIpHasBeenSet(false),
-    m_nextHopTypeHasBeenSet(false),
-    m_nextHopDestinationHasBeenSet(false),
     m_netDetectIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
-    m_netDetectNameHasBeenSet(false)
+    m_netDetectNameHasBeenSet(false),
+    m_nextHopTypeHasBeenSet(false),
+    m_nextHopDestinationHasBeenSet(false)
 {
 }
 
@@ -51,22 +51,6 @@ string CheckNetDetectStateRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_nextHopTypeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NextHopType";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_nextHopType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_nextHopDestinationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "NextHopDestination";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_nextHopDestination.c_str(), allocator).Move(), allocator);
     }
 
     if (m_netDetectIdHasBeenSet)
@@ -101,6 +85,22 @@ string CheckNetDetectStateRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_netDetectName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nextHopTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextHopType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nextHopType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nextHopDestinationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NextHopDestination";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nextHopDestination.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -123,38 +123,6 @@ void CheckNetDetectStateRequest::SetDetectDestinationIp(const vector<string>& _d
 bool CheckNetDetectStateRequest::DetectDestinationIpHasBeenSet() const
 {
     return m_detectDestinationIpHasBeenSet;
-}
-
-string CheckNetDetectStateRequest::GetNextHopType() const
-{
-    return m_nextHopType;
-}
-
-void CheckNetDetectStateRequest::SetNextHopType(const string& _nextHopType)
-{
-    m_nextHopType = _nextHopType;
-    m_nextHopTypeHasBeenSet = true;
-}
-
-bool CheckNetDetectStateRequest::NextHopTypeHasBeenSet() const
-{
-    return m_nextHopTypeHasBeenSet;
-}
-
-string CheckNetDetectStateRequest::GetNextHopDestination() const
-{
-    return m_nextHopDestination;
-}
-
-void CheckNetDetectStateRequest::SetNextHopDestination(const string& _nextHopDestination)
-{
-    m_nextHopDestination = _nextHopDestination;
-    m_nextHopDestinationHasBeenSet = true;
-}
-
-bool CheckNetDetectStateRequest::NextHopDestinationHasBeenSet() const
-{
-    return m_nextHopDestinationHasBeenSet;
 }
 
 string CheckNetDetectStateRequest::GetNetDetectId() const
@@ -219,6 +187,38 @@ void CheckNetDetectStateRequest::SetNetDetectName(const string& _netDetectName)
 bool CheckNetDetectStateRequest::NetDetectNameHasBeenSet() const
 {
     return m_netDetectNameHasBeenSet;
+}
+
+string CheckNetDetectStateRequest::GetNextHopType() const
+{
+    return m_nextHopType;
+}
+
+void CheckNetDetectStateRequest::SetNextHopType(const string& _nextHopType)
+{
+    m_nextHopType = _nextHopType;
+    m_nextHopTypeHasBeenSet = true;
+}
+
+bool CheckNetDetectStateRequest::NextHopTypeHasBeenSet() const
+{
+    return m_nextHopTypeHasBeenSet;
+}
+
+string CheckNetDetectStateRequest::GetNextHopDestination() const
+{
+    return m_nextHopDestination;
+}
+
+void CheckNetDetectStateRequest::SetNextHopDestination(const string& _nextHopDestination)
+{
+    m_nextHopDestination = _nextHopDestination;
+    m_nextHopDestinationHasBeenSet = true;
+}
+
+bool CheckNetDetectStateRequest::NextHopDestinationHasBeenSet() const
+{
+    return m_nextHopDestinationHasBeenSet;
 }
 
 

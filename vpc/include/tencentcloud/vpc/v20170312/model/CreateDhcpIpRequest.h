@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool DhcpIpNameHasBeenSet() const;
 
                     /**
-                     * 获取新申请的内网IP地址个数。总数不能超过64个。
-                     * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数。总数不能超过64个。
+                     * 获取新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
+                     * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
-                     * 设置新申请的内网IP地址个数。总数不能超过64个。
-                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数。总数不能超过64个。
+                     * 设置新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
+                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_dhcpIpNameHasBeenSet;
 
                     /**
-                     * 新申请的内网IP地址个数。总数不能超过64个。
+                     * 新申请的内网IP地址个数。总数不能超过64个，为了兼容性，当前参数必填。
                      */
                     uint64_t m_secondaryPrivateIpAddressCount;
                     bool m_secondaryPrivateIpAddressCountHasBeenSet;

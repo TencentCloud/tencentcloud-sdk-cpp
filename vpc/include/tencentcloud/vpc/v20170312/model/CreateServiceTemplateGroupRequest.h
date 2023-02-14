@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取协议端口模板集合名称
-                     * @return ServiceTemplateGroupName 协议端口模板集合名称
+                     * 获取协议端口模板集合名称。
+                     * @return ServiceTemplateGroupName 协议端口模板集合名称。
                      */
                     std::string GetServiceTemplateGroupName() const;
 
                     /**
-                     * 设置协议端口模板集合名称
-                     * @param ServiceTemplateGroupName 协议端口模板集合名称
+                     * 设置协议端口模板集合名称。
+                     * @param ServiceTemplateGroupName 协议端口模板集合名称。
                      */
                     void SetServiceTemplateGroupName(const std::string& _serviceTemplateGroupName);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 协议端口模板集合名称
+                     * 协议端口模板集合名称。
                      */
                     std::string m_serviceTemplateGroupName;
                     bool m_serviceTemplateGroupNameHasBeenSet;

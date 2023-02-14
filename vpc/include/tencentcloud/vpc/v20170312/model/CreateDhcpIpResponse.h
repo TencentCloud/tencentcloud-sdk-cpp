@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取新创建的`DhcpIp`信息
-                     * @return DhcpIpSet 新创建的`DhcpIp`信息
+                     * 获取新创建的`DhcpIp`信息。
+                     * @return DhcpIpSet 新创建的`DhcpIp`信息。
                      */
                     std::vector<DhcpIp> GetDhcpIpSet() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 新创建的`DhcpIp`信息
+                     * 新创建的`DhcpIp`信息。
                      */
                     std::vector<DhcpIp> m_dhcpIpSet;
                     bool m_dhcpIpSetHasBeenSet;

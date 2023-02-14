@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`
-                     * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`
-                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool SubnetsHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @return Tags 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 获取指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 设置指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param Tags 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
@@ -119,7 +119,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -131,7 +131,7 @@ namespace TencentCloud
                     bool m_subnetsHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 指定绑定的标签列表，注意这里的标签集合为列表中所有子网对象所共享，不能为每个子网对象单独指定标签，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

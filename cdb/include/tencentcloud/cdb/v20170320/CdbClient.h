@@ -93,6 +93,8 @@
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDatabasesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupDownloadRestrictionResponse.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupEncryptionStatusRequest.h>
+#include <tencentcloud/cdb/v20170320/model/DescribeBackupEncryptionStatusResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupOverviewRequest.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupOverviewResponse.h>
 #include <tencentcloud/cdb/v20170320/model/DescribeBackupSummariesRequest.h>
@@ -215,6 +217,8 @@
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupConfigResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyBackupDownloadRestrictionResponse.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyBackupEncryptionStatusRequest.h>
+#include <tencentcloud/cdb/v20170320/model/ModifyBackupEncryptionStatusResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolRequest.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyConnectionPoolResponse.h>
 #include <tencentcloud/cdb/v20170320/model/ModifyCDBProxyDescRequest.h>
@@ -414,6 +418,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupDownloadRestrictionResponse> DescribeBackupDownloadRestrictionOutcome;
                 typedef std::future<DescribeBackupDownloadRestrictionOutcome> DescribeBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupDownloadRestrictionRequest&, DescribeBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupDownloadRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupEncryptionStatusResponse> DescribeBackupEncryptionStatusOutcome;
+                typedef std::future<DescribeBackupEncryptionStatusOutcome> DescribeBackupEncryptionStatusOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::DescribeBackupEncryptionStatusRequest&, DescribeBackupEncryptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupEncryptionStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupOverviewResponse> DescribeBackupOverviewOutcome;
                 typedef std::future<DescribeBackupOverviewOutcome> DescribeBackupOverviewOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::DescribeBackupOverviewRequest&, DescribeBackupOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupOverviewAsyncHandler;
@@ -597,6 +604,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupDownloadRestrictionResponse> ModifyBackupDownloadRestrictionOutcome;
                 typedef std::future<ModifyBackupDownloadRestrictionOutcome> ModifyBackupDownloadRestrictionOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyBackupDownloadRestrictionRequest&, ModifyBackupDownloadRestrictionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupDownloadRestrictionAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyBackupEncryptionStatusResponse> ModifyBackupEncryptionStatusOutcome;
+                typedef std::future<ModifyBackupEncryptionStatusOutcome> ModifyBackupEncryptionStatusOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::ModifyBackupEncryptionStatusRequest&, ModifyBackupEncryptionStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupEncryptionStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCDBProxyConnectionPoolResponse> ModifyCDBProxyConnectionPoolOutcome;
                 typedef std::future<ModifyCDBProxyConnectionPoolOutcome> ModifyCDBProxyConnectionPoolOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::ModifyCDBProxyConnectionPoolRequest&, ModifyCDBProxyConnectionPoolOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCDBProxyConnectionPoolAsyncHandler;
@@ -1055,6 +1065,15 @@ namespace TencentCloud
                 DescribeBackupDownloadRestrictionOutcome DescribeBackupDownloadRestriction(const Model::DescribeBackupDownloadRestrictionRequest &request);
                 void DescribeBackupDownloadRestrictionAsync(const Model::DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupDownloadRestrictionOutcomeCallable DescribeBackupDownloadRestrictionCallable(const Model::DescribeBackupDownloadRestrictionRequest& request);
+
+                /**
+                 *本接口(DescribeBackupEncryptionStatus)用于查询实例默认备份加密状态。
+                 * @param req DescribeBackupEncryptionStatusRequest
+                 * @return DescribeBackupEncryptionStatusOutcome
+                 */
+                DescribeBackupEncryptionStatusOutcome DescribeBackupEncryptionStatus(const Model::DescribeBackupEncryptionStatusRequest &request);
+                void DescribeBackupEncryptionStatusAsync(const Model::DescribeBackupEncryptionStatusRequest& request, const DescribeBackupEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupEncryptionStatusOutcomeCallable DescribeBackupEncryptionStatusCallable(const Model::DescribeBackupEncryptionStatusRequest& request);
 
                 /**
                  *本接口(DescribeBackupOverview)用于查询用户的备份概览。返回用户当前备份总个数、备份总的占用容量、赠送的免费容量、计费容量（容量单位为字节）。
@@ -1615,6 +1634,15 @@ namespace TencentCloud
                 ModifyBackupDownloadRestrictionOutcomeCallable ModifyBackupDownloadRestrictionCallable(const Model::ModifyBackupDownloadRestrictionRequest& request);
 
                 /**
+                 *本接口(ModifyBackupEncryptionStatus)用于设置实例备份文件是否加密。 
+                 * @param req ModifyBackupEncryptionStatusRequest
+                 * @return ModifyBackupEncryptionStatusOutcome
+                 */
+                ModifyBackupEncryptionStatusOutcome ModifyBackupEncryptionStatus(const Model::ModifyBackupEncryptionStatusRequest &request);
+                void ModifyBackupEncryptionStatusAsync(const Model::ModifyBackupEncryptionStatusRequest& request, const ModifyBackupEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyBackupEncryptionStatusOutcomeCallable ModifyBackupEncryptionStatusCallable(const Model::ModifyBackupEncryptionStatusRequest& request);
+
+                /**
                  *请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。
                  * @param req ModifyCDBProxyConnectionPoolRequest
                  * @return ModifyCDBProxyConnectionPoolOutcome
@@ -1940,7 +1968,9 @@ namespace TencentCloud
                 SwitchForUpgradeOutcomeCallable SwitchForUpgradeCallable(const Model::SwitchForUpgradeRequest& request);
 
                 /**
-                 *调整数据库代理配置
+                 *接口已经废弃，请使用AdjustCdbProxy进行数据库代理的配置
+
+调整数据库代理配置
                  * @param req UpgradeCDBProxyRequest
                  * @return UpgradeCDBProxyOutcome
                  */

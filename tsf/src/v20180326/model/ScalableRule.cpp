@@ -27,7 +27,9 @@ ScalableRule::ScalableRule() :
     m_shrinkVmCountLimitHasBeenSet(false),
     m_groupCountHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_disableMetricASHasBeenSet(false),
+    m_enableCronASHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome ScalableRule::Deserialize(const rapidjson::Value &value)
         m_descriptionHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableMetricAS") && !value["DisableMetricAS"].IsNull())
+    {
+        if (!value["DisableMetricAS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.DisableMetricAS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableMetricAS = value["DisableMetricAS"].GetUint64();
+        m_disableMetricASHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableCronAS") && !value["EnableCronAS"].IsNull())
+    {
+        if (!value["EnableCronAS"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalableRule.EnableCronAS` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableCronAS = value["EnableCronAS"].GetUint64();
+        m_enableCronASHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void ScalableRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disableMetricASHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableMetricAS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableMetricAS, allocator);
+    }
+
+    if (m_enableCronASHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCronAS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableCronAS, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void ScalableRule::SetDescription(const string& _description)
 bool ScalableRule::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+uint64_t ScalableRule::GetDisableMetricAS() const
+{
+    return m_disableMetricAS;
+}
+
+void ScalableRule::SetDisableMetricAS(const uint64_t& _disableMetricAS)
+{
+    m_disableMetricAS = _disableMetricAS;
+    m_disableMetricASHasBeenSet = true;
+}
+
+bool ScalableRule::DisableMetricASHasBeenSet() const
+{
+    return m_disableMetricASHasBeenSet;
+}
+
+uint64_t ScalableRule::GetEnableCronAS() const
+{
+    return m_enableCronAS;
+}
+
+void ScalableRule::SetEnableCronAS(const uint64_t& _enableCronAS)
+{
+    m_enableCronAS = _enableCronAS;
+    m_enableCronASHasBeenSet = true;
+}
+
+bool ScalableRule::EnableCronASHasBeenSet() const
+{
+    return m_enableCronASHasBeenSet;
 }
 

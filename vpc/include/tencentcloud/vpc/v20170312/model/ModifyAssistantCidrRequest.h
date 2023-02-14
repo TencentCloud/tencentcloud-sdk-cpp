@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`
-                     * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`
-                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;

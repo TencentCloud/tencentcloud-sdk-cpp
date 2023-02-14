@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取`IPv6`网段。形如：`3402:4e00:20:1000::/56`
-                     * @return Ipv6CidrBlock `IPv6`网段。形如：`3402:4e00:20:1000::/56`
+                     * 获取`IPv6`网段。形如：`3402:4e00:20:1000::/56`。
+                     * @return Ipv6CidrBlock `IPv6`网段。形如：`3402:4e00:20:1000::/56`。
                      */
                     std::string GetIpv6CidrBlock() const;
 
                     /**
-                     * 设置`IPv6`网段。形如：`3402:4e00:20:1000::/56`
-                     * @param Ipv6CidrBlock `IPv6`网段。形如：`3402:4e00:20:1000::/56`
+                     * 设置`IPv6`网段。形如：`3402:4e00:20:1000::/56`。
+                     * @param Ipv6CidrBlock `IPv6`网段。形如：`3402:4e00:20:1000::/56`。
                      */
                     void SetIpv6CidrBlock(const std::string& _ipv6CidrBlock);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * `IPv6`网段。形如：`3402:4e00:20:1000::/56`
+                     * `IPv6`网段。形如：`3402:4e00:20:1000::/56`。
                      */
                     std::string m_ipv6CidrBlock;
                     bool m_ipv6CidrBlockHasBeenSet;

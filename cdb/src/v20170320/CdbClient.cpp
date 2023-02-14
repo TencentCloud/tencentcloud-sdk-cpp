@@ -1545,6 +1545,49 @@ CdbClient::DescribeBackupDownloadRestrictionOutcomeCallable CdbClient::DescribeB
     return task->get_future();
 }
 
+CdbClient::DescribeBackupEncryptionStatusOutcome CdbClient::DescribeBackupEncryptionStatus(const DescribeBackupEncryptionStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupEncryptionStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupEncryptionStatusResponse rsp = DescribeBackupEncryptionStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupEncryptionStatusOutcome(rsp);
+        else
+            return DescribeBackupEncryptionStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupEncryptionStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::DescribeBackupEncryptionStatusAsync(const DescribeBackupEncryptionStatusRequest& request, const DescribeBackupEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupEncryptionStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::DescribeBackupEncryptionStatusOutcomeCallable CdbClient::DescribeBackupEncryptionStatusCallable(const DescribeBackupEncryptionStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupEncryptionStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupEncryptionStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::DescribeBackupOverviewOutcome CdbClient::DescribeBackupOverview(const DescribeBackupOverviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupOverview");
@@ -4161,6 +4204,49 @@ CdbClient::ModifyBackupDownloadRestrictionOutcomeCallable CdbClient::ModifyBacku
         [this, request]()
         {
             return this->ModifyBackupDownloadRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CdbClient::ModifyBackupEncryptionStatusOutcome CdbClient::ModifyBackupEncryptionStatus(const ModifyBackupEncryptionStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupEncryptionStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupEncryptionStatusResponse rsp = ModifyBackupEncryptionStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupEncryptionStatusOutcome(rsp);
+        else
+            return ModifyBackupEncryptionStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupEncryptionStatusOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::ModifyBackupEncryptionStatusAsync(const ModifyBackupEncryptionStatusRequest& request, const ModifyBackupEncryptionStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupEncryptionStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::ModifyBackupEncryptionStatusOutcomeCallable CdbClient::ModifyBackupEncryptionStatusCallable(const ModifyBackupEncryptionStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupEncryptionStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupEncryptionStatus(request);
         }
     );
 

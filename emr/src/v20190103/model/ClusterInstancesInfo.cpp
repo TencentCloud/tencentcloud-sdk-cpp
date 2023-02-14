@@ -61,7 +61,8 @@ ClusterInstancesInfo::ClusterInstancesInfo() :
     m_uniqVpcIdHasBeenSet(false),
     m_uniqSubnetIdHasBeenSet(false),
     m_topologyInfoListHasBeenSet(false),
-    m_isMultiZoneClusterHasBeenSet(false)
+    m_isMultiZoneClusterHasBeenSet(false),
+    m_isCvmReplaceHasBeenSet(false)
 {
 }
 
@@ -517,6 +518,16 @@ CoreInternalOutcome ClusterInstancesInfo::Deserialize(const rapidjson::Value &va
         m_isMultiZoneClusterHasBeenSet = true;
     }
 
+    if (value.HasMember("IsCvmReplace") && !value["IsCvmReplace"].IsNull())
+    {
+        if (!value["IsCvmReplace"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInstancesInfo.IsCvmReplace` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isCvmReplace = value["IsCvmReplace"].GetBool();
+        m_isCvmReplaceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -872,6 +883,14 @@ void ClusterInstancesInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "IsMultiZoneCluster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isMultiZoneCluster, allocator);
+    }
+
+    if (m_isCvmReplaceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsCvmReplace";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isCvmReplace, allocator);
     }
 
 }
@@ -1531,5 +1550,21 @@ void ClusterInstancesInfo::SetIsMultiZoneCluster(const bool& _isMultiZoneCluster
 bool ClusterInstancesInfo::IsMultiZoneClusterHasBeenSet() const
 {
     return m_isMultiZoneClusterHasBeenSet;
+}
+
+bool ClusterInstancesInfo::GetIsCvmReplace() const
+{
+    return m_isCvmReplace;
+}
+
+void ClusterInstancesInfo::SetIsCvmReplace(const bool& _isCvmReplace)
+{
+    m_isCvmReplace = _isCvmReplace;
+    m_isCvmReplaceHasBeenSet = true;
+}
+
+bool ClusterInstancesInfo::IsCvmReplaceHasBeenSet() const
+{
+    return m_isCvmReplaceHasBeenSet;
 }
 

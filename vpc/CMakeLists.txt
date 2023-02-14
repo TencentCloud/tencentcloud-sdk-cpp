@@ -181,6 +181,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/ModifySubnetAttributeResponse.h
   include/tencentcloud/vpc/v20170312/model/ResetNatGatewayConnectionRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyCcnAttachedInstancesAttributeRequest.h
+  include/tencentcloud/vpc/v20170312/model/DescribeNetworkAccountTypeRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteAddressTemplateRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateNatGatewaySourceIpTranslationNatRuleRequest.h
   include/tencentcloud/vpc/v20170312/model/NetworkInterface.h
@@ -378,6 +379,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DeleteNatGatewaySourceIpTranslationNatRuleResponse.h
   include/tencentcloud/vpc/v20170312/model/CcnAttachedInstance.h
   include/tencentcloud/vpc/v20170312/model/SecurityPolicyDatabase.h
+  include/tencentcloud/vpc/v20170312/model/DescribeNetworkAccountTypeResponse.h
   include/tencentcloud/vpc/v20170312/model/ResetVpnConnectionResponse.h
   include/tencentcloud/vpc/v20170312/model/CreateVpcEndPointServiceRequest.h
   include/tencentcloud/vpc/v20170312/model/Ipv6Address.h
@@ -905,6 +907,7 @@ set(vpc_src
   src/v20170312/model/ModifySubnetAttributeResponse.cpp
   src/v20170312/model/ResetNatGatewayConnectionRequest.cpp
   src/v20170312/model/ModifyCcnAttachedInstancesAttributeRequest.cpp
+  src/v20170312/model/DescribeNetworkAccountTypeRequest.cpp
   src/v20170312/model/DeleteAddressTemplateRequest.cpp
   src/v20170312/model/CreateNatGatewaySourceIpTranslationNatRuleRequest.cpp
   src/v20170312/model/NetworkInterface.cpp
@@ -1102,6 +1105,7 @@ set(vpc_src
   src/v20170312/model/DeleteNatGatewaySourceIpTranslationNatRuleResponse.cpp
   src/v20170312/model/CcnAttachedInstance.cpp
   src/v20170312/model/SecurityPolicyDatabase.cpp
+  src/v20170312/model/DescribeNetworkAccountTypeResponse.cpp
   src/v20170312/model/ResetVpnConnectionResponse.cpp
   src/v20170312/model/CreateVpcEndPointServiceRequest.cpp
   src/v20170312/model/Ipv6Address.cpp

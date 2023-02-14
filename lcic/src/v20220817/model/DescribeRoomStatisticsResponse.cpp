@@ -27,7 +27,9 @@ DescribeRoomStatisticsResponse::DescribeRoomStatisticsResponse() :
     m_peakMemberNumberHasBeenSet(false),
     m_memberNumberHasBeenSet(false),
     m_totalHasBeenSet(false),
-    m_memberRecordsHasBeenSet(false)
+    m_memberRecordsHasBeenSet(false),
+    m_realStartTimeHasBeenSet(false),
+    m_realEndTimeHasBeenSet(false)
 {
 }
 
@@ -115,6 +117,26 @@ CoreInternalOutcome DescribeRoomStatisticsResponse::Deserialize(const string &pa
         m_memberRecordsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RealStartTime") && !rsp["RealStartTime"].IsNull())
+    {
+        if (!rsp["RealStartTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RealStartTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_realStartTime = rsp["RealStartTime"].GetUint64();
+        m_realStartTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RealEndTime") && !rsp["RealEndTime"].IsNull())
+    {
+        if (!rsp["RealEndTime"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RealEndTime` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_realEndTime = rsp["RealEndTime"].GetUint64();
+        m_realEndTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +184,22 @@ string DescribeRoomStatisticsResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_realStartTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealStartTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realStartTime, allocator);
+    }
+
+    if (m_realEndTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RealEndTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_realEndTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +252,26 @@ vector<MemberRecord> DescribeRoomStatisticsResponse::GetMemberRecords() const
 bool DescribeRoomStatisticsResponse::MemberRecordsHasBeenSet() const
 {
     return m_memberRecordsHasBeenSet;
+}
+
+uint64_t DescribeRoomStatisticsResponse::GetRealStartTime() const
+{
+    return m_realStartTime;
+}
+
+bool DescribeRoomStatisticsResponse::RealStartTimeHasBeenSet() const
+{
+    return m_realStartTimeHasBeenSet;
+}
+
+uint64_t DescribeRoomStatisticsResponse::GetRealEndTime() const
+{
+    return m_realEndTime;
+}
+
+bool DescribeRoomStatisticsResponse::RealEndTimeHasBeenSet() const
+{
+    return m_realEndTimeHasBeenSet;
 }
 
 

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本地网关信息集合
-                     * @return LocalGatewaySet 本地网关信息集合
+                     * 获取本地网关信息集合。
+                     * @return LocalGatewaySet 本地网关信息集合。
                      */
                     std::vector<LocalGateway> GetLocalGatewaySet() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool LocalGatewaySetHasBeenSet() const;
 
                     /**
-                     * 获取本地网关总数
-                     * @return TotalCount 本地网关总数
+                     * 获取本地网关总数。
+                     * @return TotalCount 本地网关总数。
                      */
                     int64_t GetTotalCount() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本地网关信息集合
+                     * 本地网关信息集合。
                      */
                     std::vector<LocalGateway> m_localGatewaySet;
                     bool m_localGatewaySetHasBeenSet;
 
                     /**
-                     * 本地网关总数
+                     * 本地网关总数。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;

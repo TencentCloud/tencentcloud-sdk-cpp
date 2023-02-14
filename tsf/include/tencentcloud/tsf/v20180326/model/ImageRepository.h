@@ -400,6 +400,28 @@ namespace TencentCloud
                      */
                     bool ApplicationNameRealHasBeenSet() const;
 
+                    /**
+                     * 获取是否公共,1:公有,0:私有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Public 是否公共,1:公有,0:私有
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPublic() const;
+
+                    /**
+                     * 设置是否公共,1:公有,0:私有
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Public 是否公共,1:公有,0:私有
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPublic(const int64_t& _public);
+
+                    /**
+                     * 判断参数 Public 是否已赋值
+                     * @return Public 是否已赋值
+                     */
+                    bool PublicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +535,13 @@ namespace TencentCloud
                      */
                     std::string m_applicationNameReal;
                     bool m_applicationNameRealHasBeenSet;
+
+                    /**
+                     * 是否公共,1:公有,0:私有
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_public;
+                    bool m_publicHasBeenSet;
 
                 };
             }

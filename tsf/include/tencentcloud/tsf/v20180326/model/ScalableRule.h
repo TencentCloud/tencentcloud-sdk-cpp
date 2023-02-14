@@ -200,6 +200,50 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisableMetricAS 是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDisableMetricAS() const;
+
+                    /**
+                     * 设置是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisableMetricAS 是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisableMetricAS(const uint64_t& _disableMetricAS);
+
+                    /**
+                     * 判断参数 DisableMetricAS 是否已赋值
+                     * @return DisableMetricAS 是否已赋值
+                     */
+                    bool DisableMetricASHasBeenSet() const;
+
+                    /**
+                     * 获取开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableCronAS 开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEnableCronAS() const;
+
+                    /**
+                     * 设置开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableCronAS 开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableCronAS(const uint64_t& _enableCronAS);
+
+                    /**
+                     * 判断参数 EnableCronAS 是否已赋值
+                     * @return EnableCronAS 是否已赋值
+                     */
+                    bool EnableCronASHasBeenSet() const;
+
                 private:
 
                     /**
@@ -250,6 +294,20 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * 是否关闭指标伸缩, 默认0, 0:打开指标伸缩 1:关闭指标伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_disableMetricAS;
+                    bool m_disableMetricASHasBeenSet;
+
+                    /**
+                     * 开启定时伸缩规则, 默认0, 0:关闭定时伸缩 1:开启定时伸缩
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_enableCronAS;
+                    bool m_enableCronASHasBeenSet;
 
                 };
             }

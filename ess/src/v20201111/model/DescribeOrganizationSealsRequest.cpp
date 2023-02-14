@@ -28,7 +28,8 @@ DescribeOrganizationSealsRequest::DescribeOrganizationSealsRequest() :
     m_offsetHasBeenSet(false),
     m_infoTypeHasBeenSet(false),
     m_sealIdHasBeenSet(false),
-    m_sealTypesHasBeenSet(false)
+    m_sealTypesHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -91,6 +92,15 @@ string DescribeOrganizationSealsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -195,6 +205,22 @@ void DescribeOrganizationSealsRequest::SetSealTypes(const vector<string>& _sealT
 bool DescribeOrganizationSealsRequest::SealTypesHasBeenSet() const
 {
     return m_sealTypesHasBeenSet;
+}
+
+Agent DescribeOrganizationSealsRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void DescribeOrganizationSealsRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool DescribeOrganizationSealsRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

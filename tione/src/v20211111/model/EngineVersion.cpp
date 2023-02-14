@@ -22,7 +22,8 @@ using namespace std;
 
 EngineVersion::EngineVersion() :
     m_versionHasBeenSet(false),
-    m_imageHasBeenSet(false)
+    m_imageHasBeenSet(false),
+    m_isSupportIntEightQuantizationHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome EngineVersion::Deserialize(const rapidjson::Value &value)
         m_imageHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportIntEightQuantization") && !value["IsSupportIntEightQuantization"].IsNull())
+    {
+        if (!value["IsSupportIntEightQuantization"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineVersion.IsSupportIntEightQuantization` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportIntEightQuantization = value["IsSupportIntEightQuantization"].GetBool();
+        m_isSupportIntEightQuantizationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void EngineVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Image";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_image.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isSupportIntEightQuantizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportIntEightQuantization";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportIntEightQuantization, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void EngineVersion::SetImage(const string& _image)
 bool EngineVersion::ImageHasBeenSet() const
 {
     return m_imageHasBeenSet;
+}
+
+bool EngineVersion::GetIsSupportIntEightQuantization() const
+{
+    return m_isSupportIntEightQuantization;
+}
+
+void EngineVersion::SetIsSupportIntEightQuantization(const bool& _isSupportIntEightQuantization)
+{
+    m_isSupportIntEightQuantization = _isSupportIntEightQuantization;
+    m_isSupportIntEightQuantizationHasBeenSet = true;
+}
+
+bool EngineVersion::IsSupportIntEightQuantizationHasBeenSet() const
+{
+    return m_isSupportIntEightQuantizationHasBeenSet;
 }
 

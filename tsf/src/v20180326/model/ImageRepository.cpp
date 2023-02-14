@@ -36,7 +36,8 @@ ImageRepository::ImageRepository() :
     m_tcrBindingIdHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
-    m_applicationNameRealHasBeenSet(false)
+    m_applicationNameRealHasBeenSet(false),
+    m_publicHasBeenSet(false)
 {
 }
 
@@ -219,6 +220,16 @@ CoreInternalOutcome ImageRepository::Deserialize(const rapidjson::Value &value)
         m_applicationNameRealHasBeenSet = true;
     }
 
+    if (value.HasMember("Public") && !value["Public"].IsNull())
+    {
+        if (!value["Public"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageRepository.Public` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_public = value["Public"].GetInt64();
+        m_publicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -354,6 +365,14 @@ void ImageRepository::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ApplicationNameReal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applicationNameReal.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_publicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Public";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_public, allocator);
     }
 
 }
@@ -613,5 +632,21 @@ void ImageRepository::SetApplicationNameReal(const string& _applicationNameReal)
 bool ImageRepository::ApplicationNameRealHasBeenSet() const
 {
     return m_applicationNameRealHasBeenSet;
+}
+
+int64_t ImageRepository::GetPublic() const
+{
+    return m_public;
+}
+
+void ImageRepository::SetPublic(const int64_t& _public)
+{
+    m_public = _public;
+    m_publicHasBeenSet = true;
+}
+
+bool ImageRepository::PublicHasBeenSet() const
+{
+    return m_publicHasBeenSet;
 }
 

@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool ImageHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持int8量化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportIntEightQuantization 是否支持int8量化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsSupportIntEightQuantization() const;
+
+                    /**
+                     * 设置是否支持int8量化
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSupportIntEightQuantization 是否支持int8量化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSupportIntEightQuantization(const bool& _isSupportIntEightQuantization);
+
+                    /**
+                     * 判断参数 IsSupportIntEightQuantization 是否已赋值
+                     * @return IsSupportIntEightQuantization 是否已赋值
+                     */
+                    bool IsSupportIntEightQuantizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     std::string m_image;
                     bool m_imageHasBeenSet;
+
+                    /**
+                     * 是否支持int8量化
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSupportIntEightQuantization;
+                    bool m_isSupportIntEightQuantizationHasBeenSet;
 
                 };
             }

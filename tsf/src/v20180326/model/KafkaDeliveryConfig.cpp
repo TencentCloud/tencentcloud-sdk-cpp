@@ -33,7 +33,8 @@ KafkaDeliveryConfig::KafkaDeliveryConfig() :
     m_passwordHasBeenSet(false),
     m_kafkaInfosHasBeenSet(false),
     m_enableGlobalLineRuleHasBeenSet(false),
-    m_customRuleHasBeenSet(false)
+    m_customRuleHasBeenSet(false),
+    m_kafkaAddressHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,16 @@ CoreInternalOutcome KafkaDeliveryConfig::Deserialize(const rapidjson::Value &val
         m_customRuleHasBeenSet = true;
     }
 
+    if (value.HasMember("KafkaAddress") && !value["KafkaAddress"].IsNull())
+    {
+        if (!value["KafkaAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaDeliveryConfig.KafkaAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kafkaAddress = string(value["KafkaAddress"].GetString());
+        m_kafkaAddressHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +317,14 @@ void KafkaDeliveryConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CustomRule";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_customRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kafkaAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kafkaAddress.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -517,5 +536,21 @@ void KafkaDeliveryConfig::SetCustomRule(const string& _customRule)
 bool KafkaDeliveryConfig::CustomRuleHasBeenSet() const
 {
     return m_customRuleHasBeenSet;
+}
+
+string KafkaDeliveryConfig::GetKafkaAddress() const
+{
+    return m_kafkaAddress;
+}
+
+void KafkaDeliveryConfig::SetKafkaAddress(const string& _kafkaAddress)
+{
+    m_kafkaAddress = _kafkaAddress;
+    m_kafkaAddressHasBeenSet = true;
+}
+
+bool KafkaDeliveryConfig::KafkaAddressHasBeenSet() const
+{
+    return m_kafkaAddressHasBeenSet;
 }
 

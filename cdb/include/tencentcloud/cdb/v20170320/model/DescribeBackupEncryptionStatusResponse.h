@@ -14,55 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEACCOUNTATTRIBUTESRESPONSE_H_
-#define TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEACCOUNTATTRIBUTESRESPONSE_H_
+#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEBACKUPENCRYPTIONSTATUSRESPONSE_H_
+#define TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEBACKUPENCRYPTIONSTATUSRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/vpc/v20170312/model/AccountAttribute.h>
 
 
 namespace TencentCloud
 {
-    namespace Vpc
+    namespace Cdb
     {
-        namespace V20170312
+        namespace V20170320
         {
             namespace Model
             {
                 /**
-                * DescribeAccountAttributes返回参数结构体
+                * DescribeBackupEncryptionStatus返回参数结构体
                 */
-                class DescribeAccountAttributesResponse : public AbstractModel
+                class DescribeBackupEncryptionStatusResponse : public AbstractModel
                 {
                 public:
-                    DescribeAccountAttributesResponse();
-                    ~DescribeAccountAttributesResponse() = default;
+                    DescribeBackupEncryptionStatusResponse();
+                    ~DescribeBackupEncryptionStatusResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取用户账号属性对象。
-                     * @return AccountAttributeSet 用户账号属性对象。
+                     * 获取实例是否开启了物理备份加密。可能的值有 on, off 。
+                     * @return EncryptionStatus 实例是否开启了物理备份加密。可能的值有 on, off 。
                      */
-                    std::vector<AccountAttribute> GetAccountAttributeSet() const;
+                    std::string GetEncryptionStatus() const;
 
                     /**
-                     * 判断参数 AccountAttributeSet 是否已赋值
-                     * @return AccountAttributeSet 是否已赋值
+                     * 判断参数 EncryptionStatus 是否已赋值
+                     * @return EncryptionStatus 是否已赋值
                      */
-                    bool AccountAttributeSetHasBeenSet() const;
+                    bool EncryptionStatusHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 用户账号属性对象。
+                     * 实例是否开启了物理备份加密。可能的值有 on, off 。
                      */
-                    std::vector<AccountAttribute> m_accountAttributeSet;
-                    bool m_accountAttributeSetHasBeenSet;
+                    std::string m_encryptionStatus;
+                    bool m_encryptionStatusHasBeenSet;
 
                 };
             }
@@ -70,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_VPC_V20170312_MODEL_DESCRIBEACCOUNTATTRIBUTESRESPONSE_H_
+#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_DESCRIBEBACKUPENCRYPTIONSTATUSRESPONSE_H_

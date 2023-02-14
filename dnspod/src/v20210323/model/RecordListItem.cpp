@@ -33,7 +33,8 @@ RecordListItem::RecordListItem() :
     m_monitorStatusHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_tTLHasBeenSet(false),
-    m_mXHasBeenSet(false)
+    m_mXHasBeenSet(false),
+    m_defaultNSHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome RecordListItem::Deserialize(const rapidjson::Value &value)
         m_mXHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultNS") && !value["DefaultNS"].IsNull())
+    {
+        if (!value["DefaultNS"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordListItem.DefaultNS` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultNS = value["DefaultNS"].GetBool();
+        m_defaultNSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void RecordListItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "MX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mX, allocator);
+    }
+
+    if (m_defaultNSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultNS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_defaultNS, allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void RecordListItem::SetMX(const uint64_t& _mX)
 bool RecordListItem::MXHasBeenSet() const
 {
     return m_mXHasBeenSet;
+}
+
+bool RecordListItem::GetDefaultNS() const
+{
+    return m_defaultNS;
+}
+
+void RecordListItem::SetDefaultNS(const bool& _defaultNS)
+{
+    m_defaultNS = _defaultNS;
+    m_defaultNSHasBeenSet = true;
+}
+
+bool RecordListItem::DefaultNSHasBeenSet() const
+{
+    return m_defaultNSHasBeenSet;
 }
 

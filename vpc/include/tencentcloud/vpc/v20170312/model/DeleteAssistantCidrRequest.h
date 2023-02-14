@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`
-                     * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * 获取`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @return VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`
-                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * 设置`VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
+                     * @param VpcId `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]
-                     * @return CidrBlocks CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]
+                     * 获取CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
+                     * @return CidrBlocks CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
                      */
                     std::vector<std::string> GetCidrBlocks() const;
 
                     /**
-                     * 设置CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]
-                     * @param CidrBlocks CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]
+                     * 设置CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
+                     * @param CidrBlocks CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
                      */
                     void SetCidrBlocks(const std::vector<std::string>& _cidrBlocks);
 
@@ -81,13 +81,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * `VPC`实例`ID`。形如：`vpc-6v2ht8q5`
+                     * `VPC`实例`ID`。形如：`vpc-6v2ht8q5`。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]
+                     * CIDR数组，格式如["10.0.0.0/16", "172.16.0.0/16"]。
                      */
                     std::vector<std::string> m_cidrBlocks;
                     bool m_cidrBlocksHasBeenSet;

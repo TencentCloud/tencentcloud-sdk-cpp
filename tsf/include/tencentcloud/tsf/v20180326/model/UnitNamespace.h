@@ -104,6 +104,72 @@ namespace TencentCloud
                      */
                     bool IdHasBeenSet() const;
 
+                    /**
+                     * 获取网关实体ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewayInstanceId 网关实体ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewayInstanceId() const;
+
+                    /**
+                     * 设置网关实体ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GatewayInstanceId 网关实体ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGatewayInstanceId(const std::string& _gatewayInstanceId);
+
+                    /**
+                     * 判断参数 GatewayInstanceId 是否已赋值
+                     * @return GatewayInstanceId 是否已赋值
+                     */
+                    bool GatewayInstanceIdHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedTime 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdatedTime 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +190,27 @@ namespace TencentCloud
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
+
+                    /**
+                     * 网关实体ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewayInstanceId;
+                    bool m_gatewayInstanceIdHasBeenSet;
+
+                    /**
+                     * 创建时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 更新时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }

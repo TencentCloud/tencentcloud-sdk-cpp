@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取本地网关名称
-                     * @return LocalGatewayName 本地网关名称
+                     * 获取本地网关名称。
+                     * @return LocalGatewayName 本地网关名称。
                      */
                     std::string GetLocalGatewayName() const;
 
                     /**
-                     * 设置本地网关名称
-                     * @param LocalGatewayName 本地网关名称
+                     * 设置本地网关名称。
+                     * @param LocalGatewayName 本地网关名称。
                      */
                     void SetLocalGatewayName(const std::string& _localGatewayName);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool LocalGatewayNameHasBeenSet() const;
 
                     /**
-                     * 获取VPC实例ID
-                     * @return VpcId VPC实例ID
+                     * 获取VPC实例ID。
+                     * @return VpcId VPC实例ID。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置VPC实例ID
-                     * @param VpcId VPC实例ID
+                     * 设置VPC实例ID。
+                     * @param VpcId VPC实例ID。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取CDC实例ID
-                     * @return CdcId CDC实例ID
+                     * 获取CDC实例ID。
+                     * @return CdcId CDC实例ID。
                      */
                     std::string GetCdcId() const;
 
                     /**
-                     * 设置CDC实例ID
-                     * @param CdcId CDC实例ID
+                     * 设置CDC实例ID。
+                     * @param CdcId CDC实例ID。
                      */
                     void SetCdcId(const std::string& _cdcId);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 本地网关名称
+                     * 本地网关名称。
                      */
                     std::string m_localGatewayName;
                     bool m_localGatewayNameHasBeenSet;
 
                     /**
-                     * VPC实例ID
+                     * VPC实例ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * CDC实例ID
+                     * CDC实例ID。
                      */
                     std::string m_cdcId;
                     bool m_cdcIdHasBeenSet;

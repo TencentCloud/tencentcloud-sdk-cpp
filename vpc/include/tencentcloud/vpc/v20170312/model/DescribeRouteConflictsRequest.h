@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool RouteTableIdHasBeenSet() const;
 
                     /**
-                     * 获取要检查的与之冲突的目的端列表
-                     * @return DestinationCidrBlocks 要检查的与之冲突的目的端列表
+                     * 获取要检查的与之冲突的目的端列表。
+                     * @return DestinationCidrBlocks 要检查的与之冲突的目的端列表。
                      */
                     std::vector<std::string> GetDestinationCidrBlocks() const;
 
                     /**
-                     * 设置要检查的与之冲突的目的端列表
-                     * @param DestinationCidrBlocks 要检查的与之冲突的目的端列表
+                     * 设置要检查的与之冲突的目的端列表。
+                     * @param DestinationCidrBlocks 要检查的与之冲突的目的端列表。
                      */
                     void SetDestinationCidrBlocks(const std::vector<std::string>& _destinationCidrBlocks);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_routeTableIdHasBeenSet;
 
                     /**
-                     * 要检查的与之冲突的目的端列表
+                     * 要检查的与之冲突的目的端列表。
                      */
                     std::vector<std::string> m_destinationCidrBlocks;
                     bool m_destinationCidrBlocksHasBeenSet;

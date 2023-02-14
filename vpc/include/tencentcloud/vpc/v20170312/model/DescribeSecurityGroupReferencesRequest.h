@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取安全组实例ID数组。格式如：['sg-12345678']
-                     * @return SecurityGroupIds 安全组实例ID数组。格式如：['sg-12345678']
+                     * 获取安全组实例ID数组。格式如：['sg-12345678']。
+                     * @return SecurityGroupIds 安全组实例ID数组。格式如：['sg-12345678']。
                      */
                     std::vector<std::string> GetSecurityGroupIds() const;
 
                     /**
-                     * 设置安全组实例ID数组。格式如：['sg-12345678']
-                     * @param SecurityGroupIds 安全组实例ID数组。格式如：['sg-12345678']
+                     * 设置安全组实例ID数组。格式如：['sg-12345678']。
+                     * @param SecurityGroupIds 安全组实例ID数组。格式如：['sg-12345678']。
                      */
                     void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 安全组实例ID数组。格式如：['sg-12345678']
+                     * 安全组实例ID数组。格式如：['sg-12345678']。
                      */
                     std::vector<std::string> m_securityGroupIds;
                     bool m_securityGroupIdsHasBeenSet;

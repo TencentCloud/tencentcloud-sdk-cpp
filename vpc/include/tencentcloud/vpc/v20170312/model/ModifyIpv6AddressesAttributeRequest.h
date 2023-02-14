@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool NetworkInterfaceIdHasBeenSet() const;
 
                     /**
-                     * 获取指定的内网IPv6`地址信息。
-                     * @return Ipv6Addresses 指定的内网IPv6`地址信息。
+                     * 获取指定的内网IPv6地址信息。
+                     * @return Ipv6Addresses 指定的内网IPv6地址信息。
                      */
                     std::vector<Ipv6Address> GetIpv6Addresses() const;
 
                     /**
-                     * 设置指定的内网IPv6`地址信息。
-                     * @param Ipv6Addresses 指定的内网IPv6`地址信息。
+                     * 设置指定的内网IPv6地址信息。
+                     * @param Ipv6Addresses 指定的内网IPv6地址信息。
                      */
                     void SetIpv6Addresses(const std::vector<Ipv6Address>& _ipv6Addresses);
 
@@ -88,7 +88,7 @@ namespace TencentCloud
                     bool m_networkInterfaceIdHasBeenSet;
 
                     /**
-                     * 指定的内网IPv6`地址信息。
+                     * 指定的内网IPv6地址信息。
                      */
                     std::vector<Ipv6Address> m_ipv6Addresses;
                     bool m_ipv6AddressesHasBeenSet;
