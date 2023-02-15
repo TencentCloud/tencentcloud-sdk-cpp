@@ -22,6 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/SourceFieldInfo.h>
+#include <tencentcloud/wedata/v20210820/model/Partition.h>
+#include <tencentcloud/wedata/v20210820/model/Property.h>
 
 
 namespace TencentCloud
@@ -223,6 +225,186 @@ namespace TencentCloud
                      */
                     bool SourceFieldInfoListHasBeenSet() const;
 
+                    /**
+                     * 获取分区字段
+                     * @return Partitions 分区字段
+                     */
+                    std::vector<Partition> GetPartitions() const;
+
+                    /**
+                     * 设置分区字段
+                     * @param Partitions 分区字段
+                     */
+                    void SetPartitions(const std::vector<Partition>& _partitions);
+
+                    /**
+                     * 判断参数 Partitions 是否已赋值
+                     * @return Partitions 是否已赋值
+                     */
+                    bool PartitionsHasBeenSet() const;
+
+                    /**
+                     * 获取建表属性
+                     * @return Properties 建表属性
+                     */
+                    std::vector<Property> GetProperties() const;
+
+                    /**
+                     * 设置建表属性
+                     * @param Properties 建表属性
+                     */
+                    void SetProperties(const std::vector<Property>& _properties);
+
+                    /**
+                     * 判断参数 Properties 是否已赋值
+                     * @return Properties 是否已赋值
+                     */
+                    bool PropertiesHasBeenSet() const;
+
+                    /**
+                     * 获取建表模式，0:向导模式，1:ddl
+                     * @return TableMode 建表模式，0:向导模式，1:ddl
+                     */
+                    int64_t GetTableMode() const;
+
+                    /**
+                     * 设置建表模式，0:向导模式，1:ddl
+                     * @param TableMode 建表模式，0:向导模式，1:ddl
+                     */
+                    void SetTableMode(const int64_t& _tableMode);
+
+                    /**
+                     * 判断参数 TableMode 是否已赋值
+                     * @return TableMode 是否已赋值
+                     */
+                    bool TableModeHasBeenSet() const;
+
+                    /**
+                     * 获取DLC表版本，v1/v2
+                     * @return TableVersion DLC表版本，v1/v2
+                     */
+                    std::string GetTableVersion() const;
+
+                    /**
+                     * 设置DLC表版本，v1/v2
+                     * @param TableVersion DLC表版本，v1/v2
+                     */
+                    void SetTableVersion(const std::string& _tableVersion);
+
+                    /**
+                     * 判断参数 TableVersion 是否已赋值
+                     * @return TableVersion 是否已赋值
+                     */
+                    bool TableVersionHasBeenSet() const;
+
+                    /**
+                     * 获取是否upsert写入
+                     * @return UpsertFlag 是否upsert写入
+                     */
+                    bool GetUpsertFlag() const;
+
+                    /**
+                     * 设置是否upsert写入
+                     * @param UpsertFlag 是否upsert写入
+                     */
+                    void SetUpsertFlag(const bool& _upsertFlag);
+
+                    /**
+                     * 判断参数 UpsertFlag 是否已赋值
+                     * @return UpsertFlag 是否已赋值
+                     */
+                    bool UpsertFlagHasBeenSet() const;
+
+                    /**
+                     * 获取表描述信息
+                     * @return TableComment 表描述信息
+                     */
+                    std::string GetTableComment() const;
+
+                    /**
+                     * 设置表描述信息
+                     * @param TableComment 表描述信息
+                     */
+                    void SetTableComment(const std::string& _tableComment);
+
+                    /**
+                     * 判断参数 TableComment 是否已赋值
+                     * @return TableComment 是否已赋值
+                     */
+                    bool TableCommentHasBeenSet() const;
+
+                    /**
+                     * 获取增加的文件数量阈值, 超过值将触发小文件合并
+                     * @return AddDataFiles 增加的文件数量阈值, 超过值将触发小文件合并
+                     */
+                    int64_t GetAddDataFiles() const;
+
+                    /**
+                     * 设置增加的文件数量阈值, 超过值将触发小文件合并
+                     * @param AddDataFiles 增加的文件数量阈值, 超过值将触发小文件合并
+                     */
+                    void SetAddDataFiles(const int64_t& _addDataFiles);
+
+                    /**
+                     * 判断参数 AddDataFiles 是否已赋值
+                     * @return AddDataFiles 是否已赋值
+                     */
+                    bool AddDataFilesHasBeenSet() const;
+
+                    /**
+                     * 获取增加的Equality delete数量阈值, 超过值将触发小文件合并
+                     * @return AddEqualityDeletes 增加的Equality delete数量阈值, 超过值将触发小文件合并
+                     */
+                    int64_t GetAddEqualityDeletes() const;
+
+                    /**
+                     * 设置增加的Equality delete数量阈值, 超过值将触发小文件合并
+                     * @param AddEqualityDeletes 增加的Equality delete数量阈值, 超过值将触发小文件合并
+                     */
+                    void SetAddEqualityDeletes(const int64_t& _addEqualityDeletes);
+
+                    /**
+                     * 判断参数 AddEqualityDeletes 是否已赋值
+                     * @return AddEqualityDeletes 是否已赋值
+                     */
+                    bool AddEqualityDeletesHasBeenSet() const;
+
+                    /**
+                     * 获取增加的Position delete数量阈值, 超过值将触发小文件合并
+                     * @return AddPositionDeletes 增加的Position delete数量阈值, 超过值将触发小文件合并
+                     */
+                    int64_t GetAddPositionDeletes() const;
+
+                    /**
+                     * 设置增加的Position delete数量阈值, 超过值将触发小文件合并
+                     * @param AddPositionDeletes 增加的Position delete数量阈值, 超过值将触发小文件合并
+                     */
+                    void SetAddPositionDeletes(const int64_t& _addPositionDeletes);
+
+                    /**
+                     * 判断参数 AddPositionDeletes 是否已赋值
+                     * @return AddPositionDeletes 是否已赋值
+                     */
+                    bool AddPositionDeletesHasBeenSet() const;
+
+                    /**
+                     * 获取增加的delete file数量阈值
+                     * @return AddDeleteFiles 增加的delete file数量阈值
+                     */
+                    int64_t GetAddDeleteFiles() const;
+
+                    /**
+                     * 设置增加的delete file数量阈值
+                     * @param AddDeleteFiles 增加的delete file数量阈值
+                     */
+                    void SetAddDeleteFiles(const int64_t& _addDeleteFiles);
+
+                    /**
+                     * 判断参数 AddDeleteFiles 是否已赋值
+                     * @return AddDeleteFiles 是否已赋值
+                     */
+                    bool AddDeleteFilesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -284,6 +466,66 @@ namespace TencentCloud
                      */
                     std::vector<SourceFieldInfo> m_sourceFieldInfoList;
                     bool m_sourceFieldInfoListHasBeenSet;
+
+                    /**
+                     * 分区字段
+                     */
+                    std::vector<Partition> m_partitions;
+                    bool m_partitionsHasBeenSet;
+
+                    /**
+                     * 建表属性
+                     */
+                    std::vector<Property> m_properties;
+                    bool m_propertiesHasBeenSet;
+
+                    /**
+                     * 建表模式，0:向导模式，1:ddl
+                     */
+                    int64_t m_tableMode;
+                    bool m_tableModeHasBeenSet;
+
+                    /**
+                     * DLC表版本，v1/v2
+                     */
+                    std::string m_tableVersion;
+                    bool m_tableVersionHasBeenSet;
+
+                    /**
+                     * 是否upsert写入
+                     */
+                    bool m_upsertFlag;
+                    bool m_upsertFlagHasBeenSet;
+
+                    /**
+                     * 表描述信息
+                     */
+                    std::string m_tableComment;
+                    bool m_tableCommentHasBeenSet;
+
+                    /**
+                     * 增加的文件数量阈值, 超过值将触发小文件合并
+                     */
+                    int64_t m_addDataFiles;
+                    bool m_addDataFilesHasBeenSet;
+
+                    /**
+                     * 增加的Equality delete数量阈值, 超过值将触发小文件合并
+                     */
+                    int64_t m_addEqualityDeletes;
+                    bool m_addEqualityDeletesHasBeenSet;
+
+                    /**
+                     * 增加的Position delete数量阈值, 超过值将触发小文件合并
+                     */
+                    int64_t m_addPositionDeletes;
+                    bool m_addPositionDeletesHasBeenSet;
+
+                    /**
+                     * 增加的delete file数量阈值
+                     */
+                    int64_t m_addDeleteFiles;
+                    bool m_addDeleteFilesHasBeenSet;
 
                 };
             }

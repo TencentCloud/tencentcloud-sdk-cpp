@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tsf/v20180326/model/HealthCheckSettings.h>
 
 
 namespace TencentCloud
@@ -244,6 +245,28 @@ namespace TencentCloud
                      */
                     bool IsNotEqualServiceConfigHasBeenSet() const;
 
+                    /**
+                     * 获取HealthCheckSettings
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HealthCheckSettings HealthCheckSettings
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HealthCheckSettings GetHealthCheckSettings() const;
+
+                    /**
+                     * 设置HealthCheckSettings
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HealthCheckSettings HealthCheckSettings
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings);
+
+                    /**
+                     * 判断参数 HealthCheckSettings 是否已赋值
+                     * @return HealthCheckSettings 是否已赋值
+                     */
+                    bool HealthCheckSettingsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +331,13 @@ namespace TencentCloud
                      */
                     bool m_isNotEqualServiceConfig;
                     bool m_isNotEqualServiceConfigHasBeenSet;
+
+                    /**
+                     * HealthCheckSettings
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    HealthCheckSettings m_healthCheckSettings;
+                    bool m_healthCheckSettingsHasBeenSet;
 
                 };
             }

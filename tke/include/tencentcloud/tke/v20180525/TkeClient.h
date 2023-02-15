@@ -2439,7 +2439,7 @@ namespace TencentCloud
                 ModifyPrometheusAlertPolicyOutcomeCallable ModifyPrometheusAlertPolicyCallable(const Model::ModifyPrometheusAlertPolicyRequest& request);
 
                 /**
-                 *修改告警规则 
+                 *修改告警规则
                  * @param req ModifyPrometheusAlertRuleRequest
                  * @return ModifyPrometheusAlertRuleOutcome
                  */

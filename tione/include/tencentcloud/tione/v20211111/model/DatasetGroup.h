@@ -555,6 +555,72 @@ namespace TencentCloud
                      */
                     bool DatasetScopeHasBeenSet() const;
 
+                    /**
+                     * 获取数据集OCR子场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OcrScene 数据集OCR子场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOcrScene() const;
+
+                    /**
+                     * 设置数据集OCR子场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OcrScene 数据集OCR子场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOcrScene(const std::string& _ocrScene);
+
+                    /**
+                     * 判断参数 OcrScene 是否已赋值
+                     * @return OcrScene 是否已赋值
+                     */
+                    bool OcrSceneHasBeenSet() const;
+
+                    /**
+                     * 获取数据集字典修改状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AnnotationKeyStatus 数据集字典修改状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAnnotationKeyStatus() const;
+
+                    /**
+                     * 设置数据集字典修改状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AnnotationKeyStatus 数据集字典修改状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAnnotationKeyStatus(const std::string& _annotationKeyStatus);
+
+                    /**
+                     * 判断参数 AnnotationKeyStatus 是否已赋值
+                     * @return AnnotationKeyStatus 是否已赋值
+                     */
+                    bool AnnotationKeyStatusHasBeenSet() const;
+
+                    /**
+                     * 获取文本数据集导入方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContentType 文本数据集导入方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetContentType() const;
+
+                    /**
+                     * 设置文本数据集导入方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContentType 文本数据集导入方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContentType(const std::string& _contentType);
+
+                    /**
+                     * 判断参数 ContentType 是否已赋值
+                     * @return ContentType 是否已赋值
+                     */
+                    bool ContentTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -717,6 +783,27 @@ namespace TencentCloud
                      */
                     std::string m_datasetScope;
                     bool m_datasetScopeHasBeenSet;
+
+                    /**
+                     * 数据集OCR子场景
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ocrScene;
+                    bool m_ocrSceneHasBeenSet;
+
+                    /**
+                     * 数据集字典修改状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_annotationKeyStatus;
+                    bool m_annotationKeyStatusHasBeenSet;
+
+                    /**
+                     * 文本数据集导入方式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_contentType;
+                    bool m_contentTypeHasBeenSet;
 
                 };
             }

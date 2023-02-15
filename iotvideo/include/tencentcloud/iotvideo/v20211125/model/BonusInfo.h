@@ -172,6 +172,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +237,13 @@ namespace TencentCloud
                      */
                     int64_t m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 资源包状态 0.未使用 1.使用中 2.已退款 3.已过期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

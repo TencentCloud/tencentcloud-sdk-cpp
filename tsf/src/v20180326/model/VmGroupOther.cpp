@@ -29,7 +29,8 @@ VmGroupOther::VmGroupOther() :
     m_runInstanceCountHasBeenSet(false),
     m_offInstanceCountHasBeenSet(false),
     m_groupStatusHasBeenSet(false),
-    m_isNotEqualServiceConfigHasBeenSet(false)
+    m_isNotEqualServiceConfigHasBeenSet(false),
+    m_healthCheckSettingsHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,23 @@ CoreInternalOutcome VmGroupOther::Deserialize(const rapidjson::Value &value)
         m_isNotEqualServiceConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("HealthCheckSettings") && !value["HealthCheckSettings"].IsNull())
+    {
+        if (!value["HealthCheckSettings"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VmGroupOther.HealthCheckSettings` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_healthCheckSettings.Deserialize(value["HealthCheckSettings"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_healthCheckSettingsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +223,15 @@ void VmGroupOther::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "IsNotEqualServiceConfig";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isNotEqualServiceConfig, allocator);
+    }
+
+    if (m_healthCheckSettingsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HealthCheckSettings";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_healthCheckSettings.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -352,5 +379,21 @@ void VmGroupOther::SetIsNotEqualServiceConfig(const bool& _isNotEqualServiceConf
 bool VmGroupOther::IsNotEqualServiceConfigHasBeenSet() const
 {
     return m_isNotEqualServiceConfigHasBeenSet;
+}
+
+HealthCheckSettings VmGroupOther::GetHealthCheckSettings() const
+{
+    return m_healthCheckSettings;
+}
+
+void VmGroupOther::SetHealthCheckSettings(const HealthCheckSettings& _healthCheckSettings)
+{
+    m_healthCheckSettings = _healthCheckSettings;
+    m_healthCheckSettingsHasBeenSet = true;
+}
+
+bool VmGroupOther::HealthCheckSettingsHasBeenSet() const
+{
+    return m_healthCheckSettingsHasBeenSet;
 }
 

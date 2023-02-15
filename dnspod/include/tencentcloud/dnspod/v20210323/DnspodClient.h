@@ -49,6 +49,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainAliasRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteDomainAliasResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteDomainBatchRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DeleteDomainBatchResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DeleteRecordGroupRequest.h>
@@ -71,12 +73,20 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainLogListResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainPreviewRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainPreviewResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainPurviewRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainPurviewResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeDomainShareInfoResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeDomainWhoisResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribePackageDetailRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribePackageDetailResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordExistExceptDefaultNSRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeRecordExistExceptDefaultNSResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordGroupListResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeRecordLineListRequest.h>
@@ -99,6 +109,8 @@
 #include <tencentcloud/dnspod/v20210323/model/DescribeSubdomainAnalyticsResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DescribeUserDetailResponse.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeVASStatisticRequest.h>
+#include <tencentcloud/dnspod/v20210323/model/DescribeVASStatisticResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotRequest.h>
 #include <tencentcloud/dnspod/v20210323/model/DownloadSnapshotResponse.h>
 #include <tencentcloud/dnspod/v20210323/model/ModifyDomainLockRequest.h>
@@ -194,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteDomainAliasResponse> DeleteDomainAliasOutcome;
                 typedef std::future<DeleteDomainAliasOutcome> DeleteDomainAliasOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteDomainAliasRequest&, DeleteDomainAliasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainAliasAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDomainBatchResponse> DeleteDomainBatchOutcome;
+                typedef std::future<DeleteDomainBatchOutcome> DeleteDomainBatchOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DeleteDomainBatchRequest&, DeleteDomainBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDomainBatchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteRecordResponse> DeleteRecordOutcome;
                 typedef std::future<DeleteRecordOutcome> DeleteRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DeleteRecordRequest&, DeleteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRecordAsyncHandler;
@@ -227,15 +242,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDomainLogListResponse> DescribeDomainLogListOutcome;
                 typedef std::future<DescribeDomainLogListOutcome> DescribeDomainLogListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainLogListRequest&, DescribeDomainLogListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainLogListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainPreviewResponse> DescribeDomainPreviewOutcome;
+                typedef std::future<DescribeDomainPreviewOutcome> DescribeDomainPreviewOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainPreviewRequest&, DescribeDomainPreviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainPreviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainPurviewResponse> DescribeDomainPurviewOutcome;
                 typedef std::future<DescribeDomainPurviewOutcome> DescribeDomainPurviewOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainPurviewRequest&, DescribeDomainPurviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainPurviewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainShareInfoResponse> DescribeDomainShareInfoOutcome;
                 typedef std::future<DescribeDomainShareInfoOutcome> DescribeDomainShareInfoOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeDomainShareInfoRequest&, DescribeDomainShareInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainShareInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDomainWhoisResponse> DescribeDomainWhoisOutcome;
+                typedef std::future<DescribeDomainWhoisOutcome> DescribeDomainWhoisOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeDomainWhoisRequest&, DescribeDomainWhoisOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainWhoisAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePackageDetailResponse> DescribePackageDetailOutcome;
+                typedef std::future<DescribePackageDetailOutcome> DescribePackageDetailOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribePackageDetailRequest&, DescribePackageDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePackageDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordResponse> DescribeRecordOutcome;
                 typedef std::future<DescribeRecordOutcome> DescribeRecordOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordRequest&, DescribeRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordExistExceptDefaultNSResponse> DescribeRecordExistExceptDefaultNSOutcome;
+                typedef std::future<DescribeRecordExistExceptDefaultNSOutcome> DescribeRecordExistExceptDefaultNSOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeRecordExistExceptDefaultNSRequest&, DescribeRecordExistExceptDefaultNSOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordExistExceptDefaultNSAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRecordGroupListResponse> DescribeRecordGroupListOutcome;
                 typedef std::future<DescribeRecordGroupListOutcome> DescribeRecordGroupListOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeRecordGroupListRequest&, DescribeRecordGroupListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordGroupListAsyncHandler;
@@ -269,6 +296,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserDetailResponse> DescribeUserDetailOutcome;
                 typedef std::future<DescribeUserDetailOutcome> DescribeUserDetailOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DescribeUserDetailRequest&, DescribeUserDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVASStatisticResponse> DescribeVASStatisticOutcome;
+                typedef std::future<DescribeVASStatisticOutcome> DescribeVASStatisticOutcomeCallable;
+                typedef std::function<void(const DnspodClient*, const Model::DescribeVASStatisticRequest&, DescribeVASStatisticOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVASStatisticAsyncHandler;
                 typedef Outcome<Core::Error, Model::DownloadSnapshotResponse> DownloadSnapshotOutcome;
                 typedef std::future<DownloadSnapshotOutcome> DownloadSnapshotOutcomeCallable;
                 typedef std::function<void(const DnspodClient*, const Model::DownloadSnapshotRequest&, DownloadSnapshotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DownloadSnapshotAsyncHandler;
@@ -453,6 +483,15 @@ namespace TencentCloud
                 DeleteDomainAliasOutcomeCallable DeleteDomainAliasCallable(const Model::DeleteDomainAliasRequest& request);
 
                 /**
+                 *批量删除域名
+                 * @param req DeleteDomainBatchRequest
+                 * @return DeleteDomainBatchOutcome
+                 */
+                DeleteDomainBatchOutcome DeleteDomainBatch(const Model::DeleteDomainBatchRequest &request);
+                void DeleteDomainBatchAsync(const Model::DeleteDomainBatchRequest& request, const DeleteDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDomainBatchOutcomeCallable DeleteDomainBatchCallable(const Model::DeleteDomainBatchRequest& request);
+
+                /**
                  *删除记录
                  * @param req DeleteRecordRequest
                  * @return DeleteRecordOutcome
@@ -552,6 +591,15 @@ namespace TencentCloud
                 DescribeDomainLogListOutcomeCallable DescribeDomainLogListCallable(const Model::DescribeDomainLogListRequest& request);
 
                 /**
+                 *获取域名概览信息
+                 * @param req DescribeDomainPreviewRequest
+                 * @return DescribeDomainPreviewOutcome
+                 */
+                DescribeDomainPreviewOutcome DescribeDomainPreview(const Model::DescribeDomainPreviewRequest &request);
+                void DescribeDomainPreviewAsync(const Model::DescribeDomainPreviewRequest& request, const DescribeDomainPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainPreviewOutcomeCallable DescribeDomainPreviewCallable(const Model::DescribeDomainPreviewRequest& request);
+
+                /**
                  *获取域名权限
                  * @param req DescribeDomainPurviewRequest
                  * @return DescribeDomainPurviewOutcome
@@ -570,6 +618,24 @@ namespace TencentCloud
                 DescribeDomainShareInfoOutcomeCallable DescribeDomainShareInfoCallable(const Model::DescribeDomainShareInfoRequest& request);
 
                 /**
+                 *获取域名Whois信息
+                 * @param req DescribeDomainWhoisRequest
+                 * @return DescribeDomainWhoisOutcome
+                 */
+                DescribeDomainWhoisOutcome DescribeDomainWhois(const Model::DescribeDomainWhoisRequest &request);
+                void DescribeDomainWhoisAsync(const Model::DescribeDomainWhoisRequest& request, const DescribeDomainWhoisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDomainWhoisOutcomeCallable DescribeDomainWhoisCallable(const Model::DescribeDomainWhoisRequest& request);
+
+                /**
+                 *获取各套餐配置详情
+                 * @param req DescribePackageDetailRequest
+                 * @return DescribePackageDetailOutcome
+                 */
+                DescribePackageDetailOutcome DescribePackageDetail(const Model::DescribePackageDetailRequest &request);
+                void DescribePackageDetailAsync(const Model::DescribePackageDetailRequest& request, const DescribePackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePackageDetailOutcomeCallable DescribePackageDetailCallable(const Model::DescribePackageDetailRequest& request);
+
+                /**
                  *获取记录信息
                  * @param req DescribeRecordRequest
                  * @return DescribeRecordOutcome
@@ -577,6 +643,15 @@ namespace TencentCloud
                 DescribeRecordOutcome DescribeRecord(const Model::DescribeRecordRequest &request);
                 void DescribeRecordAsync(const Model::DescribeRecordRequest& request, const DescribeRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRecordOutcomeCallable DescribeRecordCallable(const Model::DescribeRecordRequest& request);
+
+                /**
+                 *判断是否有除系统默认的@-NS记录之外的记录存在
+                 * @param req DescribeRecordExistExceptDefaultNSRequest
+                 * @return DescribeRecordExistExceptDefaultNSOutcome
+                 */
+                DescribeRecordExistExceptDefaultNSOutcome DescribeRecordExistExceptDefaultNS(const Model::DescribeRecordExistExceptDefaultNSRequest &request);
+                void DescribeRecordExistExceptDefaultNSAsync(const Model::DescribeRecordExistExceptDefaultNSRequest& request, const DescribeRecordExistExceptDefaultNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordExistExceptDefaultNSOutcomeCallable DescribeRecordExistExceptDefaultNSCallable(const Model::DescribeRecordExistExceptDefaultNSRequest& request);
 
                 /**
                  *查询解析记录分组列表
@@ -676,6 +751,15 @@ namespace TencentCloud
                 DescribeUserDetailOutcome DescribeUserDetail(const Model::DescribeUserDetailRequest &request);
                 void DescribeUserDetailAsync(const Model::DescribeUserDetailRequest& request, const DescribeUserDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserDetailOutcomeCallable DescribeUserDetailCallable(const Model::DescribeUserDetailRequest& request);
+
+                /**
+                 *获取域名增值服务用量
+                 * @param req DescribeVASStatisticRequest
+                 * @return DescribeVASStatisticOutcome
+                 */
+                DescribeVASStatisticOutcome DescribeVASStatistic(const Model::DescribeVASStatisticRequest &request);
+                void DescribeVASStatisticAsync(const Model::DescribeVASStatisticRequest& request, const DescribeVASStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVASStatisticOutcomeCallable DescribeVASStatisticCallable(const Model::DescribeVASStatisticRequest& request);
 
                 /**
                  *下载快照

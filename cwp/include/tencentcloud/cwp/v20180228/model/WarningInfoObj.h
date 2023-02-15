@@ -172,6 +172,50 @@ namespace TencentCloud
                      */
                     bool ControlBitsHasBeenSet() const;
 
+                    /**
+                     * 获取告警主机范围类型，0:全部主机，1:按所属项目选，2:按腾讯云标签选，3:按主机安全标签选，4:自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostRange 告警主机范围类型，0:全部主机，1:按所属项目选，2:按腾讯云标签选，3:按主机安全标签选，4:自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetHostRange() const;
+
+                    /**
+                     * 设置告警主机范围类型，0:全部主机，1:按所属项目选，2:按腾讯云标签选，3:按主机安全标签选，4:自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostRange 告警主机范围类型，0:全部主机，1:按所属项目选，2:按腾讯云标签选，3:按主机安全标签选，4:自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostRange(const int64_t& _hostRange);
+
+                    /**
+                     * 判断参数 HostRange 是否已赋值
+                     * @return HostRange 是否已赋值
+                     */
+                    bool HostRangeHasBeenSet() const;
+
+                    /**
+                     * 获取配置的告警范围主机个数，前端用此判断展示提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Count 配置的告警范围主机个数，前端用此判断展示提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置配置的告警范围主机个数，前端用此判断展示提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Count 配置的告警范围主机个数，前端用此判断展示提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +259,20 @@ namespace TencentCloud
                      */
                     std::string m_controlBits;
                     bool m_controlBitsHasBeenSet;
+
+                    /**
+                     * 告警主机范围类型，0:全部主机，1:按所属项目选，2:按腾讯云标签选，3:按主机安全标签选，4:自选主机
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_hostRange;
+                    bool m_hostRangeHasBeenSet;
+
+                    /**
+                     * 配置的告警范围主机个数，前端用此判断展示提示信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }

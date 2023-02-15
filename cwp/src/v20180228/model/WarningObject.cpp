@@ -25,7 +25,8 @@ WarningObject::WarningObject() :
     m_disablePhoneWarningHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_controlBitsHasBeenSet(false)
+    m_controlBitsHasBeenSet(false),
+    m_hostRangeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome WarningObject::Deserialize(const rapidjson::Value &value)
         m_controlBitsHasBeenSet = true;
     }
 
+    if (value.HasMember("HostRange") && !value["HostRange"].IsNull())
+    {
+        if (!value["HostRange"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WarningObject.HostRange` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostRange = value["HostRange"].GetInt64();
+        m_hostRangeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void WarningObject::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "ControlBits";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_controlBits.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostRange, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void WarningObject::SetControlBits(const string& _controlBits)
 bool WarningObject::ControlBitsHasBeenSet() const
 {
     return m_controlBitsHasBeenSet;
+}
+
+int64_t WarningObject::GetHostRange() const
+{
+    return m_hostRange;
+}
+
+void WarningObject::SetHostRange(const int64_t& _hostRange)
+{
+    m_hostRange = _hostRange;
+    m_hostRangeHasBeenSet = true;
+}
+
+bool WarningObject::HostRangeHasBeenSet() const
+{
+    return m_hostRangeHasBeenSet;
 }
 

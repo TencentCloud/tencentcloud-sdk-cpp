@@ -1846,6 +1846,49 @@ CynosdbClient::DescribeRollbackTimeValidityOutcomeCallable CynosdbClient::Descri
     return task->get_future();
 }
 
+CynosdbClient::DescribeZonesOutcome CynosdbClient::DescribeZones(const DescribeZonesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeZones");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeZonesResponse rsp = DescribeZonesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeZonesOutcome(rsp);
+        else
+            return DescribeZonesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeZonesOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::DescribeZonesAsync(const DescribeZonesRequest& request, const DescribeZonesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeZones(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::DescribeZonesOutcomeCallable CynosdbClient::DescribeZonesCallable(const DescribeZonesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeZonesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeZones(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::DisassociateSecurityGroupsOutcome CynosdbClient::DisassociateSecurityGroups(const DisassociateSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DisassociateSecurityGroups");

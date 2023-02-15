@@ -45,6 +45,8 @@
 #include <tencentcloud/lcic/v20220817/model/DeleteRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomRequest.h>
@@ -124,6 +126,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAppDetailResponse> DescribeAppDetailOutcome;
                 typedef std::future<DescribeAppDetailOutcome> DescribeAppDetailOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeAppDetailRequest&, DescribeAppDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCurrentMemberListResponse> DescribeCurrentMemberListOutcome;
+                typedef std::future<DescribeCurrentMemberListOutcome> DescribeCurrentMemberListOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeCurrentMemberListRequest&, DescribeCurrentMemberListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentMemberListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDocumentResponse> DescribeDocumentOutcome;
                 typedef std::future<DescribeDocumentOutcome> DescribeDocumentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeDocumentRequest&, DescribeDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocumentAsyncHandler;
@@ -273,6 +278,15 @@ namespace TencentCloud
                 DescribeAppDetailOutcome DescribeAppDetail(const Model::DescribeAppDetailRequest &request);
                 void DescribeAppDetailAsync(const Model::DescribeAppDetailRequest& request, const DescribeAppDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAppDetailOutcomeCallable DescribeAppDetailCallable(const Model::DescribeAppDetailRequest& request);
+
+                /**
+                 *获取当前房间的成员列表，房间结束或过期后无法使用。
+                 * @param req DescribeCurrentMemberListRequest
+                 * @return DescribeCurrentMemberListOutcome
+                 */
+                DescribeCurrentMemberListOutcome DescribeCurrentMemberList(const Model::DescribeCurrentMemberListRequest &request);
+                void DescribeCurrentMemberListAsync(const Model::DescribeCurrentMemberListRequest& request, const DescribeCurrentMemberListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCurrentMemberListOutcomeCallable DescribeCurrentMemberListCallable(const Model::DescribeCurrentMemberListRequest& request);
 
                 /**
                  *获取文档信息

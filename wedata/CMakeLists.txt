@@ -460,10 +460,12 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/DescribeAlarmReceiverResponse.h
   include/tencentcloud/wedata/v20210820/model/BatchModifyOwnersNewResponse.h
   include/tencentcloud/wedata/v20210820/model/DeleteInLongAgentRequest.h
+  include/tencentcloud/wedata/v20210820/model/Partition.h
   include/tencentcloud/wedata/v20210820/model/RuleDimCnt.h
   include/tencentcloud/wedata/v20210820/model/BatchOperateResult.h
   include/tencentcloud/wedata/v20210820/model/RuleGroupTable.h
   include/tencentcloud/wedata/v20210820/model/DescribeDimensionScoreRequest.h
+  include/tencentcloud/wedata/v20210820/model/Property.h
   include/tencentcloud/wedata/v20210820/model/InLongAgentTask.h
   include/tencentcloud/wedata/v20210820/model/BatchStartIntegrationTasksResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationVersionNodesInfoRequest.h
@@ -992,10 +994,12 @@ set(wedata_src
   src/v20210820/model/DescribeAlarmReceiverResponse.cpp
   src/v20210820/model/BatchModifyOwnersNewResponse.cpp
   src/v20210820/model/DeleteInLongAgentRequest.cpp
+  src/v20210820/model/Partition.cpp
   src/v20210820/model/RuleDimCnt.cpp
   src/v20210820/model/BatchOperateResult.cpp
   src/v20210820/model/RuleGroupTable.cpp
   src/v20210820/model/DescribeDimensionScoreRequest.cpp
+  src/v20210820/model/Property.cpp
   src/v20210820/model/InLongAgentTask.cpp
   src/v20210820/model/BatchStartIntegrationTasksResponse.cpp
   src/v20210820/model/DescribeIntegrationVersionNodesInfoRequest.cpp

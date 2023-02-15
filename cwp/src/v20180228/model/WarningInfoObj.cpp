@@ -27,7 +27,9 @@ WarningInfoObj::WarningInfoObj() :
     m_endTimeHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
     m_controlBitHasBeenSet(false),
-    m_controlBitsHasBeenSet(false)
+    m_controlBitsHasBeenSet(false),
+    m_hostRangeHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -106,6 +108,26 @@ CoreInternalOutcome WarningInfoObj::Deserialize(const rapidjson::Value &value)
         m_controlBitsHasBeenSet = true;
     }
 
+    if (value.HasMember("HostRange") && !value["HostRange"].IsNull())
+    {
+        if (!value["HostRange"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WarningInfoObj.HostRange` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostRange = value["HostRange"].GetInt64();
+        m_hostRangeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WarningInfoObj.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +189,22 @@ void WarningInfoObj::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ControlBits";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_controlBits.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostRangeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostRange";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hostRange, allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -282,5 +320,37 @@ void WarningInfoObj::SetControlBits(const string& _controlBits)
 bool WarningInfoObj::ControlBitsHasBeenSet() const
 {
     return m_controlBitsHasBeenSet;
+}
+
+int64_t WarningInfoObj::GetHostRange() const
+{
+    return m_hostRange;
+}
+
+void WarningInfoObj::SetHostRange(const int64_t& _hostRange)
+{
+    m_hostRange = _hostRange;
+    m_hostRangeHasBeenSet = true;
+}
+
+bool WarningInfoObj::HostRangeHasBeenSet() const
+{
+    return m_hostRangeHasBeenSet;
+}
+
+int64_t WarningInfoObj::GetCount() const
+{
+    return m_count;
+}
+
+void WarningInfoObj::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool WarningInfoObj::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 

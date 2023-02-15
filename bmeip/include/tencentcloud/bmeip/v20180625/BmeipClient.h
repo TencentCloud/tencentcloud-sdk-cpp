@@ -168,7 +168,7 @@ namespace TencentCloud
                 BindRsOutcomeCallable BindRsCallable(const Model::BindRsRequest& request);
 
                 /**
-                 *黑石EIP绑定VPCIP
+                 *黑石EIP绑定VPC IP
                  * @param req BindVpcIpRequest
                  * @return BindVpcIpOutcome
                  */
@@ -186,7 +186,7 @@ namespace TencentCloud
                 CreateEipOutcomeCallable CreateEipCallable(const Model::CreateEipRequest& request);
 
                 /**
-                 *创建黑石弹性公网 EIPACL
+                 *创建黑石弹性公网 EIP ACL
                  * @param req CreateEipAclRequest
                  * @return CreateEipAclOutcome
                  */

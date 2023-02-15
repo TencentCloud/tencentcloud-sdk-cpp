@@ -16,6 +16,7 @@
 
 set(bma_public_header
   include/tencentcloud/bma/v20210624/BmaClient.h
+  include/tencentcloud/bma/v20221115/BmaClient.h
   )
 
 set(bma_public_header_model
@@ -85,10 +86,19 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/ModifyCRObtainStatusResponse.h
   include/tencentcloud/bma/v20210624/model/ModifyCRWhiteListRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPResponse.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPListRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPListResponse.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLResponse.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLsRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLsResponse.h
   )
 
 set(bma_src
   src/v20210624/BmaClient.cpp
+  src/v20221115/BmaClient.cpp
   src/v20210624/model/ProtectURLInfo.cpp
   src/v20210624/model/CreateCRObtainResponse.cpp
   src/v20210624/model/CreateCRUserVerifyRequest.cpp
@@ -155,6 +165,14 @@ set(bma_src
   src/v20210624/model/ModifyCRObtainStatusResponse.cpp
   src/v20210624/model/ModifyCRWhiteListRequest.cpp
   src/v20210624/model/CreateCRCompanyVerifyRequest.cpp
+  src/v20221115/model/CreateBPFakeAPPResponse.cpp
+  src/v20221115/model/CreateBPFakeAPPRequest.cpp
+  src/v20221115/model/CreateBPFakeAPPListRequest.cpp
+  src/v20221115/model/CreateBPFakeURLRequest.cpp
+  src/v20221115/model/CreateBPFakeAPPListResponse.cpp
+  src/v20221115/model/CreateBPFakeURLResponse.cpp
+  src/v20221115/model/CreateBPFakeURLsRequest.cpp
+  src/v20221115/model/CreateBPFakeURLsResponse.cpp
   )
 
 set(bma_include
@@ -183,9 +201,9 @@ target_link_libraries(bma
   core)
 
 #install(FILES ${bma_public_header}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/bma/v20210624)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/bma/v20221115)
 #install(FILES ${bma_public_header_model}
-#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/bma/v20210624/model)
+#  DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud/bma/v20221115/model)
 install(DIRECTORY ${bma_include}
   DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/tencentcloud)
 

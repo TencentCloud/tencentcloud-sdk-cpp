@@ -599,6 +599,49 @@ DnspodClient::DeleteDomainAliasOutcomeCallable DnspodClient::DeleteDomainAliasCa
     return task->get_future();
 }
 
+DnspodClient::DeleteDomainBatchOutcome DnspodClient::DeleteDomainBatch(const DeleteDomainBatchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDomainBatch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDomainBatchResponse rsp = DeleteDomainBatchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDomainBatchOutcome(rsp);
+        else
+            return DeleteDomainBatchOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDomainBatchOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DeleteDomainBatchAsync(const DeleteDomainBatchRequest& request, const DeleteDomainBatchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDomainBatch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DeleteDomainBatchOutcomeCallable DnspodClient::DeleteDomainBatchCallable(const DeleteDomainBatchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDomainBatchOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDomainBatch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DeleteRecordOutcome DnspodClient::DeleteRecord(const DeleteRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteRecord");
@@ -1072,6 +1115,49 @@ DnspodClient::DescribeDomainLogListOutcomeCallable DnspodClient::DescribeDomainL
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainPreviewOutcome DnspodClient::DescribeDomainPreview(const DescribeDomainPreviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainPreview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainPreviewResponse rsp = DescribeDomainPreviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainPreviewOutcome(rsp);
+        else
+            return DescribeDomainPreviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainPreviewOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainPreviewAsync(const DescribeDomainPreviewRequest& request, const DescribeDomainPreviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainPreview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainPreviewOutcomeCallable DnspodClient::DescribeDomainPreviewCallable(const DescribeDomainPreviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainPreviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainPreview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeDomainPurviewOutcome DnspodClient::DescribeDomainPurview(const DescribeDomainPurviewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainPurview");
@@ -1158,6 +1244,92 @@ DnspodClient::DescribeDomainShareInfoOutcomeCallable DnspodClient::DescribeDomai
     return task->get_future();
 }
 
+DnspodClient::DescribeDomainWhoisOutcome DnspodClient::DescribeDomainWhois(const DescribeDomainWhoisRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDomainWhois");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDomainWhoisResponse rsp = DescribeDomainWhoisResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDomainWhoisOutcome(rsp);
+        else
+            return DescribeDomainWhoisOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDomainWhoisOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeDomainWhoisAsync(const DescribeDomainWhoisRequest& request, const DescribeDomainWhoisAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDomainWhois(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeDomainWhoisOutcomeCallable DnspodClient::DescribeDomainWhoisCallable(const DescribeDomainWhoisRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDomainWhoisOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDomainWhois(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribePackageDetailOutcome DnspodClient::DescribePackageDetail(const DescribePackageDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePackageDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePackageDetailResponse rsp = DescribePackageDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePackageDetailOutcome(rsp);
+        else
+            return DescribePackageDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePackageDetailOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribePackageDetailAsync(const DescribePackageDetailRequest& request, const DescribePackageDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePackageDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribePackageDetailOutcomeCallable DnspodClient::DescribePackageDetailCallable(const DescribePackageDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePackageDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePackageDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DnspodClient::DescribeRecordOutcome DnspodClient::DescribeRecord(const DescribeRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRecord");
@@ -1194,6 +1366,49 @@ DnspodClient::DescribeRecordOutcomeCallable DnspodClient::DescribeRecordCallable
         [this, request]()
         {
             return this->DescribeRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeRecordExistExceptDefaultNSOutcome DnspodClient::DescribeRecordExistExceptDefaultNS(const DescribeRecordExistExceptDefaultNSRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordExistExceptDefaultNS");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordExistExceptDefaultNSResponse rsp = DescribeRecordExistExceptDefaultNSResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordExistExceptDefaultNSOutcome(rsp);
+        else
+            return DescribeRecordExistExceptDefaultNSOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordExistExceptDefaultNSOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeRecordExistExceptDefaultNSAsync(const DescribeRecordExistExceptDefaultNSRequest& request, const DescribeRecordExistExceptDefaultNSAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordExistExceptDefaultNS(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeRecordExistExceptDefaultNSOutcomeCallable DnspodClient::DescribeRecordExistExceptDefaultNSCallable(const DescribeRecordExistExceptDefaultNSRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordExistExceptDefaultNSOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordExistExceptDefaultNS(request);
         }
     );
 
@@ -1667,6 +1882,49 @@ DnspodClient::DescribeUserDetailOutcomeCallable DnspodClient::DescribeUserDetail
         [this, request]()
         {
             return this->DescribeUserDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DnspodClient::DescribeVASStatisticOutcome DnspodClient::DescribeVASStatistic(const DescribeVASStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVASStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVASStatisticResponse rsp = DescribeVASStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVASStatisticOutcome(rsp);
+        else
+            return DescribeVASStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVASStatisticOutcome(outcome.GetError());
+    }
+}
+
+void DnspodClient::DescribeVASStatisticAsync(const DescribeVASStatisticRequest& request, const DescribeVASStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVASStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DnspodClient::DescribeVASStatisticOutcomeCallable DnspodClient::DescribeVASStatisticCallable(const DescribeVASStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVASStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVASStatistic(request);
         }
     );
 

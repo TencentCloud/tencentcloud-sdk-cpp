@@ -32,7 +32,17 @@ GenHiveTableDDLSqlRequest::GenHiveTableDDLSqlRequest() :
     m_tableNameHasBeenSet(false),
     m_sinkTypeHasBeenSet(false),
     m_schemaNameHasBeenSet(false),
-    m_sourceFieldInfoListHasBeenSet(false)
+    m_sourceFieldInfoListHasBeenSet(false),
+    m_partitionsHasBeenSet(false),
+    m_propertiesHasBeenSet(false),
+    m_tableModeHasBeenSet(false),
+    m_tableVersionHasBeenSet(false),
+    m_upsertFlagHasBeenSet(false),
+    m_tableCommentHasBeenSet(false),
+    m_addDataFilesHasBeenSet(false),
+    m_addEqualityDeletesHasBeenSet(false),
+    m_addPositionDeletesHasBeenSet(false),
+    m_addDeleteFilesHasBeenSet(false)
 {
 }
 
@@ -128,6 +138,100 @@ string GenHiveTableDDLSqlRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_partitionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Partitions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_partitions.begin(); itr != m_partitions.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_propertiesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Properties";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_properties.begin(); itr != m_properties.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_tableModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_tableMode, allocator);
+    }
+
+    if (m_tableVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_upsertFlagHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpsertFlag";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_upsertFlag, allocator);
+    }
+
+    if (m_tableCommentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TableComment";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_tableComment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addDataFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddDataFiles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_addDataFiles, allocator);
+    }
+
+    if (m_addEqualityDeletesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddEqualityDeletes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_addEqualityDeletes, allocator);
+    }
+
+    if (m_addPositionDeletesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddPositionDeletes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_addPositionDeletes, allocator);
+    }
+
+    if (m_addDeleteFilesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddDeleteFiles";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_addDeleteFiles, allocator);
     }
 
 
@@ -296,6 +400,166 @@ void GenHiveTableDDLSqlRequest::SetSourceFieldInfoList(const vector<SourceFieldI
 bool GenHiveTableDDLSqlRequest::SourceFieldInfoListHasBeenSet() const
 {
     return m_sourceFieldInfoListHasBeenSet;
+}
+
+vector<Partition> GenHiveTableDDLSqlRequest::GetPartitions() const
+{
+    return m_partitions;
+}
+
+void GenHiveTableDDLSqlRequest::SetPartitions(const vector<Partition>& _partitions)
+{
+    m_partitions = _partitions;
+    m_partitionsHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::PartitionsHasBeenSet() const
+{
+    return m_partitionsHasBeenSet;
+}
+
+vector<Property> GenHiveTableDDLSqlRequest::GetProperties() const
+{
+    return m_properties;
+}
+
+void GenHiveTableDDLSqlRequest::SetProperties(const vector<Property>& _properties)
+{
+    m_properties = _properties;
+    m_propertiesHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::PropertiesHasBeenSet() const
+{
+    return m_propertiesHasBeenSet;
+}
+
+int64_t GenHiveTableDDLSqlRequest::GetTableMode() const
+{
+    return m_tableMode;
+}
+
+void GenHiveTableDDLSqlRequest::SetTableMode(const int64_t& _tableMode)
+{
+    m_tableMode = _tableMode;
+    m_tableModeHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::TableModeHasBeenSet() const
+{
+    return m_tableModeHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetTableVersion() const
+{
+    return m_tableVersion;
+}
+
+void GenHiveTableDDLSqlRequest::SetTableVersion(const string& _tableVersion)
+{
+    m_tableVersion = _tableVersion;
+    m_tableVersionHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::TableVersionHasBeenSet() const
+{
+    return m_tableVersionHasBeenSet;
+}
+
+bool GenHiveTableDDLSqlRequest::GetUpsertFlag() const
+{
+    return m_upsertFlag;
+}
+
+void GenHiveTableDDLSqlRequest::SetUpsertFlag(const bool& _upsertFlag)
+{
+    m_upsertFlag = _upsertFlag;
+    m_upsertFlagHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::UpsertFlagHasBeenSet() const
+{
+    return m_upsertFlagHasBeenSet;
+}
+
+string GenHiveTableDDLSqlRequest::GetTableComment() const
+{
+    return m_tableComment;
+}
+
+void GenHiveTableDDLSqlRequest::SetTableComment(const string& _tableComment)
+{
+    m_tableComment = _tableComment;
+    m_tableCommentHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::TableCommentHasBeenSet() const
+{
+    return m_tableCommentHasBeenSet;
+}
+
+int64_t GenHiveTableDDLSqlRequest::GetAddDataFiles() const
+{
+    return m_addDataFiles;
+}
+
+void GenHiveTableDDLSqlRequest::SetAddDataFiles(const int64_t& _addDataFiles)
+{
+    m_addDataFiles = _addDataFiles;
+    m_addDataFilesHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::AddDataFilesHasBeenSet() const
+{
+    return m_addDataFilesHasBeenSet;
+}
+
+int64_t GenHiveTableDDLSqlRequest::GetAddEqualityDeletes() const
+{
+    return m_addEqualityDeletes;
+}
+
+void GenHiveTableDDLSqlRequest::SetAddEqualityDeletes(const int64_t& _addEqualityDeletes)
+{
+    m_addEqualityDeletes = _addEqualityDeletes;
+    m_addEqualityDeletesHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::AddEqualityDeletesHasBeenSet() const
+{
+    return m_addEqualityDeletesHasBeenSet;
+}
+
+int64_t GenHiveTableDDLSqlRequest::GetAddPositionDeletes() const
+{
+    return m_addPositionDeletes;
+}
+
+void GenHiveTableDDLSqlRequest::SetAddPositionDeletes(const int64_t& _addPositionDeletes)
+{
+    m_addPositionDeletes = _addPositionDeletes;
+    m_addPositionDeletesHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::AddPositionDeletesHasBeenSet() const
+{
+    return m_addPositionDeletesHasBeenSet;
+}
+
+int64_t GenHiveTableDDLSqlRequest::GetAddDeleteFiles() const
+{
+    return m_addDeleteFiles;
+}
+
+void GenHiveTableDDLSqlRequest::SetAddDeleteFiles(const int64_t& _addDeleteFiles)
+{
+    m_addDeleteFiles = _addDeleteFiles;
+    m_addDeleteFilesHasBeenSet = true;
+}
+
+bool GenHiveTableDDLSqlRequest::AddDeleteFilesHasBeenSet() const
+{
+    return m_addDeleteFilesHasBeenSet;
 }
 
 

@@ -42,7 +42,9 @@ DatasetInfo::DatasetInfo() :
     m_annotationStatusHasBeenSet(false),
     m_annotationTypeHasBeenSet(false),
     m_annotationFormatHasBeenSet(false),
-    m_datasetScopeHasBeenSet(false)
+    m_datasetScopeHasBeenSet(false),
+    m_ocrSceneHasBeenSet(false),
+    m_annotationKeyStatusHasBeenSet(false)
 {
 }
 
@@ -295,6 +297,26 @@ CoreInternalOutcome DatasetInfo::Deserialize(const rapidjson::Value &value)
         m_datasetScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("OcrScene") && !value["OcrScene"].IsNull())
+    {
+        if (!value["OcrScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.OcrScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ocrScene = string(value["OcrScene"].GetString());
+        m_ocrSceneHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnnotationKeyStatus") && !value["AnnotationKeyStatus"].IsNull())
+    {
+        if (!value["AnnotationKeyStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetInfo.AnnotationKeyStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_annotationKeyStatus = string(value["AnnotationKeyStatus"].GetString());
+        m_annotationKeyStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -485,6 +507,22 @@ void DatasetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "DatasetScope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_datasetScope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ocrSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocrScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_annotationKeyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnnotationKeyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_annotationKeyStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -840,5 +878,37 @@ void DatasetInfo::SetDatasetScope(const string& _datasetScope)
 bool DatasetInfo::DatasetScopeHasBeenSet() const
 {
     return m_datasetScopeHasBeenSet;
+}
+
+string DatasetInfo::GetOcrScene() const
+{
+    return m_ocrScene;
+}
+
+void DatasetInfo::SetOcrScene(const string& _ocrScene)
+{
+    m_ocrScene = _ocrScene;
+    m_ocrSceneHasBeenSet = true;
+}
+
+bool DatasetInfo::OcrSceneHasBeenSet() const
+{
+    return m_ocrSceneHasBeenSet;
+}
+
+string DatasetInfo::GetAnnotationKeyStatus() const
+{
+    return m_annotationKeyStatus;
+}
+
+void DatasetInfo::SetAnnotationKeyStatus(const string& _annotationKeyStatus)
+{
+    m_annotationKeyStatus = _annotationKeyStatus;
+    m_annotationKeyStatusHasBeenSet = true;
+}
+
+bool DatasetInfo::AnnotationKeyStatusHasBeenSet() const
+{
+    return m_annotationKeyStatusHasBeenSet;
 }
 

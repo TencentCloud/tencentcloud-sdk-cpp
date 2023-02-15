@@ -100,6 +100,24 @@ namespace TencentCloud
                      */
                     bool RealTotalCostHasBeenSet() const;
 
+                    /**
+                     * 获取计费项数量
+                     * @return SpecCount 计费项数量
+                     */
+                    uint64_t GetSpecCount() const;
+
+                    /**
+                     * 设置计费项数量
+                     * @param SpecCount 计费项数量
+                     */
+                    void SetSpecCount(const uint64_t& _specCount);
+
+                    /**
+                     * 判断参数 SpecCount 是否已赋值
+                     * @return SpecCount 是否已赋值
+                     */
+                    bool SpecCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +137,12 @@ namespace TencentCloud
                      */
                     uint64_t m_realTotalCost;
                     bool m_realTotalCostHasBeenSet;
+
+                    /**
+                     * 计费项数量
+                     */
+                    uint64_t m_specCount;
+                    bool m_specCountHasBeenSet;
 
                 };
             }

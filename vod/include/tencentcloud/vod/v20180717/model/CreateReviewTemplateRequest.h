@@ -45,19 +45,17 @@ namespace TencentCloud
                     /**
                      * 获取需要返回的违规标签列表，可选值为：
 <li>Porn：色情；</li>
-<li>Terror：暴恐；</li>
+<li>Terror：暴力；</li>
 <li>Polity：不适宜的信息；</li>
 <li>Illegal：违法；</li>
-<li>Religion：宗教；</li>
 <li>Abuse：谩骂；</li>
 <li>Ad：广告；</li>
 <li>Moan：娇喘。</li>
                      * @return Labels 需要返回的违规标签列表，可选值为：
 <li>Porn：色情；</li>
-<li>Terror：暴恐；</li>
+<li>Terror：暴力；</li>
 <li>Polity：不适宜的信息；</li>
 <li>Illegal：违法；</li>
-<li>Religion：宗教；</li>
 <li>Abuse：谩骂；</li>
 <li>Ad：广告；</li>
 <li>Moan：娇喘。</li>
@@ -67,19 +65,17 @@ namespace TencentCloud
                     /**
                      * 设置需要返回的违规标签列表，可选值为：
 <li>Porn：色情；</li>
-<li>Terror：暴恐；</li>
+<li>Terror：暴力；</li>
 <li>Polity：不适宜的信息；</li>
 <li>Illegal：违法；</li>
-<li>Religion：宗教；</li>
 <li>Abuse：谩骂；</li>
 <li>Ad：广告；</li>
 <li>Moan：娇喘。</li>
                      * @param Labels 需要返回的违规标签列表，可选值为：
 <li>Porn：色情；</li>
-<li>Terror：暴恐；</li>
+<li>Terror：暴力；</li>
 <li>Polity：不适宜的信息；</li>
 <li>Illegal：违法；</li>
-<li>Religion：宗教；</li>
 <li>Abuse：谩骂；</li>
 <li>Ad：广告；</li>
 <li>Moan：娇喘。</li>
@@ -151,10 +147,9 @@ namespace TencentCloud
                     /**
                      * 需要返回的违规标签列表，可选值为：
 <li>Porn：色情；</li>
-<li>Terror：暴恐；</li>
+<li>Terror：暴力；</li>
 <li>Polity：不适宜的信息；</li>
 <li>Illegal：违法；</li>
-<li>Religion：宗教；</li>
 <li>Abuse：谩骂；</li>
 <li>Ad：广告；</li>
 <li>Moan：娇喘。</li>

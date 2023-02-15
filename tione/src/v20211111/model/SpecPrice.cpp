@@ -23,7 +23,8 @@ using namespace std;
 SpecPrice::SpecPrice() :
     m_specNameHasBeenSet(false),
     m_totalCostHasBeenSet(false),
-    m_realTotalCostHasBeenSet(false)
+    m_realTotalCostHasBeenSet(false),
+    m_specCountHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SpecPrice::Deserialize(const rapidjson::Value &value)
         m_realTotalCostHasBeenSet = true;
     }
 
+    if (value.HasMember("SpecCount") && !value["SpecCount"].IsNull())
+    {
+        if (!value["SpecCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SpecPrice.SpecCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_specCount = value["SpecCount"].GetUint64();
+        m_specCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SpecPrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "RealTotalCost";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realTotalCost, allocator);
+    }
+
+    if (m_specCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SpecCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_specCount, allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SpecPrice::SetRealTotalCost(const uint64_t& _realTotalCost)
 bool SpecPrice::RealTotalCostHasBeenSet() const
 {
     return m_realTotalCostHasBeenSet;
+}
+
+uint64_t SpecPrice::GetSpecCount() const
+{
+    return m_specCount;
+}
+
+void SpecPrice::SetSpecCount(const uint64_t& _specCount)
+{
+    m_specCount = _specCount;
+    m_specCountHasBeenSet = true;
+}
+
+bool SpecPrice::SpecCountHasBeenSet() const
+{
+    return m_specCountHasBeenSet;
 }
 

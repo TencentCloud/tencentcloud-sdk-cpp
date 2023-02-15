@@ -112,9 +112,11 @@ false 不是
                      * 获取是否已设置自动续费 。
 0：未设置 
 1：已设置
+2：设置后，关闭
                      * @return AutoRenew 是否已设置自动续费 。
 0：未设置 
 1：已设置
+2：设置后，关闭
                      */
                     uint64_t GetAutoRenew() const;
 
@@ -122,9 +124,11 @@ false 不是
                      * 设置是否已设置自动续费 。
 0：未设置 
 1：已设置
+2：设置后，关闭
                      * @param AutoRenew 是否已设置自动续费 。
 0：未设置 
 1：已设置
+2：设置后，关闭
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
@@ -298,6 +302,7 @@ false 不是
                      * 是否已设置自动续费 。
 0：未设置 
 1：已设置
+2：设置后，关闭
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;

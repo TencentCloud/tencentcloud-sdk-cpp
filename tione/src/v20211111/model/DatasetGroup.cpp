@@ -43,7 +43,10 @@ DatasetGroup::DatasetGroup() :
     m_annotationStatusHasBeenSet(false),
     m_annotationTypeHasBeenSet(false),
     m_annotationFormatHasBeenSet(false),
-    m_datasetScopeHasBeenSet(false)
+    m_datasetScopeHasBeenSet(false),
+    m_ocrSceneHasBeenSet(false),
+    m_annotationKeyStatusHasBeenSet(false),
+    m_contentTypeHasBeenSet(false)
 {
 }
 
@@ -316,6 +319,36 @@ CoreInternalOutcome DatasetGroup::Deserialize(const rapidjson::Value &value)
         m_datasetScopeHasBeenSet = true;
     }
 
+    if (value.HasMember("OcrScene") && !value["OcrScene"].IsNull())
+    {
+        if (!value["OcrScene"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetGroup.OcrScene` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ocrScene = string(value["OcrScene"].GetString());
+        m_ocrSceneHasBeenSet = true;
+    }
+
+    if (value.HasMember("AnnotationKeyStatus") && !value["AnnotationKeyStatus"].IsNull())
+    {
+        if (!value["AnnotationKeyStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetGroup.AnnotationKeyStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_annotationKeyStatus = string(value["AnnotationKeyStatus"].GetString());
+        m_annotationKeyStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ContentType") && !value["ContentType"].IsNull())
+    {
+        if (!value["ContentType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatasetGroup.ContentType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_contentType = string(value["ContentType"].GetString());
+        m_contentTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -521,6 +554,30 @@ void DatasetGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "DatasetScope";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_datasetScope.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ocrSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OcrScene";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ocrScene.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_annotationKeyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AnnotationKeyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_annotationKeyStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_contentTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContentType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_contentType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -892,5 +949,53 @@ void DatasetGroup::SetDatasetScope(const string& _datasetScope)
 bool DatasetGroup::DatasetScopeHasBeenSet() const
 {
     return m_datasetScopeHasBeenSet;
+}
+
+string DatasetGroup::GetOcrScene() const
+{
+    return m_ocrScene;
+}
+
+void DatasetGroup::SetOcrScene(const string& _ocrScene)
+{
+    m_ocrScene = _ocrScene;
+    m_ocrSceneHasBeenSet = true;
+}
+
+bool DatasetGroup::OcrSceneHasBeenSet() const
+{
+    return m_ocrSceneHasBeenSet;
+}
+
+string DatasetGroup::GetAnnotationKeyStatus() const
+{
+    return m_annotationKeyStatus;
+}
+
+void DatasetGroup::SetAnnotationKeyStatus(const string& _annotationKeyStatus)
+{
+    m_annotationKeyStatus = _annotationKeyStatus;
+    m_annotationKeyStatusHasBeenSet = true;
+}
+
+bool DatasetGroup::AnnotationKeyStatusHasBeenSet() const
+{
+    return m_annotationKeyStatusHasBeenSet;
+}
+
+string DatasetGroup::GetContentType() const
+{
+    return m_contentType;
+}
+
+void DatasetGroup::SetContentType(const string& _contentType)
+{
+    m_contentType = _contentType;
+    m_contentTypeHasBeenSet = true;
+}
+
+bool DatasetGroup::ContentTypeHasBeenSet() const
+{
+    return m_contentTypeHasBeenSet;
 }
 

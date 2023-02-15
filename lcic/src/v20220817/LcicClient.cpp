@@ -513,6 +513,49 @@ LcicClient::DescribeAppDetailOutcomeCallable LcicClient::DescribeAppDetailCallab
     return task->get_future();
 }
 
+LcicClient::DescribeCurrentMemberListOutcome LcicClient::DescribeCurrentMemberList(const DescribeCurrentMemberListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCurrentMemberList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCurrentMemberListResponse rsp = DescribeCurrentMemberListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCurrentMemberListOutcome(rsp);
+        else
+            return DescribeCurrentMemberListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCurrentMemberListOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeCurrentMemberListAsync(const DescribeCurrentMemberListRequest& request, const DescribeCurrentMemberListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCurrentMemberList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeCurrentMemberListOutcomeCallable LcicClient::DescribeCurrentMemberListCallable(const DescribeCurrentMemberListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCurrentMemberListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCurrentMemberList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeDocumentOutcome LcicClient::DescribeDocument(const DescribeDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDocument");

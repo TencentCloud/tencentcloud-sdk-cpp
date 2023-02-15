@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取慢查询平均执行时间阈值（单位：微秒）。
-                     * @return MinQueryTime 慢查询平均执行时间阈值（单位：微秒）。
+                     * 获取慢查询平均执行时间阈值（单位：毫秒）。
+                     * @return MinQueryTime 慢查询平均执行时间阈值（单位：毫秒）。
                      */
                     int64_t GetMinQueryTime() const;
 
                     /**
-                     * 设置慢查询平均执行时间阈值（单位：微秒）。
-                     * @param MinQueryTime 慢查询平均执行时间阈值（单位：微秒）。
+                     * 设置慢查询平均执行时间阈值（单位：毫秒）。
+                     * @param MinQueryTime 慢查询平均执行时间阈值（单位：毫秒）。
                      */
                     void SetMinQueryTime(const int64_t& _minQueryTime);
 
@@ -189,7 +189,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 慢查询平均执行时间阈值（单位：微秒）。
+                     * 慢查询平均执行时间阈值（单位：毫秒）。
                      */
                     int64_t m_minQueryTime;
                     bool m_minQueryTimeHasBeenSet;
