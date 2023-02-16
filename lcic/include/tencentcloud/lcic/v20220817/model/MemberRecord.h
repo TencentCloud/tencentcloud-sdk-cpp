@@ -244,6 +244,60 @@ namespace TencentCloud
                      */
                     bool RewordsHasBeenSet() const;
 
+                    /**
+                     * 获取用户IP。
+                     * @return IPAddress 用户IP。
+                     */
+                    std::string GetIPAddress() const;
+
+                    /**
+                     * 设置用户IP。
+                     * @param IPAddress 用户IP。
+                     */
+                    void SetIPAddress(const std::string& _iPAddress);
+
+                    /**
+                     * 判断参数 IPAddress 是否已赋值
+                     * @return IPAddress 是否已赋值
+                     */
+                    bool IPAddressHasBeenSet() const;
+
+                    /**
+                     * 获取用户位置信息。
+                     * @return Location 用户位置信息。
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置用户位置信息。
+                     * @param Location 用户位置信息。
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
+                    /**
+                     * 获取用户设备平台信息。0:unknown  1:windows  2:mac  3:android  4:ios  5:web   6:h5   7:miniprogram （小程序）
+                     * @return Device 用户设备平台信息。0:unknown  1:windows  2:mac  3:android  4:ios  5:web   6:h5   7:miniprogram （小程序）
+                     */
+                    int64_t GetDevice() const;
+
+                    /**
+                     * 设置用户设备平台信息。0:unknown  1:windows  2:mac  3:android  4:ios  5:web   6:h5   7:miniprogram （小程序）
+                     * @param Device 用户设备平台信息。0:unknown  1:windows  2:mac  3:android  4:ios  5:web   6:h5   7:miniprogram （小程序）
+                     */
+                    void SetDevice(const int64_t& _device);
+
+                    /**
+                     * 判断参数 Device 是否已赋值
+                     * @return Device 是否已赋值
+                     */
+                    bool DeviceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +365,24 @@ namespace TencentCloud
                      */
                     uint64_t m_rewords;
                     bool m_rewordsHasBeenSet;
+
+                    /**
+                     * 用户IP。
+                     */
+                    std::string m_iPAddress;
+                    bool m_iPAddressHasBeenSet;
+
+                    /**
+                     * 用户位置信息。
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
+
+                    /**
+                     * 用户设备平台信息。0:unknown  1:windows  2:mac  3:android  4:ios  5:web   6:h5   7:miniprogram （小程序）
+                     */
+                    int64_t m_device;
+                    bool m_deviceHasBeenSet;
 
                 };
             }

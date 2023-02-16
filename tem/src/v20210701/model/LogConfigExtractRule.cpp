@@ -29,7 +29,9 @@ LogConfigExtractRule::LogConfigExtractRule() :
     m_timeKeyHasBeenSet(false),
     m_timeFormatHasBeenSet(false),
     m_unMatchUploadHasBeenSet(false),
-    m_unMatchedKeyHasBeenSet(false)
+    m_unMatchedKeyHasBeenSet(false),
+    m_backtrackingHasBeenSet(false),
+    m_delimiterHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,26 @@ CoreInternalOutcome LogConfigExtractRule::Deserialize(const rapidjson::Value &va
         m_unMatchedKeyHasBeenSet = true;
     }
 
+    if (value.HasMember("Backtracking") && !value["Backtracking"].IsNull())
+    {
+        if (!value["Backtracking"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogConfigExtractRule.Backtracking` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_backtracking = string(value["Backtracking"].GetString());
+        m_backtrackingHasBeenSet = true;
+    }
+
+    if (value.HasMember("Delimiter") && !value["Delimiter"].IsNull())
+    {
+        if (!value["Delimiter"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogConfigExtractRule.Delimiter` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_delimiter = string(value["Delimiter"].GetString());
+        m_delimiterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -229,6 +251,22 @@ void LogConfigExtractRule::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "UnMatchedKey";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unMatchedKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_backtrackingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Backtracking";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_backtracking.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_delimiterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Delimiter";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_delimiter.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -376,5 +414,37 @@ void LogConfigExtractRule::SetUnMatchedKey(const string& _unMatchedKey)
 bool LogConfigExtractRule::UnMatchedKeyHasBeenSet() const
 {
     return m_unMatchedKeyHasBeenSet;
+}
+
+string LogConfigExtractRule::GetBacktracking() const
+{
+    return m_backtracking;
+}
+
+void LogConfigExtractRule::SetBacktracking(const string& _backtracking)
+{
+    m_backtracking = _backtracking;
+    m_backtrackingHasBeenSet = true;
+}
+
+bool LogConfigExtractRule::BacktrackingHasBeenSet() const
+{
+    return m_backtrackingHasBeenSet;
+}
+
+string LogConfigExtractRule::GetDelimiter() const
+{
+    return m_delimiter;
+}
+
+void LogConfigExtractRule::SetDelimiter(const string& _delimiter)
+{
+    m_delimiter = _delimiter;
+    m_delimiterHasBeenSet = true;
+}
+
+bool LogConfigExtractRule::DelimiterHasBeenSet() const
+{
+    return m_delimiterHasBeenSet;
 }
 

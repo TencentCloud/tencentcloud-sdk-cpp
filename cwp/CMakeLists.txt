@@ -191,6 +191,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeSearchExportListRequest.h
   include/tencentcloud/cwp/v20180228/model/ScanAssetRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineRuleResponse.h
+  include/tencentcloud/cwp/v20180228/model/ModifyMachineRemarkRequest.h
   include/tencentcloud/cwp/v20180228/model/StopBaselineDetectResponse.h
   include/tencentcloud/cwp/v20180228/model/DeleteMaliciousRequestsResponse.h
   include/tencentcloud/cwp/v20180228/model/ExportBruteAttacksResponse.h
@@ -263,6 +264,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/BaselineHostTopList.h
   include/tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeBruteAttackListRequest.h
+  include/tencentcloud/cwp/v20180228/model/ModifyMachineRemarkResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulListResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeUndoVulCountsRequest.h
   include/tencentcloud/cwp/v20180228/model/ScanAssetResponse.h
@@ -783,6 +785,7 @@ set(cwp_src
   src/v20180228/model/DescribeSearchExportListRequest.cpp
   src/v20180228/model/ScanAssetRequest.cpp
   src/v20180228/model/DescribeBaselineRuleResponse.cpp
+  src/v20180228/model/ModifyMachineRemarkRequest.cpp
   src/v20180228/model/StopBaselineDetectResponse.cpp
   src/v20180228/model/DeleteMaliciousRequestsResponse.cpp
   src/v20180228/model/ExportBruteAttacksResponse.cpp
@@ -855,6 +858,7 @@ set(cwp_src
   src/v20180228/model/BaselineHostTopList.cpp
   src/v20180228/model/DescribeReverseShellRulesResponse.cpp
   src/v20180228/model/DescribeBruteAttackListRequest.cpp
+  src/v20180228/model/ModifyMachineRemarkResponse.cpp
   src/v20180228/model/DescribeVulListResponse.cpp
   src/v20180228/model/DescribeUndoVulCountsRequest.cpp
   src/v20180228/model/ScanAssetResponse.cpp

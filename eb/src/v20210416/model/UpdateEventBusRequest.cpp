@@ -25,7 +25,9 @@ using namespace std;
 UpdateEventBusRequest::UpdateEventBusRequest() :
     m_eventBusIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_eventBusNameHasBeenSet(false)
+    m_eventBusNameHasBeenSet(false),
+    m_saveDaysHasBeenSet(false),
+    m_logTopicIdHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,22 @@ string UpdateEventBusRequest::ToJsonString() const
         string key = "EventBusName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_eventBusName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_saveDays, allocator);
+    }
+
+    if (m_logTopicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_logTopicId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +132,38 @@ void UpdateEventBusRequest::SetEventBusName(const string& _eventBusName)
 bool UpdateEventBusRequest::EventBusNameHasBeenSet() const
 {
     return m_eventBusNameHasBeenSet;
+}
+
+int64_t UpdateEventBusRequest::GetSaveDays() const
+{
+    return m_saveDays;
+}
+
+void UpdateEventBusRequest::SetSaveDays(const int64_t& _saveDays)
+{
+    m_saveDays = _saveDays;
+    m_saveDaysHasBeenSet = true;
+}
+
+bool UpdateEventBusRequest::SaveDaysHasBeenSet() const
+{
+    return m_saveDaysHasBeenSet;
+}
+
+string UpdateEventBusRequest::GetLogTopicId() const
+{
+    return m_logTopicId;
+}
+
+void UpdateEventBusRequest::SetLogTopicId(const string& _logTopicId)
+{
+    m_logTopicId = _logTopicId;
+    m_logTopicIdHasBeenSet = true;
+}
+
+bool UpdateEventBusRequest::LogTopicIdHasBeenSet() const
+{
+    return m_logTopicIdHasBeenSet;
 }
 
 

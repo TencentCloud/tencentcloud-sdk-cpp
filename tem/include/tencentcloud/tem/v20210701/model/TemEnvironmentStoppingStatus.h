@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool StoppedApplicationNumHasBeenSet() const;
 
+                    /**
+                     * 获取停止失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StopFailedApplicationNum 停止失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStopFailedApplicationNum() const;
+
+                    /**
+                     * 设置停止失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StopFailedApplicationNum 停止失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStopFailedApplicationNum(const int64_t& _stopFailedApplicationNum);
+
+                    /**
+                     * 判断参数 StopFailedApplicationNum 是否已赋值
+                     * @return StopFailedApplicationNum 是否已赋值
+                     */
+                    bool StopFailedApplicationNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     int64_t m_stoppedApplicationNum;
                     bool m_stoppedApplicationNumHasBeenSet;
+
+                    /**
+                     * 停止失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_stopFailedApplicationNum;
+                    bool m_stopFailedApplicationNumHasBeenSet;
 
                 };
             }

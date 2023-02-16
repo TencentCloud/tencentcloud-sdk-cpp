@@ -470,6 +470,28 @@ namespace TencentCloud
                      */
                     bool CreateDateHasBeenSet() const;
 
+                    /**
+                     * 获取地域id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RegionId 地域id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRegionId() const;
+
+                    /**
+                     * 设置地域id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RegionId 地域id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRegionId(const std::string& _regionId);
+
+                    /**
+                     * 判断参数 RegionId 是否已赋值
+                     * @return RegionId 是否已赋值
+                     */
+                    bool RegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -606,6 +628,13 @@ namespace TencentCloud
                      */
                     std::string m_createDate;
                     bool m_createDateHasBeenSet;
+
+                    /**
+                     * 地域id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_regionId;
+                    bool m_regionIdHasBeenSet;
 
                 };
             }

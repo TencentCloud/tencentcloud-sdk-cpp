@@ -189,6 +189,24 @@ namespace TencentCloud
                      */
                     bool ProtocolHasBeenSet() const;
 
+                    /**
+                     * 获取预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * @return TimeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     */
+                    uint64_t GetTimeSpan() const;
+
+                    /**
+                     * 设置预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     * @param TimeSpan 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     */
+                    void SetTimeSpan(const uint64_t& _timeSpan);
+
+                    /**
+                     * 判断参数 TimeSpan 是否已赋值
+                     * @return TimeSpan 是否已赋值
+                     */
+                    bool TimeSpanHasBeenSet() const;
+
                 private:
 
                     /**
@@ -237,6 +255,12 @@ namespace TencentCloud
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
+
+                    /**
+                     * 预付费包月带宽包的购买时长，单位: 月，取值范围: 1~60。
+                     */
+                    uint64_t m_timeSpan;
+                    bool m_timeSpanHasBeenSet;
 
                 };
             }

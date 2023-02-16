@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool InstanceImportModeHasBeenSet() const;
 
+                    /**
+                     * 获取安全组id
+                     * @return SecurityGroupIds 安全组id
+                     */
+                    std::string GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组id
+                     * @param SecurityGroupIds 安全组id
+                     */
+                    void SetSecurityGroupIds(const std::string& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceImportMode;
                     bool m_instanceImportModeHasBeenSet;
+
+                    /**
+                     * 安全组id
+                     */
+                    std::string m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

@@ -26,7 +26,8 @@ ConsumerRecord::ConsumerRecord() :
     m_offsetHasBeenSet(false),
     m_keyHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_timestampHasBeenSet(false)
+    m_timestampHasBeenSet(false),
+    m_headersHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ConsumerRecord::Deserialize(const rapidjson::Value &value)
         m_timestampHasBeenSet = true;
     }
 
+    if (value.HasMember("Headers") && !value["Headers"].IsNull())
+    {
+        if (!value["Headers"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConsumerRecord.Headers` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_headers = string(value["Headers"].GetString());
+        m_headersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ConsumerRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "Timestamp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_timestamp, allocator);
+    }
+
+    if (m_headersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Headers";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_headers.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ConsumerRecord::SetTimestamp(const int64_t& _timestamp)
 bool ConsumerRecord::TimestampHasBeenSet() const
 {
     return m_timestampHasBeenSet;
+}
+
+string ConsumerRecord::GetHeaders() const
+{
+    return m_headers;
+}
+
+void ConsumerRecord::SetHeaders(const string& _headers)
+{
+    m_headers = _headers;
+    m_headersHasBeenSet = true;
+}
+
+bool ConsumerRecord::HeadersHasBeenSet() const
+{
+    return m_headersHasBeenSet;
 }
 

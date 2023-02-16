@@ -25,7 +25,8 @@ using namespace std;
 EnableEventPersistenceRequest::EnableEventPersistenceRequest() :
     m_clusterIdHasBeenSet(false),
     m_logsetIdHasBeenSet(false),
-    m_topicIdHasBeenSet(false)
+    m_topicIdHasBeenSet(false),
+    m_topicRegionHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string EnableEventPersistenceRequest::ToJsonString() const
         string key = "TopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_topicRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void EnableEventPersistenceRequest::SetTopicId(const string& _topicId)
 bool EnableEventPersistenceRequest::TopicIdHasBeenSet() const
 {
     return m_topicIdHasBeenSet;
+}
+
+string EnableEventPersistenceRequest::GetTopicRegion() const
+{
+    return m_topicRegion;
+}
+
+void EnableEventPersistenceRequest::SetTopicRegion(const string& _topicRegion)
+{
+    m_topicRegion = _topicRegion;
+    m_topicRegionHasBeenSet = true;
+}
+
+bool EnableEventPersistenceRequest::TopicRegionHasBeenSet() const
+{
+    return m_topicRegionHasBeenSet;
 }
 
 

@@ -179,6 +179,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/PoolConf.h
   include/tencentcloud/cdb/v20170320/model/DescribeCloneListResponse.h
   include/tencentcloud/cdb/v20170320/model/StartBatchRollbackRequest.h
+  include/tencentcloud/cdb/v20170320/model/OpenDBInstanceEncryptionRequest.h
   include/tencentcloud/cdb/v20170320/model/DescribeDBInstanceCharsetRequest.h
   include/tencentcloud/cdb/v20170320/model/ModifyInstancePasswordComplexityResponse.h
   include/tencentcloud/cdb/v20170320/model/DeviceMemInfo.h
@@ -355,6 +356,7 @@ set(cdb_public_header_model
   include/tencentcloud/cdb/v20170320/model/DescribeDBPriceRequest.h
   include/tencentcloud/cdb/v20170320/model/CreateBackupResponse.h
   include/tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDRequest.h
+  include/tencentcloud/cdb/v20170320/model/OpenDBInstanceEncryptionResponse.h
   include/tencentcloud/cdb/v20170320/model/CdbZoneDataResult.h
   include/tencentcloud/cdb/v20170320/model/SqlFileInfo.h
   include/tencentcloud/cdb/v20170320/model/RoGroupAttr.h
@@ -548,6 +550,7 @@ set(cdb_src
   src/v20170320/model/PoolConf.cpp
   src/v20170320/model/DescribeCloneListResponse.cpp
   src/v20170320/model/StartBatchRollbackRequest.cpp
+  src/v20170320/model/OpenDBInstanceEncryptionRequest.cpp
   src/v20170320/model/DescribeDBInstanceCharsetRequest.cpp
   src/v20170320/model/ModifyInstancePasswordComplexityResponse.cpp
   src/v20170320/model/DeviceMemInfo.cpp
@@ -724,6 +727,7 @@ set(cdb_src
   src/v20170320/model/DescribeDBPriceRequest.cpp
   src/v20170320/model/CreateBackupResponse.cpp
   src/v20170320/model/OpenDBInstanceGTIDRequest.cpp
+  src/v20170320/model/OpenDBInstanceEncryptionResponse.cpp
   src/v20170320/model/CdbZoneDataResult.cpp
   src/v20170320/model/SqlFileInfo.cpp
   src/v20170320/model/RoGroupAttr.cpp

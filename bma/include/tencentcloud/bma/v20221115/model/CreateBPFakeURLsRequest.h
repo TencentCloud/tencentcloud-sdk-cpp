@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取仿冒网址下载链接：请严格按照模版要求填写，https://bma-privacy-detection-1251316161.cosgz.myqcloud.com/20221124/ff3273b24104d03fa3a8d0629a7f71a9/批量仿冒网址举报模板.xlsx
-                     * @return FakeURLs 仿冒网址下载链接：请严格按照模版要求填写，https://bma-privacy-detection-1251316161.cosgz.myqcloud.com/20221124/ff3273b24104d03fa3a8d0629a7f71a9/批量仿冒网址举报模板.xlsx
+                     * 获取批量模版
+                     * @return FakeURLs 批量模版
                      */
                     std::string GetFakeURLs() const;
 
                     /**
-                     * 设置仿冒网址下载链接：请严格按照模版要求填写，https://bma-privacy-detection-1251316161.cosgz.myqcloud.com/20221124/ff3273b24104d03fa3a8d0629a7f71a9/批量仿冒网址举报模板.xlsx
-                     * @param FakeURLs 仿冒网址下载链接：请严格按照模版要求填写，https://bma-privacy-detection-1251316161.cosgz.myqcloud.com/20221124/ff3273b24104d03fa3a8d0629a7f71a9/批量仿冒网址举报模板.xlsx
+                     * 设置批量模版
+                     * @param FakeURLs 批量模版
                      */
                     void SetFakeURLs(const std::string& _fakeURLs);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 仿冒网址下载链接：请严格按照模版要求填写，https://bma-privacy-detection-1251316161.cosgz.myqcloud.com/20221124/ff3273b24104d03fa3a8d0629a7f71a9/批量仿冒网址举报模板.xlsx
+                     * 批量模版
                      */
                     std::string m_fakeURLs;
                     bool m_fakeURLsHasBeenSet;

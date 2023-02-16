@@ -40,6 +40,49 @@ BmaClient::BmaClient(const Credential &credential, const string &region, const C
 }
 
 
+BmaClient::CreateBPBrandOutcome BmaClient::CreateBPBrand(const CreateBPBrandRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBPBrand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBPBrandResponse rsp = CreateBPBrandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBPBrandOutcome(rsp);
+        else
+            return CreateBPBrandOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBPBrandOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateBPBrandAsync(const CreateBPBrandRequest& request, const CreateBPBrandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBPBrand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateBPBrandOutcomeCallable BmaClient::CreateBPBrandCallable(const CreateBPBrandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBPBrandOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBPBrand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 BmaClient::CreateBPFakeAPPOutcome BmaClient::CreateBPFakeAPP(const CreateBPFakeAPPRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateBPFakeAPP");
@@ -205,6 +248,264 @@ BmaClient::CreateBPFakeURLsOutcomeCallable BmaClient::CreateBPFakeURLsCallable(c
         [this, request]()
         {
             return this->CreateBPFakeURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::CreateBPWhiteListOutcome BmaClient::CreateBPWhiteList(const CreateBPWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBPWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBPWhiteListResponse rsp = CreateBPWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBPWhiteListOutcome(rsp);
+        else
+            return CreateBPWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBPWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::CreateBPWhiteListAsync(const CreateBPWhiteListRequest& request, const CreateBPWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBPWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::CreateBPWhiteListOutcomeCallable BmaClient::CreateBPWhiteListCallable(const CreateBPWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBPWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBPWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DeleteBPWhiteListOutcome BmaClient::DeleteBPWhiteList(const DeleteBPWhiteListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBPWhiteList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBPWhiteListResponse rsp = DeleteBPWhiteListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBPWhiteListOutcome(rsp);
+        else
+            return DeleteBPWhiteListOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBPWhiteListOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DeleteBPWhiteListAsync(const DeleteBPWhiteListRequest& request, const DeleteBPWhiteListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBPWhiteList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DeleteBPWhiteListOutcomeCallable BmaClient::DeleteBPWhiteListCallable(const DeleteBPWhiteListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBPWhiteListOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBPWhiteList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeBPBrandsOutcome BmaClient::DescribeBPBrands(const DescribeBPBrandsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPBrands");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPBrandsResponse rsp = DescribeBPBrandsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPBrandsOutcome(rsp);
+        else
+            return DescribeBPBrandsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPBrandsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPBrandsAsync(const DescribeBPBrandsRequest& request, const DescribeBPBrandsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPBrands(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPBrandsOutcomeCallable BmaClient::DescribeBPBrandsCallable(const DescribeBPBrandsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPBrandsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPBrands(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeBPFakeAPPListOutcome BmaClient::DescribeBPFakeAPPList(const DescribeBPFakeAPPListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPFakeAPPList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPFakeAPPListResponse rsp = DescribeBPFakeAPPListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPFakeAPPListOutcome(rsp);
+        else
+            return DescribeBPFakeAPPListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPFakeAPPListOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPFakeAPPListAsync(const DescribeBPFakeAPPListRequest& request, const DescribeBPFakeAPPListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPFakeAPPList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPFakeAPPListOutcomeCallable BmaClient::DescribeBPFakeAPPListCallable(const DescribeBPFakeAPPListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPFakeAPPListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPFakeAPPList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeBPFakeURLsOutcome BmaClient::DescribeBPFakeURLs(const DescribeBPFakeURLsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPFakeURLs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPFakeURLsResponse rsp = DescribeBPFakeURLsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPFakeURLsOutcome(rsp);
+        else
+            return DescribeBPFakeURLsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPFakeURLsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPFakeURLsAsync(const DescribeBPFakeURLsRequest& request, const DescribeBPFakeURLsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPFakeURLs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPFakeURLsOutcomeCallable BmaClient::DescribeBPFakeURLsCallable(const DescribeBPFakeURLsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPFakeURLsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPFakeURLs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+BmaClient::DescribeBPWhiteListsOutcome BmaClient::DescribeBPWhiteLists(const DescribeBPWhiteListsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBPWhiteLists");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBPWhiteListsResponse rsp = DescribeBPWhiteListsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBPWhiteListsOutcome(rsp);
+        else
+            return DescribeBPWhiteListsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBPWhiteListsOutcome(outcome.GetError());
+    }
+}
+
+void BmaClient::DescribeBPWhiteListsAsync(const DescribeBPWhiteListsRequest& request, const DescribeBPWhiteListsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBPWhiteLists(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+BmaClient::DescribeBPWhiteListsOutcomeCallable BmaClient::DescribeBPWhiteListsCallable(const DescribeBPWhiteListsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBPWhiteListsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBPWhiteLists(request);
         }
     );
 

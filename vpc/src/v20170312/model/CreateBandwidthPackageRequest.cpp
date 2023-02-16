@@ -29,7 +29,8 @@ CreateBandwidthPackageRequest::CreateBandwidthPackageRequest() :
     m_bandwidthPackageCountHasBeenSet(false),
     m_internetMaxBandwidthHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_protocolHasBeenSet(false)
+    m_protocolHasBeenSet(false),
+    m_timeSpanHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string CreateBandwidthPackageRequest::ToJsonString() const
         string key = "Protocol";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_protocol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_timeSpanHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeSpan";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeSpan, allocator);
     }
 
 
@@ -221,6 +230,22 @@ void CreateBandwidthPackageRequest::SetProtocol(const string& _protocol)
 bool CreateBandwidthPackageRequest::ProtocolHasBeenSet() const
 {
     return m_protocolHasBeenSet;
+}
+
+uint64_t CreateBandwidthPackageRequest::GetTimeSpan() const
+{
+    return m_timeSpan;
+}
+
+void CreateBandwidthPackageRequest::SetTimeSpan(const uint64_t& _timeSpan)
+{
+    m_timeSpan = _timeSpan;
+    m_timeSpanHasBeenSet = true;
+}
+
+bool CreateBandwidthPackageRequest::TimeSpanHasBeenSet() const
+{
+    return m_timeSpanHasBeenSet;
 }
 
 

@@ -31,7 +31,10 @@ MemberRecord::MemberRecord() :
     m_handUpsHasBeenSet(false),
     m_firstJoinTimestampHasBeenSet(false),
     m_lastQuitTimestampHasBeenSet(false),
-    m_rewordsHasBeenSet(false)
+    m_rewordsHasBeenSet(false),
+    m_iPAddressHasBeenSet(false),
+    m_locationHasBeenSet(false),
+    m_deviceHasBeenSet(false)
 {
 }
 
@@ -150,6 +153,36 @@ CoreInternalOutcome MemberRecord::Deserialize(const rapidjson::Value &value)
         m_rewordsHasBeenSet = true;
     }
 
+    if (value.HasMember("IPAddress") && !value["IPAddress"].IsNull())
+    {
+        if (!value["IPAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.IPAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_iPAddress = string(value["IPAddress"].GetString());
+        m_iPAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Device") && !value["Device"].IsNull())
+    {
+        if (!value["Device"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.Device` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_device = value["Device"].GetInt64();
+        m_deviceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +276,30 @@ void MemberRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Rewords";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_rewords, allocator);
+    }
+
+    if (m_iPAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IPAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_iPAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_deviceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Device";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_device, allocator);
     }
 
 }
@@ -422,5 +479,53 @@ void MemberRecord::SetRewords(const uint64_t& _rewords)
 bool MemberRecord::RewordsHasBeenSet() const
 {
     return m_rewordsHasBeenSet;
+}
+
+string MemberRecord::GetIPAddress() const
+{
+    return m_iPAddress;
+}
+
+void MemberRecord::SetIPAddress(const string& _iPAddress)
+{
+    m_iPAddress = _iPAddress;
+    m_iPAddressHasBeenSet = true;
+}
+
+bool MemberRecord::IPAddressHasBeenSet() const
+{
+    return m_iPAddressHasBeenSet;
+}
+
+string MemberRecord::GetLocation() const
+{
+    return m_location;
+}
+
+void MemberRecord::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool MemberRecord::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
+}
+
+int64_t MemberRecord::GetDevice() const
+{
+    return m_device;
+}
+
+void MemberRecord::SetDevice(const int64_t& _device)
+{
+    m_device = _device;
+    m_deviceHasBeenSet = true;
+}
+
+bool MemberRecord::DeviceHasBeenSet() const
+{
+    return m_deviceHasBeenSet;
 }
 

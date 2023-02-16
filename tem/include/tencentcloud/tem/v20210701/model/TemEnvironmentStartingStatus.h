@@ -90,6 +90,28 @@ namespace TencentCloud
                      */
                     bool StartedApplicationNumHasBeenSet() const;
 
+                    /**
+                     * 获取启动失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartFailedApplicationNum 启动失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStartFailedApplicationNum() const;
+
+                    /**
+                     * 设置启动失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartFailedApplicationNum 启动失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartFailedApplicationNum(const int64_t& _startFailedApplicationNum);
+
+                    /**
+                     * 判断参数 StartFailedApplicationNum 是否已赋值
+                     * @return StartFailedApplicationNum 是否已赋值
+                     */
+                    bool StartFailedApplicationNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +127,13 @@ namespace TencentCloud
                      */
                     int64_t m_startedApplicationNum;
                     bool m_startedApplicationNumHasBeenSet;
+
+                    /**
+                     * 启动失败的应用数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_startFailedApplicationNum;
+                    bool m_startFailedApplicationNumHasBeenSet;
 
                 };
             }

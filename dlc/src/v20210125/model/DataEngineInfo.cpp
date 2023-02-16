@@ -52,7 +52,11 @@ DataEngineInfo::DataEngineInfo() :
     m_renewFlagHasBeenSet(false),
     m_autoSuspendTimeHasBeenSet(false),
     m_networkConnectionSetHasBeenSet(false),
-    m_uiURLHasBeenSet(false)
+    m_uiURLHasBeenSet(false),
+    m_resourceTypeHasBeenSet(false),
+    m_imageVersionIdHasBeenSet(false),
+    m_childImageVersionIdHasBeenSet(false),
+    m_imageVersionNameHasBeenSet(false)
 {
 }
 
@@ -411,6 +415,46 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_uiURLHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourceType") && !value["ResourceType"].IsNull())
+    {
+        if (!value["ResourceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ResourceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourceType = string(value["ResourceType"].GetString());
+        m_resourceTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageVersionId") && !value["ImageVersionId"].IsNull())
+    {
+        if (!value["ImageVersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ImageVersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageVersionId = string(value["ImageVersionId"].GetString());
+        m_imageVersionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChildImageVersionId") && !value["ChildImageVersionId"].IsNull())
+    {
+        if (!value["ChildImageVersionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ChildImageVersionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_childImageVersionId = string(value["ChildImageVersionId"].GetString());
+        m_childImageVersionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageVersionName") && !value["ImageVersionName"].IsNull())
+    {
+        if (!value["ImageVersionName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ImageVersionName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_imageVersionName = string(value["ImageVersionName"].GetString());
+        m_imageVersionNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -692,6 +736,38 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "UiURL";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_uiURL.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_resourceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_childImageVersionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChildImageVersionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_childImageVersionId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_imageVersionNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageVersionName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_imageVersionName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1207,5 +1283,69 @@ void DataEngineInfo::SetUiURL(const string& _uiURL)
 bool DataEngineInfo::UiURLHasBeenSet() const
 {
     return m_uiURLHasBeenSet;
+}
+
+string DataEngineInfo::GetResourceType() const
+{
+    return m_resourceType;
+}
+
+void DataEngineInfo::SetResourceType(const string& _resourceType)
+{
+    m_resourceType = _resourceType;
+    m_resourceTypeHasBeenSet = true;
+}
+
+bool DataEngineInfo::ResourceTypeHasBeenSet() const
+{
+    return m_resourceTypeHasBeenSet;
+}
+
+string DataEngineInfo::GetImageVersionId() const
+{
+    return m_imageVersionId;
+}
+
+void DataEngineInfo::SetImageVersionId(const string& _imageVersionId)
+{
+    m_imageVersionId = _imageVersionId;
+    m_imageVersionIdHasBeenSet = true;
+}
+
+bool DataEngineInfo::ImageVersionIdHasBeenSet() const
+{
+    return m_imageVersionIdHasBeenSet;
+}
+
+string DataEngineInfo::GetChildImageVersionId() const
+{
+    return m_childImageVersionId;
+}
+
+void DataEngineInfo::SetChildImageVersionId(const string& _childImageVersionId)
+{
+    m_childImageVersionId = _childImageVersionId;
+    m_childImageVersionIdHasBeenSet = true;
+}
+
+bool DataEngineInfo::ChildImageVersionIdHasBeenSet() const
+{
+    return m_childImageVersionIdHasBeenSet;
+}
+
+string DataEngineInfo::GetImageVersionName() const
+{
+    return m_imageVersionName;
+}
+
+void DataEngineInfo::SetImageVersionName(const string& _imageVersionName)
+{
+    m_imageVersionName = _imageVersionName;
+    m_imageVersionNameHasBeenSet = true;
+}
+
+bool DataEngineInfo::ImageVersionNameHasBeenSet() const
+{
+    return m_imageVersionNameHasBeenSet;
 }
 

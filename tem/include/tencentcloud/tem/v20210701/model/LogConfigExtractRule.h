@@ -244,6 +244,50 @@ namespace TencentCloud
                      */
                     bool UnMatchedKeyHasBeenSet() const;
 
+                    /**
+                     * 获取tracking
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Backtracking tracking
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBacktracking() const;
+
+                    /**
+                     * 设置tracking
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Backtracking tracking
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBacktracking(const std::string& _backtracking);
+
+                    /**
+                     * 判断参数 Backtracking 是否已赋值
+                     * @return Backtracking 是否已赋值
+                     */
+                    bool BacktrackingHasBeenSet() const;
+
+                    /**
+                     * 获取分隔符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Delimiter 分隔符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDelimiter() const;
+
+                    /**
+                     * 设置分隔符
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Delimiter 分隔符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDelimiter(const std::string& _delimiter);
+
+                    /**
+                     * 判断参数 Delimiter 是否已赋值
+                     * @return Delimiter 是否已赋值
+                     */
+                    bool DelimiterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +352,20 @@ namespace TencentCloud
                      */
                     std::string m_unMatchedKey;
                     bool m_unMatchedKeyHasBeenSet;
+
+                    /**
+                     * tracking
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_backtracking;
+                    bool m_backtrackingHasBeenSet;
+
+                    /**
+                     * 分隔符
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_delimiter;
+                    bool m_delimiterHasBeenSet;
 
                 };
             }

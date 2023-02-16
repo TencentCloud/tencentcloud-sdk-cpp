@@ -96,6 +96,42 @@ namespace TencentCloud
                      */
                     bool EventBusNameHasBeenSet() const;
 
+                    /**
+                     * 获取EB日志存储时长
+                     * @return SaveDays EB日志存储时长
+                     */
+                    int64_t GetSaveDays() const;
+
+                    /**
+                     * 设置EB日志存储时长
+                     * @param SaveDays EB日志存储时长
+                     */
+                    void SetSaveDays(const int64_t& _saveDays);
+
+                    /**
+                     * 判断参数 SaveDays 是否已赋值
+                     * @return SaveDays 是否已赋值
+                     */
+                    bool SaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取EB日志主题ID
+                     * @return LogTopicId EB日志主题ID
+                     */
+                    std::string GetLogTopicId() const;
+
+                    /**
+                     * 设置EB日志主题ID
+                     * @param LogTopicId EB日志主题ID
+                     */
+                    void SetLogTopicId(const std::string& _logTopicId);
+
+                    /**
+                     * 判断参数 LogTopicId 是否已赋值
+                     * @return LogTopicId 是否已赋值
+                     */
+                    bool LogTopicIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +151,18 @@ namespace TencentCloud
                      */
                     std::string m_eventBusName;
                     bool m_eventBusNameHasBeenSet;
+
+                    /**
+                     * EB日志存储时长
+                     */
+                    int64_t m_saveDays;
+                    bool m_saveDaysHasBeenSet;
+
+                    /**
+                     * EB日志主题ID
+                     */
+                    std::string m_logTopicId;
+                    bool m_logTopicIdHasBeenSet;
 
                 };
             }

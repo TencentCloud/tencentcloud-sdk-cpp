@@ -5028,6 +5028,49 @@ CdbClient::OpenAuditServiceOutcomeCallable CdbClient::OpenAuditServiceCallable(c
     return task->get_future();
 }
 
+CdbClient::OpenDBInstanceEncryptionOutcome CdbClient::OpenDBInstanceEncryption(const OpenDBInstanceEncryptionRequest &request)
+{
+    auto outcome = MakeRequest(request, "OpenDBInstanceEncryption");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        OpenDBInstanceEncryptionResponse rsp = OpenDBInstanceEncryptionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return OpenDBInstanceEncryptionOutcome(rsp);
+        else
+            return OpenDBInstanceEncryptionOutcome(o.GetError());
+    }
+    else
+    {
+        return OpenDBInstanceEncryptionOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::OpenDBInstanceEncryptionAsync(const OpenDBInstanceEncryptionRequest& request, const OpenDBInstanceEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->OpenDBInstanceEncryption(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::OpenDBInstanceEncryptionOutcomeCallable CdbClient::OpenDBInstanceEncryptionCallable(const OpenDBInstanceEncryptionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<OpenDBInstanceEncryptionOutcome()>>(
+        [this, request]()
+        {
+            return this->OpenDBInstanceEncryption(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::OpenDBInstanceGTIDOutcome CdbClient::OpenDBInstanceGTID(const OpenDBInstanceGTIDRequest &request)
 {
     auto outcome = MakeRequest(request, "OpenDBInstanceGTID");

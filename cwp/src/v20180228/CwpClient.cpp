@@ -9027,6 +9027,49 @@ CwpClient::ModifyLicenseUnBindsOutcomeCallable CwpClient::ModifyLicenseUnBindsCa
     return task->get_future();
 }
 
+CwpClient::ModifyMachineRemarkOutcome CwpClient::ModifyMachineRemark(const ModifyMachineRemarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyMachineRemark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyMachineRemarkResponse rsp = ModifyMachineRemarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyMachineRemarkOutcome(rsp);
+        else
+            return ModifyMachineRemarkOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyMachineRemarkOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyMachineRemarkAsync(const ModifyMachineRemarkRequest& request, const ModifyMachineRemarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyMachineRemark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyMachineRemarkOutcomeCallable CwpClient::ModifyMachineRemarkCallable(const ModifyMachineRemarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyMachineRemarkOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyMachineRemark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ModifyMalwareTimingScanSettingsOutcome CwpClient::ModifyMalwareTimingScanSettings(const ModifyMalwareTimingScanSettingsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyMalwareTimingScanSettings");

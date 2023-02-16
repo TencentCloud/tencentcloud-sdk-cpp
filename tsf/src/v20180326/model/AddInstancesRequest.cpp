@@ -30,7 +30,8 @@ AddInstancesRequest::AddInstancesRequest() :
     m_passwordHasBeenSet(false),
     m_keyIdHasBeenSet(false),
     m_sgIdHasBeenSet(false),
-    m_instanceImportModeHasBeenSet(false)
+    m_instanceImportModeHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,14 @@ string AddInstancesRequest::ToJsonString() const
         string key = "InstanceImportMode";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceImportMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_securityGroupIds.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -244,6 +253,22 @@ void AddInstancesRequest::SetInstanceImportMode(const string& _instanceImportMod
 bool AddInstancesRequest::InstanceImportModeHasBeenSet() const
 {
     return m_instanceImportModeHasBeenSet;
+}
+
+string AddInstancesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void AddInstancesRequest::SetSecurityGroupIds(const string& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool AddInstancesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

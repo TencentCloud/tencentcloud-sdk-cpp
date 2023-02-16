@@ -28,7 +28,8 @@ SyncDetailInfo::SyncDetailInfo() :
     m_masterSlaveDistanceHasBeenSet(false),
     m_secondsBehindMasterHasBeenSet(false),
     m_messageHasBeenSet(false),
-    m_stepInfosHasBeenSet(false)
+    m_stepInfosHasBeenSet(false),
+    m_causeOfCompareDisableHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome SyncDetailInfo::Deserialize(const rapidjson::Value &value)
         m_stepInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("CauseOfCompareDisable") && !value["CauseOfCompareDisable"].IsNull())
+    {
+        if (!value["CauseOfCompareDisable"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncDetailInfo.CauseOfCompareDisable` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_causeOfCompareDisable = string(value["CauseOfCompareDisable"].GetString());
+        m_causeOfCompareDisableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void SyncDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_causeOfCompareDisableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CauseOfCompareDisable";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_causeOfCompareDisable.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void SyncDetailInfo::SetStepInfos(const vector<StepInfo>& _stepInfos)
 bool SyncDetailInfo::StepInfosHasBeenSet() const
 {
     return m_stepInfosHasBeenSet;
+}
+
+string SyncDetailInfo::GetCauseOfCompareDisable() const
+{
+    return m_causeOfCompareDisable;
+}
+
+void SyncDetailInfo::SetCauseOfCompareDisable(const string& _causeOfCompareDisable)
+{
+    m_causeOfCompareDisable = _causeOfCompareDisable;
+    m_causeOfCompareDisableHasBeenSet = true;
+}
+
+bool SyncDetailInfo::CauseOfCompareDisableHasBeenSet() const
+{
+    return m_causeOfCompareDisableHasBeenSet;
 }
 

@@ -176,6 +176,42 @@ Activity：活动来源
                      */
                     bool IsOpenCloudInvokeHasBeenSet() const;
 
+                    /**
+                     * 获取创建来源：wechat | cloud
+                     * @return Source 创建来源：wechat | cloud
+                     */
+                    std::string GetSource() const;
+
+                    /**
+                     * 设置创建来源：wechat | cloud
+                     * @param Source 创建来源：wechat | cloud
+                     */
+                    void SetSource(const std::string& _source);
+
+                    /**
+                     * 判断参数 Source 是否已赋值
+                     * @return Source 是否已赋值
+                     */
+                    bool SourceHasBeenSet() const;
+
+                    /**
+                     * 获取渠道：wechat | cloud
+                     * @return Channel 渠道：wechat | cloud
+                     */
+                    std::string GetChannel() const;
+
+                    /**
+                     * 设置渠道：wechat | cloud
+                     * @param Channel 渠道：wechat | cloud
+                     */
+                    void SetChannel(const std::string& _channel);
+
+                    /**
+                     * 判断参数 Channel 是否已赋值
+                     * @return Channel 是否已赋值
+                     */
+                    bool ChannelHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +257,18 @@ Activity：活动来源
                      */
                     bool m_isOpenCloudInvoke;
                     bool m_isOpenCloudInvokeHasBeenSet;
+
+                    /**
+                     * 创建来源：wechat | cloud
+                     */
+                    std::string m_source;
+                    bool m_sourceHasBeenSet;
+
+                    /**
+                     * 渠道：wechat | cloud
+                     */
+                    std::string m_channel;
+                    bool m_channelHasBeenSet;
 
                 };
             }

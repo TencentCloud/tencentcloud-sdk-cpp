@@ -223,6 +223,28 @@ namespace TencentCloud
                      */
                     bool StepInfosHasBeenSet() const;
 
+                    /**
+                     * 获取不能发起一致性校验的原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CauseOfCompareDisable 不能发起一致性校验的原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCauseOfCompareDisable() const;
+
+                    /**
+                     * 设置不能发起一致性校验的原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CauseOfCompareDisable 不能发起一致性校验的原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCauseOfCompareDisable(const std::string& _causeOfCompareDisable);
+
+                    /**
+                     * 判断参数 CauseOfCompareDisable 是否已赋值
+                     * @return CauseOfCompareDisable 是否已赋值
+                     */
+                    bool CauseOfCompareDisableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -280,6 +302,13 @@ namespace TencentCloud
                      */
                     std::vector<StepInfo> m_stepInfos;
                     bool m_stepInfosHasBeenSet;
+
+                    /**
+                     * 不能发起一致性校验的原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_causeOfCompareDisable;
+                    bool m_causeOfCompareDisableHasBeenSet;
 
                 };
             }

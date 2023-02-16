@@ -24,7 +24,8 @@ using namespace std;
 
 CreateEventBusRequest::CreateEventBusRequest() :
     m_eventBusNameHasBeenSet(false),
-    m_descriptionHasBeenSet(false)
+    m_descriptionHasBeenSet(false),
+    m_saveDaysHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string CreateEventBusRequest::ToJsonString() const
         string key = "Description";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_saveDays, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void CreateEventBusRequest::SetDescription(const string& _description)
 bool CreateEventBusRequest::DescriptionHasBeenSet() const
 {
     return m_descriptionHasBeenSet;
+}
+
+int64_t CreateEventBusRequest::GetSaveDays() const
+{
+    return m_saveDays;
+}
+
+void CreateEventBusRequest::SetSaveDays(const int64_t& _saveDays)
+{
+    m_saveDays = _saveDays;
+    m_saveDaysHasBeenSet = true;
+}
+
+bool CreateEventBusRequest::SaveDaysHasBeenSet() const
+{
+    return m_saveDaysHasBeenSet;
 }
 
 

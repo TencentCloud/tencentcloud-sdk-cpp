@@ -701,6 +701,94 @@ namespace TencentCloud
                      */
                     bool UiURLHasBeenSet() const;
 
+                    /**
+                     * 获取引擎的资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourceType 引擎的资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourceType() const;
+
+                    /**
+                     * 设置引擎的资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourceType 引擎的资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourceType(const std::string& _resourceType);
+
+                    /**
+                     * 判断参数 ResourceType 是否已赋值
+                     * @return ResourceType 是否已赋值
+                     */
+                    bool ResourceTypeHasBeenSet() const;
+
+                    /**
+                     * 获取集群镜像版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageVersionId 集群镜像版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImageVersionId() const;
+
+                    /**
+                     * 设置集群镜像版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageVersionId 集群镜像版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageVersionId(const std::string& _imageVersionId);
+
+                    /**
+                     * 判断参数 ImageVersionId 是否已赋值
+                     * @return ImageVersionId 是否已赋值
+                     */
+                    bool ImageVersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群镜像小版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChildImageVersionId 集群镜像小版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChildImageVersionId() const;
+
+                    /**
+                     * 设置集群镜像小版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChildImageVersionId 集群镜像小版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChildImageVersionId(const std::string& _childImageVersionId);
+
+                    /**
+                     * 判断参数 ChildImageVersionId 是否已赋值
+                     * @return ChildImageVersionId 是否已赋值
+                     */
+                    bool ChildImageVersionIdHasBeenSet() const;
+
+                    /**
+                     * 获取集群镜像版本名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageVersionName 集群镜像版本名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImageVersionName() const;
+
+                    /**
+                     * 设置集群镜像版本名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageVersionName 集群镜像版本名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageVersionName(const std::string& _imageVersionName);
+
+                    /**
+                     * 判断参数 ImageVersionName 是否已赋值
+                     * @return ImageVersionName 是否已赋值
+                     */
+                    bool ImageVersionNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -913,6 +1001,34 @@ namespace TencentCloud
                      */
                     std::string m_uiURL;
                     bool m_uiURLHasBeenSet;
+
+                    /**
+                     * 引擎的资源类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourceType;
+                    bool m_resourceTypeHasBeenSet;
+
+                    /**
+                     * 集群镜像版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageVersionId;
+                    bool m_imageVersionIdHasBeenSet;
+
+                    /**
+                     * 集群镜像小版本ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_childImageVersionId;
+                    bool m_childImageVersionIdHasBeenSet;
+
+                    /**
+                     * 集群镜像版本名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_imageVersionName;
+                    bool m_imageVersionNameHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@ using namespace std;
 
 TemEnvironmentStartingStatus::TemEnvironmentStartingStatus() :
     m_applicationNumNeedToStartHasBeenSet(false),
-    m_startedApplicationNumHasBeenSet(false)
+    m_startedApplicationNumHasBeenSet(false),
+    m_startFailedApplicationNumHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome TemEnvironmentStartingStatus::Deserialize(const rapidjson::V
         m_startedApplicationNumHasBeenSet = true;
     }
 
+    if (value.HasMember("StartFailedApplicationNum") && !value["StartFailedApplicationNum"].IsNull())
+    {
+        if (!value["StartFailedApplicationNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemEnvironmentStartingStatus.StartFailedApplicationNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_startFailedApplicationNum = value["StartFailedApplicationNum"].GetInt64();
+        m_startFailedApplicationNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TemEnvironmentStartingStatus::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "StartedApplicationNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startedApplicationNum, allocator);
+    }
+
+    if (m_startFailedApplicationNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartFailedApplicationNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startFailedApplicationNum, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void TemEnvironmentStartingStatus::SetStartedApplicationNum(const int64_t& _star
 bool TemEnvironmentStartingStatus::StartedApplicationNumHasBeenSet() const
 {
     return m_startedApplicationNumHasBeenSet;
+}
+
+int64_t TemEnvironmentStartingStatus::GetStartFailedApplicationNum() const
+{
+    return m_startFailedApplicationNum;
+}
+
+void TemEnvironmentStartingStatus::SetStartFailedApplicationNum(const int64_t& _startFailedApplicationNum)
+{
+    m_startFailedApplicationNum = _startFailedApplicationNum;
+    m_startFailedApplicationNumHasBeenSet = true;
+}
+
+bool TemEnvironmentStartingStatus::StartFailedApplicationNumHasBeenSet() const
+{
+    return m_startFailedApplicationNumHasBeenSet;
 }
 

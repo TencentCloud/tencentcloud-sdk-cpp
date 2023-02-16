@@ -87,13 +87,34 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/ModifyCRWhiteListRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyRequest.h
   include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPResponse.h
-  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPRequest.h
-  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPListRequest.h
+  include/tencentcloud/bma/v20221115/model/DeleteBPWhiteListResponse.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPBrandsResponse.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPBrandsRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPBrandRequest.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPFakeURLsRequest.h
+  include/tencentcloud/bma/v20221115/model/FakeAPPData.h
+  include/tencentcloud/bma/v20221115/model/WhiteListData.h
+  include/tencentcloud/bma/v20221115/model/TrademarkData.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPFakeURLsResponse.h
   include/tencentcloud/bma/v20221115/model/CreateBPFakeURLRequest.h
   include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPListResponse.h
-  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLResponse.h
-  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLsRequest.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPWhiteListsResponse.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPListRequest.h
+  include/tencentcloud/bma/v20221115/model/Filter.h
+  include/tencentcloud/bma/v20221115/model/CreateBPWhiteListResponse.h
+  include/tencentcloud/bma/v20221115/model/ServiceData.h
+  include/tencentcloud/bma/v20221115/model/FakeURLData.h
+  include/tencentcloud/bma/v20221115/model/DeleteBPWhiteListRequest.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPWhiteListsRequest.h
   include/tencentcloud/bma/v20221115/model/CreateBPFakeURLsResponse.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPFakeAPPListRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPRequest.h
+  include/tencentcloud/bma/v20221115/model/BrandData.h
+  include/tencentcloud/bma/v20221115/model/CreateBPBrandResponse.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLResponse.h
+  include/tencentcloud/bma/v20221115/model/CreateBPWhiteListRequest.h
+  include/tencentcloud/bma/v20221115/model/CreateBPFakeURLsRequest.h
+  include/tencentcloud/bma/v20221115/model/DescribeBPFakeAPPListResponse.h
   )
 
 set(bma_src
@@ -166,13 +187,34 @@ set(bma_src
   src/v20210624/model/ModifyCRWhiteListRequest.cpp
   src/v20210624/model/CreateCRCompanyVerifyRequest.cpp
   src/v20221115/model/CreateBPFakeAPPResponse.cpp
-  src/v20221115/model/CreateBPFakeAPPRequest.cpp
-  src/v20221115/model/CreateBPFakeAPPListRequest.cpp
+  src/v20221115/model/DeleteBPWhiteListResponse.cpp
+  src/v20221115/model/DescribeBPBrandsResponse.cpp
+  src/v20221115/model/DescribeBPBrandsRequest.cpp
+  src/v20221115/model/CreateBPBrandRequest.cpp
+  src/v20221115/model/DescribeBPFakeURLsRequest.cpp
+  src/v20221115/model/FakeAPPData.cpp
+  src/v20221115/model/WhiteListData.cpp
+  src/v20221115/model/TrademarkData.cpp
+  src/v20221115/model/DescribeBPFakeURLsResponse.cpp
   src/v20221115/model/CreateBPFakeURLRequest.cpp
   src/v20221115/model/CreateBPFakeAPPListResponse.cpp
-  src/v20221115/model/CreateBPFakeURLResponse.cpp
-  src/v20221115/model/CreateBPFakeURLsRequest.cpp
+  src/v20221115/model/DescribeBPWhiteListsResponse.cpp
+  src/v20221115/model/CreateBPFakeAPPListRequest.cpp
+  src/v20221115/model/Filter.cpp
+  src/v20221115/model/CreateBPWhiteListResponse.cpp
+  src/v20221115/model/ServiceData.cpp
+  src/v20221115/model/FakeURLData.cpp
+  src/v20221115/model/DeleteBPWhiteListRequest.cpp
+  src/v20221115/model/DescribeBPWhiteListsRequest.cpp
   src/v20221115/model/CreateBPFakeURLsResponse.cpp
+  src/v20221115/model/DescribeBPFakeAPPListRequest.cpp
+  src/v20221115/model/CreateBPFakeAPPRequest.cpp
+  src/v20221115/model/BrandData.cpp
+  src/v20221115/model/CreateBPBrandResponse.cpp
+  src/v20221115/model/CreateBPFakeURLResponse.cpp
+  src/v20221115/model/CreateBPWhiteListRequest.cpp
+  src/v20221115/model/CreateBPFakeURLsRequest.cpp
+  src/v20221115/model/DescribeBPFakeAPPListResponse.cpp
   )
 
 set(bma_include

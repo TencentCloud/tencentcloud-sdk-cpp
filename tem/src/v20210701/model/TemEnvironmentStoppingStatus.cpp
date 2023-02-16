@@ -22,7 +22,8 @@ using namespace std;
 
 TemEnvironmentStoppingStatus::TemEnvironmentStoppingStatus() :
     m_applicationNumNeedToStopHasBeenSet(false),
-    m_stoppedApplicationNumHasBeenSet(false)
+    m_stoppedApplicationNumHasBeenSet(false),
+    m_stopFailedApplicationNumHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,16 @@ CoreInternalOutcome TemEnvironmentStoppingStatus::Deserialize(const rapidjson::V
         m_stoppedApplicationNumHasBeenSet = true;
     }
 
+    if (value.HasMember("StopFailedApplicationNum") && !value["StopFailedApplicationNum"].IsNull())
+    {
+        if (!value["StopFailedApplicationNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemEnvironmentStoppingStatus.StopFailedApplicationNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stopFailedApplicationNum = value["StopFailedApplicationNum"].GetInt64();
+        m_stopFailedApplicationNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +83,14 @@ void TemEnvironmentStoppingStatus::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "StoppedApplicationNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_stoppedApplicationNum, allocator);
+    }
+
+    if (m_stopFailedApplicationNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StopFailedApplicationNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stopFailedApplicationNum, allocator);
     }
 
 }
@@ -107,5 +126,21 @@ void TemEnvironmentStoppingStatus::SetStoppedApplicationNum(const int64_t& _stop
 bool TemEnvironmentStoppingStatus::StoppedApplicationNumHasBeenSet() const
 {
     return m_stoppedApplicationNumHasBeenSet;
+}
+
+int64_t TemEnvironmentStoppingStatus::GetStopFailedApplicationNum() const
+{
+    return m_stopFailedApplicationNum;
+}
+
+void TemEnvironmentStoppingStatus::SetStopFailedApplicationNum(const int64_t& _stopFailedApplicationNum)
+{
+    m_stopFailedApplicationNum = _stopFailedApplicationNum;
+    m_stopFailedApplicationNumHasBeenSet = true;
+}
+
+bool TemEnvironmentStoppingStatus::StopFailedApplicationNumHasBeenSet() const
+{
+    return m_stopFailedApplicationNumHasBeenSet;
 }
 

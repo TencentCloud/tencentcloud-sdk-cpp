@@ -1883,6 +1883,50 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreStopEncoded 是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPreStopEncoded() const;
+
+                    /**
+                     * 设置是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PreStopEncoded 是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPreStopEncoded(const std::string& _preStopEncoded);
+
+                    /**
+                     * 判断参数 PreStopEncoded 是否已赋值
+                     * @return PreStopEncoded 是否已赋值
+                     */
+                    bool PreStopEncodedHasBeenSet() const;
+
+                    /**
+                     * 获取是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PostStartEncoded 是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPostStartEncoded() const;
+
+                    /**
+                     * 设置是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PostStartEncoded 是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPostStartEncoded(const std::string& _postStartEncoded);
+
+                    /**
+                     * 判断参数 PostStartEncoded 是否已赋值
+                     * @return PostStartEncoded 是否已赋值
+                     */
+                    bool PostStartEncodedHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2468,6 +2512,20 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_preStopEncoded;
+                    bool m_preStopEncodedHasBeenSet;
+
+                    /**
+                     * 是否编码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_postStartEncoded;
+                    bool m_postStartEncodedHasBeenSet;
 
                 };
             }

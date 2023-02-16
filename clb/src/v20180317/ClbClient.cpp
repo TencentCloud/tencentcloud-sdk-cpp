@@ -2577,6 +2577,49 @@ ClbClient::ModifyDomainAttributesOutcomeCallable ClbClient::ModifyDomainAttribut
     return task->get_future();
 }
 
+ClbClient::ModifyFunctionTargetsOutcome ClbClient::ModifyFunctionTargets(const ModifyFunctionTargetsRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyFunctionTargets");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyFunctionTargetsResponse rsp = ModifyFunctionTargetsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyFunctionTargetsOutcome(rsp);
+        else
+            return ModifyFunctionTargetsOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyFunctionTargetsOutcome(outcome.GetError());
+    }
+}
+
+void ClbClient::ModifyFunctionTargetsAsync(const ModifyFunctionTargetsRequest& request, const ModifyFunctionTargetsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyFunctionTargets(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClbClient::ModifyFunctionTargetsOutcomeCallable ClbClient::ModifyFunctionTargetsCallable(const ModifyFunctionTargetsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyFunctionTargetsOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyFunctionTargets(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClbClient::ModifyListenerOutcome ClbClient::ModifyListener(const ModifyListenerRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyListener");

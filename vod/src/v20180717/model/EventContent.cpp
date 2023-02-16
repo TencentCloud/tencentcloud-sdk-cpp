@@ -39,6 +39,7 @@ EventContent::EventContent() :
     m_wechatMiniProgramPublishCompleteEventHasBeenSet(false),
     m_removeWatermarkCompleteEventHasBeenSet(false),
     m_restoreMediaCompleteEventHasBeenSet(false),
+    m_rebuildMediaCompleteEventHasBeenSet(false),
     m_extractTraceWatermarkCompleteEventHasBeenSet(false),
     m_reviewAudioVideoCompleteEventHasBeenSet(false),
     m_reduceMediaBitrateCompleteEventHasBeenSet(false),
@@ -343,6 +344,23 @@ CoreInternalOutcome EventContent::Deserialize(const rapidjson::Value &value)
         m_restoreMediaCompleteEventHasBeenSet = true;
     }
 
+    if (value.HasMember("RebuildMediaCompleteEvent") && !value["RebuildMediaCompleteEvent"].IsNull())
+    {
+        if (!value["RebuildMediaCompleteEvent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventContent.RebuildMediaCompleteEvent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rebuildMediaCompleteEvent.Deserialize(value["RebuildMediaCompleteEvent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rebuildMediaCompleteEventHasBeenSet = true;
+    }
+
     if (value.HasMember("ExtractTraceWatermarkCompleteEvent") && !value["ExtractTraceWatermarkCompleteEvent"].IsNull())
     {
         if (!value["ExtractTraceWatermarkCompleteEvent"].IsObject())
@@ -576,6 +594,15 @@ void EventContent::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_restoreMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_rebuildMediaCompleteEventHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RebuildMediaCompleteEvent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rebuildMediaCompleteEvent.ToJsonObject(value[key.c_str()], allocator);
     }
 
     if (m_extractTraceWatermarkCompleteEventHasBeenSet)
@@ -903,6 +930,22 @@ void EventContent::SetRestoreMediaCompleteEvent(const RestoreMediaTask& _restore
 bool EventContent::RestoreMediaCompleteEventHasBeenSet() const
 {
     return m_restoreMediaCompleteEventHasBeenSet;
+}
+
+RebuildMediaTask EventContent::GetRebuildMediaCompleteEvent() const
+{
+    return m_rebuildMediaCompleteEvent;
+}
+
+void EventContent::SetRebuildMediaCompleteEvent(const RebuildMediaTask& _rebuildMediaCompleteEvent)
+{
+    m_rebuildMediaCompleteEvent = _rebuildMediaCompleteEvent;
+    m_rebuildMediaCompleteEventHasBeenSet = true;
+}
+
+bool EventContent::RebuildMediaCompleteEventHasBeenSet() const
+{
+    return m_rebuildMediaCompleteEventHasBeenSet;
 }
 
 ExtractTraceWatermarkTask EventContent::GetExtractTraceWatermarkCompleteEvent() const

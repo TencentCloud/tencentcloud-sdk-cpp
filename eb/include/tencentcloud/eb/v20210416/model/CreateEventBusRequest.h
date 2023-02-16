@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool DescriptionHasBeenSet() const;
 
+                    /**
+                     * 获取EB存储时长
+                     * @return SaveDays EB存储时长
+                     */
+                    int64_t GetSaveDays() const;
+
+                    /**
+                     * 设置EB存储时长
+                     * @param SaveDays EB存储时长
+                     */
+                    void SetSaveDays(const int64_t& _saveDays);
+
+                    /**
+                     * 判断参数 SaveDays 是否已赋值
+                     * @return SaveDays 是否已赋值
+                     */
+                    bool SaveDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
+
+                    /**
+                     * EB存储时长
+                     */
+                    int64_t m_saveDays;
+                    bool m_saveDaysHasBeenSet;
 
                 };
             }

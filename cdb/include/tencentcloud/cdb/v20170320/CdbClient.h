@@ -255,6 +255,8 @@
 #include <tencentcloud/cdb/v20170320/model/OfflineIsolatedInstancesResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OpenAuditServiceRequest.h>
 #include <tencentcloud/cdb/v20170320/model/OpenAuditServiceResponse.h>
+#include <tencentcloud/cdb/v20170320/model/OpenDBInstanceEncryptionRequest.h>
+#include <tencentcloud/cdb/v20170320/model/OpenDBInstanceEncryptionResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDRequest.h>
 #include <tencentcloud/cdb/v20170320/model/OpenDBInstanceGTIDResponse.h>
 #include <tencentcloud/cdb/v20170320/model/OpenWanServiceRequest.h>
@@ -661,6 +663,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::OpenAuditServiceResponse> OpenAuditServiceOutcome;
                 typedef std::future<OpenAuditServiceOutcome> OpenAuditServiceOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::OpenAuditServiceRequest&, OpenAuditServiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenAuditServiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::OpenDBInstanceEncryptionResponse> OpenDBInstanceEncryptionOutcome;
+                typedef std::future<OpenDBInstanceEncryptionOutcome> OpenDBInstanceEncryptionOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::OpenDBInstanceEncryptionRequest&, OpenDBInstanceEncryptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBInstanceEncryptionAsyncHandler;
                 typedef Outcome<Core::Error, Model::OpenDBInstanceGTIDResponse> OpenDBInstanceGTIDOutcome;
                 typedef std::future<OpenDBInstanceGTIDOutcome> OpenDBInstanceGTIDOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::OpenDBInstanceGTIDRequest&, OpenDBInstanceGTIDOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OpenDBInstanceGTIDAsyncHandler;
@@ -1807,6 +1812,25 @@ namespace TencentCloud
                 OpenAuditServiceOutcome OpenAuditService(const Model::OpenAuditServiceRequest &request);
                 void OpenAuditServiceAsync(const Model::OpenAuditServiceRequest& request, const OpenAuditServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 OpenAuditServiceOutcomeCallable OpenAuditServiceCallable(const Model::OpenAuditServiceRequest& request);
+
+                /**
+                 *本接口(OpenDBInstanceEncryption)用于启用实例数据存储加密功能，支持用户指定自定义密钥。
+
+注意，启用实例数据存储加密之前，需要进行以下操作：
+
+1、进行 [实例初始化](https://cloud.tencent.com/document/api/236/15873) 操作；
+
+2、开启 [KMS服务](https://console.cloud.tencent.com/kms2)；
+
+3、对云数据库(MySQL)[授予访问KMS密钥的权限](https://console.cloud.tencent.com/cam/role)，角色名为MySQL_QCSRole，预设策略名为QcloudAccessForMySQLRole；
+
+该 API 耗时可能到10s，客户端可能超时，如果调用 API 返回 InternalError ，请您调用DescribeDBInstanceInfo 确认后端加密是否开通成功。
+                 * @param req OpenDBInstanceEncryptionRequest
+                 * @return OpenDBInstanceEncryptionOutcome
+                 */
+                OpenDBInstanceEncryptionOutcome OpenDBInstanceEncryption(const Model::OpenDBInstanceEncryptionRequest &request);
+                void OpenDBInstanceEncryptionAsync(const Model::OpenDBInstanceEncryptionRequest& request, const OpenDBInstanceEncryptionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                OpenDBInstanceEncryptionOutcomeCallable OpenDBInstanceEncryptionCallable(const Model::OpenDBInstanceEncryptionRequest& request);
 
                 /**
                  *本接口(OpenDBInstanceGTID)用于开启云数据库实例的 GTID，只支持版本为 5.6 以及以上的实例。

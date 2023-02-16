@@ -166,6 +166,28 @@ namespace TencentCloud
                      */
                     bool TimestampHasBeenSet() const;
 
+                    /**
+                     * 获取消息headers
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Headers 消息headers
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHeaders() const;
+
+                    /**
+                     * 设置消息headers
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Headers 消息headers
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHeaders(const std::string& _headers);
+
+                    /**
+                     * 判断参数 Headers 是否已赋值
+                     * @return Headers 是否已赋值
+                     */
+                    bool HeadersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +228,13 @@ namespace TencentCloud
                      */
                     int64_t m_timestamp;
                     bool m_timestampHasBeenSet;
+
+                    /**
+                     * 消息headers
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_headers;
+                    bool m_headersHasBeenSet;
 
                 };
             }

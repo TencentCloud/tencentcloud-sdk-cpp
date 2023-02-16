@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool TopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取topic所在地域，默认为集群所在地域
+                     * @return TopicRegion topic所在地域，默认为集群所在地域
+                     */
+                    std::string GetTopicRegion() const;
+
+                    /**
+                     * 设置topic所在地域，默认为集群所在地域
+                     * @param TopicRegion topic所在地域，默认为集群所在地域
+                     */
+                    void SetTopicRegion(const std::string& _topicRegion);
+
+                    /**
+                     * 判断参数 TopicRegion 是否已赋值
+                     * @return TopicRegion 是否已赋值
+                     */
+                    bool TopicRegionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_topicId;
                     bool m_topicIdHasBeenSet;
+
+                    /**
+                     * topic所在地域，默认为集群所在地域
+                     */
+                    std::string m_topicRegion;
+                    bool m_topicRegionHasBeenSet;
 
                 };
             }

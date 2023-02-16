@@ -40,7 +40,8 @@ ServiceVersionBrief::ServiceVersionBrief() :
     m_nodeInfosHasBeenSet(false),
     m_podListHasBeenSet(false),
     m_workloadInfoHasBeenSet(false),
-    m_createDateHasBeenSet(false)
+    m_createDateHasBeenSet(false),
+    m_regionIdHasBeenSet(false)
 {
 }
 
@@ -283,6 +284,16 @@ CoreInternalOutcome ServiceVersionBrief::Deserialize(const rapidjson::Value &val
         m_createDateHasBeenSet = true;
     }
 
+    if (value.HasMember("RegionId") && !value["RegionId"].IsNull())
+    {
+        if (!value["RegionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceVersionBrief.RegionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_regionId = string(value["RegionId"].GetString());
+        m_regionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -463,6 +474,14 @@ void ServiceVersionBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "CreateDate";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_regionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_regionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -786,5 +805,21 @@ void ServiceVersionBrief::SetCreateDate(const string& _createDate)
 bool ServiceVersionBrief::CreateDateHasBeenSet() const
 {
     return m_createDateHasBeenSet;
+}
+
+string ServiceVersionBrief::GetRegionId() const
+{
+    return m_regionId;
+}
+
+void ServiceVersionBrief::SetRegionId(const string& _regionId)
+{
+    m_regionId = _regionId;
+    m_regionIdHasBeenSet = true;
+}
+
+bool ServiceVersionBrief::RegionIdHasBeenSet() const
+{
+    return m_regionIdHasBeenSet;
 }
 

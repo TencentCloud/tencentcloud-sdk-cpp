@@ -45,7 +45,8 @@ Endpoint::Endpoint() :
     m_tmpSecretIdHasBeenSet(false),
     m_tmpSecretKeyHasBeenSet(false),
     m_tmpTokenHasBeenSet(false),
-    m_encryptConnHasBeenSet(false)
+    m_encryptConnHasBeenSet(false),
+    m_databaseNetEnvHasBeenSet(false)
 {
 }
 
@@ -304,6 +305,16 @@ CoreInternalOutcome Endpoint::Deserialize(const rapidjson::Value &value)
         m_encryptConnHasBeenSet = true;
     }
 
+    if (value.HasMember("DatabaseNetEnv") && !value["DatabaseNetEnv"].IsNull())
+    {
+        if (!value["DatabaseNetEnv"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Endpoint.DatabaseNetEnv` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseNetEnv = string(value["DatabaseNetEnv"].GetString());
+        m_databaseNetEnvHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -509,6 +520,14 @@ void Endpoint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "EncryptConn";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_encryptConn.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_databaseNetEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseNetEnv";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseNetEnv.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -912,5 +931,21 @@ void Endpoint::SetEncryptConn(const string& _encryptConn)
 bool Endpoint::EncryptConnHasBeenSet() const
 {
     return m_encryptConnHasBeenSet;
+}
+
+string Endpoint::GetDatabaseNetEnv() const
+{
+    return m_databaseNetEnv;
+}
+
+void Endpoint::SetDatabaseNetEnv(const string& _databaseNetEnv)
+{
+    m_databaseNetEnv = _databaseNetEnv;
+    m_databaseNetEnvHasBeenSet = true;
+}
+
+bool Endpoint::DatabaseNetEnvHasBeenSet() const
+{
+    return m_databaseNetEnvHasBeenSet;
 }
 

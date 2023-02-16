@@ -106,7 +106,9 @@ TemServiceVersionInfo::TemServiceVersionInfo() :
     m_deployStrategyConfHasBeenSet(false),
     m_podListHasBeenSet(false),
     m_confEditedHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_preStopEncodedHasBeenSet(false),
+    m_postStartEncodedHasBeenSet(false)
 {
 }
 
@@ -1147,6 +1149,26 @@ CoreInternalOutcome TemServiceVersionInfo::Deserialize(const rapidjson::Value &v
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("PreStopEncoded") && !value["PreStopEncoded"].IsNull())
+    {
+        if (!value["PreStopEncoded"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.PreStopEncoded` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preStopEncoded = string(value["PreStopEncoded"].GetString());
+        m_preStopEncodedHasBeenSet = true;
+    }
+
+    if (value.HasMember("PostStartEncoded") && !value["PostStartEncoded"].IsNull())
+    {
+        if (!value["PostStartEncoded"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemServiceVersionInfo.PostStartEncoded` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_postStartEncoded = string(value["PostStartEncoded"].GetString());
+        m_postStartEncodedHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1933,6 +1955,22 @@ void TemServiceVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_preStopEncodedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStopEncoded";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preStopEncoded.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_postStartEncodedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PostStartEncoded";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_postStartEncoded.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -3312,5 +3350,37 @@ void TemServiceVersionInfo::SetTags(const vector<Tag>& _tags)
 bool TemServiceVersionInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetPreStopEncoded() const
+{
+    return m_preStopEncoded;
+}
+
+void TemServiceVersionInfo::SetPreStopEncoded(const string& _preStopEncoded)
+{
+    m_preStopEncoded = _preStopEncoded;
+    m_preStopEncodedHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::PreStopEncodedHasBeenSet() const
+{
+    return m_preStopEncodedHasBeenSet;
+}
+
+string TemServiceVersionInfo::GetPostStartEncoded() const
+{
+    return m_postStartEncoded;
+}
+
+void TemServiceVersionInfo::SetPostStartEncoded(const string& _postStartEncoded)
+{
+    m_postStartEncoded = _postStartEncoded;
+    m_postStartEncodedHasBeenSet = true;
+}
+
+bool TemServiceVersionInfo::PostStartEncodedHasBeenSet() const
+{
+    return m_postStartEncodedHasBeenSet;
 }
 

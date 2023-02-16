@@ -814,6 +814,49 @@ EssbasicClient::ChannelGetTaskResultApiOutcomeCallable EssbasicClient::ChannelGe
     return task->get_future();
 }
 
+EssbasicClient::ChannelUpdateSealStatusOutcome EssbasicClient::ChannelUpdateSealStatus(const ChannelUpdateSealStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelUpdateSealStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelUpdateSealStatusResponse rsp = ChannelUpdateSealStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelUpdateSealStatusOutcome(rsp);
+        else
+            return ChannelUpdateSealStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelUpdateSealStatusOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelUpdateSealStatusAsync(const ChannelUpdateSealStatusRequest& request, const ChannelUpdateSealStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelUpdateSealStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelUpdateSealStatusOutcomeCallable EssbasicClient::ChannelUpdateSealStatusCallable(const ChannelUpdateSealStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelUpdateSealStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelUpdateSealStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelVerifyPdfOutcome EssbasicClient::ChannelVerifyPdf(const ChannelVerifyPdfRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelVerifyPdf");

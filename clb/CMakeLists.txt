@@ -81,6 +81,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/AutoRewriteRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeCrossTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/FunctionInfo.h
+  include/tencentcloud/clb/v20180317/model/ModifyFunctionTargetsResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeLoadBalancerListByCertIdResponse.h
   include/tencentcloud/clb/v20180317/model/ModifyTargetGroupInstancesWeightResponse.h
   include/tencentcloud/clb/v20180317/model/DescribeTargetGroupsRequest.h
@@ -213,6 +214,7 @@ set(clb_public_header_model
   include/tencentcloud/clb/v20180317/model/DescribeBlockIPTaskRequest.h
   include/tencentcloud/clb/v20180317/model/Resource.h
   include/tencentcloud/clb/v20180317/model/CreateLoadBalancerResponse.h
+  include/tencentcloud/clb/v20180317/model/ModifyFunctionTargetsRequest.h
   include/tencentcloud/clb/v20180317/model/DescribeRewriteResponse.h
   include/tencentcloud/clb/v20180317/model/Quota.h
   include/tencentcloud/clb/v20180317/model/SetLoadBalancerClsLogRequest.h
@@ -306,6 +308,7 @@ set(clb_src
   src/v20180317/model/AutoRewriteRequest.cpp
   src/v20180317/model/DescribeCrossTargetsResponse.cpp
   src/v20180317/model/FunctionInfo.cpp
+  src/v20180317/model/ModifyFunctionTargetsResponse.cpp
   src/v20180317/model/DescribeLoadBalancerListByCertIdResponse.cpp
   src/v20180317/model/ModifyTargetGroupInstancesWeightResponse.cpp
   src/v20180317/model/DescribeTargetGroupsRequest.cpp
@@ -438,6 +441,7 @@ set(clb_src
   src/v20180317/model/DescribeBlockIPTaskRequest.cpp
   src/v20180317/model/Resource.cpp
   src/v20180317/model/CreateLoadBalancerResponse.cpp
+  src/v20180317/model/ModifyFunctionTargetsRequest.cpp
   src/v20180317/model/DescribeRewriteResponse.cpp
   src/v20180317/model/Quota.cpp
   src/v20180317/model/SetLoadBalancerClsLogRequest.cpp
