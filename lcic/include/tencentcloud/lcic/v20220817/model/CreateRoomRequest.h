@@ -328,6 +328,24 @@ coteaching 双师
                      */
                     bool RecordLayoutHasBeenSet() const;
 
+                    /**
+                     * 获取房间绑定的群组ID,非空时限制组成员进入
+                     * @return GroupId 房间绑定的群组ID,非空时限制组成员进入
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置房间绑定的群组ID,非空时限制组成员进入
+                     * @param GroupId 房间绑定的群组ID,非空时限制组成员进入
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -420,6 +438,12 @@ coteaching 双师
                      */
                     uint64_t m_recordLayout;
                     bool m_recordLayoutHasBeenSet;
+
+                    /**
+                     * 房间绑定的群组ID,非空时限制组成员进入
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

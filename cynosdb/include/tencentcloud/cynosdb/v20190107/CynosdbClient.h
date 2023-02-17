@@ -173,6 +173,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/SearchClusterTablesResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SetRenewFlagResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/SwitchClusterVpcResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchClusterZoneResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcRequest.h>
@@ -418,6 +420,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetRenewFlagResponse> SetRenewFlagOutcome;
                 typedef std::future<SetRenewFlagOutcome> SetRenewFlagOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SetRenewFlagRequest&, SetRenewFlagOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetRenewFlagAsyncHandler;
+                typedef Outcome<Core::Error, Model::SwitchClusterVpcResponse> SwitchClusterVpcOutcome;
+                typedef std::future<SwitchClusterVpcOutcome> SwitchClusterVpcOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::SwitchClusterVpcRequest&, SwitchClusterVpcOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchClusterVpcAsyncHandler;
                 typedef Outcome<Core::Error, Model::SwitchClusterZoneResponse> SwitchClusterZoneOutcome;
                 typedef std::future<SwitchClusterZoneOutcome> SwitchClusterZoneOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::SwitchClusterZoneRequest&, SwitchClusterZoneOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchClusterZoneAsyncHandler;
@@ -1104,6 +1109,15 @@ namespace TencentCloud
                 SetRenewFlagOutcome SetRenewFlag(const Model::SetRenewFlagRequest &request);
                 void SetRenewFlagAsync(const Model::SetRenewFlagRequest& request, const SetRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetRenewFlagOutcomeCallable SetRenewFlagCallable(const Model::SetRenewFlagRequest& request);
+
+                /**
+                 *更换集群vpc
+                 * @param req SwitchClusterVpcRequest
+                 * @return SwitchClusterVpcOutcome
+                 */
+                SwitchClusterVpcOutcome SwitchClusterVpc(const Model::SwitchClusterVpcRequest &request);
+                void SwitchClusterVpcAsync(const Model::SwitchClusterVpcRequest& request, const SwitchClusterVpcAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SwitchClusterVpcOutcomeCallable SwitchClusterVpcCallable(const Model::SwitchClusterVpcRequest& request);
 
                 /**
                  *切换到从可用区

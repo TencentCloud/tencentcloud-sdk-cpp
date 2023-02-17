@@ -37,7 +37,8 @@ DescribeRoomResponse::DescribeRoomResponse() :
     m_disableRecordHasBeenSet(false),
     m_assistantsHasBeenSet(false),
     m_recordUrlHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -218,6 +219,16 @@ CoreInternalOutcome DescribeRoomResponse::Deserialize(const string &payload)
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("GroupId") && !rsp["GroupId"].IsNull())
+    {
+        if (!rsp["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(rsp["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +354,14 @@ string DescribeRoomResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -495,6 +514,16 @@ uint64_t DescribeRoomResponse::GetStatus() const
 bool DescribeRoomResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeRoomResponse::GetGroupId() const
+{
+    return m_groupId;
+}
+
+bool DescribeRoomResponse::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

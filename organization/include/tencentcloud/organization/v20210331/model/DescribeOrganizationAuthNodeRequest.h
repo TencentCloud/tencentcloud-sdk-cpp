@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取互信主体名称。
+                     * @return AuthName 互信主体名称。
+                     */
+                    std::string GetAuthName() const;
+
+                    /**
+                     * 设置互信主体名称。
+                     * @param AuthName 互信主体名称。
+                     */
+                    void SetAuthName(const std::string& _authName);
+
+                    /**
+                     * 判断参数 AuthName 是否已赋值
+                     * @return AuthName 是否已赋值
+                     */
+                    bool AuthNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 互信主体名称。
+                     */
+                    std::string m_authName;
+                    bool m_authNameHasBeenSet;
 
                 };
             }

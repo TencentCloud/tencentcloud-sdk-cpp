@@ -35,7 +35,8 @@ ModifyRoomRequest::ModifyRoomRequest() :
     m_audioQualityHasBeenSet(false),
     m_subTypeHasBeenSet(false),
     m_disableRecordHasBeenSet(false),
-    m_assistantsHasBeenSet(false)
+    m_assistantsHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string ModifyRoomRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -369,6 +378,22 @@ void ModifyRoomRequest::SetAssistants(const vector<string>& _assistants)
 bool ModifyRoomRequest::AssistantsHasBeenSet() const
 {
     return m_assistantsHasBeenSet;
+}
+
+string ModifyRoomRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void ModifyRoomRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool ModifyRoomRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

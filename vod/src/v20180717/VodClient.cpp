@@ -5716,6 +5716,49 @@ VodClient::PushUrlCacheOutcomeCallable VodClient::PushUrlCacheCallable(const Pus
     return task->get_future();
 }
 
+VodClient::RebuildMediaOutcome VodClient::RebuildMedia(const RebuildMediaRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebuildMedia");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebuildMediaResponse rsp = RebuildMediaResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebuildMediaOutcome(rsp);
+        else
+            return RebuildMediaOutcome(o.GetError());
+    }
+    else
+    {
+        return RebuildMediaOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::RebuildMediaAsync(const RebuildMediaRequest& request, const RebuildMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RebuildMedia(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::RebuildMediaOutcomeCallable VodClient::RebuildMediaCallable(const RebuildMediaRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RebuildMediaOutcome()>>(
+        [this, request]()
+        {
+            return this->RebuildMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::RefreshUrlCacheOutcome VodClient::RefreshUrlCache(const RefreshUrlCacheRequest &request)
 {
     auto outcome = MakeRequest(request, "RefreshUrlCache");

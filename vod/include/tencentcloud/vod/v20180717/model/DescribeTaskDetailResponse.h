@@ -34,6 +34,7 @@
 #include <tencentcloud/vod/v20180717/model/CreateImageSpriteTask2017.h>
 #include <tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTask2017.h>
 #include <tencentcloud/vod/v20180717/model/RemoveWatermarkTask.h>
+#include <tencentcloud/vod/v20180717/model/RebuildMediaTask.h>
 #include <tencentcloud/vod/v20180717/model/ExtractTraceWatermarkTask.h>
 #include <tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h>
 #include <tencentcloud/vod/v20180717/model/ReduceMediaBitrateTask.h>
@@ -72,7 +73,8 @@ namespace TencentCloud
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
 <li>DescribeFileAttributesTask：获取文件属性任务；</li>
-<li> ReviewAudioVideo：音视频审核任务。</li>
+<li>RebuildMedia：音画质重生任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
                      * @return TaskType 任务类型，取值：
 <li>Procedure：视频处理任务；</li>
 <li>EditMedia：视频编辑任务；</li>
@@ -84,7 +86,8 @@ namespace TencentCloud
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
 <li>DescribeFileAttributesTask：获取文件属性任务；</li>
-<li> ReviewAudioVideo：音视频审核任务。</li>
+<li>RebuildMedia：音画质重生任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
                      */
                     std::string GetTaskType() const;
 
@@ -331,6 +334,20 @@ namespace TencentCloud
                     bool RemoveWatermarkTaskHasBeenSet() const;
 
                     /**
+                     * 获取音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RebuildMediaTask 音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RebuildMediaTask GetRebuildMediaTask() const;
+
+                    /**
+                     * 判断参数 RebuildMediaTask 是否已赋值
+                     * @return RebuildMediaTask 是否已赋值
+                     */
+                    bool RebuildMediaTaskHasBeenSet() const;
+
+                    /**
                      * 获取提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ExtractTraceWatermarkTask 提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。
@@ -400,7 +417,8 @@ namespace TencentCloud
 <li>FastClipMedia：快速剪辑任务；</li>
 <li>RemoveWatermarkTask：智能去除水印任务；</li>
 <li>DescribeFileAttributesTask：获取文件属性任务；</li>
-<li> ReviewAudioVideo：音视频审核任务。</li>
+<li>RebuildMedia：音画质重生任务；</li>
+<li>ReviewAudioVideo：音视频审核任务。</li>
                      */
                     std::string m_taskType;
                     bool m_taskTypeHasBeenSet;
@@ -522,6 +540,13 @@ namespace TencentCloud
                      */
                     RemoveWatermarkTask m_removeWatermarkTask;
                     bool m_removeWatermarkTaskHasBeenSet;
+
+                    /**
+                     * 音画质重生任务信息，仅当 TaskType 为 RebuildMedia，该字段有值。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    RebuildMediaTask m_rebuildMediaTask;
+                    bool m_rebuildMediaTaskHasBeenSet;
 
                     /**
                      * 提取溯源水印任务信息，仅当 TaskType 为 ExtractTraceWatermark，该字段有值。

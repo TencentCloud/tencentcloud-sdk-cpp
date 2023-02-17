@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取开始时间（必填）
-                     * @return StartTime 开始时间（必填）
+                     * 获取开始时间（必填）格式为时间戳 毫秒
+                     * @return StartTime 开始时间（必填）格式为时间戳 毫秒
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置开始时间（必填）
-                     * @param StartTime 开始时间（必填）
+                     * 设置开始时间（必填）格式为时间戳 毫秒
+                     * @param StartTime 开始时间（必填）格式为时间戳 毫秒
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -133,14 +133,14 @@ namespace TencentCloud
                     bool QueryHasBeenSet() const;
 
                     /**
-                     * 获取结束时间（必填）
-                     * @return EndTime 结束时间（必填）
+                     * 获取结束时间（必填）格式为时间戳 毫秒
+                     * @return EndTime 结束时间（必填）格式为时间戳 毫秒
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置结束时间（必填）
-                     * @param EndTime 结束时间（必填）
+                     * 设置结束时间（必填）格式为时间戳 毫秒
+                     * @param EndTime 结束时间（必填）格式为时间戳 毫秒
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 开始时间（必填）
+                     * 开始时间（必填）格式为时间戳 毫秒
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -201,7 +201,7 @@ namespace TencentCloud
                     bool m_queryHasBeenSet;
 
                     /**
-                     * 结束时间（必填）
+                     * 结束时间（必填）格式为时间戳 毫秒
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

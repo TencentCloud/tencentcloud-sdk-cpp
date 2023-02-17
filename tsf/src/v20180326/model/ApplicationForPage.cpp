@@ -33,7 +33,8 @@ ApplicationForPage::ApplicationForPage() :
     m_applicationRuntimeTypeHasBeenSet(false),
     m_apigatewayServiceIdHasBeenSet(false),
     m_applicationRemarkNameHasBeenSet(false),
-    m_serviceConfigListHasBeenSet(false)
+    m_serviceConfigListHasBeenSet(false),
+    m_ignoreCreateImageRepositoryHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome ApplicationForPage::Deserialize(const rapidjson::Value &valu
         m_serviceConfigListHasBeenSet = true;
     }
 
+    if (value.HasMember("IgnoreCreateImageRepository") && !value["IgnoreCreateImageRepository"].IsNull())
+    {
+        if (!value["IgnoreCreateImageRepository"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApplicationForPage.IgnoreCreateImageRepository` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_ignoreCreateImageRepository = value["IgnoreCreateImageRepository"].GetBool();
+        m_ignoreCreateImageRepositoryHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void ApplicationForPage::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_ignoreCreateImageRepositoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IgnoreCreateImageRepository";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ignoreCreateImageRepository, allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void ApplicationForPage::SetServiceConfigList(const vector<ServiceConfig>& _serv
 bool ApplicationForPage::ServiceConfigListHasBeenSet() const
 {
     return m_serviceConfigListHasBeenSet;
+}
+
+bool ApplicationForPage::GetIgnoreCreateImageRepository() const
+{
+    return m_ignoreCreateImageRepository;
+}
+
+void ApplicationForPage::SetIgnoreCreateImageRepository(const bool& _ignoreCreateImageRepository)
+{
+    m_ignoreCreateImageRepository = _ignoreCreateImageRepository;
+    m_ignoreCreateImageRepositoryHasBeenSet = true;
+}
+
+bool ApplicationForPage::IgnoreCreateImageRepositoryHasBeenSet() const
+{
+    return m_ignoreCreateImageRepositoryHasBeenSet;
 }
 

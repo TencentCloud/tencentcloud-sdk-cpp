@@ -175,6 +175,50 @@ namespace TencentCloud
                      */
                     bool UnitRuleItemListHasBeenSet() const;
 
+                    /**
+                     * 获取CreatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CreatedTime CreatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置CreatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CreatedTime CreatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取UpdatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpdatedTime UpdatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpdatedTime() const;
+
+                    /**
+                     * 设置UpdatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpdatedTime UpdatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpdatedTime(const std::string& _updatedTime);
+
+                    /**
+                     * 判断参数 UpdatedTime 是否已赋值
+                     * @return UpdatedTime 是否已赋值
+                     */
+                    bool UpdatedTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -217,6 +261,20 @@ namespace TencentCloud
                      */
                     std::vector<UnitRuleItem> m_unitRuleItemList;
                     bool m_unitRuleItemListHasBeenSet;
+
+                    /**
+                     * CreatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * UpdatedTime
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_updatedTime;
+                    bool m_updatedTimeHasBeenSet;
 
                 };
             }

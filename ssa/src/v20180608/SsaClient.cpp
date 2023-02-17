@@ -986,3 +986,46 @@ SsaClient::SaDivulgeDataQueryPubOutcomeCallable SsaClient::SaDivulgeDataQueryPub
     return task->get_future();
 }
 
+SsaClient::SaEventPubOutcome SsaClient::SaEventPub(const SaEventPubRequest &request)
+{
+    auto outcome = MakeRequest(request, "SaEventPub");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SaEventPubResponse rsp = SaEventPubResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SaEventPubOutcome(rsp);
+        else
+            return SaEventPubOutcome(o.GetError());
+    }
+    else
+    {
+        return SaEventPubOutcome(outcome.GetError());
+    }
+}
+
+void SsaClient::SaEventPubAsync(const SaEventPubRequest& request, const SaEventPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SaEventPub(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SsaClient::SaEventPubOutcomeCallable SsaClient::SaEventPubCallable(const SaEventPubRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SaEventPubOutcome()>>(
+        [this, request]()
+        {
+            return this->SaEventPub(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

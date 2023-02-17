@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取开始时间戳。
-                     * @return StartTime 开始时间戳。
+                     * 获取开始时间戳。例如 1585142640 。
+                     * @return StartTime 开始时间戳。例如 1585142640 。
                      */
                     uint64_t GetStartTime() const;
 
                     /**
-                     * 设置开始时间戳。
-                     * @param StartTime 开始时间戳。
+                     * 设置开始时间戳。例如 1585142640 。
+                     * @param StartTime 开始时间戳。例如 1585142640 。
                      */
                     void SetStartTime(const uint64_t& _startTime);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取结束时间戳。
-                     * @return EndTime 结束时间戳。
+                     * 获取结束时间戳。例如 1585142640 。
+                     * @return EndTime 结束时间戳。例如 1585142640 。
                      */
                     uint64_t GetEndTime() const;
 
                     /**
-                     * 设置结束时间戳。
-                     * @param EndTime 结束时间戳。
+                     * 设置结束时间戳。例如 1585142640 。
+                     * @param EndTime 结束时间戳。例如 1585142640 。
                      */
                     void SetEndTime(const uint64_t& _endTime);
 
@@ -249,13 +249,13 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 开始时间戳。
+                     * 开始时间戳。例如 1585142640 。
                      */
                     uint64_t m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 结束时间戳。
+                     * 结束时间戳。例如 1585142640 。
                      */
                     uint64_t m_endTime;
                     bool m_endTimeHasBeenSet;

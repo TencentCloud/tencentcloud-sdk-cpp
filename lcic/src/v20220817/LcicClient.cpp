@@ -40,6 +40,135 @@ LcicClient::LcicClient(const Credential &credential, const string &region, const
 }
 
 
+LcicClient::AddGroupMemberOutcome LcicClient::AddGroupMember(const AddGroupMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddGroupMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddGroupMemberResponse rsp = AddGroupMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddGroupMemberOutcome(rsp);
+        else
+            return AddGroupMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return AddGroupMemberOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::AddGroupMemberAsync(const AddGroupMemberRequest& request, const AddGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddGroupMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::AddGroupMemberOutcomeCallable LcicClient::AddGroupMemberCallable(const AddGroupMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddGroupMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->AddGroupMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::BatchAddGroupMemberOutcome LcicClient::BatchAddGroupMember(const BatchAddGroupMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchAddGroupMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchAddGroupMemberResponse rsp = BatchAddGroupMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchAddGroupMemberOutcome(rsp);
+        else
+            return BatchAddGroupMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchAddGroupMemberOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchAddGroupMemberAsync(const BatchAddGroupMemberRequest& request, const BatchAddGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchAddGroupMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BatchAddGroupMemberOutcomeCallable LcicClient::BatchAddGroupMemberCallable(const BatchAddGroupMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchAddGroupMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchAddGroupMember(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::BatchCreateGroupWithMembersOutcome LcicClient::BatchCreateGroupWithMembers(const BatchCreateGroupWithMembersRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchCreateGroupWithMembers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchCreateGroupWithMembersResponse rsp = BatchCreateGroupWithMembersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchCreateGroupWithMembersOutcome(rsp);
+        else
+            return BatchCreateGroupWithMembersOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchCreateGroupWithMembersOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchCreateGroupWithMembersAsync(const BatchCreateGroupWithMembersRequest& request, const BatchCreateGroupWithMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchCreateGroupWithMembers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BatchCreateGroupWithMembersOutcomeCallable LcicClient::BatchCreateGroupWithMembersCallable(const BatchCreateGroupWithMembersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchCreateGroupWithMembersOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchCreateGroupWithMembers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::BatchCreateRoomOutcome LcicClient::BatchCreateRoom(const BatchCreateRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchCreateRoom");
@@ -76,6 +205,49 @@ LcicClient::BatchCreateRoomOutcomeCallable LcicClient::BatchCreateRoomCallable(c
         [this, request]()
         {
             return this->BatchCreateRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::BatchDeleteGroupMemberOutcome LcicClient::BatchDeleteGroupMember(const BatchDeleteGroupMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDeleteGroupMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDeleteGroupMemberResponse rsp = BatchDeleteGroupMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDeleteGroupMemberOutcome(rsp);
+        else
+            return BatchDeleteGroupMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDeleteGroupMemberOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchDeleteGroupMemberAsync(const BatchDeleteGroupMemberRequest& request, const BatchDeleteGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDeleteGroupMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BatchDeleteGroupMemberOutcomeCallable LcicClient::BatchDeleteGroupMemberCallable(const BatchDeleteGroupMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDeleteGroupMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDeleteGroupMember(request);
         }
     );
 
@@ -255,6 +427,92 @@ LcicClient::CreateDocumentOutcomeCallable LcicClient::CreateDocumentCallable(con
     return task->get_future();
 }
 
+LcicClient::CreateGroupWithMembersOutcome LcicClient::CreateGroupWithMembers(const CreateGroupWithMembersRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGroupWithMembers");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGroupWithMembersResponse rsp = CreateGroupWithMembersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGroupWithMembersOutcome(rsp);
+        else
+            return CreateGroupWithMembersOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGroupWithMembersOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::CreateGroupWithMembersAsync(const CreateGroupWithMembersRequest& request, const CreateGroupWithMembersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGroupWithMembers(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::CreateGroupWithMembersOutcomeCallable LcicClient::CreateGroupWithMembersCallable(const CreateGroupWithMembersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGroupWithMembersOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGroupWithMembers(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::CreateGroupWithSubGroupOutcome LcicClient::CreateGroupWithSubGroup(const CreateGroupWithSubGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateGroupWithSubGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateGroupWithSubGroupResponse rsp = CreateGroupWithSubGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateGroupWithSubGroupOutcome(rsp);
+        else
+            return CreateGroupWithSubGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateGroupWithSubGroupOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::CreateGroupWithSubGroupAsync(const CreateGroupWithSubGroupRequest& request, const CreateGroupWithSubGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateGroupWithSubGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::CreateGroupWithSubGroupOutcomeCallable LcicClient::CreateGroupWithSubGroupCallable(const CreateGroupWithSubGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateGroupWithSubGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateGroupWithSubGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::CreateRoomOutcome LcicClient::CreateRoom(const CreateRoomRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRoom");
@@ -377,6 +635,92 @@ LcicClient::DeleteDocumentOutcomeCallable LcicClient::DeleteDocumentCallable(con
         [this, request]()
         {
             return this->DeleteDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DeleteGroupOutcome LcicClient::DeleteGroup(const DeleteGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGroupResponse rsp = DeleteGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGroupOutcome(rsp);
+        else
+            return DeleteGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGroupOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeleteGroupAsync(const DeleteGroupRequest& request, const DeleteGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DeleteGroupOutcomeCallable LcicClient::DeleteGroupCallable(const DeleteGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DeleteGroupMemberOutcome LcicClient::DeleteGroupMember(const DeleteGroupMemberRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteGroupMember");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteGroupMemberResponse rsp = DeleteGroupMemberResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteGroupMemberOutcome(rsp);
+        else
+            return DeleteGroupMemberOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteGroupMemberOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeleteGroupMemberAsync(const DeleteGroupMemberRequest& request, const DeleteGroupMemberAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteGroupMember(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DeleteGroupMemberOutcomeCallable LcicClient::DeleteGroupMemberCallable(const DeleteGroupMemberRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteGroupMemberOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteGroupMember(request);
         }
     );
 
@@ -635,6 +979,135 @@ LcicClient::DescribeDocumentsByRoomOutcomeCallable LcicClient::DescribeDocuments
         [this, request]()
         {
             return this->DescribeDocumentsByRoom(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DescribeGroupOutcome LcicClient::DescribeGroup(const DescribeGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupResponse rsp = DescribeGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupOutcome(rsp);
+        else
+            return DescribeGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeGroupAsync(const DescribeGroupRequest& request, const DescribeGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeGroupOutcomeCallable LcicClient::DescribeGroupCallable(const DescribeGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DescribeGroupListOutcome LcicClient::DescribeGroupList(const DescribeGroupListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupListResponse rsp = DescribeGroupListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupListOutcome(rsp);
+        else
+            return DescribeGroupListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupListOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeGroupListAsync(const DescribeGroupListRequest& request, const DescribeGroupListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeGroupListOutcomeCallable LcicClient::DescribeGroupListCallable(const DescribeGroupListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::DescribeGroupMemberListOutcome LcicClient::DescribeGroupMemberList(const DescribeGroupMemberListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGroupMemberList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGroupMemberListResponse rsp = DescribeGroupMemberListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGroupMemberListOutcome(rsp);
+        else
+            return DescribeGroupMemberListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGroupMemberListOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeGroupMemberListAsync(const DescribeGroupMemberListRequest& request, const DescribeGroupMemberListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGroupMemberList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeGroupMemberListOutcomeCallable LcicClient::DescribeGroupMemberListCallable(const DescribeGroupMemberListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGroupMemberListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGroupMemberList(request);
         }
     );
 
@@ -979,6 +1452,49 @@ LcicClient::ModifyAppOutcomeCallable LcicClient::ModifyAppCallable(const ModifyA
         [this, request]()
         {
             return this->ModifyApp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+LcicClient::ModifyGroupOutcome LcicClient::ModifyGroup(const ModifyGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyGroupResponse rsp = ModifyGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyGroupOutcome(rsp);
+        else
+            return ModifyGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyGroupOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::ModifyGroupAsync(const ModifyGroupRequest& request, const ModifyGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::ModifyGroupOutcomeCallable LcicClient::ModifyGroupCallable(const ModifyGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyGroup(request);
         }
     );
 

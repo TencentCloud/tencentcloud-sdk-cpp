@@ -126,6 +126,49 @@ PartnersClient::AgentTransferMoneyOutcomeCallable PartnersClient::AgentTransferM
     return task->get_future();
 }
 
+PartnersClient::AssignClientsToSalesOutcome PartnersClient::AssignClientsToSales(const AssignClientsToSalesRequest &request)
+{
+    auto outcome = MakeRequest(request, "AssignClientsToSales");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AssignClientsToSalesResponse rsp = AssignClientsToSalesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AssignClientsToSalesOutcome(rsp);
+        else
+            return AssignClientsToSalesOutcome(o.GetError());
+    }
+    else
+    {
+        return AssignClientsToSalesOutcome(outcome.GetError());
+    }
+}
+
+void PartnersClient::AssignClientsToSalesAsync(const AssignClientsToSalesRequest& request, const AssignClientsToSalesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AssignClientsToSales(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PartnersClient::AssignClientsToSalesOutcomeCallable PartnersClient::AssignClientsToSalesCallable(const AssignClientsToSalesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AssignClientsToSalesOutcome()>>(
+        [this, request]()
+        {
+            return this->AssignClientsToSales(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PartnersClient::AuditApplyClientOutcome PartnersClient::AuditApplyClient(const AuditApplyClientRequest &request)
 {
     auto outcome = MakeRequest(request, "AuditApplyClient");

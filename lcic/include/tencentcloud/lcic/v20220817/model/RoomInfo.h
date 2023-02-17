@@ -376,6 +376,28 @@ namespace TencentCloud
                      */
                     bool RecordLayoutHasBeenSet() const;
 
+                    /**
+                     * 获取房间绑定的群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 房间绑定的群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置房间绑定的群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupId 房间绑定的群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -482,6 +504,13 @@ namespace TencentCloud
                      */
                     uint64_t m_recordLayout;
                     bool m_recordLayoutHasBeenSet;
+
+                    /**
+                     * 房间绑定的群组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

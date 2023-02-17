@@ -287,6 +287,8 @@
 #include <tencentcloud/vod/v20180717/model/PullUploadResponse.h>
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheRequest.h>
 #include <tencentcloud/vod/v20180717/model/PushUrlCacheResponse.h>
+#include <tencentcloud/vod/v20180717/model/RebuildMediaRequest.h>
+#include <tencentcloud/vod/v20180717/model/RebuildMediaResponse.h>
 #include <tencentcloud/vod/v20180717/model/RefreshUrlCacheRequest.h>
 #include <tencentcloud/vod/v20180717/model/RefreshUrlCacheResponse.h>
 #include <tencentcloud/vod/v20180717/model/RemoveWatermarkRequest.h>
@@ -719,6 +721,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::PushUrlCacheResponse> PushUrlCacheOutcome;
                 typedef std::future<PushUrlCacheOutcome> PushUrlCacheOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::PushUrlCacheRequest&, PushUrlCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> PushUrlCacheAsyncHandler;
+                typedef Outcome<Core::Error, Model::RebuildMediaResponse> RebuildMediaOutcome;
+                typedef std::future<RebuildMediaOutcome> RebuildMediaOutcomeCallable;
+                typedef std::function<void(const VodClient*, const Model::RebuildMediaRequest&, RebuildMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RebuildMediaAsyncHandler;
                 typedef Outcome<Core::Error, Model::RefreshUrlCacheResponse> RefreshUrlCacheOutcome;
                 typedef std::future<RefreshUrlCacheOutcome> RefreshUrlCacheOutcomeCallable;
                 typedef std::function<void(const VodClient*, const Model::RefreshUrlCacheRequest&, RefreshUrlCacheOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RefreshUrlCacheAsyncHandler;
@@ -2155,6 +2160,15 @@ namespace TencentCloud
                 PushUrlCacheOutcome PushUrlCache(const Model::PushUrlCacheRequest &request);
                 void PushUrlCacheAsync(const Model::PushUrlCacheRequest& request, const PushUrlCacheAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 PushUrlCacheOutcomeCallable PushUrlCacheCallable(const Model::PushUrlCacheRequest& request);
+
+                /**
+                 *发起音画质重生
+                 * @param req RebuildMediaRequest
+                 * @return RebuildMediaOutcome
+                 */
+                RebuildMediaOutcome RebuildMedia(const Model::RebuildMediaRequest &request);
+                void RebuildMediaAsync(const Model::RebuildMediaRequest& request, const RebuildMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RebuildMediaOutcomeCallable RebuildMediaCallable(const Model::RebuildMediaRequest& request);
 
                 /**
                  *1. 刷新指定的 URL 列表。

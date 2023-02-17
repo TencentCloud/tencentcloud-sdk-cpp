@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeOrganizationAuthNodeRequest::DescribeOrganizationAuthNodeRequest() :
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_authNameHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeOrganizationAuthNodeRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_authNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuthName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_authName.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeOrganizationAuthNodeRequest::SetLimit(const uint64_t& _limit)
 bool DescribeOrganizationAuthNodeRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeOrganizationAuthNodeRequest::GetAuthName() const
+{
+    return m_authName;
+}
+
+void DescribeOrganizationAuthNodeRequest::SetAuthName(const string& _authName)
+{
+    m_authName = _authName;
+    m_authNameHasBeenSet = true;
+}
+
+bool DescribeOrganizationAuthNodeRequest::AuthNameHasBeenSet() const
+{
+    return m_authNameHasBeenSet;
 }
 
 

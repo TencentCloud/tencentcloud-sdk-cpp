@@ -25,7 +25,18 @@ DeliveryConfigBindGroup::DeliveryConfigBindGroup() :
     m_configNameHasBeenSet(false),
     m_collectPathHasBeenSet(false),
     m_groupsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_kafkaVIpHasBeenSet(false),
+    m_kafkaAddressHasBeenSet(false),
+    m_kafkaVPortHasBeenSet(false),
+    m_topicHasBeenSet(false),
+    m_lineRuleHasBeenSet(false),
+    m_customRuleHasBeenSet(false),
+    m_enableGlobalLineRuleHasBeenSet(false),
+    m_enableAuthHasBeenSet(false),
+    m_usernameHasBeenSet(false),
+    m_passwordHasBeenSet(false),
+    m_kafkaInfosHasBeenSet(false)
 {
 }
 
@@ -97,6 +108,126 @@ CoreInternalOutcome DeliveryConfigBindGroup::Deserialize(const rapidjson::Value 
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("KafkaVIp") && !value["KafkaVIp"].IsNull())
+    {
+        if (!value["KafkaVIp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.KafkaVIp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kafkaVIp = string(value["KafkaVIp"].GetString());
+        m_kafkaVIpHasBeenSet = true;
+    }
+
+    if (value.HasMember("KafkaAddress") && !value["KafkaAddress"].IsNull())
+    {
+        if (!value["KafkaAddress"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.KafkaAddress` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kafkaAddress = string(value["KafkaAddress"].GetString());
+        m_kafkaAddressHasBeenSet = true;
+    }
+
+    if (value.HasMember("KafkaVPort") && !value["KafkaVPort"].IsNull())
+    {
+        if (!value["KafkaVPort"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.KafkaVPort` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kafkaVPort = string(value["KafkaVPort"].GetString());
+        m_kafkaVPortHasBeenSet = true;
+    }
+
+    if (value.HasMember("Topic") && !value["Topic"].IsNull())
+    {
+        if (!value["Topic"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.Topic` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topic = string(value["Topic"].GetString());
+        m_topicHasBeenSet = true;
+    }
+
+    if (value.HasMember("LineRule") && !value["LineRule"].IsNull())
+    {
+        if (!value["LineRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.LineRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lineRule = string(value["LineRule"].GetString());
+        m_lineRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("CustomRule") && !value["CustomRule"].IsNull())
+    {
+        if (!value["CustomRule"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.CustomRule` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_customRule = string(value["CustomRule"].GetString());
+        m_customRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableGlobalLineRule") && !value["EnableGlobalLineRule"].IsNull())
+    {
+        if (!value["EnableGlobalLineRule"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.EnableGlobalLineRule` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableGlobalLineRule = value["EnableGlobalLineRule"].GetBool();
+        m_enableGlobalLineRuleHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableAuth") && !value["EnableAuth"].IsNull())
+    {
+        if (!value["EnableAuth"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.EnableAuth` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableAuth = value["EnableAuth"].GetBool();
+        m_enableAuthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Username") && !value["Username"].IsNull())
+    {
+        if (!value["Username"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.Username` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_username = string(value["Username"].GetString());
+        m_usernameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Password") && !value["Password"].IsNull())
+    {
+        if (!value["Password"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.Password` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_password = string(value["Password"].GetString());
+        m_passwordHasBeenSet = true;
+    }
+
+    if (value.HasMember("KafkaInfos") && !value["KafkaInfos"].IsNull())
+    {
+        if (!value["KafkaInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DeliveryConfigBindGroup.KafkaInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KafkaInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DeliveryKafkaInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_kafkaInfos.push_back(item);
+        }
+        m_kafkaInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -154,6 +285,101 @@ void DeliveryConfigBindGroup::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kafkaVIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaVIp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kafkaVIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kafkaAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaAddress";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kafkaAddress.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kafkaVPortHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaVPort";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kafkaVPort.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Topic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lineRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LineRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lineRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_customRule.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableGlobalLineRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableGlobalLineRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableGlobalLineRule, allocator);
+    }
+
+    if (m_enableAuthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableAuth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableAuth, allocator);
+    }
+
+    if (m_usernameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Username";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_username.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_passwordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Password";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_password.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kafkaInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_kafkaInfos.begin(); itr != m_kafkaInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -237,5 +463,181 @@ void DeliveryConfigBindGroup::SetCreateTime(const string& _createTime)
 bool DeliveryConfigBindGroup::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetKafkaVIp() const
+{
+    return m_kafkaVIp;
+}
+
+void DeliveryConfigBindGroup::SetKafkaVIp(const string& _kafkaVIp)
+{
+    m_kafkaVIp = _kafkaVIp;
+    m_kafkaVIpHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::KafkaVIpHasBeenSet() const
+{
+    return m_kafkaVIpHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetKafkaAddress() const
+{
+    return m_kafkaAddress;
+}
+
+void DeliveryConfigBindGroup::SetKafkaAddress(const string& _kafkaAddress)
+{
+    m_kafkaAddress = _kafkaAddress;
+    m_kafkaAddressHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::KafkaAddressHasBeenSet() const
+{
+    return m_kafkaAddressHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetKafkaVPort() const
+{
+    return m_kafkaVPort;
+}
+
+void DeliveryConfigBindGroup::SetKafkaVPort(const string& _kafkaVPort)
+{
+    m_kafkaVPort = _kafkaVPort;
+    m_kafkaVPortHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::KafkaVPortHasBeenSet() const
+{
+    return m_kafkaVPortHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetTopic() const
+{
+    return m_topic;
+}
+
+void DeliveryConfigBindGroup::SetTopic(const string& _topic)
+{
+    m_topic = _topic;
+    m_topicHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::TopicHasBeenSet() const
+{
+    return m_topicHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetLineRule() const
+{
+    return m_lineRule;
+}
+
+void DeliveryConfigBindGroup::SetLineRule(const string& _lineRule)
+{
+    m_lineRule = _lineRule;
+    m_lineRuleHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::LineRuleHasBeenSet() const
+{
+    return m_lineRuleHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetCustomRule() const
+{
+    return m_customRule;
+}
+
+void DeliveryConfigBindGroup::SetCustomRule(const string& _customRule)
+{
+    m_customRule = _customRule;
+    m_customRuleHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::CustomRuleHasBeenSet() const
+{
+    return m_customRuleHasBeenSet;
+}
+
+bool DeliveryConfigBindGroup::GetEnableGlobalLineRule() const
+{
+    return m_enableGlobalLineRule;
+}
+
+void DeliveryConfigBindGroup::SetEnableGlobalLineRule(const bool& _enableGlobalLineRule)
+{
+    m_enableGlobalLineRule = _enableGlobalLineRule;
+    m_enableGlobalLineRuleHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::EnableGlobalLineRuleHasBeenSet() const
+{
+    return m_enableGlobalLineRuleHasBeenSet;
+}
+
+bool DeliveryConfigBindGroup::GetEnableAuth() const
+{
+    return m_enableAuth;
+}
+
+void DeliveryConfigBindGroup::SetEnableAuth(const bool& _enableAuth)
+{
+    m_enableAuth = _enableAuth;
+    m_enableAuthHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::EnableAuthHasBeenSet() const
+{
+    return m_enableAuthHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetUsername() const
+{
+    return m_username;
+}
+
+void DeliveryConfigBindGroup::SetUsername(const string& _username)
+{
+    m_username = _username;
+    m_usernameHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::UsernameHasBeenSet() const
+{
+    return m_usernameHasBeenSet;
+}
+
+string DeliveryConfigBindGroup::GetPassword() const
+{
+    return m_password;
+}
+
+void DeliveryConfigBindGroup::SetPassword(const string& _password)
+{
+    m_password = _password;
+    m_passwordHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::PasswordHasBeenSet() const
+{
+    return m_passwordHasBeenSet;
+}
+
+vector<DeliveryKafkaInfo> DeliveryConfigBindGroup::GetKafkaInfos() const
+{
+    return m_kafkaInfos;
+}
+
+void DeliveryConfigBindGroup::SetKafkaInfos(const vector<DeliveryKafkaInfo>& _kafkaInfos)
+{
+    m_kafkaInfos = _kafkaInfos;
+    m_kafkaInfosHasBeenSet = true;
+}
+
+bool DeliveryConfigBindGroup::KafkaInfosHasBeenSet() const
+{
+    return m_kafkaInfosHasBeenSet;
 }
 

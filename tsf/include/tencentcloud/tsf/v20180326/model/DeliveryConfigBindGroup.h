@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tsf/v20180326/model/GroupInfo.h>
+#include <tencentcloud/tsf/v20180326/model/DeliveryKafkaInfo.h>
 
 
 namespace TencentCloud
@@ -149,6 +150,248 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取KafkaVIp
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaVIp KafkaVIp
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKafkaVIp() const;
+
+                    /**
+                     * 设置KafkaVIp
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaVIp KafkaVIp
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaVIp(const std::string& _kafkaVIp);
+
+                    /**
+                     * 判断参数 KafkaVIp 是否已赋值
+                     * @return KafkaVIp 是否已赋值
+                     */
+                    bool KafkaVIpHasBeenSet() const;
+
+                    /**
+                     * 获取KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaAddress KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKafkaAddress() const;
+
+                    /**
+                     * 设置KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaAddress KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaAddress(const std::string& _kafkaAddress);
+
+                    /**
+                     * 判断参数 KafkaAddress 是否已赋值
+                     * @return KafkaAddress 是否已赋值
+                     */
+                    bool KafkaAddressHasBeenSet() const;
+
+                    /**
+                     * 获取KafkaVPort
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaVPort KafkaVPort
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKafkaVPort() const;
+
+                    /**
+                     * 设置KafkaVPort
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaVPort KafkaVPort
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaVPort(const std::string& _kafkaVPort);
+
+                    /**
+                     * 判断参数 KafkaVPort 是否已赋值
+                     * @return KafkaVPort 是否已赋值
+                     */
+                    bool KafkaVPortHasBeenSet() const;
+
+                    /**
+                     * 获取Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Topic Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTopic() const;
+
+                    /**
+                     * 设置Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Topic Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTopic(const std::string& _topic);
+
+                    /**
+                     * 判断参数 Topic 是否已赋值
+                     * @return Topic 是否已赋值
+                     */
+                    bool TopicHasBeenSet() const;
+
+                    /**
+                     * 获取LineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LineRule LineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLineRule() const;
+
+                    /**
+                     * 设置LineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LineRule LineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLineRule(const std::string& _lineRule);
+
+                    /**
+                     * 判断参数 LineRule 是否已赋值
+                     * @return LineRule 是否已赋值
+                     */
+                    bool LineRuleHasBeenSet() const;
+
+                    /**
+                     * 获取CustomRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CustomRule CustomRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCustomRule() const;
+
+                    /**
+                     * 设置CustomRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CustomRule CustomRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomRule(const std::string& _customRule);
+
+                    /**
+                     * 判断参数 CustomRule 是否已赋值
+                     * @return CustomRule 是否已赋值
+                     */
+                    bool CustomRuleHasBeenSet() const;
+
+                    /**
+                     * 获取EnableGlobalLineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableGlobalLineRule EnableGlobalLineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableGlobalLineRule() const;
+
+                    /**
+                     * 设置EnableGlobalLineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableGlobalLineRule EnableGlobalLineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableGlobalLineRule(const bool& _enableGlobalLineRule);
+
+                    /**
+                     * 判断参数 EnableGlobalLineRule 是否已赋值
+                     * @return EnableGlobalLineRule 是否已赋值
+                     */
+                    bool EnableGlobalLineRuleHasBeenSet() const;
+
+                    /**
+                     * 获取EnableAuth
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableAuth EnableAuth
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableAuth() const;
+
+                    /**
+                     * 设置EnableAuth
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableAuth EnableAuth
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableAuth(const bool& _enableAuth);
+
+                    /**
+                     * 判断参数 EnableAuth 是否已赋值
+                     * @return EnableAuth 是否已赋值
+                     */
+                    bool EnableAuthHasBeenSet() const;
+
+                    /**
+                     * 获取Username
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Username Username
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUsername() const;
+
+                    /**
+                     * 设置Username
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Username Username
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUsername(const std::string& _username);
+
+                    /**
+                     * 判断参数 Username 是否已赋值
+                     * @return Username 是否已赋值
+                     */
+                    bool UsernameHasBeenSet() const;
+
+                    /**
+                     * 获取Password
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Password Password
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPassword() const;
+
+                    /**
+                     * 设置Password
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Password Password
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPassword(const std::string& _password);
+
+                    /**
+                     * 判断参数 Password 是否已赋值
+                     * @return Password 是否已赋值
+                     */
+                    bool PasswordHasBeenSet() const;
+
+                    /**
+                     * 获取KafkaInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaInfos KafkaInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeliveryKafkaInfo> GetKafkaInfos() const;
+
+                    /**
+                     * 设置KafkaInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaInfos KafkaInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaInfos(const std::vector<DeliveryKafkaInfo>& _kafkaInfos);
+
+                    /**
+                     * 判断参数 KafkaInfos 是否已赋值
+                     * @return KafkaInfos 是否已赋值
+                     */
+                    bool KafkaInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,6 +426,83 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * KafkaVIp
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kafkaVIp;
+                    bool m_kafkaVIpHasBeenSet;
+
+                    /**
+                     * KafkaAddress
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kafkaAddress;
+                    bool m_kafkaAddressHasBeenSet;
+
+                    /**
+                     * KafkaVPort
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kafkaVPort;
+                    bool m_kafkaVPortHasBeenSet;
+
+                    /**
+                     * Topic
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_topic;
+                    bool m_topicHasBeenSet;
+
+                    /**
+                     * LineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lineRule;
+                    bool m_lineRuleHasBeenSet;
+
+                    /**
+                     * CustomRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_customRule;
+                    bool m_customRuleHasBeenSet;
+
+                    /**
+                     * EnableGlobalLineRule
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableGlobalLineRule;
+                    bool m_enableGlobalLineRuleHasBeenSet;
+
+                    /**
+                     * EnableAuth
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableAuth;
+                    bool m_enableAuthHasBeenSet;
+
+                    /**
+                     * Username
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_username;
+                    bool m_usernameHasBeenSet;
+
+                    /**
+                     * Password
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_password;
+                    bool m_passwordHasBeenSet;
+
+                    /**
+                     * KafkaInfos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DeliveryKafkaInfo> m_kafkaInfos;
+                    bool m_kafkaInfosHasBeenSet;
 
                 };
             }

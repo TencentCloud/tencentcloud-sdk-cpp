@@ -333,6 +333,28 @@ namespace TencentCloud
                      */
                     bool ServiceConfigListHasBeenSet() const;
 
+                    /**
+                     * 获取IgnoreCreateImageRepository
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IgnoreCreateImageRepository IgnoreCreateImageRepository
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIgnoreCreateImageRepository() const;
+
+                    /**
+                     * 设置IgnoreCreateImageRepository
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IgnoreCreateImageRepository IgnoreCreateImageRepository
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIgnoreCreateImageRepository(const bool& _ignoreCreateImageRepository);
+
+                    /**
+                     * 判断参数 IgnoreCreateImageRepository 是否已赋值
+                     * @return IgnoreCreateImageRepository 是否已赋值
+                     */
+                    bool IgnoreCreateImageRepositoryHasBeenSet() const;
+
                 private:
 
                     /**
@@ -425,6 +447,13 @@ namespace TencentCloud
                      */
                     std::vector<ServiceConfig> m_serviceConfigList;
                     bool m_serviceConfigListHasBeenSet;
+
+                    /**
+                     * IgnoreCreateImageRepository
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_ignoreCreateImageRepository;
+                    bool m_ignoreCreateImageRepositoryHasBeenSet;
 
                 };
             }

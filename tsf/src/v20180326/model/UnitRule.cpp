@@ -26,7 +26,9 @@ UnitRule::UnitRule() :
     m_gatewayInstanceIdHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_unitRuleItemListHasBeenSet(false)
+    m_unitRuleItemListHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome UnitRule::Deserialize(const rapidjson::Value &value)
         m_unitRuleItemListHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnitRule.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UnitRule.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -165,6 +187,22 @@ void UnitRule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -264,5 +302,37 @@ void UnitRule::SetUnitRuleItemList(const vector<UnitRuleItem>& _unitRuleItemList
 bool UnitRule::UnitRuleItemListHasBeenSet() const
 {
     return m_unitRuleItemListHasBeenSet;
+}
+
+string UnitRule::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void UnitRule::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool UnitRule::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
+}
+
+string UnitRule::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void UnitRule::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool UnitRule::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

@@ -429,17 +429,17 @@ namespace TencentCloud
                     bool MachineWanIpHasBeenSet() const;
 
                     /**
-                     * 获取主机在线状态 OFFLINE  ONLINE
+                     * 获取主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MachineStatus 主机在线状态 OFFLINE  ONLINE
+                     * @return MachineStatus 主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMachineStatus() const;
 
                     /**
-                     * 设置主机在线状态 OFFLINE  ONLINE
+                     * 设置主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MachineStatus 主机在线状态 OFFLINE  ONLINE
+                     * @param MachineStatus 主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMachineStatus(const std::string& _machineStatus);
@@ -580,7 +580,7 @@ namespace TencentCloud
                     bool m_machineWanIpHasBeenSet;
 
                     /**
-                     * 主机在线状态 OFFLINE  ONLINE
+                     * 主机在线状态[OFFLINE:离线|ONLINE:在线|UNKNOWN:未知]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_machineStatus;

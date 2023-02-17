@@ -35,7 +35,8 @@ CreateRoomRequest::CreateRoomRequest() :
     m_audioQualityHasBeenSet(false),
     m_disableRecordHasBeenSet(false),
     m_assistantsHasBeenSet(false),
-    m_recordLayoutHasBeenSet(false)
+    m_recordLayoutHasBeenSet(false),
+    m_groupIdHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,14 @@ string CreateRoomRequest::ToJsonString() const
         string key = "RecordLayout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_recordLayout, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -369,6 +378,22 @@ void CreateRoomRequest::SetRecordLayout(const uint64_t& _recordLayout)
 bool CreateRoomRequest::RecordLayoutHasBeenSet() const
 {
     return m_recordLayoutHasBeenSet;
+}
+
+string CreateRoomRequest::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void CreateRoomRequest::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool CreateRoomRequest::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
 }
 
 

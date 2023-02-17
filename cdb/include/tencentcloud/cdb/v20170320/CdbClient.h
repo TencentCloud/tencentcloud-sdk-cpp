@@ -291,8 +291,6 @@
 #include <tencentcloud/cdb/v20170320/model/SwitchDrInstanceToMasterResponse.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeRequest.h>
 #include <tencentcloud/cdb/v20170320/model/SwitchForUpgradeResponse.h>
-#include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyRequest.h>
-#include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyVersionRequest.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyVersionResponse.h>
 #include <tencentcloud/cdb/v20170320/model/UpgradeDBInstanceRequest.h>
@@ -717,9 +715,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SwitchForUpgradeResponse> SwitchForUpgradeOutcome;
                 typedef std::future<SwitchForUpgradeOutcome> SwitchForUpgradeOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::SwitchForUpgradeRequest&, SwitchForUpgradeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SwitchForUpgradeAsyncHandler;
-                typedef Outcome<Core::Error, Model::UpgradeCDBProxyResponse> UpgradeCDBProxyOutcome;
-                typedef std::future<UpgradeCDBProxyOutcome> UpgradeCDBProxyOutcomeCallable;
-                typedef std::function<void(const CdbClient*, const Model::UpgradeCDBProxyRequest&, UpgradeCDBProxyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeCDBProxyAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpgradeCDBProxyVersionResponse> UpgradeCDBProxyVersionOutcome;
                 typedef std::future<UpgradeCDBProxyVersionOutcome> UpgradeCDBProxyVersionOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::UpgradeCDBProxyVersionRequest&, UpgradeCDBProxyVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpgradeCDBProxyVersionAsyncHandler;
@@ -1990,17 +1985,6 @@ namespace TencentCloud
                 SwitchForUpgradeOutcome SwitchForUpgrade(const Model::SwitchForUpgradeRequest &request);
                 void SwitchForUpgradeAsync(const Model::SwitchForUpgradeRequest& request, const SwitchForUpgradeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SwitchForUpgradeOutcomeCallable SwitchForUpgradeCallable(const Model::SwitchForUpgradeRequest& request);
-
-                /**
-                 *接口已经废弃，请使用AdjustCdbProxy进行数据库代理的配置
-
-调整数据库代理配置
-                 * @param req UpgradeCDBProxyRequest
-                 * @return UpgradeCDBProxyOutcome
-                 */
-                UpgradeCDBProxyOutcome UpgradeCDBProxy(const Model::UpgradeCDBProxyRequest &request);
-                void UpgradeCDBProxyAsync(const Model::UpgradeCDBProxyRequest& request, const UpgradeCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                UpgradeCDBProxyOutcomeCallable UpgradeCDBProxyCallable(const Model::UpgradeCDBProxyRequest& request);
 
                 /**
                  *升级数据库代理版本

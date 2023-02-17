@@ -25,7 +25,8 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniOperDataResponse.h
   include/tencentcloud/captcha/v20190722/model/GetTotalTicketStatisticsRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniDataSumResponse.h
-  include/tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoRequest.h
+  include/tencentcloud/captcha/v20190722/model/GetRequestStatisticsResponse.h
+  include/tencentcloud/captcha/v20190722/model/GetRequestStatisticsRequest.h
   include/tencentcloud/captcha/v20190722/model/OutputManageMarketingRiskValue.h
   include/tencentcloud/captcha/v20190722/model/CaptchaOperDataRes.h
   include/tencentcloud/captcha/v20190722/model/GetTicketStatisticsRequest.h
@@ -48,12 +49,15 @@ set(captcha_public_header_model
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataSumRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniRiskResultResponse.h
   include/tencentcloud/captcha/v20190722/model/GetTicketStatisticsResponse.h
+  include/tencentcloud/captcha/v20190722/model/GetTotalRequestStatisticsRequest.h
   include/tencentcloud/captcha/v20190722/model/TicketAmountUnit.h
+  include/tencentcloud/captcha/v20190722/model/GetTotalRequestStatisticsResponse.h
   include/tencentcloud/captcha/v20190722/model/CaptchaQueryData.h
   include/tencentcloud/captcha/v20190722/model/RequestTrendObj.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaDataResponse.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaResultRequest.h
   include/tencentcloud/captcha/v20190722/model/CaptchaStatisticObj.h
+  include/tencentcloud/captcha/v20190722/model/UpdateCaptchaAppIdInfoRequest.h
   include/tencentcloud/captcha/v20190722/model/CaptchaOperDataLoadTimeUnit.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaMiniOperDataRequest.h
   include/tencentcloud/captcha/v20190722/model/DescribeCaptchaAppIdInfoRequest.h
@@ -75,7 +79,8 @@ set(captcha_src
   src/v20190722/model/DescribeCaptchaMiniOperDataResponse.cpp
   src/v20190722/model/GetTotalTicketStatisticsRequest.cpp
   src/v20190722/model/DescribeCaptchaMiniDataSumResponse.cpp
-  src/v20190722/model/UpdateCaptchaAppIdInfoRequest.cpp
+  src/v20190722/model/GetRequestStatisticsResponse.cpp
+  src/v20190722/model/GetRequestStatisticsRequest.cpp
   src/v20190722/model/OutputManageMarketingRiskValue.cpp
   src/v20190722/model/CaptchaOperDataRes.cpp
   src/v20190722/model/GetTicketStatisticsRequest.cpp
@@ -98,12 +103,15 @@ set(captcha_src
   src/v20190722/model/DescribeCaptchaDataSumRequest.cpp
   src/v20190722/model/DescribeCaptchaMiniRiskResultResponse.cpp
   src/v20190722/model/GetTicketStatisticsResponse.cpp
+  src/v20190722/model/GetTotalRequestStatisticsRequest.cpp
   src/v20190722/model/TicketAmountUnit.cpp
+  src/v20190722/model/GetTotalRequestStatisticsResponse.cpp
   src/v20190722/model/CaptchaQueryData.cpp
   src/v20190722/model/RequestTrendObj.cpp
   src/v20190722/model/DescribeCaptchaDataResponse.cpp
   src/v20190722/model/DescribeCaptchaResultRequest.cpp
   src/v20190722/model/CaptchaStatisticObj.cpp
+  src/v20190722/model/UpdateCaptchaAppIdInfoRequest.cpp
   src/v20190722/model/CaptchaOperDataLoadTimeUnit.cpp
   src/v20190722/model/DescribeCaptchaMiniOperDataRequest.cpp
   src/v20190722/model/DescribeCaptchaAppIdInfoRequest.cpp

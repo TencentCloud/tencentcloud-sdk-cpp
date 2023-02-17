@@ -696,7 +696,7 @@ namespace TencentCloud
                 DescribeInstanceDealDetailOutcomeCallable DescribeInstanceDealDetailCallable(const Model::DescribeInstanceDealDetailRequest& request);
 
                 /**
-                 *查询实例大Key
+                 *腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见[查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。
                  * @param req DescribeInstanceMonitorBigKeyRequest
                  * @return DescribeInstanceMonitorBigKeyOutcome
                  */
@@ -705,7 +705,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorBigKeyOutcomeCallable DescribeInstanceMonitorBigKeyCallable(const Model::DescribeInstanceMonitorBigKeyRequest& request);
 
                 /**
-                 *查询实例大Key大小分布
+                 *腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见 [查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。
                  * @param req DescribeInstanceMonitorBigKeySizeDistRequest
                  * @return DescribeInstanceMonitorBigKeySizeDistOutcome
                  */
@@ -714,7 +714,7 @@ namespace TencentCloud
                 DescribeInstanceMonitorBigKeySizeDistOutcomeCallable DescribeInstanceMonitorBigKeySizeDistCallable(const Model::DescribeInstanceMonitorBigKeySizeDistRequest& request);
 
                 /**
-                 *查询实例大Key类型分布
+                 *腾讯云数据库 Redis 已经于2022年10月31日下线查询实例大 Key 接口。具体公告，请参见 [查询实例大 Key 接口下线公告](https://cloud.tencent.com/document/product/239/81005)。
                  * @param req DescribeInstanceMonitorBigKeyTypeDistRequest
                  * @return DescribeInstanceMonitorBigKeyTypeDistOutcome
                  */

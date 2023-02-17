@@ -36,7 +36,8 @@ ContainGroup::ContainGroup() :
     m_memRequestHasBeenSet(false),
     m_memLimitHasBeenSet(false),
     m_aliasHasBeenSet(false),
-    m_kubeInjectEnableHasBeenSet(false)
+    m_kubeInjectEnableHasBeenSet(false),
+    m_updatedTimeHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome ContainGroup::Deserialize(const rapidjson::Value &value)
         m_kubeInjectEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("UpdatedTime") && !value["UpdatedTime"].IsNull())
+    {
+        if (!value["UpdatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ContainGroup.UpdatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_updatedTime = string(value["UpdatedTime"].GetString());
+        m_updatedTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void ContainGroup::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "KubeInjectEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_kubeInjectEnable, allocator);
+    }
+
+    if (m_updatedTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpdatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_updatedTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void ContainGroup::SetKubeInjectEnable(const bool& _kubeInjectEnable)
 bool ContainGroup::KubeInjectEnableHasBeenSet() const
 {
     return m_kubeInjectEnableHasBeenSet;
+}
+
+string ContainGroup::GetUpdatedTime() const
+{
+    return m_updatedTime;
+}
+
+void ContainGroup::SetUpdatedTime(const string& _updatedTime)
+{
+    m_updatedTime = _updatedTime;
+    m_updatedTimeHasBeenSet = true;
+}
+
+bool ContainGroup::UpdatedTimeHasBeenSet() const
+{
+    return m_updatedTimeHasBeenSet;
 }
 

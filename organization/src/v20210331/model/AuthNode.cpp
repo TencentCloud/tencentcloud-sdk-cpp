@@ -22,7 +22,8 @@ using namespace std;
 
 AuthNode::AuthNode() :
     m_relationIdHasBeenSet(false),
-    m_authNameHasBeenSet(false)
+    m_authNameHasBeenSet(false),
+    m_managerHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,23 @@ CoreInternalOutcome AuthNode::Deserialize(const rapidjson::Value &value)
         m_authNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Manager") && !value["Manager"].IsNull())
+    {
+        if (!value["Manager"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuthNode.Manager` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_manager.Deserialize(value["Manager"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_managerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +90,15 @@ void AuthNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AuthName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_authName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_managerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Manager";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_manager.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -107,5 +134,21 @@ void AuthNode::SetAuthName(const string& _authName)
 bool AuthNode::AuthNameHasBeenSet() const
 {
     return m_authNameHasBeenSet;
+}
+
+MemberMainInfo AuthNode::GetManager() const
+{
+    return m_manager;
+}
+
+void AuthNode::SetManager(const MemberMainInfo& _manager)
+{
+    m_manager = _manager;
+    m_managerHasBeenSet = true;
+}
+
+bool AuthNode::ManagerHasBeenSet() const
+{
+    return m_managerHasBeenSet;
 }
 

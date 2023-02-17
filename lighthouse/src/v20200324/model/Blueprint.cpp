@@ -39,7 +39,8 @@ Blueprint::Blueprint() :
     m_imageIdHasBeenSet(false),
     m_communityUrlHasBeenSet(false),
     m_guideUrlHasBeenSet(false),
-    m_sceneIdSetHasBeenSet(false)
+    m_sceneIdSetHasBeenSet(false),
+    m_dockerVersionHasBeenSet(false)
 {
 }
 
@@ -241,6 +242,16 @@ CoreInternalOutcome Blueprint::Deserialize(const rapidjson::Value &value)
         m_sceneIdSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DockerVersion") && !value["DockerVersion"].IsNull())
+    {
+        if (!value["DockerVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Blueprint.DockerVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dockerVersion = string(value["DockerVersion"].GetString());
+        m_dockerVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +414,14 @@ void Blueprint::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_dockerVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DockerVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dockerVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -710,5 +729,21 @@ void Blueprint::SetSceneIdSet(const vector<string>& _sceneIdSet)
 bool Blueprint::SceneIdSetHasBeenSet() const
 {
     return m_sceneIdSetHasBeenSet;
+}
+
+string Blueprint::GetDockerVersion() const
+{
+    return m_dockerVersion;
+}
+
+void Blueprint::SetDockerVersion(const string& _dockerVersion)
+{
+    m_dockerVersion = _dockerVersion;
+    m_dockerVersionHasBeenSet = true;
+}
+
+bool Blueprint::DockerVersionHasBeenSet() const
+{
+    return m_dockerVersionHasBeenSet;
 }
 

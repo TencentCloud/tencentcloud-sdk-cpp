@@ -27,6 +27,8 @@
 #include <tencentcloud/partners/v20180321/model/AgentPayDealsResponse.h>
 #include <tencentcloud/partners/v20180321/model/AgentTransferMoneyRequest.h>
 #include <tencentcloud/partners/v20180321/model/AgentTransferMoneyResponse.h>
+#include <tencentcloud/partners/v20180321/model/AssignClientsToSalesRequest.h>
+#include <tencentcloud/partners/v20180321/model/AssignClientsToSalesResponse.h>
 #include <tencentcloud/partners/v20180321/model/AuditApplyClientRequest.h>
 #include <tencentcloud/partners/v20180321/model/AuditApplyClientResponse.h>
 #include <tencentcloud/partners/v20180321/model/CreatePayRelationForClientRequest.h>
@@ -87,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AgentTransferMoneyResponse> AgentTransferMoneyOutcome;
                 typedef std::future<AgentTransferMoneyOutcome> AgentTransferMoneyOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::AgentTransferMoneyRequest&, AgentTransferMoneyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AgentTransferMoneyAsyncHandler;
+                typedef Outcome<Core::Error, Model::AssignClientsToSalesResponse> AssignClientsToSalesOutcome;
+                typedef std::future<AssignClientsToSalesOutcome> AssignClientsToSalesOutcomeCallable;
+                typedef std::function<void(const PartnersClient*, const Model::AssignClientsToSalesRequest&, AssignClientsToSalesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssignClientsToSalesAsyncHandler;
                 typedef Outcome<Core::Error, Model::AuditApplyClientResponse> AuditApplyClientOutcome;
                 typedef std::future<AuditApplyClientOutcome> AuditApplyClientOutcomeCallable;
                 typedef std::function<void(const PartnersClient*, const Model::AuditApplyClientRequest&, AuditApplyClientOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuditApplyClientAsyncHandler;
@@ -167,6 +172,18 @@ namespace TencentCloud
                 AgentTransferMoneyOutcome AgentTransferMoney(const Model::AgentTransferMoneyRequest &request);
                 void AgentTransferMoneyAsync(const Model::AgentTransferMoneyRequest& request, const AgentTransferMoneyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AgentTransferMoneyOutcomeCallable AgentTransferMoneyCallable(const Model::AgentTransferMoneyRequest& request);
+
+                /**
+                 *为代客or申请中代客分派跟进人（业务员）
+- 代客列表获取API： [DescribeAgentAuditedClients](https://cloud.tencent.com/document/product/563/19184)
+- 申请中代客列表获取API：[DescribeAgentClients](https://cloud.tencent.com/document/product/563/16046)
+- 业务员列表获取API：[DescribeSalesmans](https://cloud.tencent.com/document/product/563/35196)
+                 * @param req AssignClientsToSalesRequest
+                 * @return AssignClientsToSalesOutcome
+                 */
+                AssignClientsToSalesOutcome AssignClientsToSales(const Model::AssignClientsToSalesRequest &request);
+                void AssignClientsToSalesAsync(const Model::AssignClientsToSalesRequest& request, const AssignClientsToSalesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AssignClientsToSalesOutcomeCallable AssignClientsToSalesCallable(const Model::AssignClientsToSalesRequest& request);
 
                 /**
                  *代理商可以审核其名下申请中代客

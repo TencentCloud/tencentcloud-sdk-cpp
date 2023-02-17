@@ -348,6 +348,24 @@ coteaching 双师
                      */
                     bool AssistantsHasBeenSet() const;
 
+                    /**
+                     * 获取房间绑定的群组ID
+                     * @return GroupId 房间绑定的群组ID
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置房间绑定的群组ID
+                     * @param GroupId 房间绑定的群组ID
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -445,6 +463,12 @@ coteaching 双师
                      */
                     std::vector<std::string> m_assistants;
                     bool m_assistantsHasBeenSet;
+
+                    /**
+                     * 房间绑定的群组ID
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
 
                 };
             }

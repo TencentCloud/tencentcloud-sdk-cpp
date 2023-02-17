@@ -67,6 +67,8 @@
 #include <tencentcloud/ssa/v20180608/model/DescribeVulListResponse.h>
 #include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubRequest.h>
 #include <tencentcloud/ssa/v20180608/model/SaDivulgeDataQueryPubResponse.h>
+#include <tencentcloud/ssa/v20180608/model/SaEventPubRequest.h>
+#include <tencentcloud/ssa/v20180608/model/SaEventPubResponse.h>
 
 
 namespace TencentCloud
@@ -147,6 +149,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SaDivulgeDataQueryPubResponse> SaDivulgeDataQueryPubOutcome;
                 typedef std::future<SaDivulgeDataQueryPubOutcome> SaDivulgeDataQueryPubOutcomeCallable;
                 typedef std::function<void(const SsaClient*, const Model::SaDivulgeDataQueryPubRequest&, SaDivulgeDataQueryPubOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaDivulgeDataQueryPubAsyncHandler;
+                typedef Outcome<Core::Error, Model::SaEventPubResponse> SaEventPubOutcome;
+                typedef std::future<SaEventPubOutcome> SaEventPubOutcomeCallable;
+                typedef std::function<void(const SsaClient*, const Model::SaEventPubRequest&, SaEventPubOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SaEventPubAsyncHandler;
 
 
 
@@ -347,6 +352,15 @@ namespace TencentCloud
                 SaDivulgeDataQueryPubOutcome SaDivulgeDataQueryPub(const Model::SaDivulgeDataQueryPubRequest &request);
                 void SaDivulgeDataQueryPubAsync(const Model::SaDivulgeDataQueryPubRequest& request, const SaDivulgeDataQueryPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SaDivulgeDataQueryPubOutcomeCallable SaDivulgeDataQueryPubCallable(const Model::SaDivulgeDataQueryPubRequest& request);
+
+                /**
+                 *安全事件通用字段
+                 * @param req SaEventPubRequest
+                 * @return SaEventPubOutcome
+                 */
+                SaEventPubOutcome SaEventPub(const Model::SaEventPubRequest &request);
+                void SaEventPubAsync(const Model::SaEventPubRequest& request, const SaEventPubAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SaEventPubOutcomeCallable SaEventPubCallable(const Model::SaEventPubRequest& request);
 
             };
         }

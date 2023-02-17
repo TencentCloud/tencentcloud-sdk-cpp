@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/organization/v20210331/model/MemberMainInfo.h>
 
 
 namespace TencentCloud
@@ -35,7 +36,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 认证主体主要信息
+                * 互信主体主要信息
                 */
                 class AuthNode : public AbstractModel
                 {
@@ -47,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取主体关系ID
+                     * 获取互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RelationId 主体关系ID
+                     * @return RelationId 互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetRelationId() const;
 
                     /**
-                     * 设置主体关系ID
+                     * 设置互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param RelationId 主体关系ID
+                     * @param RelationId 互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRelationId(const int64_t& _relationId);
@@ -69,17 +70,17 @@ namespace TencentCloud
                     bool RelationIdHasBeenSet() const;
 
                     /**
-                     * 获取主体名称
+                     * 获取互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AuthName 主体名称
+                     * @return AuthName 互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAuthName() const;
 
                     /**
-                     * 设置主体名称
+                     * 设置互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AuthName 主体名称
+                     * @param AuthName 互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAuthName(const std::string& _authName);
@@ -90,21 +91,50 @@ namespace TencentCloud
                      */
                     bool AuthNameHasBeenSet() const;
 
+                    /**
+                     * 获取主体管理员
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Manager 主体管理员
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MemberMainInfo GetManager() const;
+
+                    /**
+                     * 设置主体管理员
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Manager 主体管理员
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetManager(const MemberMainInfo& _manager);
+
+                    /**
+                     * 判断参数 Manager 是否已赋值
+                     * @return Manager 是否已赋值
+                     */
+                    bool ManagerHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 主体关系ID
+                     * 互信主体关系ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_relationId;
                     bool m_relationIdHasBeenSet;
 
                     /**
-                     * 主体名称
+                     * 互信主体名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_authName;
                     bool m_authNameHasBeenSet;
+
+                    /**
+                     * 主体管理员
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    MemberMainInfo m_manager;
+                    bool m_managerHasBeenSet;
 
                 };
             }

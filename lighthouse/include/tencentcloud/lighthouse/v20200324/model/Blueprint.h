@@ -404,6 +404,28 @@ namespace TencentCloud
                      */
                     bool SceneIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取Docker版本号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DockerVersion Docker版本号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDockerVersion() const;
+
+                    /**
+                     * 设置Docker版本号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DockerVersion Docker版本号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDockerVersion(const std::string& _dockerVersion);
+
+                    /**
+                     * 判断参数 DockerVersion 是否已赋值
+                     * @return DockerVersion 是否已赋值
+                     */
+                    bool DockerVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -523,6 +545,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sceneIdSet;
                     bool m_sceneIdSetHasBeenSet;
+
+                    /**
+                     * Docker版本号。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dockerVersion;
+                    bool m_dockerVersionHasBeenSet;
 
                 };
             }

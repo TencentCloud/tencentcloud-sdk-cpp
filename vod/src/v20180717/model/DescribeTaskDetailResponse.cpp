@@ -42,6 +42,7 @@ DescribeTaskDetailResponse::DescribeTaskDetailResponse() :
     m_createImageSpriteTaskHasBeenSet(false),
     m_snapshotByTimeOffsetTaskHasBeenSet(false),
     m_removeWatermarkTaskHasBeenSet(false),
+    m_rebuildMediaTaskHasBeenSet(false),
     m_extractTraceWatermarkTaskHasBeenSet(false),
     m_reviewAudioVideoTaskHasBeenSet(false),
     m_reduceMediaBitrateTaskHasBeenSet(false),
@@ -354,6 +355,23 @@ CoreInternalOutcome DescribeTaskDetailResponse::Deserialize(const string &payloa
         m_removeWatermarkTaskHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RebuildMediaTask") && !rsp["RebuildMediaTask"].IsNull())
+    {
+        if (!rsp["RebuildMediaTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RebuildMediaTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_rebuildMediaTask.Deserialize(rsp["RebuildMediaTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_rebuildMediaTaskHasBeenSet = true;
+    }
+
     if (rsp.HasMember("ExtractTraceWatermarkTask") && !rsp["ExtractTraceWatermarkTask"].IsNull())
     {
         if (!rsp["ExtractTraceWatermarkTask"].IsObject())
@@ -589,6 +607,15 @@ string DescribeTaskDetailResponse::ToJsonString() const
         m_removeWatermarkTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
+    if (m_rebuildMediaTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RebuildMediaTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_rebuildMediaTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     if (m_extractTraceWatermarkTaskHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -815,6 +842,16 @@ RemoveWatermarkTask DescribeTaskDetailResponse::GetRemoveWatermarkTask() const
 bool DescribeTaskDetailResponse::RemoveWatermarkTaskHasBeenSet() const
 {
     return m_removeWatermarkTaskHasBeenSet;
+}
+
+RebuildMediaTask DescribeTaskDetailResponse::GetRebuildMediaTask() const
+{
+    return m_rebuildMediaTask;
+}
+
+bool DescribeTaskDetailResponse::RebuildMediaTaskHasBeenSet() const
+{
+    return m_rebuildMediaTaskHasBeenSet;
 }
 
 ExtractTraceWatermarkTask DescribeTaskDetailResponse::GetExtractTraceWatermarkTask() const

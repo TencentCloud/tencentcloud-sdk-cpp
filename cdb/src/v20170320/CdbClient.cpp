@@ -5802,49 +5802,6 @@ CdbClient::SwitchForUpgradeOutcomeCallable CdbClient::SwitchForUpgradeCallable(c
     return task->get_future();
 }
 
-CdbClient::UpgradeCDBProxyOutcome CdbClient::UpgradeCDBProxy(const UpgradeCDBProxyRequest &request)
-{
-    auto outcome = MakeRequest(request, "UpgradeCDBProxy");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        UpgradeCDBProxyResponse rsp = UpgradeCDBProxyResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return UpgradeCDBProxyOutcome(rsp);
-        else
-            return UpgradeCDBProxyOutcome(o.GetError());
-    }
-    else
-    {
-        return UpgradeCDBProxyOutcome(outcome.GetError());
-    }
-}
-
-void CdbClient::UpgradeCDBProxyAsync(const UpgradeCDBProxyRequest& request, const UpgradeCDBProxyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->UpgradeCDBProxy(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-CdbClient::UpgradeCDBProxyOutcomeCallable CdbClient::UpgradeCDBProxyCallable(const UpgradeCDBProxyRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<UpgradeCDBProxyOutcome()>>(
-        [this, request]()
-        {
-            return this->UpgradeCDBProxy(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 CdbClient::UpgradeCDBProxyVersionOutcome CdbClient::UpgradeCDBProxyVersion(const UpgradeCDBProxyVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "UpgradeCDBProxyVersion");

@@ -450,6 +450,36 @@ namespace TencentCloud
                      */
                     bool AliasZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否伪站点，取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsFake 是否伪站点，取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsFake() const;
+
+                    /**
+                     * 设置是否伪站点，取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsFake 是否伪站点，取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsFake(const int64_t& _isFake);
+
+                    /**
+                     * 判断参数 IsFake 是否已赋值
+                     * @return IsFake 是否已赋值
+                     */
+                    bool IsFakeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -578,6 +608,15 @@ namespace TencentCloud
                      */
                     std::string m_aliasZoneName;
                     bool m_aliasZoneNameHasBeenSet;
+
+                    /**
+                     * 是否伪站点，取值有：
+<li> 0：非伪站点；</li>
+<li> 1：伪站点。</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isFake;
+                    bool m_isFakeHasBeenSet;
 
                 };
             }

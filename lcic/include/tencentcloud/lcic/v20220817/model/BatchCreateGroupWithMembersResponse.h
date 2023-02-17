@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CDB_V20170320_MODEL_UPGRADECDBPROXYRESPONSE_H_
-#define TENCENTCLOUD_CDB_V20170320_MODEL_UPGRADECDBPROXYRESPONSE_H_
+#ifndef TENCENTCLOUD_LCIC_V20220817_MODEL_BATCHCREATEGROUPWITHMEMBERSRESPONSE_H_
+#define TENCENTCLOUD_LCIC_V20220817_MODEL_BATCHCREATEGROUPWITHMEMBERSRESPONSE_H_
 
 #include <string>
 #include <vector>
@@ -25,46 +25,43 @@
 
 namespace TencentCloud
 {
-    namespace Cdb
+    namespace Lcic
     {
-        namespace V20170320
+        namespace V20220817
         {
             namespace Model
             {
                 /**
-                * UpgradeCDBProxy返回参数结构体
+                * BatchCreateGroupWithMembers返回参数结构体
                 */
-                class UpgradeCDBProxyResponse : public AbstractModel
+                class BatchCreateGroupWithMembersResponse : public AbstractModel
                 {
                 public:
-                    UpgradeCDBProxyResponse();
-                    ~UpgradeCDBProxyResponse() = default;
+                    BatchCreateGroupWithMembersResponse();
+                    ~BatchCreateGroupWithMembersResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取异步处理ID
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AsyncRequestId 异步处理ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取新创建群组ID列表，与输入创建参数顺序一致
+                     * @return GroupIds 新创建群组ID列表，与输入创建参数顺序一致
                      */
-                    std::string GetAsyncRequestId() const;
+                    std::vector<std::string> GetGroupIds() const;
 
                     /**
-                     * 判断参数 AsyncRequestId 是否已赋值
-                     * @return AsyncRequestId 是否已赋值
+                     * 判断参数 GroupIds 是否已赋值
+                     * @return GroupIds 是否已赋值
                      */
-                    bool AsyncRequestIdHasBeenSet() const;
+                    bool GroupIdsHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 异步处理ID
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 新创建群组ID列表，与输入创建参数顺序一致
                      */
-                    std::string m_asyncRequestId;
-                    bool m_asyncRequestIdHasBeenSet;
+                    std::vector<std::string> m_groupIds;
+                    bool m_groupIdsHasBeenSet;
 
                 };
             }
@@ -72,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CDB_V20170320_MODEL_UPGRADECDBPROXYRESPONSE_H_
+#endif // !TENCENTCLOUD_LCIC_V20220817_MODEL_BATCHCREATEGROUPWITHMEMBERSRESPONSE_H_

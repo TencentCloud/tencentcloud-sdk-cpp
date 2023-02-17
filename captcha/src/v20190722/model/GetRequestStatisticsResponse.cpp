@@ -14,21 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/cdb/v20170320/model/UpgradeCDBProxyResponse.h>
+#include <tencentcloud/captcha/v20190722/model/GetRequestStatisticsResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Cdb::V20170320::Model;
+using namespace TencentCloud::Captcha::V20190722::Model;
 using namespace std;
 
-UpgradeCDBProxyResponse::UpgradeCDBProxyResponse() :
-    m_asyncRequestIdHasBeenSet(false)
+GetRequestStatisticsResponse::GetRequestStatisticsResponse()
 {
 }
 
-CoreInternalOutcome UpgradeCDBProxyResponse::Deserialize(const string &payload)
+CoreInternalOutcome GetRequestStatisticsResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -62,33 +61,15 @@ CoreInternalOutcome UpgradeCDBProxyResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("AsyncRequestId") && !rsp["AsyncRequestId"].IsNull())
-    {
-        if (!rsp["AsyncRequestId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `AsyncRequestId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_asyncRequestId = string(rsp["AsyncRequestId"].GetString());
-        m_asyncRequestIdHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string UpgradeCDBProxyResponse::ToJsonString() const
+string GetRequestStatisticsResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_asyncRequestIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AsyncRequestId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_asyncRequestId.c_str(), allocator).Move(), allocator);
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -101,15 +82,5 @@ string UpgradeCDBProxyResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string UpgradeCDBProxyResponse::GetAsyncRequestId() const
-{
-    return m_asyncRequestId;
-}
-
-bool UpgradeCDBProxyResponse::AsyncRequestIdHasBeenSet() const
-{
-    return m_asyncRequestIdHasBeenSet;
-}
 
 
