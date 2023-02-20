@@ -179,14 +179,14 @@ namespace TencentCloud
                     bool SecurityGroupIdHasBeenSet() const;
 
                     /**
-                     * 获取IP地址ID或者ID地址组ID。
-                     * @return AddressTemplate IP地址ID或者ID地址组ID。
+                     * 获取IP地址ID或者IP地址组ID。
+                     * @return AddressTemplate IP地址ID或者IP地址组ID。
                      */
                     AddressTemplateSpecification GetAddressTemplate() const;
 
                     /**
-                     * 设置IP地址ID或者ID地址组ID。
-                     * @param AddressTemplate IP地址ID或者ID地址组ID。
+                     * 设置IP地址ID或者IP地址组ID。
+                     * @param AddressTemplate IP地址ID或者IP地址组ID。
                      */
                     void SetAddressTemplate(const AddressTemplateSpecification& _addressTemplate);
 
@@ -296,7 +296,7 @@ namespace TencentCloud
                     bool m_securityGroupIdHasBeenSet;
 
                     /**
-                     * IP地址ID或者ID地址组ID。
+                     * IP地址ID或者IP地址组ID。
                      */
                     AddressTemplateSpecification m_addressTemplate;
                     bool m_addressTemplateHasBeenSet;

@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志实例集合
-                     * @return FlowLog 流日志实例集合
+                     * 获取流日志实例集合。
+                     * @return FlowLog 流日志实例集合。
                      */
                     std::vector<FlowLog> GetFlowLog() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool FlowLogHasBeenSet() const;
 
                     /**
-                     * 获取流日志总数目
-                     * @return TotalNum 流日志总数目
+                     * 获取流日志总数目。
+                     * @return TotalNum 流日志总数目。
                      */
                     uint64_t GetTotalNum() const;
 
@@ -71,13 +71,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志实例集合
+                     * 流日志实例集合。
                      */
                     std::vector<FlowLog> m_flowLog;
                     bool m_flowLogHasBeenSet;
 
                     /**
-                     * 流日志总数目
+                     * 流日志总数目。
                      */
                     uint64_t m_totalNum;
                     bool m_totalNumHasBeenSet;

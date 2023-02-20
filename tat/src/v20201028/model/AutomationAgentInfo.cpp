@@ -25,7 +25,8 @@ AutomationAgentInfo::AutomationAgentInfo() :
     m_versionHasBeenSet(false),
     m_lastHeartbeatTimeHasBeenSet(false),
     m_agentStatusHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_supportFeaturesHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,19 @@ CoreInternalOutcome AutomationAgentInfo::Deserialize(const rapidjson::Value &val
         m_environmentHasBeenSet = true;
     }
 
+    if (value.HasMember("SupportFeatures") && !value["SupportFeatures"].IsNull())
+    {
+        if (!value["SupportFeatures"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AutomationAgentInfo.SupportFeatures` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SupportFeatures"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_supportFeatures.push_back((*itr).GetString());
+        }
+        m_supportFeaturesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +143,19 @@ void AutomationAgentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "Environment";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_environment.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_supportFeaturesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SupportFeatures";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_supportFeatures.begin(); itr != m_supportFeatures.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -212,5 +239,21 @@ void AutomationAgentInfo::SetEnvironment(const string& _environment)
 bool AutomationAgentInfo::EnvironmentHasBeenSet() const
 {
     return m_environmentHasBeenSet;
+}
+
+vector<string> AutomationAgentInfo::GetSupportFeatures() const
+{
+    return m_supportFeatures;
+}
+
+void AutomationAgentInfo::SetSupportFeatures(const vector<string>& _supportFeatures)
+{
+    m_supportFeatures = _supportFeatures;
+    m_supportFeaturesHasBeenSet = true;
+}
+
+bool AutomationAgentInfo::SupportFeaturesHasBeenSet() const
+{
+    return m_supportFeaturesHasBeenSet;
 }
 

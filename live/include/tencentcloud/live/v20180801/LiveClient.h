@@ -862,7 +862,7 @@ namespace TencentCloud
                 CreateLiveTimeShiftRuleOutcomeCallable CreateLiveTimeShiftRuleCallable(const Model::CreateLiveTimeShiftRuleRequest& request);
 
                 /**
-                 *创建直播垫片模板。
+                 *创建直播时移模板。
                  * @param req CreateLiveTimeShiftTemplateRequest
                  * @return CreateLiveTimeShiftTemplateOutcome
                  */
@@ -1871,7 +1871,7 @@ DomainName+AppName+StreamName+TemplateId唯一标识单个转码规则，如需�
                 ModifyLiveSnapshotTemplateOutcomeCallable ModifyLiveSnapshotTemplateCallable(const Model::ModifyLiveSnapshotTemplateRequest& request);
 
                 /**
-                 *修改直播垫片模板。
+                 *修改直播时移模板。
                  * @param req ModifyLiveTimeShiftTemplateRequest
                  * @return ModifyLiveTimeShiftTemplateOutcome
                  */

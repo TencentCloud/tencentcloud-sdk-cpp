@@ -152,6 +152,24 @@ namespace TencentCloud
                      */
                     bool EnvironmentHasBeenSet() const;
 
+                    /**
+                     * 获取Agent 支持的功能列表。
+                     * @return SupportFeatures Agent 支持的功能列表。
+                     */
+                    std::vector<std::string> GetSupportFeatures() const;
+
+                    /**
+                     * 设置Agent 支持的功能列表。
+                     * @param SupportFeatures Agent 支持的功能列表。
+                     */
+                    void SetSupportFeatures(const std::vector<std::string>& _supportFeatures);
+
+                    /**
+                     * 判断参数 SupportFeatures 是否已赋值
+                     * @return SupportFeatures 是否已赋值
+                     */
+                    bool SupportFeaturesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_environment;
                     bool m_environmentHasBeenSet;
+
+                    /**
+                     * Agent 支持的功能列表。
+                     */
+                    std::vector<std::string> m_supportFeatures;
+                    bool m_supportFeaturesHasBeenSet;
 
                 };
             }

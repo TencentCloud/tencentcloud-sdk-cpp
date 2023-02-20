@@ -57,6 +57,8 @@
 #include <tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockByIpTimesListResponse.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListRequest.h>
+#include <tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListRequest.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeBlockStaticListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h>
@@ -212,6 +214,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBlockByIpTimesListResponse> DescribeBlockByIpTimesListOutcome;
                 typedef std::future<DescribeBlockByIpTimesListOutcome> DescribeBlockByIpTimesListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeBlockByIpTimesListRequest&, DescribeBlockByIpTimesListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockByIpTimesListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBlockIgnoreListResponse> DescribeBlockIgnoreListOutcome;
+                typedef std::future<DescribeBlockIgnoreListOutcome> DescribeBlockIgnoreListOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::DescribeBlockIgnoreListRequest&, DescribeBlockIgnoreListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockIgnoreListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBlockStaticListResponse> DescribeBlockStaticListOutcome;
                 typedef std::future<DescribeBlockStaticListOutcome> DescribeBlockStaticListOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::DescribeBlockStaticListRequest&, DescribeBlockStaticListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBlockStaticListAsyncHandler;
@@ -503,6 +508,15 @@ namespace TencentCloud
                 DescribeBlockByIpTimesListOutcome DescribeBlockByIpTimesList(const Model::DescribeBlockByIpTimesListRequest &request);
                 void DescribeBlockByIpTimesListAsync(const Model::DescribeBlockByIpTimesListRequest& request, const DescribeBlockByIpTimesListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBlockByIpTimesListOutcomeCallable DescribeBlockByIpTimesListCallable(const Model::DescribeBlockByIpTimesListRequest& request);
+
+                /**
+                 *查询入侵防御放通封禁列表
+                 * @param req DescribeBlockIgnoreListRequest
+                 * @return DescribeBlockIgnoreListOutcome
+                 */
+                DescribeBlockIgnoreListOutcome DescribeBlockIgnoreList(const Model::DescribeBlockIgnoreListRequest &request);
+                void DescribeBlockIgnoreListAsync(const Model::DescribeBlockIgnoreListRequest& request, const DescribeBlockIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBlockIgnoreListOutcomeCallable DescribeBlockIgnoreListCallable(const Model::DescribeBlockIgnoreListRequest& request);
 
                 /**
                  *DescribeBlockStaticList 告警中心柱形图

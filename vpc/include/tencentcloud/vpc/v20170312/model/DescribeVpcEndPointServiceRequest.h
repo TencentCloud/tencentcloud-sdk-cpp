@@ -45,25 +45,29 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件。
-<li> service-id- String - （过滤条件）终端节点服务唯一ID。</li>
+<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
+<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
                      * @return Filters 过滤条件。
-<li> service-id- String - （过滤条件）终端节点服务唯一ID。</li>
+<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
+<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件。
-<li> service-id- String - （过滤条件）终端节点服务唯一ID。</li>
+<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
+<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
                      * @param Filters 过滤条件。
-<li> service-id- String - （过滤条件）终端节点服务唯一ID。</li>
+<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
+<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -131,9 +135,10 @@ namespace TencentCloud
 
                     /**
                      * 过滤条件。
-<li> service-id- String - （过滤条件）终端节点服务唯一ID。</li>
+<li> service-id - String - （过滤条件）终端节点服务唯一ID。</li>
 <li>service-name - String - （过滤条件）终端节点实例名称。</li>
 <li>service-instance-id - String - （过滤条件）后端服务的唯一ID，比如lb-xxx。</li>
+<li>service-type - String - （过滤条件）后端PAAS服务类型，CLB,CDB,CRS，不填默认查询类型为CLB。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

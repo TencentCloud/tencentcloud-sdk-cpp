@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取私用网络ID或者统一ID，建议使用统一ID
-                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID
+                     * 获取私用网络ID或者统一ID，建议使用统一ID。
+                     * @return VpcId 私用网络ID或者统一ID，建议使用统一ID。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私用网络ID或者统一ID，建议使用统一ID
-                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID
+                     * 设置私用网络ID或者统一ID，建议使用统一ID。
+                     * @param VpcId 私用网络ID或者统一ID，建议使用统一ID。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志唯一ID
-                     * @return FlowLogId 流日志唯一ID
+                     * 获取流日志唯一ID。
+                     * @return FlowLogId 流日志唯一ID。
                      */
                     std::string GetFlowLogId() const;
 
                     /**
-                     * 设置流日志唯一ID
-                     * @param FlowLogId 流日志唯一ID
+                     * 设置流日志唯一ID。
+                     * @param FlowLogId 流日志唯一ID。
                      */
                     void SetFlowLogId(const std::string& _flowLogId);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool FlowLogIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例名字
-                     * @return FlowLogName 流日志实例名字
+                     * 获取流日志实例名字。
+                     * @return FlowLogName 流日志实例名字。
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字
-                     * @param FlowLogName 流日志实例名字
+                     * 设置流日志实例名字。
+                     * @param FlowLogName 流日志实例名字。
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
-                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
+                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
-                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
+                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
+                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源唯一ID
-                     * @return ResourceId 资源唯一ID
+                     * 获取资源唯一ID。
+                     * @return ResourceId 资源唯一ID。
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源唯一ID
-                     * @param ResourceId 资源唯一ID
+                     * 设置资源唯一ID。
+                     * @param ResourceId 资源唯一ID。
                      */
                     void SetResourceId(const std::string& _resourceId);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志采集类型，ACCEPT|REJECT|ALL
-                     * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL
+                     * 获取流日志采集类型，ACCEPT|REJECT|ALL。
+                     * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
                      */
                     std::string GetTrafficType() const;
 
                     /**
-                     * 设置流日志采集类型，ACCEPT|REJECT|ALL
-                     * @param TrafficType 流日志采集类型，ACCEPT|REJECT|ALL
+                     * 设置流日志采集类型，ACCEPT|REJECT|ALL。
+                     * @param TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
                      */
                     void SetTrafficType(const std::string& _trafficType);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool TrafficTypeHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID
-                     * @return CloudLogId 流日志存储ID
+                     * 获取流日志存储ID。
+                     * @return CloudLogId 流日志存储ID。
                      */
                     std::string GetCloudLogId() const;
 
                     /**
-                     * 设置流日志存储ID
-                     * @param CloudLogId 流日志存储ID
+                     * 设置流日志存储ID。
+                     * @param CloudLogId 流日志存储ID。
                      */
                     void SetCloudLogId(const std::string& _cloudLogId);
 
@@ -170,14 +170,14 @@ namespace TencentCloud
                     bool CloudLogIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID状态
-                     * @return CloudLogState 流日志存储ID状态
+                     * 获取流日志存储ID状态。
+                     * @return CloudLogState 流日志存储ID状态。
                      */
                     std::string GetCloudLogState() const;
 
                     /**
-                     * 设置流日志存储ID状态
-                     * @param CloudLogState 流日志存储ID状态
+                     * 设置流日志存储ID状态。
+                     * @param CloudLogState 流日志存储ID状态。
                      */
                     void SetCloudLogState(const std::string& _cloudLogState);
 
@@ -188,14 +188,14 @@ namespace TencentCloud
                     bool CloudLogStateHasBeenSet() const;
 
                     /**
-                     * 获取按某个字段排序,支持字段：flowLogName,createTime，默认按createTime
-                     * @return OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime
+                     * 获取按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * @return OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置按某个字段排序,支持字段：flowLogName,createTime，默认按createTime
-                     * @param OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime
+                     * 设置按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
+                     * @param OrderField 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
                      */
                     void SetOrderField(const std::string& _orderField);
 
@@ -206,14 +206,14 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取升序（asc）还是降序（desc）,默认：desc
-                     * @return OrderDirection 升序（asc）还是降序（desc）,默认：desc
+                     * 获取升序（asc）还是降序（desc）,默认：desc。
+                     * @return OrderDirection 升序（asc）还是降序（desc）,默认：desc。
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置升序（asc）还是降序（desc）,默认：desc
-                     * @param OrderDirection 升序（asc）还是降序（desc）,默认：desc
+                     * 设置升序（asc）还是降序（desc）,默认：desc。
+                     * @param OrderDirection 升序（asc）还是降序（desc）,默认：desc。
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
@@ -242,14 +242,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取每页行数，默认为10
-                     * @return Limit 每页行数，默认为10
+                     * 获取每页行数，默认为10。
+                     * @return Limit 每页行数，默认为10。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置每页行数，默认为10
-                     * @param Limit 每页行数，默认为10
+                     * 设置每页行数，默认为10。
+                     * @param Limit 每页行数，默认为10。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -286,14 +286,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID对应的地域信息
-                     * @return CloudLogRegion 流日志存储ID对应的地域信息
+                     * 获取流日志存储ID对应的地域信息。
+                     * @return CloudLogRegion 流日志存储ID对应的地域信息。
                      */
                     std::string GetCloudLogRegion() const;
 
                     /**
-                     * 设置流日志存储ID对应的地域信息
-                     * @param CloudLogRegion 流日志存储ID对应的地域信息
+                     * 设置流日志存储ID对应的地域信息。
+                     * @param CloudLogRegion 流日志存储ID对应的地域信息。
                      */
                     void SetCloudLogRegion(const std::string& _cloudLogRegion);
 
@@ -306,61 +306,61 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 私用网络ID或者统一ID，建议使用统一ID
+                     * 私用网络ID或者统一ID，建议使用统一ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 流日志唯一ID
+                     * 流日志唯一ID。
                      */
                     std::string m_flowLogId;
                     bool m_flowLogIdHasBeenSet;
 
                     /**
-                     * 流日志实例名字
+                     * 流日志实例名字。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE
+                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源唯一ID
+                     * 资源唯一ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 流日志采集类型，ACCEPT|REJECT|ALL
+                     * 流日志采集类型，ACCEPT|REJECT|ALL。
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
 
                     /**
-                     * 流日志存储ID
+                     * 流日志存储ID。
                      */
                     std::string m_cloudLogId;
                     bool m_cloudLogIdHasBeenSet;
 
                     /**
-                     * 流日志存储ID状态
+                     * 流日志存储ID状态。
                      */
                     std::string m_cloudLogState;
                     bool m_cloudLogStateHasBeenSet;
 
                     /**
-                     * 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime
+                     * 按某个字段排序,支持字段：flowLogName,createTime，默认按createTime。
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 升序（asc）还是降序（desc）,默认：desc
+                     * 升序（asc）还是降序（desc）,默认：desc。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;
@@ -372,7 +372,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 每页行数，默认为10
+                     * 每页行数，默认为10。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
@@ -386,7 +386,7 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 流日志存储ID对应的地域信息
+                     * 流日志存储ID对应的地域信息。
                      */
                     std::string m_cloudLogRegion;
                     bool m_cloudLogRegionHasBeenSet;

@@ -136,6 +136,42 @@ namespace TencentCloud
                      */
                     bool UsernameHasBeenSet() const;
 
+                    /**
+                     * 获取保存输出的 COS Bucket 链接。
+                     * @return OutputCOSBucketUrl 保存输出的 COS Bucket 链接。
+                     */
+                    std::string GetOutputCOSBucketUrl() const;
+
+                    /**
+                     * 设置保存输出的 COS Bucket 链接。
+                     * @param OutputCOSBucketUrl 保存输出的 COS Bucket 链接。
+                     */
+                    void SetOutputCOSBucketUrl(const std::string& _outputCOSBucketUrl);
+
+                    /**
+                     * 判断参数 OutputCOSBucketUrl 是否已赋值
+                     * @return OutputCOSBucketUrl 是否已赋值
+                     */
+                    bool OutputCOSBucketUrlHasBeenSet() const;
+
+                    /**
+                     * 获取保存输出的文件名称前缀。
+                     * @return OutputCOSKeyPrefix 保存输出的文件名称前缀。
+                     */
+                    std::string GetOutputCOSKeyPrefix() const;
+
+                    /**
+                     * 设置保存输出的文件名称前缀。
+                     * @param OutputCOSKeyPrefix 保存输出的文件名称前缀。
+                     */
+                    void SetOutputCOSKeyPrefix(const std::string& _outputCOSKeyPrefix);
+
+                    /**
+                     * 判断参数 OutputCOSKeyPrefix 是否已赋值
+                     * @return OutputCOSKeyPrefix 是否已赋值
+                     */
+                    bool OutputCOSKeyPrefixHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +203,18 @@ namespace TencentCloud
                      */
                     std::string m_username;
                     bool m_usernameHasBeenSet;
+
+                    /**
+                     * 保存输出的 COS Bucket 链接。
+                     */
+                    std::string m_outputCOSBucketUrl;
+                    bool m_outputCOSBucketUrlHasBeenSet;
+
+                    /**
+                     * 保存输出的文件名称前缀。
+                     */
+                    std::string m_outputCOSKeyPrefix;
+                    bool m_outputCOSKeyPrefixHasBeenSet;
 
                 };
             }

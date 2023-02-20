@@ -771,6 +771,49 @@ CfwClient::DescribeBlockByIpTimesListOutcomeCallable CfwClient::DescribeBlockByI
     return task->get_future();
 }
 
+CfwClient::DescribeBlockIgnoreListOutcome CfwClient::DescribeBlockIgnoreList(const DescribeBlockIgnoreListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBlockIgnoreList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBlockIgnoreListResponse rsp = DescribeBlockIgnoreListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBlockIgnoreListOutcome(rsp);
+        else
+            return DescribeBlockIgnoreListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBlockIgnoreListOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeBlockIgnoreListAsync(const DescribeBlockIgnoreListRequest& request, const DescribeBlockIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBlockIgnoreList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeBlockIgnoreListOutcomeCallable CfwClient::DescribeBlockIgnoreListCallable(const DescribeBlockIgnoreListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBlockIgnoreListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBlockIgnoreList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::DescribeBlockStaticListOutcome CfwClient::DescribeBlockStaticList(const DescribeBlockStaticListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBlockStaticList");

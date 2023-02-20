@@ -23,7 +23,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Captcha::V20190722::Model;
 using namespace std;
 
-GetRequestStatisticsResponse::GetRequestStatisticsResponse()
+GetRequestStatisticsResponse::GetRequestStatisticsResponse() :
+    m_dataHasBeenSet(false),
+    m_captchaCodeHasBeenSet(false),
+    m_captchaMsgHasBeenSet(false)
 {
 }
 
@@ -61,6 +64,43 @@ CoreInternalOutcome GetRequestStatisticsResponse::Deserialize(const string &payl
     }
 
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CaptchaCode") && !rsp["CaptchaCode"].IsNull())
+    {
+        if (!rsp["CaptchaCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CaptchaCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_captchaCode = rsp["CaptchaCode"].GetInt64();
+        m_captchaCodeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CaptchaMsg") && !rsp["CaptchaMsg"].IsNull())
+    {
+        if (!rsp["CaptchaMsg"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CaptchaMsg` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_captchaMsg = string(rsp["CaptchaMsg"].GetString());
+        m_captchaMsgHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +110,31 @@ string GetRequestStatisticsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_captchaCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptchaCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_captchaCode, allocator);
+    }
+
+    if (m_captchaMsgHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CaptchaMsg";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_captchaMsg.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +147,35 @@ string GetRequestStatisticsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+CaptchaStatisticObj GetRequestStatisticsResponse::GetData() const
+{
+    return m_data;
+}
+
+bool GetRequestStatisticsResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
+}
+
+int64_t GetRequestStatisticsResponse::GetCaptchaCode() const
+{
+    return m_captchaCode;
+}
+
+bool GetRequestStatisticsResponse::CaptchaCodeHasBeenSet() const
+{
+    return m_captchaCodeHasBeenSet;
+}
+
+string GetRequestStatisticsResponse::GetCaptchaMsg() const
+{
+    return m_captchaMsg;
+}
+
+bool GetRequestStatisticsResponse::CaptchaMsgHasBeenSet() const
+{
+    return m_captchaMsgHasBeenSet;
+}
 
 

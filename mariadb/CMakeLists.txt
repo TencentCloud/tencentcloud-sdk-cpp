@@ -89,6 +89,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyRealServerAccessStrategyRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeBackupTimeRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyDBEncryptAttributesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DestroyDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/DatabaseTable.h
@@ -158,6 +159,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ActivateHourDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateHourDBInstanceResponse.h
+  include/tencentcloud/mariadb/v20170312/model/ModifyDBEncryptAttributesRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateAccountResponse.h
   include/tencentcloud/mariadb/v20170312/model/IsolateDedicatedDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodResponse.h
@@ -263,6 +265,7 @@ set(mariadb_src
   src/v20170312/model/ModifyRealServerAccessStrategyRequest.cpp
   src/v20170312/model/DescribeBackupTimeRequest.cpp
   src/v20170312/model/DescribeSaleInfoResponse.cpp
+  src/v20170312/model/ModifyDBEncryptAttributesResponse.cpp
   src/v20170312/model/DescribeDBEncryptAttributesResponse.cpp
   src/v20170312/model/DestroyDBInstanceRequest.cpp
   src/v20170312/model/DatabaseTable.cpp
@@ -332,6 +335,7 @@ set(mariadb_src
   src/v20170312/model/ActivateHourDBInstanceResponse.cpp
   src/v20170312/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20170312/model/CreateHourDBInstanceResponse.cpp
+  src/v20170312/model/ModifyDBEncryptAttributesRequest.cpp
   src/v20170312/model/CreateAccountResponse.cpp
   src/v20170312/model/IsolateDedicatedDBInstanceResponse.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodResponse.cpp

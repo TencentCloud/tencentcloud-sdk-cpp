@@ -118,6 +118,54 @@ namespace TencentCloud
                      */
                     bool UserIdHasBeenSet() const;
 
+                    /**
+                     * 获取进房钥匙，若需要权限控制请携带该参数。
+ [privateMapKey 权限设置](/document/product/647/32240) 
+                     * @return PrivateMapKey 进房钥匙，若需要权限控制请携带该参数。
+ [privateMapKey 权限设置](/document/product/647/32240) 
+                     */
+                    std::string GetPrivateMapKey() const;
+
+                    /**
+                     * 设置进房钥匙，若需要权限控制请携带该参数。
+ [privateMapKey 权限设置](/document/product/647/32240) 
+                     * @param PrivateMapKey 进房钥匙，若需要权限控制请携带该参数。
+ [privateMapKey 权限设置](/document/product/647/32240) 
+                     */
+                    void SetPrivateMapKey(const std::string& _privateMapKey);
+
+                    /**
+                     * 判断参数 PrivateMapKey 是否已赋值
+                     * @return PrivateMapKey 是否已赋值
+                     */
+                    bool PrivateMapKeyHasBeenSet() const;
+
+                    /**
+                     * 获取用户角色，目前支持两种角色：
+<li>anchor：主播</li>
+<li>audience：观众</li>
+                     * @return Role 用户角色，目前支持两种角色：
+<li>anchor：主播</li>
+<li>audience：观众</li>
+                     */
+                    std::string GetRole() const;
+
+                    /**
+                     * 设置用户角色，目前支持两种角色：
+<li>anchor：主播</li>
+<li>audience：观众</li>
+                     * @param Role 用户角色，目前支持两种角色：
+<li>anchor：主播</li>
+<li>audience：观众</li>
+                     */
+                    void SetRole(const std::string& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -143,6 +191,21 @@ namespace TencentCloud
                      */
                     std::string m_userId;
                     bool m_userIdHasBeenSet;
+
+                    /**
+                     * 进房钥匙，若需要权限控制请携带该参数。
+ [privateMapKey 权限设置](/document/product/647/32240) 
+                     */
+                    std::string m_privateMapKey;
+                    bool m_privateMapKeyHasBeenSet;
+
+                    /**
+                     * 用户角色，目前支持两种角色：
+<li>anchor：主播</li>
+<li>audience：观众</li>
+                     */
+                    std::string m_role;
+                    bool m_roleHasBeenSet;
 
                 };
             }

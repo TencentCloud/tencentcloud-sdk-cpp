@@ -22,7 +22,10 @@
 using namespace TencentCloud::Captcha::V20190722::Model;
 using namespace std;
 
-GetTotalRequestStatisticsRequest::GetTotalRequestStatisticsRequest()
+GetTotalRequestStatisticsRequest::GetTotalRequestStatisticsRequest() :
+    m_startTimeStrHasBeenSet(false),
+    m_endTimeStrHasBeenSet(false),
+    m_dimensionHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,30 @@ string GetTotalRequestStatisticsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_startTimeStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartTimeStr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_startTimeStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_endTimeStrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTimeStr";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_endTimeStr.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dimensionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Dimension";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dimension.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +67,53 @@ string GetTotalRequestStatisticsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string GetTotalRequestStatisticsRequest::GetStartTimeStr() const
+{
+    return m_startTimeStr;
+}
+
+void GetTotalRequestStatisticsRequest::SetStartTimeStr(const string& _startTimeStr)
+{
+    m_startTimeStr = _startTimeStr;
+    m_startTimeStrHasBeenSet = true;
+}
+
+bool GetTotalRequestStatisticsRequest::StartTimeStrHasBeenSet() const
+{
+    return m_startTimeStrHasBeenSet;
+}
+
+string GetTotalRequestStatisticsRequest::GetEndTimeStr() const
+{
+    return m_endTimeStr;
+}
+
+void GetTotalRequestStatisticsRequest::SetEndTimeStr(const string& _endTimeStr)
+{
+    m_endTimeStr = _endTimeStr;
+    m_endTimeStrHasBeenSet = true;
+}
+
+bool GetTotalRequestStatisticsRequest::EndTimeStrHasBeenSet() const
+{
+    return m_endTimeStrHasBeenSet;
+}
+
+string GetTotalRequestStatisticsRequest::GetDimension() const
+{
+    return m_dimension;
+}
+
+void GetTotalRequestStatisticsRequest::SetDimension(const string& _dimension)
+{
+    m_dimension = _dimension;
+    m_dimensionHasBeenSet = true;
+}
+
+bool GetTotalRequestStatisticsRequest::DimensionHasBeenSet() const
+{
+    return m_dimensionHasBeenSet;
+}
 
 

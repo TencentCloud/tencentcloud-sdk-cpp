@@ -24,7 +24,9 @@ TRTCJoinRoomInput::TRTCJoinRoomInput() :
     m_signHasBeenSet(false),
     m_roomIdHasBeenSet(false),
     m_sdkAppIdHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_privateMapKeyHasBeenSet(false),
+    m_roleHasBeenSet(false)
 {
 }
 
@@ -73,6 +75,26 @@ CoreInternalOutcome TRTCJoinRoomInput::Deserialize(const rapidjson::Value &value
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PrivateMapKey") && !value["PrivateMapKey"].IsNull())
+    {
+        if (!value["PrivateMapKey"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TRTCJoinRoomInput.PrivateMapKey` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_privateMapKey = string(value["PrivateMapKey"].GetString());
+        m_privateMapKeyHasBeenSet = true;
+    }
+
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TRTCJoinRoomInput.Role` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = string(value["Role"].GetString());
+        m_roleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +132,22 @@ void TRTCJoinRoomInput::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_privateMapKeyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PrivateMapKey";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_privateMapKey.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_role.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +215,37 @@ void TRTCJoinRoomInput::SetUserId(const string& _userId)
 bool TRTCJoinRoomInput::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string TRTCJoinRoomInput::GetPrivateMapKey() const
+{
+    return m_privateMapKey;
+}
+
+void TRTCJoinRoomInput::SetPrivateMapKey(const string& _privateMapKey)
+{
+    m_privateMapKey = _privateMapKey;
+    m_privateMapKeyHasBeenSet = true;
+}
+
+bool TRTCJoinRoomInput::PrivateMapKeyHasBeenSet() const
+{
+    return m_privateMapKeyHasBeenSet;
+}
+
+string TRTCJoinRoomInput::GetRole() const
+{
+    return m_role;
+}
+
+void TRTCJoinRoomInput::SetRole(const string& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool TRTCJoinRoomInput::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
 }
 

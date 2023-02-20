@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/captcha/v20190722/model/CaptchaStatisticObj.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,64 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取查询后数据块
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 查询后数据块
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CaptchaStatisticObj GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     */
+                    bool DataHasBeenSet() const;
+
+                    /**
+                     * 获取验证码返回码
+                     * @return CaptchaCode 验证码返回码
+                     */
+                    int64_t GetCaptchaCode() const;
+
+                    /**
+                     * 判断参数 CaptchaCode 是否已赋值
+                     * @return CaptchaCode 是否已赋值
+                     */
+                    bool CaptchaCodeHasBeenSet() const;
+
+                    /**
+                     * 获取验证码返回信息
+                     * @return CaptchaMsg 验证码返回信息
+                     */
+                    std::string GetCaptchaMsg() const;
+
+                    /**
+                     * 判断参数 CaptchaMsg 是否已赋值
+                     * @return CaptchaMsg 是否已赋值
+                     */
+                    bool CaptchaMsgHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 查询后数据块
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CaptchaStatisticObj m_data;
+                    bool m_dataHasBeenSet;
+
+                    /**
+                     * 验证码返回码
+                     */
+                    int64_t m_captchaCode;
+                    bool m_captchaCodeHasBeenSet;
+
+                    /**
+                     * 验证码返回信息
+                     */
+                    std::string m_captchaMsg;
+                    bool m_captchaMsgHasBeenSet;
 
                 };
             }

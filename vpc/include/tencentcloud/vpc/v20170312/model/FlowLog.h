@@ -287,17 +287,17 @@ namespace TencentCloud
                     bool StorageTypeHasBeenSet() const;
 
                     /**
-                     * 获取消费端信息，当消费端类型为ckafka时返回
+                     * 获取消费端信息，当消费端类型为ckafka时返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FlowLogStorage 消费端信息，当消费端类型为ckafka时返回
+                     * @return FlowLogStorage 消费端信息，当消费端类型为ckafka时返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FlowLogStorage GetFlowLogStorage() const;
 
                     /**
-                     * 设置消费端信息，当消费端类型为ckafka时返回
+                     * 设置消费端信息，当消费端类型为ckafka时返回。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FlowLogStorage 消费端信息，当消费端类型为ckafka时返回
+                     * @param FlowLogStorage 消费端信息，当消费端类型为ckafka时返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlowLogStorage(const FlowLogStorage& _flowLogStorage);
@@ -309,17 +309,17 @@ namespace TencentCloud
                     bool FlowLogStorageHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID对应的地域信息
+                     * 获取流日志存储ID对应的地域信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CloudLogRegion 流日志存储ID对应的地域信息
+                     * @return CloudLogRegion 流日志存储ID对应的地域信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCloudLogRegion() const;
 
                     /**
-                     * 设置流日志存储ID对应的地域信息
+                     * 设置流日志存储ID对应的地域信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param CloudLogRegion 流日志存储ID对应的地域信息
+                     * @param CloudLogRegion 流日志存储ID对应的地域信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCloudLogRegion(const std::string& _cloudLogRegion);
@@ -412,14 +412,14 @@ namespace TencentCloud
                     bool m_storageTypeHasBeenSet;
 
                     /**
-                     * 消费端信息，当消费端类型为ckafka时返回
+                     * 消费端信息，当消费端类型为ckafka时返回。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     FlowLogStorage m_flowLogStorage;
                     bool m_flowLogStorageHasBeenSet;
 
                     /**
-                     * 流日志存储ID对应的地域信息
+                     * 流日志存储ID对应的地域信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_cloudLogRegion;

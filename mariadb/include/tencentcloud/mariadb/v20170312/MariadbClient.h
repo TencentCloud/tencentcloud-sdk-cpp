@@ -121,6 +121,8 @@
 #include <tencentcloud/mariadb/v20170312/model/ModifyAccountPrivilegesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyBackupTimeRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyBackupTimeResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyDBEncryptAttributesRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/ModifyDBEncryptAttributesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceNameResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/ModifyDBInstanceSecurityGroupsRequest.h>
@@ -318,6 +320,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBackupTimeResponse> ModifyBackupTimeOutcome;
                 typedef std::future<ModifyBackupTimeOutcome> ModifyBackupTimeOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyBackupTimeRequest&, ModifyBackupTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBackupTimeAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDBEncryptAttributesResponse> ModifyDBEncryptAttributesOutcome;
+                typedef std::future<ModifyDBEncryptAttributesOutcome> ModifyDBEncryptAttributesOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::ModifyDBEncryptAttributesRequest&, ModifyDBEncryptAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBEncryptAttributesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDBInstanceNameResponse> ModifyDBInstanceNameOutcome;
                 typedef std::future<ModifyDBInstanceNameOutcome> ModifyDBInstanceNameOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::ModifyDBInstanceNameRequest&, ModifyDBInstanceNameOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDBInstanceNameAsyncHandler;
@@ -825,6 +830,15 @@ namespace TencentCloud
                 ModifyBackupTimeOutcome ModifyBackupTime(const Model::ModifyBackupTimeRequest &request);
                 void ModifyBackupTimeAsync(const Model::ModifyBackupTimeRequest& request, const ModifyBackupTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyBackupTimeOutcomeCallable ModifyBackupTimeCallable(const Model::ModifyBackupTimeRequest& request);
+
+                /**
+                 *本接口(ModifyDBEncryptAttributes)用于修改实例数据加密。
+                 * @param req ModifyDBEncryptAttributesRequest
+                 * @return ModifyDBEncryptAttributesOutcome
+                 */
+                ModifyDBEncryptAttributesOutcome ModifyDBEncryptAttributes(const Model::ModifyDBEncryptAttributesRequest &request);
+                void ModifyDBEncryptAttributesAsync(const Model::ModifyDBEncryptAttributesRequest& request, const ModifyDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDBEncryptAttributesOutcomeCallable ModifyDBEncryptAttributesCallable(const Model::ModifyDBEncryptAttributesRequest& request);
 
                 /**
                  *本接口（ModifyDBInstanceName）用于修改云数据库实例的名称。

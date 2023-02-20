@@ -129,14 +129,14 @@ namespace TencentCloud
                     bool ChangedIndexHasBeenSet() const;
 
                     /**
-                     * 获取歌曲 ID 列表，当 Type 取 Add 时，必填。
-                     * @return MusicIds 歌曲 ID 列表，当 Type 取 Add 时，必填。
+                     * 获取歌曲 ID 列表，当 Type 取 Add 时，与MusicURLs必填其中一项。
+                     * @return MusicIds 歌曲 ID 列表，当 Type 取 Add 时，与MusicURLs必填其中一项。
                      */
                     std::vector<std::string> GetMusicIds() const;
 
                     /**
-                     * 设置歌曲 ID 列表，当 Type 取 Add 时，必填。
-                     * @param MusicIds 歌曲 ID 列表，当 Type 取 Add 时，必填。
+                     * 设置歌曲 ID 列表，当 Type 取 Add 时，与MusicURLs必填其中一项。
+                     * @param MusicIds 歌曲 ID 列表，当 Type 取 Add 时，与MusicURLs必填其中一项。
                      */
                     void SetMusicIds(const std::vector<std::string>& _musicIds);
 
@@ -145,6 +145,28 @@ namespace TencentCloud
                      * @return MusicIds 是否已赋值
                      */
                     bool MusicIdsHasBeenSet() const;
+
+                    /**
+                     * 获取歌曲 URL 列表，当 Type 取 Add 时，与MusicIds必填其中一项。
+注：URL必须以.mp3结尾且必须是mp3编码文件。
+                     * @return MusicURLs 歌曲 URL 列表，当 Type 取 Add 时，与MusicIds必填其中一项。
+注：URL必须以.mp3结尾且必须是mp3编码文件。
+                     */
+                    std::vector<std::string> GetMusicURLs() const;
+
+                    /**
+                     * 设置歌曲 URL 列表，当 Type 取 Add 时，与MusicIds必填其中一项。
+注：URL必须以.mp3结尾且必须是mp3编码文件。
+                     * @param MusicURLs 歌曲 URL 列表，当 Type 取 Add 时，与MusicIds必填其中一项。
+注：URL必须以.mp3结尾且必须是mp3编码文件。
+                     */
+                    void SetMusicURLs(const std::vector<std::string>& _musicURLs);
+
+                    /**
+                     * 判断参数 MusicURLs 是否已赋值
+                     * @return MusicURLs 是否已赋值
+                     */
+                    bool MusicURLsHasBeenSet() const;
 
                 private:
 
@@ -174,10 +196,17 @@ namespace TencentCloud
                     bool m_changedIndexHasBeenSet;
 
                     /**
-                     * 歌曲 ID 列表，当 Type 取 Add 时，必填。
+                     * 歌曲 ID 列表，当 Type 取 Add 时，与MusicURLs必填其中一项。
                      */
                     std::vector<std::string> m_musicIds;
                     bool m_musicIdsHasBeenSet;
+
+                    /**
+                     * 歌曲 URL 列表，当 Type 取 Add 时，与MusicIds必填其中一项。
+注：URL必须以.mp3结尾且必须是mp3编码文件。
+                     */
+                    std::vector<std::string> m_musicURLs;
+                    bool m_musicURLsHasBeenSet;
 
                 };
             }

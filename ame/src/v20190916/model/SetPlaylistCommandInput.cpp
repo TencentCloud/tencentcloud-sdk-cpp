@@ -24,7 +24,8 @@ SetPlaylistCommandInput::SetPlaylistCommandInput() :
     m_typeHasBeenSet(false),
     m_indexHasBeenSet(false),
     m_changedIndexHasBeenSet(false),
-    m_musicIdsHasBeenSet(false)
+    m_musicIdsHasBeenSet(false),
+    m_musicURLsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,19 @@ CoreInternalOutcome SetPlaylistCommandInput::Deserialize(const rapidjson::Value 
         m_musicIdsHasBeenSet = true;
     }
 
+    if (value.HasMember("MusicURLs") && !value["MusicURLs"].IsNull())
+    {
+        if (!value["MusicURLs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SetPlaylistCommandInput.MusicURLs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MusicURLs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_musicURLs.push_back((*itr).GetString());
+        }
+        m_musicURLsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +129,19 @@ void SetPlaylistCommandInput::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_musicIds.begin(); itr != m_musicIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_musicURLsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MusicURLs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_musicURLs.begin(); itr != m_musicURLs.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -185,5 +212,21 @@ void SetPlaylistCommandInput::SetMusicIds(const vector<string>& _musicIds)
 bool SetPlaylistCommandInput::MusicIdsHasBeenSet() const
 {
     return m_musicIdsHasBeenSet;
+}
+
+vector<string> SetPlaylistCommandInput::GetMusicURLs() const
+{
+    return m_musicURLs;
+}
+
+void SetPlaylistCommandInput::SetMusicURLs(const vector<string>& _musicURLs)
+{
+    m_musicURLs = _musicURLs;
+    m_musicURLsHasBeenSet = true;
+}
+
+bool SetPlaylistCommandInput::MusicURLsHasBeenSet() const
+{
+    return m_musicURLsHasBeenSet;
 }
 

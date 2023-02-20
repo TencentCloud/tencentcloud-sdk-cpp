@@ -2313,7 +2313,7 @@ namespace TencentCloud
                 GetTkeAppChartListOutcomeCallable GetTkeAppChartListCallable(const Model::GetTkeAppChartListRequest& request);
 
                 /**
-                 *获得节点升级当前的进度 
+                 *获得节点升级当前的进度
                  * @param req GetUpgradeInstanceProgressRequest
                  * @return GetUpgradeInstanceProgressOutcome
                  */
