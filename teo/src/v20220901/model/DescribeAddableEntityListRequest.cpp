@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeAddableEntityListRequest::DescribeAddableEntityListRequest() :
     m_zoneIdHasBeenSet(false),
-    m_entityTypeHasBeenSet(false)
+    m_entityTypeHasBeenSet(false),
+    m_areaHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeAddableEntityListRequest::ToJsonString() const
         string key = "EntityType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_entityType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_areaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Area";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_area.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeAddableEntityListRequest::SetEntityType(const string& _entityType)
 bool DescribeAddableEntityListRequest::EntityTypeHasBeenSet() const
 {
     return m_entityTypeHasBeenSet;
+}
+
+string DescribeAddableEntityListRequest::GetArea() const
+{
+    return m_area;
+}
+
+void DescribeAddableEntityListRequest::SetArea(const string& _area)
+{
+    m_area = _area;
+    m_areaHasBeenSet = true;
+}
+
+bool DescribeAddableEntityListRequest::AreaHasBeenSet() const
+{
+    return m_areaHasBeenSet;
 }
 
 

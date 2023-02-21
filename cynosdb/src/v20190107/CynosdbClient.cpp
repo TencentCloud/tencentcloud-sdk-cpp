@@ -2706,6 +2706,49 @@ CynosdbClient::ModifyMaintainPeriodConfigOutcomeCallable CynosdbClient::ModifyMa
     return task->get_future();
 }
 
+CynosdbClient::ModifyVipVportOutcome CynosdbClient::ModifyVipVport(const ModifyVipVportRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyVipVport");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyVipVportResponse rsp = ModifyVipVportResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyVipVportOutcome(rsp);
+        else
+            return ModifyVipVportOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyVipVportOutcome(outcome.GetError());
+    }
+}
+
+void CynosdbClient::ModifyVipVportAsync(const ModifyVipVportRequest& request, const ModifyVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyVipVport(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CynosdbClient::ModifyVipVportOutcomeCallable CynosdbClient::ModifyVipVportCallable(const ModifyVipVportRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyVipVportOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyVipVport(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CynosdbClient::OfflineClusterOutcome CynosdbClient::OfflineCluster(const OfflineClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "OfflineCluster");

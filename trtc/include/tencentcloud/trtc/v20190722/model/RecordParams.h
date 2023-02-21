@@ -197,6 +197,28 @@ Hls 格式录制此参数不生效。
                      */
                     bool MaxMediaFileDurationHasBeenSet() const;
 
+                    /**
+                     * 获取指定录制主辅流，0：主流+辅流（默认）；1:主流；2:辅流。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MediaId 指定录制主辅流，0：主流+辅流（默认）；1:主流；2:辅流。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMediaId() const;
+
+                    /**
+                     * 设置指定录制主辅流，0：主流+辅流（默认）；1:主流；2:辅流。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MediaId 指定录制主辅流，0：主流+辅流（默认）；1:主流；2:辅流。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMediaId(const uint64_t& _mediaId);
+
+                    /**
+                     * 判断参数 MediaId 是否已赋值
+                     * @return MediaId 是否已赋值
+                     */
+                    bool MediaIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +268,13 @@ Hls 格式录制此参数不生效。
                      */
                     uint64_t m_maxMediaFileDuration;
                     bool m_maxMediaFileDurationHasBeenSet;
+
+                    /**
+                     * 指定录制主辅流，0：主流+辅流（默认）；1:主流；2:辅流。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_mediaId;
+                    bool m_mediaIdHasBeenSet;
 
                 };
             }

@@ -166,11 +166,9 @@ namespace TencentCloud
                      * 获取房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
                      * @return SubType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
                      */
                     std::string GetSubType() const;
 
@@ -178,11 +176,9 @@ coteaching 双师
                      * 设置房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
                      * @param SubType 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
                      */
                     void SetSubType(const std::string& _subType);
 
@@ -391,7 +387,6 @@ coteaching 双师
                      * 房间子类型，可以有以下取值：
 videodoc 文档+视频
 video 纯视频
-coteaching 双师
                      */
                     std::string m_subType;
                     bool m_subTypeHasBeenSet;

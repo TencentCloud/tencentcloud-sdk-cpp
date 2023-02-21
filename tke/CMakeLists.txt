@@ -465,6 +465,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalConfigRequest.h
   include/tencentcloud/tke/v20180525/model/CreateECMInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusGlobalNotificationRequest.h
+  include/tencentcloud/tke/v20180525/model/UnavailableReason.h
   include/tencentcloud/tke/v20180525/model/GetUpgradeInstanceProgressRequest.h
   include/tencentcloud/tke/v20180525/model/UpdateEKSClusterResponse.h
   include/tencentcloud/tke/v20180525/model/DescribeEdgeCVMInstancesResponse.h
@@ -987,6 +988,7 @@ set(tke_src
   src/v20180525/model/DescribePrometheusGlobalConfigRequest.cpp
   src/v20180525/model/CreateECMInstancesResponse.cpp
   src/v20180525/model/ModifyPrometheusGlobalNotificationRequest.cpp
+  src/v20180525/model/UnavailableReason.cpp
   src/v20180525/model/GetUpgradeInstanceProgressRequest.cpp
   src/v20180525/model/UpdateEKSClusterResponse.cpp
   src/v20180525/model/DescribeEdgeCVMInstancesResponse.cpp

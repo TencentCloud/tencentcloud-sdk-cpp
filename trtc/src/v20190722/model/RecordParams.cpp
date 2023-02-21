@@ -27,7 +27,8 @@ RecordParams::RecordParams() :
     m_subscribeStreamUserIdsHasBeenSet(false),
     m_outputFormatHasBeenSet(false),
     m_avMergeHasBeenSet(false),
-    m_maxMediaFileDurationHasBeenSet(false)
+    m_maxMediaFileDurationHasBeenSet(false),
+    m_mediaIdHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome RecordParams::Deserialize(const rapidjson::Value &value)
         m_maxMediaFileDurationHasBeenSet = true;
     }
 
+    if (value.HasMember("MediaId") && !value["MediaId"].IsNull())
+    {
+        if (!value["MediaId"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecordParams.MediaId` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaId = value["MediaId"].GetUint64();
+        m_mediaIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void RecordParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MaxMediaFileDuration";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxMediaFileDuration, allocator);
+    }
+
+    if (m_mediaIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mediaId, allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void RecordParams::SetMaxMediaFileDuration(const uint64_t& _maxMediaFileDuration
 bool RecordParams::MaxMediaFileDurationHasBeenSet() const
 {
     return m_maxMediaFileDurationHasBeenSet;
+}
+
+uint64_t RecordParams::GetMediaId() const
+{
+    return m_mediaId;
+}
+
+void RecordParams::SetMediaId(const uint64_t& _mediaId)
+{
+    m_mediaId = _mediaId;
+    m_mediaIdHasBeenSet = true;
+}
+
+bool RecordParams::MediaIdHasBeenSet() const
+{
+    return m_mediaIdHasBeenSet;
 }
 

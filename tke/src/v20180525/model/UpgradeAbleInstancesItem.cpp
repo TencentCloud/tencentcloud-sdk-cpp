@@ -23,7 +23,9 @@ using namespace std;
 UpgradeAbleInstancesItem::UpgradeAbleInstancesItem() :
     m_instanceIdHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_latestVersionHasBeenSet(false)
+    m_latestVersionHasBeenSet(false),
+    m_runtimeVersionHasBeenSet(false),
+    m_runtimeLatestVersionHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome UpgradeAbleInstancesItem::Deserialize(const rapidjson::Value
         m_latestVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("RuntimeVersion") && !value["RuntimeVersion"].IsNull())
+    {
+        if (!value["RuntimeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpgradeAbleInstancesItem.RuntimeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtimeVersion = string(value["RuntimeVersion"].GetString());
+        m_runtimeVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuntimeLatestVersion") && !value["RuntimeLatestVersion"].IsNull())
+    {
+        if (!value["RuntimeLatestVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `UpgradeAbleInstancesItem.RuntimeLatestVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_runtimeLatestVersion = string(value["RuntimeLatestVersion"].GetString());
+        m_runtimeLatestVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void UpgradeAbleInstancesItem::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "LatestVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_latestVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runtimeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_runtimeLatestVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuntimeLatestVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_runtimeLatestVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void UpgradeAbleInstancesItem::SetLatestVersion(const string& _latestVersion)
 bool UpgradeAbleInstancesItem::LatestVersionHasBeenSet() const
 {
     return m_latestVersionHasBeenSet;
+}
+
+string UpgradeAbleInstancesItem::GetRuntimeVersion() const
+{
+    return m_runtimeVersion;
+}
+
+void UpgradeAbleInstancesItem::SetRuntimeVersion(const string& _runtimeVersion)
+{
+    m_runtimeVersion = _runtimeVersion;
+    m_runtimeVersionHasBeenSet = true;
+}
+
+bool UpgradeAbleInstancesItem::RuntimeVersionHasBeenSet() const
+{
+    return m_runtimeVersionHasBeenSet;
+}
+
+string UpgradeAbleInstancesItem::GetRuntimeLatestVersion() const
+{
+    return m_runtimeLatestVersion;
+}
+
+void UpgradeAbleInstancesItem::SetRuntimeLatestVersion(const string& _runtimeLatestVersion)
+{
+    m_runtimeLatestVersion = _runtimeLatestVersion;
+    m_runtimeLatestVersionHasBeenSet = true;
+}
+
+bool UpgradeAbleInstancesItem::RuntimeLatestVersionHasBeenSet() const
+{
+    return m_runtimeLatestVersionHasBeenSet;
 }
 

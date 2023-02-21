@@ -3093,6 +3093,49 @@ TdmqClient::DescribeRocketMQTopicsOutcomeCallable TdmqClient::DescribeRocketMQTo
     return task->get_future();
 }
 
+TdmqClient::DescribeRocketMQVipInstanceDetailOutcome TdmqClient::DescribeRocketMQVipInstanceDetail(const DescribeRocketMQVipInstanceDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRocketMQVipInstanceDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRocketMQVipInstanceDetailResponse rsp = DescribeRocketMQVipInstanceDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRocketMQVipInstanceDetailOutcome(rsp);
+        else
+            return DescribeRocketMQVipInstanceDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRocketMQVipInstanceDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribeRocketMQVipInstanceDetailAsync(const DescribeRocketMQVipInstanceDetailRequest& request, const DescribeRocketMQVipInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRocketMQVipInstanceDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribeRocketMQVipInstanceDetailOutcomeCallable TdmqClient::DescribeRocketMQVipInstanceDetailCallable(const DescribeRocketMQVipInstanceDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRocketMQVipInstanceDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRocketMQVipInstanceDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRocketMQVipInstancesOutcome TdmqClient::DescribeRocketMQVipInstances(const DescribeRocketMQVipInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRocketMQVipInstances");

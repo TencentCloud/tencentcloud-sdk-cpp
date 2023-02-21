@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tke/v20180525/model/UpgradeAbleInstancesItem.h>
+#include <tencentcloud/tke/v20180525/model/UnavailableReason.h>
 
 
 namespace TencentCloud
@@ -96,6 +97,20 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取不可升级原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UnavailableVersionReason 不可升级原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UnavailableReason> GetUnavailableVersionReason() const;
+
+                    /**
+                     * 判断参数 UnavailableVersionReason 是否已赋值
+                     * @return UnavailableVersionReason 是否已赋值
+                     */
+                    bool UnavailableVersionReasonHasBeenSet() const;
+
                 private:
 
                     /**
@@ -123,6 +138,13 @@ namespace TencentCloud
                      */
                     int64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 不可升级原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<UnavailableReason> m_unavailableVersionReason;
+                    bool m_unavailableVersionReasonHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ using namespace std;
 
 RecognizeThaiIDCardOCRRequest::RecognizeThaiIDCardOCRRequest() :
     m_imageBase64HasBeenSet(false),
-    m_imageUrlHasBeenSet(false)
+    m_imageUrlHasBeenSet(false),
+    m_cropPortraitHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string RecognizeThaiIDCardOCRRequest::ToJsonString() const
         string key = "ImageUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_imageUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cropPortraitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CropPortrait";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cropPortrait, allocator);
     }
 
 
@@ -89,6 +98,22 @@ void RecognizeThaiIDCardOCRRequest::SetImageUrl(const string& _imageUrl)
 bool RecognizeThaiIDCardOCRRequest::ImageUrlHasBeenSet() const
 {
     return m_imageUrlHasBeenSet;
+}
+
+bool RecognizeThaiIDCardOCRRequest::GetCropPortrait() const
+{
+    return m_cropPortrait;
+}
+
+void RecognizeThaiIDCardOCRRequest::SetCropPortrait(const bool& _cropPortrait)
+{
+    m_cropPortrait = _cropPortrait;
+    m_cropPortraitHasBeenSet = true;
+}
+
+bool RecognizeThaiIDCardOCRRequest::CropPortraitHasBeenSet() const
+{
+    return m_cropPortraitHasBeenSet;
 }
 
 

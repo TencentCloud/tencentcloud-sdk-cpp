@@ -21,17 +21,17 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 InstanceAdvancedSettings::InstanceAdvancedSettings() :
+    m_desiredPodNumberHasBeenSet(false),
+    m_gPUArgsHasBeenSet(false),
+    m_preStartUserScriptHasBeenSet(false),
+    m_taintsHasBeenSet(false),
     m_mountTargetHasBeenSet(false),
     m_dockerGraphPathHasBeenSet(false),
     m_userScriptHasBeenSet(false),
     m_unschedulableHasBeenSet(false),
     m_labelsHasBeenSet(false),
     m_dataDisksHasBeenSet(false),
-    m_extraArgsHasBeenSet(false),
-    m_desiredPodNumberHasBeenSet(false),
-    m_gPUArgsHasBeenSet(false),
-    m_preStartUserScriptHasBeenSet(false),
-    m_taintsHasBeenSet(false)
+    m_extraArgsHasBeenSet(false)
 {
 }
 
@@ -39,6 +39,63 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
 {
     string requestId = "";
 
+
+    if (value.HasMember("DesiredPodNumber") && !value["DesiredPodNumber"].IsNull())
+    {
+        if (!value["DesiredPodNumber"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.DesiredPodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_desiredPodNumber = value["DesiredPodNumber"].GetInt64();
+        m_desiredPodNumberHasBeenSet = true;
+    }
+
+    if (value.HasMember("GPUArgs") && !value["GPUArgs"].IsNull())
+    {
+        if (!value["GPUArgs"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.GPUArgs` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_gPUArgs.Deserialize(value["GPUArgs"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_gPUArgsHasBeenSet = true;
+    }
+
+    if (value.HasMember("PreStartUserScript") && !value["PreStartUserScript"].IsNull())
+    {
+        if (!value["PreStartUserScript"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.PreStartUserScript` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_preStartUserScript = string(value["PreStartUserScript"].GetString());
+        m_preStartUserScriptHasBeenSet = true;
+    }
+
+    if (value.HasMember("Taints") && !value["Taints"].IsNull())
+    {
+        if (!value["Taints"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.Taints` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Taints"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Taint item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_taints.push_back(item);
+        }
+        m_taintsHasBeenSet = true;
+    }
 
     if (value.HasMember("MountTarget") && !value["MountTarget"].IsNull())
     {
@@ -137,69 +194,52 @@ CoreInternalOutcome InstanceAdvancedSettings::Deserialize(const rapidjson::Value
         m_extraArgsHasBeenSet = true;
     }
 
-    if (value.HasMember("DesiredPodNumber") && !value["DesiredPodNumber"].IsNull())
-    {
-        if (!value["DesiredPodNumber"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.DesiredPodNumber` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_desiredPodNumber = value["DesiredPodNumber"].GetInt64();
-        m_desiredPodNumberHasBeenSet = true;
-    }
-
-    if (value.HasMember("GPUArgs") && !value["GPUArgs"].IsNull())
-    {
-        if (!value["GPUArgs"].IsObject())
-        {
-            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.GPUArgs` is not object type").SetRequestId(requestId));
-        }
-
-        CoreInternalOutcome outcome = m_gPUArgs.Deserialize(value["GPUArgs"]);
-        if (!outcome.IsSuccess())
-        {
-            outcome.GetError().SetRequestId(requestId);
-            return outcome;
-        }
-
-        m_gPUArgsHasBeenSet = true;
-    }
-
-    if (value.HasMember("PreStartUserScript") && !value["PreStartUserScript"].IsNull())
-    {
-        if (!value["PreStartUserScript"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.PreStartUserScript` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_preStartUserScript = string(value["PreStartUserScript"].GetString());
-        m_preStartUserScriptHasBeenSet = true;
-    }
-
-    if (value.HasMember("Taints") && !value["Taints"].IsNull())
-    {
-        if (!value["Taints"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `InstanceAdvancedSettings.Taints` is not array type"));
-
-        const rapidjson::Value &tmpValue = value["Taints"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Taint item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_taints.push_back(item);
-        }
-        m_taintsHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
 void InstanceAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
+
+    if (m_desiredPodNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DesiredPodNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_desiredPodNumber, allocator);
+    }
+
+    if (m_gPUArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GPUArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_gPUArgs.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_preStartUserScriptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreStartUserScript";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_preStartUserScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taintsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Taints";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_taints.begin(); itr != m_taints.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     if (m_mountTargetHasBeenSet)
     {
@@ -272,48 +312,72 @@ void InstanceAdvancedSettings::ToJsonObject(rapidjson::Value &value, rapidjson::
         m_extraArgs.ToJsonObject(value[key.c_str()], allocator);
     }
 
-    if (m_desiredPodNumberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DesiredPodNumber";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_desiredPodNumber, allocator);
-    }
-
-    if (m_gPUArgsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GPUArgs";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_gPUArgs.ToJsonObject(value[key.c_str()], allocator);
-    }
-
-    if (m_preStartUserScriptHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PreStartUserScript";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_preStartUserScript.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_taintsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Taints";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_taints.begin(); itr != m_taints.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
-
 }
 
+
+int64_t InstanceAdvancedSettings::GetDesiredPodNumber() const
+{
+    return m_desiredPodNumber;
+}
+
+void InstanceAdvancedSettings::SetDesiredPodNumber(const int64_t& _desiredPodNumber)
+{
+    m_desiredPodNumber = _desiredPodNumber;
+    m_desiredPodNumberHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::DesiredPodNumberHasBeenSet() const
+{
+    return m_desiredPodNumberHasBeenSet;
+}
+
+GPUArgs InstanceAdvancedSettings::GetGPUArgs() const
+{
+    return m_gPUArgs;
+}
+
+void InstanceAdvancedSettings::SetGPUArgs(const GPUArgs& _gPUArgs)
+{
+    m_gPUArgs = _gPUArgs;
+    m_gPUArgsHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::GPUArgsHasBeenSet() const
+{
+    return m_gPUArgsHasBeenSet;
+}
+
+string InstanceAdvancedSettings::GetPreStartUserScript() const
+{
+    return m_preStartUserScript;
+}
+
+void InstanceAdvancedSettings::SetPreStartUserScript(const string& _preStartUserScript)
+{
+    m_preStartUserScript = _preStartUserScript;
+    m_preStartUserScriptHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::PreStartUserScriptHasBeenSet() const
+{
+    return m_preStartUserScriptHasBeenSet;
+}
+
+vector<Taint> InstanceAdvancedSettings::GetTaints() const
+{
+    return m_taints;
+}
+
+void InstanceAdvancedSettings::SetTaints(const vector<Taint>& _taints)
+{
+    m_taints = _taints;
+    m_taintsHasBeenSet = true;
+}
+
+bool InstanceAdvancedSettings::TaintsHasBeenSet() const
+{
+    return m_taintsHasBeenSet;
+}
 
 string InstanceAdvancedSettings::GetMountTarget() const
 {
@@ -425,69 +489,5 @@ void InstanceAdvancedSettings::SetExtraArgs(const InstanceExtraArgs& _extraArgs)
 bool InstanceAdvancedSettings::ExtraArgsHasBeenSet() const
 {
     return m_extraArgsHasBeenSet;
-}
-
-int64_t InstanceAdvancedSettings::GetDesiredPodNumber() const
-{
-    return m_desiredPodNumber;
-}
-
-void InstanceAdvancedSettings::SetDesiredPodNumber(const int64_t& _desiredPodNumber)
-{
-    m_desiredPodNumber = _desiredPodNumber;
-    m_desiredPodNumberHasBeenSet = true;
-}
-
-bool InstanceAdvancedSettings::DesiredPodNumberHasBeenSet() const
-{
-    return m_desiredPodNumberHasBeenSet;
-}
-
-GPUArgs InstanceAdvancedSettings::GetGPUArgs() const
-{
-    return m_gPUArgs;
-}
-
-void InstanceAdvancedSettings::SetGPUArgs(const GPUArgs& _gPUArgs)
-{
-    m_gPUArgs = _gPUArgs;
-    m_gPUArgsHasBeenSet = true;
-}
-
-bool InstanceAdvancedSettings::GPUArgsHasBeenSet() const
-{
-    return m_gPUArgsHasBeenSet;
-}
-
-string InstanceAdvancedSettings::GetPreStartUserScript() const
-{
-    return m_preStartUserScript;
-}
-
-void InstanceAdvancedSettings::SetPreStartUserScript(const string& _preStartUserScript)
-{
-    m_preStartUserScript = _preStartUserScript;
-    m_preStartUserScriptHasBeenSet = true;
-}
-
-bool InstanceAdvancedSettings::PreStartUserScriptHasBeenSet() const
-{
-    return m_preStartUserScriptHasBeenSet;
-}
-
-vector<Taint> InstanceAdvancedSettings::GetTaints() const
-{
-    return m_taints;
-}
-
-void InstanceAdvancedSettings::SetTaints(const vector<Taint>& _taints)
-{
-    m_taints = _taints;
-    m_taintsHasBeenSet = true;
-}
-
-bool InstanceAdvancedSettings::TaintsHasBeenSet() const
-{
-    return m_taintsHasBeenSet;
 }
 

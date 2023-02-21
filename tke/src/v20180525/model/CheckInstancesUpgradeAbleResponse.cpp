@@ -27,7 +27,8 @@ CheckInstancesUpgradeAbleResponse::CheckInstancesUpgradeAbleResponse() :
     m_clusterVersionHasBeenSet(false),
     m_latestVersionHasBeenSet(false),
     m_upgradeAbleInstancesHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_unavailableVersionReasonHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,26 @@ CoreInternalOutcome CheckInstancesUpgradeAbleResponse::Deserialize(const string 
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("UnavailableVersionReason") && !rsp["UnavailableVersionReason"].IsNull())
+    {
+        if (!rsp["UnavailableVersionReason"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `UnavailableVersionReason` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["UnavailableVersionReason"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            UnavailableReason item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_unavailableVersionReason.push_back(item);
+        }
+        m_unavailableVersionReasonHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -162,6 +183,21 @@ string CheckInstancesUpgradeAbleResponse::ToJsonString() const
         string key = "Total";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_total, allocator);
+    }
+
+    if (m_unavailableVersionReasonHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UnavailableVersionReason";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_unavailableVersionReason.begin(); itr != m_unavailableVersionReason.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -214,6 +250,16 @@ int64_t CheckInstancesUpgradeAbleResponse::GetTotal() const
 bool CheckInstancesUpgradeAbleResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+vector<UnavailableReason> CheckInstancesUpgradeAbleResponse::GetUnavailableVersionReason() const
+{
+    return m_unavailableVersionReason;
+}
+
+bool CheckInstancesUpgradeAbleResponse::UnavailableVersionReasonHasBeenSet() const
+{
+    return m_unavailableVersionReasonHasBeenSet;
 }
 
 

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
+                     * @return Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * 设置调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
+                     * @param Operator 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -430,7 +430,7 @@ MobileCheck：手机号验证
                 private:
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 调用方用户信息，userId 必填。支持填入集团子公司经办人 userId 代发合同
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

@@ -742,7 +742,7 @@ namespace TencentCloud
                 DescribeSafeAuthFlagOutcomeCallable DescribeSafeAuthFlagCallable(const Model::DescribeSafeAuthFlagRequest& request);
 
                 /**
-                 *查询安全设置
+                 *获取子账号安全设置
                  * @param req DescribeSafeAuthFlagCollRequest
                  * @return DescribeSafeAuthFlagCollOutcome
                  */

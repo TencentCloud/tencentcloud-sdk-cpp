@@ -139,6 +139,18 @@ namespace TencentCloud
                      */
                     bool EnLastNameHasBeenSet() const;
 
+                    /**
+                     * 获取证件人像照片抠取
+                     * @return PortraitImage 证件人像照片抠取
+                     */
+                    std::string GetPortraitImage() const;
+
+                    /**
+                     * 判断参数 PortraitImage 是否已赋值
+                     * @return PortraitImage 是否已赋值
+                     */
+                    bool PortraitImageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +200,12 @@ namespace TencentCloud
                      */
                     std::string m_enLastName;
                     bool m_enLastNameHasBeenSet;
+
+                    /**
+                     * 证件人像照片抠取
+                     */
+                    std::string m_portraitImage;
+                    bool m_portraitImageHasBeenSet;
 
                 };
             }

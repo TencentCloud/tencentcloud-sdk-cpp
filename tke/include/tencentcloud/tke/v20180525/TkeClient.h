@@ -1044,7 +1044,7 @@ namespace TencentCloud
                 CheckEdgeClusterCIDROutcomeCallable CheckEdgeClusterCIDRCallable(const Model::CheckEdgeClusterCIDRRequest& request);
 
                 /**
-                 *检查给定节点列表中哪些是可升级的 
+                 *检查给定节点列表中哪些是可升级的
                  * @param req CheckInstancesUpgradeAbleRequest
                  * @return CheckInstancesUpgradeAbleOutcome
                  */
@@ -1611,7 +1611,7 @@ namespace TencentCloud
                 DescribeClusterEndpointsOutcomeCallable DescribeClusterEndpointsCallable(const Model::DescribeClusterEndpointsRequest& request);
 
                 /**
-                 * 查询集群下节点实例信息 
+                 *查询集群下节点实例信息
                  * @param req DescribeClusterInstancesRequest
                  * @return DescribeClusterInstancesOutcome
                  */

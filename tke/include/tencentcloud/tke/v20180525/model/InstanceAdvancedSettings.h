@@ -24,11 +24,11 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/tke/v20180525/model/GPUArgs.h>
+#include <tencentcloud/tke/v20180525/model/Taint.h>
 #include <tencentcloud/tke/v20180525/model/Label.h>
 #include <tencentcloud/tke/v20180525/model/DataDisk.h>
 #include <tencentcloud/tke/v20180525/model/InstanceExtraArgs.h>
-#include <tencentcloud/tke/v20180525/model/GPUArgs.h>
-#include <tencentcloud/tke/v20180525/model/Taint.h>
 
 
 namespace TencentCloud
@@ -50,6 +50,94 @@ namespace TencentCloud
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
+
+                    /**
+                     * 获取该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDesiredPodNumber() const;
+
+                    /**
+                     * 设置该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDesiredPodNumber(const int64_t& _desiredPodNumber);
+
+                    /**
+                     * 判断参数 DesiredPodNumber 是否已赋值
+                     * @return DesiredPodNumber 是否已赋值
+                     */
+                    bool DesiredPodNumberHasBeenSet() const;
+
+                    /**
+                     * 获取GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GPUArgs GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUArgs GetGPUArgs() const;
+
+                    /**
+                     * 设置GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GPUArgs GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGPUArgs(const GPUArgs& _gPUArgs);
+
+                    /**
+                     * 判断参数 GPUArgs 是否已赋值
+                     * @return GPUArgs 是否已赋值
+                     */
+                    bool GPUArgsHasBeenSet() const;
+
+                    /**
+                     * 获取base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPreStartUserScript() const;
+
+                    /**
+                     * 设置base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPreStartUserScript(const std::string& _preStartUserScript);
+
+                    /**
+                     * 判断参数 PreStartUserScript 是否已赋值
+                     * @return PreStartUserScript 是否已赋值
+                     */
+                    bool PreStartUserScriptHasBeenSet() const;
+
+                    /**
+                     * 获取节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Taints 节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Taint> GetTaints() const;
+
+                    /**
+                     * 设置节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Taints 节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTaints(const std::vector<Taint>& _taints);
+
+                    /**
+                     * 判断参数 Taints 是否已赋值
+                     * @return Taints 是否已赋值
+                     */
+                    bool TaintsHasBeenSet() const;
 
                     /**
                      * 获取数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
@@ -205,95 +293,35 @@ namespace TencentCloud
                      */
                     bool ExtraArgsHasBeenSet() const;
 
-                    /**
-                     * 获取该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t GetDesiredPodNumber() const;
-
-                    /**
-                     * 设置该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DesiredPodNumber 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetDesiredPodNumber(const int64_t& _desiredPodNumber);
-
-                    /**
-                     * 判断参数 DesiredPodNumber 是否已赋值
-                     * @return DesiredPodNumber 是否已赋值
-                     */
-                    bool DesiredPodNumberHasBeenSet() const;
-
-                    /**
-                     * 获取GPU驱动相关参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GPUArgs GPU驱动相关参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    GPUArgs GetGPUArgs() const;
-
-                    /**
-                     * 设置GPU驱动相关参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GPUArgs GPU驱动相关参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetGPUArgs(const GPUArgs& _gPUArgs);
-
-                    /**
-                     * 判断参数 GPUArgs 是否已赋值
-                     * @return GPUArgs 是否已赋值
-                     */
-                    bool GPUArgsHasBeenSet() const;
-
-                    /**
-                     * 获取base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetPreStartUserScript() const;
-
-                    /**
-                     * 设置base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PreStartUserScript base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetPreStartUserScript(const std::string& _preStartUserScript);
-
-                    /**
-                     * 判断参数 PreStartUserScript 是否已赋值
-                     * @return PreStartUserScript 是否已赋值
-                     */
-                    bool PreStartUserScriptHasBeenSet() const;
-
-                    /**
-                     * 获取节点污点
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Taints 节点污点
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<Taint> GetTaints() const;
-
-                    /**
-                     * 设置节点污点
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Taints 节点污点
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetTaints(const std::vector<Taint>& _taints);
-
-                    /**
-                     * 判断参数 Taints 是否已赋值
-                     * @return Taints 是否已赋值
-                     */
-                    bool TaintsHasBeenSet() const;
-
                 private:
+
+                    /**
+                     * 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_desiredPodNumber;
+                    bool m_desiredPodNumberHasBeenSet;
+
+                    /**
+                     * GPU驱动相关参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    GPUArgs m_gPUArgs;
+                    bool m_gPUArgsHasBeenSet;
+
+                    /**
+                     * base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_preStartUserScript;
+                    bool m_preStartUserScriptHasBeenSet;
+
+                    /**
+                     * 节点污点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Taint> m_taints;
+                    bool m_taintsHasBeenSet;
 
                     /**
                      * 数据盘挂载点, 默认不挂载数据盘. 已格式化的 ext3，ext4，xfs 文件系统的数据盘将直接挂载，其他文件系统或未格式化的数据盘将自动格式化为ext4 (tlinux系统格式化成xfs)并挂载，请注意备份数据! 无数据盘或有多块数据盘的云主机此设置不生效。
@@ -343,34 +371,6 @@ namespace TencentCloud
                      */
                     InstanceExtraArgs m_extraArgs;
                     bool m_extraArgsHasBeenSet;
-
-                    /**
-                     * 该节点属于podCIDR大小自定义模式时，可指定节点上运行的pod数量上限
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    int64_t m_desiredPodNumber;
-                    bool m_desiredPodNumberHasBeenSet;
-
-                    /**
-                     * GPU驱动相关参数
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    GPUArgs m_gPUArgs;
-                    bool m_gPUArgsHasBeenSet;
-
-                    /**
-                     * base64 编码的用户脚本，在初始化节点之前执行，目前只对添加已有节点生效
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_preStartUserScript;
-                    bool m_preStartUserScriptHasBeenSet;
-
-                    /**
-                     * 节点污点
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::vector<Taint> m_taints;
-                    bool m_taintsHasBeenSet;
 
                 };
             }

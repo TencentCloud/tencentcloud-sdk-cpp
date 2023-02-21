@@ -70,6 +70,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/AddClusterSlaveZoneRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RollbackDatabase.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DatabasePrivileges.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClustersRequest.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyClusterStorageResponse.h
@@ -121,6 +122,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClustersResponse.h
   include/tencentcloud/cynosdb/v20190107/model/QueryFilter.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeBackupConfigResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/ModifyVipVportResponse.h
   include/tencentcloud/cynosdb/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeParamTemplatesResponse.h
   include/tencentcloud/cynosdb/v20190107/model/CloseAuditServiceRequest.h
@@ -284,6 +286,7 @@ set(cynosdb_src
   src/v20190107/model/AddClusterSlaveZoneRequest.cpp
   src/v20190107/model/DescribeAccountAllGrantPrivilegesResponse.cpp
   src/v20190107/model/RollbackDatabase.cpp
+  src/v20190107/model/ModifyVipVportRequest.cpp
   src/v20190107/model/DatabasePrivileges.cpp
   src/v20190107/model/DescribeClustersRequest.cpp
   src/v20190107/model/ModifyClusterStorageResponse.cpp
@@ -335,6 +338,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClustersResponse.cpp
   src/v20190107/model/QueryFilter.cpp
   src/v20190107/model/DescribeBackupConfigResponse.cpp
+  src/v20190107/model/ModifyVipVportResponse.cpp
   src/v20190107/model/ModifyDBInstanceSecurityGroupsRequest.cpp
   src/v20190107/model/DescribeParamTemplatesResponse.cpp
   src/v20190107/model/CloseAuditServiceRequest.cpp

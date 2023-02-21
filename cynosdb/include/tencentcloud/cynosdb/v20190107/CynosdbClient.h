@@ -147,6 +147,8 @@
 #include <tencentcloud/cynosdb/v20190107/model/ModifyInstanceNameResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/ModifyMaintainPeriodConfigResponse.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportRequest.h>
+#include <tencentcloud/cynosdb/v20190107/model/ModifyVipVportResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterRequest.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h>
 #include <tencentcloud/cynosdb/v20190107/model/OfflineInstanceRequest.h>
@@ -381,6 +383,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyMaintainPeriodConfigResponse> ModifyMaintainPeriodConfigOutcome;
                 typedef std::future<ModifyMaintainPeriodConfigOutcome> ModifyMaintainPeriodConfigOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::ModifyMaintainPeriodConfigRequest&, ModifyMaintainPeriodConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyMaintainPeriodConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyVipVportResponse> ModifyVipVportOutcome;
+                typedef std::future<ModifyVipVportOutcome> ModifyVipVportOutcomeCallable;
+                typedef std::function<void(const CynosdbClient*, const Model::ModifyVipVportRequest&, ModifyVipVportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVipVportAsyncHandler;
                 typedef Outcome<Core::Error, Model::OfflineClusterResponse> OfflineClusterOutcome;
                 typedef std::future<OfflineClusterOutcome> OfflineClusterOutcomeCallable;
                 typedef std::function<void(const CynosdbClient*, const Model::OfflineClusterRequest&, OfflineClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> OfflineClusterAsyncHandler;
@@ -992,6 +997,15 @@ namespace TencentCloud
                 ModifyMaintainPeriodConfigOutcome ModifyMaintainPeriodConfig(const Model::ModifyMaintainPeriodConfigRequest &request);
                 void ModifyMaintainPeriodConfigAsync(const Model::ModifyMaintainPeriodConfigRequest& request, const ModifyMaintainPeriodConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyMaintainPeriodConfigOutcomeCallable ModifyMaintainPeriodConfigCallable(const Model::ModifyMaintainPeriodConfigRequest& request);
+
+                /**
+                 *修改实例组ip，端口
+                 * @param req ModifyVipVportRequest
+                 * @return ModifyVipVportOutcome
+                 */
+                ModifyVipVportOutcome ModifyVipVport(const Model::ModifyVipVportRequest &request);
+                void ModifyVipVportAsync(const Model::ModifyVipVportRequest& request, const ModifyVipVportAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyVipVportOutcomeCallable ModifyVipVportCallable(const Model::ModifyVipVportRequest& request);
 
                 /**
                  *下线集群

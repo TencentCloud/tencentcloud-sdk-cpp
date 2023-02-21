@@ -31,7 +31,8 @@ RecognizeThaiIDCardOCRResponse::RecognizeThaiIDCardOCRResponse() :
     m_birthdayHasBeenSet(false),
     m_issueDateHasBeenSet(false),
     m_expirationDateHasBeenSet(false),
-    m_enLastNameHasBeenSet(false)
+    m_enLastNameHasBeenSet(false),
+    m_portraitImageHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome RecognizeThaiIDCardOCRResponse::Deserialize(const string &pa
         m_enLastNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PortraitImage") && !rsp["PortraitImage"].IsNull())
+    {
+        if (!rsp["PortraitImage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PortraitImage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_portraitImage = string(rsp["PortraitImage"].GetString());
+        m_portraitImageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ string RecognizeThaiIDCardOCRResponse::ToJsonString() const
         string key = "EnLastName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_enLastName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_portraitImageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PortraitImage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_portraitImage.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +332,16 @@ string RecognizeThaiIDCardOCRResponse::GetEnLastName() const
 bool RecognizeThaiIDCardOCRResponse::EnLastNameHasBeenSet() const
 {
     return m_enLastNameHasBeenSet;
+}
+
+string RecognizeThaiIDCardOCRResponse::GetPortraitImage() const
+{
+    return m_portraitImage;
+}
+
+bool RecognizeThaiIDCardOCRResponse::PortraitImageHasBeenSet() const
+{
+    return m_portraitImageHasBeenSet;
 }
 
 

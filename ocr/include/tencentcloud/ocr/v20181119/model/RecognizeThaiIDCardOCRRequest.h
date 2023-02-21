@@ -86,6 +86,28 @@ namespace TencentCloud
                      */
                     bool ImageUrlHasBeenSet() const;
 
+                    /**
+                     * 获取图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
+设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
+                     * @return CropPortrait 图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
+设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
+                     */
+                    bool GetCropPortrait() const;
+
+                    /**
+                     * 设置图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
+设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
+                     * @param CropPortrait 图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
+设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
+                     */
+                    void SetCropPortrait(const bool& _cropPortrait);
+
+                    /**
+                     * 判断参数 CropPortrait 是否已赋值
+                     * @return CropPortrait 是否已赋值
+                     */
+                    bool CropPortraitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -101,6 +123,13 @@ namespace TencentCloud
                      */
                     std::string m_imageUrl;
                     bool m_imageUrlHasBeenSet;
+
+                    /**
+                     * 图片开关。默认为false，不返回泰国身份证头像照片的base64编码。
+设置为true时，返回旋转矫正后的泰国身份证头像照片的base64编码
+                     */
+                    bool m_cropPortrait;
+                    bool m_cropPortraitHasBeenSet;
 
                 };
             }

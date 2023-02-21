@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取受影响资产
-                     * @return Time 受影响资产
+                     * 获取时间
+                     * @return Time 时间
                      */
                     std::string GetTime() const;
 
                     /**
-                     * 设置受影响资产
-                     * @param Time 受影响资产
+                     * 设置时间
+                     * @param Time 时间
                      */
                     void SetTime(const std::string& _time);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool TimeHasBeenSet() const;
 
                     /**
-                     * 获取安全事件名称
-                     * @return EventType1 安全事件名称
+                     * 获取安全事件1级分类
+                     * @return EventType1 安全事件1级分类
                      */
                     int64_t GetEventType1() const;
 
                     /**
-                     * 设置安全事件名称
-                     * @param EventType1 安全事件名称
+                     * 设置安全事件1级分类
+                     * @param EventType1 安全事件1级分类
                      */
                     void SetEventType1(const int64_t& _eventType1);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool EventType1HasBeenSet() const;
 
                     /**
-                     * 获取安全事件1级分类
-                     * @return EventType2 安全事件1级分类
+                     * 获取安全事件2级分类
+                     * @return EventType2 安全事件2级分类
                      */
                     int64_t GetEventType2() const;
 
                     /**
-                     * 设置安全事件1级分类
-                     * @param EventType2 安全事件1级分类
+                     * 设置安全事件2级分类
+                     * @param EventType2 安全事件2级分类
                      */
                     void SetEventType2(const int64_t& _eventType2);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool EventType2HasBeenSet() const;
 
                     /**
-                     * 获取安全事件2级分类
-                     * @return EventName 安全事件2级分类
+                     * 获取安全事件名称
+                     * @return EventName 安全事件名称
                      */
                     std::string GetEventName() const;
 
                     /**
-                     * 设置安全事件2级分类
-                     * @param EventName 安全事件2级分类
+                     * 设置安全事件名称
+                     * @param EventName 安全事件名称
                      */
                     void SetEventName(const std::string& _eventName);
 
@@ -247,25 +247,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 受影响资产
+                     * 时间
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
 
                     /**
-                     * 安全事件名称
+                     * 安全事件1级分类
                      */
                     int64_t m_eventType1;
                     bool m_eventType1HasBeenSet;
 
                     /**
-                     * 安全事件1级分类
+                     * 安全事件2级分类
                      */
                     int64_t m_eventType2;
                     bool m_eventType2HasBeenSet;
 
                     /**
-                     * 安全事件2级分类
+                     * 安全事件名称
                      */
                     std::string m_eventName;
                     bool m_eventNameHasBeenSet;

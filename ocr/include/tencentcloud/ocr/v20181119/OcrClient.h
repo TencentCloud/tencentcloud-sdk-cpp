@@ -41,6 +41,8 @@
 #include <tencentcloud/ocr/v20181119/model/CarInvoiceOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/CreateAIFormTaskRequest.h>
+#include <tencentcloud/ocr/v20181119/model/CreateAIFormTaskResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/DriverLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/DutyPaidProofOCRRequest.h>
@@ -71,6 +73,8 @@
 #include <tencentcloud/ocr/v20181119/model/GeneralFastOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/GeneralHandwritingOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/GetTaskStateRequest.h>
+#include <tencentcloud/ocr/v20181119/model/GetTaskStateResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/HKIDCardOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/HmtResidentPermitOCRRequest.h>
@@ -125,6 +129,8 @@
 #include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesDrivingLicenseOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizePhilippinesVoteIDOCRResponse.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRRequest.h>
+#include <tencentcloud/ocr/v20181119/model/RecognizeTableAccurateOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeTableOCRResponse.h>
 #include <tencentcloud/ocr/v20181119/model/RecognizeThaiIDCardOCRRequest.h>
@@ -218,6 +224,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClassifyDetectOCRResponse> ClassifyDetectOCROutcome;
                 typedef std::future<ClassifyDetectOCROutcome> ClassifyDetectOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::ClassifyDetectOCRRequest&, ClassifyDetectOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClassifyDetectOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAIFormTaskResponse> CreateAIFormTaskOutcome;
+                typedef std::future<CreateAIFormTaskOutcome> CreateAIFormTaskOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::CreateAIFormTaskRequest&, CreateAIFormTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAIFormTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::DriverLicenseOCRResponse> DriverLicenseOCROutcome;
                 typedef std::future<DriverLicenseOCROutcome> DriverLicenseOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::DriverLicenseOCRRequest&, DriverLicenseOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> DriverLicenseOCRAsyncHandler;
@@ -263,6 +272,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GeneralHandwritingOCRResponse> GeneralHandwritingOCROutcome;
                 typedef std::future<GeneralHandwritingOCROutcome> GeneralHandwritingOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::GeneralHandwritingOCRRequest&, GeneralHandwritingOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> GeneralHandwritingOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetTaskStateResponse> GetTaskStateOutcome;
+                typedef std::future<GetTaskStateOutcome> GetTaskStateOutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::GetTaskStateRequest&, GetTaskStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::HKIDCardOCRResponse> HKIDCardOCROutcome;
                 typedef std::future<HKIDCardOCROutcome> HKIDCardOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::HKIDCardOCRRequest&, HKIDCardOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> HKIDCardOCRAsyncHandler;
@@ -344,6 +356,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RecognizePhilippinesVoteIDOCRResponse> RecognizePhilippinesVoteIDOCROutcome;
                 typedef std::future<RecognizePhilippinesVoteIDOCROutcome> RecognizePhilippinesVoteIDOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizePhilippinesVoteIDOCRRequest&, RecognizePhilippinesVoteIDOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizePhilippinesVoteIDOCRAsyncHandler;
+                typedef Outcome<Core::Error, Model::RecognizeTableAccurateOCRResponse> RecognizeTableAccurateOCROutcome;
+                typedef std::future<RecognizeTableAccurateOCROutcome> RecognizeTableAccurateOCROutcomeCallable;
+                typedef std::function<void(const OcrClient*, const Model::RecognizeTableAccurateOCRRequest&, RecognizeTableAccurateOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableAccurateOCRAsyncHandler;
                 typedef Outcome<Core::Error, Model::RecognizeTableOCRResponse> RecognizeTableOCROutcome;
                 typedef std::future<RecognizeTableOCROutcome> RecognizeTableOCROutcomeCallable;
                 typedef std::function<void(const OcrClient*, const Model::RecognizeTableOCRRequest&, RecognizeTableOCROutcome, const std::shared_ptr<const AsyncCallerContext>&)> RecognizeTableOCRAsyncHandler;
@@ -513,6 +528,17 @@ namespace TencentCloud
                 ClassifyDetectOCROutcome ClassifyDetectOCR(const Model::ClassifyDetectOCRRequest &request);
                 void ClassifyDetectOCRAsync(const Model::ClassifyDetectOCRRequest& request, const ClassifyDetectOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClassifyDetectOCROutcomeCallable ClassifyDetectOCRCallable(const Model::ClassifyDetectOCRRequest& request);
+
+                /**
+                 *本接口可创建智能表单录入任务，支持多个识别图片和PDF的URL上传，返回含有识别内容的操作页面URL。
+
+智能表单录入产品提供高准确率的表单识别技术和人工核对工具，支持自定义字段，将识别结果自动填入到自定义条目中，并提供人工操作工具，完成整个表单识别过程。适用性强，可对票据、合同、货单等文件的识别，适用于金融、货代、保险、档案等领域。本产品免费公测中，您可以点击demo（超连接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。
+                 * @param req CreateAIFormTaskRequest
+                 * @return CreateAIFormTaskOutcome
+                 */
+                CreateAIFormTaskOutcome CreateAIFormTask(const Model::CreateAIFormTaskRequest &request);
+                void CreateAIFormTaskAsync(const Model::CreateAIFormTaskRequest& request, const CreateAIFormTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAIFormTaskOutcomeCallable CreateAIFormTaskCallable(const Model::CreateAIFormTaskRequest& request);
 
                 /**
                  *本接口支持驾驶证主页和副页所有字段的自动定位与识别，重点字段的识别准确度达到99%以上。
@@ -855,6 +881,15 @@ namespace TencentCloud
                 GeneralHandwritingOCROutcomeCallable GeneralHandwritingOCRCallable(const Model::GeneralHandwritingOCRRequest& request);
 
                 /**
+                 *支持查询智能表单录入任务的状态。本产品免费公测中，您可以点击demo（超连接：https://ocr.smartform.cloud.tencent.com/）试用，如需购买请与商务团队联系。
+                 * @param req GetTaskStateRequest
+                 * @return GetTaskStateOutcome
+                 */
+                GetTaskStateOutcome GetTaskState(const Model::GetTaskStateRequest &request);
+                void GetTaskStateAsync(const Model::GetTaskStateRequest& request, const GetTaskStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetTaskStateOutcomeCallable GetTaskStateCallable(const Model::GetTaskStateRequest& request);
+
+                /**
                  *本接口支持中国香港身份证人像面中关键字段的识别，包括中文姓名、英文姓名、姓名电码、出生日期、性别、证件符号、首次签发日期、最近领用日期、身份证号、是否是永久性居民身份证；具备防伪识别、人像照片裁剪等扩展功能。
 
 默认接口请求频率限制：5次/秒。
@@ -1163,6 +1198,17 @@ namespace TencentCloud
                 RecognizePhilippinesVoteIDOCROutcomeCallable RecognizePhilippinesVoteIDOCRCallable(const Model::RecognizePhilippinesVoteIDOCRRequest& request);
 
                 /**
+                 *本接口支持中英文图片/PDF内常规表格、无线表格、多表格的检测和识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。识别效果比表格识别V2更好，覆盖场景更加广泛，对表格难例场景，如无线表格、嵌套表格（有线表格中包含无线表格）的识别效果均优于表格识别V2。
+
+默认接口请求频率限制：2次/秒。
+                 * @param req RecognizeTableAccurateOCRRequest
+                 * @return RecognizeTableAccurateOCROutcome
+                 */
+                RecognizeTableAccurateOCROutcome RecognizeTableAccurateOCR(const Model::RecognizeTableAccurateOCRRequest &request);
+                void RecognizeTableAccurateOCRAsync(const Model::RecognizeTableAccurateOCRRequest& request, const RecognizeTableAccurateOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RecognizeTableAccurateOCROutcomeCallable RecognizeTableAccurateOCRCallable(const Model::RecognizeTableAccurateOCRRequest& request);
+
+                /**
                  *本接口支持中英文图片/ PDF内常规表格、无线表格、多表格的检测和识别，支持日文有线表格识别，返回每个单元格的文字内容，支持旋转的表格图片识别，且支持将识别结果保存为 Excel 格式。
                  * @param req RecognizeTableOCRRequest
                  * @return RecognizeTableOCROutcome
@@ -1174,7 +1220,6 @@ namespace TencentCloud
                 /**
                  *本接口支持泰国身份证识别，识别字段包括泰文姓名、英文姓名、地址、出生日期、身份证号码。
 本接口暂未完全对外开放，如需咨询，请[联系商务](https://cloud.tencent.com/about/connect)
-
                  * @param req RecognizeThaiIDCardOCRRequest
                  * @return RecognizeThaiIDCardOCROutcome
                  */

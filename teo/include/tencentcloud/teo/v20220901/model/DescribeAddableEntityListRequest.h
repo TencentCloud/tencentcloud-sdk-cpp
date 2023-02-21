@@ -102,6 +102,32 @@ namespace TencentCloud
                      */
                     bool EntityTypeHasBeenSet() const;
 
+                    /**
+                     * 获取服务区域，取值有：
+<li>mainland：中国大陆境内；</li>
+<li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
+                     * @return Area 服务区域，取值有：
+<li>mainland：中国大陆境内；</li>
+<li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
+                     */
+                    std::string GetArea() const;
+
+                    /**
+                     * 设置服务区域，取值有：
+<li>mainland：中国大陆境内；</li>
+<li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
+                     * @param Area 服务区域，取值有：
+<li>mainland：中国大陆境内；</li>
+<li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
+                     */
+                    void SetArea(const std::string& _area);
+
+                    /**
+                     * 判断参数 Area 是否已赋值
+                     * @return Area 是否已赋值
+                     */
+                    bool AreaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -121,6 +147,14 @@ namespace TencentCloud
                      */
                     std::string m_entityType;
                     bool m_entityTypeHasBeenSet;
+
+                    /**
+                     * 服务区域，取值有：
+<li>mainland：中国大陆境内；</li>
+<li>overseas：全球（不含中国大陆）。</li>若为国内站账号，则默认取值为mainland；若为国际站账号，则默认取值为overseas。
+                     */
+                    std::string m_area;
+                    bool m_areaHasBeenSet;
 
                 };
             }

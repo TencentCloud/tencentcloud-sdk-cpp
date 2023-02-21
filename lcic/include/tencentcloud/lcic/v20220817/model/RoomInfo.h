@@ -157,17 +157,17 @@ namespace TencentCloud
                     bool MaxMicNumberHasBeenSet() const;
 
                     /**
-                     * 获取房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频 coteaching 双师
+                     * 获取房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return SubType 房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频 coteaching 双师
+                     * @return SubType 房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSubType() const;
 
                     /**
-                     * 设置房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频 coteaching 双师
+                     * 设置房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param SubType 房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频 coteaching 双师
+                     * @param SubType 房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSubType(const std::string& _subType);
@@ -436,7 +436,7 @@ namespace TencentCloud
                     bool m_maxMicNumberHasBeenSet;
 
                     /**
-                     * 房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频 coteaching 双师
+                     * 房间子类型，可以有以下取值： videodoc 文档+视频 video 纯视频
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_subType;

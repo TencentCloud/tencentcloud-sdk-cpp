@@ -104,6 +104,42 @@ namespace TencentCloud
                      */
                     bool LatestVersionHasBeenSet() const;
 
+                    /**
+                     * 获取RuntimeVersion
+                     * @return RuntimeVersion RuntimeVersion
+                     */
+                    std::string GetRuntimeVersion() const;
+
+                    /**
+                     * 设置RuntimeVersion
+                     * @param RuntimeVersion RuntimeVersion
+                     */
+                    void SetRuntimeVersion(const std::string& _runtimeVersion);
+
+                    /**
+                     * 判断参数 RuntimeVersion 是否已赋值
+                     * @return RuntimeVersion 是否已赋值
+                     */
+                    bool RuntimeVersionHasBeenSet() const;
+
+                    /**
+                     * 获取RuntimeLatestVersion
+                     * @return RuntimeLatestVersion RuntimeLatestVersion
+                     */
+                    std::string GetRuntimeLatestVersion() const;
+
+                    /**
+                     * 设置RuntimeLatestVersion
+                     * @param RuntimeLatestVersion RuntimeLatestVersion
+                     */
+                    void SetRuntimeLatestVersion(const std::string& _runtimeLatestVersion);
+
+                    /**
+                     * 判断参数 RuntimeLatestVersion 是否已赋值
+                     * @return RuntimeLatestVersion 是否已赋值
+                     */
+                    bool RuntimeLatestVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +160,18 @@ namespace TencentCloud
                      */
                     std::string m_latestVersion;
                     bool m_latestVersionHasBeenSet;
+
+                    /**
+                     * RuntimeVersion
+                     */
+                    std::string m_runtimeVersion;
+                    bool m_runtimeVersionHasBeenSet;
+
+                    /**
+                     * RuntimeLatestVersion
+                     */
+                    std::string m_runtimeLatestVersion;
+                    bool m_runtimeLatestVersionHasBeenSet;
 
                 };
             }

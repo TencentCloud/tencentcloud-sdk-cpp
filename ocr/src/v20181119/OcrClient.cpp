@@ -427,6 +427,49 @@ OcrClient::ClassifyDetectOCROutcomeCallable OcrClient::ClassifyDetectOCRCallable
     return task->get_future();
 }
 
+OcrClient::CreateAIFormTaskOutcome OcrClient::CreateAIFormTask(const CreateAIFormTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAIFormTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAIFormTaskResponse rsp = CreateAIFormTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAIFormTaskOutcome(rsp);
+        else
+            return CreateAIFormTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAIFormTaskOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::CreateAIFormTaskAsync(const CreateAIFormTaskRequest& request, const CreateAIFormTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAIFormTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::CreateAIFormTaskOutcomeCallable OcrClient::CreateAIFormTaskCallable(const CreateAIFormTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAIFormTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAIFormTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::DriverLicenseOCROutcome OcrClient::DriverLicenseOCR(const DriverLicenseOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "DriverLicenseOCR");
@@ -1065,6 +1108,49 @@ OcrClient::GeneralHandwritingOCROutcomeCallable OcrClient::GeneralHandwritingOCR
         [this, request]()
         {
             return this->GeneralHandwritingOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::GetTaskStateOutcome OcrClient::GetTaskState(const GetTaskStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetTaskState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetTaskStateResponse rsp = GetTaskStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetTaskStateOutcome(rsp);
+        else
+            return GetTaskStateOutcome(o.GetError());
+    }
+    else
+    {
+        return GetTaskStateOutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::GetTaskStateAsync(const GetTaskStateRequest& request, const GetTaskStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetTaskState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::GetTaskStateOutcomeCallable OcrClient::GetTaskStateCallable(const GetTaskStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetTaskStateOutcome()>>(
+        [this, request]()
+        {
+            return this->GetTaskState(request);
         }
     );
 
@@ -2226,6 +2312,49 @@ OcrClient::RecognizePhilippinesVoteIDOCROutcomeCallable OcrClient::RecognizePhil
         [this, request]()
         {
             return this->RecognizePhilippinesVoteIDOCR(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+OcrClient::RecognizeTableAccurateOCROutcome OcrClient::RecognizeTableAccurateOCR(const RecognizeTableAccurateOCRRequest &request)
+{
+    auto outcome = MakeRequest(request, "RecognizeTableAccurateOCR");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RecognizeTableAccurateOCRResponse rsp = RecognizeTableAccurateOCRResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RecognizeTableAccurateOCROutcome(rsp);
+        else
+            return RecognizeTableAccurateOCROutcome(o.GetError());
+    }
+    else
+    {
+        return RecognizeTableAccurateOCROutcome(outcome.GetError());
+    }
+}
+
+void OcrClient::RecognizeTableAccurateOCRAsync(const RecognizeTableAccurateOCRRequest& request, const RecognizeTableAccurateOCRAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RecognizeTableAccurateOCR(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::RecognizeTableAccurateOCROutcomeCallable OcrClient::RecognizeTableAccurateOCRCallable(const RecognizeTableAccurateOCRRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RecognizeTableAccurateOCROutcome()>>(
+        [this, request]()
+        {
+            return this->RecognizeTableAccurateOCR(request);
         }
     );
 
