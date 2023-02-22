@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/wedata/v20210820/model/RecordsSpeed.h>
 #include <tencentcloud/wedata/v20210820/model/BytesSpeed.h>
+#include <tencentcloud/wedata/v20210820/model/RealTimeTaskSpeed.h>
 
 
 namespace TencentCloud
@@ -69,6 +70,18 @@ namespace TencentCloud
                      */
                     bool BytesSpeedListHasBeenSet() const;
 
+                    /**
+                     * 获取同步速度，包括了RecordsSpeedList和BytesSpeedList
+                     * @return Data 同步速度，包括了RecordsSpeedList和BytesSpeedList
+                     */
+                    RealTimeTaskSpeed GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -82,6 +95,12 @@ namespace TencentCloud
                      */
                     std::vector<BytesSpeed> m_bytesSpeedList;
                     bool m_bytesSpeedListHasBeenSet;
+
+                    /**
+                     * 同步速度，包括了RecordsSpeedList和BytesSpeedList
+                     */
+                    RealTimeTaskSpeed m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

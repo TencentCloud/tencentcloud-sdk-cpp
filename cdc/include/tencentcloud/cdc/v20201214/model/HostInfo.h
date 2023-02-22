@@ -226,6 +226,28 @@ namespace TencentCloud
                      */
                     bool ExpireTimeHasBeenSet() const;
 
+                    /**
+                     * 获取宿主机id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HostId 宿主机id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetHostId() const;
+
+                    /**
+                     * 设置宿主机id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HostId 宿主机id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHostId(const std::string& _hostId);
+
+                    /**
+                     * 判断参数 HostId 是否已赋值
+                     * @return HostId 是否已赋值
+                     */
+                    bool HostIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -287,6 +309,13 @@ namespace TencentCloud
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;
+
+                    /**
+                     * 宿主机id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_hostId;
+                    bool m_hostIdHasBeenSet;
 
                 };
             }

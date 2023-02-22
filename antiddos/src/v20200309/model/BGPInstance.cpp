@@ -38,7 +38,8 @@ BGPInstance::BGPInstance() :
     m_ipCountNewFlagHasBeenSet(false),
     m_vitalityVersionHasBeenSet(false),
     m_lineHasBeenSet(false),
-    m_elasticServiceBandwidthHasBeenSet(false)
+    m_elasticServiceBandwidthHasBeenSet(false),
+    m_giftServiceBandWidthHasBeenSet(false)
 {
 }
 
@@ -282,6 +283,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_elasticServiceBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("GiftServiceBandWidth") && !value["GiftServiceBandWidth"].IsNull())
+    {
+        if (!value["GiftServiceBandWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.GiftServiceBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_giftServiceBandWidth = value["GiftServiceBandWidth"].GetInt64();
+        m_giftServiceBandWidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -450,6 +461,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ElasticServiceBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elasticServiceBandwidth, allocator);
+    }
+
+    if (m_giftServiceBandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GiftServiceBandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_giftServiceBandWidth, allocator);
     }
 
 }
@@ -741,5 +760,21 @@ void BGPInstance::SetElasticServiceBandwidth(const uint64_t& _elasticServiceBand
 bool BGPInstance::ElasticServiceBandwidthHasBeenSet() const
 {
     return m_elasticServiceBandwidthHasBeenSet;
+}
+
+int64_t BGPInstance::GetGiftServiceBandWidth() const
+{
+    return m_giftServiceBandWidth;
+}
+
+void BGPInstance::SetGiftServiceBandWidth(const int64_t& _giftServiceBandWidth)
+{
+    m_giftServiceBandWidth = _giftServiceBandWidth;
+    m_giftServiceBandWidthHasBeenSet = true;
+}
+
+bool BGPInstance::GiftServiceBandWidthHasBeenSet() const
+{
+    return m_giftServiceBandWidthHasBeenSet;
 }
 

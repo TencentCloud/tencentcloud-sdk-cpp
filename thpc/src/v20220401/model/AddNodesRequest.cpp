@@ -40,7 +40,8 @@ AddNodesRequest::AddNodesRequest() :
     m_clientTokenHasBeenSet(false),
     m_queueNameHasBeenSet(false),
     m_nodeRoleHasBeenSet(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_nodeTypeHasBeenSet(false)
 {
 }
 
@@ -217,6 +218,14 @@ string AddNodesRequest::ToJsonString() const
         string key = "DryRun";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_dryRun, allocator);
+    }
+
+    if (m_nodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_nodeType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -513,6 +522,22 @@ void AddNodesRequest::SetDryRun(const bool& _dryRun)
 bool AddNodesRequest::DryRunHasBeenSet() const
 {
     return m_dryRunHasBeenSet;
+}
+
+string AddNodesRequest::GetNodeType() const
+{
+    return m_nodeType;
+}
+
+void AddNodesRequest::SetNodeType(const string& _nodeType)
+{
+    m_nodeType = _nodeType;
+    m_nodeTypeHasBeenSet = true;
+}
+
+bool AddNodesRequest::NodeTypeHasBeenSet() const
+{
+    return m_nodeTypeHasBeenSet;
 }
 
 

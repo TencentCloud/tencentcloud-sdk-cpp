@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cbs/v20170312/model/Policy.h>
+#include <tencentcloud/cbs/v20170312/model/AdvancedRetentionPolicy.h>
 
 
 namespace TencentCloud
@@ -293,6 +294,72 @@ namespace TencentCloud
                      */
                     bool InstanceIdSetHasBeenSet() const;
 
+                    /**
+                     * 获取该定期快照创建的快照可以保留的月数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionMonths 该定期快照创建的快照可以保留的月数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRetentionMonths() const;
+
+                    /**
+                     * 设置该定期快照创建的快照可以保留的月数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionMonths 该定期快照创建的快照可以保留的月数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionMonths(const uint64_t& _retentionMonths);
+
+                    /**
+                     * 判断参数 RetentionMonths 是否已赋值
+                     * @return RetentionMonths 是否已赋值
+                     */
+                    bool RetentionMonthsHasBeenSet() const;
+
+                    /**
+                     * 获取该定期快照创建的快照最大保留数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RetentionAmount 该定期快照创建的快照最大保留数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRetentionAmount() const;
+
+                    /**
+                     * 设置该定期快照创建的快照最大保留数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RetentionAmount 该定期快照创建的快照最大保留数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRetentionAmount(const uint64_t& _retentionAmount);
+
+                    /**
+                     * 判断参数 RetentionAmount 是否已赋值
+                     * @return RetentionAmount 是否已赋值
+                     */
+                    bool RetentionAmountHasBeenSet() const;
+
+                    /**
+                     * 获取定期快照高级保留策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AdvancedRetentionPolicy 定期快照高级保留策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AdvancedRetentionPolicy GetAdvancedRetentionPolicy() const;
+
+                    /**
+                     * 设置定期快照高级保留策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AdvancedRetentionPolicy 定期快照高级保留策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAdvancedRetentionPolicy(const AdvancedRetentionPolicy& _advancedRetentionPolicy);
+
+                    /**
+                     * 判断参数 AdvancedRetentionPolicy 是否已赋值
+                     * @return AdvancedRetentionPolicy 是否已赋值
+                     */
+                    bool AdvancedRetentionPolicyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -375,6 +442,27 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIdSet;
                     bool m_instanceIdSetHasBeenSet;
+
+                    /**
+                     * 该定期快照创建的快照可以保留的月数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_retentionMonths;
+                    bool m_retentionMonthsHasBeenSet;
+
+                    /**
+                     * 该定期快照创建的快照最大保留数量。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_retentionAmount;
+                    bool m_retentionAmountHasBeenSet;
+
+                    /**
+                     * 定期快照高级保留策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AdvancedRetentionPolicy m_advancedRetentionPolicy;
+                    bool m_advancedRetentionPolicyHasBeenSet;
 
                 };
             }

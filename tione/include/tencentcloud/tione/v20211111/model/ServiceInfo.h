@@ -31,6 +31,7 @@
 #include <tencentcloud/tione/v20211111/model/LogConfig.h>
 #include <tencentcloud/tione/v20211111/model/HorizontalPodAutoscaler.h>
 #include <tencentcloud/tione/v20211111/model/WorkloadStatus.h>
+#include <tencentcloud/tione/v20211111/model/Pod.h>
 
 
 namespace TencentCloud
@@ -477,6 +478,28 @@ HYBRID_PAID:
                      */
                     bool ModelHotUpdateEnableHasBeenSet() const;
 
+                    /**
+                     * 获取Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pods Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Pod GetPods() const;
+
+                    /**
+                     * 设置Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Pods Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPods(const Pod& _pods);
+
+                    /**
+                     * 判断参数 Pods 是否已赋值
+                     * @return Pods 是否已赋值
+                     */
+                    bool PodsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -611,6 +634,13 @@ HYBRID_PAID:
                      */
                     bool m_modelHotUpdateEnable;
                     bool m_modelHotUpdateEnableHasBeenSet;
+
+                    /**
+                     * Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Pod m_pods;
+                    bool m_podsHasBeenSet;
 
                 };
             }

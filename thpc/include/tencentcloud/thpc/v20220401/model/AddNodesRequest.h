@@ -328,21 +328,17 @@ namespace TencentCloud
                     bool ClientTokenHasBeenSet() const;
 
                     /**
-                     * 获取队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
-<li>SGE默认队列为：all.q。<br>
+                     * 获取队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
 
-                     * @return QueueName 队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
-<li>SGE默认队列为：all.q。<br>
+                     * @return QueueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
 
                      */
                     std::string GetQueueName() const;
 
                     /**
-                     * 设置队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
-<li>SGE默认队列为：all.q。<br>
+                     * 设置队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
 
-                     * @param QueueName 队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
-<li>SGE默认队列为：all.q。<br>
+                     * @param QueueName 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
 
                      */
                     void SetQueueName(const std::string& _queueName);
@@ -354,14 +350,14 @@ namespace TencentCloud
                     bool QueueNameHasBeenSet() const;
 
                     /**
-                     * 获取添加节点类型。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
-                     * @return NodeRole 添加节点类型。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * 获取添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * @return NodeRole 添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
                      */
                     std::string GetNodeRole() const;
 
                     /**
-                     * 设置添加节点类型。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
-                     * @param NodeRole 添加节点类型。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * 设置添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * @param NodeRole 添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
                      */
                     void SetNodeRole(const std::string& _nodeRole);
 
@@ -404,6 +400,24 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      * @return DryRun 是否已赋值
                      */
                     bool DryRunHasBeenSet() const;
+
+                    /**
+                     * 获取添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     * @return NodeType 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     */
+                    std::string GetNodeType() const;
+
+                    /**
+                     * 设置添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     * @param NodeType 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     */
+                    void SetNodeType(const std::string& _nodeType);
+
+                    /**
+                     * 判断参数 NodeType 是否已赋值
+                     * @return NodeType 是否已赋值
+                     */
+                    bool NodeTypeHasBeenSet() const;
 
                 private:
 
@@ -500,15 +514,14 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                     bool m_clientTokenHasBeenSet;
 
                     /**
-                     * 队列名称。不指定则为默认队列。<br><li>SLURM默认队列为：compute。<br>
-<li>SGE默认队列为：all.q。<br>
+                     * 队列名称。不指定则为默认队列。<li>SLURM默认队列为：compute。<li>SGE默认队列为：all.q。
 
                      */
                     std::string m_queueName;
                     bool m_queueNameHasBeenSet;
 
                     /**
-                     * 添加节点类型。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
+                     * 添加节点角色。默认值：Compute<br><li>Compute：计算节点。<br><li>Login：登录节点。
                      */
                     std::string m_nodeRole;
                     bool m_nodeRoleHasBeenSet;
@@ -522,6 +535,12 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                      */
                     bool m_dryRun;
                     bool m_dryRunHasBeenSet;
+
+                    /**
+                     * 添加节点类型。默认取值：STATIC。<li>STATIC：静态节点，不会参与弹性伸缩流程。<li>DYNAMIC：弹性节点，会被弹性缩容的节点。管控节点和登录节点不支持此参数。
+                     */
+                    std::string m_nodeType;
+                    bool m_nodeTypeHasBeenSet;
 
                 };
             }

@@ -2491,6 +2491,49 @@ CfwClient::ModifySequenceRulesOutcomeCallable CfwClient::ModifySequenceRulesCall
     return task->get_future();
 }
 
+CfwClient::ModifyStorageSettingOutcome CfwClient::ModifyStorageSetting(const ModifyStorageSettingRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyStorageSetting");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyStorageSettingResponse rsp = ModifyStorageSettingResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyStorageSettingOutcome(rsp);
+        else
+            return ModifyStorageSettingOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyStorageSettingOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyStorageSettingAsync(const ModifyStorageSettingRequest& request, const ModifyStorageSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyStorageSetting(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyStorageSettingOutcomeCallable CfwClient::ModifyStorageSettingCallable(const ModifyStorageSettingRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyStorageSettingOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyStorageSetting(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ModifyTableStatusOutcome CfwClient::ModifyTableStatus(const ModifyTableStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyTableStatus");

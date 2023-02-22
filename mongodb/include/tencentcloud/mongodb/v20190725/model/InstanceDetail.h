@@ -50,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例ID。
+                     * @return InstanceId 实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例ID。
+                     * @param InstanceId 实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -68,14 +68,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取实例名称。
+                     * @return InstanceName 实例名称。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * 设置实例名称。
+                     * @param InstanceName 实例名称。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -104,14 +104,14 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取项目ID
-                     * @return ProjectId 项目ID
+                     * 获取项目ID。
+                     * @return ProjectId 项目ID。
                      */
                     uint64_t GetProjectId() const;
 
                     /**
-                     * 设置项目ID
-                     * @param ProjectId 项目ID
+                     * 设置项目ID。
+                     * @param ProjectId 项目ID。
                      */
                     void SetProjectId(const uint64_t& _projectId);
 
@@ -122,14 +122,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取集群类型，可能的返回值：0-副本集实例，1-分片实例，
-                     * @return ClusterType 集群类型，可能的返回值：0-副本集实例，1-分片实例，
+                     * 获取集群类型，可能的返回值：0-副本集实例，1-分片实例。
+                     * @return ClusterType 集群类型，可能的返回值：0-副本集实例，1-分片实例。
                      */
                     uint64_t GetClusterType() const;
 
                     /**
-                     * 设置集群类型，可能的返回值：0-副本集实例，1-分片实例，
-                     * @param ClusterType 集群类型，可能的返回值：0-副本集实例，1-分片实例，
+                     * 设置集群类型，可能的返回值：0-副本集实例，1-分片实例。
+                     * @param ClusterType 集群类型，可能的返回值：0-副本集实例，1-分片实例。
                      */
                     void SetClusterType(const uint64_t& _clusterType);
 
@@ -140,14 +140,14 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取地域信息
-                     * @return Region 地域信息
+                     * 获取地域信息。
+                     * @return Region 地域信息。
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置地域信息
-                     * @param Region 地域信息
+                     * 设置地域信息。
+                     * @param Region 地域信息。
                      */
                     void SetRegion(const std::string& _region);
 
@@ -158,14 +158,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取可用区信息
-                     * @return Zone 可用区信息
+                     * 获取可用区信息。
+                     * @return Zone 可用区信息。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置可用区信息
-                     * @param Zone 可用区信息
+                     * 设置可用区信息。
+                     * @param Zone 可用区信息。
                      */
                     void SetZone(const std::string& _zone);
 
@@ -194,14 +194,14 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取私有网络的ID
-                     * @return VpcId 私有网络的ID
+                     * 获取私有网络的ID。
+                     * @return VpcId 私有网络的ID。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络的ID
-                     * @param VpcId 私有网络的ID
+                     * 设置私有网络的ID。
+                     * @param VpcId 私有网络的ID。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -212,14 +212,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络的子网ID
-                     * @return SubnetId 私有网络的子网ID
+                     * 获取私有网络的子网ID。
+                     * @return SubnetId 私有网络的子网ID。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络的子网ID
-                     * @param SubnetId 私有网络的子网ID
+                     * 设置私有网络的子网ID。
+                     * @param SubnetId 私有网络的子网ID。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -230,14 +230,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期
-                     * @return Status 实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期
+                     * 获取实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。
+                     * @return Status 实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期
-                     * @param Status 实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期
+                     * 设置实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。
+                     * @param Status 实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -248,14 +248,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例IP
-                     * @return Vip 实例IP
+                     * 获取实例IP。
+                     * @return Vip 实例IP。
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置实例IP
-                     * @param Vip 实例IP
+                     * 设置实例IP。
+                     * @param Vip 实例IP。
                      */
                     void SetVip(const std::string& _vip);
 
@@ -266,14 +266,14 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取端口号
-                     * @return Vport 端口号
+                     * 获取端口号。
+                     * @return Vport 端口号。
                      */
                     uint64_t GetVport() const;
 
                     /**
-                     * 设置端口号
-                     * @param Vport 端口号
+                     * 设置端口号。
+                     * @param Vport 端口号。
                      */
                     void SetVport(const uint64_t& _vport);
 
@@ -284,14 +284,14 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间
-                     * @return CreateTime 实例创建时间
+                     * 获取实例创建时间。
+                     * @return CreateTime 实例创建时间。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置实例创建时间
-                     * @param CreateTime 实例创建时间
+                     * 设置实例创建时间。
+                     * @param CreateTime 实例创建时间。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -302,14 +302,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间
-                     * @return DeadLine 实例到期时间
+                     * 获取实例到期时间。
+                     * @return DeadLine 实例到期时间。
                      */
                     std::string GetDeadLine() const;
 
                     /**
-                     * 设置实例到期时间
-                     * @param DeadLine 实例到期时间
+                     * 设置实例到期时间。
+                     * @param DeadLine 实例到期时间。
                      */
                     void SetDeadLine(const std::string& _deadLine);
 
@@ -320,14 +320,14 @@ namespace TencentCloud
                     bool DeadLineHasBeenSet() const;
 
                     /**
-                     * 获取实例版本信息
-                     * @return MongoVersion 实例版本信息
+                     * 获取实例版本信息。
+                     * @return MongoVersion 实例版本信息。
                      */
                     std::string GetMongoVersion() const;
 
                     /**
-                     * 设置实例版本信息
-                     * @param MongoVersion 实例版本信息
+                     * 设置实例版本信息。
+                     * @param MongoVersion 实例版本信息。
                      */
                     void SetMongoVersion(const std::string& _mongoVersion);
 
@@ -338,14 +338,14 @@ namespace TencentCloud
                     bool MongoVersionHasBeenSet() const;
 
                     /**
-                     * 获取实例内存规格，单位为MB
-                     * @return Memory 实例内存规格，单位为MB
+                     * 获取实例内存规格，单位为MB。
+                     * @return Memory 实例内存规格，单位为MB。
                      */
                     uint64_t GetMemory() const;
 
                     /**
-                     * 设置实例内存规格，单位为MB
-                     * @param Memory 实例内存规格，单位为MB
+                     * 设置实例内存规格，单位为MB。
+                     * @param Memory 实例内存规格，单位为MB。
                      */
                     void SetMemory(const uint64_t& _memory);
 
@@ -356,14 +356,14 @@ namespace TencentCloud
                     bool MemoryHasBeenSet() const;
 
                     /**
-                     * 获取实例磁盘规格，单位为MB
-                     * @return Volume 实例磁盘规格，单位为MB
+                     * 获取实例磁盘规格，单位为MB。
+                     * @return Volume 实例磁盘规格，单位为MB。
                      */
                     uint64_t GetVolume() const;
 
                     /**
-                     * 设置实例磁盘规格，单位为MB
-                     * @param Volume 实例磁盘规格，单位为MB
+                     * 设置实例磁盘规格，单位为MB。
+                     * @param Volume 实例磁盘规格，单位为MB。
                      */
                     void SetVolume(const uint64_t& _volume);
 
@@ -374,14 +374,14 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取实例CPU核心数
-                     * @return CpuNum 实例CPU核心数
+                     * 获取实例CPU核心数。
+                     * @return CpuNum 实例CPU核心数。
                      */
                     uint64_t GetCpuNum() const;
 
                     /**
-                     * 设置实例CPU核心数
-                     * @param CpuNum 实例CPU核心数
+                     * 设置实例CPU核心数。
+                     * @param CpuNum 实例CPU核心数。
                      */
                     void SetCpuNum(const uint64_t& _cpuNum);
 
@@ -392,14 +392,14 @@ namespace TencentCloud
                     bool CpuNumHasBeenSet() const;
 
                     /**
-                     * 获取实例机器类型
-                     * @return MachineType 实例机器类型
+                     * 获取实例机器类型。
+                     * @return MachineType 实例机器类型。
                      */
                     std::string GetMachineType() const;
 
                     /**
-                     * 设置实例机器类型
-                     * @param MachineType 实例机器类型
+                     * 设置实例机器类型。
+                     * @param MachineType 实例机器类型。
                      */
                     void SetMachineType(const std::string& _machineType);
 
@@ -410,14 +410,14 @@ namespace TencentCloud
                     bool MachineTypeHasBeenSet() const;
 
                     /**
-                     * 获取实例从节点数
-                     * @return SecondaryNum 实例从节点数
+                     * 获取实例从节点数。
+                     * @return SecondaryNum 实例从节点数。
                      */
                     uint64_t GetSecondaryNum() const;
 
                     /**
-                     * 设置实例从节点数
-                     * @param SecondaryNum 实例从节点数
+                     * 设置实例从节点数。
+                     * @param SecondaryNum 实例从节点数。
                      */
                     void SetSecondaryNum(const uint64_t& _secondaryNum);
 
@@ -428,14 +428,14 @@ namespace TencentCloud
                     bool SecondaryNumHasBeenSet() const;
 
                     /**
-                     * 获取实例分片数
-                     * @return ReplicationSetNum 实例分片数
+                     * 获取实例分片数。
+                     * @return ReplicationSetNum 实例分片数。
                      */
                     uint64_t GetReplicationSetNum() const;
 
                     /**
-                     * 设置实例分片数
-                     * @param ReplicationSetNum 实例分片数
+                     * 设置实例分片数。
+                     * @param ReplicationSetNum 实例分片数。
                      */
                     void SetReplicationSetNum(const uint64_t& _replicationSetNum);
 
@@ -446,14 +446,14 @@ namespace TencentCloud
                     bool ReplicationSetNumHasBeenSet() const;
 
                     /**
-                     * 获取实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费
-                     * @return AutoRenewFlag 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费
+                     * 获取实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
+                     * @return AutoRenewFlag 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费
-                     * @param AutoRenewFlag 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费
+                     * 设置实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
+                     * @param AutoRenewFlag 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
@@ -464,14 +464,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取已用容量，单位MB
-                     * @return UsedVolume 已用容量，单位MB
+                     * 获取已用容量，单位MB。
+                     * @return UsedVolume 已用容量，单位MB。
                      */
                     uint64_t GetUsedVolume() const;
 
                     /**
-                     * 设置已用容量，单位MB
-                     * @param UsedVolume 已用容量，单位MB
+                     * 设置已用容量，单位MB。
+                     * @param UsedVolume 已用容量，单位MB。
                      */
                     void SetUsedVolume(const uint64_t& _usedVolume);
 
@@ -482,14 +482,14 @@ namespace TencentCloud
                     bool UsedVolumeHasBeenSet() const;
 
                     /**
-                     * 获取维护窗口起始时间
-                     * @return MaintenanceStart 维护窗口起始时间
+                     * 获取维护窗口起始时间。
+                     * @return MaintenanceStart 维护窗口起始时间。
                      */
                     std::string GetMaintenanceStart() const;
 
                     /**
-                     * 设置维护窗口起始时间
-                     * @param MaintenanceStart 维护窗口起始时间
+                     * 设置维护窗口起始时间。
+                     * @param MaintenanceStart 维护窗口起始时间。
                      */
                     void SetMaintenanceStart(const std::string& _maintenanceStart);
 
@@ -500,14 +500,14 @@ namespace TencentCloud
                     bool MaintenanceStartHasBeenSet() const;
 
                     /**
-                     * 获取维护窗口结束时间
-                     * @return MaintenanceEnd 维护窗口结束时间
+                     * 获取维护窗口结束时间。
+                     * @return MaintenanceEnd 维护窗口结束时间。
                      */
                     std::string GetMaintenanceEnd() const;
 
                     /**
-                     * 设置维护窗口结束时间
-                     * @param MaintenanceEnd 维护窗口结束时间
+                     * 设置维护窗口结束时间。
+                     * @param MaintenanceEnd 维护窗口结束时间。
                      */
                     void SetMaintenanceEnd(const std::string& _maintenanceEnd);
 
@@ -518,14 +518,14 @@ namespace TencentCloud
                     bool MaintenanceEndHasBeenSet() const;
 
                     /**
-                     * 获取分片信息
-                     * @return ReplicaSets 分片信息
+                     * 获取分片信息。
+                     * @return ReplicaSets 分片信息。
                      */
                     std::vector<ShardInfo> GetReplicaSets() const;
 
                     /**
-                     * 设置分片信息
-                     * @param ReplicaSets 分片信息
+                     * 设置分片信息。
+                     * @param ReplicaSets 分片信息。
                      */
                     void SetReplicaSets(const std::vector<ShardInfo>& _replicaSets);
 
@@ -536,14 +536,14 @@ namespace TencentCloud
                     bool ReplicaSetsHasBeenSet() const;
 
                     /**
-                     * 获取只读实例信息
-                     * @return ReadonlyInstances 只读实例信息
+                     * 获取只读实例信息。
+                     * @return ReadonlyInstances 只读实例信息。
                      */
                     std::vector<DBInstanceInfo> GetReadonlyInstances() const;
 
                     /**
-                     * 设置只读实例信息
-                     * @param ReadonlyInstances 只读实例信息
+                     * 设置只读实例信息。
+                     * @param ReadonlyInstances 只读实例信息。
                      */
                     void SetReadonlyInstances(const std::vector<DBInstanceInfo>& _readonlyInstances);
 
@@ -554,14 +554,14 @@ namespace TencentCloud
                     bool ReadonlyInstancesHasBeenSet() const;
 
                     /**
-                     * 获取灾备实例信息
-                     * @return StandbyInstances 灾备实例信息
+                     * 获取灾备实例信息。
+                     * @return StandbyInstances 灾备实例信息。
                      */
                     std::vector<DBInstanceInfo> GetStandbyInstances() const;
 
                     /**
-                     * 设置灾备实例信息
-                     * @param StandbyInstances 灾备实例信息
+                     * 设置灾备实例信息。
+                     * @param StandbyInstances 灾备实例信息。
                      */
                     void SetStandbyInstances(const std::vector<DBInstanceInfo>& _standbyInstances);
 
@@ -572,14 +572,14 @@ namespace TencentCloud
                     bool StandbyInstancesHasBeenSet() const;
 
                     /**
-                     * 获取临时实例信息
-                     * @return CloneInstances 临时实例信息
+                     * 获取临时实例信息。
+                     * @return CloneInstances 临时实例信息。
                      */
                     std::vector<DBInstanceInfo> GetCloneInstances() const;
 
                     /**
-                     * 设置临时实例信息
-                     * @param CloneInstances 临时实例信息
+                     * 设置临时实例信息。
+                     * @param CloneInstances 临时实例信息。
                      */
                     void SetCloneInstances(const std::vector<DBInstanceInfo>& _cloneInstances);
 
@@ -590,14 +590,14 @@ namespace TencentCloud
                     bool CloneInstancesHasBeenSet() const;
 
                     /**
-                     * 获取关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
-                     * @return RelatedInstance 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
+                     * 获取关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。
+                     * @return RelatedInstance 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。
                      */
                     DBInstanceInfo GetRelatedInstance() const;
 
                     /**
-                     * 设置关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
-                     * @param RelatedInstance 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
+                     * 设置关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。
+                     * @param RelatedInstance 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。
                      */
                     void SetRelatedInstance(const DBInstanceInfo& _relatedInstance);
 
@@ -608,14 +608,14 @@ namespace TencentCloud
                     bool RelatedInstanceHasBeenSet() const;
 
                     /**
-                     * 获取实例标签信息集合
-                     * @return Tags 实例标签信息集合
+                     * 获取实例标签信息集合。
+                     * @return Tags 实例标签信息集合。
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置实例标签信息集合
-                     * @param Tags 实例标签信息集合
+                     * 设置实例标签信息集合。
+                     * @param Tags 实例标签信息集合。
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
 
@@ -626,14 +626,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取实例版本标记
-                     * @return InstanceVer 实例版本标记
+                     * 获取实例版本标记。
+                     * @return InstanceVer 实例版本标记。
                      */
                     uint64_t GetInstanceVer() const;
 
                     /**
-                     * 设置实例版本标记
-                     * @param InstanceVer 实例版本标记
+                     * 设置实例版本标记。
+                     * @param InstanceVer 实例版本标记。
                      */
                     void SetInstanceVer(const uint64_t& _instanceVer);
 
@@ -644,14 +644,14 @@ namespace TencentCloud
                     bool InstanceVerHasBeenSet() const;
 
                     /**
-                     * 获取实例版本标记
-                     * @return ClusterVer 实例版本标记
+                     * 获取实例版本标记。
+                     * @return ClusterVer 实例版本标记。
                      */
                     uint64_t GetClusterVer() const;
 
                     /**
-                     * 设置实例版本标记
-                     * @param ClusterVer 实例版本标记
+                     * 设置实例版本标记。
+                     * @param ClusterVer 实例版本标记。
                      */
                     void SetClusterVer(const uint64_t& _clusterVer);
 
@@ -662,14 +662,14 @@ namespace TencentCloud
                     bool ClusterVerHasBeenSet() const;
 
                     /**
-                     * 获取协议信息，可能的返回值：1-mongodb，2-dynamodb
-                     * @return Protocol 协议信息，可能的返回值：1-mongodb，2-dynamodb
+                     * 获取协议信息，可能的返回值：1-mongodb，2-dynamodb。
+                     * @return Protocol 协议信息，可能的返回值：1-mongodb，2-dynamodb。
                      */
                     uint64_t GetProtocol() const;
 
                     /**
-                     * 设置协议信息，可能的返回值：1-mongodb，2-dynamodb
-                     * @param Protocol 协议信息，可能的返回值：1-mongodb，2-dynamodb
+                     * 设置协议信息，可能的返回值：1-mongodb，2-dynamodb。
+                     * @param Protocol 协议信息，可能的返回值：1-mongodb，2-dynamodb。
                      */
                     void SetProtocol(const uint64_t& _protocol);
 
@@ -733,16 +733,192 @@ namespace TencentCloud
                      */
                     bool RealInstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取mongos节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MongosNodeNum mongos节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMongosNodeNum() const;
+
+                    /**
+                     * 设置mongos节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MongosNodeNum mongos节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMongosNodeNum(const uint64_t& _mongosNodeNum);
+
+                    /**
+                     * 判断参数 MongosNodeNum 是否已赋值
+                     * @return MongosNodeNum 是否已赋值
+                     */
+                    bool MongosNodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取mongos节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MongosMemory mongos节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMongosMemory() const;
+
+                    /**
+                     * 设置mongos节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MongosMemory mongos节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMongosMemory(const uint64_t& _mongosMemory);
+
+                    /**
+                     * 判断参数 MongosMemory 是否已赋值
+                     * @return MongosMemory 是否已赋值
+                     */
+                    bool MongosMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取mongos节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MongosCpuNum mongos节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMongosCpuNum() const;
+
+                    /**
+                     * 设置mongos节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MongosCpuNum mongos节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMongosCpuNum(const uint64_t& _mongosCpuNum);
+
+                    /**
+                     * 判断参数 MongosCpuNum 是否已赋值
+                     * @return MongosCpuNum 是否已赋值
+                     */
+                    bool MongosCpuNumHasBeenSet() const;
+
+                    /**
+                     * 获取Config Server节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigServerNodeNum Config Server节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetConfigServerNodeNum() const;
+
+                    /**
+                     * 设置Config Server节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigServerNodeNum Config Server节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigServerNodeNum(const uint64_t& _configServerNodeNum);
+
+                    /**
+                     * 判断参数 ConfigServerNodeNum 是否已赋值
+                     * @return ConfigServerNodeNum 是否已赋值
+                     */
+                    bool ConfigServerNodeNumHasBeenSet() const;
+
+                    /**
+                     * 获取Config Server节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigServerMemory Config Server节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetConfigServerMemory() const;
+
+                    /**
+                     * 设置Config Server节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigServerMemory Config Server节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigServerMemory(const uint64_t& _configServerMemory);
+
+                    /**
+                     * 判断参数 ConfigServerMemory 是否已赋值
+                     * @return ConfigServerMemory 是否已赋值
+                     */
+                    bool ConfigServerMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取Config Server节点磁盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigServerVolume Config Server节点磁盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetConfigServerVolume() const;
+
+                    /**
+                     * 设置Config Server节点磁盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigServerVolume Config Server节点磁盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigServerVolume(const uint64_t& _configServerVolume);
+
+                    /**
+                     * 判断参数 ConfigServerVolume 是否已赋值
+                     * @return ConfigServerVolume 是否已赋值
+                     */
+                    bool ConfigServerVolumeHasBeenSet() const;
+
+                    /**
+                     * 获取Config Server节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConfigServerCpuNum Config Server节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetConfigServerCpuNum() const;
+
+                    /**
+                     * 设置Config Server节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConfigServerCpuNum Config Server节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConfigServerCpuNum(const uint64_t& _configServerCpuNum);
+
+                    /**
+                     * 判断参数 ConfigServerCpuNum 是否已赋值
+                     * @return ConfigServerCpuNum 是否已赋值
+                     */
+                    bool ConfigServerCpuNumHasBeenSet() const;
+
+                    /**
+                     * 获取readonly节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReadonlyNodeNum readonly节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetReadonlyNodeNum() const;
+
+                    /**
+                     * 设置readonly节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReadonlyNodeNum readonly节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReadonlyNodeNum(const uint64_t& _readonlyNodeNum);
+
+                    /**
+                     * 判断参数 ReadonlyNodeNum 是否已赋值
+                     * @return ReadonlyNodeNum 是否已赋值
+                     */
+                    bool ReadonlyNodeNumHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例名称
+                     * 实例名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -754,25 +930,25 @@ namespace TencentCloud
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 项目ID
+                     * 项目ID。
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 集群类型，可能的返回值：0-副本集实例，1-分片实例，
+                     * 集群类型，可能的返回值：0-副本集实例，1-分片实例。
                      */
                     uint64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 地域信息
+                     * 地域信息。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 可用区信息
+                     * 可用区信息。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
@@ -784,163 +960,163 @@ namespace TencentCloud
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 私有网络的ID
+                     * 私有网络的ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络的子网ID
+                     * 私有网络的子网ID。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期
+                     * 实例状态，可能的返回值：0-待初始化，1-流程处理中，2-运行中，-2-实例已过期。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例IP
+                     * 实例IP。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 端口号
+                     * 端口号。
                      */
                     uint64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 实例创建时间
+                     * 实例创建时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 实例到期时间
+                     * 实例到期时间。
                      */
                     std::string m_deadLine;
                     bool m_deadLineHasBeenSet;
 
                     /**
-                     * 实例版本信息
+                     * 实例版本信息。
                      */
                     std::string m_mongoVersion;
                     bool m_mongoVersionHasBeenSet;
 
                     /**
-                     * 实例内存规格，单位为MB
+                     * 实例内存规格，单位为MB。
                      */
                     uint64_t m_memory;
                     bool m_memoryHasBeenSet;
 
                     /**
-                     * 实例磁盘规格，单位为MB
+                     * 实例磁盘规格，单位为MB。
                      */
                     uint64_t m_volume;
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 实例CPU核心数
+                     * 实例CPU核心数。
                      */
                     uint64_t m_cpuNum;
                     bool m_cpuNumHasBeenSet;
 
                     /**
-                     * 实例机器类型
+                     * 实例机器类型。
                      */
                     std::string m_machineType;
                     bool m_machineTypeHasBeenSet;
 
                     /**
-                     * 实例从节点数
+                     * 实例从节点数。
                      */
                     uint64_t m_secondaryNum;
                     bool m_secondaryNumHasBeenSet;
 
                     /**
-                     * 实例分片数
+                     * 实例分片数。
                      */
                     uint64_t m_replicationSetNum;
                     bool m_replicationSetNumHasBeenSet;
 
                     /**
-                     * 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费
+                     * 实例自动续费标志，可能的返回值：0-手动续费，1-自动续费，2-确认不续费。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 已用容量，单位MB
+                     * 已用容量，单位MB。
                      */
                     uint64_t m_usedVolume;
                     bool m_usedVolumeHasBeenSet;
 
                     /**
-                     * 维护窗口起始时间
+                     * 维护窗口起始时间。
                      */
                     std::string m_maintenanceStart;
                     bool m_maintenanceStartHasBeenSet;
 
                     /**
-                     * 维护窗口结束时间
+                     * 维护窗口结束时间。
                      */
                     std::string m_maintenanceEnd;
                     bool m_maintenanceEndHasBeenSet;
 
                     /**
-                     * 分片信息
+                     * 分片信息。
                      */
                     std::vector<ShardInfo> m_replicaSets;
                     bool m_replicaSetsHasBeenSet;
 
                     /**
-                     * 只读实例信息
+                     * 只读实例信息。
                      */
                     std::vector<DBInstanceInfo> m_readonlyInstances;
                     bool m_readonlyInstancesHasBeenSet;
 
                     /**
-                     * 灾备实例信息
+                     * 灾备实例信息。
                      */
                     std::vector<DBInstanceInfo> m_standbyInstances;
                     bool m_standbyInstancesHasBeenSet;
 
                     /**
-                     * 临时实例信息
+                     * 临时实例信息。
                      */
                     std::vector<DBInstanceInfo> m_cloneInstances;
                     bool m_cloneInstancesHasBeenSet;
 
                     /**
-                     * 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息
+                     * 关联实例信息，对于正式实例，该字段表示它的临时实例信息；对于临时实例，则表示它的正式实例信息;如果为只读/灾备实例,则表示他的主实例信息。
                      */
                     DBInstanceInfo m_relatedInstance;
                     bool m_relatedInstanceHasBeenSet;
 
                     /**
-                     * 实例标签信息集合
+                     * 实例标签信息集合。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 实例版本标记
+                     * 实例版本标记。
                      */
                     uint64_t m_instanceVer;
                     bool m_instanceVerHasBeenSet;
 
                     /**
-                     * 实例版本标记
+                     * 实例版本标记。
                      */
                     uint64_t m_clusterVer;
                     bool m_clusterVerHasBeenSet;
 
                     /**
-                     * 协议信息，可能的返回值：1-mongodb，2-dynamodb
+                     * 协议信息，可能的返回值：1-mongodb，2-dynamodb。
                      */
                     uint64_t m_protocol;
                     bool m_protocolHasBeenSet;
@@ -962,6 +1138,62 @@ namespace TencentCloud
                      */
                     std::string m_realInstanceId;
                     bool m_realInstanceIdHasBeenSet;
+
+                    /**
+                     * mongos节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_mongosNodeNum;
+                    bool m_mongosNodeNumHasBeenSet;
+
+                    /**
+                     * mongos节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_mongosMemory;
+                    bool m_mongosMemoryHasBeenSet;
+
+                    /**
+                     * mongos节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_mongosCpuNum;
+                    bool m_mongosCpuNumHasBeenSet;
+
+                    /**
+                     * Config Server节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_configServerNodeNum;
+                    bool m_configServerNodeNumHasBeenSet;
+
+                    /**
+                     * Config Server节点内存。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_configServerMemory;
+                    bool m_configServerMemoryHasBeenSet;
+
+                    /**
+                     * Config Server节点磁盘大小。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_configServerVolume;
+                    bool m_configServerVolumeHasBeenSet;
+
+                    /**
+                     * Config Server节点CPU核数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_configServerCpuNum;
+                    bool m_configServerCpuNumHasBeenSet;
+
+                    /**
+                     * readonly节点个数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_readonlyNodeNum;
+                    bool m_readonlyNodeNumHasBeenSet;
 
                 };
             }

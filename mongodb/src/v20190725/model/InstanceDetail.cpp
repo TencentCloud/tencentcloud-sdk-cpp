@@ -58,7 +58,15 @@ InstanceDetail::InstanceDetail() :
     m_protocolHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_instanceStatusDescHasBeenSet(false),
-    m_realInstanceIdHasBeenSet(false)
+    m_realInstanceIdHasBeenSet(false),
+    m_mongosNodeNumHasBeenSet(false),
+    m_mongosMemoryHasBeenSet(false),
+    m_mongosCpuNumHasBeenSet(false),
+    m_configServerNodeNumHasBeenSet(false),
+    m_configServerMemoryHasBeenSet(false),
+    m_configServerVolumeHasBeenSet(false),
+    m_configServerCpuNumHasBeenSet(false),
+    m_readonlyNodeNumHasBeenSet(false)
 {
 }
 
@@ -504,6 +512,86 @@ CoreInternalOutcome InstanceDetail::Deserialize(const rapidjson::Value &value)
         m_realInstanceIdHasBeenSet = true;
     }
 
+    if (value.HasMember("MongosNodeNum") && !value["MongosNodeNum"].IsNull())
+    {
+        if (!value["MongosNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.MongosNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mongosNodeNum = value["MongosNodeNum"].GetUint64();
+        m_mongosNodeNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("MongosMemory") && !value["MongosMemory"].IsNull())
+    {
+        if (!value["MongosMemory"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.MongosMemory` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mongosMemory = value["MongosMemory"].GetUint64();
+        m_mongosMemoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("MongosCpuNum") && !value["MongosCpuNum"].IsNull())
+    {
+        if (!value["MongosCpuNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.MongosCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mongosCpuNum = value["MongosCpuNum"].GetUint64();
+        m_mongosCpuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigServerNodeNum") && !value["ConfigServerNodeNum"].IsNull())
+    {
+        if (!value["ConfigServerNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ConfigServerNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configServerNodeNum = value["ConfigServerNodeNum"].GetUint64();
+        m_configServerNodeNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigServerMemory") && !value["ConfigServerMemory"].IsNull())
+    {
+        if (!value["ConfigServerMemory"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ConfigServerMemory` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configServerMemory = value["ConfigServerMemory"].GetUint64();
+        m_configServerMemoryHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigServerVolume") && !value["ConfigServerVolume"].IsNull())
+    {
+        if (!value["ConfigServerVolume"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ConfigServerVolume` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configServerVolume = value["ConfigServerVolume"].GetUint64();
+        m_configServerVolumeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConfigServerCpuNum") && !value["ConfigServerCpuNum"].IsNull())
+    {
+        if (!value["ConfigServerCpuNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ConfigServerCpuNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_configServerCpuNum = value["ConfigServerCpuNum"].GetUint64();
+        m_configServerCpuNumHasBeenSet = true;
+    }
+
+    if (value.HasMember("ReadonlyNodeNum") && !value["ReadonlyNodeNum"].IsNull())
+    {
+        if (!value["ReadonlyNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceDetail.ReadonlyNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_readonlyNodeNum = value["ReadonlyNodeNum"].GetUint64();
+        m_readonlyNodeNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -849,6 +937,70 @@ void InstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "RealInstanceId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_realInstanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mongosNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mongosNodeNum, allocator);
+    }
+
+    if (m_mongosMemoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosMemory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mongosMemory, allocator);
+    }
+
+    if (m_mongosCpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MongosCpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mongosCpuNum, allocator);
+    }
+
+    if (m_configServerNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigServerNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configServerNodeNum, allocator);
+    }
+
+    if (m_configServerMemoryHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigServerMemory";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configServerMemory, allocator);
+    }
+
+    if (m_configServerVolumeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigServerVolume";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configServerVolume, allocator);
+    }
+
+    if (m_configServerCpuNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConfigServerCpuNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_configServerCpuNum, allocator);
+    }
+
+    if (m_readonlyNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadonlyNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_readonlyNodeNum, allocator);
     }
 
 }
@@ -1460,5 +1612,133 @@ void InstanceDetail::SetRealInstanceId(const string& _realInstanceId)
 bool InstanceDetail::RealInstanceIdHasBeenSet() const
 {
     return m_realInstanceIdHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetMongosNodeNum() const
+{
+    return m_mongosNodeNum;
+}
+
+void InstanceDetail::SetMongosNodeNum(const uint64_t& _mongosNodeNum)
+{
+    m_mongosNodeNum = _mongosNodeNum;
+    m_mongosNodeNumHasBeenSet = true;
+}
+
+bool InstanceDetail::MongosNodeNumHasBeenSet() const
+{
+    return m_mongosNodeNumHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetMongosMemory() const
+{
+    return m_mongosMemory;
+}
+
+void InstanceDetail::SetMongosMemory(const uint64_t& _mongosMemory)
+{
+    m_mongosMemory = _mongosMemory;
+    m_mongosMemoryHasBeenSet = true;
+}
+
+bool InstanceDetail::MongosMemoryHasBeenSet() const
+{
+    return m_mongosMemoryHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetMongosCpuNum() const
+{
+    return m_mongosCpuNum;
+}
+
+void InstanceDetail::SetMongosCpuNum(const uint64_t& _mongosCpuNum)
+{
+    m_mongosCpuNum = _mongosCpuNum;
+    m_mongosCpuNumHasBeenSet = true;
+}
+
+bool InstanceDetail::MongosCpuNumHasBeenSet() const
+{
+    return m_mongosCpuNumHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetConfigServerNodeNum() const
+{
+    return m_configServerNodeNum;
+}
+
+void InstanceDetail::SetConfigServerNodeNum(const uint64_t& _configServerNodeNum)
+{
+    m_configServerNodeNum = _configServerNodeNum;
+    m_configServerNodeNumHasBeenSet = true;
+}
+
+bool InstanceDetail::ConfigServerNodeNumHasBeenSet() const
+{
+    return m_configServerNodeNumHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetConfigServerMemory() const
+{
+    return m_configServerMemory;
+}
+
+void InstanceDetail::SetConfigServerMemory(const uint64_t& _configServerMemory)
+{
+    m_configServerMemory = _configServerMemory;
+    m_configServerMemoryHasBeenSet = true;
+}
+
+bool InstanceDetail::ConfigServerMemoryHasBeenSet() const
+{
+    return m_configServerMemoryHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetConfigServerVolume() const
+{
+    return m_configServerVolume;
+}
+
+void InstanceDetail::SetConfigServerVolume(const uint64_t& _configServerVolume)
+{
+    m_configServerVolume = _configServerVolume;
+    m_configServerVolumeHasBeenSet = true;
+}
+
+bool InstanceDetail::ConfigServerVolumeHasBeenSet() const
+{
+    return m_configServerVolumeHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetConfigServerCpuNum() const
+{
+    return m_configServerCpuNum;
+}
+
+void InstanceDetail::SetConfigServerCpuNum(const uint64_t& _configServerCpuNum)
+{
+    m_configServerCpuNum = _configServerCpuNum;
+    m_configServerCpuNumHasBeenSet = true;
+}
+
+bool InstanceDetail::ConfigServerCpuNumHasBeenSet() const
+{
+    return m_configServerCpuNumHasBeenSet;
+}
+
+uint64_t InstanceDetail::GetReadonlyNodeNum() const
+{
+    return m_readonlyNodeNum;
+}
+
+void InstanceDetail::SetReadonlyNodeNum(const uint64_t& _readonlyNodeNum)
+{
+    m_readonlyNodeNum = _readonlyNodeNum;
+    m_readonlyNodeNumHasBeenSet = true;
+}
+
+bool InstanceDetail::ReadonlyNodeNumHasBeenSet() const
+{
+    return m_readonlyNodeNumHasBeenSet;
 }
 

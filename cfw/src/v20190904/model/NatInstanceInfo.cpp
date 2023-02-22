@@ -35,7 +35,9 @@ NatInstanceInfo::NatInstanceInfo() :
     m_statusHasBeenSet(false),
     m_regionDetailHasBeenSet(false),
     m_zoneZhHasBeenSet(false),
-    m_zoneZhBakHasBeenSet(false)
+    m_zoneZhBakHasBeenSet(false),
+    m_ruleUsedHasBeenSet(false),
+    m_ruleMaxHasBeenSet(false)
 {
 }
 
@@ -203,6 +205,26 @@ CoreInternalOutcome NatInstanceInfo::Deserialize(const rapidjson::Value &value)
         m_zoneZhBakHasBeenSet = true;
     }
 
+    if (value.HasMember("RuleUsed") && !value["RuleUsed"].IsNull())
+    {
+        if (!value["RuleUsed"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.RuleUsed` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleUsed = value["RuleUsed"].GetUint64();
+        m_ruleUsedHasBeenSet = true;
+    }
+
+    if (value.HasMember("RuleMax") && !value["RuleMax"].IsNull())
+    {
+        if (!value["RuleMax"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NatInstanceInfo.RuleMax` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ruleMax = value["RuleMax"].GetUint64();
+        m_ruleMaxHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -343,6 +365,22 @@ void NatInstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ZoneZhBak";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneZhBak.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ruleUsedHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleUsed";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleUsed, allocator);
+    }
+
+    if (m_ruleMaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleMax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ruleMax, allocator);
     }
 
 }
@@ -586,5 +624,37 @@ void NatInstanceInfo::SetZoneZhBak(const string& _zoneZhBak)
 bool NatInstanceInfo::ZoneZhBakHasBeenSet() const
 {
     return m_zoneZhBakHasBeenSet;
+}
+
+uint64_t NatInstanceInfo::GetRuleUsed() const
+{
+    return m_ruleUsed;
+}
+
+void NatInstanceInfo::SetRuleUsed(const uint64_t& _ruleUsed)
+{
+    m_ruleUsed = _ruleUsed;
+    m_ruleUsedHasBeenSet = true;
+}
+
+bool NatInstanceInfo::RuleUsedHasBeenSet() const
+{
+    return m_ruleUsedHasBeenSet;
+}
+
+uint64_t NatInstanceInfo::GetRuleMax() const
+{
+    return m_ruleMax;
+}
+
+void NatInstanceInfo::SetRuleMax(const uint64_t& _ruleMax)
+{
+    m_ruleMax = _ruleMax;
+    m_ruleMaxHasBeenSet = true;
+}
+
+bool NatInstanceInfo::RuleMaxHasBeenSet() const
+{
+    return m_ruleMaxHasBeenSet;
 }
 

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 描述了定期快照的执行策略。可理解为在DayOfWeek/DayOfMonth指定的几天中，或者是IntervalDays设定的间隔的几天，在Hour指定的小时执行该条定期快照策略。注：DayOfWeek/DayOfMonth/IntervalDays为互斥规则，仅可设置其中一条策略规则。
+                * 描述了定期快照的执行策略。可理解为在DayOfWeek/DayOfMonth指定的几天中，或者是IntervalDays设定的间隔的几天，在Hour指定的时刻点执行该条定期快照策。注：DayOfWeek/DayOfMonth/IntervalDays为互斥规则，仅可设置其中一条策略规则。
                 */
                 class Policy : public AbstractModel
                 {
@@ -82,6 +82,42 @@ namespace TencentCloud
                      */
                     bool DayOfWeekHasBeenSet() const;
 
+                    /**
+                     * 获取指定每月从月初到月底需要触发定期快照的日期,取值范围：[1, 31]，1-31分别表示每月的具体日期，比如5表示每月的5号。注：若设置29、30、31等部分月份不存在的日期，则对应不存在日期的月份会跳过不打定期快照。
+                     * @return DayOfMonth 指定每月从月初到月底需要触发定期快照的日期,取值范围：[1, 31]，1-31分别表示每月的具体日期，比如5表示每月的5号。注：若设置29、30、31等部分月份不存在的日期，则对应不存在日期的月份会跳过不打定期快照。
+                     */
+                    std::vector<uint64_t> GetDayOfMonth() const;
+
+                    /**
+                     * 设置指定每月从月初到月底需要触发定期快照的日期,取值范围：[1, 31]，1-31分别表示每月的具体日期，比如5表示每月的5号。注：若设置29、30、31等部分月份不存在的日期，则对应不存在日期的月份会跳过不打定期快照。
+                     * @param DayOfMonth 指定每月从月初到月底需要触发定期快照的日期,取值范围：[1, 31]，1-31分别表示每月的具体日期，比如5表示每月的5号。注：若设置29、30、31等部分月份不存在的日期，则对应不存在日期的月份会跳过不打定期快照。
+                     */
+                    void SetDayOfMonth(const std::vector<uint64_t>& _dayOfMonth);
+
+                    /**
+                     * 判断参数 DayOfMonth 是否已赋值
+                     * @return DayOfMonth 是否已赋值
+                     */
+                    bool DayOfMonthHasBeenSet() const;
+
+                    /**
+                     * 获取指定创建定期快照的间隔天数，取值范围：[1, 365]，例如设置为5，则间隔5天即触发定期快照创建。注：当选择按天备份时，理论上第一次备份的时间为备份策略创建当天。如果当天备份策略创建的时间已经晚于设置的备份时间，那么将会等到第二个备份周期再进行第一次备份。
+                     * @return IntervalDays 指定创建定期快照的间隔天数，取值范围：[1, 365]，例如设置为5，则间隔5天即触发定期快照创建。注：当选择按天备份时，理论上第一次备份的时间为备份策略创建当天。如果当天备份策略创建的时间已经晚于设置的备份时间，那么将会等到第二个备份周期再进行第一次备份。
+                     */
+                    uint64_t GetIntervalDays() const;
+
+                    /**
+                     * 设置指定创建定期快照的间隔天数，取值范围：[1, 365]，例如设置为5，则间隔5天即触发定期快照创建。注：当选择按天备份时，理论上第一次备份的时间为备份策略创建当天。如果当天备份策略创建的时间已经晚于设置的备份时间，那么将会等到第二个备份周期再进行第一次备份。
+                     * @param IntervalDays 指定创建定期快照的间隔天数，取值范围：[1, 365]，例如设置为5，则间隔5天即触发定期快照创建。注：当选择按天备份时，理论上第一次备份的时间为备份策略创建当天。如果当天备份策略创建的时间已经晚于设置的备份时间，那么将会等到第二个备份周期再进行第一次备份。
+                     */
+                    void SetIntervalDays(const uint64_t& _intervalDays);
+
+                    /**
+                     * 判断参数 IntervalDays 是否已赋值
+                     * @return IntervalDays 是否已赋值
+                     */
+                    bool IntervalDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +131,18 @@ namespace TencentCloud
                      */
                     std::vector<uint64_t> m_dayOfWeek;
                     bool m_dayOfWeekHasBeenSet;
+
+                    /**
+                     * 指定每月从月初到月底需要触发定期快照的日期,取值范围：[1, 31]，1-31分别表示每月的具体日期，比如5表示每月的5号。注：若设置29、30、31等部分月份不存在的日期，则对应不存在日期的月份会跳过不打定期快照。
+                     */
+                    std::vector<uint64_t> m_dayOfMonth;
+                    bool m_dayOfMonthHasBeenSet;
+
+                    /**
+                     * 指定创建定期快照的间隔天数，取值范围：[1, 365]，例如设置为5，则间隔5天即触发定期快照创建。注：当选择按天备份时，理论上第一次备份的时间为备份策略创建当天。如果当天备份策略创建的时间已经晚于设置的备份时间，那么将会等到第二个备份周期再进行第一次备份。
+                     */
+                    uint64_t m_intervalDays;
+                    bool m_intervalDaysHasBeenSet;
 
                 };
             }

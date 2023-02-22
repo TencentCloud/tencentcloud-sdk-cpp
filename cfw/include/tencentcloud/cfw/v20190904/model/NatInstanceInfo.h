@@ -344,6 +344,50 @@ namespace TencentCloud
                      */
                     bool ZoneZhBakHasBeenSet() const;
 
+                    /**
+                     * 获取已使用规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleUsed 已使用规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRuleUsed() const;
+
+                    /**
+                     * 设置已使用规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleUsed 已使用规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleUsed(const uint64_t& _ruleUsed);
+
+                    /**
+                     * 判断参数 RuleUsed 是否已赋值
+                     * @return RuleUsed 是否已赋值
+                     */
+                    bool RuleUsedHasBeenSet() const;
+
+                    /**
+                     * 获取实例的规则限制最大规格数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RuleMax 实例的规则限制最大规格数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetRuleMax() const;
+
+                    /**
+                     * 设置实例的规则限制最大规格数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RuleMax 实例的规则限制最大规格数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRuleMax(const uint64_t& _ruleMax);
+
+                    /**
+                     * 判断参数 RuleMax 是否已赋值
+                     * @return RuleMax 是否已赋值
+                     */
+                    bool RuleMaxHasBeenSet() const;
+
                 private:
 
                     /**
@@ -442,6 +486,20 @@ namespace TencentCloud
                      */
                     std::string m_zoneZhBak;
                     bool m_zoneZhBakHasBeenSet;
+
+                    /**
+                     * 已使用规则数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleUsed;
+                    bool m_ruleUsedHasBeenSet;
+
+                    /**
+                     * 实例的规则限制最大规格数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_ruleMax;
+                    bool m_ruleMaxHasBeenSet;
 
                 };
             }

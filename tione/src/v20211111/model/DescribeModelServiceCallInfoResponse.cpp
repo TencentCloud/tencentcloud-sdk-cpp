@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeModelServiceCallInfoResponse::DescribeModelServiceCallInfoResponse() :
     m_serviceCallInfoHasBeenSet(false),
-    m_inferGatewayCallInfoHasBeenSet(false)
+    m_inferGatewayCallInfoHasBeenSet(false),
+    m_defaultNginxGatewayCallInfoHasBeenSet(false)
 {
 }
 
@@ -97,6 +98,23 @@ CoreInternalOutcome DescribeModelServiceCallInfoResponse::Deserialize(const stri
         m_inferGatewayCallInfoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("DefaultNginxGatewayCallInfo") && !rsp["DefaultNginxGatewayCallInfo"].IsNull())
+    {
+        if (!rsp["DefaultNginxGatewayCallInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefaultNginxGatewayCallInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_defaultNginxGatewayCallInfo.Deserialize(rsp["DefaultNginxGatewayCallInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_defaultNginxGatewayCallInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -123,6 +141,15 @@ string DescribeModelServiceCallInfoResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_inferGatewayCallInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_defaultNginxGatewayCallInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultNginxGatewayCallInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_defaultNginxGatewayCallInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -155,6 +182,16 @@ InferGatewayCallInfo DescribeModelServiceCallInfoResponse::GetInferGatewayCallIn
 bool DescribeModelServiceCallInfoResponse::InferGatewayCallInfoHasBeenSet() const
 {
     return m_inferGatewayCallInfoHasBeenSet;
+}
+
+DefaultNginxGatewayCallInfo DescribeModelServiceCallInfoResponse::GetDefaultNginxGatewayCallInfo() const
+{
+    return m_defaultNginxGatewayCallInfo;
+}
+
+bool DescribeModelServiceCallInfoResponse::DefaultNginxGatewayCallInfoHasBeenSet() const
+{
+    return m_defaultNginxGatewayCallInfoHasBeenSet;
 }
 
 

@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/ServiceCallInfo.h>
 #include <tencentcloud/tione/v20211111/model/InferGatewayCallInfo.h>
+#include <tencentcloud/tione/v20211111/model/DefaultNginxGatewayCallInfo.h>
 
 
 namespace TencentCloud
@@ -73,6 +74,20 @@ namespace TencentCloud
                      */
                     bool InferGatewayCallInfoHasBeenSet() const;
 
+                    /**
+                     * 获取默认nginx网关的调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultNginxGatewayCallInfo 默认nginx网关的调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DefaultNginxGatewayCallInfo GetDefaultNginxGatewayCallInfo() const;
+
+                    /**
+                     * 判断参数 DefaultNginxGatewayCallInfo 是否已赋值
+                     * @return DefaultNginxGatewayCallInfo 是否已赋值
+                     */
+                    bool DefaultNginxGatewayCallInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -88,6 +103,13 @@ namespace TencentCloud
                      */
                     InferGatewayCallInfo m_inferGatewayCallInfo;
                     bool m_inferGatewayCallInfoHasBeenSet;
+
+                    /**
+                     * 默认nginx网关的调用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DefaultNginxGatewayCallInfo m_defaultNginxGatewayCallInfo;
+                    bool m_defaultNginxGatewayCallInfoHasBeenSet;
 
                 };
             }

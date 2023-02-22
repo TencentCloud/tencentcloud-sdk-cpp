@@ -1125,7 +1125,9 @@ namespace TencentCloud
                 DescribeImmutableTagRulesOutcomeCallable DescribeImmutableTagRulesCallable(const Model::DescribeImmutableTagRulesRequest& request);
 
                 /**
-                 *查询全部实例信息
+                 *内部替换接口+DescribeInstanceAllForCoding
+
+查询全部实例信息
                  * @param req DescribeInstanceAllRequest
                  * @return DescribeInstanceAllOutcome
                  */

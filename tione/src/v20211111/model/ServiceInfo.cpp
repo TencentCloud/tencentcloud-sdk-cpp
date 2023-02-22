@@ -38,7 +38,8 @@ ServiceInfo::ServiceInfo() :
     m_oldReplicasHasBeenSet(false),
     m_hybridBillingPrepaidReplicasHasBeenSet(false),
     m_oldHybridBillingPrepaidReplicasHasBeenSet(false),
-    m_modelHotUpdateEnableHasBeenSet(false)
+    m_modelHotUpdateEnableHasBeenSet(false),
+    m_podsHasBeenSet(false)
 {
 }
 
@@ -289,6 +290,23 @@ CoreInternalOutcome ServiceInfo::Deserialize(const rapidjson::Value &value)
         m_modelHotUpdateEnableHasBeenSet = true;
     }
 
+    if (value.HasMember("Pods") && !value["Pods"].IsNull())
+    {
+        if (!value["Pods"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceInfo.Pods` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_pods.Deserialize(value["Pods"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_podsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -457,6 +475,15 @@ void ServiceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ModelHotUpdateEnable";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_modelHotUpdateEnable, allocator);
+    }
+
+    if (m_podsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pods";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_pods.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -748,5 +775,21 @@ void ServiceInfo::SetModelHotUpdateEnable(const bool& _modelHotUpdateEnable)
 bool ServiceInfo::ModelHotUpdateEnableHasBeenSet() const
 {
     return m_modelHotUpdateEnableHasBeenSet;
+}
+
+Pod ServiceInfo::GetPods() const
+{
+    return m_pods;
+}
+
+void ServiceInfo::SetPods(const Pod& _pods)
+{
+    m_pods = _pods;
+    m_podsHasBeenSet = true;
+}
+
+bool ServiceInfo::PodsHasBeenSet() const
+{
+    return m_podsHasBeenSet;
 }
 

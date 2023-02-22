@@ -528,6 +528,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/OfflineTaskAddParam.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleExecExportResultResponse.h
   include/tencentcloud/wedata/v20210820/model/LogContent.h
+  include/tencentcloud/wedata/v20210820/model/RealTimeTaskSpeed.h
   include/tencentcloud/wedata/v20210820/model/DescribeTopTableStatRequest.h
   include/tencentcloud/wedata/v20210820/model/BatchCreateIntegrationTaskAlarmsResponse.h
   include/tencentcloud/wedata/v20210820/model/DescribeIntegrationStatisticsRequest.h
@@ -1062,6 +1063,7 @@ set(wedata_src
   src/v20210820/model/OfflineTaskAddParam.cpp
   src/v20210820/model/DescribeRuleExecExportResultResponse.cpp
   src/v20210820/model/LogContent.cpp
+  src/v20210820/model/RealTimeTaskSpeed.cpp
   src/v20210820/model/DescribeTopTableStatRequest.cpp
   src/v20210820/model/BatchCreateIntegrationTaskAlarmsResponse.cpp
   src/v20210820/model/DescribeIntegrationStatisticsRequest.cpp

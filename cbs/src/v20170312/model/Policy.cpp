@@ -22,7 +22,9 @@ using namespace std;
 
 Policy::Policy() :
     m_hourHasBeenSet(false),
-    m_dayOfWeekHasBeenSet(false)
+    m_dayOfWeekHasBeenSet(false),
+    m_dayOfMonthHasBeenSet(false),
+    m_intervalDaysHasBeenSet(false)
 {
 }
 
@@ -55,6 +57,29 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
             m_dayOfWeek.push_back((*itr).GetUint64());
         }
         m_dayOfWeekHasBeenSet = true;
+    }
+
+    if (value.HasMember("DayOfMonth") && !value["DayOfMonth"].IsNull())
+    {
+        if (!value["DayOfMonth"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Policy.DayOfMonth` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DayOfMonth"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dayOfMonth.push_back((*itr).GetUint64());
+        }
+        m_dayOfMonthHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntervalDays") && !value["IntervalDays"].IsNull())
+    {
+        if (!value["IntervalDays"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.IntervalDays` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intervalDays = value["IntervalDays"].GetUint64();
+        m_intervalDaysHasBeenSet = true;
     }
 
 
@@ -90,6 +115,27 @@ void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         }
     }
 
+    if (m_dayOfMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOfMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dayOfMonth.begin(); itr != m_dayOfMonth.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
+    if (m_intervalDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntervalDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intervalDays, allocator);
+    }
+
 }
 
 
@@ -123,5 +169,37 @@ void Policy::SetDayOfWeek(const vector<uint64_t>& _dayOfWeek)
 bool Policy::DayOfWeekHasBeenSet() const
 {
     return m_dayOfWeekHasBeenSet;
+}
+
+vector<uint64_t> Policy::GetDayOfMonth() const
+{
+    return m_dayOfMonth;
+}
+
+void Policy::SetDayOfMonth(const vector<uint64_t>& _dayOfMonth)
+{
+    m_dayOfMonth = _dayOfMonth;
+    m_dayOfMonthHasBeenSet = true;
+}
+
+bool Policy::DayOfMonthHasBeenSet() const
+{
+    return m_dayOfMonthHasBeenSet;
+}
+
+uint64_t Policy::GetIntervalDays() const
+{
+    return m_intervalDays;
+}
+
+void Policy::SetIntervalDays(const uint64_t& _intervalDays)
+{
+    m_intervalDays = _intervalDays;
+    m_intervalDaysHasBeenSet = true;
+}
+
+bool Policy::IntervalDaysHasBeenSet() const
+{
+    return m_intervalDaysHasBeenSet;
 }
 

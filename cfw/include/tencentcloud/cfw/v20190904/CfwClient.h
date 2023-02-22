@@ -137,6 +137,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifySecurityGroupSequenceRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySequenceRulesRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifySequenceRulesResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyStorageSettingRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyStorageSettingResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyTableStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h>
@@ -334,6 +336,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySequenceRulesResponse> ModifySequenceRulesOutcome;
                 typedef std::future<ModifySequenceRulesOutcome> ModifySequenceRulesOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifySequenceRulesRequest&, ModifySequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySequenceRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyStorageSettingResponse> ModifyStorageSettingOutcome;
+                typedef std::future<ModifyStorageSettingOutcome> ModifyStorageSettingOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyStorageSettingRequest&, ModifyStorageSettingOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyStorageSettingAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyTableStatusResponse> ModifyTableStatusOutcome;
                 typedef std::future<ModifyTableStatusOutcome> ModifyTableStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyTableStatusRequest&, ModifyTableStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTableStatusAsyncHandler;
@@ -878,6 +883,15 @@ namespace TencentCloud
                 ModifySequenceRulesOutcome ModifySequenceRules(const Model::ModifySequenceRulesRequest &request);
                 void ModifySequenceRulesAsync(const Model::ModifySequenceRulesRequest& request, const ModifySequenceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySequenceRulesOutcomeCallable ModifySequenceRulesCallable(const Model::ModifySequenceRulesRequest& request);
+
+                /**
+                 *日志存储设置，可以修改存储时间和清空日志
+                 * @param req ModifyStorageSettingRequest
+                 * @return ModifyStorageSettingOutcome
+                 */
+                ModifyStorageSettingOutcome ModifyStorageSetting(const Model::ModifyStorageSettingRequest &request);
+                void ModifyStorageSettingAsync(const Model::ModifyStorageSettingRequest& request, const ModifyStorageSettingAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyStorageSettingOutcomeCallable ModifyStorageSettingCallable(const Model::ModifyStorageSettingRequest& request);
 
                 /**
                  *修改规则表状态

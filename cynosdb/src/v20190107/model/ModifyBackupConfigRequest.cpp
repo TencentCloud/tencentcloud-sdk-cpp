@@ -24,9 +24,9 @@ using namespace std;
 
 ModifyBackupConfigRequest::ModifyBackupConfigRequest() :
     m_clusterIdHasBeenSet(false),
+    m_reserveDurationHasBeenSet(false),
     m_backupTimeBegHasBeenSet(false),
     m_backupTimeEndHasBeenSet(false),
-    m_reserveDurationHasBeenSet(false),
     m_backupFreqHasBeenSet(false),
     m_backupTypeHasBeenSet(false)
 {
@@ -47,6 +47,14 @@ string ModifyBackupConfigRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_reserveDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReserveDuration";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_reserveDuration, allocator);
+    }
+
     if (m_backupTimeBegHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -61,14 +69,6 @@ string ModifyBackupConfigRequest::ToJsonString() const
         string key = "BackupTimeEnd";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_backupTimeEnd, allocator);
-    }
-
-    if (m_reserveDurationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ReserveDuration";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_reserveDuration, allocator);
     }
 
     if (m_backupFreqHasBeenSet)
@@ -116,6 +116,22 @@ bool ModifyBackupConfigRequest::ClusterIdHasBeenSet() const
     return m_clusterIdHasBeenSet;
 }
 
+uint64_t ModifyBackupConfigRequest::GetReserveDuration() const
+{
+    return m_reserveDuration;
+}
+
+void ModifyBackupConfigRequest::SetReserveDuration(const uint64_t& _reserveDuration)
+{
+    m_reserveDuration = _reserveDuration;
+    m_reserveDurationHasBeenSet = true;
+}
+
+bool ModifyBackupConfigRequest::ReserveDurationHasBeenSet() const
+{
+    return m_reserveDurationHasBeenSet;
+}
+
 uint64_t ModifyBackupConfigRequest::GetBackupTimeBeg() const
 {
     return m_backupTimeBeg;
@@ -146,22 +162,6 @@ void ModifyBackupConfigRequest::SetBackupTimeEnd(const uint64_t& _backupTimeEnd)
 bool ModifyBackupConfigRequest::BackupTimeEndHasBeenSet() const
 {
     return m_backupTimeEndHasBeenSet;
-}
-
-uint64_t ModifyBackupConfigRequest::GetReserveDuration() const
-{
-    return m_reserveDuration;
-}
-
-void ModifyBackupConfigRequest::SetReserveDuration(const uint64_t& _reserveDuration)
-{
-    m_reserveDuration = _reserveDuration;
-    m_reserveDurationHasBeenSet = true;
-}
-
-bool ModifyBackupConfigRequest::ReserveDurationHasBeenSet() const
-{
-    return m_reserveDurationHasBeenSet;
 }
 
 vector<string> ModifyBackupConfigRequest::GetBackupFreq() const

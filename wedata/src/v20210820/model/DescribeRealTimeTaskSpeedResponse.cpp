@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeRealTimeTaskSpeedResponse::DescribeRealTimeTaskSpeedResponse() :
     m_recordsSpeedListHasBeenSet(false),
-    m_bytesSpeedListHasBeenSet(false)
+    m_bytesSpeedListHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -103,6 +104,23 @@ CoreInternalOutcome DescribeRealTimeTaskSpeedResponse::Deserialize(const string 
         m_bytesSpeedListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +161,15 @@ string DescribeRealTimeTaskSpeedResponse::ToJsonString() const
         }
     }
 
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -173,6 +200,16 @@ vector<BytesSpeed> DescribeRealTimeTaskSpeedResponse::GetBytesSpeedList() const
 bool DescribeRealTimeTaskSpeedResponse::BytesSpeedListHasBeenSet() const
 {
     return m_bytesSpeedListHasBeenSet;
+}
+
+RealTimeTaskSpeed DescribeRealTimeTaskSpeedResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DescribeRealTimeTaskSpeedResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

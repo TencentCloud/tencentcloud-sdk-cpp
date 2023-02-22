@@ -27,7 +27,8 @@ DBEndpointInfo::DBEndpointInfo() :
     m_nodeTypeHasBeenSet(false),
     m_infoHasBeenSet(false),
     m_supplierHasBeenSet(false),
-    m_extraAttrHasBeenSet(false)
+    m_extraAttrHasBeenSet(false),
+    m_databaseNetEnvHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,16 @@ CoreInternalOutcome DBEndpointInfo::Deserialize(const rapidjson::Value &value)
         m_extraAttrHasBeenSet = true;
     }
 
+    if (value.HasMember("DatabaseNetEnv") && !value["DatabaseNetEnv"].IsNull())
+    {
+        if (!value["DatabaseNetEnv"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBEndpointInfo.DatabaseNetEnv` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_databaseNetEnv = string(value["DatabaseNetEnv"].GetString());
+        m_databaseNetEnvHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -201,6 +212,14 @@ void DBEndpointInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_databaseNetEnvHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatabaseNetEnv";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_databaseNetEnv.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -316,5 +335,21 @@ void DBEndpointInfo::SetExtraAttr(const vector<KeyValuePairOption>& _extraAttr)
 bool DBEndpointInfo::ExtraAttrHasBeenSet() const
 {
     return m_extraAttrHasBeenSet;
+}
+
+string DBEndpointInfo::GetDatabaseNetEnv() const
+{
+    return m_databaseNetEnv;
+}
+
+void DBEndpointInfo::SetDatabaseNetEnv(const string& _databaseNetEnv)
+{
+    m_databaseNetEnv = _databaseNetEnv;
+    m_databaseNetEnvHasBeenSet = true;
+}
+
+bool DBEndpointInfo::DatabaseNetEnvHasBeenSet() const
+{
+    return m_databaseNetEnvHasBeenSet;
 }
 

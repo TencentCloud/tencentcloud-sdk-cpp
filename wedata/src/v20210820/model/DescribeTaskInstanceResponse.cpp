@@ -24,7 +24,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 DescribeTaskInstanceResponse::DescribeTaskInstanceResponse() :
-    m_taskInstanceDetailHasBeenSet(false)
+    m_taskInstanceDetailHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -79,6 +80,23 @@ CoreInternalOutcome DescribeTaskInstanceResponse::Deserialize(const string &payl
         m_taskInstanceDetailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_data.Deserialize(rsp["Data"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -96,6 +114,15 @@ string DescribeTaskInstanceResponse::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_taskInstanceDetail.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_data.ToJsonObject(value[key.c_str()], allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -118,6 +145,16 @@ TaskInstanceDetail DescribeTaskInstanceResponse::GetTaskInstanceDetail() const
 bool DescribeTaskInstanceResponse::TaskInstanceDetailHasBeenSet() const
 {
     return m_taskInstanceDetailHasBeenSet;
+}
+
+TaskInstanceDetail DescribeTaskInstanceResponse::GetData() const
+{
+    return m_data;
+}
+
+bool DescribeTaskInstanceResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

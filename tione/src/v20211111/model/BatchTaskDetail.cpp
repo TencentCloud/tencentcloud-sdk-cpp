@@ -51,7 +51,8 @@ BatchTaskDetail::BatchTaskDetail() :
     m_latestInstanceIdHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_billingInfoHasBeenSet(false)
+    m_billingInfoHasBeenSet(false),
+    m_podListHasBeenSet(false)
 {
 }
 
@@ -435,6 +436,19 @@ CoreInternalOutcome BatchTaskDetail::Deserialize(const rapidjson::Value &value)
         m_billingInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("PodList") && !value["PodList"].IsNull())
+    {
+        if (!value["PodList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BatchTaskDetail.PodList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PodList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_podList.push_back((*itr).GetString());
+        }
+        m_podListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -714,6 +728,19 @@ void BatchTaskDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "BillingInfo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_billingInfo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_podListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_podList.begin(); itr != m_podList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -1213,5 +1240,21 @@ void BatchTaskDetail::SetBillingInfo(const string& _billingInfo)
 bool BatchTaskDetail::BillingInfoHasBeenSet() const
 {
     return m_billingInfoHasBeenSet;
+}
+
+vector<string> BatchTaskDetail::GetPodList() const
+{
+    return m_podList;
+}
+
+void BatchTaskDetail::SetPodList(const vector<string>& _podList)
+{
+    m_podList = _podList;
+    m_podListHasBeenSet = true;
+}
+
+bool BatchTaskDetail::PodListHasBeenSet() const
+{
+    return m_podListHasBeenSet;
 }
 

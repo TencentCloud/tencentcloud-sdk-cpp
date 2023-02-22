@@ -202,6 +202,60 @@ false：关闭60天内禁止转移注册商锁定
                      */
                     bool TransferProhibitionHasBeenSet() const;
 
+                    /**
+                     * 获取渠道来源，pc/miniprogram/h5等
+                     * @return ChannelFrom 渠道来源，pc/miniprogram/h5等
+                     */
+                    std::string GetChannelFrom() const;
+
+                    /**
+                     * 设置渠道来源，pc/miniprogram/h5等
+                     * @param ChannelFrom 渠道来源，pc/miniprogram/h5等
+                     */
+                    void SetChannelFrom(const std::string& _channelFrom);
+
+                    /**
+                     * 判断参数 ChannelFrom 是否已赋值
+                     * @return ChannelFrom 是否已赋值
+                     */
+                    bool ChannelFromHasBeenSet() const;
+
+                    /**
+                     * 获取订单来源，common正常/dianshi_active点石活动等
+                     * @return OrderFrom 订单来源，common正常/dianshi_active点石活动等
+                     */
+                    std::string GetOrderFrom() const;
+
+                    /**
+                     * 设置订单来源，common正常/dianshi_active点石活动等
+                     * @param OrderFrom 订单来源，common正常/dianshi_active点石活动等
+                     */
+                    void SetOrderFrom(const std::string& _orderFrom);
+
+                    /**
+                     * 判断参数 OrderFrom 是否已赋值
+                     * @return OrderFrom 是否已赋值
+                     */
+                    bool OrderFromHasBeenSet() const;
+
+                    /**
+                     * 获取活动id
+                     * @return ActivityId 活动id
+                     */
+                    std::string GetActivityId() const;
+
+                    /**
+                     * 设置活动id
+                     * @param ActivityId 活动id
+                     */
+                    void SetActivityId(const std::string& _activityId);
+
+                    /**
+                     * 判断参数 ActivityId 是否已赋值
+                     * @return ActivityId 是否已赋值
+                     */
+                    bool ActivityIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -255,6 +309,24 @@ false：关闭60天内禁止转移注册商锁定
                      */
                     int64_t m_transferProhibition;
                     bool m_transferProhibitionHasBeenSet;
+
+                    /**
+                     * 渠道来源，pc/miniprogram/h5等
+                     */
+                    std::string m_channelFrom;
+                    bool m_channelFromHasBeenSet;
+
+                    /**
+                     * 订单来源，common正常/dianshi_active点石活动等
+                     */
+                    std::string m_orderFrom;
+                    bool m_orderFromHasBeenSet;
+
+                    /**
+                     * 活动id
+                     */
+                    std::string m_activityId;
+                    bool m_activityIdHasBeenSet;
 
                 };
             }

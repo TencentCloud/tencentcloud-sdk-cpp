@@ -30,7 +30,8 @@ HostInfo::HostInfo() :
     m_memAvailableHasBeenSet(false),
     m_memTotalHasBeenSet(false),
     m_runTimeHasBeenSet(false),
-    m_expireTimeHasBeenSet(false)
+    m_expireTimeHasBeenSet(false),
+    m_hostIdHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome HostInfo::Deserialize(const rapidjson::Value &value)
         m_expireTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("HostId") && !value["HostId"].IsNull())
+    {
+        if (!value["HostId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostInfo.HostId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_hostId = string(value["HostId"].GetString());
+        m_hostIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void HostInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "ExpireTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expireTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hostIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HostId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_hostId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void HostInfo::SetExpireTime(const string& _expireTime)
 bool HostInfo::ExpireTimeHasBeenSet() const
 {
     return m_expireTimeHasBeenSet;
+}
+
+string HostInfo::GetHostId() const
+{
+    return m_hostId;
+}
+
+void HostInfo::SetHostId(const string& _hostId)
+{
+    m_hostId = _hostId;
+    m_hostIdHasBeenSet = true;
+}
+
+bool HostInfo::HostIdHasBeenSet() const
+{
+    return m_hostIdHasBeenSet;
 }
 

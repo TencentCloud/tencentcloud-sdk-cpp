@@ -46,7 +46,12 @@ TrainingModelVersionDTO::TrainingModelVersionDTO() :
     m_autoCleanHasBeenSet(false),
     m_modelCleanPeriodHasBeenSet(false),
     m_maxReservedModelsHasBeenSet(false),
-    m_modelHotUpdatePathHasBeenSet(false)
+    m_modelHotUpdatePathHasBeenSet(false),
+    m_reasoningEnvironmentIdHasBeenSet(false),
+    m_trainingJobVersionHasBeenSet(false),
+    m_trainingPreferenceHasBeenSet(false),
+    m_autoMLTaskIdHasBeenSet(false),
+    m_isQATHasBeenSet(false)
 {
 }
 
@@ -336,6 +341,56 @@ CoreInternalOutcome TrainingModelVersionDTO::Deserialize(const rapidjson::Value 
         m_modelHotUpdatePathHasBeenSet = true;
     }
 
+    if (value.HasMember("ReasoningEnvironmentId") && !value["ReasoningEnvironmentId"].IsNull())
+    {
+        if (!value["ReasoningEnvironmentId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.ReasoningEnvironmentId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reasoningEnvironmentId = string(value["ReasoningEnvironmentId"].GetString());
+        m_reasoningEnvironmentIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrainingJobVersion") && !value["TrainingJobVersion"].IsNull())
+    {
+        if (!value["TrainingJobVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.TrainingJobVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trainingJobVersion = string(value["TrainingJobVersion"].GetString());
+        m_trainingJobVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TrainingPreference") && !value["TrainingPreference"].IsNull())
+    {
+        if (!value["TrainingPreference"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.TrainingPreference` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_trainingPreference = string(value["TrainingPreference"].GetString());
+        m_trainingPreferenceHasBeenSet = true;
+    }
+
+    if (value.HasMember("AutoMLTaskId") && !value["AutoMLTaskId"].IsNull())
+    {
+        if (!value["AutoMLTaskId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.AutoMLTaskId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoMLTaskId = string(value["AutoMLTaskId"].GetString());
+        m_autoMLTaskIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsQAT") && !value["IsQAT"].IsNull())
+    {
+        if (!value["IsQAT"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `TrainingModelVersionDTO.IsQAT` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isQAT = value["IsQAT"].GetBool();
+        m_isQATHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -552,6 +607,46 @@ void TrainingModelVersionDTO::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_modelHotUpdatePath.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_reasoningEnvironmentIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReasoningEnvironmentId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reasoningEnvironmentId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trainingJobVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrainingJobVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trainingJobVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trainingPreferenceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrainingPreference";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_trainingPreference.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoMLTaskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoMLTaskId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_autoMLTaskId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isQATHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsQAT";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isQAT, allocator);
     }
 
 }
@@ -971,5 +1066,85 @@ void TrainingModelVersionDTO::SetModelHotUpdatePath(const CosPathInfo& _modelHot
 bool TrainingModelVersionDTO::ModelHotUpdatePathHasBeenSet() const
 {
     return m_modelHotUpdatePathHasBeenSet;
+}
+
+string TrainingModelVersionDTO::GetReasoningEnvironmentId() const
+{
+    return m_reasoningEnvironmentId;
+}
+
+void TrainingModelVersionDTO::SetReasoningEnvironmentId(const string& _reasoningEnvironmentId)
+{
+    m_reasoningEnvironmentId = _reasoningEnvironmentId;
+    m_reasoningEnvironmentIdHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::ReasoningEnvironmentIdHasBeenSet() const
+{
+    return m_reasoningEnvironmentIdHasBeenSet;
+}
+
+string TrainingModelVersionDTO::GetTrainingJobVersion() const
+{
+    return m_trainingJobVersion;
+}
+
+void TrainingModelVersionDTO::SetTrainingJobVersion(const string& _trainingJobVersion)
+{
+    m_trainingJobVersion = _trainingJobVersion;
+    m_trainingJobVersionHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::TrainingJobVersionHasBeenSet() const
+{
+    return m_trainingJobVersionHasBeenSet;
+}
+
+string TrainingModelVersionDTO::GetTrainingPreference() const
+{
+    return m_trainingPreference;
+}
+
+void TrainingModelVersionDTO::SetTrainingPreference(const string& _trainingPreference)
+{
+    m_trainingPreference = _trainingPreference;
+    m_trainingPreferenceHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::TrainingPreferenceHasBeenSet() const
+{
+    return m_trainingPreferenceHasBeenSet;
+}
+
+string TrainingModelVersionDTO::GetAutoMLTaskId() const
+{
+    return m_autoMLTaskId;
+}
+
+void TrainingModelVersionDTO::SetAutoMLTaskId(const string& _autoMLTaskId)
+{
+    m_autoMLTaskId = _autoMLTaskId;
+    m_autoMLTaskIdHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::AutoMLTaskIdHasBeenSet() const
+{
+    return m_autoMLTaskIdHasBeenSet;
+}
+
+bool TrainingModelVersionDTO::GetIsQAT() const
+{
+    return m_isQAT;
+}
+
+void TrainingModelVersionDTO::SetIsQAT(const bool& _isQAT)
+{
+    m_isQAT = _isQAT;
+    m_isQATHasBeenSet = true;
+}
+
+bool TrainingModelVersionDTO::IsQATHasBeenSet() const
+{
+    return m_isQATHasBeenSet;
 }
 

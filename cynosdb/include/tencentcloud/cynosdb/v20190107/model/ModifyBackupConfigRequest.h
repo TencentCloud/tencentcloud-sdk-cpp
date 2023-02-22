@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool ClusterIdHasBeenSet() const;
 
                     /**
+                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     */
+                    uint64_t GetReserveDuration() const;
+
+                    /**
+                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     * @param ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     */
+                    void SetReserveDuration(const uint64_t& _reserveDuration);
+
+                    /**
+                     * 判断参数 ReserveDuration 是否已赋值
+                     * @return ReserveDuration 是否已赋值
+                     */
+                    bool ReserveDurationHasBeenSet() const;
+
+                    /**
                      * 获取表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
                      * @return BackupTimeBeg 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
                      */
@@ -95,24 +113,6 @@ namespace TencentCloud
                      * @return BackupTimeEnd 是否已赋值
                      */
                     bool BackupTimeEndHasBeenSet() const;
-
-                    /**
-                     * 获取表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * @return ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     */
-                    uint64_t GetReserveDuration() const;
-
-                    /**
-                     * 设置表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     * @param ReserveDuration 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     */
-                    void SetReserveDuration(const uint64_t& _reserveDuration);
-
-                    /**
-                     * 判断参数 ReserveDuration 是否已赋值
-                     * @return ReserveDuration 是否已赋值
-                     */
-                    bool ReserveDurationHasBeenSet() const;
 
                     /**
                      * 获取该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份
@@ -159,6 +159,12 @@ namespace TencentCloud
                     bool m_clusterIdHasBeenSet;
 
                     /**
+                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
+                     */
+                    uint64_t m_reserveDuration;
+                    bool m_reserveDurationHasBeenSet;
+
+                    /**
                      * 表示全备开始时间，[0-24*3600]， 如0:00, 1:00, 2:00 分别为 0，3600， 7200
                      */
                     uint64_t m_backupTimeBeg;
@@ -169,12 +175,6 @@ namespace TencentCloud
                      */
                     uint64_t m_backupTimeEnd;
                     bool m_backupTimeEndHasBeenSet;
-
-                    /**
-                     * 表示保留备份时长, 单位秒，超过该时间将被清理, 七天表示为3600*24*7=604800，最大为158112000
-                     */
-                    uint64_t m_reserveDuration;
-                    bool m_reserveDurationHasBeenSet;
 
                     /**
                      * 该参数目前不支持修改，无需填写。备份频率，长度为7的数组，分别对应周一到周日的备份方式，full-全量备份，increment-增量备份

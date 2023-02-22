@@ -26,7 +26,11 @@ RenewDomainBatchRequest::RenewDomainBatchRequest() :
     m_periodHasBeenSet(false),
     m_domainsHasBeenSet(false),
     m_payModeHasBeenSet(false),
-    m_autoRenewFlagHasBeenSet(false)
+    m_autoRenewFlagHasBeenSet(false),
+    m_packageResourceIdHasBeenSet(false),
+    m_channelFromHasBeenSet(false),
+    m_orderFromHasBeenSet(false),
+    m_activityIdHasBeenSet(false)
 {
 }
 
@@ -72,6 +76,38 @@ string RenewDomainBatchRequest::ToJsonString() const
         string key = "AutoRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_autoRenewFlag, allocator);
+    }
+
+    if (m_packageResourceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PackageResourceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_packageResourceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_channelFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChannelFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_channelFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_orderFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OrderFrom";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_orderFrom.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_activityIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ActivityId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_activityId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -144,6 +180,70 @@ void RenewDomainBatchRequest::SetAutoRenewFlag(const int64_t& _autoRenewFlag)
 bool RenewDomainBatchRequest::AutoRenewFlagHasBeenSet() const
 {
     return m_autoRenewFlagHasBeenSet;
+}
+
+string RenewDomainBatchRequest::GetPackageResourceId() const
+{
+    return m_packageResourceId;
+}
+
+void RenewDomainBatchRequest::SetPackageResourceId(const string& _packageResourceId)
+{
+    m_packageResourceId = _packageResourceId;
+    m_packageResourceIdHasBeenSet = true;
+}
+
+bool RenewDomainBatchRequest::PackageResourceIdHasBeenSet() const
+{
+    return m_packageResourceIdHasBeenSet;
+}
+
+string RenewDomainBatchRequest::GetChannelFrom() const
+{
+    return m_channelFrom;
+}
+
+void RenewDomainBatchRequest::SetChannelFrom(const string& _channelFrom)
+{
+    m_channelFrom = _channelFrom;
+    m_channelFromHasBeenSet = true;
+}
+
+bool RenewDomainBatchRequest::ChannelFromHasBeenSet() const
+{
+    return m_channelFromHasBeenSet;
+}
+
+string RenewDomainBatchRequest::GetOrderFrom() const
+{
+    return m_orderFrom;
+}
+
+void RenewDomainBatchRequest::SetOrderFrom(const string& _orderFrom)
+{
+    m_orderFrom = _orderFrom;
+    m_orderFromHasBeenSet = true;
+}
+
+bool RenewDomainBatchRequest::OrderFromHasBeenSet() const
+{
+    return m_orderFromHasBeenSet;
+}
+
+string RenewDomainBatchRequest::GetActivityId() const
+{
+    return m_activityId;
+}
+
+void RenewDomainBatchRequest::SetActivityId(const string& _activityId)
+{
+    m_activityId = _activityId;
+    m_activityIdHasBeenSet = true;
+}
+
+bool RenewDomainBatchRequest::ActivityIdHasBeenSet() const
+{
+    return m_activityIdHasBeenSet;
 }
 
 

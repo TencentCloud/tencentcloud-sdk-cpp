@@ -24,7 +24,8 @@ using namespace TencentCloud::Wedata::V20210820::Model;
 using namespace std;
 
 GenHiveTableDDLSqlResponse::GenHiveTableDDLSqlResponse() :
-    m_dDLSqlHasBeenSet(false)
+    m_dDLSqlHasBeenSet(false),
+    m_dataHasBeenSet(false)
 {
 }
 
@@ -72,6 +73,16 @@ CoreInternalOutcome GenHiveTableDDLSqlResponse::Deserialize(const string &payloa
         m_dDLSqlHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Data") && !rsp["Data"].IsNull())
+    {
+        if (!rsp["Data"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Data` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_data = string(rsp["Data"].GetString());
+        m_dataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -88,6 +99,14 @@ string GenHiveTableDDLSqlResponse::ToJsonString() const
         string key = "DDLSql";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_dDLSql.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Data";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_data.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -110,6 +129,16 @@ string GenHiveTableDDLSqlResponse::GetDDLSql() const
 bool GenHiveTableDDLSqlResponse::DDLSqlHasBeenSet() const
 {
     return m_dDLSqlHasBeenSet;
+}
+
+string GenHiveTableDDLSqlResponse::GetData() const
+{
+    return m_data;
+}
+
+bool GenHiveTableDDLSqlResponse::DataHasBeenSet() const
+{
+    return m_dataHasBeenSet;
 }
 
 

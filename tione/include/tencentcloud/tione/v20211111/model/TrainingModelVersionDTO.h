@@ -560,6 +560,116 @@ STATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING�
                      */
                     bool ModelHotUpdatePathHasBeenSet() const;
 
+                    /**
+                     * 获取推理环境id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReasoningEnvironmentId 推理环境id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReasoningEnvironmentId() const;
+
+                    /**
+                     * 设置推理环境id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReasoningEnvironmentId 推理环境id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReasoningEnvironmentId(const std::string& _reasoningEnvironmentId);
+
+                    /**
+                     * 判断参数 ReasoningEnvironmentId 是否已赋值
+                     * @return ReasoningEnvironmentId 是否已赋值
+                     */
+                    bool ReasoningEnvironmentIdHasBeenSet() const;
+
+                    /**
+                     * 获取训练任务版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrainingJobVersion 训练任务版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTrainingJobVersion() const;
+
+                    /**
+                     * 设置训练任务版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrainingJobVersion 训练任务版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrainingJobVersion(const std::string& _trainingJobVersion);
+
+                    /**
+                     * 判断参数 TrainingJobVersion 是否已赋值
+                     * @return TrainingJobVersion 是否已赋值
+                     */
+                    bool TrainingJobVersionHasBeenSet() const;
+
+                    /**
+                     * 获取训练偏好
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrainingPreference 训练偏好
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTrainingPreference() const;
+
+                    /**
+                     * 设置训练偏好
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrainingPreference 训练偏好
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrainingPreference(const std::string& _trainingPreference);
+
+                    /**
+                     * 判断参数 TrainingPreference 是否已赋值
+                     * @return TrainingPreference 是否已赋值
+                     */
+                    bool TrainingPreferenceHasBeenSet() const;
+
+                    /**
+                     * 获取自动学习任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoMLTaskId 自动学习任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAutoMLTaskId() const;
+
+                    /**
+                     * 设置自动学习任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoMLTaskId 自动学习任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoMLTaskId(const std::string& _autoMLTaskId);
+
+                    /**
+                     * 判断参数 AutoMLTaskId 是否已赋值
+                     * @return AutoMLTaskId 是否已赋值
+                     */
+                    bool AutoMLTaskIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsQAT 是否QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsQAT() const;
+
+                    /**
+                     * 设置是否QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsQAT 是否QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsQAT(const bool& _isQAT);
+
+                    /**
+                     * 判断参数 IsQAT 是否已赋值
+                     * @return IsQAT 是否已赋值
+                     */
+                    bool IsQATHasBeenSet() const;
+
                 private:
 
                     /**
@@ -728,6 +838,41 @@ STATUS_SUCCESS：导入成功，STATUS_FAILED：导入失败 ，STATUS_RUNNING�
                      */
                     CosPathInfo m_modelHotUpdatePath;
                     bool m_modelHotUpdatePathHasBeenSet;
+
+                    /**
+                     * 推理环境id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reasoningEnvironmentId;
+                    bool m_reasoningEnvironmentIdHasBeenSet;
+
+                    /**
+                     * 训练任务版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trainingJobVersion;
+                    bool m_trainingJobVersionHasBeenSet;
+
+                    /**
+                     * 训练偏好
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_trainingPreference;
+                    bool m_trainingPreferenceHasBeenSet;
+
+                    /**
+                     * 自动学习任务id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_autoMLTaskId;
+                    bool m_autoMLTaskIdHasBeenSet;
+
+                    /**
+                     * 是否QAT模型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isQAT;
+                    bool m_isQATHasBeenSet;
 
                 };
             }

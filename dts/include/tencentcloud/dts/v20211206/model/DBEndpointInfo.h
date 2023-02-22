@@ -206,6 +206,28 @@ namespace TencentCloud
                      */
                     bool ExtraAttrHasBeenSet() const;
 
+                    /**
+                     * 获取数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatabaseNetEnv 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDatabaseNetEnv() const;
+
+                    /**
+                     * 设置数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DatabaseNetEnv 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDatabaseNetEnv(const std::string& _databaseNetEnv);
+
+                    /**
+                     * 判断参数 DatabaseNetEnv 是否已赋值
+                     * @return DatabaseNetEnv 是否已赋值
+                     */
+                    bool DatabaseNetEnvHasBeenSet() const;
+
                 private:
 
                     /**
@@ -257,6 +279,13 @@ namespace TencentCloud
                      */
                     std::vector<KeyValuePairOption> m_extraAttr;
                     bool m_extraAttrHasBeenSet;
+
+                    /**
+                     * 数据库所属网络环境，AccessType为云联网(ccn)时必填， UserIDC表示用户IDC、TencentVPC表示腾讯云VPC；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_databaseNetEnv;
+                    bool m_databaseNetEnvHasBeenSet;
 
                 };
             }

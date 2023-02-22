@@ -429,6 +429,24 @@ namespace TencentCloud
                      */
                     bool ElasticServiceBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取赠送的业务带宽
+                     * @return GiftServiceBandWidth 赠送的业务带宽
+                     */
+                    int64_t GetGiftServiceBandWidth() const;
+
+                    /**
+                     * 设置赠送的业务带宽
+                     * @param GiftServiceBandWidth 赠送的业务带宽
+                     */
+                    void SetGiftServiceBandWidth(const int64_t& _giftServiceBandWidth);
+
+                    /**
+                     * 判断参数 GiftServiceBandWidth 是否已赋值
+                     * @return GiftServiceBandWidth 是否已赋值
+                     */
+                    bool GiftServiceBandWidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -551,6 +569,12 @@ namespace TencentCloud
                      */
                     uint64_t m_elasticServiceBandwidth;
                     bool m_elasticServiceBandwidthHasBeenSet;
+
+                    /**
+                     * 赠送的业务带宽
+                     */
+                    int64_t m_giftServiceBandWidth;
+                    bool m_giftServiceBandWidthHasBeenSet;
 
                 };
             }

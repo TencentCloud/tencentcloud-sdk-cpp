@@ -83,6 +83,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiRequest.h>
 #include <tencentcloud/ess/v20201111/model/GetTaskResultApiResponse.h>
+#include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoRequest.h>
+#include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesRequest.h>
@@ -193,6 +195,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::GetTaskResultApiResponse> GetTaskResultApiOutcome;
                 typedef std::future<GetTaskResultApiOutcome> GetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::GetTaskResultApiRequest&, GetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetTaskResultApiAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApplicationCallbackInfoResponse> ModifyApplicationCallbackInfoOutcome;
+                typedef std::future<ModifyApplicationCallbackInfoOutcome> ModifyApplicationCallbackInfoOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::ModifyApplicationCallbackInfoRequest&, ModifyApplicationCallbackInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApplicationCallbackInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartFlowResponse> StartFlowOutcome;
                 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::StartFlowRequest&, StartFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
@@ -514,6 +519,17 @@ namespace TencentCloud
                 GetTaskResultApiOutcome GetTaskResultApi(const Model::GetTaskResultApiRequest &request);
                 void GetTaskResultApiAsync(const Model::GetTaskResultApiRequest& request, const GetTaskResultApiAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 GetTaskResultApiOutcomeCallable GetTaskResultApiCallable(const Model::GetTaskResultApiRequest& request);
+
+                /**
+                 *新增/删除应用callbackinfo
+callbackinfo包含： 回调地址和签名key
+操作：新增/删除
+                 * @param req ModifyApplicationCallbackInfoRequest
+                 * @return ModifyApplicationCallbackInfoOutcome
+                 */
+                ModifyApplicationCallbackInfoOutcome ModifyApplicationCallbackInfo(const Model::ModifyApplicationCallbackInfoRequest &request);
+                void ModifyApplicationCallbackInfoAsync(const Model::ModifyApplicationCallbackInfoRequest& request, const ModifyApplicationCallbackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApplicationCallbackInfoOutcomeCallable ModifyApplicationCallbackInfoCallable(const Model::ModifyApplicationCallbackInfoRequest& request);
 
                 /**
                  *此接口用于发起流程

@@ -683,6 +683,28 @@ namespace TencentCloud
                      */
                     bool BillingInfoHasBeenSet() const;
 
+                    /**
+                     * 获取运行中的Pod的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodList 运行中的Pod的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetPodList() const;
+
+                    /**
+                     * 设置运行中的Pod的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PodList 运行中的Pod的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPodList(const std::vector<std::string>& _podList);
+
+                    /**
+                     * 判断参数 PodList 是否已赋值
+                     * @return PodList 是否已赋值
+                     */
+                    bool PodListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -888,6 +910,13 @@ namespace TencentCloud
                      */
                     std::string m_billingInfo;
                     bool m_billingInfoHasBeenSet;
+
+                    /**
+                     * 运行中的Pod的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_podList;
+                    bool m_podListHasBeenSet;
 
                 };
             }

@@ -1330,6 +1330,49 @@ EssClient::GetTaskResultApiOutcomeCallable EssClient::GetTaskResultApiCallable(c
     return task->get_future();
 }
 
+EssClient::ModifyApplicationCallbackInfoOutcome EssClient::ModifyApplicationCallbackInfo(const ModifyApplicationCallbackInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApplicationCallbackInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApplicationCallbackInfoResponse rsp = ModifyApplicationCallbackInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApplicationCallbackInfoOutcome(rsp);
+        else
+            return ModifyApplicationCallbackInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApplicationCallbackInfoOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::ModifyApplicationCallbackInfoAsync(const ModifyApplicationCallbackInfoRequest& request, const ModifyApplicationCallbackInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApplicationCallbackInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::ModifyApplicationCallbackInfoOutcomeCallable EssClient::ModifyApplicationCallbackInfoCallable(const ModifyApplicationCallbackInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApplicationCallbackInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApplicationCallbackInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::StartFlowOutcome EssClient::StartFlow(const StartFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "StartFlow");

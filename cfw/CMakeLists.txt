@@ -45,6 +45,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeUnHandleEventTabListRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeAssociatedInstanceListResponse.h
   include/tencentcloud/cfw/v20190904/model/AssociatedInstanceInfo.h
+  include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingResponse.h
   include/tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/NatFwInstance.h
   include/tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesResponse.h
@@ -147,6 +148,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/DescribeBlockIgnoreListRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteNatFwInstanceRequest.h
+  include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h
   include/tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h
@@ -208,6 +210,7 @@ set(cfw_src
   src/v20190904/model/DescribeUnHandleEventTabListRequest.cpp
   src/v20190904/model/DescribeAssociatedInstanceListResponse.cpp
   src/v20190904/model/AssociatedInstanceInfo.cpp
+  src/v20190904/model/ModifyStorageSettingResponse.cpp
   src/v20190904/model/RemoveAcRuleResponse.cpp
   src/v20190904/model/NatFwInstance.cpp
   src/v20190904/model/CreateSecurityGroupRulesResponse.cpp
@@ -310,6 +313,7 @@ set(cfw_src
   src/v20190904/model/DescribeBlockIgnoreListRequest.cpp
   src/v20190904/model/ModifyBlockTopResponse.cpp
   src/v20190904/model/DeleteNatFwInstanceRequest.cpp
+  src/v20190904/model/ModifyStorageSettingRequest.cpp
   src/v20190904/model/DescribeNatFwVpcDnsLstResponse.cpp
   src/v20190904/model/CreateChooseVpcsRequest.cpp
   src/v20190904/model/ExpandCfwVerticalResponse.cpp
