@@ -1201,7 +1201,7 @@ namespace TencentCloud
                 CreateConfigTemplateOutcomeCallable CreateConfigTemplateCallable(const Model::CreateConfigTemplateRequest& request);
 
                 /**
-                 *创建容器部署组
+                 *（已废弃，请使用 CreateGroup 和 DeployContainerGroup 创建和部署容器部署组）创建容器部署组
                  * @param req CreateContainGroupRequest
                  * @return CreateContainGroupOutcome
                  */

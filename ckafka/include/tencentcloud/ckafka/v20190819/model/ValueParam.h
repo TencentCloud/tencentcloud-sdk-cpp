@@ -32,6 +32,7 @@
 #include <tencentcloud/ckafka/v20190819/model/KVParam.h>
 #include <tencentcloud/ckafka/v20190819/model/JsonPathReplaceParam.h>
 #include <tencentcloud/ckafka/v20190819/model/UrlDecodeParam.h>
+#include <tencentcloud/ckafka/v20190819/model/LowercaseParam.h>
 
 
 namespace TencentCloud
@@ -270,6 +271,28 @@ namespace TencentCloud
                      */
                     bool UrlDecodeHasBeenSet() const;
 
+                    /**
+                     * 获取小写字符解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Lowercase 小写字符解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LowercaseParam GetLowercase() const;
+
+                    /**
+                     * 设置小写字符解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Lowercase 小写字符解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLowercase(const LowercaseParam& _lowercase);
+
+                    /**
+                     * 判断参数 Lowercase 是否已赋值
+                     * @return Lowercase 是否已赋值
+                     */
+                    bool LowercaseHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +363,13 @@ namespace TencentCloud
                      */
                     UrlDecodeParam m_urlDecode;
                     bool m_urlDecodeHasBeenSet;
+
+                    /**
+                     * 小写字符解析
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LowercaseParam m_lowercase;
+                    bool m_lowercaseHasBeenSet;
 
                 };
             }

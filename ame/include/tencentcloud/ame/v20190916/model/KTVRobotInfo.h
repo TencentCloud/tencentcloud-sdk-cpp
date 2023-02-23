@@ -28,6 +28,7 @@
 #include <tencentcloud/ame/v20190916/model/JoinRoomInput.h>
 #include <tencentcloud/ame/v20190916/model/SetPlayModeCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/SetVolumeCommandInput.h>
+#include <tencentcloud/ame/v20190916/model/SetRealVolumeCommandInput.h>
 
 
 namespace TencentCloud
@@ -245,14 +246,14 @@ namespace TencentCloud
                     bool SetPlayModeInputHasBeenSet() const;
 
                     /**
-                     * 获取音量，范围 0~100，默认为 50。
-                     * @return SetVolumeInput 音量，范围 0~100，默认为 50。
+                     * 获取<del>音量，范围 0~100，默认为 50。</del>（已废弃，请采用 SetRealVolumeInput ）
+                     * @return SetVolumeInput <del>音量，范围 0~100，默认为 50。</del>（已废弃，请采用 SetRealVolumeInput ）
                      */
                     SetVolumeCommandInput GetSetVolumeInput() const;
 
                     /**
-                     * 设置音量，范围 0~100，默认为 50。
-                     * @param SetVolumeInput 音量，范围 0~100，默认为 50。
+                     * 设置<del>音量，范围 0~100，默认为 50。</del>（已废弃，请采用 SetRealVolumeInput ）
+                     * @param SetVolumeInput <del>音量，范围 0~100，默认为 50。</del>（已废弃，请采用 SetRealVolumeInput ）
                      */
                     void SetSetVolumeInput(const SetVolumeCommandInput& _setVolumeInput);
 
@@ -261,6 +262,24 @@ namespace TencentCloud
                      * @return SetVolumeInput 是否已赋值
                      */
                     bool SetVolumeInputHasBeenSet() const;
+
+                    /**
+                     * 获取真实音量，范围 0~100，默认为 50。
+                     * @return SetRealVolumeInput 真实音量，范围 0~100，默认为 50。
+                     */
+                    SetRealVolumeCommandInput GetSetRealVolumeInput() const;
+
+                    /**
+                     * 设置真实音量，范围 0~100，默认为 50。
+                     * @param SetRealVolumeInput 真实音量，范围 0~100，默认为 50。
+                     */
+                    void SetSetRealVolumeInput(const SetRealVolumeCommandInput& _setRealVolumeInput);
+
+                    /**
+                     * 判断参数 SetRealVolumeInput 是否已赋值
+                     * @return SetRealVolumeInput 是否已赋值
+                     */
+                    bool SetRealVolumeInputHasBeenSet() const;
 
                 private:
 
@@ -327,10 +346,16 @@ namespace TencentCloud
                     bool m_setPlayModeInputHasBeenSet;
 
                     /**
-                     * 音量，范围 0~100，默认为 50。
+                     * <del>音量，范围 0~100，默认为 50。</del>（已废弃，请采用 SetRealVolumeInput ）
                      */
                     SetVolumeCommandInput m_setVolumeInput;
                     bool m_setVolumeInputHasBeenSet;
+
+                    /**
+                     * 真实音量，范围 0~100，默认为 50。
+                     */
+                    SetRealVolumeCommandInput m_setRealVolumeInput;
+                    bool m_setRealVolumeInputHasBeenSet;
 
                 };
             }

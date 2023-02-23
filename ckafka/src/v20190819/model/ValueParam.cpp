@@ -30,7 +30,8 @@ ValueParam::ValueParam() :
     m_kVHasBeenSet(false),
     m_resultHasBeenSet(false),
     m_jsonPathReplaceHasBeenSet(false),
-    m_urlDecodeHasBeenSet(false)
+    m_urlDecodeHasBeenSet(false),
+    m_lowercaseHasBeenSet(false)
 {
 }
 
@@ -195,6 +196,23 @@ CoreInternalOutcome ValueParam::Deserialize(const rapidjson::Value &value)
         m_urlDecodeHasBeenSet = true;
     }
 
+    if (value.HasMember("Lowercase") && !value["Lowercase"].IsNull())
+    {
+        if (!value["Lowercase"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ValueParam.Lowercase` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lowercase.Deserialize(value["Lowercase"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lowercaseHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -288,6 +306,15 @@ void ValueParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_urlDecode.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lowercaseHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Lowercase";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lowercase.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -451,5 +478,21 @@ void ValueParam::SetUrlDecode(const UrlDecodeParam& _urlDecode)
 bool ValueParam::UrlDecodeHasBeenSet() const
 {
     return m_urlDecodeHasBeenSet;
+}
+
+LowercaseParam ValueParam::GetLowercase() const
+{
+    return m_lowercase;
+}
+
+void ValueParam::SetLowercase(const LowercaseParam& _lowercase)
+{
+    m_lowercase = _lowercase;
+    m_lowercaseHasBeenSet = true;
+}
+
+bool ValueParam::LowercaseHasBeenSet() const
+{
+    return m_lowercaseHasBeenSet;
 }
 

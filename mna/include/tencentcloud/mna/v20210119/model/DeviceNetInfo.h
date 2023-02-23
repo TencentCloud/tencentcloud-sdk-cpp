@@ -366,6 +366,50 @@ namespace TencentCloud
                      */
                     bool NetInfoNameHasBeenSet() const;
 
+                    /**
+                     * 获取下行实时速率（浮点数类型代替上一版本DataRx的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DownRate 下行实时速率（浮点数类型代替上一版本DataRx的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetDownRate() const;
+
+                    /**
+                     * 设置下行实时速率（浮点数类型代替上一版本DataRx的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DownRate 下行实时速率（浮点数类型代替上一版本DataRx的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDownRate(const double& _downRate);
+
+                    /**
+                     * 判断参数 DownRate 是否已赋值
+                     * @return DownRate 是否已赋值
+                     */
+                    bool DownRateHasBeenSet() const;
+
+                    /**
+                     * 获取上行实时速率（浮点数类型代替上一版本TxRate的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpRate 上行实时速率（浮点数类型代替上一版本TxRate的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetUpRate() const;
+
+                    /**
+                     * 设置上行实时速率（浮点数类型代替上一版本TxRate的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpRate 上行实时速率（浮点数类型代替上一版本TxRate的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpRate(const double& _upRate);
+
+                    /**
+                     * 判断参数 UpRate 是否已赋值
+                     * @return UpRate 是否已赋值
+                     */
+                    bool UpRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -465,6 +509,20 @@ namespace TencentCloud
                      */
                     std::string m_netInfoName;
                     bool m_netInfoNameHasBeenSet;
+
+                    /**
+                     * 下行实时速率（浮点数类型代替上一版本DataRx的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_downRate;
+                    bool m_downRateHasBeenSet;
+
+                    /**
+                     * 上行实时速率（浮点数类型代替上一版本TxRate的整型）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_upRate;
+                    bool m_upRateHasBeenSet;
 
                 };
             }

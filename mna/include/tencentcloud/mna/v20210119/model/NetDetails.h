@@ -47,24 +47,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取时间点，单位：s
-                     * @return Time 时间点，单位：s
-                     */
-                    std::string GetTime() const;
-
-                    /**
-                     * 设置时间点，单位：s
-                     * @param Time 时间点，单位：s
-                     */
-                    void SetTime(const std::string& _time);
-
-                    /**
-                     * 判断参数 Time 是否已赋值
-                     * @return Time 是否已赋值
-                     */
-                    bool TimeHasBeenSet() const;
-
-                    /**
                      * 获取流量值（bit）
                      * @return Current 流量值（bit）
                      */
@@ -82,19 +64,37 @@ namespace TencentCloud
                      */
                     bool CurrentHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取时间点，单位：s
+                     * @return Time 时间点，单位：s
+                     */
+                    std::string GetTime() const;
 
                     /**
-                     * 时间点，单位：s
+                     * 设置时间点，单位：s
+                     * @param Time 时间点，单位：s
                      */
-                    std::string m_time;
-                    bool m_timeHasBeenSet;
+                    void SetTime(const std::string& _time);
+
+                    /**
+                     * 判断参数 Time 是否已赋值
+                     * @return Time 是否已赋值
+                     */
+                    bool TimeHasBeenSet() const;
+
+                private:
 
                     /**
                      * 流量值（bit）
                      */
                     double m_current;
                     bool m_currentHasBeenSet;
+
+                    /**
+                     * 时间点，单位：s
+                     */
+                    std::string m_time;
+                    bool m_timeHasBeenSet;
 
                 };
             }

@@ -88,6 +88,72 @@ namespace TencentCloud
                      */
                     bool DeviceNetInfoHasBeenSet() const;
 
+                    /**
+                     * 获取聚合服务器地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GatewaySite 聚合服务器地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGatewaySite() const;
+
+                    /**
+                     * 设置聚合服务器地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GatewaySite 聚合服务器地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGatewaySite(const std::string& _gatewaySite);
+
+                    /**
+                     * 判断参数 GatewaySite 是否已赋值
+                     * @return GatewaySite 是否已赋值
+                     */
+                    bool GatewaySiteHasBeenSet() const;
+
+                    /**
+                     * 获取业务下行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessDownRate 业务下行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetBusinessDownRate() const;
+
+                    /**
+                     * 设置业务下行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BusinessDownRate 业务下行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusinessDownRate(const double& _businessDownRate);
+
+                    /**
+                     * 判断参数 BusinessDownRate 是否已赋值
+                     * @return BusinessDownRate 是否已赋值
+                     */
+                    bool BusinessDownRateHasBeenSet() const;
+
+                    /**
+                     * 获取业务上行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BusinessUpRate 业务上行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double GetBusinessUpRate() const;
+
+                    /**
+                     * 设置业务上行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BusinessUpRate 业务上行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBusinessUpRate(const double& _businessUpRate);
+
+                    /**
+                     * 判断参数 BusinessUpRate 是否已赋值
+                     * @return BusinessUpRate 是否已赋值
+                     */
+                    bool BusinessUpRateHasBeenSet() const;
+
                 private:
 
                     /**
@@ -102,6 +168,27 @@ namespace TencentCloud
                      */
                     std::vector<DeviceNetInfo> m_deviceNetInfo;
                     bool m_deviceNetInfoHasBeenSet;
+
+                    /**
+                     * 聚合服务器地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_gatewaySite;
+                    bool m_gatewaySiteHasBeenSet;
+
+                    /**
+                     * 业务下行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_businessDownRate;
+                    bool m_businessDownRateHasBeenSet;
+
+                    /**
+                     * 业务上行速率
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    double m_businessUpRate;
+                    bool m_businessUpRateHasBeenSet;
 
                 };
             }

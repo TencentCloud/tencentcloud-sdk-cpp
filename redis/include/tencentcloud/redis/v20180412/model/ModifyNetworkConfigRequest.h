@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,30 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取操作类型：changeVip——修改实例VIP；changeVpc——修改实例子网；changeBaseToVpc——基础网络转VPC网络
-                     * @return Operation 操作类型：changeVip——修改实例VIP；changeVpc——修改实例子网；changeBaseToVpc——基础网络转VPC网络
+                     * 获取指预修改网络的类别，包括：
+- changeVip：指切换私有网络，包含其内网IPv4地址及端口。
+- changeVpc：指切换私有网络所属子网。
+- changeBaseToVpc：指基础网络切换为私有网络。
+- changeVPort：指仅修改实例网络端口。
+                     * @return Operation 指预修改网络的类别，包括：
+- changeVip：指切换私有网络，包含其内网IPv4地址及端口。
+- changeVpc：指切换私有网络所属子网。
+- changeBaseToVpc：指基础网络切换为私有网络。
+- changeVPort：指仅修改实例网络端口。
                      */
                     std::string GetOperation() const;
 
                     /**
-                     * 设置操作类型：changeVip——修改实例VIP；changeVpc——修改实例子网；changeBaseToVpc——基础网络转VPC网络
-                     * @param Operation 操作类型：changeVip——修改实例VIP；changeVpc——修改实例子网；changeBaseToVpc——基础网络转VPC网络
+                     * 设置指预修改网络的类别，包括：
+- changeVip：指切换私有网络，包含其内网IPv4地址及端口。
+- changeVpc：指切换私有网络所属子网。
+- changeBaseToVpc：指基础网络切换为私有网络。
+- changeVPort：指仅修改实例网络端口。
+                     * @param Operation 指预修改网络的类别，包括：
+- changeVip：指切换私有网络，包含其内网IPv4地址及端口。
+- changeVpc：指切换私有网络所属子网。
+- changeBaseToVpc：指基础网络切换为私有网络。
+- changeVPort：指仅修改实例网络端口。
                      */
                     void SetOperation(const std::string& _operation);
 
@@ -79,14 +95,14 @@ namespace TencentCloud
                     bool OperationHasBeenSet() const;
 
                     /**
-                     * 获取VIP地址，changeVip的时候填写，不填则默认分配
-                     * @return Vip VIP地址，changeVip的时候填写，不填则默认分配
+                     * 获取指实例私有网络内网 IPv4 地址。当**Operation**为**changeVip**时，需配置该参数。
+                     * @return Vip 指实例私有网络内网 IPv4 地址。当**Operation**为**changeVip**时，需配置该参数。
                      */
                     std::string GetVip() const;
 
                     /**
-                     * 设置VIP地址，changeVip的时候填写，不填则默认分配
-                     * @param Vip VIP地址，changeVip的时候填写，不填则默认分配
+                     * 设置指实例私有网络内网 IPv4 地址。当**Operation**为**changeVip**时，需配置该参数。
+                     * @param Vip 指实例私有网络内网 IPv4 地址。当**Operation**为**changeVip**时，需配置该参数。
                      */
                     void SetVip(const std::string& _vip);
 
@@ -97,14 +113,14 @@ namespace TencentCloud
                     bool VipHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID，changeVpc、changeBaseToVpc的时候需要提供
-                     * @return VpcId 私有网络ID，changeVpc、changeBaseToVpc的时候需要提供
+                     * 获取指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * @return VpcId 指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID，changeVpc、changeBaseToVpc的时候需要提供
-                     * @param VpcId 私有网络ID，changeVpc、changeBaseToVpc的时候需要提供
+                     * 设置指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * @param VpcId 指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -115,14 +131,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网ID，changeVpc、changeBaseToVpc的时候需要提供
-                     * @return SubnetId 子网ID，changeVpc、changeBaseToVpc的时候需要提供
+                     * 获取指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * @return SubnetId 指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网ID，changeVpc、changeBaseToVpc的时候需要提供
-                     * @param SubnetId 子网ID，changeVpc、changeBaseToVpc的时候需要提供
+                     * 设置指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
+                     * @param SubnetId 指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -133,14 +149,30 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
-                     * @return Recycle 原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
+                     * 获取原内网 IPv4 地址保留时长。
+- 单位：天。
+- 取值范围：0、1、2、3、7、15。
+
+**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
+                     * @return Recycle 原内网 IPv4 地址保留时长。
+- 单位：天。
+- 取值范围：0、1、2、3、7、15。
+
+**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      */
                     int64_t GetRecycle() const;
 
                     /**
-                     * 设置原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
-                     * @param Recycle 原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
+                     * 设置原内网 IPv4 地址保留时长。
+- 单位：天。
+- 取值范围：0、1、2、3、7、15。
+
+**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
+                     * @param Recycle 原内网 IPv4 地址保留时长。
+- 单位：天。
+- 取值范围：0、1、2、3、7、15。
+
+**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      */
                     void SetRecycle(const int64_t& _recycle);
 
@@ -150,43 +182,75 @@ namespace TencentCloud
                      */
                     bool RecycleHasBeenSet() const;
 
+                    /**
+                     * 获取指修改后的网络端口。当**Operation**为**changeVPort**或**changeVip**时，需配置该参数。取值范围为[1024,65535]。
+                     * @return VPort 指修改后的网络端口。当**Operation**为**changeVPort**或**changeVip**时，需配置该参数。取值范围为[1024,65535]。
+                     */
+                    int64_t GetVPort() const;
+
+                    /**
+                     * 设置指修改后的网络端口。当**Operation**为**changeVPort**或**changeVip**时，需配置该参数。取值范围为[1024,65535]。
+                     * @param VPort 指修改后的网络端口。当**Operation**为**changeVPort**或**changeVip**时，需配置该参数。取值范围为[1024,65535]。
+                     */
+                    void SetVPort(const int64_t& _vPort);
+
+                    /**
+                     * 判断参数 VPort 是否已赋值
+                     * @return VPort 是否已赋值
+                     */
+                    bool VPortHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 操作类型：changeVip——修改实例VIP；changeVpc——修改实例子网；changeBaseToVpc——基础网络转VPC网络
+                     * 指预修改网络的类别，包括：
+- changeVip：指切换私有网络，包含其内网IPv4地址及端口。
+- changeVpc：指切换私有网络所属子网。
+- changeBaseToVpc：指基础网络切换为私有网络。
+- changeVPort：指仅修改实例网络端口。
                      */
                     std::string m_operation;
                     bool m_operationHasBeenSet;
 
                     /**
-                     * VIP地址，changeVip的时候填写，不填则默认分配
+                     * 指实例私有网络内网 IPv4 地址。当**Operation**为**changeVip**时，需配置该参数。
                      */
                     std::string m_vip;
                     bool m_vipHasBeenSet;
 
                     /**
-                     * 私有网络ID，changeVpc、changeBaseToVpc的时候需要提供
+                     * 指修改后的私有网络 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网ID，changeVpc、changeBaseToVpc的时候需要提供
+                     * 指修改后的私有网络所属子网 ID，当**Operation**为**changeVpc**或**changeBaseToVpc**时，需配置该参数。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 原VIP保留时间，单位：天，注：需要最新版SDK，否则原VIP立即释放，查看SDK版本，详见 [SDK中心](https://cloud.tencent.com/document/sdk)
+                     * 原内网 IPv4 地址保留时长。
+- 单位：天。
+- 取值范围：0、1、2、3、7、15。
+
+**说明**：设置原地址保留时长需最新版SDK，否则原地址将立即释放，查看SDK版本，请参见 [SDK中心](https://cloud.tencent.com/document/sdk)。
                      */
                     int64_t m_recycle;
                     bool m_recycleHasBeenSet;
+
+                    /**
+                     * 指修改后的网络端口。当**Operation**为**changeVPort**或**changeVip**时，需配置该参数。取值范围为[1024,65535]。
+                     */
+                    int64_t m_vPort;
+                    bool m_vPortHasBeenSet;
 
                 };
             }

@@ -669,7 +669,7 @@ namespace TencentCloud
                 DescribeInstanceAccountOutcomeCallable DescribeInstanceAccountCallable(const Model::DescribeInstanceAccountRequest& request);
 
                 /**
-                 *查询 CRS 实例备份列表
+                 *本接口（DescribeInstanceBackups）用于查询实例备份列表。
                  * @param req DescribeInstanceBackupsRequest
                  * @return DescribeInstanceBackupsOutcome
                  */
@@ -1110,7 +1110,7 @@ namespace TencentCloud
                 ModifyMaintenanceWindowOutcomeCallable ModifyMaintenanceWindowCallable(const Model::ModifyMaintenanceWindowRequest& request);
 
                 /**
-                 *修改实例网络配置
+                 *本接口（ModifyNetworkConfig）用于修改实例网络配置。
                  * @param req ModifyNetworkConfigRequest
                  * @return ModifyNetworkConfigOutcome
                  */

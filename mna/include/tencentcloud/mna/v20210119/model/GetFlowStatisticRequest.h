@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备ID，ID="-1"时默认查找所有设备
-                     * @return DeviceId 设备ID，ID="-1"时默认查找所有设备
+                     * 获取设备ID
+                     * @return DeviceId 设备ID
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID，ID="-1"时默认查找所有设备
-                     * @param DeviceId 设备ID，ID="-1"时默认查找所有设备
+                     * 设置设备ID
+                     * @param DeviceId 设备ID
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备ID，ID="-1"时默认查找所有设备
+                     * 设备ID
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

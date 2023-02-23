@@ -29,7 +29,8 @@ SyncRobotCommand::SyncRobotCommand() :
     m_sendMessageCommandInputHasBeenSet(false),
     m_setPlayModeCommandInputHasBeenSet(false),
     m_setDestroyModeCommandInputHasBeenSet(false),
-    m_setVolumeCommandInputHasBeenSet(false)
+    m_setVolumeCommandInputHasBeenSet(false),
+    m_setRealVolumeCommandInputHasBeenSet(false)
 {
 }
 
@@ -184,6 +185,23 @@ CoreInternalOutcome SyncRobotCommand::Deserialize(const rapidjson::Value &value)
         m_setVolumeCommandInputHasBeenSet = true;
     }
 
+    if (value.HasMember("SetRealVolumeCommandInput") && !value["SetRealVolumeCommandInput"].IsNull())
+    {
+        if (!value["SetRealVolumeCommandInput"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `SyncRobotCommand.SetRealVolumeCommandInput` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_setRealVolumeCommandInput.Deserialize(value["SetRealVolumeCommandInput"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_setRealVolumeCommandInputHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -269,6 +287,15 @@ void SyncRobotCommand::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setVolumeCommandInput.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_setRealVolumeCommandInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetRealVolumeCommandInput";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setRealVolumeCommandInput.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -416,5 +443,21 @@ void SyncRobotCommand::SetSetVolumeCommandInput(const SetVolumeCommandInput& _se
 bool SyncRobotCommand::SetVolumeCommandInputHasBeenSet() const
 {
     return m_setVolumeCommandInputHasBeenSet;
+}
+
+SetRealVolumeCommandInput SyncRobotCommand::GetSetRealVolumeCommandInput() const
+{
+    return m_setRealVolumeCommandInput;
+}
+
+void SyncRobotCommand::SetSetRealVolumeCommandInput(const SetRealVolumeCommandInput& _setRealVolumeCommandInput)
+{
+    m_setRealVolumeCommandInput = _setRealVolumeCommandInput;
+    m_setRealVolumeCommandInputHasBeenSet = true;
+}
+
+bool SyncRobotCommand::SetRealVolumeCommandInputHasBeenSet() const
+{
+    return m_setRealVolumeCommandInputHasBeenSet;
 }
 

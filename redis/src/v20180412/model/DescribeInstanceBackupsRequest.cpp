@@ -23,12 +23,13 @@ using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
 DescribeInstanceBackupsRequest::DescribeInstanceBackupsRequest() :
-    m_instanceIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_instanceIdHasBeenSet(false),
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_instanceNameHasBeenSet(false)
 {
 }
 
@@ -38,14 +39,6 @@ string DescribeInstanceBackupsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_instanceIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_limitHasBeenSet)
     {
@@ -61,6 +54,14 @@ string DescribeInstanceBackupsRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_instanceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_beginTimeHasBeenSet)
@@ -92,6 +93,14 @@ string DescribeInstanceBackupsRequest::ToJsonString() const
         }
     }
 
+    if (m_instanceNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceName";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_instanceName.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -99,22 +108,6 @@ string DescribeInstanceBackupsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeInstanceBackupsRequest::GetInstanceId() const
-{
-    return m_instanceId;
-}
-
-void DescribeInstanceBackupsRequest::SetInstanceId(const string& _instanceId)
-{
-    m_instanceId = _instanceId;
-    m_instanceIdHasBeenSet = true;
-}
-
-bool DescribeInstanceBackupsRequest::InstanceIdHasBeenSet() const
-{
-    return m_instanceIdHasBeenSet;
-}
 
 int64_t DescribeInstanceBackupsRequest::GetLimit() const
 {
@@ -146,6 +139,22 @@ void DescribeInstanceBackupsRequest::SetOffset(const int64_t& _offset)
 bool DescribeInstanceBackupsRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeInstanceBackupsRequest::GetInstanceId() const
+{
+    return m_instanceId;
+}
+
+void DescribeInstanceBackupsRequest::SetInstanceId(const string& _instanceId)
+{
+    m_instanceId = _instanceId;
+    m_instanceIdHasBeenSet = true;
+}
+
+bool DescribeInstanceBackupsRequest::InstanceIdHasBeenSet() const
+{
+    return m_instanceIdHasBeenSet;
 }
 
 string DescribeInstanceBackupsRequest::GetBeginTime() const
@@ -194,6 +203,22 @@ void DescribeInstanceBackupsRequest::SetStatus(const vector<int64_t>& _status)
 bool DescribeInstanceBackupsRequest::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string DescribeInstanceBackupsRequest::GetInstanceName() const
+{
+    return m_instanceName;
+}
+
+void DescribeInstanceBackupsRequest::SetInstanceName(const string& _instanceName)
+{
+    m_instanceName = _instanceName;
+    m_instanceNameHasBeenSet = true;
+}
+
+bool DescribeInstanceBackupsRequest::InstanceNameHasBeenSet() const
+{
+    return m_instanceNameHasBeenSet;
 }
 
 

@@ -180,6 +180,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeInstanceAttributesResponse.h
   include/tencentcloud/ckafka/v20190819/model/MapParam.h
   include/tencentcloud/ckafka/v20190819/model/TopicDetailResponse.h
+  include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaResult.h
   include/tencentcloud/ckafka/v20190819/model/DeleteInstancePreRequest.h
   include/tencentcloud/ckafka/v20190819/model/TopicSubscribeGroup.h
   include/tencentcloud/ckafka/v20190819/model/Config.h
@@ -236,7 +237,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DateParam.h
   include/tencentcloud/ckafka/v20190819/model/ValueParam.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTasksResponse.h
-  include/tencentcloud/ckafka/v20190819/model/TopicInSyncReplicaResult.h
+  include/tencentcloud/ckafka/v20190819/model/LowercaseParam.h
   include/tencentcloud/ckafka/v20190819/model/SendMessageResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubGroupOffsetsRequest.h
   include/tencentcloud/ckafka/v20190819/model/InquiryBasePrice.h
@@ -466,6 +467,7 @@ set(ckafka_src
   src/v20190819/model/DescribeInstanceAttributesResponse.cpp
   src/v20190819/model/MapParam.cpp
   src/v20190819/model/TopicDetailResponse.cpp
+  src/v20190819/model/TopicInSyncReplicaResult.cpp
   src/v20190819/model/DeleteInstancePreRequest.cpp
   src/v20190819/model/TopicSubscribeGroup.cpp
   src/v20190819/model/Config.cpp
@@ -522,7 +524,7 @@ set(ckafka_src
   src/v20190819/model/DateParam.cpp
   src/v20190819/model/ValueParam.cpp
   src/v20190819/model/DescribeDatahubTasksResponse.cpp
-  src/v20190819/model/TopicInSyncReplicaResult.cpp
+  src/v20190819/model/LowercaseParam.cpp
   src/v20190819/model/SendMessageResponse.cpp
   src/v20190819/model/DescribeDatahubGroupOffsetsRequest.cpp
   src/v20190819/model/InquiryBasePrice.cpp

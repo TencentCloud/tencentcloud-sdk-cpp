@@ -21,8 +21,8 @@ using namespace TencentCloud::Mna::V20210119::Model;
 using namespace std;
 
 NetDetails::NetDetails() :
-    m_timeHasBeenSet(false),
-    m_currentHasBeenSet(false)
+    m_currentHasBeenSet(false),
+    m_timeHasBeenSet(false)
 {
 }
 
@@ -30,16 +30,6 @@ CoreInternalOutcome NetDetails::Deserialize(const rapidjson::Value &value)
 {
     string requestId = "";
 
-
-    if (value.HasMember("Time") && !value["Time"].IsNull())
-    {
-        if (!value["Time"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `NetDetails.Time` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_time = string(value["Time"].GetString());
-        m_timeHasBeenSet = true;
-    }
 
     if (value.HasMember("Current") && !value["Current"].IsNull())
     {
@@ -51,20 +41,22 @@ CoreInternalOutcome NetDetails::Deserialize(const rapidjson::Value &value)
         m_currentHasBeenSet = true;
     }
 
+    if (value.HasMember("Time") && !value["Time"].IsNull())
+    {
+        if (!value["Time"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NetDetails.Time` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_time = string(value["Time"].GetString());
+        m_timeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
 
 void NetDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
-
-    if (m_timeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Time";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_currentHasBeenSet)
     {
@@ -74,24 +66,16 @@ void NetDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         value.AddMember(iKey, m_current, allocator);
     }
 
+    if (m_timeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Time";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
-
-string NetDetails::GetTime() const
-{
-    return m_time;
-}
-
-void NetDetails::SetTime(const string& _time)
-{
-    m_time = _time;
-    m_timeHasBeenSet = true;
-}
-
-bool NetDetails::TimeHasBeenSet() const
-{
-    return m_timeHasBeenSet;
-}
 
 double NetDetails::GetCurrent() const
 {
@@ -107,5 +91,21 @@ void NetDetails::SetCurrent(const double& _current)
 bool NetDetails::CurrentHasBeenSet() const
 {
     return m_currentHasBeenSet;
+}
+
+string NetDetails::GetTime() const
+{
+    return m_time;
+}
+
+void NetDetails::SetTime(const string& _time)
+{
+    m_time = _time;
+    m_timeHasBeenSet = true;
+}
+
+bool NetDetails::TimeHasBeenSet() const
+{
+    return m_timeHasBeenSet;
 }
 

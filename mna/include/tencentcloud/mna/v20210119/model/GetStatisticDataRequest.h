@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设备ID，设备ID="-1"获取所有设备流量统计
-                     * @return DeviceId 设备ID，设备ID="-1"获取所有设备流量统计
+                     * 获取设备ID
+                     * @return DeviceId 设备ID
                      */
                     std::string GetDeviceId() const;
 
                     /**
-                     * 设置设备ID，设备ID="-1"获取所有设备流量统计
-                     * @param DeviceId 设备ID，设备ID="-1"获取所有设备流量统计
+                     * 设置设备ID
+                     * @param DeviceId 设备ID
                      */
                     void SetDeviceId(const std::string& _deviceId);
 
@@ -125,7 +125,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设备ID，设备ID="-1"获取所有设备流量统计
+                     * 设备ID
                      */
                     std::string m_deviceId;
                     bool m_deviceIdHasBeenSet;

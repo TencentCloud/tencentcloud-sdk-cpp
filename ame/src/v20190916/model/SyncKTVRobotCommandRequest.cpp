@@ -32,7 +32,8 @@ SyncKTVRobotCommandRequest::SyncKTVRobotCommandRequest() :
     m_sendMessageCommandInputHasBeenSet(false),
     m_setPlayModeCommandInputHasBeenSet(false),
     m_setDestroyModeCommandInputHasBeenSet(false),
-    m_setVolumeCommandInputHasBeenSet(false)
+    m_setVolumeCommandInputHasBeenSet(false),
+    m_setRealVolumeCommandInputHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,15 @@ string SyncKTVRobotCommandRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_setVolumeCommandInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_setRealVolumeCommandInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SetRealVolumeCommandInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_setRealVolumeCommandInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -297,6 +307,22 @@ void SyncKTVRobotCommandRequest::SetSetVolumeCommandInput(const SetVolumeCommand
 bool SyncKTVRobotCommandRequest::SetVolumeCommandInputHasBeenSet() const
 {
     return m_setVolumeCommandInputHasBeenSet;
+}
+
+SetRealVolumeCommandInput SyncKTVRobotCommandRequest::GetSetRealVolumeCommandInput() const
+{
+    return m_setRealVolumeCommandInput;
+}
+
+void SyncKTVRobotCommandRequest::SetSetRealVolumeCommandInput(const SetRealVolumeCommandInput& _setRealVolumeCommandInput)
+{
+    m_setRealVolumeCommandInput = _setRealVolumeCommandInput;
+    m_setRealVolumeCommandInputHasBeenSet = true;
+}
+
+bool SyncKTVRobotCommandRequest::SetRealVolumeCommandInputHasBeenSet() const
+{
+    return m_setRealVolumeCommandInputHasBeenSet;
 }
 
 

@@ -22,7 +22,10 @@ using namespace std;
 
 DeviceDetails::DeviceDetails() :
     m_deviceBaseInfoHasBeenSet(false),
-    m_deviceNetInfoHasBeenSet(false)
+    m_deviceNetInfoHasBeenSet(false),
+    m_gatewaySiteHasBeenSet(false),
+    m_businessDownRateHasBeenSet(false),
+    m_businessUpRateHasBeenSet(false)
 {
 }
 
@@ -68,6 +71,36 @@ CoreInternalOutcome DeviceDetails::Deserialize(const rapidjson::Value &value)
         m_deviceNetInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("GatewaySite") && !value["GatewaySite"].IsNull())
+    {
+        if (!value["GatewaySite"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetails.GatewaySite` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_gatewaySite = string(value["GatewaySite"].GetString());
+        m_gatewaySiteHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessDownRate") && !value["BusinessDownRate"].IsNull())
+    {
+        if (!value["BusinessDownRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetails.BusinessDownRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessDownRate = value["BusinessDownRate"].GetDouble();
+        m_businessDownRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("BusinessUpRate") && !value["BusinessUpRate"].IsNull())
+    {
+        if (!value["BusinessUpRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceDetails.BusinessUpRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_businessUpRate = value["BusinessUpRate"].GetDouble();
+        m_businessUpRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -97,6 +130,30 @@ void DeviceDetails::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_gatewaySiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GatewaySite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_gatewaySite.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_businessDownRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessDownRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessDownRate, allocator);
+    }
+
+    if (m_businessUpRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BusinessUpRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_businessUpRate, allocator);
     }
 
 }
@@ -132,5 +189,53 @@ void DeviceDetails::SetDeviceNetInfo(const vector<DeviceNetInfo>& _deviceNetInfo
 bool DeviceDetails::DeviceNetInfoHasBeenSet() const
 {
     return m_deviceNetInfoHasBeenSet;
+}
+
+string DeviceDetails::GetGatewaySite() const
+{
+    return m_gatewaySite;
+}
+
+void DeviceDetails::SetGatewaySite(const string& _gatewaySite)
+{
+    m_gatewaySite = _gatewaySite;
+    m_gatewaySiteHasBeenSet = true;
+}
+
+bool DeviceDetails::GatewaySiteHasBeenSet() const
+{
+    return m_gatewaySiteHasBeenSet;
+}
+
+double DeviceDetails::GetBusinessDownRate() const
+{
+    return m_businessDownRate;
+}
+
+void DeviceDetails::SetBusinessDownRate(const double& _businessDownRate)
+{
+    m_businessDownRate = _businessDownRate;
+    m_businessDownRateHasBeenSet = true;
+}
+
+bool DeviceDetails::BusinessDownRateHasBeenSet() const
+{
+    return m_businessDownRateHasBeenSet;
+}
+
+double DeviceDetails::GetBusinessUpRate() const
+{
+    return m_businessUpRate;
+}
+
+void DeviceDetails::SetBusinessUpRate(const double& _businessUpRate)
+{
+    m_businessUpRate = _businessUpRate;
+    m_businessUpRateHasBeenSet = true;
+}
+
+bool DeviceDetails::BusinessUpRateHasBeenSet() const
+{
+    return m_businessUpRateHasBeenSet;
 }
 

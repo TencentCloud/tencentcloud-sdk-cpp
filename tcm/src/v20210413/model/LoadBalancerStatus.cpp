@@ -23,7 +23,8 @@ using namespace std;
 LoadBalancerStatus::LoadBalancerStatus() :
     m_loadBalancerIdHasBeenSet(false),
     m_loadBalancerNameHasBeenSet(false),
-    m_loadBalancerVipHasBeenSet(false)
+    m_loadBalancerVipHasBeenSet(false),
+    m_loadBalancerHostnameHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome LoadBalancerStatus::Deserialize(const rapidjson::Value &valu
         m_loadBalancerVipHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBalancerHostname") && !value["LoadBalancerHostname"].IsNull())
+    {
+        if (!value["LoadBalancerHostname"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerStatus.LoadBalancerHostname` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerHostname = string(value["LoadBalancerHostname"].GetString());
+        m_loadBalancerHostnameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void LoadBalancerStatus::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "LoadBalancerVip";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_loadBalancerVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_loadBalancerHostnameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerHostname";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerHostname.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void LoadBalancerStatus::SetLoadBalancerVip(const string& _loadBalancerVip)
 bool LoadBalancerStatus::LoadBalancerVipHasBeenSet() const
 {
     return m_loadBalancerVipHasBeenSet;
+}
+
+string LoadBalancerStatus::GetLoadBalancerHostname() const
+{
+    return m_loadBalancerHostname;
+}
+
+void LoadBalancerStatus::SetLoadBalancerHostname(const string& _loadBalancerHostname)
+{
+    m_loadBalancerHostname = _loadBalancerHostname;
+    m_loadBalancerHostnameHasBeenSet = true;
+}
+
+bool LoadBalancerStatus::LoadBalancerHostnameHasBeenSet() const
+{
+    return m_loadBalancerHostnameHasBeenSet;
 }
 

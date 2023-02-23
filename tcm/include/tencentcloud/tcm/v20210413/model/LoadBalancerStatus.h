@@ -100,6 +100,28 @@ namespace TencentCloud
                      */
                     bool LoadBalancerVipHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例 Hostname
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerHostname 负载均衡实例 Hostname
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLoadBalancerHostname() const;
+
+                    /**
+                     * 设置负载均衡实例 Hostname
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LoadBalancerHostname 负载均衡实例 Hostname
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLoadBalancerHostname(const std::string& _loadBalancerHostname);
+
+                    /**
+                     * 判断参数 LoadBalancerHostname 是否已赋值
+                     * @return LoadBalancerHostname 是否已赋值
+                     */
+                    bool LoadBalancerHostnameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -119,6 +141,13 @@ namespace TencentCloud
                      */
                     std::string m_loadBalancerVip;
                     bool m_loadBalancerVipHasBeenSet;
+
+                    /**
+                     * 负载均衡实例 Hostname
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancerHostname;
+                    bool m_loadBalancerHostnameHasBeenSet;
 
                 };
             }

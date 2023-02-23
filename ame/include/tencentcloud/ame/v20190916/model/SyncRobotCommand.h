@@ -32,6 +32,7 @@
 #include <tencentcloud/ame/v20190916/model/SetPlayModeCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/SetDestroyModeCommandInput.h>
 #include <tencentcloud/ame/v20190916/model/SetVolumeCommandInput.h>
+#include <tencentcloud/ame/v20190916/model/SetRealVolumeCommandInput.h>
 
 
 namespace TencentCloud
@@ -66,7 +67,8 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
-<li>SetVolume：设置音量</li>
+<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
+<li>SetRealVolume：设置真实音量</li>
                      * @return Command 可同时传入多个指令，顺序执行。取值有：
 <li>Play：播放</li>
 <li>Pause：暂停</li>
@@ -78,7 +80,8 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
-<li>SetVolume：设置音量</li>
+<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
+<li>SetRealVolume：设置真实音量</li>
                      */
                     std::string GetCommand() const;
 
@@ -94,7 +97,8 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
-<li>SetVolume：设置音量</li>
+<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
+<li>SetRealVolume：设置真实音量</li>
                      * @param Command 可同时传入多个指令，顺序执行。取值有：
 <li>Play：播放</li>
 <li>Pause：暂停</li>
@@ -106,7 +110,8 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
-<li>SetVolume：设置音量</li>
+<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
+<li>SetRealVolume：设置真实音量</li>
                      */
                     void SetCommand(const std::string& _command);
 
@@ -243,14 +248,18 @@ namespace TencentCloud
                     bool SetDestroyModeCommandInputHasBeenSet() const;
 
                     /**
-                     * 获取音量，当Command取SetVolume时，必填。
-                     * @return SetVolumeCommandInput 音量，当Command取SetVolume时，必填。
+                     * 获取<del>音量，当Command取SetVolume时，必填。</del>
+（已废弃，请采用 SetRealVolumeCommandInput）
+                     * @return SetVolumeCommandInput <del>音量，当Command取SetVolume时，必填。</del>
+（已废弃，请采用 SetRealVolumeCommandInput）
                      */
                     SetVolumeCommandInput GetSetVolumeCommandInput() const;
 
                     /**
-                     * 设置音量，当Command取SetVolume时，必填。
-                     * @param SetVolumeCommandInput 音量，当Command取SetVolume时，必填。
+                     * 设置<del>音量，当Command取SetVolume时，必填。</del>
+（已废弃，请采用 SetRealVolumeCommandInput）
+                     * @param SetVolumeCommandInput <del>音量，当Command取SetVolume时，必填。</del>
+（已废弃，请采用 SetRealVolumeCommandInput）
                      */
                     void SetSetVolumeCommandInput(const SetVolumeCommandInput& _setVolumeCommandInput);
 
@@ -259,6 +268,24 @@ namespace TencentCloud
                      * @return SetVolumeCommandInput 是否已赋值
                      */
                     bool SetVolumeCommandInputHasBeenSet() const;
+
+                    /**
+                     * 获取真实音量，当Command取SetRealVolume时，必填。
+                     * @return SetRealVolumeCommandInput 真实音量，当Command取SetRealVolume时，必填。
+                     */
+                    SetRealVolumeCommandInput GetSetRealVolumeCommandInput() const;
+
+                    /**
+                     * 设置真实音量，当Command取SetRealVolume时，必填。
+                     * @param SetRealVolumeCommandInput 真实音量，当Command取SetRealVolume时，必填。
+                     */
+                    void SetSetRealVolumeCommandInput(const SetRealVolumeCommandInput& _setRealVolumeCommandInput);
+
+                    /**
+                     * 判断参数 SetRealVolumeCommandInput 是否已赋值
+                     * @return SetRealVolumeCommandInput 是否已赋值
+                     */
+                    bool SetRealVolumeCommandInputHasBeenSet() const;
 
                 private:
 
@@ -274,7 +301,8 @@ namespace TencentCloud
 <li>SetAudioParam：音频参数变更</li>
 <li>SendMessage：发送自定义消息</li>
 <li>SetDestroyMode：设置销毁模式</li>
-<li>SetVolume：设置音量</li>
+<li><del>SetVolume：设置音量</del>（已废弃，请采用 SetRealVolume）</li>
+<li>SetRealVolume：设置真实音量</li>
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
@@ -322,10 +350,17 @@ namespace TencentCloud
                     bool m_setDestroyModeCommandInputHasBeenSet;
 
                     /**
-                     * 音量，当Command取SetVolume时，必填。
+                     * <del>音量，当Command取SetVolume时，必填。</del>
+（已废弃，请采用 SetRealVolumeCommandInput）
                      */
                     SetVolumeCommandInput m_setVolumeCommandInput;
                     bool m_setVolumeCommandInputHasBeenSet;
+
+                    /**
+                     * 真实音量，当Command取SetRealVolume时，必填。
+                     */
+                    SetRealVolumeCommandInput m_setRealVolumeCommandInput;
+                    bool m_setRealVolumeCommandInputHasBeenSet;
 
                 };
             }

@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool DosageEndTimeHasBeenSet() const;
 
                     /**
-                     * 获取一级产品类型名称
-                     * @return SubProductCodeName 一级产品类型名称
+                     * 获取子产品名称
+                     * @return SubProductCodeName 子产品名称
                      */
                     std::string GetSubProductCodeName() const;
 
                     /**
-                     * 设置一级产品类型名称
-                     * @param SubProductCodeName 一级产品类型名称
+                     * 设置子产品名称
+                     * @param SubProductCodeName 子产品名称
                      */
                     void SetSubProductCodeName(const std::string& _subProductCodeName);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool SubProductCodeNameHasBeenSet() const;
 
                     /**
-                     * 获取二级产品类型名称
-                     * @return BillingItemCodeName 二级产品类型名称
+                     * 获取计费项名称
+                     * @return BillingItemCodeName 计费项名称
                      */
                     std::string GetBillingItemCodeName() const;
 
                     /**
-                     * 设置二级产品类型名称
-                     * @param BillingItemCodeName 二级产品类型名称
+                     * 设置计费项名称
+                     * @param BillingItemCodeName 计费项名称
                      */
                     void SetBillingItemCodeName(const std::string& _billingItemCodeName);
 
@@ -193,13 +193,13 @@ namespace TencentCloud
                     bool m_dosageEndTimeHasBeenSet;
 
                     /**
-                     * 一级产品类型名称
+                     * 子产品名称
                      */
                     std::string m_subProductCodeName;
                     bool m_subProductCodeNameHasBeenSet;
 
                     /**
-                     * 二级产品类型名称
+                     * 计费项名称
                      */
                     std::string m_billingItemCodeName;
                     bool m_billingItemCodeNameHasBeenSet;

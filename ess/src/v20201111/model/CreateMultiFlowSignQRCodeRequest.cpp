@@ -30,6 +30,7 @@ CreateMultiFlowSignQRCodeRequest::CreateMultiFlowSignQRCodeRequest() :
     m_flowEffectiveDayHasBeenSet(false),
     m_qrEffectiveDayHasBeenSet(false),
     m_restrictionsHasBeenSet(false),
+    m_userDataHasBeenSet(false),
     m_callbackUrlHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_approverRestrictionsHasBeenSet(false)
@@ -105,6 +106,14 @@ string CreateMultiFlowSignQRCodeRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
     if (m_callbackUrlHasBeenSet)
@@ -251,6 +260,22 @@ void CreateMultiFlowSignQRCodeRequest::SetRestrictions(const vector<ApproverRest
 bool CreateMultiFlowSignQRCodeRequest::RestrictionsHasBeenSet() const
 {
     return m_restrictionsHasBeenSet;
+}
+
+string CreateMultiFlowSignQRCodeRequest::GetUserData() const
+{
+    return m_userData;
+}
+
+void CreateMultiFlowSignQRCodeRequest::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool CreateMultiFlowSignQRCodeRequest::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 
 string CreateMultiFlowSignQRCodeRequest::GetCallbackUrl() const

@@ -29,6 +29,7 @@ set(ame_public_header_model
   include/tencentcloud/ame/v20190916/model/DescribeKTVSingerCategoriesRequest.h
   include/tencentcloud/ame/v20190916/model/KTVSingerBaseInfo.h
   include/tencentcloud/ame/v20190916/model/ModifyMusicOnShelvesRequest.h
+  include/tencentcloud/ame/v20190916/model/SetRealVolumeCommandInput.h
   include/tencentcloud/ame/v20190916/model/PlayCommandInput.h
   include/tencentcloud/ame/v20190916/model/DescribeMusicRequest.h
   include/tencentcloud/ame/v20190916/model/KTVMusicDetailInfo.h
@@ -139,6 +140,7 @@ set(ame_src
   src/v20190916/model/DescribeKTVSingerCategoriesRequest.cpp
   src/v20190916/model/KTVSingerBaseInfo.cpp
   src/v20190916/model/ModifyMusicOnShelvesRequest.cpp
+  src/v20190916/model/SetRealVolumeCommandInput.cpp
   src/v20190916/model/PlayCommandInput.cpp
   src/v20190916/model/DescribeMusicRequest.cpp
   src/v20190916/model/KTVMusicDetailInfo.cpp

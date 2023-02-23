@@ -101,6 +101,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/redis/v20180412/model/InquiryPriceCreateInstanceResponse.h
   include/tencentcloud/redis/v20180412/model/InstanceSecurityGroupDetail.h
+  include/tencentcloud/redis/v20180412/model/BackupLimitVpcItem.h
   include/tencentcloud/redis/v20180412/model/UpgradeProxyVersionResponse.h
   include/tencentcloud/redis/v20180412/model/ResetPasswordRequest.h
   include/tencentcloud/redis/v20180412/model/ModifyInstanceAccountResponse.h
@@ -325,6 +326,7 @@ set(redis_src
   src/v20180412/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20180412/model/InquiryPriceCreateInstanceResponse.cpp
   src/v20180412/model/InstanceSecurityGroupDetail.cpp
+  src/v20180412/model/BackupLimitVpcItem.cpp
   src/v20180412/model/UpgradeProxyVersionResponse.cpp
   src/v20180412/model/ResetPasswordRequest.cpp
   src/v20180412/model/ModifyInstanceAccountResponse.cpp

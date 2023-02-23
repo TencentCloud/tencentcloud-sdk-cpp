@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询用量开始时间
-                     * @return StartDate 查询用量开始时间
+                     * 获取查询用量开始时间，例如：2020-09-01
+                     * @return StartDate 查询用量开始时间，例如：2020-09-01
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置查询用量开始时间
-                     * @param StartDate 查询用量开始时间
+                     * 设置查询用量开始时间，例如：2020-09-01
+                     * @param StartDate 查询用量开始时间，例如：2020-09-01
                      */
                     void SetStartDate(const std::string& _startDate);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取查询用量结束时间（与开始时间同月，不支持跨月查询）
-                     * @return EndDate 查询用量结束时间（与开始时间同月，不支持跨月查询）
+                     * 获取查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
+                     * @return EndDate 查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置查询用量结束时间（与开始时间同月，不支持跨月查询）
-                     * @param EndDate 查询用量结束时间（与开始时间同月，不支持跨月查询）
+                     * 设置查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
+                     * @param EndDate 查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
                      */
                     void SetEndDate(const std::string& _endDate);
 
@@ -99,13 +99,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询用量开始时间
+                     * 查询用量开始时间，例如：2020-09-01
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 查询用量结束时间（与开始时间同月，不支持跨月查询）
+                     * 查询用量结束时间，例如：2020-09-30（与开始时间同月，不支持跨月查询）
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;

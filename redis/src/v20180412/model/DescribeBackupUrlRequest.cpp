@@ -24,7 +24,12 @@ using namespace std;
 
 DescribeBackupUrlRequest::DescribeBackupUrlRequest() :
     m_instanceIdHasBeenSet(false),
-    m_backupIdHasBeenSet(false)
+    m_backupIdHasBeenSet(false),
+    m_limitTypeHasBeenSet(false),
+    m_vpcComparisonSymbolHasBeenSet(false),
+    m_ipComparisonSymbolHasBeenSet(false),
+    m_limitVpcHasBeenSet(false),
+    m_limitIpHasBeenSet(false)
 {
 }
 
@@ -49,6 +54,58 @@ string DescribeBackupUrlRequest::ToJsonString() const
         string key = "BackupId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_backupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_limitType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcComparisonSymbolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcComparisonSymbol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_vpcComparisonSymbol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipComparisonSymbolHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpComparisonSymbol";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_ipComparisonSymbol.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_limitVpcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitVpc";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_limitVpc.begin(); itr != m_limitVpc.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_limitIpHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LimitIp";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_limitIp.begin(); itr != m_limitIp.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -89,6 +146,86 @@ void DescribeBackupUrlRequest::SetBackupId(const string& _backupId)
 bool DescribeBackupUrlRequest::BackupIdHasBeenSet() const
 {
     return m_backupIdHasBeenSet;
+}
+
+string DescribeBackupUrlRequest::GetLimitType() const
+{
+    return m_limitType;
+}
+
+void DescribeBackupUrlRequest::SetLimitType(const string& _limitType)
+{
+    m_limitType = _limitType;
+    m_limitTypeHasBeenSet = true;
+}
+
+bool DescribeBackupUrlRequest::LimitTypeHasBeenSet() const
+{
+    return m_limitTypeHasBeenSet;
+}
+
+string DescribeBackupUrlRequest::GetVpcComparisonSymbol() const
+{
+    return m_vpcComparisonSymbol;
+}
+
+void DescribeBackupUrlRequest::SetVpcComparisonSymbol(const string& _vpcComparisonSymbol)
+{
+    m_vpcComparisonSymbol = _vpcComparisonSymbol;
+    m_vpcComparisonSymbolHasBeenSet = true;
+}
+
+bool DescribeBackupUrlRequest::VpcComparisonSymbolHasBeenSet() const
+{
+    return m_vpcComparisonSymbolHasBeenSet;
+}
+
+string DescribeBackupUrlRequest::GetIpComparisonSymbol() const
+{
+    return m_ipComparisonSymbol;
+}
+
+void DescribeBackupUrlRequest::SetIpComparisonSymbol(const string& _ipComparisonSymbol)
+{
+    m_ipComparisonSymbol = _ipComparisonSymbol;
+    m_ipComparisonSymbolHasBeenSet = true;
+}
+
+bool DescribeBackupUrlRequest::IpComparisonSymbolHasBeenSet() const
+{
+    return m_ipComparisonSymbolHasBeenSet;
+}
+
+vector<BackupLimitVpcItem> DescribeBackupUrlRequest::GetLimitVpc() const
+{
+    return m_limitVpc;
+}
+
+void DescribeBackupUrlRequest::SetLimitVpc(const vector<BackupLimitVpcItem>& _limitVpc)
+{
+    m_limitVpc = _limitVpc;
+    m_limitVpcHasBeenSet = true;
+}
+
+bool DescribeBackupUrlRequest::LimitVpcHasBeenSet() const
+{
+    return m_limitVpcHasBeenSet;
+}
+
+vector<string> DescribeBackupUrlRequest::GetLimitIp() const
+{
+    return m_limitIp;
+}
+
+void DescribeBackupUrlRequest::SetLimitIp(const vector<string>& _limitIp)
+{
+    m_limitIp = _limitIp;
+    m_limitIpHasBeenSet = true;
+}
+
+bool DescribeBackupUrlRequest::LimitIpHasBeenSet() const
+{
+    return m_limitIpHasBeenSet;
 }
 
 

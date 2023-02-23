@@ -32,7 +32,9 @@ DeviceNetInfo::DeviceNetInfo() :
     m_publicIpHasBeenSet(false),
     m_signalStrengthHasBeenSet(false),
     m_ratHasBeenSet(false),
-    m_netInfoNameHasBeenSet(false)
+    m_netInfoNameHasBeenSet(false),
+    m_downRateHasBeenSet(false),
+    m_upRateHasBeenSet(false)
 {
 }
 
@@ -161,6 +163,26 @@ CoreInternalOutcome DeviceNetInfo::Deserialize(const rapidjson::Value &value)
         m_netInfoNameHasBeenSet = true;
     }
 
+    if (value.HasMember("DownRate") && !value["DownRate"].IsNull())
+    {
+        if (!value["DownRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceNetInfo.DownRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_downRate = value["DownRate"].GetDouble();
+        m_downRateHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpRate") && !value["UpRate"].IsNull())
+    {
+        if (!value["UpRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeviceNetInfo.UpRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_upRate = value["UpRate"].GetDouble();
+        m_upRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +284,22 @@ void DeviceNetInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "NetInfoName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_netInfoName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_downRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DownRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_downRate, allocator);
+    }
+
+    if (m_upRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upRate, allocator);
     }
 
 }
@@ -457,5 +495,37 @@ void DeviceNetInfo::SetNetInfoName(const string& _netInfoName)
 bool DeviceNetInfo::NetInfoNameHasBeenSet() const
 {
     return m_netInfoNameHasBeenSet;
+}
+
+double DeviceNetInfo::GetDownRate() const
+{
+    return m_downRate;
+}
+
+void DeviceNetInfo::SetDownRate(const double& _downRate)
+{
+    m_downRate = _downRate;
+    m_downRateHasBeenSet = true;
+}
+
+bool DeviceNetInfo::DownRateHasBeenSet() const
+{
+    return m_downRateHasBeenSet;
+}
+
+double DeviceNetInfo::GetUpRate() const
+{
+    return m_upRate;
+}
+
+void DeviceNetInfo::SetUpRate(const double& _upRate)
+{
+    m_upRate = _upRate;
+    m_upRateHasBeenSet = true;
+}
+
+bool DeviceNetInfo::UpRateHasBeenSet() const
+{
+    return m_upRateHasBeenSet;
 }
 
