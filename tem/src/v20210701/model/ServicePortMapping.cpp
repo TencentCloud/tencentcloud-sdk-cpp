@@ -30,7 +30,8 @@ ServicePortMapping::ServicePortMapping() :
     m_loadBalanceIdHasBeenSet(false),
     m_yamlHasBeenSet(false),
     m_portsHasBeenSet(false),
-    m_portMappingItemListHasBeenSet(false)
+    m_portMappingItemListHasBeenSet(false),
+    m_externalDomainHasBeenSet(false)
 {
 }
 
@@ -152,6 +153,16 @@ CoreInternalOutcome ServicePortMapping::Deserialize(const rapidjson::Value &valu
         m_portMappingItemListHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalDomain") && !value["ExternalDomain"].IsNull())
+    {
+        if (!value["ExternalDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServicePortMapping.ExternalDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalDomain = string(value["ExternalDomain"].GetString());
+        m_externalDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -249,6 +260,14 @@ void ServicePortMapping::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_externalDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -412,5 +431,21 @@ void ServicePortMapping::SetPortMappingItemList(const vector<ServicePortMappingI
 bool ServicePortMapping::PortMappingItemListHasBeenSet() const
 {
     return m_portMappingItemListHasBeenSet;
+}
+
+string ServicePortMapping::GetExternalDomain() const
+{
+    return m_externalDomain;
+}
+
+void ServicePortMapping::SetExternalDomain(const string& _externalDomain)
+{
+    m_externalDomain = _externalDomain;
+    m_externalDomainHasBeenSet = true;
+}
+
+bool ServicePortMapping::ExternalDomainHasBeenSet() const
+{
+    return m_externalDomainHasBeenSet;
 }
 

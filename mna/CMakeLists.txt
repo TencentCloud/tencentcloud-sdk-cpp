@@ -19,14 +19,16 @@ set(mna_public_header
   )
 
 set(mna_public_header_model
+  include/tencentcloud/mna/v20210119/model/FlowDetails.h
   include/tencentcloud/mna/v20210119/model/GetDeviceResponse.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticResponse.h
   include/tencentcloud/mna/v20210119/model/Capacity.h
   include/tencentcloud/mna/v20210119/model/GetFlowStatisticRequest.h
   include/tencentcloud/mna/v20210119/model/DestAddressInfo.h
   include/tencentcloud/mna/v20210119/model/DeleteQosRequest.h
-  include/tencentcloud/mna/v20210119/model/DeviceNetInfo.h
   include/tencentcloud/mna/v20210119/model/NetDetails.h
+  include/tencentcloud/mna/v20210119/model/DeviceNetInfo.h
+  include/tencentcloud/mna/v20210119/model/GetMultiFlowStatisticResponse.h
   include/tencentcloud/mna/v20210119/model/SrcAddressInfo.h
   include/tencentcloud/mna/v20210119/model/UpdateNetInfo.h
   include/tencentcloud/mna/v20210119/model/CreateQosResponse.h
@@ -40,6 +42,7 @@ set(mna_public_header_model
   include/tencentcloud/mna/v20210119/model/GetStatisticDataRequest.h
   include/tencentcloud/mna/v20210119/model/UpdateDeviceRequest.h
   include/tencentcloud/mna/v20210119/model/GetPublicKeyResponse.h
+  include/tencentcloud/mna/v20210119/model/GetMultiFlowStatisticRequest.h
   include/tencentcloud/mna/v20210119/model/DeviceBaseInfo.h
   include/tencentcloud/mna/v20210119/model/ExpectedThreshold.h
   include/tencentcloud/mna/v20210119/model/DeleteQosResponse.h
@@ -59,14 +62,16 @@ set(mna_public_header_model
 
 set(mna_src
   src/v20210119/MnaClient.cpp
+  src/v20210119/model/FlowDetails.cpp
   src/v20210119/model/GetDeviceResponse.cpp
   src/v20210119/model/GetFlowStatisticResponse.cpp
   src/v20210119/model/Capacity.cpp
   src/v20210119/model/GetFlowStatisticRequest.cpp
   src/v20210119/model/DestAddressInfo.cpp
   src/v20210119/model/DeleteQosRequest.cpp
-  src/v20210119/model/DeviceNetInfo.cpp
   src/v20210119/model/NetDetails.cpp
+  src/v20210119/model/DeviceNetInfo.cpp
+  src/v20210119/model/GetMultiFlowStatisticResponse.cpp
   src/v20210119/model/SrcAddressInfo.cpp
   src/v20210119/model/UpdateNetInfo.cpp
   src/v20210119/model/CreateQosResponse.cpp
@@ -80,6 +85,7 @@ set(mna_src
   src/v20210119/model/GetStatisticDataRequest.cpp
   src/v20210119/model/UpdateDeviceRequest.cpp
   src/v20210119/model/GetPublicKeyResponse.cpp
+  src/v20210119/model/GetMultiFlowStatisticRequest.cpp
   src/v20210119/model/DeviceBaseInfo.cpp
   src/v20210119/model/ExpectedThreshold.cpp
   src/v20210119/model/DeleteQosResponse.cpp

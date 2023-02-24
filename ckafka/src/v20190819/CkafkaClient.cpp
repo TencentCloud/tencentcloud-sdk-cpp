@@ -1760,6 +1760,92 @@ CkafkaClient::DescribeDatahubTasksOutcomeCallable CkafkaClient::DescribeDatahubT
     return task->get_future();
 }
 
+CkafkaClient::DescribeDatahubTopicOutcome CkafkaClient::DescribeDatahubTopic(const DescribeDatahubTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatahubTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatahubTopicResponse rsp = DescribeDatahubTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatahubTopicOutcome(rsp);
+        else
+            return DescribeDatahubTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatahubTopicOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeDatahubTopicAsync(const DescribeDatahubTopicRequest& request, const DescribeDatahubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatahubTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeDatahubTopicOutcomeCallable CkafkaClient::DescribeDatahubTopicCallable(const DescribeDatahubTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatahubTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatahubTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::DescribeDatahubTopicsOutcome CkafkaClient::DescribeDatahubTopics(const DescribeDatahubTopicsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDatahubTopics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDatahubTopicsResponse rsp = DescribeDatahubTopicsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDatahubTopicsOutcome(rsp);
+        else
+            return DescribeDatahubTopicsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDatahubTopicsOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeDatahubTopicsAsync(const DescribeDatahubTopicsRequest& request, const DescribeDatahubTopicsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDatahubTopics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeDatahubTopicsOutcomeCallable CkafkaClient::DescribeDatahubTopicsCallable(const DescribeDatahubTopicsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDatahubTopicsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDatahubTopics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::DescribeGroupOutcome CkafkaClient::DescribeGroup(const DescribeGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGroup");

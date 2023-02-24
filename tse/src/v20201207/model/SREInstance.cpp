@@ -50,7 +50,10 @@ SREInstance::SREInstance() :
     m_autoRenewFlagHasBeenSet(false),
     m_curDeadlineHasBeenSet(false),
     m_isolateTimeHasBeenSet(false),
-    m_regionInfosHasBeenSet(false)
+    m_regionInfosHasBeenSet(false),
+    m_eKSTypeHasBeenSet(false),
+    m_featureVersionHasBeenSet(false),
+    m_enableClientIntranetHasBeenSet(false)
 {
 }
 
@@ -412,6 +415,36 @@ CoreInternalOutcome SREInstance::Deserialize(const rapidjson::Value &value)
         m_regionInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("EKSType") && !value["EKSType"].IsNull())
+    {
+        if (!value["EKSType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EKSType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eKSType = string(value["EKSType"].GetString());
+        m_eKSTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FeatureVersion") && !value["FeatureVersion"].IsNull())
+    {
+        if (!value["FeatureVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.FeatureVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_featureVersion = string(value["FeatureVersion"].GetString());
+        m_featureVersionHasBeenSet = true;
+    }
+
+    if (value.HasMember("EnableClientIntranet") && !value["EnableClientIntranet"].IsNull())
+    {
+        if (!value["EnableClientIntranet"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `SREInstance.EnableClientIntranet` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableClientIntranet = value["EnableClientIntranet"].GetBool();
+        m_enableClientIntranetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -697,6 +730,30 @@ void SREInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eKSTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EKSType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eKSType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_featureVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FeatureVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_featureVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableClientIntranetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableClientIntranet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableClientIntranet, allocator);
     }
 
 }
@@ -1180,5 +1237,53 @@ void SREInstance::SetRegionInfos(const vector<DescribeInstanceRegionInfo>& _regi
 bool SREInstance::RegionInfosHasBeenSet() const
 {
     return m_regionInfosHasBeenSet;
+}
+
+string SREInstance::GetEKSType() const
+{
+    return m_eKSType;
+}
+
+void SREInstance::SetEKSType(const string& _eKSType)
+{
+    m_eKSType = _eKSType;
+    m_eKSTypeHasBeenSet = true;
+}
+
+bool SREInstance::EKSTypeHasBeenSet() const
+{
+    return m_eKSTypeHasBeenSet;
+}
+
+string SREInstance::GetFeatureVersion() const
+{
+    return m_featureVersion;
+}
+
+void SREInstance::SetFeatureVersion(const string& _featureVersion)
+{
+    m_featureVersion = _featureVersion;
+    m_featureVersionHasBeenSet = true;
+}
+
+bool SREInstance::FeatureVersionHasBeenSet() const
+{
+    return m_featureVersionHasBeenSet;
+}
+
+bool SREInstance::GetEnableClientIntranet() const
+{
+    return m_enableClientIntranet;
+}
+
+void SREInstance::SetEnableClientIntranet(const bool& _enableClientIntranet)
+{
+    m_enableClientIntranet = _enableClientIntranet;
+    m_enableClientIntranetHasBeenSet = true;
+}
+
+bool SREInstance::EnableClientIntranetHasBeenSet() const
+{
+    return m_enableClientIntranetHasBeenSet;
 }
 

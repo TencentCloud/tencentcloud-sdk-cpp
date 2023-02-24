@@ -36,7 +36,8 @@ EksService::EksService() :
     m_flushAllHasBeenSet(false),
     m_enableRegistryNextDeployHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
-    m_allIpDoneHasBeenSet(false)
+    m_allIpDoneHasBeenSet(false),
+    m_externalDomainHasBeenSet(false)
 {
 }
 
@@ -231,6 +232,16 @@ CoreInternalOutcome EksService::Deserialize(const rapidjson::Value &value)
         m_allIpDoneHasBeenSet = true;
     }
 
+    if (value.HasMember("ExternalDomain") && !value["ExternalDomain"].IsNull())
+    {
+        if (!value["ExternalDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EksService.ExternalDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_externalDomain = string(value["ExternalDomain"].GetString());
+        m_externalDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -388,6 +399,14 @@ void EksService::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AllIpDone";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_allIpDone, allocator);
+    }
+
+    if (m_externalDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExternalDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_externalDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -647,5 +666,21 @@ void EksService::SetAllIpDone(const bool& _allIpDone)
 bool EksService::AllIpDoneHasBeenSet() const
 {
     return m_allIpDoneHasBeenSet;
+}
+
+string EksService::GetExternalDomain() const
+{
+    return m_externalDomain;
+}
+
+void EksService::SetExternalDomain(const string& _externalDomain)
+{
+    m_externalDomain = _externalDomain;
+    m_externalDomainHasBeenSet = true;
+}
+
+bool EksService::ExternalDomainHasBeenSet() const
+{
+    return m_externalDomainHasBeenSet;
 }
 

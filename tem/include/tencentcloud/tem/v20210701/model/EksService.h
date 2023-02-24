@@ -400,6 +400,28 @@ namespace TencentCloud
                      */
                     bool AllIpDoneHasBeenSet() const;
 
+                    /**
+                     * 获取clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExternalDomain clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExternalDomain() const;
+
+                    /**
+                     * 设置clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExternalDomain clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExternalDomain(const std::string& _externalDomain);
+
+                    /**
+                     * 判断参数 ExternalDomain 是否已赋值
+                     * @return ExternalDomain 是否已赋值
+                     */
+                    bool ExternalDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -513,6 +535,13 @@ namespace TencentCloud
                      */
                     bool m_allIpDone;
                     bool m_allIpDoneHasBeenSet;
+
+                    /**
+                     * clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_externalDomain;
+                    bool m_externalDomainHasBeenSet;
 
                 };
             }

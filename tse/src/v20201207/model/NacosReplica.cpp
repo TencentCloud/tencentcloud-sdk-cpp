@@ -26,7 +26,8 @@ NacosReplica::NacosReplica() :
     m_statusHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
-    m_zoneIdHasBeenSet(false)
+    m_zoneIdHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome NacosReplica::Deserialize(const rapidjson::Value &value)
         m_zoneIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NacosReplica.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void NacosReplica::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void NacosReplica::SetZoneId(const string& _zoneId)
 bool NacosReplica::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+string NacosReplica::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void NacosReplica::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool NacosReplica::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 

@@ -26,6 +26,7 @@ set(cdc_public_header_model
   include/tencentcloud/cdc/v20201214/model/DedicatedClusterType.h
   include/tencentcloud/cdc/v20201214/model/DeleteSitesRequest.h
   include/tencentcloud/cdc/v20201214/model/CosInfo.h
+  include/tencentcloud/cdc/v20201214/model/ZoneInfo.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterOverviewResponse.h
   include/tencentcloud/cdc/v20201214/model/DescribeSitesRequest.h
   include/tencentcloud/cdc/v20201214/model/HostInfo.h
@@ -39,6 +40,7 @@ set(cdc_public_header_model
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedSupportedZonesRequest.h
   include/tencentcloud/cdc/v20201214/model/DedicatedClusterTypeInfo.h
   include/tencentcloud/cdc/v20201214/model/ModifyOrderStatusResponse.h
+  include/tencentcloud/cdc/v20201214/model/InBandwidth.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterCosCapacityRequest.h
   include/tencentcloud/cdc/v20201214/model/DescribeSitesResponse.h
   include/tencentcloud/cdc/v20201214/model/DescribeSitesDetailRequest.h
@@ -58,19 +60,21 @@ set(cdc_public_header_model
   include/tencentcloud/cdc/v20201214/model/ModifySiteDeviceInfoResponse.h
   include/tencentcloud/cdc/v20201214/model/CreateDedicatedClusterRequest.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterHostsResponse.h
+  include/tencentcloud/cdc/v20201214/model/LocalNetInfo.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterInstanceTypesRequest.h
   include/tencentcloud/cdc/v20201214/model/ModifyDedicatedClusterInfoResponse.h
   include/tencentcloud/cdc/v20201214/model/ModifySiteInfoRequest.h
   include/tencentcloud/cdc/v20201214/model/SiteDetail.h
   include/tencentcloud/cdc/v20201214/model/DeleteSitesResponse.h
   include/tencentcloud/cdc/v20201214/model/CosCapacity.h
-  include/tencentcloud/cdc/v20201214/model/ZoneInfo.h
+  include/tencentcloud/cdc/v20201214/model/VpngwBandwidthData.h
   include/tencentcloud/cdc/v20201214/model/ModifySiteDeviceInfoRequest.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterHostStatisticsResponse.h
   include/tencentcloud/cdc/v20201214/model/Site.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterTypesRequest.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterOrdersResponse.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterHostStatisticsRequest.h
+  include/tencentcloud/cdc/v20201214/model/OutBandwidth.h
   include/tencentcloud/cdc/v20201214/model/DescribeDedicatedClusterOverviewRequest.h
   include/tencentcloud/cdc/v20201214/model/DeleteDedicatedClustersRequest.h
   include/tencentcloud/cdc/v20201214/model/DeleteDedicatedClustersResponse.h
@@ -85,6 +89,7 @@ set(cdc_src
   src/v20201214/model/DedicatedClusterType.cpp
   src/v20201214/model/DeleteSitesRequest.cpp
   src/v20201214/model/CosInfo.cpp
+  src/v20201214/model/ZoneInfo.cpp
   src/v20201214/model/DescribeDedicatedClusterOverviewResponse.cpp
   src/v20201214/model/DescribeSitesRequest.cpp
   src/v20201214/model/HostInfo.cpp
@@ -98,6 +103,7 @@ set(cdc_src
   src/v20201214/model/DescribeDedicatedSupportedZonesRequest.cpp
   src/v20201214/model/DedicatedClusterTypeInfo.cpp
   src/v20201214/model/ModifyOrderStatusResponse.cpp
+  src/v20201214/model/InBandwidth.cpp
   src/v20201214/model/DescribeDedicatedClusterCosCapacityRequest.cpp
   src/v20201214/model/DescribeSitesResponse.cpp
   src/v20201214/model/DescribeSitesDetailRequest.cpp
@@ -117,19 +123,21 @@ set(cdc_src
   src/v20201214/model/ModifySiteDeviceInfoResponse.cpp
   src/v20201214/model/CreateDedicatedClusterRequest.cpp
   src/v20201214/model/DescribeDedicatedClusterHostsResponse.cpp
+  src/v20201214/model/LocalNetInfo.cpp
   src/v20201214/model/DescribeDedicatedClusterInstanceTypesRequest.cpp
   src/v20201214/model/ModifyDedicatedClusterInfoResponse.cpp
   src/v20201214/model/ModifySiteInfoRequest.cpp
   src/v20201214/model/SiteDetail.cpp
   src/v20201214/model/DeleteSitesResponse.cpp
   src/v20201214/model/CosCapacity.cpp
-  src/v20201214/model/ZoneInfo.cpp
+  src/v20201214/model/VpngwBandwidthData.cpp
   src/v20201214/model/ModifySiteDeviceInfoRequest.cpp
   src/v20201214/model/DescribeDedicatedClusterHostStatisticsResponse.cpp
   src/v20201214/model/Site.cpp
   src/v20201214/model/DescribeDedicatedClusterTypesRequest.cpp
   src/v20201214/model/DescribeDedicatedClusterOrdersResponse.cpp
   src/v20201214/model/DescribeDedicatedClusterHostStatisticsRequest.cpp
+  src/v20201214/model/OutBandwidth.cpp
   src/v20201214/model/DescribeDedicatedClusterOverviewRequest.cpp
   src/v20201214/model/DeleteDedicatedClustersRequest.cpp
   src/v20201214/model/DeleteDedicatedClustersResponse.cpp

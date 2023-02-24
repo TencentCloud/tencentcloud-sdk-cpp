@@ -135,6 +135,28 @@ namespace TencentCloud
                     bool FakeURLHasBeenSet() const;
 
                     /**
+                     * 获取仿冒域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FakeDomain 仿冒域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFakeDomain() const;
+
+                    /**
+                     * 设置仿冒域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FakeDomain 仿冒域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFakeDomain(const std::string& _fakeDomain);
+
+                    /**
+                     * 判断参数 FakeDomain 是否已赋值
+                     * @return FakeDomain 是否已赋值
+                     */
+                    bool FakeDomainHasBeenSet() const;
+
+                    /**
                      * 获取热度
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Heat 热度
@@ -493,6 +515,13 @@ namespace TencentCloud
                      */
                     std::string m_fakeURL;
                     bool m_fakeURLHasBeenSet;
+
+                    /**
+                     * 仿冒域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fakeDomain;
+                    bool m_fakeDomainHasBeenSet;
 
                     /**
                      * 热度

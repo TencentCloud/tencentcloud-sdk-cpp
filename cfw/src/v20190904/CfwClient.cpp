@@ -126,6 +126,49 @@ CfwClient::AddEnterpriseSecurityGroupRulesOutcomeCallable CfwClient::AddEnterpri
     return task->get_future();
 }
 
+CfwClient::AddNatAcRuleOutcome CfwClient::AddNatAcRule(const AddNatAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddNatAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddNatAcRuleResponse rsp = AddNatAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddNatAcRuleOutcome(rsp);
+        else
+            return AddNatAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddNatAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::AddNatAcRuleAsync(const AddNatAcRuleRequest& request, const AddNatAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddNatAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::AddNatAcRuleOutcomeCallable CfwClient::AddNatAcRuleCallable(const AddNatAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddNatAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->AddNatAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::CreateAcRulesOutcome CfwClient::CreateAcRules(const CreateAcRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateAcRules");
@@ -1065,6 +1108,49 @@ CfwClient::DescribeIPStatusListOutcomeCallable CfwClient::DescribeIPStatusListCa
         [this, request]()
         {
             return this->DescribeIPStatusList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::DescribeNatAcRuleOutcome CfwClient::DescribeNatAcRule(const DescribeNatAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNatAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNatAcRuleResponse rsp = DescribeNatAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNatAcRuleOutcome(rsp);
+        else
+            return DescribeNatAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNatAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::DescribeNatAcRuleAsync(const DescribeNatAcRuleRequest& request, const DescribeNatAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNatAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::DescribeNatAcRuleOutcomeCallable CfwClient::DescribeNatAcRuleCallable(const DescribeNatAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNatAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNatAcRule(request);
         }
     );
 
@@ -2061,6 +2147,49 @@ CfwClient::ModifyBlockTopOutcomeCallable CfwClient::ModifyBlockTopCallable(const
     return task->get_future();
 }
 
+CfwClient::ModifyNatAcRuleOutcome CfwClient::ModifyNatAcRule(const ModifyNatAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyNatAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyNatAcRuleResponse rsp = ModifyNatAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyNatAcRuleOutcome(rsp);
+        else
+            return ModifyNatAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyNatAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::ModifyNatAcRuleAsync(const ModifyNatAcRuleRequest& request, const ModifyNatAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyNatAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::ModifyNatAcRuleOutcomeCallable CfwClient::ModifyNatAcRuleCallable(const ModifyNatAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyNatAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyNatAcRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfwClient::ModifyNatFwReSelectOutcome CfwClient::ModifyNatFwReSelect(const ModifyNatFwReSelectRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyNatFwReSelect");
@@ -2656,6 +2785,49 @@ CfwClient::RemoveEnterpriseSecurityGroupRuleOutcomeCallable CfwClient::RemoveEnt
         [this, request]()
         {
             return this->RemoveEnterpriseSecurityGroupRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CfwClient::RemoveNatAcRuleOutcome CfwClient::RemoveNatAcRule(const RemoveNatAcRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveNatAcRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveNatAcRuleResponse rsp = RemoveNatAcRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveNatAcRuleOutcome(rsp);
+        else
+            return RemoveNatAcRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveNatAcRuleOutcome(outcome.GetError());
+    }
+}
+
+void CfwClient::RemoveNatAcRuleAsync(const RemoveNatAcRuleRequest& request, const RemoveNatAcRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveNatAcRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfwClient::RemoveNatAcRuleOutcomeCallable CfwClient::RemoveNatAcRuleCallable(const RemoveNatAcRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveNatAcRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveNatAcRule(request);
         }
     );
 

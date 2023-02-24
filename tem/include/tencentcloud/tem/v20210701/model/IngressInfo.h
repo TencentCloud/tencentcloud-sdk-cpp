@@ -300,6 +300,28 @@ namespace TencentCloud
                      */
                     bool RewriteTypeHasBeenSet() const;
 
+                    /**
+                     * 获取clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Domain clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Domain clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -382,6 +404,13 @@ namespace TencentCloud
                      */
                     std::string m_rewriteType;
                     bool m_rewriteTypeHasBeenSet;
+
+                    /**
+                     * clb 域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

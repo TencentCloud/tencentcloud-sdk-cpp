@@ -32,7 +32,8 @@ IngressInfo::IngressInfo() :
     m_vipHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_mixedHasBeenSet(false),
-    m_rewriteTypeHasBeenSet(false)
+    m_rewriteTypeHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,16 @@ CoreInternalOutcome IngressInfo::Deserialize(const rapidjson::Value &value)
         m_rewriteTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IngressInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -296,6 +307,14 @@ void IngressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "RewriteType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_rewriteType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -491,5 +510,21 @@ void IngressInfo::SetRewriteType(const string& _rewriteType)
 bool IngressInfo::RewriteTypeHasBeenSet() const
 {
     return m_rewriteTypeHasBeenSet;
+}
+
+string IngressInfo::GetDomain() const
+{
+    return m_domain;
+}
+
+void IngressInfo::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool IngressInfo::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

@@ -679,6 +679,72 @@ namespace TencentCloud
                      */
                     bool RegionInfosHasBeenSet() const;
 
+                    /**
+                     * 获取所在EKS环境，分为common和yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EKSType 所在EKS环境，分为common和yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEKSType() const;
+
+                    /**
+                     * 设置所在EKS环境，分为common和yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EKSType 所在EKS环境，分为common和yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEKSType(const std::string& _eKSType);
+
+                    /**
+                     * 判断参数 EKSType 是否已赋值
+                     * @return EKSType 是否已赋值
+                     */
+                    bool EKSTypeHasBeenSet() const;
+
+                    /**
+                     * 获取引擎的产品版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FeatureVersion 引擎的产品版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFeatureVersion() const;
+
+                    /**
+                     * 设置引擎的产品版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FeatureVersion 引擎的产品版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFeatureVersion(const std::string& _featureVersion);
+
+                    /**
+                     * 判断参数 FeatureVersion 是否已赋值
+                     * @return FeatureVersion 是否已赋值
+                     */
+                    bool FeatureVersionHasBeenSet() const;
+
+                    /**
+                     * 获取引擎实例是否开启客户端内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableClientIntranet 引擎实例是否开启客户端内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableClientIntranet() const;
+
+                    /**
+                     * 设置引擎实例是否开启客户端内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EnableClientIntranet 引擎实例是否开启客户端内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEnableClientIntranet(const bool& _enableClientIntranet);
+
+                    /**
+                     * 判断参数 EnableClientIntranet 是否已赋值
+                     * @return EnableClientIntranet 是否已赋值
+                     */
+                    bool EnableClientIntranetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -882,6 +948,27 @@ namespace TencentCloud
                      */
                     std::vector<DescribeInstanceRegionInfo> m_regionInfos;
                     bool m_regionInfosHasBeenSet;
+
+                    /**
+                     * 所在EKS环境，分为common和yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eKSType;
+                    bool m_eKSTypeHasBeenSet;
+
+                    /**
+                     * 引擎的产品版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_featureVersion;
+                    bool m_featureVersionHasBeenSet;
+
+                    /**
+                     * 引擎实例是否开启客户端内网访问地址
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableClientIntranet;
+                    bool m_enableClientIntranetHasBeenSet;
 
                 };
             }

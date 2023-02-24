@@ -31,7 +31,8 @@ DescribeInstancesDetailRequest::DescribeInstancesDetailRequest() :
     m_tagKeyHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_instanceIdsHasBeenSet(false),
-    m_instanceIdListHasBeenSet(false)
+    m_instanceIdListHasBeenSet(false),
+    m_tagListHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,21 @@ string DescribeInstancesDetailRequest::ToJsonString() const
         for (auto itr = m_instanceIdList.begin(); itr != m_instanceIdList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_tagListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tagList.begin(); itr != m_tagList.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
     }
 
@@ -281,6 +297,22 @@ void DescribeInstancesDetailRequest::SetInstanceIdList(const vector<string>& _in
 bool DescribeInstancesDetailRequest::InstanceIdListHasBeenSet() const
 {
     return m_instanceIdListHasBeenSet;
+}
+
+vector<Tag> DescribeInstancesDetailRequest::GetTagList() const
+{
+    return m_tagList;
+}
+
+void DescribeInstancesDetailRequest::SetTagList(const vector<Tag>& _tagList)
+{
+    m_tagList = _tagList;
+    m_tagListHasBeenSet = true;
+}
+
+bool DescribeInstancesDetailRequest::TagListHasBeenSet() const
+{
+    return m_tagListHasBeenSet;
 }
 
 

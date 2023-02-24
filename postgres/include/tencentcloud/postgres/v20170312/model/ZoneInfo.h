@@ -101,14 +101,30 @@ namespace TencentCloud
                     bool ZoneIdHasBeenSet() const;
 
                     /**
-                     * 获取可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
-                     * @return ZoneState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
+                     * 获取可用状态包含，
+UNAVAILABLE：不可用。
+AVAILABLE：可用。
+SELLOUT：售罄。
+SUPPORTMODIFYONLY：支持变配。
+                     * @return ZoneState 可用状态包含，
+UNAVAILABLE：不可用。
+AVAILABLE：可用。
+SELLOUT：售罄。
+SUPPORTMODIFYONLY：支持变配。
                      */
                     std::string GetZoneState() const;
 
                     /**
-                     * 设置可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
-                     * @param ZoneState 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
+                     * 设置可用状态包含，
+UNAVAILABLE：不可用。
+AVAILABLE：可用。
+SELLOUT：售罄。
+SUPPORTMODIFYONLY：支持变配。
+                     * @param ZoneState 可用状态包含，
+UNAVAILABLE：不可用。
+AVAILABLE：可用。
+SELLOUT：售罄。
+SUPPORTMODIFYONLY：支持变配。
                      */
                     void SetZoneState(const std::string& _zoneState);
 
@@ -179,7 +195,11 @@ namespace TencentCloud
                     bool m_zoneIdHasBeenSet;
 
                     /**
-                     * 可用状态，UNAVAILABLE表示不可用，AVAILABLE表示可用，SELLOUT表示售罄
+                     * 可用状态包含，
+UNAVAILABLE：不可用。
+AVAILABLE：可用。
+SELLOUT：售罄。
+SUPPORTMODIFYONLY：支持变配。
                      */
                     std::string m_zoneState;
                     bool m_zoneStateHasBeenSet;

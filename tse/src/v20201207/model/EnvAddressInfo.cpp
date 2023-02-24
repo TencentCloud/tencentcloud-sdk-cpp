@@ -25,7 +25,8 @@ EnvAddressInfo::EnvAddressInfo() :
     m_enableConfigInternetHasBeenSet(false),
     m_configInternetServiceIpHasBeenSet(false),
     m_configIntranetAddressHasBeenSet(false),
-    m_enableConfigIntranetHasBeenSet(false)
+    m_enableConfigIntranetHasBeenSet(false),
+    m_internetBandWidthHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome EnvAddressInfo::Deserialize(const rapidjson::Value &value)
         m_enableConfigIntranetHasBeenSet = true;
     }
 
+    if (value.HasMember("InternetBandWidth") && !value["InternetBandWidth"].IsNull())
+    {
+        if (!value["InternetBandWidth"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnvAddressInfo.InternetBandWidth` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_internetBandWidth = value["InternetBandWidth"].GetInt64();
+        m_internetBandWidthHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void EnvAddressInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "EnableConfigIntranet";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_enableConfigIntranet, allocator);
+    }
+
+    if (m_internetBandWidthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternetBandWidth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internetBandWidth, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void EnvAddressInfo::SetEnableConfigIntranet(const bool& _enableConfigIntranet)
 bool EnvAddressInfo::EnableConfigIntranetHasBeenSet() const
 {
     return m_enableConfigIntranetHasBeenSet;
+}
+
+int64_t EnvAddressInfo::GetInternetBandWidth() const
+{
+    return m_internetBandWidth;
+}
+
+void EnvAddressInfo::SetInternetBandWidth(const int64_t& _internetBandWidth)
+{
+    m_internetBandWidth = _internetBandWidth;
+    m_internetBandWidthHasBeenSet = true;
+}
+
+bool EnvAddressInfo::InternetBandWidthHasBeenSet() const
+{
+    return m_internetBandWidthHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ ZookeeperReplica::ZookeeperReplica() :
     m_subnetIdHasBeenSet(false),
     m_zoneHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
-    m_aliasNameHasBeenSet(false)
+    m_aliasNameHasBeenSet(false),
+    m_vpcIdHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome ZookeeperReplica::Deserialize(const rapidjson::Value &value)
         m_aliasNameHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcId") && !value["VpcId"].IsNull())
+    {
+        if (!value["VpcId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZookeeperReplica.VpcId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcId = string(value["VpcId"].GetString());
+        m_vpcIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void ZookeeperReplica::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "AliasName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_aliasName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void ZookeeperReplica::SetAliasName(const string& _aliasName)
 bool ZookeeperReplica::AliasNameHasBeenSet() const
 {
     return m_aliasNameHasBeenSet;
+}
+
+string ZookeeperReplica::GetVpcId() const
+{
+    return m_vpcId;
+}
+
+void ZookeeperReplica::SetVpcId(const string& _vpcId)
+{
+    m_vpcId = _vpcId;
+    m_vpcIdHasBeenSet = true;
+}
+
+bool ZookeeperReplica::VpcIdHasBeenSet() const
+{
+    return m_vpcIdHasBeenSet;
 }
 

@@ -55,11 +55,11 @@ CoreInternalOutcome BlueprintPrice::Deserialize(const rapidjson::Value &value)
 
     if (value.HasMember("Discount") && !value["Discount"].IsNull())
     {
-        if (!value["Discount"].IsInt64())
+        if (!value["Discount"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `BlueprintPrice.Discount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `BlueprintPrice.Discount` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_discount = value["Discount"].GetInt64();
+        m_discount = value["Discount"].GetDouble();
         m_discountHasBeenSet = true;
     }
 
@@ -147,12 +147,12 @@ bool BlueprintPrice::OriginalPriceHasBeenSet() const
     return m_originalPriceHasBeenSet;
 }
 
-int64_t BlueprintPrice::GetDiscount() const
+double BlueprintPrice::GetDiscount() const
 {
     return m_discount;
 }
 
-void BlueprintPrice::SetDiscount(const int64_t& _discount)
+void BlueprintPrice::SetDiscount(const double& _discount)
 {
     m_discount = _discount;
     m_discountHasBeenSet = true;

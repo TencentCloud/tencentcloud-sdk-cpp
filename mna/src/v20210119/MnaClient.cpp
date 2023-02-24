@@ -427,6 +427,49 @@ MnaClient::GetFlowStatisticOutcomeCallable MnaClient::GetFlowStatisticCallable(c
     return task->get_future();
 }
 
+MnaClient::GetMultiFlowStatisticOutcome MnaClient::GetMultiFlowStatistic(const GetMultiFlowStatisticRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetMultiFlowStatistic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetMultiFlowStatisticResponse rsp = GetMultiFlowStatisticResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetMultiFlowStatisticOutcome(rsp);
+        else
+            return GetMultiFlowStatisticOutcome(o.GetError());
+    }
+    else
+    {
+        return GetMultiFlowStatisticOutcome(outcome.GetError());
+    }
+}
+
+void MnaClient::GetMultiFlowStatisticAsync(const GetMultiFlowStatisticRequest& request, const GetMultiFlowStatisticAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetMultiFlowStatistic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MnaClient::GetMultiFlowStatisticOutcomeCallable MnaClient::GetMultiFlowStatisticCallable(const GetMultiFlowStatisticRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetMultiFlowStatisticOutcome()>>(
+        [this, request]()
+        {
+            return this->GetMultiFlowStatistic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MnaClient::GetPublicKeyOutcome MnaClient::GetPublicKey(const GetPublicKeyRequest &request)
 {
     auto outcome = MakeRequest(request, "GetPublicKey");

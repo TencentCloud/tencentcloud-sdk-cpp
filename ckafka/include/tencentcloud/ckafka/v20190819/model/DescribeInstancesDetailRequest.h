@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ckafka/v20190819/model/Filter.h>
+#include <tencentcloud/ckafka/v20190819/model/Tag.h>
 
 
 namespace TencentCloud
@@ -205,6 +206,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdListHasBeenSet() const;
 
+                    /**
+                     * 获取根据标签列表过滤实例（取交集）
+                     * @return TagList 根据标签列表过滤实例（取交集）
+                     */
+                    std::vector<Tag> GetTagList() const;
+
+                    /**
+                     * 设置根据标签列表过滤实例（取交集）
+                     * @param TagList 根据标签列表过滤实例（取交集）
+                     */
+                    void SetTagList(const std::vector<Tag>& _tagList);
+
+                    /**
+                     * 判断参数 TagList 是否已赋值
+                     * @return TagList 是否已赋值
+                     */
+                    bool TagListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +279,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIdList;
                     bool m_instanceIdListHasBeenSet;
+
+                    /**
+                     * 根据标签列表过滤实例（取交集）
+                     */
+                    std::vector<Tag> m_tagList;
+                    bool m_tagListHasBeenSet;
 
                 };
             }

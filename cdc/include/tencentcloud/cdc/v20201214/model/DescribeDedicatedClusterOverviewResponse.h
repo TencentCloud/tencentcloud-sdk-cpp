@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdc/v20201214/model/VpngwBandwidthData.h>
+#include <tencentcloud/cdc/v20201214/model/LocalNetInfo.h>
 
 
 namespace TencentCloud
@@ -67,6 +69,62 @@ namespace TencentCloud
                      */
                     bool HostCountHasBeenSet() const;
 
+                    /**
+                     * 获取vpn通道状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpnConnectionState vpn通道状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpnConnectionState() const;
+
+                    /**
+                     * 判断参数 VpnConnectionState 是否已赋值
+                     * @return VpnConnectionState 是否已赋值
+                     */
+                    bool VpnConnectionStateHasBeenSet() const;
+
+                    /**
+                     * 获取vpn网关监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpngwBandwidthData vpn网关监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VpngwBandwidthData GetVpngwBandwidthData() const;
+
+                    /**
+                     * 判断参数 VpngwBandwidthData 是否已赋值
+                     * @return VpngwBandwidthData 是否已赋值
+                     */
+                    bool VpngwBandwidthDataHasBeenSet() const;
+
+                    /**
+                     * 获取本地网关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LocalNetInfo 本地网关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LocalNetInfo GetLocalNetInfo() const;
+
+                    /**
+                     * 判断参数 LocalNetInfo 是否已赋值
+                     * @return LocalNetInfo 是否已赋值
+                     */
+                    bool LocalNetInfoHasBeenSet() const;
+
+                    /**
+                     * 获取vpn网关通道监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpnConnectionBandwidthData vpn网关通道监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpngwBandwidthData> GetVpnConnectionBandwidthData() const;
+
+                    /**
+                     * 判断参数 VpnConnectionBandwidthData 是否已赋值
+                     * @return VpnConnectionBandwidthData 是否已赋值
+                     */
+                    bool VpnConnectionBandwidthDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +138,34 @@ namespace TencentCloud
                      */
                     uint64_t m_hostCount;
                     bool m_hostCountHasBeenSet;
+
+                    /**
+                     * vpn通道状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpnConnectionState;
+                    bool m_vpnConnectionStateHasBeenSet;
+
+                    /**
+                     * vpn网关监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    VpngwBandwidthData m_vpngwBandwidthData;
+                    bool m_vpngwBandwidthDataHasBeenSet;
+
+                    /**
+                     * 本地网关信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    LocalNetInfo m_localNetInfo;
+                    bool m_localNetInfoHasBeenSet;
+
+                    /**
+                     * vpn网关通道监控数据
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<VpngwBandwidthData> m_vpnConnectionBandwidthData;
+                    bool m_vpnConnectionBandwidthDataHasBeenSet;
 
                 };
             }

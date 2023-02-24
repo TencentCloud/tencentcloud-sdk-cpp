@@ -344,24 +344,6 @@ false：有序签
                     bool UserDataHasBeenSet() const;
 
                     /**
-                     * 获取应用号信息
-                     * @return Agent 应用号信息
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置应用号信息
-                     * @param Agent 应用号信息
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
                      * 获取签署人校验方式
 VerifyCheck: 人脸识别（默认）
 MobileCheck：手机号验证
@@ -426,6 +408,24 @@ MobileCheck：手机号验证
                      * @return SignBeanTag 是否已赋值
                      */
                     bool SignBeanTagHasBeenSet() const;
+
+                    /**
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
 
                 private:
 
@@ -525,12 +525,6 @@ false：有序签
                     bool m_userDataHasBeenSet;
 
                     /**
-                     * 应用号信息
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
                      * 签署人校验方式
 VerifyCheck: 人脸识别（默认）
 MobileCheck：手机号验证
@@ -550,6 +544,12 @@ MobileCheck：手机号验证
                      */
                     int64_t m_signBeanTag;
                     bool m_signBeanTagHasBeenSet;
+
+                    /**
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                 };
             }

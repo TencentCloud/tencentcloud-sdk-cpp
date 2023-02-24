@@ -25,7 +25,11 @@ using namespace std;
 
 DescribeDedicatedClusterOverviewResponse::DescribeDedicatedClusterOverviewResponse() :
     m_cvmCountHasBeenSet(false),
-    m_hostCountHasBeenSet(false)
+    m_hostCountHasBeenSet(false),
+    m_vpnConnectionStateHasBeenSet(false),
+    m_vpngwBandwidthDataHasBeenSet(false),
+    m_localNetInfoHasBeenSet(false),
+    m_vpnConnectionBandwidthDataHasBeenSet(false)
 {
 }
 
@@ -83,6 +87,70 @@ CoreInternalOutcome DescribeDedicatedClusterOverviewResponse::Deserialize(const 
         m_hostCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VpnConnectionState") && !rsp["VpnConnectionState"].IsNull())
+    {
+        if (!rsp["VpnConnectionState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpnConnectionState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpnConnectionState = string(rsp["VpnConnectionState"].GetString());
+        m_vpnConnectionStateHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VpngwBandwidthData") && !rsp["VpngwBandwidthData"].IsNull())
+    {
+        if (!rsp["VpngwBandwidthData"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `VpngwBandwidthData` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_vpngwBandwidthData.Deserialize(rsp["VpngwBandwidthData"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_vpngwBandwidthDataHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LocalNetInfo") && !rsp["LocalNetInfo"].IsNull())
+    {
+        if (!rsp["LocalNetInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `LocalNetInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_localNetInfo.Deserialize(rsp["LocalNetInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_localNetInfoHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("VpnConnectionBandwidthData") && !rsp["VpnConnectionBandwidthData"].IsNull())
+    {
+        if (!rsp["VpnConnectionBandwidthData"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VpnConnectionBandwidthData` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["VpnConnectionBandwidthData"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            VpngwBandwidthData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_vpnConnectionBandwidthData.push_back(item);
+        }
+        m_vpnConnectionBandwidthDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +175,47 @@ string DescribeDedicatedClusterOverviewResponse::ToJsonString() const
         string key = "HostCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_hostCount, allocator);
+    }
+
+    if (m_vpnConnectionStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpnConnectionState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpnConnectionState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpngwBandwidthDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpngwBandwidthData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_vpngwBandwidthData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_localNetInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LocalNetInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_localNetInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_vpnConnectionBandwidthDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpnConnectionBandwidthData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_vpnConnectionBandwidthData.begin(); itr != m_vpnConnectionBandwidthData.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +248,46 @@ uint64_t DescribeDedicatedClusterOverviewResponse::GetHostCount() const
 bool DescribeDedicatedClusterOverviewResponse::HostCountHasBeenSet() const
 {
     return m_hostCountHasBeenSet;
+}
+
+string DescribeDedicatedClusterOverviewResponse::GetVpnConnectionState() const
+{
+    return m_vpnConnectionState;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::VpnConnectionStateHasBeenSet() const
+{
+    return m_vpnConnectionStateHasBeenSet;
+}
+
+VpngwBandwidthData DescribeDedicatedClusterOverviewResponse::GetVpngwBandwidthData() const
+{
+    return m_vpngwBandwidthData;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::VpngwBandwidthDataHasBeenSet() const
+{
+    return m_vpngwBandwidthDataHasBeenSet;
+}
+
+LocalNetInfo DescribeDedicatedClusterOverviewResponse::GetLocalNetInfo() const
+{
+    return m_localNetInfo;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::LocalNetInfoHasBeenSet() const
+{
+    return m_localNetInfoHasBeenSet;
+}
+
+vector<VpngwBandwidthData> DescribeDedicatedClusterOverviewResponse::GetVpnConnectionBandwidthData() const
+{
+    return m_vpnConnectionBandwidthData;
+}
+
+bool DescribeDedicatedClusterOverviewResponse::VpnConnectionBandwidthDataHasBeenSet() const
+{
+    return m_vpnConnectionBandwidthDataHasBeenSet;
 }
 
 

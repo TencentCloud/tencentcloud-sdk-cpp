@@ -177,14 +177,14 @@ LEGAL_PERSON_SEAL：法定代表人章
                     bool SealTypesHasBeenSet() const;
 
                     /**
-                     * 获取主企业代子企业操作 或 渠道子客应用相关信息
-                     * @return Agent 主企业代子企业操作 或 渠道子客应用相关信息
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置主企业代子企业操作 或 渠道子客应用相关信息
-                     * @param Agent 主企业代子企业操作 或 渠道子客应用相关信息
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
+                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -239,7 +239,7 @@ LEGAL_PERSON_SEAL：法定代表人章
                     bool m_sealTypesHasBeenSet;
 
                     /**
-                     * 主企业代子企业操作 或 渠道子客应用相关信息
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

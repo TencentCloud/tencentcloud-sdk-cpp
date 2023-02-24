@@ -267,6 +267,28 @@ namespace TencentCloud
                      */
                     bool PortMappingItemListHasBeenSet() const;
 
+                    /**
+                     * 获取clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ExternalDomain clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetExternalDomain() const;
+
+                    /**
+                     * 设置clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ExternalDomain clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExternalDomain(const std::string& _externalDomain);
+
+                    /**
+                     * 判断参数 ExternalDomain 是否已赋值
+                     * @return ExternalDomain 是否已赋值
+                     */
+                    bool ExternalDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -338,6 +360,13 @@ namespace TencentCloud
                      */
                     std::vector<ServicePortMappingItem> m_portMappingItemList;
                     bool m_portMappingItemListHasBeenSet;
+
+                    /**
+                     * clb domain
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_externalDomain;
+                    bool m_externalDomainHasBeenSet;
 
                 };
             }

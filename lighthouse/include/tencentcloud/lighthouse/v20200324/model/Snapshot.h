@@ -272,13 +272,17 @@ namespace TencentCloud
 
                     /**
                      * 获取快照的创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreatedTime 快照的创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreatedTime() const;
 
                     /**
                      * 设置快照的创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param CreatedTime 快照的创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
@@ -363,6 +367,7 @@ namespace TencentCloud
 
                     /**
                      * 快照的创建时间。
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

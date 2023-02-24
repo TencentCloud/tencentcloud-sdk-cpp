@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool LoadBalancerNameHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡绑定的后端服务的地域信息
-                     * @return TargetRegionInfo 负载均衡绑定的后端服务的地域信息
+                     * 获取设置负载均衡跨地域绑定1.0的后端服务信息
+                     * @return TargetRegionInfo 设置负载均衡跨地域绑定1.0的后端服务信息
                      */
                     TargetRegionInfo GetTargetRegionInfo() const;
 
                     /**
-                     * 设置负载均衡绑定的后端服务的地域信息
-                     * @param TargetRegionInfo 负载均衡绑定的后端服务的地域信息
+                     * 设置设置负载均衡跨地域绑定1.0的后端服务信息
+                     * @param TargetRegionInfo 设置负载均衡跨地域绑定1.0的后端服务信息
                      */
                     void SetTargetRegionInfo(const TargetRegionInfo& _targetRegionInfo);
 
@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool LoadBalancerPassToTargetHasBeenSet() const;
 
                     /**
-                     * 获取是否开启SnatPro
-                     * @return SnatPro 是否开启SnatPro
+                     * 获取是否开启跨地域绑定2.0功能
+                     * @return SnatPro 是否开启跨地域绑定2.0功能
                      */
                     bool GetSnatPro() const;
 
                     /**
-                     * 设置是否开启SnatPro
-                     * @param SnatPro 是否开启SnatPro
+                     * 设置是否开启跨地域绑定2.0功能
+                     * @param SnatPro 是否开启跨地域绑定2.0功能
                      */
                     void SetSnatPro(const bool& _snatPro);
 
@@ -185,7 +185,7 @@ namespace TencentCloud
                     bool m_loadBalancerNameHasBeenSet;
 
                     /**
-                     * 负载均衡绑定的后端服务的地域信息
+                     * 设置负载均衡跨地域绑定1.0的后端服务信息
                      */
                     TargetRegionInfo m_targetRegionInfo;
                     bool m_targetRegionInfoHasBeenSet;
@@ -203,7 +203,7 @@ namespace TencentCloud
                     bool m_loadBalancerPassToTargetHasBeenSet;
 
                     /**
-                     * 是否开启SnatPro
+                     * 是否开启跨地域绑定2.0功能
                      */
                     bool m_snatPro;
                     bool m_snatProHasBeenSet;

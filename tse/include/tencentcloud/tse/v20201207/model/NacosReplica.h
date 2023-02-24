@@ -166,6 +166,28 @@ namespace TencentCloud
                      */
                     bool ZoneIdHasBeenSet() const;
 
+                    /**
+                     * 获取VPC ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VpcId VPC ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVpcId() const;
+
+                    /**
+                     * 设置VPC ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VpcId VPC ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVpcId(const std::string& _vpcId);
+
+                    /**
+                     * 判断参数 VpcId 是否已赋值
+                     * @return VpcId 是否已赋值
+                     */
+                    bool VpcIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +228,13 @@ namespace TencentCloud
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * VPC ID	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_vpcId;
+                    bool m_vpcIdHasBeenSet;
 
                 };
             }

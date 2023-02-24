@@ -25,6 +25,7 @@ FakeURLData::FakeURLData() :
     m_brandNameHasBeenSet(false),
     m_originHasBeenSet(false),
     m_fakeURLHasBeenSet(false),
+    m_fakeDomainHasBeenSet(false),
     m_heatHasBeenSet(false),
     m_blockStatusHasBeenSet(false),
     m_blockNoteHasBeenSet(false),
@@ -86,6 +87,16 @@ CoreInternalOutcome FakeURLData::Deserialize(const rapidjson::Value &value)
         }
         m_fakeURL = string(value["FakeURL"].GetString());
         m_fakeURLHasBeenSet = true;
+    }
+
+    if (value.HasMember("FakeDomain") && !value["FakeDomain"].IsNull())
+    {
+        if (!value["FakeDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FakeURLData.FakeDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fakeDomain = string(value["FakeDomain"].GetString());
+        m_fakeDomainHasBeenSet = true;
     }
 
     if (value.HasMember("Heat") && !value["Heat"].IsNull())
@@ -277,6 +288,14 @@ void FakeURLData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         value.AddMember(iKey, rapidjson::Value(m_fakeURL.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fakeDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FakeDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fakeDomain.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_heatHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -462,6 +481,22 @@ void FakeURLData::SetFakeURL(const string& _fakeURL)
 bool FakeURLData::FakeURLHasBeenSet() const
 {
     return m_fakeURLHasBeenSet;
+}
+
+string FakeURLData::GetFakeDomain() const
+{
+    return m_fakeDomain;
+}
+
+void FakeURLData::SetFakeDomain(const string& _fakeDomain)
+{
+    m_fakeDomain = _fakeDomain;
+    m_fakeDomainHasBeenSet = true;
+}
+
+bool FakeURLData::FakeDomainHasBeenSet() const
+{
+    return m_fakeDomainHasBeenSet;
 }
 
 int64_t FakeURLData::GetHeat() const

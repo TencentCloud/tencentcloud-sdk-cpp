@@ -123,13 +123,13 @@ namespace TencentCloud
                      * 获取折扣。
                      * @return Discount 折扣。
                      */
-                    int64_t GetDiscount() const;
+                    double GetDiscount() const;
 
                     /**
                      * 设置折扣。
                      * @param Discount 折扣。
                      */
-                    void SetDiscount(const int64_t& _discount);
+                    void SetDiscount(const double& _discount);
 
                     /**
                      * 判断参数 Discount 是否已赋值
@@ -184,7 +184,7 @@ namespace TencentCloud
                     /**
                      * 折扣。
                      */
-                    int64_t m_discount;
+                    double m_discount;
                     bool m_discountHasBeenSet;
 
                     /**

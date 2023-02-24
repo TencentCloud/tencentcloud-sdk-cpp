@@ -37,10 +37,10 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_customShowMapHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
     m_userDataHasBeenSet(false),
-    m_agentHasBeenSet(false),
     m_approverVerifyTypeHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
-    m_signBeanTagHasBeenSet(false)
+    m_signBeanTagHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -190,15 +190,6 @@ string CreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_agentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_approverVerifyTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -221,6 +212,15 @@ string CreateFlowByFilesRequest::ToJsonString() const
         string key = "SignBeanTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_signBeanTag, allocator);
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -455,22 +455,6 @@ bool CreateFlowByFilesRequest::UserDataHasBeenSet() const
     return m_userDataHasBeenSet;
 }
 
-Agent CreateFlowByFilesRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void CreateFlowByFilesRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool CreateFlowByFilesRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
-}
-
 string CreateFlowByFilesRequest::GetApproverVerifyType() const
 {
     return m_approverVerifyType;
@@ -517,6 +501,22 @@ void CreateFlowByFilesRequest::SetSignBeanTag(const int64_t& _signBeanTag)
 bool CreateFlowByFilesRequest::SignBeanTagHasBeenSet() const
 {
     return m_signBeanTagHasBeenSet;
+}
+
+Agent CreateFlowByFilesRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void CreateFlowByFilesRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

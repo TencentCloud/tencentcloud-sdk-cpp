@@ -144,6 +144,28 @@ namespace TencentCloud
                      */
                     bool EnableConfigIntranetHasBeenSet() const;
 
+                    /**
+                     * 获取客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternetBandWidth 客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInternetBandWidth() const;
+
+                    /**
+                     * 设置客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternetBandWidth 客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternetBandWidth(const int64_t& _internetBandWidth);
+
+                    /**
+                     * 判断参数 InternetBandWidth 是否已赋值
+                     * @return InternetBandWidth 是否已赋值
+                     */
+                    bool InternetBandWidthHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +199,13 @@ namespace TencentCloud
                      */
                     bool m_enableConfigIntranet;
                     bool m_enableConfigIntranetHasBeenSet;
+
+                    /**
+                     * 客户端公网带宽
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_internetBandWidth;
+                    bool m_internetBandWidthHasBeenSet;
 
                 };
             }
