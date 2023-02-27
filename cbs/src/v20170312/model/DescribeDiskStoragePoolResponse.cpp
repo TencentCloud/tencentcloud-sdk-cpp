@@ -25,6 +25,7 @@ using namespace std;
 
 DescribeDiskStoragePoolResponse::DescribeDiskStoragePoolResponse() :
     m_totalCountHasBeenSet(false),
+    m_cdcSetHasBeenSet(false),
     m_diskStoragePoolSetHasBeenSet(false)
 {
 }
@@ -73,6 +74,26 @@ CoreInternalOutcome DescribeDiskStoragePoolResponse::Deserialize(const string &p
         m_totalCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("CdcSet") && !rsp["CdcSet"].IsNull())
+    {
+        if (!rsp["CdcSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CdcSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CdcSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Cdc item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_cdcSet.push_back(item);
+        }
+        m_cdcSetHasBeenSet = true;
+    }
+
     if (rsp.HasMember("DiskStoragePoolSet") && !rsp["DiskStoragePoolSet"].IsNull())
     {
         if (!rsp["DiskStoragePoolSet"].IsArray())
@@ -111,6 +132,21 @@ string DescribeDiskStoragePoolResponse::ToJsonString() const
         value.AddMember(iKey, m_totalCount, allocator);
     }
 
+    if (m_cdcSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CdcSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_cdcSet.begin(); itr != m_cdcSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     if (m_diskStoragePoolSetHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +182,16 @@ uint64_t DescribeDiskStoragePoolResponse::GetTotalCount() const
 bool DescribeDiskStoragePoolResponse::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+vector<Cdc> DescribeDiskStoragePoolResponse::GetCdcSet() const
+{
+    return m_cdcSet;
+}
+
+bool DescribeDiskStoragePoolResponse::CdcSetHasBeenSet() const
+{
+    return m_cdcSetHasBeenSet;
 }
 
 vector<Cdc> DescribeDiskStoragePoolResponse::GetDiskStoragePoolSet() const

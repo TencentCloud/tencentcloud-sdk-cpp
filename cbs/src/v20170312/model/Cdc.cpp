@@ -28,7 +28,9 @@ Cdc::Cdc() :
     m_cdcResourceHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_diskTypeHasBeenSet(false),
-    m_expiredTimeHasBeenSet(false)
+    m_expiredTimeHasBeenSet(false),
+    m_createdTimeHasBeenSet(false),
+    m_diskNumberHasBeenSet(false)
 {
 }
 
@@ -124,6 +126,26 @@ CoreInternalOutcome Cdc::Deserialize(const rapidjson::Value &value)
         m_expiredTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("CreatedTime") && !value["CreatedTime"].IsNull())
+    {
+        if (!value["CreatedTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cdc.CreatedTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createdTime = string(value["CreatedTime"].GetString());
+        m_createdTimeHasBeenSet = true;
+    }
+
+    if (value.HasMember("DiskNumber") && !value["DiskNumber"].IsNull())
+    {
+        if (!value["DiskNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cdc.DiskNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskNumber = value["DiskNumber"].GetUint64();
+        m_diskNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +216,22 @@ void Cdc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "ExpiredTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_expiredTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_createdTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreatedTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createdTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_diskNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_diskNumber, allocator);
     }
 
 }
@@ -325,5 +363,37 @@ void Cdc::SetExpiredTime(const string& _expiredTime)
 bool Cdc::ExpiredTimeHasBeenSet() const
 {
     return m_expiredTimeHasBeenSet;
+}
+
+string Cdc::GetCreatedTime() const
+{
+    return m_createdTime;
+}
+
+void Cdc::SetCreatedTime(const string& _createdTime)
+{
+    m_createdTime = _createdTime;
+    m_createdTimeHasBeenSet = true;
+}
+
+bool Cdc::CreatedTimeHasBeenSet() const
+{
+    return m_createdTimeHasBeenSet;
+}
+
+uint64_t Cdc::GetDiskNumber() const
+{
+    return m_diskNumber;
+}
+
+void Cdc::SetDiskNumber(const uint64_t& _diskNumber)
+{
+    m_diskNumber = _diskNumber;
+    m_diskNumberHasBeenSet = true;
+}
+
+bool Cdc::DiskNumberHasBeenSet() const
+{
+    return m_diskNumberHasBeenSet;
 }
 

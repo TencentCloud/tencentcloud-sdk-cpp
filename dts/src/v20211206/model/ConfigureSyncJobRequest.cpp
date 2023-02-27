@@ -26,7 +26,6 @@ ConfigureSyncJobRequest::ConfigureSyncJobRequest() :
     m_jobIdHasBeenSet(false),
     m_srcAccessTypeHasBeenSet(false),
     m_dstAccessTypeHasBeenSet(false),
-    m_optionsHasBeenSet(false),
     m_objectsHasBeenSet(false),
     m_jobNameHasBeenSet(false),
     m_jobModeHasBeenSet(false),
@@ -34,6 +33,7 @@ ConfigureSyncJobRequest::ConfigureSyncJobRequest() :
     m_expectRunTimeHasBeenSet(false),
     m_srcInfoHasBeenSet(false),
     m_dstInfoHasBeenSet(false),
+    m_optionsHasBeenSet(false),
     m_autoRetryTimeRangeMinutesHasBeenSet(false)
 {
 }
@@ -67,15 +67,6 @@ string ConfigureSyncJobRequest::ToJsonString() const
         string key = "DstAccessType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dstAccessType.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_optionsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Options";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_options.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_objectsHasBeenSet)
@@ -135,6 +126,15 @@ string ConfigureSyncJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dstInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_optionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Options";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_options.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_autoRetryTimeRangeMinutesHasBeenSet)
@@ -199,22 +199,6 @@ void ConfigureSyncJobRequest::SetDstAccessType(const string& _dstAccessType)
 bool ConfigureSyncJobRequest::DstAccessTypeHasBeenSet() const
 {
     return m_dstAccessTypeHasBeenSet;
-}
-
-Options ConfigureSyncJobRequest::GetOptions() const
-{
-    return m_options;
-}
-
-void ConfigureSyncJobRequest::SetOptions(const Options& _options)
-{
-    m_options = _options;
-    m_optionsHasBeenSet = true;
-}
-
-bool ConfigureSyncJobRequest::OptionsHasBeenSet() const
-{
-    return m_optionsHasBeenSet;
 }
 
 Objects ConfigureSyncJobRequest::GetObjects() const
@@ -327,6 +311,22 @@ void ConfigureSyncJobRequest::SetDstInfo(const Endpoint& _dstInfo)
 bool ConfigureSyncJobRequest::DstInfoHasBeenSet() const
 {
     return m_dstInfoHasBeenSet;
+}
+
+Options ConfigureSyncJobRequest::GetOptions() const
+{
+    return m_options;
+}
+
+void ConfigureSyncJobRequest::SetOptions(const Options& _options)
+{
+    m_options = _options;
+    m_optionsHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::OptionsHasBeenSet() const
+{
+    return m_optionsHasBeenSet;
 }
 
 int64_t ConfigureSyncJobRequest::GetAutoRetryTimeRangeMinutes() const

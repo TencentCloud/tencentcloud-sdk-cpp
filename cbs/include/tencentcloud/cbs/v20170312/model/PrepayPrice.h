@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cbs/v20170312/model/DetailPrice.h>
 
 
 namespace TencentCloud
@@ -244,6 +245,28 @@ namespace TencentCloud
                      */
                     bool UnitPriceHasBeenSet() const;
 
+                    /**
+                     * 获取计费项目明细列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DetailPrices 计费项目明细列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetailPrice> GetDetailPrices() const;
+
+                    /**
+                     * 设置计费项目明细列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DetailPrices 计费项目明细列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDetailPrices(const std::vector<DetailPrice>& _detailPrices);
+
+                    /**
+                     * 判断参数 DetailPrices 是否已赋值
+                     * @return DetailPrices 是否已赋值
+                     */
+                    bool DetailPricesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +331,13 @@ namespace TencentCloud
                      */
                     double m_unitPrice;
                     bool m_unitPriceHasBeenSet;
+
+                    /**
+                     * 计费项目明细列表。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<DetailPrice> m_detailPrices;
+                    bool m_detailPricesHasBeenSet;
 
                 };
             }

@@ -36,7 +36,9 @@ AutoSnapshotPolicy::AutoSnapshotPolicy() :
     m_instanceIdSetHasBeenSet(false),
     m_retentionMonthsHasBeenSet(false),
     m_retentionAmountHasBeenSet(false),
-    m_advancedRetentionPolicyHasBeenSet(false)
+    m_advancedRetentionPolicyHasBeenSet(false),
+    m_copyFromAccountUinHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -228,6 +230,36 @@ CoreInternalOutcome AutoSnapshotPolicy::Deserialize(const rapidjson::Value &valu
         m_advancedRetentionPolicyHasBeenSet = true;
     }
 
+    if (value.HasMember("CopyFromAccountUin") && !value["CopyFromAccountUin"].IsNull())
+    {
+        if (!value["CopyFromAccountUin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.CopyFromAccountUin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_copyFromAccountUin = string(value["CopyFromAccountUin"].GetString());
+        m_copyFromAccountUinHasBeenSet = true;
+    }
+
+    if (value.HasMember("Tags") && !value["Tags"].IsNull())
+    {
+        if (!value["Tags"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicy.Tags` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Tags"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Tag item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_tags.push_back(item);
+        }
+        m_tagsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -379,6 +411,29 @@ void AutoSnapshotPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_advancedRetentionPolicy.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_copyFromAccountUinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CopyFromAccountUin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_copyFromAccountUin.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tagsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Tags";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -638,5 +693,37 @@ void AutoSnapshotPolicy::SetAdvancedRetentionPolicy(const AdvancedRetentionPolic
 bool AutoSnapshotPolicy::AdvancedRetentionPolicyHasBeenSet() const
 {
     return m_advancedRetentionPolicyHasBeenSet;
+}
+
+string AutoSnapshotPolicy::GetCopyFromAccountUin() const
+{
+    return m_copyFromAccountUin;
+}
+
+void AutoSnapshotPolicy::SetCopyFromAccountUin(const string& _copyFromAccountUin)
+{
+    m_copyFromAccountUin = _copyFromAccountUin;
+    m_copyFromAccountUinHasBeenSet = true;
+}
+
+bool AutoSnapshotPolicy::CopyFromAccountUinHasBeenSet() const
+{
+    return m_copyFromAccountUinHasBeenSet;
+}
+
+vector<Tag> AutoSnapshotPolicy::GetTags() const
+{
+    return m_tags;
+}
+
+void AutoSnapshotPolicy::SetTags(const vector<Tag>& _tags)
+{
+    m_tags = _tags;
+    m_tagsHasBeenSet = true;
+}
+
+bool AutoSnapshotPolicy::TagsHasBeenSet() const
+{
+    return m_tagsHasBeenSet;
 }
 

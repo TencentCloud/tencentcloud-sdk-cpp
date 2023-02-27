@@ -24,6 +24,7 @@ Placement::Placement() :
     m_zoneHasBeenSet(false),
     m_cageIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
     m_cdcNameHasBeenSet(false),
     m_cdcIdHasBeenSet(false),
     m_dedicatedClusterIdHasBeenSet(false)
@@ -63,6 +64,16 @@ CoreInternalOutcome Placement::Deserialize(const rapidjson::Value &value)
         }
         m_projectId = value["ProjectId"].GetUint64();
         m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Placement.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
     }
 
     if (value.HasMember("CdcName") && !value["CdcName"].IsNull())
@@ -124,6 +135,14 @@ void Placement::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_cdcNameHasBeenSet)
@@ -199,6 +218,22 @@ void Placement::SetProjectId(const uint64_t& _projectId)
 bool Placement::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+string Placement::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void Placement::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool Placement::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
 }
 
 string Placement::GetCdcName() const

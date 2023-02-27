@@ -49,24 +49,31 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/DescribeAutoScalingConfigurationResponse.h
   include/tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionRequest.h
   include/tencentcloud/thpc/v20220401/model/ClusterOverview.h
+  include/tencentcloud/thpc/v20220401/model/QueueOverview.h
   include/tencentcloud/thpc/v20220401/model/DescribeClustersRequest.h
   include/tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationRequest.h
-  include/tencentcloud/thpc/v20220401/model/LoginSettings.h
+  include/tencentcloud/thpc/v20220401/model/NodeOverview.h
+  include/tencentcloud/thpc/v20220401/model/DescribeNodesRequest.h
   include/tencentcloud/thpc/v20220401/model/DeleteNodesResponse.h
   include/tencentcloud/thpc/v20220401/model/AddClusterStorageOptionResponse.h
   include/tencentcloud/thpc/v20220401/model/StorageOptionOverview.h
   include/tencentcloud/thpc/v20220401/model/DeleteClusterResponse.h
   include/tencentcloud/thpc/v20220401/model/ExpansionNodeConfig.h
   include/tencentcloud/thpc/v20220401/model/NodeActivity.h
-  include/tencentcloud/thpc/v20220401/model/QueueConfig.h
-  include/tencentcloud/thpc/v20220401/model/ClusterActivity.h
+  include/tencentcloud/thpc/v20220401/model/Placement.h
+  include/tencentcloud/thpc/v20220401/model/AddQueueRequest.h
   include/tencentcloud/thpc/v20220401/model/LoginNodeOverview.h
   include/tencentcloud/thpc/v20220401/model/CFSOption.h
+  include/tencentcloud/thpc/v20220401/model/ClusterActivity.h
   include/tencentcloud/thpc/v20220401/model/CreateClusterResponse.h
+  include/tencentcloud/thpc/v20220401/model/DescribeQueuesRequest.h
   include/tencentcloud/thpc/v20220401/model/SetAutoScalingConfigurationResponse.h
   include/tencentcloud/thpc/v20220401/model/CreateClusterRequest.h
+  include/tencentcloud/thpc/v20220401/model/AddQueueResponse.h
   include/tencentcloud/thpc/v20220401/model/DescribeClusterStorageOptionResponse.h
+  include/tencentcloud/thpc/v20220401/model/DescribeQueuesResponse.h
   include/tencentcloud/thpc/v20220401/model/GooseFSOptionOverview.h
+  include/tencentcloud/thpc/v20220401/model/QueueConfig.h
   include/tencentcloud/thpc/v20220401/model/InstanceChargePrepaid.h
   include/tencentcloud/thpc/v20220401/model/Tag.h
   include/tencentcloud/thpc/v20220401/model/LoginNode.h
@@ -76,8 +83,11 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/DeleteClusterRequest.h
   include/tencentcloud/thpc/v20220401/model/ComputeNodeOverview.h
   include/tencentcloud/thpc/v20220401/model/SystemDisk.h
-  include/tencentcloud/thpc/v20220401/model/Placement.h
+  include/tencentcloud/thpc/v20220401/model/LoginSettings.h
+  include/tencentcloud/thpc/v20220401/model/GooseFSOption.h
   include/tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesRequest.h
+  include/tencentcloud/thpc/v20220401/model/DeleteQueueRequest.h
+  include/tencentcloud/thpc/v20220401/model/Filter.h
   include/tencentcloud/thpc/v20220401/model/AddNodesRequest.h
   include/tencentcloud/thpc/v20220401/model/CFSOptionOverview.h
   include/tencentcloud/thpc/v20220401/model/DeleteClusterStorageOptionRequest.h
@@ -93,9 +103,10 @@ set(thpc_public_header_model
   include/tencentcloud/thpc/v20220401/model/DeleteNodesRequest.h
   include/tencentcloud/thpc/v20220401/model/DescribeClustersResponse.h
   include/tencentcloud/thpc/v20220401/model/DeleteClusterStorageOptionResponse.h
-  include/tencentcloud/thpc/v20220401/model/GooseFSOption.h
+  include/tencentcloud/thpc/v20220401/model/DescribeNodesResponse.h
   include/tencentcloud/thpc/v20220401/model/DescribeClusterActivitiesResponse.h
   include/tencentcloud/thpc/v20220401/model/DataDisk.h
+  include/tencentcloud/thpc/v20220401/model/DeleteQueueResponse.h
   include/tencentcloud/thpc/v20220401/model/AddNodesResponse.h
   )
 
@@ -131,24 +142,31 @@ set(thpc_src
   src/v20220401/model/DescribeAutoScalingConfigurationResponse.cpp
   src/v20220401/model/DescribeClusterStorageOptionRequest.cpp
   src/v20220401/model/ClusterOverview.cpp
+  src/v20220401/model/QueueOverview.cpp
   src/v20220401/model/DescribeClustersRequest.cpp
   src/v20220401/model/SetAutoScalingConfigurationRequest.cpp
-  src/v20220401/model/LoginSettings.cpp
+  src/v20220401/model/NodeOverview.cpp
+  src/v20220401/model/DescribeNodesRequest.cpp
   src/v20220401/model/DeleteNodesResponse.cpp
   src/v20220401/model/AddClusterStorageOptionResponse.cpp
   src/v20220401/model/StorageOptionOverview.cpp
   src/v20220401/model/DeleteClusterResponse.cpp
   src/v20220401/model/ExpansionNodeConfig.cpp
   src/v20220401/model/NodeActivity.cpp
-  src/v20220401/model/QueueConfig.cpp
-  src/v20220401/model/ClusterActivity.cpp
+  src/v20220401/model/Placement.cpp
+  src/v20220401/model/AddQueueRequest.cpp
   src/v20220401/model/LoginNodeOverview.cpp
   src/v20220401/model/CFSOption.cpp
+  src/v20220401/model/ClusterActivity.cpp
   src/v20220401/model/CreateClusterResponse.cpp
+  src/v20220401/model/DescribeQueuesRequest.cpp
   src/v20220401/model/SetAutoScalingConfigurationResponse.cpp
   src/v20220401/model/CreateClusterRequest.cpp
+  src/v20220401/model/AddQueueResponse.cpp
   src/v20220401/model/DescribeClusterStorageOptionResponse.cpp
+  src/v20220401/model/DescribeQueuesResponse.cpp
   src/v20220401/model/GooseFSOptionOverview.cpp
+  src/v20220401/model/QueueConfig.cpp
   src/v20220401/model/InstanceChargePrepaid.cpp
   src/v20220401/model/Tag.cpp
   src/v20220401/model/LoginNode.cpp
@@ -158,8 +176,11 @@ set(thpc_src
   src/v20220401/model/DeleteClusterRequest.cpp
   src/v20220401/model/ComputeNodeOverview.cpp
   src/v20220401/model/SystemDisk.cpp
-  src/v20220401/model/Placement.cpp
+  src/v20220401/model/LoginSettings.cpp
+  src/v20220401/model/GooseFSOption.cpp
   src/v20220401/model/DescribeClusterActivitiesRequest.cpp
+  src/v20220401/model/DeleteQueueRequest.cpp
+  src/v20220401/model/Filter.cpp
   src/v20220401/model/AddNodesRequest.cpp
   src/v20220401/model/CFSOptionOverview.cpp
   src/v20220401/model/DeleteClusterStorageOptionRequest.cpp
@@ -175,9 +196,10 @@ set(thpc_src
   src/v20220401/model/DeleteNodesRequest.cpp
   src/v20220401/model/DescribeClustersResponse.cpp
   src/v20220401/model/DeleteClusterStorageOptionResponse.cpp
-  src/v20220401/model/GooseFSOption.cpp
+  src/v20220401/model/DescribeNodesResponse.cpp
   src/v20220401/model/DescribeClusterActivitiesResponse.cpp
   src/v20220401/model/DataDisk.cpp
+  src/v20220401/model/DeleteQueueResponse.cpp
   src/v20220401/model/AddNodesResponse.cpp
   )
 

@@ -27,7 +27,8 @@ UpdateEventBusRequest::UpdateEventBusRequest() :
     m_descriptionHasBeenSet(false),
     m_eventBusNameHasBeenSet(false),
     m_saveDaysHasBeenSet(false),
-    m_logTopicIdHasBeenSet(false)
+    m_logTopicIdHasBeenSet(false),
+    m_enableStoreHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string UpdateEventBusRequest::ToJsonString() const
         string key = "LogTopicId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_logTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableStoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableStore";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableStore, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void UpdateEventBusRequest::SetLogTopicId(const string& _logTopicId)
 bool UpdateEventBusRequest::LogTopicIdHasBeenSet() const
 {
     return m_logTopicIdHasBeenSet;
+}
+
+bool UpdateEventBusRequest::GetEnableStore() const
+{
+    return m_enableStore;
+}
+
+void UpdateEventBusRequest::SetEnableStore(const bool& _enableStore)
+{
+    m_enableStore = _enableStore;
+    m_enableStoreHasBeenSet = true;
+}
+
+bool UpdateEventBusRequest::EnableStoreHasBeenSet() const
+{
+    return m_enableStoreHasBeenSet;
 }
 
 

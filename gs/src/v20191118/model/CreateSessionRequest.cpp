@@ -23,11 +23,11 @@ using namespace TencentCloud::Gs::V20191118::Model;
 using namespace std;
 
 CreateSessionRequest::CreateSessionRequest() :
-    m_clientSessionHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_gameIdHasBeenSet(false),
     m_gameRegionHasBeenSet(false),
     m_gameParasHasBeenSet(false),
+    m_clientSessionHasBeenSet(false),
     m_resolutionHasBeenSet(false),
     m_imageUrlHasBeenSet(false),
     m_setNoHasBeenSet(false),
@@ -50,14 +50,6 @@ string CreateSessionRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_clientSessionHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ClientSession";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_clientSession.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_userIdHasBeenSet)
     {
@@ -89,6 +81,14 @@ string CreateSessionRequest::ToJsonString() const
         string key = "GameParas";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_gameParas.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clientSessionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClientSession";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clientSession.c_str(), allocator).Move(), allocator);
     }
 
     if (m_resolutionHasBeenSet)
@@ -203,22 +203,6 @@ string CreateSessionRequest::ToJsonString() const
 }
 
 
-string CreateSessionRequest::GetClientSession() const
-{
-    return m_clientSession;
-}
-
-void CreateSessionRequest::SetClientSession(const string& _clientSession)
-{
-    m_clientSession = _clientSession;
-    m_clientSessionHasBeenSet = true;
-}
-
-bool CreateSessionRequest::ClientSessionHasBeenSet() const
-{
-    return m_clientSessionHasBeenSet;
-}
-
 string CreateSessionRequest::GetUserId() const
 {
     return m_userId;
@@ -281,6 +265,22 @@ void CreateSessionRequest::SetGameParas(const string& _gameParas)
 bool CreateSessionRequest::GameParasHasBeenSet() const
 {
     return m_gameParasHasBeenSet;
+}
+
+string CreateSessionRequest::GetClientSession() const
+{
+    return m_clientSession;
+}
+
+void CreateSessionRequest::SetClientSession(const string& _clientSession)
+{
+    m_clientSession = _clientSession;
+    m_clientSessionHasBeenSet = true;
+}
+
+bool CreateSessionRequest::ClientSessionHasBeenSet() const
+{
+    return m_clientSessionHasBeenSet;
 }
 
 string CreateSessionRequest::GetResolution() const

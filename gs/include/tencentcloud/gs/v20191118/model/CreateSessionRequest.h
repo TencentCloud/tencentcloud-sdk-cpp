@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端session信息，从JSSDK请求中获得
-                     * @return ClientSession 客户端session信息，从JSSDK请求中获得
-                     */
-                    std::string GetClientSession() const;
-
-                    /**
-                     * 设置客户端session信息，从JSSDK请求中获得
-                     * @param ClientSession 客户端session信息，从JSSDK请求中获得
-                     */
-                    void SetClientSession(const std::string& _clientSession);
-
-                    /**
-                     * 判断参数 ClientSession 是否已赋值
-                     * @return ClientSession 是否已赋值
-                     */
-                    bool ClientSessionHasBeenSet() const;
-
-                    /**
                      * 获取唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
                      * @return UserId 唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
                      */
@@ -131,6 +113,24 @@ namespace TencentCloud
                      * @return GameParas 是否已赋值
                      */
                     bool GameParasHasBeenSet() const;
+
+                    /**
+                     * 获取客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
+                     * @return ClientSession 客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
+                     */
+                    std::string GetClientSession() const;
+
+                    /**
+                     * 设置客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
+                     * @param ClientSession 客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
+                     */
+                    void SetClientSession(const std::string& _clientSession);
+
+                    /**
+                     * 判断参数 ClientSession 是否已赋值
+                     * @return ClientSession 是否已赋值
+                     */
+                    bool ClientSessionHasBeenSet() const;
 
                     /**
                      * 获取分辨率,，可设置为1080p或720p或1920x1080格式
@@ -377,12 +377,6 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                 private:
 
                     /**
-                     * 客户端session信息，从JSSDK请求中获得
-                     */
-                    std::string m_clientSession;
-                    bool m_clientSessionHasBeenSet;
-
-                    /**
                      * 唯一用户身份标识，由业务方自定义，平台不予理解。（可根据业务需要决定使用用户的唯一身份标识或是使用时间戳随机生成；在用户重连时应保持UserId不变）
                      */
                     std::string m_userId;
@@ -405,6 +399,12 @@ RunWithoutClient：允许无客户端连接的情况下仍保持云端 App 运�
                      */
                     std::string m_gameParas;
                     bool m_gameParasHasBeenSet;
+
+                    /**
+                     * 客户端session信息，从JSSDK请求中获得。特殊的，当 RunMode 参数为 RunWithoutClient 时，该字段可以为空
+                     */
+                    std::string m_clientSession;
+                    bool m_clientSessionHasBeenSet;
 
                     /**
                      * 分辨率,，可设置为1080p或720p或1920x1080格式

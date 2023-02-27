@@ -59,7 +59,9 @@ Disk::Disk() :
     m_deleteSnapshotHasBeenSet(false),
     m_diskBackupQuotaHasBeenSet(false),
     m_diskBackupCountHasBeenSet(false),
-    m_instanceTypeHasBeenSet(false)
+    m_instanceTypeHasBeenSet(false),
+    m_lastAttachInsIdHasBeenSet(false),
+    m_errorPromptHasBeenSet(false)
 {
 }
 
@@ -481,6 +483,26 @@ CoreInternalOutcome Disk::Deserialize(const rapidjson::Value &value)
         m_instanceTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("LastAttachInsId") && !value["LastAttachInsId"].IsNull())
+    {
+        if (!value["LastAttachInsId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.LastAttachInsId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastAttachInsId = string(value["LastAttachInsId"].GetString());
+        m_lastAttachInsIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrorPrompt") && !value["ErrorPrompt"].IsNull())
+    {
+        if (!value["ErrorPrompt"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Disk.ErrorPrompt` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_errorPrompt = string(value["ErrorPrompt"].GetString());
+        m_errorPromptHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -816,6 +838,22 @@ void Disk::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "InstanceType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lastAttachInsIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastAttachInsId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lastAttachInsId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_errorPromptHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrorPrompt";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_errorPrompt.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1443,5 +1481,37 @@ void Disk::SetInstanceType(const string& _instanceType)
 bool Disk::InstanceTypeHasBeenSet() const
 {
     return m_instanceTypeHasBeenSet;
+}
+
+string Disk::GetLastAttachInsId() const
+{
+    return m_lastAttachInsId;
+}
+
+void Disk::SetLastAttachInsId(const string& _lastAttachInsId)
+{
+    m_lastAttachInsId = _lastAttachInsId;
+    m_lastAttachInsIdHasBeenSet = true;
+}
+
+bool Disk::LastAttachInsIdHasBeenSet() const
+{
+    return m_lastAttachInsIdHasBeenSet;
+}
+
+string Disk::GetErrorPrompt() const
+{
+    return m_errorPrompt;
+}
+
+void Disk::SetErrorPrompt(const string& _errorPrompt)
+{
+    m_errorPrompt = _errorPrompt;
+    m_errorPromptHasBeenSet = true;
+}
+
+bool Disk::ErrorPromptHasBeenSet() const
+{
+    return m_errorPromptHasBeenSet;
 }
 

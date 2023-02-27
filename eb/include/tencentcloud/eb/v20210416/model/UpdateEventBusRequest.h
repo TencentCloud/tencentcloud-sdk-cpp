@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool LogTopicIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启存储
+                     * @return EnableStore 是否开启存储
+                     */
+                    bool GetEnableStore() const;
+
+                    /**
+                     * 设置是否开启存储
+                     * @param EnableStore 是否开启存储
+                     */
+                    void SetEnableStore(const bool& _enableStore);
+
+                    /**
+                     * 判断参数 EnableStore 是否已赋值
+                     * @return EnableStore 是否已赋值
+                     */
+                    bool EnableStoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_logTopicId;
                     bool m_logTopicIdHasBeenSet;
+
+                    /**
+                     * 是否开启存储
+                     */
+                    bool m_enableStore;
+                    bool m_enableStoreHasBeenSet;
 
                 };
             }

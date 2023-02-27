@@ -335,17 +335,17 @@ namespace TencentCloud
                     bool ProceduresHasBeenSet() const;
 
                     /**
-                     * 获取触发器迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * 获取触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TriggerMode 触发器迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * @return TriggerMode 触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTriggerMode() const;
 
                     /**
-                     * 设置触发器迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * 设置触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TriggerMode 触发器迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * @param TriggerMode 触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTriggerMode(const std::string& _triggerMode);
@@ -379,17 +379,17 @@ namespace TencentCloud
                     bool TriggersHasBeenSet() const;
 
                     /**
-                     * 获取事件迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * 获取事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return EventMode 事件迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * @return EventMode 事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEventMode() const;
 
                     /**
-                     * 设置事件迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * 设置事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param EventMode 事件迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * @param EventMode 事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEventMode(const std::string& _eventMode);
@@ -516,7 +516,7 @@ namespace TencentCloud
                     bool m_proceduresHasBeenSet;
 
                     /**
-                     * 触发器迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * 触发器迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_triggerMode;
@@ -530,7 +530,7 @@ namespace TencentCloud
                     bool m_triggersHasBeenSet;
 
                     /**
-                     * 事件迁移模式，All(为当前对象下的所有对象)，partial(部分对象)，如果整库同步此处应该为All。
+                     * 事件迁移模式，All(为当前对象下的所有对象)，Partial(部分对象)，如果整库同步此处应该为All。数据同步暂不支持此高级对象。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eventMode;

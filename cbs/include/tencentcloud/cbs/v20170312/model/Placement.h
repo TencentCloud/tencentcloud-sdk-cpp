@@ -105,6 +105,28 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
+                     * 获取实例所属项目名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectName 实例所属项目名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProjectName() const;
+
+                    /**
+                     * 设置实例所属项目名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectName 实例所属项目名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectName(const std::string& _projectName);
+
+                    /**
+                     * 判断参数 ProjectName 是否已赋值
+                     * @return ProjectName 是否已赋值
+                     */
+                    bool ProjectNameHasBeenSet() const;
+
+                    /**
                      * 获取独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CdcName 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。
@@ -186,6 +208,13 @@ namespace TencentCloud
                      */
                     uint64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 实例所属项目名称。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectName;
+                    bool m_projectNameHasBeenSet;
 
                     /**
                      * 独享集群名字。作为入参时，忽略。作为出参时，表示云硬盘所属的独享集群名，可为空。

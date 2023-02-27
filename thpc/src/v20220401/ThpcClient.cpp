@@ -126,6 +126,49 @@ ThpcClient::AddNodesOutcomeCallable ThpcClient::AddNodesCallable(const AddNodesR
     return task->get_future();
 }
 
+ThpcClient::AddQueueOutcome ThpcClient::AddQueue(const AddQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddQueueResponse rsp = AddQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddQueueOutcome(rsp);
+        else
+            return AddQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return AddQueueOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::AddQueueAsync(const AddQueueRequest& request, const AddQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::AddQueueOutcomeCallable ThpcClient::AddQueueCallable(const AddQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->AddQueue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::BindAutoScalingGroupOutcome ThpcClient::BindAutoScalingGroup(const BindAutoScalingGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "BindAutoScalingGroup");
@@ -341,6 +384,49 @@ ThpcClient::DeleteNodesOutcomeCallable ThpcClient::DeleteNodesCallable(const Del
     return task->get_future();
 }
 
+ThpcClient::DeleteQueueOutcome ThpcClient::DeleteQueue(const DeleteQueueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteQueue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteQueueResponse rsp = DeleteQueueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteQueueOutcome(rsp);
+        else
+            return DeleteQueueOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteQueueOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DeleteQueueAsync(const DeleteQueueRequest& request, const DeleteQueueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteQueue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DeleteQueueOutcomeCallable ThpcClient::DeleteQueueCallable(const DeleteQueueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteQueueOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteQueue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ThpcClient::DescribeAutoScalingConfigurationOutcome ThpcClient::DescribeAutoScalingConfiguration(const DescribeAutoScalingConfigurationRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoScalingConfiguration");
@@ -506,6 +592,92 @@ ThpcClient::DescribeClustersOutcomeCallable ThpcClient::DescribeClustersCallable
         [this, request]()
         {
             return this->DescribeClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::DescribeNodesOutcome ThpcClient::DescribeNodes(const DescribeNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeNodesResponse rsp = DescribeNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeNodesOutcome(rsp);
+        else
+            return DescribeNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeNodesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeNodesAsync(const DescribeNodesRequest& request, const DescribeNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeNodesOutcomeCallable ThpcClient::DescribeNodesCallable(const DescribeNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ThpcClient::DescribeQueuesOutcome ThpcClient::DescribeQueues(const DescribeQueuesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeQueues");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeQueuesResponse rsp = DescribeQueuesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeQueuesOutcome(rsp);
+        else
+            return DescribeQueuesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeQueuesOutcome(outcome.GetError());
+    }
+}
+
+void ThpcClient::DescribeQueuesAsync(const DescribeQueuesRequest& request, const DescribeQueuesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeQueues(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ThpcClient::DescribeQueuesOutcomeCallable ThpcClient::DescribeQueuesCallable(const DescribeQueuesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeQueuesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeQueues(request);
         }
     );
 

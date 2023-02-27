@@ -62,6 +62,24 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
+                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     */
+                    InstanceChargePrepaid GetInstanceChargePrepaid() const;
+
+                    /**
+                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     */
+                    void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
+
+                    /**
+                     * 判断参数 InstanceChargePrepaid 是否已赋值
+                     * @return InstanceChargePrepaid 是否已赋值
+                     */
+                    bool InstanceChargePrepaidHasBeenSet() const;
+
+                    /**
                      * 获取创建数量，默认为 1。
                      * @return InstanceCount 创建数量，默认为 1。
                      */
@@ -78,24 +96,6 @@ namespace TencentCloud
                      * @return InstanceCount 是否已赋值
                      */
                     bool InstanceCountHasBeenSet() const;
-
-                    /**
-                     * 获取预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     * @return InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     */
-                    InstanceChargePrepaid GetInstanceChargePrepaid() const;
-
-                    /**
-                     * 设置预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     * @param InstanceChargePrepaid 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     */
-                    void SetInstanceChargePrepaid(const InstanceChargePrepaid& _instanceChargePrepaid);
-
-                    /**
-                     * 判断参数 InstanceChargePrepaid 是否已赋值
-                     * @return InstanceChargePrepaid 是否已赋值
-                     */
-                    bool InstanceChargePrepaidHasBeenSet() const;
 
                     /**
                      * 获取应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。
@@ -124,16 +124,16 @@ namespace TencentCloud
                     bool m_bundleIdHasBeenSet;
 
                     /**
+                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。
+                     */
+                    InstanceChargePrepaid m_instanceChargePrepaid;
+                    bool m_instanceChargePrepaidHasBeenSet;
+
+                    /**
                      * 创建数量，默认为 1。
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
-
-                    /**
-                     * 预付费模式，即包年包月相关参数设置。通过该参数可以指定包年包月实例的购买时长、是否设置自动续费等属性。若指定实例的付费模式为预付费则该参数必传。
-                     */
-                    InstanceChargePrepaid m_instanceChargePrepaid;
-                    bool m_instanceChargePrepaidHasBeenSet;
 
                     /**
                      * 应用镜像 ID，使用收费应用镜像时必填。可通过[DescribeBlueprints](https://cloud.tencent.com/document/product/1207/47689)接口返回值中的BlueprintId获取。

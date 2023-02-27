@@ -802,6 +802,50 @@ namespace TencentCloud
                      */
                     bool InstanceTypeHasBeenSet() const;
 
+                    /**
+                     * 获取云硬盘最后一次挂载的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastAttachInsId 云硬盘最后一次挂载的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLastAttachInsId() const;
+
+                    /**
+                     * 设置云硬盘最后一次挂载的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastAttachInsId 云硬盘最后一次挂载的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastAttachInsId(const std::string& _lastAttachInsId);
+
+                    /**
+                     * 判断参数 LastAttachInsId 是否已赋值
+                     * @return LastAttachInsId 是否已赋值
+                     */
+                    bool LastAttachInsIdHasBeenSet() const;
+
+                    /**
+                     * 获取云硬盘最后一次操作错误提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ErrorPrompt 云硬盘最后一次操作错误提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetErrorPrompt() const;
+
+                    /**
+                     * 设置云硬盘最后一次操作错误提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ErrorPrompt 云硬盘最后一次操作错误提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetErrorPrompt(const std::string& _errorPrompt);
+
+                    /**
+                     * 判断参数 ErrorPrompt 是否已赋值
+                     * @return ErrorPrompt 是否已赋值
+                     */
+                    bool ErrorPromptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1050,6 +1094,20 @@ namespace TencentCloud
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
+
+                    /**
+                     * 云硬盘最后一次挂载的实例ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lastAttachInsId;
+                    bool m_lastAttachInsIdHasBeenSet;
+
+                    /**
+                     * 云硬盘最后一次操作错误提示
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_errorPrompt;
+                    bool m_errorPromptHasBeenSet;
 
                 };
             }

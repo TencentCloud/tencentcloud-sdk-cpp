@@ -24,8 +24,8 @@ using namespace std;
 
 InquirePriceCreateInstancesRequest::InquirePriceCreateInstancesRequest() :
     m_bundleIdHasBeenSet(false),
-    m_instanceCountHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
+    m_instanceCountHasBeenSet(false),
     m_blueprintIdHasBeenSet(false)
 {
 }
@@ -45,14 +45,6 @@ string InquirePriceCreateInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_bundleId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_instanceCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "InstanceCount";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_instanceCount, allocator);
-    }
-
     if (m_instanceChargePrepaidHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -60,6 +52,14 @@ string InquirePriceCreateInstancesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_instanceChargePrepaid.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_instanceCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceCount";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_instanceCount, allocator);
     }
 
     if (m_blueprintIdHasBeenSet)
@@ -94,22 +94,6 @@ bool InquirePriceCreateInstancesRequest::BundleIdHasBeenSet() const
     return m_bundleIdHasBeenSet;
 }
 
-int64_t InquirePriceCreateInstancesRequest::GetInstanceCount() const
-{
-    return m_instanceCount;
-}
-
-void InquirePriceCreateInstancesRequest::SetInstanceCount(const int64_t& _instanceCount)
-{
-    m_instanceCount = _instanceCount;
-    m_instanceCountHasBeenSet = true;
-}
-
-bool InquirePriceCreateInstancesRequest::InstanceCountHasBeenSet() const
-{
-    return m_instanceCountHasBeenSet;
-}
-
 InstanceChargePrepaid InquirePriceCreateInstancesRequest::GetInstanceChargePrepaid() const
 {
     return m_instanceChargePrepaid;
@@ -124,6 +108,22 @@ void InquirePriceCreateInstancesRequest::SetInstanceChargePrepaid(const Instance
 bool InquirePriceCreateInstancesRequest::InstanceChargePrepaidHasBeenSet() const
 {
     return m_instanceChargePrepaidHasBeenSet;
+}
+
+int64_t InquirePriceCreateInstancesRequest::GetInstanceCount() const
+{
+    return m_instanceCount;
+}
+
+void InquirePriceCreateInstancesRequest::SetInstanceCount(const int64_t& _instanceCount)
+{
+    m_instanceCount = _instanceCount;
+    m_instanceCountHasBeenSet = true;
+}
+
+bool InquirePriceCreateInstancesRequest::InstanceCountHasBeenSet() const
+{
+    return m_instanceCountHasBeenSet;
 }
 
 string InquirePriceCreateInstancesRequest::GetBlueprintId() const

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cbs/v20170312/model/Policy.h>
 #include <tencentcloud/cbs/v20170312/model/AdvancedRetentionPolicy.h>
+#include <tencentcloud/cbs/v20170312/model/Tag.h>
 
 
 namespace TencentCloud
@@ -360,6 +361,50 @@ namespace TencentCloud
                      */
                     bool AdvancedRetentionPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取该复制快照策略的源端账户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CopyFromAccountUin 该复制快照策略的源端账户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCopyFromAccountUin() const;
+
+                    /**
+                     * 设置该复制快照策略的源端账户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CopyFromAccountUin 该复制快照策略的源端账户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCopyFromAccountUin(const std::string& _copyFromAccountUin);
+
+                    /**
+                     * 判断参数 CopyFromAccountUin 是否已赋值
+                     * @return CopyFromAccountUin 是否已赋值
+                     */
+                    bool CopyFromAccountUinHasBeenSet() const;
+
+                    /**
+                     * 获取标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Tags 标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> GetTags() const;
+
+                    /**
+                     * 设置标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Tags 标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTags(const std::vector<Tag>& _tags);
+
+                    /**
+                     * 判断参数 Tags 是否已赋值
+                     * @return Tags 是否已赋值
+                     */
+                    bool TagsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -463,6 +508,20 @@ namespace TencentCloud
                      */
                     AdvancedRetentionPolicy m_advancedRetentionPolicy;
                     bool m_advancedRetentionPolicyHasBeenSet;
+
+                    /**
+                     * 该复制快照策略的源端账户ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_copyFromAccountUin;
+                    bool m_copyFromAccountUinHasBeenSet;
+
+                    /**
+                     * 标签。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Tag> m_tags;
+                    bool m_tagsHasBeenSet;
 
                 };
             }

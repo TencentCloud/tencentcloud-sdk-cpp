@@ -31,7 +31,8 @@ DiskConfig::DiskConfig() :
     m_deviceClassHasBeenSet(false),
     m_diskUsageHasBeenSet(false),
     m_minDiskSizeHasBeenSet(false),
-    m_maxDiskSizeHasBeenSet(false)
+    m_maxDiskSizeHasBeenSet(false),
+    m_priceHasBeenSet(false)
 {
 }
 
@@ -153,6 +154,23 @@ CoreInternalOutcome DiskConfig::Deserialize(const rapidjson::Value &value)
         m_maxDiskSizeHasBeenSet = true;
     }
 
+    if (value.HasMember("Price") && !value["Price"].IsNull())
+    {
+        if (!value["Price"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DiskConfig.Price` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_price.Deserialize(value["Price"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_priceHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -251,6 +269,15 @@ void DiskConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MaxDiskSize";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxDiskSize, allocator);
+    }
+
+    if (m_priceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Price";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_price.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -430,5 +457,21 @@ void DiskConfig::SetMaxDiskSize(const uint64_t& _maxDiskSize)
 bool DiskConfig::MaxDiskSizeHasBeenSet() const
 {
     return m_maxDiskSizeHasBeenSet;
+}
+
+Price DiskConfig::GetPrice() const
+{
+    return m_price;
+}
+
+void DiskConfig::SetPrice(const Price& _price)
+{
+    m_price = _price;
+    m_priceHasBeenSet = true;
+}
+
+bool DiskConfig::PriceHasBeenSet() const
+{
+    return m_priceHasBeenSet;
 }
 

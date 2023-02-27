@@ -21,9 +21,9 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/dts/v20211206/model/Options.h>
 #include <tencentcloud/dts/v20211206/model/Objects.h>
 #include <tencentcloud/dts/v20211206/model/Endpoint.h>
+#include <tencentcloud/dts/v20211206/model/Options.h>
 
 
 namespace TencentCloud
@@ -98,24 +98,6 @@ namespace TencentCloud
                      * @return DstAccessType 是否已赋值
                      */
                     bool DstAccessTypeHasBeenSet() const;
-
-                    /**
-                     * 获取同步任务选项
-                     * @return Options 同步任务选项
-                     */
-                    Options GetOptions() const;
-
-                    /**
-                     * 设置同步任务选项
-                     * @param Options 同步任务选项
-                     */
-                    void SetOptions(const Options& _options);
-
-                    /**
-                     * 判断参数 Options 是否已赋值
-                     * @return Options 是否已赋值
-                     */
-                    bool OptionsHasBeenSet() const;
 
                     /**
                      * 获取同步库表对象信息
@@ -244,6 +226,24 @@ namespace TencentCloud
                     bool DstInfoHasBeenSet() const;
 
                     /**
+                     * 获取同步任务选项
+                     * @return Options 同步任务选项
+                     */
+                    Options GetOptions() const;
+
+                    /**
+                     * 设置同步任务选项
+                     * @param Options 同步任务选项
+                     */
+                    void SetOptions(const Options& _options);
+
+                    /**
+                     * 判断参数 Options 是否已赋值
+                     * @return Options 是否已赋值
+                     */
+                    bool OptionsHasBeenSet() const;
+
+                    /**
                      * 获取自动重试的时间段、可设置5至720分钟、0表示不重试
                      * @return AutoRetryTimeRangeMinutes 自动重试的时间段、可设置5至720分钟、0表示不重试
                      */
@@ -280,12 +280,6 @@ namespace TencentCloud
                      */
                     std::string m_dstAccessType;
                     bool m_dstAccessTypeHasBeenSet;
-
-                    /**
-                     * 同步任务选项
-                     */
-                    Options m_options;
-                    bool m_optionsHasBeenSet;
 
                     /**
                      * 同步库表对象信息
@@ -328,6 +322,12 @@ namespace TencentCloud
                      */
                     Endpoint m_dstInfo;
                     bool m_dstInfoHasBeenSet;
+
+                    /**
+                     * 同步任务选项
+                     */
+                    Options m_options;
+                    bool m_optionsHasBeenSet;
 
                     /**
                      * 自动重试的时间段、可设置5至720分钟、0表示不重试

@@ -59,6 +59,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/CreateDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/BriefNodeInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectResponse.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseView.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesRequest.h
@@ -157,6 +158,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/AddShardConfig.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBSyncModeRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectsResponse.h
+  include/tencentcloud/dcdb/v20180411/model/ModifyDBEncryptAttributesRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountResponse.h
   include/tencentcloud/dcdb/v20180411/model/IsolateDedicatedDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/RegionInfo.h
@@ -228,6 +230,7 @@ set(dcdb_src
   src/v20180411/model/CreateDCDBInstanceResponse.cpp
   src/v20180411/model/BriefNodeInfo.cpp
   src/v20180411/model/ModifyDBInstancesProjectResponse.cpp
+  src/v20180411/model/ModifyDBEncryptAttributesResponse.cpp
   src/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.cpp
   src/v20180411/model/DatabaseView.cpp
   src/v20180411/model/DescribeDBLogFilesRequest.cpp
@@ -326,6 +329,7 @@ set(dcdb_src
   src/v20180411/model/AddShardConfig.cpp
   src/v20180411/model/ModifyDBSyncModeRequest.cpp
   src/v20180411/model/DescribeProjectsResponse.cpp
+  src/v20180411/model/ModifyDBEncryptAttributesRequest.cpp
   src/v20180411/model/CreateAccountResponse.cpp
   src/v20180411/model/IsolateDedicatedDBInstanceResponse.cpp
   src/v20180411/model/RegionInfo.cpp

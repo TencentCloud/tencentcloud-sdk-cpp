@@ -29,7 +29,8 @@ PrepayPrice::PrepayPrice() :
     m_unitPriceDiscountHasBeenSet(false),
     m_unitPriceDiscountHighHasBeenSet(false),
     m_discountPriceHighHasBeenSet(false),
-    m_unitPriceHasBeenSet(false)
+    m_unitPriceHasBeenSet(false),
+    m_detailPricesHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,26 @@ CoreInternalOutcome PrepayPrice::Deserialize(const rapidjson::Value &value)
         m_unitPriceHasBeenSet = true;
     }
 
+    if (value.HasMember("DetailPrices") && !value["DetailPrices"].IsNull())
+    {
+        if (!value["DetailPrices"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PrepayPrice.DetailPrices` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DetailPrices"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            DetailPrice item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_detailPrices.push_back(item);
+        }
+        m_detailPricesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +226,21 @@ void PrepayPrice::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "UnitPrice";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_unitPrice, allocator);
+    }
+
+    if (m_detailPricesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DetailPrices";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_detailPrices.begin(); itr != m_detailPrices.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -352,5 +388,21 @@ void PrepayPrice::SetUnitPrice(const double& _unitPrice)
 bool PrepayPrice::UnitPriceHasBeenSet() const
 {
     return m_unitPriceHasBeenSet;
+}
+
+vector<DetailPrice> PrepayPrice::GetDetailPrices() const
+{
+    return m_detailPrices;
+}
+
+void PrepayPrice::SetDetailPrices(const vector<DetailPrice>& _detailPrices)
+{
+    m_detailPrices = _detailPrices;
+    m_detailPricesHasBeenSet = true;
+}
+
+bool PrepayPrice::DetailPricesHasBeenSet() const
+{
+    return m_detailPricesHasBeenSet;
 }
 

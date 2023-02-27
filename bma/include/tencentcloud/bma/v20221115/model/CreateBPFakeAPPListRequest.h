@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批量模版
-                     * @return FakeAPPs 批量模版
+                     * 获取批量模板
+                     * @return FakeAPPs 批量模板
                      */
                     std::string GetFakeAPPs() const;
 
                     /**
-                     * 设置批量模版
-                     * @param FakeAPPs 批量模版
+                     * 设置批量模板
+                     * @param FakeAPPs 批量模板
                      */
                     void SetFakeAPPs(const std::string& _fakeAPPs);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 批量模版
+                     * 批量模板
                      */
                     std::string m_fakeAPPs;
                     bool m_fakeAPPsHasBeenSet;

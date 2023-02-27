@@ -203,6 +203,42 @@ namespace TencentCloud
                      */
                     bool ExpiredTimeHasBeenSet() const;
 
+                    /**
+                     * 获取存储池创建时间。
+                     * @return CreatedTime 存储池创建时间。
+                     */
+                    std::string GetCreatedTime() const;
+
+                    /**
+                     * 设置存储池创建时间。
+                     * @param CreatedTime 存储池创建时间。
+                     */
+                    void SetCreatedTime(const std::string& _createdTime);
+
+                    /**
+                     * 判断参数 CreatedTime 是否已赋值
+                     * @return CreatedTime 是否已赋值
+                     */
+                    bool CreatedTimeHasBeenSet() const;
+
+                    /**
+                     * 获取当前集群中已创建的云盘数量。
+                     * @return DiskNumber 当前集群中已创建的云盘数量。
+                     */
+                    uint64_t GetDiskNumber() const;
+
+                    /**
+                     * 设置当前集群中已创建的云盘数量。
+                     * @param DiskNumber 当前集群中已创建的云盘数量。
+                     */
+                    void SetDiskNumber(const uint64_t& _diskNumber);
+
+                    /**
+                     * 判断参数 DiskNumber 是否已赋值
+                     * @return DiskNumber 是否已赋值
+                     */
+                    bool DiskNumberHasBeenSet() const;
+
                 private:
 
                     /**
@@ -255,6 +291,18 @@ namespace TencentCloud
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
+
+                    /**
+                     * 存储池创建时间。
+                     */
+                    std::string m_createdTime;
+                    bool m_createdTimeHasBeenSet;
+
+                    /**
+                     * 当前集群中已创建的云盘数量。
+                     */
+                    uint64_t m_diskNumber;
+                    bool m_diskNumberHasBeenSet;
 
                 };
             }

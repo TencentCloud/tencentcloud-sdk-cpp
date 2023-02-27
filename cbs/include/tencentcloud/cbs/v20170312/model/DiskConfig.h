@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cbs/v20170312/model/Price.h>
 
 
 namespace TencentCloud
@@ -260,6 +261,28 @@ namespace TencentCloud
                      */
                     bool MaxDiskSizeHasBeenSet() const;
 
+                    /**
+                     * 获取描述预付费或后付费云盘的价格。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Price 描述预付费或后付费云盘的价格。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Price GetPrice() const;
+
+                    /**
+                     * 设置描述预付费或后付费云盘的价格。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Price 描述预付费或后付费云盘的价格。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPrice(const Price& _price);
+
+                    /**
+                     * 判断参数 Price 是否已赋值
+                     * @return Price 是否已赋值
+                     */
+                    bool PriceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -331,6 +354,13 @@ namespace TencentCloud
                      */
                     uint64_t m_maxDiskSize;
                     bool m_maxDiskSizeHasBeenSet;
+
+                    /**
+                     * 描述预付费或后付费云盘的价格。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Price m_price;
+                    bool m_priceHasBeenSet;
 
                 };
             }
