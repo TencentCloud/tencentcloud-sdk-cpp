@@ -81,6 +81,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserResponse.h>
+#include <tencentcloud/lcic/v20220817/model/GetRoomMessageRequest.h>
+#include <tencentcloud/lcic/v20220817/model/GetRoomMessageResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetWatermarkRequest.h>
 #include <tencentcloud/lcic/v20220817/model/GetWatermarkResponse.h>
 #include <tencentcloud/lcic/v20220817/model/LoginOriginIdRequest.h>
@@ -204,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetRoomMessageResponse> GetRoomMessageOutcome;
+                typedef std::future<GetRoomMessageOutcome> GetRoomMessageOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::GetRoomMessageRequest&, GetRoomMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetRoomMessageAsyncHandler;
                 typedef Outcome<Core::Error, Model::GetWatermarkResponse> GetWatermarkOutcome;
                 typedef std::future<GetWatermarkOutcome> GetWatermarkOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::GetWatermarkRequest&, GetWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetWatermarkAsyncHandler;
@@ -500,6 +505,15 @@ namespace TencentCloud
                 DescribeUserOutcome DescribeUser(const Model::DescribeUserRequest &request);
                 void DescribeUserAsync(const Model::DescribeUserRequest& request, const DescribeUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserOutcomeCallable DescribeUserCallable(const Model::DescribeUserRequest& request);
+
+                /**
+                 *获取房间历史消息(房间历史消息保存7天)
+                 * @param req GetRoomMessageRequest
+                 * @return GetRoomMessageOutcome
+                 */
+                GetRoomMessageOutcome GetRoomMessage(const Model::GetRoomMessageRequest &request);
+                void GetRoomMessageAsync(const Model::GetRoomMessageRequest& request, const GetRoomMessageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetRoomMessageOutcomeCallable GetRoomMessageCallable(const Model::GetRoomMessageRequest& request);
 
                 /**
                  *获取水印设置

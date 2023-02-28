@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/eb/v20210416/model/APIGWParams.h>
 #include <tencentcloud/eb/v20210416/model/CkafkaParams.h>
+#include <tencentcloud/eb/v20210416/model/DTSParams.h>
 
 
 namespace TencentCloud
@@ -110,6 +111,28 @@ namespace TencentCloud
                      */
                     bool CkafkaParamsHasBeenSet() const;
 
+                    /**
+                     * 获取data transfer service (DTS)参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DTSParams data transfer service (DTS)参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DTSParams GetDTSParams() const;
+
+                    /**
+                     * 设置data transfer service (DTS)参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DTSParams data transfer service (DTS)参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDTSParams(const DTSParams& _dTSParams);
+
+                    /**
+                     * 判断参数 DTSParams 是否已赋值
+                     * @return DTSParams 是否已赋值
+                     */
+                    bool DTSParamsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +154,13 @@ namespace TencentCloud
                      */
                     CkafkaParams m_ckafkaParams;
                     bool m_ckafkaParamsHasBeenSet;
+
+                    /**
+                     * data transfer service (DTS)参数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DTSParams m_dTSParams;
+                    bool m_dTSParamsHasBeenSet;
 
                 };
             }

@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/eb/v20210416/model/ConnectionBrief.h>
+#include <tencentcloud/eb/v20210416/model/TargetBrief.h>
 
 
 namespace TencentCloud
@@ -154,6 +156,72 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PayMode 计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 设置计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PayMode 计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPayMode(const std::string& _payMode);
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取连接器基础信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ConnectionBriefs 连接器基础信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ConnectionBrief> GetConnectionBriefs() const;
+
+                    /**
+                     * 设置连接器基础信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ConnectionBriefs 连接器基础信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetConnectionBriefs(const std::vector<ConnectionBrief>& _connectionBriefs);
+
+                    /**
+                     * 判断参数 ConnectionBriefs 是否已赋值
+                     * @return ConnectionBriefs 是否已赋值
+                     */
+                    bool ConnectionBriefsHasBeenSet() const;
+
+                    /**
+                     * 获取目标简要信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetBriefs 目标简要信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TargetBrief> GetTargetBriefs() const;
+
+                    /**
+                     * 设置目标简要信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetBriefs 目标简要信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetBriefs(const std::vector<TargetBrief>& _targetBriefs);
+
+                    /**
+                     * 判断参数 TargetBriefs 是否已赋值
+                     * @return TargetBriefs 是否已赋值
+                     */
+                    bool TargetBriefsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +259,27 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 计费模式
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * 连接器基础信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ConnectionBrief> m_connectionBriefs;
+                    bool m_connectionBriefsHasBeenSet;
+
+                    /**
+                     * 目标简要信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TargetBrief> m_targetBriefs;
+                    bool m_targetBriefsHasBeenSet;
 
                 };
             }

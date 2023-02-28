@@ -121,6 +121,10 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockIgnoreListResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyBlockTopResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityDispatchStatusRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityDispatchStatusResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityGroupRuleRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyEnterpriseSecurityGroupRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatAcRuleRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatAcRuleResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwReSelectRequest.h>
@@ -129,6 +133,8 @@
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwSwitchResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyNatFwVpcDnsSwitchResponse.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatSequenceRulesRequest.h>
+#include <tencentcloud/cfw/v20190904/model/ModifyNatSequenceRulesResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusRequest.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyPublicIPSwitchStatusResponse.h>
 #include <tencentcloud/cfw/v20190904/model/ModifyResourceGroupRequest.h>
@@ -320,6 +326,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyBlockTopResponse> ModifyBlockTopOutcome;
                 typedef std::future<ModifyBlockTopOutcome> ModifyBlockTopOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyBlockTopRequest&, ModifyBlockTopOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyBlockTopAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEnterpriseSecurityDispatchStatusResponse> ModifyEnterpriseSecurityDispatchStatusOutcome;
+                typedef std::future<ModifyEnterpriseSecurityDispatchStatusOutcome> ModifyEnterpriseSecurityDispatchStatusOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyEnterpriseSecurityDispatchStatusRequest&, ModifyEnterpriseSecurityDispatchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnterpriseSecurityDispatchStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyEnterpriseSecurityGroupRuleResponse> ModifyEnterpriseSecurityGroupRuleOutcome;
+                typedef std::future<ModifyEnterpriseSecurityGroupRuleOutcome> ModifyEnterpriseSecurityGroupRuleOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyEnterpriseSecurityGroupRuleRequest&, ModifyEnterpriseSecurityGroupRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnterpriseSecurityGroupRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyNatAcRuleResponse> ModifyNatAcRuleOutcome;
                 typedef std::future<ModifyNatAcRuleOutcome> ModifyNatAcRuleOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyNatAcRuleRequest&, ModifyNatAcRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatAcRuleAsyncHandler;
@@ -332,6 +344,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyNatFwVpcDnsSwitchResponse> ModifyNatFwVpcDnsSwitchOutcome;
                 typedef std::future<ModifyNatFwVpcDnsSwitchOutcome> ModifyNatFwVpcDnsSwitchOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyNatFwVpcDnsSwitchRequest&, ModifyNatFwVpcDnsSwitchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatFwVpcDnsSwitchAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyNatSequenceRulesResponse> ModifyNatSequenceRulesOutcome;
+                typedef std::future<ModifyNatSequenceRulesOutcome> ModifyNatSequenceRulesOutcomeCallable;
+                typedef std::function<void(const CfwClient*, const Model::ModifyNatSequenceRulesRequest&, ModifyNatSequenceRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyNatSequenceRulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyPublicIPSwitchStatusResponse> ModifyPublicIPSwitchStatusOutcome;
                 typedef std::future<ModifyPublicIPSwitchStatusOutcome> ModifyPublicIPSwitchStatusOutcomeCallable;
                 typedef std::function<void(const CfwClient*, const Model::ModifyPublicIPSwitchStatusRequest&, ModifyPublicIPSwitchStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyPublicIPSwitchStatusAsyncHandler;
@@ -831,6 +846,24 @@ namespace TencentCloud
                 ModifyBlockTopOutcomeCallable ModifyBlockTopCallable(const Model::ModifyBlockTopRequest& request);
 
                 /**
+                 *修改企业安全组下发状态
+                 * @param req ModifyEnterpriseSecurityDispatchStatusRequest
+                 * @return ModifyEnterpriseSecurityDispatchStatusOutcome
+                 */
+                ModifyEnterpriseSecurityDispatchStatusOutcome ModifyEnterpriseSecurityDispatchStatus(const Model::ModifyEnterpriseSecurityDispatchStatusRequest &request);
+                void ModifyEnterpriseSecurityDispatchStatusAsync(const Model::ModifyEnterpriseSecurityDispatchStatusRequest& request, const ModifyEnterpriseSecurityDispatchStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnterpriseSecurityDispatchStatusOutcomeCallable ModifyEnterpriseSecurityDispatchStatusCallable(const Model::ModifyEnterpriseSecurityDispatchStatusRequest& request);
+
+                /**
+                 *编辑新企业安全组规则
+                 * @param req ModifyEnterpriseSecurityGroupRuleRequest
+                 * @return ModifyEnterpriseSecurityGroupRuleOutcome
+                 */
+                ModifyEnterpriseSecurityGroupRuleOutcome ModifyEnterpriseSecurityGroupRule(const Model::ModifyEnterpriseSecurityGroupRuleRequest &request);
+                void ModifyEnterpriseSecurityGroupRuleAsync(const Model::ModifyEnterpriseSecurityGroupRuleRequest& request, const ModifyEnterpriseSecurityGroupRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyEnterpriseSecurityGroupRuleOutcomeCallable ModifyEnterpriseSecurityGroupRuleCallable(const Model::ModifyEnterpriseSecurityGroupRuleRequest& request);
+
+                /**
                  *修改NAT访问控制规则
                  * @param req ModifyNatAcRuleRequest
                  * @return ModifyNatAcRuleOutcome
@@ -865,6 +898,15 @@ namespace TencentCloud
                 ModifyNatFwVpcDnsSwitchOutcome ModifyNatFwVpcDnsSwitch(const Model::ModifyNatFwVpcDnsSwitchRequest &request);
                 void ModifyNatFwVpcDnsSwitchAsync(const Model::ModifyNatFwVpcDnsSwitchRequest& request, const ModifyNatFwVpcDnsSwitchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyNatFwVpcDnsSwitchOutcomeCallable ModifyNatFwVpcDnsSwitchCallable(const Model::ModifyNatFwVpcDnsSwitchRequest& request);
+
+                /**
+                 *NAT防火墙规则快速排序
+                 * @param req ModifyNatSequenceRulesRequest
+                 * @return ModifyNatSequenceRulesOutcome
+                 */
+                ModifyNatSequenceRulesOutcome ModifyNatSequenceRules(const Model::ModifyNatSequenceRulesRequest &request);
+                void ModifyNatSequenceRulesAsync(const Model::ModifyNatSequenceRulesRequest& request, const ModifyNatSequenceRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyNatSequenceRulesOutcomeCallable ModifyNatSequenceRulesCallable(const Model::ModifyNatSequenceRulesRequest& request);
 
                 /**
                  *单个修改互联网边界防火墙开关

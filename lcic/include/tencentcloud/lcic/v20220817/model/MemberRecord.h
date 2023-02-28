@@ -298,6 +298,46 @@ namespace TencentCloud
                      */
                     bool DeviceHasBeenSet() const;
 
+                    /**
+                     * 获取每个成员上麦次数。
+                     * @return PerMemberMicCount 每个成员上麦次数。
+                     */
+                    int64_t GetPerMemberMicCount() const;
+
+                    /**
+                     * 设置每个成员上麦次数。
+                     * @param PerMemberMicCount 每个成员上麦次数。
+                     */
+                    void SetPerMemberMicCount(const int64_t& _perMemberMicCount);
+
+                    /**
+                     * 判断参数 PerMemberMicCount 是否已赋值
+                     * @return PerMemberMicCount 是否已赋值
+                     */
+                    bool PerMemberMicCountHasBeenSet() const;
+
+                    /**
+                     * 获取每个成员发送消息数量。
+
+                     * @return PerMemberMessageCount 每个成员发送消息数量。
+
+                     */
+                    int64_t GetPerMemberMessageCount() const;
+
+                    /**
+                     * 设置每个成员发送消息数量。
+
+                     * @param PerMemberMessageCount 每个成员发送消息数量。
+
+                     */
+                    void SetPerMemberMessageCount(const int64_t& _perMemberMessageCount);
+
+                    /**
+                     * 判断参数 PerMemberMessageCount 是否已赋值
+                     * @return PerMemberMessageCount 是否已赋值
+                     */
+                    bool PerMemberMessageCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -383,6 +423,19 @@ namespace TencentCloud
                      */
                     int64_t m_device;
                     bool m_deviceHasBeenSet;
+
+                    /**
+                     * 每个成员上麦次数。
+                     */
+                    int64_t m_perMemberMicCount;
+                    bool m_perMemberMicCountHasBeenSet;
+
+                    /**
+                     * 每个成员发送消息数量。
+
+                     */
+                    int64_t m_perMemberMessageCount;
+                    bool m_perMemberMessageCountHasBeenSet;
 
                 };
             }

@@ -26,7 +26,10 @@ EventBus::EventBus() :
     m_addTimeHasBeenSet(false),
     m_eventBusNameHasBeenSet(false),
     m_eventBusIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_connectionBriefsHasBeenSet(false),
+    m_targetBriefsHasBeenSet(false)
 {
 }
 
@@ -95,6 +98,56 @@ CoreInternalOutcome EventBus::Deserialize(const rapidjson::Value &value)
         m_typeHasBeenSet = true;
     }
 
+    if (value.HasMember("PayMode") && !value["PayMode"].IsNull())
+    {
+        if (!value["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EventBus.PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(value["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ConnectionBriefs") && !value["ConnectionBriefs"].IsNull())
+    {
+        if (!value["ConnectionBriefs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EventBus.ConnectionBriefs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ConnectionBriefs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ConnectionBrief item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_connectionBriefs.push_back(item);
+        }
+        m_connectionBriefsHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetBriefs") && !value["TargetBriefs"].IsNull())
+    {
+        if (!value["TargetBriefs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EventBus.TargetBriefs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TargetBriefs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TargetBrief item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_targetBriefs.push_back(item);
+        }
+        m_targetBriefsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +201,44 @@ void EventBus::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_connectionBriefsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectionBriefs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_connectionBriefs.begin(); itr != m_connectionBriefs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_targetBriefsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetBriefs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_targetBriefs.begin(); itr != m_targetBriefs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -247,5 +338,53 @@ void EventBus::SetType(const string& _type)
 bool EventBus::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string EventBus::GetPayMode() const
+{
+    return m_payMode;
+}
+
+void EventBus::SetPayMode(const string& _payMode)
+{
+    m_payMode = _payMode;
+    m_payModeHasBeenSet = true;
+}
+
+bool EventBus::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+vector<ConnectionBrief> EventBus::GetConnectionBriefs() const
+{
+    return m_connectionBriefs;
+}
+
+void EventBus::SetConnectionBriefs(const vector<ConnectionBrief>& _connectionBriefs)
+{
+    m_connectionBriefs = _connectionBriefs;
+    m_connectionBriefsHasBeenSet = true;
+}
+
+bool EventBus::ConnectionBriefsHasBeenSet() const
+{
+    return m_connectionBriefsHasBeenSet;
+}
+
+vector<TargetBrief> EventBus::GetTargetBriefs() const
+{
+    return m_targetBriefs;
+}
+
+void EventBus::SetTargetBriefs(const vector<TargetBrief>& _targetBriefs)
+{
+    m_targetBriefs = _targetBriefs;
+    m_targetBriefsHasBeenSet = true;
+}
+
+bool EventBus::TargetBriefsHasBeenSet() const
+{
+    return m_targetBriefsHasBeenSet;
 }
 

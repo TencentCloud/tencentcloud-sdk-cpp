@@ -84,14 +84,18 @@ namespace TencentCloud
                     bool ActivityIdHasBeenSet() const;
 
                     /**
-                     * 获取集群活动类型。
-                     * @return ActivityType 集群活动类型。
+                     * 获取集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
+
+                     * @return ActivityType 集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
+
                      */
                     std::string GetActivityType() const;
 
                     /**
-                     * 设置集群活动类型。
-                     * @param ActivityType 集群活动类型。
+                     * 设置集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
+
+                     * @param ActivityType 集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
+
                      */
                     void SetActivityType(const std::string& _activityType);
 
@@ -276,7 +280,8 @@ namespace TencentCloud
                     bool m_activityIdHasBeenSet;
 
                     /**
-                     * 集群活动类型。
+                     * 集群活动类型。取值范围：<br><li>CreateAndAddNodes：创建实例并添加进集群<br><li>RemoveNodesFromCluster：从集群移除实例<br><li>TerminateNodes：销毁实例<br><li>MountStorageOption：增加挂载选项并进行挂载<br><li>UmountStorageOption：删除集群挂载存储选项并解挂载
+
                      */
                     std::string m_activityType;
                     bool m_activityTypeHasBeenSet;

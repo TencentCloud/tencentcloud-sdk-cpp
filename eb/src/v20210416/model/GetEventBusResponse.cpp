@@ -31,7 +31,12 @@ GetEventBusResponse::GetEventBusResponse() :
     m_clsLogsetIdHasBeenSet(false),
     m_eventBusNameHasBeenSet(false),
     m_eventBusIdHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_payModeHasBeenSet(false),
+    m_saveDaysHasBeenSet(false),
+    m_logTopicIdHasBeenSet(false),
+    m_enableStoreHasBeenSet(false),
+    m_linkModeHasBeenSet(false)
 {
 }
 
@@ -149,6 +154,56 @@ CoreInternalOutcome GetEventBusResponse::Deserialize(const string &payload)
         m_typeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("PayMode") && !rsp["PayMode"].IsNull())
+    {
+        if (!rsp["PayMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PayMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_payMode = string(rsp["PayMode"].GetString());
+        m_payModeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SaveDays") && !rsp["SaveDays"].IsNull())
+    {
+        if (!rsp["SaveDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SaveDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_saveDays = rsp["SaveDays"].GetInt64();
+        m_saveDaysHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LogTopicId") && !rsp["LogTopicId"].IsNull())
+    {
+        if (!rsp["LogTopicId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogTopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logTopicId = string(rsp["LogTopicId"].GetString());
+        m_logTopicIdHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EnableStore") && !rsp["EnableStore"].IsNull())
+    {
+        if (!rsp["EnableStore"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EnableStore` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_enableStore = rsp["EnableStore"].GetBool();
+        m_enableStoreHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("LinkMode") && !rsp["LinkMode"].IsNull())
+    {
+        if (!rsp["LinkMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LinkMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_linkMode = string(rsp["LinkMode"].GetString());
+        m_linkModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +276,46 @@ string GetEventBusResponse::ToJsonString() const
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_payModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PayMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_payMode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_saveDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SaveDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_saveDays, allocator);
+    }
+
+    if (m_logTopicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogTopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logTopicId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_enableStoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableStore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_enableStore, allocator);
+    }
+
+    if (m_linkModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LinkMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_linkMode.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +408,56 @@ string GetEventBusResponse::GetType() const
 bool GetEventBusResponse::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
+}
+
+string GetEventBusResponse::GetPayMode() const
+{
+    return m_payMode;
+}
+
+bool GetEventBusResponse::PayModeHasBeenSet() const
+{
+    return m_payModeHasBeenSet;
+}
+
+int64_t GetEventBusResponse::GetSaveDays() const
+{
+    return m_saveDays;
+}
+
+bool GetEventBusResponse::SaveDaysHasBeenSet() const
+{
+    return m_saveDaysHasBeenSet;
+}
+
+string GetEventBusResponse::GetLogTopicId() const
+{
+    return m_logTopicId;
+}
+
+bool GetEventBusResponse::LogTopicIdHasBeenSet() const
+{
+    return m_logTopicIdHasBeenSet;
+}
+
+bool GetEventBusResponse::GetEnableStore() const
+{
+    return m_enableStore;
+}
+
+bool GetEventBusResponse::EnableStoreHasBeenSet() const
+{
+    return m_enableStoreHasBeenSet;
+}
+
+string GetEventBusResponse::GetLinkMode() const
+{
+    return m_linkMode;
+}
+
+bool GetEventBusResponse::LinkModeHasBeenSet() const
+{
+    return m_linkModeHasBeenSet;
 }
 
 

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DiskIdHasBeenSet() const;
 
                     /**
-                     * 获取云硬盘备份点ID，可通过 DescribeDiskBackups 接口查询。
-                     * @return DiskBackupId 云硬盘备份点ID，可通过 DescribeDiskBackups 接口查询。
+                     * 获取云硬盘备份点ID，可通过[DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。
+                     * @return DiskBackupId 云硬盘备份点ID，可通过[DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。
                      */
                     std::string GetDiskBackupId() const;
 
                     /**
-                     * 设置云硬盘备份点ID，可通过 DescribeDiskBackups 接口查询。
-                     * @param DiskBackupId 云硬盘备份点ID，可通过 DescribeDiskBackups 接口查询。
+                     * 设置云硬盘备份点ID，可通过[DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。
+                     * @param DiskBackupId 云硬盘备份点ID，可通过[DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。
                      */
                     void SetDiskBackupId(const std::string& _diskBackupId);
 
@@ -87,7 +87,7 @@ namespace TencentCloud
                     bool m_diskIdHasBeenSet;
 
                     /**
-                     * 云硬盘备份点ID，可通过 DescribeDiskBackups 接口查询。
+                     * 云硬盘备份点ID，可通过[DescribeDiskBackups](https://cloud.tencent.com/document/api/1207/84379)接口查询。
                      */
                     std::string m_diskBackupId;
                     bool m_diskBackupIdHasBeenSet;

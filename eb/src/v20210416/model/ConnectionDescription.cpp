@@ -23,7 +23,8 @@ using namespace std;
 ConnectionDescription::ConnectionDescription() :
     m_resourceDescriptionHasBeenSet(false),
     m_aPIGWParamsHasBeenSet(false),
-    m_ckafkaParamsHasBeenSet(false)
+    m_ckafkaParamsHasBeenSet(false),
+    m_dTSParamsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome ConnectionDescription::Deserialize(const rapidjson::Value &v
         m_ckafkaParamsHasBeenSet = true;
     }
 
+    if (value.HasMember("DTSParams") && !value["DTSParams"].IsNull())
+    {
+        if (!value["DTSParams"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ConnectionDescription.DTSParams` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dTSParams.Deserialize(value["DTSParams"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dTSParamsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void ConnectionDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_ckafkaParams.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dTSParamsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DTSParams";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dTSParams.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void ConnectionDescription::SetCkafkaParams(const CkafkaParams& _ckafkaParams)
 bool ConnectionDescription::CkafkaParamsHasBeenSet() const
 {
     return m_ckafkaParamsHasBeenSet;
+}
+
+DTSParams ConnectionDescription::GetDTSParams() const
+{
+    return m_dTSParams;
+}
+
+void ConnectionDescription::SetDTSParams(const DTSParams& _dTSParams)
+{
+    m_dTSParams = _dTSParams;
+    m_dTSParamsHasBeenSet = true;
+}
+
+bool ConnectionDescription::DTSParamsHasBeenSet() const
+{
+    return m_dTSParamsHasBeenSet;
 }
 

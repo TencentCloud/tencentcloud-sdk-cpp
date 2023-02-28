@@ -1158,6 +1158,49 @@ CdnClient::DescribeEventLogDataOutcomeCallable CdnClient::DescribeEventLogDataCa
     return task->get_future();
 }
 
+CdnClient::DescribeHttpsPackagesOutcome CdnClient::DescribeHttpsPackages(const DescribeHttpsPackagesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeHttpsPackages");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeHttpsPackagesResponse rsp = DescribeHttpsPackagesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeHttpsPackagesOutcome(rsp);
+        else
+            return DescribeHttpsPackagesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeHttpsPackagesOutcome(outcome.GetError());
+    }
+}
+
+void CdnClient::DescribeHttpsPackagesAsync(const DescribeHttpsPackagesRequest& request, const DescribeHttpsPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeHttpsPackages(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdnClient::DescribeHttpsPackagesOutcomeCallable CdnClient::DescribeHttpsPackagesCallable(const DescribeHttpsPackagesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeHttpsPackagesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeHttpsPackages(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdnClient::DescribeImageConfigOutcome CdnClient::DescribeImageConfig(const DescribeImageConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeImageConfig");

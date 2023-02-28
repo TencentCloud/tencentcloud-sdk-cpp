@@ -75,6 +75,8 @@
 #include <tencentcloud/cdn/v20180606/model/DescribeEdgePackTaskStatusResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeEventLogDataResponse.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeHttpsPackagesRequest.h>
+#include <tencentcloud/cdn/v20180606/model/DescribeHttpsPackagesResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeImageConfigRequest.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeImageConfigResponse.h>
 #include <tencentcloud/cdn/v20180606/model/DescribeIpStatusRequest.h>
@@ -273,6 +275,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEventLogDataResponse> DescribeEventLogDataOutcome;
                 typedef std::future<DescribeEventLogDataOutcome> DescribeEventLogDataOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeEventLogDataRequest&, DescribeEventLogDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventLogDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeHttpsPackagesResponse> DescribeHttpsPackagesOutcome;
+                typedef std::future<DescribeHttpsPackagesOutcome> DescribeHttpsPackagesOutcomeCallable;
+                typedef std::function<void(const CdnClient*, const Model::DescribeHttpsPackagesRequest&, DescribeHttpsPackagesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHttpsPackagesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeImageConfigResponse> DescribeImageConfigOutcome;
                 typedef std::future<DescribeImageConfigOutcome> DescribeImageConfigOutcomeCallable;
                 typedef std::function<void(const CdnClient*, const Model::DescribeImageConfigRequest&, DescribeImageConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImageConfigAsyncHandler;
@@ -682,6 +687,15 @@ namespace TencentCloud
                 DescribeEventLogDataOutcome DescribeEventLogData(const Model::DescribeEventLogDataRequest &request);
                 void DescribeEventLogDataAsync(const Model::DescribeEventLogDataRequest& request, const DescribeEventLogDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEventLogDataOutcomeCallable DescribeEventLogDataCallable(const Model::DescribeEventLogDataRequest& request);
+
+                /**
+                 *DescribeHttpsPackages 用于查询 CDN HTTPS请求包详情。
+                 * @param req DescribeHttpsPackagesRequest
+                 * @return DescribeHttpsPackagesOutcome
+                 */
+                DescribeHttpsPackagesOutcome DescribeHttpsPackages(const Model::DescribeHttpsPackagesRequest &request);
+                void DescribeHttpsPackagesAsync(const Model::DescribeHttpsPackagesRequest& request, const DescribeHttpsPackagesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeHttpsPackagesOutcomeCallable DescribeHttpsPackagesCallable(const Model::DescribeHttpsPackagesRequest& request);
 
                 /**
                  *DescribeImageConfig 用于获取域名图片优化的当前配置，支持Webp、TPG、 Guetzli 和 Avif。 

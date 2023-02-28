@@ -21,6 +21,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 AddressTemplateItem::AddressTemplateItem() :
+    m_addressTemplateIdHasBeenSet(false),
+    m_addressTemplateNameHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false)
 {
@@ -30,6 +32,26 @@ CoreInternalOutcome AddressTemplateItem::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
+
+    if (value.HasMember("AddressTemplateId") && !value["AddressTemplateId"].IsNull())
+    {
+        if (!value["AddressTemplateId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateItem.AddressTemplateId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressTemplateId = string(value["AddressTemplateId"].GetString());
+        m_addressTemplateIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AddressTemplateName") && !value["AddressTemplateName"].IsNull())
+    {
+        if (!value["AddressTemplateName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AddressTemplateItem.AddressTemplateName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_addressTemplateName = string(value["AddressTemplateName"].GetString());
+        m_addressTemplateNameHasBeenSet = true;
+    }
 
     if (value.HasMember("From") && !value["From"].IsNull())
     {
@@ -58,6 +80,22 @@ CoreInternalOutcome AddressTemplateItem::Deserialize(const rapidjson::Value &val
 void AddressTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_addressTemplateIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressTemplateId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressTemplateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_addressTemplateNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddressTemplateName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_addressTemplateName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_fromHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +114,38 @@ void AddressTemplateItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
 
 }
 
+
+string AddressTemplateItem::GetAddressTemplateId() const
+{
+    return m_addressTemplateId;
+}
+
+void AddressTemplateItem::SetAddressTemplateId(const string& _addressTemplateId)
+{
+    m_addressTemplateId = _addressTemplateId;
+    m_addressTemplateIdHasBeenSet = true;
+}
+
+bool AddressTemplateItem::AddressTemplateIdHasBeenSet() const
+{
+    return m_addressTemplateIdHasBeenSet;
+}
+
+string AddressTemplateItem::GetAddressTemplateName() const
+{
+    return m_addressTemplateName;
+}
+
+void AddressTemplateItem::SetAddressTemplateName(const string& _addressTemplateName)
+{
+    m_addressTemplateName = _addressTemplateName;
+    m_addressTemplateNameHasBeenSet = true;
+}
+
+bool AddressTemplateItem::AddressTemplateNameHasBeenSet() const
+{
+    return m_addressTemplateNameHasBeenSet;
+}
 
 string AddressTemplateItem::GetFrom() const
 {

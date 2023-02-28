@@ -29,7 +29,9 @@ DescribeRoomStatisticsResponse::DescribeRoomStatisticsResponse() :
     m_totalHasBeenSet(false),
     m_memberRecordsHasBeenSet(false),
     m_realStartTimeHasBeenSet(false),
-    m_realEndTimeHasBeenSet(false)
+    m_realEndTimeHasBeenSet(false),
+    m_messageCountHasBeenSet(false),
+    m_micCountHasBeenSet(false)
 {
 }
 
@@ -137,6 +139,26 @@ CoreInternalOutcome DescribeRoomStatisticsResponse::Deserialize(const string &pa
         m_realEndTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MessageCount") && !rsp["MessageCount"].IsNull())
+    {
+        if (!rsp["MessageCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MessageCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_messageCount = rsp["MessageCount"].GetUint64();
+        m_messageCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("MicCount") && !rsp["MicCount"].IsNull())
+    {
+        if (!rsp["MicCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MicCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_micCount = rsp["MicCount"].GetUint64();
+        m_micCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +222,22 @@ string DescribeRoomStatisticsResponse::ToJsonString() const
         string key = "RealEndTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_realEndTime, allocator);
+    }
+
+    if (m_messageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MessageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_messageCount, allocator);
+    }
+
+    if (m_micCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MicCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_micCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -272,6 +310,26 @@ uint64_t DescribeRoomStatisticsResponse::GetRealEndTime() const
 bool DescribeRoomStatisticsResponse::RealEndTimeHasBeenSet() const
 {
     return m_realEndTimeHasBeenSet;
+}
+
+uint64_t DescribeRoomStatisticsResponse::GetMessageCount() const
+{
+    return m_messageCount;
+}
+
+bool DescribeRoomStatisticsResponse::MessageCountHasBeenSet() const
+{
+    return m_messageCountHasBeenSet;
+}
+
+uint64_t DescribeRoomStatisticsResponse::GetMicCount() const
+{
+    return m_micCount;
+}
+
+bool DescribeRoomStatisticsResponse::MicCountHasBeenSet() const
+{
+    return m_micCountHasBeenSet;
 }
 
 

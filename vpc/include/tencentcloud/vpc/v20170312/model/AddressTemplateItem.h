@@ -47,14 +47,50 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取起始地址。
-                     * @return From 起始地址。
+                     * 获取ipm-xxxxxxxx
+                     * @return AddressTemplateId ipm-xxxxxxxx
+                     */
+                    std::string GetAddressTemplateId() const;
+
+                    /**
+                     * 设置ipm-xxxxxxxx
+                     * @param AddressTemplateId ipm-xxxxxxxx
+                     */
+                    void SetAddressTemplateId(const std::string& _addressTemplateId);
+
+                    /**
+                     * 判断参数 AddressTemplateId 是否已赋值
+                     * @return AddressTemplateId 是否已赋值
+                     */
+                    bool AddressTemplateIdHasBeenSet() const;
+
+                    /**
+                     * 获取IP模板名称
+                     * @return AddressTemplateName IP模板名称
+                     */
+                    std::string GetAddressTemplateName() const;
+
+                    /**
+                     * 设置IP模板名称
+                     * @param AddressTemplateName IP模板名称
+                     */
+                    void SetAddressTemplateName(const std::string& _addressTemplateName);
+
+                    /**
+                     * 判断参数 AddressTemplateName 是否已赋值
+                     * @return AddressTemplateName 是否已赋值
+                     */
+                    bool AddressTemplateNameHasBeenSet() const;
+
+                    /**
+                     * 获取废弃字段
+                     * @return From 废弃字段
                      */
                     std::string GetFrom() const;
 
                     /**
-                     * 设置起始地址。
-                     * @param From 起始地址。
+                     * 设置废弃字段
+                     * @param From 废弃字段
                      */
                     void SetFrom(const std::string& _from);
 
@@ -65,14 +101,14 @@ namespace TencentCloud
                     bool FromHasBeenSet() const;
 
                     /**
-                     * 获取结束地址。
-                     * @return To 结束地址。
+                     * 获取废弃字段
+                     * @return To 废弃字段
                      */
                     std::string GetTo() const;
 
                     /**
-                     * 设置结束地址。
-                     * @param To 结束地址。
+                     * 设置废弃字段
+                     * @param To 废弃字段
                      */
                     void SetTo(const std::string& _to);
 
@@ -85,13 +121,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 起始地址。
+                     * ipm-xxxxxxxx
+                     */
+                    std::string m_addressTemplateId;
+                    bool m_addressTemplateIdHasBeenSet;
+
+                    /**
+                     * IP模板名称
+                     */
+                    std::string m_addressTemplateName;
+                    bool m_addressTemplateNameHasBeenSet;
+
+                    /**
+                     * 废弃字段
                      */
                     std::string m_from;
                     bool m_fromHasBeenSet;
 
                     /**
-                     * 结束地址。
+                     * 废弃字段
                      */
                     std::string m_to;
                     bool m_toHasBeenSet;

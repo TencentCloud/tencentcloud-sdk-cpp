@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool SaveDaysHasBeenSet() const;
 
+                    /**
+                     * 获取EB是否开启存储
+                     * @return EnableStore EB是否开启存储
+                     */
+                    bool GetEnableStore() const;
+
+                    /**
+                     * 设置EB是否开启存储
+                     * @param EnableStore EB是否开启存储
+                     */
+                    void SetEnableStore(const bool& _enableStore);
+
+                    /**
+                     * 判断参数 EnableStore 是否已赋值
+                     * @return EnableStore 是否已赋值
+                     */
+                    bool EnableStoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     int64_t m_saveDays;
                     bool m_saveDaysHasBeenSet;
+
+                    /**
+                     * EB是否开启存储
+                     */
+                    bool m_enableStore;
+                    bool m_enableStoreHasBeenSet;
 
                 };
             }

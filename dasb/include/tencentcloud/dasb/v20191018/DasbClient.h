@@ -27,10 +27,20 @@
 #include <tencentcloud/dasb/v20191018/model/AddDeviceGroupMembersResponse.h>
 #include <tencentcloud/dasb/v20191018/model/AddUserGroupMembersRequest.h>
 #include <tencentcloud/dasb/v20191018/model/AddUserGroupMembersResponse.h>
+#include <tencentcloud/dasb/v20191018/model/BindDeviceAccountPasswordRequest.h>
+#include <tencentcloud/dasb/v20191018/model/BindDeviceAccountPasswordResponse.h>
+#include <tencentcloud/dasb/v20191018/model/BindDeviceAccountPrivateKeyRequest.h>
+#include <tencentcloud/dasb/v20191018/model/BindDeviceAccountPrivateKeyResponse.h>
 #include <tencentcloud/dasb/v20191018/model/BindDeviceResourceRequest.h>
 #include <tencentcloud/dasb/v20191018/model/BindDeviceResourceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateAclRequest.h>
 #include <tencentcloud/dasb/v20191018/model/CreateAclResponse.h>
+#include <tencentcloud/dasb/v20191018/model/CreateAssetSyncJobRequest.h>
+#include <tencentcloud/dasb/v20191018/model/CreateAssetSyncJobResponse.h>
+#include <tencentcloud/dasb/v20191018/model/CreateCmdTemplateRequest.h>
+#include <tencentcloud/dasb/v20191018/model/CreateCmdTemplateResponse.h>
+#include <tencentcloud/dasb/v20191018/model/CreateDeviceAccountRequest.h>
+#include <tencentcloud/dasb/v20191018/model/CreateDeviceAccountResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateDeviceGroupRequest.h>
 #include <tencentcloud/dasb/v20191018/model/CreateDeviceGroupResponse.h>
 #include <tencentcloud/dasb/v20191018/model/CreateUserRequest.h>
@@ -39,20 +49,34 @@
 #include <tencentcloud/dasb/v20191018/model/CreateUserGroupResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteAclsRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteAclsResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteCmdTemplatesRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteCmdTemplatesResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteDeviceAccountsRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteDeviceAccountsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteDeviceGroupMembersRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteDeviceGroupMembersResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteDeviceGroupsRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteDeviceGroupsResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteDevicesRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DeleteDevicesResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteUserGroupMembersRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteUserGroupMembersResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteUserGroupsRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteUserGroupsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteUsersRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DeleteUsersResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DeployResourceRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DeployResourceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeAclsRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeAclsResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeAssetSyncStatusRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeAssetSyncStatusResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeCmdTemplatesRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeCmdTemplatesResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDasbImageIdsRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDasbImageIdsResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeDeviceAccountsRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeDeviceAccountsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDeviceGroupMembersRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDeviceGroupMembersResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDeviceGroupsRequest.h>
@@ -67,10 +91,22 @@
 #include <tencentcloud/dasb/v20191018/model/DescribeUserGroupsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeUsersRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeUsersResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ImportExternalDeviceRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ImportExternalDeviceResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyAclRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyAclResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyDeviceRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyDeviceResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyDeviceGroupRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ModifyDeviceGroupResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyUserRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ModifyUserResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPasswordRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPasswordResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPrivateKeyRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPrivateKeyResponse.h>
+#include <tencentcloud/dasb/v20191018/model/ResetUserRequest.h>
+#include <tencentcloud/dasb/v20191018/model/ResetUserResponse.h>
 
 
 namespace TencentCloud
@@ -91,12 +127,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddUserGroupMembersResponse> AddUserGroupMembersOutcome;
                 typedef std::future<AddUserGroupMembersOutcome> AddUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::AddUserGroupMembersRequest&, AddUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddUserGroupMembersAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindDeviceAccountPasswordResponse> BindDeviceAccountPasswordOutcome;
+                typedef std::future<BindDeviceAccountPasswordOutcome> BindDeviceAccountPasswordOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::BindDeviceAccountPasswordRequest&, BindDeviceAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceAccountPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::BindDeviceAccountPrivateKeyResponse> BindDeviceAccountPrivateKeyOutcome;
+                typedef std::future<BindDeviceAccountPrivateKeyOutcome> BindDeviceAccountPrivateKeyOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::BindDeviceAccountPrivateKeyRequest&, BindDeviceAccountPrivateKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceAccountPrivateKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::BindDeviceResourceResponse> BindDeviceResourceOutcome;
                 typedef std::future<BindDeviceResourceOutcome> BindDeviceResourceOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::BindDeviceResourceRequest&, BindDeviceResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindDeviceResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAssetSyncJobResponse> CreateAssetSyncJobOutcome;
+                typedef std::future<CreateAssetSyncJobOutcome> CreateAssetSyncJobOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::CreateAssetSyncJobRequest&, CreateAssetSyncJobOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAssetSyncJobAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCmdTemplateResponse> CreateCmdTemplateOutcome;
+                typedef std::future<CreateCmdTemplateOutcome> CreateCmdTemplateOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::CreateCmdTemplateRequest&, CreateCmdTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCmdTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDeviceAccountResponse> CreateDeviceAccountOutcome;
+                typedef std::future<CreateDeviceAccountOutcome> CreateDeviceAccountOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::CreateDeviceAccountRequest&, CreateDeviceAccountOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAccountAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceGroupResponse> CreateDeviceGroupOutcome;
                 typedef std::future<CreateDeviceGroupOutcome> CreateDeviceGroupOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::CreateDeviceGroupRequest&, CreateDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceGroupAsyncHandler;
@@ -109,12 +160,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteAclsResponse> DeleteAclsOutcome;
                 typedef std::future<DeleteAclsOutcome> DeleteAclsOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DeleteAclsRequest&, DeleteAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAclsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteCmdTemplatesResponse> DeleteCmdTemplatesOutcome;
+                typedef std::future<DeleteCmdTemplatesOutcome> DeleteCmdTemplatesOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DeleteCmdTemplatesRequest&, DeleteCmdTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCmdTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDeviceAccountsResponse> DeleteDeviceAccountsOutcome;
+                typedef std::future<DeleteDeviceAccountsOutcome> DeleteDeviceAccountsOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DeleteDeviceAccountsRequest&, DeleteDeviceAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceGroupMembersResponse> DeleteDeviceGroupMembersOutcome;
                 typedef std::future<DeleteDeviceGroupMembersOutcome> DeleteDeviceGroupMembersOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DeleteDeviceGroupMembersRequest&, DeleteDeviceGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceGroupMembersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDeviceGroupsResponse> DeleteDeviceGroupsOutcome;
                 typedef std::future<DeleteDeviceGroupsOutcome> DeleteDeviceGroupsOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DeleteDeviceGroupsRequest&, DeleteDeviceGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDeviceGroupsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDevicesResponse> DeleteDevicesOutcome;
+                typedef std::future<DeleteDevicesOutcome> DeleteDevicesOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DeleteDevicesRequest&, DeleteDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDevicesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteUserGroupMembersResponse> DeleteUserGroupMembersOutcome;
                 typedef std::future<DeleteUserGroupMembersOutcome> DeleteUserGroupMembersOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DeleteUserGroupMembersRequest&, DeleteUserGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUserGroupMembersAsyncHandler;
@@ -124,12 +184,24 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteUsersResponse> DeleteUsersOutcome;
                 typedef std::future<DeleteUsersOutcome> DeleteUsersOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DeleteUsersRequest&, DeleteUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeployResourceResponse> DeployResourceOutcome;
+                typedef std::future<DeployResourceOutcome> DeployResourceOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DeployResourceRequest&, DeployResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeployResourceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAclsResponse> DescribeAclsOutcome;
                 typedef std::future<DescribeAclsOutcome> DescribeAclsOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeAclsRequest&, DescribeAclsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAssetSyncStatusResponse> DescribeAssetSyncStatusOutcome;
+                typedef std::future<DescribeAssetSyncStatusOutcome> DescribeAssetSyncStatusOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeAssetSyncStatusRequest&, DescribeAssetSyncStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetSyncStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCmdTemplatesResponse> DescribeCmdTemplatesOutcome;
+                typedef std::future<DescribeCmdTemplatesOutcome> DescribeCmdTemplatesOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeCmdTemplatesRequest&, DescribeCmdTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCmdTemplatesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDasbImageIdsResponse> DescribeDasbImageIdsOutcome;
                 typedef std::future<DescribeDasbImageIdsOutcome> DescribeDasbImageIdsOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeDasbImageIdsRequest&, DescribeDasbImageIdsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDasbImageIdsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeviceAccountsResponse> DescribeDeviceAccountsOutcome;
+                typedef std::future<DescribeDeviceAccountsOutcome> DescribeDeviceAccountsOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeDeviceAccountsRequest&, DescribeDeviceAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceAccountsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDeviceGroupMembersResponse> DescribeDeviceGroupMembersOutcome;
                 typedef std::future<DescribeDeviceGroupMembersOutcome> DescribeDeviceGroupMembersOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeDeviceGroupMembersRequest&, DescribeDeviceGroupMembersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeviceGroupMembersAsyncHandler;
@@ -151,12 +223,30 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUsersResponse> DescribeUsersOutcome;
                 typedef std::future<DescribeUsersOutcome> DescribeUsersOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeUsersRequest&, DescribeUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::ImportExternalDeviceResponse> ImportExternalDeviceOutcome;
+                typedef std::future<ImportExternalDeviceOutcome> ImportExternalDeviceOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ImportExternalDeviceRequest&, ImportExternalDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ImportExternalDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyAclResponse> ModifyAclOutcome;
                 typedef std::future<ModifyAclOutcome> ModifyAclOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyAclRequest&, ModifyAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeviceResponse> ModifyDeviceOutcome;
+                typedef std::future<ModifyDeviceOutcome> ModifyDeviceOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ModifyDeviceRequest&, ModifyDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDeviceGroupResponse> ModifyDeviceGroupOutcome;
+                typedef std::future<ModifyDeviceGroupOutcome> ModifyDeviceGroupOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ModifyDeviceGroupRequest&, ModifyDeviceGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserResponse> ModifyUserOutcome;
                 typedef std::future<ModifyUserOutcome> ModifyUserOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ModifyUserRequest&, ModifyUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetDeviceAccountPasswordResponse> ResetDeviceAccountPasswordOutcome;
+                typedef std::future<ResetDeviceAccountPasswordOutcome> ResetDeviceAccountPasswordOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ResetDeviceAccountPasswordRequest&, ResetDeviceAccountPasswordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceAccountPasswordAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetDeviceAccountPrivateKeyResponse> ResetDeviceAccountPrivateKeyOutcome;
+                typedef std::future<ResetDeviceAccountPrivateKeyOutcome> ResetDeviceAccountPrivateKeyOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ResetDeviceAccountPrivateKeyRequest&, ResetDeviceAccountPrivateKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetDeviceAccountPrivateKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ResetUserResponse> ResetUserOutcome;
+                typedef std::future<ResetUserOutcome> ResetUserOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::ResetUserRequest&, ResetUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetUserAsyncHandler;
 
 
 
@@ -179,6 +269,24 @@ namespace TencentCloud
                 AddUserGroupMembersOutcomeCallable AddUserGroupMembersCallable(const Model::AddUserGroupMembersRequest& request);
 
                 /**
+                 *绑定主机账号密码
+                 * @param req BindDeviceAccountPasswordRequest
+                 * @return BindDeviceAccountPasswordOutcome
+                 */
+                BindDeviceAccountPasswordOutcome BindDeviceAccountPassword(const Model::BindDeviceAccountPasswordRequest &request);
+                void BindDeviceAccountPasswordAsync(const Model::BindDeviceAccountPasswordRequest& request, const BindDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindDeviceAccountPasswordOutcomeCallable BindDeviceAccountPasswordCallable(const Model::BindDeviceAccountPasswordRequest& request);
+
+                /**
+                 *绑定主机账号私钥
+                 * @param req BindDeviceAccountPrivateKeyRequest
+                 * @return BindDeviceAccountPrivateKeyOutcome
+                 */
+                BindDeviceAccountPrivateKeyOutcome BindDeviceAccountPrivateKey(const Model::BindDeviceAccountPrivateKeyRequest &request);
+                void BindDeviceAccountPrivateKeyAsync(const Model::BindDeviceAccountPrivateKeyRequest& request, const BindDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindDeviceAccountPrivateKeyOutcomeCallable BindDeviceAccountPrivateKeyCallable(const Model::BindDeviceAccountPrivateKeyRequest& request);
+
+                /**
                  *修改资产绑定的堡垒机服务
                  * @param req BindDeviceResourceRequest
                  * @return BindDeviceResourceOutcome
@@ -195,6 +303,33 @@ namespace TencentCloud
                 CreateAclOutcome CreateAcl(const Model::CreateAclRequest &request);
                 void CreateAclAsync(const Model::CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAclOutcomeCallable CreateAclCallable(const Model::CreateAclRequest& request);
+
+                /**
+                 *创建手工资产同步任务
+                 * @param req CreateAssetSyncJobRequest
+                 * @return CreateAssetSyncJobOutcome
+                 */
+                CreateAssetSyncJobOutcome CreateAssetSyncJob(const Model::CreateAssetSyncJobRequest &request);
+                void CreateAssetSyncJobAsync(const Model::CreateAssetSyncJobRequest& request, const CreateAssetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAssetSyncJobOutcomeCallable CreateAssetSyncJobCallable(const Model::CreateAssetSyncJobRequest& request);
+
+                /**
+                 *新建高危命令模板
+                 * @param req CreateCmdTemplateRequest
+                 * @return CreateCmdTemplateOutcome
+                 */
+                CreateCmdTemplateOutcome CreateCmdTemplate(const Model::CreateCmdTemplateRequest &request);
+                void CreateCmdTemplateAsync(const Model::CreateCmdTemplateRequest& request, const CreateCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCmdTemplateOutcomeCallable CreateCmdTemplateCallable(const Model::CreateCmdTemplateRequest& request);
+
+                /**
+                 *新建主机账号
+                 * @param req CreateDeviceAccountRequest
+                 * @return CreateDeviceAccountOutcome
+                 */
+                CreateDeviceAccountOutcome CreateDeviceAccount(const Model::CreateDeviceAccountRequest &request);
+                void CreateDeviceAccountAsync(const Model::CreateDeviceAccountRequest& request, const CreateDeviceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDeviceAccountOutcomeCallable CreateDeviceAccountCallable(const Model::CreateDeviceAccountRequest& request);
 
                 /**
                  *新建资产组
@@ -233,6 +368,24 @@ namespace TencentCloud
                 DeleteAclsOutcomeCallable DeleteAclsCallable(const Model::DeleteAclsRequest& request);
 
                 /**
+                 *删除高危命令模板
+                 * @param req DeleteCmdTemplatesRequest
+                 * @return DeleteCmdTemplatesOutcome
+                 */
+                DeleteCmdTemplatesOutcome DeleteCmdTemplates(const Model::DeleteCmdTemplatesRequest &request);
+                void DeleteCmdTemplatesAsync(const Model::DeleteCmdTemplatesRequest& request, const DeleteCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteCmdTemplatesOutcomeCallable DeleteCmdTemplatesCallable(const Model::DeleteCmdTemplatesRequest& request);
+
+                /**
+                 *删除主机账号
+                 * @param req DeleteDeviceAccountsRequest
+                 * @return DeleteDeviceAccountsOutcome
+                 */
+                DeleteDeviceAccountsOutcome DeleteDeviceAccounts(const Model::DeleteDeviceAccountsRequest &request);
+                void DeleteDeviceAccountsAsync(const Model::DeleteDeviceAccountsRequest& request, const DeleteDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDeviceAccountsOutcomeCallable DeleteDeviceAccountsCallable(const Model::DeleteDeviceAccountsRequest& request);
+
+                /**
                  *删除资产组成员
                  * @param req DeleteDeviceGroupMembersRequest
                  * @return DeleteDeviceGroupMembersOutcome
@@ -249,6 +402,15 @@ namespace TencentCloud
                 DeleteDeviceGroupsOutcome DeleteDeviceGroups(const Model::DeleteDeviceGroupsRequest &request);
                 void DeleteDeviceGroupsAsync(const Model::DeleteDeviceGroupsRequest& request, const DeleteDeviceGroupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteDeviceGroupsOutcomeCallable DeleteDeviceGroupsCallable(const Model::DeleteDeviceGroupsRequest& request);
+
+                /**
+                 *删除主机
+                 * @param req DeleteDevicesRequest
+                 * @return DeleteDevicesOutcome
+                 */
+                DeleteDevicesOutcome DeleteDevices(const Model::DeleteDevicesRequest &request);
+                void DeleteDevicesAsync(const Model::DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDevicesOutcomeCallable DeleteDevicesCallable(const Model::DeleteDevicesRequest& request);
 
                 /**
                  *删除用户组成员
@@ -278,6 +440,15 @@ namespace TencentCloud
                 DeleteUsersOutcomeCallable DeleteUsersCallable(const Model::DeleteUsersRequest& request);
 
                 /**
+                 *开通服务，初始化资源，只针对新购资源
+                 * @param req DeployResourceRequest
+                 * @return DeployResourceOutcome
+                 */
+                DeployResourceOutcome DeployResource(const Model::DeployResourceRequest &request);
+                void DeployResourceAsync(const Model::DeployResourceRequest& request, const DeployResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeployResourceOutcomeCallable DeployResourceCallable(const Model::DeployResourceRequest& request);
+
+                /**
                  *查询访问权限列表
                  * @param req DescribeAclsRequest
                  * @return DescribeAclsOutcome
@@ -287,6 +458,24 @@ namespace TencentCloud
                 DescribeAclsOutcomeCallable DescribeAclsCallable(const Model::DescribeAclsRequest& request);
 
                 /**
+                 *查询资产同步状态
+                 * @param req DescribeAssetSyncStatusRequest
+                 * @return DescribeAssetSyncStatusOutcome
+                 */
+                DescribeAssetSyncStatusOutcome DescribeAssetSyncStatus(const Model::DescribeAssetSyncStatusRequest &request);
+                void DescribeAssetSyncStatusAsync(const Model::DescribeAssetSyncStatusRequest& request, const DescribeAssetSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAssetSyncStatusOutcomeCallable DescribeAssetSyncStatusCallable(const Model::DescribeAssetSyncStatusRequest& request);
+
+                /**
+                 *查询命令模板列表
+                 * @param req DescribeCmdTemplatesRequest
+                 * @return DescribeCmdTemplatesOutcome
+                 */
+                DescribeCmdTemplatesOutcome DescribeCmdTemplates(const Model::DescribeCmdTemplatesRequest &request);
+                void DescribeCmdTemplatesAsync(const Model::DescribeCmdTemplatesRequest& request, const DescribeCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCmdTemplatesOutcomeCallable DescribeCmdTemplatesCallable(const Model::DescribeCmdTemplatesRequest& request);
+
+                /**
                  *获取镜像列表
                  * @param req DescribeDasbImageIdsRequest
                  * @return DescribeDasbImageIdsOutcome
@@ -294,6 +483,15 @@ namespace TencentCloud
                 DescribeDasbImageIdsOutcome DescribeDasbImageIds(const Model::DescribeDasbImageIdsRequest &request);
                 void DescribeDasbImageIdsAsync(const Model::DescribeDasbImageIdsRequest& request, const DescribeDasbImageIdsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDasbImageIdsOutcomeCallable DescribeDasbImageIdsCallable(const Model::DescribeDasbImageIdsRequest& request);
+
+                /**
+                 *查询主机账号列表
+                 * @param req DescribeDeviceAccountsRequest
+                 * @return DescribeDeviceAccountsOutcome
+                 */
+                DescribeDeviceAccountsOutcome DescribeDeviceAccounts(const Model::DescribeDeviceAccountsRequest &request);
+                void DescribeDeviceAccountsAsync(const Model::DescribeDeviceAccountsRequest& request, const DescribeDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeviceAccountsOutcomeCallable DescribeDeviceAccountsCallable(const Model::DescribeDeviceAccountsRequest& request);
 
                 /**
                  *查询资产组成员列表
@@ -359,6 +557,15 @@ namespace TencentCloud
                 DescribeUsersOutcomeCallable DescribeUsersCallable(const Model::DescribeUsersRequest& request);
 
                 /**
+                 *导入外部资产信息
+                 * @param req ImportExternalDeviceRequest
+                 * @return ImportExternalDeviceOutcome
+                 */
+                ImportExternalDeviceOutcome ImportExternalDevice(const Model::ImportExternalDeviceRequest &request);
+                void ImportExternalDeviceAsync(const Model::ImportExternalDeviceRequest& request, const ImportExternalDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ImportExternalDeviceOutcomeCallable ImportExternalDeviceCallable(const Model::ImportExternalDeviceRequest& request);
+
+                /**
                  *修改访问权限
                  * @param req ModifyAclRequest
                  * @return ModifyAclOutcome
@@ -368,6 +575,24 @@ namespace TencentCloud
                 ModifyAclOutcomeCallable ModifyAclCallable(const Model::ModifyAclRequest& request);
 
                 /**
+                 *修改资产信息
+                 * @param req ModifyDeviceRequest
+                 * @return ModifyDeviceOutcome
+                 */
+                ModifyDeviceOutcome ModifyDevice(const Model::ModifyDeviceRequest &request);
+                void ModifyDeviceAsync(const Model::ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceOutcomeCallable ModifyDeviceCallable(const Model::ModifyDeviceRequest& request);
+
+                /**
+                 *修改资产组
+                 * @param req ModifyDeviceGroupRequest
+                 * @return ModifyDeviceGroupOutcome
+                 */
+                ModifyDeviceGroupOutcome ModifyDeviceGroup(const Model::ModifyDeviceGroupRequest &request);
+                void ModifyDeviceGroupAsync(const Model::ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDeviceGroupOutcomeCallable ModifyDeviceGroupCallable(const Model::ModifyDeviceGroupRequest& request);
+
+                /**
                  *修改用户信息
                  * @param req ModifyUserRequest
                  * @return ModifyUserOutcome
@@ -375,6 +600,33 @@ namespace TencentCloud
                 ModifyUserOutcome ModifyUser(const Model::ModifyUserRequest &request);
                 void ModifyUserAsync(const Model::ModifyUserRequest& request, const ModifyUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyUserOutcomeCallable ModifyUserCallable(const Model::ModifyUserRequest& request);
+
+                /**
+                 *清除设备账号绑定密码
+                 * @param req ResetDeviceAccountPasswordRequest
+                 * @return ResetDeviceAccountPasswordOutcome
+                 */
+                ResetDeviceAccountPasswordOutcome ResetDeviceAccountPassword(const Model::ResetDeviceAccountPasswordRequest &request);
+                void ResetDeviceAccountPasswordAsync(const Model::ResetDeviceAccountPasswordRequest& request, const ResetDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetDeviceAccountPasswordOutcomeCallable ResetDeviceAccountPasswordCallable(const Model::ResetDeviceAccountPasswordRequest& request);
+
+                /**
+                 *清除设备账号绑定的密钥
+                 * @param req ResetDeviceAccountPrivateKeyRequest
+                 * @return ResetDeviceAccountPrivateKeyOutcome
+                 */
+                ResetDeviceAccountPrivateKeyOutcome ResetDeviceAccountPrivateKey(const Model::ResetDeviceAccountPrivateKeyRequest &request);
+                void ResetDeviceAccountPrivateKeyAsync(const Model::ResetDeviceAccountPrivateKeyRequest& request, const ResetDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetDeviceAccountPrivateKeyOutcomeCallable ResetDeviceAccountPrivateKeyCallable(const Model::ResetDeviceAccountPrivateKeyRequest& request);
+
+                /**
+                 *重置用户
+                 * @param req ResetUserRequest
+                 * @return ResetUserOutcome
+                 */
+                ResetUserOutcome ResetUser(const Model::ResetUserRequest &request);
+                void ResetUserAsync(const Model::ResetUserRequest& request, const ResetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ResetUserOutcomeCallable ResetUserCallable(const Model::ResetUserRequest& request);
 
             };
         }

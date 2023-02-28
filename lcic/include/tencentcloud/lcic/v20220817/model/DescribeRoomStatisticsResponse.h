@@ -120,6 +120,30 @@ namespace TencentCloud
                      */
                     bool RealEndTimeHasBeenSet() const;
 
+                    /**
+                     * 获取房间消息总数。
+                     * @return MessageCount 房间消息总数。
+                     */
+                    uint64_t GetMessageCount() const;
+
+                    /**
+                     * 判断参数 MessageCount 是否已赋值
+                     * @return MessageCount 是否已赋值
+                     */
+                    bool MessageCountHasBeenSet() const;
+
+                    /**
+                     * 获取房间连麦总数。
+                     * @return MicCount 房间连麦总数。
+                     */
+                    uint64_t GetMicCount() const;
+
+                    /**
+                     * 判断参数 MicCount 是否已赋值
+                     * @return MicCount 是否已赋值
+                     */
+                    bool MicCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -159,6 +183,18 @@ namespace TencentCloud
                      */
                     uint64_t m_realEndTime;
                     bool m_realEndTimeHasBeenSet;
+
+                    /**
+                     * 房间消息总数。
+                     */
+                    uint64_t m_messageCount;
+                    bool m_messageCountHasBeenSet;
+
+                    /**
+                     * 房间连麦总数。
+                     */
+                    uint64_t m_micCount;
+                    bool m_micCountHasBeenSet;
 
                 };
             }

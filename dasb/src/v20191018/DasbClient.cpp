@@ -126,6 +126,92 @@ DasbClient::AddUserGroupMembersOutcomeCallable DasbClient::AddUserGroupMembersCa
     return task->get_future();
 }
 
+DasbClient::BindDeviceAccountPasswordOutcome DasbClient::BindDeviceAccountPassword(const BindDeviceAccountPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindDeviceAccountPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindDeviceAccountPasswordResponse rsp = BindDeviceAccountPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindDeviceAccountPasswordOutcome(rsp);
+        else
+            return BindDeviceAccountPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return BindDeviceAccountPasswordOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::BindDeviceAccountPasswordAsync(const BindDeviceAccountPasswordRequest& request, const BindDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindDeviceAccountPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::BindDeviceAccountPasswordOutcomeCallable DasbClient::BindDeviceAccountPasswordCallable(const BindDeviceAccountPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindDeviceAccountPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->BindDeviceAccountPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::BindDeviceAccountPrivateKeyOutcome DasbClient::BindDeviceAccountPrivateKey(const BindDeviceAccountPrivateKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindDeviceAccountPrivateKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindDeviceAccountPrivateKeyResponse rsp = BindDeviceAccountPrivateKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindDeviceAccountPrivateKeyOutcome(rsp);
+        else
+            return BindDeviceAccountPrivateKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return BindDeviceAccountPrivateKeyOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::BindDeviceAccountPrivateKeyAsync(const BindDeviceAccountPrivateKeyRequest& request, const BindDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindDeviceAccountPrivateKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::BindDeviceAccountPrivateKeyOutcomeCallable DasbClient::BindDeviceAccountPrivateKeyCallable(const BindDeviceAccountPrivateKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindDeviceAccountPrivateKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->BindDeviceAccountPrivateKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::BindDeviceResourceOutcome DasbClient::BindDeviceResource(const BindDeviceResourceRequest &request)
 {
     auto outcome = MakeRequest(request, "BindDeviceResource");
@@ -205,6 +291,135 @@ DasbClient::CreateAclOutcomeCallable DasbClient::CreateAclCallable(const CreateA
         [this, request]()
         {
             return this->CreateAcl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::CreateAssetSyncJobOutcome DasbClient::CreateAssetSyncJob(const CreateAssetSyncJobRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAssetSyncJob");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAssetSyncJobResponse rsp = CreateAssetSyncJobResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAssetSyncJobOutcome(rsp);
+        else
+            return CreateAssetSyncJobOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAssetSyncJobOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::CreateAssetSyncJobAsync(const CreateAssetSyncJobRequest& request, const CreateAssetSyncJobAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAssetSyncJob(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::CreateAssetSyncJobOutcomeCallable DasbClient::CreateAssetSyncJobCallable(const CreateAssetSyncJobRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAssetSyncJobOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAssetSyncJob(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::CreateCmdTemplateOutcome DasbClient::CreateCmdTemplate(const CreateCmdTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCmdTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCmdTemplateResponse rsp = CreateCmdTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCmdTemplateOutcome(rsp);
+        else
+            return CreateCmdTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCmdTemplateOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::CreateCmdTemplateAsync(const CreateCmdTemplateRequest& request, const CreateCmdTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCmdTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::CreateCmdTemplateOutcomeCallable DasbClient::CreateCmdTemplateCallable(const CreateCmdTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCmdTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCmdTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::CreateDeviceAccountOutcome DasbClient::CreateDeviceAccount(const CreateDeviceAccountRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDeviceAccount");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDeviceAccountResponse rsp = CreateDeviceAccountResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDeviceAccountOutcome(rsp);
+        else
+            return CreateDeviceAccountOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDeviceAccountOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::CreateDeviceAccountAsync(const CreateDeviceAccountRequest& request, const CreateDeviceAccountAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDeviceAccount(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::CreateDeviceAccountOutcomeCallable DasbClient::CreateDeviceAccountCallable(const CreateDeviceAccountRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDeviceAccountOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDeviceAccount(request);
         }
     );
 
@@ -384,6 +599,92 @@ DasbClient::DeleteAclsOutcomeCallable DasbClient::DeleteAclsCallable(const Delet
     return task->get_future();
 }
 
+DasbClient::DeleteCmdTemplatesOutcome DasbClient::DeleteCmdTemplates(const DeleteCmdTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCmdTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCmdTemplatesResponse rsp = DeleteCmdTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCmdTemplatesOutcome(rsp);
+        else
+            return DeleteCmdTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCmdTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DeleteCmdTemplatesAsync(const DeleteCmdTemplatesRequest& request, const DeleteCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCmdTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DeleteCmdTemplatesOutcomeCallable DasbClient::DeleteCmdTemplatesCallable(const DeleteCmdTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCmdTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCmdTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DeleteDeviceAccountsOutcome DasbClient::DeleteDeviceAccounts(const DeleteDeviceAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDeviceAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDeviceAccountsResponse rsp = DeleteDeviceAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDeviceAccountsOutcome(rsp);
+        else
+            return DeleteDeviceAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDeviceAccountsOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DeleteDeviceAccountsAsync(const DeleteDeviceAccountsRequest& request, const DeleteDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDeviceAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DeleteDeviceAccountsOutcomeCallable DasbClient::DeleteDeviceAccountsCallable(const DeleteDeviceAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDeviceAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDeviceAccounts(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::DeleteDeviceGroupMembersOutcome DasbClient::DeleteDeviceGroupMembers(const DeleteDeviceGroupMembersRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDeviceGroupMembers");
@@ -463,6 +764,49 @@ DasbClient::DeleteDeviceGroupsOutcomeCallable DasbClient::DeleteDeviceGroupsCall
         [this, request]()
         {
             return this->DeleteDeviceGroups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DeleteDevicesOutcome DasbClient::DeleteDevices(const DeleteDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteDevicesResponse rsp = DeleteDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteDevicesOutcome(rsp);
+        else
+            return DeleteDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteDevicesOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DeleteDevicesAsync(const DeleteDevicesRequest& request, const DeleteDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DeleteDevicesOutcomeCallable DasbClient::DeleteDevicesCallable(const DeleteDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteDevices(request);
         }
     );
 
@@ -599,6 +943,49 @@ DasbClient::DeleteUsersOutcomeCallable DasbClient::DeleteUsersCallable(const Del
     return task->get_future();
 }
 
+DasbClient::DeployResourceOutcome DasbClient::DeployResource(const DeployResourceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeployResource");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeployResourceResponse rsp = DeployResourceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeployResourceOutcome(rsp);
+        else
+            return DeployResourceOutcome(o.GetError());
+    }
+    else
+    {
+        return DeployResourceOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DeployResourceAsync(const DeployResourceRequest& request, const DeployResourceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeployResource(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DeployResourceOutcomeCallable DasbClient::DeployResourceCallable(const DeployResourceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeployResourceOutcome()>>(
+        [this, request]()
+        {
+            return this->DeployResource(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::DescribeAclsOutcome DasbClient::DescribeAcls(const DescribeAclsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAcls");
@@ -642,6 +1029,92 @@ DasbClient::DescribeAclsOutcomeCallable DasbClient::DescribeAclsCallable(const D
     return task->get_future();
 }
 
+DasbClient::DescribeAssetSyncStatusOutcome DasbClient::DescribeAssetSyncStatus(const DescribeAssetSyncStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAssetSyncStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAssetSyncStatusResponse rsp = DescribeAssetSyncStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAssetSyncStatusOutcome(rsp);
+        else
+            return DescribeAssetSyncStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAssetSyncStatusOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeAssetSyncStatusAsync(const DescribeAssetSyncStatusRequest& request, const DescribeAssetSyncStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAssetSyncStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeAssetSyncStatusOutcomeCallable DasbClient::DescribeAssetSyncStatusCallable(const DescribeAssetSyncStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAssetSyncStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAssetSyncStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DescribeCmdTemplatesOutcome DasbClient::DescribeCmdTemplates(const DescribeCmdTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCmdTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCmdTemplatesResponse rsp = DescribeCmdTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCmdTemplatesOutcome(rsp);
+        else
+            return DescribeCmdTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCmdTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeCmdTemplatesAsync(const DescribeCmdTemplatesRequest& request, const DescribeCmdTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCmdTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeCmdTemplatesOutcomeCallable DasbClient::DescribeCmdTemplatesCallable(const DescribeCmdTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCmdTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCmdTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::DescribeDasbImageIdsOutcome DasbClient::DescribeDasbImageIds(const DescribeDasbImageIdsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDasbImageIds");
@@ -678,6 +1151,49 @@ DasbClient::DescribeDasbImageIdsOutcomeCallable DasbClient::DescribeDasbImageIds
         [this, request]()
         {
             return this->DescribeDasbImageIds(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DescribeDeviceAccountsOutcome DasbClient::DescribeDeviceAccounts(const DescribeDeviceAccountsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeviceAccounts");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeviceAccountsResponse rsp = DescribeDeviceAccountsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeviceAccountsOutcome(rsp);
+        else
+            return DescribeDeviceAccountsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeviceAccountsOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeDeviceAccountsAsync(const DescribeDeviceAccountsRequest& request, const DescribeDeviceAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeviceAccounts(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeDeviceAccountsOutcomeCallable DasbClient::DescribeDeviceAccountsCallable(const DescribeDeviceAccountsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeviceAccountsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeviceAccounts(request);
         }
     );
 
@@ -986,6 +1502,49 @@ DasbClient::DescribeUsersOutcomeCallable DasbClient::DescribeUsersCallable(const
     return task->get_future();
 }
 
+DasbClient::ImportExternalDeviceOutcome DasbClient::ImportExternalDevice(const ImportExternalDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ImportExternalDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ImportExternalDeviceResponse rsp = ImportExternalDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ImportExternalDeviceOutcome(rsp);
+        else
+            return ImportExternalDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return ImportExternalDeviceOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ImportExternalDeviceAsync(const ImportExternalDeviceRequest& request, const ImportExternalDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ImportExternalDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ImportExternalDeviceOutcomeCallable DasbClient::ImportExternalDeviceCallable(const ImportExternalDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ImportExternalDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->ImportExternalDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::ModifyAclOutcome DasbClient::ModifyAcl(const ModifyAclRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyAcl");
@@ -1029,6 +1588,92 @@ DasbClient::ModifyAclOutcomeCallable DasbClient::ModifyAclCallable(const ModifyA
     return task->get_future();
 }
 
+DasbClient::ModifyDeviceOutcome DasbClient::ModifyDevice(const ModifyDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceResponse rsp = ModifyDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceOutcome(rsp);
+        else
+            return ModifyDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ModifyDeviceAsync(const ModifyDeviceRequest& request, const ModifyDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ModifyDeviceOutcomeCallable DasbClient::ModifyDeviceCallable(const ModifyDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::ModifyDeviceGroupOutcome DasbClient::ModifyDeviceGroup(const ModifyDeviceGroupRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDeviceGroup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDeviceGroupResponse rsp = ModifyDeviceGroupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDeviceGroupOutcome(rsp);
+        else
+            return ModifyDeviceGroupOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDeviceGroupOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ModifyDeviceGroupAsync(const ModifyDeviceGroupRequest& request, const ModifyDeviceGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDeviceGroup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ModifyDeviceGroupOutcomeCallable DasbClient::ModifyDeviceGroupCallable(const ModifyDeviceGroupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDeviceGroupOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDeviceGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::ModifyUserOutcome DasbClient::ModifyUser(const ModifyUserRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUser");
@@ -1065,6 +1710,135 @@ DasbClient::ModifyUserOutcomeCallable DasbClient::ModifyUserCallable(const Modif
         [this, request]()
         {
             return this->ModifyUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::ResetDeviceAccountPasswordOutcome DasbClient::ResetDeviceAccountPassword(const ResetDeviceAccountPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetDeviceAccountPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetDeviceAccountPasswordResponse rsp = ResetDeviceAccountPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetDeviceAccountPasswordOutcome(rsp);
+        else
+            return ResetDeviceAccountPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetDeviceAccountPasswordOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ResetDeviceAccountPasswordAsync(const ResetDeviceAccountPasswordRequest& request, const ResetDeviceAccountPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetDeviceAccountPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ResetDeviceAccountPasswordOutcomeCallable DasbClient::ResetDeviceAccountPasswordCallable(const ResetDeviceAccountPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetDeviceAccountPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetDeviceAccountPassword(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::ResetDeviceAccountPrivateKeyOutcome DasbClient::ResetDeviceAccountPrivateKey(const ResetDeviceAccountPrivateKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetDeviceAccountPrivateKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetDeviceAccountPrivateKeyResponse rsp = ResetDeviceAccountPrivateKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetDeviceAccountPrivateKeyOutcome(rsp);
+        else
+            return ResetDeviceAccountPrivateKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetDeviceAccountPrivateKeyOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ResetDeviceAccountPrivateKeyAsync(const ResetDeviceAccountPrivateKeyRequest& request, const ResetDeviceAccountPrivateKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetDeviceAccountPrivateKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ResetDeviceAccountPrivateKeyOutcomeCallable DasbClient::ResetDeviceAccountPrivateKeyCallable(const ResetDeviceAccountPrivateKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetDeviceAccountPrivateKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetDeviceAccountPrivateKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::ResetUserOutcome DasbClient::ResetUser(const ResetUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "ResetUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ResetUserResponse rsp = ResetUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ResetUserOutcome(rsp);
+        else
+            return ResetUserOutcome(o.GetError());
+    }
+    else
+    {
+        return ResetUserOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::ResetUserAsync(const ResetUserRequest& request, const ResetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ResetUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::ResetUserOutcomeCallable DasbClient::ResetUserCallable(const ResetUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ResetUserOutcome()>>(
+        [this, request]()
+        {
+            return this->ResetUser(request);
         }
     );
 

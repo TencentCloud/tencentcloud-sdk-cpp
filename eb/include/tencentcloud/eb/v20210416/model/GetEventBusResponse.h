@@ -139,6 +139,74 @@ namespace TencentCloud
                      */
                     bool TypeHasBeenSet() const;
 
+                    /**
+                     * 获取计费模式
+                     * @return PayMode 计费模式
+                     */
+                    std::string GetPayMode() const;
+
+                    /**
+                     * 判断参数 PayMode 是否已赋值
+                     * @return PayMode 是否已赋值
+                     */
+                    bool PayModeHasBeenSet() const;
+
+                    /**
+                     * 获取EB日志存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SaveDays EB日志存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSaveDays() const;
+
+                    /**
+                     * 判断参数 SaveDays 是否已赋值
+                     * @return SaveDays 是否已赋值
+                     */
+                    bool SaveDaysHasBeenSet() const;
+
+                    /**
+                     * 获取EB日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogTopicId EB日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogTopicId() const;
+
+                    /**
+                     * 判断参数 LogTopicId 是否已赋值
+                     * @return LogTopicId 是否已赋值
+                     */
+                    bool LogTopicIdHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EnableStore 是否开启存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetEnableStore() const;
+
+                    /**
+                     * 判断参数 EnableStore 是否已赋值
+                     * @return EnableStore 是否已赋值
+                     */
+                    bool EnableStoreHasBeenSet() const;
+
+                    /**
+                     * 获取消息序列，是否有序
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LinkMode 消息序列，是否有序
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLinkMode() const;
+
+                    /**
+                     * 判断参数 LinkMode 是否已赋值
+                     * @return LinkMode 是否已赋值
+                     */
+                    bool LinkModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,6 +256,40 @@ namespace TencentCloud
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
+
+                    /**
+                     * 计费模式
+                     */
+                    std::string m_payMode;
+                    bool m_payModeHasBeenSet;
+
+                    /**
+                     * EB日志存储时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_saveDays;
+                    bool m_saveDaysHasBeenSet;
+
+                    /**
+                     * EB日志主题ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logTopicId;
+                    bool m_logTopicIdHasBeenSet;
+
+                    /**
+                     * 是否开启存储
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_enableStore;
+                    bool m_enableStoreHasBeenSet;
+
+                    /**
+                     * 消息序列，是否有序
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_linkMode;
+                    bool m_linkModeHasBeenSet;
 
                 };
             }
