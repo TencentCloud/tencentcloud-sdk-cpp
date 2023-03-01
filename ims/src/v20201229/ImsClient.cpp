@@ -40,6 +40,49 @@ ImsClient::ImsClient(const Credential &credential, const string &region, const C
 }
 
 
+ImsClient::CreateImageModerationAsyncTaskOutcome ImsClient::CreateImageModerationAsyncTask(const CreateImageModerationAsyncTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateImageModerationAsyncTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateImageModerationAsyncTaskResponse rsp = CreateImageModerationAsyncTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateImageModerationAsyncTaskOutcome(rsp);
+        else
+            return CreateImageModerationAsyncTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateImageModerationAsyncTaskOutcome(outcome.GetError());
+    }
+}
+
+void ImsClient::CreateImageModerationAsyncTaskAsync(const CreateImageModerationAsyncTaskRequest& request, const CreateImageModerationAsyncTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateImageModerationAsyncTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ImsClient::CreateImageModerationAsyncTaskOutcomeCallable ImsClient::CreateImageModerationAsyncTaskCallable(const CreateImageModerationAsyncTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateImageModerationAsyncTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateImageModerationAsyncTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ImsClient::ImageModerationOutcome ImsClient::ImageModeration(const ImageModerationRequest &request)
 {
     auto outcome = MakeRequest(request, "ImageModeration");

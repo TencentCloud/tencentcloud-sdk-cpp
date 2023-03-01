@@ -136,17 +136,17 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。民族。
+                     * 获取身份校验环节识别结果：民族。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrNation Ocr识别结果。民族。
+                     * @return OcrNation 身份校验环节识别结果：民族。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrNation() const;
 
                     /**
-                     * 设置Ocr识别结果。民族。
+                     * 设置身份校验环节识别结果：民族。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrNation Ocr识别结果。民族。
+                     * @param OcrNation 身份校验环节识别结果：民族。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrNation(const std::string& _ocrNation);
@@ -158,17 +158,17 @@ namespace TencentCloud
                     bool OcrNationHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。家庭住址。
+                     * 获取身份校验环节识别结果：家庭住址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrAddress Ocr识别结果。家庭住址。
+                     * @return OcrAddress 身份校验环节识别结果：家庭住址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrAddress() const;
 
                     /**
-                     * 设置Ocr识别结果。家庭住址。
+                     * 设置身份校验环节识别结果：家庭住址。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrAddress Ocr识别结果。家庭住址。
+                     * @param OcrAddress 身份校验环节识别结果：家庭住址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrAddress(const std::string& _ocrAddress);
@@ -180,17 +180,17 @@ namespace TencentCloud
                     bool OcrAddressHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。生日。
+                     * 获取身份校验环节识别结果：生日。格式为：YYYY/M/D
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrBirth Ocr识别结果。生日。
+                     * @return OcrBirth 身份校验环节识别结果：生日。格式为：YYYY/M/D
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrBirth() const;
 
                     /**
-                     * 设置Ocr识别结果。生日。
+                     * 设置身份校验环节识别结果：生日。格式为：YYYY/M/D
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrBirth Ocr识别结果。生日。
+                     * @param OcrBirth 身份校验环节识别结果：生日。格式为：YYYY/M/D
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrBirth(const std::string& _ocrBirth);
@@ -202,17 +202,17 @@ namespace TencentCloud
                     bool OcrBirthHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。签发机关。
+                     * 获取身份校验环节识别结果：签发机关。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrAuthority Ocr识别结果。签发机关。
+                     * @return OcrAuthority 身份校验环节识别结果：签发机关。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrAuthority() const;
 
                     /**
-                     * 设置Ocr识别结果。签发机关。
+                     * 设置身份校验环节识别结果：签发机关。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrAuthority Ocr识别结果。签发机关。
+                     * @param OcrAuthority 身份校验环节识别结果：签发机关。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrAuthority(const std::string& _ocrAuthority);
@@ -224,17 +224,17 @@ namespace TencentCloud
                     bool OcrAuthorityHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。有效日期。
+                     * 获取身份校验环节识别结果：有效日期。格式为：YYYY.MM.DD-YYYY.MM.DD
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrValidDate Ocr识别结果。有效日期。
+                     * @return OcrValidDate 身份校验环节识别结果：有效日期。格式为：YYYY.MM.DD-YYYY.MM.DD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrValidDate() const;
 
                     /**
-                     * 设置Ocr识别结果。有效日期。
+                     * 设置身份校验环节识别结果：有效日期。格式为：YYYY.MM.DD-YYYY.MM.DD
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrValidDate Ocr识别结果。有效日期。
+                     * @param OcrValidDate 身份校验环节识别结果：有效日期。格式为：YYYY.MM.DD-YYYY.MM.DD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrValidDate(const std::string& _ocrValidDate);
@@ -246,17 +246,17 @@ namespace TencentCloud
                     bool OcrValidDateHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。姓名。
+                     * 获取身份校验环节识别结果：姓名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrName Ocr识别结果。姓名。
+                     * @return OcrName 身份校验环节识别结果：姓名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrName() const;
 
                     /**
-                     * 设置Ocr识别结果。姓名。
+                     * 设置身份校验环节识别结果：姓名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrName Ocr识别结果。姓名。
+                     * @param OcrName 身份校验环节识别结果：姓名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrName(const std::string& _ocrName);
@@ -268,17 +268,17 @@ namespace TencentCloud
                     bool OcrNameHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。身份证号。
+                     * 获取身份校验环节识别结果：身份证号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrIdCard Ocr识别结果。身份证号。
+                     * @return OcrIdCard 身份校验环节识别结果：身份证号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrIdCard() const;
 
                     /**
-                     * 设置Ocr识别结果。身份证号。
+                     * 设置身份校验环节识别结果：身份证号。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrIdCard Ocr识别结果。身份证号。
+                     * @param OcrIdCard 身份校验环节识别结果：身份证号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrIdCard(const std::string& _ocrIdCard);
@@ -290,17 +290,17 @@ namespace TencentCloud
                     bool OcrIdCardHasBeenSet() const;
 
                     /**
-                     * 获取Ocr识别结果。性别。
+                     * 获取身份校验环节识别结果：性别。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OcrGender Ocr识别结果。性别。
+                     * @return OcrGender 身份校验环节识别结果：性别。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOcrGender() const;
 
                     /**
-                     * 设置Ocr识别结果。性别。
+                     * 设置身份校验环节识别结果：性别。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OcrGender Ocr识别结果。性别。
+                     * @param OcrGender 身份校验环节识别结果：性别。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOcrGender(const std::string& _ocrGender);
@@ -310,6 +310,32 @@ namespace TencentCloud
                      * @return OcrGender 是否已赋值
                      */
                     bool OcrGenderHasBeenSet() const;
+
+                    /**
+                     * 获取身份校验环节采用的信息上传方式。
+取值有"NFC"、"OCR"、"手动输入"、"其他"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdInfoFrom 身份校验环节采用的信息上传方式。
+取值有"NFC"、"OCR"、"手动输入"、"其他"
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIdInfoFrom() const;
+
+                    /**
+                     * 设置身份校验环节采用的信息上传方式。
+取值有"NFC"、"OCR"、"手动输入"、"其他"
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IdInfoFrom 身份校验环节采用的信息上传方式。
+取值有"NFC"、"OCR"、"手动输入"、"其他"
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIdInfoFrom(const std::string& _idInfoFrom);
+
+                    /**
+                     * 判断参数 IdInfoFrom 是否已赋值
+                     * @return IdInfoFrom 是否已赋值
+                     */
+                    bool IdInfoFromHasBeenSet() const;
 
                     /**
                      * 获取本次流程最终活体结果。0为成功
@@ -620,60 +646,68 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * Ocr识别结果。民族。
+                     * 身份校验环节识别结果：民族。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrNation;
                     bool m_ocrNationHasBeenSet;
 
                     /**
-                     * Ocr识别结果。家庭住址。
+                     * 身份校验环节识别结果：家庭住址。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrAddress;
                     bool m_ocrAddressHasBeenSet;
 
                     /**
-                     * Ocr识别结果。生日。
+                     * 身份校验环节识别结果：生日。格式为：YYYY/M/D
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrBirth;
                     bool m_ocrBirthHasBeenSet;
 
                     /**
-                     * Ocr识别结果。签发机关。
+                     * 身份校验环节识别结果：签发机关。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrAuthority;
                     bool m_ocrAuthorityHasBeenSet;
 
                     /**
-                     * Ocr识别结果。有效日期。
+                     * 身份校验环节识别结果：有效日期。格式为：YYYY.MM.DD-YYYY.MM.DD
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrValidDate;
                     bool m_ocrValidDateHasBeenSet;
 
                     /**
-                     * Ocr识别结果。姓名。
+                     * 身份校验环节识别结果：姓名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrName;
                     bool m_ocrNameHasBeenSet;
 
                     /**
-                     * Ocr识别结果。身份证号。
+                     * 身份校验环节识别结果：身份证号。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrIdCard;
                     bool m_ocrIdCardHasBeenSet;
 
                     /**
-                     * Ocr识别结果。性别。
+                     * 身份校验环节识别结果：性别。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ocrGender;
                     bool m_ocrGenderHasBeenSet;
+
+                    /**
+                     * 身份校验环节采用的信息上传方式。
+取值有"NFC"、"OCR"、"手动输入"、"其他"
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_idInfoFrom;
+                    bool m_idInfoFromHasBeenSet;
 
                     /**
                      * 本次流程最终活体结果。0为成功

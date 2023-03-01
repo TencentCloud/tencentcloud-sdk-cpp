@@ -31,7 +31,9 @@ GetUserResponse::GetUserResponse() :
     m_consoleLoginHasBeenSet(false),
     m_phoneNumHasBeenSet(false),
     m_countryCodeHasBeenSet(false),
-    m_emailHasBeenSet(false)
+    m_emailHasBeenSet(false),
+    m_recentlyLoginIPHasBeenSet(false),
+    m_recentlyLoginTimeHasBeenSet(false)
 {
 }
 
@@ -149,6 +151,26 @@ CoreInternalOutcome GetUserResponse::Deserialize(const string &payload)
         m_emailHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RecentlyLoginIP") && !rsp["RecentlyLoginIP"].IsNull())
+    {
+        if (!rsp["RecentlyLoginIP"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecentlyLoginIP` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recentlyLoginIP = string(rsp["RecentlyLoginIP"].GetString());
+        m_recentlyLoginIPHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RecentlyLoginTime") && !rsp["RecentlyLoginTime"].IsNull())
+    {
+        if (!rsp["RecentlyLoginTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RecentlyLoginTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_recentlyLoginTime = string(rsp["RecentlyLoginTime"].GetString());
+        m_recentlyLoginTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +243,22 @@ string GetUserResponse::ToJsonString() const
         string key = "Email";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_email.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recentlyLoginIPHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecentlyLoginIP";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recentlyLoginIP.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_recentlyLoginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RecentlyLoginTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_recentlyLoginTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +351,26 @@ string GetUserResponse::GetEmail() const
 bool GetUserResponse::EmailHasBeenSet() const
 {
     return m_emailHasBeenSet;
+}
+
+string GetUserResponse::GetRecentlyLoginIP() const
+{
+    return m_recentlyLoginIP;
+}
+
+bool GetUserResponse::RecentlyLoginIPHasBeenSet() const
+{
+    return m_recentlyLoginIPHasBeenSet;
+}
+
+string GetUserResponse::GetRecentlyLoginTime() const
+{
+    return m_recentlyLoginTime;
+}
+
+bool GetUserResponse::RecentlyLoginTimeHasBeenSet() const
+{
+    return m_recentlyLoginTimeHasBeenSet;
 }
 
 

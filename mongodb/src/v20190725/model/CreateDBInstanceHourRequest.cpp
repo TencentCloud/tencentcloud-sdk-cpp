@@ -45,7 +45,10 @@ CreateDBInstanceHourRequest::CreateDBInstanceHourRequest() :
     m_availabilityZoneListHasBeenSet(false),
     m_mongosCpuHasBeenSet(false),
     m_mongosMemoryHasBeenSet(false),
-    m_mongosNodeNumHasBeenSet(false)
+    m_mongosNodeNumHasBeenSet(false),
+    m_readonlyNodeNumHasBeenSet(false),
+    m_readonlyNodeAvailabilityZoneListHasBeenSet(false),
+    m_hiddenZoneHasBeenSet(false)
 {
 }
 
@@ -255,6 +258,35 @@ string CreateDBInstanceHourRequest::ToJsonString() const
         string key = "MongosNodeNum";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_mongosNodeNum, allocator);
+    }
+
+    if (m_readonlyNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadonlyNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_readonlyNodeNum, allocator);
+    }
+
+    if (m_readonlyNodeAvailabilityZoneListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReadonlyNodeAvailabilityZoneList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_readonlyNodeAvailabilityZoneList.begin(); itr != m_readonlyNodeAvailabilityZoneList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_hiddenZoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HiddenZone";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_hiddenZone.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -631,6 +663,54 @@ void CreateDBInstanceHourRequest::SetMongosNodeNum(const uint64_t& _mongosNodeNu
 bool CreateDBInstanceHourRequest::MongosNodeNumHasBeenSet() const
 {
     return m_mongosNodeNumHasBeenSet;
+}
+
+uint64_t CreateDBInstanceHourRequest::GetReadonlyNodeNum() const
+{
+    return m_readonlyNodeNum;
+}
+
+void CreateDBInstanceHourRequest::SetReadonlyNodeNum(const uint64_t& _readonlyNodeNum)
+{
+    m_readonlyNodeNum = _readonlyNodeNum;
+    m_readonlyNodeNumHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::ReadonlyNodeNumHasBeenSet() const
+{
+    return m_readonlyNodeNumHasBeenSet;
+}
+
+vector<string> CreateDBInstanceHourRequest::GetReadonlyNodeAvailabilityZoneList() const
+{
+    return m_readonlyNodeAvailabilityZoneList;
+}
+
+void CreateDBInstanceHourRequest::SetReadonlyNodeAvailabilityZoneList(const vector<string>& _readonlyNodeAvailabilityZoneList)
+{
+    m_readonlyNodeAvailabilityZoneList = _readonlyNodeAvailabilityZoneList;
+    m_readonlyNodeAvailabilityZoneListHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::ReadonlyNodeAvailabilityZoneListHasBeenSet() const
+{
+    return m_readonlyNodeAvailabilityZoneListHasBeenSet;
+}
+
+string CreateDBInstanceHourRequest::GetHiddenZone() const
+{
+    return m_hiddenZone;
+}
+
+void CreateDBInstanceHourRequest::SetHiddenZone(const string& _hiddenZone)
+{
+    m_hiddenZone = _hiddenZone;
+    m_hiddenZoneHasBeenSet = true;
+}
+
+bool CreateDBInstanceHourRequest::HiddenZoneHasBeenSet() const
+{
+    return m_hiddenZoneHasBeenSet;
 }
 
 

@@ -24,14 +24,16 @@ set(ims_public_header_model
   include/tencentcloud/ims/v20201229/model/RecognitionResult.h
   include/tencentcloud/ims/v20201229/model/ObjectResult.h
   include/tencentcloud/ims/v20201229/model/OcrTextDetail.h
+  include/tencentcloud/ims/v20201229/model/CreateImageModerationAsyncTaskResponse.h
   include/tencentcloud/ims/v20201229/model/RecognitionTag.h
   include/tencentcloud/ims/v20201229/model/ObjectDetail.h
+  include/tencentcloud/ims/v20201229/model/Device.h
   include/tencentcloud/ims/v20201229/model/OcrResult.h
   include/tencentcloud/ims/v20201229/model/LibDetail.h
   include/tencentcloud/ims/v20201229/model/Location.h
   include/tencentcloud/ims/v20201229/model/LabelResult.h
   include/tencentcloud/ims/v20201229/model/LabelDetailItem.h
-  include/tencentcloud/ims/v20201229/model/Device.h
+  include/tencentcloud/ims/v20201229/model/CreateImageModerationAsyncTaskRequest.h
   include/tencentcloud/ims/v20201229/model/LibResult.h
   include/tencentcloud/ims/v20201229/model/ImageModerationResponse.h
   include/tencentcloud/ims/v20201229/model/User.h
@@ -57,14 +59,16 @@ set(ims_src
   src/v20201229/model/RecognitionResult.cpp
   src/v20201229/model/ObjectResult.cpp
   src/v20201229/model/OcrTextDetail.cpp
+  src/v20201229/model/CreateImageModerationAsyncTaskResponse.cpp
   src/v20201229/model/RecognitionTag.cpp
   src/v20201229/model/ObjectDetail.cpp
+  src/v20201229/model/Device.cpp
   src/v20201229/model/OcrResult.cpp
   src/v20201229/model/LibDetail.cpp
   src/v20201229/model/Location.cpp
   src/v20201229/model/LabelResult.cpp
   src/v20201229/model/LabelDetailItem.cpp
-  src/v20201229/model/Device.cpp
+  src/v20201229/model/CreateImageModerationAsyncTaskRequest.cpp
   src/v20201229/model/LibResult.cpp
   src/v20201229/model/ImageModerationResponse.cpp
   src/v20201229/model/User.cpp

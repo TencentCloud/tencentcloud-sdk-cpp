@@ -141,6 +141,34 @@ namespace TencentCloud
                      */
                     bool EmailHasBeenSet() const;
 
+                    /**
+                     * 获取最近一次登录ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecentlyLoginIP 最近一次登录ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRecentlyLoginIP() const;
+
+                    /**
+                     * 判断参数 RecentlyLoginIP 是否已赋值
+                     * @return RecentlyLoginIP 是否已赋值
+                     */
+                    bool RecentlyLoginIPHasBeenSet() const;
+
+                    /**
+                     * 获取最近一次登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RecentlyLoginTime 最近一次登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRecentlyLoginTime() const;
+
+                    /**
+                     * 判断参数 RecentlyLoginTime 是否已赋值
+                     * @return RecentlyLoginTime 是否已赋值
+                     */
+                    bool RecentlyLoginTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -191,6 +219,20 @@ namespace TencentCloud
                      */
                     std::string m_email;
                     bool m_emailHasBeenSet;
+
+                    /**
+                     * 最近一次登录ip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recentlyLoginIP;
+                    bool m_recentlyLoginIPHasBeenSet;
+
+                    /**
+                     * 最近一次登录时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_recentlyLoginTime;
+                    bool m_recentlyLoginTimeHasBeenSet;
 
                 };
             }

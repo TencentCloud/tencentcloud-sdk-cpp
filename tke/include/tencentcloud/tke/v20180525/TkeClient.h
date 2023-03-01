@@ -1863,7 +1863,7 @@ namespace TencentCloud
                 DescribeEdgeClusterUpgradeInfoOutcomeCallable DescribeEdgeClusterUpgradeInfoCallable(const Model::DescribeEdgeClusterUpgradeInfoRequest& request);
 
                 /**
-                 *获取事件、审计和日志的状态接口
+                 *获取事件、审计和日志的状态
                  * @param req DescribeEdgeLogSwitchesRequest
                  * @return DescribeEdgeLogSwitchesOutcome
                  */

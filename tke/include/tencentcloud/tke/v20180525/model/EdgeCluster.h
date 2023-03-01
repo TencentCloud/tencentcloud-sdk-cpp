@@ -293,6 +293,50 @@ namespace TencentCloud
                      */
                     bool LevelHasBeenSet() const;
 
+                    /**
+                     * 获取是否支持自动提升集群配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AutoUpgradeClusterLevel 是否支持自动提升集群配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetAutoUpgradeClusterLevel() const;
+
+                    /**
+                     * 设置是否支持自动提升集群配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AutoUpgradeClusterLevel 是否支持自动提升集群配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel);
+
+                    /**
+                     * 判断参数 AutoUpgradeClusterLevel 是否已赋值
+                     * @return AutoUpgradeClusterLevel 是否已赋值
+                     */
+                    bool AutoUpgradeClusterLevelHasBeenSet() const;
+
+                    /**
+                     * 获取集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ChargeType 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetChargeType() const;
+
+                    /**
+                     * 设置集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ChargeType 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetChargeType(const std::string& _chargeType);
+
+                    /**
+                     * 判断参数 ChargeType 是否已赋值
+                     * @return ChargeType 是否已赋值
+                     */
+                    bool ChargeTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -375,6 +419,20 @@ namespace TencentCloud
                      */
                     std::string m_level;
                     bool m_levelHasBeenSet;
+
+                    /**
+                     * 是否支持自动提升集群配置
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_autoUpgradeClusterLevel;
+                    bool m_autoUpgradeClusterLevelHasBeenSet;
+
+                    /**
+                     * 集群付费模式，支持POSTPAID_BY_HOUR或者PREPAID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_chargeType;
+                    bool m_chargeTypeHasBeenSet;
 
                 };
             }

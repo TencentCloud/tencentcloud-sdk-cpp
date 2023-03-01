@@ -33,6 +33,7 @@ DetectInfoText::DetectInfoText() :
     m_ocrNameHasBeenSet(false),
     m_ocrIdCardHasBeenSet(false),
     m_ocrGenderHasBeenSet(false),
+    m_idInfoFromHasBeenSet(false),
     m_liveStatusHasBeenSet(false),
     m_liveMsgHasBeenSet(false),
     m_comparestatusHasBeenSet(false),
@@ -170,6 +171,16 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
         }
         m_ocrGender = string(value["OcrGender"].GetString());
         m_ocrGenderHasBeenSet = true;
+    }
+
+    if (value.HasMember("IdInfoFrom") && !value["IdInfoFrom"].IsNull())
+    {
+        if (!value["IdInfoFrom"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.IdInfoFrom` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_idInfoFrom = string(value["IdInfoFrom"].GetString());
+        m_idInfoFromHasBeenSet = true;
     }
 
     if (value.HasMember("LiveStatus") && !value["LiveStatus"].IsNull())
@@ -393,6 +404,14 @@ void DetectInfoText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "OcrGender";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ocrGender.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idInfoFromHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdInfoFrom";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_idInfoFrom.c_str(), allocator).Move(), allocator);
     }
 
     if (m_liveStatusHasBeenSet)
@@ -683,6 +702,22 @@ void DetectInfoText::SetOcrGender(const string& _ocrGender)
 bool DetectInfoText::OcrGenderHasBeenSet() const
 {
     return m_ocrGenderHasBeenSet;
+}
+
+string DetectInfoText::GetIdInfoFrom() const
+{
+    return m_idInfoFrom;
+}
+
+void DetectInfoText::SetIdInfoFrom(const string& _idInfoFrom)
+{
+    m_idInfoFrom = _idInfoFrom;
+    m_idInfoFromHasBeenSet = true;
+}
+
+bool DetectInfoText::IdInfoFromHasBeenSet() const
+{
+    return m_idInfoFromHasBeenSet;
 }
 
 int64_t DetectInfoText::GetLiveStatus() const

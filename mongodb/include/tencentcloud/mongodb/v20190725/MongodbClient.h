@@ -262,7 +262,7 @@ namespace TencentCloud
                 CreateDBInstanceOutcomeCallable CreateDBInstanceCallable(const Model::CreateDBInstanceRequest& request);
 
                 /**
-                 *本接口(CreateDBInstanceHour)用于创建按量计费的MongoDB云数据库实例。
+                 *本接口（CreateDBInstanceHour）用于创建按量计费的MongoDB云数据库实例。
                  * @param req CreateDBInstanceHourRequest
                  * @return CreateDBInstanceHourOutcome
                  */

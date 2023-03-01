@@ -33,7 +33,9 @@ EdgeCluster::EdgeCluster() :
     m_edgeClusterVersionHasBeenSet(false),
     m_maxNodePodNumHasBeenSet(false),
     m_clusterAdvancedSettingsHasBeenSet(false),
-    m_levelHasBeenSet(false)
+    m_levelHasBeenSet(false),
+    m_autoUpgradeClusterLevelHasBeenSet(false),
+    m_chargeTypeHasBeenSet(false)
 {
 }
 
@@ -179,6 +181,26 @@ CoreInternalOutcome EdgeCluster::Deserialize(const rapidjson::Value &value)
         m_levelHasBeenSet = true;
     }
 
+    if (value.HasMember("AutoUpgradeClusterLevel") && !value["AutoUpgradeClusterLevel"].IsNull())
+    {
+        if (!value["AutoUpgradeClusterLevel"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeCluster.AutoUpgradeClusterLevel` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_autoUpgradeClusterLevel = value["AutoUpgradeClusterLevel"].GetBool();
+        m_autoUpgradeClusterLevelHasBeenSet = true;
+    }
+
+    if (value.HasMember("ChargeType") && !value["ChargeType"].IsNull())
+    {
+        if (!value["ChargeType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeCluster.ChargeType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_chargeType = string(value["ChargeType"].GetString());
+        m_chargeTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +311,22 @@ void EdgeCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Level";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_level.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_autoUpgradeClusterLevelHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AutoUpgradeClusterLevel";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_autoUpgradeClusterLevel, allocator);
+    }
+
+    if (m_chargeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ChargeType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +538,37 @@ void EdgeCluster::SetLevel(const string& _level)
 bool EdgeCluster::LevelHasBeenSet() const
 {
     return m_levelHasBeenSet;
+}
+
+bool EdgeCluster::GetAutoUpgradeClusterLevel() const
+{
+    return m_autoUpgradeClusterLevel;
+}
+
+void EdgeCluster::SetAutoUpgradeClusterLevel(const bool& _autoUpgradeClusterLevel)
+{
+    m_autoUpgradeClusterLevel = _autoUpgradeClusterLevel;
+    m_autoUpgradeClusterLevelHasBeenSet = true;
+}
+
+bool EdgeCluster::AutoUpgradeClusterLevelHasBeenSet() const
+{
+    return m_autoUpgradeClusterLevelHasBeenSet;
+}
+
+string EdgeCluster::GetChargeType() const
+{
+    return m_chargeType;
+}
+
+void EdgeCluster::SetChargeType(const string& _chargeType)
+{
+    m_chargeType = _chargeType;
+    m_chargeTypeHasBeenSet = true;
+}
+
+bool EdgeCluster::ChargeTypeHasBeenSet() const
+{
+    return m_chargeTypeHasBeenSet;
 }
 

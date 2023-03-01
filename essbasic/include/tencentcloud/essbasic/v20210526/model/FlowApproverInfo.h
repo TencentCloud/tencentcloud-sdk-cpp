@@ -329,14 +329,18 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool SignComponentsHasBeenSet() const;
 
                     /**
-                     * 获取个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
-                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     * 获取个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
+HANDWRITE -手写签名
+                     * @return ComponentLimitType 个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
+HANDWRITE -手写签名
                      */
                     std::vector<std::string> GetComponentLimitType() const;
 
                     /**
-                     * 设置个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
-                     * @param ComponentLimitType 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     * 设置个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
+HANDWRITE -手写签名
+                     * @param ComponentLimitType 个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
+HANDWRITE -手写签名
                      */
                     void SetComponentLimitType(const std::vector<std::string>& _componentLimitType);
 
@@ -508,7 +512,8 @@ ENTERPRISESERVER-企业静默签（文件发起时的企业静默签字）。
                     bool m_signComponentsHasBeenSet;
 
                     /**
-                     * 个人签署方指定签署控件类型，目前仅支持：OCR_ESIGN(AI智慧手写签名)
+                     * 个人签署方指定签署控件类型，目前支持：OCR_ESIGN -AI智慧手写签名
+HANDWRITE -手写签名
                      */
                     std::vector<std::string> m_componentLimitType;
                     bool m_componentLimitTypeHasBeenSet;
