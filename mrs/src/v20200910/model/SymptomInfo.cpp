@@ -26,7 +26,8 @@ SymptomInfo::SymptomInfo() :
     m_indexHasBeenSet(false),
     m_symptomHasBeenSet(false),
     m_attrsHasBeenSet(false),
-    m_srcHasBeenSet(false)
+    m_srcHasBeenSet(false),
+    m_coordsHasBeenSet(false)
 {
 }
 
@@ -129,6 +130,26 @@ CoreInternalOutcome SymptomInfo::Deserialize(const rapidjson::Value &value)
         m_srcHasBeenSet = true;
     }
 
+    if (value.HasMember("Coords") && !value["Coords"].IsNull())
+    {
+        if (!value["Coords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `SymptomInfo.Coords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Coords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Coord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_coords.push_back(item);
+        }
+        m_coordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -197,6 +218,21 @@ void SymptomInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Src";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_src.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_coordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Coords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_coords.begin(); itr != m_coords.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -296,5 +332,21 @@ void SymptomInfo::SetSrc(const string& _src)
 bool SymptomInfo::SrcHasBeenSet() const
 {
     return m_srcHasBeenSet;
+}
+
+vector<Coord> SymptomInfo::GetCoords() const
+{
+    return m_coords;
+}
+
+void SymptomInfo::SetCoords(const vector<Coord>& _coords)
+{
+    m_coords = _coords;
+    m_coordsHasBeenSet = true;
+}
+
+bool SymptomInfo::CoordsHasBeenSet() const
+{
+    return m_coordsHasBeenSet;
 }
 

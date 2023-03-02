@@ -26,7 +26,8 @@ TextToObjectRequest::TextToObjectRequest() :
     m_textHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_isUsedClassifyHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_reportTypeVersionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,21 @@ string TextToObjectRequest::ToJsonString() const
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_userType, allocator);
+    }
+
+    if (m_reportTypeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTypeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_reportTypeVersion.begin(); itr != m_reportTypeVersion.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -139,6 +155,22 @@ void TextToObjectRequest::SetUserType(const uint64_t& _userType)
 bool TextToObjectRequest::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+vector<ReportTypeVersion> TextToObjectRequest::GetReportTypeVersion() const
+{
+    return m_reportTypeVersion;
+}
+
+void TextToObjectRequest::SetReportTypeVersion(const vector<ReportTypeVersion>& _reportTypeVersion)
+{
+    m_reportTypeVersion = _reportTypeVersion;
+    m_reportTypeVersionHasBeenSet = true;
+}
+
+bool TextToObjectRequest::ReportTypeVersionHasBeenSet() const
+{
+    return m_reportTypeVersionHasBeenSet;
 }
 
 

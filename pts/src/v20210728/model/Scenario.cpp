@@ -46,7 +46,8 @@ Scenario::Scenario() :
     m_pluginsHasBeenSet(false),
     m_domainNameConfigHasBeenSet(false),
     m_notificationHooksHasBeenSet(false),
-    m_ownerHasBeenSet(false)
+    m_ownerHasBeenSet(false),
+    m_projectNameHasBeenSet(false)
 {
 }
 
@@ -402,6 +403,16 @@ CoreInternalOutcome Scenario::Deserialize(const rapidjson::Value &value)
         m_ownerHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Scenario.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -670,6 +681,14 @@ void Scenario::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Owner";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_owner.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1089,5 +1108,21 @@ void Scenario::SetOwner(const string& _owner)
 bool Scenario::OwnerHasBeenSet() const
 {
     return m_ownerHasBeenSet;
+}
+
+string Scenario::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void Scenario::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool Scenario::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
 }
 

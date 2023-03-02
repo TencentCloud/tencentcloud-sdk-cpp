@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -231,14 +231,14 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人
-                     * @return OpenId 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人
+                     * 获取渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
+                     * @return OpenId 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人
-                     * @param OpenId 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人
+                     * 设置渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
+                     * @param OpenId 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -285,14 +285,14 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool JumpUrlHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
+                     * 获取暂未开放
+                     * @return Operator 暂未开放
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * 设置暂未开放
+                     * @param Operator 暂未开放
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -305,7 +305,7 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                 private:
 
                     /**
-                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -365,7 +365,7 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人
+                     * 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
@@ -383,7 +383,7 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_jumpUrlHasBeenSet;
 
                     /**
-                     * 操作者的信息
+                     * 暂未开放
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

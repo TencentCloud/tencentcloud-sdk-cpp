@@ -42,7 +42,22 @@ Organ::Organ() :
     m_isthmusThickneseHasBeenSet(false),
     m_innerEchoDistributionHasBeenSet(false),
     m_srcHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_indexHasBeenSet(false),
+    m_transparentHasBeenSet(false),
+    m_mriAdcHasBeenSet(false),
+    m_mriDwiHasBeenSet(false),
+    m_mriT1HasBeenSet(false),
+    m_mriT2HasBeenSet(false),
+    m_ctHuHasBeenSet(false),
+    m_suvmaxHasBeenSet(false),
+    m_metabolismHasBeenSet(false),
+    m_radioactiveUptakeHasBeenSet(false),
+    m_lymphEnlargementHasBeenSet(false),
+    m_imageFeatureHasBeenSet(false),
+    m_ductHasBeenSet(false),
+    m_trendHasBeenSet(false),
+    m_operationHasBeenSet(false),
+    m_coordsHasBeenSet(false)
 {
 }
 
@@ -417,6 +432,264 @@ CoreInternalOutcome Organ::Deserialize(const rapidjson::Value &value)
         m_indexHasBeenSet = true;
     }
 
+    if (value.HasMember("Transparent") && !value["Transparent"].IsNull())
+    {
+        if (!value["Transparent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.Transparent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_transparent.Deserialize(value["Transparent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_transparentHasBeenSet = true;
+    }
+
+    if (value.HasMember("MriAdc") && !value["MriAdc"].IsNull())
+    {
+        if (!value["MriAdc"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.MriAdc` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriAdc.Deserialize(value["MriAdc"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriAdcHasBeenSet = true;
+    }
+
+    if (value.HasMember("MriDwi") && !value["MriDwi"].IsNull())
+    {
+        if (!value["MriDwi"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.MriDwi` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriDwi.Deserialize(value["MriDwi"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriDwiHasBeenSet = true;
+    }
+
+    if (value.HasMember("MriT1") && !value["MriT1"].IsNull())
+    {
+        if (!value["MriT1"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.MriT1` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriT1.Deserialize(value["MriT1"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriT1HasBeenSet = true;
+    }
+
+    if (value.HasMember("MriT2") && !value["MriT2"].IsNull())
+    {
+        if (!value["MriT2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.MriT2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriT2.Deserialize(value["MriT2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriT2HasBeenSet = true;
+    }
+
+    if (value.HasMember("CtHu") && !value["CtHu"].IsNull())
+    {
+        if (!value["CtHu"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.CtHu` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ctHu.Deserialize(value["CtHu"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ctHuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Suvmax") && !value["Suvmax"].IsNull())
+    {
+        if (!value["Suvmax"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.Suvmax` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_suvmax.Deserialize(value["Suvmax"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_suvmaxHasBeenSet = true;
+    }
+
+    if (value.HasMember("Metabolism") && !value["Metabolism"].IsNull())
+    {
+        if (!value["Metabolism"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.Metabolism` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metabolism.Deserialize(value["Metabolism"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metabolismHasBeenSet = true;
+    }
+
+    if (value.HasMember("RadioactiveUptake") && !value["RadioactiveUptake"].IsNull())
+    {
+        if (!value["RadioactiveUptake"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.RadioactiveUptake` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_radioactiveUptake.Deserialize(value["RadioactiveUptake"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_radioactiveUptakeHasBeenSet = true;
+    }
+
+    if (value.HasMember("LymphEnlargement") && !value["LymphEnlargement"].IsNull())
+    {
+        if (!value["LymphEnlargement"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.LymphEnlargement` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_lymphEnlargement.Deserialize(value["LymphEnlargement"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_lymphEnlargementHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageFeature") && !value["ImageFeature"].IsNull())
+    {
+        if (!value["ImageFeature"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.ImageFeature` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageFeature.Deserialize(value["ImageFeature"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageFeatureHasBeenSet = true;
+    }
+
+    if (value.HasMember("Duct") && !value["Duct"].IsNull())
+    {
+        if (!value["Duct"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.Duct` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_duct.Deserialize(value["Duct"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ductHasBeenSet = true;
+    }
+
+    if (value.HasMember("Trend") && !value["Trend"].IsNull())
+    {
+        if (!value["Trend"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.Trend` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_trend.Deserialize(value["Trend"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_trendHasBeenSet = true;
+    }
+
+    if (value.HasMember("Operation") && !value["Operation"].IsNull())
+    {
+        if (!value["Operation"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Organ.Operation` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_operation.Deserialize(value["Operation"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_operationHasBeenSet = true;
+    }
+
+    if (value.HasMember("Coords") && !value["Coords"].IsNull())
+    {
+        if (!value["Coords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Organ.Coords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Coords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Coord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_coords.push_back(item);
+        }
+        m_coordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -628,6 +901,147 @@ void Organ::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         for (auto itr = m_index.begin(); itr != m_index.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_transparentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Transparent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_transparent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriAdcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriAdc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriAdc.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriDwiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriDwi";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriDwi.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriT1HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriT1";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriT1.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriT2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriT2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriT2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ctHuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CtHu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ctHu.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_suvmaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Suvmax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_suvmax.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_metabolismHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metabolism";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metabolism.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_radioactiveUptakeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RadioactiveUptake";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_radioactiveUptake.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_lymphEnlargementHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LymphEnlargement";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_lymphEnlargement.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageFeatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFeature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageFeature.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ductHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Duct";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_duct.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_trendHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Trend";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_trend.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_operationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operation";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operation.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_coordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Coords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_coords.begin(); itr != m_coords.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -984,5 +1398,245 @@ void Organ::SetIndex(const vector<int64_t>& _index)
 bool Organ::IndexHasBeenSet() const
 {
     return m_indexHasBeenSet;
+}
+
+BlockInfo Organ::GetTransparent() const
+{
+    return m_transparent;
+}
+
+void Organ::SetTransparent(const BlockInfo& _transparent)
+{
+    m_transparent = _transparent;
+    m_transparentHasBeenSet = true;
+}
+
+bool Organ::TransparentHasBeenSet() const
+{
+    return m_transparentHasBeenSet;
+}
+
+BlockInfo Organ::GetMriAdc() const
+{
+    return m_mriAdc;
+}
+
+void Organ::SetMriAdc(const BlockInfo& _mriAdc)
+{
+    m_mriAdc = _mriAdc;
+    m_mriAdcHasBeenSet = true;
+}
+
+bool Organ::MriAdcHasBeenSet() const
+{
+    return m_mriAdcHasBeenSet;
+}
+
+BlockInfo Organ::GetMriDwi() const
+{
+    return m_mriDwi;
+}
+
+void Organ::SetMriDwi(const BlockInfo& _mriDwi)
+{
+    m_mriDwi = _mriDwi;
+    m_mriDwiHasBeenSet = true;
+}
+
+bool Organ::MriDwiHasBeenSet() const
+{
+    return m_mriDwiHasBeenSet;
+}
+
+BlockInfo Organ::GetMriT1() const
+{
+    return m_mriT1;
+}
+
+void Organ::SetMriT1(const BlockInfo& _mriT1)
+{
+    m_mriT1 = _mriT1;
+    m_mriT1HasBeenSet = true;
+}
+
+bool Organ::MriT1HasBeenSet() const
+{
+    return m_mriT1HasBeenSet;
+}
+
+BlockInfo Organ::GetMriT2() const
+{
+    return m_mriT2;
+}
+
+void Organ::SetMriT2(const BlockInfo& _mriT2)
+{
+    m_mriT2 = _mriT2;
+    m_mriT2HasBeenSet = true;
+}
+
+bool Organ::MriT2HasBeenSet() const
+{
+    return m_mriT2HasBeenSet;
+}
+
+BlockInfo Organ::GetCtHu() const
+{
+    return m_ctHu;
+}
+
+void Organ::SetCtHu(const BlockInfo& _ctHu)
+{
+    m_ctHu = _ctHu;
+    m_ctHuHasBeenSet = true;
+}
+
+bool Organ::CtHuHasBeenSet() const
+{
+    return m_ctHuHasBeenSet;
+}
+
+BlockInfo Organ::GetSuvmax() const
+{
+    return m_suvmax;
+}
+
+void Organ::SetSuvmax(const BlockInfo& _suvmax)
+{
+    m_suvmax = _suvmax;
+    m_suvmaxHasBeenSet = true;
+}
+
+bool Organ::SuvmaxHasBeenSet() const
+{
+    return m_suvmaxHasBeenSet;
+}
+
+BlockInfo Organ::GetMetabolism() const
+{
+    return m_metabolism;
+}
+
+void Organ::SetMetabolism(const BlockInfo& _metabolism)
+{
+    m_metabolism = _metabolism;
+    m_metabolismHasBeenSet = true;
+}
+
+bool Organ::MetabolismHasBeenSet() const
+{
+    return m_metabolismHasBeenSet;
+}
+
+BlockInfo Organ::GetRadioactiveUptake() const
+{
+    return m_radioactiveUptake;
+}
+
+void Organ::SetRadioactiveUptake(const BlockInfo& _radioactiveUptake)
+{
+    m_radioactiveUptake = _radioactiveUptake;
+    m_radioactiveUptakeHasBeenSet = true;
+}
+
+bool Organ::RadioactiveUptakeHasBeenSet() const
+{
+    return m_radioactiveUptakeHasBeenSet;
+}
+
+BlockInfo Organ::GetLymphEnlargement() const
+{
+    return m_lymphEnlargement;
+}
+
+void Organ::SetLymphEnlargement(const BlockInfo& _lymphEnlargement)
+{
+    m_lymphEnlargement = _lymphEnlargement;
+    m_lymphEnlargementHasBeenSet = true;
+}
+
+bool Organ::LymphEnlargementHasBeenSet() const
+{
+    return m_lymphEnlargementHasBeenSet;
+}
+
+BlockInfo Organ::GetImageFeature() const
+{
+    return m_imageFeature;
+}
+
+void Organ::SetImageFeature(const BlockInfo& _imageFeature)
+{
+    m_imageFeature = _imageFeature;
+    m_imageFeatureHasBeenSet = true;
+}
+
+bool Organ::ImageFeatureHasBeenSet() const
+{
+    return m_imageFeatureHasBeenSet;
+}
+
+BlockInfo Organ::GetDuct() const
+{
+    return m_duct;
+}
+
+void Organ::SetDuct(const BlockInfo& _duct)
+{
+    m_duct = _duct;
+    m_ductHasBeenSet = true;
+}
+
+bool Organ::DuctHasBeenSet() const
+{
+    return m_ductHasBeenSet;
+}
+
+BlockInfo Organ::GetTrend() const
+{
+    return m_trend;
+}
+
+void Organ::SetTrend(const BlockInfo& _trend)
+{
+    m_trend = _trend;
+    m_trendHasBeenSet = true;
+}
+
+bool Organ::TrendHasBeenSet() const
+{
+    return m_trendHasBeenSet;
+}
+
+BlockInfo Organ::GetOperation() const
+{
+    return m_operation;
+}
+
+void Organ::SetOperation(const BlockInfo& _operation)
+{
+    m_operation = _operation;
+    m_operationHasBeenSet = true;
+}
+
+bool Organ::OperationHasBeenSet() const
+{
+    return m_operationHasBeenSet;
+}
+
+vector<Coord> Organ::GetCoords() const
+{
+    return m_coords;
+}
+
+void Organ::SetCoords(const vector<Coord>& _coords)
+{
+    m_coords = _coords;
+    m_coordsHasBeenSet = true;
+}
+
+bool Organ::CoordsHasBeenSet() const
+{
+    return m_coordsHasBeenSet;
 }
 

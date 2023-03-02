@@ -25,7 +25,8 @@ NormPart::NormPart() :
     m_partDirectionHasBeenSet(false),
     m_tissueHasBeenSet(false),
     m_tissueDirectionHasBeenSet(false),
-    m_upperHasBeenSet(false)
+    m_upperHasBeenSet(false),
+    m_partDetailHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,23 @@ CoreInternalOutcome NormPart::Deserialize(const rapidjson::Value &value)
         m_upperHasBeenSet = true;
     }
 
+    if (value.HasMember("PartDetail") && !value["PartDetail"].IsNull())
+    {
+        if (!value["PartDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `NormPart.PartDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_partDetail.Deserialize(value["PartDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_partDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +147,15 @@ void NormPart::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Upper";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_upper.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_partDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PartDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_partDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -212,5 +239,21 @@ void NormPart::SetUpper(const string& _upper)
 bool NormPart::UpperHasBeenSet() const
 {
     return m_upperHasBeenSet;
+}
+
+PartDesc NormPart::GetPartDetail() const
+{
+    return m_partDetail;
+}
+
+void NormPart::SetPartDetail(const PartDesc& _partDetail)
+{
+    m_partDetail = _partDetail;
+    m_partDetailHasBeenSet = true;
+}
+
+bool NormPart::PartDetailHasBeenSet() const
+{
+    return m_partDetailHasBeenSet;
 }
 

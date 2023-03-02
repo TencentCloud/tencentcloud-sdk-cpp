@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mrs/v20200910/model/SurgeryHistory.h>
+#include <tencentcloud/mrs/v20200910/model/OtherInfo.h>
 
 
 namespace TencentCloud
@@ -69,6 +70,28 @@ namespace TencentCloud
                      */
                     bool SurgeryHistoryHasBeenSet() const;
 
+                    /**
+                     * 获取其他信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OtherInfo 其他信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OtherInfo GetOtherInfo() const;
+
+                    /**
+                     * 设置其他信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OtherInfo 其他信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOtherInfo(const OtherInfo& _otherInfo);
+
+                    /**
+                     * 判断参数 OtherInfo 是否已赋值
+                     * @return OtherInfo 是否已赋值
+                     */
+                    bool OtherInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -77,6 +100,13 @@ namespace TencentCloud
                      */
                     SurgeryHistory m_surgeryHistory;
                     bool m_surgeryHistoryHasBeenSet;
+
+                    /**
+                     * 其他信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OtherInfo m_otherInfo;
+                    bool m_otherInfoHasBeenSet;
 
                 };
             }

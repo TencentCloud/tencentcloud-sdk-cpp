@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool DomainNameHasBeenSet() const;
 
                     /**
-                     * 获取推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填空。
-                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填空。
+                     * 获取推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填""。
+                     * @return AppName 推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填""。
                      */
                     std::string GetAppName() const;
 
                     /**
-                     * 设置推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填空。
-                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填空。
+                     * 设置推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填""。
+                     * @param AppName 推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填""。
                      */
                     void SetAppName(const std::string& _appName);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
                     bool m_domainNameHasBeenSet;
 
                     /**
-                     * 推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填空。
+                     * 推流路径，与推流和播放地址中的AppName保持一致。如果只绑定域名，则此处填""。
                      */
                     std::string m_appName;
                     bool m_appNameHasBeenSet;

@@ -26,8 +26,8 @@ ChannelCancelFlowRequest::ChannelCancelFlowRequest() :
     m_flowIdHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_cancelMessageHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_cancelMessageFormatHasBeenSet(false)
+    m_cancelMessageFormatHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -63,6 +63,14 @@ string ChannelCancelFlowRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_cancelMessage.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_cancelMessageFormatHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CancelMessageFormat";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_cancelMessageFormat, allocator);
+    }
+
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -70,14 +78,6 @@ string ChannelCancelFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_cancelMessageFormatHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CancelMessageFormat";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_cancelMessageFormat, allocator);
     }
 
 
@@ -136,22 +136,6 @@ bool ChannelCancelFlowRequest::CancelMessageHasBeenSet() const
     return m_cancelMessageHasBeenSet;
 }
 
-UserInfo ChannelCancelFlowRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelCancelFlowRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelCancelFlowRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 int64_t ChannelCancelFlowRequest::GetCancelMessageFormat() const
 {
     return m_cancelMessageFormat;
@@ -166,6 +150,22 @@ void ChannelCancelFlowRequest::SetCancelMessageFormat(const int64_t& _cancelMess
 bool ChannelCancelFlowRequest::CancelMessageFormatHasBeenSet() const
 {
     return m_cancelMessageFormatHasBeenSet;
+}
+
+UserInfo ChannelCancelFlowRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelCancelFlowRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelCancelFlowRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

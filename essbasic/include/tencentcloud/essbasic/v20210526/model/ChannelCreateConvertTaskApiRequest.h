@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取调用方用户信息，userId 必填
-                     * @return Operator 调用方用户信息，userId 必填
+                     * 获取调用方用户信息，不用传
+                     * @return Operator 调用方用户信息，不用传
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置调用方用户信息，userId 必填
-                     * @param Operator 调用方用户信息，userId 必填
+                     * 设置调用方用户信息，不用传
+                     * @param Operator 调用方用户信息，不用传
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -156,7 +156,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -180,7 +180,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 调用方用户信息，userId 必填
+                     * 调用方用户信息，不用传
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

@@ -32,8 +32,8 @@ CreateConsoleLoginUrlRequest::CreateConsoleLoginUrlRequest() :
     m_menuStatusHasBeenSet(false),
     m_endpointHasBeenSet(false),
     m_autoJumpBackEventHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_authorizationTypesHasBeenSet(false)
+    m_authorizationTypesHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -117,15 +117,6 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_autoJumpBackEvent.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_authorizationTypesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -137,6 +128,15 @@ string CreateConsoleLoginUrlRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -291,22 +291,6 @@ bool CreateConsoleLoginUrlRequest::AutoJumpBackEventHasBeenSet() const
     return m_autoJumpBackEventHasBeenSet;
 }
 
-UserInfo CreateConsoleLoginUrlRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 vector<int64_t> CreateConsoleLoginUrlRequest::GetAuthorizationTypes() const
 {
     return m_authorizationTypes;
@@ -321,6 +305,22 @@ void CreateConsoleLoginUrlRequest::SetAuthorizationTypes(const vector<int64_t>& 
 bool CreateConsoleLoginUrlRequest::AuthorizationTypesHasBeenSet() const
 {
     return m_authorizationTypesHasBeenSet;
+}
+
+UserInfo CreateConsoleLoginUrlRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void CreateConsoleLoginUrlRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool CreateConsoleLoginUrlRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

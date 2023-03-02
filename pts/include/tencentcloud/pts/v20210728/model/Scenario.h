@@ -610,6 +610,28 @@ namespace TencentCloud
                      */
                     bool OwnerHasBeenSet() const;
 
+                    /**
+                     * 获取场景所在的项目的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectName 场景所在的项目的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProjectName() const;
+
+                    /**
+                     * 设置场景所在的项目的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectName 场景所在的项目的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectName(const std::string& _projectName);
+
+                    /**
+                     * 判断参数 ProjectName 是否已赋值
+                     * @return ProjectName 是否已赋值
+                     */
+                    bool ProjectNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -789,6 +811,13 @@ namespace TencentCloud
                      */
                     std::string m_owner;
                     bool m_ownerHasBeenSet;
+
+                    /**
+                     * 场景所在的项目的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectName;
+                    bool m_projectNameHasBeenSet;
 
                 };
             }

@@ -25,7 +25,8 @@ using namespace std;
 CreateFlowApproversRequest::CreateFlowApproversRequest() :
     m_operatorHasBeenSet(false),
     m_flowIdHasBeenSet(false),
-    m_approversHasBeenSet(false)
+    m_approversHasBeenSet(false),
+    m_initiatorHasBeenSet(false)
 {
 }
 
@@ -66,6 +67,14 @@ string CreateFlowApproversRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_initiatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Initiator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_initiator.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -122,6 +131,22 @@ void CreateFlowApproversRequest::SetApprovers(const vector<FillApproverInfo>& _a
 bool CreateFlowApproversRequest::ApproversHasBeenSet() const
 {
     return m_approversHasBeenSet;
+}
+
+string CreateFlowApproversRequest::GetInitiator() const
+{
+    return m_initiator;
+}
+
+void CreateFlowApproversRequest::SetInitiator(const string& _initiator)
+{
+    m_initiator = _initiator;
+    m_initiatorHasBeenSet = true;
+}
+
+bool CreateFlowApproversRequest::InitiatorHasBeenSet() const
+{
+    return m_initiatorHasBeenSet;
 }
 
 

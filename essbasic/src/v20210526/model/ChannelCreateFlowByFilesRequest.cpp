@@ -36,9 +36,9 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_customShowMapHasBeenSet(false),
     m_customerDataHasBeenSet(false),
     m_needSignReviewHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_approverVerifyTypeHasBeenSet(false),
-    m_signBeanTagHasBeenSet(false)
+    m_signBeanTagHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -173,15 +173,6 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         d.AddMember(iKey, m_needSignReview, allocator);
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_approverVerifyTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -196,6 +187,15 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         string key = "SignBeanTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_signBeanTag, allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -414,22 +414,6 @@ bool ChannelCreateFlowByFilesRequest::NeedSignReviewHasBeenSet() const
     return m_needSignReviewHasBeenSet;
 }
 
-UserInfo ChannelCreateFlowByFilesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelCreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelCreateFlowByFilesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 string ChannelCreateFlowByFilesRequest::GetApproverVerifyType() const
 {
     return m_approverVerifyType;
@@ -460,6 +444,22 @@ void ChannelCreateFlowByFilesRequest::SetSignBeanTag(const int64_t& _signBeanTag
 bool ChannelCreateFlowByFilesRequest::SignBeanTagHasBeenSet() const
 {
     return m_signBeanTagHasBeenSet;
+}
+
+UserInfo ChannelCreateFlowByFilesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelCreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
-                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -281,24 +281,6 @@ namespace TencentCloud
                     bool NeedSignReviewHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取签署人校验方式
 VerifyCheck: 人脸识别（默认）
 MobileCheck：手机号验证
@@ -346,10 +328,28 @@ MobileCheck：手机号验证
                      */
                     bool SignBeanTagHasBeenSet() const;
 
+                    /**
+                     * 获取操作者的信息，不用传
+                     * @return Operator 操作者的信息，不用传
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作者的信息，不用传
+                     * @param Operator 操作者的信息，不用传
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -427,12 +427,6 @@ MobileCheck：手机号验证
                     bool m_needSignReviewHasBeenSet;
 
                     /**
-                     * 操作者的信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 签署人校验方式
 VerifyCheck: 人脸识别（默认）
 MobileCheck：手机号验证
@@ -446,6 +440,12 @@ MobileCheck：手机号验证
                      */
                     int64_t m_signBeanTag;
                     bool m_signBeanTagHasBeenSet;
+
+                    /**
+                     * 操作者的信息，不用传
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

@@ -244,6 +244,28 @@ namespace TencentCloud
                      */
                     bool ProviderHasBeenSet() const;
 
+                    /**
+                     * 获取疫苗批号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Lot 疫苗批号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLot() const;
+
+                    /**
+                     * 设置疫苗批号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Lot 疫苗批号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLot(const std::string& _lot);
+
+                    /**
+                     * 判断参数 Lot 是否已赋值
+                     * @return Lot 是否已赋值
+                     */
+                    bool LotHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,6 +330,13 @@ namespace TencentCloud
                      */
                     std::string m_provider;
                     bool m_providerHasBeenSet;
+
+                    /**
+                     * 疫苗批号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_lot;
+                    bool m_lotHasBeenSet;
 
                 };
             }

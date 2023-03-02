@@ -22,7 +22,10 @@ using namespace std;
 
 DefaultVpcSubnet::DefaultVpcSubnet() :
     m_vpcIdHasBeenSet(false),
-    m_subnetIdHasBeenSet(false)
+    m_subnetIdHasBeenSet(false),
+    m_vpcNameHasBeenSet(false),
+    m_subnetNameHasBeenSet(false),
+    m_cidrBlockHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,36 @@ CoreInternalOutcome DefaultVpcSubnet::Deserialize(const rapidjson::Value &value)
         m_subnetIdHasBeenSet = true;
     }
 
+    if (value.HasMember("VpcName") && !value["VpcName"].IsNull())
+    {
+        if (!value["VpcName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefaultVpcSubnet.VpcName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_vpcName = string(value["VpcName"].GetString());
+        m_vpcNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubnetName") && !value["SubnetName"].IsNull())
+    {
+        if (!value["SubnetName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefaultVpcSubnet.SubnetName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subnetName = string(value["SubnetName"].GetString());
+        m_subnetNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CidrBlock") && !value["CidrBlock"].IsNull())
+    {
+        if (!value["CidrBlock"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DefaultVpcSubnet.CidrBlock` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cidrBlock = string(value["CidrBlock"].GetString());
+        m_cidrBlockHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +105,30 @@ void DefaultVpcSubnet::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "SubnetId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subnetId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_vpcNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VpcName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_vpcName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subnetNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubnetName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subnetName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cidrBlockHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CidrBlock";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cidrBlock.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +164,53 @@ void DefaultVpcSubnet::SetSubnetId(const string& _subnetId)
 bool DefaultVpcSubnet::SubnetIdHasBeenSet() const
 {
     return m_subnetIdHasBeenSet;
+}
+
+string DefaultVpcSubnet::GetVpcName() const
+{
+    return m_vpcName;
+}
+
+void DefaultVpcSubnet::SetVpcName(const string& _vpcName)
+{
+    m_vpcName = _vpcName;
+    m_vpcNameHasBeenSet = true;
+}
+
+bool DefaultVpcSubnet::VpcNameHasBeenSet() const
+{
+    return m_vpcNameHasBeenSet;
+}
+
+string DefaultVpcSubnet::GetSubnetName() const
+{
+    return m_subnetName;
+}
+
+void DefaultVpcSubnet::SetSubnetName(const string& _subnetName)
+{
+    m_subnetName = _subnetName;
+    m_subnetNameHasBeenSet = true;
+}
+
+bool DefaultVpcSubnet::SubnetNameHasBeenSet() const
+{
+    return m_subnetNameHasBeenSet;
+}
+
+string DefaultVpcSubnet::GetCidrBlock() const
+{
+    return m_cidrBlock;
+}
+
+void DefaultVpcSubnet::SetCidrBlock(const string& _cidrBlock)
+{
+    m_cidrBlock = _cidrBlock;
+    m_cidrBlockHasBeenSet = true;
+}
+
+bool DefaultVpcSubnet::CidrBlockHasBeenSet() const
+{
+    return m_cidrBlockHasBeenSet;
 }
 

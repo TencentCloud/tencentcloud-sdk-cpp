@@ -32,7 +32,8 @@ IndicatorItem::IndicatorItem() :
     m_normalHasBeenSet(false),
     m_itemStringHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_coordsHasBeenSet(false)
+    m_coordsHasBeenSet(false),
+    m_inferNormalHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,16 @@ CoreInternalOutcome IndicatorItem::Deserialize(const rapidjson::Value &value)
         m_coordsHasBeenSet = true;
     }
 
+    if (value.HasMember("InferNormal") && !value["InferNormal"].IsNull())
+    {
+        if (!value["InferNormal"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IndicatorItem.InferNormal` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_inferNormal = string(value["InferNormal"].GetString());
+        m_inferNormalHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +281,14 @@ void IndicatorItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_coords.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_inferNormalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InferNormal";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_inferNormal.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -465,5 +484,21 @@ void IndicatorItem::SetCoords(const Coordinate& _coords)
 bool IndicatorItem::CoordsHasBeenSet() const
 {
     return m_coordsHasBeenSet;
+}
+
+string IndicatorItem::GetInferNormal() const
+{
+    return m_inferNormal;
+}
+
+void IndicatorItem::SetInferNormal(const string& _inferNormal)
+{
+    m_inferNormal = _inferNormal;
+    m_inferNormalHasBeenSet = true;
+}
+
+bool IndicatorItem::InferNormalHasBeenSet() const
+{
+    return m_inferNormalHasBeenSet;
 }
 

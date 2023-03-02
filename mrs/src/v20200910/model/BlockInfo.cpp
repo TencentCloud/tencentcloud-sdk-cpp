@@ -26,7 +26,8 @@ BlockInfo::BlockInfo() :
     m_srcHasBeenSet(false),
     m_valueHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_sizeHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,26 @@ CoreInternalOutcome BlockInfo::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("Size") && !value["Size"].IsNull())
+    {
+        if (!value["Size"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BlockInfo.Size` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Size"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Size item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_size.push_back(item);
+        }
+        m_sizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -156,6 +177,21 @@ void BlockInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Size";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_size.begin(); itr != m_size.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -255,5 +291,21 @@ void BlockInfo::SetName(const string& _name)
 bool BlockInfo::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+vector<Size> BlockInfo::GetSize() const
+{
+    return m_size;
+}
+
+void BlockInfo::SetSize(const vector<Size>& _size)
+{
+    m_size = _size;
+    m_sizeHasBeenSet = true;
+}
+
+bool BlockInfo::SizeHasBeenSet() const
+{
+    return m_sizeHasBeenSet;
 }
 

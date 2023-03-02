@@ -23,8 +23,8 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 CreateChannelFlowEvidenceReportRequest::CreateChannelFlowEvidenceReportRequest() :
-    m_flowIdHasBeenSet(false),
     m_agentHasBeenSet(false),
+    m_flowIdHasBeenSet(false),
     m_operatorHasBeenSet(false)
 {
 }
@@ -36,14 +36,6 @@ string CreateChannelFlowEvidenceReportRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_flowIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FlowId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -51,6 +43,14 @@ string CreateChannelFlowEvidenceReportRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_flowIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FlowId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_flowId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_operatorHasBeenSet)
@@ -70,22 +70,6 @@ string CreateChannelFlowEvidenceReportRequest::ToJsonString() const
 }
 
 
-string CreateChannelFlowEvidenceReportRequest::GetFlowId() const
-{
-    return m_flowId;
-}
-
-void CreateChannelFlowEvidenceReportRequest::SetFlowId(const string& _flowId)
-{
-    m_flowId = _flowId;
-    m_flowIdHasBeenSet = true;
-}
-
-bool CreateChannelFlowEvidenceReportRequest::FlowIdHasBeenSet() const
-{
-    return m_flowIdHasBeenSet;
-}
-
 Agent CreateChannelFlowEvidenceReportRequest::GetAgent() const
 {
     return m_agent;
@@ -100,6 +84,22 @@ void CreateChannelFlowEvidenceReportRequest::SetAgent(const Agent& _agent)
 bool CreateChannelFlowEvidenceReportRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+string CreateChannelFlowEvidenceReportRequest::GetFlowId() const
+{
+    return m_flowId;
+}
+
+void CreateChannelFlowEvidenceReportRequest::SetFlowId(const string& _flowId)
+{
+    m_flowId = _flowId;
+    m_flowIdHasBeenSet = true;
+}
+
+bool CreateChannelFlowEvidenceReportRequest::FlowIdHasBeenSet() const
+{
+    return m_flowIdHasBeenSet;
 }
 
 UserInfo CreateChannelFlowEvidenceReportRequest::GetOperator() const

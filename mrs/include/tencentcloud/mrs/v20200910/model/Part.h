@@ -157,6 +157,28 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ValueBrief 值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetValueBrief() const;
+
+                    /**
+                     * 设置值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ValueBrief 值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetValueBrief(const std::string& _valueBrief);
+
+                    /**
+                     * 判断参数 ValueBrief 是否已赋值
+                     * @return ValueBrief 是否已赋值
+                     */
+                    bool ValueBriefHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +215,13 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_valueBrief;
+                    bool m_valueBriefHasBeenSet;
 
                 };
             }

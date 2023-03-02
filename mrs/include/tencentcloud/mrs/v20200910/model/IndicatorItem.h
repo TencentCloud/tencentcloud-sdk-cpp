@@ -311,6 +311,28 @@ namespace TencentCloud
                      */
                     bool CoordsHasBeenSet() const;
 
+                    /**
+                     * 获取推测结果是否异常
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InferNormal 推测结果是否异常
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInferNormal() const;
+
+                    /**
+                     * 设置推测结果是否异常
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InferNormal 推测结果是否异常
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInferNormal(const std::string& _inferNormal);
+
+                    /**
+                     * 判断参数 InferNormal 是否已赋值
+                     * @return InferNormal 是否已赋值
+                     */
+                    bool InferNormalHasBeenSet() const;
+
                 private:
 
                     /**
@@ -396,6 +418,13 @@ namespace TencentCloud
                      */
                     Coordinate m_coords;
                     bool m_coordsHasBeenSet;
+
+                    /**
+                     * 推测结果是否异常
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_inferNormal;
+                    bool m_inferNormalHasBeenSet;
 
                 };
             }

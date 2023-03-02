@@ -21,7 +21,8 @@ using namespace TencentCloud::Mrs::V20200910::Model;
 using namespace std;
 
 Surgery::Surgery() :
-    m_surgeryHistoryHasBeenSet(false)
+    m_surgeryHistoryHasBeenSet(false),
+    m_otherInfoHasBeenSet(false)
 {
 }
 
@@ -47,6 +48,23 @@ CoreInternalOutcome Surgery::Deserialize(const rapidjson::Value &value)
         m_surgeryHistoryHasBeenSet = true;
     }
 
+    if (value.HasMember("OtherInfo") && !value["OtherInfo"].IsNull())
+    {
+        if (!value["OtherInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Surgery.OtherInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_otherInfo.Deserialize(value["OtherInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_otherInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -61,6 +79,15 @@ void Surgery::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_surgeryHistory.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_otherInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OtherInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_otherInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -80,5 +107,21 @@ void Surgery::SetSurgeryHistory(const SurgeryHistory& _surgeryHistory)
 bool Surgery::SurgeryHistoryHasBeenSet() const
 {
     return m_surgeryHistoryHasBeenSet;
+}
+
+OtherInfo Surgery::GetOtherInfo() const
+{
+    return m_otherInfo;
+}
+
+void Surgery::SetOtherInfo(const OtherInfo& _otherInfo)
+{
+    m_otherInfo = _otherInfo;
+    m_otherInfoHasBeenSet = true;
+}
+
+bool Surgery::OtherInfoHasBeenSet() const
+{
+    return m_otherInfoHasBeenSet;
 }
 

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mrs/v20200910/model/Organ.h>
 #include <tencentcloud/mrs/v20200910/model/TuberInfo.h>
+#include <tencentcloud/mrs/v20200910/model/Coord.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,28 @@ namespace TencentCloud
                      */
                     bool TuberHasBeenSet() const;
 
+                    /**
+                     * 获取坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Coords 坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Coord> GetCoords() const;
+
+                    /**
+                     * 设置坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Coords 坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCoords(const std::vector<Coord>& _coords);
+
+                    /**
+                     * 判断参数 Coords 是否已赋值
+                     * @return Coords 是否已赋值
+                     */
+                    bool CoordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -136,6 +159,13 @@ namespace TencentCloud
                      */
                     std::vector<TuberInfo> m_tuber;
                     bool m_tuberHasBeenSet;
+
+                    /**
+                     * 坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Coord> m_coords;
+                    bool m_coordsHasBeenSet;
 
                 };
             }

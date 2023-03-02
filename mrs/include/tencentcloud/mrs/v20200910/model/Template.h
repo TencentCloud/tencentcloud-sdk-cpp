@@ -39,6 +39,15 @@
 #include <tencentcloud/mrs/v20200910/model/Endoscopy.h>
 #include <tencentcloud/mrs/v20200910/model/Prescription.h>
 #include <tencentcloud/mrs/v20200910/model/VaccineCertificate.h>
+#include <tencentcloud/mrs/v20200910/model/PathologyV2.h>
+#include <tencentcloud/mrs/v20200910/model/Exame.h>
+#include <tencentcloud/mrs/v20200910/model/DischargeInfoBlock.h>
+#include <tencentcloud/mrs/v20200910/model/IndicatorV3.h>
+#include <tencentcloud/mrs/v20200910/model/CovidItemsInfo.h>
+#include <tencentcloud/mrs/v20200910/model/Maternity.h>
+#include <tencentcloud/mrs/v20200910/model/EyeItemsInfo.h>
+#include <tencentcloud/mrs/v20200910/model/BirthCert.h>
+#include <tencentcloud/mrs/v20200910/model/TimelineInformation.h>
 
 
 namespace TencentCloud
@@ -392,17 +401,17 @@ namespace TencentCloud
                     bool PrescriptionHasBeenSet() const;
 
                     /**
-                     * 获取免疫接种证明
+                     * 获取疫苗接种凭证
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return VaccineCertificate 免疫接种证明
+                     * @return VaccineCertificate 疫苗接种凭证
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VaccineCertificate GetVaccineCertificate() const;
 
                     /**
-                     * 设置免疫接种证明
+                     * 设置疫苗接种凭证
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param VaccineCertificate 免疫接种证明
+                     * @param VaccineCertificate 疫苗接种凭证
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVaccineCertificate(const VaccineCertificate& _vaccineCertificate);
@@ -456,6 +465,248 @@ namespace TencentCloud
                      * @return OcrResult 是否已赋值
                      */
                     bool OcrResultHasBeenSet() const;
+
+                    /**
+                     * 获取报告类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReportTypeDesc 报告类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetReportTypeDesc() const;
+
+                    /**
+                     * 设置报告类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReportTypeDesc 报告类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReportTypeDesc(const std::string& _reportTypeDesc);
+
+                    /**
+                     * 判断参数 ReportTypeDesc 是否已赋值
+                     * @return ReportTypeDesc 是否已赋值
+                     */
+                    bool ReportTypeDescHasBeenSet() const;
+
+                    /**
+                     * 获取病理报告v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PathologyV2 病理报告v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PathologyV2 GetPathologyV2() const;
+
+                    /**
+                     * 设置病理报告v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PathologyV2 病理报告v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPathologyV2(const PathologyV2& _pathologyV2);
+
+                    /**
+                     * 判断参数 PathologyV2 是否已赋值
+                     * @return PathologyV2 是否已赋值
+                     */
+                    bool PathologyV2HasBeenSet() const;
+
+                    /**
+                     * 获取碳14尿素呼气试验
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return C14 碳14尿素呼气试验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Indicator GetC14() const;
+
+                    /**
+                     * 设置碳14尿素呼气试验
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param C14 碳14尿素呼气试验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetC14(const Indicator& _c14);
+
+                    /**
+                     * 判断参数 C14 是否已赋值
+                     * @return C14 是否已赋值
+                     */
+                    bool C14HasBeenSet() const;
+
+                    /**
+                     * 获取体检结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Exame 体检结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Exame GetExame() const;
+
+                    /**
+                     * 设置体检结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Exame 体检结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetExame(const Exame& _exame);
+
+                    /**
+                     * 判断参数 Exame 是否已赋值
+                     * @return Exame 是否已赋值
+                     */
+                    bool ExameHasBeenSet() const;
+
+                    /**
+                     * 获取出院报告v2，入院报告v2，门诊病历v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MedDocV2 出院报告v2，入院报告v2，门诊病历v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DischargeInfoBlock GetMedDocV2() const;
+
+                    /**
+                     * 设置出院报告v2，入院报告v2，门诊病历v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MedDocV2 出院报告v2，入院报告v2，门诊病历v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMedDocV2(const DischargeInfoBlock& _medDocV2);
+
+                    /**
+                     * 判断参数 MedDocV2 是否已赋值
+                     * @return MedDocV2 是否已赋值
+                     */
+                    bool MedDocV2HasBeenSet() const;
+
+                    /**
+                     * 获取检验报告v3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndicatorV3 检验报告v3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IndicatorV3 GetIndicatorV3() const;
+
+                    /**
+                     * 设置检验报告v3
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndicatorV3 检验报告v3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndicatorV3(const IndicatorV3& _indicatorV3);
+
+                    /**
+                     * 判断参数 IndicatorV3 是否已赋值
+                     * @return IndicatorV3 是否已赋值
+                     */
+                    bool IndicatorV3HasBeenSet() const;
+
+                    /**
+                     * 获取核酸报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Covid 核酸报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CovidItemsInfo GetCovid() const;
+
+                    /**
+                     * 设置核酸报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Covid 核酸报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCovid(const CovidItemsInfo& _covid);
+
+                    /**
+                     * 判断参数 Covid 是否已赋值
+                     * @return Covid 是否已赋值
+                     */
+                    bool CovidHasBeenSet() const;
+
+                    /**
+                     * 获取孕产报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Maternity 孕产报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Maternity GetMaternity() const;
+
+                    /**
+                     * 设置孕产报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Maternity 孕产报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaternity(const Maternity& _maternity);
+
+                    /**
+                     * 判断参数 Maternity 是否已赋值
+                     * @return Maternity 是否已赋值
+                     */
+                    bool MaternityHasBeenSet() const;
+
+                    /**
+                     * 获取眼科报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Eye 眼科报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EyeItemsInfo GetEye() const;
+
+                    /**
+                     * 设置眼科报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Eye 眼科报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEye(const EyeItemsInfo& _eye);
+
+                    /**
+                     * 判断参数 Eye 是否已赋值
+                     * @return Eye 是否已赋值
+                     */
+                    bool EyeHasBeenSet() const;
+
+                    /**
+                     * 获取出生证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BirthCert 出生证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BirthCert GetBirthCert() const;
+
+                    /**
+                     * 设置出生证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BirthCert 出生证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBirthCert(const BirthCert& _birthCert);
+
+                    /**
+                     * 判断参数 BirthCert 是否已赋值
+                     * @return BirthCert 是否已赋值
+                     */
+                    bool BirthCertHasBeenSet() const;
+
+                    /**
+                     * 获取时间轴
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Timeline 时间轴
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TimelineInformation GetTimeline() const;
+
+                    /**
+                     * 设置时间轴
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Timeline 时间轴
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTimeline(const TimelineInformation& _timeline);
+
+                    /**
+                     * 判断参数 Timeline 是否已赋值
+                     * @return Timeline 是否已赋值
+                     */
+                    bool TimelineHasBeenSet() const;
 
                 private:
 
@@ -565,7 +816,7 @@ namespace TencentCloud
                     bool m_prescriptionHasBeenSet;
 
                     /**
-                     * 免疫接种证明
+                     * 疫苗接种凭证
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     VaccineCertificate m_vaccineCertificate;
@@ -584,6 +835,83 @@ namespace TencentCloud
                      */
                     std::string m_ocrResult;
                     bool m_ocrResultHasBeenSet;
+
+                    /**
+                     * 报告类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_reportTypeDesc;
+                    bool m_reportTypeDescHasBeenSet;
+
+                    /**
+                     * 病理报告v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PathologyV2 m_pathologyV2;
+                    bool m_pathologyV2HasBeenSet;
+
+                    /**
+                     * 碳14尿素呼气试验
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Indicator m_c14;
+                    bool m_c14HasBeenSet;
+
+                    /**
+                     * 体检结论
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Exame m_exame;
+                    bool m_exameHasBeenSet;
+
+                    /**
+                     * 出院报告v2，入院报告v2，门诊病历v2
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DischargeInfoBlock m_medDocV2;
+                    bool m_medDocV2HasBeenSet;
+
+                    /**
+                     * 检验报告v3
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    IndicatorV3 m_indicatorV3;
+                    bool m_indicatorV3HasBeenSet;
+
+                    /**
+                     * 核酸报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    CovidItemsInfo m_covid;
+                    bool m_covidHasBeenSet;
+
+                    /**
+                     * 孕产报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Maternity m_maternity;
+                    bool m_maternityHasBeenSet;
+
+                    /**
+                     * 眼科报告
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    EyeItemsInfo m_eye;
+                    bool m_eyeHasBeenSet;
+
+                    /**
+                     * 出生证明
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BirthCert m_birthCert;
+                    bool m_birthCertHasBeenSet;
+
+                    /**
+                     * 时间轴
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TimelineInformation m_timeline;
+                    bool m_timelineHasBeenSet;
 
                 };
             }

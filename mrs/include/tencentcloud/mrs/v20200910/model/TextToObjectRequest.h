@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mrs/v20200910/model/ReportTypeVersion.h>
 
 
 namespace TencentCloud
@@ -101,14 +102,14 @@ namespace TencentCloud
                     bool IsUsedClassifyHasBeenSet() const;
 
                     /**
-                     * 获取用户类型，新客户传1，老客户可不传
-                     * @return UserType 用户类型，新客户传1，老客户可不传
+                     * 获取后付费的用户类型，新客户传1，老客户可不传或传 0。2022 年 12 月 15 新增了计费项，在此时间之前已经通过商务指定优惠价格的大客户，请不传这个字段或传 0，如果传 1 会导致以前获得的折扣价格失效。在 2022 年 12 月 15 日之后，通过商务指定优惠价格的大客户请传 1。
+                     * @return UserType 后付费的用户类型，新客户传1，老客户可不传或传 0。2022 年 12 月 15 新增了计费项，在此时间之前已经通过商务指定优惠价格的大客户，请不传这个字段或传 0，如果传 1 会导致以前获得的折扣价格失效。在 2022 年 12 月 15 日之后，通过商务指定优惠价格的大客户请传 1。
                      */
                     uint64_t GetUserType() const;
 
                     /**
-                     * 设置用户类型，新客户传1，老客户可不传
-                     * @param UserType 用户类型，新客户传1，老客户可不传
+                     * 设置后付费的用户类型，新客户传1，老客户可不传或传 0。2022 年 12 月 15 新增了计费项，在此时间之前已经通过商务指定优惠价格的大客户，请不传这个字段或传 0，如果传 1 会导致以前获得的折扣价格失效。在 2022 年 12 月 15 日之后，通过商务指定优惠价格的大客户请传 1。
+                     * @param UserType 后付费的用户类型，新客户传1，老客户可不传或传 0。2022 年 12 月 15 新增了计费项，在此时间之前已经通过商务指定优惠价格的大客户，请不传这个字段或传 0，如果传 1 会导致以前获得的折扣价格失效。在 2022 年 12 月 15 日之后，通过商务指定优惠价格的大客户请传 1。
                      */
                     void SetUserType(const uint64_t& _userType);
 
@@ -117,6 +118,36 @@ namespace TencentCloud
                      * @return UserType 是否已赋值
                      */
                     bool UserTypeHasBeenSet() const;
+
+                    /**
+                     * 获取可选。用于指定不同报告使用的结构化引擎版本，不同版本返回的JSON 数据结果不兼容。若不指定版本号，就默认用旧的版本号。
+（1）检验报告 11，默认使用 V2，最高支持 V3。
+（2）病理报告 15，默认使用 V1，最高支持 V2。
+（3）入院记录29、出院记录 28、病理记录 216、病程记录 217、门诊记录 210，默认使用 V1，最高支持 V2。
+                     * @return ReportTypeVersion 可选。用于指定不同报告使用的结构化引擎版本，不同版本返回的JSON 数据结果不兼容。若不指定版本号，就默认用旧的版本号。
+（1）检验报告 11，默认使用 V2，最高支持 V3。
+（2）病理报告 15，默认使用 V1，最高支持 V2。
+（3）入院记录29、出院记录 28、病理记录 216、病程记录 217、门诊记录 210，默认使用 V1，最高支持 V2。
+                     */
+                    std::vector<ReportTypeVersion> GetReportTypeVersion() const;
+
+                    /**
+                     * 设置可选。用于指定不同报告使用的结构化引擎版本，不同版本返回的JSON 数据结果不兼容。若不指定版本号，就默认用旧的版本号。
+（1）检验报告 11，默认使用 V2，最高支持 V3。
+（2）病理报告 15，默认使用 V1，最高支持 V2。
+（3）入院记录29、出院记录 28、病理记录 216、病程记录 217、门诊记录 210，默认使用 V1，最高支持 V2。
+                     * @param ReportTypeVersion 可选。用于指定不同报告使用的结构化引擎版本，不同版本返回的JSON 数据结果不兼容。若不指定版本号，就默认用旧的版本号。
+（1）检验报告 11，默认使用 V2，最高支持 V3。
+（2）病理报告 15，默认使用 V1，最高支持 V2。
+（3）入院记录29、出院记录 28、病理记录 216、病程记录 217、门诊记录 210，默认使用 V1，最高支持 V2。
+                     */
+                    void SetReportTypeVersion(const std::vector<ReportTypeVersion>& _reportTypeVersion);
+
+                    /**
+                     * 判断参数 ReportTypeVersion 是否已赋值
+                     * @return ReportTypeVersion 是否已赋值
+                     */
+                    bool ReportTypeVersionHasBeenSet() const;
 
                 private:
 
@@ -140,10 +171,19 @@ namespace TencentCloud
                     bool m_isUsedClassifyHasBeenSet;
 
                     /**
-                     * 用户类型，新客户传1，老客户可不传
+                     * 后付费的用户类型，新客户传1，老客户可不传或传 0。2022 年 12 月 15 新增了计费项，在此时间之前已经通过商务指定优惠价格的大客户，请不传这个字段或传 0，如果传 1 会导致以前获得的折扣价格失效。在 2022 年 12 月 15 日之后，通过商务指定优惠价格的大客户请传 1。
                      */
                     uint64_t m_userType;
                     bool m_userTypeHasBeenSet;
+
+                    /**
+                     * 可选。用于指定不同报告使用的结构化引擎版本，不同版本返回的JSON 数据结果不兼容。若不指定版本号，就默认用旧的版本号。
+（1）检验报告 11，默认使用 V2，最高支持 V3。
+（2）病理报告 15，默认使用 V1，最高支持 V2。
+（3）入院记录29、出院记录 28、病理记录 216、病程记录 217、门诊记录 210，默认使用 V1，最高支持 V2。
+                     */
+                    std::vector<ReportTypeVersion> m_reportTypeVersion;
+                    bool m_reportTypeVersionHasBeenSet;
 
                 };
             }

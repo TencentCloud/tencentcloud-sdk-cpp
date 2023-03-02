@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mrs/v20200910/model/DischargeDiagnosis.h>
 #include <tencentcloud/mrs/v20200910/model/BlockInfo.h>
+#include <tencentcloud/mrs/v20200910/model/BlockInfoV2.h>
+#include <tencentcloud/mrs/v20200910/model/Fp2NdItem.h>
 
 
 namespace TencentCloud
@@ -114,6 +116,50 @@ namespace TencentCloud
                      */
                     bool ClinicalDiagnosisHasBeenSet() const;
 
+                    /**
+                     * 获取受伤中毒的外部原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DamagePoi 受伤中毒的外部原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfoV2 GetDamagePoi() const;
+
+                    /**
+                     * 设置受伤中毒的外部原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DamagePoi 受伤中毒的外部原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDamagePoi(const BlockInfoV2& _damagePoi);
+
+                    /**
+                     * 判断参数 DamagePoi 是否已赋值
+                     * @return DamagePoi 是否已赋值
+                     */
+                    bool DamagePoiHasBeenSet() const;
+
+                    /**
+                     * 获取病案首页第二页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Fp2NdItems 病案首页第二页
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Fp2NdItem> GetFp2NdItems() const;
+
+                    /**
+                     * 设置病案首页第二页
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Fp2NdItems 病案首页第二页
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFp2NdItems(const std::vector<Fp2NdItem>& _fp2NdItems);
+
+                    /**
+                     * 判断参数 Fp2NdItems 是否已赋值
+                     * @return Fp2NdItems 是否已赋值
+                     */
+                    bool Fp2NdItemsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -136,6 +182,20 @@ namespace TencentCloud
                      */
                     BlockInfo m_clinicalDiagnosis;
                     bool m_clinicalDiagnosisHasBeenSet;
+
+                    /**
+                     * 受伤中毒的外部原因
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfoV2 m_damagePoi;
+                    bool m_damagePoiHasBeenSet;
+
+                    /**
+                     * 病案首页第二页
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Fp2NdItem> m_fp2NdItems;
+                    bool m_fp2NdItemsHasBeenSet;
 
                 };
             }

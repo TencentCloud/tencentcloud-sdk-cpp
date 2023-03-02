@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取`VPC`实例`ID`。形如：`vpc-12345678`
-                     * @return VpcId `VPC`实例`ID`。形如：`vpc-12345678`
+                     * 获取`VPC`实例`ID`。形如：`vpc-12345678`。
+                     * @return VpcId `VPC`实例`ID`。形如：`vpc-12345678`。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置`VPC`实例`ID`。形如：`vpc-12345678`
-                     * @param VpcId `VPC`实例`ID`。形如：`vpc-12345678`
+                     * 设置`VPC`实例`ID`。形如：`vpc-12345678`。
+                     * @param VpcId `VPC`实例`ID`。形如：`vpc-12345678`。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -122,6 +122,7 @@ PEERCONNECTION：对等连接；
 NAT：NAT网关；
 NORMAL_CVM：普通云服务器；
 CCN：云联网网关；
+NONEXTHOP：无下一跳；
                      * @return NextHopType 下一跳类型，目前我们支持的类型有：
 VPN：VPN网关；
 DIRECTCONNECT：专线网关；
@@ -129,6 +130,7 @@ PEERCONNECTION：对等连接；
 NAT：NAT网关；
 NORMAL_CVM：普通云服务器；
 CCN：云联网网关；
+NONEXTHOP：无下一跳；
                      */
                     std::string GetNextHopType() const;
 
@@ -140,6 +142,7 @@ PEERCONNECTION：对等连接；
 NAT：NAT网关；
 NORMAL_CVM：普通云服务器；
 CCN：云联网网关；
+NONEXTHOP：无下一跳；
                      * @param NextHopType 下一跳类型，目前我们支持的类型有：
 VPN：VPN网关；
 DIRECTCONNECT：专线网关；
@@ -147,6 +150,7 @@ PEERCONNECTION：对等连接；
 NAT：NAT网关；
 NORMAL_CVM：普通云服务器；
 CCN：云联网网关；
+NONEXTHOP：无下一跳；
                      */
                     void SetNextHopType(const std::string& _nextHopType);
 
@@ -163,14 +167,16 @@ CCN：云联网网关；
 下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；
 下一跳类型为NAT，取值Nat网关，形如：nat-12345678；
 下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；
-下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；
+下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；
+下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；
                      * @return NextHopDestination 下一跳目的网关，取值与“下一跳类型”相关：
 下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；
 下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；
 下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；
 下一跳类型为NAT，取值Nat网关，形如：nat-12345678；
 下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；
-下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；
+下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；
+下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；
                      */
                     std::string GetNextHopDestination() const;
 
@@ -181,14 +187,16 @@ CCN：云联网网关；
 下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；
 下一跳类型为NAT，取值Nat网关，形如：nat-12345678；
 下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；
-下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；
+下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；
+下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；
                      * @param NextHopDestination 下一跳目的网关，取值与“下一跳类型”相关：
 下一跳类型为VPN，取值VPN网关ID，形如：vpngw-12345678；
 下一跳类型为DIRECTCONNECT，取值专线网关ID，形如：dcg-12345678；
 下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；
 下一跳类型为NAT，取值Nat网关，形如：nat-12345678；
 下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；
-下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；
+下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；
+下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；
                      */
                     void SetNextHopDestination(const std::string& _nextHopDestination);
 
@@ -219,7 +227,7 @@ CCN：云联网网关；
                 private:
 
                     /**
-                     * `VPC`实例`ID`。形如：`vpc-12345678`
+                     * `VPC`实例`ID`。形如：`vpc-12345678`。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
@@ -250,6 +258,7 @@ PEERCONNECTION：对等连接；
 NAT：NAT网关；
 NORMAL_CVM：普通云服务器；
 CCN：云联网网关；
+NONEXTHOP：无下一跳；
                      */
                     std::string m_nextHopType;
                     bool m_nextHopTypeHasBeenSet;
@@ -261,7 +270,8 @@ CCN：云联网网关；
 下一跳类型为PEERCONNECTION，取值对等连接ID，形如：pcx-12345678；
 下一跳类型为NAT，取值Nat网关，形如：nat-12345678；
 下一跳类型为NORMAL_CVM，取值云服务器IPv4地址，形如：10.0.0.12；
-下一跳类型为CCN，取值云联网ID，形如：ccn-12345678；
+下一跳类型为CCN，取值云云联网ID，形如：ccn-12345678；
+下一跳类型为NONEXTHOP，指定网络探测为无下一跳的网络探测；
                      */
                     std::string m_nextHopDestination;
                     bool m_nextHopDestinationHasBeenSet;

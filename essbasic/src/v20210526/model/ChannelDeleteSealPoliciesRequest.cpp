@@ -26,8 +26,8 @@ ChannelDeleteSealPoliciesRequest::ChannelDeleteSealPoliciesRequest() :
     m_agentHasBeenSet(false),
     m_sealIdHasBeenSet(false),
     m_userIdsHasBeenSet(false),
-    m_operatorHasBeenSet(false),
-    m_organizationHasBeenSet(false)
+    m_organizationHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -68,15 +68,6 @@ string ChannelDeleteSealPoliciesRequest::ToJsonString() const
         }
     }
 
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_organizationHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -84,6 +75,15 @@ string ChannelDeleteSealPoliciesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_organization.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -142,22 +142,6 @@ bool ChannelDeleteSealPoliciesRequest::UserIdsHasBeenSet() const
     return m_userIdsHasBeenSet;
 }
 
-UserInfo ChannelDeleteSealPoliciesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelDeleteSealPoliciesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelDeleteSealPoliciesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
-
 OrganizationInfo ChannelDeleteSealPoliciesRequest::GetOrganization() const
 {
     return m_organization;
@@ -172,6 +156,22 @@ void ChannelDeleteSealPoliciesRequest::SetOrganization(const OrganizationInfo& _
 bool ChannelDeleteSealPoliciesRequest::OrganizationHasBeenSet() const
 {
     return m_organizationHasBeenSet;
+}
+
+UserInfo ChannelDeleteSealPoliciesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelDeleteSealPoliciesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelDeleteSealPoliciesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

@@ -241,14 +241,14 @@ namespace TencentCloud
                     bool ImageLayerHasBeenSet() const;
 
                     /**
-                     * 获取下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
-                     * @return SubBackgroundImage 下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * 获取图片的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * @return SubBackgroundImage 图片的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
                      */
                     std::string GetSubBackgroundImage() const;
 
                     /**
-                     * 设置下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
-                     * @param SubBackgroundImage 下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * 设置图片的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * @param SubBackgroundImage 图片的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
                      */
                     void SetSubBackgroundImage(const std::string& _subBackgroundImage);
 
@@ -323,7 +323,7 @@ namespace TencentCloud
                     bool m_imageLayerHasBeenSet;
 
                     /**
-                     * 下载的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
+                     * 图片的url地址， 只支持jpg， png，大小限制不超过5M，宽高比不一致的处理方案同 RenderMode。
                      */
                     std::string m_subBackgroundImage;
                     bool m_subBackgroundImageHasBeenSet;

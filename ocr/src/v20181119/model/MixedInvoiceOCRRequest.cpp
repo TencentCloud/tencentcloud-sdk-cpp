@@ -28,7 +28,8 @@ MixedInvoiceOCRRequest::MixedInvoiceOCRRequest() :
     m_typesHasBeenSet(false),
     m_returnOtherHasBeenSet(false),
     m_isPdfHasBeenSet(false),
-    m_pdfPageNumberHasBeenSet(false)
+    m_pdfPageNumberHasBeenSet(false),
+    m_returnMultiplePageHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,14 @@ string MixedInvoiceOCRRequest::ToJsonString() const
         string key = "PdfPageNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_pdfPageNumber, allocator);
+    }
+
+    if (m_returnMultiplePageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnMultiplePage";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_returnMultiplePage, allocator);
     }
 
 
@@ -194,6 +203,22 @@ void MixedInvoiceOCRRequest::SetPdfPageNumber(const int64_t& _pdfPageNumber)
 bool MixedInvoiceOCRRequest::PdfPageNumberHasBeenSet() const
 {
     return m_pdfPageNumberHasBeenSet;
+}
+
+bool MixedInvoiceOCRRequest::GetReturnMultiplePage() const
+{
+    return m_returnMultiplePage;
+}
+
+void MixedInvoiceOCRRequest::SetReturnMultiplePage(const bool& _returnMultiplePage)
+{
+    m_returnMultiplePage = _returnMultiplePage;
+    m_returnMultiplePageHasBeenSet = true;
+}
+
+bool MixedInvoiceOCRRequest::ReturnMultiplePageHasBeenSet() const
+{
+    return m_returnMultiplePageHasBeenSet;
 }
 
 

@@ -31,6 +31,8 @@
 #include <tencentcloud/cloudstudio/v20210524/model/CreateWorkspaceByTemplateResponse.h>
 #include <tencentcloud/cloudstudio/v20210524/model/CreateWorkspaceByVersionControlRequest.h>
 #include <tencentcloud/cloudstudio/v20210524/model/CreateWorkspaceByVersionControlResponse.h>
+#include <tencentcloud/cloudstudio/v20210524/model/CreateWorkspaceTemporaryTokenRequest.h>
+#include <tencentcloud/cloudstudio/v20210524/model/CreateWorkspaceTemporaryTokenResponse.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DeleteCustomizeTemplatesByIdRequest.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DeleteCustomizeTemplatesByIdResponse.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DescribeCustomizeTemplatesRequest.h>
@@ -89,6 +91,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateWorkspaceByVersionControlResponse> CreateWorkspaceByVersionControlOutcome;
                 typedef std::future<CreateWorkspaceByVersionControlOutcome> CreateWorkspaceByVersionControlOutcomeCallable;
                 typedef std::function<void(const CloudstudioClient*, const Model::CreateWorkspaceByVersionControlRequest&, CreateWorkspaceByVersionControlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkspaceByVersionControlAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateWorkspaceTemporaryTokenResponse> CreateWorkspaceTemporaryTokenOutcome;
+                typedef std::future<CreateWorkspaceTemporaryTokenOutcome> CreateWorkspaceTemporaryTokenOutcomeCallable;
+                typedef std::function<void(const CloudstudioClient*, const Model::CreateWorkspaceTemporaryTokenRequest&, CreateWorkspaceTemporaryTokenOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateWorkspaceTemporaryTokenAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteCustomizeTemplatesByIdResponse> DeleteCustomizeTemplatesByIdOutcome;
                 typedef std::future<DeleteCustomizeTemplatesByIdOutcome> DeleteCustomizeTemplatesByIdOutcomeCallable;
                 typedef std::function<void(const CloudstudioClient*, const Model::DeleteCustomizeTemplatesByIdRequest&, DeleteCustomizeTemplatesByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteCustomizeTemplatesByIdAsyncHandler;
@@ -175,6 +180,15 @@ namespace TencentCloud
                 CreateWorkspaceByVersionControlOutcome CreateWorkspaceByVersionControl(const Model::CreateWorkspaceByVersionControlRequest &request);
                 void CreateWorkspaceByVersionControlAsync(const Model::CreateWorkspaceByVersionControlRequest& request, const CreateWorkspaceByVersionControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateWorkspaceByVersionControlOutcomeCallable CreateWorkspaceByVersionControlCallable(const Model::CreateWorkspaceByVersionControlRequest& request);
+
+                /**
+                 *为工作空间创建临时访问凭证，重复调用会创建新的 Token，旧的 Token 将会自动失效
+                 * @param req CreateWorkspaceTemporaryTokenRequest
+                 * @return CreateWorkspaceTemporaryTokenOutcome
+                 */
+                CreateWorkspaceTemporaryTokenOutcome CreateWorkspaceTemporaryToken(const Model::CreateWorkspaceTemporaryTokenRequest &request);
+                void CreateWorkspaceTemporaryTokenAsync(const Model::CreateWorkspaceTemporaryTokenRequest& request, const CreateWorkspaceTemporaryTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateWorkspaceTemporaryTokenOutcomeCallable CreateWorkspaceTemporaryTokenCallable(const Model::CreateWorkspaceTemporaryTokenRequest& request);
 
                 /**
                  *删除自定义模板

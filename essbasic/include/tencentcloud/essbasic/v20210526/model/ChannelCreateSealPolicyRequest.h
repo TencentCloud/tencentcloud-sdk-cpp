@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户渠道信息
-                     * @return Agent 用户渠道信息
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置用户渠道信息
-                     * @param Agent 用户渠道信息
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取指定印章
-                     * @return SealId 指定印章
+                     * 获取指定印章ID
+                     * @return SealId 指定印章ID
                      */
                     std::string GetSealId() const;
 
                     /**
-                     * 设置指定印章
-                     * @param SealId 指定印章
+                     * 设置指定印章ID
+                     * @param SealId 指定印章ID
                      */
                     void SetSealId(const std::string& _sealId);
 
@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取企业机构信息
-                     * @return Organization 企业机构信息
+                     * 获取企业机构信息，不用传
+                     * @return Organization 企业机构信息，不用传
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
-                     * 设置企业机构信息
-                     * @param Organization 企业机构信息
+                     * 设置企业机构信息，不用传
+                     * @param Organization 企业机构信息，不用传
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
@@ -118,14 +118,14 @@ namespace TencentCloud
                     bool OrganizationHasBeenSet() const;
 
                     /**
-                     * 获取操作人（用户）信息
-                     * @return Operator 操作人（用户）信息
+                     * 获取操作人（用户）信息，不用传
+                     * @return Operator 操作人（用户）信息，不用传
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作人（用户）信息
-                     * @param Operator 操作人（用户）信息
+                     * 设置操作人（用户）信息，不用传
+                     * @param Operator 操作人（用户）信息，不用传
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -138,13 +138,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户渠道信息
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 指定印章
+                     * 指定印章ID
                      */
                     std::string m_sealId;
                     bool m_sealIdHasBeenSet;
@@ -156,13 +156,13 @@ namespace TencentCloud
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 企业机构信息
+                     * 企业机构信息，不用传
                      */
                     OrganizationInfo m_organization;
                     bool m_organizationHasBeenSet;
 
                     /**
-                     * 操作人（用户）信息
+                     * 操作人（用户）信息，不用传
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

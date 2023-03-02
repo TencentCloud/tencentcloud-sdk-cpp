@@ -23,7 +23,8 @@ using namespace std;
 NormSize::NormSize() :
     m_numberHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_unitHasBeenSet(false)
+    m_unitHasBeenSet(false),
+    m_implHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome NormSize::Deserialize(const rapidjson::Value &value)
         m_unitHasBeenSet = true;
     }
 
+    if (value.HasMember("Impl") && !value["Impl"].IsNull())
+    {
+        if (!value["Impl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `NormSize.Impl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_impl = string(value["Impl"].GetString());
+        m_implHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void NormSize::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "Unit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_unit.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_implHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Impl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_impl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void NormSize::SetUnit(const string& _unit)
 bool NormSize::UnitHasBeenSet() const
 {
     return m_unitHasBeenSet;
+}
+
+string NormSize::GetImpl() const
+{
+    return m_impl;
+}
+
+void NormSize::SetImpl(const string& _impl)
+{
+    m_impl = _impl;
+    m_implHasBeenSet = true;
+}
+
+bool NormSize::ImplHasBeenSet() const
+{
+    return m_implHasBeenSet;
 }
 

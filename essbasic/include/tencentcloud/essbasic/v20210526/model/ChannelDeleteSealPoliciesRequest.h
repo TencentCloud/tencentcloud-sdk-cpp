@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
-#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/OrganizationInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
 namespace TencentCloud
@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道信息
-                     * @return Agent 渠道信息
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置渠道信息
-                     * @param Agent 渠道信息
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
+                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -100,32 +100,14 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取操作人（用户）信息
-                     * @return Operator 操作人（用户）信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作人（用户）信息
-                     * @param Operator 操作人（用户）信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取组织机构信息
-                     * @return Organization 组织机构信息
+                     * 获取组织机构信息，不用传
+                     * @return Organization 组织机构信息，不用传
                      */
                     OrganizationInfo GetOrganization() const;
 
                     /**
-                     * 设置组织机构信息
-                     * @param Organization 组织机构信息
+                     * 设置组织机构信息，不用传
+                     * @param Organization 组织机构信息，不用传
                      */
                     void SetOrganization(const OrganizationInfo& _organization);
 
@@ -135,10 +117,28 @@ namespace TencentCloud
                      */
                     bool OrganizationHasBeenSet() const;
 
+                    /**
+                     * 获取操作人（用户）信息，不用传
+                     * @return Operator 操作人（用户）信息，不用传
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置操作人（用户）信息，不用传
+                     * @param Operator 操作人（用户）信息，不用传
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 渠道信息
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填。
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;
@@ -156,16 +156,16 @@ namespace TencentCloud
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 操作人（用户）信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
-                     * 组织机构信息
+                     * 组织机构信息，不用传
                      */
                     OrganizationInfo m_organization;
                     bool m_organizationHasBeenSet;
+
+                    /**
+                     * 操作人（用户）信息，不用传
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

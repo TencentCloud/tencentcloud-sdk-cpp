@@ -30,6 +30,7 @@
 #include <tencentcloud/mrs/v20200910/model/Multiple.h>
 #include <tencentcloud/mrs/v20200910/model/AspectRatio.h>
 #include <tencentcloud/mrs/v20200910/model/Elastic.h>
+#include <tencentcloud/mrs/v20200910/model/Coord.h>
 
 
 namespace TencentCloud
@@ -778,6 +779,270 @@ namespace TencentCloud
                      */
                     bool SrcHasBeenSet() const;
 
+                    /**
+                     * 获取透声度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Transparent 透声度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetTransparent() const;
+
+                    /**
+                     * 设置透声度
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Transparent 透声度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTransparent(const BlockInfo& _transparent);
+
+                    /**
+                     * 判断参数 Transparent 是否已赋值
+                     * @return Transparent 是否已赋值
+                     */
+                    bool TransparentHasBeenSet() const;
+
+                    /**
+                     * 获取MRI ADC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MriAdc MRI ADC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetMriAdc() const;
+
+                    /**
+                     * 设置MRI ADC
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MriAdc MRI ADC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMriAdc(const BlockInfo& _mriAdc);
+
+                    /**
+                     * 判断参数 MriAdc 是否已赋值
+                     * @return MriAdc 是否已赋值
+                     */
+                    bool MriAdcHasBeenSet() const;
+
+                    /**
+                     * 获取MRI DWI
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MriDwi MRI DWI
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetMriDwi() const;
+
+                    /**
+                     * 设置MRI DWI
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MriDwi MRI DWI
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMriDwi(const BlockInfo& _mriDwi);
+
+                    /**
+                     * 判断参数 MriDwi 是否已赋值
+                     * @return MriDwi 是否已赋值
+                     */
+                    bool MriDwiHasBeenSet() const;
+
+                    /**
+                     * 获取MRI T1信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MriT1 MRI T1信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetMriT1() const;
+
+                    /**
+                     * 设置MRI T1信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MriT1 MRI T1信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMriT1(const BlockInfo& _mriT1);
+
+                    /**
+                     * 判断参数 MriT1 是否已赋值
+                     * @return MriT1 是否已赋值
+                     */
+                    bool MriT1HasBeenSet() const;
+
+                    /**
+                     * 获取MRI T2信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MriT2 MRI T2信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetMriT2() const;
+
+                    /**
+                     * 设置MRI T2信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MriT2 MRI T2信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMriT2(const BlockInfo& _mriT2);
+
+                    /**
+                     * 判断参数 MriT2 是否已赋值
+                     * @return MriT2 是否已赋值
+                     */
+                    bool MriT2HasBeenSet() const;
+
+                    /**
+                     * 获取CT HU值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CtHu CT HU值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetCtHu() const;
+
+                    /**
+                     * 设置CT HU值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CtHu CT HU值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCtHu(const BlockInfo& _ctHu);
+
+                    /**
+                     * 判断参数 CtHu 是否已赋值
+                     * @return CtHu 是否已赋值
+                     */
+                    bool CtHuHasBeenSet() const;
+
+                    /**
+                     * 获取SUmax值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Suvmax SUmax值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetSuvmax() const;
+
+                    /**
+                     * 设置SUmax值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Suvmax SUmax值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSuvmax(const BlockInfo& _suvmax);
+
+                    /**
+                     * 判断参数 Suvmax 是否已赋值
+                     * @return Suvmax 是否已赋值
+                     */
+                    bool SuvmaxHasBeenSet() const;
+
+                    /**
+                     * 获取代谢情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Metabolism 代谢情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetMetabolism() const;
+
+                    /**
+                     * 设置代谢情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Metabolism 代谢情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetabolism(const BlockInfo& _metabolism);
+
+                    /**
+                     * 判断参数 Metabolism 是否已赋值
+                     * @return Metabolism 是否已赋值
+                     */
+                    bool MetabolismHasBeenSet() const;
+
+                    /**
+                     * 获取放射性摄取
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RadioactiveUptake 放射性摄取
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetRadioactiveUptake() const;
+
+                    /**
+                     * 设置放射性摄取
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RadioactiveUptake 放射性摄取
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRadioactiveUptake(const BlockInfo& _radioactiveUptake);
+
+                    /**
+                     * 判断参数 RadioactiveUptake 是否已赋值
+                     * @return RadioactiveUptake 是否已赋值
+                     */
+                    bool RadioactiveUptakeHasBeenSet() const;
+
+                    /**
+                     * 获取病变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SymDesc 病变
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetSymDesc() const;
+
+                    /**
+                     * 设置病变
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SymDesc 病变
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSymDesc(const BlockInfo& _symDesc);
+
+                    /**
+                     * 判断参数 SymDesc 是否已赋值
+                     * @return SymDesc 是否已赋值
+                     */
+                    bool SymDescHasBeenSet() const;
+
+                    /**
+                     * 获取影像特征
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageFeature 影像特征
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo GetImageFeature() const;
+
+                    /**
+                     * 设置影像特征
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageFeature 影像特征
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageFeature(const BlockInfo& _imageFeature);
+
+                    /**
+                     * 判断参数 ImageFeature 是否已赋值
+                     * @return ImageFeature 是否已赋值
+                     */
+                    bool ImageFeatureHasBeenSet() const;
+
+                    /**
+                     * 获取在报告图片中的坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Coords 在报告图片中的坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Coord> GetCoords() const;
+
+                    /**
+                     * 设置在报告图片中的坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Coords 在报告图片中的坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCoords(const std::vector<Coord>& _coords);
+
+                    /**
+                     * 判断参数 Coords 是否已赋值
+                     * @return Coords 是否已赋值
+                     */
+                    bool CoordsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1010,6 +1275,90 @@ namespace TencentCloud
                      */
                     std::string m_src;
                     bool m_srcHasBeenSet;
+
+                    /**
+                     * 透声度
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_transparent;
+                    bool m_transparentHasBeenSet;
+
+                    /**
+                     * MRI ADC
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_mriAdc;
+                    bool m_mriAdcHasBeenSet;
+
+                    /**
+                     * MRI DWI
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_mriDwi;
+                    bool m_mriDwiHasBeenSet;
+
+                    /**
+                     * MRI T1信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_mriT1;
+                    bool m_mriT1HasBeenSet;
+
+                    /**
+                     * MRI T2信号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_mriT2;
+                    bool m_mriT2HasBeenSet;
+
+                    /**
+                     * CT HU值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_ctHu;
+                    bool m_ctHuHasBeenSet;
+
+                    /**
+                     * SUmax值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_suvmax;
+                    bool m_suvmaxHasBeenSet;
+
+                    /**
+                     * 代谢情况
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_metabolism;
+                    bool m_metabolismHasBeenSet;
+
+                    /**
+                     * 放射性摄取
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_radioactiveUptake;
+                    bool m_radioactiveUptakeHasBeenSet;
+
+                    /**
+                     * 病变
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_symDesc;
+                    bool m_symDescHasBeenSet;
+
+                    /**
+                     * 影像特征
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    BlockInfo m_imageFeature;
+                    bool m_imageFeatureHasBeenSet;
+
+                    /**
+                     * 在报告图片中的坐标
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Coord> m_coords;
+                    bool m_coordsHasBeenSet;
 
                 };
             }

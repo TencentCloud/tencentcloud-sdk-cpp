@@ -53,7 +53,19 @@ TuberInfo::TuberInfo() :
     m_cysticwallHasBeenSet(false),
     m_capsuleHasBeenSet(false),
     m_isthmusThickneseHasBeenSet(false),
-    m_srcHasBeenSet(false)
+    m_srcHasBeenSet(false),
+    m_transparentHasBeenSet(false),
+    m_mriAdcHasBeenSet(false),
+    m_mriDwiHasBeenSet(false),
+    m_mriT1HasBeenSet(false),
+    m_mriT2HasBeenSet(false),
+    m_ctHuHasBeenSet(false),
+    m_suvmaxHasBeenSet(false),
+    m_metabolismHasBeenSet(false),
+    m_radioactiveUptakeHasBeenSet(false),
+    m_symDescHasBeenSet(false),
+    m_imageFeatureHasBeenSet(false),
+    m_coordsHasBeenSet(false)
 {
 }
 
@@ -618,6 +630,213 @@ CoreInternalOutcome TuberInfo::Deserialize(const rapidjson::Value &value)
         m_srcHasBeenSet = true;
     }
 
+    if (value.HasMember("Transparent") && !value["Transparent"].IsNull())
+    {
+        if (!value["Transparent"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Transparent` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_transparent.Deserialize(value["Transparent"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_transparentHasBeenSet = true;
+    }
+
+    if (value.HasMember("MriAdc") && !value["MriAdc"].IsNull())
+    {
+        if (!value["MriAdc"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.MriAdc` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriAdc.Deserialize(value["MriAdc"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriAdcHasBeenSet = true;
+    }
+
+    if (value.HasMember("MriDwi") && !value["MriDwi"].IsNull())
+    {
+        if (!value["MriDwi"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.MriDwi` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriDwi.Deserialize(value["MriDwi"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriDwiHasBeenSet = true;
+    }
+
+    if (value.HasMember("MriT1") && !value["MriT1"].IsNull())
+    {
+        if (!value["MriT1"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.MriT1` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriT1.Deserialize(value["MriT1"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriT1HasBeenSet = true;
+    }
+
+    if (value.HasMember("MriT2") && !value["MriT2"].IsNull())
+    {
+        if (!value["MriT2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.MriT2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_mriT2.Deserialize(value["MriT2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_mriT2HasBeenSet = true;
+    }
+
+    if (value.HasMember("CtHu") && !value["CtHu"].IsNull())
+    {
+        if (!value["CtHu"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.CtHu` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_ctHu.Deserialize(value["CtHu"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_ctHuHasBeenSet = true;
+    }
+
+    if (value.HasMember("Suvmax") && !value["Suvmax"].IsNull())
+    {
+        if (!value["Suvmax"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Suvmax` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_suvmax.Deserialize(value["Suvmax"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_suvmaxHasBeenSet = true;
+    }
+
+    if (value.HasMember("Metabolism") && !value["Metabolism"].IsNull())
+    {
+        if (!value["Metabolism"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Metabolism` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_metabolism.Deserialize(value["Metabolism"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_metabolismHasBeenSet = true;
+    }
+
+    if (value.HasMember("RadioactiveUptake") && !value["RadioactiveUptake"].IsNull())
+    {
+        if (!value["RadioactiveUptake"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.RadioactiveUptake` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_radioactiveUptake.Deserialize(value["RadioactiveUptake"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_radioactiveUptakeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SymDesc") && !value["SymDesc"].IsNull())
+    {
+        if (!value["SymDesc"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.SymDesc` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_symDesc.Deserialize(value["SymDesc"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_symDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("ImageFeature") && !value["ImageFeature"].IsNull())
+    {
+        if (!value["ImageFeature"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.ImageFeature` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageFeature.Deserialize(value["ImageFeature"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageFeatureHasBeenSet = true;
+    }
+
+    if (value.HasMember("Coords") && !value["Coords"].IsNull())
+    {
+        if (!value["Coords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TuberInfo.Coords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Coords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Coord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_coords.push_back(item);
+        }
+        m_coordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -935,6 +1154,120 @@ void TuberInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Src";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_src.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transparentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Transparent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_transparent.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriAdcHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriAdc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriAdc.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriDwiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriDwi";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriDwi.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriT1HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriT1";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriT1.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_mriT2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MriT2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mriT2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_ctHuHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CtHu";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_ctHu.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_suvmaxHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Suvmax";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_suvmax.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_metabolismHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Metabolism";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_metabolism.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_radioactiveUptakeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RadioactiveUptake";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_radioactiveUptake.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_symDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SymDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_symDesc.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageFeatureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageFeature";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageFeature.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_coordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Coords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_coords.begin(); itr != m_coords.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -1466,5 +1799,197 @@ void TuberInfo::SetSrc(const string& _src)
 bool TuberInfo::SrcHasBeenSet() const
 {
     return m_srcHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetTransparent() const
+{
+    return m_transparent;
+}
+
+void TuberInfo::SetTransparent(const BlockInfo& _transparent)
+{
+    m_transparent = _transparent;
+    m_transparentHasBeenSet = true;
+}
+
+bool TuberInfo::TransparentHasBeenSet() const
+{
+    return m_transparentHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetMriAdc() const
+{
+    return m_mriAdc;
+}
+
+void TuberInfo::SetMriAdc(const BlockInfo& _mriAdc)
+{
+    m_mriAdc = _mriAdc;
+    m_mriAdcHasBeenSet = true;
+}
+
+bool TuberInfo::MriAdcHasBeenSet() const
+{
+    return m_mriAdcHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetMriDwi() const
+{
+    return m_mriDwi;
+}
+
+void TuberInfo::SetMriDwi(const BlockInfo& _mriDwi)
+{
+    m_mriDwi = _mriDwi;
+    m_mriDwiHasBeenSet = true;
+}
+
+bool TuberInfo::MriDwiHasBeenSet() const
+{
+    return m_mriDwiHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetMriT1() const
+{
+    return m_mriT1;
+}
+
+void TuberInfo::SetMriT1(const BlockInfo& _mriT1)
+{
+    m_mriT1 = _mriT1;
+    m_mriT1HasBeenSet = true;
+}
+
+bool TuberInfo::MriT1HasBeenSet() const
+{
+    return m_mriT1HasBeenSet;
+}
+
+BlockInfo TuberInfo::GetMriT2() const
+{
+    return m_mriT2;
+}
+
+void TuberInfo::SetMriT2(const BlockInfo& _mriT2)
+{
+    m_mriT2 = _mriT2;
+    m_mriT2HasBeenSet = true;
+}
+
+bool TuberInfo::MriT2HasBeenSet() const
+{
+    return m_mriT2HasBeenSet;
+}
+
+BlockInfo TuberInfo::GetCtHu() const
+{
+    return m_ctHu;
+}
+
+void TuberInfo::SetCtHu(const BlockInfo& _ctHu)
+{
+    m_ctHu = _ctHu;
+    m_ctHuHasBeenSet = true;
+}
+
+bool TuberInfo::CtHuHasBeenSet() const
+{
+    return m_ctHuHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetSuvmax() const
+{
+    return m_suvmax;
+}
+
+void TuberInfo::SetSuvmax(const BlockInfo& _suvmax)
+{
+    m_suvmax = _suvmax;
+    m_suvmaxHasBeenSet = true;
+}
+
+bool TuberInfo::SuvmaxHasBeenSet() const
+{
+    return m_suvmaxHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetMetabolism() const
+{
+    return m_metabolism;
+}
+
+void TuberInfo::SetMetabolism(const BlockInfo& _metabolism)
+{
+    m_metabolism = _metabolism;
+    m_metabolismHasBeenSet = true;
+}
+
+bool TuberInfo::MetabolismHasBeenSet() const
+{
+    return m_metabolismHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetRadioactiveUptake() const
+{
+    return m_radioactiveUptake;
+}
+
+void TuberInfo::SetRadioactiveUptake(const BlockInfo& _radioactiveUptake)
+{
+    m_radioactiveUptake = _radioactiveUptake;
+    m_radioactiveUptakeHasBeenSet = true;
+}
+
+bool TuberInfo::RadioactiveUptakeHasBeenSet() const
+{
+    return m_radioactiveUptakeHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetSymDesc() const
+{
+    return m_symDesc;
+}
+
+void TuberInfo::SetSymDesc(const BlockInfo& _symDesc)
+{
+    m_symDesc = _symDesc;
+    m_symDescHasBeenSet = true;
+}
+
+bool TuberInfo::SymDescHasBeenSet() const
+{
+    return m_symDescHasBeenSet;
+}
+
+BlockInfo TuberInfo::GetImageFeature() const
+{
+    return m_imageFeature;
+}
+
+void TuberInfo::SetImageFeature(const BlockInfo& _imageFeature)
+{
+    m_imageFeature = _imageFeature;
+    m_imageFeatureHasBeenSet = true;
+}
+
+bool TuberInfo::ImageFeatureHasBeenSet() const
+{
+    return m_imageFeatureHasBeenSet;
+}
+
+vector<Coord> TuberInfo::GetCoords() const
+{
+    return m_coords;
+}
+
+void TuberInfo::SetCoords(const vector<Coord>& _coords)
+{
+    m_coords = _coords;
+    m_coordsHasBeenSet = true;
+}
+
+bool TuberInfo::CoordsHasBeenSet() const
+{
+    return m_coordsHasBeenSet;
 }
 

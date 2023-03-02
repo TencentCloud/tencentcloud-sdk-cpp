@@ -964,6 +964,50 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     bool MessageHasBeenSet() const;
 
+                    /**
+                     * 获取test-project
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ProjectName test-project
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetProjectName() const;
+
+                    /**
+                     * 设置test-project
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ProjectName test-project
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetProjectName(const std::string& _projectName);
+
+                    /**
+                     * 判断参数 ProjectName 是否已赋值
+                     * @return ProjectName 是否已赋值
+                     */
+                    bool ProjectNameHasBeenSet() const;
+
+                    /**
+                     * 获取test-scenario
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ScenarioName test-scenario
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetScenarioName() const;
+
+                    /**
+                     * 设置test-scenario
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ScenarioName test-scenario
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetScenarioName(const std::string& _scenarioName);
+
+                    /**
+                     * 判断参数 ScenarioName 是否已赋值
+                     * @return ScenarioName 是否已赋值
+                     */
+                    bool ScenarioNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1254,6 +1298,20 @@ JobSelectClusterException:19,JobCreateTaskException:20,JobSyncTaskException:21
                      */
                     std::string m_message;
                     bool m_messageHasBeenSet;
+
+                    /**
+                     * test-project
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_projectName;
+                    bool m_projectNameHasBeenSet;
+
+                    /**
+                     * test-scenario
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_scenarioName;
+                    bool m_scenarioNameHasBeenSet;
 
                 };
             }

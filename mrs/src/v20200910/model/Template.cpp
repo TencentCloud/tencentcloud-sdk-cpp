@@ -38,7 +38,18 @@ Template::Template() :
     m_prescriptionHasBeenSet(false),
     m_vaccineCertificateHasBeenSet(false),
     m_ocrTextHasBeenSet(false),
-    m_ocrResultHasBeenSet(false)
+    m_ocrResultHasBeenSet(false),
+    m_reportTypeDescHasBeenSet(false),
+    m_pathologyV2HasBeenSet(false),
+    m_c14HasBeenSet(false),
+    m_exameHasBeenSet(false),
+    m_medDocV2HasBeenSet(false),
+    m_indicatorV3HasBeenSet(false),
+    m_covidHasBeenSet(false),
+    m_maternityHasBeenSet(false),
+    m_eyeHasBeenSet(false),
+    m_birthCertHasBeenSet(false),
+    m_timelineHasBeenSet(false)
 {
 }
 
@@ -332,6 +343,186 @@ CoreInternalOutcome Template::Deserialize(const rapidjson::Value &value)
         m_ocrResultHasBeenSet = true;
     }
 
+    if (value.HasMember("ReportTypeDesc") && !value["ReportTypeDesc"].IsNull())
+    {
+        if (!value["ReportTypeDesc"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.ReportTypeDesc` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_reportTypeDesc = string(value["ReportTypeDesc"].GetString());
+        m_reportTypeDescHasBeenSet = true;
+    }
+
+    if (value.HasMember("PathologyV2") && !value["PathologyV2"].IsNull())
+    {
+        if (!value["PathologyV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.PathologyV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_pathologyV2.Deserialize(value["PathologyV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_pathologyV2HasBeenSet = true;
+    }
+
+    if (value.HasMember("C14") && !value["C14"].IsNull())
+    {
+        if (!value["C14"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.C14` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_c14.Deserialize(value["C14"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_c14HasBeenSet = true;
+    }
+
+    if (value.HasMember("Exame") && !value["Exame"].IsNull())
+    {
+        if (!value["Exame"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Exame` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_exame.Deserialize(value["Exame"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_exameHasBeenSet = true;
+    }
+
+    if (value.HasMember("MedDocV2") && !value["MedDocV2"].IsNull())
+    {
+        if (!value["MedDocV2"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.MedDocV2` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_medDocV2.Deserialize(value["MedDocV2"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_medDocV2HasBeenSet = true;
+    }
+
+    if (value.HasMember("IndicatorV3") && !value["IndicatorV3"].IsNull())
+    {
+        if (!value["IndicatorV3"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.IndicatorV3` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_indicatorV3.Deserialize(value["IndicatorV3"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_indicatorV3HasBeenSet = true;
+    }
+
+    if (value.HasMember("Covid") && !value["Covid"].IsNull())
+    {
+        if (!value["Covid"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Covid` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_covid.Deserialize(value["Covid"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_covidHasBeenSet = true;
+    }
+
+    if (value.HasMember("Maternity") && !value["Maternity"].IsNull())
+    {
+        if (!value["Maternity"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Maternity` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_maternity.Deserialize(value["Maternity"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_maternityHasBeenSet = true;
+    }
+
+    if (value.HasMember("Eye") && !value["Eye"].IsNull())
+    {
+        if (!value["Eye"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Eye` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_eye.Deserialize(value["Eye"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_eyeHasBeenSet = true;
+    }
+
+    if (value.HasMember("BirthCert") && !value["BirthCert"].IsNull())
+    {
+        if (!value["BirthCert"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.BirthCert` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_birthCert.Deserialize(value["BirthCert"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_birthCertHasBeenSet = true;
+    }
+
+    if (value.HasMember("Timeline") && !value["Timeline"].IsNull())
+    {
+        if (!value["Timeline"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Template.Timeline` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_timeline.Deserialize(value["Timeline"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_timelineHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +687,104 @@ void Template::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "OcrResult";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ocrResult.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_reportTypeDescHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTypeDesc";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_reportTypeDesc.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pathologyV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PathologyV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_pathologyV2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_c14HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "C14";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_c14.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_exameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Exame";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_exame.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_medDocV2HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MedDocV2";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_medDocV2.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_indicatorV3HasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndicatorV3";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_indicatorV3.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_covidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Covid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_covid.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_maternityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Maternity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_maternity.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_eyeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Eye";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_eye.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_birthCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BirthCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_birthCert.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_timelineHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Timeline";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_timeline.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -787,5 +1076,181 @@ void Template::SetOcrResult(const string& _ocrResult)
 bool Template::OcrResultHasBeenSet() const
 {
     return m_ocrResultHasBeenSet;
+}
+
+string Template::GetReportTypeDesc() const
+{
+    return m_reportTypeDesc;
+}
+
+void Template::SetReportTypeDesc(const string& _reportTypeDesc)
+{
+    m_reportTypeDesc = _reportTypeDesc;
+    m_reportTypeDescHasBeenSet = true;
+}
+
+bool Template::ReportTypeDescHasBeenSet() const
+{
+    return m_reportTypeDescHasBeenSet;
+}
+
+PathologyV2 Template::GetPathologyV2() const
+{
+    return m_pathologyV2;
+}
+
+void Template::SetPathologyV2(const PathologyV2& _pathologyV2)
+{
+    m_pathologyV2 = _pathologyV2;
+    m_pathologyV2HasBeenSet = true;
+}
+
+bool Template::PathologyV2HasBeenSet() const
+{
+    return m_pathologyV2HasBeenSet;
+}
+
+Indicator Template::GetC14() const
+{
+    return m_c14;
+}
+
+void Template::SetC14(const Indicator& _c14)
+{
+    m_c14 = _c14;
+    m_c14HasBeenSet = true;
+}
+
+bool Template::C14HasBeenSet() const
+{
+    return m_c14HasBeenSet;
+}
+
+Exame Template::GetExame() const
+{
+    return m_exame;
+}
+
+void Template::SetExame(const Exame& _exame)
+{
+    m_exame = _exame;
+    m_exameHasBeenSet = true;
+}
+
+bool Template::ExameHasBeenSet() const
+{
+    return m_exameHasBeenSet;
+}
+
+DischargeInfoBlock Template::GetMedDocV2() const
+{
+    return m_medDocV2;
+}
+
+void Template::SetMedDocV2(const DischargeInfoBlock& _medDocV2)
+{
+    m_medDocV2 = _medDocV2;
+    m_medDocV2HasBeenSet = true;
+}
+
+bool Template::MedDocV2HasBeenSet() const
+{
+    return m_medDocV2HasBeenSet;
+}
+
+IndicatorV3 Template::GetIndicatorV3() const
+{
+    return m_indicatorV3;
+}
+
+void Template::SetIndicatorV3(const IndicatorV3& _indicatorV3)
+{
+    m_indicatorV3 = _indicatorV3;
+    m_indicatorV3HasBeenSet = true;
+}
+
+bool Template::IndicatorV3HasBeenSet() const
+{
+    return m_indicatorV3HasBeenSet;
+}
+
+CovidItemsInfo Template::GetCovid() const
+{
+    return m_covid;
+}
+
+void Template::SetCovid(const CovidItemsInfo& _covid)
+{
+    m_covid = _covid;
+    m_covidHasBeenSet = true;
+}
+
+bool Template::CovidHasBeenSet() const
+{
+    return m_covidHasBeenSet;
+}
+
+Maternity Template::GetMaternity() const
+{
+    return m_maternity;
+}
+
+void Template::SetMaternity(const Maternity& _maternity)
+{
+    m_maternity = _maternity;
+    m_maternityHasBeenSet = true;
+}
+
+bool Template::MaternityHasBeenSet() const
+{
+    return m_maternityHasBeenSet;
+}
+
+EyeItemsInfo Template::GetEye() const
+{
+    return m_eye;
+}
+
+void Template::SetEye(const EyeItemsInfo& _eye)
+{
+    m_eye = _eye;
+    m_eyeHasBeenSet = true;
+}
+
+bool Template::EyeHasBeenSet() const
+{
+    return m_eyeHasBeenSet;
+}
+
+BirthCert Template::GetBirthCert() const
+{
+    return m_birthCert;
+}
+
+void Template::SetBirthCert(const BirthCert& _birthCert)
+{
+    m_birthCert = _birthCert;
+    m_birthCertHasBeenSet = true;
+}
+
+bool Template::BirthCertHasBeenSet() const
+{
+    return m_birthCertHasBeenSet;
+}
+
+TimelineInformation Template::GetTimeline() const
+{
+    return m_timeline;
+}
+
+void Template::SetTimeline(const TimelineInformation& _timeline)
+{
+    m_timeline = _timeline;
+    m_timelineHasBeenSet = true;
+}
+
+bool Template::TimelineHasBeenSet() const
+{
+    return m_timelineHasBeenSet;
 }
 

@@ -212,6 +212,49 @@ CloudstudioClient::CreateWorkspaceByVersionControlOutcomeCallable CloudstudioCli
     return task->get_future();
 }
 
+CloudstudioClient::CreateWorkspaceTemporaryTokenOutcome CloudstudioClient::CreateWorkspaceTemporaryToken(const CreateWorkspaceTemporaryTokenRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateWorkspaceTemporaryToken");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateWorkspaceTemporaryTokenResponse rsp = CreateWorkspaceTemporaryTokenResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateWorkspaceTemporaryTokenOutcome(rsp);
+        else
+            return CreateWorkspaceTemporaryTokenOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateWorkspaceTemporaryTokenOutcome(outcome.GetError());
+    }
+}
+
+void CloudstudioClient::CreateWorkspaceTemporaryTokenAsync(const CreateWorkspaceTemporaryTokenRequest& request, const CreateWorkspaceTemporaryTokenAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateWorkspaceTemporaryToken(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudstudioClient::CreateWorkspaceTemporaryTokenOutcomeCallable CloudstudioClient::CreateWorkspaceTemporaryTokenCallable(const CreateWorkspaceTemporaryTokenRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateWorkspaceTemporaryTokenOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateWorkspaceTemporaryToken(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudstudioClient::DeleteCustomizeTemplatesByIdOutcome CloudstudioClient::DeleteCustomizeTemplatesById(const DeleteCustomizeTemplatesByIdRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCustomizeTemplatesById");

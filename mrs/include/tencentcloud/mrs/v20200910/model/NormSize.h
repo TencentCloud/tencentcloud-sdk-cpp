@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool UnitHasBeenSet() const;
 
+                    /**
+                     * 获取归一化值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Impl 归一化值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetImpl() const;
+
+                    /**
+                     * 设置归一化值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Impl 归一化值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImpl(const std::string& _impl);
+
+                    /**
+                     * 判断参数 Impl 是否已赋值
+                     * @return Impl 是否已赋值
+                     */
+                    bool ImplHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     std::string m_unit;
                     bool m_unitHasBeenSet;
+
+                    /**
+                     * 归一化值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_impl;
+                    bool m_implHasBeenSet;
 
                 };
             }

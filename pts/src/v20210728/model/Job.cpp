@@ -61,7 +61,9 @@ Job::Job() :
     m_notificationHooksHasBeenSet(false),
     m_networkReceiveRateHasBeenSet(false),
     m_networkSendRateHasBeenSet(false),
-    m_messageHasBeenSet(false)
+    m_messageHasBeenSet(false),
+    m_projectNameHasBeenSet(false),
+    m_scenarioNameHasBeenSet(false)
 {
 }
 
@@ -580,6 +582,26 @@ CoreInternalOutcome Job::Deserialize(const rapidjson::Value &value)
         m_messageHasBeenSet = true;
     }
 
+    if (value.HasMember("ProjectName") && !value["ProjectName"].IsNull())
+    {
+        if (!value["ProjectName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.ProjectName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_projectName = string(value["ProjectName"].GetString());
+        m_projectNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScenarioName") && !value["ScenarioName"].IsNull())
+    {
+        if (!value["ScenarioName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Job.ScenarioName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scenarioName = string(value["ScenarioName"].GetString());
+        m_scenarioNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -980,6 +1002,22 @@ void Job::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         string key = "Message";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_projectNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProjectName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_projectName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scenarioNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScenarioName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scenarioName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1639,5 +1677,37 @@ void Job::SetMessage(const string& _message)
 bool Job::MessageHasBeenSet() const
 {
     return m_messageHasBeenSet;
+}
+
+string Job::GetProjectName() const
+{
+    return m_projectName;
+}
+
+void Job::SetProjectName(const string& _projectName)
+{
+    m_projectName = _projectName;
+    m_projectNameHasBeenSet = true;
+}
+
+bool Job::ProjectNameHasBeenSet() const
+{
+    return m_projectNameHasBeenSet;
+}
+
+string Job::GetScenarioName() const
+{
+    return m_scenarioName;
+}
+
+void Job::SetScenarioName(const string& _scenarioName)
+{
+    m_scenarioName = _scenarioName;
+    m_scenarioNameHasBeenSet = true;
+}
+
+bool Job::ScenarioNameHasBeenSet() const
+{
+    return m_scenarioNameHasBeenSet;
 }
 

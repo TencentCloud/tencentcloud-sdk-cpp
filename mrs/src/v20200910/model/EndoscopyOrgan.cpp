@@ -25,7 +25,8 @@ EndoscopyOrgan::EndoscopyOrgan() :
     m_indexHasBeenSet(false),
     m_srcHasBeenSet(false),
     m_partAliasHasBeenSet(false),
-    m_symDescListHasBeenSet(false)
+    m_symDescListHasBeenSet(false),
+    m_coordsHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,26 @@ CoreInternalOutcome EndoscopyOrgan::Deserialize(const rapidjson::Value &value)
         m_symDescListHasBeenSet = true;
     }
 
+    if (value.HasMember("Coords") && !value["Coords"].IsNull())
+    {
+        if (!value["Coords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `EndoscopyOrgan.Coords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Coords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Coord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_coords.push_back(item);
+        }
+        m_coordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -158,6 +179,21 @@ void EndoscopyOrgan::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
         int i=0;
         for (auto itr = m_symDescList.begin(); itr != m_symDescList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_coordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Coords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_coords.begin(); itr != m_coords.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -245,5 +281,21 @@ void EndoscopyOrgan::SetSymDescList(const vector<BlockInfo>& _symDescList)
 bool EndoscopyOrgan::SymDescListHasBeenSet() const
 {
     return m_symDescListHasBeenSet;
+}
+
+vector<Coord> EndoscopyOrgan::GetCoords() const
+{
+    return m_coords;
+}
+
+void EndoscopyOrgan::SetCoords(const vector<Coord>& _coords)
+{
+    m_coords = _coords;
+    m_coordsHasBeenSet = true;
+}
+
+bool EndoscopyOrgan::CoordsHasBeenSet() const
+{
+    return m_coordsHasBeenSet;
 }
 

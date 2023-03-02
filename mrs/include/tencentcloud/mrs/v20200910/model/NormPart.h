@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mrs/v20200910/model/PartDesc.h>
 
 
 namespace TencentCloud
@@ -156,6 +157,28 @@ namespace TencentCloud
                      */
                     bool UpperHasBeenSet() const;
 
+                    /**
+                     * 获取部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PartDetail 部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PartDesc GetPartDetail() const;
+
+                    /**
+                     * 设置部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PartDetail 部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPartDetail(const PartDesc& _partDetail);
+
+                    /**
+                     * 判断参数 PartDetail 是否已赋值
+                     * @return PartDetail 是否已赋值
+                     */
+                    bool PartDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +215,13 @@ namespace TencentCloud
                      */
                     std::string m_upper;
                     bool m_upperHasBeenSet;
+
+                    /**
+                     * 部位详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    PartDesc m_partDetail;
+                    bool m_partDetailHasBeenSet;
 
                 };
             }

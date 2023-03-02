@@ -206,6 +206,24 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     bool SingleInvoiceInfosHasBeenSet() const;
 
+                    /**
+                     * 获取发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * @return Page 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     */
+                    int64_t GetPage() const;
+
+                    /**
+                     * 设置发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     * @param Page 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     */
+                    void SetPage(const int64_t& _page);
+
+                    /**
+                     * 判断参数 Page 是否已赋值
+                     * @return Page 是否已赋值
+                     */
+                    bool PageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -254,6 +272,12 @@ FailedOperation.UnKnowError：表示识别失败；
                      */
                     std::vector<SingleInvoiceInfo> m_singleInvoiceInfos;
                     bool m_singleInvoiceInfosHasBeenSet;
+
+                    /**
+                     * 发票处于识别图片或PDF文件中的页教，默认从1开始。
+                     */
+                    int64_t m_page;
+                    bool m_pageHasBeenSet;
 
                 };
             }

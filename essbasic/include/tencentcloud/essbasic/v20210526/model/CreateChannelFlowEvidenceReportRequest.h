@@ -45,6 +45,24 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * @return Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     */
+                    Agent GetAgent() const;
+
+                    /**
+                     * 设置应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     * @param Agent 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     */
+                    void SetAgent(const Agent& _agent);
+
+                    /**
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
+                     */
+                    bool AgentHasBeenSet() const;
+
+                    /**
                      * 获取签署流程编号
                      * @return FlowId 签署流程编号
                      */
@@ -63,32 +81,14 @@ namespace TencentCloud
                     bool FlowIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     * @return Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     */
-                    Agent GetAgent() const;
-
-                    /**
-                     * 设置渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     * @param Agent 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     */
-                    void SetAgent(const Agent& _agent);
-
-                    /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
-                     */
-                    bool AgentHasBeenSet() const;
-
-                    /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
+                     * 获取暂未开放
+                     * @return Operator 暂未开放
                      */
                     UserInfo GetOperator() const;
 
                     /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
+                     * 设置暂未开放
+                     * @param Operator 暂未开放
                      */
                     void SetOperator(const UserInfo& _operator);
 
@@ -101,19 +101,19 @@ namespace TencentCloud
                 private:
 
                     /**
+                     * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
+                     */
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
+
+                    /**
                      * 签署流程编号
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;
 
                     /**
-                     * 渠道应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 均必填
-                     */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
-
-                    /**
-                     * 操作者的信息
+                     * 暂未开放
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;

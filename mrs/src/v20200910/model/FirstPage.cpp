@@ -23,7 +23,9 @@ using namespace std;
 FirstPage::FirstPage() :
     m_dischargeDiagnosisHasBeenSet(false),
     m_pathologicalDiagnosisHasBeenSet(false),
-    m_clinicalDiagnosisHasBeenSet(false)
+    m_clinicalDiagnosisHasBeenSet(false),
+    m_damagePoiHasBeenSet(false),
+    m_fp2NdItemsHasBeenSet(false)
 {
 }
 
@@ -86,6 +88,43 @@ CoreInternalOutcome FirstPage::Deserialize(const rapidjson::Value &value)
         m_clinicalDiagnosisHasBeenSet = true;
     }
 
+    if (value.HasMember("DamagePoi") && !value["DamagePoi"].IsNull())
+    {
+        if (!value["DamagePoi"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FirstPage.DamagePoi` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_damagePoi.Deserialize(value["DamagePoi"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_damagePoiHasBeenSet = true;
+    }
+
+    if (value.HasMember("Fp2NdItems") && !value["Fp2NdItems"].IsNull())
+    {
+        if (!value["Fp2NdItems"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FirstPage.Fp2NdItems` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Fp2NdItems"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Fp2NdItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_fp2NdItems.push_back(item);
+        }
+        m_fp2NdItemsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -124,6 +163,30 @@ void FirstPage::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_clinicalDiagnosis.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_damagePoiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DamagePoi";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_damagePoi.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fp2NdItemsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Fp2NdItems";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_fp2NdItems.begin(); itr != m_fp2NdItems.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -175,5 +238,37 @@ void FirstPage::SetClinicalDiagnosis(const BlockInfo& _clinicalDiagnosis)
 bool FirstPage::ClinicalDiagnosisHasBeenSet() const
 {
     return m_clinicalDiagnosisHasBeenSet;
+}
+
+BlockInfoV2 FirstPage::GetDamagePoi() const
+{
+    return m_damagePoi;
+}
+
+void FirstPage::SetDamagePoi(const BlockInfoV2& _damagePoi)
+{
+    m_damagePoi = _damagePoi;
+    m_damagePoiHasBeenSet = true;
+}
+
+bool FirstPage::DamagePoiHasBeenSet() const
+{
+    return m_damagePoiHasBeenSet;
+}
+
+vector<Fp2NdItem> FirstPage::GetFp2NdItems() const
+{
+    return m_fp2NdItems;
+}
+
+void FirstPage::SetFp2NdItems(const vector<Fp2NdItem>& _fp2NdItems)
+{
+    m_fp2NdItems = _fp2NdItems;
+    m_fp2NdItemsHasBeenSet = true;
+}
+
+bool FirstPage::Fp2NdItemsHasBeenSet() const
+{
+    return m_fp2NdItemsHasBeenSet;
 }
 

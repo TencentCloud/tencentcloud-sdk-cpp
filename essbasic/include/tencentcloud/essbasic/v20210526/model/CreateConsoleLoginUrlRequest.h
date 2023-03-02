@@ -211,24 +211,6 @@ namespace TencentCloud
                     bool AutoJumpBackEventHasBeenSet() const;
 
                     /**
-                     * 获取操作者的信息
-                     * @return Operator 操作者的信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者的信息
-                     * @param Operator 操作者的信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
-
-                    /**
                      * 获取支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
                      * @return AuthorizationTypes 支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
                      */
@@ -245,6 +227,24 @@ namespace TencentCloud
                      * @return AuthorizationTypes 是否已赋值
                      */
                     bool AuthorizationTypesHasBeenSet() const;
+
+                    /**
+                     * 获取暂未开放
+                     * @return Operator 暂未开放
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置暂未开放
+                     * @param Operator 暂未开放
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
 
                 private:
 
@@ -304,16 +304,16 @@ namespace TencentCloud
                     bool m_autoJumpBackEventHasBeenSet;
 
                     /**
-                     * 操作者的信息
-                     */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
-
-                    /**
                      * 支持的授权方式,授权方式: "1" - 上传授权书认证  "2" - 法定代表人认证
                      */
                     std::vector<int64_t> m_authorizationTypes;
                     bool m_authorizationTypesHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

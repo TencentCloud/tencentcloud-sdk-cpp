@@ -38,7 +38,6 @@ namespace TencentCloud
             {
                 /**
                 * 录制的混流布局参数。
-
                 */
                 class MixLayoutParams : public AbstractModel
                 {
@@ -200,14 +199,14 @@ namespace TencentCloud
                     bool MediaIdHasBeenSet() const;
 
                     /**
-                     * 获取下载的url地址， 只支持jpg， png，大小限制不超过5M。
-                     * @return BackgroundImageUrl 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 获取图片的url地址， 只支持jpg， png，大小限制不超过5M，url不可包含中文。
+                     * @return BackgroundImageUrl 图片的url地址， 只支持jpg， png，大小限制不超过5M，url不可包含中文。
                      */
                     std::string GetBackgroundImageUrl() const;
 
                     /**
-                     * 设置下载的url地址， 只支持jpg， png，大小限制不超过5M。
-                     * @param BackgroundImageUrl 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 设置图片的url地址， 只支持jpg， png，大小限制不超过5M，url不可包含中文。
+                     * @param BackgroundImageUrl 图片的url地址， 只支持jpg， png，大小限制不超过5M，url不可包含中文。
                      */
                     void SetBackgroundImageUrl(const std::string& _backgroundImageUrl);
 
@@ -373,7 +372,7 @@ namespace TencentCloud
                     bool m_mediaIdHasBeenSet;
 
                     /**
-                     * 下载的url地址， 只支持jpg， png，大小限制不超过5M。
+                     * 图片的url地址， 只支持jpg， png，大小限制不超过5M，url不可包含中文。
                      */
                     std::string m_backgroundImageUrl;
                     bool m_backgroundImageUrlHasBeenSet;

@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络探测实例`ID`数组。形如：[`netd-12345678`]
-                     * @return NetDetectIds 网络探测实例`ID`数组。形如：[`netd-12345678`]
+                     * 获取网络探测实例`ID`数组。形如：[`netd-12345678`]。
+                     * @return NetDetectIds 网络探测实例`ID`数组。形如：[`netd-12345678`]。
                      */
                     std::vector<std::string> GetNetDetectIds() const;
 
                     /**
-                     * 设置网络探测实例`ID`数组。形如：[`netd-12345678`]
-                     * @param NetDetectIds 网络探测实例`ID`数组。形如：[`netd-12345678`]
+                     * 设置网络探测实例`ID`数组。形如：[`netd-12345678`]。
+                     * @param NetDetectIds 网络探测实例`ID`数组。形如：[`netd-12345678`]。
                      */
                     void SetNetDetectIds(const std::vector<std::string>& _netDetectIds);
 
@@ -63,17 +63,17 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤条件，参数不支持同时指定NetDetectIds和Filters。
-<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>
+<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678。</li>
                      * @return Filters 过滤条件，参数不支持同时指定NetDetectIds和Filters。
-<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>
+<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678。</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
                      * 设置过滤条件，参数不支持同时指定NetDetectIds和Filters。
-<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>
+<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678。</li>
                      * @param Filters 过滤条件，参数不支持同时指定NetDetectIds和Filters。
-<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>
+<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678。</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -122,14 +122,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络探测实例`ID`数组。形如：[`netd-12345678`]
+                     * 网络探测实例`ID`数组。形如：[`netd-12345678`]。
                      */
                     std::vector<std::string> m_netDetectIds;
                     bool m_netDetectIdsHasBeenSet;
 
                     /**
                      * 过滤条件，参数不支持同时指定NetDetectIds和Filters。
-<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678</li>
+<li>net-detect-id - String - （过滤条件）网络探测实例ID，形如：netd-12345678。</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

@@ -27,7 +27,8 @@ ImageToObjectRequest::ImageToObjectRequest() :
     m_handleParamHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_isUsedClassifyHasBeenSet(false),
-    m_userTypeHasBeenSet(false)
+    m_userTypeHasBeenSet(false),
+    m_reportTypeVersionHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,21 @@ string ImageToObjectRequest::ToJsonString() const
         string key = "UserType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_userType, allocator);
+    }
+
+    if (m_reportTypeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReportTypeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_reportTypeVersion.begin(); itr != m_reportTypeVersion.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -172,6 +188,22 @@ void ImageToObjectRequest::SetUserType(const int64_t& _userType)
 bool ImageToObjectRequest::UserTypeHasBeenSet() const
 {
     return m_userTypeHasBeenSet;
+}
+
+vector<ReportTypeVersion> ImageToObjectRequest::GetReportTypeVersion() const
+{
+    return m_reportTypeVersion;
+}
+
+void ImageToObjectRequest::SetReportTypeVersion(const vector<ReportTypeVersion>& _reportTypeVersion)
+{
+    m_reportTypeVersion = _reportTypeVersion;
+    m_reportTypeVersionHasBeenSet = true;
+}
+
+bool ImageToObjectRequest::ReportTypeVersionHasBeenSet() const
+{
+    return m_reportTypeVersionHasBeenSet;
 }
 
 

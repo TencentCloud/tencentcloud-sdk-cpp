@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取网络探测实例`ID`。形如：`netd-12345678`
-                     * @return NetDetectId 网络探测实例`ID`。形如：`netd-12345678`
+                     * 获取网络探测实例`ID`。形如：`netd-12345678`。
+                     * @return NetDetectId 网络探测实例`ID`。形如：`netd-12345678`。
                      */
                     std::string GetNetDetectId() const;
 
                     /**
-                     * 设置网络探测实例`ID`。形如：`netd-12345678`
-                     * @param NetDetectId 网络探测实例`ID`。形如：`netd-12345678`
+                     * 设置网络探测实例`ID`。形如：`netd-12345678`。
+                     * @param NetDetectId 网络探测实例`ID`。形如：`netd-12345678`。
                      */
                     void SetNetDetectId(const std::string& _netDetectId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 网络探测实例`ID`。形如：`netd-12345678`
+                     * 网络探测实例`ID`。形如：`netd-12345678`。
                      */
                     std::string m_netDetectId;
                     bool m_netDetectIdHasBeenSet;

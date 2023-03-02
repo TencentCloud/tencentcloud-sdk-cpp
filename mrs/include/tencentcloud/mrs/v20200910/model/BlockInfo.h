@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mrs/v20200910/model/Size.h>
 
 
 namespace TencentCloud
@@ -178,6 +179,28 @@ namespace TencentCloud
                      */
                     bool NameHasBeenSet() const;
 
+                    /**
+                     * 获取大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Size 大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Size> GetSize() const;
+
+                    /**
+                     * 设置大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Size 大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSize(const std::vector<Size>& _size);
+
+                    /**
+                     * 判断参数 Size 是否已赋值
+                     * @return Size 是否已赋值
+                     */
+                    bool SizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -221,6 +244,13 @@ namespace TencentCloud
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
+
+                    /**
+                     * 大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Size> m_size;
+                    bool m_sizeHasBeenSet;
 
                 };
             }

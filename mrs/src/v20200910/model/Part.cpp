@@ -25,7 +25,8 @@ Part::Part() :
     m_normPartHasBeenSet(false),
     m_srcHasBeenSet(false),
     m_valueHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_valueBriefHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome Part::Deserialize(const rapidjson::Value &value)
         m_nameHasBeenSet = true;
     }
 
+    if (value.HasMember("ValueBrief") && !value["ValueBrief"].IsNull())
+    {
+        if (!value["ValueBrief"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Part.ValueBrief` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_valueBrief = string(value["ValueBrief"].GetString());
+        m_valueBriefHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +156,14 @@ void Part::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "Name";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_valueBriefHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ValueBrief";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_valueBrief.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -228,5 +247,21 @@ void Part::SetName(const string& _name)
 bool Part::NameHasBeenSet() const
 {
     return m_nameHasBeenSet;
+}
+
+string Part::GetValueBrief() const
+{
+    return m_valueBrief;
+}
+
+void Part::SetValueBrief(const string& _valueBrief)
+{
+    m_valueBrief = _valueBrief;
+    m_valueBriefHasBeenSet = true;
+}
+
+bool Part::ValueBriefHasBeenSet() const
+{
+    return m_valueBriefHasBeenSet;
 }
 

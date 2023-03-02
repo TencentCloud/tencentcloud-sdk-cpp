@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取默认VPC和子网ID
-                     * @return Vpc 默认VPC和子网ID
+                     * 获取默认VPC和子网ID。
+                     * @return Vpc 默认VPC和子网ID。
                      */
                     DefaultVpcSubnet GetVpc() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 默认VPC和子网ID
+                     * 默认VPC和子网ID。
                      */
                     DefaultVpcSubnet m_vpc;
                     bool m_vpcHasBeenSet;

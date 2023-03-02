@@ -23,7 +23,8 @@ using namespace std;
 Desc::Desc() :
     m_textHasBeenSet(false),
     m_organHasBeenSet(false),
-    m_tuberHasBeenSet(false)
+    m_tuberHasBeenSet(false),
+    m_coordsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,26 @@ CoreInternalOutcome Desc::Deserialize(const rapidjson::Value &value)
         m_tuberHasBeenSet = true;
     }
 
+    if (value.HasMember("Coords") && !value["Coords"].IsNull())
+    {
+        if (!value["Coords"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Desc.Coords` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Coords"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Coord item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_coords.push_back(item);
+        }
+        m_coordsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -121,6 +142,21 @@ void Desc::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
 
         int i=0;
         for (auto itr = m_tuber.begin(); itr != m_tuber.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_coordsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Coords";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_coords.begin(); itr != m_coords.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -176,5 +212,21 @@ void Desc::SetTuber(const vector<TuberInfo>& _tuber)
 bool Desc::TuberHasBeenSet() const
 {
     return m_tuberHasBeenSet;
+}
+
+vector<Coord> Desc::GetCoords() const
+{
+    return m_coords;
+}
+
+void Desc::SetCoords(const vector<Coord>& _coords)
+{
+    m_coords = _coords;
+    m_coordsHasBeenSet = true;
+}
+
+bool Desc::CoordsHasBeenSet() const
+{
+    return m_coordsHasBeenSet;
 }
 

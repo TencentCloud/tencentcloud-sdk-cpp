@@ -98,6 +98,24 @@ namespace TencentCloud
                      */
                     bool ApproversHasBeenSet() const;
 
+                    /**
+                     * 获取企微消息中的发起人
+                     * @return Initiator 企微消息中的发起人
+                     */
+                    std::string GetInitiator() const;
+
+                    /**
+                     * 设置企微消息中的发起人
+                     * @param Initiator 企微消息中的发起人
+                     */
+                    void SetInitiator(const std::string& _initiator);
+
+                    /**
+                     * 判断参数 Initiator 是否已赋值
+                     * @return Initiator 是否已赋值
+                     */
+                    bool InitiatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -117,6 +135,12 @@ namespace TencentCloud
                      */
                     std::vector<FillApproverInfo> m_approvers;
                     bool m_approversHasBeenSet;
+
+                    /**
+                     * 企微消息中的发起人
+                     */
+                    std::string m_initiator;
+                    bool m_initiatorHasBeenSet;
 
                 };
             }

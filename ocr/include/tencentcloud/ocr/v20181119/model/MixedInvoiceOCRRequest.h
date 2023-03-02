@@ -122,7 +122,7 @@ namespace TencentCloud
 15：非税发票
 16：全电发票
 ----------------------
--1：其他发票,（仅返回，本参数不支持传入-1，请在ReturnOther中控制是否返回）
+-1：其他发票,（只传入此类型时，图片均采用其他票类型进行识别）
                      * @return Types 需要识别的票据类型列表，为空或不填表示识别全部类型。
 0：出租车发票
 1：定额发票
@@ -138,7 +138,7 @@ namespace TencentCloud
 15：非税发票
 16：全电发票
 ----------------------
--1：其他发票,（仅返回，本参数不支持传入-1，请在ReturnOther中控制是否返回）
+-1：其他发票,（只传入此类型时，图片均采用其他票类型进行识别）
                      */
                     std::vector<int64_t> GetTypes() const;
 
@@ -158,7 +158,7 @@ namespace TencentCloud
 15：非税发票
 16：全电发票
 ----------------------
--1：其他发票,（仅返回，本参数不支持传入-1，请在ReturnOther中控制是否返回）
+-1：其他发票,（只传入此类型时，图片均采用其他票类型进行识别）
                      * @param Types 需要识别的票据类型列表，为空或不填表示识别全部类型。
 0：出租车发票
 1：定额发票
@@ -174,7 +174,7 @@ namespace TencentCloud
 15：非税发票
 16：全电发票
 ----------------------
--1：其他发票,（仅返回，本参数不支持传入-1，请在ReturnOther中控制是否返回）
+-1：其他发票,（只传入此类型时，图片均采用其他票类型进行识别）
                      */
                     void SetTypes(const std::vector<int64_t>& _types);
 
@@ -246,6 +246,24 @@ No：不识别其他类型发票
                      */
                     bool PdfPageNumberHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启PDF多页识别，默认值为false，开启后可同时支持多页PDF的识别返回，仅支持返回文件前30页。开启后IsPDF和PdfPageNumber入参不进行控制。
+                     * @return ReturnMultiplePage 是否开启PDF多页识别，默认值为false，开启后可同时支持多页PDF的识别返回，仅支持返回文件前30页。开启后IsPDF和PdfPageNumber入参不进行控制。
+                     */
+                    bool GetReturnMultiplePage() const;
+
+                    /**
+                     * 设置是否开启PDF多页识别，默认值为false，开启后可同时支持多页PDF的识别返回，仅支持返回文件前30页。开启后IsPDF和PdfPageNumber入参不进行控制。
+                     * @param ReturnMultiplePage 是否开启PDF多页识别，默认值为false，开启后可同时支持多页PDF的识别返回，仅支持返回文件前30页。开启后IsPDF和PdfPageNumber入参不进行控制。
+                     */
+                    void SetReturnMultiplePage(const bool& _returnMultiplePage);
+
+                    /**
+                     * 判断参数 ReturnMultiplePage 是否已赋值
+                     * @return ReturnMultiplePage 是否已赋值
+                     */
+                    bool ReturnMultiplePageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,7 +301,7 @@ No：不识别其他类型发票
 15：非税发票
 16：全电发票
 ----------------------
--1：其他发票,（仅返回，本参数不支持传入-1，请在ReturnOther中控制是否返回）
+-1：其他发票,（只传入此类型时，图片均采用其他票类型进行识别）
                      */
                     std::vector<int64_t> m_types;
                     bool m_typesHasBeenSet;
@@ -307,6 +325,12 @@ No：不识别其他类型发票
                      */
                     int64_t m_pdfPageNumber;
                     bool m_pdfPageNumberHasBeenSet;
+
+                    /**
+                     * 是否开启PDF多页识别，默认值为false，开启后可同时支持多页PDF的识别返回，仅支持返回文件前30页。开启后IsPDF和PdfPageNumber入参不进行控制。
+                     */
+                    bool m_returnMultiplePage;
+                    bool m_returnMultiplePageHasBeenSet;
 
                 };
             }
