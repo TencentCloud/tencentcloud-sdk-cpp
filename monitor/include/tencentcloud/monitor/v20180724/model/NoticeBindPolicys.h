@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 通知模版与策略绑定关系
+                * 通知模板与策略绑定关系
                 */
                 class NoticeBindPolicys : public AbstractModel
                 {

@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取校验结果
+                     * 获取校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 校验结果
+                     * @return Status 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetStatus() const;
@@ -87,9 +87,9 @@ namespace TencentCloud
                     bool StepCurHasBeenSet() const;
 
                     /**
-                     * 获取总体进度
+                     * 获取总体进度，范围为[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Progress 总体进度
+                     * @return Progress 总体进度，范围为[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetProgress() const;
@@ -117,7 +117,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 校验结果
+                     * 校验任务执行状态，如：notStarted(未开始)、running(校验中)、failed(校验任务失败)、success(任务成功)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_status;
@@ -138,7 +138,7 @@ namespace TencentCloud
                     bool m_stepCurHasBeenSet;
 
                     /**
-                     * 总体进度
+                     * 总体进度，范围为[0,100]
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_progress;

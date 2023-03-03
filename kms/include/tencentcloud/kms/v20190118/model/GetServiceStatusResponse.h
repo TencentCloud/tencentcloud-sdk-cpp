@@ -151,6 +151,20 @@ namespace TencentCloud
                      */
                     bool ExclusiveHSMEnabledHasBeenSet() const;
 
+                    /**
+                     * 获取KMS 订阅信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubscriptionInfo KMS 订阅信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubscriptionInfo() const;
+
+                    /**
+                     * 判断参数 SubscriptionInfo 是否已赋值
+                     * @return SubscriptionInfo 是否已赋值
+                     */
+                    bool SubscriptionInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -206,6 +220,13 @@ namespace TencentCloud
                      */
                     bool m_exclusiveHSMEnabled;
                     bool m_exclusiveHSMEnabledHasBeenSet;
+
+                    /**
+                     * KMS 订阅信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subscriptionInfo;
+                    bool m_subscriptionInfoHasBeenSet;
 
                 };
             }

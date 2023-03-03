@@ -2663,49 +2663,6 @@ TcrClient::DescribeImmutableTagRulesOutcomeCallable TcrClient::DescribeImmutable
     return task->get_future();
 }
 
-TcrClient::DescribeInstanceAllOutcome TcrClient::DescribeInstanceAll(const DescribeInstanceAllRequest &request)
-{
-    auto outcome = MakeRequest(request, "DescribeInstanceAll");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        DescribeInstanceAllResponse rsp = DescribeInstanceAllResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return DescribeInstanceAllOutcome(rsp);
-        else
-            return DescribeInstanceAllOutcome(o.GetError());
-    }
-    else
-    {
-        return DescribeInstanceAllOutcome(outcome.GetError());
-    }
-}
-
-void TcrClient::DescribeInstanceAllAsync(const DescribeInstanceAllRequest& request, const DescribeInstanceAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->DescribeInstanceAll(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-TcrClient::DescribeInstanceAllOutcomeCallable TcrClient::DescribeInstanceAllCallable(const DescribeInstanceAllRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<DescribeInstanceAllOutcome()>>(
-        [this, request]()
-        {
-            return this->DescribeInstanceAll(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 TcrClient::DescribeInstanceAllNamespacesOutcome TcrClient::DescribeInstanceAllNamespaces(const DescribeInstanceAllNamespacesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceAllNamespaces");

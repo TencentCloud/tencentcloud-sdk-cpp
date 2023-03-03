@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/vod/v20180717/model/MediaSubStreamInfoItem.h>
 
 
 namespace TencentCloud
@@ -65,14 +66,22 @@ namespace TencentCloud
                     bool DefinitionHasBeenSet() const;
 
                     /**
-                     * 获取打包格式，只能为 HLS。
-                     * @return Package 打包格式，只能为 HLS。
+                     * 获取打包格式，取值范围：
+<li>HLS；</li>
+<li>DASH。</li>
+                     * @return Package 打包格式，取值范围：
+<li>HLS；</li>
+<li>DASH。</li>
                      */
                     std::string GetPackage() const;
 
                     /**
-                     * 设置打包格式，只能为 HLS。
-                     * @param Package 打包格式，只能为 HLS。
+                     * 设置打包格式，取值范围：
+<li>HLS；</li>
+<li>DASH。</li>
+                     * @param Package 打包格式，取值范围：
+<li>HLS；</li>
+<li>DASH。</li>
                      */
                     void SetPackage(const std::string& _package);
 
@@ -174,6 +183,24 @@ namespace TencentCloud
                      */
                     bool DigitalWatermarkTypeHasBeenSet() const;
 
+                    /**
+                     * 获取子流信息列表。
+                     * @return SubStreamSet 子流信息列表。
+                     */
+                    std::vector<MediaSubStreamInfoItem> GetSubStreamSet() const;
+
+                    /**
+                     * 设置子流信息列表。
+                     * @param SubStreamSet 子流信息列表。
+                     */
+                    void SetSubStreamSet(const std::vector<MediaSubStreamInfoItem>& _subStreamSet);
+
+                    /**
+                     * 判断参数 SubStreamSet 是否已赋值
+                     * @return SubStreamSet 是否已赋值
+                     */
+                    bool SubStreamSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -183,7 +210,9 @@ namespace TencentCloud
                     bool m_definitionHasBeenSet;
 
                     /**
-                     * 打包格式，只能为 HLS。
+                     * 打包格式，取值范围：
+<li>HLS；</li>
+<li>DASH。</li>
                      */
                     std::string m_package;
                     bool m_packageHasBeenSet;
@@ -216,6 +245,12 @@ namespace TencentCloud
                      */
                     std::string m_digitalWatermarkType;
                     bool m_digitalWatermarkTypeHasBeenSet;
+
+                    /**
+                     * 子流信息列表。
+                     */
+                    std::vector<MediaSubStreamInfoItem> m_subStreamSet;
+                    bool m_subStreamSetHasBeenSet;
 
                 };
             }

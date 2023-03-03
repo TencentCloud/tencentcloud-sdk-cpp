@@ -25,7 +25,8 @@ LoadBalancerTraffic::LoadBalancerTraffic() :
     m_loadBalancerNameHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_vipHasBeenSet(false),
-    m_outBandwidthHasBeenSet(false)
+    m_outBandwidthHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome LoadBalancerTraffic::Deserialize(const rapidjson::Value &val
         m_outBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancerTraffic.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void LoadBalancerTraffic::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "OutBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_outBandwidth, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void LoadBalancerTraffic::SetOutBandwidth(const double& _outBandwidth)
 bool LoadBalancerTraffic::OutBandwidthHasBeenSet() const
 {
     return m_outBandwidthHasBeenSet;
+}
+
+string LoadBalancerTraffic::GetDomain() const
+{
+    return m_domain;
+}
+
+void LoadBalancerTraffic::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool LoadBalancerTraffic::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

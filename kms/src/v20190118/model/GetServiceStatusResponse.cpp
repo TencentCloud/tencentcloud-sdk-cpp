@@ -31,7 +31,8 @@ GetServiceStatusResponse::GetServiceStatusResponse() :
     m_proRenewFlagHasBeenSet(false),
     m_proResourceIdHasBeenSet(false),
     m_exclusiveVSMEnabledHasBeenSet(false),
-    m_exclusiveHSMEnabledHasBeenSet(false)
+    m_exclusiveHSMEnabledHasBeenSet(false),
+    m_subscriptionInfoHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome GetServiceStatusResponse::Deserialize(const string &payload)
         m_exclusiveHSMEnabledHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SubscriptionInfo") && !rsp["SubscriptionInfo"].IsNull())
+    {
+        if (!rsp["SubscriptionInfo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubscriptionInfo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_subscriptionInfo = string(rsp["SubscriptionInfo"].GetString());
+        m_subscriptionInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ string GetServiceStatusResponse::ToJsonString() const
         string key = "ExclusiveHSMEnabled";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusiveHSMEnabled, allocator);
+    }
+
+    if (m_subscriptionInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubscriptionInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_subscriptionInfo.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -313,6 +332,16 @@ bool GetServiceStatusResponse::GetExclusiveHSMEnabled() const
 bool GetServiceStatusResponse::ExclusiveHSMEnabledHasBeenSet() const
 {
     return m_exclusiveHSMEnabledHasBeenSet;
+}
+
+string GetServiceStatusResponse::GetSubscriptionInfo() const
+{
+    return m_subscriptionInfo;
+}
+
+bool GetServiceStatusResponse::SubscriptionInfoHasBeenSet() const
+{
+    return m_subscriptionInfoHasBeenSet;
 }
 
 

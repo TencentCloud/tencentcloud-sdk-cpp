@@ -599,6 +599,49 @@ WafClient::DescribeAccessIndexOutcomeCallable WafClient::DescribeAccessIndexCall
     return task->get_future();
 }
 
+WafClient::DescribeAttackOverviewOutcome WafClient::DescribeAttackOverview(const DescribeAttackOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAttackOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAttackOverviewResponse rsp = DescribeAttackOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAttackOverviewOutcome(rsp);
+        else
+            return DescribeAttackOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAttackOverviewOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeAttackOverviewAsync(const DescribeAttackOverviewRequest& request, const DescribeAttackOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAttackOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeAttackOverviewOutcomeCallable WafClient::DescribeAttackOverviewCallable(const DescribeAttackOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAttackOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAttackOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeAutoDenyIPOutcome WafClient::DescribeAutoDenyIP(const DescribeAutoDenyIPRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAutoDenyIP");

@@ -22,7 +22,9 @@ using namespace std;
 
 McuLayoutVolume::McuLayoutVolume() :
     m_appDataHasBeenSet(false),
-    m_payloadTypeHasBeenSet(false)
+    m_payloadTypeHasBeenSet(false),
+    m_intervalHasBeenSet(false),
+    m_followIdrHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,26 @@ CoreInternalOutcome McuLayoutVolume::Deserialize(const rapidjson::Value &value)
         m_payloadTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("Interval") && !value["Interval"].IsNull())
+    {
+        if (!value["Interval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayoutVolume.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_interval = value["Interval"].GetUint64();
+        m_intervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("FollowIdr") && !value["FollowIdr"].IsNull())
+    {
+        if (!value["FollowIdr"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayoutVolume.FollowIdr` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_followIdr = value["FollowIdr"].GetUint64();
+        m_followIdrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +94,22 @@ void McuLayoutVolume::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "PayloadType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_payloadType, allocator);
+    }
+
+    if (m_intervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Interval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_interval, allocator);
+    }
+
+    if (m_followIdrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FollowIdr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_followIdr, allocator);
     }
 
 }
@@ -107,5 +145,37 @@ void McuLayoutVolume::SetPayloadType(const uint64_t& _payloadType)
 bool McuLayoutVolume::PayloadTypeHasBeenSet() const
 {
     return m_payloadTypeHasBeenSet;
+}
+
+uint64_t McuLayoutVolume::GetInterval() const
+{
+    return m_interval;
+}
+
+void McuLayoutVolume::SetInterval(const uint64_t& _interval)
+{
+    m_interval = _interval;
+    m_intervalHasBeenSet = true;
+}
+
+bool McuLayoutVolume::IntervalHasBeenSet() const
+{
+    return m_intervalHasBeenSet;
+}
+
+uint64_t McuLayoutVolume::GetFollowIdr() const
+{
+    return m_followIdr;
+}
+
+void McuLayoutVolume::SetFollowIdr(const uint64_t& _followIdr)
+{
+    m_followIdr = _followIdr;
+    m_followIdrHasBeenSet = true;
+}
+
+bool McuLayoutVolume::FollowIdrHasBeenSet() const
+{
+    return m_followIdrHasBeenSet;
 }
 

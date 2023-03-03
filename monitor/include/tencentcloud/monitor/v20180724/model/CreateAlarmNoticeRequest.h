@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool CLSNoticesHasBeenSet() const;
 
                     /**
-                     * 获取模版绑定的标签
-                     * @return Tags 模版绑定的标签
+                     * 获取模板绑定的标签
+                     * @return Tags 模板绑定的标签
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置模版绑定的标签
-                     * @param Tags 模版绑定的标签
+                     * 设置模板绑定的标签
+                     * @param Tags 模板绑定的标签
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_cLSNoticesHasBeenSet;
 
                     /**
-                     * 模版绑定的标签
+                     * 模板绑定的标签
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

@@ -922,6 +922,50 @@ pause
                      */
                     bool ResourceTagsHasBeenSet() const;
 
+                    /**
+                     * 获取主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMasterZone() const;
+
+                    /**
+                     * 设置主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MasterZone 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMasterZone(const std::string& _masterZone);
+
+                    /**
+                     * 判断参数 MasterZone 是否已赋值
+                     * @return MasterZone 是否已赋值
+                     */
+                    bool MasterZoneHasBeenSet() const;
+
+                    /**
+                     * 获取备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SlaveZones 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSlaveZones() const;
+
+                    /**
+                     * 设置备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SlaveZones 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSlaveZones(const std::vector<std::string>& _slaveZones);
+
+                    /**
+                     * 判断参数 SlaveZones 是否已赋值
+                     * @return SlaveZones 是否已赋值
+                     */
+                    bool SlaveZonesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1212,6 +1256,20 @@ pause
                      */
                     std::vector<Tag> m_resourceTags;
                     bool m_resourceTagsHasBeenSet;
+
+                    /**
+                     * 主可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_masterZone;
+                    bool m_masterZoneHasBeenSet;
+
+                    /**
+                     * 备可用区
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_slaveZones;
+                    bool m_slaveZonesHasBeenSet;
 
                 };
             }

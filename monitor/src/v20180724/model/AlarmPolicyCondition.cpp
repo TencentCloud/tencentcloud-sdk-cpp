@@ -22,7 +22,8 @@ using namespace std;
 
 AlarmPolicyCondition::AlarmPolicyCondition() :
     m_isUnionRuleHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_complexExpressionHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome AlarmPolicyCondition::Deserialize(const rapidjson::Value &va
         m_rulesHasBeenSet = true;
     }
 
+    if (value.HasMember("ComplexExpression") && !value["ComplexExpression"].IsNull())
+    {
+        if (!value["ComplexExpression"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmPolicyCondition.ComplexExpression` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_complexExpression = string(value["ComplexExpression"].GetString());
+        m_complexExpressionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -89,6 +100,14 @@ void AlarmPolicyCondition::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_complexExpressionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ComplexExpression";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_complexExpression.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -124,5 +143,21 @@ void AlarmPolicyCondition::SetRules(const vector<AlarmPolicyRule>& _rules)
 bool AlarmPolicyCondition::RulesHasBeenSet() const
 {
     return m_rulesHasBeenSet;
+}
+
+string AlarmPolicyCondition::GetComplexExpression() const
+{
+    return m_complexExpression;
+}
+
+void AlarmPolicyCondition::SetComplexExpression(const string& _complexExpression)
+{
+    m_complexExpression = _complexExpression;
+    m_complexExpressionHasBeenSet = true;
+}
+
+bool AlarmPolicyCondition::ComplexExpressionHasBeenSet() const
+{
+    return m_complexExpressionHasBeenSet;
 }
 

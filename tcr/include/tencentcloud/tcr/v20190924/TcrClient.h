@@ -145,8 +145,6 @@
 #include <tencentcloud/tcr/v20190924/model/DescribeImagesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImmutableTagRulesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeImmutableTagRulesResponse.h>
-#include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllRequest.h>
-#include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllNamespacesRequest.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllNamespacesResponse.h>
 #include <tencentcloud/tcr/v20190924/model/DescribeInstanceCustomizedDomainRequest.h>
@@ -434,9 +432,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeImmutableTagRulesResponse> DescribeImmutableTagRulesOutcome;
                 typedef std::future<DescribeImmutableTagRulesOutcome> DescribeImmutableTagRulesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeImmutableTagRulesRequest&, DescribeImmutableTagRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeImmutableTagRulesAsyncHandler;
-                typedef Outcome<Core::Error, Model::DescribeInstanceAllResponse> DescribeInstanceAllOutcome;
-                typedef std::future<DescribeInstanceAllOutcome> DescribeInstanceAllOutcomeCallable;
-                typedef std::function<void(const TcrClient*, const Model::DescribeInstanceAllRequest&, DescribeInstanceAllOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAllAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceAllNamespacesResponse> DescribeInstanceAllNamespacesOutcome;
                 typedef std::future<DescribeInstanceAllNamespacesOutcome> DescribeInstanceAllNamespacesOutcomeCallable;
                 typedef std::function<void(const TcrClient*, const Model::DescribeInstanceAllNamespacesRequest&, DescribeInstanceAllNamespacesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceAllNamespacesAsyncHandler;
@@ -1123,17 +1118,6 @@ namespace TencentCloud
                 DescribeImmutableTagRulesOutcome DescribeImmutableTagRules(const Model::DescribeImmutableTagRulesRequest &request);
                 void DescribeImmutableTagRulesAsync(const Model::DescribeImmutableTagRulesRequest& request, const DescribeImmutableTagRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeImmutableTagRulesOutcomeCallable DescribeImmutableTagRulesCallable(const Model::DescribeImmutableTagRulesRequest& request);
-
-                /**
-                 *内部替换接口+DescribeInstanceAllForCoding
-
-查询全部实例信息
-                 * @param req DescribeInstanceAllRequest
-                 * @return DescribeInstanceAllOutcome
-                 */
-                DescribeInstanceAllOutcome DescribeInstanceAll(const Model::DescribeInstanceAllRequest &request);
-                void DescribeInstanceAllAsync(const Model::DescribeInstanceAllRequest& request, const DescribeInstanceAllAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                DescribeInstanceAllOutcomeCallable DescribeInstanceAllCallable(const Model::DescribeInstanceAllRequest& request);
 
                 /**
                  *查询所有实例命名空间列表

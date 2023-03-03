@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool ContinuePeriodHasBeenSet() const;
 
                     /**
-                     * 获取如果通过模版创建，需要传入模版中该指标的对应RuleId
-                     * @return RuleId 如果通过模版创建，需要传入模版中该指标的对应RuleId
+                     * 获取如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * @return RuleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
                      */
                     int64_t GetRuleId() const;
 
                     /**
-                     * 设置如果通过模版创建，需要传入模版中该指标的对应RuleId
-                     * @param RuleId 如果通过模版创建，需要传入模版中该指标的对应RuleId
+                     * 设置如果通过模板创建，需要传入模板中该指标的对应RuleId
+                     * @param RuleId 如果通过模板创建，需要传入模板中该指标的对应RuleId
                      */
                     void SetRuleId(const int64_t& _ruleId);
 
@@ -235,7 +235,7 @@ namespace TencentCloud
                     bool m_continuePeriodHasBeenSet;
 
                     /**
-                     * 如果通过模版创建，需要传入模版中该指标的对应RuleId
+                     * 如果通过模板创建，需要传入模板中该指标的对应RuleId
                      */
                     int64_t m_ruleId;
                     bool m_ruleIdHasBeenSet;

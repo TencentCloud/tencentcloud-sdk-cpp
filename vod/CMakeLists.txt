@@ -603,6 +603,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/ReviewTemplate.h
   include/tencentcloud/vod/v20180717/model/UserDefineAsrTextReviewTemplateInfoForUpdate.h
   include/tencentcloud/vod/v20180717/model/ImageOperation.h
+  include/tencentcloud/vod/v20180717/model/MediaSubStreamInfoItem.h
   include/tencentcloud/vod/v20180717/model/DescribeWatermarkTemplatesResponse.h
   include/tencentcloud/vod/v20180717/model/WeChatMiniProgramPublishResponse.h
   include/tencentcloud/vod/v20180717/model/DescribeRoundPlaysResponse.h
@@ -1281,6 +1282,7 @@ set(vod_src
   src/v20180717/model/ReviewTemplate.cpp
   src/v20180717/model/UserDefineAsrTextReviewTemplateInfoForUpdate.cpp
   src/v20180717/model/ImageOperation.cpp
+  src/v20180717/model/MediaSubStreamInfoItem.cpp
   src/v20180717/model/DescribeWatermarkTemplatesResponse.cpp
   src/v20180717/model/WeChatMiniProgramPublishResponse.cpp
   src/v20180717/model/DescribeRoundPlaysResponse.cpp

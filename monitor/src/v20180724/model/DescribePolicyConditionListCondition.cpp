@@ -28,7 +28,8 @@ DescribePolicyConditionListCondition::DescribePolicyConditionListCondition() :
     m_nameHasBeenSet(false),
     m_sortIdHasBeenSet(false),
     m_supportDefaultHasBeenSet(false),
-    m_supportRegionsHasBeenSet(false)
+    m_supportRegionsHasBeenSet(false),
+    m_deprecatingInfoHasBeenSet(false)
 {
 }
 
@@ -140,6 +141,23 @@ CoreInternalOutcome DescribePolicyConditionListCondition::Deserialize(const rapi
         m_supportRegionsHasBeenSet = true;
     }
 
+    if (value.HasMember("DeprecatingInfo") && !value["DeprecatingInfo"].IsNull())
+    {
+        if (!value["DeprecatingInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribePolicyConditionListCondition.DeprecatingInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_deprecatingInfo.Deserialize(value["DeprecatingInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_deprecatingInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -228,6 +246,15 @@ void DescribePolicyConditionListCondition::ToJsonObject(rapidjson::Value &value,
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_deprecatingInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeprecatingInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_deprecatingInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -359,5 +386,21 @@ void DescribePolicyConditionListCondition::SetSupportRegions(const vector<string
 bool DescribePolicyConditionListCondition::SupportRegionsHasBeenSet() const
 {
     return m_supportRegionsHasBeenSet;
+}
+
+DescribePolicyConditionListResponseDeprecatingInfo DescribePolicyConditionListCondition::GetDeprecatingInfo() const
+{
+    return m_deprecatingInfo;
+}
+
+void DescribePolicyConditionListCondition::SetDeprecatingInfo(const DescribePolicyConditionListResponseDeprecatingInfo& _deprecatingInfo)
+{
+    m_deprecatingInfo = _deprecatingInfo;
+    m_deprecatingInfoHasBeenSet = true;
+}
+
+bool DescribePolicyConditionListCondition::DeprecatingInfoHasBeenSet() const
+{
+    return m_deprecatingInfoHasBeenSet;
 }
 

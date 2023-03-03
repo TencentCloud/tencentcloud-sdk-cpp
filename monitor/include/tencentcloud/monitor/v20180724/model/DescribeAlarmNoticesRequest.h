@@ -224,14 +224,14 @@ namespace TencentCloud
                     bool NoticeIdsHasBeenSet() const;
 
                     /**
-                     * 获取模版根据标签过滤
-                     * @return Tags 模版根据标签过滤
+                     * 获取模板根据标签过滤
+                     * @return Tags 模板根据标签过滤
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置模版根据标签过滤
-                     * @param Tags 模版根据标签过滤
+                     * 设置模板根据标签过滤
+                     * @param Tags 模板根据标签过滤
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
@@ -304,7 +304,7 @@ namespace TencentCloud
                     bool m_noticeIdsHasBeenSet;
 
                     /**
-                     * 模版根据标签过滤
+                     * 模板根据标签过滤
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

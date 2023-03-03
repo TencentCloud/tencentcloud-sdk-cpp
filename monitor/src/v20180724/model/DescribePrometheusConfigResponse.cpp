@@ -23,7 +23,11 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-DescribePrometheusConfigResponse::DescribePrometheusConfigResponse()
+DescribePrometheusConfigResponse::DescribePrometheusConfigResponse() :
+    m_configHasBeenSet(false),
+    m_serviceMonitorsHasBeenSet(false),
+    m_podMonitorsHasBeenSet(false),
+    m_rawJobsHasBeenSet(false)
 {
 }
 
@@ -61,6 +65,76 @@ CoreInternalOutcome DescribePrometheusConfigResponse::Deserialize(const string &
     }
 
 
+    if (rsp.HasMember("Config") && !rsp["Config"].IsNull())
+    {
+        if (!rsp["Config"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Config` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_config = string(rsp["Config"].GetString());
+        m_configHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("ServiceMonitors") && !rsp["ServiceMonitors"].IsNull())
+    {
+        if (!rsp["ServiceMonitors"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ServiceMonitors` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["ServiceMonitors"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusConfigItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_serviceMonitors.push_back(item);
+        }
+        m_serviceMonitorsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("PodMonitors") && !rsp["PodMonitors"].IsNull())
+    {
+        if (!rsp["PodMonitors"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `PodMonitors` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["PodMonitors"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusConfigItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_podMonitors.push_back(item);
+        }
+        m_podMonitorsHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("RawJobs") && !rsp["RawJobs"].IsNull())
+    {
+        if (!rsp["RawJobs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `RawJobs` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["RawJobs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusConfigItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_rawJobs.push_back(item);
+        }
+        m_rawJobsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +144,59 @@ string DescribePrometheusConfigResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_configHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Config";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_config.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_serviceMonitorsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ServiceMonitors";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_serviceMonitors.begin(); itr != m_serviceMonitors.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_podMonitorsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PodMonitors";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_podMonitors.begin(); itr != m_podMonitors.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_rawJobsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RawJobs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_rawJobs.begin(); itr != m_rawJobs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +209,45 @@ string DescribePrometheusConfigResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribePrometheusConfigResponse::GetConfig() const
+{
+    return m_config;
+}
+
+bool DescribePrometheusConfigResponse::ConfigHasBeenSet() const
+{
+    return m_configHasBeenSet;
+}
+
+vector<PrometheusConfigItem> DescribePrometheusConfigResponse::GetServiceMonitors() const
+{
+    return m_serviceMonitors;
+}
+
+bool DescribePrometheusConfigResponse::ServiceMonitorsHasBeenSet() const
+{
+    return m_serviceMonitorsHasBeenSet;
+}
+
+vector<PrometheusConfigItem> DescribePrometheusConfigResponse::GetPodMonitors() const
+{
+    return m_podMonitors;
+}
+
+bool DescribePrometheusConfigResponse::PodMonitorsHasBeenSet() const
+{
+    return m_podMonitorsHasBeenSet;
+}
+
+vector<PrometheusConfigItem> DescribePrometheusConfigResponse::GetRawJobs() const
+{
+    return m_rawJobs;
+}
+
+bool DescribePrometheusConfigResponse::RawJobsHasBeenSet() const
+{
+    return m_rawJobsHasBeenSet;
+}
 
 

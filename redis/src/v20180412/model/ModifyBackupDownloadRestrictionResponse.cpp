@@ -14,22 +14,20 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/tcr/v20190924/model/DescribeInstanceAllResponse.h>
+#include <tencentcloud/redis/v20180412/model/ModifyBackupDownloadRestrictionResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Tcr::V20190924::Model;
+using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
-DescribeInstanceAllResponse::DescribeInstanceAllResponse() :
-    m_totalCountHasBeenSet(false),
-    m_registriesHasBeenSet(false)
+ModifyBackupDownloadRestrictionResponse::ModifyBackupDownloadRestrictionResponse()
 {
 }
 
-CoreInternalOutcome DescribeInstanceAllResponse::Deserialize(const string &payload)
+CoreInternalOutcome ModifyBackupDownloadRestrictionResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,68 +61,15 @@ CoreInternalOutcome DescribeInstanceAllResponse::Deserialize(const string &paylo
     }
 
 
-    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
-    {
-        if (!rsp["TotalCount"].IsInt64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
-        }
-        m_totalCount = rsp["TotalCount"].GetInt64();
-        m_totalCountHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("Registries") && !rsp["Registries"].IsNull())
-    {
-        if (!rsp["Registries"].IsArray())
-            return CoreInternalOutcome(Core::Error("response `Registries` is not array type"));
-
-        const rapidjson::Value &tmpValue = rsp["Registries"];
-        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
-        {
-            Registry item;
-            CoreInternalOutcome outcome = item.Deserialize(*itr);
-            if (!outcome.IsSuccess())
-            {
-                outcome.GetError().SetRequestId(requestId);
-                return outcome;
-            }
-            m_registries.push_back(item);
-        }
-        m_registriesHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
 
-string DescribeInstanceAllResponse::ToJsonString() const
+string ModifyBackupDownloadRestrictionResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
-
-    if (m_totalCountHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TotalCount";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_totalCount, allocator);
-    }
-
-    if (m_registriesHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Registries";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        int i=0;
-        for (auto itr = m_registries.begin(); itr != m_registries.end(); ++itr, ++i)
-        {
-            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
-        }
-    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -137,25 +82,5 @@ string DescribeInstanceAllResponse::ToJsonString() const
     return buffer.GetString();
 }
 
-
-int64_t DescribeInstanceAllResponse::GetTotalCount() const
-{
-    return m_totalCount;
-}
-
-bool DescribeInstanceAllResponse::TotalCountHasBeenSet() const
-{
-    return m_totalCountHasBeenSet;
-}
-
-vector<Registry> DescribeInstanceAllResponse::GetRegistries() const
-{
-    return m_registries;
-}
-
-bool DescribeInstanceAllResponse::RegistriesHasBeenSet() const
-{
-    return m_registriesHasBeenSet;
-}
 
 

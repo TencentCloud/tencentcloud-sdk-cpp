@@ -23,7 +23,9 @@ using namespace std;
 McuPassThrough::McuPassThrough() :
     m_payloadContentHasBeenSet(false),
     m_payloadTypeHasBeenSet(false),
-    m_payloadUuidHasBeenSet(false)
+    m_payloadUuidHasBeenSet(false),
+    m_intervalHasBeenSet(false),
+    m_followIdrHasBeenSet(false)
 {
 }
 
@@ -62,6 +64,26 @@ CoreInternalOutcome McuPassThrough::Deserialize(const rapidjson::Value &value)
         m_payloadUuidHasBeenSet = true;
     }
 
+    if (value.HasMember("Interval") && !value["Interval"].IsNull())
+    {
+        if (!value["Interval"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuPassThrough.Interval` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_interval = value["Interval"].GetUint64();
+        m_intervalHasBeenSet = true;
+    }
+
+    if (value.HasMember("FollowIdr") && !value["FollowIdr"].IsNull())
+    {
+        if (!value["FollowIdr"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuPassThrough.FollowIdr` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_followIdr = value["FollowIdr"].GetUint64();
+        m_followIdrHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +113,22 @@ void McuPassThrough::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "PayloadUuid";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_payloadUuid.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intervalHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Interval";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_interval, allocator);
+    }
+
+    if (m_followIdrHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FollowIdr";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_followIdr, allocator);
     }
 
 }
@@ -142,5 +180,37 @@ void McuPassThrough::SetPayloadUuid(const string& _payloadUuid)
 bool McuPassThrough::PayloadUuidHasBeenSet() const
 {
     return m_payloadUuidHasBeenSet;
+}
+
+uint64_t McuPassThrough::GetInterval() const
+{
+    return m_interval;
+}
+
+void McuPassThrough::SetInterval(const uint64_t& _interval)
+{
+    m_interval = _interval;
+    m_intervalHasBeenSet = true;
+}
+
+bool McuPassThrough::IntervalHasBeenSet() const
+{
+    return m_intervalHasBeenSet;
+}
+
+uint64_t McuPassThrough::GetFollowIdr() const
+{
+    return m_followIdr;
+}
+
+void McuPassThrough::SetFollowIdr(const uint64_t& _followIdr)
+{
+    m_followIdr = _followIdr;
+    m_followIdrHasBeenSet = true;
+}
+
+bool McuPassThrough::FollowIdrHasBeenSet() const
+{
+    return m_followIdrHasBeenSet;
 }
 

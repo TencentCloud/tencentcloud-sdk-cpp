@@ -182,13 +182,17 @@ UTC 格式时间，例如：2019-01-07T15:00:00Z。
 
                     /**
                      * 获取主播 IP。
+当客户端为内网推流时，展示为: - 。
                      * @return ClientIp 主播 IP。
+当客户端为内网推流时，展示为: - 。
                      */
                     std::string GetClientIp() const;
 
                     /**
                      * 设置主播 IP。
+当客户端为内网推流时，展示为: - 。
                      * @param ClientIp 主播 IP。
+当客户端为内网推流时，展示为: - 。
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -264,6 +268,7 @@ UTC 格式时间，例如：2019-01-07T15:00:00Z。
 
                     /**
                      * 主播 IP。
+当客户端为内网推流时，展示为: - 。
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;

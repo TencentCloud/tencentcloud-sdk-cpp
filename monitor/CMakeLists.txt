@@ -35,6 +35,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePolicyGroupResponse.h
   include/tencentcloud/monitor/v20180724/model/DescribeBaseMetricsResponse.h
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.h
+  include/tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponseDeprecatingInfo.h
   include/tencentcloud/monitor/v20180724/model/PrometheusTempModify.h
   include/tencentcloud/monitor/v20180724/model/SendCustomAlarmMsgRequest.h
   include/tencentcloud/monitor/v20180724/model/UnBindingPolicyObjectRequest.h
@@ -459,6 +460,7 @@ set(monitor_src
   src/v20180724/model/CreatePolicyGroupResponse.cpp
   src/v20180724/model/DescribeBaseMetricsResponse.cpp
   src/v20180724/model/CreatePrometheusMultiTenantInstancePostPayModeRequest.cpp
+  src/v20180724/model/DescribePolicyConditionListResponseDeprecatingInfo.cpp
   src/v20180724/model/PrometheusTempModify.cpp
   src/v20180724/model/SendCustomAlarmMsgRequest.cpp
   src/v20180724/model/UnBindingPolicyObjectRequest.cpp

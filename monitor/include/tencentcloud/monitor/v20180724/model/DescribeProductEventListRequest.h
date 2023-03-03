@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取产品类型过滤，比如"cvm"表示云服务器
-                     * @return ProductName 产品类型过滤，比如"cvm"表示云服务器
+                     * 获取产品类型过滤，例如"cvm"表示云服务器
+                     * @return ProductName 产品类型过滤，例如"cvm"表示云服务器
                      */
                     std::vector<std::string> GetProductName() const;
 
                     /**
-                     * 设置产品类型过滤，比如"cvm"表示云服务器
-                     * @param ProductName 产品类型过滤，比如"cvm"表示云服务器
+                     * 设置产品类型过滤，例如"cvm"表示云服务器
+                     * @param ProductName 产品类型过滤，例如"cvm"表示云服务器
                      */
                     void SetProductName(const std::vector<std::string>& _productName);
 
@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool ProductNameHasBeenSet() const;
 
                     /**
-                     * 获取事件名称过滤，比如"guest_reboot"表示机器重启
-                     * @return EventName 事件名称过滤，比如"guest_reboot"表示机器重启
+                     * 获取事件名称过滤，例如"guest_reboot"表示机器重启
+                     * @return EventName 事件名称过滤，例如"guest_reboot"表示机器重启
                      */
                     std::vector<std::string> GetEventName() const;
 
                     /**
-                     * 设置事件名称过滤，比如"guest_reboot"表示机器重启
-                     * @param EventName 事件名称过滤，比如"guest_reboot"表示机器重启
+                     * 设置事件名称过滤，例如"guest_reboot"表示机器重启
+                     * @param EventName 事件名称过滤，例如"guest_reboot"表示机器重启
                      */
                     void SetEventName(const std::vector<std::string>& _eventName);
 
@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool EventNameHasBeenSet() const;
 
                     /**
-                     * 获取影响对象，比如"ins-19708ino"
-                     * @return InstanceId 影响对象，比如"ins-19708ino"
+                     * 获取影响对象，例如"ins-19708ino"
+                     * @return InstanceId 影响对象，例如"ins-19708ino"
                      */
                     std::vector<std::string> GetInstanceId() const;
 
                     /**
-                     * 设置影响对象，比如"ins-19708ino"
-                     * @param InstanceId 影响对象，比如"ins-19708ino"
+                     * 设置影响对象，例如"ins-19708ino"
+                     * @param InstanceId 影响对象，例如"ins-19708ino"
                      */
                     void SetInstanceId(const std::vector<std::string>& _instanceId);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取维度过滤，比如外网IP:10.0.0.1
-                     * @return Dimensions 维度过滤，比如外网IP:10.0.0.1
+                     * 获取维度过滤，例如外网IP:10.0.0.1
+                     * @return Dimensions 维度过滤，例如外网IP:10.0.0.1
                      */
                     std::vector<DescribeProductEventListDimensions> GetDimensions() const;
 
                     /**
-                     * 设置维度过滤，比如外网IP:10.0.0.1
-                     * @param Dimensions 维度过滤，比如外网IP:10.0.0.1
+                     * 设置维度过滤，例如外网IP:10.0.0.1
+                     * @param Dimensions 维度过滤，例如外网IP:10.0.0.1
                      */
                     void SetDimensions(const std::vector<DescribeProductEventListDimensions>& _dimensions);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool DimensionsHasBeenSet() const;
 
                     /**
-                     * 获取产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
-                     * @return RegionList 产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
+                     * 获取产品事件地域过滤参数，例如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
+                     * @return RegionList 产品事件地域过滤参数，例如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
-                     * 设置产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
-                     * @param RegionList 产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
+                     * 设置产品事件地域过滤参数，例如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
+                     * @param RegionList 产品事件地域过滤参数，例如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
                      */
                     void SetRegionList(const std::vector<std::string>& _regionList);
 
@@ -322,31 +322,31 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 产品类型过滤，比如"cvm"表示云服务器
+                     * 产品类型过滤，例如"cvm"表示云服务器
                      */
                     std::vector<std::string> m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
-                     * 事件名称过滤，比如"guest_reboot"表示机器重启
+                     * 事件名称过滤，例如"guest_reboot"表示机器重启
                      */
                     std::vector<std::string> m_eventName;
                     bool m_eventNameHasBeenSet;
 
                     /**
-                     * 影响对象，比如"ins-19708ino"
+                     * 影响对象，例如"ins-19708ino"
                      */
                     std::vector<std::string> m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 维度过滤，比如外网IP:10.0.0.1
+                     * 维度过滤，例如外网IP:10.0.0.1
                      */
                     std::vector<DescribeProductEventListDimensions> m_dimensions;
                     bool m_dimensionsHasBeenSet;
 
                     /**
-                     * 产品事件地域过滤参数，比如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
+                     * 产品事件地域过滤参数，例如gz，各地域缩写可参见[地域列表](https://cloud.tencent.com/document/product/248/50863)
                      */
                     std::vector<std::string> m_regionList;
                     bool m_regionListHasBeenSet;

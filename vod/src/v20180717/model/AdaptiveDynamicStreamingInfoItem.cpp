@@ -26,7 +26,8 @@ AdaptiveDynamicStreamingInfoItem::AdaptiveDynamicStreamingInfoItem() :
     m_drmTypeHasBeenSet(false),
     m_urlHasBeenSet(false),
     m_sizeHasBeenSet(false),
-    m_digitalWatermarkTypeHasBeenSet(false)
+    m_digitalWatermarkTypeHasBeenSet(false),
+    m_subStreamSetHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,26 @@ CoreInternalOutcome AdaptiveDynamicStreamingInfoItem::Deserialize(const rapidjso
         m_digitalWatermarkTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("SubStreamSet") && !value["SubStreamSet"].IsNull())
+    {
+        if (!value["SubStreamSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `AdaptiveDynamicStreamingInfoItem.SubStreamSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubStreamSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MediaSubStreamInfoItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_subStreamSet.push_back(item);
+        }
+        m_subStreamSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +169,21 @@ void AdaptiveDynamicStreamingInfoItem::ToJsonObject(rapidjson::Value &value, rap
         string key = "DigitalWatermarkType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_digitalWatermarkType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subStreamSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubStreamSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_subStreamSet.begin(); itr != m_subStreamSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -247,5 +283,21 @@ void AdaptiveDynamicStreamingInfoItem::SetDigitalWatermarkType(const string& _di
 bool AdaptiveDynamicStreamingInfoItem::DigitalWatermarkTypeHasBeenSet() const
 {
     return m_digitalWatermarkTypeHasBeenSet;
+}
+
+vector<MediaSubStreamInfoItem> AdaptiveDynamicStreamingInfoItem::GetSubStreamSet() const
+{
+    return m_subStreamSet;
+}
+
+void AdaptiveDynamicStreamingInfoItem::SetSubStreamSet(const vector<MediaSubStreamInfoItem>& _subStreamSet)
+{
+    m_subStreamSet = _subStreamSet;
+    m_subStreamSetHasBeenSet = true;
+}
+
+bool AdaptiveDynamicStreamingInfoItem::SubStreamSetHasBeenSet() const
+{
+    return m_subStreamSetHasBeenSet;
 }
 

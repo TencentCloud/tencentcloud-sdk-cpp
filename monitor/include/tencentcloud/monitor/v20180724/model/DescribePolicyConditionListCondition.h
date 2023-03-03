@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListEventMetric.h>
 #include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListMetric.h>
+#include <tencentcloud/monitor/v20180724/model/DescribePolicyConditionListResponseDeprecatingInfo.h>
 
 
 namespace TencentCloud
@@ -204,6 +205,28 @@ namespace TencentCloud
                      */
                     bool SupportRegionsHasBeenSet() const;
 
+                    /**
+                     * 获取弃用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeprecatingInfo 弃用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribePolicyConditionListResponseDeprecatingInfo GetDeprecatingInfo() const;
+
+                    /**
+                     * 设置弃用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeprecatingInfo 弃用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeprecatingInfo(const DescribePolicyConditionListResponseDeprecatingInfo& _deprecatingInfo);
+
+                    /**
+                     * 判断参数 DeprecatingInfo 是否已赋值
+                     * @return DeprecatingInfo 是否已赋值
+                     */
+                    bool DeprecatingInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -256,6 +279,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_supportRegions;
                     bool m_supportRegionsHasBeenSet;
+
+                    /**
+                     * 弃用信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DescribePolicyConditionListResponseDeprecatingInfo m_deprecatingInfo;
+                    bool m_deprecatingInfoHasBeenSet;
 
                 };
             }

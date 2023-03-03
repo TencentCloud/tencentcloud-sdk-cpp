@@ -241,30 +241,14 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。
-8.0.18 - MySQL 8.0.18；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
-如果不填的话，默认为5.7.17，表示Percona 5.7.17。
-                     * @return DbVersionId 数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。
-8.0.18 - MySQL 8.0.18；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
-如果不填的话，默认为5.7.17，表示Percona 5.7.17。
+                     * 获取数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
+                     * @return DbVersionId 数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
                      */
                     std::string GetDbVersionId() const;
 
                     /**
-                     * 设置数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。
-8.0.18 - MySQL 8.0.18；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
-如果不填的话，默认为5.7.17，表示Percona 5.7.17。
-                     * @param DbVersionId 数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。
-8.0.18 - MySQL 8.0.18；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
-如果不填的话，默认为5.7.17，表示Percona 5.7.17。
+                     * 设置数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
+                     * @param DbVersionId 数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
                      */
                     void SetDbVersionId(const std::string& _dbVersionId);
 
@@ -539,11 +523,7 @@ namespace TencentCloud
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 数据库引擎版本，当前可选：8.0.18，10.1.9，5.7.17。
-8.0.18 - MySQL 8.0.18；
-10.1.9 - Mariadb 10.1.9；
-5.7.17 - Percona 5.7.17。
-如果不填的话，默认为5.7.17，表示Percona 5.7.17。
+                     * 数据库引擎版本，当前可选：8.0，5.7，10.1，10.0。
                      */
                     std::string m_dbVersionId;
                     bool m_dbVersionIdHasBeenSet;

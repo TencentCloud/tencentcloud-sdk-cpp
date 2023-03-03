@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取策略组所属视图的名称，若通过模版创建，可不传入
-                     * @return ViewName 策略组所属视图的名称，若通过模版创建，可不传入
+                     * 获取策略组所属视图的名称，若通过模板创建，可不传入
+                     * @return ViewName 策略组所属视图的名称，若通过模板创建，可不传入
                      */
                     std::string GetViewName() const;
 
                     /**
-                     * 设置策略组所属视图的名称，若通过模版创建，可不传入
-                     * @param ViewName 策略组所属视图的名称，若通过模版创建，可不传入
+                     * 设置策略组所属视图的名称，若通过模板创建，可不传入
+                     * @param ViewName 策略组所属视图的名称，若通过模板创建，可不传入
                      */
                     void SetViewName(const std::string& _viewName);
 
@@ -117,14 +117,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取模版策略组Id, 通过模版创建时才需要传
-                     * @return ConditionTempGroupId 模版策略组Id, 通过模版创建时才需要传
+                     * 获取模板策略组Id, 通过模板创建时才需要传
+                     * @return ConditionTempGroupId 模板策略组Id, 通过模板创建时才需要传
                      */
                     int64_t GetConditionTempGroupId() const;
 
                     /**
-                     * 设置模版策略组Id, 通过模版创建时才需要传
-                     * @param ConditionTempGroupId 模版策略组Id, 通过模版创建时才需要传
+                     * 设置模板策略组Id, 通过模板创建时才需要传
+                     * @param ConditionTempGroupId 模板策略组Id, 通过模板创建时才需要传
                      */
                     void SetConditionTempGroupId(const int64_t& _conditionTempGroupId);
 
@@ -225,14 +225,14 @@ namespace TencentCloud
                     bool EventConditionsHasBeenSet() const;
 
                     /**
-                     * 获取是否为后端调用。当且仅当值为1时，后台拉取策略模版中的规则填充入Conditions以及EventConditions字段
-                     * @return BackEndCall 是否为后端调用。当且仅当值为1时，后台拉取策略模版中的规则填充入Conditions以及EventConditions字段
+                     * 获取是否为后端调用。当且仅当值为1时，后台拉取策略模板中的规则填充入Conditions以及EventConditions字段
+                     * @return BackEndCall 是否为后端调用。当且仅当值为1时，后台拉取策略模板中的规则填充入Conditions以及EventConditions字段
                      */
                     int64_t GetBackEndCall() const;
 
                     /**
-                     * 设置是否为后端调用。当且仅当值为1时，后台拉取策略模版中的规则填充入Conditions以及EventConditions字段
-                     * @param BackEndCall 是否为后端调用。当且仅当值为1时，后台拉取策略模版中的规则填充入Conditions以及EventConditions字段
+                     * 设置是否为后端调用。当且仅当值为1时，后台拉取策略模板中的规则填充入Conditions以及EventConditions字段
+                     * @param BackEndCall 是否为后端调用。当且仅当值为1时，后台拉取策略模板中的规则填充入Conditions以及EventConditions字段
                      */
                     void SetBackEndCall(const int64_t& _backEndCall);
 
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 策略组所属视图的名称，若通过模版创建，可不传入
+                     * 策略组所属视图的名称，若通过模板创建，可不传入
                      */
                     std::string m_viewName;
                     bool m_viewNameHasBeenSet;
@@ -287,7 +287,7 @@ namespace TencentCloud
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 模版策略组Id, 通过模版创建时才需要传
+                     * 模板策略组Id, 通过模板创建时才需要传
                      */
                     int64_t m_conditionTempGroupId;
                     bool m_conditionTempGroupIdHasBeenSet;
@@ -323,7 +323,7 @@ namespace TencentCloud
                     bool m_eventConditionsHasBeenSet;
 
                     /**
-                     * 是否为后端调用。当且仅当值为1时，后台拉取策略模版中的规则填充入Conditions以及EventConditions字段
+                     * 是否为后端调用。当且仅当值为1时，后台拉取策略模板中的规则填充入Conditions以及EventConditions字段
                      */
                     int64_t m_backEndCall;
                     bool m_backEndCallHasBeenSet;

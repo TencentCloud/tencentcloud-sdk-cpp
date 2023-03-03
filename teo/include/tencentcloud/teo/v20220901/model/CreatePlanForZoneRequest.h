@@ -73,7 +73,7 @@ namespace TencentCloud
 <li> ent_cm: 中国大陆内容分发网络企业版套餐； </li>
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
-<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://tcloud4api.woa.com/document/product/1657/80124?!preview&!document=1">DescribeAvailablePlans</a>返回为准。
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
                      * @return PlanType 所要购买套餐的类型，取值有：
 <li> sta: 全球内容分发网络（不包括中国大陆）标准版套餐； </li>
 <li> sta_with_bot: 全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
@@ -86,7 +86,7 @@ namespace TencentCloud
 <li> ent_cm: 中国大陆内容分发网络企业版套餐； </li>
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
-<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://tcloud4api.woa.com/document/product/1657/80124?!preview&!document=1">DescribeAvailablePlans</a>返回为准。
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
                      */
                     std::string GetPlanType() const;
 
@@ -103,7 +103,7 @@ namespace TencentCloud
 <li> ent_cm: 中国大陆内容分发网络企业版套餐； </li>
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
-<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://tcloud4api.woa.com/document/product/1657/80124?!preview&!document=1">DescribeAvailablePlans</a>返回为准。
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
                      * @param PlanType 所要购买套餐的类型，取值有：
 <li> sta: 全球内容分发网络（不包括中国大陆）标准版套餐； </li>
 <li> sta_with_bot: 全球内容分发网络（不包括中国大陆）标准版套餐附带bot管理；</li>
@@ -116,7 +116,7 @@ namespace TencentCloud
 <li> ent_cm: 中国大陆内容分发网络企业版套餐； </li>
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
-<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://tcloud4api.woa.com/document/product/1657/80124?!preview&!document=1">DescribeAvailablePlans</a>返回为准。
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
                      */
                     void SetPlanType(const std::string& _planType);
 
@@ -147,7 +147,7 @@ namespace TencentCloud
 <li> ent_cm: 中国大陆内容分发网络企业版套餐； </li>
 <li> ent_cm_with_bot: 中国大陆内容分发网络企业版套餐附带bot管理。</li>
 <li> ent_global ：全球内容分发网络（包括中国大陆）企业版套餐； </li>
-<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://tcloud4api.woa.com/document/product/1657/80124?!preview&!document=1">DescribeAvailablePlans</a>返回为准。
+<li> ent_global_with_bot ：全球内容分发网络（包括中国大陆）企业版套餐附带bot管理。</li>当前账户可购买套餐类型请以<a href="https://cloud.tencent.com/document/product/1552/80606">DescribeAvailablePlans</a>返回为准。
                      */
                     std::string m_planType;
                     bool m_planTypeHasBeenSet;
