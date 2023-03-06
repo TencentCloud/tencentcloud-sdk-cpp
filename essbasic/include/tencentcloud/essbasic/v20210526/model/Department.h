@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 渠道版员工部门信息
+                * 第三方应用集成员工部门信息
                 */
                 class Department : public AbstractModel
                 {

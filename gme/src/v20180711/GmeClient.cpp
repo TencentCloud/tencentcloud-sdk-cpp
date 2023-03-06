@@ -556,6 +556,49 @@ GmeClient::DescribeRealtimeScanConfigOutcomeCallable GmeClient::DescribeRealtime
     return task->get_future();
 }
 
+GmeClient::DescribeRecordInfoOutcome GmeClient::DescribeRecordInfo(const DescribeRecordInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordInfoResponse rsp = DescribeRecordInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordInfoOutcome(rsp);
+        else
+            return DescribeRecordInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordInfoOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeRecordInfoAsync(const DescribeRecordInfoRequest& request, const DescribeRecordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeRecordInfoOutcomeCallable GmeClient::DescribeRecordInfoCallable(const DescribeRecordInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::DescribeRoomInfoOutcome GmeClient::DescribeRoomInfo(const DescribeRoomInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoomInfo");
@@ -635,6 +678,49 @@ GmeClient::DescribeScanResultListOutcomeCallable GmeClient::DescribeScanResultLi
         [this, request]()
         {
             return this->DescribeScanResultList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::DescribeTaskInfoOutcome GmeClient::DescribeTaskInfo(const DescribeTaskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskInfoResponse rsp = DescribeTaskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskInfoOutcome(rsp);
+        else
+            return DescribeTaskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskInfoOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::DescribeTaskInfoAsync(const DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::DescribeTaskInfoOutcomeCallable GmeClient::DescribeTaskInfoCallable(const DescribeTaskInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskInfo(request);
         }
     );
 
@@ -857,6 +943,49 @@ GmeClient::ModifyCustomizationStateOutcomeCallable GmeClient::ModifyCustomizatio
     return task->get_future();
 }
 
+GmeClient::ModifyRecordInfoOutcome GmeClient::ModifyRecordInfo(const ModifyRecordInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRecordInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRecordInfoResponse rsp = ModifyRecordInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRecordInfoOutcome(rsp);
+        else
+            return ModifyRecordInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRecordInfoOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::ModifyRecordInfoAsync(const ModifyRecordInfoRequest& request, const ModifyRecordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRecordInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::ModifyRecordInfoOutcomeCallable GmeClient::ModifyRecordInfoCallable(const ModifyRecordInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRecordInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRecordInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 GmeClient::ModifyUserMicStatusOutcome GmeClient::ModifyUserMicStatus(const ModifyUserMicStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyUserMicStatus");
@@ -936,6 +1065,92 @@ GmeClient::ScanVoiceOutcomeCallable GmeClient::ScanVoiceCallable(const ScanVoice
         [this, request]()
         {
             return this->ScanVoice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::StartRecordOutcome GmeClient::StartRecord(const StartRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartRecordResponse rsp = StartRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartRecordOutcome(rsp);
+        else
+            return StartRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StartRecordOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::StartRecordAsync(const StartRecordRequest& request, const StartRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::StartRecordOutcomeCallable GmeClient::StartRecordCallable(const StartRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->StartRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+GmeClient::StopRecordOutcome GmeClient::StopRecord(const StopRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopRecordResponse rsp = StopRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopRecordOutcome(rsp);
+        else
+            return StopRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return StopRecordOutcome(outcome.GetError());
+    }
+}
+
+void GmeClient::StopRecordAsync(const StopRecordRequest& request, const StopRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+GmeClient::StopRecordOutcomeCallable GmeClient::StopRecordCallable(const StopRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->StopRecord(request);
         }
     );
 

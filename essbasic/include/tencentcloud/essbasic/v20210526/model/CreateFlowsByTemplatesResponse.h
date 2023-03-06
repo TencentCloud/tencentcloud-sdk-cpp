@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool FlowIdsHasBeenSet() const;
 
                     /**
-                     * 获取渠道的业务信息，限制1024字符
-                     * @return CustomerData 渠道的业务信息，限制1024字符
+                     * 获取业务信息，限制1024字符
+                     * @return CustomerData 业务信息，限制1024字符
                      */
                     std::vector<std::string> GetCustomerData() const;
 
@@ -117,7 +117,7 @@ namespace TencentCloud
                     bool m_flowIdsHasBeenSet;
 
                     /**
-                     * 渠道的业务信息，限制1024字符
+                     * 业务信息，限制1024字符
                      */
                     std::vector<std::string> m_customerData;
                     bool m_customerDataHasBeenSet;

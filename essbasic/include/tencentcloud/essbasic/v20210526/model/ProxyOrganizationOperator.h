@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
-                     * @return Id 对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
+                     * 获取对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * @return Id 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
                      */
                     std::string GetId() const;
 
                     /**
-                     * 设置对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
-                     * @param Id 对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
+                     * 设置对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
+                     * @param Id 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
                      */
                     void SetId(const std::string& _id);
 
@@ -148,10 +148,44 @@ namespace TencentCloud
                      */
                     bool MobileHasBeenSet() const;
 
+                    /**
+                     * 获取默认角色，值为以下三个对应的英文：
+业务管理员：admin
+经办人：channel-normal-operator
+业务员：channel-sales-man
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DefaultRole 默认角色，值为以下三个对应的英文：
+业务管理员：admin
+经办人：channel-normal-operator
+业务员：channel-sales-man
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDefaultRole() const;
+
+                    /**
+                     * 设置默认角色，值为以下三个对应的英文：
+业务管理员：admin
+经办人：channel-normal-operator
+业务员：channel-sales-man
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DefaultRole 默认角色，值为以下三个对应的英文：
+业务管理员：admin
+经办人：channel-normal-operator
+业务员：channel-sales-man
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDefaultRole(const std::string& _defaultRole);
+
+                    /**
+                     * 判断参数 DefaultRole 是否已赋值
+                     * @return DefaultRole 是否已赋值
+                     */
+                    bool DefaultRoleHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 对应Agent-ProxyOperator-OpenId。渠道平台自定义，对渠道子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要渠道平台保存），最大64位字符串
+                     * 对应Agent-ProxyOperator-OpenId。第三方应用平台自定义，对子客企业员的唯一标识。一个OpenId在一个子客企业内唯一对应一个真实员工，不可在其他子客企业内重复使用。（例如，可以使用经办人企业名+员工身份证的hash值，需要第三方应用平台保存），最大64位字符串
                      */
                     std::string m_id;
                     bool m_idHasBeenSet;
@@ -182,6 +216,16 @@ namespace TencentCloud
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
+
+                    /**
+                     * 默认角色，值为以下三个对应的英文：
+业务管理员：admin
+经办人：channel-normal-operator
+业务员：channel-sales-man
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_defaultRole;
+                    bool m_defaultRoleHasBeenSet;
 
                 };
             }

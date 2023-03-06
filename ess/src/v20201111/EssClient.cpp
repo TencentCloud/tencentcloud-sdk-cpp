@@ -771,6 +771,49 @@ EssClient::CreateSealPolicyOutcomeCallable EssClient::CreateSealPolicyCallable(c
     return task->get_future();
 }
 
+EssClient::CreateUserAutoSignEnableUrlOutcome EssClient::CreateUserAutoSignEnableUrl(const CreateUserAutoSignEnableUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUserAutoSignEnableUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUserAutoSignEnableUrlResponse rsp = CreateUserAutoSignEnableUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUserAutoSignEnableUrlOutcome(rsp);
+        else
+            return CreateUserAutoSignEnableUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUserAutoSignEnableUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateUserAutoSignEnableUrlAsync(const CreateUserAutoSignEnableUrlRequest& request, const CreateUserAutoSignEnableUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUserAutoSignEnableUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateUserAutoSignEnableUrlOutcomeCallable EssClient::CreateUserAutoSignEnableUrlCallable(const CreateUserAutoSignEnableUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUserAutoSignEnableUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUserAutoSignEnableUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::DeleteIntegrationEmployeesOutcome EssClient::DeleteIntegrationEmployees(const DeleteIntegrationEmployeesRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteIntegrationEmployees");
@@ -1280,6 +1323,92 @@ EssClient::DescribeThirdPartyAuthCodeOutcomeCallable EssClient::DescribeThirdPar
         [this, request]()
         {
             return this->DescribeThirdPartyAuthCode(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DescribeUserAutoSignStatusOutcome EssClient::DescribeUserAutoSignStatus(const DescribeUserAutoSignStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserAutoSignStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserAutoSignStatusResponse rsp = DescribeUserAutoSignStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserAutoSignStatusOutcome(rsp);
+        else
+            return DescribeUserAutoSignStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserAutoSignStatusOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DescribeUserAutoSignStatusAsync(const DescribeUserAutoSignStatusRequest& request, const DescribeUserAutoSignStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserAutoSignStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DescribeUserAutoSignStatusOutcomeCallable EssClient::DescribeUserAutoSignStatusCallable(const DescribeUserAutoSignStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserAutoSignStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserAutoSignStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::DisableUserAutoSignOutcome EssClient::DisableUserAutoSign(const DisableUserAutoSignRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableUserAutoSign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableUserAutoSignResponse rsp = DisableUserAutoSignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableUserAutoSignOutcome(rsp);
+        else
+            return DisableUserAutoSignOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableUserAutoSignOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::DisableUserAutoSignAsync(const DisableUserAutoSignRequest& request, const DisableUserAutoSignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableUserAutoSign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::DisableUserAutoSignOutcomeCallable EssClient::DisableUserAutoSignCallable(const DisableUserAutoSignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableUserAutoSignOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableUserAutoSign(request);
         }
     );
 

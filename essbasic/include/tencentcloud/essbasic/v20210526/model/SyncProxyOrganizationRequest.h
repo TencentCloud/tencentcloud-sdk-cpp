@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool AgentHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业名称，最大长度64个字符
-                     * @return ProxyOrganizationName 渠道侧合作企业名称，最大长度64个字符
+                     * 获取第三方平台子客企业名称，最大长度64个字符
+                     * @return ProxyOrganizationName 第三方平台子客企业名称，最大长度64个字符
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
-                     * 设置渠道侧合作企业名称，最大长度64个字符
-                     * @param ProxyOrganizationName 渠道侧合作企业名称，最大长度64个字符
+                     * 设置第三方平台子客企业名称，最大长度64个字符
+                     * @param ProxyOrganizationName 第三方平台子客企业名称，最大长度64个字符
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
 
@@ -103,14 +103,14 @@ namespace TencentCloud
                     bool BusinessLicenseHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业统一社会信用代码，最大长度200个字符
-                     * @return UniformSocialCreditCode 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * 获取第三方平台子客企业统一社会信用代码，最大长度200个字符
+                     * @return UniformSocialCreditCode 第三方平台子客企业统一社会信用代码，最大长度200个字符
                      */
                     std::string GetUniformSocialCreditCode() const;
 
                     /**
-                     * 设置渠道侧合作企业统一社会信用代码，最大长度200个字符
-                     * @param UniformSocialCreditCode 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * 设置第三方平台子客企业统一社会信用代码，最大长度200个字符
+                     * @param UniformSocialCreditCode 第三方平台子客企业统一社会信用代码，最大长度200个字符
                      */
                     void SetUniformSocialCreditCode(const std::string& _uniformSocialCreditCode);
 
@@ -121,14 +121,14 @@ namespace TencentCloud
                     bool UniformSocialCreditCodeHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业法人/负责人姓名
-                     * @return ProxyLegalName 渠道侧合作企业法人/负责人姓名
+                     * 获取第三方平台子客企业法人/负责人姓名
+                     * @return ProxyLegalName 第三方平台子客企业法人/负责人姓名
                      */
                     std::string GetProxyLegalName() const;
 
                     /**
-                     * 设置渠道侧合作企业法人/负责人姓名
-                     * @param ProxyLegalName 渠道侧合作企业法人/负责人姓名
+                     * 设置第三方平台子客企业法人/负责人姓名
+                     * @param ProxyLegalName 第三方平台子客企业法人/负责人姓名
                      */
                     void SetProxyLegalName(const std::string& _proxyLegalName);
 
@@ -166,7 +166,7 @@ namespace TencentCloud
                     bool m_agentHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业名称，最大长度64个字符
+                     * 第三方平台子客企业名称，最大长度64个字符
                      */
                     std::string m_proxyOrganizationName;
                     bool m_proxyOrganizationNameHasBeenSet;
@@ -178,13 +178,13 @@ namespace TencentCloud
                     bool m_businessLicenseHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业统一社会信用代码，最大长度200个字符
+                     * 第三方平台子客企业统一社会信用代码，最大长度200个字符
                      */
                     std::string m_uniformSocialCreditCode;
                     bool m_uniformSocialCreditCodeHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业法人/负责人姓名
+                     * 第三方平台子客企业法人/负责人姓名
                      */
                     std::string m_proxyLegalName;
                     bool m_proxyLegalNameHasBeenSet;

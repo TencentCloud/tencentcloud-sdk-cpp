@@ -119,14 +119,14 @@ namespace TencentCloud
                     /**
                      * 获取签署链接生成类型，默认是 "ALL"；
 "ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：渠道合作企业；
-"NOT_CHANNEL"：非渠道合作企业；
+"CHANNEL"：第三方平台子客企业企业；
+"NOT_CHANNEL"：非第三方平台子客企业企业；
 "PERSON"：个人；
 "FOLLOWER"：关注方，目前是合同抄送方；
                      * @return GenerateType 签署链接生成类型，默认是 "ALL"；
 "ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：渠道合作企业；
-"NOT_CHANNEL"：非渠道合作企业；
+"CHANNEL"：第三方平台子客企业企业；
+"NOT_CHANNEL"：非第三方平台子客企业企业；
 "PERSON"：个人；
 "FOLLOWER"：关注方，目前是合同抄送方；
                      */
@@ -135,14 +135,14 @@ namespace TencentCloud
                     /**
                      * 设置签署链接生成类型，默认是 "ALL"；
 "ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：渠道合作企业；
-"NOT_CHANNEL"：非渠道合作企业；
+"CHANNEL"：第三方平台子客企业企业；
+"NOT_CHANNEL"：非第三方平台子客企业企业；
 "PERSON"：个人；
 "FOLLOWER"：关注方，目前是合同抄送方；
                      * @param GenerateType 签署链接生成类型，默认是 "ALL"；
 "ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：渠道合作企业；
-"NOT_CHANNEL"：非渠道合作企业；
+"CHANNEL"：第三方平台子客企业企业；
+"NOT_CHANNEL"：非第三方平台子客企业企业；
 "PERSON"：个人；
 "FOLLOWER"：关注方，目前是合同抄送方；
                      */
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool GenerateTypeHasBeenSet() const;
 
                     /**
-                     * 获取非渠道合作企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
-                     * @return OrganizationName 非渠道合作企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
+                     * 获取非第三方平台子客企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
+                     * @return OrganizationName 非第三方平台子客企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
                      */
                     std::string GetOrganizationName() const;
 
                     /**
-                     * 设置非渠道合作企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
-                     * @param OrganizationName 非渠道合作企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
+                     * 设置非第三方平台子客企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
+                     * @param OrganizationName 非第三方平台子客企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
                      */
                     void SetOrganizationName(const std::string& _organizationName);
 
@@ -213,14 +213,14 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取渠道合作企业的企业Id，GenerateType为"CHANNEL"时必填
-                     * @return OrganizationOpenId 渠道合作企业的企业Id，GenerateType为"CHANNEL"时必填
+                     * 获取第三方平台子客企业的企业OpenId，GenerateType为"CHANNEL"时必填
+                     * @return OrganizationOpenId 第三方平台子客企业的企业OpenId，GenerateType为"CHANNEL"时必填
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置渠道合作企业的企业Id，GenerateType为"CHANNEL"时必填
-                     * @param OrganizationOpenId 渠道合作企业的企业Id，GenerateType为"CHANNEL"时必填
+                     * 设置第三方平台子客企业的企业OpenId，GenerateType为"CHANNEL"时必填
+                     * @param OrganizationOpenId 第三方平台子客企业的企业OpenId，GenerateType为"CHANNEL"时必填
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
@@ -231,14 +231,14 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
-                     * @return OpenId 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
+                     * 获取第三方平台子客企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
+                     * @return OpenId 第三方平台子客企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
-                     * @param OpenId 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
+                     * 设置第三方平台子客企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
+                     * @param OpenId 第三方平台子客企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -331,8 +331,8 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     /**
                      * 签署链接生成类型，默认是 "ALL"；
 "ALL"：全部签署方签署链接，此时不会给自动签署的签署方创建签署链接；
-"CHANNEL"：渠道合作企业；
-"NOT_CHANNEL"：非渠道合作企业；
+"CHANNEL"：第三方平台子客企业企业；
+"NOT_CHANNEL"：非第三方平台子客企业企业；
 "PERSON"：个人；
 "FOLLOWER"：关注方，目前是合同抄送方；
                      */
@@ -340,7 +340,7 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_generateTypeHasBeenSet;
 
                     /**
-                     * 非渠道合作企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
+                     * 非第三方平台子客企业参与方的企业名称，GenerateType为"NOT_CHANNEL"时必填
                      */
                     std::string m_organizationName;
                     bool m_organizationNameHasBeenSet;
@@ -359,13 +359,13 @@ GenerateType为"PERSON"或"FOLLOWER"时必填
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 渠道合作企业的企业Id，GenerateType为"CHANNEL"时必填
+                     * 第三方平台子客企业的企业OpenId，GenerateType为"CHANNEL"时必填
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 渠道合作企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
+                     * 第三方平台子客企业参与人OpenId，GenerateType为"CHANNEL"时可用，指定到具体参与人, 仅展示已经实名的经办人信息
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

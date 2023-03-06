@@ -486,6 +486,28 @@ namespace TencentCloud
                      */
                     bool CertificationStatusHasBeenSet() const;
 
+                    /**
+                     * 获取网址截图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Snapshot 网址截图
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSnapshot() const;
+
+                    /**
+                     * 设置网址截图
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Snapshot 网址截图
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSnapshot(const std::string& _snapshot);
+
+                    /**
+                     * 判断参数 Snapshot 是否已赋值
+                     * @return Snapshot 是否已赋值
+                     */
+                    bool SnapshotHasBeenSet() const;
+
                 private:
 
                     /**
@@ -627,6 +649,13 @@ namespace TencentCloud
                      */
                     int64_t m_certificationStatus;
                     bool m_certificationStatusHasBeenSet;
+
+                    /**
+                     * 网址截图
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_snapshot;
+                    bool m_snapshotHasBeenSet;
 
                 };
             }

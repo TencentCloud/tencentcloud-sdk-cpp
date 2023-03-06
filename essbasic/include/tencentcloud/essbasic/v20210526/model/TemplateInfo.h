@@ -251,17 +251,17 @@ namespace TencentCloud
                     bool PreviewUrlHasBeenSet() const;
 
                     /**
-                     * 获取渠道版-模板PDF文件链接
+                     * 获取第三方应用集成-模板PDF文件链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PdfUrl 渠道版-模板PDF文件链接
+                     * @return PdfUrl 第三方应用集成-模板PDF文件链接
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPdfUrl() const;
 
                     /**
-                     * 设置渠道版-模板PDF文件链接
+                     * 设置第三方应用集成-模板PDF文件链接
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PdfUrl 渠道版-模板PDF文件链接
+                     * @param PdfUrl 第三方应用集成-模板PDF文件链接
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPdfUrl(const std::string& _pdfUrl);
@@ -273,14 +273,14 @@ namespace TencentCloud
                     bool PdfUrlHasBeenSet() const;
 
                     /**
-                     * 获取关联的渠道模板ID
-                     * @return ChannelTemplateId 关联的渠道模板ID
+                     * 获取关联的平台企业模板ID
+                     * @return ChannelTemplateId 关联的平台企业模板ID
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
-                     * 设置关联的渠道模板ID
-                     * @param ChannelTemplateId 关联的渠道模板ID
+                     * 设置关联的平台企业模板ID
+                     * @param ChannelTemplateId 关联的平台企业模板ID
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
 
@@ -291,17 +291,17 @@ namespace TencentCloud
                     bool ChannelTemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取关联的渠道模板名称
+                     * 获取关联的平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelTemplateName 关联的渠道模板名称
+                     * @return ChannelTemplateName 关联的平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetChannelTemplateName() const;
 
                     /**
-                     * 设置关联的渠道模板名称
+                     * 设置关联的平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelTemplateName 关联的渠道模板名称
+                     * @param ChannelTemplateName 关联的平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChannelTemplateName(const std::string& _channelTemplateName);
@@ -313,17 +313,17 @@ namespace TencentCloud
                     bool ChannelTemplateNameHasBeenSet() const;
 
                     /**
-                     * 获取0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+                     * 获取0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ChannelAutoSave 0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+                     * @return ChannelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetChannelAutoSave() const;
 
                     /**
-                     * 设置0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+                     * 设置0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ChannelAutoSave 0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+                     * @param ChannelAutoSave 0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChannelAutoSave(const int64_t& _channelAutoSave);
@@ -426,27 +426,27 @@ namespace TencentCloud
                     bool m_previewUrlHasBeenSet;
 
                     /**
-                     * 渠道版-模板PDF文件链接
+                     * 第三方应用集成-模板PDF文件链接
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pdfUrl;
                     bool m_pdfUrlHasBeenSet;
 
                     /**
-                     * 关联的渠道模板ID
+                     * 关联的平台企业模板ID
                      */
                     std::string m_channelTemplateId;
                     bool m_channelTemplateIdHasBeenSet;
 
                     /**
-                     * 关联的渠道模板名称
+                     * 关联的平台企业模板名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_channelTemplateName;
                     bool m_channelTemplateNameHasBeenSet;
 
                     /**
-                     * 0-需要渠道子客手动领取渠道的模板(默认); 1-渠道自动设置子客模板
+                     * 0-需要子客企业手动领取平台企业的模板(默认); 1-平台自动设置子客模板
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_channelAutoSave;

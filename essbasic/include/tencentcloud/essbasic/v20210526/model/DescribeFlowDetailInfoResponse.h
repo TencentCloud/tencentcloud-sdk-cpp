@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道侧应用号Id
-                     * @return ApplicationId 渠道侧应用号Id
+                     * 获取第三方平台应用号Id
+                     * @return ApplicationId 第三方平台应用号Id
                      */
                     std::string GetApplicationId() const;
 
@@ -57,8 +57,8 @@ namespace TencentCloud
                     bool ApplicationIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧企业第三方Id
-                     * @return ProxyOrganizationOpenId 渠道侧企业第三方Id
+                     * 获取第三方平台子客企业OpenId
+                     * @return ProxyOrganizationOpenId 第三方平台子客企业OpenId
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
@@ -113,13 +113,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 渠道侧应用号Id
+                     * 第三方平台应用号Id
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
-                     * 渠道侧企业第三方Id
+                     * 第三方平台子客企业OpenId
                      */
                     std::string m_proxyOrganizationOpenId;
                     bool m_proxyOrganizationOpenIdHasBeenSet;

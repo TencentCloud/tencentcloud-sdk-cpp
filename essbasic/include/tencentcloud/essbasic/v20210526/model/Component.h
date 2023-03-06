@@ -932,18 +932,18 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool OffsetYHasBeenSet() const;
 
                     /**
-                     * 获取渠道控件ID。
-如果不为空，属于渠道预设控件；
-                     * @return ChannelComponentId 渠道控件ID。
-如果不为空，属于渠道预设控件；
+                     * 获取平台企业控件ID。
+如果不为空，属于平台企业预设控件；
+                     * @return ChannelComponentId 平台企业控件ID。
+如果不为空，属于平台企业预设控件；
                      */
                     std::string GetChannelComponentId() const;
 
                     /**
-                     * 设置渠道控件ID。
-如果不为空，属于渠道预设控件；
-                     * @param ChannelComponentId 渠道控件ID。
-如果不为空，属于渠道预设控件；
+                     * 设置平台企业控件ID。
+如果不为空，属于平台企业预设控件；
+                     * @param ChannelComponentId 平台企业控件ID。
+如果不为空，属于平台企业预设控件；
                      */
                     void SetChannelComponentId(const std::string& _channelComponentId);
 
@@ -1280,8 +1280,8 @@ SIGN_PAGING_SEAL - 可以指定印章ID
                     bool m_offsetYHasBeenSet;
 
                     /**
-                     * 渠道控件ID。
-如果不为空，属于渠道预设控件；
+                     * 平台企业控件ID。
+如果不为空，属于平台企业预设控件；
                      */
                     std::string m_channelComponentId;
                     bool m_channelComponentIdHasBeenSet;

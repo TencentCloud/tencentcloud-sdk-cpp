@@ -207,14 +207,14 @@ namespace TencentCloud
                     bool WithPreviewUrlHasBeenSet() const;
 
                     /**
-                     * 获取是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
-                     * @return WithPdfUrl 是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     * 获取是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * @return WithPdfUrl 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
                      */
                     bool GetWithPdfUrl() const;
 
                     /**
-                     * 设置是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
-                     * @param WithPdfUrl 是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     * 设置是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
+                     * @param WithPdfUrl 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
                      */
                     void SetWithPdfUrl(const bool& _withPdfUrl);
 
@@ -225,14 +225,14 @@ namespace TencentCloud
                     bool WithPdfUrlHasBeenSet() const;
 
                     /**
-                     * 获取渠道模板ID
-                     * @return ChannelTemplateId 渠道模板ID
+                     * 获取模板ID
+                     * @return ChannelTemplateId 模板ID
                      */
                     std::string GetChannelTemplateId() const;
 
                     /**
-                     * 设置渠道模板ID
-                     * @param ChannelTemplateId 渠道模板ID
+                     * 设置模板ID
+                     * @param ChannelTemplateId 模板ID
                      */
                     void SetChannelTemplateId(const std::string& _channelTemplateId);
 
@@ -299,13 +299,13 @@ namespace TencentCloud
                     bool m_withPreviewUrlHasBeenSet;
 
                     /**
-                     * 是否获取模板的PDF文件链接-渠道版需要开启白名单时才能使用。
+                     * 是否获取模板的PDF文件链接- 第三方应用集成需要开启白名单时才能使用。
                      */
                     bool m_withPdfUrl;
                     bool m_withPdfUrlHasBeenSet;
 
                     /**
-                     * 渠道模板ID
+                     * 模板ID
                      */
                     std::string m_channelTemplateId;
                     bool m_channelTemplateIdHasBeenSet;

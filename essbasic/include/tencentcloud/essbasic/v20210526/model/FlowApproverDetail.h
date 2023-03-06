@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool ReceiptIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧企业的第三方id
+                     * 获取平台企业的第三方id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyOrganizationOpenId 渠道侧企业的第三方id
+                     * @return ProxyOrganizationOpenId 平台企业的第三方id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
-                     * 设置渠道侧企业的第三方id
+                     * 设置平台企业的第三方id
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyOrganizationOpenId 渠道侧企业的第三方id
+                     * @param ProxyOrganizationOpenId 平台企业的第三方id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
@@ -87,14 +87,14 @@ namespace TencentCloud
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧企业操作人的第三方id
-                     * @return ProxyOperatorOpenId 渠道侧企业操作人的第三方id
+                     * 获取平台企业操作人的第三方id
+                     * @return ProxyOperatorOpenId 平台企业操作人的第三方id
                      */
                     std::string GetProxyOperatorOpenId() const;
 
                     /**
-                     * 设置渠道侧企业操作人的第三方id
-                     * @param ProxyOperatorOpenId 渠道侧企业操作人的第三方id
+                     * 设置平台企业操作人的第三方id
+                     * @param ProxyOperatorOpenId 平台企业操作人的第三方id
                      */
                     void SetProxyOperatorOpenId(const std::string& _proxyOperatorOpenId);
 
@@ -105,14 +105,14 @@ namespace TencentCloud
                     bool ProxyOperatorOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧企业名称
-                     * @return ProxyOrganizationName 渠道侧企业名称
+                     * 获取平台企业名称
+                     * @return ProxyOrganizationName 平台企业名称
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
-                     * 设置渠道侧企业名称
-                     * @param ProxyOrganizationName 渠道侧企业名称
+                     * 设置平台企业名称
+                     * @param ProxyOrganizationName 平台企业名称
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
 
@@ -273,20 +273,20 @@ namespace TencentCloud
                     bool m_receiptIdHasBeenSet;
 
                     /**
-                     * 渠道侧企业的第三方id
+                     * 平台企业的第三方id
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyOrganizationOpenId;
                     bool m_proxyOrganizationOpenIdHasBeenSet;
 
                     /**
-                     * 渠道侧企业操作人的第三方id
+                     * 平台企业操作人的第三方id
                      */
                     std::string m_proxyOperatorOpenId;
                     bool m_proxyOperatorOpenIdHasBeenSet;
 
                     /**
-                     * 渠道侧企业名称
+                     * 平台企业名称
                      */
                     std::string m_proxyOrganizationName;
                     bool m_proxyOrganizationNameHasBeenSet;

@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯电子签颁发给渠道的应用ID
+                     * 获取腾讯电子签颁发给第三方应用平台的应用ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AppId 腾讯电子签颁发给渠道的应用ID
+                     * @return AppId 腾讯电子签颁发给第三方应用平台的应用ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAppId() const;
@@ -59,9 +59,9 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道方模板库模板唯一标识
+                     * 获取第三方应用平台模板库模板唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TemplateId 渠道方模板库模板唯一标识
+                     * @return TemplateId 第三方应用平台模板库模板唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTemplateId() const;
@@ -131,14 +131,14 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯电子签颁发给渠道的应用ID
+                     * 腾讯电子签颁发给第三方应用平台的应用ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 渠道方模板库模板唯一标识
+                     * 第三方应用平台模板库模板唯一标识
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_templateId;

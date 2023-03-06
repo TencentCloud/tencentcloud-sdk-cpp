@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool OperateTypeHasBeenSet() const;
 
                     /**
-                     * 获取渠道方模板库模板唯一标识
-                     * @return TemplateId 渠道方模板库模板唯一标识
+                     * 获取第三方应用平台模板库模板唯一标识
+                     * @return TemplateId 第三方应用平台模板库模板唯一标识
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置渠道方模板库模板唯一标识
-                     * @param TemplateId 渠道方模板库模板唯一标识
+                     * 设置第三方应用平台模板库模板唯一标识
+                     * @param TemplateId 第三方应用平台模板库模板唯一标识
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -167,7 +167,7 @@ namespace TencentCloud
                     bool m_operateTypeHasBeenSet;
 
                     /**
-                     * 渠道方模板库模板唯一标识
+                     * 第三方应用平台模板库模板唯一标识
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

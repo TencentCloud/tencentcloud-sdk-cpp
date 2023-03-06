@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取渠道侧合作企业唯一标识
-                     * @return ProxyOrganizationOpenId 渠道侧合作企业唯一标识
+                     * 获取子客企业唯一标识
+                     * @return ProxyOrganizationOpenId 子客企业唯一标识
                      */
                     std::string GetProxyOrganizationOpenId() const;
 
                     /**
-                     * 设置渠道侧合作企业唯一标识
-                     * @param ProxyOrganizationOpenId 渠道侧合作企业唯一标识
+                     * 设置子客企业唯一标识
+                     * @param ProxyOrganizationOpenId 子客企业唯一标识
                      */
                     void SetProxyOrganizationOpenId(const std::string& _proxyOrganizationOpenId);
 
@@ -65,17 +65,17 @@ namespace TencentCloud
                     bool ProxyOrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取渠道侧合作企业名
+                     * 获取子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ProxyOrganizationName 渠道侧合作企业名
+                     * @return ProxyOrganizationName 子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyOrganizationName() const;
 
                     /**
-                     * 设置渠道侧合作企业名
+                     * 设置子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ProxyOrganizationName 渠道侧合作企业名
+                     * @param ProxyOrganizationName 子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyOrganizationName(const std::string& _proxyOrganizationName);
@@ -173,13 +173,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 渠道侧合作企业唯一标识
+                     * 子客企业唯一标识
                      */
                     std::string m_proxyOrganizationOpenId;
                     bool m_proxyOrganizationOpenIdHasBeenSet;
 
                     /**
-                     * 渠道侧合作企业名
+                     * 子客企业名
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyOrganizationName;

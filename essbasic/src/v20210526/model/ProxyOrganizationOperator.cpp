@@ -25,7 +25,8 @@ ProxyOrganizationOperator::ProxyOrganizationOperator() :
     m_nameHasBeenSet(false),
     m_idCardTypeHasBeenSet(false),
     m_idCardNumberHasBeenSet(false),
-    m_mobileHasBeenSet(false)
+    m_mobileHasBeenSet(false),
+    m_defaultRoleHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ProxyOrganizationOperator::Deserialize(const rapidjson::Valu
         m_mobileHasBeenSet = true;
     }
 
+    if (value.HasMember("DefaultRole") && !value["DefaultRole"].IsNull())
+    {
+        if (!value["DefaultRole"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyOrganizationOperator.DefaultRole` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_defaultRole = string(value["DefaultRole"].GetString());
+        m_defaultRoleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ProxyOrganizationOperator::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "Mobile";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mobile.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_defaultRoleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DefaultRole";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_defaultRole.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ProxyOrganizationOperator::SetMobile(const string& _mobile)
 bool ProxyOrganizationOperator::MobileHasBeenSet() const
 {
     return m_mobileHasBeenSet;
+}
+
+string ProxyOrganizationOperator::GetDefaultRole() const
+{
+    return m_defaultRole;
+}
+
+void ProxyOrganizationOperator::SetDefaultRole(const string& _defaultRole)
+{
+    m_defaultRole = _defaultRole;
+    m_defaultRoleHasBeenSet = true;
+}
+
+bool ProxyOrganizationOperator::DefaultRoleHasBeenSet() const
+{
+    return m_defaultRoleHasBeenSet;
 }
 

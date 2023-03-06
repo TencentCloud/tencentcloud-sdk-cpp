@@ -40,7 +40,8 @@ FakeURLData::FakeURLData() :
     m_webCreateTimeHasBeenSet(false),
     m_webExpireTimeHasBeenSet(false),
     m_insertTimeHasBeenSet(false),
-    m_certificationStatusHasBeenSet(false)
+    m_certificationStatusHasBeenSet(false),
+    m_snapshotHasBeenSet(false)
 {
 }
 
@@ -249,6 +250,16 @@ CoreInternalOutcome FakeURLData::Deserialize(const rapidjson::Value &value)
         m_certificationStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("Snapshot") && !value["Snapshot"].IsNull())
+    {
+        if (!value["Snapshot"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FakeURLData.Snapshot` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_snapshot = string(value["Snapshot"].GetString());
+        m_snapshotHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -414,6 +425,14 @@ void FakeURLData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "CertificationStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_certificationStatus, allocator);
+    }
+
+    if (m_snapshotHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Snapshot";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_snapshot.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -737,5 +756,21 @@ void FakeURLData::SetCertificationStatus(const int64_t& _certificationStatus)
 bool FakeURLData::CertificationStatusHasBeenSet() const
 {
     return m_certificationStatusHasBeenSet;
+}
+
+string FakeURLData::GetSnapshot() const
+{
+    return m_snapshot;
+}
+
+void FakeURLData::SetSnapshot(const string& _snapshot)
+{
+    m_snapshot = _snapshot;
+    m_snapshotHasBeenSet = true;
+}
+
+bool FakeURLData::SnapshotHasBeenSet() const
+{
+    return m_snapshotHasBeenSet;
 }
 

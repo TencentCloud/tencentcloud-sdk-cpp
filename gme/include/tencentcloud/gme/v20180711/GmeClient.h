@@ -47,10 +47,14 @@
 #include <tencentcloud/gme/v20180711/model/DescribeApplicationListResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRealtimeScanConfigResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeRecordInfoRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeRecordInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRoomInfoRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeRoomInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeScanResultListResponse.h>
+#include <tencentcloud/gme/v20180711/model/DescribeTaskInfoRequest.h>
+#include <tencentcloud/gme/v20180711/model/DescribeTaskInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeRequest.h>
 #include <tencentcloud/gme/v20180711/model/DescribeUserInAndOutTimeResponse.h>
 #include <tencentcloud/gme/v20180711/model/GetCustomizationListRequest.h>
@@ -61,10 +65,16 @@
 #include <tencentcloud/gme/v20180711/model/ModifyCustomizationResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyCustomizationStateRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyCustomizationStateResponse.h>
+#include <tencentcloud/gme/v20180711/model/ModifyRecordInfoRequest.h>
+#include <tencentcloud/gme/v20180711/model/ModifyRecordInfoResponse.h>
 #include <tencentcloud/gme/v20180711/model/ModifyUserMicStatusRequest.h>
 #include <tencentcloud/gme/v20180711/model/ModifyUserMicStatusResponse.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceRequest.h>
 #include <tencentcloud/gme/v20180711/model/ScanVoiceResponse.h>
+#include <tencentcloud/gme/v20180711/model/StartRecordRequest.h>
+#include <tencentcloud/gme/v20180711/model/StartRecordResponse.h>
+#include <tencentcloud/gme/v20180711/model/StopRecordRequest.h>
+#include <tencentcloud/gme/v20180711/model/StopRecordResponse.h>
 #include <tencentcloud/gme/v20180711/model/UpdateScanRoomsRequest.h>
 #include <tencentcloud/gme/v20180711/model/UpdateScanRoomsResponse.h>
 #include <tencentcloud/gme/v20180711/model/UpdateScanUsersRequest.h>
@@ -119,12 +129,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRealtimeScanConfigResponse> DescribeRealtimeScanConfigOutcome;
                 typedef std::future<DescribeRealtimeScanConfigOutcome> DescribeRealtimeScanConfigOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeRealtimeScanConfigRequest&, DescribeRealtimeScanConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRealtimeScanConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordInfoResponse> DescribeRecordInfoOutcome;
+                typedef std::future<DescribeRecordInfoOutcome> DescribeRecordInfoOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeRecordInfoRequest&, DescribeRecordInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomInfoResponse> DescribeRoomInfoOutcome;
                 typedef std::future<DescribeRoomInfoOutcome> DescribeRoomInfoOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeRoomInfoRequest&, DescribeRoomInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeScanResultListResponse> DescribeScanResultListOutcome;
                 typedef std::future<DescribeScanResultListOutcome> DescribeScanResultListOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeScanResultListRequest&, DescribeScanResultListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeScanResultListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskInfoResponse> DescribeTaskInfoOutcome;
+                typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::DescribeTaskInfoRequest&, DescribeTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserInAndOutTimeResponse> DescribeUserInAndOutTimeOutcome;
                 typedef std::future<DescribeUserInAndOutTimeOutcome> DescribeUserInAndOutTimeOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::DescribeUserInAndOutTimeRequest&, DescribeUserInAndOutTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInAndOutTimeAsyncHandler;
@@ -140,12 +156,21 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyCustomizationStateResponse> ModifyCustomizationStateOutcome;
                 typedef std::future<ModifyCustomizationStateOutcome> ModifyCustomizationStateOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyCustomizationStateRequest&, ModifyCustomizationStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCustomizationStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRecordInfoResponse> ModifyRecordInfoOutcome;
+                typedef std::future<ModifyRecordInfoOutcome> ModifyRecordInfoOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::ModifyRecordInfoRequest&, ModifyRecordInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRecordInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyUserMicStatusResponse> ModifyUserMicStatusOutcome;
                 typedef std::future<ModifyUserMicStatusOutcome> ModifyUserMicStatusOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ModifyUserMicStatusRequest&, ModifyUserMicStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyUserMicStatusAsyncHandler;
                 typedef Outcome<Core::Error, Model::ScanVoiceResponse> ScanVoiceOutcome;
                 typedef std::future<ScanVoiceOutcome> ScanVoiceOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::ScanVoiceRequest&, ScanVoiceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScanVoiceAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartRecordResponse> StartRecordOutcome;
+                typedef std::future<StartRecordOutcome> StartRecordOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::StartRecordRequest&, StartRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::StopRecordResponse> StopRecordOutcome;
+                typedef std::future<StopRecordOutcome> StopRecordOutcomeCallable;
+                typedef std::function<void(const GmeClient*, const Model::StopRecordRequest&, StopRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopRecordAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateScanRoomsResponse> UpdateScanRoomsOutcome;
                 typedef std::future<UpdateScanRoomsOutcome> UpdateScanRoomsOutcomeCallable;
                 typedef std::function<void(const GmeClient*, const Model::UpdateScanRoomsRequest&, UpdateScanRoomsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateScanRoomsAsyncHandler;
@@ -274,6 +299,15 @@ namespace TencentCloud
                 DescribeRealtimeScanConfigOutcomeCallable DescribeRealtimeScanConfigCallable(const Model::DescribeRealtimeScanConfigRequest& request);
 
                 /**
+                 *查询录制任务信息。
+                 * @param req DescribeRecordInfoRequest
+                 * @return DescribeRecordInfoOutcome
+                 */
+                DescribeRecordInfoOutcome DescribeRecordInfo(const Model::DescribeRecordInfoRequest &request);
+                void DescribeRecordInfoAsync(const Model::DescribeRecordInfoRequest& request, const DescribeRecordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordInfoOutcomeCallable DescribeRecordInfoCallable(const Model::DescribeRecordInfoRequest& request);
+
+                /**
                  *获取房间内用户信息
                  * @param req DescribeRoomInfoRequest
                  * @return DescribeRoomInfoOutcome
@@ -291,6 +325,15 @@ namespace TencentCloud
                 DescribeScanResultListOutcome DescribeScanResultList(const Model::DescribeScanResultListRequest &request);
                 void DescribeScanResultListAsync(const Model::DescribeScanResultListRequest& request, const DescribeScanResultListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeScanResultListOutcomeCallable DescribeScanResultListCallable(const Model::DescribeScanResultListRequest& request);
+
+                /**
+                 *查询房间录制的详细信息
+                 * @param req DescribeTaskInfoRequest
+                 * @return DescribeTaskInfoOutcome
+                 */
+                DescribeTaskInfoOutcome DescribeTaskInfo(const Model::DescribeTaskInfoRequest &request);
+                void DescribeTaskInfoAsync(const Model::DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskInfoOutcomeCallable DescribeTaskInfoCallable(const Model::DescribeTaskInfoRequest& request);
 
                 /**
                  *拉取用户在房间得进出时间
@@ -336,6 +379,15 @@ namespace TencentCloud
                 ModifyCustomizationStateOutcome ModifyCustomizationState(const Model::ModifyCustomizationStateRequest &request);
                 void ModifyCustomizationStateAsync(const Model::ModifyCustomizationStateRequest& request, const ModifyCustomizationStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyCustomizationStateOutcomeCallable ModifyCustomizationStateCallable(const Model::ModifyCustomizationStateRequest& request);
+
+                /**
+                 *修改录制配置信息
+                 * @param req ModifyRecordInfoRequest
+                 * @return ModifyRecordInfoOutcome
+                 */
+                ModifyRecordInfoOutcome ModifyRecordInfo(const Model::ModifyRecordInfoRequest &request);
+                void ModifyRecordInfoAsync(const Model::ModifyRecordInfoRequest& request, const ModifyRecordInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRecordInfoOutcomeCallable ModifyRecordInfoCallable(const Model::ModifyRecordInfoRequest& request);
 
                 /**
                  ***接口作用**：此接口用于修改房间用户的麦克风状态，例如房间内用户麦克风为打开状态，可调用此接口将该用户麦克风进行关闭，关闭后即使该用户使用客户端接口 EnableMic 打开麦克风，依然无法与房间内成员通话，属于被禁言状态。该状态持续到此用户退房后失效，或者调用该接口重新打开此用户麦克风状态。
@@ -491,6 +543,25 @@ namespace TencentCloud
                 ScanVoiceOutcome ScanVoice(const Model::ScanVoiceRequest &request);
                 void ScanVoiceAsync(const Model::ScanVoiceRequest& request, const ScanVoiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ScanVoiceOutcomeCallable ScanVoiceCallable(const Model::ScanVoiceRequest& request);
+
+                /**
+                 *开启录制
+                 * @param req StartRecordRequest
+                 * @return StartRecordOutcome
+                 */
+                StartRecordOutcome StartRecord(const Model::StartRecordRequest &request);
+                void StartRecordAsync(const Model::StartRecordRequest& request, const StartRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartRecordOutcomeCallable StartRecordCallable(const Model::StartRecordRequest& request);
+
+                /**
+                 *停止录制
+
+                 * @param req StopRecordRequest
+                 * @return StopRecordOutcome
+                 */
+                StopRecordOutcome StopRecord(const Model::StopRecordRequest &request);
+                void StopRecordAsync(const Model::StopRecordRequest& request, const StopRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StopRecordOutcomeCallable StopRecordCallable(const Model::StopRecordRequest& request);
 
                 /**
                  *更新自定义送检房间号

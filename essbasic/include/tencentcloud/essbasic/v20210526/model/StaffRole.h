@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 渠道版员工角色信息
+                * 第三方应用集成员工角色信息
                 */
                 class StaffRole : public AbstractModel
                 {
