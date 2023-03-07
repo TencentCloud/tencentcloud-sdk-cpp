@@ -789,6 +789,28 @@ namespace TencentCloud
                      */
                     bool ImageVersionNameHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启备集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StartStandbyCluster 是否开启备集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetStartStandbyCluster() const;
+
+                    /**
+                     * 设置是否开启备集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StartStandbyCluster 是否开启备集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStartStandbyCluster(const bool& _startStandbyCluster);
+
+                    /**
+                     * 判断参数 StartStandbyCluster 是否已赋值
+                     * @return StartStandbyCluster 是否已赋值
+                     */
+                    bool StartStandbyClusterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1029,6 +1051,13 @@ namespace TencentCloud
                      */
                     std::string m_imageVersionName;
                     bool m_imageVersionNameHasBeenSet;
+
+                    /**
+                     * 是否开启备集群
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_startStandbyCluster;
+                    bool m_startStandbyClusterHasBeenSet;
 
                 };
             }

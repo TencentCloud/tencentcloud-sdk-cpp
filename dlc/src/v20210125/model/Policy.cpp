@@ -36,7 +36,8 @@ Policy::Policy() :
     m_operatorHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
-    m_sourceNameHasBeenSet(false)
+    m_sourceNameHasBeenSet(false),
+    m_idHasBeenSet(false)
 {
 }
 
@@ -205,6 +206,16 @@ CoreInternalOutcome Policy::Deserialize(const rapidjson::Value &value)
         m_sourceNameHasBeenSet = true;
     }
 
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Policy.Id` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = value["Id"].GetInt64();
+        m_idHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +349,14 @@ void Policy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "SourceName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sourceName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_id, allocator);
     }
 
 }
@@ -597,5 +616,21 @@ void Policy::SetSourceName(const string& _sourceName)
 bool Policy::SourceNameHasBeenSet() const
 {
     return m_sourceNameHasBeenSet;
+}
+
+int64_t Policy::GetId() const
+{
+    return m_id;
+}
+
+void Policy::SetId(const int64_t& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool Policy::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
 }
 

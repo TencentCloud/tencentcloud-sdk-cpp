@@ -56,7 +56,8 @@ DataEngineInfo::DataEngineInfo() :
     m_resourceTypeHasBeenSet(false),
     m_imageVersionIdHasBeenSet(false),
     m_childImageVersionIdHasBeenSet(false),
-    m_imageVersionNameHasBeenSet(false)
+    m_imageVersionNameHasBeenSet(false),
+    m_startStandbyClusterHasBeenSet(false)
 {
 }
 
@@ -455,6 +456,16 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_imageVersionNameHasBeenSet = true;
     }
 
+    if (value.HasMember("StartStandbyCluster") && !value["StartStandbyCluster"].IsNull())
+    {
+        if (!value["StartStandbyCluster"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.StartStandbyCluster` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_startStandbyCluster = value["StartStandbyCluster"].GetBool();
+        m_startStandbyClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -768,6 +779,14 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ImageVersionName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imageVersionName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_startStandbyClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StartStandbyCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_startStandbyCluster, allocator);
     }
 
 }
@@ -1347,5 +1366,21 @@ void DataEngineInfo::SetImageVersionName(const string& _imageVersionName)
 bool DataEngineInfo::ImageVersionNameHasBeenSet() const
 {
     return m_imageVersionNameHasBeenSet;
+}
+
+bool DataEngineInfo::GetStartStandbyCluster() const
+{
+    return m_startStandbyCluster;
+}
+
+void DataEngineInfo::SetStartStandbyCluster(const bool& _startStandbyCluster)
+{
+    m_startStandbyCluster = _startStandbyCluster;
+    m_startStandbyClusterHasBeenSet = true;
+}
+
+bool DataEngineInfo::StartStandbyClusterHasBeenSet() const
+{
+    return m_startStandbyClusterHasBeenSet;
 }
 

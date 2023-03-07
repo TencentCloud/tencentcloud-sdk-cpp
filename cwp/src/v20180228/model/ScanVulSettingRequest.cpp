@@ -30,7 +30,8 @@ ScanVulSettingRequest::ScanVulSettingRequest() :
     m_vulEmergencyHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_enableScanHasBeenSet(false)
+    m_enableScanHasBeenSet(false),
+    m_uuidsHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,19 @@ string ScanVulSettingRequest::ToJsonString() const
         string key = "EnableScan";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enableScan, allocator);
+    }
+
+    if (m_uuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuids";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uuids.begin(); itr != m_uuids.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -249,6 +263,22 @@ void ScanVulSettingRequest::SetEnableScan(const uint64_t& _enableScan)
 bool ScanVulSettingRequest::EnableScanHasBeenSet() const
 {
     return m_enableScanHasBeenSet;
+}
+
+vector<string> ScanVulSettingRequest::GetUuids() const
+{
+    return m_uuids;
+}
+
+void ScanVulSettingRequest::SetUuids(const vector<string>& _uuids)
+{
+    m_uuids = _uuids;
+    m_uuidsHasBeenSet = true;
+}
+
+bool ScanVulSettingRequest::UuidsHasBeenSet() const
+{
+    return m_uuidsHasBeenSet;
 }
 
 

@@ -37,7 +37,8 @@ CreateEngineRequest::CreateEngineRequest() :
     m_engineTagsHasBeenSet(false),
     m_engineAdminHasBeenSet(false),
     m_prepaidPeriodHasBeenSet(false),
-    m_prepaidRenewFlagHasBeenSet(false)
+    m_prepaidRenewFlagHasBeenSet(false),
+    m_engineRegionInfosHasBeenSet(false)
 {
 }
 
@@ -181,6 +182,21 @@ string CreateEngineRequest::ToJsonString() const
         string key = "PrepaidRenewFlag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_prepaidRenewFlag, allocator);
+    }
+
+    if (m_engineRegionInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineRegionInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_engineRegionInfos.begin(); itr != m_engineRegionInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -429,6 +445,22 @@ void CreateEngineRequest::SetPrepaidRenewFlag(const int64_t& _prepaidRenewFlag)
 bool CreateEngineRequest::PrepaidRenewFlagHasBeenSet() const
 {
     return m_prepaidRenewFlagHasBeenSet;
+}
+
+vector<EngineRegionInfo> CreateEngineRequest::GetEngineRegionInfos() const
+{
+    return m_engineRegionInfos;
+}
+
+void CreateEngineRequest::SetEngineRegionInfos(const vector<EngineRegionInfo>& _engineRegionInfos)
+{
+    m_engineRegionInfos = _engineRegionInfos;
+    m_engineRegionInfosHasBeenSet = true;
+}
+
+bool CreateEngineRequest::EngineRegionInfosHasBeenSet() const
+{
+    return m_engineRegionInfosHasBeenSet;
 }
 
 

@@ -32,7 +32,8 @@ DescribeScanVulSettingResponse::DescribeScanVulSettingResponse() :
     m_startTimeHasBeenSet(false),
     m_enableScanHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_clickTimeoutHasBeenSet(false)
+    m_clickTimeoutHasBeenSet(false),
+    m_uuidsHasBeenSet(false)
 {
 }
 
@@ -160,6 +161,19 @@ CoreInternalOutcome DescribeScanVulSettingResponse::Deserialize(const string &pa
         m_clickTimeoutHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Uuids") && !rsp["Uuids"].IsNull())
+    {
+        if (!rsp["Uuids"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Uuids` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Uuids"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_uuids.push_back((*itr).GetString());
+        }
+        m_uuidsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -240,6 +254,19 @@ string DescribeScanVulSettingResponse::ToJsonString() const
         string key = "ClickTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clickTimeout, allocator);
+    }
+
+    if (m_uuidsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuids";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_uuids.begin(); itr != m_uuids.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -342,6 +369,16 @@ uint64_t DescribeScanVulSettingResponse::GetClickTimeout() const
 bool DescribeScanVulSettingResponse::ClickTimeoutHasBeenSet() const
 {
     return m_clickTimeoutHasBeenSet;
+}
+
+vector<string> DescribeScanVulSettingResponse::GetUuids() const
+{
+    return m_uuids;
+}
+
+bool DescribeScanVulSettingResponse::UuidsHasBeenSet() const
+{
+    return m_uuidsHasBeenSet;
 }
 
 

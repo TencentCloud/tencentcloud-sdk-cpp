@@ -26,7 +26,8 @@ using namespace std;
 DescribeTelCallInfoResponse::DescribeTelCallInfoResponse() :
     m_telCallOutCountHasBeenSet(false),
     m_telCallInCountHasBeenSet(false),
-    m_seatUsedCountHasBeenSet(false)
+    m_seatUsedCountHasBeenSet(false),
+    m_voipCallInCountHasBeenSet(false)
 {
 }
 
@@ -94,6 +95,16 @@ CoreInternalOutcome DescribeTelCallInfoResponse::Deserialize(const string &paylo
         m_seatUsedCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("VoipCallInCount") && !rsp["VoipCallInCount"].IsNull())
+    {
+        if (!rsp["VoipCallInCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `VoipCallInCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_voipCallInCount = rsp["VoipCallInCount"].GetInt64();
+        m_voipCallInCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribeTelCallInfoResponse::ToJsonString() const
         string key = "SeatUsedCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_seatUsedCount, allocator);
+    }
+
+    if (m_voipCallInCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VoipCallInCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_voipCallInCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -168,6 +187,16 @@ int64_t DescribeTelCallInfoResponse::GetSeatUsedCount() const
 bool DescribeTelCallInfoResponse::SeatUsedCountHasBeenSet() const
 {
     return m_seatUsedCountHasBeenSet;
+}
+
+int64_t DescribeTelCallInfoResponse::GetVoipCallInCount() const
+{
+    return m_voipCallInCount;
+}
+
+bool DescribeTelCallInfoResponse::VoipCallInCountHasBeenSet() const
+{
+    return m_voipCallInCountHasBeenSet;
 }
 
 

@@ -44,14 +44,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询条件过滤器
-                     * @return Filters 查询条件过滤器
+                     * 获取查询条件过滤器，支持的查询条件如下：
+instanceIds - 实例ID
+instanceName - 实例名称
+                     * @return Filters 查询条件过滤器，支持的查询条件如下：
+instanceIds - 实例ID
+instanceName - 实例名称
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置查询条件过滤器
-                     * @param Filters 查询条件过滤器
+                     * 设置查询条件过滤器，支持的查询条件如下：
+instanceIds - 实例ID
+instanceName - 实例名称
+                     * @param Filters 查询条件过滤器，支持的查询条件如下：
+instanceIds - 实例ID
+instanceName - 实例名称
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -100,7 +108,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 查询条件过滤器
+                     * 查询条件过滤器，支持的查询条件如下：
+instanceIds - 实例ID
+instanceName - 实例名称
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

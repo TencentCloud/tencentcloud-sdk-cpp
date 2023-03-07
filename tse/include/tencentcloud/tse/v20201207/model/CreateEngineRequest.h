@@ -24,6 +24,7 @@
 #include <tencentcloud/tse/v20201207/model/ApolloEnvParam.h>
 #include <tencentcloud/tse/v20201207/model/InstanceTagInfo.h>
 #include <tencentcloud/tse/v20201207/model/EngineAdmin.h>
+#include <tencentcloud/tse/v20201207/model/EngineRegionInfo.h>
 
 
 namespace TencentCloud
@@ -539,6 +540,24 @@ polarismesh - STANDARD版本
                      */
                     bool PrepaidRenewFlagHasBeenSet() const;
 
+                    /**
+                     * 获取跨地域部署的引擎地域配置详情
+                     * @return EngineRegionInfos 跨地域部署的引擎地域配置详情
+                     */
+                    std::vector<EngineRegionInfo> GetEngineRegionInfos() const;
+
+                    /**
+                     * 设置跨地域部署的引擎地域配置详情
+                     * @param EngineRegionInfos 跨地域部署的引擎地域配置详情
+                     */
+                    void SetEngineRegionInfos(const std::vector<EngineRegionInfo>& _engineRegionInfos);
+
+                    /**
+                     * 判断参数 EngineRegionInfos 是否已赋值
+                     * @return EngineRegionInfos 是否已赋值
+                     */
+                    bool EngineRegionInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -686,6 +705,12 @@ polarismesh - STANDARD版本
                      */
                     int64_t m_prepaidRenewFlag;
                     bool m_prepaidRenewFlagHasBeenSet;
+
+                    /**
+                     * 跨地域部署的引擎地域配置详情
+                     */
+                    std::vector<EngineRegionInfo> m_engineRegionInfos;
+                    bool m_engineRegionInfosHasBeenSet;
 
                 };
             }

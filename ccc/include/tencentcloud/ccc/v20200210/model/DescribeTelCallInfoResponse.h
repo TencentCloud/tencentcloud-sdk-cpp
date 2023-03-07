@@ -79,6 +79,18 @@ namespace TencentCloud
                      */
                     bool SeatUsedCountHasBeenSet() const;
 
+                    /**
+                     * 获取音频套餐包消耗分钟数
+                     * @return VoipCallInCount 音频套餐包消耗分钟数
+                     */
+                    int64_t GetVoipCallInCount() const;
+
+                    /**
+                     * 判断参数 VoipCallInCount 是否已赋值
+                     * @return VoipCallInCount 是否已赋值
+                     */
+                    bool VoipCallInCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -98,6 +110,12 @@ namespace TencentCloud
                      */
                     int64_t m_seatUsedCount;
                     bool m_seatUsedCountHasBeenSet;
+
+                    /**
+                     * 音频套餐包消耗分钟数
+                     */
+                    int64_t m_voipCallInCount;
+                    bool m_voipCallInCountHasBeenSet;
 
                 };
             }

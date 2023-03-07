@@ -41,8 +41,8 @@ namespace TencentCloud
 如果需要指定B端（机构身份类型）签署人，其中ReleasedApprover需要传递的参数如下：
 ApproverNumber, OrganizationName, ApproverType必传。
 对于其他身份标识
-- 渠道子客企业指定经办人：OpenId必传，OrganizationOpenId必传；
-- 非渠道合作企业：Name、Mobile必传。
+- 子客企业指定经办人：OpenId必传，OrganizationOpenId必传；
+- 非子客企业：Name、Mobile必传。
                 */
                 class ReleasedApprover : public AbstractModel
                 {
@@ -196,14 +196,14 @@ ORGANIZATION-企业
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @return OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 获取企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * @return OrganizationOpenId 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
-                     * @param OrganizationOpenId 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 设置企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * @param OrganizationOpenId 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
@@ -215,17 +215,17 @@ ORGANIZATION-企业
 
                     /**
                      * 获取用户侧第三方id，最大长度64个字符
-当签署方为同一渠道下的员工时，该字必传
+当签署方为同一第三方应用下的员工时，该字必传
                      * @return OpenId 用户侧第三方id，最大长度64个字符
-当签署方为同一渠道下的员工时，该字必传
+当签署方为同一第三方应用下的员工时，该字必传
                      */
                     std::string GetOpenId() const;
 
                     /**
                      * 设置用户侧第三方id，最大长度64个字符
-当签署方为同一渠道下的员工时，该字必传
+当签署方为同一第三方应用下的员工时，该字必传
                      * @param OpenId 用户侧第三方id，最大长度64个字符
-当签署方为同一渠道下的员工时，该字必传
+当签署方为同一第三方应用下的员工时，该字必传
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -284,14 +284,14 @@ ORGANIZATION-企业
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 企业签署方在同一渠道下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
+                     * 企业签署方在同一第三方应用下的其他合作企业OpenId，签署方为非发起方企业场景下必传，最大长度64个字符
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
                      * 用户侧第三方id，最大长度64个字符
-当签署方为同一渠道下的员工时，该字必传
+当签署方为同一第三方应用下的员工时，该字必传
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;

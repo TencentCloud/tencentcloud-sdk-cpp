@@ -246,6 +246,28 @@ namespace TencentCloud
                      */
                     bool TopicDistributionHasBeenSet() const;
 
+                    /**
+                     * 获取每个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxQueuesPerTopic 每个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxQueuesPerTopic() const;
+
+                    /**
+                     * 设置每个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxQueuesPerTopic 每个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxQueuesPerTopic(const uint64_t& _maxQueuesPerTopic);
+
+                    /**
+                     * 判断参数 MaxQueuesPerTopic 是否已赋值
+                     * @return MaxQueuesPerTopic 是否已赋值
+                     */
+                    bool MaxQueuesPerTopicHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +335,13 @@ namespace TencentCloud
                      */
                     std::vector<RocketMQTopicDistribution> m_topicDistribution;
                     bool m_topicDistributionHasBeenSet;
+
+                    /**
+                     * 每个主题最大队列数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxQueuesPerTopic;
+                    bool m_maxQueuesPerTopicHasBeenSet;
 
                 };
             }

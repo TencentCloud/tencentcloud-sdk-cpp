@@ -556,6 +556,92 @@ CwpClient::DeleteBaselinePolicyOutcomeCallable CwpClient::DeleteBaselinePolicyCa
     return task->get_future();
 }
 
+CwpClient::DeleteBaselineRuleOutcome CwpClient::DeleteBaselineRule(const DeleteBaselineRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBaselineRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBaselineRuleResponse rsp = DeleteBaselineRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBaselineRuleOutcome(rsp);
+        else
+            return DeleteBaselineRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBaselineRuleOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DeleteBaselineRuleAsync(const DeleteBaselineRuleRequest& request, const DeleteBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBaselineRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DeleteBaselineRuleOutcomeCallable CwpClient::DeleteBaselineRuleCallable(const DeleteBaselineRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBaselineRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBaselineRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DeleteBaselineRuleIgnoreOutcome CwpClient::DeleteBaselineRuleIgnore(const DeleteBaselineRuleIgnoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBaselineRuleIgnore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBaselineRuleIgnoreResponse rsp = DeleteBaselineRuleIgnoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBaselineRuleIgnoreOutcome(rsp);
+        else
+            return DeleteBaselineRuleIgnoreOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBaselineRuleIgnoreOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DeleteBaselineRuleIgnoreAsync(const DeleteBaselineRuleIgnoreRequest& request, const DeleteBaselineRuleIgnoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBaselineRuleIgnore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DeleteBaselineRuleIgnoreOutcomeCallable CwpClient::DeleteBaselineRuleIgnoreCallable(const DeleteBaselineRuleIgnoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBaselineRuleIgnoreOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBaselineRuleIgnore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DeleteBaselineStrategyOutcome CwpClient::DeleteBaselineStrategy(const DeleteBaselineStrategyRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteBaselineStrategy");
@@ -592,6 +678,49 @@ CwpClient::DeleteBaselineStrategyOutcomeCallable CwpClient::DeleteBaselineStrate
         [this, request]()
         {
             return this->DeleteBaselineStrategy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DeleteBaselineWeakPasswordOutcome CwpClient::DeleteBaselineWeakPassword(const DeleteBaselineWeakPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBaselineWeakPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBaselineWeakPasswordResponse rsp = DeleteBaselineWeakPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBaselineWeakPasswordOutcome(rsp);
+        else
+            return DeleteBaselineWeakPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBaselineWeakPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DeleteBaselineWeakPasswordAsync(const DeleteBaselineWeakPasswordRequest& request, const DeleteBaselineWeakPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBaselineWeakPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DeleteBaselineWeakPasswordOutcomeCallable CwpClient::DeleteBaselineWeakPasswordCallable(const DeleteBaselineWeakPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBaselineWeakPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBaselineWeakPassword(request);
         }
     );
 
@@ -3179,6 +3308,135 @@ CwpClient::DescribeBaselineDetailOutcomeCallable CwpClient::DescribeBaselineDeta
     return task->get_future();
 }
 
+CwpClient::DescribeBaselineDetectListOutcome CwpClient::DescribeBaselineDetectList(const DescribeBaselineDetectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineDetectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineDetectListResponse rsp = DescribeBaselineDetectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineDetectListOutcome(rsp);
+        else
+            return DescribeBaselineDetectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineDetectListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineDetectListAsync(const DescribeBaselineDetectListRequest& request, const DescribeBaselineDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineDetectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineDetectListOutcomeCallable CwpClient::DescribeBaselineDetectListCallable(const DescribeBaselineDetectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineDetectListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineDetectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineDetectOverviewOutcome CwpClient::DescribeBaselineDetectOverview(const DescribeBaselineDetectOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineDetectOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineDetectOverviewResponse rsp = DescribeBaselineDetectOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineDetectOverviewOutcome(rsp);
+        else
+            return DescribeBaselineDetectOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineDetectOverviewOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineDetectOverviewAsync(const DescribeBaselineDetectOverviewRequest& request, const DescribeBaselineDetectOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineDetectOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineDetectOverviewOutcomeCallable CwpClient::DescribeBaselineDetectOverviewCallable(const DescribeBaselineDetectOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineDetectOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineDetectOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineDownloadListOutcome CwpClient::DescribeBaselineDownloadList(const DescribeBaselineDownloadListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineDownloadList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineDownloadListResponse rsp = DescribeBaselineDownloadListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineDownloadListOutcome(rsp);
+        else
+            return DescribeBaselineDownloadListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineDownloadListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineDownloadListAsync(const DescribeBaselineDownloadListRequest& request, const DescribeBaselineDownloadListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineDownloadList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineDownloadListOutcomeCallable CwpClient::DescribeBaselineDownloadListCallable(const DescribeBaselineDownloadListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineDownloadListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineDownloadList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeBaselineEffectHostListOutcome CwpClient::DescribeBaselineEffectHostList(const DescribeBaselineEffectHostListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBaselineEffectHostList");
@@ -3222,6 +3480,49 @@ CwpClient::DescribeBaselineEffectHostListOutcomeCallable CwpClient::DescribeBase
     return task->get_future();
 }
 
+CwpClient::DescribeBaselineFixListOutcome CwpClient::DescribeBaselineFixList(const DescribeBaselineFixListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineFixList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineFixListResponse rsp = DescribeBaselineFixListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineFixListOutcome(rsp);
+        else
+            return DescribeBaselineFixListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineFixListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineFixListAsync(const DescribeBaselineFixListRequest& request, const DescribeBaselineFixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineFixList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineFixListOutcomeCallable CwpClient::DescribeBaselineFixListCallable(const DescribeBaselineFixListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineFixListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineFixList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeBaselineHostDetectListOutcome CwpClient::DescribeBaselineHostDetectList(const DescribeBaselineHostDetectListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBaselineHostDetectList");
@@ -3258,6 +3559,92 @@ CwpClient::DescribeBaselineHostDetectListOutcomeCallable CwpClient::DescribeBase
         [this, request]()
         {
             return this->DescribeBaselineHostDetectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineHostIgnoreListOutcome CwpClient::DescribeBaselineHostIgnoreList(const DescribeBaselineHostIgnoreListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineHostIgnoreList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineHostIgnoreListResponse rsp = DescribeBaselineHostIgnoreListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineHostIgnoreListOutcome(rsp);
+        else
+            return DescribeBaselineHostIgnoreListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineHostIgnoreListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineHostIgnoreListAsync(const DescribeBaselineHostIgnoreListRequest& request, const DescribeBaselineHostIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineHostIgnoreList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineHostIgnoreListOutcomeCallable CwpClient::DescribeBaselineHostIgnoreListCallable(const DescribeBaselineHostIgnoreListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineHostIgnoreListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineHostIgnoreList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineHostRiskTopOutcome CwpClient::DescribeBaselineHostRiskTop(const DescribeBaselineHostRiskTopRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineHostRiskTop");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineHostRiskTopResponse rsp = DescribeBaselineHostRiskTopResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineHostRiskTopOutcome(rsp);
+        else
+            return DescribeBaselineHostRiskTopOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineHostRiskTopOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineHostRiskTopAsync(const DescribeBaselineHostRiskTopRequest& request, const DescribeBaselineHostRiskTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineHostRiskTop(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineHostRiskTopOutcomeCallable CwpClient::DescribeBaselineHostRiskTopCallable(const DescribeBaselineHostRiskTopRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineHostRiskTopOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineHostRiskTop(request);
         }
     );
 
@@ -3351,6 +3738,92 @@ CwpClient::DescribeBaselineItemDetectListOutcomeCallable CwpClient::DescribeBase
     return task->get_future();
 }
 
+CwpClient::DescribeBaselineItemIgnoreListOutcome CwpClient::DescribeBaselineItemIgnoreList(const DescribeBaselineItemIgnoreListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineItemIgnoreList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineItemIgnoreListResponse rsp = DescribeBaselineItemIgnoreListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineItemIgnoreListOutcome(rsp);
+        else
+            return DescribeBaselineItemIgnoreListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineItemIgnoreListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineItemIgnoreListAsync(const DescribeBaselineItemIgnoreListRequest& request, const DescribeBaselineItemIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineItemIgnoreList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineItemIgnoreListOutcomeCallable CwpClient::DescribeBaselineItemIgnoreListCallable(const DescribeBaselineItemIgnoreListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemIgnoreListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineItemIgnoreList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineItemInfoOutcome CwpClient::DescribeBaselineItemInfo(const DescribeBaselineItemInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineItemInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineItemInfoResponse rsp = DescribeBaselineItemInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineItemInfoOutcome(rsp);
+        else
+            return DescribeBaselineItemInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineItemInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineItemInfoAsync(const DescribeBaselineItemInfoRequest& request, const DescribeBaselineItemInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineItemInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineItemInfoOutcomeCallable CwpClient::DescribeBaselineItemInfoCallable(const DescribeBaselineItemInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineItemInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeBaselineItemListOutcome CwpClient::DescribeBaselineItemList(const DescribeBaselineItemListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBaselineItemList");
@@ -3387,6 +3860,49 @@ CwpClient::DescribeBaselineItemListOutcomeCallable CwpClient::DescribeBaselineIt
         [this, request]()
         {
             return this->DescribeBaselineItemList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineItemRiskTopOutcome CwpClient::DescribeBaselineItemRiskTop(const DescribeBaselineItemRiskTopRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineItemRiskTop");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineItemRiskTopResponse rsp = DescribeBaselineItemRiskTopResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineItemRiskTopOutcome(rsp);
+        else
+            return DescribeBaselineItemRiskTopOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineItemRiskTopOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineItemRiskTopAsync(const DescribeBaselineItemRiskTopRequest& request, const DescribeBaselineItemRiskTopAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineItemRiskTop(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineItemRiskTopOutcomeCallable CwpClient::DescribeBaselineItemRiskTopCallable(const DescribeBaselineItemRiskTopRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineItemRiskTopOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineItemRiskTop(request);
         }
     );
 
@@ -3516,6 +4032,178 @@ CwpClient::DescribeBaselineRuleOutcomeCallable CwpClient::DescribeBaselineRuleCa
         [this, request]()
         {
             return this->DescribeBaselineRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineRuleCategoryListOutcome CwpClient::DescribeBaselineRuleCategoryList(const DescribeBaselineRuleCategoryListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineRuleCategoryList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineRuleCategoryListResponse rsp = DescribeBaselineRuleCategoryListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineRuleCategoryListOutcome(rsp);
+        else
+            return DescribeBaselineRuleCategoryListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineRuleCategoryListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineRuleCategoryListAsync(const DescribeBaselineRuleCategoryListRequest& request, const DescribeBaselineRuleCategoryListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineRuleCategoryList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineRuleCategoryListOutcomeCallable CwpClient::DescribeBaselineRuleCategoryListCallable(const DescribeBaselineRuleCategoryListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleCategoryListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineRuleCategoryList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineRuleDetectListOutcome CwpClient::DescribeBaselineRuleDetectList(const DescribeBaselineRuleDetectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineRuleDetectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineRuleDetectListResponse rsp = DescribeBaselineRuleDetectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineRuleDetectListOutcome(rsp);
+        else
+            return DescribeBaselineRuleDetectListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineRuleDetectListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineRuleDetectListAsync(const DescribeBaselineRuleDetectListRequest& request, const DescribeBaselineRuleDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineRuleDetectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineRuleDetectListOutcomeCallable CwpClient::DescribeBaselineRuleDetectListCallable(const DescribeBaselineRuleDetectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleDetectListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineRuleDetectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineRuleIgnoreListOutcome CwpClient::DescribeBaselineRuleIgnoreList(const DescribeBaselineRuleIgnoreListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineRuleIgnoreList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineRuleIgnoreListResponse rsp = DescribeBaselineRuleIgnoreListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineRuleIgnoreListOutcome(rsp);
+        else
+            return DescribeBaselineRuleIgnoreListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineRuleIgnoreListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineRuleIgnoreListAsync(const DescribeBaselineRuleIgnoreListRequest& request, const DescribeBaselineRuleIgnoreListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineRuleIgnoreList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineRuleIgnoreListOutcomeCallable CwpClient::DescribeBaselineRuleIgnoreListCallable(const DescribeBaselineRuleIgnoreListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleIgnoreListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineRuleIgnoreList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineRuleListOutcome CwpClient::DescribeBaselineRuleList(const DescribeBaselineRuleListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineRuleList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineRuleListResponse rsp = DescribeBaselineRuleListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineRuleListOutcome(rsp);
+        else
+            return DescribeBaselineRuleListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineRuleListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineRuleListAsync(const DescribeBaselineRuleListRequest& request, const DescribeBaselineRuleListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineRuleList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineRuleListOutcomeCallable CwpClient::DescribeBaselineRuleListCallable(const DescribeBaselineRuleListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineRuleListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineRuleList(request);
         }
     );
 
@@ -3688,6 +4376,49 @@ CwpClient::DescribeBaselineTopOutcomeCallable CwpClient::DescribeBaselineTopCall
         [this, request]()
         {
             return this->DescribeBaselineTop(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeBaselineWeakPasswordListOutcome CwpClient::DescribeBaselineWeakPasswordList(const DescribeBaselineWeakPasswordListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaselineWeakPasswordList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaselineWeakPasswordListResponse rsp = DescribeBaselineWeakPasswordListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaselineWeakPasswordListOutcome(rsp);
+        else
+            return DescribeBaselineWeakPasswordListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaselineWeakPasswordListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBaselineWeakPasswordListAsync(const DescribeBaselineWeakPasswordListRequest& request, const DescribeBaselineWeakPasswordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaselineWeakPasswordList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBaselineWeakPasswordListOutcomeCallable CwpClient::DescribeBaselineWeakPasswordListCallable(const DescribeBaselineWeakPasswordListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaselineWeakPasswordListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaselineWeakPasswordList(request);
         }
     );
 
@@ -4462,6 +5193,49 @@ CwpClient::DescribeIgnoreBaselineRuleOutcomeCallable CwpClient::DescribeIgnoreBa
         [this, request]()
         {
             return this->DescribeIgnoreBaselineRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeIgnoreHostAndItemConfigOutcome CwpClient::DescribeIgnoreHostAndItemConfig(const DescribeIgnoreHostAndItemConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIgnoreHostAndItemConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIgnoreHostAndItemConfigResponse rsp = DescribeIgnoreHostAndItemConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIgnoreHostAndItemConfigOutcome(rsp);
+        else
+            return DescribeIgnoreHostAndItemConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIgnoreHostAndItemConfigOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeIgnoreHostAndItemConfigAsync(const DescribeIgnoreHostAndItemConfigRequest& request, const DescribeIgnoreHostAndItemConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIgnoreHostAndItemConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeIgnoreHostAndItemConfigOutcomeCallable CwpClient::DescribeIgnoreHostAndItemConfigCallable(const DescribeIgnoreHostAndItemConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIgnoreHostAndItemConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIgnoreHostAndItemConfig(request);
         }
     );
 
@@ -7823,6 +8597,178 @@ CwpClient::ExportBaselineEffectHostListOutcomeCallable CwpClient::ExportBaseline
     return task->get_future();
 }
 
+CwpClient::ExportBaselineFixListOutcome CwpClient::ExportBaselineFixList(const ExportBaselineFixListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBaselineFixList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBaselineFixListResponse rsp = ExportBaselineFixListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBaselineFixListOutcome(rsp);
+        else
+            return ExportBaselineFixListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBaselineFixListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportBaselineFixListAsync(const ExportBaselineFixListRequest& request, const ExportBaselineFixListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBaselineFixList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportBaselineFixListOutcomeCallable CwpClient::ExportBaselineFixListCallable(const ExportBaselineFixListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBaselineFixListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBaselineFixList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportBaselineHostDetectListOutcome CwpClient::ExportBaselineHostDetectList(const ExportBaselineHostDetectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBaselineHostDetectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBaselineHostDetectListResponse rsp = ExportBaselineHostDetectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBaselineHostDetectListOutcome(rsp);
+        else
+            return ExportBaselineHostDetectListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBaselineHostDetectListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportBaselineHostDetectListAsync(const ExportBaselineHostDetectListRequest& request, const ExportBaselineHostDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBaselineHostDetectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportBaselineHostDetectListOutcomeCallable CwpClient::ExportBaselineHostDetectListCallable(const ExportBaselineHostDetectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBaselineHostDetectListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBaselineHostDetectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportBaselineItemDetectListOutcome CwpClient::ExportBaselineItemDetectList(const ExportBaselineItemDetectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBaselineItemDetectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBaselineItemDetectListResponse rsp = ExportBaselineItemDetectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBaselineItemDetectListOutcome(rsp);
+        else
+            return ExportBaselineItemDetectListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBaselineItemDetectListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportBaselineItemDetectListAsync(const ExportBaselineItemDetectListRequest& request, const ExportBaselineItemDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBaselineItemDetectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportBaselineItemDetectListOutcomeCallable CwpClient::ExportBaselineItemDetectListCallable(const ExportBaselineItemDetectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBaselineItemDetectListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBaselineItemDetectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportBaselineItemListOutcome CwpClient::ExportBaselineItemList(const ExportBaselineItemListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBaselineItemList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBaselineItemListResponse rsp = ExportBaselineItemListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBaselineItemListOutcome(rsp);
+        else
+            return ExportBaselineItemListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBaselineItemListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportBaselineItemListAsync(const ExportBaselineItemListRequest& request, const ExportBaselineItemListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBaselineItemList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportBaselineItemListOutcomeCallable CwpClient::ExportBaselineItemListCallable(const ExportBaselineItemListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBaselineItemListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBaselineItemList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::ExportBaselineListOutcome CwpClient::ExportBaselineList(const ExportBaselineListRequest &request)
 {
     auto outcome = MakeRequest(request, "ExportBaselineList");
@@ -7859,6 +8805,92 @@ CwpClient::ExportBaselineListOutcomeCallable CwpClient::ExportBaselineListCallab
         [this, request]()
         {
             return this->ExportBaselineList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportBaselineRuleDetectListOutcome CwpClient::ExportBaselineRuleDetectList(const ExportBaselineRuleDetectListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBaselineRuleDetectList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBaselineRuleDetectListResponse rsp = ExportBaselineRuleDetectListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBaselineRuleDetectListOutcome(rsp);
+        else
+            return ExportBaselineRuleDetectListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBaselineRuleDetectListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportBaselineRuleDetectListAsync(const ExportBaselineRuleDetectListRequest& request, const ExportBaselineRuleDetectListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBaselineRuleDetectList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportBaselineRuleDetectListOutcomeCallable CwpClient::ExportBaselineRuleDetectListCallable(const ExportBaselineRuleDetectListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBaselineRuleDetectListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBaselineRuleDetectList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ExportBaselineWeakPasswordListOutcome CwpClient::ExportBaselineWeakPasswordList(const ExportBaselineWeakPasswordListRequest &request)
+{
+    auto outcome = MakeRequest(request, "ExportBaselineWeakPasswordList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ExportBaselineWeakPasswordListResponse rsp = ExportBaselineWeakPasswordListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ExportBaselineWeakPasswordListOutcome(rsp);
+        else
+            return ExportBaselineWeakPasswordListOutcome(o.GetError());
+    }
+    else
+    {
+        return ExportBaselineWeakPasswordListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ExportBaselineWeakPasswordListAsync(const ExportBaselineWeakPasswordListRequest& request, const ExportBaselineWeakPasswordListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ExportBaselineWeakPasswordList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ExportBaselineWeakPasswordListOutcomeCallable CwpClient::ExportBaselineWeakPasswordListCallable(const ExportBaselineWeakPasswordListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ExportBaselineWeakPasswordListOutcome()>>(
+        [this, request]()
+        {
+            return this->ExportBaselineWeakPasswordList(request);
         }
     );
 
@@ -8683,6 +9715,49 @@ CwpClient::ExportWebPageEventListOutcomeCallable CwpClient::ExportWebPageEventLi
     return task->get_future();
 }
 
+CwpClient::FixBaselineDetectOutcome CwpClient::FixBaselineDetect(const FixBaselineDetectRequest &request)
+{
+    auto outcome = MakeRequest(request, "FixBaselineDetect");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        FixBaselineDetectResponse rsp = FixBaselineDetectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return FixBaselineDetectOutcome(rsp);
+        else
+            return FixBaselineDetectOutcome(o.GetError());
+    }
+    else
+    {
+        return FixBaselineDetectOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::FixBaselineDetectAsync(const FixBaselineDetectRequest& request, const FixBaselineDetectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->FixBaselineDetect(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::FixBaselineDetectOutcomeCallable CwpClient::FixBaselineDetectCallable(const FixBaselineDetectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<FixBaselineDetectOutcome()>>(
+        [this, request]()
+        {
+            return this->FixBaselineDetect(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::IgnoreImpactedHostsOutcome CwpClient::IgnoreImpactedHosts(const IgnoreImpactedHostsRequest &request)
 {
     auto outcome = MakeRequest(request, "IgnoreImpactedHosts");
@@ -8891,6 +9966,178 @@ CwpClient::ModifyBaselinePolicyOutcomeCallable CwpClient::ModifyBaselinePolicyCa
         [this, request]()
         {
             return this->ModifyBaselinePolicy(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ModifyBaselinePolicyStateOutcome CwpClient::ModifyBaselinePolicyState(const ModifyBaselinePolicyStateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBaselinePolicyState");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBaselinePolicyStateResponse rsp = ModifyBaselinePolicyStateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBaselinePolicyStateOutcome(rsp);
+        else
+            return ModifyBaselinePolicyStateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBaselinePolicyStateOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyBaselinePolicyStateAsync(const ModifyBaselinePolicyStateRequest& request, const ModifyBaselinePolicyStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBaselinePolicyState(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyBaselinePolicyStateOutcomeCallable CwpClient::ModifyBaselinePolicyStateCallable(const ModifyBaselinePolicyStateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBaselinePolicyStateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBaselinePolicyState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ModifyBaselineRuleOutcome CwpClient::ModifyBaselineRule(const ModifyBaselineRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBaselineRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBaselineRuleResponse rsp = ModifyBaselineRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBaselineRuleOutcome(rsp);
+        else
+            return ModifyBaselineRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBaselineRuleOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyBaselineRuleAsync(const ModifyBaselineRuleRequest& request, const ModifyBaselineRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBaselineRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyBaselineRuleOutcomeCallable CwpClient::ModifyBaselineRuleCallable(const ModifyBaselineRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBaselineRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBaselineRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ModifyBaselineRuleIgnoreOutcome CwpClient::ModifyBaselineRuleIgnore(const ModifyBaselineRuleIgnoreRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBaselineRuleIgnore");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBaselineRuleIgnoreResponse rsp = ModifyBaselineRuleIgnoreResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBaselineRuleIgnoreOutcome(rsp);
+        else
+            return ModifyBaselineRuleIgnoreOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBaselineRuleIgnoreOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyBaselineRuleIgnoreAsync(const ModifyBaselineRuleIgnoreRequest& request, const ModifyBaselineRuleIgnoreAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBaselineRuleIgnore(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyBaselineRuleIgnoreOutcomeCallable CwpClient::ModifyBaselineRuleIgnoreCallable(const ModifyBaselineRuleIgnoreRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBaselineRuleIgnoreOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBaselineRuleIgnore(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::ModifyBaselineWeakPasswordOutcome CwpClient::ModifyBaselineWeakPassword(const ModifyBaselineWeakPasswordRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBaselineWeakPassword");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBaselineWeakPasswordResponse rsp = ModifyBaselineWeakPasswordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBaselineWeakPasswordOutcome(rsp);
+        else
+            return ModifyBaselineWeakPasswordOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBaselineWeakPasswordOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::ModifyBaselineWeakPasswordAsync(const ModifyBaselineWeakPasswordRequest& request, const ModifyBaselineWeakPasswordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBaselineWeakPassword(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::ModifyBaselineWeakPasswordOutcomeCallable CwpClient::ModifyBaselineWeakPasswordCallable(const ModifyBaselineWeakPasswordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBaselineWeakPasswordOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBaselineWeakPassword(request);
         }
     );
 

@@ -144,11 +144,13 @@ namespace TencentCloud
 <li>HIGH: 高危</li>
 <li>NORMAL: 中危</li>
 <li>LOW: 低危</li>
+<li>UNKNOWNED: 可疑</li>
                      * @return SecurityLevel 安全事件等级。
 <li>RISK: 严重</li>
 <li>HIGH: 高危</li>
 <li>NORMAL: 中危</li>
 <li>LOW: 低危</li>
+<li>UNKNOWNED: 可疑</li>
                      */
                     std::string GetSecurityLevel() const;
 
@@ -158,11 +160,13 @@ namespace TencentCloud
 <li>HIGH: 高危</li>
 <li>NORMAL: 中危</li>
 <li>LOW: 低危</li>
+<li>UNKNOWNED: 可疑</li>
                      * @param SecurityLevel 安全事件等级。
 <li>RISK: 严重</li>
 <li>HIGH: 高危</li>
 <li>NORMAL: 中危</li>
 <li>LOW: 低危</li>
+<li>UNKNOWNED: 可疑</li>
                      */
                     void SetSecurityLevel(const std::string& _securityLevel);
 
@@ -209,6 +213,7 @@ namespace TencentCloud
 <li>HIGH: 高危</li>
 <li>NORMAL: 中危</li>
 <li>LOW: 低危</li>
+<li>UNKNOWNED: 可疑</li>
                      */
                     std::string m_securityLevel;
                     bool m_securityLevelHasBeenSet;

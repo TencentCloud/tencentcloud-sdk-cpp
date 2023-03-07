@@ -378,6 +378,28 @@ namespace TencentCloud
                      */
                     bool SourceNameHasBeenSet() const;
 
+                    /**
+                     * 获取策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetId() const;
+
+                    /**
+                     * 设置策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Id 策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetId(const int64_t& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -486,6 +508,13 @@ namespace TencentCloud
                      */
                     std::string m_sourceName;
                     bool m_sourceNameHasBeenSet;
+
+                    /**
+                     * 策略ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_id;
+                    bool m_idHasBeenSet;
 
                 };
             }

@@ -186,6 +186,24 @@ namespace TencentCloud
                      */
                     bool EnableScanHasBeenSet() const;
 
+                    /**
+                     * 获取为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     * @return Uuids 为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     */
+                    std::vector<std::string> GetUuids() const;
+
+                    /**
+                     * 设置为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     * @param Uuids 为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     */
+                    void SetUuids(const std::vector<std::string>& _uuids);
+
+                    /**
+                     * 判断参数 Uuids 是否已赋值
+                     * @return Uuids 是否已赋值
+                     */
+                    bool UuidsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -235,6 +253,12 @@ namespace TencentCloud
                      */
                     uint64_t m_enableScan;
                     bool m_enableScanHasBeenSet;
+
+                    /**
+                     * 为空默认扫描全部专业版、旗舰版、普惠版主机，不为空只扫描选中主机
+                     */
+                    std::vector<std::string> m_uuids;
+                    bool m_uuidsHasBeenSet;
 
                 };
             }

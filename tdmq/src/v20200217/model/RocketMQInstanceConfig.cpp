@@ -31,7 +31,8 @@ RocketMQInstanceConfig::RocketMQInstanceConfig() :
     m_configDisplayHasBeenSet(false),
     m_nodeCountHasBeenSet(false),
     m_nodeDistributionHasBeenSet(false),
-    m_topicDistributionHasBeenSet(false)
+    m_topicDistributionHasBeenSet(false),
+    m_maxQueuesPerTopicHasBeenSet(false)
 {
 }
 
@@ -170,6 +171,16 @@ CoreInternalOutcome RocketMQInstanceConfig::Deserialize(const rapidjson::Value &
         m_topicDistributionHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxQueuesPerTopic") && !value["MaxQueuesPerTopic"].IsNull())
+    {
+        if (!value["MaxQueuesPerTopic"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RocketMQInstanceConfig.MaxQueuesPerTopic` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxQueuesPerTopic = value["MaxQueuesPerTopic"].GetUint64();
+        m_maxQueuesPerTopicHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,6 +288,14 @@ void RocketMQInstanceConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_maxQueuesPerTopicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxQueuesPerTopic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxQueuesPerTopic, allocator);
     }
 
 }
@@ -456,5 +475,21 @@ void RocketMQInstanceConfig::SetTopicDistribution(const vector<RocketMQTopicDist
 bool RocketMQInstanceConfig::TopicDistributionHasBeenSet() const
 {
     return m_topicDistributionHasBeenSet;
+}
+
+uint64_t RocketMQInstanceConfig::GetMaxQueuesPerTopic() const
+{
+    return m_maxQueuesPerTopic;
+}
+
+void RocketMQInstanceConfig::SetMaxQueuesPerTopic(const uint64_t& _maxQueuesPerTopic)
+{
+    m_maxQueuesPerTopic = _maxQueuesPerTopic;
+    m_maxQueuesPerTopicHasBeenSet = true;
+}
+
+bool RocketMQInstanceConfig::MaxQueuesPerTopicHasBeenSet() const
+{
+    return m_maxQueuesPerTopicHasBeenSet;
 }
 
