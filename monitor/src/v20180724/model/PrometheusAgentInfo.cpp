@@ -20,7 +20,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Monitor::V20180724::Model;
 using namespace std;
 
-PrometheusAgentInfo::PrometheusAgentInfo()
+PrometheusAgentInfo::PrometheusAgentInfo() :
+    m_clusterTypeHasBeenSet(false),
+    m_clusterIdHasBeenSet(false),
+    m_describeHasBeenSet(false)
 {
 }
 
@@ -29,6 +32,36 @@ CoreInternalOutcome PrometheusAgentInfo::Deserialize(const rapidjson::Value &val
     string requestId = "";
 
 
+    if (value.HasMember("ClusterType") && !value["ClusterType"].IsNull())
+    {
+        if (!value["ClusterType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentInfo.ClusterType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterType = string(value["ClusterType"].GetString());
+        m_clusterTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("ClusterId") && !value["ClusterId"].IsNull())
+    {
+        if (!value["ClusterId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentInfo.ClusterId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterId = string(value["ClusterId"].GetString());
+        m_clusterIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Describe") && !value["Describe"].IsNull())
+    {
+        if (!value["Describe"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentInfo.Describe` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_describe = string(value["Describe"].GetString());
+        m_describeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +69,78 @@ CoreInternalOutcome PrometheusAgentInfo::Deserialize(const rapidjson::Value &val
 void PrometheusAgentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_describeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Describe";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_describe.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
+
+string PrometheusAgentInfo::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void PrometheusAgentInfo::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool PrometheusAgentInfo::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
+}
+
+string PrometheusAgentInfo::GetClusterId() const
+{
+    return m_clusterId;
+}
+
+void PrometheusAgentInfo::SetClusterId(const string& _clusterId)
+{
+    m_clusterId = _clusterId;
+    m_clusterIdHasBeenSet = true;
+}
+
+bool PrometheusAgentInfo::ClusterIdHasBeenSet() const
+{
+    return m_clusterIdHasBeenSet;
+}
+
+string PrometheusAgentInfo::GetDescribe() const
+{
+    return m_describe;
+}
+
+void PrometheusAgentInfo::SetDescribe(const string& _describe)
+{
+    m_describe = _describe;
+    m_describeHasBeenSet = true;
+}
+
+bool PrometheusAgentInfo::DescribeHasBeenSet() const
+{
+    return m_describeHasBeenSet;
+}
 

@@ -47,7 +47,9 @@ IntegrationTaskInfo::IntegrationTaskInfo() :
     m_executorGroupNameHasBeenSet(false),
     m_inLongManagerUrlHasBeenSet(false),
     m_inLongStreamIdHasBeenSet(false),
-    m_inLongManagerVersionHasBeenSet(false)
+    m_inLongManagerVersionHasBeenSet(false),
+    m_dataProxyUrlHasBeenSet(false),
+    m_submitHasBeenSet(false)
 {
 }
 
@@ -383,6 +385,29 @@ CoreInternalOutcome IntegrationTaskInfo::Deserialize(const rapidjson::Value &val
         m_inLongManagerVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("DataProxyUrl") && !value["DataProxyUrl"].IsNull())
+    {
+        if (!value["DataProxyUrl"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.DataProxyUrl` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DataProxyUrl"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_dataProxyUrl.push_back((*itr).GetString());
+        }
+        m_dataProxyUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("Submit") && !value["Submit"].IsNull())
+    {
+        if (!value["Submit"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntegrationTaskInfo.Submit` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_submit = value["Submit"].GetBool();
+        m_submitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -640,6 +665,27 @@ void IntegrationTaskInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "InLongManagerVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_inLongManagerVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_dataProxyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DataProxyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dataProxyUrl.begin(); itr != m_dataProxyUrl.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_submitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Submit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_submit, allocator);
     }
 
 }
@@ -1075,5 +1121,37 @@ void IntegrationTaskInfo::SetInLongManagerVersion(const string& _inLongManagerVe
 bool IntegrationTaskInfo::InLongManagerVersionHasBeenSet() const
 {
     return m_inLongManagerVersionHasBeenSet;
+}
+
+vector<string> IntegrationTaskInfo::GetDataProxyUrl() const
+{
+    return m_dataProxyUrl;
+}
+
+void IntegrationTaskInfo::SetDataProxyUrl(const vector<string>& _dataProxyUrl)
+{
+    m_dataProxyUrl = _dataProxyUrl;
+    m_dataProxyUrlHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::DataProxyUrlHasBeenSet() const
+{
+    return m_dataProxyUrlHasBeenSet;
+}
+
+bool IntegrationTaskInfo::GetSubmit() const
+{
+    return m_submit;
+}
+
+void IntegrationTaskInfo::SetSubmit(const bool& _submit)
+{
+    m_submit = _submit;
+    m_submitHasBeenSet = true;
+}
+
+bool IntegrationTaskInfo::SubmitHasBeenSet() const
+{
+    return m_submitHasBeenSet;
 }
 

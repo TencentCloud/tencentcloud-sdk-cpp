@@ -23,9 +23,9 @@ using namespace TencentCloud::Ccc::V20200210::Model;
 using namespace std;
 
 DisableCCCPhoneNumberRequest::DisableCCCPhoneNumberRequest() :
-    m_sdkAppIdHasBeenSet(false),
     m_phoneNumbersHasBeenSet(false),
-    m_disabledHasBeenSet(false)
+    m_disabledHasBeenSet(false),
+    m_sdkAppIdHasBeenSet(false)
 {
 }
 
@@ -35,14 +35,6 @@ string DisableCCCPhoneNumberRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_sdkAppIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkAppId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sdkAppId, allocator);
-    }
 
     if (m_phoneNumbersHasBeenSet)
     {
@@ -65,6 +57,14 @@ string DisableCCCPhoneNumberRequest::ToJsonString() const
         d.AddMember(iKey, m_disabled, allocator);
     }
 
+    if (m_sdkAppIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SdkAppId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sdkAppId, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -72,22 +72,6 @@ string DisableCCCPhoneNumberRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-uint64_t DisableCCCPhoneNumberRequest::GetSdkAppId() const
-{
-    return m_sdkAppId;
-}
-
-void DisableCCCPhoneNumberRequest::SetSdkAppId(const uint64_t& _sdkAppId)
-{
-    m_sdkAppId = _sdkAppId;
-    m_sdkAppIdHasBeenSet = true;
-}
-
-bool DisableCCCPhoneNumberRequest::SdkAppIdHasBeenSet() const
-{
-    return m_sdkAppIdHasBeenSet;
-}
 
 vector<string> DisableCCCPhoneNumberRequest::GetPhoneNumbers() const
 {
@@ -119,6 +103,22 @@ void DisableCCCPhoneNumberRequest::SetDisabled(const int64_t& _disabled)
 bool DisableCCCPhoneNumberRequest::DisabledHasBeenSet() const
 {
     return m_disabledHasBeenSet;
+}
+
+uint64_t DisableCCCPhoneNumberRequest::GetSdkAppId() const
+{
+    return m_sdkAppId;
+}
+
+void DisableCCCPhoneNumberRequest::SetSdkAppId(const uint64_t& _sdkAppId)
+{
+    m_sdkAppId = _sdkAppId;
+    m_sdkAppIdHasBeenSet = true;
+}
+
+bool DisableCCCPhoneNumberRequest::SdkAppIdHasBeenSet() const
+{
+    return m_sdkAppIdHasBeenSet;
 }
 
 

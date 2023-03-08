@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/wedata/v20210820/model/AlarmIndicatorInfo.h>
 
 
 namespace TencentCloud
@@ -119,28 +120,6 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
-                     * @return AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
-                     */
-                    uint64_t GetAlarmIndicator() const;
-
-                    /**
-                     * 设置告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
-                     * @param AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
-                     */
-                    void SetAlarmIndicator(const uint64_t& _alarmIndicator);
-
-                    /**
-                     * 判断参数 AlarmIndicator 是否已赋值
-                     * @return AlarmIndicator 是否已赋值
-                     */
-                    bool AlarmIndicatorHasBeenSet() const;
-
-                    /**
                      * 获取告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）
                      * @return AlarmWay 告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）
                      */
@@ -159,24 +138,6 @@ namespace TencentCloud
                     bool AlarmWayHasBeenSet() const;
 
                     /**
-                     * 获取告警接收人ID，多个用逗号隔开
-                     * @return AlarmRecipientId 告警接收人ID，多个用逗号隔开
-                     */
-                    std::string GetAlarmRecipientId() const;
-
-                    /**
-                     * 设置告警接收人ID，多个用逗号隔开
-                     * @param AlarmRecipientId 告警接收人ID，多个用逗号隔开
-                     */
-                    void SetAlarmRecipientId(const std::string& _alarmRecipientId);
-
-                    /**
-                     * 判断参数 AlarmRecipientId 是否已赋值
-                     * @return AlarmRecipientId 是否已赋值
-                     */
-                    bool AlarmRecipientIdHasBeenSet() const;
-
-                    /**
                      * 获取任务类型(201表示实时，202表示离线)
                      * @return TaskType 任务类型(201表示实时，202表示离线)
                      */
@@ -193,28 +154,6 @@ namespace TencentCloud
                      * @return TaskType 是否已赋值
                      */
                     bool TaskTypeHasBeenSet() const;
-
-                    /**
-                     * 获取告警接收人昵称，多个用逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AlarmRecipientName 告警接收人昵称，多个用逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetAlarmRecipientName() const;
-
-                    /**
-                     * 设置告警接收人昵称，多个用逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AlarmRecipientName 告警接收人昵称，多个用逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetAlarmRecipientName(const std::string& _alarmRecipientName);
-
-                    /**
-                     * 判断参数 AlarmRecipientName 是否已赋值
-                     * @return AlarmRecipientName 是否已赋值
-                     */
-                    bool AlarmRecipientNameHasBeenSet() const;
 
                     /**
                      * 获取主键ID
@@ -255,6 +194,28 @@ namespace TencentCloud
                      * @return RegularId 是否已赋值
                      */
                     bool RegularIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
+                     * @return AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
+                     */
+                    uint64_t GetAlarmIndicator() const;
+
+                    /**
+                     * 设置告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
+                     * @param AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
+                     */
+                    void SetAlarmIndicator(const uint64_t& _alarmIndicator);
+
+                    /**
+                     * 判断参数 AlarmIndicator 是否已赋值
+                     * @return AlarmIndicator 是否已赋值
+                     */
+                    bool AlarmIndicatorHasBeenSet() const;
 
                     /**
                      * 获取指标阈值(1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败)
@@ -301,6 +262,24 @@ namespace TencentCloud
                     bool EstimatedTimeHasBeenSet() const;
 
                     /**
+                     * 获取告警接收人ID，多个用逗号隔开
+                     * @return AlarmRecipientId 告警接收人ID，多个用逗号隔开
+                     */
+                    std::string GetAlarmRecipientId() const;
+
+                    /**
+                     * 设置告警接收人ID，多个用逗号隔开
+                     * @param AlarmRecipientId 告警接收人ID，多个用逗号隔开
+                     */
+                    void SetAlarmRecipientId(const std::string& _alarmRecipientId);
+
+                    /**
+                     * 判断参数 AlarmRecipientId 是否已赋值
+                     * @return AlarmRecipientId 是否已赋值
+                     */
+                    bool AlarmRecipientIdHasBeenSet() const;
+
+                    /**
                      * 获取项目ID
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProjectId 项目ID
@@ -343,6 +322,28 @@ namespace TencentCloud
                      * @return Creater 是否已赋值
                      */
                     bool CreaterHasBeenSet() const;
+
+                    /**
+                     * 获取告警接收人昵称，多个用逗号隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmRecipientName 告警接收人昵称，多个用逗号隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAlarmRecipientName() const;
+
+                    /**
+                     * 设置告警接收人昵称，多个用逗号隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlarmRecipientName 告警接收人昵称，多个用逗号隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlarmRecipientName(const std::string& _alarmRecipientName);
+
+                    /**
+                     * 判断参数 AlarmRecipientName 是否已赋值
+                     * @return AlarmRecipientName 是否已赋值
+                     */
+                    bool AlarmRecipientNameHasBeenSet() const;
 
                     /**
                      * 获取告警指标描述
@@ -432,6 +433,72 @@ namespace TencentCloud
                      */
                     bool NodeNameHasBeenSet() const;
 
+                    /**
+                     * 获取指标列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmIndicatorInfos 指标列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmIndicatorInfo> GetAlarmIndicatorInfos() const;
+
+                    /**
+                     * 设置指标列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlarmIndicatorInfos 指标列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlarmIndicatorInfos(const std::vector<AlarmIndicatorInfo>& _alarmIndicatorInfos);
+
+                    /**
+                     * 判断参数 AlarmIndicatorInfos 是否已赋值
+                     * @return AlarmIndicatorInfos 是否已赋值
+                     */
+                    bool AlarmIndicatorInfosHasBeenSet() const;
+
+                    /**
+                     * 获取告警接收人类型，0指定人员；1任务责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmRecipientType 告警接收人类型，0指定人员；1任务责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetAlarmRecipientType() const;
+
+                    /**
+                     * 设置告警接收人类型，0指定人员；1任务责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlarmRecipientType 告警接收人类型，0指定人员；1任务责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlarmRecipientType(const uint64_t& _alarmRecipientType);
+
+                    /**
+                     * 判断参数 AlarmRecipientType 是否已赋值
+                     * @return AlarmRecipientType 是否已赋值
+                     */
+                    bool AlarmRecipientTypeHasBeenSet() const;
+
+                    /**
+                     * 获取企业微信群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WeComHook 企业微信群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetWeComHook() const;
+
+                    /**
+                     * 设置企业微信群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WeComHook 企业微信群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWeComHook(const std::string& _weComHook);
+
+                    /**
+                     * 判断参数 WeComHook 是否已赋值
+                     * @return WeComHook 是否已赋值
+                     */
+                    bool WeComHookHasBeenSet() const;
+
                 private:
 
                     /**
@@ -459,36 +526,16 @@ namespace TencentCloud
                     bool m_alarmLevelHasBeenSet;
 
                     /**
-                     * 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
-                     */
-                    uint64_t m_alarmIndicator;
-                    bool m_alarmIndicatorHasBeenSet;
-
-                    /**
                      * 告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）
                      */
                     std::string m_alarmWay;
                     bool m_alarmWayHasBeenSet;
 
                     /**
-                     * 告警接收人ID，多个用逗号隔开
-                     */
-                    std::string m_alarmRecipientId;
-                    bool m_alarmRecipientIdHasBeenSet;
-
-                    /**
                      * 任务类型(201表示实时，202表示离线)
                      */
                     uint64_t m_taskType;
                     bool m_taskTypeHasBeenSet;
-
-                    /**
-                     * 告警接收人昵称，多个用逗号隔开
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_alarmRecipientName;
-                    bool m_alarmRecipientNameHasBeenSet;
 
                     /**
                      * 主键ID
@@ -502,6 +549,13 @@ namespace TencentCloud
                      */
                     std::string m_regularId;
                     bool m_regularIdHasBeenSet;
+
+                    /**
+                     * 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+，4写入速度，5读取速度，6读取吞吐，7写入吞吐, 8脏数据字节数，9脏数据条数
+                     */
+                    uint64_t m_alarmIndicator;
+                    bool m_alarmIndicatorHasBeenSet;
 
                     /**
                      * 指标阈值(1表示离线任务第一次运行失败，2表示离线任务所有重试完成后失败)
@@ -518,6 +572,12 @@ namespace TencentCloud
                     bool m_estimatedTimeHasBeenSet;
 
                     /**
+                     * 告警接收人ID，多个用逗号隔开
+                     */
+                    std::string m_alarmRecipientId;
+                    bool m_alarmRecipientIdHasBeenSet;
+
+                    /**
                      * 项目ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -530,6 +590,13 @@ namespace TencentCloud
                      */
                     std::string m_creater;
                     bool m_createrHasBeenSet;
+
+                    /**
+                     * 告警接收人昵称，多个用逗号隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_alarmRecipientName;
+                    bool m_alarmRecipientNameHasBeenSet;
 
                     /**
                      * 告警指标描述
@@ -558,6 +625,27 @@ namespace TencentCloud
                      */
                     std::string m_nodeName;
                     bool m_nodeNameHasBeenSet;
+
+                    /**
+                     * 指标列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<AlarmIndicatorInfo> m_alarmIndicatorInfos;
+                    bool m_alarmIndicatorInfosHasBeenSet;
+
+                    /**
+                     * 告警接收人类型，0指定人员；1任务责任人
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_alarmRecipientType;
+                    bool m_alarmRecipientTypeHasBeenSet;
+
+                    /**
+                     * 企业微信群Hook地址，多个hook地址使用,隔开
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_weComHook;
+                    bool m_weComHookHasBeenSet;
 
                 };
             }

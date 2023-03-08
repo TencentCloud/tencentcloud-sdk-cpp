@@ -26,10 +26,10 @@ AlarmEventInfo::AlarmEventInfo() :
     m_taskIdHasBeenSet(false),
     m_regularNameHasBeenSet(false),
     m_alarmLevelHasBeenSet(false),
-    m_alarmIndicatorHasBeenSet(false),
     m_alarmWayHasBeenSet(false),
     m_alarmRecipientIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
+    m_alarmIndicatorHasBeenSet(false),
     m_alarmIndicatorDescHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
     m_estimatedTimeHasBeenSet(false),
@@ -96,16 +96,6 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         m_alarmLevelHasBeenSet = true;
     }
 
-    if (value.HasMember("AlarmIndicator") && !value["AlarmIndicator"].IsNull())
-    {
-        if (!value["AlarmIndicator"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.AlarmIndicator` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_alarmIndicator = value["AlarmIndicator"].GetUint64();
-        m_alarmIndicatorHasBeenSet = true;
-    }
-
     if (value.HasMember("AlarmWay") && !value["AlarmWay"].IsNull())
     {
         if (!value["AlarmWay"].IsUint64())
@@ -134,6 +124,16 @@ CoreInternalOutcome AlarmEventInfo::Deserialize(const rapidjson::Value &value)
         }
         m_projectId = string(value["ProjectId"].GetString());
         m_projectIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmIndicator") && !value["AlarmIndicator"].IsNull())
+    {
+        if (!value["AlarmIndicator"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmEventInfo.AlarmIndicator` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmIndicator = value["AlarmIndicator"].GetUint64();
+        m_alarmIndicatorHasBeenSet = true;
     }
 
     if (value.HasMember("AlarmIndicatorDesc") && !value["AlarmIndicatorDesc"].IsNull())
@@ -263,14 +263,6 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, m_alarmLevel, allocator);
     }
 
-    if (m_alarmIndicatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AlarmIndicator";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_alarmIndicator, allocator);
-    }
-
     if (m_alarmWayHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -293,6 +285,14 @@ void AlarmEventInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_projectId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmIndicatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmIndicator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmIndicator, allocator);
     }
 
     if (m_alarmIndicatorDescHasBeenSet)
@@ -442,22 +442,6 @@ bool AlarmEventInfo::AlarmLevelHasBeenSet() const
     return m_alarmLevelHasBeenSet;
 }
 
-uint64_t AlarmEventInfo::GetAlarmIndicator() const
-{
-    return m_alarmIndicator;
-}
-
-void AlarmEventInfo::SetAlarmIndicator(const uint64_t& _alarmIndicator)
-{
-    m_alarmIndicator = _alarmIndicator;
-    m_alarmIndicatorHasBeenSet = true;
-}
-
-bool AlarmEventInfo::AlarmIndicatorHasBeenSet() const
-{
-    return m_alarmIndicatorHasBeenSet;
-}
-
 uint64_t AlarmEventInfo::GetAlarmWay() const
 {
     return m_alarmWay;
@@ -504,6 +488,22 @@ void AlarmEventInfo::SetProjectId(const string& _projectId)
 bool AlarmEventInfo::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+uint64_t AlarmEventInfo::GetAlarmIndicator() const
+{
+    return m_alarmIndicator;
+}
+
+void AlarmEventInfo::SetAlarmIndicator(const uint64_t& _alarmIndicator)
+{
+    m_alarmIndicator = _alarmIndicator;
+    m_alarmIndicatorHasBeenSet = true;
+}
+
+bool AlarmEventInfo::AlarmIndicatorHasBeenSet() const
+{
+    return m_alarmIndicatorHasBeenSet;
 }
 
 string AlarmEventInfo::GetAlarmIndicatorDesc() const

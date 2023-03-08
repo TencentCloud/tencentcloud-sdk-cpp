@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/McuWaterMarkImage.h>
+#include <tencentcloud/trtc/v20190722/model/McuWaterMarkText.h>
 
 
 namespace TencentCloud
@@ -48,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印类型，0为图片（默认）。
-                     * @return WaterMarkType 水印类型，0为图片（默认）。
+                     * 获取水印类型，0为图片（默认），1为文字。
+                     * @return WaterMarkType 水印类型，0为图片（默认），1为文字。
                      */
                     uint64_t GetWaterMarkType() const;
 
                     /**
-                     * 设置水印类型，0为图片（默认）。
-                     * @param WaterMarkType 水印类型，0为图片（默认）。
+                     * 设置水印类型，0为图片（默认），1为文字。
+                     * @param WaterMarkType 水印类型，0为图片（默认），1为文字。
                      */
                     void SetWaterMarkType(const uint64_t& _waterMarkType);
 
@@ -83,10 +84,32 @@ namespace TencentCloud
                      */
                     bool WaterMarkImageHasBeenSet() const;
 
+                    /**
+                     * 获取文字水印参数。WaterMarkType为1指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaterMarkText 文字水印参数。WaterMarkType为1指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    McuWaterMarkText GetWaterMarkText() const;
+
+                    /**
+                     * 设置文字水印参数。WaterMarkType为1指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WaterMarkText 文字水印参数。WaterMarkType为1指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWaterMarkText(const McuWaterMarkText& _waterMarkText);
+
+                    /**
+                     * 判断参数 WaterMarkText 是否已赋值
+                     * @return WaterMarkText 是否已赋值
+                     */
+                    bool WaterMarkTextHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 水印类型，0为图片（默认）。
+                     * 水印类型，0为图片（默认），1为文字。
                      */
                     uint64_t m_waterMarkType;
                     bool m_waterMarkTypeHasBeenSet;
@@ -96,6 +119,13 @@ namespace TencentCloud
                      */
                     McuWaterMarkImage m_waterMarkImage;
                     bool m_waterMarkImageHasBeenSet;
+
+                    /**
+                     * 文字水印参数。WaterMarkType为1指定。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    McuWaterMarkText m_waterMarkText;
+                    bool m_waterMarkTextHasBeenSet;
 
                 };
             }

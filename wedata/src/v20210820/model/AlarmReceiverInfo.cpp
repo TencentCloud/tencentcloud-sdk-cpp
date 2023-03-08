@@ -28,7 +28,8 @@ AlarmReceiverInfo::AlarmReceiverInfo() :
     m_wechatHasBeenSet(false),
     m_voiceHasBeenSet(false),
     m_wecomHasBeenSet(false),
-    m_httpHasBeenSet(false)
+    m_httpHasBeenSet(false),
+    m_wecomGroupHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,16 @@ CoreInternalOutcome AlarmReceiverInfo::Deserialize(const rapidjson::Value &value
         m_httpHasBeenSet = true;
     }
 
+    if (value.HasMember("WecomGroup") && !value["WecomGroup"].IsNull())
+    {
+        if (!value["WecomGroup"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AlarmReceiverInfo.WecomGroup` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_wecomGroup = value["WecomGroup"].GetUint64();
+        m_wecomGroupHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +197,14 @@ void AlarmReceiverInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "Http";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_http, allocator);
+    }
+
+    if (m_wecomGroupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WecomGroup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_wecomGroup, allocator);
     }
 
 }
@@ -317,5 +336,21 @@ void AlarmReceiverInfo::SetHttp(const uint64_t& _http)
 bool AlarmReceiverInfo::HttpHasBeenSet() const
 {
     return m_httpHasBeenSet;
+}
+
+uint64_t AlarmReceiverInfo::GetWecomGroup() const
+{
+    return m_wecomGroup;
+}
+
+void AlarmReceiverInfo::SetWecomGroup(const uint64_t& _wecomGroup)
+{
+    m_wecomGroup = _wecomGroup;
+    m_wecomGroupHasBeenSet = true;
+}
+
+bool AlarmReceiverInfo::WecomGroupHasBeenSet() const
+{
+    return m_wecomGroupHasBeenSet;
 }
 

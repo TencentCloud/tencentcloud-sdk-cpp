@@ -90,6 +90,50 @@ namespace TencentCloud
                      */
                     bool TableNameHasBeenSet() const;
 
+                    /**
+                     * 获取表databaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginDatabaseName 表databaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOriginDatabaseName() const;
+
+                    /**
+                     * 设置表databaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginDatabaseName 表databaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginDatabaseName(const std::string& _originDatabaseName);
+
+                    /**
+                     * 判断参数 OriginDatabaseName 是否已赋值
+                     * @return OriginDatabaseName 是否已赋值
+                     */
+                    bool OriginDatabaseNameHasBeenSet() const;
+
+                    /**
+                     * 获取表schemaName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OriginSchemaName 表schemaName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetOriginSchemaName() const;
+
+                    /**
+                     * 设置表schemaName
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OriginSchemaName 表schemaName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOriginSchemaName(const std::string& _originSchemaName);
+
+                    /**
+                     * 判断参数 OriginSchemaName 是否已赋值
+                     * @return OriginSchemaName 是否已赋值
+                     */
+                    bool OriginSchemaNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -105,6 +149,20 @@ namespace TencentCloud
                      */
                     std::string m_tableName;
                     bool m_tableNameHasBeenSet;
+
+                    /**
+                     * 表databaseName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originDatabaseName;
+                    bool m_originDatabaseNameHasBeenSet;
+
+                    /**
+                     * 表schemaName
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_originSchemaName;
+                    bool m_originSchemaNameHasBeenSet;
 
                 };
             }

@@ -22,7 +22,8 @@ using namespace std;
 
 McuWaterMarkParams::McuWaterMarkParams() :
     m_waterMarkTypeHasBeenSet(false),
-    m_waterMarkImageHasBeenSet(false)
+    m_waterMarkImageHasBeenSet(false),
+    m_waterMarkTextHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome McuWaterMarkParams::Deserialize(const rapidjson::Value &valu
         m_waterMarkImageHasBeenSet = true;
     }
 
+    if (value.HasMember("WaterMarkText") && !value["WaterMarkText"].IsNull())
+    {
+        if (!value["WaterMarkText"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuWaterMarkParams.WaterMarkText` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_waterMarkText.Deserialize(value["WaterMarkText"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_waterMarkTextHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void McuWaterMarkParams::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_waterMarkImage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_waterMarkTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaterMarkText";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_waterMarkText.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void McuWaterMarkParams::SetWaterMarkImage(const McuWaterMarkImage& _waterMarkIm
 bool McuWaterMarkParams::WaterMarkImageHasBeenSet() const
 {
     return m_waterMarkImageHasBeenSet;
+}
+
+McuWaterMarkText McuWaterMarkParams::GetWaterMarkText() const
+{
+    return m_waterMarkText;
+}
+
+void McuWaterMarkParams::SetWaterMarkText(const McuWaterMarkText& _waterMarkText)
+{
+    m_waterMarkText = _waterMarkText;
+    m_waterMarkTextHasBeenSet = true;
+}
+
+bool McuWaterMarkParams::WaterMarkTextHasBeenSet() const
+{
+    return m_waterMarkTextHasBeenSet;
 }
 

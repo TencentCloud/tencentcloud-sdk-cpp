@@ -25,21 +25,24 @@ TaskAlarmInfo::TaskAlarmInfo() :
     m_regularNameHasBeenSet(false),
     m_regularStatusHasBeenSet(false),
     m_alarmLevelHasBeenSet(false),
-    m_alarmIndicatorHasBeenSet(false),
     m_alarmWayHasBeenSet(false),
-    m_alarmRecipientIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false),
-    m_alarmRecipientNameHasBeenSet(false),
     m_idHasBeenSet(false),
     m_regularIdHasBeenSet(false),
+    m_alarmIndicatorHasBeenSet(false),
     m_triggerTypeHasBeenSet(false),
     m_estimatedTimeHasBeenSet(false),
+    m_alarmRecipientIdHasBeenSet(false),
     m_projectIdHasBeenSet(false),
     m_createrHasBeenSet(false),
+    m_alarmRecipientNameHasBeenSet(false),
     m_alarmIndicatorDescHasBeenSet(false),
     m_operatorHasBeenSet(false),
     m_nodeIdHasBeenSet(false),
-    m_nodeNameHasBeenSet(false)
+    m_nodeNameHasBeenSet(false),
+    m_alarmIndicatorInfosHasBeenSet(false),
+    m_alarmRecipientTypeHasBeenSet(false),
+    m_weComHookHasBeenSet(false)
 {
 }
 
@@ -88,16 +91,6 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_alarmLevelHasBeenSet = true;
     }
 
-    if (value.HasMember("AlarmIndicator") && !value["AlarmIndicator"].IsNull())
-    {
-        if (!value["AlarmIndicator"].IsUint64())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmIndicator` IsUint64=false incorrectly").SetRequestId(requestId));
-        }
-        m_alarmIndicator = value["AlarmIndicator"].GetUint64();
-        m_alarmIndicatorHasBeenSet = true;
-    }
-
     if (value.HasMember("AlarmWay") && !value["AlarmWay"].IsNull())
     {
         if (!value["AlarmWay"].IsString())
@@ -108,16 +101,6 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_alarmWayHasBeenSet = true;
     }
 
-    if (value.HasMember("AlarmRecipientId") && !value["AlarmRecipientId"].IsNull())
-    {
-        if (!value["AlarmRecipientId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmRecipientId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_alarmRecipientId = string(value["AlarmRecipientId"].GetString());
-        m_alarmRecipientIdHasBeenSet = true;
-    }
-
     if (value.HasMember("TaskType") && !value["TaskType"].IsNull())
     {
         if (!value["TaskType"].IsUint64())
@@ -126,16 +109,6 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         }
         m_taskType = value["TaskType"].GetUint64();
         m_taskTypeHasBeenSet = true;
-    }
-
-    if (value.HasMember("AlarmRecipientName") && !value["AlarmRecipientName"].IsNull())
-    {
-        if (!value["AlarmRecipientName"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmRecipientName` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_alarmRecipientName = string(value["AlarmRecipientName"].GetString());
-        m_alarmRecipientNameHasBeenSet = true;
     }
 
     if (value.HasMember("Id") && !value["Id"].IsNull())
@@ -158,6 +131,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_regularIdHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmIndicator") && !value["AlarmIndicator"].IsNull())
+    {
+        if (!value["AlarmIndicator"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmIndicator` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmIndicator = value["AlarmIndicator"].GetUint64();
+        m_alarmIndicatorHasBeenSet = true;
+    }
+
     if (value.HasMember("TriggerType") && !value["TriggerType"].IsNull())
     {
         if (!value["TriggerType"].IsUint64())
@@ -178,6 +161,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_estimatedTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmRecipientId") && !value["AlarmRecipientId"].IsNull())
+    {
+        if (!value["AlarmRecipientId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmRecipientId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmRecipientId = string(value["AlarmRecipientId"].GetString());
+        m_alarmRecipientIdHasBeenSet = true;
+    }
+
     if (value.HasMember("ProjectId") && !value["ProjectId"].IsNull())
     {
         if (!value["ProjectId"].IsString())
@@ -196,6 +189,16 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         }
         m_creater = string(value["Creater"].GetString());
         m_createrHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmRecipientName") && !value["AlarmRecipientName"].IsNull())
+    {
+        if (!value["AlarmRecipientName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmRecipientName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmRecipientName = string(value["AlarmRecipientName"].GetString());
+        m_alarmRecipientNameHasBeenSet = true;
     }
 
     if (value.HasMember("AlarmIndicatorDesc") && !value["AlarmIndicatorDesc"].IsNull())
@@ -238,6 +241,46 @@ CoreInternalOutcome TaskAlarmInfo::Deserialize(const rapidjson::Value &value)
         m_nodeNameHasBeenSet = true;
     }
 
+    if (value.HasMember("AlarmIndicatorInfos") && !value["AlarmIndicatorInfos"].IsNull())
+    {
+        if (!value["AlarmIndicatorInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmIndicatorInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AlarmIndicatorInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlarmIndicatorInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_alarmIndicatorInfos.push_back(item);
+        }
+        m_alarmIndicatorInfosHasBeenSet = true;
+    }
+
+    if (value.HasMember("AlarmRecipientType") && !value["AlarmRecipientType"].IsNull())
+    {
+        if (!value["AlarmRecipientType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.AlarmRecipientType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_alarmRecipientType = value["AlarmRecipientType"].GetUint64();
+        m_alarmRecipientTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("WeComHook") && !value["WeComHook"].IsNull())
+    {
+        if (!value["WeComHook"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskAlarmInfo.WeComHook` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_weComHook = string(value["WeComHook"].GetString());
+        m_weComHookHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -277,14 +320,6 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, m_alarmLevel, allocator);
     }
 
-    if (m_alarmIndicatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AlarmIndicator";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_alarmIndicator, allocator);
-    }
-
     if (m_alarmWayHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -293,28 +328,12 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_alarmWay.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_alarmRecipientIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AlarmRecipientId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_alarmRecipientId.c_str(), allocator).Move(), allocator);
-    }
-
     if (m_taskTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "TaskType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_taskType, allocator);
-    }
-
-    if (m_alarmRecipientNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "AlarmRecipientName";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_alarmRecipientName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_idHasBeenSet)
@@ -333,6 +352,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, rapidjson::Value(m_regularId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_alarmIndicatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmIndicator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmIndicator, allocator);
+    }
+
     if (m_triggerTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -349,6 +376,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         value.AddMember(iKey, m_estimatedTime, allocator);
     }
 
+    if (m_alarmRecipientIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmRecipientId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmRecipientId.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_projectIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -363,6 +398,14 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "Creater";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creater.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmRecipientNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmRecipientName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_alarmRecipientName.c_str(), allocator).Move(), allocator);
     }
 
     if (m_alarmIndicatorDescHasBeenSet)
@@ -395,6 +438,37 @@ void TaskAlarmInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "NodeName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_alarmIndicatorInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmIndicatorInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_alarmIndicatorInfos.begin(); itr != m_alarmIndicatorInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_alarmRecipientTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlarmRecipientType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_alarmRecipientType, allocator);
+    }
+
+    if (m_weComHookHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WeComHook";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_weComHook.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -464,22 +538,6 @@ bool TaskAlarmInfo::AlarmLevelHasBeenSet() const
     return m_alarmLevelHasBeenSet;
 }
 
-uint64_t TaskAlarmInfo::GetAlarmIndicator() const
-{
-    return m_alarmIndicator;
-}
-
-void TaskAlarmInfo::SetAlarmIndicator(const uint64_t& _alarmIndicator)
-{
-    m_alarmIndicator = _alarmIndicator;
-    m_alarmIndicatorHasBeenSet = true;
-}
-
-bool TaskAlarmInfo::AlarmIndicatorHasBeenSet() const
-{
-    return m_alarmIndicatorHasBeenSet;
-}
-
 string TaskAlarmInfo::GetAlarmWay() const
 {
     return m_alarmWay;
@@ -496,22 +554,6 @@ bool TaskAlarmInfo::AlarmWayHasBeenSet() const
     return m_alarmWayHasBeenSet;
 }
 
-string TaskAlarmInfo::GetAlarmRecipientId() const
-{
-    return m_alarmRecipientId;
-}
-
-void TaskAlarmInfo::SetAlarmRecipientId(const string& _alarmRecipientId)
-{
-    m_alarmRecipientId = _alarmRecipientId;
-    m_alarmRecipientIdHasBeenSet = true;
-}
-
-bool TaskAlarmInfo::AlarmRecipientIdHasBeenSet() const
-{
-    return m_alarmRecipientIdHasBeenSet;
-}
-
 uint64_t TaskAlarmInfo::GetTaskType() const
 {
     return m_taskType;
@@ -526,22 +568,6 @@ void TaskAlarmInfo::SetTaskType(const uint64_t& _taskType)
 bool TaskAlarmInfo::TaskTypeHasBeenSet() const
 {
     return m_taskTypeHasBeenSet;
-}
-
-string TaskAlarmInfo::GetAlarmRecipientName() const
-{
-    return m_alarmRecipientName;
-}
-
-void TaskAlarmInfo::SetAlarmRecipientName(const string& _alarmRecipientName)
-{
-    m_alarmRecipientName = _alarmRecipientName;
-    m_alarmRecipientNameHasBeenSet = true;
-}
-
-bool TaskAlarmInfo::AlarmRecipientNameHasBeenSet() const
-{
-    return m_alarmRecipientNameHasBeenSet;
 }
 
 string TaskAlarmInfo::GetId() const
@@ -576,6 +602,22 @@ bool TaskAlarmInfo::RegularIdHasBeenSet() const
     return m_regularIdHasBeenSet;
 }
 
+uint64_t TaskAlarmInfo::GetAlarmIndicator() const
+{
+    return m_alarmIndicator;
+}
+
+void TaskAlarmInfo::SetAlarmIndicator(const uint64_t& _alarmIndicator)
+{
+    m_alarmIndicator = _alarmIndicator;
+    m_alarmIndicatorHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmIndicatorHasBeenSet() const
+{
+    return m_alarmIndicatorHasBeenSet;
+}
+
 uint64_t TaskAlarmInfo::GetTriggerType() const
 {
     return m_triggerType;
@@ -608,6 +650,22 @@ bool TaskAlarmInfo::EstimatedTimeHasBeenSet() const
     return m_estimatedTimeHasBeenSet;
 }
 
+string TaskAlarmInfo::GetAlarmRecipientId() const
+{
+    return m_alarmRecipientId;
+}
+
+void TaskAlarmInfo::SetAlarmRecipientId(const string& _alarmRecipientId)
+{
+    m_alarmRecipientId = _alarmRecipientId;
+    m_alarmRecipientIdHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmRecipientIdHasBeenSet() const
+{
+    return m_alarmRecipientIdHasBeenSet;
+}
+
 string TaskAlarmInfo::GetProjectId() const
 {
     return m_projectId;
@@ -638,6 +696,22 @@ void TaskAlarmInfo::SetCreater(const string& _creater)
 bool TaskAlarmInfo::CreaterHasBeenSet() const
 {
     return m_createrHasBeenSet;
+}
+
+string TaskAlarmInfo::GetAlarmRecipientName() const
+{
+    return m_alarmRecipientName;
+}
+
+void TaskAlarmInfo::SetAlarmRecipientName(const string& _alarmRecipientName)
+{
+    m_alarmRecipientName = _alarmRecipientName;
+    m_alarmRecipientNameHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmRecipientNameHasBeenSet() const
+{
+    return m_alarmRecipientNameHasBeenSet;
 }
 
 string TaskAlarmInfo::GetAlarmIndicatorDesc() const
@@ -702,5 +776,53 @@ void TaskAlarmInfo::SetNodeName(const string& _nodeName)
 bool TaskAlarmInfo::NodeNameHasBeenSet() const
 {
     return m_nodeNameHasBeenSet;
+}
+
+vector<AlarmIndicatorInfo> TaskAlarmInfo::GetAlarmIndicatorInfos() const
+{
+    return m_alarmIndicatorInfos;
+}
+
+void TaskAlarmInfo::SetAlarmIndicatorInfos(const vector<AlarmIndicatorInfo>& _alarmIndicatorInfos)
+{
+    m_alarmIndicatorInfos = _alarmIndicatorInfos;
+    m_alarmIndicatorInfosHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmIndicatorInfosHasBeenSet() const
+{
+    return m_alarmIndicatorInfosHasBeenSet;
+}
+
+uint64_t TaskAlarmInfo::GetAlarmRecipientType() const
+{
+    return m_alarmRecipientType;
+}
+
+void TaskAlarmInfo::SetAlarmRecipientType(const uint64_t& _alarmRecipientType)
+{
+    m_alarmRecipientType = _alarmRecipientType;
+    m_alarmRecipientTypeHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::AlarmRecipientTypeHasBeenSet() const
+{
+    return m_alarmRecipientTypeHasBeenSet;
+}
+
+string TaskAlarmInfo::GetWeComHook() const
+{
+    return m_weComHook;
+}
+
+void TaskAlarmInfo::SetWeComHook(const string& _weComHook)
+{
+    m_weComHook = _weComHook;
+    m_weComHookHasBeenSet = true;
+}
+
+bool TaskAlarmInfo::WeComHookHasBeenSet() const
+{
+    return m_weComHookHasBeenSet;
 }
 

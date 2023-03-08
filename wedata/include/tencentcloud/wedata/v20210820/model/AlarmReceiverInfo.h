@@ -190,6 +190,28 @@ namespace TencentCloud
                      */
                     bool HttpHasBeenSet() const;
 
+                    /**
+                     * 获取企业微信群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WecomGroup 企业微信群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWecomGroup() const;
+
+                    /**
+                     * 设置企业微信群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WecomGroup 企业微信群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWecomGroup(const uint64_t& _wecomGroup);
+
+                    /**
+                     * 判断参数 WecomGroup 是否已赋值
+                     * @return WecomGroup 是否已赋值
+                     */
+                    bool WecomGroupHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +261,13 @@ namespace TencentCloud
                      */
                     uint64_t m_http;
                     bool m_httpHasBeenSet;
+
+                    /**
+                     * 企业微信群，0：未设置，1：成功，2：失败
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_wecomGroup;
+                    bool m_wecomGroupHasBeenSet;
 
                 };
             }

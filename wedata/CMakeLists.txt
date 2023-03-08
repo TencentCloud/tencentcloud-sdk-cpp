@@ -359,6 +359,7 @@ set(wedata_public_header_model
   include/tencentcloud/wedata/v20210820/model/RuleGroupSchedulerInfo.h
   include/tencentcloud/wedata/v20210820/model/DatasourceBaseInfo.h
   include/tencentcloud/wedata/v20210820/model/DescribeRuleTemplatesRequest.h
+  include/tencentcloud/wedata/v20210820/model/AlarmIndicatorInfo.h
   include/tencentcloud/wedata/v20210820/model/RegisterEventResponse.h
   include/tencentcloud/wedata/v20210820/model/SubscribeReceiver.h
   include/tencentcloud/wedata/v20210820/model/DescribeQualityScoreTrendRequest.h
@@ -894,6 +895,7 @@ set(wedata_src
   src/v20210820/model/RuleGroupSchedulerInfo.cpp
   src/v20210820/model/DatasourceBaseInfo.cpp
   src/v20210820/model/DescribeRuleTemplatesRequest.cpp
+  src/v20210820/model/AlarmIndicatorInfo.cpp
   src/v20210820/model/RegisterEventResponse.cpp
   src/v20210820/model/SubscribeReceiver.cpp
   src/v20210820/model/DescribeQualityScoreTrendRequest.cpp

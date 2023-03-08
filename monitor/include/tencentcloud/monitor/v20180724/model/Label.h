@@ -46,7 +46,55 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取map表中的Name
+                     * @return Name map表中的Name
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置map表中的Name
+                     * @param Name map表中的Name
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
+                    /**
+                     * 获取map表中的Value
+                     * @return Value map表中的Value
+                     */
+                    std::string GetValue() const;
+
+                    /**
+                     * 设置map表中的Value
+                     * @param Value map表中的Value
+                     */
+                    void SetValue(const std::string& _value);
+
+                    /**
+                     * 判断参数 Value 是否已赋值
+                     * @return Value 是否已赋值
+                     */
+                    bool ValueHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * map表中的Name
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
+
+                    /**
+                     * map表中的Value
+                     */
+                    std::string m_value;
+                    bool m_valueHasBeenSet;
 
                 };
             }

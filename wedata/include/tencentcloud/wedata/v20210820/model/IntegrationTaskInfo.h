@@ -632,6 +632,50 @@ namespace TencentCloud
                      */
                     bool InLongManagerVersionHasBeenSet() const;
 
+                    /**
+                     * 获取dataproxy url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DataProxyUrl dataproxy url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDataProxyUrl() const;
+
+                    /**
+                     * 设置dataproxy url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DataProxyUrl dataproxy url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDataProxyUrl(const std::vector<std::string>& _dataProxyUrl);
+
+                    /**
+                     * 判断参数 DataProxyUrl 是否已赋值
+                     * @return DataProxyUrl 是否已赋值
+                     */
+                    bool DataProxyUrlHasBeenSet() const;
+
+                    /**
+                     * 获取任务版本是否已提交运维
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Submit 任务版本是否已提交运维
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetSubmit() const;
+
+                    /**
+                     * 设置任务版本是否已提交运维
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Submit 任务版本是否已提交运维
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubmit(const bool& _submit);
+
+                    /**
+                     * 判断参数 Submit 是否已赋值
+                     * @return Submit 是否已赋值
+                     */
+                    bool SubmitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -819,6 +863,20 @@ namespace TencentCloud
                      */
                     std::string m_inLongManagerVersion;
                     bool m_inLongManagerVersionHasBeenSet;
+
+                    /**
+                     * dataproxy url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_dataProxyUrl;
+                    bool m_dataProxyUrlHasBeenSet;
+
+                    /**
+                     * 任务版本是否已提交运维
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_submit;
+                    bool m_submitHasBeenSet;
 
                 };
             }

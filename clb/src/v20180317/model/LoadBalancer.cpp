@@ -73,7 +73,8 @@ LoadBalancer::LoadBalancer() :
     m_healthLogSetIdHasBeenSet(false),
     m_healthLogTopicIdHasBeenSet(false),
     m_clusterIdsHasBeenSet(false),
-    m_attributeFlagsHasBeenSet(false)
+    m_attributeFlagsHasBeenSet(false),
+    m_loadBalancerDomainHasBeenSet(false)
 {
 }
 
@@ -699,6 +700,16 @@ CoreInternalOutcome LoadBalancer::Deserialize(const rapidjson::Value &value)
         m_attributeFlagsHasBeenSet = true;
     }
 
+    if (value.HasMember("LoadBalancerDomain") && !value["LoadBalancerDomain"].IsNull())
+    {
+        if (!value["LoadBalancerDomain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LoadBalancer.LoadBalancerDomain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_loadBalancerDomain = string(value["LoadBalancerDomain"].GetString());
+        m_loadBalancerDomainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1180,6 +1191,14 @@ void LoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_loadBalancerDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LoadBalancerDomain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_loadBalancerDomain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -2031,5 +2050,21 @@ void LoadBalancer::SetAttributeFlags(const vector<string>& _attributeFlags)
 bool LoadBalancer::AttributeFlagsHasBeenSet() const
 {
     return m_attributeFlagsHasBeenSet;
+}
+
+string LoadBalancer::GetLoadBalancerDomain() const
+{
+    return m_loadBalancerDomain;
+}
+
+void LoadBalancer::SetLoadBalancerDomain(const string& _loadBalancerDomain)
+{
+    m_loadBalancerDomain = _loadBalancerDomain;
+    m_loadBalancerDomainHasBeenSet = true;
+}
+
+bool LoadBalancer::LoadBalancerDomainHasBeenSet() const
+{
+    return m_loadBalancerDomainHasBeenSet;
 }
 

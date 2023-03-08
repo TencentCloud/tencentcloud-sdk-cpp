@@ -136,6 +136,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/McuSeiParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureRequest.h
   include/tencentcloud/trtc/v20190722/model/UpdatePublishCdnStreamResponse.h
+  include/tencentcloud/trtc/v20190722/model/McuWaterMarkText.h
   include/tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdRequest.h
   include/tencentcloud/trtc/v20190722/model/RecordParams.h
   include/tencentcloud/trtc/v20190722/model/DescribeTRTCMarketScaleMetricDataResponse.h
@@ -272,6 +273,7 @@ set(trtc_src
   src/v20190722/model/McuSeiParams.cpp
   src/v20190722/model/DescribeExternalTrtcMeasureRequest.cpp
   src/v20190722/model/UpdatePublishCdnStreamResponse.cpp
+  src/v20190722/model/McuWaterMarkText.cpp
   src/v20190722/model/RemoveUserByStrRoomIdRequest.cpp
   src/v20190722/model/RecordParams.cpp
   src/v20190722/model/DescribeTRTCMarketScaleMetricDataResponse.cpp

@@ -137,24 +137,6 @@ namespace TencentCloud
                     bool AlarmLevelHasBeenSet() const;
 
                     /**
-                     * 获取告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-                     * @return AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-                     */
-                    uint64_t GetAlarmIndicator() const;
-
-                    /**
-                     * 设置告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-                     * @param AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-                     */
-                    void SetAlarmIndicator(const uint64_t& _alarmIndicator);
-
-                    /**
-                     * 判断参数 AlarmIndicator 是否已赋值
-                     * @return AlarmIndicator 是否已赋值
-                     */
-                    bool AlarmIndicatorHasBeenSet() const;
-
-                    /**
                      * 获取告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）
                      * @return AlarmWay 告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）
                      */
@@ -207,6 +189,24 @@ namespace TencentCloud
                      * @return ProjectId 是否已赋值
                      */
                     bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * @return AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     */
+                    uint64_t GetAlarmIndicator() const;
+
+                    /**
+                     * 设置告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     * @param AlarmIndicator 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     */
+                    void SetAlarmIndicator(const uint64_t& _alarmIndicator);
+
+                    /**
+                     * 判断参数 AlarmIndicator 是否已赋值
+                     * @return AlarmIndicator 是否已赋值
+                     */
+                    bool AlarmIndicatorHasBeenSet() const;
 
                     /**
                      * 获取告警指标描述
@@ -417,12 +417,6 @@ namespace TencentCloud
                     bool m_alarmLevelHasBeenSet;
 
                     /**
-                     * 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
-                     */
-                    uint64_t m_alarmIndicator;
-                    bool m_alarmIndicatorHasBeenSet;
-
-                    /**
                      * 告警方式,多个用逗号隔开（1:邮件，2:短信，3:微信，4:语音，5:代表企业微信，6:http）
                      */
                     uint64_t m_alarmWay;
@@ -439,6 +433,12 @@ namespace TencentCloud
                      */
                     std::string m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 告警指标,0表示任务失败，1表示任务运行超时，2表示任务停止，3表示任务暂停
+                     */
+                    uint64_t m_alarmIndicator;
+                    bool m_alarmIndicatorHasBeenSet;
 
                     /**
                      * 告警指标描述

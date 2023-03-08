@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取TCCC 实例应用 ID
-                     * @return SdkAppId TCCC 实例应用 ID
-                     */
-                    uint64_t GetSdkAppId() const;
-
-                    /**
-                     * 设置TCCC 实例应用 ID
-                     * @param SdkAppId TCCC 实例应用 ID
-                     */
-                    void SetSdkAppId(const uint64_t& _sdkAppId);
-
-                    /**
-                     * 判断参数 SdkAppId 是否已赋值
-                     * @return SdkAppId 是否已赋值
-                     */
-                    bool SdkAppIdHasBeenSet() const;
-
-                    /**
                      * 获取号码列表，0086开头
                      * @return PhoneNumbers 号码列表，0086开头
                      */
@@ -96,13 +78,25 @@ namespace TencentCloud
                      */
                     bool DisabledHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取TCCC 实例应用 ID
+                     * @return SdkAppId TCCC 实例应用 ID
+                     */
+                    uint64_t GetSdkAppId() const;
 
                     /**
-                     * TCCC 实例应用 ID
+                     * 设置TCCC 实例应用 ID
+                     * @param SdkAppId TCCC 实例应用 ID
                      */
-                    uint64_t m_sdkAppId;
-                    bool m_sdkAppIdHasBeenSet;
+                    void SetSdkAppId(const uint64_t& _sdkAppId);
+
+                    /**
+                     * 判断参数 SdkAppId 是否已赋值
+                     * @return SdkAppId 是否已赋值
+                     */
+                    bool SdkAppIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 号码列表，0086开头
@@ -115,6 +109,12 @@ namespace TencentCloud
                      */
                     int64_t m_disabled;
                     bool m_disabledHasBeenSet;
+
+                    /**
+                     * TCCC 实例应用 ID
+                     */
+                    uint64_t m_sdkAppId;
+                    bool m_sdkAppIdHasBeenSet;
 
                 };
             }

@@ -40,7 +40,8 @@ StatusNode::StatusNode() :
     m_dataHubIdHasBeenSet(false),
     m_taskNameHasBeenSet(false),
     m_cKafkaRegionHasBeenSet(false),
-    m_externalUrlHasBeenSet(false)
+    m_externalUrlHasBeenSet(false),
+    m_parallelNodesHasBeenSet(false)
 {
 }
 
@@ -266,6 +267,16 @@ CoreInternalOutcome StatusNode::Deserialize(const rapidjson::Value &value)
         m_externalUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("ParallelNodes") && !value["ParallelNodes"].IsNull())
+    {
+        if (!value["ParallelNodes"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `StatusNode.ParallelNodes` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_parallelNodes = string(value["ParallelNodes"].GetString());
+        m_parallelNodesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -438,6 +449,14 @@ void StatusNode::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ExternalUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_externalUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_parallelNodesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ParallelNodes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_parallelNodes.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -761,5 +780,21 @@ void StatusNode::SetExternalUrl(const string& _externalUrl)
 bool StatusNode::ExternalUrlHasBeenSet() const
 {
     return m_externalUrlHasBeenSet;
+}
+
+string StatusNode::GetParallelNodes() const
+{
+    return m_parallelNodes;
+}
+
+void StatusNode::SetParallelNodes(const string& _parallelNodes)
+{
+    m_parallelNodes = _parallelNodes;
+    m_parallelNodesHasBeenSet = true;
+}
+
+bool StatusNode::ParallelNodesHasBeenSet() const
+{
+    return m_parallelNodesHasBeenSet;
 }
 

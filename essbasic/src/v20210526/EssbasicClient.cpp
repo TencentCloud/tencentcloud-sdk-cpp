@@ -556,6 +556,49 @@ EssbasicClient::ChannelCreateMultiFlowSignQRCodeOutcomeCallable EssbasicClient::
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreatePrepareFlowOutcome EssbasicClient::ChannelCreatePrepareFlow(const ChannelCreatePrepareFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreatePrepareFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreatePrepareFlowResponse rsp = ChannelCreatePrepareFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreatePrepareFlowOutcome(rsp);
+        else
+            return ChannelCreatePrepareFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreatePrepareFlowOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreatePrepareFlowAsync(const ChannelCreatePrepareFlowRequest& request, const ChannelCreatePrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreatePrepareFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreatePrepareFlowOutcomeCallable EssbasicClient::ChannelCreatePrepareFlowCallable(const ChannelCreatePrepareFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreatePrepareFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreatePrepareFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateReleaseFlowOutcome EssbasicClient::ChannelCreateReleaseFlow(const ChannelCreateReleaseFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateReleaseFlow");

@@ -31,7 +31,8 @@ CreateCloudRunEnvRequest::CreateCloudRunEnvRequest() :
     m_subNetIdsHasBeenSet(false),
     m_reqKeyHasBeenSet(false),
     m_sourceHasBeenSet(false),
-    m_channelHasBeenSet(false)
+    m_channelHasBeenSet(false),
+    m_envIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +118,14 @@ string CreateCloudRunEnvRequest::ToJsonString() const
         string key = "Channel";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_channel.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -269,6 +278,22 @@ void CreateCloudRunEnvRequest::SetChannel(const string& _channel)
 bool CreateCloudRunEnvRequest::ChannelHasBeenSet() const
 {
     return m_channelHasBeenSet;
+}
+
+string CreateCloudRunEnvRequest::GetEnvId() const
+{
+    return m_envId;
+}
+
+void CreateCloudRunEnvRequest::SetEnvId(const string& _envId)
+{
+    m_envId = _envId;
+    m_envIdHasBeenSet = true;
+}
+
+bool CreateCloudRunEnvRequest::EnvIdHasBeenSet() const
+{
+    return m_envIdHasBeenSet;
 }
 
 

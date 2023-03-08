@@ -212,6 +212,24 @@ Activity：活动来源
                      */
                     bool ChannelHasBeenSet() const;
 
+                    /**
+                     * 获取环境ID
+                     * @return EnvId 环境ID
+                     */
+                    std::string GetEnvId() const;
+
+                    /**
+                     * 设置环境ID
+                     * @param EnvId 环境ID
+                     */
+                    void SetEnvId(const std::string& _envId);
+
+                    /**
+                     * 判断参数 EnvId 是否已赋值
+                     * @return EnvId 是否已赋值
+                     */
+                    bool EnvIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -269,6 +287,12 @@ Activity：活动来源
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
+
+                    /**
+                     * 环境ID
+                     */
+                    std::string m_envId;
+                    bool m_envIdHasBeenSet;
 
                 };
             }

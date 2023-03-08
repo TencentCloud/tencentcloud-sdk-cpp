@@ -131,17 +131,17 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool ForwardHasBeenSet() const;
 
                     /**
-                     * 获取负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
+                     * 获取负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
+                     * @return Domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDomain() const;
 
                     /**
-                     * 设置负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
+                     * 设置负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
+                     * @param Domain 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDomain(const std::string& _domain);
@@ -1208,6 +1208,28 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     bool AttributeFlagsHasBeenSet() const;
 
+                    /**
+                     * 获取负载均衡实例的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LoadBalancerDomain 负载均衡实例的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLoadBalancerDomain() const;
+
+                    /**
+                     * 设置负载均衡实例的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LoadBalancerDomain 负载均衡实例的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLoadBalancerDomain(const std::string& _loadBalancerDomain);
+
+                    /**
+                     * 判断参数 LoadBalancerDomain 是否已赋值
+                     * @return LoadBalancerDomain 是否已赋值
+                     */
+                    bool LoadBalancerDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1236,7 +1258,7 @@ OPEN：公网属性， INTERNAL：内网属性。
                     bool m_forwardHasBeenSet;
 
                     /**
-                     * 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段
+                     * 负载均衡实例的域名，仅公网传统型负载均衡实例才提供该字段。逐步下线中，建议用LoadBalancerDomain替代。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_domain;
@@ -1577,6 +1599,13 @@ OPEN：公网属性， INTERNAL：内网属性。
                      */
                     std::vector<std::string> m_attributeFlags;
                     bool m_attributeFlagsHasBeenSet;
+
+                    /**
+                     * 负载均衡实例的域名。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_loadBalancerDomain;
+                    bool m_loadBalancerDomainHasBeenSet;
 
                 };
             }

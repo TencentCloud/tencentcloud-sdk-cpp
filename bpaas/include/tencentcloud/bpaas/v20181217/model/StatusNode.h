@@ -472,6 +472,28 @@ namespace TencentCloud
                      */
                     bool ExternalUrlHasBeenSet() const;
 
+                    /**
+                     * 获取并行节点 3-4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ParallelNodes 并行节点 3-4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetParallelNodes() const;
+
+                    /**
+                     * 设置并行节点 3-4
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ParallelNodes 并行节点 3-4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetParallelNodes(const std::string& _parallelNodes);
+
+                    /**
+                     * 判断参数 ParallelNodes 是否已赋值
+                     * @return ParallelNodes 是否已赋值
+                     */
+                    bool ParallelNodesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -609,6 +631,13 @@ namespace TencentCloud
                      */
                     std::string m_externalUrl;
                     bool m_externalUrlHasBeenSet;
+
+                    /**
+                     * 并行节点 3-4
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_parallelNodes;
+                    bool m_parallelNodesHasBeenSet;
 
                 };
             }
