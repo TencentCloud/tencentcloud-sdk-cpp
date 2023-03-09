@@ -55,6 +55,7 @@ set(oceanus_public_header_model
   include/tencentcloud/oceanus/v20190422/model/DescribeTreeResourcesRsp.h
   include/tencentcloud/oceanus/v20190422/model/DescribeResourcesRequest.h
   include/tencentcloud/oceanus/v20190422/model/TreeResourceItem.h
+  include/tencentcloud/oceanus/v20190422/model/RefJobStatusCountItem.h
   include/tencentcloud/oceanus/v20190422/model/ResourceLocParam.h
   include/tencentcloud/oceanus/v20190422/model/ResourceRefJobInfo.h
   include/tencentcloud/oceanus/v20190422/model/DescribeJobConfigsRequest.h
@@ -133,6 +134,7 @@ set(oceanus_src
   src/v20190422/model/DescribeTreeResourcesRsp.cpp
   src/v20190422/model/DescribeResourcesRequest.cpp
   src/v20190422/model/TreeResourceItem.cpp
+  src/v20190422/model/RefJobStatusCountItem.cpp
   src/v20190422/model/ResourceLocParam.cpp
   src/v20190422/model/ResourceRefJobInfo.cpp
   src/v20190422/model/DescribeJobConfigsRequest.cpp

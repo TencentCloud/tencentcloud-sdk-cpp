@@ -22,7 +22,8 @@ using namespace std;
 
 TaskOutputStorage::TaskOutputStorage() :
     m_typeHasBeenSet(false),
-    m_cosOutputStorageHasBeenSet(false)
+    m_cosOutputStorageHasBeenSet(false),
+    m_s3OutputStorageHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome TaskOutputStorage::Deserialize(const rapidjson::Value &value
         m_cosOutputStorageHasBeenSet = true;
     }
 
+    if (value.HasMember("S3OutputStorage") && !value["S3OutputStorage"].IsNull())
+    {
+        if (!value["S3OutputStorage"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskOutputStorage.S3OutputStorage` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_s3OutputStorage.Deserialize(value["S3OutputStorage"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_s3OutputStorageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void TaskOutputStorage::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosOutputStorage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_s3OutputStorageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "S3OutputStorage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_s3OutputStorage.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void TaskOutputStorage::SetCosOutputStorage(const CosOutputStorage& _cosOutputSt
 bool TaskOutputStorage::CosOutputStorageHasBeenSet() const
 {
     return m_cosOutputStorageHasBeenSet;
+}
+
+S3OutputStorage TaskOutputStorage::GetS3OutputStorage() const
+{
+    return m_s3OutputStorage;
+}
+
+void TaskOutputStorage::SetS3OutputStorage(const S3OutputStorage& _s3OutputStorage)
+{
+    m_s3OutputStorage = _s3OutputStorage;
+    m_s3OutputStorageHasBeenSet = true;
+}
+
+bool TaskOutputStorage::S3OutputStorageHasBeenSet() const
+{
+    return m_s3OutputStorageHasBeenSet;
 }
 

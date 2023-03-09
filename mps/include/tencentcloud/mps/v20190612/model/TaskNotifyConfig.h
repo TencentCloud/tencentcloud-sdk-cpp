@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/AwsSQS.h>
 
 
 namespace TencentCloud
@@ -142,12 +143,14 @@ namespace TencentCloud
 <li>TDMQ-CMQ：消息队列</li>
 <li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
+<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      * @return NotifyType 通知类型，可选值：
 <li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
 <li>TDMQ-CMQ：消息队列</li>
 <li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
+<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      */
                     std::string GetNotifyType() const;
@@ -158,12 +161,14 @@ namespace TencentCloud
 <li>TDMQ-CMQ：消息队列</li>
 <li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
+<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      * @param NotifyType 通知类型，可选值：
 <li>CMQ：已下线，建议切换到TDMQ-CMQ</li>
 <li>TDMQ-CMQ：消息队列</li>
 <li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
+<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      */
                     void SetNotifyType(const std::string& _notifyType);
@@ -191,6 +196,32 @@ namespace TencentCloud
                      * @return NotifyUrl 是否已赋值
                      */
                     bool NotifyUrlHasBeenSet() const;
+
+                    /**
+                     * 获取AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AwsSQS AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AwsSQS GetAwsSQS() const;
+
+                    /**
+                     * 设置AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AwsSQS AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAwsSQS(const AwsSQS& _awsSQS);
+
+                    /**
+                     * 判断参数 AwsSQS 是否已赋值
+                     * @return AwsSQS 是否已赋值
+                     */
+                    bool AwsSQSHasBeenSet() const;
 
                 private:
 
@@ -230,6 +261,7 @@ namespace TencentCloud
 <li>TDMQ-CMQ：消息队列</li>
 <li>URL：指定URL时HTTP回调推送到 NotifyUrl 指定的地址，回调协议http+json，包体内容同解析事件通知接口的输出参数 </li>
 <li>SCF：不推荐使用，需要在控制台额外配置SCF</li>
+<li>AWS-SQS：AWS 队列，只适用于 AWS 任务，且要求同区域</li>
 <font color="red"> 注：不填或为空时默认 CMQ，如需采用其他类型需填写对应类型值。 </font>
                      */
                     std::string m_notifyType;
@@ -240,6 +272,14 @@ namespace TencentCloud
                      */
                     std::string m_notifyUrl;
                     bool m_notifyUrlHasBeenSet;
+
+                    /**
+                     * AWS SQS 回调，NotifyType为 AWS-SQS 时必填。
+
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AwsSQS m_awsSQS;
+                    bool m_awsSQSHasBeenSet;
 
                 };
             }

@@ -189,6 +189,8 @@
 #include <tencentcloud/mps/v20190612/model/StartStreamLinkFlowResponse.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowRequest.h>
 #include <tencentcloud/mps/v20190612/model/StopStreamLinkFlowResponse.h>
+#include <tencentcloud/mps/v20190612/model/WithdrawsWatermarkRequest.h>
+#include <tencentcloud/mps/v20190612/model/WithdrawsWatermarkResponse.h>
 
 
 namespace TencentCloud
@@ -452,6 +454,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StopStreamLinkFlowResponse> StopStreamLinkFlowOutcome;
                 typedef std::future<StopStreamLinkFlowOutcome> StopStreamLinkFlowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::StopStreamLinkFlowRequest&, StopStreamLinkFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StopStreamLinkFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::WithdrawsWatermarkResponse> WithdrawsWatermarkOutcome;
+                typedef std::future<WithdrawsWatermarkOutcome> WithdrawsWatermarkOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::WithdrawsWatermarkRequest&, WithdrawsWatermarkOutcome, const std::shared_ptr<const AsyncCallerContext>&)> WithdrawsWatermarkAsyncHandler;
 
 
 
@@ -1240,6 +1245,15 @@ namespace TencentCloud
                 StopStreamLinkFlowOutcome StopStreamLinkFlow(const Model::StopStreamLinkFlowRequest &request);
                 void StopStreamLinkFlowAsync(const Model::StopStreamLinkFlowRequest& request, const StopStreamLinkFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StopStreamLinkFlowOutcomeCallable StopStreamLinkFlowCallable(const Model::StopStreamLinkFlowRequest& request);
+
+                /**
+                 *提取视频中的盲水印。
+                 * @param req WithdrawsWatermarkRequest
+                 * @return WithdrawsWatermarkOutcome
+                 */
+                WithdrawsWatermarkOutcome WithdrawsWatermark(const Model::WithdrawsWatermarkRequest &request);
+                void WithdrawsWatermarkAsync(const Model::WithdrawsWatermarkRequest& request, const WithdrawsWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                WithdrawsWatermarkOutcomeCallable WithdrawsWatermarkCallable(const Model::WithdrawsWatermarkRequest& request);
 
             };
         }

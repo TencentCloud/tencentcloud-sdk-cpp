@@ -32,7 +32,8 @@ ImportImageRequest::ImportImageRequest() :
     m_dryRunHasBeenSet(false),
     m_forceHasBeenSet(false),
     m_tagSpecificationHasBeenSet(false),
-    m_licenseTypeHasBeenSet(false)
+    m_licenseTypeHasBeenSet(false),
+    m_bootModeHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string ImportImageRequest::ToJsonString() const
         string key = "LicenseType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_licenseType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bootModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BootMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_bootMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -296,6 +305,22 @@ void ImportImageRequest::SetLicenseType(const string& _licenseType)
 bool ImportImageRequest::LicenseTypeHasBeenSet() const
 {
     return m_licenseTypeHasBeenSet;
+}
+
+string ImportImageRequest::GetBootMode() const
+{
+    return m_bootMode;
+}
+
+void ImportImageRequest::SetBootMode(const string& _bootMode)
+{
+    m_bootMode = _bootMode;
+    m_bootModeHasBeenSet = true;
+}
+
+bool ImportImageRequest::BootModeHasBeenSet() const
+{
+    return m_bootModeHasBeenSet;
 }
 
 

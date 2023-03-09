@@ -578,7 +578,9 @@ namespace TencentCloud
                 ClearCmqSubscriptionFilterTagsOutcomeCallable ClearCmqSubscriptionFilterTagsCallable(const Model::ClearCmqSubscriptionFilterTagsRequest& request);
 
                 /**
-                 *创建AMQP集群
+                 *产品下线了，对应的接口也要下线。
+
+创建AMQP集群
                  * @param req CreateAMQPClusterRequest
                  * @return CreateAMQPClusterOutcome
                  */
@@ -587,7 +589,9 @@ namespace TencentCloud
                 CreateAMQPClusterOutcomeCallable CreateAMQPClusterCallable(const Model::CreateAMQPClusterRequest& request);
 
                 /**
-                 *创建AMQP Exchange
+                 *产品下线了，对应的接口也要下线。
+
+创建AMQP Exchange
                  * @param req CreateAMQPExchangeRequest
                  * @return CreateAMQPExchangeOutcome
                  */
@@ -596,7 +600,9 @@ namespace TencentCloud
                 CreateAMQPExchangeOutcomeCallable CreateAMQPExchangeCallable(const Model::CreateAMQPExchangeRequest& request);
 
                 /**
-                 *创建AMQP队列
+                 *产品下线了，对应的接口也要下线。
+
+创建AMQP队列
                  * @param req CreateAMQPQueueRequest
                  * @return CreateAMQPQueueOutcome
                  */
@@ -605,7 +611,9 @@ namespace TencentCloud
                 CreateAMQPQueueOutcomeCallable CreateAMQPQueueCallable(const Model::CreateAMQPQueueRequest& request);
 
                 /**
-                 *创建AMQP路由关系
+                 *产品下线了，对应的接口也要下线。
+
+创建AMQP路由关系
                  * @param req CreateAMQPRouteRelationRequest
                  * @return CreateAMQPRouteRelationOutcome
                  */
@@ -614,7 +622,9 @@ namespace TencentCloud
                 CreateAMQPRouteRelationOutcomeCallable CreateAMQPRouteRelationCallable(const Model::CreateAMQPRouteRelationRequest& request);
 
                 /**
-                 *创建Amqp Vhost
+                 *产品下线了，对应的接口也要下线。
+
+创建Amqp Vhost
                  * @param req CreateAMQPVHostRequest
                  * @return CreateAMQPVHostOutcome
                  */
@@ -740,7 +750,9 @@ namespace TencentCloud
                 CreateTopicOutcomeCallable CreateTopicCallable(const Model::CreateTopicRequest& request);
 
                 /**
-                 *删除AMQP集群
+                 *产品下线了，对应的接口也要下线。
+
+删除AMQP集群
                  * @param req DeleteAMQPClusterRequest
                  * @return DeleteAMQPClusterOutcome
                  */
@@ -749,7 +761,9 @@ namespace TencentCloud
                 DeleteAMQPClusterOutcomeCallable DeleteAMQPClusterCallable(const Model::DeleteAMQPClusterRequest& request);
 
                 /**
-                 *删除Amqp交换机
+                 *产品下线了，对应的接口也要下线。
+
+删除Amqp交换机
                  * @param req DeleteAMQPExchangeRequest
                  * @return DeleteAMQPExchangeOutcome
                  */
@@ -758,7 +772,9 @@ namespace TencentCloud
                 DeleteAMQPExchangeOutcomeCallable DeleteAMQPExchangeCallable(const Model::DeleteAMQPExchangeRequest& request);
 
                 /**
-                 *删除Amqp队列
+                 *产品下线了，对应的接口也要下线。
+
+删除Amqp队列
                  * @param req DeleteAMQPQueueRequest
                  * @return DeleteAMQPQueueOutcome
                  */
@@ -767,7 +783,9 @@ namespace TencentCloud
                 DeleteAMQPQueueOutcomeCallable DeleteAMQPQueueCallable(const Model::DeleteAMQPQueueRequest& request);
 
                 /**
-                 *删除Amqp路由关系
+                 *产品下线了，对应的接口也要下线。
+
+删除Amqp路由关系
                  * @param req DeleteAMQPRouteRelationRequest
                  * @return DeleteAMQPRouteRelationOutcome
                  */
@@ -776,7 +794,9 @@ namespace TencentCloud
                 DeleteAMQPRouteRelationOutcomeCallable DeleteAMQPRouteRelationCallable(const Model::DeleteAMQPRouteRelationRequest& request);
 
                 /**
-                 *删除Vhost
+                 *产品下线了，对应的接口也要下线。
+
+删除Vhost
                  * @param req DeleteAMQPVHostRequest
                  * @return DeleteAMQPVHostOutcome
                  */
@@ -902,7 +922,9 @@ namespace TencentCloud
                 DeleteTopicsOutcomeCallable DeleteTopicsCallable(const Model::DeleteTopicsRequest& request);
 
                 /**
-                 *获取单个Amqp集群信息
+                 *产品下线了，对应的接口也要下线。
+
+获取单个Amqp集群信息
                  * @param req DescribeAMQPClusterRequest
                  * @return DescribeAMQPClusterOutcome
                  */
@@ -920,7 +942,9 @@ namespace TencentCloud
                 DescribeAMQPClustersOutcomeCallable DescribeAMQPClustersCallable(const Model::DescribeAMQPClustersRequest& request);
 
                 /**
-                 *获取用户的配额，如Queue容量，Exchange容量，Vhost容量，单Vhost Tps数,剩余可创建集群数
+                 *产品下线了，对应的接口也要下线。
+
+获取用户的配额，如Queue容量，Exchange容量，Vhost容量，单Vhost Tps数,剩余可创建集群数
                  * @param req DescribeAMQPCreateQuotaRequest
                  * @return DescribeAMQPCreateQuotaOutcome
                  */
@@ -929,7 +953,9 @@ namespace TencentCloud
                 DescribeAMQPCreateQuotaOutcomeCallable DescribeAMQPCreateQuotaCallable(const Model::DescribeAMQPCreateQuotaRequest& request);
 
                 /**
-                 *获取AMQP Exchange列表
+                 *产品下线了，对应的接口也要下线。
+
+获取AMQP Exchange列表
                  * @param req DescribeAMQPExchangesRequest
                  * @return DescribeAMQPExchangesOutcome
                  */
@@ -938,7 +964,9 @@ namespace TencentCloud
                 DescribeAMQPExchangesOutcomeCallable DescribeAMQPExchangesCallable(const Model::DescribeAMQPExchangesRequest& request);
 
                 /**
-                 *获取Amqp队列列表
+                 *产品下线了，对应的接口也要下线。
+
+获取Amqp队列列表
                  * @param req DescribeAMQPQueuesRequest
                  * @return DescribeAMQPQueuesOutcome
                  */
@@ -947,7 +975,9 @@ namespace TencentCloud
                 DescribeAMQPQueuesOutcomeCallable DescribeAMQPQueuesCallable(const Model::DescribeAMQPQueuesRequest& request);
 
                 /**
-                 *获取Amqp路由关系列表
+                 *产品下线了，对应的接口也要下线。
+
+获取Amqp路由关系列表
                  * @param req DescribeAMQPRouteRelationsRequest
                  * @return DescribeAMQPRouteRelationsOutcome
                  */
@@ -956,7 +986,9 @@ namespace TencentCloud
                 DescribeAMQPRouteRelationsOutcomeCallable DescribeAMQPRouteRelationsCallable(const Model::DescribeAMQPRouteRelationsRequest& request);
 
                 /**
-                 *获取Amqp Vhost 列表
+                 *产品下线了，对应的接口也要下线。
+
+获取Amqp Vhost 列表
                  * @param req DescribeAMQPVHostsRequest
                  * @return DescribeAMQPVHostsOutcome
                  */
@@ -1244,7 +1276,9 @@ namespace TencentCloud
                 ModifyAMQPClusterOutcomeCallable ModifyAMQPClusterCallable(const Model::ModifyAMQPClusterRequest& request);
 
                 /**
-                 *更新Amqp交换机
+                 *产品下线了，对应的接口也要下线。
+
+更新Amqp交换机
                  * @param req ModifyAMQPExchangeRequest
                  * @return ModifyAMQPExchangeOutcome
                  */
@@ -1253,7 +1287,9 @@ namespace TencentCloud
                 ModifyAMQPExchangeOutcomeCallable ModifyAMQPExchangeCallable(const Model::ModifyAMQPExchangeRequest& request);
 
                 /**
-                 *更新Amqp队列
+                 *产品下线了，对应的接口也要下线。
+
+更新Amqp队列
                  * @param req ModifyAMQPQueueRequest
                  * @return ModifyAMQPQueueOutcome
                  */
@@ -1262,7 +1298,9 @@ namespace TencentCloud
                 ModifyAMQPQueueOutcomeCallable ModifyAMQPQueueCallable(const Model::ModifyAMQPQueueRequest& request);
 
                 /**
-                 *更新Vhost
+                 *产品下线了，对应的接口也要下线。
+
+更新Vhost
                  * @param req ModifyAMQPVHostRequest
                  * @return ModifyAMQPVHostOutcome
                  */

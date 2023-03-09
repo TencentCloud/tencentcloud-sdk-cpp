@@ -260,20 +260,20 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取过滤条件，参数不支持同时指定FlowLogIds和Filters。
+                     * 获取过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-                     * @return Filters 过滤条件，参数不支持同时指定FlowLogIds和Filters。
+                     * @return Filters 过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
                      */
                     Filter GetFilters() const;
 
                     /**
-                     * 设置过滤条件，参数不支持同时指定FlowLogIds和Filters。
+                     * 设置过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
-                     * @param Filters 过滤条件，参数不支持同时指定FlowLogIds和Filters。
+                     * @param Filters 过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
                      */
@@ -378,7 +378,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 过滤条件，参数不支持同时指定FlowLogIds和Filters。
+                     * 过滤条件，参数不支持同时指定FlowLogId和Filters。
 <li>tag-key - String -是否必填：否- （过滤条件）按照标签键进行过滤。</li>
 <li>tag:tag-key - String - 是否必填：否 - （过滤条件）按照标签键值对进行过滤。 tag-key使用具体的标签键进行替换。</li>
                      */

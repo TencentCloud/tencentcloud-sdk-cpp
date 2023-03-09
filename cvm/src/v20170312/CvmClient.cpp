@@ -1932,6 +1932,49 @@ CvmClient::DescribeReservedInstancesOfferingsOutcomeCallable CvmClient::Describe
     return task->get_future();
 }
 
+CvmClient::DescribeTaskInfoOutcome CvmClient::DescribeTaskInfo(const DescribeTaskInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTaskInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTaskInfoResponse rsp = DescribeTaskInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTaskInfoOutcome(rsp);
+        else
+            return DescribeTaskInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTaskInfoOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::DescribeTaskInfoAsync(const DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTaskInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::DescribeTaskInfoOutcomeCallable CvmClient::DescribeTaskInfoCallable(const DescribeTaskInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTaskInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTaskInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::DescribeZoneInstanceConfigInfosOutcome CvmClient::DescribeZoneInstanceConfigInfos(const DescribeZoneInstanceConfigInfosRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeZoneInstanceConfigInfos");

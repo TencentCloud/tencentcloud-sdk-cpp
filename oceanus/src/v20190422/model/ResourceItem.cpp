@@ -34,7 +34,11 @@ ResourceItem::ResourceItem() :
     m_latestResourceConfigVersionHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_versionCountHasBeenSet(false),
-    m_refJobCountHasBeenSet(false)
+    m_refJobCountHasBeenSet(false),
+    m_isJobRunHasBeenSet(false),
+    m_fileNameHasBeenSet(false),
+    m_workSpaceIdHasBeenSet(false),
+    m_refJobStatusCountSetHasBeenSet(false)
 {
 }
 
@@ -190,6 +194,56 @@ CoreInternalOutcome ResourceItem::Deserialize(const rapidjson::Value &value)
         m_refJobCountHasBeenSet = true;
     }
 
+    if (value.HasMember("IsJobRun") && !value["IsJobRun"].IsNull())
+    {
+        if (!value["IsJobRun"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.IsJobRun` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_isJobRun = value["IsJobRun"].GetInt64();
+        m_isJobRunHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileName") && !value["FileName"].IsNull())
+    {
+        if (!value["FileName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.FileName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileName = string(value["FileName"].GetString());
+        m_fileNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("WorkSpaceId") && !value["WorkSpaceId"].IsNull())
+    {
+        if (!value["WorkSpaceId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.WorkSpaceId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_workSpaceId = value["WorkSpaceId"].GetInt64();
+        m_workSpaceIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("RefJobStatusCountSet") && !value["RefJobStatusCountSet"].IsNull())
+    {
+        if (!value["RefJobStatusCountSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceItem.RefJobStatusCountSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RefJobStatusCountSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RefJobStatusCountItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_refJobStatusCountSet.push_back(item);
+        }
+        m_refJobStatusCountSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +362,45 @@ void ResourceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "RefJobCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_refJobCount, allocator);
+    }
+
+    if (m_isJobRunHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsJobRun";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isJobRun, allocator);
+    }
+
+    if (m_fileNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_workSpaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WorkSpaceId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_workSpaceId, allocator);
+    }
+
+    if (m_refJobStatusCountSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RefJobStatusCountSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_refJobStatusCountSet.begin(); itr != m_refJobStatusCountSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -535,5 +628,69 @@ void ResourceItem::SetRefJobCount(const int64_t& _refJobCount)
 bool ResourceItem::RefJobCountHasBeenSet() const
 {
     return m_refJobCountHasBeenSet;
+}
+
+int64_t ResourceItem::GetIsJobRun() const
+{
+    return m_isJobRun;
+}
+
+void ResourceItem::SetIsJobRun(const int64_t& _isJobRun)
+{
+    m_isJobRun = _isJobRun;
+    m_isJobRunHasBeenSet = true;
+}
+
+bool ResourceItem::IsJobRunHasBeenSet() const
+{
+    return m_isJobRunHasBeenSet;
+}
+
+string ResourceItem::GetFileName() const
+{
+    return m_fileName;
+}
+
+void ResourceItem::SetFileName(const string& _fileName)
+{
+    m_fileName = _fileName;
+    m_fileNameHasBeenSet = true;
+}
+
+bool ResourceItem::FileNameHasBeenSet() const
+{
+    return m_fileNameHasBeenSet;
+}
+
+int64_t ResourceItem::GetWorkSpaceId() const
+{
+    return m_workSpaceId;
+}
+
+void ResourceItem::SetWorkSpaceId(const int64_t& _workSpaceId)
+{
+    m_workSpaceId = _workSpaceId;
+    m_workSpaceIdHasBeenSet = true;
+}
+
+bool ResourceItem::WorkSpaceIdHasBeenSet() const
+{
+    return m_workSpaceIdHasBeenSet;
+}
+
+vector<RefJobStatusCountItem> ResourceItem::GetRefJobStatusCountSet() const
+{
+    return m_refJobStatusCountSet;
+}
+
+void ResourceItem::SetRefJobStatusCountSet(const vector<RefJobStatusCountItem>& _refJobStatusCountSet)
+{
+    m_refJobStatusCountSet = _refJobStatusCountSet;
+    m_refJobStatusCountSetHasBeenSet = true;
+}
+
+bool ResourceItem::RefJobStatusCountSetHasBeenSet() const
+{
+    return m_refJobStatusCountSetHasBeenSet;
 }
 

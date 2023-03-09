@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool UuidsHasBeenSet() const;
 
+                    /**
+                     * 获取扫描超时时长 ，单位秒
+                     * @return TimeoutPeriod 扫描超时时长 ，单位秒
+                     */
+                    uint64_t GetTimeoutPeriod() const;
+
+                    /**
+                     * 设置扫描超时时长 ，单位秒
+                     * @param TimeoutPeriod 扫描超时时长 ，单位秒
+                     */
+                    void SetTimeoutPeriod(const uint64_t& _timeoutPeriod);
+
+                    /**
+                     * 判断参数 TimeoutPeriod 是否已赋值
+                     * @return TimeoutPeriod 是否已赋值
+                     */
+                    bool TimeoutPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_uuids;
                     bool m_uuidsHasBeenSet;
+
+                    /**
+                     * 扫描超时时长 ，单位秒
+                     */
+                    uint64_t m_timeoutPeriod;
+                    bool m_timeoutPeriodHasBeenSet;
 
                 };
             }

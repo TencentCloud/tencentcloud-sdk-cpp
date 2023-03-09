@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/ResourceLoc.h>
+#include <tencentcloud/oceanus/v20190422/model/RefJobStatusCountItem.h>
 
 
 namespace TencentCloud
@@ -311,6 +312,94 @@ namespace TencentCloud
                      */
                     bool RefJobCountHasBeenSet() const;
 
+                    /**
+                     * 获取作业运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsJobRun 作业运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetIsJobRun() const;
+
+                    /**
+                     * 设置作业运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsJobRun 作业运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsJobRun(const int64_t& _isJobRun);
+
+                    /**
+                     * 判断参数 IsJobRun 是否已赋值
+                     * @return IsJobRun 是否已赋值
+                     */
+                    bool IsJobRunHasBeenSet() const;
+
+                    /**
+                     * 获取文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileName 文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileName() const;
+
+                    /**
+                     * 设置文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileName 文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileName(const std::string& _fileName);
+
+                    /**
+                     * 判断参数 FileName 是否已赋值
+                     * @return FileName 是否已赋值
+                     */
+                    bool FileNameHasBeenSet() const;
+
+                    /**
+                     * 获取工作空间ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WorkSpaceId 工作空间ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWorkSpaceId() const;
+
+                    /**
+                     * 设置工作空间ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WorkSpaceId 工作空间ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWorkSpaceId(const int64_t& _workSpaceId);
+
+                    /**
+                     * 判断参数 WorkSpaceId 是否已赋值
+                     * @return WorkSpaceId 是否已赋值
+                     */
+                    bool WorkSpaceIdHasBeenSet() const;
+
+                    /**
+                     * 获取分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RefJobStatusCountSet 分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RefJobStatusCountItem> GetRefJobStatusCountSet() const;
+
+                    /**
+                     * 设置分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RefJobStatusCountSet 分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRefJobStatusCountSet(const std::vector<RefJobStatusCountItem>& _refJobStatusCountSet);
+
+                    /**
+                     * 判断参数 RefJobStatusCountSet 是否已赋值
+                     * @return RefJobStatusCountSet 是否已赋值
+                     */
+                    bool RefJobStatusCountSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -399,6 +488,34 @@ namespace TencentCloud
                      */
                     int64_t m_refJobCount;
                     bool m_refJobCountHasBeenSet;
+
+                    /**
+                     * 作业运行状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_isJobRun;
+                    bool m_isJobRunHasBeenSet;
+
+                    /**
+                     * 文件名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileName;
+                    bool m_fileNameHasBeenSet;
+
+                    /**
+                     * 工作空间ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_workSpaceId;
+                    bool m_workSpaceIdHasBeenSet;
+
+                    /**
+                     * 分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RefJobStatusCountItem> m_refJobStatusCountSet;
+                    bool m_refJobStatusCountSetHasBeenSet;
 
                 };
             }

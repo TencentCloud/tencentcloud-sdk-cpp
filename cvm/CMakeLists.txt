@@ -22,7 +22,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/InquiryPriceTerminateInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/LocalDiskType.h
   include/tencentcloud/cvm/v20170312/model/AssociateInstancesKeyPairsResponse.h
-  include/tencentcloud/cvm/v20170312/model/RenewInstancesRequest.h
+  include/tencentcloud/cvm/v20170312/model/ModifyChcAttributeResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeHpcClustersRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeImageQuotaResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesProjectRequest.h
@@ -41,6 +41,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/PostPaidQuota.h
   include/tencentcloud/cvm/v20170312/model/ResetInstancesTypeRequest.h
   include/tencentcloud/cvm/v20170312/model/ChcHost.h
+  include/tencentcloud/cvm/v20170312/model/RepairTaskInfo.h
   include/tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateVersionsRequest.h
   include/tencentcloud/cvm/v20170312/model/DeleteImagesRequest.h
   include/tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateRequest.h
@@ -79,6 +80,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DeleteHpcClustersResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyLaunchTemplateDefaultVersionResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstancesOperationLimitRequest.h
+  include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyImageAttributeRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeInstanceVncUrlRequest.h
   include/tencentcloud/cvm/v20170312/model/StopInstancesResponse.h
@@ -121,7 +123,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/InstanceMarketOptionsRequest.h
   include/tencentcloud/cvm/v20170312/model/DescribeImageSharePermissionResponse.h
   include/tencentcloud/cvm/v20170312/model/DeleteLaunchTemplateVersionsResponse.h
-  include/tencentcloud/cvm/v20170312/model/ResetInstancesPasswordResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeTaskInfoRequest.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceRunInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/Image.h
   include/tencentcloud/cvm/v20170312/model/ChcDeployExtraConfig.h
@@ -183,7 +185,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyHpcClusterAttributeRequest.h
-  include/tencentcloud/cvm/v20170312/model/ModifyChcAttributeResponse.h
+  include/tencentcloud/cvm/v20170312/model/DescribeTaskInfoResponse.h
   include/tencentcloud/cvm/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.h
   include/tencentcloud/cvm/v20170312/model/StartInstancesResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesVpcAttributeRequest.h
@@ -244,6 +246,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/InquirePricePurchaseReservedInstancesOfferingResponse.h
   include/tencentcloud/cvm/v20170312/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/cvm/v20170312/model/ModifyHostsAttributeRequest.h
+  include/tencentcloud/cvm/v20170312/model/RenewInstancesRequest.h
   include/tencentcloud/cvm/v20170312/model/ImportKeyPairRequest.h
   include/tencentcloud/cvm/v20170312/model/SyncImage.h
   include/tencentcloud/cvm/v20170312/model/KeyPair.h
@@ -279,7 +282,7 @@ set(cvm_src
   src/v20170312/model/InquiryPriceTerminateInstancesResponse.cpp
   src/v20170312/model/LocalDiskType.cpp
   src/v20170312/model/AssociateInstancesKeyPairsResponse.cpp
-  src/v20170312/model/RenewInstancesRequest.cpp
+  src/v20170312/model/ModifyChcAttributeResponse.cpp
   src/v20170312/model/DescribeHpcClustersRequest.cpp
   src/v20170312/model/DescribeImageQuotaResponse.cpp
   src/v20170312/model/ModifyInstancesProjectRequest.cpp
@@ -298,6 +301,7 @@ set(cvm_src
   src/v20170312/model/PostPaidQuota.cpp
   src/v20170312/model/ResetInstancesTypeRequest.cpp
   src/v20170312/model/ChcHost.cpp
+  src/v20170312/model/RepairTaskInfo.cpp
   src/v20170312/model/DeleteLaunchTemplateVersionsRequest.cpp
   src/v20170312/model/DeleteImagesRequest.cpp
   src/v20170312/model/DeleteLaunchTemplateRequest.cpp
@@ -336,6 +340,7 @@ set(cvm_src
   src/v20170312/model/DeleteHpcClustersResponse.cpp
   src/v20170312/model/ModifyLaunchTemplateDefaultVersionResponse.cpp
   src/v20170312/model/DescribeInstancesOperationLimitRequest.cpp
+  src/v20170312/model/ResetInstancesPasswordResponse.cpp
   src/v20170312/model/ModifyImageAttributeRequest.cpp
   src/v20170312/model/DescribeInstanceVncUrlRequest.cpp
   src/v20170312/model/StopInstancesResponse.cpp
@@ -378,7 +383,7 @@ set(cvm_src
   src/v20170312/model/InstanceMarketOptionsRequest.cpp
   src/v20170312/model/DescribeImageSharePermissionResponse.cpp
   src/v20170312/model/DeleteLaunchTemplateVersionsResponse.cpp
-  src/v20170312/model/ResetInstancesPasswordResponse.cpp
+  src/v20170312/model/DescribeTaskInfoRequest.cpp
   src/v20170312/model/InquiryPriceRunInstancesRequest.cpp
   src/v20170312/model/Image.cpp
   src/v20170312/model/ChcDeployExtraConfig.cpp
@@ -440,7 +445,7 @@ set(cvm_src
   src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthRequest.cpp
   src/v20170312/model/ModifyHostsAttributeResponse.cpp
   src/v20170312/model/ModifyHpcClusterAttributeRequest.cpp
-  src/v20170312/model/ModifyChcAttributeResponse.cpp
+  src/v20170312/model/DescribeTaskInfoResponse.cpp
   src/v20170312/model/DescribeDisasterRecoverGroupQuotaRequest.cpp
   src/v20170312/model/StartInstancesResponse.cpp
   src/v20170312/model/ModifyInstancesVpcAttributeRequest.cpp
@@ -501,6 +506,7 @@ set(cvm_src
   src/v20170312/model/InquirePricePurchaseReservedInstancesOfferingResponse.cpp
   src/v20170312/model/DisassociateSecurityGroupsRequest.cpp
   src/v20170312/model/ModifyHostsAttributeRequest.cpp
+  src/v20170312/model/RenewInstancesRequest.cpp
   src/v20170312/model/ImportKeyPairRequest.cpp
   src/v20170312/model/SyncImage.cpp
   src/v20170312/model/KeyPair.cpp

@@ -349,6 +349,32 @@ namespace TencentCloud
                      */
                     bool DescribesHasBeenSet() const;
 
+                    /**
+                     * 获取开启日志沉降，热存储的生命周期， hotPeriod < Period。
+热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HotPeriod 开启日志沉降，热存储的生命周期， hotPeriod < Period。
+热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetHotPeriod() const;
+
+                    /**
+                     * 设置开启日志沉降，热存储的生命周期， hotPeriod < Period。
+热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HotPeriod 开启日志沉降，热存储的生命周期， hotPeriod < Period。
+热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHotPeriod(const uint64_t& _hotPeriod);
+
+                    /**
+                     * 判断参数 HotPeriod 是否已赋值
+                     * @return HotPeriod 是否已赋值
+                     */
+                    bool HotPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -448,6 +474,14 @@ namespace TencentCloud
                      */
                     std::string m_describes;
                     bool m_describesHasBeenSet;
+
+                    /**
+                     * 开启日志沉降，热存储的生命周期， hotPeriod < Period。
+热存储为 hotPeriod, 冷存储则为 Period-hotPeriod。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_hotPeriod;
+                    bool m_hotPeriodHasBeenSet;
 
                 };
             }

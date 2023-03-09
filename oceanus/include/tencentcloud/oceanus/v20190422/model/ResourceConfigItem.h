@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/oceanus/v20190422/model/ResourceLoc.h>
+#include <tencentcloud/oceanus/v20190422/model/RefJobStatusCountItem.h>
 
 
 namespace TencentCloud
@@ -271,6 +272,28 @@ namespace TencentCloud
                      */
                     bool RefJobCountHasBeenSet() const;
 
+                    /**
+                     * 获取分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RefJobStatusCountSet 分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RefJobStatusCountItem> GetRefJobStatusCountSet() const;
+
+                    /**
+                     * 设置分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RefJobStatusCountSet 分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRefJobStatusCountSet(const std::vector<RefJobStatusCountItem>& _refJobStatusCountSet);
+
+                    /**
+                     * 判断参数 RefJobStatusCountSet 是否已赋值
+                     * @return RefJobStatusCountSet 是否已赋值
+                     */
+                    bool RefJobStatusCountSetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -346,6 +369,13 @@ namespace TencentCloud
                      */
                     int64_t m_refJobCount;
                     bool m_refJobCountHasBeenSet;
+
+                    /**
+                     * 分状态统计关联作业数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<RefJobStatusCountItem> m_refJobStatusCountSet;
+                    bool m_refJobStatusCountSetHasBeenSet;
 
                 };
             }

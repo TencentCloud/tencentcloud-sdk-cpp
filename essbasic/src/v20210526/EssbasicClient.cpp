@@ -298,6 +298,49 @@ EssbasicClient::ChannelCreateConvertTaskApiOutcomeCallable EssbasicClient::Chann
     return task->get_future();
 }
 
+EssbasicClient::ChannelCreateEmbedWebUrlOutcome EssbasicClient::ChannelCreateEmbedWebUrl(const ChannelCreateEmbedWebUrlRequest &request)
+{
+    auto outcome = MakeRequest(request, "ChannelCreateEmbedWebUrl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ChannelCreateEmbedWebUrlResponse rsp = ChannelCreateEmbedWebUrlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ChannelCreateEmbedWebUrlOutcome(rsp);
+        else
+            return ChannelCreateEmbedWebUrlOutcome(o.GetError());
+    }
+    else
+    {
+        return ChannelCreateEmbedWebUrlOutcome(outcome.GetError());
+    }
+}
+
+void EssbasicClient::ChannelCreateEmbedWebUrlAsync(const ChannelCreateEmbedWebUrlRequest& request, const ChannelCreateEmbedWebUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ChannelCreateEmbedWebUrl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssbasicClient::ChannelCreateEmbedWebUrlOutcomeCallable EssbasicClient::ChannelCreateEmbedWebUrlCallable(const ChannelCreateEmbedWebUrlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ChannelCreateEmbedWebUrlOutcome()>>(
+        [this, request]()
+        {
+            return this->ChannelCreateEmbedWebUrl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssbasicClient::ChannelCreateFlowByFilesOutcome EssbasicClient::ChannelCreateFlowByFiles(const ChannelCreateFlowByFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "ChannelCreateFlowByFiles");

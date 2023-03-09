@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/CosInputInfo.h>
 #include <tencentcloud/mps/v20190612/model/UrlInputInfo.h>
+#include <tencentcloud/mps/v20190612/model/S3InputInfo.h>
 
 
 namespace TencentCloud
@@ -49,14 +50,26 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输入来源对象的类型，支持 COS、URL 两种。
-                     * @return Type 输入来源对象的类型，支持 COS、URL 两种。
+                     * 获取输入来源对象的类型，支持：
+<li> COS：COS源</li>
+<li> URL：URL源</li>
+<li> AWS-S3：AWS 源，目前只支持转码任务 </li>
+                     * @return Type 输入来源对象的类型，支持：
+<li> COS：COS源</li>
+<li> URL：URL源</li>
+<li> AWS-S3：AWS 源，目前只支持转码任务 </li>
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置输入来源对象的类型，支持 COS、URL 两种。
-                     * @param Type 输入来源对象的类型，支持 COS、URL 两种。
+                     * 设置输入来源对象的类型，支持：
+<li> COS：COS源</li>
+<li> URL：URL源</li>
+<li> AWS-S3：AWS 源，目前只支持转码任务 </li>
+                     * @param Type 输入来源对象的类型，支持：
+<li> COS：COS源</li>
+<li> URL：URL源</li>
+<li> AWS-S3：AWS 源，目前只支持转码任务 </li>
                      */
                     void SetType(const std::string& _type);
 
@@ -106,10 +119,35 @@ namespace TencentCloud
                      */
                     bool UrlInputInfoHasBeenSet() const;
 
+                    /**
+                     * 获取当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return S3InputInfo 当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    S3InputInfo GetS3InputInfo() const;
+
+                    /**
+                     * 设置当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param S3InputInfo 当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetS3InputInfo(const S3InputInfo& _s3InputInfo);
+
+                    /**
+                     * 判断参数 S3InputInfo 是否已赋值
+                     * @return S3InputInfo 是否已赋值
+                     */
+                    bool S3InputInfoHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 输入来源对象的类型，支持 COS、URL 两种。
+                     * 输入来源对象的类型，支持：
+<li> COS：COS源</li>
+<li> URL：URL源</li>
+<li> AWS-S3：AWS 源，目前只支持转码任务 </li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -126,6 +164,13 @@ namespace TencentCloud
                      */
                     UrlInputInfo m_urlInputInfo;
                     bool m_urlInputInfoHasBeenSet;
+
+                    /**
+                     * 当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 对象信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    S3InputInfo m_s3InputInfo;
+                    bool m_s3InputInfoHasBeenSet;
 
                 };
             }

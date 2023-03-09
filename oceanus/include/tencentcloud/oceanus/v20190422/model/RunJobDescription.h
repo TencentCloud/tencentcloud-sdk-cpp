@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool RunTypeHasBeenSet() const;
 
                     /**
-                     * 获取已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
-                     * @return StartMode 已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
+                     * 获取兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
+                     * @return StartMode 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
                      */
                     std::string GetStartMode() const;
 
                     /**
-                     * 设置已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
-                     * @param StartMode 已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
+                     * 设置兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
+                     * @param StartMode 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
                      */
                     void SetStartMode(const std::string& _startMode);
 
@@ -154,6 +154,28 @@ namespace TencentCloud
                      */
                     bool SavepointIdHasBeenSet() const;
 
+                    /**
+                     * 获取使用历史版本系统依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseOldSystemConnector 使用历史版本系统依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetUseOldSystemConnector() const;
+
+                    /**
+                     * 设置使用历史版本系统依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UseOldSystemConnector 使用历史版本系统依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUseOldSystemConnector(const bool& _useOldSystemConnector);
+
+                    /**
+                     * 判断参数 UseOldSystemConnector 是否已赋值
+                     * @return UseOldSystemConnector 是否已赋值
+                     */
+                    bool UseOldSystemConnectorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -169,7 +191,7 @@ namespace TencentCloud
                     bool m_runTypeHasBeenSet;
 
                     /**
-                     * 已废弃。旧版 SQL 类型作业启动参数：指定数据源消费起始时间点
+                     * 兼容旧版 SQL 类型作业启动参数：指定数据源消费起始时间点（例:T1557394288000）
                      */
                     std::string m_startMode;
                     bool m_startModeHasBeenSet;
@@ -191,6 +213,13 @@ namespace TencentCloud
                      */
                     std::string m_savepointId;
                     bool m_savepointIdHasBeenSet;
+
+                    /**
+                     * 使用历史版本系统依赖
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useOldSystemConnector;
+                    bool m_useOldSystemConnectorHasBeenSet;
 
                 };
             }

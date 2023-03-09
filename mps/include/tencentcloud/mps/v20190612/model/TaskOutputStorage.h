@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/mps/v20190612/model/CosOutputStorage.h>
+#include <tencentcloud/mps/v20190612/model/S3OutputStorage.h>
 
 
 namespace TencentCloud
@@ -48,14 +49,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取媒体处理输出对象存储位置的类型，现在仅支持 COS。
-                     * @return Type 媒体处理输出对象存储位置的类型，现在仅支持 COS。
+                     * 获取媒体处理输出对象存储位置的类型，支持：
+<li>COS：COS存储</li>
+<li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
+                     * @return Type 媒体处理输出对象存储位置的类型，支持：
+<li>COS：COS存储</li>
+<li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置媒体处理输出对象存储位置的类型，现在仅支持 COS。
-                     * @param Type 媒体处理输出对象存储位置的类型，现在仅支持 COS。
+                     * 设置媒体处理输出对象存储位置的类型，支持：
+<li>COS：COS存储</li>
+<li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
+                     * @param Type 媒体处理输出对象存储位置的类型，支持：
+<li>COS：COS存储</li>
+<li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -87,10 +96,34 @@ namespace TencentCloud
                      */
                     bool CosOutputStorageHasBeenSet() const;
 
+                    /**
+                     * 获取当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return S3OutputStorage 当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    S3OutputStorage GetS3OutputStorage() const;
+
+                    /**
+                     * 设置当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param S3OutputStorage 当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetS3OutputStorage(const S3OutputStorage& _s3OutputStorage);
+
+                    /**
+                     * 判断参数 S3OutputStorage 是否已赋值
+                     * @return S3OutputStorage 是否已赋值
+                     */
+                    bool S3OutputStorageHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 媒体处理输出对象存储位置的类型，现在仅支持 COS。
+                     * 媒体处理输出对象存储位置的类型，支持：
+<li>COS：COS存储</li>
+<li>AWS-S3：AWS 存储，只适用于AWS任务，且要求同区域</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -101,6 +134,13 @@ namespace TencentCloud
                      */
                     CosOutputStorage m_cosOutputStorage;
                     bool m_cosOutputStorageHasBeenSet;
+
+                    /**
+                     * 当 Type 为 AWS-S3 时有效，则该项为必填，表示媒体处理 AWS S3 输出位置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    S3OutputStorage m_s3OutputStorage;
+                    bool m_s3OutputStorageHasBeenSet;
 
                 };
             }

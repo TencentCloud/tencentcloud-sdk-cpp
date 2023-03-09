@@ -23,7 +23,8 @@ using namespace std;
 MediaInputInfo::MediaInputInfo() :
     m_typeHasBeenSet(false),
     m_cosInputInfoHasBeenSet(false),
-    m_urlInputInfoHasBeenSet(false)
+    m_urlInputInfoHasBeenSet(false),
+    m_s3InputInfoHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome MediaInputInfo::Deserialize(const rapidjson::Value &value)
         m_urlInputInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("S3InputInfo") && !value["S3InputInfo"].IsNull())
+    {
+        if (!value["S3InputInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaInputInfo.S3InputInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_s3InputInfo.Deserialize(value["S3InputInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_s3InputInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void MediaInputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_urlInputInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_s3InputInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "S3InputInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_s3InputInfo.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void MediaInputInfo::SetUrlInputInfo(const UrlInputInfo& _urlInputInfo)
 bool MediaInputInfo::UrlInputInfoHasBeenSet() const
 {
     return m_urlInputInfoHasBeenSet;
+}
+
+S3InputInfo MediaInputInfo::GetS3InputInfo() const
+{
+    return m_s3InputInfo;
+}
+
+void MediaInputInfo::SetS3InputInfo(const S3InputInfo& _s3InputInfo)
+{
+    m_s3InputInfo = _s3InputInfo;
+    m_s3InputInfoHasBeenSet = true;
+}
+
+bool MediaInputInfo::S3InputInfoHasBeenSet() const
+{
+    return m_s3InputInfoHasBeenSet;
 }
 

@@ -35,7 +35,8 @@ TopicInfo::TopicInfo() :
     m_storageTypeHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_subAssumerNameHasBeenSet(false),
-    m_describesHasBeenSet(false)
+    m_describesHasBeenSet(false),
+    m_hotPeriodHasBeenSet(false)
 {
 }
 
@@ -204,6 +205,16 @@ CoreInternalOutcome TopicInfo::Deserialize(const rapidjson::Value &value)
         m_describesHasBeenSet = true;
     }
 
+    if (value.HasMember("HotPeriod") && !value["HotPeriod"].IsNull())
+    {
+        if (!value["HotPeriod"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicInfo.HotPeriod` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_hotPeriod = value["HotPeriod"].GetUint64();
+        m_hotPeriodHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -336,6 +347,14 @@ void TopicInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Describes";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_describes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hotPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hotPeriod, allocator);
     }
 
 }
@@ -579,5 +598,21 @@ void TopicInfo::SetDescribes(const string& _describes)
 bool TopicInfo::DescribesHasBeenSet() const
 {
     return m_describesHasBeenSet;
+}
+
+uint64_t TopicInfo::GetHotPeriod() const
+{
+    return m_hotPeriod;
+}
+
+void TopicInfo::SetHotPeriod(const uint64_t& _hotPeriod)
+{
+    m_hotPeriod = _hotPeriod;
+    m_hotPeriodHasBeenSet = true;
+}
+
+bool TopicInfo::HotPeriodHasBeenSet() const
+{
+    return m_hotPeriodHasBeenSet;
 }
 

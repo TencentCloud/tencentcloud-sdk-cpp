@@ -27,7 +27,8 @@ TaskNotifyConfig::TaskNotifyConfig() :
     m_queueNameHasBeenSet(false),
     m_notifyModeHasBeenSet(false),
     m_notifyTypeHasBeenSet(false),
-    m_notifyUrlHasBeenSet(false)
+    m_notifyUrlHasBeenSet(false),
+    m_awsSQSHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,23 @@ CoreInternalOutcome TaskNotifyConfig::Deserialize(const rapidjson::Value &value)
         m_notifyUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("AwsSQS") && !value["AwsSQS"].IsNull())
+    {
+        if (!value["AwsSQS"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskNotifyConfig.AwsSQS` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_awsSQS.Deserialize(value["AwsSQS"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_awsSQSHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +185,15 @@ void TaskNotifyConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "NotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_notifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_awsSQSHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AwsSQS";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_awsSQS.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -282,5 +309,21 @@ void TaskNotifyConfig::SetNotifyUrl(const string& _notifyUrl)
 bool TaskNotifyConfig::NotifyUrlHasBeenSet() const
 {
     return m_notifyUrlHasBeenSet;
+}
+
+AwsSQS TaskNotifyConfig::GetAwsSQS() const
+{
+    return m_awsSQS;
+}
+
+void TaskNotifyConfig::SetAwsSQS(const AwsSQS& _awsSQS)
+{
+    m_awsSQS = _awsSQS;
+    m_awsSQSHasBeenSet = true;
+}
+
+bool TaskNotifyConfig::AwsSQSHasBeenSet() const
+{
+    return m_awsSQSHasBeenSet;
 }
 

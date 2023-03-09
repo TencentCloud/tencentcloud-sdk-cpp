@@ -3609,3 +3609,46 @@ MpsClient::StopStreamLinkFlowOutcomeCallable MpsClient::StopStreamLinkFlowCallab
     return task->get_future();
 }
 
+MpsClient::WithdrawsWatermarkOutcome MpsClient::WithdrawsWatermark(const WithdrawsWatermarkRequest &request)
+{
+    auto outcome = MakeRequest(request, "WithdrawsWatermark");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        WithdrawsWatermarkResponse rsp = WithdrawsWatermarkResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return WithdrawsWatermarkOutcome(rsp);
+        else
+            return WithdrawsWatermarkOutcome(o.GetError());
+    }
+    else
+    {
+        return WithdrawsWatermarkOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::WithdrawsWatermarkAsync(const WithdrawsWatermarkRequest& request, const WithdrawsWatermarkAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->WithdrawsWatermark(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::WithdrawsWatermarkOutcomeCallable MpsClient::WithdrawsWatermarkCallable(const WithdrawsWatermarkRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<WithdrawsWatermarkOutcome()>>(
+        [this, request]()
+        {
+            return this->WithdrawsWatermark(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

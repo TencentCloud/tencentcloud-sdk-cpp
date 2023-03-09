@@ -111,6 +111,8 @@
 #include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesConfigInfosResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeReservedInstancesOfferingsResponse.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeTaskInfoRequest.h>
+#include <tencentcloud/cvm/v20170312/model/DescribeTaskInfoResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosRequest.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZoneInstanceConfigInfosResponse.h>
 #include <tencentcloud/cvm/v20170312/model/DescribeZonesRequest.h>
@@ -353,6 +355,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReservedInstancesOfferingsResponse> DescribeReservedInstancesOfferingsOutcome;
                 typedef std::future<DescribeReservedInstancesOfferingsOutcome> DescribeReservedInstancesOfferingsOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeReservedInstancesOfferingsRequest&, DescribeReservedInstancesOfferingsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReservedInstancesOfferingsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTaskInfoResponse> DescribeTaskInfoOutcome;
+                typedef std::future<DescribeTaskInfoOutcome> DescribeTaskInfoOutcomeCallable;
+                typedef std::function<void(const CvmClient*, const Model::DescribeTaskInfoRequest&, DescribeTaskInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTaskInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZoneInstanceConfigInfosResponse> DescribeZoneInstanceConfigInfosOutcome;
                 typedef std::future<DescribeZoneInstanceConfigInfosOutcome> DescribeZoneInstanceConfigInfosOutcomeCallable;
                 typedef std::function<void(const CvmClient*, const Model::DescribeZoneInstanceConfigInfosRequest&, DescribeZoneInstanceConfigInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZoneInstanceConfigInfosAsyncHandler;
@@ -956,6 +961,20 @@ https://img.qcloud.com/qcloud/app/active_vnc/index.html?InstanceVncUrl=wss%3A%2F
                 DescribeReservedInstancesOfferingsOutcome DescribeReservedInstancesOfferings(const Model::DescribeReservedInstancesOfferingsRequest &request);
                 void DescribeReservedInstancesOfferingsAsync(const Model::DescribeReservedInstancesOfferingsRequest& request, const DescribeReservedInstancesOfferingsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReservedInstancesOfferingsOutcomeCallable DescribeReservedInstancesOfferingsCallable(const Model::DescribeReservedInstancesOfferingsRequest& request);
+
+                /**
+                 *本接口 (DescribeTaskInfo) 用于查询云服务器维修任务列表及详细信息。
+
+- 可以根据实例ID、实例名称或任务状态等信息来查询维修任务列表。过滤信息详情可参考入参说明。
+- 如果参数为空，返回当前用户一定数量（`Limit`所指定的数量，默认为20）的维修任务列表。
+
+默认接口请求频率限制：10次/秒。</br>
+                 * @param req DescribeTaskInfoRequest
+                 * @return DescribeTaskInfoOutcome
+                 */
+                DescribeTaskInfoOutcome DescribeTaskInfo(const Model::DescribeTaskInfoRequest &request);
+                void DescribeTaskInfoAsync(const Model::DescribeTaskInfoRequest& request, const DescribeTaskInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTaskInfoOutcomeCallable DescribeTaskInfoCallable(const Model::DescribeTaskInfoRequest& request);
 
                 /**
                  *本接口(DescribeZoneInstanceConfigInfos) 获取可用区的机型信息。

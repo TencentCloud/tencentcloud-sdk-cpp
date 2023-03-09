@@ -235,6 +235,24 @@ BYOL: 自带许可（Bring Your Own License）
                      */
                     bool LicenseTypeHasBeenSet() const;
 
+                    /**
+                     * 获取启动模式
+                     * @return BootMode 启动模式
+                     */
+                    std::string GetBootMode() const;
+
+                    /**
+                     * 设置启动模式
+                     * @param BootMode 启动模式
+                     */
+                    void SetBootMode(const std::string& _bootMode);
+
+                    /**
+                     * 判断参数 BootMode 是否已赋值
+                     * @return BootMode 是否已赋值
+                     */
+                    bool BootModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -299,6 +317,12 @@ BYOL: 自带许可（Bring Your Own License）
                      */
                     std::string m_licenseType;
                     bool m_licenseTypeHasBeenSet;
+
+                    /**
+                     * 启动模式
+                     */
+                    std::string m_bootMode;
+                    bool m_bootModeHasBeenSet;
 
                 };
             }

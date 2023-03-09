@@ -32,7 +32,8 @@ ResourceConfigItem::ResourceConfigItem() :
     m_versionHasBeenSet(false),
     m_remarkHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_refJobCountHasBeenSet(false)
+    m_refJobCountHasBeenSet(false),
+    m_refJobStatusCountSetHasBeenSet(false)
 {
 }
 
@@ -168,6 +169,26 @@ CoreInternalOutcome ResourceConfigItem::Deserialize(const rapidjson::Value &valu
         m_refJobCountHasBeenSet = true;
     }
 
+    if (value.HasMember("RefJobStatusCountSet") && !value["RefJobStatusCountSet"].IsNull())
+    {
+        if (!value["RefJobStatusCountSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ResourceConfigItem.RefJobStatusCountSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["RefJobStatusCountSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            RefJobStatusCountItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_refJobStatusCountSet.push_back(item);
+        }
+        m_refJobStatusCountSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -270,6 +291,21 @@ void ResourceConfigItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "RefJobCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_refJobCount, allocator);
+    }
+
+    if (m_refJobStatusCountSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RefJobStatusCountSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_refJobStatusCountSet.begin(); itr != m_refJobStatusCountSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -465,5 +501,21 @@ void ResourceConfigItem::SetRefJobCount(const int64_t& _refJobCount)
 bool ResourceConfigItem::RefJobCountHasBeenSet() const
 {
     return m_refJobCountHasBeenSet;
+}
+
+vector<RefJobStatusCountItem> ResourceConfigItem::GetRefJobStatusCountSet() const
+{
+    return m_refJobStatusCountSet;
+}
+
+void ResourceConfigItem::SetRefJobStatusCountSet(const vector<RefJobStatusCountItem>& _refJobStatusCountSet)
+{
+    m_refJobStatusCountSet = _refJobStatusCountSet;
+    m_refJobStatusCountSetHasBeenSet = true;
+}
+
+bool ResourceConfigItem::RefJobStatusCountSetHasBeenSet() const
+{
+    return m_refJobStatusCountSetHasBeenSet;
 }
 

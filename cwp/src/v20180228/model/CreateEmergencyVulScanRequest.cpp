@@ -24,7 +24,8 @@ using namespace std;
 
 CreateEmergencyVulScanRequest::CreateEmergencyVulScanRequest() :
     m_vulIdHasBeenSet(false),
-    m_uuidsHasBeenSet(false)
+    m_uuidsHasBeenSet(false),
+    m_timeoutPeriodHasBeenSet(false)
 {
 }
 
@@ -54,6 +55,14 @@ string CreateEmergencyVulScanRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_timeoutPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TimeoutPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_timeoutPeriod, allocator);
     }
 
 
@@ -94,6 +103,22 @@ void CreateEmergencyVulScanRequest::SetUuids(const vector<string>& _uuids)
 bool CreateEmergencyVulScanRequest::UuidsHasBeenSet() const
 {
     return m_uuidsHasBeenSet;
+}
+
+uint64_t CreateEmergencyVulScanRequest::GetTimeoutPeriod() const
+{
+    return m_timeoutPeriod;
+}
+
+void CreateEmergencyVulScanRequest::SetTimeoutPeriod(const uint64_t& _timeoutPeriod)
+{
+    m_timeoutPeriod = _timeoutPeriod;
+    m_timeoutPeriodHasBeenSet = true;
+}
+
+bool CreateEmergencyVulScanRequest::TimeoutPeriodHasBeenSet() const
+{
+    return m_timeoutPeriodHasBeenSet;
 }
 
 

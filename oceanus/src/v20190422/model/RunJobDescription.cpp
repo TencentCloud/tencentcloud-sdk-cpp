@@ -26,7 +26,8 @@ RunJobDescription::RunJobDescription() :
     m_startModeHasBeenSet(false),
     m_jobConfigVersionHasBeenSet(false),
     m_savepointPathHasBeenSet(false),
-    m_savepointIdHasBeenSet(false)
+    m_savepointIdHasBeenSet(false),
+    m_useOldSystemConnectorHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome RunJobDescription::Deserialize(const rapidjson::Value &value
         m_savepointIdHasBeenSet = true;
     }
 
+    if (value.HasMember("UseOldSystemConnector") && !value["UseOldSystemConnector"].IsNull())
+    {
+        if (!value["UseOldSystemConnector"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `RunJobDescription.UseOldSystemConnector` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useOldSystemConnector = value["UseOldSystemConnector"].GetBool();
+        m_useOldSystemConnectorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void RunJobDescription::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "SavepointId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_savepointId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_useOldSystemConnectorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseOldSystemConnector";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useOldSystemConnector, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void RunJobDescription::SetSavepointId(const string& _savepointId)
 bool RunJobDescription::SavepointIdHasBeenSet() const
 {
     return m_savepointIdHasBeenSet;
+}
+
+bool RunJobDescription::GetUseOldSystemConnector() const
+{
+    return m_useOldSystemConnector;
+}
+
+void RunJobDescription::SetUseOldSystemConnector(const bool& _useOldSystemConnector)
+{
+    m_useOldSystemConnector = _useOldSystemConnector;
+    m_useOldSystemConnectorHasBeenSet = true;
+}
+
+bool RunJobDescription::UseOldSystemConnectorHasBeenSet() const
+{
+    return m_useOldSystemConnectorHasBeenSet;
 }
 

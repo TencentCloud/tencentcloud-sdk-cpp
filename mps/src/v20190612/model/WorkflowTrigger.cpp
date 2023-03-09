@@ -22,7 +22,8 @@ using namespace std;
 
 WorkflowTrigger::WorkflowTrigger() :
     m_typeHasBeenSet(false),
-    m_cosFileUploadTriggerHasBeenSet(false)
+    m_cosFileUploadTriggerHasBeenSet(false),
+    m_awsS3FileUploadTriggerHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,23 @@ CoreInternalOutcome WorkflowTrigger::Deserialize(const rapidjson::Value &value)
         m_cosFileUploadTriggerHasBeenSet = true;
     }
 
+    if (value.HasMember("AwsS3FileUploadTrigger") && !value["AwsS3FileUploadTrigger"].IsNull())
+    {
+        if (!value["AwsS3FileUploadTrigger"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTrigger.AwsS3FileUploadTrigger` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_awsS3FileUploadTrigger.Deserialize(value["AwsS3FileUploadTrigger"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_awsS3FileUploadTriggerHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +98,15 @@ void WorkflowTrigger::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_cosFileUploadTrigger.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_awsS3FileUploadTriggerHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AwsS3FileUploadTrigger";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_awsS3FileUploadTrigger.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +142,21 @@ void WorkflowTrigger::SetCosFileUploadTrigger(const CosFileUploadTrigger& _cosFi
 bool WorkflowTrigger::CosFileUploadTriggerHasBeenSet() const
 {
     return m_cosFileUploadTriggerHasBeenSet;
+}
+
+AwsS3FileUploadTrigger WorkflowTrigger::GetAwsS3FileUploadTrigger() const
+{
+    return m_awsS3FileUploadTrigger;
+}
+
+void WorkflowTrigger::SetAwsS3FileUploadTrigger(const AwsS3FileUploadTrigger& _awsS3FileUploadTrigger)
+{
+    m_awsS3FileUploadTrigger = _awsS3FileUploadTrigger;
+    m_awsS3FileUploadTriggerHasBeenSet = true;
+}
+
+bool WorkflowTrigger::AwsS3FileUploadTriggerHasBeenSet() const
+{
+    return m_awsS3FileUploadTriggerHasBeenSet;
 }
 
