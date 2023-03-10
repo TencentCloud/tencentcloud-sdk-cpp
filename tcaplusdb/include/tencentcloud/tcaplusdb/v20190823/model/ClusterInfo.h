@@ -328,17 +328,17 @@ namespace TencentCloud
                     bool ApiAccessIpv6HasBeenSet() const;
 
                     /**
-                     * 获取集群类型
+                     * 获取集群类型，0,1:共享集群; 2:独立集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterType 集群类型
+                     * @return ClusterType 集群类型，0,1:共享集群; 2:独立集群
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetClusterType() const;
 
                     /**
-                     * 设置集群类型
+                     * 设置集群类型，0,1:共享集群; 2:独立集群
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterType 集群类型
+                     * @param ClusterType 集群类型，0,1:共享集群; 2:独立集群
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetClusterType(const int64_t& _clusterType);
@@ -350,17 +350,17 @@ namespace TencentCloud
                     bool ClusterTypeHasBeenSet() const;
 
                     /**
-                     * 获取集群状态
+                     * 获取集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return ClusterStatus 集群状态
+                     * @return ClusterStatus 集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetClusterStatus() const;
 
                     /**
-                     * 设置集群状态
+                     * 设置集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param ClusterStatus 集群状态
+                     * @param ClusterStatus 集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetClusterStatus(const int64_t& _clusterStatus);
@@ -631,6 +631,28 @@ namespace TencentCloud
                      */
                     bool IsReadOnlyUlogBackupExpireDayHasBeenSet() const;
 
+                    /**
+                     * 获取restproxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RestProxyStatus restproxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRestProxyStatus() const;
+
+                    /**
+                     * 设置restproxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RestProxyStatus restproxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRestProxyStatus(const int64_t& _restProxyStatus);
+
+                    /**
+                     * 判断参数 RestProxyStatus 是否已赋值
+                     * @return RestProxyStatus 是否已赋值
+                     */
+                    bool RestProxyStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -726,14 +748,14 @@ namespace TencentCloud
                     bool m_apiAccessIpv6HasBeenSet;
 
                     /**
-                     * 集群类型
+                     * 集群类型，0,1:共享集群; 2:独立集群
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterType;
                     bool m_clusterTypeHasBeenSet;
 
                     /**
-                     * 集群状态
+                     * 集群状态, 0：表示正常运行中，1：表示冻结隔离一般欠费进入此状态，2：表示待回收，一般用户主动触发删除进入这个状态，3：待释放，进入这个状态，表示可以释放此表占用的资源了，4：变更中
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_clusterStatus;
@@ -821,6 +843,13 @@ namespace TencentCloud
                      */
                     uint64_t m_isReadOnlyUlogBackupExpireDay;
                     bool m_isReadOnlyUlogBackupExpireDayHasBeenSet;
+
+                    /**
+                     * restproxy状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_restProxyStatus;
+                    bool m_restProxyStatusHasBeenSet;
 
                 };
             }

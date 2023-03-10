@@ -214,9 +214,9 @@ video 纯视频
                     bool AssistantsHasBeenSet() const;
 
                     /**
-                     * 获取录制地址。仅在房间结束后存在。
+                     * 获取录制地址（协议为https)。仅在房间结束后存在。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return RecordUrl 录制地址。仅在房间结束后存在。
+                     * @return RecordUrl 录制地址（协议为https)。仅在房间结束后存在。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRecordUrl() const;
@@ -343,7 +343,7 @@ video 纯视频
                     bool m_assistantsHasBeenSet;
 
                     /**
-                     * 录制地址。仅在房间结束后存在。
+                     * 录制地址（协议为https)。仅在房间结束后存在。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recordUrl;

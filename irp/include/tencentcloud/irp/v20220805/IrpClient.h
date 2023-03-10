@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/irp/v20220805/model/DescribeGoodsRecommendRequest.h>
+#include <tencentcloud/irp/v20220805/model/DescribeGoodsRecommendResponse.h>
 #include <tencentcloud/irp/v20220805/model/FeedRecommendRequest.h>
 #include <tencentcloud/irp/v20220805/model/FeedRecommendResponse.h>
 #include <tencentcloud/irp/v20220805/model/ReportFeedBehaviorRequest.h>
@@ -31,6 +33,10 @@
 #include <tencentcloud/irp/v20220805/model/ReportFeedItemResponse.h>
 #include <tencentcloud/irp/v20220805/model/ReportFeedUserRequest.h>
 #include <tencentcloud/irp/v20220805/model/ReportFeedUserResponse.h>
+#include <tencentcloud/irp/v20220805/model/ReportGoodsBehaviorRequest.h>
+#include <tencentcloud/irp/v20220805/model/ReportGoodsBehaviorResponse.h>
+#include <tencentcloud/irp/v20220805/model/ReportGoodsInfoRequest.h>
+#include <tencentcloud/irp/v20220805/model/ReportGoodsInfoResponse.h>
 
 
 namespace TencentCloud
@@ -45,6 +51,9 @@ namespace TencentCloud
                 IrpClient(const Credential &credential, const std::string &region);
                 IrpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::DescribeGoodsRecommendResponse> DescribeGoodsRecommendOutcome;
+                typedef std::future<DescribeGoodsRecommendOutcome> DescribeGoodsRecommendOutcomeCallable;
+                typedef std::function<void(const IrpClient*, const Model::DescribeGoodsRecommendRequest&, DescribeGoodsRecommendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGoodsRecommendAsyncHandler;
                 typedef Outcome<Core::Error, Model::FeedRecommendResponse> FeedRecommendOutcome;
                 typedef std::future<FeedRecommendOutcome> FeedRecommendOutcomeCallable;
                 typedef std::function<void(const IrpClient*, const Model::FeedRecommendRequest&, FeedRecommendOutcome, const std::shared_ptr<const AsyncCallerContext>&)> FeedRecommendAsyncHandler;
@@ -57,8 +66,23 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReportFeedUserResponse> ReportFeedUserOutcome;
                 typedef std::future<ReportFeedUserOutcome> ReportFeedUserOutcomeCallable;
                 typedef std::function<void(const IrpClient*, const Model::ReportFeedUserRequest&, ReportFeedUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportFeedUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportGoodsBehaviorResponse> ReportGoodsBehaviorOutcome;
+                typedef std::future<ReportGoodsBehaviorOutcome> ReportGoodsBehaviorOutcomeCallable;
+                typedef std::function<void(const IrpClient*, const Model::ReportGoodsBehaviorRequest&, ReportGoodsBehaviorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportGoodsBehaviorAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportGoodsInfoResponse> ReportGoodsInfoOutcome;
+                typedef std::future<ReportGoodsInfoOutcome> ReportGoodsInfoOutcomeCallable;
+                typedef std::function<void(const IrpClient*, const Model::ReportGoodsInfoRequest&, ReportGoodsInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportGoodsInfoAsyncHandler;
 
 
+
+                /**
+                 *获取电商类推荐结果
+                 * @param req DescribeGoodsRecommendRequest
+                 * @return DescribeGoodsRecommendOutcome
+                 */
+                DescribeGoodsRecommendOutcome DescribeGoodsRecommend(const Model::DescribeGoodsRecommendRequest &request);
+                void DescribeGoodsRecommendAsync(const Model::DescribeGoodsRecommendRequest& request, const DescribeGoodsRecommendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGoodsRecommendOutcomeCallable DescribeGoodsRecommendCallable(const Model::DescribeGoodsRecommendRequest& request);
 
                 /**
                  *获取信息流推荐结果
@@ -95,6 +119,24 @@ namespace TencentCloud
                 ReportFeedUserOutcome ReportFeedUser(const Model::ReportFeedUserRequest &request);
                 void ReportFeedUserAsync(const Model::ReportFeedUserRequest& request, const ReportFeedUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReportFeedUserOutcomeCallable ReportFeedUserCallable(const Model::ReportFeedUserRequest& request);
+
+                /**
+                 *上报电商类行为数据
+                 * @param req ReportGoodsBehaviorRequest
+                 * @return ReportGoodsBehaviorOutcome
+                 */
+                ReportGoodsBehaviorOutcome ReportGoodsBehavior(const Model::ReportGoodsBehaviorRequest &request);
+                void ReportGoodsBehaviorAsync(const Model::ReportGoodsBehaviorRequest& request, const ReportGoodsBehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportGoodsBehaviorOutcomeCallable ReportGoodsBehaviorCallable(const Model::ReportGoodsBehaviorRequest& request);
+
+                /**
+                 *上报电商类商品信息
+                 * @param req ReportGoodsInfoRequest
+                 * @return ReportGoodsInfoOutcome
+                 */
+                ReportGoodsInfoOutcome ReportGoodsInfo(const Model::ReportGoodsInfoRequest &request);
+                void ReportGoodsInfoAsync(const Model::ReportGoodsInfoRequest& request, const ReportGoodsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportGoodsInfoOutcomeCallable ReportGoodsInfoCallable(const Model::ReportGoodsInfoRequest& request);
 
             };
         }

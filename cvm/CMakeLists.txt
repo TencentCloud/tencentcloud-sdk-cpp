@@ -32,6 +32,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/DeleteDisasterRecoverGroupsRequest.h
   include/tencentcloud/cvm/v20170312/model/DeleteKeyPairsResponse.h
   include/tencentcloud/cvm/v20170312/model/TerminateInstancesResponse.h
+  include/tencentcloud/cvm/v20170312/model/RepairTaskControlResponse.h
   include/tencentcloud/cvm/v20170312/model/ModifyInstancesChargeTypeResponse.h
   include/tencentcloud/cvm/v20170312/model/AccountQuota.h
   include/tencentcloud/cvm/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.h
@@ -53,6 +54,7 @@ set(cvm_public_header_model
   include/tencentcloud/cvm/v20170312/model/LaunchTemplate.h
   include/tencentcloud/cvm/v20170312/model/DescribeChcHostsResponse.h
   include/tencentcloud/cvm/v20170312/model/InstanceTypeConfig.h
+  include/tencentcloud/cvm/v20170312/model/RepairTaskControlRequest.h
   include/tencentcloud/cvm/v20170312/model/AllocateHostsRequest.h
   include/tencentcloud/cvm/v20170312/model/LoginSettings.h
   include/tencentcloud/cvm/v20170312/model/DescribeRegionsResponse.h
@@ -292,6 +294,7 @@ set(cvm_src
   src/v20170312/model/DeleteDisasterRecoverGroupsRequest.cpp
   src/v20170312/model/DeleteKeyPairsResponse.cpp
   src/v20170312/model/TerminateInstancesResponse.cpp
+  src/v20170312/model/RepairTaskControlResponse.cpp
   src/v20170312/model/ModifyInstancesChargeTypeResponse.cpp
   src/v20170312/model/AccountQuota.cpp
   src/v20170312/model/InquiryPriceResetInstancesInternetMaxBandwidthResponse.cpp
@@ -313,6 +316,7 @@ set(cvm_src
   src/v20170312/model/LaunchTemplate.cpp
   src/v20170312/model/DescribeChcHostsResponse.cpp
   src/v20170312/model/InstanceTypeConfig.cpp
+  src/v20170312/model/RepairTaskControlRequest.cpp
   src/v20170312/model/AllocateHostsRequest.cpp
   src/v20170312/model/LoginSettings.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp

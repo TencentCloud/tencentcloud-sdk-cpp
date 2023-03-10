@@ -23,7 +23,8 @@ using namespace TencentCloud::Cvm::V20170312::Model;
 using namespace std;
 
 TerminateInstancesRequest::TerminateInstancesRequest() :
-    m_instanceIdsHasBeenSet(false)
+    m_instanceIdsHasBeenSet(false),
+    m_releasePrepaidDataDisksHasBeenSet(false)
 {
 }
 
@@ -45,6 +46,14 @@ string TerminateInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_releasePrepaidDataDisksHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReleasePrepaidDataDisks";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_releasePrepaidDataDisks, allocator);
     }
 
 
@@ -69,6 +78,22 @@ void TerminateInstancesRequest::SetInstanceIds(const vector<string>& _instanceId
 bool TerminateInstancesRequest::InstanceIdsHasBeenSet() const
 {
     return m_instanceIdsHasBeenSet;
+}
+
+bool TerminateInstancesRequest::GetReleasePrepaidDataDisks() const
+{
+    return m_releasePrepaidDataDisks;
+}
+
+void TerminateInstancesRequest::SetReleasePrepaidDataDisks(const bool& _releasePrepaidDataDisks)
+{
+    m_releasePrepaidDataDisks = _releasePrepaidDataDisks;
+    m_releasePrepaidDataDisksHasBeenSet = true;
+}
+
+bool TerminateInstancesRequest::ReleasePrepaidDataDisksHasBeenSet() const
+{
+    return m_releasePrepaidDataDisksHasBeenSet;
 }
 
 

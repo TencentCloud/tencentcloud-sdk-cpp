@@ -38,7 +38,9 @@ ChannelCreateFlowByFilesRequest::ChannelCreateFlowByFilesRequest() :
     m_needSignReviewHasBeenSet(false),
     m_approverVerifyTypeHasBeenSet(false),
     m_signBeanTagHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_ccInfosHasBeenSet(false),
+    m_ccNotifyTypeHasBeenSet(false)
 {
 }
 
@@ -196,6 +198,29 @@ string ChannelCreateFlowByFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ccInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ccNotifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcNotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ccNotifyType, allocator);
     }
 
 
@@ -460,6 +485,38 @@ void ChannelCreateFlowByFilesRequest::SetOperator(const UserInfo& _operator)
 bool ChannelCreateFlowByFilesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+vector<CcInfo> ChannelCreateFlowByFilesRequest::GetCcInfos() const
+{
+    return m_ccInfos;
+}
+
+void ChannelCreateFlowByFilesRequest::SetCcInfos(const vector<CcInfo>& _ccInfos)
+{
+    m_ccInfos = _ccInfos;
+    m_ccInfosHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::CcInfosHasBeenSet() const
+{
+    return m_ccInfosHasBeenSet;
+}
+
+int64_t ChannelCreateFlowByFilesRequest::GetCcNotifyType() const
+{
+    return m_ccNotifyType;
+}
+
+void ChannelCreateFlowByFilesRequest::SetCcNotifyType(const int64_t& _ccNotifyType)
+{
+    m_ccNotifyType = _ccNotifyType;
+    m_ccNotifyTypeHasBeenSet = true;
+}
+
+bool ChannelCreateFlowByFilesRequest::CcNotifyTypeHasBeenSet() const
+{
+    return m_ccNotifyTypeHasBeenSet;
 }
 
 

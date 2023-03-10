@@ -40,6 +40,49 @@ IrpClient::IrpClient(const Credential &credential, const string &region, const C
 }
 
 
+IrpClient::DescribeGoodsRecommendOutcome IrpClient::DescribeGoodsRecommend(const DescribeGoodsRecommendRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGoodsRecommend");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGoodsRecommendResponse rsp = DescribeGoodsRecommendResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGoodsRecommendOutcome(rsp);
+        else
+            return DescribeGoodsRecommendOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGoodsRecommendOutcome(outcome.GetError());
+    }
+}
+
+void IrpClient::DescribeGoodsRecommendAsync(const DescribeGoodsRecommendRequest& request, const DescribeGoodsRecommendAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGoodsRecommend(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IrpClient::DescribeGoodsRecommendOutcomeCallable IrpClient::DescribeGoodsRecommendCallable(const DescribeGoodsRecommendRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGoodsRecommendOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGoodsRecommend(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IrpClient::FeedRecommendOutcome IrpClient::FeedRecommend(const FeedRecommendRequest &request)
 {
     auto outcome = MakeRequest(request, "FeedRecommend");
@@ -205,6 +248,92 @@ IrpClient::ReportFeedUserOutcomeCallable IrpClient::ReportFeedUserCallable(const
         [this, request]()
         {
             return this->ReportFeedUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IrpClient::ReportGoodsBehaviorOutcome IrpClient::ReportGoodsBehavior(const ReportGoodsBehaviorRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportGoodsBehavior");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportGoodsBehaviorResponse rsp = ReportGoodsBehaviorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportGoodsBehaviorOutcome(rsp);
+        else
+            return ReportGoodsBehaviorOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportGoodsBehaviorOutcome(outcome.GetError());
+    }
+}
+
+void IrpClient::ReportGoodsBehaviorAsync(const ReportGoodsBehaviorRequest& request, const ReportGoodsBehaviorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportGoodsBehavior(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IrpClient::ReportGoodsBehaviorOutcomeCallable IrpClient::ReportGoodsBehaviorCallable(const ReportGoodsBehaviorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportGoodsBehaviorOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportGoodsBehavior(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+IrpClient::ReportGoodsInfoOutcome IrpClient::ReportGoodsInfo(const ReportGoodsInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportGoodsInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportGoodsInfoResponse rsp = ReportGoodsInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportGoodsInfoOutcome(rsp);
+        else
+            return ReportGoodsInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportGoodsInfoOutcome(outcome.GetError());
+    }
+}
+
+void IrpClient::ReportGoodsInfoAsync(const ReportGoodsInfoRequest& request, const ReportGoodsInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportGoodsInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IrpClient::ReportGoodsInfoOutcomeCallable IrpClient::ReportGoodsInfoCallable(const ReportGoodsInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportGoodsInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportGoodsInfo(request);
         }
     );
 

@@ -25,7 +25,8 @@ ProxyDetailInfo::ProxyDetailInfo() :
     m_machineTypeHasBeenSet(false),
     m_processSpeedHasBeenSet(false),
     m_averageProcessDelayHasBeenSet(false),
-    m_slowProcessSpeedHasBeenSet(false)
+    m_slowProcessSpeedHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome ProxyDetailInfo::Deserialize(const rapidjson::Value &value)
         m_slowProcessSpeedHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProxyDetailInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void ProxyDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "SlowProcessSpeed";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_slowProcessSpeed, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void ProxyDetailInfo::SetSlowProcessSpeed(const int64_t& _slowProcessSpeed)
 bool ProxyDetailInfo::SlowProcessSpeedHasBeenSet() const
 {
     return m_slowProcessSpeedHasBeenSet;
+}
+
+string ProxyDetailInfo::GetVersion() const
+{
+    return m_version;
+}
+
+void ProxyDetailInfo::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool ProxyDetailInfo::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 

@@ -685,6 +685,49 @@ EssClient::CreatePrepareFlowOutcomeCallable EssClient::CreatePrepareFlowCallable
     return task->get_future();
 }
 
+EssClient::CreateReleaseFlowOutcome EssClient::CreateReleaseFlow(const CreateReleaseFlowRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateReleaseFlow");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateReleaseFlowResponse rsp = CreateReleaseFlowResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateReleaseFlowOutcome(rsp);
+        else
+            return CreateReleaseFlowOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateReleaseFlowOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreateReleaseFlowAsync(const CreateReleaseFlowRequest& request, const CreateReleaseFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateReleaseFlow(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreateReleaseFlowOutcomeCallable EssClient::CreateReleaseFlowCallable(const CreateReleaseFlowRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateReleaseFlowOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateReleaseFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateSchemeUrlOutcome EssClient::CreateSchemeUrl(const CreateSchemeUrlRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSchemeUrl");

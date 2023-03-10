@@ -136,6 +136,90 @@ namespace TencentCloud
                      */
                     bool TotalSizeHasBeenSet() const;
 
+                    /**
+                     * 获取表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TxhBackupExpireDay 表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTxhBackupExpireDay() const;
+
+                    /**
+                     * 设置表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TxhBackupExpireDay 表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTxhBackupExpireDay(const uint64_t& _txhBackupExpireDay);
+
+                    /**
+                     * 判断参数 TxhBackupExpireDay 是否已赋值
+                     * @return TxhBackupExpireDay 是否已赋值
+                     */
+                    bool TxhBackupExpireDayHasBeenSet() const;
+
+                    /**
+                     * 获取是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     * @return EnableMysql 是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     */
+                    uint64_t GetEnableMysql() const;
+
+                    /**
+                     * 设置是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     * @param EnableMysql 是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     */
+                    void SetEnableMysql(const uint64_t& _enableMysql);
+
+                    /**
+                     * 判断参数 EnableMysql 是否已赋值
+                     * @return EnableMysql 是否已赋值
+                     */
+                    bool EnableMysqlHasBeenSet() const;
+
+                    /**
+                     * 获取mysql负载均衡vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MysqlConnIp mysql负载均衡vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetMysqlConnIp() const;
+
+                    /**
+                     * 设置mysql负载均衡vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MysqlConnIp mysql负载均衡vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMysqlConnIp(const std::string& _mysqlConnIp);
+
+                    /**
+                     * 判断参数 MysqlConnIp 是否已赋值
+                     * @return MysqlConnIp 是否已赋值
+                     */
+                    bool MysqlConnIpHasBeenSet() const;
+
+                    /**
+                     * 获取mysql负载均衡vport
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MysqlConnPort mysql负载均衡vport
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMysqlConnPort() const;
+
+                    /**
+                     * 设置mysql负载均衡vport
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MysqlConnPort mysql负载均衡vport
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMysqlConnPort(const uint64_t& _mysqlConnPort);
+
+                    /**
+                     * 判断参数 MysqlConnPort 是否已赋值
+                     * @return MysqlConnPort 是否已赋值
+                     */
+                    bool MysqlConnPortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +251,33 @@ namespace TencentCloud
                      */
                     uint64_t m_totalSize;
                     bool m_totalSizeHasBeenSet;
+
+                    /**
+                     * 表格Txh备份文件多少天后过期删除
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_txhBackupExpireDay;
+                    bool m_txhBackupExpireDayHasBeenSet;
+
+                    /**
+                     * 是否开启mysql负载均衡,0未开启 1开启中 2已开启
+                     */
+                    uint64_t m_enableMysql;
+                    bool m_enableMysqlHasBeenSet;
+
+                    /**
+                     * mysql负载均衡vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_mysqlConnIp;
+                    bool m_mysqlConnIpHasBeenSet;
+
+                    /**
+                     * mysql负载均衡vport
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_mysqlConnPort;
+                    bool m_mysqlConnPortHasBeenSet;
 
                 };
             }

@@ -299,14 +299,14 @@ namespace TencentCloud
                     bool AliasesHasBeenSet() const;
 
                     /**
-                     * 获取时间查询区间的起始位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当天`00:00:00`。
-                     * @return StartDate 时间查询区间的起始位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当天`00:00:00`。
+                     * 获取时间查询区间的起始位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当天`00:00:00`。
+                     * @return StartDate 时间查询区间的起始位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当天`00:00:00`。
                      */
                     std::string GetStartDate() const;
 
                     /**
-                     * 设置时间查询区间的起始位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当天`00:00:00`。
-                     * @param StartDate 时间查询区间的起始位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当天`00:00:00`。
+                     * 设置时间查询区间的起始位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当天`00:00:00`。
+                     * @param StartDate 时间查询区间的起始位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当天`00:00:00`。
                      */
                     void SetStartDate(const std::string& _startDate);
 
@@ -317,14 +317,14 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取时间查询区间的终止位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当前时刻。
-                     * @return EndDate 时间查询区间的终止位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当前时刻。
+                     * 获取时间查询区间的终止位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当前时刻。
+                     * @return EndDate 时间查询区间的终止位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当前时刻。
                      */
                     std::string GetEndDate() const;
 
                     /**
-                     * 设置时间查询区间的终止位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当前时刻。
-                     * @param EndDate 时间查询区间的终止位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当前时刻。
+                     * 设置时间查询区间的终止位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当前时刻。
+                     * @param EndDate 时间查询区间的终止位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当前时刻。
                      */
                     void SetEndDate(const std::string& _endDate);
 
@@ -497,13 +497,13 @@ namespace TencentCloud
                     bool m_aliasesHasBeenSet;
 
                     /**
-                     * 时间查询区间的起始位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当天`00:00:00`。
+                     * 时间查询区间的起始位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当天`00:00:00`。
                      */
                     std::string m_startDate;
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 时间查询区间的终止位置，会根据`OrderField`中指定的字段进行过滤。未传入时默认为当前时刻。
+                     * 时间查询区间的终止位置，会根据任务创建时间`CreateTime`进行过滤。未传入时默认为当前时刻。
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;

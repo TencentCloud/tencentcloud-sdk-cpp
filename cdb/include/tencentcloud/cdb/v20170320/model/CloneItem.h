@@ -190,6 +190,42 @@ namespace TencentCloud
                      */
                     bool TaskStatusHasBeenSet() const;
 
+                    /**
+                     * 获取克隆实例所在地域Id
+                     * @return NewRegionId 克隆实例所在地域Id
+                     */
+                    int64_t GetNewRegionId() const;
+
+                    /**
+                     * 设置克隆实例所在地域Id
+                     * @param NewRegionId 克隆实例所在地域Id
+                     */
+                    void SetNewRegionId(const int64_t& _newRegionId);
+
+                    /**
+                     * 判断参数 NewRegionId 是否已赋值
+                     * @return NewRegionId 是否已赋值
+                     */
+                    bool NewRegionIdHasBeenSet() const;
+
+                    /**
+                     * 获取源实例所在地域Id
+                     * @return SrcRegionId 源实例所在地域Id
+                     */
+                    int64_t GetSrcRegionId() const;
+
+                    /**
+                     * 设置源实例所在地域Id
+                     * @param SrcRegionId 源实例所在地域Id
+                     */
+                    void SetSrcRegionId(const int64_t& _srcRegionId);
+
+                    /**
+                     * 判断参数 SrcRegionId 是否已赋值
+                     * @return SrcRegionId 是否已赋值
+                     */
+                    bool SrcRegionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +275,18 @@ namespace TencentCloud
                      */
                     std::string m_taskStatus;
                     bool m_taskStatusHasBeenSet;
+
+                    /**
+                     * 克隆实例所在地域Id
+                     */
+                    int64_t m_newRegionId;
+                    bool m_newRegionIdHasBeenSet;
+
+                    /**
+                     * 源实例所在地域Id
+                     */
+                    int64_t m_srcRegionId;
+                    bool m_srcRegionIdHasBeenSet;
 
                 };
             }

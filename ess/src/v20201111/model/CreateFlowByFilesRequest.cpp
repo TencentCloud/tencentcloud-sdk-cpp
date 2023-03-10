@@ -40,7 +40,8 @@ CreateFlowByFilesRequest::CreateFlowByFilesRequest() :
     m_approverVerifyTypeHasBeenSet(false),
     m_flowDescriptionHasBeenSet(false),
     m_signBeanTagHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_ccNotifyTypeHasBeenSet(false)
 {
 }
 
@@ -221,6 +222,14 @@ string CreateFlowByFilesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ccNotifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcNotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ccNotifyType, allocator);
     }
 
 
@@ -517,6 +526,22 @@ void CreateFlowByFilesRequest::SetAgent(const Agent& _agent)
 bool CreateFlowByFilesRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+int64_t CreateFlowByFilesRequest::GetCcNotifyType() const
+{
+    return m_ccNotifyType;
+}
+
+void CreateFlowByFilesRequest::SetCcNotifyType(const int64_t& _ccNotifyType)
+{
+    m_ccNotifyType = _ccNotifyType;
+    m_ccNotifyTypeHasBeenSet = true;
+}
+
+bool CreateFlowByFilesRequest::CcNotifyTypeHasBeenSet() const
+{
+    return m_ccNotifyTypeHasBeenSet;
 }
 
 

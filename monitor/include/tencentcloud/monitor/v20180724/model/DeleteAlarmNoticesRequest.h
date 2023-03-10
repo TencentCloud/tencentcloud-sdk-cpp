@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool NoticeIdsHasBeenSet() const;
 
                     /**
-                     * 获取通知模版与策略绑定关系
-                     * @return NoticeBindPolicys 通知模版与策略绑定关系
+                     * 获取通知模板与策略绑定关系
+                     * @return NoticeBindPolicys 通知模板与策略绑定关系
                      */
                     std::vector<NoticeBindPolicys> GetNoticeBindPolicys() const;
 
                     /**
-                     * 设置通知模版与策略绑定关系
-                     * @param NoticeBindPolicys 通知模版与策略绑定关系
+                     * 设置通知模板与策略绑定关系
+                     * @param NoticeBindPolicys 通知模板与策略绑定关系
                      */
                     void SetNoticeBindPolicys(const std::vector<NoticeBindPolicys>& _noticeBindPolicys);
 
@@ -112,7 +112,7 @@ namespace TencentCloud
                     bool m_noticeIdsHasBeenSet;
 
                     /**
-                     * 通知模版与策略绑定关系
+                     * 通知模板与策略绑定关系
                      */
                     std::vector<NoticeBindPolicys> m_noticeBindPolicys;
                     bool m_noticeBindPolicysHasBeenSet;

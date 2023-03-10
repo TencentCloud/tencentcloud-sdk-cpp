@@ -30,7 +30,8 @@ BGPInstanceSpecification::BGPInstanceSpecification() :
     m_battleEditionFlagHasBeenSet(false),
     m_channelEditionFlagHasBeenSet(false),
     m_enterpriseFlagHasBeenSet(false),
-    m_elasticLimitHasBeenSet(false)
+    m_elasticLimitHasBeenSet(false),
+    m_downGradeProtectHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,16 @@ CoreInternalOutcome BGPInstanceSpecification::Deserialize(const rapidjson::Value
         m_elasticLimitHasBeenSet = true;
     }
 
+    if (value.HasMember("DownGradeProtect") && !value["DownGradeProtect"].IsNull())
+    {
+        if (!value["DownGradeProtect"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstanceSpecification.DownGradeProtect` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_downGradeProtect = value["DownGradeProtect"].GetUint64();
+        m_downGradeProtectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -224,6 +235,14 @@ void BGPInstanceSpecification::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "ElasticLimit";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_elasticLimit, allocator);
+    }
+
+    if (m_downGradeProtectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DownGradeProtect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_downGradeProtect, allocator);
     }
 
 }
@@ -387,5 +406,21 @@ void BGPInstanceSpecification::SetElasticLimit(const uint64_t& _elasticLimit)
 bool BGPInstanceSpecification::ElasticLimitHasBeenSet() const
 {
     return m_elasticLimitHasBeenSet;
+}
+
+uint64_t BGPInstanceSpecification::GetDownGradeProtect() const
+{
+    return m_downGradeProtect;
+}
+
+void BGPInstanceSpecification::SetDownGradeProtect(const uint64_t& _downGradeProtect)
+{
+    m_downGradeProtect = _downGradeProtect;
+    m_downGradeProtectHasBeenSet = true;
+}
+
+bool BGPInstanceSpecification::DownGradeProtectHasBeenSet() const
+{
+    return m_downGradeProtectHasBeenSet;
 }
 

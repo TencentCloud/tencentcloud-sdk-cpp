@@ -532,6 +532,28 @@ namespace TencentCloud
                      */
                     bool ManufacturerHasBeenSet() const;
 
+                    /**
+                     * 获取告警状态，0：停用，1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AlarmStatus 告警状态，0：停用，1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAlarmStatus() const;
+
+                    /**
+                     * 设置告警状态，0：停用，1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AlarmStatus 告警状态，0：停用，1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAlarmStatus(const int64_t& _alarmStatus);
+
+                    /**
+                     * 判断参数 AlarmStatus 是否已赋值
+                     * @return AlarmStatus 是否已赋值
+                     */
+                    bool AlarmStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -687,6 +709,13 @@ namespace TencentCloud
                      */
                     std::string m_manufacturer;
                     bool m_manufacturerHasBeenSet;
+
+                    /**
+                     * 告警状态，0：停用，1：启用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_alarmStatus;
+                    bool m_alarmStatusHasBeenSet;
 
                 };
             }

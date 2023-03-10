@@ -384,6 +384,49 @@ MpsClient::CreateSampleSnapshotTemplateOutcomeCallable MpsClient::CreateSampleSn
     return task->get_future();
 }
 
+MpsClient::CreateScheduleOutcome MpsClient::CreateSchedule(const CreateScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateScheduleResponse rsp = CreateScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateScheduleOutcome(rsp);
+        else
+            return CreateScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateScheduleOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::CreateScheduleAsync(const CreateScheduleRequest& request, const CreateScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::CreateScheduleOutcomeCallable MpsClient::CreateScheduleCallable(const CreateScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::CreateSnapshotByTimeOffsetTemplateOutcome MpsClient::CreateSnapshotByTimeOffsetTemplate(const CreateSnapshotByTimeOffsetTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSnapshotByTimeOffsetTemplate");
@@ -1022,6 +1065,49 @@ MpsClient::DeleteSampleSnapshotTemplateOutcomeCallable MpsClient::DeleteSampleSn
         [this, request]()
         {
             return this->DeleteSampleSnapshotTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::DeleteScheduleOutcome MpsClient::DeleteSchedule(const DeleteScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteScheduleResponse rsp = DeleteScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteScheduleOutcome(rsp);
+        else
+            return DeleteScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteScheduleOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DeleteScheduleAsync(const DeleteScheduleRequest& request, const DeleteScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DeleteScheduleOutcomeCallable MpsClient::DeleteScheduleCallable(const DeleteScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteSchedule(request);
         }
     );
 
@@ -1717,6 +1803,49 @@ MpsClient::DescribeSampleSnapshotTemplatesOutcomeCallable MpsClient::DescribeSam
     return task->get_future();
 }
 
+MpsClient::DescribeSchedulesOutcome MpsClient::DescribeSchedules(const DescribeSchedulesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSchedules");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSchedulesResponse rsp = DescribeSchedulesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSchedulesOutcome(rsp);
+        else
+            return DescribeSchedulesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSchedulesOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DescribeSchedulesAsync(const DescribeSchedulesRequest& request, const DescribeSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSchedules(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DescribeSchedulesOutcomeCallable MpsClient::DescribeSchedulesCallable(const DescribeSchedulesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSchedulesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSchedules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DescribeSnapshotByTimeOffsetTemplatesOutcome MpsClient::DescribeSnapshotByTimeOffsetTemplates(const DescribeSnapshotByTimeOffsetTemplatesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSnapshotByTimeOffsetTemplates");
@@ -2405,6 +2534,49 @@ MpsClient::DescribeWorkflowsOutcomeCallable MpsClient::DescribeWorkflowsCallable
     return task->get_future();
 }
 
+MpsClient::DisableScheduleOutcome MpsClient::DisableSchedule(const DisableScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DisableSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DisableScheduleResponse rsp = DisableScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DisableScheduleOutcome(rsp);
+        else
+            return DisableScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return DisableScheduleOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::DisableScheduleAsync(const DisableScheduleRequest& request, const DisableScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DisableSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::DisableScheduleOutcomeCallable MpsClient::DisableScheduleCallable(const DisableScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DisableScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->DisableSchedule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MpsClient::DisableWorkflowOutcome MpsClient::DisableWorkflow(const DisableWorkflowRequest &request)
 {
     auto outcome = MakeRequest(request, "DisableWorkflow");
@@ -2484,6 +2656,49 @@ MpsClient::EditMediaOutcomeCallable MpsClient::EditMediaCallable(const EditMedia
         [this, request]()
         {
             return this->EditMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::EnableScheduleOutcome MpsClient::EnableSchedule(const EnableScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "EnableSchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EnableScheduleResponse rsp = EnableScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EnableScheduleOutcome(rsp);
+        else
+            return EnableScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return EnableScheduleOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::EnableScheduleAsync(const EnableScheduleRequest& request, const EnableScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EnableSchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::EnableScheduleOutcomeCallable MpsClient::EnableScheduleCallable(const EnableScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EnableScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->EnableSchedule(request);
         }
     );
 
@@ -2957,6 +3172,49 @@ MpsClient::ModifySampleSnapshotTemplateOutcomeCallable MpsClient::ModifySampleSn
         [this, request]()
         {
             return this->ModifySampleSnapshotTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+MpsClient::ModifyScheduleOutcome MpsClient::ModifySchedule(const ModifyScheduleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifySchedule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyScheduleResponse rsp = ModifyScheduleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyScheduleOutcome(rsp);
+        else
+            return ModifyScheduleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyScheduleOutcome(outcome.GetError());
+    }
+}
+
+void MpsClient::ModifyScheduleAsync(const ModifyScheduleRequest& request, const ModifyScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifySchedule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MpsClient::ModifyScheduleOutcomeCallable MpsClient::ModifyScheduleCallable(const ModifyScheduleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyScheduleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifySchedule(request);
         }
     );
 

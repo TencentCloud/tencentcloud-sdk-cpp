@@ -162,6 +162,24 @@ Default-默认不修改
                      */
                     bool SubnetIdHasBeenSet() const;
 
+                    /**
+                     * 获取告警开关，0表示关闭告警，1表示启用告警
+                     * @return AlarmStatus 告警开关，0表示关闭告警，1表示启用告警
+                     */
+                    int64_t GetAlarmStatus() const;
+
+                    /**
+                     * 设置告警开关，0表示关闭告警，1表示启用告警
+                     * @param AlarmStatus 告警开关，0表示关闭告警，1表示启用告警
+                     */
+                    void SetAlarmStatus(const int64_t& _alarmStatus);
+
+                    /**
+                     * 判断参数 AlarmStatus 是否已赋值
+                     * @return AlarmStatus 是否已赋值
+                     */
+                    bool AlarmStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -202,6 +220,12 @@ Default-默认不修改
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
+
+                    /**
+                     * 告警开关，0表示关闭告警，1表示启用告警
+                     */
+                    int64_t m_alarmStatus;
+                    bool m_alarmStatusHasBeenSet;
 
                 };
             }

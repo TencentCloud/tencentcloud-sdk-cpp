@@ -25,6 +25,7 @@
 #include <tencentcloud/essbasic/v20210526/model/FlowApproverInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Component.h>
 #include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
+#include <tencentcloud/essbasic/v20210526/model/CcInfo.h>
 
 
 namespace TencentCloud
@@ -83,14 +84,14 @@ namespace TencentCloud
                     bool FlowNameHasBeenSet() const;
 
                     /**
-                     * 获取签署流程签约方列表，最多不超过5个参与方
-                     * @return FlowApprovers 签署流程签约方列表，最多不超过5个参与方
+                     * 获取签署流程签约方列表，最多不超过50个参与方
+                     * @return FlowApprovers 签署流程签约方列表，最多不超过50个参与方
                      */
                     std::vector<FlowApproverInfo> GetFlowApprovers() const;
 
                     /**
-                     * 设置签署流程签约方列表，最多不超过5个参与方
-                     * @param FlowApprovers 签署流程签约方列表，最多不超过5个参与方
+                     * 设置签署流程签约方列表，最多不超过50个参与方
+                     * @param FlowApprovers 签署流程签约方列表，最多不超过50个参与方
                      */
                     void SetFlowApprovers(const std::vector<FlowApproverInfo>& _flowApprovers);
 
@@ -346,6 +347,42 @@ MobileCheck：手机号验证
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取被抄送人信息列表
+                     * @return CcInfos 被抄送人信息列表
+                     */
+                    std::vector<CcInfo> GetCcInfos() const;
+
+                    /**
+                     * 设置被抄送人信息列表
+                     * @param CcInfos 被抄送人信息列表
+                     */
+                    void SetCcInfos(const std::vector<CcInfo>& _ccInfos);
+
+                    /**
+                     * 判断参数 CcInfos 是否已赋值
+                     * @return CcInfos 是否已赋值
+                     */
+                    bool CcInfosHasBeenSet() const;
+
+                    /**
+                     * 获取给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * @return CcNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     */
+                    int64_t GetCcNotifyType() const;
+
+                    /**
+                     * 设置给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * @param CcNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     */
+                    void SetCcNotifyType(const int64_t& _ccNotifyType);
+
+                    /**
+                     * 判断参数 CcNotifyType 是否已赋值
+                     * @return CcNotifyType 是否已赋值
+                     */
+                    bool CcNotifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -361,7 +398,7 @@ MobileCheck：手机号验证
                     bool m_flowNameHasBeenSet;
 
                     /**
-                     * 签署流程签约方列表，最多不超过5个参与方
+                     * 签署流程签约方列表，最多不超过50个参与方
                      */
                     std::vector<FlowApproverInfo> m_flowApprovers;
                     bool m_flowApproversHasBeenSet;
@@ -446,6 +483,18 @@ MobileCheck：手机号验证
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 被抄送人信息列表
+                     */
+                    std::vector<CcInfo> m_ccInfos;
+                    bool m_ccInfosHasBeenSet;
+
+                    /**
+                     * 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     */
+                    int64_t m_ccNotifyType;
+                    bool m_ccNotifyTypeHasBeenSet;
 
                 };
             }

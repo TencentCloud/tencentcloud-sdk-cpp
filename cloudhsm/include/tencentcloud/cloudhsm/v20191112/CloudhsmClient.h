@@ -41,8 +41,14 @@
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeVsmAttributesResponse.h>
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeVsmsRequest.h>
 #include <tencentcloud/cloudhsm/v20191112/model/DescribeVsmsResponse.h>
+#include <tencentcloud/cloudhsm/v20191112/model/GetAlarmEventRequest.h>
+#include <tencentcloud/cloudhsm/v20191112/model/GetAlarmEventResponse.h>
+#include <tencentcloud/cloudhsm/v20191112/model/GetVsmMonitorInfoRequest.h>
+#include <tencentcloud/cloudhsm/v20191112/model/GetVsmMonitorInfoResponse.h>
 #include <tencentcloud/cloudhsm/v20191112/model/InquiryPriceBuyVsmRequest.h>
 #include <tencentcloud/cloudhsm/v20191112/model/InquiryPriceBuyVsmResponse.h>
+#include <tencentcloud/cloudhsm/v20191112/model/ModifyAlarmEventRequest.h>
+#include <tencentcloud/cloudhsm/v20191112/model/ModifyAlarmEventResponse.h>
 #include <tencentcloud/cloudhsm/v20191112/model/ModifyVsmAttributesRequest.h>
 #include <tencentcloud/cloudhsm/v20191112/model/ModifyVsmAttributesResponse.h>
 
@@ -86,9 +92,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVsmsResponse> DescribeVsmsOutcome;
                 typedef std::future<DescribeVsmsOutcome> DescribeVsmsOutcomeCallable;
                 typedef std::function<void(const CloudhsmClient*, const Model::DescribeVsmsRequest&, DescribeVsmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVsmsAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetAlarmEventResponse> GetAlarmEventOutcome;
+                typedef std::future<GetAlarmEventOutcome> GetAlarmEventOutcomeCallable;
+                typedef std::function<void(const CloudhsmClient*, const Model::GetAlarmEventRequest&, GetAlarmEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetAlarmEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetVsmMonitorInfoResponse> GetVsmMonitorInfoOutcome;
+                typedef std::future<GetVsmMonitorInfoOutcome> GetVsmMonitorInfoOutcomeCallable;
+                typedef std::function<void(const CloudhsmClient*, const Model::GetVsmMonitorInfoRequest&, GetVsmMonitorInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetVsmMonitorInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::InquiryPriceBuyVsmResponse> InquiryPriceBuyVsmOutcome;
                 typedef std::future<InquiryPriceBuyVsmOutcome> InquiryPriceBuyVsmOutcomeCallable;
                 typedef std::function<void(const CloudhsmClient*, const Model::InquiryPriceBuyVsmRequest&, InquiryPriceBuyVsmOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquiryPriceBuyVsmAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAlarmEventResponse> ModifyAlarmEventOutcome;
+                typedef std::future<ModifyAlarmEventOutcome> ModifyAlarmEventOutcomeCallable;
+                typedef std::function<void(const CloudhsmClient*, const Model::ModifyAlarmEventRequest&, ModifyAlarmEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAlarmEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyVsmAttributesResponse> ModifyVsmAttributesOutcome;
                 typedef std::future<ModifyVsmAttributesOutcome> ModifyVsmAttributesOutcomeCallable;
                 typedef std::function<void(const CloudhsmClient*, const Model::ModifyVsmAttributesRequest&, ModifyVsmAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyVsmAttributesAsyncHandler;
@@ -177,6 +192,24 @@ namespace TencentCloud
                 DescribeVsmsOutcomeCallable DescribeVsmsCallable(const Model::DescribeVsmsRequest& request);
 
                 /**
+                 *获取告警事件
+                 * @param req GetAlarmEventRequest
+                 * @return GetAlarmEventOutcome
+                 */
+                GetAlarmEventOutcome GetAlarmEvent(const Model::GetAlarmEventRequest &request);
+                void GetAlarmEventAsync(const Model::GetAlarmEventRequest& request, const GetAlarmEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetAlarmEventOutcomeCallable GetAlarmEventCallable(const Model::GetAlarmEventRequest& request);
+
+                /**
+                 *获取VSM监控信息
+                 * @param req GetVsmMonitorInfoRequest
+                 * @return GetVsmMonitorInfoOutcome
+                 */
+                GetVsmMonitorInfoOutcome GetVsmMonitorInfo(const Model::GetVsmMonitorInfoRequest &request);
+                void GetVsmMonitorInfoAsync(const Model::GetVsmMonitorInfoRequest& request, const GetVsmMonitorInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetVsmMonitorInfoOutcomeCallable GetVsmMonitorInfoCallable(const Model::GetVsmMonitorInfoRequest& request);
+
+                /**
                  *购买询价接口
                  * @param req InquiryPriceBuyVsmRequest
                  * @return InquiryPriceBuyVsmOutcome
@@ -184,6 +217,15 @@ namespace TencentCloud
                 InquiryPriceBuyVsmOutcome InquiryPriceBuyVsm(const Model::InquiryPriceBuyVsmRequest &request);
                 void InquiryPriceBuyVsmAsync(const Model::InquiryPriceBuyVsmRequest& request, const InquiryPriceBuyVsmAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquiryPriceBuyVsmOutcomeCallable InquiryPriceBuyVsmCallable(const Model::InquiryPriceBuyVsmRequest& request);
+
+                /**
+                 *修改告警事件
+                 * @param req ModifyAlarmEventRequest
+                 * @return ModifyAlarmEventOutcome
+                 */
+                ModifyAlarmEventOutcome ModifyAlarmEvent(const Model::ModifyAlarmEventRequest &request);
+                void ModifyAlarmEventAsync(const Model::ModifyAlarmEventRequest& request, const ModifyAlarmEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAlarmEventOutcomeCallable ModifyAlarmEventCallable(const Model::ModifyAlarmEventRequest& request);
 
                 /**
                  *修改VSM属性

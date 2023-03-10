@@ -26,7 +26,8 @@ ServerDetailInfo::ServerDetailInfo() :
     m_memoryRateHasBeenSet(false),
     m_diskRateHasBeenSet(false),
     m_readNumHasBeenSet(false),
-    m_writeNumHasBeenSet(false)
+    m_writeNumHasBeenSet(false),
+    m_versionHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome ServerDetailInfo::Deserialize(const rapidjson::Value &value)
         m_writeNumHasBeenSet = true;
     }
 
+    if (value.HasMember("Version") && !value["Version"].IsNull())
+    {
+        if (!value["Version"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServerDetailInfo.Version` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_version = string(value["Version"].GetString());
+        m_versionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void ServerDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "WriteNum";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_writeNum, allocator);
+    }
+
+    if (m_versionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Version";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_version.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void ServerDetailInfo::SetWriteNum(const int64_t& _writeNum)
 bool ServerDetailInfo::WriteNumHasBeenSet() const
 {
     return m_writeNumHasBeenSet;
+}
+
+string ServerDetailInfo::GetVersion() const
+{
+    return m_version;
+}
+
+void ServerDetailInfo::SetVersion(const string& _version)
+{
+    m_version = _version;
+    m_versionHasBeenSet = true;
+}
+
+bool ServerDetailInfo::VersionHasBeenSet() const
+{
+    return m_versionHasBeenSet;
 }
 

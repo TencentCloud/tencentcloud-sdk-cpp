@@ -26,7 +26,8 @@ StartFlowRequest::StartFlowRequest() :
     m_operatorHasBeenSet(false),
     m_flowIdHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_agentHasBeenSet(false),
+    m_ccNotifyTypeHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,14 @@ string StartFlowRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_agent.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_ccNotifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcNotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_ccNotifyType, allocator);
     }
 
 
@@ -141,6 +150,22 @@ void StartFlowRequest::SetAgent(const Agent& _agent)
 bool StartFlowRequest::AgentHasBeenSet() const
 {
     return m_agentHasBeenSet;
+}
+
+int64_t StartFlowRequest::GetCcNotifyType() const
+{
+    return m_ccNotifyType;
+}
+
+void StartFlowRequest::SetCcNotifyType(const int64_t& _ccNotifyType)
+{
+    m_ccNotifyType = _ccNotifyType;
+    m_ccNotifyTypeHasBeenSet = true;
+}
+
+bool StartFlowRequest::CcNotifyTypeHasBeenSet() const
+{
+    return m_ccNotifyTypeHasBeenSet;
 }
 
 

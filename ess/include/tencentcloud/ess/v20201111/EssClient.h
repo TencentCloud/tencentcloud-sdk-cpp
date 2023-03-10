@@ -53,6 +53,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateReleaseFlowRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateReleaseFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSealPolicyRequest.h>
@@ -156,6 +158,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrepareFlowResponse> CreatePrepareFlowOutcome;
                 typedef std::future<CreatePrepareFlowOutcome> CreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePrepareFlowRequest&, CreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrepareFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateReleaseFlowResponse> CreateReleaseFlowOutcome;
+                typedef std::future<CreateReleaseFlowOutcome> CreateReleaseFlowOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateReleaseFlowRequest&, CreateReleaseFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseFlowAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSchemeUrlResponse> CreateSchemeUrlOutcome;
                 typedef std::future<CreateSchemeUrlOutcome> CreateSchemeUrlOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateSchemeUrlRequest&, CreateSchemeUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSchemeUrlAsyncHandler;
@@ -384,6 +389,15 @@ namespace TencentCloud
                 CreatePrepareFlowOutcome CreatePrepareFlow(const Model::CreatePrepareFlowRequest &request);
                 void CreatePrepareFlowAsync(const Model::CreatePrepareFlowRequest& request, const CreatePrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrepareFlowOutcomeCallable CreatePrepareFlowCallable(const Model::CreatePrepareFlowRequest& request);
+
+                /**
+                 *发起解除协议，主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。
+                 * @param req CreateReleaseFlowRequest
+                 * @return CreateReleaseFlowOutcome
+                 */
+                CreateReleaseFlowOutcome CreateReleaseFlow(const Model::CreateReleaseFlowRequest &request);
+                void CreateReleaseFlowAsync(const Model::CreateReleaseFlowRequest& request, const CreateReleaseFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateReleaseFlowOutcomeCallable CreateReleaseFlowCallable(const Model::CreateReleaseFlowRequest& request);
 
                 /**
                  *获取小程序跳转链接

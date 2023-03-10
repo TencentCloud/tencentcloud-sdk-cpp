@@ -39,6 +39,8 @@
 #include <tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/CreateCosRechargeRequest.h>
+#include <tencentcloud/cls/v20201016/model/CreateCosRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportRequest.h>
 #include <tencentcloud/cls/v20201016/model/CreateExportResponse.h>
 #include <tencentcloud/cls/v20201016/model/CreateIndexRequest.h>
@@ -89,6 +91,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeConfigsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeCosRechargesRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeCosRechargesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeExportsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeExportsResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeIndexRequest.h>
@@ -127,6 +131,8 @@
 #include <tencentcloud/cls/v20201016/model/ModifyConfigExtraResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyConsumerResponse.h>
+#include <tencentcloud/cls/v20201016/model/ModifyCosRechargeRequest.h>
+#include <tencentcloud/cls/v20201016/model/ModifyCosRechargeResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexRequest.h>
 #include <tencentcloud/cls/v20201016/model/ModifyIndexResponse.h>
 #include <tencentcloud/cls/v20201016/model/ModifyLogsetRequest.h>
@@ -185,6 +191,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConsumerResponse> CreateConsumerOutcome;
                 typedef std::future<CreateConsumerOutcome> CreateConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateConsumerRequest&, CreateConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateCosRechargeResponse> CreateCosRechargeOutcome;
+                typedef std::future<CreateCosRechargeOutcome> CreateCosRechargeOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::CreateCosRechargeRequest&, CreateCosRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCosRechargeAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateExportResponse> CreateExportOutcome;
                 typedef std::future<CreateExportOutcome> CreateExportOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::CreateExportRequest&, CreateExportOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateExportAsyncHandler;
@@ -260,6 +269,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeConsumerResponse> DescribeConsumerOutcome;
                 typedef std::future<DescribeConsumerOutcome> DescribeConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConsumerRequest&, DescribeConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCosRechargesResponse> DescribeCosRechargesOutcome;
+                typedef std::future<DescribeCosRechargesOutcome> DescribeCosRechargesOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeCosRechargesRequest&, DescribeCosRechargesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCosRechargesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExportsResponse> DescribeExportsOutcome;
                 typedef std::future<DescribeExportsOutcome> DescribeExportsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeExportsRequest&, DescribeExportsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportsAsyncHandler;
@@ -317,6 +329,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyConsumerResponse> ModifyConsumerOutcome;
                 typedef std::future<ModifyConsumerOutcome> ModifyConsumerOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyConsumerRequest&, ModifyConsumerOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConsumerAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyCosRechargeResponse> ModifyCosRechargeOutcome;
+                typedef std::future<ModifyCosRechargeOutcome> ModifyCosRechargeOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::ModifyCosRechargeRequest&, ModifyCosRechargeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCosRechargeAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyIndexResponse> ModifyIndexOutcome;
                 typedef std::future<ModifyIndexOutcome> ModifyIndexOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::ModifyIndexRequest&, ModifyIndexOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyIndexAsyncHandler;
@@ -421,6 +436,15 @@ namespace TencentCloud
                 CreateConsumerOutcome CreateConsumer(const Model::CreateConsumerRequest &request);
                 void CreateConsumerAsync(const Model::CreateConsumerRequest& request, const CreateConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateConsumerOutcomeCallable CreateConsumerCallable(const Model::CreateConsumerRequest& request);
+
+                /**
+                 *本接口用于创建cos导入任务
+                 * @param req CreateCosRechargeRequest
+                 * @return CreateCosRechargeOutcome
+                 */
+                CreateCosRechargeOutcome CreateCosRecharge(const Model::CreateCosRechargeRequest &request);
+                void CreateCosRechargeAsync(const Model::CreateCosRechargeRequest& request, const CreateCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateCosRechargeOutcomeCallable CreateCosRechargeCallable(const Model::CreateCosRechargeRequest& request);
 
                 /**
                  *本接口仅创建下载任务，任务返回的下载地址，请用户调用DescribeExports查看任务列表。其中有下载地址CosPath参数。参考文档https://cloud.tencent.com/document/product/614/56449
@@ -648,6 +672,15 @@ namespace TencentCloud
                 DescribeConsumerOutcomeCallable DescribeConsumerCallable(const Model::DescribeConsumerRequest& request);
 
                 /**
+                 *本接口用于获取cos导入配置
+                 * @param req DescribeCosRechargesRequest
+                 * @return DescribeCosRechargesOutcome
+                 */
+                DescribeCosRechargesOutcome DescribeCosRecharges(const Model::DescribeCosRechargesRequest &request);
+                void DescribeCosRechargesAsync(const Model::DescribeCosRechargesRequest& request, const DescribeCosRechargesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCosRechargesOutcomeCallable DescribeCosRechargesCallable(const Model::DescribeCosRechargesRequest& request);
+
+                /**
                  *本接口用于获取日志下载任务列表
                  * @param req DescribeExportsRequest
                  * @return DescribeExportsOutcome
@@ -817,6 +850,15 @@ namespace TencentCloud
                 ModifyConsumerOutcome ModifyConsumer(const Model::ModifyConsumerRequest &request);
                 void ModifyConsumerAsync(const Model::ModifyConsumerRequest& request, const ModifyConsumerAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyConsumerOutcomeCallable ModifyConsumerCallable(const Model::ModifyConsumerRequest& request);
+
+                /**
+                 *本接口用于修改cos导入任务
+                 * @param req ModifyCosRechargeRequest
+                 * @return ModifyCosRechargeOutcome
+                 */
+                ModifyCosRechargeOutcome ModifyCosRecharge(const Model::ModifyCosRechargeRequest &request);
+                void ModifyCosRechargeAsync(const Model::ModifyCosRechargeRequest& request, const ModifyCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyCosRechargeOutcomeCallable ModifyCosRechargeCallable(const Model::ModifyCosRechargeRequest& request);
 
                 /**
                  *本接口用于修改索引配置，该接口除受默认接口请求频率限制外，针对单个日志主题，并发数不能超过1，即同一时间同一个日志主题只能有一个正在执行的索引配置修改操作。

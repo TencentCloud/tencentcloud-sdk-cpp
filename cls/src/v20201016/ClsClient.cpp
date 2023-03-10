@@ -384,6 +384,49 @@ ClsClient::CreateConsumerOutcomeCallable ClsClient::CreateConsumerCallable(const
     return task->get_future();
 }
 
+ClsClient::CreateCosRechargeOutcome ClsClient::CreateCosRecharge(const CreateCosRechargeRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateCosRecharge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateCosRechargeResponse rsp = CreateCosRechargeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateCosRechargeOutcome(rsp);
+        else
+            return CreateCosRechargeOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateCosRechargeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::CreateCosRechargeAsync(const CreateCosRechargeRequest& request, const CreateCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateCosRecharge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::CreateCosRechargeOutcomeCallable ClsClient::CreateCosRechargeCallable(const CreateCosRechargeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateCosRechargeOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateCosRecharge(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::CreateExportOutcome ClsClient::CreateExport(const CreateExportRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateExport");
@@ -1459,6 +1502,49 @@ ClsClient::DescribeConsumerOutcomeCallable ClsClient::DescribeConsumerCallable(c
     return task->get_future();
 }
 
+ClsClient::DescribeCosRechargesOutcome ClsClient::DescribeCosRecharges(const DescribeCosRechargesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCosRecharges");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCosRechargesResponse rsp = DescribeCosRechargesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCosRechargesOutcome(rsp);
+        else
+            return DescribeCosRechargesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCosRechargesOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeCosRechargesAsync(const DescribeCosRechargesRequest& request, const DescribeCosRechargesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCosRecharges(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeCosRechargesOutcomeCallable ClsClient::DescribeCosRechargesCallable(const DescribeCosRechargesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCosRechargesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCosRecharges(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeExportsOutcome ClsClient::DescribeExports(const DescribeExportsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExports");
@@ -2269,6 +2355,49 @@ ClsClient::ModifyConsumerOutcomeCallable ClsClient::ModifyConsumerCallable(const
         [this, request]()
         {
             return this->ModifyConsumer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ClsClient::ModifyCosRechargeOutcome ClsClient::ModifyCosRecharge(const ModifyCosRechargeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCosRecharge");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCosRechargeResponse rsp = ModifyCosRechargeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCosRechargeOutcome(rsp);
+        else
+            return ModifyCosRechargeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCosRechargeOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::ModifyCosRechargeAsync(const ModifyCosRechargeRequest& request, const ModifyCosRechargeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCosRecharge(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::ModifyCosRechargeOutcomeCallable ClsClient::ModifyCosRechargeCallable(const ModifyCosRechargeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCosRechargeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCosRecharge(request);
         }
     );
 

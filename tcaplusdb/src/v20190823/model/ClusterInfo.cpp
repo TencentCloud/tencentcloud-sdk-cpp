@@ -49,7 +49,8 @@ ClusterInfo::ClusterInfo() :
     m_kafkaInfoHasBeenSet(false),
     m_txhBackupExpireDayHasBeenSet(false),
     m_ulogBackupExpireDayHasBeenSet(false),
-    m_isReadOnlyUlogBackupExpireDayHasBeenSet(false)
+    m_isReadOnlyUlogBackupExpireDayHasBeenSet(false),
+    m_restProxyStatusHasBeenSet(false)
 {
 }
 
@@ -378,6 +379,16 @@ CoreInternalOutcome ClusterInfo::Deserialize(const rapidjson::Value &value)
         m_isReadOnlyUlogBackupExpireDayHasBeenSet = true;
     }
 
+    if (value.HasMember("RestProxyStatus") && !value["RestProxyStatus"].IsNull())
+    {
+        if (!value["RestProxyStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterInfo.RestProxyStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_restProxyStatus = value["RestProxyStatus"].GetInt64();
+        m_restProxyStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -635,6 +646,14 @@ void ClusterInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "IsReadOnlyUlogBackupExpireDay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isReadOnlyUlogBackupExpireDay, allocator);
+    }
+
+    if (m_restProxyStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RestProxyStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_restProxyStatus, allocator);
     }
 
 }
@@ -1102,5 +1121,21 @@ void ClusterInfo::SetIsReadOnlyUlogBackupExpireDay(const uint64_t& _isReadOnlyUl
 bool ClusterInfo::IsReadOnlyUlogBackupExpireDayHasBeenSet() const
 {
     return m_isReadOnlyUlogBackupExpireDayHasBeenSet;
+}
+
+int64_t ClusterInfo::GetRestProxyStatus() const
+{
+    return m_restProxyStatus;
+}
+
+void ClusterInfo::SetRestProxyStatus(const int64_t& _restProxyStatus)
+{
+    m_restProxyStatus = _restProxyStatus;
+    m_restProxyStatusHasBeenSet = true;
+}
+
+bool ClusterInfo::RestProxyStatusHasBeenSet() const
+{
+    return m_restProxyStatusHasBeenSet;
 }
 

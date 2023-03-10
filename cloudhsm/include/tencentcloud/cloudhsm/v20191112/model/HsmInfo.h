@@ -83,6 +83,24 @@ namespace TencentCloud
                      */
                     bool VsmTypesHasBeenSet() const;
 
+                    /**
+                     * 获取加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     * @return HsmType 加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     */
+                    std::string GetHsmType() const;
+
+                    /**
+                     * 设置加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     * @param HsmType 加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     */
+                    void SetHsmType(const std::string& _hsmType);
+
+                    /**
+                     * 判断参数 HsmType 是否已赋值
+                     * @return HsmType 是否已赋值
+                     */
+                    bool HsmTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -96,6 +114,12 @@ namespace TencentCloud
                      */
                     std::vector<VsmInfo> m_vsmTypes;
                     bool m_vsmTypesHasBeenSet;
+
+                    /**
+                     * 加密机母机类型：virtualization、GHSM、EHSM、SHSM
+                     */
+                    std::string m_hsmType;
+                    bool m_hsmTypeHasBeenSet;
 
                 };
             }

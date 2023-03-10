@@ -36,19 +36,30 @@ set(irp_public_header_model
   include/tencentcloud/irp/v20220324/model/ReportMaterialRequest.h
   include/tencentcloud/irp/v20220324/model/RecommendContentResponse.h
   include/tencentcloud/irp/v20220324/model/TagInfo.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedItemResponse.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedUserRequest.h
   include/tencentcloud/irp/v20220805/model/FeedUserInfo.h
-  include/tencentcloud/irp/v20220805/model/FeedRecommendResponse.h
   include/tencentcloud/irp/v20220805/model/DocItem.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedItemRequest.h
+  include/tencentcloud/irp/v20220805/model/ReportGoodsBehaviorResponse.h
+  include/tencentcloud/irp/v20220805/model/UserIdInfo.h
+  include/tencentcloud/irp/v20220805/model/FeedRecommendResponse.h
+  include/tencentcloud/irp/v20220805/model/UserPortraitInfo.h
+  include/tencentcloud/irp/v20220805/model/RecGoodsData.h
+  include/tencentcloud/irp/v20220805/model/GoodsInfo.h
   include/tencentcloud/irp/v20220805/model/DislikeInfo.h
   include/tencentcloud/irp/v20220805/model/ReportFeedBehaviorResponse.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedItemRequest.h
-  include/tencentcloud/irp/v20220805/model/UserIdInfo.h
+  include/tencentcloud/irp/v20220805/model/ReportGoodsInfoResponse.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedUserRequest.h
   include/tencentcloud/irp/v20220805/model/RecItemData.h
-  include/tencentcloud/irp/v20220805/model/ReportFeedBehaviorRequest.h
   include/tencentcloud/irp/v20220805/model/FeedBehaviorInfo.h
   include/tencentcloud/irp/v20220805/model/ReportFeedUserResponse.h
+  include/tencentcloud/irp/v20220805/model/StrUserIdInfo.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedItemResponse.h
+  include/tencentcloud/irp/v20220805/model/DescribeGoodsRecommendRequest.h
+  include/tencentcloud/irp/v20220805/model/ReportGoodsBehaviorRequest.h
+  include/tencentcloud/irp/v20220805/model/ReportGoodsInfoRequest.h
+  include/tencentcloud/irp/v20220805/model/ReportFeedBehaviorRequest.h
+  include/tencentcloud/irp/v20220805/model/GoodsBehaviorInfo.h
+  include/tencentcloud/irp/v20220805/model/DescribeGoodsRecommendResponse.h
   include/tencentcloud/irp/v20220805/model/FeedRecommendRequest.h
   )
 
@@ -71,19 +82,30 @@ set(irp_src
   src/v20220324/model/ReportMaterialRequest.cpp
   src/v20220324/model/RecommendContentResponse.cpp
   src/v20220324/model/TagInfo.cpp
-  src/v20220805/model/ReportFeedItemResponse.cpp
-  src/v20220805/model/ReportFeedUserRequest.cpp
   src/v20220805/model/FeedUserInfo.cpp
-  src/v20220805/model/FeedRecommendResponse.cpp
   src/v20220805/model/DocItem.cpp
+  src/v20220805/model/ReportFeedItemRequest.cpp
+  src/v20220805/model/ReportGoodsBehaviorResponse.cpp
+  src/v20220805/model/UserIdInfo.cpp
+  src/v20220805/model/FeedRecommendResponse.cpp
+  src/v20220805/model/UserPortraitInfo.cpp
+  src/v20220805/model/RecGoodsData.cpp
+  src/v20220805/model/GoodsInfo.cpp
   src/v20220805/model/DislikeInfo.cpp
   src/v20220805/model/ReportFeedBehaviorResponse.cpp
-  src/v20220805/model/ReportFeedItemRequest.cpp
-  src/v20220805/model/UserIdInfo.cpp
+  src/v20220805/model/ReportGoodsInfoResponse.cpp
+  src/v20220805/model/ReportFeedUserRequest.cpp
   src/v20220805/model/RecItemData.cpp
-  src/v20220805/model/ReportFeedBehaviorRequest.cpp
   src/v20220805/model/FeedBehaviorInfo.cpp
   src/v20220805/model/ReportFeedUserResponse.cpp
+  src/v20220805/model/StrUserIdInfo.cpp
+  src/v20220805/model/ReportFeedItemResponse.cpp
+  src/v20220805/model/DescribeGoodsRecommendRequest.cpp
+  src/v20220805/model/ReportGoodsBehaviorRequest.cpp
+  src/v20220805/model/ReportGoodsInfoRequest.cpp
+  src/v20220805/model/ReportFeedBehaviorRequest.cpp
+  src/v20220805/model/GoodsBehaviorInfo.cpp
+  src/v20220805/model/DescribeGoodsRecommendResponse.cpp
   src/v20220805/model/FeedRecommendRequest.cpp
   )
 

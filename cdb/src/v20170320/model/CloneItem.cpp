@@ -28,7 +28,9 @@ CloneItem::CloneItem() :
     m_rollbackTargetTimeHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_taskStatusHasBeenSet(false)
+    m_taskStatusHasBeenSet(false),
+    m_newRegionIdHasBeenSet(false),
+    m_srcRegionIdHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome CloneItem::Deserialize(const rapidjson::Value &value)
         m_taskStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("NewRegionId") && !value["NewRegionId"].IsNull())
+    {
+        if (!value["NewRegionId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloneItem.NewRegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_newRegionId = value["NewRegionId"].GetInt64();
+        m_newRegionIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SrcRegionId") && !value["SrcRegionId"].IsNull())
+    {
+        if (!value["SrcRegionId"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloneItem.SrcRegionId` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcRegionId = value["SrcRegionId"].GetInt64();
+        m_srcRegionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void CloneItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "TaskStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_newRegionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NewRegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_newRegionId, allocator);
+    }
+
+    if (m_srcRegionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcRegionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_srcRegionId, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void CloneItem::SetTaskStatus(const string& _taskStatus)
 bool CloneItem::TaskStatusHasBeenSet() const
 {
     return m_taskStatusHasBeenSet;
+}
+
+int64_t CloneItem::GetNewRegionId() const
+{
+    return m_newRegionId;
+}
+
+void CloneItem::SetNewRegionId(const int64_t& _newRegionId)
+{
+    m_newRegionId = _newRegionId;
+    m_newRegionIdHasBeenSet = true;
+}
+
+bool CloneItem::NewRegionIdHasBeenSet() const
+{
+    return m_newRegionIdHasBeenSet;
+}
+
+int64_t CloneItem::GetSrcRegionId() const
+{
+    return m_srcRegionId;
+}
+
+void CloneItem::SetSrcRegionId(const int64_t& _srcRegionId)
+{
+    m_srcRegionId = _srcRegionId;
+    m_srcRegionIdHasBeenSet = true;
+}
+
+bool CloneItem::SrcRegionIdHasBeenSet() const
+{
+    return m_srcRegionIdHasBeenSet;
 }
 

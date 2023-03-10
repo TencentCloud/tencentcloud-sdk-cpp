@@ -32,7 +32,8 @@ FlowInfo::FlowInfo() :
     m_customerDataHasBeenSet(false),
     m_customShowMapHasBeenSet(false),
     m_ccInfosHasBeenSet(false),
-    m_needSignReviewHasBeenSet(false)
+    m_needSignReviewHasBeenSet(false),
+    m_ccNotifyTypeHasBeenSet(false)
 {
 }
 
@@ -191,6 +192,16 @@ CoreInternalOutcome FlowInfo::Deserialize(const rapidjson::Value &value)
         m_needSignReviewHasBeenSet = true;
     }
 
+    if (value.HasMember("CcNotifyType") && !value["CcNotifyType"].IsNull())
+    {
+        if (!value["CcNotifyType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowInfo.CcNotifyType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_ccNotifyType = value["CcNotifyType"].GetInt64();
+        m_ccNotifyTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -313,6 +324,14 @@ void FlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "NeedSignReview";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needSignReview, allocator);
+    }
+
+    if (m_ccNotifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcNotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_ccNotifyType, allocator);
     }
 
 }
@@ -508,5 +527,21 @@ void FlowInfo::SetNeedSignReview(const bool& _needSignReview)
 bool FlowInfo::NeedSignReviewHasBeenSet() const
 {
     return m_needSignReviewHasBeenSet;
+}
+
+int64_t FlowInfo::GetCcNotifyType() const
+{
+    return m_ccNotifyType;
+}
+
+void FlowInfo::SetCcNotifyType(const int64_t& _ccNotifyType)
+{
+    m_ccNotifyType = _ccNotifyType;
+    m_ccNotifyTypeHasBeenSet = true;
+}
+
+bool FlowInfo::CcNotifyTypeHasBeenSet() const
+{
+    return m_ccNotifyTypeHasBeenSet;
 }
 

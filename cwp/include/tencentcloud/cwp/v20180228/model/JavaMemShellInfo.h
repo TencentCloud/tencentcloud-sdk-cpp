@@ -239,6 +239,28 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取服务器uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Uuid 服务器uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUuid() const;
+
+                    /**
+                     * 设置服务器uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Uuid 服务器uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUuid(const std::string& _uuid);
+
+                    /**
+                     * 判断参数 Uuid 是否已赋值
+                     * @return Uuid 是否已赋值
+                     */
+                    bool UuidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -303,6 +325,13 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 服务器uuid
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_uuid;
+                    bool m_uuidHasBeenSet;
 
                 };
             }

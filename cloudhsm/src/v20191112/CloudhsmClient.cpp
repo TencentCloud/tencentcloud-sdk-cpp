@@ -427,6 +427,92 @@ CloudhsmClient::DescribeVsmsOutcomeCallable CloudhsmClient::DescribeVsmsCallable
     return task->get_future();
 }
 
+CloudhsmClient::GetAlarmEventOutcome CloudhsmClient::GetAlarmEvent(const GetAlarmEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetAlarmEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetAlarmEventResponse rsp = GetAlarmEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetAlarmEventOutcome(rsp);
+        else
+            return GetAlarmEventOutcome(o.GetError());
+    }
+    else
+    {
+        return GetAlarmEventOutcome(outcome.GetError());
+    }
+}
+
+void CloudhsmClient::GetAlarmEventAsync(const GetAlarmEventRequest& request, const GetAlarmEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetAlarmEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudhsmClient::GetAlarmEventOutcomeCallable CloudhsmClient::GetAlarmEventCallable(const GetAlarmEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetAlarmEventOutcome()>>(
+        [this, request]()
+        {
+            return this->GetAlarmEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CloudhsmClient::GetVsmMonitorInfoOutcome CloudhsmClient::GetVsmMonitorInfo(const GetVsmMonitorInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetVsmMonitorInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetVsmMonitorInfoResponse rsp = GetVsmMonitorInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetVsmMonitorInfoOutcome(rsp);
+        else
+            return GetVsmMonitorInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return GetVsmMonitorInfoOutcome(outcome.GetError());
+    }
+}
+
+void CloudhsmClient::GetVsmMonitorInfoAsync(const GetVsmMonitorInfoRequest& request, const GetVsmMonitorInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetVsmMonitorInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudhsmClient::GetVsmMonitorInfoOutcomeCallable CloudhsmClient::GetVsmMonitorInfoCallable(const GetVsmMonitorInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetVsmMonitorInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->GetVsmMonitorInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudhsmClient::InquiryPriceBuyVsmOutcome CloudhsmClient::InquiryPriceBuyVsm(const InquiryPriceBuyVsmRequest &request)
 {
     auto outcome = MakeRequest(request, "InquiryPriceBuyVsm");
@@ -463,6 +549,49 @@ CloudhsmClient::InquiryPriceBuyVsmOutcomeCallable CloudhsmClient::InquiryPriceBu
         [this, request]()
         {
             return this->InquiryPriceBuyVsm(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CloudhsmClient::ModifyAlarmEventOutcome CloudhsmClient::ModifyAlarmEvent(const ModifyAlarmEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAlarmEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAlarmEventResponse rsp = ModifyAlarmEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAlarmEventOutcome(rsp);
+        else
+            return ModifyAlarmEventOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAlarmEventOutcome(outcome.GetError());
+    }
+}
+
+void CloudhsmClient::ModifyAlarmEventAsync(const ModifyAlarmEventRequest& request, const ModifyAlarmEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAlarmEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudhsmClient::ModifyAlarmEventOutcomeCallable CloudhsmClient::ModifyAlarmEventCallable(const ModifyAlarmEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAlarmEventOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAlarmEvent(request);
         }
     );
 

@@ -115,6 +115,8 @@
 #include <tencentcloud/dlc/v20210125/model/DescribeDatabasesResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeEngineUsageInfoResponse.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h>
+#include <tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsDirSummaryRequest.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsDirSummaryResponse.h>
 #include <tencentcloud/dlc/v20210125/model/DescribeLakeFsInfoRequest.h>
@@ -345,6 +347,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEngineUsageInfoResponse> DescribeEngineUsageInfoOutcome;
                 typedef std::future<DescribeEngineUsageInfoOutcome> DescribeEngineUsageInfoOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeEngineUsageInfoRequest&, DescribeEngineUsageInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEngineUsageInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeForbiddenTableProResponse> DescribeForbiddenTableProOutcome;
+                typedef std::future<DescribeForbiddenTableProOutcome> DescribeForbiddenTableProOutcomeCallable;
+                typedef std::function<void(const DlcClient*, const Model::DescribeForbiddenTableProRequest&, DescribeForbiddenTableProOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeForbiddenTableProAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeLakeFsDirSummaryResponse> DescribeLakeFsDirSummaryOutcome;
                 typedef std::future<DescribeLakeFsDirSummaryOutcome> DescribeLakeFsDirSummaryOutcomeCallable;
                 typedef std::function<void(const DlcClient*, const Model::DescribeLakeFsDirSummaryRequest&, DescribeLakeFsDirSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLakeFsDirSummaryAsyncHandler;
@@ -878,6 +883,15 @@ namespace TencentCloud
                 DescribeEngineUsageInfoOutcome DescribeEngineUsageInfo(const Model::DescribeEngineUsageInfoRequest &request);
                 void DescribeEngineUsageInfoAsync(const Model::DescribeEngineUsageInfoRequest& request, const DescribeEngineUsageInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeEngineUsageInfoOutcomeCallable DescribeEngineUsageInfoCallable(const Model::DescribeEngineUsageInfoRequest& request);
+
+                /**
+                 *本接口（DescribeForbiddenTablePro）用于获取被禁用的表属性列表
+                 * @param req DescribeForbiddenTableProRequest
+                 * @return DescribeForbiddenTableProOutcome
+                 */
+                DescribeForbiddenTableProOutcome DescribeForbiddenTablePro(const Model::DescribeForbiddenTableProRequest &request);
+                void DescribeForbiddenTableProAsync(const Model::DescribeForbiddenTableProRequest& request, const DescribeForbiddenTableProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeForbiddenTableProOutcomeCallable DescribeForbiddenTableProCallable(const Model::DescribeForbiddenTableProRequest& request);
 
                 /**
                  *查询托管存储指定目录的Summary

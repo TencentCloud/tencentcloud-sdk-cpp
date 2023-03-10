@@ -39,6 +39,8 @@
 #include <tencentcloud/mps/v20190612/model/CreatePersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateSampleSnapshotTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/CreateScheduleRequest.h>
+#include <tencentcloud/mps/v20190612/model/CreateScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/CreateSnapshotByTimeOffsetTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/CreateStreamLinkFlowRequest.h>
@@ -69,6 +71,8 @@
 #include <tencentcloud/mps/v20190612/model/DeletePersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSampleSnapshotTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/DeleteScheduleRequest.h>
+#include <tencentcloud/mps/v20190612/model/DeleteScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/DeleteSnapshotByTimeOffsetTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/DeleteStreamLinkFlowRequest.h>
@@ -101,6 +105,8 @@
 #include <tencentcloud/mps/v20190612/model/DescribePersonSamplesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSampleSnapshotTemplatesResponse.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSchedulesRequest.h>
+#include <tencentcloud/mps/v20190612/model/DescribeSchedulesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeSnapshotByTimeOffsetTemplatesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeStreamLinkActivateStateRequest.h>
@@ -133,10 +139,14 @@
 #include <tencentcloud/mps/v20190612/model/DescribeWordSamplesResponse.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWorkflowsRequest.h>
 #include <tencentcloud/mps/v20190612/model/DescribeWorkflowsResponse.h>
+#include <tencentcloud/mps/v20190612/model/DisableScheduleRequest.h>
+#include <tencentcloud/mps/v20190612/model/DisableScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/DisableWorkflowResponse.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaRequest.h>
 #include <tencentcloud/mps/v20190612/model/EditMediaResponse.h>
+#include <tencentcloud/mps/v20190612/model/EnableScheduleRequest.h>
+#include <tencentcloud/mps/v20190612/model/EnableScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowRequest.h>
 #include <tencentcloud/mps/v20190612/model/EnableWorkflowResponse.h>
 #include <tencentcloud/mps/v20190612/model/ExecuteFunctionRequest.h>
@@ -159,6 +169,8 @@
 #include <tencentcloud/mps/v20190612/model/ModifyPersonSampleResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySampleSnapshotTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifySampleSnapshotTemplateResponse.h>
+#include <tencentcloud/mps/v20190612/model/ModifyScheduleRequest.h>
+#include <tencentcloud/mps/v20190612/model/ModifyScheduleResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifySnapshotByTimeOffsetTemplateRequest.h>
 #include <tencentcloud/mps/v20190612/model/ModifySnapshotByTimeOffsetTemplateResponse.h>
 #include <tencentcloud/mps/v20190612/model/ModifyStreamLinkFlowRequest.h>
@@ -229,6 +241,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSampleSnapshotTemplateResponse> CreateSampleSnapshotTemplateOutcome;
                 typedef std::future<CreateSampleSnapshotTemplateOutcome> CreateSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateSampleSnapshotTemplateRequest&, CreateSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSampleSnapshotTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateScheduleResponse> CreateScheduleOutcome;
+                typedef std::future<CreateScheduleOutcome> CreateScheduleOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::CreateScheduleRequest&, CreateScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateScheduleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSnapshotByTimeOffsetTemplateResponse> CreateSnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<CreateSnapshotByTimeOffsetTemplateOutcome> CreateSnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::CreateSnapshotByTimeOffsetTemplateRequest&, CreateSnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotByTimeOffsetTemplateAsyncHandler;
@@ -274,6 +289,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteSampleSnapshotTemplateResponse> DeleteSampleSnapshotTemplateOutcome;
                 typedef std::future<DeleteSampleSnapshotTemplateOutcome> DeleteSampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteSampleSnapshotTemplateRequest&, DeleteSampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSampleSnapshotTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteScheduleResponse> DeleteScheduleOutcome;
+                typedef std::future<DeleteScheduleOutcome> DeleteScheduleOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DeleteScheduleRequest&, DeleteScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteScheduleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSnapshotByTimeOffsetTemplateResponse> DeleteSnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<DeleteSnapshotByTimeOffsetTemplateOutcome> DeleteSnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DeleteSnapshotByTimeOffsetTemplateRequest&, DeleteSnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSnapshotByTimeOffsetTemplateAsyncHandler;
@@ -322,6 +340,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSampleSnapshotTemplatesResponse> DescribeSampleSnapshotTemplatesOutcome;
                 typedef std::future<DescribeSampleSnapshotTemplatesOutcome> DescribeSampleSnapshotTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSampleSnapshotTemplatesRequest&, DescribeSampleSnapshotTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSampleSnapshotTemplatesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSchedulesResponse> DescribeSchedulesOutcome;
+                typedef std::future<DescribeSchedulesOutcome> DescribeSchedulesOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DescribeSchedulesRequest&, DescribeSchedulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSchedulesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotByTimeOffsetTemplatesResponse> DescribeSnapshotByTimeOffsetTemplatesOutcome;
                 typedef std::future<DescribeSnapshotByTimeOffsetTemplatesOutcome> DescribeSnapshotByTimeOffsetTemplatesOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeSnapshotByTimeOffsetTemplatesRequest&, DescribeSnapshotByTimeOffsetTemplatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotByTimeOffsetTemplatesAsyncHandler;
@@ -370,12 +391,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkflowsResponse> DescribeWorkflowsOutcome;
                 typedef std::future<DescribeWorkflowsOutcome> DescribeWorkflowsOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DescribeWorkflowsRequest&, DescribeWorkflowsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkflowsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DisableScheduleResponse> DisableScheduleOutcome;
+                typedef std::future<DisableScheduleOutcome> DisableScheduleOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::DisableScheduleRequest&, DisableScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableScheduleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DisableWorkflowResponse> DisableWorkflowOutcome;
                 typedef std::future<DisableWorkflowOutcome> DisableWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::DisableWorkflowRequest&, DisableWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DisableWorkflowAsyncHandler;
                 typedef Outcome<Core::Error, Model::EditMediaResponse> EditMediaOutcome;
                 typedef std::future<EditMediaOutcome> EditMediaOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EditMediaRequest&, EditMediaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EditMediaAsyncHandler;
+                typedef Outcome<Core::Error, Model::EnableScheduleResponse> EnableScheduleOutcome;
+                typedef std::future<EnableScheduleOutcome> EnableScheduleOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::EnableScheduleRequest&, EnableScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableScheduleAsyncHandler;
                 typedef Outcome<Core::Error, Model::EnableWorkflowResponse> EnableWorkflowOutcome;
                 typedef std::future<EnableWorkflowOutcome> EnableWorkflowOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::EnableWorkflowRequest&, EnableWorkflowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EnableWorkflowAsyncHandler;
@@ -409,6 +436,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifySampleSnapshotTemplateResponse> ModifySampleSnapshotTemplateOutcome;
                 typedef std::future<ModifySampleSnapshotTemplateOutcome> ModifySampleSnapshotTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifySampleSnapshotTemplateRequest&, ModifySampleSnapshotTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySampleSnapshotTemplateAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyScheduleResponse> ModifyScheduleOutcome;
+                typedef std::future<ModifyScheduleOutcome> ModifyScheduleOutcomeCallable;
+                typedef std::function<void(const MpsClient*, const Model::ModifyScheduleRequest&, ModifyScheduleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyScheduleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifySnapshotByTimeOffsetTemplateResponse> ModifySnapshotByTimeOffsetTemplateOutcome;
                 typedef std::future<ModifySnapshotByTimeOffsetTemplateOutcome> ModifySnapshotByTimeOffsetTemplateOutcomeCallable;
                 typedef std::function<void(const MpsClient*, const Model::ModifySnapshotByTimeOffsetTemplateRequest&, ModifySnapshotByTimeOffsetTemplateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifySnapshotByTimeOffsetTemplateAsyncHandler;
@@ -531,6 +561,26 @@ namespace TencentCloud
                 CreateSampleSnapshotTemplateOutcome CreateSampleSnapshotTemplate(const Model::CreateSampleSnapshotTemplateRequest &request);
                 void CreateSampleSnapshotTemplateAsync(const Model::CreateSampleSnapshotTemplateRequest& request, const CreateSampleSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSampleSnapshotTemplateOutcomeCallable CreateSampleSnapshotTemplateCallable(const Model::CreateSampleSnapshotTemplateRequest& request);
+
+                /**
+                 *对 COS 中指定 Bucket 的目录下上传的媒体文件，设置处理规则，包括：
+1. 视频转码（带水印）；
+2. 视频转动图；
+3. 对视频按指定时间点截图；
+4. 对视频采样截图；
+5. 对视频截图雪碧图；
+6. 对视频转自适应码流；
+7. 智能内容审核（鉴黄、敏感信息检测）；
+8. 智能内容分析（标签、分类、封面、按帧标签）；
+9. 智能内容识别（人脸、文本全文、文本关键词、语音全文、语音关键词）。
+
+注意：创建编排成功后是禁用状态，需要手动启用。
+                 * @param req CreateScheduleRequest
+                 * @return CreateScheduleOutcome
+                 */
+                CreateScheduleOutcome CreateSchedule(const Model::CreateScheduleRequest &request);
+                void CreateScheduleAsync(const Model::CreateScheduleRequest& request, const CreateScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateScheduleOutcomeCallable CreateScheduleCallable(const Model::CreateScheduleRequest& request);
 
                 /**
                  *创建用户自定义指定时间点截图模板，数量上限：16。
@@ -681,6 +731,15 @@ namespace TencentCloud
                 DeleteSampleSnapshotTemplateOutcomeCallable DeleteSampleSnapshotTemplateCallable(const Model::DeleteSampleSnapshotTemplateRequest& request);
 
                 /**
+                 *删除编排
+                 * @param req DeleteScheduleRequest
+                 * @return DeleteScheduleOutcome
+                 */
+                DeleteScheduleOutcome DeleteSchedule(const Model::DeleteScheduleRequest &request);
+                void DeleteScheduleAsync(const Model::DeleteScheduleRequest& request, const DeleteScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteScheduleOutcomeCallable DeleteScheduleCallable(const Model::DeleteScheduleRequest& request);
+
+                /**
                  *删除用户自定义指定时间点截图模板。
                  * @param req DeleteSnapshotByTimeOffsetTemplateRequest
                  * @return DeleteSnapshotByTimeOffsetTemplateOutcome
@@ -823,6 +882,15 @@ namespace TencentCloud
                 DescribeSampleSnapshotTemplatesOutcome DescribeSampleSnapshotTemplates(const Model::DescribeSampleSnapshotTemplatesRequest &request);
                 void DescribeSampleSnapshotTemplatesAsync(const Model::DescribeSampleSnapshotTemplatesRequest& request, const DescribeSampleSnapshotTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSampleSnapshotTemplatesOutcomeCallable DescribeSampleSnapshotTemplatesCallable(const Model::DescribeSampleSnapshotTemplatesRequest& request);
+
+                /**
+                 *查询编排。
+                 * @param req DescribeSchedulesRequest
+                 * @return DescribeSchedulesOutcome
+                 */
+                DescribeSchedulesOutcome DescribeSchedules(const Model::DescribeSchedulesRequest &request);
+                void DescribeSchedulesAsync(const Model::DescribeSchedulesRequest& request, const DescribeSchedulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSchedulesOutcomeCallable DescribeSchedulesCallable(const Model::DescribeSchedulesRequest& request);
 
                 /**
                  *查询指定时间点截图模板，支持根据条件，分页查询。
@@ -973,6 +1041,15 @@ namespace TencentCloud
                 DescribeWorkflowsOutcomeCallable DescribeWorkflowsCallable(const Model::DescribeWorkflowsRequest& request);
 
                 /**
+                 *禁用自动化触发编排任务。
+                 * @param req DisableScheduleRequest
+                 * @return DisableScheduleOutcome
+                 */
+                DisableScheduleOutcome DisableSchedule(const Model::DisableScheduleRequest &request);
+                void DisableScheduleAsync(const Model::DisableScheduleRequest& request, const DisableScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DisableScheduleOutcomeCallable DisableScheduleCallable(const Model::DisableScheduleRequest& request);
+
+                /**
                  *禁用工作流。
                  * @param req DisableWorkflowRequest
                  * @return DisableWorkflowOutcome
@@ -993,6 +1070,15 @@ namespace TencentCloud
                 EditMediaOutcome EditMedia(const Model::EditMediaRequest &request);
                 void EditMediaAsync(const Model::EditMediaRequest& request, const EditMediaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 EditMediaOutcomeCallable EditMediaCallable(const Model::EditMediaRequest& request);
+
+                /**
+                 *启用自动化触发编排任务。
+                 * @param req EnableScheduleRequest
+                 * @return EnableScheduleOutcome
+                 */
+                EnableScheduleOutcome EnableSchedule(const Model::EnableScheduleRequest &request);
+                void EnableScheduleAsync(const Model::EnableScheduleRequest& request, const EnableScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EnableScheduleOutcomeCallable EnableScheduleCallable(const Model::EnableScheduleRequest& request);
 
                 /**
                  *启用工作流。
@@ -1094,6 +1180,15 @@ namespace TencentCloud
                 ModifySampleSnapshotTemplateOutcome ModifySampleSnapshotTemplate(const Model::ModifySampleSnapshotTemplateRequest &request);
                 void ModifySampleSnapshotTemplateAsync(const Model::ModifySampleSnapshotTemplateRequest& request, const ModifySampleSnapshotTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifySampleSnapshotTemplateOutcomeCallable ModifySampleSnapshotTemplateCallable(const Model::ModifySampleSnapshotTemplateRequest& request);
+
+                /**
+                 *修改编排
+                 * @param req ModifyScheduleRequest
+                 * @return ModifyScheduleOutcome
+                 */
+                ModifyScheduleOutcome ModifySchedule(const Model::ModifyScheduleRequest &request);
+                void ModifyScheduleAsync(const Model::ModifyScheduleRequest& request, const ModifyScheduleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyScheduleOutcomeCallable ModifyScheduleCallable(const Model::ModifyScheduleRequest& request);
 
                 /**
                  *修改用户自定义指定时间点截图模板。

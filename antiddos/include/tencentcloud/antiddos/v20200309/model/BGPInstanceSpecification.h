@@ -262,6 +262,28 @@ namespace TencentCloud
                      */
                     bool ElasticLimitHasBeenSet() const;
 
+                    /**
+                     * 获取降配后的防护能力，单位Gbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DownGradeProtect 降配后的防护能力，单位Gbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetDownGradeProtect() const;
+
+                    /**
+                     * 设置降配后的防护能力，单位Gbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DownGradeProtect 降配后的防护能力，单位Gbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDownGradeProtect(const uint64_t& _downGradeProtect);
+
+                    /**
+                     * 判断参数 DownGradeProtect 是否已赋值
+                     * @return DownGradeProtect 是否已赋值
+                     */
+                    bool DownGradeProtectHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +354,13 @@ namespace TencentCloud
                      */
                     uint64_t m_elasticLimit;
                     bool m_elasticLimitHasBeenSet;
+
+                    /**
+                     * 降配后的防护能力，单位Gbps
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_downGradeProtect;
+                    bool m_downGradeProtectHasBeenSet;
 
                 };
             }

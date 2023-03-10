@@ -3609,6 +3609,49 @@ CvmClient::RenewInstancesOutcomeCallable CvmClient::RenewInstancesCallable(const
     return task->get_future();
 }
 
+CvmClient::RepairTaskControlOutcome CvmClient::RepairTaskControl(const RepairTaskControlRequest &request)
+{
+    auto outcome = MakeRequest(request, "RepairTaskControl");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RepairTaskControlResponse rsp = RepairTaskControlResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RepairTaskControlOutcome(rsp);
+        else
+            return RepairTaskControlOutcome(o.GetError());
+    }
+    else
+    {
+        return RepairTaskControlOutcome(outcome.GetError());
+    }
+}
+
+void CvmClient::RepairTaskControlAsync(const RepairTaskControlRequest& request, const RepairTaskControlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RepairTaskControl(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CvmClient::RepairTaskControlOutcomeCallable CvmClient::RepairTaskControlCallable(const RepairTaskControlRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RepairTaskControlOutcome()>>(
+        [this, request]()
+        {
+            return this->RepairTaskControl(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CvmClient::ResetInstanceOutcome CvmClient::ResetInstance(const ResetInstanceRequest &request)
 {
     auto outcome = MakeRequest(request, "ResetInstance");

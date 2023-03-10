@@ -390,6 +390,24 @@ namespace TencentCloud
                      */
                     bool NeedSignReviewHasBeenSet() const;
 
+                    /**
+                     * 获取给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * @return CcNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     */
+                    int64_t GetCcNotifyType() const;
+
+                    /**
+                     * 设置给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     * @param CcNotifyType 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     */
+                    void SetCcNotifyType(const int64_t& _ccNotifyType);
+
+                    /**
+                     * 判断参数 CcNotifyType 是否已赋值
+                     * @return CcNotifyType 是否已赋值
+                     */
+                    bool CcNotifyTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -466,6 +484,12 @@ namespace TencentCloud
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;
+
+                    /**
+                     * 给关注人发送短信通知的类型，0-合同发起时通知 1-签署完成后通知
+                     */
+                    int64_t m_ccNotifyType;
+                    bool m_ccNotifyTypeHasBeenSet;
 
                 };
             }

@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdsHasBeenSet() const;
 
+                    /**
+                     * 获取释放实例挂载的包年包月数据盘。
+                     * @return ReleasePrepaidDataDisks 释放实例挂载的包年包月数据盘。
+                     */
+                    bool GetReleasePrepaidDataDisks() const;
+
+                    /**
+                     * 设置释放实例挂载的包年包月数据盘。
+                     * @param ReleasePrepaidDataDisks 释放实例挂载的包年包月数据盘。
+                     */
+                    void SetReleasePrepaidDataDisks(const bool& _releasePrepaidDataDisks);
+
+                    /**
+                     * 判断参数 ReleasePrepaidDataDisks 是否已赋值
+                     * @return ReleasePrepaidDataDisks 是否已赋值
+                     */
+                    bool ReleasePrepaidDataDisksHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
+
+                    /**
+                     * 释放实例挂载的包年包月数据盘。
+                     */
+                    bool m_releasePrepaidDataDisks;
+                    bool m_releasePrepaidDataDisksHasBeenSet;
 
                 };
             }

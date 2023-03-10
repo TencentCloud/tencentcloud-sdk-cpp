@@ -2018,6 +2018,49 @@ DlcClient::DescribeEngineUsageInfoOutcomeCallable DlcClient::DescribeEngineUsage
     return task->get_future();
 }
 
+DlcClient::DescribeForbiddenTableProOutcome DlcClient::DescribeForbiddenTablePro(const DescribeForbiddenTableProRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeForbiddenTablePro");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeForbiddenTableProResponse rsp = DescribeForbiddenTableProResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeForbiddenTableProOutcome(rsp);
+        else
+            return DescribeForbiddenTableProOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeForbiddenTableProOutcome(outcome.GetError());
+    }
+}
+
+void DlcClient::DescribeForbiddenTableProAsync(const DescribeForbiddenTableProRequest& request, const DescribeForbiddenTableProAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeForbiddenTablePro(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DlcClient::DescribeForbiddenTableProOutcomeCallable DlcClient::DescribeForbiddenTableProCallable(const DescribeForbiddenTableProRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeForbiddenTableProOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeForbiddenTablePro(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DlcClient::DescribeLakeFsDirSummaryOutcome DlcClient::DescribeLakeFsDirSummary(const DescribeLakeFsDirSummaryRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeLakeFsDirSummary");

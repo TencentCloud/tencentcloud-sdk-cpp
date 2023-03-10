@@ -30,7 +30,8 @@ JavaMemShellInfo::JavaMemShellInfo() :
     m_recentFoundTimeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_quuidHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_uuidHasBeenSet(false)
 {
 }
 
@@ -146,6 +147,16 @@ CoreInternalOutcome JavaMemShellInfo::Deserialize(const rapidjson::Value &value)
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Uuid") && !value["Uuid"].IsNull())
+    {
+        if (!value["Uuid"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JavaMemShellInfo.Uuid` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uuid = string(value["Uuid"].GetString());
+        m_uuidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -232,6 +243,14 @@ void JavaMemShellInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_uuidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uuid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uuid.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -395,5 +414,21 @@ void JavaMemShellInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineExtra
 bool JavaMemShellInfo::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string JavaMemShellInfo::GetUuid() const
+{
+    return m_uuid;
+}
+
+void JavaMemShellInfo::SetUuid(const string& _uuid)
+{
+    m_uuid = _uuid;
+    m_uuidHasBeenSet = true;
+}
+
+bool JavaMemShellInfo::UuidHasBeenSet() const
+{
+    return m_uuidHasBeenSet;
 }
 

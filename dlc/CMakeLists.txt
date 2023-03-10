@@ -22,6 +22,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeResultDownloadResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeTaskResultResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionStatementRequest.h
+  include/tencentcloud/dlc/v20210125/model/NetworkConnection.h
   include/tencentcloud/dlc/v20210125/model/CancelNotebookSessionStatementRequest.h
   include/tencentcloud/dlc/v20210125/model/DescribeDatabasesRequest.h
   include/tencentcloud/dlc/v20210125/model/WorkGroupMessage.h
@@ -96,6 +97,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionsResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeDMSPartitionsRequest.h
   include/tencentcloud/dlc/v20210125/model/TPartition.h
+  include/tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProRequest.h
   include/tencentcloud/dlc/v20210125/model/CreateDataEngineResponse.h
   include/tencentcloud/dlc/v20210125/model/DescribeSparkAppJobsRequest.h
   include/tencentcloud/dlc/v20210125/model/DeleteNotebookSessionRequest.h
@@ -163,7 +165,7 @@ set(dlc_public_header_model
   include/tencentcloud/dlc/v20210125/model/DataFormat.h
   include/tencentcloud/dlc/v20210125/model/DescribeNotebookSessionLogResponse.h
   include/tencentcloud/dlc/v20210125/model/ViewResponseInfo.h
-  include/tencentcloud/dlc/v20210125/model/NetworkConnection.h
+  include/tencentcloud/dlc/v20210125/model/DescribeForbiddenTableProResponse.h
   include/tencentcloud/dlc/v20210125/model/CreateUserRequest.h
   include/tencentcloud/dlc/v20210125/model/ModifyWorkGroupRequest.h
   include/tencentcloud/dlc/v20210125/model/CancelTaskResponse.h
@@ -252,6 +254,7 @@ set(dlc_src
   src/v20210125/model/DescribeResultDownloadResponse.cpp
   src/v20210125/model/DescribeTaskResultResponse.cpp
   src/v20210125/model/DescribeNotebookSessionStatementRequest.cpp
+  src/v20210125/model/NetworkConnection.cpp
   src/v20210125/model/CancelNotebookSessionStatementRequest.cpp
   src/v20210125/model/DescribeDatabasesRequest.cpp
   src/v20210125/model/WorkGroupMessage.cpp
@@ -326,6 +329,7 @@ set(dlc_src
   src/v20210125/model/DescribeNotebookSessionsResponse.cpp
   src/v20210125/model/DescribeDMSPartitionsRequest.cpp
   src/v20210125/model/TPartition.cpp
+  src/v20210125/model/DescribeForbiddenTableProRequest.cpp
   src/v20210125/model/CreateDataEngineResponse.cpp
   src/v20210125/model/DescribeSparkAppJobsRequest.cpp
   src/v20210125/model/DeleteNotebookSessionRequest.cpp
@@ -393,7 +397,7 @@ set(dlc_src
   src/v20210125/model/DataFormat.cpp
   src/v20210125/model/DescribeNotebookSessionLogResponse.cpp
   src/v20210125/model/ViewResponseInfo.cpp
-  src/v20210125/model/NetworkConnection.cpp
+  src/v20210125/model/DescribeForbiddenTableProResponse.cpp
   src/v20210125/model/CreateUserRequest.cpp
   src/v20210125/model/ModifyWorkGroupRequest.cpp
   src/v20210125/model/CancelTaskResponse.cpp

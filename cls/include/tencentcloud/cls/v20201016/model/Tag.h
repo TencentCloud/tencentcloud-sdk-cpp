@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取标签键
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 标签键
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置标签键
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Key 标签键
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetKey(const std::string& _key);
 
@@ -66,13 +70,17 @@ namespace TencentCloud
 
                     /**
                      * 获取标签值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 标签值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置标签值
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Value 标签值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const std::string& _value);
 
@@ -86,12 +94,14 @@ namespace TencentCloud
 
                     /**
                      * 标签键
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 标签值
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
