@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取<li>CatgoryId - int64 - 是否必填：否 - 规则Id</i>
-                     * @return Filters <li>CatgoryId - int64 - 是否必填：否 - 规则Id</i>
+                     * 获取<li>CatgoryId - int64 - 是否必填：否 - 规则Id</li>
+                     * @return Filters <li>CatgoryId - int64 - 是否必填：否 - 规则Id</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<li>CatgoryId - int64 - 是否必填：否 - 规则Id</i>
-                     * @param Filters <li>CatgoryId - int64 - 是否必填：否 - 规则Id</i>
+                     * 设置<li>CatgoryId - int64 - 是否必填：否 - 规则Id</li>
+                     * @param Filters <li>CatgoryId - int64 - 是否必填：否 - 规则Id</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -172,7 +172,7 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * <li>CatgoryId - int64 - 是否必填：否 - 规则Id</i>
+                     * <li>CatgoryId - int64 - 是否必填：否 - 规则Id</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

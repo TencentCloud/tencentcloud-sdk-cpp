@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<li>ItemName- string - 是否必填：否 - 项名称</i>
-                     * @return Filters <li>ItemName- string - 是否必填：否 - 项名称</i>
+                     * 获取<li>ItemName- string - 是否必填：否 - 项名称</li>
+                     * @return Filters <li>ItemName- string - 是否必填：否 - 项名称</li>
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<li>ItemName- string - 是否必填：否 - 项名称</i>
-                     * @param Filters <li>ItemName- string - 是否必填：否 - 项名称</i>
+                     * 设置<li>ItemName- string - 是否必填：否 - 项名称</li>
+                     * @param Filters <li>ItemName- string - 是否必填：否 - 项名称</li>
                      */
                     void SetFilters(const std::vector<Filter>& _filters);
 
@@ -136,7 +136,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <li>ItemName- string - 是否必填：否 - 项名称</i>
+                     * <li>ItemName- string - 是否必填：否 - 项名称</li>
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;

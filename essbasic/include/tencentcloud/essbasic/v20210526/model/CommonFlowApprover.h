@@ -247,16 +247,20 @@ namespace TencentCloud
 
                     /**
                      * 获取签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId
+注意：模版发起时该字段必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return RecipientId 签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId
+注意：模版发起时该字段必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRecipientId() const;
 
                     /**
                      * 设置签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId
+注意：模版发起时该字段必填
 注意：此字段可能返回 null，表示取不到有效值。
                      * @param RecipientId 签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId
+注意：模版发起时该字段必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRecipientId(const std::string& _recipientId);
@@ -422,6 +426,7 @@ namespace TencentCloud
 
                     /**
                      * 签署人Id，使用模版发起是，对应模版配置中的签署人RecipientId
+注意：模版发起时该字段必填
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_recipientId;

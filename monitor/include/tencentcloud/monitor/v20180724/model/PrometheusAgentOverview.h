@@ -219,6 +219,28 @@ abnormal = 异常
                      */
                     bool FailedReasonHasBeenSet() const;
 
+                    /**
+                     * 获取agent名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Name agent名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置agent名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Name agent名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -275,6 +297,13 @@ abnormal = 异常
                      */
                     std::string m_failedReason;
                     bool m_failedReasonHasBeenSet;
+
+                    /**
+                     * agent名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

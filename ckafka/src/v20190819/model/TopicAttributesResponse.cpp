@@ -31,7 +31,8 @@ TopicAttributesResponse::TopicAttributesResponse() :
     m_partitionsHasBeenSet(false),
     m_enableAclRuleHasBeenSet(false),
     m_aclRuleListHasBeenSet(false),
-    m_quotaConfigHasBeenSet(false)
+    m_quotaConfigHasBeenSet(false),
+    m_replicaNumHasBeenSet(false)
 {
 }
 
@@ -187,6 +188,16 @@ CoreInternalOutcome TopicAttributesResponse::Deserialize(const rapidjson::Value 
         m_quotaConfigHasBeenSet = true;
     }
 
+    if (value.HasMember("ReplicaNum") && !value["ReplicaNum"].IsNull())
+    {
+        if (!value["ReplicaNum"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TopicAttributesResponse.ReplicaNum` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_replicaNum = value["ReplicaNum"].GetInt64();
+        m_replicaNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -301,6 +312,14 @@ void TopicAttributesResponse::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_quotaConfig.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_replicaNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReplicaNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_replicaNum, allocator);
     }
 
 }
@@ -480,5 +499,21 @@ void TopicAttributesResponse::SetQuotaConfig(const InstanceQuotaConfigResp& _quo
 bool TopicAttributesResponse::QuotaConfigHasBeenSet() const
 {
     return m_quotaConfigHasBeenSet;
+}
+
+int64_t TopicAttributesResponse::GetReplicaNum() const
+{
+    return m_replicaNum;
+}
+
+void TopicAttributesResponse::SetReplicaNum(const int64_t& _replicaNum)
+{
+    m_replicaNum = _replicaNum;
+    m_replicaNumHasBeenSet = true;
+}
+
+bool TopicAttributesResponse::ReplicaNumHasBeenSet() const
+{
+    return m_replicaNumHasBeenSet;
 }
 

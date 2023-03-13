@@ -809,7 +809,9 @@ namespace TencentCloud
                 DescribeDDosAttackTopDataOutcomeCallable DescribeDDosAttackTopDataCallable(const Model::DescribeDDosAttackTopDataRequest& request);
 
                 /**
-                 *查询DDos主攻击事件
+                 *此接口已经做不兼容变更，所以此版本的接口已经无法调用，故作下线处理
+
+查询DDos主攻击事件
                  * @param req DescribeDDosMajorAttackEventRequest
                  * @return DescribeDDosMajorAttackEventOutcome
                  */
@@ -917,7 +919,9 @@ namespace TencentCloud
                 DescribeOriginGroupDetailOutcomeCallable DescribeOriginGroupDetailCallable(const Model::DescribeOriginGroupDetailRequest& request);
 
                 /**
-                 *本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。
+                 *接口已经不兼容升级，故作下线处理
+
+本接口（DescribeOverviewL7Data）用于查询七层监控类时序流量数据。
                  * @param req DescribeOverviewL7DataRequest
                  * @return DescribeOverviewL7DataOutcome
                  */
@@ -1016,7 +1020,9 @@ namespace TencentCloud
                 DescribeSecurityPortraitRulesOutcomeCallable DescribeSecurityPortraitRulesCallable(const Model::DescribeSecurityPortraitRulesRequest& request);
 
                 /**
-                 *四层时序流量数据查询
+                 *旧版本的接口已经不兼容，故作下线处理
+
+四层时序流量数据查询
                  * @param req DescribeTimingL4DataRequest
                  * @return DescribeTimingL4DataOutcome
                  */
@@ -1088,7 +1094,9 @@ namespace TencentCloud
                 DescribeWebManagedRulesLogOutcomeCallable DescribeWebManagedRulesLogCallable(const Model::DescribeWebManagedRulesLogRequest& request);
 
                 /**
-                 *查询waf攻击top数据
+                 *此版本的接口已经废弃
+
+查询waf攻击top数据
                  * @param req DescribeWebManagedRulesTopDataRequest
                  * @return DescribeWebManagedRulesTopDataOutcome
                  */

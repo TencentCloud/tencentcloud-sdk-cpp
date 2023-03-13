@@ -30,6 +30,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchCreateGroupWithMembersResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateGroupWithMembersResponse.h
+  include/tencentcloud/lcic/v20220817/model/DeleteAppCustomContentRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchAddGroupMemberResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyUserProfileResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyAppResponse.h
@@ -111,6 +112,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeGroupRequest.h
   include/tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h
   include/tencentcloud/lcic/v20220817/model/BackgroundPictureConfig.h
+  include/tencentcloud/lcic/v20220817/model/DeleteAppCustomContentResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyGroupResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeGroupListResponse.h
@@ -132,6 +134,7 @@ set(lcic_src
   src/v20220817/model/DescribeDocumentsByRoomRequest.cpp
   src/v20220817/model/BatchCreateGroupWithMembersResponse.cpp
   src/v20220817/model/CreateGroupWithMembersResponse.cpp
+  src/v20220817/model/DeleteAppCustomContentRequest.cpp
   src/v20220817/model/BatchAddGroupMemberResponse.cpp
   src/v20220817/model/ModifyUserProfileResponse.cpp
   src/v20220817/model/ModifyAppResponse.cpp
@@ -213,6 +216,7 @@ set(lcic_src
   src/v20220817/model/DescribeGroupRequest.cpp
   src/v20220817/model/CreateSupervisorRequest.cpp
   src/v20220817/model/BackgroundPictureConfig.cpp
+  src/v20220817/model/DeleteAppCustomContentResponse.cpp
   src/v20220817/model/DescribeCurrentMemberListResponse.cpp
   src/v20220817/model/ModifyGroupResponse.cpp
   src/v20220817/model/DescribeGroupListResponse.cpp

@@ -264,6 +264,28 @@ namespace TencentCloud
                      */
                     bool QuotaConfigHasBeenSet() const;
 
+                    /**
+                     * 获取副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ReplicaNum 副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetReplicaNum() const;
+
+                    /**
+                     * 设置副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ReplicaNum 副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetReplicaNum(const int64_t& _replicaNum);
+
+                    /**
+                     * 判断参数 ReplicaNum 是否已赋值
+                     * @return ReplicaNum 是否已赋值
+                     */
+                    bool ReplicaNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -335,6 +357,13 @@ namespace TencentCloud
                      */
                     InstanceQuotaConfigResp m_quotaConfig;
                     bool m_quotaConfigHasBeenSet;
+
+                    /**
+                     * 副本数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_replicaNum;
+                    bool m_replicaNumHasBeenSet;
 
                 };
             }

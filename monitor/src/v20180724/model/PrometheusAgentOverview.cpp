@@ -28,7 +28,8 @@ PrometheusAgentOverview::PrometheusAgentOverview() :
     m_externalLabelsHasBeenSet(false),
     m_regionHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
-    m_failedReasonHasBeenSet(false)
+    m_failedReasonHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome PrometheusAgentOverview::Deserialize(const rapidjson::Value 
         m_failedReasonHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusAgentOverview.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void PrometheusAgentOverview::ToJsonObject(rapidjson::Value &value, rapidjson::D
         string key = "FailedReason";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_failedReason.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void PrometheusAgentOverview::SetFailedReason(const string& _failedReason)
 bool PrometheusAgentOverview::FailedReasonHasBeenSet() const
 {
     return m_failedReasonHasBeenSet;
+}
+
+string PrometheusAgentOverview::GetName() const
+{
+    return m_name;
+}
+
+void PrometheusAgentOverview::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool PrometheusAgentOverview::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

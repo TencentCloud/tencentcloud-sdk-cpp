@@ -642,6 +642,49 @@ TdmqClient::CreateEnvironmentRoleOutcomeCallable TdmqClient::CreateEnvironmentRo
     return task->get_future();
 }
 
+TdmqClient::CreateRabbitMQVipInstanceOutcome TdmqClient::CreateRabbitMQVipInstance(const CreateRabbitMQVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRabbitMQVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRabbitMQVipInstanceResponse rsp = CreateRabbitMQVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRabbitMQVipInstanceOutcome(rsp);
+        else
+            return CreateRabbitMQVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRabbitMQVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::CreateRabbitMQVipInstanceAsync(const CreateRabbitMQVipInstanceRequest& request, const CreateRabbitMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRabbitMQVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::CreateRabbitMQVipInstanceOutcomeCallable TdmqClient::CreateRabbitMQVipInstanceCallable(const CreateRabbitMQVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRabbitMQVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRabbitMQVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::CreateRocketMQClusterOutcome TdmqClient::CreateRocketMQCluster(const CreateRocketMQClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateRocketMQCluster");

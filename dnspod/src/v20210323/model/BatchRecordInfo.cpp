@@ -32,7 +32,8 @@ BatchRecordInfo::BatchRecordInfo() :
     m_errMsgHasBeenSet(false),
     m_idHasBeenSet(false),
     m_enabledHasBeenSet(false),
-    m_mXHasBeenSet(false)
+    m_mXHasBeenSet(false),
+    m_weightHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome BatchRecordInfo::Deserialize(const rapidjson::Value &value)
         m_mXHasBeenSet = true;
     }
 
+    if (value.HasMember("Weight") && !value["Weight"].IsNull())
+    {
+        if (!value["Weight"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchRecordInfo.Weight` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_weight = value["Weight"].GetUint64();
+        m_weightHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void BatchRecordInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "MX";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_mX, allocator);
+    }
+
+    if (m_weightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weight";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_weight, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void BatchRecordInfo::SetMX(const uint64_t& _mX)
 bool BatchRecordInfo::MXHasBeenSet() const
 {
     return m_mXHasBeenSet;
+}
+
+uint64_t BatchRecordInfo::GetWeight() const
+{
+    return m_weight;
+}
+
+void BatchRecordInfo::SetWeight(const uint64_t& _weight)
+{
+    m_weight = _weight;
+    m_weightHasBeenSet = true;
+}
+
+bool BatchRecordInfo::WeightHasBeenSet() const
+{
+    return m_weightHasBeenSet;
 }
 

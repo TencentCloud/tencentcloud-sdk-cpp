@@ -49,6 +49,8 @@
 #include <tencentcloud/lcic/v20220817/model/CreateRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h>
 #include <tencentcloud/lcic/v20220817/model/CreateSupervisorResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteAppCustomContentRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DeleteAppCustomContentResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteDocumentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteDocumentResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteGroupRequest.h>
@@ -158,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSupervisorResponse> CreateSupervisorOutcome;
                 typedef std::future<CreateSupervisorOutcome> CreateSupervisorOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::CreateSupervisorRequest&, CreateSupervisorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSupervisorAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAppCustomContentResponse> DeleteAppCustomContentOutcome;
+                typedef std::future<DeleteAppCustomContentOutcome> DeleteAppCustomContentOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DeleteAppCustomContentRequest&, DeleteAppCustomContentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAppCustomContentAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDocumentResponse> DeleteDocumentOutcome;
                 typedef std::future<DeleteDocumentOutcome> DeleteDocumentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DeleteDocumentRequest&, DeleteDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDocumentAsyncHandler;
@@ -361,6 +366,15 @@ namespace TencentCloud
                 CreateSupervisorOutcome CreateSupervisor(const Model::CreateSupervisorRequest &request);
                 void CreateSupervisorAsync(const Model::CreateSupervisorRequest& request, const CreateSupervisorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSupervisorOutcomeCallable CreateSupervisorCallable(const Model::CreateSupervisorRequest& request);
+
+                /**
+                 *删除设置自定义元素。如果参数scenes为空则删除所有自定义元素，否则删除指定的scene自定义元素。
+                 * @param req DeleteAppCustomContentRequest
+                 * @return DeleteAppCustomContentOutcome
+                 */
+                DeleteAppCustomContentOutcome DeleteAppCustomContent(const Model::DeleteAppCustomContentRequest &request);
+                void DeleteAppCustomContentAsync(const Model::DeleteAppCustomContentRequest& request, const DeleteAppCustomContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAppCustomContentOutcomeCallable DeleteAppCustomContentCallable(const Model::DeleteAppCustomContentRequest& request);
 
                 /**
                  *删除文档

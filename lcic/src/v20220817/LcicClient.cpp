@@ -599,6 +599,49 @@ LcicClient::CreateSupervisorOutcomeCallable LcicClient::CreateSupervisorCallable
     return task->get_future();
 }
 
+LcicClient::DeleteAppCustomContentOutcome LcicClient::DeleteAppCustomContent(const DeleteAppCustomContentRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAppCustomContent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAppCustomContentResponse rsp = DeleteAppCustomContentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAppCustomContentOutcome(rsp);
+        else
+            return DeleteAppCustomContentOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAppCustomContentOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DeleteAppCustomContentAsync(const DeleteAppCustomContentRequest& request, const DeleteAppCustomContentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAppCustomContent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DeleteAppCustomContentOutcomeCallable LcicClient::DeleteAppCustomContentCallable(const DeleteAppCustomContentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAppCustomContentOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAppCustomContent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DeleteDocumentOutcome LcicClient::DeleteDocument(const DeleteDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDocument");
