@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool SrcRegionHasBeenSet() const;
 
                     /**
-                     * 获取目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-                     * @return DstDatabaseType 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
+                     * 获取目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
+                     * @return DstDatabaseType 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
                      */
                     std::string GetDstDatabaseType() const;
 
                     /**
-                     * 设置目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
-                     * @param DstDatabaseType 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
+                     * 设置目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
+                     * @param DstDatabaseType 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
                      */
                     void SetDstDatabaseType(const std::string& _dstDatabaseType);
 
@@ -280,7 +280,7 @@ namespace TencentCloud
                     bool m_srcRegionHasBeenSet;
 
                     /**
-                     * 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql等
+                     * 目标端数据库类型,如mysql,cynosdbmysql,tdapg,tdpg,tdsqlmysql,kafka等
                      */
                     std::string m_dstDatabaseType;
                     bool m_dstDatabaseTypeHasBeenSet;

@@ -685,6 +685,49 @@ WafClient::DescribeAutoDenyIPOutcomeCallable WafClient::DescribeAutoDenyIPCallab
     return task->get_future();
 }
 
+WafClient::DescribeCustomWhiteRuleOutcome WafClient::DescribeCustomWhiteRule(const DescribeCustomWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCustomWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCustomWhiteRuleResponse rsp = DescribeCustomWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCustomWhiteRuleOutcome(rsp);
+        else
+            return DescribeCustomWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCustomWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeCustomWhiteRuleAsync(const DescribeCustomWhiteRuleRequest& request, const DescribeCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCustomWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeCustomWhiteRuleOutcomeCallable WafClient::DescribeCustomWhiteRuleCallable(const DescribeCustomWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCustomWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCustomWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeDomainDetailsSaasOutcome WafClient::DescribeDomainDetailsSaas(const DescribeDomainDetailsSaasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDomainDetailsSaas");
@@ -979,6 +1022,92 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
         [this, request]()
         {
             return this->DescribeIpHitItems(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribePolicyStatusOutcome WafClient::DescribePolicyStatus(const DescribePolicyStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePolicyStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePolicyStatusResponse rsp = DescribePolicyStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePolicyStatusOutcome(rsp);
+        else
+            return DescribePolicyStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePolicyStatusOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePolicyStatusAsync(const DescribePolicyStatusRequest& request, const DescribePolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePolicyStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePolicyStatusOutcomeCallable WafClient::DescribePolicyStatusCallable(const DescribePolicyStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePolicyStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePolicyStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribeRuleLimitOutcome WafClient::DescribeRuleLimit(const DescribeRuleLimitRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRuleLimit");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRuleLimitResponse rsp = DescribeRuleLimitResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRuleLimitOutcome(rsp);
+        else
+            return DescribeRuleLimitOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRuleLimitOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeRuleLimitAsync(const DescribeRuleLimitRequest& request, const DescribeRuleLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRuleLimit(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeRuleLimitOutcomeCallable WafClient::DescribeRuleLimitCallable(const DescribeRuleLimitRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRuleLimitOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRuleLimit(request);
         }
     );
 

@@ -12209,6 +12209,49 @@ VpcClient::ReplaceRoutesOutcomeCallable VpcClient::ReplaceRoutesCallable(const R
     return task->get_future();
 }
 
+VpcClient::ReplaceSecurityGroupPoliciesOutcome VpcClient::ReplaceSecurityGroupPolicies(const ReplaceSecurityGroupPoliciesRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReplaceSecurityGroupPolicies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReplaceSecurityGroupPoliciesResponse rsp = ReplaceSecurityGroupPoliciesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReplaceSecurityGroupPoliciesOutcome(rsp);
+        else
+            return ReplaceSecurityGroupPoliciesOutcome(o.GetError());
+    }
+    else
+    {
+        return ReplaceSecurityGroupPoliciesOutcome(outcome.GetError());
+    }
+}
+
+void VpcClient::ReplaceSecurityGroupPoliciesAsync(const ReplaceSecurityGroupPoliciesRequest& request, const ReplaceSecurityGroupPoliciesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReplaceSecurityGroupPolicies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VpcClient::ReplaceSecurityGroupPoliciesOutcomeCallable VpcClient::ReplaceSecurityGroupPoliciesCallable(const ReplaceSecurityGroupPoliciesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReplaceSecurityGroupPoliciesOutcome()>>(
+        [this, request]()
+        {
+            return this->ReplaceSecurityGroupPolicies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VpcClient::ReplaceSecurityGroupPolicyOutcome VpcClient::ReplaceSecurityGroupPolicy(const ReplaceSecurityGroupPolicyRequest &request)
 {
     auto outcome = MakeRequest(request, "ReplaceSecurityGroupPolicy");

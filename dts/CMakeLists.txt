@@ -53,6 +53,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/ConflictHandleOption.h
   include/tencentcloud/dts/v20211206/model/ResumeSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/ModifyCompareTaskNameResponse.h
+  include/tencentcloud/dts/v20211206/model/StartSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/PauseSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/CreateMigrateCheckJobResponse.h
   include/tencentcloud/dts/v20211206/model/ContinueMigrateJobResponse.h
@@ -65,11 +66,13 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/MigrateAction.h
   include/tencentcloud/dts/v20211206/model/DeleteCompareTaskResponse.h
   include/tencentcloud/dts/v20211206/model/DBEndpointInfo.h
+  include/tencentcloud/dts/v20211206/model/TopicRule.h
   include/tencentcloud/dts/v20211206/model/ContinueSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/Options.h
   include/tencentcloud/dts/v20211206/model/CompleteMigrateJobRequest.h
   include/tencentcloud/dts/v20211206/model/DescribeCompareTasksResponse.h
   include/tencentcloud/dts/v20211206/model/StopCompareRequest.h
+  include/tencentcloud/dts/v20211206/model/SyncDBEndpointInfos.h
   include/tencentcloud/dts/v20211206/model/DescribeCheckSyncJobResultResponse.h
   include/tencentcloud/dts/v20211206/model/StopSyncJobResponse.h
   include/tencentcloud/dts/v20211206/model/SkippedDetail.h
@@ -87,7 +90,7 @@ set(dts_public_header_model
   include/tencentcloud/dts/v20211206/model/CompareTaskInfo.h
   include/tencentcloud/dts/v20211206/model/ContinueSyncJobRequest.h
   include/tencentcloud/dts/v20211206/model/CreateMigrationServiceResponse.h
-  include/tencentcloud/dts/v20211206/model/StartSyncJobRequest.h
+  include/tencentcloud/dts/v20211206/model/KafkaOption.h
   include/tencentcloud/dts/v20211206/model/DescribeMigrationCheckJobResponse.h
   include/tencentcloud/dts/v20211206/model/DBInfo.h
   include/tencentcloud/dts/v20211206/model/Endpoint.h
@@ -252,6 +255,7 @@ set(dts_src
   src/v20211206/model/ConflictHandleOption.cpp
   src/v20211206/model/ResumeSyncJobResponse.cpp
   src/v20211206/model/ModifyCompareTaskNameResponse.cpp
+  src/v20211206/model/StartSyncJobRequest.cpp
   src/v20211206/model/PauseSyncJobRequest.cpp
   src/v20211206/model/CreateMigrateCheckJobResponse.cpp
   src/v20211206/model/ContinueMigrateJobResponse.cpp
@@ -264,11 +268,13 @@ set(dts_src
   src/v20211206/model/MigrateAction.cpp
   src/v20211206/model/DeleteCompareTaskResponse.cpp
   src/v20211206/model/DBEndpointInfo.cpp
+  src/v20211206/model/TopicRule.cpp
   src/v20211206/model/ContinueSyncJobResponse.cpp
   src/v20211206/model/Options.cpp
   src/v20211206/model/CompleteMigrateJobRequest.cpp
   src/v20211206/model/DescribeCompareTasksResponse.cpp
   src/v20211206/model/StopCompareRequest.cpp
+  src/v20211206/model/SyncDBEndpointInfos.cpp
   src/v20211206/model/DescribeCheckSyncJobResultResponse.cpp
   src/v20211206/model/StopSyncJobResponse.cpp
   src/v20211206/model/SkippedDetail.cpp
@@ -286,7 +292,7 @@ set(dts_src
   src/v20211206/model/CompareTaskInfo.cpp
   src/v20211206/model/ContinueSyncJobRequest.cpp
   src/v20211206/model/CreateMigrationServiceResponse.cpp
-  src/v20211206/model/StartSyncJobRequest.cpp
+  src/v20211206/model/KafkaOption.cpp
   src/v20211206/model/DescribeMigrationCheckJobResponse.cpp
   src/v20211206/model/DBInfo.cpp
   src/v20211206/model/Endpoint.cpp

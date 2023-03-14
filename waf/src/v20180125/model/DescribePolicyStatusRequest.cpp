@@ -14,46 +14,41 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/lcic/v20220817/model/CreateSupervisorRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Lcic::V20220817::Model;
+using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-CreateSupervisorRequest::CreateSupervisorRequest() :
-    m_sdkAppIdHasBeenSet(false),
-    m_usersHasBeenSet(false)
+DescribePolicyStatusRequest::DescribePolicyStatusRequest() :
+    m_domainHasBeenSet(false),
+    m_editionHasBeenSet(false)
 {
 }
 
-string CreateSupervisorRequest::ToJsonString() const
+string DescribePolicyStatusRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_sdkAppIdHasBeenSet)
+    if (m_domainHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "SdkAppId";
+        string key = "Domain";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_sdkAppId, allocator);
+        d.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_usersHasBeenSet)
+    if (m_editionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Users";
+        string key = "Edition";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_users.begin(); itr != m_users.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
-        }
+        d.AddMember(iKey, rapidjson::Value(m_edition.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -64,36 +59,36 @@ string CreateSupervisorRequest::ToJsonString() const
 }
 
 
-uint64_t CreateSupervisorRequest::GetSdkAppId() const
+string DescribePolicyStatusRequest::GetDomain() const
 {
-    return m_sdkAppId;
+    return m_domain;
 }
 
-void CreateSupervisorRequest::SetSdkAppId(const uint64_t& _sdkAppId)
+void DescribePolicyStatusRequest::SetDomain(const string& _domain)
 {
-    m_sdkAppId = _sdkAppId;
-    m_sdkAppIdHasBeenSet = true;
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
 }
 
-bool CreateSupervisorRequest::SdkAppIdHasBeenSet() const
+bool DescribePolicyStatusRequest::DomainHasBeenSet() const
 {
-    return m_sdkAppIdHasBeenSet;
+    return m_domainHasBeenSet;
 }
 
-vector<string> CreateSupervisorRequest::GetUsers() const
+string DescribePolicyStatusRequest::GetEdition() const
 {
-    return m_users;
+    return m_edition;
 }
 
-void CreateSupervisorRequest::SetUsers(const vector<string>& _users)
+void DescribePolicyStatusRequest::SetEdition(const string& _edition)
 {
-    m_users = _users;
-    m_usersHasBeenSet = true;
+    m_edition = _edition;
+    m_editionHasBeenSet = true;
 }
 
-bool CreateSupervisorRequest::UsersHasBeenSet() const
+bool DescribePolicyStatusRequest::EditionHasBeenSet() const
 {
-    return m_usersHasBeenSet;
+    return m_editionHasBeenSet;
 }
 
 

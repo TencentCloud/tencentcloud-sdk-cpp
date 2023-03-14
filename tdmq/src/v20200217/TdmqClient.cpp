@@ -3781,6 +3781,49 @@ TdmqClient::ModifyEnvironmentRoleOutcomeCallable TdmqClient::ModifyEnvironmentRo
     return task->get_future();
 }
 
+TdmqClient::ModifyRabbitMQVipInstanceOutcome TdmqClient::ModifyRabbitMQVipInstance(const ModifyRabbitMQVipInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRabbitMQVipInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRabbitMQVipInstanceResponse rsp = ModifyRabbitMQVipInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRabbitMQVipInstanceOutcome(rsp);
+        else
+            return ModifyRabbitMQVipInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRabbitMQVipInstanceOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::ModifyRabbitMQVipInstanceAsync(const ModifyRabbitMQVipInstanceRequest& request, const ModifyRabbitMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRabbitMQVipInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::ModifyRabbitMQVipInstanceOutcomeCallable TdmqClient::ModifyRabbitMQVipInstanceCallable(const ModifyRabbitMQVipInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRabbitMQVipInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRabbitMQVipInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::ModifyRocketMQClusterOutcome TdmqClient::ModifyRocketMQCluster(const ModifyRocketMQClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyRocketMQCluster");

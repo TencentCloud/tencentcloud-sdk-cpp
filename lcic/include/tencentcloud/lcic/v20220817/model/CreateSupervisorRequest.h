@@ -42,7 +42,55 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取应用ID。
+                     * @return SdkAppId 应用ID。
+                     */
+                    uint64_t GetSdkAppId() const;
+
+                    /**
+                     * 设置应用ID。
+                     * @param SdkAppId 应用ID。
+                     */
+                    void SetSdkAppId(const uint64_t& _sdkAppId);
+
+                    /**
+                     * 判断参数 SdkAppId 是否已赋值
+                     * @return SdkAppId 是否已赋值
+                     */
+                    bool SdkAppIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户ID列表。
+                     * @return Users 用户ID列表。
+                     */
+                    std::vector<std::string> GetUsers() const;
+
+                    /**
+                     * 设置用户ID列表。
+                     * @param Users 用户ID列表。
+                     */
+                    void SetUsers(const std::vector<std::string>& _users);
+
+                    /**
+                     * 判断参数 Users 是否已赋值
+                     * @return Users 是否已赋值
+                     */
+                    bool UsersHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 应用ID。
+                     */
+                    uint64_t m_sdkAppId;
+                    bool m_sdkAppIdHasBeenSet;
+
+                    /**
+                     * 用户ID列表。
+                     */
+                    std::vector<std::string> m_users;
+                    bool m_usersHasBeenSet;
 
                 };
             }

@@ -197,6 +197,28 @@ namespace TencentCloud
                      */
                     bool CnameHasBeenSet() const;
 
+                    /**
+                     * 获取加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdentificationStatus 加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIdentificationStatus() const;
+
+                    /**
+                     * 设置加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IdentificationStatus 加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIdentificationStatus(const std::string& _identificationStatus);
+
+                    /**
+                     * 判断参数 IdentificationStatus 是否已赋值
+                     * @return IdentificationStatus 是否已赋值
+                     */
+                    bool IdentificationStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -246,6 +268,13 @@ namespace TencentCloud
                      */
                     std::string m_cname;
                     bool m_cnameHasBeenSet;
+
+                    /**
+                     * 加速域名归属权验证状态，取值有： <li>pending：待验证；</li> <li>finished：已完成验证。</li>	
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_identificationStatus;
+                    bool m_identificationStatusHasBeenSet;
 
                 };
             }

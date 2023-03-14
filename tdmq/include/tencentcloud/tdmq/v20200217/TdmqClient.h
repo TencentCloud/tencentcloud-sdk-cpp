@@ -197,6 +197,8 @@
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentAttributesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyEnvironmentRoleResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQVipInstanceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/ModifyRabbitMQVipInstanceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQClusterRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQClusterResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/ModifyRocketMQGroupRequest.h>
@@ -504,6 +506,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyEnvironmentRoleResponse> ModifyEnvironmentRoleOutcome;
                 typedef std::future<ModifyEnvironmentRoleOutcome> ModifyEnvironmentRoleOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyEnvironmentRoleRequest&, ModifyEnvironmentRoleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyEnvironmentRoleAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyRabbitMQVipInstanceResponse> ModifyRabbitMQVipInstanceOutcome;
+                typedef std::future<ModifyRabbitMQVipInstanceOutcome> ModifyRabbitMQVipInstanceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::ModifyRabbitMQVipInstanceRequest&, ModifyRabbitMQVipInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRabbitMQVipInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyRocketMQClusterResponse> ModifyRocketMQClusterOutcome;
                 typedef std::future<ModifyRocketMQClusterOutcome> ModifyRocketMQClusterOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::ModifyRocketMQClusterRequest&, ModifyRocketMQClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyRocketMQClusterAsyncHandler;
@@ -1375,6 +1380,15 @@ namespace TencentCloud
                 ModifyEnvironmentRoleOutcome ModifyEnvironmentRole(const Model::ModifyEnvironmentRoleRequest &request);
                 void ModifyEnvironmentRoleAsync(const Model::ModifyEnvironmentRoleRequest& request, const ModifyEnvironmentRoleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyEnvironmentRoleOutcomeCallable ModifyEnvironmentRoleCallable(const Model::ModifyEnvironmentRoleRequest& request);
+
+                /**
+                 *修改RabbitMQ专享版实例
+                 * @param req ModifyRabbitMQVipInstanceRequest
+                 * @return ModifyRabbitMQVipInstanceOutcome
+                 */
+                ModifyRabbitMQVipInstanceOutcome ModifyRabbitMQVipInstance(const Model::ModifyRabbitMQVipInstanceRequest &request);
+                void ModifyRabbitMQVipInstanceAsync(const Model::ModifyRabbitMQVipInstanceRequest& request, const ModifyRabbitMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyRabbitMQVipInstanceOutcomeCallable ModifyRabbitMQVipInstanceCallable(const Model::ModifyRabbitMQVipInstanceRequest& request);
 
                 /**
                  *更新RocketMQ集群信息

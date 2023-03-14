@@ -27,7 +27,8 @@ Options::Options() :
     m_addAdditionalColumnHasBeenSet(false),
     m_opTypesHasBeenSet(false),
     m_conflictHandleOptionHasBeenSet(false),
-    m_ddlOptionsHasBeenSet(false)
+    m_ddlOptionsHasBeenSet(false),
+    m_kafkaOptionHasBeenSet(false)
 {
 }
 
@@ -126,6 +127,23 @@ CoreInternalOutcome Options::Deserialize(const rapidjson::Value &value)
         m_ddlOptionsHasBeenSet = true;
     }
 
+    if (value.HasMember("KafkaOption") && !value["KafkaOption"].IsNull())
+    {
+        if (!value["KafkaOption"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `Options.KafkaOption` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_kafkaOption.Deserialize(value["KafkaOption"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_kafkaOptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -200,6 +218,15 @@ void Options::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_kafkaOptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaOption";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kafkaOption.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -315,5 +342,21 @@ void Options::SetDdlOptions(const vector<DdlOption>& _ddlOptions)
 bool Options::DdlOptionsHasBeenSet() const
 {
     return m_ddlOptionsHasBeenSet;
+}
+
+KafkaOption Options::GetKafkaOption() const
+{
+    return m_kafkaOption;
+}
+
+void Options::SetKafkaOption(const KafkaOption& _kafkaOption)
+{
+    m_kafkaOption = _kafkaOption;
+    m_kafkaOptionHasBeenSet = true;
+}
+
+bool Options::KafkaOptionHasBeenSet() const
+{
+    return m_kafkaOptionHasBeenSet;
 }
 

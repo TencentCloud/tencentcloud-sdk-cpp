@@ -60,6 +60,28 @@ namespace TencentCloud
                      */
                     bool ZoneNameHasBeenSet() const;
 
+                    /**
+                     * 获取站点下的子域名。如果验证站点下的子域名，则传该值，否则为空。
+
+                     * @return Domain 站点下的子域名。如果验证站点下的子域名，则传该值，否则为空。
+
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置站点下的子域名。如果验证站点下的子域名，则传该值，否则为空。
+
+                     * @param Domain 站点下的子域名。如果验证站点下的子域名，则传该值，否则为空。
+
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +89,13 @@ namespace TencentCloud
                      */
                     std::string m_zoneName;
                     bool m_zoneNameHasBeenSet;
+
+                    /**
+                     * 站点下的子域名。如果验证站点下的子域名，则传该值，否则为空。
+
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

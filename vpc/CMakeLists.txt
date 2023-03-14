@@ -114,6 +114,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeNatGatewaysRequest.h
   include/tencentcloud/vpc/v20170312/model/ModifyFlowLogAttributeResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeBandwidthPackagesResponse.h
+  include/tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPoliciesResponse.h
   include/tencentcloud/vpc/v20170312/model/DescribeDirectConnectGatewaysRequest.h
   include/tencentcloud/vpc/v20170312/model/DisableVpnGatewaySslClientCertRequest.h
   include/tencentcloud/vpc/v20170312/model/AttachSnapshotInstancesRequest.h
@@ -554,6 +555,7 @@ set(vpc_public_header_model
   include/tencentcloud/vpc/v20170312/model/DescribeBandwidthPackageQuotaResponse.h
   include/tencentcloud/vpc/v20170312/model/DeleteServiceTemplateGroupRequest.h
   include/tencentcloud/vpc/v20170312/model/DeleteNatGatewayResponse.h
+  include/tencentcloud/vpc/v20170312/model/ReplaceSecurityGroupPoliciesRequest.h
   include/tencentcloud/vpc/v20170312/model/AdjustPublicAddressRequest.h
   include/tencentcloud/vpc/v20170312/model/CreateDirectConnectGatewayResponse.h
   include/tencentcloud/vpc/v20170312/model/ModifyVpcEndPointAttributeRequest.h
@@ -840,6 +842,7 @@ set(vpc_src
   src/v20170312/model/DescribeNatGatewaysRequest.cpp
   src/v20170312/model/ModifyFlowLogAttributeResponse.cpp
   src/v20170312/model/DescribeBandwidthPackagesResponse.cpp
+  src/v20170312/model/ReplaceSecurityGroupPoliciesResponse.cpp
   src/v20170312/model/DescribeDirectConnectGatewaysRequest.cpp
   src/v20170312/model/DisableVpnGatewaySslClientCertRequest.cpp
   src/v20170312/model/AttachSnapshotInstancesRequest.cpp
@@ -1280,6 +1283,7 @@ set(vpc_src
   src/v20170312/model/DescribeBandwidthPackageQuotaResponse.cpp
   src/v20170312/model/DeleteServiceTemplateGroupRequest.cpp
   src/v20170312/model/DeleteNatGatewayResponse.cpp
+  src/v20170312/model/ReplaceSecurityGroupPoliciesRequest.cpp
   src/v20170312/model/AdjustPublicAddressRequest.cpp
   src/v20170312/model/CreateDirectConnectGatewayResponse.cpp
   src/v20170312/model/ModifyVpcEndPointAttributeRequest.cpp

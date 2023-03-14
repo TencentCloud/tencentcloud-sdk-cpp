@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/Objects.h>
 #include <tencentcloud/dts/v20211206/model/Endpoint.h>
+#include <tencentcloud/dts/v20211206/model/SyncDBEndpointInfos.h>
 #include <tencentcloud/dts/v20211206/model/Options.h>
 
 
@@ -208,6 +209,42 @@ namespace TencentCloud
                     bool SrcInfoHasBeenSet() const;
 
                     /**
+                     * 获取源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     * @return SrcInfos 源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     */
+                    SyncDBEndpointInfos GetSrcInfos() const;
+
+                    /**
+                     * 设置源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     * @param SrcInfos 源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     */
+                    void SetSrcInfos(const SyncDBEndpointInfos& _srcInfos);
+
+                    /**
+                     * 判断参数 SrcInfos 是否已赋值
+                     * @return SrcInfos 是否已赋值
+                     */
+                    bool SrcInfosHasBeenSet() const;
+
+                    /**
+                     * 获取枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     * @return SrcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     */
+                    std::string GetSrcNodeType() const;
+
+                    /**
+                     * 设置枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     * @param SrcNodeType 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     */
+                    void SetSrcNodeType(const std::string& _srcNodeType);
+
+                    /**
+                     * 判断参数 SrcNodeType 是否已赋值
+                     * @return SrcNodeType 是否已赋值
+                     */
+                    bool SrcNodeTypeHasBeenSet() const;
+
+                    /**
                      * 获取目标端信息，单节点数据库使用
                      * @return DstInfo 目标端信息，单节点数据库使用
                      */
@@ -224,6 +261,42 @@ namespace TencentCloud
                      * @return DstInfo 是否已赋值
                      */
                     bool DstInfoHasBeenSet() const;
+
+                    /**
+                     * 获取目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     * @return DstInfos 目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     */
+                    SyncDBEndpointInfos GetDstInfos() const;
+
+                    /**
+                     * 设置目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     * @param DstInfos 目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     */
+                    void SetDstInfos(const SyncDBEndpointInfos& _dstInfos);
+
+                    /**
+                     * 判断参数 DstInfos 是否已赋值
+                     * @return DstInfos 是否已赋值
+                     */
+                    bool DstInfosHasBeenSet() const;
+
+                    /**
+                     * 获取枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     * @return DstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     */
+                    std::string GetDstNodeType() const;
+
+                    /**
+                     * 设置枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     * @param DstNodeType 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     */
+                    void SetDstNodeType(const std::string& _dstNodeType);
+
+                    /**
+                     * 判断参数 DstNodeType 是否已赋值
+                     * @return DstNodeType 是否已赋值
+                     */
+                    bool DstNodeTypeHasBeenSet() const;
 
                     /**
                      * 获取同步任务选项
@@ -318,10 +391,34 @@ namespace TencentCloud
                     bool m_srcInfoHasBeenSet;
 
                     /**
+                     * 源端信息，多节点数据库使用，且SrcNodeType传cluster
+                     */
+                    SyncDBEndpointInfos m_srcInfos;
+                    bool m_srcInfosHasBeenSet;
+
+                    /**
+                     * 枚举值：cluster、single。源库为单节点数据库使用single，多节点使用cluster
+                     */
+                    std::string m_srcNodeType;
+                    bool m_srcNodeTypeHasBeenSet;
+
+                    /**
                      * 目标端信息，单节点数据库使用
                      */
                     Endpoint m_dstInfo;
                     bool m_dstInfoHasBeenSet;
+
+                    /**
+                     * 目标端信息，多节点数据库使用，且DstNodeType传cluster
+                     */
+                    SyncDBEndpointInfos m_dstInfos;
+                    bool m_dstInfosHasBeenSet;
+
+                    /**
+                     * 枚举值：cluster、single。目标库为单节点数据库使用single，多节点使用cluster
+                     */
+                    std::string m_dstNodeType;
+                    bool m_dstNodeTypeHasBeenSet;
 
                     /**
                      * 同步任务选项

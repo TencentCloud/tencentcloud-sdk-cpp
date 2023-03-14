@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取资源类型，1：模版，目前仅支持模版，与ResourceId对应
-                     * @return ResourceType 资源类型，1：模版，目前仅支持模版，与ResourceId对应
+                     * 获取资源类型，1：模板，目前仅支持模板，与ResourceId对应
+                     * @return ResourceType 资源类型，1：模板，目前仅支持模板，与ResourceId对应
                      */
                     int64_t GetResourceType() const;
 
                     /**
-                     * 设置资源类型，1：模版，目前仅支持模版，与ResourceId对应
-                     * @param ResourceType 资源类型，1：模版，目前仅支持模版，与ResourceId对应
+                     * 设置资源类型，1：模板，目前仅支持模板，与ResourceId对应
+                     * @param ResourceType 资源类型，1：模板，目前仅支持模板，与ResourceId对应
                      */
                     void SetResourceType(const int64_t& _resourceType);
 
@@ -237,7 +237,7 @@ namespace TencentCloud
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 资源类型，1：模版，目前仅支持模版，与ResourceId对应
+                     * 资源类型，1：模板，目前仅支持模板，与ResourceId对应
                      */
                     int64_t m_resourceType;
                     bool m_resourceTypeHasBeenSet;

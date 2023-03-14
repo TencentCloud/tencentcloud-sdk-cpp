@@ -26,7 +26,8 @@ Https::Https() :
     m_tlsVersionHasBeenSet(false),
     m_hstsHasBeenSet(false),
     m_certInfoHasBeenSet(false),
-    m_applyTypeHasBeenSet(false)
+    m_applyTypeHasBeenSet(false),
+    m_cipherSuiteHasBeenSet(false)
 {
 }
 
@@ -115,6 +116,16 @@ CoreInternalOutcome Https::Deserialize(const rapidjson::Value &value)
         m_applyTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("CipherSuite") && !value["CipherSuite"].IsNull())
+    {
+        if (!value["CipherSuite"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Https.CipherSuite` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cipherSuite = string(value["CipherSuite"].GetString());
+        m_cipherSuiteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -181,6 +192,14 @@ void Https::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocator
         string key = "ApplyType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_applyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cipherSuiteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CipherSuite";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cipherSuite.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -280,5 +299,21 @@ void Https::SetApplyType(const string& _applyType)
 bool Https::ApplyTypeHasBeenSet() const
 {
     return m_applyTypeHasBeenSet;
+}
+
+string Https::GetCipherSuite() const
+{
+    return m_cipherSuite;
+}
+
+void Https::SetCipherSuite(const string& _cipherSuite)
+{
+    m_cipherSuite = _cipherSuite;
+    m_cipherSuiteHasBeenSet = true;
+}
+
+bool Https::CipherSuiteHasBeenSet() const
+{
+    return m_cipherSuiteHasBeenSet;
 }
 

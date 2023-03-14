@@ -14,34 +14,25 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/teo/v20220901/model/IdentifyZoneRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
-using namespace TencentCloud::Teo::V20220901::Model;
+using namespace TencentCloud::Waf::V20180125::Model;
 using namespace std;
 
-IdentifyZoneRequest::IdentifyZoneRequest() :
-    m_zoneNameHasBeenSet(false),
+DescribeRuleLimitRequest::DescribeRuleLimitRequest() :
     m_domainHasBeenSet(false)
 {
 }
 
-string IdentifyZoneRequest::ToJsonString() const
+string DescribeRuleLimitRequest::ToJsonString() const
 {
     rapidjson::Document d;
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_zoneNameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ZoneName";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_domainHasBeenSet)
     {
@@ -59,34 +50,18 @@ string IdentifyZoneRequest::ToJsonString() const
 }
 
 
-string IdentifyZoneRequest::GetZoneName() const
-{
-    return m_zoneName;
-}
-
-void IdentifyZoneRequest::SetZoneName(const string& _zoneName)
-{
-    m_zoneName = _zoneName;
-    m_zoneNameHasBeenSet = true;
-}
-
-bool IdentifyZoneRequest::ZoneNameHasBeenSet() const
-{
-    return m_zoneNameHasBeenSet;
-}
-
-string IdentifyZoneRequest::GetDomain() const
+string DescribeRuleLimitRequest::GetDomain() const
 {
     return m_domain;
 }
 
-void IdentifyZoneRequest::SetDomain(const string& _domain)
+void DescribeRuleLimitRequest::SetDomain(const string& _domain)
 {
     m_domain = _domain;
     m_domainHasBeenSet = true;
 }
 
-bool IdentifyZoneRequest::DomainHasBeenSet() const
+bool DescribeRuleLimitRequest::DomainHasBeenSet() const
 {
     return m_domainHasBeenSet;
 }

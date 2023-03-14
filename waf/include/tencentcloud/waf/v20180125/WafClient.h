@@ -53,6 +53,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeAttackOverviewResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainDetailsSaasRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainDetailsSaasResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesRequest.h>
@@ -67,6 +69,10 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribePolicyStatusResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeRuleLimitResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h>
@@ -162,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoDenyIPResponse> DescribeAutoDenyIPOutcome;
                 typedef std::future<DescribeAutoDenyIPOutcome> DescribeAutoDenyIPOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeAutoDenyIPRequest&, DescribeAutoDenyIPOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoDenyIPAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeCustomWhiteRuleResponse> DescribeCustomWhiteRuleOutcome;
+                typedef std::future<DescribeCustomWhiteRuleOutcome> DescribeCustomWhiteRuleOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeCustomWhiteRuleRequest&, DescribeCustomWhiteRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCustomWhiteRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDomainDetailsSaasResponse> DescribeDomainDetailsSaasOutcome;
                 typedef std::future<DescribeDomainDetailsSaasOutcome> DescribeDomainDetailsSaasOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeDomainDetailsSaasRequest&, DescribeDomainDetailsSaasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDomainDetailsSaasAsyncHandler;
@@ -183,6 +192,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePolicyStatusResponse> DescribePolicyStatusOutcome;
+                typedef std::future<DescribePolicyStatusOutcome> DescribePolicyStatusOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribePolicyStatusRequest&, DescribePolicyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyStatusAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRuleLimitResponse> DescribeRuleLimitOutcome;
+                typedef std::future<DescribeRuleLimitOutcome> DescribeRuleLimitOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeRuleLimitRequest&, DescribeRuleLimitOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRuleLimitAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserCdcClbWafRegionsResponse> DescribeUserCdcClbWafRegionsOutcome;
                 typedef std::future<DescribeUserCdcClbWafRegionsOutcome> DescribeUserCdcClbWafRegionsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserCdcClbWafRegionsRequest&, DescribeUserCdcClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserCdcClbWafRegionsAsyncHandler;
@@ -378,6 +393,15 @@ namespace TencentCloud
                 DescribeAutoDenyIPOutcomeCallable DescribeAutoDenyIPCallable(const Model::DescribeAutoDenyIPRequest& request);
 
                 /**
+                 *获取防护配置中的精准白名单策略列表
+                 * @param req DescribeCustomWhiteRuleRequest
+                 * @return DescribeCustomWhiteRuleOutcome
+                 */
+                DescribeCustomWhiteRuleOutcome DescribeCustomWhiteRule(const Model::DescribeCustomWhiteRuleRequest &request);
+                void DescribeCustomWhiteRuleAsync(const Model::DescribeCustomWhiteRuleRequest& request, const DescribeCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeCustomWhiteRuleOutcomeCallable DescribeCustomWhiteRuleCallable(const Model::DescribeCustomWhiteRuleRequest& request);
+
+                /**
                  *查询单个saas域名详情
                  * @param req DescribeDomainDetailsSaasRequest
                  * @return DescribeDomainDetailsSaasOutcome
@@ -439,6 +463,24 @@ namespace TencentCloud
                 DescribeIpHitItemsOutcome DescribeIpHitItems(const Model::DescribeIpHitItemsRequest &request);
                 void DescribeIpHitItemsAsync(const Model::DescribeIpHitItemsRequest& request, const DescribeIpHitItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
+
+                /**
+                 *获取防护状态以及生效的实例id
+                 * @param req DescribePolicyStatusRequest
+                 * @return DescribePolicyStatusOutcome
+                 */
+                DescribePolicyStatusOutcome DescribePolicyStatus(const Model::DescribePolicyStatusRequest &request);
+                void DescribePolicyStatusAsync(const Model::DescribePolicyStatusRequest& request, const DescribePolicyStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePolicyStatusOutcomeCallable DescribePolicyStatusCallable(const Model::DescribePolicyStatusRequest& request);
+
+                /**
+                 *获取各个模块具体的规格限制
+                 * @param req DescribeRuleLimitRequest
+                 * @return DescribeRuleLimitOutcome
+                 */
+                DescribeRuleLimitOutcome DescribeRuleLimit(const Model::DescribeRuleLimitRequest &request);
+                void DescribeRuleLimitAsync(const Model::DescribeRuleLimitRequest& request, const DescribeRuleLimitAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRuleLimitOutcomeCallable DescribeRuleLimitCallable(const Model::DescribeRuleLimitRequest& request);
 
                 /**
                  *在CDC场景下，负载均衡型WAF的添加、编辑域名配置的时候，需要展示CDC负载均衡型WAF（cdc-clb-waf)支持的地域列表，通过DescribeUserCdcClbWafRegions既可以获得当前对客户已经开放的地域列表

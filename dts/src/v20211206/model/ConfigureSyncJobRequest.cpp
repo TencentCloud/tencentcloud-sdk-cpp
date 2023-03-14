@@ -32,7 +32,11 @@ ConfigureSyncJobRequest::ConfigureSyncJobRequest() :
     m_runModeHasBeenSet(false),
     m_expectRunTimeHasBeenSet(false),
     m_srcInfoHasBeenSet(false),
+    m_srcInfosHasBeenSet(false),
+    m_srcNodeTypeHasBeenSet(false),
     m_dstInfoHasBeenSet(false),
+    m_dstInfosHasBeenSet(false),
+    m_dstNodeTypeHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_autoRetryTimeRangeMinutesHasBeenSet(false)
 {
@@ -119,6 +123,23 @@ string ConfigureSyncJobRequest::ToJsonString() const
         m_srcInfo.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_srcInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_srcInfos.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_srcNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_srcNodeType.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dstInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -126,6 +147,23 @@ string ConfigureSyncJobRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dstInfo.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dstInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstInfos";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dstInfos.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_dstNodeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DstNodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dstNodeType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_optionsHasBeenSet)
@@ -297,6 +335,38 @@ bool ConfigureSyncJobRequest::SrcInfoHasBeenSet() const
     return m_srcInfoHasBeenSet;
 }
 
+SyncDBEndpointInfos ConfigureSyncJobRequest::GetSrcInfos() const
+{
+    return m_srcInfos;
+}
+
+void ConfigureSyncJobRequest::SetSrcInfos(const SyncDBEndpointInfos& _srcInfos)
+{
+    m_srcInfos = _srcInfos;
+    m_srcInfosHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::SrcInfosHasBeenSet() const
+{
+    return m_srcInfosHasBeenSet;
+}
+
+string ConfigureSyncJobRequest::GetSrcNodeType() const
+{
+    return m_srcNodeType;
+}
+
+void ConfigureSyncJobRequest::SetSrcNodeType(const string& _srcNodeType)
+{
+    m_srcNodeType = _srcNodeType;
+    m_srcNodeTypeHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::SrcNodeTypeHasBeenSet() const
+{
+    return m_srcNodeTypeHasBeenSet;
+}
+
 Endpoint ConfigureSyncJobRequest::GetDstInfo() const
 {
     return m_dstInfo;
@@ -311,6 +381,38 @@ void ConfigureSyncJobRequest::SetDstInfo(const Endpoint& _dstInfo)
 bool ConfigureSyncJobRequest::DstInfoHasBeenSet() const
 {
     return m_dstInfoHasBeenSet;
+}
+
+SyncDBEndpointInfos ConfigureSyncJobRequest::GetDstInfos() const
+{
+    return m_dstInfos;
+}
+
+void ConfigureSyncJobRequest::SetDstInfos(const SyncDBEndpointInfos& _dstInfos)
+{
+    m_dstInfos = _dstInfos;
+    m_dstInfosHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::DstInfosHasBeenSet() const
+{
+    return m_dstInfosHasBeenSet;
+}
+
+string ConfigureSyncJobRequest::GetDstNodeType() const
+{
+    return m_dstNodeType;
+}
+
+void ConfigureSyncJobRequest::SetDstNodeType(const string& _dstNodeType)
+{
+    m_dstNodeType = _dstNodeType;
+    m_dstNodeTypeHasBeenSet = true;
+}
+
+bool ConfigureSyncJobRequest::DstNodeTypeHasBeenSet() const
+{
+    return m_dstNodeTypeHasBeenSet;
 }
 
 Options ConfigureSyncJobRequest::GetOptions() const

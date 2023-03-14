@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/dts/v20211206/model/ConflictHandleOption.h>
 #include <tencentcloud/dts/v20211206/model/DdlOption.h>
+#include <tencentcloud/dts/v20211206/model/KafkaOption.h>
 
 
 namespace TencentCloud
@@ -202,6 +203,28 @@ namespace TencentCloud
                      */
                     bool DdlOptionsHasBeenSet() const;
 
+                    /**
+                     * 获取kafka同步选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KafkaOption kafka同步选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KafkaOption GetKafkaOption() const;
+
+                    /**
+                     * 设置kafka同步选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KafkaOption kafka同步选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKafkaOption(const KafkaOption& _kafkaOption);
+
+                    /**
+                     * 判断参数 KafkaOption 是否已赋值
+                     * @return KafkaOption 是否已赋值
+                     */
+                    bool KafkaOptionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -252,6 +275,13 @@ namespace TencentCloud
                      */
                     std::vector<DdlOption> m_ddlOptions;
                     bool m_ddlOptionsHasBeenSet;
+
+                    /**
+                     * kafka同步选项
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    KafkaOption m_kafkaOption;
+                    bool m_kafkaOptionHasBeenSet;
 
                 };
             }

@@ -22,6 +22,7 @@ using namespace std;
 
 Identification::Identification() :
     m_zoneNameHasBeenSet(false),
+    m_domainHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_ascriptionHasBeenSet(false),
     m_originalNameServersHasBeenSet(false),
@@ -42,6 +43,16 @@ CoreInternalOutcome Identification::Deserialize(const rapidjson::Value &value)
         }
         m_zoneName = string(value["ZoneName"].GetString());
         m_zoneNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Identification.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
     }
 
     if (value.HasMember("Status") && !value["Status"].IsNull())
@@ -116,6 +127,14 @@ void Identification::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         value.AddMember(iKey, rapidjson::Value(m_zoneName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_statusHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -172,6 +191,22 @@ void Identification::SetZoneName(const string& _zoneName)
 bool Identification::ZoneNameHasBeenSet() const
 {
     return m_zoneNameHasBeenSet;
+}
+
+string Identification::GetDomain() const
+{
+    return m_domain;
+}
+
+void Identification::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool Identification::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 
 string Identification::GetStatus() const

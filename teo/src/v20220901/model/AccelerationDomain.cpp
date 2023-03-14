@@ -27,7 +27,8 @@ AccelerationDomain::AccelerationDomain() :
     m_modifiedOnHasBeenSet(false),
     m_zoneIdHasBeenSet(false),
     m_domainStatusHasBeenSet(false),
-    m_cnameHasBeenSet(false)
+    m_cnameHasBeenSet(false),
+    m_identificationStatusHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,16 @@ CoreInternalOutcome AccelerationDomain::Deserialize(const rapidjson::Value &valu
         m_cnameHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentificationStatus") && !value["IdentificationStatus"].IsNull())
+    {
+        if (!value["IdentificationStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AccelerationDomain.IdentificationStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_identificationStatus = string(value["IdentificationStatus"].GetString());
+        m_identificationStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void AccelerationDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "Cname";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_cname.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identificationStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentificationStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_identificationStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void AccelerationDomain::SetCname(const string& _cname)
 bool AccelerationDomain::CnameHasBeenSet() const
 {
     return m_cnameHasBeenSet;
+}
+
+string AccelerationDomain::GetIdentificationStatus() const
+{
+    return m_identificationStatus;
+}
+
+void AccelerationDomain::SetIdentificationStatus(const string& _identificationStatus)
+{
+    m_identificationStatus = _identificationStatus;
+    m_identificationStatusHasBeenSet = true;
+}
+
+bool AccelerationDomain::IdentificationStatusHasBeenSet() const
+{
+    return m_identificationStatusHasBeenSet;
 }
 
