@@ -25,7 +25,8 @@ using namespace std;
 BatchDescribeKTVMusicDetailsRequest::BatchDescribeKTVMusicDetailsRequest() :
     m_appNameHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_musicIdsHasBeenSet(false)
+    m_musicIdsHasBeenSet(false),
+    m_playSceneHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string BatchDescribeKTVMusicDetailsRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_playSceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PlayScene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_playScene.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -119,6 +128,22 @@ void BatchDescribeKTVMusicDetailsRequest::SetMusicIds(const vector<string>& _mus
 bool BatchDescribeKTVMusicDetailsRequest::MusicIdsHasBeenSet() const
 {
     return m_musicIdsHasBeenSet;
+}
+
+string BatchDescribeKTVMusicDetailsRequest::GetPlayScene() const
+{
+    return m_playScene;
+}
+
+void BatchDescribeKTVMusicDetailsRequest::SetPlayScene(const string& _playScene)
+{
+    m_playScene = _playScene;
+    m_playSceneHasBeenSet = true;
+}
+
+bool BatchDescribeKTVMusicDetailsRequest::PlaySceneHasBeenSet() const
+{
+    return m_playSceneHasBeenSet;
 }
 
 

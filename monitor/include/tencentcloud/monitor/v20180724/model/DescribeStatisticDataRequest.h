@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取命名空间，目前只支持QCE/TKE
-                     * @return Namespace 命名空间，目前只支持QCE/TKE
+                     * 获取命名空间，目前只支持QCE/TKE2
+                     * @return Namespace 命名空间，目前只支持QCE/TKE2
                      */
                     std::string GetNamespace() const;
 
                     /**
-                     * 设置命名空间，目前只支持QCE/TKE
-                     * @param Namespace 命名空间，目前只支持QCE/TKE
+                     * 设置命名空间，目前只支持QCE/TKE2
+                     * @param Namespace 命名空间，目前只支持QCE/TKE2
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -216,7 +216,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 命名空间，目前只支持QCE/TKE
+                     * 命名空间，目前只支持QCE/TKE2
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;

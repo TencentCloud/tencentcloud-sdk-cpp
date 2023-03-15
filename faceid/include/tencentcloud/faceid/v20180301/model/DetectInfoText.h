@@ -615,6 +615,50 @@ namespace TencentCloud
                      */
                     bool LivenessModeHasBeenSet() const;
 
+                    /**
+                     * 获取nfc重复计费requestId列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NFCRequestIds nfc重复计费requestId列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetNFCRequestIds() const;
+
+                    /**
+                     * 设置nfc重复计费requestId列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NFCRequestIds nfc重复计费requestId列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNFCRequestIds(const std::vector<std::string>& _nFCRequestIds);
+
+                    /**
+                     * 判断参数 NFCRequestIds 是否已赋值
+                     * @return NFCRequestIds 是否已赋值
+                     */
+                    bool NFCRequestIdsHasBeenSet() const;
+
+                    /**
+                     * 获取nfc重复计费计数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NFCBillingCounts nfc重复计费计数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetNFCBillingCounts() const;
+
+                    /**
+                     * 设置nfc重复计费计数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NFCBillingCounts nfc重复计费计数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNFCBillingCounts(const int64_t& _nFCBillingCounts);
+
+                    /**
+                     * 判断参数 NFCBillingCounts 是否已赋值
+                     * @return NFCBillingCounts 是否已赋值
+                     */
+                    bool NFCBillingCountsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -794,6 +838,20 @@ namespace TencentCloud
                      */
                     uint64_t m_livenessMode;
                     bool m_livenessModeHasBeenSet;
+
+                    /**
+                     * nfc重复计费requestId列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_nFCRequestIds;
+                    bool m_nFCRequestIdsHasBeenSet;
+
+                    /**
+                     * nfc重复计费计数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_nFCBillingCounts;
+                    bool m_nFCBillingCountsHasBeenSet;
 
                 };
             }

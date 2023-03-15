@@ -47,11 +47,11 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音频采样率:
+                     * 获取音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
-                     * @return SampleRate 音频采样率:
+                     * @return SampleRate 音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
@@ -59,11 +59,11 @@ namespace TencentCloud
                     uint64_t GetSampleRate() const;
 
                     /**
-                     * 设置音频采样率:
+                     * 设置音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
-                     * @param SampleRate 音频采样率:
+                     * @param SampleRate 音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
@@ -77,20 +77,20 @@ namespace TencentCloud
                     bool SampleRateHasBeenSet() const;
 
                     /**
-                     * 获取声道数:
+                     * 获取声道数枚举值:
 1：单声道;
 2：双声道（默认）。
-                     * @return Channel 声道数:
+                     * @return Channel 声道数枚举值:
 1：单声道;
 2：双声道（默认）。
                      */
                     uint64_t GetChannel() const;
 
                     /**
-                     * 设置声道数:
+                     * 设置声道数枚举值:
 1：单声道;
 2：双声道（默认）。
-                     * @param Channel 声道数:
+                     * @param Channel 声道数枚举值:
 1：单声道;
 2：双声道（默认）。
                      */
@@ -123,7 +123,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音频采样率:
+                     * 音频采样率枚举值:(注意1 代表48000HZ, 2 代表44100HZ, 3 代表16000HZ)
 1：48000Hz（默认）;
 2：44100Hz
 3：16000Hz。
@@ -132,7 +132,7 @@ namespace TencentCloud
                     bool m_sampleRateHasBeenSet;
 
                     /**
-                     * 声道数:
+                     * 声道数枚举值:
 1：单声道;
 2：双声道（默认）。
                      */

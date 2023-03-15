@@ -31,7 +31,9 @@ DescribeLinksRequest::DescribeLinksRequest() :
     m_tagIDHasBeenSet(false),
     m_tacticIDHasBeenSet(false),
     m_linkedStateHasBeenSet(false),
-    m_tagIDsHasBeenSet(false)
+    m_tagIDsHasBeenSet(false),
+    m_limitHasBeenSet(false),
+    m_offsetHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,22 @@ string DescribeLinksRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
 
@@ -269,6 +287,38 @@ void DescribeLinksRequest::SetTagIDs(const vector<int64_t>& _tagIDs)
 bool DescribeLinksRequest::TagIDsHasBeenSet() const
 {
     return m_tagIDsHasBeenSet;
+}
+
+int64_t DescribeLinksRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeLinksRequest::SetLimit(const int64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeLinksRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
+
+int64_t DescribeLinksRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeLinksRequest::SetOffset(const int64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeLinksRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 

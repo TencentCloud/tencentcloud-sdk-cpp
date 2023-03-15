@@ -27,6 +27,7 @@
 #include <tencentcloud/teo/v20220901/model/BotManagedRule.h>
 #include <tencentcloud/teo/v20220901/model/BotPortraitRule.h>
 #include <tencentcloud/teo/v20220901/model/IntelligenceRule.h>
+#include <tencentcloud/teo/v20220901/model/BotUserRule.h>
 
 
 namespace TencentCloud
@@ -133,6 +134,46 @@ namespace TencentCloud
                      */
                     bool IntelligenceRuleHasBeenSet() const;
 
+                    /**
+                     * 获取Bot自定义规则。如果为null，默认使用历史配置。
+                     * @return BotUserRules Bot自定义规则。如果为null，默认使用历史配置。
+                     */
+                    std::vector<BotUserRule> GetBotUserRules() const;
+
+                    /**
+                     * 设置Bot自定义规则。如果为null，默认使用历史配置。
+                     * @param BotUserRules Bot自定义规则。如果为null，默认使用历史配置。
+                     */
+                    void SetBotUserRules(const std::vector<BotUserRule>& _botUserRules);
+
+                    /**
+                     * 判断参数 BotUserRules 是否已赋值
+                     * @return BotUserRules 是否已赋值
+                     */
+                    bool BotUserRulesHasBeenSet() const;
+
+                    /**
+                     * 获取Bot托管定制策略，入参可不填，仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Customizes Bot托管定制策略，入参可不填，仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BotUserRule> GetCustomizes() const;
+
+                    /**
+                     * 设置Bot托管定制策略，入参可不填，仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Customizes Bot托管定制策略，入参可不填，仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCustomizes(const std::vector<BotUserRule>& _customizes);
+
+                    /**
+                     * 判断参数 Customizes 是否已赋值
+                     * @return Customizes 是否已赋值
+                     */
+                    bool CustomizesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -161,6 +202,19 @@ namespace TencentCloud
                      */
                     IntelligenceRule m_intelligenceRule;
                     bool m_intelligenceRuleHasBeenSet;
+
+                    /**
+                     * Bot自定义规则。如果为null，默认使用历史配置。
+                     */
+                    std::vector<BotUserRule> m_botUserRules;
+                    bool m_botUserRulesHasBeenSet;
+
+                    /**
+                     * Bot托管定制策略，入参可不填，仅出参使用。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BotUserRule> m_customizes;
+                    bool m_customizesHasBeenSet;
 
                 };
             }

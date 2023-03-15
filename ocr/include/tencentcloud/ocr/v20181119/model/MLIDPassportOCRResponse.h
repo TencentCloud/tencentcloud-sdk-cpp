@@ -209,6 +209,34 @@ namespace TencentCloud
                      */
                     bool CodeCrcHasBeenSet() const;
 
+                    /**
+                     * 获取姓
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Surname 姓
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSurname() const;
+
+                    /**
+                     * 判断参数 Surname 是否已赋值
+                     * @return Surname 是否已赋值
+                     */
+                    bool SurnameHasBeenSet() const;
+
+                    /**
+                     * 获取名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GivenName 名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGivenName() const;
+
+                    /**
+                     * 判断参数 GivenName 是否已赋值
+                     * @return GivenName 是否已赋值
+                     */
+                    bool GivenNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -293,6 +321,20 @@ namespace TencentCloud
                      */
                     std::string m_codeCrc;
                     bool m_codeCrcHasBeenSet;
+
+                    /**
+                     * 姓
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_surname;
+                    bool m_surnameHasBeenSet;
+
+                    /**
+                     * 名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_givenName;
+                    bool m_givenNameHasBeenSet;
 
                 };
             }

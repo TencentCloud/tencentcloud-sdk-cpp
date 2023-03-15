@@ -27,6 +27,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/RemoveUserByStrRoomIdResponse.h
   include/tencentcloud/trtc/v20190722/model/McuLayoutVolume.h
   include/tencentcloud/trtc/v20190722/model/DescribeUserEventRequest.h
+  include/tencentcloud/trtc/v20190722/model/WaterMarkChar.h
   include/tencentcloud/trtc/v20190722/model/StopPublishCdnStreamResponse.h
   include/tencentcloud/trtc/v20190722/model/AbnormalEvent.h
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
@@ -145,6 +146,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/McuPublishCdnParam.h
   include/tencentcloud/trtc/v20190722/model/AudioParams.h
   include/tencentcloud/trtc/v20190722/model/SeriesInfo.h
+  include/tencentcloud/trtc/v20190722/model/WaterMarkTimestamp.h
   include/tencentcloud/trtc/v20190722/model/SingleSubscribeParams.h
   include/tencentcloud/trtc/v20190722/model/PublishCdnParams.h
   include/tencentcloud/trtc/v20190722/model/McuWaterMarkParams.h
@@ -164,6 +166,7 @@ set(trtc_src
   src/v20190722/model/RemoveUserByStrRoomIdResponse.cpp
   src/v20190722/model/McuLayoutVolume.cpp
   src/v20190722/model/DescribeUserEventRequest.cpp
+  src/v20190722/model/WaterMarkChar.cpp
   src/v20190722/model/StopPublishCdnStreamResponse.cpp
   src/v20190722/model/AbnormalEvent.cpp
   src/v20190722/model/ScaleInfomation.cpp
@@ -282,6 +285,7 @@ set(trtc_src
   src/v20190722/model/McuPublishCdnParam.cpp
   src/v20190722/model/AudioParams.cpp
   src/v20190722/model/SeriesInfo.cpp
+  src/v20190722/model/WaterMarkTimestamp.cpp
   src/v20190722/model/SingleSubscribeParams.cpp
   src/v20190722/model/PublishCdnParams.cpp
   src/v20190722/model/McuWaterMarkParams.cpp

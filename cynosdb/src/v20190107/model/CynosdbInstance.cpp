@@ -69,7 +69,8 @@ CynosdbInstance::CynosdbInstance() :
     m_isFreezeHasBeenSet(false),
     m_resourceTagsHasBeenSet(false),
     m_masterZoneHasBeenSet(false),
-    m_slaveZonesHasBeenSet(false)
+    m_slaveZonesHasBeenSet(false),
+    m_instanceNetInfoHasBeenSet(false)
 {
 }
 
@@ -591,6 +592,26 @@ CoreInternalOutcome CynosdbInstance::Deserialize(const rapidjson::Value &value)
         m_slaveZonesHasBeenSet = true;
     }
 
+    if (value.HasMember("InstanceNetInfo") && !value["InstanceNetInfo"].IsNull())
+    {
+        if (!value["InstanceNetInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CynosdbInstance.InstanceNetInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["InstanceNetInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            InstanceNetInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_instanceNetInfo.push_back(item);
+        }
+        m_instanceNetInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1006,6 +1027,21 @@ void CynosdbInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         for (auto itr = m_slaveZones.begin(); itr != m_slaveZones.end(); ++itr)
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_instanceNetInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceNetInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_instanceNetInfo.begin(); itr != m_instanceNetInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
     }
 
@@ -1794,5 +1830,21 @@ void CynosdbInstance::SetSlaveZones(const vector<string>& _slaveZones)
 bool CynosdbInstance::SlaveZonesHasBeenSet() const
 {
     return m_slaveZonesHasBeenSet;
+}
+
+vector<InstanceNetInfo> CynosdbInstance::GetInstanceNetInfo() const
+{
+    return m_instanceNetInfo;
+}
+
+void CynosdbInstance::SetInstanceNetInfo(const vector<InstanceNetInfo>& _instanceNetInfo)
+{
+    m_instanceNetInfo = _instanceNetInfo;
+    m_instanceNetInfoHasBeenSet = true;
+}
+
+bool CynosdbInstance::InstanceNetInfoHasBeenSet() const
+{
+    return m_instanceNetInfoHasBeenSet;
 }
 

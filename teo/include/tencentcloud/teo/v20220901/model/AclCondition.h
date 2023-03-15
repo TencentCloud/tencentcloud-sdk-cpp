@@ -59,7 +59,12 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>app_proto：应用层协议；</li>
-<li>sip_proto：网络层协议。</li>
+<li>sip_proto：网络层协议；</li>
+<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>
+<li>idcid：IDC 规则，仅bot自定义规则可用；</li>
+<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
+<li>portrait：画像分析，仅bot自定义规则可用；</li>
+<li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
                      * @return MatchFrom 匹配字段，取值有：
 <li>host：请求域名；</li>
 <li>sip：客户端IP；</li>
@@ -72,7 +77,12 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>app_proto：应用层协议；</li>
-<li>sip_proto：网络层协议。</li>
+<li>sip_proto：网络层协议；</li>
+<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>
+<li>idcid：IDC 规则，仅bot自定义规则可用；</li>
+<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
+<li>portrait：画像分析，仅bot自定义规则可用；</li>
+<li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
                      */
                     std::string GetMatchFrom() const;
 
@@ -89,7 +99,12 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>app_proto：应用层协议；</li>
-<li>sip_proto：网络层协议。</li>
+<li>sip_proto：网络层协议；</li>
+<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>
+<li>idcid：IDC 规则，仅bot自定义规则可用；</li>
+<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
+<li>portrait：画像分析，仅bot自定义规则可用；</li>
+<li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
                      * @param MatchFrom 匹配字段，取值有：
 <li>host：请求域名；</li>
 <li>sip：客户端IP；</li>
@@ -102,7 +117,12 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>app_proto：应用层协议；</li>
-<li>sip_proto：网络层协议。</li>
+<li>sip_proto：网络层协议；</li>
+<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>
+<li>idcid：IDC 规则，仅bot自定义规则可用；</li>
+<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
+<li>portrait：画像分析，仅bot自定义规则可用；</li>
+<li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
                      */
                     void SetMatchFrom(const std::string& _matchFrom);
 
@@ -245,7 +265,12 @@ namespace TencentCloud
 <li>method：请求方式；</li>
 <li>header：请求头部；</li>
 <li>app_proto：应用层协议；</li>
-<li>sip_proto：网络层协议。</li>
+<li>sip_proto：网络层协议；</li>
+<li>uabot：UA 特征规则，仅bot自定义规则可用；</li>
+<li>idcid：IDC 规则，仅bot自定义规则可用；</li>
+<li>sipbot：搜索引擎规则，仅bot自定义规则可用；</li>
+<li>portrait：画像分析，仅bot自定义规则可用；</li>
+<li>header_seq：请求头顺序，仅bot自定义规则可用。</li>
                      */
                     std::string m_matchFrom;
                     bool m_matchFromHasBeenSet;

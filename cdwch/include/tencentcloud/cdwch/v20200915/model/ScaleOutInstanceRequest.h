@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool UserSubnetIPNumHasBeenSet() const;
 
                     /**
-                     * 获取同步元数据节点IP （uip）
-                     * @return ScaleOutNodeIp 同步元数据节点IP （uip）
+                     * 获取同步元数据节点IP （uip），扩容的时候必填
+                     * @return ScaleOutNodeIp 同步元数据节点IP （uip），扩容的时候必填
                      */
                     std::string GetScaleOutNodeIp() const;
 
                     /**
-                     * 设置同步元数据节点IP （uip）
-                     * @param ScaleOutNodeIp 同步元数据节点IP （uip）
+                     * 设置同步元数据节点IP （uip），扩容的时候必填
+                     * @param ScaleOutNodeIp 同步元数据节点IP （uip），扩容的时候必填
                      */
                     void SetScaleOutNodeIp(const std::string& _scaleOutNodeIp);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ScaleOutNodeIpHasBeenSet() const;
 
                     /**
-                     * 获取缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
-                     * @return ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     * 获取缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
+                     * @return ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
                      */
                     std::vector<std::string> GetReduceShardInfo() const;
 
                     /**
-                     * 设置缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
-                     * @param ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     * 设置缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
+                     * @param ReduceShardInfo 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
                      */
                     void SetReduceShardInfo(const std::vector<std::string>& _reduceShardInfo);
 
@@ -206,13 +206,13 @@ namespace TencentCloud
                     bool m_userSubnetIPNumHasBeenSet;
 
                     /**
-                     * 同步元数据节点IP （uip）
+                     * 同步元数据节点IP （uip），扩容的时候必填
                      */
                     std::string m_scaleOutNodeIp;
                     bool m_scaleOutNodeIpHasBeenSet;
 
                     /**
-                     * 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔
+                     * 缩容节点shard的节点IP （uip），其中ha集群需要主副节点ip都传入以逗号分隔，缩容的时候必填
                      */
                     std::vector<std::string> m_reduceShardInfo;
                     bool m_reduceShardInfoHasBeenSet;

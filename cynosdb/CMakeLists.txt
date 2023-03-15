@@ -80,7 +80,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterParamLogsResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeClusterInstanceGrpsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeResourcesByDealNameResponse.h
-  include/tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h
+  include/tencentcloud/cynosdb/v20190107/model/InstanceNetInfo.h
   include/tencentcloud/cynosdb/v20190107/model/CreateAccountsRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DeleteAuditRuleTemplatesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditRuleTemplatesResponse.h
@@ -167,6 +167,7 @@ set(cynosdb_public_header_model
   include/tencentcloud/cynosdb/v20190107/model/OfflineClusterResponse.h
   include/tencentcloud/cynosdb/v20190107/model/SwitchProxyVpcResponse.h
   include/tencentcloud/cynosdb/v20190107/model/RevokeAccountPrivilegesRequest.h
+  include/tencentcloud/cynosdb/v20190107/model/ResumeServerlessResponse.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeAuditRuleTemplatesRequest.h
   include/tencentcloud/cynosdb/v20190107/model/InstanceSpec.h
   include/tencentcloud/cynosdb/v20190107/model/DescribeFlowRequest.h
@@ -296,7 +297,7 @@ set(cynosdb_src
   src/v20190107/model/DescribeClusterParamLogsResponse.cpp
   src/v20190107/model/DescribeClusterInstanceGrpsRequest.cpp
   src/v20190107/model/DescribeResourcesByDealNameResponse.cpp
-  src/v20190107/model/ResumeServerlessResponse.cpp
+  src/v20190107/model/InstanceNetInfo.cpp
   src/v20190107/model/CreateAccountsRequest.cpp
   src/v20190107/model/DeleteAuditRuleTemplatesRequest.cpp
   src/v20190107/model/DescribeAuditRuleTemplatesResponse.cpp
@@ -383,6 +384,7 @@ set(cynosdb_src
   src/v20190107/model/OfflineClusterResponse.cpp
   src/v20190107/model/SwitchProxyVpcResponse.cpp
   src/v20190107/model/RevokeAccountPrivilegesRequest.cpp
+  src/v20190107/model/ResumeServerlessResponse.cpp
   src/v20190107/model/DescribeAuditRuleTemplatesRequest.cpp
   src/v20190107/model/InstanceSpec.cpp
   src/v20190107/model/DescribeFlowRequest.cpp

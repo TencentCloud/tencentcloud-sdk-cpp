@@ -521,6 +521,28 @@ namespace TencentCloud
                     bool StorageClassesHasBeenSet() const;
 
                     /**
+                     * 获取媒体文件封装格式集合，匹配集合中任意元素。
+<li>数组长度限制：10。</li>
+                     * @return MediaTypes 媒体文件封装格式集合，匹配集合中任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> GetMediaTypes() const;
+
+                    /**
+                     * 设置媒体文件封装格式集合，匹配集合中任意元素。
+<li>数组长度限制：10。</li>
+                     * @param MediaTypes 媒体文件封装格式集合，匹配集合中任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    void SetMediaTypes(const std::vector<std::string>& _mediaTypes);
+
+                    /**
+                     * 判断参数 MediaTypes 是否已赋值
+                     * @return MediaTypes 是否已赋值
+                     */
+                    bool MediaTypesHasBeenSet() const;
+
+                    /**
                      * 获取TRTC 应用 ID 集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
                      * @return TrtcSdkAppIds TRTC 应用 ID 集合。匹配集合中的任意元素。
@@ -885,6 +907,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_storageClasses;
                     bool m_storageClassesHasBeenSet;
+
+                    /**
+                     * 媒体文件封装格式集合，匹配集合中任意元素。
+<li>数组长度限制：10。</li>
+                     */
+                    std::vector<std::string> m_mediaTypes;
+                    bool m_mediaTypesHasBeenSet;
 
                     /**
                      * TRTC 应用 ID 集合。匹配集合中的任意元素。

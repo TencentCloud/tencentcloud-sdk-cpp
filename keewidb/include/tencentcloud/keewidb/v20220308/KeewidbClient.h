@@ -43,6 +43,8 @@
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceBackupsResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceBinlogsRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceBinlogsResponse.h>
+#include <tencentcloud/keewidb/v20220308/model/DescribeInstanceDealDetailRequest.h>
+#include <tencentcloud/keewidb/v20220308/model/DescribeInstanceDealDetailResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceNodeInfoRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceNodeInfoResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceParamRecordsRequest.h>
@@ -139,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceBinlogsResponse> DescribeInstanceBinlogsOutcome;
                 typedef std::future<DescribeInstanceBinlogsOutcome> DescribeInstanceBinlogsOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::DescribeInstanceBinlogsRequest&, DescribeInstanceBinlogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceBinlogsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceDealDetailResponse> DescribeInstanceDealDetailOutcome;
+                typedef std::future<DescribeInstanceDealDetailOutcome> DescribeInstanceDealDetailOutcomeCallable;
+                typedef std::function<void(const KeewidbClient*, const Model::DescribeInstanceDealDetailRequest&, DescribeInstanceDealDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceDealDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeInstanceNodeInfoResponse> DescribeInstanceNodeInfoOutcome;
                 typedef std::future<DescribeInstanceNodeInfoOutcome> DescribeInstanceNodeInfoOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::DescribeInstanceNodeInfoRequest&, DescribeInstanceNodeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceNodeInfoAsyncHandler;
@@ -309,6 +314,15 @@ namespace TencentCloud
                 DescribeInstanceBinlogsOutcome DescribeInstanceBinlogs(const Model::DescribeInstanceBinlogsRequest &request);
                 void DescribeInstanceBinlogsAsync(const Model::DescribeInstanceBinlogsRequest& request, const DescribeInstanceBinlogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceBinlogsOutcomeCallable DescribeInstanceBinlogsCallable(const Model::DescribeInstanceBinlogsRequest& request);
+
+                /**
+                 *本接口（DescribeInstanceDealDetail）用于查询预付费订单信息。
+                 * @param req DescribeInstanceDealDetailRequest
+                 * @return DescribeInstanceDealDetailOutcome
+                 */
+                DescribeInstanceDealDetailOutcome DescribeInstanceDealDetail(const Model::DescribeInstanceDealDetailRequest &request);
+                void DescribeInstanceDealDetailAsync(const Model::DescribeInstanceDealDetailRequest& request, const DescribeInstanceDealDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceDealDetailOutcomeCallable DescribeInstanceDealDetailCallable(const Model::DescribeInstanceDealDetailRequest& request);
 
                 /**
                  *本接口（DescribeInstanceNodeInfo）查询实例节点信息。

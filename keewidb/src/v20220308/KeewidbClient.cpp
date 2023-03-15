@@ -470,6 +470,49 @@ KeewidbClient::DescribeInstanceBinlogsOutcomeCallable KeewidbClient::DescribeIns
     return task->get_future();
 }
 
+KeewidbClient::DescribeInstanceDealDetailOutcome KeewidbClient::DescribeInstanceDealDetail(const DescribeInstanceDealDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceDealDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceDealDetailResponse rsp = DescribeInstanceDealDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceDealDetailOutcome(rsp);
+        else
+            return DescribeInstanceDealDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceDealDetailOutcome(outcome.GetError());
+    }
+}
+
+void KeewidbClient::DescribeInstanceDealDetailAsync(const DescribeInstanceDealDetailRequest& request, const DescribeInstanceDealDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceDealDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KeewidbClient::DescribeInstanceDealDetailOutcomeCallable KeewidbClient::DescribeInstanceDealDetailCallable(const DescribeInstanceDealDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceDealDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceDealDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KeewidbClient::DescribeInstanceNodeInfoOutcome KeewidbClient::DescribeInstanceNodeInfo(const DescribeInstanceNodeInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceNodeInfo");

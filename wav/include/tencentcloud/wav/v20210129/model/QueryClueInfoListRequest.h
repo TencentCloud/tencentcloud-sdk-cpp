@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool LimitHasBeenSet() const;
 
+                    /**
+                     * 获取查询开始时间， 单位秒
+                     * @return BeginTime 查询开始时间， 单位秒
+                     */
+                    uint64_t GetBeginTime() const;
+
+                    /**
+                     * 设置查询开始时间， 单位秒
+                     * @param BeginTime 查询开始时间， 单位秒
+                     */
+                    void SetBeginTime(const uint64_t& _beginTime);
+
+                    /**
+                     * 判断参数 BeginTime 是否已赋值
+                     * @return BeginTime 是否已赋值
+                     */
+                    bool BeginTimeHasBeenSet() const;
+
+                    /**
+                     * 获取查询结束时间， 单位秒
+                     * @return EndTime 查询结束时间， 单位秒
+                     */
+                    uint64_t GetEndTime() const;
+
+                    /**
+                     * 设置查询结束时间， 单位秒
+                     * @param EndTime 查询结束时间， 单位秒
+                     */
+                    void SetEndTime(const uint64_t& _endTime);
+
+                    /**
+                     * 判断参数 EndTime 是否已赋值
+                     * @return EndTime 是否已赋值
+                     */
+                    bool EndTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;
+
+                    /**
+                     * 查询开始时间， 单位秒
+                     */
+                    uint64_t m_beginTime;
+                    bool m_beginTimeHasBeenSet;
+
+                    /**
+                     * 查询结束时间， 单位秒
+                     */
+                    uint64_t m_endTime;
+                    bool m_endTimeHasBeenSet;
 
                 };
             }

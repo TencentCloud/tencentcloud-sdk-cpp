@@ -37,10 +37,12 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/ModifyUserNewPrivilegeRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisRequest.h
   include/tencentcloud/cdwch/v20200915/model/ClusterConfigsInfoFromEMR.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersRequest.h
   include/tencentcloud/cdwch/v20200915/model/OpenBackUpRequest.h
   include/tencentcloud/cdwch/v20200915/model/BackupTableContent.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwch/v20200915/model/ConfigSubmitContext.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersResponse.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwch/v20200915/model/InstanceInfo.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
@@ -55,6 +57,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleResponse.h
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigItem.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceResponse.h
+  include/tencentcloud/cdwch/v20200915/model/ClusterInfo.h
   include/tencentcloud/cdwch/v20200915/model/ScaleUpInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/NodesSummary.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h
@@ -92,10 +95,12 @@ set(cdwch_src
   src/v20200915/model/ModifyUserNewPrivilegeRequest.cpp
   src/v20200915/model/DescribeCkSqlApisRequest.cpp
   src/v20200915/model/ClusterConfigsInfoFromEMR.cpp
+  src/v20200915/model/DescribeInstanceClustersRequest.cpp
   src/v20200915/model/OpenBackUpRequest.cpp
   src/v20200915/model/BackupTableContent.cpp
   src/v20200915/model/CreateInstanceNewResponse.cpp
   src/v20200915/model/ConfigSubmitContext.cpp
+  src/v20200915/model/DescribeInstanceClustersResponse.cpp
   src/v20200915/model/CreateInstanceNewRequest.cpp
   src/v20200915/model/InstanceInfo.cpp
   src/v20200915/model/ModifyClusterConfigsRequest.cpp
@@ -110,6 +115,7 @@ set(cdwch_src
   src/v20200915/model/CreateBackUpScheduleResponse.cpp
   src/v20200915/model/InstanceConfigItem.cpp
   src/v20200915/model/DescribeInstanceResponse.cpp
+  src/v20200915/model/ClusterInfo.cpp
   src/v20200915/model/ScaleUpInstanceRequest.cpp
   src/v20200915/model/NodesSummary.cpp
   src/v20200915/model/DescribeInstanceShardsResponse.cpp

@@ -96,6 +96,28 @@ namespace TencentCloud
                      */
                     bool MusicIdsHasBeenSet() const;
 
+                    /**
+                     * 获取播放场景。默认为Chat
+<li>Live：直播</li><li>Chat：语聊</li>
+                     * @return PlayScene 播放场景。默认为Chat
+<li>Live：直播</li><li>Chat：语聊</li>
+                     */
+                    std::string GetPlayScene() const;
+
+                    /**
+                     * 设置播放场景。默认为Chat
+<li>Live：直播</li><li>Chat：语聊</li>
+                     * @param PlayScene 播放场景。默认为Chat
+<li>Live：直播</li><li>Chat：语聊</li>
+                     */
+                    void SetPlayScene(const std::string& _playScene);
+
+                    /**
+                     * 判断参数 PlayScene 是否已赋值
+                     * @return PlayScene 是否已赋值
+                     */
+                    bool PlaySceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +137,13 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_musicIds;
                     bool m_musicIdsHasBeenSet;
+
+                    /**
+                     * 播放场景。默认为Chat
+<li>Live：直播</li><li>Chat：语聊</li>
+                     */
+                    std::string m_playScene;
+                    bool m_playSceneHasBeenSet;
 
                 };
             }

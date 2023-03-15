@@ -24,7 +24,9 @@ using namespace std;
 
 QueryClueInfoListRequest::QueryClueInfoListRequest() :
     m_cursorHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_beginTimeHasBeenSet(false),
+    m_endTimeHasBeenSet(false)
 {
 }
 
@@ -49,6 +51,22 @@ string QueryClueInfoListRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_beginTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BeginTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_beginTime, allocator);
+    }
+
+    if (m_endTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EndTime";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_endTime, allocator);
     }
 
 
@@ -89,6 +107,38 @@ void QueryClueInfoListRequest::SetLimit(const int64_t& _limit)
 bool QueryClueInfoListRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+uint64_t QueryClueInfoListRequest::GetBeginTime() const
+{
+    return m_beginTime;
+}
+
+void QueryClueInfoListRequest::SetBeginTime(const uint64_t& _beginTime)
+{
+    m_beginTime = _beginTime;
+    m_beginTimeHasBeenSet = true;
+}
+
+bool QueryClueInfoListRequest::BeginTimeHasBeenSet() const
+{
+    return m_beginTimeHasBeenSet;
+}
+
+uint64_t QueryClueInfoListRequest::GetEndTime() const
+{
+    return m_endTime;
+}
+
+void QueryClueInfoListRequest::SetEndTime(const uint64_t& _endTime)
+{
+    m_endTime = _endTime;
+    m_endTimeHasBeenSet = true;
+}
+
+bool QueryClueInfoListRequest::EndTimeHasBeenSet() const
+{
+    return m_endTimeHasBeenSet;
 }
 
 

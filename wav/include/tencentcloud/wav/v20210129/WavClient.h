@@ -45,10 +45,14 @@
 #include <tencentcloud/wav/v20210129/model/QueryCrmStatisticsResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryCustomerEventDetailStatisticsRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryCustomerEventDetailStatisticsResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryCustomerProfileListRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryCustomerProfileListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryDealerInfoListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryDealerInfoListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailResponse.h>
+#include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailByDateRequest.h>
+#include <tencentcloud/wav/v20210129/model/QueryExternalContactDetailByDateResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListRequest.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalContactListResponse.h>
 #include <tencentcloud/wav/v20210129/model/QueryExternalUserEventListRequest.h>
@@ -114,12 +118,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::QueryCustomerEventDetailStatisticsResponse> QueryCustomerEventDetailStatisticsOutcome;
                 typedef std::future<QueryCustomerEventDetailStatisticsOutcome> QueryCustomerEventDetailStatisticsOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryCustomerEventDetailStatisticsRequest&, QueryCustomerEventDetailStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomerEventDetailStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryCustomerProfileListResponse> QueryCustomerProfileListOutcome;
+                typedef std::future<QueryCustomerProfileListOutcome> QueryCustomerProfileListOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryCustomerProfileListRequest&, QueryCustomerProfileListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryCustomerProfileListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryDealerInfoListResponse> QueryDealerInfoListOutcome;
                 typedef std::future<QueryDealerInfoListOutcome> QueryDealerInfoListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryDealerInfoListRequest&, QueryDealerInfoListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryDealerInfoListAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryExternalContactDetailResponse> QueryExternalContactDetailOutcome;
                 typedef std::future<QueryExternalContactDetailOutcome> QueryExternalContactDetailOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalContactDetailRequest&, QueryExternalContactDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalContactDetailAsyncHandler;
+                typedef Outcome<Core::Error, Model::QueryExternalContactDetailByDateResponse> QueryExternalContactDetailByDateOutcome;
+                typedef std::future<QueryExternalContactDetailByDateOutcome> QueryExternalContactDetailByDateOutcomeCallable;
+                typedef std::function<void(const WavClient*, const Model::QueryExternalContactDetailByDateRequest&, QueryExternalContactDetailByDateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalContactDetailByDateAsyncHandler;
                 typedef Outcome<Core::Error, Model::QueryExternalContactListResponse> QueryExternalContactListOutcome;
                 typedef std::future<QueryExternalContactListOutcome> QueryExternalContactListOutcomeCallable;
                 typedef std::function<void(const WavClient*, const Model::QueryExternalContactListRequest&, QueryExternalContactListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> QueryExternalContactListAsyncHandler;
@@ -250,6 +260,15 @@ namespace TencentCloud
                 QueryCustomerEventDetailStatisticsOutcomeCallable QueryCustomerEventDetailStatisticsCallable(const Model::QueryCustomerEventDetailStatisticsRequest& request);
 
                 /**
+                 *通过接口拉取租户已有潜客客户档案列表信息
+                 * @param req QueryCustomerProfileListRequest
+                 * @return QueryCustomerProfileListOutcome
+                 */
+                QueryCustomerProfileListOutcome QueryCustomerProfileList(const Model::QueryCustomerProfileListRequest &request);
+                void QueryCustomerProfileListAsync(const Model::QueryCustomerProfileListRequest& request, const QueryCustomerProfileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryCustomerProfileListOutcomeCallable QueryCustomerProfileListCallable(const Model::QueryCustomerProfileListRequest& request);
+
+                /**
                  *企业可通过此接口获取录入在企微SaaS平台上的经销商信息。
                  * @param req QueryDealerInfoListRequest
                  * @return QueryDealerInfoListOutcome
@@ -266,6 +285,15 @@ namespace TencentCloud
                 QueryExternalContactDetailOutcome QueryExternalContactDetail(const Model::QueryExternalContactDetailRequest &request);
                 void QueryExternalContactDetailAsync(const Model::QueryExternalContactDetailRequest& request, const QueryExternalContactDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 QueryExternalContactDetailOutcomeCallable QueryExternalContactDetailCallable(const Model::QueryExternalContactDetailRequest& request);
+
+                /**
+                 *企业可通过传入起始和结束时间，获取该时间段的外部联系人详情列表
+                 * @param req QueryExternalContactDetailByDateRequest
+                 * @return QueryExternalContactDetailByDateOutcome
+                 */
+                QueryExternalContactDetailByDateOutcome QueryExternalContactDetailByDate(const Model::QueryExternalContactDetailByDateRequest &request);
+                void QueryExternalContactDetailByDateAsync(const Model::QueryExternalContactDetailByDateRequest& request, const QueryExternalContactDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                QueryExternalContactDetailByDateOutcomeCallable QueryExternalContactDetailByDateCallable(const Model::QueryExternalContactDetailByDateRequest& request);
 
                 /**
                  *企业可通过此接口基于外部联系人获取指定成员添加的客户列表。客户是指配置了客户联系功能的成员所添加的外部联系人。没有配置客户联系功能的成员，所添加的外部联系人将不会作为客户返回。

@@ -25,6 +25,8 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trtc/v20190722/model/WaterMarkImage.h>
+#include <tencentcloud/trtc/v20190722/model/WaterMarkChar.h>
+#include <tencentcloud/trtc/v20190722/model/WaterMarkTimestamp.h>
 
 
 namespace TencentCloud
@@ -48,14 +50,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取水印类型，0为图片（默认），1为文字（暂不支持）。
-                     * @return WaterMarkType 水印类型，0为图片（默认），1为文字（暂不支持）。
+                     * 获取水印类型，0为图片（默认），1为文字，2为时间戳。
+                     * @return WaterMarkType 水印类型，0为图片（默认），1为文字，2为时间戳。
                      */
                     uint64_t GetWaterMarkType() const;
 
                     /**
-                     * 设置水印类型，0为图片（默认），1为文字（暂不支持）。
-                     * @param WaterMarkType 水印类型，0为图片（默认），1为文字（暂不支持）。
+                     * 设置水印类型，0为图片（默认），1为文字，2为时间戳。
+                     * @param WaterMarkType 水印类型，0为图片（默认），1为文字，2为时间戳。
                      */
                     void SetWaterMarkType(const uint64_t& _waterMarkType);
 
@@ -83,10 +85,54 @@ namespace TencentCloud
                      */
                     bool WaterMarkImageHasBeenSet() const;
 
+                    /**
+                     * 获取水印为文字时的参数列表，水印为文字时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaterMarkChar 水印为文字时的参数列表，水印为文字时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WaterMarkChar GetWaterMarkChar() const;
+
+                    /**
+                     * 设置水印为文字时的参数列表，水印为文字时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WaterMarkChar 水印为文字时的参数列表，水印为文字时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWaterMarkChar(const WaterMarkChar& _waterMarkChar);
+
+                    /**
+                     * 判断参数 WaterMarkChar 是否已赋值
+                     * @return WaterMarkChar 是否已赋值
+                     */
+                    bool WaterMarkCharHasBeenSet() const;
+
+                    /**
+                     * 获取水印为时间戳时的参数列表，水印为时间戳时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WaterMarkTimestamp 水印为时间戳时的参数列表，水印为时间戳时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WaterMarkTimestamp GetWaterMarkTimestamp() const;
+
+                    /**
+                     * 设置水印为时间戳时的参数列表，水印为时间戳时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WaterMarkTimestamp 水印为时间戳时的参数列表，水印为时间戳时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWaterMarkTimestamp(const WaterMarkTimestamp& _waterMarkTimestamp);
+
+                    /**
+                     * 判断参数 WaterMarkTimestamp 是否已赋值
+                     * @return WaterMarkTimestamp 是否已赋值
+                     */
+                    bool WaterMarkTimestampHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 水印类型，0为图片（默认），1为文字（暂不支持）。
+                     * 水印类型，0为图片（默认），1为文字，2为时间戳。
                      */
                     uint64_t m_waterMarkType;
                     bool m_waterMarkTypeHasBeenSet;
@@ -96,6 +142,20 @@ namespace TencentCloud
                      */
                     WaterMarkImage m_waterMarkImage;
                     bool m_waterMarkImageHasBeenSet;
+
+                    /**
+                     * 水印为文字时的参数列表，水印为文字时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WaterMarkChar m_waterMarkChar;
+                    bool m_waterMarkCharHasBeenSet;
+
+                    /**
+                     * 水印为时间戳时的参数列表，水印为时间戳时校验必填。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WaterMarkTimestamp m_waterMarkTimestamp;
+                    bool m_waterMarkTimestampHasBeenSet;
 
                 };
             }

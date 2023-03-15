@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cynosdb/v20190107/model/ObjectTask.h>
 #include <tencentcloud/cynosdb/v20190107/model/Tag.h>
+#include <tencentcloud/cynosdb/v20190107/model/InstanceNetInfo.h>
 
 
 namespace TencentCloud
@@ -966,6 +967,28 @@ pause
                      */
                     bool SlaveZonesHasBeenSet() const;
 
+                    /**
+                     * 获取实例网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceNetInfo 实例网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceNetInfo> GetInstanceNetInfo() const;
+
+                    /**
+                     * 设置实例网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceNetInfo 实例网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceNetInfo(const std::vector<InstanceNetInfo>& _instanceNetInfo);
+
+                    /**
+                     * 判断参数 InstanceNetInfo 是否已赋值
+                     * @return InstanceNetInfo 是否已赋值
+                     */
+                    bool InstanceNetInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1270,6 +1293,13 @@ pause
                      */
                     std::vector<std::string> m_slaveZones;
                     bool m_slaveZonesHasBeenSet;
+
+                    /**
+                     * 实例网络信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<InstanceNetInfo> m_instanceNetInfo;
+                    bool m_instanceNetInfoHasBeenSet;
 
                 };
             }

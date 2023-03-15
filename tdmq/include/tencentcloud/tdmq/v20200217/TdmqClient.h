@@ -155,6 +155,8 @@
 #include <tencentcloud/tdmq/v20200217/model/DescribePublishersResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQNodeListResponse.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstanceRequest.h>
+#include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstanceResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstancesRequest.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRabbitMQVipInstancesResponse.h>
 #include <tencentcloud/tdmq/v20200217/model/DescribeRocketMQClusterRequest.h>
@@ -443,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQNodeListResponse> DescribeRabbitMQNodeListOutcome;
                 typedef std::future<DescribeRabbitMQNodeListOutcome> DescribeRabbitMQNodeListOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQNodeListRequest&, DescribeRabbitMQNodeListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQNodeListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRabbitMQVipInstanceResponse> DescribeRabbitMQVipInstanceOutcome;
+                typedef std::future<DescribeRabbitMQVipInstanceOutcome> DescribeRabbitMQVipInstanceOutcomeCallable;
+                typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQVipInstanceRequest&, DescribeRabbitMQVipInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQVipInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRabbitMQVipInstancesResponse> DescribeRabbitMQVipInstancesOutcome;
                 typedef std::future<DescribeRabbitMQVipInstancesOutcome> DescribeRabbitMQVipInstancesOutcomeCallable;
                 typedef std::function<void(const TdmqClient*, const Model::DescribeRabbitMQVipInstancesRequest&, DescribeRabbitMQVipInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRabbitMQVipInstancesAsyncHandler;
@@ -1185,6 +1190,15 @@ namespace TencentCloud
                 DescribeRabbitMQNodeListOutcome DescribeRabbitMQNodeList(const Model::DescribeRabbitMQNodeListRequest &request);
                 void DescribeRabbitMQNodeListAsync(const Model::DescribeRabbitMQNodeListRequest& request, const DescribeRabbitMQNodeListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRabbitMQNodeListOutcomeCallable DescribeRabbitMQNodeListCallable(const Model::DescribeRabbitMQNodeListRequest& request);
+
+                /**
+                 *获取单个RabbitMQ专享实例信息
+                 * @param req DescribeRabbitMQVipInstanceRequest
+                 * @return DescribeRabbitMQVipInstanceOutcome
+                 */
+                DescribeRabbitMQVipInstanceOutcome DescribeRabbitMQVipInstance(const Model::DescribeRabbitMQVipInstanceRequest &request);
+                void DescribeRabbitMQVipInstanceAsync(const Model::DescribeRabbitMQVipInstanceRequest& request, const DescribeRabbitMQVipInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRabbitMQVipInstanceOutcomeCallable DescribeRabbitMQVipInstanceCallable(const Model::DescribeRabbitMQVipInstanceRequest& request);
 
                 /**
                  *查询用户已购的RabbitMQ专享实例列表

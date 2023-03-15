@@ -341,6 +341,49 @@ CdwchClient::DescribeInstanceOutcomeCallable CdwchClient::DescribeInstanceCallab
     return task->get_future();
 }
 
+CdwchClient::DescribeInstanceClustersOutcome CdwchClient::DescribeInstanceClusters(const DescribeInstanceClustersRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeInstanceClusters");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeInstanceClustersResponse rsp = DescribeInstanceClustersResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeInstanceClustersOutcome(rsp);
+        else
+            return DescribeInstanceClustersOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeInstanceClustersOutcome(outcome.GetError());
+    }
+}
+
+void CdwchClient::DescribeInstanceClustersAsync(const DescribeInstanceClustersRequest& request, const DescribeInstanceClustersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeInstanceClusters(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdwchClient::DescribeInstanceClustersOutcomeCallable CdwchClient::DescribeInstanceClustersCallable(const DescribeInstanceClustersRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeInstanceClustersOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeInstanceClusters(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdwchClient::DescribeInstanceKeyValConfigsOutcome CdwchClient::DescribeInstanceKeyValConfigs(const DescribeInstanceKeyValConfigsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeInstanceKeyValConfigs");

@@ -44,7 +44,9 @@ DetectInfoText::DetectInfoText() :
     m_livenessDetailHasBeenSet(false),
     m_mobileHasBeenSet(false),
     m_compareLibTypeHasBeenSet(false),
-    m_livenessModeHasBeenSet(false)
+    m_livenessModeHasBeenSet(false),
+    m_nFCRequestIdsHasBeenSet(false),
+    m_nFCBillingCountsHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,29 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
         m_livenessModeHasBeenSet = true;
     }
 
+    if (value.HasMember("NFCRequestIds") && !value["NFCRequestIds"].IsNull())
+    {
+        if (!value["NFCRequestIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.NFCRequestIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["NFCRequestIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_nFCRequestIds.push_back((*itr).GetString());
+        }
+        m_nFCRequestIdsHasBeenSet = true;
+    }
+
+    if (value.HasMember("NFCBillingCounts") && !value["NFCBillingCounts"].IsNull())
+    {
+        if (!value["NFCBillingCounts"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.NFCBillingCounts` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_nFCBillingCounts = value["NFCBillingCounts"].GetInt64();
+        m_nFCBillingCountsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -507,6 +532,27 @@ void DetectInfoText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "LivenessMode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_livenessMode, allocator);
+    }
+
+    if (m_nFCRequestIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NFCRequestIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_nFCRequestIds.begin(); itr != m_nFCRequestIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_nFCBillingCountsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NFCBillingCounts";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_nFCBillingCounts, allocator);
     }
 
 }
@@ -894,5 +940,37 @@ void DetectInfoText::SetLivenessMode(const uint64_t& _livenessMode)
 bool DetectInfoText::LivenessModeHasBeenSet() const
 {
     return m_livenessModeHasBeenSet;
+}
+
+vector<string> DetectInfoText::GetNFCRequestIds() const
+{
+    return m_nFCRequestIds;
+}
+
+void DetectInfoText::SetNFCRequestIds(const vector<string>& _nFCRequestIds)
+{
+    m_nFCRequestIds = _nFCRequestIds;
+    m_nFCRequestIdsHasBeenSet = true;
+}
+
+bool DetectInfoText::NFCRequestIdsHasBeenSet() const
+{
+    return m_nFCRequestIdsHasBeenSet;
+}
+
+int64_t DetectInfoText::GetNFCBillingCounts() const
+{
+    return m_nFCBillingCounts;
+}
+
+void DetectInfoText::SetNFCBillingCounts(const int64_t& _nFCBillingCounts)
+{
+    m_nFCBillingCounts = _nFCBillingCounts;
+    m_nFCBillingCountsHasBeenSet = true;
+}
+
+bool DetectInfoText::NFCBillingCountsHasBeenSet() const
+{
+    return m_nFCBillingCountsHasBeenSet;
 }
 

@@ -204,6 +204,42 @@ namespace TencentCloud
                      */
                     bool TagIDsHasBeenSet() const;
 
+                    /**
+                     * 获取翻页大小, 默认翻页大小为10，最大数量为500
+                     * @return Limit 翻页大小, 默认翻页大小为10，最大数量为500
+                     */
+                    int64_t GetLimit() const;
+
+                    /**
+                     * 设置翻页大小, 默认翻页大小为10，最大数量为500
+                     * @param Limit 翻页大小, 默认翻页大小为10，最大数量为500
+                     */
+                    void SetLimit(const int64_t& _limit);
+
+                    /**
+                     * 判断参数 Limit 是否已赋值
+                     * @return Limit 是否已赋值
+                     */
+                    bool LimitHasBeenSet() const;
+
+                    /**
+                     * 获取翻页起始
+                     * @return Offset 翻页起始
+                     */
+                    int64_t GetOffset() const;
+
+                    /**
+                     * 设置翻页起始
+                     * @param Offset 翻页起始
+                     */
+                    void SetOffset(const int64_t& _offset);
+
+                    /**
+                     * 判断参数 Offset 是否已赋值
+                     * @return Offset 是否已赋值
+                     */
+                    bool OffsetHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +295,18 @@ namespace TencentCloud
                      */
                     std::vector<int64_t> m_tagIDs;
                     bool m_tagIDsHasBeenSet;
+
+                    /**
+                     * 翻页大小, 默认翻页大小为10，最大数量为500
+                     */
+                    int64_t m_limit;
+                    bool m_limitHasBeenSet;
+
+                    /**
+                     * 翻页起始
+                     */
+                    int64_t m_offset;
+                    bool m_offsetHasBeenSet;
 
                 };
             }

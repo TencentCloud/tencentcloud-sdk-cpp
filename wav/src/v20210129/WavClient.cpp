@@ -513,6 +513,49 @@ WavClient::QueryCustomerEventDetailStatisticsOutcomeCallable WavClient::QueryCus
     return task->get_future();
 }
 
+WavClient::QueryCustomerProfileListOutcome WavClient::QueryCustomerProfileList(const QueryCustomerProfileListRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryCustomerProfileList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryCustomerProfileListResponse rsp = QueryCustomerProfileListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryCustomerProfileListOutcome(rsp);
+        else
+            return QueryCustomerProfileListOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryCustomerProfileListOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryCustomerProfileListAsync(const QueryCustomerProfileListRequest& request, const QueryCustomerProfileListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryCustomerProfileList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryCustomerProfileListOutcomeCallable WavClient::QueryCustomerProfileListCallable(const QueryCustomerProfileListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryCustomerProfileListOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryCustomerProfileList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WavClient::QueryDealerInfoListOutcome WavClient::QueryDealerInfoList(const QueryDealerInfoListRequest &request)
 {
     auto outcome = MakeRequest(request, "QueryDealerInfoList");
@@ -592,6 +635,49 @@ WavClient::QueryExternalContactDetailOutcomeCallable WavClient::QueryExternalCon
         [this, request]()
         {
             return this->QueryExternalContactDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WavClient::QueryExternalContactDetailByDateOutcome WavClient::QueryExternalContactDetailByDate(const QueryExternalContactDetailByDateRequest &request)
+{
+    auto outcome = MakeRequest(request, "QueryExternalContactDetailByDate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        QueryExternalContactDetailByDateResponse rsp = QueryExternalContactDetailByDateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return QueryExternalContactDetailByDateOutcome(rsp);
+        else
+            return QueryExternalContactDetailByDateOutcome(o.GetError());
+    }
+    else
+    {
+        return QueryExternalContactDetailByDateOutcome(outcome.GetError());
+    }
+}
+
+void WavClient::QueryExternalContactDetailByDateAsync(const QueryExternalContactDetailByDateRequest& request, const QueryExternalContactDetailByDateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->QueryExternalContactDetailByDate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WavClient::QueryExternalContactDetailByDateOutcomeCallable WavClient::QueryExternalContactDetailByDateCallable(const QueryExternalContactDetailByDateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<QueryExternalContactDetailByDateOutcome()>>(
+        [this, request]()
+        {
+            return this->QueryExternalContactDetailByDate(request);
         }
     );
 

@@ -22,7 +22,9 @@ using namespace std;
 
 WaterMark::WaterMark() :
     m_waterMarkTypeHasBeenSet(false),
-    m_waterMarkImageHasBeenSet(false)
+    m_waterMarkImageHasBeenSet(false),
+    m_waterMarkCharHasBeenSet(false),
+    m_waterMarkTimestampHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,40 @@ CoreInternalOutcome WaterMark::Deserialize(const rapidjson::Value &value)
         m_waterMarkImageHasBeenSet = true;
     }
 
+    if (value.HasMember("WaterMarkChar") && !value["WaterMarkChar"].IsNull())
+    {
+        if (!value["WaterMarkChar"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WaterMark.WaterMarkChar` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_waterMarkChar.Deserialize(value["WaterMarkChar"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_waterMarkCharHasBeenSet = true;
+    }
+
+    if (value.HasMember("WaterMarkTimestamp") && !value["WaterMarkTimestamp"].IsNull())
+    {
+        if (!value["WaterMarkTimestamp"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WaterMark.WaterMarkTimestamp` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_waterMarkTimestamp.Deserialize(value["WaterMarkTimestamp"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_waterMarkTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -80,6 +116,24 @@ void WaterMark::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_waterMarkImage.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_waterMarkCharHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaterMarkChar";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_waterMarkChar.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_waterMarkTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WaterMarkTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_waterMarkTimestamp.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -115,5 +169,37 @@ void WaterMark::SetWaterMarkImage(const WaterMarkImage& _waterMarkImage)
 bool WaterMark::WaterMarkImageHasBeenSet() const
 {
     return m_waterMarkImageHasBeenSet;
+}
+
+WaterMarkChar WaterMark::GetWaterMarkChar() const
+{
+    return m_waterMarkChar;
+}
+
+void WaterMark::SetWaterMarkChar(const WaterMarkChar& _waterMarkChar)
+{
+    m_waterMarkChar = _waterMarkChar;
+    m_waterMarkCharHasBeenSet = true;
+}
+
+bool WaterMark::WaterMarkCharHasBeenSet() const
+{
+    return m_waterMarkCharHasBeenSet;
+}
+
+WaterMarkTimestamp WaterMark::GetWaterMarkTimestamp() const
+{
+    return m_waterMarkTimestamp;
+}
+
+void WaterMark::SetWaterMarkTimestamp(const WaterMarkTimestamp& _waterMarkTimestamp)
+{
+    m_waterMarkTimestamp = _waterMarkTimestamp;
+    m_waterMarkTimestampHasBeenSet = true;
+}
+
+bool WaterMark::WaterMarkTimestampHasBeenSet() const
+{
+    return m_waterMarkTimestampHasBeenSet;
 }
 

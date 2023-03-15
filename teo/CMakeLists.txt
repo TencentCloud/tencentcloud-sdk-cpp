@@ -52,6 +52,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifySecurityWafGroupPolicyRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeZoneSettingRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeClientRuleListResponse.h
+  include/tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h
   include/tencentcloud/teo/v20220901/model/ModifySecurityPolicyRequest.h
   include/tencentcloud/teo/v20220901/model/Waf.h
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyRuleStatusResponse.h
@@ -59,6 +60,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyZoneSettingRequest.h
   include/tencentcloud/teo/v20220901/model/RuleRewriteActionParams.h
   include/tencentcloud/teo/v20220901/model/CreateApplicationProxyResponse.h
+  include/tencentcloud/teo/v20220901/model/BotUserRule.h
   include/tencentcloud/teo/v20220901/model/ModifyOriginGroupResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteAccelerationDomainsRequest.h
   include/tencentcloud/teo/v20220901/model/ExceptUserRuleScope.h
@@ -77,7 +79,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/ModifyApplicationProxyStatusResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteZoneResponse.h
   include/tencentcloud/teo/v20220901/model/CreateRuleResponse.h
-  include/tencentcloud/teo/v20220901/model/DescribeIdentificationsResponse.h
+  include/tencentcloud/teo/v20220901/model/BotExtendAction.h
   include/tencentcloud/teo/v20220901/model/CreatePurgeTaskResponse.h
   include/tencentcloud/teo/v20220901/model/DeleteApplicationProxyRuleResponse.h
   include/tencentcloud/teo/v20220901/model/ReclaimAliasDomainRequest.h
@@ -707,6 +709,7 @@ set(teo_src
   src/v20220901/model/ModifySecurityWafGroupPolicyRequest.cpp
   src/v20220901/model/DescribeZoneSettingRequest.cpp
   src/v20220901/model/DescribeClientRuleListResponse.cpp
+  src/v20220901/model/DescribeIdentificationsResponse.cpp
   src/v20220901/model/ModifySecurityPolicyRequest.cpp
   src/v20220901/model/Waf.cpp
   src/v20220901/model/ModifyApplicationProxyRuleStatusResponse.cpp
@@ -714,6 +717,7 @@ set(teo_src
   src/v20220901/model/ModifyZoneSettingRequest.cpp
   src/v20220901/model/RuleRewriteActionParams.cpp
   src/v20220901/model/CreateApplicationProxyResponse.cpp
+  src/v20220901/model/BotUserRule.cpp
   src/v20220901/model/ModifyOriginGroupResponse.cpp
   src/v20220901/model/DeleteAccelerationDomainsRequest.cpp
   src/v20220901/model/ExceptUserRuleScope.cpp
@@ -732,7 +736,7 @@ set(teo_src
   src/v20220901/model/ModifyApplicationProxyStatusResponse.cpp
   src/v20220901/model/DeleteZoneResponse.cpp
   src/v20220901/model/CreateRuleResponse.cpp
-  src/v20220901/model/DescribeIdentificationsResponse.cpp
+  src/v20220901/model/BotExtendAction.cpp
   src/v20220901/model/CreatePurgeTaskResponse.cpp
   src/v20220901/model/DeleteApplicationProxyRuleResponse.cpp
   src/v20220901/model/ReclaimAliasDomainRequest.cpp
