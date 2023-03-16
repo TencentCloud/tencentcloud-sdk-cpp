@@ -26,7 +26,8 @@ CreateHaVipRequest::CreateHaVipRequest() :
     m_vpcIdHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_haVipNameHasBeenSet(false),
-    m_vipHasBeenSet(false)
+    m_vipHasBeenSet(false),
+    m_networkInterfaceIdHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string CreateHaVipRequest::ToJsonString() const
         string key = "Vip";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_networkInterfaceIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NetworkInterfaceId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_networkInterfaceId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void CreateHaVipRequest::SetVip(const string& _vip)
 bool CreateHaVipRequest::VipHasBeenSet() const
 {
     return m_vipHasBeenSet;
+}
+
+string CreateHaVipRequest::GetNetworkInterfaceId() const
+{
+    return m_networkInterfaceId;
+}
+
+void CreateHaVipRequest::SetNetworkInterfaceId(const string& _networkInterfaceId)
+{
+    m_networkInterfaceId = _networkInterfaceId;
+    m_networkInterfaceIdHasBeenSet = true;
+}
+
+bool CreateHaVipRequest::NetworkInterfaceIdHasBeenSet() const
+{
+    return m_networkInterfaceIdHasBeenSet;
 }
 
 

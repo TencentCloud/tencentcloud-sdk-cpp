@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h>
 
 
 namespace TencentCloud
@@ -172,6 +173,160 @@ namespace TencentCloud
                      */
                     bool DiskDescHasBeenSet() const;
 
+                    /**
+                     * 获取挂载云盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AttachCBSSpec 挂载云盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AttachCBSSpec GetAttachCBSSpec() const;
+
+                    /**
+                     * 设置挂载云盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AttachCBSSpec 挂载云盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAttachCBSSpec(const AttachCBSSpec& _attachCBSSpec);
+
+                    /**
+                     * 判断参数 AttachCBSSpec 是否已赋值
+                     * @return AttachCBSSpec 是否已赋值
+                     */
+                    bool AttachCBSSpecHasBeenSet() const;
+
+                    /**
+                     * 获取子产品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubProductType 子产品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSubProductType() const;
+
+                    /**
+                     * 设置子产品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubProductType 子产品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubProductType(const std::string& _subProductType);
+
+                    /**
+                     * 判断参数 SubProductType 是否已赋值
+                     * @return SubProductType 是否已赋值
+                     */
+                    bool SubProductTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规格对应的核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecCore 规格对应的核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSpecCore() const;
+
+                    /**
+                     * 设置规格对应的核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SpecCore 规格对应的核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSpecCore(const int64_t& _specCore);
+
+                    /**
+                     * 判断参数 SpecCore 是否已赋值
+                     * @return SpecCore 是否已赋值
+                     */
+                    bool SpecCoreHasBeenSet() const;
+
+                    /**
+                     * 获取规格对应的内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SpecMemory 规格对应的内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSpecMemory() const;
+
+                    /**
+                     * 设置规格对应的内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SpecMemory 规格对应的内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSpecMemory(const int64_t& _specMemory);
+
+                    /**
+                     * 判断参数 SpecMemory 是否已赋值
+                     * @return SpecMemory 是否已赋值
+                     */
+                    bool SpecMemoryHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DiskCount 磁盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDiskCount() const;
+
+                    /**
+                     * 设置磁盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DiskCount 磁盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDiskCount(const int64_t& _diskCount);
+
+                    /**
+                     * 判断参数 DiskCount 是否已赋值
+                     * @return DiskCount 是否已赋值
+                     */
+                    bool DiskCountHasBeenSet() const;
+
+                    /**
+                     * 获取磁盘的最大大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxDiskSize 磁盘的最大大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMaxDiskSize() const;
+
+                    /**
+                     * 设置磁盘的最大大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MaxDiskSize 磁盘的最大大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMaxDiskSize(const int64_t& _maxDiskSize);
+
+                    /**
+                     * 判断参数 MaxDiskSize 是否已赋值
+                     * @return MaxDiskSize 是否已赋值
+                     */
+                    bool MaxDiskSizeHasBeenSet() const;
+
+                    /**
+                     * 获取是否为加密云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Encrypt 是否为加密云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEncrypt() const;
+
+                    /**
+                     * 设置是否为加密云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Encrypt 是否为加密云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEncrypt(const int64_t& _encrypt);
+
+                    /**
+                     * 判断参数 Encrypt 是否已赋值
+                     * @return Encrypt 是否已赋值
+                     */
+                    bool EncryptHasBeenSet() const;
+
                 private:
 
                     /**
@@ -215,6 +370,55 @@ namespace TencentCloud
                      */
                     std::string m_diskDesc;
                     bool m_diskDescHasBeenSet;
+
+                    /**
+                     * 挂载云盘信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    AttachCBSSpec m_attachCBSSpec;
+                    bool m_attachCBSSpecHasBeenSet;
+
+                    /**
+                     * 子产品类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_subProductType;
+                    bool m_subProductTypeHasBeenSet;
+
+                    /**
+                     * 规格对应的核数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_specCore;
+                    bool m_specCoreHasBeenSet;
+
+                    /**
+                     * 规格对应的内存大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_specMemory;
+                    bool m_specMemoryHasBeenSet;
+
+                    /**
+                     * 磁盘的数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_diskCount;
+                    bool m_diskCountHasBeenSet;
+
+                    /**
+                     * 磁盘的最大大小
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_maxDiskSize;
+                    bool m_maxDiskSizeHasBeenSet;
+
+                    /**
+                     * 是否为加密云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_encrypt;
+                    bool m_encryptHasBeenSet;
 
                 };
             }

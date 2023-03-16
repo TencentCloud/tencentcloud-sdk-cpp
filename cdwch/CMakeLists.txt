@@ -42,17 +42,20 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/BackupTableContent.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewResponse.h
   include/tencentcloud/cdwch/v20200915/model/ConfigSubmitContext.h
+  include/tencentcloud/cdwch/v20200915/model/InstanceStateInfo.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceClustersResponse.h
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwch/v20200915/model/InstanceInfo.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h
+  include/tencentcloud/cdwch/v20200915/model/ServiceInfo.h
   include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/DiskSpec.h
   include/tencentcloud/cdwch/v20200915/model/DescribeClusterConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/ModifyInstanceKeyValConfigsRequest.h
   include/tencentcloud/cdwch/v20200915/model/MapConfigItem.h
+  include/tencentcloud/cdwch/v20200915/model/AttachCBSSpec.h
   include/tencentcloud/cdwch/v20200915/model/ScaleOutInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/CreateBackUpScheduleResponse.h
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigItem.h
@@ -100,17 +103,20 @@ set(cdwch_src
   src/v20200915/model/BackupTableContent.cpp
   src/v20200915/model/CreateInstanceNewResponse.cpp
   src/v20200915/model/ConfigSubmitContext.cpp
+  src/v20200915/model/InstanceStateInfo.cpp
   src/v20200915/model/DescribeInstanceClustersResponse.cpp
   src/v20200915/model/CreateInstanceNewRequest.cpp
   src/v20200915/model/InstanceInfo.cpp
   src/v20200915/model/ModifyClusterConfigsRequest.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsResponse.cpp
+  src/v20200915/model/ServiceInfo.cpp
   src/v20200915/model/ResourceSpec.cpp
   src/v20200915/model/ModifyClusterConfigsResponse.cpp
   src/v20200915/model/DiskSpec.cpp
   src/v20200915/model/DescribeClusterConfigsRequest.cpp
   src/v20200915/model/ModifyInstanceKeyValConfigsRequest.cpp
   src/v20200915/model/MapConfigItem.cpp
+  src/v20200915/model/AttachCBSSpec.cpp
   src/v20200915/model/ScaleOutInstanceRequest.cpp
   src/v20200915/model/CreateBackUpScheduleResponse.cpp
   src/v20200915/model/InstanceConfigItem.cpp

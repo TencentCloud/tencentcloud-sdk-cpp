@@ -50,7 +50,19 @@ InstanceInfo::InstanceInfo() :
     m_enableXMLConfigHasBeenSet(false),
     m_regionDescHasBeenSet(false),
     m_eipHasBeenSet(false),
-    m_cosMoveFactorHasBeenSet(false)
+    m_cosMoveFactorHasBeenSet(false),
+    m_kindHasBeenSet(false),
+    m_isElasticHasBeenSet(false),
+    m_instanceStateInfoHasBeenSet(false),
+    m_hAZkHasBeenSet(false),
+    m_mountDiskTypeHasBeenSet(false),
+    m_cHProxyVipHasBeenSet(false),
+    m_cosBucketNameHasBeenSet(false),
+    m_canAttachCbsHasBeenSet(false),
+    m_canAttachCbsLvmHasBeenSet(false),
+    m_canAttachCosHasBeenSet(false),
+    m_componentsHasBeenSet(false),
+    m_upgradeVersionsHasBeenSet(false)
 {
 }
 
@@ -383,6 +395,143 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_cosMoveFactorHasBeenSet = true;
     }
 
+    if (value.HasMember("Kind") && !value["Kind"].IsNull())
+    {
+        if (!value["Kind"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Kind` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kind = string(value["Kind"].GetString());
+        m_kindHasBeenSet = true;
+    }
+
+    if (value.HasMember("IsElastic") && !value["IsElastic"].IsNull())
+    {
+        if (!value["IsElastic"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.IsElastic` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isElastic = value["IsElastic"].GetBool();
+        m_isElasticHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceStateInfo") && !value["InstanceStateInfo"].IsNull())
+    {
+        if (!value["InstanceStateInfo"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InstanceStateInfo` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_instanceStateInfo.Deserialize(value["InstanceStateInfo"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_instanceStateInfoHasBeenSet = true;
+    }
+
+    if (value.HasMember("HAZk") && !value["HAZk"].IsNull())
+    {
+        if (!value["HAZk"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.HAZk` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_hAZk = value["HAZk"].GetBool();
+        m_hAZkHasBeenSet = true;
+    }
+
+    if (value.HasMember("MountDiskType") && !value["MountDiskType"].IsNull())
+    {
+        if (!value["MountDiskType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.MountDiskType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_mountDiskType = value["MountDiskType"].GetInt64();
+        m_mountDiskTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("CHProxyVip") && !value["CHProxyVip"].IsNull())
+    {
+        if (!value["CHProxyVip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CHProxyVip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cHProxyVip = string(value["CHProxyVip"].GetString());
+        m_cHProxyVipHasBeenSet = true;
+    }
+
+    if (value.HasMember("CosBucketName") && !value["CosBucketName"].IsNull())
+    {
+        if (!value["CosBucketName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CosBucketName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cosBucketName = string(value["CosBucketName"].GetString());
+        m_cosBucketNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanAttachCbs") && !value["CanAttachCbs"].IsNull())
+    {
+        if (!value["CanAttachCbs"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CanAttachCbs` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canAttachCbs = value["CanAttachCbs"].GetBool();
+        m_canAttachCbsHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanAttachCbsLvm") && !value["CanAttachCbsLvm"].IsNull())
+    {
+        if (!value["CanAttachCbsLvm"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CanAttachCbsLvm` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canAttachCbsLvm = value["CanAttachCbsLvm"].GetBool();
+        m_canAttachCbsLvmHasBeenSet = true;
+    }
+
+    if (value.HasMember("CanAttachCos") && !value["CanAttachCos"].IsNull())
+    {
+        if (!value["CanAttachCos"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CanAttachCos` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_canAttachCos = value["CanAttachCos"].GetBool();
+        m_canAttachCosHasBeenSet = true;
+    }
+
+    if (value.HasMember("Components") && !value["Components"].IsNull())
+    {
+        if (!value["Components"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Components` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Components"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ServiceInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_components.push_back(item);
+        }
+        m_componentsHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpgradeVersions") && !value["UpgradeVersions"].IsNull())
+    {
+        if (!value["UpgradeVersions"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.UpgradeVersions` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_upgradeVersions = string(value["UpgradeVersions"].GetString());
+        m_upgradeVersionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -637,6 +786,110 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CosMoveFactor";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_cosMoveFactor, allocator);
+    }
+
+    if (m_kindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kind.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isElasticHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsElastic";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isElastic, allocator);
+    }
+
+    if (m_instanceStateInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceStateInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_instanceStateInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_hAZkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HAZk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_hAZk, allocator);
+    }
+
+    if (m_mountDiskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MountDiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_mountDiskType, allocator);
+    }
+
+    if (m_cHProxyVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CHProxyVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cHProxyVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_cosBucketNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CosBucketName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cosBucketName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_canAttachCbsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanAttachCbs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canAttachCbs, allocator);
+    }
+
+    if (m_canAttachCbsLvmHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanAttachCbsLvm";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canAttachCbsLvm, allocator);
+    }
+
+    if (m_canAttachCosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CanAttachCos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_canAttachCos, allocator);
+    }
+
+    if (m_componentsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Components";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_components.begin(); itr != m_components.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_upgradeVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpgradeVersions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_upgradeVersions.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1120,5 +1373,197 @@ void InstanceInfo::SetCosMoveFactor(const int64_t& _cosMoveFactor)
 bool InstanceInfo::CosMoveFactorHasBeenSet() const
 {
     return m_cosMoveFactorHasBeenSet;
+}
+
+string InstanceInfo::GetKind() const
+{
+    return m_kind;
+}
+
+void InstanceInfo::SetKind(const string& _kind)
+{
+    m_kind = _kind;
+    m_kindHasBeenSet = true;
+}
+
+bool InstanceInfo::KindHasBeenSet() const
+{
+    return m_kindHasBeenSet;
+}
+
+bool InstanceInfo::GetIsElastic() const
+{
+    return m_isElastic;
+}
+
+void InstanceInfo::SetIsElastic(const bool& _isElastic)
+{
+    m_isElastic = _isElastic;
+    m_isElasticHasBeenSet = true;
+}
+
+bool InstanceInfo::IsElasticHasBeenSet() const
+{
+    return m_isElasticHasBeenSet;
+}
+
+InstanceStateInfo InstanceInfo::GetInstanceStateInfo() const
+{
+    return m_instanceStateInfo;
+}
+
+void InstanceInfo::SetInstanceStateInfo(const InstanceStateInfo& _instanceStateInfo)
+{
+    m_instanceStateInfo = _instanceStateInfo;
+    m_instanceStateInfoHasBeenSet = true;
+}
+
+bool InstanceInfo::InstanceStateInfoHasBeenSet() const
+{
+    return m_instanceStateInfoHasBeenSet;
+}
+
+bool InstanceInfo::GetHAZk() const
+{
+    return m_hAZk;
+}
+
+void InstanceInfo::SetHAZk(const bool& _hAZk)
+{
+    m_hAZk = _hAZk;
+    m_hAZkHasBeenSet = true;
+}
+
+bool InstanceInfo::HAZkHasBeenSet() const
+{
+    return m_hAZkHasBeenSet;
+}
+
+int64_t InstanceInfo::GetMountDiskType() const
+{
+    return m_mountDiskType;
+}
+
+void InstanceInfo::SetMountDiskType(const int64_t& _mountDiskType)
+{
+    m_mountDiskType = _mountDiskType;
+    m_mountDiskTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::MountDiskTypeHasBeenSet() const
+{
+    return m_mountDiskTypeHasBeenSet;
+}
+
+string InstanceInfo::GetCHProxyVip() const
+{
+    return m_cHProxyVip;
+}
+
+void InstanceInfo::SetCHProxyVip(const string& _cHProxyVip)
+{
+    m_cHProxyVip = _cHProxyVip;
+    m_cHProxyVipHasBeenSet = true;
+}
+
+bool InstanceInfo::CHProxyVipHasBeenSet() const
+{
+    return m_cHProxyVipHasBeenSet;
+}
+
+string InstanceInfo::GetCosBucketName() const
+{
+    return m_cosBucketName;
+}
+
+void InstanceInfo::SetCosBucketName(const string& _cosBucketName)
+{
+    m_cosBucketName = _cosBucketName;
+    m_cosBucketNameHasBeenSet = true;
+}
+
+bool InstanceInfo::CosBucketNameHasBeenSet() const
+{
+    return m_cosBucketNameHasBeenSet;
+}
+
+bool InstanceInfo::GetCanAttachCbs() const
+{
+    return m_canAttachCbs;
+}
+
+void InstanceInfo::SetCanAttachCbs(const bool& _canAttachCbs)
+{
+    m_canAttachCbs = _canAttachCbs;
+    m_canAttachCbsHasBeenSet = true;
+}
+
+bool InstanceInfo::CanAttachCbsHasBeenSet() const
+{
+    return m_canAttachCbsHasBeenSet;
+}
+
+bool InstanceInfo::GetCanAttachCbsLvm() const
+{
+    return m_canAttachCbsLvm;
+}
+
+void InstanceInfo::SetCanAttachCbsLvm(const bool& _canAttachCbsLvm)
+{
+    m_canAttachCbsLvm = _canAttachCbsLvm;
+    m_canAttachCbsLvmHasBeenSet = true;
+}
+
+bool InstanceInfo::CanAttachCbsLvmHasBeenSet() const
+{
+    return m_canAttachCbsLvmHasBeenSet;
+}
+
+bool InstanceInfo::GetCanAttachCos() const
+{
+    return m_canAttachCos;
+}
+
+void InstanceInfo::SetCanAttachCos(const bool& _canAttachCos)
+{
+    m_canAttachCos = _canAttachCos;
+    m_canAttachCosHasBeenSet = true;
+}
+
+bool InstanceInfo::CanAttachCosHasBeenSet() const
+{
+    return m_canAttachCosHasBeenSet;
+}
+
+vector<ServiceInfo> InstanceInfo::GetComponents() const
+{
+    return m_components;
+}
+
+void InstanceInfo::SetComponents(const vector<ServiceInfo>& _components)
+{
+    m_components = _components;
+    m_componentsHasBeenSet = true;
+}
+
+bool InstanceInfo::ComponentsHasBeenSet() const
+{
+    return m_componentsHasBeenSet;
+}
+
+string InstanceInfo::GetUpgradeVersions() const
+{
+    return m_upgradeVersions;
+}
+
+void InstanceInfo::SetUpgradeVersions(const string& _upgradeVersions)
+{
+    m_upgradeVersions = _upgradeVersions;
+    m_upgradeVersionsHasBeenSet = true;
+}
+
+bool InstanceInfo::UpgradeVersionsHasBeenSet() const
+{
+    return m_upgradeVersionsHasBeenSet;
 }
 

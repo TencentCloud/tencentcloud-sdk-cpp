@@ -43,8 +43,14 @@
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVSuggestionsResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVTagsRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DescribeKTVTagsResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeLiveVipTradeInfosRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeLiveVipTradeInfosResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeUserInfoRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/DescribeUserInfoResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/DestroyKTVRobotRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/DestroyKTVRobotResponse.h>
+#include <tencentcloud/yinsuda/v20220527/model/RechargeLiveVipRequest.h>
+#include <tencentcloud/yinsuda/v20220527/model/RechargeLiveVipResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsRequest.h>
 #include <tencentcloud/yinsuda/v20220527/model/SearchKTVMusicsResponse.h>
 #include <tencentcloud/yinsuda/v20220527/model/SyncKTVRobotCommandRequest.h>
@@ -93,9 +99,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeKTVTagsResponse> DescribeKTVTagsOutcome;
                 typedef std::future<DescribeKTVTagsOutcome> DescribeKTVTagsOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DescribeKTVTagsRequest&, DescribeKTVTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeKTVTagsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLiveVipTradeInfosResponse> DescribeLiveVipTradeInfosOutcome;
+                typedef std::future<DescribeLiveVipTradeInfosOutcome> DescribeLiveVipTradeInfosOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::DescribeLiveVipTradeInfosRequest&, DescribeLiveVipTradeInfosOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLiveVipTradeInfosAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeUserInfoResponse> DescribeUserInfoOutcome;
+                typedef std::future<DescribeUserInfoOutcome> DescribeUserInfoOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::DescribeUserInfoRequest&, DescribeUserInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DestroyKTVRobotResponse> DestroyKTVRobotOutcome;
                 typedef std::future<DestroyKTVRobotOutcome> DestroyKTVRobotOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::DestroyKTVRobotRequest&, DestroyKTVRobotOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DestroyKTVRobotAsyncHandler;
+                typedef Outcome<Core::Error, Model::RechargeLiveVipResponse> RechargeLiveVipOutcome;
+                typedef std::future<RechargeLiveVipOutcome> RechargeLiveVipOutcomeCallable;
+                typedef std::function<void(const YinsudaClient*, const Model::RechargeLiveVipRequest&, RechargeLiveVipOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RechargeLiveVipAsyncHandler;
                 typedef Outcome<Core::Error, Model::SearchKTVMusicsResponse> SearchKTVMusicsOutcome;
                 typedef std::future<SearchKTVMusicsOutcome> SearchKTVMusicsOutcomeCallable;
                 typedef std::function<void(const YinsudaClient*, const Model::SearchKTVMusicsRequest&, SearchKTVMusicsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchKTVMusicsAsyncHandler;
@@ -196,6 +211,24 @@ namespace TencentCloud
                 DescribeKTVTagsOutcomeCallable DescribeKTVTagsCallable(const Model::DescribeKTVTagsRequest& request);
 
                 /**
+                 *批量获取直播会员充值流水详细信息，包括：流水号，订单状态，下订单时间等
+                 * @param req DescribeLiveVipTradeInfosRequest
+                 * @return DescribeLiveVipTradeInfosOutcome
+                 */
+                DescribeLiveVipTradeInfosOutcome DescribeLiveVipTradeInfos(const Model::DescribeLiveVipTradeInfosRequest &request);
+                void DescribeLiveVipTradeInfosAsync(const Model::DescribeLiveVipTradeInfosRequest& request, const DescribeLiveVipTradeInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLiveVipTradeInfosOutcomeCallable DescribeLiveVipTradeInfosCallable(const Model::DescribeLiveVipTradeInfosRequest& request);
+
+                /**
+                 *获取用户信息，包括是否为直播会员，及直播会员信息等
+                 * @param req DescribeUserInfoRequest
+                 * @return DescribeUserInfoOutcome
+                 */
+                DescribeUserInfoOutcome DescribeUserInfo(const Model::DescribeUserInfoRequest &request);
+                void DescribeUserInfoAsync(const Model::DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeUserInfoOutcomeCallable DescribeUserInfoCallable(const Model::DescribeUserInfoRequest& request);
+
+                /**
                  *销毁机器人，机器人退出 RTC 房间。
                  * @param req DestroyKTVRobotRequest
                  * @return DestroyKTVRobotOutcome
@@ -203,6 +236,15 @@ namespace TencentCloud
                 DestroyKTVRobotOutcome DestroyKTVRobot(const Model::DestroyKTVRobotRequest &request);
                 void DestroyKTVRobotAsync(const Model::DestroyKTVRobotRequest& request, const DestroyKTVRobotAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DestroyKTVRobotOutcomeCallable DestroyKTVRobotCallable(const Model::DestroyKTVRobotRequest& request);
+
+                /**
+                 *充值直播会员，使该用户可以在直播场景使用
+                 * @param req RechargeLiveVipRequest
+                 * @return RechargeLiveVipOutcome
+                 */
+                RechargeLiveVipOutcome RechargeLiveVip(const Model::RechargeLiveVipRequest &request);
+                void RechargeLiveVipAsync(const Model::RechargeLiveVipRequest& request, const RechargeLiveVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RechargeLiveVipOutcomeCallable RechargeLiveVipCallable(const Model::RechargeLiveVipRequest& request);
 
                 /**
                  *根据关键词搜索歌曲，返回相关歌曲列表。

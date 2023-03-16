@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool PrivateIpAddressesHasBeenSet() const;
 
                     /**
-                     * 获取新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
-                     * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
+                     * 获取新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+                     * @return SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
                      */
                     uint64_t GetSecondaryPrivateIpAddressCount() const;
 
                     /**
-                     * 设置新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
-                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
+                     * 设置新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
+                     * @param SecondaryPrivateIpAddressCount 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
                      */
                     void SetSecondaryPrivateIpAddressCount(const uint64_t& _secondaryPrivateIpAddressCount);
 
@@ -189,14 +189,14 @@ namespace TencentCloud
                     bool NetworkInterfaceDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
@@ -257,7 +257,7 @@ namespace TencentCloud
                     bool m_privateIpAddressesHasBeenSet;
 
                     /**
-                     * 新申请的内网IP地址个数，内网IP地址个数总和不能超过配数。
+                     * 新申请的内网IP地址个数，内网IP地址个数总和不能超过配额数。
                      */
                     uint64_t m_secondaryPrivateIpAddressCount;
                     bool m_secondaryPrivateIpAddressCountHasBeenSet;
@@ -275,7 +275,7 @@ namespace TencentCloud
                     bool m_networkInterfaceDescriptionHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;

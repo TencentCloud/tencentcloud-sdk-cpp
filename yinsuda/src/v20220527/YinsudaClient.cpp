@@ -470,6 +470,92 @@ YinsudaClient::DescribeKTVTagsOutcomeCallable YinsudaClient::DescribeKTVTagsCall
     return task->get_future();
 }
 
+YinsudaClient::DescribeLiveVipTradeInfosOutcome YinsudaClient::DescribeLiveVipTradeInfos(const DescribeLiveVipTradeInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLiveVipTradeInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLiveVipTradeInfosResponse rsp = DescribeLiveVipTradeInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLiveVipTradeInfosOutcome(rsp);
+        else
+            return DescribeLiveVipTradeInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLiveVipTradeInfosOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeLiveVipTradeInfosAsync(const DescribeLiveVipTradeInfosRequest& request, const DescribeLiveVipTradeInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLiveVipTradeInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeLiveVipTradeInfosOutcomeCallable YinsudaClient::DescribeLiveVipTradeInfosCallable(const DescribeLiveVipTradeInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLiveVipTradeInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLiveVipTradeInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YinsudaClient::DescribeUserInfoOutcome YinsudaClient::DescribeUserInfo(const DescribeUserInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserInfoResponse rsp = DescribeUserInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserInfoOutcome(rsp);
+        else
+            return DescribeUserInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserInfoOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::DescribeUserInfoAsync(const DescribeUserInfoRequest& request, const DescribeUserInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::DescribeUserInfoOutcomeCallable YinsudaClient::DescribeUserInfoCallable(const DescribeUserInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 YinsudaClient::DestroyKTVRobotOutcome YinsudaClient::DestroyKTVRobot(const DestroyKTVRobotRequest &request)
 {
     auto outcome = MakeRequest(request, "DestroyKTVRobot");
@@ -506,6 +592,49 @@ YinsudaClient::DestroyKTVRobotOutcomeCallable YinsudaClient::DestroyKTVRobotCall
         [this, request]()
         {
             return this->DestroyKTVRobot(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+YinsudaClient::RechargeLiveVipOutcome YinsudaClient::RechargeLiveVip(const RechargeLiveVipRequest &request)
+{
+    auto outcome = MakeRequest(request, "RechargeLiveVip");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RechargeLiveVipResponse rsp = RechargeLiveVipResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RechargeLiveVipOutcome(rsp);
+        else
+            return RechargeLiveVipOutcome(o.GetError());
+    }
+    else
+    {
+        return RechargeLiveVipOutcome(outcome.GetError());
+    }
+}
+
+void YinsudaClient::RechargeLiveVipAsync(const RechargeLiveVipRequest& request, const RechargeLiveVipAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RechargeLiveVip(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+YinsudaClient::RechargeLiveVipOutcomeCallable YinsudaClient::RechargeLiveVipCallable(const RechargeLiveVipRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RechargeLiveVipOutcome()>>(
+        [this, request]()
+        {
+            return this->RechargeLiveVip(request);
         }
     );
 

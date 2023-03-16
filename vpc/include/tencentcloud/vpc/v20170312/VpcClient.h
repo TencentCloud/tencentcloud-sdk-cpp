@@ -1968,7 +1968,7 @@ namespace TencentCloud
                 CreateFlowLogOutcomeCallable CreateFlowLogCallable(const Model::CreateFlowLogRequest& request);
 
                 /**
-                 *本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）
+                 *本接口（CreateHaVip）用于创建高可用虚拟IP（HAVIP）。
                  * @param req CreateHaVipRequest
                  * @return CreateHaVipOutcome
                  */

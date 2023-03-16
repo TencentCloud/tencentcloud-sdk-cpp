@@ -2147,6 +2147,49 @@ RedisClient::DescribeReplicationGroupOutcomeCallable RedisClient::DescribeReplic
     return task->get_future();
 }
 
+RedisClient::DescribeSSLStatusOutcome RedisClient::DescribeSSLStatus(const DescribeSSLStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSSLStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSSLStatusResponse rsp = DescribeSSLStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSSLStatusOutcome(rsp);
+        else
+            return DescribeSSLStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSSLStatusOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeSSLStatusAsync(const DescribeSSLStatusRequest& request, const DescribeSSLStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSSLStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeSSLStatusOutcomeCallable RedisClient::DescribeSSLStatusCallable(const DescribeSSLStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSSLStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSSLStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeSlowLogOutcome RedisClient::DescribeSlowLog(const DescribeSlowLogRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSlowLog");

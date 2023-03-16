@@ -664,6 +664,138 @@ namespace TencentCloud
                      */
                     bool WhereFlagHasBeenSet() const;
 
+                    /**
+                     * 获取模版原始SQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TemplateSql 模版原始SQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTemplateSql() const;
+
+                    /**
+                     * 设置模版原始SQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TemplateSql 模版原始SQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTemplateSql(const std::string& _templateSql);
+
+                    /**
+                     * 判断参数 TemplateSql 是否已赋值
+                     * @return TemplateSql 是否已赋值
+                     */
+                    bool TemplateSqlHasBeenSet() const;
+
+                    /**
+                     * 获取模版子维度：0.父维度类型,1.一致性: 枚举范围一致性,2.一致性：数值范围一致性,3.一致性：字段数据相关性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubQualityDim 模版子维度：0.父维度类型,1.一致性: 枚举范围一致性,2.一致性：数值范围一致性,3.一致性：字段数据相关性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSubQualityDim() const;
+
+                    /**
+                     * 设置模版子维度：0.父维度类型,1.一致性: 枚举范围一致性,2.一致性：数值范围一致性,3.一致性：字段数据相关性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubQualityDim 模版子维度：0.父维度类型,1.一致性: 枚举范围一致性,2.一致性：数值范围一致性,3.一致性：字段数据相关性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubQualityDim(const uint64_t& _subQualityDim);
+
+                    /**
+                     * 判断参数 SubQualityDim 是否已赋值
+                     * @return SubQualityDim 是否已赋值
+                     */
+                    bool SubQualityDimHasBeenSet() const;
+
+                    /**
+                     * 获取规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetObjectType 规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTargetObjectType() const;
+
+                    /**
+                     * 设置规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetObjectType 规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetObjectType(const uint64_t& _targetObjectType);
+
+                    /**
+                     * 判断参数 TargetObjectType 是否已赋值
+                     * @return TargetObjectType 是否已赋值
+                     */
+                    bool TargetObjectTypeHasBeenSet() const;
+
+                    /**
+                     * 获取规则适用的目标数据对象类型（1：数值，2：字符串）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetObjectDataType 规则适用的目标数据对象类型（1：数值，2：字符串）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTargetObjectDataType() const;
+
+                    /**
+                     * 设置规则适用的目标数据对象类型（1：数值，2：字符串）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetObjectDataType 规则适用的目标数据对象类型（1：数值，2：字符串）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetObjectDataType(const uint64_t& _targetObjectDataType);
+
+                    /**
+                     * 判断参数 TargetObjectDataType 是否已赋值
+                     * @return TargetObjectDataType 是否已赋值
+                     */
+                    bool TargetObjectDataTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标字段详细类型，INT、STRING
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetObjectDataTypeName 目标字段详细类型，INT、STRING
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTargetObjectDataTypeName() const;
+
+                    /**
+                     * 设置目标字段详细类型，INT、STRING
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetObjectDataTypeName 目标字段详细类型，INT、STRING
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetObjectDataTypeName(const std::string& _targetObjectDataTypeName);
+
+                    /**
+                     * 判断参数 TargetObjectDataTypeName 是否已赋值
+                     * @return TargetObjectDataTypeName 是否已赋值
+                     */
+                    bool TargetObjectDataTypeNameHasBeenSet() const;
+
+                    /**
+                     * 获取目标字段名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetObjectValue 目标字段名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTargetObjectValue() const;
+
+                    /**
+                     * 设置目标字段名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetObjectValue 目标字段名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetObjectValue(const std::string& _targetObjectValue);
+
+                    /**
+                     * 判断参数 TargetObjectValue 是否已赋值
+                     * @return TargetObjectValue 是否已赋值
+                     */
+                    bool TargetObjectValueHasBeenSet() const;
+
                 private:
 
                     /**
@@ -861,6 +993,48 @@ namespace TencentCloud
                      */
                     bool m_whereFlag;
                     bool m_whereFlagHasBeenSet;
+
+                    /**
+                     * 模版原始SQL
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_templateSql;
+                    bool m_templateSqlHasBeenSet;
+
+                    /**
+                     * 模版子维度：0.父维度类型,1.一致性: 枚举范围一致性,2.一致性：数值范围一致性,3.一致性：字段数据相关性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_subQualityDim;
+                    bool m_subQualityDimHasBeenSet;
+
+                    /**
+                     * 规则适用的目标数据对象类型（1：常量，2：离线表级，3：离线字段级别）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_targetObjectType;
+                    bool m_targetObjectTypeHasBeenSet;
+
+                    /**
+                     * 规则适用的目标数据对象类型（1：数值，2：字符串）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_targetObjectDataType;
+                    bool m_targetObjectDataTypeHasBeenSet;
+
+                    /**
+                     * 目标字段详细类型，INT、STRING
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetObjectDataTypeName;
+                    bool m_targetObjectDataTypeNameHasBeenSet;
+
+                    /**
+                     * 目标字段名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_targetObjectValue;
+                    bool m_targetObjectValueHasBeenSet;
 
                 };
             }

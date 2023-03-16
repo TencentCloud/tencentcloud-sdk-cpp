@@ -26,6 +26,8 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cdwch/v20200915/model/NodesSummary.h>
 #include <tencentcloud/cdwch/v20200915/model/Tag.h>
+#include <tencentcloud/cdwch/v20200915/model/InstanceStateInfo.h>
+#include <tencentcloud/cdwch/v20200915/model/ServiceInfo.h>
 
 
 namespace TencentCloud
@@ -720,6 +722,270 @@ Modify 集群变更中；
                      */
                     bool CosMoveFactorHasBeenSet() const;
 
+                    /**
+                     * 获取external/local/yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Kind external/local/yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetKind() const;
+
+                    /**
+                     * 设置external/local/yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Kind external/local/yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKind(const std::string& _kind);
+
+                    /**
+                     * 判断参数 Kind 是否已赋值
+                     * @return Kind 是否已赋值
+                     */
+                    bool KindHasBeenSet() const;
+
+                    /**
+                     * 获取是否弹性ck
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsElastic 是否弹性ck
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsElastic() const;
+
+                    /**
+                     * 设置是否弹性ck
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsElastic 是否弹性ck
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsElastic(const bool& _isElastic);
+
+                    /**
+                     * 判断参数 IsElastic 是否已赋值
+                     * @return IsElastic 是否已赋值
+                     */
+                    bool IsElasticHasBeenSet() const;
+
+                    /**
+                     * 获取集群详细状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceStateInfo 集群详细状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceStateInfo GetInstanceStateInfo() const;
+
+                    /**
+                     * 设置集群详细状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceStateInfo 集群详细状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceStateInfo(const InstanceStateInfo& _instanceStateInfo);
+
+                    /**
+                     * 判断参数 InstanceStateInfo 是否已赋值
+                     * @return InstanceStateInfo 是否已赋值
+                     */
+                    bool InstanceStateInfoHasBeenSet() const;
+
+                    /**
+                     * 获取ZK高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return HAZk ZK高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetHAZk() const;
+
+                    /**
+                     * 设置ZK高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param HAZk ZK高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetHAZk(const bool& _hAZk);
+
+                    /**
+                     * 判断参数 HAZk 是否已赋值
+                     * @return HAZk 是否已赋值
+                     */
+                    bool HAZkHasBeenSet() const;
+
+                    /**
+                     * 获取挂载盘,默认0:没有类型；1:裸盘;2:lvm
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MountDiskType 挂载盘,默认0:没有类型；1:裸盘;2:lvm
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMountDiskType() const;
+
+                    /**
+                     * 设置挂载盘,默认0:没有类型；1:裸盘;2:lvm
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MountDiskType 挂载盘,默认0:没有类型；1:裸盘;2:lvm
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMountDiskType(const int64_t& _mountDiskType);
+
+                    /**
+                     * 判断参数 MountDiskType 是否已赋值
+                     * @return MountDiskType 是否已赋值
+                     */
+                    bool MountDiskTypeHasBeenSet() const;
+
+                    /**
+                     * 获取无
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CHProxyVip 无
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCHProxyVip() const;
+
+                    /**
+                     * 设置无
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CHProxyVip 无
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCHProxyVip(const std::string& _cHProxyVip);
+
+                    /**
+                     * 判断参数 CHProxyVip 是否已赋值
+                     * @return CHProxyVip 是否已赋值
+                     */
+                    bool CHProxyVipHasBeenSet() const;
+
+                    /**
+                     * 获取cos buket的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CosBucketName cos buket的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCosBucketName() const;
+
+                    /**
+                     * 设置cos buket的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CosBucketName cos buket的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCosBucketName(const std::string& _cosBucketName);
+
+                    /**
+                     * 判断参数 CosBucketName 是否已赋值
+                     * @return CosBucketName 是否已赋值
+                     */
+                    bool CosBucketNameHasBeenSet() const;
+
+                    /**
+                     * 获取是否可以挂载云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanAttachCbs 是否可以挂载云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetCanAttachCbs() const;
+
+                    /**
+                     * 设置是否可以挂载云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CanAttachCbs 是否可以挂载云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCanAttachCbs(const bool& _canAttachCbs);
+
+                    /**
+                     * 判断参数 CanAttachCbs 是否已赋值
+                     * @return CanAttachCbs 是否已赋值
+                     */
+                    bool CanAttachCbsHasBeenSet() const;
+
+                    /**
+                     * 获取是否可以挂载云盘阵列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanAttachCbsLvm 是否可以挂载云盘阵列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetCanAttachCbsLvm() const;
+
+                    /**
+                     * 设置是否可以挂载云盘阵列
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CanAttachCbsLvm 是否可以挂载云盘阵列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCanAttachCbsLvm(const bool& _canAttachCbsLvm);
+
+                    /**
+                     * 判断参数 CanAttachCbsLvm 是否已赋值
+                     * @return CanAttachCbsLvm 是否已赋值
+                     */
+                    bool CanAttachCbsLvmHasBeenSet() const;
+
+                    /**
+                     * 获取是否可以挂载cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CanAttachCos 是否可以挂载cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetCanAttachCos() const;
+
+                    /**
+                     * 设置是否可以挂载cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CanAttachCos 是否可以挂载cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCanAttachCos(const bool& _canAttachCos);
+
+                    /**
+                     * 判断参数 CanAttachCos 是否已赋值
+                     * @return CanAttachCos 是否已赋值
+                     */
+                    bool CanAttachCosHasBeenSet() const;
+
+                    /**
+                     * 获取服务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Components 服务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceInfo> GetComponents() const;
+
+                    /**
+                     * 设置服务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Components 服务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetComponents(const std::vector<ServiceInfo>& _components);
+
+                    /**
+                     * 判断参数 Components 是否已赋值
+                     * @return Components 是否已赋值
+                     */
+                    bool ComponentsHasBeenSet() const;
+
+                    /**
+                     * 获取可升级的内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpgradeVersions 可升级的内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetUpgradeVersions() const;
+
+                    /**
+                     * 设置可升级的内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpgradeVersions 可升级的内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpgradeVersions(const std::string& _upgradeVersions);
+
+                    /**
+                     * 判断参数 UpgradeVersions 是否已赋值
+                     * @return UpgradeVersions 是否已赋值
+                     */
+                    bool UpgradeVersionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -934,6 +1200,90 @@ Modify 集群变更中；
                      */
                     int64_t m_cosMoveFactor;
                     bool m_cosMoveFactorHasBeenSet;
+
+                    /**
+                     * external/local/yunti
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_kind;
+                    bool m_kindHasBeenSet;
+
+                    /**
+                     * 是否弹性ck
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isElastic;
+                    bool m_isElasticHasBeenSet;
+
+                    /**
+                     * 集群详细状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    InstanceStateInfo m_instanceStateInfo;
+                    bool m_instanceStateInfoHasBeenSet;
+
+                    /**
+                     * ZK高可用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_hAZk;
+                    bool m_hAZkHasBeenSet;
+
+                    /**
+                     * 挂载盘,默认0:没有类型；1:裸盘;2:lvm
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_mountDiskType;
+                    bool m_mountDiskTypeHasBeenSet;
+
+                    /**
+                     * 无
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cHProxyVip;
+                    bool m_cHProxyVipHasBeenSet;
+
+                    /**
+                     * cos buket的名字
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_cosBucketName;
+                    bool m_cosBucketNameHasBeenSet;
+
+                    /**
+                     * 是否可以挂载云盘
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canAttachCbs;
+                    bool m_canAttachCbsHasBeenSet;
+
+                    /**
+                     * 是否可以挂载云盘阵列
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canAttachCbsLvm;
+                    bool m_canAttachCbsLvmHasBeenSet;
+
+                    /**
+                     * 是否可以挂载cos
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_canAttachCos;
+                    bool m_canAttachCosHasBeenSet;
+
+                    /**
+                     * 服务信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<ServiceInfo> m_components;
+                    bool m_componentsHasBeenSet;
+
+                    /**
+                     * 可升级的内核版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_upgradeVersions;
+                    bool m_upgradeVersionsHasBeenSet;
 
                 };
             }

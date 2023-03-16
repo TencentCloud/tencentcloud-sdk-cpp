@@ -48,7 +48,13 @@ Rule::Rule() :
     m_relConditionExprHasBeenSet(false),
     m_fieldConfigHasBeenSet(false),
     m_multiSourceFlagHasBeenSet(false),
-    m_whereFlagHasBeenSet(false)
+    m_whereFlagHasBeenSet(false),
+    m_templateSqlHasBeenSet(false),
+    m_subQualityDimHasBeenSet(false),
+    m_targetObjectTypeHasBeenSet(false),
+    m_targetObjectDataTypeHasBeenSet(false),
+    m_targetObjectDataTypeNameHasBeenSet(false),
+    m_targetObjectValueHasBeenSet(false)
 {
 }
 
@@ -351,6 +357,66 @@ CoreInternalOutcome Rule::Deserialize(const rapidjson::Value &value)
         m_whereFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("TemplateSql") && !value["TemplateSql"].IsNull())
+    {
+        if (!value["TemplateSql"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TemplateSql` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_templateSql = string(value["TemplateSql"].GetString());
+        m_templateSqlHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubQualityDim") && !value["SubQualityDim"].IsNull())
+    {
+        if (!value["SubQualityDim"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.SubQualityDim` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_subQualityDim = value["SubQualityDim"].GetUint64();
+        m_subQualityDimHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectType") && !value["TargetObjectType"].IsNull())
+    {
+        if (!value["TargetObjectType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TargetObjectType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectType = value["TargetObjectType"].GetUint64();
+        m_targetObjectTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectDataType") && !value["TargetObjectDataType"].IsNull())
+    {
+        if (!value["TargetObjectDataType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TargetObjectDataType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectDataType = value["TargetObjectDataType"].GetUint64();
+        m_targetObjectDataTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectDataTypeName") && !value["TargetObjectDataTypeName"].IsNull())
+    {
+        if (!value["TargetObjectDataTypeName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TargetObjectDataTypeName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectDataTypeName = string(value["TargetObjectDataTypeName"].GetString());
+        m_targetObjectDataTypeNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetObjectValue") && !value["TargetObjectValue"].IsNull())
+    {
+        if (!value["TargetObjectValue"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Rule.TargetObjectValue` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetObjectValue = string(value["TargetObjectValue"].GetString());
+        m_targetObjectValueHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -582,6 +648,54 @@ void Rule::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorT
         string key = "WhereFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_whereFlag, allocator);
+    }
+
+    if (m_templateSqlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TemplateSql";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_templateSql.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subQualityDimHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubQualityDim";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_subQualityDim, allocator);
+    }
+
+    if (m_targetObjectTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetObjectType, allocator);
+    }
+
+    if (m_targetObjectDataTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectDataType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetObjectDataType, allocator);
+    }
+
+    if (m_targetObjectDataTypeNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectDataTypeName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetObjectDataTypeName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetObjectValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetObjectValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_targetObjectValue.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1033,5 +1147,101 @@ void Rule::SetWhereFlag(const bool& _whereFlag)
 bool Rule::WhereFlagHasBeenSet() const
 {
     return m_whereFlagHasBeenSet;
+}
+
+string Rule::GetTemplateSql() const
+{
+    return m_templateSql;
+}
+
+void Rule::SetTemplateSql(const string& _templateSql)
+{
+    m_templateSql = _templateSql;
+    m_templateSqlHasBeenSet = true;
+}
+
+bool Rule::TemplateSqlHasBeenSet() const
+{
+    return m_templateSqlHasBeenSet;
+}
+
+uint64_t Rule::GetSubQualityDim() const
+{
+    return m_subQualityDim;
+}
+
+void Rule::SetSubQualityDim(const uint64_t& _subQualityDim)
+{
+    m_subQualityDim = _subQualityDim;
+    m_subQualityDimHasBeenSet = true;
+}
+
+bool Rule::SubQualityDimHasBeenSet() const
+{
+    return m_subQualityDimHasBeenSet;
+}
+
+uint64_t Rule::GetTargetObjectType() const
+{
+    return m_targetObjectType;
+}
+
+void Rule::SetTargetObjectType(const uint64_t& _targetObjectType)
+{
+    m_targetObjectType = _targetObjectType;
+    m_targetObjectTypeHasBeenSet = true;
+}
+
+bool Rule::TargetObjectTypeHasBeenSet() const
+{
+    return m_targetObjectTypeHasBeenSet;
+}
+
+uint64_t Rule::GetTargetObjectDataType() const
+{
+    return m_targetObjectDataType;
+}
+
+void Rule::SetTargetObjectDataType(const uint64_t& _targetObjectDataType)
+{
+    m_targetObjectDataType = _targetObjectDataType;
+    m_targetObjectDataTypeHasBeenSet = true;
+}
+
+bool Rule::TargetObjectDataTypeHasBeenSet() const
+{
+    return m_targetObjectDataTypeHasBeenSet;
+}
+
+string Rule::GetTargetObjectDataTypeName() const
+{
+    return m_targetObjectDataTypeName;
+}
+
+void Rule::SetTargetObjectDataTypeName(const string& _targetObjectDataTypeName)
+{
+    m_targetObjectDataTypeName = _targetObjectDataTypeName;
+    m_targetObjectDataTypeNameHasBeenSet = true;
+}
+
+bool Rule::TargetObjectDataTypeNameHasBeenSet() const
+{
+    return m_targetObjectDataTypeNameHasBeenSet;
+}
+
+string Rule::GetTargetObjectValue() const
+{
+    return m_targetObjectValue;
+}
+
+void Rule::SetTargetObjectValue(const string& _targetObjectValue)
+{
+    m_targetObjectValue = _targetObjectValue;
+    m_targetObjectValueHasBeenSet = true;
+}
+
+bool Rule::TargetObjectValueHasBeenSet() const
+{
+    return m_targetObjectValueHasBeenSet;
 }
 
