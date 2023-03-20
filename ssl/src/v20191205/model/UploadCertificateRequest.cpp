@@ -28,7 +28,8 @@ UploadCertificateRequest::UploadCertificateRequest() :
     m_certificateTypeHasBeenSet(false),
     m_aliasHasBeenSet(false),
     m_projectIdHasBeenSet(false),
-    m_certificateUseHasBeenSet(false)
+    m_certificateUseHasBeenSet(false),
+    m_repeatableHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string UploadCertificateRequest::ToJsonString() const
         string key = "CertificateUse";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_certificateUse.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_repeatableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Repeatable";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_repeatable, allocator);
     }
 
 
@@ -189,6 +198,22 @@ void UploadCertificateRequest::SetCertificateUse(const string& _certificateUse)
 bool UploadCertificateRequest::CertificateUseHasBeenSet() const
 {
     return m_certificateUseHasBeenSet;
+}
+
+bool UploadCertificateRequest::GetRepeatable() const
+{
+    return m_repeatable;
+}
+
+void UploadCertificateRequest::SetRepeatable(const bool& _repeatable)
+{
+    m_repeatable = _repeatable;
+    m_repeatableHasBeenSet = true;
+}
+
+bool UploadCertificateRequest::RepeatableHasBeenSet() const
+{
+    return m_repeatableHasBeenSet;
 }
 
 

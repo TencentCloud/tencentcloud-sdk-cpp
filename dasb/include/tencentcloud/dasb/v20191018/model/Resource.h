@@ -550,6 +550,28 @@ namespace TencentCloud
                      */
                     bool PackageNodeHasBeenSet() const;
 
+                    /**
+                     * 获取日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogDeliveryArgs 日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogDeliveryArgs() const;
+
+                    /**
+                     * 设置日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogDeliveryArgs 日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogDeliveryArgs(const std::string& _logDeliveryArgs);
+
+                    /**
+                     * 判断参数 LogDeliveryArgs 是否已赋值
+                     * @return LogDeliveryArgs 是否已赋值
+                     */
+                    bool LogDeliveryArgsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -719,6 +741,13 @@ namespace TencentCloud
                      */
                     uint64_t m_packageNode;
                     bool m_packageNodeHasBeenSet;
+
+                    /**
+                     * 日志投递规格信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logDeliveryArgs;
+                    bool m_logDeliveryArgsHasBeenSet;
 
                 };
             }

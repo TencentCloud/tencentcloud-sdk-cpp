@@ -27,7 +27,8 @@ OverrideTranscodeParameter::OverrideTranscodeParameter() :
     m_videoTemplateHasBeenSet(false),
     m_audioTemplateHasBeenSet(false),
     m_tEHDConfigHasBeenSet(false),
-    m_subtitleTemplateHasBeenSet(false)
+    m_subtitleTemplateHasBeenSet(false),
+    m_addonAudioStreamHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,26 @@ CoreInternalOutcome OverrideTranscodeParameter::Deserialize(const rapidjson::Val
         m_subtitleTemplateHasBeenSet = true;
     }
 
+    if (value.HasMember("AddonAudioStream") && !value["AddonAudioStream"].IsNull())
+    {
+        if (!value["AddonAudioStream"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `OverrideTranscodeParameter.AddonAudioStream` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AddonAudioStream"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MediaInputInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_addonAudioStream.push_back(item);
+        }
+        m_addonAudioStreamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -199,6 +220,21 @@ void OverrideTranscodeParameter::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_subtitleTemplate.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_addonAudioStreamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AddonAudioStream";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_addonAudioStream.begin(); itr != m_addonAudioStream.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -314,5 +350,21 @@ void OverrideTranscodeParameter::SetSubtitleTemplate(const SubtitleTemplate& _su
 bool OverrideTranscodeParameter::SubtitleTemplateHasBeenSet() const
 {
     return m_subtitleTemplateHasBeenSet;
+}
+
+vector<MediaInputInfo> OverrideTranscodeParameter::GetAddonAudioStream() const
+{
+    return m_addonAudioStream;
+}
+
+void OverrideTranscodeParameter::SetAddonAudioStream(const vector<MediaInputInfo>& _addonAudioStream)
+{
+    m_addonAudioStream = _addonAudioStream;
+    m_addonAudioStreamHasBeenSet = true;
+}
+
+bool OverrideTranscodeParameter::AddonAudioStreamHasBeenSet() const
+{
+    return m_addonAudioStreamHasBeenSet;
 }
 

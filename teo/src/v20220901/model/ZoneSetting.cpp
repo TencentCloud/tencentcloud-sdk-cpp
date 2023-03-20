@@ -40,7 +40,8 @@ ZoneSetting::ZoneSetting() :
     m_ipv6HasBeenSet(false),
     m_httpsHasBeenSet(false),
     m_clientIpCountryHasBeenSet(false),
-    m_grpcHasBeenSet(false)
+    m_grpcHasBeenSet(false),
+    m_imageOptimizeHasBeenSet(false)
 {
 }
 
@@ -375,6 +376,23 @@ CoreInternalOutcome ZoneSetting::Deserialize(const rapidjson::Value &value)
         m_grpcHasBeenSet = true;
     }
 
+    if (value.HasMember("ImageOptimize") && !value["ImageOptimize"].IsNull())
+    {
+        if (!value["ImageOptimize"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ZoneSetting.ImageOptimize` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_imageOptimize.Deserialize(value["ImageOptimize"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_imageOptimizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -558,6 +576,15 @@ void ZoneSetting::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_grpc.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_imageOptimizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ImageOptimize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_imageOptimize.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -881,5 +908,21 @@ void ZoneSetting::SetGrpc(const Grpc& _grpc)
 bool ZoneSetting::GrpcHasBeenSet() const
 {
     return m_grpcHasBeenSet;
+}
+
+ImageOptimize ZoneSetting::GetImageOptimize() const
+{
+    return m_imageOptimize;
+}
+
+void ZoneSetting::SetImageOptimize(const ImageOptimize& _imageOptimize)
+{
+    m_imageOptimize = _imageOptimize;
+    m_imageOptimizeHasBeenSet = true;
+}
+
+bool ZoneSetting::ImageOptimizeHasBeenSet() const
+{
+    return m_imageOptimizeHasBeenSet;
 }
 

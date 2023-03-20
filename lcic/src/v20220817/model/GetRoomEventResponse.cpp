@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h>
+#include <tencentcloud/lcic/v20220817/model/GetRoomEventResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ssl::V20191205::Model;
+using namespace TencentCloud::Lcic::V20220817::Model;
 using namespace std;
 
-UploadCertificateResponse::UploadCertificateResponse() :
-    m_certificateIdHasBeenSet(false),
-    m_repeatCertIdHasBeenSet(false)
+GetRoomEventResponse::GetRoomEventResponse() :
+    m_totalHasBeenSet(false),
+    m_eventsHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome UploadCertificateResponse::Deserialize(const string &payload)
+CoreInternalOutcome GetRoomEventResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +63,67 @@ CoreInternalOutcome UploadCertificateResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("CertificateId") && !rsp["CertificateId"].IsNull())
+    if (rsp.HasMember("Total") && !rsp["Total"].IsNull())
     {
-        if (!rsp["CertificateId"].IsString())
+        if (!rsp["Total"].IsUint64())
         {
-            return CoreInternalOutcome(Core::Error("response `CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `Total` IsUint64=false incorrectly").SetRequestId(requestId));
         }
-        m_certificateId = string(rsp["CertificateId"].GetString());
-        m_certificateIdHasBeenSet = true;
+        m_total = rsp["Total"].GetUint64();
+        m_totalHasBeenSet = true;
     }
 
-    if (rsp.HasMember("RepeatCertId") && !rsp["RepeatCertId"].IsNull())
+    if (rsp.HasMember("Events") && !rsp["Events"].IsNull())
     {
-        if (!rsp["RepeatCertId"].IsString())
+        if (!rsp["Events"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Events` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Events"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `RepeatCertId` IsString=false incorrectly").SetRequestId(requestId));
+            EventInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_events.push_back(item);
         }
-        m_repeatCertId = string(rsp["RepeatCertId"].GetString());
-        m_repeatCertIdHasBeenSet = true;
+        m_eventsHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string UploadCertificateResponse::ToJsonString() const
+string GetRoomEventResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_certificateIdHasBeenSet)
+    if (m_totalHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertificateId";
+        string key = "Total";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_total, allocator);
     }
 
-    if (m_repeatCertIdHasBeenSet)
+    if (m_eventsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RepeatCertId";
+        string key = "Events";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_repeatCertId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_events.begin(); itr != m_events.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +138,24 @@ string UploadCertificateResponse::ToJsonString() const
 }
 
 
-string UploadCertificateResponse::GetCertificateId() const
+uint64_t GetRoomEventResponse::GetTotal() const
 {
-    return m_certificateId;
+    return m_total;
 }
 
-bool UploadCertificateResponse::CertificateIdHasBeenSet() const
+bool GetRoomEventResponse::TotalHasBeenSet() const
 {
-    return m_certificateIdHasBeenSet;
+    return m_totalHasBeenSet;
 }
 
-string UploadCertificateResponse::GetRepeatCertId() const
+vector<EventInfo> GetRoomEventResponse::GetEvents() const
 {
-    return m_repeatCertId;
+    return m_events;
 }
 
-bool UploadCertificateResponse::RepeatCertIdHasBeenSet() const
+bool GetRoomEventResponse::EventsHasBeenSet() const
 {
-    return m_repeatCertIdHasBeenSet;
+    return m_eventsHasBeenSet;
 }
 
 

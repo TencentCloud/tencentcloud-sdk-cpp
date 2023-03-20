@@ -27,7 +27,8 @@ DescribeVirusMonitorSettingResponse::DescribeVirusMonitorSettingResponse() :
     m_enableScanHasBeenSet(false),
     m_scanPathAllHasBeenSet(false),
     m_scanPathTypeHasBeenSet(false),
-    m_scanPathHasBeenSet(false)
+    m_scanPathHasBeenSet(false),
+    m_scanPathModeHasBeenSet(false)
 {
 }
 
@@ -108,6 +109,16 @@ CoreInternalOutcome DescribeVirusMonitorSettingResponse::Deserialize(const strin
         m_scanPathHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScanPathMode") && !rsp["ScanPathMode"].IsNull())
+    {
+        if (!rsp["ScanPathMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanPathMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanPathMode = string(rsp["ScanPathMode"].GetString());
+        m_scanPathModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -153,6 +164,14 @@ string DescribeVirusMonitorSettingResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scanPathModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanPathMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanPathMode.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -205,6 +224,16 @@ vector<string> DescribeVirusMonitorSettingResponse::GetScanPath() const
 bool DescribeVirusMonitorSettingResponse::ScanPathHasBeenSet() const
 {
     return m_scanPathHasBeenSet;
+}
+
+string DescribeVirusMonitorSettingResponse::GetScanPathMode() const
+{
+    return m_scanPathMode;
+}
+
+bool DescribeVirusMonitorSettingResponse::ScanPathModeHasBeenSet() const
+{
+    return m_scanPathModeHasBeenSet;
 }
 
 

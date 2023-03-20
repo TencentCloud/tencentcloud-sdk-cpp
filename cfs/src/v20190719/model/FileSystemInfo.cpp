@@ -40,7 +40,9 @@ FileSystemInfo::FileSystemInfo() :
     m_appIdHasBeenSet(false),
     m_bandwidthLimitHasBeenSet(false),
     m_capacityHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tieringStateHasBeenSet(false),
+    m_tieringDetailHasBeenSet(false)
 {
 }
 
@@ -266,6 +268,33 @@ CoreInternalOutcome FileSystemInfo::Deserialize(const rapidjson::Value &value)
         m_tagsHasBeenSet = true;
     }
 
+    if (value.HasMember("TieringState") && !value["TieringState"].IsNull())
+    {
+        if (!value["TieringState"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSystemInfo.TieringState` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_tieringState = string(value["TieringState"].GetString());
+        m_tieringStateHasBeenSet = true;
+    }
+
+    if (value.HasMember("TieringDetail") && !value["TieringDetail"].IsNull())
+    {
+        if (!value["TieringDetail"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileSystemInfo.TieringDetail` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_tieringDetail.Deserialize(value["TieringDetail"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_tieringDetailHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -439,6 +468,23 @@ void FileSystemInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_tieringStateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TieringState";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_tieringState.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_tieringDetailHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TieringDetail";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_tieringDetail.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -762,5 +808,37 @@ void FileSystemInfo::SetTags(const vector<TagInfo>& _tags)
 bool FileSystemInfo::TagsHasBeenSet() const
 {
     return m_tagsHasBeenSet;
+}
+
+string FileSystemInfo::GetTieringState() const
+{
+    return m_tieringState;
+}
+
+void FileSystemInfo::SetTieringState(const string& _tieringState)
+{
+    m_tieringState = _tieringState;
+    m_tieringStateHasBeenSet = true;
+}
+
+bool FileSystemInfo::TieringStateHasBeenSet() const
+{
+    return m_tieringStateHasBeenSet;
+}
+
+TieringDetailInfo FileSystemInfo::GetTieringDetail() const
+{
+    return m_tieringDetail;
+}
+
+void FileSystemInfo::SetTieringDetail(const TieringDetailInfo& _tieringDetail)
+{
+    m_tieringDetail = _tieringDetail;
+    m_tieringDetailHasBeenSet = true;
+}
+
+bool FileSystemInfo::TieringDetailHasBeenSet() const
+{
+    return m_tieringDetailHasBeenSet;
 }
 

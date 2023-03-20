@@ -97,6 +97,26 @@ namespace TencentCloud
                      */
                     bool ScanPathHasBeenSet() const;
 
+                    /**
+                     * 获取扫描路径模式：
+SCAN_PATH_ALL：全部路径
+SCAN_PATH_DEFAULT：默认路径
+SCAN_PATH_USER_DEFINE：用户自定义路径
+
+                     * @return ScanPathMode 扫描路径模式：
+SCAN_PATH_ALL：全部路径
+SCAN_PATH_DEFAULT：默认路径
+SCAN_PATH_USER_DEFINE：用户自定义路径
+
+                     */
+                    std::string GetScanPathMode() const;
+
+                    /**
+                     * 判断参数 ScanPathMode 是否已赋值
+                     * @return ScanPathMode 是否已赋值
+                     */
+                    bool ScanPathModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -125,6 +145,16 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_scanPath;
                     bool m_scanPathHasBeenSet;
+
+                    /**
+                     * 扫描路径模式：
+SCAN_PATH_ALL：全部路径
+SCAN_PATH_DEFAULT：默认路径
+SCAN_PATH_USER_DEFINE：用户自定义路径
+
+                     */
+                    std::string m_scanPathMode;
+                    bool m_scanPathModeHasBeenSet;
 
                 };
             }

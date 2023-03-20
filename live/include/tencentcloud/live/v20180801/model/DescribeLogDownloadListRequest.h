@@ -45,16 +45,20 @@ namespace TencentCloud
                     /**
                      * 获取开始时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
+注：此字段为北京时间（UTC+8时区）。
                      * @return StartTime 开始时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetStartTime() const;
 
                     /**
                      * 设置开始时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
+注：此字段为北京时间（UTC+8时区）。
                      * @param StartTime 开始时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -68,9 +72,11 @@ namespace TencentCloud
                      * 获取结束时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
 注意：结束时间 - 开始时间 <=7天。
+注：此字段为北京时间（UTC+8时区）。
                      * @return EndTime 结束时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
 注意：结束时间 - 开始时间 <=7天。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string GetEndTime() const;
 
@@ -78,9 +84,11 @@ namespace TencentCloud
                      * 设置结束时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
 注意：结束时间 - 开始时间 <=7天。
+注：此字段为北京时间（UTC+8时区）。
                      * @param EndTime 结束时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
 注意：结束时间 - 开始时间 <=7天。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -108,11 +116,30 @@ namespace TencentCloud
                      */
                     bool PlayDomainsHasBeenSet() const;
 
+                    /**
+                     * 获取快直播还是标准直播，0：标准直播，1：快直播。默认为0。
+                     * @return IsFastLive 快直播还是标准直播，0：标准直播，1：快直播。默认为0。
+                     */
+                    int64_t GetIsFastLive() const;
+
+                    /**
+                     * 设置快直播还是标准直播，0：标准直播，1：快直播。默认为0。
+                     * @param IsFastLive 快直播还是标准直播，0：标准直播，1：快直播。默认为0。
+                     */
+                    void SetIsFastLive(const int64_t& _isFastLive);
+
+                    /**
+                     * 判断参数 IsFastLive 是否已赋值
+                     * @return IsFastLive 是否已赋值
+                     */
+                    bool IsFastLiveHasBeenSet() const;
+
                 private:
 
                     /**
                      * 开始时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
@@ -121,6 +148,7 @@ namespace TencentCloud
                      * 结束时间，北京时间。
 格式：yyyy-mm-dd HH:MM:SS。
 注意：结束时间 - 开始时间 <=7天。
+注：此字段为北京时间（UTC+8时区）。
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
@@ -130,6 +158,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_playDomains;
                     bool m_playDomainsHasBeenSet;
+
+                    /**
+                     * 快直播还是标准直播，0：标准直播，1：快直播。默认为0。
+                     */
+                    int64_t m_isFastLive;
+                    bool m_isFastLiveHasBeenSet;
 
                 };
             }

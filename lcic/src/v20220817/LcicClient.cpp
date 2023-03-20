@@ -1330,6 +1330,49 @@ LcicClient::DescribeUserOutcomeCallable LcicClient::DescribeUserCallable(const D
     return task->get_future();
 }
 
+LcicClient::GetRoomEventOutcome LcicClient::GetRoomEvent(const GetRoomEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRoomEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRoomEventResponse rsp = GetRoomEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRoomEventOutcome(rsp);
+        else
+            return GetRoomEventOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRoomEventOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::GetRoomEventAsync(const GetRoomEventRequest& request, const GetRoomEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRoomEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::GetRoomEventOutcomeCallable LcicClient::GetRoomEventCallable(const GetRoomEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRoomEventOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRoomEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::GetRoomMessageOutcome LcicClient::GetRoomMessage(const GetRoomMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "GetRoomMessage");

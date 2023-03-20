@@ -34,7 +34,8 @@ DescribeVirusScanSettingResponse::DescribeVirusScanSettingResponse() :
     m_scanRangeAllHasBeenSet(false),
     m_scanIdsHasBeenSet(false),
     m_scanPathHasBeenSet(false),
-    m_clickTimeoutHasBeenSet(false)
+    m_clickTimeoutHasBeenSet(false),
+    m_scanPathModeHasBeenSet(false)
 {
 }
 
@@ -188,6 +189,16 @@ CoreInternalOutcome DescribeVirusScanSettingResponse::Deserialize(const string &
         m_clickTimeoutHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ScanPathMode") && !rsp["ScanPathMode"].IsNull())
+    {
+        if (!rsp["ScanPathMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanPathMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scanPathMode = string(rsp["ScanPathMode"].GetString());
+        m_scanPathModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -294,6 +305,14 @@ string DescribeVirusScanSettingResponse::ToJsonString() const
         string key = "ClickTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_clickTimeout, allocator);
+    }
+
+    if (m_scanPathModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanPathMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scanPathMode.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -416,6 +435,16 @@ uint64_t DescribeVirusScanSettingResponse::GetClickTimeout() const
 bool DescribeVirusScanSettingResponse::ClickTimeoutHasBeenSet() const
 {
     return m_clickTimeoutHasBeenSet;
+}
+
+string DescribeVirusScanSettingResponse::GetScanPathMode() const
+{
+    return m_scanPathMode;
+}
+
+bool DescribeVirusScanSettingResponse::ScanPathModeHasBeenSet() const
+{
+    return m_scanPathModeHasBeenSet;
 }
 
 

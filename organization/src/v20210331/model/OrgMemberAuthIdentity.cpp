@@ -26,7 +26,8 @@ OrgMemberAuthIdentity::OrgMemberAuthIdentity() :
     m_identityRoleAliasNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_identityTypeHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome OrgMemberAuthIdentity::Deserialize(const rapidjson::Value &v
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("IdentityType") && !value["IdentityType"].IsNull())
+    {
+        if (!value["IdentityType"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `OrgMemberAuthIdentity.IdentityType` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_identityType = value["IdentityType"].GetUint64();
+        m_identityTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void OrgMemberAuthIdentity::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_identityTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdentityType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_identityType, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void OrgMemberAuthIdentity::SetUpdateTime(const string& _updateTime)
 bool OrgMemberAuthIdentity::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+uint64_t OrgMemberAuthIdentity::GetIdentityType() const
+{
+    return m_identityType;
+}
+
+void OrgMemberAuthIdentity::SetIdentityType(const uint64_t& _identityType)
+{
+    m_identityType = _identityType;
+    m_identityTypeHasBeenSet = true;
+}
+
+bool OrgMemberAuthIdentity::IdentityTypeHasBeenSet() const
+{
+    return m_identityTypeHasBeenSet;
 }
 

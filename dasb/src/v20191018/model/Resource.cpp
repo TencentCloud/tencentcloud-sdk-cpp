@@ -48,7 +48,8 @@ Resource::Resource() :
     m_usedNodesHasBeenSet(false),
     m_extendPointsHasBeenSet(false),
     m_packageBandwidthHasBeenSet(false),
-    m_packageNodeHasBeenSet(false)
+    m_packageNodeHasBeenSet(false),
+    m_logDeliveryArgsHasBeenSet(false)
 {
 }
 
@@ -346,6 +347,16 @@ CoreInternalOutcome Resource::Deserialize(const rapidjson::Value &value)
         m_packageNodeHasBeenSet = true;
     }
 
+    if (value.HasMember("LogDeliveryArgs") && !value["LogDeliveryArgs"].IsNull())
+    {
+        if (!value["LogDeliveryArgs"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Resource.LogDeliveryArgs` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logDeliveryArgs = string(value["LogDeliveryArgs"].GetString());
+        m_logDeliveryArgsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -590,6 +601,14 @@ void Resource::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "PackageNode";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_packageNode, allocator);
+    }
+
+    if (m_logDeliveryArgsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogDeliveryArgs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logDeliveryArgs.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1041,5 +1060,21 @@ void Resource::SetPackageNode(const uint64_t& _packageNode)
 bool Resource::PackageNodeHasBeenSet() const
 {
     return m_packageNodeHasBeenSet;
+}
+
+string Resource::GetLogDeliveryArgs() const
+{
+    return m_logDeliveryArgs;
+}
+
+void Resource::SetLogDeliveryArgs(const string& _logDeliveryArgs)
+{
+    m_logDeliveryArgs = _logDeliveryArgs;
+    m_logDeliveryArgsHasBeenSet = true;
+}
+
+bool Resource::LogDeliveryArgsHasBeenSet() const
+{
+    return m_logDeliveryArgsHasBeenSet;
 }
 

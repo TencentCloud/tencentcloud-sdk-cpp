@@ -28,6 +28,7 @@
 #include <tencentcloud/mps/v20190612/model/AudioTemplateInfoForUpdate.h>
 #include <tencentcloud/mps/v20190612/model/TEHDConfigForUpdate.h>
 #include <tencentcloud/mps/v20190612/model/SubtitleTemplate.h>
+#include <tencentcloud/mps/v20190612/model/MediaInputInfo.h>
 
 
 namespace TencentCloud
@@ -192,6 +193,28 @@ namespace TencentCloud
                      */
                     bool SubtitleTemplateHasBeenSet() const;
 
+                    /**
+                     * 获取外挂音轨参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AddonAudioStream 外挂音轨参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MediaInputInfo> GetAddonAudioStream() const;
+
+                    /**
+                     * 设置外挂音轨参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AddonAudioStream 外挂音轨参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAddonAudioStream(const std::vector<MediaInputInfo>& _addonAudioStream);
+
+                    /**
+                     * 判断参数 AddonAudioStream 是否已赋值
+                     * @return AddonAudioStream 是否已赋值
+                     */
+                    bool AddonAudioStreamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -239,6 +262,13 @@ namespace TencentCloud
                      */
                     SubtitleTemplate m_subtitleTemplate;
                     bool m_subtitleTemplateHasBeenSet;
+
+                    /**
+                     * 外挂音轨参数。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MediaInputInfo> m_addonAudioStream;
+                    bool m_addonAudioStreamHasBeenSet;
 
                 };
             }

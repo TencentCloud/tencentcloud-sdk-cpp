@@ -29,7 +29,8 @@ CreateVirusScanTaskRequest::CreateVirusScanTaskRequest() :
     m_timeoutHasBeenSet(false),
     m_scanPathTypeHasBeenSet(false),
     m_scanIdsHasBeenSet(false),
-    m_scanPathHasBeenSet(false)
+    m_scanPathHasBeenSet(false),
+    m_scanPathModeHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,14 @@ string CreateVirusScanTaskRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_scanPathModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScanPathMode";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_scanPathMode.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -224,6 +233,22 @@ void CreateVirusScanTaskRequest::SetScanPath(const vector<string>& _scanPath)
 bool CreateVirusScanTaskRequest::ScanPathHasBeenSet() const
 {
     return m_scanPathHasBeenSet;
+}
+
+string CreateVirusScanTaskRequest::GetScanPathMode() const
+{
+    return m_scanPathMode;
+}
+
+void CreateVirusScanTaskRequest::SetScanPathMode(const string& _scanPathMode)
+{
+    m_scanPathMode = _scanPathMode;
+    m_scanPathModeHasBeenSet = true;
+}
+
+bool CreateVirusScanTaskRequest::ScanPathModeHasBeenSet() const
+{
+    return m_scanPathModeHasBeenSet;
 }
 
 

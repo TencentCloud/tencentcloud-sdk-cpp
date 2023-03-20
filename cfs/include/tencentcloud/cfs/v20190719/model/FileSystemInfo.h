@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/cfs/v20190719/model/PGroup.h>
 #include <tencentcloud/cfs/v20190719/model/TagInfo.h>
+#include <tencentcloud/cfs/v20190719/model/TieringDetailInfo.h>
 
 
 namespace TencentCloud
@@ -408,6 +409,46 @@ namespace TencentCloud
                      */
                     bool TagsHasBeenSet() const;
 
+                    /**
+                     * 获取文件系统声明周期管理状态
+                     * @return TieringState 文件系统声明周期管理状态
+                     */
+                    std::string GetTieringState() const;
+
+                    /**
+                     * 设置文件系统声明周期管理状态
+                     * @param TieringState 文件系统声明周期管理状态
+                     */
+                    void SetTieringState(const std::string& _tieringState);
+
+                    /**
+                     * 判断参数 TieringState 是否已赋值
+                     * @return TieringState 是否已赋值
+                     */
+                    bool TieringStateHasBeenSet() const;
+
+                    /**
+                     * 获取分层存储详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TieringDetail 分层存储详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TieringDetailInfo GetTieringDetail() const;
+
+                    /**
+                     * 设置分层存储详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TieringDetail 分层存储详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTieringDetail(const TieringDetailInfo& _tieringDetail);
+
+                    /**
+                     * 判断参数 TieringDetail 是否已赋值
+                     * @return TieringDetail 是否已赋值
+                     */
+                    bool TieringDetailHasBeenSet() const;
+
                 private:
 
                     /**
@@ -529,6 +570,19 @@ namespace TencentCloud
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
+
+                    /**
+                     * 文件系统声明周期管理状态
+                     */
+                    std::string m_tieringState;
+                    bool m_tieringStateHasBeenSet;
+
+                    /**
+                     * 分层存储详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    TieringDetailInfo m_tieringDetail;
+                    bool m_tieringDetailHasBeenSet;
 
                 };
             }

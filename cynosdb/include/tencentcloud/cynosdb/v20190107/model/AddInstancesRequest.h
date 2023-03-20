@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool ReadOnlyCountHasBeenSet() const;
 
                     /**
-                     * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
-                     * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * 获取实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
+                     * @return InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
                      */
                     std::string GetInstanceGrpId() const;
 
                     /**
-                     * 设置实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
-                     * @param InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * 设置实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
+                     * @param InstanceGrpId 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
                      */
                     void SetInstanceGrpId(const std::string& _instanceGrpId);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool InstanceGrpIdHasBeenSet() const;
 
                     /**
-                     * 获取所属VPC网络ID，该参数已废弃
-                     * @return VpcId 所属VPC网络ID，该参数已废弃
+                     * 获取所属VPC网络ID。
+                     * @return VpcId 所属VPC网络ID。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置所属VPC网络ID，该参数已废弃
-                     * @param VpcId 所属VPC网络ID，该参数已废弃
+                     * 设置所属VPC网络ID。
+                     * @param VpcId 所属VPC网络ID。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
-                     * @return SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
+                     * 获取所属子网ID，如果设置了VpcId，则SubnetId必填。
+                     * @return SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
-                     * @param SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
+                     * 设置所属子网ID，如果设置了VpcId，则SubnetId必填。
+                     * @param SubnetId 所属子网ID，如果设置了VpcId，则SubnetId必填。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -317,6 +317,24 @@ namespace TencentCloud
                      */
                     bool InstanceParamsHasBeenSet() const;
 
+                    /**
+                     * 获取安全组ID，新建只读实例时可以指定安全组。
+                     * @return SecurityGroupIds 安全组ID，新建只读实例时可以指定安全组。
+                     */
+                    std::vector<std::string> GetSecurityGroupIds() const;
+
+                    /**
+                     * 设置安全组ID，新建只读实例时可以指定安全组。
+                     * @param SecurityGroupIds 安全组ID，新建只读实例时可以指定安全组。
+                     */
+                    void SetSecurityGroupIds(const std::vector<std::string>& _securityGroupIds);
+
+                    /**
+                     * 判断参数 SecurityGroupIds 是否已赋值
+                     * @return SecurityGroupIds 是否已赋值
+                     */
+                    bool SecurityGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -344,19 +362,19 @@ namespace TencentCloud
                     bool m_readOnlyCountHasBeenSet;
 
                     /**
-                     * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。
+                     * 实例组ID，在已有RO组中新增实例时使用，不传则新增RO组。当前版本不建议传输该值。当前版本已废弃。
                      */
                     std::string m_instanceGrpId;
                     bool m_instanceGrpIdHasBeenSet;
 
                     /**
-                     * 所属VPC网络ID，该参数已废弃
+                     * 所属VPC网络ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 所属子网ID，如果设置了VpcId，则SubnetId必填。该参数已废弃。
+                     * 所属子网ID，如果设置了VpcId，则SubnetId必填。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -409,6 +427,12 @@ namespace TencentCloud
                      */
                     std::vector<ModifyParamItem> m_instanceParams;
                     bool m_instanceParamsHasBeenSet;
+
+                    /**
+                     * 安全组ID，新建只读实例时可以指定安全组。
+                     */
+                    std::vector<std::string> m_securityGroupIds;
+                    bool m_securityGroupIdsHasBeenSet;
 
                 };
             }

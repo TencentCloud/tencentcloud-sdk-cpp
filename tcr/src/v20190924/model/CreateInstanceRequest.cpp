@@ -28,7 +28,8 @@ CreateInstanceRequest::CreateInstanceRequest() :
     m_tagSpecificationHasBeenSet(false),
     m_registryChargeTypeHasBeenSet(false),
     m_registryChargePrepaidHasBeenSet(false),
-    m_syncTagHasBeenSet(false)
+    m_syncTagHasBeenSet(false),
+    m_enableCosMAZHasBeenSet(false)
 {
 }
 
@@ -87,6 +88,14 @@ string CreateInstanceRequest::ToJsonString() const
         string key = "SyncTag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_syncTag, allocator);
+    }
+
+    if (m_enableCosMAZHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnableCosMAZ";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_enableCosMAZ, allocator);
     }
 
 
@@ -191,6 +200,22 @@ void CreateInstanceRequest::SetSyncTag(const bool& _syncTag)
 bool CreateInstanceRequest::SyncTagHasBeenSet() const
 {
     return m_syncTagHasBeenSet;
+}
+
+bool CreateInstanceRequest::GetEnableCosMAZ() const
+{
+    return m_enableCosMAZ;
+}
+
+void CreateInstanceRequest::SetEnableCosMAZ(const bool& _enableCosMAZ)
+{
+    m_enableCosMAZ = _enableCosMAZ;
+    m_enableCosMAZHasBeenSet = true;
+}
+
+bool CreateInstanceRequest::EnableCosMAZHasBeenSet() const
+{
+    return m_enableCosMAZHasBeenSet;
 }
 
 

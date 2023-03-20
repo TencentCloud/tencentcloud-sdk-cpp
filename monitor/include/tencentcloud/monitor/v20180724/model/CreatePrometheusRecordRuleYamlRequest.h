@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool ContentHasBeenSet() const;
 
+                    /**
+                     * 获取规则名称
+                     * @return Name 规则名称
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置规则名称
+                     * @param Name 规则名称
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
+
+                    /**
+                     * 规则名称
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

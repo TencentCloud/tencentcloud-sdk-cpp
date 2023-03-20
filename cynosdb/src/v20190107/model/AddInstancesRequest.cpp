@@ -37,7 +37,8 @@ AddInstancesRequest::AddInstancesRequest() :
     m_orderSourceHasBeenSet(false),
     m_dealModeHasBeenSet(false),
     m_paramTemplateIdHasBeenSet(false),
-    m_instanceParamsHasBeenSet(false)
+    m_instanceParamsHasBeenSet(false),
+    m_securityGroupIdsHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,19 @@ string AddInstancesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_securityGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SecurityGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_securityGroupIds.begin(); itr != m_securityGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -421,6 +435,22 @@ void AddInstancesRequest::SetInstanceParams(const vector<ModifyParamItem>& _inst
 bool AddInstancesRequest::InstanceParamsHasBeenSet() const
 {
     return m_instanceParamsHasBeenSet;
+}
+
+vector<string> AddInstancesRequest::GetSecurityGroupIds() const
+{
+    return m_securityGroupIds;
+}
+
+void AddInstancesRequest::SetSecurityGroupIds(const vector<string>& _securityGroupIds)
+{
+    m_securityGroupIds = _securityGroupIds;
+    m_securityGroupIdsHasBeenSet = true;
+}
+
+bool AddInstancesRequest::SecurityGroupIdsHasBeenSet() const
+{
+    return m_securityGroupIdsHasBeenSet;
 }
 
 

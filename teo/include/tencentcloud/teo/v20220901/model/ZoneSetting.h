@@ -42,6 +42,7 @@
 #include <tencentcloud/teo/v20220901/model/Https.h>
 #include <tencentcloud/teo/v20220901/model/ClientIpCountry.h>
 #include <tencentcloud/teo/v20220901/model/Grpc.h>
+#include <tencentcloud/teo/v20220901/model/ImageOptimize.h>
 
 
 namespace TencentCloud
@@ -504,6 +505,28 @@ namespace TencentCloud
                      */
                     bool GrpcHasBeenSet() const;
 
+                    /**
+                     * 获取图片优化相关配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImageOptimize 图片优化相关配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageOptimize GetImageOptimize() const;
+
+                    /**
+                     * 设置图片优化相关配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImageOptimize 图片优化相关配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImageOptimize(const ImageOptimize& _imageOptimize);
+
+                    /**
+                     * 判断参数 ImageOptimize 是否已赋值
+                     * @return ImageOptimize 是否已赋值
+                     */
+                    bool ImageOptimizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -645,6 +668,13 @@ namespace TencentCloud
                      */
                     Grpc m_grpc;
                     bool m_grpcHasBeenSet;
+
+                    /**
+                     * 图片优化相关配置。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ImageOptimize m_imageOptimize;
+                    bool m_imageOptimizeHasBeenSet;
 
                 };
             }

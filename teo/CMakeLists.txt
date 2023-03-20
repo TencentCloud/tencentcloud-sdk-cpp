@@ -193,7 +193,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/CachePrefresh.h
   include/tencentcloud/teo/v20220901/model/DescribeWebProtectionClientIpListResponse.h
   include/tencentcloud/teo/v20220901/model/DescribeTimingL7AnalysisDataResponse.h
-  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusRequest.h
+  include/tencentcloud/teo/v20220901/model/ImageOptimize.h
   include/tencentcloud/teo/v20220901/model/TopDetailData.h
   include/tencentcloud/teo/v20220901/model/DescribeApplicationProxiesRequest.h
   include/tencentcloud/teo/v20220901/model/DescribeContentQuotaRequest.h
@@ -215,6 +215,7 @@ set(teo_public_header_model
   include/tencentcloud/teo/v20220901/model/SubRule.h
   include/tencentcloud/teo/v20220901/model/DescribeLogSetsRequest.h
   include/tencentcloud/teo/v20220901/model/CreatePlanForZoneRequest.h
+  include/tencentcloud/teo/v20220901/model/ModifyAliasDomainStatusRequest.h
   include/tencentcloud/teo/v20220901/model/ClientRule.h
   include/tencentcloud/teo/v20220901/model/TimingDataItem.h
   include/tencentcloud/teo/v20220901/model/SpeedTestingConfig.h
@@ -850,7 +851,7 @@ set(teo_src
   src/v20220901/model/CachePrefresh.cpp
   src/v20220901/model/DescribeWebProtectionClientIpListResponse.cpp
   src/v20220901/model/DescribeTimingL7AnalysisDataResponse.cpp
-  src/v20220901/model/ModifyAliasDomainStatusRequest.cpp
+  src/v20220901/model/ImageOptimize.cpp
   src/v20220901/model/TopDetailData.cpp
   src/v20220901/model/DescribeApplicationProxiesRequest.cpp
   src/v20220901/model/DescribeContentQuotaRequest.cpp
@@ -872,6 +873,7 @@ set(teo_src
   src/v20220901/model/SubRule.cpp
   src/v20220901/model/DescribeLogSetsRequest.cpp
   src/v20220901/model/CreatePlanForZoneRequest.cpp
+  src/v20220901/model/ModifyAliasDomainStatusRequest.cpp
   src/v20220901/model/ClientRule.cpp
   src/v20220901/model/TimingDataItem.cpp
   src/v20220901/model/SpeedTestingConfig.cpp

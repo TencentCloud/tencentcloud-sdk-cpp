@@ -70,7 +70,9 @@ DescribeVirusDetailResponse::DescribeVirusDetailResponse() :
     m_containerNetStatusHasBeenSet(false),
     m_containerNetSubStatusHasBeenSet(false),
     m_containerIsolateOperationSrcHasBeenSet(false),
-    m_checkPlatformHasBeenSet(false)
+    m_checkPlatformHasBeenSet(false),
+    m_fileAccessTimeHasBeenSet(false),
+    m_fileModifyTimeHasBeenSet(false)
 {
 }
 
@@ -584,6 +586,26 @@ CoreInternalOutcome DescribeVirusDetailResponse::Deserialize(const string &paylo
         m_checkPlatformHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FileAccessTime") && !rsp["FileAccessTime"].IsNull())
+    {
+        if (!rsp["FileAccessTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileAccessTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileAccessTime = string(rsp["FileAccessTime"].GetString());
+        m_fileAccessTimeHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FileModifyTime") && !rsp["FileModifyTime"].IsNull())
+    {
+        if (!rsp["FileModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileModifyTime = string(rsp["FileModifyTime"].GetString());
+        m_fileModifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -978,6 +1000,22 @@ string DescribeVirusDetailResponse::ToJsonString() const
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_fileAccessTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileAccessTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileAccessTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileModifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileModifyTime.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1460,6 +1498,26 @@ vector<string> DescribeVirusDetailResponse::GetCheckPlatform() const
 bool DescribeVirusDetailResponse::CheckPlatformHasBeenSet() const
 {
     return m_checkPlatformHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetFileAccessTime() const
+{
+    return m_fileAccessTime;
+}
+
+bool DescribeVirusDetailResponse::FileAccessTimeHasBeenSet() const
+{
+    return m_fileAccessTimeHasBeenSet;
+}
+
+string DescribeVirusDetailResponse::GetFileModifyTime() const
+{
+    return m_fileModifyTime;
+}
+
+bool DescribeVirusDetailResponse::FileModifyTimeHasBeenSet() const
+{
+    return m_fileModifyTimeHasBeenSet;
 }
 
 

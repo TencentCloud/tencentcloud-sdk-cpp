@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool CertificateUseHasBeenSet() const;
 
+                    /**
+                     * 获取相同的证书是否允许重复上传
+                     * @return Repeatable 相同的证书是否允许重复上传
+                     */
+                    bool GetRepeatable() const;
+
+                    /**
+                     * 设置相同的证书是否允许重复上传
+                     * @param Repeatable 相同的证书是否允许重复上传
+                     */
+                    void SetRepeatable(const bool& _repeatable);
+
+                    /**
+                     * 判断参数 Repeatable 是否已赋值
+                     * @return Repeatable 是否已赋值
+                     */
+                    bool RepeatableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_certificateUse;
                     bool m_certificateUseHasBeenSet;
+
+                    /**
+                     * 相同的证书是否允许重复上传
+                     */
+                    bool m_repeatable;
+                    bool m_repeatableHasBeenSet;
 
                 };
             }

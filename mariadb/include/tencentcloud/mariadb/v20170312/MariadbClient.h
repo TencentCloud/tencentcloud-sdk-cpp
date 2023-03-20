@@ -51,6 +51,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeAccountPrivilegesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeAccountsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeAccountsResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeBackupFilesRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeBackupFilesResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupTimeRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupTimeResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesRequest.h>
@@ -215,6 +217,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupFilesResponse> DescribeBackupFilesOutcome;
+                typedef std::future<DescribeBackupFilesOutcome> DescribeBackupFilesOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeBackupFilesRequest&, DescribeBackupFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBackupTimeResponse> DescribeBackupTimeOutcome;
                 typedef std::future<DescribeBackupTimeOutcome> DescribeBackupTimeOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeBackupTimeRequest&, DescribeBackupTimeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupTimeAsyncHandler;
@@ -507,6 +512,15 @@ namespace TencentCloud
                 DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
                 void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
+
+                /**
+                 *本接口(DescribeBackupFiles)用于查看备份文件列表。
+                 * @param req DescribeBackupFilesRequest
+                 * @return DescribeBackupFilesOutcome
+                 */
+                DescribeBackupFilesOutcome DescribeBackupFiles(const Model::DescribeBackupFilesRequest &request);
+                void DescribeBackupFilesAsync(const Model::DescribeBackupFilesRequest& request, const DescribeBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupFilesOutcomeCallable DescribeBackupFilesCallable(const Model::DescribeBackupFilesRequest& request);
 
                 /**
                  *本接口（DescribeBackupTime）用于获取云数据库的备份时间。后台系统将根据此配置定期进行实例备份。

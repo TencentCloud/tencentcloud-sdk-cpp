@@ -98,24 +98,6 @@ namespace TencentCloud
                     bool SubnetIdsHasBeenSet() const;
 
                     /**
-                     * 获取Grafana 初始密码
-                     * @return GrafanaInitPassword Grafana 初始密码
-                     */
-                    std::string GetGrafanaInitPassword() const;
-
-                    /**
-                     * 设置Grafana 初始密码
-                     * @param GrafanaInitPassword Grafana 初始密码
-                     */
-                    void SetGrafanaInitPassword(const std::string& _grafanaInitPassword);
-
-                    /**
-                     * 判断参数 GrafanaInitPassword 是否已赋值
-                     * @return GrafanaInitPassword 是否已赋值
-                     */
-                    bool GrafanaInitPasswordHasBeenSet() const;
-
-                    /**
                      * 获取是否启用外网
                      * @return EnableInternet 是否启用外网
                      */
@@ -132,6 +114,24 @@ namespace TencentCloud
                      * @return EnableInternet 是否已赋值
                      */
                     bool EnableInternetHasBeenSet() const;
+
+                    /**
+                     * 获取Grafana 初始密码
+                     * @return GrafanaInitPassword Grafana 初始密码
+                     */
+                    std::string GetGrafanaInitPassword() const;
+
+                    /**
+                     * 设置Grafana 初始密码
+                     * @param GrafanaInitPassword Grafana 初始密码
+                     */
+                    void SetGrafanaInitPassword(const std::string& _grafanaInitPassword);
+
+                    /**
+                     * 判断参数 GrafanaInitPassword 是否已赋值
+                     * @return GrafanaInitPassword 是否已赋值
+                     */
+                    bool GrafanaInitPasswordHasBeenSet() const;
 
                     /**
                      * 获取标签
@@ -172,16 +172,16 @@ namespace TencentCloud
                     bool m_subnetIdsHasBeenSet;
 
                     /**
-                     * Grafana 初始密码
-                     */
-                    std::string m_grafanaInitPassword;
-                    bool m_grafanaInitPasswordHasBeenSet;
-
-                    /**
                      * 是否启用外网
                      */
                     bool m_enableInternet;
                     bool m_enableInternetHasBeenSet;
+
+                    /**
+                     * Grafana 初始密码
+                     */
+                    std::string m_grafanaInitPassword;
+                    bool m_grafanaInitPasswordHasBeenSet;
 
                     /**
                      * 标签

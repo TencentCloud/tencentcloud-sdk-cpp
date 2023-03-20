@@ -25,7 +25,8 @@ using namespace std;
 DescribeLogDownloadListRequest::DescribeLogDownloadListRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
-    m_playDomainsHasBeenSet(false)
+    m_playDomainsHasBeenSet(false),
+    m_isFastLiveHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string DescribeLogDownloadListRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_isFastLiveHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFastLive";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isFastLive, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void DescribeLogDownloadListRequest::SetPlayDomains(const vector<string>& _playD
 bool DescribeLogDownloadListRequest::PlayDomainsHasBeenSet() const
 {
     return m_playDomainsHasBeenSet;
+}
+
+int64_t DescribeLogDownloadListRequest::GetIsFastLive() const
+{
+    return m_isFastLive;
+}
+
+void DescribeLogDownloadListRequest::SetIsFastLive(const int64_t& _isFastLive)
+{
+    m_isFastLive = _isFastLive;
+    m_isFastLiveHasBeenSet = true;
+}
+
+bool DescribeLogDownloadListRequest::IsFastLiveHasBeenSet() const
+{
+    return m_isFastLiveHasBeenSet;
 }
 
 

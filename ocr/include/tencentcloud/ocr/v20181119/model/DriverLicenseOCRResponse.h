@@ -140,8 +140,10 @@ namespace TencentCloud
                     bool StartDateHasBeenSet() const;
 
                     /**
-                     * 获取有效期截止时间（YYYY-MM-DD）
-                     * @return EndDate 有效期截止时间（YYYY-MM-DD）
+                     * 获取有效期截止时间（新版驾驶证返回 YYYY-MM-DD，
+老版驾驶证返回有效期限 X年）
+                     * @return EndDate 有效期截止时间（新版驾驶证返回 YYYY-MM-DD，
+老版驾驶证返回有效期限 X年）
                      */
                     std::string GetEndDate() const;
 
@@ -314,7 +316,8 @@ WARN_DRIVER_LICENSE_PS_CARD ps告警
                     bool m_startDateHasBeenSet;
 
                     /**
-                     * 有效期截止时间（YYYY-MM-DD）
+                     * 有效期截止时间（新版驾驶证返回 YYYY-MM-DD，
+老版驾驶证返回有效期限 X年）
                      */
                     std::string m_endDate;
                     bool m_endDateHasBeenSet;

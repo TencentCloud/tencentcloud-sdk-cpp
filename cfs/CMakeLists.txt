@@ -60,7 +60,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/SetUserQuotaRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateAutoSnapshotPolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/AvailableType.h
-  include/tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeRequest.h
+  include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/UserQuota.h
   include/tencentcloud/cfs/v20190719/model/DeleteMountTargetRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsRuleRequest.h
@@ -91,7 +91,6 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/FileSystemByPolicy.h
   include/tencentcloud/cfs/v20190719/model/SnapshotInfo.h
   include/tencentcloud/cfs/v20190719/model/MountInfo.h
-  include/tencentcloud/cfs/v20190719/model/CreateCfsSnapshotResponse.h
   include/tencentcloud/cfs/v20190719/model/UpdateCfsFileSystemPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteAutoSnapshotPolicyResponse.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsRuleResponse.h
@@ -100,7 +99,9 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/TagInfo.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsRequest.h
   include/tencentcloud/cfs/v20190719/model/DeleteCfsPGroupResponse.h
+  include/tencentcloud/cfs/v20190719/model/UpdateCfsSnapshotAttributeRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeUserQuotaResponse.h
+  include/tencentcloud/cfs/v20190719/model/TieringDetailInfo.h
   include/tencentcloud/cfs/v20190719/model/PGroupInfo.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsRuleResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsSnapshotsResponse.h
@@ -152,7 +153,7 @@ set(cfs_src
   src/v20190719/model/SetUserQuotaRequest.cpp
   src/v20190719/model/CreateAutoSnapshotPolicyResponse.cpp
   src/v20190719/model/AvailableType.cpp
-  src/v20190719/model/UpdateCfsSnapshotAttributeRequest.cpp
+  src/v20190719/model/CreateCfsSnapshotResponse.cpp
   src/v20190719/model/UserQuota.cpp
   src/v20190719/model/DeleteMountTargetRequest.cpp
   src/v20190719/model/CreateCfsRuleRequest.cpp
@@ -183,7 +184,6 @@ set(cfs_src
   src/v20190719/model/FileSystemByPolicy.cpp
   src/v20190719/model/SnapshotInfo.cpp
   src/v20190719/model/MountInfo.cpp
-  src/v20190719/model/CreateCfsSnapshotResponse.cpp
   src/v20190719/model/UpdateCfsFileSystemPGroupRequest.cpp
   src/v20190719/model/DeleteAutoSnapshotPolicyResponse.cpp
   src/v20190719/model/DeleteCfsRuleResponse.cpp
@@ -192,7 +192,9 @@ set(cfs_src
   src/v20190719/model/TagInfo.cpp
   src/v20190719/model/DescribeCfsPGroupsRequest.cpp
   src/v20190719/model/DeleteCfsPGroupResponse.cpp
+  src/v20190719/model/UpdateCfsSnapshotAttributeRequest.cpp
   src/v20190719/model/DescribeUserQuotaResponse.cpp
+  src/v20190719/model/TieringDetailInfo.cpp
   src/v20190719/model/PGroupInfo.cpp
   src/v20190719/model/CreateCfsRuleResponse.cpp
   src/v20190719/model/DescribeCfsSnapshotsResponse.cpp

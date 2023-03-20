@@ -739,6 +739,34 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     bool CheckPlatformHasBeenSet() const;
 
+                    /**
+                     * 获取文件访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileAccessTime 文件访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileAccessTime() const;
+
+                    /**
+                     * 判断参数 FileAccessTime 是否已赋值
+                     * @return FileAccessTime 是否已赋值
+                     */
+                    bool FileAccessTimeHasBeenSet() const;
+
+                    /**
+                     * 获取文件修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileModifyTime 文件修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileModifyTime() const;
+
+                    /**
+                     * 判断参数 FileModifyTime 是否已赋值
+                     * @return FileModifyTime 是否已赋值
+                     */
+                    bool FileModifyTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1088,6 +1116,20 @@ CONTAINER_NOT_FOUND_DEAL_RECOVER:恢复时，容器不存在
                      */
                     std::vector<std::string> m_checkPlatform;
                     bool m_checkPlatformHasBeenSet;
+
+                    /**
+                     * 文件访问时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileAccessTime;
+                    bool m_fileAccessTimeHasBeenSet;
+
+                    /**
+                     * 文件修改时间
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileModifyTime;
+                    bool m_fileModifyTimeHasBeenSet;
 
                 };
             }

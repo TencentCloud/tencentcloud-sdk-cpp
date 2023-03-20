@@ -51,6 +51,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/IsolateHourDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/IsolateDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/ModifyLogFileRetentionPeriodRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeLogFileRetentionPeriodRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeFlowResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloneAccountResponse.h
@@ -78,11 +79,13 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/mariadb/v20170312/model/SwitchDBInstanceHAResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeSaleInfoRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeBackupFilesResponse.h
   include/tencentcloud/mariadb/v20170312/model/RenewDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateTmpInstancesRequest.h
   include/tencentcloud/mariadb/v20170312/model/RestartDBInstancesResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeProjectSecurityGroupsResponse.h
   include/tencentcloud/mariadb/v20170312/model/DatabaseFunction.h
+  include/tencentcloud/mariadb/v20170312/model/ViewPrivileges.h
   include/tencentcloud/mariadb/v20170312/model/ResetAccountPasswordResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribePriceRequest.h
   include/tencentcloud/mariadb/v20170312/model/CreateDBInstanceResponse.h
@@ -107,7 +110,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ModifyDBParametersResponse.h
   include/tencentcloud/mariadb/v20170312/model/CopyAccountPrivilegesRequest.h
   include/tencentcloud/mariadb/v20170312/model/SecurityGroup.h
-  include/tencentcloud/mariadb/v20170312/model/DescribeDatabaseTableRequest.h
+  include/tencentcloud/mariadb/v20170312/model/DescribeBackupFilesRequest.h
   include/tencentcloud/mariadb/v20170312/model/OpenDBExtranetAccessResponse.h
   include/tencentcloud/mariadb/v20170312/model/KillSessionRequest.h
   include/tencentcloud/mariadb/v20170312/model/TerminateDedicatedDBInstanceRequest.h
@@ -143,7 +146,7 @@ set(mariadb_public_header_model
   include/tencentcloud/mariadb/v20170312/model/ActivateHourDBInstanceRequest.h
   include/tencentcloud/mariadb/v20170312/model/RenewDBInstanceResponse.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDatabasesResponse.h
-  include/tencentcloud/mariadb/v20170312/model/ViewPrivileges.h
+  include/tencentcloud/mariadb/v20170312/model/InstanceBackupFileItem.h
   include/tencentcloud/mariadb/v20170312/model/DescribeOrdersRequest.h
   include/tencentcloud/mariadb/v20170312/model/DescribeDBLogFilesResponse.h
   include/tencentcloud/mariadb/v20170312/model/CloseDBExtranetAccessRequest.h
@@ -227,6 +230,7 @@ set(mariadb_src
   src/v20170312/model/IsolateHourDBInstanceRequest.cpp
   src/v20170312/model/IsolateDBInstanceResponse.cpp
   src/v20170312/model/ModifyLogFileRetentionPeriodRequest.cpp
+  src/v20170312/model/DescribeDatabaseTableRequest.cpp
   src/v20170312/model/DescribeLogFileRetentionPeriodRequest.cpp
   src/v20170312/model/DescribeFlowResponse.cpp
   src/v20170312/model/CloneAccountResponse.cpp
@@ -254,11 +258,13 @@ set(mariadb_src
   src/v20170312/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20170312/model/SwitchDBInstanceHAResponse.cpp
   src/v20170312/model/DescribeSaleInfoRequest.cpp
+  src/v20170312/model/DescribeBackupFilesResponse.cpp
   src/v20170312/model/RenewDBInstanceRequest.cpp
   src/v20170312/model/CreateTmpInstancesRequest.cpp
   src/v20170312/model/RestartDBInstancesResponse.cpp
   src/v20170312/model/DescribeProjectSecurityGroupsResponse.cpp
   src/v20170312/model/DatabaseFunction.cpp
+  src/v20170312/model/ViewPrivileges.cpp
   src/v20170312/model/ResetAccountPasswordResponse.cpp
   src/v20170312/model/DescribePriceRequest.cpp
   src/v20170312/model/CreateDBInstanceResponse.cpp
@@ -283,7 +289,7 @@ set(mariadb_src
   src/v20170312/model/ModifyDBParametersResponse.cpp
   src/v20170312/model/CopyAccountPrivilegesRequest.cpp
   src/v20170312/model/SecurityGroup.cpp
-  src/v20170312/model/DescribeDatabaseTableRequest.cpp
+  src/v20170312/model/DescribeBackupFilesRequest.cpp
   src/v20170312/model/OpenDBExtranetAccessResponse.cpp
   src/v20170312/model/KillSessionRequest.cpp
   src/v20170312/model/TerminateDedicatedDBInstanceRequest.cpp
@@ -319,7 +325,7 @@ set(mariadb_src
   src/v20170312/model/ActivateHourDBInstanceRequest.cpp
   src/v20170312/model/RenewDBInstanceResponse.cpp
   src/v20170312/model/DescribeDatabasesResponse.cpp
-  src/v20170312/model/ViewPrivileges.cpp
+  src/v20170312/model/InstanceBackupFileItem.cpp
   src/v20170312/model/DescribeOrdersRequest.cpp
   src/v20170312/model/DescribeDBLogFilesResponse.cpp
   src/v20170312/model/CloseDBExtranetAccessRequest.cpp

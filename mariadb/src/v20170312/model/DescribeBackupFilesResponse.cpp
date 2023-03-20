@@ -14,22 +14,22 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeBackupFilesResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Ssl::V20191205::Model;
+using namespace TencentCloud::Mariadb::V20170312::Model;
 using namespace std;
 
-UploadCertificateResponse::UploadCertificateResponse() :
-    m_certificateIdHasBeenSet(false),
-    m_repeatCertIdHasBeenSet(false)
+DescribeBackupFilesResponse::DescribeBackupFilesResponse() :
+    m_filesHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome UploadCertificateResponse::Deserialize(const string &payload)
+CoreInternalOutcome DescribeBackupFilesResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +63,67 @@ CoreInternalOutcome UploadCertificateResponse::Deserialize(const string &payload
     }
 
 
-    if (rsp.HasMember("CertificateId") && !rsp["CertificateId"].IsNull())
+    if (rsp.HasMember("Files") && !rsp["Files"].IsNull())
     {
-        if (!rsp["CertificateId"].IsString())
+        if (!rsp["Files"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Files` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Files"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
         {
-            return CoreInternalOutcome(Core::Error("response `CertificateId` IsString=false incorrectly").SetRequestId(requestId));
+            InstanceBackupFileItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_files.push_back(item);
         }
-        m_certificateId = string(rsp["CertificateId"].GetString());
-        m_certificateIdHasBeenSet = true;
+        m_filesHasBeenSet = true;
     }
 
-    if (rsp.HasMember("RepeatCertId") && !rsp["RepeatCertId"].IsNull())
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
     {
-        if (!rsp["RepeatCertId"].IsString())
+        if (!rsp["TotalCount"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `RepeatCertId` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_repeatCertId = string(rsp["RepeatCertId"].GetString());
-        m_repeatCertIdHasBeenSet = true;
+        m_totalCount = rsp["TotalCount"].GetInt64();
+        m_totalCountHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string UploadCertificateResponse::ToJsonString() const
+string DescribeBackupFilesResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_certificateIdHasBeenSet)
+    if (m_filesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "CertificateId";
+        string key = "Files";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_certificateId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_files.begin(); itr != m_files.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
-    if (m_repeatCertIdHasBeenSet)
+    if (m_totalCountHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "RepeatCertId";
+        string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_repeatCertId.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +138,24 @@ string UploadCertificateResponse::ToJsonString() const
 }
 
 
-string UploadCertificateResponse::GetCertificateId() const
+vector<InstanceBackupFileItem> DescribeBackupFilesResponse::GetFiles() const
 {
-    return m_certificateId;
+    return m_files;
 }
 
-bool UploadCertificateResponse::CertificateIdHasBeenSet() const
+bool DescribeBackupFilesResponse::FilesHasBeenSet() const
 {
-    return m_certificateIdHasBeenSet;
+    return m_filesHasBeenSet;
 }
 
-string UploadCertificateResponse::GetRepeatCertId() const
+int64_t DescribeBackupFilesResponse::GetTotalCount() const
 {
-    return m_repeatCertId;
+    return m_totalCount;
 }
 
-bool UploadCertificateResponse::RepeatCertIdHasBeenSet() const
+bool DescribeBackupFilesResponse::TotalCountHasBeenSet() const
 {
-    return m_repeatCertIdHasBeenSet;
+    return m_totalCountHasBeenSet;
 }
 
 

@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool IdentityIdHasBeenSet() const;
 
                     /**
-                     * 获取身份角色名。
+                     * 获取身份的角色名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdentityRoleName 身份角色名。
+                     * @return IdentityRoleName 身份的角色名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIdentityRoleName() const;
 
                     /**
-                     * 设置身份角色名。
+                     * 设置身份的角色名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityRoleName 身份角色名。
+                     * @param IdentityRoleName 身份的角色名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIdentityRoleName(const std::string& _identityRoleName);
@@ -91,17 +91,17 @@ namespace TencentCloud
                     bool IdentityRoleNameHasBeenSet() const;
 
                     /**
-                     * 获取身份角色别名。
+                     * 获取身份的角色别名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return IdentityRoleAliasName 身份角色别名。
+                     * @return IdentityRoleAliasName 身份的角色别名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIdentityRoleAliasName() const;
 
                     /**
-                     * 设置身份角色别名。
+                     * 设置身份的角色别名。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param IdentityRoleAliasName 身份角色别名。
+                     * @param IdentityRoleAliasName 身份的角色别名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIdentityRoleAliasName(const std::string& _identityRoleAliasName);
@@ -113,17 +113,17 @@ namespace TencentCloud
                     bool IdentityRoleAliasNameHasBeenSet() const;
 
                     /**
-                     * 获取描述
+                     * 获取描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Description 描述
+                     * @return Description 描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
-                     * 设置描述
+                     * 设置描述。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Description 描述
+                     * @param Description 描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
@@ -178,6 +178,28 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取身份类型。取值： 1-预设  2-自定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IdentityType 身份类型。取值： 1-预设  2-自定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIdentityType() const;
+
+                    /**
+                     * 设置身份类型。取值： 1-预设  2-自定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IdentityType 身份类型。取值： 1-预设  2-自定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIdentityType(const uint64_t& _identityType);
+
+                    /**
+                     * 判断参数 IdentityType 是否已赋值
+                     * @return IdentityType 是否已赋值
+                     */
+                    bool IdentityTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -188,21 +210,21 @@ namespace TencentCloud
                     bool m_identityIdHasBeenSet;
 
                     /**
-                     * 身份角色名。
+                     * 身份的角色名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identityRoleName;
                     bool m_identityRoleNameHasBeenSet;
 
                     /**
-                     * 身份角色别名。
+                     * 身份的角色别名。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_identityRoleAliasName;
                     bool m_identityRoleAliasNameHasBeenSet;
 
                     /**
-                     * 描述
+                     * 描述。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
@@ -221,6 +243,13 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 身份类型。取值： 1-预设  2-自定义
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_identityType;
+                    bool m_identityTypeHasBeenSet;
 
                 };
             }
