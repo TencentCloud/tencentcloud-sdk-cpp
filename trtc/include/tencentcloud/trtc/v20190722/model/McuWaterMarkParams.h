@@ -86,17 +86,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印参数。WaterMarkType为1指定。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaterMarkText 文字水印参数。WaterMarkType为1指定。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     McuWaterMarkText GetWaterMarkText() const;
 
                     /**
                      * 设置文字水印参数。WaterMarkType为1指定。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WaterMarkText 文字水印参数。WaterMarkType为1指定。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWaterMarkText(const McuWaterMarkText& _waterMarkText);
 
@@ -122,7 +118,6 @@ namespace TencentCloud
 
                     /**
                      * 文字水印参数。WaterMarkType为1指定。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     McuWaterMarkText m_waterMarkText;
                     bool m_waterMarkTextHasBeenSet;

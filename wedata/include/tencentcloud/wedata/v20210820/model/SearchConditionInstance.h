@@ -66,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取产品名称，可选
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProductName 产品名称，可选
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetProductName() const;
 
                     /**
                      * 设置产品名称，可选
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProductName 产品名称，可选
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProductName(const uint64_t& _productName);
 
@@ -88,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ResourceGroup 资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetResourceGroup() const;
 
                     /**
                      * 设置资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ResourceGroup 资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResourceGroup(const uint64_t& _resourceGroup);
 
@@ -118,14 +110,12 @@ namespace TencentCloud
 
                     /**
                      * 产品名称，可选
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_productName;
                     bool m_productNameHasBeenSet;
 
                     /**
                      * 资源组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_resourceGroup;
                     bool m_resourceGroupHasBeenSet;

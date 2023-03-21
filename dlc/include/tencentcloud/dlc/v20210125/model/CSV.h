@@ -85,17 +85,13 @@ namespace TencentCloud
 
                     /**
                      * 获取标题行，默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadLines 标题行，默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetHeadLines() const;
 
                     /**
                      * 设置标题行，默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param HeadLines 标题行，默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeadLines(const int64_t& _headLines);
 
@@ -107,17 +103,13 @@ namespace TencentCloud
 
                     /**
                      * 获取格式，默认值为CSV
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Format 格式，默认值为CSV
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFormat() const;
 
                     /**
                      * 设置格式，默认值为CSV
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Format 格式，默认值为CSV
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFormat(const std::string& _format);
 
@@ -143,14 +135,12 @@ namespace TencentCloud
 
                     /**
                      * 标题行，默认为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_headLines;
                     bool m_headLinesHasBeenSet;
 
                     /**
                      * 格式，默认值为CSV
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ListenerId 监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetListenerId() const;
 
                     /**
                      * 设置监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ListenerId 监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetListenerId(const std::string& _listenerId);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取绑定端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 绑定端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置绑定端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Port 绑定端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取子机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return InstanceId 子机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceId() const;
 
                     /**
                      * 设置子机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param InstanceId 子机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取弹性网卡ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EniIp 弹性网卡ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEniIp() const;
 
                     /**
                      * 设置弹性网卡ip
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param EniIp 弹性网卡ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEniIp(const std::string& _eniIp);
 
@@ -136,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetWeight() const;
 
                     /**
                      * 设置子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Weight 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWeight(const int64_t& _weight);
 
@@ -160,35 +140,30 @@ namespace TencentCloud
 
                     /**
                      * 监听器ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_listenerId;
                     bool m_listenerIdHasBeenSet;
 
                     /**
                      * 绑定端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 子机ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
                      * 弹性网卡ip
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_eniIp;
                     bool m_eniIpHasBeenSet;
 
                     /**
                      * 子机权重，范围[0, 100]。绑定时如果不存在，则默认为10。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_weight;
                     bool m_weightHasBeenSet;

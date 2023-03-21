@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许修改合同信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanEditFlow 是否允许修改合同信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetCanEditFlow() const;
 
                     /**
                      * 设置是否允许修改合同信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CanEditFlow 是否允许修改合同信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCanEditFlow(const bool& _canEditFlow);
 
@@ -72,7 +68,6 @@ namespace TencentCloud
 
                     /**
                      * 是否允许修改合同信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canEditFlow;
                     bool m_canEditFlowHasBeenSet;

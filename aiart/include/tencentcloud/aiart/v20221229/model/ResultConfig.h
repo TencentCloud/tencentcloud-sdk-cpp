@@ -53,14 +53,12 @@ namespace TencentCloud
 ● 768:768
 ● 768:1024
 ● 1024:768
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resolution 生成图分辨率
 支持生成以下不同分辨率的图片，对应1:1方图、3:4竖图、4:3横图三种尺寸规格，不传默认为"768:768"
 取值：
 ● 768:768
 ● 768:1024
 ● 1024:768
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResolution() const;
 
@@ -71,14 +69,12 @@ namespace TencentCloud
 ● 768:768
 ● 768:1024
 ● 1024:768
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Resolution 生成图分辨率
 支持生成以下不同分辨率的图片，对应1:1方图、3:4竖图、4:3横图三种尺寸规格，不传默认为"768:768"
 取值：
 ● 768:768
 ● 768:1024
 ● 1024:768
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResolution(const std::string& _resolution);
 
@@ -97,7 +93,6 @@ namespace TencentCloud
 ● 768:768
 ● 768:1024
 ● 1024:768
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resolution;
                     bool m_resolutionHasBeenSet;

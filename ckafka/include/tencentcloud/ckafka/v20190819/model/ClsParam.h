@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DecodeJson 生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetDecodeJson() const;
 
                     /**
                      * 设置生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param DecodeJson 生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDecodeJson(const bool& _decodeJson);
 
@@ -88,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogSet cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLogSet() const;
 
                     /**
                      * 设置cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param LogSet cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLogSet(const std::string& _logSet);
 
@@ -110,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ContentKey 当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetContentKey() const;
 
                     /**
                      * 设置当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ContentKey 当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContentKey(const std::string& _contentKey);
 
@@ -156,7 +144,6 @@ namespace TencentCloud
 
                     /**
                      * 生产的信息是否为json格式
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_decodeJson;
                     bool m_decodeJsonHasBeenSet;
@@ -169,14 +156,12 @@ namespace TencentCloud
 
                     /**
                      * cls日志集id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logSet;
                     bool m_logSetHasBeenSet;
 
                     /**
                      * 当DecodeJson为false时必填
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_contentKey;
                     bool m_contentKeyHasBeenSet;

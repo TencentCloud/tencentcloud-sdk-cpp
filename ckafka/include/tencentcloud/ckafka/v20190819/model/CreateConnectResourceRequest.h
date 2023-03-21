@@ -30,6 +30,7 @@
 #include <tencentcloud/ckafka/v20190819/model/MariaDBConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/SQLServerConnectParam.h>
 #include <tencentcloud/ckafka/v20190819/model/DorisConnectParam.h>
+#include <tencentcloud/ckafka/v20190819/model/KafkaConnectParam.h>
 
 
 namespace TencentCloud
@@ -267,6 +268,24 @@ namespace TencentCloud
                      */
                     bool DorisConnectParamHasBeenSet() const;
 
+                    /**
+                     * 获取Kafka配置，Type为 KAFKA 时必填
+                     * @return KafkaConnectParam Kafka配置，Type为 KAFKA 时必填
+                     */
+                    KafkaConnectParam GetKafkaConnectParam() const;
+
+                    /**
+                     * 设置Kafka配置，Type为 KAFKA 时必填
+                     * @param KafkaConnectParam Kafka配置，Type为 KAFKA 时必填
+                     */
+                    void SetKafkaConnectParam(const KafkaConnectParam& _kafkaConnectParam);
+
+                    /**
+                     * 判断参数 KafkaConnectParam 是否已赋值
+                     * @return KafkaConnectParam 是否已赋值
+                     */
+                    bool KafkaConnectParamHasBeenSet() const;
+
                 private:
 
                     /**
@@ -340,6 +359,12 @@ namespace TencentCloud
                      */
                     DorisConnectParam m_dorisConnectParam;
                     bool m_dorisConnectParamHasBeenSet;
+
+                    /**
+                     * Kafka配置，Type为 KAFKA 时必填
+                     */
+                    KafkaConnectParam m_kafkaConnectParam;
+                    bool m_kafkaConnectParamHasBeenSet;
 
                 };
             }

@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取待创建群组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupName 待创建群组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGroupName() const;
 
                     /**
                      * 设置待创建群组名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param GroupName 待创建群组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGroupName(const std::string& _groupName);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TeacherId 群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTeacherId() const;
 
                     /**
                      * 设置群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TeacherId 群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTeacherId(const std::string& _teacherId);
 
@@ -94,14 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 待创建群组名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
                      * 群组主讲人ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_teacherId;
                     bool m_teacherIdHasBeenSet;

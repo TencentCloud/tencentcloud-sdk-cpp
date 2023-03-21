@@ -49,20 +49,16 @@ namespace TencentCloud
                     /**
                      * 获取ONCE：仅单次解冻（默认）
 MULTI：多次解冻
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UnfreezeRule ONCE：仅单次解冻（默认）
 MULTI：多次解冻
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUnfreezeRule() const;
 
                     /**
                      * 设置ONCE：仅单次解冻（默认）
 MULTI：多次解冻
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param UnfreezeRule ONCE：仅单次解冻（默认）
 MULTI：多次解冻
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUnfreezeRule(const std::string& _unfreezeRule);
 
@@ -75,20 +71,16 @@ MULTI：多次解冻
                     /**
                      * 获取ONCE：仅单次退款（默认）
 MULTI：多次退款
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RefundRule ONCE：仅单次退款（默认）
 MULTI：多次退款
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRefundRule() const;
 
                     /**
                      * 设置ONCE：仅单次退款（默认）
 MULTI：多次退款
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param RefundRule ONCE：仅单次退款（默认）
 MULTI：多次退款
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRefundRule(const std::string& _refundRule);
 
@@ -103,7 +95,6 @@ MULTI：多次退款
                     /**
                      * ONCE：仅单次解冻（默认）
 MULTI：多次解冻
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_unfreezeRule;
                     bool m_unfreezeRuleHasBeenSet;
@@ -111,7 +102,6 @@ MULTI：多次解冻
                     /**
                      * ONCE：仅单次退款（默认）
 MULTI：多次退款
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_refundRule;
                     bool m_refundRuleHasBeenSet;

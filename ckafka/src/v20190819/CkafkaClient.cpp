@@ -513,6 +513,49 @@ CkafkaClient::CreateDatahubTaskOutcomeCallable CkafkaClient::CreateDatahubTaskCa
     return task->get_future();
 }
 
+CkafkaClient::CreateDatahubTopicOutcome CkafkaClient::CreateDatahubTopic(const CreateDatahubTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateDatahubTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateDatahubTopicResponse rsp = CreateDatahubTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateDatahubTopicOutcome(rsp);
+        else
+            return CreateDatahubTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateDatahubTopicOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateDatahubTopicAsync(const CreateDatahubTopicRequest& request, const CreateDatahubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateDatahubTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateDatahubTopicOutcomeCallable CkafkaClient::CreateDatahubTopicCallable(const CreateDatahubTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateDatahubTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateDatahubTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateInstancePostOutcome CkafkaClient::CreateInstancePost(const CreateInstancePostRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateInstancePost");

@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FunctionName SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFunctionName() const;
 
                     /**
                      * 设置SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FunctionName SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFunctionName(const std::string& _functionName);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Namespace SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetNamespace() const;
 
                     /**
                      * 设置SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Namespace SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNamespace(const std::string& _namespace);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Qualifier SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetQualifier() const;
 
                     /**
                      * 设置SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Qualifier SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetQualifier(const std::string& _qualifier);
 
@@ -152,21 +140,18 @@ namespace TencentCloud
 
                     /**
                      * SCF云函数函数名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_functionName;
                     bool m_functionNameHasBeenSet;
 
                     /**
                      * SCF云函数命名空间, 默认为default
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_namespace;
                     bool m_namespaceHasBeenSet;
 
                     /**
                      * SCF云函数版本及别名, 默认为$DEFAULT
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_qualifier;
                     bool m_qualifierHasBeenSet;

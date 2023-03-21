@@ -153,12 +153,10 @@ namespace TencentCloud
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return DefaultRole 默认角色，值为以下三个对应的英文：
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDefaultRole() const;
 
@@ -167,12 +165,10 @@ namespace TencentCloud
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param DefaultRole 默认角色，值为以下三个对应的英文：
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDefaultRole(const std::string& _defaultRole);
 
@@ -222,7 +218,6 @@ namespace TencentCloud
 业务管理员：admin
 经办人：channel-normal-operator
 业务员：channel-sales-man
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_defaultRole;
                     bool m_defaultRoleHasBeenSet;

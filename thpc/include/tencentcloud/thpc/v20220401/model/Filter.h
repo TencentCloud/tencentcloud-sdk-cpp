@@ -50,17 +50,13 @@ namespace TencentCloud
 
                     /**
                      * 获取需要过滤的字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 需要过滤的字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置需要过滤的字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 需要过滤的字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -72,17 +68,13 @@ namespace TencentCloud
 
                     /**
                      * 获取字段的过滤值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 字段的过滤值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置字段的过滤值。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Values 字段的过滤值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
@@ -96,14 +88,12 @@ namespace TencentCloud
 
                     /**
                      * 需要过滤的字段。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 字段的过滤值。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

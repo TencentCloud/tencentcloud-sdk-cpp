@@ -298,3 +298,89 @@ ApmClient::DescribeServiceOverviewOutcomeCallable ApmClient::DescribeServiceOver
     return task->get_future();
 }
 
+ApmClient::ModifyApmInstanceOutcome ApmClient::ModifyApmInstance(const ModifyApmInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApmInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApmInstanceResponse rsp = ModifyApmInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApmInstanceOutcome(rsp);
+        else
+            return ModifyApmInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApmInstanceOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::ModifyApmInstanceAsync(const ModifyApmInstanceRequest& request, const ModifyApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApmInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::ModifyApmInstanceOutcomeCallable ApmClient::ModifyApmInstanceCallable(const ModifyApmInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApmInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApmInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+ApmClient::TerminateApmInstanceOutcome ApmClient::TerminateApmInstance(const TerminateApmInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateApmInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateApmInstanceResponse rsp = TerminateApmInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateApmInstanceOutcome(rsp);
+        else
+            return TerminateApmInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateApmInstanceOutcome(outcome.GetError());
+    }
+}
+
+void ApmClient::TerminateApmInstanceAsync(const TerminateApmInstanceRequest& request, const TerminateApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateApmInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ApmClient::TerminateApmInstanceOutcomeCallable ApmClient::TerminateApmInstanceCallable(const TerminateApmInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateApmInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateApmInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

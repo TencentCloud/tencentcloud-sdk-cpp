@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取是否允许修改签署人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CanEditApprover 是否允许修改签署人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetCanEditApprover() const;
 
                     /**
                      * 设置是否允许修改签署人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CanEditApprover 是否允许修改签署人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCanEditApprover(const bool& _canEditApprover);
 
@@ -72,7 +68,6 @@ namespace TencentCloud
 
                     /**
                      * 是否允许修改签署人信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_canEditApprover;
                     bool m_canEditApproverHasBeenSet;

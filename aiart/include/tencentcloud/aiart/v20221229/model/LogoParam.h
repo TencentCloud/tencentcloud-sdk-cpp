@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogoUrl 水印url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLogoUrl() const;
 
                     /**
                      * 设置水印url
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param LogoUrl 水印url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLogoUrl(const std::string& _logoUrl);
 
@@ -71,17 +67,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印base64，url和base64二选一传入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogoImage 水印base64，url和base64二选一传入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLogoImage() const;
 
                     /**
                      * 设置水印base64，url和base64二选一传入
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param LogoImage 水印base64，url和base64二选一传入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLogoImage(const std::string& _logoImage);
 
@@ -93,17 +85,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LogoRect 水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogoRect GetLogoRect() const;
 
                     /**
                      * 设置水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param LogoRect 水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLogoRect(const LogoRect& _logoRect);
 
@@ -117,21 +105,18 @@ namespace TencentCloud
 
                     /**
                      * 水印url
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logoUrl;
                     bool m_logoUrlHasBeenSet;
 
                     /**
                      * 水印base64，url和base64二选一传入
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_logoImage;
                     bool m_logoImageHasBeenSet;
 
                     /**
                      * 水印图片位于融合结果图中的坐标，将按照坐标对标识图片进行位置和大小的拉伸匹配
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     LogoRect m_logoRect;
                     bool m_logoRectHasBeenSet;

@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReportType 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetReportType() const;
 
                     /**
                      * 设置检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ReportType 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReportType(const int64_t& _reportType);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取版本2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Version 版本2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetVersion() const;
 
                     /**
                      * 设置版本2
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Version 版本2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVersion(const int64_t& _version);
 
@@ -94,14 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 检验报告
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_reportType;
                     bool m_reportTypeHasBeenSet;
 
                     /**
                      * 版本2
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_version;
                     bool m_versionHasBeenSet;

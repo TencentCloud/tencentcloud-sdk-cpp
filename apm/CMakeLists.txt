@@ -19,10 +19,12 @@ set(apm_public_header
   )
 
 set(apm_public_header_model
+  include/tencentcloud/apm/v20210622/model/ModifyApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/ApmInstanceDetail.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h
   include/tencentcloud/apm/v20210622/model/QueryMetricItem.h
+  include/tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeApmInstancesResponse.h
   include/tencentcloud/apm/v20210622/model/ApmAgentInfo.h
   include/tencentcloud/apm/v20210622/model/ApmMetricRecord.h
@@ -40,17 +42,21 @@ set(apm_public_header_model
   include/tencentcloud/apm/v20210622/model/DescribeMetricRecordsRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataRequest.h
   include/tencentcloud/apm/v20210622/model/CreateApmInstanceResponse.h
+  include/tencentcloud/apm/v20210622/model/ModifyApmInstanceResponse.h
   include/tencentcloud/apm/v20210622/model/GeneralFilter.h
   include/tencentcloud/apm/v20210622/model/DescribeApmInstancesRequest.h
   include/tencentcloud/apm/v20210622/model/DescribeGeneralMetricDataResponse.h
+  include/tencentcloud/apm/v20210622/model/TerminateApmInstanceResponse.h
   )
 
 set(apm_src
   src/v20210622/ApmClient.cpp
+  src/v20210622/model/ModifyApmInstanceRequest.cpp
   src/v20210622/model/ApmInstanceDetail.cpp
   src/v20210622/model/CreateApmInstanceRequest.cpp
   src/v20210622/model/DescribeServiceOverviewResponse.cpp
   src/v20210622/model/QueryMetricItem.cpp
+  src/v20210622/model/TerminateApmInstanceRequest.cpp
   src/v20210622/model/DescribeApmInstancesResponse.cpp
   src/v20210622/model/ApmAgentInfo.cpp
   src/v20210622/model/ApmMetricRecord.cpp
@@ -68,9 +74,11 @@ set(apm_src
   src/v20210622/model/DescribeMetricRecordsRequest.cpp
   src/v20210622/model/DescribeGeneralMetricDataRequest.cpp
   src/v20210622/model/CreateApmInstanceResponse.cpp
+  src/v20210622/model/ModifyApmInstanceResponse.cpp
   src/v20210622/model/GeneralFilter.cpp
   src/v20210622/model/DescribeApmInstancesRequest.cpp
   src/v20210622/model/DescribeGeneralMetricDataResponse.cpp
+  src/v20210622/model/TerminateApmInstanceResponse.cpp
   )
 
 set(apm_include

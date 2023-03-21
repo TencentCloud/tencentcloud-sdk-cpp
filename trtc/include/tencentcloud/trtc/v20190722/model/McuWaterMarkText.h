@@ -138,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取字体大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontSize 字体大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetFontSize() const;
 
                     /**
                      * 设置字体大小
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FontSize 字体大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFontSize(const uint64_t& _fontSize);
 
@@ -160,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontColor 字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFontColor() const;
 
                     /**
                      * 设置字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FontColor 字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFontColor(const std::string& _fontColor);
 
@@ -182,17 +174,13 @@ namespace TencentCloud
 
                     /**
                      * 获取字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackGroundColor 字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBackGroundColor() const;
 
                     /**
                      * 设置字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param BackGroundColor 字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBackGroundColor(const std::string& _backGroundColor);
 
@@ -236,21 +224,18 @@ namespace TencentCloud
 
                     /**
                      * 字体大小
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fontSize;
                     bool m_fontSizeHasBeenSet;
 
                     /**
                      * 字体颜色，默认为白色。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontColor;
                     bool m_fontColorHasBeenSet;
 
                     /**
                      * 字体背景色，不配置默认为透明。常用的颜色有： 红色：0xcc0033。 黄色：0xcc9900。 绿色：0xcccc33。 蓝色：0x99CCFF。 黑色：0x000000。 白色：0xFFFFFF。 灰色：0x999999。	
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backGroundColor;
                     bool m_backGroundColorHasBeenSet;

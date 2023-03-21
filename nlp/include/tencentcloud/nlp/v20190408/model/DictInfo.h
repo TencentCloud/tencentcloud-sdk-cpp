@@ -84,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义词库描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 自定义词库描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置自定义词库描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Description 自定义词库描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -106,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UpdateTime 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
                      * 设置自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param UpdateTime 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -128,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCreateTime() const;
 
                     /**
                      * 设置自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CreateTime 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -164,21 +152,18 @@ namespace TencentCloud
 
                     /**
                      * 自定义词库描述信息。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
                      * 自定义词库修改时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
 
                     /**
                      * 自定义词库创建时间，形式为:yyyy-mm-dd hh:mm:ss。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;

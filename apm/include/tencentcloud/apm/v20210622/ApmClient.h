@@ -35,6 +35,10 @@
 #include <tencentcloud/apm/v20210622/model/DescribeMetricRecordsResponse.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewRequest.h>
 #include <tencentcloud/apm/v20210622/model/DescribeServiceOverviewResponse.h>
+#include <tencentcloud/apm/v20210622/model/ModifyApmInstanceRequest.h>
+#include <tencentcloud/apm/v20210622/model/ModifyApmInstanceResponse.h>
+#include <tencentcloud/apm/v20210622/model/TerminateApmInstanceRequest.h>
+#include <tencentcloud/apm/v20210622/model/TerminateApmInstanceResponse.h>
 
 
 namespace TencentCloud
@@ -67,6 +71,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeServiceOverviewResponse> DescribeServiceOverviewOutcome;
                 typedef std::future<DescribeServiceOverviewOutcome> DescribeServiceOverviewOutcomeCallable;
                 typedef std::function<void(const ApmClient*, const Model::DescribeServiceOverviewRequest&, DescribeServiceOverviewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeServiceOverviewAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyApmInstanceResponse> ModifyApmInstanceOutcome;
+                typedef std::future<ModifyApmInstanceOutcome> ModifyApmInstanceOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::ModifyApmInstanceRequest&, ModifyApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyApmInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateApmInstanceResponse> TerminateApmInstanceOutcome;
+                typedef std::future<TerminateApmInstanceOutcome> TerminateApmInstanceOutcomeCallable;
+                typedef std::function<void(const ApmClient*, const Model::TerminateApmInstanceRequest&, TerminateApmInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateApmInstanceAsyncHandler;
 
 
 
@@ -124,6 +134,24 @@ namespace TencentCloud
                 DescribeServiceOverviewOutcome DescribeServiceOverview(const Model::DescribeServiceOverviewRequest &request);
                 void DescribeServiceOverviewAsync(const Model::DescribeServiceOverviewRequest& request, const DescribeServiceOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeServiceOverviewOutcomeCallable DescribeServiceOverviewCallable(const Model::DescribeServiceOverviewRequest& request);
+
+                /**
+                 *修改Apm实例接口
+                 * @param req ModifyApmInstanceRequest
+                 * @return ModifyApmInstanceOutcome
+                 */
+                ModifyApmInstanceOutcome ModifyApmInstance(const Model::ModifyApmInstanceRequest &request);
+                void ModifyApmInstanceAsync(const Model::ModifyApmInstanceRequest& request, const ModifyApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyApmInstanceOutcomeCallable ModifyApmInstanceCallable(const Model::ModifyApmInstanceRequest& request);
+
+                /**
+                 *apm销毁实例
+                 * @param req TerminateApmInstanceRequest
+                 * @return TerminateApmInstanceOutcome
+                 */
+                TerminateApmInstanceOutcome TerminateApmInstance(const Model::TerminateApmInstanceRequest &request);
+                void TerminateApmInstanceAsync(const Model::TerminateApmInstanceRequest& request, const TerminateApmInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateApmInstanceOutcomeCallable TerminateApmInstanceCallable(const Model::TerminateApmInstanceRequest& request);
 
             };
         }

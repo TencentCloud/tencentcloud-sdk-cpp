@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤参数键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 过滤参数键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置过滤参数键
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 过滤参数键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取过滤参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 过滤参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置过滤参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Value 过滤参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const std::string& _value);
 
@@ -94,14 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 过滤参数键
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 过滤参数值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;

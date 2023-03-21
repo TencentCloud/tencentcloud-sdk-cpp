@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取句法依存关系的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Relation 句法依存关系的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRelation() const;
 
                     /**
                      * 设置句法依存关系的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Relation 句法依存关系的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRelation(const std::string& _relation);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取当前词父节点的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return HeadId 当前词父节点的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetHeadId() const;
 
                     /**
                      * 设置当前词父节点的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param HeadId 当前词父节点的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeadId(const uint64_t& _headId);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取基础词
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Word 基础词
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetWord() const;
 
                     /**
                      * 设置基础词
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Word 基础词
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWord(const std::string& _word);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取基础词的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Id 基础词的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetId() const;
 
                     /**
                      * 设置基础词的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Id 基础词的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetId(const uint64_t& _id);
 
@@ -138,28 +122,24 @@ namespace TencentCloud
 
                     /**
                      * 句法依存关系的类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relation;
                     bool m_relationHasBeenSet;
 
                     /**
                      * 当前词父节点的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_headId;
                     bool m_headIdHasBeenSet;
 
                     /**
                      * 基础词
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_word;
                     bool m_wordHasBeenSet;
 
                     /**
                      * 基础词的序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_id;
                     bool m_idHasBeenSet;

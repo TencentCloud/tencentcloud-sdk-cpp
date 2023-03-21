@@ -53,13 +53,11 @@ namespace TencentCloud
 <li>COS：COS源。</li>
 <li>ORIGIN_GROUP：源站组类型源站。</li>
 <li>AWS_S3：AWS S3对象存储源站。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginType 源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6或域名类型源站；</li>
 <li>COS：COS源。</li>
 <li>ORIGIN_GROUP：源站组类型源站。</li>
 <li>AWS_S3：AWS S3对象存储源站。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginType() const;
 
@@ -69,13 +67,11 @@ namespace TencentCloud
 <li>COS：COS源。</li>
 <li>ORIGIN_GROUP：源站组类型源站。</li>
 <li>AWS_S3：AWS S3对象存储源站。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OriginType 源站类型，取值有：
 <li>IP_DOMAIN：IPV4、IPV6或域名类型源站；</li>
 <li>COS：COS源。</li>
 <li>ORIGIN_GROUP：源站组类型源站。</li>
 <li>AWS_S3：AWS S3对象存储源站。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginType(const std::string& _originType);
 
@@ -87,17 +83,13 @@ namespace TencentCloud
 
                     /**
                      * 获取源站地址，当OriginType参数指定为ORIGIN_GROUP时，该参数填写源站组ID，其他情况下填写源站地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Origin 源站地址，当OriginType参数指定为ORIGIN_GROUP时，该参数填写源站组ID，其他情况下填写源站地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOrigin() const;
 
                     /**
                      * 设置源站地址，当OriginType参数指定为ORIGIN_GROUP时，该参数填写源站组ID，其他情况下填写源站地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Origin 源站地址，当OriginType参数指定为ORIGIN_GROUP时，该参数填写源站组ID，其他情况下填写源站地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrigin(const std::string& _origin);
 
@@ -109,17 +101,13 @@ namespace TencentCloud
 
                     /**
                      * 获取备用源站组ID，该参数在OriginType参数指定为ORIGIN_GROUP时生效，为空表示不使用备用源站。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackupOrigin 备用源站组ID，该参数在OriginType参数指定为ORIGIN_GROUP时生效，为空表示不使用备用源站。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBackupOrigin() const;
 
                     /**
                      * 设置备用源站组ID，该参数在OriginType参数指定为ORIGIN_GROUP时生效，为空表示不使用备用源站。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param BackupOrigin 备用源站组ID，该参数在OriginType参数指定为ORIGIN_GROUP时生效，为空表示不使用备用源站。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBackupOrigin(const std::string& _backupOrigin);
 
@@ -133,11 +121,9 @@ namespace TencentCloud
                      * 获取指定是否允许访问私有对象存储源站，当源站类型OriginType=COS或AWS_S3时有效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>不填写，默认值为：off。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateAccess 指定是否允许访问私有对象存储源站，当源站类型OriginType=COS或AWS_S3时有效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>不填写，默认值为：off。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPrivateAccess() const;
 
@@ -145,11 +131,9 @@ namespace TencentCloud
                      * 设置指定是否允许访问私有对象存储源站，当源站类型OriginType=COS或AWS_S3时有效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>不填写，默认值为：off。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param PrivateAccess 指定是否允许访问私有对象存储源站，当源站类型OriginType=COS或AWS_S3时有效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>不填写，默认值为：off。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPrivateAccess(const std::string& _privateAccess);
 
@@ -161,17 +145,13 @@ namespace TencentCloud
 
                     /**
                      * 获取私有鉴权使用参数，当源站类型PrivateAccess=on时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PrivateParameters 私有鉴权使用参数，当源站类型PrivateAccess=on时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrivateParameter> GetPrivateParameters() const;
 
                     /**
                      * 设置私有鉴权使用参数，当源站类型PrivateAccess=on时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param PrivateParameters 私有鉴权使用参数，当源站类型PrivateAccess=on时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPrivateParameters(const std::vector<PrivateParameter>& _privateParameters);
 
@@ -189,21 +169,18 @@ namespace TencentCloud
 <li>COS：COS源。</li>
 <li>ORIGIN_GROUP：源站组类型源站。</li>
 <li>AWS_S3：AWS S3对象存储源站。</li>
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originType;
                     bool m_originTypeHasBeenSet;
 
                     /**
                      * 源站地址，当OriginType参数指定为ORIGIN_GROUP时，该参数填写源站组ID，其他情况下填写源站地址。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_origin;
                     bool m_originHasBeenSet;
 
                     /**
                      * 备用源站组ID，该参数在OriginType参数指定为ORIGIN_GROUP时生效，为空表示不使用备用源站。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backupOrigin;
                     bool m_backupOriginHasBeenSet;
@@ -212,14 +189,12 @@ namespace TencentCloud
                      * 指定是否允许访问私有对象存储源站，当源站类型OriginType=COS或AWS_S3时有效，取值有：
 <li>on：使用私有鉴权；</li>
 <li>off：不使用私有鉴权。</li>不填写，默认值为：off。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_privateAccess;
                     bool m_privateAccessHasBeenSet;
 
                     /**
                      * 私有鉴权使用参数，当源站类型PrivateAccess=on时有效。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<PrivateParameter> m_privateParameters;
                     bool m_privateParametersHasBeenSet;

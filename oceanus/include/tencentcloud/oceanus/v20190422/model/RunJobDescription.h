@@ -156,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取使用历史版本系统依赖
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UseOldSystemConnector 使用历史版本系统依赖
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetUseOldSystemConnector() const;
 
                     /**
                      * 设置使用历史版本系统依赖
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param UseOldSystemConnector 使用历史版本系统依赖
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUseOldSystemConnector(const bool& _useOldSystemConnector);
 
@@ -216,7 +212,6 @@ namespace TencentCloud
 
                     /**
                      * 使用历史版本系统依赖
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_useOldSystemConnector;
                     bool m_useOldSystemConnectorHasBeenSet;

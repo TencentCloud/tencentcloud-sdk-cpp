@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcnId 带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCcnId() const;
 
                     /**
                      * 设置带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CcnId 带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCcnId(const std::string& _ccnId);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserAccountID 实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUserAccountID() const;
 
                     /**
                      * 设置实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param UserAccountID 实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUserAccountID(const std::string& _userAccountID);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RegionFlowControlId 带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRegionFlowControlId() const;
 
                     /**
                      * 设置带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param RegionFlowControlId 带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRegionFlowControlId(const std::string& _regionFlowControlId);
 
@@ -116,21 +104,18 @@ namespace TencentCloud
 
                     /**
                      * 带宽所属的云联网ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ccnId;
                     bool m_ccnIdHasBeenSet;
 
                     /**
                      * 实例所属用户主账号ID。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userAccountID;
                     bool m_userAccountIDHasBeenSet;
 
                     /**
                      * 带宽实例的唯一ID。作为`UnlockCcnBandwidths`接口和`LockCcnBandwidths`接口的入参时，该字段必传。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_regionFlowControlId;
                     bool m_regionFlowControlIdHasBeenSet;

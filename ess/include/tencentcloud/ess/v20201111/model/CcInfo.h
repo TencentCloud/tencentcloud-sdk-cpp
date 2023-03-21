@@ -66,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取被抄送人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 被抄送人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置被抄送人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 被抄送人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -90,11 +86,9 @@ namespace TencentCloud
                      * 获取被抄送人类型,
 0--个人
 1--员工
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcType 被抄送人类型,
 0--个人
 1--员工
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCcType() const;
 
@@ -102,11 +96,9 @@ namespace TencentCloud
                      * 设置被抄送人类型,
 0--个人
 1--员工
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CcType 被抄送人类型,
 0--个人
 1--员工
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCcType(const int64_t& _ccType);
 
@@ -120,11 +112,9 @@ namespace TencentCloud
                      * 获取被抄送人权限
 0--可查看
 1--可查看也可下载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CcPermission 被抄送人权限
 0--可查看
 1--可查看也可下载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetCcPermission() const;
 
@@ -132,11 +122,9 @@ namespace TencentCloud
                      * 设置被抄送人权限
 0--可查看
 1--可查看也可下载
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CcPermission 被抄送人权限
 0--可查看
 1--可查看也可下载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCcPermission(const int64_t& _ccPermission);
 
@@ -156,7 +144,6 @@ namespace TencentCloud
 
                     /**
                      * 被抄送人姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -165,7 +152,6 @@ namespace TencentCloud
                      * 被抄送人类型,
 0--个人
 1--员工
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ccType;
                     bool m_ccTypeHasBeenSet;
@@ -174,7 +160,6 @@ namespace TencentCloud
                      * 被抄送人权限
 0--可查看
 1--可查看也可下载
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_ccPermission;
                     bool m_ccPermissionHasBeenSet;

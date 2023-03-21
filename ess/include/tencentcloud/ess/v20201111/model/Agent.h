@@ -66,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取被代理机构的应用号，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyAppId 被代理机构的应用号，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyAppId() const;
 
                     /**
                      * 设置被代理机构的应用号，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProxyAppId 被代理机构的应用号，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyAppId(const std::string& _proxyAppId);
 
@@ -88,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取被代理机构在电子签平台的机构编号，集团代理下场景必传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyOrganizationId 被代理机构在电子签平台的机构编号，集团代理下场景必传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyOrganizationId() const;
 
                     /**
                      * 设置被代理机构在电子签平台的机构编号，集团代理下场景必传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProxyOrganizationId 被代理机构在电子签平台的机构编号，集团代理下场景必传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyOrganizationId(const std::string& _proxyOrganizationId);
 
@@ -110,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取被代理机构的经办人，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ProxyOperator 被代理机构的经办人，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProxyOperator() const;
 
                     /**
                      * 设置被代理机构的经办人，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ProxyOperator 被代理机构的经办人，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProxyOperator(const std::string& _proxyOperator);
 
@@ -140,21 +128,18 @@ namespace TencentCloud
 
                     /**
                      * 被代理机构的应用号，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyAppId;
                     bool m_proxyAppIdHasBeenSet;
 
                     /**
                      * 被代理机构在电子签平台的机构编号，集团代理下场景必传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyOrganizationId;
                     bool m_proxyOrganizationIdHasBeenSet;
 
                     /**
                      * 被代理机构的经办人，一般不用传
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_proxyOperator;
                     bool m_proxyOperatorHasBeenSet;

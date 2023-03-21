@@ -138,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取记录权重值(暂未支持)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Weight 记录权重值(暂未支持)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetWeight() const;
 
                     /**
                      * 设置记录权重值(暂未支持)。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Weight 记录权重值(暂未支持)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWeight(const uint64_t& _weight);
 
@@ -264,7 +260,6 @@ namespace TencentCloud
 
                     /**
                      * 记录权重值(暂未支持)。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_weight;
                     bool m_weightHasBeenSet;

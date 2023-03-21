@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取集群挂载CFS文件系统选项
-                     * @return CFSOptions 集群挂载CFS文件系统选项
+                     * 获取集群挂载CFS文件系统选项。
+                     * @return CFSOptions 集群挂载CFS文件系统选项。
                      */
                     std::vector<CFSOption> GetCFSOptions() const;
 
                     /**
-                     * 设置集群挂载CFS文件系统选项
-                     * @param CFSOptions 集群挂载CFS文件系统选项
+                     * 设置集群挂载CFS文件系统选项。
+                     * @param CFSOptions 集群挂载CFS文件系统选项。
                      */
                     void SetCFSOptions(const std::vector<CFSOption>& _cFSOptions);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool CFSOptionsHasBeenSet() const;
 
                     /**
-                     * 获取集群挂在GooseFS文件系统选项
-                     * @return GooseFSOptions 集群挂在GooseFS文件系统选项
+                     * 获取集群挂载GooseFS文件系统选项。
+                     * @return GooseFSOptions 集群挂载GooseFS文件系统选项。
                      */
                     std::vector<GooseFSOption> GetGooseFSOptions() const;
 
                     /**
-                     * 设置集群挂在GooseFS文件系统选项
-                     * @param GooseFSOptions 集群挂在GooseFS文件系统选项
+                     * 设置集群挂载GooseFS文件系统选项。
+                     * @param GooseFSOptions 集群挂载GooseFS文件系统选项。
                      */
                     void SetGooseFSOptions(const std::vector<GooseFSOption>& _gooseFSOptions);
 
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 集群挂载CFS文件系统选项
+                     * 集群挂载CFS文件系统选项。
                      */
                     std::vector<CFSOption> m_cFSOptions;
                     bool m_cFSOptionsHasBeenSet;
 
                     /**
-                     * 集群挂在GooseFS文件系统选项
+                     * 集群挂载GooseFS文件系统选项。
                      */
                     std::vector<GooseFSOption> m_gooseFSOptions;
                     bool m_gooseFSOptionsHasBeenSet;

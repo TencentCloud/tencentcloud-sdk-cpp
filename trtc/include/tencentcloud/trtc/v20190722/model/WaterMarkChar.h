@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印的起始坐标Y值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Top 文字水印的起始坐标Y值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTop() const;
 
                     /**
                      * 设置文字水印的起始坐标Y值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Top 文字水印的起始坐标Y值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTop(const uint64_t& _top);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印的起始坐标X值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Left 文字水印的起始坐标X值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetLeft() const;
 
                     /**
                      * 设置文字水印的起始坐标X值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Left 文字水印的起始坐标X值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLeft(const uint64_t& _left);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印的宽度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Width 文字水印的宽度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetWidth() const;
 
                     /**
                      * 设置文字水印的宽度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Width 文字水印的宽度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWidth(const uint64_t& _width);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取文字水印的高度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Height 文字水印的高度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetHeight() const;
 
                     /**
                      * 设置文字水印的高度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Height 文字水印的高度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHeight(const uint64_t& _height);
 
@@ -136,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印文字的内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Chars 水印文字的内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetChars() const;
 
                     /**
                      * 设置水印文字的内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Chars 水印文字的内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetChars(const std::string& _chars);
 
@@ -158,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印文字的大小，单位像素，默认14
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontSize 水印文字的大小，单位像素，默认14
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetFontSize() const;
 
                     /**
                      * 设置水印文字的大小，单位像素，默认14
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FontSize 水印文字的大小，单位像素，默认14
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFontSize(const uint64_t& _fontSize);
 
@@ -180,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印文字的颜色，默认白色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FontColor 水印文字的颜色，默认白色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFontColor() const;
 
                     /**
                      * 设置水印文字的颜色，默认白色
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FontColor 水印文字的颜色，默认白色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFontColor(const std::string& _fontColor);
 
@@ -202,17 +174,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印文字的背景色，为空代表背景透明，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BackGroundColor 水印文字的背景色，为空代表背景透明，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBackGroundColor() const;
 
                     /**
                      * 设置水印文字的背景色，为空代表背景透明，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param BackGroundColor 水印文字的背景色，为空代表背景透明，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBackGroundColor(const std::string& _backGroundColor);
 
@@ -226,56 +194,48 @@ namespace TencentCloud
 
                     /**
                      * 文字水印的起始坐标Y值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_top;
                     bool m_topHasBeenSet;
 
                     /**
                      * 文字水印的起始坐标X值，从左上角开始
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_left;
                     bool m_leftHasBeenSet;
 
                     /**
                      * 文字水印的宽度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_width;
                     bool m_widthHasBeenSet;
 
                     /**
                      * 文字水印的高度，单位像素值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_height;
                     bool m_heightHasBeenSet;
 
                     /**
                      * 水印文字的内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_chars;
                     bool m_charsHasBeenSet;
 
                     /**
                      * 水印文字的大小，单位像素，默认14
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_fontSize;
                     bool m_fontSizeHasBeenSet;
 
                     /**
                      * 水印文字的颜色，默认白色
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_fontColor;
                     bool m_fontColorHasBeenSet;
 
                     /**
                      * 水印文字的背景色，为空代表背景透明，默认为空
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_backGroundColor;
                     bool m_backGroundColorHasBeenSet;

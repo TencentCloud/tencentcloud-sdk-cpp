@@ -29,7 +29,9 @@ ScanStat::ScanStat() :
     m_pvHasBeenSet(false),
     m_uvHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_merchantNameHasBeenSet(false),
+    m_productNameHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome ScanStat::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("MerchantName") && !value["MerchantName"].IsNull())
+    {
+        if (!value["MerchantName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanStat.MerchantName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_merchantName = string(value["MerchantName"].GetString());
+        m_merchantNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("ProductName") && !value["ProductName"].IsNull())
+    {
+        if (!value["ProductName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScanStat.ProductName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_productName = string(value["ProductName"].GetString());
+        m_productNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void ScanStat::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_updateTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_merchantNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MerchantName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_merchantName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_productName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void ScanStat::SetUpdateTime(const string& _updateTime)
 bool ScanStat::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+string ScanStat::GetMerchantName() const
+{
+    return m_merchantName;
+}
+
+void ScanStat::SetMerchantName(const string& _merchantName)
+{
+    m_merchantName = _merchantName;
+    m_merchantNameHasBeenSet = true;
+}
+
+bool ScanStat::MerchantNameHasBeenSet() const
+{
+    return m_merchantNameHasBeenSet;
+}
+
+string ScanStat::GetProductName() const
+{
+    return m_productName;
+}
+
+void ScanStat::SetProductName(const string& _productName)
+{
+    m_productName = _productName;
+    m_productNameHasBeenSet = true;
+}
+
+bool ScanStat::ProductNameHasBeenSet() const
+{
+    return m_productNameHasBeenSet;
 }
 

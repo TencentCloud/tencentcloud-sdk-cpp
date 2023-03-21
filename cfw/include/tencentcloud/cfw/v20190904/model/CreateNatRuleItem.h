@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取访问源示例： net：IP/CIDR(192.168.0.2)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceContent 访问源示例： net：IP/CIDR(192.168.0.2)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSourceContent() const;
 
                     /**
                      * 设置访问源示例： net：IP/CIDR(192.168.0.2)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SourceContent 访问源示例： net：IP/CIDR(192.168.0.2)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSourceContent(const std::string& _sourceContent);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SourceType 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSourceType() const;
 
                     /**
                      * 设置访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SourceType 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSourceType(const std::string& _sourceType);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetContent 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTargetContent() const;
 
                     /**
                      * 设置访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TargetContent 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTargetContent(const std::string& _targetContent);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TargetType 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTargetType() const;
 
                     /**
                      * 设置访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TargetType 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTargetType(const std::string& _targetType);
 
@@ -136,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Protocol 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetProtocol() const;
 
                     /**
                      * 设置协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Protocol 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetProtocol(const std::string& _protocol);
 
@@ -158,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRuleAction() const;
 
                     /**
                      * 设置访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param RuleAction 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRuleAction(const std::string& _ruleAction);
 
@@ -180,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPort() const;
 
                     /**
                      * 设置访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Port 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPort(const std::string& _port);
 
@@ -202,17 +174,13 @@ namespace TencentCloud
 
                     /**
                      * 获取规则方向：1，入站；0，出站
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Direction 规则方向：1，入站；0，出站
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetDirection() const;
 
                     /**
                      * 设置规则方向：1，入站；0，出站
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Direction 规则方向：1，入站；0，出站
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDirection(const uint64_t& _direction);
 
@@ -224,17 +192,13 @@ namespace TencentCloud
 
                     /**
                      * 获取规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OrderIndex 规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetOrderIndex() const;
 
                     /**
                      * 设置规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OrderIndex 规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOrderIndex(const int64_t& _orderIndex);
 
@@ -246,17 +210,13 @@ namespace TencentCloud
 
                     /**
                      * 获取规则状态，true表示启用，false表示禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Enable 规则状态，true表示启用，false表示禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEnable() const;
 
                     /**
                      * 设置规则状态，true表示启用，false表示禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Enable 规则状态，true表示启用，false表示禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEnable(const std::string& _enable);
 
@@ -268,17 +228,13 @@ namespace TencentCloud
 
                     /**
                      * 获取规则对应的唯一id，创建规则时无需填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Uuid 规则对应的唯一id，创建规则时无需填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetUuid() const;
 
                     /**
                      * 设置规则对应的唯一id，创建规则时无需填写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Uuid 规则对应的唯一id，创建规则时无需填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUuid(const int64_t& _uuid);
 
@@ -290,17 +246,13 @@ namespace TencentCloud
 
                     /**
                      * 获取描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetDescription() const;
 
                     /**
                      * 设置描述
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Description 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDescription(const std::string& _description);
 
@@ -314,84 +266,72 @@ namespace TencentCloud
 
                     /**
                      * 访问源示例： net：IP/CIDR(192.168.0.2)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceContent;
                     bool m_sourceContentHasBeenSet;
 
                     /**
                      * 访问源类型：入向规则时类型可以为 ip,net,template,location；出向规则时可以为 ip,net,template,instance,group,tag
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;
 
                     /**
                      * 访问目的示例： net：IP/CIDR(192.168.0.2) domain：域名规则，例如*.qq.com
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetContent;
                     bool m_targetContentHasBeenSet;
 
                     /**
                      * 访问目的类型：入向规则时类型可以为ip,net,template,instance,group,tag；出向规则时可以为  ip,net,domain,template,location
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_targetType;
                     bool m_targetTypeHasBeenSet;
 
                     /**
                      * 协议，可选的值： TCP UDP ICMP ANY HTTP HTTPS HTTP/HTTPS SMTP SMTPS SMTP/SMTPS FTP DNS
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_protocol;
                     bool m_protocolHasBeenSet;
 
                     /**
                      * 访问控制策略中设置的流量通过云防火墙的方式。取值： accept：放行 drop：拒绝 log：观察
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ruleAction;
                     bool m_ruleActionHasBeenSet;
 
                     /**
                      * 访问控制策略的端口。取值： -1/-1：全部端口 80：80端口
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * 规则方向：1，入站；0，出站
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_direction;
                     bool m_directionHasBeenSet;
 
                     /**
                      * 规则序号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_orderIndex;
                     bool m_orderIndexHasBeenSet;
 
                     /**
                      * 规则状态，true表示启用，false表示禁用
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_enable;
                     bool m_enableHasBeenSet;
 
                     /**
                      * 规则对应的唯一id，创建规则时无需填写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_uuid;
                     bool m_uuidHasBeenSet;
 
                     /**
                      * 描述
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;

@@ -84,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配到的词条文本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MatchText 匹配到的词条文本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMatchText() const;
 
                     /**
                      * 设置匹配到的词条文本。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MatchText 匹配到的词条文本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMatchText(const std::string& _matchText);
 
@@ -106,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取词条的词性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pos 词条的词性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPos() const;
 
                     /**
                      * 设置词条的词性。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Pos 词条的词性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPos(const std::string& _pos);
 
@@ -142,14 +134,12 @@ namespace TencentCloud
 
                     /**
                      * 匹配到的词条文本。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_matchText;
                     bool m_matchTextHasBeenSet;
 
                     /**
                      * 词条的词性。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_pos;
                     bool m_posHasBeenSet;

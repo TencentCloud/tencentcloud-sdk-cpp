@@ -208,6 +208,42 @@ namespace TencentCloud
                      */
                     bool UpdateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取商户名称
+                     * @return MerchantName 商户名称
+                     */
+                    std::string GetMerchantName() const;
+
+                    /**
+                     * 设置商户名称
+                     * @param MerchantName 商户名称
+                     */
+                    void SetMerchantName(const std::string& _merchantName);
+
+                    /**
+                     * 判断参数 MerchantName 是否已赋值
+                     * @return MerchantName 是否已赋值
+                     */
+                    bool MerchantNameHasBeenSet() const;
+
+                    /**
+                     * 获取产品名称
+                     * @return ProductName 产品名称
+                     */
+                    std::string GetProductName() const;
+
+                    /**
+                     * 设置产品名称
+                     * @param ProductName 产品名称
+                     */
+                    void SetProductName(const std::string& _productName);
+
+                    /**
+                     * 判断参数 ProductName 是否已赋值
+                     * @return ProductName 是否已赋值
+                     */
+                    bool ProductNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -263,6 +299,18 @@ namespace TencentCloud
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;
+
+                    /**
+                     * 商户名称
+                     */
+                    std::string m_merchantName;
+                    bool m_merchantNameHasBeenSet;
+
+                    /**
+                     * 产品名称
+                     */
+                    std::string m_productName;
+                    bool m_productNameHasBeenSet;
 
                 };
             }

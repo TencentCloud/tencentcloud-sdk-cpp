@@ -87,17 +87,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印为文字时的参数列表，水印为文字时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaterMarkChar 水印为文字时的参数列表，水印为文字时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WaterMarkChar GetWaterMarkChar() const;
 
                     /**
                      * 设置水印为文字时的参数列表，水印为文字时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WaterMarkChar 水印为文字时的参数列表，水印为文字时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWaterMarkChar(const WaterMarkChar& _waterMarkChar);
 
@@ -109,17 +105,13 @@ namespace TencentCloud
 
                     /**
                      * 获取水印为时间戳时的参数列表，水印为时间戳时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return WaterMarkTimestamp 水印为时间戳时的参数列表，水印为时间戳时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WaterMarkTimestamp GetWaterMarkTimestamp() const;
 
                     /**
                      * 设置水印为时间戳时的参数列表，水印为时间戳时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param WaterMarkTimestamp 水印为时间戳时的参数列表，水印为时间戳时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetWaterMarkTimestamp(const WaterMarkTimestamp& _waterMarkTimestamp);
 
@@ -145,14 +137,12 @@ namespace TencentCloud
 
                     /**
                      * 水印为文字时的参数列表，水印为文字时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WaterMarkChar m_waterMarkChar;
                     bool m_waterMarkCharHasBeenSet;
 
                     /**
                      * 水印为时间戳时的参数列表，水印为时间戳时校验必填。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     WaterMarkTimestamp m_waterMarkTimestamp;
                     bool m_waterMarkTimestampHasBeenSet;

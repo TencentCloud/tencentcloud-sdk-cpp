@@ -34,7 +34,8 @@ CreateConnectResourceRequest::CreateConnectResourceRequest() :
     m_postgreSQLConnectParamHasBeenSet(false),
     m_mariaDBConnectParamHasBeenSet(false),
     m_sQLServerConnectParamHasBeenSet(false),
-    m_dorisConnectParamHasBeenSet(false)
+    m_dorisConnectParamHasBeenSet(false),
+    m_kafkaConnectParamHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,15 @@ string CreateConnectResourceRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dorisConnectParam.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_kafkaConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kafkaConnectParam.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -348,6 +358,22 @@ void CreateConnectResourceRequest::SetDorisConnectParam(const DorisConnectParam&
 bool CreateConnectResourceRequest::DorisConnectParamHasBeenSet() const
 {
     return m_dorisConnectParamHasBeenSet;
+}
+
+KafkaConnectParam CreateConnectResourceRequest::GetKafkaConnectParam() const
+{
+    return m_kafkaConnectParam;
+}
+
+void CreateConnectResourceRequest::SetKafkaConnectParam(const KafkaConnectParam& _kafkaConnectParam)
+{
+    m_kafkaConnectParam = _kafkaConnectParam;
+    m_kafkaConnectParamHasBeenSet = true;
+}
+
+bool CreateConnectResourceRequest::KafkaConnectParamHasBeenSet() const
+{
+    return m_kafkaConnectParamHasBeenSet;
 }
 
 

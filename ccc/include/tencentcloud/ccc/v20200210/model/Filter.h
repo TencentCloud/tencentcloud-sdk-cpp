@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取筛选字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 筛选字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置筛选字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 筛选字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取筛选条件值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 筛选条件值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置筛选条件值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Values 筛选条件值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
@@ -94,14 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 筛选字段名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 筛选条件值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;

@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取工作空间 SpaceKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return SpaceKey 工作空间 SpaceKey
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetSpaceKey() const;
 
                     /**
                      * 设置工作空间 SpaceKey
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param SpaceKey 工作空间 SpaceKey
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetSpaceKey(const std::string& _spaceKey);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取token过期时间，单位是秒，默认 3600
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TokenExpiredLimitSec token过期时间，单位是秒，默认 3600
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTokenExpiredLimitSec() const;
 
                     /**
                      * 设置token过期时间，单位是秒，默认 3600
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TokenExpiredLimitSec token过期时间，单位是秒，默认 3600
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTokenExpiredLimitSec(const uint64_t& _tokenExpiredLimitSec);
 
@@ -94,14 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 工作空间 SpaceKey
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_spaceKey;
                     bool m_spaceKeyHasBeenSet;
 
                     /**
                      * token过期时间，单位是秒，默认 3600
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_tokenExpiredLimitSec;
                     bool m_tokenExpiredLimitSecHasBeenSet;

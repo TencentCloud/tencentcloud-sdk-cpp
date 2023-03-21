@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取批次ID
-                     * @return BatchId 批次ID
-                     */
-                    std::string GetBatchId() const;
-
-                    /**
-                     * 设置批次ID
-                     * @param BatchId 批次ID
-                     */
-                    void SetBatchId(const std::string& _batchId);
-
-                    /**
-                     * 判断参数 BatchId 是否已赋值
-                     * @return BatchId 是否已赋值
-                     */
-                    bool BatchIdHasBeenSet() const;
-
-                    /**
                      * 获取企业ID
                      * @return CorpId 企业ID
                      */
@@ -114,13 +96,61 @@ namespace TencentCloud
                      */
                     bool PageNumberHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取商户ID
+                     * @return MerchantId 商户ID
+                     */
+                    std::string GetMerchantId() const;
 
                     /**
-                     * 批次ID
+                     * 设置商户ID
+                     * @param MerchantId 商户ID
                      */
-                    std::string m_batchId;
-                    bool m_batchIdHasBeenSet;
+                    void SetMerchantId(const std::string& _merchantId);
+
+                    /**
+                     * 判断参数 MerchantId 是否已赋值
+                     * @return MerchantId 是否已赋值
+                     */
+                    bool MerchantIdHasBeenSet() const;
+
+                    /**
+                     * 获取产品ID
+                     * @return ProductId 产品ID
+                     */
+                    std::string GetProductId() const;
+
+                    /**
+                     * 设置产品ID
+                     * @param ProductId 产品ID
+                     */
+                    void SetProductId(const std::string& _productId);
+
+                    /**
+                     * 判断参数 ProductId 是否已赋值
+                     * @return ProductId 是否已赋值
+                     */
+                    bool ProductIdHasBeenSet() const;
+
+                    /**
+                     * 获取批次ID
+                     * @return BatchId 批次ID
+                     */
+                    std::string GetBatchId() const;
+
+                    /**
+                     * 设置批次ID
+                     * @param BatchId 批次ID
+                     */
+                    void SetBatchId(const std::string& _batchId);
+
+                    /**
+                     * 判断参数 BatchId 是否已赋值
+                     * @return BatchId 是否已赋值
+                     */
+                    bool BatchIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 企业ID
@@ -139,6 +169,24 @@ namespace TencentCloud
                      */
                     uint64_t m_pageNumber;
                     bool m_pageNumberHasBeenSet;
+
+                    /**
+                     * 商户ID
+                     */
+                    std::string m_merchantId;
+                    bool m_merchantIdHasBeenSet;
+
+                    /**
+                     * 产品ID
+                     */
+                    std::string m_productId;
+                    bool m_productIdHasBeenSet;
+
+                    /**
+                     * 批次ID
+                     */
+                    std::string m_batchId;
+                    bool m_batchIdHasBeenSet;
 
                 };
             }

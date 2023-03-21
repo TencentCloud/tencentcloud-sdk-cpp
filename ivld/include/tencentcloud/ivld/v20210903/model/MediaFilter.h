@@ -50,17 +50,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒资名称过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaNameSet 媒资名称过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetMediaNameSet() const;
 
                     /**
                      * 设置媒资名称过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MediaNameSet 媒资名称过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMediaNameSet(const std::vector<std::string>& _mediaNameSet);
 
@@ -72,17 +68,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒资状态数组，媒资状态可选值参见MediaInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return StatusSet 媒资状态数组，媒资状态可选值参见MediaInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> GetStatusSet() const;
 
                     /**
                      * 设置媒资状态数组，媒资状态可选值参见MediaInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param StatusSet 媒资状态数组，媒资状态可选值参见MediaInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatusSet(const std::vector<int64_t>& _statusSet);
 
@@ -94,17 +86,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒资ID数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaIdSet 媒资ID数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetMediaIdSet() const;
 
                     /**
                      * 设置媒资ID数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MediaIdSet 媒资ID数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMediaIdSet(const std::vector<std::string>& _mediaIdSet);
 
@@ -116,17 +104,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒资自定义标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return LabelSet 媒资自定义标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetLabelSet() const;
 
                     /**
                      * 设置媒资自定义标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param LabelSet 媒资自定义标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetLabelSet(const std::vector<std::string>& _labelSet);
 
@@ -138,17 +122,13 @@ namespace TencentCloud
 
                     /**
                      * 获取媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return MediaType 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetMediaType() const;
 
                     /**
                      * 设置媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param MediaType 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMediaType(const int64_t& _mediaType);
 
@@ -162,35 +142,30 @@ namespace TencentCloud
 
                     /**
                      * 媒资名称过滤条件
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_mediaNameSet;
                     bool m_mediaNameSetHasBeenSet;
 
                     /**
                      * 媒资状态数组，媒资状态可选值参见MediaInfo
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<int64_t> m_statusSet;
                     bool m_statusSetHasBeenSet;
 
                     /**
                      * 媒资ID数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_mediaIdSet;
                     bool m_mediaIdSetHasBeenSet;
 
                     /**
                      * 媒资自定义标签数组
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_labelSet;
                     bool m_labelSetHasBeenSet;
 
                     /**
                      * 媒资文件类型，定义参见[MediaPreknownInfo.MediaType](https://cloud.tencent.com/document/product/1509/65063#MediaPreknownInfo)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_mediaType;
                     bool m_mediaTypeHasBeenSet;

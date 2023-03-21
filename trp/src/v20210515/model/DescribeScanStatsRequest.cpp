@@ -23,10 +23,12 @@ using namespace TencentCloud::Trp::V20210515::Model;
 using namespace std;
 
 DescribeScanStatsRequest::DescribeScanStatsRequest() :
-    m_batchIdHasBeenSet(false),
     m_corpIdHasBeenSet(false),
     m_pageSizeHasBeenSet(false),
-    m_pageNumberHasBeenSet(false)
+    m_pageNumberHasBeenSet(false),
+    m_merchantIdHasBeenSet(false),
+    m_productIdHasBeenSet(false),
+    m_batchIdHasBeenSet(false)
 {
 }
 
@@ -36,14 +38,6 @@ string DescribeScanStatsRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_batchIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "BatchId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_corpIdHasBeenSet)
     {
@@ -69,6 +63,30 @@ string DescribeScanStatsRequest::ToJsonString() const
         d.AddMember(iKey, m_pageNumber, allocator);
     }
 
+    if (m_merchantIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MerchantId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_merchantId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_productIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ProductId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_productId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_batchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -76,22 +94,6 @@ string DescribeScanStatsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeScanStatsRequest::GetBatchId() const
-{
-    return m_batchId;
-}
-
-void DescribeScanStatsRequest::SetBatchId(const string& _batchId)
-{
-    m_batchId = _batchId;
-    m_batchIdHasBeenSet = true;
-}
-
-bool DescribeScanStatsRequest::BatchIdHasBeenSet() const
-{
-    return m_batchIdHasBeenSet;
-}
 
 uint64_t DescribeScanStatsRequest::GetCorpId() const
 {
@@ -139,6 +141,54 @@ void DescribeScanStatsRequest::SetPageNumber(const uint64_t& _pageNumber)
 bool DescribeScanStatsRequest::PageNumberHasBeenSet() const
 {
     return m_pageNumberHasBeenSet;
+}
+
+string DescribeScanStatsRequest::GetMerchantId() const
+{
+    return m_merchantId;
+}
+
+void DescribeScanStatsRequest::SetMerchantId(const string& _merchantId)
+{
+    m_merchantId = _merchantId;
+    m_merchantIdHasBeenSet = true;
+}
+
+bool DescribeScanStatsRequest::MerchantIdHasBeenSet() const
+{
+    return m_merchantIdHasBeenSet;
+}
+
+string DescribeScanStatsRequest::GetProductId() const
+{
+    return m_productId;
+}
+
+void DescribeScanStatsRequest::SetProductId(const string& _productId)
+{
+    m_productId = _productId;
+    m_productIdHasBeenSet = true;
+}
+
+bool DescribeScanStatsRequest::ProductIdHasBeenSet() const
+{
+    return m_productIdHasBeenSet;
+}
+
+string DescribeScanStatsRequest::GetBatchId() const
+{
+    return m_batchId;
+}
+
+void DescribeScanStatsRequest::SetBatchId(const string& _batchId)
+{
+    m_batchId = _batchId;
+    m_batchIdHasBeenSet = true;
+}
+
+bool DescribeScanStatsRequest::BatchIdHasBeenSet() const
+{
+    return m_batchIdHasBeenSet;
 }
 
 

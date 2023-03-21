@@ -50,20 +50,16 @@ namespace TencentCloud
                     /**
                      * 获取签署人姓名，最大长度50个字符
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 签署人姓名，最大长度50个字符
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置签署人姓名，最大长度50个字符
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 签署人姓名，最大长度50个字符
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -75,17 +71,13 @@ namespace TencentCloud
 
                     /**
                      * 获取签署人手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Mobile 签署人手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMobile() const;
 
                     /**
                      * 设置签署人手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Mobile 签署人手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMobile(const std::string& _mobile);
 
@@ -97,17 +89,13 @@ namespace TencentCloud
 
                     /**
                      * 获取要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RelievedApproverReceiptId 要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRelievedApproverReceiptId() const;
 
                     /**
                      * 设置要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param RelievedApproverReceiptId 要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRelievedApproverReceiptId(const std::string& _relievedApproverReceiptId);
 
@@ -122,21 +110,18 @@ namespace TencentCloud
                     /**
                      * 签署人姓名，最大长度50个字符
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 签署人手机号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_mobile;
                     bool m_mobileHasBeenSet;
 
                     /**
                      * 要替换的参与人在原合同参与人列表中的签署人编号,通过DescribeFlowInfo 接口获取（即FlowDetailInfos. FlowApproverInfos 结构中的ReceiptId ）
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_relievedApproverReceiptId;
                     bool m_relievedApproverReceiptIdHasBeenSet;

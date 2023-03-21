@@ -69,17 +69,17 @@ namespace TencentCloud
                     bool InstanceGroupTypeHasBeenSet() const;
 
                     /**
-                     * 获取接入组ID
+                     * 获取实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return InstanceGroupId 接入组ID
+                     * @return InstanceGroupId 实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetInstanceGroupId() const;
 
                     /**
-                     * 设置接入组ID
+                     * 设置实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param InstanceGroupId 接入组ID
+                     * @param InstanceGroupId 实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstanceGroupId(const std::string& _instanceGroupId);
@@ -298,7 +298,7 @@ namespace TencentCloud
                     bool m_instanceGroupTypeHasBeenSet;
 
                     /**
-                     * 接入组ID
+                     * 实例组ID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_instanceGroupId;

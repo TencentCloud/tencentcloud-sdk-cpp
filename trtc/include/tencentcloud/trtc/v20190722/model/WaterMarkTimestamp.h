@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Pos 时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetPos() const;
 
                     /**
                      * 设置时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Pos 时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPos(const uint64_t& _pos);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取显示时间戳的时区，默认东八区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TimeZone 显示时间戳的时区，默认东八区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetTimeZone() const;
 
                     /**
                      * 设置显示时间戳的时区，默认东八区
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TimeZone 显示时间戳的时区，默认东八区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTimeZone(const uint64_t& _timeZone);
 
@@ -94,14 +86,12 @@ namespace TencentCloud
 
                     /**
                      * 时间戳的位置，取值范围0-6，分别代表上左，上右，下左，下右，上居中，下居中，居中
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_pos;
                     bool m_posHasBeenSet;
 
                     /**
                      * 显示时间戳的时区，默认东八区
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_timeZone;
                     bool m_timeZoneHasBeenSet;

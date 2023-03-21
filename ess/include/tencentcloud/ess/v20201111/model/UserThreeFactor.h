@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -73,12 +69,10 @@ namespace TencentCloud
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCardType 证件类型: 
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIdCardType() const;
 
@@ -87,12 +81,10 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param IdCardType 证件类型: 
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIdCardType(const std::string& _idCardType);
 
@@ -104,17 +96,13 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 
                     /**
                      * 获取证件号，如果有 X 请大写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IdCardNumber 证件号，如果有 X 请大写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIdCardNumber() const;
 
                     /**
                      * 设置证件号，如果有 X 请大写
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param IdCardNumber 证件号，如果有 X 请大写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIdCardNumber(const std::string& _idCardNumber);
 
@@ -128,7 +116,6 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 
                     /**
                      * 姓名
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
@@ -138,14 +125,12 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
 ID_CARD 身份证
 HONGKONG_AND_MACAO 港澳居民来往内地通行证
 HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idCardType;
                     bool m_idCardTypeHasBeenSet;
 
                     /**
                      * 证件号，如果有 X 请大写
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_idCardNumber;
                     bool m_idCardNumberHasBeenSet;

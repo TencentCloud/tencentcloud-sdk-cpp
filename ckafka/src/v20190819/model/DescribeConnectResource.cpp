@@ -39,7 +39,8 @@ DescribeConnectResource::DescribeConnectResource() :
     m_mariaDBConnectParamHasBeenSet(false),
     m_sQLServerConnectParamHasBeenSet(false),
     m_ctsdbConnectParamHasBeenSet(false),
-    m_dorisConnectParamHasBeenSet(false)
+    m_dorisConnectParamHasBeenSet(false),
+    m_kafkaConnectParamHasBeenSet(false)
 {
 }
 
@@ -308,6 +309,23 @@ CoreInternalOutcome DescribeConnectResource::Deserialize(const rapidjson::Value 
         m_dorisConnectParamHasBeenSet = true;
     }
 
+    if (value.HasMember("KafkaConnectParam") && !value["KafkaConnectParam"].IsNull())
+    {
+        if (!value["KafkaConnectParam"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.KafkaConnectParam` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_kafkaConnectParam.Deserialize(value["KafkaConnectParam"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_kafkaConnectParamHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -475,6 +493,15 @@ void DescribeConnectResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_dorisConnectParam.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_kafkaConnectParamHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KafkaConnectParam";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_kafkaConnectParam.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -782,5 +809,21 @@ void DescribeConnectResource::SetDorisConnectParam(const DorisConnectParam& _dor
 bool DescribeConnectResource::DorisConnectParamHasBeenSet() const
 {
     return m_dorisConnectParamHasBeenSet;
+}
+
+KafkaConnectParam DescribeConnectResource::GetKafkaConnectParam() const
+{
+    return m_kafkaConnectParam;
+}
+
+void DescribeConnectResource::SetKafkaConnectParam(const KafkaConnectParam& _kafkaConnectParam)
+{
+    m_kafkaConnectParam = _kafkaConnectParam;
+    m_kafkaConnectParamHasBeenSet = true;
+}
+
+bool DescribeConnectResource::KafkaConnectParamHasBeenSet() const
+{
+    return m_kafkaConnectParamHasBeenSet;
 }
 

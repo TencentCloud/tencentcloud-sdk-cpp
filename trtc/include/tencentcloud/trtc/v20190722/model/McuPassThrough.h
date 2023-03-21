@@ -102,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取SEI发送间隔，单位毫秒，默认值为1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Interval SEI发送间隔，单位毫秒，默认值为1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetInterval() const;
 
                     /**
                      * 设置SEI发送间隔，单位毫秒，默认值为1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Interval SEI发送间隔，单位毫秒，默认值为1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInterval(const uint64_t& _interval);
 
@@ -124,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FollowIdr 取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetFollowIdr() const;
 
                     /**
                      * 设置取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FollowIdr 取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFollowIdr(const uint64_t& _followIdr);
 
@@ -166,14 +158,12 @@ namespace TencentCloud
 
                     /**
                      * SEI发送间隔，单位毫秒，默认值为1000。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_interval;
                     bool m_intervalHasBeenSet;
 
                     /**
                      * 取值范围[0,1]，填1：发送关键帧时会确保带SEI；填0：发送关键帧时不确保带SEI。默认值为0。
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_followIdr;
                     bool m_followIdrHasBeenSet;

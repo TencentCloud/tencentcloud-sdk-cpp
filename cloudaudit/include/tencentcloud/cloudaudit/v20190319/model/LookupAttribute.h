@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttributeKey AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAttributeKey() const;
 
                     /**
                      * 设置AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AttributeKey AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAttributeKey(const std::string& _attributeKey);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取AttributeValue的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return AttributeValue AttributeValue的值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetAttributeValue() const;
 
                     /**
                      * 设置AttributeValue的值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param AttributeValue AttributeValue的值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetAttributeValue(const std::string& _attributeValue);
 
@@ -94,14 +86,12 @@ namespace TencentCloud
 
                     /**
                      * AttributeKey的有效取值范围是:RequestId、EventName、ReadOnly、Username、ResourceType、ResourceName和AccessKeyId，EventId
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attributeKey;
                     bool m_attributeKeyHasBeenSet;
 
                     /**
                      * AttributeValue的值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_attributeValue;
                     bool m_attributeValueHasBeenSet;

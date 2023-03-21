@@ -212,6 +212,49 @@ PostgresClient::CloseServerlessDBExtranetAccessOutcomeCallable PostgresClient::C
     return task->get_future();
 }
 
+PostgresClient::CreateBaseBackupOutcome PostgresClient::CreateBaseBackup(const CreateBaseBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateBaseBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateBaseBackupResponse rsp = CreateBaseBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateBaseBackupOutcome(rsp);
+        else
+            return CreateBaseBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateBaseBackupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::CreateBaseBackupAsync(const CreateBaseBackupRequest& request, const CreateBaseBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateBaseBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::CreateBaseBackupOutcomeCallable PostgresClient::CreateBaseBackupCallable(const CreateBaseBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateBaseBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateBaseBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::CreateDBInstanceNetworkAccessOutcome PostgresClient::CreateDBInstanceNetworkAccess(const CreateDBInstanceNetworkAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBInstanceNetworkAccess");
@@ -556,6 +599,49 @@ PostgresClient::CreateServerlessDBInstanceOutcomeCallable PostgresClient::Create
     return task->get_future();
 }
 
+PostgresClient::DeleteBaseBackupOutcome PostgresClient::DeleteBaseBackup(const DeleteBaseBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBaseBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBaseBackupResponse rsp = DeleteBaseBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBaseBackupOutcome(rsp);
+        else
+            return DeleteBaseBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBaseBackupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteBaseBackupAsync(const DeleteBaseBackupRequest& request, const DeleteBaseBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBaseBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteBaseBackupOutcomeCallable PostgresClient::DeleteBaseBackupCallable(const DeleteBaseBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBaseBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBaseBackup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DeleteDBInstanceNetworkAccessOutcome PostgresClient::DeleteDBInstanceNetworkAccess(const DeleteDBInstanceNetworkAccessRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDBInstanceNetworkAccess");
@@ -592,6 +678,49 @@ PostgresClient::DeleteDBInstanceNetworkAccessOutcomeCallable PostgresClient::Del
         [this, request]()
         {
             return this->DeleteDBInstanceNetworkAccess(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DeleteLogBackupOutcome PostgresClient::DeleteLogBackup(const DeleteLogBackupRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteLogBackup");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteLogBackupResponse rsp = DeleteLogBackupResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteLogBackupOutcome(rsp);
+        else
+            return DeleteLogBackupOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteLogBackupOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DeleteLogBackupAsync(const DeleteLogBackupRequest& request, const DeleteLogBackupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteLogBackup(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DeleteLogBackupOutcomeCallable PostgresClient::DeleteLogBackupCallable(const DeleteLogBackupRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteLogBackupOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteLogBackup(request);
         }
     );
 
@@ -857,6 +986,92 @@ PostgresClient::DescribeAvailableRecoveryTimeOutcomeCallable PostgresClient::Des
     return task->get_future();
 }
 
+PostgresClient::DescribeBackupDownloadURLOutcome PostgresClient::DescribeBackupDownloadURL(const DescribeBackupDownloadURLRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDownloadURL");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDownloadURLResponse rsp = DescribeBackupDownloadURLResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDownloadURLOutcome(rsp);
+        else
+            return DescribeBackupDownloadURLOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDownloadURLOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeBackupDownloadURLAsync(const DescribeBackupDownloadURLRequest& request, const DescribeBackupDownloadURLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDownloadURL(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeBackupDownloadURLOutcomeCallable PostgresClient::DescribeBackupDownloadURLCallable(const DescribeBackupDownloadURLRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadURLOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDownloadURL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeBackupOverviewOutcome PostgresClient::DescribeBackupOverview(const DescribeBackupOverviewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupOverview");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupOverviewResponse rsp = DescribeBackupOverviewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupOverviewOutcome(rsp);
+        else
+            return DescribeBackupOverviewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupOverviewOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeBackupOverviewAsync(const DescribeBackupOverviewRequest& request, const DescribeBackupOverviewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupOverview(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeBackupOverviewOutcomeCallable PostgresClient::DescribeBackupOverviewCallable(const DescribeBackupOverviewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupOverviewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupOverview(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeBackupPlansOutcome PostgresClient::DescribeBackupPlans(const DescribeBackupPlansRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupPlans");
@@ -893,6 +1108,135 @@ PostgresClient::DescribeBackupPlansOutcomeCallable PostgresClient::DescribeBacku
         [this, request]()
         {
             return this->DescribeBackupPlans(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeBackupSummariesOutcome PostgresClient::DescribeBackupSummaries(const DescribeBackupSummariesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupSummaries");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupSummariesResponse rsp = DescribeBackupSummariesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupSummariesOutcome(rsp);
+        else
+            return DescribeBackupSummariesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupSummariesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeBackupSummariesAsync(const DescribeBackupSummariesRequest& request, const DescribeBackupSummariesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupSummaries(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeBackupSummariesOutcomeCallable PostgresClient::DescribeBackupSummariesCallable(const DescribeBackupSummariesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupSummariesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupSummaries(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeBaseBackupsOutcome PostgresClient::DescribeBaseBackups(const DescribeBaseBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBaseBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBaseBackupsResponse rsp = DescribeBaseBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBaseBackupsOutcome(rsp);
+        else
+            return DescribeBaseBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBaseBackupsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeBaseBackupsAsync(const DescribeBaseBackupsRequest& request, const DescribeBaseBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBaseBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeBaseBackupsOutcomeCallable PostgresClient::DescribeBaseBackupsCallable(const DescribeBaseBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBaseBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBaseBackups(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeClassesOutcome PostgresClient::DescribeClasses(const DescribeClassesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeClasses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeClassesResponse rsp = DescribeClassesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeClassesOutcome(rsp);
+        else
+            return DescribeClassesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeClassesOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeClassesAsync(const DescribeClassesRequest& request, const DescribeClassesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeClasses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeClassesOutcomeCallable PostgresClient::DescribeClassesCallable(const DescribeClassesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeClassesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeClasses(request);
         }
     );
 
@@ -1244,6 +1588,49 @@ PostgresClient::DescribeDBSlowlogsOutcomeCallable PostgresClient::DescribeDBSlow
     return task->get_future();
 }
 
+PostgresClient::DescribeDBVersionsOutcome PostgresClient::DescribeDBVersions(const DescribeDBVersionsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBVersions");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBVersionsResponse rsp = DescribeDBVersionsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBVersionsOutcome(rsp);
+        else
+            return DescribeDBVersionsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBVersionsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeDBVersionsAsync(const DescribeDBVersionsRequest& request, const DescribeDBVersionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBVersions(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeDBVersionsOutcomeCallable PostgresClient::DescribeDBVersionsCallable(const DescribeDBVersionsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBVersionsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBVersions(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeDBXlogsOutcome PostgresClient::DescribeDBXlogs(const DescribeDBXlogsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBXlogs");
@@ -1409,6 +1796,49 @@ PostgresClient::DescribeEncryptionKeysOutcomeCallable PostgresClient::DescribeEn
         [this, request]()
         {
             return this->DescribeEncryptionKeys(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::DescribeLogBackupsOutcome PostgresClient::DescribeLogBackups(const DescribeLogBackupsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogBackups");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogBackupsResponse rsp = DescribeLogBackupsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogBackupsOutcome(rsp);
+        else
+            return DescribeLogBackupsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogBackupsOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeLogBackupsAsync(const DescribeLogBackupsRequest& request, const DescribeLogBackupsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogBackups(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeLogBackupsOutcomeCallable PostgresClient::DescribeLogBackupsCallable(const DescribeLogBackupsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogBackupsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogBackups(request);
         }
     );
 
@@ -2276,6 +2706,49 @@ PostgresClient::ModifyBackupPlanOutcomeCallable PostgresClient::ModifyBackupPlan
     return task->get_future();
 }
 
+PostgresClient::ModifyBaseBackupExpireTimeOutcome PostgresClient::ModifyBaseBackupExpireTime(const ModifyBaseBackupExpireTimeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBaseBackupExpireTime");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBaseBackupExpireTimeResponse rsp = ModifyBaseBackupExpireTimeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBaseBackupExpireTimeOutcome(rsp);
+        else
+            return ModifyBaseBackupExpireTimeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBaseBackupExpireTimeOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyBaseBackupExpireTimeAsync(const ModifyBaseBackupExpireTimeRequest& request, const ModifyBaseBackupExpireTimeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBaseBackupExpireTime(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyBaseBackupExpireTimeOutcomeCallable PostgresClient::ModifyBaseBackupExpireTimeCallable(const ModifyBaseBackupExpireTimeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBaseBackupExpireTimeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBaseBackupExpireTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyDBInstanceDeploymentOutcome PostgresClient::ModifyDBInstanceDeployment(const ModifyDBInstanceDeploymentRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyDBInstanceDeployment");
@@ -3086,6 +3559,49 @@ PostgresClient::UpgradeDBInstanceOutcomeCallable PostgresClient::UpgradeDBInstan
         [this, request]()
         {
             return this->UpgradeDBInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::UpgradeDBInstanceKernelVersionOutcome PostgresClient::UpgradeDBInstanceKernelVersion(const UpgradeDBInstanceKernelVersionRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpgradeDBInstanceKernelVersion");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpgradeDBInstanceKernelVersionResponse rsp = UpgradeDBInstanceKernelVersionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpgradeDBInstanceKernelVersionOutcome(rsp);
+        else
+            return UpgradeDBInstanceKernelVersionOutcome(o.GetError());
+    }
+    else
+    {
+        return UpgradeDBInstanceKernelVersionOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::UpgradeDBInstanceKernelVersionAsync(const UpgradeDBInstanceKernelVersionRequest& request, const UpgradeDBInstanceKernelVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpgradeDBInstanceKernelVersion(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::UpgradeDBInstanceKernelVersionOutcomeCallable PostgresClient::UpgradeDBInstanceKernelVersionCallable(const UpgradeDBInstanceKernelVersionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpgradeDBInstanceKernelVersionOutcome()>>(
+        [this, request]()
+        {
+            return this->UpgradeDBInstanceKernelVersion(request);
         }
     );
 

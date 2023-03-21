@@ -25,7 +25,8 @@ using namespace std;
 AddVpcCniSubnetsRequest::AddVpcCniSubnetsRequest() :
     m_clusterIdHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
-    m_vpcIdHasBeenSet(false)
+    m_vpcIdHasBeenSet(false),
+    m_skipAddingNonMasqueradeCIDRsHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,14 @@ string AddVpcCniSubnetsRequest::ToJsonString() const
         string key = "VpcId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_vpcId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_skipAddingNonMasqueradeCIDRsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipAddingNonMasqueradeCIDRs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipAddingNonMasqueradeCIDRs, allocator);
     }
 
 
@@ -119,6 +128,22 @@ void AddVpcCniSubnetsRequest::SetVpcId(const string& _vpcId)
 bool AddVpcCniSubnetsRequest::VpcIdHasBeenSet() const
 {
     return m_vpcIdHasBeenSet;
+}
+
+bool AddVpcCniSubnetsRequest::GetSkipAddingNonMasqueradeCIDRs() const
+{
+    return m_skipAddingNonMasqueradeCIDRs;
+}
+
+void AddVpcCniSubnetsRequest::SetSkipAddingNonMasqueradeCIDRs(const bool& _skipAddingNonMasqueradeCIDRs)
+{
+    m_skipAddingNonMasqueradeCIDRs = _skipAddingNonMasqueradeCIDRs;
+    m_skipAddingNonMasqueradeCIDRsHasBeenSet = true;
+}
+
+bool AddVpcCniSubnetsRequest::SkipAddingNonMasqueradeCIDRsHasBeenSet() const
+{
+    return m_skipAddingNonMasqueradeCIDRsHasBeenSet;
 }
 
 

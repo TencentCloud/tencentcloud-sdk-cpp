@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取解除理由，最大支持200个字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Reason 解除理由，最大支持200个字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetReason() const;
 
                     /**
                      * 设置解除理由，最大支持200个字
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Reason 解除理由，最大支持200个字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReason(const std::string& _reason);
 
@@ -71,20 +67,16 @@ namespace TencentCloud
                     /**
                      * 获取解除后仍然有效的条款，保留条款，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return RemainInForceItem 解除后仍然有效的条款，保留条款，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRemainInForceItem() const;
 
                     /**
                      * 设置解除后仍然有效的条款，保留条款，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param RemainInForceItem 解除后仍然有效的条款，保留条款，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRemainInForceItem(const std::string& _remainInForceItem);
 
@@ -97,20 +89,16 @@ namespace TencentCloud
                     /**
                      * 获取原合同事项处理-费用结算，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalExpenseSettlement 原合同事项处理-费用结算，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginalExpenseSettlement() const;
 
                     /**
                      * 设置原合同事项处理-费用结算，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OriginalExpenseSettlement 原合同事项处理-费用结算，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginalExpenseSettlement(const std::string& _originalExpenseSettlement);
 
@@ -123,20 +111,16 @@ namespace TencentCloud
                     /**
                      * 获取原合同事项处理-其他事项，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OriginalOtherSettlement 原合同事项处理-其他事项，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOriginalOtherSettlement() const;
 
                     /**
                      * 设置原合同事项处理-其他事项，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OriginalOtherSettlement 原合同事项处理-其他事项，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOriginalOtherSettlement(const std::string& _originalOtherSettlement);
 
@@ -149,20 +133,16 @@ namespace TencentCloud
                     /**
                      * 获取其他约定，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return OtherDeals 其他约定，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOtherDeals() const;
 
                     /**
                      * 设置其他约定，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param OtherDeals 其他约定，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOtherDeals(const std::string& _otherDeals);
 
@@ -176,7 +156,6 @@ namespace TencentCloud
 
                     /**
                      * 解除理由，最大支持200个字
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_reason;
                     bool m_reasonHasBeenSet;
@@ -184,7 +163,6 @@ namespace TencentCloud
                     /**
                      * 解除后仍然有效的条款，保留条款，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remainInForceItem;
                     bool m_remainInForceItemHasBeenSet;
@@ -192,7 +170,6 @@ namespace TencentCloud
                     /**
                      * 原合同事项处理-费用结算，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalExpenseSettlement;
                     bool m_originalExpenseSettlementHasBeenSet;
@@ -200,7 +177,6 @@ namespace TencentCloud
                     /**
                      * 原合同事项处理-其他事项，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_originalOtherSettlement;
                     bool m_originalOtherSettlementHasBeenSet;
@@ -208,7 +184,6 @@ namespace TencentCloud
                     /**
                      * 其他约定，最大支持200个字
 
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_otherDeals;
                     bool m_otherDealsHasBeenSet;

@@ -45,6 +45,8 @@
 #include <tencentcloud/ckafka/v20190819/model/CreateConsumerResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateDatahubTopicRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateDatahubTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePostRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePostResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h>
@@ -210,6 +212,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDatahubTaskResponse> CreateDatahubTaskOutcome;
                 typedef std::future<CreateDatahubTaskOutcome> CreateDatahubTaskOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateDatahubTaskRequest&, CreateDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateDatahubTopicResponse> CreateDatahubTopicOutcome;
+                typedef std::future<CreateDatahubTopicOutcome> CreateDatahubTopicOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateDatahubTopicRequest&, CreateDatahubTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDatahubTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateInstancePostResponse> CreateInstancePostOutcome;
                 typedef std::future<CreateInstancePostOutcome> CreateInstancePostOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateInstancePostRequest&, CreateInstancePostOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateInstancePostAsyncHandler;
@@ -488,6 +493,15 @@ namespace TencentCloud
                 CreateDatahubTaskOutcome CreateDatahubTask(const Model::CreateDatahubTaskRequest &request);
                 void CreateDatahubTaskAsync(const Model::CreateDatahubTaskRequest& request, const CreateDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDatahubTaskOutcomeCallable CreateDatahubTaskCallable(const Model::CreateDatahubTaskRequest& request);
+
+                /**
+                 *创建Datahub主题
+                 * @param req CreateDatahubTopicRequest
+                 * @return CreateDatahubTopicOutcome
+                 */
+                CreateDatahubTopicOutcome CreateDatahubTopic(const Model::CreateDatahubTopicRequest &request);
+                void CreateDatahubTopicAsync(const Model::CreateDatahubTopicRequest& request, const CreateDatahubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateDatahubTopicOutcomeCallable CreateDatahubTopicCallable(const Model::CreateDatahubTopicRequest& request);
 
                 /**
                  *创建按量计费实例

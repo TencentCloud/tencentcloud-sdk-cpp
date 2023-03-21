@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取引擎节点所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return EngineRegion 引擎节点所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetEngineRegion() const;
 
                     /**
                      * 设置引擎节点所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param EngineRegion 引擎节点所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetEngineRegion(const std::string& _engineRegion);
 
@@ -71,17 +67,13 @@ namespace TencentCloud
 
                     /**
                      * 获取此地域节点分配数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Replica 此地域节点分配数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetReplica() const;
 
                     /**
                      * 设置此地域节点分配数量
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Replica 此地域节点分配数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReplica(const int64_t& _replica);
 
@@ -93,17 +85,13 @@ namespace TencentCloud
 
                     /**
                      * 获取集群网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return VpcInfos 集群网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> GetVpcInfos() const;
 
                     /**
                      * 设置集群网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param VpcInfos 集群网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetVpcInfos(const std::vector<VpcInfo>& _vpcInfos);
 
@@ -117,21 +105,18 @@ namespace TencentCloud
 
                     /**
                      * 引擎节点所在地域
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_engineRegion;
                     bool m_engineRegionHasBeenSet;
 
                     /**
                      * 此地域节点分配数量
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_replica;
                     bool m_replicaHasBeenSet;
 
                     /**
                      * 集群网络信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<VpcInfo> m_vpcInfos;
                     bool m_vpcInfosHasBeenSet;

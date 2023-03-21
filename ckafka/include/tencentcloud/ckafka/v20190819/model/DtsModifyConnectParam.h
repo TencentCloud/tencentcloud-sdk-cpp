@@ -48,17 +48,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts实例Id【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Resource Dts实例Id【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetResource() const;
 
                     /**
                      * 设置Dts实例Id【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Resource Dts实例Id【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetResource(const std::string& _resource);
 
@@ -70,17 +66,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Port Dts的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetPort() const;
 
                     /**
                      * 设置Dts的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Port Dts的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPort(const int64_t& _port);
 
@@ -92,17 +84,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts消费分组的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return GroupId Dts消费分组的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGroupId() const;
 
                     /**
                      * 设置Dts消费分组的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param GroupId Dts消费分组的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -114,17 +102,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts消费分组的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return UserName Dts消费分组的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUserName() const;
 
                     /**
                      * 设置Dts消费分组的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param UserName Dts消费分组的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUserName(const std::string& _userName);
 
@@ -136,17 +120,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts消费分组的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Password Dts消费分组的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPassword() const;
 
                     /**
                      * 设置Dts消费分组的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Password Dts消费分组的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPassword(const std::string& _password);
 
@@ -158,17 +138,13 @@ namespace TencentCloud
 
                     /**
                      * 获取是否更新到关联的Datahub任务，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IsUpdate 是否更新到关联的Datahub任务，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetIsUpdate() const;
 
                     /**
                      * 设置是否更新到关联的Datahub任务，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param IsUpdate 是否更新到关联的Datahub任务，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIsUpdate(const bool& _isUpdate);
 
@@ -180,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Dts订阅的topic【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Topic Dts订阅的topic【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTopic() const;
 
                     /**
                      * 设置Dts订阅的topic【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Topic Dts订阅的topic【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTopic(const std::string& _topic);
 
@@ -204,49 +176,42 @@ namespace TencentCloud
 
                     /**
                      * Dts实例Id【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_resource;
                     bool m_resourceHasBeenSet;
 
                     /**
                      * Dts的连接port【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_port;
                     bool m_portHasBeenSet;
 
                     /**
                      * Dts消费分组的Id
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
                      * Dts消费分组的账号
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_userName;
                     bool m_userNameHasBeenSet;
 
                     /**
                      * Dts消费分组的密码
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;
 
                     /**
                      * 是否更新到关联的Datahub任务，默认为true
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_isUpdate;
                     bool m_isUpdateHasBeenSet;
 
                     /**
                      * Dts订阅的topic【不支持修改】
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_topic;
                     bool m_topicHasBeenSet;

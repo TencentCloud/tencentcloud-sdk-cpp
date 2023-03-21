@@ -49,17 +49,13 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowName 合同流程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFlowName() const;
 
                     /**
                      * 设置合同流程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FlowName 合同流程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlowName(const std::string& _flowName);
 
@@ -71,17 +67,13 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowType 合同流程类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFlowType() const;
 
                     /**
                      * 设置合同流程类型
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FlowType 合同流程类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlowType(const std::string& _flowType);
 
@@ -93,17 +85,13 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FlowDescription 合同流程描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetFlowDescription() const;
 
                     /**
                      * 设置合同流程描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FlowDescription 合同流程描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFlowDescription(const std::string& _flowDescription);
 
@@ -115,17 +103,13 @@ namespace TencentCloud
 
                     /**
                      * 获取合同流程截止时间，unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Deadline 合同流程截止时间，unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetDeadline() const;
 
                     /**
                      * 设置合同流程截止时间，unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Deadline 合同流程截止时间，unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetDeadline(const int64_t& _deadline);
 
@@ -137,17 +121,13 @@ namespace TencentCloud
 
                     /**
                      * 获取是否顺序签署(true:无序签,false:顺序签)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Unordered 是否顺序签署(true:无序签,false:顺序签)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetUnordered() const;
 
                     /**
                      * 设置是否顺序签署(true:无序签,false:顺序签)
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Unordered 是否顺序签署(true:无序签,false:顺序签)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUnordered(const bool& _unordered);
 
@@ -159,17 +139,13 @@ namespace TencentCloud
 
                     /**
                      * 获取打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return IntelligentStatus 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetIntelligentStatus() const;
 
                     /**
                      * 设置打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param IntelligentStatus 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetIntelligentStatus(const std::string& _intelligentStatus);
 
@@ -181,17 +157,13 @@ namespace TencentCloud
 
                     /**
                      * 获取填写控件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return FormFields 填写控件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FormField> GetFormFields() const;
 
                     /**
                      * 设置填写控件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param FormFields 填写控件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetFormFields(const std::vector<FormField>& _formFields);
 
@@ -203,17 +175,13 @@ namespace TencentCloud
 
                     /**
                      * 获取本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return NeedSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetNeedSignReview() const;
 
                     /**
                      * 设置本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param NeedSignReview 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetNeedSignReview(const bool& _needSignReview);
 
@@ -227,56 +195,48 @@ namespace TencentCloud
 
                     /**
                      * 合同流程名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowName;
                     bool m_flowNameHasBeenSet;
 
                     /**
                      * 合同流程类型
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowType;
                     bool m_flowTypeHasBeenSet;
 
                     /**
                      * 合同流程描述信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_flowDescription;
                     bool m_flowDescriptionHasBeenSet;
 
                     /**
                      * 合同流程截止时间，unix时间戳
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_deadline;
                     bool m_deadlineHasBeenSet;
 
                     /**
                      * 是否顺序签署(true:无序签,false:顺序签)
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_unordered;
                     bool m_unorderedHasBeenSet;
 
                     /**
                      * 打开智能添加填写区(默认开启，打开:"OPEN" 关闭："CLOSE")
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_intelligentStatus;
                     bool m_intelligentStatusHasBeenSet;
 
                     /**
                      * 填写控件内容
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<FormField> m_formFields;
                     bool m_formFieldsHasBeenSet;
 
                     /**
                      * 本企业(发起方企业)是否需要签署审批，true：开启本企业签署审批
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;

@@ -157,17 +157,13 @@ namespace TencentCloud
 
                     /**
                      * 获取实例关联的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Tags 实例关联的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
                      * 设置实例关联的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Tags 实例关联的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
 
@@ -523,7 +519,6 @@ namespace TencentCloud
 
                     /**
                      * 实例关联的标签信息
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;
