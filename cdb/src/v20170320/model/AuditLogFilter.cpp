@@ -31,7 +31,13 @@ AuditLogFilter::AuditLogFilter() :
     m_execTimeHasBeenSet(false),
     m_affectRowsHasBeenSet(false),
     m_sqlTypesHasBeenSet(false),
-    m_sqlsHasBeenSet(false)
+    m_sqlsHasBeenSet(false),
+    m_affectRowsSectionHasBeenSet(false),
+    m_sentRowsSectionHasBeenSet(false),
+    m_execTimeSectionHasBeenSet(false),
+    m_lockWaitTimeSectionHasBeenSet(false),
+    m_ioWaitTimeSectionHasBeenSet(false),
+    m_transactionLivingTimeSectionHasBeenSet(false)
 {
 }
 
@@ -171,6 +177,66 @@ CoreInternalOutcome AuditLogFilter::Deserialize(const rapidjson::Value &value)
         m_sqlsHasBeenSet = true;
     }
 
+    if (value.HasMember("AffectRowsSection") && !value["AffectRowsSection"].IsNull())
+    {
+        if (!value["AffectRowsSection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.AffectRowsSection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_affectRowsSection = string(value["AffectRowsSection"].GetString());
+        m_affectRowsSectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("SentRowsSection") && !value["SentRowsSection"].IsNull())
+    {
+        if (!value["SentRowsSection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.SentRowsSection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sentRowsSection = string(value["SentRowsSection"].GetString());
+        m_sentRowsSectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("ExecTimeSection") && !value["ExecTimeSection"].IsNull())
+    {
+        if (!value["ExecTimeSection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.ExecTimeSection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_execTimeSection = string(value["ExecTimeSection"].GetString());
+        m_execTimeSectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("LockWaitTimeSection") && !value["LockWaitTimeSection"].IsNull())
+    {
+        if (!value["LockWaitTimeSection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.LockWaitTimeSection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_lockWaitTimeSection = string(value["LockWaitTimeSection"].GetString());
+        m_lockWaitTimeSectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("IoWaitTimeSection") && !value["IoWaitTimeSection"].IsNull())
+    {
+        if (!value["IoWaitTimeSection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.IoWaitTimeSection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ioWaitTimeSection = string(value["IoWaitTimeSection"].GetString());
+        m_ioWaitTimeSectionHasBeenSet = true;
+    }
+
+    if (value.HasMember("TransactionLivingTimeSection") && !value["TransactionLivingTimeSection"].IsNull())
+    {
+        if (!value["TransactionLivingTimeSection"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AuditLogFilter.TransactionLivingTimeSection` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_transactionLivingTimeSection = string(value["TransactionLivingTimeSection"].GetString());
+        m_transactionLivingTimeSectionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -299,6 +365,54 @@ void AuditLogFilter::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_affectRowsSectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AffectRowsSection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_affectRowsSection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sentRowsSectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SentRowsSection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sentRowsSection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_execTimeSectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ExecTimeSection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_execTimeSection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_lockWaitTimeSectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LockWaitTimeSection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_lockWaitTimeSection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ioWaitTimeSectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IoWaitTimeSection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ioWaitTimeSection.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_transactionLivingTimeSectionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TransactionLivingTimeSection";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_transactionLivingTimeSection.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -478,5 +592,101 @@ void AuditLogFilter::SetSqls(const vector<string>& _sqls)
 bool AuditLogFilter::SqlsHasBeenSet() const
 {
     return m_sqlsHasBeenSet;
+}
+
+string AuditLogFilter::GetAffectRowsSection() const
+{
+    return m_affectRowsSection;
+}
+
+void AuditLogFilter::SetAffectRowsSection(const string& _affectRowsSection)
+{
+    m_affectRowsSection = _affectRowsSection;
+    m_affectRowsSectionHasBeenSet = true;
+}
+
+bool AuditLogFilter::AffectRowsSectionHasBeenSet() const
+{
+    return m_affectRowsSectionHasBeenSet;
+}
+
+string AuditLogFilter::GetSentRowsSection() const
+{
+    return m_sentRowsSection;
+}
+
+void AuditLogFilter::SetSentRowsSection(const string& _sentRowsSection)
+{
+    m_sentRowsSection = _sentRowsSection;
+    m_sentRowsSectionHasBeenSet = true;
+}
+
+bool AuditLogFilter::SentRowsSectionHasBeenSet() const
+{
+    return m_sentRowsSectionHasBeenSet;
+}
+
+string AuditLogFilter::GetExecTimeSection() const
+{
+    return m_execTimeSection;
+}
+
+void AuditLogFilter::SetExecTimeSection(const string& _execTimeSection)
+{
+    m_execTimeSection = _execTimeSection;
+    m_execTimeSectionHasBeenSet = true;
+}
+
+bool AuditLogFilter::ExecTimeSectionHasBeenSet() const
+{
+    return m_execTimeSectionHasBeenSet;
+}
+
+string AuditLogFilter::GetLockWaitTimeSection() const
+{
+    return m_lockWaitTimeSection;
+}
+
+void AuditLogFilter::SetLockWaitTimeSection(const string& _lockWaitTimeSection)
+{
+    m_lockWaitTimeSection = _lockWaitTimeSection;
+    m_lockWaitTimeSectionHasBeenSet = true;
+}
+
+bool AuditLogFilter::LockWaitTimeSectionHasBeenSet() const
+{
+    return m_lockWaitTimeSectionHasBeenSet;
+}
+
+string AuditLogFilter::GetIoWaitTimeSection() const
+{
+    return m_ioWaitTimeSection;
+}
+
+void AuditLogFilter::SetIoWaitTimeSection(const string& _ioWaitTimeSection)
+{
+    m_ioWaitTimeSection = _ioWaitTimeSection;
+    m_ioWaitTimeSectionHasBeenSet = true;
+}
+
+bool AuditLogFilter::IoWaitTimeSectionHasBeenSet() const
+{
+    return m_ioWaitTimeSectionHasBeenSet;
+}
+
+string AuditLogFilter::GetTransactionLivingTimeSection() const
+{
+    return m_transactionLivingTimeSection;
+}
+
+void AuditLogFilter::SetTransactionLivingTimeSection(const string& _transactionLivingTimeSection)
+{
+    m_transactionLivingTimeSection = _transactionLivingTimeSection;
+    m_transactionLivingTimeSectionHasBeenSet = true;
+}
+
+bool AuditLogFilter::TransactionLivingTimeSectionHasBeenSet() const
+{
+    return m_transactionLivingTimeSectionHasBeenSet;
 }
 

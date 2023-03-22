@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取角色名称
-                     * @return RoleName 角色名称
+                     * 获取角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
+                     * @return RoleName 角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
                      */
                     std::string GetRoleName() const;
 
                     /**
-                     * 设置角色名称
-                     * @param RoleName 角色名称
+                     * 设置角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
+                     * @param RoleName 角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
                      */
                     void SetRoleName(const std::string& _roleName);
 
@@ -154,7 +154,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 角色名称
+                     * 角色名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
                      */
                     std::string m_roleName;
                     bool m_roleNameHasBeenSet;

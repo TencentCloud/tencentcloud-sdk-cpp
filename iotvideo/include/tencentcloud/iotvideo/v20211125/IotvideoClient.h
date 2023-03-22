@@ -33,6 +33,8 @@
 #include <tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncResponse.h>
+#include <tencentcloud/iotvideo/v20211125/model/CallTRTCDeviceRequest.h>
+#include <tencentcloud/iotvideo/v20211125/model/CallTRTCDeviceResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CancelAIModelApplicationRequest.h>
 #include <tencentcloud/iotvideo/v20211125/model/CancelAIModelApplicationResponse.h>
 #include <tencentcloud/iotvideo/v20211125/model/CancelDeviceFirmwareTaskRequest.h>
@@ -240,6 +242,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CallDeviceActionSyncResponse> CallDeviceActionSyncOutcome;
                 typedef std::future<CallDeviceActionSyncOutcome> CallDeviceActionSyncOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CallDeviceActionSyncRequest&, CallDeviceActionSyncOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallDeviceActionSyncAsyncHandler;
+                typedef Outcome<Core::Error, Model::CallTRTCDeviceResponse> CallTRTCDeviceOutcome;
+                typedef std::future<CallTRTCDeviceOutcome> CallTRTCDeviceOutcomeCallable;
+                typedef std::function<void(const IotvideoClient*, const Model::CallTRTCDeviceRequest&, CallTRTCDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CallTRTCDeviceAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelAIModelApplicationResponse> CancelAIModelApplicationOutcome;
                 typedef std::future<CancelAIModelApplicationOutcome> CancelAIModelApplicationOutcomeCallable;
                 typedef std::function<void(const IotvideoClient*, const Model::CancelAIModelApplicationRequest&, CancelAIModelApplicationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelAIModelApplicationAsyncHandler;
@@ -554,6 +559,15 @@ namespace TencentCloud
                 CallDeviceActionSyncOutcome CallDeviceActionSync(const Model::CallDeviceActionSyncRequest &request);
                 void CallDeviceActionSyncAsync(const Model::CallDeviceActionSyncRequest& request, const CallDeviceActionSyncAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CallDeviceActionSyncOutcomeCallable CallDeviceActionSyncCallable(const Model::CallDeviceActionSyncRequest& request);
+
+                /**
+                 *呼叫TRTC设备
+                 * @param req CallTRTCDeviceRequest
+                 * @return CallTRTCDeviceOutcome
+                 */
+                CallTRTCDeviceOutcome CallTRTCDevice(const Model::CallTRTCDeviceRequest &request);
+                void CallTRTCDeviceAsync(const Model::CallTRTCDeviceRequest& request, const CallTRTCDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CallTRTCDeviceOutcomeCallable CallTRTCDeviceCallable(const Model::CallTRTCDeviceRequest& request);
 
                 /**
                  *取消AI模型申请

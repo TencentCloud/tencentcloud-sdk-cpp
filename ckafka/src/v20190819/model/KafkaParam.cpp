@@ -36,7 +36,9 @@ KafkaParam::KafkaParam() :
     m_useTableMappingHasBeenSet(false),
     m_useAutoCreateTopicHasBeenSet(false),
     m_compressionTypeHasBeenSet(false),
-    m_msgMultipleHasBeenSet(false)
+    m_msgMultipleHasBeenSet(false),
+    m_connectorSyncTypeHasBeenSet(false),
+    m_keepPartitionHasBeenSet(false)
 {
 }
 
@@ -215,6 +217,26 @@ CoreInternalOutcome KafkaParam::Deserialize(const rapidjson::Value &value)
         m_msgMultipleHasBeenSet = true;
     }
 
+    if (value.HasMember("ConnectorSyncType") && !value["ConnectorSyncType"].IsNull())
+    {
+        if (!value["ConnectorSyncType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.ConnectorSyncType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_connectorSyncType = string(value["ConnectorSyncType"].GetString());
+        m_connectorSyncTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("KeepPartition") && !value["KeepPartition"].IsNull())
+    {
+        if (!value["KeepPartition"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `KafkaParam.KeepPartition` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_keepPartition = value["KeepPartition"].GetBool();
+        m_keepPartitionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -355,6 +377,22 @@ void KafkaParam::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "MsgMultiple";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_msgMultiple, allocator);
+    }
+
+    if (m_connectorSyncTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ConnectorSyncType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_connectorSyncType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keepPartitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeepPartition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_keepPartition, allocator);
     }
 
 }
@@ -614,5 +652,37 @@ void KafkaParam::SetMsgMultiple(const int64_t& _msgMultiple)
 bool KafkaParam::MsgMultipleHasBeenSet() const
 {
     return m_msgMultipleHasBeenSet;
+}
+
+string KafkaParam::GetConnectorSyncType() const
+{
+    return m_connectorSyncType;
+}
+
+void KafkaParam::SetConnectorSyncType(const string& _connectorSyncType)
+{
+    m_connectorSyncType = _connectorSyncType;
+    m_connectorSyncTypeHasBeenSet = true;
+}
+
+bool KafkaParam::ConnectorSyncTypeHasBeenSet() const
+{
+    return m_connectorSyncTypeHasBeenSet;
+}
+
+bool KafkaParam::GetKeepPartition() const
+{
+    return m_keepPartition;
+}
+
+void KafkaParam::SetKeepPartition(const bool& _keepPartition)
+{
+    m_keepPartition = _keepPartition;
+    m_keepPartitionHasBeenSet = true;
+}
+
+bool KafkaParam::KeepPartitionHasBeenSet() const
+{
+    return m_keepPartitionHasBeenSet;
 }
 

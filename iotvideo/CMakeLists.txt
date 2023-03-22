@@ -300,8 +300,9 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/ModifyPushChannelResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionSyncResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CreateProductResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/TRTCParams.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeDeviceDataHistoryResponse.h
-  include/tencentcloud/iotvideo/v20211125/model/ModifyDataForwardResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/CallTRTCDeviceRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CallDeviceActionAsyncRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeAIModelsRequest.h
   include/tencentcloud/iotvideo/v20211125/model/RetryDeviceFirmwareTaskResponse.h
@@ -377,6 +378,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/ImportModelDefinitionRequest.h
   include/tencentcloud/iotvideo/v20211125/model/CreateTaskFileUrlRequest.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyModelDefinitionResponse.h
+  include/tencentcloud/iotvideo/v20211125/model/CallTRTCDeviceResponse.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDeviceLogLevelResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CreateDataForwardRequest.h
   include/tencentcloud/iotvideo/v20211125/model/BatchUpdateFirmwareRequest.h
@@ -418,6 +420,7 @@ set(iotvideo_public_header_model
   include/tencentcloud/iotvideo/v20211125/model/DeleteDeviceResponse.h
   include/tencentcloud/iotvideo/v20211125/model/CreateTaskFileUrlResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DeviceCntStats.h
+  include/tencentcloud/iotvideo/v20211125/model/ModifyDataForwardResponse.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeCloudStorageUsersRequest.h
   include/tencentcloud/iotvideo/v20211125/model/ModifyDataForwardStatusRequest.h
   include/tencentcloud/iotvideo/v20211125/model/DescribeFirmwareTaskRequest.h
@@ -862,8 +865,9 @@ set(iotvideo_src
   src/v20211125/model/ModifyPushChannelResponse.cpp
   src/v20211125/model/CallDeviceActionSyncResponse.cpp
   src/v20211125/model/CreateProductResponse.cpp
+  src/v20211125/model/TRTCParams.cpp
   src/v20211125/model/DescribeDeviceDataHistoryResponse.cpp
-  src/v20211125/model/ModifyDataForwardResponse.cpp
+  src/v20211125/model/CallTRTCDeviceRequest.cpp
   src/v20211125/model/CallDeviceActionAsyncRequest.cpp
   src/v20211125/model/DescribeAIModelsRequest.cpp
   src/v20211125/model/RetryDeviceFirmwareTaskResponse.cpp
@@ -939,6 +943,7 @@ set(iotvideo_src
   src/v20211125/model/ImportModelDefinitionRequest.cpp
   src/v20211125/model/CreateTaskFileUrlRequest.cpp
   src/v20211125/model/ModifyModelDefinitionResponse.cpp
+  src/v20211125/model/CallTRTCDeviceResponse.cpp
   src/v20211125/model/ModifyDeviceLogLevelResponse.cpp
   src/v20211125/model/CreateDataForwardRequest.cpp
   src/v20211125/model/BatchUpdateFirmwareRequest.cpp
@@ -980,6 +985,7 @@ set(iotvideo_src
   src/v20211125/model/DeleteDeviceResponse.cpp
   src/v20211125/model/CreateTaskFileUrlResponse.cpp
   src/v20211125/model/DeviceCntStats.cpp
+  src/v20211125/model/ModifyDataForwardResponse.cpp
   src/v20211125/model/DescribeCloudStorageUsersRequest.cpp
   src/v20211125/model/ModifyDataForwardStatusRequest.cpp
   src/v20211125/model/DescribeFirmwareTaskRequest.cpp

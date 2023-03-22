@@ -78,6 +78,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/FreezeCloudBaseRunServersRequest.h
   include/tencentcloud/tcb/v20180608/model/BaasPackageInfo.h
   include/tencentcloud/tcb/v20180608/model/DescribeQuotaDataResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeGatewayCurveDataResponse.h
   include/tencentcloud/tcb/v20180608/model/ActivityInfoItem.h
   include/tencentcloud/tcb/v20180608/model/KVPair.h
   include/tencentcloud/tcb/v20180608/model/SmsFreeQuota.h
@@ -91,6 +92,7 @@ set(tcb_public_header_model
   include/tencentcloud/tcb/v20180608/model/CreateStaticStoreRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.h
   include/tencentcloud/tcb/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.h
+  include/tencentcloud/tcb/v20180608/model/DescribeGatewayCurveDataRequest.h
   include/tencentcloud/tcb/v20180608/model/CreateAuthDomainResponse.h
   include/tencentcloud/tcb/v20180608/model/ModifyDatabaseACLRequest.h
   include/tencentcloud/tcb/v20180608/model/DescribeEnvsRequest.h
@@ -300,6 +302,7 @@ set(tcb_src
   src/v20180608/model/FreezeCloudBaseRunServersRequest.cpp
   src/v20180608/model/BaasPackageInfo.cpp
   src/v20180608/model/DescribeQuotaDataResponse.cpp
+  src/v20180608/model/DescribeGatewayCurveDataResponse.cpp
   src/v20180608/model/ActivityInfoItem.cpp
   src/v20180608/model/KVPair.cpp
   src/v20180608/model/SmsFreeQuota.cpp
@@ -313,6 +316,7 @@ set(tcb_src
   src/v20180608/model/CreateStaticStoreRequest.cpp
   src/v20180608/model/CreateWxCloudBaseRunServerDBClusterRequest.cpp
   src/v20180608/model/DeleteCloudBaseProjectLatestVersionResponse.cpp
+  src/v20180608/model/DescribeGatewayCurveDataRequest.cpp
   src/v20180608/model/CreateAuthDomainResponse.cpp
   src/v20180608/model/ModifyDatabaseACLRequest.cpp
   src/v20180608/model/DescribeEnvsRequest.cpp

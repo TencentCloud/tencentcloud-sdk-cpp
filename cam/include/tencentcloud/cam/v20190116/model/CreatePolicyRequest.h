@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取策略名
-                     * @return PolicyName 策略名
+                     * 获取策略名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
+                     * @return PolicyName 策略名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
                      */
                     std::string GetPolicyName() const;
 
                     /**
-                     * 设置策略名
-                     * @param PolicyName 策略名
+                     * 设置策略名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
+                     * @param PolicyName 策略名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
                      */
                     void SetPolicyName(const std::string& _policyName);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 策略名
+                     * 策略名称。长度为1~128个字符，可包含英文字母、数字和+=,.@-_。
                      */
                     std::string m_policyName;
                     bool m_policyNameHasBeenSet;

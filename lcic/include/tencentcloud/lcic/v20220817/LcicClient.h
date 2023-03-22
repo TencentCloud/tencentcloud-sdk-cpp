@@ -65,6 +65,8 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeDeveloperRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeDeveloperResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomRequest.h>
@@ -186,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCurrentMemberListResponse> DescribeCurrentMemberListOutcome;
                 typedef std::future<DescribeCurrentMemberListOutcome> DescribeCurrentMemberListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeCurrentMemberListRequest&, DescribeCurrentMemberListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCurrentMemberListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDeveloperResponse> DescribeDeveloperOutcome;
+                typedef std::future<DescribeDeveloperOutcome> DescribeDeveloperOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeDeveloperRequest&, DescribeDeveloperOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDeveloperAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDocumentResponse> DescribeDocumentOutcome;
                 typedef std::future<DescribeDocumentOutcome> DescribeDocumentOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeDocumentRequest&, DescribeDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDocumentAsyncHandler;
@@ -443,6 +448,15 @@ namespace TencentCloud
                 DescribeCurrentMemberListOutcome DescribeCurrentMemberList(const Model::DescribeCurrentMemberListRequest &request);
                 void DescribeCurrentMemberListAsync(const Model::DescribeCurrentMemberListRequest& request, const DescribeCurrentMemberListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCurrentMemberListOutcomeCallable DescribeCurrentMemberListCallable(const Model::DescribeCurrentMemberListRequest& request);
+
+                /**
+                 *服务商信息获取
+                 * @param req DescribeDeveloperRequest
+                 * @return DescribeDeveloperOutcome
+                 */
+                DescribeDeveloperOutcome DescribeDeveloper(const Model::DescribeDeveloperRequest &request);
+                void DescribeDeveloperAsync(const Model::DescribeDeveloperRequest& request, const DescribeDeveloperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDeveloperOutcomeCallable DescribeDeveloperCallable(const Model::DescribeDeveloperRequest& request);
 
                 /**
                  *获取文档信息

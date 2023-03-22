@@ -25,6 +25,8 @@
 #include <tencentcloud/core/AsyncCallerContext.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AddTimeWindowResponse.h>
+#include <tencentcloud/cdb/v20170320/model/AnalyzeAuditLogsRequest.h>
+#include <tencentcloud/cdb/v20170320/model/AnalyzeAuditLogsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsRequest.h>
 #include <tencentcloud/cdb/v20170320/model/AssociateSecurityGroupsResponse.h>
 #include <tencentcloud/cdb/v20170320/model/BalanceRoGroupLoadRequest.h>
@@ -316,6 +318,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::AddTimeWindowResponse> AddTimeWindowOutcome;
                 typedef std::future<AddTimeWindowOutcome> AddTimeWindowOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AddTimeWindowRequest&, AddTimeWindowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AddTimeWindowAsyncHandler;
+                typedef Outcome<Core::Error, Model::AnalyzeAuditLogsResponse> AnalyzeAuditLogsOutcome;
+                typedef std::future<AnalyzeAuditLogsOutcome> AnalyzeAuditLogsOutcomeCallable;
+                typedef std::function<void(const CdbClient*, const Model::AnalyzeAuditLogsRequest&, AnalyzeAuditLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AnalyzeAuditLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::AssociateSecurityGroupsResponse> AssociateSecurityGroupsOutcome;
                 typedef std::future<AssociateSecurityGroupsOutcome> AssociateSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const CdbClient*, const Model::AssociateSecurityGroupsRequest&, AssociateSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AssociateSecurityGroupsAsyncHandler;
@@ -738,6 +743,15 @@ namespace TencentCloud
                 AddTimeWindowOutcome AddTimeWindow(const Model::AddTimeWindowRequest &request);
                 void AddTimeWindowAsync(const Model::AddTimeWindowRequest& request, const AddTimeWindowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 AddTimeWindowOutcomeCallable AddTimeWindowCallable(const Model::AddTimeWindowRequest& request);
+
+                /**
+                 *在不同过滤条件下的审计日志结果集中，选定特定的数据列进行聚合统计。
+                 * @param req AnalyzeAuditLogsRequest
+                 * @return AnalyzeAuditLogsOutcome
+                 */
+                AnalyzeAuditLogsOutcome AnalyzeAuditLogs(const Model::AnalyzeAuditLogsRequest &request);
+                void AnalyzeAuditLogsAsync(const Model::AnalyzeAuditLogsRequest& request, const AnalyzeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AnalyzeAuditLogsOutcomeCallable AnalyzeAuditLogsCallable(const Model::AnalyzeAuditLogsRequest& request);
 
                 /**
                  *本接口(AssociateSecurityGroups)用于安全组批量绑定实例。
@@ -1514,7 +1528,9 @@ namespace TencentCloud
                 DisassociateSecurityGroupsOutcomeCallable DisassociateSecurityGroupsCallable(const Model::DisassociateSecurityGroupsRequest& request);
 
                 /**
-                 *本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。
+                 *该接口不再维护，参考CreateDBInstance+API文档，在发货时即可完成初始化。
+
+本接口(InitDBInstances)用于初始化云数据库实例，包括初始化密码、默认字符集、实例端口号等。该接口已经废弃，在发货接口CreateDBInstance、CreateDBInstanceHour可以直接使用参数Password设置密码，使用参数ParamList设置字符集，使用参数Port设置端口号。
                  * @param req InitDBInstancesRequest
                  * @return InitDBInstancesOutcome
                  */

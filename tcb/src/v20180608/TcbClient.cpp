@@ -2190,6 +2190,49 @@ TcbClient::DescribeExtraPkgBillingInfoOutcomeCallable TcbClient::DescribeExtraPk
     return task->get_future();
 }
 
+TcbClient::DescribeGatewayCurveDataOutcome TcbClient::DescribeGatewayCurveData(const DescribeGatewayCurveDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeGatewayCurveData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeGatewayCurveDataResponse rsp = DescribeGatewayCurveDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeGatewayCurveDataOutcome(rsp);
+        else
+            return DescribeGatewayCurveDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeGatewayCurveDataOutcome(outcome.GetError());
+    }
+}
+
+void TcbClient::DescribeGatewayCurveDataAsync(const DescribeGatewayCurveDataRequest& request, const DescribeGatewayCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeGatewayCurveData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcbClient::DescribeGatewayCurveDataOutcomeCallable TcbClient::DescribeGatewayCurveDataCallable(const DescribeGatewayCurveDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeGatewayCurveDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeGatewayCurveData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcbClient::DescribeHostingDomainTaskOutcome TcbClient::DescribeHostingDomainTask(const DescribeHostingDomainTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeHostingDomainTask");

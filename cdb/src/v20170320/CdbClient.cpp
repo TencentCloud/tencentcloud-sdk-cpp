@@ -83,6 +83,49 @@ CdbClient::AddTimeWindowOutcomeCallable CdbClient::AddTimeWindowCallable(const A
     return task->get_future();
 }
 
+CdbClient::AnalyzeAuditLogsOutcome CdbClient::AnalyzeAuditLogs(const AnalyzeAuditLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "AnalyzeAuditLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AnalyzeAuditLogsResponse rsp = AnalyzeAuditLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AnalyzeAuditLogsOutcome(rsp);
+        else
+            return AnalyzeAuditLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return AnalyzeAuditLogsOutcome(outcome.GetError());
+    }
+}
+
+void CdbClient::AnalyzeAuditLogsAsync(const AnalyzeAuditLogsRequest& request, const AnalyzeAuditLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AnalyzeAuditLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CdbClient::AnalyzeAuditLogsOutcomeCallable CdbClient::AnalyzeAuditLogsCallable(const AnalyzeAuditLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AnalyzeAuditLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->AnalyzeAuditLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CdbClient::AssociateSecurityGroupsOutcome CdbClient::AssociateSecurityGroups(const AssociateSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "AssociateSecurityGroups");

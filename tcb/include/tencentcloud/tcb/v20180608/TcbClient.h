@@ -123,6 +123,8 @@
 #include <tencentcloud/tcb/v20180608/model/DescribeExtensionUploadInfoResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeExtraPkgBillingInfoResponse.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeGatewayCurveDataRequest.h>
+#include <tencentcloud/tcb/v20180608/model/DescribeGatewayCurveDataResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskRequest.h>
 #include <tencentcloud/tcb/v20180608/model/DescribeHostingDomainTaskResponse.h>
 #include <tencentcloud/tcb/v20180608/model/DescribePostpayFreeQuotasRequest.h>
@@ -347,6 +349,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExtraPkgBillingInfoResponse> DescribeExtraPkgBillingInfoOutcome;
                 typedef std::future<DescribeExtraPkgBillingInfoOutcome> DescribeExtraPkgBillingInfoOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeExtraPkgBillingInfoRequest&, DescribeExtraPkgBillingInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExtraPkgBillingInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeGatewayCurveDataResponse> DescribeGatewayCurveDataOutcome;
+                typedef std::future<DescribeGatewayCurveDataOutcome> DescribeGatewayCurveDataOutcomeCallable;
+                typedef std::function<void(const TcbClient*, const Model::DescribeGatewayCurveDataRequest&, DescribeGatewayCurveDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGatewayCurveDataAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeHostingDomainTaskResponse> DescribeHostingDomainTaskOutcome;
                 typedef std::future<DescribeHostingDomainTaskOutcome> DescribeHostingDomainTaskOutcomeCallable;
                 typedef std::function<void(const TcbClient*, const Model::DescribeHostingDomainTaskRequest&, DescribeHostingDomainTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeHostingDomainTaskAsyncHandler;
@@ -889,6 +894,15 @@ namespace TencentCloud
                 DescribeExtraPkgBillingInfoOutcome DescribeExtraPkgBillingInfo(const Model::DescribeExtraPkgBillingInfoRequest &request);
                 void DescribeExtraPkgBillingInfoAsync(const Model::DescribeExtraPkgBillingInfoRequest& request, const DescribeExtraPkgBillingInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExtraPkgBillingInfoOutcomeCallable DescribeExtraPkgBillingInfoCallable(const Model::DescribeExtraPkgBillingInfoRequest& request);
+
+                /**
+                 *查询网关监控数据
+                 * @param req DescribeGatewayCurveDataRequest
+                 * @return DescribeGatewayCurveDataOutcome
+                 */
+                DescribeGatewayCurveDataOutcome DescribeGatewayCurveData(const Model::DescribeGatewayCurveDataRequest &request);
+                void DescribeGatewayCurveDataAsync(const Model::DescribeGatewayCurveDataRequest& request, const DescribeGatewayCurveDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeGatewayCurveDataOutcomeCallable DescribeGatewayCurveDataCallable(const Model::DescribeGatewayCurveDataRequest& request);
 
                 /**
                  *查询静态托管域名任务状态

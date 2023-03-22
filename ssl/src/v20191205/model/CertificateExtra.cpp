@@ -25,7 +25,8 @@ CertificateExtra::CertificateExtra() :
     m_originCertificateIdHasBeenSet(false),
     m_replacedByHasBeenSet(false),
     m_replacedForHasBeenSet(false),
-    m_renewOrderHasBeenSet(false)
+    m_renewOrderHasBeenSet(false),
+    m_sMCertHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome CertificateExtra::Deserialize(const rapidjson::Value &value)
         m_renewOrderHasBeenSet = true;
     }
 
+    if (value.HasMember("SMCert") && !value["SMCert"].IsNull())
+    {
+        if (!value["SMCert"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateExtra.SMCert` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sMCert = value["SMCert"].GetInt64();
+        m_sMCertHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void CertificateExtra::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "RenewOrder";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_renewOrder.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sMCertHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SMCert";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sMCert, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void CertificateExtra::SetRenewOrder(const string& _renewOrder)
 bool CertificateExtra::RenewOrderHasBeenSet() const
 {
     return m_renewOrderHasBeenSet;
+}
+
+int64_t CertificateExtra::GetSMCert() const
+{
+    return m_sMCert;
+}
+
+void CertificateExtra::SetSMCert(const int64_t& _sMCert)
+{
+    m_sMCert = _sMCert;
+    m_sMCertHasBeenSet = true;
+}
+
+bool CertificateExtra::SMCertHasBeenSet() const
+{
+    return m_sMCertHasBeenSet;
 }
 

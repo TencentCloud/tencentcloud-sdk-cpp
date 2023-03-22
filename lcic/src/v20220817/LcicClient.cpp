@@ -943,6 +943,49 @@ LcicClient::DescribeCurrentMemberListOutcomeCallable LcicClient::DescribeCurrent
     return task->get_future();
 }
 
+LcicClient::DescribeDeveloperOutcome LcicClient::DescribeDeveloper(const DescribeDeveloperRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDeveloper");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDeveloperResponse rsp = DescribeDeveloperResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDeveloperOutcome(rsp);
+        else
+            return DescribeDeveloperOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDeveloperOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::DescribeDeveloperAsync(const DescribeDeveloperRequest& request, const DescribeDeveloperAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDeveloper(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::DescribeDeveloperOutcomeCallable LcicClient::DescribeDeveloperCallable(const DescribeDeveloperRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDeveloperOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDeveloper(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::DescribeDocumentOutcome LcicClient::DescribeDocument(const DescribeDocumentRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDocument");

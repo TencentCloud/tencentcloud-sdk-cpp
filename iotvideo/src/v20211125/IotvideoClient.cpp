@@ -255,6 +255,49 @@ IotvideoClient::CallDeviceActionSyncOutcomeCallable IotvideoClient::CallDeviceAc
     return task->get_future();
 }
 
+IotvideoClient::CallTRTCDeviceOutcome IotvideoClient::CallTRTCDevice(const CallTRTCDeviceRequest &request)
+{
+    auto outcome = MakeRequest(request, "CallTRTCDevice");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CallTRTCDeviceResponse rsp = CallTRTCDeviceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CallTRTCDeviceOutcome(rsp);
+        else
+            return CallTRTCDeviceOutcome(o.GetError());
+    }
+    else
+    {
+        return CallTRTCDeviceOutcome(outcome.GetError());
+    }
+}
+
+void IotvideoClient::CallTRTCDeviceAsync(const CallTRTCDeviceRequest& request, const CallTRTCDeviceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CallTRTCDevice(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+IotvideoClient::CallTRTCDeviceOutcomeCallable IotvideoClient::CallTRTCDeviceCallable(const CallTRTCDeviceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CallTRTCDeviceOutcome()>>(
+        [this, request]()
+        {
+            return this->CallTRTCDevice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 IotvideoClient::CancelAIModelApplicationOutcome IotvideoClient::CancelAIModelApplication(const CancelAIModelApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelAIModelApplication");

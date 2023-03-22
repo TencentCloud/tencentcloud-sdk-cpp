@@ -156,6 +156,28 @@ namespace TencentCloud
                      */
                     bool RenewOrderHasBeenSet() const;
 
+                    /**
+                     * 获取是否是国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SMCert 是否是国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSMCert() const;
+
+                    /**
+                     * 设置是否是国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SMCert 是否是国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSMCert(const int64_t& _sMCert);
+
+                    /**
+                     * 判断参数 SMCert 是否已赋值
+                     * @return SMCert 是否已赋值
+                     */
+                    bool SMCertHasBeenSet() const;
+
                 private:
 
                     /**
@@ -192,6 +214,13 @@ namespace TencentCloud
                      */
                     std::string m_renewOrder;
                     bool m_renewOrderHasBeenSet;
+
+                    /**
+                     * 是否是国密证书
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sMCert;
+                    bool m_sMCertHasBeenSet;
 
                 };
             }

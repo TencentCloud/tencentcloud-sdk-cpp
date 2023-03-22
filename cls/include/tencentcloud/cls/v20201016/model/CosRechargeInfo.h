@@ -114,17 +114,17 @@ namespace TencentCloud
                     bool LogsetIdHasBeenSet() const;
 
                     /**
-                     * 获取cos导入任务名称
+                     * 获取COS导入任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Name cos导入任务名称
+                     * @return Name COS导入任务名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置cos导入任务名称
+                     * 设置COS导入任务名称
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Name cos导入任务名称
+                     * @param Name COS导入任务名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
@@ -136,17 +136,17 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取cos存储桶
+                     * 获取COS存储桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Bucket cos存储桶
+                     * @return Bucket COS存储桶
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBucket() const;
 
                     /**
-                     * 设置cos存储桶
+                     * 设置COS存储桶
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Bucket cos存储桶
+                     * @param Bucket COS存储桶
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBucket(const std::string& _bucket);
@@ -158,17 +158,17 @@ namespace TencentCloud
                     bool BucketHasBeenSet() const;
 
                     /**
-                     * 获取cos存储桶地域
+                     * 获取COS存储桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return BucketRegion cos存储桶地域
+                     * @return BucketRegion COS存储桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetBucketRegion() const;
 
                     /**
-                     * 设置cos存储桶地域
+                     * 设置COS存储桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param BucketRegion cos存储桶地域
+                     * @param BucketRegion COS存储桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBucketRegion(const std::string& _bucketRegion);
@@ -180,17 +180,17 @@ namespace TencentCloud
                     bool BucketRegionHasBeenSet() const;
 
                     /**
-                     * 获取cos存储桶前缀地址
+                     * 获取COS文件所在文件夹的前缀
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Prefix cos存储桶前缀地址
+                     * @return Prefix COS文件所在文件夹的前缀
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPrefix() const;
 
                     /**
-                     * 设置cos存储桶前缀地址
+                     * 设置COS文件所在文件夹的前缀
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Prefix cos存储桶前缀地址
+                     * @param Prefix COS文件所在文件夹的前缀
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPrefix(const std::string& _prefix);
@@ -202,20 +202,20 @@ namespace TencentCloud
                     bool PrefixHasBeenSet() const;
 
                     /**
-                     * 获取采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志；
+                     * 获取采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return LogType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志；
+                     * @return LogType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetLogType() const;
 
                     /**
-                     * 设置采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志；
+                     * 设置采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param LogType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志；
+                     * @param LogType 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -405,35 +405,35 @@ namespace TencentCloud
                     bool m_logsetIdHasBeenSet;
 
                     /**
-                     * cos导入任务名称
+                     * COS导入任务名称
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * cos存储桶
+                     * COS存储桶
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucket;
                     bool m_bucketHasBeenSet;
 
                     /**
-                     * cos存储桶地域
+                     * COS存储桶所在地域
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_bucketRegion;
                     bool m_bucketRegionHasBeenSet;
 
                     /**
-                     * cos存储桶前缀地址
+                     * COS文件所在文件夹的前缀
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_prefix;
                     bool m_prefixHasBeenSet;
 
                     /**
-                     * 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表极简日志；
+                     * 采集的日志类型，json_log代表json格式日志，delimiter_log代表分隔符格式日志，minimalist_log代表单行全文；
 默认为minimalist_log
 注意：此字段可能返回 null，表示取不到有效值。
                      */

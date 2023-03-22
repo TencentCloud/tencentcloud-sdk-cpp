@@ -44,6 +44,20 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TaskId 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetTaskId() const;
+
+                    /**
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
+                     */
+                    bool TaskIdHasBeenSet() const;
+
+                    /**
                      * 获取结果
                      * @return Data 结果
                      */
@@ -56,6 +70,13 @@ namespace TencentCloud
                     bool DataHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 任务ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                     /**
                      * 结果

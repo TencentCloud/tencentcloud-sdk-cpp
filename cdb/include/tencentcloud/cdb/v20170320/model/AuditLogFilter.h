@@ -244,6 +244,114 @@ namespace TencentCloud
                      */
                     bool SqlsHasBeenSet() const;
 
+                    /**
+                     * 获取影响行数，格式为M-N，例如：10-200
+                     * @return AffectRowsSection 影响行数，格式为M-N，例如：10-200
+                     */
+                    std::string GetAffectRowsSection() const;
+
+                    /**
+                     * 设置影响行数，格式为M-N，例如：10-200
+                     * @param AffectRowsSection 影响行数，格式为M-N，例如：10-200
+                     */
+                    void SetAffectRowsSection(const std::string& _affectRowsSection);
+
+                    /**
+                     * 判断参数 AffectRowsSection 是否已赋值
+                     * @return AffectRowsSection 是否已赋值
+                     */
+                    bool AffectRowsSectionHasBeenSet() const;
+
+                    /**
+                     * 获取返回行数，格式为M-N，例如：10-200
+                     * @return SentRowsSection 返回行数，格式为M-N，例如：10-200
+                     */
+                    std::string GetSentRowsSection() const;
+
+                    /**
+                     * 设置返回行数，格式为M-N，例如：10-200
+                     * @param SentRowsSection 返回行数，格式为M-N，例如：10-200
+                     */
+                    void SetSentRowsSection(const std::string& _sentRowsSection);
+
+                    /**
+                     * 判断参数 SentRowsSection 是否已赋值
+                     * @return SentRowsSection 是否已赋值
+                     */
+                    bool SentRowsSectionHasBeenSet() const;
+
+                    /**
+                     * 获取执行时间，格式为M-N，例如：10-200
+                     * @return ExecTimeSection 执行时间，格式为M-N，例如：10-200
+                     */
+                    std::string GetExecTimeSection() const;
+
+                    /**
+                     * 设置执行时间，格式为M-N，例如：10-200
+                     * @param ExecTimeSection 执行时间，格式为M-N，例如：10-200
+                     */
+                    void SetExecTimeSection(const std::string& _execTimeSection);
+
+                    /**
+                     * 判断参数 ExecTimeSection 是否已赋值
+                     * @return ExecTimeSection 是否已赋值
+                     */
+                    bool ExecTimeSectionHasBeenSet() const;
+
+                    /**
+                     * 获取锁等待时间，格式为M-N，例如：10-200
+                     * @return LockWaitTimeSection 锁等待时间，格式为M-N，例如：10-200
+                     */
+                    std::string GetLockWaitTimeSection() const;
+
+                    /**
+                     * 设置锁等待时间，格式为M-N，例如：10-200
+                     * @param LockWaitTimeSection 锁等待时间，格式为M-N，例如：10-200
+                     */
+                    void SetLockWaitTimeSection(const std::string& _lockWaitTimeSection);
+
+                    /**
+                     * 判断参数 LockWaitTimeSection 是否已赋值
+                     * @return LockWaitTimeSection 是否已赋值
+                     */
+                    bool LockWaitTimeSectionHasBeenSet() const;
+
+                    /**
+                     * 获取IO等待时间，格式为M-N，例如：10-200
+                     * @return IoWaitTimeSection IO等待时间，格式为M-N，例如：10-200
+                     */
+                    std::string GetIoWaitTimeSection() const;
+
+                    /**
+                     * 设置IO等待时间，格式为M-N，例如：10-200
+                     * @param IoWaitTimeSection IO等待时间，格式为M-N，例如：10-200
+                     */
+                    void SetIoWaitTimeSection(const std::string& _ioWaitTimeSection);
+
+                    /**
+                     * 判断参数 IoWaitTimeSection 是否已赋值
+                     * @return IoWaitTimeSection 是否已赋值
+                     */
+                    bool IoWaitTimeSectionHasBeenSet() const;
+
+                    /**
+                     * 获取事务持续时间，格式为M-N，例如：10-200
+                     * @return TransactionLivingTimeSection 事务持续时间，格式为M-N，例如：10-200
+                     */
+                    std::string GetTransactionLivingTimeSection() const;
+
+                    /**
+                     * 设置事务持续时间，格式为M-N，例如：10-200
+                     * @param TransactionLivingTimeSection 事务持续时间，格式为M-N，例如：10-200
+                     */
+                    void SetTransactionLivingTimeSection(const std::string& _transactionLivingTimeSection);
+
+                    /**
+                     * 判断参数 TransactionLivingTimeSection 是否已赋值
+                     * @return TransactionLivingTimeSection 是否已赋值
+                     */
+                    bool TransactionLivingTimeSectionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -311,6 +419,42 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_sqls;
                     bool m_sqlsHasBeenSet;
+
+                    /**
+                     * 影响行数，格式为M-N，例如：10-200
+                     */
+                    std::string m_affectRowsSection;
+                    bool m_affectRowsSectionHasBeenSet;
+
+                    /**
+                     * 返回行数，格式为M-N，例如：10-200
+                     */
+                    std::string m_sentRowsSection;
+                    bool m_sentRowsSectionHasBeenSet;
+
+                    /**
+                     * 执行时间，格式为M-N，例如：10-200
+                     */
+                    std::string m_execTimeSection;
+                    bool m_execTimeSectionHasBeenSet;
+
+                    /**
+                     * 锁等待时间，格式为M-N，例如：10-200
+                     */
+                    std::string m_lockWaitTimeSection;
+                    bool m_lockWaitTimeSectionHasBeenSet;
+
+                    /**
+                     * IO等待时间，格式为M-N，例如：10-200
+                     */
+                    std::string m_ioWaitTimeSection;
+                    bool m_ioWaitTimeSectionHasBeenSet;
+
+                    /**
+                     * 事务持续时间，格式为M-N，例如：10-200
+                     */
+                    std::string m_transactionLivingTimeSection;
+                    bool m_transactionLivingTimeSectionHasBeenSet;
 
                 };
             }
