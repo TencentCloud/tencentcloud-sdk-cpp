@@ -33,7 +33,8 @@ Instance::Instance() :
     m_addTimeHasBeenSet(false),
     m_instanceTypeHasBeenSet(false),
     m_versionNumberHasBeenSet(false),
-    m_autoScalingGroupNameHasBeenSet(false)
+    m_autoScalingGroupNameHasBeenSet(false),
+    m_warmupStatusHasBeenSet(false)
 {
 }
 
@@ -172,6 +173,16 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_autoScalingGroupNameHasBeenSet = true;
     }
 
+    if (value.HasMember("WarmupStatus") && !value["WarmupStatus"].IsNull())
+    {
+        if (!value["WarmupStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Instance.WarmupStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_warmupStatus = string(value["WarmupStatus"].GetString());
+        m_warmupStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -281,6 +292,14 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "AutoScalingGroupName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoScalingGroupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_warmupStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WarmupStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_warmupStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -492,5 +511,21 @@ void Instance::SetAutoScalingGroupName(const string& _autoScalingGroupName)
 bool Instance::AutoScalingGroupNameHasBeenSet() const
 {
     return m_autoScalingGroupNameHasBeenSet;
+}
+
+string Instance::GetWarmupStatus() const
+{
+    return m_warmupStatus;
+}
+
+void Instance::SetWarmupStatus(const string& _warmupStatus)
+{
+    m_warmupStatus = _warmupStatus;
+    m_warmupStatusHasBeenSet = true;
+}
+
+bool Instance::WarmupStatusHasBeenSet() const
+{
+    return m_warmupStatusHasBeenSet;
 }
 

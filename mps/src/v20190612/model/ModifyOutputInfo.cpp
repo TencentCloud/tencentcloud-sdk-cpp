@@ -28,7 +28,8 @@ ModifyOutputInfo::ModifyOutputInfo() :
     m_sRTSettingsHasBeenSet(false),
     m_rTPSettingsHasBeenSet(false),
     m_rTMPSettingsHasBeenSet(false),
-    m_allowIpListHasBeenSet(false)
+    m_allowIpListHasBeenSet(false),
+    m_maxConcurrentHasBeenSet(false)
 {
 }
 
@@ -141,6 +142,16 @@ CoreInternalOutcome ModifyOutputInfo::Deserialize(const rapidjson::Value &value)
         m_allowIpListHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxConcurrent") && !value["MaxConcurrent"].IsNull())
+    {
+        if (!value["MaxConcurrent"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModifyOutputInfo.MaxConcurrent` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConcurrent = value["MaxConcurrent"].GetUint64();
+        m_maxConcurrentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -218,6 +229,14 @@ void ModifyOutputInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         {
             value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_maxConcurrentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConcurrent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConcurrent, allocator);
     }
 
 }
@@ -349,5 +368,21 @@ void ModifyOutputInfo::SetAllowIpList(const vector<string>& _allowIpList)
 bool ModifyOutputInfo::AllowIpListHasBeenSet() const
 {
     return m_allowIpListHasBeenSet;
+}
+
+uint64_t ModifyOutputInfo::GetMaxConcurrent() const
+{
+    return m_maxConcurrent;
+}
+
+void ModifyOutputInfo::SetMaxConcurrent(const uint64_t& _maxConcurrent)
+{
+    m_maxConcurrent = _maxConcurrent;
+    m_maxConcurrentHasBeenSet = true;
+}
+
+bool ModifyOutputInfo::MaxConcurrentHasBeenSet() const
+{
+    return m_maxConcurrentHasBeenSet;
 }
 

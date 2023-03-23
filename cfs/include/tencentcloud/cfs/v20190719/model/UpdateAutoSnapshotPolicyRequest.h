@@ -150,6 +150,42 @@ namespace TencentCloud
                      */
                     bool IsActivatedHasBeenSet() const;
 
+                    /**
+                     * 获取定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     * @return DayOfMonth 定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     */
+                    std::string GetDayOfMonth() const;
+
+                    /**
+                     * 设置定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     * @param DayOfMonth 定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     */
+                    void SetDayOfMonth(const std::string& _dayOfMonth);
+
+                    /**
+                     * 判断参数 DayOfMonth 是否已赋值
+                     * @return DayOfMonth 是否已赋值
+                     */
+                    bool DayOfMonthHasBeenSet() const;
+
+                    /**
+                     * 获取间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 互斥
+                     * @return IntervalDays 间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 互斥
+                     */
+                    uint64_t GetIntervalDays() const;
+
+                    /**
+                     * 设置间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 互斥
+                     * @param IntervalDays 间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 互斥
+                     */
+                    void SetIntervalDays(const uint64_t& _intervalDays);
+
+                    /**
+                     * 判断参数 IntervalDays 是否已赋值
+                     * @return IntervalDays 是否已赋值
+                     */
+                    bool IntervalDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +223,18 @@ namespace TencentCloud
                      */
                     uint64_t m_isActivated;
                     bool m_isActivatedHasBeenSet;
+
+                    /**
+                     * 定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     */
+                    std::string m_dayOfMonth;
+                    bool m_dayOfMonthHasBeenSet;
+
+                    /**
+                     * 间隔天数定期执行快照，该参数与DayOfWeek,DayOfMonth 互斥
+                     */
+                    uint64_t m_intervalDays;
+                    bool m_intervalDaysHasBeenSet;
 
                 };
             }

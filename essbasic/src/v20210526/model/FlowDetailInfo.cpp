@@ -29,7 +29,8 @@ FlowDetailInfo::FlowDetailInfo() :
     m_createOnHasBeenSet(false),
     m_deadLineHasBeenSet(false),
     m_customDataHasBeenSet(false),
-    m_flowApproverInfosHasBeenSet(false)
+    m_flowApproverInfosHasBeenSet(false),
+    m_ccInfosHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,26 @@ CoreInternalOutcome FlowDetailInfo::Deserialize(const rapidjson::Value &value)
         m_flowApproverInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("CcInfos") && !value["CcInfos"].IsNull())
+    {
+        if (!value["CcInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `FlowDetailInfo.CcInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["CcInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            FlowApproverDetail item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ccInfos.push_back(item);
+        }
+        m_ccInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -218,6 +239,21 @@ void FlowDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
 
         int i=0;
         for (auto itr = m_flowApproverInfos.begin(); itr != m_flowApproverInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ccInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccInfos.begin(); itr != m_ccInfos.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -369,5 +405,21 @@ void FlowDetailInfo::SetFlowApproverInfos(const vector<FlowApproverDetail>& _flo
 bool FlowDetailInfo::FlowApproverInfosHasBeenSet() const
 {
     return m_flowApproverInfosHasBeenSet;
+}
+
+vector<FlowApproverDetail> FlowDetailInfo::GetCcInfos() const
+{
+    return m_ccInfos;
+}
+
+void FlowDetailInfo::SetCcInfos(const vector<FlowApproverDetail>& _ccInfos)
+{
+    m_ccInfos = _ccInfos;
+    m_ccInfosHasBeenSet = true;
+}
+
+bool FlowDetailInfo::CcInfosHasBeenSet() const
+{
+    return m_ccInfosHasBeenSet;
 }
 

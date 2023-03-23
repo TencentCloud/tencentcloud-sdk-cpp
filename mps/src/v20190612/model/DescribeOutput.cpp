@@ -34,7 +34,8 @@ DescribeOutput::DescribeOutput() :
     m_rTMPPullSettingsHasBeenSet(false),
     m_allowIpListHasBeenSet(false),
     m_rTSPPullSettingsHasBeenSet(false),
-    m_hLSPullSettingsHasBeenSet(false)
+    m_hLSPullSettingsHasBeenSet(false),
+    m_maxConcurrentHasBeenSet(false)
 {
 }
 
@@ -238,6 +239,16 @@ CoreInternalOutcome DescribeOutput::Deserialize(const rapidjson::Value &value)
         m_hLSPullSettingsHasBeenSet = true;
     }
 
+    if (value.HasMember("MaxConcurrent") && !value["MaxConcurrent"].IsNull())
+    {
+        if (!value["MaxConcurrent"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeOutput.MaxConcurrent` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxConcurrent = value["MaxConcurrent"].GetUint64();
+        m_maxConcurrentHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +384,14 @@ void DescribeOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_hLSPullSettings.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_maxConcurrentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxConcurrent";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxConcurrent, allocator);
     }
 
 }
@@ -600,5 +619,21 @@ void DescribeOutput::SetHLSPullSettings(const DescribeOutputHLSPullSettings& _hL
 bool DescribeOutput::HLSPullSettingsHasBeenSet() const
 {
     return m_hLSPullSettingsHasBeenSet;
+}
+
+uint64_t DescribeOutput::GetMaxConcurrent() const
+{
+    return m_maxConcurrent;
+}
+
+void DescribeOutput::SetMaxConcurrent(const uint64_t& _maxConcurrent)
+{
+    m_maxConcurrent = _maxConcurrent;
+    m_maxConcurrentHasBeenSet = true;
+}
+
+bool DescribeOutput::MaxConcurrentHasBeenSet() const
+{
+    return m_maxConcurrentHasBeenSet;
 }
 

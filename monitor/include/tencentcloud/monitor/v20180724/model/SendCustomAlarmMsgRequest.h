@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ModuleHasBeenSet() const;
 
                     /**
-                     * 获取消息策略ID，在云监控自定义消息页面配置
-                     * @return PolicyId 消息策略ID，在云监控自定义消息页面配置
+                     * 获取消息策略ID，在自定义消息页面配置
+                     * @return PolicyId 消息策略ID，在自定义消息页面配置
                      */
                     std::string GetPolicyId() const;
 
                     /**
-                     * 设置消息策略ID，在云监控自定义消息页面配置
-                     * @param PolicyId 消息策略ID，在云监控自定义消息页面配置
+                     * 设置消息策略ID，在自定义消息页面配置
+                     * @param PolicyId 消息策略ID，在自定义消息页面配置
                      */
                     void SetPolicyId(const std::string& _policyId);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_moduleHasBeenSet;
 
                     /**
-                     * 消息策略ID，在云监控自定义消息页面配置
+                     * 消息策略ID，在自定义消息页面配置
                      */
                     std::string m_policyId;
                     bool m_policyIdHasBeenSet;

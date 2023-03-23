@@ -197,6 +197,24 @@ namespace TencentCloud
                      */
                     bool AllowIpListHasBeenSet() const;
 
+                    /**
+                     * 获取最大拉流并发数，最大4，默认4。
+                     * @return MaxConcurrent 最大拉流并发数，最大4，默认4。
+                     */
+                    uint64_t GetMaxConcurrent() const;
+
+                    /**
+                     * 设置最大拉流并发数，最大4，默认4。
+                     * @param MaxConcurrent 最大拉流并发数，最大4，默认4。
+                     */
+                    void SetMaxConcurrent(const uint64_t& _maxConcurrent);
+
+                    /**
+                     * 判断参数 MaxConcurrent 是否已赋值
+                     * @return MaxConcurrent 是否已赋值
+                     */
+                    bool MaxConcurrentHasBeenSet() const;
+
                 private:
 
                     /**
@@ -247,6 +265,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_allowIpList;
                     bool m_allowIpListHasBeenSet;
+
+                    /**
+                     * 最大拉流并发数，最大4，默认4。
+                     */
+                    uint64_t m_maxConcurrent;
+                    bool m_maxConcurrentHasBeenSet;
 
                 };
             }

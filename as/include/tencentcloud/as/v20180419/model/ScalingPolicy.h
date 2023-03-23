@@ -84,6 +84,32 @@ namespace TencentCloud
                     bool AutoScalingPolicyIdHasBeenSet() const;
 
                     /**
+                     * 获取告警触发策略类型。取值：
+- SIMPLE：简单策略
+- TARGET_TRACKING：目标追踪策略
+                     * @return ScalingPolicyType 告警触发策略类型。取值：
+- SIMPLE：简单策略
+- TARGET_TRACKING：目标追踪策略
+                     */
+                    std::string GetScalingPolicyType() const;
+
+                    /**
+                     * 设置告警触发策略类型。取值：
+- SIMPLE：简单策略
+- TARGET_TRACKING：目标追踪策略
+                     * @param ScalingPolicyType 告警触发策略类型。取值：
+- SIMPLE：简单策略
+- TARGET_TRACKING：目标追踪策略
+                     */
+                    void SetScalingPolicyType(const std::string& _scalingPolicyType);
+
+                    /**
+                     * 判断参数 ScalingPolicyType 是否已赋值
+                     * @return ScalingPolicyType 是否已赋值
+                     */
+                    bool ScalingPolicyTypeHasBeenSet() const;
+
+                    /**
                      * 获取告警触发策略名称。
                      * @return ScalingPolicyName 告警触发策略名称。
                      */
@@ -102,14 +128,14 @@ namespace TencentCloud
                     bool ScalingPolicyNameHasBeenSet() const;
 
                     /**
-                     * 获取告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-                     * @return AdjustmentType 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * 获取告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * @return AdjustmentType 告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
                      */
                     std::string GetAdjustmentType() const;
 
                     /**
-                     * 设置告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
-                     * @param AdjustmentType 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * 设置告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * @param AdjustmentType 告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
                      */
                     void SetAdjustmentType(const std::string& _adjustmentType);
 
@@ -120,14 +146,14 @@ namespace TencentCloud
                     bool AdjustmentTypeHasBeenSet() const;
 
                     /**
-                     * 获取告警触发后，期望实例数的调整值。
-                     * @return AdjustmentValue 告警触发后，期望实例数的调整值。
+                     * 获取告警触发后，期望实例数的调整值，仅适用于简单策略。
+                     * @return AdjustmentValue 告警触发后，期望实例数的调整值，仅适用于简单策略。
                      */
                     int64_t GetAdjustmentValue() const;
 
                     /**
-                     * 设置告警触发后，期望实例数的调整值。
-                     * @param AdjustmentValue 告警触发后，期望实例数的调整值。
+                     * 设置告警触发后，期望实例数的调整值，仅适用于简单策略。
+                     * @param AdjustmentValue 告警触发后，期望实例数的调整值，仅适用于简单策略。
                      */
                     void SetAdjustmentValue(const int64_t& _adjustmentValue);
 
@@ -138,14 +164,14 @@ namespace TencentCloud
                     bool AdjustmentValueHasBeenSet() const;
 
                     /**
-                     * 获取冷却时间。
-                     * @return Cooldown 冷却时间。
+                     * 获取冷却时间，仅适用于简单策略。
+                     * @return Cooldown 冷却时间，仅适用于简单策略。
                      */
                     uint64_t GetCooldown() const;
 
                     /**
-                     * 设置冷却时间。
-                     * @param Cooldown 冷却时间。
+                     * 设置冷却时间，仅适用于简单策略。
+                     * @param Cooldown 冷却时间，仅适用于简单策略。
                      */
                     void SetCooldown(const uint64_t& _cooldown);
 
@@ -156,14 +182,14 @@ namespace TencentCloud
                     bool CooldownHasBeenSet() const;
 
                     /**
-                     * 获取告警监控指标。
-                     * @return MetricAlarm 告警监控指标。
+                     * 获取简单告警触发策略告警监控指标，仅适用于简单策略。
+                     * @return MetricAlarm 简单告警触发策略告警监控指标，仅适用于简单策略。
                      */
                     MetricAlarm GetMetricAlarm() const;
 
                     /**
-                     * 设置告警监控指标。
-                     * @param MetricAlarm 告警监控指标。
+                     * 设置简单告警触发策略告警监控指标，仅适用于简单策略。
+                     * @param MetricAlarm 简单告警触发策略告警监控指标，仅适用于简单策略。
                      */
                     void SetMetricAlarm(const MetricAlarm& _metricAlarm);
 
@@ -172,6 +198,116 @@ namespace TencentCloud
                      * @return MetricAlarm 是否已赋值
                      */
                     bool MetricAlarmHasBeenSet() const;
+
+                    /**
+                     * 获取预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PredefinedMetricType 预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPredefinedMetricType() const;
+
+                    /**
+                     * 设置预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PredefinedMetricType 预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPredefinedMetricType(const std::string& _predefinedMetricType);
+
+                    /**
+                     * 判断参数 PredefinedMetricType 是否已赋值
+                     * @return PredefinedMetricType 是否已赋值
+                     */
+                    bool PredefinedMetricTypeHasBeenSet() const;
+
+                    /**
+                     * 获取目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TargetValue 目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetTargetValue() const;
+
+                    /**
+                     * 设置目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TargetValue 目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargetValue(const uint64_t& _targetValue);
+
+                    /**
+                     * 判断参数 TargetValue 是否已赋值
+                     * @return TargetValue 是否已赋值
+                     */
+                    bool TargetValueHasBeenSet() const;
+
+                    /**
+                     * 获取实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EstimatedInstanceWarmup 实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetEstimatedInstanceWarmup() const;
+
+                    /**
+                     * 设置实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EstimatedInstanceWarmup 实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEstimatedInstanceWarmup(const uint64_t& _estimatedInstanceWarmup);
+
+                    /**
+                     * 判断参数 EstimatedInstanceWarmup 是否已赋值
+                     * @return EstimatedInstanceWarmup 是否已赋值
+                     */
+                    bool EstimatedInstanceWarmupHasBeenSet() const;
+
+                    /**
+                     * 获取是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisableScaleIn 是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDisableScaleIn() const;
+
+                    /**
+                     * 设置是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisableScaleIn 是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisableScaleIn(const bool& _disableScaleIn);
+
+                    /**
+                     * 判断参数 DisableScaleIn 是否已赋值
+                     * @return DisableScaleIn 是否已赋值
+                     */
+                    bool DisableScaleInHasBeenSet() const;
+
+                    /**
+                     * 获取告警监控指标列表，仅适用于目标追踪策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricAlarms 告警监控指标列表，仅适用于目标追踪策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MetricAlarm> GetMetricAlarms() const;
+
+                    /**
+                     * 设置告警监控指标列表，仅适用于目标追踪策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetricAlarms 告警监控指标列表，仅适用于目标追踪策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetricAlarms(const std::vector<MetricAlarm>& _metricAlarms);
+
+                    /**
+                     * 判断参数 MetricAlarms 是否已赋值
+                     * @return MetricAlarms 是否已赋值
+                     */
+                    bool MetricAlarmsHasBeenSet() const;
 
                     /**
                      * 获取通知组ID，即为用户组ID集合。
@@ -206,34 +342,77 @@ namespace TencentCloud
                     bool m_autoScalingPolicyIdHasBeenSet;
 
                     /**
+                     * 告警触发策略类型。取值：
+- SIMPLE：简单策略
+- TARGET_TRACKING：目标追踪策略
+                     */
+                    std::string m_scalingPolicyType;
+                    bool m_scalingPolicyTypeHasBeenSet;
+
+                    /**
                      * 告警触发策略名称。
                      */
                     std::string m_scalingPolicyName;
                     bool m_scalingPolicyNameHasBeenSet;
 
                     /**
-                     * 告警触发后，期望实例数修改方式。取值 ：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
+                     * 告警触发后，期望实例数修改方式，仅适用于简单策略。取值范围：<br><li>CHANGE_IN_CAPACITY：增加或减少若干期望实例数</li><li>EXACT_CAPACITY：调整至指定期望实例数</li> <li>PERCENT_CHANGE_IN_CAPACITY：按百分比调整期望实例数</li>
                      */
                     std::string m_adjustmentType;
                     bool m_adjustmentTypeHasBeenSet;
 
                     /**
-                     * 告警触发后，期望实例数的调整值。
+                     * 告警触发后，期望实例数的调整值，仅适用于简单策略。
                      */
                     int64_t m_adjustmentValue;
                     bool m_adjustmentValueHasBeenSet;
 
                     /**
-                     * 冷却时间。
+                     * 冷却时间，仅适用于简单策略。
                      */
                     uint64_t m_cooldown;
                     bool m_cooldownHasBeenSet;
 
                     /**
-                     * 告警监控指标。
+                     * 简单告警触发策略告警监控指标，仅适用于简单策略。
                      */
                     MetricAlarm m_metricAlarm;
                     bool m_metricAlarmHasBeenSet;
+
+                    /**
+                     * 预定义监控项，仅适用于目标追踪策略。取值范围：<br><li>ASG_AVG_CPU_UTILIZATION：平均CPU使用率</li><li>ASG_AVG_LAN_TRAFFIC_OUT：平均内网出带宽</li><li>ASG_AVG_LAN_TRAFFIC_IN：平均内网入带宽</li><li>ASG_AVG_WAN_TRAFFIC_OUT：平均外网出带宽</li><li>ASG_AVG_WAN_TRAFFIC_IN：平均外网出带宽</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_predefinedMetricType;
+                    bool m_predefinedMetricTypeHasBeenSet;
+
+                    /**
+                     * 目标值，仅适用于目标追踪策略。<br><li>ASG_AVG_CPU_UTILIZATION：[1, 100)，单位：%</li><li>ASG_AVG_LAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_LAN_TRAFFIC_IN：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_OUT：>0，单位：Mbps</li><li>ASG_AVG_WAN_TRAFFIC_IN：>0，单位：Mbps</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_targetValue;
+                    bool m_targetValueHasBeenSet;
+
+                    /**
+                     * 实例预热时间，单位为秒，仅适用于目标追踪策略。取值范围为0-3600。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_estimatedInstanceWarmup;
+                    bool m_estimatedInstanceWarmupHasBeenSet;
+
+                    /**
+                     * 是否禁用缩容，仅适用于目标追踪策略。取值范围：<br><li>true：目标追踪策略仅触发扩容</li><li>false：目标追踪策略触发扩容和缩容</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_disableScaleIn;
+                    bool m_disableScaleInHasBeenSet;
+
+                    /**
+                     * 告警监控指标列表，仅适用于目标追踪策略。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<MetricAlarm> m_metricAlarms;
+                    bool m_metricAlarmsHasBeenSet;
 
                     /**
                      * 通知组ID，即为用户组ID集合。

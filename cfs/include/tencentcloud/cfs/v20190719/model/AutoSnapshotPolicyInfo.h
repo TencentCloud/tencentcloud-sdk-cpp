@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool FileSystemNumsHasBeenSet() const;
 
                     /**
-                     * 获取快照定期备份在一星期哪一天
-                     * @return DayOfWeek 快照定期备份在一星期哪一天
+                     * 获取快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
+                     * @return DayOfWeek 快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
                      */
                     std::string GetDayOfWeek() const;
 
                     /**
-                     * 设置快照定期备份在一星期哪一天
-                     * @param DayOfWeek 快照定期备份在一星期哪一天
+                     * 设置快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
+                     * @param DayOfWeek 快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
                      */
                     void SetDayOfWeek(const std::string& _dayOfWeek);
 
@@ -281,6 +281,50 @@ namespace TencentCloud
                      */
                     bool FileSystemsHasBeenSet() const;
 
+                    /**
+                     * 获取快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DayOfMonth 快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDayOfMonth() const;
+
+                    /**
+                     * 设置快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DayOfMonth 快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDayOfMonth(const std::string& _dayOfMonth);
+
+                    /**
+                     * 判断参数 DayOfMonth 是否已赋值
+                     * @return DayOfMonth 是否已赋值
+                     */
+                    bool DayOfMonthHasBeenSet() const;
+
+                    /**
+                     * 获取快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IntervalDays 快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetIntervalDays() const;
+
+                    /**
+                     * 设置快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IntervalDays 快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIntervalDays(const uint64_t& _intervalDays);
+
+                    /**
+                     * 判断参数 IntervalDays 是否已赋值
+                     * @return IntervalDays 是否已赋值
+                     */
+                    bool IntervalDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -308,7 +352,7 @@ namespace TencentCloud
                     bool m_fileSystemNumsHasBeenSet;
 
                     /**
-                     * 快照定期备份在一星期哪一天
+                     * 快照定期备份在一星期哪一天，该参数与DayOfMonth,IntervalDays互斥
                      */
                     std::string m_dayOfWeek;
                     bool m_dayOfWeekHasBeenSet;
@@ -360,6 +404,20 @@ namespace TencentCloud
                      */
                     std::vector<FileSystemByPolicy> m_fileSystems;
                     bool m_fileSystemsHasBeenSet;
+
+                    /**
+                     * 快照定期备份在一个月的某个时间；该参数与DayOfWeek,IntervalDays互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_dayOfMonth;
+                    bool m_dayOfMonthHasBeenSet;
+
+                    /**
+                     * 快照定期间隔天数，1-365 天；该参数与DayOfMonth,DayOfWeek互斥
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_intervalDays;
+                    bool m_intervalDaysHasBeenSet;
 
                 };
             }

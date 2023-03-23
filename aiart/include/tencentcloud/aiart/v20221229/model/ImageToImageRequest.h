@@ -262,17 +262,17 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 
                     /**
                      * 获取生成自由度。
-Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.6。
+Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
                      * @return Strength 生成自由度。
-Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.6。
+Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
                      */
                     double GetStrength() const;
 
                     /**
                      * 设置生成自由度。
-Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.6。
+Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
                      * @param Strength 生成自由度。
-Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.6。
+Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
                      */
                     void SetStrength(const double& _strength);
 
@@ -352,7 +352,7 @@ Base64 和 Url 必须提供一个，如果都提供以 Base64 为准。
 
                     /**
                      * 生成自由度。
-Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.6。
+Strength 值越小，生成图和原图越接近。取值范围0~1，不传默认为0.65。
                      */
                     double m_strength;
                     bool m_strengthHasBeenSet;

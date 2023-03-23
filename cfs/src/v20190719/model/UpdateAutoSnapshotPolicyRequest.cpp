@@ -28,7 +28,9 @@ UpdateAutoSnapshotPolicyRequest::UpdateAutoSnapshotPolicyRequest() :
     m_dayOfWeekHasBeenSet(false),
     m_hourHasBeenSet(false),
     m_aliveDaysHasBeenSet(false),
-    m_isActivatedHasBeenSet(false)
+    m_isActivatedHasBeenSet(false),
+    m_dayOfMonthHasBeenSet(false),
+    m_intervalDaysHasBeenSet(false)
 {
 }
 
@@ -85,6 +87,22 @@ string UpdateAutoSnapshotPolicyRequest::ToJsonString() const
         string key = "IsActivated";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_isActivated, allocator);
+    }
+
+    if (m_dayOfMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOfMonth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dayOfMonth.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intervalDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntervalDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_intervalDays, allocator);
     }
 
 
@@ -189,6 +207,38 @@ void UpdateAutoSnapshotPolicyRequest::SetIsActivated(const uint64_t& _isActivate
 bool UpdateAutoSnapshotPolicyRequest::IsActivatedHasBeenSet() const
 {
     return m_isActivatedHasBeenSet;
+}
+
+string UpdateAutoSnapshotPolicyRequest::GetDayOfMonth() const
+{
+    return m_dayOfMonth;
+}
+
+void UpdateAutoSnapshotPolicyRequest::SetDayOfMonth(const string& _dayOfMonth)
+{
+    m_dayOfMonth = _dayOfMonth;
+    m_dayOfMonthHasBeenSet = true;
+}
+
+bool UpdateAutoSnapshotPolicyRequest::DayOfMonthHasBeenSet() const
+{
+    return m_dayOfMonthHasBeenSet;
+}
+
+uint64_t UpdateAutoSnapshotPolicyRequest::GetIntervalDays() const
+{
+    return m_intervalDays;
+}
+
+void UpdateAutoSnapshotPolicyRequest::SetIntervalDays(const uint64_t& _intervalDays)
+{
+    m_intervalDays = _intervalDays;
+    m_intervalDaysHasBeenSet = true;
+}
+
+bool UpdateAutoSnapshotPolicyRequest::IntervalDaysHasBeenSet() const
+{
+    return m_intervalDaysHasBeenSet;
 }
 
 

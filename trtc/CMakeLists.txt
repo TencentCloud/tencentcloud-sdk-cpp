@@ -28,6 +28,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/McuLayoutVolume.h
   include/tencentcloud/trtc/v20190722/model/DescribeUserEventRequest.h
   include/tencentcloud/trtc/v20190722/model/WaterMarkChar.h
+  include/tencentcloud/trtc/v20190722/model/DescribeTrtcRoomUsageResponse.h
   include/tencentcloud/trtc/v20190722/model/StopPublishCdnStreamResponse.h
   include/tencentcloud/trtc/v20190722/model/AbnormalEvent.h
   include/tencentcloud/trtc/v20190722/model/ScaleInfomation.h
@@ -120,6 +121,7 @@ set(trtc_public_header_model
   include/tencentcloud/trtc/v20190722/model/TRTCDataResp.h
   include/tencentcloud/trtc/v20190722/model/DescribeExternalTrtcMeasureResponse.h
   include/tencentcloud/trtc/v20190722/model/DescribePictureResponse.h
+  include/tencentcloud/trtc/v20190722/model/DescribeTrtcRoomUsageRequest.h
   include/tencentcloud/trtc/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.h
   include/tencentcloud/trtc/v20190722/model/UserInformation.h
   include/tencentcloud/trtc/v20190722/model/DescribeScaleInfoRequest.h
@@ -167,6 +169,7 @@ set(trtc_src
   src/v20190722/model/McuLayoutVolume.cpp
   src/v20190722/model/DescribeUserEventRequest.cpp
   src/v20190722/model/WaterMarkChar.cpp
+  src/v20190722/model/DescribeTrtcRoomUsageResponse.cpp
   src/v20190722/model/StopPublishCdnStreamResponse.cpp
   src/v20190722/model/AbnormalEvent.cpp
   src/v20190722/model/ScaleInfomation.cpp
@@ -259,6 +262,7 @@ set(trtc_src
   src/v20190722/model/TRTCDataResp.cpp
   src/v20190722/model/DescribeExternalTrtcMeasureResponse.cpp
   src/v20190722/model/DescribePictureResponse.cpp
+  src/v20190722/model/DescribeTrtcRoomUsageRequest.cpp
   src/v20190722/model/DescribeTrtcMcuTranscodeTimeRequest.cpp
   src/v20190722/model/UserInformation.cpp
   src/v20190722/model/DescribeScaleInfoRequest.cpp

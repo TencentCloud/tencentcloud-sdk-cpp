@@ -23,10 +23,12 @@ using namespace TencentCloud::Cfs::V20190719::Model;
 using namespace std;
 
 CreateAutoSnapshotPolicyRequest::CreateAutoSnapshotPolicyRequest() :
-    m_dayOfWeekHasBeenSet(false),
     m_hourHasBeenSet(false),
     m_policyNameHasBeenSet(false),
-    m_aliveDaysHasBeenSet(false)
+    m_dayOfWeekHasBeenSet(false),
+    m_aliveDaysHasBeenSet(false),
+    m_dayOfMonthHasBeenSet(false),
+    m_intervalDaysHasBeenSet(false)
 {
 }
 
@@ -36,14 +38,6 @@ string CreateAutoSnapshotPolicyRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_dayOfWeekHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DayOfWeek";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_dayOfWeek.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_hourHasBeenSet)
     {
@@ -61,12 +55,36 @@ string CreateAutoSnapshotPolicyRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_policyName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_dayOfWeekHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOfWeek";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dayOfWeek.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_aliveDaysHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "AliveDays";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_aliveDays, allocator);
+    }
+
+    if (m_dayOfMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOfMonth";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_dayOfMonth.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intervalDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntervalDays";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_intervalDays, allocator);
     }
 
 
@@ -76,22 +94,6 @@ string CreateAutoSnapshotPolicyRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string CreateAutoSnapshotPolicyRequest::GetDayOfWeek() const
-{
-    return m_dayOfWeek;
-}
-
-void CreateAutoSnapshotPolicyRequest::SetDayOfWeek(const string& _dayOfWeek)
-{
-    m_dayOfWeek = _dayOfWeek;
-    m_dayOfWeekHasBeenSet = true;
-}
-
-bool CreateAutoSnapshotPolicyRequest::DayOfWeekHasBeenSet() const
-{
-    return m_dayOfWeekHasBeenSet;
-}
 
 string CreateAutoSnapshotPolicyRequest::GetHour() const
 {
@@ -125,6 +127,22 @@ bool CreateAutoSnapshotPolicyRequest::PolicyNameHasBeenSet() const
     return m_policyNameHasBeenSet;
 }
 
+string CreateAutoSnapshotPolicyRequest::GetDayOfWeek() const
+{
+    return m_dayOfWeek;
+}
+
+void CreateAutoSnapshotPolicyRequest::SetDayOfWeek(const string& _dayOfWeek)
+{
+    m_dayOfWeek = _dayOfWeek;
+    m_dayOfWeekHasBeenSet = true;
+}
+
+bool CreateAutoSnapshotPolicyRequest::DayOfWeekHasBeenSet() const
+{
+    return m_dayOfWeekHasBeenSet;
+}
+
 uint64_t CreateAutoSnapshotPolicyRequest::GetAliveDays() const
 {
     return m_aliveDays;
@@ -139,6 +157,38 @@ void CreateAutoSnapshotPolicyRequest::SetAliveDays(const uint64_t& _aliveDays)
 bool CreateAutoSnapshotPolicyRequest::AliveDaysHasBeenSet() const
 {
     return m_aliveDaysHasBeenSet;
+}
+
+string CreateAutoSnapshotPolicyRequest::GetDayOfMonth() const
+{
+    return m_dayOfMonth;
+}
+
+void CreateAutoSnapshotPolicyRequest::SetDayOfMonth(const string& _dayOfMonth)
+{
+    m_dayOfMonth = _dayOfMonth;
+    m_dayOfMonthHasBeenSet = true;
+}
+
+bool CreateAutoSnapshotPolicyRequest::DayOfMonthHasBeenSet() const
+{
+    return m_dayOfMonthHasBeenSet;
+}
+
+uint64_t CreateAutoSnapshotPolicyRequest::GetIntervalDays() const
+{
+    return m_intervalDays;
+}
+
+void CreateAutoSnapshotPolicyRequest::SetIntervalDays(const uint64_t& _intervalDays)
+{
+    m_intervalDays = _intervalDays;
+    m_intervalDaysHasBeenSet = true;
+}
+
+bool CreateAutoSnapshotPolicyRequest::IntervalDaysHasBeenSet() const
+{
+    return m_intervalDaysHasBeenSet;
 }
 
 

@@ -33,7 +33,9 @@ AutoSnapshotPolicyInfo::AutoSnapshotPolicyInfo() :
     m_appIdHasBeenSet(false),
     m_aliveDaysHasBeenSet(false),
     m_regionNameHasBeenSet(false),
-    m_fileSystemsHasBeenSet(false)
+    m_fileSystemsHasBeenSet(false),
+    m_dayOfMonthHasBeenSet(false),
+    m_intervalDaysHasBeenSet(false)
 {
 }
 
@@ -182,6 +184,26 @@ CoreInternalOutcome AutoSnapshotPolicyInfo::Deserialize(const rapidjson::Value &
         m_fileSystemsHasBeenSet = true;
     }
 
+    if (value.HasMember("DayOfMonth") && !value["DayOfMonth"].IsNull())
+    {
+        if (!value["DayOfMonth"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicyInfo.DayOfMonth` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_dayOfMonth = string(value["DayOfMonth"].GetString());
+        m_dayOfMonthHasBeenSet = true;
+    }
+
+    if (value.HasMember("IntervalDays") && !value["IntervalDays"].IsNull())
+    {
+        if (!value["IntervalDays"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AutoSnapshotPolicyInfo.IntervalDays` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_intervalDays = value["IntervalDays"].GetUint64();
+        m_intervalDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +320,22 @@ void AutoSnapshotPolicyInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Do
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_dayOfMonthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DayOfMonth";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_dayOfMonth.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_intervalDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IntervalDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_intervalDays, allocator);
     }
 
 }
@@ -509,5 +547,37 @@ void AutoSnapshotPolicyInfo::SetFileSystems(const vector<FileSystemByPolicy>& _f
 bool AutoSnapshotPolicyInfo::FileSystemsHasBeenSet() const
 {
     return m_fileSystemsHasBeenSet;
+}
+
+string AutoSnapshotPolicyInfo::GetDayOfMonth() const
+{
+    return m_dayOfMonth;
+}
+
+void AutoSnapshotPolicyInfo::SetDayOfMonth(const string& _dayOfMonth)
+{
+    m_dayOfMonth = _dayOfMonth;
+    m_dayOfMonthHasBeenSet = true;
+}
+
+bool AutoSnapshotPolicyInfo::DayOfMonthHasBeenSet() const
+{
+    return m_dayOfMonthHasBeenSet;
+}
+
+uint64_t AutoSnapshotPolicyInfo::GetIntervalDays() const
+{
+    return m_intervalDays;
+}
+
+void AutoSnapshotPolicyInfo::SetIntervalDays(const uint64_t& _intervalDays)
+{
+    m_intervalDays = _intervalDays;
+    m_intervalDaysHasBeenSet = true;
+}
+
+bool AutoSnapshotPolicyInfo::IntervalDaysHasBeenSet() const
+{
+    return m_intervalDaysHasBeenSet;
 }
 

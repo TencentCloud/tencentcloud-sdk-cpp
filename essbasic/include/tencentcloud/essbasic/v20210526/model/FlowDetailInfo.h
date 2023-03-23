@@ -209,6 +209,24 @@ namespace TencentCloud
                      */
                     bool FlowApproverInfosHasBeenSet() const;
 
+                    /**
+                     * 获取合同(流程)关注方信息列表
+                     * @return CcInfos 合同(流程)关注方信息列表
+                     */
+                    std::vector<FlowApproverDetail> GetCcInfos() const;
+
+                    /**
+                     * 设置合同(流程)关注方信息列表
+                     * @param CcInfos 合同(流程)关注方信息列表
+                     */
+                    void SetCcInfos(const std::vector<FlowApproverDetail>& _ccInfos);
+
+                    /**
+                     * 判断参数 CcInfos 是否已赋值
+                     * @return CcInfos 是否已赋值
+                     */
+                    bool CcInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -264,6 +282,12 @@ namespace TencentCloud
                      */
                     std::vector<FlowApproverDetail> m_flowApproverInfos;
                     bool m_flowApproverInfosHasBeenSet;
+
+                    /**
+                     * 合同(流程)关注方信息列表
+                     */
+                    std::vector<FlowApproverDetail> m_ccInfos;
+                    bool m_ccInfosHasBeenSet;
 
                 };
             }

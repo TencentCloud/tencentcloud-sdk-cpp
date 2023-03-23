@@ -23,11 +23,17 @@ using namespace std;
 ScalingPolicy::ScalingPolicy() :
     m_autoScalingGroupIdHasBeenSet(false),
     m_autoScalingPolicyIdHasBeenSet(false),
+    m_scalingPolicyTypeHasBeenSet(false),
     m_scalingPolicyNameHasBeenSet(false),
     m_adjustmentTypeHasBeenSet(false),
     m_adjustmentValueHasBeenSet(false),
     m_cooldownHasBeenSet(false),
     m_metricAlarmHasBeenSet(false),
+    m_predefinedMetricTypeHasBeenSet(false),
+    m_targetValueHasBeenSet(false),
+    m_estimatedInstanceWarmupHasBeenSet(false),
+    m_disableScaleInHasBeenSet(false),
+    m_metricAlarmsHasBeenSet(false),
     m_notificationUserGroupIdsHasBeenSet(false)
 {
 }
@@ -55,6 +61,16 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
         }
         m_autoScalingPolicyId = string(value["AutoScalingPolicyId"].GetString());
         m_autoScalingPolicyIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("ScalingPolicyType") && !value["ScalingPolicyType"].IsNull())
+    {
+        if (!value["ScalingPolicyType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.ScalingPolicyType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_scalingPolicyType = string(value["ScalingPolicyType"].GetString());
+        m_scalingPolicyTypeHasBeenSet = true;
     }
 
     if (value.HasMember("ScalingPolicyName") && !value["ScalingPolicyName"].IsNull())
@@ -114,6 +130,66 @@ CoreInternalOutcome ScalingPolicy::Deserialize(const rapidjson::Value &value)
         m_metricAlarmHasBeenSet = true;
     }
 
+    if (value.HasMember("PredefinedMetricType") && !value["PredefinedMetricType"].IsNull())
+    {
+        if (!value["PredefinedMetricType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.PredefinedMetricType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_predefinedMetricType = string(value["PredefinedMetricType"].GetString());
+        m_predefinedMetricTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("TargetValue") && !value["TargetValue"].IsNull())
+    {
+        if (!value["TargetValue"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.TargetValue` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_targetValue = value["TargetValue"].GetUint64();
+        m_targetValueHasBeenSet = true;
+    }
+
+    if (value.HasMember("EstimatedInstanceWarmup") && !value["EstimatedInstanceWarmup"].IsNull())
+    {
+        if (!value["EstimatedInstanceWarmup"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.EstimatedInstanceWarmup` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_estimatedInstanceWarmup = value["EstimatedInstanceWarmup"].GetUint64();
+        m_estimatedInstanceWarmupHasBeenSet = true;
+    }
+
+    if (value.HasMember("DisableScaleIn") && !value["DisableScaleIn"].IsNull())
+    {
+        if (!value["DisableScaleIn"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.DisableScaleIn` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableScaleIn = value["DisableScaleIn"].GetBool();
+        m_disableScaleInHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetricAlarms") && !value["MetricAlarms"].IsNull())
+    {
+        if (!value["MetricAlarms"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `ScalingPolicy.MetricAlarms` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["MetricAlarms"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            MetricAlarm item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_metricAlarms.push_back(item);
+        }
+        m_metricAlarmsHasBeenSet = true;
+    }
+
     if (value.HasMember("NotificationUserGroupIds") && !value["NotificationUserGroupIds"].IsNull())
     {
         if (!value["NotificationUserGroupIds"].IsArray())
@@ -148,6 +224,14 @@ void ScalingPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "AutoScalingPolicyId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_autoScalingPolicyId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scalingPolicyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScalingPolicyType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_scalingPolicyType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_scalingPolicyNameHasBeenSet)
@@ -189,6 +273,53 @@ void ScalingPolicy::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metricAlarm.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_predefinedMetricTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PredefinedMetricType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_predefinedMetricType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetValueHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TargetValue";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_targetValue, allocator);
+    }
+
+    if (m_estimatedInstanceWarmupHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EstimatedInstanceWarmup";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_estimatedInstanceWarmup, allocator);
+    }
+
+    if (m_disableScaleInHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableScaleIn";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableScaleIn, allocator);
+    }
+
+    if (m_metricAlarmsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricAlarms";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_metricAlarms.begin(); itr != m_metricAlarms.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     if (m_notificationUserGroupIdsHasBeenSet)
@@ -237,6 +368,22 @@ void ScalingPolicy::SetAutoScalingPolicyId(const string& _autoScalingPolicyId)
 bool ScalingPolicy::AutoScalingPolicyIdHasBeenSet() const
 {
     return m_autoScalingPolicyIdHasBeenSet;
+}
+
+string ScalingPolicy::GetScalingPolicyType() const
+{
+    return m_scalingPolicyType;
+}
+
+void ScalingPolicy::SetScalingPolicyType(const string& _scalingPolicyType)
+{
+    m_scalingPolicyType = _scalingPolicyType;
+    m_scalingPolicyTypeHasBeenSet = true;
+}
+
+bool ScalingPolicy::ScalingPolicyTypeHasBeenSet() const
+{
+    return m_scalingPolicyTypeHasBeenSet;
 }
 
 string ScalingPolicy::GetScalingPolicyName() const
@@ -317,6 +464,86 @@ void ScalingPolicy::SetMetricAlarm(const MetricAlarm& _metricAlarm)
 bool ScalingPolicy::MetricAlarmHasBeenSet() const
 {
     return m_metricAlarmHasBeenSet;
+}
+
+string ScalingPolicy::GetPredefinedMetricType() const
+{
+    return m_predefinedMetricType;
+}
+
+void ScalingPolicy::SetPredefinedMetricType(const string& _predefinedMetricType)
+{
+    m_predefinedMetricType = _predefinedMetricType;
+    m_predefinedMetricTypeHasBeenSet = true;
+}
+
+bool ScalingPolicy::PredefinedMetricTypeHasBeenSet() const
+{
+    return m_predefinedMetricTypeHasBeenSet;
+}
+
+uint64_t ScalingPolicy::GetTargetValue() const
+{
+    return m_targetValue;
+}
+
+void ScalingPolicy::SetTargetValue(const uint64_t& _targetValue)
+{
+    m_targetValue = _targetValue;
+    m_targetValueHasBeenSet = true;
+}
+
+bool ScalingPolicy::TargetValueHasBeenSet() const
+{
+    return m_targetValueHasBeenSet;
+}
+
+uint64_t ScalingPolicy::GetEstimatedInstanceWarmup() const
+{
+    return m_estimatedInstanceWarmup;
+}
+
+void ScalingPolicy::SetEstimatedInstanceWarmup(const uint64_t& _estimatedInstanceWarmup)
+{
+    m_estimatedInstanceWarmup = _estimatedInstanceWarmup;
+    m_estimatedInstanceWarmupHasBeenSet = true;
+}
+
+bool ScalingPolicy::EstimatedInstanceWarmupHasBeenSet() const
+{
+    return m_estimatedInstanceWarmupHasBeenSet;
+}
+
+bool ScalingPolicy::GetDisableScaleIn() const
+{
+    return m_disableScaleIn;
+}
+
+void ScalingPolicy::SetDisableScaleIn(const bool& _disableScaleIn)
+{
+    m_disableScaleIn = _disableScaleIn;
+    m_disableScaleInHasBeenSet = true;
+}
+
+bool ScalingPolicy::DisableScaleInHasBeenSet() const
+{
+    return m_disableScaleInHasBeenSet;
+}
+
+vector<MetricAlarm> ScalingPolicy::GetMetricAlarms() const
+{
+    return m_metricAlarms;
+}
+
+void ScalingPolicy::SetMetricAlarms(const vector<MetricAlarm>& _metricAlarms)
+{
+    m_metricAlarms = _metricAlarms;
+    m_metricAlarmsHasBeenSet = true;
+}
+
+bool ScalingPolicy::MetricAlarmsHasBeenSet() const
+{
+    return m_metricAlarmsHasBeenSet;
 }
 
 vector<string> ScalingPolicy::GetNotificationUserGroupIds() const

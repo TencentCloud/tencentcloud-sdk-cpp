@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取快照重复日期，星期一到星期日
-                     * @return DayOfWeek 快照重复日期，星期一到星期日
-                     */
-                    std::string GetDayOfWeek() const;
-
-                    /**
-                     * 设置快照重复日期，星期一到星期日
-                     * @param DayOfWeek 快照重复日期，星期一到星期日
-                     */
-                    void SetDayOfWeek(const std::string& _dayOfWeek);
-
-                    /**
-                     * 判断参数 DayOfWeek 是否已赋值
-                     * @return DayOfWeek 是否已赋值
-                     */
-                    bool DayOfWeekHasBeenSet() const;
-
-                    /**
                      * 获取快照重复时间点
                      * @return Hour 快照重复时间点
                      */
@@ -97,6 +79,24 @@ namespace TencentCloud
                     bool PolicyNameHasBeenSet() const;
 
                     /**
+                     * 获取快照重复日期，星期一到星期日
+                     * @return DayOfWeek 快照重复日期，星期一到星期日
+                     */
+                    std::string GetDayOfWeek() const;
+
+                    /**
+                     * 设置快照重复日期，星期一到星期日
+                     * @param DayOfWeek 快照重复日期，星期一到星期日
+                     */
+                    void SetDayOfWeek(const std::string& _dayOfWeek);
+
+                    /**
+                     * 判断参数 DayOfWeek 是否已赋值
+                     * @return DayOfWeek 是否已赋值
+                     */
+                    bool DayOfWeekHasBeenSet() const;
+
+                    /**
                      * 获取快照保留时长
                      * @return AliveDays 快照保留时长
                      */
@@ -114,13 +114,43 @@ namespace TencentCloud
                      */
                     bool AliveDaysHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取快照按月重复，每月1-31号，选择一天，每月这一天打快照。
+                     * @return DayOfMonth 快照按月重复，每月1-31号，选择一天，每月这一天打快照。
+                     */
+                    std::string GetDayOfMonth() const;
 
                     /**
-                     * 快照重复日期，星期一到星期日
+                     * 设置快照按月重复，每月1-31号，选择一天，每月这一天打快照。
+                     * @param DayOfMonth 快照按月重复，每月1-31号，选择一天，每月这一天打快照。
                      */
-                    std::string m_dayOfWeek;
-                    bool m_dayOfWeekHasBeenSet;
+                    void SetDayOfMonth(const std::string& _dayOfMonth);
+
+                    /**
+                     * 判断参数 DayOfMonth 是否已赋值
+                     * @return DayOfMonth 是否已赋值
+                     */
+                    bool DayOfMonthHasBeenSet() const;
+
+                    /**
+                     * 获取间隔天数
+                     * @return IntervalDays 间隔天数
+                     */
+                    uint64_t GetIntervalDays() const;
+
+                    /**
+                     * 设置间隔天数
+                     * @param IntervalDays 间隔天数
+                     */
+                    void SetIntervalDays(const uint64_t& _intervalDays);
+
+                    /**
+                     * 判断参数 IntervalDays 是否已赋值
+                     * @return IntervalDays 是否已赋值
+                     */
+                    bool IntervalDaysHasBeenSet() const;
+
+                private:
 
                     /**
                      * 快照重复时间点
@@ -135,10 +165,28 @@ namespace TencentCloud
                     bool m_policyNameHasBeenSet;
 
                     /**
+                     * 快照重复日期，星期一到星期日
+                     */
+                    std::string m_dayOfWeek;
+                    bool m_dayOfWeekHasBeenSet;
+
+                    /**
                      * 快照保留时长
                      */
                     uint64_t m_aliveDays;
                     bool m_aliveDaysHasBeenSet;
+
+                    /**
+                     * 快照按月重复，每月1-31号，选择一天，每月这一天打快照。
+                     */
+                    std::string m_dayOfMonth;
+                    bool m_dayOfMonthHasBeenSet;
+
+                    /**
+                     * 间隔天数
+                     */
+                    uint64_t m_intervalDays;
+                    bool m_intervalDaysHasBeenSet;
 
                 };
             }

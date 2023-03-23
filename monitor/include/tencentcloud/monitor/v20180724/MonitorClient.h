@@ -840,7 +840,7 @@ namespace TencentCloud
                 CreateAlarmNoticeOutcomeCallable CreateAlarmNoticeCallable(const Model::CreateAlarmNoticeRequest& request);
 
                 /**
-                 *创建云监控告警策略
+                 *创建告警策略
                  * @param req CreateAlarmPolicyRequest
                  * @return CreateAlarmPolicyOutcome
                  */
@@ -923,7 +923,7 @@ namespace TencentCloud
                 CreatePrometheusAlertPolicyOutcomeCallable CreatePrometheusAlertPolicyCallable(const Model::CreatePrometheusAlertPolicyRequest& request);
 
                 /**
-                 *与云监控融合的2.0实例关联集群
+                 *与腾讯云可观测融合的2.0实例关联集群
                  * @param req CreatePrometheusClusterAgentRequest
                  * @return CreatePrometheusClusterAgentOutcome
                  */
@@ -1015,7 +1015,7 @@ namespace TencentCloud
                 CreateServiceDiscoveryOutcomeCallable CreateServiceDiscoveryCallable(const Model::CreateServiceDiscoveryRequest& request);
 
                 /**
-                 *云监控告警删除告警通知模板
+                 *删除告警通知模板
                  * @param req DeleteAlarmNoticesRequest
                  * @return DeleteAlarmNoticesOutcome
                  */
@@ -1226,7 +1226,7 @@ namespace TencentCloud
                 DescribeAlarmNoticeOutcomeCallable DescribeAlarmNoticeCallable(const Model::DescribeAlarmNoticeRequest& request);
 
                 /**
-                 *云监控告警获取告警通知模板所有回调URL
+                 *获取告警通知模板所有回调URL
                  * @param req DescribeAlarmNoticeCallbacksRequest
                  * @return DescribeAlarmNoticeCallbacksOutcome
                  */
@@ -1406,7 +1406,7 @@ namespace TencentCloud
                 DescribeInstalledPluginsOutcomeCallable DescribeInstalledPluginsCallable(const Model::DescribeInstalledPluginsRequest& request);
 
                 /**
-                 *云监控支持多种类型的监控，此接口列出支持的所有类型
+                 *腾讯云可观测平台支持多种类型的监控，此接口列出支持的所有类型
                  * @param req DescribeMonitorTypesRequest
                  * @return DescribeMonitorTypesOutcome
                  */
@@ -1460,7 +1460,7 @@ namespace TencentCloud
                 DescribeProductEventListOutcomeCallable DescribeProductEventListCallable(const Model::DescribeProductEventListRequest& request);
 
                 /**
-                 *查询云监控产品列表，支持云服务器CVM、云数据库、云消息队列、负载均衡、容器服务、专线等云产品。
+                 *查询腾讯云可观测平台云产品列表，支持云服务器CVM、云数据库、云消息队列、负载均衡、容器服务、专线等云产品。
                  * @param req DescribeProductListRequest
                  * @return DescribeProductListOutcome
                  */
@@ -1778,7 +1778,7 @@ namespace TencentCloud
                 ModifyAlarmPolicyInfoOutcomeCallable ModifyAlarmPolicyInfoCallable(const Model::ModifyAlarmPolicyInfoRequest& request);
 
                 /**
-                 *云监控告警修改告警策略绑定的告警通知模板
+                 *告警修改告警策略绑定的告警通知模板
                  * @param req ModifyAlarmPolicyNoticeRequest
                  * @return ModifyAlarmPolicyNoticeOutcome
                  */
@@ -1796,7 +1796,7 @@ namespace TencentCloud
                 ModifyAlarmPolicyStatusOutcomeCallable ModifyAlarmPolicyStatusCallable(const Model::ModifyAlarmPolicyStatusRequest& request);
 
                 /**
-                 *云监控告警修改告警策略的触发任务，TriggerTasks字段放触发任务列表，TriggerTasks传空数组时，代表解绑该策略的所有触发任务。
+                 *修改告警策略的触发任务，TriggerTasks字段放触发任务列表，TriggerTasks传空数组时，代表解绑该策略的所有触发任务。
                  * @param req ModifyAlarmPolicyTasksRequest
                  * @return ModifyAlarmPolicyTasksOutcome
                  */

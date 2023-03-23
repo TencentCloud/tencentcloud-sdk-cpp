@@ -356,6 +356,40 @@ namespace TencentCloud
                      */
                     bool AutoScalingGroupNameHasBeenSet() const;
 
+                    /**
+                     * 获取预热状态，取值如下：
+<li>WAITING_ENTER_WARMUP：等待进入预热
+<li>NO_NEED_WARMUP：无需预热
+<li>IN_WARMUP：预热中
+<li>AFTER_WARMUP：完成预热
+                     * @return WarmupStatus 预热状态，取值如下：
+<li>WAITING_ENTER_WARMUP：等待进入预热
+<li>NO_NEED_WARMUP：无需预热
+<li>IN_WARMUP：预热中
+<li>AFTER_WARMUP：完成预热
+                     */
+                    std::string GetWarmupStatus() const;
+
+                    /**
+                     * 设置预热状态，取值如下：
+<li>WAITING_ENTER_WARMUP：等待进入预热
+<li>NO_NEED_WARMUP：无需预热
+<li>IN_WARMUP：预热中
+<li>AFTER_WARMUP：完成预热
+                     * @param WarmupStatus 预热状态，取值如下：
+<li>WAITING_ENTER_WARMUP：等待进入预热
+<li>NO_NEED_WARMUP：无需预热
+<li>IN_WARMUP：预热中
+<li>AFTER_WARMUP：完成预热
+                     */
+                    void SetWarmupStatus(const std::string& _warmupStatus);
+
+                    /**
+                     * 判断参数 WarmupStatus 是否已赋值
+                     * @return WarmupStatus 是否已赋值
+                     */
+                    bool WarmupStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -454,6 +488,16 @@ namespace TencentCloud
                      */
                     std::string m_autoScalingGroupName;
                     bool m_autoScalingGroupNameHasBeenSet;
+
+                    /**
+                     * 预热状态，取值如下：
+<li>WAITING_ENTER_WARMUP：等待进入预热
+<li>NO_NEED_WARMUP：无需预热
+<li>IN_WARMUP：预热中
+<li>AFTER_WARMUP：完成预热
+                     */
+                    std::string m_warmupStatus;
+                    bool m_warmupStatusHasBeenSet;
 
                 };
             }

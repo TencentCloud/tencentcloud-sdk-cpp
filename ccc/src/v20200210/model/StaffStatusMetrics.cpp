@@ -34,7 +34,9 @@ StaffStatusMetrics::StaffStatusMetrics() :
     m_reserveRestHasBeenSet(false),
     m_reserveNotReadyHasBeenSet(false),
     m_useMobileAcceptHasBeenSet(false),
-    m_useMobileCallOutHasBeenSet(false)
+    m_useMobileCallOutHasBeenSet(false),
+    m_lastOnlineTimestampHasBeenSet(false),
+    m_lastStatusTimestampHasBeenSet(false)
 {
 }
 
@@ -190,6 +192,26 @@ CoreInternalOutcome StaffStatusMetrics::Deserialize(const rapidjson::Value &valu
         m_useMobileCallOutHasBeenSet = true;
     }
 
+    if (value.HasMember("LastOnlineTimestamp") && !value["LastOnlineTimestamp"].IsNull())
+    {
+        if (!value["LastOnlineTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.LastOnlineTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastOnlineTimestamp = value["LastOnlineTimestamp"].GetInt64();
+        m_lastOnlineTimestampHasBeenSet = true;
+    }
+
+    if (value.HasMember("LastStatusTimestamp") && !value["LastStatusTimestamp"].IsNull())
+    {
+        if (!value["LastStatusTimestamp"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `StaffStatusMetrics.LastStatusTimestamp` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lastStatusTimestamp = value["LastStatusTimestamp"].GetInt64();
+        m_lastStatusTimestampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +330,22 @@ void StaffStatusMetrics::ToJsonObject(rapidjson::Value &value, rapidjson::Docume
         string key = "UseMobileCallOut";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_useMobileCallOut, allocator);
+    }
+
+    if (m_lastOnlineTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastOnlineTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastOnlineTimestamp, allocator);
+    }
+
+    if (m_lastStatusTimestampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LastStatusTimestamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lastStatusTimestamp, allocator);
     }
 
 }
@@ -535,5 +573,37 @@ void StaffStatusMetrics::SetUseMobileCallOut(const bool& _useMobileCallOut)
 bool StaffStatusMetrics::UseMobileCallOutHasBeenSet() const
 {
     return m_useMobileCallOutHasBeenSet;
+}
+
+int64_t StaffStatusMetrics::GetLastOnlineTimestamp() const
+{
+    return m_lastOnlineTimestamp;
+}
+
+void StaffStatusMetrics::SetLastOnlineTimestamp(const int64_t& _lastOnlineTimestamp)
+{
+    m_lastOnlineTimestamp = _lastOnlineTimestamp;
+    m_lastOnlineTimestampHasBeenSet = true;
+}
+
+bool StaffStatusMetrics::LastOnlineTimestampHasBeenSet() const
+{
+    return m_lastOnlineTimestampHasBeenSet;
+}
+
+int64_t StaffStatusMetrics::GetLastStatusTimestamp() const
+{
+    return m_lastStatusTimestamp;
+}
+
+void StaffStatusMetrics::SetLastStatusTimestamp(const int64_t& _lastStatusTimestamp)
+{
+    m_lastStatusTimestamp = _lastStatusTimestamp;
+    m_lastStatusTimestampHasBeenSet = true;
+}
+
+bool StaffStatusMetrics::LastStatusTimestampHasBeenSet() const
+{
+    return m_lastStatusTimestampHasBeenSet;
 }
 

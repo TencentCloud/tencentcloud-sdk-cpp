@@ -857,6 +857,49 @@ TrtcClient::DescribeTrtcMcuTranscodeTimeOutcomeCallable TrtcClient::DescribeTrtc
     return task->get_future();
 }
 
+TrtcClient::DescribeTrtcRoomUsageOutcome TrtcClient::DescribeTrtcRoomUsage(const DescribeTrtcRoomUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTrtcRoomUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTrtcRoomUsageResponse rsp = DescribeTrtcRoomUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTrtcRoomUsageOutcome(rsp);
+        else
+            return DescribeTrtcRoomUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTrtcRoomUsageOutcome(outcome.GetError());
+    }
+}
+
+void TrtcClient::DescribeTrtcRoomUsageAsync(const DescribeTrtcRoomUsageRequest& request, const DescribeTrtcRoomUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTrtcRoomUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrtcClient::DescribeTrtcRoomUsageOutcomeCallable TrtcClient::DescribeTrtcRoomUsageCallable(const DescribeTrtcRoomUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTrtcRoomUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTrtcRoomUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrtcClient::DescribeTrtcUsageOutcome TrtcClient::DescribeTrtcUsage(const DescribeTrtcUsageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTrtcUsage");

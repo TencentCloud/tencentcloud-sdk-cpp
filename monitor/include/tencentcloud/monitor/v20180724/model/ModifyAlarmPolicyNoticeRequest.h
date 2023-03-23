@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/AlarmHierarchicalNotice.h>
 
 
 namespace TencentCloud
@@ -114,6 +115,24 @@ namespace TencentCloud
                      */
                     bool PolicyIdsHasBeenSet() const;
 
+                    /**
+                     * 获取告警分级通知规则配置
+                     * @return HierarchicalNotices 告警分级通知规则配置
+                     */
+                    std::vector<AlarmHierarchicalNotice> GetHierarchicalNotices() const;
+
+                    /**
+                     * 设置告警分级通知规则配置
+                     * @param HierarchicalNotices 告警分级通知规则配置
+                     */
+                    void SetHierarchicalNotices(const std::vector<AlarmHierarchicalNotice>& _hierarchicalNotices);
+
+                    /**
+                     * 判断参数 HierarchicalNotices 是否已赋值
+                     * @return HierarchicalNotices 是否已赋值
+                     */
+                    bool HierarchicalNoticesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -139,6 +158,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_policyIds;
                     bool m_policyIdsHasBeenSet;
+
+                    /**
+                     * 告警分级通知规则配置
+                     */
+                    std::vector<AlarmHierarchicalNotice> m_hierarchicalNotices;
+                    bool m_hierarchicalNoticesHasBeenSet;
 
                 };
             }

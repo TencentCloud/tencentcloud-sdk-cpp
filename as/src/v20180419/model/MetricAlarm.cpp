@@ -26,7 +26,8 @@ MetricAlarm::MetricAlarm() :
     m_thresholdHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_continuousTimeHasBeenSet(false),
-    m_statisticHasBeenSet(false)
+    m_statisticHasBeenSet(false),
+    m_preciseThresholdHasBeenSet(false)
 {
 }
 
@@ -95,6 +96,16 @@ CoreInternalOutcome MetricAlarm::Deserialize(const rapidjson::Value &value)
         m_statisticHasBeenSet = true;
     }
 
+    if (value.HasMember("PreciseThreshold") && !value["PreciseThreshold"].IsNull())
+    {
+        if (!value["PreciseThreshold"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `MetricAlarm.PreciseThreshold` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_preciseThreshold = value["PreciseThreshold"].GetDouble();
+        m_preciseThresholdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -148,6 +159,14 @@ void MetricAlarm::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "Statistic";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_statistic.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_preciseThresholdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PreciseThreshold";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_preciseThreshold, allocator);
     }
 
 }
@@ -247,5 +266,21 @@ void MetricAlarm::SetStatistic(const string& _statistic)
 bool MetricAlarm::StatisticHasBeenSet() const
 {
     return m_statisticHasBeenSet;
+}
+
+double MetricAlarm::GetPreciseThreshold() const
+{
+    return m_preciseThreshold;
+}
+
+void MetricAlarm::SetPreciseThreshold(const double& _preciseThreshold)
+{
+    m_preciseThreshold = _preciseThreshold;
+    m_preciseThresholdHasBeenSet = true;
+}
+
+bool MetricAlarm::PreciseThresholdHasBeenSet() const
+{
+    return m_preciseThresholdHasBeenSet;
 }
 

@@ -81,53 +81,97 @@ namespace TencentCloud
 
                     /**
                      * 获取查询的指标，取值有：
-<li> l7Flow_outFlux_country：请求的国家；</li>
-<li> l7Flow_outFlux_statusCode：请求的状态码；</li>
-<li> l7Flow_outFlux_domain：请求域名；</li>
-<li> l7Flow_outFlux_url：请求的URL; </li>
-<li> l7Flow_outFlux_resourceType：请求的资源类型；</li>
-<li> l7Flow_outFlux_sip：客户端的源IP；</li>
-<li> l7Flow_outFlux_referers：refer信息；</li>
-<li> l7Flow_outFlux_ua_device：设备类型; </li>
-<li> l7Flow_outFlux_ua_browser：浏览器类型；</li>
-<li> l7Flow_outFlux_us_os：操作系统类型。</li>
+<li> l7Flow_outFlux_country：按国家维度统计流量指标；</li>
+<li> l7Flow_outFlux_statusCode：按状态码维度统计流量指标；</li>
+<li> l7Flow_outFlux_domain：按域名维度统计流量指标；</li>
+<li> l7Flow_outFlux_url：按URL维度统计流量指标; </li>
+<li> l7Flow_outFlux_resourceType：按资源类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_sip：按客户端的源IP维度统计流量指标；</li>
+<li> l7Flow_outFlux_referers：按refer信息维度统计流量指标；</li>
+<li> l7Flow_outFlux_ua_device：按设备类型维度统计流量指标; </li>
+<li> l7Flow_outFlux_ua_browser：按浏览器类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_us_os：按操作系统类型维度统计流量指标；</li>
+<li> l7Flow_request_country：按国家维度统计请求数指标；</li>
+<li> l7Flow_request_statusCode：按状态码维度统计请求数指标；</li>
+<li> l7Flow_request_domain：按域名维度统计请求数指标；</li>
+<li> l7Flow_request_url：按URL维度统计请求数指标; </li>
+<li> l7Flow_request_resourceType：按资源类型维度统计请求数指标；</li>
+<li> l7Flow_request_sip：按客户端的源IP维度统计请求数指标；</li>
+<li> l7Flow_request_refere请求的rs：按refer信息维度统计请求数指标；</li>
+<li> l7Flow_request_ua_device：按设备类型维度统计请求数指标; </li>
+<li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
+<li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
+
                      * @return MetricName 查询的指标，取值有：
-<li> l7Flow_outFlux_country：请求的国家；</li>
-<li> l7Flow_outFlux_statusCode：请求的状态码；</li>
-<li> l7Flow_outFlux_domain：请求域名；</li>
-<li> l7Flow_outFlux_url：请求的URL; </li>
-<li> l7Flow_outFlux_resourceType：请求的资源类型；</li>
-<li> l7Flow_outFlux_sip：客户端的源IP；</li>
-<li> l7Flow_outFlux_referers：refer信息；</li>
-<li> l7Flow_outFlux_ua_device：设备类型; </li>
-<li> l7Flow_outFlux_ua_browser：浏览器类型；</li>
-<li> l7Flow_outFlux_us_os：操作系统类型。</li>
+<li> l7Flow_outFlux_country：按国家维度统计流量指标；</li>
+<li> l7Flow_outFlux_statusCode：按状态码维度统计流量指标；</li>
+<li> l7Flow_outFlux_domain：按域名维度统计流量指标；</li>
+<li> l7Flow_outFlux_url：按URL维度统计流量指标; </li>
+<li> l7Flow_outFlux_resourceType：按资源类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_sip：按客户端的源IP维度统计流量指标；</li>
+<li> l7Flow_outFlux_referers：按refer信息维度统计流量指标；</li>
+<li> l7Flow_outFlux_ua_device：按设备类型维度统计流量指标; </li>
+<li> l7Flow_outFlux_ua_browser：按浏览器类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_us_os：按操作系统类型维度统计流量指标；</li>
+<li> l7Flow_request_country：按国家维度统计请求数指标；</li>
+<li> l7Flow_request_statusCode：按状态码维度统计请求数指标；</li>
+<li> l7Flow_request_domain：按域名维度统计请求数指标；</li>
+<li> l7Flow_request_url：按URL维度统计请求数指标; </li>
+<li> l7Flow_request_resourceType：按资源类型维度统计请求数指标；</li>
+<li> l7Flow_request_sip：按客户端的源IP维度统计请求数指标；</li>
+<li> l7Flow_request_refere请求的rs：按refer信息维度统计请求数指标；</li>
+<li> l7Flow_request_ua_device：按设备类型维度统计请求数指标; </li>
+<li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
+<li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
+
                      */
                     std::string GetMetricName() const;
 
                     /**
                      * 设置查询的指标，取值有：
-<li> l7Flow_outFlux_country：请求的国家；</li>
-<li> l7Flow_outFlux_statusCode：请求的状态码；</li>
-<li> l7Flow_outFlux_domain：请求域名；</li>
-<li> l7Flow_outFlux_url：请求的URL; </li>
-<li> l7Flow_outFlux_resourceType：请求的资源类型；</li>
-<li> l7Flow_outFlux_sip：客户端的源IP；</li>
-<li> l7Flow_outFlux_referers：refer信息；</li>
-<li> l7Flow_outFlux_ua_device：设备类型; </li>
-<li> l7Flow_outFlux_ua_browser：浏览器类型；</li>
-<li> l7Flow_outFlux_us_os：操作系统类型。</li>
+<li> l7Flow_outFlux_country：按国家维度统计流量指标；</li>
+<li> l7Flow_outFlux_statusCode：按状态码维度统计流量指标；</li>
+<li> l7Flow_outFlux_domain：按域名维度统计流量指标；</li>
+<li> l7Flow_outFlux_url：按URL维度统计流量指标; </li>
+<li> l7Flow_outFlux_resourceType：按资源类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_sip：按客户端的源IP维度统计流量指标；</li>
+<li> l7Flow_outFlux_referers：按refer信息维度统计流量指标；</li>
+<li> l7Flow_outFlux_ua_device：按设备类型维度统计流量指标; </li>
+<li> l7Flow_outFlux_ua_browser：按浏览器类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_us_os：按操作系统类型维度统计流量指标；</li>
+<li> l7Flow_request_country：按国家维度统计请求数指标；</li>
+<li> l7Flow_request_statusCode：按状态码维度统计请求数指标；</li>
+<li> l7Flow_request_domain：按域名维度统计请求数指标；</li>
+<li> l7Flow_request_url：按URL维度统计请求数指标; </li>
+<li> l7Flow_request_resourceType：按资源类型维度统计请求数指标；</li>
+<li> l7Flow_request_sip：按客户端的源IP维度统计请求数指标；</li>
+<li> l7Flow_request_refere请求的rs：按refer信息维度统计请求数指标；</li>
+<li> l7Flow_request_ua_device：按设备类型维度统计请求数指标; </li>
+<li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
+<li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
+
                      * @param MetricName 查询的指标，取值有：
-<li> l7Flow_outFlux_country：请求的国家；</li>
-<li> l7Flow_outFlux_statusCode：请求的状态码；</li>
-<li> l7Flow_outFlux_domain：请求域名；</li>
-<li> l7Flow_outFlux_url：请求的URL; </li>
-<li> l7Flow_outFlux_resourceType：请求的资源类型；</li>
-<li> l7Flow_outFlux_sip：客户端的源IP；</li>
-<li> l7Flow_outFlux_referers：refer信息；</li>
-<li> l7Flow_outFlux_ua_device：设备类型; </li>
-<li> l7Flow_outFlux_ua_browser：浏览器类型；</li>
-<li> l7Flow_outFlux_us_os：操作系统类型。</li>
+<li> l7Flow_outFlux_country：按国家维度统计流量指标；</li>
+<li> l7Flow_outFlux_statusCode：按状态码维度统计流量指标；</li>
+<li> l7Flow_outFlux_domain：按域名维度统计流量指标；</li>
+<li> l7Flow_outFlux_url：按URL维度统计流量指标; </li>
+<li> l7Flow_outFlux_resourceType：按资源类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_sip：按客户端的源IP维度统计流量指标；</li>
+<li> l7Flow_outFlux_referers：按refer信息维度统计流量指标；</li>
+<li> l7Flow_outFlux_ua_device：按设备类型维度统计流量指标; </li>
+<li> l7Flow_outFlux_ua_browser：按浏览器类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_us_os：按操作系统类型维度统计流量指标；</li>
+<li> l7Flow_request_country：按国家维度统计请求数指标；</li>
+<li> l7Flow_request_statusCode：按状态码维度统计请求数指标；</li>
+<li> l7Flow_request_domain：按域名维度统计请求数指标；</li>
+<li> l7Flow_request_url：按URL维度统计请求数指标; </li>
+<li> l7Flow_request_resourceType：按资源类型维度统计请求数指标；</li>
+<li> l7Flow_request_sip：按客户端的源IP维度统计请求数指标；</li>
+<li> l7Flow_request_refere请求的rs：按refer信息维度统计请求数指标；</li>
+<li> l7Flow_request_ua_device：按设备类型维度统计请求数指标; </li>
+<li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
+<li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
+
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -138,14 +182,14 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
-                     * 获取站点集合，不填默认选择全部站点。
-                     * @return ZoneIds 站点集合，不填默认选择全部站点。
+                     * 获取站点集合，此参数必填，不填默认查询为空。
+                     * @return ZoneIds 站点集合，此参数必填，不填默认查询为空。
                      */
                     std::vector<std::string> GetZoneIds() const;
 
                     /**
-                     * 设置站点集合，不填默认选择全部站点。
-                     * @param ZoneIds 站点集合，不填默认选择全部站点。
+                     * 设置站点集合，此参数必填，不填默认查询为空。
+                     * @param ZoneIds 站点集合，此参数必填，不填默认查询为空。
                      */
                     void SetZoneIds(const std::vector<std::string>& _zoneIds);
 
@@ -339,22 +383,33 @@ namespace TencentCloud
 
                     /**
                      * 查询的指标，取值有：
-<li> l7Flow_outFlux_country：请求的国家；</li>
-<li> l7Flow_outFlux_statusCode：请求的状态码；</li>
-<li> l7Flow_outFlux_domain：请求域名；</li>
-<li> l7Flow_outFlux_url：请求的URL; </li>
-<li> l7Flow_outFlux_resourceType：请求的资源类型；</li>
-<li> l7Flow_outFlux_sip：客户端的源IP；</li>
-<li> l7Flow_outFlux_referers：refer信息；</li>
-<li> l7Flow_outFlux_ua_device：设备类型; </li>
-<li> l7Flow_outFlux_ua_browser：浏览器类型；</li>
-<li> l7Flow_outFlux_us_os：操作系统类型。</li>
+<li> l7Flow_outFlux_country：按国家维度统计流量指标；</li>
+<li> l7Flow_outFlux_statusCode：按状态码维度统计流量指标；</li>
+<li> l7Flow_outFlux_domain：按域名维度统计流量指标；</li>
+<li> l7Flow_outFlux_url：按URL维度统计流量指标; </li>
+<li> l7Flow_outFlux_resourceType：按资源类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_sip：按客户端的源IP维度统计流量指标；</li>
+<li> l7Flow_outFlux_referers：按refer信息维度统计流量指标；</li>
+<li> l7Flow_outFlux_ua_device：按设备类型维度统计流量指标; </li>
+<li> l7Flow_outFlux_ua_browser：按浏览器类型维度统计流量指标；</li>
+<li> l7Flow_outFlux_us_os：按操作系统类型维度统计流量指标；</li>
+<li> l7Flow_request_country：按国家维度统计请求数指标；</li>
+<li> l7Flow_request_statusCode：按状态码维度统计请求数指标；</li>
+<li> l7Flow_request_domain：按域名维度统计请求数指标；</li>
+<li> l7Flow_request_url：按URL维度统计请求数指标; </li>
+<li> l7Flow_request_resourceType：按资源类型维度统计请求数指标；</li>
+<li> l7Flow_request_sip：按客户端的源IP维度统计请求数指标；</li>
+<li> l7Flow_request_refere请求的rs：按refer信息维度统计请求数指标；</li>
+<li> l7Flow_request_ua_device：按设备类型维度统计请求数指标; </li>
+<li> l7Flow_request_ua_browser：按浏览器类型维度统计请求数指标；</li>
+<li> l7Flow_request_us_os：按操作系统类型维度统计请求数指标。</li>
+
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
 
                     /**
-                     * 站点集合，不填默认选择全部站点。
+                     * 站点集合，此参数必填，不填默认查询为空。
                      */
                     std::vector<std::string> m_zoneIds;
                     bool m_zoneIdsHasBeenSet;

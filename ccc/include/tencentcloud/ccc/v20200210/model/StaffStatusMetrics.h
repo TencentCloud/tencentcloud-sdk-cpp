@@ -299,6 +299,50 @@ namespace TencentCloud
                      */
                     bool UseMobileCallOutHasBeenSet() const;
 
+                    /**
+                     * 获取最近一次上线时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastOnlineTimestamp 最近一次上线时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLastOnlineTimestamp() const;
+
+                    /**
+                     * 设置最近一次上线时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastOnlineTimestamp 最近一次上线时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastOnlineTimestamp(const int64_t& _lastOnlineTimestamp);
+
+                    /**
+                     * 判断参数 LastOnlineTimestamp 是否已赋值
+                     * @return LastOnlineTimestamp 是否已赋值
+                     */
+                    bool LastOnlineTimestampHasBeenSet() const;
+
+                    /**
+                     * 获取最近一次状态时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LastStatusTimestamp 最近一次状态时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLastStatusTimestamp() const;
+
+                    /**
+                     * 设置最近一次状态时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LastStatusTimestamp 最近一次状态时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLastStatusTimestamp(const int64_t& _lastStatusTimestamp);
+
+                    /**
+                     * 判断参数 LastStatusTimestamp 是否已赋值
+                     * @return LastStatusTimestamp 是否已赋值
+                     */
+                    bool LastStatusTimestampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -384,6 +428,20 @@ namespace TencentCloud
                      */
                     bool m_useMobileCallOut;
                     bool m_useMobileCallOutHasBeenSet;
+
+                    /**
+                     * 最近一次上线时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lastOnlineTimestamp;
+                    bool m_lastOnlineTimestampHasBeenSet;
+
+                    /**
+                     * 最近一次状态时间戳
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lastStatusTimestamp;
+                    bool m_lastStatusTimestampHasBeenSet;
 
                 };
             }

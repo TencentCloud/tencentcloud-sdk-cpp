@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取告警伸缩策略ID
-                     * @return AutoScalingPolicyId 告警伸缩策略ID
+                     * 获取告警伸缩策略ID，不支持目标追踪策略。
+                     * @return AutoScalingPolicyId 告警伸缩策略ID，不支持目标追踪策略。
                      */
                     std::string GetAutoScalingPolicyId() const;
 
                     /**
-                     * 设置告警伸缩策略ID
-                     * @param AutoScalingPolicyId 告警伸缩策略ID
+                     * 设置告警伸缩策略ID，不支持目标追踪策略。
+                     * @param AutoScalingPolicyId 告警伸缩策略ID，不支持目标追踪策略。
                      */
                     void SetAutoScalingPolicyId(const std::string& _autoScalingPolicyId);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 告警伸缩策略ID
+                     * 告警伸缩策略ID，不支持目标追踪策略。
                      */
                     std::string m_autoScalingPolicyId;
                     bool m_autoScalingPolicyIdHasBeenSet;

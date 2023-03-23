@@ -346,6 +346,58 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     bool ApproverOptionHasBeenSet() const;
 
+                    /**
+                     * 获取签署人查看合同时认证方式, 
+1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
+如果不传默认为1
+                     * @return ApproverVerifyTypes 签署人查看合同时认证方式, 
+1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
+如果不传默认为1
+                     */
+                    std::vector<int64_t> GetApproverVerifyTypes() const;
+
+                    /**
+                     * 设置签署人查看合同时认证方式, 
+1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
+如果不传默认为1
+                     * @param ApproverVerifyTypes 签署人查看合同时认证方式, 
+1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
+如果不传默认为1
+                     */
+                    void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
+
+                    /**
+                     * 判断参数 ApproverVerifyTypes 是否已赋值
+                     * @return ApproverVerifyTypes 是否已赋值
+                     */
+                    bool ApproverVerifyTypesHasBeenSet() const;
+
+                    /**
+                     * 获取签署人签署合同时的认证方式
+1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
+合同签署认证方式的优先级 verifyChannel>approverSignTypes
+                     * @return ApproverSignTypes 签署人签署合同时的认证方式
+1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
+合同签署认证方式的优先级 verifyChannel>approverSignTypes
+                     */
+                    std::vector<int64_t> GetApproverSignTypes() const;
+
+                    /**
+                     * 设置签署人签署合同时的认证方式
+1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
+合同签署认证方式的优先级 verifyChannel>approverSignTypes
+                     * @param ApproverSignTypes 签署人签署合同时的认证方式
+1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
+合同签署认证方式的优先级 verifyChannel>approverSignTypes
+                     */
+                    void SetApproverSignTypes(const std::vector<int64_t>& _approverSignTypes);
+
+                    /**
+                     * 判断参数 ApproverSignTypes 是否已赋值
+                     * @return ApproverSignTypes 是否已赋值
+                     */
+                    bool ApproverSignTypesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -444,6 +496,22 @@ HONGKONG_MACAO_AND_TAIWAN 港澳台居民居住证(格式同居民身份证)
                      */
                     ApproverOption m_approverOption;
                     bool m_approverOptionHasBeenSet;
+
+                    /**
+                     * 签署人查看合同时认证方式, 
+1-实名查看 2-短信验证码查看(企业签署方不支持该方式)
+如果不传默认为1
+                     */
+                    std::vector<int64_t> m_approverVerifyTypes;
+                    bool m_approverVerifyTypesHasBeenSet;
+
+                    /**
+                     * 签署人签署合同时的认证方式
+1-人脸认证 2-签署密码 3-运营商三要素(默认为1,2)
+合同签署认证方式的优先级 verifyChannel>approverSignTypes
+                     */
+                    std::vector<int64_t> m_approverSignTypes;
+                    bool m_approverSignTypesHasBeenSet;
 
                 };
             }
