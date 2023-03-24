@@ -123,6 +123,24 @@ namespace TencentCloud
                      */
                     bool MetaDataHasBeenSet() const;
 
+                    /**
+                     * 获取导出视频的封面图片 URL。
+                     * @return CoverURL 导出视频的封面图片 URL。
+                     */
+                    std::string GetCoverURL() const;
+
+                    /**
+                     * 设置导出视频的封面图片 URL。
+                     * @param CoverURL 导出视频的封面图片 URL。
+                     */
+                    void SetCoverURL(const std::string& _coverURL);
+
+                    /**
+                     * 判断参数 CoverURL 是否已赋值
+                     * @return CoverURL 是否已赋值
+                     */
+                    bool CoverURLHasBeenSet() const;
+
                 private:
 
                     /**
@@ -149,6 +167,12 @@ namespace TencentCloud
                      */
                     MediaMetaData m_metaData;
                     bool m_metaDataHasBeenSet;
+
+                    /**
+                     * 导出视频的封面图片 URL。
+                     */
+                    std::string m_coverURL;
+                    bool m_coverURLHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ VideoEditProjectOutput::VideoEditProjectOutput() :
     m_materialIdHasBeenSet(false),
     m_vodFileIdHasBeenSet(false),
     m_uRLHasBeenSet(false),
-    m_metaDataHasBeenSet(false)
+    m_metaDataHasBeenSet(false),
+    m_coverURLHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,16 @@ CoreInternalOutcome VideoEditProjectOutput::Deserialize(const rapidjson::Value &
         m_metaDataHasBeenSet = true;
     }
 
+    if (value.HasMember("CoverURL") && !value["CoverURL"].IsNull())
+    {
+        if (!value["CoverURL"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `VideoEditProjectOutput.CoverURL` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_coverURL = string(value["CoverURL"].GetString());
+        m_coverURLHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -118,6 +129,14 @@ void VideoEditProjectOutput::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_metaData.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_coverURLHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CoverURL";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_coverURL.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -185,5 +204,21 @@ void VideoEditProjectOutput::SetMetaData(const MediaMetaData& _metaData)
 bool VideoEditProjectOutput::MetaDataHasBeenSet() const
 {
     return m_metaDataHasBeenSet;
+}
+
+string VideoEditProjectOutput::GetCoverURL() const
+{
+    return m_coverURL;
+}
+
+void VideoEditProjectOutput::SetCoverURL(const string& _coverURL)
+{
+    m_coverURL = _coverURL;
+    m_coverURLHasBeenSet = true;
+}
+
+bool VideoEditProjectOutput::CoverURLHasBeenSet() const
+{
+    return m_coverURLHasBeenSet;
 }
 

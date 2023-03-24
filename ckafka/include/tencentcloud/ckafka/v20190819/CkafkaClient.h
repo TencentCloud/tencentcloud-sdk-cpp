@@ -37,6 +37,8 @@
 #include <tencentcloud/ckafka/v20190819/model/CheckCdcClusterResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateAclResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateAclRuleRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/CreateAclRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateCdcClusterRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateCdcClusterResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/CreateConnectResourceRequest.h>
@@ -89,6 +91,8 @@
 #include <tencentcloud/ckafka/v20190819/model/DeleteUserResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeACLRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeACLResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/DescribeAclRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeAppInfoResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/DescribeCkafkaZoneRequest.h>
@@ -149,6 +153,8 @@
 #include <tencentcloud/ckafka/v20190819/model/FetchMessageListByOffsetResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/InquireCkafkaPriceResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyAclRuleRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyAclRuleResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskRequest.h>
@@ -200,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateAclResponse> CreateAclOutcome;
                 typedef std::future<CreateAclOutcome> CreateAclOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateAclRequest&, CreateAclOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAclRuleResponse> CreateAclRuleOutcome;
+                typedef std::future<CreateAclRuleOutcome> CreateAclRuleOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::CreateAclRuleRequest&, CreateAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAclRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCdcClusterResponse> CreateCdcClusterOutcome;
                 typedef std::future<CreateCdcClusterOutcome> CreateCdcClusterOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::CreateCdcClusterRequest&, CreateCdcClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCdcClusterAsyncHandler;
@@ -278,6 +287,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeACLResponse> DescribeACLOutcome;
                 typedef std::future<DescribeACLOutcome> DescribeACLOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeACLRequest&, DescribeACLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeACLAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAclRuleResponse> DescribeAclRuleOutcome;
+                typedef std::future<DescribeAclRuleOutcome> DescribeAclRuleOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::DescribeAclRuleRequest&, DescribeAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAclRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAppInfoResponse> DescribeAppInfoOutcome;
                 typedef std::future<DescribeAppInfoOutcome> DescribeAppInfoOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::DescribeAppInfoRequest&, DescribeAppInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppInfoAsyncHandler;
@@ -368,6 +380,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::InquireCkafkaPriceResponse> InquireCkafkaPriceOutcome;
                 typedef std::future<InquireCkafkaPriceOutcome> InquireCkafkaPriceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::InquireCkafkaPriceRequest&, InquireCkafkaPriceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> InquireCkafkaPriceAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyAclRuleResponse> ModifyAclRuleOutcome;
+                typedef std::future<ModifyAclRuleOutcome> ModifyAclRuleOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyAclRuleRequest&, ModifyAclRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyAclRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyConnectResourceResponse> ModifyConnectResourceOutcome;
                 typedef std::future<ModifyConnectResourceOutcome> ModifyConnectResourceOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyConnectResourceRequest&, ModifyConnectResourceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyConnectResourceAsyncHandler;
@@ -457,6 +472,15 @@ namespace TencentCloud
                 CreateAclOutcome CreateAcl(const Model::CreateAclRequest &request);
                 void CreateAclAsync(const Model::CreateAclRequest& request, const CreateAclAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateAclOutcomeCallable CreateAclCallable(const Model::CreateAclRequest& request);
+
+                /**
+                 *添加 ACL 规则
+                 * @param req CreateAclRuleRequest
+                 * @return CreateAclRuleOutcome
+                 */
+                CreateAclRuleOutcome CreateAclRule(const Model::CreateAclRuleRequest &request);
+                void CreateAclRuleAsync(const Model::CreateAclRuleRequest& request, const CreateAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAclRuleOutcomeCallable CreateAclRuleCallable(const Model::CreateAclRuleRequest& request);
 
                 /**
                  *用于cdc的专用ckafka集群
@@ -691,6 +715,15 @@ namespace TencentCloud
                 DescribeACLOutcome DescribeACL(const Model::DescribeACLRequest &request);
                 void DescribeACLAsync(const Model::DescribeACLRequest& request, const DescribeACLAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeACLOutcomeCallable DescribeACLCallable(const Model::DescribeACLRequest& request);
+
+                /**
+                 *查询ACL规则列表
+                 * @param req DescribeAclRuleRequest
+                 * @return DescribeAclRuleOutcome
+                 */
+                DescribeAclRuleOutcome DescribeAclRule(const Model::DescribeAclRuleRequest &request);
+                void DescribeAclRuleAsync(const Model::DescribeAclRuleRequest& request, const DescribeAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAclRuleOutcomeCallable DescribeAclRuleCallable(const Model::DescribeAclRuleRequest& request);
 
                 /**
                  *查询用户列表
@@ -963,6 +996,15 @@ namespace TencentCloud
                 InquireCkafkaPriceOutcome InquireCkafkaPrice(const Model::InquireCkafkaPriceRequest &request);
                 void InquireCkafkaPriceAsync(const Model::InquireCkafkaPriceRequest& request, const InquireCkafkaPriceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 InquireCkafkaPriceOutcomeCallable InquireCkafkaPriceCallable(const Model::InquireCkafkaPriceRequest& request);
+
+                /**
+                 *修改AC策略，目前只支持预设规则的是否应用到新增topic这一项的修改
+                 * @param req ModifyAclRuleRequest
+                 * @return ModifyAclRuleOutcome
+                 */
+                ModifyAclRuleOutcome ModifyAclRule(const Model::ModifyAclRuleRequest &request);
+                void ModifyAclRuleAsync(const Model::ModifyAclRuleRequest& request, const ModifyAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyAclRuleOutcomeCallable ModifyAclRuleCallable(const Model::ModifyAclRuleRequest& request);
 
                 /**
                  *编辑Datahub连接源

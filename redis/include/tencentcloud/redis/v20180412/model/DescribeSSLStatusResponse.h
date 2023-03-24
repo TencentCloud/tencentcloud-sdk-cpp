@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取证书下载地址
-                     * @return CertDownloadUrl 证书下载地址
+                     * 获取SSL 证书下载地址。
+                     * @return CertDownloadUrl SSL 证书下载地址。
                      */
                     std::string GetCertDownloadUrl() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool CertDownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取证书下载链接到期时间
-                     * @return UrlExpiredTime 证书下载链接到期时间
+                     * 获取证书下载链接到期时间。
+                     * @return UrlExpiredTime 证书下载链接到期时间。
                      */
                     std::string GetUrlExpiredTime() const;
 
@@ -68,8 +68,12 @@ namespace TencentCloud
                     bool UrlExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取实例SSL配置状态， true：开启 false：关闭
-                     * @return SSLConfig 实例SSL配置状态， true：开启 false：关闭
+                     * 获取标识实例开启 SSL 功能。
+- true：开启 。
+- false：关闭。
+                     * @return SSLConfig 标识实例开启 SSL 功能。
+- true：开启 。
+- false：关闭。
                      */
                     bool GetSSLConfig() const;
 
@@ -80,8 +84,12 @@ namespace TencentCloud
                     bool SSLConfigHasBeenSet() const;
 
                     /**
-                     * 获取实例SSL特性支持， true：支持 false：不支持（小版本升级后才能支持SSL特性）
-                     * @return FeatureSupport 实例SSL特性支持， true：支持 false：不支持（小版本升级后才能支持SSL特性）
+                     * 获取标识实例是否支持 SSL特性。
+- true：支持。
+- false：不支持。
+                     * @return FeatureSupport 标识实例是否支持 SSL特性。
+- true：支持。
+- false：不支持。
                      */
                     bool GetFeatureSupport() const;
 
@@ -92,8 +100,12 @@ namespace TencentCloud
                     bool FeatureSupportHasBeenSet() const;
 
                     /**
-                     * 获取SSL配置状态，1: 配置中 2：配置成功
-                     * @return Status SSL配置状态，1: 配置中 2：配置成功
+                     * 获取说明配置 SSL 的状态。
+- 1: 配置中。
+- 2：配置成功。
+                     * @return Status 说明配置 SSL 的状态。
+- 1: 配置中。
+- 2：配置成功。
                      */
                     int64_t GetStatus() const;
 
@@ -106,31 +118,37 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 证书下载地址
+                     * SSL 证书下载地址。
                      */
                     std::string m_certDownloadUrl;
                     bool m_certDownloadUrlHasBeenSet;
 
                     /**
-                     * 证书下载链接到期时间
+                     * 证书下载链接到期时间。
                      */
                     std::string m_urlExpiredTime;
                     bool m_urlExpiredTimeHasBeenSet;
 
                     /**
-                     * 实例SSL配置状态， true：开启 false：关闭
+                     * 标识实例开启 SSL 功能。
+- true：开启 。
+- false：关闭。
                      */
                     bool m_sSLConfig;
                     bool m_sSLConfigHasBeenSet;
 
                     /**
-                     * 实例SSL特性支持， true：支持 false：不支持（小版本升级后才能支持SSL特性）
+                     * 标识实例是否支持 SSL特性。
+- true：支持。
+- false：不支持。
                      */
                     bool m_featureSupport;
                     bool m_featureSupportHasBeenSet;
 
                     /**
-                     * SSL配置状态，1: 配置中 2：配置成功
+                     * 说明配置 SSL 的状态。
+- 1: 配置中。
+- 2：配置成功。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

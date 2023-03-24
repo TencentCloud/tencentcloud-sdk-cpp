@@ -28,8 +28,10 @@ DescribeConnectResource::DescribeConnectResource() :
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_errorMessageHasBeenSet(false),
-    m_currentStepHasBeenSet(false),
     m_datahubTaskCountHasBeenSet(false),
+    m_currentStepHasBeenSet(false),
+    m_taskProgressHasBeenSet(false),
+    m_stepListHasBeenSet(false),
     m_dtsConnectParamHasBeenSet(false),
     m_mongoDBConnectParamHasBeenSet(false),
     m_esConnectParamHasBeenSet(false),
@@ -119,6 +121,16 @@ CoreInternalOutcome DescribeConnectResource::Deserialize(const rapidjson::Value 
         m_errorMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("DatahubTaskCount") && !value["DatahubTaskCount"].IsNull())
+    {
+        if (!value["DatahubTaskCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.DatahubTaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_datahubTaskCount = value["DatahubTaskCount"].GetInt64();
+        m_datahubTaskCountHasBeenSet = true;
+    }
+
     if (value.HasMember("CurrentStep") && !value["CurrentStep"].IsNull())
     {
         if (!value["CurrentStep"].IsString())
@@ -129,14 +141,27 @@ CoreInternalOutcome DescribeConnectResource::Deserialize(const rapidjson::Value 
         m_currentStepHasBeenSet = true;
     }
 
-    if (value.HasMember("DatahubTaskCount") && !value["DatahubTaskCount"].IsNull())
+    if (value.HasMember("TaskProgress") && !value["TaskProgress"].IsNull())
     {
-        if (!value["DatahubTaskCount"].IsInt64())
+        if (!value["TaskProgress"].IsLosslessDouble())
         {
-            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.DatahubTaskCount` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.TaskProgress` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
         }
-        m_datahubTaskCount = value["DatahubTaskCount"].GetInt64();
-        m_datahubTaskCountHasBeenSet = true;
+        m_taskProgress = value["TaskProgress"].GetDouble();
+        m_taskProgressHasBeenSet = true;
+    }
+
+    if (value.HasMember("StepList") && !value["StepList"].IsNull())
+    {
+        if (!value["StepList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescribeConnectResource.StepList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["StepList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_stepList.push_back((*itr).GetString());
+        }
+        m_stepListHasBeenSet = true;
     }
 
     if (value.HasMember("DtsConnectParam") && !value["DtsConnectParam"].IsNull())
@@ -389,6 +414,14 @@ void DescribeConnectResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, rapidjson::Value(m_errorMessage.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_datahubTaskCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DatahubTaskCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_datahubTaskCount, allocator);
+    }
+
     if (m_currentStepHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -397,12 +430,25 @@ void DescribeConnectResource::ToJsonObject(rapidjson::Value &value, rapidjson::D
         value.AddMember(iKey, rapidjson::Value(m_currentStep.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_datahubTaskCountHasBeenSet)
+    if (m_taskProgressHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "DatahubTaskCount";
+        string key = "TaskProgress";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_datahubTaskCount, allocator);
+        value.AddMember(iKey, m_taskProgress, allocator);
+    }
+
+    if (m_stepListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StepList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_stepList.begin(); itr != m_stepList.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
     if (m_dtsConnectParamHasBeenSet)
@@ -619,6 +665,22 @@ bool DescribeConnectResource::ErrorMessageHasBeenSet() const
     return m_errorMessageHasBeenSet;
 }
 
+int64_t DescribeConnectResource::GetDatahubTaskCount() const
+{
+    return m_datahubTaskCount;
+}
+
+void DescribeConnectResource::SetDatahubTaskCount(const int64_t& _datahubTaskCount)
+{
+    m_datahubTaskCount = _datahubTaskCount;
+    m_datahubTaskCountHasBeenSet = true;
+}
+
+bool DescribeConnectResource::DatahubTaskCountHasBeenSet() const
+{
+    return m_datahubTaskCountHasBeenSet;
+}
+
 string DescribeConnectResource::GetCurrentStep() const
 {
     return m_currentStep;
@@ -635,20 +697,36 @@ bool DescribeConnectResource::CurrentStepHasBeenSet() const
     return m_currentStepHasBeenSet;
 }
 
-int64_t DescribeConnectResource::GetDatahubTaskCount() const
+double DescribeConnectResource::GetTaskProgress() const
 {
-    return m_datahubTaskCount;
+    return m_taskProgress;
 }
 
-void DescribeConnectResource::SetDatahubTaskCount(const int64_t& _datahubTaskCount)
+void DescribeConnectResource::SetTaskProgress(const double& _taskProgress)
 {
-    m_datahubTaskCount = _datahubTaskCount;
-    m_datahubTaskCountHasBeenSet = true;
+    m_taskProgress = _taskProgress;
+    m_taskProgressHasBeenSet = true;
 }
 
-bool DescribeConnectResource::DatahubTaskCountHasBeenSet() const
+bool DescribeConnectResource::TaskProgressHasBeenSet() const
 {
-    return m_datahubTaskCountHasBeenSet;
+    return m_taskProgressHasBeenSet;
+}
+
+vector<string> DescribeConnectResource::GetStepList() const
+{
+    return m_stepList;
+}
+
+void DescribeConnectResource::SetStepList(const vector<string>& _stepList)
+{
+    m_stepList = _stepList;
+    m_stepListHasBeenSet = true;
+}
+
+bool DescribeConnectResource::StepListHasBeenSet() const
+{
+    return m_stepListHasBeenSet;
 }
 
 DtsConnectParam DescribeConnectResource::GetDtsConnectParam() const

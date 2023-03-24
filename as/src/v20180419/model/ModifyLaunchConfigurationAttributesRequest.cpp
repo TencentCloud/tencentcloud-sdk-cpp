@@ -42,7 +42,8 @@ ModifyLaunchConfigurationAttributesRequest::ModifyLaunchConfigurationAttributesR
     m_enhancedServiceHasBeenSet(false),
     m_camRoleNameHasBeenSet(false),
     m_hpcClusterIdHasBeenSet(false),
-    m_iPv6InternetAccessibleHasBeenSet(false)
+    m_iPv6InternetAccessibleHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false)
 {
 }
 
@@ -236,6 +237,19 @@ string ModifyLaunchConfigurationAttributesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_iPv6InternetAccessible.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -564,6 +578,22 @@ void ModifyLaunchConfigurationAttributesRequest::SetIPv6InternetAccessible(const
 bool ModifyLaunchConfigurationAttributesRequest::IPv6InternetAccessibleHasBeenSet() const
 {
     return m_iPv6InternetAccessibleHasBeenSet;
+}
+
+vector<string> ModifyLaunchConfigurationAttributesRequest::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void ModifyLaunchConfigurationAttributesRequest::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool ModifyLaunchConfigurationAttributesRequest::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
 }
 
 

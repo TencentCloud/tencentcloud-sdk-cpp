@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool GatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502
-                     * @return MetricName 监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502
+                     * 获取监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502 GwConnect GwCircuit
+                     * @return MetricName 监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502 GwConnect GwCircuit
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502
-                     * @param MetricName 监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502
+                     * 设置监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502 GwConnect GwCircuit
+                     * @param MetricName 监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502 GwConnect GwCircuit
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_gatewayIdHasBeenSet;
 
                     /**
-                     * 监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502
+                     * 监控类型 GWQps GWBandwidth GwHttpError GwHttp404 GwHttp502 GwConnect GwCircuit
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

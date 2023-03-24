@@ -556,6 +556,49 @@ EbClient::DeleteTransformationOutcomeCallable EbClient::DeleteTransformationCall
     return task->get_future();
 }
 
+EbClient::DescribeLogTagValueOutcome EbClient::DescribeLogTagValue(const DescribeLogTagValueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLogTagValue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLogTagValueResponse rsp = DescribeLogTagValueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLogTagValueOutcome(rsp);
+        else
+            return DescribeLogTagValueOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLogTagValueOutcome(outcome.GetError());
+    }
+}
+
+void EbClient::DescribeLogTagValueAsync(const DescribeLogTagValueRequest& request, const DescribeLogTagValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLogTagValue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EbClient::DescribeLogTagValueOutcomeCallable EbClient::DescribeLogTagValueCallable(const DescribeLogTagValueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLogTagValueOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLogTagValue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EbClient::GetEventBusOutcome EbClient::GetEventBus(const GetEventBusRequest &request)
 {
     auto outcome = MakeRequest(request, "GetEventBus");
@@ -936,6 +979,49 @@ EbClient::PutEventsOutcomeCallable EbClient::PutEventsCallable(const PutEventsRe
         [this, request]()
         {
             return this->PutEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EbClient::SearchLogOutcome EbClient::SearchLog(const SearchLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchLogResponse rsp = SearchLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchLogOutcome(rsp);
+        else
+            return SearchLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchLogOutcome(outcome.GetError());
+    }
+}
+
+void EbClient::SearchLogAsync(const SearchLogRequest& request, const SearchLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EbClient::SearchLogOutcomeCallable EbClient::SearchLogCallable(const SearchLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchLog(request);
         }
     );
 

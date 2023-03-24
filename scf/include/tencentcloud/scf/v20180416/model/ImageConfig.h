@@ -192,6 +192,40 @@ namespace TencentCloud
                      */
                     bool ContainerImageAccelerateHasBeenSet() const;
 
+                    /**
+                     * 获取镜像函数端口设置
+-1: 无端口镜像函数
+0: 默认端口，当前默认端口是9000
+其他: 特殊端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ImagePort 镜像函数端口设置
+-1: 无端口镜像函数
+0: 默认端口，当前默认端口是9000
+其他: 特殊端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetImagePort() const;
+
+                    /**
+                     * 设置镜像函数端口设置
+-1: 无端口镜像函数
+0: 默认端口，当前默认端口是9000
+其他: 特殊端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ImagePort 镜像函数端口设置
+-1: 无端口镜像函数
+0: 默认端口，当前默认端口是9000
+其他: 特殊端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetImagePort(const int64_t& _imagePort);
+
+                    /**
+                     * 判断参数 ImagePort 是否已赋值
+                     * @return ImagePort 是否已赋值
+                     */
+                    bool ImagePortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +274,16 @@ namespace TencentCloud
                      */
                     bool m_containerImageAccelerate;
                     bool m_containerImageAccelerateHasBeenSet;
+
+                    /**
+                     * 镜像函数端口设置
+-1: 无端口镜像函数
+0: 默认端口，当前默认端口是9000
+其他: 特殊端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_imagePort;
+                    bool m_imagePortHasBeenSet;
 
                 };
             }

@@ -28,7 +28,8 @@ PrometheusClusterAgentBasic::PrometheusClusterAgentBasic() :
     m_inClusterPodConfigHasBeenSet(false),
     m_externalLabelsHasBeenSet(false),
     m_notInstallBasicScrapeHasBeenSet(false),
-    m_notScrapeHasBeenSet(false)
+    m_notScrapeHasBeenSet(false),
+    m_openDefaultRecordHasBeenSet(false)
 {
 }
 
@@ -134,6 +135,16 @@ CoreInternalOutcome PrometheusClusterAgentBasic::Deserialize(const rapidjson::Va
         m_notScrapeHasBeenSet = true;
     }
 
+    if (value.HasMember("OpenDefaultRecord") && !value["OpenDefaultRecord"].IsNull())
+    {
+        if (!value["OpenDefaultRecord"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusClusterAgentBasic.OpenDefaultRecord` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_openDefaultRecord = value["OpenDefaultRecord"].GetBool();
+        m_openDefaultRecordHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -211,6 +222,14 @@ void PrometheusClusterAgentBasic::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "NotScrape";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_notScrape, allocator);
+    }
+
+    if (m_openDefaultRecordHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OpenDefaultRecord";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_openDefaultRecord, allocator);
     }
 
 }
@@ -342,5 +361,21 @@ void PrometheusClusterAgentBasic::SetNotScrape(const bool& _notScrape)
 bool PrometheusClusterAgentBasic::NotScrapeHasBeenSet() const
 {
     return m_notScrapeHasBeenSet;
+}
+
+bool PrometheusClusterAgentBasic::GetOpenDefaultRecord() const
+{
+    return m_openDefaultRecord;
+}
+
+void PrometheusClusterAgentBasic::SetOpenDefaultRecord(const bool& _openDefaultRecord)
+{
+    m_openDefaultRecord = _openDefaultRecord;
+    m_openDefaultRecordHasBeenSet = true;
+}
+
+bool PrometheusClusterAgentBasic::OpenDefaultRecordHasBeenSet() const
+{
+    return m_openDefaultRecordHasBeenSet;
 }
 

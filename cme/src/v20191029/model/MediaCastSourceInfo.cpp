@@ -21,10 +21,10 @@ using namespace TencentCloud::Cme::V20191029::Model;
 using namespace std;
 
 MediaCastSourceInfo::MediaCastSourceInfo() :
+    m_idHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_materialIdHasBeenSet(false),
     m_fileIdHasBeenSet(false),
-    m_indexHasBeenSet(false)
+    m_materialIdHasBeenSet(false)
 {
 }
 
@@ -32,6 +32,16 @@ CoreInternalOutcome MediaCastSourceInfo::Deserialize(const rapidjson::Value &val
 {
     string requestId = "";
 
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastSourceInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
 
     if (value.HasMember("Type") && !value["Type"].IsNull())
     {
@@ -41,16 +51,6 @@ CoreInternalOutcome MediaCastSourceInfo::Deserialize(const rapidjson::Value &val
         }
         m_type = string(value["Type"].GetString());
         m_typeHasBeenSet = true;
-    }
-
-    if (value.HasMember("MaterialId") && !value["MaterialId"].IsNull())
-    {
-        if (!value["MaterialId"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `MediaCastSourceInfo.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_materialId = string(value["MaterialId"].GetString());
-        m_materialIdHasBeenSet = true;
     }
 
     if (value.HasMember("FileId") && !value["FileId"].IsNull())
@@ -63,14 +63,14 @@ CoreInternalOutcome MediaCastSourceInfo::Deserialize(const rapidjson::Value &val
         m_fileIdHasBeenSet = true;
     }
 
-    if (value.HasMember("Index") && !value["Index"].IsNull())
+    if (value.HasMember("MaterialId") && !value["MaterialId"].IsNull())
     {
-        if (!value["Index"].IsInt64())
+        if (!value["MaterialId"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `MediaCastSourceInfo.Index` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCastSourceInfo.MaterialId` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_index = value["Index"].GetInt64();
-        m_indexHasBeenSet = true;
+        m_materialId = string(value["MaterialId"].GetString());
+        m_materialIdHasBeenSet = true;
     }
 
 
@@ -80,20 +80,20 @@ CoreInternalOutcome MediaCastSourceInfo::Deserialize(const rapidjson::Value &val
 void MediaCastSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Type";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_type.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_materialIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "MaterialId";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_materialId.c_str(), allocator).Move(), allocator);
     }
 
     if (m_fileIdHasBeenSet)
@@ -104,16 +104,32 @@ void MediaCastSourceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
-    if (m_indexHasBeenSet)
+    if (m_materialIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Index";
+        string key = "MaterialId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_index, allocator);
+        value.AddMember(iKey, rapidjson::Value(m_materialId.c_str(), allocator).Move(), allocator);
     }
 
 }
 
+
+string MediaCastSourceInfo::GetId() const
+{
+    return m_id;
+}
+
+void MediaCastSourceInfo::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool MediaCastSourceInfo::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
 
 string MediaCastSourceInfo::GetType() const
 {
@@ -129,22 +145,6 @@ void MediaCastSourceInfo::SetType(const string& _type)
 bool MediaCastSourceInfo::TypeHasBeenSet() const
 {
     return m_typeHasBeenSet;
-}
-
-string MediaCastSourceInfo::GetMaterialId() const
-{
-    return m_materialId;
-}
-
-void MediaCastSourceInfo::SetMaterialId(const string& _materialId)
-{
-    m_materialId = _materialId;
-    m_materialIdHasBeenSet = true;
-}
-
-bool MediaCastSourceInfo::MaterialIdHasBeenSet() const
-{
-    return m_materialIdHasBeenSet;
 }
 
 string MediaCastSourceInfo::GetFileId() const
@@ -163,19 +163,19 @@ bool MediaCastSourceInfo::FileIdHasBeenSet() const
     return m_fileIdHasBeenSet;
 }
 
-int64_t MediaCastSourceInfo::GetIndex() const
+string MediaCastSourceInfo::GetMaterialId() const
 {
-    return m_index;
+    return m_materialId;
 }
 
-void MediaCastSourceInfo::SetIndex(const int64_t& _index)
+void MediaCastSourceInfo::SetMaterialId(const string& _materialId)
 {
-    m_index = _index;
-    m_indexHasBeenSet = true;
+    m_materialId = _materialId;
+    m_materialIdHasBeenSet = true;
 }
 
-bool MediaCastSourceInfo::IndexHasBeenSet() const
+bool MediaCastSourceInfo::MaterialIdHasBeenSet() const
 {
-    return m_indexHasBeenSet;
+    return m_materialIdHasBeenSet;
 }
 

@@ -43,7 +43,8 @@ LaunchTemplateVersionData::LaunchTemplateVersionData() :
     m_hostNameHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_instanceChargePrepaidHasBeenSet(false),
-    m_tagSpecificationHasBeenSet(false)
+    m_tagSpecificationHasBeenSet(false),
+    m_disableApiTerminationHasBeenSet(false)
 {
 }
 
@@ -371,6 +372,16 @@ CoreInternalOutcome LaunchTemplateVersionData::Deserialize(const rapidjson::Valu
         m_tagSpecificationHasBeenSet = true;
     }
 
+    if (value.HasMember("DisableApiTermination") && !value["DisableApiTermination"].IsNull())
+    {
+        if (!value["DisableApiTermination"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `LaunchTemplateVersionData.DisableApiTermination` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_disableApiTermination = value["DisableApiTermination"].GetBool();
+        m_disableApiTerminationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -593,6 +604,14 @@ void LaunchTemplateVersionData::ToJsonObject(rapidjson::Value &value, rapidjson:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_disableApiTerminationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisableApiTermination";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_disableApiTermination, allocator);
     }
 
 }
@@ -964,5 +983,21 @@ void LaunchTemplateVersionData::SetTagSpecification(const vector<TagSpecificatio
 bool LaunchTemplateVersionData::TagSpecificationHasBeenSet() const
 {
     return m_tagSpecificationHasBeenSet;
+}
+
+bool LaunchTemplateVersionData::GetDisableApiTermination() const
+{
+    return m_disableApiTermination;
+}
+
+void LaunchTemplateVersionData::SetDisableApiTermination(const bool& _disableApiTermination)
+{
+    m_disableApiTermination = _disableApiTermination;
+    m_disableApiTerminationHasBeenSet = true;
+}
+
+bool LaunchTemplateVersionData::DisableApiTerminationHasBeenSet() const
+{
+    return m_disableApiTerminationHasBeenSet;
 }
 

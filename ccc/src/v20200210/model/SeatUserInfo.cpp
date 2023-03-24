@@ -23,11 +23,11 @@ using namespace std;
 SeatUserInfo::SeatUserInfo() :
     m_nameHasBeenSet(false),
     m_mailHasBeenSet(false),
+    m_staffNumberHasBeenSet(false),
     m_phoneHasBeenSet(false),
     m_nickHasBeenSet(false),
     m_userIdHasBeenSet(false),
-    m_skillGroupNameListHasBeenSet(false),
-    m_staffNumberHasBeenSet(false)
+    m_skillGroupNameListHasBeenSet(false)
 {
 }
 
@@ -54,6 +54,16 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
         }
         m_mail = string(value["Mail"].GetString());
         m_mailHasBeenSet = true;
+    }
+
+    if (value.HasMember("StaffNumber") && !value["StaffNumber"].IsNull())
+    {
+        if (!value["StaffNumber"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_staffNumber = string(value["StaffNumber"].GetString());
+        m_staffNumberHasBeenSet = true;
     }
 
     if (value.HasMember("Phone") && !value["Phone"].IsNull())
@@ -99,16 +109,6 @@ CoreInternalOutcome SeatUserInfo::Deserialize(const rapidjson::Value &value)
         m_skillGroupNameListHasBeenSet = true;
     }
 
-    if (value.HasMember("StaffNumber") && !value["StaffNumber"].IsNull())
-    {
-        if (!value["StaffNumber"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `SeatUserInfo.StaffNumber` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_staffNumber = string(value["StaffNumber"].GetString());
-        m_staffNumberHasBeenSet = true;
-    }
-
 
     return CoreInternalOutcome(true);
 }
@@ -130,6 +130,14 @@ void SeatUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "Mail";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_mail.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_staffNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StaffNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_staffNumber.c_str(), allocator).Move(), allocator);
     }
 
     if (m_phoneHasBeenSet)
@@ -169,14 +177,6 @@ void SeatUserInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         }
     }
 
-    if (m_staffNumberHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "StaffNumber";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_staffNumber.c_str(), allocator).Move(), allocator);
-    }
-
 }
 
 
@@ -210,6 +210,22 @@ void SeatUserInfo::SetMail(const string& _mail)
 bool SeatUserInfo::MailHasBeenSet() const
 {
     return m_mailHasBeenSet;
+}
+
+string SeatUserInfo::GetStaffNumber() const
+{
+    return m_staffNumber;
+}
+
+void SeatUserInfo::SetStaffNumber(const string& _staffNumber)
+{
+    m_staffNumber = _staffNumber;
+    m_staffNumberHasBeenSet = true;
+}
+
+bool SeatUserInfo::StaffNumberHasBeenSet() const
+{
+    return m_staffNumberHasBeenSet;
 }
 
 string SeatUserInfo::GetPhone() const
@@ -274,21 +290,5 @@ void SeatUserInfo::SetSkillGroupNameList(const vector<string>& _skillGroupNameLi
 bool SeatUserInfo::SkillGroupNameListHasBeenSet() const
 {
     return m_skillGroupNameListHasBeenSet;
-}
-
-string SeatUserInfo::GetStaffNumber() const
-{
-    return m_staffNumber;
-}
-
-void SeatUserInfo::SetStaffNumber(const string& _staffNumber)
-{
-    m_staffNumber = _staffNumber;
-    m_staffNumberHasBeenSet = true;
-}
-
-bool SeatUserInfo::StaffNumberHasBeenSet() const
-{
-    return m_staffNumberHasBeenSet;
 }
 

@@ -192,6 +192,24 @@ namespace TencentCloud
                      */
                     bool NotScrapeHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启默认预聚合规则
+                     * @return OpenDefaultRecord 是否开启默认预聚合规则
+                     */
+                    bool GetOpenDefaultRecord() const;
+
+                    /**
+                     * 设置是否开启默认预聚合规则
+                     * @param OpenDefaultRecord 是否开启默认预聚合规则
+                     */
+                    void SetOpenDefaultRecord(const bool& _openDefaultRecord);
+
+                    /**
+                     * 判断参数 OpenDefaultRecord 是否已赋值
+                     * @return OpenDefaultRecord 是否已赋值
+                     */
+                    bool OpenDefaultRecordHasBeenSet() const;
+
                 private:
 
                     /**
@@ -241,6 +259,12 @@ namespace TencentCloud
                      */
                     bool m_notScrape;
                     bool m_notScrapeHasBeenSet;
+
+                    /**
+                     * 是否开启默认预聚合规则
+                     */
+                    bool m_openDefaultRecord;
+                    bool m_openDefaultRecordHasBeenSet;
 
                 };
             }

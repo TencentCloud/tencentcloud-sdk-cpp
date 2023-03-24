@@ -390,6 +390,28 @@ namespace TencentCloud
                      */
                     bool WarmupStatusHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组id，仅支持指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetDisasterRecoverGroupIds() const;
+
+                    /**
+                     * 设置置放群组id，仅支持指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupIds 是否已赋值
+                     * @return DisasterRecoverGroupIds 是否已赋值
+                     */
+                    bool DisasterRecoverGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -498,6 +520,13 @@ namespace TencentCloud
                      */
                     std::string m_warmupStatus;
                     bool m_warmupStatusHasBeenSet;
+
+                    /**
+                     * 置放群组id，仅支持指定一个。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_disasterRecoverGroupIds;
+                    bool m_disasterRecoverGroupIdsHasBeenSet;
 
                 };
             }

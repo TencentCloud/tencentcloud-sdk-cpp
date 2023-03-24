@@ -83,6 +83,28 @@ namespace TencentCloud
                     bool MailHasBeenSet() const;
 
                     /**
+                     * 获取工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StaffNumber 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStaffNumber() const;
+
+                    /**
+                     * 设置工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StaffNumber 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStaffNumber(const std::string& _staffNumber);
+
+                    /**
+                     * 判断参数 StaffNumber 是否已赋值
+                     * @return StaffNumber 是否已赋值
+                     */
+                    bool StaffNumberHasBeenSet() const;
+
+                    /**
                      * 获取坐席电话号码（带0086前缀）
                      * @return Phone 坐席电话号码（带0086前缀）
                      */
@@ -158,28 +180,6 @@ namespace TencentCloud
                      */
                     bool SkillGroupNameListHasBeenSet() const;
 
-                    /**
-                     * 获取工号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return StaffNumber 工号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string GetStaffNumber() const;
-
-                    /**
-                     * 设置工号
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param StaffNumber 工号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    void SetStaffNumber(const std::string& _staffNumber);
-
-                    /**
-                     * 判断参数 StaffNumber 是否已赋值
-                     * @return StaffNumber 是否已赋值
-                     */
-                    bool StaffNumberHasBeenSet() const;
-
                 private:
 
                     /**
@@ -193,6 +193,13 @@ namespace TencentCloud
                      */
                     std::string m_mail;
                     bool m_mailHasBeenSet;
+
+                    /**
+                     * 工号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_staffNumber;
+                    bool m_staffNumberHasBeenSet;
 
                     /**
                      * 坐席电话号码（带0086前缀）
@@ -218,13 +225,6 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_skillGroupNameList;
                     bool m_skillGroupNameListHasBeenSet;
-
-                    /**
-                     * 工号
-注意：此字段可能返回 null，表示取不到有效值。
-                     */
-                    std::string m_staffNumber;
-                    bool m_staffNumberHasBeenSet;
 
                 };
             }

@@ -1545,6 +1545,49 @@ CmeClient::GrantResourceAuthorizationOutcomeCallable CmeClient::GrantResourceAut
     return task->get_future();
 }
 
+CmeClient::HandleMediaCastProjectOutcome CmeClient::HandleMediaCastProject(const HandleMediaCastProjectRequest &request)
+{
+    auto outcome = MakeRequest(request, "HandleMediaCastProject");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        HandleMediaCastProjectResponse rsp = HandleMediaCastProjectResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return HandleMediaCastProjectOutcome(rsp);
+        else
+            return HandleMediaCastProjectOutcome(o.GetError());
+    }
+    else
+    {
+        return HandleMediaCastProjectOutcome(outcome.GetError());
+    }
+}
+
+void CmeClient::HandleMediaCastProjectAsync(const HandleMediaCastProjectRequest& request, const HandleMediaCastProjectAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->HandleMediaCastProject(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CmeClient::HandleMediaCastProjectOutcomeCallable CmeClient::HandleMediaCastProjectCallable(const HandleMediaCastProjectRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<HandleMediaCastProjectOutcome()>>(
+        [this, request]()
+        {
+            return this->HandleMediaCastProject(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CmeClient::HandleStreamConnectProjectOutcome CmeClient::HandleStreamConnectProject(const HandleStreamConnectProjectRequest &request)
 {
     auto outcome = MakeRequest(request, "HandleStreamConnectProject");

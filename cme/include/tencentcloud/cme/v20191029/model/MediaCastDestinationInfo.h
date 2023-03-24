@@ -47,40 +47,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取输出源序号。由系统进行分配。
-                     * @return Index 输出源序号。由系统进行分配。
+                     * 获取输出源 Id。由系统进行分配。
+                     * @return Id 输出源 Id。由系统进行分配。
                      */
-                    int64_t GetIndex() const;
+                    std::string GetId() const;
 
                     /**
-                     * 设置输出源序号。由系统进行分配。
-                     * @param Index 输出源序号。由系统进行分配。
+                     * 设置输出源 Id。由系统进行分配。
+                     * @param Id 输出源 Id。由系统进行分配。
                      */
-                    void SetIndex(const int64_t& _index);
+                    void SetId(const std::string& _id);
 
                     /**
-                     * 判断参数 Index 是否已赋值
-                     * @return Index 是否已赋值
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
                      */
-                    bool IndexHasBeenSet() const;
-
-                    /**
-                     * 获取输出源的名称。
-                     * @return Name 输出源的名称。
-                     */
-                    std::string GetName() const;
-
-                    /**
-                     * 设置输出源的名称。
-                     * @param Name 输出源的名称。
-                     */
-                    void SetName(const std::string& _name);
-
-                    /**
-                     * 判断参数 Name 是否已赋值
-                     * @return Name 是否已赋值
-                     */
-                    bool NameHasBeenSet() const;
+                    bool IdHasBeenSet() const;
 
                     /**
                      * 获取输出直播流地址。支持的直播流类型为 RTMP 和 SRT。
@@ -100,25 +82,43 @@ namespace TencentCloud
                      */
                     bool PushUrlHasBeenSet() const;
 
+                    /**
+                     * 获取输出源的名称。
+                     * @return Name 输出源的名称。
+                     */
+                    std::string GetName() const;
+
+                    /**
+                     * 设置输出源的名称。
+                     * @param Name 输出源的名称。
+                     */
+                    void SetName(const std::string& _name);
+
+                    /**
+                     * 判断参数 Name 是否已赋值
+                     * @return Name 是否已赋值
+                     */
+                    bool NameHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 输出源序号。由系统进行分配。
+                     * 输出源 Id。由系统进行分配。
                      */
-                    int64_t m_index;
-                    bool m_indexHasBeenSet;
-
-                    /**
-                     * 输出源的名称。
-                     */
-                    std::string m_name;
-                    bool m_nameHasBeenSet;
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 输出直播流地址。支持的直播流类型为 RTMP 和 SRT。
                      */
                     std::string m_pushUrl;
                     bool m_pushUrlHasBeenSet;
+
+                    /**
+                     * 输出源的名称。
+                     */
+                    std::string m_name;
+                    bool m_nameHasBeenSet;
 
                 };
             }

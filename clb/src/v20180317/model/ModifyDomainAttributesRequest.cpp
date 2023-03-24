@@ -30,6 +30,7 @@ ModifyDomainAttributesRequest::ModifyDomainAttributesRequest() :
     m_certificateHasBeenSet(false),
     m_http2HasBeenSet(false),
     m_defaultServerHasBeenSet(false),
+    m_quicHasBeenSet(false),
     m_newDefaultServerDomainHasBeenSet(false),
     m_newDomainsHasBeenSet(false),
     m_multiCertInfoHasBeenSet(false)
@@ -98,6 +99,14 @@ string ModifyDomainAttributesRequest::ToJsonString() const
         string key = "DefaultServer";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_defaultServer, allocator);
+    }
+
+    if (m_quicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Quic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_quic, allocator);
     }
 
     if (m_newDefaultServerDomainHasBeenSet)
@@ -248,6 +257,22 @@ void ModifyDomainAttributesRequest::SetDefaultServer(const bool& _defaultServer)
 bool ModifyDomainAttributesRequest::DefaultServerHasBeenSet() const
 {
     return m_defaultServerHasBeenSet;
+}
+
+bool ModifyDomainAttributesRequest::GetQuic() const
+{
+    return m_quic;
+}
+
+void ModifyDomainAttributesRequest::SetQuic(const bool& _quic)
+{
+    m_quic = _quic;
+    m_quicHasBeenSet = true;
+}
+
+bool ModifyDomainAttributesRequest::QuicHasBeenSet() const
+{
+    return m_quicHasBeenSet;
 }
 
 string ModifyDomainAttributesRequest::GetNewDefaultServerDomain() const

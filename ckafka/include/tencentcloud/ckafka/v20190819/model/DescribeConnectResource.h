@@ -212,6 +212,28 @@ namespace TencentCloud
                     bool ErrorMessageHasBeenSet() const;
 
                     /**
+                     * 获取该连接源关联的Datahub任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DatahubTaskCount 该连接源关联的Datahub任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetDatahubTaskCount() const;
+
+                    /**
+                     * 设置该连接源关联的Datahub任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DatahubTaskCount 该连接源关联的Datahub任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDatahubTaskCount(const int64_t& _datahubTaskCount);
+
+                    /**
+                     * 判断参数 DatahubTaskCount 是否已赋值
+                     * @return DatahubTaskCount 是否已赋值
+                     */
+                    bool DatahubTaskCountHasBeenSet() const;
+
+                    /**
                      * 获取连接源的当前所处步骤
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return CurrentStep 连接源的当前所处步骤
@@ -234,26 +256,48 @@ namespace TencentCloud
                     bool CurrentStepHasBeenSet() const;
 
                     /**
-                     * 获取该连接源关联的Datahub任务数
+                     * 获取创建进度百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return DatahubTaskCount 该连接源关联的Datahub任务数
+                     * @return TaskProgress 创建进度百分比
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t GetDatahubTaskCount() const;
+                    double GetTaskProgress() const;
 
                     /**
-                     * 设置该连接源关联的Datahub任务数
+                     * 设置创建进度百分比
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param DatahubTaskCount 该连接源关联的Datahub任务数
+                     * @param TaskProgress 创建进度百分比
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetDatahubTaskCount(const int64_t& _datahubTaskCount);
+                    void SetTaskProgress(const double& _taskProgress);
 
                     /**
-                     * 判断参数 DatahubTaskCount 是否已赋值
-                     * @return DatahubTaskCount 是否已赋值
+                     * 判断参数 TaskProgress 是否已赋值
+                     * @return TaskProgress 是否已赋值
                      */
-                    bool DatahubTaskCountHasBeenSet() const;
+                    bool TaskProgressHasBeenSet() const;
+
+                    /**
+                     * 获取步骤列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StepList 步骤列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetStepList() const;
+
+                    /**
+                     * 设置步骤列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StepList 步骤列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStepList(const std::vector<std::string>& _stepList);
+
+                    /**
+                     * 判断参数 StepList 是否已赋值
+                     * @return StepList 是否已赋值
+                     */
+                    bool StepListHasBeenSet() const;
 
                     /**
                      * 获取Dts配置，Type为DTS时返回
@@ -549,6 +593,13 @@ namespace TencentCloud
                     bool m_errorMessageHasBeenSet;
 
                     /**
+                     * 该连接源关联的Datahub任务数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_datahubTaskCount;
+                    bool m_datahubTaskCountHasBeenSet;
+
+                    /**
                      * 连接源的当前所处步骤
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -556,11 +607,18 @@ namespace TencentCloud
                     bool m_currentStepHasBeenSet;
 
                     /**
-                     * 该连接源关联的Datahub任务数
+                     * 创建进度百分比
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    int64_t m_datahubTaskCount;
-                    bool m_datahubTaskCountHasBeenSet;
+                    double m_taskProgress;
+                    bool m_taskProgressHasBeenSet;
+
+                    /**
+                     * 步骤列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_stepList;
+                    bool m_stepListHasBeenSet;
 
                     /**
                      * Dts配置，Type为DTS时返回

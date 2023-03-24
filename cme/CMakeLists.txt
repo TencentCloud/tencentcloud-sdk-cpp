@@ -34,6 +34,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DescribeTaskDetailResponse.h
   include/tencentcloud/cme/v20191029/model/ExportVideoEditProjectRequest.h
   include/tencentcloud/cme/v20191029/model/StreamConnectInputInterruptInfo.h
+  include/tencentcloud/cme/v20191029/model/MediaCastPlayInfo.h
   include/tencentcloud/cme/v20191029/model/TeamInfo.h
   include/tencentcloud/cme/v20191029/model/ClassInfo.h
   include/tencentcloud/cme/v20191029/model/MediaCastDestinationInterruptInfo.h
@@ -56,13 +57,16 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/DeleteTeamRequest.h
   include/tencentcloud/cme/v20191029/model/DescribeTeamsRequest.h
   include/tencentcloud/cme/v20191029/model/PlatformInfo.h
+  include/tencentcloud/cme/v20191029/model/HandleMediaCastProjectResponse.h
   include/tencentcloud/cme/v20191029/model/LinkMaterial.h
   include/tencentcloud/cme/v20191029/model/SwitcherProjectInput.h
   include/tencentcloud/cme/v20191029/model/FlattenListMediaRequest.h
+  include/tencentcloud/cme/v20191029/model/MediaCastDestinationStatus.h
   include/tencentcloud/cme/v20191029/model/RtmpPushInputInfo.h
   include/tencentcloud/cme/v20191029/model/AudioMaterial.h
   include/tencentcloud/cme/v20191029/model/AddMemberInfo.h
   include/tencentcloud/cme/v20191029/model/Entity.h
+  include/tencentcloud/cme/v20191029/model/MediaCastProjectInput.h
   include/tencentcloud/cme/v20191029/model/MediaCastVideoSetting.h
   include/tencentcloud/cme/v20191029/model/ExportVideoByEditorTrackDataRequest.h
   include/tencentcloud/cme/v20191029/model/MaterialTagInfo.h
@@ -206,6 +210,7 @@ set(cme_public_header_model
   include/tencentcloud/cme/v20191029/model/KuaishouPublishInfo.h
   include/tencentcloud/cme/v20191029/model/CopyProjectResponse.h
   include/tencentcloud/cme/v20191029/model/DeleteClassResponse.h
+  include/tencentcloud/cme/v20191029/model/HandleMediaCastProjectRequest.h
   include/tencentcloud/cme/v20191029/model/ExportVideoEditProjectResponse.h
   include/tencentcloud/cme/v20191029/model/MediaMetaData.h
   include/tencentcloud/cme/v20191029/model/ProjectSwitcherStatusChangedEvent.h
@@ -238,6 +243,7 @@ set(cme_src
   src/v20191029/model/DescribeTaskDetailResponse.cpp
   src/v20191029/model/ExportVideoEditProjectRequest.cpp
   src/v20191029/model/StreamConnectInputInterruptInfo.cpp
+  src/v20191029/model/MediaCastPlayInfo.cpp
   src/v20191029/model/TeamInfo.cpp
   src/v20191029/model/ClassInfo.cpp
   src/v20191029/model/MediaCastDestinationInterruptInfo.cpp
@@ -260,13 +266,16 @@ set(cme_src
   src/v20191029/model/DeleteTeamRequest.cpp
   src/v20191029/model/DescribeTeamsRequest.cpp
   src/v20191029/model/PlatformInfo.cpp
+  src/v20191029/model/HandleMediaCastProjectResponse.cpp
   src/v20191029/model/LinkMaterial.cpp
   src/v20191029/model/SwitcherProjectInput.cpp
   src/v20191029/model/FlattenListMediaRequest.cpp
+  src/v20191029/model/MediaCastDestinationStatus.cpp
   src/v20191029/model/RtmpPushInputInfo.cpp
   src/v20191029/model/AudioMaterial.cpp
   src/v20191029/model/AddMemberInfo.cpp
   src/v20191029/model/Entity.cpp
+  src/v20191029/model/MediaCastProjectInput.cpp
   src/v20191029/model/MediaCastVideoSetting.cpp
   src/v20191029/model/ExportVideoByEditorTrackDataRequest.cpp
   src/v20191029/model/MaterialTagInfo.cpp
@@ -410,6 +419,7 @@ set(cme_src
   src/v20191029/model/KuaishouPublishInfo.cpp
   src/v20191029/model/CopyProjectResponse.cpp
   src/v20191029/model/DeleteClassResponse.cpp
+  src/v20191029/model/HandleMediaCastProjectRequest.cpp
   src/v20191029/model/ExportVideoEditProjectResponse.cpp
   src/v20191029/model/MediaMetaData.cpp
   src/v20191029/model/ProjectSwitcherStatusChangedEvent.cpp

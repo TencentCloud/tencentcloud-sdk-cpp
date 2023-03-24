@@ -515,6 +515,24 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     bool IPv6InternetAccessibleHasBeenSet() const;
 
+                    /**
+                     * 获取置放群组id，仅支持指定一个。
+                     * @return DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     */
+                    std::vector<std::string> GetDisasterRecoverGroupIds() const;
+
+                    /**
+                     * 设置置放群组id，仅支持指定一个。
+                     * @param DisasterRecoverGroupIds 置放群组id，仅支持指定一个。
+                     */
+                    void SetDisasterRecoverGroupIds(const std::vector<std::string>& _disasterRecoverGroupIds);
+
+                    /**
+                     * 判断参数 DisasterRecoverGroupIds 是否已赋值
+                     * @return DisasterRecoverGroupIds 是否已赋值
+                     */
+                    bool DisasterRecoverGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -662,6 +680,12 @@ InstanceType 指定单一实例类型，通过设置 InstanceTypes可以指定�
                      */
                     IPv6InternetAccessible m_iPv6InternetAccessible;
                     bool m_iPv6InternetAccessibleHasBeenSet;
+
+                    /**
+                     * 置放群组id，仅支持指定一个。
+                     */
+                    std::vector<std::string> m_disasterRecoverGroupIds;
+                    bool m_disasterRecoverGroupIdsHasBeenSet;
 
                 };
             }

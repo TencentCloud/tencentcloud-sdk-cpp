@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID
-                     * @return InstanceId 实例ID
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID
-                     * @param InstanceId 实例ID
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取实例旧密码
-                     * @return OldPassword 实例旧密码
+                     * 获取实例旧密码。
+                     * @return OldPassword 实例旧密码。
                      */
                     std::string GetOldPassword() const;
 
                     /**
-                     * 设置实例旧密码
-                     * @param OldPassword 实例旧密码
+                     * 设置实例旧密码。
+                     * @param OldPassword 实例旧密码。
                      */
                     void SetOldPassword(const std::string& _oldPassword);
 
@@ -79,14 +79,26 @@ namespace TencentCloud
                     bool OldPasswordHasBeenSet() const;
 
                     /**
-                     * 获取实例新密码
-                     * @return Password 实例新密码
+                     * 获取实例新密码。密码复杂度要求如下：
+- 长度8 - 30位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * @return Password 实例新密码。密码复杂度要求如下：
+- 长度8 - 30位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      */
                     std::string GetPassword() const;
 
                     /**
-                     * 设置实例新密码
-                     * @param Password 实例新密码
+                     * 设置实例新密码。密码复杂度要求如下：
+- 长度8 - 30位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
+                     * @param Password 实例新密码。密码复杂度要求如下：
+- 长度8 - 30位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      */
                     void SetPassword(const std::string& _password);
 
@@ -99,19 +111,22 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 实例旧密码
+                     * 实例旧密码。
                      */
                     std::string m_oldPassword;
                     bool m_oldPasswordHasBeenSet;
 
                     /**
-                     * 实例新密码
+                     * 实例新密码。密码复杂度要求如下：
+- 长度8 - 30位, 推荐使用12位以上的密码。
+- 不能以"/"开头。
+- 至少包含小写字母a - z、大写字母A - Z、数字0 - 9、特殊字符 ()~!@#$%^&*-+=_|{}[]:;<>,.?/中的两项。
                      */
                     std::string m_password;
                     bool m_passwordHasBeenSet;

@@ -35,7 +35,8 @@ CreateProjectRequest::CreateProjectRequest() :
     m_videoEditProjectInputHasBeenSet(false),
     m_videoSegmentationProjectInputHasBeenSet(false),
     m_streamConnectProjectInputHasBeenSet(false),
-    m_recordReplayProjectInputHasBeenSet(false)
+    m_recordReplayProjectInputHasBeenSet(false),
+    m_mediaCastProjectInputHasBeenSet(false)
 {
 }
 
@@ -155,6 +156,15 @@ string CreateProjectRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_recordReplayProjectInput.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_mediaCastProjectInputHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaCastProjectInput";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_mediaCastProjectInput.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -371,6 +381,22 @@ void CreateProjectRequest::SetRecordReplayProjectInput(const RecordReplayProject
 bool CreateProjectRequest::RecordReplayProjectInputHasBeenSet() const
 {
     return m_recordReplayProjectInputHasBeenSet;
+}
+
+MediaCastProjectInput CreateProjectRequest::GetMediaCastProjectInput() const
+{
+    return m_mediaCastProjectInput;
+}
+
+void CreateProjectRequest::SetMediaCastProjectInput(const MediaCastProjectInput& _mediaCastProjectInput)
+{
+    m_mediaCastProjectInput = _mediaCastProjectInput;
+    m_mediaCastProjectInputHasBeenSet = true;
+}
+
+bool CreateProjectRequest::MediaCastProjectInputHasBeenSet() const
+{
+    return m_mediaCastProjectInputHasBeenSet;
 }
 
 

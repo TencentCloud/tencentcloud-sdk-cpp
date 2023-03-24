@@ -47,6 +47,28 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取输入源 Id，由系统分配。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id 输入源 Id，由系统分配。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置输入源 Id，由系统分配。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Id 输入源 Id，由系统分配。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
                      * 获取输入源的媒体类型，取值有：
 <li>CME：多媒体创作引擎的媒体文件；</li>
 <li>VOD：云点播的媒资文件。</li>
@@ -73,24 +95,6 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
-                     * @return MaterialId 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
-                     */
-                    std::string GetMaterialId() const;
-
-                    /**
-                     * 设置多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
-                     * @param MaterialId 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
-                     */
-                    void SetMaterialId(const std::string& _materialId);
-
-                    /**
-                     * 判断参数 MaterialId 是否已赋值
-                     * @return MaterialId 是否已赋值
-                     */
-                    bool MaterialIdHasBeenSet() const;
-
-                    /**
                      * 获取云点播媒体文件 ID。当 Type = VOD 时必填。
                      * @return FileId 云点播媒体文件 ID。当 Type = VOD 时必填。
                      */
@@ -109,24 +113,31 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取序号，位于输入源列表中的序号，由系统分配。
-                     * @return Index 序号，位于输入源列表中的序号，由系统分配。
+                     * 获取多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
+                     * @return MaterialId 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
                      */
-                    int64_t GetIndex() const;
+                    std::string GetMaterialId() const;
 
                     /**
-                     * 设置序号，位于输入源列表中的序号，由系统分配。
-                     * @param Index 序号，位于输入源列表中的序号，由系统分配。
+                     * 设置多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
+                     * @param MaterialId 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
                      */
-                    void SetIndex(const int64_t& _index);
+                    void SetMaterialId(const std::string& _materialId);
 
                     /**
-                     * 判断参数 Index 是否已赋值
-                     * @return Index 是否已赋值
+                     * 判断参数 MaterialId 是否已赋值
+                     * @return MaterialId 是否已赋值
                      */
-                    bool IndexHasBeenSet() const;
+                    bool MaterialIdHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 输入源 Id，由系统分配。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
 
                     /**
                      * 输入源的媒体类型，取值有：
@@ -137,22 +148,16 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
-                     */
-                    std::string m_materialId;
-                    bool m_materialIdHasBeenSet;
-
-                    /**
                      * 云点播媒体文件 ID。当 Type = VOD 时必填。
                      */
                     std::string m_fileId;
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 序号，位于输入源列表中的序号，由系统分配。
+                     * 多媒体创作引擎的媒体 ID。当 Type = CME  时必填。
                      */
-                    int64_t m_index;
-                    bool m_indexHasBeenSet;
+                    std::string m_materialId;
+                    bool m_materialIdHasBeenSet;
 
                 };
             }

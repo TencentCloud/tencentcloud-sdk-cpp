@@ -19,6 +19,7 @@ set(eb_public_header
   )
 
 set(eb_public_header_model
+  include/tencentcloud/eb/v20210416/model/Transform.h
   include/tencentcloud/eb/v20210416/model/ListConnectionsResponse.h
   include/tencentcloud/eb/v20210416/model/ESTargetParams.h
   include/tencentcloud/eb/v20210416/model/GetEventBusResponse.h
@@ -29,7 +30,8 @@ set(eb_public_header_model
   include/tencentcloud/eb/v20210416/model/UpdateRuleResponse.h
   include/tencentcloud/eb/v20210416/model/CreateTargetRequest.h
   include/tencentcloud/eb/v20210416/model/DeleteTargetResponse.h
-  include/tencentcloud/eb/v20210416/model/Extraction.h
+  include/tencentcloud/eb/v20210416/model/UpdateRuleRequest.h
+  include/tencentcloud/eb/v20210416/model/DescribeLogTagValueRequest.h
   include/tencentcloud/eb/v20210416/model/TargetBrief.h
   include/tencentcloud/eb/v20210416/model/DTSParams.h
   include/tencentcloud/eb/v20210416/model/ListRulesResponse.h
@@ -44,7 +46,7 @@ set(eb_public_header_model
   include/tencentcloud/eb/v20210416/model/ListRulesRequest.h
   include/tencentcloud/eb/v20210416/model/SCFParams.h
   include/tencentcloud/eb/v20210416/model/DeadLetterConfig.h
-  include/tencentcloud/eb/v20210416/model/UpdateTransformationResponse.h
+  include/tencentcloud/eb/v20210416/model/LogFilters.h
   include/tencentcloud/eb/v20210416/model/UpdateEventBusRequest.h
   include/tencentcloud/eb/v20210416/model/CreateEventBusRequest.h
   include/tencentcloud/eb/v20210416/model/PutEventsResponse.h
@@ -57,11 +59,13 @@ set(eb_public_header_model
   include/tencentcloud/eb/v20210416/model/CreateTransformationRequest.h
   include/tencentcloud/eb/v20210416/model/PublishEventRequest.h
   include/tencentcloud/eb/v20210416/model/EtlFilter.h
+  include/tencentcloud/eb/v20210416/model/SearchLogResponse.h
   include/tencentcloud/eb/v20210416/model/CheckTransformationResponse.h
   include/tencentcloud/eb/v20210416/model/ListTargetsResponse.h
   include/tencentcloud/eb/v20210416/model/ListEventBusesResponse.h
   include/tencentcloud/eb/v20210416/model/CheckRuleResponse.h
   include/tencentcloud/eb/v20210416/model/ConnectionDescription.h
+  include/tencentcloud/eb/v20210416/model/SearchLogResult.h
   include/tencentcloud/eb/v20210416/model/CkafkaDeliveryParams.h
   include/tencentcloud/eb/v20210416/model/UpdateTargetResponse.h
   include/tencentcloud/eb/v20210416/model/CreateConnectionRequest.h
@@ -82,13 +86,16 @@ set(eb_public_header_model
   include/tencentcloud/eb/v20210416/model/TargetDescription.h
   include/tencentcloud/eb/v20210416/model/DeleteTransformationResponse.h
   include/tencentcloud/eb/v20210416/model/DeleteTransformationRequest.h
-  include/tencentcloud/eb/v20210416/model/GetEventBusRequest.h
+  include/tencentcloud/eb/v20210416/model/Extraction.h
   include/tencentcloud/eb/v20210416/model/UpdateConnectionRequest.h
+  include/tencentcloud/eb/v20210416/model/GetEventBusRequest.h
   include/tencentcloud/eb/v20210416/model/DeleteTargetRequest.h
   include/tencentcloud/eb/v20210416/model/CkafkaParams.h
-  include/tencentcloud/eb/v20210416/model/UpdateRuleRequest.h
+  include/tencentcloud/eb/v20210416/model/DescribeLogTagValueResponse.h
+  include/tencentcloud/eb/v20210416/model/LogFilter.h
+  include/tencentcloud/eb/v20210416/model/UpdateTransformationResponse.h
   include/tencentcloud/eb/v20210416/model/OutputStructParam.h
-  include/tencentcloud/eb/v20210416/model/Transform.h
+  include/tencentcloud/eb/v20210416/model/SearchLogRequest.h
   include/tencentcloud/eb/v20210416/model/CheckTransformationRequest.h
   include/tencentcloud/eb/v20210416/model/UpdateConnectionResponse.h
   include/tencentcloud/eb/v20210416/model/GetRuleRequest.h
@@ -100,6 +107,7 @@ set(eb_public_header_model
 
 set(eb_src
   src/v20210416/EbClient.cpp
+  src/v20210416/model/Transform.cpp
   src/v20210416/model/ListConnectionsResponse.cpp
   src/v20210416/model/ESTargetParams.cpp
   src/v20210416/model/GetEventBusResponse.cpp
@@ -110,7 +118,8 @@ set(eb_src
   src/v20210416/model/UpdateRuleResponse.cpp
   src/v20210416/model/CreateTargetRequest.cpp
   src/v20210416/model/DeleteTargetResponse.cpp
-  src/v20210416/model/Extraction.cpp
+  src/v20210416/model/UpdateRuleRequest.cpp
+  src/v20210416/model/DescribeLogTagValueRequest.cpp
   src/v20210416/model/TargetBrief.cpp
   src/v20210416/model/DTSParams.cpp
   src/v20210416/model/ListRulesResponse.cpp
@@ -125,7 +134,7 @@ set(eb_src
   src/v20210416/model/ListRulesRequest.cpp
   src/v20210416/model/SCFParams.cpp
   src/v20210416/model/DeadLetterConfig.cpp
-  src/v20210416/model/UpdateTransformationResponse.cpp
+  src/v20210416/model/LogFilters.cpp
   src/v20210416/model/UpdateEventBusRequest.cpp
   src/v20210416/model/CreateEventBusRequest.cpp
   src/v20210416/model/PutEventsResponse.cpp
@@ -138,11 +147,13 @@ set(eb_src
   src/v20210416/model/CreateTransformationRequest.cpp
   src/v20210416/model/PublishEventRequest.cpp
   src/v20210416/model/EtlFilter.cpp
+  src/v20210416/model/SearchLogResponse.cpp
   src/v20210416/model/CheckTransformationResponse.cpp
   src/v20210416/model/ListTargetsResponse.cpp
   src/v20210416/model/ListEventBusesResponse.cpp
   src/v20210416/model/CheckRuleResponse.cpp
   src/v20210416/model/ConnectionDescription.cpp
+  src/v20210416/model/SearchLogResult.cpp
   src/v20210416/model/CkafkaDeliveryParams.cpp
   src/v20210416/model/UpdateTargetResponse.cpp
   src/v20210416/model/CreateConnectionRequest.cpp
@@ -163,13 +174,16 @@ set(eb_src
   src/v20210416/model/TargetDescription.cpp
   src/v20210416/model/DeleteTransformationResponse.cpp
   src/v20210416/model/DeleteTransformationRequest.cpp
-  src/v20210416/model/GetEventBusRequest.cpp
+  src/v20210416/model/Extraction.cpp
   src/v20210416/model/UpdateConnectionRequest.cpp
+  src/v20210416/model/GetEventBusRequest.cpp
   src/v20210416/model/DeleteTargetRequest.cpp
   src/v20210416/model/CkafkaParams.cpp
-  src/v20210416/model/UpdateRuleRequest.cpp
+  src/v20210416/model/DescribeLogTagValueResponse.cpp
+  src/v20210416/model/LogFilter.cpp
+  src/v20210416/model/UpdateTransformationResponse.cpp
   src/v20210416/model/OutputStructParam.cpp
-  src/v20210416/model/Transform.cpp
+  src/v20210416/model/SearchLogRequest.cpp
   src/v20210416/model/CheckTransformationRequest.cpp
   src/v20210416/model/UpdateConnectionResponse.cpp
   src/v20210416/model/GetRuleRequest.cpp

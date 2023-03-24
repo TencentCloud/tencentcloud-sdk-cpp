@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取订单详细信息
-                     * @return DealDetails 订单详细信息
+                     * 获取订单详细信息。
+                     * @return DealDetails 订单详细信息。
                      */
                     std::vector<TradeDealDetail> GetDealDetails() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 订单详细信息
+                     * 订单详细信息。
                      */
                     std::vector<TradeDealDetail> m_dealDetails;
                     bool m_dealDetailsHasBeenSet;

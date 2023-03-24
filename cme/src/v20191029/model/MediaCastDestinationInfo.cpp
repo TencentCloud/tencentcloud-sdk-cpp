@@ -21,9 +21,9 @@ using namespace TencentCloud::Cme::V20191029::Model;
 using namespace std;
 
 MediaCastDestinationInfo::MediaCastDestinationInfo() :
-    m_indexHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_pushUrlHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_pushUrlHasBeenSet(false),
+    m_nameHasBeenSet(false)
 {
 }
 
@@ -32,24 +32,14 @@ CoreInternalOutcome MediaCastDestinationInfo::Deserialize(const rapidjson::Value
     string requestId = "";
 
 
-    if (value.HasMember("Index") && !value["Index"].IsNull())
+    if (value.HasMember("Id") && !value["Id"].IsNull())
     {
-        if (!value["Index"].IsInt64())
+        if (!value["Id"].IsString())
         {
-            return CoreInternalOutcome(Core::Error("response `MediaCastDestinationInfo.Index` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `MediaCastDestinationInfo.Id` IsString=false incorrectly").SetRequestId(requestId));
         }
-        m_index = value["Index"].GetInt64();
-        m_indexHasBeenSet = true;
-    }
-
-    if (value.HasMember("Name") && !value["Name"].IsNull())
-    {
-        if (!value["Name"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `MediaCastDestinationInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_name = string(value["Name"].GetString());
-        m_nameHasBeenSet = true;
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
     }
 
     if (value.HasMember("PushUrl") && !value["PushUrl"].IsNull())
@@ -62,6 +52,16 @@ CoreInternalOutcome MediaCastDestinationInfo::Deserialize(const rapidjson::Value
         m_pushUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("Name") && !value["Name"].IsNull())
+    {
+        if (!value["Name"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MediaCastDestinationInfo.Name` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_name = string(value["Name"].GetString());
+        m_nameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -69,20 +69,12 @@ CoreInternalOutcome MediaCastDestinationInfo::Deserialize(const rapidjson::Value
 void MediaCastDestinationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_indexHasBeenSet)
+    if (m_idHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Index";
+        string key = "Id";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_index, allocator);
-    }
-
-    if (m_nameHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Name";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
     }
 
     if (m_pushUrlHasBeenSet)
@@ -93,39 +85,31 @@ void MediaCastDestinationInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         value.AddMember(iKey, rapidjson::Value(m_pushUrl.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_nameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Name";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_name.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-int64_t MediaCastDestinationInfo::GetIndex() const
+string MediaCastDestinationInfo::GetId() const
 {
-    return m_index;
+    return m_id;
 }
 
-void MediaCastDestinationInfo::SetIndex(const int64_t& _index)
+void MediaCastDestinationInfo::SetId(const string& _id)
 {
-    m_index = _index;
-    m_indexHasBeenSet = true;
+    m_id = _id;
+    m_idHasBeenSet = true;
 }
 
-bool MediaCastDestinationInfo::IndexHasBeenSet() const
+bool MediaCastDestinationInfo::IdHasBeenSet() const
 {
-    return m_indexHasBeenSet;
-}
-
-string MediaCastDestinationInfo::GetName() const
-{
-    return m_name;
-}
-
-void MediaCastDestinationInfo::SetName(const string& _name)
-{
-    m_name = _name;
-    m_nameHasBeenSet = true;
-}
-
-bool MediaCastDestinationInfo::NameHasBeenSet() const
-{
-    return m_nameHasBeenSet;
+    return m_idHasBeenSet;
 }
 
 string MediaCastDestinationInfo::GetPushUrl() const
@@ -142,5 +126,21 @@ void MediaCastDestinationInfo::SetPushUrl(const string& _pushUrl)
 bool MediaCastDestinationInfo::PushUrlHasBeenSet() const
 {
     return m_pushUrlHasBeenSet;
+}
+
+string MediaCastDestinationInfo::GetName() const
+{
+    return m_name;
+}
+
+void MediaCastDestinationInfo::SetName(const string& _name)
+{
+    m_name = _name;
+    m_nameHasBeenSet = true;
+}
+
+bool MediaCastDestinationInfo::NameHasBeenSet() const
+{
+    return m_nameHasBeenSet;
 }
 

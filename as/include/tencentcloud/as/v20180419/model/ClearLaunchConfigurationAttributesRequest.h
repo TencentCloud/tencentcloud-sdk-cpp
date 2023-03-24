@@ -126,6 +126,28 @@ namespace TencentCloud
                      */
                     bool ClearInstanceNameSettingsHasBeenSet() const;
 
+                    /**
+                     * 获取是否清空置放群组信息，非必填，默认为 false。
+填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
+                     * @return ClearDisasterRecoverGroupIds 是否清空置放群组信息，非必填，默认为 false。
+填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
+                     */
+                    bool GetClearDisasterRecoverGroupIds() const;
+
+                    /**
+                     * 设置是否清空置放群组信息，非必填，默认为 false。
+填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
+                     * @param ClearDisasterRecoverGroupIds 是否清空置放群组信息，非必填，默认为 false。
+填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
+                     */
+                    void SetClearDisasterRecoverGroupIds(const bool& _clearDisasterRecoverGroupIds);
+
+                    /**
+                     * 判断参数 ClearDisasterRecoverGroupIds 是否已赋值
+                     * @return ClearDisasterRecoverGroupIds 是否已赋值
+                     */
+                    bool ClearDisasterRecoverGroupIdsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +176,13 @@ namespace TencentCloud
                      */
                     bool m_clearInstanceNameSettings;
                     bool m_clearInstanceNameSettingsHasBeenSet;
+
+                    /**
+                     * 是否清空置放群组信息，非必填，默认为 false。
+填 true 代表清空置放群组信息，清空后基于此新创建的云主机将不指定任何置放群组。
+                     */
+                    bool m_clearDisasterRecoverGroupIds;
+                    bool m_clearDisasterRecoverGroupIdsHasBeenSet;
 
                 };
             }

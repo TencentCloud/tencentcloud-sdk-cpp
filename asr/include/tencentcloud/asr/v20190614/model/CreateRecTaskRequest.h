@@ -56,6 +56,7 @@ namespace TencentCloud
 • 16k_vi：16k 越南语；
 • 16k_ms：16k 马来语；
 • 16k_id：16k 印度尼西亚语；
+• 16k_fil：16k 菲律宾语；
 • 16k_zh_edu 中文教育；
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
@@ -75,6 +76,7 @@ namespace TencentCloud
 • 16k_vi：16k 越南语；
 • 16k_ms：16k 马来语；
 • 16k_id：16k 印度尼西亚语；
+• 16k_fil：16k 菲律宾语；
 • 16k_zh_edu 中文教育；
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
@@ -98,6 +100,7 @@ namespace TencentCloud
 • 16k_vi：16k 越南语；
 • 16k_ms：16k 马来语；
 • 16k_id：16k 印度尼西亚语；
+• 16k_fil：16k 菲律宾语；
 • 16k_zh_edu 中文教育；
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
@@ -117,6 +120,7 @@ namespace TencentCloud
 • 16k_vi：16k 越南语；
 • 16k_ms：16k 马来语；
 • 16k_id：16k 印度尼西亚语；
+• 16k_fil：16k 菲律宾语；
 • 16k_zh_edu 中文教育；
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；
@@ -520,6 +524,7 @@ namespace TencentCloud
 • 16k_vi：16k 越南语；
 • 16k_ms：16k 马来语；
 • 16k_id：16k 印度尼西亚语；
+• 16k_fil：16k 菲律宾语；
 • 16k_zh_edu 中文教育；
 • 16k_en_edu 英文教育；
 • 16k_zh_medical  医疗；

@@ -513,6 +513,49 @@ TsfClient::CreateApiRateLimitRuleOutcomeCallable TsfClient::CreateApiRateLimitRu
     return task->get_future();
 }
 
+TsfClient::CreateApiRateLimitRuleWithDetailRespOutcome TsfClient::CreateApiRateLimitRuleWithDetailResp(const CreateApiRateLimitRuleWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApiRateLimitRuleWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApiRateLimitRuleWithDetailRespResponse rsp = CreateApiRateLimitRuleWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApiRateLimitRuleWithDetailRespOutcome(rsp);
+        else
+            return CreateApiRateLimitRuleWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApiRateLimitRuleWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateApiRateLimitRuleWithDetailRespAsync(const CreateApiRateLimitRuleWithDetailRespRequest& request, const CreateApiRateLimitRuleWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApiRateLimitRuleWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateApiRateLimitRuleWithDetailRespOutcomeCallable TsfClient::CreateApiRateLimitRuleWithDetailRespCallable(const CreateApiRateLimitRuleWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApiRateLimitRuleWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApiRateLimitRuleWithDetailResp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateApplicationOutcome TsfClient::CreateApplication(const CreateApplicationRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateApplication");
@@ -678,6 +721,49 @@ TsfClient::CreateConfigTemplateOutcomeCallable TsfClient::CreateConfigTemplateCa
         [this, request]()
         {
             return this->CreateConfigTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateConfigTemplateWithDetailRespOutcome TsfClient::CreateConfigTemplateWithDetailResp(const CreateConfigTemplateWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigTemplateWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigTemplateWithDetailRespResponse rsp = CreateConfigTemplateWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigTemplateWithDetailRespOutcome(rsp);
+        else
+            return CreateConfigTemplateWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigTemplateWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateConfigTemplateWithDetailRespAsync(const CreateConfigTemplateWithDetailRespRequest& request, const CreateConfigTemplateWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigTemplateWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateConfigTemplateWithDetailRespOutcomeCallable TsfClient::CreateConfigTemplateWithDetailRespCallable(const CreateConfigTemplateWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigTemplateWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigTemplateWithDetailResp(request);
         }
     );
 
@@ -1115,6 +1201,49 @@ TsfClient::CreatePathRewritesOutcomeCallable TsfClient::CreatePathRewritesCallab
     return task->get_future();
 }
 
+TsfClient::CreatePathRewritesWithDetailRespOutcome TsfClient::CreatePathRewritesWithDetailResp(const CreatePathRewritesWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePathRewritesWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePathRewritesWithDetailRespResponse rsp = CreatePathRewritesWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePathRewritesWithDetailRespOutcome(rsp);
+        else
+            return CreatePathRewritesWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePathRewritesWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreatePathRewritesWithDetailRespAsync(const CreatePathRewritesWithDetailRespRequest& request, const CreatePathRewritesWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePathRewritesWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreatePathRewritesWithDetailRespOutcomeCallable TsfClient::CreatePathRewritesWithDetailRespCallable(const CreatePathRewritesWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePathRewritesWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePathRewritesWithDetailResp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreatePublicConfigOutcome TsfClient::CreatePublicConfig(const CreatePublicConfigRequest &request)
 {
     auto outcome = MakeRequest(request, "CreatePublicConfig");
@@ -1151,6 +1280,49 @@ TsfClient::CreatePublicConfigOutcomeCallable TsfClient::CreatePublicConfigCallab
         [this, request]()
         {
             return this->CreatePublicConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreatePublicConfigWithDetailRespOutcome TsfClient::CreatePublicConfigWithDetailResp(const CreatePublicConfigWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePublicConfigWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePublicConfigWithDetailRespResponse rsp = CreatePublicConfigWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePublicConfigWithDetailRespOutcome(rsp);
+        else
+            return CreatePublicConfigWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePublicConfigWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreatePublicConfigWithDetailRespAsync(const CreatePublicConfigWithDetailRespRequest& request, const CreatePublicConfigWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePublicConfigWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreatePublicConfigWithDetailRespOutcomeCallable TsfClient::CreatePublicConfigWithDetailRespCallable(const CreatePublicConfigWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePublicConfigWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePublicConfigWithDetailResp(request);
         }
     );
 
@@ -1330,6 +1502,49 @@ TsfClient::CreateUnitRuleOutcomeCallable TsfClient::CreateUnitRuleCallable(const
     return task->get_future();
 }
 
+TsfClient::CreateUnitRuleWithDetailRespOutcome TsfClient::CreateUnitRuleWithDetailResp(const CreateUnitRuleWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateUnitRuleWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateUnitRuleWithDetailRespResponse rsp = CreateUnitRuleWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateUnitRuleWithDetailRespOutcome(rsp);
+        else
+            return CreateUnitRuleWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateUnitRuleWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateUnitRuleWithDetailRespAsync(const CreateUnitRuleWithDetailRespRequest& request, const CreateUnitRuleWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateUnitRuleWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateUnitRuleWithDetailRespOutcomeCallable TsfClient::CreateUnitRuleWithDetailRespCallable(const CreateUnitRuleWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateUnitRuleWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateUnitRuleWithDetailResp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DeleteApiGroupOutcome TsfClient::DeleteApiGroup(const DeleteApiGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteApiGroup");
@@ -1366,6 +1581,49 @@ TsfClient::DeleteApiGroupOutcomeCallable TsfClient::DeleteApiGroupCallable(const
         [this, request]()
         {
             return this->DeleteApiGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::DeleteApiRateLimitRuleOutcome TsfClient::DeleteApiRateLimitRule(const DeleteApiRateLimitRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteApiRateLimitRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteApiRateLimitRuleResponse rsp = DeleteApiRateLimitRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteApiRateLimitRuleOutcome(rsp);
+        else
+            return DeleteApiRateLimitRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteApiRateLimitRuleOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DeleteApiRateLimitRuleAsync(const DeleteApiRateLimitRuleRequest& request, const DeleteApiRateLimitRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteApiRateLimitRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DeleteApiRateLimitRuleOutcomeCallable TsfClient::DeleteApiRateLimitRuleCallable(const DeleteApiRateLimitRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteApiRateLimitRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteApiRateLimitRule(request);
         }
     );
 
@@ -5587,6 +5845,49 @@ TsfClient::DescribeRepositoryOutcomeCallable TsfClient::DescribeRepositoryCallab
     return task->get_future();
 }
 
+TsfClient::DescribeResourceTaskStatusOutcome TsfClient::DescribeResourceTaskStatus(const DescribeResourceTaskStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeResourceTaskStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeResourceTaskStatusResponse rsp = DescribeResourceTaskStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeResourceTaskStatusOutcome(rsp);
+        else
+            return DescribeResourceTaskStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeResourceTaskStatusOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::DescribeResourceTaskStatusAsync(const DescribeResourceTaskStatusRequest& request, const DescribeResourceTaskStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeResourceTaskStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::DescribeResourceTaskStatusOutcomeCallable TsfClient::DescribeResourceTaskStatusCallable(const DescribeResourceTaskStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeResourceTaskStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeResourceTaskStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::DescribeSimpleApplicationsOutcome TsfClient::DescribeSimpleApplications(const DescribeSimpleApplicationsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSimpleApplications");
@@ -7644,6 +7945,49 @@ TsfClient::ReleaseConfigOutcomeCallable TsfClient::ReleaseConfigCallable(const R
         [this, request]()
         {
             return this->ReleaseConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::ReleaseConfigWithDetailRespOutcome TsfClient::ReleaseConfigWithDetailResp(const ReleaseConfigWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReleaseConfigWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReleaseConfigWithDetailRespResponse rsp = ReleaseConfigWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReleaseConfigWithDetailRespOutcome(rsp);
+        else
+            return ReleaseConfigWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return ReleaseConfigWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::ReleaseConfigWithDetailRespAsync(const ReleaseConfigWithDetailRespRequest& request, const ReleaseConfigWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReleaseConfigWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::ReleaseConfigWithDetailRespOutcomeCallable TsfClient::ReleaseConfigWithDetailRespCallable(const ReleaseConfigWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReleaseConfigWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->ReleaseConfigWithDetailResp(request);
         }
     );
 

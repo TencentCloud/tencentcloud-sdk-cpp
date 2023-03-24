@@ -341,6 +341,49 @@ CkafkaClient::CreateAclOutcomeCallable CkafkaClient::CreateAclCallable(const Cre
     return task->get_future();
 }
 
+CkafkaClient::CreateAclRuleOutcome CkafkaClient::CreateAclRule(const CreateAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAclRuleResponse rsp = CreateAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAclRuleOutcome(rsp);
+        else
+            return CreateAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::CreateAclRuleAsync(const CreateAclRuleRequest& request, const CreateAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::CreateAclRuleOutcomeCallable CkafkaClient::CreateAclRuleCallable(const CreateAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAclRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::CreateCdcClusterOutcome CkafkaClient::CreateCdcCluster(const CreateCdcClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCdcCluster");
@@ -1452,6 +1495,49 @@ CkafkaClient::DescribeACLOutcomeCallable CkafkaClient::DescribeACLCallable(const
         [this, request]()
         {
             return this->DescribeACL(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::DescribeAclRuleOutcome CkafkaClient::DescribeAclRule(const DescribeAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAclRuleResponse rsp = DescribeAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAclRuleOutcome(rsp);
+        else
+            return DescribeAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::DescribeAclRuleAsync(const DescribeAclRuleRequest& request, const DescribeAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::DescribeAclRuleOutcomeCallable CkafkaClient::DescribeAclRuleCallable(const DescribeAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAclRule(request);
         }
     );
 
@@ -2742,6 +2828,49 @@ CkafkaClient::InquireCkafkaPriceOutcomeCallable CkafkaClient::InquireCkafkaPrice
         [this, request]()
         {
             return this->InquireCkafkaPrice(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CkafkaClient::ModifyAclRuleOutcome CkafkaClient::ModifyAclRule(const ModifyAclRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAclRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAclRuleResponse rsp = ModifyAclRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAclRuleOutcome(rsp);
+        else
+            return ModifyAclRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAclRuleOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ModifyAclRuleAsync(const ModifyAclRuleRequest& request, const ModifyAclRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAclRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::ModifyAclRuleOutcomeCallable CkafkaClient::ModifyAclRuleCallable(const ModifyAclRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAclRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAclRule(request);
         }
     );
 

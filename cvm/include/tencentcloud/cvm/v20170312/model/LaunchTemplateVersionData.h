@@ -563,6 +563,48 @@ namespace TencentCloud
                      */
                     bool TagSpecificationHasBeenSet() const;
 
+                    /**
+                     * 获取实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：
+
+TRUE：表示开启实例保护，不允许通过api接口删除实例
+FALSE：表示关闭实例保护，允许通过api接口删除实例
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DisableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：
+
+TRUE：表示开启实例保护，不允许通过api接口删除实例
+FALSE：表示关闭实例保护，允许通过api接口删除实例
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetDisableApiTermination() const;
+
+                    /**
+                     * 设置实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：
+
+TRUE：表示开启实例保护，不允许通过api接口删除实例
+FALSE：表示关闭实例保护，允许通过api接口删除实例
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DisableApiTermination 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：
+
+TRUE：表示开启实例保护，不允许通过api接口删除实例
+FALSE：表示关闭实例保护，允许通过api接口删除实例
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDisableApiTermination(const bool& _disableApiTermination);
+
+                    /**
+                     * 判断参数 DisableApiTermination 是否已赋值
+                     * @return DisableApiTermination 是否已赋值
+                     */
+                    bool DisableApiTerminationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -725,6 +767,18 @@ namespace TencentCloud
                      */
                     std::vector<TagSpecification> m_tagSpecification;
                     bool m_tagSpecificationHasBeenSet;
+
+                    /**
+                     * 实例销毁保护标志，表示是否允许通过api接口删除实例。取值范围：
+
+TRUE：表示开启实例保护，不允许通过api接口删除实例
+FALSE：表示关闭实例保护，允许通过api接口删除实例
+
+默认取值：FALSE。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_disableApiTermination;
+                    bool m_disableApiTerminationHasBeenSet;
 
                 };
             }

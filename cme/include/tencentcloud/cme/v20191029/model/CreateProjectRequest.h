@@ -28,6 +28,7 @@
 #include <tencentcloud/cme/v20191029/model/VideoSegmentationProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/StreamConnectProjectInput.h>
 #include <tencentcloud/cme/v20191029/model/RecordReplayProjectInput.h>
+#include <tencentcloud/cme/v20191029/model/MediaCastProjectInput.h>
 
 
 namespace TencentCloud
@@ -118,12 +119,14 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+<li>MEDIA_CAST：点播转直播。</li>
                      * @return Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+<li>MEDIA_CAST：点播转直播。</li>
                      */
                     std::string GetCategory() const;
 
@@ -134,12 +137,14 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+<li>MEDIA_CAST：点播转直播。</li>
                      * @param Category 项目类别，取值有：
 <li>VIDEO_EDIT：视频编辑。</li>
 <li>SWITCHER：导播台。</li>
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+<li>MEDIA_CAST：点播转直播。</li>
                      */
                     void SetCategory(const std::string& _category);
 
@@ -335,6 +340,24 @@ namespace TencentCloud
                      */
                     bool RecordReplayProjectInputHasBeenSet() const;
 
+                    /**
+                     * 获取点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     * @return MediaCastProjectInput 点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     */
+                    MediaCastProjectInput GetMediaCastProjectInput() const;
+
+                    /**
+                     * 设置点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     * @param MediaCastProjectInput 点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     */
+                    void SetMediaCastProjectInput(const MediaCastProjectInput& _mediaCastProjectInput);
+
+                    /**
+                     * 判断参数 MediaCastProjectInput 是否已赋值
+                     * @return MediaCastProjectInput 是否已赋值
+                     */
+                    bool MediaCastProjectInputHasBeenSet() const;
+
                 private:
 
                     /**
@@ -364,6 +387,7 @@ namespace TencentCloud
 <li>VIDEO_SEGMENTATION：视频拆条。</li>
 <li>STREAM_CONNECT：云转推。</li>
 <li>RECORD_REPLAY：录制回放。</li>
+<li>MEDIA_CAST：点播转直播。</li>
                      */
                     std::string m_category;
                     bool m_categoryHasBeenSet;
@@ -427,6 +451,12 @@ namespace TencentCloud
                      */
                     RecordReplayProjectInput m_recordReplayProjectInput;
                     bool m_recordReplayProjectInputHasBeenSet;
+
+                    /**
+                     * 点播转直播项目输入信息，仅当项目类型为 MEDIA_CAST 时必填。
+                     */
+                    MediaCastProjectInput m_mediaCastProjectInput;
+                    bool m_mediaCastProjectInputHasBeenSet;
 
                 };
             }

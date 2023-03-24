@@ -34,7 +34,8 @@ Instance::Instance() :
     m_instanceTypeHasBeenSet(false),
     m_versionNumberHasBeenSet(false),
     m_autoScalingGroupNameHasBeenSet(false),
-    m_warmupStatusHasBeenSet(false)
+    m_warmupStatusHasBeenSet(false),
+    m_disasterRecoverGroupIdsHasBeenSet(false)
 {
 }
 
@@ -183,6 +184,19 @@ CoreInternalOutcome Instance::Deserialize(const rapidjson::Value &value)
         m_warmupStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("DisasterRecoverGroupIds") && !value["DisasterRecoverGroupIds"].IsNull())
+    {
+        if (!value["DisasterRecoverGroupIds"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Instance.DisasterRecoverGroupIds` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["DisasterRecoverGroupIds"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_disasterRecoverGroupIds.push_back((*itr).GetString());
+        }
+        m_disasterRecoverGroupIdsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +314,19 @@ void Instance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "WarmupStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_warmupStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_disasterRecoverGroupIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DisasterRecoverGroupIds";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_disasterRecoverGroupIds.begin(); itr != m_disasterRecoverGroupIds.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -527,5 +554,21 @@ void Instance::SetWarmupStatus(const string& _warmupStatus)
 bool Instance::WarmupStatusHasBeenSet() const
 {
     return m_warmupStatusHasBeenSet;
+}
+
+vector<string> Instance::GetDisasterRecoverGroupIds() const
+{
+    return m_disasterRecoverGroupIds;
+}
+
+void Instance::SetDisasterRecoverGroupIds(const vector<string>& _disasterRecoverGroupIds)
+{
+    m_disasterRecoverGroupIds = _disasterRecoverGroupIds;
+    m_disasterRecoverGroupIdsHasBeenSet = true;
+}
+
+bool Instance::DisasterRecoverGroupIdsHasBeenSet() const
+{
+    return m_disasterRecoverGroupIdsHasBeenSet;
 }
 
