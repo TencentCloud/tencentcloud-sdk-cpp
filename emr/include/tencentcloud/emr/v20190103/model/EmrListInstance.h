@@ -646,6 +646,28 @@ namespace TencentCloud
                      */
                     bool OutSideSoftInfoHasBeenSet() const;
 
+                    /**
+                     * 获取当前集群的应用场景是否支持体外客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IsSupportOutsideCluster 当前集群的应用场景是否支持体外客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetIsSupportOutsideCluster() const;
+
+                    /**
+                     * 设置当前集群的应用场景是否支持体外客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IsSupportOutsideCluster 当前集群的应用场景是否支持体外客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIsSupportOutsideCluster(const bool& _isSupportOutsideCluster);
+
+                    /**
+                     * 判断参数 IsSupportOutsideCluster 是否已赋值
+                     * @return IsSupportOutsideCluster 是否已赋值
+                     */
+                    bool IsSupportOutsideClusterHasBeenSet() const;
+
                 private:
 
                     /**
@@ -840,6 +862,13 @@ namespace TencentCloud
                      */
                     std::vector<SoftDependInfo> m_outSideSoftInfo;
                     bool m_outSideSoftInfoHasBeenSet;
+
+                    /**
+                     * 当前集群的应用场景是否支持体外客户端
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_isSupportOutsideCluster;
+                    bool m_isSupportOutsideClusterHasBeenSet;
 
                 };
             }

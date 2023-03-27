@@ -49,7 +49,8 @@ EmrListInstance::EmrListInstance() :
     m_clusterClassHasBeenSet(false),
     m_isMultiZoneClusterHasBeenSet(false),
     m_isHandsClusterHasBeenSet(false),
-    m_outSideSoftInfoHasBeenSet(false)
+    m_outSideSoftInfoHasBeenSet(false),
+    m_isSupportOutsideClusterHasBeenSet(false)
 {
 }
 
@@ -368,6 +369,16 @@ CoreInternalOutcome EmrListInstance::Deserialize(const rapidjson::Value &value)
         m_outSideSoftInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("IsSupportOutsideCluster") && !value["IsSupportOutsideCluster"].IsNull())
+    {
+        if (!value["IsSupportOutsideCluster"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmrListInstance.IsSupportOutsideCluster` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isSupportOutsideCluster = value["IsSupportOutsideCluster"].GetBool();
+        m_isSupportOutsideClusterHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -619,6 +630,14 @@ void EmrListInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_isSupportOutsideClusterHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsSupportOutsideCluster";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isSupportOutsideCluster, allocator);
     }
 
 }
@@ -1086,5 +1105,21 @@ void EmrListInstance::SetOutSideSoftInfo(const vector<SoftDependInfo>& _outSideS
 bool EmrListInstance::OutSideSoftInfoHasBeenSet() const
 {
     return m_outSideSoftInfoHasBeenSet;
+}
+
+bool EmrListInstance::GetIsSupportOutsideCluster() const
+{
+    return m_isSupportOutsideCluster;
+}
+
+void EmrListInstance::SetIsSupportOutsideCluster(const bool& _isSupportOutsideCluster)
+{
+    m_isSupportOutsideCluster = _isSupportOutsideCluster;
+    m_isSupportOutsideClusterHasBeenSet = true;
+}
+
+bool EmrListInstance::IsSupportOutsideClusterHasBeenSet() const
+{
+    return m_isSupportOutsideClusterHasBeenSet;
 }
 

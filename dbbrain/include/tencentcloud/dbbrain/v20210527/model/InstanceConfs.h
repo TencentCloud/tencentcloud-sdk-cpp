@@ -82,6 +82,28 @@ namespace TencentCloud
                      */
                     bool OverviewDisplayHasBeenSet() const;
 
+                    /**
+                     * 获取redis大key分析的自定义分割符，仅redis使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return KeyDelimiters redis大key分析的自定义分割符，仅redis使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetKeyDelimiters() const;
+
+                    /**
+                     * 设置redis大key分析的自定义分割符，仅redis使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param KeyDelimiters redis大key分析的自定义分割符，仅redis使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetKeyDelimiters(const std::vector<std::string>& _keyDelimiters);
+
+                    /**
+                     * 判断参数 KeyDelimiters 是否已赋值
+                     * @return KeyDelimiters 是否已赋值
+                     */
+                    bool KeyDelimitersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +117,13 @@ namespace TencentCloud
                      */
                     std::string m_overviewDisplay;
                     bool m_overviewDisplayHasBeenSet;
+
+                    /**
+                     * redis大key分析的自定义分割符，仅redis使用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_keyDelimiters;
+                    bool m_keyDelimitersHasBeenSet;
 
                 };
             }

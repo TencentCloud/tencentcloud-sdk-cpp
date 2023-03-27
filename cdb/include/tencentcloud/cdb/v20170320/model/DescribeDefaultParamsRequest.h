@@ -78,6 +78,24 @@ namespace TencentCloud
                      */
                     bool TemplateTypeHasBeenSet() const;
 
+                    /**
+                     * 获取参数模板引擎，默认值：InnoDB
+                     * @return EngineType 参数模板引擎，默认值：InnoDB
+                     */
+                    std::string GetEngineType() const;
+
+                    /**
+                     * 设置参数模板引擎，默认值：InnoDB
+                     * @param EngineType 参数模板引擎，默认值：InnoDB
+                     */
+                    void SetEngineType(const std::string& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +109,12 @@ namespace TencentCloud
                      */
                     std::string m_templateType;
                     bool m_templateTypeHasBeenSet;
+
+                    /**
+                     * 参数模板引擎，默认值：InnoDB
+                     */
+                    std::string m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                 };
             }

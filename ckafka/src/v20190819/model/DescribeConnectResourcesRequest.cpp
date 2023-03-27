@@ -26,7 +26,8 @@ DescribeConnectResourcesRequest::DescribeConnectResourcesRequest() :
     m_typeHasBeenSet(false),
     m_searchWordHasBeenSet(false),
     m_offsetHasBeenSet(false),
-    m_limitHasBeenSet(false)
+    m_limitHasBeenSet(false),
+    m_resourceRegionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,14 @@ string DescribeConnectResourcesRequest::ToJsonString() const
         string key = "Limit";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_limit, allocator);
+    }
+
+    if (m_resourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_resourceRegion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -139,6 +148,22 @@ void DescribeConnectResourcesRequest::SetLimit(const int64_t& _limit)
 bool DescribeConnectResourcesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+string DescribeConnectResourcesRequest::GetResourceRegion() const
+{
+    return m_resourceRegion;
+}
+
+void DescribeConnectResourcesRequest::SetResourceRegion(const string& _resourceRegion)
+{
+    m_resourceRegion = _resourceRegion;
+    m_resourceRegionHasBeenSet = true;
+}
+
+bool DescribeConnectResourcesRequest::ResourceRegionHasBeenSet() const
+{
+    return m_resourceRegionHasBeenSet;
 }
 
 

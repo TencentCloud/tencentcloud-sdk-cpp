@@ -22,7 +22,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CancelFlowResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportRequest.h
   include/tencentcloud/ess/v20201111/model/Department.h
-  include/tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h
+  include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h
   include/tencentcloud/ess/v20201111/model/FileInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowApproversResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserRequest.h
@@ -47,6 +47,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowRequest.h
+  include/tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/AutoSignConfig.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h
   include/tencentcloud/ess/v20201111/model/CreateReleaseFlowResponse.h
@@ -80,6 +81,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/AuthorizedUser.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentRequest.h
   include/tencentcloud/ess/v20201111/model/RemindFlowRecords.h
+  include/tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeOrganizationSealsResponse.h
   include/tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/SignQrCode.h
@@ -147,7 +149,7 @@ set(ess_src
   src/v20201111/model/CancelFlowResponse.cpp
   src/v20201111/model/DescribeFlowEvidenceReportRequest.cpp
   src/v20201111/model/Department.cpp
-  src/v20201111/model/CreateSchemeUrlRequest.cpp
+  src/v20201111/model/CreatePreparedPersonalEsignRequest.cpp
   src/v20201111/model/FileInfo.cpp
   src/v20201111/model/CreateFlowApproversResponse.cpp
   src/v20201111/model/DescribeIntegrationMainOrganizationUserRequest.cpp
@@ -172,6 +174,7 @@ set(ess_src
   src/v20201111/model/CreateDocumentResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp
   src/v20201111/model/CreateFlowRequest.cpp
+  src/v20201111/model/CreateSchemeUrlRequest.cpp
   src/v20201111/model/AutoSignConfig.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeRequest.cpp
   src/v20201111/model/CreateReleaseFlowResponse.cpp
@@ -205,6 +208,7 @@ set(ess_src
   src/v20201111/model/AuthorizedUser.cpp
   src/v20201111/model/CreateDocumentRequest.cpp
   src/v20201111/model/RemindFlowRecords.cpp
+  src/v20201111/model/CreatePreparedPersonalEsignResponse.cpp
   src/v20201111/model/DescribeOrganizationSealsResponse.cpp
   src/v20201111/model/DeleteIntegrationEmployeesRequest.cpp
   src/v20201111/model/SignQrCode.cpp

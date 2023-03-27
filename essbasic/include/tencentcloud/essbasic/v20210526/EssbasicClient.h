@@ -55,12 +55,18 @@
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateReleaseFlowResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelCreateSealPolicyResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelCreateUserRolesResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDeleteRoleUsersResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDeleteSealPoliciesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeEmployeesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelDescribeOrganizationSealsResponse.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesRequest.h>
+#include <tencentcloud/essbasic/v20210526/model/ChannelDescribeRolesResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiRequest.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelGetTaskResultApiResponse.h>
 #include <tencentcloud/essbasic/v20210526/model/ChannelUpdateSealStatusRequest.h>
@@ -165,6 +171,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelCreateSealPolicyResponse> ChannelCreateSealPolicyOutcome;
                 typedef std::future<ChannelCreateSealPolicyOutcome> ChannelCreateSealPolicyOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateSealPolicyRequest&, ChannelCreateSealPolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateSealPolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelCreateUserRolesResponse> ChannelCreateUserRolesOutcome;
+                typedef std::future<ChannelCreateUserRolesOutcome> ChannelCreateUserRolesOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelCreateUserRolesRequest&, ChannelCreateUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelCreateUserRolesAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDeleteRoleUsersResponse> ChannelDeleteRoleUsersOutcome;
+                typedef std::future<ChannelDeleteRoleUsersOutcome> ChannelDeleteRoleUsersOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDeleteRoleUsersRequest&, ChannelDeleteRoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDeleteRoleUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelDeleteSealPoliciesResponse> ChannelDeleteSealPoliciesOutcome;
                 typedef std::future<ChannelDeleteSealPoliciesOutcome> ChannelDeleteSealPoliciesOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDeleteSealPoliciesRequest&, ChannelDeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDeleteSealPoliciesAsyncHandler;
@@ -174,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ChannelDescribeOrganizationSealsResponse> ChannelDescribeOrganizationSealsOutcome;
                 typedef std::future<ChannelDescribeOrganizationSealsOutcome> ChannelDescribeOrganizationSealsOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeOrganizationSealsRequest&, ChannelDescribeOrganizationSealsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeOrganizationSealsAsyncHandler;
+                typedef Outcome<Core::Error, Model::ChannelDescribeRolesResponse> ChannelDescribeRolesOutcome;
+                typedef std::future<ChannelDescribeRolesOutcome> ChannelDescribeRolesOutcomeCallable;
+                typedef std::function<void(const EssbasicClient*, const Model::ChannelDescribeRolesRequest&, ChannelDescribeRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelDescribeRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ChannelGetTaskResultApiResponse> ChannelGetTaskResultApiOutcome;
                 typedef std::future<ChannelGetTaskResultApiOutcome> ChannelGetTaskResultApiOutcomeCallable;
                 typedef std::function<void(const EssbasicClient*, const Model::ChannelGetTaskResultApiRequest&, ChannelGetTaskResultApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ChannelGetTaskResultApiAsyncHandler;
@@ -411,6 +426,24 @@ namespace TencentCloud
                 ChannelCreateSealPolicyOutcomeCallable ChannelCreateSealPolicyCallable(const Model::ChannelCreateSealPolicyRequest& request);
 
                 /**
+                 *渠道版绑定员工角色
+                 * @param req ChannelCreateUserRolesRequest
+                 * @return ChannelCreateUserRolesOutcome
+                 */
+                ChannelCreateUserRolesOutcome ChannelCreateUserRoles(const Model::ChannelCreateUserRolesRequest &request);
+                void ChannelCreateUserRolesAsync(const Model::ChannelCreateUserRolesRequest& request, const ChannelCreateUserRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelCreateUserRolesOutcomeCallable ChannelCreateUserRolesCallable(const Model::ChannelCreateUserRolesRequest& request);
+
+                /**
+                 *渠道版删除员工绑定角色
+                 * @param req ChannelDeleteRoleUsersRequest
+                 * @return ChannelDeleteRoleUsersOutcome
+                 */
+                ChannelDeleteRoleUsersOutcome ChannelDeleteRoleUsers(const Model::ChannelDeleteRoleUsersRequest &request);
+                void ChannelDeleteRoleUsersAsync(const Model::ChannelDeleteRoleUsersRequest& request, const ChannelDeleteRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDeleteRoleUsersOutcomeCallable ChannelDeleteRoleUsersCallable(const Model::ChannelDeleteRoleUsersRequest& request);
+
+                /**
                  *删除指定印章下多个授权信息
                  * @param req ChannelDeleteSealPoliciesRequest
                  * @return ChannelDeleteSealPoliciesOutcome
@@ -437,6 +470,15 @@ namespace TencentCloud
                 ChannelDescribeOrganizationSealsOutcome ChannelDescribeOrganizationSeals(const Model::ChannelDescribeOrganizationSealsRequest &request);
                 void ChannelDescribeOrganizationSealsAsync(const Model::ChannelDescribeOrganizationSealsRequest& request, const ChannelDescribeOrganizationSealsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ChannelDescribeOrganizationSealsOutcomeCallable ChannelDescribeOrganizationSealsCallable(const Model::ChannelDescribeOrganizationSealsRequest& request);
+
+                /**
+                 *渠道办查询用户角色
+                 * @param req ChannelDescribeRolesRequest
+                 * @return ChannelDescribeRolesOutcome
+                 */
+                ChannelDescribeRolesOutcome ChannelDescribeRoles(const Model::ChannelDescribeRolesRequest &request);
+                void ChannelDescribeRolesAsync(const Model::ChannelDescribeRolesRequest& request, const ChannelDescribeRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ChannelDescribeRolesOutcomeCallable ChannelDescribeRolesCallable(const Model::ChannelDescribeRolesRequest& request);
 
                 /**
                  *查询转换任务状态

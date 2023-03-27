@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取流日志实例名字
-                     * @return FlowLogName 流日志实例名字
+                     * 获取流日志实例名字。
+                     * @return FlowLogName 流日志实例名字。
                      */
                     std::string GetFlowLogName() const;
 
                     /**
-                     * 设置流日志实例名字
-                     * @param FlowLogName 流日志实例名字
+                     * 设置流日志实例名字。
+                     * @param FlowLogName 流日志实例名字。
                      */
                     void SetFlowLogName(const std::string& _flowLogName);
 
@@ -63,14 +63,14 @@ namespace TencentCloud
                     bool FlowLogNameHasBeenSet() const;
 
                     /**
-                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG
-                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG
+                     * 获取流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * @return ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
                      */
                     std::string GetResourceType() const;
 
                     /**
-                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG
-                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG
+                     * 设置流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
+                     * @param ResourceType 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
                      */
                     void SetResourceType(const std::string& _resourceType);
 
@@ -81,14 +81,14 @@ namespace TencentCloud
                     bool ResourceTypeHasBeenSet() const;
 
                     /**
-                     * 获取资源唯一ID
-                     * @return ResourceId 资源唯一ID
+                     * 获取资源唯一ID。
+                     * @return ResourceId 资源唯一ID。
                      */
                     std::string GetResourceId() const;
 
                     /**
-                     * 设置资源唯一ID
-                     * @param ResourceId 资源唯一ID
+                     * 设置资源唯一ID。
+                     * @param ResourceId 资源唯一ID。
                      */
                     void SetResourceId(const std::string& _resourceId);
 
@@ -99,14 +99,14 @@ namespace TencentCloud
                     bool ResourceIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志采集类型，ACCEPT|REJECT|ALL
-                     * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL
+                     * 获取流日志采集类型，ACCEPT|REJECT|ALL。
+                     * @return TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
                      */
                     std::string GetTrafficType() const;
 
                     /**
-                     * 设置流日志采集类型，ACCEPT|REJECT|ALL
-                     * @param TrafficType 流日志采集类型，ACCEPT|REJECT|ALL
+                     * 设置流日志采集类型，ACCEPT|REJECT|ALL。
+                     * @param TrafficType 流日志采集类型，ACCEPT|REJECT|ALL。
                      */
                     void SetTrafficType(const std::string& _trafficType);
 
@@ -135,14 +135,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取流日志实例描述
-                     * @return FlowLogDescription 流日志实例描述
+                     * 获取流日志实例描述。
+                     * @return FlowLogDescription 流日志实例描述。
                      */
                     std::string GetFlowLogDescription() const;
 
                     /**
-                     * 设置流日志实例描述
-                     * @param FlowLogDescription 流日志实例描述
+                     * 设置流日志实例描述。
+                     * @param FlowLogDescription 流日志实例描述。
                      */
                     void SetFlowLogDescription(const std::string& _flowLogDescription);
 
@@ -153,14 +153,14 @@ namespace TencentCloud
                     bool FlowLogDescriptionHasBeenSet() const;
 
                     /**
-                     * 获取流日志存储ID
-                     * @return CloudLogId 流日志存储ID
+                     * 获取流日志存储ID。
+                     * @return CloudLogId 流日志存储ID。
                      */
                     std::string GetCloudLogId() const;
 
                     /**
-                     * 设置流日志存储ID
-                     * @param CloudLogId 流日志存储ID
+                     * 设置流日志存储ID。
+                     * @param CloudLogId 流日志存储ID。
                      */
                     void SetCloudLogId(const std::string& _cloudLogId);
 
@@ -171,14 +171,14 @@ namespace TencentCloud
                     bool CloudLogIdHasBeenSet() const;
 
                     /**
-                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 获取指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @return Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> GetTags() const;
 
                     /**
-                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
-                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 设置指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
+                     * @param Tags 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     void SetTags(const std::vector<Tag>& _tags);
 
@@ -189,14 +189,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取消费端类型：cls、ckafka
-                     * @return StorageType 消费端类型：cls、ckafka
+                     * 获取消费端类型：cls、ckafka。默认值cls。
+                     * @return StorageType 消费端类型：cls、ckafka。默认值cls。
                      */
                     std::string GetStorageType() const;
 
                     /**
-                     * 设置消费端类型：cls、ckafka
-                     * @param StorageType 消费端类型：cls、ckafka
+                     * 设置消费端类型：cls、ckafka。默认值cls。
+                     * @param StorageType 消费端类型：cls、ckafka。默认值cls。
                      */
                     void SetStorageType(const std::string& _storageType);
 
@@ -245,25 +245,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 流日志实例名字
+                     * 流日志实例名字。
                      */
                     std::string m_flowLogName;
                     bool m_flowLogNameHasBeenSet;
 
                     /**
-                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG
+                     * 流日志所属资源类型，VPC|SUBNET|NETWORKINTERFACE|CCN|NAT|DCG。
                      */
                     std::string m_resourceType;
                     bool m_resourceTypeHasBeenSet;
 
                     /**
-                     * 资源唯一ID
+                     * 资源唯一ID。
                      */
                     std::string m_resourceId;
                     bool m_resourceIdHasBeenSet;
 
                     /**
-                     * 流日志采集类型，ACCEPT|REJECT|ALL
+                     * 流日志采集类型，ACCEPT|REJECT|ALL。
                      */
                     std::string m_trafficType;
                     bool m_trafficTypeHasBeenSet;
@@ -275,25 +275,25 @@ namespace TencentCloud
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 流日志实例描述
+                     * 流日志实例描述。
                      */
                     std::string m_flowLogDescription;
                     bool m_flowLogDescriptionHasBeenSet;
 
                     /**
-                     * 流日志存储ID
+                     * 流日志存储ID。
                      */
                     std::string m_cloudLogId;
                     bool m_cloudLogIdHasBeenSet;
 
                     /**
-                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]
+                     * 指定绑定的标签列表，例如：[{"Key": "city", "Value": "shanghai"}]。
                      */
                     std::vector<Tag> m_tags;
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 消费端类型：cls、ckafka
+                     * 消费端类型：cls、ckafka。默认值cls。
                      */
                     std::string m_storageType;
                     bool m_storageTypeHasBeenSet;

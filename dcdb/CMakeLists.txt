@@ -34,6 +34,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ActiveHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVportResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVipResponse.h
   include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/TerminateDedicatedDBInstanceResponse.h
@@ -63,12 +64,13 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseView.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesRequest.h
+  include/tencentcloud/dcdb/v20180411/model/NodeInfo.h
   include/tencentcloud/dcdb/v20180411/model/DescribeOrdersResponse.h
   include/tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ResetAccountPasswordRequest.h
   include/tencentcloud/dcdb/v20180411/model/CopyAccountPrivilegesResponse.h
   include/tencentcloud/dcdb/v20180411/model/CloneAccountRequest.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeDCDBRenewalPriceRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceNetworkResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSecurityGroupsRequest.h
   include/tencentcloud/dcdb/v20180411/model/DatabaseProcedure.h
@@ -115,9 +117,9 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ColumnPrivilege.h
   include/tencentcloud/dcdb/v20180411/model/SplitShardConfig.h
   include/tencentcloud/dcdb/v20180411/model/RenewDCDBInstanceResponse.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeShardSpecResponse.h
-  include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBRenewalPriceResponse.h
+  include/tencentcloud/dcdb/v20180411/model/AssociateSecurityGroupsResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeShardSpecResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBShardsResponse.h
   include/tencentcloud/dcdb/v20180411/model/ZonesInfo.h
   include/tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceResponse.h
@@ -128,6 +130,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/ShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVipRequest.h
   include/tencentcloud/dcdb/v20180411/model/OpenDBExtranetAccessRequest.h
+  include/tencentcloud/dcdb/v20180411/model/ShardBriefInfo.h
   include/tencentcloud/dcdb/v20180411/model/DatabasePrivilege.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBSaleInfoResponse.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstancesProjectRequest.h
@@ -176,6 +179,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/SqlLogItem.h
   include/tencentcloud/dcdb/v20180411/model/DescribeAccountsResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDCDBRenewalPriceRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesRequest.h
   include/tencentcloud/dcdb/v20180411/model/Project.h
   include/tencentcloud/dcdb/v20180411/model/ModifyInstanceVportRequest.h
@@ -205,6 +209,7 @@ set(dcdb_src
   src/v20180411/model/ActiveHourDCDBInstanceResponse.cpp
   src/v20180411/model/DescribeDCDBPriceResponse.cpp
   src/v20180411/model/ModifyInstanceVportResponse.cpp
+  src/v20180411/model/DescribeDCDBInstanceDetailRequest.cpp
   src/v20180411/model/ModifyInstanceVipResponse.cpp
   src/v20180411/model/AssociateSecurityGroupsRequest.cpp
   src/v20180411/model/TerminateDedicatedDBInstanceResponse.cpp
@@ -234,12 +239,13 @@ set(dcdb_src
   src/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.cpp
   src/v20180411/model/DatabaseView.cpp
   src/v20180411/model/DescribeDBLogFilesRequest.cpp
+  src/v20180411/model/NodeInfo.cpp
   src/v20180411/model/DescribeOrdersResponse.cpp
   src/v20180411/model/CreateHourDCDBInstanceRequest.cpp
   src/v20180411/model/ResetAccountPasswordRequest.cpp
   src/v20180411/model/CopyAccountPrivilegesResponse.cpp
   src/v20180411/model/CloneAccountRequest.cpp
-  src/v20180411/model/DescribeDCDBRenewalPriceRequest.cpp
+  src/v20180411/model/DescribeDCDBInstanceDetailResponse.cpp
   src/v20180411/model/ModifyInstanceNetworkResponse.cpp
   src/v20180411/model/DescribeDBSecurityGroupsRequest.cpp
   src/v20180411/model/DatabaseProcedure.cpp
@@ -286,9 +292,9 @@ set(dcdb_src
   src/v20180411/model/ColumnPrivilege.cpp
   src/v20180411/model/SplitShardConfig.cpp
   src/v20180411/model/RenewDCDBInstanceResponse.cpp
-  src/v20180411/model/DescribeShardSpecResponse.cpp
-  src/v20180411/model/AssociateSecurityGroupsResponse.cpp
   src/v20180411/model/DescribeDCDBRenewalPriceResponse.cpp
+  src/v20180411/model/AssociateSecurityGroupsResponse.cpp
+  src/v20180411/model/DescribeShardSpecResponse.cpp
   src/v20180411/model/DescribeDCDBShardsResponse.cpp
   src/v20180411/model/ZonesInfo.cpp
   src/v20180411/model/CreateHourDCDBInstanceResponse.cpp
@@ -299,6 +305,7 @@ set(dcdb_src
   src/v20180411/model/ShardInfo.cpp
   src/v20180411/model/ModifyInstanceVipRequest.cpp
   src/v20180411/model/OpenDBExtranetAccessRequest.cpp
+  src/v20180411/model/ShardBriefInfo.cpp
   src/v20180411/model/DatabasePrivilege.cpp
   src/v20180411/model/DescribeDCDBSaleInfoResponse.cpp
   src/v20180411/model/ModifyDBInstancesProjectRequest.cpp
@@ -347,6 +354,7 @@ set(dcdb_src
   src/v20180411/model/SqlLogItem.cpp
   src/v20180411/model/DescribeAccountsResponse.cpp
   src/v20180411/model/DescribeDBSlowLogsResponse.cpp
+  src/v20180411/model/DescribeDCDBRenewalPriceRequest.cpp
   src/v20180411/model/DescribeDCDBInstancesRequest.cpp
   src/v20180411/model/Project.cpp
   src/v20180411/model/ModifyInstanceVportRequest.cpp

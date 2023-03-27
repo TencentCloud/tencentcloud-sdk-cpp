@@ -41,6 +41,8 @@
 #include <tencentcloud/redis/v20180412/model/CleanUpInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/ClearInstanceResponse.h>
+#include <tencentcloud/redis/v20180412/model/CloneInstancesRequest.h>
+#include <tencentcloud/redis/v20180412/model/CloneInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/CloseSSLRequest.h>
 #include <tencentcloud/redis/v20180412/model/CloseSSLResponse.h>
 #include <tencentcloud/redis/v20180412/model/CreateInstanceAccountRequest.h>
@@ -242,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ClearInstanceResponse> ClearInstanceOutcome;
                 typedef std::future<ClearInstanceOutcome> ClearInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ClearInstanceRequest&, ClearInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ClearInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::CloneInstancesResponse> CloneInstancesOutcome;
+                typedef std::future<CloneInstancesOutcome> CloneInstancesOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::CloneInstancesRequest&, CloneInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloneInstancesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CloseSSLResponse> CloseSSLOutcome;
                 typedef std::future<CloseSSLOutcome> CloseSSLOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::CloseSSLRequest&, CloseSSLOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CloseSSLAsyncHandler;
@@ -565,6 +570,15 @@ namespace TencentCloud
                 ClearInstanceOutcome ClearInstance(const Model::ClearInstanceRequest &request);
                 void ClearInstanceAsync(const Model::ClearInstanceRequest& request, const ClearInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ClearInstanceOutcomeCallable ClearInstanceCallable(const Model::ClearInstanceRequest& request);
+
+                /**
+                 *本接口（CloneInstances）可基于当前实例的备份文件克隆一个完整的新实例。
+                 * @param req CloneInstancesRequest
+                 * @return CloneInstancesOutcome
+                 */
+                CloneInstancesOutcome CloneInstances(const Model::CloneInstancesRequest &request);
+                void CloneInstancesAsync(const Model::CloneInstancesRequest& request, const CloneInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CloneInstancesOutcomeCallable CloneInstancesCallable(const Model::CloneInstancesRequest& request);
 
                 /**
                  *关闭SSL

@@ -22,7 +22,8 @@ using namespace std;
 
 InstanceConfs::InstanceConfs() :
     m_dailyInspectionHasBeenSet(false),
-    m_overviewDisplayHasBeenSet(false)
+    m_overviewDisplayHasBeenSet(false),
+    m_keyDelimitersHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,19 @@ CoreInternalOutcome InstanceConfs::Deserialize(const rapidjson::Value &value)
         m_overviewDisplayHasBeenSet = true;
     }
 
+    if (value.HasMember("KeyDelimiters") && !value["KeyDelimiters"].IsNull())
+    {
+        if (!value["KeyDelimiters"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `InstanceConfs.KeyDelimiters` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["KeyDelimiters"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_keyDelimiters.push_back((*itr).GetString());
+        }
+        m_keyDelimitersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +86,19 @@ void InstanceConfs::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "OverviewDisplay";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_overviewDisplay.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_keyDelimitersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "KeyDelimiters";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_keyDelimiters.begin(); itr != m_keyDelimiters.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -107,5 +134,21 @@ void InstanceConfs::SetOverviewDisplay(const string& _overviewDisplay)
 bool InstanceConfs::OverviewDisplayHasBeenSet() const
 {
     return m_overviewDisplayHasBeenSet;
+}
+
+vector<string> InstanceConfs::GetKeyDelimiters() const
+{
+    return m_keyDelimiters;
+}
+
+void InstanceConfs::SetKeyDelimiters(const vector<string>& _keyDelimiters)
+{
+    m_keyDelimiters = _keyDelimiters;
+    m_keyDelimitersHasBeenSet = true;
+}
+
+bool InstanceConfs::KeyDelimitersHasBeenSet() const
+{
+    return m_keyDelimitersHasBeenSet;
 }
 

@@ -53,6 +53,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreatePreparedPersonalEsignResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateReleaseFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateReleaseFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h>
@@ -158,6 +160,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreatePrepareFlowResponse> CreatePrepareFlowOutcome;
                 typedef std::future<CreatePrepareFlowOutcome> CreatePrepareFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreatePrepareFlowRequest&, CreatePrepareFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePrepareFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePreparedPersonalEsignResponse> CreatePreparedPersonalEsignOutcome;
+                typedef std::future<CreatePreparedPersonalEsignOutcome> CreatePreparedPersonalEsignOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreatePreparedPersonalEsignRequest&, CreatePreparedPersonalEsignOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePreparedPersonalEsignAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateReleaseFlowResponse> CreateReleaseFlowOutcome;
                 typedef std::future<CreateReleaseFlowOutcome> CreateReleaseFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateReleaseFlowRequest&, CreateReleaseFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateReleaseFlowAsyncHandler;
@@ -360,7 +365,7 @@ namespace TencentCloud
                 CreateFlowSignUrlOutcomeCallable CreateFlowSignUrlCallable(const Model::CreateFlowSignUrlRequest& request);
 
                 /**
-                 *创建员工
+                 *创建员工,如需在此接口提醒员工实名，入参Employees的OpenId不传
                  * @param req CreateIntegrationEmployeesRequest
                  * @return CreateIntegrationEmployeesOutcome
                  */
@@ -389,6 +394,15 @@ namespace TencentCloud
                 CreatePrepareFlowOutcome CreatePrepareFlow(const Model::CreatePrepareFlowRequest &request);
                 void CreatePrepareFlowAsync(const Model::CreatePrepareFlowRequest& request, const CreatePrepareFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreatePrepareFlowOutcomeCallable CreatePrepareFlowCallable(const Model::CreatePrepareFlowRequest& request);
+
+                /**
+                 *本接口（CreatePreparedPersonalEsign）由于创建导入个人印章。
+                 * @param req CreatePreparedPersonalEsignRequest
+                 * @return CreatePreparedPersonalEsignOutcome
+                 */
+                CreatePreparedPersonalEsignOutcome CreatePreparedPersonalEsign(const Model::CreatePreparedPersonalEsignRequest &request);
+                void CreatePreparedPersonalEsignAsync(const Model::CreatePreparedPersonalEsignRequest& request, const CreatePreparedPersonalEsignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePreparedPersonalEsignOutcomeCallable CreatePreparedPersonalEsignCallable(const Model::CreatePreparedPersonalEsignRequest& request);
 
                 /**
                  *发起解除协议，主要应用场景为：基于一份已经签署的合同(签署流程)，进行解除操作。

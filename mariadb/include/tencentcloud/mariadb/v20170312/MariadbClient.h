@@ -57,6 +57,8 @@
 #include <tencentcloud/mariadb/v20170312/model/DescribeBackupTimeResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBEncryptAttributesResponse.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBInstanceDetailRequest.h>
+#include <tencentcloud/mariadb/v20170312/model/DescribeDBInstanceDetailResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsRequest.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBInstanceSpecsResponse.h>
 #include <tencentcloud/mariadb/v20170312/model/DescribeDBInstancesRequest.h>
@@ -226,6 +228,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBEncryptAttributesResponse> DescribeDBEncryptAttributesOutcome;
                 typedef std::future<DescribeDBEncryptAttributesOutcome> DescribeDBEncryptAttributesOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBEncryptAttributesRequest&, DescribeDBEncryptAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBEncryptAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstanceDetailResponse> DescribeDBInstanceDetailOutcome;
+                typedef std::future<DescribeDBInstanceDetailOutcome> DescribeDBInstanceDetailOutcomeCallable;
+                typedef std::function<void(const MariadbClient*, const Model::DescribeDBInstanceDetailRequest&, DescribeDBInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBInstanceSpecsResponse> DescribeDBInstanceSpecsOutcome;
                 typedef std::future<DescribeDBInstanceSpecsOutcome> DescribeDBInstanceSpecsOutcomeCallable;
                 typedef std::function<void(const MariadbClient*, const Model::DescribeDBInstanceSpecsRequest&, DescribeDBInstanceSpecsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstanceSpecsAsyncHandler;
@@ -539,6 +544,15 @@ namespace TencentCloud
                 DescribeDBEncryptAttributesOutcome DescribeDBEncryptAttributes(const Model::DescribeDBEncryptAttributesRequest &request);
                 void DescribeDBEncryptAttributesAsync(const Model::DescribeDBEncryptAttributesRequest& request, const DescribeDBEncryptAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBEncryptAttributesOutcomeCallable DescribeDBEncryptAttributesCallable(const Model::DescribeDBEncryptAttributesRequest& request);
+
+                /**
+                 *本接口(DescribeDBInstanceDetail)用于查询指定实例的详细信息。
+                 * @param req DescribeDBInstanceDetailRequest
+                 * @return DescribeDBInstanceDetailOutcome
+                 */
+                DescribeDBInstanceDetailOutcome DescribeDBInstanceDetail(const Model::DescribeDBInstanceDetailRequest &request);
+                void DescribeDBInstanceDetailAsync(const Model::DescribeDBInstanceDetailRequest& request, const DescribeDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstanceDetailOutcomeCallable DescribeDBInstanceDetailCallable(const Model::DescribeDBInstanceDetailRequest& request);
 
                 /**
                  *本接口(DescribeDBInstanceSpecs)用于查询可创建的云数据库可售卖的规格配置。

@@ -55,7 +55,8 @@ SparkJobInfo::SparkJobInfo() :
     m_jobPythonFilesHasBeenSet(false),
     m_taskNumHasBeenSet(false),
     m_dataEngineStatusHasBeenSet(false),
-    m_jobExecutorMaxNumbersHasBeenSet(false)
+    m_jobExecutorMaxNumbersHasBeenSet(false),
+    m_sparkImageVersionHasBeenSet(false)
 {
 }
 
@@ -421,6 +422,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_jobExecutorMaxNumbersHasBeenSet = true;
     }
 
+    if (value.HasMember("SparkImageVersion") && !value["SparkImageVersion"].IsNull())
+    {
+        if (!value["SparkImageVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.SparkImageVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sparkImageVersion = string(value["SparkImageVersion"].GetString());
+        m_sparkImageVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -707,6 +718,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "JobExecutorMaxNumbers";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_jobExecutorMaxNumbers, allocator);
+    }
+
+    if (m_sparkImageVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SparkImageVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sparkImageVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1270,5 +1289,21 @@ void SparkJobInfo::SetJobExecutorMaxNumbers(const int64_t& _jobExecutorMaxNumber
 bool SparkJobInfo::JobExecutorMaxNumbersHasBeenSet() const
 {
     return m_jobExecutorMaxNumbersHasBeenSet;
+}
+
+string SparkJobInfo::GetSparkImageVersion() const
+{
+    return m_sparkImageVersion;
+}
+
+void SparkJobInfo::SetSparkImageVersion(const string& _sparkImageVersion)
+{
+    m_sparkImageVersion = _sparkImageVersion;
+    m_sparkImageVersionHasBeenSet = true;
+}
+
+bool SparkJobInfo::SparkImageVersionHasBeenSet() const
+{
+    return m_sparkImageVersionHasBeenSet;
 }
 

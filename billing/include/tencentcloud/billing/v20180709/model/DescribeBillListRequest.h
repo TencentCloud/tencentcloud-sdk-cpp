@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取查询范围的起始时间（包含）
-                     * @return StartTime 查询范围的起始时间（包含）
+                     * 获取查询范围的起始时间（包含）时间格式 yyyy-MM-dd HH:mm:ss 开始时间和结束时间差值小于等于六个月
+                     * @return StartTime 查询范围的起始时间（包含）时间格式 yyyy-MM-dd HH:mm:ss 开始时间和结束时间差值小于等于六个月
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置查询范围的起始时间（包含）
-                     * @param StartTime 查询范围的起始时间（包含）
+                     * 设置查询范围的起始时间（包含）时间格式 yyyy-MM-dd HH:mm:ss 开始时间和结束时间差值小于等于六个月
+                     * @param StartTime 查询范围的起始时间（包含）时间格式 yyyy-MM-dd HH:mm:ss 开始时间和结束时间差值小于等于六个月
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询范围的结束时间（包含）
-                     * @return EndTime 查询范围的结束时间（包含）
+                     * 获取查询范围的结束时间（包含）时间格式 yyyy-MM-dd HH:mm:ss ，开始时间和结束时间差值小于等于六个月
+                     * @return EndTime 查询范围的结束时间（包含）时间格式 yyyy-MM-dd HH:mm:ss ，开始时间和结束时间差值小于等于六个月
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置查询范围的结束时间（包含）
-                     * @param EndTime 查询范围的结束时间（包含）
+                     * 设置查询范围的结束时间（包含）时间格式 yyyy-MM-dd HH:mm:ss ，开始时间和结束时间差值小于等于六个月
+                     * @param EndTime 查询范围的结束时间（包含）时间格式 yyyy-MM-dd HH:mm:ss ，开始时间和结束时间差值小于等于六个月
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -263,13 +263,13 @@ other 第三方解冻;hour 按量解冻;month 按月解冻
                 private:
 
                     /**
-                     * 查询范围的起始时间（包含）
+                     * 查询范围的起始时间（包含）时间格式 yyyy-MM-dd HH:mm:ss 开始时间和结束时间差值小于等于六个月
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 查询范围的结束时间（包含）
+                     * 查询范围的结束时间（包含）时间格式 yyyy-MM-dd HH:mm:ss ，开始时间和结束时间差值小于等于六个月
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;

@@ -125,17 +125,17 @@ namespace TencentCloud
                     bool EmailHasBeenSet() const;
 
                     /**
-                     * 获取用户在第三方平台id
+                     * 获取用户在第三方平台id，如需在此接口提醒员工实名，该参数不传
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return OpenId 用户在第三方平台id
+                     * @return OpenId 用户在第三方平台id，如需在此接口提醒员工实名，该参数不传
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户在第三方平台id
+                     * 设置用户在第三方平台id，如需在此接口提醒员工实名，该参数不传
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param OpenId 用户在第三方平台id
+                     * @param OpenId 用户在第三方平台id，如需在此接口提醒员工实名，该参数不传
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetOpenId(const std::string& _openId);
@@ -270,6 +270,42 @@ namespace TencentCloud
                      */
                     bool QuiteJobHasBeenSet() const;
 
+                    /**
+                     * 获取员工离职交接人用户id
+                     * @return ReceiveUserId 员工离职交接人用户id
+                     */
+                    std::string GetReceiveUserId() const;
+
+                    /**
+                     * 设置员工离职交接人用户id
+                     * @param ReceiveUserId 员工离职交接人用户id
+                     */
+                    void SetReceiveUserId(const std::string& _receiveUserId);
+
+                    /**
+                     * 判断参数 ReceiveUserId 是否已赋值
+                     * @return ReceiveUserId 是否已赋值
+                     */
+                    bool ReceiveUserIdHasBeenSet() const;
+
+                    /**
+                     * 获取员工离职交接人用户OpenId
+                     * @return ReceiveOpenId 员工离职交接人用户OpenId
+                     */
+                    std::string GetReceiveOpenId() const;
+
+                    /**
+                     * 设置员工离职交接人用户OpenId
+                     * @param ReceiveOpenId 员工离职交接人用户OpenId
+                     */
+                    void SetReceiveOpenId(const std::string& _receiveOpenId);
+
+                    /**
+                     * 判断参数 ReceiveOpenId 是否已赋值
+                     * @return ReceiveOpenId 是否已赋值
+                     */
+                    bool ReceiveOpenIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -298,7 +334,7 @@ namespace TencentCloud
                     bool m_emailHasBeenSet;
 
                     /**
-                     * 用户在第三方平台id
+                     * 用户在第三方平台id，如需在此接口提醒员工实名，该参数不传
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_openId;
@@ -343,6 +379,18 @@ namespace TencentCloud
                      */
                     int64_t m_quiteJob;
                     bool m_quiteJobHasBeenSet;
+
+                    /**
+                     * 员工离职交接人用户id
+                     */
+                    std::string m_receiveUserId;
+                    bool m_receiveUserIdHasBeenSet;
+
+                    /**
+                     * 员工离职交接人用户OpenId
+                     */
+                    std::string m_receiveOpenId;
+                    bool m_receiveOpenIdHasBeenSet;
 
                 };
             }

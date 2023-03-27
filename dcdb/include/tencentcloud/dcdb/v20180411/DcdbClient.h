@@ -57,6 +57,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBSyncModeResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceDetailResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDCDBInstancesRequest.h>
@@ -216,6 +218,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBSyncModeResponse> DescribeDBSyncModeOutcome;
                 typedef std::future<DescribeDBSyncModeOutcome> DescribeDBSyncModeOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDBSyncModeRequest&, DescribeDBSyncModeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSyncModeAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDCDBInstanceDetailResponse> DescribeDCDBInstanceDetailOutcome;
+                typedef std::future<DescribeDCDBInstanceDetailOutcome> DescribeDCDBInstanceDetailOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeDCDBInstanceDetailRequest&, DescribeDCDBInstanceDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDCDBInstanceDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDCDBInstanceNodeInfoResponse> DescribeDCDBInstanceNodeInfoOutcome;
                 typedef std::future<DescribeDCDBInstanceNodeInfoOutcome> DescribeDCDBInstanceNodeInfoOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDCDBInstanceNodeInfoRequest&, DescribeDCDBInstanceNodeInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDCDBInstanceNodeInfoAsyncHandler;
@@ -514,6 +519,15 @@ namespace TencentCloud
                 DescribeDBSyncModeOutcome DescribeDBSyncMode(const Model::DescribeDBSyncModeRequest &request);
                 void DescribeDBSyncModeAsync(const Model::DescribeDBSyncModeRequest& request, const DescribeDBSyncModeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeDBSyncModeOutcomeCallable DescribeDBSyncModeCallable(const Model::DescribeDBSyncModeRequest& request);
+
+                /**
+                 *本接口（DescribeDCDBInstanceDetail）用于获取DCDB实例详情
+                 * @param req DescribeDCDBInstanceDetailRequest
+                 * @return DescribeDCDBInstanceDetailOutcome
+                 */
+                DescribeDCDBInstanceDetailOutcome DescribeDCDBInstanceDetail(const Model::DescribeDCDBInstanceDetailRequest &request);
+                void DescribeDCDBInstanceDetailAsync(const Model::DescribeDCDBInstanceDetailRequest& request, const DescribeDCDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDCDBInstanceDetailOutcomeCallable DescribeDCDBInstanceDetailCallable(const Model::DescribeDCDBInstanceDetailRequest& request);
 
                 /**
                  *本接口（DescribeDCDBInstanceNodeInfo）用于获取实例节点信息

@@ -721,6 +721,28 @@ namespace TencentCloud
                      */
                     bool JobExecutorMaxNumbersHasBeenSet() const;
 
+                    /**
+                     * 获取镜像版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SparkImageVersion 镜像版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSparkImageVersion() const;
+
+                    /**
+                     * 设置镜像版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SparkImageVersion 镜像版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSparkImageVersion(const std::string& _sparkImageVersion);
+
+                    /**
+                     * 判断参数 SparkImageVersion 是否已赋值
+                     * @return SparkImageVersion 是否已赋值
+                     */
+                    bool SparkImageVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -943,6 +965,13 @@ namespace TencentCloud
                      */
                     int64_t m_jobExecutorMaxNumbers;
                     bool m_jobExecutorMaxNumbersHasBeenSet;
+
+                    /**
+                     * 镜像版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sparkImageVersion;
+                    bool m_sparkImageVersionHasBeenSet;
 
                 };
             }

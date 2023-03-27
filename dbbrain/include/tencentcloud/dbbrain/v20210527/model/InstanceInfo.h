@@ -551,6 +551,68 @@ namespace TencentCloud
                      */
                     bool AuditRunningStatusHasBeenSet() const;
 
+                    /**
+                     * 获取内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalVip 内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInternalVip() const;
+
+                    /**
+                     * 设置内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternalVip 内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternalVip(const std::string& _internalVip);
+
+                    /**
+                     * 判断参数 InternalVip 是否已赋值
+                     * @return InternalVip 是否已赋值
+                     */
+                    bool InternalVipHasBeenSet() const;
+
+                    /**
+                     * 获取内网port
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InternalVport 内网port
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetInternalVport() const;
+
+                    /**
+                     * 设置内网port
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InternalVport 内网port
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInternalVport(const int64_t& _internalVport);
+
+                    /**
+                     * 判断参数 InternalVport 是否已赋值
+                     * @return InternalVport 是否已赋值
+                     */
+                    bool InternalVportHasBeenSet() const;
+
+                    /**
+                     * 获取创建时间
+                     * @return CreateTime 创建时间
+                     */
+                    std::string GetCreateTime() const;
+
+                    /**
+                     * 设置创建时间
+                     * @param CreateTime 创建时间
+                     */
+                    void SetCreateTime(const std::string& _createTime);
+
+                    /**
+                     * 判断参数 CreateTime 是否已赋值
+                     * @return CreateTime 是否已赋值
+                     */
+                    bool CreateTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -720,6 +782,26 @@ namespace TencentCloud
                      */
                     std::string m_auditRunningStatus;
                     bool m_auditRunningStatusHasBeenSet;
+
+                    /**
+                     * 内网vip
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_internalVip;
+                    bool m_internalVipHasBeenSet;
+
+                    /**
+                     * 内网port
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_internalVport;
+                    bool m_internalVportHasBeenSet;
+
+                    /**
+                     * 创建时间
+                     */
+                    std::string m_createTime;
+                    bool m_createTimeHasBeenSet;
 
                 };
             }

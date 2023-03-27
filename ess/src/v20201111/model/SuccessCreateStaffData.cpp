@@ -23,7 +23,8 @@ using namespace std;
 SuccessCreateStaffData::SuccessCreateStaffData() :
     m_displayNameHasBeenSet(false),
     m_mobileHasBeenSet(false),
-    m_userIdHasBeenSet(false)
+    m_userIdHasBeenSet(false),
+    m_noteHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome SuccessCreateStaffData::Deserialize(const rapidjson::Value &
         m_userIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Note") && !value["Note"].IsNull())
+    {
+        if (!value["Note"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SuccessCreateStaffData.Note` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_note = string(value["Note"].GetString());
+        m_noteHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void SuccessCreateStaffData::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "UserId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_userId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_noteHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Note";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_note.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void SuccessCreateStaffData::SetUserId(const string& _userId)
 bool SuccessCreateStaffData::UserIdHasBeenSet() const
 {
     return m_userIdHasBeenSet;
+}
+
+string SuccessCreateStaffData::GetNote() const
+{
+    return m_note;
+}
+
+void SuccessCreateStaffData::SetNote(const string& _note)
+{
+    m_note = _note;
+    m_noteHasBeenSet = true;
+}
+
+bool SuccessCreateStaffData::NoteHasBeenSet() const
+{
+    return m_noteHasBeenSet;
 }
 

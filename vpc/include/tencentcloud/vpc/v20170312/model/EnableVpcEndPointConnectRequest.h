@@ -80,13 +80,17 @@ namespace TencentCloud
 
                     /**
                      * 获取是否接受终端节点连接请求。
+<li> true：自动接受。</li> <li> false：不自动接受。</li>
                      * @return AcceptFlag 是否接受终端节点连接请求。
+<li> true：自动接受。</li> <li> false：不自动接受。</li>
                      */
                     bool GetAcceptFlag() const;
 
                     /**
                      * 设置是否接受终端节点连接请求。
+<li> true：自动接受。</li> <li> false：不自动接受。</li>
                      * @param AcceptFlag 是否接受终端节点连接请求。
+<li> true：自动接受。</li> <li> false：不自动接受。</li>
                      */
                     void SetAcceptFlag(const bool& _acceptFlag);
 
@@ -112,6 +116,7 @@ namespace TencentCloud
 
                     /**
                      * 是否接受终端节点连接请求。
+<li> true：自动接受。</li> <li> false：不自动接受。</li>
                      */
                     bool m_acceptFlag;
                     bool m_acceptFlagHasBeenSet;

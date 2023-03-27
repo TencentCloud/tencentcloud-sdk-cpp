@@ -281,7 +281,9 @@ namespace TencentCloud
 
 
                 /**
-                 *DID添加标签
+                 *下线已有内测接口，待上线正式版本的接口
+
+DID添加标签
 
                  * @param req AddLabelRequest
                  * @return AddLabelOutcome
@@ -291,7 +293,9 @@ namespace TencentCloud
                 AddLabelOutcomeCallable AddLabelCallable(const Model::AddLabelRequest& request);
 
                 /**
-                 *撤消权威机构认证
+                 *下线已有内测接口，待上线正式版本的接口
+
+撤消权威机构认证
                  * @param req CancelAuthorityIssuerRequest
                  * @return CancelAuthorityIssuerOutcome
                  */
@@ -309,7 +313,9 @@ namespace TencentCloud
                 CheckChainOutcomeCallable CheckChainCallable(const Model::CheckChainRequest& request);
 
                 /**
-                 *检查部署情况
+                 *下线已有内测接口，待上线正式版本的接口
+
+检查部署情况
                  * @param req CheckDidDeployRequest
                  * @return CheckDidDeployOutcome
                  */
@@ -327,7 +333,9 @@ namespace TencentCloud
                 CreateCredentialOutcomeCallable CreateCredentialCallable(const Model::CreateCredentialRequest& request);
 
                 /**
-                 *创建DID服务
+                 *下线已有内测接口，待上线正式版本的接口
+
+创建DID服务
                  * @param req CreateDidServiceRequest
                  * @return CreateDidServiceOutcome
                  */
@@ -336,7 +344,9 @@ namespace TencentCloud
                 CreateDidServiceOutcomeCallable CreateDidServiceCallable(const Model::CreateDidServiceRequest& request);
 
                 /**
-                 *新建标签
+                 *下线已有内测接口，待上线正式版本的接口
+
+新建标签
                  * @param req CreateLabelRequest
                  * @return CreateLabelOutcome
                  */
@@ -381,7 +391,9 @@ namespace TencentCloud
                 CreateTDidByPublicKeyOutcomeCallable CreateTDidByPublicKeyCallable(const Model::CreateTDidByPublicKeyRequest& request);
 
                 /**
-                 *通过Name部署TDID合约
+                 *下线已有内测接口，待上线正式版本的接口
+
+通过Name部署TDID合约
                  * @param req DeployByNameRequest
                  * @return DeployByNameOutcome
                  */
@@ -390,7 +402,9 @@ namespace TencentCloud
                 DeployByNameOutcomeCallable DeployByNameCallable(const Model::DeployByNameRequest& request);
 
                 /**
-                 *凭证模版下载
+                 *下线已有内测接口，待上线正式版本的接口
+
+凭证模版下载
                  * @param req DownCptRequest
                  * @return DownCptOutcome
                  */
@@ -399,7 +413,9 @@ namespace TencentCloud
                 DownCptOutcomeCallable DownCptCallable(const Model::DownCptRequest& request);
 
                 /**
-                 *启用合约
+                 *下线已有内测接口，待上线正式版本的接口
+
+启用合约
                  * @param req EnableHashRequest
                  * @return EnableHashOutcome
                  */
@@ -419,7 +435,9 @@ namespace TencentCloud
                 GetAgencyTDidOutcomeCallable GetAgencyTDidCallable(const Model::GetAgencyTDidRequest& request);
 
                 /**
-                 *权威机构列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+权威机构列表
                  * @param req GetAuthoritiesListRequest
                  * @return GetAuthoritiesListOutcome
                  */
@@ -437,7 +455,9 @@ namespace TencentCloud
                 GetAuthorityIssuerOutcomeCallable GetAuthorityIssuerCallable(const Model::GetAuthorityIssuerRequest& request);
 
                 /**
-                 *获取联盟bcos网络列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+获取联盟bcos网络列表
                  * @param req GetConsortiumClusterListRequest
                  * @return GetConsortiumClusterListOutcome
                  */
@@ -446,7 +466,9 @@ namespace TencentCloud
                 GetConsortiumClusterListOutcomeCallable GetConsortiumClusterListCallable(const Model::GetConsortiumClusterListRequest& request);
 
                 /**
-                 *获取联盟列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+获取联盟列表
                  * @param req GetConsortiumListRequest
                  * @return GetConsortiumListOutcome
                  */
@@ -464,7 +486,9 @@ namespace TencentCloud
                 GetCptInfoOutcomeCallable GetCptInfoCallable(const Model::GetCptInfoRequest& request);
 
                 /**
-                 *凭证模版列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+凭证模版列表
                  * @param req GetCptListRequest
                  * @return GetCptListOutcome
                  */
@@ -473,7 +497,9 @@ namespace TencentCloud
                 GetCptListOutcomeCallable GetCptListCallable(const Model::GetCptListRequest& request);
 
                 /**
-                 *凭证颁发按机构排行
+                 *下线已有内测接口，待上线正式版本的接口
+
+凭证颁发按机构排行
                  * @param req GetCredentialCptRankRequest
                  * @return GetCredentialCptRankOutcome
                  */
@@ -482,7 +508,9 @@ namespace TencentCloud
                 GetCredentialCptRankOutcomeCallable GetCredentialCptRankCallable(const Model::GetCredentialCptRankRequest& request);
 
                 /**
-                 *凭证颁发按机构排行
+                 *下线已有内测接口，待上线正式版本的接口
+
+凭证颁发按机构排行
                  * @param req GetCredentialIssueRankRequest
                  * @return GetCredentialIssueRankOutcome
                  */
@@ -491,7 +519,9 @@ namespace TencentCloud
                 GetCredentialIssueRankOutcomeCallable GetCredentialIssueRankCallable(const Model::GetCredentialIssueRankRequest& request);
 
                 /**
-                 *凭证颁发趋势
+                 *下线已有内测接口，待上线正式版本的接口
+
+凭证颁发趋势
                  * @param req GetCredentialIssueTrendRequest
                  * @return GetCredentialIssueTrendOutcome
                  */
@@ -509,7 +539,9 @@ namespace TencentCloud
                 GetCredentialStatusOutcomeCallable GetCredentialStatusCallable(const Model::GetCredentialStatusRequest& request);
 
                 /**
-                 *概览
+                 *下线已有内测接口，待上线正式版本的接口
+
+概览
 
                  * @param req GetDataPanelRequest
                  * @return GetDataPanelOutcome
@@ -519,7 +551,9 @@ namespace TencentCloud
                 GetDataPanelOutcomeCallable GetDataPanelCallable(const Model::GetDataPanelRequest& request);
 
                 /**
-                 *合约部署详情
+                 *下线已有内测接口，待上线正式版本的接口
+
+合约部署详情
 
                  * @param req GetDeployInfoRequest
                  * @return GetDeployInfoOutcome
@@ -529,7 +563,9 @@ namespace TencentCloud
                 GetDeployInfoOutcomeCallable GetDeployInfoCallable(const Model::GetDeployInfoRequest& request);
 
                 /**
-                 *合约部署列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+合约部署列表
                  * @param req GetDeployListRequest
                  * @return GetDeployListOutcome
                  */
@@ -538,7 +574,9 @@ namespace TencentCloud
                 GetDeployListOutcomeCallable GetDeployListCallable(const Model::GetDeployListRequest& request);
 
                 /**
-                 *获取DID区块链网络详情
+                 *下线已有内测接口，待上线正式版本的接口
+
+获取DID区块链网络详情
                  * @param req GetDidClusterDetailRequest
                  * @return GetDidClusterDetailOutcome
                  */
@@ -547,7 +585,9 @@ namespace TencentCloud
                 GetDidClusterDetailOutcomeCallable GetDidClusterDetailCallable(const Model::GetDidClusterDetailRequest& request);
 
                 /**
-                 *获取用户的DID网络列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+获取用户的DID网络列表
                  * @param req GetDidClusterListRequest
                  * @return GetDidClusterListOutcome
                  */
@@ -556,7 +596,9 @@ namespace TencentCloud
                 GetDidClusterListOutcomeCallable GetDidClusterListCallable(const Model::GetDidClusterListRequest& request);
 
                 /**
-                 *DID详情
+                 *下线已有内测接口，待上线正式版本的接口
+
+DID详情
                  * @param req GetDidDetailRequest
                  * @return GetDidDetailOutcome
                  */
@@ -575,7 +617,9 @@ namespace TencentCloud
                 GetDidDocumentOutcomeCallable GetDidDocumentCallable(const Model::GetDidDocumentRequest& request);
 
                 /**
-                 *DID列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+DID列表
                  * @param req GetDidListRequest
                  * @return GetDidListOutcome
                  */
@@ -584,7 +628,9 @@ namespace TencentCloud
                 GetDidListOutcomeCallable GetDidListCallable(const Model::GetDidListRequest& request);
 
                 /**
-                 *DID注册趋势
+                 *下线已有内测接口，待上线正式版本的接口
+
+DID注册趋势
                  * @param req GetDidRegisterTrendRequest
                  * @return GetDidRegisterTrendOutcome
                  */
@@ -593,7 +639,9 @@ namespace TencentCloud
                 GetDidRegisterTrendOutcomeCallable GetDidRegisterTrendCallable(const Model::GetDidRegisterTrendRequest& request);
 
                 /**
-                 *获取DID服务详情
+                 *下线已有内测接口，待上线正式版本的接口
+
+获取DID服务详情
                  * @param req GetDidServiceDetailRequest
                  * @return GetDidServiceDetailOutcome
                  */
@@ -602,7 +650,9 @@ namespace TencentCloud
                 GetDidServiceDetailOutcomeCallable GetDidServiceDetailCallable(const Model::GetDidServiceDetailRequest& request);
 
                 /**
-                 *获取DID服务列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+获取DID服务列表
                  * @param req GetDidServiceListRequest
                  * @return GetDidServiceListOutcome
                  */
@@ -611,7 +661,9 @@ namespace TencentCloud
                 GetDidServiceListOutcomeCallable GetDidServiceListCallable(const Model::GetDidServiceListRequest& request);
 
                 /**
-                 *主群组配置列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+主群组配置列表
                  * @param req GetGroupListRequest
                  * @return GetGroupListOutcome
                  */
@@ -620,7 +672,9 @@ namespace TencentCloud
                 GetGroupListOutcomeCallable GetGroupListCallable(const Model::GetGroupListRequest& request);
 
                 /**
-                 *标签列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+标签列表
                  * @param req GetLabelListRequest
                  * @return GetLabelListOutcome
                  */
@@ -629,7 +683,9 @@ namespace TencentCloud
                 GetLabelListOutcomeCallable GetLabelListCallable(const Model::GetLabelListRequest& request);
 
                 /**
-                 *披露策略Policy管理列表
+                 *下线已有内测接口，待上线正式版本的接口
+
+披露策略Policy管理列表
                  * @param req GetPolicyListRequest
                  * @return GetPolicyListOutcome
                  */
@@ -638,7 +694,9 @@ namespace TencentCloud
                 GetPolicyListOutcomeCallable GetPolicyListCallable(const Model::GetPolicyListRequest& request);
 
                 /**
-                 *查看公钥
+                 *下线已有内测接口，待上线正式版本的接口
+
+查看公钥
                  * @param req GetPublicKeyRequest
                  * @return GetPublicKeyOutcome
                  */
@@ -647,7 +705,9 @@ namespace TencentCloud
                 GetPublicKeyOutcomeCallable GetPublicKeyCallable(const Model::GetPublicKeyRequest& request);
 
                 /**
-                 *披露策略Policy查看
+                 *下线已有内测接口，待上线正式版本的接口
+
+披露策略Policy查看
                  * @param req QueryPolicyRequest
                  * @return QueryPolicyOutcome
                  */
@@ -656,7 +716,9 @@ namespace TencentCloud
                 QueryPolicyOutcomeCallable QueryPolicyCallable(const Model::QueryPolicyRequest& request);
 
                 /**
-                 *认证权威机构
+                 *下线已有内测接口，待上线正式版本的接口
+
+认证权威机构
                  * @param req RecognizeAuthorityIssuerRequest
                  * @return RecognizeAuthorityIssuerOutcome
                  */
@@ -665,7 +727,9 @@ namespace TencentCloud
                 RecognizeAuthorityIssuerOutcomeCallable RecognizeAuthorityIssuerCallable(const Model::RecognizeAuthorityIssuerRequest& request);
 
                 /**
-                 *披露策略Policy注册
+                 *下线已有内测接口，待上线正式版本的接口
+
+披露策略Policy注册
                  * @param req RegisterClaimPolicyRequest
                  * @return RegisterClaimPolicyOutcome
                  */
@@ -683,7 +747,9 @@ namespace TencentCloud
                 RegisterCptOutcomeCallable RegisterCptCallable(const Model::RegisterCptRequest& request);
 
                 /**
-                 *注册为权威机构
+                 *下线已有内测接口，待上线正式版本的接口
+
+注册为权威机构
                  * @param req RegisterIssuerRequest
                  * @return RegisterIssuerOutcome
                  */
@@ -692,7 +758,9 @@ namespace TencentCloud
                 RegisterIssuerOutcomeCallable RegisterIssuerCallable(const Model::RegisterIssuerRequest& request);
 
                 /**
-                 *删除合约
+                 *下线已有内测接口，待上线正式版本的接口
+
+删除合约
                  * @param req RemoveHashRequest
                  * @return RemoveHashOutcome
                  */

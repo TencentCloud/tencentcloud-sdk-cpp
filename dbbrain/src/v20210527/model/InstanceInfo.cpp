@@ -48,7 +48,10 @@ InstanceInfo::InstanceInfo() :
     m_isSupportedHasBeenSet(false),
     m_secAuditStatusHasBeenSet(false),
     m_auditPolicyStatusHasBeenSet(false),
-    m_auditRunningStatusHasBeenSet(false)
+    m_auditRunningStatusHasBeenSet(false),
+    m_internalVipHasBeenSet(false),
+    m_internalVportHasBeenSet(false),
+    m_createTimeHasBeenSet(false)
 {
 }
 
@@ -344,6 +347,36 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_auditRunningStatusHasBeenSet = true;
     }
 
+    if (value.HasMember("InternalVip") && !value["InternalVip"].IsNull())
+    {
+        if (!value["InternalVip"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InternalVip` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalVip = string(value["InternalVip"].GetString());
+        m_internalVipHasBeenSet = true;
+    }
+
+    if (value.HasMember("InternalVport") && !value["InternalVport"].IsNull())
+    {
+        if (!value["InternalVport"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.InternalVport` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_internalVport = value["InternalVport"].GetInt64();
+        m_internalVportHasBeenSet = true;
+    }
+
+    if (value.HasMember("CreateTime") && !value["CreateTime"].IsNull())
+    {
+        if (!value["CreateTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.CreateTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_createTime = string(value["CreateTime"].GetString());
+        m_createTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -574,6 +607,30 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "AuditRunningStatus";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_auditRunningStatus.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalVipHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalVip";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_internalVip.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_internalVportHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InternalVport";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_internalVport, allocator);
+    }
+
+    if (m_createTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CreateTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1025,5 +1082,53 @@ void InstanceInfo::SetAuditRunningStatus(const string& _auditRunningStatus)
 bool InstanceInfo::AuditRunningStatusHasBeenSet() const
 {
     return m_auditRunningStatusHasBeenSet;
+}
+
+string InstanceInfo::GetInternalVip() const
+{
+    return m_internalVip;
+}
+
+void InstanceInfo::SetInternalVip(const string& _internalVip)
+{
+    m_internalVip = _internalVip;
+    m_internalVipHasBeenSet = true;
+}
+
+bool InstanceInfo::InternalVipHasBeenSet() const
+{
+    return m_internalVipHasBeenSet;
+}
+
+int64_t InstanceInfo::GetInternalVport() const
+{
+    return m_internalVport;
+}
+
+void InstanceInfo::SetInternalVport(const int64_t& _internalVport)
+{
+    m_internalVport = _internalVport;
+    m_internalVportHasBeenSet = true;
+}
+
+bool InstanceInfo::InternalVportHasBeenSet() const
+{
+    return m_internalVportHasBeenSet;
+}
+
+string InstanceInfo::GetCreateTime() const
+{
+    return m_createTime;
+}
+
+void InstanceInfo::SetCreateTime(const string& _createTime)
+{
+    m_createTime = _createTime;
+    m_createTimeHasBeenSet = true;
+}
+
+bool InstanceInfo::CreateTimeHasBeenSet() const
+{
+    return m_createTimeHasBeenSet;
 }
 

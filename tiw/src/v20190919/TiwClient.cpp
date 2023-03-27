@@ -40,6 +40,135 @@ TiwClient::TiwClient(const Credential &credential, const string &region, const C
 }
 
 
+TiwClient::ApplyTiwTrialOutcome TiwClient::ApplyTiwTrial(const ApplyTiwTrialRequest &request)
+{
+    auto outcome = MakeRequest(request, "ApplyTiwTrial");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ApplyTiwTrialResponse rsp = ApplyTiwTrialResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ApplyTiwTrialOutcome(rsp);
+        else
+            return ApplyTiwTrialOutcome(o.GetError());
+    }
+    else
+    {
+        return ApplyTiwTrialOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::ApplyTiwTrialAsync(const ApplyTiwTrialRequest& request, const ApplyTiwTrialAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ApplyTiwTrial(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::ApplyTiwTrialOutcomeCallable TiwClient::ApplyTiwTrialCallable(const ApplyTiwTrialRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ApplyTiwTrialOutcome()>>(
+        [this, request]()
+        {
+            return this->ApplyTiwTrial(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::CreateApplicationOutcome TiwClient::CreateApplication(const CreateApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateApplicationResponse rsp = CreateApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateApplicationOutcome(rsp);
+        else
+            return CreateApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateApplicationOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::CreateApplicationAsync(const CreateApplicationRequest& request, const CreateApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::CreateApplicationOutcomeCallable TiwClient::CreateApplicationCallable(const CreateApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::CreateOfflineRecordOutcome TiwClient::CreateOfflineRecord(const CreateOfflineRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateOfflineRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateOfflineRecordResponse rsp = CreateOfflineRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateOfflineRecordOutcome(rsp);
+        else
+            return CreateOfflineRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateOfflineRecordOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::CreateOfflineRecordAsync(const CreateOfflineRecordRequest& request, const CreateOfflineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateOfflineRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::CreateOfflineRecordOutcomeCallable TiwClient::CreateOfflineRecordCallable(const CreateOfflineRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateOfflineRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateOfflineRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::CreateSnapshotTaskOutcome TiwClient::CreateSnapshotTask(const CreateSnapshotTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSnapshotTask");
@@ -169,6 +298,307 @@ TiwClient::CreateVideoGenerationTaskOutcomeCallable TiwClient::CreateVideoGenera
     return task->get_future();
 }
 
+TiwClient::DescribeAPIServiceOutcome TiwClient::DescribeAPIService(const DescribeAPIServiceRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAPIService");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAPIServiceResponse rsp = DescribeAPIServiceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAPIServiceOutcome(rsp);
+        else
+            return DescribeAPIServiceOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAPIServiceOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeAPIServiceAsync(const DescribeAPIServiceRequest& request, const DescribeAPIServiceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAPIService(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeAPIServiceOutcomeCallable TiwClient::DescribeAPIServiceCallable(const DescribeAPIServiceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAPIServiceOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAPIService(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeApplicationInfosOutcome TiwClient::DescribeApplicationInfos(const DescribeApplicationInfosRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationInfos");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationInfosResponse rsp = DescribeApplicationInfosResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationInfosOutcome(rsp);
+        else
+            return DescribeApplicationInfosOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationInfosOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeApplicationInfosAsync(const DescribeApplicationInfosRequest& request, const DescribeApplicationInfosAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationInfos(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeApplicationInfosOutcomeCallable TiwClient::DescribeApplicationInfosCallable(const DescribeApplicationInfosRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationInfosOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationInfos(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeApplicationUsageOutcome TiwClient::DescribeApplicationUsage(const DescribeApplicationUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeApplicationUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeApplicationUsageResponse rsp = DescribeApplicationUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeApplicationUsageOutcome(rsp);
+        else
+            return DescribeApplicationUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeApplicationUsageOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeApplicationUsageAsync(const DescribeApplicationUsageRequest& request, const DescribeApplicationUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeApplicationUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeApplicationUsageOutcomeCallable TiwClient::DescribeApplicationUsageCallable(const DescribeApplicationUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeApplicationUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeApplicationUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeBoardSDKLogOutcome TiwClient::DescribeBoardSDKLog(const DescribeBoardSDKLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBoardSDKLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBoardSDKLogResponse rsp = DescribeBoardSDKLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBoardSDKLogOutcome(rsp);
+        else
+            return DescribeBoardSDKLogOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBoardSDKLogOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeBoardSDKLogAsync(const DescribeBoardSDKLogRequest& request, const DescribeBoardSDKLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBoardSDKLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeBoardSDKLogOutcomeCallable TiwClient::DescribeBoardSDKLogCallable(const DescribeBoardSDKLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBoardSDKLogOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBoardSDKLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeIMApplicationsOutcome TiwClient::DescribeIMApplications(const DescribeIMApplicationsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeIMApplications");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeIMApplicationsResponse rsp = DescribeIMApplicationsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeIMApplicationsOutcome(rsp);
+        else
+            return DescribeIMApplicationsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeIMApplicationsOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeIMApplicationsAsync(const DescribeIMApplicationsRequest& request, const DescribeIMApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeIMApplications(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeIMApplicationsOutcomeCallable TiwClient::DescribeIMApplicationsCallable(const DescribeIMApplicationsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeIMApplicationsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeIMApplications(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeOfflineRecordOutcome TiwClient::DescribeOfflineRecord(const DescribeOfflineRecordRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOfflineRecord");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOfflineRecordResponse rsp = DescribeOfflineRecordResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOfflineRecordOutcome(rsp);
+        else
+            return DescribeOfflineRecordOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOfflineRecordOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeOfflineRecordAsync(const DescribeOfflineRecordRequest& request, const DescribeOfflineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOfflineRecord(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeOfflineRecordOutcomeCallable TiwClient::DescribeOfflineRecordCallable(const DescribeOfflineRecordRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOfflineRecordOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOfflineRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeOfflineRecordCallbackOutcome TiwClient::DescribeOfflineRecordCallback(const DescribeOfflineRecordCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOfflineRecordCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOfflineRecordCallbackResponse rsp = DescribeOfflineRecordCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOfflineRecordCallbackOutcome(rsp);
+        else
+            return DescribeOfflineRecordCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOfflineRecordCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeOfflineRecordCallbackAsync(const DescribeOfflineRecordCallbackRequest& request, const DescribeOfflineRecordCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOfflineRecordCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeOfflineRecordCallbackOutcomeCallable TiwClient::DescribeOfflineRecordCallbackCallable(const DescribeOfflineRecordCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOfflineRecordCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOfflineRecordCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeOnlineRecordOutcome TiwClient::DescribeOnlineRecord(const DescribeOnlineRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeOnlineRecord");
@@ -255,6 +685,49 @@ TiwClient::DescribeOnlineRecordCallbackOutcomeCallable TiwClient::DescribeOnline
     return task->get_future();
 }
 
+TiwClient::DescribePostpaidUsageOutcome TiwClient::DescribePostpaidUsage(const DescribePostpaidUsageRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePostpaidUsage");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePostpaidUsageResponse rsp = DescribePostpaidUsageResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePostpaidUsageOutcome(rsp);
+        else
+            return DescribePostpaidUsageOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePostpaidUsageOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribePostpaidUsageAsync(const DescribePostpaidUsageRequest& request, const DescribePostpaidUsageAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePostpaidUsage(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribePostpaidUsageOutcomeCallable TiwClient::DescribePostpaidUsageCallable(const DescribePostpaidUsageRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePostpaidUsageOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePostpaidUsage(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeQualityMetricsOutcome TiwClient::DescribeQualityMetrics(const DescribeQualityMetricsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeQualityMetrics");
@@ -291,6 +764,49 @@ TiwClient::DescribeQualityMetricsOutcomeCallable TiwClient::DescribeQualityMetri
         [this, request]()
         {
             return this->DescribeQualityMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeRoomListOutcome TiwClient::DescribeRoomList(const DescribeRoomListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRoomList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRoomListResponse rsp = DescribeRoomListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRoomListOutcome(rsp);
+        else
+            return DescribeRoomListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRoomListOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeRoomListAsync(const DescribeRoomListRequest& request, const DescribeRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRoomList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeRoomListOutcomeCallable TiwClient::DescribeRoomListCallable(const DescribeRoomListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRoomListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRoomList(request);
         }
     );
 
@@ -513,6 +1029,221 @@ TiwClient::DescribeTranscodeCallbackOutcomeCallable TiwClient::DescribeTranscode
     return task->get_future();
 }
 
+TiwClient::DescribeTranscodeSearchOutcome TiwClient::DescribeTranscodeSearch(const DescribeTranscodeSearchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTranscodeSearch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTranscodeSearchResponse rsp = DescribeTranscodeSearchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTranscodeSearchOutcome(rsp);
+        else
+            return DescribeTranscodeSearchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTranscodeSearchOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeTranscodeSearchAsync(const DescribeTranscodeSearchRequest& request, const DescribeTranscodeSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTranscodeSearch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeTranscodeSearchOutcomeCallable TiwClient::DescribeTranscodeSearchCallable(const DescribeTranscodeSearchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTranscodeSearchOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTranscodeSearch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeUsageSummaryOutcome TiwClient::DescribeUsageSummary(const DescribeUsageSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUsageSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUsageSummaryResponse rsp = DescribeUsageSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUsageSummaryOutcome(rsp);
+        else
+            return DescribeUsageSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUsageSummaryOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeUsageSummaryAsync(const DescribeUsageSummaryRequest& request, const DescribeUsageSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUsageSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeUsageSummaryOutcomeCallable TiwClient::DescribeUsageSummaryCallable(const DescribeUsageSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUsageSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUsageSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeUserListOutcome TiwClient::DescribeUserList(const DescribeUserListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserListResponse rsp = DescribeUserListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserListOutcome(rsp);
+        else
+            return DescribeUserListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserListOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeUserListAsync(const DescribeUserListRequest& request, const DescribeUserListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeUserListOutcomeCallable TiwClient::DescribeUserListCallable(const DescribeUserListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeUserResourcesOutcome TiwClient::DescribeUserResources(const DescribeUserResourcesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserResources");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserResourcesResponse rsp = DescribeUserResourcesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserResourcesOutcome(rsp);
+        else
+            return DescribeUserResourcesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserResourcesOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeUserResourcesAsync(const DescribeUserResourcesRequest& request, const DescribeUserResourcesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserResources(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeUserResourcesOutcomeCallable TiwClient::DescribeUserResourcesCallable(const DescribeUserResourcesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserResourcesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserResources(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeUserStatusOutcome TiwClient::DescribeUserStatus(const DescribeUserStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeUserStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeUserStatusResponse rsp = DescribeUserStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeUserStatusOutcome(rsp);
+        else
+            return DescribeUserStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeUserStatusOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeUserStatusAsync(const DescribeUserStatusRequest& request, const DescribeUserStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeUserStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeUserStatusOutcomeCallable TiwClient::DescribeUserStatusCallable(const DescribeUserStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeUserStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeUserStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeVideoGenerationTaskOutcome TiwClient::DescribeVideoGenerationTask(const DescribeVideoGenerationTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeVideoGenerationTask");
@@ -592,6 +1323,92 @@ TiwClient::DescribeVideoGenerationTaskCallbackOutcomeCallable TiwClient::Describ
         [this, request]()
         {
             return this->DescribeVideoGenerationTaskCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeWhiteboardApplicationConfigOutcome TiwClient::DescribeWhiteboardApplicationConfig(const DescribeWhiteboardApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteboardApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteboardApplicationConfigResponse rsp = DescribeWhiteboardApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteboardApplicationConfigOutcome(rsp);
+        else
+            return DescribeWhiteboardApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteboardApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeWhiteboardApplicationConfigAsync(const DescribeWhiteboardApplicationConfigRequest& request, const DescribeWhiteboardApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteboardApplicationConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeWhiteboardApplicationConfigOutcomeCallable TiwClient::DescribeWhiteboardApplicationConfigCallable(const DescribeWhiteboardApplicationConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteboardApplicationConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteboardApplicationConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeWhiteboardBucketConfigOutcome TiwClient::DescribeWhiteboardBucketConfig(const DescribeWhiteboardBucketConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteboardBucketConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteboardBucketConfigResponse rsp = DescribeWhiteboardBucketConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteboardBucketConfigOutcome(rsp);
+        else
+            return DescribeWhiteboardBucketConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteboardBucketConfigOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeWhiteboardBucketConfigAsync(const DescribeWhiteboardBucketConfigRequest& request, const DescribeWhiteboardBucketConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteboardBucketConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeWhiteboardBucketConfigOutcomeCallable TiwClient::DescribeWhiteboardBucketConfigCallable(const DescribeWhiteboardBucketConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteboardBucketConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteboardBucketConfig(request);
         }
     );
 
@@ -685,6 +1502,221 @@ TiwClient::DescribeWhiteboardPushCallbackOutcomeCallable TiwClient::DescribeWhit
     return task->get_future();
 }
 
+TiwClient::DescribeWhiteboardPushSearchOutcome TiwClient::DescribeWhiteboardPushSearch(const DescribeWhiteboardPushSearchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWhiteboardPushSearch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWhiteboardPushSearchResponse rsp = DescribeWhiteboardPushSearchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWhiteboardPushSearchOutcome(rsp);
+        else
+            return DescribeWhiteboardPushSearchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWhiteboardPushSearchOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeWhiteboardPushSearchAsync(const DescribeWhiteboardPushSearchRequest& request, const DescribeWhiteboardPushSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWhiteboardPushSearch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeWhiteboardPushSearchOutcomeCallable TiwClient::DescribeWhiteboardPushSearchCallable(const DescribeWhiteboardPushSearchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWhiteboardPushSearchOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWhiteboardPushSearch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::ModifyApplicationOutcome TiwClient::ModifyApplication(const ModifyApplicationRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyApplication");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyApplicationResponse rsp = ModifyApplicationResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyApplicationOutcome(rsp);
+        else
+            return ModifyApplicationOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyApplicationOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::ModifyApplicationAsync(const ModifyApplicationRequest& request, const ModifyApplicationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyApplication(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::ModifyApplicationOutcomeCallable TiwClient::ModifyApplicationCallable(const ModifyApplicationRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyApplicationOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyApplication(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::ModifyAutoRenewFlagOutcome TiwClient::ModifyAutoRenewFlag(const ModifyAutoRenewFlagRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyAutoRenewFlag");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyAutoRenewFlagResponse rsp = ModifyAutoRenewFlagResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyAutoRenewFlagOutcome(rsp);
+        else
+            return ModifyAutoRenewFlagOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyAutoRenewFlagOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::ModifyAutoRenewFlagAsync(const ModifyAutoRenewFlagRequest& request, const ModifyAutoRenewFlagAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyAutoRenewFlag(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::ModifyAutoRenewFlagOutcomeCallable TiwClient::ModifyAutoRenewFlagCallable(const ModifyAutoRenewFlagRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyAutoRenewFlagOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyAutoRenewFlag(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::ModifyWhiteboardApplicationConfigOutcome TiwClient::ModifyWhiteboardApplicationConfig(const ModifyWhiteboardApplicationConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWhiteboardApplicationConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWhiteboardApplicationConfigResponse rsp = ModifyWhiteboardApplicationConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWhiteboardApplicationConfigOutcome(rsp);
+        else
+            return ModifyWhiteboardApplicationConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWhiteboardApplicationConfigOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::ModifyWhiteboardApplicationConfigAsync(const ModifyWhiteboardApplicationConfigRequest& request, const ModifyWhiteboardApplicationConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWhiteboardApplicationConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::ModifyWhiteboardApplicationConfigOutcomeCallable TiwClient::ModifyWhiteboardApplicationConfigCallable(const ModifyWhiteboardApplicationConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWhiteboardApplicationConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWhiteboardApplicationConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::ModifyWhiteboardBucketConfigOutcome TiwClient::ModifyWhiteboardBucketConfig(const ModifyWhiteboardBucketConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyWhiteboardBucketConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyWhiteboardBucketConfigResponse rsp = ModifyWhiteboardBucketConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyWhiteboardBucketConfigOutcome(rsp);
+        else
+            return ModifyWhiteboardBucketConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyWhiteboardBucketConfigOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::ModifyWhiteboardBucketConfigAsync(const ModifyWhiteboardBucketConfigRequest& request, const ModifyWhiteboardBucketConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyWhiteboardBucketConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::ModifyWhiteboardBucketConfigOutcomeCallable TiwClient::ModifyWhiteboardBucketConfigCallable(const ModifyWhiteboardBucketConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyWhiteboardBucketConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyWhiteboardBucketConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::PauseOnlineRecordOutcome TiwClient::PauseOnlineRecord(const PauseOnlineRecordRequest &request)
 {
     auto outcome = MakeRequest(request, "PauseOnlineRecord");
@@ -764,6 +1796,49 @@ TiwClient::ResumeOnlineRecordOutcomeCallable TiwClient::ResumeOnlineRecordCallab
         [this, request]()
         {
             return this->ResumeOnlineRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetOfflineRecordCallbackOutcome TiwClient::SetOfflineRecordCallback(const SetOfflineRecordCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetOfflineRecordCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetOfflineRecordCallbackResponse rsp = SetOfflineRecordCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetOfflineRecordCallbackOutcome(rsp);
+        else
+            return SetOfflineRecordCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return SetOfflineRecordCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetOfflineRecordCallbackAsync(const SetOfflineRecordCallbackRequest& request, const SetOfflineRecordCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetOfflineRecordCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetOfflineRecordCallbackOutcomeCallable TiwClient::SetOfflineRecordCallbackCallable(const SetOfflineRecordCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetOfflineRecordCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->SetOfflineRecordCallback(request);
         }
     );
 

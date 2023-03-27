@@ -427,6 +427,49 @@ RedisClient::ClearInstanceOutcomeCallable RedisClient::ClearInstanceCallable(con
     return task->get_future();
 }
 
+RedisClient::CloneInstancesOutcome RedisClient::CloneInstances(const CloneInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "CloneInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CloneInstancesResponse rsp = CloneInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CloneInstancesOutcome(rsp);
+        else
+            return CloneInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return CloneInstancesOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::CloneInstancesAsync(const CloneInstancesRequest& request, const CloneInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CloneInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::CloneInstancesOutcomeCallable RedisClient::CloneInstancesCallable(const CloneInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CloneInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->CloneInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::CloseSSLOutcome RedisClient::CloseSSL(const CloseSSLRequest &request)
 {
     auto outcome = MakeRequest(request, "CloseSSL");

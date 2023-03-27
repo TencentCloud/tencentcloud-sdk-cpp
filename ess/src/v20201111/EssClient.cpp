@@ -685,6 +685,49 @@ EssClient::CreatePrepareFlowOutcomeCallable EssClient::CreatePrepareFlowCallable
     return task->get_future();
 }
 
+EssClient::CreatePreparedPersonalEsignOutcome EssClient::CreatePreparedPersonalEsign(const CreatePreparedPersonalEsignRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePreparedPersonalEsign");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePreparedPersonalEsignResponse rsp = CreatePreparedPersonalEsignResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePreparedPersonalEsignOutcome(rsp);
+        else
+            return CreatePreparedPersonalEsignOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePreparedPersonalEsignOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::CreatePreparedPersonalEsignAsync(const CreatePreparedPersonalEsignRequest& request, const CreatePreparedPersonalEsignAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePreparedPersonalEsign(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::CreatePreparedPersonalEsignOutcomeCallable EssClient::CreatePreparedPersonalEsignCallable(const CreatePreparedPersonalEsignRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePreparedPersonalEsignOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePreparedPersonalEsign(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CreateReleaseFlowOutcome EssClient::CreateReleaseFlow(const CreateReleaseFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateReleaseFlow");

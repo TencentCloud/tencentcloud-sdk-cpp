@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
-                     * @return OrderField 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     * 获取排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。默认值`OutTraffic`。
+                     * @return OrderField 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。默认值`OutTraffic`。
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
-                     * @param OrderField 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     * 设置排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。默认值`OutTraffic`。
+                     * @param OrderField 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。默认值`OutTraffic`。
                      */
                     void SetOrderField(const std::string& _orderField);
 
@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方法。顺序：`ASC`，倒序：`DESC`。
-                     * @return OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * 获取排序方法。顺序：`ASC`，倒序：`DESC`。默认值`DESC`。
+                     * @return OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。默认值`DESC`。
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置排序方法。顺序：`ASC`，倒序：`DESC`。
-                     * @param OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * 设置排序方法。顺序：`ASC`，倒序：`DESC`。默认值`DESC`。
+                     * @param OrderDirection 排序方法。顺序：`ASC`，倒序：`DESC`。默认值`DESC`。
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
@@ -249,13 +249,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。
+                     * 排序字段。支持 `InPkg` `OutPkg` `InTraffic` `OutTraffic`。默认值`OutTraffic`。
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 排序方法。顺序：`ASC`，倒序：`DESC`。
+                     * 排序方法。顺序：`ASC`，倒序：`DESC`。默认值`DESC`。
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;

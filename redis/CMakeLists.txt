@@ -117,18 +117,19 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTookDistRequest.h
   include/tencentcloud/redis/v20180412/model/DeleteReplicationInstanceRequest.h
   include/tencentcloud/redis/v20180412/model/KillMasterGroupRequest.h
-  include/tencentcloud/redis/v20180412/model/InstanceTextParam.h
+  include/tencentcloud/redis/v20180412/model/CloneInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/ParamTemplateInfo.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.h
   include/tencentcloud/redis/v20180412/model/CloseSSLRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceAccountRequest.h
-  include/tencentcloud/redis/v20180412/model/SwitchProxyRequest.h
+  include/tencentcloud/redis/v20180412/model/InstanceTextParam.h
   include/tencentcloud/redis/v20180412/model/DescribeInstanceParamRecordsRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskListRequest.h
   include/tencentcloud/redis/v20180412/model/ChangeReplicaToMasterResponse.h
   include/tencentcloud/redis/v20180412/model/CreateInstancesResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeTaskInfoRequest.h
+  include/tencentcloud/redis/v20180412/model/CloneInstancesRequest.h
   include/tencentcloud/redis/v20180412/model/ApplyParamsTemplateResponse.h
   include/tencentcloud/redis/v20180412/model/DescribeReplicationGroupRequest.h
   include/tencentcloud/redis/v20180412/model/RedisNodes.h
@@ -218,6 +219,7 @@ set(redis_public_header_model
   include/tencentcloud/redis/v20180412/model/DescribeInstanceMonitorBigKeyRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeParamTemplateInfoResponse.h
+  include/tencentcloud/redis/v20180412/model/SwitchProxyRequest.h
   include/tencentcloud/redis/v20180412/model/DescribeProductInfoRequest.h
   include/tencentcloud/redis/v20180412/model/SwitchInstanceVipResponse.h
   include/tencentcloud/redis/v20180412/model/BackupLimitVpcItem.h
@@ -348,18 +350,19 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorTookDistRequest.cpp
   src/v20180412/model/DeleteReplicationInstanceRequest.cpp
   src/v20180412/model/KillMasterGroupRequest.cpp
-  src/v20180412/model/InstanceTextParam.cpp
+  src/v20180412/model/CloneInstancesResponse.cpp
   src/v20180412/model/ParamTemplateInfo.cpp
   src/v20180412/model/DescribeInstanceMonitorTopNCmdTookResponse.cpp
   src/v20180412/model/CloseSSLRequest.cpp
   src/v20180412/model/DescribeInstanceMonitorBigKeySizeDistRequest.cpp
   src/v20180412/model/DescribeInstanceAccountRequest.cpp
-  src/v20180412/model/SwitchProxyRequest.cpp
+  src/v20180412/model/InstanceTextParam.cpp
   src/v20180412/model/DescribeInstanceParamRecordsRequest.cpp
   src/v20180412/model/DescribeTaskListRequest.cpp
   src/v20180412/model/ChangeReplicaToMasterResponse.cpp
   src/v20180412/model/CreateInstancesResponse.cpp
   src/v20180412/model/DescribeTaskInfoRequest.cpp
+  src/v20180412/model/CloneInstancesRequest.cpp
   src/v20180412/model/ApplyParamsTemplateResponse.cpp
   src/v20180412/model/DescribeReplicationGroupRequest.cpp
   src/v20180412/model/RedisNodes.cpp
@@ -449,6 +452,7 @@ set(redis_src
   src/v20180412/model/DescribeInstanceMonitorBigKeyRequest.cpp
   src/v20180412/model/DescribeBackupDownloadRestrictionRequest.cpp
   src/v20180412/model/DescribeParamTemplateInfoResponse.cpp
+  src/v20180412/model/SwitchProxyRequest.cpp
   src/v20180412/model/DescribeProductInfoRequest.cpp
   src/v20180412/model/SwitchInstanceVipResponse.cpp
   src/v20180412/model/BackupLimitVpcItem.cpp

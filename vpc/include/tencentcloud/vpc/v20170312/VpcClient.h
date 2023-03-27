@@ -1959,7 +1959,7 @@ namespace TencentCloud
                 CreateDirectConnectGatewayCcnRoutesOutcomeCallable CreateDirectConnectGatewayCcnRoutesCallable(const Model::CreateDirectConnectGatewayCcnRoutesRequest& request);
 
                 /**
-                 *本接口（CreateFlowLog）用于创建流日志
+                 *本接口（CreateFlowLog）用于创建网络流日志。
                  * @param req CreateFlowLogRequest
                  * @return CreateFlowLogOutcome
                  */

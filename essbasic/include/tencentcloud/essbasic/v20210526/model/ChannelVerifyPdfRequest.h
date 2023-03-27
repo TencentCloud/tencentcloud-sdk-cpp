@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取合同Id，流程Id
-                     * @return FlowId 合同Id，流程Id
+                     * 获取流程ID
+                     * @return FlowId 流程ID
                      */
                     std::string GetFlowId() const;
 
                     /**
-                     * 设置合同Id，流程Id
-                     * @param FlowId 合同Id，流程Id
+                     * 设置流程ID
+                     * @param FlowId 流程ID
                      */
                     void SetFlowId(const std::string& _flowId);
 
@@ -101,7 +101,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 合同Id，流程Id
+                     * 流程ID
                      */
                     std::string m_flowId;
                     bool m_flowIdHasBeenSet;

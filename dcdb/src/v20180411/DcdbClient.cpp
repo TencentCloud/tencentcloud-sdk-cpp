@@ -771,6 +771,49 @@ DcdbClient::DescribeDBSyncModeOutcomeCallable DcdbClient::DescribeDBSyncModeCall
     return task->get_future();
 }
 
+DcdbClient::DescribeDCDBInstanceDetailOutcome DcdbClient::DescribeDCDBInstanceDetail(const DescribeDCDBInstanceDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDCDBInstanceDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDCDBInstanceDetailResponse rsp = DescribeDCDBInstanceDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDCDBInstanceDetailOutcome(rsp);
+        else
+            return DescribeDCDBInstanceDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDCDBInstanceDetailOutcome(outcome.GetError());
+    }
+}
+
+void DcdbClient::DescribeDCDBInstanceDetailAsync(const DescribeDCDBInstanceDetailRequest& request, const DescribeDCDBInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDCDBInstanceDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DcdbClient::DescribeDCDBInstanceDetailOutcomeCallable DcdbClient::DescribeDCDBInstanceDetailCallable(const DescribeDCDBInstanceDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDCDBInstanceDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDCDBInstanceDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DcdbClient::DescribeDCDBInstanceNodeInfoOutcome DcdbClient::DescribeDCDBInstanceNodeInfo(const DescribeDCDBInstanceNodeInfoRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDCDBInstanceNodeInfo");
