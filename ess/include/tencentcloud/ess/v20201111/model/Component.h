@@ -779,14 +779,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool ComponentDateFontSizeHasBeenSet() const;
 
                     /**
-                     * 获取渠道版控件 id 标识
-                     * @return ChannelComponentId 渠道版控件 id 标识
+                     * 获取平台模板控件 id 标识
+                     * @return ChannelComponentId 平台模板控件 id 标识
                      */
                     std::string GetChannelComponentId() const;
 
                     /**
-                     * 设置渠道版控件 id 标识
-                     * @param ChannelComponentId 渠道版控件 id 标识
+                     * 设置平台模板控件 id 标识
+                     * @param ChannelComponentId 平台模板控件 id 标识
                      */
                     void SetChannelComponentId(const std::string& _channelComponentId);
 
@@ -833,14 +833,14 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool OffsetYHasBeenSet() const;
 
                     /**
-                     * 获取//渠道子客控件来源。0-渠道指定；1-用户自定义
-                     * @return ChannelComponentSource //渠道子客控件来源。0-渠道指定；1-用户自定义
+                     * 获取//子客控件来源。0-平台指定；1-用户自定义
+                     * @return ChannelComponentSource //子客控件来源。0-平台指定；1-用户自定义
                      */
                     uint64_t GetChannelComponentSource() const;
 
                     /**
-                     * 设置//渠道子客控件来源。0-渠道指定；1-用户自定义
-                     * @param ChannelComponentSource //渠道子客控件来源。0-渠道指定；1-用户自定义
+                     * 设置//子客控件来源。0-平台指定；1-用户自定义
+                     * @param ChannelComponentSource //子客控件来源。0-平台指定；1-用户自定义
                      */
                     void SetChannelComponentSource(const uint64_t& _channelComponentSource);
 
@@ -1136,7 +1136,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_componentDateFontSizeHasBeenSet;
 
                     /**
-                     * 渠道版控件 id 标识
+                     * 平台模板控件 id 标识
                      */
                     std::string m_channelComponentId;
                     bool m_channelComponentIdHasBeenSet;
@@ -1154,7 +1154,7 @@ KEYWORD 关键字，使用ComponentId指定关键字
                     bool m_offsetYHasBeenSet;
 
                     /**
-                     * //渠道子客控件来源。0-渠道指定；1-用户自定义
+                     * //子客控件来源。0-平台指定；1-用户自定义
                      */
                     uint64_t m_channelComponentSource;
                     bool m_channelComponentSourceHasBeenSet;

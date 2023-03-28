@@ -29,7 +29,9 @@ LogInfo::LogInfo() :
     m_pkgIdHasBeenSet(false),
     m_pkgLogIdHasBeenSet(false),
     m_logJsonHasBeenSet(false),
-    m_hostNameHasBeenSet(false)
+    m_hostNameHasBeenSet(false),
+    m_rawLogHasBeenSet(false),
+    m_indexStatusHasBeenSet(false)
 {
 }
 
@@ -128,6 +130,26 @@ CoreInternalOutcome LogInfo::Deserialize(const rapidjson::Value &value)
         m_hostNameHasBeenSet = true;
     }
 
+    if (value.HasMember("RawLog") && !value["RawLog"].IsNull())
+    {
+        if (!value["RawLog"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogInfo.RawLog` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_rawLog = string(value["RawLog"].GetString());
+        m_rawLogHasBeenSet = true;
+    }
+
+    if (value.HasMember("IndexStatus") && !value["IndexStatus"].IsNull())
+    {
+        if (!value["IndexStatus"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogInfo.IndexStatus` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_indexStatus = string(value["IndexStatus"].GetString());
+        m_indexStatusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -205,6 +227,22 @@ void LogInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "HostName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_hostName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_rawLogHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RawLog";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_rawLog.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_indexStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IndexStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_indexStatus.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -352,5 +390,37 @@ void LogInfo::SetHostName(const string& _hostName)
 bool LogInfo::HostNameHasBeenSet() const
 {
     return m_hostNameHasBeenSet;
+}
+
+string LogInfo::GetRawLog() const
+{
+    return m_rawLog;
+}
+
+void LogInfo::SetRawLog(const string& _rawLog)
+{
+    m_rawLog = _rawLog;
+    m_rawLogHasBeenSet = true;
+}
+
+bool LogInfo::RawLogHasBeenSet() const
+{
+    return m_rawLogHasBeenSet;
+}
+
+string LogInfo::GetIndexStatus() const
+{
+    return m_indexStatus;
+}
+
+void LogInfo::SetIndexStatus(const string& _indexStatus)
+{
+    m_indexStatus = _indexStatus;
+    m_indexStatusHasBeenSet = true;
+}
+
+bool LogInfo::IndexStatusHasBeenSet() const
+{
+    return m_indexStatusHasBeenSet;
 }
 

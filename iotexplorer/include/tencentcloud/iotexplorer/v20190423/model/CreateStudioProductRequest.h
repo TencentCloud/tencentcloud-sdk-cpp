@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CategoryIdHasBeenSet() const;
 
                     /**
-                     * 获取产品类型 填写 ( 0 普通产品 )
-                     * @return ProductType 产品类型 填写 ( 0 普通产品 )
+                     * 获取产品类型 填写 ( 0 普通产品 ， 5 网关产品)
+                     * @return ProductType 产品类型 填写 ( 0 普通产品 ， 5 网关产品)
                      */
                     int64_t GetProductType() const;
 
                     /**
-                     * 设置产品类型 填写 ( 0 普通产品 )
-                     * @param ProductType 产品类型 填写 ( 0 普通产品 )
+                     * 设置产品类型 填写 ( 0 普通产品 ， 5 网关产品)
+                     * @param ProductType 产品类型 填写 ( 0 普通产品 ， 5 网关产品)
                      */
                     void SetProductType(const int64_t& _productType);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取加密类型 加密类型，1表示证书认证，2表示签名认证。
-                     * @return EncryptionType 加密类型 加密类型，1表示证书认证，2表示签名认证。
+                     * 获取加密类型 ，1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * @return EncryptionType 加密类型 ，1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      */
                     std::string GetEncryptionType() const;
 
                     /**
-                     * 设置加密类型 加密类型，1表示证书认证，2表示签名认证。
-                     * @param EncryptionType 加密类型 加密类型，1表示证书认证，2表示签名认证。
+                     * 设置加密类型 ，1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * @param EncryptionType 加密类型 ，1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      */
                     void SetEncryptionType(const std::string& _encryptionType);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool EncryptionTypeHasBeenSet() const;
 
                     /**
-                     * 获取连接类型 可以填写 wifi cellular else
-                     * @return NetType 连接类型 可以填写 wifi cellular else
+                     * 获取连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
+                     * @return NetType 连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置连接类型 可以填写 wifi cellular else
-                     * @param NetType 连接类型 可以填写 wifi cellular else
+                     * 设置连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
+                     * @param NetType 连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
                      */
                     void SetNetType(const std::string& _netType);
 
@@ -201,19 +201,19 @@ namespace TencentCloud
                     bool m_categoryIdHasBeenSet;
 
                     /**
-                     * 产品类型 填写 ( 0 普通产品 )
+                     * 产品类型 填写 ( 0 普通产品 ， 5 网关产品)
                      */
                     int64_t m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 加密类型 加密类型，1表示证书认证，2表示签名认证。
+                     * 加密类型 ，1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      */
                     std::string m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;
 
                     /**
-                     * 连接类型 可以填写 wifi cellular else
+                     * 连接类型 可以填写 wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;

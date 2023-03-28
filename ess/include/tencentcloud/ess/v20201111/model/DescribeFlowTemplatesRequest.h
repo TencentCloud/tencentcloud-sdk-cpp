@@ -157,24 +157,24 @@ namespace TencentCloud
                     /**
                      * 获取这个参数跟下面的IsChannel参数配合使用。
 IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
-ApplicationId为空，查询渠道模板列表
+IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+ApplicationId为空，查询所有应用下的模板列表
                      * @return ApplicationId 这个参数跟下面的IsChannel参数配合使用。
 IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
-ApplicationId为空，查询渠道模板列表
+IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+ApplicationId为空，查询所有应用下的模板列表
                      */
                     std::string GetApplicationId() const;
 
                     /**
                      * 设置这个参数跟下面的IsChannel参数配合使用。
 IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
-ApplicationId为空，查询渠道模板列表
+IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+ApplicationId为空，查询所有应用下的模板列表
                      * @param ApplicationId 这个参数跟下面的IsChannel参数配合使用。
 IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
-ApplicationId为空，查询渠道模板列表
+IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+ApplicationId为空，查询所有应用下的模板列表
                      */
                     void SetApplicationId(const std::string& _applicationId);
 
@@ -186,17 +186,17 @@ ApplicationId为空，查询渠道模板列表
 
                     /**
                      * 获取默认为false，查询SaaS模板库列表；
-为true，查询渠道模板库管理列表
+为true，查询第三方应用集成平台企业模板库管理列表
                      * @return IsChannel 默认为false，查询SaaS模板库列表；
-为true，查询渠道模板库管理列表
+为true，查询第三方应用集成平台企业模板库管理列表
                      */
                     bool GetIsChannel() const;
 
                     /**
                      * 设置默认为false，查询SaaS模板库列表；
-为true，查询渠道模板库管理列表
+为true，查询第三方应用集成平台企业模板库管理列表
                      * @param IsChannel 默认为false，查询SaaS模板库列表；
-为true，查询渠道模板库管理列表
+为true，查询第三方应用集成平台企业模板库管理列表
                      */
                     void SetIsChannel(const bool& _isChannel);
 
@@ -283,15 +283,15 @@ ApplicationId为空，查询渠道模板列表
                     /**
                      * 这个参数跟下面的IsChannel参数配合使用。
 IsChannel=false时，ApplicationId参数不起任何作用。
-IsChannel=true时，ApplicationId为空，查询所有渠道模板列表；ApplicationId不为空，查询指定渠道下的模板列表
-ApplicationId为空，查询渠道模板列表
+IsChannel=true时，ApplicationId为空，查询所有第三方应用集成平台企业模板列表；ApplicationId不为空，查询指定应用下的模板列表
+ApplicationId为空，查询所有应用下的模板列表
                      */
                     std::string m_applicationId;
                     bool m_applicationIdHasBeenSet;
 
                     /**
                      * 默认为false，查询SaaS模板库列表；
-为true，查询渠道模板库管理列表
+为true，查询第三方应用集成平台企业模板库管理列表
                      */
                     bool m_isChannel;
                     bool m_isChannelHasBeenSet;

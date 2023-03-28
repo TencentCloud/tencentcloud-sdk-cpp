@@ -27,7 +27,8 @@ ModifyStudioProductRequest::ModifyStudioProductRequest() :
     m_productNameHasBeenSet(false),
     m_productDescHasBeenSet(false),
     m_moduleIdHasBeenSet(false),
-    m_enableProductScriptHasBeenSet(false)
+    m_enableProductScriptHasBeenSet(false),
+    m_bindStrategyHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,14 @@ string ModifyStudioProductRequest::ToJsonString() const
         string key = "EnableProductScript";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_enableProductScript.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_bindStrategy, allocator);
     }
 
 
@@ -164,6 +173,22 @@ void ModifyStudioProductRequest::SetEnableProductScript(const string& _enablePro
 bool ModifyStudioProductRequest::EnableProductScriptHasBeenSet() const
 {
     return m_enableProductScriptHasBeenSet;
+}
+
+uint64_t ModifyStudioProductRequest::GetBindStrategy() const
+{
+    return m_bindStrategy;
+}
+
+void ModifyStudioProductRequest::SetBindStrategy(const uint64_t& _bindStrategy)
+{
+    m_bindStrategy = _bindStrategy;
+    m_bindStrategyHasBeenSet = true;
+}
+
+bool ModifyStudioProductRequest::BindStrategyHasBeenSet() const
+{
+    return m_bindStrategyHasBeenSet;
 }
 
 

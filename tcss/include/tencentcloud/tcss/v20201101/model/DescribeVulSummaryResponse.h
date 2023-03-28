@@ -115,6 +115,66 @@ namespace TencentCloud
                      */
                     bool SeriousVulNewestImageCountHasBeenSet() const;
 
+                    /**
+                     * 获取系统漏洞重点关注数
+                     * @return SystemVulnerabilityFocusCount 系统漏洞重点关注数
+                     */
+                    int64_t GetSystemVulnerabilityFocusCount() const;
+
+                    /**
+                     * 判断参数 SystemVulnerabilityFocusCount 是否已赋值
+                     * @return SystemVulnerabilityFocusCount 是否已赋值
+                     */
+                    bool SystemVulnerabilityFocusCountHasBeenSet() const;
+
+                    /**
+                     * 获取web漏洞重点关注数
+                     * @return WebVulnerabilityFocusCount web漏洞重点关注数
+                     */
+                    int64_t GetWebVulnerabilityFocusCount() const;
+
+                    /**
+                     * 判断参数 WebVulnerabilityFocusCount 是否已赋值
+                     * @return WebVulnerabilityFocusCount 是否已赋值
+                     */
+                    bool WebVulnerabilityFocusCountHasBeenSet() const;
+
+                    /**
+                     * 获取受影响本地镜像数
+                     * @return SeriousVulnerabilityLocalImageCount 受影响本地镜像数
+                     */
+                    int64_t GetSeriousVulnerabilityLocalImageCount() const;
+
+                    /**
+                     * 判断参数 SeriousVulnerabilityLocalImageCount 是否已赋值
+                     * @return SeriousVulnerabilityLocalImageCount 是否已赋值
+                     */
+                    bool SeriousVulnerabilityLocalImageCountHasBeenSet() const;
+
+                    /**
+                     * 获取受影响仓库镜像数
+                     * @return SeriousVulnerabilityRegistryImageCount 受影响仓库镜像数
+                     */
+                    int64_t GetSeriousVulnerabilityRegistryImageCount() const;
+
+                    /**
+                     * 判断参数 SeriousVulnerabilityRegistryImageCount 是否已赋值
+                     * @return SeriousVulnerabilityRegistryImageCount 是否已赋值
+                     */
+                    bool SeriousVulnerabilityRegistryImageCountHasBeenSet() const;
+
+                    /**
+                     * 获取应急漏洞数量
+                     * @return EmergencyVulnerabilityCount 应急漏洞数量
+                     */
+                    int64_t GetEmergencyVulnerabilityCount() const;
+
+                    /**
+                     * 判断参数 EmergencyVulnerabilityCount 是否已赋值
+                     * @return EmergencyVulnerabilityCount 是否已赋值
+                     */
+                    bool EmergencyVulnerabilityCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +212,36 @@ namespace TencentCloud
                      */
                     int64_t m_seriousVulNewestImageCount;
                     bool m_seriousVulNewestImageCountHasBeenSet;
+
+                    /**
+                     * 系统漏洞重点关注数
+                     */
+                    int64_t m_systemVulnerabilityFocusCount;
+                    bool m_systemVulnerabilityFocusCountHasBeenSet;
+
+                    /**
+                     * web漏洞重点关注数
+                     */
+                    int64_t m_webVulnerabilityFocusCount;
+                    bool m_webVulnerabilityFocusCountHasBeenSet;
+
+                    /**
+                     * 受影响本地镜像数
+                     */
+                    int64_t m_seriousVulnerabilityLocalImageCount;
+                    bool m_seriousVulnerabilityLocalImageCountHasBeenSet;
+
+                    /**
+                     * 受影响仓库镜像数
+                     */
+                    int64_t m_seriousVulnerabilityRegistryImageCount;
+                    bool m_seriousVulnerabilityRegistryImageCountHasBeenSet;
+
+                    /**
+                     * 应急漏洞数量
+                     */
+                    int64_t m_emergencyVulnerabilityCount;
+                    bool m_emergencyVulnerabilityCountHasBeenSet;
 
                 };
             }

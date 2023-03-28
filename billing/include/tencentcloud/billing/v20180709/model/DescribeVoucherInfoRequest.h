@@ -187,14 +187,14 @@ namespace TencentCloud
                     bool VoucherNameHasBeenSet() const;
 
                     /**
-                     * 获取发放开始时间
-                     * @return TimeFrom 发放开始时间
+                     * 获取发放开始时间,例：2021-01-01
+                     * @return TimeFrom 发放开始时间,例：2021-01-01
                      */
                     std::string GetTimeFrom() const;
 
                     /**
-                     * 设置发放开始时间
-                     * @param TimeFrom 发放开始时间
+                     * 设置发放开始时间,例：2021-01-01
+                     * @param TimeFrom 发放开始时间,例：2021-01-01
                      */
                     void SetTimeFrom(const std::string& _timeFrom);
 
@@ -205,14 +205,14 @@ namespace TencentCloud
                     bool TimeFromHasBeenSet() const;
 
                     /**
-                     * 获取发放结束时间
-                     * @return TimeTo 发放结束时间
+                     * 获取发放结束时间，例：2021-01-01
+                     * @return TimeTo 发放结束时间，例：2021-01-01
                      */
                     std::string GetTimeTo() const;
 
                     /**
-                     * 设置发放结束时间
-                     * @param TimeTo 发放结束时间
+                     * 设置发放结束时间，例：2021-01-01
+                     * @param TimeTo 发放结束时间，例：2021-01-01
                      */
                     void SetTimeTo(const std::string& _timeTo);
 
@@ -363,13 +363,13 @@ namespace TencentCloud
                     bool m_voucherNameHasBeenSet;
 
                     /**
-                     * 发放开始时间
+                     * 发放开始时间,例：2021-01-01
                      */
                     std::string m_timeFrom;
                     bool m_timeFromHasBeenSet;
 
                     /**
-                     * 发放结束时间
+                     * 发放结束时间，例：2021-01-01
                      */
                     std::string m_timeTo;
                     bool m_timeToHasBeenSet;

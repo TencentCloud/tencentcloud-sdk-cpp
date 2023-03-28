@@ -31,7 +31,8 @@ SearchLogRequest::SearchLogRequest() :
     m_contextHasBeenSet(false),
     m_sortHasBeenSet(false),
     m_useNewAnalysisHasBeenSet(false),
-    m_samplingRateHasBeenSet(false)
+    m_samplingRateHasBeenSet(false),
+    m_syntaxRuleHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,14 @@ string SearchLogRequest::ToJsonString() const
         string key = "SamplingRate";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_samplingRate, allocator);
+    }
+
+    if (m_syntaxRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SyntaxRule";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_syntaxRule, allocator);
     }
 
 
@@ -264,6 +273,22 @@ void SearchLogRequest::SetSamplingRate(const double& _samplingRate)
 bool SearchLogRequest::SamplingRateHasBeenSet() const
 {
     return m_samplingRateHasBeenSet;
+}
+
+uint64_t SearchLogRequest::GetSyntaxRule() const
+{
+    return m_syntaxRule;
+}
+
+void SearchLogRequest::SetSyntaxRule(const uint64_t& _syntaxRule)
+{
+    m_syntaxRule = _syntaxRule;
+    m_syntaxRuleHasBeenSet = true;
+}
+
+bool SearchLogRequest::SyntaxRuleHasBeenSet() const
+{
+    return m_syntaxRuleHasBeenSet;
 }
 
 

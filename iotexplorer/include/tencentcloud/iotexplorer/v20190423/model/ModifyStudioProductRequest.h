@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool EnableProductScriptHasBeenSet() const;
 
+                    /**
+                     * 获取传1或者2；1代表强踢，2代表非强踢。传其它值不做任何处理
+                     * @return BindStrategy 传1或者2；1代表强踢，2代表非强踢。传其它值不做任何处理
+                     */
+                    uint64_t GetBindStrategy() const;
+
+                    /**
+                     * 设置传1或者2；1代表强踢，2代表非强踢。传其它值不做任何处理
+                     * @param BindStrategy 传1或者2；1代表强踢，2代表非强踢。传其它值不做任何处理
+                     */
+                    void SetBindStrategy(const uint64_t& _bindStrategy);
+
+                    /**
+                     * 判断参数 BindStrategy 是否已赋值
+                     * @return BindStrategy 是否已赋值
+                     */
+                    bool BindStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     std::string m_enableProductScript;
                     bool m_enableProductScriptHasBeenSet;
+
+                    /**
+                     * 传1或者2；1代表强踢，2代表非强踢。传其它值不做任何处理
+                     */
+                    uint64_t m_bindStrategy;
+                    bool m_bindStrategyHasBeenSet;
 
                 };
             }

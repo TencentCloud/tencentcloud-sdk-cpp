@@ -24,7 +24,8 @@ McuLayoutParams::McuLayoutParams() :
     m_mixLayoutModeHasBeenSet(false),
     m_pureAudioHoldPlaceModeHasBeenSet(false),
     m_mixLayoutListHasBeenSet(false),
-    m_maxVideoUserHasBeenSet(false)
+    m_maxVideoUserHasBeenSet(false),
+    m_renderModeHasBeenSet(false)
 {
 }
 
@@ -90,6 +91,16 @@ CoreInternalOutcome McuLayoutParams::Deserialize(const rapidjson::Value &value)
         m_maxVideoUserHasBeenSet = true;
     }
 
+    if (value.HasMember("RenderMode") && !value["RenderMode"].IsNull())
+    {
+        if (!value["RenderMode"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `McuLayoutParams.RenderMode` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renderMode = value["RenderMode"].GetUint64();
+        m_renderModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -135,6 +146,14 @@ void McuLayoutParams::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_maxVideoUser.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_renderModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenderMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renderMode, allocator);
     }
 
 }
@@ -202,5 +221,21 @@ void McuLayoutParams::SetMaxVideoUser(const MaxVideoUser& _maxVideoUser)
 bool McuLayoutParams::MaxVideoUserHasBeenSet() const
 {
     return m_maxVideoUserHasBeenSet;
+}
+
+uint64_t McuLayoutParams::GetRenderMode() const
+{
+    return m_renderMode;
+}
+
+void McuLayoutParams::SetRenderMode(const uint64_t& _renderMode)
+{
+    m_renderMode = _renderMode;
+    m_renderModeHasBeenSet = true;
+}
+
+bool McuLayoutParams::RenderModeHasBeenSet() const
+{
+    return m_renderModeHasBeenSet;
 }
 

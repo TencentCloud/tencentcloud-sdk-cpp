@@ -120,6 +120,24 @@ namespace TencentCloud
                      */
                     bool MaxVideoUserHasBeenSet() const;
 
+                    /**
+                     * 获取屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     * @return RenderMode 屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     */
+                    uint64_t GetRenderMode() const;
+
+                    /**
+                     * 设置屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     * @param RenderMode 屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     */
+                    void SetRenderMode(const uint64_t& _renderMode);
+
+                    /**
+                     * 判断参数 RenderMode 是否已赋值
+                     * @return RenderMode 是否已赋值
+                     */
+                    bool RenderModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -145,6 +163,12 @@ namespace TencentCloud
                      */
                     MaxVideoUser m_maxVideoUser;
                     bool m_maxVideoUserHasBeenSet;
+
+                    /**
+                     * 屏幕分享模板、悬浮模板、九宫格模版有效，画面在输出时的显示模式：0为裁剪，1为缩放，2为缩放并显示黑底
+                     */
+                    uint64_t m_renderMode;
+                    bool m_renderModeHasBeenSet;
 
                 };
             }

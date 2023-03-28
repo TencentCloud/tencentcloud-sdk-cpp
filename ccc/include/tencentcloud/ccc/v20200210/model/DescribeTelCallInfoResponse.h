@@ -91,6 +91,30 @@ namespace TencentCloud
                      */
                     bool VoipCallInCountHasBeenSet() const;
 
+                    /**
+                     * 获取离线语音转文字套餐包消耗分钟数
+                     * @return AsrOfflineCount 离线语音转文字套餐包消耗分钟数
+                     */
+                    int64_t GetAsrOfflineCount() const;
+
+                    /**
+                     * 判断参数 AsrOfflineCount 是否已赋值
+                     * @return AsrOfflineCount 是否已赋值
+                     */
+                    bool AsrOfflineCountHasBeenSet() const;
+
+                    /**
+                     * 获取实时语音转文字套餐包消耗分钟数
+                     * @return AsrRealtimeCount 实时语音转文字套餐包消耗分钟数
+                     */
+                    int64_t GetAsrRealtimeCount() const;
+
+                    /**
+                     * 判断参数 AsrRealtimeCount 是否已赋值
+                     * @return AsrRealtimeCount 是否已赋值
+                     */
+                    bool AsrRealtimeCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +140,18 @@ namespace TencentCloud
                      */
                     int64_t m_voipCallInCount;
                     bool m_voipCallInCountHasBeenSet;
+
+                    /**
+                     * 离线语音转文字套餐包消耗分钟数
+                     */
+                    int64_t m_asrOfflineCount;
+                    bool m_asrOfflineCountHasBeenSet;
+
+                    /**
+                     * 实时语音转文字套餐包消耗分钟数
+                     */
+                    int64_t m_asrRealtimeCount;
+                    bool m_asrRealtimeCountHasBeenSet;
 
                 };
             }

@@ -276,6 +276,32 @@ namespace TencentCloud
                      */
                     bool SamplingRateHasBeenSet() const;
 
+                    /**
+                     * 获取检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules
+                     * @return SyntaxRule 检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules
+                     */
+                    uint64_t GetSyntaxRule() const;
+
+                    /**
+                     * 设置检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules
+                     * @param SyntaxRule 检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules
+                     */
+                    void SetSyntaxRule(const uint64_t& _syntaxRule);
+
+                    /**
+                     * 判断参数 SyntaxRule 是否已赋值
+                     * @return SyntaxRule 是否已赋值
+                     */
+                    bool SyntaxRuleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -349,6 +375,14 @@ namespace TencentCloud
                      */
                     double m_samplingRate;
                     bool m_samplingRateHasBeenSet;
+
+                    /**
+                     * 检索语法规则，默认值为0。
+0：Lucene语法，1：CQL语法。
+详细说明参见https://cloud.tencent.com/document/product/614/47044#RetrievesConditionalRules
+                     */
+                    uint64_t m_syntaxRule;
+                    bool m_syntaxRuleHasBeenSet;
 
                 };
             }

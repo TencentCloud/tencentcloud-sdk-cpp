@@ -424,17 +424,17 @@ HANDWRITE -手写签名
 
                     /**
                      * 获取签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1
-查看合同的签署方式 Flow层级的优先于approver层级的
+查看合同的认证方式 Flow层级的优先于approver层级的
                      * @return ApproverVerifyTypes 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1
-查看合同的签署方式 Flow层级的优先于approver层级的
+查看合同的认证方式 Flow层级的优先于approver层级的
                      */
                     std::vector<int64_t> GetApproverVerifyTypes() const;
 
                     /**
                      * 设置签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1
-查看合同的签署方式 Flow层级的优先于approver层级的
+查看合同的认证方式 Flow层级的优先于approver层级的
                      * @param ApproverVerifyTypes 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1
-查看合同的签署方式 Flow层级的优先于approver层级的
+查看合同的认证方式 Flow层级的优先于approver层级的
                      */
                     void SetApproverVerifyTypes(const std::vector<int64_t>& _approverVerifyTypes);
 
@@ -588,7 +588,7 @@ HANDWRITE -手写签名
 
                     /**
                      * 签署人查看合同时认证方式, 1-实名查看 2-短信验证码查看(企业签署方不支持该方式) 如果不传默认为1
-查看合同的签署方式 Flow层级的优先于approver层级的
+查看合同的认证方式 Flow层级的优先于approver层级的
                      */
                     std::vector<int64_t> m_approverVerifyTypes;
                     bool m_approverVerifyTypesHasBeenSet;

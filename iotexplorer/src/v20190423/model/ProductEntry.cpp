@@ -37,7 +37,8 @@ ProductEntry::ProductEntry() :
     m_moduleIdHasBeenSet(false),
     m_enableProductScriptHasBeenSet(false),
     m_createUserIdHasBeenSet(false),
-    m_creatorNickNameHasBeenSet(false)
+    m_creatorNickNameHasBeenSet(false),
+    m_bindStrategyHasBeenSet(false)
 {
 }
 
@@ -216,6 +217,16 @@ CoreInternalOutcome ProductEntry::Deserialize(const rapidjson::Value &value)
         m_creatorNickNameHasBeenSet = true;
     }
 
+    if (value.HasMember("BindStrategy") && !value["BindStrategy"].IsNull())
+    {
+        if (!value["BindStrategy"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ProductEntry.BindStrategy` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bindStrategy = value["BindStrategy"].GetUint64();
+        m_bindStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -357,6 +368,14 @@ void ProductEntry::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "CreatorNickName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_creatorNickName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bindStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BindStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bindStrategy, allocator);
     }
 
 }
@@ -632,5 +651,21 @@ void ProductEntry::SetCreatorNickName(const string& _creatorNickName)
 bool ProductEntry::CreatorNickNameHasBeenSet() const
 {
     return m_creatorNickNameHasBeenSet;
+}
+
+uint64_t ProductEntry::GetBindStrategy() const
+{
+    return m_bindStrategy;
+}
+
+void ProductEntry::SetBindStrategy(const uint64_t& _bindStrategy)
+{
+    m_bindStrategy = _bindStrategy;
+    m_bindStrategyHasBeenSet = true;
+}
+
+bool ProductEntry::BindStrategyHasBeenSet() const
+{
+    return m_bindStrategyHasBeenSet;
 }
 

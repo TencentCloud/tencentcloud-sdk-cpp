@@ -68,6 +68,18 @@ namespace TencentCloud
                      */
                     bool TotalHasBeenSet() const;
 
+                    /**
+                     * 获取是否为首次绑定，需要安装预聚合规则
+                     * @return IsFirstBind 是否为首次绑定，需要安装预聚合规则
+                     */
+                    bool GetIsFirstBind() const;
+
+                    /**
+                     * 判断参数 IsFirstBind 是否已赋值
+                     * @return IsFirstBind 是否已赋值
+                     */
+                    bool IsFirstBindHasBeenSet() const;
+
                 private:
 
                     /**
@@ -81,6 +93,12 @@ namespace TencentCloud
                      */
                     uint64_t m_total;
                     bool m_totalHasBeenSet;
+
+                    /**
+                     * 是否为首次绑定，需要安装预聚合规则
+                     */
+                    bool m_isFirstBind;
+                    bool m_isFirstBindHasBeenSet;
 
                 };
             }

@@ -55,12 +55,12 @@ namespace TencentCloud
 <li>ImagePorn：图片鉴黄</li>
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
-<li>PornVoice：声音鉴黄</li>
+<li>VoicePorn：声音违规</li>
                      * @return Type 审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
-<li>PornVoice：声音鉴黄</li>
+<li>VoicePorn：声音违规</li>
                      */
                     std::string GetType() const;
 
@@ -69,12 +69,12 @@ namespace TencentCloud
 <li>ImagePorn：图片鉴黄</li>
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
-<li>PornVoice：声音鉴黄</li>
+<li>VoicePorn：声音违规</li>
                      * @param Type 审核结果的类型，可以取的值有：
 <li>ImagePorn：图片鉴黄</li>
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
-<li>PornVoice：声音鉴黄</li>
+<li>VoicePorn：声音违规</li>
                      */
                     void SetType(const std::string& _type);
 
@@ -139,14 +139,14 @@ namespace TencentCloud
                     bool ImagePoliticalResultSetHasBeenSet() const;
 
                     /**
-                     * 获取声音鉴黄的结果，当 Type 为 PornVoice 时有效。
-                     * @return VoicePornResultSet 声音鉴黄的结果，当 Type 为 PornVoice 时有效。
+                     * 获取声音违规的结果，当 Type 为 VoicePorn 时有效。
+                     * @return VoicePornResultSet 声音违规的结果，当 Type 为 VoicePorn 时有效。
                      */
                     std::vector<LiveStreamAiReviewVoicePornResult> GetVoicePornResultSet() const;
 
                     /**
-                     * 设置声音鉴黄的结果，当 Type 为 PornVoice 时有效。
-                     * @param VoicePornResultSet 声音鉴黄的结果，当 Type 为 PornVoice 时有效。
+                     * 设置声音违规的结果，当 Type 为 VoicePorn 时有效。
+                     * @param VoicePornResultSet 声音违规的结果，当 Type 为 VoicePorn 时有效。
                      */
                     void SetVoicePornResultSet(const std::vector<LiveStreamAiReviewVoicePornResult>& _voicePornResultSet);
 
@@ -163,7 +163,7 @@ namespace TencentCloud
 <li>ImagePorn：图片鉴黄</li>
 <li>ImageTerrorism：图片涉敏</li>
 <li>ImagePolitical：图片涉敏</li>
-<li>PornVoice：声音鉴黄</li>
+<li>VoicePorn：声音违规</li>
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
@@ -187,7 +187,7 @@ namespace TencentCloud
                     bool m_imagePoliticalResultSetHasBeenSet;
 
                     /**
-                     * 声音鉴黄的结果，当 Type 为 PornVoice 时有效。
+                     * 声音违规的结果，当 Type 为 VoicePorn 时有效。
                      */
                     std::vector<LiveStreamAiReviewVoicePornResult> m_voicePornResultSet;
                     bool m_voicePornResultSetHasBeenSet;

@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool CategoryIdHasBeenSet() const;
 
                     /**
-                     * 获取加密类型
-                     * @return EncryptionType 加密类型
+                     * 获取加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * @return EncryptionType 加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      */
                     std::string GetEncryptionType() const;
 
                     /**
-                     * 设置加密类型
-                     * @param EncryptionType 加密类型
+                     * 设置加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
+                     * @param EncryptionType 加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      */
                     void SetEncryptionType(const std::string& _encryptionType);
 
@@ -119,14 +119,18 @@ namespace TencentCloud
                     bool EncryptionTypeHasBeenSet() const;
 
                     /**
-                     * 获取连接类型
-                     * @return NetType 连接类型
+                     * 获取连接类型。如：
+wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
+                     * @return NetType 连接类型。如：
+wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
                      */
                     std::string GetNetType() const;
 
                     /**
-                     * 设置连接类型
-                     * @param NetType 连接类型
+                     * 设置连接类型。如：
+wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
+                     * @param NetType 连接类型。如：
+wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
                      */
                     void SetNetType(const std::string& _netType);
 
@@ -137,14 +141,14 @@ namespace TencentCloud
                     bool NetTypeHasBeenSet() const;
 
                     /**
-                     * 获取数据协议
-                     * @return DataProtocol 数据协议
+                     * 获取数据协议 (1 使用物模型 2 为自定义类型)
+                     * @return DataProtocol 数据协议 (1 使用物模型 2 为自定义类型)
                      */
                     int64_t GetDataProtocol() const;
 
                     /**
-                     * 设置数据协议
-                     * @param DataProtocol 数据协议
+                     * 设置数据协议 (1 使用物模型 2 为自定义类型)
+                     * @param DataProtocol 数据协议 (1 使用物模型 2 为自定义类型)
                      */
                     void SetDataProtocol(const int64_t& _dataProtocol);
 
@@ -173,14 +177,14 @@ namespace TencentCloud
                     bool ProductDescHasBeenSet() const;
 
                     /**
-                     * 获取状态
-                     * @return DevStatus 状态
+                     * 获取状态 如：all 全部, dev 开发中, audit 审核中 released 已发布
+                     * @return DevStatus 状态 如：all 全部, dev 开发中, audit 审核中 released 已发布
                      */
                     std::string GetDevStatus() const;
 
                     /**
-                     * 设置状态
-                     * @param DevStatus 状态
+                     * 设置状态 如：all 全部, dev 开发中, audit 审核中 released 已发布
+                     * @param DevStatus 状态 如：all 全部, dev 开发中, audit 审核中 released 已发布
                      */
                     void SetDevStatus(const std::string& _devStatus);
 
@@ -245,14 +249,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取产品类型
-                     * @return ProductType 产品类型
+                     * 获取产品类型。如： 0 普通产品 ， 5 网关产品
+                     * @return ProductType 产品类型。如： 0 普通产品 ， 5 网关产品
                      */
                     int64_t GetProductType() const;
 
                     /**
-                     * 设置产品类型
-                     * @param ProductType 产品类型
+                     * 设置产品类型。如： 0 普通产品 ， 5 网关产品
+                     * @param ProductType 产品类型。如： 0 普通产品 ， 5 网关产品
                      */
                     void SetProductType(const int64_t& _productType);
 
@@ -364,6 +368,28 @@ namespace TencentCloud
                      */
                     bool CreatorNickNameHasBeenSet() const;
 
+                    /**
+                     * 获取绑定策略（1：强踢；2：非强踢；0：表示无意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BindStrategy 绑定策略（1：强踢；2：非强踢；0：表示无意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBindStrategy() const;
+
+                    /**
+                     * 设置绑定策略（1：强踢；2：非强踢；0：表示无意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BindStrategy 绑定策略（1：强踢；2：非强踢；0：表示无意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBindStrategy(const uint64_t& _bindStrategy);
+
+                    /**
+                     * 判断参数 BindStrategy 是否已赋值
+                     * @return BindStrategy 是否已赋值
+                     */
+                    bool BindStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -385,19 +411,20 @@ namespace TencentCloud
                     bool m_categoryIdHasBeenSet;
 
                     /**
-                     * 加密类型
+                     * 加密类型。1表示证书认证，2表示秘钥认证，21表示TID认证-SE方式，22表示TID认证-软加固方式
                      */
                     std::string m_encryptionType;
                     bool m_encryptionTypeHasBeenSet;
 
                     /**
-                     * 连接类型
+                     * 连接类型。如：
+wifi、wifi-ble、cellular、5g、lorawan、ble、ethernet、wifi-ethernet、else、sub_zigbee、sub_ble、sub_433mhz、sub_else、sub_blemesh
                      */
                     std::string m_netType;
                     bool m_netTypeHasBeenSet;
 
                     /**
-                     * 数据协议
+                     * 数据协议 (1 使用物模型 2 为自定义类型)
                      */
                     int64_t m_dataProtocol;
                     bool m_dataProtocolHasBeenSet;
@@ -409,7 +436,7 @@ namespace TencentCloud
                     bool m_productDescHasBeenSet;
 
                     /**
-                     * 状态
+                     * 状态 如：all 全部, dev 开发中, audit 审核中 released 已发布
                      */
                     std::string m_devStatus;
                     bool m_devStatusHasBeenSet;
@@ -433,7 +460,7 @@ namespace TencentCloud
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 产品类型
+                     * 产品类型。如： 0 普通产品 ， 5 网关产品
                      */
                     int64_t m_productType;
                     bool m_productTypeHasBeenSet;
@@ -470,6 +497,13 @@ namespace TencentCloud
                      */
                     std::string m_creatorNickName;
                     bool m_creatorNickNameHasBeenSet;
+
+                    /**
+                     * 绑定策略（1：强踢；2：非强踢；0：表示无意义）
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bindStrategy;
+                    bool m_bindStrategyHasBeenSet;
 
                 };
             }

@@ -65,7 +65,8 @@ InstanceInfo::InstanceInfo() :
     m_instanceNodesHasBeenSet(false),
     m_tagListHasBeenSet(false),
     m_engineTypeHasBeenSet(false),
-    m_maxDelayTimeHasBeenSet(false)
+    m_maxDelayTimeHasBeenSet(false),
+    m_diskTypeHasBeenSet(false)
 {
 }
 
@@ -575,6 +576,16 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_maxDelayTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("DiskType") && !value["DiskType"].IsNull())
+    {
+        if (!value["DiskType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.DiskType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_diskType = string(value["DiskType"].GetString());
+        m_diskTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -964,6 +975,14 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MaxDelayTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxDelayTime, allocator);
+    }
+
+    if (m_diskTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DiskType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_diskType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1687,5 +1706,21 @@ void InstanceInfo::SetMaxDelayTime(const int64_t& _maxDelayTime)
 bool InstanceInfo::MaxDelayTimeHasBeenSet() const
 {
     return m_maxDelayTimeHasBeenSet;
+}
+
+string InstanceInfo::GetDiskType() const
+{
+    return m_diskType;
+}
+
+void InstanceInfo::SetDiskType(const string& _diskType)
+{
+    m_diskType = _diskType;
+    m_diskTypeHasBeenSet = true;
+}
+
+bool InstanceInfo::DiskTypeHasBeenSet() const
+{
+    return m_diskTypeHasBeenSet;
 }
 

@@ -49,6 +49,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesResponse.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesRequest.h>
+#include <tencentcloud/ess/v20201111/model/CreateIntegrationUserRolesResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h>
 #include <tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeResponse.h>
 #include <tencentcloud/ess/v20201111/model/CreatePrepareFlowRequest.h>
@@ -65,6 +67,8 @@
 #include <tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteIntegrationEmployeesResponse.h>
+#include <tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersRequest.h>
+#include <tencentcloud/ess/v20201111/model/DeleteIntegrationRoleUsersResponse.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesRequest.h>
 #include <tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeFileUrlsRequest.h>
@@ -81,6 +85,8 @@
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeIntegrationMainOrganizationUserResponse.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationRolesRequest.h>
+#include <tencentcloud/ess/v20201111/model/DescribeIntegrationRolesResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsRequest.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationGroupOrganizationsResponse.h>
 #include <tencentcloud/ess/v20201111/model/DescribeOrganizationSealsRequest.h>
@@ -97,6 +103,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesRequest.h>
+#include <tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesRequest.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesResponse.h>
 #include <tencentcloud/ess/v20201111/model/VerifyPdfRequest.h>
@@ -154,6 +162,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateIntegrationEmployeesResponse> CreateIntegrationEmployeesOutcome;
                 typedef std::future<CreateIntegrationEmployeesOutcome> CreateIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateIntegrationEmployeesRequest&, CreateIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationEmployeesAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateIntegrationUserRolesResponse> CreateIntegrationUserRolesOutcome;
+                typedef std::future<CreateIntegrationUserRolesOutcome> CreateIntegrationUserRolesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::CreateIntegrationUserRolesRequest&, CreateIntegrationUserRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateIntegrationUserRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateMultiFlowSignQRCodeResponse> CreateMultiFlowSignQRCodeOutcome;
                 typedef std::future<CreateMultiFlowSignQRCodeOutcome> CreateMultiFlowSignQRCodeOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CreateMultiFlowSignQRCodeRequest&, CreateMultiFlowSignQRCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateMultiFlowSignQRCodeAsyncHandler;
@@ -178,6 +189,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteIntegrationEmployeesResponse> DeleteIntegrationEmployeesOutcome;
                 typedef std::future<DeleteIntegrationEmployeesOutcome> DeleteIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteIntegrationEmployeesRequest&, DeleteIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationEmployeesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteIntegrationRoleUsersResponse> DeleteIntegrationRoleUsersOutcome;
+                typedef std::future<DeleteIntegrationRoleUsersOutcome> DeleteIntegrationRoleUsersOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DeleteIntegrationRoleUsersRequest&, DeleteIntegrationRoleUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteIntegrationRoleUsersAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSealPoliciesResponse> DeleteSealPoliciesOutcome;
                 typedef std::future<DeleteSealPoliciesOutcome> DeleteSealPoliciesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DeleteSealPoliciesRequest&, DeleteSealPoliciesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSealPoliciesAsyncHandler;
@@ -202,6 +216,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIntegrationMainOrganizationUserResponse> DescribeIntegrationMainOrganizationUserOutcome;
                 typedef std::future<DescribeIntegrationMainOrganizationUserOutcome> DescribeIntegrationMainOrganizationUserOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeIntegrationMainOrganizationUserRequest&, DescribeIntegrationMainOrganizationUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationMainOrganizationUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeIntegrationRolesResponse> DescribeIntegrationRolesOutcome;
+                typedef std::future<DescribeIntegrationRolesOutcome> DescribeIntegrationRolesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::DescribeIntegrationRolesRequest&, DescribeIntegrationRolesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIntegrationRolesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeOrganizationGroupOrganizationsResponse> DescribeOrganizationGroupOrganizationsOutcome;
                 typedef std::future<DescribeOrganizationGroupOrganizationsOutcome> DescribeOrganizationGroupOrganizationsOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::DescribeOrganizationGroupOrganizationsRequest&, DescribeOrganizationGroupOrganizationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOrganizationGroupOrganizationsAsyncHandler;
@@ -226,6 +243,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartFlowResponse> StartFlowOutcome;
                 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::StartFlowRequest&, StartFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateIntegrationEmployeesResponse> UpdateIntegrationEmployeesOutcome;
+                typedef std::future<UpdateIntegrationEmployeesOutcome> UpdateIntegrationEmployeesOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::UpdateIntegrationEmployeesRequest&, UpdateIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIntegrationEmployeesAsyncHandler;
                 typedef Outcome<Core::Error, Model::UploadFilesResponse> UploadFilesOutcome;
                 typedef std::future<UploadFilesOutcome> UploadFilesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::UploadFilesRequest&, UploadFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UploadFilesAsyncHandler;
@@ -374,6 +394,15 @@ namespace TencentCloud
                 CreateIntegrationEmployeesOutcomeCallable CreateIntegrationEmployeesCallable(const Model::CreateIntegrationEmployeesRequest& request);
 
                 /**
+                 *集成版绑定员工角色
+                 * @param req CreateIntegrationUserRolesRequest
+                 * @return CreateIntegrationUserRolesOutcome
+                 */
+                CreateIntegrationUserRolesOutcome CreateIntegrationUserRoles(const Model::CreateIntegrationUserRolesRequest &request);
+                void CreateIntegrationUserRolesAsync(const Model::CreateIntegrationUserRolesRequest& request, const CreateIntegrationUserRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateIntegrationUserRolesOutcomeCallable CreateIntegrationUserRolesCallable(const Model::CreateIntegrationUserRolesRequest& request);
+
+                /**
                  *此接口（CreateMultiFlowSignQRCode）用于创建一码多扫流程签署二维码。
 适用场景：无需填写签署人信息，可通过模板id生成签署二维码，签署人可通过扫描二维码补充签署信息进行实名签署。常用于提前不知道签署人的身份信息场景，例如：劳务工招工、大批量员工入职等场景。
 适用的模板仅限于B2C（1、无序签署，2、顺序签署时B静默签署，3、顺序签署时B非首位签署）、单C的模板，且模板中发起方没有填写控件。
@@ -460,6 +489,15 @@ namespace TencentCloud
                 DeleteIntegrationEmployeesOutcomeCallable DeleteIntegrationEmployeesCallable(const Model::DeleteIntegrationEmployeesRequest& request);
 
                 /**
+                 *解绑用户角色绑定关系
+                 * @param req DeleteIntegrationRoleUsersRequest
+                 * @return DeleteIntegrationRoleUsersOutcome
+                 */
+                DeleteIntegrationRoleUsersOutcome DeleteIntegrationRoleUsers(const Model::DeleteIntegrationRoleUsersRequest &request);
+                void DeleteIntegrationRoleUsersAsync(const Model::DeleteIntegrationRoleUsersRequest& request, const DeleteIntegrationRoleUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteIntegrationRoleUsersOutcomeCallable DeleteIntegrationRoleUsersCallable(const Model::DeleteIntegrationRoleUsersRequest& request);
+
+                /**
                  *撤销员工持有的印章权限
                  * @param req DeleteSealPoliciesRequest
                  * @return DeleteSealPoliciesOutcome
@@ -534,6 +572,15 @@ namespace TencentCloud
                 DescribeIntegrationMainOrganizationUserOutcome DescribeIntegrationMainOrganizationUser(const Model::DescribeIntegrationMainOrganizationUserRequest &request);
                 void DescribeIntegrationMainOrganizationUserAsync(const Model::DescribeIntegrationMainOrganizationUserRequest& request, const DescribeIntegrationMainOrganizationUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIntegrationMainOrganizationUserOutcomeCallable DescribeIntegrationMainOrganizationUserCallable(const Model::DescribeIntegrationMainOrganizationUserRequest& request);
+
+                /**
+                 *查询集成版角色
+                 * @param req DescribeIntegrationRolesRequest
+                 * @return DescribeIntegrationRolesOutcome
+                 */
+                DescribeIntegrationRolesOutcome DescribeIntegrationRoles(const Model::DescribeIntegrationRolesRequest &request);
+                void DescribeIntegrationRolesAsync(const Model::DescribeIntegrationRolesRequest& request, const DescribeIntegrationRolesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeIntegrationRolesOutcomeCallable DescribeIntegrationRolesCallable(const Model::DescribeIntegrationRolesRequest& request);
 
                 /**
                  *此API接口用户查询加入集团的成员企业
@@ -611,6 +658,15 @@ callbackinfo包含： 回调地址和签名key
                 StartFlowOutcome StartFlow(const Model::StartFlowRequest &request);
                 void StartFlowAsync(const Model::StartFlowRequest& request, const StartFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartFlowOutcomeCallable StartFlowCallable(const Model::StartFlowRequest& request);
+
+                /**
+                 *更新集成版员工信息(姓名，手机号，邮件)，用户实名后无法更改姓名与手机号
+                 * @param req UpdateIntegrationEmployeesRequest
+                 * @return UpdateIntegrationEmployeesOutcome
+                 */
+                UpdateIntegrationEmployeesOutcome UpdateIntegrationEmployees(const Model::UpdateIntegrationEmployeesRequest &request);
+                void UpdateIntegrationEmployeesAsync(const Model::UpdateIntegrationEmployeesRequest& request, const UpdateIntegrationEmployeesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateIntegrationEmployeesOutcomeCallable UpdateIntegrationEmployeesCallable(const Model::UpdateIntegrationEmployeesRequest& request);
 
                 /**
                  *此接口（UploadFiles）用于文件上传。

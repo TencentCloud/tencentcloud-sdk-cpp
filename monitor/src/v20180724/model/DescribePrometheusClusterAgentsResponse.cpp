@@ -25,7 +25,8 @@ using namespace std;
 
 DescribePrometheusClusterAgentsResponse::DescribePrometheusClusterAgentsResponse() :
     m_agentsHasBeenSet(false),
-    m_totalHasBeenSet(false)
+    m_totalHasBeenSet(false),
+    m_isFirstBindHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,16 @@ CoreInternalOutcome DescribePrometheusClusterAgentsResponse::Deserialize(const s
         m_totalHasBeenSet = true;
     }
 
+    if (rsp.HasMember("IsFirstBind") && !rsp["IsFirstBind"].IsNull())
+    {
+        if (!rsp["IsFirstBind"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `IsFirstBind` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_isFirstBind = rsp["IsFirstBind"].GetBool();
+        m_isFirstBindHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -126,6 +137,14 @@ string DescribePrometheusClusterAgentsResponse::ToJsonString() const
         value.AddMember(iKey, m_total, allocator);
     }
 
+    if (m_isFirstBindHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsFirstBind";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_isFirstBind, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -156,6 +175,16 @@ uint64_t DescribePrometheusClusterAgentsResponse::GetTotal() const
 bool DescribePrometheusClusterAgentsResponse::TotalHasBeenSet() const
 {
     return m_totalHasBeenSet;
+}
+
+bool DescribePrometheusClusterAgentsResponse::GetIsFirstBind() const
+{
+    return m_isFirstBind;
+}
+
+bool DescribePrometheusClusterAgentsResponse::IsFirstBindHasBeenSet() const
+{
+    return m_isFirstBindHasBeenSet;
 }
 
 

@@ -27,7 +27,9 @@ DescribeTelCallInfoResponse::DescribeTelCallInfoResponse() :
     m_telCallOutCountHasBeenSet(false),
     m_telCallInCountHasBeenSet(false),
     m_seatUsedCountHasBeenSet(false),
-    m_voipCallInCountHasBeenSet(false)
+    m_voipCallInCountHasBeenSet(false),
+    m_asrOfflineCountHasBeenSet(false),
+    m_asrRealtimeCountHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome DescribeTelCallInfoResponse::Deserialize(const string &paylo
         m_voipCallInCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("AsrOfflineCount") && !rsp["AsrOfflineCount"].IsNull())
+    {
+        if (!rsp["AsrOfflineCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrOfflineCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_asrOfflineCount = rsp["AsrOfflineCount"].GetInt64();
+        m_asrOfflineCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("AsrRealtimeCount") && !rsp["AsrRealtimeCount"].IsNull())
+    {
+        if (!rsp["AsrRealtimeCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrRealtimeCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_asrRealtimeCount = rsp["AsrRealtimeCount"].GetInt64();
+        m_asrRealtimeCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,22 @@ string DescribeTelCallInfoResponse::ToJsonString() const
         string key = "VoipCallInCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_voipCallInCount, allocator);
+    }
+
+    if (m_asrOfflineCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsrOfflineCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_asrOfflineCount, allocator);
+    }
+
+    if (m_asrRealtimeCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsrRealtimeCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_asrRealtimeCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +235,26 @@ int64_t DescribeTelCallInfoResponse::GetVoipCallInCount() const
 bool DescribeTelCallInfoResponse::VoipCallInCountHasBeenSet() const
 {
     return m_voipCallInCountHasBeenSet;
+}
+
+int64_t DescribeTelCallInfoResponse::GetAsrOfflineCount() const
+{
+    return m_asrOfflineCount;
+}
+
+bool DescribeTelCallInfoResponse::AsrOfflineCountHasBeenSet() const
+{
+    return m_asrOfflineCountHasBeenSet;
+}
+
+int64_t DescribeTelCallInfoResponse::GetAsrRealtimeCount() const
+{
+    return m_asrRealtimeCount;
+}
+
+bool DescribeTelCallInfoResponse::AsrRealtimeCountHasBeenSet() const
+{
+    return m_asrRealtimeCountHasBeenSet;
 }
 
 

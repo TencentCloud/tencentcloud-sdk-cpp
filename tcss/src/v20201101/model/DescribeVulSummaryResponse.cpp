@@ -29,7 +29,12 @@ DescribeVulSummaryResponse::DescribeVulSummaryResponse() :
     m_suggestVulCountHasBeenSet(false),
     m_pocExpLevelVulCountHasBeenSet(false),
     m_remoteExpLevelVulCountHasBeenSet(false),
-    m_seriousVulNewestImageCountHasBeenSet(false)
+    m_seriousVulNewestImageCountHasBeenSet(false),
+    m_systemVulnerabilityFocusCountHasBeenSet(false),
+    m_webVulnerabilityFocusCountHasBeenSet(false),
+    m_seriousVulnerabilityLocalImageCountHasBeenSet(false),
+    m_seriousVulnerabilityRegistryImageCountHasBeenSet(false),
+    m_emergencyVulnerabilityCountHasBeenSet(false)
 {
 }
 
@@ -127,6 +132,56 @@ CoreInternalOutcome DescribeVulSummaryResponse::Deserialize(const string &payloa
         m_seriousVulNewestImageCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SystemVulnerabilityFocusCount") && !rsp["SystemVulnerabilityFocusCount"].IsNull())
+    {
+        if (!rsp["SystemVulnerabilityFocusCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SystemVulnerabilityFocusCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_systemVulnerabilityFocusCount = rsp["SystemVulnerabilityFocusCount"].GetInt64();
+        m_systemVulnerabilityFocusCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("WebVulnerabilityFocusCount") && !rsp["WebVulnerabilityFocusCount"].IsNull())
+    {
+        if (!rsp["WebVulnerabilityFocusCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `WebVulnerabilityFocusCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_webVulnerabilityFocusCount = rsp["WebVulnerabilityFocusCount"].GetInt64();
+        m_webVulnerabilityFocusCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SeriousVulnerabilityLocalImageCount") && !rsp["SeriousVulnerabilityLocalImageCount"].IsNull())
+    {
+        if (!rsp["SeriousVulnerabilityLocalImageCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeriousVulnerabilityLocalImageCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_seriousVulnerabilityLocalImageCount = rsp["SeriousVulnerabilityLocalImageCount"].GetInt64();
+        m_seriousVulnerabilityLocalImageCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SeriousVulnerabilityRegistryImageCount") && !rsp["SeriousVulnerabilityRegistryImageCount"].IsNull())
+    {
+        if (!rsp["SeriousVulnerabilityRegistryImageCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SeriousVulnerabilityRegistryImageCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_seriousVulnerabilityRegistryImageCount = rsp["SeriousVulnerabilityRegistryImageCount"].GetInt64();
+        m_seriousVulnerabilityRegistryImageCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("EmergencyVulnerabilityCount") && !rsp["EmergencyVulnerabilityCount"].IsNull())
+    {
+        if (!rsp["EmergencyVulnerabilityCount"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EmergencyVulnerabilityCount` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_emergencyVulnerabilityCount = rsp["EmergencyVulnerabilityCount"].GetInt64();
+        m_emergencyVulnerabilityCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -183,6 +238,46 @@ string DescribeVulSummaryResponse::ToJsonString() const
         string key = "SeriousVulNewestImageCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_seriousVulNewestImageCount, allocator);
+    }
+
+    if (m_systemVulnerabilityFocusCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SystemVulnerabilityFocusCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_systemVulnerabilityFocusCount, allocator);
+    }
+
+    if (m_webVulnerabilityFocusCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WebVulnerabilityFocusCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_webVulnerabilityFocusCount, allocator);
+    }
+
+    if (m_seriousVulnerabilityLocalImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SeriousVulnerabilityLocalImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_seriousVulnerabilityLocalImageCount, allocator);
+    }
+
+    if (m_seriousVulnerabilityRegistryImageCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SeriousVulnerabilityRegistryImageCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_seriousVulnerabilityRegistryImageCount, allocator);
+    }
+
+    if (m_emergencyVulnerabilityCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EmergencyVulnerabilityCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_emergencyVulnerabilityCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -255,6 +350,56 @@ int64_t DescribeVulSummaryResponse::GetSeriousVulNewestImageCount() const
 bool DescribeVulSummaryResponse::SeriousVulNewestImageCountHasBeenSet() const
 {
     return m_seriousVulNewestImageCountHasBeenSet;
+}
+
+int64_t DescribeVulSummaryResponse::GetSystemVulnerabilityFocusCount() const
+{
+    return m_systemVulnerabilityFocusCount;
+}
+
+bool DescribeVulSummaryResponse::SystemVulnerabilityFocusCountHasBeenSet() const
+{
+    return m_systemVulnerabilityFocusCountHasBeenSet;
+}
+
+int64_t DescribeVulSummaryResponse::GetWebVulnerabilityFocusCount() const
+{
+    return m_webVulnerabilityFocusCount;
+}
+
+bool DescribeVulSummaryResponse::WebVulnerabilityFocusCountHasBeenSet() const
+{
+    return m_webVulnerabilityFocusCountHasBeenSet;
+}
+
+int64_t DescribeVulSummaryResponse::GetSeriousVulnerabilityLocalImageCount() const
+{
+    return m_seriousVulnerabilityLocalImageCount;
+}
+
+bool DescribeVulSummaryResponse::SeriousVulnerabilityLocalImageCountHasBeenSet() const
+{
+    return m_seriousVulnerabilityLocalImageCountHasBeenSet;
+}
+
+int64_t DescribeVulSummaryResponse::GetSeriousVulnerabilityRegistryImageCount() const
+{
+    return m_seriousVulnerabilityRegistryImageCount;
+}
+
+bool DescribeVulSummaryResponse::SeriousVulnerabilityRegistryImageCountHasBeenSet() const
+{
+    return m_seriousVulnerabilityRegistryImageCountHasBeenSet;
+}
+
+int64_t DescribeVulSummaryResponse::GetEmergencyVulnerabilityCount() const
+{
+    return m_emergencyVulnerabilityCount;
+}
+
+bool DescribeVulSummaryResponse::EmergencyVulnerabilityCountHasBeenSet() const
+{
+    return m_emergencyVulnerabilityCountHasBeenSet;
 }
 
 

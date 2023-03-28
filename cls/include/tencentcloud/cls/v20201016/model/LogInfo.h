@@ -216,6 +216,50 @@ namespace TencentCloud
                      */
                     bool HostNameHasBeenSet() const;
 
+                    /**
+                     * 获取原始日志(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RawLog 原始日志(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetRawLog() const;
+
+                    /**
+                     * 设置原始日志(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RawLog 原始日志(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRawLog(const std::string& _rawLog);
+
+                    /**
+                     * 判断参数 RawLog 是否已赋值
+                     * @return RawLog 是否已赋值
+                     */
+                    bool RawLogHasBeenSet() const;
+
+                    /**
+                     * 获取日志创建索引异常原因(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IndexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetIndexStatus() const;
+
+                    /**
+                     * 设置日志创建索引异常原因(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IndexStatus 日志创建索引异常原因(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIndexStatus(const std::string& _indexStatus);
+
+                    /**
+                     * 判断参数 IndexStatus 是否已赋值
+                     * @return IndexStatus 是否已赋值
+                     */
+                    bool IndexStatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -273,6 +317,20 @@ namespace TencentCloud
                      */
                     std::string m_hostName;
                     bool m_hostNameHasBeenSet;
+
+                    /**
+                     * 原始日志(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_rawLog;
+                    bool m_rawLogHasBeenSet;
+
+                    /**
+                     * 日志创建索引异常原因(仅在日志创建索引异常时有值)
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_indexStatus;
+                    bool m_indexStatusHasBeenSet;
 
                 };
             }

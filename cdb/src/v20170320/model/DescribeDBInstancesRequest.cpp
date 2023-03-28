@@ -56,7 +56,8 @@ DescribeDBInstancesRequest::DescribeDBInstancesRequest() :
     m_uniqSubnetIdsHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_proxyVipsHasBeenSet(false),
-    m_proxyIdsHasBeenSet(false)
+    m_proxyIdsHasBeenSet(false),
+    m_engineTypesHasBeenSet(false)
 {
 }
 
@@ -441,6 +442,19 @@ string DescribeDBInstancesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_proxyIds.begin(); itr != m_proxyIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_engineTypesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineTypes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_engineTypes.begin(); itr != m_engineTypes.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -996,6 +1010,22 @@ void DescribeDBInstancesRequest::SetProxyIds(const vector<string>& _proxyIds)
 bool DescribeDBInstancesRequest::ProxyIdsHasBeenSet() const
 {
     return m_proxyIdsHasBeenSet;
+}
+
+vector<string> DescribeDBInstancesRequest::GetEngineTypes() const
+{
+    return m_engineTypes;
+}
+
+void DescribeDBInstancesRequest::SetEngineTypes(const vector<string>& _engineTypes)
+{
+    m_engineTypes = _engineTypes;
+    m_engineTypesHasBeenSet = true;
+}
+
+bool DescribeDBInstancesRequest::EngineTypesHasBeenSet() const
+{
+    return m_engineTypesHasBeenSet;
 }
 
 
