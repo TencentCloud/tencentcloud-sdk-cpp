@@ -72,7 +72,8 @@ DescribeDCDBInstanceDetailResponse::DescribeDCDBInstanceDetailResponse() :
     m_isMaxUserConnectionsSupportedHasBeenSet(false),
     m_dbVersionIdHasBeenSet(false),
     m_encryptStatusHasBeenSet(false),
-    m_exclusterTypeHasBeenSet(false)
+    m_exclusterTypeHasBeenSet(false),
+    m_rsAccessStrategyHasBeenSet(false)
 {
 }
 
@@ -623,6 +624,16 @@ CoreInternalOutcome DescribeDCDBInstanceDetailResponse::Deserialize(const string
         m_exclusterTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RsAccessStrategy") && !rsp["RsAccessStrategy"].IsNull())
+    {
+        if (!rsp["RsAccessStrategy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RsAccessStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rsAccessStrategy = rsp["RsAccessStrategy"].GetInt64();
+        m_rsAccessStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1042,6 +1053,14 @@ string DescribeDCDBInstanceDetailResponse::ToJsonString() const
         string key = "ExclusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusterType, allocator);
+    }
+
+    if (m_rsAccessStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RsAccessStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rsAccessStrategy, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1544,6 +1563,16 @@ int64_t DescribeDCDBInstanceDetailResponse::GetExclusterType() const
 bool DescribeDCDBInstanceDetailResponse::ExclusterTypeHasBeenSet() const
 {
     return m_exclusterTypeHasBeenSet;
+}
+
+int64_t DescribeDCDBInstanceDetailResponse::GetRsAccessStrategy() const
+{
+    return m_rsAccessStrategy;
+}
+
+bool DescribeDCDBInstanceDetailResponse::RsAccessStrategyHasBeenSet() const
+{
+    return m_rsAccessStrategyHasBeenSet;
 }
 
 

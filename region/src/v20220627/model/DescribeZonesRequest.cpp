@@ -23,7 +23,8 @@ using namespace TencentCloud::Region::V20220627::Model;
 using namespace std;
 
 DescribeZonesRequest::DescribeZonesRequest() :
-    m_productHasBeenSet(false)
+    m_productHasBeenSet(false),
+    m_sceneHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeZonesRequest::ToJsonString() const
         string key = "Product";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_product.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Scene";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scene, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeZonesRequest::SetProduct(const string& _product)
 bool DescribeZonesRequest::ProductHasBeenSet() const
 {
     return m_productHasBeenSet;
+}
+
+int64_t DescribeZonesRequest::GetScene() const
+{
+    return m_scene;
+}
+
+void DescribeZonesRequest::SetScene(const int64_t& _scene)
+{
+    m_scene = _scene;
+    m_sceneHasBeenSet = true;
+}
+
+bool DescribeZonesRequest::SceneHasBeenSet() const
+{
+    return m_sceneHasBeenSet;
 }
 
 

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool CertificatePrivateKeyHasBeenSet() const;
 
                     /**
-                     * 获取证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。
-                     * @return CertificateType 证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。
+                     * 获取证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
+                     * @return CertificateType 证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
                      */
                     std::string GetCertificateType() const;
 
                     /**
-                     * 设置证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。
-                     * @param CertificateType 证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。
+                     * 设置证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
+                     * @param CertificateType 证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
                      */
                     void SetCertificateType(const std::string& _certificateType);
 
@@ -183,7 +183,7 @@ namespace TencentCloud
                     bool m_certificatePrivateKeyHasBeenSet;
 
                     /**
-                     * 证书类型，默认 SVR。CA = 客户端证书，SVR = 服务器证书。
+                     * 证书类型，默认 SVR。CA = CA证书，SVR = 服务器证书。
                      */
                     std::string m_certificateType;
                     bool m_certificateTypeHasBeenSet;

@@ -731,6 +731,20 @@ namespace TencentCloud
                      */
                     bool ExclusterTypeHasBeenSet() const;
 
+                    /**
+                     * 获取VPC就近访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RsAccessStrategy VPC就近访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRsAccessStrategy() const;
+
+                    /**
+                     * 判断参数 RsAccessStrategy 是否已赋值
+                     * @return RsAccessStrategy 是否已赋值
+                     */
+                    bool RsAccessStrategyHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1074,6 +1088,13 @@ namespace TencentCloud
                      */
                     int64_t m_exclusterType;
                     bool m_exclusterTypeHasBeenSet;
+
+                    /**
+                     * VPC就近访问
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_rsAccessStrategy;
+                    bool m_rsAccessStrategyHasBeenSet;
 
                 };
             }

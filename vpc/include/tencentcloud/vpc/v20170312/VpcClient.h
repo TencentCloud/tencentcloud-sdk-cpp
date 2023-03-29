@@ -3590,7 +3590,7 @@ LimitTypes取值范围：
                 DisassociateVpcEndPointSecurityGroupsOutcomeCallable DisassociateVpcEndPointSecurityGroupsCallable(const Model::DisassociateVpcEndPointSecurityGroupsRequest& request);
 
                 /**
-                 *本接口(DownloadCustomerGatewayConfiguration)用于下载VPN通道配置。
+                 *本接口（DownloadCustomerGatewayConfiguration）用于下载VPN通道配置。
                  * @param req DownloadCustomerGatewayConfigurationRequest
                  * @return DownloadCustomerGatewayConfigurationOutcome
                  */

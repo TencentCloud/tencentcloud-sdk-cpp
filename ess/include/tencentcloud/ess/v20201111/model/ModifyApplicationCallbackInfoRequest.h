@@ -21,6 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ess/v20201111/model/UserInfo.h>
+#include <tencentcloud/ess/v20201111/model/CallbackInfo.h>
 
 
 namespace TencentCloud
@@ -42,7 +44,79 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取调用方用户信息，userId 必填
+                     * @return Operator 调用方用户信息，userId 必填
+                     */
+                    UserInfo GetOperator() const;
+
+                    /**
+                     * 设置调用方用户信息，userId 必填
+                     * @param Operator 调用方用户信息，userId 必填
+                     */
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                    /**
+                     * 获取操作类型：1-新增，2-删除
+                     * @return OperateType 操作类型：1-新增，2-删除
+                     */
+                    int64_t GetOperateType() const;
+
+                    /**
+                     * 设置操作类型：1-新增，2-删除
+                     * @param OperateType 操作类型：1-新增，2-删除
+                     */
+                    void SetOperateType(const int64_t& _operateType);
+
+                    /**
+                     * 判断参数 OperateType 是否已赋值
+                     * @return OperateType 是否已赋值
+                     */
+                    bool OperateTypeHasBeenSet() const;
+
+                    /**
+                     * 获取回调信息
+                     * @return CallbackInfo 回调信息
+                     */
+                    CallbackInfo GetCallbackInfo() const;
+
+                    /**
+                     * 设置回调信息
+                     * @param CallbackInfo 回调信息
+                     */
+                    void SetCallbackInfo(const CallbackInfo& _callbackInfo);
+
+                    /**
+                     * 判断参数 CallbackInfo 是否已赋值
+                     * @return CallbackInfo 是否已赋值
+                     */
+                    bool CallbackInfoHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 调用方用户信息，userId 必填
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
+
+                    /**
+                     * 操作类型：1-新增，2-删除
+                     */
+                    int64_t m_operateType;
+                    bool m_operateTypeHasBeenSet;
+
+                    /**
+                     * 回调信息
+                     */
+                    CallbackInfo m_callbackInfo;
+                    bool m_callbackInfoHasBeenSet;
 
                 };
             }

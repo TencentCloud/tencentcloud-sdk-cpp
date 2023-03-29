@@ -14,54 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEEXPORTMACHINESRESPONSE_H_
-#define TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEEXPORTMACHINESRESPONSE_H_
+#ifndef TENCENTCLOUD_CKAFKA_V20190819_MODEL_MODIFYDATAHUBTOPICRESPONSE_H_
+#define TENCENTCLOUD_CKAFKA_V20190819_MODEL_MODIFYDATAHUBTOPICRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/ckafka/v20190819/model/JgwOperateResponse.h>
 
 
 namespace TencentCloud
 {
-    namespace Cwp
+    namespace Ckafka
     {
-        namespace V20180228
+        namespace V20190819
         {
             namespace Model
             {
                 /**
-                * DescribeExportMachines返回参数结构体
+                * ModifyDatahubTopic返回参数结构体
                 */
-                class DescribeExportMachinesResponse : public AbstractModel
+                class ModifyDatahubTopicResponse : public AbstractModel
                 {
                 public:
-                    DescribeExportMachinesResponse();
-                    ~DescribeExportMachinesResponse() = default;
+                    ModifyDatahubTopicResponse();
+                    ~ModifyDatahubTopicResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
-                     * @return TaskId 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
+                     * 获取返回结果集
+                     * @return Result 返回结果集
                      */
-                    std::string GetTaskId() const;
+                    JgwOperateResponse GetResult() const;
 
                     /**
-                     * 判断参数 TaskId 是否已赋值
-                     * @return TaskId 是否已赋值
+                     * 判断参数 Result 是否已赋值
+                     * @return Result 是否已赋值
                      */
-                    bool TaskIdHasBeenSet() const;
+                    bool ResultHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
+                     * 返回结果集
                      */
-                    std::string m_taskId;
-                    bool m_taskIdHasBeenSet;
+                    JgwOperateResponse m_result;
+                    bool m_resultHasBeenSet;
 
                 };
             }
@@ -69,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_CWP_V20180228_MODEL_DESCRIBEEXPORTMACHINESRESPONSE_H_
+#endif // !TENCENTCLOUD_CKAFKA_V20190819_MODEL_MODIFYDATAHUBTOPICRESPONSE_H_

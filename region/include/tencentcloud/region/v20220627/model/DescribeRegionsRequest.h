@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool ProductHasBeenSet() const;
 
+                    /**
+                     * 获取不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单
+                     * @return Scene 不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单
+                     */
+                    int64_t GetScene() const;
+
+                    /**
+                     * 设置不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单
+                     * @param Scene 不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单
+                     */
+                    void SetScene(const int64_t& _scene);
+
+                    /**
+                     * 判断参数 Scene 是否已赋值
+                     * @return Scene 是否已赋值
+                     */
+                    bool SceneHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_product;
                     bool m_productHasBeenSet;
+
+                    /**
+                     * 不传或者0表示不查询【可选业务白名单】，1表示查询【可选业务白名单】，该参数设置了1，只有在业务白名单查不到情况下，才会查该白名单
+                     */
+                    int64_t m_scene;
+                    bool m_sceneHasBeenSet;
 
                 };
             }

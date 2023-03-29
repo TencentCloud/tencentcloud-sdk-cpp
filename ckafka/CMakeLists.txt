@@ -273,6 +273,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/AnalyseParam.h
   include/tencentcloud/ckafka/v20190819/model/BatchModifyTopicInfo.h
   include/tencentcloud/ckafka/v20190819/model/DescribeRouteResponse.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTopicResponse.h
   include/tencentcloud/ckafka/v20190819/model/EsModifyConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h
   include/tencentcloud/ckafka/v20190819/model/InstanceChargeParam.h
@@ -297,6 +298,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/DescribeAclRuleRequest.h
   include/tencentcloud/ckafka/v20190819/model/MongoDBParam.h
   include/tencentcloud/ckafka/v20190819/model/TopicParam.h
+  include/tencentcloud/ckafka/v20190819/model/ModifyDatahubTopicRequest.h
   include/tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h
   include/tencentcloud/ckafka/v20190819/model/SecondaryAnalyseParam.h
   include/tencentcloud/ckafka/v20190819/model/CreateInstancePreRequest.h
@@ -578,6 +580,7 @@ set(ckafka_src
   src/v20190819/model/AnalyseParam.cpp
   src/v20190819/model/BatchModifyTopicInfo.cpp
   src/v20190819/model/DescribeRouteResponse.cpp
+  src/v20190819/model/ModifyDatahubTopicResponse.cpp
   src/v20190819/model/EsModifyConnectParam.cpp
   src/v20190819/model/ModifyConnectResourceResponse.cpp
   src/v20190819/model/InstanceChargeParam.cpp
@@ -602,6 +605,7 @@ set(ckafka_src
   src/v20190819/model/DescribeAclRuleRequest.cpp
   src/v20190819/model/MongoDBParam.cpp
   src/v20190819/model/TopicParam.cpp
+  src/v20190819/model/ModifyDatahubTopicRequest.cpp
   src/v20190819/model/ModifyTopicAttributesRequest.cpp
   src/v20190819/model/SecondaryAnalyseParam.cpp
   src/v20190819/model/CreateInstancePreRequest.cpp

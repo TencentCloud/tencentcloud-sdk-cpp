@@ -42,7 +42,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/RoomListItem.h
   include/tencentcloud/tiw/v20190919/model/ModifyWhiteboardBucketConfigRequest.h
   include/tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyResponse.h
-  include/tencentcloud/tiw/v20190919/model/RoomUsageDataItem.h
+  include/tencentcloud/tiw/v20190919/model/DescribeRecordSearchResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeAPIServiceRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h
   include/tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskRequest.h
@@ -59,6 +59,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeApplicationUsageResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeAPIServiceResponse.h
   include/tencentcloud/tiw/v20190919/model/TimeValue.h
+  include/tencentcloud/tiw/v20190919/model/RecordTaskResult.h
   include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardBucketConfigRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeUsageSummaryResponse.h
   include/tencentcloud/tiw/v20190919/model/DescribeApplicationInfosRequest.h
@@ -99,6 +100,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/StartOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeUserStatusRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h
+  include/tencentcloud/tiw/v20190919/model/RecordTaskSearchResult.h
   include/tencentcloud/tiw/v20190919/model/SetTranscodeCallbackResponse.h
   include/tencentcloud/tiw/v20190919/model/StopOnlineRecordRequest.h
   include/tencentcloud/tiw/v20190919/model/SetOfflineRecordCallbackRequest.h
@@ -110,6 +112,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/DescribeTIWDailyUsageResponse.h
   include/tencentcloud/tiw/v20190919/model/Concat.h
   include/tencentcloud/tiw/v20190919/model/DescribeWhiteboardApplicationConfigRequest.h
+  include/tencentcloud/tiw/v20190919/model/RoomUsageDataItem.h
   include/tencentcloud/tiw/v20190919/model/SnapshotCOS.h
   include/tencentcloud/tiw/v20190919/model/CreateVideoGenerationTaskResponse.h
   include/tencentcloud/tiw/v20190919/model/Whiteboard.h
@@ -158,6 +161,7 @@ set(tiw_public_header_model
   include/tencentcloud/tiw/v20190919/model/CreateApplicationResponse.h
   include/tencentcloud/tiw/v20190919/model/StopWhiteboardPushRequest.h
   include/tencentcloud/tiw/v20190919/model/DescribeOfflineRecordRequest.h
+  include/tencentcloud/tiw/v20190919/model/DescribeRecordSearchRequest.h
   )
 
 set(tiw_src
@@ -185,7 +189,7 @@ set(tiw_src
   src/v20190919/model/RoomListItem.cpp
   src/v20190919/model/ModifyWhiteboardBucketConfigRequest.cpp
   src/v20190919/model/SetOnlineRecordCallbackKeyResponse.cpp
-  src/v20190919/model/RoomUsageDataItem.cpp
+  src/v20190919/model/DescribeRecordSearchResponse.cpp
   src/v20190919/model/DescribeAPIServiceRequest.cpp
   src/v20190919/model/DescribeQualityMetricsRequest.cpp
   src/v20190919/model/CreateVideoGenerationTaskRequest.cpp
@@ -202,6 +206,7 @@ set(tiw_src
   src/v20190919/model/DescribeApplicationUsageResponse.cpp
   src/v20190919/model/DescribeAPIServiceResponse.cpp
   src/v20190919/model/TimeValue.cpp
+  src/v20190919/model/RecordTaskResult.cpp
   src/v20190919/model/DescribeWhiteboardBucketConfigRequest.cpp
   src/v20190919/model/DescribeUsageSummaryResponse.cpp
   src/v20190919/model/DescribeApplicationInfosRequest.cpp
@@ -242,6 +247,7 @@ set(tiw_src
   src/v20190919/model/StartOnlineRecordRequest.cpp
   src/v20190919/model/DescribeUserStatusRequest.cpp
   src/v20190919/model/DescribeOnlineRecordCallbackRequest.cpp
+  src/v20190919/model/RecordTaskSearchResult.cpp
   src/v20190919/model/SetTranscodeCallbackResponse.cpp
   src/v20190919/model/StopOnlineRecordRequest.cpp
   src/v20190919/model/SetOfflineRecordCallbackRequest.cpp
@@ -253,6 +259,7 @@ set(tiw_src
   src/v20190919/model/DescribeTIWDailyUsageResponse.cpp
   src/v20190919/model/Concat.cpp
   src/v20190919/model/DescribeWhiteboardApplicationConfigRequest.cpp
+  src/v20190919/model/RoomUsageDataItem.cpp
   src/v20190919/model/SnapshotCOS.cpp
   src/v20190919/model/CreateVideoGenerationTaskResponse.cpp
   src/v20190919/model/Whiteboard.cpp
@@ -301,6 +308,7 @@ set(tiw_src
   src/v20190919/model/CreateApplicationResponse.cpp
   src/v20190919/model/StopWhiteboardPushRequest.cpp
   src/v20190919/model/DescribeOfflineRecordRequest.cpp
+  src/v20190919/model/DescribeRecordSearchRequest.cpp
   )
 
 set(tiw_include

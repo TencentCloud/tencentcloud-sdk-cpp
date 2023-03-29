@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出文件下载链接地址
-                     * @return DownloadUrl 导出文件下载链接地址
+                     * 获取该参数已废弃
+                     * @return DownloadUrl 该参数已废弃
                      */
                     std::string GetDownloadUrl() const;
 
@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取导出本次漏洞检测Excel的任务Id（不同于入参的本次漏洞检测任务id）
-                     * @return TaskId 导出本次漏洞检测Excel的任务Id（不同于入参的本次漏洞检测任务id）
+                     * 获取任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址（不同于入参的本次漏洞检测任务id）
+                     * @return TaskId 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址（不同于入参的本次漏洞检测任务id）
                      */
                     std::string GetTaskId() const;
 
@@ -70,13 +70,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导出文件下载链接地址
+                     * 该参数已废弃
                      */
                     std::string m_downloadUrl;
                     bool m_downloadUrlHasBeenSet;
 
                     /**
-                     * 导出本次漏洞检测Excel的任务Id（不同于入参的本次漏洞检测任务id）
+                     * 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址（不同于入参的本次漏洞检测任务id）
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

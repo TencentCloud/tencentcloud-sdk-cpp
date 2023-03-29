@@ -41,7 +41,8 @@ DescribeManagerDetailResponse::DescribeManagerDetailResponse() :
     m_managerDepartmentHasBeenSet(false),
     m_companyInfoHasBeenSet(false),
     m_companyIdHasBeenSet(false),
-    m_managerIdHasBeenSet(false)
+    m_managerIdHasBeenSet(false),
+    m_statusInfoHasBeenSet(false)
 {
 }
 
@@ -266,6 +267,26 @@ CoreInternalOutcome DescribeManagerDetailResponse::Deserialize(const string &pay
         m_managerIdHasBeenSet = true;
     }
 
+    if (rsp.HasMember("StatusInfo") && !rsp["StatusInfo"].IsNull())
+    {
+        if (!rsp["StatusInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `StatusInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["StatusInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            ManagerStatusInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_statusInfo.push_back(item);
+        }
+        m_statusInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -419,6 +440,21 @@ string DescribeManagerDetailResponse::ToJsonString() const
         string key = "ManagerId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_managerId, allocator);
+    }
+
+    if (m_statusInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_statusInfo.begin(); itr != m_statusInfo.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -611,6 +647,16 @@ int64_t DescribeManagerDetailResponse::GetManagerId() const
 bool DescribeManagerDetailResponse::ManagerIdHasBeenSet() const
 {
     return m_managerIdHasBeenSet;
+}
+
+vector<ManagerStatusInfo> DescribeManagerDetailResponse::GetStatusInfo() const
+{
+    return m_statusInfo;
+}
+
+bool DescribeManagerDetailResponse::StatusInfoHasBeenSet() const
+{
+    return m_statusInfoHasBeenSet;
 }
 
 

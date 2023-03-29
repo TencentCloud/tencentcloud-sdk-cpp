@@ -24,9 +24,9 @@ using namespace std;
 
 UpdateMachineTagsRequest::UpdateMachineTagsRequest() :
     m_quuidHasBeenSet(false),
+    m_tagIdsHasBeenSet(false),
     m_machineRegionHasBeenSet(false),
-    m_machineAreaHasBeenSet(false),
-    m_tagIdsHasBeenSet(false)
+    m_machineAreaHasBeenSet(false)
 {
 }
 
@@ -45,6 +45,19 @@ string UpdateMachineTagsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_quuid.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_tagIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TagIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_tagIds.begin(); itr != m_tagIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
+        }
+    }
+
     if (m_machineRegionHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -59,19 +72,6 @@ string UpdateMachineTagsRequest::ToJsonString() const
         string key = "MachineArea";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_machineArea.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_tagIdsHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TagIds";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
-
-        for (auto itr = m_tagIds.begin(); itr != m_tagIds.end(); ++itr)
-        {
-            d[key.c_str()].PushBack(rapidjson::Value().SetUint64(*itr), allocator);
-        }
     }
 
 
@@ -96,6 +96,22 @@ void UpdateMachineTagsRequest::SetQuuid(const string& _quuid)
 bool UpdateMachineTagsRequest::QuuidHasBeenSet() const
 {
     return m_quuidHasBeenSet;
+}
+
+vector<uint64_t> UpdateMachineTagsRequest::GetTagIds() const
+{
+    return m_tagIds;
+}
+
+void UpdateMachineTagsRequest::SetTagIds(const vector<uint64_t>& _tagIds)
+{
+    m_tagIds = _tagIds;
+    m_tagIdsHasBeenSet = true;
+}
+
+bool UpdateMachineTagsRequest::TagIdsHasBeenSet() const
+{
+    return m_tagIdsHasBeenSet;
 }
 
 string UpdateMachineTagsRequest::GetMachineRegion() const
@@ -128,22 +144,6 @@ void UpdateMachineTagsRequest::SetMachineArea(const string& _machineArea)
 bool UpdateMachineTagsRequest::MachineAreaHasBeenSet() const
 {
     return m_machineAreaHasBeenSet;
-}
-
-vector<uint64_t> UpdateMachineTagsRequest::GetTagIds() const
-{
-    return m_tagIds;
-}
-
-void UpdateMachineTagsRequest::SetTagIds(const vector<uint64_t>& _tagIds)
-{
-    m_tagIds = _tagIds;
-    m_tagIdsHasBeenSet = true;
-}
-
-bool UpdateMachineTagsRequest::TagIdsHasBeenSet() const
-{
-    return m_tagIdsHasBeenSet;
 }
 
 

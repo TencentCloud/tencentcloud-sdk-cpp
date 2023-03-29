@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取管理人姓名
-                     * @return ManagerName 管理人姓名
+                     * 获取管理人姓名（将废弃），请使用SearchKey
+                     * @return ManagerName 管理人姓名（将废弃），请使用SearchKey
                      */
                     std::string GetManagerName() const;
 
                     /**
-                     * 设置管理人姓名
-                     * @param ManagerName 管理人姓名
+                     * 设置管理人姓名（将废弃），请使用SearchKey
+                     * @param ManagerName 管理人姓名（将废弃），请使用SearchKey
                      */
                     void SetManagerName(const std::string& _managerName);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool ManagerNameHasBeenSet() const;
 
                     /**
-                     * 获取模糊查询管理人邮箱
-                     * @return ManagerMail 模糊查询管理人邮箱
+                     * 获取模糊查询管理人邮箱（将废弃），请使用SearchKey
+                     * @return ManagerMail 模糊查询管理人邮箱（将废弃），请使用SearchKey
                      */
                     std::string GetManagerMail() const;
 
                     /**
-                     * 设置模糊查询管理人邮箱
-                     * @param ManagerMail 模糊查询管理人邮箱
+                     * 设置模糊查询管理人邮箱（将废弃），请使用SearchKey
+                     * @param ManagerMail 模糊查询管理人邮箱（将废弃），请使用SearchKey
                      */
                     void SetManagerMail(const std::string& _managerMail);
 
@@ -179,14 +179,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取管理人姓名/邮箱/部门精准匹配
-                     * @return SearchKey 管理人姓名/邮箱/部门精准匹配
+                     * 获取管理人姓/管理人名/邮箱/部门精准匹配
+                     * @return SearchKey 管理人姓/管理人名/邮箱/部门精准匹配
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置管理人姓名/邮箱/部门精准匹配
-                     * @param SearchKey 管理人姓名/邮箱/部门精准匹配
+                     * 设置管理人姓/管理人名/邮箱/部门精准匹配
+                     * @param SearchKey 管理人姓/管理人名/邮箱/部门精准匹配
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -217,13 +217,13 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 管理人姓名
+                     * 管理人姓名（将废弃），请使用SearchKey
                      */
                     std::string m_managerName;
                     bool m_managerNameHasBeenSet;
 
                     /**
-                     * 模糊查询管理人邮箱
+                     * 模糊查询管理人邮箱（将废弃），请使用SearchKey
                      */
                     std::string m_managerMail;
                     bool m_managerMailHasBeenSet;
@@ -242,7 +242,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 管理人姓名/邮箱/部门精准匹配
+                     * 管理人姓/管理人名/邮箱/部门精准匹配
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

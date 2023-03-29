@@ -3307,7 +3307,7 @@ namespace TencentCloud
                 ExportReverseShellEventsOutcomeCallable ExportReverseShellEventsCallable(const Model::ExportReverseShellEventsRequest& request);
 
                 /**
-                 *根据任务id导出指定扫描任务详情 
+                 *根据任务id导出指定扫描任务详情
                  * @param req ExportScanTaskDetailsRequest
                  * @return ExportScanTaskDetailsOutcome
                  */

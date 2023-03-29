@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ssl/v20191205/model/CompanyInfo.h>
+#include <tencentcloud/ssl/v20191205/model/ManagerStatusInfo.h>
 
 
 namespace TencentCloud
@@ -264,6 +265,18 @@ namespace TencentCloud
                      */
                     bool ManagerIdHasBeenSet() const;
 
+                    /**
+                     * 获取审核状态详细信息
+                     * @return StatusInfo 审核状态详细信息
+                     */
+                    std::vector<ManagerStatusInfo> GetStatusInfo() const;
+
+                    /**
+                     * 判断参数 StatusInfo 是否已赋值
+                     * @return StatusInfo 是否已赋值
+                     */
+                    bool StatusInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -375,6 +388,12 @@ namespace TencentCloud
                      */
                     int64_t m_managerId;
                     bool m_managerIdHasBeenSet;
+
+                    /**
+                     * 审核状态详细信息
+                     */
+                    std::vector<ManagerStatusInfo> m_statusInfo;
+                    bool m_statusInfoHasBeenSet;
 
                 };
             }

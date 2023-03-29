@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取分账标签键
-                     * @return TagKey 分账标签键
+                     * 获取分账标签键，用户自定义
+                     * @return TagKey 分账标签键，用户自定义
                      */
                     std::string GetTagKey() const;
 
                     /**
-                     * 设置分账标签键
-                     * @param TagKey 分账标签键
+                     * 设置分账标签键，用户自定义
+                     * @param TagKey 分账标签键，用户自定义
                      */
                     void SetTagKey(const std::string& _tagKey);
 
@@ -147,7 +147,7 @@ namespace TencentCloud
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 分账标签键
+                     * 分账标签键，用户自定义
                      */
                     std::string m_tagKey;
                     bool m_tagKeyHasBeenSet;

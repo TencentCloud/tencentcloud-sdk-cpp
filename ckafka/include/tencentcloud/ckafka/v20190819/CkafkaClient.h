@@ -159,6 +159,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyConnectResourceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTaskResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTopicRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/ModifyDatahubTopicResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyGroupOffsetsResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyInstanceAttributesRequest.h>
@@ -389,6 +391,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyDatahubTaskResponse> ModifyDatahubTaskOutcome;
                 typedef std::future<ModifyDatahubTaskOutcome> ModifyDatahubTaskOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyDatahubTaskRequest&, ModifyDatahubTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatahubTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::ModifyDatahubTopicResponse> ModifyDatahubTopicOutcome;
+                typedef std::future<ModifyDatahubTopicOutcome> ModifyDatahubTopicOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::ModifyDatahubTopicRequest&, ModifyDatahubTopicOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDatahubTopicAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyGroupOffsetsResponse> ModifyGroupOffsetsOutcome;
                 typedef std::future<ModifyGroupOffsetsOutcome> ModifyGroupOffsetsOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyGroupOffsetsRequest&, ModifyGroupOffsetsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyGroupOffsetsAsyncHandler;
@@ -1023,6 +1028,15 @@ namespace TencentCloud
                 ModifyDatahubTaskOutcome ModifyDatahubTask(const Model::ModifyDatahubTaskRequest &request);
                 void ModifyDatahubTaskAsync(const Model::ModifyDatahubTaskRequest& request, const ModifyDatahubTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyDatahubTaskOutcomeCallable ModifyDatahubTaskCallable(const Model::ModifyDatahubTaskRequest& request);
+
+                /**
+                 *修改Datahub主题属性
+                 * @param req ModifyDatahubTopicRequest
+                 * @return ModifyDatahubTopicOutcome
+                 */
+                ModifyDatahubTopicOutcome ModifyDatahubTopic(const Model::ModifyDatahubTopicRequest &request);
+                void ModifyDatahubTopicAsync(const Model::ModifyDatahubTopicRequest& request, const ModifyDatahubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ModifyDatahubTopicOutcomeCallable ModifyDatahubTopicCallable(const Model::ModifyDatahubTopicRequest& request);
 
                 /**
                  *设置Groups 消费分组offset

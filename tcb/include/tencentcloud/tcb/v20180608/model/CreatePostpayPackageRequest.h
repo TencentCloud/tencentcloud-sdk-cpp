@@ -244,6 +244,42 @@ namespace TencentCloud
                      */
                     bool FlagHasBeenSet() const;
 
+                    /**
+                     * 获取环境别名，无字符类型限制
+                     * @return EnvAlias 环境别名，无字符类型限制
+                     */
+                    std::string GetEnvAlias() const;
+
+                    /**
+                     * 设置环境别名，无字符类型限制
+                     * @param EnvAlias 环境别名，无字符类型限制
+                     */
+                    void SetEnvAlias(const std::string& _envAlias);
+
+                    /**
+                     * 判断参数 EnvAlias 是否已赋值
+                     * @return EnvAlias 是否已赋值
+                     */
+                    bool EnvAliasHasBeenSet() const;
+
+                    /**
+                     * 获取附加字段，用于透传额外的自定义信息
+                     * @return Extra 附加字段，用于透传额外的自定义信息
+                     */
+                    std::string GetExtra() const;
+
+                    /**
+                     * 设置附加字段，用于透传额外的自定义信息
+                     * @param Extra 附加字段，用于透传额外的自定义信息
+                     */
+                    void SetExtra(const std::string& _extra);
+
+                    /**
+                     * 判断参数 Extra 是否已赋值
+                     * @return Extra 是否已赋值
+                     */
+                    bool ExtraHasBeenSet() const;
+
                 private:
 
                     /**
@@ -309,6 +345,18 @@ namespace TencentCloud
                      */
                     std::string m_flag;
                     bool m_flagHasBeenSet;
+
+                    /**
+                     * 环境别名，无字符类型限制
+                     */
+                    std::string m_envAlias;
+                    bool m_envAliasHasBeenSet;
+
+                    /**
+                     * 附加字段，用于透传额外的自定义信息
+                     */
+                    std::string m_extra;
+                    bool m_extraHasBeenSet;
 
                 };
             }

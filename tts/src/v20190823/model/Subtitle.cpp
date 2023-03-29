@@ -25,7 +25,8 @@ Subtitle::Subtitle() :
     m_beginTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_beginIndexHasBeenSet(false),
-    m_endIndexHasBeenSet(false)
+    m_endIndexHasBeenSet(false),
+    m_phonemeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome Subtitle::Deserialize(const rapidjson::Value &value)
         m_endIndexHasBeenSet = true;
     }
 
+    if (value.HasMember("Phoneme") && !value["Phoneme"].IsNull())
+    {
+        if (!value["Phoneme"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Subtitle.Phoneme` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_phoneme = string(value["Phoneme"].GetString());
+        m_phonemeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void Subtitle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "EndIndex";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_endIndex, allocator);
+    }
+
+    if (m_phonemeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Phoneme";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_phoneme.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void Subtitle::SetEndIndex(const int64_t& _endIndex)
 bool Subtitle::EndIndexHasBeenSet() const
 {
     return m_endIndexHasBeenSet;
+}
+
+string Subtitle::GetPhoneme() const
+{
+    return m_phoneme;
+}
+
+void Subtitle::SetPhoneme(const string& _phoneme)
+{
+    m_phoneme = _phoneme;
+    m_phonemeHasBeenSet = true;
+}
+
+bool Subtitle::PhonemeHasBeenSet() const
+{
+    return m_phonemeHasBeenSet;
 }
 

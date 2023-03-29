@@ -57,6 +57,8 @@
 #include <tencentcloud/tiw/v20190919/model/DescribePostpaidUsageResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeQualityMetricsResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeRecordSearchRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeRecordSearchResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeRoomListRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeRoomListResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskRequest.h>
@@ -196,6 +198,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeQualityMetricsResponse> DescribeQualityMetricsOutcome;
                 typedef std::future<DescribeQualityMetricsOutcome> DescribeQualityMetricsOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeQualityMetricsRequest&, DescribeQualityMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQualityMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecordSearchResponse> DescribeRecordSearchOutcome;
+                typedef std::future<DescribeRecordSearchOutcome> DescribeRecordSearchOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeRecordSearchRequest&, DescribeRecordSearchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecordSearchAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomListResponse> DescribeRoomListOutcome;
                 typedef std::future<DescribeRoomListOutcome> DescribeRoomListOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeRoomListRequest&, DescribeRoomListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomListAsyncHandler;
@@ -462,6 +467,15 @@ namespace TencentCloud
                 DescribeQualityMetricsOutcome DescribeQualityMetrics(const Model::DescribeQualityMetricsRequest &request);
                 void DescribeQualityMetricsAsync(const Model::DescribeQualityMetricsRequest& request, const DescribeQualityMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeQualityMetricsOutcomeCallable DescribeQualityMetricsCallable(const Model::DescribeQualityMetricsRequest& request);
+
+                /**
+                 *根据房间号搜索实时录制任务
+                 * @param req DescribeRecordSearchRequest
+                 * @return DescribeRecordSearchOutcome
+                 */
+                DescribeRecordSearchOutcome DescribeRecordSearch(const Model::DescribeRecordSearchRequest &request);
+                void DescribeRecordSearchAsync(const Model::DescribeRecordSearchRequest& request, const DescribeRecordSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecordSearchOutcomeCallable DescribeRecordSearchCallable(const Model::DescribeRecordSearchRequest& request);
 
                 /**
                  *查询白板房间列表

@@ -77,7 +77,8 @@ DescribeDBInstanceDetailResponse::DescribeDBInstanceDetailResponse() :
     m_encryptStatusHasBeenSet(false),
     m_replicaConfigHasBeenSet(false),
     m_replicaStatusHasBeenSet(false),
-    m_exclusterTypeHasBeenSet(false)
+    m_exclusterTypeHasBeenSet(false),
+    m_rsAccessStrategyHasBeenSet(false)
 {
 }
 
@@ -692,6 +693,16 @@ CoreInternalOutcome DescribeDBInstanceDetailResponse::Deserialize(const string &
         m_exclusterTypeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("RsAccessStrategy") && !rsp["RsAccessStrategy"].IsNull())
+    {
+        if (!rsp["RsAccessStrategy"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RsAccessStrategy` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_rsAccessStrategy = rsp["RsAccessStrategy"].GetInt64();
+        m_rsAccessStrategyHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1153,6 +1164,14 @@ string DescribeDBInstanceDetailResponse::ToJsonString() const
         string key = "ExclusterType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_exclusterType, allocator);
+    }
+
+    if (m_rsAccessStrategyHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RsAccessStrategy";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_rsAccessStrategy, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -1705,6 +1724,16 @@ int64_t DescribeDBInstanceDetailResponse::GetExclusterType() const
 bool DescribeDBInstanceDetailResponse::ExclusterTypeHasBeenSet() const
 {
     return m_exclusterTypeHasBeenSet;
+}
+
+int64_t DescribeDBInstanceDetailResponse::GetRsAccessStrategy() const
+{
+    return m_rsAccessStrategy;
+}
+
+bool DescribeDBInstanceDetailResponse::RsAccessStrategyHasBeenSet() const
+{
+    return m_rsAccessStrategyHasBeenSet;
 }
 
 

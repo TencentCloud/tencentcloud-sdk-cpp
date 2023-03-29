@@ -31,7 +31,9 @@ CreatePostpayPackageRequest::CreatePostpayPackageRequest() :
     m_aliasHasBeenSet(false),
     m_channelHasBeenSet(false),
     m_extensionIdHasBeenSet(false),
-    m_flagHasBeenSet(false)
+    m_flagHasBeenSet(false),
+    m_envAliasHasBeenSet(false),
+    m_extraHasBeenSet(false)
 {
 }
 
@@ -112,6 +114,22 @@ string CreatePostpayPackageRequest::ToJsonString() const
         string key = "Flag";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_flag.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_envAliasHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EnvAlias";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_envAlias.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_extraHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Extra";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_extra.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -264,6 +282,38 @@ void CreatePostpayPackageRequest::SetFlag(const string& _flag)
 bool CreatePostpayPackageRequest::FlagHasBeenSet() const
 {
     return m_flagHasBeenSet;
+}
+
+string CreatePostpayPackageRequest::GetEnvAlias() const
+{
+    return m_envAlias;
+}
+
+void CreatePostpayPackageRequest::SetEnvAlias(const string& _envAlias)
+{
+    m_envAlias = _envAlias;
+    m_envAliasHasBeenSet = true;
+}
+
+bool CreatePostpayPackageRequest::EnvAliasHasBeenSet() const
+{
+    return m_envAliasHasBeenSet;
+}
+
+string CreatePostpayPackageRequest::GetExtra() const
+{
+    return m_extra;
+}
+
+void CreatePostpayPackageRequest::SetExtra(const string& _extra)
+{
+    m_extra = _extra;
+    m_extraHasBeenSet = true;
+}
+
+bool CreatePostpayPackageRequest::ExtraHasBeenSet() const
+{
+    return m_extraHasBeenSet;
 }
 
 

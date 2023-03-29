@@ -771,6 +771,49 @@ TiwClient::DescribeQualityMetricsOutcomeCallable TiwClient::DescribeQualityMetri
     return task->get_future();
 }
 
+TiwClient::DescribeRecordSearchOutcome TiwClient::DescribeRecordSearch(const DescribeRecordSearchRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecordSearch");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecordSearchResponse rsp = DescribeRecordSearchResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecordSearchOutcome(rsp);
+        else
+            return DescribeRecordSearchOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecordSearchOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeRecordSearchAsync(const DescribeRecordSearchRequest& request, const DescribeRecordSearchAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecordSearch(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeRecordSearchOutcomeCallable TiwClient::DescribeRecordSearchCallable(const DescribeRecordSearchRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecordSearchOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecordSearch(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribeRoomListOutcome TiwClient::DescribeRoomList(const DescribeRoomListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRoomList");

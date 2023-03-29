@@ -61,6 +61,24 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
+                     * 获取标签ID，该操作会覆盖原有的标签列表
+                     * @return TagIds 标签ID，该操作会覆盖原有的标签列表
+                     */
+                    std::vector<uint64_t> GetTagIds() const;
+
+                    /**
+                     * 设置标签ID，该操作会覆盖原有的标签列表
+                     * @param TagIds 标签ID，该操作会覆盖原有的标签列表
+                     */
+                    void SetTagIds(const std::vector<uint64_t>& _tagIds);
+
+                    /**
+                     * 判断参数 TagIds 是否已赋值
+                     * @return TagIds 是否已赋值
+                     */
+                    bool TagIdsHasBeenSet() const;
+
+                    /**
                      * 获取服务器地区 如: ap-guangzhou
                      * @return MachineRegion 服务器地区 如: ap-guangzhou
                      */
@@ -96,24 +114,6 @@ namespace TencentCloud
                      */
                     bool MachineAreaHasBeenSet() const;
 
-                    /**
-                     * 获取标签ID，该操作会覆盖原有的标签列表
-                     * @return TagIds 标签ID，该操作会覆盖原有的标签列表
-                     */
-                    std::vector<uint64_t> GetTagIds() const;
-
-                    /**
-                     * 设置标签ID，该操作会覆盖原有的标签列表
-                     * @param TagIds 标签ID，该操作会覆盖原有的标签列表
-                     */
-                    void SetTagIds(const std::vector<uint64_t>& _tagIds);
-
-                    /**
-                     * 判断参数 TagIds 是否已赋值
-                     * @return TagIds 是否已赋值
-                     */
-                    bool TagIdsHasBeenSet() const;
-
                 private:
 
                     /**
@@ -121,6 +121,12 @@ namespace TencentCloud
                      */
                     std::string m_quuid;
                     bool m_quuidHasBeenSet;
+
+                    /**
+                     * 标签ID，该操作会覆盖原有的标签列表
+                     */
+                    std::vector<uint64_t> m_tagIds;
+                    bool m_tagIdsHasBeenSet;
 
                     /**
                      * 服务器地区 如: ap-guangzhou
@@ -133,12 +139,6 @@ namespace TencentCloud
                      */
                     std::string m_machineArea;
                     bool m_machineAreaHasBeenSet;
-
-                    /**
-                     * 标签ID，该操作会覆盖原有的标签列表
-                     */
-                    std::vector<uint64_t> m_tagIds;
-                    bool m_tagIdsHasBeenSet;
 
                 };
             }

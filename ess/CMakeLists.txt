@@ -46,6 +46,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FlowApproverDetail.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowTemplatesRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowEvidenceReportResponse.h
+  include/tencentcloud/ess/v20201111/model/CallbackInfo.h
   include/tencentcloud/ess/v20201111/model/TemplateInfo.h
   include/tencentcloud/ess/v20201111/model/CreateDocumentResponse.h
   include/tencentcloud/ess/v20201111/model/DescribeIntegrationEmployeesRequest.h
@@ -185,6 +186,7 @@ set(ess_src
   src/v20201111/model/FlowApproverDetail.cpp
   src/v20201111/model/DescribeFlowTemplatesRequest.cpp
   src/v20201111/model/DescribeFlowEvidenceReportResponse.cpp
+  src/v20201111/model/CallbackInfo.cpp
   src/v20201111/model/TemplateInfo.cpp
   src/v20201111/model/CreateDocumentResponse.cpp
   src/v20201111/model/DescribeIntegrationEmployeesRequest.cpp

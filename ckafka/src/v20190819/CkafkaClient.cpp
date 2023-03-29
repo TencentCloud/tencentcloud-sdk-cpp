@@ -2964,6 +2964,49 @@ CkafkaClient::ModifyDatahubTaskOutcomeCallable CkafkaClient::ModifyDatahubTaskCa
     return task->get_future();
 }
 
+CkafkaClient::ModifyDatahubTopicOutcome CkafkaClient::ModifyDatahubTopic(const ModifyDatahubTopicRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDatahubTopic");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDatahubTopicResponse rsp = ModifyDatahubTopicResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDatahubTopicOutcome(rsp);
+        else
+            return ModifyDatahubTopicOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDatahubTopicOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::ModifyDatahubTopicAsync(const ModifyDatahubTopicRequest& request, const ModifyDatahubTopicAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDatahubTopic(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::ModifyDatahubTopicOutcomeCallable CkafkaClient::ModifyDatahubTopicCallable(const ModifyDatahubTopicRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDatahubTopicOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDatahubTopic(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::ModifyGroupOffsetsOutcome CkafkaClient::ModifyGroupOffsets(const ModifyGroupOffsetsRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyGroupOffsets");

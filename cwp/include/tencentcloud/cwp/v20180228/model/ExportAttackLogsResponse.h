@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool DownloadUrlHasBeenSet() const;
 
                     /**
-                     * 获取导出任务ID 可通过ExportTasks接口下载
-                     * @return TaskId 导出任务ID 可通过ExportTasks接口下载
+                     * 获取任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
+                     * @return TaskId 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
                      */
                     std::string GetTaskId() const;
 
@@ -76,7 +76,7 @@ namespace TencentCloud
                     bool m_downloadUrlHasBeenSet;
 
                     /**
-                     * 导出任务ID 可通过ExportTasks接口下载
+                     * 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -543,6 +543,70 @@ namespace TencentCloud
                     bool MediaTypesHasBeenSet() const;
 
                     /**
+                     * 获取媒体文件状态，匹配集合中任意元素。
+<li> Normal：正常；</li>
+<li> SystemForbidden：平台封禁；</li>
+<li> Forbidden：主动封禁。</li>
+                     * @return Status 媒体文件状态，匹配集合中任意元素。
+<li> Normal：正常；</li>
+<li> SystemForbidden：平台封禁；</li>
+<li> Forbidden：主动封禁。</li>
+                     */
+                    std::vector<std::string> GetStatus() const;
+
+                    /**
+                     * 设置媒体文件状态，匹配集合中任意元素。
+<li> Normal：正常；</li>
+<li> SystemForbidden：平台封禁；</li>
+<li> Forbidden：主动封禁。</li>
+                     * @param Status 媒体文件状态，匹配集合中任意元素。
+<li> Normal：正常；</li>
+<li> SystemForbidden：平台封禁；</li>
+<li> Forbidden：主动封禁。</li>
+                     */
+                    void SetStatus(const std::vector<std::string>& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取媒体文件审核结果，匹配集合中任意元素。
+<li> pass：审核通过；</li>
+<li> review：疑似违规，建议复审；</li>
+<li> block：确认违规，建议封禁；</li>
+<li> notModerated：未审核。</li>
+                     * @return ReviewResults 媒体文件审核结果，匹配集合中任意元素。
+<li> pass：审核通过；</li>
+<li> review：疑似违规，建议复审；</li>
+<li> block：确认违规，建议封禁；</li>
+<li> notModerated：未审核。</li>
+                     */
+                    std::vector<std::string> GetReviewResults() const;
+
+                    /**
+                     * 设置媒体文件审核结果，匹配集合中任意元素。
+<li> pass：审核通过；</li>
+<li> review：疑似违规，建议复审；</li>
+<li> block：确认违规，建议封禁；</li>
+<li> notModerated：未审核。</li>
+                     * @param ReviewResults 媒体文件审核结果，匹配集合中任意元素。
+<li> pass：审核通过；</li>
+<li> review：疑似违规，建议复审；</li>
+<li> block：确认违规，建议封禁；</li>
+<li> notModerated：未审核。</li>
+                     */
+                    void SetReviewResults(const std::vector<std::string>& _reviewResults);
+
+                    /**
+                     * 判断参数 ReviewResults 是否已赋值
+                     * @return ReviewResults 是否已赋值
+                     */
+                    bool ReviewResultsHasBeenSet() const;
+
+                    /**
                      * 获取TRTC 应用 ID 集合。匹配集合中的任意元素。
 <li>数组长度限制：10。</li>
                      * @return TrtcSdkAppIds TRTC 应用 ID 集合。匹配集合中的任意元素。
@@ -914,6 +978,25 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_mediaTypes;
                     bool m_mediaTypesHasBeenSet;
+
+                    /**
+                     * 媒体文件状态，匹配集合中任意元素。
+<li> Normal：正常；</li>
+<li> SystemForbidden：平台封禁；</li>
+<li> Forbidden：主动封禁。</li>
+                     */
+                    std::vector<std::string> m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 媒体文件审核结果，匹配集合中任意元素。
+<li> pass：审核通过；</li>
+<li> review：疑似违规，建议复审；</li>
+<li> block：确认违规，建议封禁；</li>
+<li> notModerated：未审核。</li>
+                     */
+                    std::vector<std::string> m_reviewResults;
+                    bool m_reviewResultsHasBeenSet;
 
                     /**
                      * TRTC 应用 ID 集合。匹配集合中的任意元素。

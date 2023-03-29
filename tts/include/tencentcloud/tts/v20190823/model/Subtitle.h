@@ -136,6 +136,28 @@ namespace TencentCloud
                      */
                     bool EndIndexHasBeenSet() const;
 
+                    /**
+                     * 获取该字的音素
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Phoneme 该字的音素
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPhoneme() const;
+
+                    /**
+                     * 设置该字的音素
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Phoneme 该字的音素
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPhoneme(const std::string& _phoneme);
+
+                    /**
+                     * 判断参数 Phoneme 是否已赋值
+                     * @return Phoneme 是否已赋值
+                     */
+                    bool PhonemeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -167,6 +189,13 @@ namespace TencentCloud
                      */
                     int64_t m_endIndex;
                     bool m_endIndexHasBeenSet;
+
+                    /**
+                     * 该字的音素
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_phoneme;
+                    bool m_phonemeHasBeenSet;
 
                 };
             }

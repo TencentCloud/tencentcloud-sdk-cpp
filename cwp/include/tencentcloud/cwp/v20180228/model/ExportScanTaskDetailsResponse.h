@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取导出本次检测Excel的任务Id（不同于入参的本次检测任务id）
-                     * @return TaskId 导出本次检测Excel的任务Id（不同于入参的本次检测任务id）
+                     * 获取任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址(不同于入参的本次检测任务id)
+                     * @return TaskId 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址(不同于入参的本次检测任务id)
                      */
                     std::string GetTaskId() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 导出本次检测Excel的任务Id（不同于入参的本次检测任务id）
+                     * 任务ID,需要到接口“异步导出任务”ExportTasks获取DownloadUrl下载地址(不同于入参的本次检测任务id)
                      */
                     std::string m_taskId;
                     bool m_taskIdHasBeenSet;

@@ -104,14 +104,38 @@ namespace TencentCloud
                     bool FileSystemIdHasBeenSet() const;
 
                     /**
-                     * 获取文件系统状态
-                     * @return LifeCycleState 文件系统状态
+                     * 获取文件系统状态。取值范围：
+- creating:创建中
+- mounting:挂载中
+- create_failed:创建失败
+- available:可使用
+- unserviced:停服中
+- upgrading:升级中
+                     * @return LifeCycleState 文件系统状态。取值范围：
+- creating:创建中
+- mounting:挂载中
+- create_failed:创建失败
+- available:可使用
+- unserviced:停服中
+- upgrading:升级中
                      */
                     std::string GetLifeCycleState() const;
 
                     /**
-                     * 设置文件系统状态
-                     * @param LifeCycleState 文件系统状态
+                     * 设置文件系统状态。取值范围：
+- creating:创建中
+- mounting:挂载中
+- create_failed:创建失败
+- available:可使用
+- unserviced:停服中
+- upgrading:升级中
+                     * @param LifeCycleState 文件系统状态。取值范围：
+- creating:创建中
+- mounting:挂载中
+- create_failed:创建失败
+- available:可使用
+- unserviced:停服中
+- upgrading:升级中
                      */
                     void SetLifeCycleState(const std::string& _lifeCycleState);
 
@@ -410,14 +434,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取文件系统声明周期管理状态
-                     * @return TieringState 文件系统声明周期管理状态
+                     * 获取文件系统生命周期管理状态
+                     * @return TieringState 文件系统生命周期管理状态
                      */
                     std::string GetTieringState() const;
 
                     /**
-                     * 设置文件系统声明周期管理状态
-                     * @param TieringState 文件系统声明周期管理状态
+                     * 设置文件系统生命周期管理状态
+                     * @param TieringState 文件系统生命周期管理状态
                      */
                     void SetTieringState(const std::string& _tieringState);
 
@@ -470,7 +494,13 @@ namespace TencentCloud
                     bool m_fileSystemIdHasBeenSet;
 
                     /**
-                     * 文件系统状态
+                     * 文件系统状态。取值范围：
+- creating:创建中
+- mounting:挂载中
+- create_failed:创建失败
+- available:可使用
+- unserviced:停服中
+- upgrading:升级中
                      */
                     std::string m_lifeCycleState;
                     bool m_lifeCycleStateHasBeenSet;
@@ -572,7 +602,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 文件系统声明周期管理状态
+                     * 文件系统生命周期管理状态
                      */
                     std::string m_tieringState;
                     bool m_tieringStateHasBeenSet;

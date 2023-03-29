@@ -42,6 +42,8 @@ SearchMediaRequest::SearchMediaRequest() :
     m_storageRegionsHasBeenSet(false),
     m_storageClassesHasBeenSet(false),
     m_mediaTypesHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_reviewResultsHasBeenSet(false),
     m_trtcSdkAppIdsHasBeenSet(false),
     m_trtcRoomIdsHasBeenSet(false),
     m_textHasBeenSet(false),
@@ -276,6 +278,32 @@ string SearchMediaRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_mediaTypes.begin(); itr != m_mediaTypes.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_status.begin(); itr != m_status.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_reviewResultsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReviewResults";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_reviewResults.begin(); itr != m_reviewResults.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -678,6 +706,38 @@ void SearchMediaRequest::SetMediaTypes(const vector<string>& _mediaTypes)
 bool SearchMediaRequest::MediaTypesHasBeenSet() const
 {
     return m_mediaTypesHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void SearchMediaRequest::SetStatus(const vector<string>& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool SearchMediaRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+vector<string> SearchMediaRequest::GetReviewResults() const
+{
+    return m_reviewResults;
+}
+
+void SearchMediaRequest::SetReviewResults(const vector<string>& _reviewResults)
+{
+    m_reviewResults = _reviewResults;
+    m_reviewResultsHasBeenSet = true;
+}
+
+bool SearchMediaRequest::ReviewResultsHasBeenSet() const
+{
+    return m_reviewResultsHasBeenSet;
 }
 
 vector<uint64_t> SearchMediaRequest::GetTrtcSdkAppIds() const
