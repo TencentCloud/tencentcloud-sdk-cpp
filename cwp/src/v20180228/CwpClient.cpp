@@ -6748,6 +6748,49 @@ CwpClient::DescribeReverseShellRulesOutcomeCallable CwpClient::DescribeReverseSh
     return task->get_future();
 }
 
+CwpClient::DescribeRiskDnsEventListOutcome CwpClient::DescribeRiskDnsEventList(const DescribeRiskDnsEventListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskDnsEventList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskDnsEventListResponse rsp = DescribeRiskDnsEventListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskDnsEventListOutcome(rsp);
+        else
+            return DescribeRiskDnsEventListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskDnsEventListOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRiskDnsEventListAsync(const DescribeRiskDnsEventListRequest& request, const DescribeRiskDnsEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskDnsEventList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeRiskDnsEventListOutcomeCallable CwpClient::DescribeRiskDnsEventListCallable(const DescribeRiskDnsEventListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsEventListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskDnsEventList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeRiskDnsListOutcome CwpClient::DescribeRiskDnsList(const DescribeRiskDnsListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRiskDnsList");

@@ -82,6 +82,116 @@ namespace TencentCloud
                      */
                     bool NodeIpHasBeenSet() const;
 
+                    /**
+                     * 获取Zone id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ZoneId Zone id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZoneId() const;
+
+                    /**
+                     * 设置Zone id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ZoneId Zone id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZoneId(const std::string& _zoneId);
+
+                    /**
+                     * 判断参数 ZoneId 是否已赋值
+                     * @return ZoneId 是否已赋值
+                     */
+                    bool ZoneIdHasBeenSet() const;
+
+                    /**
+                     * 获取Zone
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Zone Zone
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetZone() const;
+
+                    /**
+                     * 设置Zone
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Zone Zone
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetZone(const std::string& _zone);
+
+                    /**
+                     * 判断参数 Zone 是否已赋值
+                     * @return Zone 是否已赋值
+                     */
+                    bool ZoneHasBeenSet() const;
+
+                    /**
+                     * 获取分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupId 分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupId 分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取分组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GroupName 分组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetGroupName() const;
+
+                    /**
+                     * 设置分组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GroupName 分组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGroupName(const std::string& _groupName);
+
+                    /**
+                     * 判断参数 GroupName 是否已赋值
+                     * @return GroupName 是否已赋值
+                     */
+                    bool GroupNameHasBeenSet() const;
+
+                    /**
+                     * 获取状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -95,6 +205,41 @@ namespace TencentCloud
                      */
                     std::string m_nodeIp;
                     bool m_nodeIpHasBeenSet;
+
+                    /**
+                     * Zone id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zoneId;
+                    bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * Zone
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_zone;
+                    bool m_zoneHasBeenSet;
+
+                    /**
+                     * 分组ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 分组名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_groupName;
+                    bool m_groupNameHasBeenSet;
+
+                    /**
+                     * 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

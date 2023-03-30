@@ -20,7 +20,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Ocr::V20181119::Model;
 using namespace std;
 
-SmartFormFileUrl::SmartFormFileUrl()
+SmartFormFileUrl::SmartFormFileUrl() :
+    m_fileUrlHasBeenSet(false),
+    m_fileOrderNumberHasBeenSet(false)
 {
 }
 
@@ -29,6 +31,26 @@ CoreInternalOutcome SmartFormFileUrl::Deserialize(const rapidjson::Value &value)
     string requestId = "";
 
 
+    if (value.HasMember("FileUrl") && !value["FileUrl"].IsNull())
+    {
+        if (!value["FileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartFormFileUrl.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileUrl = string(value["FileUrl"].GetString());
+        m_fileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileOrderNumber") && !value["FileOrderNumber"].IsNull())
+    {
+        if (!value["FileOrderNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SmartFormFileUrl.FileOrderNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileOrderNumber = value["FileOrderNumber"].GetUint64();
+        m_fileOrderNumberHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +58,54 @@ CoreInternalOutcome SmartFormFileUrl::Deserialize(const rapidjson::Value &value)
 void SmartFormFileUrl::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_fileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileOrderNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileOrderNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileOrderNumber, allocator);
+    }
+
 }
 
+
+string SmartFormFileUrl::GetFileUrl() const
+{
+    return m_fileUrl;
+}
+
+void SmartFormFileUrl::SetFileUrl(const string& _fileUrl)
+{
+    m_fileUrl = _fileUrl;
+    m_fileUrlHasBeenSet = true;
+}
+
+bool SmartFormFileUrl::FileUrlHasBeenSet() const
+{
+    return m_fileUrlHasBeenSet;
+}
+
+uint64_t SmartFormFileUrl::GetFileOrderNumber() const
+{
+    return m_fileOrderNumber;
+}
+
+void SmartFormFileUrl::SetFileOrderNumber(const uint64_t& _fileOrderNumber)
+{
+    m_fileOrderNumber = _fileOrderNumber;
+    m_fileOrderNumberHasBeenSet = true;
+}
+
+bool SmartFormFileUrl::FileOrderNumberHasBeenSet() const
+{
+    return m_fileOrderNumberHasBeenSet;
+}
 

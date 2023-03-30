@@ -33,7 +33,8 @@ BrandData::BrandData() :
     m_authorizationNoteHasBeenSet(false),
     m_trademarksHasBeenSet(false),
     m_insertTimeHasBeenSet(false),
-    m_servicesHasBeenSet(false)
+    m_servicesHasBeenSet(false),
+    m_uinHasBeenSet(false)
 {
 }
 
@@ -189,6 +190,16 @@ CoreInternalOutcome BrandData::Deserialize(const rapidjson::Value &value)
         m_servicesHasBeenSet = true;
     }
 
+    if (value.HasMember("Uin") && !value["Uin"].IsNull())
+    {
+        if (!value["Uin"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BrandData.Uin` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_uin = string(value["Uin"].GetString());
+        m_uinHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -306,6 +317,14 @@ void BrandData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_services.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_uinHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Uin";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_uin.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -517,5 +536,21 @@ void BrandData::SetServices(const ServiceData& _services)
 bool BrandData::ServicesHasBeenSet() const
 {
     return m_servicesHasBeenSet;
+}
+
+string BrandData::GetUin() const
+{
+    return m_uin;
+}
+
+void BrandData::SetUin(const string& _uin)
+{
+    m_uin = _uin;
+    m_uinHasBeenSet = true;
+}
+
+bool BrandData::UinHasBeenSet() const
+{
+    return m_uinHasBeenSet;
 }
 

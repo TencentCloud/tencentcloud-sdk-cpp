@@ -46,7 +46,55 @@ namespace TencentCloud
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
+                    /**
+                     * 获取文件url地址
+                     * @return FileUrl 文件url地址
+                     */
+                    std::string GetFileUrl() const;
+
+                    /**
+                     * 设置文件url地址
+                     * @param FileUrl 文件url地址
+                     */
+                    void SetFileUrl(const std::string& _fileUrl);
+
+                    /**
+                     * 判断参数 FileUrl 是否已赋值
+                     * @return FileUrl 是否已赋值
+                     */
+                    bool FileUrlHasBeenSet() const;
+
+                    /**
+                     * 获取文件的顺序，顺序从1开始
+                     * @return FileOrderNumber 文件的顺序，顺序从1开始
+                     */
+                    uint64_t GetFileOrderNumber() const;
+
+                    /**
+                     * 设置文件的顺序，顺序从1开始
+                     * @param FileOrderNumber 文件的顺序，顺序从1开始
+                     */
+                    void SetFileOrderNumber(const uint64_t& _fileOrderNumber);
+
+                    /**
+                     * 判断参数 FileOrderNumber 是否已赋值
+                     * @return FileOrderNumber 是否已赋值
+                     */
+                    bool FileOrderNumberHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 文件url地址
+                     */
+                    std::string m_fileUrl;
+                    bool m_fileUrlHasBeenSet;
+
+                    /**
+                     * 文件的顺序，顺序从1开始
+                     */
+                    uint64_t m_fileOrderNumber;
+                    bool m_fileOrderNumberHasBeenSet;
 
                 };
             }

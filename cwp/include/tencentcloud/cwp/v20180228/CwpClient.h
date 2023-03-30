@@ -335,6 +335,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventListRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeSaveOrUpdateWarningsRequest.h>
@@ -1029,6 +1031,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeReverseShellRulesResponse> DescribeReverseShellRulesOutcome;
                 typedef std::future<DescribeReverseShellRulesOutcome> DescribeReverseShellRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellRulesRequest&, DescribeReverseShellRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskDnsEventListResponse> DescribeRiskDnsEventListOutcome;
+                typedef std::future<DescribeRiskDnsEventListOutcome> DescribeRiskDnsEventListOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRiskDnsEventListRequest&, DescribeRiskDnsEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsEventListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskDnsListResponse> DescribeRiskDnsListOutcome;
                 typedef std::future<DescribeRiskDnsListOutcome> DescribeRiskDnsListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRiskDnsListRequest&, DescribeRiskDnsListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsListAsyncHandler;
@@ -2756,6 +2761,15 @@ namespace TencentCloud
                 DescribeReverseShellRulesOutcome DescribeReverseShellRules(const Model::DescribeReverseShellRulesRequest &request);
                 void DescribeReverseShellRulesAsync(const Model::DescribeReverseShellRulesRequest& request, const DescribeReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReverseShellRulesOutcomeCallable DescribeReverseShellRulesCallable(const Model::DescribeReverseShellRulesRequest& request);
+
+                /**
+                 *获取恶意请求事件列表
+                 * @param req DescribeRiskDnsEventListRequest
+                 * @return DescribeRiskDnsEventListOutcome
+                 */
+                DescribeRiskDnsEventListOutcome DescribeRiskDnsEventList(const Model::DescribeRiskDnsEventListRequest &request);
+                void DescribeRiskDnsEventListAsync(const Model::DescribeRiskDnsEventListRequest& request, const DescribeRiskDnsEventListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskDnsEventListOutcomeCallable DescribeRiskDnsEventListCallable(const Model::DescribeRiskDnsEventListRequest& request);
 
                 /**
                  *入侵检测，获取恶意请求列表

@@ -415,7 +415,7 @@ namespace TencentCloud
                 InquirePriceCreateDBInstancesOutcomeCallable InquirePriceCreateDBInstancesCallable(const Model::InquirePriceCreateDBInstancesRequest& request);
 
                 /**
-                 *本接口 (InquirePriceModifyDBInstanceSpec) 用于调整实例的配置询价。
+                 *本接口 (InquirePriceModifyDBInstanceSpec) 用于查询实例配置变更后的价格。
                  * @param req InquirePriceModifyDBInstanceSpecRequest
                  * @return InquirePriceModifyDBInstanceSpecOutcome
                  */

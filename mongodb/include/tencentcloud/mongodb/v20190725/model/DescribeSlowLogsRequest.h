@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取慢日志返回格式，可设置为json，不传默认返回原生慢日志格式。
-                     * @return Format 慢日志返回格式，可设置为json，不传默认返回原生慢日志格式。
+                     * 获取慢日志返回格式。默认返回原生慢日志格式，4.4及以上版本可设置为json。
+                     * @return Format 慢日志返回格式。默认返回原生慢日志格式，4.4及以上版本可设置为json。
                      */
                     std::string GetFormat() const;
 
                     /**
-                     * 设置慢日志返回格式，可设置为json，不传默认返回原生慢日志格式。
-                     * @param Format 慢日志返回格式，可设置为json，不传默认返回原生慢日志格式。
+                     * 设置慢日志返回格式。默认返回原生慢日志格式，4.4及以上版本可设置为json。
+                     * @param Format 慢日志返回格式。默认返回原生慢日志格式，4.4及以上版本可设置为json。
                      */
                     void SetFormat(const std::string& _format);
 
@@ -207,7 +207,7 @@ namespace TencentCloud
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 慢日志返回格式，可设置为json，不传默认返回原生慢日志格式。
+                     * 慢日志返回格式。默认返回原生慢日志格式，4.4及以上版本可设置为json。
                      */
                     std::string m_format;
                     bool m_formatHasBeenSet;

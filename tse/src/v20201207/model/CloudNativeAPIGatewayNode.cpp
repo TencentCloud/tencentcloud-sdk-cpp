@@ -22,7 +22,12 @@ using namespace std;
 
 CloudNativeAPIGatewayNode::CloudNativeAPIGatewayNode() :
     m_nodeIdHasBeenSet(false),
-    m_nodeIpHasBeenSet(false)
+    m_nodeIpHasBeenSet(false),
+    m_zoneIdHasBeenSet(false),
+    m_zoneHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_groupNameHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -51,6 +56,56 @@ CoreInternalOutcome CloudNativeAPIGatewayNode::Deserialize(const rapidjson::Valu
         m_nodeIpHasBeenSet = true;
     }
 
+    if (value.HasMember("ZoneId") && !value["ZoneId"].IsNull())
+    {
+        if (!value["ZoneId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.ZoneId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zoneId = string(value["ZoneId"].GetString());
+        m_zoneIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Zone") && !value["Zone"].IsNull())
+    {
+        if (!value["Zone"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.Zone` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_zone = string(value["Zone"].GetString());
+        m_zoneHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupName") && !value["GroupName"].IsNull())
+    {
+        if (!value["GroupName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.GroupName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupName = string(value["GroupName"].GetString());
+        m_groupNameHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CloudNativeAPIGatewayNode.Status` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = string(value["Status"].GetString());
+        m_statusHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -72,6 +127,46 @@ void CloudNativeAPIGatewayNode::ToJsonObject(rapidjson::Value &value, rapidjson:
         string key = "NodeIp";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_nodeIp.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ZoneId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_zoneHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Zone";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_zone.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_groupNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -107,5 +202,85 @@ void CloudNativeAPIGatewayNode::SetNodeIp(const string& _nodeIp)
 bool CloudNativeAPIGatewayNode::NodeIpHasBeenSet() const
 {
     return m_nodeIpHasBeenSet;
+}
+
+string CloudNativeAPIGatewayNode::GetZoneId() const
+{
+    return m_zoneId;
+}
+
+void CloudNativeAPIGatewayNode::SetZoneId(const string& _zoneId)
+{
+    m_zoneId = _zoneId;
+    m_zoneIdHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::ZoneIdHasBeenSet() const
+{
+    return m_zoneIdHasBeenSet;
+}
+
+string CloudNativeAPIGatewayNode::GetZone() const
+{
+    return m_zone;
+}
+
+void CloudNativeAPIGatewayNode::SetZone(const string& _zone)
+{
+    m_zone = _zone;
+    m_zoneHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::ZoneHasBeenSet() const
+{
+    return m_zoneHasBeenSet;
+}
+
+string CloudNativeAPIGatewayNode::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void CloudNativeAPIGatewayNode::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+string CloudNativeAPIGatewayNode::GetGroupName() const
+{
+    return m_groupName;
+}
+
+void CloudNativeAPIGatewayNode::SetGroupName(const string& _groupName)
+{
+    m_groupName = _groupName;
+    m_groupNameHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::GroupNameHasBeenSet() const
+{
+    return m_groupNameHasBeenSet;
+}
+
+string CloudNativeAPIGatewayNode::GetStatus() const
+{
+    return m_status;
+}
+
+void CloudNativeAPIGatewayNode::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool CloudNativeAPIGatewayNode::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 

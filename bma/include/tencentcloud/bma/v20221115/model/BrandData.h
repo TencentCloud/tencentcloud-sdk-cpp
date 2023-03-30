@@ -282,6 +282,24 @@ namespace TencentCloud
                      */
                     bool ServicesHasBeenSet() const;
 
+                    /**
+                     * 获取账号id
+                     * @return Uin 账号id
+                     */
+                    std::string GetUin() const;
+
+                    /**
+                     * 设置账号id
+                     * @param Uin 账号id
+                     */
+                    void SetUin(const std::string& _uin);
+
+                    /**
+                     * 判断参数 Uin 是否已赋值
+                     * @return Uin 是否已赋值
+                     */
+                    bool UinHasBeenSet() const;
+
                 private:
 
                     /**
@@ -361,6 +379,12 @@ namespace TencentCloud
                      */
                     ServiceData m_services;
                     bool m_servicesHasBeenSet;
+
+                    /**
+                     * 账号id
+                     */
+                    std::string m_uin;
+                    bool m_uinHasBeenSet;
 
                 };
             }

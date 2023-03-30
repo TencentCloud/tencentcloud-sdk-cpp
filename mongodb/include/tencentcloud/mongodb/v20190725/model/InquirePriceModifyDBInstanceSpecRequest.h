@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例 ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。
+                     * @return InstanceId 实例 ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例 ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。
+                     * @param InstanceId 实例 ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool VolumeHasBeenSet() const;
 
                     /**
-                     * 获取实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
-                     * @return NodeNum 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     * 获取实例节点数。默认为不变更节点数，暂不支持变更。
+                     * @return NodeNum 实例节点数。默认为不变更节点数，暂不支持变更。
                      */
                     int64_t GetNodeNum() const;
 
                     /**
-                     * 设置实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
-                     * @param NodeNum 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     * 设置实例节点数。默认为不变更节点数，暂不支持变更。
+                     * @param NodeNum 实例节点数。默认为不变更节点数，暂不支持变更。
                      */
                     void SetNodeNum(const int64_t& _nodeNum);
 
@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool NodeNumHasBeenSet() const;
 
                     /**
-                     * 获取实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
-                     * @return ReplicateSetNum 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     * 获取实例分片数。默认为不变更分片数，暂不支持变更。
+                     * @return ReplicateSetNum 实例分片数。默认为不变更分片数，暂不支持变更。
                      */
                     int64_t GetReplicateSetNum() const;
 
                     /**
-                     * 设置实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
-                     * @param ReplicateSetNum 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     * 设置实例分片数。默认为不变更分片数，暂不支持变更。
+                     * @param ReplicateSetNum 实例分片数。默认为不变更分片数，暂不支持变更。
                      */
                     void SetReplicateSetNum(const int64_t& _replicateSetNum);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 实例 ID，格式如：cmgo-p8vn****。与云数据库控制台页面中显示的实例ID相同。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -153,13 +153,13 @@ namespace TencentCloud
                     bool m_volumeHasBeenSet;
 
                     /**
-                     * 实例变更后的节点数，取值范围具体参照查询云数据库的售卖规格返回参数。默认为不变更节点数
+                     * 实例节点数。默认为不变更节点数，暂不支持变更。
                      */
                     int64_t m_nodeNum;
                     bool m_nodeNumHasBeenSet;
 
                     /**
-                     * 实例变更后的分片数，取值范围具体参照查询云数据库的售卖规格返回参数。只能增加不能减少，默认为不变更分片数
+                     * 实例分片数。默认为不变更分片数，暂不支持变更。
                      */
                     int64_t m_replicateSetNum;
                     bool m_replicateSetNumHasBeenSet;
