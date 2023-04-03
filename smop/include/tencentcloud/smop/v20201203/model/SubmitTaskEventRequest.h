@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool CodeHasBeenSet() const;
 
                     /**
-                     * 获取同步异步方式
-                     * @return Async 同步异步方式
+                     * 获取同步异步方式：0为同步、1位异步
+                     * @return Async 同步异步方式：0为同步、1位异步
                      */
                     int64_t GetAsync() const;
 
                     /**
-                     * 设置同步异步方式
-                     * @param Async 同步异步方式
+                     * 设置同步异步方式：0为同步、1位异步
+                     * @param Async 同步异步方式：0为同步、1位异步
                      */
                     void SetAsync(const int64_t& _async);
 
@@ -195,7 +195,7 @@ namespace TencentCloud
                     bool m_codeHasBeenSet;
 
                     /**
-                     * 同步异步方式
+                     * 同步异步方式：0为同步、1位异步
                      */
                     int64_t m_async;
                     bool m_asyncHasBeenSet;

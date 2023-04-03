@@ -23,7 +23,8 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Lcic::V20220817::Model;
 using namespace std;
 
-DescribeDeveloperResponse::DescribeDeveloperResponse()
+DescribeDeveloperResponse::DescribeDeveloperResponse() :
+    m_developerIdHasBeenSet(false)
 {
 }
 
@@ -61,6 +62,16 @@ CoreInternalOutcome DescribeDeveloperResponse::Deserialize(const string &payload
     }
 
 
+    if (rsp.HasMember("DeveloperId") && !rsp["DeveloperId"].IsNull())
+    {
+        if (!rsp["DeveloperId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DeveloperId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_developerId = string(rsp["DeveloperId"].GetString());
+        m_developerIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +81,14 @@ string DescribeDeveloperResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_developerIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeveloperId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_developerId.c_str(), allocator).Move(), allocator);
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +101,15 @@ string DescribeDeveloperResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+string DescribeDeveloperResponse::GetDeveloperId() const
+{
+    return m_developerId;
+}
+
+bool DescribeDeveloperResponse::DeveloperIdHasBeenSet() const
+{
+    return m_developerIdHasBeenSet;
+}
 
 

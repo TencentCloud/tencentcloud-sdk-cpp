@@ -55,6 +55,7 @@
 #include <tencentcloud/cdn/v20180606/model/OssPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
+#include <tencentcloud/cdn/v20180606/model/OthersPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/HttpsBilling.h>
 
 
@@ -802,14 +803,32 @@ global：全球加速
                     bool QnPrivateAccessHasBeenSet() const;
 
                     /**
-                     * 获取HTTPS服务
-                     * @return HttpsBilling HTTPS服务
+                     * 获取其他厂商对象存储回源鉴权
+                     * @return OthersPrivateAccess 其他厂商对象存储回源鉴权
+                     */
+                    OthersPrivateAccess GetOthersPrivateAccess() const;
+
+                    /**
+                     * 设置其他厂商对象存储回源鉴权
+                     * @param OthersPrivateAccess 其他厂商对象存储回源鉴权
+                     */
+                    void SetOthersPrivateAccess(const OthersPrivateAccess& _othersPrivateAccess);
+
+                    /**
+                     * 判断参数 OthersPrivateAccess 是否已赋值
+                     * @return OthersPrivateAccess 是否已赋值
+                     */
+                    bool OthersPrivateAccessHasBeenSet() const;
+
+                    /**
+                     * 获取HTTPS服务，默认开启（收费服务，详见计费说明和产品文档）
+                     * @return HttpsBilling HTTPS服务，默认开启（收费服务，详见计费说明和产品文档）
                      */
                     HttpsBilling GetHttpsBilling() const;
 
                     /**
-                     * 设置HTTPS服务
-                     * @param HttpsBilling HTTPS服务
+                     * 设置HTTPS服务，默认开启（收费服务，详见计费说明和产品文档）
+                     * @param HttpsBilling HTTPS服务，默认开启（收费服务，详见计费说明和产品文档）
                      */
                     void SetHttpsBilling(const HttpsBilling& _httpsBilling);
 
@@ -1060,7 +1079,13 @@ global：全球加速
                     bool m_qnPrivateAccessHasBeenSet;
 
                     /**
-                     * HTTPS服务
+                     * 其他厂商对象存储回源鉴权
+                     */
+                    OthersPrivateAccess m_othersPrivateAccess;
+                    bool m_othersPrivateAccessHasBeenSet;
+
+                    /**
+                     * HTTPS服务，默认开启（收费服务，详见计费说明和产品文档）
                      */
                     HttpsBilling m_httpsBilling;
                     bool m_httpsBillingHasBeenSet;

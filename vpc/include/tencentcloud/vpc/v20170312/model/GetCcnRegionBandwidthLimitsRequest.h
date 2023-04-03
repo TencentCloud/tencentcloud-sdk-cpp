@@ -88,14 +88,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取排序条件，目前支持带宽（BandwidthLimit）和过期时间（ExpireTime）
-                     * @return SortedBy 排序条件，目前支持带宽（BandwidthLimit）和过期时间（ExpireTime）
+                     * 获取排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
+                     * @return SortedBy 排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
                      */
                     std::string GetSortedBy() const;
 
                     /**
-                     * 设置排序条件，目前支持带宽（BandwidthLimit）和过期时间（ExpireTime）
-                     * @param SortedBy 排序条件，目前支持带宽（BandwidthLimit）和过期时间（ExpireTime）
+                     * 设置排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
+                     * @param SortedBy 排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
                      */
                     void SetSortedBy(const std::string& _sortedBy);
 
@@ -106,14 +106,14 @@ namespace TencentCloud
                     bool SortedByHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。
+                     * @return Offset 偏移量。
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量。
+                     * @param Offset 偏移量。
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -124,14 +124,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量
-                     * @return Limit 返回数量
+                     * 获取返回数量。
+                     * @return Limit 返回数量。
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量
-                     * @param Limit 返回数量
+                     * 设置返回数量。
+                     * @param Limit 返回数量。
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -142,14 +142,14 @@ namespace TencentCloud
                     bool LimitHasBeenSet() const;
 
                     /**
-                     * 获取排序方式，'ASC':升序,'DESC':降序。
-                     * @return OrderBy 排序方式，'ASC':升序,'DESC':降序。
+                     * 获取排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
+                     * @return OrderBy 排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置排序方式，'ASC':升序,'DESC':降序。
-                     * @param OrderBy 排序方式，'ASC':升序,'DESC':降序。
+                     * 设置排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
+                     * @param OrderBy 排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -176,25 +176,25 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 排序条件，目前支持带宽（BandwidthLimit）和过期时间（ExpireTime）
+                     * 排序条件，目前支持带宽（`BandwidthLimit`）和过期时间（`ExpireTime`），默认按 `ExpireTime` 排序。
                      */
                     std::string m_sortedBy;
                     bool m_sortedByHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量。
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量
+                     * 返回数量。
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;
 
                     /**
-                     * 排序方式，'ASC':升序,'DESC':降序。
+                     * 排序方式，'ASC':升序,'DESC':降序。默认按'ASC'排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;

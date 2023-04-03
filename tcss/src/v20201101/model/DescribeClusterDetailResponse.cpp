@@ -47,7 +47,8 @@ DescribeClusterDetailResponse::DescribeClusterDetailResponse() :
     m_workloadCountHasBeenSet(false),
     m_podCountHasBeenSet(false),
     m_serviceCountHasBeenSet(false),
-    m_ingressCountHasBeenSet(false)
+    m_ingressCountHasBeenSet(false),
+    m_masterIpsHasBeenSet(false)
 {
 }
 
@@ -325,6 +326,16 @@ CoreInternalOutcome DescribeClusterDetailResponse::Deserialize(const string &pay
         m_ingressCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MasterIps") && !rsp["MasterIps"].IsNull())
+    {
+        if (!rsp["MasterIps"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MasterIps` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_masterIps = string(rsp["MasterIps"].GetString());
+        m_masterIpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -525,6 +536,14 @@ string DescribeClusterDetailResponse::ToJsonString() const
         string key = "IngressCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_ingressCount, allocator);
+    }
+
+    if (m_masterIpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MasterIps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_masterIps.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -777,6 +796,16 @@ uint64_t DescribeClusterDetailResponse::GetIngressCount() const
 bool DescribeClusterDetailResponse::IngressCountHasBeenSet() const
 {
     return m_ingressCountHasBeenSet;
+}
+
+string DescribeClusterDetailResponse::GetMasterIps() const
+{
+    return m_masterIps;
+}
+
+bool DescribeClusterDetailResponse::MasterIpsHasBeenSet() const
+{
+    return m_masterIpsHasBeenSet;
 }
 
 

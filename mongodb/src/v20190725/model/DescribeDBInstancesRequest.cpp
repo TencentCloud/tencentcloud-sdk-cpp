@@ -171,8 +171,14 @@ string DescribeDBInstancesRequest::ToJsonString() const
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "Tags";
         iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_tags.ToJsonObject(d[key.c_str()], allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_tags.begin(); itr != m_tags.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
     }
 
 
@@ -391,12 +397,12 @@ bool DescribeDBInstancesRequest::SearchKeyHasBeenSet() const
     return m_searchKeyHasBeenSet;
 }
 
-TagInfo DescribeDBInstancesRequest::GetTags() const
+vector<TagInfo> DescribeDBInstancesRequest::GetTags() const
 {
     return m_tags;
 }
 
-void DescribeDBInstancesRequest::SetTags(const TagInfo& _tags)
+void DescribeDBInstancesRequest::SetTags(const vector<TagInfo>& _tags)
 {
     m_tags = _tags;
     m_tagsHasBeenSet = true;

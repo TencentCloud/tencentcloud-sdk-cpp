@@ -229,6 +229,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeBaselineWeakPasswordListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBashEventsInfoNewRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeBashEventsInfoNewResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsNewRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashEventsNewResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeBashRulesRequest.h>
@@ -872,6 +874,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBashEventsResponse> DescribeBashEventsOutcome;
                 typedef std::future<DescribeBashEventsOutcome> DescribeBashEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBashEventsRequest&, DescribeBashEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashEventsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBashEventsInfoNewResponse> DescribeBashEventsInfoNewOutcome;
+                typedef std::future<DescribeBashEventsInfoNewOutcome> DescribeBashEventsInfoNewOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeBashEventsInfoNewRequest&, DescribeBashEventsInfoNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashEventsInfoNewAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeBashEventsNewResponse> DescribeBashEventsNewOutcome;
                 typedef std::future<DescribeBashEventsNewOutcome> DescribeBashEventsNewOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeBashEventsNewRequest&, DescribeBashEventsNewOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBashEventsNewAsyncHandler;
@@ -2284,6 +2289,15 @@ namespace TencentCloud
                 DescribeBashEventsOutcome DescribeBashEvents(const Model::DescribeBashEventsRequest &request);
                 void DescribeBashEventsAsync(const Model::DescribeBashEventsRequest& request, const DescribeBashEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBashEventsOutcomeCallable DescribeBashEventsCallable(const Model::DescribeBashEventsRequest& request);
+
+                /**
+                 *查询高危命令事件详情(新)
+                 * @param req DescribeBashEventsInfoNewRequest
+                 * @return DescribeBashEventsInfoNewOutcome
+                 */
+                DescribeBashEventsInfoNewOutcome DescribeBashEventsInfoNew(const Model::DescribeBashEventsInfoNewRequest &request);
+                void DescribeBashEventsInfoNewAsync(const Model::DescribeBashEventsInfoNewRequest& request, const DescribeBashEventsInfoNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBashEventsInfoNewOutcomeCallable DescribeBashEventsInfoNewCallable(const Model::DescribeBashEventsInfoNewRequest& request);
 
                 /**
                  *获取高危命令列表(新)

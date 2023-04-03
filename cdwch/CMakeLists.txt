@@ -47,6 +47,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/CreateInstanceNewRequest.h
   include/tencentcloud/cdwch/v20200915/model/InstanceInfo.h
   include/tencentcloud/cdwch/v20200915/model/ModifyClusterConfigsRequest.h
+  include/tencentcloud/cdwch/v20200915/model/ScaleUpInstanceRequest.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h
   include/tencentcloud/cdwch/v20200915/model/ServiceInfo.h
   include/tencentcloud/cdwch/v20200915/model/ResourceSpec.h
@@ -61,7 +62,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigItem.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceResponse.h
   include/tencentcloud/cdwch/v20200915/model/ClusterInfo.h
-  include/tencentcloud/cdwch/v20200915/model/ScaleUpInstanceRequest.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceStateRequest.h
   include/tencentcloud/cdwch/v20200915/model/NodesSummary.h
   include/tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h
   include/tencentcloud/cdwch/v20200915/model/InstanceConfigInfo.h
@@ -71,6 +72,7 @@ set(cdwch_public_header_model
   include/tencentcloud/cdwch/v20200915/model/ActionAlterCkUserResponse.h
   include/tencentcloud/cdwch/v20200915/model/Tag.h
   include/tencentcloud/cdwch/v20200915/model/ScheduleStrategy.h
+  include/tencentcloud/cdwch/v20200915/model/DescribeInstanceStateResponse.h
   include/tencentcloud/cdwch/v20200915/model/ResizeDiskResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeBackUpScheduleResponse.h
   include/tencentcloud/cdwch/v20200915/model/DescribeCkSqlApisResponse.h
@@ -108,6 +110,7 @@ set(cdwch_src
   src/v20200915/model/CreateInstanceNewRequest.cpp
   src/v20200915/model/InstanceInfo.cpp
   src/v20200915/model/ModifyClusterConfigsRequest.cpp
+  src/v20200915/model/ScaleUpInstanceRequest.cpp
   src/v20200915/model/DescribeInstanceKeyValConfigsResponse.cpp
   src/v20200915/model/ServiceInfo.cpp
   src/v20200915/model/ResourceSpec.cpp
@@ -122,7 +125,7 @@ set(cdwch_src
   src/v20200915/model/InstanceConfigItem.cpp
   src/v20200915/model/DescribeInstanceResponse.cpp
   src/v20200915/model/ClusterInfo.cpp
-  src/v20200915/model/ScaleUpInstanceRequest.cpp
+  src/v20200915/model/DescribeInstanceStateRequest.cpp
   src/v20200915/model/NodesSummary.cpp
   src/v20200915/model/DescribeInstanceShardsResponse.cpp
   src/v20200915/model/InstanceConfigInfo.cpp
@@ -132,6 +135,7 @@ set(cdwch_src
   src/v20200915/model/ActionAlterCkUserResponse.cpp
   src/v20200915/model/Tag.cpp
   src/v20200915/model/ScheduleStrategy.cpp
+  src/v20200915/model/DescribeInstanceStateResponse.cpp
   src/v20200915/model/ResizeDiskResponse.cpp
   src/v20200915/model/DescribeBackUpScheduleResponse.cpp
   src/v20200915/model/DescribeCkSqlApisResponse.cpp

@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Vpn网关目的路由
+                * VPN网关目的路由
                 */
                 class VpnGatewayRoute : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取目的端IDC网段
-                     * @return DestinationCidrBlock 目的端IDC网段
+                     * 获取目的端IDC网段。
+                     * @return DestinationCidrBlock 目的端IDC网段。
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
-                     * 设置目的端IDC网段
-                     * @param DestinationCidrBlock 目的端IDC网段
+                     * 设置目的端IDC网段。
+                     * @param DestinationCidrBlock 目的端IDC网段。
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool DestinationCidrBlockHasBeenSet() const;
 
                     /**
-                     * 获取下一跳类型（关联实例类型）可选值:"VPNCONN"(VPN通道), "CCN"(CCN实例)
-                     * @return InstanceType 下一跳类型（关联实例类型）可选值:"VPNCONN"(VPN通道), "CCN"(CCN实例)
+                     * 获取下一跳类型（关联实例类型）可选值："VPNCONN"（VPN通道）， "CCN"（CCN实例）。
+                     * @return InstanceType 下一跳类型（关联实例类型）可选值："VPNCONN"（VPN通道）， "CCN"（CCN实例）。
                      */
                     std::string GetInstanceType() const;
 
                     /**
-                     * 设置下一跳类型（关联实例类型）可选值:"VPNCONN"(VPN通道), "CCN"(CCN实例)
-                     * @param InstanceType 下一跳类型（关联实例类型）可选值:"VPNCONN"(VPN通道), "CCN"(CCN实例)
+                     * 设置下一跳类型（关联实例类型）可选值："VPNCONN"（VPN通道）， "CCN"（CCN实例）。
+                     * @param InstanceType 下一跳类型（关联实例类型）可选值："VPNCONN"（VPN通道）， "CCN"（CCN实例）。
                      */
                     void SetInstanceType(const std::string& _instanceType);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool InstanceTypeHasBeenSet() const;
 
                     /**
-                     * 获取下一跳实例ID
-                     * @return InstanceId 下一跳实例ID
+                     * 获取下一跳实例ID。
+                     * @return InstanceId 下一跳实例ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置下一跳实例ID
-                     * @param InstanceId 下一跳实例ID
+                     * 设置下一跳实例ID。
+                     * @param InstanceId 下一跳实例ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取优先级, 可选值: 0, 100
-                     * @return Priority 优先级, 可选值: 0, 100
+                     * 获取优先级，可选值：0，100。
+                     * @return Priority 优先级，可选值：0，100。
                      */
                     int64_t GetPriority() const;
 
                     /**
-                     * 设置优先级, 可选值: 0, 100
-                     * @param Priority 优先级, 可选值: 0, 100
+                     * 设置优先级，可选值：0，100。
+                     * @param Priority 优先级，可选值：0，100。
                      */
                     void SetPriority(const int64_t& _priority);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool PriorityHasBeenSet() const;
 
                     /**
-                     * 获取启用状态, 可选值: "ENABLE"(启用), "DISABLE"(禁用)
-                     * @return Status 启用状态, 可选值: "ENABLE"(启用), "DISABLE"(禁用)
+                     * 获取启用状态，可选值："ENABLE"（启用），"DISABLE"  (禁用)。
+                     * @return Status 启用状态，可选值："ENABLE"（启用），"DISABLE"  (禁用)。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置启用状态, 可选值: "ENABLE"(启用), "DISABLE"(禁用)
-                     * @param Status 启用状态, 可选值: "ENABLE"(启用), "DISABLE"(禁用)
+                     * 设置启用状态，可选值："ENABLE"（启用），"DISABLE"  (禁用)。
+                     * @param Status 启用状态，可选值："ENABLE"（启用），"DISABLE"  (禁用)。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取路由条目ID
-                     * @return RouteId 路由条目ID
+                     * 获取路由条目ID。
+                     * @return RouteId 路由条目ID。
                      */
                     std::string GetRouteId() const;
 
                     /**
-                     * 设置路由条目ID
-                     * @param RouteId 路由条目ID
+                     * 设置路由条目ID。
+                     * @param RouteId 路由条目ID。
                      */
                     void SetRouteId(const std::string& _routeId);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool RouteIdHasBeenSet() const;
 
                     /**
-                     * 获取路由类型, 可选值: "VPC"(VPC路由), "CCN"(云联网传播路由), "Static"(静态路由), "BGP"(BGP路由)
-                     * @return Type 路由类型, 可选值: "VPC"(VPC路由), "CCN"(云联网传播路由), "Static"(静态路由), "BGP"(BGP路由)
+                     * 获取路由类型，可选值："VPC"（VPC路由），"CCN"（云联网传播路由），"Static"（静态路由），"BGP"（BGP路由）。
+                     * @return Type 路由类型，可选值："VPC"（VPC路由），"CCN"（云联网传播路由），"Static"（静态路由），"BGP"（BGP路由）。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置路由类型, 可选值: "VPC"(VPC路由), "CCN"(云联网传播路由), "Static"(静态路由), "BGP"(BGP路由)
-                     * @param Type 路由类型, 可选值: "VPC"(VPC路由), "CCN"(云联网传播路由), "Static"(静态路由), "BGP"(BGP路由)
+                     * 设置路由类型，可选值："VPC"（VPC路由），"CCN"（云联网传播路由），"Static"（静态路由），"BGP"（BGP路由）。
+                     * @param Type 路由类型，可选值："VPC"（VPC路由），"CCN"（云联网传播路由），"Static"（静态路由），"BGP"（BGP路由）。
                      */
                     void SetType(const std::string& _type);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取创建时间
-                     * @return CreateTime 创建时间
+                     * 获取创建时间。
+                     * @return CreateTime 创建时间。
                      */
                     std::string GetCreateTime() const;
 
                     /**
-                     * 设置创建时间
-                     * @param CreateTime 创建时间
+                     * 设置创建时间。
+                     * @param CreateTime 创建时间。
                      */
                     void SetCreateTime(const std::string& _createTime);
 
@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool CreateTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间
-                     * @return UpdateTime 更新时间
+                     * 获取更新时间。
+                     * @return UpdateTime 更新时间。
                      */
                     std::string GetUpdateTime() const;
 
                     /**
-                     * 设置更新时间
-                     * @param UpdateTime 更新时间
+                     * 设置更新时间。
+                     * @param UpdateTime 更新时间。
                      */
                     void SetUpdateTime(const std::string& _updateTime);
 
@@ -211,55 +211,55 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 目的端IDC网段
+                     * 目的端IDC网段。
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;
 
                     /**
-                     * 下一跳类型（关联实例类型）可选值:"VPNCONN"(VPN通道), "CCN"(CCN实例)
+                     * 下一跳类型（关联实例类型）可选值："VPNCONN"（VPN通道）， "CCN"（CCN实例）。
                      */
                     std::string m_instanceType;
                     bool m_instanceTypeHasBeenSet;
 
                     /**
-                     * 下一跳实例ID
+                     * 下一跳实例ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 优先级, 可选值: 0, 100
+                     * 优先级，可选值：0，100。
                      */
                     int64_t m_priority;
                     bool m_priorityHasBeenSet;
 
                     /**
-                     * 启用状态, 可选值: "ENABLE"(启用), "DISABLE"(禁用)
+                     * 启用状态，可选值："ENABLE"（启用），"DISABLE"  (禁用)。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 路由条目ID
+                     * 路由条目ID。
                      */
                     std::string m_routeId;
                     bool m_routeIdHasBeenSet;
 
                     /**
-                     * 路由类型, 可选值: "VPC"(VPC路由), "CCN"(云联网传播路由), "Static"(静态路由), "BGP"(BGP路由)
+                     * 路由类型，可选值："VPC"（VPC路由），"CCN"（云联网传播路由），"Static"（静态路由），"BGP"（BGP路由）。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 创建时间
+                     * 创建时间。
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
 
                     /**
-                     * 更新时间
+                     * 更新时间。
                      */
                     std::string m_updateTime;
                     bool m_updateTimeHasBeenSet;

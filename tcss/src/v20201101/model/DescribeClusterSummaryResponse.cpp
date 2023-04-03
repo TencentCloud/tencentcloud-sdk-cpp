@@ -33,7 +33,8 @@ DescribeClusterSummaryResponse::DescribeClusterSummaryResponse() :
     m_checkedClusterCountHasBeenSet(false),
     m_autoCheckClusterCountHasBeenSet(false),
     m_manualCheckClusterCountHasBeenSet(false),
-    m_failedClusterCountHasBeenSet(false)
+    m_failedClusterCountHasBeenSet(false),
+    m_notImportedClusterCountHasBeenSet(false)
 {
 }
 
@@ -171,6 +172,16 @@ CoreInternalOutcome DescribeClusterSummaryResponse::Deserialize(const string &pa
         m_failedClusterCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("NotImportedClusterCount") && !rsp["NotImportedClusterCount"].IsNull())
+    {
+        if (!rsp["NotImportedClusterCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `NotImportedClusterCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_notImportedClusterCount = rsp["NotImportedClusterCount"].GetUint64();
+        m_notImportedClusterCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -259,6 +270,14 @@ string DescribeClusterSummaryResponse::ToJsonString() const
         string key = "FailedClusterCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_failedClusterCount, allocator);
+    }
+
+    if (m_notImportedClusterCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotImportedClusterCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_notImportedClusterCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -371,6 +390,16 @@ uint64_t DescribeClusterSummaryResponse::GetFailedClusterCount() const
 bool DescribeClusterSummaryResponse::FailedClusterCountHasBeenSet() const
 {
     return m_failedClusterCountHasBeenSet;
+}
+
+uint64_t DescribeClusterSummaryResponse::GetNotImportedClusterCount() const
+{
+    return m_notImportedClusterCount;
+}
+
+bool DescribeClusterSummaryResponse::NotImportedClusterCountHasBeenSet() const
+{
+    return m_notImportedClusterCountHasBeenSet;
 }
 
 

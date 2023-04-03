@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取对端网关对象列表
-                     * @return CustomerGatewaySet 对端网关对象列表
+                     * 获取对端网关对象列表。
+                     * @return CustomerGatewaySet 对端网关对象列表。
                      */
                     std::vector<CustomerGateway> GetCustomerGatewaySet() const;
 
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 对端网关对象列表
+                     * 对端网关对象列表。
                      */
                     std::vector<CustomerGateway> m_customerGatewaySet;
                     bool m_customerGatewaySetHasBeenSet;

@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool ServiceProviderHasBeenSet() const;
 
                     /**
-                     * 获取表单唯一`ID`。
-                     * @return ComplianceId 表单唯一`ID`。
+                     * 获取表单唯一`ID`。可通过[DescribeCrossBorderCompliance](https://cloud.tencent.com/document/product/215/47838)接口查询ComplianceId信息
+                     * @return ComplianceId 表单唯一`ID`。可通过[DescribeCrossBorderCompliance](https://cloud.tencent.com/document/product/215/47838)接口查询ComplianceId信息
                      */
                     uint64_t GetComplianceId() const;
 
                     /**
-                     * 设置表单唯一`ID`。
-                     * @param ComplianceId 表单唯一`ID`。
+                     * 设置表单唯一`ID`。可通过[DescribeCrossBorderCompliance](https://cloud.tencent.com/document/product/215/47838)接口查询ComplianceId信息
+                     * @param ComplianceId 表单唯一`ID`。可通过[DescribeCrossBorderCompliance](https://cloud.tencent.com/document/product/215/47838)接口查询ComplianceId信息
                      */
                     void SetComplianceId(const uint64_t& _complianceId);
 
@@ -105,7 +105,7 @@ namespace TencentCloud
                     bool m_serviceProviderHasBeenSet;
 
                     /**
-                     * 表单唯一`ID`。
+                     * 表单唯一`ID`。可通过[DescribeCrossBorderCompliance](https://cloud.tencent.com/document/product/215/47838)接口查询ComplianceId信息
                      */
                     uint64_t m_complianceId;
                     bool m_complianceIdHasBeenSet;

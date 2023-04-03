@@ -24,6 +24,7 @@ RebuildMediaTaskInput::RebuildMediaTaskInput() :
     m_fileIdHasBeenSet(false),
     m_startTimeOffsetHasBeenSet(false),
     m_endTimeOffsetHasBeenSet(false),
+    m_definitionHasBeenSet(false),
     m_repairInfoHasBeenSet(false),
     m_videoFrameInterpolationInfoHasBeenSet(false),
     m_superResolutionInfoHasBeenSet(false),
@@ -73,6 +74,16 @@ CoreInternalOutcome RebuildMediaTaskInput::Deserialize(const rapidjson::Value &v
         }
         m_endTimeOffset = value["EndTimeOffset"].GetDouble();
         m_endTimeOffsetHasBeenSet = true;
+    }
+
+    if (value.HasMember("Definition") && !value["Definition"].IsNull())
+    {
+        if (!value["Definition"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `RebuildMediaTaskInput.Definition` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_definition = value["Definition"].GetInt64();
+        m_definitionHasBeenSet = true;
     }
 
     if (value.HasMember("RepairInfo") && !value["RepairInfo"].IsNull())
@@ -327,6 +338,14 @@ void RebuildMediaTaskInput::ToJsonObject(rapidjson::Value &value, rapidjson::Doc
         value.AddMember(iKey, m_endTimeOffset, allocator);
     }
 
+    if (m_definitionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Definition";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_definition, allocator);
+    }
+
     if (m_repairInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -493,6 +512,22 @@ void RebuildMediaTaskInput::SetEndTimeOffset(const double& _endTimeOffset)
 bool RebuildMediaTaskInput::EndTimeOffsetHasBeenSet() const
 {
     return m_endTimeOffsetHasBeenSet;
+}
+
+int64_t RebuildMediaTaskInput::GetDefinition() const
+{
+    return m_definition;
+}
+
+void RebuildMediaTaskInput::SetDefinition(const int64_t& _definition)
+{
+    m_definition = _definition;
+    m_definitionHasBeenSet = true;
+}
+
+bool RebuildMediaTaskInput::DefinitionHasBeenSet() const
+{
+    return m_definitionHasBeenSet;
 }
 
 RepairInfo RebuildMediaTaskInput::GetRepairInfo() const

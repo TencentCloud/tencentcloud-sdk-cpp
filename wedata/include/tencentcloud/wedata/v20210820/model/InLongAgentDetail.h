@@ -297,6 +297,28 @@ namespace TencentCloud
                      */
                     bool AgentTotalHasBeenSet() const;
 
+                    /**
+                     * 获取生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LifeDays 生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetLifeDays() const;
+
+                    /**
+                     * 设置生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LifeDays 生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLifeDays(const int64_t& _lifeDays);
+
+                    /**
+                     * 判断参数 LifeDays 是否已赋值
+                     * @return LifeDays 是否已赋值
+                     */
+                    bool LifeDaysHasBeenSet() const;
+
                 private:
 
                     /**
@@ -380,6 +402,13 @@ namespace TencentCloud
                      */
                     uint64_t m_agentTotal;
                     bool m_agentTotalHasBeenSet;
+
+                    /**
+                     * 生命周期
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_lifeDays;
+                    bool m_lifeDaysHasBeenSet;
 
                 };
             }

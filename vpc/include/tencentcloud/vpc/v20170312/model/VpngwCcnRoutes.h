@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取路由信息ID
-                     * @return RouteId 路由信息ID
+                     * 获取路由信息ID。
+                     * @return RouteId 路由信息ID。
                      */
                     std::string GetRouteId() const;
 
                     /**
-                     * 设置路由信息ID
-                     * @param RouteId 路由信息ID
+                     * 设置路由信息ID。
+                     * @param RouteId 路由信息ID。
                      */
                     void SetRouteId(const std::string& _routeId);
 
@@ -65,20 +65,20 @@ namespace TencentCloud
                     bool RouteIdHasBeenSet() const;
 
                     /**
-                     * 获取路由信息是否启用
+                     * 获取路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
-                     * @return Status 路由信息是否启用
+                     * @return Status 路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置路由信息是否启用
+                     * 设置路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
-                     * @param Status 路由信息是否启用
+                     * @param Status 路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
                      */
@@ -91,14 +91,14 @@ DISABLE：不启用该路由
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取路由CIDR
-                     * @return DestinationCidrBlock 路由CIDR
+                     * 获取路由CIDR。
+                     * @return DestinationCidrBlock 路由CIDR。
                      */
                     std::string GetDestinationCidrBlock() const;
 
                     /**
-                     * 设置路由CIDR
-                     * @param DestinationCidrBlock 路由CIDR
+                     * 设置路由CIDR。
+                     * @param DestinationCidrBlock 路由CIDR。
                      */
                     void SetDestinationCidrBlock(const std::string& _destinationCidrBlock);
 
@@ -111,13 +111,13 @@ DISABLE：不启用该路由
                 private:
 
                     /**
-                     * 路由信息ID
+                     * 路由信息ID。
                      */
                     std::string m_routeId;
                     bool m_routeIdHasBeenSet;
 
                     /**
-                     * 路由信息是否启用
+                     * 路由信息是否启用。
 ENABLE：启用该路由
 DISABLE：不启用该路由
                      */
@@ -125,7 +125,7 @@ DISABLE：不启用该路由
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 路由CIDR
+                     * 路由CIDR。
                      */
                     std::string m_destinationCidrBlock;
                     bool m_destinationCidrBlockHasBeenSet;

@@ -74,6 +74,7 @@
 #include <tencentcloud/cdn/v20180606/model/HwPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/QnPrivateAccess.h>
 #include <tencentcloud/cdn/v20180606/model/HttpsBilling.h>
+#include <tencentcloud/cdn/v20180606/model/OthersPrivateAccess.h>
 
 
 namespace TencentCloud
@@ -1598,6 +1599,28 @@ off：不支持
                      */
                     bool HttpsBillingHasBeenSet() const;
 
+                    /**
+                     * 获取其他厂商对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return OthersPrivateAccess 其他厂商对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OthersPrivateAccess GetOthersPrivateAccess() const;
+
+                    /**
+                     * 设置其他厂商对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param OthersPrivateAccess 其他厂商对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetOthersPrivateAccess(const OthersPrivateAccess& _othersPrivateAccess);
+
+                    /**
+                     * 判断参数 OthersPrivateAccess 是否已赋值
+                     * @return OthersPrivateAccess 是否已赋值
+                     */
+                    bool OthersPrivateAccessHasBeenSet() const;
+
                 private:
 
                     /**
@@ -2072,6 +2095,13 @@ off：不支持
                      */
                     HttpsBilling m_httpsBilling;
                     bool m_httpsBillingHasBeenSet;
+
+                    /**
+                     * 其他厂商对象存储回源鉴权
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    OthersPrivateAccess m_othersPrivateAccess;
+                    bool m_othersPrivateAccessHasBeenSet;
 
                 };
             }

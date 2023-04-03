@@ -235,6 +235,30 @@ namespace TencentCloud
                      */
                     bool PhotoHasBeenSet() const;
 
+                    /**
+                     * 获取省份，Scene为V2时支持识别
+                     * @return Provinsi 省份，Scene为V2时支持识别
+                     */
+                    std::string GetProvinsi() const;
+
+                    /**
+                     * 判断参数 Provinsi 是否已赋值
+                     * @return Provinsi 是否已赋值
+                     */
+                    bool ProvinsiHasBeenSet() const;
+
+                    /**
+                     * 获取城市，Scene为V2时支持识别
+                     * @return Kota 城市，Scene为V2时支持识别
+                     */
+                    std::string GetKota() const;
+
+                    /**
+                     * 判断参数 Kota 是否已赋值
+                     * @return Kota 是否已赋值
+                     */
+                    bool KotaHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +356,18 @@ namespace TencentCloud
                      */
                     std::string m_photo;
                     bool m_photoHasBeenSet;
+
+                    /**
+                     * 省份，Scene为V2时支持识别
+                     */
+                    std::string m_provinsi;
+                    bool m_provinsiHasBeenSet;
+
+                    /**
+                     * 城市，Scene为V2时支持识别
+                     */
+                    std::string m_kota;
+                    bool m_kotaHasBeenSet;
 
                 };
             }

@@ -70,6 +70,7 @@ UpdateDomainConfigRequest::UpdateDomainConfigRequest() :
     m_shareCnameHasBeenSet(false),
     m_hwPrivateAccessHasBeenSet(false),
     m_qnPrivateAccessHasBeenSet(false),
+    m_othersPrivateAccessHasBeenSet(false),
     m_httpsBillingHasBeenSet(false)
 {
 }
@@ -502,6 +503,15 @@ string UpdateDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_qnPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_othersPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OthersPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_othersPrivateAccess.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_httpsBillingHasBeenSet)
@@ -1271,6 +1281,22 @@ void UpdateDomainConfigRequest::SetQnPrivateAccess(const QnPrivateAccess& _qnPri
 bool UpdateDomainConfigRequest::QnPrivateAccessHasBeenSet() const
 {
     return m_qnPrivateAccessHasBeenSet;
+}
+
+OthersPrivateAccess UpdateDomainConfigRequest::GetOthersPrivateAccess() const
+{
+    return m_othersPrivateAccess;
+}
+
+void UpdateDomainConfigRequest::SetOthersPrivateAccess(const OthersPrivateAccess& _othersPrivateAccess)
+{
+    m_othersPrivateAccess = _othersPrivateAccess;
+    m_othersPrivateAccessHasBeenSet = true;
+}
+
+bool UpdateDomainConfigRequest::OthersPrivateAccessHasBeenSet() const
+{
+    return m_othersPrivateAccessHasBeenSet;
 }
 
 HttpsBilling UpdateDomainConfigRequest::GetHttpsBilling() const

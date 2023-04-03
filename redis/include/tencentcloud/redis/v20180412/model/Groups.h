@@ -66,14 +66,86 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取地域ID 1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     * @return RegionId 地域ID 1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * 获取地域ID 。
+- 1：广州 
+- 4：上海 
+- 5：中国香港 
+- 6：多伦多 
+- 7：上海金融 
+- 8：北京 
+- 9：新加坡
+- 11：深圳金融
+- 15：美西（硅谷）
+- 16：成都 
+- 17：德国 
+- 18：韩国 
+- 19：重庆 
+- 21：印度 
+- 22：美东（弗吉尼亚）
+- 23：泰国 
+- 24：俄罗斯 
+- 25：日本
+                     * @return RegionId 地域ID 。
+- 1：广州 
+- 4：上海 
+- 5：中国香港 
+- 6：多伦多 
+- 7：上海金融 
+- 8：北京 
+- 9：新加坡
+- 11：深圳金融
+- 15：美西（硅谷）
+- 16：成都 
+- 17：德国 
+- 18：韩国 
+- 19：重庆 
+- 21：印度 
+- 22：美东（弗吉尼亚）
+- 23：泰国 
+- 24：俄罗斯 
+- 25：日本
                      */
                     int64_t GetRegionId() const;
 
                     /**
-                     * 设置地域ID 1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
-                     * @param RegionId 地域ID 1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * 设置地域ID 。
+- 1：广州 
+- 4：上海 
+- 5：中国香港 
+- 6：多伦多 
+- 7：上海金融 
+- 8：北京 
+- 9：新加坡
+- 11：深圳金融
+- 15：美西（硅谷）
+- 16：成都 
+- 17：德国 
+- 18：韩国 
+- 19：重庆 
+- 21：印度 
+- 22：美东（弗吉尼亚）
+- 23：泰国 
+- 24：俄罗斯 
+- 25：日本
+                     * @param RegionId 地域ID 。
+- 1：广州 
+- 4：上海 
+- 5：中国香港 
+- 6：多伦多 
+- 7：上海金融 
+- 8：北京 
+- 9：新加坡
+- 11：深圳金融
+- 15：美西（硅谷）
+- 16：成都 
+- 17：德国 
+- 18：韩国 
+- 19：重庆 
+- 21：印度 
+- 22：美东（弗吉尼亚）
+- 23：泰国 
+- 24：俄罗斯 
+- 25：日本
                      */
                     void SetRegionId(const int64_t& _regionId);
 
@@ -84,14 +156,14 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取复制组信息
-                     * @return GroupId 复制组信息
+                     * 获取复制组 ID。
+                     * @return GroupId 复制组 ID。
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组信息
-                     * @param GroupId 复制组信息
+                     * 设置复制组 ID。
+                     * @param GroupId 复制组 ID。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -102,17 +174,17 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取复制组名称
+                     * 获取复制组名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return GroupName 复制组名称
+                     * @return GroupName 复制组名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetGroupName() const;
 
                     /**
-                     * 设置复制组名称
+                     * 设置复制组名称。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param GroupName 复制组名称
+                     * @param GroupName 复制组名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetGroupName(const std::string& _groupName);
@@ -124,14 +196,34 @@ namespace TencentCloud
                     bool GroupNameHasBeenSet() const;
 
                     /**
-                     * 获取复制组状态，37："绑定复制组中"，38："复制组重连中"，51："解绑复制组中"，52："复制组实例切主中"，53："角色变更中"
-                     * @return Status 复制组状态，37："绑定复制组中"，38："复制组重连中"，51："解绑复制组中"，52："复制组实例切主中"，53："角色变更中"
+                     * 获取复制组状态。
+- 37：绑定复制组中。
+- 38：复制组重连中。
+- 51：解绑复制组中。
+- 52：复制组实例切主中。
+- 53：角色变更中。
+                     * @return Status 复制组状态。
+- 37：绑定复制组中。
+- 38：复制组重连中。
+- 51：解绑复制组中。
+- 52：复制组实例切主中。
+- 53：角色变更中。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置复制组状态，37："绑定复制组中"，38："复制组重连中"，51："解绑复制组中"，52："复制组实例切主中"，53："角色变更中"
-                     * @param Status 复制组状态，37："绑定复制组中"，38："复制组重连中"，51："解绑复制组中"，52："复制组实例切主中"，53："角色变更中"
+                     * 设置复制组状态。
+- 37：绑定复制组中。
+- 38：复制组重连中。
+- 51：解绑复制组中。
+- 52：复制组实例切主中。
+- 53：角色变更中。
+                     * @param Status 复制组状态。
+- 37：绑定复制组中。
+- 38：复制组重连中。
+- 51：解绑复制组中。
+- 52：复制组实例切主中。
+- 53：角色变更中。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -142,14 +234,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取复制组数量
-                     * @return InstanceCount 复制组数量
+                     * 获取复制组数量。
+                     * @return InstanceCount 复制组数量。
                      */
                     int64_t GetInstanceCount() const;
 
                     /**
-                     * 设置复制组数量
-                     * @param InstanceCount 复制组数量
+                     * 设置复制组数量。
+                     * @param InstanceCount 复制组数量。
                      */
                     void SetInstanceCount(const int64_t& _instanceCount);
 
@@ -160,17 +252,17 @@ namespace TencentCloud
                     bool InstanceCountHasBeenSet() const;
 
                     /**
-                     * 获取复制组实例
+                     * 获取复制组中的实例信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Instances 复制组实例
+                     * @return Instances 复制组中的实例信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instances> GetInstances() const;
 
                     /**
-                     * 设置复制组实例
+                     * 设置复制组中的实例信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Instances 复制组实例
+                     * @param Instances 复制组中的实例信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetInstances(const std::vector<Instances>& _instances);
@@ -182,17 +274,17 @@ namespace TencentCloud
                     bool InstancesHasBeenSet() const;
 
                     /**
-                     * 获取备注信息
+                     * 获取备注信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Remark 备注信息
+                     * @return Remark 备注信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetRemark() const;
 
                     /**
-                     * 设置备注信息
+                     * 设置备注信息。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Remark 备注信息
+                     * @param Remark 备注信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRemark(const std::string& _remark);
@@ -212,45 +304,68 @@ namespace TencentCloud
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 地域ID 1--广州 4--上海 5-- 中国香港 6--多伦多 7--上海金融 8--北京 9-- 新加坡 11--深圳金融 15--美西（硅谷）16--成都 17--德国 18--韩国 19--重庆 21--印度 22--美东（弗吉尼亚）23--泰国 24--俄罗斯 25--日本
+                     * 地域ID 。
+- 1：广州 
+- 4：上海 
+- 5：中国香港 
+- 6：多伦多 
+- 7：上海金融 
+- 8：北京 
+- 9：新加坡
+- 11：深圳金融
+- 15：美西（硅谷）
+- 16：成都 
+- 17：德国 
+- 18：韩国 
+- 19：重庆 
+- 21：印度 
+- 22：美东（弗吉尼亚）
+- 23：泰国 
+- 24：俄罗斯 
+- 25：日本
                      */
                     int64_t m_regionId;
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 复制组信息
+                     * 复制组 ID。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 复制组名称
+                     * 复制组名称。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_groupName;
                     bool m_groupNameHasBeenSet;
 
                     /**
-                     * 复制组状态，37："绑定复制组中"，38："复制组重连中"，51："解绑复制组中"，52："复制组实例切主中"，53："角色变更中"
+                     * 复制组状态。
+- 37：绑定复制组中。
+- 38：复制组重连中。
+- 51：解绑复制组中。
+- 52：复制组实例切主中。
+- 53：角色变更中。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 复制组数量
+                     * 复制组数量。
                      */
                     int64_t m_instanceCount;
                     bool m_instanceCountHasBeenSet;
 
                     /**
-                     * 复制组实例
+                     * 复制组中的实例信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<Instances> m_instances;
                     bool m_instancesHasBeenSet;
 
                     /**
-                     * 备注信息
+                     * 备注信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_remark;

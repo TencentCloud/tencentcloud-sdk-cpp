@@ -60,6 +60,24 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否是open api查询
+                     * @return IsOpenApi 是否是open api查询
+                     */
+                    bool GetIsOpenApi() const;
+
+                    /**
+                     * 设置是否是open api查询
+                     * @param IsOpenApi 是否是open api查询
+                     */
+                    void SetIsOpenApi(const bool& _isOpenApi);
+
+                    /**
+                     * 判断参数 IsOpenApi 是否已赋值
+                     * @return IsOpenApi 是否已赋值
+                     */
+                    bool IsOpenApiHasBeenSet() const;
+
                 private:
 
                     /**
@@ -67,6 +85,12 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 是否是open api查询
+                     */
+                    bool m_isOpenApi;
+                    bool m_isOpenApiHasBeenSet;
 
                 };
             }

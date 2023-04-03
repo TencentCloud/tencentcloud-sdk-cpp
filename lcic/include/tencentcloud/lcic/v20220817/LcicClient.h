@@ -61,6 +61,8 @@
 #include <tencentcloud/lcic/v20220817/model/DeleteRecordResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DeleteRoomResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeAnswerListRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeAnswerListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeAppDetailResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeCurrentMemberListRequest.h>
@@ -77,12 +79,16 @@
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeGroupMemberListResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeQuestionListRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeRoomStatisticsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeSdkAppIdUsersResponse.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeSupervisorsRequest.h>
+#include <tencentcloud/lcic/v20220817/model/DescribeSupervisorsResponse.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserRequest.h>
 #include <tencentcloud/lcic/v20220817/model/DescribeUserResponse.h>
 #include <tencentcloud/lcic/v20220817/model/GetRoomEventRequest.h>
@@ -182,6 +188,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteRoomResponse> DeleteRoomOutcome;
                 typedef std::future<DeleteRoomOutcome> DeleteRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DeleteRoomRequest&, DeleteRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteRoomAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAnswerListResponse> DescribeAnswerListOutcome;
+                typedef std::future<DescribeAnswerListOutcome> DescribeAnswerListOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeAnswerListRequest&, DescribeAnswerListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAnswerListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAppDetailResponse> DescribeAppDetailOutcome;
                 typedef std::future<DescribeAppDetailOutcome> DescribeAppDetailOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeAppDetailRequest&, DescribeAppDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppDetailAsyncHandler;
@@ -206,6 +215,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeGroupMemberListResponse> DescribeGroupMemberListOutcome;
                 typedef std::future<DescribeGroupMemberListOutcome> DescribeGroupMemberListOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeGroupMemberListRequest&, DescribeGroupMemberListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGroupMemberListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeQuestionListResponse> DescribeQuestionListOutcome;
+                typedef std::future<DescribeQuestionListOutcome> DescribeQuestionListOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeQuestionListRequest&, DescribeQuestionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeQuestionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRoomResponse> DescribeRoomOutcome;
                 typedef std::future<DescribeRoomOutcome> DescribeRoomOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeRoomRequest&, DescribeRoomOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomAsyncHandler;
@@ -215,6 +227,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSdkAppIdUsersResponse> DescribeSdkAppIdUsersOutcome;
                 typedef std::future<DescribeSdkAppIdUsersOutcome> DescribeSdkAppIdUsersOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeSdkAppIdUsersRequest&, DescribeSdkAppIdUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSdkAppIdUsersAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSupervisorsResponse> DescribeSupervisorsOutcome;
+                typedef std::future<DescribeSupervisorsOutcome> DescribeSupervisorsOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::DescribeSupervisorsRequest&, DescribeSupervisorsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSupervisorsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeUserResponse> DescribeUserOutcome;
                 typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::DescribeUserRequest&, DescribeUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserAsyncHandler;
@@ -432,6 +447,15 @@ namespace TencentCloud
                 DeleteRoomOutcomeCallable DeleteRoomCallable(const Model::DeleteRoomRequest& request);
 
                 /**
+                 *获取房间答题详情
+                 * @param req DescribeAnswerListRequest
+                 * @return DescribeAnswerListOutcome
+                 */
+                DescribeAnswerListOutcome DescribeAnswerList(const Model::DescribeAnswerListRequest &request);
+                void DescribeAnswerListAsync(const Model::DescribeAnswerListRequest& request, const DescribeAnswerListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAnswerListOutcomeCallable DescribeAnswerListCallable(const Model::DescribeAnswerListRequest& request);
+
+                /**
                  *获取应用详情
                  * @param req DescribeAppDetailRequest
                  * @return DescribeAppDetailOutcome
@@ -504,6 +528,15 @@ namespace TencentCloud
                 DescribeGroupMemberListOutcomeCallable DescribeGroupMemberListCallable(const Model::DescribeGroupMemberListRequest& request);
 
                 /**
+                 *获取房间提问列表
+                 * @param req DescribeQuestionListRequest
+                 * @return DescribeQuestionListOutcome
+                 */
+                DescribeQuestionListOutcome DescribeQuestionList(const Model::DescribeQuestionListRequest &request);
+                void DescribeQuestionListAsync(const Model::DescribeQuestionListRequest& request, const DescribeQuestionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeQuestionListOutcomeCallable DescribeQuestionListCallable(const Model::DescribeQuestionListRequest& request);
+
+                /**
                  *获取房间信息
                  * @param req DescribeRoomRequest
                  * @return DescribeRoomOutcome
@@ -529,6 +562,15 @@ namespace TencentCloud
                 DescribeSdkAppIdUsersOutcome DescribeSdkAppIdUsers(const Model::DescribeSdkAppIdUsersRequest &request);
                 void DescribeSdkAppIdUsersAsync(const Model::DescribeSdkAppIdUsersRequest& request, const DescribeSdkAppIdUsersAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSdkAppIdUsersOutcomeCallable DescribeSdkAppIdUsersCallable(const Model::DescribeSdkAppIdUsersRequest& request);
+
+                /**
+                 *获取巡课列表
+                 * @param req DescribeSupervisorsRequest
+                 * @return DescribeSupervisorsOutcome
+                 */
+                DescribeSupervisorsOutcome DescribeSupervisors(const Model::DescribeSupervisorsRequest &request);
+                void DescribeSupervisorsAsync(const Model::DescribeSupervisorsRequest& request, const DescribeSupervisorsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSupervisorsOutcomeCallable DescribeSupervisorsCallable(const Model::DescribeSupervisorsRequest& request);
 
                 /**
                  *获取用户信息

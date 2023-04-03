@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Vpn网关id
-                     * @return VpnGatewayId Vpn网关id
+                     * 获取VPN网关实例ID。
+                     * @return VpnGatewayId VPN网关实例ID。
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
-                     * 设置Vpn网关id
-                     * @param VpnGatewayId Vpn网关id
+                     * 设置VPN网关实例ID。
+                     * @param VpnGatewayId VPN网关实例ID。
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取路由修改参数
-                     * @return Routes 路由修改参数
+                     * 获取路由修改参数。
+                     * @return Routes 路由修改参数。
                      */
                     std::vector<VpnGatewayRouteModify> GetRoutes() const;
 
                     /**
-                     * 设置路由修改参数
-                     * @param Routes 路由修改参数
+                     * 设置路由修改参数。
+                     * @param Routes 路由修改参数。
                      */
                     void SetRoutes(const std::vector<VpnGatewayRouteModify>& _routes);
 
@@ -82,13 +82,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Vpn网关id
+                     * VPN网关实例ID。
                      */
                     std::string m_vpnGatewayId;
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * 路由修改参数
+                     * 路由修改参数。
                      */
                     std::vector<VpnGatewayRouteModify> m_routes;
                     bool m_routesHasBeenSet;

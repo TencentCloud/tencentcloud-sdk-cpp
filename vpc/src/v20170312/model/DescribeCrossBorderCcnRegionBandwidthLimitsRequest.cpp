@@ -22,7 +22,10 @@
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-DescribeCrossBorderCcnRegionBandwidthLimitsRequest::DescribeCrossBorderCcnRegionBandwidthLimitsRequest()
+DescribeCrossBorderCcnRegionBandwidthLimitsRequest::DescribeCrossBorderCcnRegionBandwidthLimitsRequest() :
+    m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
+    m_limitHasBeenSet(false)
 {
 }
 
@@ -33,6 +36,37 @@ string DescribeCrossBorderCcnRegionBandwidthLimitsRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
+    if (m_filtersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Filters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_filters.begin(); itr != m_filters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_limitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Limit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_limit, allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -40,5 +74,53 @@ string DescribeCrossBorderCcnRegionBandwidthLimitsRequest::ToJsonString() const
     return buffer.GetString();
 }
 
+
+vector<Filter> DescribeCrossBorderCcnRegionBandwidthLimitsRequest::GetFilters() const
+{
+    return m_filters;
+}
+
+void DescribeCrossBorderCcnRegionBandwidthLimitsRequest::SetFilters(const vector<Filter>& _filters)
+{
+    m_filters = _filters;
+    m_filtersHasBeenSet = true;
+}
+
+bool DescribeCrossBorderCcnRegionBandwidthLimitsRequest::FiltersHasBeenSet() const
+{
+    return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeCrossBorderCcnRegionBandwidthLimitsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeCrossBorderCcnRegionBandwidthLimitsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeCrossBorderCcnRegionBandwidthLimitsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
+}
+
+uint64_t DescribeCrossBorderCcnRegionBandwidthLimitsRequest::GetLimit() const
+{
+    return m_limit;
+}
+
+void DescribeCrossBorderCcnRegionBandwidthLimitsRequest::SetLimit(const uint64_t& _limit)
+{
+    m_limit = _limit;
+    m_limitHasBeenSet = true;
+}
+
+bool DescribeCrossBorderCcnRegionBandwidthLimitsRequest::LimitHasBeenSet() const
+{
+    return m_limitHasBeenSet;
+}
 
 

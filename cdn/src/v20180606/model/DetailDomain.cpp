@@ -85,7 +85,8 @@ DetailDomain::DetailDomain() :
     m_parentHostHasBeenSet(false),
     m_hwPrivateAccessHasBeenSet(false),
     m_qnPrivateAccessHasBeenSet(false),
-    m_httpsBillingHasBeenSet(false)
+    m_httpsBillingHasBeenSet(false),
+    m_othersPrivateAccessHasBeenSet(false)
 {
 }
 
@@ -1103,6 +1104,23 @@ CoreInternalOutcome DetailDomain::Deserialize(const rapidjson::Value &value)
         m_httpsBillingHasBeenSet = true;
     }
 
+    if (value.HasMember("OthersPrivateAccess") && !value["OthersPrivateAccess"].IsNull())
+    {
+        if (!value["OthersPrivateAccess"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetailDomain.OthersPrivateAccess` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_othersPrivateAccess.Deserialize(value["OthersPrivateAccess"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_othersPrivateAccessHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1695,6 +1713,15 @@ void DetailDomain::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_httpsBilling.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_othersPrivateAccessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "OthersPrivateAccess";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_othersPrivateAccess.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -2738,5 +2765,21 @@ void DetailDomain::SetHttpsBilling(const HttpsBilling& _httpsBilling)
 bool DetailDomain::HttpsBillingHasBeenSet() const
 {
     return m_httpsBillingHasBeenSet;
+}
+
+OthersPrivateAccess DetailDomain::GetOthersPrivateAccess() const
+{
+    return m_othersPrivateAccess;
+}
+
+void DetailDomain::SetOthersPrivateAccess(const OthersPrivateAccess& _othersPrivateAccess)
+{
+    m_othersPrivateAccess = _othersPrivateAccess;
+    m_othersPrivateAccessHasBeenSet = true;
+}
+
+bool DetailDomain::OthersPrivateAccessHasBeenSet() const
+{
+    return m_othersPrivateAccessHasBeenSet;
 }
 

@@ -32,7 +32,8 @@ TaskEventData::TaskEventData() :
     m_attachHasBeenSet(false),
     m_doneTimesHasBeenSet(false),
     m_totalTimesHasBeenSet(false),
-    m_taskNameHasBeenSet(false)
+    m_taskNameHasBeenSet(false),
+    m_growScoreHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome TaskEventData::Deserialize(const rapidjson::Value &value)
         m_taskNameHasBeenSet = true;
     }
 
+    if (value.HasMember("GrowScore") && !value["GrowScore"].IsNull())
+    {
+        if (!value["GrowScore"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TaskEventData.GrowScore` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_growScore = value["GrowScore"].GetInt64();
+        m_growScoreHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void TaskEventData::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "TaskName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_taskName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_growScoreHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GrowScore";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_growScore, allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void TaskEventData::SetTaskName(const string& _taskName)
 bool TaskEventData::TaskNameHasBeenSet() const
 {
     return m_taskNameHasBeenSet;
+}
+
+int64_t TaskEventData::GetGrowScore() const
+{
+    return m_growScore;
+}
+
+void TaskEventData::SetGrowScore(const int64_t& _growScore)
+{
+    m_growScore = _growScore;
+    m_growScoreHasBeenSet = true;
+}
+
+bool TaskEventData::GrowScoreHasBeenSet() const
+{
+    return m_growScoreHasBeenSet;
 }
 

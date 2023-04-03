@@ -39,7 +39,9 @@ RecognizeIndonesiaIDCardOCRResponse::RecognizeIndonesiaIDCardOCRResponse() :
     m_kewargaNegaraanHasBeenSet(false),
     m_berlakuHinggaHasBeenSet(false),
     m_issuedDateHasBeenSet(false),
-    m_photoHasBeenSet(false)
+    m_photoHasBeenSet(false),
+    m_provinsiHasBeenSet(false),
+    m_kotaHasBeenSet(false)
 {
 }
 
@@ -237,6 +239,26 @@ CoreInternalOutcome RecognizeIndonesiaIDCardOCRResponse::Deserialize(const strin
         m_photoHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Provinsi") && !rsp["Provinsi"].IsNull())
+    {
+        if (!rsp["Provinsi"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Provinsi` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_provinsi = string(rsp["Provinsi"].GetString());
+        m_provinsiHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("Kota") && !rsp["Kota"].IsNull())
+    {
+        if (!rsp["Kota"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Kota` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_kota = string(rsp["Kota"].GetString());
+        m_kotaHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -373,6 +395,22 @@ string RecognizeIndonesiaIDCardOCRResponse::ToJsonString() const
         string key = "Photo";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_photo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_provinsiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Provinsi";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_provinsi.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_kotaHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Kota";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_kota.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -545,6 +583,26 @@ string RecognizeIndonesiaIDCardOCRResponse::GetPhoto() const
 bool RecognizeIndonesiaIDCardOCRResponse::PhotoHasBeenSet() const
 {
     return m_photoHasBeenSet;
+}
+
+string RecognizeIndonesiaIDCardOCRResponse::GetProvinsi() const
+{
+    return m_provinsi;
+}
+
+bool RecognizeIndonesiaIDCardOCRResponse::ProvinsiHasBeenSet() const
+{
+    return m_provinsiHasBeenSet;
+}
+
+string RecognizeIndonesiaIDCardOCRResponse::GetKota() const
+{
+    return m_kota;
+}
+
+bool RecognizeIndonesiaIDCardOCRResponse::KotaHasBeenSet() const
+{
+    return m_kotaHasBeenSet;
 }
 
 

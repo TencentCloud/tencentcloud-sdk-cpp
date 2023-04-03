@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPNGW字符型ID列表
-                     * @return VpnGatewayIds VPNGW字符型ID列表
+                     * 获取VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
+                     * @return VpnGatewayIds VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
                      */
                     std::vector<std::string> GetVpnGatewayIds() const;
 
                     /**
-                     * 设置VPNGW字符型ID列表
-                     * @param VpnGatewayIds VPNGW字符型ID列表
+                     * 设置VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
+                     * @param VpnGatewayIds VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
                      */
                     void SetVpnGatewayIds(const std::vector<std::string>& _vpnGatewayIds);
 
@@ -61,18 +61,18 @@ namespace TencentCloud
                     bool VpnGatewayIdsHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标记[0, 1, 2]
-0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费
-                     * @return AutoRenewFlag 自动续费标记[0, 1, 2]
-0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费
+                     * 获取自动续费标记 [0, 1, 2]
+0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
+                     * @return AutoRenewFlag 自动续费标记 [0, 1, 2]
+0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
                      */
                     int64_t GetAutoRenewFlag() const;
 
                     /**
-                     * 设置自动续费标记[0, 1, 2]
-0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费
-                     * @param AutoRenewFlag 自动续费标记[0, 1, 2]
-0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费
+                     * 设置自动续费标记 [0, 1, 2]
+0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
+                     * @param AutoRenewFlag 自动续费标记 [0, 1, 2]
+0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
                      */
                     void SetAutoRenewFlag(const int64_t& _autoRenewFlag);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取VPNGW类型['IPSEC', 'SSL']
-                     * @return Type VPNGW类型['IPSEC', 'SSL']
+                     * 获取VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
+                     * @return Type VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置VPNGW类型['IPSEC', 'SSL']
-                     * @param Type VPNGW类型['IPSEC', 'SSL']
+                     * 设置VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
+                     * @param Type VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
                      */
                     void SetType(const std::string& _type);
 
@@ -103,20 +103,20 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPNGW字符型ID列表
+                     * VPNGW字符型ID列表。可通过[DescribeVpnGateways](https://cloud.tencent.com/document/api/215/17514)接口返回值VpnGatewaySet中的VpnGatewayId获取。
                      */
                     std::vector<std::string> m_vpnGatewayIds;
                     bool m_vpnGatewayIdsHasBeenSet;
 
                     /**
-                     * 自动续费标记[0, 1, 2]
-0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费
+                     * 自动续费标记 [0, 1, 2]
+0表示默认状态(初始状态)， 1表示自动续费，2表示明确不自动续费。
                      */
                     int64_t m_autoRenewFlag;
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * VPNGW类型['IPSEC', 'SSL']
+                     * VPNGW类型['IPSEC', 'SSL']， 默认为IPSEC。
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;

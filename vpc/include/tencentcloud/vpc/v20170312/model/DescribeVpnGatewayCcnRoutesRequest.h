@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取VPN网关实例ID
-                     * @return VpnGatewayId VPN网关实例ID
+                     * 获取VPN网关实例ID。
+                     * @return VpnGatewayId VPN网关实例ID。
                      */
                     std::string GetVpnGatewayId() const;
 
                     /**
-                     * 设置VPN网关实例ID
-                     * @param VpnGatewayId VPN网关实例ID
+                     * 设置VPN网关实例ID。
+                     * @param VpnGatewayId VPN网关实例ID。
                      */
                     void SetVpnGatewayId(const std::string& _vpnGatewayId);
 
@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取偏移量
-                     * @return Offset 偏移量
+                     * 获取偏移量。默认值：0
+                     * @return Offset 偏移量。默认值：0
                      */
                     uint64_t GetOffset() const;
 
                     /**
-                     * 设置偏移量
-                     * @param Offset 偏移量
+                     * 设置偏移量。默认值：0
+                     * @param Offset 偏移量。默认值：0
                      */
                     void SetOffset(const uint64_t& _offset);
 
@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回数量
-                     * @return Limit 返回数量
+                     * 获取返回数量。默认值：20
+                     * @return Limit 返回数量。默认值：20
                      */
                     uint64_t GetLimit() const;
 
                     /**
-                     * 设置返回数量
-                     * @param Limit 返回数量
+                     * 设置返回数量。默认值：20
+                     * @param Limit 返回数量。默认值：20
                      */
                     void SetLimit(const uint64_t& _limit);
 
@@ -99,19 +99,19 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * VPN网关实例ID
+                     * VPN网关实例ID。
                      */
                     std::string m_vpnGatewayId;
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * 偏移量
+                     * 偏移量。默认值：0
                      */
                     uint64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回数量
+                     * 返回数量。默认值：20
                      */
                     uint64_t m_limit;
                     bool m_limitHasBeenSet;

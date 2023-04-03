@@ -114,6 +114,24 @@ namespace TencentCloud
                     bool EndTimeOffsetHasBeenSet() const;
 
                     /**
+                     * 获取音画质重生模版号。
+                     * @return Definition 音画质重生模版号。
+                     */
+                    int64_t GetDefinition() const;
+
+                    /**
+                     * 设置音画质重生模版号。
+                     * @param Definition 音画质重生模版号。
+                     */
+                    void SetDefinition(const int64_t& _definition);
+
+                    /**
+                     * 判断参数 Definition 是否已赋值
+                     * @return Definition 是否已赋值
+                     */
+                    bool DefinitionHasBeenSet() const;
+
+                    /**
                      * 获取画质修复控制参数。
                      * @return RepairInfo 画质修复控制参数。
                      */
@@ -366,6 +384,12 @@ namespace TencentCloud
                      */
                     double m_endTimeOffset;
                     bool m_endTimeOffsetHasBeenSet;
+
+                    /**
+                     * 音画质重生模版号。
+                     */
+                    int64_t m_definition;
+                    bool m_definitionHasBeenSet;
 
                     /**
                      * 画质修复控制参数。

@@ -203,6 +203,7 @@ set(cdn_public_header_model
   include/tencentcloud/cdn/v20180606/model/AdvancedAuthentication.h
   include/tencentcloud/cdn/v20180606/model/Revalidate.h
   include/tencentcloud/cdn/v20180606/model/UrlRecord.h
+  include/tencentcloud/cdn/v20180606/model/OthersPrivateAccess.h
   include/tencentcloud/cdn/v20180606/model/DescribePushQuotaResponse.h
   include/tencentcloud/cdn/v20180606/model/Authentication.h
   include/tencentcloud/cdn/v20180606/model/CreateClsLogTopicResponse.h
@@ -560,6 +561,7 @@ set(cdn_src
   src/v20180606/model/AdvancedAuthentication.cpp
   src/v20180606/model/Revalidate.cpp
   src/v20180606/model/UrlRecord.cpp
+  src/v20180606/model/OthersPrivateAccess.cpp
   src/v20180606/model/DescribePushQuotaResponse.cpp
   src/v20180606/model/Authentication.cpp
   src/v20180606/model/CreateClsLogTopicResponse.cpp

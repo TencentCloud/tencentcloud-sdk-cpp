@@ -46,14 +46,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取套餐ID。
-                     * @return BundleId 套餐ID。
+                     * 获取套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。
+                     * @return BundleId 套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。
                      */
                     std::string GetBundleId() const;
 
                     /**
-                     * 设置套餐ID。
-                     * @param BundleId 套餐ID。
+                     * 设置套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。
+                     * @param BundleId 套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。
                      */
                     void SetBundleId(const std::string& _bundleId);
 
@@ -64,14 +64,14 @@ namespace TencentCloud
                     bool BundleIdHasBeenSet() const;
 
                     /**
-                     * 获取镜像ID。
-                     * @return BlueprintId 镜像ID。
+                     * 获取镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。
+                     * @return BlueprintId 镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。
                      */
                     std::string GetBlueprintId() const;
 
                     /**
-                     * 设置镜像ID。
-                     * @param BlueprintId 镜像ID。
+                     * 设置镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。
+                     * @param BlueprintId 镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。
                      */
                     void SetBlueprintId(const std::string& _blueprintId);
 
@@ -262,13 +262,13 @@ false（默认）：发送正常请求，通过检查后直接创建实例
                 private:
 
                     /**
-                     * 套餐ID。
+                     * 套餐ID。可以通过调用 [查询套餐](https://cloud.tencent.com/document/api/1207/47575) 接口获取。
                      */
                     std::string m_bundleId;
                     bool m_bundleIdHasBeenSet;
 
                     /**
-                     * 镜像ID。
+                     * 镜像ID。可以通过调用 [查询镜像信息](https://cloud.tencent.com/document/api/1207/47689) 接口获取。
                      */
                     std::string m_blueprintId;
                     bool m_blueprintIdHasBeenSet;

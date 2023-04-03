@@ -33,7 +33,8 @@ InLongAgentDetail::InLongAgentDetail() :
     m_taskCountHasBeenSet(false),
     m_agentGroupIdHasBeenSet(false),
     m_cvmAgentStatusListHasBeenSet(false),
-    m_agentTotalHasBeenSet(false)
+    m_agentTotalHasBeenSet(false),
+    m_lifeDaysHasBeenSet(false)
 {
 }
 
@@ -182,6 +183,16 @@ CoreInternalOutcome InLongAgentDetail::Deserialize(const rapidjson::Value &value
         m_agentTotalHasBeenSet = true;
     }
 
+    if (value.HasMember("LifeDays") && !value["LifeDays"].IsNull())
+    {
+        if (!value["LifeDays"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InLongAgentDetail.LifeDays` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_lifeDays = value["LifeDays"].GetInt64();
+        m_lifeDaysHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -298,6 +309,14 @@ void InLongAgentDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "AgentTotal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_agentTotal, allocator);
+    }
+
+    if (m_lifeDaysHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LifeDays";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_lifeDays, allocator);
     }
 
 }
@@ -509,5 +528,21 @@ void InLongAgentDetail::SetAgentTotal(const uint64_t& _agentTotal)
 bool InLongAgentDetail::AgentTotalHasBeenSet() const
 {
     return m_agentTotalHasBeenSet;
+}
+
+int64_t InLongAgentDetail::GetLifeDays() const
+{
+    return m_lifeDays;
+}
+
+void InLongAgentDetail::SetLifeDays(const int64_t& _lifeDays)
+{
+    m_lifeDays = _lifeDays;
+    m_lifeDaysHasBeenSet = true;
+}
+
+bool InLongAgentDetail::LifeDaysHasBeenSet() const
+{
+    return m_lifeDaysHasBeenSet;
 }
 

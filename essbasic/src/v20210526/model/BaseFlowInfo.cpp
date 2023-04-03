@@ -28,7 +28,8 @@ BaseFlowInfo::BaseFlowInfo() :
     m_unorderedHasBeenSet(false),
     m_intelligentStatusHasBeenSet(false),
     m_formFieldsHasBeenSet(false),
-    m_needSignReviewHasBeenSet(false)
+    m_needSignReviewHasBeenSet(false),
+    m_userDataHasBeenSet(false)
 {
 }
 
@@ -127,6 +128,16 @@ CoreInternalOutcome BaseFlowInfo::Deserialize(const rapidjson::Value &value)
         m_needSignReviewHasBeenSet = true;
     }
 
+    if (value.HasMember("UserData") && !value["UserData"].IsNull())
+    {
+        if (!value["UserData"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BaseFlowInfo.UserData` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_userData = string(value["UserData"].GetString());
+        m_userDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -203,6 +214,14 @@ void BaseFlowInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "NeedSignReview";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_needSignReview, allocator);
+    }
+
+    if (m_userDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UserData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_userData.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -334,5 +353,21 @@ void BaseFlowInfo::SetNeedSignReview(const bool& _needSignReview)
 bool BaseFlowInfo::NeedSignReviewHasBeenSet() const
 {
     return m_needSignReviewHasBeenSet;
+}
+
+string BaseFlowInfo::GetUserData() const
+{
+    return m_userData;
+}
+
+void BaseFlowInfo::SetUserData(const string& _userData)
+{
+    m_userData = _userData;
+    m_userDataHasBeenSet = true;
+}
+
+bool BaseFlowInfo::UserDataHasBeenSet() const
+{
+    return m_userDataHasBeenSet;
 }
 

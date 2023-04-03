@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool GroupIdHasBeenSet() const;
 
                     /**
-                     * 获取设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
-                     * @return SearchKey 设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
+                     * 获取模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * @return SearchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
-                     * @param SearchKey 设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
+                     * 设置模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
+                     * @param SearchKey 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_groupIdHasBeenSet;
 
                     /**
-                     * 设置模糊查询的关键字，可以设置为实例ID或实例名称进行模糊查询。
+                     * 模糊查询的关键字，可以设置为复制组ID或复制组名称进行模糊查询。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;

@@ -43,7 +43,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取服务商ID
+                     * @return DeveloperId 服务商ID
+                     */
+                    std::string GetDeveloperId() const;
+
+                    /**
+                     * 判断参数 DeveloperId 是否已赋值
+                     * @return DeveloperId 是否已赋值
+                     */
+                    bool DeveloperIdHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 服务商ID
+                     */
+                    std::string m_developerId;
+                    bool m_developerIdHasBeenSet;
 
                 };
             }

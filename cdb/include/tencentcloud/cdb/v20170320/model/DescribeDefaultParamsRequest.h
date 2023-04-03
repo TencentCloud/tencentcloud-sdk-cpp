@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取mysql版本，目前支持 ["5.1", "5.5", "5.6", "5.7"]。
-                     * @return EngineVersion mysql版本，目前支持 ["5.1", "5.5", "5.6", "5.7"]。
+                     * 获取引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * @return EngineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
                      */
                     std::string GetEngineVersion() const;
 
                     /**
-                     * 设置mysql版本，目前支持 ["5.1", "5.5", "5.6", "5.7"]。
-                     * @param EngineVersion mysql版本，目前支持 ["5.1", "5.5", "5.6", "5.7"]。
+                     * 设置引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
+                     * @param EngineVersion 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
                      */
                     void SetEngineVersion(const std::string& _engineVersion);
 
@@ -99,7 +99,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * mysql版本，目前支持 ["5.1", "5.5", "5.6", "5.7"]。
+                     * 引擎版本，目前支持 ["5.1", "5.5", "5.6", "5.7", "8.0"]
                      */
                     std::string m_engineVersion;
                     bool m_engineVersionHasBeenSet;

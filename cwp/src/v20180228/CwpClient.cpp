@@ -4469,6 +4469,49 @@ CwpClient::DescribeBashEventsOutcomeCallable CwpClient::DescribeBashEventsCallab
     return task->get_future();
 }
 
+CwpClient::DescribeBashEventsInfoNewOutcome CwpClient::DescribeBashEventsInfoNew(const DescribeBashEventsInfoNewRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBashEventsInfoNew");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBashEventsInfoNewResponse rsp = DescribeBashEventsInfoNewResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBashEventsInfoNewOutcome(rsp);
+        else
+            return DescribeBashEventsInfoNewOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBashEventsInfoNewOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeBashEventsInfoNewAsync(const DescribeBashEventsInfoNewRequest& request, const DescribeBashEventsInfoNewAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBashEventsInfoNew(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeBashEventsInfoNewOutcomeCallable CwpClient::DescribeBashEventsInfoNewCallable(const DescribeBashEventsInfoNewRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBashEventsInfoNewOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBashEventsInfoNew(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeBashEventsNewOutcome CwpClient::DescribeBashEventsNew(const DescribeBashEventsNewRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBashEventsNew");

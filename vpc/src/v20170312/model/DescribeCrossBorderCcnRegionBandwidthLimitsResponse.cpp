@@ -23,7 +23,9 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-DescribeCrossBorderCcnRegionBandwidthLimitsResponse::DescribeCrossBorderCcnRegionBandwidthLimitsResponse()
+DescribeCrossBorderCcnRegionBandwidthLimitsResponse::DescribeCrossBorderCcnRegionBandwidthLimitsResponse() :
+    m_totalCountHasBeenSet(false),
+    m_ccnBandwidthSetHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,36 @@ CoreInternalOutcome DescribeCrossBorderCcnRegionBandwidthLimitsResponse::Deseria
     }
 
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("CcnBandwidthSet") && !rsp["CcnBandwidthSet"].IsNull())
+    {
+        if (!rsp["CcnBandwidthSet"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `CcnBandwidthSet` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["CcnBandwidthSet"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            CcnBandwidth item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_ccnBandwidthSet.push_back(item);
+        }
+        m_ccnBandwidthSetHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -70,6 +102,29 @@ string DescribeCrossBorderCcnRegionBandwidthLimitsResponse::ToJsonString() const
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
+
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_ccnBandwidthSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CcnBandwidthSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_ccnBandwidthSet.begin(); itr != m_ccnBandwidthSet.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
 
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
@@ -82,5 +137,25 @@ string DescribeCrossBorderCcnRegionBandwidthLimitsResponse::ToJsonString() const
     return buffer.GetString();
 }
 
+
+uint64_t DescribeCrossBorderCcnRegionBandwidthLimitsResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeCrossBorderCcnRegionBandwidthLimitsResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
+}
+
+vector<CcnBandwidth> DescribeCrossBorderCcnRegionBandwidthLimitsResponse::GetCcnBandwidthSet() const
+{
+    return m_ccnBandwidthSet;
+}
+
+bool DescribeCrossBorderCcnRegionBandwidthLimitsResponse::CcnBandwidthSetHasBeenSet() const
+{
+    return m_ccnBandwidthSetHasBeenSet;
+}
 
 

@@ -23,7 +23,8 @@ using namespace TencentCloud::Cdwch::V20200915::Model;
 using namespace std;
 
 DescribeInstanceRequest::DescribeInstanceRequest() :
-    m_instanceIdHasBeenSet(false)
+    m_instanceIdHasBeenSet(false),
+    m_isOpenApiHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeInstanceRequest::ToJsonString() const
         string key = "InstanceId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_instanceId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_isOpenApiHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsOpenApi";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isOpenApi, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeInstanceRequest::SetInstanceId(const string& _instanceId)
 bool DescribeInstanceRequest::InstanceIdHasBeenSet() const
 {
     return m_instanceIdHasBeenSet;
+}
+
+bool DescribeInstanceRequest::GetIsOpenApi() const
+{
+    return m_isOpenApi;
+}
+
+void DescribeInstanceRequest::SetIsOpenApi(const bool& _isOpenApi)
+{
+    m_isOpenApi = _isOpenApi;
+    m_isOpenApiHasBeenSet = true;
+}
+
+bool DescribeInstanceRequest::IsOpenApiHasBeenSet() const
+{
+    return m_isOpenApiHasBeenSet;
 }
 
 

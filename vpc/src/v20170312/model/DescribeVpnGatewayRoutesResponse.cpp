@@ -24,7 +24,8 @@ using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
 DescribeVpnGatewayRoutesResponse::DescribeVpnGatewayRoutesResponse() :
-    m_routesHasBeenSet(false)
+    m_routesHasBeenSet(false),
+    m_totalCountHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,16 @@ CoreInternalOutcome DescribeVpnGatewayRoutesResponse::Deserialize(const string &
         m_routesHasBeenSet = true;
     }
 
+    if (rsp.HasMember("TotalCount") && !rsp["TotalCount"].IsNull())
+    {
+        if (!rsp["TotalCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TotalCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_totalCount = rsp["TotalCount"].GetUint64();
+        m_totalCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +118,14 @@ string DescribeVpnGatewayRoutesResponse::ToJsonString() const
         }
     }
 
+    if (m_totalCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TotalCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_totalCount, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -127,6 +146,16 @@ vector<VpnGatewayRoute> DescribeVpnGatewayRoutesResponse::GetRoutes() const
 bool DescribeVpnGatewayRoutesResponse::RoutesHasBeenSet() const
 {
     return m_routesHasBeenSet;
+}
+
+uint64_t DescribeVpnGatewayRoutesResponse::GetTotalCount() const
+{
+    return m_totalCount;
+}
+
+bool DescribeVpnGatewayRoutesResponse::TotalCountHasBeenSet() const
+{
+    return m_totalCountHasBeenSet;
 }
 
 

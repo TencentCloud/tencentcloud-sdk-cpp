@@ -169,3 +169,89 @@ CarClient::DestroySessionOutcomeCallable CarClient::DestroySessionCallable(const
     return task->get_future();
 }
 
+CarClient::StartPublishStreamOutcome CarClient::StartPublishStream(const StartPublishStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartPublishStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartPublishStreamResponse rsp = StartPublishStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartPublishStreamOutcome(rsp);
+        else
+            return StartPublishStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return StartPublishStreamOutcome(outcome.GetError());
+    }
+}
+
+void CarClient::StartPublishStreamAsync(const StartPublishStreamRequest& request, const StartPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartPublishStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CarClient::StartPublishStreamOutcomeCallable CarClient::StartPublishStreamCallable(const StartPublishStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartPublishStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->StartPublishStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CarClient::StopPublishStreamOutcome CarClient::StopPublishStream(const StopPublishStreamRequest &request)
+{
+    auto outcome = MakeRequest(request, "StopPublishStream");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StopPublishStreamResponse rsp = StopPublishStreamResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StopPublishStreamOutcome(rsp);
+        else
+            return StopPublishStreamOutcome(o.GetError());
+    }
+    else
+    {
+        return StopPublishStreamOutcome(outcome.GetError());
+    }
+}
+
+void CarClient::StopPublishStreamAsync(const StopPublishStreamRequest& request, const StopPublishStreamAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StopPublishStream(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CarClient::StopPublishStreamOutcomeCallable CarClient::StopPublishStreamCallable(const StopPublishStreamRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StopPublishStreamOutcome()>>(
+        [this, request]()
+        {
+            return this->StopPublishStream(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+

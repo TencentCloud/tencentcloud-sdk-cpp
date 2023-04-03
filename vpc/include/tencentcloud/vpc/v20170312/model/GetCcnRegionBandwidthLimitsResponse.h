@@ -45,9 +45,9 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云联网（CCN）各地域出带宽带宽详情。
+                     * 获取云联网（CCN）各地域出带宽详情。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return CcnBandwidthSet 云联网（CCN）各地域出带宽带宽详情。
+                     * @return CcnBandwidthSet 云联网（CCN）各地域出带宽详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CcnBandwidthInfo> GetCcnBandwidthSet() const;
@@ -75,7 +75,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云联网（CCN）各地域出带宽带宽详情。
+                     * 云联网（CCN）各地域出带宽详情。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<CcnBandwidthInfo> m_ccnBandwidthSet;

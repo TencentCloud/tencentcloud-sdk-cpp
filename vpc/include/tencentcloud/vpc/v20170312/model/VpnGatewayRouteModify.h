@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取Vpn网关路由ID
-                     * @return RouteId Vpn网关路由ID
+                     * 获取VPN网关路由ID。
+                     * @return RouteId VPN网关路由ID。
                      */
                     std::string GetRouteId() const;
 
                     /**
-                     * 设置Vpn网关路由ID
-                     * @param RouteId Vpn网关路由ID
+                     * 设置VPN网关路由ID。
+                     * @param RouteId VPN网关路由ID。
                      */
                     void SetRouteId(const std::string& _routeId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RouteIdHasBeenSet() const;
 
                     /**
-                     * 获取Vpn网关状态, ENABEL 启用, DISABLE禁用
-                     * @return Status Vpn网关状态, ENABEL 启用, DISABLE禁用
+                     * 获取VPN网关状态, ENABLE 启用, DISABLE禁用。
+                     * @return Status VPN网关状态, ENABLE 启用, DISABLE禁用。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置Vpn网关状态, ENABEL 启用, DISABLE禁用
-                     * @param Status Vpn网关状态, ENABEL 启用, DISABLE禁用
+                     * 设置VPN网关状态, ENABLE 启用, DISABLE禁用。
+                     * @param Status VPN网关状态, ENABLE 启用, DISABLE禁用。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * Vpn网关路由ID
+                     * VPN网关路由ID。
                      */
                     std::string m_routeId;
                     bool m_routeIdHasBeenSet;
 
                     /**
-                     * Vpn网关状态, ENABEL 启用, DISABLE禁用
+                     * VPN网关状态, ENABLE 启用, DISABLE禁用。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

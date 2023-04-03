@@ -201,17 +201,17 @@ namespace TencentCloud
                     bool TaskTypeHasBeenSet() const;
 
                     /**
-                     * 获取当前积分/成长值
+                     * 获取当前积分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TotalCoin 当前积分/成长值
+                     * @return TotalCoin 当前积分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTotalCoin() const;
 
                     /**
-                     * 设置当前积分/成长值
+                     * 设置当前积分
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TotalCoin 当前积分/成长值
+                     * @param TotalCoin 当前积分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTotalCoin(const int64_t& _totalCoin);
@@ -310,6 +310,28 @@ namespace TencentCloud
                      */
                     bool TaskNameHasBeenSet() const;
 
+                    /**
+                     * 获取当前成长值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return GrowScore 当前成长值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetGrowScore() const;
+
+                    /**
+                     * 设置当前成长值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param GrowScore 当前成长值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetGrowScore(const int64_t& _growScore);
+
+                    /**
+                     * 判断参数 GrowScore 是否已赋值
+                     * @return GrowScore 是否已赋值
+                     */
+                    bool GrowScoreHasBeenSet() const;
+
                 private:
 
                     /**
@@ -362,7 +384,7 @@ namespace TencentCloud
                     bool m_taskTypeHasBeenSet;
 
                     /**
-                     * 当前积分/成长值
+                     * 当前积分
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_totalCoin;
@@ -395,6 +417,13 @@ namespace TencentCloud
                      */
                     std::string m_taskName;
                     bool m_taskNameHasBeenSet;
+
+                    /**
+                     * 当前成长值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_growScore;
+                    bool m_growScoreHasBeenSet;
 
                 };
             }

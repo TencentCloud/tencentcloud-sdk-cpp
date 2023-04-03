@@ -132,14 +132,14 @@ namespace TencentCloud
                     bool CcnIdHasBeenSet() const;
 
                     /**
-                     * 获取排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。
-                     * @return OrderField 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。
+                     * 获取排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
+                     * @return OrderField 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
                      */
                     std::string GetOrderField() const;
 
                     /**
-                     * 设置排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。
-                     * @param OrderField 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。
+                     * 设置排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
+                     * @param OrderField 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
                      */
                     void SetOrderField(const std::string& _orderField);
 
@@ -150,14 +150,14 @@ namespace TencentCloud
                     bool OrderFieldHasBeenSet() const;
 
                     /**
-                     * 获取排序方法。升序：`ASC`，倒序：`DESC`。
-                     * @return OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。
+                     * 获取排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * @return OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
                      */
                     std::string GetOrderDirection() const;
 
                     /**
-                     * 设置排序方法。升序：`ASC`，倒序：`DESC`。
-                     * @param OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。
+                     * 设置排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
+                     * @param OrderDirection 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
                      */
                     void SetOrderDirection(const std::string& _orderDirection);
 
@@ -198,13 +198,13 @@ namespace TencentCloud
                     bool m_ccnIdHasBeenSet;
 
                     /**
-                     * 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。
+                     * 排序字段。支持：`CcnId` `InstanceType` `InstanceId` `InstanceName` `InstanceRegion` `AttachedTime` `State`。默认值：`AttachedTime`
                      */
                     std::string m_orderField;
                     bool m_orderFieldHasBeenSet;
 
                     /**
-                     * 排序方法。升序：`ASC`，倒序：`DESC`。
+                     * 排序方法。升序：`ASC`，倒序：`DESC`。默认值：`ASC`
                      */
                     std::string m_orderDirection;
                     bool m_orderDirectionHasBeenSet;

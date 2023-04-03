@@ -2634,7 +2634,7 @@ namespace TencentCloud
                 DeleteVpnGatewayOutcomeCallable DeleteVpnGatewayCallable(const Model::DeleteVpnGatewayRequest& request);
 
                 /**
-                 *本接口（DeleteVpnGatewayCcnRoutes）用于删除VPN网关路由
+                 *本接口（DeleteVpnGatewayRoutes）用于删除VPN网关路由
                  * @param req DeleteVpnGatewayRoutesRequest
                  * @return DeleteVpnGatewayRoutesOutcome
                  */
@@ -2801,7 +2801,6 @@ namespace TencentCloud
                  *本接口（DescribeCrossBorderCcnRegionBandwidthLimits）用于获取要锁定的限速实例列表。
 该接口一般用来封禁地域间限速的云联网实例下的限速实例, 目前联通内部运营系统通过云API调用, 如果是出口限速, 一般使用更粗的云联网实例粒度封禁（DescribeTenantCcns）
 如有需要, 可以封禁任意限速实例, 可接入到内部运营系统
-
                  * @param req DescribeCrossBorderCcnRegionBandwidthLimitsRequest
                  * @return DescribeCrossBorderCcnRegionBandwidthLimitsOutcome
                  */
@@ -3382,7 +3381,7 @@ LimitTypes取值范围：
                 DescribeVpnConnectionsOutcomeCallable DescribeVpnConnectionsCallable(const Model::DescribeVpnConnectionsRequest& request);
 
                 /**
-                 *本接口（DescribeVpnGatewayCcnRoutes）用于查询VPN网关云联网路由
+                 *本接口（DescribeVpnGatewayCcnRoutes）用于查询VPN网关云联网路由。
                  * @param req DescribeVpnGatewayCcnRoutesRequest
                  * @return DescribeVpnGatewayCcnRoutesOutcome
                  */
@@ -3391,7 +3390,7 @@ LimitTypes取值范围：
                 DescribeVpnGatewayCcnRoutesOutcomeCallable DescribeVpnGatewayCcnRoutesCallable(const Model::DescribeVpnGatewayCcnRoutesRequest& request);
 
                 /**
-                 *查询路由型VPN网关的目的路由
+                 *本接口（DescribeVpnGatewayRoutes）用于查询VPN网关路由。
                  * @param req DescribeVpnGatewayRoutesRequest
                  * @return DescribeVpnGatewayRoutesOutcome
                  */
@@ -4214,7 +4213,7 @@ LimitTypes取值范围：
                 ModifyVpnGatewayAttributeOutcomeCallable ModifyVpnGatewayAttributeCallable(const Model::ModifyVpnGatewayAttributeRequest& request);
 
                 /**
-                 *本接口（ModifyVpnGatewayCcnRoutes）用于修改VPN网关云联网路由
+                 *本接口（ModifyVpnGatewayCcnRoutes）用于修改VPN网关云联网路由。
                  * @param req ModifyVpnGatewayCcnRoutesRequest
                  * @return ModifyVpnGatewayCcnRoutesOutcome
                  */
@@ -4223,7 +4222,7 @@ LimitTypes取值范围：
                 ModifyVpnGatewayCcnRoutesOutcomeCallable ModifyVpnGatewayCcnRoutesCallable(const Model::ModifyVpnGatewayCcnRoutesRequest& request);
 
                 /**
-                 *修改VPN路由是否启用
+                 *本接口（ModifyVpnGatewayRoutes）用于修改VPN路由是否启用。
                  * @param req ModifyVpnGatewayRoutesRequest
                  * @return ModifyVpnGatewayRoutesOutcome
                  */
@@ -4439,7 +4438,7 @@ LimitTypes取值范围：
                 SetCcnRegionBandwidthLimitsOutcomeCallable SetCcnRegionBandwidthLimitsCallable(const Model::SetCcnRegionBandwidthLimitsRequest& request);
 
                 /**
-                 *设置VPNGW续费标记
+                 *本接口（SetVpnGatewaysRenewFlag）用于设置VPNGW续费标记。
                  * @param req SetVpnGatewaysRenewFlagRequest
                  * @return SetVpnGatewaysRenewFlagOutcome
                  */

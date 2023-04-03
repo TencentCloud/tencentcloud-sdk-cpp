@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool VpnConnectionIdHasBeenSet() const;
 
                     /**
-                     * 获取对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。
-                     * @return CustomerGatewayVendor 对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。
+                     * 获取对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17513)获取。
+                     * @return CustomerGatewayVendor 对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17513)获取。
                      */
                     CustomerGatewayVendor GetCustomerGatewayVendor() const;
 
                     /**
-                     * 设置对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。
-                     * @param CustomerGatewayVendor 对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。
+                     * 设置对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17513)获取。
+                     * @param CustomerGatewayVendor 对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17513)获取。
                      */
                     void SetCustomerGatewayVendor(const CustomerGatewayVendor& _customerGatewayVendor);
 
@@ -130,7 +130,7 @@ namespace TencentCloud
                     bool m_vpnConnectionIdHasBeenSet;
 
                     /**
-                     * 对端网关厂商信息对象，可通过DescribeCustomerGatewayVendors获取。
+                     * 对端网关厂商信息对象，可通过[DescribeCustomerGatewayVendors](https://cloud.tencent.com/document/api/215/17513)获取。
                      */
                     CustomerGatewayVendor m_customerGatewayVendor;
                     bool m_customerGatewayVendorHasBeenSet;

@@ -191,6 +191,24 @@ namespace TencentCloud
                      */
                     bool NeedSignReviewHasBeenSet() const;
 
+                    /**
+                     * 获取用户流程自定义数据参数
+                     * @return UserData 用户流程自定义数据参数
+                     */
+                    std::string GetUserData() const;
+
+                    /**
+                     * 设置用户流程自定义数据参数
+                     * @param UserData 用户流程自定义数据参数
+                     */
+                    void SetUserData(const std::string& _userData);
+
+                    /**
+                     * 判断参数 UserData 是否已赋值
+                     * @return UserData 是否已赋值
+                     */
+                    bool UserDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -240,6 +258,12 @@ namespace TencentCloud
                      */
                     bool m_needSignReview;
                     bool m_needSignReviewHasBeenSet;
+
+                    /**
+                     * 用户流程自定义数据参数
+                     */
+                    std::string m_userData;
+                    bool m_userDataHasBeenSet;
 
                 };
             }

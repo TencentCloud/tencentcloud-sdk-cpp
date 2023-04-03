@@ -43,6 +43,8 @@
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceKeyValConfigsResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeInstanceShardsResponse.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceStateRequest.h>
+#include <tencentcloud/cdwch/v20200915/model/DescribeInstanceStateResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeSpecRequest.h>
 #include <tencentcloud/cdwch/v20200915/model/DescribeSpecResponse.h>
 #include <tencentcloud/cdwch/v20200915/model/DestroyInstanceRequest.h>
@@ -105,6 +107,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeInstanceShardsResponse> DescribeInstanceShardsOutcome;
                 typedef std::future<DescribeInstanceShardsOutcome> DescribeInstanceShardsOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceShardsRequest&, DescribeInstanceShardsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceShardsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeInstanceStateResponse> DescribeInstanceStateOutcome;
+                typedef std::future<DescribeInstanceStateOutcome> DescribeInstanceStateOutcomeCallable;
+                typedef std::function<void(const CdwchClient*, const Model::DescribeInstanceStateRequest&, DescribeInstanceStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeInstanceStateAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSpecResponse> DescribeSpecOutcome;
                 typedef std::future<DescribeSpecOutcome> DescribeSpecOutcomeCallable;
                 typedef std::function<void(const CdwchClient*, const Model::DescribeSpecRequest&, DescribeSpecOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSpecAsyncHandler;
@@ -224,6 +229,15 @@ namespace TencentCloud
                 DescribeInstanceShardsOutcome DescribeInstanceShards(const Model::DescribeInstanceShardsRequest &request);
                 void DescribeInstanceShardsAsync(const Model::DescribeInstanceShardsRequest& request, const DescribeInstanceShardsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeInstanceShardsOutcomeCallable DescribeInstanceShardsCallable(const Model::DescribeInstanceShardsRequest& request);
+
+                /**
+                 *集群详情页中显示集群状态、流程进度等
+                 * @param req DescribeInstanceStateRequest
+                 * @return DescribeInstanceStateOutcome
+                 */
+                DescribeInstanceStateOutcome DescribeInstanceState(const Model::DescribeInstanceStateRequest &request);
+                void DescribeInstanceStateAsync(const Model::DescribeInstanceStateRequest& request, const DescribeInstanceStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeInstanceStateOutcomeCallable DescribeInstanceStateCallable(const Model::DescribeInstanceStateRequest& request);
 
                 /**
                  *购买页拉取集群的数据节点和zookeeper节点的规格列表
