@@ -24,6 +24,7 @@ using namespace std;
 
 PullUploadRequest::PullUploadRequest() :
     m_mediaUrlHasBeenSet(false),
+    m_mediaTypeHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_mediaNameHasBeenSet(false),
     m_coverUrlHasBeenSet(false),
@@ -51,6 +52,14 @@ string PullUploadRequest::ToJsonString() const
         string key = "MediaUrl";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mediaUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_mediaType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_subAppIdHasBeenSet)
@@ -163,6 +172,22 @@ void PullUploadRequest::SetMediaUrl(const string& _mediaUrl)
 bool PullUploadRequest::MediaUrlHasBeenSet() const
 {
     return m_mediaUrlHasBeenSet;
+}
+
+string PullUploadRequest::GetMediaType() const
+{
+    return m_mediaType;
+}
+
+void PullUploadRequest::SetMediaType(const string& _mediaType)
+{
+    m_mediaType = _mediaType;
+    m_mediaTypeHasBeenSet = true;
+}
+
+bool PullUploadRequest::MediaTypeHasBeenSet() const
+{
+    return m_mediaTypeHasBeenSet;
 }
 
 uint64_t PullUploadRequest::GetSubAppId() const

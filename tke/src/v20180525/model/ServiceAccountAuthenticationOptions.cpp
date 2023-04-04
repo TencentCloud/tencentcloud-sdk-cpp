@@ -21,6 +21,7 @@ using namespace TencentCloud::Tke::V20180525::Model;
 using namespace std;
 
 ServiceAccountAuthenticationOptions::ServiceAccountAuthenticationOptions() :
+    m_useTKEDefaultHasBeenSet(false),
     m_issuerHasBeenSet(false),
     m_jWKSURIHasBeenSet(false),
     m_autoCreateDiscoveryAnonymousAuthHasBeenSet(false)
@@ -31,6 +32,16 @@ CoreInternalOutcome ServiceAccountAuthenticationOptions::Deserialize(const rapid
 {
     string requestId = "";
 
+
+    if (value.HasMember("UseTKEDefault") && !value["UseTKEDefault"].IsNull())
+    {
+        if (!value["UseTKEDefault"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `ServiceAccountAuthenticationOptions.UseTKEDefault` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_useTKEDefault = value["UseTKEDefault"].GetBool();
+        m_useTKEDefaultHasBeenSet = true;
+    }
 
     if (value.HasMember("Issuer") && !value["Issuer"].IsNull())
     {
@@ -69,6 +80,14 @@ CoreInternalOutcome ServiceAccountAuthenticationOptions::Deserialize(const rapid
 void ServiceAccountAuthenticationOptions::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_useTKEDefaultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UseTKEDefault";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_useTKEDefault, allocator);
+    }
+
     if (m_issuerHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -95,6 +114,22 @@ void ServiceAccountAuthenticationOptions::ToJsonObject(rapidjson::Value &value, 
 
 }
 
+
+bool ServiceAccountAuthenticationOptions::GetUseTKEDefault() const
+{
+    return m_useTKEDefault;
+}
+
+void ServiceAccountAuthenticationOptions::SetUseTKEDefault(const bool& _useTKEDefault)
+{
+    m_useTKEDefault = _useTKEDefault;
+    m_useTKEDefaultHasBeenSet = true;
+}
+
+bool ServiceAccountAuthenticationOptions::UseTKEDefaultHasBeenSet() const
+{
+    return m_useTKEDefaultHasBeenSet;
+}
 
 string ServiceAccountAuthenticationOptions::GetIssuer() const
 {

@@ -340,6 +340,50 @@ namespace TencentCloud
                      */
                     bool BoundNormalHasBeenSet() const;
 
+                    /**
+                     * 获取资源包状态，0-无可用资源包，1-有可用资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourcePackageStatus 资源包状态，0-无可用资源包，1-有可用资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetResourcePackageStatus() const;
+
+                    /**
+                     * 设置资源包状态，0-无可用资源包，1-有可用资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourcePackageStatus 资源包状态，0-无可用资源包，1-有可用资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourcePackageStatus(const int64_t& _resourcePackageStatus);
+
+                    /**
+                     * 判断参数 ResourcePackageStatus 是否已赋值
+                     * @return ResourcePackageStatus 是否已赋值
+                     */
+                    bool ResourcePackageStatusHasBeenSet() const;
+
+                    /**
+                     * 获取资源包规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ResourcePackageSpecName 资源包规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetResourcePackageSpecName() const;
+
+                    /**
+                     * 设置资源包规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ResourcePackageSpecName 资源包规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResourcePackageSpecName(const std::string& _resourcePackageSpecName);
+
+                    /**
+                     * 判断参数 ResourcePackageSpecName 是否已赋值
+                     * @return ResourcePackageSpecName 是否已赋值
+                     */
+                    bool ResourcePackageSpecNameHasBeenSet() const;
+
                 private:
 
                     /**
@@ -437,6 +481,20 @@ namespace TencentCloud
                      */
                     int64_t m_boundNormal;
                     bool m_boundNormalHasBeenSet;
+
+                    /**
+                     * 资源包状态，0-无可用资源包，1-有可用资源包
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_resourcePackageStatus;
+                    bool m_resourcePackageStatusHasBeenSet;
+
+                    /**
+                     * 资源包规格名称
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_resourcePackageSpecName;
+                    bool m_resourcePackageSpecNameHasBeenSet;
 
                 };
             }

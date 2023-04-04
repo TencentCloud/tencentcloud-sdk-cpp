@@ -23,10 +23,10 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelDescribeRolesRequest::ChannelDescribeRolesRequest() :
-    m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
+    m_operatorHasBeenSet(false),
     m_filtersHasBeenSet(false)
 {
 }
@@ -37,15 +37,6 @@ string ChannelDescribeRolesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
 
     if (m_agentHasBeenSet)
     {
@@ -72,6 +63,15 @@ string ChannelDescribeRolesRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_limit.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -94,22 +94,6 @@ string ChannelDescribeRolesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-UserInfo ChannelDescribeRolesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelDescribeRolesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelDescribeRolesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
 
 Agent ChannelDescribeRolesRequest::GetAgent() const
 {
@@ -157,6 +141,22 @@ void ChannelDescribeRolesRequest::SetLimit(const string& _limit)
 bool ChannelDescribeRolesRequest::LimitHasBeenSet() const
 {
     return m_limitHasBeenSet;
+}
+
+UserInfo ChannelDescribeRolesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelDescribeRolesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelDescribeRolesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 vector<Filter> ChannelDescribeRolesRequest::GetFilters() const

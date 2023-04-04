@@ -46,8 +46,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云镜uuid
-                     * @return UUID 云镜uuid
+                     * 获取容器安全uuid
+                     * @return UUID 容器安全uuid
                      */
                     std::string GetUUID() const;
 
@@ -360,7 +360,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云镜uuid
+                     * 容器安全uuid
                      */
                     std::string m_uUID;
                     bool m_uUIDHasBeenSet;

@@ -728,6 +728,49 @@ VodClient::CreateProcedureTemplateOutcomeCallable VodClient::CreateProcedureTemp
     return task->get_future();
 }
 
+VodClient::CreateRebuildMediaTemplateOutcome VodClient::CreateRebuildMediaTemplate(const CreateRebuildMediaTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateRebuildMediaTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateRebuildMediaTemplateResponse rsp = CreateRebuildMediaTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateRebuildMediaTemplateOutcome(rsp);
+        else
+            return CreateRebuildMediaTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateRebuildMediaTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::CreateRebuildMediaTemplateAsync(const CreateRebuildMediaTemplateRequest& request, const CreateRebuildMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateRebuildMediaTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::CreateRebuildMediaTemplateOutcomeCallable VodClient::CreateRebuildMediaTemplateCallable(const CreateRebuildMediaTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateRebuildMediaTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateRebuildMediaTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::CreateReviewTemplateOutcome VodClient::CreateReviewTemplate(const CreateReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateReviewTemplate");
@@ -1710,6 +1753,49 @@ VodClient::DeleteProcedureTemplateOutcomeCallable VodClient::DeleteProcedureTemp
         [this, request]()
         {
             return this->DeleteProcedureTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::DeleteRebuildMediaTemplateOutcome VodClient::DeleteRebuildMediaTemplate(const DeleteRebuildMediaTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteRebuildMediaTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteRebuildMediaTemplateResponse rsp = DeleteRebuildMediaTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteRebuildMediaTemplateOutcome(rsp);
+        else
+            return DeleteRebuildMediaTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteRebuildMediaTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DeleteRebuildMediaTemplateAsync(const DeleteRebuildMediaTemplateRequest& request, const DeleteRebuildMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteRebuildMediaTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DeleteRebuildMediaTemplateOutcomeCallable VodClient::DeleteRebuildMediaTemplateCallable(const DeleteRebuildMediaTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteRebuildMediaTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteRebuildMediaTemplate(request);
         }
     );
 
@@ -3351,6 +3437,49 @@ VodClient::DescribeProcedureTemplatesOutcomeCallable VodClient::DescribeProcedur
     return task->get_future();
 }
 
+VodClient::DescribeRebuildMediaTemplatesOutcome VodClient::DescribeRebuildMediaTemplates(const DescribeRebuildMediaTemplatesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRebuildMediaTemplates");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRebuildMediaTemplatesResponse rsp = DescribeRebuildMediaTemplatesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRebuildMediaTemplatesOutcome(rsp);
+        else
+            return DescribeRebuildMediaTemplatesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRebuildMediaTemplatesOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::DescribeRebuildMediaTemplatesAsync(const DescribeRebuildMediaTemplatesRequest& request, const DescribeRebuildMediaTemplatesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRebuildMediaTemplates(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::DescribeRebuildMediaTemplatesOutcomeCallable VodClient::DescribeRebuildMediaTemplatesCallable(const DescribeRebuildMediaTemplatesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRebuildMediaTemplatesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRebuildMediaTemplates(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::DescribeReviewDetailsOutcome VodClient::DescribeReviewDetails(const DescribeReviewDetailsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReviewDetails");
@@ -4856,6 +4985,49 @@ VodClient::ModifyPersonSampleOutcomeCallable VodClient::ModifyPersonSampleCallab
     return task->get_future();
 }
 
+VodClient::ModifyRebuildMediaTemplateOutcome VodClient::ModifyRebuildMediaTemplate(const ModifyRebuildMediaTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyRebuildMediaTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyRebuildMediaTemplateResponse rsp = ModifyRebuildMediaTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyRebuildMediaTemplateOutcome(rsp);
+        else
+            return ModifyRebuildMediaTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyRebuildMediaTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::ModifyRebuildMediaTemplateAsync(const ModifyRebuildMediaTemplateRequest& request, const ModifyRebuildMediaTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyRebuildMediaTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::ModifyRebuildMediaTemplateOutcomeCallable VodClient::ModifyRebuildMediaTemplateCallable(const ModifyRebuildMediaTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyRebuildMediaTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyRebuildMediaTemplate(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 VodClient::ModifyReviewTemplateOutcome VodClient::ModifyReviewTemplate(const ModifyReviewTemplateRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyReviewTemplate");
@@ -5752,6 +5924,49 @@ VodClient::RebuildMediaOutcomeCallable VodClient::RebuildMediaCallable(const Reb
         [this, request]()
         {
             return this->RebuildMedia(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+VodClient::RebuildMediaByTemplateOutcome VodClient::RebuildMediaByTemplate(const RebuildMediaByTemplateRequest &request)
+{
+    auto outcome = MakeRequest(request, "RebuildMediaByTemplate");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RebuildMediaByTemplateResponse rsp = RebuildMediaByTemplateResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RebuildMediaByTemplateOutcome(rsp);
+        else
+            return RebuildMediaByTemplateOutcome(o.GetError());
+    }
+    else
+    {
+        return RebuildMediaByTemplateOutcome(outcome.GetError());
+    }
+}
+
+void VodClient::RebuildMediaByTemplateAsync(const RebuildMediaByTemplateRequest& request, const RebuildMediaByTemplateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RebuildMediaByTemplate(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+VodClient::RebuildMediaByTemplateOutcomeCallable VodClient::RebuildMediaByTemplateCallable(const RebuildMediaByTemplateRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RebuildMediaByTemplateOutcome()>>(
+        [this, request]()
+        {
+            return this->RebuildMediaByTemplate(request);
         }
     );
 

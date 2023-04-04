@@ -47,6 +47,8 @@
 #include <tencentcloud/dcdb/v20180411/model/DescribeAccountPrivilegesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeAccountsRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeAccountsResponse.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeBackupFilesRequest.h>
+#include <tencentcloud/dcdb/v20180411/model/DescribeBackupFilesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesRequest.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBLogFilesResponse.h>
 #include <tencentcloud/dcdb/v20180411/model/DescribeDBParametersRequest.h>
@@ -203,6 +205,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountsResponse> DescribeAccountsOutcome;
                 typedef std::future<DescribeAccountsOutcome> DescribeAccountsOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeAccountsRequest&, DescribeAccountsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupFilesResponse> DescribeBackupFilesOutcome;
+                typedef std::future<DescribeBackupFilesOutcome> DescribeBackupFilesOutcomeCallable;
+                typedef std::function<void(const DcdbClient*, const Model::DescribeBackupFilesRequest&, DescribeBackupFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBLogFilesResponse> DescribeDBLogFilesOutcome;
                 typedef std::future<DescribeDBLogFilesOutcome> DescribeDBLogFilesOutcomeCallable;
                 typedef std::function<void(const DcdbClient*, const Model::DescribeDBLogFilesRequest&, DescribeDBLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBLogFilesAsyncHandler;
@@ -474,6 +479,15 @@ namespace TencentCloud
                 DescribeAccountsOutcome DescribeAccounts(const Model::DescribeAccountsRequest &request);
                 void DescribeAccountsAsync(const Model::DescribeAccountsRequest& request, const DescribeAccountsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountsOutcomeCallable DescribeAccountsCallable(const Model::DescribeAccountsRequest& request);
+
+                /**
+                 *本接口(DescribeBackupFiles)用于查看备份文件列表。
+                 * @param req DescribeBackupFilesRequest
+                 * @return DescribeBackupFilesOutcome
+                 */
+                DescribeBackupFilesOutcome DescribeBackupFiles(const Model::DescribeBackupFilesRequest &request);
+                void DescribeBackupFilesAsync(const Model::DescribeBackupFilesRequest& request, const DescribeBackupFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupFilesOutcomeCallable DescribeBackupFilesCallable(const Model::DescribeBackupFilesRequest& request);
 
                 /**
                  *本接口(DescribeDBLogFiles)用于获取数据库的各种日志列表，包括冷备、binlog、errlog和slowlog。

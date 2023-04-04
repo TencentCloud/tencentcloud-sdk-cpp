@@ -77,6 +77,8 @@
 #include <tencentcloud/waf/v20180125/model/DescribeUserCdcClbWafRegionsResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribeVipInfoRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribeVipInfoResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusRequest.h>
@@ -204,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserClbWafRegionsResponse> DescribeUserClbWafRegionsOutcome;
                 typedef std::future<DescribeUserClbWafRegionsOutcome> DescribeUserClbWafRegionsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeUserClbWafRegionsRequest&, DescribeUserClbWafRegionsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserClbWafRegionsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVipInfoResponse> DescribeVipInfoOutcome;
+                typedef std::future<DescribeVipInfoOutcome> DescribeVipInfoOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribeVipInfoRequest&, DescribeVipInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVipInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWafAutoDenyRulesResponse> DescribeWafAutoDenyRulesOutcome;
                 typedef std::future<DescribeWafAutoDenyRulesOutcome> DescribeWafAutoDenyRulesOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeWafAutoDenyRulesRequest&, DescribeWafAutoDenyRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWafAutoDenyRulesAsyncHandler;
@@ -499,6 +504,15 @@ namespace TencentCloud
                 DescribeUserClbWafRegionsOutcome DescribeUserClbWafRegions(const Model::DescribeUserClbWafRegionsRequest &request);
                 void DescribeUserClbWafRegionsAsync(const Model::DescribeUserClbWafRegionsRequest& request, const DescribeUserClbWafRegionsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserClbWafRegionsOutcomeCallable DescribeUserClbWafRegionsCallable(const Model::DescribeUserClbWafRegionsRequest& request);
+
+                /**
+                 *根据过滤条件查询VIP信息
+                 * @param req DescribeVipInfoRequest
+                 * @return DescribeVipInfoOutcome
+                 */
+                DescribeVipInfoOutcome DescribeVipInfo(const Model::DescribeVipInfoRequest &request);
+                void DescribeVipInfoAsync(const Model::DescribeVipInfoRequest& request, const DescribeVipInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVipInfoOutcomeCallable DescribeVipInfoCallable(const Model::DescribeVipInfoRequest& request);
 
                 /**
                  *返回ip惩罚规则详细信息

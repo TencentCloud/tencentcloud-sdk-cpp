@@ -35,7 +35,9 @@ PrometheusInstancesOverview::PrometheusInstancesOverview() :
     m_expireTimeHasBeenSet(false),
     m_autoRenewFlagHasBeenSet(false),
     m_boundTotalHasBeenSet(false),
-    m_boundNormalHasBeenSet(false)
+    m_boundNormalHasBeenSet(false),
+    m_resourcePackageStatusHasBeenSet(false),
+    m_resourcePackageSpecNameHasBeenSet(false)
 {
 }
 
@@ -194,6 +196,26 @@ CoreInternalOutcome PrometheusInstancesOverview::Deserialize(const rapidjson::Va
         m_boundNormalHasBeenSet = true;
     }
 
+    if (value.HasMember("ResourcePackageStatus") && !value["ResourcePackageStatus"].IsNull())
+    {
+        if (!value["ResourcePackageStatus"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstancesOverview.ResourcePackageStatus` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourcePackageStatus = value["ResourcePackageStatus"].GetInt64();
+        m_resourcePackageStatusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ResourcePackageSpecName") && !value["ResourcePackageSpecName"].IsNull())
+    {
+        if (!value["ResourcePackageSpecName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusInstancesOverview.ResourcePackageSpecName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_resourcePackageSpecName = string(value["ResourcePackageSpecName"].GetString());
+        m_resourcePackageSpecNameHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -319,6 +341,22 @@ void PrometheusInstancesOverview::ToJsonObject(rapidjson::Value &value, rapidjso
         string key = "BoundNormal";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_boundNormal, allocator);
+    }
+
+    if (m_resourcePackageStatusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePackageStatus";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_resourcePackageStatus, allocator);
+    }
+
+    if (m_resourcePackageSpecNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ResourcePackageSpecName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_resourcePackageSpecName.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -562,5 +600,37 @@ void PrometheusInstancesOverview::SetBoundNormal(const int64_t& _boundNormal)
 bool PrometheusInstancesOverview::BoundNormalHasBeenSet() const
 {
     return m_boundNormalHasBeenSet;
+}
+
+int64_t PrometheusInstancesOverview::GetResourcePackageStatus() const
+{
+    return m_resourcePackageStatus;
+}
+
+void PrometheusInstancesOverview::SetResourcePackageStatus(const int64_t& _resourcePackageStatus)
+{
+    m_resourcePackageStatus = _resourcePackageStatus;
+    m_resourcePackageStatusHasBeenSet = true;
+}
+
+bool PrometheusInstancesOverview::ResourcePackageStatusHasBeenSet() const
+{
+    return m_resourcePackageStatusHasBeenSet;
+}
+
+string PrometheusInstancesOverview::GetResourcePackageSpecName() const
+{
+    return m_resourcePackageSpecName;
+}
+
+void PrometheusInstancesOverview::SetResourcePackageSpecName(const string& _resourcePackageSpecName)
+{
+    m_resourcePackageSpecName = _resourcePackageSpecName;
+    m_resourcePackageSpecNameHasBeenSet = true;
+}
+
+bool PrometheusInstancesOverview::ResourcePackageSpecNameHasBeenSet() const
+{
+    return m_resourcePackageSpecNameHasBeenSet;
 }
 

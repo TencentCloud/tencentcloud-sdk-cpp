@@ -111,6 +111,8 @@
 #include <tencentcloud/scf/v20180416/model/UpdateFunctionEventInvokeConfigResponse.h>
 #include <tencentcloud/scf/v20180416/model/UpdateNamespaceRequest.h>
 #include <tencentcloud/scf/v20180416/model/UpdateNamespaceResponse.h>
+#include <tencentcloud/scf/v20180416/model/UpdateTriggerStatusRequest.h>
+#include <tencentcloud/scf/v20180416/model/UpdateTriggerStatusResponse.h>
 
 
 namespace TencentCloud
@@ -257,6 +259,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UpdateNamespaceResponse> UpdateNamespaceOutcome;
                 typedef std::future<UpdateNamespaceOutcome> UpdateNamespaceOutcomeCallable;
                 typedef std::function<void(const ScfClient*, const Model::UpdateNamespaceRequest&, UpdateNamespaceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateNamespaceAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateTriggerStatusResponse> UpdateTriggerStatusOutcome;
+                typedef std::future<UpdateTriggerStatusOutcome> UpdateTriggerStatusOutcomeCallable;
+                typedef std::function<void(const ScfClient*, const Model::UpdateTriggerStatusRequest&, UpdateTriggerStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateTriggerStatusAsyncHandler;
 
 
 
@@ -662,6 +667,15 @@ namespace TencentCloud
                 UpdateNamespaceOutcome UpdateNamespace(const Model::UpdateNamespaceRequest &request);
                 void UpdateNamespaceAsync(const Model::UpdateNamespaceRequest& request, const UpdateNamespaceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UpdateNamespaceOutcomeCallable UpdateNamespaceCallable(const Model::UpdateNamespaceRequest& request);
+
+                /**
+                 *更新触发器状态的值
+                 * @param req UpdateTriggerStatusRequest
+                 * @return UpdateTriggerStatusOutcome
+                 */
+                UpdateTriggerStatusOutcome UpdateTriggerStatus(const Model::UpdateTriggerStatusRequest &request);
+                void UpdateTriggerStatusAsync(const Model::UpdateTriggerStatusRequest& request, const UpdateTriggerStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateTriggerStatusOutcomeCallable UpdateTriggerStatusCallable(const Model::UpdateTriggerStatusRequest& request);
 
             };
         }

@@ -107,6 +107,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/CreateTriggerResponse.h
   include/tencentcloud/scf/v20180416/model/PublishLayerVersionRequest.h
   include/tencentcloud/scf/v20180416/model/CreateNamespaceRequest.h
+  include/tencentcloud/scf/v20180416/model/UpdateTriggerStatusResponse.h
   include/tencentcloud/scf/v20180416/model/UpdateFunctionEventInvokeConfigRequest.h
   include/tencentcloud/scf/v20180416/model/DeleteLayerVersionRequest.h
   include/tencentcloud/scf/v20180416/model/Filter.h
@@ -126,6 +127,7 @@ set(scf_public_header_model
   include/tencentcloud/scf/v20180416/model/GetFunctionAddressResponse.h
   include/tencentcloud/scf/v20180416/model/CfsInsInfo.h
   include/tencentcloud/scf/v20180416/model/InstanceConcurrencyConfig.h
+  include/tencentcloud/scf/v20180416/model/UpdateTriggerStatusRequest.h
   include/tencentcloud/scf/v20180416/model/TriggerAction.h
   include/tencentcloud/scf/v20180416/model/LimitsInfo.h
   include/tencentcloud/scf/v20180416/model/ListLayersResponse.h
@@ -248,6 +250,7 @@ set(scf_src
   src/v20180416/model/CreateTriggerResponse.cpp
   src/v20180416/model/PublishLayerVersionRequest.cpp
   src/v20180416/model/CreateNamespaceRequest.cpp
+  src/v20180416/model/UpdateTriggerStatusResponse.cpp
   src/v20180416/model/UpdateFunctionEventInvokeConfigRequest.cpp
   src/v20180416/model/DeleteLayerVersionRequest.cpp
   src/v20180416/model/Filter.cpp
@@ -267,6 +270,7 @@ set(scf_src
   src/v20180416/model/GetFunctionAddressResponse.cpp
   src/v20180416/model/CfsInsInfo.cpp
   src/v20180416/model/InstanceConcurrencyConfig.cpp
+  src/v20180416/model/UpdateTriggerStatusRequest.cpp
   src/v20180416/model/TriggerAction.cpp
   src/v20180416/model/LimitsInfo.cpp
   src/v20180416/model/ListLayersResponse.cpp

@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取任务标识。
-                     * @return TaskId 任务标识。
+                     * 获取任务标识。注意：TaskId数据类型为uint64。
+                     * @return TaskId 任务标识。注意：TaskId数据类型为uint64。
                      */
                     uint64_t GetTaskId() const;
 
                     /**
-                     * 设置任务标识。
-                     * @param TaskId 任务标识。
+                     * 设置任务标识。注意：TaskId数据类型为uint64。
+                     * @param TaskId 任务标识。注意：TaskId数据类型为uint64。
                      */
                     void SetTaskId(const uint64_t& _taskId);
 
@@ -184,7 +184,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 任务标识。
+                     * 任务标识。注意：TaskId数据类型为uint64。
                      */
                     uint64_t m_taskId;
                     bool m_taskIdHasBeenSet;

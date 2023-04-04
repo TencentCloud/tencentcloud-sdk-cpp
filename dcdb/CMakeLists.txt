@@ -48,6 +48,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeDBSlowLogsRequest.h
   include/tencentcloud/dcdb/v20180411/model/CreateAccountRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDBParametersResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableRequest.h
   include/tencentcloud/dcdb/v20180411/model/IsolateHourDCDBInstanceRequest.h
   include/tencentcloud/dcdb/v20180411/model/ModifyDBInstanceNameResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeFlowResponse.h
@@ -76,6 +77,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DatabaseProcedure.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBPriceRequest.h
   include/tencentcloud/dcdb/v20180411/model/SwitchDBInstanceHAResponse.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeBackupFilesResponse.h
   include/tencentcloud/dcdb/v20180411/model/ParamModifyResult.h
   include/tencentcloud/dcdb/v20180411/model/TablePrivilege.h
   include/tencentcloud/dcdb/v20180411/model/DescribeProjectSecurityGroupsResponse.h
@@ -105,7 +107,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DCDBShardInfo.h
   include/tencentcloud/dcdb/v20180411/model/CopyAccountPrivilegesRequest.h
   include/tencentcloud/dcdb/v20180411/model/SecurityGroup.h
-  include/tencentcloud/dcdb/v20180411/model/DescribeDatabaseTableRequest.h
+  include/tencentcloud/dcdb/v20180411/model/DescribeBackupFilesRequest.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBInstanceNodeInfoResponse.h
   include/tencentcloud/dcdb/v20180411/model/KillSessionRequest.h
   include/tencentcloud/dcdb/v20180411/model/TerminateDedicatedDBInstanceRequest.h
@@ -122,6 +124,7 @@ set(dcdb_public_header_model
   include/tencentcloud/dcdb/v20180411/model/DescribeShardSpecResponse.h
   include/tencentcloud/dcdb/v20180411/model/DescribeDCDBShardsResponse.h
   include/tencentcloud/dcdb/v20180411/model/ZonesInfo.h
+  include/tencentcloud/dcdb/v20180411/model/InstanceBackupFileItem.h
   include/tencentcloud/dcdb/v20180411/model/CreateHourDCDBInstanceResponse.h
   include/tencentcloud/dcdb/v20180411/model/Database.h
   include/tencentcloud/dcdb/v20180411/model/GrantAccountPrivilegesResponse.h
@@ -223,6 +226,7 @@ set(dcdb_src
   src/v20180411/model/DescribeDBSlowLogsRequest.cpp
   src/v20180411/model/CreateAccountRequest.cpp
   src/v20180411/model/DescribeDBParametersResponse.cpp
+  src/v20180411/model/DescribeDatabaseTableRequest.cpp
   src/v20180411/model/IsolateHourDCDBInstanceRequest.cpp
   src/v20180411/model/ModifyDBInstanceNameResponse.cpp
   src/v20180411/model/DescribeFlowResponse.cpp
@@ -251,6 +255,7 @@ set(dcdb_src
   src/v20180411/model/DatabaseProcedure.cpp
   src/v20180411/model/DescribeDCDBPriceRequest.cpp
   src/v20180411/model/SwitchDBInstanceHAResponse.cpp
+  src/v20180411/model/DescribeBackupFilesResponse.cpp
   src/v20180411/model/ParamModifyResult.cpp
   src/v20180411/model/TablePrivilege.cpp
   src/v20180411/model/DescribeProjectSecurityGroupsResponse.cpp
@@ -280,7 +285,7 @@ set(dcdb_src
   src/v20180411/model/DCDBShardInfo.cpp
   src/v20180411/model/CopyAccountPrivilegesRequest.cpp
   src/v20180411/model/SecurityGroup.cpp
-  src/v20180411/model/DescribeDatabaseTableRequest.cpp
+  src/v20180411/model/DescribeBackupFilesRequest.cpp
   src/v20180411/model/DescribeDCDBInstanceNodeInfoResponse.cpp
   src/v20180411/model/KillSessionRequest.cpp
   src/v20180411/model/TerminateDedicatedDBInstanceRequest.cpp
@@ -297,6 +302,7 @@ set(dcdb_src
   src/v20180411/model/DescribeShardSpecResponse.cpp
   src/v20180411/model/DescribeDCDBShardsResponse.cpp
   src/v20180411/model/ZonesInfo.cpp
+  src/v20180411/model/InstanceBackupFileItem.cpp
   src/v20180411/model/CreateHourDCDBInstanceResponse.cpp
   src/v20180411/model/Database.cpp
   src/v20180411/model/GrantAccountPrivilegesResponse.cpp

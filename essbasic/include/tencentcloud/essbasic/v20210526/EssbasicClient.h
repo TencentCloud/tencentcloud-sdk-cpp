@@ -426,7 +426,7 @@ namespace TencentCloud
                 ChannelCreateSealPolicyOutcomeCallable ChannelCreateSealPolicyCallable(const Model::ChannelCreateSealPolicyRequest& request);
 
                 /**
-                 *渠道版绑定员工角色
+                 *绑定员工角色
                  * @param req ChannelCreateUserRolesRequest
                  * @return ChannelCreateUserRolesOutcome
                  */
@@ -435,7 +435,7 @@ namespace TencentCloud
                 ChannelCreateUserRolesOutcomeCallable ChannelCreateUserRolesCallable(const Model::ChannelCreateUserRolesRequest& request);
 
                 /**
-                 *渠道版删除员工绑定角色
+                 *删除员工绑定角色
                  * @param req ChannelDeleteRoleUsersRequest
                  * @return ChannelDeleteRoleUsersOutcome
                  */
@@ -472,7 +472,7 @@ namespace TencentCloud
                 ChannelDescribeOrganizationSealsOutcomeCallable ChannelDescribeOrganizationSealsCallable(const Model::ChannelDescribeOrganizationSealsRequest& request);
 
                 /**
-                 *渠道办查询用户角色
+                 *查询用户角色
                  * @param req ChannelDescribeRolesRequest
                  * @return ChannelDescribeRolesOutcome
                  */

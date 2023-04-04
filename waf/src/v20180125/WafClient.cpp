@@ -1201,6 +1201,49 @@ WafClient::DescribeUserClbWafRegionsOutcomeCallable WafClient::DescribeUserClbWa
     return task->get_future();
 }
 
+WafClient::DescribeVipInfoOutcome WafClient::DescribeVipInfo(const DescribeVipInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVipInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVipInfoResponse rsp = DescribeVipInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVipInfoOutcome(rsp);
+        else
+            return DescribeVipInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVipInfoOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribeVipInfoAsync(const DescribeVipInfoRequest& request, const DescribeVipInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVipInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribeVipInfoOutcomeCallable WafClient::DescribeVipInfoCallable(const DescribeVipInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVipInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVipInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribeWafAutoDenyRulesOutcome WafClient::DescribeWafAutoDenyRules(const DescribeWafAutoDenyRulesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWafAutoDenyRules");

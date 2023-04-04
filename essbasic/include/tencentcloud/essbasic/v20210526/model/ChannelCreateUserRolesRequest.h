@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
 namespace TencentCloud
@@ -43,24 +43,6 @@ namespace TencentCloud
                     ~ChannelCreateUserRolesRequest() = default;
                     std::string ToJsonString() const;
 
-
-                    /**
-                     * 获取操作者信息
-                     * @return Operator 操作者信息
-                     */
-                    UserInfo GetOperator() const;
-
-                    /**
-                     * 设置操作者信息
-                     * @param Operator 操作者信息
-                     */
-                    void SetOperator(const UserInfo& _operator);
-
-                    /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
-                     */
-                    bool OperatorHasBeenSet() const;
 
                     /**
                      * 获取应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
@@ -116,13 +98,25 @@ namespace TencentCloud
                      */
                     bool RoleIdsHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取操作者信息
+                     * @return Operator 操作者信息
+                     */
+                    UserInfo GetOperator() const;
 
                     /**
-                     * 操作者信息
+                     * 设置操作者信息
+                     * @param Operator 操作者信息
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    void SetOperator(const UserInfo& _operator);
+
+                    /**
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
+                     */
+                    bool OperatorHasBeenSet() const;
+
+                private:
 
                     /**
                      * 应用相关信息。 此接口Agent.ProxyOrganizationOpenId、Agent. ProxyOperator.OpenId、Agent.AppId 和 Agent.ProxyAppId 必填。
@@ -141,6 +135,12 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_roleIds;
                     bool m_roleIdsHasBeenSet;
+
+                    /**
+                     * 操作者信息
+                     */
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }

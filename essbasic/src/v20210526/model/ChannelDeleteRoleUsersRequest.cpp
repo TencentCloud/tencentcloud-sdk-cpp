@@ -23,10 +23,10 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelDeleteRoleUsersRequest::ChannelDeleteRoleUsersRequest() :
-    m_operatorHasBeenSet(false),
+    m_agentHasBeenSet(false),
     m_roleIdHasBeenSet(false),
     m_userIdsHasBeenSet(false),
-    m_agentHasBeenSet(false)
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -37,13 +37,13 @@ string ChannelDeleteRoleUsersRequest::ToJsonString() const
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
 
-    if (m_operatorHasBeenSet)
+    if (m_agentHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
+        string key = "Agent";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_roleIdHasBeenSet)
@@ -67,13 +67,13 @@ string ChannelDeleteRoleUsersRequest::ToJsonString() const
         }
     }
 
-    if (m_agentHasBeenSet)
+    if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
+        string key = "Operator";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -84,20 +84,20 @@ string ChannelDeleteRoleUsersRequest::ToJsonString() const
 }
 
 
-UserInfo ChannelDeleteRoleUsersRequest::GetOperator() const
+Agent ChannelDeleteRoleUsersRequest::GetAgent() const
 {
-    return m_operator;
+    return m_agent;
 }
 
-void ChannelDeleteRoleUsersRequest::SetOperator(const UserInfo& _operator)
+void ChannelDeleteRoleUsersRequest::SetAgent(const Agent& _agent)
 {
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
 }
 
-bool ChannelDeleteRoleUsersRequest::OperatorHasBeenSet() const
+bool ChannelDeleteRoleUsersRequest::AgentHasBeenSet() const
 {
-    return m_operatorHasBeenSet;
+    return m_agentHasBeenSet;
 }
 
 string ChannelDeleteRoleUsersRequest::GetRoleId() const
@@ -132,20 +132,20 @@ bool ChannelDeleteRoleUsersRequest::UserIdsHasBeenSet() const
     return m_userIdsHasBeenSet;
 }
 
-Agent ChannelDeleteRoleUsersRequest::GetAgent() const
+UserInfo ChannelDeleteRoleUsersRequest::GetOperator() const
 {
-    return m_agent;
+    return m_operator;
 }
 
-void ChannelDeleteRoleUsersRequest::SetAgent(const Agent& _agent)
+void ChannelDeleteRoleUsersRequest::SetOperator(const UserInfo& _operator)
 {
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
 }
 
-bool ChannelDeleteRoleUsersRequest::AgentHasBeenSet() const
+bool ChannelDeleteRoleUsersRequest::OperatorHasBeenSet() const
 {
-    return m_agentHasBeenSet;
+    return m_operatorHasBeenSet;
 }
 
 

@@ -65,6 +65,28 @@ namespace TencentCloud
                     bool MediaUrlHasBeenSet() const;
 
                     /**
+                     * 获取媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
+如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。
+                     * @return MediaType 媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
+如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。
+                     */
+                    std::string GetMediaType() const;
+
+                    /**
+                     * 设置媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
+如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。
+                     * @param MediaType 媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
+如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。
+                     */
+                    void SetMediaType(const std::string& _mediaType);
+
+                    /**
+                     * 判断参数 MediaType 是否已赋值
+                     * @return MediaType 是否已赋值
+                     */
+                    bool MediaTypeHasBeenSet() const;
+
+                    /**
                      * 获取<b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      * @return SubAppId <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>
                      */
@@ -278,6 +300,13 @@ namespace TencentCloud
                      */
                     std::string m_mediaUrl;
                     bool m_mediaUrlHasBeenSet;
+
+                    /**
+                     * 媒体文件类型（扩展名），支持的类型详见[媒体类型](https://cloud.tencent.com/document/product/266/9760#.E5.AA.92.E4.BD.93.E7.B1.BB.E5.9E.8B)。
+如果 MediaType 不填或取值为空字符串，将根据 MediaUrl 自动获取文件类型。
+                     */
+                    std::string m_mediaType;
+                    bool m_mediaTypeHasBeenSet;
 
                     /**
                      * <b>点播[子应用](/document/product/266/14574) ID。如果要访问子应用中的资源，则将该字段填写为子应用 ID；否则无需填写该字段。</b>

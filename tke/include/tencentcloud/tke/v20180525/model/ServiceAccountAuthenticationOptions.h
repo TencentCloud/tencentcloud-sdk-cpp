@@ -47,6 +47,28 @@ namespace TencentCloud
 
 
                     /**
+                     * 获取使用TKE默认issuer和jwksuri
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UseTKEDefault 使用TKE默认issuer和jwksuri
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetUseTKEDefault() const;
+
+                    /**
+                     * 设置使用TKE默认issuer和jwksuri
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UseTKEDefault 使用TKE默认issuer和jwksuri
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUseTKEDefault(const bool& _useTKEDefault);
+
+                    /**
+                     * 判断参数 UseTKEDefault 是否已赋值
+                     * @return UseTKEDefault 是否已赋值
+                     */
+                    bool UseTKEDefaultHasBeenSet() const;
+
+                    /**
                      * 获取service-account-issuer
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Issuer service-account-issuer
@@ -113,6 +135,13 @@ namespace TencentCloud
                     bool AutoCreateDiscoveryAnonymousAuthHasBeenSet() const;
 
                 private:
+
+                    /**
+                     * 使用TKE默认issuer和jwksuri
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_useTKEDefault;
+                    bool m_useTKEDefaultHasBeenSet;
 
                     /**
                      * service-account-issuer

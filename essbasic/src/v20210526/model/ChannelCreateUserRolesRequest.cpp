@@ -23,10 +23,10 @@ using namespace TencentCloud::Essbasic::V20210526::Model;
 using namespace std;
 
 ChannelCreateUserRolesRequest::ChannelCreateUserRolesRequest() :
-    m_operatorHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_userIdsHasBeenSet(false),
-    m_roleIdsHasBeenSet(false)
+    m_roleIdsHasBeenSet(false),
+    m_operatorHasBeenSet(false)
 {
 }
 
@@ -36,15 +36,6 @@ string ChannelCreateUserRolesRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_operatorHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Operator";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
 
     if (m_agentHasBeenSet)
     {
@@ -81,6 +72,15 @@ string ChannelCreateUserRolesRequest::ToJsonString() const
         }
     }
 
+    if (m_operatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Operator";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
@@ -88,22 +88,6 @@ string ChannelCreateUserRolesRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-UserInfo ChannelCreateUserRolesRequest::GetOperator() const
-{
-    return m_operator;
-}
-
-void ChannelCreateUserRolesRequest::SetOperator(const UserInfo& _operator)
-{
-    m_operator = _operator;
-    m_operatorHasBeenSet = true;
-}
-
-bool ChannelCreateUserRolesRequest::OperatorHasBeenSet() const
-{
-    return m_operatorHasBeenSet;
-}
 
 Agent ChannelCreateUserRolesRequest::GetAgent() const
 {
@@ -151,6 +135,22 @@ void ChannelCreateUserRolesRequest::SetRoleIds(const vector<string>& _roleIds)
 bool ChannelCreateUserRolesRequest::RoleIdsHasBeenSet() const
 {
     return m_roleIdsHasBeenSet;
+}
+
+UserInfo ChannelCreateUserRolesRequest::GetOperator() const
+{
+    return m_operator;
+}
+
+void ChannelCreateUserRolesRequest::SetOperator(const UserInfo& _operator)
+{
+    m_operator = _operator;
+    m_operatorHasBeenSet = true;
+}
+
+bool ChannelCreateUserRolesRequest::OperatorHasBeenSet() const
+{
+    return m_operatorHasBeenSet;
 }
 
 

@@ -69,14 +69,14 @@ namespace TencentCloud
                     bool KeyHasBeenSet() const;
 
                     /**
-                     * 获取ip等于10.0.0.8访问了26次实例，即桶内文档数量。
-                     * @return Count ip等于10.0.0.8访问了26次实例，即桶内文档数量。
+                     * 获取key值出现的次数。
+                     * @return Count key值出现的次数。
                      */
                     uint64_t GetCount() const;
 
                     /**
-                     * 设置ip等于10.0.0.8访问了26次实例，即桶内文档数量。
-                     * @param Count ip等于10.0.0.8访问了26次实例，即桶内文档数量。
+                     * 设置key值出现的次数。
+                     * @param Count key值出现的次数。
                      */
                     void SetCount(const uint64_t& _count);
 
@@ -96,7 +96,7 @@ namespace TencentCloud
                     bool m_keyHasBeenSet;
 
                     /**
-                     * ip等于10.0.0.8访问了26次实例，即桶内文档数量。
+                     * key值出现的次数。
                      */
                     uint64_t m_count;
                     bool m_countHasBeenSet;

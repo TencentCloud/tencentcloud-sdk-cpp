@@ -21,8 +21,8 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 #include <tencentcloud/essbasic/v20210526/model/Agent.h>
+#include <tencentcloud/essbasic/v20210526/model/UserInfo.h>
 
 
 namespace TencentCloud
@@ -45,22 +45,22 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取操作人信息
-                     * @return Operator 操作人信息
+                     * 获取代理信息
+                     * @return Agent 代理信息
                      */
-                    UserInfo GetOperator() const;
+                    Agent GetAgent() const;
 
                     /**
-                     * 设置操作人信息
-                     * @param Operator 操作人信息
+                     * 设置代理信息
+                     * @param Agent 代理信息
                      */
-                    void SetOperator(const UserInfo& _operator);
+                    void SetAgent(const Agent& _agent);
 
                     /**
-                     * 判断参数 Operator 是否已赋值
-                     * @return Operator 是否已赋值
+                     * 判断参数 Agent 是否已赋值
+                     * @return Agent 是否已赋值
                      */
-                    bool OperatorHasBeenSet() const;
+                    bool AgentHasBeenSet() const;
 
                     /**
                      * 获取角色Id
@@ -99,30 +99,30 @@ namespace TencentCloud
                     bool UserIdsHasBeenSet() const;
 
                     /**
-                     * 获取代理信息
-                     * @return Agent 代理信息
+                     * 获取操作人信息
+                     * @return Operator 操作人信息
                      */
-                    Agent GetAgent() const;
+                    UserInfo GetOperator() const;
 
                     /**
-                     * 设置代理信息
-                     * @param Agent 代理信息
+                     * 设置操作人信息
+                     * @param Operator 操作人信息
                      */
-                    void SetAgent(const Agent& _agent);
+                    void SetOperator(const UserInfo& _operator);
 
                     /**
-                     * 判断参数 Agent 是否已赋值
-                     * @return Agent 是否已赋值
+                     * 判断参数 Operator 是否已赋值
+                     * @return Operator 是否已赋值
                      */
-                    bool AgentHasBeenSet() const;
+                    bool OperatorHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 操作人信息
+                     * 代理信息
                      */
-                    UserInfo m_operator;
-                    bool m_operatorHasBeenSet;
+                    Agent m_agent;
+                    bool m_agentHasBeenSet;
 
                     /**
                      * 角色Id
@@ -137,10 +137,10 @@ namespace TencentCloud
                     bool m_userIdsHasBeenSet;
 
                     /**
-                     * 代理信息
+                     * 操作人信息
                      */
-                    Agent m_agent;
-                    bool m_agentHasBeenSet;
+                    UserInfo m_operator;
+                    bool m_operatorHasBeenSet;
 
                 };
             }
