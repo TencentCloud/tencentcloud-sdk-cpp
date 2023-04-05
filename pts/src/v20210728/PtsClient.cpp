@@ -900,6 +900,49 @@ PtsClient::DescribeCronJobsOutcomeCallable PtsClient::DescribeCronJobsCallable(c
     return task->get_future();
 }
 
+PtsClient::DescribeErrorSummaryOutcome PtsClient::DescribeErrorSummary(const DescribeErrorSummaryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeErrorSummary");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeErrorSummaryResponse rsp = DescribeErrorSummaryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeErrorSummaryOutcome(rsp);
+        else
+            return DescribeErrorSummaryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeErrorSummaryOutcome(outcome.GetError());
+    }
+}
+
+void PtsClient::DescribeErrorSummaryAsync(const DescribeErrorSummaryRequest& request, const DescribeErrorSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeErrorSummary(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PtsClient::DescribeErrorSummaryOutcomeCallable PtsClient::DescribeErrorSummaryCallable(const DescribeErrorSummaryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeErrorSummaryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeErrorSummary(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PtsClient::DescribeFilesOutcome PtsClient::DescribeFiles(const DescribeFilesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeFiles");

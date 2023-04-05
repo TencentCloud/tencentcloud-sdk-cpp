@@ -42,7 +42,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifySecurityGroupRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllVPCSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/VpcZoneData.h
-  include/tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h
+  include/tencentcloud/cfw/v20190904/model/DatabaseWhiteListRuleData.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeCfwEipsRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeTLogInfoResponse.h
@@ -52,6 +52,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingResponse.h
   include/tencentcloud/cfw/v20190904/model/RemoveAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/NatFwInstance.h
+  include/tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesResponse.h
   include/tencentcloud/cfw/v20190904/model/ExpandCfwVerticalRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.h
   include/tencentcloud/cfw/v20190904/model/DeleteVpcInstanceResponse.h
@@ -98,7 +99,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/RemoveNatAcRuleResponse.h
   include/tencentcloud/cfw/v20190904/model/CreateNatFwInstanceWithDomainResponse.h
   include/tencentcloud/cfw/v20190904/model/RemoveAcRuleRequest.h
-  include/tencentcloud/cfw/v20190904/model/DatabaseWhiteListRuleData.h
+  include/tencentcloud/cfw/v20190904/model/BetaInfoByACL.h
   include/tencentcloud/cfw/v20190904/model/RemoveNatAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/ModifyAllRuleStatusRequest.h
   include/tencentcloud/cfw/v20190904/model/RuleInfoData.h
@@ -166,7 +167,7 @@ set(cfw_public_header_model
   include/tencentcloud/cfw/v20190904/model/ModifyStorageSettingRequest.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatFwVpcDnsLstResponse.h
   include/tencentcloud/cfw/v20190904/model/DescAcItem.h
-  include/tencentcloud/cfw/v20190904/model/CreateSecurityGroupRulesResponse.h
+  include/tencentcloud/cfw/v20190904/model/CreateChooseVpcsRequest.h
   include/tencentcloud/cfw/v20190904/model/ExpandCfwVerticalResponse.h
   include/tencentcloud/cfw/v20190904/model/DescribeNatAcRuleRequest.h
   include/tencentcloud/cfw/v20190904/model/TLogInfo.h
@@ -225,7 +226,7 @@ set(cfw_src
   src/v20190904/model/ModifySecurityGroupRuleRequest.cpp
   src/v20190904/model/ModifyAllVPCSwitchStatusResponse.cpp
   src/v20190904/model/VpcZoneData.cpp
-  src/v20190904/model/CreateChooseVpcsRequest.cpp
+  src/v20190904/model/DatabaseWhiteListRuleData.cpp
   src/v20190904/model/DescribeNatFwVpcDnsLstRequest.cpp
   src/v20190904/model/DescribeCfwEipsRequest.cpp
   src/v20190904/model/DescribeTLogInfoResponse.cpp
@@ -235,6 +236,7 @@ set(cfw_src
   src/v20190904/model/ModifyStorageSettingResponse.cpp
   src/v20190904/model/RemoveAcRuleResponse.cpp
   src/v20190904/model/NatFwInstance.cpp
+  src/v20190904/model/CreateSecurityGroupRulesResponse.cpp
   src/v20190904/model/ExpandCfwVerticalRequest.cpp
   src/v20190904/model/ModifyAllPublicIPSwitchStatusResponse.cpp
   src/v20190904/model/DeleteVpcInstanceResponse.cpp
@@ -281,7 +283,7 @@ set(cfw_src
   src/v20190904/model/RemoveNatAcRuleResponse.cpp
   src/v20190904/model/CreateNatFwInstanceWithDomainResponse.cpp
   src/v20190904/model/RemoveAcRuleRequest.cpp
-  src/v20190904/model/DatabaseWhiteListRuleData.cpp
+  src/v20190904/model/BetaInfoByACL.cpp
   src/v20190904/model/RemoveNatAcRuleRequest.cpp
   src/v20190904/model/ModifyAllRuleStatusRequest.cpp
   src/v20190904/model/RuleInfoData.cpp
@@ -349,7 +351,7 @@ set(cfw_src
   src/v20190904/model/ModifyStorageSettingRequest.cpp
   src/v20190904/model/DescribeNatFwVpcDnsLstResponse.cpp
   src/v20190904/model/DescAcItem.cpp
-  src/v20190904/model/CreateSecurityGroupRulesResponse.cpp
+  src/v20190904/model/CreateChooseVpcsRequest.cpp
   src/v20190904/model/ExpandCfwVerticalResponse.cpp
   src/v20190904/model/DescribeNatAcRuleRequest.cpp
   src/v20190904/model/TLogInfo.cpp

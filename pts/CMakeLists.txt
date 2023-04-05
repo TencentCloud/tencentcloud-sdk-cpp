@@ -25,7 +25,6 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/DescribeSampleMatrixQueryResponse.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleLogsRequest.h
   include/tencentcloud/pts/v20210728/model/DeleteJobsRequest.h
-  include/tencentcloud/pts/v20210728/model/Concurrency.h
   include/tencentcloud/pts/v20210728/model/AlertChannelRecord.h
   include/tencentcloud/pts/v20210728/model/DescribeAlertRecordsRequest.h
   include/tencentcloud/pts/v20210728/model/DeleteAlertChannelResponse.h
@@ -46,6 +45,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/DescribeRegionsResponse.h
   include/tencentcloud/pts/v20210728/model/Attributes.h
   include/tencentcloud/pts/v20210728/model/UpdateScenarioResponse.h
+  include/tencentcloud/pts/v20210728/model/File.h
   include/tencentcloud/pts/v20210728/model/CustomSample.h
   include/tencentcloud/pts/v20210728/model/CreateProjectRequest.h
   include/tencentcloud/pts/v20210728/model/AdjustJobSpeedRequest.h
@@ -75,6 +75,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/DeleteJobsResponse.h
   include/tencentcloud/pts/v20210728/model/TagSpec.h
   include/tencentcloud/pts/v20210728/model/AdjustJobSpeedResponse.h
+  include/tencentcloud/pts/v20210728/model/ErrorSummary.h
   include/tencentcloud/pts/v20210728/model/CreateProjectResponse.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleQueryRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeSampleMatrixBatchQueryResponse.h
@@ -101,6 +102,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/SLARule.h
   include/tencentcloud/pts/v20210728/model/DescribeAvailableMetricsResponse.h
   include/tencentcloud/pts/v20210728/model/DescribeMetricLabelWithValuesResponse.h
+  include/tencentcloud/pts/v20210728/model/FileInfo.h
   include/tencentcloud/pts/v20210728/model/LoadSpec.h
   include/tencentcloud/pts/v20210728/model/AlertChannel.h
   include/tencentcloud/pts/v20210728/model/ScriptOrigin.h
@@ -108,14 +110,13 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/Credentials.h
   include/tencentcloud/pts/v20210728/model/DescribeAlertChannelsResponse.h
   include/tencentcloud/pts/v20210728/model/CreateCronJobRequest.h
-  include/tencentcloud/pts/v20210728/model/CustomSampleMatrix.h
   include/tencentcloud/pts/v20210728/model/UpdateJobResponse.h
   include/tencentcloud/pts/v20210728/model/DescribeCheckSummaryRequest.h
   include/tencentcloud/pts/v20210728/model/Filter.h
   include/tencentcloud/pts/v20210728/model/DeleteFilesResponse.h
   include/tencentcloud/pts/v20210728/model/AggregationLegend.h
   include/tencentcloud/pts/v20210728/model/LoadSource.h
-  include/tencentcloud/pts/v20210728/model/FileInfo.h
+  include/tencentcloud/pts/v20210728/model/CustomSampleMatrix.h
   include/tencentcloud/pts/v20210728/model/Load.h
   include/tencentcloud/pts/v20210728/model/CreateFileRequest.h
   include/tencentcloud/pts/v20210728/model/RequestSummary.h
@@ -142,6 +143,7 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/DescribeScenariosResponse.h
   include/tencentcloud/pts/v20210728/model/CreateScenarioResponse.h
   include/tencentcloud/pts/v20210728/model/AbortJobRequest.h
+  include/tencentcloud/pts/v20210728/model/DescribeErrorSummaryRequest.h
   include/tencentcloud/pts/v20210728/model/CheckSummary.h
   include/tencentcloud/pts/v20210728/model/NotificationHook.h
   include/tencentcloud/pts/v20210728/model/DescribeJobsResponse.h
@@ -153,8 +155,9 @@ set(pts_public_header_model
   include/tencentcloud/pts/v20210728/model/StartJobRequest.h
   include/tencentcloud/pts/v20210728/model/DescribeScenarioWithJobsResponse.h
   include/tencentcloud/pts/v20210728/model/ReactionTimeRange.h
-  include/tencentcloud/pts/v20210728/model/File.h
+  include/tencentcloud/pts/v20210728/model/Concurrency.h
   include/tencentcloud/pts/v20210728/model/DeleteAlertChannelRequest.h
+  include/tencentcloud/pts/v20210728/model/DescribeErrorSummaryResponse.h
   include/tencentcloud/pts/v20210728/model/UpdateProjectResponse.h
   include/tencentcloud/pts/v20210728/model/UpdateFileScenarioRelationResponse.h
   )
@@ -167,7 +170,6 @@ set(pts_src
   src/v20210728/model/DescribeSampleMatrixQueryResponse.cpp
   src/v20210728/model/DescribeSampleLogsRequest.cpp
   src/v20210728/model/DeleteJobsRequest.cpp
-  src/v20210728/model/Concurrency.cpp
   src/v20210728/model/AlertChannelRecord.cpp
   src/v20210728/model/DescribeAlertRecordsRequest.cpp
   src/v20210728/model/DeleteAlertChannelResponse.cpp
@@ -188,6 +190,7 @@ set(pts_src
   src/v20210728/model/DescribeRegionsResponse.cpp
   src/v20210728/model/Attributes.cpp
   src/v20210728/model/UpdateScenarioResponse.cpp
+  src/v20210728/model/File.cpp
   src/v20210728/model/CustomSample.cpp
   src/v20210728/model/CreateProjectRequest.cpp
   src/v20210728/model/AdjustJobSpeedRequest.cpp
@@ -217,6 +220,7 @@ set(pts_src
   src/v20210728/model/DeleteJobsResponse.cpp
   src/v20210728/model/TagSpec.cpp
   src/v20210728/model/AdjustJobSpeedResponse.cpp
+  src/v20210728/model/ErrorSummary.cpp
   src/v20210728/model/CreateProjectResponse.cpp
   src/v20210728/model/DescribeSampleQueryRequest.cpp
   src/v20210728/model/DescribeSampleMatrixBatchQueryResponse.cpp
@@ -243,6 +247,7 @@ set(pts_src
   src/v20210728/model/SLARule.cpp
   src/v20210728/model/DescribeAvailableMetricsResponse.cpp
   src/v20210728/model/DescribeMetricLabelWithValuesResponse.cpp
+  src/v20210728/model/FileInfo.cpp
   src/v20210728/model/LoadSpec.cpp
   src/v20210728/model/AlertChannel.cpp
   src/v20210728/model/ScriptOrigin.cpp
@@ -250,14 +255,13 @@ set(pts_src
   src/v20210728/model/Credentials.cpp
   src/v20210728/model/DescribeAlertChannelsResponse.cpp
   src/v20210728/model/CreateCronJobRequest.cpp
-  src/v20210728/model/CustomSampleMatrix.cpp
   src/v20210728/model/UpdateJobResponse.cpp
   src/v20210728/model/DescribeCheckSummaryRequest.cpp
   src/v20210728/model/Filter.cpp
   src/v20210728/model/DeleteFilesResponse.cpp
   src/v20210728/model/AggregationLegend.cpp
   src/v20210728/model/LoadSource.cpp
-  src/v20210728/model/FileInfo.cpp
+  src/v20210728/model/CustomSampleMatrix.cpp
   src/v20210728/model/Load.cpp
   src/v20210728/model/CreateFileRequest.cpp
   src/v20210728/model/RequestSummary.cpp
@@ -284,6 +288,7 @@ set(pts_src
   src/v20210728/model/DescribeScenariosResponse.cpp
   src/v20210728/model/CreateScenarioResponse.cpp
   src/v20210728/model/AbortJobRequest.cpp
+  src/v20210728/model/DescribeErrorSummaryRequest.cpp
   src/v20210728/model/CheckSummary.cpp
   src/v20210728/model/NotificationHook.cpp
   src/v20210728/model/DescribeJobsResponse.cpp
@@ -295,8 +300,9 @@ set(pts_src
   src/v20210728/model/StartJobRequest.cpp
   src/v20210728/model/DescribeScenarioWithJobsResponse.cpp
   src/v20210728/model/ReactionTimeRange.cpp
-  src/v20210728/model/File.cpp
+  src/v20210728/model/Concurrency.cpp
   src/v20210728/model/DeleteAlertChannelRequest.cpp
+  src/v20210728/model/DescribeErrorSummaryResponse.cpp
   src/v20210728/model/UpdateProjectResponse.cpp
   src/v20210728/model/UpdateFileScenarioRelationResponse.cpp
   )

@@ -79,14 +79,14 @@ namespace TencentCloud
                     bool RoomIdHasBeenSet() const;
 
                     /**
-                     * 获取消息序列。获取该序列以前前的消息(不包含该seq消息)
-                     * @return Seq 消息序列。获取该序列以前前的消息(不包含该seq消息)
+                     * 获取消息序列。获取该序列以前的消息(不包含该seq消息)
+                     * @return Seq 消息序列。获取该序列以前的消息(不包含该seq消息)
                      */
                     int64_t GetSeq() const;
 
                     /**
-                     * 设置消息序列。获取该序列以前前的消息(不包含该seq消息)
-                     * @param Seq 消息序列。获取该序列以前前的消息(不包含该seq消息)
+                     * 设置消息序列。获取该序列以前的消息(不包含该seq消息)
+                     * @param Seq 消息序列。获取该序列以前的消息(不包含该seq消息)
                      */
                     void SetSeq(const int64_t& _seq);
 
@@ -129,7 +129,7 @@ namespace TencentCloud
                     bool m_roomIdHasBeenSet;
 
                     /**
-                     * 消息序列。获取该序列以前前的消息(不包含该seq消息)
+                     * 消息序列。获取该序列以前的消息(不包含该seq消息)
                      */
                     int64_t m_seq;
                     bool m_seqHasBeenSet;

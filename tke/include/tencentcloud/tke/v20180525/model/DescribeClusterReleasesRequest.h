@@ -97,6 +97,24 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
+                     * 获取集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     * @return ClusterType 集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     */
+                    std::string GetClusterType() const;
+
+                    /**
+                     * 设置集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     * @param ClusterType 集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     */
+                    void SetClusterType(const std::string& _clusterType);
+
+                    /**
+                     * 判断参数 ClusterType 是否已赋值
+                     * @return ClusterType 是否已赋值
+                     */
+                    bool ClusterTypeHasBeenSet() const;
+
+                    /**
                      * 获取helm Release 安装的namespace
                      * @return Namespace helm Release 安装的namespace
                      */
@@ -169,6 +187,12 @@ namespace TencentCloud
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
+
+                    /**
+                     * 集群类型, 目前支持传入 tke, eks, tkeedge, external 
+                     */
+                    std::string m_clusterType;
+                    bool m_clusterTypeHasBeenSet;
 
                     /**
                      * helm Release 安装的namespace

@@ -212,6 +212,49 @@ WafClient::CreateAccessExportOutcomeCallable WafClient::CreateAccessExportCallab
     return task->get_future();
 }
 
+WafClient::CreateHostOutcome WafClient::CreateHost(const CreateHostRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateHost");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateHostResponse rsp = CreateHostResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateHostOutcome(rsp);
+        else
+            return CreateHostOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateHostOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::CreateHostAsync(const CreateHostRequest& request, const CreateHostAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateHost(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::CreateHostOutcomeCallable WafClient::CreateHostCallable(const CreateHostRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateHostOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateHost(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DeleteAccessExportOutcome WafClient::DeleteAccessExport(const DeleteAccessExportRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteAccessExport");

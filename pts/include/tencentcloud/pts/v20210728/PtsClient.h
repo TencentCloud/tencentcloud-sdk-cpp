@@ -63,6 +63,8 @@
 #include <tencentcloud/pts/v20210728/model/DescribeCheckSummaryResponse.h>
 #include <tencentcloud/pts/v20210728/model/DescribeCronJobsRequest.h>
 #include <tencentcloud/pts/v20210728/model/DescribeCronJobsResponse.h>
+#include <tencentcloud/pts/v20210728/model/DescribeErrorSummaryRequest.h>
+#include <tencentcloud/pts/v20210728/model/DescribeErrorSummaryResponse.h>
 #include <tencentcloud/pts/v20210728/model/DescribeFilesRequest.h>
 #include <tencentcloud/pts/v20210728/model/DescribeFilesResponse.h>
 #include <tencentcloud/pts/v20210728/model/DescribeJobsRequest.h>
@@ -183,6 +185,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeCronJobsResponse> DescribeCronJobsOutcome;
                 typedef std::future<DescribeCronJobsOutcome> DescribeCronJobsOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::DescribeCronJobsRequest&, DescribeCronJobsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCronJobsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeErrorSummaryResponse> DescribeErrorSummaryOutcome;
+                typedef std::future<DescribeErrorSummaryOutcome> DescribeErrorSummaryOutcomeCallable;
+                typedef std::function<void(const PtsClient*, const Model::DescribeErrorSummaryRequest&, DescribeErrorSummaryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeErrorSummaryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeFilesResponse> DescribeFilesOutcome;
                 typedef std::future<DescribeFilesOutcome> DescribeFilesOutcomeCallable;
                 typedef std::function<void(const PtsClient*, const Model::DescribeFilesRequest&, DescribeFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFilesAsyncHandler;
@@ -434,6 +439,15 @@ namespace TencentCloud
                 DescribeCronJobsOutcome DescribeCronJobs(const Model::DescribeCronJobsRequest &request);
                 void DescribeCronJobsAsync(const Model::DescribeCronJobsRequest& request, const DescribeCronJobsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeCronJobsOutcomeCallable DescribeCronJobsCallable(const Model::DescribeCronJobsRequest& request);
+
+                /**
+                 *查询错误详情汇总信息
+                 * @param req DescribeErrorSummaryRequest
+                 * @return DescribeErrorSummaryOutcome
+                 */
+                DescribeErrorSummaryOutcome DescribeErrorSummary(const Model::DescribeErrorSummaryRequest &request);
+                void DescribeErrorSummaryAsync(const Model::DescribeErrorSummaryRequest& request, const DescribeErrorSummaryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeErrorSummaryOutcomeCallable DescribeErrorSummaryCallable(const Model::DescribeErrorSummaryRequest& request);
 
                 /**
                  *查询文件列表

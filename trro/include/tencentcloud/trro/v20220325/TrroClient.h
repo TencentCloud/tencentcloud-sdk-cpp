@@ -27,6 +27,8 @@
 #include <tencentcloud/trro/v20220325/model/BatchDeleteDevicesResponse.h>
 #include <tencentcloud/trro/v20220325/model/BatchDeletePolicyRequest.h>
 #include <tencentcloud/trro/v20220325/model/BatchDeletePolicyResponse.h>
+#include <tencentcloud/trro/v20220325/model/BoundLicensesRequest.h>
+#include <tencentcloud/trro/v20220325/model/BoundLicensesResponse.h>
 #include <tencentcloud/trro/v20220325/model/CreateDeviceRequest.h>
 #include <tencentcloud/trro/v20220325/model/CreateDeviceResponse.h>
 #include <tencentcloud/trro/v20220325/model/CreateProjectRequest.h>
@@ -47,10 +49,20 @@
 #include <tencentcloud/trro/v20220325/model/DescribeProjectInfoResponse.h>
 #include <tencentcloud/trro/v20220325/model/DescribeProjectListRequest.h>
 #include <tencentcloud/trro/v20220325/model/DescribeProjectListResponse.h>
+#include <tencentcloud/trro/v20220325/model/DescribeRecentSessionListRequest.h>
+#include <tencentcloud/trro/v20220325/model/DescribeRecentSessionListResponse.h>
 #include <tencentcloud/trro/v20220325/model/DescribeSessionStatisticsRequest.h>
 #include <tencentcloud/trro/v20220325/model/DescribeSessionStatisticsResponse.h>
 #include <tencentcloud/trro/v20220325/model/DescribeSessionStatisticsByIntervalRequest.h>
 #include <tencentcloud/trro/v20220325/model/DescribeSessionStatisticsByIntervalResponse.h>
+#include <tencentcloud/trro/v20220325/model/GetDeviceLicenseRequest.h>
+#include <tencentcloud/trro/v20220325/model/GetDeviceLicenseResponse.h>
+#include <tencentcloud/trro/v20220325/model/GetDevicesRequest.h>
+#include <tencentcloud/trro/v20220325/model/GetDevicesResponse.h>
+#include <tencentcloud/trro/v20220325/model/GetLicenseStatRequest.h>
+#include <tencentcloud/trro/v20220325/model/GetLicenseStatResponse.h>
+#include <tencentcloud/trro/v20220325/model/GetLicensesRequest.h>
+#include <tencentcloud/trro/v20220325/model/GetLicensesResponse.h>
 #include <tencentcloud/trro/v20220325/model/ModifyDeviceRequest.h>
 #include <tencentcloud/trro/v20220325/model/ModifyDeviceResponse.h>
 #include <tencentcloud/trro/v20220325/model/ModifyPolicyRequest.h>
@@ -77,6 +89,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchDeletePolicyResponse> BatchDeletePolicyOutcome;
                 typedef std::future<BatchDeletePolicyOutcome> BatchDeletePolicyOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::BatchDeletePolicyRequest&, BatchDeletePolicyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeletePolicyAsyncHandler;
+                typedef Outcome<Core::Error, Model::BoundLicensesResponse> BoundLicensesOutcome;
+                typedef std::future<BoundLicensesOutcome> BoundLicensesOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::BoundLicensesRequest&, BoundLicensesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BoundLicensesAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDeviceResponse> CreateDeviceOutcome;
                 typedef std::future<CreateDeviceOutcome> CreateDeviceOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::CreateDeviceRequest&, CreateDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDeviceAsyncHandler;
@@ -107,12 +122,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProjectListResponse> DescribeProjectListOutcome;
                 typedef std::future<DescribeProjectListOutcome> DescribeProjectListOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::DescribeProjectListRequest&, DescribeProjectListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProjectListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRecentSessionListResponse> DescribeRecentSessionListOutcome;
+                typedef std::future<DescribeRecentSessionListOutcome> DescribeRecentSessionListOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::DescribeRecentSessionListRequest&, DescribeRecentSessionListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRecentSessionListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSessionStatisticsResponse> DescribeSessionStatisticsOutcome;
                 typedef std::future<DescribeSessionStatisticsOutcome> DescribeSessionStatisticsOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::DescribeSessionStatisticsRequest&, DescribeSessionStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionStatisticsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSessionStatisticsByIntervalResponse> DescribeSessionStatisticsByIntervalOutcome;
                 typedef std::future<DescribeSessionStatisticsByIntervalOutcome> DescribeSessionStatisticsByIntervalOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::DescribeSessionStatisticsByIntervalRequest&, DescribeSessionStatisticsByIntervalOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSessionStatisticsByIntervalAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDeviceLicenseResponse> GetDeviceLicenseOutcome;
+                typedef std::future<GetDeviceLicenseOutcome> GetDeviceLicenseOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::GetDeviceLicenseRequest&, GetDeviceLicenseOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDeviceLicenseAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetDevicesResponse> GetDevicesOutcome;
+                typedef std::future<GetDevicesOutcome> GetDevicesOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::GetDevicesRequest&, GetDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetLicenseStatResponse> GetLicenseStatOutcome;
+                typedef std::future<GetLicenseStatOutcome> GetLicenseStatOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::GetLicenseStatRequest&, GetLicenseStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLicenseStatAsyncHandler;
+                typedef Outcome<Core::Error, Model::GetLicensesResponse> GetLicensesOutcome;
+                typedef std::future<GetLicensesOutcome> GetLicensesOutcomeCallable;
+                typedef std::function<void(const TrroClient*, const Model::GetLicensesRequest&, GetLicensesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> GetLicensesAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyDeviceResponse> ModifyDeviceOutcome;
                 typedef std::future<ModifyDeviceOutcome> ModifyDeviceOutcomeCallable;
                 typedef std::function<void(const TrroClient*, const Model::ModifyDeviceRequest&, ModifyDeviceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyDeviceAsyncHandler;
@@ -142,6 +172,15 @@ namespace TencentCloud
                 BatchDeletePolicyOutcome BatchDeletePolicy(const Model::BatchDeletePolicyRequest &request);
                 void BatchDeletePolicyAsync(const Model::BatchDeletePolicyRequest& request, const BatchDeletePolicyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 BatchDeletePolicyOutcomeCallable BatchDeletePolicyCallable(const Model::BatchDeletePolicyRequest& request);
+
+                /**
+                 *为推流设备绑定license，优先绑定到期时间最近的，到期时间相同优先绑定月包
+                 * @param req BoundLicensesRequest
+                 * @return BoundLicensesOutcome
+                 */
+                BoundLicensesOutcome BoundLicenses(const Model::BoundLicensesRequest &request);
+                void BoundLicensesAsync(const Model::BoundLicensesRequest& request, const BoundLicensesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BoundLicensesOutcomeCallable BoundLicensesCallable(const Model::BoundLicensesRequest& request);
 
                 /**
                  *用于创建设备
@@ -234,6 +273,15 @@ namespace TencentCloud
                 DescribeProjectListOutcomeCallable DescribeProjectListCallable(const Model::DescribeProjectListRequest& request);
 
                 /**
+                 *获取最新设备会话列表
+                 * @param req DescribeRecentSessionListRequest
+                 * @return DescribeRecentSessionListOutcome
+                 */
+                DescribeRecentSessionListOutcome DescribeRecentSessionList(const Model::DescribeRecentSessionListRequest &request);
+                void DescribeRecentSessionListAsync(const Model::DescribeRecentSessionListRequest& request, const DescribeRecentSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRecentSessionListOutcomeCallable DescribeRecentSessionListCallable(const Model::DescribeRecentSessionListRequest& request);
+
+                /**
                  *获取会话统计值
                  * @param req DescribeSessionStatisticsRequest
                  * @return DescribeSessionStatisticsOutcome
@@ -250,6 +298,42 @@ namespace TencentCloud
                 DescribeSessionStatisticsByIntervalOutcome DescribeSessionStatisticsByInterval(const Model::DescribeSessionStatisticsByIntervalRequest &request);
                 void DescribeSessionStatisticsByIntervalAsync(const Model::DescribeSessionStatisticsByIntervalRequest& request, const DescribeSessionStatisticsByIntervalAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSessionStatisticsByIntervalOutcomeCallable DescribeSessionStatisticsByIntervalCallable(const Model::DescribeSessionStatisticsByIntervalRequest& request);
+
+                /**
+                 *获取设备已经绑定的可用授权数量
+                 * @param req GetDeviceLicenseRequest
+                 * @return GetDeviceLicenseOutcome
+                 */
+                GetDeviceLicenseOutcome GetDeviceLicense(const Model::GetDeviceLicenseRequest &request);
+                void GetDeviceLicenseAsync(const Model::GetDeviceLicenseRequest& request, const GetDeviceLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDeviceLicenseOutcomeCallable GetDeviceLicenseCallable(const Model::GetDeviceLicenseRequest& request);
+
+                /**
+                 *查询用户设备的授权绑定情况
+                 * @param req GetDevicesRequest
+                 * @return GetDevicesOutcome
+                 */
+                GetDevicesOutcome GetDevices(const Model::GetDevicesRequest &request);
+                void GetDevicesAsync(const Model::GetDevicesRequest& request, const GetDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetDevicesOutcomeCallable GetDevicesCallable(const Model::GetDevicesRequest& request);
+
+                /**
+                 *统计license类型数量
+                 * @param req GetLicenseStatRequest
+                 * @return GetLicenseStatOutcome
+                 */
+                GetLicenseStatOutcome GetLicenseStat(const Model::GetLicenseStatRequest &request);
+                void GetLicenseStatAsync(const Model::GetLicenseStatRequest& request, const GetLicenseStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLicenseStatOutcomeCallable GetLicenseStatCallable(const Model::GetLicenseStatRequest& request);
+
+                /**
+                 *按授权查看license列表
+                 * @param req GetLicensesRequest
+                 * @return GetLicensesOutcome
+                 */
+                GetLicensesOutcome GetLicenses(const Model::GetLicensesRequest &request);
+                void GetLicensesAsync(const Model::GetLicensesRequest& request, const GetLicensesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                GetLicensesOutcomeCallable GetLicensesCallable(const Model::GetLicensesRequest& request);
 
                 /**
                  *用于修改设备信息

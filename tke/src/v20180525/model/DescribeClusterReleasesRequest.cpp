@@ -26,6 +26,7 @@ DescribeClusterReleasesRequest::DescribeClusterReleasesRequest() :
     m_clusterIdHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_offsetHasBeenSet(false),
+    m_clusterTypeHasBeenSet(false),
     m_namespaceHasBeenSet(false),
     m_releaseNameHasBeenSet(false),
     m_chartNameHasBeenSet(false)
@@ -61,6 +62,14 @@ string DescribeClusterReleasesRequest::ToJsonString() const
         string key = "Offset";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_offset, allocator);
+    }
+
+    if (m_clusterTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_clusterType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_namespaceHasBeenSet)
@@ -141,6 +150,22 @@ void DescribeClusterReleasesRequest::SetOffset(const int64_t& _offset)
 bool DescribeClusterReleasesRequest::OffsetHasBeenSet() const
 {
     return m_offsetHasBeenSet;
+}
+
+string DescribeClusterReleasesRequest::GetClusterType() const
+{
+    return m_clusterType;
+}
+
+void DescribeClusterReleasesRequest::SetClusterType(const string& _clusterType)
+{
+    m_clusterType = _clusterType;
+    m_clusterTypeHasBeenSet = true;
+}
+
+bool DescribeClusterReleasesRequest::ClusterTypeHasBeenSet() const
+{
+    return m_clusterTypeHasBeenSet;
 }
 
 string DescribeClusterReleasesRequest::GetNamespace() const

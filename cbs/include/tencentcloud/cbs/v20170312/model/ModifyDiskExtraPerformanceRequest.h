@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @return DiskId 需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     */
-                    std::string GetDiskId() const;
-
-                    /**
-                     * 设置需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     * @param DiskId 需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
-                     */
-                    void SetDiskId(const std::string& _diskId);
-
-                    /**
-                     * 判断参数 DiskId 是否已赋值
-                     * @return DiskId 是否已赋值
-                     */
-                    bool DiskIdHasBeenSet() const;
-
-                    /**
                      * 获取额外购买的云硬盘性能值，单位MB/s。
                      * @return ThroughputPerformance 额外购买的云硬盘性能值，单位MB/s。
                      */
@@ -78,19 +60,37 @@ namespace TencentCloud
                      */
                     bool ThroughputPerformanceHasBeenSet() const;
 
-                private:
+                    /**
+                     * 获取需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @return DiskId 需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     */
+                    std::string GetDiskId() const;
 
                     /**
-                     * 需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * 设置需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     * @param DiskId 需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
                      */
-                    std::string m_diskId;
-                    bool m_diskIdHasBeenSet;
+                    void SetDiskId(const std::string& _diskId);
+
+                    /**
+                     * 判断参数 DiskId 是否已赋值
+                     * @return DiskId 是否已赋值
+                     */
+                    bool DiskIdHasBeenSet() const;
+
+                private:
 
                     /**
                      * 额外购买的云硬盘性能值，单位MB/s。
                      */
                     uint64_t m_throughputPerformance;
                     bool m_throughputPerformanceHasBeenSet;
+
+                    /**
+                     * 需要创建快照的云硬盘ID，可通过[DescribeDisks](/document/product/362/16315)接口查询。
+                     */
+                    std::string m_diskId;
+                    bool m_diskIdHasBeenSet;
 
                 };
             }

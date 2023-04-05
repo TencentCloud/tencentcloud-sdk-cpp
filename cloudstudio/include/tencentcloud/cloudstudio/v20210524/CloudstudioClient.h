@@ -43,6 +43,8 @@
 #include <tencentcloud/cloudstudio/v20210524/model/DescribeCustomizeTemplatesPresetsResponse.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceEnvListRequest.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceEnvListResponse.h>
+#include <tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceIsReadyRequest.h>
+#include <tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceIsReadyResponse.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceNameExistRequest.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceNameExistResponse.h>
 #include <tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceStatusRequest.h>
@@ -109,6 +111,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeWorkspaceEnvListResponse> DescribeWorkspaceEnvListOutcome;
                 typedef std::future<DescribeWorkspaceEnvListOutcome> DescribeWorkspaceEnvListOutcomeCallable;
                 typedef std::function<void(const CloudstudioClient*, const Model::DescribeWorkspaceEnvListRequest&, DescribeWorkspaceEnvListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceEnvListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWorkspaceIsReadyResponse> DescribeWorkspaceIsReadyOutcome;
+                typedef std::future<DescribeWorkspaceIsReadyOutcome> DescribeWorkspaceIsReadyOutcomeCallable;
+                typedef std::function<void(const CloudstudioClient*, const Model::DescribeWorkspaceIsReadyRequest&, DescribeWorkspaceIsReadyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceIsReadyAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWorkspaceNameExistResponse> DescribeWorkspaceNameExistOutcome;
                 typedef std::future<DescribeWorkspaceNameExistOutcome> DescribeWorkspaceNameExistOutcomeCallable;
                 typedef std::function<void(const CloudstudioClient*, const Model::DescribeWorkspaceNameExistRequest&, DescribeWorkspaceNameExistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWorkspaceNameExistAsyncHandler;
@@ -234,6 +239,15 @@ namespace TencentCloud
                 DescribeWorkspaceEnvListOutcome DescribeWorkspaceEnvList(const Model::DescribeWorkspaceEnvListRequest &request);
                 void DescribeWorkspaceEnvListAsync(const Model::DescribeWorkspaceEnvListRequest& request, const DescribeWorkspaceEnvListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeWorkspaceEnvListOutcomeCallable DescribeWorkspaceEnvListCallable(const Model::DescribeWorkspaceEnvListRequest& request);
+
+                /**
+                 *获取工作空间是否已经启动就绪
+                 * @param req DescribeWorkspaceIsReadyRequest
+                 * @return DescribeWorkspaceIsReadyOutcome
+                 */
+                DescribeWorkspaceIsReadyOutcome DescribeWorkspaceIsReady(const Model::DescribeWorkspaceIsReadyRequest &request);
+                void DescribeWorkspaceIsReadyAsync(const Model::DescribeWorkspaceIsReadyRequest& request, const DescribeWorkspaceIsReadyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWorkspaceIsReadyOutcomeCallable DescribeWorkspaceIsReadyCallable(const Model::DescribeWorkspaceIsReadyRequest& request);
 
                 /**
                  *检查工作空间是否存在

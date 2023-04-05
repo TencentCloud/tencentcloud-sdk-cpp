@@ -21,23 +21,32 @@ set(trro_public_header
 set(trro_public_header_model
   include/tencentcloud/trro/v20220325/model/DescribeDeviceSessionDetailsResponse.h
   include/tencentcloud/trro/v20220325/model/DeleteProjectRequest.h
+  include/tencentcloud/trro/v20220325/model/License.h
   include/tencentcloud/trro/v20220325/model/PolicyInfo.h
   include/tencentcloud/trro/v20220325/model/ModifyDeviceResponse.h
+  include/tencentcloud/trro/v20220325/model/GetLicensesRequest.h
   include/tencentcloud/trro/v20220325/model/DescribePolicyResponse.h
   include/tencentcloud/trro/v20220325/model/BatchDeleteDevicesRequest.h
   include/tencentcloud/trro/v20220325/model/SessionInfo.h
   include/tencentcloud/trro/v20220325/model/DescribeDeviceInfoRequest.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsByIntervalResponse.h
+  include/tencentcloud/trro/v20220325/model/DescribeRecentSessionListRequest.h
+  include/tencentcloud/trro/v20220325/model/RecentSessionInfo.h
   include/tencentcloud/trro/v20220325/model/DescribeProjectInfoRequest.h
   include/tencentcloud/trro/v20220325/model/ModifyPolicyRequest.h
   include/tencentcloud/trro/v20220325/model/DescribeDeviceInfoResponse.h
+  include/tencentcloud/trro/v20220325/model/GetLicenseStatRequest.h
   include/tencentcloud/trro/v20220325/model/DescribeProjectListResponse.h
   include/tencentcloud/trro/v20220325/model/ModifyProjectResponse.h
   include/tencentcloud/trro/v20220325/model/BatchDeletePolicyResponse.h
+  include/tencentcloud/trro/v20220325/model/GetLicenseStatResponse.h
   include/tencentcloud/trro/v20220325/model/DescribePolicyRequest.h
+  include/tencentcloud/trro/v20220325/model/ModifyPolicyResponse.h
+  include/tencentcloud/trro/v20220325/model/Device.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsRequest.h
   include/tencentcloud/trro/v20220325/model/BatchDeleteDevicesResponse.h
   include/tencentcloud/trro/v20220325/model/ModifyProjectRequest.h
+  include/tencentcloud/trro/v20220325/model/DescribeRecentSessionListResponse.h
   include/tencentcloud/trro/v20220325/model/ModifyDeviceRequest.h
   include/tencentcloud/trro/v20220325/model/DescribeProjectListRequest.h
   include/tencentcloud/trro/v20220325/model/ProjectInfo.h
@@ -45,19 +54,25 @@ set(trro_public_header_model
   include/tencentcloud/trro/v20220325/model/DescribeDeviceSessionListResponse.h
   include/tencentcloud/trro/v20220325/model/DescribeProjectInfoResponse.h
   include/tencentcloud/trro/v20220325/model/DescribeDeviceListResponse.h
+  include/tencentcloud/trro/v20220325/model/BoundLicensesRequest.h
   include/tencentcloud/trro/v20220325/model/DeleteProjectResponse.h
   include/tencentcloud/trro/v20220325/model/DescribeDeviceListRequest.h
   include/tencentcloud/trro/v20220325/model/SessionDeviceDetail.h
+  include/tencentcloud/trro/v20220325/model/GetDeviceLicenseResponse.h
   include/tencentcloud/trro/v20220325/model/CreateDeviceResponse.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsByIntervalRequest.h
   include/tencentcloud/trro/v20220325/model/CreateDeviceRequest.h
   include/tencentcloud/trro/v20220325/model/DescribeSessionStatisticsResponse.h
+  include/tencentcloud/trro/v20220325/model/GetDevicesResponse.h
+  include/tencentcloud/trro/v20220325/model/BoundLicensesResponse.h
   include/tencentcloud/trro/v20220325/model/DescribeDeviceSessionDetailsRequest.h
+  include/tencentcloud/trro/v20220325/model/GetLicensesResponse.h
   include/tencentcloud/trro/v20220325/model/DeviceInfo.h
   include/tencentcloud/trro/v20220325/model/DescribeDeviceSessionListRequest.h
-  include/tencentcloud/trro/v20220325/model/ModifyPolicyResponse.h
+  include/tencentcloud/trro/v20220325/model/GetDevicesRequest.h
   include/tencentcloud/trro/v20220325/model/CreateProjectResponse.h
   include/tencentcloud/trro/v20220325/model/SessionIntervalStatistic.h
+  include/tencentcloud/trro/v20220325/model/GetDeviceLicenseRequest.h
   include/tencentcloud/trro/v20220325/model/CreateProjectRequest.h
   )
 
@@ -65,23 +80,32 @@ set(trro_src
   src/v20220325/TrroClient.cpp
   src/v20220325/model/DescribeDeviceSessionDetailsResponse.cpp
   src/v20220325/model/DeleteProjectRequest.cpp
+  src/v20220325/model/License.cpp
   src/v20220325/model/PolicyInfo.cpp
   src/v20220325/model/ModifyDeviceResponse.cpp
+  src/v20220325/model/GetLicensesRequest.cpp
   src/v20220325/model/DescribePolicyResponse.cpp
   src/v20220325/model/BatchDeleteDevicesRequest.cpp
   src/v20220325/model/SessionInfo.cpp
   src/v20220325/model/DescribeDeviceInfoRequest.cpp
   src/v20220325/model/DescribeSessionStatisticsByIntervalResponse.cpp
+  src/v20220325/model/DescribeRecentSessionListRequest.cpp
+  src/v20220325/model/RecentSessionInfo.cpp
   src/v20220325/model/DescribeProjectInfoRequest.cpp
   src/v20220325/model/ModifyPolicyRequest.cpp
   src/v20220325/model/DescribeDeviceInfoResponse.cpp
+  src/v20220325/model/GetLicenseStatRequest.cpp
   src/v20220325/model/DescribeProjectListResponse.cpp
   src/v20220325/model/ModifyProjectResponse.cpp
   src/v20220325/model/BatchDeletePolicyResponse.cpp
+  src/v20220325/model/GetLicenseStatResponse.cpp
   src/v20220325/model/DescribePolicyRequest.cpp
+  src/v20220325/model/ModifyPolicyResponse.cpp
+  src/v20220325/model/Device.cpp
   src/v20220325/model/DescribeSessionStatisticsRequest.cpp
   src/v20220325/model/BatchDeleteDevicesResponse.cpp
   src/v20220325/model/ModifyProjectRequest.cpp
+  src/v20220325/model/DescribeRecentSessionListResponse.cpp
   src/v20220325/model/ModifyDeviceRequest.cpp
   src/v20220325/model/DescribeProjectListRequest.cpp
   src/v20220325/model/ProjectInfo.cpp
@@ -89,19 +113,25 @@ set(trro_src
   src/v20220325/model/DescribeDeviceSessionListResponse.cpp
   src/v20220325/model/DescribeProjectInfoResponse.cpp
   src/v20220325/model/DescribeDeviceListResponse.cpp
+  src/v20220325/model/BoundLicensesRequest.cpp
   src/v20220325/model/DeleteProjectResponse.cpp
   src/v20220325/model/DescribeDeviceListRequest.cpp
   src/v20220325/model/SessionDeviceDetail.cpp
+  src/v20220325/model/GetDeviceLicenseResponse.cpp
   src/v20220325/model/CreateDeviceResponse.cpp
   src/v20220325/model/DescribeSessionStatisticsByIntervalRequest.cpp
   src/v20220325/model/CreateDeviceRequest.cpp
   src/v20220325/model/DescribeSessionStatisticsResponse.cpp
+  src/v20220325/model/GetDevicesResponse.cpp
+  src/v20220325/model/BoundLicensesResponse.cpp
   src/v20220325/model/DescribeDeviceSessionDetailsRequest.cpp
+  src/v20220325/model/GetLicensesResponse.cpp
   src/v20220325/model/DeviceInfo.cpp
   src/v20220325/model/DescribeDeviceSessionListRequest.cpp
-  src/v20220325/model/ModifyPolicyResponse.cpp
+  src/v20220325/model/GetDevicesRequest.cpp
   src/v20220325/model/CreateProjectResponse.cpp
   src/v20220325/model/SessionIntervalStatistic.cpp
+  src/v20220325/model/GetDeviceLicenseRequest.cpp
   src/v20220325/model/CreateProjectRequest.cpp
   )
 

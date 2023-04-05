@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cfw/v20190904/model/BetaInfoByACL.h>
 
 
 namespace TencentCloud
@@ -566,6 +567,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取关联任务详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BetaList 关联任务详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BetaInfoByACL> GetBetaList() const;
+
+                    /**
+                     * 设置关联任务详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BetaList 关联任务详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBetaList(const std::vector<BetaInfoByACL>& _betaList);
+
+                    /**
+                     * 判断参数 BetaList 是否已赋值
+                     * @return BetaList 是否已赋值
+                     */
+                    bool BetaListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -733,6 +756,13 @@ namespace TencentCloud
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 关联任务详情
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<BetaInfoByACL> m_betaList;
+                    bool m_betaListHasBeenSet;
 
                 };
             }

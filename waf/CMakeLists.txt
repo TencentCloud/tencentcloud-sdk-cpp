@@ -60,11 +60,14 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPResponse.h
   include/tencentcloud/waf/v20180125/model/SwitchDomainRulesResponse.h
   include/tencentcloud/waf/v20180125/model/SearchAccessLogResponse.h
+  include/tencentcloud/waf/v20180125/model/CreateHostResponse.h
   include/tencentcloud/waf/v20180125/model/IpAccessControlItem.h
   include/tencentcloud/waf/v20180125/model/SwitchDomainRulesRequest.h
   include/tencentcloud/waf/v20180125/model/DomainsPartInfo.h
   include/tencentcloud/waf/v20180125/model/DescribeAutoDenyIPRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeIpAccessControlRequest.h
+  include/tencentcloud/waf/v20180125/model/HostRecord.h
+  include/tencentcloud/waf/v20180125/model/CreateHostRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyAreaBanStatusRequest.h
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h
   include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
@@ -146,6 +149,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeDomainsRequest.h
   include/tencentcloud/waf/v20180125/model/BotPkg.h
   include/tencentcloud/waf/v20180125/model/ModifyWafThreatenIntelligenceResponse.h
+  include/tencentcloud/waf/v20180125/model/LoadBalancer.h
   )
 
 set(waf_src
@@ -191,11 +195,14 @@ set(waf_src
   src/v20180125/model/DescribeAutoDenyIPResponse.cpp
   src/v20180125/model/SwitchDomainRulesResponse.cpp
   src/v20180125/model/SearchAccessLogResponse.cpp
+  src/v20180125/model/CreateHostResponse.cpp
   src/v20180125/model/IpAccessControlItem.cpp
   src/v20180125/model/SwitchDomainRulesRequest.cpp
   src/v20180125/model/DomainsPartInfo.cpp
   src/v20180125/model/DescribeAutoDenyIPRequest.cpp
   src/v20180125/model/DescribeIpAccessControlRequest.cpp
+  src/v20180125/model/HostRecord.cpp
+  src/v20180125/model/CreateHostRequest.cpp
   src/v20180125/model/ModifyAreaBanStatusRequest.cpp
   src/v20180125/model/AddSpartaProtectionRequest.cpp
   src/v20180125/model/PostAttackDownloadTaskRequest.cpp
@@ -277,6 +284,7 @@ set(waf_src
   src/v20180125/model/DescribeDomainsRequest.cpp
   src/v20180125/model/BotPkg.cpp
   src/v20180125/model/ModifyWafThreatenIntelligenceResponse.cpp
+  src/v20180125/model/LoadBalancer.cpp
   )
 
 set(waf_include

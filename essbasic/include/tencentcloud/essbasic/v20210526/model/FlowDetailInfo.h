@@ -102,14 +102,50 @@ namespace TencentCloud
                     bool FlowTypeHasBeenSet() const;
 
                     /**
-                     * 获取合同(流程)的状态
-                     * @return FlowStatus 合同(流程)的状态
+                     * 获取合同(流程)的状态, 状态如下
+
+INIT 还没发起
+PART 部分签署
+REJECT 拒签
+ALL 全部签署
+DEADLINE 流签
+CANCEL 取消
+RELIEVED 解除
+ 
+                     * @return FlowStatus 合同(流程)的状态, 状态如下
+
+INIT 还没发起
+PART 部分签署
+REJECT 拒签
+ALL 全部签署
+DEADLINE 流签
+CANCEL 取消
+RELIEVED 解除
+ 
                      */
                     std::string GetFlowStatus() const;
 
                     /**
-                     * 设置合同(流程)的状态
-                     * @param FlowStatus 合同(流程)的状态
+                     * 设置合同(流程)的状态, 状态如下
+
+INIT 还没发起
+PART 部分签署
+REJECT 拒签
+ALL 全部签署
+DEADLINE 流签
+CANCEL 取消
+RELIEVED 解除
+ 
+                     * @param FlowStatus 合同(流程)的状态, 状态如下
+
+INIT 还没发起
+PART 部分签署
+REJECT 拒签
+ALL 全部签署
+DEADLINE 流签
+CANCEL 取消
+RELIEVED 解除
+ 
                      */
                     void SetFlowStatus(const std::string& _flowStatus);
 
@@ -248,7 +284,16 @@ namespace TencentCloud
                     bool m_flowTypeHasBeenSet;
 
                     /**
-                     * 合同(流程)的状态
+                     * 合同(流程)的状态, 状态如下
+
+INIT 还没发起
+PART 部分签署
+REJECT 拒签
+ALL 全部签署
+DEADLINE 流签
+CANCEL 取消
+RELIEVED 解除
+ 
                      */
                     std::string m_flowStatus;
                     bool m_flowStatusHasBeenSet;

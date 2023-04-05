@@ -28,6 +28,7 @@
 #include <tencentcloud/teo/v20220901/model/BotPortraitRule.h>
 #include <tencentcloud/teo/v20220901/model/IntelligenceRule.h>
 #include <tencentcloud/teo/v20220901/model/BotUserRule.h>
+#include <tencentcloud/teo/v20220901/model/AlgDetectRule.h>
 
 
 namespace TencentCloud
@@ -153,6 +154,24 @@ namespace TencentCloud
                     bool BotUserRulesHasBeenSet() const;
 
                     /**
+                     * 获取Bot主动特征识别规则。
+                     * @return AlgDetectRule Bot主动特征识别规则。
+                     */
+                    std::vector<AlgDetectRule> GetAlgDetectRule() const;
+
+                    /**
+                     * 设置Bot主动特征识别规则。
+                     * @param AlgDetectRule Bot主动特征识别规则。
+                     */
+                    void SetAlgDetectRule(const std::vector<AlgDetectRule>& _algDetectRule);
+
+                    /**
+                     * 判断参数 AlgDetectRule 是否已赋值
+                     * @return AlgDetectRule 是否已赋值
+                     */
+                    bool AlgDetectRuleHasBeenSet() const;
+
+                    /**
                      * 获取Bot托管定制策略，入参可不填，仅出参使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return Customizes Bot托管定制策略，入参可不填，仅出参使用。
@@ -208,6 +227,12 @@ namespace TencentCloud
                      */
                     std::vector<BotUserRule> m_botUserRules;
                     bool m_botUserRulesHasBeenSet;
+
+                    /**
+                     * Bot主动特征识别规则。
+                     */
+                    std::vector<AlgDetectRule> m_algDetectRule;
+                    bool m_algDetectRuleHasBeenSet;
 
                     /**
                      * Bot托管定制策略，入参可不填，仅出参使用。

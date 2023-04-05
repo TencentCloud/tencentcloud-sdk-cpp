@@ -45,8 +45,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取无
-                     * @return Data 无
+                     * 获取"NetworkNum":网络扫描探测
+ "HandleNum": 待处理事件
+"BanNum": 
+  "VulNum": 漏洞利用
+  "OutNum": 失陷主机
+"BruteForceNum": 0
+                     * @return Data "NetworkNum":网络扫描探测
+ "HandleNum": 待处理事件
+"BanNum": 
+  "VulNum": 漏洞利用
+  "OutNum": 失陷主机
+"BruteForceNum": 0
                      */
                     TLogInfo GetData() const;
 
@@ -59,7 +69,12 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 无
+                     * "NetworkNum":网络扫描探测
+ "HandleNum": 待处理事件
+"BanNum": 
+  "VulNum": 漏洞利用
+  "OutNum": 失陷主机
+"BruteForceNum": 0
                      */
                     TLogInfo m_data;
                     bool m_dataHasBeenSet;

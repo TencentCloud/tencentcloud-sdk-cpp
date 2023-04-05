@@ -307,14 +307,14 @@ video 纯视频
                     bool AssistantsHasBeenSet() const;
 
                     /**
-                     * 获取录制布局。
-                     * @return RecordLayout 录制布局。
+                     * 获取录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * @return RecordLayout 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
                      */
                     uint64_t GetRecordLayout() const;
 
                     /**
-                     * 设置录制布局。
-                     * @param RecordLayout 录制布局。
+                     * 设置录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
+                     * @param RecordLayout 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
                      */
                     void SetRecordLayout(const uint64_t& _recordLayout);
 
@@ -429,7 +429,7 @@ video 纯视频
                     bool m_assistantsHasBeenSet;
 
                     /**
-                     * 录制布局。
+                     * 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
                      */
                     uint64_t m_recordLayout;
                     bool m_recordLayoutHasBeenSet;

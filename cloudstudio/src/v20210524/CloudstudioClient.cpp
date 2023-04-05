@@ -470,6 +470,49 @@ CloudstudioClient::DescribeWorkspaceEnvListOutcomeCallable CloudstudioClient::De
     return task->get_future();
 }
 
+CloudstudioClient::DescribeWorkspaceIsReadyOutcome CloudstudioClient::DescribeWorkspaceIsReady(const DescribeWorkspaceIsReadyRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWorkspaceIsReady");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWorkspaceIsReadyResponse rsp = DescribeWorkspaceIsReadyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWorkspaceIsReadyOutcome(rsp);
+        else
+            return DescribeWorkspaceIsReadyOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWorkspaceIsReadyOutcome(outcome.GetError());
+    }
+}
+
+void CloudstudioClient::DescribeWorkspaceIsReadyAsync(const DescribeWorkspaceIsReadyRequest& request, const DescribeWorkspaceIsReadyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWorkspaceIsReady(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CloudstudioClient::DescribeWorkspaceIsReadyOutcomeCallable CloudstudioClient::DescribeWorkspaceIsReadyCallable(const DescribeWorkspaceIsReadyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWorkspaceIsReadyOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWorkspaceIsReady(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CloudstudioClient::DescribeWorkspaceNameExistOutcome CloudstudioClient::DescribeWorkspaceNameExist(const DescribeWorkspaceNameExistRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeWorkspaceNameExist");

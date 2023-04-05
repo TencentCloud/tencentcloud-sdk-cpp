@@ -135,6 +135,28 @@ namespace TencentCloud
                      */
                     bool GracefulStopSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Resources 资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetResources() const;
+
+                    /**
+                     * 设置资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Resources 资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetResources(const int64_t& _resources);
+
+                    /**
+                     * 判断参数 Resources 是否已赋值
+                     * @return Resources 是否已赋值
+                     */
+                    bool ResourcesHasBeenSet() const;
+
                 private:
 
                     /**
@@ -164,6 +186,13 @@ namespace TencentCloud
                      */
                     int64_t m_gracefulStopSeconds;
                     bool m_gracefulStopSecondsHasBeenSet;
+
+                    /**
+                     * 资源数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_resources;
+                    bool m_resourcesHasBeenSet;
 
                 };
             }

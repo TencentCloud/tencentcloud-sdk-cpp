@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cloudstudio/v20210524/model/WorkspaceInfoDTO.h>
 
 
 namespace TencentCloud
@@ -43,7 +44,28 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取工作空间信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Data 工作空间信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkspaceInfoDTO GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 工作空间信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    WorkspaceInfoDTO m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

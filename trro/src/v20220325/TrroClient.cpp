@@ -126,6 +126,49 @@ TrroClient::BatchDeletePolicyOutcomeCallable TrroClient::BatchDeletePolicyCallab
     return task->get_future();
 }
 
+TrroClient::BoundLicensesOutcome TrroClient::BoundLicenses(const BoundLicensesRequest &request)
+{
+    auto outcome = MakeRequest(request, "BoundLicenses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BoundLicensesResponse rsp = BoundLicensesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BoundLicensesOutcome(rsp);
+        else
+            return BoundLicensesOutcome(o.GetError());
+    }
+    else
+    {
+        return BoundLicensesOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::BoundLicensesAsync(const BoundLicensesRequest& request, const BoundLicensesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BoundLicenses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::BoundLicensesOutcomeCallable TrroClient::BoundLicensesCallable(const BoundLicensesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BoundLicensesOutcome()>>(
+        [this, request]()
+        {
+            return this->BoundLicenses(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrroClient::CreateDeviceOutcome TrroClient::CreateDevice(const CreateDeviceRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDevice");
@@ -556,6 +599,49 @@ TrroClient::DescribeProjectListOutcomeCallable TrroClient::DescribeProjectListCa
     return task->get_future();
 }
 
+TrroClient::DescribeRecentSessionListOutcome TrroClient::DescribeRecentSessionList(const DescribeRecentSessionListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRecentSessionList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRecentSessionListResponse rsp = DescribeRecentSessionListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRecentSessionListOutcome(rsp);
+        else
+            return DescribeRecentSessionListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRecentSessionListOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::DescribeRecentSessionListAsync(const DescribeRecentSessionListRequest& request, const DescribeRecentSessionListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRecentSessionList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::DescribeRecentSessionListOutcomeCallable TrroClient::DescribeRecentSessionListCallable(const DescribeRecentSessionListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRecentSessionListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRecentSessionList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrroClient::DescribeSessionStatisticsOutcome TrroClient::DescribeSessionStatistics(const DescribeSessionStatisticsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSessionStatistics");
@@ -635,6 +721,178 @@ TrroClient::DescribeSessionStatisticsByIntervalOutcomeCallable TrroClient::Descr
         [this, request]()
         {
             return this->DescribeSessionStatisticsByInterval(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::GetDeviceLicenseOutcome TrroClient::GetDeviceLicense(const GetDeviceLicenseRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDeviceLicense");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDeviceLicenseResponse rsp = GetDeviceLicenseResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDeviceLicenseOutcome(rsp);
+        else
+            return GetDeviceLicenseOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDeviceLicenseOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::GetDeviceLicenseAsync(const GetDeviceLicenseRequest& request, const GetDeviceLicenseAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDeviceLicense(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::GetDeviceLicenseOutcomeCallable TrroClient::GetDeviceLicenseCallable(const GetDeviceLicenseRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDeviceLicenseOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDeviceLicense(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::GetDevicesOutcome TrroClient::GetDevices(const GetDevicesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetDevices");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetDevicesResponse rsp = GetDevicesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetDevicesOutcome(rsp);
+        else
+            return GetDevicesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetDevicesOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::GetDevicesAsync(const GetDevicesRequest& request, const GetDevicesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetDevices(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::GetDevicesOutcomeCallable TrroClient::GetDevicesCallable(const GetDevicesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetDevicesOutcome()>>(
+        [this, request]()
+        {
+            return this->GetDevices(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::GetLicenseStatOutcome TrroClient::GetLicenseStat(const GetLicenseStatRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetLicenseStat");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetLicenseStatResponse rsp = GetLicenseStatResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetLicenseStatOutcome(rsp);
+        else
+            return GetLicenseStatOutcome(o.GetError());
+    }
+    else
+    {
+        return GetLicenseStatOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::GetLicenseStatAsync(const GetLicenseStatRequest& request, const GetLicenseStatAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetLicenseStat(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::GetLicenseStatOutcomeCallable TrroClient::GetLicenseStatCallable(const GetLicenseStatRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetLicenseStatOutcome()>>(
+        [this, request]()
+        {
+            return this->GetLicenseStat(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrroClient::GetLicensesOutcome TrroClient::GetLicenses(const GetLicensesRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetLicenses");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetLicensesResponse rsp = GetLicensesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetLicensesOutcome(rsp);
+        else
+            return GetLicensesOutcome(o.GetError());
+    }
+    else
+    {
+        return GetLicensesOutcome(outcome.GetError());
+    }
+}
+
+void TrroClient::GetLicensesAsync(const GetLicensesRequest& request, const GetLicensesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetLicenses(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrroClient::GetLicensesOutcomeCallable TrroClient::GetLicensesCallable(const GetLicensesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetLicensesOutcome()>>(
+        [this, request]()
+        {
+            return this->GetLicenses(request);
         }
     );
 

@@ -26,6 +26,7 @@ BotConfig::BotConfig() :
     m_botPortraitRuleHasBeenSet(false),
     m_intelligenceRuleHasBeenSet(false),
     m_botUserRulesHasBeenSet(false),
+    m_algDetectRuleHasBeenSet(false),
     m_customizesHasBeenSet(false)
 {
 }
@@ -116,6 +117,26 @@ CoreInternalOutcome BotConfig::Deserialize(const rapidjson::Value &value)
         m_botUserRulesHasBeenSet = true;
     }
 
+    if (value.HasMember("AlgDetectRule") && !value["AlgDetectRule"].IsNull())
+    {
+        if (!value["AlgDetectRule"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BotConfig.AlgDetectRule` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["AlgDetectRule"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            AlgDetectRule item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_algDetectRule.push_back(item);
+        }
+        m_algDetectRuleHasBeenSet = true;
+    }
+
     if (value.HasMember("Customizes") && !value["Customizes"].IsNull())
     {
         if (!value["Customizes"].IsArray())
@@ -187,6 +208,21 @@ void BotConfig::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
 
         int i=0;
         for (auto itr = m_botUserRules.begin(); itr != m_botUserRules.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_algDetectRuleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AlgDetectRule";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_algDetectRule.begin(); itr != m_algDetectRule.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -289,6 +325,22 @@ void BotConfig::SetBotUserRules(const vector<BotUserRule>& _botUserRules)
 bool BotConfig::BotUserRulesHasBeenSet() const
 {
     return m_botUserRulesHasBeenSet;
+}
+
+vector<AlgDetectRule> BotConfig::GetAlgDetectRule() const
+{
+    return m_algDetectRule;
+}
+
+void BotConfig::SetAlgDetectRule(const vector<AlgDetectRule>& _algDetectRule)
+{
+    m_algDetectRule = _algDetectRule;
+    m_algDetectRuleHasBeenSet = true;
+}
+
+bool BotConfig::AlgDetectRuleHasBeenSet() const
+{
+    return m_algDetectRuleHasBeenSet;
 }
 
 vector<BotUserRule> BotConfig::GetCustomizes() const

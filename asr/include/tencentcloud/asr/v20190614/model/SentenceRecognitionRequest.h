@@ -43,42 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取腾讯云项目 ID，废弃参数，填写0即可。
-                     * @return ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
-                     */
-                    uint64_t GetProjectId() const;
-
-                    /**
-                     * 设置腾讯云项目 ID，废弃参数，填写0即可。
-                     * @param ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
-                     */
-                    void SetProjectId(const uint64_t& _projectId);
-
-                    /**
-                     * 判断参数 ProjectId 是否已赋值
-                     * @return ProjectId 是否已赋值
-                     */
-                    bool ProjectIdHasBeenSet() const;
-
-                    /**
-                     * 获取子服务类型。2： 一句话识别。
-                     * @return SubServiceType 子服务类型。2： 一句话识别。
-                     */
-                    uint64_t GetSubServiceType() const;
-
-                    /**
-                     * 设置子服务类型。2： 一句话识别。
-                     * @param SubServiceType 子服务类型。2： 一句话识别。
-                     */
-                    void SetSubServiceType(const uint64_t& _subServiceType);
-
-                    /**
-                     * 判断参数 SubServiceType 是否已赋值
-                     * @return SubServiceType 是否已赋值
-                     */
-                    bool SubServiceTypeHasBeenSet() const;
-
-                    /**
                      * 获取引擎模型类型。
 电话场景：
 • 8k_zh：中文电话通用；
@@ -96,6 +60,7 @@ namespace TencentCloud
 • 16k_ms：马来语；
 • 16k_id：印度尼西亚语；
 • 16k_fil：菲律宾语；
+• 16k_th：泰语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
                      * @return EngSerViceType 引擎模型类型。
 电话场景：
@@ -114,6 +79,7 @@ namespace TencentCloud
 • 16k_ms：马来语；
 • 16k_id：印度尼西亚语；
 • 16k_fil：菲律宾语；
+• 16k_th：泰语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
                      */
                     std::string GetEngSerViceType() const;
@@ -136,6 +102,7 @@ namespace TencentCloud
 • 16k_ms：马来语；
 • 16k_id：印度尼西亚语；
 • 16k_fil：菲律宾语；
+• 16k_th：泰语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
                      * @param EngSerViceType 引擎模型类型。
 电话场景：
@@ -154,6 +121,7 @@ namespace TencentCloud
 • 16k_ms：马来语；
 • 16k_id：印度尼西亚语；
 • 16k_fil：菲律宾语；
+• 16k_th：泰语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
                      */
                     void SetEngSerViceType(const std::string& _engSerViceType);
@@ -201,22 +169,40 @@ namespace TencentCloud
                     bool VoiceFormatHasBeenSet() const;
 
                     /**
-                     * 获取废弃参数，填写任意字符串即可。
-                     * @return UsrAudioKey 废弃参数，填写任意字符串即可。
+                     * 获取腾讯云项目 ID，废弃参数，填写0即可。
+                     * @return ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
                      */
-                    std::string GetUsrAudioKey() const;
+                    uint64_t GetProjectId() const;
 
                     /**
-                     * 设置废弃参数，填写任意字符串即可。
-                     * @param UsrAudioKey 废弃参数，填写任意字符串即可。
+                     * 设置腾讯云项目 ID，废弃参数，填写0即可。
+                     * @param ProjectId 腾讯云项目 ID，废弃参数，填写0即可。
                      */
-                    void SetUsrAudioKey(const std::string& _usrAudioKey);
+                    void SetProjectId(const uint64_t& _projectId);
 
                     /**
-                     * 判断参数 UsrAudioKey 是否已赋值
-                     * @return UsrAudioKey 是否已赋值
+                     * 判断参数 ProjectId 是否已赋值
+                     * @return ProjectId 是否已赋值
                      */
-                    bool UsrAudioKeyHasBeenSet() const;
+                    bool ProjectIdHasBeenSet() const;
+
+                    /**
+                     * 获取子服务类型。2： 一句话识别。
+                     * @return SubServiceType 子服务类型。2： 一句话识别。
+                     */
+                    uint64_t GetSubServiceType() const;
+
+                    /**
+                     * 设置子服务类型。2： 一句话识别。
+                     * @param SubServiceType 子服务类型。2： 一句话识别。
+                     */
+                    void SetSubServiceType(const uint64_t& _subServiceType);
+
+                    /**
+                     * 判断参数 SubServiceType 是否已赋值
+                     * @return SubServiceType 是否已赋值
+                     */
+                    bool SubServiceTypeHasBeenSet() const;
 
                     /**
                      * 获取语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。
@@ -235,6 +221,24 @@ namespace TencentCloud
                      * @return Url 是否已赋值
                      */
                     bool UrlHasBeenSet() const;
+
+                    /**
+                     * 获取废弃参数，填写任意字符串即可。
+                     * @return UsrAudioKey 废弃参数，填写任意字符串即可。
+                     */
+                    std::string GetUsrAudioKey() const;
+
+                    /**
+                     * 设置废弃参数，填写任意字符串即可。
+                     * @param UsrAudioKey 废弃参数，填写任意字符串即可。
+                     */
+                    void SetUsrAudioKey(const std::string& _usrAudioKey);
+
+                    /**
+                     * 判断参数 UsrAudioKey 是否已赋值
+                     * @return UsrAudioKey 是否已赋值
+                     */
+                    bool UsrAudioKeyHasBeenSet() const;
 
                     /**
                      * 获取语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。
@@ -419,18 +423,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 腾讯云项目 ID，废弃参数，填写0即可。
-                     */
-                    uint64_t m_projectId;
-                    bool m_projectIdHasBeenSet;
-
-                    /**
-                     * 子服务类型。2： 一句话识别。
-                     */
-                    uint64_t m_subServiceType;
-                    bool m_subServiceTypeHasBeenSet;
-
-                    /**
                      * 引擎模型类型。
 电话场景：
 • 8k_zh：中文电话通用；
@@ -448,6 +440,7 @@ namespace TencentCloud
 • 16k_ms：马来语；
 • 16k_id：印度尼西亚语；
 • 16k_fil：菲律宾语；
+• 16k_th：泰语；
 • 16k_zh_dialect：多方言，支持23种方言（上海话、四川话、武汉话、贵阳话、昆明话、西安话、郑州话、太原话、兰州话、银川话、西宁话、南京话、合肥话、南昌话、长沙话、苏州话、杭州话、济南话、天津话、石家庄话、黑龙江话、吉林话、辽宁话）；
                      */
                     std::string m_engSerViceType;
@@ -466,16 +459,28 @@ namespace TencentCloud
                     bool m_voiceFormatHasBeenSet;
 
                     /**
-                     * 废弃参数，填写任意字符串即可。
+                     * 腾讯云项目 ID，废弃参数，填写0即可。
                      */
-                    std::string m_usrAudioKey;
-                    bool m_usrAudioKeyHasBeenSet;
+                    uint64_t m_projectId;
+                    bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 子服务类型。2： 一句话识别。
+                     */
+                    uint64_t m_subServiceType;
+                    bool m_subServiceTypeHasBeenSet;
 
                     /**
                      * 语音的URL地址，需要公网环境浏览器可下载。当 SourceType 值为 0时须填写该字段，为 1 时不填。音频时长不能超过60s，音频文件大小不能超过3MB。
                      */
                     std::string m_url;
                     bool m_urlHasBeenSet;
+
+                    /**
+                     * 废弃参数，填写任意字符串即可。
+                     */
+                    std::string m_usrAudioKey;
+                    bool m_usrAudioKeyHasBeenSet;
 
                     /**
                      * 语音数据，当SourceType 值为1（本地语音数据上传）时必须填写，当SourceType 值为0（语音 URL上传）可不写。要使用base64编码(采用python语言时注意读取文件应该为string而不是byte，以byte格式读取后要decode()。编码后的数据不可带有回车换行符)。音频时长不能超过60s，音频文件大小不能超过3MB（Base64后）。

@@ -22,6 +22,7 @@ set(cloudstudio_public_header_model
   include/tencentcloud/cloudstudio/v20210524/model/UserDefinedTemplatePatchedParams.h
   include/tencentcloud/cloudstudio/v20210524/model/WorkspaceInfoDTO.h
   include/tencentcloud/cloudstudio/v20210524/model/RecoverWorkspaceResponse.h
+  include/tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceIsReadyRequest.h
   include/tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceStatusRequest.h
   include/tencentcloud/cloudstudio/v20210524/model/CreateCustomizeTemplatesRequest.h
   include/tencentcloud/cloudstudio/v20210524/model/RecoverWorkspaceRequest.h
@@ -67,6 +68,7 @@ set(cloudstudio_public_header_model
   include/tencentcloud/cloudstudio/v20210524/model/DescribeCustomizeTemplatesResponse.h
   include/tencentcloud/cloudstudio/v20210524/model/CreateWorkspaceByVersionControlResponse.h
   include/tencentcloud/cloudstudio/v20210524/model/ModifyCustomizeTemplatesPartByIdRequest.h
+  include/tencentcloud/cloudstudio/v20210524/model/DescribeWorkspaceIsReadyResponse.h
   include/tencentcloud/cloudstudio/v20210524/model/WorkspaceTokenDTO.h
   include/tencentcloud/cloudstudio/v20210524/model/UserDefinedTemplateParams.h
   include/tencentcloud/cloudstudio/v20210524/model/DeleteCustomizeTemplatesByIdResponse.h
@@ -84,6 +86,7 @@ set(cloudstudio_src
   src/v20210524/model/UserDefinedTemplatePatchedParams.cpp
   src/v20210524/model/WorkspaceInfoDTO.cpp
   src/v20210524/model/RecoverWorkspaceResponse.cpp
+  src/v20210524/model/DescribeWorkspaceIsReadyRequest.cpp
   src/v20210524/model/DescribeWorkspaceStatusRequest.cpp
   src/v20210524/model/CreateCustomizeTemplatesRequest.cpp
   src/v20210524/model/RecoverWorkspaceRequest.cpp
@@ -129,6 +132,7 @@ set(cloudstudio_src
   src/v20210524/model/DescribeCustomizeTemplatesResponse.cpp
   src/v20210524/model/CreateWorkspaceByVersionControlResponse.cpp
   src/v20210524/model/ModifyCustomizeTemplatesPartByIdRequest.cpp
+  src/v20210524/model/DescribeWorkspaceIsReadyResponse.cpp
   src/v20210524/model/WorkspaceTokenDTO.cpp
   src/v20210524/model/UserDefinedTemplateParams.cpp
   src/v20210524/model/DeleteCustomizeTemplatesByIdResponse.cpp

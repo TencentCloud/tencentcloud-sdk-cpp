@@ -44,7 +44,8 @@ DescAcItem::DescAcItem() :
     m_directionHasBeenSet(false),
     m_instanceNameHasBeenSet(false),
     m_internalUuidHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_betaListHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,26 @@ CoreInternalOutcome DescAcItem::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("BetaList") && !value["BetaList"].IsNull())
+    {
+        if (!value["BetaList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DescAcItem.BetaList` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["BetaList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            BetaInfoByACL item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_betaList.push_back(item);
+        }
+        m_betaListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -490,6 +511,21 @@ void DescAcItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_betaListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BetaList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_betaList.begin(); itr != m_betaList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -877,5 +913,21 @@ void DescAcItem::SetStatus(const uint64_t& _status)
 bool DescAcItem::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<BetaInfoByACL> DescAcItem::GetBetaList() const
+{
+    return m_betaList;
+}
+
+void DescAcItem::SetBetaList(const vector<BetaInfoByACL>& _betaList)
+{
+    m_betaList = _betaList;
+    m_betaListHasBeenSet = true;
+}
+
+bool DescAcItem::BetaListHasBeenSet() const
+{
+    return m_betaListHasBeenSet;
 }
 
