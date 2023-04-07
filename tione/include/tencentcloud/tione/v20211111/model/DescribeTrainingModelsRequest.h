@@ -47,22 +47,22 @@ namespace TencentCloud
                     /**
                      * 获取过滤器
 Filter.Name: 枚举值:
-    keyword (模型名称)
-    TrainingModelId (模型ID)
-    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
-    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS
-    ModelFormat（模型格式）其值Filter.Values支持：
+keyword (模型名称)
+TrainingModelId (模型ID)
+ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
+TrainingModelSource (模型来源) 其值Filter.Values支持： JOB/COS
+ModelFormat（模型格式）其值Filter.Values支持：
 PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE
 Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为10，Filter.Values的上限为100
 Filter.Fuzzy取值：true/false，是否支持模糊匹配
                      * @return Filters 过滤器
 Filter.Name: 枚举值:
-    keyword (模型名称)
-    TrainingModelId (模型ID)
-    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
-    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS
-    ModelFormat（模型格式）其值Filter.Values支持：
+keyword (模型名称)
+TrainingModelId (模型ID)
+ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
+TrainingModelSource (模型来源) 其值Filter.Values支持： JOB/COS
+ModelFormat（模型格式）其值Filter.Values支持：
 PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE
 Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为10，Filter.Values的上限为100
@@ -73,22 +73,22 @@ Filter.Fuzzy取值：true/false，是否支持模糊匹配
                     /**
                      * 设置过滤器
 Filter.Name: 枚举值:
-    keyword (模型名称)
-    TrainingModelId (模型ID)
-    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
-    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS
-    ModelFormat（模型格式）其值Filter.Values支持：
+keyword (模型名称)
+TrainingModelId (模型ID)
+ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
+TrainingModelSource (模型来源) 其值Filter.Values支持： JOB/COS
+ModelFormat（模型格式）其值Filter.Values支持：
 PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE
 Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为10，Filter.Values的上限为100
 Filter.Fuzzy取值：true/false，是否支持模糊匹配
                      * @param Filters 过滤器
 Filter.Name: 枚举值:
-    keyword (模型名称)
-    TrainingModelId (模型ID)
-    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
-    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS
-    ModelFormat（模型格式）其值Filter.Values支持：
+keyword (模型名称)
+TrainingModelId (模型ID)
+ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
+TrainingModelSource (模型来源) 其值Filter.Values支持： JOB/COS
+ModelFormat（模型格式）其值Filter.Values支持：
 PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE
 Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为10，Filter.Values的上限为100
@@ -192,16 +192,34 @@ Filter.Fuzzy取值：true/false，是否支持模糊匹配
                      */
                     bool TagFiltersHasBeenSet() const;
 
+                    /**
+                     * 获取是否同时返回模型版本列表
+                     * @return WithModelVersions 是否同时返回模型版本列表
+                     */
+                    bool GetWithModelVersions() const;
+
+                    /**
+                     * 设置是否同时返回模型版本列表
+                     * @param WithModelVersions 是否同时返回模型版本列表
+                     */
+                    void SetWithModelVersions(const bool& _withModelVersions);
+
+                    /**
+                     * 判断参数 WithModelVersions 是否已赋值
+                     * @return WithModelVersions 是否已赋值
+                     */
+                    bool WithModelVersionsHasBeenSet() const;
+
                 private:
 
                     /**
                      * 过滤器
 Filter.Name: 枚举值:
-    keyword (模型名称)
-    TrainingModelId (模型ID)
-    ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
-    TrainingModelSource (模型来源)  其值Filter.Values支持： JOB/COS
-    ModelFormat（模型格式）其值Filter.Values支持：
+keyword (模型名称)
+TrainingModelId (模型ID)
+ModelVersionType (模型版本类型) 其值Filter.Values支持: NORMAL(通用) ACCELERATE (加速)
+TrainingModelSource (模型来源) 其值Filter.Values支持： JOB/COS
+ModelFormat（模型格式）其值Filter.Values支持：
 PYTORCH/TORCH_SCRIPT/DETECTRON2/SAVED_MODEL/FROZEN_GRAPH/PMML/MMDETECTION/ONNX/HUGGING_FACE
 Filter.Values: 当长度为1时，支持模糊查询; 不为1时，精确查询
 每次请求的Filters的上限为10，Filter.Values的上限为100
@@ -239,6 +257,12 @@ Filter.Fuzzy取值：true/false，是否支持模糊匹配
                      */
                     std::vector<TagFilter> m_tagFilters;
                     bool m_tagFiltersHasBeenSet;
+
+                    /**
+                     * 是否同时返回模型版本列表
+                     */
+                    bool m_withModelVersions;
+                    bool m_withModelVersionsHasBeenSet;
 
                 };
             }

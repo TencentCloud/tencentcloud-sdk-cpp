@@ -112,6 +112,28 @@ namespace TencentCloud
                      */
                     bool IsSupportIntEightQuantizationHasBeenSet() const;
 
+                    /**
+                     * 获取框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrameworkVersion 框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFrameworkVersion() const;
+
+                    /**
+                     * 设置框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrameworkVersion 框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrameworkVersion(const std::string& _frameworkVersion);
+
+                    /**
+                     * 判断参数 FrameworkVersion 是否已赋值
+                     * @return FrameworkVersion 是否已赋值
+                     */
+                    bool FrameworkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +156,13 @@ namespace TencentCloud
                      */
                     bool m_isSupportIntEightQuantization;
                     bool m_isSupportIntEightQuantizationHasBeenSet;
+
+                    /**
+                     * 框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_frameworkVersion;
+                    bool m_frameworkVersionHasBeenSet;
 
                 };
             }

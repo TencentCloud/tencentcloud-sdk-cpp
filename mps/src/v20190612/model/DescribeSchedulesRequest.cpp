@@ -24,6 +24,7 @@ using namespace std;
 
 DescribeSchedulesRequest::DescribeSchedulesRequest() :
     m_scheduleIdsHasBeenSet(false),
+    m_triggerTypeHasBeenSet(false),
     m_statusHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false)
@@ -48,6 +49,14 @@ string DescribeSchedulesRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
         }
+    }
+
+    if (m_triggerTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TriggerType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_triggerType.c_str(), allocator).Move(), allocator);
     }
 
     if (m_statusHasBeenSet)
@@ -96,6 +105,22 @@ void DescribeSchedulesRequest::SetScheduleIds(const vector<int64_t>& _scheduleId
 bool DescribeSchedulesRequest::ScheduleIdsHasBeenSet() const
 {
     return m_scheduleIdsHasBeenSet;
+}
+
+string DescribeSchedulesRequest::GetTriggerType() const
+{
+    return m_triggerType;
+}
+
+void DescribeSchedulesRequest::SetTriggerType(const string& _triggerType)
+{
+    m_triggerType = _triggerType;
+    m_triggerTypeHasBeenSet = true;
+}
+
+bool DescribeSchedulesRequest::TriggerTypeHasBeenSet() const
+{
+    return m_triggerTypeHasBeenSet;
 }
 
 string DescribeSchedulesRequest::GetStatus() const

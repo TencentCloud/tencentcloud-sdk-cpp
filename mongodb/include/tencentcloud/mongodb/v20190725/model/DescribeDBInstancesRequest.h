@@ -44,14 +44,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @return InstanceIds 实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 获取实例ID列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @return InstanceIds 实例ID列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::vector<std::string> GetInstanceIds() const;
 
                     /**
-                     * 设置实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
-                     * @param InstanceIds 实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 设置实例ID列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param InstanceIds 实例ID列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     void SetInstanceIds(const std::vector<std::string>& _instanceIds);
 
@@ -116,14 +116,22 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取私有网络的ID，基础网络则不传该参数。
-                     * @return VpcId 私有网络的ID，基础网络则不传该参数。
+                     * 获取私有网络的 ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
+                     * @return VpcId 私有网络的 ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络的ID，基础网络则不传该参数。
-                     * @param VpcId 私有网络的ID，基础网络则不传该参数。
+                     * 设置私有网络的 ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
+                     * @param VpcId 私有网络的 ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -134,14 +142,22 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId。
-                     * @return SubnetId 私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId。
+                     * 获取私有网络的子网ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
+                     * @return SubnetId 私有网络的子网ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId。
-                     * @param SubnetId 私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId。
+                     * 设置私有网络的子网ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
+                     * @param SubnetId 私有网络的子网ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -206,14 +222,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序的字段，目前支持："ProjectId"、"InstanceName"、"CreateTime"，默认为升序排序。
-                     * @return OrderBy 返回结果集排序的字段，目前支持："ProjectId"、"InstanceName"、"CreateTime"，默认为升序排序。
+                     * 获取配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
+                     * @return OrderBy 配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
                      */
                     std::string GetOrderBy() const;
 
                     /**
-                     * 设置返回结果集排序的字段，目前支持："ProjectId"、"InstanceName"、"CreateTime"，默认为升序排序。
-                     * @param OrderBy 返回结果集排序的字段，目前支持："ProjectId"、"InstanceName"、"CreateTime"，默认为升序排序。
+                     * 设置配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
+                     * @param OrderBy 配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
                      */
                     void SetOrderBy(const std::string& _orderBy);
 
@@ -224,14 +240,22 @@ namespace TencentCloud
                     bool OrderByHasBeenSet() const;
 
                     /**
-                     * 获取返回结果集排序方式，目前支持："ASC"或者"DESC"。
-                     * @return OrderByType 返回结果集排序方式，目前支持："ASC"或者"DESC"。
+                     * 获取配置返回结果的排序方式。
+- ASC：升序。
+- DESC：降序。
+                     * @return OrderByType 配置返回结果的排序方式。
+- ASC：升序。
+- DESC：降序。
                      */
                     std::string GetOrderByType() const;
 
                     /**
-                     * 设置返回结果集排序方式，目前支持："ASC"或者"DESC"。
-                     * @param OrderByType 返回结果集排序方式，目前支持："ASC"或者"DESC"。
+                     * 设置配置返回结果的排序方式。
+- ASC：升序。
+- DESC：降序。
+                     * @param OrderByType 配置返回结果的排序方式。
+- ASC：升序。
+- DESC：降序。
                      */
                     void SetOrderByType(const std::string& _orderByType);
 
@@ -242,14 +266,14 @@ namespace TencentCloud
                     bool OrderByTypeHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID。
-                     * @return ProjectIds 项目 ID。
+                     * 获取项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
+                     * @return ProjectIds 项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
                      */
                     std::vector<uint64_t> GetProjectIds() const;
 
                     /**
-                     * 设置项目 ID。
-                     * @param ProjectIds 项目 ID。
+                     * 设置项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
+                     * @param ProjectIds 项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
                      */
                     void SetProjectIds(const std::vector<uint64_t>& _projectIds);
 
@@ -260,14 +284,14 @@ namespace TencentCloud
                     bool ProjectIdsHasBeenSet() const;
 
                     /**
-                     * 获取搜索关键词，支持实例ID、实例名称、完整IP。
-                     * @return SearchKey 搜索关键词，支持实例ID、实例名称、完整IP。
+                     * 获取配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
+                     * @return SearchKey 配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
                      */
                     std::string GetSearchKey() const;
 
                     /**
-                     * 设置搜索关键词，支持实例ID、实例名称、完整IP。
-                     * @param SearchKey 搜索关键词，支持实例ID、实例名称、完整IP。
+                     * 设置配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
+                     * @param SearchKey 配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
                      */
                     void SetSearchKey(const std::string& _searchKey);
 
@@ -278,14 +302,14 @@ namespace TencentCloud
                     bool SearchKeyHasBeenSet() const;
 
                     /**
-                     * 获取Tag信息。
-                     * @return Tags Tag信息。
+                     * 获取标签信息，包含标签键与标签值。
+                     * @return Tags 标签信息，包含标签键与标签值。
                      */
                     std::vector<TagInfo> GetTags() const;
 
                     /**
-                     * 设置Tag信息。
-                     * @param Tags Tag信息。
+                     * 设置标签信息，包含标签键与标签值。
+                     * @param Tags 标签信息，包含标签键与标签值。
                      */
                     void SetTags(const std::vector<TagInfo>& _tags);
 
@@ -298,7 +322,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID列表，格式如：cmgo-p8vnipr5。与云数据库控制台页面中显示的实例ID相同。
+                     * 实例ID列表。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::vector<std::string> m_instanceIds;
                     bool m_instanceIdsHasBeenSet;
@@ -322,13 +346,17 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 私有网络的ID，基础网络则不传该参数。
+                     * 私有网络的 ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其 ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络的子网ID，基础网络则不传该参数。入参设置该参数的同时，必须设置相应的VpcId。
+                     * 私有网络的子网ID。
+- 基础网络则无需配置该参数。
+- 请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表中，单击私有网络名称，在**私有网络**页面获取其子网 ID。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -352,31 +380,33 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 返回结果集排序的字段，目前支持："ProjectId"、"InstanceName"、"CreateTime"，默认为升序排序。
+                     * 配置返回结果排序依据的字段。目前支持依据"ProjectId"、"InstanceName"、"CreateTime"排序。
                      */
                     std::string m_orderBy;
                     bool m_orderByHasBeenSet;
 
                     /**
-                     * 返回结果集排序方式，目前支持："ASC"或者"DESC"。
+                     * 配置返回结果的排序方式。
+- ASC：升序。
+- DESC：降序。
                      */
                     std::string m_orderByType;
                     bool m_orderByTypeHasBeenSet;
 
                     /**
-                     * 项目 ID。
+                     * 项目 ID。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)，在右上角的账户信息下拉菜单中，选择项目管理查询项目。
                      */
                     std::vector<uint64_t> m_projectIds;
                     bool m_projectIdsHasBeenSet;
 
                     /**
-                     * 搜索关键词，支持实例ID、实例名称、完整IP。
+                     * 配置查询搜索的关键词。支持配置为实例ID、实例名称或者内网 IP 地址。
                      */
                     std::string m_searchKey;
                     bool m_searchKeyHasBeenSet;
 
                     /**
-                     * Tag信息。
+                     * 标签信息，包含标签键与标签值。
                      */
                     std::vector<TagInfo> m_tags;
                     bool m_tagsHasBeenSet;

@@ -94,6 +94,42 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
+                     * 获取源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * @return ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     */
+                    int64_t GetErrCode() const;
+
+                    /**
+                     * 设置源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     * @param ErrCode 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     */
+                    void SetErrCode(const int64_t& _errCode);
+
+                    /**
+                     * 判断参数 ErrCode 是否已赋值
+                     * @return ErrCode 是否已赋值
+                     */
+                    bool ErrCodeHasBeenSet() const;
+
+                    /**
+                     * 获取源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * @return Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     */
+                    std::string GetMessage() const;
+
+                    /**
+                     * 设置源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     * @param Message 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     */
+                    void SetMessage(const std::string& _message);
+
+                    /**
+                     * 判断参数 Message 是否已赋值
+                     * @return Message 是否已赋值
+                     */
+                    bool MessageHasBeenSet() const;
+
+                    /**
                      * 获取媒体处理的目标文件信息。
 注意：此字段可能返回 null，表示取不到有效值。
                      * @return InputInfo 媒体处理的目标文件信息。
@@ -174,6 +210,18 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 源异常时返回非0错误码，返回0 时请使用各个具体任务的 ErrCode。
+                     */
+                    int64_t m_errCode;
+                    bool m_errCodeHasBeenSet;
+
+                    /**
+                     * 源异常时返回对应异常Message，否则请使用各个具体任务的 Message。
+                     */
+                    std::string m_message;
+                    bool m_messageHasBeenSet;
 
                     /**
                      * 媒体处理的目标文件信息。

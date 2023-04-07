@@ -28,7 +28,8 @@ DescribeTrainingModelsRequest::DescribeTrainingModelsRequest() :
     m_orderHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_tagFiltersHasBeenSet(false)
+    m_tagFiltersHasBeenSet(false),
+    m_withModelVersionsHasBeenSet(false)
 {
 }
 
@@ -99,6 +100,14 @@ string DescribeTrainingModelsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_withModelVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WithModelVersions";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_withModelVersions, allocator);
     }
 
 
@@ -203,6 +212,22 @@ void DescribeTrainingModelsRequest::SetTagFilters(const vector<TagFilter>& _tagF
 bool DescribeTrainingModelsRequest::TagFiltersHasBeenSet() const
 {
     return m_tagFiltersHasBeenSet;
+}
+
+bool DescribeTrainingModelsRequest::GetWithModelVersions() const
+{
+    return m_withModelVersions;
+}
+
+void DescribeTrainingModelsRequest::SetWithModelVersions(const bool& _withModelVersions)
+{
+    m_withModelVersions = _withModelVersions;
+    m_withModelVersionsHasBeenSet = true;
+}
+
+bool DescribeTrainingModelsRequest::WithModelVersionsHasBeenSet() const
+{
+    return m_withModelVersionsHasBeenSet;
 }
 
 

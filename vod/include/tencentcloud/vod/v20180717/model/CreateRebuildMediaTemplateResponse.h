@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音画质重生模版 ID。
-                     * @return Definition 音画质重生模版 ID。
+                     * 获取音画质重生模板 ID。
+                     * @return Definition 音画质重生模板 ID。
                      */
                     int64_t GetDefinition() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音画质重生模版 ID。
+                     * 音画质重生模板 ID。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

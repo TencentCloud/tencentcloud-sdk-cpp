@@ -61,14 +61,44 @@ namespace TencentCloud
                     bool ScheduleIdsHasBeenSet() const;
 
                     /**
+                     * 获取编排触发类型，可选值：
+<li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
+<li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
+不填或者为空表示全部。
+                     * @return TriggerType 编排触发类型，可选值：
+<li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
+<li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
+不填或者为空表示全部。
+                     */
+                    std::string GetTriggerType() const;
+
+                    /**
+                     * 设置编排触发类型，可选值：
+<li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
+<li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
+不填或者为空表示全部。
+                     * @param TriggerType 编排触发类型，可选值：
+<li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
+<li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
+不填或者为空表示全部。
+                     */
+                    void SetTriggerType(const std::string& _triggerType);
+
+                    /**
+                     * 判断参数 TriggerType 是否已赋值
+                     * @return TriggerType 是否已赋值
+                     */
+                    bool TriggerTypeHasBeenSet() const;
+
+                    /**
                      * 获取状态，取值范围：
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+不填此参数，则不区编排状态。
                      * @return Status 状态，取值范围：
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+不填此参数，则不区编排状态。
                      */
                     std::string GetStatus() const;
 
@@ -76,11 +106,11 @@ namespace TencentCloud
                      * 设置状态，取值范围：
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+不填此参数，则不区编排状态。
                      * @param Status 状态，取值范围：
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+不填此参数，则不区编排状态。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -135,10 +165,19 @@ namespace TencentCloud
                     bool m_scheduleIdsHasBeenSet;
 
                     /**
+                     * 编排触发类型，可选值：
+<li>CosFileUpload： 腾讯云 COS 文件上传触发</li>
+<li>AwsS3FileUpload：Aws S3 文件上传触发。</li>
+不填或者为空表示全部。
+                     */
+                    std::string m_triggerType;
+                    bool m_triggerTypeHasBeenSet;
+
+                    /**
                      * 状态，取值范围：
 <li>Enabled：已启用，</li>
 <li>Disabled：已禁用。</li>
-不填此参数，则不区分工作流状态。
+不填此参数，则不区编排状态。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;

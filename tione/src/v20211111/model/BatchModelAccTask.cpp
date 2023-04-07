@@ -29,7 +29,8 @@ BatchModelAccTask::BatchModelAccTask() :
     m_accEngineVersionHasBeenSet(false),
     m_modelInputPathHasBeenSet(false),
     m_modelNameHasBeenSet(false),
-    m_modelSignatureHasBeenSet(false)
+    m_modelSignatureHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,16 @@ CoreInternalOutcome BatchModelAccTask::Deserialize(const rapidjson::Value &value
         m_modelSignatureHasBeenSet = true;
     }
 
+    if (value.HasMember("FrameworkVersion") && !value["FrameworkVersion"].IsNull())
+    {
+        if (!value["FrameworkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BatchModelAccTask.FrameworkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frameworkVersion = string(value["FrameworkVersion"].GetString());
+        m_frameworkVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -221,6 +232,14 @@ void BatchModelAccTask::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "ModelSignature";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_modelSignature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frameworkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -368,5 +387,21 @@ void BatchModelAccTask::SetModelSignature(const string& _modelSignature)
 bool BatchModelAccTask::ModelSignatureHasBeenSet() const
 {
     return m_modelSignatureHasBeenSet;
+}
+
+string BatchModelAccTask::GetFrameworkVersion() const
+{
+    return m_frameworkVersion;
+}
+
+void BatchModelAccTask::SetFrameworkVersion(const string& _frameworkVersion)
+{
+    m_frameworkVersion = _frameworkVersion;
+    m_frameworkVersionHasBeenSet = true;
+}
+
+bool BatchModelAccTask::FrameworkVersionHasBeenSet() const
+{
+    return m_frameworkVersionHasBeenSet;
 }
 

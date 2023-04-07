@@ -30,7 +30,8 @@ WorkflowTask::WorkflowTask() :
     m_mediaProcessResultSetHasBeenSet(false),
     m_aiContentReviewResultSetHasBeenSet(false),
     m_aiAnalysisResultSetHasBeenSet(false),
-    m_aiRecognitionResultSetHasBeenSet(false)
+    m_aiRecognitionResultSetHasBeenSet(false),
+    m_aiQualityControlTaskResultHasBeenSet(false)
 {
 }
 
@@ -193,6 +194,23 @@ CoreInternalOutcome WorkflowTask::Deserialize(const rapidjson::Value &value)
         m_aiRecognitionResultSetHasBeenSet = true;
     }
 
+    if (value.HasMember("AiQualityControlTaskResult") && !value["AiQualityControlTaskResult"].IsNull())
+    {
+        if (!value["AiQualityControlTaskResult"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `WorkflowTask.AiQualityControlTaskResult` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_aiQualityControlTaskResult.Deserialize(value["AiQualityControlTaskResult"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_aiQualityControlTaskResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -308,6 +326,15 @@ void WorkflowTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_aiQualityControlTaskResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiQualityControlTaskResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiQualityControlTaskResult.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -471,5 +498,21 @@ void WorkflowTask::SetAiRecognitionResultSet(const vector<AiRecognitionResult>& 
 bool WorkflowTask::AiRecognitionResultSetHasBeenSet() const
 {
     return m_aiRecognitionResultSetHasBeenSet;
+}
+
+ScheduleQualityControlTaskResult WorkflowTask::GetAiQualityControlTaskResult() const
+{
+    return m_aiQualityControlTaskResult;
+}
+
+void WorkflowTask::SetAiQualityControlTaskResult(const ScheduleQualityControlTaskResult& _aiQualityControlTaskResult)
+{
+    m_aiQualityControlTaskResult = _aiQualityControlTaskResult;
+    m_aiQualityControlTaskResultHasBeenSet = true;
+}
+
+bool WorkflowTask::AiQualityControlTaskResultHasBeenSet() const
+{
+    return m_aiQualityControlTaskResultHasBeenSet;
 }
 

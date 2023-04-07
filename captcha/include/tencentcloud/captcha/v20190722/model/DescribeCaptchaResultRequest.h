@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool AppSecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据
-                     * @return BusinessId 业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据
+                     * 获取预留字段
+                     * @return BusinessId 预留字段
                      */
                     uint64_t GetBusinessId() const;
 
                     /**
-                     * 设置业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据
-                     * @param BusinessId 业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据
+                     * 设置预留字段
+                     * @param BusinessId 预留字段
                      */
                     void SetBusinessId(const uint64_t& _businessId);
 
@@ -169,14 +169,14 @@ namespace TencentCloud
                     bool BusinessIdHasBeenSet() const;
 
                     /**
-                     * 获取场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据
-                     * @return SceneId 场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据
+                     * 获取预留字段
+                     * @return SceneId 预留字段
                      */
                     uint64_t GetSceneId() const;
 
                     /**
-                     * 设置场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据
-                     * @param SceneId 场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据
+                     * 设置预留字段
+                     * @param SceneId 预留字段
                      */
                     void SetSceneId(const uint64_t& _sceneId);
 
@@ -279,13 +279,13 @@ namespace TencentCloud
                     bool m_appSecretKeyHasBeenSet;
 
                     /**
-                     * 业务 ID，网站或应用在多个业务中使用此服务，通过此 ID 区分统计数据
+                     * 预留字段
                      */
                     uint64_t m_businessId;
                     bool m_businessIdHasBeenSet;
 
                     /**
-                     * 场景 ID，网站或应用的业务下有多个场景使用此服务，通过此 ID 区分统计数据
+                     * 预留字段
                      */
                     uint64_t m_sceneId;
                     bool m_sceneIdHasBeenSet;

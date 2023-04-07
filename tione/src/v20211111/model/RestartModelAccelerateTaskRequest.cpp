@@ -41,7 +41,8 @@ RestartModelAccelerateTaskRequest::RestartModelAccelerateTaskRequest() :
     m_hyperParameterHasBeenSet(false),
     m_accEngineVersionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_modelSignatureHasBeenSet(false)
+    m_modelSignatureHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false)
 {
 }
 
@@ -224,6 +225,14 @@ string RestartModelAccelerateTaskRequest::ToJsonString() const
         string key = "ModelSignature";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_modelSignature.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_frameworkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -536,6 +545,22 @@ void RestartModelAccelerateTaskRequest::SetModelSignature(const string& _modelSi
 bool RestartModelAccelerateTaskRequest::ModelSignatureHasBeenSet() const
 {
     return m_modelSignatureHasBeenSet;
+}
+
+string RestartModelAccelerateTaskRequest::GetFrameworkVersion() const
+{
+    return m_frameworkVersion;
+}
+
+void RestartModelAccelerateTaskRequest::SetFrameworkVersion(const string& _frameworkVersion)
+{
+    m_frameworkVersion = _frameworkVersion;
+    m_frameworkVersionHasBeenSet = true;
+}
+
+bool RestartModelAccelerateTaskRequest::FrameworkVersionHasBeenSet() const
+{
+    return m_frameworkVersionHasBeenSet;
 }
 
 

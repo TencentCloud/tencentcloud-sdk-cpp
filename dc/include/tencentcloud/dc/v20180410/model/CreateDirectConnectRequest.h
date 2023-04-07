@@ -83,14 +83,38 @@ namespace TencentCloud
                     bool AccessPointIdHasBeenSet() const;
 
                     /**
-                     * 获取提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。
-                     * @return LineOperator 提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。
+                     * 获取提供接入物理专线的运营商。
+ChinaTelecom：中国电信； 
+ChinaMobile：中国移动；
+ChinaUnicom：中国联通；
+ In-houseWiring：楼内线；
+ChinaOther：中国其他；
+ InternationalOperator：境外其他。
+                     * @return LineOperator 提供接入物理专线的运营商。
+ChinaTelecom：中国电信； 
+ChinaMobile：中国移动；
+ChinaUnicom：中国联通；
+ In-houseWiring：楼内线；
+ChinaOther：中国其他；
+ InternationalOperator：境外其他。
                      */
                     std::string GetLineOperator() const;
 
                     /**
-                     * 设置提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。
-                     * @param LineOperator 提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。
+                     * 设置提供接入物理专线的运营商。
+ChinaTelecom：中国电信； 
+ChinaMobile：中国移动；
+ChinaUnicom：中国联通；
+ In-houseWiring：楼内线；
+ChinaOther：中国其他；
+ InternationalOperator：境外其他。
+                     * @param LineOperator 提供接入物理专线的运营商。
+ChinaTelecom：中国电信； 
+ChinaMobile：中国移动；
+ChinaUnicom：中国联通；
+ In-houseWiring：楼内线；
+ChinaOther：中国其他；
+ InternationalOperator：境外其他。
                      */
                     void SetLineOperator(const std::string& _lineOperator);
 
@@ -101,14 +125,34 @@ namespace TencentCloud
                     bool LineOperatorHasBeenSet() const;
 
                     /**
-                     * 获取物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
-                     * @return PortType 物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
+                     * 获取物理专线接入端口类型，取值：
+100Base-T：百兆电口；
+1000Base-T（默认值）：千兆电口；
+1000Base-LX：千兆单模光口（10千米）；
+10GBase-T：万兆电口；
+10GBase-LR（默认值）：万兆单模光口（10千米）。
+                     * @return PortType 物理专线接入端口类型，取值：
+100Base-T：百兆电口；
+1000Base-T（默认值）：千兆电口；
+1000Base-LX：千兆单模光口（10千米）；
+10GBase-T：万兆电口；
+10GBase-LR（默认值）：万兆单模光口（10千米）。
                      */
                     std::string GetPortType() const;
 
                     /**
-                     * 设置物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
-                     * @param PortType 物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
+                     * 设置物理专线接入端口类型，取值：
+100Base-T：百兆电口；
+1000Base-T（默认值）：千兆电口；
+1000Base-LX：千兆单模光口（10千米）；
+10GBase-T：万兆电口；
+10GBase-LR（默认值）：万兆单模光口（10千米）。
+                     * @param PortType 物理专线接入端口类型，取值：
+100Base-T：百兆电口；
+1000Base-T（默认值）：千兆电口；
+1000Base-LX：千兆单模光口（10千米）；
+10GBase-T：万兆电口；
+10GBase-LR（默认值）：万兆单模光口（10千米）。
                      */
                     void SetPortType(const std::string& _portType);
 
@@ -335,14 +379,14 @@ namespace TencentCloud
                     bool FaultReportContactNumberHasBeenSet() const;
 
                     /**
-                     * 获取物理专线申请者是否签署了用户使用协议。默认已签署
-                     * @return SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署
+                     * 获取物理专线申请者是否签署了用户使用协议。默认已签署。
+                     * @return SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署。
                      */
                     bool GetSignLaw() const;
 
                     /**
-                     * 设置物理专线申请者是否签署了用户使用协议。默认已签署
-                     * @param SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署
+                     * 设置物理专线申请者是否签署了用户使用协议。默认已签署。
+                     * @param SignLaw 物理专线申请者是否签署了用户使用协议。默认已签署。
                      */
                     void SetSignLaw(const bool& _signLaw);
 
@@ -368,13 +412,24 @@ namespace TencentCloud
                     bool m_accessPointIdHasBeenSet;
 
                     /**
-                     * 提供接入物理专线的运营商。ChinaTelecom：中国电信， ChinaMobile：中国移动，ChinaUnicom：中国联通， In-houseWiring：楼内线，ChinaOther：中国其他， InternationalOperator：境外其他。
+                     * 提供接入物理专线的运营商。
+ChinaTelecom：中国电信； 
+ChinaMobile：中国移动；
+ChinaUnicom：中国联通；
+ In-houseWiring：楼内线；
+ChinaOther：中国其他；
+ InternationalOperator：境外其他。
                      */
                     std::string m_lineOperator;
                     bool m_lineOperatorHasBeenSet;
 
                     /**
-                     * 物理专线接入端口类型,取值：100Base-T：百兆电口,1000Base-T（默认值）：千兆电口,1000Base-LX：千兆单模光口（10千米）,10GBase-T：万兆电口10GBase-LR：万兆单模光口（10千米），默认值，千兆单模光口（10千米）。
+                     * 物理专线接入端口类型，取值：
+100Base-T：百兆电口；
+1000Base-T（默认值）：千兆电口；
+1000Base-LX：千兆单模光口（10千米）；
+10GBase-T：万兆电口；
+10GBase-LR（默认值）：万兆单模光口（10千米）。
                      */
                     std::string m_portType;
                     bool m_portTypeHasBeenSet;
@@ -452,7 +507,7 @@ namespace TencentCloud
                     bool m_faultReportContactNumberHasBeenSet;
 
                     /**
-                     * 物理专线申请者是否签署了用户使用协议。默认已签署
+                     * 物理专线申请者是否签署了用户使用协议。默认已签署。
                      */
                     bool m_signLaw;
                     bool m_signLawHasBeenSet;

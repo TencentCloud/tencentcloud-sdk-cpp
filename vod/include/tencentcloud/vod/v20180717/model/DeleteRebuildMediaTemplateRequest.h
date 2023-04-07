@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音画质重生模版号。
-                     * @return Definition 音画质重生模版号。
+                     * 获取音画质重生模板号。
+                     * @return Definition 音画质重生模板号。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置音画质重生模版号。
-                     * @param Definition 音画质重生模版号。
+                     * 设置音画质重生模板号。
+                     * @param Definition 音画质重生模板号。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -81,7 +81,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音画质重生模版号。
+                     * 音画质重生模板号。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

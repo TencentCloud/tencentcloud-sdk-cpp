@@ -1631,6 +1631,92 @@ CwpClient::DescribeAccountStatisticsOutcomeCallable CwpClient::DescribeAccountSt
     return task->get_future();
 }
 
+CwpClient::DescribeAlarmIncidentNodesOutcome CwpClient::DescribeAlarmIncidentNodes(const DescribeAlarmIncidentNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmIncidentNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmIncidentNodesResponse rsp = DescribeAlarmIncidentNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmIncidentNodesOutcome(rsp);
+        else
+            return DescribeAlarmIncidentNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmIncidentNodesOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAlarmIncidentNodesAsync(const DescribeAlarmIncidentNodesRequest& request, const DescribeAlarmIncidentNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmIncidentNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAlarmIncidentNodesOutcomeCallable CwpClient::DescribeAlarmIncidentNodesCallable(const DescribeAlarmIncidentNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmIncidentNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmIncidentNodes(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeAlarmVertexIdOutcome CwpClient::DescribeAlarmVertexId(const DescribeAlarmVertexIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlarmVertexId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlarmVertexIdResponse rsp = DescribeAlarmVertexIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlarmVertexIdOutcome(rsp);
+        else
+            return DescribeAlarmVertexIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlarmVertexIdOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeAlarmVertexIdAsync(const DescribeAlarmVertexIdRequest& request, const DescribeAlarmVertexIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlarmVertexId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeAlarmVertexIdOutcomeCallable CwpClient::DescribeAlarmVertexIdCallable(const DescribeAlarmVertexIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlarmVertexIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlarmVertexId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeAssetAppListOutcome CwpClient::DescribeAssetAppList(const DescribeAssetAppListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAssetAppList");
@@ -4899,6 +4985,49 @@ CwpClient::DescribeEmergencyVulListOutcomeCallable CwpClient::DescribeEmergencyV
     return task->get_future();
 }
 
+CwpClient::DescribeEventByTableOutcome CwpClient::DescribeEventByTable(const DescribeEventByTableRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeEventByTable");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeEventByTableResponse rsp = DescribeEventByTableResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeEventByTableOutcome(rsp);
+        else
+            return DescribeEventByTableOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeEventByTableOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeEventByTableAsync(const DescribeEventByTableRequest& request, const DescribeEventByTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeEventByTable(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeEventByTableOutcomeCallable CwpClient::DescribeEventByTableCallable(const DescribeEventByTableRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeEventByTableOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeEventByTable(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeExpertServiceListOutcome CwpClient::DescribeExpertServiceList(const DescribeExpertServiceListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeExpertServiceList");
@@ -6361,6 +6490,49 @@ CwpClient::DescribeOverviewStatisticsOutcomeCallable CwpClient::DescribeOverview
     return task->get_future();
 }
 
+CwpClient::DescribePrivilegeEventInfoOutcome CwpClient::DescribePrivilegeEventInfo(const DescribePrivilegeEventInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePrivilegeEventInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePrivilegeEventInfoResponse rsp = DescribePrivilegeEventInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePrivilegeEventInfoOutcome(rsp);
+        else
+            return DescribePrivilegeEventInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePrivilegeEventInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribePrivilegeEventInfoAsync(const DescribePrivilegeEventInfoRequest& request, const DescribePrivilegeEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePrivilegeEventInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribePrivilegeEventInfoOutcomeCallable CwpClient::DescribePrivilegeEventInfoCallable(const DescribePrivilegeEventInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePrivilegeEventInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePrivilegeEventInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribePrivilegeEventsOutcome CwpClient::DescribePrivilegeEvents(const DescribePrivilegeEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePrivilegeEvents");
@@ -6705,6 +6877,49 @@ CwpClient::DescribeProtectNetListOutcomeCallable CwpClient::DescribeProtectNetLi
     return task->get_future();
 }
 
+CwpClient::DescribeReverseShellEventInfoOutcome CwpClient::DescribeReverseShellEventInfo(const DescribeReverseShellEventInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeReverseShellEventInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeReverseShellEventInfoResponse rsp = DescribeReverseShellEventInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeReverseShellEventInfoOutcome(rsp);
+        else
+            return DescribeReverseShellEventInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeReverseShellEventInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeReverseShellEventInfoAsync(const DescribeReverseShellEventInfoRequest& request, const DescribeReverseShellEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeReverseShellEventInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeReverseShellEventInfoOutcomeCallable CwpClient::DescribeReverseShellEventInfoCallable(const DescribeReverseShellEventInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeReverseShellEventInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeReverseShellEventInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeReverseShellEventsOutcome CwpClient::DescribeReverseShellEvents(const DescribeReverseShellEventsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeReverseShellEvents");
@@ -6784,6 +6999,49 @@ CwpClient::DescribeReverseShellRulesOutcomeCallable CwpClient::DescribeReverseSh
         [this, request]()
         {
             return this->DescribeReverseShellRules(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeRiskDnsEventInfoOutcome CwpClient::DescribeRiskDnsEventInfo(const DescribeRiskDnsEventInfoRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRiskDnsEventInfo");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRiskDnsEventInfoResponse rsp = DescribeRiskDnsEventInfoResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRiskDnsEventInfoOutcome(rsp);
+        else
+            return DescribeRiskDnsEventInfoOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRiskDnsEventInfoOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeRiskDnsEventInfoAsync(const DescribeRiskDnsEventInfoRequest& request, const DescribeRiskDnsEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRiskDnsEventInfo(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeRiskDnsEventInfoOutcomeCallable CwpClient::DescribeRiskDnsEventInfoCallable(const DescribeRiskDnsEventInfoRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRiskDnsEventInfoOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRiskDnsEventInfo(request);
         }
     );
 
@@ -7816,6 +8074,49 @@ CwpClient::DescribeVersionStatisticsOutcomeCallable CwpClient::DescribeVersionSt
         [this, request]()
         {
             return this->DescribeVersionStatistics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+CwpClient::DescribeVertexDetailOutcome CwpClient::DescribeVertexDetail(const DescribeVertexDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeVertexDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeVertexDetailResponse rsp = DescribeVertexDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeVertexDetailOutcome(rsp);
+        else
+            return DescribeVertexDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeVertexDetailOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeVertexDetailAsync(const DescribeVertexDetailRequest& request, const DescribeVertexDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeVertexDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeVertexDetailOutcomeCallable CwpClient::DescribeVertexDetailCallable(const DescribeVertexDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeVertexDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeVertexDetail(request);
         }
     );
 

@@ -24,7 +24,8 @@ TrainingModelDTO::TrainingModelDTO() :
     m_trainingModelIdHasBeenSet(false),
     m_trainingModelNameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_trainingModelVersionsHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,26 @@ CoreInternalOutcome TrainingModelDTO::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("TrainingModelVersions") && !value["TrainingModelVersions"].IsNull())
+    {
+        if (!value["TrainingModelVersions"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TrainingModelDTO.TrainingModelVersions` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["TrainingModelVersions"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TrainingModelVersionDTO item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_trainingModelVersions.push_back(item);
+        }
+        m_trainingModelVersionsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -127,6 +148,21 @@ void TrainingModelDTO::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_trainingModelVersionsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TrainingModelVersions";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_trainingModelVersions.begin(); itr != m_trainingModelVersions.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -194,5 +230,21 @@ void TrainingModelDTO::SetCreateTime(const string& _createTime)
 bool TrainingModelDTO::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+vector<TrainingModelVersionDTO> TrainingModelDTO::GetTrainingModelVersions() const
+{
+    return m_trainingModelVersions;
+}
+
+void TrainingModelDTO::SetTrainingModelVersions(const vector<TrainingModelVersionDTO>& _trainingModelVersions)
+{
+    m_trainingModelVersions = _trainingModelVersions;
+    m_trainingModelVersionsHasBeenSet = true;
+}
+
+bool TrainingModelDTO::TrainingModelVersionsHasBeenSet() const
+{
+    return m_trainingModelVersionsHasBeenSet;
 }
 

@@ -517,6 +517,28 @@ XTI - 威胁情报
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取请求目的端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Port 请求目的端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPort() const;
+
+                    /**
+                     * 设置请求目的端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Port 请求目的端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPort(const int64_t& _port);
+
+                    /**
+                     * 判断参数 Port 是否已赋值
+                     * @return Port 是否已赋值
+                     */
+                    bool PortHasBeenSet() const;
+
                 private:
 
                     /**
@@ -667,6 +689,13 @@ XTI - 威胁情报
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 请求目的端口
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_port;
+                    bool m_portHasBeenSet;
 
                 };
             }

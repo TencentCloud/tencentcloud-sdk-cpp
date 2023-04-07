@@ -43,7 +43,8 @@ Cluster::Cluster() :
     m_clusterLevelHasBeenSet(false),
     m_autoUpgradeClusterLevelHasBeenSet(false),
     m_qGPUShareEnableHasBeenSet(false),
-    m_runtimeVersionHasBeenSet(false)
+    m_runtimeVersionHasBeenSet(false),
+    m_clusterEtcdNodeNumHasBeenSet(false)
 {
 }
 
@@ -299,6 +300,16 @@ CoreInternalOutcome Cluster::Deserialize(const rapidjson::Value &value)
         m_runtimeVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("ClusterEtcdNodeNum") && !value["ClusterEtcdNodeNum"].IsNull())
+    {
+        if (!value["ClusterEtcdNodeNum"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Cluster.ClusterEtcdNodeNum` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_clusterEtcdNodeNum = value["ClusterEtcdNodeNum"].GetUint64();
+        m_clusterEtcdNodeNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -496,6 +507,14 @@ void Cluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
         string key = "RuntimeVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_runtimeVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_clusterEtcdNodeNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ClusterEtcdNodeNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_clusterEtcdNodeNum, allocator);
     }
 
 }
@@ -867,5 +886,21 @@ void Cluster::SetRuntimeVersion(const string& _runtimeVersion)
 bool Cluster::RuntimeVersionHasBeenSet() const
 {
     return m_runtimeVersionHasBeenSet;
+}
+
+uint64_t Cluster::GetClusterEtcdNodeNum() const
+{
+    return m_clusterEtcdNodeNum;
+}
+
+void Cluster::SetClusterEtcdNodeNum(const uint64_t& _clusterEtcdNodeNum)
+{
+    m_clusterEtcdNodeNum = _clusterEtcdNodeNum;
+    m_clusterEtcdNodeNumHasBeenSet = true;
+}
+
+bool Cluster::ClusterEtcdNodeNumHasBeenSet() const
+{
+    return m_clusterEtcdNodeNumHasBeenSet;
 }
 

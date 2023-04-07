@@ -115,6 +115,32 @@ EvilLevel=100 请求有恶意
                      */
                     bool GetCaptchaTimeHasBeenSet() const;
 
+                    /**
+                     * 获取拦截类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EvilBitmap 拦截类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEvilBitmap() const;
+
+                    /**
+                     * 判断参数 EvilBitmap 是否已赋值
+                     * @return EvilBitmap 是否已赋值
+                     */
+                    bool EvilBitmapHasBeenSet() const;
+
+                    /**
+                     * 获取提交验证码时间
+                     * @return SubmitCaptchaTime 提交验证码时间
+                     */
+                    int64_t GetSubmitCaptchaTime() const;
+
+                    /**
+                     * 判断参数 SubmitCaptchaTime 是否已赋值
+                     * @return SubmitCaptchaTime 是否已赋值
+                     */
+                    bool SubmitCaptchaTimeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -152,6 +178,19 @@ EvilLevel=100 请求有恶意
                      */
                     int64_t m_getCaptchaTime;
                     bool m_getCaptchaTimeHasBeenSet;
+
+                    /**
+                     * 拦截类型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_evilBitmap;
+                    bool m_evilBitmapHasBeenSet;
+
+                    /**
+                     * 提交验证码时间
+                     */
+                    int64_t m_submitCaptchaTime;
+                    bool m_submitCaptchaTimeHasBeenSet;
 
                 };
             }

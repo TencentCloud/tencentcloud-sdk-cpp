@@ -500,6 +500,28 @@ HYBRID_PAID:
                      */
                     bool PodsHasBeenSet() const;
 
+                    /**
+                     * 获取Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PodInfos Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Pod> GetPodInfos() const;
+
+                    /**
+                     * 设置Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PodInfos Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPodInfos(const std::vector<Pod>& _podInfos);
+
+                    /**
+                     * 判断参数 PodInfos 是否已赋值
+                     * @return PodInfos 是否已赋值
+                     */
+                    bool PodInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -641,6 +663,13 @@ HYBRID_PAID:
                      */
                     Pod m_pods;
                     bool m_podsHasBeenSet;
+
+                    /**
+                     * Pod列表信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Pod> m_podInfos;
+                    bool m_podInfosHasBeenSet;
 
                 };
             }

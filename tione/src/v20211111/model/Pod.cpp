@@ -27,7 +27,8 @@ Pod::Pod() :
     m_phaseHasBeenSet(false),
     m_iPHasBeenSet(false),
     m_createTimeHasBeenSet(false),
-    m_containersHasBeenSet(false)
+    m_containersHasBeenSet(false),
+    m_containerInfosHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,26 @@ CoreInternalOutcome Pod::Deserialize(const rapidjson::Value &value)
         m_containersHasBeenSet = true;
     }
 
+    if (value.HasMember("ContainerInfos") && !value["ContainerInfos"].IsNull())
+    {
+        if (!value["ContainerInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Pod.ContainerInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["ContainerInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            Container item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_containerInfos.push_back(item);
+        }
+        m_containerInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +196,21 @@ void Pod::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorTy
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_containers.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_containerInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ContainerInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_containerInfos.begin(); itr != m_containerInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -290,5 +326,21 @@ void Pod::SetContainers(const Container& _containers)
 bool Pod::ContainersHasBeenSet() const
 {
     return m_containersHasBeenSet;
+}
+
+vector<Container> Pod::GetContainerInfos() const
+{
+    return m_containerInfos;
+}
+
+void Pod::SetContainerInfos(const vector<Container>& _containerInfos)
+{
+    m_containerInfos = _containerInfos;
+    m_containerInfosHasBeenSet = true;
+}
+
+bool Pod::ContainerInfosHasBeenSet() const
+{
+    return m_containerInfosHasBeenSet;
 }
 

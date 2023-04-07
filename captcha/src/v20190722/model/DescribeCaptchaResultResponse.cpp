@@ -27,7 +27,9 @@ DescribeCaptchaResultResponse::DescribeCaptchaResultResponse() :
     m_captchaCodeHasBeenSet(false),
     m_captchaMsgHasBeenSet(false),
     m_evilLevelHasBeenSet(false),
-    m_getCaptchaTimeHasBeenSet(false)
+    m_getCaptchaTimeHasBeenSet(false),
+    m_evilBitmapHasBeenSet(false),
+    m_submitCaptchaTimeHasBeenSet(false)
 {
 }
 
@@ -105,6 +107,26 @@ CoreInternalOutcome DescribeCaptchaResultResponse::Deserialize(const string &pay
         m_getCaptchaTimeHasBeenSet = true;
     }
 
+    if (rsp.HasMember("EvilBitmap") && !rsp["EvilBitmap"].IsNull())
+    {
+        if (!rsp["EvilBitmap"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `EvilBitmap` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_evilBitmap = rsp["EvilBitmap"].GetInt64();
+        m_evilBitmapHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("SubmitCaptchaTime") && !rsp["SubmitCaptchaTime"].IsNull())
+    {
+        if (!rsp["SubmitCaptchaTime"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `SubmitCaptchaTime` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_submitCaptchaTime = rsp["SubmitCaptchaTime"].GetInt64();
+        m_submitCaptchaTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -145,6 +167,22 @@ string DescribeCaptchaResultResponse::ToJsonString() const
         string key = "GetCaptchaTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_getCaptchaTime, allocator);
+    }
+
+    if (m_evilBitmapHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EvilBitmap";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_evilBitmap, allocator);
+    }
+
+    if (m_submitCaptchaTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubmitCaptchaTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_submitCaptchaTime, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +235,26 @@ int64_t DescribeCaptchaResultResponse::GetGetCaptchaTime() const
 bool DescribeCaptchaResultResponse::GetCaptchaTimeHasBeenSet() const
 {
     return m_getCaptchaTimeHasBeenSet;
+}
+
+int64_t DescribeCaptchaResultResponse::GetEvilBitmap() const
+{
+    return m_evilBitmap;
+}
+
+bool DescribeCaptchaResultResponse::EvilBitmapHasBeenSet() const
+{
+    return m_evilBitmapHasBeenSet;
+}
+
+int64_t DescribeCaptchaResultResponse::GetSubmitCaptchaTime() const
+{
+    return m_submitCaptchaTime;
+}
+
+bool DescribeCaptchaResultResponse::SubmitCaptchaTimeHasBeenSet() const
+{
+    return m_submitCaptchaTimeHasBeenSet;
 }
 
 

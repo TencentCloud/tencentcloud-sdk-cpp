@@ -23,7 +23,8 @@ using namespace std;
 EngineVersion::EngineVersion() :
     m_versionHasBeenSet(false),
     m_imageHasBeenSet(false),
-    m_isSupportIntEightQuantizationHasBeenSet(false)
+    m_isSupportIntEightQuantizationHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,16 @@ CoreInternalOutcome EngineVersion::Deserialize(const rapidjson::Value &value)
         m_isSupportIntEightQuantizationHasBeenSet = true;
     }
 
+    if (value.HasMember("FrameworkVersion") && !value["FrameworkVersion"].IsNull())
+    {
+        if (!value["FrameworkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EngineVersion.FrameworkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frameworkVersion = string(value["FrameworkVersion"].GetString());
+        m_frameworkVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +102,14 @@ void EngineVersion::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         string key = "IsSupportIntEightQuantization";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_isSupportIntEightQuantization, allocator);
+    }
+
+    if (m_frameworkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +161,21 @@ void EngineVersion::SetIsSupportIntEightQuantization(const bool& _isSupportIntEi
 bool EngineVersion::IsSupportIntEightQuantizationHasBeenSet() const
 {
     return m_isSupportIntEightQuantizationHasBeenSet;
+}
+
+string EngineVersion::GetFrameworkVersion() const
+{
+    return m_frameworkVersion;
+}
+
+void EngineVersion::SetFrameworkVersion(const string& _frameworkVersion)
+{
+    m_frameworkVersion = _frameworkVersion;
+    m_frameworkVersionHasBeenSet = true;
+}
+
+bool EngineVersion::FrameworkVersionHasBeenSet() const
+{
+    return m_frameworkVersionHasBeenSet;
 }
 

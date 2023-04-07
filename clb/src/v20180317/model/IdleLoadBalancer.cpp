@@ -27,7 +27,8 @@ IdleLoadBalancer::IdleLoadBalancer() :
     m_vipHasBeenSet(false),
     m_idleReasonHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_forwardHasBeenSet(false)
+    m_forwardHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome IdleLoadBalancer::Deserialize(const rapidjson::Value &value)
         m_forwardHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IdleLoadBalancer.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void IdleLoadBalancer::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Forward";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_forward, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void IdleLoadBalancer::SetForward(const uint64_t& _forward)
 bool IdleLoadBalancer::ForwardHasBeenSet() const
 {
     return m_forwardHasBeenSet;
+}
+
+string IdleLoadBalancer::GetDomain() const
+{
+    return m_domain;
+}
+
+void IdleLoadBalancer::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool IdleLoadBalancer::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

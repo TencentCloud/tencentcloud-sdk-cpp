@@ -48,17 +48,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取定时器名称，目前仅支持销毁一个值：TerminateInstances。
+                     * 获取定时器动作，目前仅支持销毁一个值：TerminateInstances。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return TimerAction 定时器名称，目前仅支持销毁一个值：TerminateInstances。
+                     * @return TimerAction 定时器动作，目前仅支持销毁一个值：TerminateInstances。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTimerAction() const;
 
                     /**
-                     * 设置定时器名称，目前仅支持销毁一个值：TerminateInstances。
+                     * 设置定时器动作，目前仅支持销毁一个值：TerminateInstances。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param TimerAction 定时器名称，目前仅支持销毁一个值：TerminateInstances。
+                     * @param TimerAction 定时器动作，目前仅支持销毁一个值：TerminateInstances。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTimerAction(const std::string& _timerAction);
@@ -116,7 +116,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 定时器名称，目前仅支持销毁一个值：TerminateInstances。
+                     * 定时器动作，目前仅支持销毁一个值：TerminateInstances。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_timerAction;

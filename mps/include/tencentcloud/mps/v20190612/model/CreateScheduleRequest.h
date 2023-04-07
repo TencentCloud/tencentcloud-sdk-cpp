@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ScheduleNameHasBeenSet() const;
 
                     /**
-                     * 获取编排绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
-                     * @return Trigger 编排绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
+                     * 获取编排绑定的触发规则，当上传视频命中该规则到该对象时即触发编排。
+                     * @return Trigger 编排绑定的触发规则，当上传视频命中该规则到该对象时即触发编排。
                      */
                     WorkflowTrigger GetTrigger() const;
 
                     /**
-                     * 设置编排绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
-                     * @param Trigger 编排绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
+                     * 设置编排绑定的触发规则，当上传视频命中该规则到该对象时即触发编排。
+                     * @param Trigger 编排绑定的触发规则，当上传视频命中该规则到该对象时即触发编排。
                      */
                     void SetTrigger(const WorkflowTrigger& _trigger);
 
@@ -119,14 +119,18 @@ namespace TencentCloud
                     bool OutputStorageHasBeenSet() const;
 
                     /**
-                     * 获取媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。
-                     * @return OutputDir 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。
+                     * 获取媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致。
+                     * @return OutputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致。
                      */
                     std::string GetOutputDir() const;
 
                     /**
-                     * 设置媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。
-                     * @param OutputDir 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。
+                     * 设置媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致。
+                     * @param OutputDir 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致。
                      */
                     void SetOutputDir(const std::string& _outputDir);
 
@@ -163,7 +167,7 @@ namespace TencentCloud
                     bool m_scheduleNameHasBeenSet;
 
                     /**
-                     * 编排绑定的触发规则，当上传视频命中该规则到该对象时即触发工作流。
+                     * 编排绑定的触发规则，当上传视频命中该规则到该对象时即触发编排。
                      */
                     WorkflowTrigger m_trigger;
                     bool m_triggerHasBeenSet;
@@ -181,7 +185,8 @@ namespace TencentCloud
                     bool m_outputStorageHasBeenSet;
 
                     /**
-                     * 媒体处理生成的文件输出的目标目录，如`/movie/201907/`。如果不填，表示与触发文件所在的目录一致。
+                     * 媒体处理生成的文件输出的目标目录，必选以 / 开头和结尾，如`/movie/201907/`。
+如果不填，表示与触发文件所在的目录一致。
                      */
                     std::string m_outputDir;
                     bool m_outputDirHasBeenSet;

@@ -23,6 +23,8 @@ using namespace std;
 ScheduleTask::ScheduleTask() :
     m_taskIdHasBeenSet(false),
     m_statusHasBeenSet(false),
+    m_errCodeHasBeenSet(false),
+    m_messageHasBeenSet(false),
     m_inputInfoHasBeenSet(false),
     m_metaDataHasBeenSet(false),
     m_activityResultSetHasBeenSet(false)
@@ -52,6 +54,26 @@ CoreInternalOutcome ScheduleTask::Deserialize(const rapidjson::Value &value)
         }
         m_status = string(value["Status"].GetString());
         m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("ErrCode") && !value["ErrCode"].IsNull())
+    {
+        if (!value["ErrCode"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduleTask.ErrCode` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_errCode = value["ErrCode"].GetInt64();
+        m_errCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("Message") && !value["Message"].IsNull())
+    {
+        if (!value["Message"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ScheduleTask.Message` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_message = string(value["Message"].GetString());
+        m_messageHasBeenSet = true;
     }
 
     if (value.HasMember("InputInfo") && !value["InputInfo"].IsNull())
@@ -131,6 +153,22 @@ void ScheduleTask::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_errCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ErrCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_errCode, allocator);
+    }
+
+    if (m_messageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Message";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_message.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_inputInfoHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -197,6 +235,38 @@ void ScheduleTask::SetStatus(const string& _status)
 bool ScheduleTask::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t ScheduleTask::GetErrCode() const
+{
+    return m_errCode;
+}
+
+void ScheduleTask::SetErrCode(const int64_t& _errCode)
+{
+    m_errCode = _errCode;
+    m_errCodeHasBeenSet = true;
+}
+
+bool ScheduleTask::ErrCodeHasBeenSet() const
+{
+    return m_errCodeHasBeenSet;
+}
+
+string ScheduleTask::GetMessage() const
+{
+    return m_message;
+}
+
+void ScheduleTask::SetMessage(const string& _message)
+{
+    m_message = _message;
+    m_messageHasBeenSet = true;
+}
+
+bool ScheduleTask::MessageHasBeenSet() const
+{
+    return m_messageHasBeenSet;
 }
 
 MediaInputInfo ScheduleTask::GetInputInfo() const

@@ -26,6 +26,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/ImageScale.h>
 #include <tencentcloud/vod/v20180717/model/ImageCenterCut.h>
+#include <tencentcloud/vod/v20180717/model/ImageBlur.h>
 
 
 namespace TencentCloud
@@ -110,6 +111,24 @@ namespace TencentCloud
                      */
                     bool CenterCutHasBeenSet() const;
 
+                    /**
+                     * 获取图片模糊处理，仅当 Type 为 Blur 时有效。
+                     * @return Blur 图片模糊处理，仅当 Type 为 Blur 时有效。
+                     */
+                    ImageBlur GetBlur() const;
+
+                    /**
+                     * 设置图片模糊处理，仅当 Type 为 Blur 时有效。
+                     * @param Blur 图片模糊处理，仅当 Type 为 Blur 时有效。
+                     */
+                    void SetBlur(const ImageBlur& _blur);
+
+                    /**
+                     * 判断参数 Blur 是否已赋值
+                     * @return Blur 是否已赋值
+                     */
+                    bool BlurHasBeenSet() const;
+
                 private:
 
                     /**
@@ -131,6 +150,12 @@ namespace TencentCloud
                      */
                     ImageCenterCut m_centerCut;
                     bool m_centerCutHasBeenSet;
+
+                    /**
+                     * 图片模糊处理，仅当 Type 为 Blur 时有效。
+                     */
+                    ImageBlur m_blur;
+                    bool m_blurHasBeenSet;
 
                 };
             }

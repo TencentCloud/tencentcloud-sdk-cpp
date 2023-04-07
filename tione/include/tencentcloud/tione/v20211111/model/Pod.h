@@ -201,6 +201,28 @@ namespace TencentCloud
                      */
                     bool ContainersHasBeenSet() const;
 
+                    /**
+                     * 获取容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ContainerInfos 容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Container> GetContainerInfos() const;
+
+                    /**
+                     * 设置容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ContainerInfos 容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetContainerInfos(const std::vector<Container>& _containerInfos);
+
+                    /**
+                     * 判断参数 ContainerInfos 是否已赋值
+                     * @return ContainerInfos 是否已赋值
+                     */
+                    bool ContainerInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -251,6 +273,13 @@ namespace TencentCloud
                      */
                     Container m_containers;
                     bool m_containersHasBeenSet;
+
+                    /**
+                     * 容器列表
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<Container> m_containerInfos;
+                    bool m_containerInfosHasBeenSet;
 
                 };
             }

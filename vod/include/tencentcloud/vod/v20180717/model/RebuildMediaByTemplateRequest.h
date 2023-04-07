@@ -62,14 +62,14 @@ namespace TencentCloud
                     bool FileIdHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模版 ID。
-                     * @return Definition 音画质重生模版 ID。
+                     * 获取音画质重生模板 ID。
+                     * @return Definition 音画质重生模板 ID。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置音画质重生模版 ID。
-                     * @param Definition 音画质重生模版 ID。
+                     * 设置音画质重生模板 ID。
+                     * @param Definition 音画质重生模板 ID。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -232,7 +232,7 @@ namespace TencentCloud
                     bool m_fileIdHasBeenSet;
 
                     /**
-                     * 音画质重生模版 ID。
+                     * 音画质重生模板 ID。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;

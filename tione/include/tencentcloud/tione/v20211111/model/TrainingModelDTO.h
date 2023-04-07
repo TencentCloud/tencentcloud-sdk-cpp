@@ -25,6 +25,7 @@
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/tione/v20211111/model/Tag.h>
+#include <tencentcloud/tione/v20211111/model/TrainingModelVersionDTO.h>
 
 
 namespace TencentCloud
@@ -127,6 +128,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取模型版本列表。默认不返回，仅在指定请求参数开启时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return TrainingModelVersions 模型版本列表。默认不返回，仅在指定请求参数开启时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TrainingModelVersionDTO> GetTrainingModelVersions() const;
+
+                    /**
+                     * 设置模型版本列表。默认不返回，仅在指定请求参数开启时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param TrainingModelVersions 模型版本列表。默认不返回，仅在指定请求参数开启时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTrainingModelVersions(const std::vector<TrainingModelVersionDTO>& _trainingModelVersions);
+
+                    /**
+                     * 判断参数 TrainingModelVersions 是否已赋值
+                     * @return TrainingModelVersions 是否已赋值
+                     */
+                    bool TrainingModelVersionsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +177,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 模型版本列表。默认不返回，仅在指定请求参数开启时返回。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<TrainingModelVersionDTO> m_trainingModelVersions;
+                    bool m_trainingModelVersionsHasBeenSet;
 
                 };
             }

@@ -41,7 +41,8 @@ ReverseShell::ReverseShell() :
     m_machineNameHasBeenSet(false),
     m_procTreeHasBeenSet(false),
     m_detectByHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_pidHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,16 @@ CoreInternalOutcome ReverseShell::Deserialize(const rapidjson::Value &value)
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Pid") && !value["Pid"].IsNull())
+    {
+        if (!value["Pid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ReverseShell.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pid = value["Pid"].GetInt64();
+        m_pidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +452,14 @@ void ReverseShell::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pid, allocator);
     }
 
 }
@@ -780,5 +799,21 @@ void ReverseShell::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInfo
 bool ReverseShell::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+int64_t ReverseShell::GetPid() const
+{
+    return m_pid;
+}
+
+void ReverseShell::SetPid(const int64_t& _pid)
+{
+    m_pid = _pid;
+    m_pidHasBeenSet = true;
+}
+
+bool ReverseShell::PidHasBeenSet() const
+{
+    return m_pidHasBeenSet;
 }
 

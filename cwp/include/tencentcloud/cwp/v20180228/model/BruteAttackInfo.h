@@ -527,6 +527,28 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取地理位置中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Location 地理位置中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLocation() const;
+
+                    /**
+                     * 设置地理位置中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Location 地理位置中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLocation(const std::string& _location);
+
+                    /**
+                     * 判断参数 Location 是否已赋值
+                     * @return Location 是否已赋值
+                     */
+                    bool LocationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -681,6 +703,13 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 地理位置中文名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_location;
+                    bool m_locationHasBeenSet;
 
                 };
             }

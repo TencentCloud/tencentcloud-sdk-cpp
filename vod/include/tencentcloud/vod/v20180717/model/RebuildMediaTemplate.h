@@ -39,7 +39,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 音画质重生模版详情。
+                * 音画质重生模板详情。
                 */
                 class RebuildMediaTemplate : public AbstractModel
                 {
@@ -51,14 +51,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音画质重生模版号。
-                     * @return Definition 音画质重生模版号。
+                     * 获取音画质重生模板号。
+                     * @return Definition 音画质重生模板号。
                      */
                     int64_t GetDefinition() const;
 
                     /**
-                     * 设置音画质重生模版号。
-                     * @param Definition 音画质重生模版号。
+                     * 设置音画质重生模板号。
+                     * @param Definition 音画质重生模板号。
                      */
                     void SetDefinition(const int64_t& _definition);
 
@@ -95,14 +95,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模版名称。
-                     * @return Name 音画质重生模版名称。
+                     * 获取音画质重生模板名称。
+                     * @return Name 音画质重生模板名称。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置音画质重生模版名称。
-                     * @param Name 音画质重生模版名称。
+                     * 设置音画质重生模板名称。
+                     * @param Name 音画质重生模板名称。
                      */
                     void SetName(const std::string& _name);
 
@@ -113,14 +113,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模版描述。
-                     * @return Comment 音画质重生模版描述。
+                     * 获取音画质重生模板描述。
+                     * @return Comment 音画质重生模板描述。
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置音画质重生模版描述。
-                     * @param Comment 音画质重生模版描述。
+                     * 设置音画质重生模板描述。
+                     * @param Comment 音画质重生模板描述。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -335,7 +335,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音画质重生模版号。
+                     * 音画质重生模板号。
                      */
                     int64_t m_definition;
                     bool m_definitionHasBeenSet;
@@ -349,13 +349,13 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 音画质重生模版名称。
+                     * 音画质重生模板名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 音画质重生模版描述。
+                     * 音画质重生模板描述。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;

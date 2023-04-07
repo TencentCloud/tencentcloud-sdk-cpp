@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取音画质重生模版列表。
-                     * @return Definitions 音画质重生模版列表。
+                     * 获取音画质重生模板列表。
+                     * @return Definitions 音画质重生模板列表。
                      */
                     std::vector<int64_t> GetDefinitions() const;
 
                     /**
-                     * 设置音画质重生模版列表。
-                     * @param Definitions 音画质重生模版列表。
+                     * 设置音画质重生模板列表。
+                     * @param Definitions 音画质重生模板列表。
                      */
                     void SetDefinitions(const std::vector<int64_t>& _definitions);
 
@@ -143,7 +143,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 音画质重生模版列表。
+                     * 音画质重生模板列表。
                      */
                     std::vector<int64_t> m_definitions;
                     bool m_definitionsHasBeenSet;

@@ -48,7 +48,8 @@ ModelAccelerateTask::ModelAccelerateTask() :
     m_tagsHasBeenSet(false),
     m_isSavedHasBeenSet(false),
     m_modelSignatureHasBeenSet(false),
-    m_qATModelHasBeenSet(false)
+    m_qATModelHasBeenSet(false),
+    m_frameworkVersionHasBeenSet(false)
 {
 }
 
@@ -381,6 +382,16 @@ CoreInternalOutcome ModelAccelerateTask::Deserialize(const rapidjson::Value &val
         m_qATModelHasBeenSet = true;
     }
 
+    if (value.HasMember("FrameworkVersion") && !value["FrameworkVersion"].IsNull())
+    {
+        if (!value["FrameworkVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ModelAccelerateTask.FrameworkVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_frameworkVersion = string(value["FrameworkVersion"].GetString());
+        m_frameworkVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -632,6 +643,14 @@ void ModelAccelerateTask::ToJsonObject(rapidjson::Value &value, rapidjson::Docum
         string key = "QATModel";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_qATModel, allocator);
+    }
+
+    if (m_frameworkVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FrameworkVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_frameworkVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1083,5 +1102,21 @@ void ModelAccelerateTask::SetQATModel(const bool& _qATModel)
 bool ModelAccelerateTask::QATModelHasBeenSet() const
 {
     return m_qATModelHasBeenSet;
+}
+
+string ModelAccelerateTask::GetFrameworkVersion() const
+{
+    return m_frameworkVersion;
+}
+
+void ModelAccelerateTask::SetFrameworkVersion(const string& _frameworkVersion)
+{
+    m_frameworkVersion = _frameworkVersion;
+    m_frameworkVersionHasBeenSet = true;
+}
+
+bool ModelAccelerateTask::FrameworkVersionHasBeenSet() const
+{
+    return m_frameworkVersionHasBeenSet;
 }
 

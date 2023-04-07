@@ -42,7 +42,8 @@ BruteAttackInfo::BruteAttackInfo() :
     m_modifyTimeHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
     m_dataStatusHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_locationHasBeenSet(false)
 {
 }
 
@@ -278,6 +279,16 @@ CoreInternalOutcome BruteAttackInfo::Deserialize(const rapidjson::Value &value)
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Location") && !value["Location"].IsNull())
+    {
+        if (!value["Location"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BruteAttackInfo.Location` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_location = string(value["Location"].GetString());
+        m_locationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -460,6 +471,14 @@ void BruteAttackInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_locationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Location";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_location.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -815,5 +834,21 @@ void BruteAttackInfo::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraI
 bool BruteAttackInfo::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string BruteAttackInfo::GetLocation() const
+{
+    return m_location;
+}
+
+void BruteAttackInfo::SetLocation(const string& _location)
+{
+    m_location = _location;
+    m_locationHasBeenSet = true;
+}
+
+bool BruteAttackInfo::LocationHasBeenSet() const
+{
+    return m_locationHasBeenSet;
 }
 

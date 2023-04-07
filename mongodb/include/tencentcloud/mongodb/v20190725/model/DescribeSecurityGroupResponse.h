@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例绑定的安全组
-                     * @return Groups 实例绑定的安全组
+                     * 获取实例绑定的安全组信息。
+                     * @return Groups 实例绑定的安全组信息。
                      */
                     std::vector<SecurityGroup> GetGroups() const;
 
@@ -59,7 +59,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例绑定的安全组
+                     * 实例绑定的安全组信息。
                      */
                     std::vector<SecurityGroup> m_groups;
                     bool m_groupsHasBeenSet;

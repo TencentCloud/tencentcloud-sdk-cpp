@@ -1,0 +1,174 @@
+/*
+ * Copyright (c) 2017-2019 THL A29 Limited, a Tencent company. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *    http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+#ifndef TENCENTCLOUD_MPS_V20190612_MODEL_QUALITYCONTROLDATA_H_
+#define TENCENTCLOUD_MPS_V20190612_MODEL_QUALITYCONTROLDATA_H_
+
+#include <string>
+#include <vector>
+#include <map>
+#include <tencentcloud/core/utils/rapidjson/document.h>
+#include <tencentcloud/core/utils/rapidjson/writer.h>
+#include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
+#include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/mps/v20190612/model/QualityControlResult.h>
+
+
+namespace TencentCloud
+{
+    namespace Mps
+    {
+        namespace V20190612
+        {
+            namespace Model
+            {
+                /**
+                * 质检结果输出。
+                */
+                class QualityControlData : public AbstractModel
+                {
+                public:
+                    QualityControlData();
+                    ~QualityControlData() = default;
+                    void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
+                    CoreInternalOutcome Deserialize(const rapidjson::Value &value);
+
+
+                    /**
+                     * 获取为true时表示视频无音频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoAudio 为true时表示视频无音频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetNoAudio() const;
+
+                    /**
+                     * 设置为true时表示视频无音频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NoAudio 为true时表示视频无音频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNoAudio(const bool& _noAudio);
+
+                    /**
+                     * 判断参数 NoAudio 是否已赋值
+                     * @return NoAudio 是否已赋值
+                     */
+                    bool NoAudioHasBeenSet() const;
+
+                    /**
+                     * 获取为true时表示视频无视频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return NoVideo 为true时表示视频无视频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetNoVideo() const;
+
+                    /**
+                     * 设置为true时表示视频无视频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param NoVideo 为true时表示视频无视频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetNoVideo(const bool& _noVideo);
+
+                    /**
+                     * 判断参数 NoVideo 是否已赋值
+                     * @return NoVideo 是否已赋值
+                     */
+                    bool NoVideoHasBeenSet() const;
+
+                    /**
+                     * 获取视频无参考质量打分，百分制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityEvaluationScore 视频无参考质量打分，百分制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetQualityEvaluationScore() const;
+
+                    /**
+                     * 设置视频无参考质量打分，百分制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QualityEvaluationScore 视频无参考质量打分，百分制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQualityEvaluationScore(const int64_t& _qualityEvaluationScore);
+
+                    /**
+                     * 判断参数 QualityEvaluationScore 是否已赋值
+                     * @return QualityEvaluationScore 是否已赋值
+                     */
+                    bool QualityEvaluationScoreHasBeenSet() const;
+
+                    /**
+                     * 获取质检检出异常项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QualityControlResultSet 质检检出异常项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<QualityControlResult> GetQualityControlResultSet() const;
+
+                    /**
+                     * 设置质检检出异常项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QualityControlResultSet 质检检出异常项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQualityControlResultSet(const std::vector<QualityControlResult>& _qualityControlResultSet);
+
+                    /**
+                     * 判断参数 QualityControlResultSet 是否已赋值
+                     * @return QualityControlResultSet 是否已赋值
+                     */
+                    bool QualityControlResultSetHasBeenSet() const;
+
+                private:
+
+                    /**
+                     * 为true时表示视频无音频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_noAudio;
+                    bool m_noAudioHasBeenSet;
+
+                    /**
+                     * 为true时表示视频无视频轨。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_noVideo;
+                    bool m_noVideoHasBeenSet;
+
+                    /**
+                     * 视频无参考质量打分，百分制。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_qualityEvaluationScore;
+                    bool m_qualityEvaluationScoreHasBeenSet;
+
+                    /**
+                     * 质检检出异常项。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<QualityControlResult> m_qualityControlResultSet;
+                    bool m_qualityControlResultSetHasBeenSet;
+
+                };
+            }
+        }
+    }
+}
+
+#endif // !TENCENTCLOUD_MPS_V20190612_MODEL_QUALITYCONTROLDATA_H_

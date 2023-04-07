@@ -26,15 +26,16 @@ ProcessMediaRequest::ProcessMediaRequest() :
     m_inputInfoHasBeenSet(false),
     m_outputStorageHasBeenSet(false),
     m_outputDirHasBeenSet(false),
+    m_scheduleIdHasBeenSet(false),
     m_mediaProcessTaskHasBeenSet(false),
     m_aiContentReviewTaskHasBeenSet(false),
     m_aiAnalysisTaskHasBeenSet(false),
     m_aiRecognitionTaskHasBeenSet(false),
+    m_aiQualityControlTaskHasBeenSet(false),
     m_taskNotifyConfigHasBeenSet(false),
     m_tasksPriorityHasBeenSet(false),
     m_sessionIdHasBeenSet(false),
     m_sessionContextHasBeenSet(false),
-    m_scheduleIdHasBeenSet(false),
     m_taskTypeHasBeenSet(false)
 {
 }
@@ -70,6 +71,14 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "OutputDir";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_outputDir.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_scheduleIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ScheduleId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_scheduleId, allocator);
     }
 
     if (m_mediaProcessTaskHasBeenSet)
@@ -108,6 +117,15 @@ string ProcessMediaRequest::ToJsonString() const
         m_aiRecognitionTask.ToJsonObject(d[key.c_str()], allocator);
     }
 
+    if (m_aiQualityControlTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AiQualityControlTask";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_aiQualityControlTask.ToJsonObject(d[key.c_str()], allocator);
+    }
+
     if (m_taskNotifyConfigHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,14 +157,6 @@ string ProcessMediaRequest::ToJsonString() const
         string key = "SessionContext";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_sessionContext.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_scheduleIdHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "ScheduleId";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_scheduleId, allocator);
     }
 
     if (m_taskTypeHasBeenSet)
@@ -213,6 +223,22 @@ bool ProcessMediaRequest::OutputDirHasBeenSet() const
     return m_outputDirHasBeenSet;
 }
 
+int64_t ProcessMediaRequest::GetScheduleId() const
+{
+    return m_scheduleId;
+}
+
+void ProcessMediaRequest::SetScheduleId(const int64_t& _scheduleId)
+{
+    m_scheduleId = _scheduleId;
+    m_scheduleIdHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::ScheduleIdHasBeenSet() const
+{
+    return m_scheduleIdHasBeenSet;
+}
+
 MediaProcessTaskInput ProcessMediaRequest::GetMediaProcessTask() const
 {
     return m_mediaProcessTask;
@@ -277,6 +303,22 @@ bool ProcessMediaRequest::AiRecognitionTaskHasBeenSet() const
     return m_aiRecognitionTaskHasBeenSet;
 }
 
+AiQualityControlTaskInput ProcessMediaRequest::GetAiQualityControlTask() const
+{
+    return m_aiQualityControlTask;
+}
+
+void ProcessMediaRequest::SetAiQualityControlTask(const AiQualityControlTaskInput& _aiQualityControlTask)
+{
+    m_aiQualityControlTask = _aiQualityControlTask;
+    m_aiQualityControlTaskHasBeenSet = true;
+}
+
+bool ProcessMediaRequest::AiQualityControlTaskHasBeenSet() const
+{
+    return m_aiQualityControlTaskHasBeenSet;
+}
+
 TaskNotifyConfig ProcessMediaRequest::GetTaskNotifyConfig() const
 {
     return m_taskNotifyConfig;
@@ -339,22 +381,6 @@ void ProcessMediaRequest::SetSessionContext(const string& _sessionContext)
 bool ProcessMediaRequest::SessionContextHasBeenSet() const
 {
     return m_sessionContextHasBeenSet;
-}
-
-int64_t ProcessMediaRequest::GetScheduleId() const
-{
-    return m_scheduleId;
-}
-
-void ProcessMediaRequest::SetScheduleId(const int64_t& _scheduleId)
-{
-    m_scheduleId = _scheduleId;
-    m_scheduleIdHasBeenSet = true;
-}
-
-bool ProcessMediaRequest::ScheduleIdHasBeenSet() const
-{
-    return m_scheduleIdHasBeenSet;
 }
 
 string ProcessMediaRequest::GetTaskType() const

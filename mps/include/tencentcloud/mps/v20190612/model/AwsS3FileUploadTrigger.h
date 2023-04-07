@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取工作流绑定的 AWS S3 存储桶。
-                     * @return S3Bucket 工作流绑定的 AWS S3 存储桶。
+                     * 获取绑定的 AWS S3 存储桶。
+                     * @return S3Bucket 绑定的 AWS S3 存储桶。
                      */
                     std::string GetS3Bucket() const;
 
                     /**
-                     * 设置工作流绑定的 AWS S3 存储桶。
-                     * @param S3Bucket 工作流绑定的 AWS S3 存储桶。
+                     * 设置绑定的 AWS S3 存储桶。
+                     * @param S3Bucket 绑定的 AWS S3 存储桶。
                      */
                     void SetS3Bucket(const std::string& _s3Bucket);
 
@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool S3BucketHasBeenSet() const;
 
                     /**
-                     * 获取工作流绑定的桶所在 AWS 区域。
-                     * @return S3Region 工作流绑定的桶所在 AWS 区域。
+                     * 获取绑定的桶所在 AWS 区域。
+                     * @return S3Region 绑定的桶所在 AWS 区域。
                      */
                     std::string GetS3Region() const;
 
                     /**
-                     * 设置工作流绑定的桶所在 AWS 区域。
-                     * @param S3Region 工作流绑定的桶所在 AWS 区域。
+                     * 设置绑定的桶所在 AWS 区域。
+                     * @param S3Region 绑定的桶所在 AWS 区域。
                      */
                     void SetS3Region(const std::string& _s3Region);
 
@@ -84,14 +84,14 @@ namespace TencentCloud
                     bool S3RegionHasBeenSet() const;
 
                     /**
-                     * 获取工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
-                     * @return Dir 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
+                     * 获取绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
+                     * @return Dir 绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
                      */
                     std::string GetDir() const;
 
                     /**
-                     * 设置工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
-                     * @param Dir 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
+                     * 设置绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
+                     * @param Dir 绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
                      */
                     void SetDir(const std::string& _dir);
 
@@ -102,14 +102,14 @@ namespace TencentCloud
                     bool DirHasBeenSet() const;
 
                     /**
-                     * 获取工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
-                     * @return Formats 工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
+                     * 获取允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
+                     * @return Formats 允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
                      */
                     std::vector<std::string> GetFormats() const;
 
                     /**
-                     * 设置工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
-                     * @param Formats 工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
+                     * 设置允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
+                     * @param Formats 允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
                      */
                     void SetFormats(const std::vector<std::string>& _formats);
 
@@ -120,17 +120,17 @@ namespace TencentCloud
                     bool FormatsHasBeenSet() const;
 
                     /**
-                     * 获取工作流绑定的 AWS S3 存储桶的秘钥ID。
+                     * 获取绑定的 AWS S3 存储桶的秘钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return S3SecretId 工作流绑定的 AWS S3 存储桶的秘钥ID。
+                     * @return S3SecretId 绑定的 AWS S3 存储桶的秘钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetS3SecretId() const;
 
                     /**
-                     * 设置工作流绑定的 AWS S3 存储桶的秘钥ID。
+                     * 设置绑定的 AWS S3 存储桶的秘钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param S3SecretId 工作流绑定的 AWS S3 存储桶的秘钥ID。
+                     * @param S3SecretId 绑定的 AWS S3 存储桶的秘钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetS3SecretId(const std::string& _s3SecretId);
@@ -142,17 +142,17 @@ namespace TencentCloud
                     bool S3SecretIdHasBeenSet() const;
 
                     /**
-                     * 获取工作流绑定的 AWS S3 存储桶的秘钥Key。
+                     * 获取绑定的 AWS S3 存储桶的秘钥Key。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return S3SecretKey 工作流绑定的 AWS S3 存储桶的秘钥Key。
+                     * @return S3SecretKey 绑定的 AWS S3 存储桶的秘钥Key。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetS3SecretKey() const;
 
                     /**
-                     * 设置工作流绑定的 AWS S3 存储桶的秘钥Key。
+                     * 设置绑定的 AWS S3 存储桶的秘钥Key。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param S3SecretKey 工作流绑定的 AWS S3 存储桶的秘钥Key。
+                     * @param S3SecretKey 绑定的 AWS S3 存储桶的秘钥Key。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetS3SecretKey(const std::string& _s3SecretKey);
@@ -164,20 +164,20 @@ namespace TencentCloud
                     bool S3SecretKeyHasBeenSet() const;
 
                     /**
-                     * 获取工作流绑定的 AWS S3 存储桶对应的 SQS事件队列。
+                     * 获取绑定的 AWS S3 存储桶对应的 SQS事件队列。
 注意：队列和桶需要在同一区域。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return AwsSQS 工作流绑定的 AWS S3 存储桶对应的 SQS事件队列。
+                     * @return AwsSQS 绑定的 AWS S3 存储桶对应的 SQS事件队列。
 注意：队列和桶需要在同一区域。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     AwsSQS GetAwsSQS() const;
 
                     /**
-                     * 设置工作流绑定的 AWS S3 存储桶对应的 SQS事件队列。
+                     * 设置绑定的 AWS S3 存储桶对应的 SQS事件队列。
 注意：队列和桶需要在同一区域。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param AwsSQS 工作流绑定的 AWS S3 存储桶对应的 SQS事件队列。
+                     * @param AwsSQS 绑定的 AWS S3 存储桶对应的 SQS事件队列。
 注意：队列和桶需要在同一区域。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
@@ -192,45 +192,45 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 工作流绑定的 AWS S3 存储桶。
+                     * 绑定的 AWS S3 存储桶。
                      */
                     std::string m_s3Bucket;
                     bool m_s3BucketHasBeenSet;
 
                     /**
-                     * 工作流绑定的桶所在 AWS 区域。
+                     * 绑定的桶所在 AWS 区域。
                      */
                     std::string m_s3Region;
                     bool m_s3RegionHasBeenSet;
 
                     /**
-                     * 工作流绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
+                     * 绑定的输入路径目录，必须为绝对路径，即以 `/` 开头和结尾。如`/movie/201907/`，不填代表根目录`/`。	
                      */
                     std::string m_dir;
                     bool m_dirHasBeenSet;
 
                     /**
-                     * 工作流允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
+                     * 允许触发的文件格式列表，如 ["mp4", "flv", "mov"]。不填代表所有格式的文件都可以触发工作流。	
                      */
                     std::vector<std::string> m_formats;
                     bool m_formatsHasBeenSet;
 
                     /**
-                     * 工作流绑定的 AWS S3 存储桶的秘钥ID。
+                     * 绑定的 AWS S3 存储桶的秘钥ID。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretId;
                     bool m_s3SecretIdHasBeenSet;
 
                     /**
-                     * 工作流绑定的 AWS S3 存储桶的秘钥Key。
+                     * 绑定的 AWS S3 存储桶的秘钥Key。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_s3SecretKey;
                     bool m_s3SecretKeyHasBeenSet;
 
                     /**
-                     * 工作流绑定的 AWS S3 存储桶对应的 SQS事件队列。
+                     * 绑定的 AWS S3 存储桶对应的 SQS事件队列。
 注意：队列和桶需要在同一区域。
 注意：此字段可能返回 null，表示取不到有效值。
                      */

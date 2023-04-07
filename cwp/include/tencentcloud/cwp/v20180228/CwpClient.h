@@ -97,6 +97,10 @@
 #include <tencentcloud/cwp/v20180228/model/DeleteWebPageEventLogResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAccountStatisticsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAlarmIncidentNodesRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAlarmIncidentNodesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAlarmVertexIdRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeAlarmVertexIdResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetAppListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetAppListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeAssetAppProcessListRequest.h>
@@ -249,6 +253,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyResponseListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyVulListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeEmergencyVulListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeEventByTableRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeEventByTableResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceOrderListRequest.h>
@@ -317,6 +323,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeOpenPortStatisticsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeOverviewStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeOverviewStatisticsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribePrivilegeEventInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribePrivilegeEventInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribePrivilegeEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribePrivilegeEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribePrivilegeRulesRequest.h>
@@ -333,10 +341,14 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeProtectDirRelatedServerResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeProtectNetListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeProtectNetListResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeReverseShellRulesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventInfoRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventInfoResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventListRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsEventListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeRiskDnsListRequest.h>
@@ -385,6 +397,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeUsualLoginPlacesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVersionStatisticsRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVersionStatisticsResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVertexDetailRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeVertexDetailResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulCountByDatesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulCountByDatesResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeVulEffectHostListRequest.h>
@@ -676,6 +690,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAccountStatisticsResponse> DescribeAccountStatisticsOutcome;
                 typedef std::future<DescribeAccountStatisticsOutcome> DescribeAccountStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAccountStatisticsRequest&, DescribeAccountStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAlarmIncidentNodesResponse> DescribeAlarmIncidentNodesOutcome;
+                typedef std::future<DescribeAlarmIncidentNodesOutcome> DescribeAlarmIncidentNodesOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAlarmIncidentNodesRequest&, DescribeAlarmIncidentNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmIncidentNodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAlarmVertexIdResponse> DescribeAlarmVertexIdOutcome;
+                typedef std::future<DescribeAlarmVertexIdOutcome> DescribeAlarmVertexIdOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeAlarmVertexIdRequest&, DescribeAlarmVertexIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmVertexIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAssetAppListResponse> DescribeAssetAppListOutcome;
                 typedef std::future<DescribeAssetAppListOutcome> DescribeAssetAppListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeAssetAppListRequest&, DescribeAssetAppListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAssetAppListAsyncHandler;
@@ -904,6 +924,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeEmergencyVulListResponse> DescribeEmergencyVulListOutcome;
                 typedef std::future<DescribeEmergencyVulListOutcome> DescribeEmergencyVulListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeEmergencyVulListRequest&, DescribeEmergencyVulListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEmergencyVulListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeEventByTableResponse> DescribeEventByTableOutcome;
+                typedef std::future<DescribeEventByTableOutcome> DescribeEventByTableOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeEventByTableRequest&, DescribeEventByTableOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeEventByTableAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeExpertServiceListResponse> DescribeExpertServiceListOutcome;
                 typedef std::future<DescribeExpertServiceListOutcome> DescribeExpertServiceListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeExpertServiceListRequest&, DescribeExpertServiceListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExpertServiceListAsyncHandler;
@@ -1006,6 +1029,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOverviewStatisticsResponse> DescribeOverviewStatisticsOutcome;
                 typedef std::future<DescribeOverviewStatisticsOutcome> DescribeOverviewStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeOverviewStatisticsRequest&, DescribeOverviewStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOverviewStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePrivilegeEventInfoResponse> DescribePrivilegeEventInfoOutcome;
+                typedef std::future<DescribePrivilegeEventInfoOutcome> DescribePrivilegeEventInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribePrivilegeEventInfoRequest&, DescribePrivilegeEventInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivilegeEventInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePrivilegeEventsResponse> DescribePrivilegeEventsOutcome;
                 typedef std::future<DescribePrivilegeEventsOutcome> DescribePrivilegeEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribePrivilegeEventsRequest&, DescribePrivilegeEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePrivilegeEventsAsyncHandler;
@@ -1030,12 +1056,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeProtectNetListResponse> DescribeProtectNetListOutcome;
                 typedef std::future<DescribeProtectNetListOutcome> DescribeProtectNetListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeProtectNetListRequest&, DescribeProtectNetListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeProtectNetListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeReverseShellEventInfoResponse> DescribeReverseShellEventInfoOutcome;
+                typedef std::future<DescribeReverseShellEventInfoOutcome> DescribeReverseShellEventInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellEventInfoRequest&, DescribeReverseShellEventInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellEventInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReverseShellEventsResponse> DescribeReverseShellEventsOutcome;
                 typedef std::future<DescribeReverseShellEventsOutcome> DescribeReverseShellEventsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellEventsRequest&, DescribeReverseShellEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeReverseShellRulesResponse> DescribeReverseShellRulesOutcome;
                 typedef std::future<DescribeReverseShellRulesOutcome> DescribeReverseShellRulesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeReverseShellRulesRequest&, DescribeReverseShellRulesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeReverseShellRulesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRiskDnsEventInfoResponse> DescribeRiskDnsEventInfoOutcome;
+                typedef std::future<DescribeRiskDnsEventInfoOutcome> DescribeRiskDnsEventInfoOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeRiskDnsEventInfoRequest&, DescribeRiskDnsEventInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsEventInfoAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeRiskDnsEventListResponse> DescribeRiskDnsEventListOutcome;
                 typedef std::future<DescribeRiskDnsEventListOutcome> DescribeRiskDnsEventListOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeRiskDnsEventListRequest&, DescribeRiskDnsEventListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRiskDnsEventListAsyncHandler;
@@ -1108,6 +1140,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVersionStatisticsResponse> DescribeVersionStatisticsOutcome;
                 typedef std::future<DescribeVersionStatisticsOutcome> DescribeVersionStatisticsOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVersionStatisticsRequest&, DescribeVersionStatisticsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVersionStatisticsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeVertexDetailResponse> DescribeVertexDetailOutcome;
+                typedef std::future<DescribeVertexDetailOutcome> DescribeVertexDetailOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeVertexDetailRequest&, DescribeVertexDetailOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVertexDetailAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeVulCountByDatesResponse> DescribeVulCountByDatesOutcome;
                 typedef std::future<DescribeVulCountByDatesOutcome> DescribeVulCountByDatesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeVulCountByDatesRequest&, DescribeVulCountByDatesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVulCountByDatesAsyncHandler;
@@ -1695,6 +1730,24 @@ namespace TencentCloud
                 DescribeAccountStatisticsOutcome DescribeAccountStatistics(const Model::DescribeAccountStatisticsRequest &request);
                 void DescribeAccountStatisticsAsync(const Model::DescribeAccountStatisticsRequest& request, const DescribeAccountStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAccountStatisticsOutcomeCallable DescribeAccountStatisticsCallable(const Model::DescribeAccountStatisticsRequest& request);
+
+                /**
+                 *获取告警点所在事件的所有节点信息
+                 * @param req DescribeAlarmIncidentNodesRequest
+                 * @return DescribeAlarmIncidentNodesOutcome
+                 */
+                DescribeAlarmIncidentNodesOutcome DescribeAlarmIncidentNodes(const Model::DescribeAlarmIncidentNodesRequest &request);
+                void DescribeAlarmIncidentNodesAsync(const Model::DescribeAlarmIncidentNodesRequest& request, const DescribeAlarmIncidentNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmIncidentNodesOutcomeCallable DescribeAlarmIncidentNodesCallable(const Model::DescribeAlarmIncidentNodesRequest& request);
+
+                /**
+                 *查询告警点id列表
+                 * @param req DescribeAlarmVertexIdRequest
+                 * @return DescribeAlarmVertexIdOutcome
+                 */
+                DescribeAlarmVertexIdOutcome DescribeAlarmVertexId(const Model::DescribeAlarmVertexIdRequest &request);
+                void DescribeAlarmVertexIdAsync(const Model::DescribeAlarmVertexIdRequest& request, const DescribeAlarmVertexIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlarmVertexIdOutcomeCallable DescribeAlarmVertexIdCallable(const Model::DescribeAlarmVertexIdRequest& request);
 
                 /**
                  *查询应用列表
@@ -2381,6 +2434,15 @@ namespace TencentCloud
                 DescribeEmergencyVulListOutcomeCallable DescribeEmergencyVulListCallable(const Model::DescribeEmergencyVulListRequest& request);
 
                 /**
+                 *根据事件表名和id查询告警事件详情
+                 * @param req DescribeEventByTableRequest
+                 * @return DescribeEventByTableOutcome
+                 */
+                DescribeEventByTableOutcome DescribeEventByTable(const Model::DescribeEventByTableRequest &request);
+                void DescribeEventByTableAsync(const Model::DescribeEventByTableRequest& request, const DescribeEventByTableAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeEventByTableOutcomeCallable DescribeEventByTableCallable(const Model::DescribeEventByTableRequest& request);
+
+                /**
                  *专家服务-安全管家列表
                  * @param req DescribeExpertServiceListRequest
                  * @return DescribeExpertServiceListOutcome
@@ -2687,6 +2749,15 @@ namespace TencentCloud
                 DescribeOverviewStatisticsOutcomeCallable DescribeOverviewStatisticsCallable(const Model::DescribeOverviewStatisticsRequest& request);
 
                 /**
+                 *本地提权信息详情
+                 * @param req DescribePrivilegeEventInfoRequest
+                 * @return DescribePrivilegeEventInfoOutcome
+                 */
+                DescribePrivilegeEventInfoOutcome DescribePrivilegeEventInfo(const Model::DescribePrivilegeEventInfoRequest &request);
+                void DescribePrivilegeEventInfoAsync(const Model::DescribePrivilegeEventInfoRequest& request, const DescribePrivilegeEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePrivilegeEventInfoOutcomeCallable DescribePrivilegeEventInfoCallable(const Model::DescribePrivilegeEventInfoRequest& request);
+
+                /**
                  *获取本地提权事件列表
                  * @param req DescribePrivilegeEventsRequest
                  * @return DescribePrivilegeEventsOutcome
@@ -2759,6 +2830,15 @@ namespace TencentCloud
                 DescribeProtectNetListOutcomeCallable DescribeProtectNetListCallable(const Model::DescribeProtectNetListRequest& request);
 
                 /**
+                 *反弹shell信息详情
+                 * @param req DescribeReverseShellEventInfoRequest
+                 * @return DescribeReverseShellEventInfoOutcome
+                 */
+                DescribeReverseShellEventInfoOutcome DescribeReverseShellEventInfo(const Model::DescribeReverseShellEventInfoRequest &request);
+                void DescribeReverseShellEventInfoAsync(const Model::DescribeReverseShellEventInfoRequest& request, const DescribeReverseShellEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeReverseShellEventInfoOutcomeCallable DescribeReverseShellEventInfoCallable(const Model::DescribeReverseShellEventInfoRequest& request);
+
+                /**
                  *获取反弹Shell列表
                  * @param req DescribeReverseShellEventsRequest
                  * @return DescribeReverseShellEventsOutcome
@@ -2775,6 +2855,15 @@ namespace TencentCloud
                 DescribeReverseShellRulesOutcome DescribeReverseShellRules(const Model::DescribeReverseShellRulesRequest &request);
                 void DescribeReverseShellRulesAsync(const Model::DescribeReverseShellRulesRequest& request, const DescribeReverseShellRulesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeReverseShellRulesOutcomeCallable DescribeReverseShellRulesCallable(const Model::DescribeReverseShellRulesRequest& request);
+
+                /**
+                 *查询恶意请求事件详情
+                 * @param req DescribeRiskDnsEventInfoRequest
+                 * @return DescribeRiskDnsEventInfoOutcome
+                 */
+                DescribeRiskDnsEventInfoOutcome DescribeRiskDnsEventInfo(const Model::DescribeRiskDnsEventInfoRequest &request);
+                void DescribeRiskDnsEventInfoAsync(const Model::DescribeRiskDnsEventInfoRequest& request, const DescribeRiskDnsEventInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRiskDnsEventInfoOutcomeCallable DescribeRiskDnsEventInfoCallable(const Model::DescribeRiskDnsEventInfoRequest& request);
 
                 /**
                  *获取恶意请求事件列表
@@ -2991,6 +3080,15 @@ namespace TencentCloud
                 DescribeVersionStatisticsOutcome DescribeVersionStatistics(const Model::DescribeVersionStatisticsRequest &request);
                 void DescribeVersionStatisticsAsync(const Model::DescribeVersionStatisticsRequest& request, const DescribeVersionStatisticsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVersionStatisticsOutcomeCallable DescribeVersionStatisticsCallable(const Model::DescribeVersionStatisticsRequest& request);
+
+                /**
+                 *获取指定点属性信息
+                 * @param req DescribeVertexDetailRequest
+                 * @return DescribeVertexDetailOutcome
+                 */
+                DescribeVertexDetailOutcome DescribeVertexDetail(const Model::DescribeVertexDetailRequest &request);
+                void DescribeVertexDetailAsync(const Model::DescribeVertexDetailRequest& request, const DescribeVertexDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeVertexDetailOutcomeCallable DescribeVertexDetailCallable(const Model::DescribeVertexDetailRequest& request);
 
                 /**
                  *漏洞管理模块，获取近日指定类型的漏洞数量和主机数量

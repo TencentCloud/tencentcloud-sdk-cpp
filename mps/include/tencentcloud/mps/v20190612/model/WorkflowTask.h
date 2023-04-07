@@ -30,6 +30,7 @@
 #include <tencentcloud/mps/v20190612/model/AiContentReviewResult.h>
 #include <tencentcloud/mps/v20190612/model/AiAnalysisResult.h>
 #include <tencentcloud/mps/v20190612/model/AiRecognitionResult.h>
+#include <tencentcloud/mps/v20190612/model/ScheduleQualityControlTaskResult.h>
 
 
 namespace TencentCloud
@@ -248,6 +249,28 @@ namespace TencentCloud
                      */
                     bool AiRecognitionResultSetHasBeenSet() const;
 
+                    /**
+                     * 获取视频质检任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AiQualityControlTaskResult 视频质检任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleQualityControlTaskResult GetAiQualityControlTaskResult() const;
+
+                    /**
+                     * 设置视频质检任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AiQualityControlTaskResult 视频质检任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAiQualityControlTaskResult(const ScheduleQualityControlTaskResult& _aiQualityControlTaskResult);
+
+                    /**
+                     * 判断参数 AiQualityControlTaskResult 是否已赋值
+                     * @return AiQualityControlTaskResult 是否已赋值
+                     */
+                    bool AiQualityControlTaskResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -313,6 +336,13 @@ namespace TencentCloud
                      */
                     std::vector<AiRecognitionResult> m_aiRecognitionResultSet;
                     bool m_aiRecognitionResultSetHasBeenSet;
+
+                    /**
+                     * 视频质检任务的执行状态与结果。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    ScheduleQualityControlTaskResult m_aiQualityControlTaskResult;
+                    bool m_aiQualityControlTaskResultHasBeenSet;
 
                 };
             }

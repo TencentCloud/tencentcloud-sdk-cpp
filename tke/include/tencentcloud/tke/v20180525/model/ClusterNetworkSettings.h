@@ -304,6 +304,32 @@ namespace TencentCloud
                      */
                     bool Ipv6ServiceCIDRHasBeenSet() const;
 
+                    /**
+                     * 获取集群Cilium Mode配置
+- clusterIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return CiliumMode 集群Cilium Mode配置
+- clusterIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCiliumMode() const;
+
+                    /**
+                     * 设置集群Cilium Mode配置
+- clusterIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param CiliumMode 集群Cilium Mode配置
+- clusterIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCiliumMode(const std::string& _ciliumMode);
+
+                    /**
+                     * 判断参数 CiliumMode 是否已赋值
+                     * @return CiliumMode 是否已赋值
+                     */
+                    bool CiliumModeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -389,6 +415,14 @@ namespace TencentCloud
                      */
                     std::string m_ipv6ServiceCIDR;
                     bool m_ipv6ServiceCIDRHasBeenSet;
+
+                    /**
+                     * 集群Cilium Mode配置
+- clusterIP
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_ciliumMode;
+                    bool m_ciliumModeHasBeenSet;
 
                 };
             }

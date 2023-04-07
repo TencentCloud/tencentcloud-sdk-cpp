@@ -45,17 +45,17 @@ namespace TencentCloud
 
                     /**
                      * 获取图片处理操作数组，操作将以其在数组中的顺序执行。
-<li>长度限制：3。</li>
+<li>长度限制：10。</li>
                      * @return Operations 图片处理操作数组，操作将以其在数组中的顺序执行。
-<li>长度限制：3。</li>
+<li>长度限制：10。</li>
                      */
                     std::vector<ImageOperation> GetOperations() const;
 
                     /**
                      * 设置图片处理操作数组，操作将以其在数组中的顺序执行。
-<li>长度限制：3。</li>
+<li>长度限制：10。</li>
                      * @param Operations 图片处理操作数组，操作将以其在数组中的顺序执行。
-<li>长度限制：3。</li>
+<li>长度限制：10。</li>
                      */
                     void SetOperations(const std::vector<ImageOperation>& _operations);
 
@@ -123,7 +123,7 @@ namespace TencentCloud
 
                     /**
                      * 图片处理操作数组，操作将以其在数组中的顺序执行。
-<li>长度限制：3。</li>
+<li>长度限制：10。</li>
                      */
                     std::vector<ImageOperation> m_operations;
                     bool m_operationsHasBeenSet;

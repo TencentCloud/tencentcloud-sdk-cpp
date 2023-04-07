@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID，格式如：cmgo-p8vnipr5。
-                     * @return InstanceId 实例ID，格式如：cmgo-p8vnipr5。
+                     * 获取实例 ID。例如：cmgo-p8vn****。
+                     * @return InstanceId 实例 ID。例如：cmgo-p8vn****。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID，格式如：cmgo-p8vnipr5。
-                     * @param InstanceId 实例ID，格式如：cmgo-p8vnipr5。
+                     * 设置实例 ID。例如：cmgo-p8vn****。
+                     * @param InstanceId 实例 ID。例如：cmgo-p8vn****。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID，格式如：cmgo-p8vnipr5。
+                     * 实例 ID。例如：cmgo-p8vn****。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;

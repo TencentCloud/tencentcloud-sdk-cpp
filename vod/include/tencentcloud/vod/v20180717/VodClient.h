@@ -913,7 +913,7 @@ namespace TencentCloud
                 CreateHeadTailTemplateOutcomeCallable CreateHeadTailTemplateCallable(const Model::CreateHeadTailTemplateRequest& request);
 
                 /**
-                 *创建一个用户自定义的图片处理模板，数量上限：16。最多支持三次操作，例如：裁剪-缩略-裁剪。
+                 *创建一个用户自定义的图片处理模板，数量上限：16。最多支持十次操作，例如：裁剪-缩略-裁剪-模糊-缩略-裁剪-缩略-裁剪-模糊-缩略。
                  * @param req CreateImageProcessingTemplateRequest
                  * @return CreateImageProcessingTemplateOutcome
                  */
@@ -949,7 +949,7 @@ namespace TencentCloud
                 CreateProcedureTemplateOutcomeCallable CreateProcedureTemplateCallable(const Model::CreateProcedureTemplateRequest& request);
 
                 /**
-                 *创建音画质重生模版。
+                 *创建音画质重生模板。
                  * @param req CreateRebuildMediaTemplateRequest
                  * @return CreateRebuildMediaTemplateOutcome
                  */
@@ -1178,7 +1178,7 @@ namespace TencentCloud
                 DeleteProcedureTemplateOutcomeCallable DeleteProcedureTemplateCallable(const Model::DeleteProcedureTemplateRequest& request);
 
                 /**
-                 *删除音画质重生模版。
+                 *删除音画质重生模板。
                  * @param req DeleteRebuildMediaTemplateRequest
                  * @return DeleteRebuildMediaTemplateOutcome
                  */
@@ -1597,7 +1597,7 @@ namespace TencentCloud
                 DescribeProcedureTemplatesOutcomeCallable DescribeProcedureTemplatesCallable(const Model::DescribeProcedureTemplatesRequest& request);
 
                 /**
-                 *获取音画质重生模版列表。
+                 *获取音画质重生模板列表。
                  * @param req DescribeRebuildMediaTemplatesRequest
                  * @return DescribeRebuildMediaTemplatesOutcome
                  */
@@ -1995,7 +1995,7 @@ namespace TencentCloud
                 ModifyPersonSampleOutcomeCallable ModifyPersonSampleCallable(const Model::ModifyPersonSampleRequest& request);
 
                 /**
-                 *修改音画质重生模版。
+                 *修改音画质重生模板。
                  * @param req ModifyRebuildMediaTemplateRequest
                  * @return ModifyRebuildMediaTemplateOutcome
                  */
@@ -2232,7 +2232,7 @@ namespace TencentCloud
                 RebuildMediaOutcomeCallable RebuildMediaCallable(const Model::RebuildMediaRequest& request);
 
                 /**
-                 *使用模版发起音画质重生。
+                 *使用模板发起音画质重生。
                  * @param req RebuildMediaByTemplateRequest
                  * @return RebuildMediaByTemplateOutcome
                  */

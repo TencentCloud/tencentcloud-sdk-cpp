@@ -33,7 +33,8 @@ ClusterNetworkSettings::ClusterNetworkSettings() :
     m_subnetsHasBeenSet(false),
     m_ignoreServiceCIDRConflictHasBeenSet(false),
     m_isDualStackHasBeenSet(false),
-    m_ipv6ServiceCIDRHasBeenSet(false)
+    m_ipv6ServiceCIDRHasBeenSet(false),
+    m_ciliumModeHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,16 @@ CoreInternalOutcome ClusterNetworkSettings::Deserialize(const rapidjson::Value &
         m_ipv6ServiceCIDRHasBeenSet = true;
     }
 
+    if (value.HasMember("CiliumMode") && !value["CiliumMode"].IsNull())
+    {
+        if (!value["CiliumMode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ClusterNetworkSettings.CiliumMode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_ciliumMode = string(value["CiliumMode"].GetString());
+        m_ciliumModeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -289,6 +300,14 @@ void ClusterNetworkSettings::ToJsonObject(rapidjson::Value &value, rapidjson::Do
         string key = "Ipv6ServiceCIDR";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ipv6ServiceCIDR.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ciliumModeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CiliumMode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_ciliumMode.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -500,5 +519,21 @@ void ClusterNetworkSettings::SetIpv6ServiceCIDR(const string& _ipv6ServiceCIDR)
 bool ClusterNetworkSettings::Ipv6ServiceCIDRHasBeenSet() const
 {
     return m_ipv6ServiceCIDRHasBeenSet;
+}
+
+string ClusterNetworkSettings::GetCiliumMode() const
+{
+    return m_ciliumMode;
+}
+
+void ClusterNetworkSettings::SetCiliumMode(const string& _ciliumMode)
+{
+    m_ciliumMode = _ciliumMode;
+    m_ciliumModeHasBeenSet = true;
+}
+
+bool ClusterNetworkSettings::CiliumModeHasBeenSet() const
+{
+    return m_ciliumModeHasBeenSet;
 }
 

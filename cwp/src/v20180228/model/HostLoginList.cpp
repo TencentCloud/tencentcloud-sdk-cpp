@@ -41,7 +41,8 @@ HostLoginList::HostLoginList() :
     m_locationHasBeenSet(false),
     m_quuidHasBeenSet(false),
     m_descHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_portHasBeenSet(false)
 {
 }
 
@@ -267,6 +268,16 @@ CoreInternalOutcome HostLoginList::Deserialize(const rapidjson::Value &value)
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Port") && !value["Port"].IsNull())
+    {
+        if (!value["Port"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostLoginList.Port` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_port = value["Port"].GetInt64();
+        m_portHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -441,6 +452,14 @@ void HostLoginList::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_portHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Port";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_port, allocator);
     }
 
 }
@@ -780,5 +799,21 @@ void HostLoginList::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraInf
 bool HostLoginList::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+int64_t HostLoginList::GetPort() const
+{
+    return m_port;
+}
+
+void HostLoginList::SetPort(const int64_t& _port)
+{
+    m_port = _port;
+    m_portHasBeenSet = true;
+}
+
+bool HostLoginList::PortHasBeenSet() const
+{
+    return m_portHasBeenSet;
 }
 

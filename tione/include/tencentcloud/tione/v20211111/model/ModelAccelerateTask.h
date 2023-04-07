@@ -666,6 +666,28 @@ namespace TencentCloud
                      */
                     bool QATModelHasBeenSet() const;
 
+                    /**
+                     * 获取加速引擎对应的框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FrameworkVersion 加速引擎对应的框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFrameworkVersion() const;
+
+                    /**
+                     * 设置加速引擎对应的框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FrameworkVersion 加速引擎对应的框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFrameworkVersion(const std::string& _frameworkVersion);
+
+                    /**
+                     * 判断参数 FrameworkVersion 是否已赋值
+                     * @return FrameworkVersion 是否已赋值
+                     */
+                    bool FrameworkVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -863,6 +885,13 @@ namespace TencentCloud
                      */
                     bool m_qATModel;
                     bool m_qATModelHasBeenSet;
+
+                    /**
+                     * 加速引擎对应的框架版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_frameworkVersion;
+                    bool m_frameworkVersionHasBeenSet;
 
                 };
             }

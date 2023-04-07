@@ -39,7 +39,8 @@ PrivilegeEscalationProcess::PrivilegeEscalationProcess() :
     m_statusHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_machineNameHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_pidHasBeenSet(false)
 {
 }
 
@@ -245,6 +246,16 @@ CoreInternalOutcome PrivilegeEscalationProcess::Deserialize(const rapidjson::Val
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("Pid") && !value["Pid"].IsNull())
+    {
+        if (!value["Pid"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrivilegeEscalationProcess.Pid` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pid = value["Pid"].GetInt64();
+        m_pidHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -403,6 +414,14 @@ void PrivilegeEscalationProcess::ToJsonObject(rapidjson::Value &value, rapidjson
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_pidHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pid";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pid, allocator);
     }
 
 }
@@ -710,5 +729,21 @@ void PrivilegeEscalationProcess::SetMachineExtraInfo(const MachineExtraInfo& _ma
 bool PrivilegeEscalationProcess::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+int64_t PrivilegeEscalationProcess::GetPid() const
+{
+    return m_pid;
+}
+
+void PrivilegeEscalationProcess::SetPid(const int64_t& _pid)
+{
+    m_pid = _pid;
+    m_pidHasBeenSet = true;
+}
+
+bool PrivilegeEscalationProcess::PidHasBeenSet() const
+{
+    return m_pidHasBeenSet;
 }
 

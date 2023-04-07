@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool SubAppIdHasBeenSet() const;
 
                     /**
-                     * 获取音画质重生模版名称。
-                     * @return Name 音画质重生模版名称。
+                     * 获取音画质重生模板名称。
+                     * @return Name 音画质重生模板名称。
                      */
                     std::string GetName() const;
 
                     /**
-                     * 设置音画质重生模版名称。
-                     * @param Name 音画质重生模版名称。
+                     * 设置音画质重生模板名称。
+                     * @param Name 音画质重生模板名称。
                      */
                     void SetName(const std::string& _name);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取模版描述。
-                     * @return Comment 模版描述。
+                     * 获取模板描述。
+                     * @return Comment 模板描述。
                      */
                     std::string GetComment() const;
 
                     /**
-                     * 设置模版描述。
-                     * @param Comment 模版描述。
+                     * 设置模板描述。
+                     * @param Comment 模板描述。
                      */
                     void SetComment(const std::string& _comment);
 
@@ -265,13 +265,13 @@ namespace TencentCloud
                     bool m_subAppIdHasBeenSet;
 
                     /**
-                     * 音画质重生模版名称。
+                     * 音画质重生模板名称。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 模版描述。
+                     * 模板描述。
                      */
                     std::string m_comment;
                     bool m_commentHasBeenSet;

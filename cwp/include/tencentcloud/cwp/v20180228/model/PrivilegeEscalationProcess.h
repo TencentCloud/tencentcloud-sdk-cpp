@@ -393,6 +393,28 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Pid 进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetPid() const;
+
+                    /**
+                     * 设置进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Pid 进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPid(const int64_t& _pid);
+
+                    /**
+                     * 判断参数 Pid 是否已赋值
+                     * @return Pid 是否已赋值
+                     */
+                    bool PidHasBeenSet() const;
+
                 private:
 
                     /**
@@ -509,6 +531,13 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 进程id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_pid;
+                    bool m_pidHasBeenSet;
 
                 };
             }

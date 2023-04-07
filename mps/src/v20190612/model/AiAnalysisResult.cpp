@@ -25,7 +25,8 @@ AiAnalysisResult::AiAnalysisResult() :
     m_classificationTaskHasBeenSet(false),
     m_coverTaskHasBeenSet(false),
     m_tagTaskHasBeenSet(false),
-    m_frameTagTaskHasBeenSet(false)
+    m_frameTagTaskHasBeenSet(false),
+    m_highlightTaskHasBeenSet(false)
 {
 }
 
@@ -112,6 +113,23 @@ CoreInternalOutcome AiAnalysisResult::Deserialize(const rapidjson::Value &value)
         m_frameTagTaskHasBeenSet = true;
     }
 
+    if (value.HasMember("HighlightTask") && !value["HighlightTask"].IsNull())
+    {
+        if (!value["HighlightTask"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `AiAnalysisResult.HighlightTask` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_highlightTask.Deserialize(value["HighlightTask"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_highlightTaskHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -161,6 +179,15 @@ void AiAnalysisResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_frameTagTask.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_highlightTaskHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HighlightTask";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_highlightTask.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -244,5 +271,21 @@ void AiAnalysisResult::SetFrameTagTask(const AiAnalysisTaskFrameTagResult& _fram
 bool AiAnalysisResult::FrameTagTaskHasBeenSet() const
 {
     return m_frameTagTaskHasBeenSet;
+}
+
+AiAnalysisTaskHighlightResult AiAnalysisResult::GetHighlightTask() const
+{
+    return m_highlightTask;
+}
+
+void AiAnalysisResult::SetHighlightTask(const AiAnalysisTaskHighlightResult& _highlightTask)
+{
+    m_highlightTask = _highlightTask;
+    m_highlightTaskHasBeenSet = true;
+}
+
+bool AiAnalysisResult::HighlightTaskHasBeenSet() const
+{
+    return m_highlightTaskHasBeenSet;
 }
 

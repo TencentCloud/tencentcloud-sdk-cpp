@@ -23,7 +23,8 @@ using namespace std;
 ImageOperation::ImageOperation() :
     m_typeHasBeenSet(false),
     m_scaleHasBeenSet(false),
-    m_centerCutHasBeenSet(false)
+    m_centerCutHasBeenSet(false),
+    m_blurHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,23 @@ CoreInternalOutcome ImageOperation::Deserialize(const rapidjson::Value &value)
         m_centerCutHasBeenSet = true;
     }
 
+    if (value.HasMember("Blur") && !value["Blur"].IsNull())
+    {
+        if (!value["Blur"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `ImageOperation.Blur` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_blur.Deserialize(value["Blur"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_blurHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +125,15 @@ void ImageOperation::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_centerCut.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_blurHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Blur";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_blur.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -158,5 +185,21 @@ void ImageOperation::SetCenterCut(const ImageCenterCut& _centerCut)
 bool ImageOperation::CenterCutHasBeenSet() const
 {
     return m_centerCutHasBeenSet;
+}
+
+ImageBlur ImageOperation::GetBlur() const
+{
+    return m_blur;
+}
+
+void ImageOperation::SetBlur(const ImageBlur& _blur)
+{
+    m_blur = _blur;
+    m_blurHasBeenSet = true;
+}
+
+bool ImageOperation::BlurHasBeenSet() const
+{
+    return m_blurHasBeenSet;
 }
 
