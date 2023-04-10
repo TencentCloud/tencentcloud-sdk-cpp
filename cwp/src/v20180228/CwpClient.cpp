@@ -5157,6 +5157,49 @@ CwpClient::DescribeExportMachinesOutcomeCallable CwpClient::DescribeExportMachin
     return task->get_future();
 }
 
+CwpClient::DescribeFileTamperEventsOutcome CwpClient::DescribeFileTamperEvents(const DescribeFileTamperEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeFileTamperEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeFileTamperEventsResponse rsp = DescribeFileTamperEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeFileTamperEventsOutcome(rsp);
+        else
+            return DescribeFileTamperEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeFileTamperEventsOutcome(outcome.GetError());
+    }
+}
+
+void CwpClient::DescribeFileTamperEventsAsync(const DescribeFileTamperEventsRequest& request, const DescribeFileTamperEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeFileTamperEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CwpClient::DescribeFileTamperEventsOutcomeCallable CwpClient::DescribeFileTamperEventsCallable(const DescribeFileTamperEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeFileTamperEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeFileTamperEvents(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CwpClient::DescribeGeneralStatOutcome CwpClient::DescribeGeneralStat(const DescribeGeneralStatRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeGeneralStat");

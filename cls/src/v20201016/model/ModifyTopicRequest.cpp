@@ -29,7 +29,9 @@ ModifyTopicRequest::ModifyTopicRequest() :
     m_statusHasBeenSet(false),
     m_autoSplitHasBeenSet(false),
     m_maxSplitPartitionsHasBeenSet(false),
-    m_periodHasBeenSet(false)
+    m_periodHasBeenSet(false),
+    m_describesHasBeenSet(false),
+    m_hotPeriodHasBeenSet(false)
 {
 }
 
@@ -101,6 +103,22 @@ string ModifyTopicRequest::ToJsonString() const
         string key = "Period";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_period, allocator);
+    }
+
+    if (m_describesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Describes";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_describes.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_hotPeriodHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "HotPeriod";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_hotPeriod, allocator);
     }
 
 
@@ -221,6 +239,38 @@ void ModifyTopicRequest::SetPeriod(const int64_t& _period)
 bool ModifyTopicRequest::PeriodHasBeenSet() const
 {
     return m_periodHasBeenSet;
+}
+
+string ModifyTopicRequest::GetDescribes() const
+{
+    return m_describes;
+}
+
+void ModifyTopicRequest::SetDescribes(const string& _describes)
+{
+    m_describes = _describes;
+    m_describesHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::DescribesHasBeenSet() const
+{
+    return m_describesHasBeenSet;
+}
+
+uint64_t ModifyTopicRequest::GetHotPeriod() const
+{
+    return m_hotPeriod;
+}
+
+void ModifyTopicRequest::SetHotPeriod(const uint64_t& _hotPeriod)
+{
+    m_hotPeriod = _hotPeriod;
+    m_hotPeriodHasBeenSet = true;
+}
+
+bool ModifyTopicRequest::HotPeriodHasBeenSet() const
+{
+    return m_hotPeriodHasBeenSet;
 }
 
 

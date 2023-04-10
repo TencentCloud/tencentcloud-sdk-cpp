@@ -122,14 +122,14 @@ namespace TencentCloud
                     bool AgentParamsHasBeenSet() const;
 
                     /**
-                     * 获取是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转吗费用。
-                     * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转吗费用。
+                     * 获取是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
+                     * @return WithTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
                      */
                     uint64_t GetWithTranscoding() const;
 
                     /**
-                     * 设置是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转吗费用。
-                     * @param WithTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转吗费用。
+                     * 设置是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
+                     * @param WithTranscoding 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
                      */
                     void SetWithTranscoding(const uint64_t& _withTranscoding);
 
@@ -230,14 +230,14 @@ namespace TencentCloud
                     bool SeiParamsHasBeenSet() const;
 
                     /**
-                     * 获取回推房间信息，和转推CDN参数必须要有一个。
-                     * @return FeedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。
+                     * 获取回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * @return FeedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
                      */
                     std::vector<McuFeedBackRoomParams> GetFeedBackRoomParams() const;
 
                     /**
-                     * 设置回推房间信息，和转推CDN参数必须要有一个。
-                     * @param FeedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。
+                     * 设置回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
+                     * @param FeedBackRoomParams 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
                      */
                     void SetFeedBackRoomParams(const std::vector<McuFeedBackRoomParams>& _feedBackRoomParams);
 
@@ -274,7 +274,7 @@ namespace TencentCloud
                     bool m_agentParamsHasBeenSet;
 
                     /**
-                     * 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转吗费用。
+                     * 是否转码，0表示无需转码，1表示需要转码。是否收取转码费是由WithTranscoding参数决定的，WithTranscoding为0，表示旁路转推，不会收取转码费用，WithTranscoding为1，表示混流转推，会收取转码费用。
                      */
                     uint64_t m_withTranscoding;
                     bool m_withTranscodingHasBeenSet;
@@ -310,7 +310,7 @@ namespace TencentCloud
                     bool m_seiParamsHasBeenSet;
 
                     /**
-                     * 回推房间信息，和转推CDN参数必须要有一个。
+                     * 回推房间信息，和转推CDN参数必须要有一个。注：回推房间需使用特殊的SDK版本，如您有需求，请联系腾讯云技术支持。
                      */
                     std::vector<McuFeedBackRoomParams> m_feedBackRoomParams;
                     bool m_feedBackRoomParamsHasBeenSet;

@@ -169,6 +169,46 @@ namespace TencentCloud
                      */
                     bool PeriodHasBeenSet() const;
 
+                    /**
+                     * 获取日志主题描述
+                     * @return Describes 日志主题描述
+                     */
+                    std::string GetDescribes() const;
+
+                    /**
+                     * 设置日志主题描述
+                     * @param Describes 日志主题描述
+                     */
+                    void SetDescribes(const std::string& _describes);
+
+                    /**
+                     * 判断参数 Describes 是否已赋值
+                     * @return Describes 是否已赋值
+                     */
+                    bool DescribesHasBeenSet() const;
+
+                    /**
+                     * 获取0：关闭日志沉降。
+非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     * @return HotPeriod 0：关闭日志沉降。
+非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     */
+                    uint64_t GetHotPeriod() const;
+
+                    /**
+                     * 设置0：关闭日志沉降。
+非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     * @param HotPeriod 0：关闭日志沉降。
+非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     */
+                    void SetHotPeriod(const uint64_t& _hotPeriod);
+
+                    /**
+                     * 判断参数 HotPeriod 是否已赋值
+                     * @return HotPeriod 是否已赋值
+                     */
+                    bool HotPeriodHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +252,19 @@ namespace TencentCloud
                      */
                     int64_t m_period;
                     bool m_periodHasBeenSet;
+
+                    /**
+                     * 日志主题描述
+                     */
+                    std::string m_describes;
+                    bool m_describesHasBeenSet;
+
+                    /**
+                     * 0：关闭日志沉降。
+非0：开启日志沉降后标准存储的天数。HotPeriod需要大于等于7，且小于Period。仅在StorageType为 hot 时生效
+                     */
+                    uint64_t m_hotPeriod;
+                    bool m_hotPeriodHasBeenSet;
 
                 };
             }

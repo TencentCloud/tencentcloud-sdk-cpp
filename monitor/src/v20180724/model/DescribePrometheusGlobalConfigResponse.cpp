@@ -27,7 +27,8 @@ DescribePrometheusGlobalConfigResponse::DescribePrometheusGlobalConfigResponse()
     m_configHasBeenSet(false),
     m_serviceMonitorsHasBeenSet(false),
     m_podMonitorsHasBeenSet(false),
-    m_rawJobsHasBeenSet(false)
+    m_rawJobsHasBeenSet(false),
+    m_probesHasBeenSet(false)
 {
 }
 
@@ -135,6 +136,26 @@ CoreInternalOutcome DescribePrometheusGlobalConfigResponse::Deserialize(const st
         m_rawJobsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("Probes") && !rsp["Probes"].IsNull())
+    {
+        if (!rsp["Probes"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `Probes` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["Probes"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            PrometheusConfigItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_probes.push_back(item);
+        }
+        m_probesHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -198,6 +219,21 @@ string DescribePrometheusGlobalConfigResponse::ToJsonString() const
         }
     }
 
+    if (m_probesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Probes";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_probes.begin(); itr != m_probes.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -248,6 +284,16 @@ vector<PrometheusConfigItem> DescribePrometheusGlobalConfigResponse::GetRawJobs(
 bool DescribePrometheusGlobalConfigResponse::RawJobsHasBeenSet() const
 {
     return m_rawJobsHasBeenSet;
+}
+
+vector<PrometheusConfigItem> DescribePrometheusGlobalConfigResponse::GetProbes() const
+{
+    return m_probes;
+}
+
+bool DescribePrometheusGlobalConfigResponse::ProbesHasBeenSet() const
+{
+    return m_probesHasBeenSet;
 }
 
 

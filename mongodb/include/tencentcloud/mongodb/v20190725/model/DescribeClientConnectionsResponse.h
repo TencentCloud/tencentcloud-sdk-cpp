@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取客户端连接信息，包括客户端IP和对应IP的连接数量。
-                     * @return Clients 客户端连接信息，包括客户端IP和对应IP的连接数量。
+                     * 获取客户端连接信息，包括客户端 IP 和对应 IP 的连接数量。
+                     * @return Clients 客户端连接信息，包括客户端 IP 和对应 IP 的连接数量。
                      */
                     std::vector<ClientConnection> GetClients() const;
 
@@ -71,7 +71,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 客户端连接信息，包括客户端IP和对应IP的连接数量。
+                     * 客户端连接信息，包括客户端 IP 和对应 IP 的连接数量。
                      */
                     std::vector<ClientConnection> m_clients;
                     bool m_clientsHasBeenSet;

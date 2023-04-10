@@ -37,7 +37,8 @@ ModifyListenerRequest::ModifyListenerRequest() :
     m_sessionTypeHasBeenSet(false),
     m_multiCertInfoHasBeenSet(false),
     m_maxConnHasBeenSet(false),
-    m_maxCpsHasBeenSet(false)
+    m_maxCpsHasBeenSet(false),
+    m_idleConnectTimeoutHasBeenSet(false)
 {
 }
 
@@ -169,6 +170,14 @@ string ModifyListenerRequest::ToJsonString() const
         string key = "MaxCps";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_maxCps, allocator);
+    }
+
+    if (m_idleConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdleConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_idleConnectTimeout, allocator);
     }
 
 
@@ -417,6 +426,22 @@ void ModifyListenerRequest::SetMaxCps(const int64_t& _maxCps)
 bool ModifyListenerRequest::MaxCpsHasBeenSet() const
 {
     return m_maxCpsHasBeenSet;
+}
+
+int64_t ModifyListenerRequest::GetIdleConnectTimeout() const
+{
+    return m_idleConnectTimeout;
+}
+
+void ModifyListenerRequest::SetIdleConnectTimeout(const int64_t& _idleConnectTimeout)
+{
+    m_idleConnectTimeout = _idleConnectTimeout;
+    m_idleConnectTimeoutHasBeenSet = true;
+}
+
+bool ModifyListenerRequest::IdleConnectTimeoutHasBeenSet() const
+{
+    return m_idleConnectTimeoutHasBeenSet;
 }
 
 

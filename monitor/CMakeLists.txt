@@ -315,6 +315,7 @@ set(monitor_public_header_model
   include/tencentcloud/monitor/v20180724/model/CreatePrometheusTempRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyInfoResponse.h
   include/tencentcloud/monitor/v20180724/model/MetricConfig.h
+  include/tencentcloud/monitor/v20180724/model/Targets.h
   include/tencentcloud/monitor/v20180724/model/DescribeAlarmEventsRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmPolicyConditionRequest.h
   include/tencentcloud/monitor/v20180724/model/ModifyAlarmNoticeResponse.h
@@ -740,6 +741,7 @@ set(monitor_src
   src/v20180724/model/CreatePrometheusTempRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyInfoResponse.cpp
   src/v20180724/model/MetricConfig.cpp
+  src/v20180724/model/Targets.cpp
   src/v20180724/model/DescribeAlarmEventsRequest.cpp
   src/v20180724/model/ModifyAlarmPolicyConditionRequest.cpp
   src/v20180724/model/ModifyAlarmNoticeResponse.cpp

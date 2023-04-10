@@ -43,6 +43,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSqlFiltersRequest.h>
@@ -155,6 +157,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSqlFilterResponse> CreateSqlFilterOutcome;
                 typedef std::future<CreateSqlFilterOutcome> CreateSqlFilterOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateSqlFilterRequest&, CreateSqlFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSqlFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteDBDiagReportTasksResponse> DeleteDBDiagReportTasksOutcome;
+                typedef std::future<DeleteDBDiagReportTasksOutcome> DeleteDBDiagReportTasksOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DeleteDBDiagReportTasksRequest&, DeleteDBDiagReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBDiagReportTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteSecurityAuditLogExportTasksResponse> DeleteSecurityAuditLogExportTasksOutcome;
                 typedef std::future<DeleteSecurityAuditLogExportTasksOutcome> DeleteSecurityAuditLogExportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DeleteSecurityAuditLogExportTasksRequest&, DeleteSecurityAuditLogExportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteSecurityAuditLogExportTasksAsyncHandler;
@@ -349,6 +354,15 @@ namespace TencentCloud
                 CreateSqlFilterOutcome CreateSqlFilter(const Model::CreateSqlFilterRequest &request);
                 void CreateSqlFilterAsync(const Model::CreateSqlFilterRequest& request, const CreateSqlFilterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateSqlFilterOutcomeCallable CreateSqlFilterCallable(const Model::CreateSqlFilterRequest& request);
+
+                /**
+                 *根据任务id删除健康报告生成任务
+                 * @param req DeleteDBDiagReportTasksRequest
+                 * @return DeleteDBDiagReportTasksOutcome
+                 */
+                DeleteDBDiagReportTasksOutcome DeleteDBDiagReportTasks(const Model::DeleteDBDiagReportTasksRequest &request);
+                void DeleteDBDiagReportTasksAsync(const Model::DeleteDBDiagReportTasksRequest& request, const DeleteDBDiagReportTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteDBDiagReportTasksOutcomeCallable DeleteDBDiagReportTasksCallable(const Model::DeleteDBDiagReportTasksRequest& request);
 
                 /**
                  *删除安全审计日志导出任务。

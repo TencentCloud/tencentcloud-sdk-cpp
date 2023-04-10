@@ -23,7 +23,8 @@ using namespace std;
 PrometheusConfigItem::PrometheusConfigItem() :
     m_nameHasBeenSet(false),
     m_configHasBeenSet(false),
-    m_templateIdHasBeenSet(false)
+    m_templateIdHasBeenSet(false),
+    m_targetsHasBeenSet(false)
 {
 }
 
@@ -62,6 +63,23 @@ CoreInternalOutcome PrometheusConfigItem::Deserialize(const rapidjson::Value &va
         m_templateIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Targets") && !value["Targets"].IsNull())
+    {
+        if (!value["Targets"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusConfigItem.Targets` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_targets.Deserialize(value["Targets"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_targetsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +109,15 @@ void PrometheusConfigItem::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "TemplateId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_templateId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_targetsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Targets";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_targets.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -142,5 +169,21 @@ void PrometheusConfigItem::SetTemplateId(const string& _templateId)
 bool PrometheusConfigItem::TemplateIdHasBeenSet() const
 {
     return m_templateIdHasBeenSet;
+}
+
+Targets PrometheusConfigItem::GetTargets() const
+{
+    return m_targets;
+}
+
+void PrometheusConfigItem::SetTargets(const Targets& _targets)
+{
+    m_targets = _targets;
+    m_targetsHasBeenSet = true;
+}
+
+bool PrometheusConfigItem::TargetsHasBeenSet() const
+{
+    return m_targetsHasBeenSet;
 }
 

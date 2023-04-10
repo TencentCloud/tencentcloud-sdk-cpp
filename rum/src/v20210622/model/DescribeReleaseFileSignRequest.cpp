@@ -23,7 +23,8 @@ using namespace TencentCloud::Rum::V20210622::Model;
 using namespace std;
 
 DescribeReleaseFileSignRequest::DescribeReleaseFileSignRequest() :
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_fileTypeHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,14 @@ string DescribeReleaseFileSignRequest::ToJsonString() const
         string key = "Timeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_timeout, allocator);
+    }
+
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_fileType, allocator);
     }
 
 
@@ -64,6 +73,22 @@ void DescribeReleaseFileSignRequest::SetTimeout(const int64_t& _timeout)
 bool DescribeReleaseFileSignRequest::TimeoutHasBeenSet() const
 {
     return m_timeoutHasBeenSet;
+}
+
+int64_t DescribeReleaseFileSignRequest::GetFileType() const
+{
+    return m_fileType;
+}
+
+void DescribeReleaseFileSignRequest::SetFileType(const int64_t& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool DescribeReleaseFileSignRequest::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
 }
 
 

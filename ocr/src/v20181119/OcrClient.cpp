@@ -2749,6 +2749,49 @@ OcrClient::SmartStructuralOCROutcomeCallable OcrClient::SmartStructuralOCRCallab
     return task->get_future();
 }
 
+OcrClient::SmartStructuralOCRV2Outcome OcrClient::SmartStructuralOCRV2(const SmartStructuralOCRV2Request &request)
+{
+    auto outcome = MakeRequest(request, "SmartStructuralOCRV2");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SmartStructuralOCRV2Response rsp = SmartStructuralOCRV2Response();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SmartStructuralOCRV2Outcome(rsp);
+        else
+            return SmartStructuralOCRV2Outcome(o.GetError());
+    }
+    else
+    {
+        return SmartStructuralOCRV2Outcome(outcome.GetError());
+    }
+}
+
+void OcrClient::SmartStructuralOCRV2Async(const SmartStructuralOCRV2Request& request, const SmartStructuralOCRV2AsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SmartStructuralOCRV2(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+OcrClient::SmartStructuralOCRV2OutcomeCallable OcrClient::SmartStructuralOCRV2Callable(const SmartStructuralOCRV2Request &request)
+{
+    auto task = std::make_shared<std::packaged_task<SmartStructuralOCRV2Outcome()>>(
+        [this, request]()
+        {
+            return this->SmartStructuralOCRV2(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 OcrClient::TableOCROutcome OcrClient::TableOCR(const TableOCRRequest &request)
 {
     auto outcome = MakeRequest(request, "TableOCR");

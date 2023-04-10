@@ -1588,6 +1588,49 @@ LcicClient::GetRoomMessageOutcomeCallable LcicClient::GetRoomMessageCallable(con
     return task->get_future();
 }
 
+LcicClient::GetRoomsOutcome LcicClient::GetRooms(const GetRoomsRequest &request)
+{
+    auto outcome = MakeRequest(request, "GetRooms");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        GetRoomsResponse rsp = GetRoomsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return GetRoomsOutcome(rsp);
+        else
+            return GetRoomsOutcome(o.GetError());
+    }
+    else
+    {
+        return GetRoomsOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::GetRoomsAsync(const GetRoomsRequest& request, const GetRoomsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->GetRooms(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::GetRoomsOutcomeCallable LcicClient::GetRoomsCallable(const GetRoomsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<GetRoomsOutcome()>>(
+        [this, request]()
+        {
+            return this->GetRooms(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::GetWatermarkOutcome LcicClient::GetWatermark(const GetWatermarkRequest &request)
 {
     auto outcome = MakeRequest(request, "GetWatermark");

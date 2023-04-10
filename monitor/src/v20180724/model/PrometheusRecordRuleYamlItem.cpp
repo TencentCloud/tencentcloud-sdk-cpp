@@ -25,7 +25,10 @@ PrometheusRecordRuleYamlItem::PrometheusRecordRuleYamlItem() :
     m_updateTimeHasBeenSet(false),
     m_templateIdHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_clusterIdHasBeenSet(false)
+    m_clusterIdHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_idHasBeenSet(false),
+    m_countHasBeenSet(false)
 {
 }
 
@@ -84,6 +87,36 @@ CoreInternalOutcome PrometheusRecordRuleYamlItem::Deserialize(const rapidjson::V
         m_clusterIdHasBeenSet = true;
     }
 
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusRecordRuleYamlItem.Status` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetInt64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("Id") && !value["Id"].IsNull())
+    {
+        if (!value["Id"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusRecordRuleYamlItem.Id` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_id = string(value["Id"].GetString());
+        m_idHasBeenSet = true;
+    }
+
+    if (value.HasMember("Count") && !value["Count"].IsNull())
+    {
+        if (!value["Count"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PrometheusRecordRuleYamlItem.Count` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_count = value["Count"].GetInt64();
+        m_countHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +162,30 @@ void PrometheusRecordRuleYamlItem::ToJsonObject(rapidjson::Value &value, rapidjs
         string key = "ClusterId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_clusterId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_idHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Id";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_id.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_countHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Count";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_count, allocator);
     }
 
 }
@@ -212,5 +269,53 @@ void PrometheusRecordRuleYamlItem::SetClusterId(const string& _clusterId)
 bool PrometheusRecordRuleYamlItem::ClusterIdHasBeenSet() const
 {
     return m_clusterIdHasBeenSet;
+}
+
+int64_t PrometheusRecordRuleYamlItem::GetStatus() const
+{
+    return m_status;
+}
+
+void PrometheusRecordRuleYamlItem::SetStatus(const int64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool PrometheusRecordRuleYamlItem::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+string PrometheusRecordRuleYamlItem::GetId() const
+{
+    return m_id;
+}
+
+void PrometheusRecordRuleYamlItem::SetId(const string& _id)
+{
+    m_id = _id;
+    m_idHasBeenSet = true;
+}
+
+bool PrometheusRecordRuleYamlItem::IdHasBeenSet() const
+{
+    return m_idHasBeenSet;
+}
+
+int64_t PrometheusRecordRuleYamlItem::GetCount() const
+{
+    return m_count;
+}
+
+void PrometheusRecordRuleYamlItem::SetCount(const int64_t& _count)
+{
+    m_count = _count;
+    m_countHasBeenSet = true;
+}
+
+bool PrometheusRecordRuleYamlItem::CountHasBeenSet() const
+{
+    return m_countHasBeenSet;
 }
 

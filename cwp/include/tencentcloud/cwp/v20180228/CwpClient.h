@@ -261,6 +261,8 @@
 #include <tencentcloud/cwp/v20180228/model/DescribeExpertServiceOrderListResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeExportMachinesResponse.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeFileTamperEventsRequest.h>
+#include <tencentcloud/cwp/v20180228/model/DescribeFileTamperEventsResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeGeneralStatRequest.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeGeneralStatResponse.h>
 #include <tencentcloud/cwp/v20180228/model/DescribeHistoryAccountsRequest.h>
@@ -936,6 +938,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeExportMachinesResponse> DescribeExportMachinesOutcome;
                 typedef std::future<DescribeExportMachinesOutcome> DescribeExportMachinesOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeExportMachinesRequest&, DescribeExportMachinesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeExportMachinesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeFileTamperEventsResponse> DescribeFileTamperEventsOutcome;
+                typedef std::future<DescribeFileTamperEventsOutcome> DescribeFileTamperEventsOutcomeCallable;
+                typedef std::function<void(const CwpClient*, const Model::DescribeFileTamperEventsRequest&, DescribeFileTamperEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeFileTamperEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeGeneralStatResponse> DescribeGeneralStatOutcome;
                 typedef std::future<DescribeGeneralStatOutcome> DescribeGeneralStatOutcomeCallable;
                 typedef std::function<void(const CwpClient*, const Model::DescribeGeneralStatRequest&, DescribeGeneralStatOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeGeneralStatAsyncHandler;
@@ -2468,6 +2473,15 @@ namespace TencentCloud
                 DescribeExportMachinesOutcome DescribeExportMachines(const Model::DescribeExportMachinesRequest &request);
                 void DescribeExportMachinesAsync(const Model::DescribeExportMachinesRequest& request, const DescribeExportMachinesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeExportMachinesOutcomeCallable DescribeExportMachinesCallable(const Model::DescribeExportMachinesRequest& request);
+
+                /**
+                 *核心文件监控事件列表
+                 * @param req DescribeFileTamperEventsRequest
+                 * @return DescribeFileTamperEventsOutcome
+                 */
+                DescribeFileTamperEventsOutcome DescribeFileTamperEvents(const Model::DescribeFileTamperEventsRequest &request);
+                void DescribeFileTamperEventsAsync(const Model::DescribeFileTamperEventsRequest& request, const DescribeFileTamperEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeFileTamperEventsOutcomeCallable DescribeFileTamperEventsCallable(const Model::DescribeFileTamperEventsRequest& request);
 
                 /**
                  *获取主机相关统计

@@ -1072,6 +1072,49 @@ EmrClient::ScaleOutInstanceOutcomeCallable EmrClient::ScaleOutInstanceCallable(c
     return task->get_future();
 }
 
+EmrClient::StartStopServiceOrMonitorOutcome EmrClient::StartStopServiceOrMonitor(const StartStopServiceOrMonitorRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartStopServiceOrMonitor");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartStopServiceOrMonitorResponse rsp = StartStopServiceOrMonitorResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartStopServiceOrMonitorOutcome(rsp);
+        else
+            return StartStopServiceOrMonitorOutcome(o.GetError());
+    }
+    else
+    {
+        return StartStopServiceOrMonitorOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::StartStopServiceOrMonitorAsync(const StartStopServiceOrMonitorRequest& request, const StartStopServiceOrMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartStopServiceOrMonitor(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::StartStopServiceOrMonitorOutcomeCallable EmrClient::StartStopServiceOrMonitorCallable(const StartStopServiceOrMonitorRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartStopServiceOrMonitorOutcome()>>(
+        [this, request]()
+        {
+            return this->StartStopServiceOrMonitor(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EmrClient::SyncPodStateOutcome EmrClient::SyncPodState(const SyncPodStateRequest &request)
 {
     auto outcome = MakeRequest(request, "SyncPodState");
@@ -1108,6 +1151,49 @@ EmrClient::SyncPodStateOutcomeCallable EmrClient::SyncPodStateCallable(const Syn
         [this, request]()
         {
             return this->SyncPodState(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EmrClient::TerminateClusterNodesOutcome EmrClient::TerminateClusterNodes(const TerminateClusterNodesRequest &request)
+{
+    auto outcome = MakeRequest(request, "TerminateClusterNodes");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        TerminateClusterNodesResponse rsp = TerminateClusterNodesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return TerminateClusterNodesOutcome(rsp);
+        else
+            return TerminateClusterNodesOutcome(o.GetError());
+    }
+    else
+    {
+        return TerminateClusterNodesOutcome(outcome.GetError());
+    }
+}
+
+void EmrClient::TerminateClusterNodesAsync(const TerminateClusterNodesRequest& request, const TerminateClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->TerminateClusterNodes(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EmrClient::TerminateClusterNodesOutcomeCallable EmrClient::TerminateClusterNodesCallable(const TerminateClusterNodesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<TerminateClusterNodesOutcome()>>(
+        [this, request]()
+        {
+            return this->TerminateClusterNodes(request);
         }
     );
 

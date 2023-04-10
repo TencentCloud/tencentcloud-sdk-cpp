@@ -71,8 +71,12 @@
 #include <tencentcloud/emr/v20190103/model/ScaleOutClusterResponse.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/ScaleOutInstanceResponse.h>
+#include <tencentcloud/emr/v20190103/model/StartStopServiceOrMonitorRequest.h>
+#include <tencentcloud/emr/v20190103/model/StartStopServiceOrMonitorResponse.h>
 #include <tencentcloud/emr/v20190103/model/SyncPodStateRequest.h>
 #include <tencentcloud/emr/v20190103/model/SyncPodStateResponse.h>
+#include <tencentcloud/emr/v20190103/model/TerminateClusterNodesRequest.h>
+#include <tencentcloud/emr/v20190103/model/TerminateClusterNodesResponse.h>
 #include <tencentcloud/emr/v20190103/model/TerminateInstanceRequest.h>
 #include <tencentcloud/emr/v20190103/model/TerminateInstanceResponse.h>
 #include <tencentcloud/emr/v20190103/model/TerminateTasksRequest.h>
@@ -163,9 +167,15 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ScaleOutInstanceResponse> ScaleOutInstanceOutcome;
                 typedef std::future<ScaleOutInstanceOutcome> ScaleOutInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::ScaleOutInstanceRequest&, ScaleOutInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleOutInstanceAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartStopServiceOrMonitorResponse> StartStopServiceOrMonitorOutcome;
+                typedef std::future<StartStopServiceOrMonitorOutcome> StartStopServiceOrMonitorOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::StartStopServiceOrMonitorRequest&, StartStopServiceOrMonitorOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartStopServiceOrMonitorAsyncHandler;
                 typedef Outcome<Core::Error, Model::SyncPodStateResponse> SyncPodStateOutcome;
                 typedef std::future<SyncPodStateOutcome> SyncPodStateOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::SyncPodStateRequest&, SyncPodStateOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SyncPodStateAsyncHandler;
+                typedef Outcome<Core::Error, Model::TerminateClusterNodesResponse> TerminateClusterNodesOutcome;
+                typedef std::future<TerminateClusterNodesOutcome> TerminateClusterNodesOutcomeCallable;
+                typedef std::function<void(const EmrClient*, const Model::TerminateClusterNodesRequest&, TerminateClusterNodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateClusterNodesAsyncHandler;
                 typedef Outcome<Core::Error, Model::TerminateInstanceResponse> TerminateInstanceOutcome;
                 typedef std::future<TerminateInstanceOutcome> TerminateInstanceOutcomeCallable;
                 typedef std::function<void(const EmrClient*, const Model::TerminateInstanceRequest&, TerminateInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> TerminateInstanceAsyncHandler;
@@ -395,6 +405,15 @@ namespace TencentCloud
                 ScaleOutInstanceOutcomeCallable ScaleOutInstanceCallable(const Model::ScaleOutInstanceRequest& request);
 
                 /**
+                 *用于启动或停止监控或服务
+                 * @param req StartStopServiceOrMonitorRequest
+                 * @return StartStopServiceOrMonitorOutcome
+                 */
+                StartStopServiceOrMonitorOutcome StartStopServiceOrMonitor(const Model::StartStopServiceOrMonitorRequest &request);
+                void StartStopServiceOrMonitorAsync(const Model::StartStopServiceOrMonitorRequest& request, const StartStopServiceOrMonitorAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartStopServiceOrMonitorOutcomeCallable StartStopServiceOrMonitorCallable(const Model::StartStopServiceOrMonitorRequest& request);
+
+                /**
                  *EMR同步TKE中POD状态
                  * @param req SyncPodStateRequest
                  * @return SyncPodStateOutcome
@@ -402,6 +421,15 @@ namespace TencentCloud
                 SyncPodStateOutcome SyncPodState(const Model::SyncPodStateRequest &request);
                 void SyncPodStateAsync(const Model::SyncPodStateRequest& request, const SyncPodStateAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SyncPodStateOutcomeCallable SyncPodStateCallable(const Model::SyncPodStateRequest& request);
+
+                /**
+                 *销毁集群节点
+                 * @param req TerminateClusterNodesRequest
+                 * @return TerminateClusterNodesOutcome
+                 */
+                TerminateClusterNodesOutcome TerminateClusterNodes(const Model::TerminateClusterNodesRequest &request);
+                void TerminateClusterNodesAsync(const Model::TerminateClusterNodesRequest& request, const TerminateClusterNodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                TerminateClusterNodesOutcomeCallable TerminateClusterNodesCallable(const Model::TerminateClusterNodesRequest& request);
 
                 /**
                  *销毁EMR实例。此接口仅支持弹性MapReduce正式计费版本。

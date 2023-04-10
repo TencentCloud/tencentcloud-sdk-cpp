@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/monitor/v20180724/model/Targets.h>
 
 
 namespace TencentCloud
@@ -104,6 +105,28 @@ namespace TencentCloud
                      */
                     bool TemplateIdHasBeenSet() const;
 
+                    /**
+                     * 获取目标数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Targets 目标数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Targets GetTargets() const;
+
+                    /**
+                     * 设置目标数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Targets 目标数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetTargets(const Targets& _targets);
+
+                    /**
+                     * 判断参数 Targets 是否已赋值
+                     * @return Targets 是否已赋值
+                     */
+                    bool TargetsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -124,6 +147,13 @@ namespace TencentCloud
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
+
+                    /**
+                     * 目标数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    Targets m_targets;
+                    bool m_targetsHasBeenSet;
 
                 };
             }

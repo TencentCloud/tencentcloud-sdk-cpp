@@ -52,6 +52,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/ContactItem.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBSpaceStatusRequest.h
   include/tencentcloud/dbbrain/v20210527/model/TimeSlice.h
+  include/tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksRequest.h
   include/tencentcloud/dbbrain/v20210527/model/ModifyDiagDBInstanceConfRequest.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h
@@ -66,6 +67,7 @@ set(dbbrain_public_header_model
   include/tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h
   include/tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlResponse.h
   include/tencentcloud/dbbrain/v20210527/model/CreateKillTaskRequest.h
+  include/tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksResponse.h
   include/tencentcloud/dbbrain/v20210527/model/DescribeProxyProcessStatisticsResponse.h
   include/tencentcloud/dbbrain/v20210527/model/SlowLogHost.h
   include/tencentcloud/dbbrain/v20210527/model/CreateMailProfileRequest.h
@@ -265,6 +267,7 @@ set(dbbrain_src
   src/v20210527/model/ContactItem.cpp
   src/v20210527/model/DescribeDBSpaceStatusRequest.cpp
   src/v20210527/model/TimeSlice.cpp
+  src/v20210527/model/DeleteDBDiagReportTasksRequest.cpp
   src/v20210527/model/ModifyDiagDBInstanceConfRequest.cpp
   src/v20210527/model/DescribeSecurityAuditLogDownloadUrlsRequest.cpp
   src/v20210527/model/CreateDBDiagReportTaskResponse.cpp
@@ -279,6 +282,7 @@ set(dbbrain_src
   src/v20210527/model/DescribeDBDiagEventsRequest.cpp
   src/v20210527/model/CreateDBDiagReportUrlResponse.cpp
   src/v20210527/model/CreateKillTaskRequest.cpp
+  src/v20210527/model/DeleteDBDiagReportTasksResponse.cpp
   src/v20210527/model/DescribeProxyProcessStatisticsResponse.cpp
   src/v20210527/model/SlowLogHost.cpp
   src/v20210527/model/CreateMailProfileRequest.cpp

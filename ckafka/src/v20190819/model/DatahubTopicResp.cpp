@@ -21,7 +21,8 @@ using namespace TencentCloud::Ckafka::V20190819::Model;
 using namespace std;
 
 DatahubTopicResp::DatahubTopicResp() :
-    m_topicNameHasBeenSet(false)
+    m_topicNameHasBeenSet(false),
+    m_topicIdHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,16 @@ CoreInternalOutcome DatahubTopicResp::Deserialize(const rapidjson::Value &value)
         m_topicNameHasBeenSet = true;
     }
 
+    if (value.HasMember("TopicId") && !value["TopicId"].IsNull())
+    {
+        if (!value["TopicId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DatahubTopicResp.TopicId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_topicId = string(value["TopicId"].GetString());
+        m_topicIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +64,14 @@ void DatahubTopicResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "TopicName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_topicName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_topicIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TopicId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_topicId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -72,5 +91,21 @@ void DatahubTopicResp::SetTopicName(const string& _topicName)
 bool DatahubTopicResp::TopicNameHasBeenSet() const
 {
     return m_topicNameHasBeenSet;
+}
+
+string DatahubTopicResp::GetTopicId() const
+{
+    return m_topicId;
+}
+
+void DatahubTopicResp::SetTopicId(const string& _topicId)
+{
+    m_topicId = _topicId;
+    m_topicIdHasBeenSet = true;
+}
+
+bool DatahubTopicResp::TopicIdHasBeenSet() const
+{
+    return m_topicIdHasBeenSet;
 }
 

@@ -112,6 +112,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/ExportAttackLogsRequest.h
   include/tencentcloud/cwp/v20180228/model/IgnoreRuleEffectHostInfo.h
   include/tencentcloud/cwp/v20180228/model/HostRiskLevelCount.h
+  include/tencentcloud/cwp/v20180228/model/DescribeFileTamperEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/AssetJarDetail.h
   include/tencentcloud/cwp/v20180228/model/DescribeBanModeRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeSecurityEventStatRequest.h
@@ -170,6 +171,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeBaselineWeakPasswordListRequest.h
   include/tencentcloud/cwp/v20180228/model/AssetUserDetail.h
   include/tencentcloud/cwp/v20180228/model/ModifyOrderAttributeResponse.h
+  include/tencentcloud/cwp/v20180228/model/DescribeFileTamperEventsResponse.h
   include/tencentcloud/cwp/v20180228/model/DescribeMachinesRequest.h
   include/tencentcloud/cwp/v20180228/model/DescribeVulEffectHostListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportLicenseDetailRequest.h
@@ -373,6 +375,7 @@ set(cwp_public_header_model
   include/tencentcloud/cwp/v20180228/model/DescribeProtectDirListRequest.h
   include/tencentcloud/cwp/v20180228/model/ExportPrivilegeEventsRequest.h
   include/tencentcloud/cwp/v20180228/model/MachineExtraInfo.h
+  include/tencentcloud/cwp/v20180228/model/FileTamperEvent.h
   include/tencentcloud/cwp/v20180228/model/DescribeMalwareFileResponse.h
   include/tencentcloud/cwp/v20180228/model/StopBaselineDetectRequest.h
   include/tencentcloud/cwp/v20180228/model/TaskStatus.h
@@ -803,6 +806,7 @@ set(cwp_src
   src/v20180228/model/ExportAttackLogsRequest.cpp
   src/v20180228/model/IgnoreRuleEffectHostInfo.cpp
   src/v20180228/model/HostRiskLevelCount.cpp
+  src/v20180228/model/DescribeFileTamperEventsRequest.cpp
   src/v20180228/model/AssetJarDetail.cpp
   src/v20180228/model/DescribeBanModeRequest.cpp
   src/v20180228/model/DescribeSecurityEventStatRequest.cpp
@@ -861,6 +865,7 @@ set(cwp_src
   src/v20180228/model/DescribeBaselineWeakPasswordListRequest.cpp
   src/v20180228/model/AssetUserDetail.cpp
   src/v20180228/model/ModifyOrderAttributeResponse.cpp
+  src/v20180228/model/DescribeFileTamperEventsResponse.cpp
   src/v20180228/model/DescribeMachinesRequest.cpp
   src/v20180228/model/DescribeVulEffectHostListRequest.cpp
   src/v20180228/model/ExportLicenseDetailRequest.cpp
@@ -1064,6 +1069,7 @@ set(cwp_src
   src/v20180228/model/DescribeProtectDirListRequest.cpp
   src/v20180228/model/ExportPrivilegeEventsRequest.cpp
   src/v20180228/model/MachineExtraInfo.cpp
+  src/v20180228/model/FileTamperEvent.cpp
   src/v20180228/model/DescribeMalwareFileResponse.cpp
   src/v20180228/model/StopBaselineDetectRequest.cpp
   src/v20180228/model/TaskStatus.cpp

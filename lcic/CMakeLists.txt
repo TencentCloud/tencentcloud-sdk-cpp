@@ -34,7 +34,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/BatchCreateGroupWithMembersResponse.h
   include/tencentcloud/lcic/v20220817/model/GetRoomEventResponse.h
   include/tencentcloud/lcic/v20220817/model/MemberRecord.h
-  include/tencentcloud/lcic/v20220817/model/DeleteAppCustomContentRequest.h
+  include/tencentcloud/lcic/v20220817/model/GetRoomsRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchAddGroupMemberResponse.h
   include/tencentcloud/lcic/v20220817/model/ModifyUserProfileResponse.h
   include/tencentcloud/lcic/v20220817/model/GetWatermarkResponse.h
@@ -42,6 +42,7 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/BatchRegisterResponse.h
   include/tencentcloud/lcic/v20220817/model/BindDocumentToRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/CreateGroupWithSubGroupRequest.h
+  include/tencentcloud/lcic/v20220817/model/RoomItem.h
   include/tencentcloud/lcic/v20220817/model/SetWatermarkRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeRoomRequest.h
   include/tencentcloud/lcic/v20220817/model/BatchCreateRoomResponse.h
@@ -114,7 +115,9 @@ set(lcic_public_header_model
   include/tencentcloud/lcic/v20220817/model/DescribeDocumentsByRoomResponse.h
   include/tencentcloud/lcic/v20220817/model/LoginOriginIdResponse.h
   include/tencentcloud/lcic/v20220817/model/DescribeQuestionListResponse.h
+  include/tencentcloud/lcic/v20220817/model/GetRoomsResponse.h
   include/tencentcloud/lcic/v20220817/model/QuestionInfo.h
+  include/tencentcloud/lcic/v20220817/model/DeleteAppCustomContentRequest.h
   include/tencentcloud/lcic/v20220817/model/DescribeDeveloperRequest.h
   include/tencentcloud/lcic/v20220817/model/AppCustomContent.h
   include/tencentcloud/lcic/v20220817/model/DeleteGroupResponse.h
@@ -153,7 +156,7 @@ set(lcic_src
   src/v20220817/model/BatchCreateGroupWithMembersResponse.cpp
   src/v20220817/model/GetRoomEventResponse.cpp
   src/v20220817/model/MemberRecord.cpp
-  src/v20220817/model/DeleteAppCustomContentRequest.cpp
+  src/v20220817/model/GetRoomsRequest.cpp
   src/v20220817/model/BatchAddGroupMemberResponse.cpp
   src/v20220817/model/ModifyUserProfileResponse.cpp
   src/v20220817/model/GetWatermarkResponse.cpp
@@ -161,6 +164,7 @@ set(lcic_src
   src/v20220817/model/BatchRegisterResponse.cpp
   src/v20220817/model/BindDocumentToRoomResponse.cpp
   src/v20220817/model/CreateGroupWithSubGroupRequest.cpp
+  src/v20220817/model/RoomItem.cpp
   src/v20220817/model/SetWatermarkRequest.cpp
   src/v20220817/model/DescribeRoomRequest.cpp
   src/v20220817/model/BatchCreateRoomResponse.cpp
@@ -233,7 +237,9 @@ set(lcic_src
   src/v20220817/model/DescribeDocumentsByRoomResponse.cpp
   src/v20220817/model/LoginOriginIdResponse.cpp
   src/v20220817/model/DescribeQuestionListResponse.cpp
+  src/v20220817/model/GetRoomsResponse.cpp
   src/v20220817/model/QuestionInfo.cpp
+  src/v20220817/model/DeleteAppCustomContentRequest.cpp
   src/v20220817/model/DescribeDeveloperRequest.cpp
   src/v20220817/model/AppCustomContent.cpp
   src/v20220817/model/DeleteGroupResponse.cpp

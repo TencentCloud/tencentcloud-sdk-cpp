@@ -42,7 +42,8 @@ Listener::Listener() :
     m_attrFlagsHasBeenSet(false),
     m_targetGroupListHasBeenSet(false),
     m_maxConnHasBeenSet(false),
-    m_maxCpsHasBeenSet(false)
+    m_maxCpsHasBeenSet(false),
+    m_idleConnectTimeoutHasBeenSet(false)
 {
 }
 
@@ -315,6 +316,16 @@ CoreInternalOutcome Listener::Deserialize(const rapidjson::Value &value)
         m_maxCpsHasBeenSet = true;
     }
 
+    if (value.HasMember("IdleConnectTimeout") && !value["IdleConnectTimeout"].IsNull())
+    {
+        if (!value["IdleConnectTimeout"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `Listener.IdleConnectTimeout` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_idleConnectTimeout = value["IdleConnectTimeout"].GetInt64();
+        m_idleConnectTimeoutHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -518,6 +529,14 @@ void Listener::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         string key = "MaxCps";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxCps, allocator);
+    }
+
+    if (m_idleConnectTimeoutHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IdleConnectTimeout";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_idleConnectTimeout, allocator);
     }
 
 }
@@ -873,5 +892,21 @@ void Listener::SetMaxCps(const int64_t& _maxCps)
 bool Listener::MaxCpsHasBeenSet() const
 {
     return m_maxCpsHasBeenSet;
+}
+
+int64_t Listener::GetIdleConnectTimeout() const
+{
+    return m_idleConnectTimeout;
+}
+
+void Listener::SetIdleConnectTimeout(const int64_t& _idleConnectTimeout)
+{
+    m_idleConnectTimeout = _idleConnectTimeout;
+    m_idleConnectTimeoutHasBeenSet = true;
+}
+
+bool Listener::IdleConnectTimeoutHasBeenSet() const
+{
+    return m_idleConnectTimeoutHasBeenSet;
 }
 

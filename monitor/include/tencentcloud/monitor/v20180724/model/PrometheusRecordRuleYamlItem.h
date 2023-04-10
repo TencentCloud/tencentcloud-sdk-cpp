@@ -144,6 +144,72 @@ namespace TencentCloud
                      */
                     bool ClusterIdHasBeenSet() const;
 
+                    /**
+                     * 获取状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStatus() const;
+
+                    /**
+                     * 设置状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const int64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Id id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetId() const;
+
+                    /**
+                     * 设置id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Id id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetId(const std::string& _id);
+
+                    /**
+                     * 判断参数 Id 是否已赋值
+                     * @return Id 是否已赋值
+                     */
+                    bool IdHasBeenSet() const;
+
+                    /**
+                     * 获取规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Count 规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetCount() const;
+
+                    /**
+                     * 设置规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Count 规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCount(const int64_t& _count);
+
+                    /**
+                     * 判断参数 Count 是否已赋值
+                     * @return Count 是否已赋值
+                     */
+                    bool CountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +243,27 @@ namespace TencentCloud
                      */
                     std::string m_clusterId;
                     bool m_clusterIdHasBeenSet;
+
+                    /**
+                     * 状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_id;
+                    bool m_idHasBeenSet;
+
+                    /**
+                     * 规则数量
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_count;
+                    bool m_countHasBeenSet;
 
                 };
             }
