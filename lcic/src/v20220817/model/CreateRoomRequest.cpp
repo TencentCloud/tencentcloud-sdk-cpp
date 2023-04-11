@@ -32,9 +32,12 @@ CreateRoomRequest::CreateRoomRequest() :
     m_subTypeHasBeenSet(false),
     m_teacherIdHasBeenSet(false),
     m_autoMicHasBeenSet(false),
+    m_turnOffMicHasBeenSet(false),
     m_audioQualityHasBeenSet(false),
     m_disableRecordHasBeenSet(false),
     m_assistantsHasBeenSet(false),
+    m_rTCAudienceNumberHasBeenSet(false),
+    m_audienceTypeHasBeenSet(false),
     m_recordLayoutHasBeenSet(false),
     m_groupIdHasBeenSet(false)
 {
@@ -119,6 +122,14 @@ string CreateRoomRequest::ToJsonString() const
         d.AddMember(iKey, m_autoMic, allocator);
     }
 
+    if (m_turnOffMicHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TurnOffMic";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_turnOffMic, allocator);
+    }
+
     if (m_audioQualityHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -146,6 +157,22 @@ string CreateRoomRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_rTCAudienceNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RTCAudienceNumber";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rTCAudienceNumber, allocator);
+    }
+
+    if (m_audienceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudienceType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_audienceType, allocator);
     }
 
     if (m_recordLayoutHasBeenSet)
@@ -316,6 +343,22 @@ bool CreateRoomRequest::AutoMicHasBeenSet() const
     return m_autoMicHasBeenSet;
 }
 
+uint64_t CreateRoomRequest::GetTurnOffMic() const
+{
+    return m_turnOffMic;
+}
+
+void CreateRoomRequest::SetTurnOffMic(const uint64_t& _turnOffMic)
+{
+    m_turnOffMic = _turnOffMic;
+    m_turnOffMicHasBeenSet = true;
+}
+
+bool CreateRoomRequest::TurnOffMicHasBeenSet() const
+{
+    return m_turnOffMicHasBeenSet;
+}
+
 uint64_t CreateRoomRequest::GetAudioQuality() const
 {
     return m_audioQuality;
@@ -362,6 +405,38 @@ void CreateRoomRequest::SetAssistants(const vector<string>& _assistants)
 bool CreateRoomRequest::AssistantsHasBeenSet() const
 {
     return m_assistantsHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetRTCAudienceNumber() const
+{
+    return m_rTCAudienceNumber;
+}
+
+void CreateRoomRequest::SetRTCAudienceNumber(const uint64_t& _rTCAudienceNumber)
+{
+    m_rTCAudienceNumber = _rTCAudienceNumber;
+    m_rTCAudienceNumberHasBeenSet = true;
+}
+
+bool CreateRoomRequest::RTCAudienceNumberHasBeenSet() const
+{
+    return m_rTCAudienceNumberHasBeenSet;
+}
+
+uint64_t CreateRoomRequest::GetAudienceType() const
+{
+    return m_audienceType;
+}
+
+void CreateRoomRequest::SetAudienceType(const uint64_t& _audienceType)
+{
+    m_audienceType = _audienceType;
+    m_audienceTypeHasBeenSet = true;
+}
+
+bool CreateRoomRequest::AudienceTypeHasBeenSet() const
+{
+    return m_audienceTypeHasBeenSet;
 }
 
 uint64_t CreateRoomRequest::GetRecordLayout() const

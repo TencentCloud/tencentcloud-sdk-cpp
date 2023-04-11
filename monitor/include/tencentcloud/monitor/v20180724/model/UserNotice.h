@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 云监控告警通知模板 - 用户通知详情
+                * 告警通知模板 - 用户通知详情
                 */
                 class UserNotice : public AbstractModel
                 {

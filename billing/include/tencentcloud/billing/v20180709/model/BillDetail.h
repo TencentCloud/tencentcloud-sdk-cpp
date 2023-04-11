@@ -500,6 +500,28 @@ namespace TencentCloud
                      */
                     bool ProjectIdHasBeenSet() const;
 
+                    /**
+                     * 获取价格属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PriceInfo 价格属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetPriceInfo() const;
+
+                    /**
+                     * 设置价格属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PriceInfo 价格属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPriceInfo(const std::vector<std::string>& _priceInfo);
+
+                    /**
+                     * 判断参数 PriceInfo 是否已赋值
+                     * @return PriceInfo 是否已赋值
+                     */
+                    bool PriceInfoHasBeenSet() const;
+
                 private:
 
                     /**
@@ -650,6 +672,13 @@ namespace TencentCloud
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
+
+                    /**
+                     * 价格属性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_priceInfo;
+                    bool m_priceInfoHasBeenSet;
 
                 };
             }

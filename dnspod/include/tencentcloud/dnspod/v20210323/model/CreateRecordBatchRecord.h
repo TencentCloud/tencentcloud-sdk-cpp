@@ -262,6 +262,28 @@ namespace TencentCloud
                      */
                     bool MXHasBeenSet() const;
 
+                    /**
+                     * 获取记录的权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weight 记录的权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetWeight() const;
+
+                    /**
+                     * 设置记录的权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Weight 记录的权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWeight(const uint64_t& _weight);
+
+                    /**
+                     * 判断参数 Weight 是否已赋值
+                     * @return Weight 是否已赋值
+                     */
+                    bool WeightHasBeenSet() const;
+
                 private:
 
                     /**
@@ -332,6 +354,13 @@ namespace TencentCloud
                      */
                     uint64_t m_mX;
                     bool m_mXHasBeenSet;
+
+                    /**
+                     * 记录的权重
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_weight;
+                    bool m_weightHasBeenSet;
 
                 };
             }

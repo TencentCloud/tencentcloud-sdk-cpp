@@ -23,7 +23,8 @@ using namespace std;
 RuleInfo::RuleInfo() :
     m_fullTextHasBeenSet(false),
     m_keyValueHasBeenSet(false),
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_dynamicIndexHasBeenSet(false)
 {
 }
 
@@ -83,6 +84,23 @@ CoreInternalOutcome RuleInfo::Deserialize(const rapidjson::Value &value)
         m_tagHasBeenSet = true;
     }
 
+    if (value.HasMember("DynamicIndex") && !value["DynamicIndex"].IsNull())
+    {
+        if (!value["DynamicIndex"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `RuleInfo.DynamicIndex` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_dynamicIndex.Deserialize(value["DynamicIndex"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_dynamicIndexHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +133,15 @@ void RuleInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloca
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_tag.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_dynamicIndexHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DynamicIndex";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_dynamicIndex.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -166,5 +193,21 @@ void RuleInfo::SetTag(const RuleTagInfo& _tag)
 bool RuleInfo::TagHasBeenSet() const
 {
     return m_tagHasBeenSet;
+}
+
+DynamicIndex RuleInfo::GetDynamicIndex() const
+{
+    return m_dynamicIndex;
+}
+
+void RuleInfo::SetDynamicIndex(const DynamicIndex& _dynamicIndex)
+{
+    m_dynamicIndex = _dynamicIndex;
+    m_dynamicIndexHasBeenSet = true;
+}
+
+bool RuleInfo::DynamicIndexHasBeenSet() const
+{
+    return m_dynamicIndexHasBeenSet;
 }
 

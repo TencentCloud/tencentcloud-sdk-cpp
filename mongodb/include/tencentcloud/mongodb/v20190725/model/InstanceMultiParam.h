@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前值
-                     * @return CurrentValue 当前值
+                     * 获取参数当前值。
+                     * @return CurrentValue 参数当前值。
                      */
                     std::string GetCurrentValue() const;
 
                     /**
-                     * 设置当前值
-                     * @param CurrentValue 当前值
+                     * 设置参数当前值。
+                     * @param CurrentValue 参数当前值。
                      */
                     void SetCurrentValue(const std::string& _currentValue);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool CurrentValueHasBeenSet() const;
 
                     /**
-                     * 获取默认值
-                     * @return DefaultValue 默认值
+                     * 获取参数默认值。
+                     * @return DefaultValue 参数默认值。
                      */
                     std::string GetDefaultValue() const;
 
                     /**
-                     * 设置默认值
-                     * @param DefaultValue 默认值
+                     * 设置参数默认值。
+                     * @param DefaultValue 参数默认值。
                      */
                     void SetDefaultValue(const std::string& _defaultValue);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool DefaultValueHasBeenSet() const;
 
                     /**
-                     * 获取指导值范围
-                     * @return EnumValue 指导值范围
+                     * 获取参考值范围。
+                     * @return EnumValue 参考值范围。
                      */
                     std::vector<std::string> GetEnumValue() const;
 
                     /**
-                     * 设置指导值范围
-                     * @param EnumValue 指导值范围
+                     * 设置参考值范围。
+                     * @param EnumValue 参考值范围。
                      */
                     void SetEnumValue(const std::vector<std::string>& _enumValue);
 
@@ -101,14 +101,22 @@ namespace TencentCloud
                     bool EnumValueHasBeenSet() const;
 
                     /**
-                     * 获取是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
-                     * @return NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * 获取参数修改后是否需要重启才会生效。
+- 1：需要重启后生效。
+- 0：无需重启，设置成功即可生效。
+                     * @return NeedRestart 参数修改后是否需要重启才会生效。
+- 1：需要重启后生效。
+- 0：无需重启，设置成功即可生效。
                      */
                     std::string GetNeedRestart() const;
 
                     /**
-                     * 设置是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
-                     * @param NeedRestart 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * 设置参数修改后是否需要重启才会生效。
+- 1：需要重启后生效。
+- 0：无需重启，设置成功即可生效。
+                     * @param NeedRestart 参数修改后是否需要重启才会生效。
+- 1：需要重启后生效。
+- 0：无需重启，设置成功即可生效。
                      */
                     void SetNeedRestart(const std::string& _needRestart);
 
@@ -119,14 +127,14 @@ namespace TencentCloud
                     bool NeedRestartHasBeenSet() const;
 
                     /**
-                     * 获取参数名称
-                     * @return ParamName 参数名称
+                     * 获取参数名称。
+                     * @return ParamName 参数名称。
                      */
                     std::string GetParamName() const;
 
                     /**
-                     * 设置参数名称
-                     * @param ParamName 参数名称
+                     * 设置参数名称。
+                     * @param ParamName 参数名称。
                      */
                     void SetParamName(const std::string& _paramName);
 
@@ -137,14 +145,22 @@ namespace TencentCloud
                     bool ParamNameHasBeenSet() const;
 
                     /**
-                     * 获取是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
-                     * @return Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * 获取是否为运行中参数值。
+- 1：运行中参数值。
+- 0：非运行中参数值。
+                     * @return Status 是否为运行中参数值。
+- 1：运行中参数值。
+- 0：非运行中参数值。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
-                     * @param Status 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * 设置是否为运行中参数值。
+- 1：运行中参数值。
+- 0：非运行中参数值。
+                     * @param Status 是否为运行中参数值。
+- 1：运行中参数值。
+- 0：非运行中参数值。
                      */
                     void SetStatus(const uint64_t& _status);
 
@@ -155,14 +171,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取参数说明
-                     * @return Tips 参数说明
+                     * 获取参数说明。
+                     * @return Tips 参数说明。
                      */
                     std::vector<std::string> GetTips() const;
 
                     /**
-                     * 设置参数说明
-                     * @param Tips 参数说明
+                     * 设置参数说明。
+                     * @param Tips 参数说明。
                      */
                     void SetTips(const std::vector<std::string>& _tips);
 
@@ -173,14 +189,14 @@ namespace TencentCloud
                     bool TipsHasBeenSet() const;
 
                     /**
-                     * 获取当前值的类型描述，默认为multi
-                     * @return ValueType 当前值的类型描述，默认为multi
+                     * 获取当前值的类型描述，默认为multi。
+                     * @return ValueType 当前值的类型描述，默认为multi。
                      */
                     std::string GetValueType() const;
 
                     /**
-                     * 设置当前值的类型描述，默认为multi
-                     * @param ValueType 当前值的类型描述，默认为multi
+                     * 设置当前值的类型描述，默认为multi。
+                     * @param ValueType 当前值的类型描述，默认为multi。
                      */
                     void SetValueType(const std::string& _valueType);
 
@@ -193,49 +209,53 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前值
+                     * 参数当前值。
                      */
                     std::string m_currentValue;
                     bool m_currentValueHasBeenSet;
 
                     /**
-                     * 默认值
+                     * 参数默认值。
                      */
                     std::string m_defaultValue;
                     bool m_defaultValueHasBeenSet;
 
                     /**
-                     * 指导值范围
+                     * 参考值范围。
                      */
                     std::vector<std::string> m_enumValue;
                     bool m_enumValueHasBeenSet;
 
                     /**
-                     * 是否需要重启生效 1:需要重启后生效；0：无需重启，设置成功即可生效；
+                     * 参数修改后是否需要重启才会生效。
+- 1：需要重启后生效。
+- 0：无需重启，设置成功即可生效。
                      */
                     std::string m_needRestart;
                     bool m_needRestartHasBeenSet;
 
                     /**
-                     * 参数名称
+                     * 参数名称。
                      */
                     std::string m_paramName;
                     bool m_paramNameHasBeenSet;
 
                     /**
-                     * 是否为运行中参数值 1:运行中参数值；0：非运行中参数值；
+                     * 是否为运行中参数值。
+- 1：运行中参数值。
+- 0：非运行中参数值。
                      */
                     uint64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 参数说明
+                     * 参数说明。
                      */
                     std::vector<std::string> m_tips;
                     bool m_tipsHasBeenSet;
 
                     /**
-                     * 当前值的类型描述，默认为multi
+                     * 当前值的类型描述，默认为multi。
                      */
                     std::string m_valueType;
                     bool m_valueTypeHasBeenSet;

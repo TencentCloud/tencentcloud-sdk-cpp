@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @return InstanceId 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param InstanceId 实例id
+                     * 设置实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
+                     * @param InstanceId 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -61,14 +61,22 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取0-逻辑备份，1-物理备份
-                     * @return BackupMethod 0-逻辑备份，1-物理备份
+                     * 获取设置备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
+                     * @return BackupMethod 设置备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
                      */
                     int64_t GetBackupMethod() const;
 
                     /**
-                     * 设置0-逻辑备份，1-物理备份
-                     * @param BackupMethod 0-逻辑备份，1-物理备份
+                     * 设置设置备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
+                     * @param BackupMethod 设置备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
                      */
                     void SetBackupMethod(const int64_t& _backupMethod);
 
@@ -79,14 +87,14 @@ namespace TencentCloud
                     bool BackupMethodHasBeenSet() const;
 
                     /**
-                     * 获取备份备注
-                     * @return BackupRemark 备份备注
+                     * 获取备份备注信息。
+                     * @return BackupRemark 备份备注信息。
                      */
                     std::string GetBackupRemark() const;
 
                     /**
-                     * 设置备份备注
-                     * @param BackupRemark 备份备注
+                     * 设置备份备注信息。
+                     * @param BackupRemark 备份备注信息。
                      */
                     void SetBackupRemark(const std::string& _backupRemark);
 
@@ -99,19 +107,21 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例id
+                     * 实例 ID。例如：cmgo-p8vn****。请登录 [MongoDB 控制台](https://console.cloud.tencent.com/mongodb)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 0-逻辑备份，1-物理备份
+                     * 设置备份方式。
+- 0：逻辑备份。
+- 1：物理备份。
                      */
                     int64_t m_backupMethod;
                     bool m_backupMethodHasBeenSet;
 
                     /**
-                     * 备份备注
+                     * 备份备注信息。
                      */
                     std::string m_backupRemark;
                     bool m_backupRemarkHasBeenSet;

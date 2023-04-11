@@ -27,6 +27,7 @@
 #include <tencentcloud/cls/v20201016/model/FullTextInfo.h>
 #include <tencentcloud/cls/v20201016/model/RuleKeyValueInfo.h>
 #include <tencentcloud/cls/v20201016/model/RuleTagInfo.h>
+#include <tencentcloud/cls/v20201016/model/DynamicIndex.h>
 
 
 namespace TencentCloud
@@ -39,7 +40,6 @@ namespace TencentCloud
             {
                 /**
                 * 索引规则，FullText、KeyValue、Tag参数必须输入一个有效参数
-
                 */
                 class RuleInfo : public AbstractModel
                 {
@@ -116,6 +116,28 @@ namespace TencentCloud
                      */
                     bool TagHasBeenSet() const;
 
+                    /**
+                     * 获取动态索引配置，如果为空时代表未开启动态段索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DynamicIndex 动态索引配置，如果为空时代表未开启动态段索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicIndex GetDynamicIndex() const;
+
+                    /**
+                     * 设置动态索引配置，如果为空时代表未开启动态段索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DynamicIndex 动态索引配置，如果为空时代表未开启动态段索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDynamicIndex(const DynamicIndex& _dynamicIndex);
+
+                    /**
+                     * 判断参数 DynamicIndex 是否已赋值
+                     * @return DynamicIndex 是否已赋值
+                     */
+                    bool DynamicIndexHasBeenSet() const;
+
                 private:
 
                     /**
@@ -138,6 +160,13 @@ namespace TencentCloud
                      */
                     RuleTagInfo m_tag;
                     bool m_tagHasBeenSet;
+
+                    /**
+                     * 动态索引配置，如果为空时代表未开启动态段索引
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DynamicIndex m_dynamicIndex;
+                    bool m_dynamicIndexHasBeenSet;
 
                 };
             }

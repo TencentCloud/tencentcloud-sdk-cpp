@@ -330,6 +330,24 @@ namespace TencentCloud
                      */
                     bool ZoneIdHasBeenSet() const;
 
+                    /**
+                     * 获取针对跨集群搬迁场景，选择同可用区RO的处理逻辑。together-同可用区RO跟随主实例迁移至目标可用区（默认选项），severally-同可用区RO保持原部署模式、不迁移至目标可用区。
+                     * @return RoTransType 针对跨集群搬迁场景，选择同可用区RO的处理逻辑。together-同可用区RO跟随主实例迁移至目标可用区（默认选项），severally-同可用区RO保持原部署模式、不迁移至目标可用区。
+                     */
+                    std::string GetRoTransType() const;
+
+                    /**
+                     * 设置针对跨集群搬迁场景，选择同可用区RO的处理逻辑。together-同可用区RO跟随主实例迁移至目标可用区（默认选项），severally-同可用区RO保持原部署模式、不迁移至目标可用区。
+                     * @param RoTransType 针对跨集群搬迁场景，选择同可用区RO的处理逻辑。together-同可用区RO跟随主实例迁移至目标可用区（默认选项），severally-同可用区RO保持原部署模式、不迁移至目标可用区。
+                     */
+                    void SetRoTransType(const std::string& _roTransType);
+
+                    /**
+                     * 判断参数 RoTransType 是否已赋值
+                     * @return RoTransType 是否已赋值
+                     */
+                    bool RoTransTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -427,6 +445,12 @@ namespace TencentCloud
                      */
                     std::string m_zoneId;
                     bool m_zoneIdHasBeenSet;
+
+                    /**
+                     * 针对跨集群搬迁场景，选择同可用区RO的处理逻辑。together-同可用区RO跟随主实例迁移至目标可用区（默认选项），severally-同可用区RO保持原部署模式、不迁移至目标可用区。
+                     */
+                    std::string m_roTransType;
+                    bool m_roTransTypeHasBeenSet;
 
                 };
             }

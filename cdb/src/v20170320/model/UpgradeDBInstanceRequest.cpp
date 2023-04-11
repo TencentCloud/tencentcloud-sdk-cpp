@@ -38,7 +38,8 @@ UpgradeDBInstanceRequest::UpgradeDBInstanceRequest() :
     m_fastUpgradeHasBeenSet(false),
     m_maxDelayTimeHasBeenSet(false),
     m_crossClusterHasBeenSet(false),
-    m_zoneIdHasBeenSet(false)
+    m_zoneIdHasBeenSet(false),
+    m_roTransTypeHasBeenSet(false)
 {
 }
 
@@ -175,6 +176,14 @@ string UpgradeDBInstanceRequest::ToJsonString() const
         string key = "ZoneId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_zoneId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_roTransTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RoTransType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_roTransType.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -439,6 +448,22 @@ void UpgradeDBInstanceRequest::SetZoneId(const string& _zoneId)
 bool UpgradeDBInstanceRequest::ZoneIdHasBeenSet() const
 {
     return m_zoneIdHasBeenSet;
+}
+
+string UpgradeDBInstanceRequest::GetRoTransType() const
+{
+    return m_roTransType;
+}
+
+void UpgradeDBInstanceRequest::SetRoTransType(const string& _roTransType)
+{
+    m_roTransType = _roTransType;
+    m_roTransTypeHasBeenSet = true;
+}
+
+bool UpgradeDBInstanceRequest::RoTransTypeHasBeenSet() const
+{
+    return m_roTransTypeHasBeenSet;
 }
 
 

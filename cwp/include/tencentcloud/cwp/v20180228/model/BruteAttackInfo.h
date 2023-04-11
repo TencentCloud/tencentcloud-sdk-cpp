@@ -66,17 +66,17 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取云镜客户端唯一标识UUID
+                     * 获取主机安全客户端唯一标识UUID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Uuid 云镜客户端唯一标识UUID
+                     * @return Uuid 主机安全客户端唯一标识UUID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜客户端唯一标识UUID
+                     * 设置主机安全客户端唯一标识UUID
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Uuid 云镜客户端唯一标识UUID
+                     * @param Uuid 主机安全客户端唯一标识UUID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetUuid(const std::string& _uuid);
@@ -558,7 +558,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 云镜客户端唯一标识UUID
+                     * 主机安全客户端唯一标识UUID
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_uuid;

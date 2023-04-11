@@ -169,6 +169,49 @@ TiwClient::CreateOfflineRecordOutcomeCallable TiwClient::CreateOfflineRecordCall
     return task->get_future();
 }
 
+TiwClient::CreatePPTCheckTaskOutcome TiwClient::CreatePPTCheckTask(const CreatePPTCheckTaskRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreatePPTCheckTask");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreatePPTCheckTaskResponse rsp = CreatePPTCheckTaskResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreatePPTCheckTaskOutcome(rsp);
+        else
+            return CreatePPTCheckTaskOutcome(o.GetError());
+    }
+    else
+    {
+        return CreatePPTCheckTaskOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::CreatePPTCheckTaskAsync(const CreatePPTCheckTaskRequest& request, const CreatePPTCheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreatePPTCheckTask(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::CreatePPTCheckTaskOutcomeCallable TiwClient::CreatePPTCheckTaskCallable(const CreatePPTCheckTaskRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreatePPTCheckTaskOutcome()>>(
+        [this, request]()
+        {
+            return this->CreatePPTCheckTask(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::CreateSnapshotTaskOutcome TiwClient::CreateSnapshotTask(const CreateSnapshotTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateSnapshotTask");
@@ -685,6 +728,92 @@ TiwClient::DescribeOnlineRecordCallbackOutcomeCallable TiwClient::DescribeOnline
     return task->get_future();
 }
 
+TiwClient::DescribePPTCheckOutcome TiwClient::DescribePPTCheck(const DescribePPTCheckRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePPTCheck");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePPTCheckResponse rsp = DescribePPTCheckResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePPTCheckOutcome(rsp);
+        else
+            return DescribePPTCheckOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePPTCheckOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribePPTCheckAsync(const DescribePPTCheckRequest& request, const DescribePPTCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePPTCheck(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribePPTCheckOutcomeCallable TiwClient::DescribePPTCheckCallable(const DescribePPTCheckRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePPTCheckOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePPTCheck(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribePPTCheckCallbackOutcome TiwClient::DescribePPTCheckCallback(const DescribePPTCheckCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePPTCheckCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePPTCheckCallbackResponse rsp = DescribePPTCheckCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePPTCheckCallbackOutcome(rsp);
+        else
+            return DescribePPTCheckCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePPTCheckCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribePPTCheckCallbackAsync(const DescribePPTCheckCallbackRequest& request, const DescribePPTCheckCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePPTCheckCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribePPTCheckCallbackOutcomeCallable TiwClient::DescribePPTCheckCallbackCallable(const DescribePPTCheckCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePPTCheckCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePPTCheckCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::DescribePostpaidUsageOutcome TiwClient::DescribePostpaidUsage(const DescribePostpaidUsageRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePostpaidUsage");
@@ -850,6 +979,49 @@ TiwClient::DescribeRoomListOutcomeCallable TiwClient::DescribeRoomListCallable(c
         [this, request]()
         {
             return this->DescribeRoomList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeRunningTasksOutcome TiwClient::DescribeRunningTasks(const DescribeRunningTasksRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeRunningTasks");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeRunningTasksResponse rsp = DescribeRunningTasksResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeRunningTasksOutcome(rsp);
+        else
+            return DescribeRunningTasksOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeRunningTasksOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeRunningTasksAsync(const DescribeRunningTasksRequest& request, const DescribeRunningTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeRunningTasks(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeRunningTasksOutcomeCallable TiwClient::DescribeRunningTasksCallable(const DescribeRunningTasksRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeRunningTasksOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeRunningTasks(request);
         }
     );
 
@@ -1366,6 +1538,49 @@ TiwClient::DescribeVideoGenerationTaskCallbackOutcomeCallable TiwClient::Describ
         [this, request]()
         {
             return this->DescribeVideoGenerationTaskCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::DescribeWarningCallbackOutcome TiwClient::DescribeWarningCallback(const DescribeWarningCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeWarningCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeWarningCallbackResponse rsp = DescribeWarningCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeWarningCallbackOutcome(rsp);
+        else
+            return DescribeWarningCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeWarningCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::DescribeWarningCallbackAsync(const DescribeWarningCallbackRequest& request, const DescribeWarningCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeWarningCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::DescribeWarningCallbackOutcomeCallable TiwClient::DescribeWarningCallbackCallable(const DescribeWarningCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeWarningCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeWarningCallback(request);
         }
     );
 
@@ -1975,6 +2190,92 @@ TiwClient::SetOnlineRecordCallbackKeyOutcomeCallable TiwClient::SetOnlineRecordC
     return task->get_future();
 }
 
+TiwClient::SetPPTCheckCallbackOutcome TiwClient::SetPPTCheckCallback(const SetPPTCheckCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetPPTCheckCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetPPTCheckCallbackResponse rsp = SetPPTCheckCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetPPTCheckCallbackOutcome(rsp);
+        else
+            return SetPPTCheckCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return SetPPTCheckCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetPPTCheckCallbackAsync(const SetPPTCheckCallbackRequest& request, const SetPPTCheckCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetPPTCheckCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetPPTCheckCallbackOutcomeCallable TiwClient::SetPPTCheckCallbackCallable(const SetPPTCheckCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetPPTCheckCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->SetPPTCheckCallback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetPPTCheckCallbackKeyOutcome TiwClient::SetPPTCheckCallbackKey(const SetPPTCheckCallbackKeyRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetPPTCheckCallbackKey");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetPPTCheckCallbackKeyResponse rsp = SetPPTCheckCallbackKeyResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetPPTCheckCallbackKeyOutcome(rsp);
+        else
+            return SetPPTCheckCallbackKeyOutcome(o.GetError());
+    }
+    else
+    {
+        return SetPPTCheckCallbackKeyOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetPPTCheckCallbackKeyAsync(const SetPPTCheckCallbackKeyRequest& request, const SetPPTCheckCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetPPTCheckCallbackKey(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetPPTCheckCallbackKeyOutcomeCallable TiwClient::SetPPTCheckCallbackKeyCallable(const SetPPTCheckCallbackKeyRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetPPTCheckCallbackKeyOutcome()>>(
+        [this, request]()
+        {
+            return this->SetPPTCheckCallbackKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TiwClient::SetTranscodeCallbackOutcome TiwClient::SetTranscodeCallback(const SetTranscodeCallbackRequest &request)
 {
     auto outcome = MakeRequest(request, "SetTranscodeCallback");
@@ -2140,6 +2441,49 @@ TiwClient::SetVideoGenerationTaskCallbackKeyOutcomeCallable TiwClient::SetVideoG
         [this, request]()
         {
             return this->SetVideoGenerationTaskCallbackKey(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TiwClient::SetWarningCallbackOutcome TiwClient::SetWarningCallback(const SetWarningCallbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetWarningCallback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetWarningCallbackResponse rsp = SetWarningCallbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetWarningCallbackOutcome(rsp);
+        else
+            return SetWarningCallbackOutcome(o.GetError());
+    }
+    else
+    {
+        return SetWarningCallbackOutcome(outcome.GetError());
+    }
+}
+
+void TiwClient::SetWarningCallbackAsync(const SetWarningCallbackRequest& request, const SetWarningCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetWarningCallback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TiwClient::SetWarningCallbackOutcomeCallable TiwClient::SetWarningCallbackCallable(const SetWarningCallbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetWarningCallbackOutcome()>>(
+        [this, request]()
+        {
+            return this->SetWarningCallback(request);
         }
     );
 

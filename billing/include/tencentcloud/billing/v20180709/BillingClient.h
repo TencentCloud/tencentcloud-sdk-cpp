@@ -168,7 +168,7 @@ namespace TencentCloud
                 DescribeBillListOutcomeCallable DescribeBillListCallable(const Model::DescribeBillListRequest& request);
 
                 /**
-                 *查询账单资源汇总数据 
+                 *查询账单资源汇总数据
                  * @param req DescribeBillResourceSummaryRequest
                  * @return DescribeBillResourceSummaryOutcome
                  */

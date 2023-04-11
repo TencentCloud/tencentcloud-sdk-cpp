@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取设置任务ID,用于查询是否设置完成
-                     * @return FlowId 设置任务ID,用于查询是否设置完成
+                     * 获取任务ID。
+                     * @return FlowId 任务ID。
                      */
                     uint64_t GetFlowId() const;
 
@@ -58,7 +58,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 设置任务ID,用于查询是否设置完成
+                     * 任务ID。
                      */
                     uint64_t m_flowId;
                     bool m_flowIdHasBeenSet;

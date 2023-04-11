@@ -151,14 +151,14 @@ namespace TencentCloud
                     bool IsActivatedHasBeenSet() const;
 
                     /**
-                     * 获取定期快照在月的某几天天，该参数与DayOfWeek互斥
-                     * @return DayOfMonth 定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     * 获取定期快照在每月的第几天创建快照，该参数与DayOfWeek互斥
+                     * @return DayOfMonth 定期快照在每月的第几天创建快照，该参数与DayOfWeek互斥
                      */
                     std::string GetDayOfMonth() const;
 
                     /**
-                     * 设置定期快照在月的某几天天，该参数与DayOfWeek互斥
-                     * @param DayOfMonth 定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     * 设置定期快照在每月的第几天创建快照，该参数与DayOfWeek互斥
+                     * @param DayOfMonth 定期快照在每月的第几天创建快照，该参数与DayOfWeek互斥
                      */
                     void SetDayOfMonth(const std::string& _dayOfMonth);
 
@@ -225,7 +225,7 @@ namespace TencentCloud
                     bool m_isActivatedHasBeenSet;
 
                     /**
-                     * 定期快照在月的某几天天，该参数与DayOfWeek互斥
+                     * 定期快照在每月的第几天创建快照，该参数与DayOfWeek互斥
                      */
                     std::string m_dayOfMonth;
                     bool m_dayOfMonthHasBeenSet;

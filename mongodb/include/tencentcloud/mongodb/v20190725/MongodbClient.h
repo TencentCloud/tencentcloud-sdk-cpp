@@ -35,6 +35,8 @@
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserRequest.h>
+#include <tencentcloud/mongodb/v20190725/model/DeleteAccountUserResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersRequest.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAccountUsersResponse.h>
 #include <tencentcloud/mongodb/v20190725/model/DescribeAsyncRequestInfoRequest.h>
@@ -125,6 +127,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateDBInstanceHourResponse> CreateDBInstanceHourOutcome;
                 typedef std::future<CreateDBInstanceHourOutcome> CreateDBInstanceHourOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::CreateDBInstanceHourRequest&, CreateDBInstanceHourOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBInstanceHourAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAccountUserResponse> DeleteAccountUserOutcome;
+                typedef std::future<DeleteAccountUserOutcome> DeleteAccountUserOutcomeCallable;
+                typedef std::function<void(const MongodbClient*, const Model::DeleteAccountUserRequest&, DeleteAccountUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAccountUserAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeAccountUsersResponse> DescribeAccountUsersOutcome;
                 typedef std::future<DescribeAccountUsersOutcome> DescribeAccountUsersOutcomeCallable;
                 typedef std::function<void(const MongodbClient*, const Model::DescribeAccountUsersRequest&, DescribeAccountUsersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAccountUsersAsyncHandler;
@@ -235,7 +240,7 @@ namespace TencentCloud
                 CreateAccountUserOutcomeCallable CreateAccountUserCallable(const Model::CreateAccountUserRequest& request);
 
                 /**
-                 *备份实例接口
+                 *本接口（CreateBackupDBInstance）用于备份实例。
                  * @param req CreateBackupDBInstanceRequest
                  * @return CreateBackupDBInstanceOutcome
                  */
@@ -269,6 +274,15 @@ namespace TencentCloud
                 CreateDBInstanceHourOutcome CreateDBInstanceHour(const Model::CreateDBInstanceHourRequest &request);
                 void CreateDBInstanceHourAsync(const Model::CreateDBInstanceHourRequest& request, const CreateDBInstanceHourAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateDBInstanceHourOutcomeCallable CreateDBInstanceHourCallable(const Model::CreateDBInstanceHourRequest& request);
+
+                /**
+                 *本接口（DeleteAccountUser）用于删除实例的自定义账号。
+                 * @param req DeleteAccountUserRequest
+                 * @return DeleteAccountUserOutcome
+                 */
+                DeleteAccountUserOutcome DeleteAccountUser(const Model::DeleteAccountUserRequest &request);
+                void DeleteAccountUserAsync(const Model::DeleteAccountUserRequest& request, const DeleteAccountUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAccountUserOutcomeCallable DeleteAccountUserCallable(const Model::DeleteAccountUserRequest& request);
 
                 /**
                  *本接口（DescribeAccountUsers）用于获取当前实例的全部账号。
@@ -352,7 +366,7 @@ namespace TencentCloud
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
-                 *本接口(DescribeInstanceParams)用于查询当前实例可修改的参数列表。
+                 *本接口（DescribeInstanceParams）用于查询当前实例可修改的参数列表。
                  * @param req DescribeInstanceParamsRequest
                  * @return DescribeInstanceParamsOutcome
                  */
@@ -514,7 +528,7 @@ namespace TencentCloud
                 ResetDBInstancePasswordOutcomeCallable ResetDBInstancePasswordCallable(const Model::ResetDBInstancePasswordRequest& request);
 
                 /**
-                 *本接口(SetAccountUserPrivilege)用于设置mongodb实例的账号权限。
+                 *本接口（SetAccountUserPrivilege）用于设置实例的账号权限。
                  * @param req SetAccountUserPrivilegeRequest
                  * @return SetAccountUserPrivilegeOutcome
                  */

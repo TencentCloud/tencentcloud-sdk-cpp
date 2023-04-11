@@ -115,14 +115,14 @@ namespace TencentCloud
                     bool AliveDaysHasBeenSet() const;
 
                     /**
-                     * 获取快照按月重复，每月1-31号，选择一天，每月这一天打快照。
-                     * @return DayOfMonth 快照按月重复，每月1-31号，选择一天，每月这一天打快照。
+                     * 获取快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
+                     * @return DayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
                      */
                     std::string GetDayOfMonth() const;
 
                     /**
-                     * 设置快照按月重复，每月1-31号，选择一天，每月这一天打快照。
-                     * @param DayOfMonth 快照按月重复，每月1-31号，选择一天，每月这一天打快照。
+                     * 设置快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
+                     * @param DayOfMonth 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
                      */
                     void SetDayOfMonth(const std::string& _dayOfMonth);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_aliveDaysHasBeenSet;
 
                     /**
-                     * 快照按月重复，每月1-31号，选择一天，每月这一天打快照。
+                     * 快照按月重复，每月1-31号，选择一天，每月将在这一天自动创建快照。
                      */
                     std::string m_dayOfMonth;
                     bool m_dayOfMonthHasBeenSet;

@@ -239,14 +239,14 @@ IMPORTFAILED-导入失败
                     bool ImageStateHasBeenSet() const;
 
                     /**
-                     * 获取镜像来源平台
-                     * @return Platform 镜像来源平台
+                     * 获取镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
+                     * @return Platform 镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
                      */
                     std::string GetPlatform() const;
 
                     /**
-                     * 设置镜像来源平台
-                     * @param Platform 镜像来源平台
+                     * 设置镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
+                     * @param Platform 镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
                      */
                     void SetPlatform(const std::string& _platform);
 
@@ -462,7 +462,7 @@ IMPORTFAILED-导入失败
                     bool m_imageStateHasBeenSet;
 
                     /**
-                     * 镜像来源平台
+                     * 镜像来源平台，包括如TencentOS、 CentOS、 Windows、 Ubuntu、 Debian、Fedora等。
                      */
                     std::string m_platform;
                     bool m_platformHasBeenSet;

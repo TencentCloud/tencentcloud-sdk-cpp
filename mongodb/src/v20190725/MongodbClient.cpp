@@ -298,6 +298,49 @@ MongodbClient::CreateDBInstanceHourOutcomeCallable MongodbClient::CreateDBInstan
     return task->get_future();
 }
 
+MongodbClient::DeleteAccountUserOutcome MongodbClient::DeleteAccountUser(const DeleteAccountUserRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAccountUser");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAccountUserResponse rsp = DeleteAccountUserResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAccountUserOutcome(rsp);
+        else
+            return DeleteAccountUserOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAccountUserOutcome(outcome.GetError());
+    }
+}
+
+void MongodbClient::DeleteAccountUserAsync(const DeleteAccountUserRequest& request, const DeleteAccountUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAccountUser(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+MongodbClient::DeleteAccountUserOutcomeCallable MongodbClient::DeleteAccountUserCallable(const DeleteAccountUserRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAccountUserOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAccountUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 MongodbClient::DescribeAccountUsersOutcome MongodbClient::DescribeAccountUsers(const DescribeAccountUsersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeAccountUsers");

@@ -31,7 +31,8 @@ SearchLogResponse::SearchLogResponse() :
     m_colNamesHasBeenSet(false),
     m_analysisResultsHasBeenSet(false),
     m_analysisRecordsHasBeenSet(false),
-    m_columnsHasBeenSet(false)
+    m_columnsHasBeenSet(false),
+    m_samplingRateHasBeenSet(false)
 {
 }
 
@@ -185,6 +186,16 @@ CoreInternalOutcome SearchLogResponse::Deserialize(const string &payload)
         m_columnsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("SamplingRate") && !rsp["SamplingRate"].IsNull())
+    {
+        if (!rsp["SamplingRate"].IsLosslessDouble())
+        {
+            return CoreInternalOutcome(Core::Error("response `SamplingRate` IsLosslessDouble=false incorrectly").SetRequestId(requestId));
+        }
+        m_samplingRate = rsp["SamplingRate"].GetDouble();
+        m_samplingRateHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -290,6 +301,14 @@ string SearchLogResponse::ToJsonString() const
         }
     }
 
+    if (m_samplingRateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SamplingRate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_samplingRate, allocator);
+    }
+
     rapidjson::Value iKey(rapidjson::kStringType);
     string key = "RequestId";
     iKey.SetString(key.c_str(), allocator);
@@ -380,6 +399,16 @@ vector<Column> SearchLogResponse::GetColumns() const
 bool SearchLogResponse::ColumnsHasBeenSet() const
 {
     return m_columnsHasBeenSet;
+}
+
+double SearchLogResponse::GetSamplingRate() const
+{
+    return m_samplingRate;
+}
+
+bool SearchLogResponse::SamplingRateHasBeenSet() const
+{
+    return m_samplingRateHasBeenSet;
 }
 
 

@@ -49,14 +49,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
-                     * @return CloudStorage 第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
+                     * 获取第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * @return CloudStorage 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
                      */
                     CloudStorage GetCloudStorage() const;
 
                     /**
-                     * 设置第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
-                     * @param CloudStorage 第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
+                     * 设置第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
+                     * @param CloudStorage 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
                      */
                     void SetCloudStorage(const CloudStorage& _cloudStorage);
 
@@ -67,14 +67,14 @@ namespace TencentCloud
                     bool CloudStorageHasBeenSet() const;
 
                     /**
-                     * 获取【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
-                     * @return CloudVod 【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
+                     * 获取腾讯云云点播的账号信息。
+                     * @return CloudVod 腾讯云云点播的账号信息。
                      */
                     CloudVod GetCloudVod() const;
 
                     /**
-                     * 设置【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
-                     * @param CloudVod 【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
+                     * 设置腾讯云云点播的账号信息。
+                     * @param CloudVod 腾讯云云点播的账号信息。
                      */
                     void SetCloudVod(const CloudVod& _cloudVod);
 
@@ -87,13 +87,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 第三方云存储的账号信息（CloudStorage参数暂不可用，请使用CloudVod参数存储至云点播）。
+                     * 第三方云存储的账号信息（特别说明：若您选择存储至对象存储COS将会收取录制文件投递至COS的费用，详见云端录制收费说明，存储至VOD将不收取此项费用。）。
                      */
                     CloudStorage m_cloudStorage;
                     bool m_cloudStorageHasBeenSet;
 
                     /**
-                     * 【必填】腾讯云云点播的账号信息，目前仅支持存储至腾讯云点播VOD。
+                     * 腾讯云云点播的账号信息。
                      */
                     CloudVod m_cloudVod;
                     bool m_cloudVodHasBeenSet;

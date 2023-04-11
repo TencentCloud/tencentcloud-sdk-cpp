@@ -56,8 +56,8 @@ namespace TencentCloud
                     bool MachineIpHasBeenSet() const;
 
                     /**
-                     * 获取受云镜保护天数。
-                     * @return ProtectDays 受云镜保护天数。
+                     * 获取受主机安全保护天数。
+                     * @return ProtectDays 受主机安全保护天数。
                      */
                     uint64_t GetProtectDays() const;
 
@@ -144,8 +144,8 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取云镜客户端唯一Uuid。
-                     * @return Uuid 云镜客户端唯一Uuid。
+                     * 获取主机安全客户端唯一Uuid。
+                     * @return Uuid 主机安全客户端唯一Uuid。
                      */
                     std::string GetUuid() const;
 
@@ -294,8 +294,8 @@ namespace TencentCloud
                     bool HasAssetScanHasBeenSet() const;
 
                     /**
-                     * 获取防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
-                     * @return ProtectType 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * 获取防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
+                     * @return ProtectType 防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
                      */
                     std::string GetProtectType() const;
 
@@ -314,7 +314,7 @@ namespace TencentCloud
                     bool m_machineIpHasBeenSet;
 
                     /**
-                     * 受云镜保护天数。
+                     * 受主机安全保护天数。
                      */
                     uint64_t m_protectDays;
                     bool m_protectDaysHasBeenSet;
@@ -358,7 +358,7 @@ namespace TencentCloud
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 云镜客户端唯一Uuid。
+                     * 主机安全客户端唯一Uuid。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
@@ -433,7 +433,7 @@ namespace TencentCloud
                     bool m_hasAssetScanHasBeenSet;
 
                     /**
-                     * 防护版本 BASIC_VERSION 基础版, PRO_VERSION 专业版 Flagship 旗舰版.
+                     * 防护版本：BASIC_VERSION 基础版，PRO_VERSION 专业版，Flagship 旗舰版，GENERAL_DISCOUNT 普惠版
                      */
                     std::string m_protectType;
                     bool m_protectTypeHasBeenSet;

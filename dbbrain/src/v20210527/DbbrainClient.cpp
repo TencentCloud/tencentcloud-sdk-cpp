@@ -1502,6 +1502,49 @@ DbbrainClient::DescribeSlowLogUserHostStatsOutcomeCallable DbbrainClient::Descri
     return task->get_future();
 }
 
+DbbrainClient::DescribeSlowLogsOutcome DbbrainClient::DescribeSlowLogs(const DescribeSlowLogsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeSlowLogs");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeSlowLogsResponse rsp = DescribeSlowLogsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeSlowLogsOutcome(rsp);
+        else
+            return DescribeSlowLogsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeSlowLogsOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeSlowLogsAsync(const DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeSlowLogs(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeSlowLogsOutcomeCallable DbbrainClient::DescribeSlowLogsCallable(const DescribeSlowLogsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeSlowLogsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeSlowLogs(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DescribeSqlFiltersOutcome DbbrainClient::DescribeSqlFilters(const DescribeSqlFiltersRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeSqlFilters");

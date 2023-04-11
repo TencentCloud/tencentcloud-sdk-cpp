@@ -259,7 +259,9 @@ namespace TencentCloud
                 CreateCRDesktopCodeOutcomeCallable CreateCRDesktopCodeCallable(const Model::CreateCRDesktopCodeRequest& request);
 
                 /**
-                 *版权保护-新建取证接口
+                 *不对外提供接口能力了
+
+版权保护-新建取证接口
                  * @param req CreateCRObtainRequest
                  * @return CreateCRObtainOutcome
                  */

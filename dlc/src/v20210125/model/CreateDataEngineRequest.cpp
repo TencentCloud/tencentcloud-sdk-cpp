@@ -49,7 +49,9 @@ CreateDataEngineRequest::CreateDataEngineRequest() :
     m_resourceTypeHasBeenSet(false),
     m_dataEngineConfigPairsHasBeenSet(false),
     m_imageVersionNameHasBeenSet(false),
-    m_mainClusterNameHasBeenSet(false)
+    m_mainClusterNameHasBeenSet(false),
+    m_elasticSwitchHasBeenSet(false),
+    m_elasticLimitHasBeenSet(false)
 {
 }
 
@@ -289,6 +291,22 @@ string CreateDataEngineRequest::ToJsonString() const
         string key = "MainClusterName";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_mainClusterName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_elasticSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticSwitch, allocator);
+    }
+
+    if (m_elasticLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticLimit";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_elasticLimit, allocator);
     }
 
 
@@ -729,6 +747,38 @@ void CreateDataEngineRequest::SetMainClusterName(const string& _mainClusterName)
 bool CreateDataEngineRequest::MainClusterNameHasBeenSet() const
 {
     return m_mainClusterNameHasBeenSet;
+}
+
+bool CreateDataEngineRequest::GetElasticSwitch() const
+{
+    return m_elasticSwitch;
+}
+
+void CreateDataEngineRequest::SetElasticSwitch(const bool& _elasticSwitch)
+{
+    m_elasticSwitch = _elasticSwitch;
+    m_elasticSwitchHasBeenSet = true;
+}
+
+bool CreateDataEngineRequest::ElasticSwitchHasBeenSet() const
+{
+    return m_elasticSwitchHasBeenSet;
+}
+
+int64_t CreateDataEngineRequest::GetElasticLimit() const
+{
+    return m_elasticLimit;
+}
+
+void CreateDataEngineRequest::SetElasticLimit(const int64_t& _elasticLimit)
+{
+    m_elasticLimit = _elasticLimit;
+    m_elasticLimitHasBeenSet = true;
+}
+
+bool CreateDataEngineRequest::ElasticLimitHasBeenSet() const
+{
+    return m_elasticLimitHasBeenSet;
 }
 
 

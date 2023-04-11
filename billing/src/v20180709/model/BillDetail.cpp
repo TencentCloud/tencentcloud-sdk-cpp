@@ -44,7 +44,8 @@ BillDetail::BillDetail() :
     m_productCodeHasBeenSet(false),
     m_actionTypeHasBeenSet(false),
     m_regionIdHasBeenSet(false),
-    m_projectIdHasBeenSet(false)
+    m_projectIdHasBeenSet(false),
+    m_priceInfoHasBeenSet(false)
 {
 }
 
@@ -313,6 +314,19 @@ CoreInternalOutcome BillDetail::Deserialize(const rapidjson::Value &value)
         m_projectIdHasBeenSet = true;
     }
 
+    if (value.HasMember("PriceInfo") && !value["PriceInfo"].IsNull())
+    {
+        if (!value["PriceInfo"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `BillDetail.PriceInfo` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["PriceInfo"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_priceInfo.push_back((*itr).GetString());
+        }
+        m_priceInfoHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -524,6 +538,19 @@ void BillDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ProjectId";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_projectId, allocator);
+    }
+
+    if (m_priceInfoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PriceInfo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_priceInfo.begin(); itr != m_priceInfo.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -911,5 +938,21 @@ void BillDetail::SetProjectId(const int64_t& _projectId)
 bool BillDetail::ProjectIdHasBeenSet() const
 {
     return m_projectIdHasBeenSet;
+}
+
+vector<string> BillDetail::GetPriceInfo() const
+{
+    return m_priceInfo;
+}
+
+void BillDetail::SetPriceInfo(const vector<string>& _priceInfo)
+{
+    m_priceInfo = _priceInfo;
+    m_priceInfoHasBeenSet = true;
+}
+
+bool BillDetail::PriceInfoHasBeenSet() const
+{
+    return m_priceInfoHasBeenSet;
 }
 

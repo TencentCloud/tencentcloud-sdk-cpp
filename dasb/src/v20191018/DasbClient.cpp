@@ -1330,6 +1330,92 @@ DasbClient::DescribeDevicesOutcomeCallable DasbClient::DescribeDevicesCallable(c
     return task->get_future();
 }
 
+DasbClient::DescribeLoginEventOutcome DasbClient::DescribeLoginEvent(const DescribeLoginEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeLoginEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeLoginEventResponse rsp = DescribeLoginEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeLoginEventOutcome(rsp);
+        else
+            return DescribeLoginEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeLoginEventOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeLoginEventAsync(const DescribeLoginEventRequest& request, const DescribeLoginEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeLoginEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeLoginEventOutcomeCallable DasbClient::DescribeLoginEventCallable(const DescribeLoginEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeLoginEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeLoginEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::DescribeOperationEventOutcome DasbClient::DescribeOperationEvent(const DescribeOperationEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeOperationEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeOperationEventResponse rsp = DescribeOperationEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeOperationEventOutcome(rsp);
+        else
+            return DescribeOperationEventOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeOperationEventOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::DescribeOperationEventAsync(const DescribeOperationEventRequest& request, const DescribeOperationEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeOperationEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::DescribeOperationEventOutcomeCallable DasbClient::DescribeOperationEventCallable(const DescribeOperationEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeOperationEventOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeOperationEvent(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DasbClient::DescribeResourcesOutcome DasbClient::DescribeResources(const DescribeResourcesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeResources");
@@ -1839,6 +1925,307 @@ DasbClient::ResetUserOutcomeCallable DasbClient::ResetUserCallable(const ResetUs
         [this, request]()
         {
             return this->ResetUser(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::SearchAuditLogOutcome DasbClient::SearchAuditLog(const SearchAuditLogRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchAuditLog");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchAuditLogResponse rsp = SearchAuditLogResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchAuditLogOutcome(rsp);
+        else
+            return SearchAuditLogOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchAuditLogOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::SearchAuditLogAsync(const SearchAuditLogRequest& request, const SearchAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchAuditLog(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::SearchAuditLogOutcomeCallable DasbClient::SearchAuditLogCallable(const SearchAuditLogRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchAuditLogOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchAuditLog(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::SearchCommandOutcome DasbClient::SearchCommand(const SearchCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchCommandResponse rsp = SearchCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchCommandOutcome(rsp);
+        else
+            return SearchCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchCommandOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::SearchCommandAsync(const SearchCommandRequest& request, const SearchCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::SearchCommandOutcomeCallable DasbClient::SearchCommandCallable(const SearchCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchCommand(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::SearchCommandBySidOutcome DasbClient::SearchCommandBySid(const SearchCommandBySidRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchCommandBySid");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchCommandBySidResponse rsp = SearchCommandBySidResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchCommandBySidOutcome(rsp);
+        else
+            return SearchCommandBySidOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchCommandBySidOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::SearchCommandBySidAsync(const SearchCommandBySidRequest& request, const SearchCommandBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchCommandBySid(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::SearchCommandBySidOutcomeCallable DasbClient::SearchCommandBySidCallable(const SearchCommandBySidRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchCommandBySidOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchCommandBySid(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::SearchFileOutcome DasbClient::SearchFile(const SearchFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchFileResponse rsp = SearchFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchFileOutcome(rsp);
+        else
+            return SearchFileOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchFileOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::SearchFileAsync(const SearchFileRequest& request, const SearchFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::SearchFileOutcomeCallable DasbClient::SearchFileCallable(const SearchFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchFileOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::SearchFileBySidOutcome DasbClient::SearchFileBySid(const SearchFileBySidRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchFileBySid");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchFileBySidResponse rsp = SearchFileBySidResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchFileBySidOutcome(rsp);
+        else
+            return SearchFileBySidOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchFileBySidOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::SearchFileBySidAsync(const SearchFileBySidRequest& request, const SearchFileBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchFileBySid(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::SearchFileBySidOutcomeCallable DasbClient::SearchFileBySidCallable(const SearchFileBySidRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchFileBySidOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchFileBySid(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::SearchSessionOutcome DasbClient::SearchSession(const SearchSessionRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchSession");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchSessionResponse rsp = SearchSessionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchSessionOutcome(rsp);
+        else
+            return SearchSessionOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchSessionOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::SearchSessionAsync(const SearchSessionRequest& request, const SearchSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchSession(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::SearchSessionOutcomeCallable DasbClient::SearchSessionCallable(const SearchSessionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchSessionOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchSession(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DasbClient::SearchSessionCommandOutcome DasbClient::SearchSessionCommand(const SearchSessionCommandRequest &request)
+{
+    auto outcome = MakeRequest(request, "SearchSessionCommand");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SearchSessionCommandResponse rsp = SearchSessionCommandResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SearchSessionCommandOutcome(rsp);
+        else
+            return SearchSessionCommandOutcome(o.GetError());
+    }
+    else
+    {
+        return SearchSessionCommandOutcome(outcome.GetError());
+    }
+}
+
+void DasbClient::SearchSessionCommandAsync(const SearchSessionCommandRequest& request, const SearchSessionCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SearchSessionCommand(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DasbClient::SearchSessionCommandOutcomeCallable DasbClient::SearchSessionCommandCallable(const SearchSessionCommandRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SearchSessionCommandOutcome()>>(
+        [this, request]()
+        {
+            return this->SearchSessionCommand(request);
         }
     );
 

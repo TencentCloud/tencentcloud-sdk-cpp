@@ -27,7 +27,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeLogHistogramRequest.h
   include/tencentcloud/cls/v20201016/model/DescribeLogContextRequest.h
   include/tencentcloud/cls/v20201016/model/DeleteShipperRequest.h
-  include/tencentcloud/cls/v20201016/model/ModifyTopicRequest.h
+  include/tencentcloud/cls/v20201016/model/DynamicIndex.h
   include/tencentcloud/cls/v20201016/model/DeleteLogsetResponse.h
   include/tencentcloud/cls/v20201016/model/ParquetKeyInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeCosRechargesResponse.h
@@ -49,7 +49,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DescribeShippersResponse.h
   include/tencentcloud/cls/v20201016/model/CreateConfigExtraResponse.h
   include/tencentcloud/cls/v20201016/model/ModifyShipperResponse.h
-  include/tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h
+  include/tencentcloud/cls/v20201016/model/ModifyTopicRequest.h
   include/tencentcloud/cls/v20201016/model/ContainerWorkLoadInfo.h
   include/tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h
   include/tencentcloud/cls/v20201016/model/CallBackInfo.h
@@ -197,6 +197,7 @@ set(cls_public_header_model
   include/tencentcloud/cls/v20201016/model/DeleteTopicResponse.h
   include/tencentcloud/cls/v20201016/model/CosRechargeInfo.h
   include/tencentcloud/cls/v20201016/model/ConsumerContent.h
+  include/tencentcloud/cls/v20201016/model/RetryShipperTaskRequest.h
   include/tencentcloud/cls/v20201016/model/CreateExportResponse.h
   include/tencentcloud/cls/v20201016/model/HostFileInfo.h
   include/tencentcloud/cls/v20201016/model/KeyRegexInfo.h
@@ -213,7 +214,7 @@ set(cls_src
   src/v20201016/model/DescribeLogHistogramRequest.cpp
   src/v20201016/model/DescribeLogContextRequest.cpp
   src/v20201016/model/DeleteShipperRequest.cpp
-  src/v20201016/model/ModifyTopicRequest.cpp
+  src/v20201016/model/DynamicIndex.cpp
   src/v20201016/model/DeleteLogsetResponse.cpp
   src/v20201016/model/ParquetKeyInfo.cpp
   src/v20201016/model/DescribeCosRechargesResponse.cpp
@@ -235,7 +236,7 @@ set(cls_src
   src/v20201016/model/DescribeShippersResponse.cpp
   src/v20201016/model/CreateConfigExtraResponse.cpp
   src/v20201016/model/ModifyShipperResponse.cpp
-  src/v20201016/model/RetryShipperTaskRequest.cpp
+  src/v20201016/model/ModifyTopicRequest.cpp
   src/v20201016/model/ContainerWorkLoadInfo.cpp
   src/v20201016/model/DescribeConfigExtrasResponse.cpp
   src/v20201016/model/CallBackInfo.cpp
@@ -383,6 +384,7 @@ set(cls_src
   src/v20201016/model/DeleteTopicResponse.cpp
   src/v20201016/model/CosRechargeInfo.cpp
   src/v20201016/model/ConsumerContent.cpp
+  src/v20201016/model/RetryShipperTaskRequest.cpp
   src/v20201016/model/CreateExportResponse.cpp
   src/v20201016/model/HostFileInfo.cpp
   src/v20201016/model/KeyRegexInfo.cpp

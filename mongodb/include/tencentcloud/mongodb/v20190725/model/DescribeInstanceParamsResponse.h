@@ -48,8 +48,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取值为枚举类型参数集合
-                     * @return InstanceEnumParam 值为枚举类型参数集合
+                     * 获取参数值为枚举类型参数集合。
+                     * @return InstanceEnumParam 参数值为枚举类型参数集合。
                      */
                     std::vector<InstanceEnumParam> GetInstanceEnumParam() const;
 
@@ -60,8 +60,8 @@ namespace TencentCloud
                     bool InstanceEnumParamHasBeenSet() const;
 
                     /**
-                     * 获取值为integer类型参数集合
-                     * @return InstanceIntegerParam 值为integer类型参数集合
+                     * 获取参数值为 Integer 类型参数集合。
+                     * @return InstanceIntegerParam 参数值为 Integer 类型参数集合。
                      */
                     std::vector<InstanceIntegerParam> GetInstanceIntegerParam() const;
 
@@ -72,8 +72,8 @@ namespace TencentCloud
                     bool InstanceIntegerParamHasBeenSet() const;
 
                     /**
-                     * 获取值为text类型的参数集合
-                     * @return InstanceTextParam 值为text类型的参数集合
+                     * 获取参数值为 Text 类型的参数集合。
+                     * @return InstanceTextParam 参数值为 Text 类型的参数集合。
                      */
                     std::vector<InstanceTextParam> GetInstanceTextParam() const;
 
@@ -84,8 +84,8 @@ namespace TencentCloud
                     bool InstanceTextParamHasBeenSet() const;
 
                     /**
-                     * 获取值为混合类型的参数集合
-                     * @return InstanceMultiParam 值为混合类型的参数集合
+                     * 获取参数值为混合类型的参数集合。
+                     * @return InstanceMultiParam 参数值为混合类型的参数集合。
                      */
                     std::vector<InstanceMultiParam> GetInstanceMultiParam() const;
 
@@ -110,25 +110,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 值为枚举类型参数集合
+                     * 参数值为枚举类型参数集合。
                      */
                     std::vector<InstanceEnumParam> m_instanceEnumParam;
                     bool m_instanceEnumParamHasBeenSet;
 
                     /**
-                     * 值为integer类型参数集合
+                     * 参数值为 Integer 类型参数集合。
                      */
                     std::vector<InstanceIntegerParam> m_instanceIntegerParam;
                     bool m_instanceIntegerParamHasBeenSet;
 
                     /**
-                     * 值为text类型的参数集合
+                     * 参数值为 Text 类型的参数集合。
                      */
                     std::vector<InstanceTextParam> m_instanceTextParam;
                     bool m_instanceTextParamHasBeenSet;
 
                     /**
-                     * 值为混合类型的参数集合
+                     * 参数值为混合类型的参数集合。
                      */
                     std::vector<InstanceMultiParam> m_instanceMultiParam;
                     bool m_instanceMultiParamHasBeenSet;

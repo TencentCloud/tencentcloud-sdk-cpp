@@ -233,6 +233,32 @@ video 纯视频
                     bool AutoMicHasBeenSet() const;
 
                     /**
+                     * 获取释放音视频权限后是否自动取消连麦。可以有以下取值：
+0 自动取消连麦（默认值）
+1 保持连麦状态
+                     * @return TurnOffMic 释放音视频权限后是否自动取消连麦。可以有以下取值：
+0 自动取消连麦（默认值）
+1 保持连麦状态
+                     */
+                    uint64_t GetTurnOffMic() const;
+
+                    /**
+                     * 设置释放音视频权限后是否自动取消连麦。可以有以下取值：
+0 自动取消连麦（默认值）
+1 保持连麦状态
+                     * @param TurnOffMic 释放音视频权限后是否自动取消连麦。可以有以下取值：
+0 自动取消连麦（默认值）
+1 保持连麦状态
+                     */
+                    void SetTurnOffMic(const uint64_t& _turnOffMic);
+
+                    /**
+                     * 判断参数 TurnOffMic 是否已赋值
+                     * @return TurnOffMic 是否已赋值
+                     */
+                    bool TurnOffMicHasBeenSet() const;
+
+                    /**
                      * 获取高音质模式。可以有以下取值：
 0 不开启高音质（默认值）
 1 开启高音质
@@ -305,6 +331,42 @@ video 纯视频
                      * @return Assistants 是否已赋值
                      */
                     bool AssistantsHasBeenSet() const;
+
+                    /**
+                     * 获取rtc人数。
+                     * @return RTCAudienceNumber rtc人数。
+                     */
+                    uint64_t GetRTCAudienceNumber() const;
+
+                    /**
+                     * 设置rtc人数。
+                     * @param RTCAudienceNumber rtc人数。
+                     */
+                    void SetRTCAudienceNumber(const uint64_t& _rTCAudienceNumber);
+
+                    /**
+                     * 判断参数 RTCAudienceNumber 是否已赋值
+                     * @return RTCAudienceNumber 是否已赋值
+                     */
+                    bool RTCAudienceNumberHasBeenSet() const;
+
+                    /**
+                     * 获取观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     * @return AudienceType 观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     */
+                    uint64_t GetAudienceType() const;
+
+                    /**
+                     * 设置观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     * @param AudienceType 观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     */
+                    void SetAudienceType(const uint64_t& _audienceType);
+
+                    /**
+                     * 判断参数 AudienceType 是否已赋值
+                     * @return AudienceType 是否已赋值
+                     */
+                    bool AudienceTypeHasBeenSet() const;
 
                     /**
                      * 获取录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744
@@ -406,6 +468,14 @@ video 纯视频
                     bool m_autoMicHasBeenSet;
 
                     /**
+                     * 释放音视频权限后是否自动取消连麦。可以有以下取值：
+0 自动取消连麦（默认值）
+1 保持连麦状态
+                     */
+                    uint64_t m_turnOffMic;
+                    bool m_turnOffMicHasBeenSet;
+
+                    /**
                      * 高音质模式。可以有以下取值：
 0 不开启高音质（默认值）
 1 开启高音质
@@ -427,6 +497,18 @@ video 纯视频
                      */
                     std::vector<std::string> m_assistants;
                     bool m_assistantsHasBeenSet;
+
+                    /**
+                     * rtc人数。
+                     */
+                    uint64_t m_rTCAudienceNumber;
+                    bool m_rTCAudienceNumberHasBeenSet;
+
+                    /**
+                     * 观看类型。0未知，1互动，2cdn或直播。 目前仅支持互动类型
+                     */
+                    uint64_t m_audienceType;
+                    bool m_audienceTypeHasBeenSet;
 
                     /**
                      * 录制布局。录制模板枚举值参考：https://cloud.tencent.com/document/product/1639/89744

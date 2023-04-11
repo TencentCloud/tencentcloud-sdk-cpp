@@ -29,6 +29,8 @@
 #include <tencentcloud/tiw/v20190919/model/CreateApplicationResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreateOfflineRecordRequest.h>
 #include <tencentcloud/tiw/v20190919/model/CreateOfflineRecordResponse.h>
+#include <tencentcloud/tiw/v20190919/model/CreatePPTCheckTaskRequest.h>
+#include <tencentcloud/tiw/v20190919/model/CreatePPTCheckTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreateSnapshotTaskRequest.h>
 #include <tencentcloud/tiw/v20190919/model/CreateSnapshotTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/CreateTranscodeRequest.h>
@@ -53,6 +55,10 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeOnlineRecordCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribePPTCheckRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribePPTCheckResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribePPTCheckCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribePPTCheckCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribePostpaidUsageRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribePostpaidUsageResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeQualityMetricsRequest.h>
@@ -61,6 +67,8 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeRecordSearchResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeRoomListRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeRoomListResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeRunningTasksRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeRunningTasksResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeSnapshotTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeTIWDailyUsageRequest.h>
@@ -85,6 +93,8 @@
 #include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeVideoGenerationTaskCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeWarningCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/DescribeWarningCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeWhiteboardApplicationConfigRequest.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeWhiteboardApplicationConfigResponse.h>
 #include <tencentcloud/tiw/v20190919/model/DescribeWhiteboardBucketConfigRequest.h>
@@ -113,6 +123,10 @@
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetOnlineRecordCallbackKeyResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetPPTCheckCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetPPTCheckCallbackResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetPPTCheckCallbackKeyRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetPPTCheckCallbackKeyResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetTranscodeCallbackKeyRequest.h>
@@ -121,6 +135,8 @@
 #include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetVideoGenerationTaskCallbackKeyResponse.h>
+#include <tencentcloud/tiw/v20190919/model/SetWarningCallbackRequest.h>
+#include <tencentcloud/tiw/v20190919/model/SetWarningCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackRequest.h>
 #include <tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackResponse.h>
 #include <tencentcloud/tiw/v20190919/model/SetWhiteboardPushCallbackKeyRequest.h>
@@ -156,6 +172,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateOfflineRecordResponse> CreateOfflineRecordOutcome;
                 typedef std::future<CreateOfflineRecordOutcome> CreateOfflineRecordOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::CreateOfflineRecordRequest&, CreateOfflineRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateOfflineRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreatePPTCheckTaskResponse> CreatePPTCheckTaskOutcome;
+                typedef std::future<CreatePPTCheckTaskOutcome> CreatePPTCheckTaskOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::CreatePPTCheckTaskRequest&, CreatePPTCheckTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreatePPTCheckTaskAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateSnapshotTaskResponse> CreateSnapshotTaskOutcome;
                 typedef std::future<CreateSnapshotTaskOutcome> CreateSnapshotTaskOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::CreateSnapshotTaskRequest&, CreateSnapshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSnapshotTaskAsyncHandler;
@@ -192,6 +211,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeOnlineRecordCallbackResponse> DescribeOnlineRecordCallbackOutcome;
                 typedef std::future<DescribeOnlineRecordCallbackOutcome> DescribeOnlineRecordCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeOnlineRecordCallbackRequest&, DescribeOnlineRecordCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOnlineRecordCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePPTCheckResponse> DescribePPTCheckOutcome;
+                typedef std::future<DescribePPTCheckOutcome> DescribePPTCheckOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribePPTCheckRequest&, DescribePPTCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePPTCheckAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePPTCheckCallbackResponse> DescribePPTCheckCallbackOutcome;
+                typedef std::future<DescribePPTCheckCallbackOutcome> DescribePPTCheckCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribePPTCheckCallbackRequest&, DescribePPTCheckCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePPTCheckCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePostpaidUsageResponse> DescribePostpaidUsageOutcome;
                 typedef std::future<DescribePostpaidUsageOutcome> DescribePostpaidUsageOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribePostpaidUsageRequest&, DescribePostpaidUsageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePostpaidUsageAsyncHandler;
@@ -204,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeRoomListResponse> DescribeRoomListOutcome;
                 typedef std::future<DescribeRoomListOutcome> DescribeRoomListOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeRoomListRequest&, DescribeRoomListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRoomListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeRunningTasksResponse> DescribeRunningTasksOutcome;
+                typedef std::future<DescribeRunningTasksOutcome> DescribeRunningTasksOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeRunningTasksRequest&, DescribeRunningTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeRunningTasksAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSnapshotTaskResponse> DescribeSnapshotTaskOutcome;
                 typedef std::future<DescribeSnapshotTaskOutcome> DescribeSnapshotTaskOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeSnapshotTaskRequest&, DescribeSnapshotTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSnapshotTaskAsyncHandler;
@@ -240,6 +268,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeVideoGenerationTaskCallbackResponse> DescribeVideoGenerationTaskCallbackOutcome;
                 typedef std::future<DescribeVideoGenerationTaskCallbackOutcome> DescribeVideoGenerationTaskCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeVideoGenerationTaskCallbackRequest&, DescribeVideoGenerationTaskCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeVideoGenerationTaskCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeWarningCallbackResponse> DescribeWarningCallbackOutcome;
+                typedef std::future<DescribeWarningCallbackOutcome> DescribeWarningCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::DescribeWarningCallbackRequest&, DescribeWarningCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWarningCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeWhiteboardApplicationConfigResponse> DescribeWhiteboardApplicationConfigOutcome;
                 typedef std::future<DescribeWhiteboardApplicationConfigOutcome> DescribeWhiteboardApplicationConfigOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::DescribeWhiteboardApplicationConfigRequest&, DescribeWhiteboardApplicationConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeWhiteboardApplicationConfigAsyncHandler;
@@ -282,6 +313,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetOnlineRecordCallbackKeyResponse> SetOnlineRecordCallbackKeyOutcome;
                 typedef std::future<SetOnlineRecordCallbackKeyOutcome> SetOnlineRecordCallbackKeyOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetOnlineRecordCallbackKeyRequest&, SetOnlineRecordCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetOnlineRecordCallbackKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetPPTCheckCallbackResponse> SetPPTCheckCallbackOutcome;
+                typedef std::future<SetPPTCheckCallbackOutcome> SetPPTCheckCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetPPTCheckCallbackRequest&, SetPPTCheckCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetPPTCheckCallbackAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetPPTCheckCallbackKeyResponse> SetPPTCheckCallbackKeyOutcome;
+                typedef std::future<SetPPTCheckCallbackKeyOutcome> SetPPTCheckCallbackKeyOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetPPTCheckCallbackKeyRequest&, SetPPTCheckCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetPPTCheckCallbackKeyAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetTranscodeCallbackResponse> SetTranscodeCallbackOutcome;
                 typedef std::future<SetTranscodeCallbackOutcome> SetTranscodeCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetTranscodeCallbackRequest&, SetTranscodeCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTranscodeCallbackAsyncHandler;
@@ -294,6 +331,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::SetVideoGenerationTaskCallbackKeyResponse> SetVideoGenerationTaskCallbackKeyOutcome;
                 typedef std::future<SetVideoGenerationTaskCallbackKeyOutcome> SetVideoGenerationTaskCallbackKeyOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetVideoGenerationTaskCallbackKeyRequest&, SetVideoGenerationTaskCallbackKeyOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetVideoGenerationTaskCallbackKeyAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetWarningCallbackResponse> SetWarningCallbackOutcome;
+                typedef std::future<SetWarningCallbackOutcome> SetWarningCallbackOutcomeCallable;
+                typedef std::function<void(const TiwClient*, const Model::SetWarningCallbackRequest&, SetWarningCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetWarningCallbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetWhiteboardPushCallbackResponse> SetWhiteboardPushCallbackOutcome;
                 typedef std::future<SetWhiteboardPushCallbackOutcome> SetWhiteboardPushCallbackOutcomeCallable;
                 typedef std::function<void(const TiwClient*, const Model::SetWhiteboardPushCallbackRequest&, SetWhiteboardPushCallbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetWhiteboardPushCallbackAsyncHandler;
@@ -341,6 +381,15 @@ namespace TencentCloud
                 CreateOfflineRecordOutcome CreateOfflineRecord(const Model::CreateOfflineRecordRequest &request);
                 void CreateOfflineRecordAsync(const Model::CreateOfflineRecordRequest& request, const CreateOfflineRecordAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateOfflineRecordOutcomeCallable CreateOfflineRecordCallable(const Model::CreateOfflineRecordRequest& request);
+
+                /**
+                 *检测PPT文件，识别PPT中包含的动态转码任务（Transcode）不支持的元素
+                 * @param req CreatePPTCheckTaskRequest
+                 * @return CreatePPTCheckTaskOutcome
+                 */
+                CreatePPTCheckTaskOutcome CreatePPTCheckTask(const Model::CreatePPTCheckTaskRequest &request);
+                void CreatePPTCheckTaskAsync(const Model::CreatePPTCheckTaskRequest& request, const CreatePPTCheckTaskAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreatePPTCheckTaskOutcomeCallable CreatePPTCheckTaskCallable(const Model::CreatePPTCheckTaskRequest& request);
 
                 /**
                  *创建白板板书生成任务, 在任务结束后，如果提供了回调地址，将通过回调地址通知板书生成结果
@@ -451,6 +500,24 @@ namespace TencentCloud
                 DescribeOnlineRecordCallbackOutcomeCallable DescribeOnlineRecordCallbackCallable(const Model::DescribeOnlineRecordCallbackRequest& request);
 
                 /**
+                 *查询PPT检测任务的执行进度或结果
+                 * @param req DescribePPTCheckRequest
+                 * @return DescribePPTCheckOutcome
+                 */
+                DescribePPTCheckOutcome DescribePPTCheck(const Model::DescribePPTCheckRequest &request);
+                void DescribePPTCheckAsync(const Model::DescribePPTCheckRequest& request, const DescribePPTCheckAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePPTCheckOutcomeCallable DescribePPTCheckCallable(const Model::DescribePPTCheckRequest& request);
+
+                /**
+                 *查询PPT检测任务回调地址
+                 * @param req DescribePPTCheckCallbackRequest
+                 * @return DescribePPTCheckCallbackOutcome
+                 */
+                DescribePPTCheckCallbackOutcome DescribePPTCheckCallback(const Model::DescribePPTCheckCallbackRequest &request);
+                void DescribePPTCheckCallbackAsync(const Model::DescribePPTCheckCallbackRequest& request, const DescribePPTCheckCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePPTCheckCallbackOutcomeCallable DescribePPTCheckCallbackCallable(const Model::DescribePPTCheckCallbackRequest& request);
+
+                /**
                  *查询用户后付费用量
                  * @param req DescribePostpaidUsageRequest
                  * @return DescribePostpaidUsageOutcome
@@ -485,6 +552,15 @@ namespace TencentCloud
                 DescribeRoomListOutcome DescribeRoomList(const Model::DescribeRoomListRequest &request);
                 void DescribeRoomListAsync(const Model::DescribeRoomListRequest& request, const DescribeRoomListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeRoomListOutcomeCallable DescribeRoomListCallable(const Model::DescribeRoomListRequest& request);
+
+                /**
+                 *根据指定的任务类型，获取当前正在执行中的任务列表。只能查询最近3天内创建的任务。
+                 * @param req DescribeRunningTasksRequest
+                 * @return DescribeRunningTasksOutcome
+                 */
+                DescribeRunningTasksOutcome DescribeRunningTasks(const Model::DescribeRunningTasksRequest &request);
+                void DescribeRunningTasksAsync(const Model::DescribeRunningTasksRequest& request, const DescribeRunningTasksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeRunningTasksOutcomeCallable DescribeRunningTasksCallable(const Model::DescribeRunningTasksRequest& request);
 
                 /**
                  *获取指定白板板书生成任务信息
@@ -600,6 +676,15 @@ namespace TencentCloud
                 DescribeVideoGenerationTaskCallbackOutcome DescribeVideoGenerationTaskCallback(const Model::DescribeVideoGenerationTaskCallbackRequest &request);
                 void DescribeVideoGenerationTaskCallbackAsync(const Model::DescribeVideoGenerationTaskCallbackRequest& request, const DescribeVideoGenerationTaskCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeVideoGenerationTaskCallbackOutcomeCallable DescribeVideoGenerationTaskCallbackCallable(const Model::DescribeVideoGenerationTaskCallbackRequest& request);
+
+                /**
+                 *查询告警回调地址。此功能需要申请白名单使用。
+                 * @param req DescribeWarningCallbackRequest
+                 * @return DescribeWarningCallbackOutcome
+                 */
+                DescribeWarningCallbackOutcome DescribeWarningCallback(const Model::DescribeWarningCallbackRequest &request);
+                void DescribeWarningCallbackAsync(const Model::DescribeWarningCallbackRequest& request, const DescribeWarningCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeWarningCallbackOutcomeCallable DescribeWarningCallbackCallable(const Model::DescribeWarningCallbackRequest& request);
 
                 /**
                  *查询白板应用任务相关的配置，包括存储桶、回调等
@@ -728,6 +813,24 @@ namespace TencentCloud
                 SetOnlineRecordCallbackKeyOutcomeCallable SetOnlineRecordCallbackKeyCallable(const Model::SetOnlineRecordCallbackKeyRequest& request);
 
                 /**
+                 *设置PPT检测任务回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260
+                 * @param req SetPPTCheckCallbackRequest
+                 * @return SetPPTCheckCallbackOutcome
+                 */
+                SetPPTCheckCallbackOutcome SetPPTCheckCallback(const Model::SetPPTCheckCallbackRequest &request);
+                void SetPPTCheckCallbackAsync(const Model::SetPPTCheckCallbackRequest& request, const SetPPTCheckCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetPPTCheckCallbackOutcomeCallable SetPPTCheckCallbackCallable(const Model::SetPPTCheckCallbackRequest& request);
+
+                /**
+                 *设置PPT检测任务回调密钥，回调鉴权方式请参考文档：https://cloud.tencent.com/document/product/1137/40257
+                 * @param req SetPPTCheckCallbackKeyRequest
+                 * @return SetPPTCheckCallbackKeyOutcome
+                 */
+                SetPPTCheckCallbackKeyOutcome SetPPTCheckCallbackKey(const Model::SetPPTCheckCallbackKeyRequest &request);
+                void SetPPTCheckCallbackKeyAsync(const Model::SetPPTCheckCallbackKeyRequest& request, const SetPPTCheckCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetPPTCheckCallbackKeyOutcomeCallable SetPPTCheckCallbackKeyCallable(const Model::SetPPTCheckCallbackKeyRequest& request);
+
+                /**
                  *设置文档转码回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40260
                  * @param req SetTranscodeCallbackRequest
                  * @return SetTranscodeCallbackOutcome
@@ -762,6 +865,15 @@ namespace TencentCloud
                 SetVideoGenerationTaskCallbackKeyOutcome SetVideoGenerationTaskCallbackKey(const Model::SetVideoGenerationTaskCallbackKeyRequest &request);
                 void SetVideoGenerationTaskCallbackKeyAsync(const Model::SetVideoGenerationTaskCallbackKeyRequest& request, const SetVideoGenerationTaskCallbackKeyAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 SetVideoGenerationTaskCallbackKeyOutcomeCallable SetVideoGenerationTaskCallbackKeyCallable(const Model::SetVideoGenerationTaskCallbackKeyRequest& request);
+
+                /**
+                 *设置告警回调地址。此功能需要申请白名单使用。
+                 * @param req SetWarningCallbackRequest
+                 * @return SetWarningCallbackOutcome
+                 */
+                SetWarningCallbackOutcome SetWarningCallback(const Model::SetWarningCallbackRequest &request);
+                void SetWarningCallbackAsync(const Model::SetWarningCallbackRequest& request, const SetWarningCallbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetWarningCallbackOutcomeCallable SetWarningCallbackCallable(const Model::SetWarningCallbackRequest& request);
 
                 /**
                  *设置白板推流回调地址，回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/40257

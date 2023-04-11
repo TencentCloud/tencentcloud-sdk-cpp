@@ -91,6 +91,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogTopSqlsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogUserHostStatsRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogUserHostStatsResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogsRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeSlowLogsResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlFiltersResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeSqlTemplateRequest.h>
@@ -229,6 +231,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeSlowLogUserHostStatsResponse> DescribeSlowLogUserHostStatsOutcome;
                 typedef std::future<DescribeSlowLogUserHostStatsOutcome> DescribeSlowLogUserHostStatsOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogUserHostStatsRequest&, DescribeSlowLogUserHostStatsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogUserHostStatsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeSlowLogsResponse> DescribeSlowLogsOutcome;
+                typedef std::future<DescribeSlowLogsOutcome> DescribeSlowLogsOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeSlowLogsRequest&, DescribeSlowLogsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSlowLogsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeSqlFiltersResponse> DescribeSqlFiltersOutcome;
                 typedef std::future<DescribeSqlFiltersOutcome> DescribeSqlFiltersOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeSqlFiltersRequest&, DescribeSqlFiltersOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeSqlFiltersAsyncHandler;
@@ -570,6 +575,15 @@ namespace TencentCloud
                 DescribeSlowLogUserHostStatsOutcome DescribeSlowLogUserHostStats(const Model::DescribeSlowLogUserHostStatsRequest &request);
                 void DescribeSlowLogUserHostStatsAsync(const Model::DescribeSlowLogUserHostStatsRequest& request, const DescribeSlowLogUserHostStatsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeSlowLogUserHostStatsOutcomeCallable DescribeSlowLogUserHostStatsCallable(const Model::DescribeSlowLogUserHostStatsRequest& request);
+
+                /**
+                 *获取指定时间内某个sql模版的慢日志明细
+                 * @param req DescribeSlowLogsRequest
+                 * @return DescribeSlowLogsOutcome
+                 */
+                DescribeSlowLogsOutcome DescribeSlowLogs(const Model::DescribeSlowLogsRequest &request);
+                void DescribeSlowLogsAsync(const Model::DescribeSlowLogsRequest& request, const DescribeSlowLogsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeSlowLogsOutcomeCallable DescribeSlowLogsCallable(const Model::DescribeSlowLogsRequest& request);
 
                 /**
                  *查询实例SQL限流任务列表。

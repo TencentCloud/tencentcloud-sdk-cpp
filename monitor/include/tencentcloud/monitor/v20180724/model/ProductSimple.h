@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 云监控支持的产品简要信息
+                * 云产品监控支持的产品简要信息
                 */
                 class ProductSimple : public AbstractModel
                 {

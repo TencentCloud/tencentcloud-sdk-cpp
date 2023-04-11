@@ -83,6 +83,10 @@
 #include <tencentcloud/dasb/v20191018/model/DescribeDeviceGroupsResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDevicesRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeDevicesResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeLoginEventRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeLoginEventResponse.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeOperationEventRequest.h>
+#include <tencentcloud/dasb/v20191018/model/DescribeOperationEventResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeResourcesRequest.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeResourcesResponse.h>
 #include <tencentcloud/dasb/v20191018/model/DescribeUserGroupMembersRequest.h>
@@ -107,6 +111,20 @@
 #include <tencentcloud/dasb/v20191018/model/ResetDeviceAccountPrivateKeyResponse.h>
 #include <tencentcloud/dasb/v20191018/model/ResetUserRequest.h>
 #include <tencentcloud/dasb/v20191018/model/ResetUserResponse.h>
+#include <tencentcloud/dasb/v20191018/model/SearchAuditLogRequest.h>
+#include <tencentcloud/dasb/v20191018/model/SearchAuditLogResponse.h>
+#include <tencentcloud/dasb/v20191018/model/SearchCommandRequest.h>
+#include <tencentcloud/dasb/v20191018/model/SearchCommandResponse.h>
+#include <tencentcloud/dasb/v20191018/model/SearchCommandBySidRequest.h>
+#include <tencentcloud/dasb/v20191018/model/SearchCommandBySidResponse.h>
+#include <tencentcloud/dasb/v20191018/model/SearchFileRequest.h>
+#include <tencentcloud/dasb/v20191018/model/SearchFileResponse.h>
+#include <tencentcloud/dasb/v20191018/model/SearchFileBySidRequest.h>
+#include <tencentcloud/dasb/v20191018/model/SearchFileBySidResponse.h>
+#include <tencentcloud/dasb/v20191018/model/SearchSessionRequest.h>
+#include <tencentcloud/dasb/v20191018/model/SearchSessionResponse.h>
+#include <tencentcloud/dasb/v20191018/model/SearchSessionCommandRequest.h>
+#include <tencentcloud/dasb/v20191018/model/SearchSessionCommandResponse.h>
 
 
 namespace TencentCloud
@@ -211,6 +229,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDevicesResponse> DescribeDevicesOutcome;
                 typedef std::future<DescribeDevicesOutcome> DescribeDevicesOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeDevicesRequest&, DescribeDevicesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDevicesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeLoginEventResponse> DescribeLoginEventOutcome;
+                typedef std::future<DescribeLoginEventOutcome> DescribeLoginEventOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeLoginEventRequest&, DescribeLoginEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeLoginEventAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeOperationEventResponse> DescribeOperationEventOutcome;
+                typedef std::future<DescribeOperationEventOutcome> DescribeOperationEventOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::DescribeOperationEventRequest&, DescribeOperationEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeOperationEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeResourcesResponse> DescribeResourcesOutcome;
                 typedef std::future<DescribeResourcesOutcome> DescribeResourcesOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::DescribeResourcesRequest&, DescribeResourcesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeResourcesAsyncHandler;
@@ -247,6 +271,27 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ResetUserResponse> ResetUserOutcome;
                 typedef std::future<ResetUserOutcome> ResetUserOutcomeCallable;
                 typedef std::function<void(const DasbClient*, const Model::ResetUserRequest&, ResetUserOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ResetUserAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchAuditLogResponse> SearchAuditLogOutcome;
+                typedef std::future<SearchAuditLogOutcome> SearchAuditLogOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::SearchAuditLogRequest&, SearchAuditLogOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchAuditLogAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchCommandResponse> SearchCommandOutcome;
+                typedef std::future<SearchCommandOutcome> SearchCommandOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::SearchCommandRequest&, SearchCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchCommandAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchCommandBySidResponse> SearchCommandBySidOutcome;
+                typedef std::future<SearchCommandBySidOutcome> SearchCommandBySidOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::SearchCommandBySidRequest&, SearchCommandBySidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchCommandBySidAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchFileResponse> SearchFileOutcome;
+                typedef std::future<SearchFileOutcome> SearchFileOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::SearchFileRequest&, SearchFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchFileAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchFileBySidResponse> SearchFileBySidOutcome;
+                typedef std::future<SearchFileBySidOutcome> SearchFileBySidOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::SearchFileBySidRequest&, SearchFileBySidOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchFileBySidAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchSessionResponse> SearchSessionOutcome;
+                typedef std::future<SearchSessionOutcome> SearchSessionOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::SearchSessionRequest&, SearchSessionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchSessionAsyncHandler;
+                typedef Outcome<Core::Error, Model::SearchSessionCommandResponse> SearchSessionCommandOutcome;
+                typedef std::future<SearchSessionCommandOutcome> SearchSessionCommandOutcomeCallable;
+                typedef std::function<void(const DasbClient*, const Model::SearchSessionCommandRequest&, SearchSessionCommandOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SearchSessionCommandAsyncHandler;
 
 
 
@@ -521,6 +566,24 @@ namespace TencentCloud
                 DescribeDevicesOutcomeCallable DescribeDevicesCallable(const Model::DescribeDevicesRequest& request);
 
                 /**
+                 *查询登录日志
+                 * @param req DescribeLoginEventRequest
+                 * @return DescribeLoginEventOutcome
+                 */
+                DescribeLoginEventOutcome DescribeLoginEvent(const Model::DescribeLoginEventRequest &request);
+                void DescribeLoginEventAsync(const Model::DescribeLoginEventRequest& request, const DescribeLoginEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeLoginEventOutcomeCallable DescribeLoginEventCallable(const Model::DescribeLoginEventRequest& request);
+
+                /**
+                 *查询操作日志
+                 * @param req DescribeOperationEventRequest
+                 * @return DescribeOperationEventOutcome
+                 */
+                DescribeOperationEventOutcome DescribeOperationEvent(const Model::DescribeOperationEventRequest &request);
+                void DescribeOperationEventAsync(const Model::DescribeOperationEventRequest& request, const DescribeOperationEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeOperationEventOutcomeCallable DescribeOperationEventCallable(const Model::DescribeOperationEventRequest& request);
+
+                /**
                  *查询用户购买的堡垒机服务信息，包括资源ID、授权点数、VPC、过期时间等。
                  * @param req DescribeResourcesRequest
                  * @return DescribeResourcesOutcome
@@ -627,6 +690,69 @@ namespace TencentCloud
                 ResetUserOutcome ResetUser(const Model::ResetUserRequest &request);
                 void ResetUserAsync(const Model::ResetUserRequest& request, const ResetUserAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ResetUserOutcomeCallable ResetUserCallable(const Model::ResetUserRequest& request);
+
+                /**
+                 *搜索审计日志
+                 * @param req SearchAuditLogRequest
+                 * @return SearchAuditLogOutcome
+                 */
+                SearchAuditLogOutcome SearchAuditLog(const Model::SearchAuditLogRequest &request);
+                void SearchAuditLogAsync(const Model::SearchAuditLogRequest& request, const SearchAuditLogAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchAuditLogOutcomeCallable SearchAuditLogCallable(const Model::SearchAuditLogRequest& request);
+
+                /**
+                 *命令执行检索
+                 * @param req SearchCommandRequest
+                 * @return SearchCommandOutcome
+                 */
+                SearchCommandOutcome SearchCommand(const Model::SearchCommandRequest &request);
+                void SearchCommandAsync(const Model::SearchCommandRequest& request, const SearchCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchCommandOutcomeCallable SearchCommandCallable(const Model::SearchCommandRequest& request);
+
+                /**
+                 *根据会话Id搜索Command
+                 * @param req SearchCommandBySidRequest
+                 * @return SearchCommandBySidOutcome
+                 */
+                SearchCommandBySidOutcome SearchCommandBySid(const Model::SearchCommandBySidRequest &request);
+                void SearchCommandBySidAsync(const Model::SearchCommandBySidRequest& request, const SearchCommandBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchCommandBySidOutcomeCallable SearchCommandBySidCallable(const Model::SearchCommandBySidRequest& request);
+
+                /**
+                 *文件传输检索
+                 * @param req SearchFileRequest
+                 * @return SearchFileOutcome
+                 */
+                SearchFileOutcome SearchFile(const Model::SearchFileRequest &request);
+                void SearchFileAsync(const Model::SearchFileRequest& request, const SearchFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchFileOutcomeCallable SearchFileCallable(const Model::SearchFileRequest& request);
+
+                /**
+                 *搜索文件传输会话下文件操作列表
+                 * @param req SearchFileBySidRequest
+                 * @return SearchFileBySidOutcome
+                 */
+                SearchFileBySidOutcome SearchFileBySid(const Model::SearchFileBySidRequest &request);
+                void SearchFileBySidAsync(const Model::SearchFileBySidRequest& request, const SearchFileBySidAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchFileBySidOutcomeCallable SearchFileBySidCallable(const Model::SearchFileBySidRequest& request);
+
+                /**
+                 *搜索会话
+                 * @param req SearchSessionRequest
+                 * @return SearchSessionOutcome
+                 */
+                SearchSessionOutcome SearchSession(const Model::SearchSessionRequest &request);
+                void SearchSessionAsync(const Model::SearchSessionRequest& request, const SearchSessionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchSessionOutcomeCallable SearchSessionCallable(const Model::SearchSessionRequest& request);
+
+                /**
+                 *命令检索
+                 * @param req SearchSessionCommandRequest
+                 * @return SearchSessionCommandOutcome
+                 */
+                SearchSessionCommandOutcome SearchSessionCommand(const Model::SearchSessionCommandRequest &request);
+                void SearchSessionCommandAsync(const Model::SearchSessionCommandRequest& request, const SearchSessionCommandAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SearchSessionCommandOutcomeCallable SearchSessionCommandCallable(const Model::SearchSessionCommandRequest& request);
 
             };
         }

@@ -63,13 +63,13 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeSlowLogsRequest.h
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigResponse.h
-  include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h
+  include/tencentcloud/mongodb/v20190725/model/InstanceMultiParam.h
   include/tencentcloud/mongodb/v20190725/model/SlowLogPattern.h
   include/tencentcloud/mongodb/v20190725/model/AssignProjectResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceDealResponse.h
   include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceResponse.h
   include/tencentcloud/mongodb/v20190725/model/IsolateDBInstanceResponse.h
-  include/tencentcloud/mongodb/v20190725/model/InstanceMultiParam.h
+  include/tencentcloud/mongodb/v20190725/model/DescribeSecurityGroupRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskResponse.h
   include/tencentcloud/mongodb/v20190725/model/FlushInstanceRouterConfigRequest.h
   include/tencentcloud/mongodb/v20190725/model/DBInstanceInfo.h
@@ -77,7 +77,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressRequest.h
   include/tencentcloud/mongodb/v20190725/model/CreateDBInstanceHourResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstanceNodePropertyRequest.h
-  include/tencentcloud/mongodb/v20190725/model/Operation.h
+  include/tencentcloud/mongodb/v20190725/model/DeleteAccountUserRequest.h
   include/tencentcloud/mongodb/v20190725/model/SpecItem.h
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceNetworkAddressResponse.h
   include/tencentcloud/mongodb/v20190725/model/CreateAccountUserResponse.h
@@ -100,6 +100,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/ModifyDBInstanceSecurityGroupRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeAccountUsersResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeBackupDownloadTaskRequest.h
+  include/tencentcloud/mongodb/v20190725/model/Operation.h
   include/tencentcloud/mongodb/v20190725/model/DescribeClientConnectionsResponse.h
   include/tencentcloud/mongodb/v20190725/model/TerminateDBInstancesRequest.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBBackupsResponse.h
@@ -143,6 +144,7 @@ set(mongodb_public_header_model
   include/tencentcloud/mongodb/v20190725/model/DescribeSpecInfoResponse.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceRenewDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/TagInfo.h
+  include/tencentcloud/mongodb/v20190725/model/DeleteAccountUserResponse.h
   include/tencentcloud/mongodb/v20190725/model/DescribeDBInstancesResponse.h
   include/tencentcloud/mongodb/v20190725/model/OfflineIsolatedDBInstanceRequest.h
   include/tencentcloud/mongodb/v20190725/model/InquirePriceCreateDBInstancesRequest.h
@@ -199,13 +201,13 @@ set(mongodb_src
   src/v20190725/model/InquirePriceRenewDBInstancesRequest.cpp
   src/v20190725/model/DescribeSlowLogsRequest.cpp
   src/v20190725/model/FlushInstanceRouterConfigResponse.cpp
-  src/v20190725/model/DescribeSecurityGroupRequest.cpp
+  src/v20190725/model/InstanceMultiParam.cpp
   src/v20190725/model/SlowLogPattern.cpp
   src/v20190725/model/AssignProjectResponse.cpp
   src/v20190725/model/DescribeDBInstanceDealResponse.cpp
   src/v20190725/model/OfflineIsolatedDBInstanceResponse.cpp
   src/v20190725/model/IsolateDBInstanceResponse.cpp
-  src/v20190725/model/InstanceMultiParam.cpp
+  src/v20190725/model/DescribeSecurityGroupRequest.cpp
   src/v20190725/model/DescribeBackupDownloadTaskResponse.cpp
   src/v20190725/model/FlushInstanceRouterConfigRequest.cpp
   src/v20190725/model/DBInstanceInfo.cpp
@@ -213,7 +215,7 @@ set(mongodb_src
   src/v20190725/model/ModifyDBInstanceNetworkAddressRequest.cpp
   src/v20190725/model/CreateDBInstanceHourResponse.cpp
   src/v20190725/model/DescribeDBInstanceNodePropertyRequest.cpp
-  src/v20190725/model/Operation.cpp
+  src/v20190725/model/DeleteAccountUserRequest.cpp
   src/v20190725/model/SpecItem.cpp
   src/v20190725/model/ModifyDBInstanceNetworkAddressResponse.cpp
   src/v20190725/model/CreateAccountUserResponse.cpp
@@ -236,6 +238,7 @@ set(mongodb_src
   src/v20190725/model/ModifyDBInstanceSecurityGroupRequest.cpp
   src/v20190725/model/DescribeAccountUsersResponse.cpp
   src/v20190725/model/DescribeBackupDownloadTaskRequest.cpp
+  src/v20190725/model/Operation.cpp
   src/v20190725/model/DescribeClientConnectionsResponse.cpp
   src/v20190725/model/TerminateDBInstancesRequest.cpp
   src/v20190725/model/DescribeDBBackupsResponse.cpp
@@ -279,6 +282,7 @@ set(mongodb_src
   src/v20190725/model/DescribeSpecInfoResponse.cpp
   src/v20190725/model/InquirePriceRenewDBInstancesResponse.cpp
   src/v20190725/model/TagInfo.cpp
+  src/v20190725/model/DeleteAccountUserResponse.cpp
   src/v20190725/model/DescribeDBInstancesResponse.cpp
   src/v20190725/model/OfflineIsolatedDBInstanceRequest.cpp
   src/v20190725/model/InquirePriceCreateDBInstancesRequest.cpp

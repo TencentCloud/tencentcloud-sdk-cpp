@@ -1593,7 +1593,7 @@ namespace TencentCloud
                 DeleteLoginWhiteListOutcomeCallable DeleteLoginWhiteListCallable(const Model::DeleteLoginWhiteListRequest& request);
 
                 /**
-                 *本接口（DeleteMachine）用于卸载云镜客户端。
+                 *本接口（DeleteMachine）用于卸载主机安全客户端。
                  * @param req DeleteMachineRequest
                  * @return DeleteMachineOutcome
                  */
