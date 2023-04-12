@@ -24,8 +24,8 @@ using namespace std;
 
 DescribeBashEventsRequest::DescribeBashEventsRequest() :
     m_limitHasBeenSet(false),
-    m_offsetHasBeenSet(false),
     m_filtersHasBeenSet(false),
+    m_offsetHasBeenSet(false),
     m_orderHasBeenSet(false),
     m_byHasBeenSet(false)
 {
@@ -46,14 +46,6 @@ string DescribeBashEventsRequest::ToJsonString() const
         d.AddMember(iKey, m_limit, allocator);
     }
 
-    if (m_offsetHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Offset";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_offset, allocator);
-    }
-
     if (m_filtersHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -67,6 +59,14 @@ string DescribeBashEventsRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_offsetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Offset";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_offset, allocator);
     }
 
     if (m_orderHasBeenSet)
@@ -109,22 +109,6 @@ bool DescribeBashEventsRequest::LimitHasBeenSet() const
     return m_limitHasBeenSet;
 }
 
-uint64_t DescribeBashEventsRequest::GetOffset() const
-{
-    return m_offset;
-}
-
-void DescribeBashEventsRequest::SetOffset(const uint64_t& _offset)
-{
-    m_offset = _offset;
-    m_offsetHasBeenSet = true;
-}
-
-bool DescribeBashEventsRequest::OffsetHasBeenSet() const
-{
-    return m_offsetHasBeenSet;
-}
-
 vector<Filter> DescribeBashEventsRequest::GetFilters() const
 {
     return m_filters;
@@ -139,6 +123,22 @@ void DescribeBashEventsRequest::SetFilters(const vector<Filter>& _filters)
 bool DescribeBashEventsRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+uint64_t DescribeBashEventsRequest::GetOffset() const
+{
+    return m_offset;
+}
+
+void DescribeBashEventsRequest::SetOffset(const uint64_t& _offset)
+{
+    m_offset = _offset;
+    m_offsetHasBeenSet = true;
+}
+
+bool DescribeBashEventsRequest::OffsetHasBeenSet() const
+{
+    return m_offsetHasBeenSet;
 }
 
 string DescribeBashEventsRequest::GetOrder() const

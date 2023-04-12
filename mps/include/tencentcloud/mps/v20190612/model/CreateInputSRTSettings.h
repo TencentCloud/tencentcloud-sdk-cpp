@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool ModeHasBeenSet() const;
 
                     /**
-                     * 获取流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
-                     * @return StreamId 流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
+                     * 获取流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。具体格式可以参考：https://github.com/Haivision/srt/blob/master/docs/features/access-control.md#standard-keys。
+                     * @return StreamId 流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。具体格式可以参考：https://github.com/Haivision/srt/blob/master/docs/features/access-control.md#standard-keys。
                      */
                     std::string GetStreamId() const;
 
                     /**
-                     * 设置流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
-                     * @param StreamId 流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
+                     * 设置流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。具体格式可以参考：https://github.com/Haivision/srt/blob/master/docs/features/access-control.md#standard-keys。
+                     * @param StreamId 流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。具体格式可以参考：https://github.com/Haivision/srt/blob/master/docs/features/access-control.md#standard-keys。
                      */
                     void SetStreamId(const std::string& _streamId);
 
@@ -218,7 +218,7 @@ namespace TencentCloud
                     bool m_modeHasBeenSet;
 
                     /**
-                     * 流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。
+                     * 流Id，可选大小写字母、数字和特殊字符（.#!:&,=_-），长度为0~512。具体格式可以参考：https://github.com/Haivision/srt/blob/master/docs/features/access-control.md#standard-keys。
                      */
                     std::string m_streamId;
                     bool m_streamIdHasBeenSet;

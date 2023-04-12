@@ -14,22 +14,21 @@
  * limitations under the License.
  */
 
-#include <tencentcloud/bma/v20210624/model/CreateCRObtainResponse.h>
+#include <tencentcloud/redis/v20180412/model/RemoveReplicationInstanceResponse.h>
 #include <tencentcloud/core/utils/rapidjson/document.h>
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 
 using TencentCloud::CoreInternalOutcome;
-using namespace TencentCloud::Bma::V20210624::Model;
+using namespace TencentCloud::Redis::V20180412::Model;
 using namespace std;
 
-CreateCRObtainResponse::CreateCRObtainResponse() :
-    m_tortIdHasBeenSet(false),
-    m_tortNumHasBeenSet(false)
+RemoveReplicationInstanceResponse::RemoveReplicationInstanceResponse() :
+    m_taskIdHasBeenSet(false)
 {
 }
 
-CoreInternalOutcome CreateCRObtainResponse::Deserialize(const string &payload)
+CoreInternalOutcome RemoveReplicationInstanceResponse::Deserialize(const string &payload)
 {
     rapidjson::Document d;
     d.Parse(payload.c_str());
@@ -63,50 +62,32 @@ CoreInternalOutcome CreateCRObtainResponse::Deserialize(const string &payload)
     }
 
 
-    if (rsp.HasMember("TortId") && !rsp["TortId"].IsNull())
+    if (rsp.HasMember("TaskId") && !rsp["TaskId"].IsNull())
     {
-        if (!rsp["TortId"].IsInt64())
+        if (!rsp["TaskId"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `TortId` IsInt64=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `TaskId` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_tortId = rsp["TortId"].GetInt64();
-        m_tortIdHasBeenSet = true;
-    }
-
-    if (rsp.HasMember("TortNum") && !rsp["TortNum"].IsNull())
-    {
-        if (!rsp["TortNum"].IsString())
-        {
-            return CoreInternalOutcome(Core::Error("response `TortNum` IsString=false incorrectly").SetRequestId(requestId));
-        }
-        m_tortNum = string(rsp["TortNum"].GetString());
-        m_tortNumHasBeenSet = true;
+        m_taskId = rsp["TaskId"].GetInt64();
+        m_taskIdHasBeenSet = true;
     }
 
 
     return CoreInternalOutcome(true);
 }
 
-string CreateCRObtainResponse::ToJsonString() const
+string RemoveReplicationInstanceResponse::ToJsonString() const
 {
     rapidjson::Document value;
     value.SetObject();
     rapidjson::Document::AllocatorType& allocator = value.GetAllocator();
 
-    if (m_tortIdHasBeenSet)
+    if (m_taskIdHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TortId";
+        string key = "TaskId";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, m_tortId, allocator);
-    }
-
-    if (m_tortNumHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "TortNum";
-        iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_tortNum.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_taskId, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -121,24 +102,14 @@ string CreateCRObtainResponse::ToJsonString() const
 }
 
 
-int64_t CreateCRObtainResponse::GetTortId() const
+int64_t RemoveReplicationInstanceResponse::GetTaskId() const
 {
-    return m_tortId;
+    return m_taskId;
 }
 
-bool CreateCRObtainResponse::TortIdHasBeenSet() const
+bool RemoveReplicationInstanceResponse::TaskIdHasBeenSet() const
 {
-    return m_tortIdHasBeenSet;
-}
-
-string CreateCRObtainResponse::GetTortNum() const
-{
-    return m_tortNum;
-}
-
-bool CreateCRObtainResponse::TortNumHasBeenSet() const
-{
-    return m_tortNumHasBeenSet;
+    return m_taskIdHasBeenSet;
 }
 
 

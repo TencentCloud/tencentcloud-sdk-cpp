@@ -45,14 +45,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取当前实例ID。
-                     * @return InstanceId 当前实例ID。
+                     * 获取指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @return InstanceId 指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置当前实例ID。
-                     * @param InstanceId 当前实例ID。
+                     * 设置指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+                     * @param InstanceId 指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -63,14 +63,22 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取单次克隆实例的数量。包年包月每次购买最大数量为100。按量计费每次购买最大数量为30，每个地域购买数量取值范围为[1,100]。
-                     * @return GoodsNum 单次克隆实例的数量。包年包月每次购买最大数量为100。按量计费每次购买最大数量为30，每个地域购买数量取值范围为[1,100]。
+                     * 获取单次克隆实例的数量。
+- 包年包月每次购买最大数量为100。
+- 按量计费每次购买最大数量为30。
+                     * @return GoodsNum 单次克隆实例的数量。
+- 包年包月每次购买最大数量为100。
+- 按量计费每次购买最大数量为30。
                      */
                     uint64_t GetGoodsNum() const;
 
                     /**
-                     * 设置单次克隆实例的数量。包年包月每次购买最大数量为100。按量计费每次购买最大数量为30，每个地域购买数量取值范围为[1,100]。
-                     * @param GoodsNum 单次克隆实例的数量。包年包月每次购买最大数量为100。按量计费每次购买最大数量为30，每个地域购买数量取值范围为[1,100]。
+                     * 设置单次克隆实例的数量。
+- 包年包月每次购买最大数量为100。
+- 按量计费每次购买最大数量为30。
+                     * @param GoodsNum 单次克隆实例的数量。
+- 包年包月每次购买最大数量为100。
+- 按量计费每次购买最大数量为30。
                      */
                     void SetGoodsNum(const uint64_t& _goodsNum);
 
@@ -189,14 +197,14 @@ namespace TencentCloud
                     bool NoAuthHasBeenSet() const;
 
                     /**
-                     * 获取私有网络ID。如果未配置该参数，默认选择基础网络。
-                     * @return VpcId 私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * 获取配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * @return VpcId 配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置私有网络ID。如果未配置该参数，默认选择基础网络。
-                     * @param VpcId 私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * 设置配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * @param VpcId 配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -207,14 +215,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取私有网络所属子网。基础网络时该参数无需配置。
-                     * @return SubnetId 私有网络所属子网。基础网络时该参数无需配置。
+                     * 获取配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
+                     * @return SubnetId 配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置私有网络所属子网。基础网络时该参数无需配置。
-                     * @param SubnetId 私有网络所属子网。基础网络时该参数无需配置。
+                     * 设置配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
+                     * @param SubnetId 配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -261,14 +269,14 @@ namespace TencentCloud
                     bool PasswordHasBeenSet() const;
 
                     /**
-                     * 获取自动续费标识。<ul><li>0：默认状态（手动续费）。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
-                     * @return AutoRenew 自动续费标识。<ul><li>0：默认状态（手动续费）。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * 获取自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * @return AutoRenew 自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
                      */
                     uint64_t GetAutoRenew() const;
 
                     /**
-                     * 设置自动续费标识。<ul><li>0：默认状态（手动续费）。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
-                     * @param AutoRenew 自动续费标识。<ul><li>0：默认状态（手动续费）。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * 设置自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * @param AutoRenew 自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
                      */
                     void SetAutoRenew(const uint64_t& _autoRenew);
 
@@ -315,14 +323,14 @@ namespace TencentCloud
                     bool NodeSetHasBeenSet() const;
 
                     /**
-                     * 获取项目 ID。登录控制台，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
-                     * @return ProjectId 项目 ID。登录控制台，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * 获取项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * @return ProjectId 项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置项目 ID。登录控制台，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
-                     * @param ProjectId 项目 ID。登录控制台，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * 设置项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * @param ProjectId 项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -351,14 +359,22 @@ namespace TencentCloud
                     bool ResourceTagsHasBeenSet() const;
 
                     /**
-                     * 获取克隆实例需要应用的参数模板ID,请登录 Redis 控制台，在<b>参数模板</b>页面获取。若不配置该参数，则应用默认的参数模板。
-                     * @return TemplateId 克隆实例需要应用的参数模板ID,请登录 Redis 控制台，在<b>参数模板</b>页面获取。若不配置该参数，则应用默认的参数模板。
+                     * 获取指定克隆实例相关的参数模板 ID。
+- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
+- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
+                     * @return TemplateId 指定克隆实例相关的参数模板 ID。
+- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
+- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置克隆实例需要应用的参数模板ID,请登录 Redis 控制台，在<b>参数模板</b>页面获取。若不配置该参数，则应用默认的参数模板。
-                     * @param TemplateId 克隆实例需要应用的参数模板ID,请登录 Redis 控制台，在<b>参数模板</b>页面获取。若不配置该参数，则应用默认的参数模板。
+                     * 设置指定克隆实例相关的参数模板 ID。
+- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
+- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
+                     * @param TemplateId 指定克隆实例相关的参数模板 ID。
+- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
+- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -369,14 +385,14 @@ namespace TencentCloud
                     bool TemplateIdHasBeenSet() const;
 
                     /**
-                     * 获取指定克隆实例的告警策略 ID。请登录控制台，在<b>云监控</b> > <b>告警配置</b> > <b>告警策略</b>页面获取策略 ID 信息。
-                     * @return AlarmPolicyList 指定克隆实例的告警策略 ID。请登录控制台，在<b>云监控</b> > <b>告警配置</b> > <b>告警策略</b>页面获取策略 ID 信息。
+                     * 获取指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
+                     * @return AlarmPolicyList 指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
                      */
                     std::vector<std::string> GetAlarmPolicyList() const;
 
                     /**
-                     * 设置指定克隆实例的告警策略 ID。请登录控制台，在<b>云监控</b> > <b>告警配置</b> > <b>告警策略</b>页面获取策略 ID 信息。
-                     * @param AlarmPolicyList 指定克隆实例的告警策略 ID。请登录控制台，在<b>云监控</b> > <b>告警配置</b> > <b>告警策略</b>页面获取策略 ID 信息。
+                     * 设置指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
+                     * @param AlarmPolicyList 指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
                      */
                     void SetAlarmPolicyList(const std::vector<std::string>& _alarmPolicyList);
 
@@ -389,13 +405,15 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 当前实例ID。
+                     * 指定待克隆的源实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 单次克隆实例的数量。包年包月每次购买最大数量为100。按量计费每次购买最大数量为30，每个地域购买数量取值范围为[1,100]。
+                     * 单次克隆实例的数量。
+- 包年包月每次购买最大数量为100。
+- 按量计费每次购买最大数量为30。
                      */
                     uint64_t m_goodsNum;
                     bool m_goodsNumHasBeenSet;
@@ -437,13 +455,13 @@ namespace TencentCloud
                     bool m_noAuthHasBeenSet;
 
                     /**
-                     * 私有网络ID。如果未配置该参数，默认选择基础网络。
+                     * 配置克隆实例的私有网络ID。如果未配置该参数，默认选择基础网络。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 私有网络所属子网。基础网络时该参数无需配置。
+                     * 配置克隆实例所属私有网络的子网。基础网络时该参数无需配置。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
@@ -461,7 +479,7 @@ namespace TencentCloud
                     bool m_passwordHasBeenSet;
 
                     /**
-                     * 自动续费标识。<ul><li>0：默认状态（手动续费）。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
+                     * 自动续费标识。<ul><li>0：默认状态，手动续费。</li><li>1：自动续费。</li><li>2：不自动续费，到期自动隔离。</li></ul>
                      */
                     uint64_t m_autoRenew;
                     bool m_autoRenewHasBeenSet;
@@ -479,7 +497,7 @@ namespace TencentCloud
                     bool m_nodeSetHasBeenSet;
 
                     /**
-                     * 项目 ID。登录控制台，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
+                     * 项目 ID。登录[Redis 控制台](https://console.cloud.tencent.com/redis#/)，可在右上角的<b>账号中心</b> > <b>项目管理</b>中查找项目ID。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
@@ -491,13 +509,15 @@ namespace TencentCloud
                     bool m_resourceTagsHasBeenSet;
 
                     /**
-                     * 克隆实例需要应用的参数模板ID,请登录 Redis 控制台，在<b>参数模板</b>页面获取。若不配置该参数，则应用默认的参数模板。
+                     * 指定克隆实例相关的参数模板 ID。
+- 若不配置该参数，则系统会依据所选择的兼容版本及架构，自动适配对应的默认模板。
+- 请通过[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)接口，查询实例的参数模板列表，获取模板 ID 编号。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;
 
                     /**
-                     * 指定克隆实例的告警策略 ID。请登录控制台，在<b>云监控</b> > <b>告警配置</b> > <b>告警策略</b>页面获取策略 ID 信息。
+                     * 指定克隆实例的告警策略 ID。请登录[腾讯云可观测平台控制台](https://console.cloud.tencent.com/monitor/alarm2/policy)，在 <b>告警管理</b> > <b>策略管理</b>页面获取策略 ID 信息。
                      */
                     std::vector<std::string> m_alarmPolicyList;
                     bool m_alarmPolicyListHasBeenSet;

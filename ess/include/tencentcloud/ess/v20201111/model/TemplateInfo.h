@@ -302,6 +302,24 @@ namespace TencentCloud
                     bool PromoterHasBeenSet() const;
 
                     /**
+                     * 获取模板可用状态，取值：0未知，但默认会被转成启用；1启用（默认），2停用
+                     * @return Available 模板可用状态，取值：0未知，但默认会被转成启用；1启用（默认），2停用
+                     */
+                    int64_t GetAvailable() const;
+
+                    /**
+                     * 设置模板可用状态，取值：0未知，但默认会被转成启用；1启用（默认），2停用
+                     * @param Available 模板可用状态，取值：0未知，但默认会被转成启用；1启用（默认），2停用
+                     */
+                    void SetAvailable(const int64_t& _available);
+
+                    /**
+                     * 判断参数 Available 是否已赋值
+                     * @return Available 是否已赋值
+                     */
+                    bool AvailableHasBeenSet() const;
+
+                    /**
                      * 获取模板创建组织id
                      * @return OrganizationId 模板创建组织id
                      */
@@ -470,6 +488,12 @@ namespace TencentCloud
                      */
                     Recipient m_promoter;
                     bool m_promoterHasBeenSet;
+
+                    /**
+                     * 模板可用状态，取值：0未知，但默认会被转成启用；1启用（默认），2停用
+                     */
+                    int64_t m_available;
+                    bool m_availableHasBeenSet;
 
                     /**
                      * 模板创建组织id

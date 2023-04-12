@@ -356,6 +356,28 @@ namespace TencentCloud
                      */
                     bool TemplateVersionHasBeenSet() const;
 
+                    /**
+                     * 获取模板可用状态，取值：1启用（默认），2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Available 模板可用状态，取值：1启用（默认），2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetAvailable() const;
+
+                    /**
+                     * 设置模板可用状态，取值：1启用（默认），2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Available 模板可用状态，取值：1启用（默认），2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAvailable(const int64_t& _available);
+
+                    /**
+                     * 判断参数 Available 是否已赋值
+                     * @return Available 是否已赋值
+                     */
+                    bool AvailableHasBeenSet() const;
+
                 private:
 
                     /**
@@ -458,6 +480,13 @@ namespace TencentCloud
                      */
                     std::string m_templateVersion;
                     bool m_templateVersionHasBeenSet;
+
+                    /**
+                     * 模板可用状态，取值：1启用（默认），2停用
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_available;
+                    bool m_availableHasBeenSet;
 
                 };
             }

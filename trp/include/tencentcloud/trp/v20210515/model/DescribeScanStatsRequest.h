@@ -150,6 +150,24 @@ namespace TencentCloud
                      */
                     bool BatchIdHasBeenSet() const;
 
+                    /**
+                     * 获取安心码
+                     * @return Code 安心码
+                     */
+                    std::string GetCode() const;
+
+                    /**
+                     * 设置安心码
+                     * @param Code 安心码
+                     */
+                    void SetCode(const std::string& _code);
+
+                    /**
+                     * 判断参数 Code 是否已赋值
+                     * @return Code 是否已赋值
+                     */
+                    bool CodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -187,6 +205,12 @@ namespace TencentCloud
                      */
                     std::string m_batchId;
                     bool m_batchIdHasBeenSet;
+
+                    /**
+                     * 安心码
+                     */
+                    std::string m_code;
+                    bool m_codeHasBeenSet;
 
                 };
             }

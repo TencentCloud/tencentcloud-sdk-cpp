@@ -65,6 +65,8 @@
 #include <tencentcloud/redis/v20180412/model/DescribeBackupDownloadRestrictionResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeBackupUrlResponse.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBandwidthRangeRequest.h>
+#include <tencentcloud/redis/v20180412/model/DescribeBandwidthRangeResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesRequest.h>
 #include <tencentcloud/redis/v20180412/model/DescribeCommonDBInstancesResponse.h>
 #include <tencentcloud/redis/v20180412/model/DescribeDBSecurityGroupsRequest.h>
@@ -181,6 +183,8 @@
 #include <tencentcloud/redis/v20180412/model/OpenSSLResponse.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressRequest.h>
 #include <tencentcloud/redis/v20180412/model/ReleaseWanAddressResponse.h>
+#include <tencentcloud/redis/v20180412/model/RemoveReplicationInstanceRequest.h>
+#include <tencentcloud/redis/v20180412/model/RemoveReplicationInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceRequest.h>
 #include <tencentcloud/redis/v20180412/model/RenewInstanceResponse.h>
 #include <tencentcloud/redis/v20180412/model/ResetPasswordRequest.h>
@@ -280,6 +284,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeBackupUrlResponse> DescribeBackupUrlOutcome;
                 typedef std::future<DescribeBackupUrlOutcome> DescribeBackupUrlOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeBackupUrlRequest&, DescribeBackupUrlOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupUrlAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBandwidthRangeResponse> DescribeBandwidthRangeOutcome;
+                typedef std::future<DescribeBandwidthRangeOutcome> DescribeBandwidthRangeOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::DescribeBandwidthRangeRequest&, DescribeBandwidthRangeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBandwidthRangeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeCommonDBInstancesResponse> DescribeCommonDBInstancesOutcome;
                 typedef std::future<DescribeCommonDBInstancesOutcome> DescribeCommonDBInstancesOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::DescribeCommonDBInstancesRequest&, DescribeCommonDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeCommonDBInstancesAsyncHandler;
@@ -454,6 +461,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ReleaseWanAddressResponse> ReleaseWanAddressOutcome;
                 typedef std::future<ReleaseWanAddressOutcome> ReleaseWanAddressOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::ReleaseWanAddressRequest&, ReleaseWanAddressOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReleaseWanAddressAsyncHandler;
+                typedef Outcome<Core::Error, Model::RemoveReplicationInstanceResponse> RemoveReplicationInstanceOutcome;
+                typedef std::future<RemoveReplicationInstanceOutcome> RemoveReplicationInstanceOutcomeCallable;
+                typedef std::function<void(const RedisClient*, const Model::RemoveReplicationInstanceRequest&, RemoveReplicationInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RemoveReplicationInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::RenewInstanceResponse> RenewInstanceOutcome;
                 typedef std::future<RenewInstanceOutcome> RenewInstanceOutcomeCallable;
                 typedef std::function<void(const RedisClient*, const Model::RenewInstanceRequest&, RenewInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewInstanceAsyncHandler;
@@ -572,7 +582,7 @@ namespace TencentCloud
                 ClearInstanceOutcomeCallable ClearInstanceCallable(const Model::ClearInstanceRequest& request);
 
                 /**
-                 *本接口（CloneInstances）可基于当前实例的备份文件克隆一个完整的新实例。
+                 *本接口（CloneInstances）用于基于当前实例的备份文件克隆一个完整的新实例。
                  * @param req CloneInstancesRequest
                  * @return CloneInstancesOutcome
                  */
@@ -678,6 +688,15 @@ namespace TencentCloud
                 DescribeBackupUrlOutcome DescribeBackupUrl(const Model::DescribeBackupUrlRequest &request);
                 void DescribeBackupUrlAsync(const Model::DescribeBackupUrlRequest& request, const DescribeBackupUrlAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeBackupUrlOutcomeCallable DescribeBackupUrlCallable(const Model::DescribeBackupUrlRequest& request);
+
+                /**
+                 *本接口（DescribeBandwidthRange）用于查询实例带宽信息。
+                 * @param req DescribeBandwidthRangeRequest
+                 * @return DescribeBandwidthRangeOutcome
+                 */
+                DescribeBandwidthRangeOutcome DescribeBandwidthRange(const Model::DescribeBandwidthRangeRequest &request);
+                void DescribeBandwidthRangeAsync(const Model::DescribeBandwidthRangeRequest& request, const DescribeBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBandwidthRangeOutcomeCallable DescribeBandwidthRangeCallable(const Model::DescribeBandwidthRangeRequest& request);
 
                 /**
                  *查询Redis实例列表信息。该接口已废弃。
@@ -1200,6 +1219,15 @@ namespace TencentCloud
                 ReleaseWanAddressOutcome ReleaseWanAddress(const Model::ReleaseWanAddressRequest &request);
                 void ReleaseWanAddressAsync(const Model::ReleaseWanAddressRequest& request, const ReleaseWanAddressAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ReleaseWanAddressOutcomeCallable ReleaseWanAddressCallable(const Model::ReleaseWanAddressRequest& request);
+
+                /**
+                 *移除复制组成员
+                 * @param req RemoveReplicationInstanceRequest
+                 * @return RemoveReplicationInstanceOutcome
+                 */
+                RemoveReplicationInstanceOutcome RemoveReplicationInstance(const Model::RemoveReplicationInstanceRequest &request);
+                void RemoveReplicationInstanceAsync(const Model::RemoveReplicationInstanceRequest& request, const RemoveReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RemoveReplicationInstanceOutcomeCallable RemoveReplicationInstanceCallable(const Model::RemoveReplicationInstanceRequest& request);
 
                 /**
                  *本接口（RenewInstance）可用于为实例续费。

@@ -21,7 +21,7 @@ set(bma_public_header
 
 set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/ProtectURLInfo.h
-  include/tencentcloud/bma/v20210624/model/CreateCRObtainResponse.h
+  include/tencentcloud/bma/v20210624/model/ModifyCRWhiteListRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRUserVerifyRequest.h
   include/tencentcloud/bma/v20210624/model/CreateBPFalseTicketResponse.h
   include/tencentcloud/bma/v20210624/model/CreateCRRightFileRequest.h
@@ -44,7 +44,6 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorDetailResponse.h
   include/tencentcloud/bma/v20210624/model/MonitorTort.h
   include/tencentcloud/bma/v20210624/model/CreateBPFakeURLRequest.h
-  include/tencentcloud/bma/v20210624/model/UpdateCRWorkResponse.h
   include/tencentcloud/bma/v20210624/model/CreateBPProtectURLsResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeBPProtectURLsResponse.h
   include/tencentcloud/bma/v20210624/model/DescribeCRMonitorsResponse.h
@@ -52,7 +51,7 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/CreateBPOfflineAttachmentRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRDesktopCodeResponse.h
   include/tencentcloud/bma/v20210624/model/CreateBPProtectURLsRequest.h
-  include/tencentcloud/bma/v20210624/model/CreateCRObtainRequest.h
+  include/tencentcloud/bma/v20210624/model/UpdateCRWorkResponse.h
   include/tencentcloud/bma/v20210624/model/ModifyCRBlockStatusRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRMonitorRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRDesktopCodeRequest.h
@@ -84,7 +83,6 @@ set(bma_public_header_model
   include/tencentcloud/bma/v20210624/model/File.h
   include/tencentcloud/bma/v20210624/model/DescribeBPProtectURLsRequest.h
   include/tencentcloud/bma/v20210624/model/ModifyCRObtainStatusResponse.h
-  include/tencentcloud/bma/v20210624/model/ModifyCRWhiteListRequest.h
   include/tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyRequest.h
   include/tencentcloud/bma/v20221115/model/CreateBPFakeAPPResponse.h
   include/tencentcloud/bma/v20221115/model/DeleteBPWhiteListResponse.h
@@ -121,7 +119,7 @@ set(bma_src
   src/v20210624/BmaClient.cpp
   src/v20221115/BmaClient.cpp
   src/v20210624/model/ProtectURLInfo.cpp
-  src/v20210624/model/CreateCRObtainResponse.cpp
+  src/v20210624/model/ModifyCRWhiteListRequest.cpp
   src/v20210624/model/CreateCRUserVerifyRequest.cpp
   src/v20210624/model/CreateBPFalseTicketResponse.cpp
   src/v20210624/model/CreateCRRightFileRequest.cpp
@@ -144,7 +142,6 @@ set(bma_src
   src/v20210624/model/DescribeCRMonitorDetailResponse.cpp
   src/v20210624/model/MonitorTort.cpp
   src/v20210624/model/CreateBPFakeURLRequest.cpp
-  src/v20210624/model/UpdateCRWorkResponse.cpp
   src/v20210624/model/CreateBPProtectURLsResponse.cpp
   src/v20210624/model/DescribeBPProtectURLsResponse.cpp
   src/v20210624/model/DescribeCRMonitorsResponse.cpp
@@ -152,7 +149,7 @@ set(bma_src
   src/v20210624/model/CreateBPOfflineAttachmentRequest.cpp
   src/v20210624/model/CreateCRDesktopCodeResponse.cpp
   src/v20210624/model/CreateBPProtectURLsRequest.cpp
-  src/v20210624/model/CreateCRObtainRequest.cpp
+  src/v20210624/model/UpdateCRWorkResponse.cpp
   src/v20210624/model/ModifyCRBlockStatusRequest.cpp
   src/v20210624/model/ModifyCRMonitorRequest.cpp
   src/v20210624/model/CreateCRDesktopCodeRequest.cpp
@@ -184,7 +181,6 @@ set(bma_src
   src/v20210624/model/File.cpp
   src/v20210624/model/DescribeBPProtectURLsRequest.cpp
   src/v20210624/model/ModifyCRObtainStatusResponse.cpp
-  src/v20210624/model/ModifyCRWhiteListRequest.cpp
   src/v20210624/model/CreateCRCompanyVerifyRequest.cpp
   src/v20221115/model/CreateBPFakeAPPResponse.cpp
   src/v20221115/model/DeleteBPWhiteListResponse.cpp

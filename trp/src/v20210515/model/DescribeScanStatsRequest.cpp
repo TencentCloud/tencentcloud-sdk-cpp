@@ -28,7 +28,8 @@ DescribeScanStatsRequest::DescribeScanStatsRequest() :
     m_pageNumberHasBeenSet(false),
     m_merchantIdHasBeenSet(false),
     m_productIdHasBeenSet(false),
-    m_batchIdHasBeenSet(false)
+    m_batchIdHasBeenSet(false),
+    m_codeHasBeenSet(false)
 {
 }
 
@@ -85,6 +86,14 @@ string DescribeScanStatsRequest::ToJsonString() const
         string key = "BatchId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_codeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Code";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -189,6 +198,22 @@ void DescribeScanStatsRequest::SetBatchId(const string& _batchId)
 bool DescribeScanStatsRequest::BatchIdHasBeenSet() const
 {
     return m_batchIdHasBeenSet;
+}
+
+string DescribeScanStatsRequest::GetCode() const
+{
+    return m_code;
+}
+
+void DescribeScanStatsRequest::SetCode(const string& _code)
+{
+    m_code = _code;
+    m_codeHasBeenSet = true;
+}
+
+bool DescribeScanStatsRequest::CodeHasBeenSet() const
+{
+    return m_codeHasBeenSet;
 }
 
 

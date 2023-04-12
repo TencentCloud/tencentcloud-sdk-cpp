@@ -120,14 +120,14 @@ namespace TencentCloud
                     bool QuuidHasBeenSet() const;
 
                     /**
-                     * 获取云镜客户端UUID
-                     * @return Uuid 云镜客户端UUID
+                     * 获取主机安全客户端UUID
+                     * @return Uuid 主机安全客户端UUID
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜客户端UUID
-                     * @param Uuid 云镜客户端UUID
+                     * 设置主机安全客户端UUID
+                     * @param Uuid 主机安全客户端UUID
                      */
                     void SetUuid(const std::string& _uuid);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取云镜客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
-                     * @return AgentStatus 云镜客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
+                     * 获取主机安全客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
+                     * @return AgentStatus 主机安全客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
                      */
                     std::string GetAgentStatus() const;
 
                     /**
-                     * 设置云镜客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
-                     * @param AgentStatus 云镜客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
+                     * 设置主机安全客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
+                     * @param AgentStatus 主机安全客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
                      */
                     void SetAgentStatus(const std::string& _agentStatus);
 
@@ -258,7 +258,7 @@ namespace TencentCloud
                     bool m_quuidHasBeenSet;
 
                     /**
-                     * 云镜客户端UUID
+                     * 主机安全客户端UUID
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
@@ -270,7 +270,7 @@ namespace TencentCloud
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 云镜客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
+                     * 主机安全客户端状态,OFFLINE 离线,ONLINE 在线,UNINSTALL 未安装
                      */
                     std::string m_agentStatus;
                     bool m_agentStatusHasBeenSet;

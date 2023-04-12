@@ -35,6 +35,7 @@ TemplateInfo::TemplateInfo() :
     m_creatorHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_promoterHasBeenSet(false),
+    m_availableHasBeenSet(false),
     m_organizationIdHasBeenSet(false),
     m_previewUrlHasBeenSet(false),
     m_templateVersionHasBeenSet(false),
@@ -243,6 +244,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_promoterHasBeenSet = true;
     }
 
+    if (value.HasMember("Available") && !value["Available"].IsNull())
+    {
+        if (!value["Available"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Available` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_available = value["Available"].GetInt64();
+        m_availableHasBeenSet = true;
+    }
+
     if (value.HasMember("OrganizationId") && !value["OrganizationId"].IsNull())
     {
         if (!value["OrganizationId"].IsString())
@@ -444,6 +455,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_promoter.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_availableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Available";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_available, allocator);
     }
 
     if (m_organizationIdHasBeenSet)
@@ -703,6 +722,22 @@ void TemplateInfo::SetPromoter(const Recipient& _promoter)
 bool TemplateInfo::PromoterHasBeenSet() const
 {
     return m_promoterHasBeenSet;
+}
+
+int64_t TemplateInfo::GetAvailable() const
+{
+    return m_available;
+}
+
+void TemplateInfo::SetAvailable(const int64_t& _available)
+{
+    m_available = _available;
+    m_availableHasBeenSet = true;
+}
+
+bool TemplateInfo::AvailableHasBeenSet() const
+{
+    return m_availableHasBeenSet;
 }
 
 string TemplateInfo::GetOrganizationId() const

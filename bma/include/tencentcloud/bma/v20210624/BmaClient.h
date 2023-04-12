@@ -39,8 +39,6 @@
 #include <tencentcloud/bma/v20210624/model/CreateCRCompanyVerifyResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRDesktopCodeRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRDesktopCodeResponse.h>
-#include <tencentcloud/bma/v20210624/model/CreateCRObtainRequest.h>
-#include <tencentcloud/bma/v20210624/model/CreateCRObtainResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightRequest.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightResponse.h>
 #include <tencentcloud/bma/v20210624/model/CreateCRRightFileRequest.h>
@@ -119,9 +117,6 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateCRDesktopCodeResponse> CreateCRDesktopCodeOutcome;
                 typedef std::future<CreateCRDesktopCodeOutcome> CreateCRDesktopCodeOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRDesktopCodeRequest&, CreateCRDesktopCodeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRDesktopCodeAsyncHandler;
-                typedef Outcome<Core::Error, Model::CreateCRObtainResponse> CreateCRObtainOutcome;
-                typedef std::future<CreateCRObtainOutcome> CreateCRObtainOutcomeCallable;
-                typedef std::function<void(const BmaClient*, const Model::CreateCRObtainRequest&, CreateCRObtainOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRObtainAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCRRightResponse> CreateCRRightOutcome;
                 typedef std::future<CreateCRRightOutcome> CreateCRRightOutcomeCallable;
                 typedef std::function<void(const BmaClient*, const Model::CreateCRRightRequest&, CreateCRRightOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCRRightAsyncHandler;
@@ -257,17 +252,6 @@ namespace TencentCloud
                 CreateCRDesktopCodeOutcome CreateCRDesktopCode(const Model::CreateCRDesktopCodeRequest &request);
                 void CreateCRDesktopCodeAsync(const Model::CreateCRDesktopCodeRequest& request, const CreateCRDesktopCodeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateCRDesktopCodeOutcomeCallable CreateCRDesktopCodeCallable(const Model::CreateCRDesktopCodeRequest& request);
-
-                /**
-                 *不对外提供接口能力了
-
-版权保护-新建取证接口
-                 * @param req CreateCRObtainRequest
-                 * @return CreateCRObtainOutcome
-                 */
-                CreateCRObtainOutcome CreateCRObtain(const Model::CreateCRObtainRequest &request);
-                void CreateCRObtainAsync(const Model::CreateCRObtainRequest& request, const CreateCRObtainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
-                CreateCRObtainOutcomeCallable CreateCRObtainCallable(const Model::CreateCRObtainRequest& request);
 
                 /**
                  *版权保护-新建发函接口

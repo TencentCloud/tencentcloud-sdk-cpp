@@ -943,6 +943,49 @@ RedisClient::DescribeBackupUrlOutcomeCallable RedisClient::DescribeBackupUrlCall
     return task->get_future();
 }
 
+RedisClient::DescribeBandwidthRangeOutcome RedisClient::DescribeBandwidthRange(const DescribeBandwidthRangeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBandwidthRange");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBandwidthRangeResponse rsp = DescribeBandwidthRangeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBandwidthRangeOutcome(rsp);
+        else
+            return DescribeBandwidthRangeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBandwidthRangeOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::DescribeBandwidthRangeAsync(const DescribeBandwidthRangeRequest& request, const DescribeBandwidthRangeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBandwidthRange(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::DescribeBandwidthRangeOutcomeCallable RedisClient::DescribeBandwidthRangeCallable(const DescribeBandwidthRangeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBandwidthRangeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBandwidthRange(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RedisClient::DescribeCommonDBInstancesOutcome RedisClient::DescribeCommonDBInstances(const DescribeCommonDBInstancesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeCommonDBInstances");
@@ -3430,6 +3473,49 @@ RedisClient::ReleaseWanAddressOutcomeCallable RedisClient::ReleaseWanAddressCall
         [this, request]()
         {
             return this->ReleaseWanAddress(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RedisClient::RemoveReplicationInstanceOutcome RedisClient::RemoveReplicationInstance(const RemoveReplicationInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RemoveReplicationInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RemoveReplicationInstanceResponse rsp = RemoveReplicationInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RemoveReplicationInstanceOutcome(rsp);
+        else
+            return RemoveReplicationInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RemoveReplicationInstanceOutcome(outcome.GetError());
+    }
+}
+
+void RedisClient::RemoveReplicationInstanceAsync(const RemoveReplicationInstanceRequest& request, const RemoveReplicationInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RemoveReplicationInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RedisClient::RemoveReplicationInstanceOutcomeCallable RedisClient::RemoveReplicationInstanceCallable(const RemoveReplicationInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RemoveReplicationInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->RemoveReplicationInstance(request);
         }
     );
 

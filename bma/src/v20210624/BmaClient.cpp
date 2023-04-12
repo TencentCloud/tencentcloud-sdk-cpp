@@ -384,49 +384,6 @@ BmaClient::CreateCRDesktopCodeOutcomeCallable BmaClient::CreateCRDesktopCodeCall
     return task->get_future();
 }
 
-BmaClient::CreateCRObtainOutcome BmaClient::CreateCRObtain(const CreateCRObtainRequest &request)
-{
-    auto outcome = MakeRequest(request, "CreateCRObtain");
-    if (outcome.IsSuccess())
-    {
-        auto r = outcome.GetResult();
-        string payload = string(r.Body(), r.BodySize());
-        CreateCRObtainResponse rsp = CreateCRObtainResponse();
-        auto o = rsp.Deserialize(payload);
-        if (o.IsSuccess())
-            return CreateCRObtainOutcome(rsp);
-        else
-            return CreateCRObtainOutcome(o.GetError());
-    }
-    else
-    {
-        return CreateCRObtainOutcome(outcome.GetError());
-    }
-}
-
-void BmaClient::CreateCRObtainAsync(const CreateCRObtainRequest& request, const CreateCRObtainAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
-{
-    auto fn = [this, request, handler, context]()
-    {
-        handler(this, request, this->CreateCRObtain(request), context);
-    };
-
-    Executor::GetInstance()->Submit(new Runnable(fn));
-}
-
-BmaClient::CreateCRObtainOutcomeCallable BmaClient::CreateCRObtainCallable(const CreateCRObtainRequest &request)
-{
-    auto task = std::make_shared<std::packaged_task<CreateCRObtainOutcome()>>(
-        [this, request]()
-        {
-            return this->CreateCRObtain(request);
-        }
-    );
-
-    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
-    return task->get_future();
-}
-
 BmaClient::CreateCRRightOutcome BmaClient::CreateCRRight(const CreateCRRightRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCRRight");

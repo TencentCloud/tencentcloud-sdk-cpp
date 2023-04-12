@@ -66,14 +66,14 @@ namespace TencentCloud
                     bool IdHasBeenSet() const;
 
                     /**
-                     * 获取云镜ID
-                     * @return Uuid 云镜ID
+                     * 获取主机安全ID
+                     * @return Uuid 主机安全ID
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜ID
-                     * @param Uuid 云镜ID
+                     * 设置主机安全ID
+                     * @param Uuid 主机安全ID
                      */
                     void SetUuid(const std::string& _uuid);
 
@@ -424,7 +424,7 @@ namespace TencentCloud
                     bool m_idHasBeenSet;
 
                     /**
-                     * 云镜ID
+                     * 主机安全ID
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;

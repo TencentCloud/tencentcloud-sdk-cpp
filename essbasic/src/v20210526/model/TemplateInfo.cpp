@@ -36,7 +36,8 @@ TemplateInfo::TemplateInfo() :
     m_channelTemplateIdHasBeenSet(false),
     m_channelTemplateNameHasBeenSet(false),
     m_channelAutoSaveHasBeenSet(false),
-    m_templateVersionHasBeenSet(false)
+    m_templateVersionHasBeenSet(false),
+    m_availableHasBeenSet(false)
 {
 }
 
@@ -235,6 +236,16 @@ CoreInternalOutcome TemplateInfo::Deserialize(const rapidjson::Value &value)
         m_templateVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("Available") && !value["Available"].IsNull())
+    {
+        if (!value["Available"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `TemplateInfo.Available` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_available = value["Available"].GetInt64();
+        m_availableHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -389,6 +400,14 @@ void TemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "TemplateVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_templateVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_availableHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Available";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_available, allocator);
     }
 
 }
@@ -648,5 +667,21 @@ void TemplateInfo::SetTemplateVersion(const string& _templateVersion)
 bool TemplateInfo::TemplateVersionHasBeenSet() const
 {
     return m_templateVersionHasBeenSet;
+}
+
+int64_t TemplateInfo::GetAvailable() const
+{
+    return m_available;
+}
+
+void TemplateInfo::SetAvailable(const int64_t& _available)
+{
+    m_available = _available;
+    m_availableHasBeenSet = true;
+}
+
+bool TemplateInfo::AvailableHasBeenSet() const
+{
+    return m_availableHasBeenSet;
 }
 

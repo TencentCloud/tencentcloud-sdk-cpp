@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取云镜客户端UUID、填写"all"表示所有主机。
-                     * @return Uuid 云镜客户端UUID、填写"all"表示所有主机。
+                     * 获取主机安全客户端UUID、填写"all"表示所有主机。
+                     * @return Uuid 主机安全客户端UUID、填写"all"表示所有主机。
                      */
                     std::string GetUuid() const;
 
                     /**
-                     * 设置云镜客户端UUID、填写"all"表示所有主机。
-                     * @param Uuid 云镜客户端UUID、填写"all"表示所有主机。
+                     * 设置主机安全客户端UUID、填写"all"表示所有主机。
+                     * @param Uuid 主机安全客户端UUID、填写"all"表示所有主机。
                      */
                     void SetUuid(const std::string& _uuid);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 云镜客户端UUID、填写"all"表示所有主机。
+                     * 主机安全客户端UUID、填写"all"表示所有主机。
                      */
                     std::string m_uuid;
                     bool m_uuidHasBeenSet;
