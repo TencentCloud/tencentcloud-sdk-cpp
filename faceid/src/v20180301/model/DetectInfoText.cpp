@@ -46,7 +46,9 @@ DetectInfoText::DetectInfoText() :
     m_compareLibTypeHasBeenSet(false),
     m_livenessModeHasBeenSet(false),
     m_nFCRequestIdsHasBeenSet(false),
-    m_nFCBillingCountsHasBeenSet(false)
+    m_nFCBillingCountsHasBeenSet(false),
+    m_passNoHasBeenSet(false),
+    m_visaNumHasBeenSet(false)
 {
 }
 
@@ -328,6 +330,26 @@ CoreInternalOutcome DetectInfoText::Deserialize(const rapidjson::Value &value)
         m_nFCBillingCountsHasBeenSet = true;
     }
 
+    if (value.HasMember("PassNo") && !value["PassNo"].IsNull())
+    {
+        if (!value["PassNo"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.PassNo` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_passNo = string(value["PassNo"].GetString());
+        m_passNoHasBeenSet = true;
+    }
+
+    if (value.HasMember("VisaNum") && !value["VisaNum"].IsNull())
+    {
+        if (!value["VisaNum"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DetectInfoText.VisaNum` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_visaNum = string(value["VisaNum"].GetString());
+        m_visaNumHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -553,6 +575,22 @@ void DetectInfoText::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "NFCBillingCounts";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_nFCBillingCounts, allocator);
+    }
+
+    if (m_passNoHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PassNo";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_passNo.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_visaNumHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "VisaNum";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_visaNum.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -972,5 +1010,37 @@ void DetectInfoText::SetNFCBillingCounts(const int64_t& _nFCBillingCounts)
 bool DetectInfoText::NFCBillingCountsHasBeenSet() const
 {
     return m_nFCBillingCountsHasBeenSet;
+}
+
+string DetectInfoText::GetPassNo() const
+{
+    return m_passNo;
+}
+
+void DetectInfoText::SetPassNo(const string& _passNo)
+{
+    m_passNo = _passNo;
+    m_passNoHasBeenSet = true;
+}
+
+bool DetectInfoText::PassNoHasBeenSet() const
+{
+    return m_passNoHasBeenSet;
+}
+
+string DetectInfoText::GetVisaNum() const
+{
+    return m_visaNum;
+}
+
+void DetectInfoText::SetVisaNum(const string& _visaNum)
+{
+    m_visaNum = _visaNum;
+    m_visaNumHasBeenSet = true;
+}
+
+bool DetectInfoText::VisaNumHasBeenSet() const
+{
+    return m_visaNumHasBeenSet;
 }
 

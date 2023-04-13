@@ -37,6 +37,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTableGroupResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/CreateTablesResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteBackupRecordsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DeleteBackupRecordsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteClusterRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteClusterResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteIdlFilesRequest.h>
@@ -53,6 +55,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/DeleteTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeApplicationsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeApplicationsResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeBackupRecordsRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/DescribeBackupRecordsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClusterTagsRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClusterTagsResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/DescribeClustersRequest.h>
@@ -115,6 +119,8 @@
 #include <tencentcloud/tcaplusdb/v20190823/model/RecoverRecycleTablesResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/RollbackTablesResponse.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SetBackupExpireRuleRequest.h>
+#include <tencentcloud/tcaplusdb/v20190823/model/SetBackupExpireRuleResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableDataFlowRequest.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableDataFlowResponse.h>
 #include <tencentcloud/tcaplusdb/v20190823/model/SetTableIndexRequest.h>
@@ -158,6 +164,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTablesResponse> CreateTablesOutcome;
                 typedef std::future<CreateTablesOutcome> CreateTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::CreateTablesRequest&, CreateTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBackupRecordsResponse> DeleteBackupRecordsOutcome;
+                typedef std::future<DeleteBackupRecordsOutcome> DeleteBackupRecordsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DeleteBackupRecordsRequest&, DeleteBackupRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
@@ -182,6 +191,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeApplicationsResponse> DescribeApplicationsOutcome;
                 typedef std::future<DescribeApplicationsOutcome> DescribeApplicationsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeApplicationsRequest&, DescribeApplicationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeApplicationsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupRecordsResponse> DescribeBackupRecordsOutcome;
+                typedef std::future<DescribeBackupRecordsOutcome> DescribeBackupRecordsOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::DescribeBackupRecordsRequest&, DescribeBackupRecordsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupRecordsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterTagsResponse> DescribeClusterTagsOutcome;
                 typedef std::future<DescribeClusterTagsOutcome> DescribeClusterTagsOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::DescribeClusterTagsRequest&, DescribeClusterTagsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterTagsAsyncHandler;
@@ -275,6 +287,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::RollbackTablesResponse> RollbackTablesOutcome;
                 typedef std::future<RollbackTablesOutcome> RollbackTablesOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::RollbackTablesRequest&, RollbackTablesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RollbackTablesAsyncHandler;
+                typedef Outcome<Core::Error, Model::SetBackupExpireRuleResponse> SetBackupExpireRuleOutcome;
+                typedef std::future<SetBackupExpireRuleOutcome> SetBackupExpireRuleOutcomeCallable;
+                typedef std::function<void(const TcaplusdbClient*, const Model::SetBackupExpireRuleRequest&, SetBackupExpireRuleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetBackupExpireRuleAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetTableDataFlowResponse> SetTableDataFlowOutcome;
                 typedef std::future<SetTableDataFlowOutcome> SetTableDataFlowOutcomeCallable;
                 typedef std::function<void(const TcaplusdbClient*, const Model::SetTableDataFlowRequest&, SetTableDataFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetTableDataFlowAsyncHandler;
@@ -354,6 +369,15 @@ namespace TencentCloud
                 CreateTablesOutcomeCallable CreateTablesCallable(const Model::CreateTablesRequest& request);
 
                 /**
+                 *删除手工备份
+                 * @param req DeleteBackupRecordsRequest
+                 * @return DeleteBackupRecordsOutcome
+                 */
+                DeleteBackupRecordsOutcome DeleteBackupRecords(const Model::DeleteBackupRecordsRequest &request);
+                void DeleteBackupRecordsAsync(const Model::DeleteBackupRecordsRequest& request, const DeleteBackupRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBackupRecordsOutcomeCallable DeleteBackupRecordsCallable(const Model::DeleteBackupRecordsRequest& request);
+
+                /**
                  *删除TcaplusDB集群，必须在集群所属所有资源（包括表格组，表）都已经释放的情况下才会成功。
                  * @param req DeleteClusterRequest
                  * @return DeleteClusterOutcome
@@ -424,6 +448,19 @@ namespace TencentCloud
                 DescribeApplicationsOutcome DescribeApplications(const Model::DescribeApplicationsRequest &request);
                 void DescribeApplicationsAsync(const Model::DescribeApplicationsRequest& request, const DescribeApplicationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeApplicationsOutcomeCallable DescribeApplicationsCallable(const Model::DescribeApplicationsRequest& request);
+
+                /**
+                 *查询备份记录
+
+查询集群级别时， 将TableGroupId设置为"-1", 将TableName设置为"-1"
+查询集群+表格组级别时， 将TableName设置为"-1"
+查询集群+表格组+表格级别时， 都不能设置为“-1”
+                 * @param req DescribeBackupRecordsRequest
+                 * @return DescribeBackupRecordsOutcome
+                 */
+                DescribeBackupRecordsOutcome DescribeBackupRecords(const Model::DescribeBackupRecordsRequest &request);
+                void DescribeBackupRecordsAsync(const Model::DescribeBackupRecordsRequest& request, const DescribeBackupRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupRecordsOutcomeCallable DescribeBackupRecordsCallable(const Model::DescribeBackupRecordsRequest& request);
 
                 /**
                  *获取集群关联的标签列表
@@ -703,6 +740,15 @@ namespace TencentCloud
                 RollbackTablesOutcome RollbackTables(const Model::RollbackTablesRequest &request);
                 void RollbackTablesAsync(const Model::RollbackTablesRequest& request, const RollbackTablesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 RollbackTablesOutcomeCallable RollbackTablesCallable(const Model::RollbackTablesRequest& request);
+
+                /**
+                 *新增、删除、修改备份过期策略， ClusterId必须为具体的集群Id（appid）
+                 * @param req SetBackupExpireRuleRequest
+                 * @return SetBackupExpireRuleOutcome
+                 */
+                SetBackupExpireRuleOutcome SetBackupExpireRule(const Model::SetBackupExpireRuleRequest &request);
+                void SetBackupExpireRuleAsync(const Model::SetBackupExpireRuleRequest& request, const SetBackupExpireRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                SetBackupExpireRuleOutcomeCallable SetBackupExpireRuleCallable(const Model::SetBackupExpireRuleRequest& request);
 
                 /**
                  *新增、修改表格数据订阅

@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取慢查询耗时（单位：毫秒）。
-                     * @return Duration 慢查询耗时（单位：毫秒）。
+                     * 获取慢查询耗时时长。单位：毫秒。
+                     * @return Duration 慢查询耗时时长。单位：毫秒。
                      */
                     int64_t GetDuration() const;
 
                     /**
-                     * 设置慢查询耗时（单位：毫秒）。
-                     * @param Duration 慢查询耗时（单位：毫秒）。
+                     * 设置慢查询耗时时长。单位：毫秒。
+                     * @param Duration 慢查询耗时时长。单位：毫秒。
                      */
                     void SetDuration(const int64_t& _duration);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ClientHasBeenSet() const;
 
                     /**
-                     * 获取命令。
-                     * @return Command 命令。
+                     * 获取慢查询的命令。
+                     * @return Command 慢查询的命令。
                      */
                     std::string GetCommand() const;
 
                     /**
-                     * 设置命令。
-                     * @param Command 命令。
+                     * 设置慢查询的命令。
+                     * @param Command 慢查询的命令。
                      */
                     void SetCommand(const std::string& _command);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool CommandHasBeenSet() const;
 
                     /**
-                     * 获取详细命令行信息。
-                     * @return CommandLine 详细命令行信息。
+                     * 获取慢查询详细命令行信息。
+                     * @return CommandLine 慢查询详细命令行信息。
                      */
                     std::string GetCommandLine() const;
 
                     /**
-                     * 设置详细命令行信息。
-                     * @param CommandLine 详细命令行信息。
+                     * 设置慢查询详细命令行信息。
+                     * @param CommandLine 慢查询详细命令行信息。
                      */
                     void SetCommandLine(const std::string& _commandLine);
 
@@ -139,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 慢查询耗时（单位：毫秒）。
+                     * 慢查询耗时时长。单位：毫秒。
                      */
                     int64_t m_duration;
                     bool m_durationHasBeenSet;
@@ -151,13 +151,13 @@ namespace TencentCloud
                     bool m_clientHasBeenSet;
 
                     /**
-                     * 命令。
+                     * 慢查询的命令。
                      */
                     std::string m_command;
                     bool m_commandHasBeenSet;
 
                     /**
-                     * 详细命令行信息。
+                     * 慢查询详细命令行信息。
                      */
                     std::string m_commandLine;
                     bool m_commandLineHasBeenSet;

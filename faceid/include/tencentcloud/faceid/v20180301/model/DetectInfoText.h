@@ -659,6 +659,50 @@ namespace TencentCloud
                      */
                     bool NFCBillingCountsHasBeenSet() const;
 
+                    /**
+                     * 获取港澳台居住证通行证号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PassNo 港澳台居住证通行证号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPassNo() const;
+
+                    /**
+                     * 设置港澳台居住证通行证号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PassNo 港澳台居住证通行证号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPassNo(const std::string& _passNo);
+
+                    /**
+                     * 判断参数 PassNo 是否已赋值
+                     * @return PassNo 是否已赋值
+                     */
+                    bool PassNoHasBeenSet() const;
+
+                    /**
+                     * 获取港澳台居住证签发次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return VisaNum 港澳台居住证签发次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetVisaNum() const;
+
+                    /**
+                     * 设置港澳台居住证签发次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param VisaNum 港澳台居住证签发次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetVisaNum(const std::string& _visaNum);
+
+                    /**
+                     * 判断参数 VisaNum 是否已赋值
+                     * @return VisaNum 是否已赋值
+                     */
+                    bool VisaNumHasBeenSet() const;
+
                 private:
 
                     /**
@@ -852,6 +896,20 @@ namespace TencentCloud
                      */
                     int64_t m_nFCBillingCounts;
                     bool m_nFCBillingCountsHasBeenSet;
+
+                    /**
+                     * 港澳台居住证通行证号码
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_passNo;
+                    bool m_passNoHasBeenSet;
+
+                    /**
+                     * 港澳台居住证签发次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_visaNum;
+                    bool m_visaNumHasBeenSet;
 
                 };
             }

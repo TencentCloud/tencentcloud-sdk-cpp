@@ -43,14 +43,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数模板 ID。
-                     * @return TemplateId 参数模板 ID。
+                     * 获取指定查询的参数模板 ID。请通过接口[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)获取参数模板列表信息。
+                     * @return TemplateId 指定查询的参数模板 ID。请通过接口[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)获取参数模板列表信息。
                      */
                     std::string GetTemplateId() const;
 
                     /**
-                     * 设置参数模板 ID。
-                     * @param TemplateId 参数模板 ID。
+                     * 设置指定查询的参数模板 ID。请通过接口[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)获取参数模板列表信息。
+                     * @param TemplateId 指定查询的参数模板 ID。请通过接口[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)获取参数模板列表信息。
                      */
                     void SetTemplateId(const std::string& _templateId);
 
@@ -63,7 +63,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数模板 ID。
+                     * 指定查询的参数模板 ID。请通过接口[DescribeParamTemplates](https://cloud.tencent.com/document/product/239/58750)获取参数模板列表信息。
                      */
                     std::string m_templateId;
                     bool m_templateIdHasBeenSet;

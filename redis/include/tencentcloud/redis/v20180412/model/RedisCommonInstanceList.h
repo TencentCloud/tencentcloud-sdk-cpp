@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例名称
-                     * @return InstanceName 实例名称
+                     * 获取实例名称。
+                     * @return InstanceName 实例名称。
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置实例名称
-                     * @param InstanceName 实例名称
+                     * 设置实例名称。
+                     * @param InstanceName 实例名称。
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool InstanceNameHasBeenSet() const;
 
                     /**
-                     * 获取实例id
-                     * @return InstanceId 实例id
+                     * 获取实例 ID。
+                     * @return InstanceId 实例 ID。
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例id
-                     * @param InstanceId 实例id
+                     * 设置实例 ID。
+                     * @param InstanceId 实例 ID。
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户id
-                     * @return AppId 用户id
+                     * 获取用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @return AppId 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户id
-                     * @param AppId 用户id
+                     * 设置用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @param AppId 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
                      */
                     void SetAppId(const int64_t& _appId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool AppIdHasBeenSet() const;
 
                     /**
-                     * 获取实例所属项目id
-                     * @return ProjectId 实例所属项目id
+                     * 获取实例所属项目 ID。
+                     * @return ProjectId 实例所属项目 ID。
                      */
                     int64_t GetProjectId() const;
 
                     /**
-                     * 设置实例所属项目id
-                     * @param ProjectId 实例所属项目id
+                     * 设置实例所属项目 ID。
+                     * @param ProjectId 实例所属项目 ID。
                      */
                     void SetProjectId(const int64_t& _projectId);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ProjectIdHasBeenSet() const;
 
                     /**
-                     * 获取实例接入区域
-                     * @return Region 实例接入区域
+                     * 获取实例接入区域。
+                     * @return Region 实例接入区域。
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置实例接入区域
-                     * @param Region 实例接入区域
+                     * 设置实例接入区域。
+                     * @param Region 实例接入区域。
                      */
                     void SetRegion(const std::string& _region);
 
@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取实例接入zone
-                     * @return Zone 实例接入zone
+                     * 获取实例接入可用区。
+                     * @return Zone 实例接入可用区。
                      */
                     std::string GetZone() const;
 
                     /**
-                     * 设置实例接入zone
-                     * @param Zone 实例接入zone
+                     * 设置实例接入可用区。
+                     * @param Zone 实例接入可用区。
                      */
                     void SetZone(const std::string& _zone);
 
@@ -155,14 +155,14 @@ namespace TencentCloud
                     bool ZoneHasBeenSet() const;
 
                     /**
-                     * 获取实例网络id
-                     * @return VpcId 实例网络id
+                     * 获取实例私有网络 ID。
+                     * @return VpcId 实例私有网络 ID。
                      */
                     std::string GetVpcId() const;
 
                     /**
-                     * 设置实例网络id
-                     * @param VpcId 实例网络id
+                     * 设置实例私有网络 ID。
+                     * @param VpcId 实例私有网络 ID。
                      */
                     void SetVpcId(const std::string& _vpcId);
 
@@ -173,14 +173,14 @@ namespace TencentCloud
                     bool VpcIdHasBeenSet() const;
 
                     /**
-                     * 获取子网id
-                     * @return SubnetId 子网id
+                     * 获取私有网络所属子网 ID。
+                     * @return SubnetId 私有网络所属子网 ID。
                      */
                     std::string GetSubnetId() const;
 
                     /**
-                     * 设置子网id
-                     * @param SubnetId 子网id
+                     * 设置私有网络所属子网 ID。
+                     * @param SubnetId 私有网络所属子网 ID。
                      */
                     void SetSubnetId(const std::string& _subnetId);
 
@@ -191,14 +191,34 @@ namespace TencentCloud
                     bool SubnetIdHasBeenSet() const;
 
                     /**
-                     * 获取实例状态信息，1-流程中 ,2-运行中, -2-实例已隔离 ,-3-实例待回收, -4-实例已删除
-                     * @return Status 实例状态信息，1-流程中 ,2-运行中, -2-实例已隔离 ,-3-实例待回收, -4-实例已删除
+                     * 获取实例状态信息。
+- 1-流程中。
+- 2-运行中。
+- -2-实例已隔离。
+- -3-实例待回收。
+- -4-实例已删除。
+                     * @return Status 实例状态信息。
+- 1-流程中。
+- 2-运行中。
+- -2-实例已隔离。
+- -3-实例待回收。
+- -4-实例已删除。
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实例状态信息，1-流程中 ,2-运行中, -2-实例已隔离 ,-3-实例待回收, -4-实例已删除
-                     * @param Status 实例状态信息，1-流程中 ,2-运行中, -2-实例已隔离 ,-3-实例待回收, -4-实例已删除
+                     * 设置实例状态信息。
+- 1-流程中。
+- 2-运行中。
+- -2-实例已隔离。
+- -3-实例待回收。
+- -4-实例已删除。
+                     * @param Status 实例状态信息。
+- 1-流程中。
+- 2-运行中。
+- -2-实例已隔离。
+- -3-实例待回收。
+- -4-实例已删除。
                      */
                     void SetStatus(const std::string& _status);
 
@@ -209,14 +229,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取实例网络ip
-                     * @return Vips 实例网络ip
+                     * 获取实例私有网络 IP 地址。
+                     * @return Vips 实例私有网络 IP 地址。
                      */
                     std::vector<std::string> GetVips() const;
 
                     /**
-                     * 设置实例网络ip
-                     * @param Vips 实例网络ip
+                     * 设置实例私有网络 IP 地址。
+                     * @param Vips 实例私有网络 IP 地址。
                      */
                     void SetVips(const std::vector<std::string>& _vips);
 
@@ -227,14 +247,14 @@ namespace TencentCloud
                     bool VipsHasBeenSet() const;
 
                     /**
-                     * 获取实例网络端口
-                     * @return Vport 实例网络端口
+                     * 获取实例网络端口。
+                     * @return Vport 实例网络端口。
                      */
                     int64_t GetVport() const;
 
                     /**
-                     * 设置实例网络端口
-                     * @param Vport 实例网络端口
+                     * 设置实例网络端口。
+                     * @param Vport 实例网络端口。
                      */
                     void SetVport(const int64_t& _vport);
 
@@ -245,14 +265,14 @@ namespace TencentCloud
                     bool VportHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间
-                     * @return Createtime 实例创建时间
+                     * 获取实例创建时间。
+                     * @return Createtime 实例创建时间。
                      */
                     std::string GetCreatetime() const;
 
                     /**
-                     * 设置实例创建时间
-                     * @param Createtime 实例创建时间
+                     * 设置实例创建时间。
+                     * @param Createtime 实例创建时间。
                      */
                     void SetCreatetime(const std::string& _createtime);
 
@@ -263,14 +283,22 @@ namespace TencentCloud
                     bool CreatetimeHasBeenSet() const;
 
                     /**
-                     * 获取计费类型，0-按量计费，1-包年包月
-                     * @return PayMode 计费类型，0-按量计费，1-包年包月
+                     * 获取计费类型。
+- 0：按量计费。
+- 1：包年包月。
+                     * @return PayMode 计费类型。
+- 0：按量计费。
+- 1：包年包月。
                      */
                     int64_t GetPayMode() const;
 
                     /**
-                     * 设置计费类型，0-按量计费，1-包年包月
-                     * @param PayMode 计费类型，0-按量计费，1-包年包月
+                     * 设置计费类型。
+- 0：按量计费。
+- 1：包年包月。
+                     * @param PayMode 计费类型。
+- 0：按量计费。
+- 1：包年包月。
                      */
                     void SetPayMode(const int64_t& _payMode);
 
@@ -281,14 +309,22 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取网络类型，0-基础网络，1-VPC网络
-                     * @return NetType 网络类型，0-基础网络，1-VPC网络
+                     * 获取网络类型。
+- 0：基础网络。
+- 1：VPC 网络。
+                     * @return NetType 网络类型。
+- 0：基础网络。
+- 1：VPC 网络。
                      */
                     int64_t GetNetType() const;
 
                     /**
-                     * 设置网络类型，0-基础网络，1-VPC网络
-                     * @param NetType 网络类型，0-基础网络，1-VPC网络
+                     * 设置网络类型。
+- 0：基础网络。
+- 1：VPC 网络。
+                     * @param NetType 网络类型。
+- 0：基础网络。
+- 1：VPC 网络。
                      */
                     void SetNetType(const int64_t& _netType);
 
@@ -301,85 +337,94 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例名称
+                     * 实例名称。
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
 
                     /**
-                     * 实例id
+                     * 实例 ID。
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户id
+                     * 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
 
                     /**
-                     * 实例所属项目id
+                     * 实例所属项目 ID。
                      */
                     int64_t m_projectId;
                     bool m_projectIdHasBeenSet;
 
                     /**
-                     * 实例接入区域
+                     * 实例接入区域。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 实例接入zone
+                     * 实例接入可用区。
                      */
                     std::string m_zone;
                     bool m_zoneHasBeenSet;
 
                     /**
-                     * 实例网络id
+                     * 实例私有网络 ID。
                      */
                     std::string m_vpcId;
                     bool m_vpcIdHasBeenSet;
 
                     /**
-                     * 子网id
+                     * 私有网络所属子网 ID。
                      */
                     std::string m_subnetId;
                     bool m_subnetIdHasBeenSet;
 
                     /**
-                     * 实例状态信息，1-流程中 ,2-运行中, -2-实例已隔离 ,-3-实例待回收, -4-实例已删除
+                     * 实例状态信息。
+- 1-流程中。
+- 2-运行中。
+- -2-实例已隔离。
+- -3-实例待回收。
+- -4-实例已删除。
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 实例网络ip
+                     * 实例私有网络 IP 地址。
                      */
                     std::vector<std::string> m_vips;
                     bool m_vipsHasBeenSet;
 
                     /**
-                     * 实例网络端口
+                     * 实例网络端口。
                      */
                     int64_t m_vport;
                     bool m_vportHasBeenSet;
 
                     /**
-                     * 实例创建时间
+                     * 实例创建时间。
                      */
                     std::string m_createtime;
                     bool m_createtimeHasBeenSet;
 
                     /**
-                     * 计费类型，0-按量计费，1-包年包月
+                     * 计费类型。
+- 0：按量计费。
+- 1：包年包月。
                      */
                     int64_t m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 网络类型，0-基础网络，1-VPC网络
+                     * 网络类型。
+- 0：基础网络。
+- 1：VPC 网络。
                      */
                     int64_t m_netType;
                     bool m_netTypeHasBeenSet;

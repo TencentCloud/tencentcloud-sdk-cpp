@@ -341,6 +341,49 @@ TcaplusdbClient::CreateTablesOutcomeCallable TcaplusdbClient::CreateTablesCallab
     return task->get_future();
 }
 
+TcaplusdbClient::DeleteBackupRecordsOutcome TcaplusdbClient::DeleteBackupRecords(const DeleteBackupRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteBackupRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteBackupRecordsResponse rsp = DeleteBackupRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteBackupRecordsOutcome(rsp);
+        else
+            return DeleteBackupRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteBackupRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DeleteBackupRecordsAsync(const DeleteBackupRecordsRequest& request, const DeleteBackupRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteBackupRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DeleteBackupRecordsOutcomeCallable TcaplusdbClient::DeleteBackupRecordsCallable(const DeleteBackupRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteBackupRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteBackupRecords(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TcaplusdbClient::DeleteClusterOutcome TcaplusdbClient::DeleteCluster(const DeleteClusterRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteCluster");
@@ -678,6 +721,49 @@ TcaplusdbClient::DescribeApplicationsOutcomeCallable TcaplusdbClient::DescribeAp
         [this, request]()
         {
             return this->DescribeApplications(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::DescribeBackupRecordsOutcome TcaplusdbClient::DescribeBackupRecords(const DescribeBackupRecordsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupRecords");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupRecordsResponse rsp = DescribeBackupRecordsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupRecordsOutcome(rsp);
+        else
+            return DescribeBackupRecordsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupRecordsOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::DescribeBackupRecordsAsync(const DescribeBackupRecordsRequest& request, const DescribeBackupRecordsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupRecords(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::DescribeBackupRecordsOutcomeCallable TcaplusdbClient::DescribeBackupRecordsCallable(const DescribeBackupRecordsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupRecordsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupRecords(request);
         }
     );
 
@@ -2011,6 +2097,49 @@ TcaplusdbClient::RollbackTablesOutcomeCallable TcaplusdbClient::RollbackTablesCa
         [this, request]()
         {
             return this->RollbackTables(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TcaplusdbClient::SetBackupExpireRuleOutcome TcaplusdbClient::SetBackupExpireRule(const SetBackupExpireRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "SetBackupExpireRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        SetBackupExpireRuleResponse rsp = SetBackupExpireRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return SetBackupExpireRuleOutcome(rsp);
+        else
+            return SetBackupExpireRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return SetBackupExpireRuleOutcome(outcome.GetError());
+    }
+}
+
+void TcaplusdbClient::SetBackupExpireRuleAsync(const SetBackupExpireRuleRequest& request, const SetBackupExpireRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->SetBackupExpireRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TcaplusdbClient::SetBackupExpireRuleOutcomeCallable TcaplusdbClient::SetBackupExpireRuleCallable(const SetBackupExpireRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<SetBackupExpireRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->SetBackupExpireRule(request);
         }
     );
 

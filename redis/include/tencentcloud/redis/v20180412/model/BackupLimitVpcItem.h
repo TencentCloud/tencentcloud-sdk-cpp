@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 自定义的备份文件下载地址的 VPC 信息。
+                * 已配置的备份文件下载地址对应的 VPC 信息。
                 */
                 class BackupLimitVpcItem : public AbstractModel
                 {
@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自定义下载备份文件的VPC 所属地域。
-                     * @return Region 自定义下载备份文件的VPC 所属地域。
+                     * 获取备份文件的下载地址对应VPC 所属的地域。
+                     * @return Region 备份文件的下载地址对应VPC 所属的地域。
                      */
                     std::string GetRegion() const;
 
                     /**
-                     * 设置自定义下载备份文件的VPC 所属地域。
-                     * @param Region 自定义下载备份文件的VPC 所属地域。
+                     * 设置备份文件的下载地址对应VPC 所属的地域。
+                     * @param Region 备份文件的下载地址对应VPC 所属的地域。
                      */
                     void SetRegion(const std::string& _region);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RegionHasBeenSet() const;
 
                     /**
-                     * 获取自定义下载备份文件的 VPC 列表。
-                     * @return VpcList 自定义下载备份文件的 VPC 列表。
+                     * 获取备份文件下载地址的 VPC 列表。
+                     * @return VpcList 备份文件下载地址的 VPC 列表。
                      */
                     std::vector<std::string> GetVpcList() const;
 
                     /**
-                     * 设置自定义下载备份文件的 VPC 列表。
-                     * @param VpcList 自定义下载备份文件的 VPC 列表。
+                     * 设置备份文件下载地址的 VPC 列表。
+                     * @param VpcList 备份文件下载地址的 VPC 列表。
                      */
                     void SetVpcList(const std::vector<std::string>& _vpcList);
 
@@ -85,13 +85,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自定义下载备份文件的VPC 所属地域。
+                     * 备份文件的下载地址对应VPC 所属的地域。
                      */
                     std::string m_region;
                     bool m_regionHasBeenSet;
 
                     /**
-                     * 自定义下载备份文件的 VPC 列表。
+                     * 备份文件下载地址的 VPC 列表。
                      */
                     std::vector<std::string> m_vpcList;
                     bool m_vpcListHasBeenSet;

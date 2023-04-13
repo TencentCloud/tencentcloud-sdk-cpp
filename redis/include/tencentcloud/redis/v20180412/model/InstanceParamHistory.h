@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取参数名称
-                     * @return ParamName 参数名称
+                     * 获取参数名称。
+                     * @return ParamName 参数名称。
                      */
                     std::string GetParamName() const;
 
                     /**
-                     * 设置参数名称
-                     * @param ParamName 参数名称
+                     * 设置参数名称。
+                     * @param ParamName 参数名称。
                      */
                     void SetParamName(const std::string& _paramName);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool ParamNameHasBeenSet() const;
 
                     /**
-                     * 获取修改前值
-                     * @return PreValue 修改前值
+                     * 获取参数修改之前的值。
+                     * @return PreValue 参数修改之前的值。
                      */
                     std::string GetPreValue() const;
 
                     /**
-                     * 设置修改前值
-                     * @param PreValue 修改前值
+                     * 设置参数修改之前的值。
+                     * @param PreValue 参数修改之前的值。
                      */
                     void SetPreValue(const std::string& _preValue);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool PreValueHasBeenSet() const;
 
                     /**
-                     * 获取修改后值
-                     * @return NewValue 修改后值
+                     * 获取参数修改之后的值。
+                     * @return NewValue 参数修改之后的值。
                      */
                     std::string GetNewValue() const;
 
                     /**
-                     * 设置修改后值
-                     * @param NewValue 修改后值
+                     * 设置参数修改之后的值。
+                     * @param NewValue 参数修改之后的值。
                      */
                     void SetNewValue(const std::string& _newValue);
 
@@ -101,14 +101,26 @@ namespace TencentCloud
                     bool NewValueHasBeenSet() const;
 
                     /**
-                     * 获取状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
-                     * @return Status 状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
+                     * 获取参数配置状态。
+- 1：参数配置修改中。
+- 2：参数配置修改成功。
+- 3：参数配置修改失败。
+                     * @return Status 参数配置状态。
+- 1：参数配置修改中。
+- 2：参数配置修改成功。
+- 3：参数配置修改失败。
                      */
                     int64_t GetStatus() const;
 
                     /**
-                     * 设置状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
-                     * @param Status 状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
+                     * 设置参数配置状态。
+- 1：参数配置修改中。
+- 2：参数配置修改成功。
+- 3：参数配置修改失败。
+                     * @param Status 参数配置状态。
+- 1：参数配置修改中。
+- 2：参数配置修改成功。
+- 3：参数配置修改失败。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -119,14 +131,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取修改时间
-                     * @return ModifyTime 修改时间
+                     * 获取修改时间。
+                     * @return ModifyTime 修改时间。
                      */
                     std::string GetModifyTime() const;
 
                     /**
-                     * 设置修改时间
-                     * @param ModifyTime 修改时间
+                     * 设置修改时间。
+                     * @param ModifyTime 修改时间。
                      */
                     void SetModifyTime(const std::string& _modifyTime);
 
@@ -139,31 +151,34 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 参数名称
+                     * 参数名称。
                      */
                     std::string m_paramName;
                     bool m_paramNameHasBeenSet;
 
                     /**
-                     * 修改前值
+                     * 参数修改之前的值。
                      */
                     std::string m_preValue;
                     bool m_preValueHasBeenSet;
 
                     /**
-                     * 修改后值
+                     * 参数修改之后的值。
                      */
                     std::string m_newValue;
                     bool m_newValueHasBeenSet;
 
                     /**
-                     * 状态：1-参数配置修改中；2-参数配置修改成功；3-参数配置修改失败
+                     * 参数配置状态。
+- 1：参数配置修改中。
+- 2：参数配置修改成功。
+- 3：参数配置修改失败。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 修改时间
+                     * 修改时间。
                      */
                     std::string m_modifyTime;
                     bool m_modifyTimeHasBeenSet;

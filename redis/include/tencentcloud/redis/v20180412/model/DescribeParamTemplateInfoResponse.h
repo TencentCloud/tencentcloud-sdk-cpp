@@ -45,8 +45,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例参数个数
-                     * @return TotalCount 实例参数个数
+                     * 获取参数模板的参数数量。
+                     * @return TotalCount 参数模板的参数数量。
                      */
                     int64_t GetTotalCount() const;
 
@@ -81,8 +81,28 @@ namespace TencentCloud
                     bool NameHasBeenSet() const;
 
                     /**
-                     * 获取产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
-                     * @return ProductType 产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
+                     * 获取产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
+                     * @return ProductType 产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
                      */
                     uint64_t GetProductType() const;
 
@@ -93,8 +113,8 @@ namespace TencentCloud
                     bool ProductTypeHasBeenSet() const;
 
                     /**
-                     * 获取参数模板描述
-                     * @return Description 参数模板描述
+                     * 获取参数模板描述。
+                     * @return Description 参数模板描述。
                      */
                     std::string GetDescription() const;
 
@@ -105,8 +125,8 @@ namespace TencentCloud
                     bool DescriptionHasBeenSet() const;
 
                     /**
-                     * 获取参数详情
-                     * @return Items 参数详情
+                     * 获取参数详情。包含：参数的名称，当前运行值，默认值，最大值、最小值、枚举值等信息。
+                     * @return Items 参数详情。包含：参数的名称，当前运行值，默认值，最大值、最小值、枚举值等信息。
                      */
                     std::vector<ParameterDetail> GetItems() const;
 
@@ -119,7 +139,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例参数个数
+                     * 参数模板的参数数量。
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
@@ -137,19 +157,29 @@ namespace TencentCloud
                     bool m_nameHasBeenSet;
 
                     /**
-                     * 产品类型：1 – Redis2.8内存版（集群架构），2 – Redis2.8内存版（标准架构），3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版（单机），6 – Redis4.0内存版（标准架构），7 – Redis4.0内存版（集群架构），8 – Redis5.0内存版（标准架构），9 – Redis5.0内存版（集群架构）
+                     * 产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
                      */
                     uint64_t m_productType;
                     bool m_productTypeHasBeenSet;
 
                     /**
-                     * 参数模板描述
+                     * 参数模板描述。
                      */
                     std::string m_description;
                     bool m_descriptionHasBeenSet;
 
                     /**
-                     * 参数详情
+                     * 参数详情。包含：参数的名称，当前运行值，默认值，最大值、最小值、枚举值等信息。
                      */
                     std::vector<ParameterDetail> m_items;
                     bool m_itemsHasBeenSet;

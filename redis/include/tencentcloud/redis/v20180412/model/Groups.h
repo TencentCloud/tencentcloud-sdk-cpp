@@ -48,14 +48,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取用户AppID
-                     * @return AppId 用户AppID
+                     * 获取用户 APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @return AppId 用户 APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
                      */
                     int64_t GetAppId() const;
 
                     /**
-                     * 设置用户AppID
-                     * @param AppId 用户AppID
+                     * 设置用户 APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+                     * @param AppId 用户 APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
                      */
                     void SetAppId(const int64_t& _appId);
 
@@ -156,14 +156,14 @@ namespace TencentCloud
                     bool RegionIdHasBeenSet() const;
 
                     /**
-                     * 获取复制组 ID。
-                     * @return GroupId 复制组 ID。
+                     * 获取复制组 ID。格式如：crs-rpl-deind****。
+                     * @return GroupId 复制组 ID。格式如：crs-rpl-deind****。
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置复制组 ID。
-                     * @param GroupId 复制组 ID。
+                     * 设置复制组 ID。格式如：crs-rpl-deind****。
+                     * @param GroupId 复制组 ID。格式如：crs-rpl-deind****。
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -298,7 +298,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 用户AppID
+                     * 用户 APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
                      */
                     int64_t m_appId;
                     bool m_appIdHasBeenSet;
@@ -328,7 +328,7 @@ namespace TencentCloud
                     bool m_regionIdHasBeenSet;
 
                     /**
-                     * 复制组 ID。
+                     * 复制组 ID。格式如：crs-rpl-deind****。
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

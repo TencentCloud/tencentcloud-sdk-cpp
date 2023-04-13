@@ -897,7 +897,7 @@ namespace TencentCloud
                 DescribeMaintenanceWindowOutcomeCallable DescribeMaintenanceWindowCallable(const Model::DescribeMaintenanceWindowRequest& request);
 
                 /**
-                 *查询参数模板详情。
+                 *本接口（DescribeParamTemplateInfo）用于查询参数模板详情。
                  * @param req DescribeParamTemplateInfoRequest
                  * @return DescribeParamTemplateInfoOutcome
                  */
