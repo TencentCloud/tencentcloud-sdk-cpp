@@ -32,7 +32,8 @@ CreateTopicRequest::CreateTopicRequest() :
     m_storageTypeHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_describesHasBeenSet(false),
-    m_hotPeriodHasBeenSet(false)
+    m_hotPeriodHasBeenSet(false),
+    m_isWebTrackingHasBeenSet(false)
 {
 }
 
@@ -128,6 +129,14 @@ string CreateTopicRequest::ToJsonString() const
         string key = "HotPeriod";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_hotPeriod, allocator);
+    }
+
+    if (m_isWebTrackingHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IsWebTracking";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_isWebTracking, allocator);
     }
 
 
@@ -296,6 +305,22 @@ void CreateTopicRequest::SetHotPeriod(const uint64_t& _hotPeriod)
 bool CreateTopicRequest::HotPeriodHasBeenSet() const
 {
     return m_hotPeriodHasBeenSet;
+}
+
+bool CreateTopicRequest::GetIsWebTracking() const
+{
+    return m_isWebTracking;
+}
+
+void CreateTopicRequest::SetIsWebTracking(const bool& _isWebTracking)
+{
+    m_isWebTracking = _isWebTracking;
+    m_isWebTrackingHasBeenSet = true;
+}
+
+bool CreateTopicRequest::IsWebTrackingHasBeenSet() const
+{
+    return m_isWebTrackingHasBeenSet;
 }
 
 

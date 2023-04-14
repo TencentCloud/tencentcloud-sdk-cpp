@@ -35,7 +35,9 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * Words
+                * 音频检测提示信息：
+1.检测字是否存在多读、 少读、 错读等
+2.检测准确度和流畅度
                 */
                 class Words : public AbstractModel
                 {
@@ -47,17 +49,17 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取准确度
+                     * 获取准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PronAccuracy 准确度
+                     * @return PronAccuracy 准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetPronAccuracy() const;
 
                     /**
-                     * 设置准确度
+                     * 设置准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PronAccuracy 准确度
+                     * @param PronAccuracy 准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPronAccuracy(const double& _pronAccuracy);
@@ -69,17 +71,17 @@ namespace TencentCloud
                     bool PronAccuracyHasBeenSet() const;
 
                     /**
-                     * 获取流畅度
+                     * 获取流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PronFluency 流畅度
+                     * @return PronFluency 流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double GetPronFluency() const;
 
                     /**
-                     * 设置流畅度
+                     * 设置流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PronFluency 流畅度
+                     * @param PronFluency 流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPronFluency(const double& _pronFluency);
@@ -91,17 +93,41 @@ namespace TencentCloud
                     bool PronFluencyHasBeenSet() const;
 
                     /**
-                     * 获取tag: 0: match, 1: insert, 2: delete, 3: replace, 4: oov, 5: unknown
+                     * 获取tag: 
+0: match  匹配
+1: insert   多读
+2: delete  少读
+3: replace 错读
+4: oov  待评估字不在发音评估的词库
+5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Tag tag: 0: match, 1: insert, 2: delete, 3: replace, 4: oov, 5: unknown
+                     * @return Tag tag: 
+0: match  匹配
+1: insert   多读
+2: delete  少读
+3: replace 错读
+4: oov  待评估字不在发音评估的词库
+5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetTag() const;
 
                     /**
-                     * 设置tag: 0: match, 1: insert, 2: delete, 3: replace, 4: oov, 5: unknown
+                     * 设置tag: 
+0: match  匹配
+1: insert   多读
+2: delete  少读
+3: replace 错读
+4: oov  待评估字不在发音评估的词库
+5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Tag tag: 0: match, 1: insert, 2: delete, 3: replace, 4: oov, 5: unknown
+                     * @param Tag tag: 
+0: match  匹配
+1: insert   多读
+2: delete  少读
+3: replace 错读
+4: oov  待评估字不在发音评估的词库
+5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTag(const int64_t& _tag);
@@ -137,21 +163,27 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 准确度
+                     * 准确度 (<75则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_pronAccuracy;
                     bool m_pronAccuracyHasBeenSet;
 
                     /**
-                     * 流畅度
+                     * 流畅度 (<0.95则认为不合格)
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     double m_pronFluency;
                     bool m_pronFluencyHasBeenSet;
 
                     /**
-                     * tag: 0: match, 1: insert, 2: delete, 3: replace, 4: oov, 5: unknown
+                     * tag: 
+0: match  匹配
+1: insert   多读
+2: delete  少读
+3: replace 错读
+4: oov  待评估字不在发音评估的词库
+5: unknown 未知错误
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_tag;

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool SceneHasBeenSet() const;
 
                     /**
-                     * 获取logo地址。
-                     * @return LogoUrl logo地址。
+                     * 获取logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
+                     * @return LogoUrl logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
                      */
                     std::string GetLogoUrl() const;
 
                     /**
-                     * 设置logo地址。
-                     * @param LogoUrl logo地址。
+                     * 设置logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
+                     * @param LogoUrl logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
                      */
                     void SetLogoUrl(const std::string& _logoUrl);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool LogoUrlHasBeenSet() const;
 
                     /**
-                     * 获取主页地址，可设置用于跳转。
-                     * @return HomeUrl 主页地址，可设置用于跳转。
+                     * 获取HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
+                     * @return HomeUrl HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
                      */
                     std::string GetHomeUrl() const;
 
                     /**
-                     * 设置主页地址，可设置用于跳转。
-                     * @param HomeUrl 主页地址，可设置用于跳转。
+                     * 设置HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
+                     * @param HomeUrl HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
                      */
                     void SetHomeUrl(const std::string& _homeUrl);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool HomeUrlHasBeenSet() const;
 
                     /**
-                     * 获取自定义的js。
-                     * @return JsUrl 自定义的js。
+                     * 获取JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
+                     * @return JsUrl JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
                      */
                     std::string GetJsUrl() const;
 
                     /**
-                     * 设置自定义的js。
-                     * @param JsUrl 自定义的js。
+                     * 设置JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
+                     * @param JsUrl JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
                      */
                     void SetJsUrl(const std::string& _jsUrl);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool JsUrlHasBeenSet() const;
 
                     /**
-                     * 获取自定义的css。
-                     * @return CssUrl 自定义的css。
+                     * 获取Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
+                     * @return CssUrl Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
                      */
                     std::string GetCssUrl() const;
 
                     /**
-                     * 设置自定义的css。
-                     * @param CssUrl 自定义的css。
+                     * 设置Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
+                     * @param CssUrl Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
                      */
                     void SetCssUrl(const std::string& _cssUrl);
 
@@ -145,25 +145,25 @@ namespace TencentCloud
                     bool m_sceneHasBeenSet;
 
                     /**
-                     * logo地址。
+                     * logo地址，用于上课时展示的课堂或平台图标，支持开发商自定义业务品牌展示。
                      */
                     std::string m_logoUrl;
                     bool m_logoUrlHasBeenSet;
 
                     /**
-                     * 主页地址，可设置用于跳转。
+                     * HomeUrl：主页地址，用于上课结束后课堂跳转，支持跳转到自己的业务系统。如果配置为空则下课后关闭课堂页面。
                      */
                     std::string m_homeUrl;
                     bool m_homeUrlHasBeenSet;
 
                     /**
-                     * 自定义的js。
+                     * JsUrl ：自定义js。针对应用用于开发上自定义课堂界面、模块功能、监控操作，支持数据请求与响应处理。
                      */
                     std::string m_jsUrl;
                     bool m_jsUrlHasBeenSet;
 
                     /**
-                     * 自定义的css。
+                     * Css : 自定义的css。针对应用用于支持课堂界面的、模块的UI渲染修改、皮肤配色修改、功能模块的隐藏和展示。
                      */
                     std::string m_cssUrl;
                     bool m_cssUrlHasBeenSet;

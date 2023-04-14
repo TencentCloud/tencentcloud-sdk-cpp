@@ -43,7 +43,25 @@ namespace TencentCloud
                     std::string ToJsonString() const;
 
 
+                    /**
+                     * 获取房间维度用量数据，csv文件格式。
+                     * @return Data 房间维度用量数据，csv文件格式。
+                     */
+                    std::string GetData() const;
+
+                    /**
+                     * 判断参数 Data 是否已赋值
+                     * @return Data 是否已赋值
+                     */
+                    bool DataHasBeenSet() const;
+
                 private:
+
+                    /**
+                     * 房间维度用量数据，csv文件格式。
+                     */
+                    std::string m_data;
+                    bool m_dataHasBeenSet;
 
                 };
             }

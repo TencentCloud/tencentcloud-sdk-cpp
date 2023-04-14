@@ -62,17 +62,17 @@ namespace TencentCloud
 
                     /**
                      * 获取告警回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。
-回调数据格式请参考文档：
+回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/90112
                      * @return Callback 告警回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。
-回调数据格式请参考文档：
+回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/90112
                      */
                     std::string GetCallback() const;
 
                     /**
                      * 设置告警回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。
-回调数据格式请参考文档：
+回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/90112
                      * @param Callback 告警回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。
-回调数据格式请参考文档：
+回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/90112
                      */
                     void SetCallback(const std::string& _callback);
 
@@ -110,7 +110,7 @@ namespace TencentCloud
 
                     /**
                      * 告警回调地址，如果传空字符串会删除原来的回调地址配置，回调地址仅支持http或https协议，即回调地址以http://或https://开头。
-回调数据格式请参考文档：
+回调数据格式请参考文档：https://cloud.tencent.com/document/product/1137/90112
                      */
                     std::string m_callback;
                     bool m_callbackHasBeenSet;

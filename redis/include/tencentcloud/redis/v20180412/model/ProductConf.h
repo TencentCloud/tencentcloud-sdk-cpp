@@ -47,14 +47,54 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取产品类型，2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版(单机版)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)，10 – Redis4.0混合存储版Tendis
-                     * @return Type 产品类型，2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版(单机版)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)，10 – Redis4.0混合存储版Tendis
+                     * 获取产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
+                     * @return Type 产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
                      */
                     int64_t GetType() const;
 
                     /**
-                     * 设置产品类型，2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版(单机版)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)，10 – Redis4.0混合存储版Tendis
-                     * @param Type 产品类型，2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版(单机版)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)，10 – Redis4.0混合存储版Tendis
+                     * 设置产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
+                     * @param Type 产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
                      */
                     void SetType(const int64_t& _type);
 
@@ -65,14 +105,14 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取产品名称，Redis主从版，CKV主从版，CKV集群版，Redis单机版，Redis集群版，混合存储版Tendis
-                     * @return TypeName 产品名称，Redis主从版，CKV主从版，CKV集群版，Redis单机版，Redis集群版，混合存储版Tendis
+                     * 获取产品名称。包括：Redis 主从版、CKV 主从版、CKV 集群版、Redis 单机版、Redis 集群版。
+                     * @return TypeName 产品名称。包括：Redis 主从版、CKV 主从版、CKV 集群版、Redis 单机版、Redis 集群版。
                      */
                     std::string GetTypeName() const;
 
                     /**
-                     * 设置产品名称，Redis主从版，CKV主从版，CKV集群版，Redis单机版，Redis集群版，混合存储版Tendis
-                     * @param TypeName 产品名称，Redis主从版，CKV主从版，CKV集群版，Redis单机版，Redis集群版，混合存储版Tendis
+                     * 设置产品名称。包括：Redis 主从版、CKV 主从版、CKV 集群版、Redis 单机版、Redis 集群版。
+                     * @param TypeName 产品名称。包括：Redis 主从版、CKV 主从版、CKV 集群版、Redis 单机版、Redis 集群版。
                      */
                     void SetTypeName(const std::string& _typeName);
 
@@ -83,14 +123,14 @@ namespace TencentCloud
                     bool TypeNameHasBeenSet() const;
 
                     /**
-                     * 获取购买时的最小数量
-                     * @return MinBuyNum 购买时的最小数量
+                     * 获取购买时的最小数量。
+                     * @return MinBuyNum 购买时的最小数量。
                      */
                     int64_t GetMinBuyNum() const;
 
                     /**
-                     * 设置购买时的最小数量
-                     * @param MinBuyNum 购买时的最小数量
+                     * 设置购买时的最小数量。
+                     * @param MinBuyNum 购买时的最小数量。
                      */
                     void SetMinBuyNum(const int64_t& _minBuyNum);
 
@@ -101,14 +141,14 @@ namespace TencentCloud
                     bool MinBuyNumHasBeenSet() const;
 
                     /**
-                     * 获取购买时的最大数量
-                     * @return MaxBuyNum 购买时的最大数量
+                     * 获取购买时的最大数量。
+                     * @return MaxBuyNum 购买时的最大数量。
                      */
                     int64_t GetMaxBuyNum() const;
 
                     /**
-                     * 设置购买时的最大数量
-                     * @param MaxBuyNum 购买时的最大数量
+                     * 设置购买时的最大数量。
+                     * @param MaxBuyNum 购买时的最大数量。
                      */
                     void SetMaxBuyNum(const int64_t& _maxBuyNum);
 
@@ -119,14 +159,22 @@ namespace TencentCloud
                     bool MaxBuyNumHasBeenSet() const;
 
                     /**
-                     * 获取产品是否售罄
-                     * @return Saleout 产品是否售罄
+                     * 获取产品是否售罄。
+- true：售罄。
+- false：未售罄。
+                     * @return Saleout 产品是否售罄。
+- true：售罄。
+- false：未售罄。
                      */
                     bool GetSaleout() const;
 
                     /**
-                     * 设置产品是否售罄
-                     * @param Saleout 产品是否售罄
+                     * 设置产品是否售罄。
+- true：售罄。
+- false：未售罄。
+                     * @param Saleout 产品是否售罄。
+- true：售罄。
+- false：未售罄。
                      */
                     void SetSaleout(const bool& _saleout);
 
@@ -137,14 +185,14 @@ namespace TencentCloud
                     bool SaleoutHasBeenSet() const;
 
                     /**
-                     * 获取产品引擎，腾讯云CKV或者社区版Redis
-                     * @return Engine 产品引擎，腾讯云CKV或者社区版Redis
+                     * 获取产品引擎。包括：腾讯云 CKV与社区版 Redis。
+                     * @return Engine 产品引擎。包括：腾讯云 CKV与社区版 Redis。
                      */
                     std::string GetEngine() const;
 
                     /**
-                     * 设置产品引擎，腾讯云CKV或者社区版Redis
-                     * @param Engine 产品引擎，腾讯云CKV或者社区版Redis
+                     * 设置产品引擎。包括：腾讯云 CKV与社区版 Redis。
+                     * @param Engine 产品引擎。包括：腾讯云 CKV与社区版 Redis。
                      */
                     void SetEngine(const std::string& _engine);
 
@@ -155,14 +203,14 @@ namespace TencentCloud
                     bool EngineHasBeenSet() const;
 
                     /**
-                     * 获取兼容版本，Redis-2.8，Redis-3.2，Redis-4.0
-                     * @return Version 兼容版本，Redis-2.8，Redis-3.2，Redis-4.0
+                     * 获取兼容版本。包括：Redis-2.8、Redis-3.2、Redis-4.0、Redis-5.0、Redis-6.2。
+                     * @return Version 兼容版本。包括：Redis-2.8、Redis-3.2、Redis-4.0、Redis-5.0、Redis-6.2。
                      */
                     std::string GetVersion() const;
 
                     /**
-                     * 设置兼容版本，Redis-2.8，Redis-3.2，Redis-4.0
-                     * @param Version 兼容版本，Redis-2.8，Redis-3.2，Redis-4.0
+                     * 设置兼容版本。包括：Redis-2.8、Redis-3.2、Redis-4.0、Redis-5.0、Redis-6.2。
+                     * @param Version 兼容版本。包括：Redis-2.8、Redis-3.2、Redis-4.0、Redis-5.0、Redis-6.2。
                      */
                     void SetVersion(const std::string& _version);
 
@@ -173,14 +221,14 @@ namespace TencentCloud
                     bool VersionHasBeenSet() const;
 
                     /**
-                     * 获取规格总大小，单位G
-                     * @return TotalSize 规格总大小，单位G
+                     * 获取规格总大小，单位GB。
+                     * @return TotalSize 规格总大小，单位GB。
                      */
                     std::vector<std::string> GetTotalSize() const;
 
                     /**
-                     * 设置规格总大小，单位G
-                     * @param TotalSize 规格总大小，单位G
+                     * 设置规格总大小，单位GB。
+                     * @param TotalSize 规格总大小，单位GB。
                      */
                     void SetTotalSize(const std::vector<std::string>& _totalSize);
 
@@ -191,14 +239,14 @@ namespace TencentCloud
                     bool TotalSizeHasBeenSet() const;
 
                     /**
-                     * 获取每个分片大小，单位G
-                     * @return ShardSize 每个分片大小，单位G
+                     * 获取每个分片大小，单位GB。
+                     * @return ShardSize 每个分片大小，单位GB。
                      */
                     std::vector<std::string> GetShardSize() const;
 
                     /**
-                     * 设置每个分片大小，单位G
-                     * @param ShardSize 每个分片大小，单位G
+                     * 设置每个分片大小，单位GB。
+                     * @param ShardSize 每个分片大小，单位GB。
                      */
                     void SetShardSize(const std::vector<std::string>& _shardSize);
 
@@ -209,14 +257,14 @@ namespace TencentCloud
                     bool ShardSizeHasBeenSet() const;
 
                     /**
-                     * 获取副本数量
-                     * @return ReplicaNum 副本数量
+                     * 获取副本数量。
+                     * @return ReplicaNum 副本数量。
                      */
                     std::vector<std::string> GetReplicaNum() const;
 
                     /**
-                     * 设置副本数量
-                     * @param ReplicaNum 副本数量
+                     * 设置副本数量。
+                     * @param ReplicaNum 副本数量。
                      */
                     void SetReplicaNum(const std::vector<std::string>& _replicaNum);
 
@@ -227,14 +275,14 @@ namespace TencentCloud
                     bool ReplicaNumHasBeenSet() const;
 
                     /**
-                     * 获取分片数量
-                     * @return ShardNum 分片数量
+                     * 获取分片数量。
+                     * @return ShardNum 分片数量。
                      */
                     std::vector<std::string> GetShardNum() const;
 
                     /**
-                     * 设置分片数量
-                     * @param ShardNum 分片数量
+                     * 设置分片数量。
+                     * @param ShardNum 分片数量。
                      */
                     void SetShardNum(const std::vector<std::string>& _shardNum);
 
@@ -245,14 +293,22 @@ namespace TencentCloud
                     bool ShardNumHasBeenSet() const;
 
                     /**
-                     * 获取支持的计费模式，1-包年包月，0-按量计费
-                     * @return PayMode 支持的计费模式，1-包年包月，0-按量计费
+                     * 获取支持的计费模式。
+- 1：包年包月。
+- 0：按量计费。
+                     * @return PayMode 支持的计费模式。
+- 1：包年包月。
+- 0：按量计费。
                      */
                     std::string GetPayMode() const;
 
                     /**
-                     * 设置支持的计费模式，1-包年包月，0-按量计费
-                     * @param PayMode 支持的计费模式，1-包年包月，0-按量计费
+                     * 设置支持的计费模式。
+- 1：包年包月。
+- 0：按量计费。
+                     * @param PayMode 支持的计费模式。
+- 1：包年包月。
+- 0：按量计费。
                      */
                     void SetPayMode(const std::string& _payMode);
 
@@ -263,14 +319,22 @@ namespace TencentCloud
                     bool PayModeHasBeenSet() const;
 
                     /**
-                     * 获取是否支持副本只读
-                     * @return EnableRepicaReadOnly 是否支持副本只读
+                     * 获取是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
+                     * @return EnableRepicaReadOnly 是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
                      */
                     bool GetEnableRepicaReadOnly() const;
 
                     /**
-                     * 设置是否支持副本只读
-                     * @param EnableRepicaReadOnly 是否支持副本只读
+                     * 设置是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
+                     * @param EnableRepicaReadOnly 是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
                      */
                     void SetEnableRepicaReadOnly(const bool& _enableRepicaReadOnly);
 
@@ -283,79 +347,95 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 产品类型，2 – Redis2.8内存版(标准架构)，3 – CKV 3.2内存版(标准架构)，4 – CKV 3.2内存版(集群架构)，5 – Redis2.8内存版(单机版)，6 – Redis4.0内存版(标准架构)，7 – Redis4.0内存版(集群架构)，8 – Redis5.0内存版(标准架构)，9 – Redis5.0内存版(集群架构)，10 – Redis4.0混合存储版Tendis
+                     * 产品类型。
+- 2：Redis 2.8内存版（标准架构）。
+- 3：CKV 3.2内存版（标准架构）。
+- 4：CKV 3.2内存版（集群架构）。
+- 5：Redis 2.8内存版（单机）。
+- 6：Redis 4.0内存版（标准架构）。
+- 7：Redis 4.0内存版（集群架构）。
+- 8：Redis 5.0内存版（标准架构）。
+- 9：Redis 5.0内存版（集群架构）。
+- 15：Redis 6.2内存版（标准架构）。
+- 16：Redis 6.2内存版（集群架构）。
                      */
                     int64_t m_type;
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 产品名称，Redis主从版，CKV主从版，CKV集群版，Redis单机版，Redis集群版，混合存储版Tendis
+                     * 产品名称。包括：Redis 主从版、CKV 主从版、CKV 集群版、Redis 单机版、Redis 集群版。
                      */
                     std::string m_typeName;
                     bool m_typeNameHasBeenSet;
 
                     /**
-                     * 购买时的最小数量
+                     * 购买时的最小数量。
                      */
                     int64_t m_minBuyNum;
                     bool m_minBuyNumHasBeenSet;
 
                     /**
-                     * 购买时的最大数量
+                     * 购买时的最大数量。
                      */
                     int64_t m_maxBuyNum;
                     bool m_maxBuyNumHasBeenSet;
 
                     /**
-                     * 产品是否售罄
+                     * 产品是否售罄。
+- true：售罄。
+- false：未售罄。
                      */
                     bool m_saleout;
                     bool m_saleoutHasBeenSet;
 
                     /**
-                     * 产品引擎，腾讯云CKV或者社区版Redis
+                     * 产品引擎。包括：腾讯云 CKV与社区版 Redis。
                      */
                     std::string m_engine;
                     bool m_engineHasBeenSet;
 
                     /**
-                     * 兼容版本，Redis-2.8，Redis-3.2，Redis-4.0
+                     * 兼容版本。包括：Redis-2.8、Redis-3.2、Redis-4.0、Redis-5.0、Redis-6.2。
                      */
                     std::string m_version;
                     bool m_versionHasBeenSet;
 
                     /**
-                     * 规格总大小，单位G
+                     * 规格总大小，单位GB。
                      */
                     std::vector<std::string> m_totalSize;
                     bool m_totalSizeHasBeenSet;
 
                     /**
-                     * 每个分片大小，单位G
+                     * 每个分片大小，单位GB。
                      */
                     std::vector<std::string> m_shardSize;
                     bool m_shardSizeHasBeenSet;
 
                     /**
-                     * 副本数量
+                     * 副本数量。
                      */
                     std::vector<std::string> m_replicaNum;
                     bool m_replicaNumHasBeenSet;
 
                     /**
-                     * 分片数量
+                     * 分片数量。
                      */
                     std::vector<std::string> m_shardNum;
                     bool m_shardNumHasBeenSet;
 
                     /**
-                     * 支持的计费模式，1-包年包月，0-按量计费
+                     * 支持的计费模式。
+- 1：包年包月。
+- 0：按量计费。
                      */
                     std::string m_payMode;
                     bool m_payModeHasBeenSet;
 
                     /**
-                     * 是否支持副本只读
+                     * 是否支持副本只读。
+- true：支持副本只读。
+- false：不支持。
                      */
                     bool m_enableRepicaReadOnly;
                     bool m_enableRepicaReadOnlyHasBeenSet;

@@ -137,14 +137,38 @@ namespace TencentCloud
                     bool ServiceTypeHasBeenSet() const;
 
                     /**
-                     * 获取模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败
-                     * @return ModelState 模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败
+                     * 获取模型状态：
+-2：模型训练失败；
+-1：已下线；
+0：训练中；
+1：已上线；
+3：上线中；
+4：下线中；
+                     * @return ModelState 模型状态：
+-2：模型训练失败；
+-1：已下线；
+0：训练中；
+1：已上线；
+3：上线中；
+4：下线中；
                      */
                     int64_t GetModelState() const;
 
                     /**
-                     * 设置模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败
-                     * @param ModelState 模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败
+                     * 设置模型状态：
+-2：模型训练失败；
+-1：已下线；
+0：训练中；
+1：已上线；
+3：上线中；
+4：下线中；
+                     * @param ModelState 模型状态：
+-2：模型训练失败；
+-1：已下线；
+0：训练中；
+1：已上线；
+3：上线中；
+4：下线中；
                      */
                     void SetModelState(const int64_t& _modelState);
 
@@ -227,7 +251,13 @@ namespace TencentCloud
                     bool m_serviceTypeHasBeenSet;
 
                     /**
-                     * 模型状态，-1下线状态，1上线状态, 0训练中, -2 训练失败
+                     * 模型状态：
+-2：模型训练失败；
+-1：已下线；
+0：训练中；
+1：已上线；
+3：上线中；
+4：下线中；
                      */
                     int64_t m_modelState;
                     bool m_modelStateHasBeenSet;
