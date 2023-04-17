@@ -1502,6 +1502,49 @@ TrpClient::DescribeTraceCodesOutcomeCallable TrpClient::DescribeTraceCodesCallab
     return task->get_future();
 }
 
+TrpClient::DescribeTraceDataByIdOutcome TrpClient::DescribeTraceDataById(const DescribeTraceDataByIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeTraceDataById");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeTraceDataByIdResponse rsp = DescribeTraceDataByIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeTraceDataByIdOutcome(rsp);
+        else
+            return DescribeTraceDataByIdOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeTraceDataByIdOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::DescribeTraceDataByIdAsync(const DescribeTraceDataByIdRequest& request, const DescribeTraceDataByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeTraceDataById(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::DescribeTraceDataByIdOutcomeCallable TrpClient::DescribeTraceDataByIdCallable(const DescribeTraceDataByIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeTraceDataByIdOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeTraceDataById(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::DescribeTraceDataListOutcome TrpClient::DescribeTraceDataList(const DescribeTraceDataListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeTraceDataList");

@@ -14,55 +14,54 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWREMINDSRESPONSE_H_
-#define TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWREMINDSRESPONSE_H_
+#ifndef TENCENTCLOUD_CFS_V20190719_MODEL_CREATEMIGRATIONTASKRESPONSE_H_
+#define TENCENTCLOUD_CFS_V20190719_MODEL_CREATEMIGRATIONTASKRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/RemindFlowRecords.h>
 
 
 namespace TencentCloud
 {
-    namespace Ess
+    namespace Cfs
     {
-        namespace V20201111
+        namespace V20190719
         {
             namespace Model
             {
                 /**
-                * CreateFlowReminds返回参数结构体
+                * CreateMigrationTask返回参数结构体
                 */
-                class CreateFlowRemindsResponse : public AbstractModel
+                class CreateMigrationTaskResponse : public AbstractModel
                 {
                 public:
-                    CreateFlowRemindsResponse();
-                    ~CreateFlowRemindsResponse() = default;
+                    CreateMigrationTaskResponse();
+                    ~CreateMigrationTaskResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取催办合同详情列表
-                     * @return RemindFlowRecords 催办合同详情列表
+                     * 获取迁移任务Id
+                     * @return TaskId 迁移任务Id
                      */
-                    std::vector<RemindFlowRecords> GetRemindFlowRecords() const;
+                    std::string GetTaskId() const;
 
                     /**
-                     * 判断参数 RemindFlowRecords 是否已赋值
-                     * @return RemindFlowRecords 是否已赋值
+                     * 判断参数 TaskId 是否已赋值
+                     * @return TaskId 是否已赋值
                      */
-                    bool RemindFlowRecordsHasBeenSet() const;
+                    bool TaskIdHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 催办合同详情列表
+                     * 迁移任务Id
                      */
-                    std::vector<RemindFlowRecords> m_remindFlowRecords;
-                    bool m_remindFlowRecordsHasBeenSet;
+                    std::string m_taskId;
+                    bool m_taskIdHasBeenSet;
 
                 };
             }
@@ -70,4 +69,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWREMINDSRESPONSE_H_
+#endif // !TENCENTCLOUD_CFS_V20190719_MODEL_CREATEMIGRATIONTASKRESPONSE_H_

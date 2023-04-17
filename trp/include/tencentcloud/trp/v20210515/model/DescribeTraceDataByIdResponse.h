@@ -14,55 +14,55 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWREMINDSRESPONSE_H_
-#define TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWREMINDSRESPONSE_H_
+#ifndef TENCENTCLOUD_TRP_V20210515_MODEL_DESCRIBETRACEDATABYIDRESPONSE_H_
+#define TENCENTCLOUD_TRP_V20210515_MODEL_DESCRIBETRACEDATABYIDRESPONSE_H_
 
 #include <string>
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
-#include <tencentcloud/ess/v20201111/model/RemindFlowRecords.h>
+#include <tencentcloud/trp/v20210515/model/TraceData.h>
 
 
 namespace TencentCloud
 {
-    namespace Ess
+    namespace Trp
     {
-        namespace V20201111
+        namespace V20210515
         {
             namespace Model
             {
                 /**
-                * CreateFlowReminds返回参数结构体
+                * DescribeTraceDataById返回参数结构体
                 */
-                class CreateFlowRemindsResponse : public AbstractModel
+                class DescribeTraceDataByIdResponse : public AbstractModel
                 {
                 public:
-                    CreateFlowRemindsResponse();
-                    ~CreateFlowRemindsResponse() = default;
+                    DescribeTraceDataByIdResponse();
+                    ~DescribeTraceDataByIdResponse() = default;
                     CoreInternalOutcome Deserialize(const std::string &payload);
                     std::string ToJsonString() const;
 
 
                     /**
-                     * 获取催办合同详情列表
-                     * @return RemindFlowRecords 催办合同详情列表
+                     * 获取无
+                     * @return TraceData 无
                      */
-                    std::vector<RemindFlowRecords> GetRemindFlowRecords() const;
+                    TraceData GetTraceData() const;
 
                     /**
-                     * 判断参数 RemindFlowRecords 是否已赋值
-                     * @return RemindFlowRecords 是否已赋值
+                     * 判断参数 TraceData 是否已赋值
+                     * @return TraceData 是否已赋值
                      */
-                    bool RemindFlowRecordsHasBeenSet() const;
+                    bool TraceDataHasBeenSet() const;
 
                 private:
 
                     /**
-                     * 催办合同详情列表
+                     * 无
                      */
-                    std::vector<RemindFlowRecords> m_remindFlowRecords;
-                    bool m_remindFlowRecordsHasBeenSet;
+                    TraceData m_traceData;
+                    bool m_traceDataHasBeenSet;
 
                 };
             }
@@ -70,4 +70,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_ESS_V20201111_MODEL_CREATEFLOWREMINDSRESPONSE_H_
+#endif // !TENCENTCLOUD_TRP_V20210515_MODEL_DESCRIBETRACEDATABYIDRESPONSE_H_

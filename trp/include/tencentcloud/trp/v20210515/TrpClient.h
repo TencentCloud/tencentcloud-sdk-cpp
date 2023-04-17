@@ -91,6 +91,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeTraceCodeByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceCodesRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceCodesResponse.h>
+#include <tencentcloud/trp/v20210515/model/DescribeTraceDataByIdRequest.h>
+#include <tencentcloud/trp/v20210515/model/DescribeTraceDataByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataListRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataListResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h>
@@ -227,6 +229,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTraceCodesResponse> DescribeTraceCodesOutcome;
                 typedef std::future<DescribeTraceCodesOutcome> DescribeTraceCodesOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeTraceCodesRequest&, DescribeTraceCodesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceCodesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeTraceDataByIdResponse> DescribeTraceDataByIdOutcome;
+                typedef std::future<DescribeTraceDataByIdOutcome> DescribeTraceDataByIdOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::DescribeTraceDataByIdRequest&, DescribeTraceDataByIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceDataByIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeTraceDataListResponse> DescribeTraceDataListOutcome;
                 typedef std::future<DescribeTraceDataListOutcome> DescribeTraceDataListOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeTraceDataListRequest&, DescribeTraceDataListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceDataListAsyncHandler;
@@ -566,6 +571,15 @@ namespace TencentCloud
                 DescribeTraceCodesOutcome DescribeTraceCodes(const Model::DescribeTraceCodesRequest &request);
                 void DescribeTraceCodesAsync(const Model::DescribeTraceCodesRequest& request, const DescribeTraceCodesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeTraceCodesOutcomeCallable DescribeTraceCodesCallable(const Model::DescribeTraceCodesRequest& request);
+
+                /**
+                 *查询溯源ID查溯源信息，通常溯源信息跟生产批次绑定，即一个批次的所有溯源信息都是一样的
+                 * @param req DescribeTraceDataByIdRequest
+                 * @return DescribeTraceDataByIdOutcome
+                 */
+                DescribeTraceDataByIdOutcome DescribeTraceDataById(const Model::DescribeTraceDataByIdRequest &request);
+                void DescribeTraceDataByIdAsync(const Model::DescribeTraceDataByIdRequest& request, const DescribeTraceDataByIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeTraceDataByIdOutcomeCallable DescribeTraceDataByIdCallable(const Model::DescribeTraceDataByIdRequest& request);
 
                 /**
                  *查询溯源信息，通常溯源信息跟生产批次绑定，即一个批次的所有溯源信息都是一样的

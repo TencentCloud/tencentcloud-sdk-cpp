@@ -21,12 +21,14 @@ using namespace TencentCloud::Faceid::V20180301::Model;
 using namespace std;
 
 IntentionQuestionResult::IntentionQuestionResult() :
-    m_finalResultCodeHasBeenSet(false),
+    m_finalResultDetailCodeHasBeenSet(false),
+    m_finalResultMessageHasBeenSet(false),
     m_videoHasBeenSet(false),
     m_screenShotHasBeenSet(false),
     m_resultCodeHasBeenSet(false),
     m_asrResultHasBeenSet(false),
-    m_audiosHasBeenSet(false)
+    m_audiosHasBeenSet(false),
+    m_finalResultCodeHasBeenSet(false)
 {
 }
 
@@ -35,14 +37,24 @@ CoreInternalOutcome IntentionQuestionResult::Deserialize(const rapidjson::Value 
     string requestId = "";
 
 
-    if (value.HasMember("FinalResultCode") && !value["FinalResultCode"].IsNull())
+    if (value.HasMember("FinalResultDetailCode") && !value["FinalResultDetailCode"].IsNull())
     {
-        if (!value["FinalResultCode"].IsString())
+        if (!value["FinalResultDetailCode"].IsInt64())
         {
-            return CoreInternalOutcome(Core::Error("response `IntentionQuestionResult.FinalResultCode` IsString=false incorrectly").SetRequestId(requestId));
+            return CoreInternalOutcome(Core::Error("response `IntentionQuestionResult.FinalResultDetailCode` IsInt64=false incorrectly").SetRequestId(requestId));
         }
-        m_finalResultCode = string(value["FinalResultCode"].GetString());
-        m_finalResultCodeHasBeenSet = true;
+        m_finalResultDetailCode = value["FinalResultDetailCode"].GetInt64();
+        m_finalResultDetailCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FinalResultMessage") && !value["FinalResultMessage"].IsNull())
+    {
+        if (!value["FinalResultMessage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentionQuestionResult.FinalResultMessage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finalResultMessage = string(value["FinalResultMessage"].GetString());
+        m_finalResultMessageHasBeenSet = true;
     }
 
     if (value.HasMember("Video") && !value["Video"].IsNull())
@@ -107,6 +119,16 @@ CoreInternalOutcome IntentionQuestionResult::Deserialize(const rapidjson::Value 
         m_audiosHasBeenSet = true;
     }
 
+    if (value.HasMember("FinalResultCode") && !value["FinalResultCode"].IsNull())
+    {
+        if (!value["FinalResultCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IntentionQuestionResult.FinalResultCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_finalResultCode = string(value["FinalResultCode"].GetString());
+        m_finalResultCodeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -114,12 +136,20 @@ CoreInternalOutcome IntentionQuestionResult::Deserialize(const rapidjson::Value 
 void IntentionQuestionResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
-    if (m_finalResultCodeHasBeenSet)
+    if (m_finalResultDetailCodeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "FinalResultCode";
+        string key = "FinalResultDetailCode";
         iKey.SetString(key.c_str(), allocator);
-        value.AddMember(iKey, rapidjson::Value(m_finalResultCode.c_str(), allocator).Move(), allocator);
+        value.AddMember(iKey, m_finalResultDetailCode, allocator);
+    }
+
+    if (m_finalResultMessageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinalResultMessage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finalResultMessage.c_str(), allocator).Move(), allocator);
     }
 
     if (m_videoHasBeenSet)
@@ -182,23 +212,47 @@ void IntentionQuestionResult::ToJsonObject(rapidjson::Value &value, rapidjson::D
         }
     }
 
+    if (m_finalResultCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinalResultCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_finalResultCode.c_str(), allocator).Move(), allocator);
+    }
+
 }
 
 
-string IntentionQuestionResult::GetFinalResultCode() const
+int64_t IntentionQuestionResult::GetFinalResultDetailCode() const
 {
-    return m_finalResultCode;
+    return m_finalResultDetailCode;
 }
 
-void IntentionQuestionResult::SetFinalResultCode(const string& _finalResultCode)
+void IntentionQuestionResult::SetFinalResultDetailCode(const int64_t& _finalResultDetailCode)
 {
-    m_finalResultCode = _finalResultCode;
-    m_finalResultCodeHasBeenSet = true;
+    m_finalResultDetailCode = _finalResultDetailCode;
+    m_finalResultDetailCodeHasBeenSet = true;
 }
 
-bool IntentionQuestionResult::FinalResultCodeHasBeenSet() const
+bool IntentionQuestionResult::FinalResultDetailCodeHasBeenSet() const
 {
-    return m_finalResultCodeHasBeenSet;
+    return m_finalResultDetailCodeHasBeenSet;
+}
+
+string IntentionQuestionResult::GetFinalResultMessage() const
+{
+    return m_finalResultMessage;
+}
+
+void IntentionQuestionResult::SetFinalResultMessage(const string& _finalResultMessage)
+{
+    m_finalResultMessage = _finalResultMessage;
+    m_finalResultMessageHasBeenSet = true;
+}
+
+bool IntentionQuestionResult::FinalResultMessageHasBeenSet() const
+{
+    return m_finalResultMessageHasBeenSet;
 }
 
 string IntentionQuestionResult::GetVideo() const
@@ -279,5 +333,21 @@ void IntentionQuestionResult::SetAudios(const vector<string>& _audios)
 bool IntentionQuestionResult::AudiosHasBeenSet() const
 {
     return m_audiosHasBeenSet;
+}
+
+string IntentionQuestionResult::GetFinalResultCode() const
+{
+    return m_finalResultCode;
+}
+
+void IntentionQuestionResult::SetFinalResultCode(const string& _finalResultCode)
+{
+    m_finalResultCode = _finalResultCode;
+    m_finalResultCodeHasBeenSet = true;
+}
+
+bool IntentionQuestionResult::FinalResultCodeHasBeenSet() const
+{
+    return m_finalResultCodeHasBeenSet;
 }
 

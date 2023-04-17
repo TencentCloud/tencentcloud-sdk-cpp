@@ -47,30 +47,124 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取意愿核身最终结果：
-0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验
+                     * 获取意愿核身错误码：
+0: "成功"       
+-1: "参数错误"    
+-2: "系统异常"    
+-101: "请保持人脸在框内"    
+-102: "检测到多张人脸"   
+-103: "人脸检测失败"   
+-104: "人脸检测不完整"   
+-105: "请勿遮挡眼睛"    
+-106: "请勿遮挡嘴巴"     
+-107: "请勿遮挡鼻子"     
+-201: "人脸比对相似度低"    
+-202: "人脸比对失败"    
+-301: "意愿核验不通过"   
+-800: "前端不兼容错误"    
+-801: "用户未授权摄像头和麦克风权限"   
+-802: "获取视频流失败"   
+-803: "用户主动关闭链接/异常断开链接"   
+-998: "系统数据异常"   
+-999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return FinalResultCode 意愿核身最终结果：
-0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验
+                     * @return FinalResultDetailCode 意愿核身错误码：
+0: "成功"       
+-1: "参数错误"    
+-2: "系统异常"    
+-101: "请保持人脸在框内"    
+-102: "检测到多张人脸"   
+-103: "人脸检测失败"   
+-104: "人脸检测不完整"   
+-105: "请勿遮挡眼睛"    
+-106: "请勿遮挡嘴巴"     
+-107: "请勿遮挡鼻子"     
+-201: "人脸比对相似度低"    
+-202: "人脸比对失败"    
+-301: "意愿核验不通过"   
+-800: "前端不兼容错误"    
+-801: "用户未授权摄像头和麦克风权限"   
+-802: "获取视频流失败"   
+-803: "用户主动关闭链接/异常断开链接"   
+-998: "系统数据异常"   
+-999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string GetFinalResultCode() const;
+                    int64_t GetFinalResultDetailCode() const;
 
                     /**
-                     * 设置意愿核身最终结果：
-0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验
+                     * 设置意愿核身错误码：
+0: "成功"       
+-1: "参数错误"    
+-2: "系统异常"    
+-101: "请保持人脸在框内"    
+-102: "检测到多张人脸"   
+-103: "人脸检测失败"   
+-104: "人脸检测不完整"   
+-105: "请勿遮挡眼睛"    
+-106: "请勿遮挡嘴巴"     
+-107: "请勿遮挡鼻子"     
+-201: "人脸比对相似度低"    
+-202: "人脸比对失败"    
+-301: "意愿核验不通过"   
+-800: "前端不兼容错误"    
+-801: "用户未授权摄像头和麦克风权限"   
+-802: "获取视频流失败"   
+-803: "用户主动关闭链接/异常断开链接"   
+-998: "系统数据异常"   
+-999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param FinalResultCode 意愿核身最终结果：
-0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验
+                     * @param FinalResultDetailCode 意愿核身错误码：
+0: "成功"       
+-1: "参数错误"    
+-2: "系统异常"    
+-101: "请保持人脸在框内"    
+-102: "检测到多张人脸"   
+-103: "人脸检测失败"   
+-104: "人脸检测不完整"   
+-105: "请勿遮挡眼睛"    
+-106: "请勿遮挡嘴巴"     
+-107: "请勿遮挡鼻子"     
+-201: "人脸比对相似度低"    
+-202: "人脸比对失败"    
+-301: "意愿核验不通过"   
+-800: "前端不兼容错误"    
+-801: "用户未授权摄像头和麦克风权限"   
+-802: "获取视频流失败"   
+-803: "用户主动关闭链接/异常断开链接"   
+-998: "系统数据异常"   
+-999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    void SetFinalResultCode(const std::string& _finalResultCode);
+                    void SetFinalResultDetailCode(const int64_t& _finalResultDetailCode);
 
                     /**
-                     * 判断参数 FinalResultCode 是否已赋值
-                     * @return FinalResultCode 是否已赋值
+                     * 判断参数 FinalResultDetailCode 是否已赋值
+                     * @return FinalResultDetailCode 是否已赋值
                      */
-                    bool FinalResultCodeHasBeenSet() const;
+                    bool FinalResultDetailCodeHasBeenSet() const;
+
+                    /**
+                     * 获取意愿核身错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FinalResultMessage 意愿核身错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFinalResultMessage() const;
+
+                    /**
+                     * 设置意愿核身错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FinalResultMessage 意愿核身错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFinalResultMessage(const std::string& _finalResultMessage);
+
+                    /**
+                     * 判断参数 FinalResultMessage 是否已赋值
+                     * @return FinalResultMessage 是否已赋值
+                     */
+                    bool FinalResultMessageHasBeenSet() const;
 
                     /**
                      * 获取视频base64（其中包含全程问题和回答音频，mp4格式）
@@ -186,15 +280,66 @@ namespace TencentCloud
                      */
                     bool AudiosHasBeenSet() const;
 
+                    /**
+                     * 获取意愿核身最终结果：
+0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FinalResultCode 意愿核身最终结果：
+0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFinalResultCode() const;
+
+                    /**
+                     * 设置意愿核身最终结果：
+0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FinalResultCode 意愿核身最终结果：
+0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFinalResultCode(const std::string& _finalResultCode);
+
+                    /**
+                     * 判断参数 FinalResultCode 是否已赋值
+                     * @return FinalResultCode 是否已赋值
+                     */
+                    bool FinalResultCodeHasBeenSet() const;
+
                 private:
 
                     /**
-                     * 意愿核身最终结果：
-0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验
+                     * 意愿核身错误码：
+0: "成功"       
+-1: "参数错误"    
+-2: "系统异常"    
+-101: "请保持人脸在框内"    
+-102: "检测到多张人脸"   
+-103: "人脸检测失败"   
+-104: "人脸检测不完整"   
+-105: "请勿遮挡眼睛"    
+-106: "请勿遮挡嘴巴"     
+-107: "请勿遮挡鼻子"     
+-201: "人脸比对相似度低"    
+-202: "人脸比对失败"    
+-301: "意愿核验不通过"   
+-800: "前端不兼容错误"    
+-801: "用户未授权摄像头和麦克风权限"   
+-802: "获取视频流失败"   
+-803: "用户主动关闭链接/异常断开链接"   
+-998: "系统数据异常"   
+-999: "系统未知错误，请联系人工核实"   
 注意：此字段可能返回 null，表示取不到有效值。
                      */
-                    std::string m_finalResultCode;
-                    bool m_finalResultCodeHasBeenSet;
+                    int64_t m_finalResultDetailCode;
+                    bool m_finalResultDetailCodeHasBeenSet;
+
+                    /**
+                     * 意愿核身错误信息
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_finalResultMessage;
+                    bool m_finalResultMessageHasBeenSet;
 
                     /**
                      * 视频base64（其中包含全程问题和回答音频，mp4格式）
@@ -231,6 +376,14 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_audios;
                     bool m_audiosHasBeenSet;
+
+                    /**
+                     * 意愿核身最终结果：
+0：认证通过，-1：认证未通过，-2：浏览器内核不兼容，无法进行意愿校验。建议使用“FinalResultDetailCode”参数获取详细的错误码信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_finalResultCode;
+                    bool m_finalResultCodeHasBeenSet;
 
                 };
             }
