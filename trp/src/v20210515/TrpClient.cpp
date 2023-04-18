@@ -40,6 +40,49 @@ TrpClient::TrpClient(const Credential &credential, const string &region, const C
 }
 
 
+TrpClient::AuthorizedTransferOutcome TrpClient::AuthorizedTransfer(const AuthorizedTransferRequest &request)
+{
+    auto outcome = MakeRequest(request, "AuthorizedTransfer");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AuthorizedTransferResponse rsp = AuthorizedTransferResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AuthorizedTransferOutcome(rsp);
+        else
+            return AuthorizedTransferOutcome(o.GetError());
+    }
+    else
+    {
+        return AuthorizedTransferOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::AuthorizedTransferAsync(const AuthorizedTransferRequest& request, const AuthorizedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AuthorizedTransfer(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::AuthorizedTransferOutcomeCallable TrpClient::AuthorizedTransferCallable(const AuthorizedTransferRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AuthorizedTransferOutcome()>>(
+        [this, request]()
+        {
+            return this->AuthorizedTransfer(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::CreateCodeBatchOutcome TrpClient::CreateCodeBatch(const CreateCodeBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateCodeBatch");
@@ -1588,6 +1631,49 @@ TrpClient::DescribeTraceDataListOutcomeCallable TrpClient::DescribeTraceDataList
     return task->get_future();
 }
 
+TrpClient::EffectFeedbackOutcome TrpClient::EffectFeedback(const EffectFeedbackRequest &request)
+{
+    auto outcome = MakeRequest(request, "EffectFeedback");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        EffectFeedbackResponse rsp = EffectFeedbackResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return EffectFeedbackOutcome(rsp);
+        else
+            return EffectFeedbackOutcome(o.GetError());
+    }
+    else
+    {
+        return EffectFeedbackOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::EffectFeedbackAsync(const EffectFeedbackRequest& request, const EffectFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->EffectFeedback(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::EffectFeedbackOutcomeCallable TrpClient::EffectFeedbackCallable(const EffectFeedbackRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<EffectFeedbackOutcome()>>(
+        [this, request]()
+        {
+            return this->EffectFeedback(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TrpClient::ModifyCodeBatchOutcome TrpClient::ModifyCodeBatch(const ModifyCodeBatchRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyCodeBatch");
@@ -1968,6 +2054,49 @@ TrpClient::ModifyTraceDataRanksOutcomeCallable TrpClient::ModifyTraceDataRanksCa
         [this, request]()
         {
             return this->ModifyTraceDataRanks(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TrpClient::ReportBatchCallbackStatusOutcome TrpClient::ReportBatchCallbackStatus(const ReportBatchCallbackStatusRequest &request)
+{
+    auto outcome = MakeRequest(request, "ReportBatchCallbackStatus");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ReportBatchCallbackStatusResponse rsp = ReportBatchCallbackStatusResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ReportBatchCallbackStatusOutcome(rsp);
+        else
+            return ReportBatchCallbackStatusOutcome(o.GetError());
+    }
+    else
+    {
+        return ReportBatchCallbackStatusOutcome(outcome.GetError());
+    }
+}
+
+void TrpClient::ReportBatchCallbackStatusAsync(const ReportBatchCallbackStatusRequest& request, const ReportBatchCallbackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ReportBatchCallbackStatus(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TrpClient::ReportBatchCallbackStatusOutcomeCallable TrpClient::ReportBatchCallbackStatusCallable(const ReportBatchCallbackStatusRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ReportBatchCallbackStatusOutcome()>>(
+        [this, request]()
+        {
+            return this->ReportBatchCallbackStatus(request);
         }
     );
 

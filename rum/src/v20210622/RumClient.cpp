@@ -685,6 +685,178 @@ RumClient::DeleteWhitelistOutcomeCallable RumClient::DeleteWhitelistCallable(con
     return task->get_future();
 }
 
+RumClient::DescribeAppDimensionMetricsOutcome RumClient::DescribeAppDimensionMetrics(const DescribeAppDimensionMetricsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppDimensionMetrics");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppDimensionMetricsResponse rsp = DescribeAppDimensionMetricsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppDimensionMetricsOutcome(rsp);
+        else
+            return DescribeAppDimensionMetricsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppDimensionMetricsOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeAppDimensionMetricsAsync(const DescribeAppDimensionMetricsRequest& request, const DescribeAppDimensionMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAppDimensionMetrics(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeAppDimensionMetricsOutcomeCallable RumClient::DescribeAppDimensionMetricsCallable(const DescribeAppDimensionMetricsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppDimensionMetricsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAppDimensionMetrics(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RumClient::DescribeAppMetricsDataOutcome RumClient::DescribeAppMetricsData(const DescribeAppMetricsDataRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppMetricsData");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppMetricsDataResponse rsp = DescribeAppMetricsDataResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppMetricsDataOutcome(rsp);
+        else
+            return DescribeAppMetricsDataOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppMetricsDataOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeAppMetricsDataAsync(const DescribeAppMetricsDataRequest& request, const DescribeAppMetricsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAppMetricsData(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeAppMetricsDataOutcomeCallable RumClient::DescribeAppMetricsDataCallable(const DescribeAppMetricsDataRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppMetricsDataOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAppMetricsData(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RumClient::DescribeAppSingleCaseDetailListOutcome RumClient::DescribeAppSingleCaseDetailList(const DescribeAppSingleCaseDetailListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppSingleCaseDetailList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppSingleCaseDetailListResponse rsp = DescribeAppSingleCaseDetailListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppSingleCaseDetailListOutcome(rsp);
+        else
+            return DescribeAppSingleCaseDetailListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppSingleCaseDetailListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeAppSingleCaseDetailListAsync(const DescribeAppSingleCaseDetailListRequest& request, const DescribeAppSingleCaseDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAppSingleCaseDetailList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeAppSingleCaseDetailListOutcomeCallable RumClient::DescribeAppSingleCaseDetailListCallable(const DescribeAppSingleCaseDetailListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppSingleCaseDetailListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAppSingleCaseDetailList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+RumClient::DescribeAppSingleCaseListOutcome RumClient::DescribeAppSingleCaseList(const DescribeAppSingleCaseListRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAppSingleCaseList");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAppSingleCaseListResponse rsp = DescribeAppSingleCaseListResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAppSingleCaseListOutcome(rsp);
+        else
+            return DescribeAppSingleCaseListOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAppSingleCaseListOutcome(outcome.GetError());
+    }
+}
+
+void RumClient::DescribeAppSingleCaseListAsync(const DescribeAppSingleCaseListRequest& request, const DescribeAppSingleCaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAppSingleCaseList(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+RumClient::DescribeAppSingleCaseListOutcomeCallable RumClient::DescribeAppSingleCaseListCallable(const DescribeAppSingleCaseListRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAppSingleCaseListOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAppSingleCaseList(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 RumClient::DescribeDataOutcome RumClient::DescribeData(const DescribeDataRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeData");

@@ -2961,7 +2961,9 @@ namespace TencentCloud
                 DescribeScanVulSettingOutcomeCallable DescribeScanVulSettingCallable(const Model::DescribeScanVulSettingRequest& request);
 
                 /**
-                 *导出ES查询文档列表
+                 *旧版日志下载接口下线
+
+导出ES查询文档列表
                  * @param req DescribeSearchExportListRequest
                  * @return DescribeSearchExportListOutcome
                  */

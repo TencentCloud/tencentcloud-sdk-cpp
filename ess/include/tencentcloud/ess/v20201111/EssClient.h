@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h>
+#include <tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.h>
 #include <tencentcloud/ess/v20201111/model/CancelFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/CancelFlowResponse.h>
 #include <tencentcloud/ess/v20201111/model/CancelMultiFlowSignQRCodeRequest.h>
@@ -103,6 +105,8 @@
 #include <tencentcloud/ess/v20201111/model/ModifyApplicationCallbackInfoResponse.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowRequest.h>
 #include <tencentcloud/ess/v20201111/model/StartFlowResponse.h>
+#include <tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.h>
+#include <tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdResponse.h>
 #include <tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesRequest.h>
 #include <tencentcloud/ess/v20201111/model/UpdateIntegrationEmployeesResponse.h>
 #include <tencentcloud/ess/v20201111/model/UploadFilesRequest.h>
@@ -123,6 +127,9 @@ namespace TencentCloud
                 EssClient(const Credential &credential, const std::string &region);
                 EssClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::BindEmployeeUserIdWithClientOpenIdResponse> BindEmployeeUserIdWithClientOpenIdOutcome;
+                typedef std::future<BindEmployeeUserIdWithClientOpenIdOutcome> BindEmployeeUserIdWithClientOpenIdOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::BindEmployeeUserIdWithClientOpenIdRequest&, BindEmployeeUserIdWithClientOpenIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BindEmployeeUserIdWithClientOpenIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::CancelFlowResponse> CancelFlowOutcome;
                 typedef std::future<CancelFlowOutcome> CancelFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::CancelFlowRequest&, CancelFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelFlowAsyncHandler;
@@ -243,6 +250,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartFlowResponse> StartFlowOutcome;
                 typedef std::future<StartFlowOutcome> StartFlowOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::StartFlowRequest&, StartFlowOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartFlowAsyncHandler;
+                typedef Outcome<Core::Error, Model::UnbindEmployeeUserIdWithClientOpenIdResponse> UnbindEmployeeUserIdWithClientOpenIdOutcome;
+                typedef std::future<UnbindEmployeeUserIdWithClientOpenIdOutcome> UnbindEmployeeUserIdWithClientOpenIdOutcomeCallable;
+                typedef std::function<void(const EssClient*, const Model::UnbindEmployeeUserIdWithClientOpenIdRequest&, UnbindEmployeeUserIdWithClientOpenIdOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UnbindEmployeeUserIdWithClientOpenIdAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateIntegrationEmployeesResponse> UpdateIntegrationEmployeesOutcome;
                 typedef std::future<UpdateIntegrationEmployeesOutcome> UpdateIntegrationEmployeesOutcomeCallable;
                 typedef std::function<void(const EssClient*, const Model::UpdateIntegrationEmployeesRequest&, UpdateIntegrationEmployeesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateIntegrationEmployeesAsyncHandler;
@@ -254,6 +264,15 @@ namespace TencentCloud
                 typedef std::function<void(const EssClient*, const Model::VerifyPdfRequest&, VerifyPdfOutcome, const std::shared_ptr<const AsyncCallerContext>&)> VerifyPdfAsyncHandler;
 
 
+
+                /**
+                 *将电子签系统员工userId与客户系统员工openId进行绑定
+                 * @param req BindEmployeeUserIdWithClientOpenIdRequest
+                 * @return BindEmployeeUserIdWithClientOpenIdOutcome
+                 */
+                BindEmployeeUserIdWithClientOpenIdOutcome BindEmployeeUserIdWithClientOpenId(const Model::BindEmployeeUserIdWithClientOpenIdRequest &request);
+                void BindEmployeeUserIdWithClientOpenIdAsync(const Model::BindEmployeeUserIdWithClientOpenIdRequest& request, const BindEmployeeUserIdWithClientOpenIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BindEmployeeUserIdWithClientOpenIdOutcomeCallable BindEmployeeUserIdWithClientOpenIdCallable(const Model::BindEmployeeUserIdWithClientOpenIdRequest& request);
 
                 /**
                  *用于撤销签署流程
@@ -660,6 +679,15 @@ callbackinfo包含： 回调地址和签名key
                 StartFlowOutcome StartFlow(const Model::StartFlowRequest &request);
                 void StartFlowAsync(const Model::StartFlowRequest& request, const StartFlowAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartFlowOutcomeCallable StartFlowCallable(const Model::StartFlowRequest& request);
+
+                /**
+                 *将存在绑定关系的电子签系统员工userId与客户系统员工openId进行解绑
+                 * @param req UnbindEmployeeUserIdWithClientOpenIdRequest
+                 * @return UnbindEmployeeUserIdWithClientOpenIdOutcome
+                 */
+                UnbindEmployeeUserIdWithClientOpenIdOutcome UnbindEmployeeUserIdWithClientOpenId(const Model::UnbindEmployeeUserIdWithClientOpenIdRequest &request);
+                void UnbindEmployeeUserIdWithClientOpenIdAsync(const Model::UnbindEmployeeUserIdWithClientOpenIdRequest& request, const UnbindEmployeeUserIdWithClientOpenIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UnbindEmployeeUserIdWithClientOpenIdOutcomeCallable UnbindEmployeeUserIdWithClientOpenIdCallable(const Model::UnbindEmployeeUserIdWithClientOpenIdRequest& request);
 
                 /**
                  *更新员工信息(姓名，手机号，邮件)，用户实名后无法更改姓名与手机号

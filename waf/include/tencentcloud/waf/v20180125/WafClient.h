@@ -71,6 +71,10 @@
 #include <tencentcloud/waf/v20180125/model/DescribeIpAccessControlResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribeIpHitItemsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribePeakPointsRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribePeakPointsResponse.h>
+#include <tencentcloud/waf/v20180125/model/DescribePeakValueRequest.h>
+#include <tencentcloud/waf/v20180125/model/DescribePeakValueResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h>
 #include <tencentcloud/waf/v20180125/model/DescribePolicyStatusResponse.h>
 #include <tencentcloud/waf/v20180125/model/DescribeRuleLimitRequest.h>
@@ -199,6 +203,12 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeIpHitItemsResponse> DescribeIpHitItemsOutcome;
                 typedef std::future<DescribeIpHitItemsOutcome> DescribeIpHitItemsOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribeIpHitItemsRequest&, DescribeIpHitItemsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeIpHitItemsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePeakPointsResponse> DescribePeakPointsOutcome;
+                typedef std::future<DescribePeakPointsOutcome> DescribePeakPointsOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribePeakPointsRequest&, DescribePeakPointsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakPointsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribePeakValueResponse> DescribePeakValueOutcome;
+                typedef std::future<DescribePeakValueOutcome> DescribePeakValueOutcomeCallable;
+                typedef std::function<void(const WafClient*, const Model::DescribePeakValueRequest&, DescribePeakValueOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePeakValueAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribePolicyStatusResponse> DescribePolicyStatusOutcome;
                 typedef std::future<DescribePolicyStatusOutcome> DescribePolicyStatusOutcomeCallable;
                 typedef std::function<void(const WafClient*, const Model::DescribePolicyStatusRequest&, DescribePolicyStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribePolicyStatusAsyncHandler;
@@ -482,6 +492,24 @@ namespace TencentCloud
                 DescribeIpHitItemsOutcome DescribeIpHitItems(const Model::DescribeIpHitItemsRequest &request);
                 void DescribeIpHitItemsAsync(const Model::DescribeIpHitItemsRequest& request, const DescribeIpHitItemsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeIpHitItemsOutcomeCallable DescribeIpHitItemsCallable(const Model::DescribeIpHitItemsRequest& request);
+
+                /**
+                 *查询业务和攻击概要趋势
+                 * @param req DescribePeakPointsRequest
+                 * @return DescribePeakPointsOutcome
+                 */
+                DescribePeakPointsOutcome DescribePeakPoints(const Model::DescribePeakPointsRequest &request);
+                void DescribePeakPointsAsync(const Model::DescribePeakPointsRequest& request, const DescribePeakPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePeakPointsOutcomeCallable DescribePeakPointsCallable(const Model::DescribePeakPointsRequest& request);
+
+                /**
+                 *获取业务和攻击概览峰值
+                 * @param req DescribePeakValueRequest
+                 * @return DescribePeakValueOutcome
+                 */
+                DescribePeakValueOutcome DescribePeakValue(const Model::DescribePeakValueRequest &request);
+                void DescribePeakValueAsync(const Model::DescribePeakValueRequest& request, const DescribePeakValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribePeakValueOutcomeCallable DescribePeakValueCallable(const Model::DescribePeakValueRequest& request);
 
                 /**
                  *获取防护状态以及生效的实例id

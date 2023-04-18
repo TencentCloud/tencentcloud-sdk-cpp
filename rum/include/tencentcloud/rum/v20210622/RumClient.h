@@ -53,6 +53,14 @@
 #include <tencentcloud/rum/v20210622/model/DeleteStarProjectResponse.h>
 #include <tencentcloud/rum/v20210622/model/DeleteWhitelistRequest.h>
 #include <tencentcloud/rum/v20210622/model/DeleteWhitelistResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppDimensionMetricsResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppMetricsDataRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppMetricsDataResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppSingleCaseDetailListResponse.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListRequest.h>
+#include <tencentcloud/rum/v20210622/model/DescribeAppSingleCaseListResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataRequest.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataResponse.h>
 #include <tencentcloud/rum/v20210622/model/DescribeDataCustomUrlRequest.h>
@@ -204,6 +212,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DeleteWhitelistResponse> DeleteWhitelistOutcome;
                 typedef std::future<DeleteWhitelistOutcome> DeleteWhitelistOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DeleteWhitelistRequest&, DeleteWhitelistOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteWhitelistAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppDimensionMetricsResponse> DescribeAppDimensionMetricsOutcome;
+                typedef std::future<DescribeAppDimensionMetricsOutcome> DescribeAppDimensionMetricsOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeAppDimensionMetricsRequest&, DescribeAppDimensionMetricsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppDimensionMetricsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppMetricsDataResponse> DescribeAppMetricsDataOutcome;
+                typedef std::future<DescribeAppMetricsDataOutcome> DescribeAppMetricsDataOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeAppMetricsDataRequest&, DescribeAppMetricsDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppMetricsDataAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppSingleCaseDetailListResponse> DescribeAppSingleCaseDetailListOutcome;
+                typedef std::future<DescribeAppSingleCaseDetailListOutcome> DescribeAppSingleCaseDetailListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeAppSingleCaseDetailListRequest&, DescribeAppSingleCaseDetailListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppSingleCaseDetailListAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAppSingleCaseListResponse> DescribeAppSingleCaseListOutcome;
+                typedef std::future<DescribeAppSingleCaseListOutcome> DescribeAppSingleCaseListOutcomeCallable;
+                typedef std::function<void(const RumClient*, const Model::DescribeAppSingleCaseListRequest&, DescribeAppSingleCaseListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAppSingleCaseListAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDataResponse> DescribeDataOutcome;
                 typedef std::future<DescribeDataOutcome> DescribeDataOutcomeCallable;
                 typedef std::function<void(const RumClient*, const Model::DescribeDataRequest&, DescribeDataOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDataAsyncHandler;
@@ -487,6 +507,42 @@ namespace TencentCloud
                 DeleteWhitelistOutcome DeleteWhitelist(const Model::DeleteWhitelistRequest &request);
                 void DeleteWhitelistAsync(const Model::DeleteWhitelistRequest& request, const DeleteWhitelistAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DeleteWhitelistOutcomeCallable DeleteWhitelistCallable(const Model::DeleteWhitelistRequest& request);
+
+                /**
+                 *用于查询 app 监控多维分析数据
+                 * @param req DescribeAppDimensionMetricsRequest
+                 * @return DescribeAppDimensionMetricsOutcome
+                 */
+                DescribeAppDimensionMetricsOutcome DescribeAppDimensionMetrics(const Model::DescribeAppDimensionMetricsRequest &request);
+                void DescribeAppDimensionMetricsAsync(const Model::DescribeAppDimensionMetricsRequest& request, const DescribeAppDimensionMetricsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppDimensionMetricsOutcomeCallable DescribeAppDimensionMetricsCallable(const Model::DescribeAppDimensionMetricsRequest& request);
+
+                /**
+                 *获取 app 监控指标数据
+                 * @param req DescribeAppMetricsDataRequest
+                 * @return DescribeAppMetricsDataOutcome
+                 */
+                DescribeAppMetricsDataOutcome DescribeAppMetricsData(const Model::DescribeAppMetricsDataRequest &request);
+                void DescribeAppMetricsDataAsync(const Model::DescribeAppMetricsDataRequest& request, const DescribeAppMetricsDataAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppMetricsDataOutcomeCallable DescribeAppMetricsDataCallable(const Model::DescribeAppMetricsDataRequest& request);
+
+                /**
+                 *查询 app 监控个例样本详情列表
+                 * @param req DescribeAppSingleCaseDetailListRequest
+                 * @return DescribeAppSingleCaseDetailListOutcome
+                 */
+                DescribeAppSingleCaseDetailListOutcome DescribeAppSingleCaseDetailList(const Model::DescribeAppSingleCaseDetailListRequest &request);
+                void DescribeAppSingleCaseDetailListAsync(const Model::DescribeAppSingleCaseDetailListRequest& request, const DescribeAppSingleCaseDetailListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppSingleCaseDetailListOutcomeCallable DescribeAppSingleCaseDetailListCallable(const Model::DescribeAppSingleCaseDetailListRequest& request);
+
+                /**
+                 *查询 app 监控个例聚合列表
+                 * @param req DescribeAppSingleCaseListRequest
+                 * @return DescribeAppSingleCaseListOutcome
+                 */
+                DescribeAppSingleCaseListOutcome DescribeAppSingleCaseList(const Model::DescribeAppSingleCaseListRequest &request);
+                void DescribeAppSingleCaseListAsync(const Model::DescribeAppSingleCaseListRequest& request, const DescribeAppSingleCaseListAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAppSingleCaseListOutcomeCallable DescribeAppSingleCaseListCallable(const Model::DescribeAppSingleCaseListRequest& request);
 
                 /**
                  *转发monitor查询

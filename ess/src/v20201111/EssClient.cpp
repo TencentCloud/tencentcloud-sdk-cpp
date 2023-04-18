@@ -40,6 +40,49 @@ EssClient::EssClient(const Credential &credential, const string &region, const C
 }
 
 
+EssClient::BindEmployeeUserIdWithClientOpenIdOutcome EssClient::BindEmployeeUserIdWithClientOpenId(const BindEmployeeUserIdWithClientOpenIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "BindEmployeeUserIdWithClientOpenId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BindEmployeeUserIdWithClientOpenIdResponse rsp = BindEmployeeUserIdWithClientOpenIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BindEmployeeUserIdWithClientOpenIdOutcome(rsp);
+        else
+            return BindEmployeeUserIdWithClientOpenIdOutcome(o.GetError());
+    }
+    else
+    {
+        return BindEmployeeUserIdWithClientOpenIdOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::BindEmployeeUserIdWithClientOpenIdAsync(const BindEmployeeUserIdWithClientOpenIdRequest& request, const BindEmployeeUserIdWithClientOpenIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BindEmployeeUserIdWithClientOpenId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::BindEmployeeUserIdWithClientOpenIdOutcomeCallable EssClient::BindEmployeeUserIdWithClientOpenIdCallable(const BindEmployeeUserIdWithClientOpenIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BindEmployeeUserIdWithClientOpenIdOutcome()>>(
+        [this, request]()
+        {
+            return this->BindEmployeeUserIdWithClientOpenId(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 EssClient::CancelFlowOutcome EssClient::CancelFlow(const CancelFlowRequest &request)
 {
     auto outcome = MakeRequest(request, "CancelFlow");
@@ -1753,6 +1796,49 @@ EssClient::StartFlowOutcomeCallable EssClient::StartFlowCallable(const StartFlow
         [this, request]()
         {
             return this->StartFlow(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+EssClient::UnbindEmployeeUserIdWithClientOpenIdOutcome EssClient::UnbindEmployeeUserIdWithClientOpenId(const UnbindEmployeeUserIdWithClientOpenIdRequest &request)
+{
+    auto outcome = MakeRequest(request, "UnbindEmployeeUserIdWithClientOpenId");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UnbindEmployeeUserIdWithClientOpenIdResponse rsp = UnbindEmployeeUserIdWithClientOpenIdResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UnbindEmployeeUserIdWithClientOpenIdOutcome(rsp);
+        else
+            return UnbindEmployeeUserIdWithClientOpenIdOutcome(o.GetError());
+    }
+    else
+    {
+        return UnbindEmployeeUserIdWithClientOpenIdOutcome(outcome.GetError());
+    }
+}
+
+void EssClient::UnbindEmployeeUserIdWithClientOpenIdAsync(const UnbindEmployeeUserIdWithClientOpenIdRequest& request, const UnbindEmployeeUserIdWithClientOpenIdAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UnbindEmployeeUserIdWithClientOpenId(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+EssClient::UnbindEmployeeUserIdWithClientOpenIdOutcomeCallable EssClient::UnbindEmployeeUserIdWithClientOpenIdCallable(const UnbindEmployeeUserIdWithClientOpenIdRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UnbindEmployeeUserIdWithClientOpenIdOutcome()>>(
+        [this, request]()
+        {
+            return this->UnbindEmployeeUserIdWithClientOpenId(request);
         }
     );
 

@@ -1072,6 +1072,92 @@ WafClient::DescribeIpHitItemsOutcomeCallable WafClient::DescribeIpHitItemsCallab
     return task->get_future();
 }
 
+WafClient::DescribePeakPointsOutcome WafClient::DescribePeakPoints(const DescribePeakPointsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePeakPoints");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePeakPointsResponse rsp = DescribePeakPointsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePeakPointsOutcome(rsp);
+        else
+            return DescribePeakPointsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePeakPointsOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePeakPointsAsync(const DescribePeakPointsRequest& request, const DescribePeakPointsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePeakPoints(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePeakPointsOutcomeCallable WafClient::DescribePeakPointsCallable(const DescribePeakPointsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePeakPointsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePeakPoints(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DescribePeakValueOutcome WafClient::DescribePeakValue(const DescribePeakValueRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePeakValue");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePeakValueResponse rsp = DescribePeakValueResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePeakValueOutcome(rsp);
+        else
+            return DescribePeakValueOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePeakValueOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DescribePeakValueAsync(const DescribePeakValueRequest& request, const DescribePeakValueAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePeakValue(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DescribePeakValueOutcomeCallable WafClient::DescribePeakValueCallable(const DescribePeakValueRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePeakValueOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePeakValue(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::DescribePolicyStatusOutcome WafClient::DescribePolicyStatus(const DescribePolicyStatusRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribePolicyStatus");

@@ -32,6 +32,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/FlowCreateApprover.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeResponse.h
   include/tencentcloud/ess/v20201111/model/DisableUserAutoSignResponse.h
+  include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.h
   include/tencentcloud/ess/v20201111/model/CreateIntegrationEmployeesRequest.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiRequest.h
   include/tencentcloud/ess/v20201111/model/CreateFlowEvidenceReportRequest.h
@@ -55,8 +56,9 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlRequest.h
   include/tencentcloud/ess/v20201111/model/AutoSignConfig.h
   include/tencentcloud/ess/v20201111/model/DescribeThirdPartyAuthCodeRequest.h
+  include/tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdResponse.h
   include/tencentcloud/ess/v20201111/model/CreateReleaseFlowResponse.h
-  include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
+  include/tencentcloud/ess/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/DeleteSealPoliciesResponse.h
   include/tencentcloud/ess/v20201111/model/OrganizationInfo.h
   include/tencentcloud/ess/v20201111/model/DescribeUserAutoSignStatusResponse.h
@@ -73,6 +75,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/SuccessDeleteStaffData.h
   include/tencentcloud/ess/v20201111/model/CreateConvertTaskApiResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignReviewRequest.h
+  include/tencentcloud/ess/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.h
   include/tencentcloud/ess/v20201111/model/CreateSchemeUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateUserAutoSignEnableUrlResponse.h
   include/tencentcloud/ess/v20201111/model/CreateFlowSignUrlResponse.h
@@ -147,6 +150,7 @@ set(ess_public_header_model
   include/tencentcloud/ess/v20201111/model/RelieveInfo.h
   include/tencentcloud/ess/v20201111/model/CreateBatchCancelFlowUrlRequest.h
   include/tencentcloud/ess/v20201111/model/CreateMultiFlowSignQRCodeRequest.h
+  include/tencentcloud/ess/v20201111/model/DescribeFlowInfoRequest.h
   include/tencentcloud/ess/v20201111/model/DescribeFlowInfoResponse.h
   include/tencentcloud/ess/v20201111/model/CcInfo.h
   include/tencentcloud/ess/v20201111/model/CreateFlowResponse.h
@@ -172,6 +176,7 @@ set(ess_src
   src/v20201111/model/FlowCreateApprover.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeResponse.cpp
   src/v20201111/model/DisableUserAutoSignResponse.cpp
+  src/v20201111/model/BindEmployeeUserIdWithClientOpenIdResponse.cpp
   src/v20201111/model/CreateIntegrationEmployeesRequest.cpp
   src/v20201111/model/CreateConvertTaskApiRequest.cpp
   src/v20201111/model/CreateFlowEvidenceReportRequest.cpp
@@ -195,8 +200,9 @@ set(ess_src
   src/v20201111/model/CreateSchemeUrlRequest.cpp
   src/v20201111/model/AutoSignConfig.cpp
   src/v20201111/model/DescribeThirdPartyAuthCodeRequest.cpp
+  src/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdResponse.cpp
   src/v20201111/model/CreateReleaseFlowResponse.cpp
-  src/v20201111/model/DescribeFlowInfoRequest.cpp
+  src/v20201111/model/BindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/DeleteSealPoliciesResponse.cpp
   src/v20201111/model/OrganizationInfo.cpp
   src/v20201111/model/DescribeUserAutoSignStatusResponse.cpp
@@ -213,6 +219,7 @@ set(ess_src
   src/v20201111/model/SuccessDeleteStaffData.cpp
   src/v20201111/model/CreateConvertTaskApiResponse.cpp
   src/v20201111/model/CreateFlowSignReviewRequest.cpp
+  src/v20201111/model/UnbindEmployeeUserIdWithClientOpenIdRequest.cpp
   src/v20201111/model/CreateSchemeUrlResponse.cpp
   src/v20201111/model/CreateUserAutoSignEnableUrlResponse.cpp
   src/v20201111/model/CreateFlowSignUrlResponse.cpp
@@ -287,6 +294,7 @@ set(ess_src
   src/v20201111/model/RelieveInfo.cpp
   src/v20201111/model/CreateBatchCancelFlowUrlRequest.cpp
   src/v20201111/model/CreateMultiFlowSignQRCodeRequest.cpp
+  src/v20201111/model/DescribeFlowInfoRequest.cpp
   src/v20201111/model/DescribeFlowInfoResponse.cpp
   src/v20201111/model/CcInfo.cpp
   src/v20201111/model/CreateFlowResponse.cpp

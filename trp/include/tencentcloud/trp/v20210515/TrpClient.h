@@ -23,6 +23,8 @@
 #include <tencentcloud/core/Credential.h>
 #include <tencentcloud/core/profile/ClientProfile.h>
 #include <tencentcloud/core/AsyncCallerContext.h>
+#include <tencentcloud/trp/v20210515/model/AuthorizedTransferRequest.h>
+#include <tencentcloud/trp/v20210515/model/AuthorizedTransferResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodeBatchRequest.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodeBatchResponse.h>
 #include <tencentcloud/trp/v20210515/model/CreateCodePackRequest.h>
@@ -95,6 +97,8 @@
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataByIdResponse.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataListRequest.h>
 #include <tencentcloud/trp/v20210515/model/DescribeTraceDataListResponse.h>
+#include <tencentcloud/trp/v20210515/model/EffectFeedbackRequest.h>
+#include <tencentcloud/trp/v20210515/model/EffectFeedbackResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyCodeBatchRequest.h>
 #include <tencentcloud/trp/v20210515/model/ModifyCodeBatchResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyCustomRuleRequest.h>
@@ -113,6 +117,8 @@
 #include <tencentcloud/trp/v20210515/model/ModifyTraceDataResponse.h>
 #include <tencentcloud/trp/v20210515/model/ModifyTraceDataRanksRequest.h>
 #include <tencentcloud/trp/v20210515/model/ModifyTraceDataRanksResponse.h>
+#include <tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusRequest.h>
+#include <tencentcloud/trp/v20210515/model/ReportBatchCallbackStatusResponse.h>
 
 
 namespace TencentCloud
@@ -127,6 +133,9 @@ namespace TencentCloud
                 TrpClient(const Credential &credential, const std::string &region);
                 TrpClient(const Credential &credential, const std::string &region, const ClientProfile &profile);
 
+                typedef Outcome<Core::Error, Model::AuthorizedTransferResponse> AuthorizedTransferOutcome;
+                typedef std::future<AuthorizedTransferOutcome> AuthorizedTransferOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::AuthorizedTransferRequest&, AuthorizedTransferOutcome, const std::shared_ptr<const AsyncCallerContext>&)> AuthorizedTransferAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateCodeBatchResponse> CreateCodeBatchOutcome;
                 typedef std::future<CreateCodeBatchOutcome> CreateCodeBatchOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::CreateCodeBatchRequest&, CreateCodeBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateCodeBatchAsyncHandler;
@@ -235,6 +244,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeTraceDataListResponse> DescribeTraceDataListOutcome;
                 typedef std::future<DescribeTraceDataListOutcome> DescribeTraceDataListOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::DescribeTraceDataListRequest&, DescribeTraceDataListOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeTraceDataListAsyncHandler;
+                typedef Outcome<Core::Error, Model::EffectFeedbackResponse> EffectFeedbackOutcome;
+                typedef std::future<EffectFeedbackOutcome> EffectFeedbackOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::EffectFeedbackRequest&, EffectFeedbackOutcome, const std::shared_ptr<const AsyncCallerContext>&)> EffectFeedbackAsyncHandler;
                 typedef Outcome<Core::Error, Model::ModifyCodeBatchResponse> ModifyCodeBatchOutcome;
                 typedef std::future<ModifyCodeBatchOutcome> ModifyCodeBatchOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::ModifyCodeBatchRequest&, ModifyCodeBatchOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyCodeBatchAsyncHandler;
@@ -262,8 +274,20 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTraceDataRanksResponse> ModifyTraceDataRanksOutcome;
                 typedef std::future<ModifyTraceDataRanksOutcome> ModifyTraceDataRanksOutcomeCallable;
                 typedef std::function<void(const TrpClient*, const Model::ModifyTraceDataRanksRequest&, ModifyTraceDataRanksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTraceDataRanksAsyncHandler;
+                typedef Outcome<Core::Error, Model::ReportBatchCallbackStatusResponse> ReportBatchCallbackStatusOutcome;
+                typedef std::future<ReportBatchCallbackStatusOutcome> ReportBatchCallbackStatusOutcomeCallable;
+                typedef std::function<void(const TrpClient*, const Model::ReportBatchCallbackStatusRequest&, ReportBatchCallbackStatusOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ReportBatchCallbackStatusAsyncHandler;
 
 
+
+                /**
+                 *接收客户侧的用户已授权的号码。
+                 * @param req AuthorizedTransferRequest
+                 * @return AuthorizedTransferOutcome
+                 */
+                AuthorizedTransferOutcome AuthorizedTransfer(const Model::AuthorizedTransferRequest &request);
+                void AuthorizedTransferAsync(const Model::AuthorizedTransferRequest& request, const AuthorizedTransferAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                AuthorizedTransferOutcomeCallable AuthorizedTransferCallable(const Model::AuthorizedTransferRequest& request);
 
                 /**
                  *新增批次
@@ -591,6 +615,15 @@ namespace TencentCloud
                 DescribeTraceDataListOutcomeCallable DescribeTraceDataListCallable(const Model::DescribeTraceDataListRequest& request);
 
                 /**
+                 *接收客户反馈的各环节数据
+                 * @param req EffectFeedbackRequest
+                 * @return EffectFeedbackOutcome
+                 */
+                EffectFeedbackOutcome EffectFeedback(const Model::EffectFeedbackRequest &request);
+                void EffectFeedbackAsync(const Model::EffectFeedbackRequest& request, const EffectFeedbackAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                EffectFeedbackOutcomeCallable EffectFeedbackCallable(const Model::EffectFeedbackRequest& request);
+
+                /**
                  *修改批次
                  * @param req ModifyCodeBatchRequest
                  * @return ModifyCodeBatchOutcome
@@ -671,6 +704,15 @@ namespace TencentCloud
                 ModifyTraceDataRanksOutcome ModifyTraceDataRanks(const Model::ModifyTraceDataRanksRequest &request);
                 void ModifyTraceDataRanksAsync(const Model::ModifyTraceDataRanksRequest& request, const ModifyTraceDataRanksAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTraceDataRanksOutcomeCallable ModifyTraceDataRanksCallable(const Model::ModifyTraceDataRanksRequest& request);
+
+                /**
+                 *接收离线筛选包回执，用于效果统计和分析。
+                 * @param req ReportBatchCallbackStatusRequest
+                 * @return ReportBatchCallbackStatusOutcome
+                 */
+                ReportBatchCallbackStatusOutcome ReportBatchCallbackStatus(const Model::ReportBatchCallbackStatusRequest &request);
+                void ReportBatchCallbackStatusAsync(const Model::ReportBatchCallbackStatusRequest& request, const ReportBatchCallbackStatusAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ReportBatchCallbackStatusOutcomeCallable ReportBatchCallbackStatusCallable(const Model::ReportBatchCallbackStatusRequest& request);
 
             };
         }
