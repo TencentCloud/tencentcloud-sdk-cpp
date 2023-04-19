@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取验签结果
-                     * @return VerifyResult 验签结果
+                     * 获取验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
+                     * @return VerifyResult 验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
                      */
                     int64_t GetVerifyResult() const;
 
                     /**
-                     * 设置验签结果
-                     * @param VerifyResult 验签结果
+                     * 设置验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
+                     * @param VerifyResult 验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
                      */
                     void SetVerifyResult(const int64_t& _verifyResult);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool VerifyResultHasBeenSet() const;
 
                     /**
-                     * 获取签署平台
-                     * @return SignPlatform 签署平台
+                     * 获取签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
+                     * @return SignPlatform 签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
                      */
                     std::string GetSignPlatform() const;
 
                     /**
-                     * 设置签署平台
-                     * @param SignPlatform 签署平台
+                     * 设置签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
+                     * @param SignPlatform 签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
                      */
                     void SetSignPlatform(const std::string& _signPlatform);
 
@@ -283,13 +283,13 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 验签结果
+                     * 验签结果。0-签名域未签名；1-验签成功； 3-验签失败；4-未找到签名域：文件内没有签名域；5-签名值格式不正确。
                      */
                     int64_t m_verifyResult;
                     bool m_verifyResultHasBeenSet;
 
                     /**
-                     * 签署平台
+                     * 签署平台，如果文件是在腾讯电子签平台签署，则返回腾讯电子签，如果文件不在腾讯电子签平台签署，则返回其他平台。
                      */
                     std::string m_signPlatform;
                     bool m_signPlatformHasBeenSet;

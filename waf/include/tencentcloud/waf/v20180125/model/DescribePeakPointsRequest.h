@@ -133,38 +133,66 @@ namespace TencentCloud
                     bool InstanceIDHasBeenSet() const;
 
                     /**
-                     * 获取六个值可选：
+                     * 获取十三个值可选：
 access-峰值qps趋势图
 botAccess- bot峰值qps趋势图
 down-下行峰值带宽趋势图
 up-上行峰值带宽趋势图
 attack-Web攻击总数趋势图
 cc-CC攻击总数趋势图
-                     * @return MetricName 六个值可选：
+StatusServerError-WAF返回给客户端状态码次数趋势图
+StatusClientError-WAF返回给客户端状态码次数趋势图
+StatusRedirect-WAF返回给客户端状态码次数趋势图
+StatusOk-WAF返回给客户端状态码次数趋势图
+UpstreamServerError-源站返回给WAF状态码次数趋势图
+UpstreamClientError-源站返回给WAF状态码次数趋势图
+UpstreamRedirect-源站返回给WAF状态码次数趋势图
+                     * @return MetricName 十三个值可选：
 access-峰值qps趋势图
 botAccess- bot峰值qps趋势图
 down-下行峰值带宽趋势图
 up-上行峰值带宽趋势图
 attack-Web攻击总数趋势图
 cc-CC攻击总数趋势图
+StatusServerError-WAF返回给客户端状态码次数趋势图
+StatusClientError-WAF返回给客户端状态码次数趋势图
+StatusRedirect-WAF返回给客户端状态码次数趋势图
+StatusOk-WAF返回给客户端状态码次数趋势图
+UpstreamServerError-源站返回给WAF状态码次数趋势图
+UpstreamClientError-源站返回给WAF状态码次数趋势图
+UpstreamRedirect-源站返回给WAF状态码次数趋势图
                      */
                     std::string GetMetricName() const;
 
                     /**
-                     * 设置六个值可选：
+                     * 设置十三个值可选：
 access-峰值qps趋势图
 botAccess- bot峰值qps趋势图
 down-下行峰值带宽趋势图
 up-上行峰值带宽趋势图
 attack-Web攻击总数趋势图
 cc-CC攻击总数趋势图
-                     * @param MetricName 六个值可选：
+StatusServerError-WAF返回给客户端状态码次数趋势图
+StatusClientError-WAF返回给客户端状态码次数趋势图
+StatusRedirect-WAF返回给客户端状态码次数趋势图
+StatusOk-WAF返回给客户端状态码次数趋势图
+UpstreamServerError-源站返回给WAF状态码次数趋势图
+UpstreamClientError-源站返回给WAF状态码次数趋势图
+UpstreamRedirect-源站返回给WAF状态码次数趋势图
+                     * @param MetricName 十三个值可选：
 access-峰值qps趋势图
 botAccess- bot峰值qps趋势图
 down-下行峰值带宽趋势图
 up-上行峰值带宽趋势图
 attack-Web攻击总数趋势图
 cc-CC攻击总数趋势图
+StatusServerError-WAF返回给客户端状态码次数趋势图
+StatusClientError-WAF返回给客户端状态码次数趋势图
+StatusRedirect-WAF返回给客户端状态码次数趋势图
+StatusOk-WAF返回给客户端状态码次数趋势图
+UpstreamServerError-源站返回给WAF状态码次数趋势图
+UpstreamClientError-源站返回给WAF状态码次数趋势图
+UpstreamRedirect-源站返回给WAF状态码次数趋势图
                      */
                     void SetMetricName(const std::string& _metricName);
 
@@ -207,13 +235,20 @@ cc-CC攻击总数趋势图
                     bool m_instanceIDHasBeenSet;
 
                     /**
-                     * 六个值可选：
+                     * 十三个值可选：
 access-峰值qps趋势图
 botAccess- bot峰值qps趋势图
 down-下行峰值带宽趋势图
 up-上行峰值带宽趋势图
 attack-Web攻击总数趋势图
 cc-CC攻击总数趋势图
+StatusServerError-WAF返回给客户端状态码次数趋势图
+StatusClientError-WAF返回给客户端状态码次数趋势图
+StatusRedirect-WAF返回给客户端状态码次数趋势图
+StatusOk-WAF返回给客户端状态码次数趋势图
+UpstreamServerError-源站返回给WAF状态码次数趋势图
+UpstreamClientError-源站返回给WAF状态码次数趋势图
+UpstreamRedirect-源站返回给WAF状态码次数趋势图
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;

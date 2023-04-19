@@ -171,6 +171,8 @@
 #include <tencentcloud/ckafka/v20190819/model/ModifyPasswordResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/ModifyTopicAttributesResponse.h>
+#include <tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceRequest.h>
+#include <tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResponse.h>
 #include <tencentcloud/ckafka/v20190819/model/SendMessageRequest.h>
 #include <tencentcloud/ckafka/v20190819/model/SendMessageResponse.h>
 
@@ -409,6 +411,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::ModifyTopicAttributesResponse> ModifyTopicAttributesOutcome;
                 typedef std::future<ModifyTopicAttributesOutcome> ModifyTopicAttributesOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::ModifyTopicAttributesRequest&, ModifyTopicAttributesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ModifyTopicAttributesAsyncHandler;
+                typedef Outcome<Core::Error, Model::RenewCkafkaInstanceResponse> RenewCkafkaInstanceOutcome;
+                typedef std::future<RenewCkafkaInstanceOutcome> RenewCkafkaInstanceOutcomeCallable;
+                typedef std::function<void(const CkafkaClient*, const Model::RenewCkafkaInstanceRequest&, RenewCkafkaInstanceOutcome, const std::shared_ptr<const AsyncCallerContext>&)> RenewCkafkaInstanceAsyncHandler;
                 typedef Outcome<Core::Error, Model::SendMessageResponse> SendMessageOutcome;
                 typedef std::future<SendMessageOutcome> SendMessageOutcomeCallable;
                 typedef std::function<void(const CkafkaClient*, const Model::SendMessageRequest&, SendMessageOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SendMessageAsyncHandler;
@@ -1082,6 +1087,15 @@ namespace TencentCloud
                 ModifyTopicAttributesOutcome ModifyTopicAttributes(const Model::ModifyTopicAttributesRequest &request);
                 void ModifyTopicAttributesAsync(const Model::ModifyTopicAttributesRequest& request, const ModifyTopicAttributesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 ModifyTopicAttributesOutcomeCallable ModifyTopicAttributesCallable(const Model::ModifyTopicAttributesRequest& request);
+
+                /**
+                 *续费Ckafka实例, 目前只支持国内站包年包月实例续费
+                 * @param req RenewCkafkaInstanceRequest
+                 * @return RenewCkafkaInstanceOutcome
+                 */
+                RenewCkafkaInstanceOutcome RenewCkafkaInstance(const Model::RenewCkafkaInstanceRequest &request);
+                void RenewCkafkaInstanceAsync(const Model::RenewCkafkaInstanceRequest& request, const RenewCkafkaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                RenewCkafkaInstanceOutcomeCallable RenewCkafkaInstanceCallable(const Model::RenewCkafkaInstanceRequest& request);
 
                 /**
                  *通过HTTP接入层发送消息

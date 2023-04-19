@@ -7780,6 +7780,49 @@ TkeClient::UninstallLogAgentOutcomeCallable TkeClient::UninstallLogAgentCallable
     return task->get_future();
 }
 
+TkeClient::UpdateClusterKubeconfigOutcome TkeClient::UpdateClusterKubeconfig(const UpdateClusterKubeconfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "UpdateClusterKubeconfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        UpdateClusterKubeconfigResponse rsp = UpdateClusterKubeconfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return UpdateClusterKubeconfigOutcome(rsp);
+        else
+            return UpdateClusterKubeconfigOutcome(o.GetError());
+    }
+    else
+    {
+        return UpdateClusterKubeconfigOutcome(outcome.GetError());
+    }
+}
+
+void TkeClient::UpdateClusterKubeconfigAsync(const UpdateClusterKubeconfigRequest& request, const UpdateClusterKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->UpdateClusterKubeconfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TkeClient::UpdateClusterKubeconfigOutcomeCallable TkeClient::UpdateClusterKubeconfigCallable(const UpdateClusterKubeconfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<UpdateClusterKubeconfigOutcome()>>(
+        [this, request]()
+        {
+            return this->UpdateClusterKubeconfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TkeClient::UpdateClusterVersionOutcome TkeClient::UpdateClusterVersion(const UpdateClusterVersionRequest &request)
 {
     auto outcome = MakeRequest(request, "UpdateClusterVersion");

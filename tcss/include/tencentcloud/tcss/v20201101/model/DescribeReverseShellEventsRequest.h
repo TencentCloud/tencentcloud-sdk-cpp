@@ -80,14 +80,18 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * @return Filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+                     * 获取过滤参数
+InnerNetAlarmShow- int - 是否必填：1 - 内网告警展示 0 - 不展示
+                     * @return Filters 过滤参数
+InnerNetAlarmShow- int - 是否必填：1 - 内网告警展示 0 - 不展示
                      */
                     std::vector<RunTimeFilters> GetFilters() const;
 
                     /**
-                     * 设置过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
-                     * @param Filters 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+                     * 设置过滤参数
+InnerNetAlarmShow- int - 是否必填：1 - 内网告警展示 0 - 不展示
+                     * @param Filters 过滤参数
+InnerNetAlarmShow- int - 是否必填：1 - 内网告警展示 0 - 不展示
                      */
                     void SetFilters(const std::vector<RunTimeFilters>& _filters);
 
@@ -148,7 +152,8 @@ namespace TencentCloud
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 过滤参数,"Filters":[{"Name":"Status","Values":["2"]}]
+                     * 过滤参数
+InnerNetAlarmShow- int - 是否必填：1 - 内网告警展示 0 - 不展示
                      */
                     std::vector<RunTimeFilters> m_filters;
                     bool m_filtersHasBeenSet;

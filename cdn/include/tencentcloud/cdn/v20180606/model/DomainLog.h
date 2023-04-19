@@ -144,6 +144,28 @@ overseas：境外
                      */
                     bool LogNameHasBeenSet() const;
 
+                    /**
+                     * 获取文件大小，单位: Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileSize 文件大小，单位: Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetFileSize() const;
+
+                    /**
+                     * 设置文件大小，单位: Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileSize 文件大小，单位: Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileSize(const int64_t& _fileSize);
+
+                    /**
+                     * 判断参数 FileSize 是否已赋值
+                     * @return FileSize 是否已赋值
+                     */
+                    bool FileSizeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -177,6 +199,13 @@ overseas：境外
                      */
                     std::string m_logName;
                     bool m_logNameHasBeenSet;
+
+                    /**
+                     * 文件大小，单位: Byte
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_fileSize;
+                    bool m_fileSizeHasBeenSet;
 
                 };
             }

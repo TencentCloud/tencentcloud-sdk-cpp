@@ -57,7 +57,8 @@ FileTamperEvent::FileTamperEvent() :
     m_referenceHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_exeNameHasBeenSet(false),
-    m_machineExtraInfoHasBeenSet(false)
+    m_machineExtraInfoHasBeenSet(false),
+    m_fileActionHasBeenSet(false)
 {
 }
 
@@ -443,6 +444,16 @@ CoreInternalOutcome FileTamperEvent::Deserialize(const rapidjson::Value &value)
         m_machineExtraInfoHasBeenSet = true;
     }
 
+    if (value.HasMember("FileAction") && !value["FileAction"].IsNull())
+    {
+        if (!value["FileAction"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FileTamperEvent.FileAction` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileAction = string(value["FileAction"].GetString());
+        m_fileActionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -745,6 +756,14 @@ void FileTamperEvent::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_machineExtraInfo.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_fileActionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileAction";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileAction.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1340,5 +1359,21 @@ void FileTamperEvent::SetMachineExtraInfo(const MachineExtraInfo& _machineExtraI
 bool FileTamperEvent::MachineExtraInfoHasBeenSet() const
 {
     return m_machineExtraInfoHasBeenSet;
+}
+
+string FileTamperEvent::GetFileAction() const
+{
+    return m_fileAction;
+}
+
+void FileTamperEvent::SetFileAction(const string& _fileAction)
+{
+    m_fileAction = _fileAction;
+    m_fileActionHasBeenSet = true;
+}
+
+bool FileTamperEvent::FileActionHasBeenSet() const
+{
+    return m_fileActionHasBeenSet;
 }
 

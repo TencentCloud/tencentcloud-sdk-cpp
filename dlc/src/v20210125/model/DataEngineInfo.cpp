@@ -57,7 +57,9 @@ DataEngineInfo::DataEngineInfo() :
     m_imageVersionIdHasBeenSet(false),
     m_childImageVersionIdHasBeenSet(false),
     m_imageVersionNameHasBeenSet(false),
-    m_startStandbyClusterHasBeenSet(false)
+    m_startStandbyClusterHasBeenSet(false),
+    m_elasticSwitchHasBeenSet(false),
+    m_elasticLimitHasBeenSet(false)
 {
 }
 
@@ -466,6 +468,26 @@ CoreInternalOutcome DataEngineInfo::Deserialize(const rapidjson::Value &value)
         m_startStandbyClusterHasBeenSet = true;
     }
 
+    if (value.HasMember("ElasticSwitch") && !value["ElasticSwitch"].IsNull())
+    {
+        if (!value["ElasticSwitch"].IsBool())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ElasticSwitch` IsBool=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticSwitch = value["ElasticSwitch"].GetBool();
+        m_elasticSwitchHasBeenSet = true;
+    }
+
+    if (value.HasMember("ElasticLimit") && !value["ElasticLimit"].IsNull())
+    {
+        if (!value["ElasticLimit"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DataEngineInfo.ElasticLimit` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_elasticLimit = value["ElasticLimit"].GetInt64();
+        m_elasticLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -787,6 +809,22 @@ void DataEngineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "StartStandbyCluster";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_startStandbyCluster, allocator);
+    }
+
+    if (m_elasticSwitchHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticSwitch";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticSwitch, allocator);
+    }
+
+    if (m_elasticLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ElasticLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_elasticLimit, allocator);
     }
 
 }
@@ -1382,5 +1420,37 @@ void DataEngineInfo::SetStartStandbyCluster(const bool& _startStandbyCluster)
 bool DataEngineInfo::StartStandbyClusterHasBeenSet() const
 {
     return m_startStandbyClusterHasBeenSet;
+}
+
+bool DataEngineInfo::GetElasticSwitch() const
+{
+    return m_elasticSwitch;
+}
+
+void DataEngineInfo::SetElasticSwitch(const bool& _elasticSwitch)
+{
+    m_elasticSwitch = _elasticSwitch;
+    m_elasticSwitchHasBeenSet = true;
+}
+
+bool DataEngineInfo::ElasticSwitchHasBeenSet() const
+{
+    return m_elasticSwitchHasBeenSet;
+}
+
+int64_t DataEngineInfo::GetElasticLimit() const
+{
+    return m_elasticLimit;
+}
+
+void DataEngineInfo::SetElasticLimit(const int64_t& _elasticLimit)
+{
+    m_elasticLimit = _elasticLimit;
+    m_elasticLimitHasBeenSet = true;
+}
+
+bool DataEngineInfo::ElasticLimitHasBeenSet() const
+{
+    return m_elasticLimitHasBeenSet;
 }
 

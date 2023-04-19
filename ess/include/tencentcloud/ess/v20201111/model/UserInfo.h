@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的来源渠道
-                     * @return Channel 用户的来源渠道
+                     * 获取用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * @return Channel 用户的来源渠道，一般不用传，特定场景根据接口说明传值
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置用户的来源渠道
-                     * @param Channel 用户的来源渠道
+                     * 设置用户的来源渠道，一般不用传，特定场景根据接口说明传值
+                     * @param Channel 用户的来源渠道，一般不用传，特定场景根据接口说明传值
                      */
                     void SetChannel(const std::string& _channel);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取用户在渠道的编号
-                     * @return OpenId 用户在渠道的编号
+                     * 获取用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * @return OpenId 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
                      */
                     std::string GetOpenId() const;
 
                     /**
-                     * 设置用户在渠道的编号
-                     * @param OpenId 用户在渠道的编号
+                     * 设置用户在渠道的编号，一般不用传，特定场景根据接口说明传值
+                     * @param OpenId 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
                      */
                     void SetOpenId(const std::string& _openId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool OpenIdHasBeenSet() const;
 
                     /**
-                     * 获取用户真实IP
-                     * @return ClientIp 用户真实IP
+                     * 获取用户真实IP，内部字段，暂未开放
+                     * @return ClientIp 用户真实IP，内部字段，暂未开放
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置用户真实IP
-                     * @param ClientIp 用户真实IP
+                     * 设置用户真实IP，内部字段，暂未开放
+                     * @param ClientIp 用户真实IP，内部字段，暂未开放
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ClientIpHasBeenSet() const;
 
                     /**
-                     * 获取用户代理IP
-                     * @return ProxyIp 用户代理IP
+                     * 获取用户代理IP，内部字段，暂未开放
+                     * @return ProxyIp 用户代理IP，内部字段，暂未开放
                      */
                     std::string GetProxyIp() const;
 
                     /**
-                     * 设置用户代理IP
-                     * @param ProxyIp 用户代理IP
+                     * 设置用户代理IP，内部字段，暂未开放
+                     * @param ProxyIp 用户代理IP，内部字段，暂未开放
                      */
                     void SetProxyIp(const std::string& _proxyIp);
 
@@ -145,25 +145,25 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 用户的来源渠道
+                     * 用户的来源渠道，一般不用传，特定场景根据接口说明传值
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 用户在渠道的编号
+                     * 用户在渠道的编号，一般不用传，特定场景根据接口说明传值
                      */
                     std::string m_openId;
                     bool m_openIdHasBeenSet;
 
                     /**
-                     * 用户真实IP
+                     * 用户真实IP，内部字段，暂未开放
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
-                     * 用户代理IP
+                     * 用户代理IP，内部字段，暂未开放
                      */
                     std::string m_proxyIp;
                     bool m_proxyIpHasBeenSet;

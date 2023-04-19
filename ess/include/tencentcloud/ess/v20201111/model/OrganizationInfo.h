@@ -47,14 +47,14 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取机构在平台的编号
-                     * @return OrganizationId 机构在平台的编号
+                     * 获取机构在平台的编号，内部字段，暂未开放
+                     * @return OrganizationId 机构在平台的编号，内部字段，暂未开放
                      */
                     std::string GetOrganizationId() const;
 
                     /**
-                     * 设置机构在平台的编号
-                     * @param OrganizationId 机构在平台的编号
+                     * 设置机构在平台的编号，内部字段，暂未开放
+                     * @param OrganizationId 机构在平台的编号，内部字段，暂未开放
                      */
                     void SetOrganizationId(const std::string& _organizationId);
 
@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool OrganizationIdHasBeenSet() const;
 
                     /**
-                     * 获取用户渠道
-                     * @return Channel 用户渠道
+                     * 获取用户渠道，内部字段，暂未开放
+                     * @return Channel 用户渠道，内部字段，暂未开放
                      */
                     std::string GetChannel() const;
 
                     /**
-                     * 设置用户渠道
-                     * @param Channel 用户渠道
+                     * 设置用户渠道，内部字段，暂未开放
+                     * @param Channel 用户渠道，内部字段，暂未开放
                      */
                     void SetChannel(const std::string& _channel);
 
@@ -83,14 +83,14 @@ namespace TencentCloud
                     bool ChannelHasBeenSet() const;
 
                     /**
-                     * 获取用户在渠道的机构编号
-                     * @return OrganizationOpenId 用户在渠道的机构编号
+                     * 获取用户在渠道的机构编号，内部字段，暂未开放
+                     * @return OrganizationOpenId 用户在渠道的机构编号，内部字段，暂未开放
                      */
                     std::string GetOrganizationOpenId() const;
 
                     /**
-                     * 设置用户在渠道的机构编号
-                     * @param OrganizationOpenId 用户在渠道的机构编号
+                     * 设置用户在渠道的机构编号，内部字段，暂未开放
+                     * @param OrganizationOpenId 用户在渠道的机构编号，内部字段，暂未开放
                      */
                     void SetOrganizationOpenId(const std::string& _organizationOpenId);
 
@@ -101,14 +101,14 @@ namespace TencentCloud
                     bool OrganizationOpenIdHasBeenSet() const;
 
                     /**
-                     * 获取用户真实的IP
-                     * @return ClientIp 用户真实的IP
+                     * 获取用户真实的IP，内部字段，暂未开放
+                     * @return ClientIp 用户真实的IP，内部字段，暂未开放
                      */
                     std::string GetClientIp() const;
 
                     /**
-                     * 设置用户真实的IP
-                     * @param ClientIp 用户真实的IP
+                     * 设置用户真实的IP，内部字段，暂未开放
+                     * @param ClientIp 用户真实的IP，内部字段，暂未开放
                      */
                     void SetClientIp(const std::string& _clientIp);
 
@@ -119,14 +119,14 @@ namespace TencentCloud
                     bool ClientIpHasBeenSet() const;
 
                     /**
-                     * 获取机构的代理IP
-                     * @return ProxyIp 机构的代理IP
+                     * 获取机构的代理IP，内部字段，暂未开放
+                     * @return ProxyIp 机构的代理IP，内部字段，暂未开放
                      */
                     std::string GetProxyIp() const;
 
                     /**
-                     * 设置机构的代理IP
-                     * @param ProxyIp 机构的代理IP
+                     * 设置机构的代理IP，内部字段，暂未开放
+                     * @param ProxyIp 机构的代理IP，内部字段，暂未开放
                      */
                     void SetProxyIp(const std::string& _proxyIp);
 
@@ -139,31 +139,31 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 机构在平台的编号
+                     * 机构在平台的编号，内部字段，暂未开放
                      */
                     std::string m_organizationId;
                     bool m_organizationIdHasBeenSet;
 
                     /**
-                     * 用户渠道
+                     * 用户渠道，内部字段，暂未开放
                      */
                     std::string m_channel;
                     bool m_channelHasBeenSet;
 
                     /**
-                     * 用户在渠道的机构编号
+                     * 用户在渠道的机构编号，内部字段，暂未开放
                      */
                     std::string m_organizationOpenId;
                     bool m_organizationOpenIdHasBeenSet;
 
                     /**
-                     * 用户真实的IP
+                     * 用户真实的IP，内部字段，暂未开放
                      */
                     std::string m_clientIp;
                     bool m_clientIpHasBeenSet;
 
                     /**
-                     * 机构的代理IP
+                     * 机构的代理IP，内部字段，暂未开放
                      */
                     std::string m_proxyIp;
                     bool m_proxyIpHasBeenSet;

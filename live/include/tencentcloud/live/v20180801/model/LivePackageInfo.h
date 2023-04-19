@@ -270,6 +270,62 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取是否自动续购。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return WillRenew 是否自动续购。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetWillRenew() const;
+
+                    /**
+                     * 设置是否自动续购。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param WillRenew 是否自动续购。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWillRenew(const int64_t& _willRenew);
+
+                    /**
+                     * 判断参数 WillRenew 是否已赋值
+                     * @return WillRenew 是否已赋值
+                     */
+                    bool WillRenewHasBeenSet() const;
+
+                    /**
+                     * 获取续购状态。
+1 ：续购成功。
+0 ：尚未续购。
+<0  : 续购失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return RenewalResult 续购状态。
+1 ：续购成功。
+0 ：尚未续购。
+<0  : 续购失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetRenewalResult() const;
+
+                    /**
+                     * 设置续购状态。
+1 ：续购成功。
+0 ：尚未续购。
+<0  : 续购失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param RenewalResult 续购状态。
+1 ：续购成功。
+0 ：尚未续购。
+<0  : 续购失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetRenewalResult(const int64_t& _renewalResult);
+
+                    /**
+                     * 判断参数 RenewalResult 是否已赋值
+                     * @return RenewalResult 是否已赋值
+                     */
+                    bool RenewalResultHasBeenSet() const;
+
                 private:
 
                     /**
@@ -339,6 +395,23 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 是否自动续购。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_willRenew;
+                    bool m_willRenewHasBeenSet;
+
+                    /**
+                     * 续购状态。
+1 ：续购成功。
+0 ：尚未续购。
+<0  : 续购失败。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_renewalResult;
+                    bool m_renewalResultHasBeenSet;
 
                 };
             }

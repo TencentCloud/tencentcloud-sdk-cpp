@@ -82,14 +82,14 @@ namespace TencentCloud
                     bool EmployeesHasBeenSet() const;
 
                     /**
-                     * 获取代理信息
-                     * @return Agent 代理信息
+                     * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
+                     * @return Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
                      */
                     Agent GetAgent() const;
 
                     /**
-                     * 设置代理信息
-                     * @param Agent 代理信息
+                     * 设置代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
+                     * @param Agent 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
                      */
                     void SetAgent(const Agent& _agent);
 
@@ -114,7 +114,7 @@ namespace TencentCloud
                     bool m_employeesHasBeenSet;
 
                     /**
-                     * 代理信息
+                     * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId需填充子企业Id
                      */
                     Agent m_agent;
                     bool m_agentHasBeenSet;

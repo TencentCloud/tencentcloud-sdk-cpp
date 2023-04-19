@@ -26,7 +26,9 @@ CreateUserAutoSignEnableUrlRequest::CreateUserAutoSignEnableUrlRequest() :
     m_operatorHasBeenSet(false),
     m_sceneKeyHasBeenSet(false),
     m_autoSignConfigHasBeenSet(false),
-    m_urlTypeHasBeenSet(false)
+    m_urlTypeHasBeenSet(false),
+    m_notifyTypeHasBeenSet(false),
+    m_notifyAddressHasBeenSet(false)
 {
 }
 
@@ -69,6 +71,22 @@ string CreateUserAutoSignEnableUrlRequest::ToJsonString() const
         string key = "UrlType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_urlType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notifyType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_notifyAddressHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "NotifyAddress";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_notifyAddress.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -141,6 +159,38 @@ void CreateUserAutoSignEnableUrlRequest::SetUrlType(const string& _urlType)
 bool CreateUserAutoSignEnableUrlRequest::UrlTypeHasBeenSet() const
 {
     return m_urlTypeHasBeenSet;
+}
+
+string CreateUserAutoSignEnableUrlRequest::GetNotifyType() const
+{
+    return m_notifyType;
+}
+
+void CreateUserAutoSignEnableUrlRequest::SetNotifyType(const string& _notifyType)
+{
+    m_notifyType = _notifyType;
+    m_notifyTypeHasBeenSet = true;
+}
+
+bool CreateUserAutoSignEnableUrlRequest::NotifyTypeHasBeenSet() const
+{
+    return m_notifyTypeHasBeenSet;
+}
+
+string CreateUserAutoSignEnableUrlRequest::GetNotifyAddress() const
+{
+    return m_notifyAddress;
+}
+
+void CreateUserAutoSignEnableUrlRequest::SetNotifyAddress(const string& _notifyAddress)
+{
+    m_notifyAddress = _notifyAddress;
+    m_notifyAddressHasBeenSet = true;
+}
+
+bool CreateUserAutoSignEnableUrlRequest::NotifyAddressHasBeenSet() const
+{
+    return m_notifyAddressHasBeenSet;
 }
 
 

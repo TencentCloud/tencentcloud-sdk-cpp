@@ -49,7 +49,8 @@ ModifySparkAppRequest::ModifySparkAppRequest() :
     m_appArchivesHasBeenSet(false),
     m_sparkImageHasBeenSet(false),
     m_sparkImageVersionHasBeenSet(false),
-    m_appExecutorMaxNumbersHasBeenSet(false)
+    m_appExecutorMaxNumbersHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -274,6 +275,14 @@ string ModifySparkAppRequest::ToJsonString() const
         string key = "AppExecutorMaxNumbers";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_appExecutorMaxNumbers, allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -714,6 +723,22 @@ void ModifySparkAppRequest::SetAppExecutorMaxNumbers(const int64_t& _appExecutor
 bool ModifySparkAppRequest::AppExecutorMaxNumbersHasBeenSet() const
 {
     return m_appExecutorMaxNumbersHasBeenSet;
+}
+
+string ModifySparkAppRequest::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void ModifySparkAppRequest::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool ModifySparkAppRequest::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
 

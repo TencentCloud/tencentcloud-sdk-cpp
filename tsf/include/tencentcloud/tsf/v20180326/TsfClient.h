@@ -57,10 +57,14 @@
 #include <tencentcloud/tsf/v20180326/model/CreateConfigTemplateResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateConfigTemplateWithDetailRespRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateConfigTemplateWithDetailRespResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateConfigWithDetailRespRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateConfigWithDetailRespResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateContainGroupRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateContainGroupResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateFileConfigRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateFileConfigResponse.h>
+#include <tencentcloud/tsf/v20180326/model/CreateFileConfigWithDetailRespRequest.h>
+#include <tencentcloud/tsf/v20180326/model/CreateFileConfigWithDetailRespResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGatewayApiRequest.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGatewayApiResponse.h>
 #include <tencentcloud/tsf/v20180326/model/CreateGroupRequest.h>
@@ -514,12 +518,18 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateConfigTemplateWithDetailRespResponse> CreateConfigTemplateWithDetailRespOutcome;
                 typedef std::future<CreateConfigTemplateWithDetailRespOutcome> CreateConfigTemplateWithDetailRespOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateConfigTemplateWithDetailRespRequest&, CreateConfigTemplateWithDetailRespOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigTemplateWithDetailRespAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateConfigWithDetailRespResponse> CreateConfigWithDetailRespOutcome;
+                typedef std::future<CreateConfigWithDetailRespOutcome> CreateConfigWithDetailRespOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateConfigWithDetailRespRequest&, CreateConfigWithDetailRespOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateConfigWithDetailRespAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateContainGroupResponse> CreateContainGroupOutcome;
                 typedef std::future<CreateContainGroupOutcome> CreateContainGroupOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateContainGroupRequest&, CreateContainGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateContainGroupAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateFileConfigResponse> CreateFileConfigOutcome;
                 typedef std::future<CreateFileConfigOutcome> CreateFileConfigOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateFileConfigRequest&, CreateFileConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateFileConfigWithDetailRespResponse> CreateFileConfigWithDetailRespOutcome;
+                typedef std::future<CreateFileConfigWithDetailRespOutcome> CreateFileConfigWithDetailRespOutcomeCallable;
+                typedef std::function<void(const TsfClient*, const Model::CreateFileConfigWithDetailRespRequest&, CreateFileConfigWithDetailRespOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateFileConfigWithDetailRespAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateGatewayApiResponse> CreateGatewayApiOutcome;
                 typedef std::future<CreateGatewayApiOutcome> CreateGatewayApiOutcomeCallable;
                 typedef std::function<void(const TsfClient*, const Model::CreateGatewayApiRequest&, CreateGatewayApiOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateGatewayApiAsyncHandler;
@@ -1259,6 +1269,15 @@ namespace TencentCloud
                 CreateConfigTemplateWithDetailRespOutcomeCallable CreateConfigTemplateWithDetailRespCallable(const Model::CreateConfigTemplateWithDetailRespRequest& request);
 
                 /**
+                 *创建配置项，返回详细信息
+                 * @param req CreateConfigWithDetailRespRequest
+                 * @return CreateConfigWithDetailRespOutcome
+                 */
+                CreateConfigWithDetailRespOutcome CreateConfigWithDetailResp(const Model::CreateConfigWithDetailRespRequest &request);
+                void CreateConfigWithDetailRespAsync(const Model::CreateConfigWithDetailRespRequest& request, const CreateConfigWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateConfigWithDetailRespOutcomeCallable CreateConfigWithDetailRespCallable(const Model::CreateConfigWithDetailRespRequest& request);
+
+                /**
                  *（已废弃，请使用 CreateGroup 和 DeployContainerGroup 创建和部署容器部署组）创建容器部署组
                  * @param req CreateContainGroupRequest
                  * @return CreateContainGroupOutcome
@@ -1275,6 +1294,15 @@ namespace TencentCloud
                 CreateFileConfigOutcome CreateFileConfig(const Model::CreateFileConfigRequest &request);
                 void CreateFileConfigAsync(const Model::CreateFileConfigRequest& request, const CreateFileConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateFileConfigOutcomeCallable CreateFileConfigCallable(const Model::CreateFileConfigRequest& request);
+
+                /**
+                 *创建文件配置项，返回详细信息
+                 * @param req CreateFileConfigWithDetailRespRequest
+                 * @return CreateFileConfigWithDetailRespOutcome
+                 */
+                CreateFileConfigWithDetailRespOutcome CreateFileConfigWithDetailResp(const Model::CreateFileConfigWithDetailRespRequest &request);
+                void CreateFileConfigWithDetailRespAsync(const Model::CreateFileConfigWithDetailRespRequest& request, const CreateFileConfigWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateFileConfigWithDetailRespOutcomeCallable CreateFileConfigWithDetailRespCallable(const Model::CreateFileConfigWithDetailRespRequest& request);
 
                 /**
                  *批量导入API至api分组(也支持新建API到分组)

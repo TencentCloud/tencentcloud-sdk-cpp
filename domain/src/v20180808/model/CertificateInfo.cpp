@@ -23,7 +23,10 @@ using namespace std;
 CertificateInfo::CertificateInfo() :
     m_certificateCodeHasBeenSet(false),
     m_certificateTypeHasBeenSet(false),
-    m_imgUrlHasBeenSet(false)
+    m_imgUrlHasBeenSet(false),
+    m_registrantCertificateCodeHasBeenSet(false),
+    m_registrantCertificateTypeHasBeenSet(false),
+    m_registrantImgUrlHasBeenSet(false)
 {
 }
 
@@ -62,6 +65,36 @@ CoreInternalOutcome CertificateInfo::Deserialize(const rapidjson::Value &value)
         m_imgUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("RegistrantCertificateCode") && !value["RegistrantCertificateCode"].IsNull())
+    {
+        if (!value["RegistrantCertificateCode"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateInfo.RegistrantCertificateCode` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrantCertificateCode = string(value["RegistrantCertificateCode"].GetString());
+        m_registrantCertificateCodeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegistrantCertificateType") && !value["RegistrantCertificateType"].IsNull())
+    {
+        if (!value["RegistrantCertificateType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateInfo.RegistrantCertificateType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrantCertificateType = string(value["RegistrantCertificateType"].GetString());
+        m_registrantCertificateTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("RegistrantImgUrl") && !value["RegistrantImgUrl"].IsNull())
+    {
+        if (!value["RegistrantImgUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CertificateInfo.RegistrantImgUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_registrantImgUrl = string(value["RegistrantImgUrl"].GetString());
+        m_registrantImgUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -91,6 +124,30 @@ void CertificateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ImgUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_imgUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registrantCertificateCodeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrantCertificateCode";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registrantCertificateCode.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registrantCertificateTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrantCertificateType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registrantCertificateType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_registrantImgUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RegistrantImgUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_registrantImgUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -142,5 +199,53 @@ void CertificateInfo::SetImgUrl(const string& _imgUrl)
 bool CertificateInfo::ImgUrlHasBeenSet() const
 {
     return m_imgUrlHasBeenSet;
+}
+
+string CertificateInfo::GetRegistrantCertificateCode() const
+{
+    return m_registrantCertificateCode;
+}
+
+void CertificateInfo::SetRegistrantCertificateCode(const string& _registrantCertificateCode)
+{
+    m_registrantCertificateCode = _registrantCertificateCode;
+    m_registrantCertificateCodeHasBeenSet = true;
+}
+
+bool CertificateInfo::RegistrantCertificateCodeHasBeenSet() const
+{
+    return m_registrantCertificateCodeHasBeenSet;
+}
+
+string CertificateInfo::GetRegistrantCertificateType() const
+{
+    return m_registrantCertificateType;
+}
+
+void CertificateInfo::SetRegistrantCertificateType(const string& _registrantCertificateType)
+{
+    m_registrantCertificateType = _registrantCertificateType;
+    m_registrantCertificateTypeHasBeenSet = true;
+}
+
+bool CertificateInfo::RegistrantCertificateTypeHasBeenSet() const
+{
+    return m_registrantCertificateTypeHasBeenSet;
+}
+
+string CertificateInfo::GetRegistrantImgUrl() const
+{
+    return m_registrantImgUrl;
+}
+
+void CertificateInfo::SetRegistrantImgUrl(const string& _registrantImgUrl)
+{
+    m_registrantImgUrl = _registrantImgUrl;
+    m_registrantImgUrlHasBeenSet = true;
+}
+
+bool CertificateInfo::RegistrantImgUrlHasBeenSet() const
+{
+    return m_registrantImgUrlHasBeenSet;
 }
 

@@ -86,14 +86,18 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取用户的 AppID。
-                     * @return Appid 用户的 AppID。
+                     * 获取用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+
+                     * @return Appid 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+
                      */
                     int64_t GetAppid() const;
 
                     /**
-                     * 设置用户的 AppID。
-                     * @param Appid 用户的 AppID。
+                     * 设置用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+
+                     * @param Appid 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+
                      */
                     void SetAppid(const int64_t& _appid);
 
@@ -248,14 +252,14 @@ namespace TencentCloud
                     bool PortHasBeenSet() const;
 
                     /**
-                     * 获取实例创建时间。
-                     * @return Createtime 实例创建时间。
+                     * 获取实例创建时间。格式如：2020-01-15 10:20:00。
+                     * @return Createtime 实例创建时间。格式如：2020-01-15 10:20:00。
                      */
                     std::string GetCreatetime() const;
 
                     /**
-                     * 设置实例创建时间。
-                     * @param Createtime 实例创建时间。
+                     * 设置实例创建时间。格式如：2020-01-15 10:20:00。
+                     * @param Createtime 实例创建时间。格式如：2020-01-15 10:20:00。
                      */
                     void SetCreatetime(const std::string& _createtime);
 
@@ -266,14 +270,14 @@ namespace TencentCloud
                     bool CreatetimeHasBeenSet() const;
 
                     /**
-                     * 获取实例容量大小，单位：MB。
-                     * @return Size 实例容量大小，单位：MB。
+                     * 获取实例内存容量大小。单位：MB，1MB=1024KB。
+                     * @return Size 实例内存容量大小。单位：MB，1MB=1024KB。
                      */
                     double GetSize() const;
 
                     /**
-                     * 设置实例容量大小，单位：MB。
-                     * @param Size 实例容量大小，单位：MB。
+                     * 设置实例内存容量大小。单位：MB，1MB=1024KB。
+                     * @param Size 实例内存容量大小。单位：MB，1MB=1024KB。
                      */
                     void SetSize(const double& _size);
 
@@ -378,14 +382,14 @@ namespace TencentCloud
                     bool AutoRenewFlagHasBeenSet() const;
 
                     /**
-                     * 获取实例到期时间。
-                     * @return DeadlineTime 实例到期时间。
+                     * 获取包年包月计费实例到期的时间。
+                     * @return DeadlineTime 包年包月计费实例到期的时间。
                      */
                     std::string GetDeadlineTime() const;
 
                     /**
-                     * 设置实例到期时间。
-                     * @param DeadlineTime 实例到期时间。
+                     * 设置包年包月计费实例到期的时间。
+                     * @param DeadlineTime 包年包月计费实例到期的时间。
                      */
                     void SetDeadlineTime(const std::string& _deadlineTime);
 
@@ -504,14 +508,14 @@ namespace TencentCloud
                     bool InstanceTitleHasBeenSet() const;
 
                     /**
-                     * 获取计划下线时间。
-                     * @return OfflineTime 计划下线时间。
+                     * 获取已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。
+                     * @return OfflineTime 已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。
                      */
                     std::string GetOfflineTime() const;
 
                     /**
-                     * 设置计划下线时间。
-                     * @param OfflineTime 计划下线时间。
+                     * 设置已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。
+                     * @param OfflineTime 已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。
                      */
                     void SetOfflineTime(const std::string& _offlineTime);
 
@@ -648,14 +652,14 @@ namespace TencentCloud
                     bool PriceIdHasBeenSet() const;
 
                     /**
-                     * 获取隔离时间。
-                     * @return CloseTime 隔离时间。
+                     * 获取实例隔离开始的时间。
+                     * @return CloseTime 实例隔离开始的时间。
                      */
                     std::string GetCloseTime() const;
 
                     /**
-                     * 设置隔离时间。
-                     * @param CloseTime 隔离时间。
+                     * 设置实例隔离开始的时间。
+                     * @param CloseTime 实例隔离开始的时间。
                      */
                     void SetCloseTime(const std::string& _closeTime);
 
@@ -926,17 +930,17 @@ namespace TencentCloud
                     bool DiskSizeHasBeenSet() const;
 
                     /**
-                     * 获取监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * 获取监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return MonitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * @return MonitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetMonitorVersion() const;
 
                     /**
-                     * 设置监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * 设置监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param MonitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * @param MonitorVersion 监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetMonitorVersion(const std::string& _monitorVersion);
@@ -1058,17 +1062,17 @@ namespace TencentCloud
                     bool WanAddressHasBeenSet() const;
 
                     /**
-                     * 获取北极星服务地址。
+                     * 获取北极星服务地址，内部使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return PolarisServer 北极星服务地址。
+                     * @return PolarisServer 北极星服务地址，内部使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPolarisServer() const;
 
                     /**
-                     * 设置北极星服务地址。
+                     * 设置北极星服务地址，内部使用。
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param PolarisServer 北极星服务地址。
+                     * @param PolarisServer 北极星服务地址，内部使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPolarisServer(const std::string& _polarisServer);
@@ -1182,7 +1186,8 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * 用户的 AppID。
+                     * 用户APPID。APPID是与账号ID有唯一对应关系的应用 ID，部分腾讯云产品会使用此 APPID。
+
                      */
                     int64_t m_appid;
                     bool m_appidHasBeenSet;
@@ -1236,13 +1241,13 @@ namespace TencentCloud
                     bool m_portHasBeenSet;
 
                     /**
-                     * 实例创建时间。
+                     * 实例创建时间。格式如：2020-01-15 10:20:00。
                      */
                     std::string m_createtime;
                     bool m_createtimeHasBeenSet;
 
                     /**
-                     * 实例容量大小，单位：MB。
+                     * 实例内存容量大小。单位：MB，1MB=1024KB。
                      */
                     double m_size;
                     bool m_sizeHasBeenSet;
@@ -1276,7 +1281,7 @@ namespace TencentCloud
                     bool m_autoRenewFlagHasBeenSet;
 
                     /**
-                     * 实例到期时间。
+                     * 包年包月计费实例到期的时间。
                      */
                     std::string m_deadlineTime;
                     bool m_deadlineTimeHasBeenSet;
@@ -1318,7 +1323,7 @@ namespace TencentCloud
                     bool m_instanceTitleHasBeenSet;
 
                     /**
-                     * 计划下线时间。
+                     * 已隔离实例默认下线时间。按量计费实例隔离后默认两小时后下线，包年包月默认7天后下线。格式如：2020-02-15 10:20:00。
                      */
                     std::string m_offlineTime;
                     bool m_offlineTimeHasBeenSet;
@@ -1366,7 +1371,7 @@ namespace TencentCloud
                     bool m_priceIdHasBeenSet;
 
                     /**
-                     * 隔离时间。
+                     * 实例隔离开始的时间。
                      */
                     std::string m_closeTime;
                     bool m_closeTimeHasBeenSet;
@@ -1455,7 +1460,7 @@ namespace TencentCloud
                     bool m_diskSizeHasBeenSet;
 
                     /**
-                     * 监控版本。<ul><li>1m：1分钟粒度监控。</li><li>5s：5秒粒度监控。</li></ul>
+                     * 监控版本。<ul><li>1m：1分钟粒度监控。目前该监控粒度已下线，具体信息，请参见[云数据库 Redis 1分钟粒度下线公告](https://cloud.tencent.com/document/product/239/80653)。</li><li>5s：5秒粒度监控。</li></ul>
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_monitorVersion;
@@ -1497,7 +1502,7 @@ namespace TencentCloud
                     bool m_wanAddressHasBeenSet;
 
                     /**
-                     * 北极星服务地址。
+                     * 北极星服务地址，内部使用。
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_polarisServer;

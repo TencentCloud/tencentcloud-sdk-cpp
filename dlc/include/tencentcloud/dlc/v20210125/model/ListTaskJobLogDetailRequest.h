@@ -169,6 +169,24 @@ namespace TencentCloud
                      */
                     bool FiltersHasBeenSet() const;
 
+                    /**
+                     * 获取SparkSQL任务唯一ID
+                     * @return BatchId SparkSQL任务唯一ID
+                     */
+                    std::string GetBatchId() const;
+
+                    /**
+                     * 设置SparkSQL任务唯一ID
+                     * @param BatchId SparkSQL任务唯一ID
+                     */
+                    void SetBatchId(const std::string& _batchId);
+
+                    /**
+                     * 判断参数 BatchId 是否已赋值
+                     * @return BatchId 是否已赋值
+                     */
+                    bool BatchIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -212,6 +230,12 @@ namespace TencentCloud
                      */
                     std::vector<Filter> m_filters;
                     bool m_filtersHasBeenSet;
+
+                    /**
+                     * SparkSQL任务唯一ID
+                     */
+                    std::string m_batchId;
+                    bool m_batchIdHasBeenSet;
 
                 };
             }

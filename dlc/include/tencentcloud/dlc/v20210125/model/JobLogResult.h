@@ -134,6 +134,28 @@ namespace TencentCloud
                      */
                     bool LogJsonHasBeenSet() const;
 
+                    /**
+                     * 获取日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return PkgLogId 日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetPkgLogId() const;
+
+                    /**
+                     * 设置日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param PkgLogId 日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetPkgLogId(const std::string& _pkgLogId);
+
+                    /**
+                     * 判断参数 PkgLogId 是否已赋值
+                     * @return PkgLogId 是否已赋值
+                     */
+                    bool PkgLogIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +185,13 @@ namespace TencentCloud
                      */
                     std::string m_logJson;
                     bool m_logJsonHasBeenSet;
+
+                    /**
+                     * 日志ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_pkgLogId;
+                    bool m_pkgLogIdHasBeenSet;
 
                 };
             }

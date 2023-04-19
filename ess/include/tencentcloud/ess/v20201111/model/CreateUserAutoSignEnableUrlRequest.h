@@ -120,6 +120,42 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                      */
                     bool UrlTypeHasBeenSet() const;
 
+                    /**
+                     * 获取通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     * @return NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     */
+                    std::string GetNotifyType() const;
+
+                    /**
+                     * 设置通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     * @param NotifyType 通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     */
+                    void SetNotifyType(const std::string& _notifyType);
+
+                    /**
+                     * 判断参数 NotifyType 是否已赋值
+                     * @return NotifyType 是否已赋值
+                     */
+                    bool NotifyTypeHasBeenSet() const;
+
+                    /**
+                     * 获取若上方填写为 SMS，则此处为手机号
+                     * @return NotifyAddress 若上方填写为 SMS，则此处为手机号
+                     */
+                    std::string GetNotifyAddress() const;
+
+                    /**
+                     * 设置若上方填写为 SMS，则此处为手机号
+                     * @param NotifyAddress 若上方填写为 SMS，则此处为手机号
+                     */
+                    void SetNotifyAddress(const std::string& _notifyAddress);
+
+                    /**
+                     * 判断参数 NotifyAddress 是否已赋值
+                     * @return NotifyAddress 是否已赋值
+                     */
+                    bool NotifyAddressHasBeenSet() const;
+
                 private:
 
                     /**
@@ -146,6 +182,18 @@ E_PRESCRIPTION_AUTO_SIGN 电子处方
                      */
                     std::string m_urlType;
                     bool m_urlTypeHasBeenSet;
+
+                    /**
+                     * 通知类型，默认不填为不通知开通方，填写 SMS 为短息通知。
+                     */
+                    std::string m_notifyType;
+                    bool m_notifyTypeHasBeenSet;
+
+                    /**
+                     * 若上方填写为 SMS，则此处为手机号
+                     */
+                    std::string m_notifyAddress;
+                    bool m_notifyAddressHasBeenSet;
 
                 };
             }

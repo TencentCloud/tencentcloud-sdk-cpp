@@ -34,7 +34,11 @@ DocumentInfo::DocumentInfo() :
     m_transcodeInfoHasBeenSet(false),
     m_documentTypeHasBeenSet(false),
     m_documentSizeHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_updateTimeHasBeenSet(false),
+    m_pagesHasBeenSet(false),
+    m_widthHasBeenSet(false),
+    m_heightHasBeenSet(false),
+    m_coverHasBeenSet(false)
 {
 }
 
@@ -183,6 +187,46 @@ CoreInternalOutcome DocumentInfo::Deserialize(const rapidjson::Value &value)
         m_updateTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("Pages") && !value["Pages"].IsNull())
+    {
+        if (!value["Pages"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentInfo.Pages` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_pages = value["Pages"].GetUint64();
+        m_pagesHasBeenSet = true;
+    }
+
+    if (value.HasMember("Width") && !value["Width"].IsNull())
+    {
+        if (!value["Width"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentInfo.Width` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_width = value["Width"].GetUint64();
+        m_widthHasBeenSet = true;
+    }
+
+    if (value.HasMember("Height") && !value["Height"].IsNull())
+    {
+        if (!value["Height"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentInfo.Height` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_height = value["Height"].GetUint64();
+        m_heightHasBeenSet = true;
+    }
+
+    if (value.HasMember("Cover") && !value["Cover"].IsNull())
+    {
+        if (!value["Cover"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DocumentInfo.Cover` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_cover = string(value["Cover"].GetString());
+        m_coverHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -300,6 +344,38 @@ void DocumentInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "UpdateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_updateTime, allocator);
+    }
+
+    if (m_pagesHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Pages";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_pages, allocator);
+    }
+
+    if (m_widthHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Width";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_width, allocator);
+    }
+
+    if (m_heightHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Height";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_height, allocator);
+    }
+
+    if (m_coverHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Cover";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_cover.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -527,5 +603,69 @@ void DocumentInfo::SetUpdateTime(const uint64_t& _updateTime)
 bool DocumentInfo::UpdateTimeHasBeenSet() const
 {
     return m_updateTimeHasBeenSet;
+}
+
+uint64_t DocumentInfo::GetPages() const
+{
+    return m_pages;
+}
+
+void DocumentInfo::SetPages(const uint64_t& _pages)
+{
+    m_pages = _pages;
+    m_pagesHasBeenSet = true;
+}
+
+bool DocumentInfo::PagesHasBeenSet() const
+{
+    return m_pagesHasBeenSet;
+}
+
+uint64_t DocumentInfo::GetWidth() const
+{
+    return m_width;
+}
+
+void DocumentInfo::SetWidth(const uint64_t& _width)
+{
+    m_width = _width;
+    m_widthHasBeenSet = true;
+}
+
+bool DocumentInfo::WidthHasBeenSet() const
+{
+    return m_widthHasBeenSet;
+}
+
+uint64_t DocumentInfo::GetHeight() const
+{
+    return m_height;
+}
+
+void DocumentInfo::SetHeight(const uint64_t& _height)
+{
+    m_height = _height;
+    m_heightHasBeenSet = true;
+}
+
+bool DocumentInfo::HeightHasBeenSet() const
+{
+    return m_heightHasBeenSet;
+}
+
+string DocumentInfo::GetCover() const
+{
+    return m_cover;
+}
+
+void DocumentInfo::SetCover(const string& _cover)
+{
+    m_cover = _cover;
+    m_coverHasBeenSet = true;
+}
+
+bool DocumentInfo::CoverHasBeenSet() const
+{
+    return m_coverHasBeenSet;
 }
 

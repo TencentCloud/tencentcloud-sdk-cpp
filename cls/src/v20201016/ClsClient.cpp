@@ -1330,6 +1330,49 @@ ClsClient::DescribeAlarmsOutcomeCallable ClsClient::DescribeAlarmsCallable(const
     return task->get_future();
 }
 
+ClsClient::DescribeAlertRecordHistoryOutcome ClsClient::DescribeAlertRecordHistory(const DescribeAlertRecordHistoryRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAlertRecordHistory");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAlertRecordHistoryResponse rsp = DescribeAlertRecordHistoryResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAlertRecordHistoryOutcome(rsp);
+        else
+            return DescribeAlertRecordHistoryOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAlertRecordHistoryOutcome(outcome.GetError());
+    }
+}
+
+void ClsClient::DescribeAlertRecordHistoryAsync(const DescribeAlertRecordHistoryRequest& request, const DescribeAlertRecordHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAlertRecordHistory(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+ClsClient::DescribeAlertRecordHistoryOutcomeCallable ClsClient::DescribeAlertRecordHistoryCallable(const DescribeAlertRecordHistoryRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAlertRecordHistoryOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAlertRecordHistory(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 ClsClient::DescribeConfigExtrasOutcome ClsClient::DescribeConfigExtras(const DescribeConfigExtrasRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeConfigExtras");

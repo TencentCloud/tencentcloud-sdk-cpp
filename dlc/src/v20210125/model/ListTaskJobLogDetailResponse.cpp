@@ -26,7 +26,8 @@ using namespace std;
 ListTaskJobLogDetailResponse::ListTaskJobLogDetailResponse() :
     m_contextHasBeenSet(false),
     m_listOverHasBeenSet(false),
-    m_resultsHasBeenSet(false)
+    m_resultsHasBeenSet(false),
+    m_logUrlHasBeenSet(false)
 {
 }
 
@@ -104,6 +105,16 @@ CoreInternalOutcome ListTaskJobLogDetailResponse::Deserialize(const string &payl
         m_resultsHasBeenSet = true;
     }
 
+    if (rsp.HasMember("LogUrl") && !rsp["LogUrl"].IsNull())
+    {
+        if (!rsp["LogUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LogUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logUrl = string(rsp["LogUrl"].GetString());
+        m_logUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -143,6 +154,14 @@ string ListTaskJobLogDetailResponse::ToJsonString() const
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_logUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logUrl.c_str(), allocator).Move(), allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -185,6 +204,16 @@ vector<JobLogResult> ListTaskJobLogDetailResponse::GetResults() const
 bool ListTaskJobLogDetailResponse::ResultsHasBeenSet() const
 {
     return m_resultsHasBeenSet;
+}
+
+string ListTaskJobLogDetailResponse::GetLogUrl() const
+{
+    return m_logUrl;
+}
+
+bool ListTaskJobLogDetailResponse::LogUrlHasBeenSet() const
+{
+    return m_logUrlHasBeenSet;
 }
 
 

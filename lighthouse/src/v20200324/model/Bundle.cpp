@@ -34,6 +34,7 @@ Bundle::Bundle() :
     m_internetChargeTypeHasBeenSet(false),
     m_bundleSalesStateHasBeenSet(false),
     m_bundleTypeHasBeenSet(false),
+    m_bundleTypeDescriptionHasBeenSet(false),
     m_bundleDisplayLabelHasBeenSet(false)
 {
 }
@@ -180,6 +181,16 @@ CoreInternalOutcome Bundle::Deserialize(const rapidjson::Value &value)
         m_bundleTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("BundleTypeDescription") && !value["BundleTypeDescription"].IsNull())
+    {
+        if (!value["BundleTypeDescription"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Bundle.BundleTypeDescription` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_bundleTypeDescription = string(value["BundleTypeDescription"].GetString());
+        m_bundleTypeDescriptionHasBeenSet = true;
+    }
+
     if (value.HasMember("BundleDisplayLabel") && !value["BundleDisplayLabel"].IsNull())
     {
         if (!value["BundleDisplayLabel"].IsString())
@@ -300,6 +311,14 @@ void Bundle::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocato
         string key = "BundleType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_bundleType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bundleTypeDescriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BundleTypeDescription";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_bundleTypeDescription.c_str(), allocator).Move(), allocator);
     }
 
     if (m_bundleDisplayLabelHasBeenSet)
@@ -519,6 +538,22 @@ void Bundle::SetBundleType(const string& _bundleType)
 bool Bundle::BundleTypeHasBeenSet() const
 {
     return m_bundleTypeHasBeenSet;
+}
+
+string Bundle::GetBundleTypeDescription() const
+{
+    return m_bundleTypeDescription;
+}
+
+void Bundle::SetBundleTypeDescription(const string& _bundleTypeDescription)
+{
+    m_bundleTypeDescription = _bundleTypeDescription;
+    m_bundleTypeDescriptionHasBeenSet = true;
+}
+
+bool Bundle::BundleTypeDescriptionHasBeenSet() const
+{
+    return m_bundleTypeDescriptionHasBeenSet;
 }
 
 string Bundle::GetBundleDisplayLabel() const

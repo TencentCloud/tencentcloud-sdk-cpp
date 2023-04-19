@@ -521,6 +521,94 @@ namespace TencentCloud
                      */
                     bool ProxySendTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SniType 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetSniType() const;
+
+                    /**
+                     * 设置0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SniType 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSniType(const int64_t& _sniType);
+
+                    /**
+                     * 判断参数 SniType 是否已赋值
+                     * @return SniType 是否已赋值
+                     */
+                    bool SniTypeHasBeenSet() const;
+
+                    /**
+                     * 获取SniType=3时，需要填此参数，表示自定义的host；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SniHost SniType=3时，需要填此参数，表示自定义的host；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSniHost() const;
+
+                    /**
+                     * 设置SniType=3时，需要填此参数，表示自定义的host；
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SniHost SniType=3时，需要填此参数，表示自定义的host；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSniHost(const std::string& _sniHost);
+
+                    /**
+                     * 判断参数 SniHost 是否已赋值
+                     * @return SniHost 是否已赋值
+                     */
+                    bool SniHostHasBeenSet() const;
+
+                    /**
+                     * 获取无
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Weights 无
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetWeights() const;
+
+                    /**
+                     * 设置无
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Weights 无
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetWeights(const std::vector<std::string>& _weights);
+
+                    /**
+                     * 判断参数 Weights 是否已赋值
+                     * @return Weights 是否已赋值
+                     */
+                    bool WeightsHasBeenSet() const;
+
+                    /**
+                     * 获取IsCdn=3时，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpHeaders IsCdn=3时，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetIpHeaders() const;
+
+                    /**
+                     * 设置IsCdn=3时，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpHeaders IsCdn=3时，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
+
+                    /**
+                     * 判断参数 IpHeaders 是否已赋值
+                     * @return IpHeaders 是否已赋值
+                     */
+                    bool IpHeadersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -678,6 +766,34 @@ namespace TencentCloud
                      */
                     int64_t m_proxySendTimeout;
                     bool m_proxySendTimeoutHasBeenSet;
+
+                    /**
+                     * 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_sniType;
+                    bool m_sniTypeHasBeenSet;
+
+                    /**
+                     * SniType=3时，需要填此参数，表示自定义的host；
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sniHost;
+                    bool m_sniHostHasBeenSet;
+
+                    /**
+                     * 无
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_weights;
+                    bool m_weightsHasBeenSet;
+
+                    /**
+                     * IsCdn=3时，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ipHeaders;
+                    bool m_ipHeadersHasBeenSet;
 
                 };
             }

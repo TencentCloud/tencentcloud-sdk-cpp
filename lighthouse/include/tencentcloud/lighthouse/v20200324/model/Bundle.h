@@ -274,20 +274,48 @@ namespace TencentCloud
                     /**
                      * 获取套餐类型。
 取值范围：
-<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>GENERAL_BUNDLE：通用型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
+<li>STORAGE_BUNDLE：存储型</li>
+<li>EXCLUSIVE_BUNDLE：专属型</li>
+<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>BEFAST_BUNDLE：蜂驰型 </li>
                      * @return BundleType 套餐类型。
 取值范围：
-<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>GENERAL_BUNDLE：通用型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
+<li>STORAGE_BUNDLE：存储型</li>
+<li>EXCLUSIVE_BUNDLE：专属型</li>
+<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>BEFAST_BUNDLE：蜂驰型 </li>
                      */
                     std::string GetBundleType() const;
 
                     /**
                      * 设置套餐类型。
 取值范围：
-<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>GENERAL_BUNDLE：通用型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
+<li>STORAGE_BUNDLE：存储型</li>
+<li>EXCLUSIVE_BUNDLE：专属型</li>
+<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>BEFAST_BUNDLE：蜂驰型 </li>
                      * @param BundleType 套餐类型。
 取值范围：
-<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>GENERAL_BUNDLE：通用型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
+<li>STORAGE_BUNDLE：存储型</li>
+<li>EXCLUSIVE_BUNDLE：专属型</li>
+<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>BEFAST_BUNDLE：蜂驰型 </li>
                      */
                     void SetBundleType(const std::string& _bundleType);
 
@@ -296,6 +324,28 @@ namespace TencentCloud
                      * @return BundleType 是否已赋值
                      */
                     bool BundleTypeHasBeenSet() const;
+
+                    /**
+                     * 获取套餐类型描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BundleTypeDescription 套餐类型描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetBundleTypeDescription() const;
+
+                    /**
+                     * 设置套餐类型描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BundleTypeDescription 套餐类型描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBundleTypeDescription(const std::string& _bundleTypeDescription);
+
+                    /**
+                     * 判断参数 BundleTypeDescription 是否已赋值
+                     * @return BundleTypeDescription 是否已赋值
+                     */
+                    bool BundleTypeDescriptionHasBeenSet() const;
 
                     /**
                      * 获取套餐展示标签.
@@ -410,10 +460,24 @@ namespace TencentCloud
                     /**
                      * 套餐类型。
 取值范围：
-<li> GENERAL_BUNDLE：通用型</li><li> STORAGE_BUNDLE：存储型 </li>
+<li>STARTER_BUNDLE：入门型</li>
+<li>GENERAL_BUNDLE：通用型</li>
+<li>ENTERPRISE_BUNDLE：企业型</li>
+<li>STORAGE_BUNDLE：存储型</li>
+<li>EXCLUSIVE_BUNDLE：专属型</li>
+<li>HK_EXCLUSIVE_BUNDLE：香港专属型 </li>
+<li>CAREFREE_BUNDLE：无忧型</li>
+<li>BEFAST_BUNDLE：蜂驰型 </li>
                      */
                     std::string m_bundleType;
                     bool m_bundleTypeHasBeenSet;
+
+                    /**
+                     * 套餐类型描述信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_bundleTypeDescription;
+                    bool m_bundleTypeDescriptionHasBeenSet;
 
                     /**
                      * 套餐展示标签.

@@ -36,7 +36,11 @@ MemberRecord::MemberRecord() :
     m_locationHasBeenSet(false),
     m_deviceHasBeenSet(false),
     m_perMemberMicCountHasBeenSet(false),
-    m_perMemberMessageCountHasBeenSet(false)
+    m_perMemberMessageCountHasBeenSet(false),
+    m_roleHasBeenSet(false),
+    m_groupIdHasBeenSet(false),
+    m_subGroupIdHasBeenSet(false),
+    m_stageHasBeenSet(false)
 {
 }
 
@@ -205,6 +209,49 @@ CoreInternalOutcome MemberRecord::Deserialize(const rapidjson::Value &value)
         m_perMemberMessageCountHasBeenSet = true;
     }
 
+    if (value.HasMember("Role") && !value["Role"].IsNull())
+    {
+        if (!value["Role"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.Role` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_role = value["Role"].GetUint64();
+        m_roleHasBeenSet = true;
+    }
+
+    if (value.HasMember("GroupId") && !value["GroupId"].IsNull())
+    {
+        if (!value["GroupId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.GroupId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_groupId = string(value["GroupId"].GetString());
+        m_groupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("SubGroupId") && !value["SubGroupId"].IsNull())
+    {
+        if (!value["SubGroupId"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.SubGroupId` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SubGroupId"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_subGroupId.push_back((*itr).GetString());
+        }
+        m_subGroupIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("Stage") && !value["Stage"].IsNull())
+    {
+        if (!value["Stage"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MemberRecord.Stage` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_stage = value["Stage"].GetInt64();
+        m_stageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -338,6 +385,43 @@ void MemberRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "PerMemberMessageCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_perMemberMessageCount, allocator);
+    }
+
+    if (m_roleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Role";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_role, allocator);
+    }
+
+    if (m_groupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_groupId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_subGroupIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SubGroupId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_subGroupId.begin(); itr != m_subGroupId.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_stageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_stage, allocator);
     }
 
 }
@@ -597,5 +681,69 @@ void MemberRecord::SetPerMemberMessageCount(const int64_t& _perMemberMessageCoun
 bool MemberRecord::PerMemberMessageCountHasBeenSet() const
 {
     return m_perMemberMessageCountHasBeenSet;
+}
+
+uint64_t MemberRecord::GetRole() const
+{
+    return m_role;
+}
+
+void MemberRecord::SetRole(const uint64_t& _role)
+{
+    m_role = _role;
+    m_roleHasBeenSet = true;
+}
+
+bool MemberRecord::RoleHasBeenSet() const
+{
+    return m_roleHasBeenSet;
+}
+
+string MemberRecord::GetGroupId() const
+{
+    return m_groupId;
+}
+
+void MemberRecord::SetGroupId(const string& _groupId)
+{
+    m_groupId = _groupId;
+    m_groupIdHasBeenSet = true;
+}
+
+bool MemberRecord::GroupIdHasBeenSet() const
+{
+    return m_groupIdHasBeenSet;
+}
+
+vector<string> MemberRecord::GetSubGroupId() const
+{
+    return m_subGroupId;
+}
+
+void MemberRecord::SetSubGroupId(const vector<string>& _subGroupId)
+{
+    m_subGroupId = _subGroupId;
+    m_subGroupIdHasBeenSet = true;
+}
+
+bool MemberRecord::SubGroupIdHasBeenSet() const
+{
+    return m_subGroupIdHasBeenSet;
+}
+
+int64_t MemberRecord::GetStage() const
+{
+    return m_stage;
+}
+
+void MemberRecord::SetStage(const int64_t& _stage)
+{
+    m_stage = _stage;
+    m_stageHasBeenSet = true;
+}
+
+bool MemberRecord::StageHasBeenSet() const
+{
+    return m_stageHasBeenSet;
 }
 

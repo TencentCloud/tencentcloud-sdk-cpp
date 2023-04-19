@@ -24,8 +24,8 @@ using namespace std;
 
 UpdateIntegrationEmployeesRequest::UpdateIntegrationEmployeesRequest() :
     m_operatorHasBeenSet(false),
-    m_agentHasBeenSet(false),
-    m_employeesHasBeenSet(false)
+    m_employeesHasBeenSet(false),
+    m_agentHasBeenSet(false)
 {
 }
 
@@ -45,15 +45,6 @@ string UpdateIntegrationEmployeesRequest::ToJsonString() const
         m_operator.ToJsonObject(d[key.c_str()], allocator);
     }
 
-    if (m_agentHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Agent";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_agent.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_employeesHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -67,6 +58,15 @@ string UpdateIntegrationEmployeesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_agentHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Agent";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_agent.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -93,22 +93,6 @@ bool UpdateIntegrationEmployeesRequest::OperatorHasBeenSet() const
     return m_operatorHasBeenSet;
 }
 
-Agent UpdateIntegrationEmployeesRequest::GetAgent() const
-{
-    return m_agent;
-}
-
-void UpdateIntegrationEmployeesRequest::SetAgent(const Agent& _agent)
-{
-    m_agent = _agent;
-    m_agentHasBeenSet = true;
-}
-
-bool UpdateIntegrationEmployeesRequest::AgentHasBeenSet() const
-{
-    return m_agentHasBeenSet;
-}
-
 vector<Staff> UpdateIntegrationEmployeesRequest::GetEmployees() const
 {
     return m_employees;
@@ -123,6 +107,22 @@ void UpdateIntegrationEmployeesRequest::SetEmployees(const vector<Staff>& _emplo
 bool UpdateIntegrationEmployeesRequest::EmployeesHasBeenSet() const
 {
     return m_employeesHasBeenSet;
+}
+
+Agent UpdateIntegrationEmployeesRequest::GetAgent() const
+{
+    return m_agent;
+}
+
+void UpdateIntegrationEmployeesRequest::SetAgent(const Agent& _agent)
+{
+    m_agent = _agent;
+    m_agentHasBeenSet = true;
+}
+
+bool UpdateIntegrationEmployeesRequest::AgentHasBeenSet() const
+{
+    return m_agentHasBeenSet;
 }
 
 

@@ -83,6 +83,8 @@
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmNoticesResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeAlarmsResponse.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryRequest.h>
+#include <tencentcloud/cls/v20201016/model/DescribeAlertRecordHistoryResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasRequest.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigExtrasResponse.h>
 #include <tencentcloud/cls/v20201016/model/DescribeConfigMachineGroupsRequest.h>
@@ -257,6 +259,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAlarmsResponse> DescribeAlarmsOutcome;
                 typedef std::future<DescribeAlarmsOutcome> DescribeAlarmsOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeAlarmsRequest&, DescribeAlarmsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlarmsAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAlertRecordHistoryResponse> DescribeAlertRecordHistoryOutcome;
+                typedef std::future<DescribeAlertRecordHistoryOutcome> DescribeAlertRecordHistoryOutcomeCallable;
+                typedef std::function<void(const ClsClient*, const Model::DescribeAlertRecordHistoryRequest&, DescribeAlertRecordHistoryOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAlertRecordHistoryAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeConfigExtrasResponse> DescribeConfigExtrasOutcome;
                 typedef std::future<DescribeConfigExtrasOutcome> DescribeConfigExtrasOutcomeCallable;
                 typedef std::function<void(const ClsClient*, const Model::DescribeConfigExtrasRequest&, DescribeConfigExtrasOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConfigExtrasAsyncHandler;
@@ -634,6 +639,15 @@ namespace TencentCloud
                 DescribeAlarmsOutcome DescribeAlarms(const Model::DescribeAlarmsRequest &request);
                 void DescribeAlarmsAsync(const Model::DescribeAlarmsRequest& request, const DescribeAlarmsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAlarmsOutcomeCallable DescribeAlarmsCallable(const Model::DescribeAlarmsRequest& request);
+
+                /**
+                 *获取告警历史，例如今天未恢复的告警
+                 * @param req DescribeAlertRecordHistoryRequest
+                 * @return DescribeAlertRecordHistoryOutcome
+                 */
+                DescribeAlertRecordHistoryOutcome DescribeAlertRecordHistory(const Model::DescribeAlertRecordHistoryRequest &request);
+                void DescribeAlertRecordHistoryAsync(const Model::DescribeAlertRecordHistoryRequest& request, const DescribeAlertRecordHistoryAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAlertRecordHistoryOutcomeCallable DescribeAlertRecordHistoryCallable(const Model::DescribeAlertRecordHistoryRequest& request);
 
                 /**
                  *本接口用于获取特殊采集配置，特殊采集配置应用于自建K8S环境的采集Agent

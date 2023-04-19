@@ -156,17 +156,13 @@ namespace TencentCloud
 
                     /**
                      * 获取Bot qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return BotAccess Bot qps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetBotAccess() const;
 
                     /**
                      * 设置Bot qps
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param BotAccess Bot qps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetBotAccess(const uint64_t& _botAccess);
 
@@ -175,6 +171,160 @@ namespace TencentCloud
                      * @return BotAccess 是否已赋值
                      */
                     bool BotAccessHasBeenSet() const;
+
+                    /**
+                     * 获取WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusServerError WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStatusServerError() const;
+
+                    /**
+                     * 设置WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatusServerError WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatusServerError(const uint64_t& _statusServerError);
+
+                    /**
+                     * 判断参数 StatusServerError 是否已赋值
+                     * @return StatusServerError 是否已赋值
+                     */
+                    bool StatusServerErrorHasBeenSet() const;
+
+                    /**
+                     * 获取WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusClientError WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStatusClientError() const;
+
+                    /**
+                     * 设置WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatusClientError WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatusClientError(const uint64_t& _statusClientError);
+
+                    /**
+                     * 判断参数 StatusClientError 是否已赋值
+                     * @return StatusClientError 是否已赋值
+                     */
+                    bool StatusClientErrorHasBeenSet() const;
+
+                    /**
+                     * 获取WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusRedirect WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStatusRedirect() const;
+
+                    /**
+                     * 设置WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatusRedirect WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatusRedirect(const uint64_t& _statusRedirect);
+
+                    /**
+                     * 判断参数 StatusRedirect 是否已赋值
+                     * @return StatusRedirect 是否已赋值
+                     */
+                    bool StatusRedirectHasBeenSet() const;
+
+                    /**
+                     * 获取WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return StatusOk WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStatusOk() const;
+
+                    /**
+                     * 设置WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param StatusOk WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatusOk(const uint64_t& _statusOk);
+
+                    /**
+                     * 判断参数 StatusOk 是否已赋值
+                     * @return StatusOk 是否已赋值
+                     */
+                    bool StatusOkHasBeenSet() const;
+
+                    /**
+                     * 获取源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpstreamServerError 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUpstreamServerError() const;
+
+                    /**
+                     * 设置源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpstreamServerError 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpstreamServerError(const uint64_t& _upstreamServerError);
+
+                    /**
+                     * 判断参数 UpstreamServerError 是否已赋值
+                     * @return UpstreamServerError 是否已赋值
+                     */
+                    bool UpstreamServerErrorHasBeenSet() const;
+
+                    /**
+                     * 获取源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpstreamClientError 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUpstreamClientError() const;
+
+                    /**
+                     * 设置源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpstreamClientError 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpstreamClientError(const uint64_t& _upstreamClientError);
+
+                    /**
+                     * 判断参数 UpstreamClientError 是否已赋值
+                     * @return UpstreamClientError 是否已赋值
+                     */
+                    bool UpstreamClientErrorHasBeenSet() const;
+
+                    /**
+                     * 获取源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return UpstreamRedirect 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetUpstreamRedirect() const;
+
+                    /**
+                     * 设置源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param UpstreamRedirect 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetUpstreamRedirect(const uint64_t& _upstreamRedirect);
+
+                    /**
+                     * 判断参数 UpstreamRedirect 是否已赋值
+                     * @return UpstreamRedirect 是否已赋值
+                     */
+                    bool UpstreamRedirectHasBeenSet() const;
 
                 private:
 
@@ -216,10 +366,58 @@ namespace TencentCloud
 
                     /**
                      * Bot qps
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_botAccess;
                     bool m_botAccessHasBeenSet;
+
+                    /**
+                     * WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_statusServerError;
+                    bool m_statusServerErrorHasBeenSet;
+
+                    /**
+                     * WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_statusClientError;
+                    bool m_statusClientErrorHasBeenSet;
+
+                    /**
+                     * WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_statusRedirect;
+                    bool m_statusRedirectHasBeenSet;
+
+                    /**
+                     * WAF返回给客户端状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_statusOk;
+                    bool m_statusOkHasBeenSet;
+
+                    /**
+                     * 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_upstreamServerError;
+                    bool m_upstreamServerErrorHasBeenSet;
+
+                    /**
+                     * 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_upstreamClientError;
+                    bool m_upstreamClientErrorHasBeenSet;
+
+                    /**
+                     * 源站返回给WAF状态码次数
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_upstreamRedirect;
+                    bool m_upstreamRedirectHasBeenSet;
 
                 };
             }

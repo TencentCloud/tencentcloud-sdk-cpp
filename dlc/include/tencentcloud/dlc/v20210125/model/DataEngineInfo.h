@@ -811,6 +811,50 @@ namespace TencentCloud
                      */
                     bool StartStandbyClusterHasBeenSet() const;
 
+                    /**
+                     * 获取spark jar 包年包月集群是否开启弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticSwitch spark jar 包年包月集群是否开启弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool GetElasticSwitch() const;
+
+                    /**
+                     * 设置spark jar 包年包月集群是否开启弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ElasticSwitch spark jar 包年包月集群是否开启弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetElasticSwitch(const bool& _elasticSwitch);
+
+                    /**
+                     * 判断参数 ElasticSwitch 是否已赋值
+                     * @return ElasticSwitch 是否已赋值
+                     */
+                    bool ElasticSwitchHasBeenSet() const;
+
+                    /**
+                     * 获取spark jar 包年包月集群弹性上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return ElasticLimit spark jar 包年包月集群弹性上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetElasticLimit() const;
+
+                    /**
+                     * 设置spark jar 包年包月集群弹性上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param ElasticLimit spark jar 包年包月集群弹性上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetElasticLimit(const int64_t& _elasticLimit);
+
+                    /**
+                     * 判断参数 ElasticLimit 是否已赋值
+                     * @return ElasticLimit 是否已赋值
+                     */
+                    bool ElasticLimitHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1058,6 +1102,20 @@ namespace TencentCloud
                      */
                     bool m_startStandbyCluster;
                     bool m_startStandbyClusterHasBeenSet;
+
+                    /**
+                     * spark jar 包年包月集群是否开启弹性
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    bool m_elasticSwitch;
+                    bool m_elasticSwitchHasBeenSet;
+
+                    /**
+                     * spark jar 包年包月集群弹性上限
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_elasticLimit;
+                    bool m_elasticLimitHasBeenSet;
 
                 };
             }

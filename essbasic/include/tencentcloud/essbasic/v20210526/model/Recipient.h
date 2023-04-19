@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取签署方类型：ENTERPRISE-企业INDIVIDUAL-自然人
-                     * @return RecipientType 签署方类型：ENTERPRISE-企业INDIVIDUAL-自然人
+                     * 获取参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * @return RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
                      */
                     std::string GetRecipientType() const;
 
                     /**
-                     * 设置签署方类型：ENTERPRISE-企业INDIVIDUAL-自然人
-                     * @param RecipientType 签署方类型：ENTERPRISE-企业INDIVIDUAL-自然人
+                     * 设置参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * @param RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
                      */
                     void SetRecipientType(const std::string& _recipientType);
 
@@ -217,7 +217,7 @@ namespace TencentCloud
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 签署方类型：ENTERPRISE-企业INDIVIDUAL-自然人
+                     * 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
                      */
                     std::string m_recipientType;
                     bool m_recipientTypeHasBeenSet;

@@ -383,6 +383,8 @@
 #include <tencentcloud/tke/v20180525/model/UninstallEdgeLogAgentResponse.h>
 #include <tencentcloud/tke/v20180525/model/UninstallLogAgentRequest.h>
 #include <tencentcloud/tke/v20180525/model/UninstallLogAgentResponse.h>
+#include <tencentcloud/tke/v20180525/model/UpdateClusterKubeconfigRequest.h>
+#include <tencentcloud/tke/v20180525/model/UpdateClusterKubeconfigResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateClusterVersionRequest.h>
 #include <tencentcloud/tke/v20180525/model/UpdateClusterVersionResponse.h>
 #include <tencentcloud/tke/v20180525/model/UpdateEKSClusterRequest.h>
@@ -953,6 +955,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::UninstallLogAgentResponse> UninstallLogAgentOutcome;
                 typedef std::future<UninstallLogAgentOutcome> UninstallLogAgentOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UninstallLogAgentRequest&, UninstallLogAgentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UninstallLogAgentAsyncHandler;
+                typedef Outcome<Core::Error, Model::UpdateClusterKubeconfigResponse> UpdateClusterKubeconfigOutcome;
+                typedef std::future<UpdateClusterKubeconfigOutcome> UpdateClusterKubeconfigOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::UpdateClusterKubeconfigRequest&, UpdateClusterKubeconfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterKubeconfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::UpdateClusterVersionResponse> UpdateClusterVersionOutcome;
                 typedef std::future<UpdateClusterVersionOutcome> UpdateClusterVersionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::UpdateClusterVersionRequest&, UpdateClusterVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> UpdateClusterVersionAsyncHandler;
@@ -2599,6 +2604,15 @@ namespace TencentCloud
                 UninstallLogAgentOutcome UninstallLogAgent(const Model::UninstallLogAgentRequest &request);
                 void UninstallLogAgentAsync(const Model::UninstallLogAgentRequest& request, const UninstallLogAgentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 UninstallLogAgentOutcomeCallable UninstallLogAgentCallable(const Model::UninstallLogAgentRequest& request);
+
+                /**
+                 *对集群的Kubeconfig信息进行更新
+                 * @param req UpdateClusterKubeconfigRequest
+                 * @return UpdateClusterKubeconfigOutcome
+                 */
+                UpdateClusterKubeconfigOutcome UpdateClusterKubeconfig(const Model::UpdateClusterKubeconfigRequest &request);
+                void UpdateClusterKubeconfigAsync(const Model::UpdateClusterKubeconfigRequest& request, const UpdateClusterKubeconfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                UpdateClusterKubeconfigOutcomeCallable UpdateClusterKubeconfigCallable(const Model::UpdateClusterKubeconfigRequest& request);
 
                 /**
                  *升级集群 Master 组件到指定版本

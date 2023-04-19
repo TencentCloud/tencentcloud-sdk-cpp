@@ -86,6 +86,20 @@ namespace TencentCloud
                      */
                     bool ResultsHasBeenSet() const;
 
+                    /**
+                     * 获取日志url
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogUrl 日志url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogUrl() const;
+
+                    /**
+                     * 判断参数 LogUrl 是否已赋值
+                     * @return LogUrl 是否已赋值
+                     */
+                    bool LogUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -108,6 +122,13 @@ namespace TencentCloud
                      */
                     std::vector<JobLogResult> m_results;
                     bool m_resultsHasBeenSet;
+
+                    /**
+                     * 日志url
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logUrl;
+                    bool m_logUrlHasBeenSet;
 
                 };
             }

@@ -98,14 +98,14 @@ namespace TencentCloud
                     bool FiltersHasBeenSet() const;
 
                     /**
-                     * 获取更新时间起始点
-                     * @return StartTime 更新时间起始点
+                     * 获取更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @return StartTime 更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string GetStartTime() const;
 
                     /**
-                     * 设置更新时间起始点
-                     * @param StartTime 更新时间起始点
+                     * 设置更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @param StartTime 更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     void SetStartTime(const std::string& _startTime);
 
@@ -116,14 +116,14 @@ namespace TencentCloud
                     bool StartTimeHasBeenSet() const;
 
                     /**
-                     * 获取更新时间截止点
-                     * @return EndTime 更新时间截止点
+                     * 获取更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @return EndTime 更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string GetEndTime() const;
 
                     /**
-                     * 设置更新时间截止点
-                     * @param EndTime 更新时间截止点
+                     * 设置更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
+                     * @param EndTime 更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     void SetEndTime(const std::string& _endTime);
 
@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool EndTimeHasBeenSet() const;
 
                     /**
-                     * 获取查询列表偏移量
-                     * @return Offset 查询列表偏移量
+                     * 获取查询列表偏移量, 默认值0
+                     * @return Offset 查询列表偏移量, 默认值0
                      */
                     int64_t GetOffset() const;
 
                     /**
-                     * 设置查询列表偏移量
-                     * @param Offset 查询列表偏移量
+                     * 设置查询列表偏移量, 默认值0
+                     * @param Offset 查询列表偏移量, 默认值0
                      */
                     void SetOffset(const int64_t& _offset);
 
@@ -152,14 +152,14 @@ namespace TencentCloud
                     bool OffsetHasBeenSet() const;
 
                     /**
-                     * 获取查询列表限制数量
-                     * @return Limit 查询列表限制数量
+                     * 获取查询列表限制数量, 默认值100
+                     * @return Limit 查询列表限制数量, 默认值100
                      */
                     int64_t GetLimit() const;
 
                     /**
-                     * 设置查询列表限制数量
-                     * @param Limit 查询列表限制数量
+                     * 设置查询列表限制数量, 默认值100
+                     * @param Limit 查询列表限制数量, 默认值100
                      */
                     void SetLimit(const int64_t& _limit);
 
@@ -190,25 +190,25 @@ namespace TencentCloud
                     bool m_filtersHasBeenSet;
 
                     /**
-                     * 更新时间起始点
+                     * 更新时间起始点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_startTime;
                     bool m_startTimeHasBeenSet;
 
                     /**
-                     * 更新时间截止点
+                     * 更新时间截止点，支持格式：yyyy-MM-dd HH:mm:ss
                      */
                     std::string m_endTime;
                     bool m_endTimeHasBeenSet;
 
                     /**
-                     * 查询列表偏移量
+                     * 查询列表偏移量, 默认值0
                      */
                     int64_t m_offset;
                     bool m_offsetHasBeenSet;
 
                     /**
-                     * 查询列表限制数量
+                     * 查询列表限制数量, 默认值100
                      */
                     int64_t m_limit;
                     bool m_limitHasBeenSet;

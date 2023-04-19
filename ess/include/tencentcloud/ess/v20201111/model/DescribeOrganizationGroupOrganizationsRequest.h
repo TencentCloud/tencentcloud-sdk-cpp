@@ -134,14 +134,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取是否到处当前成员企业数据
-                     * @return Export 是否到处当前成员企业数据
+                     * 获取是否导出当前成员企业数据
+                     * @return Export 是否导出当前成员企业数据
                      */
                     bool GetExport() const;
 
                     /**
-                     * 设置是否到处当前成员企业数据
-                     * @param Export 是否到处当前成员企业数据
+                     * 设置是否导出当前成员企业数据
+                     * @param Export 是否导出当前成员企业数据
                      */
                     void SetExport(const bool& _export);
 
@@ -202,7 +202,7 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 是否到处当前成员企业数据
+                     * 是否导出当前成员企业数据
                      */
                     bool m_export;
                     bool m_exportHasBeenSet;

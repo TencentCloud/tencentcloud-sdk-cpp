@@ -110,7 +110,9 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/EnableUnitRuleRequest.h
   include/tencentcloud/tsf/v20180326/model/CreateClusterResponse.h
   include/tencentcloud/tsf/v20180326/model/CreateMicroserviceResponse.h
+  include/tencentcloud/tsf/v20180326/model/CreateFileConfigWithDetailRespRequest.h
   include/tencentcloud/tsf/v20180326/model/AgentProfile.h
+  include/tencentcloud/tsf/v20180326/model/ModifyContainerReplicasResponse.h
   include/tencentcloud/tsf/v20180326/model/StopGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/ShrinkGroupResponse.h
   include/tencentcloud/tsf/v20180326/model/CosUploadInfo.h
@@ -178,6 +180,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/ModifyContainerGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/OperateApplicationTcrBindingRequest.h
   include/tencentcloud/tsf/v20180326/model/ContainGroup.h
+  include/tencentcloud/tsf/v20180326/model/CreateConfigWithDetailRespResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeGroupBusinessLogConfigsResponse.h
   include/tencentcloud/tsf/v20180326/model/ContainGroupResult.h
   include/tencentcloud/tsf/v20180326/model/UpdateUnitRuleRequest.h
@@ -216,6 +219,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/TsfPageMsInstance.h
   include/tencentcloud/tsf/v20180326/model/DeleteMicroserviceRequest.h
   include/tencentcloud/tsf/v20180326/model/CreatePublicConfigWithDetailRespResponse.h
+  include/tencentcloud/tsf/v20180326/model/CreateConfigWithDetailRespRequest.h
   include/tencentcloud/tsf/v20180326/model/RemoveInstancesResponse.h
   include/tencentcloud/tsf/v20180326/model/DescribeContainerEventsRequest.h
   include/tencentcloud/tsf/v20180326/model/DisableUnitRuleRequest.h
@@ -320,7 +324,7 @@ set(tsf_public_header_model
   include/tencentcloud/tsf/v20180326/model/DeployGroupRequest.h
   include/tencentcloud/tsf/v20180326/model/LaneInfos.h
   include/tencentcloud/tsf/v20180326/model/CreateTaskFlowRequest.h
-  include/tencentcloud/tsf/v20180326/model/ModifyContainerReplicasResponse.h
+  include/tencentcloud/tsf/v20180326/model/CreateFileConfigWithDetailRespResponse.h
   include/tencentcloud/tsf/v20180326/model/CreateConfigTemplateWithDetailRespRequest.h
   include/tencentcloud/tsf/v20180326/model/TsfPageGatewayPlugin.h
   include/tencentcloud/tsf/v20180326/model/ApiUseStatisticsEntity.h
@@ -716,7 +720,9 @@ set(tsf_src
   src/v20180326/model/EnableUnitRuleRequest.cpp
   src/v20180326/model/CreateClusterResponse.cpp
   src/v20180326/model/CreateMicroserviceResponse.cpp
+  src/v20180326/model/CreateFileConfigWithDetailRespRequest.cpp
   src/v20180326/model/AgentProfile.cpp
+  src/v20180326/model/ModifyContainerReplicasResponse.cpp
   src/v20180326/model/StopGroupRequest.cpp
   src/v20180326/model/ShrinkGroupResponse.cpp
   src/v20180326/model/CosUploadInfo.cpp
@@ -784,6 +790,7 @@ set(tsf_src
   src/v20180326/model/ModifyContainerGroupRequest.cpp
   src/v20180326/model/OperateApplicationTcrBindingRequest.cpp
   src/v20180326/model/ContainGroup.cpp
+  src/v20180326/model/CreateConfigWithDetailRespResponse.cpp
   src/v20180326/model/DescribeGroupBusinessLogConfigsResponse.cpp
   src/v20180326/model/ContainGroupResult.cpp
   src/v20180326/model/UpdateUnitRuleRequest.cpp
@@ -822,6 +829,7 @@ set(tsf_src
   src/v20180326/model/TsfPageMsInstance.cpp
   src/v20180326/model/DeleteMicroserviceRequest.cpp
   src/v20180326/model/CreatePublicConfigWithDetailRespResponse.cpp
+  src/v20180326/model/CreateConfigWithDetailRespRequest.cpp
   src/v20180326/model/RemoveInstancesResponse.cpp
   src/v20180326/model/DescribeContainerEventsRequest.cpp
   src/v20180326/model/DisableUnitRuleRequest.cpp
@@ -926,7 +934,7 @@ set(tsf_src
   src/v20180326/model/DeployGroupRequest.cpp
   src/v20180326/model/LaneInfos.cpp
   src/v20180326/model/CreateTaskFlowRequest.cpp
-  src/v20180326/model/ModifyContainerReplicasResponse.cpp
+  src/v20180326/model/CreateFileConfigWithDetailRespResponse.cpp
   src/v20180326/model/CreateConfigTemplateWithDetailRespRequest.cpp
   src/v20180326/model/TsfPageGatewayPlugin.cpp
   src/v20180326/model/ApiUseStatisticsEntity.cpp

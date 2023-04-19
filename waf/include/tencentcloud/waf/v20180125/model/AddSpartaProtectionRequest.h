@@ -386,14 +386,14 @@ namespace TencentCloud
                     bool PortsHasBeenSet() const;
 
                     /**
-                     * 获取版本：sparta-waf、clb-waf、cdn-waf
-                     * @return Edition 版本：sparta-waf、clb-waf、cdn-waf
+                     * 获取WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力
+                     * @return Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力
                      */
                     std::string GetEdition() const;
 
                     /**
-                     * 设置版本：sparta-waf、clb-waf、cdn-waf
-                     * @param Edition 版本：sparta-waf、clb-waf、cdn-waf
+                     * 设置WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力
+                     * @param Edition WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力
                      */
                     void SetEdition(const std::string& _edition);
 
@@ -583,6 +583,60 @@ namespace TencentCloud
                      */
                     bool ProxySendTimeoutHasBeenSet() const;
 
+                    /**
+                     * 获取0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     * @return SniType 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     */
+                    int64_t GetSniType() const;
+
+                    /**
+                     * 设置0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     * @param SniType 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     */
+                    void SetSniType(const int64_t& _sniType);
+
+                    /**
+                     * 判断参数 SniType 是否已赋值
+                     * @return SniType 是否已赋值
+                     */
+                    bool SniTypeHasBeenSet() const;
+
+                    /**
+                     * 获取SniType=3时，需要填此参数，表示自定义的host；
+                     * @return SniHost SniType=3时，需要填此参数，表示自定义的host；
+                     */
+                    std::string GetSniHost() const;
+
+                    /**
+                     * 设置SniType=3时，需要填此参数，表示自定义的host；
+                     * @param SniHost SniType=3时，需要填此参数，表示自定义的host；
+                     */
+                    void SetSniHost(const std::string& _sniHost);
+
+                    /**
+                     * 判断参数 SniHost 是否已赋值
+                     * @return SniHost 是否已赋值
+                     */
+                    bool SniHostHasBeenSet() const;
+
+                    /**
+                     * 获取is_cdn=3时，需要填此参数，表示自定义header
+                     * @return IpHeaders is_cdn=3时，需要填此参数，表示自定义header
+                     */
+                    std::vector<std::string> GetIpHeaders() const;
+
+                    /**
+                     * 设置is_cdn=3时，需要填此参数，表示自定义header
+                     * @param IpHeaders is_cdn=3时，需要填此参数，表示自定义header
+                     */
+                    void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
+
+                    /**
+                     * 判断参数 IpHeaders 是否已赋值
+                     * @return IpHeaders 是否已赋值
+                     */
+                    bool IpHeadersHasBeenSet() const;
+
                 private:
 
                     /**
@@ -700,7 +754,7 @@ namespace TencentCloud
                     bool m_portsHasBeenSet;
 
                     /**
-                     * 版本：sparta-waf、clb-waf、cdn-waf
+                     * WAF实例类型，sparta-waf表示SAAS型WAF，clb-waf表示负载均衡型WAF，cdn-waf表示CDN上的Web防护能力
                      */
                     std::string m_edition;
                     bool m_editionHasBeenSet;
@@ -764,6 +818,24 @@ namespace TencentCloud
                      */
                     int64_t m_proxySendTimeout;
                     bool m_proxySendTimeoutHasBeenSet;
+
+                    /**
+                     * 0:关闭SNI；1:开启SNI，SNI=源请求host；2:开启SNI，SNI=修改为源站host；3：开启SNI，自定义host，SNI=SniHost；
+                     */
+                    int64_t m_sniType;
+                    bool m_sniTypeHasBeenSet;
+
+                    /**
+                     * SniType=3时，需要填此参数，表示自定义的host；
+                     */
+                    std::string m_sniHost;
+                    bool m_sniHostHasBeenSet;
+
+                    /**
+                     * is_cdn=3时，需要填此参数，表示自定义header
+                     */
+                    std::vector<std::string> m_ipHeaders;
+                    bool m_ipHeadersHasBeenSet;
 
                 };
             }

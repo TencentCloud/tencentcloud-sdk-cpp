@@ -318,7 +318,6 @@ namespace TencentCloud
 
                 /**
                  *本接口 (DescribeTemplateList) 用于获取信息模板列表。
-
                  * @param req DescribeTemplateListRequest
                  * @return DescribeTemplateListOutcome
                  */

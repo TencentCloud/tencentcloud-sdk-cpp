@@ -24,7 +24,8 @@ JobLogResult::JobLogResult() :
     m_timeHasBeenSet(false),
     m_topicIdHasBeenSet(false),
     m_topicNameHasBeenSet(false),
-    m_logJsonHasBeenSet(false)
+    m_logJsonHasBeenSet(false),
+    m_pkgLogIdHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome JobLogResult::Deserialize(const rapidjson::Value &value)
         m_logJsonHasBeenSet = true;
     }
 
+    if (value.HasMember("PkgLogId") && !value["PkgLogId"].IsNull())
+    {
+        if (!value["PkgLogId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `JobLogResult.PkgLogId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_pkgLogId = string(value["PkgLogId"].GetString());
+        m_pkgLogIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void JobLogResult::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "LogJson";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logJson.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_pkgLogIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PkgLogId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_pkgLogId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void JobLogResult::SetLogJson(const string& _logJson)
 bool JobLogResult::LogJsonHasBeenSet() const
 {
     return m_logJsonHasBeenSet;
+}
+
+string JobLogResult::GetPkgLogId() const
+{
+    return m_pkgLogId;
+}
+
+void JobLogResult::SetPkgLogId(const string& _pkgLogId)
+{
+    m_pkgLogId = _pkgLogId;
+    m_pkgLogIdHasBeenSet = true;
+}
+
+bool JobLogResult::PkgLogIdHasBeenSet() const
+{
+    return m_pkgLogIdHasBeenSet;
 }
 

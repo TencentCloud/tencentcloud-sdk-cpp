@@ -1146,7 +1146,9 @@ namespace TencentCloud
                 DescribeBinlogsOutcomeCallable DescribeBinlogsCallable(const Model::DescribeBinlogsRequest& request);
 
                 /**
-                 *查询数据库代理（待下线，替换接口QueryCDBProxy）
+                 *接口已经废弃，请使用+DescribeCdbProxyInfo+进行替换。
+
+查询数据库代理（待下线，替换接口QueryCDBProxy）
                  * @param req DescribeCDBProxyRequest
                  * @return DescribeCDBProxyOutcome
                  */
@@ -1383,7 +1385,9 @@ namespace TencentCloud
                 DescribeProjectSecurityGroupsOutcomeCallable DescribeProjectSecurityGroupsCallable(const Model::DescribeProjectSecurityGroupsRequest& request);
 
                 /**
-                 *获取数据库代理连接池相关规格配置
+                 *当前接口已经废弃，请使用+DescribeCdbProxyInfo+替代。
+
+获取数据库代理连接池相关规格配置
                  * @param req DescribeProxyConnectionPoolConfRequest
                  * @return DescribeProxyConnectionPoolConfOutcome
                  */
@@ -1659,7 +1663,9 @@ namespace TencentCloud
                 ModifyBackupEncryptionStatusOutcomeCallable ModifyBackupEncryptionStatusCallable(const Model::ModifyBackupEncryptionStatusRequest& request);
 
                 /**
-                 *请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。
+                 *当前接口已经废弃，请使用+AdjustCdbProxyAddress+进行替代。
+
+请求该接口配置数据库连接池；支持的连接池配置请求DescribeProxyConnectionPoolConf接口获取。
                  * @param req ModifyCDBProxyConnectionPoolRequest
                  * @return ModifyCDBProxyConnectionPoolOutcome
                  */
@@ -1668,7 +1674,9 @@ namespace TencentCloud
                 ModifyCDBProxyConnectionPoolOutcomeCallable ModifyCDBProxyConnectionPoolCallable(const Model::ModifyCDBProxyConnectionPoolRequest& request);
 
                 /**
-                 *修改数据库代理描述
+                 *当前接口已经废弃，请使用+ModifyCdbProxyAddressDesc+进行替代。
+
+修改数据库代理描述
                  * @param req ModifyCDBProxyDescRequest
                  * @return ModifyCDBProxyDescOutcome
                  */
@@ -1677,7 +1685,9 @@ namespace TencentCloud
                 ModifyCDBProxyDescOutcomeCallable ModifyCDBProxyDescCallable(const Model::ModifyCDBProxyDescRequest& request);
 
                 /**
-                 *修改数据库代理VIP或端口
+                 *当前接口已经废弃，请使用+ModifyCdbProxyAddressVipAndVPort+进行替代。
+
+修改数据库代理VIP或端口
                  * @param req ModifyCDBProxyVipVPortRequest
                  * @return ModifyCDBProxyVipVPortOutcome
                  */
@@ -1864,7 +1874,9 @@ namespace TencentCloud
                 OpenWanServiceOutcomeCallable OpenWanServiceCallable(const Model::OpenWanServiceRequest& request);
 
                 /**
-                 *查询代理详情
+                 *当前接口已经废弃，请使用+DescribeCdbProxyInfo+进行替代。
+
+查询代理详情
                  * @param req QueryCDBProxyRequest
                  * @return QueryCDBProxyOutcome
                  */

@@ -136,17 +136,17 @@ namespace TencentCloud
                     bool UpdateTimeHasBeenSet() const;
 
                     /**
-                     * 获取成员企业状态
+                     * 获取成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Status 成员企业状态
+                     * @return Status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetStatus() const;
 
                     /**
-                     * 设置成员企业状态
+                     * 设置成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
 注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Status 成员企业状态
+                     * @param Status 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const uint64_t& _status);
@@ -342,7 +342,7 @@ namespace TencentCloud
                     bool m_updateTimeHasBeenSet;
 
                     /**
-                     * 成员企业状态
+                     * 成员企业加入集团的当前状态:1-待授权;2-已授权待激活;3-拒绝授权;4-已解除;5-已加入
 注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_status;

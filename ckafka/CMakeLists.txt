@@ -116,6 +116,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/FetchDatahubMessageByOffsetRequest.h
   include/tencentcloud/ckafka/v20190819/model/AuthorizeTokenRequest.h
   include/tencentcloud/ckafka/v20190819/model/OperateResponseData.h
+  include/tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeACLRequest.h
   include/tencentcloud/ckafka/v20190819/model/CreateUserResponse.h
   include/tencentcloud/ckafka/v20190819/model/DescribeDatahubTaskRes.h
@@ -294,6 +295,7 @@ set(ckafka_public_header_model
   include/tencentcloud/ckafka/v20190819/model/PostgreSQLParam.h
   include/tencentcloud/ckafka/v20190819/model/MariaDBConnectParam.h
   include/tencentcloud/ckafka/v20190819/model/AclRuleInfo.h
+  include/tencentcloud/ckafka/v20190819/model/RenewCkafkaInstanceRequest.h
   include/tencentcloud/ckafka/v20190819/model/Acl.h
   include/tencentcloud/ckafka/v20190819/model/DescribeAclRuleRequest.h
   include/tencentcloud/ckafka/v20190819/model/MongoDBParam.h
@@ -423,6 +425,7 @@ set(ckafka_src
   src/v20190819/model/FetchDatahubMessageByOffsetRequest.cpp
   src/v20190819/model/AuthorizeTokenRequest.cpp
   src/v20190819/model/OperateResponseData.cpp
+  src/v20190819/model/RenewCkafkaInstanceResponse.cpp
   src/v20190819/model/DescribeACLRequest.cpp
   src/v20190819/model/CreateUserResponse.cpp
   src/v20190819/model/DescribeDatahubTaskRes.cpp
@@ -601,6 +604,7 @@ set(ckafka_src
   src/v20190819/model/PostgreSQLParam.cpp
   src/v20190819/model/MariaDBConnectParam.cpp
   src/v20190819/model/AclRuleInfo.cpp
+  src/v20190819/model/RenewCkafkaInstanceRequest.cpp
   src/v20190819/model/Acl.cpp
   src/v20190819/model/DescribeAclRuleRequest.cpp
   src/v20190819/model/MongoDBParam.cpp

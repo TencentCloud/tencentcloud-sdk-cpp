@@ -24,15 +24,15 @@ using namespace std;
 
 DescribeFlowTemplatesRequest::DescribeFlowTemplatesRequest() :
     m_operatorHasBeenSet(false),
-    m_organizationHasBeenSet(false),
     m_agentHasBeenSet(false),
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
     m_filtersHasBeenSet(false),
     m_applicationIdHasBeenSet(false),
     m_isChannelHasBeenSet(false),
-    m_generateSourceHasBeenSet(false),
-    m_contentTypeHasBeenSet(false)
+    m_contentTypeHasBeenSet(false),
+    m_organizationHasBeenSet(false),
+    m_generateSourceHasBeenSet(false)
 {
 }
 
@@ -50,15 +50,6 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
-    }
-
-    if (m_organizationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Organization";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_organization.ToJsonObject(d[key.c_str()], allocator);
     }
 
     if (m_agentHasBeenSet)
@@ -117,20 +108,29 @@ string DescribeFlowTemplatesRequest::ToJsonString() const
         d.AddMember(iKey, m_isChannel, allocator);
     }
 
-    if (m_generateSourceHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "GenerateSource";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_generateSource, allocator);
-    }
-
     if (m_contentTypeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
         string key = "ContentType";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_contentType, allocator);
+    }
+
+    if (m_organizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Organization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_organization.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_generateSourceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GenerateSource";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_generateSource, allocator);
     }
 
 
@@ -155,22 +155,6 @@ void DescribeFlowTemplatesRequest::SetOperator(const UserInfo& _operator)
 bool DescribeFlowTemplatesRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
-}
-
-OrganizationInfo DescribeFlowTemplatesRequest::GetOrganization() const
-{
-    return m_organization;
-}
-
-void DescribeFlowTemplatesRequest::SetOrganization(const OrganizationInfo& _organization)
-{
-    m_organization = _organization;
-    m_organizationHasBeenSet = true;
-}
-
-bool DescribeFlowTemplatesRequest::OrganizationHasBeenSet() const
-{
-    return m_organizationHasBeenSet;
 }
 
 Agent DescribeFlowTemplatesRequest::GetAgent() const
@@ -269,22 +253,6 @@ bool DescribeFlowTemplatesRequest::IsChannelHasBeenSet() const
     return m_isChannelHasBeenSet;
 }
 
-uint64_t DescribeFlowTemplatesRequest::GetGenerateSource() const
-{
-    return m_generateSource;
-}
-
-void DescribeFlowTemplatesRequest::SetGenerateSource(const uint64_t& _generateSource)
-{
-    m_generateSource = _generateSource;
-    m_generateSourceHasBeenSet = true;
-}
-
-bool DescribeFlowTemplatesRequest::GenerateSourceHasBeenSet() const
-{
-    return m_generateSourceHasBeenSet;
-}
-
 int64_t DescribeFlowTemplatesRequest::GetContentType() const
 {
     return m_contentType;
@@ -299,6 +267,38 @@ void DescribeFlowTemplatesRequest::SetContentType(const int64_t& _contentType)
 bool DescribeFlowTemplatesRequest::ContentTypeHasBeenSet() const
 {
     return m_contentTypeHasBeenSet;
+}
+
+OrganizationInfo DescribeFlowTemplatesRequest::GetOrganization() const
+{
+    return m_organization;
+}
+
+void DescribeFlowTemplatesRequest::SetOrganization(const OrganizationInfo& _organization)
+{
+    m_organization = _organization;
+    m_organizationHasBeenSet = true;
+}
+
+bool DescribeFlowTemplatesRequest::OrganizationHasBeenSet() const
+{
+    return m_organizationHasBeenSet;
+}
+
+uint64_t DescribeFlowTemplatesRequest::GetGenerateSource() const
+{
+    return m_generateSource;
+}
+
+void DescribeFlowTemplatesRequest::SetGenerateSource(const uint64_t& _generateSource)
+{
+    m_generateSource = _generateSource;
+    m_generateSourceHasBeenSet = true;
+}
+
+bool DescribeFlowTemplatesRequest::GenerateSourceHasBeenSet() const
+{
+    return m_generateSourceHasBeenSet;
 }
 
 

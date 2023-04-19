@@ -49,11 +49,13 @@ namespace TencentCloud
 <li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
 <li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
 <li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>
+<li>FileAction- string - 是否必填：否 - 威胁行为 read 读取文件 write 写文件</li>
                      * @return Filters 过滤条件。
 <li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>
 <li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
 <li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
 <li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>
+<li>FileAction- string - 是否必填：否 - 威胁行为 read 读取文件 write 写文件</li>
                      */
                     std::vector<Filters> GetFilters() const;
 
@@ -63,11 +65,13 @@ namespace TencentCloud
 <li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
 <li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
 <li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>
+<li>FileAction- string - 是否必填：否 - 威胁行为 read 读取文件 write 写文件</li>
                      * @param Filters 过滤条件。
 <li>Status - String - 是否必填：否 - 处理状态  0 -- 待处理 1 -- 已加白 2 -- 已删除 3 - 已忽略</li>
 <li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
 <li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
 <li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>
+<li>FileAction- string - 是否必填：否 - 威胁行为 read 读取文件 write 写文件</li>
                      */
                     void SetFilters(const std::vector<Filters>& _filters);
 
@@ -157,6 +161,7 @@ namespace TencentCloud
 <li>ModifyTime - String - 是否必填：否 - 最近发生时间</li>
 <li>Uuid- String - 是否必填：否 - 主机uuid查询</li>
 <li>RuleCategory- string - 是否必填：否 - 规则类别 0 系统规则 1 自定义规则</li>
+<li>FileAction- string - 是否必填：否 - 威胁行为 read 读取文件 write 写文件</li>
                      */
                     std::vector<Filters> m_filters;
                     bool m_filtersHasBeenSet;

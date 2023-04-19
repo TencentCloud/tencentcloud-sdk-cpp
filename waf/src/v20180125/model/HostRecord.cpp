@@ -36,7 +36,9 @@ HostRecord::HostRecord() :
     m_clsStatusHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_cdcClustersHasBeenSet(false),
-    m_albTypeHasBeenSet(false)
+    m_albTypeHasBeenSet(false),
+    m_ipHeadersHasBeenSet(false),
+    m_engineTypeHasBeenSet(false)
 {
 }
 
@@ -218,6 +220,29 @@ CoreInternalOutcome HostRecord::Deserialize(const rapidjson::Value &value)
         m_albTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("IpHeaders") && !value["IpHeaders"].IsNull())
+    {
+        if (!value["IpHeaders"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `HostRecord.IpHeaders` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IpHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipHeaders.push_back((*itr).GetString());
+        }
+        m_ipHeadersHasBeenSet = true;
+    }
+
+    if (value.HasMember("EngineType") && !value["EngineType"].IsNull())
+    {
+        if (!value["EngineType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `HostRecord.EngineType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_engineType = value["EngineType"].GetInt64();
+        m_engineTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -363,6 +388,27 @@ void HostRecord::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "AlbType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_albType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipHeaders.begin(); itr != m_ipHeaders.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_engineTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EngineType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_engineType, allocator);
     }
 
 }
@@ -622,5 +668,37 @@ void HostRecord::SetAlbType(const string& _albType)
 bool HostRecord::AlbTypeHasBeenSet() const
 {
     return m_albTypeHasBeenSet;
+}
+
+vector<string> HostRecord::GetIpHeaders() const
+{
+    return m_ipHeaders;
+}
+
+void HostRecord::SetIpHeaders(const vector<string>& _ipHeaders)
+{
+    m_ipHeaders = _ipHeaders;
+    m_ipHeadersHasBeenSet = true;
+}
+
+bool HostRecord::IpHeadersHasBeenSet() const
+{
+    return m_ipHeadersHasBeenSet;
+}
+
+int64_t HostRecord::GetEngineType() const
+{
+    return m_engineType;
+}
+
+void HostRecord::SetEngineType(const int64_t& _engineType)
+{
+    m_engineType = _engineType;
+    m_engineTypeHasBeenSet = true;
+}
+
+bool HostRecord::EngineTypeHasBeenSet() const
+{
+    return m_engineTypeHasBeenSet;
 }
 

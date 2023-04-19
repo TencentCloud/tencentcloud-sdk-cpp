@@ -729,6 +729,36 @@ namespace TencentCloud
                      */
                     bool MachineExtraInfoHasBeenSet() const;
 
+                    /**
+                     * 获取文件威胁行为
+<li>read 读取文件</li>
+<li>write 修改文件</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return FileAction 文件威胁行为
+<li>read 读取文件</li>
+<li>write 修改文件</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetFileAction() const;
+
+                    /**
+                     * 设置文件威胁行为
+<li>read 读取文件</li>
+<li>write 修改文件</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param FileAction 文件威胁行为
+<li>read 读取文件</li>
+<li>write 修改文件</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetFileAction(const std::string& _fileAction);
+
+                    /**
+                     * 判断参数 FileAction 是否已赋值
+                     * @return FileAction 是否已赋值
+                     */
+                    bool FileActionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -956,6 +986,15 @@ namespace TencentCloud
                      */
                     MachineExtraInfo m_machineExtraInfo;
                     bool m_machineExtraInfoHasBeenSet;
+
+                    /**
+                     * 文件威胁行为
+<li>read 读取文件</li>
+<li>write 修改文件</li>
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_fileAction;
+                    bool m_fileActionHasBeenSet;
 
                 };
             }

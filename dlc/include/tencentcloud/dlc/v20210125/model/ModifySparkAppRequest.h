@@ -528,6 +528,24 @@ namespace TencentCloud
                      */
                     bool AppExecutorMaxNumbersHasBeenSet() const;
 
+                    /**
+                     * 获取关联dlc查询脚本
+                     * @return SessionId 关联dlc查询脚本
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置关联dlc查询脚本
+                     * @param SessionId 关联dlc查询脚本
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -691,6 +709,12 @@ namespace TencentCloud
                      */
                     int64_t m_appExecutorMaxNumbers;
                     bool m_appExecutorMaxNumbersHasBeenSet;
+
+                    /**
+                     * 关联dlc查询脚本
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

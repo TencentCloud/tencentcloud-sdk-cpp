@@ -31,7 +31,8 @@ CallBackTemplateInfo::CallBackTemplateInfo() :
     m_snapshotNotifyUrlHasBeenSet(false),
     m_pornCensorshipNotifyUrlHasBeenSet(false),
     m_callbackKeyHasBeenSet(false),
-    m_pushExceptionNotifyUrlHasBeenSet(false)
+    m_pushExceptionNotifyUrlHasBeenSet(false),
+    m_audioAuditNotifyUrlHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,16 @@ CoreInternalOutcome CallBackTemplateInfo::Deserialize(const rapidjson::Value &va
         m_pushExceptionNotifyUrlHasBeenSet = true;
     }
 
+    if (value.HasMember("AudioAuditNotifyUrl") && !value["AudioAuditNotifyUrl"].IsNull())
+    {
+        if (!value["AudioAuditNotifyUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CallBackTemplateInfo.AudioAuditNotifyUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_audioAuditNotifyUrl = string(value["AudioAuditNotifyUrl"].GetString());
+        m_audioAuditNotifyUrlHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -243,6 +254,14 @@ void CallBackTemplateInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Docu
         string key = "PushExceptionNotifyUrl";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_pushExceptionNotifyUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_audioAuditNotifyUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AudioAuditNotifyUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_audioAuditNotifyUrl.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -422,5 +441,21 @@ void CallBackTemplateInfo::SetPushExceptionNotifyUrl(const string& _pushExceptio
 bool CallBackTemplateInfo::PushExceptionNotifyUrlHasBeenSet() const
 {
     return m_pushExceptionNotifyUrlHasBeenSet;
+}
+
+string CallBackTemplateInfo::GetAudioAuditNotifyUrl() const
+{
+    return m_audioAuditNotifyUrl;
+}
+
+void CallBackTemplateInfo::SetAudioAuditNotifyUrl(const string& _audioAuditNotifyUrl)
+{
+    m_audioAuditNotifyUrl = _audioAuditNotifyUrl;
+    m_audioAuditNotifyUrlHasBeenSet = true;
+}
+
+bool CallBackTemplateInfo::AudioAuditNotifyUrlHasBeenSet() const
+{
+    return m_audioAuditNotifyUrlHasBeenSet;
 }
 

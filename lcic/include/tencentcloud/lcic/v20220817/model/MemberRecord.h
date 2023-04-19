@@ -338,6 +338,86 @@ namespace TencentCloud
                      */
                     bool PerMemberMessageCountHasBeenSet() const;
 
+                    /**
+                     * 获取用户角色。0代表学生；1代表老师； 2助教；3巡课。
+                     * @return Role 用户角色。0代表学生；1代表老师； 2助教；3巡课。
+                     */
+                    uint64_t GetRole() const;
+
+                    /**
+                     * 设置用户角色。0代表学生；1代表老师； 2助教；3巡课。
+                     * @param Role 用户角色。0代表学生；1代表老师； 2助教；3巡课。
+                     */
+                    void SetRole(const uint64_t& _role);
+
+                    /**
+                     * 判断参数 Role 是否已赋值
+                     * @return Role 是否已赋值
+                     */
+                    bool RoleHasBeenSet() const;
+
+                    /**
+                     * 获取上课班号
+                     * @return GroupId 上课班号
+                     */
+                    std::string GetGroupId() const;
+
+                    /**
+                     * 设置上课班号
+                     * @param GroupId 上课班号
+                     */
+                    void SetGroupId(const std::string& _groupId);
+
+                    /**
+                     * 判断参数 GroupId 是否已赋值
+                     * @return GroupId 是否已赋值
+                     */
+                    bool GroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取子上课班号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SubGroupId 子上课班号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetSubGroupId() const;
+
+                    /**
+                     * 设置子上课班号
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SubGroupId 子上课班号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSubGroupId(const std::vector<std::string>& _subGroupId);
+
+                    /**
+                     * 判断参数 SubGroupId 是否已赋值
+                     * @return SubGroupId 是否已赋值
+                     */
+                    bool SubGroupIdHasBeenSet() const;
+
+                    /**
+                     * 获取用户的上台状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Stage 用户的上台状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetStage() const;
+
+                    /**
+                     * 设置用户的上台状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Stage 用户的上台状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStage(const int64_t& _stage);
+
+                    /**
+                     * 判断参数 Stage 是否已赋值
+                     * @return Stage 是否已赋值
+                     */
+                    bool StageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -436,6 +516,32 @@ namespace TencentCloud
                      */
                     int64_t m_perMemberMessageCount;
                     bool m_perMemberMessageCountHasBeenSet;
+
+                    /**
+                     * 用户角色。0代表学生；1代表老师； 2助教；3巡课。
+                     */
+                    uint64_t m_role;
+                    bool m_roleHasBeenSet;
+
+                    /**
+                     * 上课班号
+                     */
+                    std::string m_groupId;
+                    bool m_groupIdHasBeenSet;
+
+                    /**
+                     * 子上课班号
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_subGroupId;
+                    bool m_subGroupIdHasBeenSet;
+
+                    /**
+                     * 用户的上台状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_stage;
+                    bool m_stageHasBeenSet;
 
                 };
             }

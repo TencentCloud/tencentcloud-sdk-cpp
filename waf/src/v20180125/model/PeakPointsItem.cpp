@@ -27,7 +27,14 @@ PeakPointsItem::PeakPointsItem() :
     m_downHasBeenSet(false),
     m_attackHasBeenSet(false),
     m_ccHasBeenSet(false),
-    m_botAccessHasBeenSet(false)
+    m_botAccessHasBeenSet(false),
+    m_statusServerErrorHasBeenSet(false),
+    m_statusClientErrorHasBeenSet(false),
+    m_statusRedirectHasBeenSet(false),
+    m_statusOkHasBeenSet(false),
+    m_upstreamServerErrorHasBeenSet(false),
+    m_upstreamClientErrorHasBeenSet(false),
+    m_upstreamRedirectHasBeenSet(false)
 {
 }
 
@@ -106,6 +113,76 @@ CoreInternalOutcome PeakPointsItem::Deserialize(const rapidjson::Value &value)
         m_botAccessHasBeenSet = true;
     }
 
+    if (value.HasMember("StatusServerError") && !value["StatusServerError"].IsNull())
+    {
+        if (!value["StatusServerError"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.StatusServerError` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusServerError = value["StatusServerError"].GetUint64();
+        m_statusServerErrorHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusClientError") && !value["StatusClientError"].IsNull())
+    {
+        if (!value["StatusClientError"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.StatusClientError` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusClientError = value["StatusClientError"].GetUint64();
+        m_statusClientErrorHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusRedirect") && !value["StatusRedirect"].IsNull())
+    {
+        if (!value["StatusRedirect"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.StatusRedirect` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusRedirect = value["StatusRedirect"].GetUint64();
+        m_statusRedirectHasBeenSet = true;
+    }
+
+    if (value.HasMember("StatusOk") && !value["StatusOk"].IsNull())
+    {
+        if (!value["StatusOk"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.StatusOk` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_statusOk = value["StatusOk"].GetUint64();
+        m_statusOkHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamServerError") && !value["UpstreamServerError"].IsNull())
+    {
+        if (!value["UpstreamServerError"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.UpstreamServerError` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamServerError = value["UpstreamServerError"].GetUint64();
+        m_upstreamServerErrorHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamClientError") && !value["UpstreamClientError"].IsNull())
+    {
+        if (!value["UpstreamClientError"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.UpstreamClientError` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamClientError = value["UpstreamClientError"].GetUint64();
+        m_upstreamClientErrorHasBeenSet = true;
+    }
+
+    if (value.HasMember("UpstreamRedirect") && !value["UpstreamRedirect"].IsNull())
+    {
+        if (!value["UpstreamRedirect"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `PeakPointsItem.UpstreamRedirect` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_upstreamRedirect = value["UpstreamRedirect"].GetUint64();
+        m_upstreamRedirectHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +244,62 @@ void PeakPointsItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
         string key = "BotAccess";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_botAccess, allocator);
+    }
+
+    if (m_statusServerErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusServerError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_statusServerError, allocator);
+    }
+
+    if (m_statusClientErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusClientError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_statusClientError, allocator);
+    }
+
+    if (m_statusRedirectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_statusRedirect, allocator);
+    }
+
+    if (m_statusOkHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusOk";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_statusOk, allocator);
+    }
+
+    if (m_upstreamServerErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamServerError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upstreamServerError, allocator);
+    }
+
+    if (m_upstreamClientErrorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamClientError";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upstreamClientError, allocator);
+    }
+
+    if (m_upstreamRedirectHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "UpstreamRedirect";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_upstreamRedirect, allocator);
     }
 
 }
@@ -282,5 +415,117 @@ void PeakPointsItem::SetBotAccess(const uint64_t& _botAccess)
 bool PeakPointsItem::BotAccessHasBeenSet() const
 {
     return m_botAccessHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetStatusServerError() const
+{
+    return m_statusServerError;
+}
+
+void PeakPointsItem::SetStatusServerError(const uint64_t& _statusServerError)
+{
+    m_statusServerError = _statusServerError;
+    m_statusServerErrorHasBeenSet = true;
+}
+
+bool PeakPointsItem::StatusServerErrorHasBeenSet() const
+{
+    return m_statusServerErrorHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetStatusClientError() const
+{
+    return m_statusClientError;
+}
+
+void PeakPointsItem::SetStatusClientError(const uint64_t& _statusClientError)
+{
+    m_statusClientError = _statusClientError;
+    m_statusClientErrorHasBeenSet = true;
+}
+
+bool PeakPointsItem::StatusClientErrorHasBeenSet() const
+{
+    return m_statusClientErrorHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetStatusRedirect() const
+{
+    return m_statusRedirect;
+}
+
+void PeakPointsItem::SetStatusRedirect(const uint64_t& _statusRedirect)
+{
+    m_statusRedirect = _statusRedirect;
+    m_statusRedirectHasBeenSet = true;
+}
+
+bool PeakPointsItem::StatusRedirectHasBeenSet() const
+{
+    return m_statusRedirectHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetStatusOk() const
+{
+    return m_statusOk;
+}
+
+void PeakPointsItem::SetStatusOk(const uint64_t& _statusOk)
+{
+    m_statusOk = _statusOk;
+    m_statusOkHasBeenSet = true;
+}
+
+bool PeakPointsItem::StatusOkHasBeenSet() const
+{
+    return m_statusOkHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetUpstreamServerError() const
+{
+    return m_upstreamServerError;
+}
+
+void PeakPointsItem::SetUpstreamServerError(const uint64_t& _upstreamServerError)
+{
+    m_upstreamServerError = _upstreamServerError;
+    m_upstreamServerErrorHasBeenSet = true;
+}
+
+bool PeakPointsItem::UpstreamServerErrorHasBeenSet() const
+{
+    return m_upstreamServerErrorHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetUpstreamClientError() const
+{
+    return m_upstreamClientError;
+}
+
+void PeakPointsItem::SetUpstreamClientError(const uint64_t& _upstreamClientError)
+{
+    m_upstreamClientError = _upstreamClientError;
+    m_upstreamClientErrorHasBeenSet = true;
+}
+
+bool PeakPointsItem::UpstreamClientErrorHasBeenSet() const
+{
+    return m_upstreamClientErrorHasBeenSet;
+}
+
+uint64_t PeakPointsItem::GetUpstreamRedirect() const
+{
+    return m_upstreamRedirect;
+}
+
+void PeakPointsItem::SetUpstreamRedirect(const uint64_t& _upstreamRedirect)
+{
+    m_upstreamRedirect = _upstreamRedirect;
+    m_upstreamRedirectHasBeenSet = true;
+}
+
+bool PeakPointsItem::UpstreamRedirectHasBeenSet() const
+{
+    return m_upstreamRedirectHasBeenSet;
 }
 

@@ -743,6 +743,28 @@ namespace TencentCloud
                      */
                     bool SparkImageVersionHasBeenSet() const;
 
+                    /**
+                     * 获取查询脚本关联id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SessionId 查询脚本关联id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetSessionId() const;
+
+                    /**
+                     * 设置查询脚本关联id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SessionId 查询脚本关联id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSessionId(const std::string& _sessionId);
+
+                    /**
+                     * 判断参数 SessionId 是否已赋值
+                     * @return SessionId 是否已赋值
+                     */
+                    bool SessionIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -972,6 +994,13 @@ namespace TencentCloud
                      */
                     std::string m_sparkImageVersion;
                     bool m_sparkImageVersionHasBeenSet;
+
+                    /**
+                     * 查询脚本关联id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_sessionId;
+                    bool m_sessionIdHasBeenSet;
 
                 };
             }

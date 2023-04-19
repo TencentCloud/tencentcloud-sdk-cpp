@@ -45,7 +45,11 @@ DomainsPartInfo::DomainsPartInfo() :
     m_ciphersHasBeenSet(false),
     m_cipherTemplateHasBeenSet(false),
     m_proxyReadTimeoutHasBeenSet(false),
-    m_proxySendTimeoutHasBeenSet(false)
+    m_proxySendTimeoutHasBeenSet(false),
+    m_sniTypeHasBeenSet(false),
+    m_sniHostHasBeenSet(false),
+    m_weightsHasBeenSet(false),
+    m_ipHeadersHasBeenSet(false)
 {
 }
 
@@ -320,6 +324,52 @@ CoreInternalOutcome DomainsPartInfo::Deserialize(const rapidjson::Value &value)
         m_proxySendTimeoutHasBeenSet = true;
     }
 
+    if (value.HasMember("SniType") && !value["SniType"].IsNull())
+    {
+        if (!value["SniType"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.SniType` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sniType = value["SniType"].GetInt64();
+        m_sniTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("SniHost") && !value["SniHost"].IsNull())
+    {
+        if (!value["SniHost"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.SniHost` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sniHost = string(value["SniHost"].GetString());
+        m_sniHostHasBeenSet = true;
+    }
+
+    if (value.HasMember("Weights") && !value["Weights"].IsNull())
+    {
+        if (!value["Weights"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.Weights` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Weights"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_weights.push_back((*itr).GetString());
+        }
+        m_weightsHasBeenSet = true;
+    }
+
+    if (value.HasMember("IpHeaders") && !value["IpHeaders"].IsNull())
+    {
+        if (!value["IpHeaders"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `DomainsPartInfo.IpHeaders` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["IpHeaders"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            m_ipHeaders.push_back((*itr).GetString());
+        }
+        m_ipHeadersHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -542,6 +592,48 @@ void DomainsPartInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "ProxySendTimeout";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_proxySendTimeout, allocator);
+    }
+
+    if (m_sniTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SniType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sniType, allocator);
+    }
+
+    if (m_sniHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SniHost";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sniHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_weightsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Weights";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_weights.begin(); itr != m_weights.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_ipHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipHeaders.begin(); itr != m_ipHeaders.end(); ++itr)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 }
@@ -945,5 +1037,69 @@ void DomainsPartInfo::SetProxySendTimeout(const int64_t& _proxySendTimeout)
 bool DomainsPartInfo::ProxySendTimeoutHasBeenSet() const
 {
     return m_proxySendTimeoutHasBeenSet;
+}
+
+int64_t DomainsPartInfo::GetSniType() const
+{
+    return m_sniType;
+}
+
+void DomainsPartInfo::SetSniType(const int64_t& _sniType)
+{
+    m_sniType = _sniType;
+    m_sniTypeHasBeenSet = true;
+}
+
+bool DomainsPartInfo::SniTypeHasBeenSet() const
+{
+    return m_sniTypeHasBeenSet;
+}
+
+string DomainsPartInfo::GetSniHost() const
+{
+    return m_sniHost;
+}
+
+void DomainsPartInfo::SetSniHost(const string& _sniHost)
+{
+    m_sniHost = _sniHost;
+    m_sniHostHasBeenSet = true;
+}
+
+bool DomainsPartInfo::SniHostHasBeenSet() const
+{
+    return m_sniHostHasBeenSet;
+}
+
+vector<string> DomainsPartInfo::GetWeights() const
+{
+    return m_weights;
+}
+
+void DomainsPartInfo::SetWeights(const vector<string>& _weights)
+{
+    m_weights = _weights;
+    m_weightsHasBeenSet = true;
+}
+
+bool DomainsPartInfo::WeightsHasBeenSet() const
+{
+    return m_weightsHasBeenSet;
+}
+
+vector<string> DomainsPartInfo::GetIpHeaders() const
+{
+    return m_ipHeaders;
+}
+
+void DomainsPartInfo::SetIpHeaders(const vector<string>& _ipHeaders)
+{
+    m_ipHeaders = _ipHeaders;
+    m_ipHeadersHasBeenSet = true;
+}
+
+bool DomainsPartInfo::IpHeadersHasBeenSet() const
+{
+    return m_ipHeadersHasBeenSet;
 }
 

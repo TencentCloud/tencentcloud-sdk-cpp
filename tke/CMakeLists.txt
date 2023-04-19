@@ -462,6 +462,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/CreatePrometheusTemplateResponse.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointVipRequest.h
   include/tencentcloud/tke/v20180525/model/ClusterInternalLB.h
+  include/tencentcloud/tke/v20180525/model/UpdateClusterKubeconfigRequest.h
   include/tencentcloud/tke/v20180525/model/DescribePrometheusGlobalConfigRequest.h
   include/tencentcloud/tke/v20180525/model/CreateECMInstancesResponse.h
   include/tencentcloud/tke/v20180525/model/ModifyPrometheusGlobalNotificationRequest.h
@@ -508,6 +509,7 @@ set(tke_public_header_model
   include/tencentcloud/tke/v20180525/model/GetClusterLevelPriceRequest.h
   include/tencentcloud/tke/v20180525/model/CreateClusterEndpointResponse.h
   include/tencentcloud/tke/v20180525/model/ClusterAdvancedSettings.h
+  include/tencentcloud/tke/v20180525/model/UpdateClusterKubeconfigResponse.h
   include/tencentcloud/tke/v20180525/model/ForwardApplicationRequestV3Response.h
   include/tencentcloud/tke/v20180525/model/ModifyClusterAuthenticationOptionsRequest.h
   include/tencentcloud/tke/v20180525/model/DeleteClusterEndpointVipRequest.h
@@ -985,6 +987,7 @@ set(tke_src
   src/v20180525/model/CreatePrometheusTemplateResponse.cpp
   src/v20180525/model/CreateClusterEndpointVipRequest.cpp
   src/v20180525/model/ClusterInternalLB.cpp
+  src/v20180525/model/UpdateClusterKubeconfigRequest.cpp
   src/v20180525/model/DescribePrometheusGlobalConfigRequest.cpp
   src/v20180525/model/CreateECMInstancesResponse.cpp
   src/v20180525/model/ModifyPrometheusGlobalNotificationRequest.cpp
@@ -1031,6 +1034,7 @@ set(tke_src
   src/v20180525/model/GetClusterLevelPriceRequest.cpp
   src/v20180525/model/CreateClusterEndpointResponse.cpp
   src/v20180525/model/ClusterAdvancedSettings.cpp
+  src/v20180525/model/UpdateClusterKubeconfigResponse.cpp
   src/v20180525/model/ForwardApplicationRequestV3Response.cpp
   src/v20180525/model/ModifyClusterAuthenticationOptionsRequest.cpp
   src/v20180525/model/DeleteClusterEndpointVipRequest.cpp

@@ -771,6 +771,49 @@ TsfClient::CreateConfigTemplateWithDetailRespOutcomeCallable TsfClient::CreateCo
     return task->get_future();
 }
 
+TsfClient::CreateConfigWithDetailRespOutcome TsfClient::CreateConfigWithDetailResp(const CreateConfigWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateConfigWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateConfigWithDetailRespResponse rsp = CreateConfigWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateConfigWithDetailRespOutcome(rsp);
+        else
+            return CreateConfigWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateConfigWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateConfigWithDetailRespAsync(const CreateConfigWithDetailRespRequest& request, const CreateConfigWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateConfigWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateConfigWithDetailRespOutcomeCallable TsfClient::CreateConfigWithDetailRespCallable(const CreateConfigWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateConfigWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateConfigWithDetailResp(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TsfClient::CreateContainGroupOutcome TsfClient::CreateContainGroup(const CreateContainGroupRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateContainGroup");
@@ -850,6 +893,49 @@ TsfClient::CreateFileConfigOutcomeCallable TsfClient::CreateFileConfigCallable(c
         [this, request]()
         {
             return this->CreateFileConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TsfClient::CreateFileConfigWithDetailRespOutcome TsfClient::CreateFileConfigWithDetailResp(const CreateFileConfigWithDetailRespRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateFileConfigWithDetailResp");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateFileConfigWithDetailRespResponse rsp = CreateFileConfigWithDetailRespResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateFileConfigWithDetailRespOutcome(rsp);
+        else
+            return CreateFileConfigWithDetailRespOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateFileConfigWithDetailRespOutcome(outcome.GetError());
+    }
+}
+
+void TsfClient::CreateFileConfigWithDetailRespAsync(const CreateFileConfigWithDetailRespRequest& request, const CreateFileConfigWithDetailRespAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateFileConfigWithDetailResp(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TsfClient::CreateFileConfigWithDetailRespOutcomeCallable TsfClient::CreateFileConfigWithDetailRespCallable(const CreateFileConfigWithDetailRespRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateFileConfigWithDetailRespOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateFileConfigWithDetailResp(request);
         }
     );
 

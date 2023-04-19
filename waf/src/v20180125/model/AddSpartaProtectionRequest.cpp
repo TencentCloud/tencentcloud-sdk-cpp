@@ -52,7 +52,10 @@ AddSpartaProtectionRequest::AddSpartaProtectionRequest() :
     m_ciphersHasBeenSet(false),
     m_cipherTemplateHasBeenSet(false),
     m_proxyReadTimeoutHasBeenSet(false),
-    m_proxySendTimeoutHasBeenSet(false)
+    m_proxySendTimeoutHasBeenSet(false),
+    m_sniTypeHasBeenSet(false),
+    m_sniHostHasBeenSet(false),
+    m_ipHeadersHasBeenSet(false)
 {
 }
 
@@ -328,6 +331,35 @@ string AddSpartaProtectionRequest::ToJsonString() const
         string key = "ProxySendTimeout";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_proxySendTimeout, allocator);
+    }
+
+    if (m_sniTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SniType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_sniType, allocator);
+    }
+
+    if (m_sniHostHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SniHost";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_sniHost.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_ipHeadersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "IpHeaders";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ipHeaders.begin(); itr != m_ipHeaders.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -816,6 +848,54 @@ void AddSpartaProtectionRequest::SetProxySendTimeout(const int64_t& _proxySendTi
 bool AddSpartaProtectionRequest::ProxySendTimeoutHasBeenSet() const
 {
     return m_proxySendTimeoutHasBeenSet;
+}
+
+int64_t AddSpartaProtectionRequest::GetSniType() const
+{
+    return m_sniType;
+}
+
+void AddSpartaProtectionRequest::SetSniType(const int64_t& _sniType)
+{
+    m_sniType = _sniType;
+    m_sniTypeHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::SniTypeHasBeenSet() const
+{
+    return m_sniTypeHasBeenSet;
+}
+
+string AddSpartaProtectionRequest::GetSniHost() const
+{
+    return m_sniHost;
+}
+
+void AddSpartaProtectionRequest::SetSniHost(const string& _sniHost)
+{
+    m_sniHost = _sniHost;
+    m_sniHostHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::SniHostHasBeenSet() const
+{
+    return m_sniHostHasBeenSet;
+}
+
+vector<string> AddSpartaProtectionRequest::GetIpHeaders() const
+{
+    return m_ipHeaders;
+}
+
+void AddSpartaProtectionRequest::SetIpHeaders(const vector<string>& _ipHeaders)
+{
+    m_ipHeaders = _ipHeaders;
+    m_ipHeadersHasBeenSet = true;
+}
+
+bool AddSpartaProtectionRequest::IpHeadersHasBeenSet() const
+{
+    return m_ipHeadersHasBeenSet;
 }
 
 

@@ -347,6 +347,50 @@ namespace TencentCloud
                      */
                     bool AlbTypeHasBeenSet() const;
 
+                    /**
+                     * 获取IsCdn=3时，需要填此参数，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return IpHeaders IsCdn=3时，需要填此参数，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> GetIpHeaders() const;
+
+                    /**
+                     * 设置IsCdn=3时，需要填此参数，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param IpHeaders IsCdn=3时，需要填此参数，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetIpHeaders(const std::vector<std::string>& _ipHeaders);
+
+                    /**
+                     * 判断参数 IpHeaders 是否已赋值
+                     * @return IpHeaders 是否已赋值
+                     */
+                    bool IpHeadersHasBeenSet() const;
+
+                    /**
+                     * 获取规则引擎类型， 1: menshen,   2:tiga
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EngineType 规则引擎类型， 1: menshen,   2:tiga
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetEngineType() const;
+
+                    /**
+                     * 设置规则引擎类型， 1: menshen,   2:tiga
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EngineType 规则引擎类型， 1: menshen,   2:tiga
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEngineType(const int64_t& _engineType);
+
+                    /**
+                     * 判断参数 EngineType 是否已赋值
+                     * @return EngineType 是否已赋值
+                     */
+                    bool EngineTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -447,6 +491,20 @@ namespace TencentCloud
                      */
                     std::string m_albType;
                     bool m_albTypeHasBeenSet;
+
+                    /**
+                     * IsCdn=3时，需要填此参数，表示自定义header
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<std::string> m_ipHeaders;
+                    bool m_ipHeadersHasBeenSet;
+
+                    /**
+                     * 规则引擎类型， 1: menshen,   2:tiga
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_engineType;
+                    bool m_engineTypeHasBeenSet;
 
                 };
             }

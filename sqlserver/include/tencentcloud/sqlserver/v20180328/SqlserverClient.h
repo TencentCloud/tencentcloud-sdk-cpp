@@ -97,6 +97,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstanceInterResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesAttributeRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeDBInstancesAttributeResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeDBsRequest.h>
@@ -143,6 +145,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/DescribeUploadBackupInfoResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeUploadIncrementalInfoRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeUploadIncrementalInfoResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeXEventsRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/DescribeXEventsResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeZonesRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/DescribeZonesResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/DisassociateSecurityGroupsRequest.h>
@@ -223,6 +227,8 @@
 #include <tencentcloud/sqlserver/v20180328/model/StartBackupMigrationResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/StartIncrementalMigrationRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/StartIncrementalMigrationResponse.h>
+#include <tencentcloud/sqlserver/v20180328/model/StartInstanceXEventRequest.h>
+#include <tencentcloud/sqlserver/v20180328/model/StartInstanceXEventResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/StartMigrationCheckRequest.h>
 #include <tencentcloud/sqlserver/v20180328/model/StartMigrationCheckResponse.h>
 #include <tencentcloud/sqlserver/v20180328/model/StopMigrationRequest.h>
@@ -356,6 +362,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeDBInstancesResponse> DescribeDBInstancesOutcome;
                 typedef std::future<DescribeDBInstancesOutcome> DescribeDBInstancesOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBInstancesRequest&, DescribeDBInstancesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeDBInstancesAttributeResponse> DescribeDBInstancesAttributeOutcome;
+                typedef std::future<DescribeDBInstancesAttributeOutcome> DescribeDBInstancesAttributeOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeDBInstancesAttributeRequest&, DescribeDBInstancesAttributeOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBInstancesAttributeAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
@@ -425,6 +434,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUploadIncrementalInfoResponse> DescribeUploadIncrementalInfoOutcome;
                 typedef std::future<DescribeUploadIncrementalInfoOutcome> DescribeUploadIncrementalInfoOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeUploadIncrementalInfoRequest&, DescribeUploadIncrementalInfoOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUploadIncrementalInfoAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeXEventsResponse> DescribeXEventsOutcome;
+                typedef std::future<DescribeXEventsOutcome> DescribeXEventsOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::DescribeXEventsRequest&, DescribeXEventsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeXEventsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeZonesResponse> DescribeZonesOutcome;
                 typedef std::future<DescribeZonesOutcome> DescribeZonesOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::DescribeZonesRequest&, DescribeZonesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeZonesAsyncHandler;
@@ -545,6 +557,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::StartIncrementalMigrationResponse> StartIncrementalMigrationOutcome;
                 typedef std::future<StartIncrementalMigrationOutcome> StartIncrementalMigrationOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::StartIncrementalMigrationRequest&, StartIncrementalMigrationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartIncrementalMigrationAsyncHandler;
+                typedef Outcome<Core::Error, Model::StartInstanceXEventResponse> StartInstanceXEventOutcome;
+                typedef std::future<StartInstanceXEventOutcome> StartInstanceXEventOutcomeCallable;
+                typedef std::function<void(const SqlserverClient*, const Model::StartInstanceXEventRequest&, StartInstanceXEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartInstanceXEventAsyncHandler;
                 typedef Outcome<Core::Error, Model::StartMigrationCheckResponse> StartMigrationCheckOutcome;
                 typedef std::future<StartMigrationCheckOutcome> StartMigrationCheckOutcomeCallable;
                 typedef std::function<void(const SqlserverClient*, const Model::StartMigrationCheckRequest&, StartMigrationCheckOutcome, const std::shared_ptr<const AsyncCallerContext>&)> StartMigrationCheckAsyncHandler;
@@ -894,6 +909,15 @@ namespace TencentCloud
                 DescribeDBInstancesOutcomeCallable DescribeDBInstancesCallable(const Model::DescribeDBInstancesRequest& request);
 
                 /**
+                 *本接口（DescribeDBInstancesAttribute）用于查询实例附属属性
+                 * @param req DescribeDBInstancesAttributeRequest
+                 * @return DescribeDBInstancesAttributeOutcome
+                 */
+                DescribeDBInstancesAttributeOutcome DescribeDBInstancesAttribute(const Model::DescribeDBInstancesAttributeRequest &request);
+                void DescribeDBInstancesAttributeAsync(const Model::DescribeDBInstancesAttributeRequest& request, const DescribeDBInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeDBInstancesAttributeOutcomeCallable DescribeDBInstancesAttributeCallable(const Model::DescribeDBInstancesAttributeRequest& request);
+
+                /**
                  *本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。
                  * @param req DescribeDBSecurityGroupsRequest
                  * @return DescribeDBSecurityGroupsOutcome
@@ -1099,6 +1123,15 @@ namespace TencentCloud
                 DescribeUploadIncrementalInfoOutcome DescribeUploadIncrementalInfo(const Model::DescribeUploadIncrementalInfoRequest &request);
                 void DescribeUploadIncrementalInfoAsync(const Model::DescribeUploadIncrementalInfoRequest& request, const DescribeUploadIncrementalInfoAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUploadIncrementalInfoOutcomeCallable DescribeUploadIncrementalInfoCallable(const Model::DescribeUploadIncrementalInfoRequest& request);
+
+                /**
+                 *本接口（DescribeXEvents）用于查询扩展事件列表。
+                 * @param req DescribeXEventsRequest
+                 * @return DescribeXEventsOutcome
+                 */
+                DescribeXEventsOutcome DescribeXEvents(const Model::DescribeXEventsRequest &request);
+                void DescribeXEventsAsync(const Model::DescribeXEventsRequest& request, const DescribeXEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeXEventsOutcomeCallable DescribeXEventsCallable(const Model::DescribeXEventsRequest& request);
 
                 /**
                  *本接口 (DescribeZones) 用于查询当前可售卖的可用区信息。
@@ -1462,6 +1495,15 @@ namespace TencentCloud
                 StartIncrementalMigrationOutcome StartIncrementalMigration(const Model::StartIncrementalMigrationRequest &request);
                 void StartIncrementalMigrationAsync(const Model::StartIncrementalMigrationRequest& request, const StartIncrementalMigrationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 StartIncrementalMigrationOutcomeCallable StartIncrementalMigrationCallable(const Model::StartIncrementalMigrationRequest& request);
+
+                /**
+                 *本接口（StartInstanceXEvent）用于开启、关闭扩展事件。
+                 * @param req StartInstanceXEventRequest
+                 * @return StartInstanceXEventOutcome
+                 */
+                StartInstanceXEventOutcome StartInstanceXEvent(const Model::StartInstanceXEventRequest &request);
+                void StartInstanceXEventAsync(const Model::StartInstanceXEventRequest& request, const StartInstanceXEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                StartInstanceXEventOutcomeCallable StartInstanceXEventCallable(const Model::StartInstanceXEventRequest& request);
 
                 /**
                  *本接口（StartMigrationCheck）的作用是启动一个迁移前的校验任务，适用于迁移源的类型为TencentDB for SQLServer 的迁移方式

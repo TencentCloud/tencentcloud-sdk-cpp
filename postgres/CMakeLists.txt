@@ -53,6 +53,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyBaseBackupExpireTimeResponse.h
   include/tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h
+  include/tencentcloud/postgres/v20170312/model/BackupDownloadRestriction.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeploymentRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupNetworkAccessRequest.h
   include/tencentcloud/postgres/v20170312/model/ZoneInfo.h
@@ -264,6 +265,7 @@ set(postgres_src
   src/v20170312/model/DescribeRegionsResponse.cpp
   src/v20170312/model/ModifyBaseBackupExpireTimeResponse.cpp
   src/v20170312/model/DBInstanceNetInfo.cpp
+  src/v20170312/model/BackupDownloadRestriction.cpp
   src/v20170312/model/ModifyDBInstanceDeploymentRequest.cpp
   src/v20170312/model/DeleteReadOnlyGroupNetworkAccessRequest.cpp
   src/v20170312/model/ZoneInfo.cpp

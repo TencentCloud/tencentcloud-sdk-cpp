@@ -22,9 +22,9 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
-#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 #include <tencentcloud/ess/v20201111/model/Agent.h>
 #include <tencentcloud/ess/v20201111/model/Filter.h>
+#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 
 
 namespace TencentCloud
@@ -63,24 +63,6 @@ namespace TencentCloud
                      * @return Operator 是否已赋值
                      */
                     bool OperatorHasBeenSet() const;
-
-                    /**
-                     * 获取企业组织相关信息，一般不用填
-                     * @return Organization 企业组织相关信息，一般不用填
-                     */
-                    OrganizationInfo GetOrganization() const;
-
-                    /**
-                     * 设置企业组织相关信息，一般不用填
-                     * @param Organization 企业组织相关信息，一般不用填
-                     */
-                    void SetOrganization(const OrganizationInfo& _organization);
-
-                    /**
-                     * 判断参数 Organization 是否已赋值
-                     * @return Organization 是否已赋值
-                     */
-                    bool OrganizationHasBeenSet() const;
 
                     /**
                      * 获取代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
@@ -207,24 +189,6 @@ ApplicationId为空，查询所有应用下的模板列表
                     bool IsChannelHasBeenSet() const;
 
                     /**
-                     * 获取暂未开放
-                     * @return GenerateSource 暂未开放
-                     */
-                    uint64_t GetGenerateSource() const;
-
-                    /**
-                     * 设置暂未开放
-                     * @param GenerateSource 暂未开放
-                     */
-                    void SetGenerateSource(const uint64_t& _generateSource);
-
-                    /**
-                     * 判断参数 GenerateSource 是否已赋值
-                     * @return GenerateSource 是否已赋值
-                     */
-                    bool GenerateSourceHasBeenSet() const;
-
-                    /**
                      * 获取查询内容：0-模板列表及详情（默认），1-仅模板列表
                      * @return ContentType 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
@@ -242,6 +206,42 @@ ApplicationId为空，查询所有应用下的模板列表
                      */
                     bool ContentTypeHasBeenSet() const;
 
+                    /**
+                     * 获取暂未开放
+                     * @return Organization 暂未开放
+                     */
+                    OrganizationInfo GetOrganization() const;
+
+                    /**
+                     * 设置暂未开放
+                     * @param Organization 暂未开放
+                     */
+                    void SetOrganization(const OrganizationInfo& _organization);
+
+                    /**
+                     * 判断参数 Organization 是否已赋值
+                     * @return Organization 是否已赋值
+                     */
+                    bool OrganizationHasBeenSet() const;
+
+                    /**
+                     * 获取暂未开放
+                     * @return GenerateSource 暂未开放
+                     */
+                    uint64_t GetGenerateSource() const;
+
+                    /**
+                     * 设置暂未开放
+                     * @param GenerateSource 暂未开放
+                     */
+                    void SetGenerateSource(const uint64_t& _generateSource);
+
+                    /**
+                     * 判断参数 GenerateSource 是否已赋值
+                     * @return GenerateSource 是否已赋值
+                     */
+                    bool GenerateSourceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -249,12 +249,6 @@ ApplicationId为空，查询所有应用下的模板列表
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
-
-                    /**
-                     * 企业组织相关信息，一般不用填
-                     */
-                    OrganizationInfo m_organization;
-                    bool m_organizationHasBeenSet;
 
                     /**
                      * 代理相关应用信息，如集团主企业代子企业操作的场景中ProxyOrganizationId必填
@@ -297,16 +291,22 @@ ApplicationId为空，查询所有应用下的模板列表
                     bool m_isChannelHasBeenSet;
 
                     /**
-                     * 暂未开放
-                     */
-                    uint64_t m_generateSource;
-                    bool m_generateSourceHasBeenSet;
-
-                    /**
                      * 查询内容：0-模板列表及详情（默认），1-仅模板列表
                      */
                     int64_t m_contentType;
                     bool m_contentTypeHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    OrganizationInfo m_organization;
+                    bool m_organizationHasBeenSet;
+
+                    /**
+                     * 暂未开放
+                     */
+                    uint64_t m_generateSource;
+                    bool m_generateSourceHasBeenSet;
 
                 };
             }

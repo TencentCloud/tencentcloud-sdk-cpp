@@ -29,7 +29,8 @@ ListTaskJobLogDetailRequest::ListTaskJobLogDetailRequest() :
     m_limitHasBeenSet(false),
     m_contextHasBeenSet(false),
     m_ascHasBeenSet(false),
-    m_filtersHasBeenSet(false)
+    m_filtersHasBeenSet(false),
+    m_batchIdHasBeenSet(false)
 {
 }
 
@@ -101,6 +102,14 @@ string ListTaskJobLogDetailRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_batchIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BatchId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_batchId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -221,6 +230,22 @@ void ListTaskJobLogDetailRequest::SetFilters(const vector<Filter>& _filters)
 bool ListTaskJobLogDetailRequest::FiltersHasBeenSet() const
 {
     return m_filtersHasBeenSet;
+}
+
+string ListTaskJobLogDetailRequest::GetBatchId() const
+{
+    return m_batchId;
+}
+
+void ListTaskJobLogDetailRequest::SetBatchId(const string& _batchId)
+{
+    m_batchId = _batchId;
+    m_batchIdHasBeenSet = true;
+}
+
+bool ListTaskJobLogDetailRequest::BatchIdHasBeenSet() const
+{
+    return m_batchIdHasBeenSet;
 }
 
 

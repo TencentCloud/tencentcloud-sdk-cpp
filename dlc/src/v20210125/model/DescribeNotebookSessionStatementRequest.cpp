@@ -24,7 +24,8 @@ using namespace std;
 
 DescribeNotebookSessionStatementRequest::DescribeNotebookSessionStatementRequest() :
     m_sessionIdHasBeenSet(false),
-    m_statementIdHasBeenSet(false)
+    m_statementIdHasBeenSet(false),
+    m_taskIdHasBeenSet(false)
 {
 }
 
@@ -49,6 +50,14 @@ string DescribeNotebookSessionStatementRequest::ToJsonString() const
         string key = "StatementId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_statementId.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_taskIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "TaskId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_taskId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -89,6 +98,22 @@ void DescribeNotebookSessionStatementRequest::SetStatementId(const string& _stat
 bool DescribeNotebookSessionStatementRequest::StatementIdHasBeenSet() const
 {
     return m_statementIdHasBeenSet;
+}
+
+string DescribeNotebookSessionStatementRequest::GetTaskId() const
+{
+    return m_taskId;
+}
+
+void DescribeNotebookSessionStatementRequest::SetTaskId(const string& _taskId)
+{
+    m_taskId = _taskId;
+    m_taskIdHasBeenSet = true;
+}
+
+bool DescribeNotebookSessionStatementRequest::TaskIdHasBeenSet() const
+{
+    return m_taskIdHasBeenSet;
 }
 
 

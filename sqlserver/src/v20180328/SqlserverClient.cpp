@@ -1631,6 +1631,49 @@ SqlserverClient::DescribeDBInstancesOutcomeCallable SqlserverClient::DescribeDBI
     return task->get_future();
 }
 
+SqlserverClient::DescribeDBInstancesAttributeOutcome SqlserverClient::DescribeDBInstancesAttribute(const DescribeDBInstancesAttributeRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeDBInstancesAttribute");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeDBInstancesAttributeResponse rsp = DescribeDBInstancesAttributeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeDBInstancesAttributeOutcome(rsp);
+        else
+            return DescribeDBInstancesAttributeOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeDBInstancesAttributeOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeDBInstancesAttributeAsync(const DescribeDBInstancesAttributeRequest& request, const DescribeDBInstancesAttributeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeDBInstancesAttribute(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeDBInstancesAttributeOutcomeCallable SqlserverClient::DescribeDBInstancesAttributeCallable(const DescribeDBInstancesAttributeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeDBInstancesAttributeOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeDBInstancesAttribute(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SqlserverClient::DescribeDBSecurityGroupsOutcome SqlserverClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSecurityGroups");
@@ -2613,6 +2656,49 @@ SqlserverClient::DescribeUploadIncrementalInfoOutcomeCallable SqlserverClient::D
         [this, request]()
         {
             return this->DescribeUploadIncrementalInfo(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::DescribeXEventsOutcome SqlserverClient::DescribeXEvents(const DescribeXEventsRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeXEvents");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeXEventsResponse rsp = DescribeXEventsResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeXEventsOutcome(rsp);
+        else
+            return DescribeXEventsOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeXEventsOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::DescribeXEventsAsync(const DescribeXEventsRequest& request, const DescribeXEventsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeXEvents(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::DescribeXEventsOutcomeCallable SqlserverClient::DescribeXEventsCallable(const DescribeXEventsRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeXEventsOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeXEvents(request);
         }
     );
 
@@ -4333,6 +4419,49 @@ SqlserverClient::StartIncrementalMigrationOutcomeCallable SqlserverClient::Start
         [this, request]()
         {
             return this->StartIncrementalMigration(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+SqlserverClient::StartInstanceXEventOutcome SqlserverClient::StartInstanceXEvent(const StartInstanceXEventRequest &request)
+{
+    auto outcome = MakeRequest(request, "StartInstanceXEvent");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        StartInstanceXEventResponse rsp = StartInstanceXEventResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return StartInstanceXEventOutcome(rsp);
+        else
+            return StartInstanceXEventOutcome(o.GetError());
+    }
+    else
+    {
+        return StartInstanceXEventOutcome(outcome.GetError());
+    }
+}
+
+void SqlserverClient::StartInstanceXEventAsync(const StartInstanceXEventRequest& request, const StartInstanceXEventAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->StartInstanceXEvent(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SqlserverClient::StartInstanceXEventOutcomeCallable SqlserverClient::StartInstanceXEventCallable(const StartInstanceXEventRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<StartInstanceXEventOutcome()>>(
+        [this, request]()
+        {
+            return this->StartInstanceXEvent(request);
         }
     );
 

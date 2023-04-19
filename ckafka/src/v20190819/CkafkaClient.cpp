@@ -3222,6 +3222,49 @@ CkafkaClient::ModifyTopicAttributesOutcomeCallable CkafkaClient::ModifyTopicAttr
     return task->get_future();
 }
 
+CkafkaClient::RenewCkafkaInstanceOutcome CkafkaClient::RenewCkafkaInstance(const RenewCkafkaInstanceRequest &request)
+{
+    auto outcome = MakeRequest(request, "RenewCkafkaInstance");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        RenewCkafkaInstanceResponse rsp = RenewCkafkaInstanceResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return RenewCkafkaInstanceOutcome(rsp);
+        else
+            return RenewCkafkaInstanceOutcome(o.GetError());
+    }
+    else
+    {
+        return RenewCkafkaInstanceOutcome(outcome.GetError());
+    }
+}
+
+void CkafkaClient::RenewCkafkaInstanceAsync(const RenewCkafkaInstanceRequest& request, const RenewCkafkaInstanceAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->RenewCkafkaInstance(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CkafkaClient::RenewCkafkaInstanceOutcomeCallable CkafkaClient::RenewCkafkaInstanceCallable(const RenewCkafkaInstanceRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<RenewCkafkaInstanceOutcome()>>(
+        [this, request]()
+        {
+            return this->RenewCkafkaInstance(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CkafkaClient::SendMessageOutcome CkafkaClient::SendMessage(const SendMessageRequest &request)
 {
     auto outcome = MakeRequest(request, "SendMessage");

@@ -26,7 +26,8 @@ DescribeBackupDownloadURLRequest::DescribeBackupDownloadURLRequest() :
     m_dBInstanceIdHasBeenSet(false),
     m_backupTypeHasBeenSet(false),
     m_backupIdHasBeenSet(false),
-    m_uRLExpireTimeHasBeenSet(false)
+    m_uRLExpireTimeHasBeenSet(false),
+    m_backupDownloadRestrictionHasBeenSet(false)
 {
 }
 
@@ -67,6 +68,15 @@ string DescribeBackupDownloadURLRequest::ToJsonString() const
         string key = "URLExpireTime";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_uRLExpireTime, allocator);
+    }
+
+    if (m_backupDownloadRestrictionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BackupDownloadRestriction";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_backupDownloadRestriction.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -139,6 +149,22 @@ void DescribeBackupDownloadURLRequest::SetURLExpireTime(const uint64_t& _uRLExpi
 bool DescribeBackupDownloadURLRequest::URLExpireTimeHasBeenSet() const
 {
     return m_uRLExpireTimeHasBeenSet;
+}
+
+BackupDownloadRestriction DescribeBackupDownloadURLRequest::GetBackupDownloadRestriction() const
+{
+    return m_backupDownloadRestriction;
+}
+
+void DescribeBackupDownloadURLRequest::SetBackupDownloadRestriction(const BackupDownloadRestriction& _backupDownloadRestriction)
+{
+    m_backupDownloadRestriction = _backupDownloadRestriction;
+    m_backupDownloadRestrictionHasBeenSet = true;
+}
+
+bool DescribeBackupDownloadURLRequest::BackupDownloadRestrictionHasBeenSet() const
+{
+    return m_backupDownloadRestrictionHasBeenSet;
 }
 
 

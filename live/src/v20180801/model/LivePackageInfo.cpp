@@ -28,7 +28,9 @@ LivePackageInfo::LivePackageInfo() :
     m_buyTimeHasBeenSet(false),
     m_expireTimeHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_willRenewHasBeenSet(false),
+    m_renewalResultHasBeenSet(false)
 {
 }
 
@@ -117,6 +119,26 @@ CoreInternalOutcome LivePackageInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("WillRenew") && !value["WillRenew"].IsNull())
+    {
+        if (!value["WillRenew"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.WillRenew` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_willRenew = value["WillRenew"].GetInt64();
+        m_willRenewHasBeenSet = true;
+    }
+
+    if (value.HasMember("RenewalResult") && !value["RenewalResult"].IsNull())
+    {
+        if (!value["RenewalResult"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `LivePackageInfo.RenewalResult` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_renewalResult = value["RenewalResult"].GetInt64();
+        m_renewalResultHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -186,6 +208,22 @@ void LivePackageInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_willRenewHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WillRenew";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_willRenew, allocator);
+    }
+
+    if (m_renewalResultHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RenewalResult";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_renewalResult, allocator);
     }
 
 }
@@ -317,5 +355,37 @@ void LivePackageInfo::SetStatus(const int64_t& _status)
 bool LivePackageInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+int64_t LivePackageInfo::GetWillRenew() const
+{
+    return m_willRenew;
+}
+
+void LivePackageInfo::SetWillRenew(const int64_t& _willRenew)
+{
+    m_willRenew = _willRenew;
+    m_willRenewHasBeenSet = true;
+}
+
+bool LivePackageInfo::WillRenewHasBeenSet() const
+{
+    return m_willRenewHasBeenSet;
+}
+
+int64_t LivePackageInfo::GetRenewalResult() const
+{
+    return m_renewalResult;
+}
+
+void LivePackageInfo::SetRenewalResult(const int64_t& _renewalResult)
+{
+    m_renewalResult = _renewalResult;
+    m_renewalResultHasBeenSet = true;
+}
+
+bool LivePackageInfo::RenewalResultHasBeenSet() const
+{
+    return m_renewalResultHasBeenSet;
 }
 

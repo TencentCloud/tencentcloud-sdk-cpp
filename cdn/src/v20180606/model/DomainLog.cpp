@@ -25,7 +25,8 @@ DomainLog::DomainLog() :
     m_endTimeHasBeenSet(false),
     m_logPathHasBeenSet(false),
     m_areaHasBeenSet(false),
-    m_logNameHasBeenSet(false)
+    m_logNameHasBeenSet(false),
+    m_fileSizeHasBeenSet(false)
 {
 }
 
@@ -84,6 +85,16 @@ CoreInternalOutcome DomainLog::Deserialize(const rapidjson::Value &value)
         m_logNameHasBeenSet = true;
     }
 
+    if (value.HasMember("FileSize") && !value["FileSize"].IsNull())
+    {
+        if (!value["FileSize"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainLog.FileSize` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileSize = value["FileSize"].GetInt64();
+        m_fileSizeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -129,6 +140,14 @@ void DomainLog::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "LogName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_logName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileSizeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileSize";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_fileSize, allocator);
     }
 
 }
@@ -212,5 +231,21 @@ void DomainLog::SetLogName(const string& _logName)
 bool DomainLog::LogNameHasBeenSet() const
 {
     return m_logNameHasBeenSet;
+}
+
+int64_t DomainLog::GetFileSize() const
+{
+    return m_fileSize;
+}
+
+void DomainLog::SetFileSize(const int64_t& _fileSize)
+{
+    m_fileSize = _fileSize;
+    m_fileSizeHasBeenSet = true;
+}
+
+bool DomainLog::FileSizeHasBeenSet() const
+{
+    return m_fileSizeHasBeenSet;
 }
 

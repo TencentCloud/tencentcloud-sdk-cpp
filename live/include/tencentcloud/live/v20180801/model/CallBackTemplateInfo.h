@@ -248,6 +248,28 @@ namespace TencentCloud
                      */
                     bool PushExceptionNotifyUrlHasBeenSet() const;
 
+                    /**
+                     * 获取音频审核回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return AudioAuditNotifyUrl 音频审核回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetAudioAuditNotifyUrl() const;
+
+                    /**
+                     * 设置音频审核回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param AudioAuditNotifyUrl 音频审核回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetAudioAuditNotifyUrl(const std::string& _audioAuditNotifyUrl);
+
+                    /**
+                     * 判断参数 AudioAuditNotifyUrl 是否已赋值
+                     * @return AudioAuditNotifyUrl 是否已赋值
+                     */
+                    bool AudioAuditNotifyUrlHasBeenSet() const;
+
                 private:
 
                     /**
@@ -316,6 +338,13 @@ namespace TencentCloud
                      */
                     std::string m_pushExceptionNotifyUrl;
                     bool m_pushExceptionNotifyUrlHasBeenSet;
+
+                    /**
+                     * 音频审核回调 URL。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_audioAuditNotifyUrl;
+                    bool m_audioAuditNotifyUrlHasBeenSet;
 
                 };
             }

@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool RecipientIdHasBeenSet() const;
 
                     /**
-                     * 获取参与者类型（ENTERPRISE/INDIVIDUAL）
-                     * @return RecipientType 参与者类型（ENTERPRISE/INDIVIDUAL）
+                     * 获取参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * @return RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
                      */
                     std::string GetRecipientType() const;
 
                     /**
-                     * 设置参与者类型（ENTERPRISE/INDIVIDUAL）
-                     * @param RecipientType 参与者类型（ENTERPRISE/INDIVIDUAL）
+                     * 设置参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
+                     * @param RecipientType 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
                      */
                     void SetRecipientType(const std::string& _recipientType);
 
@@ -245,14 +245,14 @@ namespace TencentCloud
                     bool UserIdHasBeenSet() const;
 
                     /**
-                     * 获取发送方式（EMAIL/MOBILE）
-                     * @return DeliveryMethod 发送方式（EMAIL/MOBILE）
+                     * 获取发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * @return DeliveryMethod 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
                      */
                     std::string GetDeliveryMethod() const;
 
                     /**
-                     * 设置发送方式（EMAIL/MOBILE）
-                     * @param DeliveryMethod 发送方式（EMAIL/MOBILE）
+                     * 设置发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
+                     * @param DeliveryMethod 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
                      */
                     void SetDeliveryMethod(const std::string& _deliveryMethod);
 
@@ -289,7 +289,7 @@ namespace TencentCloud
                     bool m_recipientIdHasBeenSet;
 
                     /**
-                     * 参与者类型（ENTERPRISE/INDIVIDUAL）
+                     * 参与者类型。默认为空。ENTERPRISE-企业；INDIVIDUAL-个人；PROMOTER-发起方
                      */
                     std::string m_recipientType;
                     bool m_recipientTypeHasBeenSet;
@@ -349,7 +349,7 @@ namespace TencentCloud
                     bool m_userIdHasBeenSet;
 
                     /**
-                     * 发送方式（EMAIL/MOBILE）
+                     * 发送方式。默认为EMAIL。EMAIL-邮件；MOBILE-手机短信；WECHAT-微信通知
                      */
                     std::string m_deliveryMethod;
                     bool m_deliveryMethodHasBeenSet;

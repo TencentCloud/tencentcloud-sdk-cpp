@@ -56,7 +56,8 @@ SparkJobInfo::SparkJobInfo() :
     m_taskNumHasBeenSet(false),
     m_dataEngineStatusHasBeenSet(false),
     m_jobExecutorMaxNumbersHasBeenSet(false),
-    m_sparkImageVersionHasBeenSet(false)
+    m_sparkImageVersionHasBeenSet(false),
+    m_sessionIdHasBeenSet(false)
 {
 }
 
@@ -432,6 +433,16 @@ CoreInternalOutcome SparkJobInfo::Deserialize(const rapidjson::Value &value)
         m_sparkImageVersionHasBeenSet = true;
     }
 
+    if (value.HasMember("SessionId") && !value["SessionId"].IsNull())
+    {
+        if (!value["SessionId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `SparkJobInfo.SessionId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sessionId = string(value["SessionId"].GetString());
+        m_sessionIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -726,6 +737,14 @@ void SparkJobInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "SparkImageVersion";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_sparkImageVersion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sessionIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SessionId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sessionId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1305,5 +1324,21 @@ void SparkJobInfo::SetSparkImageVersion(const string& _sparkImageVersion)
 bool SparkJobInfo::SparkImageVersionHasBeenSet() const
 {
     return m_sparkImageVersionHasBeenSet;
+}
+
+string SparkJobInfo::GetSessionId() const
+{
+    return m_sessionId;
+}
+
+void SparkJobInfo::SetSessionId(const string& _sessionId)
+{
+    m_sessionId = _sessionId;
+    m_sessionIdHasBeenSet = true;
+}
+
+bool SparkJobInfo::SessionIdHasBeenSet() const
+{
+    return m_sessionIdHasBeenSet;
 }
 
