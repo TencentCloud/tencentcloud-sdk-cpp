@@ -97,14 +97,14 @@ namespace TencentCloud
                     bool EditionHasBeenSet() const;
 
                     /**
-                     * 获取是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，佛祖饿为空
-                     * @return SourceType 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，佛祖饿为空
+                     * 获取是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
+                     * @return SourceType 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
                      */
                     std::string GetSourceType() const;
 
                     /**
-                     * 设置是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，佛祖饿为空
-                     * @param SourceType 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，佛祖饿为空
+                     * 设置是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
+                     * @param SourceType 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
                      */
                     void SetSourceType(const std::string& _sourceType);
 
@@ -135,7 +135,7 @@ namespace TencentCloud
                     bool m_editionHasBeenSet;
 
                     /**
-                     * 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，佛祖饿为空
+                     * 是否为多域名黑白名单，当为多域名的黑白名单时，取值为batch，否则为空
                      */
                     std::string m_sourceType;
                     bool m_sourceTypeHasBeenSet;

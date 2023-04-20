@@ -278,6 +278,42 @@ namespace TencentCloud
                      */
                     bool SegmentRateHasBeenSet() const;
 
+                    /**
+                     * 获取控制合成音频的情感，仅支持情绪音色使用。取值: peaceful、exciting、thrill、neutral、sad、angry、cute、fear、poetry、happy、regretful、exciting_strong、aojiao、sajiao、story、raido、call、jieshuo等等；
+                     * @return EmotionCategory 控制合成音频的情感，仅支持情绪音色使用。取值: peaceful、exciting、thrill、neutral、sad、angry、cute、fear、poetry、happy、regretful、exciting_strong、aojiao、sajiao、story、raido、call、jieshuo等等；
+                     */
+                    std::string GetEmotionCategory() const;
+
+                    /**
+                     * 设置控制合成音频的情感，仅支持情绪音色使用。取值: peaceful、exciting、thrill、neutral、sad、angry、cute、fear、poetry、happy、regretful、exciting_strong、aojiao、sajiao、story、raido、call、jieshuo等等；
+                     * @param EmotionCategory 控制合成音频的情感，仅支持情绪音色使用。取值: peaceful、exciting、thrill、neutral、sad、angry、cute、fear、poetry、happy、regretful、exciting_strong、aojiao、sajiao、story、raido、call、jieshuo等等；
+                     */
+                    void SetEmotionCategory(const std::string& _emotionCategory);
+
+                    /**
+                     * 判断参数 EmotionCategory 是否已赋值
+                     * @return EmotionCategory 是否已赋值
+                     */
+                    bool EmotionCategoryHasBeenSet() const;
+
+                    /**
+                     * 获取控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     * @return EmotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     */
+                    int64_t GetEmotionIntensity() const;
+
+                    /**
+                     * 设置控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     * @param EmotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     */
+                    void SetEmotionIntensity(const int64_t& _emotionIntensity);
+
+                    /**
+                     * 判断参数 EmotionIntensity 是否已赋值
+                     * @return EmotionIntensity 是否已赋值
+                     */
+                    bool EmotionIntensityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -356,6 +392,18 @@ namespace TencentCloud
                      */
                     uint64_t m_segmentRate;
                     bool m_segmentRateHasBeenSet;
+
+                    /**
+                     * 控制合成音频的情感，仅支持情绪音色使用。取值: peaceful、exciting、thrill、neutral、sad、angry、cute、fear、poetry、happy、regretful、exciting_strong、aojiao、sajiao、story、raido、call、jieshuo等等；
+                     */
+                    std::string m_emotionCategory;
+                    bool m_emotionCategoryHasBeenSet;
+
+                    /**
+                     * 控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     */
+                    int64_t m_emotionIntensity;
+                    bool m_emotionIntensityHasBeenSet;
 
                 };
             }

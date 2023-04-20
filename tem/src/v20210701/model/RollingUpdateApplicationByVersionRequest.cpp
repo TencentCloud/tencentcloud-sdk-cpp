@@ -32,7 +32,8 @@ RollingUpdateApplicationByVersionRequest::RollingUpdateApplicationByVersionReque
     m_totalBatchCountHasBeenSet(false),
     m_batchIntervalHasBeenSet(false),
     m_betaBatchNumHasBeenSet(false),
-    m_minAvailableHasBeenSet(false)
+    m_minAvailableHasBeenSet(false),
+    m_forceHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,14 @@ string RollingUpdateApplicationByVersionRequest::ToJsonString() const
         string key = "MinAvailable";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_minAvailable, allocator);
+    }
+
+    if (m_forceHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Force";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_force, allocator);
     }
 
 
@@ -289,6 +298,22 @@ void RollingUpdateApplicationByVersionRequest::SetMinAvailable(const int64_t& _m
 bool RollingUpdateApplicationByVersionRequest::MinAvailableHasBeenSet() const
 {
     return m_minAvailableHasBeenSet;
+}
+
+bool RollingUpdateApplicationByVersionRequest::GetForce() const
+{
+    return m_force;
+}
+
+void RollingUpdateApplicationByVersionRequest::SetForce(const bool& _force)
+{
+    m_force = _force;
+    m_forceHasBeenSet = true;
+}
+
+bool RollingUpdateApplicationByVersionRequest::ForceHasBeenSet() const
+{
+    return m_forceHasBeenSet;
 }
 
 

@@ -96,6 +96,44 @@ namespace TencentCloud
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取是否执行强制关机以制作镜像。
+取值范围：
+True：表示关机之后制作镜像
+False：表示开机状态制作镜像
+默认取值：True
+开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     * @return ForcePowerOff 是否执行强制关机以制作镜像。
+取值范围：
+True：表示关机之后制作镜像
+False：表示开机状态制作镜像
+默认取值：True
+开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     */
+                    bool GetForcePowerOff() const;
+
+                    /**
+                     * 设置是否执行强制关机以制作镜像。
+取值范围：
+True：表示关机之后制作镜像
+False：表示开机状态制作镜像
+默认取值：True
+开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     * @param ForcePowerOff 是否执行强制关机以制作镜像。
+取值范围：
+True：表示关机之后制作镜像
+False：表示开机状态制作镜像
+默认取值：True
+开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     */
+                    void SetForcePowerOff(const bool& _forcePowerOff);
+
+                    /**
+                     * 判断参数 ForcePowerOff 是否已赋值
+                     * @return ForcePowerOff 是否已赋值
+                     */
+                    bool ForcePowerOffHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +153,17 @@ namespace TencentCloud
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 是否执行强制关机以制作镜像。
+取值范围：
+True：表示关机之后制作镜像
+False：表示开机状态制作镜像
+默认取值：True
+开机状态制作镜像，可能导致部分数据未备份，影响数据安全。
+                     */
+                    bool m_forcePowerOff;
+                    bool m_forcePowerOffHasBeenSet;
 
                 };
             }

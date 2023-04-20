@@ -1103,7 +1103,7 @@ namespace TencentCloud
                 CreateClusterNodePoolOutcomeCallable CreateClusterNodePoolCallable(const Model::CreateClusterNodePoolRequest& request);
 
                 /**
-                 *在应用市场中给集群创建应用
+                 *集群创建应用
                  * @param req CreateClusterReleaseRequest
                  * @return CreateClusterReleaseOutcome
                  */

@@ -83,6 +83,49 @@ WafClient::AddCustomRuleOutcomeCallable WafClient::AddCustomRuleCallable(const A
     return task->get_future();
 }
 
+WafClient::AddCustomWhiteRuleOutcome WafClient::AddCustomWhiteRule(const AddCustomWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "AddCustomWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        AddCustomWhiteRuleResponse rsp = AddCustomWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return AddCustomWhiteRuleOutcome(rsp);
+        else
+            return AddCustomWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return AddCustomWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::AddCustomWhiteRuleAsync(const AddCustomWhiteRuleRequest& request, const AddCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->AddCustomWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::AddCustomWhiteRuleOutcomeCallable WafClient::AddCustomWhiteRuleCallable(const AddCustomWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<AddCustomWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->AddCustomWhiteRule(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 WafClient::AddDomainWhiteRuleOutcome WafClient::AddDomainWhiteRule(const AddDomainWhiteRuleRequest &request)
 {
     auto outcome = MakeRequest(request, "AddDomainWhiteRule");
@@ -334,6 +377,49 @@ WafClient::DeleteAttackDownloadRecordOutcomeCallable WafClient::DeleteAttackDown
         [this, request]()
         {
             return this->DeleteAttackDownloadRecord(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::DeleteCustomWhiteRuleOutcome WafClient::DeleteCustomWhiteRule(const DeleteCustomWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteCustomWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteCustomWhiteRuleResponse rsp = DeleteCustomWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteCustomWhiteRuleOutcome(rsp);
+        else
+            return DeleteCustomWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteCustomWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::DeleteCustomWhiteRuleAsync(const DeleteCustomWhiteRuleRequest& request, const DeleteCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteCustomWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::DeleteCustomWhiteRuleOutcomeCallable WafClient::DeleteCustomWhiteRuleCallable(const DeleteCustomWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteCustomWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteCustomWhiteRule(request);
         }
     );
 
@@ -1667,6 +1753,49 @@ WafClient::ModifyCustomRuleStatusOutcomeCallable WafClient::ModifyCustomRuleStat
         [this, request]()
         {
             return this->ModifyCustomRuleStatus(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+WafClient::ModifyCustomWhiteRuleOutcome WafClient::ModifyCustomWhiteRule(const ModifyCustomWhiteRuleRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyCustomWhiteRule");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyCustomWhiteRuleResponse rsp = ModifyCustomWhiteRuleResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyCustomWhiteRuleOutcome(rsp);
+        else
+            return ModifyCustomWhiteRuleOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyCustomWhiteRuleOutcome(outcome.GetError());
+    }
+}
+
+void WafClient::ModifyCustomWhiteRuleAsync(const ModifyCustomWhiteRuleRequest& request, const ModifyCustomWhiteRuleAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyCustomWhiteRule(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+WafClient::ModifyCustomWhiteRuleOutcomeCallable WafClient::ModifyCustomWhiteRuleCallable(const ModifyCustomWhiteRuleRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyCustomWhiteRuleOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyCustomWhiteRule(request);
         }
     );
 

@@ -14,8 +14,8 @@
  * limitations under the License.
  */
 
-#ifndef TENCENTCLOUD_GME_V20180711_MODEL_REALTIMESPEECHCONF_H_
-#define TENCENTCLOUD_GME_V20180711_MODEL_REALTIMESPEECHCONF_H_
+#ifndef TENCENTCLOUD_GME_V20180711_MODEL_ASRCONF_H_
+#define TENCENTCLOUD_GME_V20180711_MODEL_ASRCONF_H_
 
 #include <string>
 #include <vector>
@@ -35,26 +35,26 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实时语音配置数据
+                * 语音转文本配置数据
                 */
-                class RealtimeSpeechConf : public AbstractModel
+                class AsrConf : public AbstractModel
                 {
                 public:
-                    RealtimeSpeechConf();
-                    ~RealtimeSpeechConf() = default;
+                    AsrConf();
+                    ~AsrConf() = default;
                     void ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const;
                     CoreInternalOutcome Deserialize(const rapidjson::Value &value);
 
 
                     /**
-                     * 获取实时语音服务开关，取值：open/close
-                     * @return Status 实时语音服务开关，取值：open/close
+                     * 获取语音转文本服务开关，取值：open/close
+                     * @return Status 语音转文本服务开关，取值：open/close
                      */
                     std::string GetStatus() const;
 
                     /**
-                     * 设置实时语音服务开关，取值：open/close
-                     * @param Status 实时语音服务开关，取值：open/close
+                     * 设置语音转文本服务开关，取值：open/close
+                     * @param Status 语音转文本服务开关，取值：open/close
                      */
                     void SetStatus(const std::string& _status);
 
@@ -64,37 +64,13 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
-                    /**
-                     * 获取实时语音音质类型，取值：high-高音质 ordinary-普通音质
-                     * @return Quality 实时语音音质类型，取值：high-高音质 ordinary-普通音质
-                     */
-                    std::string GetQuality() const;
-
-                    /**
-                     * 设置实时语音音质类型，取值：high-高音质 ordinary-普通音质
-                     * @param Quality 实时语音音质类型，取值：high-高音质 ordinary-普通音质
-                     */
-                    void SetQuality(const std::string& _quality);
-
-                    /**
-                     * 判断参数 Quality 是否已赋值
-                     * @return Quality 是否已赋值
-                     */
-                    bool QualityHasBeenSet() const;
-
                 private:
 
                     /**
-                     * 实时语音服务开关，取值：open/close
+                     * 语音转文本服务开关，取值：open/close
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
-
-                    /**
-                     * 实时语音音质类型，取值：high-高音质 ordinary-普通音质
-                     */
-                    std::string m_quality;
-                    bool m_qualityHasBeenSet;
 
                 };
             }
@@ -102,4 +78,4 @@ namespace TencentCloud
     }
 }
 
-#endif // !TENCENTCLOUD_GME_V20180711_MODEL_REALTIMESPEECHCONF_H_
+#endif // !TENCENTCLOUD_GME_V20180711_MODEL_ASRCONF_H_

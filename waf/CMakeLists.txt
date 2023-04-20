@@ -29,6 +29,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeFlowTrendRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyStatusRequest.h
+  include/tencentcloud/waf/v20180125/model/AddCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/AccessLogItems.h
   include/tencentcloud/waf/v20180125/model/DescribePeakValueResponse.h
@@ -37,6 +38,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/LoadBalancerPackageNew.h
   include/tencentcloud/waf/v20180125/model/DescribeInstancesResponse.h
   include/tencentcloud/waf/v20180125/model/ModifyDomainWhiteRuleRequest.h
+  include/tencentcloud/waf/v20180125/model/VipInfo.h
   include/tencentcloud/waf/v20180125/model/AccessRuleTagInfo.h
   include/tencentcloud/waf/v20180125/model/DescribePeakPointsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessIndexRequest.h
@@ -45,6 +47,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteSessionRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafAutoDenyRulesRequest.h
   include/tencentcloud/waf/v20180125/model/SearchAttackLogRequest.h
+  include/tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/AddCustomRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeFlowTrendResponse.h
   include/tencentcloud/waf/v20180125/model/GetAttackDownloadRecordsRequest.h
@@ -55,6 +58,8 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DescribeAccessExportsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeCustomWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsResponse.h
+  include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleRequest.h
+  include/tencentcloud/waf/v20180125/model/DeleteCustomWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyWafAutoDenyStatusRequest.h
   include/tencentcloud/waf/v20180125/model/ModifyAccessPeriodResponse.h
   include/tencentcloud/waf/v20180125/model/DescribeVipInfoRequest.h
@@ -74,6 +79,7 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/AddSpartaProtectionRequest.h
   include/tencentcloud/waf/v20180125/model/PeakPointsItem.h
   include/tencentcloud/waf/v20180125/model/PostAttackDownloadTaskRequest.h
+  include/tencentcloud/waf/v20180125/model/ModifyCustomWhiteRuleResponse.h
   include/tencentcloud/waf/v20180125/model/DescribePolicyStatusRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeAccessFastAnalysisRequest.h
   include/tencentcloud/waf/v20180125/model/DeleteIpAccessControlRequest.h
@@ -135,9 +141,9 @@ set(waf_public_header_model
   include/tencentcloud/waf/v20180125/model/DeleteAccessExportRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeUserClbWafRegionsRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeDomainWhiteRulesResponse.h
-  include/tencentcloud/waf/v20180125/model/VipInfo.h
-  include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h
   include/tencentcloud/waf/v20180125/model/DescribeWafThreatenIntelligenceResponse.h
+  include/tencentcloud/waf/v20180125/model/DeleteAttackDownloadRecordRequest.h
+  include/tencentcloud/waf/v20180125/model/AddCustomWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/AddDomainWhiteRuleRequest.h
   include/tencentcloud/waf/v20180125/model/UpsertIpAccessControlResponse.h
   include/tencentcloud/waf/v20180125/model/IpHitItem.h
@@ -169,6 +175,7 @@ set(waf_src
   src/v20180125/model/DeleteAttackDownloadRecordResponse.cpp
   src/v20180125/model/DescribeFlowTrendRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyStatusRequest.cpp
+  src/v20180125/model/AddCustomWhiteRuleResponse.cpp
   src/v20180125/model/DescribeCustomWhiteRuleResponse.cpp
   src/v20180125/model/AccessLogItems.cpp
   src/v20180125/model/DescribePeakValueResponse.cpp
@@ -177,6 +184,7 @@ set(waf_src
   src/v20180125/model/LoadBalancerPackageNew.cpp
   src/v20180125/model/DescribeInstancesResponse.cpp
   src/v20180125/model/ModifyDomainWhiteRuleRequest.cpp
+  src/v20180125/model/VipInfo.cpp
   src/v20180125/model/AccessRuleTagInfo.cpp
   src/v20180125/model/DescribePeakPointsRequest.cpp
   src/v20180125/model/DescribeAccessIndexRequest.cpp
@@ -185,6 +193,7 @@ set(waf_src
   src/v20180125/model/DeleteSessionRequest.cpp
   src/v20180125/model/DescribeWafAutoDenyRulesRequest.cpp
   src/v20180125/model/SearchAttackLogRequest.cpp
+  src/v20180125/model/DeleteCustomWhiteRuleResponse.cpp
   src/v20180125/model/AddCustomRuleResponse.cpp
   src/v20180125/model/DescribeFlowTrendResponse.cpp
   src/v20180125/model/GetAttackDownloadRecordsRequest.cpp
@@ -195,6 +204,8 @@ set(waf_src
   src/v20180125/model/DescribeAccessExportsRequest.cpp
   src/v20180125/model/DescribeCustomWhiteRuleRequest.cpp
   src/v20180125/model/DescribeUserClbWafRegionsResponse.cpp
+  src/v20180125/model/ModifyCustomWhiteRuleRequest.cpp
+  src/v20180125/model/DeleteCustomWhiteRuleRequest.cpp
   src/v20180125/model/ModifyWafAutoDenyStatusRequest.cpp
   src/v20180125/model/ModifyAccessPeriodResponse.cpp
   src/v20180125/model/DescribeVipInfoRequest.cpp
@@ -214,6 +225,7 @@ set(waf_src
   src/v20180125/model/AddSpartaProtectionRequest.cpp
   src/v20180125/model/PeakPointsItem.cpp
   src/v20180125/model/PostAttackDownloadTaskRequest.cpp
+  src/v20180125/model/ModifyCustomWhiteRuleResponse.cpp
   src/v20180125/model/DescribePolicyStatusRequest.cpp
   src/v20180125/model/DescribeAccessFastAnalysisRequest.cpp
   src/v20180125/model/DeleteIpAccessControlRequest.cpp
@@ -275,9 +287,9 @@ set(waf_src
   src/v20180125/model/DeleteAccessExportRequest.cpp
   src/v20180125/model/DescribeUserClbWafRegionsRequest.cpp
   src/v20180125/model/DescribeDomainWhiteRulesResponse.cpp
-  src/v20180125/model/VipInfo.cpp
-  src/v20180125/model/DeleteAttackDownloadRecordRequest.cpp
   src/v20180125/model/DescribeWafThreatenIntelligenceResponse.cpp
+  src/v20180125/model/DeleteAttackDownloadRecordRequest.cpp
+  src/v20180125/model/AddCustomWhiteRuleRequest.cpp
   src/v20180125/model/AddDomainWhiteRuleRequest.cpp
   src/v20180125/model/UpsertIpAccessControlResponse.cpp
   src/v20180125/model/IpHitItem.cpp

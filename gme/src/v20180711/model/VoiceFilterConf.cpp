@@ -21,7 +21,8 @@ using namespace TencentCloud::Gme::V20180711::Model;
 using namespace std;
 
 VoiceFilterConf::VoiceFilterConf() :
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_sceneInfosHasBeenSet(false)
 {
 }
 
@@ -40,6 +41,26 @@ CoreInternalOutcome VoiceFilterConf::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("SceneInfos") && !value["SceneInfos"].IsNull())
+    {
+        if (!value["SceneInfos"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `VoiceFilterConf.SceneInfos` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["SceneInfos"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            SceneInfo item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_sceneInfos.push_back(item);
+        }
+        m_sceneInfosHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -53,6 +74,21 @@ void VoiceFilterConf::ToJsonObject(rapidjson::Value &value, rapidjson::Document:
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_sceneInfosHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SceneInfos";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_sceneInfos.begin(); itr != m_sceneInfos.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -72,5 +108,21 @@ void VoiceFilterConf::SetStatus(const string& _status)
 bool VoiceFilterConf::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+vector<SceneInfo> VoiceFilterConf::GetSceneInfos() const
+{
+    return m_sceneInfos;
+}
+
+void VoiceFilterConf::SetSceneInfos(const vector<SceneInfo>& _sceneInfos)
+{
+    m_sceneInfos = _sceneInfos;
+    m_sceneInfosHasBeenSet = true;
+}
+
+bool VoiceFilterConf::SceneInfosHasBeenSet() const
+{
+    return m_sceneInfosHasBeenSet;
 }
 

@@ -28,7 +28,8 @@ CreateAppResp::CreateAppResp() :
     m_createTimeHasBeenSet(false),
     m_realtimeSpeechConfHasBeenSet(false),
     m_voiceMessageConfHasBeenSet(false),
-    m_voiceFilterConfHasBeenSet(false)
+    m_voiceFilterConfHasBeenSet(false),
+    m_asrConfHasBeenSet(false)
 {
 }
 
@@ -138,6 +139,23 @@ CoreInternalOutcome CreateAppResp::Deserialize(const rapidjson::Value &value)
         m_voiceFilterConfHasBeenSet = true;
     }
 
+    if (value.HasMember("AsrConf") && !value["AsrConf"].IsNull())
+    {
+        if (!value["AsrConf"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `CreateAppResp.AsrConf` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_asrConf.Deserialize(value["AsrConf"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_asrConfHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -210,6 +228,15 @@ void CreateAppResp::ToJsonObject(rapidjson::Value &value, rapidjson::Document::A
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_voiceFilterConf.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_asrConfHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AsrConf";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_asrConf.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -341,5 +368,21 @@ void CreateAppResp::SetVoiceFilterConf(const VoiceFilterConf& _voiceFilterConf)
 bool CreateAppResp::VoiceFilterConfHasBeenSet() const
 {
     return m_voiceFilterConfHasBeenSet;
+}
+
+AsrConf CreateAppResp::GetAsrConf() const
+{
+    return m_asrConf;
+}
+
+void CreateAppResp::SetAsrConf(const AsrConf& _asrConf)
+{
+    m_asrConf = _asrConf;
+    m_asrConfHasBeenSet = true;
+}
+
+bool CreateAppResp::AsrConfHasBeenSet() const
+{
+    return m_asrConfHasBeenSet;
 }
 

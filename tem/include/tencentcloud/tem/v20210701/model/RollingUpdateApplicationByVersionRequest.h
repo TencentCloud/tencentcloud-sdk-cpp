@@ -222,6 +222,24 @@ namespace TencentCloud
                      */
                     bool MinAvailableHasBeenSet() const;
 
+                    /**
+                     * 获取是否强制发布
+                     * @return Force 是否强制发布
+                     */
+                    bool GetForce() const;
+
+                    /**
+                     * 设置是否强制发布
+                     * @param Force 是否强制发布
+                     */
+                    void SetForce(const bool& _force);
+
+                    /**
+                     * 判断参数 Force 是否已赋值
+                     * @return Force 是否已赋值
+                     */
+                    bool ForceHasBeenSet() const;
+
                 private:
 
                     /**
@@ -283,6 +301,12 @@ namespace TencentCloud
                      */
                     int64_t m_minAvailable;
                     bool m_minAvailableHasBeenSet;
+
+                    /**
+                     * 是否强制发布
+                     */
+                    bool m_force;
+                    bool m_forceHasBeenSet;
 
                 };
             }

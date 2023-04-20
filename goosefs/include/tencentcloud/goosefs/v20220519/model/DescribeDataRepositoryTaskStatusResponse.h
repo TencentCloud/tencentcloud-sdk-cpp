@@ -67,6 +67,30 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取已完成的文件数量
+                     * @return FinishedFileNumber 已完成的文件数量
+                     */
+                    uint64_t GetFinishedFileNumber() const;
+
+                    /**
+                     * 判断参数 FinishedFileNumber 是否已赋值
+                     * @return FinishedFileNumber 是否已赋值
+                     */
+                    bool FinishedFileNumberHasBeenSet() const;
+
+                    /**
+                     * 获取已完成的数据量
+                     * @return FinishedCapacity 已完成的数据量
+                     */
+                    uint64_t GetFinishedCapacity() const;
+
+                    /**
+                     * 判断参数 FinishedCapacity 是否已赋值
+                     * @return FinishedCapacity 是否已赋值
+                     */
+                    bool FinishedCapacityHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +104,18 @@ namespace TencentCloud
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 已完成的文件数量
+                     */
+                    uint64_t m_finishedFileNumber;
+                    bool m_finishedFileNumberHasBeenSet;
+
+                    /**
+                     * 已完成的数据量
+                     */
+                    uint64_t m_finishedCapacity;
+                    bool m_finishedCapacityHasBeenSet;
 
                 };
             }

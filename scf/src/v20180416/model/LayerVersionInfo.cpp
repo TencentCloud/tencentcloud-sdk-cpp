@@ -27,7 +27,8 @@ LayerVersionInfo::LayerVersionInfo() :
     m_licenseInfoHasBeenSet(false),
     m_layerVersionHasBeenSet(false),
     m_layerNameHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_stampHasBeenSet(false)
 {
 }
 
@@ -109,6 +110,16 @@ CoreInternalOutcome LayerVersionInfo::Deserialize(const rapidjson::Value &value)
         m_statusHasBeenSet = true;
     }
 
+    if (value.HasMember("Stamp") && !value["Stamp"].IsNull())
+    {
+        if (!value["Stamp"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `LayerVersionInfo.Stamp` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_stamp = string(value["Stamp"].GetString());
+        m_stampHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -175,6 +186,14 @@ void LayerVersionInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_stampHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Stamp";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_stamp.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -290,5 +309,21 @@ void LayerVersionInfo::SetStatus(const string& _status)
 bool LayerVersionInfo::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+string LayerVersionInfo::GetStamp() const
+{
+    return m_stamp;
+}
+
+void LayerVersionInfo::SetStamp(const string& _stamp)
+{
+    m_stamp = _stamp;
+    m_stampHasBeenSet = true;
+}
+
+bool LayerVersionInfo::StampHasBeenSet() const
+{
+    return m_stampHasBeenSet;
 }
 

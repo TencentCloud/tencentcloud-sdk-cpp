@@ -137,14 +137,14 @@ namespace TencentCloud
                     bool RecordParamsHasBeenSet() const;
 
                     /**
-                     * 获取云端录制文件上传到云存储的参数(目前只支持使用腾讯云点播作为存储)。
-                     * @return StorageParams 云端录制文件上传到云存储的参数(目前只支持使用腾讯云点播作为存储)。
+                     * 获取云端录制文件上传到云存储的参数(目前支持云点播VOD和对象存储COS)。
+                     * @return StorageParams 云端录制文件上传到云存储的参数(目前支持云点播VOD和对象存储COS)。
                      */
                     StorageParams GetStorageParams() const;
 
                     /**
-                     * 设置云端录制文件上传到云存储的参数(目前只支持使用腾讯云点播作为存储)。
-                     * @param StorageParams 云端录制文件上传到云存储的参数(目前只支持使用腾讯云点播作为存储)。
+                     * 设置云端录制文件上传到云存储的参数(目前支持云点播VOD和对象存储COS)。
+                     * @param StorageParams 云端录制文件上传到云存储的参数(目前支持云点播VOD和对象存储COS)。
                      */
                     void SetStorageParams(const StorageParams& _storageParams);
 
@@ -285,7 +285,7 @@ namespace TencentCloud
                     bool m_recordParamsHasBeenSet;
 
                     /**
-                     * 云端录制文件上传到云存储的参数(目前只支持使用腾讯云点播作为存储)。
+                     * 云端录制文件上传到云存储的参数(目前支持云点播VOD和对象存储COS)。
                      */
                     StorageParams m_storageParams;
                     bool m_storageParamsHasBeenSet;

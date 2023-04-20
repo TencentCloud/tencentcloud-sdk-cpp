@@ -190,14 +190,14 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                     bool MobileHasBeenSet() const;
 
                     /**
-                     * 获取是否需开通自动签
-                     * @return EnableAutoSign 是否需开通自动签
+                     * 获取是否开通自动签，该功能需联系运营工作人员开通后使用
+                     * @return EnableAutoSign 是否开通自动签，该功能需联系运营工作人员开通后使用
                      */
                     bool GetEnableAutoSign() const;
 
                     /**
-                     * 设置是否需开通自动签
-                     * @param EnableAutoSign 是否需开通自动签
+                     * 设置是否开通自动签，该功能需联系运营工作人员开通后使用
+                     * @param EnableAutoSign 是否开通自动签，该功能需联系运营工作人员开通后使用
                      */
                     void SetEnableAutoSign(const bool& _enableAutoSign);
 
@@ -257,7 +257,7 @@ HONGKONG_MACAO_AND_TAIWAN 中国台湾
                     bool m_mobileHasBeenSet;
 
                     /**
-                     * 是否需开通自动签
+                     * 是否开通自动签，该功能需联系运营工作人员开通后使用
                      */
                     bool m_enableAutoSign;
                     bool m_enableAutoSignHasBeenSet;

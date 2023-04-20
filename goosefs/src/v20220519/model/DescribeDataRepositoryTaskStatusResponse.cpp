@@ -25,7 +25,9 @@ using namespace std;
 
 DescribeDataRepositoryTaskStatusResponse::DescribeDataRepositoryTaskStatusResponse() :
     m_taskIdHasBeenSet(false),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_finishedFileNumberHasBeenSet(false),
+    m_finishedCapacityHasBeenSet(false)
 {
 }
 
@@ -83,6 +85,26 @@ CoreInternalOutcome DescribeDataRepositoryTaskStatusResponse::Deserialize(const 
         m_statusHasBeenSet = true;
     }
 
+    if (rsp.HasMember("FinishedFileNumber") && !rsp["FinishedFileNumber"].IsNull())
+    {
+        if (!rsp["FinishedFileNumber"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FinishedFileNumber` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishedFileNumber = rsp["FinishedFileNumber"].GetUint64();
+        m_finishedFileNumberHasBeenSet = true;
+    }
+
+    if (rsp.HasMember("FinishedCapacity") && !rsp["FinishedCapacity"].IsNull())
+    {
+        if (!rsp["FinishedCapacity"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `FinishedCapacity` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_finishedCapacity = rsp["FinishedCapacity"].GetUint64();
+        m_finishedCapacityHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -107,6 +129,22 @@ string DescribeDataRepositoryTaskStatusResponse::ToJsonString() const
         string key = "Status";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_finishedFileNumberHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishedFileNumber";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_finishedFileNumber, allocator);
+    }
+
+    if (m_finishedCapacityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FinishedCapacity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_finishedCapacity, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -139,6 +177,26 @@ int64_t DescribeDataRepositoryTaskStatusResponse::GetStatus() const
 bool DescribeDataRepositoryTaskStatusResponse::StatusHasBeenSet() const
 {
     return m_statusHasBeenSet;
+}
+
+uint64_t DescribeDataRepositoryTaskStatusResponse::GetFinishedFileNumber() const
+{
+    return m_finishedFileNumber;
+}
+
+bool DescribeDataRepositoryTaskStatusResponse::FinishedFileNumberHasBeenSet() const
+{
+    return m_finishedFileNumberHasBeenSet;
+}
+
+uint64_t DescribeDataRepositoryTaskStatusResponse::GetFinishedCapacity() const
+{
+    return m_finishedCapacity;
+}
+
+bool DescribeDataRepositoryTaskStatusResponse::FinishedCapacityHasBeenSet() const
+{
+    return m_finishedCapacityHasBeenSet;
 }
 
 

@@ -81,6 +81,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/PropOwnerCertOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/FinanBillInfo.h
   include/tencentcloud/ocr/v20181119/model/TrainTicketOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesTinIDOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TollInvoiceInfo.h
   include/tencentcloud/ocr/v20181119/model/BankSlipInfo.h
   include/tencentcloud/ocr/v20181119/model/ArithmeticOCRResponse.h
@@ -106,7 +107,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewRequest.h
   include/tencentcloud/ocr/v20181119/model/VehicleLicenseOCRResponse.h
-  include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesSssIDOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/Key.h
   include/tencentcloud/ocr/v20181119/model/IDCardOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/ClassifyDetectOCRRequest.h
@@ -122,6 +123,7 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/InvoiceGeneralOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/SmartFormFileUrl.h
   include/tencentcloud/ocr/v20181119/model/VatInvoiceVerifyNewResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesSssIDOCRResponse.h
   include/tencentcloud/ocr/v20181119/model/TaxiInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/PropOwnerCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeContainerOCRRequest.h
@@ -241,8 +243,10 @@ set(ocr_public_header_model
   include/tencentcloud/ocr/v20181119/model/MixedInvoiceDetectRequest.h
   include/tencentcloud/ocr/v20181119/model/WaybillOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VinOCRRequest.h
+  include/tencentcloud/ocr/v20181119/model/VatInvoiceOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RideHailingTransportLicenseOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/MLIDCardOCRResponse.h
+  include/tencentcloud/ocr/v20181119/model/RecognizePhilippinesTinIDOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/RecognizeTableOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/EstateCertOCRRequest.h
   include/tencentcloud/ocr/v20181119/model/VerifyBasicBizLicenseRequest.h
@@ -322,6 +326,7 @@ set(ocr_src
   src/v20181119/model/PropOwnerCertOCRResponse.cpp
   src/v20181119/model/FinanBillInfo.cpp
   src/v20181119/model/TrainTicketOCRResponse.cpp
+  src/v20181119/model/RecognizePhilippinesTinIDOCRResponse.cpp
   src/v20181119/model/TollInvoiceInfo.cpp
   src/v20181119/model/BankSlipInfo.cpp
   src/v20181119/model/ArithmeticOCRResponse.cpp
@@ -347,7 +352,7 @@ set(ocr_src
   src/v20181119/model/ClassifyDetectOCRResponse.cpp
   src/v20181119/model/VatInvoiceVerifyNewRequest.cpp
   src/v20181119/model/VehicleLicenseOCRResponse.cpp
-  src/v20181119/model/VatInvoiceOCRRequest.cpp
+  src/v20181119/model/RecognizePhilippinesSssIDOCRRequest.cpp
   src/v20181119/model/Key.cpp
   src/v20181119/model/IDCardOCRResponse.cpp
   src/v20181119/model/ClassifyDetectOCRRequest.cpp
@@ -363,6 +368,7 @@ set(ocr_src
   src/v20181119/model/InvoiceGeneralOCRResponse.cpp
   src/v20181119/model/SmartFormFileUrl.cpp
   src/v20181119/model/VatInvoiceVerifyNewResponse.cpp
+  src/v20181119/model/RecognizePhilippinesSssIDOCRResponse.cpp
   src/v20181119/model/TaxiInvoiceOCRRequest.cpp
   src/v20181119/model/PropOwnerCertOCRRequest.cpp
   src/v20181119/model/RecognizeContainerOCRRequest.cpp
@@ -482,8 +488,10 @@ set(ocr_src
   src/v20181119/model/MixedInvoiceDetectRequest.cpp
   src/v20181119/model/WaybillOCRRequest.cpp
   src/v20181119/model/VinOCRRequest.cpp
+  src/v20181119/model/VatInvoiceOCRRequest.cpp
   src/v20181119/model/RideHailingTransportLicenseOCRRequest.cpp
   src/v20181119/model/MLIDCardOCRResponse.cpp
+  src/v20181119/model/RecognizePhilippinesTinIDOCRRequest.cpp
   src/v20181119/model/RecognizeTableOCRRequest.cpp
   src/v20181119/model/EstateCertOCRRequest.cpp
   src/v20181119/model/VerifyBasicBizLicenseRequest.cpp

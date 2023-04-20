@@ -184,6 +184,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取Stamp
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Stamp Stamp
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStamp() const;
+
+                    /**
+                     * 设置Stamp
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Stamp Stamp
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStamp(const std::string& _stamp);
+
+                    /**
+                     * 判断参数 Stamp 是否已赋值
+                     * @return Stamp 是否已赋值
+                     */
+                    bool StampHasBeenSet() const;
+
                 private:
 
                     /**
@@ -230,6 +252,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * Stamp
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_stamp;
+                    bool m_stampHasBeenSet;
 
                 };
             }

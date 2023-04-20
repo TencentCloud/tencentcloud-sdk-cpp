@@ -24,6 +24,7 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/gme/v20180711/model/SceneInfo.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,28 @@ namespace TencentCloud
                      */
                     bool StatusHasBeenSet() const;
 
+                    /**
+                     * 获取场景配置信息，如开关状态，回调地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SceneInfos 场景配置信息，如开关状态，回调地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SceneInfo> GetSceneInfos() const;
+
+                    /**
+                     * 设置场景配置信息，如开关状态，回调地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SceneInfos 场景配置信息，如开关状态，回调地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSceneInfos(const std::vector<SceneInfo>& _sceneInfos);
+
+                    /**
+                     * 判断参数 SceneInfos 是否已赋值
+                     * @return SceneInfos 是否已赋值
+                     */
+                    bool SceneInfosHasBeenSet() const;
+
                 private:
 
                     /**
@@ -71,6 +94,13 @@ namespace TencentCloud
                      */
                     std::string m_status;
                     bool m_statusHasBeenSet;
+
+                    /**
+                     * 场景配置信息，如开关状态，回调地址。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::vector<SceneInfo> m_sceneInfos;
+                    bool m_sceneInfosHasBeenSet;
 
                 };
             }
