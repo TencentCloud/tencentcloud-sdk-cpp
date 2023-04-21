@@ -116,14 +116,50 @@ namespace TencentCloud
                     bool RenameRestoreHasBeenSet() const;
 
                     /**
-                     * 获取备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
-                     * @return GroupId 备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+                     * 获取回档类型，0-覆盖方式；1-重命名方式，默认1
+                     * @return Type 回档类型，0-覆盖方式；1-重命名方式，默认1
+                     */
+                    uint64_t GetType() const;
+
+                    /**
+                     * 设置回档类型，0-覆盖方式；1-重命名方式，默认1
+                     * @param Type 回档类型，0-覆盖方式；1-重命名方式，默认1
+                     */
+                    void SetType(const uint64_t& _type);
+
+                    /**
+                     * 判断参数 Type 是否已赋值
+                     * @return Type 是否已赋值
+                     */
+                    bool TypeHasBeenSet() const;
+
+                    /**
+                     * 获取需要覆盖回档的数据库，只有覆盖回档时必填
+                     * @return DBList 需要覆盖回档的数据库，只有覆盖回档时必填
+                     */
+                    std::vector<std::string> GetDBList() const;
+
+                    /**
+                     * 设置需要覆盖回档的数据库，只有覆盖回档时必填
+                     * @param DBList 需要覆盖回档的数据库，只有覆盖回档时必填
+                     */
+                    void SetDBList(const std::vector<std::string>& _dBList);
+
+                    /**
+                     * 判断参数 DBList 是否已赋值
+                     * @return DBList 是否已赋值
+                     */
+                    bool DBListHasBeenSet() const;
+
+                    /**
+                     * 获取备份任务组ID，在单库备份文件模式下
+                     * @return GroupId 备份任务组ID，在单库备份文件模式下
                      */
                     std::string GetGroupId() const;
 
                     /**
-                     * 设置备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
-                     * @param GroupId 备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+                     * 设置备份任务组ID，在单库备份文件模式下
+                     * @param GroupId 备份任务组ID，在单库备份文件模式下
                      */
                     void SetGroupId(const std::string& _groupId);
 
@@ -160,7 +196,19 @@ namespace TencentCloud
                     bool m_renameRestoreHasBeenSet;
 
                     /**
-                     * 备份任务组ID，在单库备份文件模式下，可通过[DescribeBackups](https://cloud.tencent.com/document/product/238/19943) 接口获得。
+                     * 回档类型，0-覆盖方式；1-重命名方式，默认1
+                     */
+                    uint64_t m_type;
+                    bool m_typeHasBeenSet;
+
+                    /**
+                     * 需要覆盖回档的数据库，只有覆盖回档时必填
+                     */
+                    std::vector<std::string> m_dBList;
+                    bool m_dBListHasBeenSet;
+
+                    /**
+                     * 备份任务组ID，在单库备份文件模式下
                      */
                     std::string m_groupId;
                     bool m_groupIdHasBeenSet;

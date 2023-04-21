@@ -24,6 +24,7 @@
 #include <tencentcloud/gme/v20180711/model/RealtimeSpeechConf.h>
 #include <tencentcloud/gme/v20180711/model/VoiceMessageConf.h>
 #include <tencentcloud/gme/v20180711/model/VoiceFilterConf.h>
+#include <tencentcloud/gme/v20180711/model/AsrConf.h>
 #include <tencentcloud/gme/v20180711/model/Tag.h>
 
 
@@ -84,13 +85,17 @@ namespace TencentCloud
 
                     /**
                      * 获取需要支持的引擎列表，默认全选。
+取值：android/ios/unity/cocos/unreal/windows
                      * @return EngineList 需要支持的引擎列表，默认全选。
+取值：android/ios/unity/cocos/unreal/windows
                      */
                     std::vector<std::string> GetEngineList() const;
 
                     /**
                      * 设置需要支持的引擎列表，默认全选。
+取值：android/ios/unity/cocos/unreal/windows
                      * @param EngineList 需要支持的引擎列表，默认全选。
+取值：android/ios/unity/cocos/unreal/windows
                      */
                     void SetEngineList(const std::vector<std::string>& _engineList);
 
@@ -102,13 +107,17 @@ namespace TencentCloud
 
                     /**
                      * 获取服务区域列表，默认全选。
+取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
                      * @return RegionList 服务区域列表，默认全选。
+取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
                      */
                     std::vector<std::string> GetRegionList() const;
 
                     /**
                      * 设置服务区域列表，默认全选。
+取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
                      * @param RegionList 服务区域列表，默认全选。
+取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
                      */
                     void SetRegionList(const std::vector<std::string>& _regionList);
 
@@ -137,14 +146,14 @@ namespace TencentCloud
                     bool RealtimeSpeechConfHasBeenSet() const;
 
                     /**
-                     * 获取语音消息及转文本服务配置数据
-                     * @return VoiceMessageConf 语音消息及转文本服务配置数据
+                     * 获取语音消息服务配置数据
+                     * @return VoiceMessageConf 语音消息服务配置数据
                      */
                     VoiceMessageConf GetVoiceMessageConf() const;
 
                     /**
-                     * 设置语音消息及转文本服务配置数据
-                     * @param VoiceMessageConf 语音消息及转文本服务配置数据
+                     * 设置语音消息服务配置数据
+                     * @param VoiceMessageConf 语音消息服务配置数据
                      */
                     void SetVoiceMessageConf(const VoiceMessageConf& _voiceMessageConf);
 
@@ -171,6 +180,24 @@ namespace TencentCloud
                      * @return VoiceFilterConf 是否已赋值
                      */
                     bool VoiceFilterConfHasBeenSet() const;
+
+                    /**
+                     * 获取语音转文本配置数据
+                     * @return AsrConf 语音转文本配置数据
+                     */
+                    AsrConf GetAsrConf() const;
+
+                    /**
+                     * 设置语音转文本配置数据
+                     * @param AsrConf 语音转文本配置数据
+                     */
+                    void SetAsrConf(const AsrConf& _asrConf);
+
+                    /**
+                     * 判断参数 AsrConf 是否已赋值
+                     * @return AsrConf 是否已赋值
+                     */
+                    bool AsrConfHasBeenSet() const;
 
                     /**
                      * 获取需要添加的标签列表
@@ -206,12 +233,14 @@ namespace TencentCloud
 
                     /**
                      * 需要支持的引擎列表，默认全选。
+取值：android/ios/unity/cocos/unreal/windows
                      */
                     std::vector<std::string> m_engineList;
                     bool m_engineListHasBeenSet;
 
                     /**
                      * 服务区域列表，默认全选。
+取值：mainland-大陆地区，hmt-港澳台，sea-东南亚，na-北美，eu-欧洲，jpkr-日韩亚太，sa-南美，oc-澳洲，me-中东
                      */
                     std::vector<std::string> m_regionList;
                     bool m_regionListHasBeenSet;
@@ -223,7 +252,7 @@ namespace TencentCloud
                     bool m_realtimeSpeechConfHasBeenSet;
 
                     /**
-                     * 语音消息及转文本服务配置数据
+                     * 语音消息服务配置数据
                      */
                     VoiceMessageConf m_voiceMessageConf;
                     bool m_voiceMessageConfHasBeenSet;
@@ -233,6 +262,12 @@ namespace TencentCloud
                      */
                     VoiceFilterConf m_voiceFilterConf;
                     bool m_voiceFilterConfHasBeenSet;
+
+                    /**
+                     * 语音转文本配置数据
+                     */
+                    AsrConf m_asrConf;
+                    bool m_asrConfHasBeenSet;
 
                     /**
                      * 需要添加的标签列表

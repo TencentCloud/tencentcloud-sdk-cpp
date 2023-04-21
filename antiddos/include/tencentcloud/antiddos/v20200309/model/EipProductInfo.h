@@ -158,6 +158,28 @@ other(托管IP)
                      */
                     bool InstanceIdHasBeenSet() const;
 
+                    /**
+                     * 获取域名化资产对应的域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Domain 域名化资产对应的域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDomain() const;
+
+                    /**
+                     * 设置域名化资产对应的域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Domain 域名化资产对应的域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDomain(const std::string& _domain);
+
+                    /**
+                     * 判断参数 Domain 是否已赋值
+                     * @return Domain 是否已赋值
+                     */
+                    bool DomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -193,6 +215,13 @@ other(托管IP)
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
+
+                    /**
+                     * 域名化资产对应的域名
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_domain;
+                    bool m_domainHasBeenSet;
 
                 };
             }

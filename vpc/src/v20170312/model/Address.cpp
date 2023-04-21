@@ -39,7 +39,9 @@ Address::Address() :
     m_localBgpHasBeenSet(false),
     m_bandwidthHasBeenSet(false),
     m_internetChargeTypeHasBeenSet(false),
-    m_tagSetHasBeenSet(false)
+    m_tagSetHasBeenSet(false),
+    m_deadlineDateHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false)
 {
 }
 
@@ -255,6 +257,26 @@ CoreInternalOutcome Address::Deserialize(const rapidjson::Value &value)
         m_tagSetHasBeenSet = true;
     }
 
+    if (value.HasMember("DeadlineDate") && !value["DeadlineDate"].IsNull())
+    {
+        if (!value["DeadlineDate"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Address.DeadlineDate` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_deadlineDate = string(value["DeadlineDate"].GetString());
+        m_deadlineDateHasBeenSet = true;
+    }
+
+    if (value.HasMember("InstanceType") && !value["InstanceType"].IsNull())
+    {
+        if (!value["InstanceType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `Address.InstanceType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_instanceType = string(value["InstanceType"].GetString());
+        m_instanceTypeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -420,6 +442,22 @@ void Address::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allocat
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_deadlineDateHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DeadlineDate";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_deadlineDate.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_instanceTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "InstanceType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_instanceType.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -727,5 +765,37 @@ void Address::SetTagSet(const vector<Tag>& _tagSet)
 bool Address::TagSetHasBeenSet() const
 {
     return m_tagSetHasBeenSet;
+}
+
+string Address::GetDeadlineDate() const
+{
+    return m_deadlineDate;
+}
+
+void Address::SetDeadlineDate(const string& _deadlineDate)
+{
+    m_deadlineDate = _deadlineDate;
+    m_deadlineDateHasBeenSet = true;
+}
+
+bool Address::DeadlineDateHasBeenSet() const
+{
+    return m_deadlineDateHasBeenSet;
+}
+
+string Address::GetInstanceType() const
+{
+    return m_instanceType;
+}
+
+void Address::SetInstanceType(const string& _instanceType)
+{
+    m_instanceType = _instanceType;
+    m_instanceTypeHasBeenSet = true;
+}
+
+bool Address::InstanceTypeHasBeenSet() const
+{
+    return m_instanceTypeHasBeenSet;
 }
 

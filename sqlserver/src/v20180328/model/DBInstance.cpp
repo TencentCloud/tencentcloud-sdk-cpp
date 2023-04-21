@@ -72,7 +72,9 @@ DBInstance::DBInstance() :
     m_collationHasBeenSet(false),
     m_timeZoneHasBeenSet(false),
     m_isDrZoneHasBeenSet(false),
-    m_slaveZonesHasBeenSet(false)
+    m_slaveZonesHasBeenSet(false),
+    m_architectureHasBeenSet(false),
+    m_styleHasBeenSet(false)
 {
 }
 
@@ -624,6 +626,26 @@ CoreInternalOutcome DBInstance::Deserialize(const rapidjson::Value &value)
         m_slaveZonesHasBeenSet = true;
     }
 
+    if (value.HasMember("Architecture") && !value["Architecture"].IsNull())
+    {
+        if (!value["Architecture"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Architecture` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_architecture = string(value["Architecture"].GetString());
+        m_architectureHasBeenSet = true;
+    }
+
+    if (value.HasMember("Style") && !value["Style"].IsNull())
+    {
+        if (!value["Style"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DBInstance.Style` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_style = string(value["Style"].GetString());
+        m_styleHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -1063,6 +1085,22 @@ void DBInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_slaveZones.ToJsonObject(value[key.c_str()], allocator);
+    }
+
+    if (m_architectureHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Architecture";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_architecture.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_styleHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Style";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_style.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -1898,5 +1936,37 @@ void DBInstance::SetSlaveZones(const SlaveZones& _slaveZones)
 bool DBInstance::SlaveZonesHasBeenSet() const
 {
     return m_slaveZonesHasBeenSet;
+}
+
+string DBInstance::GetArchitecture() const
+{
+    return m_architecture;
+}
+
+void DBInstance::SetArchitecture(const string& _architecture)
+{
+    m_architecture = _architecture;
+    m_architectureHasBeenSet = true;
+}
+
+bool DBInstance::ArchitectureHasBeenSet() const
+{
+    return m_architectureHasBeenSet;
+}
+
+string DBInstance::GetStyle() const
+{
+    return m_style;
+}
+
+void DBInstance::SetStyle(const string& _style)
+{
+    m_style = _style;
+    m_styleHasBeenSet = true;
+}
+
+bool DBInstance::StyleHasBeenSet() const
+{
+    return m_styleHasBeenSet;
 }
 

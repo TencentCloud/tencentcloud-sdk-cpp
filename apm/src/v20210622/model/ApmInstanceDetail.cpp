@@ -44,7 +44,9 @@ ApmInstanceDetail::ApmInstanceDetail() :
     m_isRelatedLogHasBeenSet(false),
     m_logTopicIDHasBeenSet(false),
     m_clientCountHasBeenSet(false),
-    m_totalCountHasBeenSet(false)
+    m_totalCountHasBeenSet(false),
+    m_logSetHasBeenSet(false),
+    m_metricDurationHasBeenSet(false)
 {
 }
 
@@ -303,6 +305,26 @@ CoreInternalOutcome ApmInstanceDetail::Deserialize(const rapidjson::Value &value
         m_totalCountHasBeenSet = true;
     }
 
+    if (value.HasMember("LogSet") && !value["LogSet"].IsNull())
+    {
+        if (!value["LogSet"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.LogSet` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_logSet = string(value["LogSet"].GetString());
+        m_logSetHasBeenSet = true;
+    }
+
+    if (value.HasMember("MetricDuration") && !value["MetricDuration"].IsNull())
+    {
+        if (!value["MetricDuration"].IsInt64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApmInstanceDetail.MetricDuration` IsInt64=false incorrectly").SetRequestId(requestId));
+        }
+        m_metricDuration = value["MetricDuration"].GetInt64();
+        m_metricDurationHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -507,6 +529,22 @@ void ApmInstanceDetail::ToJsonObject(rapidjson::Value &value, rapidjson::Documen
         string key = "TotalCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_totalCount, allocator);
+    }
+
+    if (m_logSetHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "LogSet";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_logSet.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_metricDurationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MetricDuration";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_metricDuration, allocator);
     }
 
 }
@@ -894,5 +932,37 @@ void ApmInstanceDetail::SetTotalCount(const int64_t& _totalCount)
 bool ApmInstanceDetail::TotalCountHasBeenSet() const
 {
     return m_totalCountHasBeenSet;
+}
+
+string ApmInstanceDetail::GetLogSet() const
+{
+    return m_logSet;
+}
+
+void ApmInstanceDetail::SetLogSet(const string& _logSet)
+{
+    m_logSet = _logSet;
+    m_logSetHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::LogSetHasBeenSet() const
+{
+    return m_logSetHasBeenSet;
+}
+
+int64_t ApmInstanceDetail::GetMetricDuration() const
+{
+    return m_metricDuration;
+}
+
+void ApmInstanceDetail::SetMetricDuration(const int64_t& _metricDuration)
+{
+    m_metricDuration = _metricDuration;
+    m_metricDurationHasBeenSet = true;
+}
+
+bool ApmInstanceDetail::MetricDurationHasBeenSet() const
+{
+    return m_metricDurationHasBeenSet;
 }
 

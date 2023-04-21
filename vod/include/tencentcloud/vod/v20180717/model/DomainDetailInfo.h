@@ -28,6 +28,7 @@
 #include <tencentcloud/vod/v20180717/model/DomainHTTPSConfig.h>
 #include <tencentcloud/vod/v20180717/model/UrlSignatureAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/RefererAuthPolicy.h>
+#include <tencentcloud/vod/v20180717/model/DomainQUICConfig.h>
 
 
 namespace TencentCloud
@@ -208,6 +209,28 @@ namespace TencentCloud
                      */
                     bool CreateTimeHasBeenSet() const;
 
+                    /**
+                     * 获取域名 QUIC 配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QUICConfig 域名 QUIC 配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DomainQUICConfig GetQUICConfig() const;
+
+                    /**
+                     * 设置域名 QUIC 配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QUICConfig 域名 QUIC 配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQUICConfig(const DomainQUICConfig& _qUICConfig);
+
+                    /**
+                     * 判断参数 QUICConfig 是否已赋值
+                     * @return QUICConfig 是否已赋值
+                     */
+                    bool QUICConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -259,6 +282,13 @@ namespace TencentCloud
                      */
                     std::string m_createTime;
                     bool m_createTimeHasBeenSet;
+
+                    /**
+                     * 域名 QUIC 配置信息。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    DomainQUICConfig m_qUICConfig;
+                    bool m_qUICConfigHasBeenSet;
 
                 };
             }

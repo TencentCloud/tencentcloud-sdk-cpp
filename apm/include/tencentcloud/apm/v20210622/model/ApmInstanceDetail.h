@@ -567,6 +567,50 @@ namespace TencentCloud
                      */
                     bool TotalCountHasBeenSet() const;
 
+                    /**
+                     * 获取CLS日志集 | ES集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return LogSet CLS日志集 | ES集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetLogSet() const;
+
+                    /**
+                     * 设置CLS日志集 | ES集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param LogSet CLS日志集 | ES集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetLogSet(const std::string& _logSet);
+
+                    /**
+                     * 判断参数 LogSet 是否已赋值
+                     * @return LogSet 是否已赋值
+                     */
+                    bool LogSetHasBeenSet() const;
+
+                    /**
+                     * 获取Metric数据保存时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MetricDuration Metric数据保存时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t GetMetricDuration() const;
+
+                    /**
+                     * 设置Metric数据保存时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param MetricDuration Metric数据保存时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetMetricDuration(const int64_t& _metricDuration);
+
+                    /**
+                     * 判断参数 MetricDuration 是否已赋值
+                     * @return MetricDuration 是否已赋值
+                     */
+                    bool MetricDurationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -734,6 +778,20 @@ namespace TencentCloud
                      */
                     int64_t m_totalCount;
                     bool m_totalCountHasBeenSet;
+
+                    /**
+                     * CLS日志集 | ES集群ID
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_logSet;
+                    bool m_logSetHasBeenSet;
+
+                    /**
+                     * Metric数据保存时长
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    int64_t m_metricDuration;
+                    bool m_metricDurationHasBeenSet;
 
                 };
             }

@@ -67,6 +67,20 @@ namespace TencentCloud
                      */
                     bool MetricNameHasBeenSet() const;
 
+                    /**
+                     * 获取返回DataList中的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return MaxData 返回DataList中的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetMaxData() const;
+
+                    /**
+                     * 判断参数 MaxData 是否已赋值
+                     * @return MaxData 是否已赋值
+                     */
+                    bool MaxDataHasBeenSet() const;
+
                 private:
 
                     /**
@@ -80,6 +94,13 @@ namespace TencentCloud
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
+
+                    /**
+                     * 返回DataList中的最大值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_maxData;
+                    bool m_maxDataHasBeenSet;
 
                 };
             }

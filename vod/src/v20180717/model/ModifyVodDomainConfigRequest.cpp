@@ -26,7 +26,8 @@ ModifyVodDomainConfigRequest::ModifyVodDomainConfigRequest() :
     m_domainHasBeenSet(false),
     m_subAppIdHasBeenSet(false),
     m_refererAuthPolicyHasBeenSet(false),
-    m_urlSignatureAuthPolicyHasBeenSet(false)
+    m_urlSignatureAuthPolicyHasBeenSet(false),
+    m_qUICConfigHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,15 @@ string ModifyVodDomainConfigRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_urlSignatureAuthPolicy.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_qUICConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QUICConfig";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qUICConfig.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -141,6 +151,22 @@ void ModifyVodDomainConfigRequest::SetUrlSignatureAuthPolicy(const UrlSignatureA
 bool ModifyVodDomainConfigRequest::UrlSignatureAuthPolicyHasBeenSet() const
 {
     return m_urlSignatureAuthPolicyHasBeenSet;
+}
+
+DomainQUICConfig ModifyVodDomainConfigRequest::GetQUICConfig() const
+{
+    return m_qUICConfig;
+}
+
+void ModifyVodDomainConfigRequest::SetQUICConfig(const DomainQUICConfig& _qUICConfig)
+{
+    m_qUICConfig = _qUICConfig;
+    m_qUICConfigHasBeenSet = true;
+}
+
+bool ModifyVodDomainConfigRequest::QUICConfigHasBeenSet() const
+{
+    return m_qUICConfigHasBeenSet;
 }
 
 

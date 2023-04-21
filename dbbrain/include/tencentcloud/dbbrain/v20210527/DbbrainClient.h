@@ -27,6 +27,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/AddUserContactResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CancelKillTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CancelKillTaskResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateAuditLogFileRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/CreateAuditLogFileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateDBDiagReportUrlRequest.h>
@@ -43,6 +45,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/CreateSecurityAuditLogExportTaskResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/CreateSqlFilterResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteAuditLogFileRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DeleteAuditLogFileResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteDBDiagReportTasksResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DeleteSecurityAuditLogExportTasksRequest.h>
@@ -53,6 +57,8 @@
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserContactResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeAllUserGroupResponse.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesRequest.h>
+#include <tencentcloud/dbbrain/v20210527/model/DescribeAuditLogFilesResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventRequest.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventResponse.h>
 #include <tencentcloud/dbbrain/v20210527/model/DescribeDBDiagEventsRequest.h>
@@ -135,6 +141,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CancelKillTaskResponse> CancelKillTaskOutcome;
                 typedef std::future<CancelKillTaskOutcome> CancelKillTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CancelKillTaskRequest&, CancelKillTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CancelKillTaskAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateAuditLogFileResponse> CreateAuditLogFileOutcome;
+                typedef std::future<CreateAuditLogFileOutcome> CreateAuditLogFileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::CreateAuditLogFileRequest&, CreateAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateAuditLogFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateDBDiagReportTaskResponse> CreateDBDiagReportTaskOutcome;
                 typedef std::future<CreateDBDiagReportTaskOutcome> CreateDBDiagReportTaskOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateDBDiagReportTaskRequest&, CreateDBDiagReportTaskOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateDBDiagReportTaskAsyncHandler;
@@ -159,6 +168,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateSqlFilterResponse> CreateSqlFilterOutcome;
                 typedef std::future<CreateSqlFilterOutcome> CreateSqlFilterOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::CreateSqlFilterRequest&, CreateSqlFilterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateSqlFilterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteAuditLogFileResponse> DeleteAuditLogFileOutcome;
+                typedef std::future<DeleteAuditLogFileOutcome> DeleteAuditLogFileOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DeleteAuditLogFileRequest&, DeleteAuditLogFileOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteAuditLogFileAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteDBDiagReportTasksResponse> DeleteDBDiagReportTasksOutcome;
                 typedef std::future<DeleteDBDiagReportTasksOutcome> DeleteDBDiagReportTasksOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DeleteDBDiagReportTasksRequest&, DeleteDBDiagReportTasksOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteDBDiagReportTasksAsyncHandler;
@@ -174,6 +186,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAllUserGroupResponse> DescribeAllUserGroupOutcome;
                 typedef std::future<DescribeAllUserGroupOutcome> DescribeAllUserGroupOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeAllUserGroupRequest&, DescribeAllUserGroupOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAllUserGroupAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeAuditLogFilesResponse> DescribeAuditLogFilesOutcome;
+                typedef std::future<DescribeAuditLogFilesOutcome> DescribeAuditLogFilesOutcomeCallable;
+                typedef std::function<void(const DbbrainClient*, const Model::DescribeAuditLogFilesRequest&, DescribeAuditLogFilesOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAuditLogFilesAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBDiagEventResponse> DescribeDBDiagEventOutcome;
                 typedef std::future<DescribeDBDiagEventOutcome> DescribeDBDiagEventOutcomeCallable;
                 typedef std::function<void(const DbbrainClient*, const Model::DescribeDBDiagEventRequest&, DescribeDBDiagEventOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBDiagEventAsyncHandler;
@@ -289,6 +304,15 @@ namespace TencentCloud
                 CancelKillTaskOutcomeCallable CancelKillTaskCallable(const Model::CancelKillTaskRequest& request);
 
                 /**
+                 *用于创建云数据库实例的审计日志文件，最多下载600w审计日志。
+                 * @param req CreateAuditLogFileRequest
+                 * @return CreateAuditLogFileOutcome
+                 */
+                CreateAuditLogFileOutcome CreateAuditLogFile(const Model::CreateAuditLogFileRequest &request);
+                void CreateAuditLogFileAsync(const Model::CreateAuditLogFileRequest& request, const CreateAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateAuditLogFileOutcomeCallable CreateAuditLogFileCallable(const Model::CreateAuditLogFileRequest& request);
+
+                /**
                  *创建健康报告，并可以选择是否发送邮件。
                  * @param req CreateDBDiagReportTaskRequest
                  * @return CreateDBDiagReportTaskOutcome
@@ -361,6 +385,15 @@ namespace TencentCloud
                 CreateSqlFilterOutcomeCallable CreateSqlFilterCallable(const Model::CreateSqlFilterRequest& request);
 
                 /**
+                 *用于删除云数据库实例的审计日志文件。
+                 * @param req DeleteAuditLogFileRequest
+                 * @return DeleteAuditLogFileOutcome
+                 */
+                DeleteAuditLogFileOutcome DeleteAuditLogFile(const Model::DeleteAuditLogFileRequest &request);
+                void DeleteAuditLogFileAsync(const Model::DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteAuditLogFileOutcomeCallable DeleteAuditLogFileCallable(const Model::DeleteAuditLogFileRequest& request);
+
+                /**
                  *根据任务id删除健康报告生成任务
                  * @param req DeleteDBDiagReportTasksRequest
                  * @return DeleteDBDiagReportTasksOutcome
@@ -404,6 +437,15 @@ namespace TencentCloud
                 DescribeAllUserGroupOutcome DescribeAllUserGroup(const Model::DescribeAllUserGroupRequest &request);
                 void DescribeAllUserGroupAsync(const Model::DescribeAllUserGroupRequest& request, const DescribeAllUserGroupAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAllUserGroupOutcomeCallable DescribeAllUserGroupCallable(const Model::DescribeAllUserGroupRequest& request);
+
+                /**
+                 *用于创建云数据库实例的审计日志文件
+                 * @param req DescribeAuditLogFilesRequest
+                 * @return DescribeAuditLogFilesOutcome
+                 */
+                DescribeAuditLogFilesOutcome DescribeAuditLogFiles(const Model::DescribeAuditLogFilesRequest &request);
+                void DescribeAuditLogFilesAsync(const Model::DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeAuditLogFilesOutcomeCallable DescribeAuditLogFilesCallable(const Model::DescribeAuditLogFilesRequest& request);
 
                 /**
                  *获取实例异常诊断事件的详情信息。

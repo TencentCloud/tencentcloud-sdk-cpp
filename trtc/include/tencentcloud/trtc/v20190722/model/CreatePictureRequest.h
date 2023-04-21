@@ -61,14 +61,14 @@ namespace TencentCloud
                     bool SdkAppIdHasBeenSet() const;
 
                     /**
-                     * 获取图片内容经base64编码后的string格式
-                     * @return Content 图片内容经base64编码后的string格式
+                     * 获取图片内容经base64编码后的string格式,最大长度为2M
+                     * @return Content 图片内容经base64编码后的string格式,最大长度为2M
                      */
                     std::string GetContent() const;
 
                     /**
-                     * 设置图片内容经base64编码后的string格式
-                     * @param Content 图片内容经base64编码后的string格式
+                     * 设置图片内容经base64编码后的string格式,最大长度为2M
+                     * @param Content 图片内容经base64编码后的string格式,最大长度为2M
                      */
                     void SetContent(const std::string& _content);
 
@@ -177,7 +177,7 @@ namespace TencentCloud
                     bool m_sdkAppIdHasBeenSet;
 
                     /**
-                     * 图片内容经base64编码后的string格式
+                     * 图片内容经base64编码后的string格式,最大长度为2M
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;

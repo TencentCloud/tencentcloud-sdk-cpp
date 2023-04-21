@@ -171,14 +171,14 @@ namespace TencentCloud
                     bool StatusHasBeenSet() const;
 
                     /**
-                     * 获取购买时间
-                     * @return ExpiredTime 购买时间
+                     * 获取到期时间
+                     * @return ExpiredTime 到期时间
                      */
                     std::string GetExpiredTime() const;
 
                     /**
-                     * 设置购买时间
-                     * @param ExpiredTime 购买时间
+                     * 设置到期时间
+                     * @param ExpiredTime 到期时间
                      */
                     void SetExpiredTime(const std::string& _expiredTime);
 
@@ -189,14 +189,14 @@ namespace TencentCloud
                     bool ExpiredTimeHasBeenSet() const;
 
                     /**
-                     * 获取到期时间
-                     * @return CreatedTime 到期时间
+                     * 获取购买时间
+                     * @return CreatedTime 购买时间
                      */
                     std::string GetCreatedTime() const;
 
                     /**
-                     * 设置到期时间
-                     * @param CreatedTime 到期时间
+                     * 设置购买时间
+                     * @param CreatedTime 购买时间
                      */
                     void SetCreatedTime(const std::string& _createdTime);
 
@@ -675,13 +675,13 @@ namespace TencentCloud
                     bool m_statusHasBeenSet;
 
                     /**
-                     * 购买时间
+                     * 到期时间
                      */
                     std::string m_expiredTime;
                     bool m_expiredTimeHasBeenSet;
 
                     /**
-                     * 到期时间
+                     * 购买时间
                      */
                     std::string m_createdTime;
                     bool m_createdTimeHasBeenSet;

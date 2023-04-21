@@ -35,6 +35,8 @@
 #include <tencentcloud/lcic/v20220817/model/BatchDeleteGroupMemberResponse.h>
 #include <tencentcloud/lcic/v20220817/model/BatchDeleteRecordRequest.h>
 #include <tencentcloud/lcic/v20220817/model/BatchDeleteRecordResponse.h>
+#include <tencentcloud/lcic/v20220817/model/BatchDescribeDocumentRequest.h>
+#include <tencentcloud/lcic/v20220817/model/BatchDescribeDocumentResponse.h>
 #include <tencentcloud/lcic/v20220817/model/BatchRegisterRequest.h>
 #include <tencentcloud/lcic/v20220817/model/BatchRegisterResponse.h>
 #include <tencentcloud/lcic/v20220817/model/BindDocumentToRoomRequest.h>
@@ -159,6 +161,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::BatchDeleteRecordResponse> BatchDeleteRecordOutcome;
                 typedef std::future<BatchDeleteRecordOutcome> BatchDeleteRecordOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::BatchDeleteRecordRequest&, BatchDeleteRecordOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDeleteRecordAsyncHandler;
+                typedef Outcome<Core::Error, Model::BatchDescribeDocumentResponse> BatchDescribeDocumentOutcome;
+                typedef std::future<BatchDescribeDocumentOutcome> BatchDescribeDocumentOutcomeCallable;
+                typedef std::function<void(const LcicClient*, const Model::BatchDescribeDocumentRequest&, BatchDescribeDocumentOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchDescribeDocumentAsyncHandler;
                 typedef Outcome<Core::Error, Model::BatchRegisterResponse> BatchRegisterOutcome;
                 typedef std::future<BatchRegisterOutcome> BatchRegisterOutcomeCallable;
                 typedef std::function<void(const LcicClient*, const Model::BatchRegisterRequest&, BatchRegisterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> BatchRegisterAsyncHandler;
@@ -355,6 +360,15 @@ namespace TencentCloud
                 BatchDeleteRecordOutcomeCallable BatchDeleteRecordCallable(const Model::BatchDeleteRecordRequest& request);
 
                 /**
+                 *批量获取文档详情
+                 * @param req BatchDescribeDocumentRequest
+                 * @return BatchDescribeDocumentOutcome
+                 */
+                BatchDescribeDocumentOutcome BatchDescribeDocument(const Model::BatchDescribeDocumentRequest &request);
+                void BatchDescribeDocumentAsync(const Model::BatchDescribeDocumentRequest& request, const BatchDescribeDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                BatchDescribeDocumentOutcomeCallable BatchDescribeDocumentCallable(const Model::BatchDescribeDocumentRequest& request);
+
+                /**
                  *如果批量注册的用户已存在，则会被覆盖。一次最多注册1000个用户。默认请求频率限制：10次/秒
                  * @param req BatchRegisterRequest
                  * @return BatchRegisterOutcome
@@ -526,7 +540,9 @@ namespace TencentCloud
                 DescribeDocumentOutcomeCallable DescribeDocumentCallable(const Model::DescribeDocumentRequest& request);
 
                 /**
-                 *批量获取文档信息
+                 *有新接口替换
+
+批量获取文档信息（已废弃，替代接口BatchDescribeDocument）
                  * @param req DescribeDocumentsRequest
                  * @return DescribeDocumentsOutcome
                  */
@@ -751,7 +767,7 @@ namespace TencentCloud
                 SetWatermarkOutcomeCallable SetWatermarkCallable(const Model::SetWatermarkRequest& request);
 
                 /**
-                 *开始房间的直播
+                 *开始房间的直播。 说明：开始房间接口调用之前需要有用户进入课堂初始化课堂信息。
                  * @param req StartRoomRequest
                  * @return StartRoomOutcome
                  */

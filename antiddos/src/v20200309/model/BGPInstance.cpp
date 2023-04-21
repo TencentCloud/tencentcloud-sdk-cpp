@@ -39,7 +39,8 @@ BGPInstance::BGPInstance() :
     m_vitalityVersionHasBeenSet(false),
     m_lineHasBeenSet(false),
     m_elasticServiceBandwidthHasBeenSet(false),
-    m_giftServiceBandWidthHasBeenSet(false)
+    m_giftServiceBandWidthHasBeenSet(false),
+    m_modifyTimeHasBeenSet(false)
 {
 }
 
@@ -293,6 +294,16 @@ CoreInternalOutcome BGPInstance::Deserialize(const rapidjson::Value &value)
         m_giftServiceBandWidthHasBeenSet = true;
     }
 
+    if (value.HasMember("ModifyTime") && !value["ModifyTime"].IsNull())
+    {
+        if (!value["ModifyTime"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `BGPInstance.ModifyTime` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_modifyTime = string(value["ModifyTime"].GetString());
+        m_modifyTimeHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -469,6 +480,14 @@ void BGPInstance::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "GiftServiceBandWidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_giftServiceBandWidth, allocator);
+    }
+
+    if (m_modifyTimeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyTime";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_modifyTime.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -776,5 +795,21 @@ void BGPInstance::SetGiftServiceBandWidth(const int64_t& _giftServiceBandWidth)
 bool BGPInstance::GiftServiceBandWidthHasBeenSet() const
 {
     return m_giftServiceBandWidthHasBeenSet;
+}
+
+string BGPInstance::GetModifyTime() const
+{
+    return m_modifyTime;
+}
+
+void BGPInstance::SetModifyTime(const string& _modifyTime)
+{
+    m_modifyTime = _modifyTime;
+    m_modifyTimeHasBeenSet = true;
+}
+
+bool BGPInstance::ModifyTimeHasBeenSet() const
+{
+    return m_modifyTimeHasBeenSet;
 }
 

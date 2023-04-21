@@ -27,7 +27,8 @@ DomainDetailInfo::DomainDetailInfo() :
     m_hTTPSConfigHasBeenSet(false),
     m_urlSignatureAuthPolicyHasBeenSet(false),
     m_refererAuthPolicyHasBeenSet(false),
-    m_createTimeHasBeenSet(false)
+    m_createTimeHasBeenSet(false),
+    m_qUICConfigHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,23 @@ CoreInternalOutcome DomainDetailInfo::Deserialize(const rapidjson::Value &value)
         m_createTimeHasBeenSet = true;
     }
 
+    if (value.HasMember("QUICConfig") && !value["QUICConfig"].IsNull())
+    {
+        if (!value["QUICConfig"].IsObject())
+        {
+            return CoreInternalOutcome(Core::Error("response `DomainDetailInfo.QUICConfig` is not object type").SetRequestId(requestId));
+        }
+
+        CoreInternalOutcome outcome = m_qUICConfig.Deserialize(value["QUICConfig"]);
+        if (!outcome.IsSuccess())
+        {
+            outcome.GetError().SetRequestId(requestId);
+            return outcome;
+        }
+
+        m_qUICConfigHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -208,6 +226,15 @@ void DomainDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document
         string key = "CreateTime";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_createTime.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_qUICConfigHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QUICConfig";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_qUICConfig.ToJsonObject(value[key.c_str()], allocator);
     }
 
 }
@@ -323,5 +350,21 @@ void DomainDetailInfo::SetCreateTime(const string& _createTime)
 bool DomainDetailInfo::CreateTimeHasBeenSet() const
 {
     return m_createTimeHasBeenSet;
+}
+
+DomainQUICConfig DomainDetailInfo::GetQUICConfig() const
+{
+    return m_qUICConfig;
+}
+
+void DomainDetailInfo::SetQUICConfig(const DomainQUICConfig& _qUICConfig)
+{
+    m_qUICConfig = _qUICConfig;
+    m_qUICConfigHasBeenSet = true;
+}
+
+bool DomainDetailInfo::QUICConfigHasBeenSet() const
+{
+    return m_qUICConfigHasBeenSet;
 }
 

@@ -25,7 +25,8 @@ using namespace std;
 
 DescribeBizTrendResponse::DescribeBizTrendResponse() :
     m_dataListHasBeenSet(false),
-    m_metricNameHasBeenSet(false)
+    m_metricNameHasBeenSet(false),
+    m_maxDataHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,16 @@ CoreInternalOutcome DescribeBizTrendResponse::Deserialize(const string &payload)
         m_metricNameHasBeenSet = true;
     }
 
+    if (rsp.HasMember("MaxData") && !rsp["MaxData"].IsNull())
+    {
+        if (!rsp["MaxData"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `MaxData` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_maxData = rsp["MaxData"].GetUint64();
+        m_maxDataHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -115,6 +126,14 @@ string DescribeBizTrendResponse::ToJsonString() const
         string key = "MetricName";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_maxDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MaxData";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_maxData, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -147,6 +166,16 @@ string DescribeBizTrendResponse::GetMetricName() const
 bool DescribeBizTrendResponse::MetricNameHasBeenSet() const
 {
     return m_metricNameHasBeenSet;
+}
+
+uint64_t DescribeBizTrendResponse::GetMaxData() const
+{
+    return m_maxData;
+}
+
+bool DescribeBizTrendResponse::MaxDataHasBeenSet() const
+{
+    return m_maxDataHasBeenSet;
 }
 
 

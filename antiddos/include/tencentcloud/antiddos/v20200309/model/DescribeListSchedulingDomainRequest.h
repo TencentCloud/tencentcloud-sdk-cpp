@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool FilterDomainHasBeenSet() const;
 
+                    /**
+                     * 获取运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     * @return Status 运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     */
+                    std::string GetStatus() const;
+
+                    /**
+                     * 设置运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     * @param Status 运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     */
+                    void SetStatus(const std::string& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     std::string m_filterDomain;
                     bool m_filterDomainHasBeenSet;
+
+                    /**
+                     * 运行状态 0 代表未运行  1 正在运行  2 运行异常 
+                     */
+                    std::string m_status;
+                    bool m_statusHasBeenSet;
 
                 };
             }

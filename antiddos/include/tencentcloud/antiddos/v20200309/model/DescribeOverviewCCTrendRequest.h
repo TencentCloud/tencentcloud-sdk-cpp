@@ -43,24 +43,6 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
-                     * @return Business 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
-                     */
-                    std::string GetBusiness() const;
-
-                    /**
-                     * 设置大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
-                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
-                     */
-                    void SetBusiness(const std::string& _business);
-
-                    /**
-                     * 判断参数 Business 是否已赋值
-                     * @return Business 是否已赋值
-                     */
-                    bool BusinessHasBeenSet() const;
-
-                    /**
                      * 获取统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
                      * @return Period 统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
                      */
@@ -133,6 +115,24 @@ namespace TencentCloud
                     bool MetricNameHasBeenSet() const;
 
                     /**
+                     * 获取大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     * @return Business 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     */
+                    std::string GetBusiness() const;
+
+                    /**
+                     * 设置大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     * @param Business 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     */
+                    void SetBusiness(const std::string& _business);
+
+                    /**
+                     * 判断参数 Business 是否已赋值
+                     * @return Business 是否已赋值
+                     */
+                    bool BusinessHasBeenSet() const;
+
+                    /**
                      * 获取资源的IP
                      * @return IpList 资源的IP
                      */
@@ -171,12 +171,6 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
-                     */
-                    std::string m_business;
-                    bool m_businessHasBeenSet;
-
-                    /**
                      * 统计粒度，取值[300(5分钟)，3600(小时)，86400(天)]
                      */
                     int64_t m_period;
@@ -199,6 +193,12 @@ namespace TencentCloud
                      */
                     std::string m_metricName;
                     bool m_metricNameHasBeenSet;
+
+                    /**
+                     * 大禹子产品代号（bgpip表示高防IP；bgp-multip表示共享包；basic表示DDoS基础防护）
+                     */
+                    std::string m_business;
+                    bool m_businessHasBeenSet;
 
                     /**
                      * 资源的IP

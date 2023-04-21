@@ -2835,6 +2835,92 @@ TdmqClient::DescribePublishersOutcomeCallable TdmqClient::DescribePublishersCall
     return task->get_future();
 }
 
+TdmqClient::DescribePulsarProInstanceDetailOutcome TdmqClient::DescribePulsarProInstanceDetail(const DescribePulsarProInstanceDetailRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePulsarProInstanceDetail");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePulsarProInstanceDetailResponse rsp = DescribePulsarProInstanceDetailResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePulsarProInstanceDetailOutcome(rsp);
+        else
+            return DescribePulsarProInstanceDetailOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePulsarProInstanceDetailOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribePulsarProInstanceDetailAsync(const DescribePulsarProInstanceDetailRequest& request, const DescribePulsarProInstanceDetailAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePulsarProInstanceDetail(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribePulsarProInstanceDetailOutcomeCallable TdmqClient::DescribePulsarProInstanceDetailCallable(const DescribePulsarProInstanceDetailRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePulsarProInstanceDetailOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePulsarProInstanceDetail(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+TdmqClient::DescribePulsarProInstancesOutcome TdmqClient::DescribePulsarProInstances(const DescribePulsarProInstancesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribePulsarProInstances");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribePulsarProInstancesResponse rsp = DescribePulsarProInstancesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribePulsarProInstancesOutcome(rsp);
+        else
+            return DescribePulsarProInstancesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribePulsarProInstancesOutcome(outcome.GetError());
+    }
+}
+
+void TdmqClient::DescribePulsarProInstancesAsync(const DescribePulsarProInstancesRequest& request, const DescribePulsarProInstancesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribePulsarProInstances(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+TdmqClient::DescribePulsarProInstancesOutcomeCallable TdmqClient::DescribePulsarProInstancesCallable(const DescribePulsarProInstancesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribePulsarProInstancesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribePulsarProInstances(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 TdmqClient::DescribeRabbitMQNodeListOutcome TdmqClient::DescribeRabbitMQNodeList(const DescribeRabbitMQNodeListRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeRabbitMQNodeList");

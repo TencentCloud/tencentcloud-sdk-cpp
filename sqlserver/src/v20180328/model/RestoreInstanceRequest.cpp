@@ -27,6 +27,8 @@ RestoreInstanceRequest::RestoreInstanceRequest() :
     m_backupIdHasBeenSet(false),
     m_targetInstanceIdHasBeenSet(false),
     m_renameRestoreHasBeenSet(false),
+    m_typeHasBeenSet(false),
+    m_dBListHasBeenSet(false),
     m_groupIdHasBeenSet(false)
 {
 }
@@ -74,6 +76,27 @@ string RestoreInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_typeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Type";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_type, allocator);
+    }
+
+    if (m_dBListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DBList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_dBList.begin(); itr != m_dBList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
     }
 
@@ -155,6 +178,38 @@ void RestoreInstanceRequest::SetRenameRestore(const vector<RenameRestoreDatabase
 bool RestoreInstanceRequest::RenameRestoreHasBeenSet() const
 {
     return m_renameRestoreHasBeenSet;
+}
+
+uint64_t RestoreInstanceRequest::GetType() const
+{
+    return m_type;
+}
+
+void RestoreInstanceRequest::SetType(const uint64_t& _type)
+{
+    m_type = _type;
+    m_typeHasBeenSet = true;
+}
+
+bool RestoreInstanceRequest::TypeHasBeenSet() const
+{
+    return m_typeHasBeenSet;
+}
+
+vector<string> RestoreInstanceRequest::GetDBList() const
+{
+    return m_dBList;
+}
+
+void RestoreInstanceRequest::SetDBList(const vector<string>& _dBList)
+{
+    m_dBList = _dBList;
+    m_dBListHasBeenSet = true;
+}
+
+bool RestoreInstanceRequest::DBListHasBeenSet() const
+{
+    return m_dBListHasBeenSet;
 }
 
 string RestoreInstanceRequest::GetGroupId() const

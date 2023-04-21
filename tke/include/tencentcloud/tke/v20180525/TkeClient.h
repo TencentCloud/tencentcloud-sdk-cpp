@@ -39,6 +39,8 @@
 #include <tencentcloud/tke/v20180525/model/CheckEdgeClusterCIDRResponse.h>
 #include <tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleRequest.h>
 #include <tencentcloud/tke/v20180525/model/CheckInstancesUpgradeAbleResponse.h>
+#include <tencentcloud/tke/v20180525/model/CreateBackupStorageLocationRequest.h>
+#include <tencentcloud/tke/v20180525/model/CreateBackupStorageLocationResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateClusterEndpointRequest.h>
@@ -91,6 +93,8 @@
 #include <tencentcloud/tke/v20180525/model/CreatePrometheusTemplateResponse.h>
 #include <tencentcloud/tke/v20180525/model/CreateTKEEdgeClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/CreateTKEEdgeClusterResponse.h>
+#include <tencentcloud/tke/v20180525/model/DeleteBackupStorageLocationRequest.h>
+#include <tencentcloud/tke/v20180525/model/DeleteBackupStorageLocationResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterRequest.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterResponse.h>
 #include <tencentcloud/tke/v20180525/model/DeleteClusterAsGroupsRequest.h>
@@ -147,6 +151,8 @@
 #include <tencentcloud/tke/v20180525/model/DescribeAvailableClusterVersionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAvailableTKEEdgeVersionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeAvailableTKEEdgeVersionResponse.h>
+#include <tencentcloud/tke/v20180525/model/DescribeBackupStorageLocationsRequest.h>
+#include <tencentcloud/tke/v20180525/model/DescribeBackupStorageLocationsResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionRequest.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupOptionResponse.h>
 #include <tencentcloud/tke/v20180525/model/DescribeClusterAsGroupsRequest.h>
@@ -439,6 +445,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CheckInstancesUpgradeAbleResponse> CheckInstancesUpgradeAbleOutcome;
                 typedef std::future<CheckInstancesUpgradeAbleOutcome> CheckInstancesUpgradeAbleOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CheckInstancesUpgradeAbleRequest&, CheckInstancesUpgradeAbleOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CheckInstancesUpgradeAbleAsyncHandler;
+                typedef Outcome<Core::Error, Model::CreateBackupStorageLocationResponse> CreateBackupStorageLocationOutcome;
+                typedef std::future<CreateBackupStorageLocationOutcome> CreateBackupStorageLocationOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::CreateBackupStorageLocationRequest&, CreateBackupStorageLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateBackupStorageLocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::CreateClusterResponse> CreateClusterOutcome;
                 typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateClusterRequest&, CreateClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateClusterAsyncHandler;
@@ -517,6 +526,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::CreateTKEEdgeClusterResponse> CreateTKEEdgeClusterOutcome;
                 typedef std::future<CreateTKEEdgeClusterOutcome> CreateTKEEdgeClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::CreateTKEEdgeClusterRequest&, CreateTKEEdgeClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> CreateTKEEdgeClusterAsyncHandler;
+                typedef Outcome<Core::Error, Model::DeleteBackupStorageLocationResponse> DeleteBackupStorageLocationOutcome;
+                typedef std::future<DeleteBackupStorageLocationOutcome> DeleteBackupStorageLocationOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DeleteBackupStorageLocationRequest&, DeleteBackupStorageLocationOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteBackupStorageLocationAsyncHandler;
                 typedef Outcome<Core::Error, Model::DeleteClusterResponse> DeleteClusterOutcome;
                 typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DeleteClusterRequest&, DeleteClusterOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DeleteClusterAsyncHandler;
@@ -601,6 +613,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAvailableTKEEdgeVersionResponse> DescribeAvailableTKEEdgeVersionOutcome;
                 typedef std::future<DescribeAvailableTKEEdgeVersionOutcome> DescribeAvailableTKEEdgeVersionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeAvailableTKEEdgeVersionRequest&, DescribeAvailableTKEEdgeVersionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAvailableTKEEdgeVersionAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeBackupStorageLocationsResponse> DescribeBackupStorageLocationsOutcome;
+                typedef std::future<DescribeBackupStorageLocationsOutcome> DescribeBackupStorageLocationsOutcomeCallable;
+                typedef std::function<void(const TkeClient*, const Model::DescribeBackupStorageLocationsRequest&, DescribeBackupStorageLocationsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeBackupStorageLocationsAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeClusterAsGroupOptionResponse> DescribeClusterAsGroupOptionOutcome;
                 typedef std::future<DescribeClusterAsGroupOptionOutcome> DescribeClusterAsGroupOptionOutcomeCallable;
                 typedef std::function<void(const TkeClient*, const Model::DescribeClusterAsGroupOptionRequest&, DescribeClusterAsGroupOptionOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeClusterAsGroupOptionAsyncHandler;
@@ -1058,6 +1073,15 @@ namespace TencentCloud
                 CheckInstancesUpgradeAbleOutcomeCallable CheckInstancesUpgradeAbleCallable(const Model::CheckInstancesUpgradeAbleRequest& request);
 
                 /**
+                 *创建备份仓库，指定了存储仓库类型（如COS）、COS桶地区、名称等信息，当前最多允许创建100个仓库， 注意此接口当前是全局接口，多个地域的TKE集群如果要备份到相同的备份仓库中，不需要重复创建备份仓库
+                 * @param req CreateBackupStorageLocationRequest
+                 * @return CreateBackupStorageLocationOutcome
+                 */
+                CreateBackupStorageLocationOutcome CreateBackupStorageLocation(const Model::CreateBackupStorageLocationRequest &request);
+                void CreateBackupStorageLocationAsync(const Model::CreateBackupStorageLocationRequest& request, const CreateBackupStorageLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                CreateBackupStorageLocationOutcomeCallable CreateBackupStorageLocationCallable(const Model::CreateBackupStorageLocationRequest& request);
+
+                /**
                  *创建集群
                  * @param req CreateClusterRequest
                  * @return CreateClusterOutcome
@@ -1290,6 +1314,15 @@ namespace TencentCloud
                 CreateTKEEdgeClusterOutcome CreateTKEEdgeCluster(const Model::CreateTKEEdgeClusterRequest &request);
                 void CreateTKEEdgeClusterAsync(const Model::CreateTKEEdgeClusterRequest& request, const CreateTKEEdgeClusterAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 CreateTKEEdgeClusterOutcomeCallable CreateTKEEdgeClusterCallable(const Model::CreateTKEEdgeClusterRequest& request);
+
+                /**
+                 *删除备份仓库
+                 * @param req DeleteBackupStorageLocationRequest
+                 * @return DeleteBackupStorageLocationOutcome
+                 */
+                DeleteBackupStorageLocationOutcome DeleteBackupStorageLocation(const Model::DeleteBackupStorageLocationRequest &request);
+                void DeleteBackupStorageLocationAsync(const Model::DeleteBackupStorageLocationRequest& request, const DeleteBackupStorageLocationAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DeleteBackupStorageLocationOutcomeCallable DeleteBackupStorageLocationCallable(const Model::DeleteBackupStorageLocationRequest& request);
 
                 /**
                  *删除集群(YUNAPI V3版本)
@@ -1542,6 +1575,15 @@ namespace TencentCloud
                 DescribeAvailableTKEEdgeVersionOutcome DescribeAvailableTKEEdgeVersion(const Model::DescribeAvailableTKEEdgeVersionRequest &request);
                 void DescribeAvailableTKEEdgeVersionAsync(const Model::DescribeAvailableTKEEdgeVersionRequest& request, const DescribeAvailableTKEEdgeVersionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAvailableTKEEdgeVersionOutcomeCallable DescribeAvailableTKEEdgeVersionCallable(const Model::DescribeAvailableTKEEdgeVersionRequest& request);
+
+                /**
+                 *查询备份仓库信息
+                 * @param req DescribeBackupStorageLocationsRequest
+                 * @return DescribeBackupStorageLocationsOutcome
+                 */
+                DescribeBackupStorageLocationsOutcome DescribeBackupStorageLocations(const Model::DescribeBackupStorageLocationsRequest &request);
+                void DescribeBackupStorageLocationsAsync(const Model::DescribeBackupStorageLocationsRequest& request, const DescribeBackupStorageLocationsAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeBackupStorageLocationsOutcomeCallable DescribeBackupStorageLocationsCallable(const Model::DescribeBackupStorageLocationsRequest& request);
 
                 /**
                  *集群弹性伸缩配置

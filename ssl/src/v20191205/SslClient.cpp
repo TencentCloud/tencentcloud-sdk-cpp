@@ -556,6 +556,49 @@ SslClient::DescribeCertificatesOutcomeCallable SslClient::DescribeCertificatesCa
     return task->get_future();
 }
 
+SslClient::DescribeCompaniesOutcome SslClient::DescribeCompanies(const DescribeCompaniesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeCompanies");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeCompaniesResponse rsp = DescribeCompaniesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeCompaniesOutcome(rsp);
+        else
+            return DescribeCompaniesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeCompaniesOutcome(outcome.GetError());
+    }
+}
+
+void SslClient::DescribeCompaniesAsync(const DescribeCompaniesRequest& request, const DescribeCompaniesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeCompanies(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+SslClient::DescribeCompaniesOutcomeCallable SslClient::DescribeCompaniesCallable(const DescribeCompaniesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeCompaniesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeCompanies(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 SslClient::DescribeDeployedResourcesOutcome SslClient::DescribeDeployedResources(const DescribeDeployedResourcesRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDeployedResources");

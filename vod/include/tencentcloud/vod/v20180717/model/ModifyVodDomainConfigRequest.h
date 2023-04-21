@@ -23,6 +23,7 @@
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/vod/v20180717/model/RefererAuthPolicy.h>
 #include <tencentcloud/vod/v20180717/model/UrlSignatureAuthPolicy.h>
+#include <tencentcloud/vod/v20180717/model/DomainQUICConfig.h>
 
 
 namespace TencentCloud
@@ -116,6 +117,24 @@ namespace TencentCloud
                      */
                     bool UrlSignatureAuthPolicyHasBeenSet() const;
 
+                    /**
+                     * 获取QUIC 配置。
+                     * @return QUICConfig QUIC 配置。
+                     */
+                    DomainQUICConfig GetQUICConfig() const;
+
+                    /**
+                     * 设置QUIC 配置。
+                     * @param QUICConfig QUIC 配置。
+                     */
+                    void SetQUICConfig(const DomainQUICConfig& _qUICConfig);
+
+                    /**
+                     * 判断参数 QUICConfig 是否已赋值
+                     * @return QUICConfig 是否已赋值
+                     */
+                    bool QUICConfigHasBeenSet() const;
+
                 private:
 
                     /**
@@ -141,6 +160,12 @@ namespace TencentCloud
                      */
                     UrlSignatureAuthPolicy m_urlSignatureAuthPolicy;
                     bool m_urlSignatureAuthPolicyHasBeenSet;
+
+                    /**
+                     * QUIC 配置。
+                     */
+                    DomainQUICConfig m_qUICConfig;
+                    bool m_qUICConfigHasBeenSet;
 
                 };
             }

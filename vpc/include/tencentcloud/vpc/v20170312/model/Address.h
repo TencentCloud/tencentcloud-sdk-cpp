@@ -442,6 +442,50 @@ namespace TencentCloud
                      */
                     bool TagSetHasBeenSet() const;
 
+                    /**
+                     * 获取到期时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return DeadlineDate 到期时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetDeadlineDate() const;
+
+                    /**
+                     * 设置到期时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param DeadlineDate 到期时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetDeadlineDate(const std::string& _deadlineDate);
+
+                    /**
+                     * 判断参数 DeadlineDate 是否已赋值
+                     * @return DeadlineDate 是否已赋值
+                     */
+                    bool DeadlineDateHasBeenSet() const;
+
+                    /**
+                     * 获取EIP绑定的实例类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return InstanceType EIP绑定的实例类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetInstanceType() const;
+
+                    /**
+                     * 设置EIP绑定的实例类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param InstanceType EIP绑定的实例类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetInstanceType(const std::string& _instanceType);
+
+                    /**
+                     * 判断参数 InstanceType 是否已赋值
+                     * @return InstanceType 是否已赋值
+                     */
+                    bool InstanceTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -570,6 +614,20 @@ namespace TencentCloud
                      */
                     std::vector<Tag> m_tagSet;
                     bool m_tagSetHasBeenSet;
+
+                    /**
+                     * 到期时间。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_deadlineDate;
+                    bool m_deadlineDateHasBeenSet;
+
+                    /**
+                     * EIP绑定的实例类型。
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_instanceType;
+                    bool m_instanceTypeHasBeenSet;
 
                 };
             }

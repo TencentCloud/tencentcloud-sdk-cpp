@@ -35,7 +35,8 @@ EdgeCluster::EdgeCluster() :
     m_clusterAdvancedSettingsHasBeenSet(false),
     m_levelHasBeenSet(false),
     m_autoUpgradeClusterLevelHasBeenSet(false),
-    m_chargeTypeHasBeenSet(false)
+    m_chargeTypeHasBeenSet(false),
+    m_edgeVersionHasBeenSet(false)
 {
 }
 
@@ -201,6 +202,16 @@ CoreInternalOutcome EdgeCluster::Deserialize(const rapidjson::Value &value)
         m_chargeTypeHasBeenSet = true;
     }
 
+    if (value.HasMember("EdgeVersion") && !value["EdgeVersion"].IsNull())
+    {
+        if (!value["EdgeVersion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `EdgeCluster.EdgeVersion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_edgeVersion = string(value["EdgeVersion"].GetString());
+        m_edgeVersionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -327,6 +338,14 @@ void EdgeCluster::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "ChargeType";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_chargeType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_edgeVersionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EdgeVersion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_edgeVersion.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -570,5 +589,21 @@ void EdgeCluster::SetChargeType(const string& _chargeType)
 bool EdgeCluster::ChargeTypeHasBeenSet() const
 {
     return m_chargeTypeHasBeenSet;
+}
+
+string EdgeCluster::GetEdgeVersion() const
+{
+    return m_edgeVersion;
+}
+
+void EdgeCluster::SetEdgeVersion(const string& _edgeVersion)
+{
+    m_edgeVersion = _edgeVersion;
+    m_edgeVersionHasBeenSet = true;
+}
+
+bool EdgeCluster::EdgeVersionHasBeenSet() const
+{
+    return m_edgeVersionHasBeenSet;
 }
 

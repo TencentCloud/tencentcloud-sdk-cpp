@@ -25,7 +25,8 @@ using namespace std;
 DescribeListSchedulingDomainRequest::DescribeListSchedulingDomainRequest() :
     m_offsetHasBeenSet(false),
     m_limitHasBeenSet(false),
-    m_filterDomainHasBeenSet(false)
+    m_filterDomainHasBeenSet(false),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,14 @@ string DescribeListSchedulingDomainRequest::ToJsonString() const
         string key = "FilterDomain";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_filterDomain.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_status.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -114,6 +123,22 @@ void DescribeListSchedulingDomainRequest::SetFilterDomain(const string& _filterD
 bool DescribeListSchedulingDomainRequest::FilterDomainHasBeenSet() const
 {
     return m_filterDomainHasBeenSet;
+}
+
+string DescribeListSchedulingDomainRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void DescribeListSchedulingDomainRequest::SetStatus(const string& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool DescribeListSchedulingDomainRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
 }
 
 

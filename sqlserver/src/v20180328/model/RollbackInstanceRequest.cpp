@@ -25,8 +25,8 @@ using namespace std;
 RollbackInstanceRequest::RollbackInstanceRequest() :
     m_instanceIdHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_dBsHasBeenSet(false),
     m_timeHasBeenSet(false),
+    m_dBsHasBeenSet(false),
     m_targetInstanceIdHasBeenSet(false),
     m_renameRestoreHasBeenSet(false)
 {
@@ -55,6 +55,14 @@ string RollbackInstanceRequest::ToJsonString() const
         d.AddMember(iKey, m_type, allocator);
     }
 
+    if (m_timeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Time";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_dBsHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -66,14 +74,6 @@ string RollbackInstanceRequest::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
-    }
-
-    if (m_timeHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Time";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_time.c_str(), allocator).Move(), allocator);
     }
 
     if (m_targetInstanceIdHasBeenSet)
@@ -139,22 +139,6 @@ bool RollbackInstanceRequest::TypeHasBeenSet() const
     return m_typeHasBeenSet;
 }
 
-vector<string> RollbackInstanceRequest::GetDBs() const
-{
-    return m_dBs;
-}
-
-void RollbackInstanceRequest::SetDBs(const vector<string>& _dBs)
-{
-    m_dBs = _dBs;
-    m_dBsHasBeenSet = true;
-}
-
-bool RollbackInstanceRequest::DBsHasBeenSet() const
-{
-    return m_dBsHasBeenSet;
-}
-
 string RollbackInstanceRequest::GetTime() const
 {
     return m_time;
@@ -169,6 +153,22 @@ void RollbackInstanceRequest::SetTime(const string& _time)
 bool RollbackInstanceRequest::TimeHasBeenSet() const
 {
     return m_timeHasBeenSet;
+}
+
+vector<string> RollbackInstanceRequest::GetDBs() const
+{
+    return m_dBs;
+}
+
+void RollbackInstanceRequest::SetDBs(const vector<string>& _dBs)
+{
+    m_dBs = _dBs;
+    m_dBsHasBeenSet = true;
+}
+
+bool RollbackInstanceRequest::DBsHasBeenSet() const
+{
+    return m_dBsHasBeenSet;
 }
 
 string RollbackInstanceRequest::GetTargetInstanceId() const

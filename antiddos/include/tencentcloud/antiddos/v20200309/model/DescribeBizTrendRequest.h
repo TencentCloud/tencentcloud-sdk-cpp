@@ -205,6 +205,32 @@ namespace TencentCloud
                      */
                     bool ProtoInfoHasBeenSet() const;
 
+                    /**
+                     * 获取业务类型可取值domain, port
+port：端口业务
+domain：域名业务
+                     * @return BusinessType 业务类型可取值domain, port
+port：端口业务
+domain：域名业务
+                     */
+                    std::string GetBusinessType() const;
+
+                    /**
+                     * 设置业务类型可取值domain, port
+port：端口业务
+domain：域名业务
+                     * @param BusinessType 业务类型可取值domain, port
+port：端口业务
+domain：域名业务
+                     */
+                    void SetBusinessType(const std::string& _businessType);
+
+                    /**
+                     * 判断参数 BusinessType 是否已赋值
+                     * @return BusinessType 是否已赋值
+                     */
+                    bool BusinessTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -260,6 +286,14 @@ namespace TencentCloud
                      */
                     std::vector<ProtocolPort> m_protoInfo;
                     bool m_protoInfoHasBeenSet;
+
+                    /**
+                     * 业务类型可取值domain, port
+port：端口业务
+domain：域名业务
+                     */
+                    std::string m_businessType;
+                    bool m_businessTypeHasBeenSet;
 
                 };
             }

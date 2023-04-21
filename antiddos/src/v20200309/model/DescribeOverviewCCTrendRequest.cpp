@@ -23,11 +23,11 @@ using namespace TencentCloud::Antiddos::V20200309::Model;
 using namespace std;
 
 DescribeOverviewCCTrendRequest::DescribeOverviewCCTrendRequest() :
-    m_businessHasBeenSet(false),
     m_periodHasBeenSet(false),
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_metricNameHasBeenSet(false),
+    m_businessHasBeenSet(false),
     m_ipListHasBeenSet(false),
     m_idHasBeenSet(false)
 {
@@ -39,14 +39,6 @@ string DescribeOverviewCCTrendRequest::ToJsonString() const
     d.SetObject();
     rapidjson::Document::AllocatorType& allocator = d.GetAllocator();
 
-
-    if (m_businessHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Business";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
-    }
 
     if (m_periodHasBeenSet)
     {
@@ -80,6 +72,14 @@ string DescribeOverviewCCTrendRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_metricName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_businessHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Business";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_business.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_ipListHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -108,22 +108,6 @@ string DescribeOverviewCCTrendRequest::ToJsonString() const
     return buffer.GetString();
 }
 
-
-string DescribeOverviewCCTrendRequest::GetBusiness() const
-{
-    return m_business;
-}
-
-void DescribeOverviewCCTrendRequest::SetBusiness(const string& _business)
-{
-    m_business = _business;
-    m_businessHasBeenSet = true;
-}
-
-bool DescribeOverviewCCTrendRequest::BusinessHasBeenSet() const
-{
-    return m_businessHasBeenSet;
-}
 
 int64_t DescribeOverviewCCTrendRequest::GetPeriod() const
 {
@@ -187,6 +171,22 @@ void DescribeOverviewCCTrendRequest::SetMetricName(const string& _metricName)
 bool DescribeOverviewCCTrendRequest::MetricNameHasBeenSet() const
 {
     return m_metricNameHasBeenSet;
+}
+
+string DescribeOverviewCCTrendRequest::GetBusiness() const
+{
+    return m_business;
+}
+
+void DescribeOverviewCCTrendRequest::SetBusiness(const string& _business)
+{
+    m_business = _business;
+    m_businessHasBeenSet = true;
+}
+
+bool DescribeOverviewCCTrendRequest::BusinessHasBeenSet() const
+{
+    return m_businessHasBeenSet;
 }
 
 vector<string> DescribeOverviewCCTrendRequest::GetIpList() const

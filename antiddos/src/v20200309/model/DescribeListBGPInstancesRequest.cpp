@@ -39,7 +39,8 @@ DescribeListBGPInstancesRequest::DescribeListBGPInstancesRequest() :
     m_filterTagHasBeenSet(false),
     m_filterTrialFlagHasBeenSet(false),
     m_filterConvoyHasBeenSet(false),
-    m_excludeAdvancedInfoHasBeenSet(false)
+    m_excludeAdvancedInfoHasBeenSet(false),
+    m_filterAssetIpListHasBeenSet(false)
 {
 }
 
@@ -190,6 +191,19 @@ string DescribeListBGPInstancesRequest::ToJsonString() const
         string key = "ExcludeAdvancedInfo";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_excludeAdvancedInfo, allocator);
+    }
+
+    if (m_filterAssetIpListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FilterAssetIpList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_filterAssetIpList.begin(); itr != m_filterAssetIpList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -470,6 +484,22 @@ void DescribeListBGPInstancesRequest::SetExcludeAdvancedInfo(const bool& _exclud
 bool DescribeListBGPInstancesRequest::ExcludeAdvancedInfoHasBeenSet() const
 {
     return m_excludeAdvancedInfoHasBeenSet;
+}
+
+vector<string> DescribeListBGPInstancesRequest::GetFilterAssetIpList() const
+{
+    return m_filterAssetIpList;
+}
+
+void DescribeListBGPInstancesRequest::SetFilterAssetIpList(const vector<string>& _filterAssetIpList)
+{
+    m_filterAssetIpList = _filterAssetIpList;
+    m_filterAssetIpListHasBeenSet = true;
+}
+
+bool DescribeListBGPInstancesRequest::FilterAssetIpListHasBeenSet() const
+{
+    return m_filterAssetIpListHasBeenSet;
 }
 
 

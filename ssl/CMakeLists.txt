@@ -42,7 +42,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/RootCertificates.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/HostCertificateResponse.h
-  include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterRequest.h
+  include/tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/PackageTransferOutInfo.h
   include/tencentcloud/ssl/v20191205/model/OperationLog.h
   include/tencentcloud/ssl/v20191205/model/VerifyManagerResponse.h
@@ -67,6 +67,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/HostCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailRequest.h
+  include/tencentcloud/ssl/v20191205/model/DescribeCompaniesResponse.h
   include/tencentcloud/ssl/v20191205/model/DvAuthDetail.h
   include/tencentcloud/ssl/v20191205/model/ProjectInfo.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificatesExpiringNotificationSwitchRequest.h
@@ -79,12 +80,13 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterResponse.h
   include/tencentcloud/ssl/v20191205/model/DeleteManagerResponse.h
   include/tencentcloud/ssl/v20191205/model/VerifyManagerRequest.h
-  include/tencentcloud/ssl/v20191205/model/UploadCertificateResponse.h
+  include/tencentcloud/ssl/v20191205/model/RevokeCertificateRequest.h
   include/tencentcloud/ssl/v20191205/model/RevokeDomainValidateAuths.h
   include/tencentcloud/ssl/v20191205/model/DescribePackagesRequest.h
   include/tencentcloud/ssl/v20191205/model/CheckCertificateChainRequest.h
   include/tencentcloud/ssl/v20191205/model/ModifyCertificateAliasResponse.h
-  include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h
+  include/tencentcloud/ssl/v20191205/model/UploadConfirmLetterRequest.h
+  include/tencentcloud/ssl/v20191205/model/DescribeCompaniesRequest.h
   include/tencentcloud/ssl/v20191205/model/ManagerStatusInfo.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationRequest.h
   include/tencentcloud/ssl/v20191205/model/DescribeCertificatesRequest.h
@@ -92,7 +94,7 @@ set(ssl_public_header_model
   include/tencentcloud/ssl/v20191205/model/DescribeManagersRequest.h
   include/tencentcloud/ssl/v20191205/model/CompleteCertificateResponse.h
   include/tencentcloud/ssl/v20191205/model/SubmitCertificateInformationResponse.h
-  include/tencentcloud/ssl/v20191205/model/RevokeCertificateRequest.h
+  include/tencentcloud/ssl/v20191205/model/DescribeManagerDetailResponse.h
   include/tencentcloud/ssl/v20191205/model/PreAuditInfo.h
   include/tencentcloud/ssl/v20191205/model/SubmittedData.h
   )
@@ -122,7 +124,7 @@ set(ssl_src
   src/v20191205/model/RootCertificates.cpp
   src/v20191205/model/DescribeCertificateResponse.cpp
   src/v20191205/model/HostCertificateResponse.cpp
-  src/v20191205/model/UploadConfirmLetterRequest.cpp
+  src/v20191205/model/UploadCertificateResponse.cpp
   src/v20191205/model/PackageTransferOutInfo.cpp
   src/v20191205/model/OperationLog.cpp
   src/v20191205/model/VerifyManagerResponse.cpp
@@ -147,6 +149,7 @@ set(ssl_src
   src/v20191205/model/HostCertificateRequest.cpp
   src/v20191205/model/DescribeCertificateRequest.cpp
   src/v20191205/model/DescribeManagerDetailRequest.cpp
+  src/v20191205/model/DescribeCompaniesResponse.cpp
   src/v20191205/model/DvAuthDetail.cpp
   src/v20191205/model/ProjectInfo.cpp
   src/v20191205/model/ModifyCertificatesExpiringNotificationSwitchRequest.cpp
@@ -159,12 +162,13 @@ set(ssl_src
   src/v20191205/model/UploadConfirmLetterResponse.cpp
   src/v20191205/model/DeleteManagerResponse.cpp
   src/v20191205/model/VerifyManagerRequest.cpp
-  src/v20191205/model/UploadCertificateResponse.cpp
+  src/v20191205/model/RevokeCertificateRequest.cpp
   src/v20191205/model/RevokeDomainValidateAuths.cpp
   src/v20191205/model/DescribePackagesRequest.cpp
   src/v20191205/model/CheckCertificateChainRequest.cpp
   src/v20191205/model/ModifyCertificateAliasResponse.cpp
-  src/v20191205/model/DescribeManagerDetailResponse.cpp
+  src/v20191205/model/UploadConfirmLetterRequest.cpp
+  src/v20191205/model/DescribeCompaniesRequest.cpp
   src/v20191205/model/ManagerStatusInfo.cpp
   src/v20191205/model/SubmitCertificateInformationRequest.cpp
   src/v20191205/model/DescribeCertificatesRequest.cpp
@@ -172,7 +176,7 @@ set(ssl_src
   src/v20191205/model/DescribeManagersRequest.cpp
   src/v20191205/model/CompleteCertificateResponse.cpp
   src/v20191205/model/SubmitCertificateInformationResponse.cpp
-  src/v20191205/model/RevokeCertificateRequest.cpp
+  src/v20191205/model/DescribeManagerDetailResponse.cpp
   src/v20191205/model/PreAuditInfo.cpp
   src/v20191205/model/SubmittedData.cpp
   )

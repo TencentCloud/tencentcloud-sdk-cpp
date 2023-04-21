@@ -22,6 +22,9 @@ using namespace std;
 
 RemoveWaterMarkTaskOutput::RemoveWaterMarkTaskOutput() :
     m_fileIdHasBeenSet(false),
+    m_fileTypeHasBeenSet(false),
+    m_fileUrlHasBeenSet(false),
+    m_mediaNameHasBeenSet(false),
     m_metaDataHasBeenSet(false)
 {
 }
@@ -39,6 +42,36 @@ CoreInternalOutcome RemoveWaterMarkTaskOutput::Deserialize(const rapidjson::Valu
         }
         m_fileId = string(value["FileId"].GetString());
         m_fileIdHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileType") && !value["FileType"].IsNull())
+    {
+        if (!value["FileType"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoveWaterMarkTaskOutput.FileType` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileType = string(value["FileType"].GetString());
+        m_fileTypeHasBeenSet = true;
+    }
+
+    if (value.HasMember("FileUrl") && !value["FileUrl"].IsNull())
+    {
+        if (!value["FileUrl"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoveWaterMarkTaskOutput.FileUrl` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_fileUrl = string(value["FileUrl"].GetString());
+        m_fileUrlHasBeenSet = true;
+    }
+
+    if (value.HasMember("MediaName") && !value["MediaName"].IsNull())
+    {
+        if (!value["MediaName"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `RemoveWaterMarkTaskOutput.MediaName` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_mediaName = string(value["MediaName"].GetString());
+        m_mediaNameHasBeenSet = true;
     }
 
     if (value.HasMember("MetaData") && !value["MetaData"].IsNull())
@@ -73,6 +106,30 @@ void RemoveWaterMarkTaskOutput::ToJsonObject(rapidjson::Value &value, rapidjson:
         value.AddMember(iKey, rapidjson::Value(m_fileId.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_fileTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileType";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileType.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_fileUrlHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "FileUrl";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_fileUrl.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_mediaNameHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "MediaName";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_mediaName.c_str(), allocator).Move(), allocator);
+    }
+
     if (m_metaDataHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -99,6 +156,54 @@ void RemoveWaterMarkTaskOutput::SetFileId(const string& _fileId)
 bool RemoveWaterMarkTaskOutput::FileIdHasBeenSet() const
 {
     return m_fileIdHasBeenSet;
+}
+
+string RemoveWaterMarkTaskOutput::GetFileType() const
+{
+    return m_fileType;
+}
+
+void RemoveWaterMarkTaskOutput::SetFileType(const string& _fileType)
+{
+    m_fileType = _fileType;
+    m_fileTypeHasBeenSet = true;
+}
+
+bool RemoveWaterMarkTaskOutput::FileTypeHasBeenSet() const
+{
+    return m_fileTypeHasBeenSet;
+}
+
+string RemoveWaterMarkTaskOutput::GetFileUrl() const
+{
+    return m_fileUrl;
+}
+
+void RemoveWaterMarkTaskOutput::SetFileUrl(const string& _fileUrl)
+{
+    m_fileUrl = _fileUrl;
+    m_fileUrlHasBeenSet = true;
+}
+
+bool RemoveWaterMarkTaskOutput::FileUrlHasBeenSet() const
+{
+    return m_fileUrlHasBeenSet;
+}
+
+string RemoveWaterMarkTaskOutput::GetMediaName() const
+{
+    return m_mediaName;
+}
+
+void RemoveWaterMarkTaskOutput::SetMediaName(const string& _mediaName)
+{
+    m_mediaName = _mediaName;
+    m_mediaNameHasBeenSet = true;
+}
+
+bool RemoveWaterMarkTaskOutput::MediaNameHasBeenSet() const
+{
+    return m_mediaNameHasBeenSet;
 }
 
 MediaMetaData RemoveWaterMarkTaskOutput::GetMetaData() const

@@ -132,6 +132,24 @@ namespace TencentCloud
                      */
                     bool ExpiredSecondsHasBeenSet() const;
 
+                    /**
+                     * 获取是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * @return SkipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     */
+                    bool GetSkipAddingNonMasqueradeCIDRs() const;
+
+                    /**
+                     * 设置是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     * @param SkipAddingNonMasqueradeCIDRs 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     */
+                    void SetSkipAddingNonMasqueradeCIDRs(const bool& _skipAddingNonMasqueradeCIDRs);
+
+                    /**
+                     * 判断参数 SkipAddingNonMasqueradeCIDRs 是否已赋值
+                     * @return SkipAddingNonMasqueradeCIDRs 是否已赋值
+                     */
+                    bool SkipAddingNonMasqueradeCIDRsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -163,6 +181,12 @@ namespace TencentCloud
                      */
                     uint64_t m_expiredSeconds;
                     bool m_expiredSecondsHasBeenSet;
+
+                    /**
+                     * 是否同步添加 vpc 网段到 ip-masq-agent-config 的 NonMasqueradeCIDRs 字段，默认 false 会同步添加
+                     */
+                    bool m_skipAddingNonMasqueradeCIDRs;
+                    bool m_skipAddingNonMasqueradeCIDRsHasBeenSet;
 
                 };
             }

@@ -24,7 +24,8 @@ IPLineInfo::IPLineInfo() :
     m_typeHasBeenSet(false),
     m_eipHasBeenSet(false),
     m_cnameHasBeenSet(false),
-    m_resourceFlagHasBeenSet(false)
+    m_resourceFlagHasBeenSet(false),
+    m_domainHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,16 @@ CoreInternalOutcome IPLineInfo::Deserialize(const rapidjson::Value &value)
         m_resourceFlagHasBeenSet = true;
     }
 
+    if (value.HasMember("Domain") && !value["Domain"].IsNull())
+    {
+        if (!value["Domain"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `IPLineInfo.Domain` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_domain = string(value["Domain"].GetString());
+        m_domainHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -110,6 +121,14 @@ void IPLineInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Allo
         string key = "ResourceFlag";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_resourceFlag, allocator);
+    }
+
+    if (m_domainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Domain";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_domain.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -177,5 +196,21 @@ void IPLineInfo::SetResourceFlag(const int64_t& _resourceFlag)
 bool IPLineInfo::ResourceFlagHasBeenSet() const
 {
     return m_resourceFlagHasBeenSet;
+}
+
+string IPLineInfo::GetDomain() const
+{
+    return m_domain;
+}
+
+void IPLineInfo::SetDomain(const string& _domain)
+{
+    m_domain = _domain;
+    m_domainHasBeenSet = true;
+}
+
+bool IPLineInfo::DomainHasBeenSet() const
+{
+    return m_domainHasBeenSet;
 }
 

@@ -27,7 +27,8 @@ EnableVpcCniNetworkTypeRequest::EnableVpcCniNetworkTypeRequest() :
     m_vpcCniTypeHasBeenSet(false),
     m_enableStaticIpHasBeenSet(false),
     m_subnetsHasBeenSet(false),
-    m_expiredSecondsHasBeenSet(false)
+    m_expiredSecondsHasBeenSet(false),
+    m_skipAddingNonMasqueradeCIDRsHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string EnableVpcCniNetworkTypeRequest::ToJsonString() const
         string key = "ExpiredSeconds";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_expiredSeconds, allocator);
+    }
+
+    if (m_skipAddingNonMasqueradeCIDRsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SkipAddingNonMasqueradeCIDRs";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_skipAddingNonMasqueradeCIDRs, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void EnableVpcCniNetworkTypeRequest::SetExpiredSeconds(const uint64_t& _expiredS
 bool EnableVpcCniNetworkTypeRequest::ExpiredSecondsHasBeenSet() const
 {
     return m_expiredSecondsHasBeenSet;
+}
+
+bool EnableVpcCniNetworkTypeRequest::GetSkipAddingNonMasqueradeCIDRs() const
+{
+    return m_skipAddingNonMasqueradeCIDRs;
+}
+
+void EnableVpcCniNetworkTypeRequest::SetSkipAddingNonMasqueradeCIDRs(const bool& _skipAddingNonMasqueradeCIDRs)
+{
+    m_skipAddingNonMasqueradeCIDRs = _skipAddingNonMasqueradeCIDRs;
+    m_skipAddingNonMasqueradeCIDRsHasBeenSet = true;
+}
+
+bool EnableVpcCniNetworkTypeRequest::SkipAddingNonMasqueradeCIDRsHasBeenSet() const
+{
+    return m_skipAddingNonMasqueradeCIDRsHasBeenSet;
 }
 
 

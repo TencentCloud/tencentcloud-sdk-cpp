@@ -349,6 +349,24 @@ namespace TencentCloud
                      */
                     bool ExcludeAdvancedInfoHasBeenSet() const;
 
+                    /**
+                     * 获取资产IP数组
+                     * @return FilterAssetIpList 资产IP数组
+                     */
+                    std::vector<std::string> GetFilterAssetIpList() const;
+
+                    /**
+                     * 设置资产IP数组
+                     * @param FilterAssetIpList 资产IP数组
+                     */
+                    void SetFilterAssetIpList(const std::vector<std::string>& _filterAssetIpList);
+
+                    /**
+                     * 判断参数 FilterAssetIpList 是否已赋值
+                     * @return FilterAssetIpList 是否已赋值
+                     */
+                    bool FilterAssetIpListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -452,6 +470,12 @@ namespace TencentCloud
                      */
                     bool m_excludeAdvancedInfo;
                     bool m_excludeAdvancedInfoHasBeenSet;
+
+                    /**
+                     * 资产IP数组
+                     */
+                    std::vector<std::string> m_filterAssetIpList;
+                    bool m_filterAssetIpListHasBeenSet;
 
                 };
             }

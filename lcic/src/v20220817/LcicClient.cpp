@@ -298,6 +298,49 @@ LcicClient::BatchDeleteRecordOutcomeCallable LcicClient::BatchDeleteRecordCallab
     return task->get_future();
 }
 
+LcicClient::BatchDescribeDocumentOutcome LcicClient::BatchDescribeDocument(const BatchDescribeDocumentRequest &request)
+{
+    auto outcome = MakeRequest(request, "BatchDescribeDocument");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        BatchDescribeDocumentResponse rsp = BatchDescribeDocumentResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return BatchDescribeDocumentOutcome(rsp);
+        else
+            return BatchDescribeDocumentOutcome(o.GetError());
+    }
+    else
+    {
+        return BatchDescribeDocumentOutcome(outcome.GetError());
+    }
+}
+
+void LcicClient::BatchDescribeDocumentAsync(const BatchDescribeDocumentRequest& request, const BatchDescribeDocumentAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->BatchDescribeDocument(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+LcicClient::BatchDescribeDocumentOutcomeCallable LcicClient::BatchDescribeDocumentCallable(const BatchDescribeDocumentRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<BatchDescribeDocumentOutcome()>>(
+        [this, request]()
+        {
+            return this->BatchDescribeDocument(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 LcicClient::BatchRegisterOutcome LcicClient::BatchRegister(const BatchRegisterRequest &request)
 {
     auto outcome = MakeRequest(request, "BatchRegister");

@@ -337,6 +337,28 @@ namespace TencentCloud
                      */
                     bool ChargeTypeHasBeenSet() const;
 
+                    /**
+                     * 获取边缘集群组件的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EdgeVersion 边缘集群组件的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEdgeVersion() const;
+
+                    /**
+                     * 设置边缘集群组件的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EdgeVersion 边缘集群组件的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEdgeVersion(const std::string& _edgeVersion);
+
+                    /**
+                     * 判断参数 EdgeVersion 是否已赋值
+                     * @return EdgeVersion 是否已赋值
+                     */
+                    bool EdgeVersionHasBeenSet() const;
+
                 private:
 
                     /**
@@ -433,6 +455,13 @@ namespace TencentCloud
                      */
                     std::string m_chargeType;
                     bool m_chargeTypeHasBeenSet;
+
+                    /**
+                     * 边缘集群组件的版本
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_edgeVersion;
+                    bool m_edgeVersionHasBeenSet;
 
                 };
             }

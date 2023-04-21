@@ -126,6 +126,49 @@ DbbrainClient::CancelKillTaskOutcomeCallable DbbrainClient::CancelKillTaskCallab
     return task->get_future();
 }
 
+DbbrainClient::CreateAuditLogFileOutcome DbbrainClient::CreateAuditLogFile(const CreateAuditLogFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "CreateAuditLogFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        CreateAuditLogFileResponse rsp = CreateAuditLogFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return CreateAuditLogFileOutcome(rsp);
+        else
+            return CreateAuditLogFileOutcome(o.GetError());
+    }
+    else
+    {
+        return CreateAuditLogFileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::CreateAuditLogFileAsync(const CreateAuditLogFileRequest& request, const CreateAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->CreateAuditLogFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::CreateAuditLogFileOutcomeCallable DbbrainClient::CreateAuditLogFileCallable(const CreateAuditLogFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<CreateAuditLogFileOutcome()>>(
+        [this, request]()
+        {
+            return this->CreateAuditLogFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::CreateDBDiagReportTaskOutcome DbbrainClient::CreateDBDiagReportTask(const CreateDBDiagReportTaskRequest &request)
 {
     auto outcome = MakeRequest(request, "CreateDBDiagReportTask");
@@ -470,6 +513,49 @@ DbbrainClient::CreateSqlFilterOutcomeCallable DbbrainClient::CreateSqlFilterCall
     return task->get_future();
 }
 
+DbbrainClient::DeleteAuditLogFileOutcome DbbrainClient::DeleteAuditLogFile(const DeleteAuditLogFileRequest &request)
+{
+    auto outcome = MakeRequest(request, "DeleteAuditLogFile");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DeleteAuditLogFileResponse rsp = DeleteAuditLogFileResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DeleteAuditLogFileOutcome(rsp);
+        else
+            return DeleteAuditLogFileOutcome(o.GetError());
+    }
+    else
+    {
+        return DeleteAuditLogFileOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DeleteAuditLogFileAsync(const DeleteAuditLogFileRequest& request, const DeleteAuditLogFileAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DeleteAuditLogFile(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DeleteAuditLogFileOutcomeCallable DbbrainClient::DeleteAuditLogFileCallable(const DeleteAuditLogFileRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DeleteAuditLogFileOutcome()>>(
+        [this, request]()
+        {
+            return this->DeleteAuditLogFile(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 DbbrainClient::DeleteDBDiagReportTasksOutcome DbbrainClient::DeleteDBDiagReportTasks(const DeleteDBDiagReportTasksRequest &request)
 {
     auto outcome = MakeRequest(request, "DeleteDBDiagReportTasks");
@@ -678,6 +764,49 @@ DbbrainClient::DescribeAllUserGroupOutcomeCallable DbbrainClient::DescribeAllUse
         [this, request]()
         {
             return this->DescribeAllUserGroup(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+DbbrainClient::DescribeAuditLogFilesOutcome DbbrainClient::DescribeAuditLogFiles(const DescribeAuditLogFilesRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeAuditLogFiles");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeAuditLogFilesResponse rsp = DescribeAuditLogFilesResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeAuditLogFilesOutcome(rsp);
+        else
+            return DescribeAuditLogFilesOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeAuditLogFilesOutcome(outcome.GetError());
+    }
+}
+
+void DbbrainClient::DescribeAuditLogFilesAsync(const DescribeAuditLogFilesRequest& request, const DescribeAuditLogFilesAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeAuditLogFiles(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+DbbrainClient::DescribeAuditLogFilesOutcomeCallable DbbrainClient::DescribeAuditLogFilesCallable(const DescribeAuditLogFilesRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeAuditLogFilesOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeAuditLogFiles(request);
         }
     );
 

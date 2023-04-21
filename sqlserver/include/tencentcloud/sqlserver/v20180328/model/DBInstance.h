@@ -1016,6 +1016,50 @@ namespace TencentCloud
                      */
                     bool SlaveZonesHasBeenSet() const;
 
+                    /**
+                     * 获取架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Architecture 架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetArchitecture() const;
+
+                    /**
+                     * 设置架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Architecture 架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetArchitecture(const std::string& _architecture);
+
+                    /**
+                     * 判断参数 Architecture 是否已赋值
+                     * @return Architecture 是否已赋值
+                     */
+                    bool ArchitectureHasBeenSet() const;
+
+                    /**
+                     * 获取类型标识，EXCLUSIVE-独享型，SHARED-共享型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Style 类型标识，EXCLUSIVE-独享型，SHARED-共享型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetStyle() const;
+
+                    /**
+                     * 设置类型标识，EXCLUSIVE-独享型，SHARED-共享型
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Style 类型标识，EXCLUSIVE-独享型，SHARED-共享型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStyle(const std::string& _style);
+
+                    /**
+                     * 判断参数 Style 是否已赋值
+                     * @return Style 是否已赋值
+                     */
+                    bool StyleHasBeenSet() const;
+
                 private:
 
                     /**
@@ -1337,6 +1381,20 @@ namespace TencentCloud
                      */
                     SlaveZones m_slaveZones;
                     bool m_slaveZonesHasBeenSet;
+
+                    /**
+                     * 架构标识，SINGLE-单节点 DOUBLE-双节点 TRIPLE-三节点
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_architecture;
+                    bool m_architectureHasBeenSet;
+
+                    /**
+                     * 类型标识，EXCLUSIVE-独享型，SHARED-共享型
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_style;
+                    bool m_styleHasBeenSet;
 
                 };
             }

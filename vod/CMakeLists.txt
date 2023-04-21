@@ -576,7 +576,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/TaskSimpleInfo.h
   include/tencentcloud/vod/v20180717/model/ReviewAudioVideoTask.h
   include/tencentcloud/vod/v20180717/model/DescribeSnapshotByTimeOffsetTemplatesResponse.h
-  include/tencentcloud/vod/v20180717/model/MediaVideoStreamItem.h
+  include/tencentcloud/vod/v20180717/model/DomainQUICConfig.h
   include/tencentcloud/vod/v20180717/model/SetDrmKeyProviderInfoRequest.h
   include/tencentcloud/vod/v20180717/model/SnapshotByTimeOffsetTemplate.h
   include/tencentcloud/vod/v20180717/model/DeleteSnapshotByTimeOffsetTemplateResponse.h
@@ -614,6 +614,7 @@ set(vod_public_header_model
   include/tencentcloud/vod/v20180717/model/DescribeTranscodeTemplatesRequest.h
   include/tencentcloud/vod/v20180717/model/ReviewTemplate.h
   include/tencentcloud/vod/v20180717/model/UserDefineAsrTextReviewTemplateInfoForUpdate.h
+  include/tencentcloud/vod/v20180717/model/MediaVideoStreamItem.h
   include/tencentcloud/vod/v20180717/model/CreateRebuildMediaTemplateRequest.h
   include/tencentcloud/vod/v20180717/model/ImageOperation.h
   include/tencentcloud/vod/v20180717/model/MediaSubStreamInfoItem.h
@@ -1270,7 +1271,7 @@ set(vod_src
   src/v20180717/model/TaskSimpleInfo.cpp
   src/v20180717/model/ReviewAudioVideoTask.cpp
   src/v20180717/model/DescribeSnapshotByTimeOffsetTemplatesResponse.cpp
-  src/v20180717/model/MediaVideoStreamItem.cpp
+  src/v20180717/model/DomainQUICConfig.cpp
   src/v20180717/model/SetDrmKeyProviderInfoRequest.cpp
   src/v20180717/model/SnapshotByTimeOffsetTemplate.cpp
   src/v20180717/model/DeleteSnapshotByTimeOffsetTemplateResponse.cpp
@@ -1308,6 +1309,7 @@ set(vod_src
   src/v20180717/model/DescribeTranscodeTemplatesRequest.cpp
   src/v20180717/model/ReviewTemplate.cpp
   src/v20180717/model/UserDefineAsrTextReviewTemplateInfoForUpdate.cpp
+  src/v20180717/model/MediaVideoStreamItem.cpp
   src/v20180717/model/CreateRebuildMediaTemplateRequest.cpp
   src/v20180717/model/ImageOperation.cpp
   src/v20180717/model/MediaSubStreamInfoItem.cpp

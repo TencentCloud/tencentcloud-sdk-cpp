@@ -80,24 +80,6 @@ namespace TencentCloud
                     bool TypeHasBeenSet() const;
 
                     /**
-                     * 获取需要回档的数据库
-                     * @return DBs 需要回档的数据库
-                     */
-                    std::vector<std::string> GetDBs() const;
-
-                    /**
-                     * 设置需要回档的数据库
-                     * @param DBs 需要回档的数据库
-                     */
-                    void SetDBs(const std::vector<std::string>& _dBs);
-
-                    /**
-                     * 判断参数 DBs 是否已赋值
-                     * @return DBs 是否已赋值
-                     */
-                    bool DBsHasBeenSet() const;
-
-                    /**
                      * 获取回档目标时间点
                      * @return Time 回档目标时间点
                      */
@@ -114,6 +96,24 @@ namespace TencentCloud
                      * @return Time 是否已赋值
                      */
                     bool TimeHasBeenSet() const;
+
+                    /**
+                     * 获取需要回档的数据库
+                     * @return DBs 需要回档的数据库
+                     */
+                    std::vector<std::string> GetDBs() const;
+
+                    /**
+                     * 设置需要回档的数据库
+                     * @param DBs 需要回档的数据库
+                     */
+                    void SetDBs(const std::vector<std::string>& _dBs);
+
+                    /**
+                     * 判断参数 DBs 是否已赋值
+                     * @return DBs 是否已赋值
+                     */
+                    bool DBsHasBeenSet() const;
 
                     /**
                      * 获取备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID
@@ -166,16 +166,16 @@ namespace TencentCloud
                     bool m_typeHasBeenSet;
 
                     /**
-                     * 需要回档的数据库
-                     */
-                    std::vector<std::string> m_dBs;
-                    bool m_dBsHasBeenSet;
-
-                    /**
                      * 回档目标时间点
                      */
                     std::string m_time;
                     bool m_timeHasBeenSet;
+
+                    /**
+                     * 需要回档的数据库
+                     */
+                    std::vector<std::string> m_dBs;
+                    bool m_dBsHasBeenSet;
 
                     /**
                      * 备份恢复到的同一个APPID下的实例ID，不填则恢复到原实例ID
