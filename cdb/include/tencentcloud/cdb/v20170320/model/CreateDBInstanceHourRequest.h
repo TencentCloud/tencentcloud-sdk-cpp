@@ -226,14 +226,14 @@ namespace TencentCloud
                     bool InstanceRoleHasBeenSet() const;
 
                     /**
-                     * 获取主实例的可用区信息，购买灾备、RO实例时必填。
-                     * @return MasterRegion 主实例的可用区信息，购买灾备、RO实例时必填。
+                     * 获取主实例地域信息，购买灾备、RO实例时，该字段必填。
+                     * @return MasterRegion 主实例地域信息，购买灾备、RO实例时，该字段必填。
                      */
                     std::string GetMasterRegion() const;
 
                     /**
-                     * 设置主实例的可用区信息，购买灾备、RO实例时必填。
-                     * @param MasterRegion 主实例的可用区信息，购买灾备、RO实例时必填。
+                     * 设置主实例地域信息，购买灾备、RO实例时，该字段必填。
+                     * @param MasterRegion 主实例地域信息，购买灾备、RO实例时，该字段必填。
                      */
                     void SetMasterRegion(const std::string& _masterRegion);
 
@@ -774,7 +774,7 @@ namespace TencentCloud
                     bool m_instanceRoleHasBeenSet;
 
                     /**
-                     * 主实例的可用区信息，购买灾备、RO实例时必填。
+                     * 主实例地域信息，购买灾备、RO实例时，该字段必填。
                      */
                     std::string m_masterRegion;
                     bool m_masterRegionHasBeenSet;

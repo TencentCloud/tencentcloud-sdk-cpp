@@ -51,17 +51,13 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceId 溯源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetTraceId() const;
 
                     /**
                      * 设置溯源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TraceId 溯源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTraceId(const std::string& _traceId);
 
@@ -73,17 +69,13 @@ namespace TencentCloud
 
                     /**
                      * 获取企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return CorpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetCorpId() const;
 
                     /**
                      * 设置企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param CorpId 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCorpId(const uint64_t& _corpId);
 
@@ -95,17 +87,13 @@ namespace TencentCloud
 
                     /**
                      * 获取码类型 0: 批次, 1: 码, 2: 生产任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Type 码类型 0: 批次, 1: 码, 2: 生产任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetType() const;
 
                     /**
                      * 设置码类型 0: 批次, 1: 码, 2: 生产任务
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Type 码类型 0: 批次, 1: 码, 2: 生产任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetType(const uint64_t& _type);
 
@@ -139,17 +127,13 @@ namespace TencentCloud
 
                     /**
                      * 获取排序，在Phase相同情况下，值越小排名靠前
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Rank 排序，在Phase相同情况下，值越小排名靠前
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetRank() const;
 
                     /**
                      * 设置排序，在Phase相同情况下，值越小排名靠前
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Rank 排序，在Phase相同情况下，值越小排名靠前
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetRank(const uint64_t& _rank);
 
@@ -161,17 +145,13 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t GetPhase() const;
 
                     /**
                      * 设置溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Phase 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPhase(const uint64_t& _phase);
 
@@ -183,17 +163,13 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源环节名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return PhaseName 溯源环节名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetPhaseName() const;
 
                     /**
                      * 设置溯源环节名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param PhaseName 溯源环节名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetPhaseName(const std::string& _phaseName);
 
@@ -227,17 +203,13 @@ namespace TencentCloud
 
                     /**
                      * 获取无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return TraceItems 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TraceItem> GetTraceItems() const;
 
                     /**
                      * 设置无
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param TraceItems 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetTraceItems(const std::vector<TraceItem>& _traceItems);
 
@@ -359,17 +331,13 @@ namespace TencentCloud
 
                     /**
                      * 获取溯源阶段状态 0: 无效, 1: 有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Status 溯源阶段状态 0: 无效, 1: 有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t GetStatus() const;
 
                     /**
                      * 设置溯源阶段状态 0: 无效, 1: 有效
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Status 溯源阶段状态 0: 无效, 1: 有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetStatus(const int64_t& _status);
 
@@ -383,21 +351,18 @@ namespace TencentCloud
 
                     /**
                      * 溯源ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_traceId;
                     bool m_traceIdHasBeenSet;
 
                     /**
                      * 企业ID
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
 
                     /**
                      * 码类型 0: 批次, 1: 码, 2: 生产任务
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_type;
                     bool m_typeHasBeenSet;
@@ -411,21 +376,18 @@ namespace TencentCloud
 
                     /**
                      * 排序，在Phase相同情况下，值越小排名靠前
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_rank;
                     bool m_rankHasBeenSet;
 
                     /**
                      * 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     uint64_t m_phase;
                     bool m_phaseHasBeenSet;
 
                     /**
                      * 溯源环节名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_phaseName;
                     bool m_phaseNameHasBeenSet;
@@ -439,7 +401,6 @@ namespace TencentCloud
 
                     /**
                      * 无
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<TraceItem> m_traceItems;
                     bool m_traceItemsHasBeenSet;
@@ -481,7 +442,6 @@ namespace TencentCloud
 
                     /**
                      * 溯源阶段状态 0: 无效, 1: 有效
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     int64_t m_status;
                     bool m_statusHasBeenSet;

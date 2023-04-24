@@ -35,7 +35,8 @@ ModifyVpnConnectionAttributeRequest::ModifyVpnConnectionAttributeRequest() :
     m_negotiationTypeHasBeenSet(false),
     m_dpdEnableHasBeenSet(false),
     m_dpdTimeoutHasBeenSet(false),
-    m_dpdActionHasBeenSet(false)
+    m_dpdActionHasBeenSet(false),
+    m_customerGatewayIdHasBeenSet(false)
 {
 }
 
@@ -157,6 +158,14 @@ string ModifyVpnConnectionAttributeRequest::ToJsonString() const
         string key = "DpdAction";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_dpdAction.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_customerGatewayIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CustomerGatewayId";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(m_customerGatewayId.c_str(), allocator).Move(), allocator);
     }
 
 
@@ -373,6 +382,22 @@ void ModifyVpnConnectionAttributeRequest::SetDpdAction(const string& _dpdAction)
 bool ModifyVpnConnectionAttributeRequest::DpdActionHasBeenSet() const
 {
     return m_dpdActionHasBeenSet;
+}
+
+string ModifyVpnConnectionAttributeRequest::GetCustomerGatewayId() const
+{
+    return m_customerGatewayId;
+}
+
+void ModifyVpnConnectionAttributeRequest::SetCustomerGatewayId(const string& _customerGatewayId)
+{
+    m_customerGatewayId = _customerGatewayId;
+    m_customerGatewayIdHasBeenSet = true;
+}
+
+bool ModifyVpnConnectionAttributeRequest::CustomerGatewayIdHasBeenSet() const
+{
+    return m_customerGatewayIdHasBeenSet;
 }
 
 

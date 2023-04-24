@@ -27,7 +27,8 @@ FlowBrief::FlowBrief() :
     m_flowTypeHasBeenSet(false),
     m_flowStatusHasBeenSet(false),
     m_createdOnHasBeenSet(false),
-    m_flowMessageHasBeenSet(false)
+    m_flowMessageHasBeenSet(false),
+    m_creatorHasBeenSet(false)
 {
 }
 
@@ -106,6 +107,16 @@ CoreInternalOutcome FlowBrief::Deserialize(const rapidjson::Value &value)
         m_flowMessageHasBeenSet = true;
     }
 
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowBrief.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -167,6 +178,14 @@ void FlowBrief::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "FlowMessage";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_flowMessage.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -282,5 +301,21 @@ void FlowBrief::SetFlowMessage(const string& _flowMessage)
 bool FlowBrief::FlowMessageHasBeenSet() const
 {
     return m_flowMessageHasBeenSet;
+}
+
+string FlowBrief::GetCreator() const
+{
+    return m_creator;
+}
+
+void FlowBrief::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool FlowBrief::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
 }
 

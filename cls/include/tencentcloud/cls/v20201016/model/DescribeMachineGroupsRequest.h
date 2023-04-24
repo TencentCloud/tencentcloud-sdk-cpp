@@ -44,132 +44,92 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<br><li> machineGroupName
+                     * 获取machineGroupName
+- 按照【机器组名称】进行过滤。
+- 类型：String
+- 必选：否
 
-按照【机器组名称】进行过滤。
-类型：String
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
 
-必选：否
+tagKey
+- 按照【标签键】进行过滤。
+- 类型：String
+- 必选：否
 
-<br><li> machineGroupId
-
-按照【机器组ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> tagKey
-
-按照【标签键】进行过滤。
-
-类型：String
-
-必选：否
-
-<br><li> tag:tagKey
-
-按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
-类型：String
-
-必选：否
-
+tag:tagKey
+- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
+- 类型：String
+- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @return Filters <br><li> machineGroupName
+                     * @return Filters machineGroupName
+- 按照【机器组名称】进行过滤。
+- 类型：String
+- 必选：否
 
-按照【机器组名称】进行过滤。
-类型：String
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
 
-必选：否
+tagKey
+- 按照【标签键】进行过滤。
+- 类型：String
+- 必选：否
 
-<br><li> machineGroupId
-
-按照【机器组ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> tagKey
-
-按照【标签键】进行过滤。
-
-类型：String
-
-必选：否
-
-<br><li> tag:tagKey
-
-按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
-类型：String
-
-必选：否
-
+tag:tagKey
+- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
+- 类型：String
+- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<br><li> machineGroupName
+                     * 设置machineGroupName
+- 按照【机器组名称】进行过滤。
+- 类型：String
+- 必选：否
 
-按照【机器组名称】进行过滤。
-类型：String
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
 
-必选：否
+tagKey
+- 按照【标签键】进行过滤。
+- 类型：String
+- 必选：否
 
-<br><li> machineGroupId
-
-按照【机器组ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> tagKey
-
-按照【标签键】进行过滤。
-
-类型：String
-
-必选：否
-
-<br><li> tag:tagKey
-
-按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
-类型：String
-
-必选：否
-
+tag:tagKey
+- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
+- 类型：String
+- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param Filters <br><li> machineGroupName
+                     * @param Filters machineGroupName
+- 按照【机器组名称】进行过滤。
+- 类型：String
+- 必选：否
 
-按照【机器组名称】进行过滤。
-类型：String
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
 
-必选：否
+tagKey
+- 按照【标签键】进行过滤。
+- 类型：String
+- 必选：否
 
-<br><li> machineGroupId
-
-按照【机器组ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> tagKey
-
-按照【标签键】进行过滤。
-
-类型：String
-
-必选：否
-
-<br><li> tag:tagKey
-
-按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
-类型：String
-
-必选：否
-
+tag:tagKey
+- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
+- 类型：String
+- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
@@ -220,35 +180,25 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <br><li> machineGroupName
+                     * machineGroupName
+- 按照【机器组名称】进行过滤。
+- 类型：String
+- 必选：否
 
-按照【机器组名称】进行过滤。
-类型：String
+machineGroupId
+- 按照【机器组ID】进行过滤。
+- 类型：String
+- 必选：否
 
-必选：否
+tagKey
+- 按照【标签键】进行过滤。
+- 类型：String
+- 必选：否
 
-<br><li> machineGroupId
-
-按照【机器组ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> tagKey
-
-按照【标签键】进行过滤。
-
-类型：String
-
-必选：否
-
-<br><li> tag:tagKey
-
-按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
-类型：String
-
-必选：否
-
+tag:tagKey
+- 按照【标签键值对】进行过滤。tagKey使用具体的标签键进行替换。
+- 类型：String
+- 必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */

@@ -80,14 +80,14 @@ namespace TencentCloud
                     bool SortIdHasBeenSet() const;
 
                     /**
-                     * 获取过期时间
-                     * @return ExpireTime 过期时间
+                     * 获取过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * @return ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
                      */
                     std::string GetExpireTime() const;
 
                     /**
-                     * 设置过期时间
-                     * @param ExpireTime 过期时间
+                     * 设置过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
+                     * @param ExpireTime 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
                      */
                     void SetExpireTime(const std::string& _expireTime);
 
@@ -238,7 +238,7 @@ namespace TencentCloud
                     bool m_sortIdHasBeenSet;
 
                     /**
-                     * 过期时间
+                     * 过期时间，单位为秒级时间戳，例如1677254399表示过期时间为2023-02-24 23:59:59. 0表示永不过期
                      */
                     std::string m_expireTime;
                     bool m_expireTimeHasBeenSet;

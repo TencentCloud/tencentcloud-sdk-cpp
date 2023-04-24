@@ -986,6 +986,49 @@ PostgresClient::DescribeAvailableRecoveryTimeOutcomeCallable PostgresClient::Des
     return task->get_future();
 }
 
+PostgresClient::DescribeBackupDownloadRestrictionOutcome PostgresClient::DescribeBackupDownloadRestriction(const DescribeBackupDownloadRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeBackupDownloadRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeBackupDownloadRestrictionResponse rsp = DescribeBackupDownloadRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeBackupDownloadRestrictionOutcome(rsp);
+        else
+            return DescribeBackupDownloadRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeBackupDownloadRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::DescribeBackupDownloadRestrictionAsync(const DescribeBackupDownloadRestrictionRequest& request, const DescribeBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeBackupDownloadRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::DescribeBackupDownloadRestrictionOutcomeCallable PostgresClient::DescribeBackupDownloadRestrictionCallable(const DescribeBackupDownloadRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeBackupDownloadRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeBackupDownloadRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::DescribeBackupDownloadURLOutcome PostgresClient::DescribeBackupDownloadURL(const DescribeBackupDownloadURLRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeBackupDownloadURL");
@@ -2663,6 +2706,49 @@ PostgresClient::ModifyAccountRemarkOutcomeCallable PostgresClient::ModifyAccount
     return task->get_future();
 }
 
+PostgresClient::ModifyBackupDownloadRestrictionOutcome PostgresClient::ModifyBackupDownloadRestriction(const ModifyBackupDownloadRestrictionRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyBackupDownloadRestriction");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyBackupDownloadRestrictionResponse rsp = ModifyBackupDownloadRestrictionResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyBackupDownloadRestrictionOutcome(rsp);
+        else
+            return ModifyBackupDownloadRestrictionOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyBackupDownloadRestrictionOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyBackupDownloadRestrictionAsync(const ModifyBackupDownloadRestrictionRequest& request, const ModifyBackupDownloadRestrictionAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyBackupDownloadRestriction(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyBackupDownloadRestrictionOutcomeCallable PostgresClient::ModifyBackupDownloadRestrictionCallable(const ModifyBackupDownloadRestrictionRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyBackupDownloadRestrictionOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyBackupDownloadRestriction(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 PostgresClient::ModifyBackupPlanOutcome PostgresClient::ModifyBackupPlan(const ModifyBackupPlanRequest &request)
 {
     auto outcome = MakeRequest(request, "ModifyBackupPlan");
@@ -2742,6 +2828,49 @@ PostgresClient::ModifyBaseBackupExpireTimeOutcomeCallable PostgresClient::Modify
         [this, request]()
         {
             return this->ModifyBaseBackupExpireTime(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
+PostgresClient::ModifyDBInstanceChargeTypeOutcome PostgresClient::ModifyDBInstanceChargeType(const ModifyDBInstanceChargeTypeRequest &request)
+{
+    auto outcome = MakeRequest(request, "ModifyDBInstanceChargeType");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ModifyDBInstanceChargeTypeResponse rsp = ModifyDBInstanceChargeTypeResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ModifyDBInstanceChargeTypeOutcome(rsp);
+        else
+            return ModifyDBInstanceChargeTypeOutcome(o.GetError());
+    }
+    else
+    {
+        return ModifyDBInstanceChargeTypeOutcome(outcome.GetError());
+    }
+}
+
+void PostgresClient::ModifyDBInstanceChargeTypeAsync(const ModifyDBInstanceChargeTypeRequest& request, const ModifyDBInstanceChargeTypeAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ModifyDBInstanceChargeType(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+PostgresClient::ModifyDBInstanceChargeTypeOutcomeCallable PostgresClient::ModifyDBInstanceChargeTypeCallable(const ModifyDBInstanceChargeTypeRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ModifyDBInstanceChargeTypeOutcome()>>(
+        [this, request]()
+        {
+            return this->ModifyDBInstanceChargeType(request);
         }
     );
 

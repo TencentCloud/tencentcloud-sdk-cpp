@@ -35,7 +35,7 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 实例入参过滤器
+                * 过滤数组
                 */
                 class FiltersItemNew : public AbstractModel
                 {

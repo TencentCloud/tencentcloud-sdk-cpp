@@ -23,7 +23,8 @@ using namespace std;
 AsrFullTextConfigureInfoForUpdate::AsrFullTextConfigureInfoForUpdate() :
     m_switchHasBeenSet(false),
     m_subtitleFormatsOperationHasBeenSet(false),
-    m_subtitleFormatHasBeenSet(false)
+    m_subtitleFormatHasBeenSet(false),
+    m_srcLanguageHasBeenSet(false)
 {
 }
 
@@ -69,6 +70,16 @@ CoreInternalOutcome AsrFullTextConfigureInfoForUpdate::Deserialize(const rapidjs
         m_subtitleFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("SrcLanguage") && !value["SrcLanguage"].IsNull())
+    {
+        if (!value["SrcLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfoForUpdate.SrcLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcLanguage = string(value["SrcLanguage"].GetString());
+        m_srcLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void AsrFullTextConfigureInfoForUpdate::ToJsonObject(rapidjson::Value &value, ra
         string key = "SubtitleFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcLanguage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void AsrFullTextConfigureInfoForUpdate::SetSubtitleFormat(const string& _subtitl
 bool AsrFullTextConfigureInfoForUpdate::SubtitleFormatHasBeenSet() const
 {
     return m_subtitleFormatHasBeenSet;
+}
+
+string AsrFullTextConfigureInfoForUpdate::GetSrcLanguage() const
+{
+    return m_srcLanguage;
+}
+
+void AsrFullTextConfigureInfoForUpdate::SetSrcLanguage(const string& _srcLanguage)
+{
+    m_srcLanguage = _srcLanguage;
+    m_srcLanguageHasBeenSet = true;
+}
+
+bool AsrFullTextConfigureInfoForUpdate::SrcLanguageHasBeenSet() const
+{
+    return m_srcLanguageHasBeenSet;
 }
 

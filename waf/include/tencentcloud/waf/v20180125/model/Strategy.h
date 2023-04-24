@@ -48,13 +48,17 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Field 匹配字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetField() const;
 
                     /**
                      * 设置匹配字段
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Field 匹配字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetField(const std::string& _field);
 
@@ -66,13 +70,17 @@ namespace TencentCloud
 
                     /**
                      * 获取逻辑符号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return CompareFunc 逻辑符号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetCompareFunc() const;
 
                     /**
                      * 设置逻辑符号
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param CompareFunc 逻辑符号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetCompareFunc(const std::string& _compareFunc);
 
@@ -84,13 +92,17 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Content 匹配内容
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetContent() const;
 
                     /**
                      * 设置匹配内容
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Content 匹配内容
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetContent(const std::string& _content);
 
@@ -102,13 +114,17 @@ namespace TencentCloud
 
                     /**
                      * 获取匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @return Arg 匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetArg() const;
 
                     /**
                      * 设置匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
                      * @param Arg 匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetArg(const std::string& _arg);
 
@@ -122,24 +138,28 @@ namespace TencentCloud
 
                     /**
                      * 匹配字段
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_field;
                     bool m_fieldHasBeenSet;
 
                     /**
                      * 逻辑符号
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_compareFunc;
                     bool m_compareFuncHasBeenSet;
 
                     /**
                      * 匹配内容
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_content;
                     bool m_contentHasBeenSet;
 
                     /**
                      * 匹配参数
+注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_arg;
                     bool m_argHasBeenSet;

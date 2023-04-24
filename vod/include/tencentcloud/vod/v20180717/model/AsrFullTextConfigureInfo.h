@@ -128,6 +128,44 @@ namespace TencentCloud
                      */
                     bool SubtitleFormatHasBeenSet() const;
 
+                    /**
+                     * 获取媒体源语言，取值范围：
+<li>zh：中文普通话；</li>
+<li>en：英语；</li>
+<li>ja：日语；</li>
+<li>zh-ca：粤语。</li>
+<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     * @return SrcLanguage 媒体源语言，取值范围：
+<li>zh：中文普通话；</li>
+<li>en：英语；</li>
+<li>ja：日语；</li>
+<li>zh-ca：粤语。</li>
+<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     */
+                    std::string GetSrcLanguage() const;
+
+                    /**
+                     * 设置媒体源语言，取值范围：
+<li>zh：中文普通话；</li>
+<li>en：英语；</li>
+<li>ja：日语；</li>
+<li>zh-ca：粤语。</li>
+<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     * @param SrcLanguage 媒体源语言，取值范围：
+<li>zh：中文普通话；</li>
+<li>en：英语；</li>
+<li>ja：日语；</li>
+<li>zh-ca：粤语。</li>
+<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     */
+                    void SetSrcLanguage(const std::string& _srcLanguage);
+
+                    /**
+                     * 判断参数 SrcLanguage 是否已赋值
+                     * @return SrcLanguage 是否已赋值
+                     */
+                    bool SrcLanguageHasBeenSet() const;
+
                 private:
 
                     /**
@@ -154,6 +192,17 @@ namespace TencentCloud
                      */
                     std::string m_subtitleFormat;
                     bool m_subtitleFormatHasBeenSet;
+
+                    /**
+                     * 媒体源语言，取值范围：
+<li>zh：中文普通话；</li>
+<li>en：英语；</li>
+<li>ja：日语；</li>
+<li>zh-ca：粤语。</li>
+<font color=red>注意：</font> 填空字符串，或者不填该参数，则自动识别（效果较难保证，推荐填写原始媒体对应的语言，以提高识别的准确率）。
+                     */
+                    std::string m_srcLanguage;
+                    bool m_srcLanguageHasBeenSet;
 
                 };
             }

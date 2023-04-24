@@ -45,7 +45,12 @@ InstanceInfo::InstanceInfo() :
     m_botQPSHasBeenSet(false),
     m_elasticBillingHasBeenSet(false),
     m_attackLogPostHasBeenSet(false),
-    m_maxBandwidthHasBeenSet(false)
+    m_maxBandwidthHasBeenSet(false),
+    m_aPISecurityHasBeenSet(false),
+    m_qpsStandardHasBeenSet(false),
+    m_bandwidthStandardHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_sandboxQpsHasBeenSet(false)
 {
 }
 
@@ -339,6 +344,56 @@ CoreInternalOutcome InstanceInfo::Deserialize(const rapidjson::Value &value)
         m_maxBandwidthHasBeenSet = true;
     }
 
+    if (value.HasMember("APISecurity") && !value["APISecurity"].IsNull())
+    {
+        if (!value["APISecurity"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.APISecurity` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_aPISecurity = value["APISecurity"].GetUint64();
+        m_aPISecurityHasBeenSet = true;
+    }
+
+    if (value.HasMember("QpsStandard") && !value["QpsStandard"].IsNull())
+    {
+        if (!value["QpsStandard"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.QpsStandard` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_qpsStandard = value["QpsStandard"].GetUint64();
+        m_qpsStandardHasBeenSet = true;
+    }
+
+    if (value.HasMember("BandwidthStandard") && !value["BandwidthStandard"].IsNull())
+    {
+        if (!value["BandwidthStandard"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.BandwidthStandard` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidthStandard = value["BandwidthStandard"].GetUint64();
+        m_bandwidthStandardHasBeenSet = true;
+    }
+
+    if (value.HasMember("Status") && !value["Status"].IsNull())
+    {
+        if (!value["Status"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.Status` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_status = value["Status"].GetUint64();
+        m_statusHasBeenSet = true;
+    }
+
+    if (value.HasMember("SandboxQps") && !value["SandboxQps"].IsNull())
+    {
+        if (!value["SandboxQps"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `InstanceInfo.SandboxQps` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_sandboxQps = value["SandboxQps"].GetUint64();
+        m_sandboxQpsHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -549,6 +604,46 @@ void InstanceInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Al
         string key = "MaxBandwidth";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_maxBandwidth, allocator);
+    }
+
+    if (m_aPISecurityHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "APISecurity";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_aPISecurity, allocator);
+    }
+
+    if (m_qpsStandardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "QpsStandard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_qpsStandard, allocator);
+    }
+
+    if (m_bandwidthStandardHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BandwidthStandard";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidthStandard, allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_sandboxQpsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SandboxQps";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_sandboxQps, allocator);
     }
 
 }
@@ -952,5 +1047,85 @@ void InstanceInfo::SetMaxBandwidth(const uint64_t& _maxBandwidth)
 bool InstanceInfo::MaxBandwidthHasBeenSet() const
 {
     return m_maxBandwidthHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetAPISecurity() const
+{
+    return m_aPISecurity;
+}
+
+void InstanceInfo::SetAPISecurity(const uint64_t& _aPISecurity)
+{
+    m_aPISecurity = _aPISecurity;
+    m_aPISecurityHasBeenSet = true;
+}
+
+bool InstanceInfo::APISecurityHasBeenSet() const
+{
+    return m_aPISecurityHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetQpsStandard() const
+{
+    return m_qpsStandard;
+}
+
+void InstanceInfo::SetQpsStandard(const uint64_t& _qpsStandard)
+{
+    m_qpsStandard = _qpsStandard;
+    m_qpsStandardHasBeenSet = true;
+}
+
+bool InstanceInfo::QpsStandardHasBeenSet() const
+{
+    return m_qpsStandardHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetBandwidthStandard() const
+{
+    return m_bandwidthStandard;
+}
+
+void InstanceInfo::SetBandwidthStandard(const uint64_t& _bandwidthStandard)
+{
+    m_bandwidthStandard = _bandwidthStandard;
+    m_bandwidthStandardHasBeenSet = true;
+}
+
+bool InstanceInfo::BandwidthStandardHasBeenSet() const
+{
+    return m_bandwidthStandardHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetStatus() const
+{
+    return m_status;
+}
+
+void InstanceInfo::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool InstanceInfo::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+uint64_t InstanceInfo::GetSandboxQps() const
+{
+    return m_sandboxQps;
+}
+
+void InstanceInfo::SetSandboxQps(const uint64_t& _sandboxQps)
+{
+    m_sandboxQps = _sandboxQps;
+    m_sandboxQpsHasBeenSet = true;
+}
+
+bool InstanceInfo::SandboxQpsHasBeenSet() const
+{
+    return m_sandboxQpsHasBeenSet;
 }
 

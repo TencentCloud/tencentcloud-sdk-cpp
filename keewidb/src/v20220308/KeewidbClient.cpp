@@ -341,6 +341,49 @@ KeewidbClient::DescribeAutoBackupConfigOutcomeCallable KeewidbClient::DescribeAu
     return task->get_future();
 }
 
+KeewidbClient::DescribeConnectionConfigOutcome KeewidbClient::DescribeConnectionConfig(const DescribeConnectionConfigRequest &request)
+{
+    auto outcome = MakeRequest(request, "DescribeConnectionConfig");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        DescribeConnectionConfigResponse rsp = DescribeConnectionConfigResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return DescribeConnectionConfigOutcome(rsp);
+        else
+            return DescribeConnectionConfigOutcome(o.GetError());
+    }
+    else
+    {
+        return DescribeConnectionConfigOutcome(outcome.GetError());
+    }
+}
+
+void KeewidbClient::DescribeConnectionConfigAsync(const DescribeConnectionConfigRequest& request, const DescribeConnectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->DescribeConnectionConfig(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+KeewidbClient::DescribeConnectionConfigOutcomeCallable KeewidbClient::DescribeConnectionConfigCallable(const DescribeConnectionConfigRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<DescribeConnectionConfigOutcome()>>(
+        [this, request]()
+        {
+            return this->DescribeConnectionConfig(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 KeewidbClient::DescribeDBSecurityGroupsOutcome KeewidbClient::DescribeDBSecurityGroups(const DescribeDBSecurityGroupsRequest &request)
 {
     auto outcome = MakeRequest(request, "DescribeDBSecurityGroups");

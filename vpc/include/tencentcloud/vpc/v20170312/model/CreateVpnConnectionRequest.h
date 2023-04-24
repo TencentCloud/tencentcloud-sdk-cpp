@@ -65,14 +65,14 @@ namespace TencentCloud
                     bool VpnGatewayIdHasBeenSet() const;
 
                     /**
-                     * 获取对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
-                     * @return CustomerGatewayId 对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
+                     * 获取对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
+                     * @return CustomerGatewayId 对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
                      */
                     std::string GetCustomerGatewayId() const;
 
                     /**
-                     * 设置对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
-                     * @param CustomerGatewayId 对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
+                     * 设置对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
+                     * @param CustomerGatewayId 对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
                      */
                     void SetCustomerGatewayId(const std::string& _customerGatewayId);
 
@@ -213,14 +213,14 @@ CCN VPN 形的通道 可以不传VPCID
                     bool TagsHasBeenSet() const;
 
                     /**
-                     * 获取是否支持隧道内健康检查
-                     * @return EnableHealthCheck 是否支持隧道内健康检查
+                     * 获取是否支持隧道内健康检查，默认为False。
+                     * @return EnableHealthCheck 是否支持隧道内健康检查，默认为False。
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
-                     * 设置是否支持隧道内健康检查
-                     * @param EnableHealthCheck 是否支持隧道内健康检查
+                     * 设置是否支持隧道内健康检查，默认为False。
+                     * @param EnableHealthCheck 是否支持隧道内健康检查，默认为False。
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
 
@@ -231,14 +231,14 @@ CCN VPN 形的通道 可以不传VPCID
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取健康检查本端地址
-                     * @return HealthCheckLocalIp 健康检查本端地址
+                     * 获取健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * @return HealthCheckLocalIp 健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
                      */
                     std::string GetHealthCheckLocalIp() const;
 
                     /**
-                     * 设置健康检查本端地址
-                     * @param HealthCheckLocalIp 健康检查本端地址
+                     * 设置健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * @param HealthCheckLocalIp 健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
                      */
                     void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
 
@@ -249,14 +249,14 @@ CCN VPN 形的通道 可以不传VPCID
                     bool HealthCheckLocalIpHasBeenSet() const;
 
                     /**
-                     * 获取健康检查对端地址
-                     * @return HealthCheckRemoteIp 健康检查对端地址
+                     * 获取健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * @return HealthCheckRemoteIp 健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
                      */
                     std::string GetHealthCheckRemoteIp() const;
 
                     /**
-                     * 设置健康检查对端地址
-                     * @param HealthCheckRemoteIp 健康检查对端地址
+                     * 设置健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
+                     * @param HealthCheckRemoteIp 健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
                      */
                     void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
 
@@ -365,7 +365,7 @@ CCN VPN 形的通道 可以不传VPCID
                     bool m_vpnGatewayIdHasBeenSet;
 
                     /**
-                     * 对端网关ID，例如：cgw-2wqq41m9，可通过DescribeCustomerGateways接口查询对端网关。
+                     * 对端网关ID。例如：cgw-2wqq41m9，可通过[DescribeCustomerGateways](https://cloud.tencent.com/document/product/215/17516)接口查询对端网关。
                      */
                     std::string m_customerGatewayId;
                     bool m_customerGatewayIdHasBeenSet;
@@ -414,19 +414,19 @@ CCN VPN 形的通道 可以不传VPCID
                     bool m_tagsHasBeenSet;
 
                     /**
-                     * 是否支持隧道内健康检查
+                     * 是否支持隧道内健康检查，默认为False。
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
-                     * 健康检查本端地址
+                     * 健康检查本端地址，默认值为随机在169.254.128.0/17分配一个IP。
                      */
                     std::string m_healthCheckLocalIp;
                     bool m_healthCheckLocalIpHasBeenSet;
 
                     /**
-                     * 健康检查对端地址
+                     * 健康检查对端地址，默认值为随机在169.254.128.0/17分配一个IP。
                      */
                     std::string m_healthCheckRemoteIp;
                     bool m_healthCheckRemoteIpHasBeenSet;

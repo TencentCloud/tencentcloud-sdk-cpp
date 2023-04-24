@@ -70,14 +70,14 @@ namespace TencentCloud
                     bool InstanceIdHasBeenSet() const;
 
                     /**
-                     * 获取name
-                     * @return InstanceName name
+                     * 获取Name
+                     * @return InstanceName Name
                      */
                     std::string GetInstanceName() const;
 
                     /**
-                     * 设置name
-                     * @param InstanceName name
+                     * 设置Name
+                     * @param InstanceName Name
                      */
                     void SetInstanceName(const std::string& _instanceName);
 
@@ -525,6 +525,112 @@ namespace TencentCloud
                      */
                     bool MaxBandwidthHasBeenSet() const;
 
+                    /**
+                     * 获取api安全是否购买
+                     * @return APISecurity api安全是否购买
+                     */
+                    uint64_t GetAPISecurity() const;
+
+                    /**
+                     * 设置api安全是否购买
+                     * @param APISecurity api安全是否购买
+                     */
+                    void SetAPISecurity(const uint64_t& _aPISecurity);
+
+                    /**
+                     * 判断参数 APISecurity 是否已赋值
+                     * @return APISecurity 是否已赋值
+                     */
+                    bool APISecurityHasBeenSet() const;
+
+                    /**
+                     * 获取购买的qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return QpsStandard 购买的qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetQpsStandard() const;
+
+                    /**
+                     * 设置购买的qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param QpsStandard 购买的qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetQpsStandard(const uint64_t& _qpsStandard);
+
+                    /**
+                     * 判断参数 QpsStandard 是否已赋值
+                     * @return QpsStandard 是否已赋值
+                     */
+                    bool QpsStandardHasBeenSet() const;
+
+                    /**
+                     * 获取购买的带宽规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return BandwidthStandard 购买的带宽规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetBandwidthStandard() const;
+
+                    /**
+                     * 设置购买的带宽规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param BandwidthStandard 购买的带宽规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetBandwidthStandard(const uint64_t& _bandwidthStandard);
+
+                    /**
+                     * 判断参数 BandwidthStandard 是否已赋值
+                     * @return BandwidthStandard 是否已赋值
+                     */
+                    bool BandwidthStandardHasBeenSet() const;
+
+                    /**
+                     * 获取实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Status 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Status 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取实例沙箱值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return SandboxQps 实例沙箱值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t GetSandboxQps() const;
+
+                    /**
+                     * 设置实例沙箱值
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param SandboxQps 实例沙箱值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetSandboxQps(const uint64_t& _sandboxQps);
+
+                    /**
+                     * 判断参数 SandboxQps 是否已赋值
+                     * @return SandboxQps 是否已赋值
+                     */
+                    bool SandboxQpsHasBeenSet() const;
+
                 private:
 
                     /**
@@ -534,7 +640,7 @@ namespace TencentCloud
                     bool m_instanceIdHasBeenSet;
 
                     /**
-                     * name
+                     * Name
                      */
                     std::string m_instanceName;
                     bool m_instanceNameHasBeenSet;
@@ -682,6 +788,40 @@ namespace TencentCloud
                      */
                     uint64_t m_maxBandwidth;
                     bool m_maxBandwidthHasBeenSet;
+
+                    /**
+                     * api安全是否购买
+                     */
+                    uint64_t m_aPISecurity;
+                    bool m_aPISecurityHasBeenSet;
+
+                    /**
+                     * 购买的qps规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_qpsStandard;
+                    bool m_qpsStandardHasBeenSet;
+
+                    /**
+                     * 购买的带宽规格
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_bandwidthStandard;
+                    bool m_bandwidthStandardHasBeenSet;
+
+                    /**
+                     * 实例状态
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 实例沙箱值
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    uint64_t m_sandboxQps;
+                    bool m_sandboxQpsHasBeenSet;
 
                 };
             }

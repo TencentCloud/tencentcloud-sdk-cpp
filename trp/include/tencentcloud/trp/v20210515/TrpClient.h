@@ -362,7 +362,7 @@ namespace TencentCloud
                 CreateTraceChainOutcomeCallable CreateTraceChainCallable(const Model::CreateTraceChainRequest& request);
 
                 /**
-                 *批量导入二维码，只支持平台发的码
+                 *批量绑定指定批次并激活二维码，只支持平台发的码，且只会激活没有使用过的码
                  * @param req CreateTraceCodesRequest
                  * @return CreateTraceCodesOutcome
                  */

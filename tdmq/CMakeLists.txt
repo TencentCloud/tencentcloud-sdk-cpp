@@ -219,7 +219,7 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/CreateCmqSubscribeRequest.h
   include/tencentcloud/tdmq/v20200217/model/DeleteCmqSubscribeRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPClustersResponse.h
-  include/tencentcloud/tdmq/v20200217/model/RocketMQClusterConfig.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceSpecResponse.h
   include/tencentcloud/tdmq/v20200217/model/DescribeCmqDeadLetterSourceQueuesResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteSubscriptionsResponse.h
   include/tencentcloud/tdmq/v20200217/model/DeleteRocketMQTopicRequest.h
@@ -227,7 +227,9 @@ set(tdmq_public_header_model
   include/tencentcloud/tdmq/v20200217/model/Cluster.h
   include/tencentcloud/tdmq/v20200217/model/SubscriptionTopic.h
   include/tencentcloud/tdmq/v20200217/model/RetentionPolicy.h
+  include/tencentcloud/tdmq/v20200217/model/RocketMQClusterConfig.h
   include/tencentcloud/tdmq/v20200217/model/CreateRocketMQClusterResponse.h
+  include/tencentcloud/tdmq/v20200217/model/ModifyRocketMQInstanceSpecRequest.h
   include/tencentcloud/tdmq/v20200217/model/DescribeAMQPCreateQuotaRequest.h
   include/tencentcloud/tdmq/v20200217/model/PulsarProClusterInfo.h
   include/tencentcloud/tdmq/v20200217/model/AMQPQueueDetail.h
@@ -499,7 +501,7 @@ set(tdmq_src
   src/v20200217/model/CreateCmqSubscribeRequest.cpp
   src/v20200217/model/DeleteCmqSubscribeRequest.cpp
   src/v20200217/model/DescribeAMQPClustersResponse.cpp
-  src/v20200217/model/RocketMQClusterConfig.cpp
+  src/v20200217/model/ModifyRocketMQInstanceSpecResponse.cpp
   src/v20200217/model/DescribeCmqDeadLetterSourceQueuesResponse.cpp
   src/v20200217/model/DeleteSubscriptionsResponse.cpp
   src/v20200217/model/DeleteRocketMQTopicRequest.cpp
@@ -507,7 +509,9 @@ set(tdmq_src
   src/v20200217/model/Cluster.cpp
   src/v20200217/model/SubscriptionTopic.cpp
   src/v20200217/model/RetentionPolicy.cpp
+  src/v20200217/model/RocketMQClusterConfig.cpp
   src/v20200217/model/CreateRocketMQClusterResponse.cpp
+  src/v20200217/model/ModifyRocketMQInstanceSpecRequest.cpp
   src/v20200217/model/DescribeAMQPCreateQuotaRequest.cpp
   src/v20200217/model/PulsarProClusterInfo.cpp
   src/v20200217/model/AMQPQueueDetail.cpp

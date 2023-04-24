@@ -168,6 +168,24 @@ ItemNames=["姓名","性别"]
                      */
                     bool ItemNamesHasBeenSet() const;
 
+                    /**
+                     * 获取是否开启全文字段识别
+                     * @return ReturnFullText 是否开启全文字段识别
+                     */
+                    bool GetReturnFullText() const;
+
+                    /**
+                     * 设置是否开启全文字段识别
+                     * @param ReturnFullText 是否开启全文字段识别
+                     */
+                    void SetReturnFullText(const bool& _returnFullText);
+
+                    /**
+                     * 判断参数 ReturnFullText 是否已赋值
+                     * @return ReturnFullText 是否已赋值
+                     */
+                    bool ReturnFullTextHasBeenSet() const;
+
                 private:
 
                     /**
@@ -208,6 +226,12 @@ ItemNames=["姓名","性别"]
                      */
                     std::vector<std::string> m_itemNames;
                     bool m_itemNamesHasBeenSet;
+
+                    /**
+                     * 是否开启全文字段识别
+                     */
+                    bool m_returnFullText;
+                    bool m_returnFullTextHasBeenSet;
 
                 };
             }

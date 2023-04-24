@@ -43,14 +43,18 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取实例ID。
-                     * @return InstanceId 实例ID。
+                     * 获取指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
+                     * @return InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
                      */
                     std::string GetInstanceId() const;
 
                     /**
-                     * 设置实例ID。
-                     * @param InstanceId 实例ID。
+                     * 设置指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
+                     * @param InstanceId 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
                      */
                     void SetInstanceId(const std::string& _instanceId);
 
@@ -97,14 +101,14 @@ namespace TencentCloud
                     bool TimePeriodHasBeenSet() const;
 
                     /**
-                     * 获取自动备份类型： 1 “定时回档”。
-                     * @return AutoBackupType 自动备份类型： 1 “定时回档”。
+                     * 获取自动备份类型。目前仅能配置为：1 ，指定时备份。
+                     * @return AutoBackupType 自动备份类型。目前仅能配置为：1 ，指定时备份。
                      */
                     int64_t GetAutoBackupType() const;
 
                     /**
-                     * 设置自动备份类型： 1 “定时回档”。
-                     * @param AutoBackupType 自动备份类型： 1 “定时回档”。
+                     * 设置自动备份类型。目前仅能配置为：1 ，指定时备份。
+                     * @param AutoBackupType 自动备份类型。目前仅能配置为：1 ，指定时备份。
                      */
                     void SetAutoBackupType(const int64_t& _autoBackupType);
 
@@ -117,7 +121,8 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 实例ID。
+                     * 指定实例 ID。例如：crs-xjhsdj****。请登录[Redis控制台](https://console.cloud.tencent.com/redis)在实例列表复制实例 ID。
+
                      */
                     std::string m_instanceId;
                     bool m_instanceIdHasBeenSet;
@@ -135,7 +140,7 @@ namespace TencentCloud
                     bool m_timePeriodHasBeenSet;
 
                     /**
-                     * 自动备份类型： 1 “定时回档”。
+                     * 自动备份类型。目前仅能配置为：1 ，指定时备份。
                      */
                     int64_t m_autoBackupType;
                     bool m_autoBackupTypeHasBeenSet;

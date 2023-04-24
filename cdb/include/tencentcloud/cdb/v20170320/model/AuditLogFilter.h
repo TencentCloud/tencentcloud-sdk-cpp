@@ -352,6 +352,60 @@ namespace TencentCloud
                      */
                     bool TransactionLivingTimeSectionHasBeenSet() const;
 
+                    /**
+                     * 获取线程ID
+                     * @return ThreadId 线程ID
+                     */
+                    std::vector<std::string> GetThreadId() const;
+
+                    /**
+                     * 设置线程ID
+                     * @param ThreadId 线程ID
+                     */
+                    void SetThreadId(const std::vector<std::string>& _threadId);
+
+                    /**
+                     * 判断参数 ThreadId 是否已赋值
+                     * @return ThreadId 是否已赋值
+                     */
+                    bool ThreadIdHasBeenSet() const;
+
+                    /**
+                     * 获取返回行数。表示筛选返回行数大于该值的审计日志。
+                     * @return SentRows 返回行数。表示筛选返回行数大于该值的审计日志。
+                     */
+                    int64_t GetSentRows() const;
+
+                    /**
+                     * 设置返回行数。表示筛选返回行数大于该值的审计日志。
+                     * @param SentRows 返回行数。表示筛选返回行数大于该值的审计日志。
+                     */
+                    void SetSentRows(const int64_t& _sentRows);
+
+                    /**
+                     * 判断参数 SentRows 是否已赋值
+                     * @return SentRows 是否已赋值
+                     */
+                    bool SentRowsHasBeenSet() const;
+
+                    /**
+                     * 获取mysql错误码
+                     * @return ErrCode mysql错误码
+                     */
+                    std::vector<int64_t> GetErrCode() const;
+
+                    /**
+                     * 设置mysql错误码
+                     * @param ErrCode mysql错误码
+                     */
+                    void SetErrCode(const std::vector<int64_t>& _errCode);
+
+                    /**
+                     * 判断参数 ErrCode 是否已赋值
+                     * @return ErrCode 是否已赋值
+                     */
+                    bool ErrCodeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -455,6 +509,24 @@ namespace TencentCloud
                      */
                     std::string m_transactionLivingTimeSection;
                     bool m_transactionLivingTimeSectionHasBeenSet;
+
+                    /**
+                     * 线程ID
+                     */
+                    std::vector<std::string> m_threadId;
+                    bool m_threadIdHasBeenSet;
+
+                    /**
+                     * 返回行数。表示筛选返回行数大于该值的审计日志。
+                     */
+                    int64_t m_sentRows;
+                    bool m_sentRowsHasBeenSet;
+
+                    /**
+                     * mysql错误码
+                     */
+                    std::vector<int64_t> m_errCode;
+                    bool m_errCodeHasBeenSet;
 
                 };
             }

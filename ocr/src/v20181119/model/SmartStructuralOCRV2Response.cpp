@@ -25,7 +25,8 @@ using namespace std;
 
 SmartStructuralOCRV2Response::SmartStructuralOCRV2Response() :
     m_angleHasBeenSet(false),
-    m_structuralListHasBeenSet(false)
+    m_structuralListHasBeenSet(false),
+    m_wordListHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,26 @@ CoreInternalOutcome SmartStructuralOCRV2Response::Deserialize(const string &payl
         m_structuralListHasBeenSet = true;
     }
 
+    if (rsp.HasMember("WordList") && !rsp["WordList"].IsNull())
+    {
+        if (!rsp["WordList"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `WordList` is not array type"));
+
+        const rapidjson::Value &tmpValue = rsp["WordList"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            WordItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_wordList.push_back(item);
+        }
+        m_wordListHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -120,6 +141,21 @@ string SmartStructuralOCRV2Response::ToJsonString() const
 
         int i=0;
         for (auto itr = m_structuralList.begin(); itr != m_structuralList.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_wordListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "WordList";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_wordList.begin(); itr != m_wordList.end(); ++itr, ++i)
         {
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
@@ -156,6 +192,16 @@ vector<GroupInfo> SmartStructuralOCRV2Response::GetStructuralList() const
 bool SmartStructuralOCRV2Response::StructuralListHasBeenSet() const
 {
     return m_structuralListHasBeenSet;
+}
+
+vector<WordItem> SmartStructuralOCRV2Response::GetWordList() const
+{
+    return m_wordList;
+}
+
+bool SmartStructuralOCRV2Response::WordListHasBeenSet() const
+{
+    return m_wordListHasBeenSet;
 }
 
 

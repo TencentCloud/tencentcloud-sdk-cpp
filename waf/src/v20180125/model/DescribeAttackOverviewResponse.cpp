@@ -28,7 +28,8 @@ DescribeAttackOverviewResponse::DescribeAttackOverviewResponse() :
     m_attackCountHasBeenSet(false),
     m_aCLCountHasBeenSet(false),
     m_cCCountHasBeenSet(false),
-    m_botCountHasBeenSet(false)
+    m_botCountHasBeenSet(false),
+    m_apiAssetsCountHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,16 @@ CoreInternalOutcome DescribeAttackOverviewResponse::Deserialize(const string &pa
         m_botCountHasBeenSet = true;
     }
 
+    if (rsp.HasMember("ApiAssetsCount") && !rsp["ApiAssetsCount"].IsNull())
+    {
+        if (!rsp["ApiAssetsCount"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `ApiAssetsCount` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_apiAssetsCount = rsp["ApiAssetsCount"].GetUint64();
+        m_apiAssetsCountHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -164,6 +175,14 @@ string DescribeAttackOverviewResponse::ToJsonString() const
         string key = "BotCount";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, m_botCount, allocator);
+    }
+
+    if (m_apiAssetsCountHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ApiAssetsCount";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_apiAssetsCount, allocator);
     }
 
     rapidjson::Value iKey(rapidjson::kStringType);
@@ -226,6 +245,16 @@ uint64_t DescribeAttackOverviewResponse::GetBotCount() const
 bool DescribeAttackOverviewResponse::BotCountHasBeenSet() const
 {
     return m_botCountHasBeenSet;
+}
+
+uint64_t DescribeAttackOverviewResponse::GetApiAssetsCount() const
+{
+    return m_apiAssetsCount;
+}
+
+bool DescribeAttackOverviewResponse::ApiAssetsCountHasBeenSet() const
+{
+    return m_apiAssetsCountHasBeenSet;
 }
 
 

@@ -100,14 +100,14 @@ namespace TencentCloud
                     bool PreShareKeyHasBeenSet() const;
 
                     /**
-                     * 获取SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
-                     * @return SecurityPolicyDatabases SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * 获取SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * @return SecurityPolicyDatabases SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
                      */
                     std::vector<SecurityPolicyDatabase> GetSecurityPolicyDatabases() const;
 
                     /**
-                     * 设置SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
-                     * @param SecurityPolicyDatabases SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * 设置SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * @param SecurityPolicyDatabases SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
                      */
                     void SetSecurityPolicyDatabases(const std::vector<SecurityPolicyDatabase>& _securityPolicyDatabases);
 
@@ -154,14 +154,14 @@ namespace TencentCloud
                     bool IPSECOptionsSpecificationHasBeenSet() const;
 
                     /**
-                     * 获取是否启用通道健康检查
-                     * @return EnableHealthCheck 是否启用通道健康检查
+                     * 获取是否启用通道健康检查，默认为False。
+                     * @return EnableHealthCheck 是否启用通道健康检查，默认为False。
                      */
                     bool GetEnableHealthCheck() const;
 
                     /**
-                     * 设置是否启用通道健康检查
-                     * @param EnableHealthCheck 是否启用通道健康检查
+                     * 设置是否启用通道健康检查，默认为False。
+                     * @param EnableHealthCheck 是否启用通道健康检查，默认为False。
                      */
                     void SetEnableHealthCheck(const bool& _enableHealthCheck);
 
@@ -172,14 +172,14 @@ namespace TencentCloud
                     bool EnableHealthCheckHasBeenSet() const;
 
                     /**
-                     * 获取本端通道探测ip
-                     * @return HealthCheckLocalIp 本端通道探测ip
+                     * 获取本端通道探测IP。
+                     * @return HealthCheckLocalIp 本端通道探测IP。
                      */
                     std::string GetHealthCheckLocalIp() const;
 
                     /**
-                     * 设置本端通道探测ip
-                     * @param HealthCheckLocalIp 本端通道探测ip
+                     * 设置本端通道探测IP。
+                     * @param HealthCheckLocalIp 本端通道探测IP。
                      */
                     void SetHealthCheckLocalIp(const std::string& _healthCheckLocalIp);
 
@@ -190,14 +190,14 @@ namespace TencentCloud
                     bool HealthCheckLocalIpHasBeenSet() const;
 
                     /**
-                     * 获取对端通道探测ip
-                     * @return HealthCheckRemoteIp 对端通道探测ip
+                     * 获取对端通道探测IP。
+                     * @return HealthCheckRemoteIp 对端通道探测IP。
                      */
                     std::string GetHealthCheckRemoteIp() const;
 
                     /**
-                     * 设置对端通道探测ip
-                     * @param HealthCheckRemoteIp 对端通道探测ip
+                     * 设置对端通道探测IP。
+                     * @param HealthCheckRemoteIp 对端通道探测IP。
                      */
                     void SetHealthCheckRemoteIp(const std::string& _healthCheckRemoteIp);
 
@@ -279,6 +279,24 @@ namespace TencentCloud
                      */
                     bool DpdActionHasBeenSet() const;
 
+                    /**
+                     * 获取对端网关ID，4.0及以上网关下的通道支持更新。
+                     * @return CustomerGatewayId 对端网关ID，4.0及以上网关下的通道支持更新。
+                     */
+                    std::string GetCustomerGatewayId() const;
+
+                    /**
+                     * 设置对端网关ID，4.0及以上网关下的通道支持更新。
+                     * @param CustomerGatewayId 对端网关ID，4.0及以上网关下的通道支持更新。
+                     */
+                    void SetCustomerGatewayId(const std::string& _customerGatewayId);
+
+                    /**
+                     * 判断参数 CustomerGatewayId 是否已赋值
+                     * @return CustomerGatewayId 是否已赋值
+                     */
+                    bool CustomerGatewayIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -300,7 +318,7 @@ namespace TencentCloud
                     bool m_preShareKeyHasBeenSet;
 
                     /**
-                     * SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
+                     * SPD策略组，例如：{"10.0.0.5/24":["172.123.10.5/16"]}，10.0.0.5/24是vpc内网段，172.123.10.5/16是IDC网段。用户指定VPC内哪些网段可以和您IDC中哪些网段通信。
                      */
                     std::vector<SecurityPolicyDatabase> m_securityPolicyDatabases;
                     bool m_securityPolicyDatabasesHasBeenSet;
@@ -318,19 +336,19 @@ namespace TencentCloud
                     bool m_iPSECOptionsSpecificationHasBeenSet;
 
                     /**
-                     * 是否启用通道健康检查
+                     * 是否启用通道健康检查，默认为False。
                      */
                     bool m_enableHealthCheck;
                     bool m_enableHealthCheckHasBeenSet;
 
                     /**
-                     * 本端通道探测ip
+                     * 本端通道探测IP。
                      */
                     std::string m_healthCheckLocalIp;
                     bool m_healthCheckLocalIpHasBeenSet;
 
                     /**
-                     * 对端通道探测ip
+                     * 对端通道探测IP。
                      */
                     std::string m_healthCheckRemoteIp;
                     bool m_healthCheckRemoteIpHasBeenSet;
@@ -358,6 +376,12 @@ namespace TencentCloud
                      */
                     std::string m_dpdAction;
                     bool m_dpdActionHasBeenSet;
+
+                    /**
+                     * 对端网关ID，4.0及以上网关下的通道支持更新。
+                     */
+                    std::string m_customerGatewayId;
+                    bool m_customerGatewayIdHasBeenSet;
 
                 };
             }

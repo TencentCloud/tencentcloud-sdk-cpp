@@ -67,6 +67,7 @@ set(keewidb_public_header_model
   include/tencentcloud/keewidb/v20220308/model/DescribeTaskListRequest.h
   include/tencentcloud/keewidb/v20220308/model/CreateInstancesResponse.h
   include/tencentcloud/keewidb/v20220308/model/KeeWiDBNode.h
+  include/tencentcloud/keewidb/v20220308/model/DescribeConnectionConfigResponse.h
   include/tencentcloud/keewidb/v20220308/model/BinlogInfo.h
   include/tencentcloud/keewidb/v20220308/model/ModifyNetworkConfigRequest.h
   include/tencentcloud/keewidb/v20220308/model/DescribeInstanceParamsRequest.h
@@ -102,6 +103,7 @@ set(keewidb_public_header_model
   include/tencentcloud/keewidb/v20220308/model/DestroyPrepaidInstanceResponse.h
   include/tencentcloud/keewidb/v20220308/model/InstanceNodeInfo.h
   include/tencentcloud/keewidb/v20220308/model/TendisSlowLogDetail.h
+  include/tencentcloud/keewidb/v20220308/model/DescribeConnectionConfigRequest.h
   include/tencentcloud/keewidb/v20220308/model/ModifyInstanceParamsRequest.h
   include/tencentcloud/keewidb/v20220308/model/DescribeInstanceNodeInfoRequest.h
   include/tencentcloud/keewidb/v20220308/model/DescribeMaintenanceWindowRequest.h
@@ -113,13 +115,13 @@ set(keewidb_public_header_model
   include/tencentcloud/keewidb/v20220308/model/DisassociateSecurityGroupsRequest.h
   include/tencentcloud/keewidb/v20220308/model/ModifyMaintenanceWindowRequest.h
   include/tencentcloud/keewidb/v20220308/model/DescribeInstanceBackupsRequest.h
-  include/tencentcloud/keewidb/v20220308/model/DescribeInstanceBinlogsResponse.h
+  include/tencentcloud/keewidb/v20220308/model/ClearInstanceResponse.h
   include/tencentcloud/keewidb/v20220308/model/ChangeInstanceMasterResponse.h
   include/tencentcloud/keewidb/v20220308/model/UpgradeInstanceRequest.h
   include/tencentcloud/keewidb/v20220308/model/DescribeInstanceNodeInfoResponse.h
   include/tencentcloud/keewidb/v20220308/model/InstanceParam.h
   include/tencentcloud/keewidb/v20220308/model/DisassociateSecurityGroupsResponse.h
-  include/tencentcloud/keewidb/v20220308/model/ClearInstanceResponse.h
+  include/tencentcloud/keewidb/v20220308/model/DescribeInstanceBinlogsResponse.h
   )
 
 set(keewidb_src
@@ -172,6 +174,7 @@ set(keewidb_src
   src/v20220308/model/DescribeTaskListRequest.cpp
   src/v20220308/model/CreateInstancesResponse.cpp
   src/v20220308/model/KeeWiDBNode.cpp
+  src/v20220308/model/DescribeConnectionConfigResponse.cpp
   src/v20220308/model/BinlogInfo.cpp
   src/v20220308/model/ModifyNetworkConfigRequest.cpp
   src/v20220308/model/DescribeInstanceParamsRequest.cpp
@@ -207,6 +210,7 @@ set(keewidb_src
   src/v20220308/model/DestroyPrepaidInstanceResponse.cpp
   src/v20220308/model/InstanceNodeInfo.cpp
   src/v20220308/model/TendisSlowLogDetail.cpp
+  src/v20220308/model/DescribeConnectionConfigRequest.cpp
   src/v20220308/model/ModifyInstanceParamsRequest.cpp
   src/v20220308/model/DescribeInstanceNodeInfoRequest.cpp
   src/v20220308/model/DescribeMaintenanceWindowRequest.cpp
@@ -218,13 +222,13 @@ set(keewidb_src
   src/v20220308/model/DisassociateSecurityGroupsRequest.cpp
   src/v20220308/model/ModifyMaintenanceWindowRequest.cpp
   src/v20220308/model/DescribeInstanceBackupsRequest.cpp
-  src/v20220308/model/DescribeInstanceBinlogsResponse.cpp
+  src/v20220308/model/ClearInstanceResponse.cpp
   src/v20220308/model/ChangeInstanceMasterResponse.cpp
   src/v20220308/model/UpgradeInstanceRequest.cpp
   src/v20220308/model/DescribeInstanceNodeInfoResponse.cpp
   src/v20220308/model/InstanceParam.cpp
   src/v20220308/model/DisassociateSecurityGroupsResponse.cpp
-  src/v20220308/model/ClearInstanceResponse.cpp
+  src/v20220308/model/DescribeInstanceBinlogsResponse.cpp
   )
 
 set(keewidb_include

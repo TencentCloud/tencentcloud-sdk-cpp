@@ -191,14 +191,14 @@ namespace TencentCloud
                     bool LogAlarmReqInfoHasBeenSet() const;
 
                     /**
-                     * 获取模版id，专供prom使用
-                     * @return NoticeIds 模版id，专供prom使用
+                     * 获取模板id，专供prom使用
+                     * @return NoticeIds 模板id，专供prom使用
                      */
                     std::vector<std::string> GetNoticeIds() const;
 
                     /**
-                     * 设置模版id，专供prom使用
-                     * @param NoticeIds 模版id，专供prom使用
+                     * 设置模板id，专供prom使用
+                     * @param NoticeIds 模板id，专供prom使用
                      */
                     void SetNoticeIds(const std::vector<std::string>& _noticeIds);
 
@@ -313,7 +313,7 @@ namespace TencentCloud
                     bool m_logAlarmReqInfoHasBeenSet;
 
                     /**
-                     * 模版id，专供prom使用
+                     * 模板id，专供prom使用
                      */
                     std::vector<std::string> m_noticeIds;
                     bool m_noticeIdsHasBeenSet;

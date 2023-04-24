@@ -30,7 +30,8 @@ DescribeCustomRulesRspRuleListItem::DescribeCustomRulesRspRuleListItem() :
     m_ruleIdHasBeenSet(false),
     m_sortIdHasBeenSet(false),
     m_statusHasBeenSet(false),
-    m_strategiesHasBeenSet(false)
+    m_strategiesHasBeenSet(false),
+    m_eventIdHasBeenSet(false)
 {
 }
 
@@ -149,6 +150,16 @@ CoreInternalOutcome DescribeCustomRulesRspRuleListItem::Deserialize(const rapidj
         m_strategiesHasBeenSet = true;
     }
 
+    if (value.HasMember("EventId") && !value["EventId"].IsNull())
+    {
+        if (!value["EventId"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `DescribeCustomRulesRspRuleListItem.EventId` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_eventId = string(value["EventId"].GetString());
+        m_eventIdHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -241,6 +252,14 @@ void DescribeCustomRulesRspRuleListItem::ToJsonObject(rapidjson::Value &value, r
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_eventIdHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "EventId";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_eventId.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -404,5 +423,21 @@ void DescribeCustomRulesRspRuleListItem::SetStrategies(const vector<Strategy>& _
 bool DescribeCustomRulesRspRuleListItem::StrategiesHasBeenSet() const
 {
     return m_strategiesHasBeenSet;
+}
+
+string DescribeCustomRulesRspRuleListItem::GetEventId() const
+{
+    return m_eventId;
+}
+
+void DescribeCustomRulesRspRuleListItem::SetEventId(const string& _eventId)
+{
+    m_eventId = _eventId;
+    m_eventIdHasBeenSet = true;
+}
+
+bool DescribeCustomRulesRspRuleListItem::EventIdHasBeenSet() const
+{
+    return m_eventIdHasBeenSet;
 }
 

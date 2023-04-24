@@ -78,6 +78,42 @@ namespace TencentCloud
                      */
                     bool StaffListHasBeenSet() const;
 
+                    /**
+                     * 获取筛选技能组ID列表
+                     * @return GroupIdList 筛选技能组ID列表
+                     */
+                    std::vector<int64_t> GetGroupIdList() const;
+
+                    /**
+                     * 设置筛选技能组ID列表
+                     * @param GroupIdList 筛选技能组ID列表
+                     */
+                    void SetGroupIdList(const std::vector<int64_t>& _groupIdList);
+
+                    /**
+                     * 判断参数 GroupIdList 是否已赋值
+                     * @return GroupIdList 是否已赋值
+                     */
+                    bool GroupIdListHasBeenSet() const;
+
+                    /**
+                     * 获取筛选坐席状态列表
+                     * @return StatusList 筛选坐席状态列表
+                     */
+                    std::vector<std::string> GetStatusList() const;
+
+                    /**
+                     * 设置筛选坐席状态列表
+                     * @param StatusList 筛选坐席状态列表
+                     */
+                    void SetStatusList(const std::vector<std::string>& _statusList);
+
+                    /**
+                     * 判断参数 StatusList 是否已赋值
+                     * @return StatusList 是否已赋值
+                     */
+                    bool StatusListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -91,6 +127,18 @@ namespace TencentCloud
                      */
                     std::vector<std::string> m_staffList;
                     bool m_staffListHasBeenSet;
+
+                    /**
+                     * 筛选技能组ID列表
+                     */
+                    std::vector<int64_t> m_groupIdList;
+                    bool m_groupIdListHasBeenSet;
+
+                    /**
+                     * 筛选坐席状态列表
+                     */
+                    std::vector<std::string> m_statusList;
+                    bool m_statusListHasBeenSet;
 
                 };
             }

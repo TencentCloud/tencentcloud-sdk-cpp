@@ -417,14 +417,14 @@ namespace TencentCloud
                     bool EmotionCategoryHasBeenSet() const;
 
                     /**
-                     * 获取控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
-                     * @return EmotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     * 获取控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效；
+                     * @return EmotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效；
                      */
                     int64_t GetEmotionIntensity() const;
 
                     /**
-                     * 设置控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
-                     * @param EmotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     * 设置控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效；
+                     * @param EmotionIntensity 控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效；
                      */
                     void SetEmotionIntensity(const int64_t& _emotionIntensity);
 
@@ -550,7 +550,7 @@ namespace TencentCloud
                     bool m_emotionCategoryHasBeenSet;
 
                     /**
-                     * 控制合成音频情感程度，取值范围为[50,200],默认为100，不填写为默认值；只有EmotionCategory不为空时生效；
+                     * 控制合成音频情感程度，取值范围为[50,200],默认为100；只有EmotionCategory不为空时生效；
                      */
                     int64_t m_emotionIntensity;
                     bool m_emotionIntensityHasBeenSet;

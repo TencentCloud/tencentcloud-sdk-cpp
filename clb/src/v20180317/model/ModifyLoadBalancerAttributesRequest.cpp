@@ -29,7 +29,8 @@ ModifyLoadBalancerAttributesRequest::ModifyLoadBalancerAttributesRequest() :
     m_internetChargeInfoHasBeenSet(false),
     m_loadBalancerPassToTargetHasBeenSet(false),
     m_snatProHasBeenSet(false),
-    m_deleteProtectHasBeenSet(false)
+    m_deleteProtectHasBeenSet(false),
+    m_modifyClassicDomainHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,14 @@ string ModifyLoadBalancerAttributesRequest::ToJsonString() const
         string key = "DeleteProtect";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_deleteProtect, allocator);
+    }
+
+    if (m_modifyClassicDomainHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ModifyClassicDomain";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_modifyClassicDomain, allocator);
     }
 
 
@@ -216,6 +225,22 @@ void ModifyLoadBalancerAttributesRequest::SetDeleteProtect(const bool& _deletePr
 bool ModifyLoadBalancerAttributesRequest::DeleteProtectHasBeenSet() const
 {
     return m_deleteProtectHasBeenSet;
+}
+
+bool ModifyLoadBalancerAttributesRequest::GetModifyClassicDomain() const
+{
+    return m_modifyClassicDomain;
+}
+
+void ModifyLoadBalancerAttributesRequest::SetModifyClassicDomain(const bool& _modifyClassicDomain)
+{
+    m_modifyClassicDomain = _modifyClassicDomain;
+    m_modifyClassicDomainHasBeenSet = true;
+}
+
+bool ModifyLoadBalancerAttributesRequest::ModifyClassicDomainHasBeenSet() const
+{
+    return m_modifyClassicDomainHasBeenSet;
 }
 
 

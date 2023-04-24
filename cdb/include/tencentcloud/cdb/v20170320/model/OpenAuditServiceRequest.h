@@ -21,6 +21,7 @@
 #include <vector>
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/cdb/v20170320/model/AuditRuleFilters.h>
 
 
 namespace TencentCloud
@@ -64,6 +65,7 @@ namespace TencentCloud
                      * 获取审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
+90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
@@ -71,6 +73,7 @@ namespace TencentCloud
                      * @return LogExpireDay 审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
+90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
@@ -82,6 +85,7 @@ namespace TencentCloud
                      * 设置审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
+90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
@@ -89,6 +93,7 @@ namespace TencentCloud
                      * @param LogExpireDay 审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
+90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
@@ -106,17 +111,9 @@ namespace TencentCloud
                      * 获取高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
-180 - 六个月；
-365 - 一年；
-1095 - 三年；
-1825 - 五年；
                      * @return HighLogExpireDay 高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
-180 - 六个月；
-365 - 一年；
-1095 - 三年；
-1825 - 五年；
                      */
                     uint64_t GetHighLogExpireDay() const;
 
@@ -124,17 +121,9 @@ namespace TencentCloud
                      * 设置高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
-180 - 六个月；
-365 - 一年；
-1095 - 三年；
-1825 - 五年；
                      * @param HighLogExpireDay 高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
-180 - 六个月；
-365 - 一年；
-1095 - 三年；
-1825 - 五年；
                      */
                     void SetHighLogExpireDay(const uint64_t& _highLogExpireDay);
 
@@ -143,6 +132,42 @@ namespace TencentCloud
                      * @return HighLogExpireDay 是否已赋值
                      */
                     bool HighLogExpireDayHasBeenSet() const;
+
+                    /**
+                     * 获取审计规则。同RuleTemplateIds都不填是全审计。
+                     * @return AuditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
+                     */
+                    std::vector<AuditRuleFilters> GetAuditRuleFilters() const;
+
+                    /**
+                     * 设置审计规则。同RuleTemplateIds都不填是全审计。
+                     * @param AuditRuleFilters 审计规则。同RuleTemplateIds都不填是全审计。
+                     */
+                    void SetAuditRuleFilters(const std::vector<AuditRuleFilters>& _auditRuleFilters);
+
+                    /**
+                     * 判断参数 AuditRuleFilters 是否已赋值
+                     * @return AuditRuleFilters 是否已赋值
+                     */
+                    bool AuditRuleFiltersHasBeenSet() const;
+
+                    /**
+                     * 获取规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * @return RuleTemplateIds 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     */
+                    std::vector<std::string> GetRuleTemplateIds() const;
+
+                    /**
+                     * 设置规则模版ID。同AuditRuleFilters都不填是全审计。
+                     * @param RuleTemplateIds 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     */
+                    void SetRuleTemplateIds(const std::vector<std::string>& _ruleTemplateIds);
+
+                    /**
+                     * 判断参数 RuleTemplateIds 是否已赋值
+                     * @return RuleTemplateIds 是否已赋值
+                     */
+                    bool RuleTemplateIdsHasBeenSet() const;
 
                 private:
 
@@ -156,6 +181,7 @@ namespace TencentCloud
                      * 审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
+90 - 三个月；
 180 - 六个月；
 365 - 一年；
 1095 - 三年；
@@ -168,13 +194,21 @@ namespace TencentCloud
                      * 高频审计日志保存时长。支持值包括：
 7 - 一周
 30 - 一个月；
-180 - 六个月；
-365 - 一年；
-1095 - 三年；
-1825 - 五年；
                      */
                     uint64_t m_highLogExpireDay;
                     bool m_highLogExpireDayHasBeenSet;
+
+                    /**
+                     * 审计规则。同RuleTemplateIds都不填是全审计。
+                     */
+                    std::vector<AuditRuleFilters> m_auditRuleFilters;
+                    bool m_auditRuleFiltersHasBeenSet;
+
+                    /**
+                     * 规则模版ID。同AuditRuleFilters都不填是全审计。
+                     */
+                    std::vector<std::string> m_ruleTemplateIds;
+                    bool m_ruleTemplateIdsHasBeenSet;
 
                 };
             }

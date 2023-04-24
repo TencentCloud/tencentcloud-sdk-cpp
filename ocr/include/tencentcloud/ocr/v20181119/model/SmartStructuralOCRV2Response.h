@@ -22,6 +22,7 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ocr/v20181119/model/GroupInfo.h>
+#include <tencentcloud/ocr/v20181119/model/WordItem.h>
 
 
 namespace TencentCloud
@@ -70,6 +71,18 @@ namespace TencentCloud
                      */
                     bool StructuralListHasBeenSet() const;
 
+                    /**
+                     * 获取还原文本信息
+                     * @return WordList 还原文本信息
+                     */
+                    std::vector<WordItem> GetWordList() const;
+
+                    /**
+                     * 判断参数 WordList 是否已赋值
+                     * @return WordList 是否已赋值
+                     */
+                    bool WordListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -84,6 +97,12 @@ namespace TencentCloud
                      */
                     std::vector<GroupInfo> m_structuralList;
                     bool m_structuralListHasBeenSet;
+
+                    /**
+                     * 还原文本信息
+                     */
+                    std::vector<WordItem> m_wordList;
+                    bool m_wordListHasBeenSet;
 
                 };
             }

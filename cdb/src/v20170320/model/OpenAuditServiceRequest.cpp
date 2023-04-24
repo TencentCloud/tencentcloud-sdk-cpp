@@ -25,7 +25,9 @@ using namespace std;
 OpenAuditServiceRequest::OpenAuditServiceRequest() :
     m_instanceIdHasBeenSet(false),
     m_logExpireDayHasBeenSet(false),
-    m_highLogExpireDayHasBeenSet(false)
+    m_highLogExpireDayHasBeenSet(false),
+    m_auditRuleFiltersHasBeenSet(false),
+    m_ruleTemplateIdsHasBeenSet(false)
 {
 }
 
@@ -58,6 +60,34 @@ string OpenAuditServiceRequest::ToJsonString() const
         string key = "HighLogExpireDay";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_highLogExpireDay, allocator);
+    }
+
+    if (m_auditRuleFiltersHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "AuditRuleFilters";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_auditRuleFilters.begin(); itr != m_auditRuleFilters.end(); ++itr, ++i)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(d[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_ruleTemplateIdsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "RuleTemplateIds";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_ruleTemplateIds.begin(); itr != m_ruleTemplateIds.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
     }
 
 
@@ -114,6 +144,38 @@ void OpenAuditServiceRequest::SetHighLogExpireDay(const uint64_t& _highLogExpire
 bool OpenAuditServiceRequest::HighLogExpireDayHasBeenSet() const
 {
     return m_highLogExpireDayHasBeenSet;
+}
+
+vector<AuditRuleFilters> OpenAuditServiceRequest::GetAuditRuleFilters() const
+{
+    return m_auditRuleFilters;
+}
+
+void OpenAuditServiceRequest::SetAuditRuleFilters(const vector<AuditRuleFilters>& _auditRuleFilters)
+{
+    m_auditRuleFilters = _auditRuleFilters;
+    m_auditRuleFiltersHasBeenSet = true;
+}
+
+bool OpenAuditServiceRequest::AuditRuleFiltersHasBeenSet() const
+{
+    return m_auditRuleFiltersHasBeenSet;
+}
+
+vector<string> OpenAuditServiceRequest::GetRuleTemplateIds() const
+{
+    return m_ruleTemplateIds;
+}
+
+void OpenAuditServiceRequest::SetRuleTemplateIds(const vector<string>& _ruleTemplateIds)
+{
+    m_ruleTemplateIds = _ruleTemplateIds;
+    m_ruleTemplateIdsHasBeenSet = true;
+}
+
+bool OpenAuditServiceRequest::RuleTemplateIdsHasBeenSet() const
+{
+    return m_ruleTemplateIdsHasBeenSet;
 }
 
 

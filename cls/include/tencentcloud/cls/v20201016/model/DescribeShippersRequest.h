@@ -44,100 +44,28 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取<br><li> shipperName
-
-按照【投递规则名称】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> shipperId
-
-按照【投递规则ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> topicId
-
-按照【日志主题】进行过滤。
-
-类型：String
-
-必选：否
+                     * 获取- shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否
+- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否
+- topicId：按照【日志主题】进行过滤。类型：String。必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @return Filters <br><li> shipperName
-
-按照【投递规则名称】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> shipperId
-
-按照【投递规则ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> topicId
-
-按照【日志主题】进行过滤。
-
-类型：String
-
-必选：否
+                     * @return Filters - shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否
+- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否
+- topicId：按照【日志主题】进行过滤。类型：String。必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
                     std::vector<Filter> GetFilters() const;
 
                     /**
-                     * 设置<br><li> shipperName
-
-按照【投递规则名称】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> shipperId
-
-按照【投递规则ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> topicId
-
-按照【日志主题】进行过滤。
-
-类型：String
-
-必选：否
+                     * 设置- shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否
+- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否
+- topicId：按照【日志主题】进行过滤。类型：String。必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
-                     * @param Filters <br><li> shipperName
-
-按照【投递规则名称】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> shipperId
-
-按照【投递规则ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> topicId
-
-按照【日志主题】进行过滤。
-
-类型：String
-
-必选：否
+                     * @param Filters - shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否
+- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否
+- topicId：按照【日志主题】进行过滤。类型：String。必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */
@@ -188,27 +116,9 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * <br><li> shipperName
-
-按照【投递规则名称】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> shipperId
-
-按照【投递规则ID】进行过滤。
-类型：String
-
-必选：否
-
-<br><li> topicId
-
-按照【日志主题】进行过滤。
-
-类型：String
-
-必选：否
+                     * - shipperName：按照【投递规则名称】进行过滤。类型：String。必选：否
+- shipperId：按照【投递规则ID】进行过滤。类型：String。必选：否
+- topicId：按照【日志主题】进行过滤。类型：String。必选：否
 
 每次请求的Filters的上限为10，Filter.Values的上限为5。
                      */

@@ -81,6 +81,8 @@
 #include <tencentcloud/cfs/v20190719/model/DescribeSnapshotOperationLogsResponse.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaRequest.h>
 #include <tencentcloud/cfs/v20190719/model/DescribeUserQuotaResponse.h>
+#include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemRequest.h>
+#include <tencentcloud/cfs/v20190719/model/ScaleUpFileSystemResponse.h>
 #include <tencentcloud/cfs/v20190719/model/SetUserQuotaRequest.h>
 #include <tencentcloud/cfs/v20190719/model/SetUserQuotaResponse.h>
 #include <tencentcloud/cfs/v20190719/model/SignUpCfsServiceRequest.h>
@@ -204,6 +206,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeUserQuotaResponse> DescribeUserQuotaOutcome;
                 typedef std::future<DescribeUserQuotaOutcome> DescribeUserQuotaOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::DescribeUserQuotaRequest&, DescribeUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeUserQuotaAsyncHandler;
+                typedef Outcome<Core::Error, Model::ScaleUpFileSystemResponse> ScaleUpFileSystemOutcome;
+                typedef std::future<ScaleUpFileSystemOutcome> ScaleUpFileSystemOutcomeCallable;
+                typedef std::function<void(const CfsClient*, const Model::ScaleUpFileSystemRequest&, ScaleUpFileSystemOutcome, const std::shared_ptr<const AsyncCallerContext>&)> ScaleUpFileSystemAsyncHandler;
                 typedef Outcome<Core::Error, Model::SetUserQuotaResponse> SetUserQuotaOutcome;
                 typedef std::future<SetUserQuotaOutcome> SetUserQuotaOutcomeCallable;
                 typedef std::function<void(const CfsClient*, const Model::SetUserQuotaRequest&, SetUserQuotaOutcome, const std::shared_ptr<const AsyncCallerContext>&)> SetUserQuotaAsyncHandler;
@@ -504,6 +509,15 @@ namespace TencentCloud
                 DescribeUserQuotaOutcome DescribeUserQuota(const Model::DescribeUserQuotaRequest &request);
                 void DescribeUserQuotaAsync(const Model::DescribeUserQuotaRequest& request, const DescribeUserQuotaAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeUserQuotaOutcomeCallable DescribeUserQuotaCallable(const Model::DescribeUserQuotaRequest& request);
+
+                /**
+                 *该接口用于对turbo 文件系统扩容使用
+                 * @param req ScaleUpFileSystemRequest
+                 * @return ScaleUpFileSystemOutcome
+                 */
+                ScaleUpFileSystemOutcome ScaleUpFileSystem(const Model::ScaleUpFileSystemRequest &request);
+                void ScaleUpFileSystemAsync(const Model::ScaleUpFileSystemRequest& request, const ScaleUpFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                ScaleUpFileSystemOutcomeCallable ScaleUpFileSystemCallable(const Model::ScaleUpFileSystemRequest& request);
 
                 /**
                  *设置文件系统配额，提供UID/GID的配额设置的接口

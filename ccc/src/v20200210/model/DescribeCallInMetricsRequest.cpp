@@ -25,7 +25,8 @@ using namespace std;
 DescribeCallInMetricsRequest::DescribeCallInMetricsRequest() :
     m_sdkAppIdHasBeenSet(false),
     m_enabledSkillGroupHasBeenSet(false),
-    m_enabledNumberHasBeenSet(false)
+    m_enabledNumberHasBeenSet(false),
+    m_groupIdListHasBeenSet(false)
 {
 }
 
@@ -58,6 +59,19 @@ string DescribeCallInMetricsRequest::ToJsonString() const
         string key = "EnabledNumber";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_enabledNumber, allocator);
+    }
+
+    if (m_groupIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIdList.begin(); itr != m_groupIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
     }
 
 
@@ -114,6 +128,22 @@ void DescribeCallInMetricsRequest::SetEnabledNumber(const bool& _enabledNumber)
 bool DescribeCallInMetricsRequest::EnabledNumberHasBeenSet() const
 {
     return m_enabledNumberHasBeenSet;
+}
+
+vector<int64_t> DescribeCallInMetricsRequest::GetGroupIdList() const
+{
+    return m_groupIdList;
+}
+
+void DescribeCallInMetricsRequest::SetGroupIdList(const vector<int64_t>& _groupIdList)
+{
+    m_groupIdList = _groupIdList;
+    m_groupIdListHasBeenSet = true;
+}
+
+bool DescribeCallInMetricsRequest::GroupIdListHasBeenSet() const
+{
+    return m_groupIdListHasBeenSet;
 }
 
 

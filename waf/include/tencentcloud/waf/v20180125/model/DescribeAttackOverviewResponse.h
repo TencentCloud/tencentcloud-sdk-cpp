@@ -103,6 +103,18 @@ namespace TencentCloud
                      */
                     bool BotCountHasBeenSet() const;
 
+                    /**
+                     * 获取api资产总数
+                     * @return ApiAssetsCount api资产总数
+                     */
+                    uint64_t GetApiAssetsCount() const;
+
+                    /**
+                     * 判断参数 ApiAssetsCount 是否已赋值
+                     * @return ApiAssetsCount 是否已赋值
+                     */
+                    bool ApiAssetsCountHasBeenSet() const;
+
                 private:
 
                     /**
@@ -134,6 +146,12 @@ namespace TencentCloud
                      */
                     uint64_t m_botCount;
                     bool m_botCountHasBeenSet;
+
+                    /**
+                     * api资产总数
+                     */
+                    uint64_t m_apiAssetsCount;
+                    bool m_apiAssetsCountHasBeenSet;
 
                 };
             }

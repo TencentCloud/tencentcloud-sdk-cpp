@@ -28,7 +28,9 @@ TraceItem::TraceItem() :
     m_hiddenHasBeenSet(false),
     m_valuesHasBeenSet(false),
     m_keyHasBeenSet(false),
-    m_extHasBeenSet(false)
+    m_extHasBeenSet(false),
+    m_attrsHasBeenSet(false),
+    m_listHasBeenSet(false)
 {
 }
 
@@ -120,6 +122,46 @@ CoreInternalOutcome TraceItem::Deserialize(const rapidjson::Value &value)
         m_extHasBeenSet = true;
     }
 
+    if (value.HasMember("Attrs") && !value["Attrs"].IsNull())
+    {
+        if (!value["Attrs"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TraceItem.Attrs` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["Attrs"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TraceItem item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_attrs.push_back(item);
+        }
+        m_attrsHasBeenSet = true;
+    }
+
+    if (value.HasMember("List") && !value["List"].IsNull())
+    {
+        if (!value["List"].IsArray())
+            return CoreInternalOutcome(Core::Error("response `TraceItem.List` is not array type"));
+
+        const rapidjson::Value &tmpValue = value["List"];
+        for (rapidjson::Value::ConstValueIterator itr = tmpValue.Begin(); itr != tmpValue.End(); ++itr)
+        {
+            TraceData item;
+            CoreInternalOutcome outcome = item.Deserialize(*itr);
+            if (!outcome.IsSuccess())
+            {
+                outcome.GetError().SetRequestId(requestId);
+                return outcome;
+            }
+            m_list.push_back(item);
+        }
+        m_listHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -194,6 +236,36 @@ void TraceItem::ToJsonObject(rapidjson::Value &value, rapidjson::Document::Alloc
         string key = "Ext";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_ext.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_attrsHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Attrs";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_attrs.begin(); itr != m_attrs.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
+    }
+
+    if (m_listHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "List";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        int i=0;
+        for (auto itr = m_list.begin(); itr != m_list.end(); ++itr, ++i)
+        {
+            value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+            (*itr).ToJsonObject(value[key.c_str()][i], allocator);
+        }
     }
 
 }
@@ -325,5 +397,37 @@ void TraceItem::SetExt(const string& _ext)
 bool TraceItem::ExtHasBeenSet() const
 {
     return m_extHasBeenSet;
+}
+
+vector<TraceItem> TraceItem::GetAttrs() const
+{
+    return m_attrs;
+}
+
+void TraceItem::SetAttrs(const vector<TraceItem>& _attrs)
+{
+    m_attrs = _attrs;
+    m_attrsHasBeenSet = true;
+}
+
+bool TraceItem::AttrsHasBeenSet() const
+{
+    return m_attrsHasBeenSet;
+}
+
+vector<TraceData> TraceItem::GetList() const
+{
+    return m_list;
+}
+
+void TraceItem::SetList(const vector<TraceData>& _list)
+{
+    m_list = _list;
+    m_listHasBeenSet = true;
+}
+
+bool TraceItem::ListHasBeenSet() const
+{
+    return m_listHasBeenSet;
 }
 

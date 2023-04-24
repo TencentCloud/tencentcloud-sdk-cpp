@@ -232,6 +232,28 @@ namespace TencentCloud
                      */
                     bool FlowMessageHasBeenSet() const;
 
+                    /**
+                     * 获取 合同发起人userId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return Creator  合同发起人userId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetCreator() const;
+
+                    /**
+                     * 设置 合同发起人userId
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param Creator  合同发起人userId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetCreator(const std::string& _creator);
+
+                    /**
+                     * 判断参数 Creator 是否已赋值
+                     * @return Creator 是否已赋值
+                     */
+                    bool CreatorHasBeenSet() const;
+
                 private:
 
                     /**
@@ -290,6 +312,13 @@ namespace TencentCloud
                      */
                     std::string m_flowMessage;
                     bool m_flowMessageHasBeenSet;
+
+                    /**
+                     *  合同发起人userId
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_creator;
+                    bool m_creatorHasBeenSet;
 
                 };
             }

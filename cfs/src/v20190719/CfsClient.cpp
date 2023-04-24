@@ -1287,6 +1287,49 @@ CfsClient::DescribeUserQuotaOutcomeCallable CfsClient::DescribeUserQuotaCallable
     return task->get_future();
 }
 
+CfsClient::ScaleUpFileSystemOutcome CfsClient::ScaleUpFileSystem(const ScaleUpFileSystemRequest &request)
+{
+    auto outcome = MakeRequest(request, "ScaleUpFileSystem");
+    if (outcome.IsSuccess())
+    {
+        auto r = outcome.GetResult();
+        string payload = string(r.Body(), r.BodySize());
+        ScaleUpFileSystemResponse rsp = ScaleUpFileSystemResponse();
+        auto o = rsp.Deserialize(payload);
+        if (o.IsSuccess())
+            return ScaleUpFileSystemOutcome(rsp);
+        else
+            return ScaleUpFileSystemOutcome(o.GetError());
+    }
+    else
+    {
+        return ScaleUpFileSystemOutcome(outcome.GetError());
+    }
+}
+
+void CfsClient::ScaleUpFileSystemAsync(const ScaleUpFileSystemRequest& request, const ScaleUpFileSystemAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context)
+{
+    auto fn = [this, request, handler, context]()
+    {
+        handler(this, request, this->ScaleUpFileSystem(request), context);
+    };
+
+    Executor::GetInstance()->Submit(new Runnable(fn));
+}
+
+CfsClient::ScaleUpFileSystemOutcomeCallable CfsClient::ScaleUpFileSystemCallable(const ScaleUpFileSystemRequest &request)
+{
+    auto task = std::make_shared<std::packaged_task<ScaleUpFileSystemOutcome()>>(
+        [this, request]()
+        {
+            return this->ScaleUpFileSystem(request);
+        }
+    );
+
+    Executor::GetInstance()->Submit(new Runnable([task]() { (*task)(); }));
+    return task->get_future();
+}
+
 CfsClient::SetUserQuotaOutcome CfsClient::SetUserQuota(const SetUserQuotaRequest &request)
 {
     auto outcome = MakeRequest(request, "SetUserQuota");

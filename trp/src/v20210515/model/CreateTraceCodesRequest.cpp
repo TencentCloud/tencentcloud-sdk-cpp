@@ -25,7 +25,9 @@ using namespace std;
 CreateTraceCodesRequest::CreateTraceCodesRequest() :
     m_batchIdHasBeenSet(false),
     m_corpIdHasBeenSet(false),
-    m_codesHasBeenSet(false)
+    m_codesHasBeenSet(false),
+    m_codeTypeHasBeenSet(false),
+    m_checkTypeHasBeenSet(false)
 {
 }
 
@@ -65,6 +67,22 @@ string CreateTraceCodesRequest::ToJsonString() const
             d[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(d[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_codeTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CodeType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_codeType, allocator);
+    }
+
+    if (m_checkTypeHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "CheckType";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_checkType, allocator);
     }
 
 
@@ -121,6 +139,38 @@ void CreateTraceCodesRequest::SetCodes(const vector<CodeItem>& _codes)
 bool CreateTraceCodesRequest::CodesHasBeenSet() const
 {
     return m_codesHasBeenSet;
+}
+
+uint64_t CreateTraceCodesRequest::GetCodeType() const
+{
+    return m_codeType;
+}
+
+void CreateTraceCodesRequest::SetCodeType(const uint64_t& _codeType)
+{
+    m_codeType = _codeType;
+    m_codeTypeHasBeenSet = true;
+}
+
+bool CreateTraceCodesRequest::CodeTypeHasBeenSet() const
+{
+    return m_codeTypeHasBeenSet;
+}
+
+uint64_t CreateTraceCodesRequest::GetCheckType() const
+{
+    return m_checkType;
+}
+
+void CreateTraceCodesRequest::SetCheckType(const uint64_t& _checkType)
+{
+    m_checkType = _checkType;
+    m_checkTypeHasBeenSet = true;
+}
+
+bool CreateTraceCodesRequest::CheckTypeHasBeenSet() const
+{
+    return m_checkTypeHasBeenSet;
 }
 
 

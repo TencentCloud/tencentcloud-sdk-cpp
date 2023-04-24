@@ -20,7 +20,10 @@ using TencentCloud::CoreInternalOutcome;
 using namespace TencentCloud::Vpc::V20170312::Model;
 using namespace std;
 
-CcnRegionBandwidthLimitInfo::CcnRegionBandwidthLimitInfo()
+CcnRegionBandwidthLimitInfo::CcnRegionBandwidthLimitInfo() :
+    m_sourceRegionHasBeenSet(false),
+    m_destinationRegionHasBeenSet(false),
+    m_bandwidthLimitHasBeenSet(false)
 {
 }
 
@@ -29,6 +32,36 @@ CoreInternalOutcome CcnRegionBandwidthLimitInfo::Deserialize(const rapidjson::Va
     string requestId = "";
 
 
+    if (value.HasMember("SourceRegion") && !value["SourceRegion"].IsNull())
+    {
+        if (!value["SourceRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimitInfo.SourceRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_sourceRegion = string(value["SourceRegion"].GetString());
+        m_sourceRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("DestinationRegion") && !value["DestinationRegion"].IsNull())
+    {
+        if (!value["DestinationRegion"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimitInfo.DestinationRegion` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_destinationRegion = string(value["DestinationRegion"].GetString());
+        m_destinationRegionHasBeenSet = true;
+    }
+
+    if (value.HasMember("BandwidthLimit") && !value["BandwidthLimit"].IsNull())
+    {
+        if (!value["BandwidthLimit"].IsUint64())
+        {
+            return CoreInternalOutcome(Core::Error("response `CcnRegionBandwidthLimitInfo.BandwidthLimit` IsUint64=false incorrectly").SetRequestId(requestId));
+        }
+        m_bandwidthLimit = value["BandwidthLimit"].GetUint64();
+        m_bandwidthLimitHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -36,6 +69,78 @@ CoreInternalOutcome CcnRegionBandwidthLimitInfo::Deserialize(const rapidjson::Va
 void CcnRegionBandwidthLimitInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::AllocatorType& allocator) const
 {
 
+    if (m_sourceRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SourceRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_sourceRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_destinationRegionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "DestinationRegion";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_destinationRegion.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_bandwidthLimitHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "BandwidthLimit";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, m_bandwidthLimit, allocator);
+    }
+
 }
 
+
+string CcnRegionBandwidthLimitInfo::GetSourceRegion() const
+{
+    return m_sourceRegion;
+}
+
+void CcnRegionBandwidthLimitInfo::SetSourceRegion(const string& _sourceRegion)
+{
+    m_sourceRegion = _sourceRegion;
+    m_sourceRegionHasBeenSet = true;
+}
+
+bool CcnRegionBandwidthLimitInfo::SourceRegionHasBeenSet() const
+{
+    return m_sourceRegionHasBeenSet;
+}
+
+string CcnRegionBandwidthLimitInfo::GetDestinationRegion() const
+{
+    return m_destinationRegion;
+}
+
+void CcnRegionBandwidthLimitInfo::SetDestinationRegion(const string& _destinationRegion)
+{
+    m_destinationRegion = _destinationRegion;
+    m_destinationRegionHasBeenSet = true;
+}
+
+bool CcnRegionBandwidthLimitInfo::DestinationRegionHasBeenSet() const
+{
+    return m_destinationRegionHasBeenSet;
+}
+
+uint64_t CcnRegionBandwidthLimitInfo::GetBandwidthLimit() const
+{
+    return m_bandwidthLimit;
+}
+
+void CcnRegionBandwidthLimitInfo::SetBandwidthLimit(const uint64_t& _bandwidthLimit)
+{
+    m_bandwidthLimit = _bandwidthLimit;
+    m_bandwidthLimitHasBeenSet = true;
+}
+
+bool CcnRegionBandwidthLimitInfo::BandwidthLimitHasBeenSet() const
+{
+    return m_bandwidthLimitHasBeenSet;
+}
 

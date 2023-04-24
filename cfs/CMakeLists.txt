@@ -20,6 +20,7 @@ set(cfs_public_header
 
 set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/CreateMigrationTaskRequest.h
+  include/tencentcloud/cfs/v20190719/model/ScaleUpFileSystemResponse.h
   include/tencentcloud/cfs/v20190719/model/SnapshotStatistics.h
   include/tencentcloud/cfs/v20190719/model/DescribeCfsPGroupsResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeMountTargetsResponse.h
@@ -30,6 +31,7 @@ set(cfs_public_header_model
   include/tencentcloud/cfs/v20190719/model/CreateCfsFileSystemResponse.h
   include/tencentcloud/cfs/v20190719/model/FileSystemInfo.h
   include/tencentcloud/cfs/v20190719/model/BindAutoSnapshotPolicyRequest.h
+  include/tencentcloud/cfs/v20190719/model/ScaleUpFileSystemRequest.h
   include/tencentcloud/cfs/v20190719/model/CreateCfsPGroupRequest.h
   include/tencentcloud/cfs/v20190719/model/DescribeMigrationTasksResponse.h
   include/tencentcloud/cfs/v20190719/model/DescribeAutoSnapshotPoliciesRequest.h
@@ -125,6 +127,7 @@ set(cfs_public_header_model
 set(cfs_src
   src/v20190719/CfsClient.cpp
   src/v20190719/model/CreateMigrationTaskRequest.cpp
+  src/v20190719/model/ScaleUpFileSystemResponse.cpp
   src/v20190719/model/SnapshotStatistics.cpp
   src/v20190719/model/DescribeCfsPGroupsResponse.cpp
   src/v20190719/model/DescribeMountTargetsResponse.cpp
@@ -135,6 +138,7 @@ set(cfs_src
   src/v20190719/model/CreateCfsFileSystemResponse.cpp
   src/v20190719/model/FileSystemInfo.cpp
   src/v20190719/model/BindAutoSnapshotPolicyRequest.cpp
+  src/v20190719/model/ScaleUpFileSystemRequest.cpp
   src/v20190719/model/CreateCfsPGroupRequest.cpp
   src/v20190719/model/DescribeMigrationTasksResponse.cpp
   src/v20190719/model/DescribeAutoSnapshotPoliciesRequest.cpp

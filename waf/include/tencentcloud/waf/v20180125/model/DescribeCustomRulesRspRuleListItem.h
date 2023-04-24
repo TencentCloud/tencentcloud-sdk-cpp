@@ -227,6 +227,28 @@ namespace TencentCloud
                      */
                     bool StrategiesHasBeenSet() const;
 
+                    /**
+                     * 获取事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @return EventId 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string GetEventId() const;
+
+                    /**
+                     * 设置事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     * @param EventId 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    void SetEventId(const std::string& _eventId);
+
+                    /**
+                     * 判断参数 EventId 是否已赋值
+                     * @return EventId 是否已赋值
+                     */
+                    bool EventIdHasBeenSet() const;
+
                 private:
 
                     /**
@@ -288,6 +310,13 @@ namespace TencentCloud
                      */
                     std::vector<Strategy> m_strategies;
                     bool m_strategiesHasBeenSet;
+
+                    /**
+                     * 事件id
+注意：此字段可能返回 null，表示取不到有效值。
+                     */
+                    std::string m_eventId;
+                    bool m_eventIdHasBeenSet;
 
                 };
             }

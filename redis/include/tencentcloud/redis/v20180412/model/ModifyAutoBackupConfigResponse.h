@@ -44,8 +44,8 @@ namespace TencentCloud
 
 
                     /**
-                     * 获取自动备份类型： 1 “定时回档”
-                     * @return AutoBackupType 自动备份类型： 1 “定时回档”
+                     * 获取自动备份类型。目前仅能配置为：1 ，指定时备份。
+                     * @return AutoBackupType 自动备份类型。目前仅能配置为：1 ，指定时备份。
                      */
                     int64_t GetAutoBackupType() const;
 
@@ -68,8 +68,8 @@ namespace TencentCloud
                     bool WeekDaysHasBeenSet() const;
 
                     /**
-                     * 获取自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
-                     * @return TimePeriod 自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
+                     * 获取自动定时备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
+                     * @return TimePeriod 自动定时备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
                      */
                     std::string GetTimePeriod() const;
 
@@ -94,7 +94,7 @@ namespace TencentCloud
                 private:
 
                     /**
-                     * 自动备份类型： 1 “定时回档”
+                     * 自动备份类型。目前仅能配置为：1 ，指定时备份。
                      */
                     int64_t m_autoBackupType;
                     bool m_autoBackupTypeHasBeenSet;
@@ -106,7 +106,7 @@ namespace TencentCloud
                     bool m_weekDaysHasBeenSet;
 
                     /**
-                     * 自动备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
+                     * 自动定时备份时间段。格式如：00:00-01:00, 01:00-02:00...... 23:00-00:00。
                      */
                     std::string m_timePeriod;
                     bool m_timePeriodHasBeenSet;

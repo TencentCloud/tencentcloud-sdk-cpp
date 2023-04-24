@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/trp/v20210515/model/TraceItem.h>
-#include <tencentcloud/trp/v20210515/model/ChainData.h>
 #include <tencentcloud/trp/v20210515/model/PhaseData.h>
+#include <tencentcloud/trp/v20210515/model/ChainData.h>
 
 
 namespace TencentCloud
@@ -136,6 +136,60 @@ namespace TencentCloud
                     bool PhaseNameHasBeenSet() const;
 
                     /**
+                     * 获取环节数据
+                     * @return PhaseData 环节数据
+                     */
+                    PhaseData GetPhaseData() const;
+
+                    /**
+                     * 设置环节数据
+                     * @param PhaseData 环节数据
+                     */
+                    void SetPhaseData(const PhaseData& _phaseData);
+
+                    /**
+                     * 判断参数 PhaseData 是否已赋值
+                     * @return PhaseData 是否已赋值
+                     */
+                    bool PhaseDataHasBeenSet() const;
+
+                    /**
+                     * 获取溯源状态 0: 无效, 1: 有效
+                     * @return Status 溯源状态 0: 无效, 1: 有效
+                     */
+                    uint64_t GetStatus() const;
+
+                    /**
+                     * 设置溯源状态 0: 无效, 1: 有效
+                     * @param Status 溯源状态 0: 无效, 1: 有效
+                     */
+                    void SetStatus(const uint64_t& _status);
+
+                    /**
+                     * 判断参数 Status 是否已赋值
+                     * @return Status 是否已赋值
+                     */
+                    bool StatusHasBeenSet() const;
+
+                    /**
+                     * 获取排序
+                     * @return Rank 排序
+                     */
+                    uint64_t GetRank() const;
+
+                    /**
+                     * 设置排序
+                     * @param Rank 排序
+                     */
+                    void SetRank(const uint64_t& _rank);
+
+                    /**
+                     * 判断参数 Rank 是否已赋值
+                     * @return Rank 是否已赋值
+                     */
+                    bool RankHasBeenSet() const;
+
+                    /**
                      * 获取[无效] 类型
                      * @return Type [无效] 类型
                      */
@@ -170,24 +224,6 @@ namespace TencentCloud
                      * @return Code 是否已赋值
                      */
                     bool CodeHasBeenSet() const;
-
-                    /**
-                     * 获取[无效] 排序
-                     * @return Rank [无效] 排序
-                     */
-                    uint64_t GetRank() const;
-
-                    /**
-                     * 设置[无效] 排序
-                     * @param Rank [无效] 排序
-                     */
-                    void SetRank(const uint64_t& _rank);
-
-                    /**
-                     * 判断参数 Rank 是否已赋值
-                     * @return Rank 是否已赋值
-                     */
-                    bool RankHasBeenSet() const;
 
                     /**
                      * 获取[无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
@@ -315,42 +351,6 @@ namespace TencentCloud
                      */
                     bool CorpIdHasBeenSet() const;
 
-                    /**
-                     * 获取溯源状态 0: 无效, 1: 有效
-                     * @return Status 溯源状态 0: 无效, 1: 有效
-                     */
-                    uint64_t GetStatus() const;
-
-                    /**
-                     * 设置溯源状态 0: 无效, 1: 有效
-                     * @param Status 溯源状态 0: 无效, 1: 有效
-                     */
-                    void SetStatus(const uint64_t& _status);
-
-                    /**
-                     * 判断参数 Status 是否已赋值
-                     * @return Status 是否已赋值
-                     */
-                    bool StatusHasBeenSet() const;
-
-                    /**
-                     * 获取环节数据
-                     * @return PhaseData 环节数据
-                     */
-                    PhaseData GetPhaseData() const;
-
-                    /**
-                     * 设置环节数据
-                     * @param PhaseData 环节数据
-                     */
-                    void SetPhaseData(const PhaseData& _phaseData);
-
-                    /**
-                     * 判断参数 PhaseData 是否已赋值
-                     * @return PhaseData 是否已赋值
-                     */
-                    bool PhaseDataHasBeenSet() const;
-
                 private:
 
                     /**
@@ -384,6 +384,24 @@ namespace TencentCloud
                     bool m_phaseNameHasBeenSet;
 
                     /**
+                     * 环节数据
+                     */
+                    PhaseData m_phaseData;
+                    bool m_phaseDataHasBeenSet;
+
+                    /**
+                     * 溯源状态 0: 无效, 1: 有效
+                     */
+                    uint64_t m_status;
+                    bool m_statusHasBeenSet;
+
+                    /**
+                     * 排序
+                     */
+                    uint64_t m_rank;
+                    bool m_rankHasBeenSet;
+
+                    /**
                      * [无效] 类型
                      */
                     uint64_t m_type;
@@ -394,12 +412,6 @@ namespace TencentCloud
                      */
                     std::string m_code;
                     bool m_codeHasBeenSet;
-
-                    /**
-                     * [无效] 排序
-                     */
-                    uint64_t m_rank;
-                    bool m_rankHasBeenSet;
 
                     /**
                      * [无效] 溯源阶段 0:商品 1:通用 2:生产溯源 3:销售溯源
@@ -442,18 +454,6 @@ namespace TencentCloud
                      */
                     uint64_t m_corpId;
                     bool m_corpIdHasBeenSet;
-
-                    /**
-                     * 溯源状态 0: 无效, 1: 有效
-                     */
-                    uint64_t m_status;
-                    bool m_statusHasBeenSet;
-
-                    /**
-                     * 环节数据
-                     */
-                    PhaseData m_phaseData;
-                    bool m_phaseDataHasBeenSet;
 
                 };
             }

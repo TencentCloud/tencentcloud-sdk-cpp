@@ -24,7 +24,9 @@ using namespace std;
 
 DescribeStaffStatusMetricsRequest::DescribeStaffStatusMetricsRequest() :
     m_sdkAppIdHasBeenSet(false),
-    m_staffListHasBeenSet(false)
+    m_staffListHasBeenSet(false),
+    m_groupIdListHasBeenSet(false),
+    m_statusListHasBeenSet(false)
 {
 }
 
@@ -51,6 +53,32 @@ string DescribeStaffStatusMetricsRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
 
         for (auto itr = m_staffList.begin(); itr != m_staffList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
+        }
+    }
+
+    if (m_groupIdListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "GroupIdList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_groupIdList.begin(); itr != m_groupIdList.end(); ++itr)
+        {
+            d[key.c_str()].PushBack(rapidjson::Value().SetInt64(*itr), allocator);
+        }
+    }
+
+    if (m_statusListHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "StatusList";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kArrayType).Move(), allocator);
+
+        for (auto itr = m_statusList.begin(); itr != m_statusList.end(); ++itr)
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
@@ -94,6 +122,38 @@ void DescribeStaffStatusMetricsRequest::SetStaffList(const vector<string>& _staf
 bool DescribeStaffStatusMetricsRequest::StaffListHasBeenSet() const
 {
     return m_staffListHasBeenSet;
+}
+
+vector<int64_t> DescribeStaffStatusMetricsRequest::GetGroupIdList() const
+{
+    return m_groupIdList;
+}
+
+void DescribeStaffStatusMetricsRequest::SetGroupIdList(const vector<int64_t>& _groupIdList)
+{
+    m_groupIdList = _groupIdList;
+    m_groupIdListHasBeenSet = true;
+}
+
+bool DescribeStaffStatusMetricsRequest::GroupIdListHasBeenSet() const
+{
+    return m_groupIdListHasBeenSet;
+}
+
+vector<string> DescribeStaffStatusMetricsRequest::GetStatusList() const
+{
+    return m_statusList;
+}
+
+void DescribeStaffStatusMetricsRequest::SetStatusList(const vector<string>& _statusList)
+{
+    m_statusList = _statusList;
+    m_statusListHasBeenSet = true;
+}
+
+bool DescribeStaffStatusMetricsRequest::StatusListHasBeenSet() const
+{
+    return m_statusListHasBeenSet;
 }
 
 

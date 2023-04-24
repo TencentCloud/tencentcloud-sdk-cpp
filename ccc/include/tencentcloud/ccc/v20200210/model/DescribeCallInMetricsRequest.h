@@ -96,6 +96,24 @@ namespace TencentCloud
                      */
                     bool EnabledNumberHasBeenSet() const;
 
+                    /**
+                     * 获取筛选技能组列表
+                     * @return GroupIdList 筛选技能组列表
+                     */
+                    std::vector<int64_t> GetGroupIdList() const;
+
+                    /**
+                     * 设置筛选技能组列表
+                     * @param GroupIdList 筛选技能组列表
+                     */
+                    void SetGroupIdList(const std::vector<int64_t>& _groupIdList);
+
+                    /**
+                     * 判断参数 GroupIdList 是否已赋值
+                     * @return GroupIdList 是否已赋值
+                     */
+                    bool GroupIdListHasBeenSet() const;
+
                 private:
 
                     /**
@@ -115,6 +133,12 @@ namespace TencentCloud
                      */
                     bool m_enabledNumber;
                     bool m_enabledNumberHasBeenSet;
+
+                    /**
+                     * 筛选技能组列表
+                     */
+                    std::vector<int64_t> m_groupIdList;
+                    bool m_groupIdListHasBeenSet;
 
                 };
             }

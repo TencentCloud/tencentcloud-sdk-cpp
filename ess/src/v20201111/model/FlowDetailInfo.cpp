@@ -29,7 +29,8 @@ FlowDetailInfo::FlowDetailInfo() :
     m_flowDescriptionHasBeenSet(false),
     m_createdOnHasBeenSet(false),
     m_flowApproverInfosHasBeenSet(false),
-    m_ccInfosHasBeenSet(false)
+    m_ccInfosHasBeenSet(false),
+    m_creatorHasBeenSet(false)
 {
 }
 
@@ -148,6 +149,16 @@ CoreInternalOutcome FlowDetailInfo::Deserialize(const rapidjson::Value &value)
         m_ccInfosHasBeenSet = true;
     }
 
+    if (value.HasMember("Creator") && !value["Creator"].IsNull())
+    {
+        if (!value["Creator"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `FlowDetailInfo.Creator` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_creator = string(value["Creator"].GetString());
+        m_creatorHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -239,6 +250,14 @@ void FlowDetailInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::
             value[key.c_str()].PushBack(rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
             (*itr).ToJsonObject(value[key.c_str()][i], allocator);
         }
+    }
+
+    if (m_creatorHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Creator";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_creator.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -386,5 +405,21 @@ void FlowDetailInfo::SetCcInfos(const vector<FlowApproverDetail>& _ccInfos)
 bool FlowDetailInfo::CcInfosHasBeenSet() const
 {
     return m_ccInfosHasBeenSet;
+}
+
+string FlowDetailInfo::GetCreator() const
+{
+    return m_creator;
+}
+
+void FlowDetailInfo::SetCreator(const string& _creator)
+{
+    m_creator = _creator;
+    m_creatorHasBeenSet = true;
+}
+
+bool FlowDetailInfo::CreatorHasBeenSet() const
+{
+    return m_creatorHasBeenSet;
 }
 

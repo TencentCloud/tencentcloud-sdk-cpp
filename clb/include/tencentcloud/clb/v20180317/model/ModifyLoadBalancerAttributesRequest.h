@@ -170,6 +170,24 @@ namespace TencentCloud
                      */
                     bool DeleteProtectHasBeenSet() const;
 
+                    /**
+                     * 获取将负载均衡二级域名由mycloud.com改为tencentclb.com，子域名也会变换。修改后mycloud.com域名将失效。
+                     * @return ModifyClassicDomain 将负载均衡二级域名由mycloud.com改为tencentclb.com，子域名也会变换。修改后mycloud.com域名将失效。
+                     */
+                    bool GetModifyClassicDomain() const;
+
+                    /**
+                     * 设置将负载均衡二级域名由mycloud.com改为tencentclb.com，子域名也会变换。修改后mycloud.com域名将失效。
+                     * @param ModifyClassicDomain 将负载均衡二级域名由mycloud.com改为tencentclb.com，子域名也会变换。修改后mycloud.com域名将失效。
+                     */
+                    void SetModifyClassicDomain(const bool& _modifyClassicDomain);
+
+                    /**
+                     * 判断参数 ModifyClassicDomain 是否已赋值
+                     * @return ModifyClassicDomain 是否已赋值
+                     */
+                    bool ModifyClassicDomainHasBeenSet() const;
+
                 private:
 
                     /**
@@ -213,6 +231,12 @@ namespace TencentCloud
                      */
                     bool m_deleteProtect;
                     bool m_deleteProtectHasBeenSet;
+
+                    /**
+                     * 将负载均衡二级域名由mycloud.com改为tencentclb.com，子域名也会变换。修改后mycloud.com域名将失效。
+                     */
+                    bool m_modifyClassicDomain;
+                    bool m_modifyClassicDomainHasBeenSet;
 
                 };
             }

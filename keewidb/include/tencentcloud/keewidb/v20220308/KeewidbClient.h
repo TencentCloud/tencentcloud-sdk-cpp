@@ -37,6 +37,8 @@
 #include <tencentcloud/keewidb/v20220308/model/CreateInstancesResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeAutoBackupConfigRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeAutoBackupConfigResponse.h>
+#include <tencentcloud/keewidb/v20220308/model/DescribeConnectionConfigRequest.h>
+#include <tencentcloud/keewidb/v20220308/model/DescribeConnectionConfigResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeDBSecurityGroupsRequest.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeDBSecurityGroupsResponse.h>
 #include <tencentcloud/keewidb/v20220308/model/DescribeInstanceBackupsRequest.h>
@@ -132,6 +134,9 @@ namespace TencentCloud
                 typedef Outcome<Core::Error, Model::DescribeAutoBackupConfigResponse> DescribeAutoBackupConfigOutcome;
                 typedef std::future<DescribeAutoBackupConfigOutcome> DescribeAutoBackupConfigOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::DescribeAutoBackupConfigRequest&, DescribeAutoBackupConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeAutoBackupConfigAsyncHandler;
+                typedef Outcome<Core::Error, Model::DescribeConnectionConfigResponse> DescribeConnectionConfigOutcome;
+                typedef std::future<DescribeConnectionConfigOutcome> DescribeConnectionConfigOutcomeCallable;
+                typedef std::function<void(const KeewidbClient*, const Model::DescribeConnectionConfigRequest&, DescribeConnectionConfigOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeConnectionConfigAsyncHandler;
                 typedef Outcome<Core::Error, Model::DescribeDBSecurityGroupsResponse> DescribeDBSecurityGroupsOutcome;
                 typedef std::future<DescribeDBSecurityGroupsOutcome> DescribeDBSecurityGroupsOutcomeCallable;
                 typedef std::function<void(const KeewidbClient*, const Model::DescribeDBSecurityGroupsRequest&, DescribeDBSecurityGroupsOutcome, const std::shared_ptr<const AsyncCallerContext>&)> DescribeDBSecurityGroupsAsyncHandler;
@@ -287,6 +292,15 @@ namespace TencentCloud
                 DescribeAutoBackupConfigOutcome DescribeAutoBackupConfig(const Model::DescribeAutoBackupConfigRequest &request);
                 void DescribeAutoBackupConfigAsync(const Model::DescribeAutoBackupConfigRequest& request, const DescribeAutoBackupConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
                 DescribeAutoBackupConfigOutcomeCallable DescribeAutoBackupConfigCallable(const Model::DescribeAutoBackupConfigRequest& request);
+
+                /**
+                 *本接口（DescribeConnectionConfig）用于查询实例连接配置，包括出流量和入流量带宽、最大连接数限制。
+                 * @param req DescribeConnectionConfigRequest
+                 * @return DescribeConnectionConfigOutcome
+                 */
+                DescribeConnectionConfigOutcome DescribeConnectionConfig(const Model::DescribeConnectionConfigRequest &request);
+                void DescribeConnectionConfigAsync(const Model::DescribeConnectionConfigRequest& request, const DescribeConnectionConfigAsyncHandler& handler, const std::shared_ptr<const AsyncCallerContext>& context = nullptr);
+                DescribeConnectionConfigOutcomeCallable DescribeConnectionConfigCallable(const Model::DescribeConnectionConfigRequest& request);
 
                 /**
                  *本接口(DescribeDBSecurityGroups)用于查询实例的安全组详情。

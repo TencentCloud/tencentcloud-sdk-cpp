@@ -28,18 +28,18 @@ ModifyTraceDataRequest::ModifyTraceDataRequest() :
     m_taskIdHasBeenSet(false),
     m_traceItemsHasBeenSet(false),
     m_phaseNameHasBeenSet(false),
+    m_phaseDataHasBeenSet(false),
+    m_statusHasBeenSet(false),
+    m_rankHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_codeHasBeenSet(false),
-    m_rankHasBeenSet(false),
     m_phaseHasBeenSet(false),
     m_traceTimeHasBeenSet(false),
     m_createTimeHasBeenSet(false),
     m_chainStatusHasBeenSet(false),
     m_chainTimeHasBeenSet(false),
     m_chainDataHasBeenSet(false),
-    m_corpIdHasBeenSet(false),
-    m_statusHasBeenSet(false),
-    m_phaseDataHasBeenSet(false)
+    m_corpIdHasBeenSet(false)
 {
 }
 
@@ -97,6 +97,31 @@ string ModifyTraceDataRequest::ToJsonString() const
         d.AddMember(iKey, rapidjson::Value(m_phaseName.c_str(), allocator).Move(), allocator);
     }
 
+    if (m_phaseDataHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "PhaseData";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_phaseData.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_statusHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Status";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_status, allocator);
+    }
+
+    if (m_rankHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Rank";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_rank, allocator);
+    }
+
     if (m_typeHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -111,14 +136,6 @@ string ModifyTraceDataRequest::ToJsonString() const
         string key = "Code";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(m_code.c_str(), allocator).Move(), allocator);
-    }
-
-    if (m_rankHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Rank";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_rank, allocator);
     }
 
     if (m_phaseHasBeenSet)
@@ -176,23 +193,6 @@ string ModifyTraceDataRequest::ToJsonString() const
         string key = "CorpId";
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, m_corpId, allocator);
-    }
-
-    if (m_statusHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Status";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, m_status, allocator);
-    }
-
-    if (m_phaseDataHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "PhaseData";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_phaseData.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -283,6 +283,54 @@ bool ModifyTraceDataRequest::PhaseNameHasBeenSet() const
     return m_phaseNameHasBeenSet;
 }
 
+PhaseData ModifyTraceDataRequest::GetPhaseData() const
+{
+    return m_phaseData;
+}
+
+void ModifyTraceDataRequest::SetPhaseData(const PhaseData& _phaseData)
+{
+    m_phaseData = _phaseData;
+    m_phaseDataHasBeenSet = true;
+}
+
+bool ModifyTraceDataRequest::PhaseDataHasBeenSet() const
+{
+    return m_phaseDataHasBeenSet;
+}
+
+uint64_t ModifyTraceDataRequest::GetStatus() const
+{
+    return m_status;
+}
+
+void ModifyTraceDataRequest::SetStatus(const uint64_t& _status)
+{
+    m_status = _status;
+    m_statusHasBeenSet = true;
+}
+
+bool ModifyTraceDataRequest::StatusHasBeenSet() const
+{
+    return m_statusHasBeenSet;
+}
+
+uint64_t ModifyTraceDataRequest::GetRank() const
+{
+    return m_rank;
+}
+
+void ModifyTraceDataRequest::SetRank(const uint64_t& _rank)
+{
+    m_rank = _rank;
+    m_rankHasBeenSet = true;
+}
+
+bool ModifyTraceDataRequest::RankHasBeenSet() const
+{
+    return m_rankHasBeenSet;
+}
+
 uint64_t ModifyTraceDataRequest::GetType() const
 {
     return m_type;
@@ -313,22 +361,6 @@ void ModifyTraceDataRequest::SetCode(const string& _code)
 bool ModifyTraceDataRequest::CodeHasBeenSet() const
 {
     return m_codeHasBeenSet;
-}
-
-uint64_t ModifyTraceDataRequest::GetRank() const
-{
-    return m_rank;
-}
-
-void ModifyTraceDataRequest::SetRank(const uint64_t& _rank)
-{
-    m_rank = _rank;
-    m_rankHasBeenSet = true;
-}
-
-bool ModifyTraceDataRequest::RankHasBeenSet() const
-{
-    return m_rankHasBeenSet;
 }
 
 uint64_t ModifyTraceDataRequest::GetPhase() const
@@ -441,38 +473,6 @@ void ModifyTraceDataRequest::SetCorpId(const uint64_t& _corpId)
 bool ModifyTraceDataRequest::CorpIdHasBeenSet() const
 {
     return m_corpIdHasBeenSet;
-}
-
-uint64_t ModifyTraceDataRequest::GetStatus() const
-{
-    return m_status;
-}
-
-void ModifyTraceDataRequest::SetStatus(const uint64_t& _status)
-{
-    m_status = _status;
-    m_statusHasBeenSet = true;
-}
-
-bool ModifyTraceDataRequest::StatusHasBeenSet() const
-{
-    return m_statusHasBeenSet;
-}
-
-PhaseData ModifyTraceDataRequest::GetPhaseData() const
-{
-    return m_phaseData;
-}
-
-void ModifyTraceDataRequest::SetPhaseData(const PhaseData& _phaseData)
-{
-    m_phaseData = _phaseData;
-    m_phaseDataHasBeenSet = true;
-}
-
-bool ModifyTraceDataRequest::PhaseDataHasBeenSet() const
-{
-    return m_phaseDataHasBeenSet;
 }
 
 

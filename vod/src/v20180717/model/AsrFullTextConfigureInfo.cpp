@@ -23,7 +23,8 @@ using namespace std;
 AsrFullTextConfigureInfo::AsrFullTextConfigureInfo() :
     m_switchHasBeenSet(false),
     m_subtitleFormatsHasBeenSet(false),
-    m_subtitleFormatHasBeenSet(false)
+    m_subtitleFormatHasBeenSet(false),
+    m_srcLanguageHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,16 @@ CoreInternalOutcome AsrFullTextConfigureInfo::Deserialize(const rapidjson::Value
         m_subtitleFormatHasBeenSet = true;
     }
 
+    if (value.HasMember("SrcLanguage") && !value["SrcLanguage"].IsNull())
+    {
+        if (!value["SrcLanguage"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `AsrFullTextConfigureInfo.SrcLanguage` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_srcLanguage = string(value["SrcLanguage"].GetString());
+        m_srcLanguageHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -99,6 +110,14 @@ void AsrFullTextConfigureInfo::ToJsonObject(rapidjson::Value &value, rapidjson::
         string key = "SubtitleFormat";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_subtitleFormat.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_srcLanguageHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "SrcLanguage";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_srcLanguage.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -150,5 +169,21 @@ void AsrFullTextConfigureInfo::SetSubtitleFormat(const string& _subtitleFormat)
 bool AsrFullTextConfigureInfo::SubtitleFormatHasBeenSet() const
 {
     return m_subtitleFormatHasBeenSet;
+}
+
+string AsrFullTextConfigureInfo::GetSrcLanguage() const
+{
+    return m_srcLanguage;
+}
+
+void AsrFullTextConfigureInfo::SetSrcLanguage(const string& _srcLanguage)
+{
+    m_srcLanguage = _srcLanguage;
+    m_srcLanguageHasBeenSet = true;
+}
+
+bool AsrFullTextConfigureInfo::SrcLanguageHasBeenSet() const
+{
+    return m_srcLanguageHasBeenSet;
 }
 

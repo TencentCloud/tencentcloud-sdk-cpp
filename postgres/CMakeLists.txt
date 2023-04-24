@@ -52,10 +52,12 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DescribeBackupOverviewRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeRegionsResponse.h
   include/tencentcloud/postgres/v20170312/model/ModifyBaseBackupExpireTimeResponse.h
+  include/tencentcloud/postgres/v20170312/model/ModifyBackupDownloadRestrictionRequest.h
   include/tencentcloud/postgres/v20170312/model/DBInstanceNetInfo.h
   include/tencentcloud/postgres/v20170312/model/BackupDownloadRestriction.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceDeploymentRequest.h
   include/tencentcloud/postgres/v20170312/model/DeleteReadOnlyGroupNetworkAccessRequest.h
+  include/tencentcloud/postgres/v20170312/model/DescribeBackupDownloadRestrictionRequest.h
   include/tencentcloud/postgres/v20170312/model/ZoneInfo.h
   include/tencentcloud/postgres/v20170312/model/DescribeReadOnlyGroupsResponse.h
   include/tencentcloud/postgres/v20170312/model/NormalQueryItem.h
@@ -91,6 +93,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeZonesRequest.h
   include/tencentcloud/postgres/v20170312/model/SpecInfo.h
+  include/tencentcloud/postgres/v20170312/model/ModifyBackupDownloadRestrictionResponse.h
   include/tencentcloud/postgres/v20170312/model/ParamVersionRelation.h
   include/tencentcloud/postgres/v20170312/model/DescribeLogBackupsRequest.h
   include/tencentcloud/postgres/v20170312/model/SetAutoRenewFlagResponse.h
@@ -162,6 +165,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/DBNode.h
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceNameResponse.h
   include/tencentcloud/postgres/v20170312/model/CloseDBExtranetAccessResponse.h
+  include/tencentcloud/postgres/v20170312/model/DescribeBackupDownloadRestrictionResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyDBInstanceRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeCloneDBInstanceSpecResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeZonesResponse.h
@@ -209,6 +213,7 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/RawSlowQuery.h
   include/tencentcloud/postgres/v20170312/model/CreateReadOnlyGroupNetworkAccessResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeAccountsResponse.h
+  include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceChargeTypeRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeParameterTemplateAttributesResponse.h
   include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBVersionsRequest.h
@@ -222,11 +227,12 @@ set(postgres_public_header_model
   include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceSpecResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeBaseBackupsResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBXlogsResponse.h
+  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeBaseBackupsRequest.h
   include/tencentcloud/postgres/v20170312/model/DescribeEncryptionKeysResponse.h
   include/tencentcloud/postgres/v20170312/model/DescribeDBSlowlogsResponse.h
   include/tencentcloud/postgres/v20170312/model/CreateDBInstancesResponse.h
-  include/tencentcloud/postgres/v20170312/model/UpgradeDBInstanceKernelVersionRequest.h
+  include/tencentcloud/postgres/v20170312/model/ModifyDBInstanceChargeTypeResponse.h
   )
 
 set(postgres_src
@@ -264,10 +270,12 @@ set(postgres_src
   src/v20170312/model/DescribeBackupOverviewRequest.cpp
   src/v20170312/model/DescribeRegionsResponse.cpp
   src/v20170312/model/ModifyBaseBackupExpireTimeResponse.cpp
+  src/v20170312/model/ModifyBackupDownloadRestrictionRequest.cpp
   src/v20170312/model/DBInstanceNetInfo.cpp
   src/v20170312/model/BackupDownloadRestriction.cpp
   src/v20170312/model/ModifyDBInstanceDeploymentRequest.cpp
   src/v20170312/model/DeleteReadOnlyGroupNetworkAccessRequest.cpp
+  src/v20170312/model/DescribeBackupDownloadRestrictionRequest.cpp
   src/v20170312/model/ZoneInfo.cpp
   src/v20170312/model/DescribeReadOnlyGroupsResponse.cpp
   src/v20170312/model/NormalQueryItem.cpp
@@ -303,6 +311,7 @@ set(postgres_src
   src/v20170312/model/UpgradeDBInstanceRequest.cpp
   src/v20170312/model/DescribeZonesRequest.cpp
   src/v20170312/model/SpecInfo.cpp
+  src/v20170312/model/ModifyBackupDownloadRestrictionResponse.cpp
   src/v20170312/model/ParamVersionRelation.cpp
   src/v20170312/model/DescribeLogBackupsRequest.cpp
   src/v20170312/model/SetAutoRenewFlagResponse.cpp
@@ -374,6 +383,7 @@ set(postgres_src
   src/v20170312/model/DBNode.cpp
   src/v20170312/model/ModifyDBInstanceNameResponse.cpp
   src/v20170312/model/CloseDBExtranetAccessResponse.cpp
+  src/v20170312/model/DescribeBackupDownloadRestrictionResponse.cpp
   src/v20170312/model/CreateReadOnlyDBInstanceRequest.cpp
   src/v20170312/model/DescribeCloneDBInstanceSpecResponse.cpp
   src/v20170312/model/DescribeZonesResponse.cpp
@@ -421,6 +431,7 @@ set(postgres_src
   src/v20170312/model/RawSlowQuery.cpp
   src/v20170312/model/CreateReadOnlyGroupNetworkAccessResponse.cpp
   src/v20170312/model/DescribeAccountsResponse.cpp
+  src/v20170312/model/ModifyDBInstanceChargeTypeRequest.cpp
   src/v20170312/model/DescribeParameterTemplateAttributesResponse.cpp
   src/v20170312/model/UpgradeDBInstanceResponse.cpp
   src/v20170312/model/DescribeDBVersionsRequest.cpp
@@ -434,11 +445,12 @@ set(postgres_src
   src/v20170312/model/ModifyDBInstanceSpecResponse.cpp
   src/v20170312/model/DescribeBaseBackupsResponse.cpp
   src/v20170312/model/DescribeDBXlogsResponse.cpp
+  src/v20170312/model/UpgradeDBInstanceKernelVersionRequest.cpp
   src/v20170312/model/DescribeBaseBackupsRequest.cpp
   src/v20170312/model/DescribeEncryptionKeysResponse.cpp
   src/v20170312/model/DescribeDBSlowlogsResponse.cpp
   src/v20170312/model/CreateDBInstancesResponse.cpp
-  src/v20170312/model/UpgradeDBInstanceKernelVersionRequest.cpp
+  src/v20170312/model/ModifyDBInstanceChargeTypeResponse.cpp
   )
 
 set(postgres_include

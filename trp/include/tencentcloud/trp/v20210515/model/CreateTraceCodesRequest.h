@@ -97,6 +97,58 @@ namespace TencentCloud
                      */
                     bool CodesHasBeenSet() const;
 
+                    /**
+                     * 获取码绑定激活策略，默认  0
+0: 传什么码就激活什么码
+1: 层级码 + 层级子码
+                     * @return CodeType 码绑定激活策略，默认  0
+0: 传什么码就激活什么码
+1: 层级码 + 层级子码
+                     */
+                    uint64_t GetCodeType() const;
+
+                    /**
+                     * 设置码绑定激活策略，默认  0
+0: 传什么码就激活什么码
+1: 层级码 + 层级子码
+                     * @param CodeType 码绑定激活策略，默认  0
+0: 传什么码就激活什么码
+1: 层级码 + 层级子码
+                     */
+                    void SetCodeType(const uint64_t& _codeType);
+
+                    /**
+                     * 判断参数 CodeType 是否已赋值
+                     * @return CodeType 是否已赋值
+                     */
+                    bool CodeTypeHasBeenSet() const;
+
+                    /**
+                     * 获取错误检查类型，默认 0
+0: 没有新导入码时正常返回
+1: 没有新导入码时报错，并返回没有导入成功的原因
+                     * @return CheckType 错误检查类型，默认 0
+0: 没有新导入码时正常返回
+1: 没有新导入码时报错，并返回没有导入成功的原因
+                     */
+                    uint64_t GetCheckType() const;
+
+                    /**
+                     * 设置错误检查类型，默认 0
+0: 没有新导入码时正常返回
+1: 没有新导入码时报错，并返回没有导入成功的原因
+                     * @param CheckType 错误检查类型，默认 0
+0: 没有新导入码时正常返回
+1: 没有新导入码时报错，并返回没有导入成功的原因
+                     */
+                    void SetCheckType(const uint64_t& _checkType);
+
+                    /**
+                     * 判断参数 CheckType 是否已赋值
+                     * @return CheckType 是否已赋值
+                     */
+                    bool CheckTypeHasBeenSet() const;
+
                 private:
 
                     /**
@@ -116,6 +168,22 @@ namespace TencentCloud
                      */
                     std::vector<CodeItem> m_codes;
                     bool m_codesHasBeenSet;
+
+                    /**
+                     * 码绑定激活策略，默认  0
+0: 传什么码就激活什么码
+1: 层级码 + 层级子码
+                     */
+                    uint64_t m_codeType;
+                    bool m_codeTypeHasBeenSet;
+
+                    /**
+                     * 错误检查类型，默认 0
+0: 没有新导入码时正常返回
+1: 没有新导入码时报错，并返回没有导入成功的原因
+                     */
+                    uint64_t m_checkType;
+                    bool m_checkTypeHasBeenSet;
 
                 };
             }

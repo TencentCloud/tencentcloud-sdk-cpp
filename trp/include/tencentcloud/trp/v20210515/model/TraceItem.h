@@ -24,6 +24,8 @@
 #include <tencentcloud/core/utils/rapidjson/writer.h>
 #include <tencentcloud/core/utils/rapidjson/stringbuffer.h>
 #include <tencentcloud/core/AbstractModel.h>
+#include <tencentcloud/trp/v20210515/model/TraceItem.h>
+#include <tencentcloud/trp/v20210515/model/TraceData.h>
 
 
 namespace TencentCloud
@@ -35,16 +37,17 @@ namespace TencentCloud
             namespace Model
             {
                 /**
-                * 溯源数据项
-Type的枚举值
+                * 溯源数据项 Type 的枚举值
+
 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型
+
 具体组合如下
-Type: "text" 文本类型, 对应值 Value: "文本字符串"
-Type: "longtext" 长文本类型, 对应值 Value: "长文本字符串, 支持换行\n"
-Type: "banner" 单图片类型, 对应图片地址 Value: "https://sample.cdn.com/xxx.jpg"
-Type: "image" 多图片类型, 对应图片地址 Values: ["https://sample.cdn.com/1.jpg", "https://sample.cdn.com/2.jpg"]
-Type: "video" 视频类型, 对应视频地址 Value: "https://sample.cdn.com/xxx.mp4"
-Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳转说明"]
+- Type: "text" 文本类型, 对应值 Value: "文本字符串"
+- Type: "longtext" 长文本类型, 对应值 Value: "长文本字符串, 支持换行\n"
+- Type: "banner" 单图片类型, 对应图片地址 Value: "https://sample.cdn.com/xxx.jpg"
+- Type: "image" 多图片类型, 对应图片地址 Values: ["https://sample.cdn.com/1.jpg", "https://sample.cdn.com/2.jpg"]
+- Type: "video" 视频类型, 对应视频地址 Value: "https://sample.cdn.com/xxx.mp4"
+- Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳转说明"]
                 */
                 class TraceItem : public AbstractModel
                 {
@@ -57,17 +60,13 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
 
                     /**
                      * 获取字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Name 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetName() const;
 
                     /**
                      * 设置字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Name 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetName(const std::string& _name);
 
@@ -79,17 +78,13 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
 
                     /**
                      * 获取字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Value 字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetValue() const;
 
                     /**
                      * 设置字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Value 字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValue(const std::string& _value);
 
@@ -100,18 +95,30 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
                     bool ValueHasBeenSet() const;
 
                     /**
-                     * 获取类型 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @return Type 类型 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 获取字段类型
+text:文本类型, 
+longtext:长文本类型, banner:单图片类型, image:多图片类型,
+video:视频类型,
+mp:小程序类型
+                     * @return Type 字段类型
+text:文本类型, 
+longtext:长文本类型, banner:单图片类型, image:多图片类型,
+video:视频类型,
+mp:小程序类型
                      */
                     std::string GetType() const;
 
                     /**
-                     * 设置类型 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型
-注意：此字段可能返回 null，表示取不到有效值。
-                     * @param Type 类型 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 设置字段类型
+text:文本类型, 
+longtext:长文本类型, banner:单图片类型, image:多图片类型,
+video:视频类型,
+mp:小程序类型
+                     * @param Type 字段类型
+text:文本类型, 
+longtext:长文本类型, banner:单图片类型, image:多图片类型,
+video:视频类型,
+mp:小程序类型
                      */
                     void SetType(const std::string& _type);
 
@@ -123,17 +130,13 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
 
                     /**
                      * 获取只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return ReadOnly 只读
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetReadOnly() const;
 
                     /**
                      * 设置只读
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param ReadOnly 只读
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetReadOnly(const bool& _readOnly);
 
@@ -145,17 +148,13 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
 
                     /**
                      * 获取扫码展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Hidden 扫码展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool GetHidden() const;
 
                     /**
                      * 设置扫码展示
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Hidden 扫码展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetHidden(const bool& _hidden);
 
@@ -167,17 +166,13 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
 
                     /**
                      * 获取多个值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Values 多个值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> GetValues() const;
 
                     /**
                      * 设置多个值
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Values 多个值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetValues(const std::vector<std::string>& _values);
 
@@ -189,17 +184,13 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
 
                     /**
                      * 获取类型标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Key 类型标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetKey() const;
 
                     /**
                      * 设置类型标识
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Key 类型标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetKey(const std::string& _key);
 
@@ -211,17 +202,13 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
 
                     /**
                      * 获取扩展字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @return Ext 扩展字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string GetExt() const;
 
                     /**
                      * 设置扩展字段
-注意：此字段可能返回 null，表示取不到有效值。
                      * @param Ext 扩展字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     void SetExt(const std::string& _ext);
 
@@ -231,63 +218,107 @@ Type: "mp" 小程序类型, 对应配置 Values: ["WXAPPID", "WXAPP_PATH", "跳�
                      */
                     bool ExtHasBeenSet() const;
 
+                    /**
+                     * 获取额外属性
+                     * @return Attrs 额外属性
+                     */
+                    std::vector<TraceItem> GetAttrs() const;
+
+                    /**
+                     * 设置额外属性
+                     * @param Attrs 额外属性
+                     */
+                    void SetAttrs(const std::vector<TraceItem>& _attrs);
+
+                    /**
+                     * 判断参数 Attrs 是否已赋值
+                     * @return Attrs 是否已赋值
+                     */
+                    bool AttrsHasBeenSet() const;
+
+                    /**
+                     * 获取子页面，只读
+                     * @return List 子页面，只读
+                     */
+                    std::vector<TraceData> GetList() const;
+
+                    /**
+                     * 设置子页面，只读
+                     * @param List 子页面，只读
+                     */
+                    void SetList(const std::vector<TraceData>& _list);
+
+                    /**
+                     * 判断参数 List 是否已赋值
+                     * @return List 是否已赋值
+                     */
+                    bool ListHasBeenSet() const;
+
                 private:
 
                     /**
                      * 字段名称
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_name;
                     bool m_nameHasBeenSet;
 
                     /**
                      * 字段值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_value;
                     bool m_valueHasBeenSet;
 
                     /**
-                     * 类型 text:文本类型, longtext:长文本类型, banner:单图片类型, image:多图片类型, video:视频类型, mp:小程序类型
-注意：此字段可能返回 null，表示取不到有效值。
+                     * 字段类型
+text:文本类型, 
+longtext:长文本类型, banner:单图片类型, image:多图片类型,
+video:视频类型,
+mp:小程序类型
                      */
                     std::string m_type;
                     bool m_typeHasBeenSet;
 
                     /**
                      * 只读
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_readOnly;
                     bool m_readOnlyHasBeenSet;
 
                     /**
                      * 扫码展示
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     bool m_hidden;
                     bool m_hiddenHasBeenSet;
 
                     /**
                      * 多个值
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::vector<std::string> m_values;
                     bool m_valuesHasBeenSet;
 
                     /**
                      * 类型标识
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_key;
                     bool m_keyHasBeenSet;
 
                     /**
                      * 扩展字段
-注意：此字段可能返回 null，表示取不到有效值。
                      */
                     std::string m_ext;
                     bool m_extHasBeenSet;
+
+                    /**
+                     * 额外属性
+                     */
+                    std::vector<TraceItem> m_attrs;
+                    bool m_attrsHasBeenSet;
+
+                    /**
+                     * 子页面，只读
+                     */
+                    std::vector<TraceData> m_list;
+                    bool m_listHasBeenSet;
 
                 };
             }

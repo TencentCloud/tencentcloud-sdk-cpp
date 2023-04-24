@@ -22,8 +22,8 @@
 #include <map>
 #include <tencentcloud/core/AbstractModel.h>
 #include <tencentcloud/ess/v20201111/model/FlowCreateApprover.h>
-#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 #include <tencentcloud/ess/v20201111/model/UserInfo.h>
+#include <tencentcloud/ess/v20201111/model/OrganizationInfo.h>
 
 
 namespace TencentCloud
@@ -82,24 +82,6 @@ namespace TencentCloud
                     bool FlowApproverInfosHasBeenSet() const;
 
                     /**
-                     * 获取机构信息，暂未开放
-                     * @return Organization 机构信息，暂未开放
-                     */
-                    OrganizationInfo GetOrganization() const;
-
-                    /**
-                     * 设置机构信息，暂未开放
-                     * @param Organization 机构信息，暂未开放
-                     */
-                    void SetOrganization(const OrganizationInfo& _organization);
-
-                    /**
-                     * 判断参数 Organization 是否已赋值
-                     * @return Organization 是否已赋值
-                     */
-                    bool OrganizationHasBeenSet() const;
-
-                    /**
                      * 获取用户信息，此结构体UserId必填
                      * @return Operator 用户信息，此结构体UserId必填
                      */
@@ -117,6 +99,24 @@ namespace TencentCloud
                      */
                     bool OperatorHasBeenSet() const;
 
+                    /**
+                     * 获取机构信息，暂未开放
+                     * @return Organization 机构信息，暂未开放
+                     */
+                    OrganizationInfo GetOrganization() const;
+
+                    /**
+                     * 设置机构信息，暂未开放
+                     * @param Organization 机构信息，暂未开放
+                     */
+                    void SetOrganization(const OrganizationInfo& _organization);
+
+                    /**
+                     * 判断参数 Organization 是否已赋值
+                     * @return Organization 是否已赋值
+                     */
+                    bool OrganizationHasBeenSet() const;
+
                 private:
 
                     /**
@@ -132,16 +132,16 @@ namespace TencentCloud
                     bool m_flowApproverInfosHasBeenSet;
 
                     /**
-                     * 机构信息，暂未开放
-                     */
-                    OrganizationInfo m_organization;
-                    bool m_organizationHasBeenSet;
-
-                    /**
                      * 用户信息，此结构体UserId必填
                      */
                     UserInfo m_operator;
                     bool m_operatorHasBeenSet;
+
+                    /**
+                     * 机构信息，暂未开放
+                     */
+                    OrganizationInfo m_organization;
+                    bool m_organizationHasBeenSet;
 
                 };
             }

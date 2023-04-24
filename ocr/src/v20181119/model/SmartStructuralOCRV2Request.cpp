@@ -27,7 +27,8 @@ SmartStructuralOCRV2Request::SmartStructuralOCRV2Request() :
     m_imageBase64HasBeenSet(false),
     m_isPdfHasBeenSet(false),
     m_pdfPageNumberHasBeenSet(false),
-    m_itemNamesHasBeenSet(false)
+    m_itemNamesHasBeenSet(false),
+    m_returnFullTextHasBeenSet(false)
 {
 }
 
@@ -81,6 +82,14 @@ string SmartStructuralOCRV2Request::ToJsonString() const
         {
             d[key.c_str()].PushBack(rapidjson::Value().SetString((*itr).c_str(), allocator), allocator);
         }
+    }
+
+    if (m_returnFullTextHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "ReturnFullText";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, m_returnFullText, allocator);
     }
 
 
@@ -169,6 +178,22 @@ void SmartStructuralOCRV2Request::SetItemNames(const vector<string>& _itemNames)
 bool SmartStructuralOCRV2Request::ItemNamesHasBeenSet() const
 {
     return m_itemNamesHasBeenSet;
+}
+
+bool SmartStructuralOCRV2Request::GetReturnFullText() const
+{
+    return m_returnFullText;
+}
+
+void SmartStructuralOCRV2Request::SetReturnFullText(const bool& _returnFullText)
+{
+    m_returnFullText = _returnFullText;
+    m_returnFullTextHasBeenSet = true;
+}
+
+bool SmartStructuralOCRV2Request::ReturnFullTextHasBeenSet() const
+{
+    return m_returnFullTextHasBeenSet;
 }
 
 

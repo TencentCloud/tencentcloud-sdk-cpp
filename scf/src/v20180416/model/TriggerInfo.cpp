@@ -32,7 +32,8 @@ TriggerInfo::TriggerInfo() :
     m_modTimeHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_bindStatusHasBeenSet(false),
-    m_triggerAttributeHasBeenSet(false)
+    m_triggerAttributeHasBeenSet(false),
+    m_descriptionHasBeenSet(false)
 {
 }
 
@@ -161,6 +162,16 @@ CoreInternalOutcome TriggerInfo::Deserialize(const rapidjson::Value &value)
         m_triggerAttributeHasBeenSet = true;
     }
 
+    if (value.HasMember("Description") && !value["Description"].IsNull())
+    {
+        if (!value["Description"].IsString())
+        {
+            return CoreInternalOutcome(Core::Error("response `TriggerInfo.Description` IsString=false incorrectly").SetRequestId(requestId));
+        }
+        m_description = string(value["Description"].GetString());
+        m_descriptionHasBeenSet = true;
+    }
+
 
     return CoreInternalOutcome(true);
 }
@@ -262,6 +273,14 @@ void TriggerInfo::ToJsonObject(rapidjson::Value &value, rapidjson::Document::All
         string key = "TriggerAttribute";
         iKey.SetString(key.c_str(), allocator);
         value.AddMember(iKey, rapidjson::Value(m_triggerAttribute.c_str(), allocator).Move(), allocator);
+    }
+
+    if (m_descriptionHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Description";
+        iKey.SetString(key.c_str(), allocator);
+        value.AddMember(iKey, rapidjson::Value(m_description.c_str(), allocator).Move(), allocator);
     }
 
 }
@@ -457,5 +476,21 @@ void TriggerInfo::SetTriggerAttribute(const string& _triggerAttribute)
 bool TriggerInfo::TriggerAttributeHasBeenSet() const
 {
     return m_triggerAttributeHasBeenSet;
+}
+
+string TriggerInfo::GetDescription() const
+{
+    return m_description;
+}
+
+void TriggerInfo::SetDescription(const string& _description)
+{
+    m_description = _description;
+    m_descriptionHasBeenSet = true;
+}
+
+bool TriggerInfo::DescriptionHasBeenSet() const
+{
+    return m_descriptionHasBeenSet;
 }
 

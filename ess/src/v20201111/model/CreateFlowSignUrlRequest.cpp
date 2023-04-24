@@ -25,8 +25,8 @@ using namespace std;
 CreateFlowSignUrlRequest::CreateFlowSignUrlRequest() :
     m_flowIdHasBeenSet(false),
     m_flowApproverInfosHasBeenSet(false),
-    m_organizationHasBeenSet(false),
-    m_operatorHasBeenSet(false)
+    m_operatorHasBeenSet(false),
+    m_organizationHasBeenSet(false)
 {
 }
 
@@ -60,15 +60,6 @@ string CreateFlowSignUrlRequest::ToJsonString() const
         }
     }
 
-    if (m_organizationHasBeenSet)
-    {
-        rapidjson::Value iKey(rapidjson::kStringType);
-        string key = "Organization";
-        iKey.SetString(key.c_str(), allocator);
-        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
-        m_organization.ToJsonObject(d[key.c_str()], allocator);
-    }
-
     if (m_operatorHasBeenSet)
     {
         rapidjson::Value iKey(rapidjson::kStringType);
@@ -76,6 +67,15 @@ string CreateFlowSignUrlRequest::ToJsonString() const
         iKey.SetString(key.c_str(), allocator);
         d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
         m_operator.ToJsonObject(d[key.c_str()], allocator);
+    }
+
+    if (m_organizationHasBeenSet)
+    {
+        rapidjson::Value iKey(rapidjson::kStringType);
+        string key = "Organization";
+        iKey.SetString(key.c_str(), allocator);
+        d.AddMember(iKey, rapidjson::Value(rapidjson::kObjectType).Move(), allocator);
+        m_organization.ToJsonObject(d[key.c_str()], allocator);
     }
 
 
@@ -118,22 +118,6 @@ bool CreateFlowSignUrlRequest::FlowApproverInfosHasBeenSet() const
     return m_flowApproverInfosHasBeenSet;
 }
 
-OrganizationInfo CreateFlowSignUrlRequest::GetOrganization() const
-{
-    return m_organization;
-}
-
-void CreateFlowSignUrlRequest::SetOrganization(const OrganizationInfo& _organization)
-{
-    m_organization = _organization;
-    m_organizationHasBeenSet = true;
-}
-
-bool CreateFlowSignUrlRequest::OrganizationHasBeenSet() const
-{
-    return m_organizationHasBeenSet;
-}
-
 UserInfo CreateFlowSignUrlRequest::GetOperator() const
 {
     return m_operator;
@@ -148,6 +132,22 @@ void CreateFlowSignUrlRequest::SetOperator(const UserInfo& _operator)
 bool CreateFlowSignUrlRequest::OperatorHasBeenSet() const
 {
     return m_operatorHasBeenSet;
+}
+
+OrganizationInfo CreateFlowSignUrlRequest::GetOrganization() const
+{
+    return m_organization;
+}
+
+void CreateFlowSignUrlRequest::SetOrganization(const OrganizationInfo& _organization)
+{
+    m_organization = _organization;
+    m_organizationHasBeenSet = true;
+}
+
+bool CreateFlowSignUrlRequest::OrganizationHasBeenSet() const
+{
+    return m_organizationHasBeenSet;
 }
 
 
